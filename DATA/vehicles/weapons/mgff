@@ -1,0 +1,22 @@
+# Early war German 20mm aircraft cannon
+
+mass = 15.5
+firetype = auto
+rateoffire = 595
+#syncrateoffire = 398
+dispersion = 0.15
+#dispersion is a placeholder
+
+ammotype1 = mgffap
+ammotype2 = mgffmine
+#ammotype3 = mgffhe
+ghostrof = 200
+ghostammotype = mgffhe
+
+cliprounds = 60
+reloadtime = 5
+
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = drum

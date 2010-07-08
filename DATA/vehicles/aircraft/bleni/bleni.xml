@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="bleni" type="air" shape="blenheim1f" description="Blenheim Mk IF" icon="Blenheim">
+<include file="bleni.veh.xml"/>
+<include file="bleni.state.xml"/>
+<include file="bleni.hit.xml"/>
+<include file="bleni.turret.xml"/>
+<include file="bleni.loadout.xml"/>
+<include file="bleni.xsound.xml"/>
+<include file="bleni.control.xml"/>
+<include file="bleni.mass.xml"/>
+</vehicle>

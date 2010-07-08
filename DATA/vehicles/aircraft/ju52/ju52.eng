@@ -1,0 +1,50 @@
+#engine stats file for ju52
+[bmw132t]
+type = propeller
+basehorsepower = 830
+basehpalt = 0
+basehppress = 1.2
+basehprpm = 2250
+basehpexhausttemp = 1100
+idlerpm = 800
+idlethrottlepos = 0.04
+fuelperhphour = 0.25
+fuelperhphourecon = 0.2
+oilconsumptionperhour = 6
+#wepmaxpress = 1.6
+#milmaxpress = 1.45
+#climbmaxpress = 1.35
+#econmaxpress = 1.15
+#idlepressure = 1
+maxweptime = 300
+maxmiltime = 1800
+weprpm = 2250
+milrpm = 2250
+climbrpm = 2250
+econrpm = 2100
+
+superchargetype = singlespeed
+speed1critalt = 1800
+#speed1efficiency = 1
+speed1efficiencytop = 1
+speed1efficiencybottom = 1
+speed1maxmilboost = 1.2
+speed1maxwepboost = 1.2
+#speed2critalt = 4200
+#speed2efficiencytop = 0.88
+#speed2efficiencybottom = 0.875
+#speed2maxmilboost = 1.15
+#speed2maxwepboost = 1.35
+#shiftalt = 3600
+exhaustthrustangle = 45
+#exhaustthrustforce = 400
+exhaustthrustforce = 100
+weptype = none
+propgearratio = 0.72
+propspindirection = 1
+
+criticalrpm = 200
+starterrpm = 100
+starterhp = 15
+
+

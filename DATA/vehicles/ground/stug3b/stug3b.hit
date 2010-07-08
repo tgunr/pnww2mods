@@ -1,0 +1,108 @@
+# damage resistance file for PzKpfw III Ausf F (pziiif)
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2,concussive resistance, damage threshold
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 1000000
+
+#Inside collider objects:
+d_fueltank,8,0,0
+d_engine,250,0,0
+d_oiltank,8,0,0
+d_radiator1,8,0,0
+d_radiator2,8,0,0
+d_transmission,250,0,0
+d_gearbox,250,0,0
+d_driverarms,1,0,0,0,1000
+d_drivertorso,1.5,0,0,0,1000
+d_driverlegs,1,0,0,0,1000
+d_driverhead,6.5,0,0,0,1000
+d_gunnrhead,6.5,0,0,0,1000
+d_gunnrlegs,1,0,0,0,1000
+d_gunnrtorso,1.5,0,0,0,1000
+d_gunnrarms,1,0,0,0,1000
+d_tankcommanderlegs,1,0,0,0,735
+d_tankcommanderarms,2.5,0,0,0,300
+d_tankcommandertorso,2.5,0,0,0,300
+d_tankcommanderhead,6.5,0,0,0,300
+d_loaderarms,1,0,0,0,735
+d_loadertorso,1.5,0,0,0,735
+d_loaderlegs,1,0,0,0,735
+d_loaderhead,6.5,0,0,0,740
+d_radioarms,1,0,0,0,735
+d_radiotorso,1.5,0,0,0,735
+d_radiolegs,1,0,0,0,735
+d_radiohead,6.5,0,0,0,740
+d_ammo,8,0,0,0
+
+#Outside collider objects:
+d_lftidlwheel,30,0,0,0,100000
+d_lftdrvwheel,30,0,0,0,100000
+d_lfttread,25,0,0,0,100000
+d_rtdrvwheel,30,0,0,0,100000
+d_rtidlwheel,30,0,0,0,100000
+d_rttread,25,0,0,0,100000
+d_ltgrndwheel1,30,0,0,0,100000
+d_ltgrndwheel2,30,0,0,0,100000
+d_ltgrndwheel3,30,0,0,0,100000
+d_ltgrndwheel4,30,0,0,0,100000
+d_ltgrndwheel5,30,0,0,0,100000
+d_ltgrndwheel6,30,0,0,0,100000
+d_lreturnwheels,30,0,0,0,100000
+d_ltreadcover,10,0,0
+d_rtreadcover,10,0,0
+d_rreturnwheels,30,0,0,0,100000
+d_rtgrndwheel1,30,0,0,0,100000
+d_rtgrndwheel2,30,0,0,0,100000
+d_rtgrndwheel3,30,0,0,0,100000
+d_rtgrndwheel4,30,0,0,0,100000
+d_rtgrndwheel5,30,0,0,0,100000
+d_rtgrndwheel6,30,0,0,0,100000
+d_loaderhatch1,17,0,0
+d_loaderhatch2,17,0,0
+d_cannonshield,50,0,0
+d_commanderhatch2,17,0,0
+d_commanderhatch1,17,0,0
+d_gunnerhatch,17,0,0
+d_gunsightshutter,50,0,0
+d_drivershutter,50,0,0
+d_driverglass,18,0,0
+d_75mmcannon,20,0,0,0,300000
+d_leftairintake,15,0,0
+d_rightairintake,15,0,0
+d_mantletleftside,30,0,0
+d_mantletrightside,30,0,0
+d_mantletrear,30,0,0
+d_mantletfront,50,0,0
+d_hullrightside,30,0,0
+d_firewall,2,0,0
+d_hullbottom,8,0,0
+d_hullrear,20,0,0
+d_hullfronttop,50,0,0
+d_hullfront,50,0,0
+d_hullreartop,30,0,0
+d_hullrearend,30,0,0
+d_hullleftside,30,0,0
+d_tophull,17,0,0

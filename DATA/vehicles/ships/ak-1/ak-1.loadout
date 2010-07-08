@@ -1,0 +1,45 @@
+# Fairmileb.loadout file
+
+# sounds available for the mounts
+sound1 = sounds\fairmileb\xgun1.wav
+sound2 = sounds\fairmileb\xgun2.wav
+sound3 = sounds\fairmileb\xgun3.wav
+sound4 = sounds\qf2pounder\2lbs.wav
+
+loadout = 1
+
+# Single 20mm
+mountnum = 1
+mountobject = 20mmfp
+mountsound = sound2
+weapon = oerlikon
+weaponobject = genericgun1
+recoilnum = 1
+recoiltime = 0.03
+
+# Single 20mm
+mountnum = 2
+mountobject = 20mmfs
+mountsound = sound2
+weapon = oerlikon
+weaponobject = genericgun1
+recoilnum = 2
+recoiltime = 0.03
+
+# Single 20mm
+mountnum = 3
+mountobject = 20mmas
+mountsound = sound2
+weapon = oerlikon
+weaponobject = genericgun1
+recoilnum = 3
+recoiltime = 0.03
+
+# Single 20mm
+mountnum = 4
+mountobject = 20mmap
+mountsound = sound2
+weapon = oerlikon
+weaponobject = genericgun1
+recoilnum = 4
+recoiltime = 0.03

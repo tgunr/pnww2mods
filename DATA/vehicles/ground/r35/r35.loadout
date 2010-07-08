@@ -1,0 +1,23 @@
+#R35.loadout file
+
+# sounds available for the mounts
+sound1 = sounds\37mmxgun.wav
+sound2 = sounds\r35\xgun2.wav
+
+loadout = 1
+
+mountnum = 1
+mountobject = maingunmount
+mountsound = sound1
+weapon = sa38l21
+recoilnum = 1
+recoiltime = .3
+weaponobject = r35-37
+shockdust = 1
+
+mountnum = 2
+mountobject = mgmount
+mountsound = sound2
+weapon = mle31
+weaponobject = r35-coax
+

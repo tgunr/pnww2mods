@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<view id="help-bar" x="43" y="600" width="930" height="32" style="background-color: #00000088; 
+					border-sides: ui/textures/test/infobox_side.bmp;
+					border-corner: ui/textures/test/infobox_corner.bmp;
+					border-width: 16;
+					border-height: 16;">
+	<caption id="help-bar-caption" label="CLICK NEXT" x="20" y="0" height="32" width="800" style=" color: #FFFF66;"/>
+	<button id="help-hotspot-button" x="895" y="6" height="20" width="20"
+		style=" color: #FFFFFF; control-on: ui/textures/test/info_icon_on.bmp; control-off: ui/textures/test/info_icon_off.bmp;"
+		onclick="clickHelpBar()" onmouseenter="showHelpBar(true)" onmouseexit="showHelpBar(false)"/>
+	<!-- caption id="help-hotspot-caption" label="?" x="890" y="0" height="32" width="32" style=" color: #FFFFFF;" onclick="reloadWin()" onmouseenter="showHelpBar(true)" onmouseexit="showHelpBar(false)"/ -->
+	<script>
+		<!--
+		
+		function setHelp(message)
+		{
+			consoleprint("Setting help to " + message + "\n");
+			
+			var caption = findview("help-bar-caption");
+			
+			if(caption)
+				caption.label = message.toUpperCase();
+		}
+		
+		function showHelpBar(show)
+		{
+			if(helpWin != null)
+			{
+				if(show)
+				{
+					var content = game.getcontent("help\\" + window.name + ".xml");
+					
+					if(content != null)
+					{
+						helpWin.visible 	= true;
+						helpWinText.text 	= content.body;
+					}
+				}
+				else
+				{
+					helpWin.visible = false;
+				}
+			}
+		}
+		
+		function clickHelpBar()
+		{
+			soundPlayClick();
+			reloadWin();
+		}
+		
+		-->
+	</script>
+</view>

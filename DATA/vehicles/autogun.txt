@@ -1,0 +1,215 @@
+# autogun descriptor file WW2 Online
+#
+#CHANGES 01-13-09
+#Changed 3rd priority target for AA-Light from "aircraft" to "infantry" to test paradrop issues (AC covered by priority 1 & 2 already)
+#
+#
+#CHANGES 08-28-08
+#Paratroopers added to Group 3 ("IN_,para")
+#Also added IN_,depot
+#
+#CHANGES 09-09-03
+#40mm AA-Flak guns reduced Maximum Error Cone Size to 3.5 degrees from 10.5 degrees.
+#
+#
+#CHANGES 03-04-03
+#Planes added to MG attack list
+#AT range reduced from 800 to 400
+#
+#
+#
+#CHANGES 07-29-02
+#All MG and At reduce additional track degrees from 25 to 5
+#AT min cone increased to 0.75
+#AT time to min cone increased from 5 to 15
+#MG min cone increased to 2.5
+#MG Time to min cone increased from 3 to 15
+#
+#
+#
+#
+#CHANGES 04-30-02
+#AT range reduced from 1500 to 800
+#AT min cone increased from 0.1 to 0.3
+#MG range reduced from 600 to 400
+#MG min cone increased from 0.05 to 0.08
+#MG time to min cone raised from 2 to 3
+#
+#
+#
+#Cahnges 06-02-03
+#All AT and MG changed to range 200m
+#Code change - Infantry no longer get hit while prone (needs testing)
+#
+#
+#
+#
+#Changes 06-11-03
+#Added med and heavy aa ai types to each country
+#
+#
+#
+#CHANGES 04-25-05 (Doc)
+# AT range adjusted to 800
+# MG range adjusted to 300
+# AA range adjusted to 800
+# AA FlaK range adjusted to 6000m
+# Changed Angle Off and Degrees Off mult. from 20,20 to 200,200 to enable deadlier tracking ability
+#
+#CHANGES 10-01-22 (Doc)
+#20mm AA-Oerlikon guns had sound file referance changed from bof.wav to 20mm.wav, reload sound file also changed to match
+#
+#
+# the next area governs vehicle type groupings
+# each autogun can target up to three groupings of vehicles
+# the first group is chosen over the 2nd and 3rd
+# any group of vehicle types can be chosen
+# the format is:
+#
+# group #
+# spec1
+# spec2
+# spec3
+# 
+# etc
+# where # is a group number that is used for the actual autogun line itself
+# and spec is the category/class text string for the vehicle type
+# for example, an opel blitz is category GV_ and a class of truck
+# thus the text string would be 
+#
+# GV_,truck
+#
+# the comma between the two is necessary
+
+# basic groups
+group 1
+# aircraft
+AC_,bomber,
+AC_,fighter,
+AC_,gm,
+
+group 2
+# ground vehicles
+GV_,tank
+GV_,artillery
+GV_,truck
+GV_,gun
+
+group 3
+# infantry
+IN_,crew
+IN_,troop
+IN_,para
+IN_,depot
+
+group 4
+# MN category
+MN_,airBomb
+MN_,heavyInfantry
+
+group 5
+# sea vehicles
+SV_,riverine
+
+# specialty groups
+group 6
+# light vehicles
+GV_,artillery
+GV_,truck
+GV_,gun
+
+group 7
+# heavy vehicles
+GV_,tank
+
+group 8
+# attack planes
+AC_,bomber
+
+group 9
+# non-attack planes
+AC_,fighter
+AC_,gm
+
+group 10
+# destroyers
+SV_,sea
+
+# Number fields:
+#
+# Country
+# 1 = England
+# 2 = USA
+# 3 = France
+# 4 = Germany
+# 5 = Italy
+# 6 = Japan
+# 7 = Commonwealth
+# 8 = China
+# 9 = Russia
+#
+# AutoGun Type
+# 1 = MG Nest (e.g. low angle shooting mg),
+# 2 = Rifleman (e.g. high/low angle shooting riflemen),
+# 3 = Rifle pit (e.g. low angle shooting riflemen,
+# 4 = Mortar pit,
+# 5 = light artillery (direct fire only, e.g. field guns)
+# 6 = medium artillery (direct fire only, e.g. field guns)
+# 7 = heavy artillery (direct fire only, e.g. field guns)
+# 8 = Coast Defence, large caliber AA (88mm/75mm/97mm FlaK), direct fire
+# 9 = Fort cupula (side-specific fort gun, e.g. maginot line turret gun)
+# 10 = AA light (e.g. low/high angle mg), RCMG
+# 11 = AA medium, 20/25mm class caliber
+# 12 = AA heavy (note: all AA guns are direct fire, no barrage fire yet), 40mm (bofors)
+# 13 = shore-based torpedo launcher,
+# 14 = AT Gun Light,
+# 15 = AT Gun Medium,
+# 16 = AT Gun Heavy,
+#,,
+
+# the way the angle off mult and the degrees off mult work are as follows:,,
+#,,
+# Each second the gun sees/shoots at a target, the error cone shrinks by a certain amount, controlled by the time-to-min-cone field.
+#,,
+# The angle off mult is the *SPEED* in m/s that the target must be moving perpendicular to the gun,,
+# in order to exactly cancel out the normal cone shrink.,,
+#,,
+# The degrees off mult is the number of *degrees* the gun must be off of target to exactly cancel the normal,,,,,,,,,,,,,,,,,,,
+# shrink rate.,,,,,,,,,,,,,,,,,,,
+#,,,,,,,,,,,,,,,,,,,
+# Both are linear.  Thus, an angle off of 2x the degrees-off mult causes the cone to grow at the normal rate,,,,,,,,,,,,,,,,,,
+# instead of shrinking at the normal rate.  An angle off of 1/2 the degrees-off-mult causes the cone to shrink,,,,,,,,,,,,,,,,,,,
+# at half rate.,,,,,,,,,,,,,,,,,,,
+#,,,,,,,,,,,,,,,,,,,
+#,,,,,,,,,,,,,,,,,,,
+# additional track degrees is the # of degrees past the field of fire that an autogun will track targets,,,,,,,,,,,,,,,,,,,
+
+# autogun lines are as follows:,,,,,,,,,,,,,,,,,,,
+#,,,,,,,,,,,,,,,,,,,
+# Autogun Type,Country,Object Name,Weapon Name,Belt file,Max Error Cone Size (deg),Min Error Cone Size(deg),time to minimum cone size (seconds),Angle off mult(deg),Degrees multiplier,additional track degrees,Maximum Range,vehicle group priority 1,vehicle group priority 2, vehicle group priority 3, does gun fire continuously? (1=yes or 0=no), fire sound, reload sound, elevation rate, traverse rate
+
+autoguns
+
+# German Auto guns
+1,4,germmgnest1,agmg34,mg34.belt,15,7.5,15,20,20,5,300,3,6,1,1,sounds\troop\mg34.wav,sounds\mgreload.wav,40,40
+15,4,agatpak36,37mmkwk46_5,37kwk46_pzgrhe.belt,15,3,15,20,20,15,800,10,2,5,1,sounds\37mmxgun.wav,sounds\autoloader.wav,5,5
+10,4,anticrftgermmg,aamg34,mg34.belt,10.1,0.1,1.2,10,10,25,800,8,9,1,1,sounds\troop\mg34.wav,sounds\mgreload.wav,-1,-1
+11,4,aiflak30,flak30ai,flak30ai.belt,10.1,0.1,2,200,200,180,6000,9,8,1,1,sounds\pziic\20mm.wav,sounds\mgreload.wav,-45,-45
+12,4,aibofors40mmgerman,boforsai,boforsai.belt,10.1,0.1,2,200,200,180,6000,9,8,5,1,sounds\bof.wav,sounds\bofloader.wav,-120,-120
+8,4,aiflak36,ai_88mml56,ai_88mml56he.belt,10.1,0.1,2,200,200,180,6000,10,8,9,1,sounds\flak36\88mm.wav,sounds\autoloader.wav,-120,-120
+
+# Brit Auto guns
+1,1,britbrennest,agbren,303default.belt,15,7.5,15,20,20,5,300,3,6,1,1,sounds\troop\bren.wav,sounds\mgreload.wav,40,40
+15,1,agat2pounder,40mml50,40mml50he.belt,15,3,15,20,20,15,800,10,2,5,1,sounds\2lbsxgun.wav,sounds\autoloader.wav,5,5
+10,1,antiaircrftbritish,aabren,303default.belt,10.1,0.1,1.2,10,10,25,800,8,9,1,1,sounds\troop\bren.wav,sounds\mgreload.wav,-1,-1
+11,1,aioklieron20,oerlikonai,oerlikonai.belt,10.1,0.1,2,200,200,180,6000,9,8,1,1,sounds\20mm.wav,sounds\mgreload.wav,-45,-45
+12,1,aibofors40mmbritish,boforsai,boforsai.belt,10.1,0.1,2,200,200,180,6000,9,8,5,1,sounds\bof.wav,sounds\bofloader.wav,-120,-120
+8,1,aiqf37,ai_mle3_7mkiii,ai_mle36he.belt,10.1,0.1,2,200,200,180,6000,10,8,9,1,sounds\flak36\88mm.wav,sounds\autoloader.wav,-120,-120
+
+# French Auto guns
+1,3,frnchm24gunnest,agmle31,mle31.belt,15,7.5,15,20,20,5,300,3,6,1,1,sounds\r35\mle_m31.wav,sounds\mgreload.wav,40,40
+15,3,agatmle25,sa38l33,sa38l33he.belt,15,3,15,20,20,15,800,10,2,5,1,sounds\mle25\mle25mm.wav,\sounds\manloader.wav,5,5
+10,3,antiaircrftm24,aamle31,mle31.belt,10.1,0.1,1.2,10,10,25,800,8,9,1,1,sounds\r35\mle_m31.wav,sounds\mgreload.wav,-1,-1
+11,3,aimle38,mle38ai,25mmai.belt,10.1,0.1,2,200,200,180,6000,9,8,1,1,sounds\pziic\20mm.wav,sounds\mgreload.wav,-45,-45
+12,3,aibofors40mmfrench,boforsai,boforsai.belt,10.1,0.1,2,200,200,180,6000,9,8,5,1,sounds\bof.wav,sounds\bofloader.wav,-120,-120
+8,3,aimle36,ai_mle36,ai_mle94mmhe.belt,10.1,0.1,2,200,200,180,6000,10,8,9,1,sounds\flak36\88mm.wav,sounds\autoloader.wav,-120,-120

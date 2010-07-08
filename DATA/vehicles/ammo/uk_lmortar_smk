@@ -1,0 +1,35 @@
+# 50mm Mortar Smoke
+# Created 3/16/05 - Ramp
+# data modified 6/28/07 - Doc.
+
+type = mortar
+issmokegrenade = 1
+diameter = .050
+weight = 1.0
+ammoweight = 1.0
+velocity = 74
+tracertime = 0.0
+object = uk_lmortar_smk
+explosive = 409
+
+fuzetime = 0.0
+bc = 1.86
+lifetime = 25.0
+ricochetangle = 89.999
+penetrationconstant = 0.00000000001
+
+dontdisplayfirstframe = 0
+
+#numshrapnelpieces = 75
+#totalshrapnelmass = .43
+
+explosionsoundnear = sounds\troop\grenade.wav
+explosionsoundfar = sounds\smlfarexp.wav
+nearfardistance = 150
+grenaderotaterate = 0
+
+muzzleflash = 5
+ghostroundsto = 1
+
+grenadeorient = 0
+grenaderestitution = .1

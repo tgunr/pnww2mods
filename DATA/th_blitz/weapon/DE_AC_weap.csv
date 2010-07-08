@@ -1,0 +1,19 @@
+section, fighter, Alloc,#L,#M,Rel,Association,LOD,AlertDistance,Speed,Value,Bias,,,,,
+default,,,,,P,IN_crew.2,,0,,10,FY_,10,SV_sea.0,AC_fighter.0,AC_bomber.0,AC_fighter.0
+1,bf109e,L3,0,50,,,6000,,300,88,,,,,,
+2,bf110c,L2,0,50,,,6000,,300,92,,,,,,
+3,bf109f4,L5,0,50,,,6000,,300,108,,,,,,
+4,fw190a4,L5,0,50,,,6000,,400,132,,,,,,
+5,me109g6,L4,0,50,,,6000,,300,116,,,,,,
+6,bf109e1,L1,0,50,,,6000,,300,72,,,,,,
+7,bf109f1,L3,0,50,,,6000,,300,100,,,,,,
+8,bf110fb,L3,0,50,,,6000,,250,130,,,,,,
+
+
+section, bomber, Alloc,#L,#M,Rel,Association,LOD,AlertDistance,Speed,Value,Bias,,,,,
+default,,,,,P,IN_crew.2,,0,,10,FY_,10,SV_sea.0,AC_fighter.0,,
+1,Ju87b,L1,0,50,,,6000,,250,100,FY_,10,SV_sea.0,AC_fighter.0,GV_tank.0,
+2,he111,L3,0,50,,,6000,6400,250,174,,,,,,
+3,bf110c4,L3,0,50,,,6000,,250,124
+4,de_blent,L3,0,50,,,6000,,300,98
+5,ju52,L5,0,50,,,6000,,200,55

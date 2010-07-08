@@ -1,0 +1,129 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<view x="0" y="0" width="930" height="460" onshow="initCalibrator()" onhide="saveCalibrations()">
+	<view id="left-pane" x="18" y="18" width="444" height="411">
+		<caption label="&widgets.calibration.device;" x="10" height="20" width="425" rtop="10" style="font-size: +2; color: #BFE2CE;"/>
+		<image x="10" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="20"/>
+		<view x="10" width="425" height="15" rtop="32">
+			<caption x="0" y="0" width="425" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="&widgets.calibration.device.label;"/>
+		</view>
+		<list id="axisTree" x="10" y="35" width="425" height="327" style="color: #FFFFFF"
+			onselect="axisTree.clickTree(false)" ondblselect="axisTree.clickTree(true)">
+			<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+		</list>
+		<button id="reset-controllers" x="10" y="0" height="25" width="140" label="&widgets.calibration.device.reread;"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -3; color: #FFFFFF;"
+			onclick="soundPlayClick(); game.resetcontrollers(); showOk(getlocstring('widgets.calibration.device.reread.ok'));"
+			onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+			tip="&widgets.calibration.device.reread.tip;"/>
+	</view>
+	<include file="widgets/divider.uixml"/>
+	<view id="right-pane" x="468" y="18" width="444" height="411">
+		<tabview id="calibrator" x="0" y="0" rright="0" rtop="0" acceptmouseclick='false'>
+			<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'
+				onhide="game.setkeymapcalibration('mouse', mousecalib.value)">
+				<caption x="10" height="20" width="425" rtop="10" style="font-size: +2; color: #BFE2CE;"
+					onshow="this.label = getlocstring('widgets.calibration.mouse.title')"/>
+				<image x="10" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="20"/>
+				<text x="10" height="100" width="425" rtop="50" style="font-size: +2; color: #FFFFFFFF;"
+					onshow="this.text = getlocstring('widgets.calibration.mouse.desc')"/>
+				<caption x="50" y="250" height="20" width="50" style=" color: #FFFFFFFF;"
+					onshow="this.label = getlocstring('widgets.calibration.mouse.less')" align="right"/>
+				<caption x="350" y="250" height="20" width="50" style=" color: #FFFFFFFF;"
+					onshow="this.label = getlocstring('widgets.calibration.mouse.more')"/>
+				<slider id="mousecalib" x="125" y="250" width="200" height="20" minvalue="1" maxvalue="2"
+					onclick="game.setkeymapcalibration('mouse', this.value)"/>
+			</tab>
+			<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'>
+				<caption x="10" height="20" width="425" rtop="10" style="font-size: +2; color: #BFE2CE;"
+					onshow="this.label = getlocstring('widgets.calibration.joystick.title')"/>
+				<image x="10" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="20"/>
+				<text x="10" height="100" width="425" rtop="50" style="font-size: +2; color: #FFFFFFFF;"
+					onshow="this.text = getlocstring('widgets.calibration.joystick.desc')"/>
+				<view x="125" y="150" height="100" width="200" style="background-color: #FFFFFF33"/>
+				<view id="joycalib" class="joycalib" x="125" y="150" height="100" width="200" style="background-color: #FFFFFF"/>
+			</tab>
+			<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'>
+				<caption x="10" height="20" width="425" rtop="10" style="font-size: +2; color: #BFE2CE;"
+					onshow="this.label = getlocstring('widgets.calibration.none.title')"/>
+				<image x="10" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="20"/>
+				<text x="10" height="100" width="425" rtop="50" style="font-size: +2; color: #FFFFFFFF;"
+					onshow="this.text = getlocstring('widgets.calibration.none.desc')"/>
+			</tab>
+		</tabview>
+	</view>
+	<script>
+		<!--
+		
+		var axisTree 		= new TreeControl("axisTree", selectDevice);
+		var calibrator		= findview("calibrator");
+		var joycalib 		= findview("joycalib");
+		var mousecalib 		= findview("mousecalib");
+		
+		function initCalibrator()
+		{
+			game.initkeymaps();
+			
+			if(!axisTree.initTree())
+			{
+				for(var i = 1; i < 5; i++)
+				{
+					if(i == 1)
+						axisTree.addNode(new TreeNode(getlocstring('widgets.calibration.device.mouse1'), "mouse1", 1, false));
+					
+					axisTree.addNode(new TreeNode(getlocstring('widgets.calibration.device.joystick' + i), "joystick" + i, 1, true), initNode);
+				}
+				
+				axisTree.toggleNode(getlocstring('widgets.calibration.device.joystick1'), true);
+				axisTree.drawTree();
+			}
+			
+			mousecalib.value = game.getkeymapcalibration('mouse');
+		}
+		
+		function saveCalibrations()
+		{
+			game.savekeymaps();
+			game.killkeymaps();
+		}
+		
+		function selectDevice()
+		{
+			var node = axisTree.selectedNode();
+			var show = 0;
+			
+			if(node != null)
+			{
+				if(node.branch)
+				{
+					show = 2;
+				}
+				else if(node.data != "mouse1")
+				{
+					joycalib.label = node.data;
+					show = 1;
+				}
+			}
+			
+			calibrator.value = show;
+		}
+		
+		function initNode(node)
+		{
+			if(!node.initNode())
+			{
+				node.addNode(new TreeNode(getlocstring('widgets.calibration.device.axisx'), node.data + "axisx", 2, false));
+				node.addNode(new TreeNode(getlocstring('widgets.calibration.device.axisy'), node.data + "axisy", 2, false));
+				node.addNode(new TreeNode(getlocstring('widgets.calibration.device.axisz'), node.data + "axisz", 2, false));
+				node.addNode(new TreeNode(getlocstring('widgets.calibration.device.axisrx'), node.data + "axisrx", 2, false));
+				node.addNode(new TreeNode(getlocstring('widgets.calibration.device.axisry'), node.data + "axisry", 2, false));
+				node.addNode(new TreeNode(getlocstring('widgets.calibration.device.axisrz'), node.data + "axisrz", 2, false));
+				node.addNode(new TreeNode(getlocstring('widgets.calibration.device.axisslider1'), node.data + "axisslider1", 2, false));
+				node.addNode(new TreeNode(getlocstring('widgets.calibration.device.axisslider2'), node.data + "axisslider2", 2, false));
+			}
+		}
+		
+		-->
+	</script>
+</view>
+

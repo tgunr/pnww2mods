@@ -1,0 +1,208 @@
+# Flak 36 88mm
+
+[tow-point]
+type = towpoint
+subtype = none
+x = 0 
+y = 3.41
+z = -.94
+towtype = heavy
+
+[haul_point]
+type = haulpoint
+subtype = none
+# Where force is applied
+x = 0.0
+y = -3.3
+z = 0.0
+# force in Newtons
+force = 24000
+# Speed is m/s
+# speed = 0.7 :edited 6jan05 -Doc.
+speed = 1.0
+haulsound = sounds\push.wav
+
+[drivewheelleft]
+type = gear
+#type = ballast
+subtype = wheel
+gearnum = 2
+mass = 50
+wheelradius = 0.45
+contactpointtype = tire
+wheelrotationalinertia = 5
+braketype = center
+brakestrength = 20000
+contactpointtype = tire
+rollcoefficient = 0.02
+strutspringstrength = 37720
+strutshockstrength = 3772
+strutshockreturnstrength = 377
+hitmapcomponent1 = d_lrewhe
+damagelevel1 = 4000
+damagelevel2 = 20000
+damagelevel3 = 45000
+damagelevel4 = 60000
+
+
+[drivewheelright]
+type = gear
+#type = ballast
+subtype = wheel
+gearnum = 4
+mass = 50
+wheelradius = 0.45
+contactpointtype = tire
+wheelrotationalinertia = 5
+braketype = center
+brakestrength = 20000
+contactpointtype = tire
+rollcoefficient = 0.02
+strutspringstrength = 37720
+strutshockstrength = 3772
+strutshockreturnstrength = 377
+hitmapcomponent1 = d_rearwel
+damagelevel1 = 4000
+damagelevel2 = 20000
+damagelevel3 = 45000
+damagelevel4 = 60000
+
+
+[steerwheelleft]
+type = gear
+#type = ballast
+subtype = wheel
+gearnum = 1
+mass = 45
+wheelradius = 0.45
+braketype = center
+wheelrotationalinertia = 5
+braketype = center
+brakestrength = 20000
+rollcoefficient = 0.02
+strutspringstrength = 37720
+strutshockstrength = 3772
+strutshockreturnstrength = 377
+hitmapcomponent1 = d_lfrowhe
+damagelevel1 = 4000
+damagelevel2 = 20000
+damagelevel3 = 45000
+damagelevel4 = 60000
+
+
+[steerwheelright]
+type = gear
+#type = ballast
+subtype = wheel
+gearnum = 3
+mass = 45
+wheelradius = 0.45
+contactpointtype = tire
+wheelrotationalinertia = 5
+braketype = center
+brakestrength = 20000
+rollcoefficient = 0.02
+strutspringstrength = 37720
+strutshockstrength = 3772
+strutshockreturnstrength = 377
+hitmapcomponent1 = d_rfrowe
+damagelevel1 = 4000
+damagelevel2 = 20000
+damagelevel3 = 45000
+damagelevel4 = 60000
+
+
+
+
+
+[GeneralWeightBallast]
+type = ballast
+subtype = armor
+x = 0
+y = 0
+z = -.6
+mass = 3760
+inertiapitch = 28750
+inertiaroll = 11250
+inertiayaw = 33800
+
+[WeightBallast]
+type = ballast
+subtype = armor
+x = 0
+y = 0
+z = .8
+mass = 4000
+inertiapitch = 28750
+inertiaroll = 11250
+inertiayaw = 33800
+
+[88mm Gun]
+type = weaponmount
+criticalprimary = 1
+usebombbay = 1
+triggertype = primary
+gunfiresmokelevel = 0.00
+position = 2
+selectornum = 1
+confignum = 1
+mountnum = 1
+weapon = 88mml56
+weaponsound = sounds\flak36\88mm.wav
+reloadsound = sounds\autoloader.wav
+ammocount = 40
+ammofile = 88mml56.belt
+beltname = AP
+ammocount2 = 15
+ammofile2 = 88mml56he.belt
+beltname2 = HE
+collidertype = front60deg
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = o5_5
+hitmapcomponent2 = o32_5
+hitmapcomponent3 = o6_6
+hitmapcomponent4 = d_gunbase
+#damagelevel of zero or less means that level isn't used
+ammoexplosioncomponent1 = d_gunhead
+ammoexplosioncomponent2 = d_commhead
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 1500
+damagelevel3 = 1500
+damagelevel4 = 0
+
+[crew_gunner]
+type = crew
+criticalsecondary = 1
+#changed for CC audit v1.13
+crewposition = 2
+hitmapcomponent1 = d_gunhead
+hitmapcomponent2 = d_gunarms
+hitmapcomponent3 = d_gunrtrso
+hitmapcomponent4 = d_gunlegs
+
+[crew_commander]
+type = crew
+criticalsecondary = 1
+#changed for CC audit v1.13
+crewposition = 1
+hitmapcomponent1 = d_commhead
+hitmapcomponent2 = d_commtorso
+hitmapcomponent3 = d_commarms
+hitmapcomponent4 = d_commlegs
+
+[WeightBallast]
+type = ballast
+subtype = armor
+x = 0
+y = 0
+z = .8
+mass = 4000
+inertiapitch = 31360
+inertiaroll = 22703
+inertiayaw = 31360
+
+# Target weights:
+# 8200 Mobile
+# 5000 Emplaced

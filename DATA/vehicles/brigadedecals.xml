@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<!-- Row and Column Numbers are ZERO BASED.  0,0 is Top Left -->
+
+<!-- name, branch and country used for readability -->
+<brigades>
+<!-- British Army -->
+<!-- British Army: 1st Infantry Division -->
+    <brigade id="960" name="Special Air Service" branch="ground" country="uk">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="6" col="2"/>
+    </brigade>
+    <brigade id="961" name="1.Guards" branch="ground" country="uk">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="6" col="3"/>
+    </brigade>
+    <brigade id="962" name="3.Commandos" branch="ground" country="uk">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="6" col="4"/>
+    </brigade>
+<!-- British Army: 2nd Infantry Division -->
+     <brigade id="957" name="2.Brigade" branch="ground" country="uk">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="6" col="5"/>
+    </brigade>
+    <brigade id="958" name="4.Brigade" branch="ground" country="uk">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="6" col="6"/>
+    </brigade>
+    <brigade id="959" name="5.Brigade" branch="ground" country="uk">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="6" col="7"/>
+    </brigade>
+
+<!-- British Army: 3rd Infantry Division -->
+
+    <brigade id="1128" name="8.Brigade" branch="ground" country="uk">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="7" col="3"/>
+    </brigade>
+    <brigade id="1129" name="9.Brigade" branch="ground" country="uk">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="7" col="4"/>
+    </brigade>
+     <brigade id="1127" name="33.Brigade" branch="ground" country="uk">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="7" col="5"/>
+    </brigade>
+<!-- British Army: 1st Airborne Division -->
+    <brigade id="1093" name="1.Paratroop" branch="ground" country="uk">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="3" col="6"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="7" col="1"/>
+    </brigade>
+    <brigade id="1094" name="2.Paratroop" branch="ground" country="uk">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="3" col="6"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="7" col="2"/>
+	</brigade>
+
+<!-- British Army: Support  -->
+    <brigade id="1105" name="UK Beta Brigade" branch="ground" country="uk">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="7" col="0"/>
+    </brigade>
+    
+<!-- British Air Force (RAF) -->
+    <brigade id="972" name="60.Squadron" branch="air" country="uk">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="3" col="1"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="7" col="0"/>
+    </brigade>
+    <brigade id="973" name="61.Squadron" branch="air" country="uk">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="3" col="3"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="7" col="0"/>
+    </brigade>
+    <brigade id="975" name="75.Squadron" branch="air" country="uk">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="3" col="0"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="7" col="0"/>
+    </brigade>
+    <brigade id="976" name="76.Squadron" branch="air" country="uk">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="3" col="2"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="7" col="0"/>
+    </brigade>
+    <brigade id="978" name="70.Squadron" branch="air" country="uk">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="3" col="4"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="7" col="0"/>
+    </brigade>
+    <brigade id="979" name="52.Squadron" branch="air" country="uk">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="3" col="5"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="7" col="0"/>
+    </brigade>
+  
+
+<!-- French Army -->
+<!-- French Army: 1re Division d'Infanterie Motorisée -->
+    <brigade id="934" name="1er Régiment d'Infanterie" branch="ground" country="fr">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="4" col="1"/>
+    </brigade>
+    <brigade id="935" name="43e Régiment d'Infanterie" branch="ground" country="fr">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="5" col="1"/>
+    </brigade>
+    <brigade id="1110" name="14e Compagnie Divisionnaire Anti-Chars" branch="ground" country="fr">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="5" col="4"/>
+    </brigade>
+<!-- French Army: 2ème Division Nord-Africaine -->
+    <brigade id="938" name="110e Régiment d'Infanterie" branch="ground" country="fr">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="5" col="3"/>
+    </brigade>
+    <brigade id="939" name="13e Régiment de Tirailleurs Algériens" branch="ground" country="fr">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="3" col="7"/>
+    </brigade>
+    <brigade id="1111" name="22e Régiment de Tirailleurs Algériens " branch="ground" country="fr">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="5" col="6"/>
+    </brigade>
+
+<!-- French Army: 2e Division Légère Mécanique -->
+    <brigade id="943" name="4e Brigade Légère Mécanique" branch="ground" country="fr">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="4" col="0"/>
+    </brigade>
+    <brigade id="944" name="8e Régiment de Cuirassiers" branch="ground" country="fr">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="4" col="2"/>
+    </brigade>
+    <brigade id="1113" name="13e Régiment de Dragons" branch="ground" country="fr">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="6" col="1"/>
+    </brigade>
+<!-- French Army: 4e Groupe de Reconnaissance de Division d'Motorisée -->
+    <brigade id="940" name="104e Anti-Tank Régiment" branch="ground" country="fr">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="4" col="6"/>
+    </brigade>
+    <brigade id="942" name="605e Régiment de Pionniers" branch="ground" country="fr">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="4" col="5"/>
+    </brigade>
+    <brigade id="1112" name="101r Escadron de Reconnaissance" branch="ground" country="fr">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="6" col="0"/>
+    </brigade>
+<!-- French Army: 5ème Division Nord-Africaine  -->
+    <brigade id="1087" name="14e Regiment de Zouaves" branch="ground" country="fr">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="3" col="6"/>
+    </brigade>
+    <brigade id="1088" name="27e Régiment d'Infanterie" branch="ground" country="fr">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="5" col="0"/>
+    </brigade>
+    <brigade id="1115" name="6e Régiment de Tirailleurs Marocains" branch="ground" country="fr">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="5" col="5"/>
+    </brigade>
+    
+<!-- French Army: 12e Division d'Infanterie Motorisée  -->
+
+    <brigade id="1084" name="1ère Brigade d'Assaut Motorisée" branch="ground" country="fr">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="4" col="3"/>
+    </brigade>
+    <brigade id="1085" name="13ème Demi-Brigade de Légion Etrangère" branch="ground" country="fr">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="4" col="4"/>
+    </brigade>
+    <brigade id="1114" name="106th Régiment d'Infanterie" branch="ground" country="fr">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="5" col="7"/>
+    </brigade>
+
+<!-- French Army: 1re Division l'Infanterie de l'Air  -->
+    <brigade id="1096" name="601.GIA" branch="ground" country="fr">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="2" col="6"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="5" col="2"/>
+    </brigade>
+    <brigade id="1097" name="602.GIA" branch="ground" country="fr">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="2" col="6"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="4" col="7"/>
+    </brigade>
+
+<!-- French Army: Support  -->
+    <brigade id="1107" name="FR Beta Brigade" branch="ground" country="fr">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="3" col="5"/>
+    </brigade>
+<!-- French Air Force -->
+
+    <brigade id="916" name="1.Groupe" branch="air" country="fr">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="2" col="3"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="3" col="5"/>
+    </brigade>
+    <brigade id="917" name="3.Groupe" branch="air" country="fr">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="2" col="5"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="3" col="5"/>
+    </brigade>
+    <brigade id="918" name="1.Groupe" branch="air" country="fr">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="2" col="0"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="3" col="5"/>
+    </brigade>
+    <brigade id="919" name="18.Groupe" branch="air" country="fr">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="2" col="1"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="3" col="5"/>
+    </brigade>
+    <brigade id="920" name="19.Groupe" branch="air" country="fr">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="2" col="2"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="3" col="5"/>
+    </brigade>
+    <brigade id="921" name="3.Groupe" branch="air" country="fr">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="2" col="4"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="3" col="5"/>
+    </brigade>
+
+<!-- German Army -->
+<!-- German Army: 1. Panzer-Division -->
+    <brigade id="1055" name="1.Panzer.1.Kampfgruppe" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="1" col="6"/>
+    </brigade>
+    <brigade id="1056" name="1.Panzer.2.Kampfgruppe" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="2" col="2"/>
+    </brigade>
+    <brigade id="1057" name="1.Panzer.3.Kampfgruppe (Armored)" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="0" col="3"/>
+    </brigade>
+<!-- German Army: 2. Panzer-Division -->
+    <brigade id="1049" name="2.Panzer.1.Kampfgruppe" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="1" col="7"/>
+    </brigade>
+    <brigade id="1050" name="2.Panzer.2.Kampfgruppe" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="2" col="3"/>
+    </brigade>
+    <brigade id="1104" name="2.Panzer.3.Kampfgruppe (Armored)" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="3" col="1"/>
+    </brigade>
+<!-- German Army: 3. Panzer-Division -->
+    <brigade id="1043" name="3.Panzer.1.Kampfgruppe" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="2" col="0"/>
+    </brigade>
+    <brigade id="1044" name="3.Panzer.2.Kampfgruppe" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="2" col="4"/>
+    </brigade>
+    <brigade id="1105" name="3.Panzer.3.Kampfgruppe (Armored)" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="3" col="0"/>
+    </brigade>
+    <!-- Brigade ID conflicts with British Support Brigade ID-->
+
+<!-- German Army: 4. Panzer-Division -->
+    <brigade id="1037" name="4 Panzer.1.Kampfgruppe" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="2" col="1"/>
+    </brigade>
+    <brigade id="1038" name="4 Panzer.2.Kampfgruppe" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="2" col="5"/>
+    </brigade>
+    <brigade id="1106" name="4.Panzer.3.Kampfgruppe (Armored)" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="3" col="2"/>
+    </brigade>
+<!-- German Army: 16. Infanterie-Division -->
+    <brigade id="1040" name="16.Infanterie.1.Kampfgruppe" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="0" col="6"/>
+    </brigade>
+    <brigade id="1041" name="16.Infanterie.2.Kampfgruppe" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="0" col="7"/>
+    </brigade>
+    <brigade id="1107" name="16.Infanterie.3.Kampfgruppe (Armored)" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="3" col="3"/>
+    </brigade>
+<!-- German Army: 17. Infanterie-Division -->
+
+    <brigade id="1052" name="17.Infanterie.1.Kampfgruppe" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="1" col="0"/>
+    </brigade>
+    <brigade id="1053" name="17.Infanterie.2.Kampfgruppe" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="1" col="1"/>
+    </brigade>
+    <brigade id="1108" name="17.Infanterie.3.Kampfgruppe (Armored)" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="2" col="7"/>
+    </brigade>
+    
+<!-- German Army: 20. Infanterie-Division -->
+    <brigade id="1132" name="20.Infanterie.1.Kampfgruppe" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit2.dds" row="1" col="6"/>
+    </brigade>
+    <brigade id="1133" name="20.Infanterie.2.Kampfgruppe" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit2.dds" row="1" col="5"/>
+    </brigade>
+    <brigade id="1134" name="20.Infanterie.3.Kampfgruppe (Armored)" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit2.dds" row="1" col="7"/>
+    </brigade>
+  
+<!-- German Army: 27. Infanterie-Division -->
+    <brigade id="1058" name="27.Infanterie.1.Kampfgruppe" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="0" col="4"/>
+    </brigade>
+    <brigade id="1059" name="27.Infanterie.2.Kampfgruppe" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="0" col="5"/>
+    </brigade>
+    <brigade id="1109" name="27.Infanterie.3.Kampfgruppe (Armored)" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="3" col="4"/>
+    </brigade>
+<!-- German Army: 33. Infanterie-Division -->
+    <brigade id="1046" name="33.Infanterie.1.Kampfgruppe" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="1" col="3"/>
+    </brigade>
+    <brigade id="1047" name="33.Infanterie.2.Kampfgruppe" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="1" col="2"/>
+    </brigade>
+    <brigade id="1048" name="33.Infanterie.3.Kampfgruppe (Armored)" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="1" col="4"/>
+    </brigade>
+<!-- German Army: 1. Fallschirmjäger-Division -->
+    <brigade id="1099" name="1.Fallschirmjaeger.1.Gruppe" branch="ground" country="de">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="1" col="3"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="0" col="0"/>
+    </brigade>
+    <brigade id="1100" name="1.Fallschirmjaeger.2.Gruppe" branch="ground" country="de">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="1" col="3"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="0" col="1"/>
+    </brigade>
+
+<!-- German Army: 2. Fallschirmjäger-Division -->
+    <brigade id="1102" name="2.Fallschirmjaeger.1.Gruppe" branch="ground" country="de">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="1" col="3"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="0" col="2"/>
+    </brigade>
+    <brigade id="1103" name="2.Fallschirmjaeger.2.Gruppe" branch="ground" country="de">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="1" col="3"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="1" col="5"/>
+    </brigade>
+
+    <!-- German Army: Support -->
+    <brigade id="1109" name="DE Beta Brigade" branch="ground" country="de">
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="2" col="6"/>
+    </brigade>
+<!-- German Air Force -->
+    <brigade id="995" name="JG 3 2.Gruppe" branch="air" country="de">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="0" col="3"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="2" col="6"/>
+    </brigade>
+    <brigade id="996" name="JG 3 1.Gruppe" branch="air" country="de">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="0" col="0"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="2" col="6"/>
+    </brigade>
+    <brigade id="997" name="KG 26 1.Sturmgruppe" branch="air" country="de">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="0" col="1"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="2" col="6"/>
+    </brigade>
+    <brigade id="998" name="KG 26 2.Sturmgruppe" branch="air" country="de">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="1" col="4"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="2" col="6"/>
+    </brigade>
+    <brigade id="999" name="KG 26 1.Gruppe" branch="air" country="de">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="0" col="4"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="2" col="6"/>
+    </brigade>
+    <brigade id="1000" name="KG 26 2.Gruppe" branch="air" country="de">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="0" col="6"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="2" col="6"/>
+    </brigade>
+    <brigade id="1005" name="JG 2 1.Gruppe" branch="air" country="de">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="0" col="2"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="2" col="6"/>
+    </brigade>
+    <brigade id="1006" name="JG 2 2.Gruppe" branch="air" country="de">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="0" col="7"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="2" col="6"/>
+    </brigade>
+    <brigade id="1007" name="KG 53 1.Sturmgruppe" branch="air" country="de">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="0" col="5"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="2" col="6"/>
+    </brigade>
+    <brigade id="1008" name="KG 53 2.Sturmgruppe" branch="air" country="de">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="1" col="0"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="2" col="6"/>
+    </brigade>
+    <brigade id="1009" name="KG 53 1.Gruppe" branch="air" country="de">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="1" col="2"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="2" col="6"/>
+    </brigade>
+    <brigade id="1010" name="KG 53 2.Gruppe" branch="air" country="de">
+	    <decal category="air" texture="de_fr_uk_unit2.dds" row="1" col="1"/>
+	    <decal category="ground" texture="de_fr_uk_unit1.dds" row="2" col="6"/>
+    </brigade>
+
+</brigades>

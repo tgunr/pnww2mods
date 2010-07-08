@@ -1,0 +1,14 @@
+# German infantry LMG - created Oct.03 Doc
+
+mass = 12.1
+firetype = auto
+rateoffire = 900
+ammotype1 = 7_9mm_mg34
+ammotype2 = 7_9mm_mg34tracer
+ghostrof = 300
+ghostammotype = 7_9mm_mg34tracer
+cliprounds = 50
+dispersion = 0.2
+# type of clip; used in the ui for clip name display
+# possible values: na, clip, magazine, belt, reload, drum
+cliptype = drum

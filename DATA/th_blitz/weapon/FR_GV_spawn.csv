@@ -1,0 +1,57 @@
+section, CATEGORY, weapClass
+default,,GV_tank.0
+spawn,charb1,
+#spawn,fr_a13,
+spawn,r35,
+spawn,s35,
+spawn,panhard,
+spawn,h39,
+spawn,stuartm3a3,
+spawn,m4a2,
+spawn,m10,
+spawn,m4a3,
+#spawn,fr_bed,FR_GV_truck.0
+spawn,laffly,FR_GV_truck.0
+spawn,lafflyw15,FR_GV_truck.0
+spawn,mle25,FR_GV_gun.0
+spawn,mle47,FR_GV_gun.0
+spawn,mle38,FR_GV_gun.0
+spawn,fr_bofors,FR_GV_gun.0
+spawn,m1m1a3,FR_GV_gun.0
+spawn,m1a2m5,FR_GV_gun.0
+
+section,gun, weapClass
+default,,GV_gun.0
+spawn,mle25,
+spawn,mle47,
+spawn,mle38,
+spawn,fr_bofors,
+spawn,m1m1a3,
+spawn,m1a2m5,
+
+section,tank, weapClass
+default,,GV_tank.0
+spawn,charb1,
+#spawn,fr_a13,
+spawn,r35,
+spawn,s35,
+spawn,panhard,
+spawn,h39,
+spawn,stuartm3a3,
+spawn,m4a2,
+spawn,m10,
+spawn,m4a3,
+
+section,truck, weapClass
+default,,GV_truck.0
+#spawn,fr_bed,
+spawn,laffly,
+spawn,lafflyw15,
+
+section,depot,weapClass
+default,,GV_depot.0
+spawn,laffly,
+spawn,mle25,
+spawn,mle47,
+spawn,mle38,
+spawn,m1m1a3,

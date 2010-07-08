@@ -1,0 +1,32 @@
+# created for M10 TD (76mmL52M7) gun - Hatch. 07/06/05
+# modified after ballistic testing by Doc. 02-02-07
+# this is M62 ammo
+
+type = ballistic
+diameter = .0762
+weight = 7
+velocity = 801
+tracertime = 7.9
+object = bullet1
+explosive = 276730
+# 0.06 kg (TNT)
+
+fuzetime = 0.002
+#bc = 2.72
+bc = 2.46
+lifetime = 8.0
+ricochetangle = 87
+modelspall = 1
+#penetrationconstant = 0.00000327
+penetrationconstant = 0.00000306
+dontdisplayfirstframe = 1 
+
+numshrapnelpieces = 30
+totalshrapnelmass = 6.94
+explosionsoundnear = sounds\smlcloseexp.wav
+explosionsoundfar = sounds\smlfarexp.wav
+nearfardistance = 300
+
+muzzleflash = 3
+hiteffect = smallcannon
+tracerscale = 2

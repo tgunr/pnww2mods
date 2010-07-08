@@ -1,0 +1,13 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="mle25" type="ground" shape="mle25" description="SA mle 34 (25 mm) AT Gun" icon="SA 34 Gun">
+<include file="mle25.veh.xml"/>
+<include file="mle25.state.xml"/>
+<include file="mle25.hit.xml"/>
+<include file="mle25.turret.xml"/>
+<include file="mle25.loadout.xml"/>
+<include file="mle25.xsound.xml"/>
+<include file="mle25.control.xml"/>
+<variant id="cn_mle25" icon="SA 34 Gun"/>
+<variant id="mle25" icon="SA 34 Gun"/>
+</vehicle>

@@ -1,0 +1,50 @@
+#PzKpfw VI Ausf E (Created by Hatch 7/20/05)
+
+# Driver
+position = 1
+control = canopycontrol
+control = map
+control = auxsight
+control = leftbrake
+control = rightbrake
+control = bothbrake
+control = clutch
+control = shiftup
+control = shiftdown
+control = reverse
+control = lefttrackclutch
+control = righttrackclutch
+control = gas
+control = engstart
+control = clutch
+control = hoist
+control = ridetransport
+
+# Commander
+position = 2
+control = radio
+control = canopycontrol
+control = map
+control = turretraverse
+control = turretelevate
+control = rangefind
+
+# Main Gunner
+position = 3
+# control = hatchcontrol
+# control = canopycontrol
+control = map
+control = primarytrigger
+control = secondarytrigger
+control = turretraverse
+control = turretelevate
+control = cycleammo
+control = gunsightrangedec
+control = gunsightrangeinc
+
+# Bow Gunner
+position = 4
+control = map
+control = primarytrigger
+control = turretraverse
+control = turretelevate

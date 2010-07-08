@@ -1,0 +1,29 @@
+#engine stats file for Opel Blitz truck
+[Opel_6cylinder]
+basehorsepower = 75
+#basehorsepower = 75
+basehpalt = 0
+basehprpm = 2600
+basehppress = 1.0
+basehpexhausttemp = 1000
+idlethrottlepos = 0.13
+idlerpm = 1100
+fuelperhphour = 0.354
+oilconsumptionperhour = 0
+wepmaxpress = 1.0
+milmaxpress = 1.0
+weprpm = 3300
+milrpm = 3300
+climbrpm = 3300
+econrpm = 3300
+
+superchargertype = none
+weptype = none
+
+#criticalrpm is the rpm at which below this the engine might stall, also used for starting
+criticalrpm 200
+
+#starterrpm is the rpm at which the starter motor will spin the engine at
+starterrpm 100
+#starterhp is the power of the starter motor
+starterhp 2

@@ -1,0 +1,550 @@
+# surface type descriptions for foot sounds 0=dirt (default) 1=concrete 2=wood 3=sand 4=road 5=metal,,,,,,,,,,,,,,,,,,,,,,,,
+#header,bump density,bump height,static friction,dynamic friction,rollcoefficientmult,ground clutter type 1,ground clutter type 2,ground clutter type 3,width,height,hitsound1,hitsound2,hitsound3,minvolume,maxvolumeenergy,flash sprite,solid sprite,smoke sprite,surface type ID,Radial Clutter 1, Radial Clutter 2, Radial Clutter 3, Radial Clutter 4, Radial Clutter 5
+#cobble,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+#default,1,0,2,2,1,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+#glass,2,0.1,0.1,0.05,1,0,0,0,0,0,sounds/hitglass.wav,sounds/hitglass.wav,sounds/hitglass.wav,0.15,100000,0,6,16,0,0,0,0,0,0
+#metal,1,0.02,0.6,0.5,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+#Plaster,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+#pond,0.1,0,0.8,0.7,199,0,0,0,0,0,sounds/hitwater1.wav,sounds/hitwater2.wav,sounds/hitwater1.wav,0.15,100000,0,6,16,0,0,0,0,0,0
+#rubble1,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+#tileroof,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+#wood,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+airbase1,0.3,0.05,0.7,0.5,1.4,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,0,0,0,0
+airvehicle,1,0,0,2,1,0,0,0,0,0, sounds/tex/avhit1.wav,sounds/tex/avhit3.wav,sounds/tex/avhit2.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+asphault1,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+awning1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+awning1,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+barerock1,0.5,0.25,0.6,0.5,8,14,15,0,1,1,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,8,6,15,0,0
+barnwall,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+barnwalldmg,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+barracks1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+barracks1a,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+barracks2,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+barracks2a,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+barrel,1,0,2,2,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+barrel2,1,0,2,2,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+barreltop,1,0,2,2,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+base,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+baywin,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+baywindam,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+be7lod,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+beach1-4,0.3,0.05,0.7,0.5,1.4,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,3,7,0,0,0,0
+beams1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+beams1dmg,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+bel1int,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+bell,1,0,2,2,1,0,0,0,0,0,sounds/bell.wav,sounds/bell2.wav,sounds/tex/gvhit1.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+bermdirt1,0.3,0.05,0.7,0.5,1.4,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+bldgconcrete001,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+bldgconcrete002,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+bldgconcrete003,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+bldgconcrete004,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+bldgdoors001,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+bldgwindows001,2,0.1,0.1,0.05,1,0,0,0,0,0,sounds/hitglass.wav,sounds/hitglass.wav,sounds/hitglass.wav,0.15,100000,0,6,16,0,0,0,0,0,0
+blueshng,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+blumaine1,1,0,2,2,1,0,0,0,0,0, sounds/tex/fpshit1.wav,sounds/tex/fpshit1.wav,sounds/tex/fpshit1.wav,0.15,100000,20,0,9,0,0,0,0,0,0
+boathouse1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+boathouse2,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+boathousedmg1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+brickcol,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+brickcoldam,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+brickdec,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+brickdecdam,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+brickdecdam2,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+Brick-rough2,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+Brick-rough2d,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+briderails2,1,0.02,0.6,0.5,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+bridgegrate,1,0.02,0.6,0.5,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+bridgerail,1,0.02,0.6,0.5,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+bridgeroad,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,4,0,0,0,0,0
+bridgesteel001,1,0.02,0.6,0.5,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+bridgesteel002,1,0.02,0.6,0.5,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+bridgestone,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+bridgewood001,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+brkblddg001,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+BrnStoneStep,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+brownbrick001,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+brownbrick002,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+brownbrick003,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+brownbrick004,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+brownbrick005,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+brownbrick006,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+brownbrick007,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+buildingstuff1,1,0,2,2,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+bunker2,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+bunkerfloor1,1,0,2,2,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+bunkerfloor2,1,0,2,2,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+bunkerstairs1,1,0,2,2,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+burnflor,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+camonet1,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitfabric1.wav,sounds/hitfabric2.wav,sounds/hitfabric3.wav,0.15,100000,0,0,0,0,0,0,0,0,0
+casleyard_bricks,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+champs1,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+charplank,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+clear1,0.3,0.05,0.7,0.5,1.4,9,13,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,10,0,0
+clearfarm1nesw,0.4,0.15,0.8,0.7,4,9,13,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,2,0,0
+clearfarms1n,0.4,0.15,0.8,0.7,4,9,13,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,2,0,0
+clearfarms1ne,0.3,0.05,0.7,0.5,1.4,9,13,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,2,0,0
+clearfarms1xne,0.4,0.15,0.8,0.7,4,9,13,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,2,0,0
+clearforest1n,0.3,0.2,0.8,0.7,4,3,4,7,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,10,0,0
+clearforest1ne,0.3,0.05,0.7,0.5,1.4,3,4,7,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,10,0,0
+clearforest1xne,0.3,0.2,0.8,0.7,4,3,4,7,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,10,0,0
+clearrocky1n,0.5,0.25,0.6,0.5,8,9,13,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,1,6,8,15,0,0
+clearrocky1ne,0.3,0.05,0.7,0.5,1.4,9,13,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,1,6,8,15,0,0
+clearrocky1xne,0.5,0.25,0.6,0.5,8,9,13,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,1,6,8,15,0,0
+cleartrees1n,0.3,0.2,0.8,0.7,4,3,4,7,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,10,0,0
+cleartrees1ne,0.3,0.2,0.8,0.7,4,3,4,7,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,10,0,0
+cleartrees1xne,0.3,0.2,0.8,0.7,4,3,4,7,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,10,0,0
+cloisterlod,1,0,2,2,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+clouddeck1,0.1,0.18,0.7,0.6,100,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,0,0,0,0,0,0,0,0
+clrk150_8-3,0.3,0.2,0.8,0.7,4,9,13,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,10,0,0
+clrk150_8-5,0.3,0.2,0.8,0.7,4,9,13,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,10,0,0
+clrk150_8-5x,0.3,0.2,0.8,0.7,4,9,13,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,10,0,0
+clrk150_8-7,0.3,0.2,0.8,0.7,4,9,13,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,10,0,0
+clrk150_8x-5,0.3,0.2,0.8,0.7,4,9,13,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,10,0,0
+coast1-2,0.4,0.15,0.8,0.7,4,11,13,0,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,3,7,15,0,0,0
+coast1-4,0.4,0.15,0.8,0.7,4,11,13,0,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,3,7,15,0,0,0
+coast1-4r3,0.4,0.15,0.8,0.7,4,0,0,0,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+coast1-4r3w,0.1,0,0.8,0.7,199,0,0,0,1,1,sounds/hitwater1.wav,sounds/hitwater2.wav,sounds/hitwater1.wav,0.15,100000,0,6,16,0,0,0,0,0,0
+coast1-6,0.4,0.15,0.8,0.7,4,11,13,0,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,3,7,15,0,0,0
+coast1-6d,0.4,0.15,0.8,0.7,4,11,13,0,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,3,7,15,0,0,0
+coast1-7,0.4,0.15,0.8,0.7,4,11,13,0,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,3,7,15,0,0,0
+coast1beach4,0.3,0.05,0.7,0.5,1.4,11,13,0,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,3,7,15,0,0,0
+coast3-5,0.4,0.15,0.8,0.7,4,11,13,0,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,3,7,15,0,0,0
+coast8-3,0.4,0.15,0.8,0.7,4,11,13,0,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,3,7,15,0,0,0
+coast8-3d,0.4,0.15,0.8,0.7,4,11,13,0,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,3,7,15,0,0,0
+coast8-5,0.4,0.15,0.8,0.7,4,11,13,0,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,3,7,15,0,0,0
+coast8-7,0.4,0.15,0.8,0.7,4,11,13,0,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,3,7,15,0,0,0
+cobble,1,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+cobblemtex1,1,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+concrete_paving001,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+concrete_paving002,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+concreteblock001,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+concreteblock002,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+concreteblock003,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+concreteblock004,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+concreteblockwall,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+concretepad,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+concretepad2,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+concretestained,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+corgTin,1,0.02,0.6,0.5,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+CorrogateShiny,1,0.02,0.6,0.5,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+CorrogateShiny2,1,0.02,0.6,0.5,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+corrugatedmetal,1,0.02,0.6,0.5,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+crate,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+crate2,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+crates1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+crates1a,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+crkwillowtst1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+croptree1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+croptree1,0.4,0.15,0.8,0.7,4,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+cutstonewall,1,0,2,2,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+cutstonewalldam,1,0,2,2,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+cypress,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+decblocks001,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+decblocks002,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+decblocks003,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+decblocks004,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+decplaster001,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+decplaster002,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+decplaster003,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+decplaster004,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+decplaster005,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+decplaster006,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+decplaster007,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+decplaster008,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+decplaster009,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+decplaster010,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+decplaster011,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+default,0.3,0.05,0.7,0.5,1.4,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+dinant1,0.4,0.15,0.8,0.7,4,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+dinant2,0.4,0.15,0.8,0.7,4,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+dirt01,0.5,0.05,0.8,0.7,3,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,0,10,0,0
+dirt02,0.5,0.05,0.8,0.7,3,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,0,4,6,8,0
+dirtapron1,3,0.05,0.7,0.5,1.2,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+dirtfloor1,0.5,0.05,0.8,0.7,3,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,8,0,0,0,0
+dirtrunway1,3,0.05,0.7,0.5,1.2,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+docksign,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+dockwindow,2,0.1,0.1,0.05,1,0,0,0,0,0,sounds/hitglass.wav,sounds/hitglass.wav,sounds/hitglass.wav,0.15,100000,0,6,16,0,0,0,0,0,0
+dunes1,5,0.75,0.4,0.3,4,4,3,2,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,9,11,12,2,0
+dunesclear1n,5,0.75,0.4,0.3,4,4,3,2,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,2,10,0
+dunesclear1ne,0.3,0.05,0.7,0.5,1.4,4,3,2,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,2,10,0
+dunesclear1xne,5,0.75,0.4,0.3,4,4,3,2,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,2,10,0
+dunesfarm1n,0.4,0.15,0.8,0.7,4,9,3,4,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,2,3,6,0
+dunesfarm1ne,5,0.75,0.4,0.3,4,9,3,4,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,2,3,6,0
+dunesfarm1xne,0.4,0.15,0.8,0.7,4,9,3,4,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,2,3,6,0
+elmbrnch,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+elmclump1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+evgrnbush1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+exitleft1,0.3,0.25,0.5,0.4,6,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,7,28,5,0,0,0,0,0
+extmoulding001,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+fact2,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+farm1,0.1,0.05,0.7,0.6,1,9,13,16,1,1,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,0,2,3,2,0,0
+farmbase1,0.1,0.05,0.7,0.6,1,8,2,1,1,1,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,0,3,2,6,0,0
+farmquilt1,0.4,0.15,0.8,0.7,4,1,7,2,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,2,6,0,0
+farmquilt1n,0.4,0.15,0.8,0.7,4,1,7,2,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,2,6,0,0
+farmquilt1ne,0.3,0.05,0.7,0.5,1.4,1,7,2,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,2,6,0,0
+farmquilt1xne,0.4,0.15,0.8,0.7,4,1,7,2,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,2,6,0,0
+farms1,0.4,0.15,0.8,0.7,4,9,13,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,2,0,0
+farms1a,0.4,0.15,0.8,0.7,4,9,13,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,2,0,0
+farms1b,0.4,0.15,0.8,0.7,4,9,13,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,2,0,0
+farms2,0.4,0.15,0.8,0.7,4,9,13,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,2,0,0
+farms3,0.4,0.15,0.8,0.7,4,9,13,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,2,0,0
+farmstrees1n,0.4,0.15,0.8,0.7,4,3,4,7,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,13,0,0
+farmstrees1ne,0.4,0.15,0.8,0.7,4,3,4,7,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,13,0,0
+farmstrees1xne,0.3,0.2,0.8,0.7,4,3,4,7,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,13,0,0
+fence1,1,0,2,2,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+ffence1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+fforesttex1,0.3,0.25,0.8,0.7,8,3,4,5,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+flags1,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitfabric1.wav,sounds/hitfabric2.wav,sounds/hitfabric3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+flags1a,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitfabric1.wav,sounds/hitfabric2.wav,sounds/hitfabric3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+floortile1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+forest1,0.3,0.2,0.8,0.7,4,3,4,7,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,13,13,13,0,0
+forestbarerock1n,0.3,0.2,0.8,0.7,4,14,15,0,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,13,0,0
+forestbarerock1ne,0.3,0.2,0.8,0.7,8,14,15,0,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,13,0,0
+forestbarerock1xne,0.5,0.25,0.6,0.5,8,14,15,0,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,13,0,0
+forestfarms1n,0.4,0.15,0.8,0.7,4,3,4,7,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,13,0,0
+forestfarms1ne,0.3,0.2,0.8,0.7,6,3,4,7,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,13,0,0
+forestfarms1xne,0.4,0.15,0.8,0.7,4,3,4,7,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,13,0,0
+forestrocky1n,0.3,0.2,0.8,0.7,6,3,4,7,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,13,15,0
+forestrocky1ne,0.3,0.2,0.8,0.7,6,3,4,7,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,13,15,0
+forestrocky1xne,0.5,0.25,0.6,0.5,8,3,4,7,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,8,13,15,0
+fps,1,0,2,2,1,0,0,0,0,0, sounds/tex/fpshit1.wav,sounds/tex/fpshit2.wav,sounds/tex/fpshit3.wav,0.15,100000,20,0,9,0,0,0,0,0,0
+ftank,1,0.02,0.6,0.5,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+garage1,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+garage1a,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+garage1b,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+glacier1,2,0.1,0.1,0.05,1,0,0,0,0,0,sounds/hitwater1.wav,sounds/hitwater2.wav,sounds/hitwater1.wav,0.15,100000,0,6,16,0,0,0,0,0,0
+glass,2,0.1,0.1,0.05,1,0,0,0,0,0,sounds/hitglass.wav,sounds/hitglass.wav,sounds/hitglass.wav,0.15,100000,0,6,16,0,0,0,0,0,0
+grass1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+grayblebs1,1,0,2,2,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+grayconcrete1,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+grayconcrete1dam,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+grayroofmetal1,1,0.02,0.6,0.5,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+graywood1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+graywornwood,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+graywornwood1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+groundvehicle,1,0,2,2,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+guardtower1,0.1,0.18,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+hangar1,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+haphead,1,0,2,2,1,0,0,0,0,0, sounds/tex/fpshit1.wav,sounds/tex/fpshit1.wav,sounds/tex/fpshit1.wav,0.15,100000,20,0,9,0,0,0,0,0,0
+haphead1a,1,0,2,2,1,0,0,0,0,0, sounds/tex/fpshit1.wav,sounds/tex/fpshit1.wav,sounds/tex/fpshit1.wav,0.15,100000,20,0,9,0,0,0,0,0,0
+harbor1,0.4,0.15,0.8,0.7,4,13,15,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,6,7,0,0,0
+hay,0.1,0.18,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+hforest1,0.3,0.25,0.8,0.7,8,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+hforesttex1,0.3,0.25,0.8,0.7,8,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+hforesttex1n,0.3,0.05,0.7,0.5,1.4,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+hforesttex1ne,0.3,0.05,0.7,0.5,1.4,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+hforesttex1xne,0.3,0.25,0.8,0.7,8,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+icy1,0.5,0.25,0.6,0.5,8,0,0,0,0,0,sounds/hitwater1.wav,sounds/hitwater2.wav,sounds/hitwater1.wav,0.15,100000,0,6,16,0,0,0,0,0,0
+icyglacier1n,0.5,0.25,0.6,0.5,8,0,0,0,0,0,sounds/hitwater1.wav,sounds/hitwater2.wav,sounds/hitwater1.wav,0.15,100000,0,6,16,0,0,0,0,0,0
+icyglacier1ne,0.5,0.25,0.6,0.5,8,0,0,0,0,0,sounds/hitwater1.wav,sounds/hitwater2.wav,sounds/hitwater1.wav,0.15,100000,0,6,16,0,0,0,0,0,0
+icyglacier1xne,2,0.1,0.1,0.05,1,0,0,0,0,0,sounds/hitwater1.wav,sounds/hitwater2.wav,sounds/hitwater1.wav,0.15,100000,0,6,16,0,0,0,0,0,0
+infantryfb1,0.5,0.05,0.8,0.7,3,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+interfloor001,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+interfloor002,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+interior1,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+interior1dmg,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+intile003,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+intr1bot,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+intr1top,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+intr2bot,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+intr2top,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+iron001,1,0.02,0.6,0.5,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+junk1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+junk1dmg,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+junk2,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+junk2dmg,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+kiosk1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+leadroof,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+limedstonedam,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+metaldoor,1,0.02,0.6,0.5,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+metaldoor2,1,0.02,0.6,0.5,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+metalfloor,1,0.02,0.6,0.5,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+metalstep,1,0.02,0.6,0.5,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+metalwall2,1,0.02,0.6,0.5,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+metalwall3,1,0.02,0.6,0.5,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+mshack1,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+mshack1dmg,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+multitex1,0.1,0.18,0.7,0.6,100,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+multitex1rock,0.1,0.18,0.7,0.6,100,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+multitex2,0.1,0.18,0.7,0.6,100,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+newchrchlod,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+null1,0.1,0.18,0.7,0.6,100,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+oak,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+obstower01,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+office1,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+office1dmg,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+office2,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+office3,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+office4,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+officelod,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+parging,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+pargingscorch,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+parkgrass1,0.4,0.15,0.8,0.7,4,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,9,11,12,0
+pavedroad,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,4,0,0,0,0,0
+piling1,0.5,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+pinetrunk,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+plank,0,0,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+Plaster,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+plaster001,2,0,0.6,0.5,1,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+plaster002,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+plaster003,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+plaster004,2,0,0.6,0.5,1,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+plaster005,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+plaster006,2,0,0.6,0.5,1,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+plaster007,2,0,0.6,0.5,1,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+plaster008,2,0,0.6,0.5,1,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+plaster009,2,0,0.6,0.5,1,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+plaster010,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+plaster011,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+plaster012,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+plaster013,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+plasterchipped3,0,0,0.7,0.6,2,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+plasterstripe,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+plasterwithsoot,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+pond,0.1,0,0.8,0.7,199,0,0,0,0,0,sounds/hitwater1.wav,sounds/hitwater2.wav,sounds/hitwater1.wav,0.15,100000,0,6,16,0,0,0,0,0,0
+provingroundairfield1,0.3,0.05,0.7,0.5,1.4,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,5,0,0,0,0
+provingroundcenter1,0.3,0.05,0.7,0.5,1.4,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,5,0,0,0
+provingroundtop1,0.3,0.05,0.7,0.5,1.4,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,5,0,0,0
+radio,1,0,2,2,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+radioside,1,0,2,2,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+rafters1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+rails1,2,0.33,0.7,0.6,7,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+rails2,2,0.33,0.7,0.6,7,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,4,0,0,0,0,0
+railscorch,0.1,0.18,0.7,0.6,7,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+rangeterrain01,0.5,0.05,0.8,0.7,3,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,0,4,6,8,0
+rangeterrain02,0.5,0.05,0.8,0.7,3,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,0,4,6,8,0
+rd1-3,0.4,0.15,0.8,0.7,4,1,6,9,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,0,0,0
+rd1-3f,0.3,0.25,0.8,0.7,5,3,4,8,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,13,13,0,0
+rd1-3ftxf,0.3,0.25,0.8,0.7,5,3,4,8,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,13,13,0,0
+rd1-3txf,0.3,0.25,0.8,0.7,5,3,4,8,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,13,13,0,0
+rd1-4,0.4,0.15,0.8,0.7,4,1,6,9,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,0,0,0
+rd14-36,0.4,0.15,0.8,0.7,4,1,6,9,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,0,0,0
+rd14-36txf,0.4,0.15,0.8,0.7,5,3,4,8,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,13,13,0,0
+rd1-4f,0.4,0.15,0.8,0.7,5,3,4,8,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,13,13,0,0
+rd1-4ftxf,0.4,0.15,0.8,0.7,5,3,4,8,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,13,13,0,0
+rd14r3-6,0.4,0.15,0.8,0.7,4,1,6,9,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,0,0,0
+rd14r3-6sta1,0.4,0.15,0.8,0.7,4,1,6,9,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,0,0,0
+rd1-4txf,0.4,0.15,0.8,0.7,5,3,4,8,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,13,13,0,0
+rd1-4txfn,0.4,0.15,0.8,0.7,5,3,4,8,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,13,13,0,0
+rd1-4txfs,0.4,0.15,0.8,0.7,5,3,4,8,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,13,13,0,0
+rd1-6,0.4,0.15,0.8,0.7,4,1,6,9,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,0,0,0
+rd1-6txf,0.4,0.15,0.8,0.7,4,3,4,8,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,13,13,0,0
+rd1ln1,2,0.02,0.6,0.5,1,1,6,9,1,1,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,0,2,3,0,0,0
+rd1tordw4,0.4,0.15,0.8,0.7,4,1,6,9,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,0,0,0
+rd3-4,0.4,0.15,0.8,0.7,4,1,6,9,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,0,0,0
+rd3-4txf,0.4,0.15,0.8,0.7,4,3,4,8,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,13,13,0,0
+rd3ti14,0.4,0.15,0.8,0.7,4,1,6,9,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,0,0,0
+rd3ti14txf,0.4,0.15,0.8,0.7,4,3,4,8,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,13,13,0,0
+rd6ti14,0.4,0.15,0.8,0.7,4,1,6,9,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,0,0,0
+rd6ti14txf,0.4,0.15,0.8,0.7,4,3,4,8,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,13,13,0,0
+rdbridge1,0.4,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+rdrr6rv1-3,0.4,0.15,0.8,0.7,4,10,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,2,14,0,0
+rdrr6rv1-4,0.4,0.15,0.8,0.7,4,10,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,2,14,0,0
+rdrrrv1-2,0.4,0.15,0.8,0.7,4,10,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,2,14,0,0
+rdrrrv1-3,0.4,0.15,0.8,0.7,4,10,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,2,14,0,0
+rdrrrv1-4,0.4,0.15,0.8,0.7,4,10,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,2,14,0,0
+rdrrrv1-4txf,0.4,0.15,0.8,0.7,4,10,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,2,14,0,0
+rdrrrv1-6,0.4,0.15,0.8,0.7,4,10,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,2,14,0,0
+rdrrrv4i1-4,0.4,0.15,0.8,0.7,4,10,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,2,14,0,0
+rdrrrv7-4,0.4,0.15,0.8,0.7,4,10,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,2,14,0,0
+rdw1-3,0.4,0.15,0.8,0.7,4,1,6,9,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,0,0,0
+rdw1-4,0.4,0.15,0.8,0.7,4,1,6,9,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,0,0,0
+rdw1-4bird3-6,0.4,0.15,0.8,0.7,4,1,6,9,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,0,0,0
+rdw14i36,0.4,0.15,0.8,0.7,4,1,6,9,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,0,0,0
+rdw14r3-6,0.4,0.15,0.8,0.7,4,1,6,9,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,0,0,0
+rdw1-6,0.4,0.15,0.8,0.7,4,1,6,9,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,0,0,0
+rdw3-4,0.4,0.15,0.8,0.7,4,1,6,9,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,0,0,0
+rdw3ti14,0.4,0.15,0.8,0.7,4,1,6,9,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,0,0,0
+rdw6ti14,0.4,0.15,0.8,0.7,4,1,6,9,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,0,0,0
+redbrick001,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+redbrick002,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+redbrick003,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+redbrick004,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+redbrick005,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+redbrick006,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+redbrick007,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+redbrick008,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+redbrick009,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+redbrick010,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+redbrick011,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+redbrick012,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+redbrick013,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+redbrick014,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+redwooddoor,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+rifletarget1,1,0,2,2,1,0,0,0,0,0,sounds/bell.wav,sounds/bell2.wav,sounds/bell.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+rivermouth1h,0.4,0.15,0.8,0.7,4,10,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+rivermouth1r,0.1,0,0.8,0.7,199,10,0,0,0,0,sounds/hitwater1.wav,sounds/hitwater2.wav,sounds/hitwater1.wav,0.15,100000,0,6,16,0,0,0,0,0,0
+rivers1,0.1,0,0.8,0.7,199,0,0,0,0,0,sounds/hitwater1.wav,sounds/hitwater2.wav,sounds/hitwater1.wav,0.15,100000,0,6,16,0,0,0,0,0,0
+rivers2,0.1,0,0.8,0.7,199,0,0,0,0,0,sounds/hitwater1.wav,sounds/hitwater2.wav,sounds/hitwater1.wav,0.15,100000,0,6,16,0,0,0,0,0,0
+rivers3,0.1,0,0.8,0.7,199,0,0,0,0,0,sounds/hitwater1.wav,sounds/hitwater2.wav,sounds/hitwater1.wav,0.15,100000,0,6,16,0,0,0,0,0,0
+rivers4,0.1,0,0.8,0.7,199,0,0,0,0,0,sounds/hitwater1.wav,sounds/hitwater2.wav,sounds/hitwater1.wav,0.15,100000,0,6,16,0,0,0,0,0,0
+roadrail1,0.1,0.18,0.7,0.6,6,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+roadt1,5,0.02,0.6,0.5,1,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+roadway01,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+roadway002,2,0.001,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+rocky1,0.5,0.35,0.6,0.5,8,12,13,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+rockybarerock1n,0.5,0.25,0.6,0.5,8,12,13,16,1,1,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,8,15,0,0,0
+rockybarerock1ne,0.5,0.25,0.6,0.5,8,12,13,16,1,1,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,8,15,0,0,0
+rockybarerock1xne,0.5,0.25,0.6,0.5,8,12,13,16,1,1,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,8,15,0,0,0
+rooftop001,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+rr1-2,0.4,0.15,0.8,0.7,4,10,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,2,14,0,0
+rr1-3,0.4,0.15,0.8,0.7,4,10,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,2,14,0,0
+rr1-4,0.4,0.15,0.8,0.7,4,10,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,2,14,0,0
+rr14i35,0.4,0.15,0.8,0.7,4,10,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,2,14,0,0
+rr14rd36,0.4,0.15,0.8,0.7,4,10,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,2,14,0,0
+rr14rdw36,0.4,0.15,0.8,0.7,4,10,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,2,14,0,0
+rr1-6,0.4,0.15,0.8,0.7,4,10,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,2,14,0,0
+rubble,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+rubble002,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+rubble003,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+rubble1,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+rubblesmll,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+rv1-2,0.4,0.15,0.8,0.7,4,9,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,5,15,4,0
+rv1-3,0.4,0.15,0.8,0.7,4,9,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,5,15,4,0
+rv1-4,0.4,0.15,0.8,0.7,4,9,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,5,15,4,0
+rv1-6,0.4,0.15,0.8,0.7,4,9,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,5,15,4,0
+rv1-end,0.4,0.15,0.8,0.7,4,9,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,5,15,4,0
+rv4i1-4,0.4,0.15,0.8,0.7,4,9,10,13,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,5,15,4,0
+scorchplaster,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+scorchwood,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+scrubstrip1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+shellhitsootdecal,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+shingle,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+shingle,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+shingles002,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+shiny metal,1,0.02,0.6,0.5,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+shnglroof,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,16,0,0,0,0
+shngroof2,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,16,0,0,0,0
+shrub2,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+shrubs1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+shutter,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+slatetile,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+smbush1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+smlltrees1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+sprucet1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+stainglass,2,0.1,0.1,0.05,1,0,0,0,0,0,sounds/hitglass.wav,sounds/hitglass.wav,sounds/hitglass.wav,0.15,100000,0,6,16,0,0,0,0,0,0
+stairs,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+stairsdark,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+starwillow1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+steel2,1,0,2,2,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+steps,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+stonecol,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+stonedec,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+stonesurface1,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+stonevault,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+stonewall,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+stonewall2,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+tallpine,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+tan_trans,2,0,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+tangray1,5,0.02,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,4,0,0,0,0,0
+tent,1,0,2,2,1,0,0,0,0,0,sounds/hitfabric1.wav,sounds/hitfabric2.wav,sounds/hitfabric3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+tent2,1,0,2,2,1,0,0,0,0,0,sounds/hitfabric1.wav,sounds/hitfabric2.wav,sounds/hitfabric3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+tentdam,1,0,2,2,1,0,0,0,0,0,sounds/hitfabric1.wav,sounds/hitfabric2.wav,sounds/hitfabric3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+tilebrwn,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+tilered,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+tileredbrwn,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+tileroof,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+tinbit,1,0,0,2,1,0,0,0,0,0, sounds/tex/avhit1.wav,sounds/tex/avhit3.wav,sounds/tex/avhit2.wav,0.15,100000,29,26,28,5,0,0,0,0,0
+tower2,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+tower2a,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+tower2b,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+townbldgroof1,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+trailer,1,0,2,2,1,0,0,0,0,0, sounds/tex/gvhit1.wav,sounds/tex/gvhit2.wav,sounds/tex/gvhit3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+tree1,0.1,0.18,0.7,0.6,100,3,4,7,1,1,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,29,26,28,0,13,13,13,0,0
+treeclump2,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+treeclump2a,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+treeline2a,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+treeline2b,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+treeline2c,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+treelines3,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+trees1,0.3,0.2,0.8,0.7,6,3,4,7,1,1,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,0,13,13,13,0,0
+treetrunk,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+treetrunk2,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+trim,0.1,0.02,0.6,0.5,1,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+twn1-1,0.4,0.15,0.8,0.7,4,7,12,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,3,0,0,0
+twn1-2,0.4,0.15,0.8,0.7,4,7,12,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,3,0,0,0
+twn1-3,0.4,0.15,0.8,0.7,4,7,12,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,3,0,0,0
+twn1-4,0.4,0.15,0.8,0.7,4,7,12,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,3,0,0,0
+twn1-5,0.4,0.15,0.8,0.7,4,7,12,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,3,0,0,0
+twn1-6,0.4,0.15,0.8,0.7,4,7,12,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,3,0,0,0
+twn1-7,0.4,0.15,0.8,0.7,4,7,12,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,3,0,0,0
+twn1-8,0.4,0.15,0.8,0.7,4,7,12,16,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,3,0,0,0
+twn1rd14i36,0.1,0.03,0.6,0.5,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+twrstrs,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+twrstrs_dmg,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+undammulti2,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+urbanedge1,0.4,0.15,0.6,0.7,4,3,5,7,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,2,3,3,0,0
+urbanground1,0.4,0.15,0.6,0.7,4,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,1,0,0,0,0,0
+urbaninter1,0.4,0,0.6,0.5,1,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,1,0,0,0,0,0
+urbaninter2,0.4,0,0.6,0.5,1,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,1,0,0,0,0,0
+urbaninter3,0.4,0,0.6,0.5,1,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,1,0,0,0,0,0
+urbaninter4,0.4,0,0.6,0.5,1,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,1,0,0,0,0,0
+urbaninter5,0.4,0,0.6,0.5,1,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,1,0,0,0,0,0
+urbanroad1,0.4,0,0.6,0.5,1,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,1,0,0,0,0,0
+urbanroad2,0.4,0,0.6,0.5,1,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,1,0,0,0,0,0
+urbanroad3,0.4,0,0.6,0.5,1,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,1,0,0,0,0,0
+urbsta4,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,1,0,0,0,0,0
+vbush,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+versnorth1,0.4,0.15,0.8,0.7,4,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+verssouth1,0.4,0.15,0.8,0.7,4,0,0,0,0,0,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+vilwhle3,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+vilwhle3dmg,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+vincot1dmg2,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+vincot1g1,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+vincotg1dmg,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+vincotg2,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+vincotg2dmg,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+wainscot,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+wainscotdam,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+wallpaper,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+wallpaper4damc,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+wallpaper4damd,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+wallpaperdam,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+walls,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+walls2,0.1,0.05,0.7,0.6,1,0,0,0,0,0,sounds/hitconcrete1.wav,sounds/hitconcrete2.wav,sounds/hitconcrete3.wav,0.15,100000,29,26,28,2,0,0,0,0,0
+water1,0.1,0,0.8,0.7,199,0,0,0,0,0,sounds/hitwater1.wav,sounds/hitwater2.wav,sounds/hitwater1.wav,0.15,100000,0,6,16,0,0,0,0,0,0
+wbush1,0.3,0.05,0.7,0.5,1.4,12,13,14,1,1,sounds/hitdirt1.wav,sounds/hitdirt2.wav,sounds/hitdirt3.wav,0.15,100000,0,7,28,0,3,5,0,0,0
+wdfloor,0,0,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+wgate1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,29,26,28,0,0,0,0,0,0
+whitefir1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+whitepine,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+whitevault,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+whitewashstone,0,0,0.7,0.6,2,0,0,0,0,0, sounds/tex/hground1.wav,sounds/tex/hground3.wav,sounds/tex/hground2.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+willowclump1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0
+windmil1,0.1,0.01,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+windmil2,0.1,0.01,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+windmil2a,0.1,0.01,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+windmil3,0.1,0.01,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+windmil3a,0.1,0.01,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+windmildmg,0.1,0.01,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+window,0.1,0.01,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,0,0,0,0,0,0
+wood,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+wood_floor,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+wood_floor2,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodentry1,0,0,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodfloor,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodfloor2,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodfloordark,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodfloordarkdam,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodfloorscorch2,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodfloorscorch3,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodflor1,0,0,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodflor2,0,0,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodflor3,0,0,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodflunder,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodhandrail,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodpanel1,0,0,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodpaneling,0,0,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodpart,0,0,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodpartdmg,0,0,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodpeak,0,0,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodplank,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodrail,0,0,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodrails1,0,0,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodroof,0,0,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodstrs,0,0,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodstrs_dmg,0,0,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodtrim,0,0,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodwall1,0,0,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+woodwall2,0,0,0.7,0.6,2,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,7,28,2,0,0,0,0,0
+yellowgrass1,0.1,0.18,0.7,0.6,100,0,0,0,0,0,sounds/hitwood1.wav,sounds/hitwood2.wav,sounds/hitwood3.wav,0.15,100000,0,8,24,0,0,0,0,0,0

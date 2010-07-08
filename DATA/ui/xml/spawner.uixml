@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<window id="spawner" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768"
+	style="background-color: #00000077;" layer="100">
+	<include file="lib/popup.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+	<view x="350" y="400" width="350" height="100" style="background-color: #00000088; 
+							border-sides: ui/textures/hud/border_side.bmp;
+							border-corner: ui/textures/hud/border_corner.bmp;
+							border-width: 4;
+							border-height: 4;" moveondrag="yes">
+		<text id="popup-caption" x="25" y="40" height="50" width="330" acceptfocus="no" style=" color: #FFFFFF;"/>
+		<progressbar id="spawnProgress" x="25" y="50" rright="25" height="16" minvalue="0" maxvalue="1"
+			fill="ui/textures/hud/blood-level-fill.bmp" background="ui/textures/hud/back-level-fill.bmp"
+			onupdate="updateSpawnProgress()"/>
+		<button id="popup-yes" x="100" y="10" width="150" height="25" label="&popup.cancel;" onclick="window.close()"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+	</view>
+	<script>
+		<!--
+		
+		var increment		= 25;
+		var spawnCallback 	= null;
+		var startDelay		= game.player.client.currentmission.spawndelay * 1000;
+		var spawnDelay		= startDelay;
+		var spawnTimer		= new CycleTimer(increment);
+		var spawnProgress	= window.findview("spawnProgress");
+		
+		function setSpawnCallback(c)
+		{
+			spawnCallback = c;
+		}
+		
+		function updateSpawnProgress()
+		{
+			if(spawnTimer.run())
+			{
+				spawnDelay -= increment;
+				
+				spawnProgress.value = 1 - (spawnDelay / startDelay);
+				
+				if(spawnDelay <= 0)
+				{
+					spawnCallback(true);
+					window.close();
+				}
+			}
+		}
+		
+		-->
+	</script>
+</window>
+

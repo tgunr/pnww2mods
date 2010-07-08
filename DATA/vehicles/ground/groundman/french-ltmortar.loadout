@@ -1,0 +1,29 @@
+#French infantry Light Mortar loadout file 
+
+# sounds available for the mounts
+sound1 = sounds\troop\frltmortar.wav
+sound2 = sounds\troop\frltmortar.wav
+sound3 = sounds\troop\lebel.wav
+
+loadout = 1
+
+# LightMortar HE
+mountnum = 1
+mountsound = sound1
+weapon = fr50mmmortar
+maxoversupply = 5
+
+# LightMortar Smoke
+mountnum = 2
+mountsound = sound2
+weapon = fr50mmmortar
+
+# Rifle
+mountnum = 3
+mountsound = sound3
+weapon = mas36
+
+# Knife
+mountnum = 4
+weapon = knifegeneric
+

@@ -1,0 +1,31 @@
+# G7aT1 Torpedo
+# CORN needs to set all this up
+
+type = torpedo
+diameter = 0.533
+weight = 1528
+object = g7at1
+
+# 320 kg (Hexanite)
+explosive = 1492000000
+
+fuzetime = 0.005
+bc = 2.95
+
+#modelspall = 1
+penetrationconstant = 0.069
+
+numshrapnelpieces = 50
+totalshrapnelmass = 525.0
+shrapnelpenetration = 0.0001
+
+explosionsoundnear = sounds\medcloseexp.wav
+explosionsoundfar = sounds\medfarexp.wav
+nearfardistance = 800
+
+# for torpedoes this is velocity shot out of launcher
+velocity = 20
+# range running for 390 sec at 40 kts
+lifetime = 390
+# 40 kts
+torpedorunspeed = 20.6

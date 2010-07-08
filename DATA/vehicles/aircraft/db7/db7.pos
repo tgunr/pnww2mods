@@ -1,0 +1,55 @@
+# Blenheim Mk IV pos file
+# Pilot
+position = 1
+hatchclosedsoundvolume = 1.0
+hatchopensoundvolume = 1.0
+canopyclosedsoundvolume = 0.5
+canopyopensoundvolume = 1.0
+engineidlevol = 0.5
+enginefullpowervol = 0.3
+# hatchsound = sounds\hit1.wav
+canopysound = sounds\canopy_open.wav
+canopyclosesound = sounds\canopy_close.wav
+
+# Bombardier
+position = 2
+hatchclosedsoundvolume = 1.0
+hatchopensoundvolume = 1.0
+canopyclosedsoundvolume = 0.5
+canopyopensoundvolume = 1.0
+engineidlevol = 0.5
+enginefullpowervol = 0.3
+# hatchsound = sounds\hit1.wav
+canopysound = sounds\canopy_open.wav
+canopyclosesound = sounds\canopy_close.wav
+
+groupmsg 1 100kg BOMB
+numberofsecondarygroups = 1
+bombsight britmk9a
+
+# Turret Gunner
+position = 3
+hatchclosedsoundvolume = 1.0
+hatchopensoundvolume = 1.0
+canopyclosedsoundvolume = 0.5
+canopyopensoundvolume = 1.0
+engineidlevol = 0.5
+enginefullpowervol = 0.3
+# hatchsound = sounds\hit1.wav
+canopysound = sounds\canopy_open.wav
+canopyclosesound = sounds\canopy_close.wav
+
+# Tunnel Gun
+position = 4
+hatchclosedsoundvolume = 1.0
+hatchopensoundvolume = 1.0
+canopyclosedsoundvolume = 0.5
+canopyopensoundvolume = 1.0
+engineidlevol = 0.5
+enginefullpowervol = 0.3
+# hatchsound = sounds\hit1.wav
+canopysound = sounds\canopy_open.wav
+canopyclosesound = sounds\canopy_close.wav
+
+
+

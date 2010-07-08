@@ -1,0 +1,29 @@
+# first thing in the weapon file should always be the weapontype
+# this causes the default_(weapontype).txt file to be loaded first
+# valid weapon types are:
+# SMG, SATCHEL, RIFLE, AUTO_PISTOL, GRENADE, REVOLVER, ITEM, KNIFE, LMG
+weaponType = RIFLE
+
+# sound to play when reloading
+reloadSound = sounds\lebelreload.wav
+
+# specify the weapon & clip (clip optional) model here
+# note that data\gr2data\FPS\ is prepended to these file names
+weaponModel = lebel\lebelMesh
+clipModel = lebel\lebel-gunmesh-5roundstripperclip
+
+# granny attach bone names for weapon & clip
+# the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
+weaponConnectTo = rifle-control
+weaponConnect = lebel-connect
+
+# the clipConnect bone in the clip attaches to the clipConnectTo bone in the gun
+clipConnectTo = lebel-stripperclip-control
+clipConnect = lebel-stripperclip-control
+
+# boresighting values .. how much off of "straight" does this gun need to fire
+aimVerticalCorrection = -0.86
+aimHorizontalCorrection = 0.13
+
+# how far back along the barrel to start the bullet (firepoints are at the tip)
+firepointDisplacement = 0.90

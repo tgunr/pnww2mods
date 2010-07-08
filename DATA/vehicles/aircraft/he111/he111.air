@@ -1,0 +1,57 @@
+#airfoils file for Blenheim Mk IV
+
+[bleniv_root]
+baseairfoil = raf28_17.pol
+up10degairfoil = raf28_17.pol
+down10degairfoil = raf28_17.pol
+stallfile = raf28_17.sta
+compressibilityfile = raf28_17.compress
+
+[bleniv_mid]
+baseairfoil = raf28_14.pol
+up10degairfoil = raf28_14.pol
+down10degairfoil = raf28_14.pol
+stallfile = raf28_14.sta
+compressibilityfile = raf28_14.compress
+
+[bleniv_ail]
+baseairfoil = raf28_12.pol
+up10degairfoil = raf28_12_up10.pol
+down10degairfoil = raf28_12_down10.pol
+stallfile = raf28_12.sta
+compressibilityfile = raf28_12.compress
+
+[bleniv_tip]
+baseairfoil = raf28_10.pol
+up10degairfoil = raf28_10.pol
+down10degairfoil = raf28_10.pol
+stallfile = raf28_10.sta
+compressibilityfile = raf28_10.compress
+
+[bleniv_horizstab]
+baseairfoil = naca0010.pol
+up10degairfoil = naca0010_45p_up10.pol
+down10degairfoil = naca0010_45p_down10.pol
+stallfile = naca0010.sta
+compressibilityfile = naca0010.compress
+
+[bleniv_vertstab]
+baseairfoil = naca0010.pol
+up10degairfoil = naca0010_45p_up10.pol
+down10degairfoil = naca0010_45p_down10.pol
+stallfile = naca0010.sta
+compressibilityfile = naca0010.compress
+
+[bleniv_fuselage]
+baseairfoil = naca0010.pol
+up10degairfoil = naca0010.pol
+down10degairfoil = naca0010.pol
+stallfile = naca0010.sta
+compressibilityfile = naca0010.compress
+
+[flatplate]
+baseairfoil = flatplat.pol
+up10degairfoil = flatplat.pol
+down10degairfoil = flatplat.pol
+stallfile = flatplat.stall
+compressibilityfile = flatplat.compress

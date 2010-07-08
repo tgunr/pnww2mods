@@ -1,0 +1,73 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>4</key>
+  <body>title = Basic Chat Communication
+1.0.label = Basic Layout
+
+# Clear or detune Radio 3 to be blank.
+	
+	1.1.alert.modal = The chat window is the basic way to communicate with other players in Battleground Europe.[NL][NL]It has 6 &#34;radios&#34; you can transmit and receive messsages on. Each radio can be tuned to one of a number of available channels.
+	
+		1.1.alert.hilite = chatview,target
+	
+		1.1.alert1.modal = Each numbered radio (1-6) can be accessed via the same numbered function keys (F1-F6).[NL][NL]The label of the radio shows the channel that radio is tuned to.
+
+		1.1.alert1.hilite = channels,target
+		
+		1.1.alert5 = Basic operation is simple: press Enter to open the text entry buffer, type a message, such as &#34;Hello,&#34; and press Enter again to send the message.[NL][NL]Send &#34;hello&#34; to players in the area.
+		
+		1.1.label = Chat Entry.
+		
+		1.1.complete.hilite = chatinput
+
+		1.1.complete = Good.  Other players on the channel, or close to you in the game world would have received the message.
+
+	1.2.alert.modal = When in the game world, the default chat channel (when you press Enter to chat, rather than one of the radios), is Area chat.[NL][NL]Friendly players within 100 meters will receive your message.  This is an excellent way for players in the same area to coordinate.[NL][NL]Be careful though.  Close enemy units see garbled text that might give your position away (although they will not receive your text message).
+
+		1.2.alert1 = Your Mission channel allows you to communicate with everyone on the same mission, regardless of their distance.[NL][NL]Select the Mission channel by pressing F1.
+		
+		1.2.alert1.hilite = F1,target
+
+		1.2.label = Mission Channel
+		
+		1.2.complete = Notice that the F1 channel header was highlighted and the chat bar opened.
+		
+	1.3.alert = Enter some text and then press Enter to send on the Mission channel (radio F1).
+
+		1.3.label = Send Chat to Mission
+
+		1.3.complete = Good.
+
+	1.4.alert.modal = Your radios are automatically tuned to several channels but you may customize these.
+
+		1.4.alert1 = To tune a radio, click on the radio header you want to tune. Use {guicursor} to bring up the mouse if you are spawned in.[NL][NL]A List of available channels will be shown and you can click the channel you want that radio to be tuned to.[NL][NL]Click on the F3 radio header and select the Side channel.
+
+		1.4.alert1.hilite = F3,target
+
+		1.4.label = Tune the radio F3
+
+		1.4.complete = Good.  Radio F3 is now tuned to the Side channel.
+
+	1.5.alert.modal = Chatting on radio F3 will now be sent to anyone on the &#34;side&#34; channel.[NL][NL]If you are allied, that includes French and British players. If you are axis, that will include all German players. 
+
+		1.5.alert1.modal = A useful channel for new players is the Help channel, radio F6.[NL][NL]If you have any questions or need help, ask on this channel and other players or game managers will attempt to help you.
+
+		1.5.alert2.modal =  The chat interface is also used to enter various commands such as adding someone to your friends list, accept a squad invitation, or send a private message.[NL][NL]These commands are entered by adding a dot (.) or slash (/) in front of the command.
+
+		1.5.alert3 = An example of such a command is the &#34;time&#34; command.[NL][NL]Open any radio, type &#34;/time&#34; and press Enter.
+
+		1.5.label = Entering Chat Commands
+
+		1.5.complete.modal = Good. You should see the time for your location and the server location the chat window.[NL][NL]A full list of available commands can be found in the Manuals tab under Chat Commands.
+	
+	1.6.alert.modal = This concludes the basic chat tutorial.
+	
+		1.6.label = End Tutorial</body>
+  <branch>1</branch>
+  <brief>Learn the basics of the chat system. Change channels, send private messages and chat with friends.</brief>
+  <handler>basic.chat</handler>
+  <instance>2</instance>
+  <next>basic.hud</next>
+  <requires>basic.map</requires>
+  <title>Basic Chat System</title>
+</content>

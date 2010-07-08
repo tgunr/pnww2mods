@@ -1,0 +1,60 @@
+# Blenheim Mk IV State File
+
+sound 1 enginesound1 enginesound 1
+#DOF gear: state type, name of variable, name, time to articulate
+#DOF flaps: state type, name of variable, name, number of state, time to articulate
+#multiple states requier multiple lines
+#DOF prop: state type, name of variable, name, # of engine, RPM to disc state
+dofstate 1 gearstate gear 8781
+dofstate 1 flapstate1 flap 1 4178
+dofstate 1 propstate1 prop 1 500
+dofstate 1 propstate2 prop 2 500
+dofstate 1 canopystate1 canopy 1 1500
+#dofstate 1 hatchstate1 hatch 1 2000
+dofstate 2 bombbaydoor bombbaydoor 2000
+#SMOKE: state type, name of variable, DOF name, smoke type, number
+
+smokestate 1 fuelleak1 fleak2 fuelleak 1
+smokestate 1 fuelleak2 fleak1 fuelleak 2
+smokestate 1 fuelleak3 fleak3 fuelleak 3
+smokestate 1 fuelleak4 fleak4 fuelleak 4
+smokestate 1 fuelfire1 fleak2 fuelfire 1
+smokestate 1 fuelfire2 fleak1 fuelfire 2
+smokestate 1 fuelfire3 fleak3 fuelfire 3
+smokestate 1 fuelfire4 fleak4 fuelfire 4
+smokestate 1 oilleak1 oleak1 oilleak 1
+smokestate 1 oilleak2 oleak2 oilleak 2
+#smokestate 1 glycolleak1 gleak1 glycolleak 1 1
+smokestate 1 enginefire1 efire1 enginefire 1
+smokestate 1 enginefire2 efire2 enginefire 2
+smokestate 1 wingtipvortexleft vortl wingvortex 1 
+smokestate 1 wingtipvortexright vortr wingvortex 2
+smokestate 1 exhaust1 eexh1l exhaust 1
+smokestate 1 exhaust1 eexh1r exhaust 1
+smokestate 1 exhaust2 eexh2l exhaust 2
+smokestate 1 exhaust2 eexh2r exhaust 2
+
+# Currently too many states
+# tread dust
+# smokestate 1 treaddust1 tdustr1 treaddust 1
+# smokestate 1 treaddust2 tdustl1 treaddust 2
+# smokestate 1 treaddust3 tdustm1 treaddust 3
+
+# This state is for Exploding planes	
+
+effect 1 crashexplosion crashexplosion
+
+# visdamage <vis damage group name> <mass object name(in .mass file)> <emitter object> <ejectspeed>
+visdamage lwing mass_lwing elwingcrap
+visdamage rwing mass_rwing erwingcrap
+visdamage engine1 mass_eng1 
+visdamage engine2 mass_eng2 
+
+visdamage lhstab mass_lhstab
+visdamage rhstab mass_rhstab
+visdamage cvstab mass_cvstab
+
+visdamage prop1 mass_prop1 none 0 engine1
+visdamage prop2 mass_prop2 none 0 engine2
+
+visdamage hulk

@@ -1,0 +1,55 @@
+# General Purpose 250lb bomb
+# Rev. 4/18/02 - bloo
+
+type = bomb
+diameter = 0.2
+weight = 113.5
+ammoweight = 113.5
+velocity = 0
+tracertime = 0.0
+object = gp250
+explosive = 157000000
+# 40 kg TNT
+# 157000000 Danaher
+
+fuzetime = 0.01
+bc = 2.5
+lifetime = 180.0
+ricochetangle = 90
+penetrationconstant = 0.00015
+dontdisplayfirstframe = 0
+
+numshrapnelpieces = 100
+totalshrapnelmass = 100
+
+explosionsoundnear = sounds\lrgcloseexp.wav
+explosionsoundfar = sounds\lrgfarexp.wav
+nearfardistance = 1000
+
+# new HE model variables
+#
+#  use_new_he .. set to 1 to enable (and set defaults for) the new HE model
+#  nhe_diameter ..  sets the diameter of the shrapnel bits
+#  nhe_weight .. sets the minimum weight for the shrapnel bits 
+#  nhe_min_pen_const .. the PC of the shrapnel bit will never be less than this (formula is very complex though)
+#  nhe_ric_angle .. sets the ricochet angle of the shrapnel bits
+#  nhe_energy_mult .. how much of the explosive energy is transferred to the shrapnel
+#  nhe_min_pieces .. see nhe_max_pieces
+#  nhe_max_pieces .. total number of shrapnel is linearly interpolated between min and max pieces
+#  nhe_max_per_veh .. caps the number of shrapnel bits fired at each vehicle (performance tuning)
+#      note that "removed" shrapnel is accumulated, so if 300 could hit, and you had this at 100, the average mass would be multiplied by 3
+#  nhe_add_speed .. kicker speed for the shrapnel bits .. formula is (kicker + (rand(0,1) * energy speed))
+#  nhe_timeout .. how long to project the shrapnel bits in the world (seconds)
+
+use_new_he = 1
+nhe_diameter = 0.008
+nhe_weight = 0.007
+nhe_min_pen_const = 0.00000015
+nhe_ric_angle = 79.9999
+nhe_energy_mult = 0.5
+nhe_min_pieces = 15890
+nhe_max_pieces = 15890
+nhe_max_per_veh = 75
+nhe_add_speed = 100.0
+nhe_timeout = 0.15
+nhe_max_mass_mult = 15

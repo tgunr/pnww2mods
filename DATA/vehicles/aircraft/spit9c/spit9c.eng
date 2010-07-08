@@ -1,0 +1,66 @@
+#engine stats file for Spitixc
+[merlin66]
+type = propeller
+basehorsepower = 1680
+basehpalt = 3300
+# 18 lbs of boost
+basehppress = 1.225
+basehprpm = 3000
+basehpexhausttemp = 1100
+idlerpm = 1000
+idlethrottlepos = 0.04
+# most engines mil power fuel consumption is 360-380
+fuelperhphour = 0.240
+# most engines econ power fuel consumption is 190-200
+# this setting used for econrpm only
+oilconsumptionperhour = 5
+# neg_g_fuel_cutout = 1
+
+# note: minimum pressure to maintain rpm will be used
+#wepmaxpress = 1.0
+#milmaxpress = .85
+#climbmaxpress = 0.85
+#conmaxpress = 0.65
+#idlepressureatidle = 0.05
+#idlepressureatmaxrpm = -0.2
+# in seconds
+maxweptime = 300
+maxmiltime = 1800
+weprpm = 3000
+milrpm = 3000
+climbrpm = 2850
+econrpm = 2650
+
+superchargetype = twospeed
+speed1critalt = 3300
+speed1efficiency = 1
+speed1efficiencytop = 1
+speed1efficiencybottom = 0.97
+speed1maxclimbboost = 0.82
+speed1maxmilboost = 1.225
+speed1maxwepboost = 1.246
+speed2critalt = 7000
+speed2efficiency = 1
+speed2efficiencytop = .775
+speed2efficiencybottom = .79
+speed2maxclimbboost = 0.82
+speed2maxmilboost = 1.225
+speed2maxwepboost = 1.246
+shiftalt = 5000
+
+#degrees from the thrust line for exhaust thrust
+exhaustthrustangle = 75
+# 1 lb = 4.45N this is in newtons
+exhaustthrustforce = 350
+
+weptype = normal
+
+propgearratio = 0.477
+
+# 1 = clockwise from pilot's perspective if he's behind the prop
+# -1 = counterclockwise
+propspindirection = 1
+
+criticalrpm = 200
+starterrpm = 100
+starterhp = 10

@@ -1,0 +1,27 @@
+# 20mm Hispano for DeWotine 520 and other French planes with 20mm cannons
+# These planes used Hispano type 404
+# Information taken from Hispano 404
+# Created 9/3/02 - doc
+
+mass = 47.0
+firetype = auto
+rateoffire = 690
+#syncrateoffire = 600
+#syncrateoffire is a placeholder
+dispersion = 0.03
+# dispersion is placeholder
+
+ammotype1 = 20mm_hispano404_ap
+ammotype2 = 20mm_hispano404_he
+ammotype3 = 20mm_hispano404_tracer
+ghostrof = 200
+ghostammotype = 20mm_hispano404_he
+
+#cliprounds = 0
+#reloadtime = 5
+#nomuzzlesmoke = 1
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = na
+

@@ -1,0 +1,44 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<masses>
+<mass name="mass_wheel1"
+	mass="1" volume="0.212177"
+	modelcmx="-1.006858" modelcmy="+2.551858" modelcmz="-0.661867"
+	unitinertiaxx="+0.158389" unitinertiayy="+0.084188" unitinertiazz="+0.082510"
+	unitinertiaxy="+0.000000" unitinertiaxz="+0.000000" unitinertiayz="+0.000539"/>
+<mass name="mass_wheel2"
+	mass="1" volume="0.212177"
+	modelcmx="+1.006858" modelcmy="+2.551858" modelcmz="-0.661867"
+	unitinertiaxx="+0.158389" unitinertiayy="+0.084188" unitinertiazz="+0.082510"
+	unitinertiaxy="+0.000000" unitinertiaxz="+0.000000" unitinertiayz="+0.000539"/>
+<mass name="mass_lefttread"
+	mass="1" volume="0.041740"
+	modelcmx="-0.930000" modelcmy="-0.857991" modelcmz="-0.441616"
+	unitinertiaxx="+0.488847" unitinertiayy="+0.010212" unitinertiazz="+0.498640"
+	unitinertiaxy="+0.000000" unitinertiaxz="+0.000000" unitinertiayz="+0.001196"/>
+<mass name="mass_lefttread_1"
+	mass="1" volume="0.097096"
+	modelcmx="-0.930000" modelcmy="-0.634854" modelcmz="-0.783652"
+	unitinertiaxx="+0.072600" unitinertiayy="+0.040440" unitinertiazz="+0.040440"
+	unitinertiaxy="+0.000000" unitinertiaxz="+0.000000" unitinertiayz="+0.000000"/>
+<mass name="mass_righttread"
+	mass="1" volume="0.096504"
+	modelcmx="+0.930000" modelcmy="-2.494783" modelcmz="-0.470636"
+	unitinertiaxx="+0.058815" unitinertiayy="+0.024502" unitinertiazz="+0.067368"
+	unitinertiaxy="-0.000000" unitinertiaxz="+0.000000" unitinertiayz="-0.007140"/>
+<mass name="mass_righttread_1"
+	mass="1" volume="0.144347"
+	modelcmx="+0.930000" modelcmy="+0.298526" modelcmz="-0.781149"
+	unitinertiaxx="+0.069525" unitinertiayy="+0.043106" unitinertiazz="+0.046424"
+	unitinertiaxy="+0.000000" unitinertiaxz="+0.000000" unitinertiayz="-0.000289"/>
+<mass name="mass_engine"
+	mass="1" volume="0.070922"
+	modelcmx="-0.680045" modelcmy="+2.231115" modelcmz="+0.064865"
+	unitinertiaxx="+0.245317" unitinertiayy="+0.073626" unitinertiazz="+0.208145"
+	unitinertiaxy="-0.058376" unitinertiaxz="-0.000150" unitinertiayz="-0.002568"/>
+<mass name="mass_engine_1"
+	mass="1" volume="0.070937"
+	modelcmx="+0.680045" modelcmy="+2.231114" modelcmz="+0.064865"
+	unitinertiaxx="+0.245295" unitinertiayy="+0.073620" unitinertiazz="+0.208127"
+	unitinertiaxy="+0.058371" unitinertiaxz="+0.000150" unitinertiayz="-0.002568"/>
+</masses>

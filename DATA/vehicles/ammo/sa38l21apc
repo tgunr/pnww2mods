@@ -1,0 +1,29 @@
+# Rev. 4/18/02 - bloo
+
+type = ballistic
+diameter = .037
+weight = 0.39
+velocity = 600
+tracertime = 7.9
+object = bullet1
+#explosive = 135000
+# don't know where this figure comes from -bloo
+
+fuzetime = 0.000
+bc = 0.92
+lifetime = 8.0
+ricochetangle = 87
+modelspall = 1
+penetrationconstant = 0.00000122
+dontdisplayfirstframe = 1
+
+#numshrapnelpieces = 30
+#totalshrapnelmass = 0.15
+
+#explosionsoundnear = sounds\medcloseexp.wav
+#explosionsoundfar = sounds\medfarexp.wav
+#nearfardistance = 800
+
+muzzleflash = 3
+hiteffect = heavymachinegun
+tracerscale = 3

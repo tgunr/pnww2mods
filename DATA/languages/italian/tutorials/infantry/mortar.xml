@@ -1,0 +1,70 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>7</key>
+  <body><?xml version=&#39;1.0&#39;?>
+<content type=&#34;5&#34;>
+  <key>7</key>
+  <body>title = Fanteria: Mortaio leggero
+
+20mhit = bersaglio a 20m colpito!
+50mhit = bersaglio a 50m colpito!
+100mhit = bersaglio a 100m colpito! Ottimo colpo.
+200mhit = bersaglio a 200m colpito! Ben fatto!
+500mhit = bersaglio a 500m colpito! Eccellente!
+gunrange = Linea di fuoco
+vehiclerange = Poligono di tiro per veicoli
+truckhit = Hai colpito il camion!
+carhit = Hai colpito l&#39;autoblindo!
+tankhit = Hai colpito il carro!
+
+1.0.label = Il mortaio leggero
+
+1.1.label = Introduzione
+  1.1.alert.modal = Un team di mortaisti leggeri può disfarsi rapidamente di fanteria nemica fortificata, creare un muro di fumo che consenta alle unità amiche di avanzare in campo apero e colpire ripetutamente gli attaccanti da dietro copertura.
+  
+1.2.label = Posizione di fuoco
+  1.2.alert = Muoviti verso la linea di fuoco.
+
+1.3.label = Prepare il mortaio
+  1.3.alert = Il mortaio deve essere preparato sul terreno. Mettiti disteso ora premendo {fpprone}.
+
+1.4.label = Preparare il mortaio (cont.)
+  1.4.alert = Prepara il tuo mortaio premendo {fpdeploy}.
+  
+1.5.label = Usara la mappa per localizzare i bersagli
+  1.5.alert = Un mortaista efficente deve essere in grado di determinare con precisione la distanza dal bersaglio. Con la pratica si può imparare a stimare questa distanza. Per ora, premi {showingamemap} per visualizzare la mappa.
+  1.5.complete.modal = La mappa mostra le posizioni nemiche segnalate da tuoi compagni di squadra. Può anche dare un&#39;idea sulla distanza di luoghi di interesse nelle vicinanze, come le strade e gli edifici.
+  
+ 1.6.label = Determinare la distanza
+  1.6.alert.modal = Ingrandisci la mappa e prendi nota dell&#39;anello che circonda la tua posizione. Questo anello si estende per 200 metri intorno a te in tutte le direzioni. Usare questo anello può essere uno strumento di ricerca della distanza molto efficace.
+  1.6.alert1.modal = Il mortaio ha una gittata effettiva da 50 m fino a 500 m. Mira al carro nel poligono e regola la gittata a 100 m con {gunsightrangedec}.
+  
+1.7.label = Esercitazione di fuoco con il mortaio
+  1.7.alert = Quando sei pronto, spara una granata esplosiva (HE) premendo {fpfire}.
+  1.7.complete.modal = Nota il ritardo dal momento di caricamento del mortaio al momento in cui il colpo colpisce il bersaglio. Questo rende il mortaio un arma non ideale per attaccare bersagli mobili. Tuttavia, una squadra di mortai che sparano a distanze scaglionate in una piccola area possono essere devastanti per i nemici fermi dietro copertura o in campo aperto.
+  
+1.8.label = Fornire copertura
+  1.8.alert.modal = Avere un team di mortaisti disponibile a fornire copertura è un vantaggio enorme per la fanteria in prima linea che sta assaltando una posizione. Insieme alle granate HE per devastare le fortificazioni nemiche e le posizioni dei cecchini, i mortaisti sono armati di granate fumogene ideali per trasformare un campo aperto da una zona vulnerabile in una nuvola di fumo. Queste stesse granate fumogene possono essere utilizzate anche per aiutare i carri armati e gli aerei amici ad individuare obiettivi nemici.
+  1.8.alert = Prenditi un momento per cambiare alle granate fumogene con {fpweapon1} ed esercitati a preparare una cortina fumogena.
+  1.8.complete.modal = Ricordati che il fumo funziona per entrambe le parti. Fai attenzione ad non attirare l&#39;attenzione su di te quando sei nascosto specie se il nemico non è a conoscenza della tua posizione.
+  
+1.9.label = Suggerimento
+  1.9.alert.modal = I mortaisti sono anche armati con un fucile che può essere selezionato con {fpweapon2}. Tuttavia, ogni colpo di mortaio e ogni caricatore di fucile è prezioso. E&#39; una buona idea quella di muoversi con fucilieri che hanno pacchetti di munizioni disponibili. Puoi richiederle digitando /ammo nella finestra della chat.
+  
+1.10.label = Fine del tutorial
+  1.10.alert.modal = Congratulazioni! Avete completato il tutorial del mortaio leggero. Sentitevi liberi di continuare ad esercitarvi selezionando &#34;Annulla&#34; nella finestra di uscita. Munizioni addizionali sono disponibili presso il camion di approvvigionamento.
+
+<branch>1</branch>
+  <brief>Impara come usare il mortaio leggero.</brief>
+  <handler>infantry.mortar</handler>
+  <instance>2</instance>
+  <requires>infantry.lmg</requires>
+  <title>Fanteria: Mortaio leggero</title>
+</content></body>
+  <branch>1</branch>
+  <brief>Impara come usare il mortaio leggero</brief>
+  <handler>infantry.mortar</handler>
+  <instance>2</instance>
+  <requires>infantry.lmg</requires>
+  <title>Fanteria: Mortaio leggero</title>
+</content>

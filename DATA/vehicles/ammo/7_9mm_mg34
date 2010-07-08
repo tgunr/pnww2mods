@@ -1,0 +1,27 @@
+# Created 4/22/02 - bloo
+# Same ammo for K98
+
+type = ballistic
+diameter = .0079
+weight = 0.0128
+ammoweight = 0.03
+velocity = 755
+tracertime = 0.0
+object = bullet1
+stretchobject = 1
+#explosive = 10000
+#fuzetime = 0.000
+bc = 0.31
+lifetime = 3.0
+dontdisplayfirstframe = 1
+penetrationconstant = 0.0000002916
+ricochetangle = 87
+
+#numshrapnelpieces = 15
+#totalshrapnelmass = .03
+
+#explosionsoundnear = sounds\troop\grenade.wav
+#explosionsoundfar = sounds\smlfarexp.wav
+#nearfardistance = 300
+
+muzzleflash = 1

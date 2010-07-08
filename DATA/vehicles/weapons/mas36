@@ -1,0 +1,21 @@
+# Rev. Oct.11/06
+# Lebel rifle modeled for French snipers and grenadiers
+# 03-06-2007
+# Added as Mas36 for French riflemen
+# Changed clip rounds to 5 from 8
+
+
+mass = 3.9
+firetype = singleshot
+rateoffire = 60
+dispersion = 0.01
+ammotype1 = 7_5mmf
+ghostrof = 60
+ghostammotype = 7_5mmf
+
+cliprounds = 5
+reloadtime = 6
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = clip

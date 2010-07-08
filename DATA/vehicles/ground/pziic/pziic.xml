@@ -1,0 +1,14 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="pziic" type="ground" shape="pnzr2c">
+<include file="pziic.veh.xml"/>
+<include file="pziic.state.xml"/>
+<include file="pziic.hit.xml"/>
+<include file="pziic.turret.xml"/>
+<include file="pziic.loadout.xml"/>
+<include file="pziic.xsound.xml"/>
+<include file="pziic.control.xml"/>
+<include file="pziic.mass.xml"/>
+<variant id="cn_pziic" description="Panzer II C" icon="Panzer II"/>
+<variant id="pziic" description="Panzer II C" icon="Panzer II"/>
+</vehicle>

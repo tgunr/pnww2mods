@@ -1,0 +1,30 @@
+#engine stats file for laffly w15tcc
+#created 12-05-03 by Doc.
+
+[S15T_4cylinder]
+basehorsepower = 75
+basehpalt = 0
+basehprpm = 2900
+basehppress = 0.988101
+basehpexhausttemp = 1000
+idlethrottlepos = 0.1
+idlerpm = 1200
+fuelperhphour = 0.260
+oilconsumptionperhour = 0
+wepmaxpress = 1.0
+milmaxpress = 1.0
+weprpm = 3500
+milrpm = 3500
+climbrpm = 3500
+econrpm = 3500
+
+superchargertype = none
+weptype = none
+
+#criticalrpm is the rpm at which below this the engine might stall, also used for starting
+criticalrpm 200
+
+#starterrpm is the rpm at which the starter motor will spin the engine at
+starterrpm 200
+#starterhp is the power of the starter motor
+starterhp 12

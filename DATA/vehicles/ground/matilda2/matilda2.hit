@@ -1,0 +1,106 @@
+# damage resistance file for #British Matilda II
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2,concussive resistance, damage threshold
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 1000000
+
+
+#Outside collider objects:
+d_lttread,30,0,0,0,110000
+d_rttread,30,0,0,0,110000
+d_drivewheell,20,0,0,0,110000
+d_drivewheelr,20,0,0,0,110000
+d_lftroadwheels,20,0,0,0,110000
+d_parascope,70,0,0
+d_peekhole,40,0,0
+d_rtroadwheels,20,0,0,0,110000
+d_jockeyrollwheell,20,0,0,0,110000
+d_jockeyrollwheelr,20,0,0,0,110000
+d_idlewheell,20,0,0,0,110000
+d_idlewheelr,20,0,0,0,110000
+d_cupula,60,0,0
+d_cupula_1,60,0,0
+d_cuphatch2,20,0,0
+d_cuphatch1,20,0,0
+d_cannonmount,63,0,0
+d_cannon,20,0,0,0,250000
+d_coax,12,0,0
+d_turrettfront,68,0,0
+d_turrettlside,68,0,0
+d_turrettrside,68,0,0
+d_turrettback,68,0,0
+d_turretttop,17,0,0
+d_turrettbottom,25,0,0
+d_lskurt,25,0,0
+d_rskurt,25,0,0
+d_front,70,0,0
+d_lefthull,70,0,0
+d_righthull,70,0,0
+d_tophull,17,0,0
+d_backhull,54,0,0
+d_bottomhull,20,0,0
+d_rdatorcov,20,0,0
+d_oilcoolerl3_1,1,0,0
+d_oilcoolerl2_1,1,0,0
+d_oilcoolerr3_1,1,0,0
+d_oilcoolerr2_1,1,0,0
+d_fueltankr_1,20,0,0
+d_fueltankl_1,20,0,0
+d_cuphatch2_1,14,0,0 
+
+#Inside collider objects:
+d_firewall,2,0,0
+d_75ammo,8,0,0,0,0
+d_2pdrammo,8,0,0,0,0
+d_2pdrammo2,8,0,0,0,0
+d_loaderlegs,1,0,0,0,800
+d_loaderrarms,1,0,0,0,800
+d_loadertorso,1.2,0,0,0,800
+d_loaderhead,6.5,0,0,0,800
+d_gunrhead,6.5,0,0,0,1000
+d_gunrlegs,1,0,0,0,1000
+d_gunrtorso,1.2,0,0,0,1000
+d_gunrarms,1,0,0,0,1000
+d_commanderlegs,1,0,0,0,800
+d_commanderarms,1.5,0,0,0,300
+d_commandertorso,1.5,0,0,0,300
+d_commanderhead,6.5,0,0,0,300
+d_driverhead,6.5,0,0,0,1000
+d_driverlegs,1,0,0,0,1000
+d_drivertorso,1.2,0,0,0,1000
+d_drivrlarms,1,0,0,0,1000
+d_transmission,250,0,0
+d_enginer,250,0,0
+d_enginel,250,0,0
+d_fueltankr,8,0,0
+d_fueltankl,8,0,0
+d_radiatorr,8,0,0
+d_radiatorl,8,0,0
+d_coolant,8,0,0
+d_oilcoolerl2,1,0,0
+d_oilcoolerl3,1,0,0
+d_oilcoolerr2,1,0,0
+d_oilcoolerr3,1,0,0

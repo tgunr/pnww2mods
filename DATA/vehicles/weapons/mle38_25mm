@@ -1,0 +1,18 @@
+# Hotchkiss 38 AA 25mm
+# Rev. 4/25/02 - bloo
+# Dispersion taken from PzII 20mm
+# Reload time needs checking
+
+mass = 0.0
+firetype = auto
+rateoffire = 250
+dispersion = 0.11
+ammotype1 = 25mm_hetracer
+ghostrof = 250
+ghostammotype = 25mm_hetracer
+cliprounds = 15
+reloadtime = 4
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = magazine

@@ -1,0 +1,55 @@
+#M10.turret file
+#created 07-05-05 -Hatch.
+
+#multicrewpos position, whichcrew
+multicrewpos 1 1
+multicrewpos 2 2
+multicrewpos 3 2
+multicrewpos 4 2
+
+# Main Gun
+position = 3
+elevationrate = 4.0
+traverserate = 106
+type = 360turret
+gunsightfile = m70g.gs
+gunsightalignmentmountobject = maingunmount
+gunsightalignmentrange = 1450
+#turret sound variables
+turrettraverse = turret/hand_turret_move.wav
+turretelevate = turret/hand_turret_move.wav
+turretgeneral = turret/turret_traverse_general.wav
+
+# Main gunner MG
+position = 4
+elevationrate = 1
+traverserate = 1
+type = limitedturret
+gunsightfile = m250aa.gs
+gunsightalignmentmountobject = mghullmount
+gunsightalignmentrange = 800
+gunsightblocked = canopyclosed
+# added for centering gun
+# neutral can be: bombayopen/closed, hatchopen/closed, canopyopen/closed
+neutral = canopyclosed
+# neutraltraverse -1 max deflection left, 1 max deflection right, 0 straight ahead 
+neutraltraverse = 0
+# neutralelevate -1 max down, 1 max up, 0 is midtraverse
+neutralelevate = 0
+# conditions are undeployed, depolyed, canopyopen, canopyclosed, hatchopen, hatchclosed
+
+#Commander
+position = 2
+elevationrate = 2
+traverserate = 6
+type = 360turret
+gunsightfile = 8x30binoc.gs
+neutraltraverse = 0
+neutralelevate = 0
+#conditions are undeployed, deployed, canopyopen, canopyclosed, hatchopen, hatchclosed
+gunsightblocked = canopyclosed
+
+#driver
+position = 1
+gunsightfile = m10driver.gs
+gunsightblocked = canopyopen

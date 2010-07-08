@@ -1,0 +1,26 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>31</key>
+  <body>title = Entraînement au combat entre blindés
+dead = Vous avez été détruit par l&#39;ennemi. Revenez en jeu et essayez une nouvelle fois!
+
+1.0.label = Entraînement au combat entre blindés
+     1.1.label = introduction
+     1.1.alert.modal = Cette espace est désormais ouvert pour un entraînement au combat.  Travaillez en équipe avec vos partenaires pour éliminer l&#39;ennemi.[NL][NL]Bonne chasse!</body>
+  <branch>1</branch>
+  <brief>Entraînez vous au combat entre blindés.</brief>
+  <checkstate>true</checkstate>
+  <despawners>217357.09,3011048.52,232.2,0 217368.87,3011048.43,232.2,0 217350.28,3011048.41,232.2,0</despawners>
+  <devehicles>p38t</devehicles>
+  <frspawners>212510.00,3015094.09,232.87,-1.5 212510.23,3015107.38,232.87,-1.5 212510.54,3015114.78,232.87,-1.5</frspawners>
+  <frvehicles>h39</frvehicles>
+  <graduate>false</graduate>
+  <handler>armor.combat</handler>
+  <instance>4</instance>
+  <instype>2</instype>
+  <requires>armor.basic</requires>
+  <title>Entraînement au combat de blindés</title>
+  <ui>combat</ui>
+  <ukspawners>212510.00,3015094.09,232.87,-1.5 212510.23,3015107.38,232.87,-1.5 212510.54,3015114.78,232.87,-1.5</ukspawners>
+  <ukvehicles>a13</ukvehicles>
+</content>

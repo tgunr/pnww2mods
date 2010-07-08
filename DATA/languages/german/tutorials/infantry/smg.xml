@@ -1,0 +1,50 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>1</key>
+  <body>title = Infanterie I: Maschinenpistole
+
+20mhit = 20m Ziel getroffen!
+50mhit = 50m Ziel getroffen!
+100mhit = 100m Ziel getroffen! Gut geschossen!
+200mhit = 200m Ziel getroffen! Sehr gut gemacht!
+500mhit = 500m Ziel getroffen! Exzellent!
+gunrange = Feuerlinie
+bunker = Sandsäcke/Bunker
+vehiclerange = Schießbahn
+
+1.0.label = Die Maschinenpistole
+
+1.1.label = Intro
+	1.1.alert.modal = Die Maschinenpistole ist eine mächtige Waffe, die am besten auf kurze Entfernungen eingesetzt wird.
+	
+1.2.label = Feuerposition
+	1.2.alert = Bewege Dich zur Feuerlinie.
+        #waypoint label: &#34;Firing Line&#34;
+        #waypoint: -314046.54,3603720.08,101.73
+
+1.3.label = Schiessen
+	1.3.alert = Die MP kann aus der Hüfte geschossen werden. Die Zielgenauigkeit ist dabei sehr gering.[NL][NL]Drücke {fpfire} um die Waffe abzufeuern.
+	1.3.complete.modal = Schießen aus dem Hüftanschlag ist nur im Nahkampf effektiv.
+	
+1.4.label = Zielen
+	1.4.alert = Kurze, kontrollierte Feuerstöße erhöhen Deine Trefferchancen[NL][NL]Halte {fpgunsight} um mit der MP zu zielen.
+
+1.5.label = Feuern
+	1.5.alert = Feuere jetzt mit {fpfire} auf das Ziel in 20 m Entfernung.[NL][NL]Wenn das Magazin leer ist, lade die Waffe durch Drücken von {fpreload} nach.[NL][NL]Du musst mindestens ein Ziel treffen, um den Lehrgang fortzusetzen.
+	1.5.complete.modal = Gut! 
+
+1.6.label = Rückstoß
+	1.6.alert.modal = Der Rückstoß der MP erschwert genaues Zielen.
+	1.6.alert1.modal = Drücke und halte {fpfire} um das komplette Magazin herauszufeuern. Benutze {fpreload} zum Nachladen.
+	1.6.alert2.modal = Ist Dir aufgefallen, wie der Lauf der MP während des Feuerns höher und höher steigt? Dem kannst Du entgegenwirken indem Du beim Feuern zielst. [NL][NL]Drücke und halte {fpfire} und {fpgunsight}, um ein komplettes Magazin herauszufeuern.
+	1.6.alert3.modal = Du kannst dem Auswandern des Laufes noch besser entgegenwirken, wenn Du beim Feuern nach unten ziehst.[NL][NL]Feuere ein weiteres Magazin heraus und ziehe die Waffe dabei etwas nach unten.
+	1.6.complete = Gut. Mit etwas Übung wirst Du in der Lage sein, gezielt komplette Magazine auf ein Ziel abzufeuern.
+1.7.label = Fertig
+        1.7.alert.modal = Du hast den Lehrgang Grundlagen Maschinenpistole absolviert.</body>
+  <branch>1</branch>
+  <brief>Lerne wie man eine Maschinenpistole benutzt.</brief>
+  <handler>infantry.smg</handler>
+  <instance>2</instance>
+  <requires>basic</requires>
+  <title>Infanterie: Maschinenpistole</title>
+</content>

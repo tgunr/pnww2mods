@@ -1,0 +1,65 @@
+#airfoils file for d520
+
+[propeller]
+baseairfoil = propbase.pol
+up10degairfoil = propbase.pol
+down10degairfoil = propbase.pol
+stallfile = prop.stall
+compressibilityfile = prop.compress
+
+[d520root]
+baseairfoil = 05017_neut.pol
+up10degairfoil = 05017_neut.pol
+down10degairfoil = 05017_dn10_25.pol
+stallfile = 05017.sta
+compressibilityfile = 05017.compress
+
+[d520mid]
+baseairfoil = 14014_neut.pol
+up10degairfoil = 14014_neut.pol
+down10degairfoil = 14014_dn10_25.pol
+stallfile = 14014.sta
+compressibilityfile = 14014.compress
+
+[d520ail]
+baseairfoil = 13011_neut.pol
+up10degairfoil = 13011_up10_25.pol
+down10degairfoil = 13011_dn10_25.pol
+stallfile = 13011.sta
+compressibilityfile = 13011.compress
+
+[d520tip]
+baseairfoil = 23009_neut.pol
+up10degairfoil = 23009_neut.pol
+down10degairfoil = 23009_neut.pol
+stallfile = 23009.sta
+compressibilityfile = 23009.compress
+
+[d520horizstab]
+baseairfoil = 0010_neut.pol
+up10degairfoil = 0010_up10_34.pol
+down10degairfoil = 0010_dn10_34.pol
+stallfile = 0010.sta
+compressibilityfile = 0010.compress
+
+[d520vertstab]
+baseairfoil = 0010_neut.pol
+up10degairfoil = 0010_up10_42.pol
+down10degairfoil = 0010_dn10_42.pol
+stallfile = 0010.sta
+compressibilityfile = 0010.compress
+
+[flatplate]
+baseairfoil = flatplat.pol
+up10degairfoil = flatplat.pol
+down10degairfoil = flatplat.pol
+stallfile = flatplat.stall
+compressibilityfile = flatplat.compress
+
+[fuselage]
+baseairfoil = 0010_neut.pol
+up10degairfoil = 0010_neut.pol
+down10degairfoil = 0010_neut.pol
+stallfile = 0010.sta
+compressibilityfile = 0010.compress
+

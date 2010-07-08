@@ -1,0 +1,559 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+<window id="brigades" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
+	onshow="initWin(this)" onupdate="initBrigades()" aspectalign="center">
+	<include file="widgets/template.uixml"/>
+	<include file="classes/TreeControl2.uixml"/>
+	<include file="classes/Division.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+	<tabview id="body" x="43" y="140" width="930" height="450" ontab="quickhelp()" style="color: #BFE2CE;
+						background-color: #000000BB; 
+						border-top-corner: ui/textures/test/body_ul.bmp;
+						border-bottom-corner: ui/textures/test/body_br.bmp;
+						border-sides: ui/textures/test/body_sides.bmp;
+						border-top: ui/textures/test/body_top.bmp;
+						border-bottom: ui/textures/test/body_bottom.bmp;
+						control-on-endcap:  ui/textures/test/body_tab_cap_on.bmp;
+						control-on-back:  ui/textures/test/body_tab_filler_on.bmp;
+						control-off-endcap: ui/textures/test/body_tab_cap.bmp;
+						control-off-back: ui/textures/test/body_tab_filler.bmp;
+						control-on-color: #FFFFCE;
+						border-width: 16;
+						border-height: 16;">
+		<tab label="  &brigades.rostertab;  " x="0" y="0" width="930" height="460"
+			onshow="showRoster(); tplTab()" onupdate="runExtSquadUpdate()" tip="&brigades.rostertab.tip;">
+			<view id="left-pane" x="18" y="18" width="444" height="411">
+				<!--  style="background-color: #0066FF;" -->
+				<caption id="orbat-header" x="10" rtop="12" height="20" width="400" style="font-size: +2; color: #BFE2CE;"/>
+				<image x="10" rtop="22" src="ui/textures/test/horiz_underline.bmp" width="425" height="12"/>
+				<view x="10" rtop="34" width="425" height="15">
+					<caption x="0" y="0" width="250" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="&brigades.list.name;"/>
+					<caption x="252" y="0" width="58" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="&brigades.list.oic;" align="center" tip="&brigades.list.oic.tip;"/>
+					<caption x="312" y="0" width="49" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="&brigades.list.pop;" align="center" tip="&brigades.list.pop.tip;"/>
+					<caption x="363" y="0" width="24" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="&brigades.list.sq;" align="center" tip="&brigades.list.sq.tip;"/>
+					<caption id="msdd" x="388" y="0" width="37" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="&brigades.list.ms;" tip="&brigades.list.ms.tip;"/>
+				</view>
+				<list id="brigadeTree" x="10" rtop="53" width="425" height="340"
+					onselect="brigadeTree.clickTree(false)" ondblselect="brigadeTree.clickTree(true)">
+					<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+				</list>
+				<view x="10" y="0" width="430" height="20">
+					<view x="30" y="4" width="10" height="7" style="background-color: #FFB366;"/>
+					<caption label="&brigades.list.key.attack;" x="45" y="0" width="100" height="15" style="color: #FFB366; font-size: -1;"/>
+					<view x="125" y="4" width="10" height="7" style="background-color: #00FF00;"/>
+					<caption label="&brigades.list.key.defend;" x="140" y="0" width="100" height="15" style="color: #00FF00; font-size: -1;"/>
+					<view x="220" y="4" width="10" height="7" style="background-color: #80CCFF;"/>
+					<caption label="&brigades.list.key.reserve;" x="235" y="0" width="100" height="15" style="color: #80CCFF; font-size: -1;"/>
+					<view x="330" y="4" width="10" height="7" style="background-color: #E9E3D9;"/>
+					<caption label="&brigades.list.key.inactive;" x="345" y="0" width="100" height="15" style="color: #E9E3D9; font-size: -1;"/>
+				</view>
+			</view>
+			<include file="widgets/divider.uixml"/>
+			<view id="right-pane" x="468" y="18" width="444" height="411">
+				<tabview id="brigade-view" x="0" y="0" rright="0" rtop="0" acceptmouseclick='false'>
+					<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'>
+						<caption id="details-brigade" x="10" height="20" width="400" rtop="10" style="font-size: +2; color: #BFE2CE;"/>
+						<image x="10" width="425" height="12" rtop="20" src="ui/textures/test/horiz_underline.bmp"/>
+						<view x="0" y="10" width="435" height="450">
+							<view id="brigade-map" class="mapview" acceptsfocus="no" minscale=".03" maxscale="6" scale="5"
+								x="10" y="0" width="425" height="365" sx="18" sy="235"
+								onload="if(!this.mgr) new MapManager(this)" onshow="this.mgr.onShow()"
+								onupdate="this.mgr.onUpdate()" onclick="this.mgr.onClick()" ondblclick="this.mgr.onDblClick()"
+								ondrag="this.mgr.onDrag()" onmouseenter="this.mgr.onMouseEnter()" onmouseexit="this.mgr.onMouseExit()"
+								onrightclick="this.mgr.onRightClick()"
+								style="tooltip: widgets/tooltips/maptip.uixml;">
+								<layer type="texture" id="default-64-tex" minscale="0" maxscale="64" enabled="true" orign="-26x210" rowcolsize="1x1" cellsize="64x64"/>
+								<layer type="icon" id="icons" minscale="1" maxscale="8" enabled="true"/>
+								<layer type="icon" id="rendered" minscale="0" maxscale="1" enabled="true"/>
+								<layer type="terrainobj" id="terrainobj" minscale="0" maxscale=".5" enabled="true"/>
+								<layer type="hclinks" id="hclinks" minscale="0" maxscale="20" enabled="true"/>
+								<layer type="strat" id="strat" minscale="0" maxscale="20" enabled="true">
+					        		<filter name="showcps" value="no"/>
+									<filter name="showorders" value="yes"/>
+									<filter name="showdeployments" value="yes"/>
+									<filter name="showbrigades" value="yes"/>
+									<filter name="showmydivision" value="yes"/>
+									<filter name="showobjectives" value="yes"/>
+									<filter name="showairfields" value="no"/>
+									<filter name="showports" value="no"/>
+									<filter name="showews" value="yes"/>
+									<filter name="showfront" value="no"/>
+									<filter name="showrear" value="no"/>
+									<filter name="showcivilian" value="yes"/>
+									<filter name="showbridges" value="no"/>
+									<filter name="showarmy" value="yes"/>
+									<filter name="showairforce" value="yes"/>
+									<filter name="shownavy" value="yes"/>
+									<filter name="showdepots" value="yes"/>
+									<filter name="showcpnames" value="yes"/>
+									<filter name="showfacnames" value="no"/>
+									<filter name="showflags" value="yes"/>
+									<filter name="showicons" value="yes"/>
+									<filter name="fadeupdate" value="no"/>
+									<filter name="fadefrontline" value="yes"/>
+									<filter name="cptextcolor" value="#FFFF00"/>
+									<filter name="factextcolor" value="#FFFFFF"/>
+									<filter name="seltextcolor" value="#00FF00"/>
+									<filter name="factextsize" value="12"/>
+									<filter name="cptextsize" value="12"/>
+									<filter name="showclutter" value="no"/>
+									<filter name="cluttercutoff" value=".2"/>
+								</layer>
+								<view x="2" height="20" rright="2" y="2" style="background-color: #000000AA;">
+									<text id="map-brigade-home" x="2" height="16" rright="2" rtop="2" style="color: #FFFFFF;" acceptsfocus="false"/>
+									<image id="map-brigade-home-zoom" x="2" width="16" height="16" rtop="2" src="ui/textures/test/zoom_icon.bmp"
+										onclick="if(brigadeTree.selectedData()) brigadeMap.mgr.setSelection(brigadeTree.selectedData().home)"
+										onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'" onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
+									<text id="map-brigade-objective" x="15" height="16" rtop="2" rright="2" style="color: #FFFFFF;" acceptsfocus="false"/>
+									<image id="map-brigade-objective-zoom" width="16" height="16" rtop="2" rright="2" src="ui/textures/test/zoom_icon.bmp"
+										onclick="if(brigadeTree.selectedData()) brigadeMap.mgr.setSelection(brigadeTree.selectedData().objective)"
+										onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'" onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
+								</view>
+							</view>
+							<!--
+							<view x="10" y="277" width="425" height="115">
+								<caption id="details-brigade" x="0" y="94" height="20" width="400" style="font-size: +2; color: #BFE2CE;"/>
+								<image x="0" y="90" src="ui/textures/test/horiz_underline.bmp" width="425" height="12"/>
+								<caption x="0" y="75" height="15" width="425" label="&brigades.details.division;:" style="color: #FFFFFF; "/>
+								<caption id="details-division" x="0" y="75" height="15" rright="15" label="-" style="color: #e9e3d9ff; " align="right"/>
+								<caption x="0" y="60" height="15" width="425" label="&brigades.details.commander;:" style="color: #FFFFFF; "/>
+								<caption id="details-command" x="0" y="60" height="15" rright="15" label="-" style="color: #e9e3d9ff; " align="right"/>
+								<caption x="0" y="45" height="15" width="425" label="&brigades.details.home;:" style="color: #FFFFFF; "/>
+								<caption id="details-home" x="0" y="45" height="15" rright="15" label="-" style="color: #e9e3d9ff; " align="right"/>
+								<image x="410" y="45" width="16" height="16" src="ui/textures/test/zoom_icon.bmp"
+									onclick="if(brigadeTree.selectedData()) brigadeMap.mgr.setSelection(brigadeTree.selectedData().home)"
+									onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'" onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
+								<caption x="0" y="30" height="15" width="425" label="&brigades.details.objective;:" style="color: #FFFFFF; "/>
+								<caption id="details-objective" x="0" y="30" height="15" rright="15" label="-" style="color: #e9e3d9ff; " align="right"/>
+								<image x="410" y="30" width="16" height="16" src="ui/textures/test/zoom_icon.bmp"
+									onclick="if(brigadeTree.selectedData()) brigadeMap.mgr.setSelection(brigadeTree.selectedData().objective)"
+									onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'" onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
+								<caption x="0" y="15" height="15" width="425" label="&brigades.details.missions;:" style="color: #FFFFFF; "/>
+								<caption id="details-missions" x="0" y="15" height="15" rright="15" label="-" style="color: #e9e3d9ff; " align="right"/>
+								<caption x="0" y="0" height="15" width="425" label="&brigades.details.enlistments;:" style="color: #FFFFFF; "/>
+								<caption id="details-enlistments" x="0" y="0" height="15" rright="15" label="-" style="color: #e9e3d9ff; " align="right"/>
+							</view>
+							-->
+						</view>
+					</tab>
+					<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'>
+						<text x="70" width="300" height="100" rtop="50" style=" color: #e9e3d9ff;" onshow="this.text = getlocstring('brigades.list.inactive2')"/>
+					</tab>
+				</tabview>
+			</view>
+		</tab>
+		<tab id="map" label="  &common.map.tab;  " x="20" y="10" width="930" height="460"
+			onshow='setHelp(getlocstring("common.map.tab.help")); tplTab()' tip="&common.map.tab.tip;">
+			<include file="widgets/map.uixml"/>
+		</tab>
+		<include file="widgets/globals/tutorials.uixml"/>
+		<include file="widgets/globals/squads.uixml"/>
+		<include file="widgets/globals/manuals.uixml"/>
+		<include file="widgets/globals/settings.uixml"/>
+	</tabview>
+	<include file="widgets/infobar.uixml"/>
+	<script>
+		<!--
+		
+		var client 				= game.player.client;
+		var brigadeTree 		= new TreeControl("brigadeTree", selectBrigade, formatBrigade);
+		
+		// brigade details
+		var brigadeView			= findview("brigade-view");
+		var detailsBrigade		= findview("details-brigade");
+		var detailsHome			= findview("map-brigade-home");
+		var detailsObjective	= findview("map-brigade-objective");
+		var detailsHomeZ		= findview("map-brigade-home-zoom");
+		var detailsObjectiveZ	= findview("map-brigade-objective-zoom");
+
+		/*
+		var detailsDivision		= findview("details-division");
+		var detailsCommander	= findview("details-command");
+		var detailsHome			= findview("details-home");
+		var detailsObjective	= findview("details-objective");
+		var detailsMissions		= findview("details-missions");
+		var detailsPopulation	= findview("details-enlistments");
+		*/
+		
+		var mapview				= findview("mapview");
+		var brigadeMap			= findview("brigade-map");
+		var brigadeTimer		= new CycleTimer(15000);
+
+		/********************** COMMON FUNCTIONS ***********************/	
+		
+		function doBack()
+		{
+			loadWin("persona", true);
+		}
+		
+		function doForward()
+		{
+			var brigade = brigadeTree.selectedData();
+			var body	= window.findview("body");
+			
+			if(body.value < 2 && brigade != null && brigade.isbrigade && client.selectbrigade(brigade))
+			{
+				// lets start out on the mission create panel
+				game.globals.mappanel = 5;
+				loadWin("brigade", true);
+			}
+			else if(body.value == 2)
+			{
+				startTutorial();
+			}
+		}
+		
+		function initWin(win)
+		{
+			game.consoleclear();
+
+			showChat(true, true);
+			showRoster();
+			setBack('brigades.back');
+			setForward('brigades.forward');
+
+			findview("orbat-header").label = getCountryBranch(client.country, client.branch, 1) + " " + getlocstring('brigades.list');
+			
+			if(client.branch == "navy")
+			{
+				var msView = findview("msdd");
+				msView.label = getlocstring('brigades.list.dd');
+				msView.settip(getlocstring('brigades.list.dd.tip'));
+			}
+			
+			runExtSquadUpdate();
+
+			brigadeTree.setColorText(false);
+			quickhelp();
+			initTutorials();
+		}
+		
+		/********************** PAGE FUNCTIONS ***********************/
+		
+		function showRoster()
+		{
+			setHelp(getlocstring('brigades.rostertab.help'));
+		}
+		
+		function updateForward()
+		{
+			setForwardEnabled(false);
+			setForward('brigades.forward');
+			
+			var body 	= window.findview("body");
+			var brigade = brigadeTree.selectedData();
+
+			if(body.value != 2)
+			{
+				if(brigade != null && brigade.isbrigade)
+					setForwardEnabled(true);
+			}
+			else
+			{
+				setForwardEnabled(updateStartTutorial());
+				setForward('tutorials.start');
+			}
+		}
+		
+		function updateBrigadeDetails()
+		{
+			var brigade = brigadeTree.selectedData();
+
+			if(brigade != null)
+			{
+				brigadeView.value = 0;
+
+				consoleprint("Set brigade settings\n");
+				
+				if(brigade.isbrigade)
+					client.requestbrigadedetail(brigade);
+				
+				detailsBrigade.label = brigade.name.toUpperCase();
+
+				consoleprint("Sync the map\n");
+
+				// make sure the map is in the right spot
+				brigadeMap.mgr.SyncToMap();
+				
+				consoleprint("Set the map selection\n");
+
+				if(brigade.home != null)
+				{
+				 	consoleprint("Setting map selection to brigade home\n");
+					brigadeMap.mgr.setSelection(brigade.home);
+
+					detailsHome.text = getlocstring('brigades.details.home') + ": " + brigade.home.name;
+					detailsHome.resizetotext();
+					detailsHomeZ.x = detailsHome.width + detailsHome.x + 5;
+					detailsHome.visible = true;
+					detailsHomeZ.visible = true;
+				}
+				else
+				{
+					detailsHome.visible = false;
+					detailsHomeZ.visible = false;
+				}
+
+
+				if(brigade.isbrigade && brigade.objective != null)
+				{
+				 	if(brigade.home == null)
+				 	{
+					 	consoleprint("Setting map selection to brigade objective\n");
+						brigadeMap.mgr.setSelection(brigade.objective);
+					}
+				 	
+			 	 	var objectiveParent = detailsObjective.parent;
+
+					detailsObjective.text = getlocstring('brigades.details.objective') + ": " + brigade.objective.name;
+					detailsObjective.resizetotext();
+					detailsObjective.x = detailsObjectiveZ.x - 5 - detailsObjective.width;
+					detailsObjective.visible = true;
+					detailsObjectiveZ.visible = true;
+				}
+				else
+				{
+					detailsObjective.visible = false;
+					detailsObjectiveZ.visible = false;
+				}
+
+				consoleprint("Done updating the brigade details\n");
+			}
+			else
+			{
+				brigadeView.value = 1;
+			}
+		}
+
+		function initBrigades()
+		{
+			if(brigadeTimer.run())
+			{
+				//consoleprint("RUNNING BRIGADES!!!\n");
+				
+				var brigades = client.brigades;
+				
+				if(brigades.length > 0 && !brigadeTree.initTree())
+				{
+					consoleprint("INITING BRIGADES!!!\n");
+					
+					brigades = brigades.sort(sortBrigades);
+					
+					var myBrigade		= null;
+					var divisions 		= new Object();
+					var sortedDivisions	= new Array(); 
+					
+					for(var i = 0; i < brigades.length; i++)
+					{
+						var brigade = brigades[i];
+
+						if(divisions[brigade.divisionid] == null)
+							divisions[brigade.divisionid] = new Division(brigade.divisionid, brigade.division, brigade.parent);
+						
+						divisions[brigade.divisionid].missions += brigade.missions;
+						divisions[brigade.divisionid].objectives += (brigade.objective != null) ? 1: 0;
+						divisions[brigade.divisionid].brigades.push(brigade);
+					}
+
+					for(var i in divisions)
+						sortedDivisions.push(divisions[i]);
+
+					sortedDivisions = sortedDivisions.sort(sortDivisions);
+					
+					for(var d = 0; d < sortedDivisions.length; d++)
+					{
+						var division		= sortedDivisions[d];
+						var divisionNode 	= new TreeNode(division.id, division.unit, 1, true, division.name);
+						var myDivision		= false;
+						
+						for(var i = 0; i < division.brigades.length; i++)
+						{
+							var unit = division.brigades[i];
+							var node = divisionNode.addNode(new TreeNode(unit.id, unit, 2, false, unit.name));
+							
+							if(unit.id == client.brigade.id)
+							{
+								myBrigade 	= node;
+								myDivision 	= true;
+							}
+						}
+						
+						if(d == 0 || division.missions > 0 || division.objectives > 0 || myDivision)
+							divisionNode.expand();
+						
+						brigadeTree.addNode(divisionNode);
+					}
+
+					brigadeTree.drawTree();
+					
+					if(myBrigade)
+						brigadeTree.clickTree(false, myBrigade.row);
+					
+					updateBrigadeDetails();
+
+					consoleprint("BRIGADES INITED!!!\n");
+				}
+			}
+			
+			updateForward();
+		}
+
+		function formatBrigade(tree, node)
+		{
+			var row 	= "";
+			var name	= tree.list.id;
+			var width	= tree.getWidth() - 12;
+			var indent 	= tree.indent * node.level;
+
+			if(node.branch)
+			{
+			 	var color 	= "#e9e3d9ff";
+				var icon 	= (node.open) ? tree.collapseIcon: tree.expandIcon;
+				var tip		= node.description + " (" + node.data.callsign + ") ";
+				
+				tip += getlocstring('brigades.list.status.inactive.tip');
+				
+				row = "\
+<view id='" + htmlencode(node.id) + "' width='" + width + "' height='16' aspectalign='left'\
+	onmouseenter='" + name + ".mouseEnter(this)' onmouseexit='" + name + ".mouseExit(this)'\
+	tip='" + htmlencode(tip) + "'>\
+	<image src='" + icon + "' x='" + indent + "' y='3' width='10' height='10' onclick='" + name + ".clickTree(true, " + tree.count + ")'/>\
+	<caption id='branch_title' x='" + (indent + tree.indent) + "' y='0' rright='1' height='16' style='color: " + color + "; '\
+		label='" + htmlencode(node.description) + "'/>\
+</view>";
+			}
+			else
+			{
+				var brigade	= node.data;
+				var tip 	= getlocstring('brigades.list.status.inactive.tip');
+				var status 	= (brigade.objective) ? brigade.objective.name: getlocstring('brigades.list.status.active');
+				var squad	= (brigade.issquadbrigade) ? "<caption class='chaticon' x='370' y='2' width='12' height='12' acceptmouseclick='false' onshow='this.channelname = \"squad\"'/>": "";
+				var icon	= (brigade.mobilespawns > 0) ? "<image x='389' y='2' src='ui/textures/test/mobilespawn_icon.bmp' width='16' height='16'/>": "";
+				var color 	= getBrigadeColor(brigade);
+				var pop		= brigade.populationrank / 9;
+				var label	= htmlencode(brigade.nick);
+				var pbar	= "";
+
+	 			pbar =  "<view x='318' y='4' width='35' height='8' style='border-color: " + color + "; border: 1;'/>";
+	 			pbar += "<view x='318' y='4' width='" + (35 * pop) + "' height='8' style='background-color: " + color + "88;'/>";
+
+				if(brigade.missions > 0)
+					tip	= getlocstring('brigades.list.status.active.tip');
+				else if(brigade.objective != null)
+					tip	= getlocstring('brigades.list.status.objective.tip');
+				
+				tip = htmlencode(brigade.name) + " (" + htmlencode(brigade.callsign) + "). " + tip;
+				
+				if(brigade.branch == "navy" && brigade.home != null && brigade.home.deepwaterport)
+					icon = "<image x='389' y='1' src='ui/uidata/icons/facility/navy/dd.bmp' width='16' height='16' style='color: " + color + ";'/>";
+				
+				row = "\
+<view id='" + htmlencode(node.id) + "' width='" + width + "' height='16' aspectalign='left'\
+	onmouseenter='" + name + ".mouseEnter(this)' onmouseexit='" + name + ".mouseExit(this)'\
+	tip='" + htmlencode(tip) + "'>\
+	<caption x='" + indent + "' y='0' width='246' height='16' style='color: " + color + "; ' label='" + label + "'/>\
+	<caption x='251' y='0' width='60' height='16' style='color: " + color + "; ' label='" + htmlencode(brigade.oic) + "' center='true'/>\
+	" + pbar + "\
+	" + squad + "\
+	" + icon + "\
+</view>";
+			}
+
+			return row;
+		}
+
+		function getBrigadeColor(brigade)
+		{
+		 	var color = "#E9E3D9";
+
+			if(brigade.objective != null)
+			{
+			 	color = (brigade.objective.country.side != brigade.country.side) ? "#FFB366": "#00FF00";
+			}
+			else if(brigade.missions > 0)
+			{
+			 	color = "#80CCFF";
+			}
+
+		 	return color;
+		}
+
+		function getFriendlyPopulation(rank)
+		{
+			if(rank > 6)
+				return getlocstring('common.population.heavy');
+			else if(rank > 3)
+				return getlocstring('common.population.medium');
+			else if(rank > 0)
+				return getlocstring('common.population.light');
+
+			return getlocstring('common.population.empty');
+		}
+		
+		/********************** EVENT HANDLERS ***********************/
+		
+		function selectBrigade(dblclick)
+		{
+		 	game.consoleclear();
+			updateBrigadeDetails();
+			
+			if(dblclick)
+				tplForward();
+		}
+		
+		function isOfficer()
+		{
+			if(client.persona.rank.level >= 9)
+				return true;
+			
+			return false;
+		}
+		
+		/**************** SORTERS ********************/
+		
+		function sortDivisions(a, b)
+		{
+			if(a.missions > 0 && b.missions == 0)
+			{
+				return -1;
+			}
+			else if(a.missions == 0 && b.missions > 0)
+			{
+				return 1;
+			}
+			else
+			{
+				if(a.name < b.name)
+					return -1;
+				else if(a.name > b.name)
+					return 1;
+			}
+
+			return 0;
+		}
+		
+		function sortBrigades(a,b)
+		{
+			if(a.divisionid == b.divisionid)
+			{
+				// sort on division name
+				if(a.name < b.name)
+					return -1;
+				else if(a.name > b.name)
+					return 1;
+			}
+			else
+			{
+				// sort on brigade name
+				if(a.division < b.division)
+					return -1;
+				else if(a.division > b.division)
+					return 1;
+			}
+			
+			return 0;
+		}
+		
+		-->
+	</script>
+</window>

@@ -1,0 +1,28 @@
+# Blenheim Mk IV-t loadout file
+
+# sounds available for the mounts
+sound1 = sounds\bleniv\xgun.wav
+# sound2 = sounds\ju87b\bombrel.wav
+
+loadout = 1
+
+mountnum = 1
+mountobject = winggunx
+mountsound = sound1
+weapon = browning303air
+weaponobject = brit303r
+
+mountnum = 2
+mountobject = turretgunx
+mountsound = sound1
+weapon = vickersk
+weaponobject = genericgun1
+
+# Left side bombbay
+mountnum = 3
+mountobject = gp250lf
+weapon = ukmk12
+weaponobject = ukmk12
+recoilnum = 1
+recoiltime = .2
+

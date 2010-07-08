@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="matilda2" type="ground" shape="matilda2" description="Matilda Mk II" icon="Matilda 2">
+<include file="matilda2.veh.xml"/>
+<include file="matilda2.state.xml"/>
+<include file="matilda2.hit.xml"/>
+<include file="matilda2.turret.xml"/>
+<include file="matilda2.loadout.xml"/>
+<include file="matilda2.xsound.xml"/>
+<include file="matilda2.control.xml"/>
+<include file="matilda2.mass.xml"/>
+</vehicle>

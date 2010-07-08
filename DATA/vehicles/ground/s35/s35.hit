@@ -1,0 +1,106 @@
+# Somua S35 Hit file
+
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2,concussive resistance, damage threshold
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 1000000
+
+# Inside collider objects: Single sided
+
+d_engine,250,0,0
+d_fuel,8,0,0
+d_radiator,8,0,0
+d_coolant,8,0,0
+d_47ammo,8,0,0
+d_transmission,250,0,0
+d_driverlegs,1.0,0,0,0,45
+d_drivertorso,1.2,0,0,0,45
+d_driverarms,1.0,0,0,0,45
+d_driverhead,6.5,0,0,0,60
+d_commanderhead,6.5,0,0,0,60
+d_commandertorso,1.2,0,0,0,45
+d_commanderarms,1.0,0,0,0,45
+d_commanderlegs,1.0,0,0,0,45
+d_loaderhead,6.5,0,0,0,60
+d_loadertorso,1.2,0,0,0,45
+d_loaderrarms,1.0,0,0,0,45
+d_loaderlegs,1.0,0,0,0,45
+d_firewall,5,0,0
+
+# Outside collider objects: Double sided
+
+d_turretsides,39,0,0
+d_turretfront,56,0,0
+d_turrettop,20,0,0
+d_turretbottom,56,0,0
+d_side cargo,15,0,0
+d_coax,12,0,0
+d_cupola,34,0,0
+d_turrethatch,46,0,0
+d_gunmount,42,0,0
+d_47mmgun,25,0,0,0,220000
+d_airintake,20,0,0
+d_driverhatch,20,0,0
+d_leftsidehatch,20,0,0
+d_armorskirt,25,0,0
+d_frontarmor,42,0,0
+d_leftsidearmor,34,0,0
+d_rightsidearmor,34,0,0
+d_reararmor,34,0,0
+d_toparmor,20,0,0
+d_treadguards,15,0,0
+d_bottomarmor,20,0,0
+d_leftdrivewheel,45,0,0,0,100000
+d_lefttrack,25,0,0,0,100000
+d_leftreturnwheel,25,0,0,0,100000
+d_leftreturnwheel1,25,0,0,0,100000
+d_leftreturnwheel2,25,0,0,0,100000
+d_leftgroundwheel1,25,0,0,0,100000
+d_leftgroundwheel2,25,0,0,0,100000
+d_leftgroundwheel3,25,0,0,0,100000
+d_leftgroundwheel4,25,0,0,0,100000
+d_leftgroundwheel5,25,0,0,0,100000
+d_leftgroundwheel6,25,0,0,0,100000
+d_leftgroundwheel7,25,0,0,0,100000
+d_leftgroundwheel8,25,0,0,0,100000
+d_leftgroundwheel9,25,0,0,0,100000
+d_rightdrivewheel,45,0,0,0,100000
+d_righttrack,25,0,0,0,100000
+d_rightreturnwheel,25,0,0,0,100000
+d_rightreturnwheel1,25,0,0,0,100000
+d_rightreturnwheel2,25,0,0,0,100000
+d_rightgroundwheel9,25,0,0,0,100000
+d_rightgroundwheel8,25,0,0,0,100000
+d_rightgroundwheel7,25,0,0,0,100000
+d_rightgroundwheel6,25,0,0,0,100000
+d_rightgroundwheel5,25,0,0,0,100000
+d_rightgroundwheel4,25,0,0,0,100000
+d_rightgroundwheel3,25,0,0,0,100000
+d_rightgroundwheel2,25,0,0,0,100000
+d_rightgroundwheel1,25,0,0,0,100000
+d_glass1,8,0,0
+d_glass2,8,0,0
+o687_1,34,0,0

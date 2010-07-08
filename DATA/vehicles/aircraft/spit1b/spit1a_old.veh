@@ -1,0 +1,21 @@
+# basic vehicle data file for SM Spit 1
+vehicletype = ww2propplane
+vehiclename = spit1
+vehicleobjectname = spit1a
+componentfile = spit1.cmp
+enginefile = spit1.eng
+airfoilfile = spit1.air
+numberofflappositions= 1
+# next 3 are in kph
+aileronmaxspeed = 300
+ruddermaxspeed = 300
+elevatormaxspeed = 270
+# next 3 are in mach speed
+aileroncompressspeed = 0.92
+ruddercompressspeed = 0.92
+elevatorcompressspeed = 0.85
+# response times sec (full force)
+aileronresponsetime = 0.3
+elevatorresponsetime = 0.25
+rudderresponsetime = 0.5
+throttleresponsetime = 1.0

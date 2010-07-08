@@ -1,0 +1,20 @@
+# AI version of Oerlikon 20mm Flakgun
+# Rev. 06/17/03 - Doc
+mass = 0.0
+firetype = auto
+rateoffire = 360
+dispersion = 0.03
+ammotype1 = oerlikon_1ai
+ammotype2 = oerlikon_2ai
+ammotype3 = oerlikon_3ai
+ammotype4 = oerlikon_4ai
+ammotype5 = oerlikon_5ai
+ghostrof = 120
+ghostammotype = oerlikon_5ai
+cliprounds = 40
+reloadtime = 5
+nomuzzlesmoke = 1
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = magazine
+muzzleflash = muzzlesmoke

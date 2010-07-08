@@ -1,0 +1,12 @@
+# first thing in the weapon file should always be the weapontype
+# this causes the default_(weapontype).txt file to be loaded first
+# valid weapon types are:
+# SMG, SATCHEL, RIFLE, AUTO_PISTOL, GRENADE, REVOLVER, ITEM, KNIFE, LMG
+weaponType = ITEM
+
+# needed for arcane reason :)
+minimumDispersion = 1.0
+
+hudIconType = 6
+
+staticDeploy = 1

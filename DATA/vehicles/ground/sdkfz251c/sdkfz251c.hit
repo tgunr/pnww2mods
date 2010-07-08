@@ -1,0 +1,70 @@
+# damage resistance file for SdKfz.251 Ausf.C
+# created 09-30-03 by Doc.
+
+
+#sounds and stuff
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 10000
+
+#External
+
+d_bottomarmor,6,0,0
+d_toolboxes,5,0,0
+d_reararmor,8,0,0
+d_leftsidearmor,8,0,0
+d_rightsidearmor,8,0,0
+d_frontarmor,10,0,0
+d_mgshield,15,0,0
+d_mg34,12,0,0
+d_rearmgmount,5,0,0
+d_rightdoor,8,0,0
+d_leftdoor,8,0,0
+d_drivershutter,8,0,0
+d_leftsideshutter,8,0,0
+d_rightsideshutter,8,0,0
+d_leftairintake,3,0,0
+d_rightairintake,3,0,0
+d_exhaust,2,0,0
+d_treadcovers,6,0,0
+d_insidehull,6,0,0
+d_roadwheel12,5,0,0,0,100000
+d_roadwheel11,5,0,0,0,100000
+d_roadwheel10,15,0,0,0,100000
+d_roadwheel9,5,0,0,0,100000
+d_roadwheel8,5,0,0,0,100000
+d_roadwheel7,5,0,0,0,100000
+d_rightidlewheel,5,0,0,0,100000
+d_rightdrivewheel,5,0,0,0,100000
+d_righttread,25,0,0,0,100000
+d_lefttread,25,0,0,0,100000
+d_roadwheel1,5,0,0,0,100000
+d_roadwheel2,5,0,0,0,100000
+d_roadwheel3,5,0,0,0,100000
+d_roadwheel4,5,0,0,0,100000
+d_roadwheel5,5,0,0,0,100000
+d_roadwheel6,5,0,0,0,100000
+d_leftidlewheel,5,0,0,0,100000
+d_leftdrivewheel,5,0,0,0,100000
+d_righttire,5,0,0
+d_lefttire,5,0,0
+d_axle,40,0,0
+
+#Internal
+
+d_engine,250,0,0
+d_radiator,16,0,0
+d_fueltanks,8,0,0
+d_oilpan,8,0,0
+d_driverlegs,2,0,0,0,300
+d_driverarms,2,0,0,0,300
+d_drivertorso,2.5,0,0,0,300
+d_driverhead,6.5,0,0,0,300
+d_gunnerlegs,1,0,0
+d_gunnerarms,1,0,0
+d_gunnertorso,1.5,0,0
+d_gunnerhead,6.5,0,0

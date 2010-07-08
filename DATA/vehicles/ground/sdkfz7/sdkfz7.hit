@@ -1,0 +1,69 @@
+# damage resistance file for Sd. Kfz. 7
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 10000
+
+#EXTERIOR
+#These components are all treated as double-sided
+
+#Inside collider objects:
+d_engine,250,0,0
+d_radiator,8,0,0
+d_fueltanks,8,0,0
+d_oilpan,8,0,0
+d_driverlegs,2,0,0
+d_driverarms,2,0,0
+d_drivertorso,2.5,0,0
+d_driverhead,6.5,0,0
+
+#Outside collider objects:
+d_cab,1,0,0
+d_bed,1,0,0
+d_cabbottom,1,0,0
+d_bedbottom,1,0,0
+windshield_1,1,0,0
+d_lttread,25,0,0,0,100000
+lrdwheel7_5,10,0,0,0,100000
+lrdwheel6_5,10,0,0,0,100000
+lrdwheel5_5,10,0,0,0,100000
+lrdwheel4_5,10,0,0,0,100000
+lrdwheel3_5,10,0,0,0,100000
+lrdwheel2_5,10,0,0,0,100000
+lrdwheel1_5,10,0,0,0,100000
+ldwheel_5,15,0,0,0,100000
+d_rttread,25,0,0,0,100000
+rdwheel_5,15,0,0,0,100000
+rrdwheel1_5,10,0,0,0,100000
+rrdwheel2_5,10,0,0,0,100000
+rrdwheel3_5,10,0,0,0,100000
+rrdwheel4_5,10,0,0,0,100000
+rrdwheel5_5,10,0,0,0,100000
+rrdwheel6_5,10,0,0,0,100000
+rrdwheel7_5,10,0,0,0,100000
+d_lftwheel,5,0,0
+d_rtftwheel,5,0,0
+d_axle,40,0,0

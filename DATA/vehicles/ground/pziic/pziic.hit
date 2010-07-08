@@ -1,0 +1,97 @@
+# damage resistance file for PzKpfw IIc (pziic)
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2,concussive resistance, damage threshold
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 1000000
+
+#Inside collider objects:
+d_gearbox,250,0,0
+d_engine,250,0,0
+d_oiltank,8,0,0
+d_radiator1,8,0,0
+d_radiator2,8,0,0
+d_driverarms,1,0,0,0,35
+d_drivertorso,1.5,0,0,0,35
+d_driverlegs,1,0,0,0,35
+d_driverhead,6.5,0,0,0,40
+#d_gunnrhead,0.5,0,0,0,40
+#d_gunnrlegs,1,0,0,0,35
+#d_gunnrtorso,1.5,0,0,0,35
+#d_gunnrarms,1,0,0,0,35
+d_loaderarms,1,0,0,0,35
+d_loadertorso,1.5,0,0,0,35
+d_loaderlegs,1,0,0,0,35
+d_loaderhead,6.5,0,0,0,40
+d_maingunnrhead,6.5,0,0
+d_maingunnrlegs,1,0,0
+d_maingunnrtorso,1.5,0,0
+d_maingunnrarms,1,0,0
+d_hullammo,8,0,0
+#d_transmission,250,0,0
+d_fueltank2,8,0,0
+d_fueltank1,8,0,0
+d_turretammo,8,0,0,0,200
+d_firewall,5,0,0
+
+
+#Outside collider objects:
+
+d_mantlet01,29.8,0,0
+#d_mantlets,15,0,0
+d_fronthullarmor,14.5,0,0
+d_mg40,25,0,0
+d_canon,20,0,0,0,220000
+d_turetlowpoly,14.5,0,0
+d_underhull_1,14.5,0,0
+d_fender,8,0,0
+d_fender_1,8,0,0
+d_drivewheel_5,15,0,0,0,100000
+d_idlebak_5,15,0,0,0,100000
+d_wheel_24,15,0,0,0,100000
+d_wheel_26,15,0,0,0,100000
+d_wheel_25,15,0,0,0,100000
+d_1rdwheel_4,15,0,0,0,100000
+d_wheel_23,15,0,0,0,100000
+d_wheel200,15,0,0,0,100000
+d_wheel_31,15,0,0,0,100000
+d_wheel_30,15,0,0,0,100000
+d_wheel_29,15,0,0,0,100000
+d_wheel_28,15,0,0,0,100000
+d_wheel_27,15,0,0,0,100000
+d_idlebak_6,15,0,0,0,100000
+d_drivewheel_6,15,0,0,0,100000
+d_1rdwheel_6,15,0,0,0,100000
+d_rightcupula_1,10,0,0
+d_leftcupula_1,10,0,0
+d_topturret,10,0,0
+d_tophullback,10,0,0
+d_tophull01,12,0,0
+d_hulltopfront,30.15,0,0
+d_frontbay,24.65,0,0
+d_fronttip,30.15,0,0
+d_underside,5,0,0
+d_trk7u_1,15,0,0,0,100000
+d_trk7u_2,15,0,0,0,100000

@@ -1,0 +1,44 @@
+#pzivg.turret file
+
+#multicrewpos position, whichcrew
+multicrewpos 1 1
+multicrewpos 2 2
+multicrewpos 3 2
+multicrewpos 4 1
+
+# Main and coax
+position = 3
+elevationrate = 4.0
+traverserate = 22.5
+type = 360turret
+gunsightfile = pzivgmain.gs
+gunsightalignmentmountobject = mount1
+gunsightalignmentrange = 700
+
+#turret sound variables
+turrettraverse = turret/electric_turret.wav
+turretelevate = turret/hand_turret_move.wav
+turretgeneral = turret/turret_traverse_general.wav
+
+# Hull flex MG
+position = 4
+elevationrate = 1
+traverserate = 1
+type = limitedturret
+gunsightfile = germmg.gs
+gunsightalignmentmountobject = bowgun
+gunsightalignmentrange = 200
+
+#Commander head
+position = 2
+elevationrate = 2
+traverserate = 6
+type = 360turret
+gunsightfile = fernglas.gs
+# conditions are undeployed, depolyed, canopyopen, canopyclosed, hatchopen, hatchclosed
+gunsightblocked = canopyclosed
+
+#driver
+position = 1
+gunsightfile = pzivgdriver.gs
+gunsightblocked = canopyclosed

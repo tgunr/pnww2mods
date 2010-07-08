@@ -1,0 +1,54 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<masses>
+<mass name="mass_wheel1"
+	mass="1" volume="0.162389"
+	modelcmx="-0.776390" modelcmy="+1.957423" modelcmz="-0.795214"
+	unitinertiaxx="+0.123267" unitinertiayy="+0.065651" unitinertiazz="+0.065651"
+	unitinertiaxy="+0.000000" unitinertiaxz="-0.000000" unitinertiayz="+0.000000"/>
+<mass name="mass_wheel2"
+	mass="1" volume="0.162389"
+	modelcmx="-0.776390" modelcmy="+0.626761" modelcmz="-0.795214"
+	unitinertiaxx="+0.123267" unitinertiayy="+0.065651" unitinertiazz="+0.065651"
+	unitinertiaxy="-0.000000" unitinertiaxz="-0.000000" unitinertiayz="+0.000000"/>
+<mass name="mass_wheel3"
+	mass="1" volume="0.162389"
+	modelcmx="-0.776390" modelcmy="-0.674228" modelcmz="-0.795214"
+	unitinertiaxx="+0.123267" unitinertiayy="+0.065651" unitinertiazz="+0.065651"
+	unitinertiaxy="+0.000000" unitinertiaxz="+0.000000" unitinertiayz="+0.000000"/>
+<mass name="mass_wheel4"
+	mass="1" volume="0.162389"
+	modelcmx="-0.776390" modelcmy="-2.004928" modelcmz="-0.795214"
+	unitinertiaxx="+0.123267" unitinertiayy="+0.065651" unitinertiazz="+0.065651"
+	unitinertiaxy="-0.000000" unitinertiaxz="-0.000000" unitinertiayz="+0.000000"/>
+<mass name="mass_wheel5"
+	mass="1" volume="0.162389"
+	modelcmx="+0.776390" modelcmy="+1.957423" modelcmz="-0.795214"
+	unitinertiaxx="+0.123267" unitinertiayy="+0.065651" unitinertiazz="+0.065651"
+	unitinertiaxy="-0.000000" unitinertiaxz="+0.000000" unitinertiayz="+0.000000"/>
+<mass name="mass_wheel6"
+	mass="1" volume="0.162389"
+	modelcmx="+0.776390" modelcmy="+0.626761" modelcmz="-0.795214"
+	unitinertiaxx="+0.123267" unitinertiayy="+0.065651" unitinertiazz="+0.065651"
+	unitinertiaxy="+0.000000" unitinertiaxz="+0.000000" unitinertiayz="+0.000000"/>
+<mass name="mass_wheel7"
+	mass="1" volume="0.162389"
+	modelcmx="+0.776390" modelcmy="-0.674228" modelcmz="-0.795214"
+	unitinertiaxx="+0.123267" unitinertiayy="+0.065651" unitinertiazz="+0.065651"
+	unitinertiaxy="+0.000000" unitinertiaxz="+0.000000" unitinertiayz="+0.000000"/>
+<mass name="mass_wheel8"
+	mass="1" volume="0.162389"
+	modelcmx="+0.776390" modelcmy="-2.004928" modelcmz="-0.795214"
+	unitinertiaxx="+0.123267" unitinertiayy="+0.065651" unitinertiazz="+0.065651"
+	unitinertiaxy="+0.000000" unitinertiaxz="+0.000000" unitinertiayz="-0.000000"/>
+<mass name="mass_turret"
+	mass="1" volume="0.584610"
+	modelcmx="-0.000419" modelcmy="+0.667673" modelcmz="+0.764380"
+	unitinertiaxx="+0.141150" unitinertiayy="+0.115802" unitinertiazz="+0.226425"
+	unitinertiaxy="-0.000325" unitinertiaxz="-0.000016" unitinertiayz="+0.001913"/>
+<mass name="mass_turret_1"
+	mass="1" volume="1.579658"
+	modelcmx="+0.059377" modelcmy="+0.798506" modelcmz="+1.418246"
+	unitinertiaxx="+0.312683" unitinertiayy="+0.157063" unitinertiazz="+0.312683"
+	unitinertiaxy="+0.000000" unitinertiaxz="+0.000000" unitinertiayz="+0.000000"/>
+</masses>

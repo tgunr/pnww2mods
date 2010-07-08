@@ -1,0 +1,83 @@
+#airfoils file for Douglas Havoc1
+
+[propeller]
+baseairfoil = propbase.pol
+up10degairfoil = prop_up10.pol
+down10degairfoil = prop_dn10.pol
+stallfile = prop.stall
+compressibilityfile = prop.compress
+
+[havoc1_root]
+baseairfoil = 23018_neut.pol
+up10degairfoil = 23018_up10_23.pol
+down10degairfoil = 23018_dn10_23.pol
+stallfile = 23018.stall
+compressibilityfile = 23018tmp.compress
+
+[havoc1_midib]
+baseairfoil = 23017_neut.pol
+up10degairfoil = 23017_up10_27.pol
+down10degairfoil = 23017_dn10_27.pol
+stallfile = 23017.stall
+compressibilityfile = 23017tmp.compress
+# baseairfoil = flatplat.pol
+# up10degairfoil = flatplat.pol
+# down10degairfoil = flatplat.pol
+# stallfile = flatplat.stall
+# compressibilityfile = flatplat.compress
+
+[havoc1_midob]
+baseairfoil = 23016_neut.pol
+up10degairfoil = 23016_up10_31.pol
+down10degairfoil = 23016_dn10_31.pol
+stallfile = 23016.stall
+compressibilityfile = 23016tmp.compress
+
+[havoc1_ailib]
+baseairfoil = 23014_neut.pol
+up10degairfoil = 23014_up10_27.pol
+down10degairfoil = 23014_dn10_27.pol
+stallfile = 23014.stall
+compressibilityfile = 23014tmp.compress
+
+[havoc1_ailob]
+baseairfoil = 23012_neut.pol
+up10degairfoil = 23012_up10_24.pol
+down10degairfoil = 23012_dn10_24.pol
+stallfile = 23012.stall
+compressibilityfile = 23012tmp.compress
+
+[havoc1_tip]
+baseairfoil = 23010_neut.pol
+up10degairfoil = 23010_up10_25.pol
+down10degairfoil = 23010_dn10_25.pol
+stallfile = 23010.stall
+compressibilityfile = 23010tmp.compress
+
+[havoc1_horizstab]
+baseairfoil = 0010_base.pol
+up10degairfoil = 0010_up10_43.pol
+down10degairfoil = 0010_dn10_43.pol
+stallfile = 0010.stall
+compressibilityfile = 0010.compress
+
+[havoc1_vertstab]
+baseairfoil = 0010_base.pol
+up10degairfoil = 0010_up10_54.pol
+down10degairfoil = 0010_dn10_54.pol
+stallfile = 0010.stall
+compressibilityfile = 0010.compress
+
+[havoc1_fuselage]
+baseairfoil = 0010_base.pol
+up10degairfoil = 0010_base.pol
+down10degairfoil = 0010_base.pol
+stallfile = 0010.stall
+compressibilityfile = 0010.compress
+
+[flatplate]
+baseairfoil = flatplat.pol
+up10degairfoil = flatplat.pol
+down10degairfoil = flatplat.pol
+stallfile = flatplat.stall
+compressibilityfile = flatplat.compress

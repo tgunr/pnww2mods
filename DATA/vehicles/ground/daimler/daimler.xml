@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="daimler" type="ground" shape="daimler" description="Daimler Mk I Armored Car" icon="Daimler">
+<include file="daimler.veh.xml"/>
+<include file="daimler.state.xml"/>
+<include file="daimler.hit.xml"/>
+<include file="daimler.turret.xml"/>
+<include file="daimler.loadout.xml"/>
+<include file="daimler.xsound.xml"/>
+<include file="daimler.control.xml"/>
+<include file="daimler.mass.xml"/>
+</vehicle>

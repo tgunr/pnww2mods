@@ -1,0 +1,95 @@
+# HE111 turret file
+
+#multicrewpos position, whichcrew
+multicrewpos 1 1
+multicrewpos 2 2
+multicrewpos 3 2
+multicrewpos 4 2
+multicrewpos 5 2
+multicrewpos 6 2
+multicrewpos 7 2
+
+# Nose Gun
+position = 3
+elevationrate = 1
+traverserate = 0.5
+type = limitedturret
+gunsightalignmentmountobject = nosegunx
+gunsightalignmentrange = 400
+# conditions are undeployed, depolyed, canopyopen, canopyclosed, hatchopen, hatchclosed
+gunsightblocked = undeployed
+# added for centering gun
+# neutral can be: bombayopen/closed, hatchopen/closed, canopyopen/closed
+neutral = bombbayclosed
+# neutraltraverse -1 max deflection left, 1 max deflection right, 0 straight ahead 
+neutraltraverse = 0
+# neutralelevate -1 max down, 1 max up, 0 is midtraverse
+neutralelevate = 0
+
+
+# added for centering gun
+# neutral can be: bombayopen/closed, hatchopen/closed, canopyopen/closed
+# neutral = bombbayclosed
+# neutraltraverse -1 max deflection left, 1 max deflection right, 0 straight ahead 
+neutraltraverse = 0
+# neutralelevate -1 max down, 1 max up, 0 is midtraverse
+neutralelevate = 0
+
+#bombadier
+position = 2
+bombsight = germlotfec7b
+bombmount = sc250x
+# conditions are undeployed, depolyed, canopyopen, canopyclosed, hatchopen, hatchclosed
+gunsightblocked = 0
+#gunsightblocked = deployed
+gunsightfile = he111.gs
+# sight turn turret
+position = 2
+elevationrate = 2
+traverserate = 2
+type = limitedturret
+
+
+# Top Gun
+position = 4
+elevationrate = 0.5
+traverserate = 1
+type = limitedturret
+gunsightalignmentmountobject = turretgunx
+gunsightalignmentrange = 400
+
+
+# added for centering gun
+# neutral can be: bombayopen/closed, hatchopen/closed, canopyopen/closed
+neutral = canopyclosed
+# neutraltraverse -1 max deflection left, 1 max deflection right, 0 straight ahead 
+neutraltraverse = 0
+# neutralelevate -1 max down, 1 max up, 0 is midtraverse
+neutralelevate = -1
+
+# Belly Gun
+position = 5
+elevationrate = 1
+traverserate = 0.5
+type = limitedturret
+gunsightalignmentmountobject = bellygunx
+gunsightalignmentrange = 400
+
+# Left Gun
+position = 6
+elevationrate = 1
+traverserate = 0.5
+type = limitedturret
+gunsightalignmentmountobject = leftgunx
+gunsightalignmentrange = 400
+
+# Right Gun
+position = 7
+elevationrate = 1
+traverserate = 0.5
+type = limitedturret
+gunsightalignmentmountobject = rightgunx
+gunsightalignmentrange = 400
+
+
+

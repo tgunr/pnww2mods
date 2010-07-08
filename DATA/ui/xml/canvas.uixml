@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<window id="canvas" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" layer="500"
+	onshow="initCanvas(this)" style="background-color: #00000022;">
+	<view id="pen" x="0" y="0" rright="0" rtop="0" layer="50" style="border-color: #FF0000; border-size: 1;"/>
+	<caption id="label" x="0" height="20" rright="0" rtop="5" layer="40" style="color: #FFFFFF; font-size: +1;" align="center"/>
+	<view id="mover" x="0" y="0" rright="0" rtop="0" layer="100" moveondrag="yes" acceptsmouseclick="yes"
+		onmousedown="startDrawing()" onclick="stopDrawing()" ondrag="updateDrawing()"/>
+	<script>
+		<!--
+		
+		var caption	= null;
+		var mover 	= null;
+		var pen 	= null;
+		var startx 	= 0;
+		var starty	= 0;
+		var drawing	= false;
+		var pview	= null;
+		
+		function initCanvas(win)
+		{
+			mover 	= win.findview("mover");
+			pen 	= win.findview("pen");
+			caption = win.findview("label");
+		}
+		
+		function startDrawing()
+		{
+			startx 		= game.cursor.x;
+			starty 		= window.height - game.cursor.y;
+			pen.x 		= startx;
+			pen.y 		= starty;
+			pen.width 	= 1;
+			pen.height 	= 1;
+			pen.visible = true;
+			drawing		= true;
+			
+			game.consoleprint("Start drawing at: " + startx + "," + starty + "\n");
+		}
+		
+		function stopDrawing()
+		{
+			drawing = false;
+			mover.x = 0;
+			mover.y = 0;
+			
+			game.consoleprint("Drawing Area is: " + pen.x + "," + pen.y + " " + pen.width + "x" + pen.height + "\n");
+		}
+		
+		function updateDrawing()
+		{
+			if(drawing)
+			{
+				pen.x 		= (mover.x < 0) ? startx + mover.x: startx;
+				pen.y 		= (mover.y < 0) ? starty + mover.y: starty;
+				pen.width 	= Math.abs(mover.x);
+				pen.height 	= Math.abs(mover.y);
+				
+				if(pview)
+				{
+					var rx = pen.x - pview.screenx;
+					var ry = pen.y - pview.screeny;
+					
+					caption.label = rx + "," + ry + " " + pen.width + "x" + pen.height + " relative to " + pview.name;
+				}
+				else
+				{
+					caption.label = pen.x + "," + pen.y + " " + pen.width + "x" + pen.height;
+				}
+			}
+		}
+		
+		function setParent(name)
+		{
+			pview = (name != null && name != "") ? game.findview(name): null;
+		}
+		
+		-->
+	</script>
+</window>
+

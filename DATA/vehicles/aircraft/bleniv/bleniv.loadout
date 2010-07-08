@@ -1,0 +1,92 @@
+# Blenheim Mk IV loadout file
+# revised 30th Nov. 05 (swapped 250lb bombs for 500lb bombs) forward mounts only, aft mounts closed off -Doc.
+
+# sounds available for the mounts
+sound1 = sounds\bleniv\xgun.wav
+# sound2 = sounds\ju87b\bombrel.wav
+
+loadout = 1
+
+mountnum = 1
+mountobject = winggunx
+mountsound = sound1
+weapon = browning303air
+weaponobject = brit303r
+
+mountnum = 2
+mountobject = turretgunx
+mountsound = sound1
+weapon = vickersk
+weaponobject = genericgun1
+
+# Left side bombbay aft
+mountnum = 3
+mountobject = gp250lr
+#weapon = gp250
+#weaponobject = gp250
+recoilnum = 1
+recoiltime = .2
+
+# Right side bombbay aft
+mountnum = 4
+mountobject = gp250rr
+#weapon = gp250
+#weaponobject = gp250
+recoilnum = 1
+recoiltime = .2
+
+# Left side bombbay forward
+mountnum = 5
+mountobject = gp250lf
+weapon = gp500
+weaponobject = gp500
+recoilnum = 1
+recoiltime = .2
+
+# Right side bombbay forward
+mountnum = 6
+mountobject = gp250rf
+weapon = gp500
+weaponobject = gp500
+recoilnum = 1
+recoiltime = .2
+
+mountnum = 7
+mountobject = gp40y
+weapon = gp40
+weaponobject = gp40
+
+mountnum = 8
+mountobject = gp40y2
+weapon = gp40
+weaponobject = gp40
+
+mountnum = 9
+mountobject = gp40y3
+weapon = gp40
+weaponobject = gp40
+
+mountnum = 10
+mountobject = gp40y4
+weapon = gp40
+weaponobject = gp40
+
+mountnum = 11
+mountobject = gp40x
+weapon = gp40
+weaponobject = gp40
+
+mountnum = 12
+mountobject = gp40x2
+weapon = gp40
+weaponobject = gp40
+
+mountnum = 13
+mountobject = gp40x3
+weapon = gp40
+weaponobject = gp40
+
+mountnum = 14
+mountobject = gp40x4
+weapon = gp40
+weaponobject = gp40

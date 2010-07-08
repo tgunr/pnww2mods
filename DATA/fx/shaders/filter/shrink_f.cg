@@ -1,0 +1,18 @@
+struct appin
+{
+    float2 t0  : TEXCOORD0;
+};
+
+float4 main(appin IN,
+            uniform sampler2D src) : COLOR
+{
+	float4 color = tex2D(src, IN.t0);
+	
+	// Cheap way to darken darks and brighten whites
+	color.rgb = color.rgb * color.rgb * color.rgb;
+	
+	color.a = 1;
+
+    return color;
+}
+

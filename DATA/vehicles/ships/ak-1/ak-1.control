@@ -1,0 +1,89 @@
+# Freigter Control file
+
+# Helm
+position = 1
+control = radio
+# control = hatchcontrol
+control = canopycontrol
+control = map
+control = auxsight
+control = bothbrake
+control = leftbrake
+control = rightbrake
+control = enginerpm
+control = steering
+control = clutch
+control = shiftup
+control = shiftdown
+control = reverse
+control = gas
+control = engstart
+
+# Captain
+position = 2
+control = radio
+# control = hatchcontrol
+control = canopycontrol
+control = map
+control = auxsight
+control = turretraverse
+control = turretelevate
+
+# Crane operator
+position = 3
+control = radio
+# control = hatchcontrol
+control = canopycontrol
+control = map
+control = auxsight
+control = turretraverse
+control = turretelevate
+control = winch
+
+
+# winch
+#position = 4
+#control = radio
+# control = hatchcontrol
+# control = canopycontrol
+#control = map
+#control = auxsight
+#control = turretraverse
+#control = turretelevate
+#control = primarytrigger
+
+# 1st Officer
+position = 5
+control = radio
+# control = hatchcontrol
+control = canopycontrol
+control = map
+control = auxsight
+control = turretraverse
+control = turretelevate
+
+# 20mm fwd
+position = 6
+control = radio
+# control = hatchcontrol
+#control = canopycontrol
+control = map
+control = auxsight
+control = turretraverse
+control = turretelevate
+control = primarytrigger
+control = secondarytrigger
+
+# 20mm aft
+position = 7
+control = radio
+# control = hatchcontrol
+control = canopycontrol
+control = map
+control = auxsight
+control = turretraverse
+control = turretelevate
+control = primarytrigger
+control = secondarytrigger
+
+

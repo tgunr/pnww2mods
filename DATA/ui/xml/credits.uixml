@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<window id="credits" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768"  modal="true" acceptsmouseclick="true"
+	style="background-color: #000000E5;" layer="500" aspectalign="center" onshow="initCredits(this)" onupdate="updateCredits()" onmousedown="quitNow()">
+	<include file="classes/CycleTimer.uixml"/>
+	<include file="lib/common.uixml"/>
+	<view x="100" y="120" rtop="110" rright="50" aspectlimit="width" acceptmouseclick="false">
+		<text id="credits-info" x="200" rtop="0" y="0" rright="0" acceptfocus="false" acceptmouseclick="false"
+			style="color: #FFFFFF; font-size: +2;"/>
+	</view>
+	<caption label="&common.exitclick;" x="0" height="25" y="15" rright="0" acceptfocus="false" acceptmouseclick="false"
+			style="color: #BFE2CE; font-size: +1;" align="center"/>
+		<script>
+		<!--
+		
+		var creditsInfo 	= window.findview("credits-info");
+		var creditsTimer 	= new CycleTimer(100);
+		var stageTimer 		= null;
+		var row 			= 0;
+		var lastUpdate		= (new Date()).getTime();
+		var pps				= 50; // pixels per second
+		var pause			= true;
+		var doQuit			= 0;
+		
+		function initCredits(w)
+		{
+			musicPlayIntro();
+			
+			if(creditsInfo != null)
+			{
+				var content = game.getcontent("manuals/credits.xml");
+				
+				if(content != null)
+				{
+					creditsInfo.text = content.body;
+					creditsInfo.resizetotext();
+					
+					creditsInfo.y -= (creditsInfo.height - creditsInfo.parent.height);
+					
+					cprint("Credits Info height is " + creditsInfo.height + "\n");
+					cprint("Credits Info y is " + creditsInfo.y + "\n");
+				}
+			}
+		}
+		
+		function updateCredits()
+		{
+			if(creditsInfo == null)
+				return;
+				
+			var now = (new Date()).getTime();
+			
+			if(doQuit > 0)
+			{
+				if(now >= doQuit)
+					game.quit();
+				
+				return;
+			}
+			
+			if(pause)
+			{
+				if(stageTimer == null)
+				{
+					stageTimer = new CycleTimer(3000);
+					stageTimer.add(3000);
+				}
+				
+				if(stageTimer.run())
+				{
+					pause = false;
+					stageTimer = null;
+				}
+			}
+			else if(creditsInfo.y < 0)
+			{
+				var diff 	= (now - lastUpdate);
+				var tics 	= Math.floor(diff / 50);
+				var delta	= diff / 1000;
+				
+				if(tics < 1)
+					tics = 1;
+				
+				var ticDelta 	= delta / tics;
+				var rise 		= pps * ticDelta; 
+				
+				for(var t = 0; t < tics; t++)
+				{
+					creditsInfo.y += rise;
+				}
+			}
+			else if(doQuit == 0)
+			{
+				if(stageTimer == null)
+				{
+					stageTimer = new CycleTimer(5000);
+					stageTimer.add(5000);
+				}
+				
+				if(stageTimer.run())
+				{
+					musicKill();
+					doQuit = now + 1000;
+				}
+			}
+			
+			lastUpdate = now;
+		}
+		
+		function quitNow()
+		{
+			musicKill();
+			doQuit = (new Date()).getTime() + 1000;
+		}
+		
+		// -->
+	</script>
+</window>
+

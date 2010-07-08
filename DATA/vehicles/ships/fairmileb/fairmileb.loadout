@@ -1,0 +1,66 @@
+# Fairmileb.loadout file
+
+# sounds available for the mounts
+sound1 = sounds\fairmileb\xgun1.wav
+sound2 = sounds\fairmileb\xgun2.wav
+sound3 = sounds\fairmileb\xgun3.wav
+sound4 = sounds\qf2pounder\2lbs.wav
+
+loadout = 1
+
+# Deck Gun
+mountnum = 1
+mountobject = mount_a
+mountsound = sound4
+weapon = 47mm3pdr
+weaponobject = genericgun1
+recoilnum = 3
+recoiltime = .2
+
+# Single 20mm
+mountnum = 2
+mountobject = mount_y
+mountsound = sound2
+weapon = oerlikon
+weaponobject = genericgun1
+recoilnum = 4
+recoiltime = 0.03
+
+
+# Dual 20mm, left gun
+mountnum = 3
+mountobject = mount_z
+mountsound = sound1
+weapon = oerlikon
+weaponobject = genericgun1
+#mountobject = mount_z
+#mountsound = sound4
+#weapon = oerlikon
+#weaponobject = genericgun1
+recoilnum = 6
+recoiltime = 0.03
+
+# Dual 20mm, right gun
+mountnum = 6
+mountobject = mount_za
+mountsound = sound2
+weapon = oerlikon
+weaponobject = genericgun1
+recoilnum = 9
+recoiltime = 0.03
+
+# Port MG
+mountnum = 4
+mountobject = mount_b
+mountsound = sound3
+weapon = vickersk
+weaponobject = genericgun1
+
+
+# Starboard MG
+mountnum = 5
+mountobject = mount_c
+mountsound = sound3
+weapon = vickersk
+weaponobject = genericgun1
+

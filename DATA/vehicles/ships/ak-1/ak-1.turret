@@ -1,0 +1,54 @@
+# fairmileb.turret file
+
+# multicrewpos position, whichcrew
+multicrewpos 1 1
+multicrewpos 2 1
+multicrewpos 3 1
+multicrewpos 4 1
+multicrewpos 5 2
+multicrewpos 6 1
+multicrewpos 7 2 
+
+
+# Captain
+position = 2
+elevationrate = 2
+traverserate = 6
+type = 360turret
+gunsightfile = 8x30binoc.gs
+
+# crane
+position = 3
+elevationrate = 34
+traverserate = 34
+type = limitedturret
+hoistturret = 4
+gunsightfile = crane.gs
+
+# winch
+position = 4
+elevationrate = 28
+traverserate = 28
+type = limitedturret
+neutraltraverse = -1
+
+# 1st Officer
+position = 5
+elevationrate = 2
+traverserate = 6
+type = 360turret
+gunsightfile = 8x30binoc.gs
+
+# Forward 20mm emplacements
+position = 6
+elevationrate = 2
+traverserate = 6
+type = 360turret
+
+# Aft 20mm emplacements
+position = 7
+elevationrate = 2
+traverserate = 6
+type = 360turret
+
+

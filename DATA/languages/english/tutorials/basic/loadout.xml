@@ -1,0 +1,81 @@
+<?xml version='1.0'?>
+<!DOCTYPE content SYSTEM "content.dtd">
+<content>
+  <body>title = Basic Loadout Management
+1.0.label = Weapons
+1.1.alert.modal = An soldier&#39;s inventory consists of one primary weapon and any number of secondary weapons that are useful under different combat situations.
+1.1.alert1.modal = As we go through your inventory, keep an eye on your HUD&#39;s weapon indicator. It provides information like which weapon is selected, ammo remaining, ranges settings, etc...
+1.1.alert1.hilite = primary
+1.1.alert2 = Your primary weapon is currently lowered. Hit {fprelaxed} to raise your weapon.
+1.1.alert2.hilite = primary
+1.1.label = loadouts
+
+1.2.alert.modal = As a rifleman, your primary weapon is the rifle. All infantry classes can select their primary weapon with the {fpweapon0} key.
+1.2.alert.hilite = primary
+1.2.alert1.modal = All rifles operate basically the same way. The differences between rifles are how much ammo it can carry, bullet drop, penetration and its sights. 
+1.2.alert2.modal = You can also adjust a rifle&#39;s sights with {gunsightrangedec} and {gunsightrangeinc}. To reload it, hit {fpreload}. 
+1.2.alert3 = Go ahead and fire off a few rounds using the {fpfire} key.
+1.2.label = the rifle
+1.2.complete = Well done!
+
+1.3.alert = Now, lets take a look at your HE grenade by hitting the {fpweapon1} key.
+1.3.label = select HE
+
+1.4.alert.modal =  HE grenades are useful in clearing out buildings or behind berms. As a rifleman, you can always select the HE grenade with the {fpweapon1} key.
+1.4.alert.hilite = primary
+1.4.alert1.modal = To throw a grenade, simply look towards where you want to throw the grenade and press {fpfire}. You can throw your grenade further by holding down {fpfire} longer and looking at a higher angle.
+1.4.alert3 = Try throwing a grenade away from you by hitting {fpfire}. You will fail this tutorial if you die, so don&#39;t through it to close to youself.
+1.4.label = the HE grenade
+1.4.complete = Excellent!
+
+1.5.alert = Ok, now select your smoke grenade with the {fpweapon2} key.
+1.5.label = select smoke
+
+1.6.alert.modal =  Smoke grenades are useful for making your way across open areas under enemy fire. As a rifleman, you can always select the smoke grenade with the {fpweapon2} key.
+1.6.alert.hilite = primary
+1.6.alert1.modal = Throwing a smoke grenade works the same as throwing a HE grenade. Simply look where you want to throw it and press {fpfire}. As with the HE grenade, the longer you hold {fpfire}, the further it will be thrown.
+1.6.alert2.modal = Once the smoke grenade hits the ground, it will pop and release smoke for a short period. This will give you and your friends cover to move through the area.
+1.6.alert3 = Throw a smoke grenade on the ground with {fpfire} and take a moment to check it out. Trying walking through it and around it.
+1.6.label = the smoke grenade
+
+1.7.alert3 = Select the knife with the {fpweapon3} key.
+1.7.label = select knife
+
+1.8.alert.modal = Use your knife when in close quarters or when you want to be silent. Simply get close to your enemy and thrust using {fpfire}. It may take several thrusts to kill your opponent. 
+1.8.alert.hilite = primary
+1.8.alert1 = Take a moment to thrust your knife using {fpfire}.
+1.8.label = the combat knife
+1.8.complete = Well done, now lets take a look at your non-combat gear.
+
+2.0.label = Non-Combat Gear
+2.1.alert = The next item we&#39;ll take a look at is the ammo pack. Select your ammo pack with the {fpweapon4} key.
+2.1.label = select ammo pack
+
+2.2.alert.modal = Your ammo pack is a one time use item that allows you to refill a friendly trooper&#39;s primary weapon with ammo. Simply get close to him and use {fpfire} to refill his ammo.  
+2.2.alert.hilite = primary
+2.2.alert1.modal = Its best to save your ammo pack for troopers with limited ammo supplies like machine gunners or mortarmen.
+2.2.alert2 = Go ahead and hit {fpfire} to see what it looks like to try to give ammo. Of course, you won&#39;t be able to give ammo until you have someone near you.
+2.2.label = the ammo pack
+
+2.3.alert = The next item is binoculars. Select {fpweapon9} to bring up your binoculars.
+2.3.label = select binoculars
+
+2.4.alert.modal = Your binoculars allow you to see long distances. This is very important because the terrain you will fight in is very large. 
+2.4.alert.hilite = primary
+2.4.alert1.modal = Binoculars are special in that it takes the rank of Captain to get them. You can only use your binoculars while standing still. Moving drops your binoculars and brings up your primary weapon. 
+2.4.alert2 = Take a moment to look around with your binoculars. When you are ready, simply move in any direction using forward {fpfoward}, backward {fpbackward}, strafe left {fpstrafeleft} or strafe right {fpstraferight}.
+2.4.label = the binoculars
+2.4.complete = As you can see moving drops your binoculars and brings up your primary weapon.
+
+2.5.alert.modal = The last non-combat item is the map. The next tutorial will cover the map in more depth, but lets take a quick look at it.
+2.5.alert1.modal = To bring up the map, simply hit the {showingamemap} key. The map contains more than just map info in it. You can view mission details, read help manuals and change your preferences.
+2.5.alert2 = Bring up the map with the {showingamemap} key. Once you have explored the map some, simply hit the {showingamemap} key to close the map and end this tutorial.
+2.5.label = open the map
+
+2.6.alert = Close the map by hitting the {showingamemap} key when you are done looking at it to complete this tutorial.
+2.6.label = close the map</body>
+  <brief>Learn how to select weapons and items in your inventory. Includes using secondary weapons like knives and grenades as well as non-combat items like ammo packs.</brief>
+  <handler>basic.loadout</handler>
+  <requires>basic.rifle</requires>
+  <title>Basic Loadout Training</title>
+</content>

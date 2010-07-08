@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="oplbltz" type="ground" shape="oplbltz" description="Opel Blitz Truck" icon="Opel">
+<include file="oplbltz.veh.xml"/>
+<include file="oplbltz.state.xml"/>
+<include file="oplbltz.hit.xml"/>
+<include file="oplbltz.xsound.xml"/>
+<include file="oplbltz.control.xml"/>
+<include file="oplbltz.mass.xml"/>
+<variant id="cn_oplbltz" icon="Opel"/>
+<variant id="oplbltz" icon="Opel"/>
+</vehicle>

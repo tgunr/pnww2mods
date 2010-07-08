@@ -1,0 +1,45 @@
+#H87b3.loadout file
+#modified Oct.9/09 - Doc.
+
+# sounds available for the mounts
+sound1 = sounds\50cal600rpm.wav
+
+loadout = 1
+
+mountnum = 1
+mountobject = lnosegun
+mountsound = sound1
+weapon = m2_50cal_air
+weaponobject = genericgun1
+
+mountnum = 2
+mountobject = rnosegun
+mountsound = sound1
+weapon = m2_50cal_air
+weaponobject = genericgun1
+
+mountnum = 3
+mountobject = lowinggun
+mountsound = sound1
+weapon = m2_50cal_air
+weaponobject = genericgun1
+
+mountnum = 4
+mountobject = liwinggun
+mountsound = sound1
+weapon = m2_50cal_air
+weaponobject = genericgun1
+
+mountnum = 5
+mountobject = riwinggun
+mountsound = sound1
+weapon = m2_50cal_air
+weaponobject = genericgun1
+
+mountnum = 6
+mountobject = rowinggun
+mountsound = sound1
+weapon = m2_50cal_air
+weaponobject = genericgun1
+
+# changed all weaponobjects to genericgun1 to locate muzzle flash relative to wing correctly - Doc. 

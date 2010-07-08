@@ -1,0 +1,285 @@
+<?xml version="1.0"?>
+<view id="tutorial" x="0" y="0" width="1024" height="768" acceptmouseclick="false" layer="53"
+	onshow="InitTutorial()" onupdate="doUpdate()">
+	<include file="lib/common.uixml"/>
+	<include file="lib/tutorial.uixml"/>
+	<include file="classes/ListControl.uixml"/>
+	<include file="classes/HiliteViewMap.uixml"/>
+	<text id="tut-message" x="300" height="80" rtop="170" rright="300"
+		maxwidth="500" fontshadowx=".08" fontshadowy="-.08"
+		style="color: #FFFFFF; font-size: +2; background-color: #00000099; border-width: 5; border-height: 5; border-color: #3e5248; border-size: 1;"
+		moveondrag="no" acceptmouseclick="false"/>
+	<script>
+		<!--
+			
+			var initialized		= false;
+			var messageView		= window.findview("tut-message");
+			var currentAlert	= null;
+			var targetView		= null;
+			var hilite			= "";
+			var htimer			= new CycleTimer(50);
+			//var stimer			= new CycleTimer(2000);
+			var map				= null;
+						
+			function InitTutorial()
+			{
+				if(initialized) return;
+				initialized = true;
+				
+				TutAddCallback("oncontinue", OnContinue);
+				//TutAddCallback("stepcomplete", OnStepComplete);
+				//TutAddCallback("onupdate", OnUpdate);
+				TutAddCallback("addalert", OnAddAlert);
+				TutAddCallback("addwaypoint", OnAddWaypoint);
+				TutAddCallback("removewaypoint", OnRemoveWaypoint);
+				TutAddCallback("tutcompleted", OnTutorialCompleted);
+			}
+			
+			function OnContinue()
+			{
+				if(currentAlert != null && currentAlert.modal)
+					currentAlert.SetExpired();
+			}
+			
+			function doUpdate(force)
+			{
+				map = game.findview("mapview");
+				
+				var hasMap		= (map != null) ? true: false;
+				var mapReady 	= (hasMap && map.stabilized) ?  true: false;
+ 				
+				if(mapReady && hilite != null && hilite != "" && htimer.run())
+				{
+					TutSetHilite(hilite, messageView, createHiliter);
+					hilite = "";
+				}
+				
+				if(map == null || mapReady)
+					TutUpdate(currentAlert);
+				
+				if(targetView != null)
+					updateWaypoint(targetView.waypoint);
+			}
+			
+			function OnStepComplete()
+			{
+				game.playsound("sounds/ding5.wav", 1, 0.05);
+			}
+			
+			function OnAddAlert(alert)
+			{
+				hilite = alert.hilite;
+				alert.hilite = "";
+				
+				currentAlert = alert;
+				currentAlert.Show(messageView, false);
+				
+				var bid 		= currentAlert.BaseID();
+				var parts		= new Array();
+				var scale 		= parseFloat(TutGetLoc(bid + ".scale", true));
+				var position 	= TutGetLoc(bid + ".position", true);
+				var selection 	= TutGetLoc(bid + ".selection", true);
+				var mouse 		= TutGetLoc(bid + ".mouse", true);
+				
+				if(position != "")
+				{
+					parts = position.split(",");
+					
+					var x 		= parseFloat(parts[0]);
+					var y 		= parseFloat(parts[1]);
+					var pan		= (parts.length > 2 && parts[2] == "false") ? false: true;
+					
+					setMapPos(x, y, scale, pan);
+				}
+				else if(!isNaN(scale))
+				{
+					setMapScale(scale);
+				}
+				
+				if(selection != "")
+				{
+					parts = selection.split(",");
+					
+					var cp 		= parts[0];
+					var fac 	= (parts.length > 1) ? parts[1]: "";
+					var jump	= (parts.length > 2 && parts[2] == "true") ? true: false;
+					
+					setMapSelection(cp, fac, jump);
+				}
+				
+				if(mouse != "")
+					setMapAcceptsMouse((mouse == "true") ? true: false);
+			}
+			
+			function OnAddWaypoint(name)
+			{
+				if(targetView != null)
+					targetView.close();
+				
+				var hud = game.findview("hud");
+				if(hud == null) return;
+				
+				var waypoint = tutWaypoints[name];
+				var lname = getlocstring("waypoints." + name);
+				
+				if(lname == null || lname == "" || lname.charAt(0) == "?")
+					lname = name;
+				
+				var xml = '<view id="' + lname + '" class="target" x="0" y="0" width="1024" height="768" style="color: #0000FF44;"/>';
+				
+				targetView = hud.addview(xml);
+				if(targetView == null) return;
+				
+				targetView.name			= lname;
+				targetView.width		= window.width;
+				targetView.height		= window.height;
+				targetView.targettex 	= "ui/textures/targeticon1.bmp";
+				targetView.arrowtex 	= "ui/textures/navhome.bmp";
+				targetView.targetsize 	= 25;
+				targetView.tx 			= waypoint.x;
+				targetView.ty 			= waypoint.y;
+				targetView.tz 			= waypoint.z;
+			}
+			
+			function OnRemoveWaypoint(name)
+			{
+				if(targetView != null)
+					targetView.close();
+				
+				targetView = null;
+			}
+			
+			function updateWaypoint(name)
+			{
+				targetView.update();
+			}
+			
+			function setMapToSync()
+			{
+				if(initTutMap())
+					map.mgr.MapToSync();
+			}
+			
+			function setMapPos(x, y, scale, pan)
+			{
+				game.consoleprint("Setting map pos to " + x + "," + y + " at " + scale + " with " + pan + "\n");
+				
+				if(initTutMap())
+				{
+					if(!isNaN(x) && x > 0 && !isNaN(y) && y > 0)
+					{
+						if(isNaN(scale) || scale == 0)
+							scale = map.scale;
+						
+						map.mgr.setCenterMe(false);
+						map.mgr.setPosition(map.getposition(x, y), pan, scale);
+						map.mgr.MapToSync();
+					}
+				}
+			}
+			
+			function setMapScale(scale)
+			{
+				game.consoleprint("Setting map scale to " + scale + "\n");
+				
+				if(initTutMap() && !isNaN(scale) && scale > 0)
+				{
+					map.mgr.setPosition(map.position, true, scale);
+					map.mgr.MapToSync();
+				}
+			}
+			
+			function setMapCP(to)
+			{
+				var cp = game.findview("mapcp");
+				
+				var index = parseInt(to);
+				
+				if(cp != null && cp.mgr.selected != index)
+				{
+					if(index >= 0)
+						cp.mgr.buttons.value = index;
+					
+					cp.mgr.select(false);
+				}
+			}
+			
+			function setMapSelection(cp, fac, jump)
+			{
+				if(initTutMap() && map.mgr != null)
+				{
+					game.consoleprint("Setting map selection!\n");
+					
+					var strat = map.findstratob(cp, fac);
+					
+					if(strat != null)
+					{
+						game.consoleprint("Found strat: " + strat.name + "\n");
+						
+						map.mgr.setSelection(strat, true);
+						
+						if(jump)
+						{
+							game.consoleprint("Jump is true!\n");
+							map.mgr.jumpTo(strat);
+						}
+					}
+				}
+			}
+			
+			function setMapAcceptsMouse(ok)
+			{
+				/*
+				if(initTutMap())
+				{
+					consoleprint("Setting map accepts mouse to " + ok + "\n");
+					map.acceptsmouse = (ok == true || ok == "true") ? true: false;
+				}
+				*/
+				
+				var bval = !((ok == true || ok == "true") ? true: false);
+				
+				window.acceptsmouse = bval;
+				window.modal = bval;
+			}
+			
+			function createHiliter(description, pause, space, runs)
+			{
+				return new HiliteView(description, pause, space, runs);
+			}
+			
+			function initTutMap()
+			{
+				if(map == null)
+					map	= game.findview("mapview");
+				
+				return (map != null) ? true: false;
+			}
+			
+			function OnShowMap()
+			{
+				messageView.x		= scaleX(754);
+				messageView.y 		= scaleY(248);
+				messageView.width 	= scaleX(180);
+				messageView.height 	= scaleY(350);
+				map 				= game.findview("mapview");
+			}
+			
+			function OnHideMap()
+			{
+				messageView.x		= scaleX(300);
+				messageView.y 		= scaleY(518);
+				messageView.width 	= scaleX(424);
+				messageView.height 	= scaleY(80);
+				map 				= null;
+			}
+			
+			function OnTutorialCompleted()
+			{
+				if(messageView != null) messageView.visible = false;
+			}
+			
+		-->
+	</script>
+</view>
+

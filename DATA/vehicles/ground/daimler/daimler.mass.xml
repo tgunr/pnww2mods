@@ -1,0 +1,29 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<masses>
+<mass name="mass_backrightwheel"
+	mass="1" volume="0.223273"
+	modelcmx="+1.005612" modelcmy="-1.277502" modelcmz="-0.461135"
+	unitinertiaxx="+0.129452" unitinertiayy="+0.071007" unitinertiazz="+0.071007"
+	unitinertiaxy="-0.000000" unitinertiaxz="-0.000000" unitinertiayz="+0.000000"/>
+<mass name="mass_frontrightwheel"
+	mass="1" volume="0.223273"
+	modelcmx="+1.005612" modelcmy="+1.266290" modelcmz="-0.461135"
+	unitinertiaxx="+0.129452" unitinertiayy="+0.071007" unitinertiazz="+0.071007"
+	unitinertiaxy="+0.000000" unitinertiaxz="-0.000000" unitinertiayz="-0.000000"/>
+<mass name="mass_backleftwheel"
+	mass="1" volume="0.223273"
+	modelcmx="-1.005612" modelcmy="-1.277502" modelcmz="-0.461135"
+	unitinertiaxx="+0.129452" unitinertiayy="+0.071007" unitinertiazz="+0.071007"
+	unitinertiaxy="+0.000000" unitinertiaxz="+0.000000" unitinertiayz="+0.000000"/>
+<mass name="mass_frontleftwheel"
+	mass="1" volume="0.223273"
+	modelcmx="-1.005612" modelcmy="+1.266290" modelcmz="-0.461135"
+	unitinertiaxx="+0.129452" unitinertiayy="+0.071007" unitinertiazz="+0.071007"
+	unitinertiaxy="-0.000000" unitinertiaxz="+0.000000" unitinertiayz="-0.000000"/>
+<mass name="mass_turret"
+	mass="1" volume="1.234479"
+	modelcmx="+0.000030" modelcmy="-0.206191" modelcmz="+0.870000"
+	unitinertiaxx="+0.179268" unitinertiayy="+0.212586" unitinertiazz="+0.336810"
+	unitinertiaxy="+0.000035" unitinertiaxz="+0.000002" unitinertiayz="+0.000787"/>
+</masses>

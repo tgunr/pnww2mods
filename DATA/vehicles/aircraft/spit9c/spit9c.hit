@@ -1,0 +1,96 @@
+# damage resistance file
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\tex\avhit1.wav
+-hitsound2 = sounds\tex\avhit2.wav
+-hitsound3 = sounds\tex\avhit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 5000
+
+#External
+
+dprop1,12,150,150
+ffuselage,0.5,150,150
+rfuselage,1.5,150,150
+dcanopy,0.5,150,150,0,0
+d_pilotseat,1,150,150,0,0
+d_farmorglass,15,150,150,0,0
+d_backarmor,6.4,150,150,0,0
+d_headarmor,9.5,150,150,0,0
+d_seatarmor,6.4,150,150,0,0
+d_fuelarmor,6.4,150,150,0,0
+d_coolanttankarmor,6.4,150,150,0,0
+d_lammoarmor,6.4,150,150,0,0
+d_rammoarmor,6.4,150,150,0,0
+linnerwing,1.5,150,150
+dliflap,1.5,150,150
+dlflap,1.5,150,150
+louterwing,1.5,150,150
+dlailer,1.5,150,150
+rinnerwing,1.5,150,150
+driflap,1.5,150,150
+drflap,1.5,150,150
+routerwing,1.5,150,150
+dralier,1.5,150,150
+dlhstab,1.5,150,150
+dlelv,1.5,150,150
+drhstab,1.5,150,150
+drelv,1.5,150,150
+dvstab,1.5,150,150
+drudd1,1.5,150,150
+
+#Internal
+
+engine1,100,225,225
+oilsys1,3,0,0
+oilcool1,3,0,0
+oilcool2,3,0,0
+radiator1,3,0,0
+radiator2,3,0,0
+cooltank1,3,0,0
+fuel1,3,0,0
+fuel2,3,0,0
+dllg,10,150,150
+drlg,10,150,150
+dlgtl,8,100,100
+dhead1,0.4,0,0
+dtorso1,1.2,0,0
+darms1,1.0,0,0
+degs1,1.0,0,0
+radio1,2,150,150
+doxy1,3,150,150
+dlcannon,15,150,150
+dlcannonammo,5,0,0,0,0
+dlcgun,15,150,150
+dlcgunammo,5,150,150
+dlogun,15,150,150
+dlogunammo,5,150,150
+drcannon,15,150,150
+drcannonammo,5,0,0,0,0
+drcgun,15,150,150
+drcgunammo,5,150,150
+drogun,15,150,150
+drogunammo,5,150,150
+
+
+

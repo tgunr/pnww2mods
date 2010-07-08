@@ -1,0 +1,81 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>4</key>
+  <body>20mhit = 20 m target hit!
+50mhit = 50 m target hit!
+100mhit = 100 m target hit! Good shooting.
+200mhit = 200 m target hit! Well done!
+500mhit = 500 m target hit! Excellent!
+gunrange = Firing Line
+supplytruck = Supply Truck
+vehiclerange = Vehicle Target Range
+truckhit = You hit the truck!
+carhit = You hit the armored car!
+tankhit = You hit the tank!
+
+
+1.1.label = Intro
+  1.1.alert.modal = The rifle grenade can add a strong tactical element to any assault, particularly against infantry behind cover.  Along with being much more accurate than hand-thrown grenades, rifle grenades can be projected to a much greater distance.
+
+1.2.label = Grenadier Role in an Assault Team
+  1.2.alert.modal = Remember, it takes more than one soldier to win a battle.  Fulfilling your role in a team can make the difference between an overwhelming victory and a disaster.  Firing one or two grenades into a bunker can kill the defenders or disorient them enough for a submachine gunner to move in and clear it out.
+  
+1.3.label = Types of Rifle Grenades
+ 1.3.alert.modal = It is important to take note of the type of rifle grenades available to each army. 
+ 
+1.4.label = The British Rifle Grenade
+ 1.4.alert.modal = The British rifle grenade is a High Explosive Anti-Tank (HEAT) grenade which detonates on impact. The HEAT grenade is most useful against trucks and light armored vehicles. 
+ 
+1.5.label = The French Rifle Grenade
+ 1.5.alert.modal = The French rifle grenade is a High Explosive (HE) grenade which detonates on an eight second fuse. This HE grenade is most useful against enemy infantry in a fortified position. 
+ 
+1.6.label = The German Rifle Grenade
+ 1.6.alert.modal = The German rifle grenade is a High Explosive (HE) grenade which detonates on impact. This HE grenade is useful both against fortified and mobile enemy infantry.
+
+1.7.label = Firing Position
+  1.7.alert = Move forward to the firing line.
+  #waypoint label: &#34;Firing Line&#34;
+  #waypoint: -314046.56,3603720.08,101.73
+
+1.8.label = Attaching the Grenade Launcher Cup
+  1.8.alert = The rifle grenade requires the grenade launcher cup to be attached for use.  Attach the cup by pressing {fpdeploy}.
+
+1.9.label = Loading the Rifle Grenade
+  1.9.alert = Attaching the cup disables normal rifle use until the cup is removed.  Once the cup is attached, press {fpreload} to load a rifle grenade.
+  1.9.complete.modal = Once a grenade is loaded, the cup cannot be removed until the grenade has been deployed.  Be sure to only load a rifle grenade when you are ready to use it.
+
+1.10.label = Aiming the Rifle Grenade
+  1.10.alert.modal = The rifle grenade must be held at an appropriate angle to fire correctly.  This prevents use of the rifle’s iron sights while aiming.  As with hand-thrown grenades, be aware of the arc of the grenade when aiming.
+
+1.11.label = Firing the Rifle Grenade
+  1.11.alert = Now aim at one of the targets on the range and fire the grenade by pressing {fpfire}.
+  
+1.12.label = Firing the Rifle Grenade (cont.) 
+  1.12.alert.modal = The grenade cup holds only one grenade at a time, requiring a new round to be loaded after each shot with {fpreload} to fire more grenades.
+  
+1.13.label = Resupply
+  1.13.alert = When you are done firing at the targets, resupply at the supply truck or halftrack.[NL][NL]You may resupply at any point during this tutorial.
+  #waypoint label: &#34;Supply Truck&#34;
+  #waypoint: -314010.18, 3603738.84, 102
+
+1.14.label = Removing the Grenade Launcher Cup
+  1.14.alert.modal = Normal bullets cannot be fired while the cup is attached. To resume normal rifle use, you must press {fpdeploy} to remove the cup.
+# this should be just a reminder, and let them leave the cup on 
+
+2.0.label = Vehicles and Buildings
+
+2.1.label = Damaging Vehicles
+  2.1.alert = The rifle grenade is very effective against unarmored and lightly armored vehicles such as trucks and haulers.  It is also useful against infantry in buildings.[NL][NL]Move to the Vehicle Target Range.
+  #waypoint label &#34;Vehicle Target Range&#34;
+  #waypoint: -313969.40,3603763.17,100.32
+
+2.2.label = Practice Firing on Vehicles
+  2.2.alert = Practice firing at the vehicles with your rifle grenades by pressing {fpfire}.
+  2.2.complete.modal = Great work soldier!  This completes your grenadier training.  Feel free to practice as long as you like.  For extra practice try to fire a grenade through a door or window in the building to your right.</body>
+  <branch>1</branch>
+  <brief>This tutorial introduces you to the rifle grenade launcher.</brief>
+  <handler>infantry.grenadier</handler>
+  <instance>2</instance>
+  <requires>infantry.lmg</requires>
+  <title>Infantry: Grenadier</title>
+</content>

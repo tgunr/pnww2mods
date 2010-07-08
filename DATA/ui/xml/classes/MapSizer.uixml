@@ -1,0 +1,20 @@
+<script>
+	<!--
+	
+	function MapSizer(widget)
+	{
+		// base class
+		var self = new MapControl(widget);
+		
+		// methods
+		self.clickSizer = function()
+		{
+		 	soundPlayClick();
+			this.map.mgr.openFullMap();
+		}
+		
+		return self;
+	}
+	
+	-->
+</script>

@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<window id="upsell" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768"
+	style="background-color: #000000BB;" layer="100" aspectalign="center" onshow="initUpsell()">
+	<include file="lib/common.uixml"/>
+	<view id="upsell-popup" x="200" rright="200" rtop="120" height="550" style="background-color: #00000088;
+							border-sides: ui/textures/hud/border_side.bmp;
+							border-corner: ui/textures/hud/border_corner.bmp;
+							border-width: 4;
+							border-height: 4;" moveondrag="yes">
+		<!-- upsell -->
+		<view x="20" y="70" rtop="20" rright="20" followtop="true">
+			<caption id="upsell-header" x="0" rtop="0" rright="0" height="30" style="color: #BFE2CE; font-size: +5;"/>
+			<text id="upsell-message" x="0" y="0" rtop="40" rright="0" acceptsfocus="false" style="font-size: +1; border-size-right: 10;  color: #e9e3d9;"/>
+		</view>
+		
+		<text id="timeleft-message" x="20" y="45" height="15" rright="20" acceptsfocus="false" style="border-size-right: 10;  color: #e9e3d9;"/>
+		
+		<!-- close -->
+		<button x="50" y="10" width="150" height="25" label="&popup.ok;" followbottom="true"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onclick="closeUpsell()" onshow="positionClose(this)" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+	</view>
+	<script>
+		<!--
+		
+		function initUpsell()
+		{
+			// do something
+			var content = (game.region == 5) ? game.getcontent("gamevents/upsellzh.xml"): game.getcontent("gamevents/upsell.xml");
+			
+			if(content)
+			{
+				window.findview("upsell-header").label = content.title;
+				window.findview("upsell-message").text = content.body;
+				
+				var timeleft = game.player.client.state.timeleft;
+				
+				if(timeleft >= 0)
+				{
+					var key = 'mission.timeleft';
+				
+					if(timeleft == 0)
+						key += '.expired';
+					
+					window.findview("timeleft-message").text = "* " + getVariableLocString(key, timeleft);
+				}
+			}
+		}
+		
+		function positionClose(button)
+		{
+			var parent = button.parent;
+			button.x = (parent.width/2) - (button.width/2);
+		}
+		
+		function closeUpsell()
+		{
+		 	soundPlayClick();
+			window.close();
+		}
+		
+		-->
+	</script>
+</window>
+

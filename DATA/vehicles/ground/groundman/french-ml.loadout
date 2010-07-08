@@ -1,0 +1,33 @@
+ #French.loadout file
+
+# sounds available for the mounts
+sound1 = sounds\troop\masmodel38.wav
+sound2 = sounds\troop\m1935s.wav
+sound3 = sounds\troop\grenade-throw.wav
+
+loadout = 1
+
+# SMG
+mountnum = 1
+mountsound = sound1
+weapon = masmodel38
+
+# Pistol
+mountnum = 2
+mountsound = sound2
+weapon = m1935s
+
+# Grenade
+mountnum = 3
+mountsound = sound3
+weapon = french_grenade
+
+# Smoke Grenade
+mountnum = 4
+mountsound = sound3
+weapon = fr_smokegrenade
+
+# Knife
+mountnum = 5
+weapon = knifegeneric
+

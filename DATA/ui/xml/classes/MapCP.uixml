@@ -1,0 +1,125 @@
+<script>
+	<!--
+	
+	function MapCP(widget, mapname)
+	{
+		this.widget		= widget;
+		this.widget.mgr	= this;
+		this.map		= widget.parent.findview(mapname);
+		this.panels		= widget.findview("mapcppanels");
+		this.distance	= widget.width - this.map.x;
+		this.selected	= -1;
+		
+		this.icons		= new Array();
+		this.tips		= new Array();
+		
+		this.select = function(playclick)
+		{
+			if(playclick == null || playclick == true)
+				soundPlayClick();
+			
+			if(this.map)
+			{
+				var index 	= this.buttons.value;
+				var off 	= widget.findview("map_icon" + this.selected);
+				var on 		= widget.findview("map_icon" + index);
+				var icons	= this.icons;
+				
+				if(this.selected != index)
+				{
+					if(this.selected == -1)
+					{
+						this.map.x 			+= this.distance; 
+						this.map.width 		-= this.distance;
+						this.panels.visible	= true;
+					}
+					
+					if(off && this.selected >= 0) off.src = icons[this.selected] + "_off.bmp";
+					if(on) on.src = icons[index] + "_on.bmp";
+					
+					this.selected 		= index;
+					this.panels.value 	= this.selected;
+					
+					consoleprint("Map selection is " + this.selected + "\n");
+					
+					var child = this.panels.getchild(this.selected);
+					if(child && child.mgr && child.mgr.onSelected)
+						child.mgr.onSelected();
+				}
+				else
+				{
+					this.map.x 			-= this.distance;  
+					this.map.width 		+= this.distance;
+					this.selected		= -1;
+					this.panels.visible	= false;
+					
+					if(on) on.src = this.icons[index] + "_off.bmp";
+				}
+			}
+			
+			game.globals.mappanel = this.selected;
+		}
+		
+		this.init = function()
+		{
+			var cpNames		= new Array(6);
+			var cpIcons 	= new Array(6);
+			var cpTips 		= new Array(6);
+			var cpButtons 	= this.widget.findview("mapcpbuttons");
+			
+			cpNames[0] = "map-cp-info";
+			cpNames[1] = "map-cp-find";
+			cpNames[2] = "map-cp-city";
+			cpNames[3] = "map-cp-filters";
+			cpNames[4] = "map-cp-legend";
+			cpNames[5] = "map-cp-mission";
+			
+			cpIcons[0] = 'ui/textures/map/panel/info';
+			cpIcons[1] = 'ui/textures/map/panel/finder';
+			cpIcons[2] = 'ui/textures/map/panel/details';
+			cpIcons[3] = 'ui/textures/map/panel/filters';
+			cpIcons[4] = 'ui/textures/map/panel/legend';
+			cpIcons[5] = 'ui/textures/map/panel/mission';
+			
+			cpTips[0] = getlocstring("map.info");
+			cpTips[1] = getlocstring("map.find");
+			cpTips[2] = getlocstring("map.city");
+			cpTips[3] = getlocstring("map.filters");
+			cpTips[4] = getlocstring("map.legend");
+			cpTips[5] = getlocstring("map.mission");
+			
+			for(var i = 0; i < cpIcons.length; i++)
+			{
+				var row = "\
+<view id='" + cpNames[i] + "' width='40' height='" + ((i == 0) ? 36: 32) + "' tip='" + htmlencode(cpTips[i]) + "' aspectlimit='width'>\
+	<image id='map_icon" + i + "' src='" + cpIcons[i] + "_off.bmp' x='5' y='0' width='32' height='32'/>\
+</view>";
+				
+				cpButtons.addrow(row, i);
+			}
+			
+			this.icons 			= cpIcons;
+			this.tips			= cpTips;
+			this.buttons		= cpButtons;
+			this.buttons.mgr	= this;
+			this.panels.value 	= cpIcons.length; // start empty
+			
+			var defaultPanel	= game.globals.mappanel;
+			
+			consoleprint("Map CP Panel default found: " + defaultPanel + "\n");
+			
+			if(defaultPanel >= 0 && defaultPanel < cpIcons.length)
+			{
+				consoleprint("Setting Map CP Panel default\n");
+				this.buttons.value = defaultPanel;
+				this.select();
+			}
+		}
+		
+		this.init();
+		
+		return this;
+	}
+	
+	-->
+</script>

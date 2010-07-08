@@ -1,0 +1,29 @@
+#British infantry Light Mortar loadout file
+
+# sounds available for the mounts
+sound1 = sounds\troop\ukltmortar.wav
+sound2 = sounds\troop\ukltmortar.wav
+sound3 = sounds\troop\mk4no1.wav
+
+loadout = 1
+
+# LightMortar HE
+mountnum = 1
+mountsound = sound1
+weapon = uk2inmortar
+maxoversupply = 5
+
+# LightMortar Smoke (alias weapon place holder)
+mountnum = 2
+mountsound = sound1
+weapon = uk2inmortar
+
+# Rifle
+mountnum = 3
+mounsound = sound2
+weapon = mk4no1
+
+# Knife
+mountnum = 4
+weapon = knifegeneric
+

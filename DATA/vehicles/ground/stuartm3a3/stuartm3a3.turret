@@ -1,0 +1,49 @@
+#stuartm3a3.turret file
+#created 10-08-03 -Doc.
+#modified 11/30/04 for drivers scope
+
+#multicrewpos position, whichcrew
+multicrewpos 1 1
+multicrewpos 2 2
+multicrewpos 3 2
+multicrewpos 4 1
+
+# Main and coax
+position = 3
+elevationrate = 4.0
+traverserate = 16
+type = 360turret
+gunsightfile = stuartm3a3.gs
+gunsightalignmentmountobject = maingunmount
+gunsightalignmentrange = 400
+
+#turret sound variables
+turrettraverse = turret/hydrolic_turret.wav
+turretelevate = turret/hand_turret_move.wav
+turretgeneral = turret/turret_traverse_general.wav
+
+# Hull flex MG
+position = 4
+elevationrate = 1
+traverserate = 1
+type = limitedturret
+#gunsightfile = 30calbowmg.gs
+gunsightalignmentmountobject = bowgun
+gunsightalignmentrange = 200
+gunsightblocked = canopyopen
+
+#Commander
+position = 2
+elevationrate = 2
+traverserate = 6
+type = 360turret
+gunsightfile = 8x30binoc.gs
+neutraltraverse = 0
+neutralelevate = 0
+#conditions are undeployed, deployed, canopyopen, canopyclosed, hatchopen, hatchclosed
+gunsightblocked = canopyclosed
+
+#driver
+position = 1
+gunsightfile = m3a3driver.gs
+gunsightblocked = canopyopen

@@ -1,0 +1,56 @@
+# basic vehicle data file for SM Spit IXc
+physicsversion = 1
+vehicletype = ww2propplane
+vehiclename = spit9c
+vehicleobjectname = spitfire
+componentfile = spit9c.cmp
+enginefile = spit9c.eng
+airfoilfile = spit9c.air
+positionfile = spit9c.pos
+numberofflappositions= 1
+# next 3 are in kph
+aileronmaxspeed = 350
+ruddermaxspeed = 350
+elevatormaxspeed = 350
+# next 3 are in mach speed
+aileroncompressspeed = 0.75
+ruddercompressspeed = 0.85
+elevatorcompressspeed = 0.85
+# response times sec (full force)
+aileronresponsetime = 0.15
+elevatorresponsetime = 0.60
+#elevatorresponsetime = 0.15 (altered for v1.29 beta testing)
+rudderresponsetime = 1.3
+#rudderresponsetime = 0.15 (altered for v1.29 beta testing)
+throttleresponsetime = 1.0
+
+# static tabs, e.g. the tabs that are set on the ground
+# trim the plane for cruise flight, in an analysis FE
+# and copy the trim settings into the following fields
+ailerontabstatic = 0.033
+elevatortabstatic = -0.55
+ruddertabstatic = 0.082
+
+# tab effects, ratio of tab force at full tab deflection to total surface force
+ailerontabratio = 0.1 
+elevatortabratio = 0.1
+ruddertabratio = 0.2
+# opposing movement tab effects, ratio of tab force at full tab deflection to total surface force
+aileronspringtabratio = 0.3
+elevatorspringtabratio = 0
+rudderspringtabratio = 0
+
+#fx speeds
+# 1/time
+flapdeployspeed = 0.2
+geardeployspeed = .1
+canopyopenspeed = 0.3
+hatchopenspeed = 0.5
+
+#primarygunsound = sounds\spit1\8x30cal.wav
+primaryisautomatic = 1
+
+stallsound = sounds\stall.wav
+gearsound = sounds\pgear.wav
+flapssound = sounds\pflaps.wav
+windsound = sounds\wind.wav

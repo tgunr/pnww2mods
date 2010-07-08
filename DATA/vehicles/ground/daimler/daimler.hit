@@ -1,0 +1,54 @@
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 1000000
+
+##Internal hitmap
+d_drivertorso,5,0,0,0,35
+d_driverarms,5,0,0,0,35
+d_driverhead,6,0,0,0,40
+d_driverlegs,5,0,0,0,35
+d_radiator,8,0,0
+d_engine,250,0,0
+d_transmission,250,0,0
+d_coolant,8,0,0
+d_2pndrammo,8,0,0
+d_fuel,8,0,0
+d_commanderlegs,5,0,0,0,35
+d_commandertorso,5,0,0,0,35
+d_commanderarms,5,0,0,0,35
+d_commanderhead,6,0,0,0,40
+d_gunnerhead,6,0,0,0,40
+d_gunnertorso,5,0,0,0,35
+d_gunnerarms,5,0,0,0,35
+d_gunnerlegs,5,0,0,0,35
+
+##External hitmap
+d_turrettop,8,0,0
+d_tophatch_1,8,0,0
+d_turretfront_1,16,0,0
+d_turretleft_1,16,0,0
+d_turretright_1,16,0,0
+d_turretback_1,14,0,0
+d_turretbottom_1,14,0,0
+d_2pndrcannon_1,20,0,0,0,250000
+d_coax_1,12,0,0
+d_cannonmount_1,13,0,0
+d_spareleft,12,0,0
+d_hullbottom,7,0,0
+d_hullback,14,0,0
+d_hullleftside,10,0,0
+d_hullrightside,10,0,0
+d_hullfront,16,0,0
+d_hulltop,8,0,0
+d_rightfender,16,0,0
+d_leftfender,16,0,0
+d_frontdriverhatch,16,0,0
+d_frontleftwheel,25,0,0,0,5000
+d_frontrightwheel,25,0,0,0,5000
+d_backleftwheel,25,0,0,0,5000
+d_backrightwheel,25,0,0,0,5000
+d_slitglass,6,0,0,0,0

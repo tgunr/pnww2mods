@@ -1,0 +1,94 @@
+# damage resistance file for d.520
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\tex\avhit1.wav
+-hitsound2 = sounds\tex\avhit2.wav
+-hitsound3 = sounds\tex\avhit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 5000
+
+#External
+
+d_seatarmor,8,0,0,0,0
+d_frontarmorring,6.5,0,0,0,0
+d_backarmorring,5.5,0,0,0,0
+d_backcowl,1,0,0,0,0
+d_mainfuselage,1,0,0,0,0
+d_topheadrestarmor,12,0,0,0,0
+d_bottomheadrestarmor,12,0,0,0,0
+d_slidingcanopy,0.5,0,0,0,0
+d_slidingcanopyglass,0.5,0,0,0,0
+d_prop,12,0,0,0,0
+d_llandinggear,3,0,0,0,0
+d_lflapwell,0.5,0,0,0,0
+d_lflap,0.5,0,0,0,0
+d_laileron,1.5,0,0,0,0
+d_linnerwing,1.5,0,0,0,0
+d_louterwing,1.5,0,0,0,0
+d_rflapwell,0.5,0,0,0,0
+d_rinnerwing,1.5,0,0,0,0
+d_routerwing,1.5,0,0,0,0
+d_raileron,1.5,0,0,0,0
+d_rflap,0.5,0,0,0,0
+d_rlandinggear,3,0,0,0,0
+d_tail,1.5,0,0,0,0
+d_tailwheel,3,0,0,0,0
+o1358_6,1.5,0,0,0,0
+o1359_6,1.5,0,0,0,0
+o1358_7,1.5,0,0,0,0
+o1359_7,1.5,0,0,0,0
+o1353_6,1.5,0,0,0,0
+o1354_6,1.5,0,0,0,0
+d_cockpitfloor,1.5,0,0,0,0
+d_cockpitback,1.5,0,0,0,0
+d_ipanelback,1.5,0,0,0,0
+d_frontcanopy,3,0,0,0,0
+d_armorglass,15,0,0,0,0
+d_pilotbackarmor,8,0,0,0,0
+d_wingroots,1.5,0,0,0,0
+
+#Internal
+d_loutercannon,30,0,0,0,0
+d_loutercannonammo,5,0,0,0,0
+d_linnercannon,30,0,0,0,0
+d_routercannon,30,0,0,0,0
+d_routercannonammo,5,0,0,0,0
+d_rinnercannon,30,0,0,0,0
+d_engine_1,150,0,0,0,0
+d_oilcooler,8,0,0,0,0
+d_rnosegun,30,0,0,0,0
+d_lnosegun,30,0,0,0,0
+d_lnoseammo,5,0,0,0,0
+d_rnoseammo,5,0,0,0,0
+d_rinnercannonammo,5,0,0,0,0
+d_linnercannonammo,5,0,0,0,0
+d_radio,5,0,0,0,0
+d_loxygen,8,0,0,0,0
+d_roxygen,8,0,0,0,0
+d_fuel1,1,0,0,0,0
+d_fuel2,1,0,0,0,0
+d_fuel3,1,0,0,0,0
+d_legs_1,1,0,0,0,0
+d_arms_1,1,0,0,0,0
+d_torso_1,1.5,0,0,0,0
+d_head_1,0.5,0,0,0,0

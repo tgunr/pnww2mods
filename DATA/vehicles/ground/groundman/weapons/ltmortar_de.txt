@@ -1,0 +1,27 @@
+# first thing in the weapon file should always be the weapontype
+# this causes the default_(weapontype).txt file to be loaded first
+# valid weapon types are:
+# SMG, SATCHEL, RIFLE, AUTO_PISTOL, GRENADE, REVOLVER, ITEM, KNIFE, LMG, LTMORTAR
+weaponType = LTMORTAR
+
+# delay before the round falls and fires
+fireDelay = 3.0
+
+# sound to play when reloading
+reloadSound = sounds\troop\deltmortarreload.wav
+
+deploySound = sounds\troop\deltmortardeploy.wav
+undeploySound = sounds\troop\deltmortarundeploy.wav
+
+# specify the weapon & clip (clip optional) model here
+# note that data\gr2data\FPS\ is prepended to these file names
+weaponModel = ltmortar_de\ltmortar_de
+
+# granny attach bone names for weapon & clip
+# the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
+weaponConnectTo = rifle-control
+weaponConnect = MortarConnect
+
+# boresighting values .. how much off of "straight" does this gun need to fire
+aimVerticalCorrection = 0.0
+aimHorizontalCorrection = 0.0

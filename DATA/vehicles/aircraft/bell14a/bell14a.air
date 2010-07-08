@@ -1,0 +1,72 @@
+#airfoils file for bell14a
+
+[propeller]
+baseairfoil = propbase.pol
+up10degairfoil = prop_up10.pol
+down10degairfoil = prop_dn10.pol
+stallfile = prop.stall
+compressibilityfile = prop.compress
+
+[p39d1root]
+baseairfoil = 05014_neut.pol
+up10degairfoil = 05014_neut.pol
+down10degairfoil = 05014_21_dn10.pol
+stallfile = 05014.sta
+compressibilityfile = 05014.compress
+
+[p39d1mid]
+baseairfoil = 04013_neut.pol
+up10degairfoil = 04013_neut.pol
+down10degairfoil = 04013_21_dn10.pol
+stallfile = 04013.sta
+compressibilityfile = 04013.compress
+
+[p39d1ailib]
+baseairfoil = 14012_neut.pol
+up10degairfoil = 14012_17_up10.pol
+down10degairfoil = 14012_17_dn10.pol
+stallfile = 14012.sta
+compressibilityfile = 14012.compress
+
+[p39d1ailob]
+baseairfoil = 13011_neut.pol
+up10degairfoil = 13011_17_up10.pol
+down10degairfoil = 13011_17_dn10.pol
+stallfile = 13011.sta
+compressibilityfile = 13011.compress
+
+[p39d1tip]
+baseairfoil = 23009_neut.pol
+up10degairfoil = 23009_neut.pol
+down10degairfoil = 23009_neut.pol
+stallfile = 23009.sta
+compressibilityfile = 23009.compress
+
+[p39d1horizstab]
+baseairfoil = 0009_neut.pol
+up10degairfoil = 0009_31_up10.pol
+down10degairfoil = 0009_31_dn10.pol
+stallfile = 0009.sta
+compressibilityfile = 0009.compress
+
+[p39d1vertstab]
+baseairfoil = 0009_neut.pol
+up10degairfoil = 0009_50_up10.pol
+down10degairfoil = 0009_50_dn10.pol
+stallfile = 0009.sta
+compressibilityfile = 0009.compress
+
+[flatplate]
+baseairfoil = flatplat.pol
+up10degairfoil = flatplat.pol
+down10degairfoil = flatplat.pol
+stallfile = flatplat.stall
+compressibilityfile = flatplat.compress
+
+[fuselage]
+baseairfoil = 0010base.pol
+up10degairfoil = 0010base.pol
+down10degairfoil = 0010base.pol
+stallfile = 0010.sta
+compressibilityfile = 0010.compress
+

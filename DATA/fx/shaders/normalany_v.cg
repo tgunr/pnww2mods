@@ -1,0 +1,106 @@
+//-----------------------------------------------------------------------------
+// Vertex shader for normal objects.
+//-----------------------------------------------------------------------------
+#define USE_LINEAR_FOG
+//#undef USE_LINEAR_FOG
+#define USE_EXP_FOG
+#undef USE_EXP_FOG
+#define USE_EXP2_FOG
+#undef USE_EXP2_FOG
+
+struct appin
+{
+    float4 position  : POSITION;
+    float3 normal    : NORMAL;
+    float4 color     : COLOR;
+    float2 texcoord0 : TEXCOORD0;
+    float4 tangent   : TEXCOORD1;
+    float  fogcoord  : FOGCOORD;
+};
+
+struct vertout
+{
+    float4 position  : POSITION;
+    float4 color0    : COLOR0;
+    float2 texcoord0 : TEXCOORD0;
+    float2 normalmap : TEXCOORD1;
+    float3 lightdir  : TEXCOORD2;
+    float3 halfdir   : TEXCOORD3;
+    float  fogexp    : FOG;
+};
+
+/////////////////////////////////////////////////////////////////
+// Function: main
+// Description:
+//////////////////////////////////////////////////////////////////
+vertout main(appin IN, 
+             uniform float4x4 modelviewproj,
+             uniform float4x4 texturematrix,
+             uniform half3 lightpos,
+             uniform half3 eyepos,
+             uniform half kC,
+             uniform half kL,
+             uniform half kQ,
+             uniform float fogDensity,
+             uniform float fogNear,
+             uniform float fogFar,
+             uniform half usew)
+{
+    vertout OUT;
+
+    half4 p = IN.position;
+    p.w = 1.0f;
+            
+    OUT.position = mul(modelviewproj, p);
+    
+	float3 binormal;
+	
+	if(usew)
+	{
+		binormal = cross(IN.normal, IN.tangent.xyz) * IN.tangent.w;
+	}
+	else
+	{
+		binormal = cross(IN.normal, IN.tangent.xyz);
+	}
+		
+    // Diffuse component
+    half3 L = normalize(lightpos.xyz - p.xyz);
+           
+    // Specular component
+    half3 V = normalize(eyepos - p.xyz);
+    half3 H = normalize(L + V);
+
+	float3x3 rotate = float3x3(IN.tangent.xyz,
+	                           binormal,
+	                           IN.normal);
+	                           
+	OUT.lightdir = mul(rotate, L);
+
+	OUT.lightdir.xy = -OUT.lightdir.xy;
+	
+	OUT.halfdir = mul(rotate, H);
+	
+	OUT.halfdir.xy = -OUT.halfdir.xy;
+
+    OUT.texcoord0 = IN.texcoord0 * texturematrix[0][0];
+    OUT.normalmap = IN.texcoord0 * texturematrix[1][1];
+
+	// Attenuation
+	float d = distance(p.xyz, lightpos);
+	
+	OUT.color0.x = 1.0f / (kC + kL * d + kQ * d * d);
+
+	d = distance(p.xyz, eyepos.xyz);
+		
+#ifdef USE_LINEAR_FOG
+    OUT.fogexp = d <= fogNear ? 0 : (d - fogNear) / (fogFar - fogNear);
+#elif defined(USE_EXP_FOG)
+	OUT.fogexp = d * fogDensity;
+#else // USE_EXP2_FOG
+	OUT.fogexp = d * fogDensity;
+    OUT.fogexp *= OUT.fogexp;
+#endif
+    
+    return OUT;
+}

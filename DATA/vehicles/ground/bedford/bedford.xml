@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="bedford" type="ground" shape="bedford" description="Bedford Truck" icon="Bedford">
+<include file="bedford.veh.xml"/>
+<include file="bedford.state.xml"/>
+<include file="bedford.hit.xml"/>
+<include file="bedford.xsound.xml"/>
+<include file="bedford.control.xml"/>
+<include file="bedford.mass.xml"/>
+<variant id="bedford" icon="Bedford"/>
+<variant id="cn_bedford" icon="Bedford"/>
+</vehicle>

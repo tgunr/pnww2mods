@@ -1,0 +1,23 @@
+#pziiif.loadout file
+
+# sounds available for the mounts
+sound1 = sounds\pziic\xgun1.wav
+sound2 = sounds\pziic\xgun2.wav
+
+
+loadout = 1
+
+mountnum = 1
+mountobject = mainmount
+mountsound = sound1
+weapon = 20kwk30
+#weaponobject = pz2cannon
+weaponobject = genericgun1
+recoilnum = 1
+recoiltime = .05
+
+mountnum = 2
+mountobject = coaxmount
+mountsound = sound2
+weapon = mg34tank
+weaponobject = genericgun1

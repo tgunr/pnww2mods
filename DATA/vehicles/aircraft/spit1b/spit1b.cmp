@@ -1,0 +1,1724 @@
+# Spit1b Component Data file
+# created Sept.08 - Doc.
+
+[propeller]
+type = engine
+propairfoil = spit1root
+subtype = propeller
+enginetype = merlinII
+criticalprimary = 1
+x = 0.0
+y = 1.944
+z = 0.0
+mass = 106
+inertiapitch = 91.32
+inertiaroll = 182.64
+inertiayaw = 91.32
+attpitch = 0
+attroll = 0
+attyaw = 0
+propellerdiameter = 3.323
+# ideal is 1/pi for efficiency, Do not use for power
+#Prop Planeform Eff.
+propellerefficiency = 0.32 #speed perfect
+#Power Multipler. Affects Speed, Range from 0.6 to 1.0
+proppowerefficiency = 0.935
+#prop induced Drag. Affects Climb, Range from 1.0 to 1.9
+propinduceddragmult = 1.8
+# area of prop
+propellerarea = 0.9
+# critical mach drag speed of prop
+# propellermdiv = 0.76
+# max aoa of the prop
+# equals 10 times the maxcl
+# maxcl is used for limiting prop "lift"
+# propellermaxcl = 1.4
+# propellermincl = -1.0
+# how many deg/sec the prop can adjust pitch
+propellerresponse = 3
+# range of pitch angles, set to constant value for fixed-pitch props
+propellermaxangle = 65
+propellerminangle = 8
+# propellerpowerefficiency = 1.0
+enginenumber = 1
+flywheelrotinertia = 3
+governedprop = 1
+enginesound = sounds\spit1\prop.wav
+hitmapcomponent1 = dprop1
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 30000
+damagelevel2 = 60000
+damagelevel3 = 80000
+damagelevel4 = 90000
+visdamage = prop1
+damagelevelfail = 90000
+
+[left_root_mass]
+subtype = ballast
+# position of center of component in meters
+x = -.857
+y = -0.128
+z = -.677
+# mass in kg of component
+mass = 41.64
+inertiapitch = 22.829
+inertiaroll = 5.08
+inertiayaw = 28.3
+visdamage = lwing
+damagelevelfail = 150000
+
+[left_root]
+# type is the component type
+type = airfoil
+# subtype is component specific
+subtype = flap
+criticalprimary = 1
+# position of center of component in meters
+x = -.857
+y = -0.593
+z = -.677
+# mass in kg of component
+# mass = 0
+# rotational inertia in kg*m^2
+# inertiapitch = 22.829
+# inertiaroll = 5.08
+# inertiayaw = 28.3
+# attitude of component
+attpitch = 2.0
+attroll = -5
+attyaw = 0
+# component specific data
+airfoiltype = spit1root
+area = 3.84
+# windchord is in meters, average chord for wing section
+wingspan = 11.21
+wingchord = 2.539
+innerchord = 2.577
+outerchord = 2.5
+# aspectratio is used to "adjust" the angle of attack
+aspectratio = 5.867
+# for ailerons, left is min, right is max for the stick
+# for flaps, min is fully up, max is fully down
+controlmin = 0
+controlmax = 80
+maxopenspeed = 215kph
+maxclosespeed = 245kph
+maxdamagespeed = 225kph
+#blank1_pitchstart = -30
+#blank1_pitchstartfull = -20
+#blank1_pitchendfull = 30
+#blank1_pitchend = 45
+blank1_yawstart = 8
+blank1_yawstartfull = 30
+blank1_yawendfull = 160
+blank1_yawend = 170
+# flaps 60 degrees split
+flappos1cl = 0.85 
+flappos1cd = 0.10 
+flappos1cm = -0.5
+# propwash vortex effects
+vortexcomponent = propeller
+# how much of the propeller's propwash affects this component
+vortexeffectpercent = 0.9
+# offset for angled-velocity effects
+# a value of zero means only backwash is factored in
+# a value of one assumes one edge of the component
+# is along the vortex axis of rotation
+vortexoffset = -0.2
+stallsound = 1
+hitmapcomponent1 = dlinnerwing
+hitmapcomponent2 = dlflap
+hitmapcomponent3 = dliflap
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+visdamage = lwing
+damagelevelfail = 150000
+
+[left_mid_mass]
+subtype = ballast
+x = -2.21
+y = -0.128
+z = -.557
+mass = 37.05
+inertiapitch = 18.081
+inertiaroll = 4.52
+inertiayaw = 22.6
+visdamage = lwing
+damagelevelfail = 150000
+
+[left_mid]
+type = airfoil
+subtype = flap
+criticalprimary = 1
+x = -2.21
+y = -0.493
+z = -.557
+# mass = 0
+# inertiapitch = 18.081
+# inertiaroll = 4.52
+# inertiayaw = 22.6
+attpitch = 1.5
+attroll = -6.5
+attyaw = 0
+airfoiltype = spit1mid
+area = 2.849
+wingspan = 11.21
+wingchord = 2.392
+innerchord = 2.5
+outerchord = 2.284
+aspectratio = 5.867
+controlmin = 0
+controlmax = 80
+maxopenspeed = 215kph
+maxclosespeed = 245kph
+maxdamagespeed = 225kph
+#blank1_pitchstart = -30
+#blank1_pitchstartfull = -25
+#blank1_pitchendfull = 5
+#blank1_pitchend = 25
+blank1_yawstart = 30
+blank1_yawstartfull = 45
+blank1_yawendfull = 150
+blank1_yawend = 160
+flappos1cl = 0.85 
+flappos1cd = 0.10 
+flappos1cm = -0.5
+stallsound = 1
+hitmapcomponent1 = linnerwing
+hitmapcomponent2 = dlflap
+hitmapcomponent3 = dliflap
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+visdamage = lwing
+damagelevelfail = 150000
+
+[left_ailib_mass]
+subtype = ballast
+x = -3.328
+y = -0.128
+z = -0.425
+mass = 23.97
+inertiapitch = 9.475
+inertiaroll = 1.515
+inertiayaw = 10.1
+visdamage = lowing
+visdamageparent = lwing
+damagelevelfail = 150000
+
+[left_ailib]
+type = airfoil
+subtype = aileron
+x = -3.328
+y = -0.393
+z = -0.425
+# mass = 0
+# inertiapitch = 9.475
+# inertiaroll = 1.515
+# inertiayaw = 10.1
+attpitch = 1.0
+attroll = -6.5
+attyaw = 0
+airfoiltype = spit1ailib
+area = 2.184
+wingspan = 11.21
+wingchord = 2.104
+innerchord = 2.284
+outerchord = 1.924
+aspectratio = 5.867
+#blank1_pitchstart = -25
+#blank1_pitchstartfull = -15
+#blank1_pitchendfull = 5
+#blank1_pitchend = 15
+blank1_yawstart = 35
+blank1_yawstartfull = 65
+blank1_yawendfull = 125
+blank1_yawend = 145
+controlmin = 19
+controlmax = -25
+stallsound = 1
+# wingtwistco = 0.00048
+wingtwistco = 0.00035
+hitmapcomponent1 = d_louterwing
+hitmapcomponent2 = d_laileron
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+visdamage = lowing
+visdamageparent = lwing
+damagelevelfail = 150000
+
+
+[left_ailob_mass]
+subtype = aileron
+x = -4.376
+y = -0.128
+z = -0.315
+mass = 25.86
+inertiapitch = 6.531
+inertiaroll = 2.904
+inertiayaw = 9.7
+visdamage = lowing
+visdamageparent = lwing
+damagelevelfail = 150000
+
+[left_ailob]
+type = airfoil
+subtype = aileron
+x = -4.376
+y = -0.252
+z = -0.315
+# mass = 0
+# inertiapitch = 6.531
+# inertiaroll = 2.904
+# inertiayaw = 9.7
+attpitch = 0.5
+attroll = -6.5
+attyaw = 0
+airfoiltype = spit1ailob
+area = 1.660
+wingspan = 11.21
+wingchord = 1.6
+innerchord = 1.924
+outerchord = 1.276
+aspectratio = 5.867
+#blank1_pitchstart = -20
+#blank1_pitchstartfull = -10
+#blank1_pitchendfull = 5
+#blank1_pitchend = 15
+blank1_yawstart = 40
+blank1_yawstartfull = 60
+blank1_yawendfull = 120
+blank1_yawend = 140
+controlmin = 19
+controlmax = -25
+stallsound = 1
+wingtwistco = 0.00035
+hitmapcomponent1 = dlouterwing
+hitmapcomponent2 = dlailer
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+visdamage = lowing
+visdamageparent = lwing
+damagelevelfail = 150000
+
+[left_tip_mass]
+subtype = ballast
+x = -5.227
+y = -0.128
+z = -0.222
+mass = 7.38
+inertiapitch = 0.466
+inertiaroll = 0.243
+inertiayaw = 1
+visdamage = lowing
+visdamageparent = lwing
+damagelevelfail = 150000
+
+[left_tip]
+type = airfoil
+subtype = airfoil
+x = -5.227
+y = -0.193
+z = -0.222
+# mass = 0
+# inertiapitch = 0.466
+# inertiaroll = 0.243
+# inertiayaw = 1
+attpitch = -0.5
+attroll = -6.5
+attyaw = 0
+airfoiltype = spit1tip
+area = .617
+wingspan = 11.21
+wingchord = .768
+innerchord = 1.276
+outerchord = .56
+aspectratio = 5.867
+#blank1_pitchstart = -20
+#blank1_pitchstartfull = -10
+#blank1_pitchendfull = 5
+#blank1_pitchend = 15
+blank1_yawstart = 60
+blank1_yawstartfull = 65
+blank1_yawendfull = 135
+blank1_yawend = 145
+stallsound = 1
+hitmapcomponent1 = dlouterwing
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+visdamage = lowing
+visdamageparent = lwing
+damagelevelfail = 150000
+
+[left_ID]
+type = airfoil
+subtype = vortexpointaileron
+x = -5.227
+y = -0.193
+z = -0.222
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = -0.5
+attroll = -6.5
+attyaw = 0
+airfoiltype = spit1ailob
+area = 0
+wingspan = 11.21
+wingchord = 0
+aspectratio = 5.867
+dragarea = 11.21
+dragk = 0.3183
+#blank1_pitchstart = -20
+#blank1_pitchstartfull = -10
+#blank1_pitchendfull = 5
+#blank1_pitchend = 15
+blank1_yawstart = 55
+blank1_yawstartfull = 60
+blank1_yawendfull = 135
+blank1_yawend = 140
+induceddragcomponent = left_ailob
+induceddragcomponent1 = left_root
+induceddragcomponent2 = left_mid
+induceddragcomponent3 = left_ailib
+induceddragcomponent4 = left_ailob
+induceddragcomponent5 = left_tip
+induceddragmult = 1.28
+visdamage = lwing
+
+[left_ID2]
+type = airfoil
+subtype = vortexpointaileron
+x = 5.227
+y = -0.193
+z = -0.222
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = 1
+attroll = 6.5
+attyaw = 0
+airfoiltype = spit1ailob
+area = 0
+wingspan = 5.581
+wingchord = 0
+aspectratio = 2.27
+dragarea = 13.72
+dragk = 0.3183
+#blank1_pitchstart = -20
+#blank1_pitchstartfull = -10
+#blank1_pitchendfull = 5
+#blank1_pitchend = 15
+blank1_yawstart = 55
+blank1_yawstartfull = 60
+blank1_yawendfull = 135
+blank1_yawend = 140
+induceddragcomponent1 = right_root
+induceddragcomponent2 = right_mid
+induceddragcomponent3 = right_ailib
+induceddragcomponent4 = right_ailob
+induceddragcomponent5 = right_tip
+induceddragmult = 1.5
+visdamage = lwing
+activateiffail = 1
+
+[right_root_mass]
+subtype = ballast
+# position of center of component in meters
+x = .857
+y = -0.128
+z = -.677
+# mass in kg of component
+mass = 41.64
+inertiapitch = 22.829
+inertiaroll = 5.08
+inertiayaw = 28.3
+visdamage = rwing
+damagelevelfail = 150000
+
+[right_root]
+# type is the component type
+type = airfoil
+# subtype is component specific
+subtype = flap
+criticalprimary = 1
+# position of center of component in meters
+x = .857
+y = -0.593
+z = -.677
+# mass in kg of component
+# mass = 0
+# rotational inertia in kg*m^2
+# inertiapitch = 22.829
+# inertiaroll = 5.08
+# inertiayaw = 28.3
+# attitude of component
+attpitch = 2.0
+attroll = 5
+attyaw = 0
+# component specific data
+airfoiltype = spit1root
+area = 3.84
+# windchord is in meters, average chord for wing section
+wingspan = 11.21
+wingchord = 2.539
+innerchord = 2.577
+outerchord = 2.5
+# aspectratio is used to "adjust" the angle of attack
+aspectratio = 5.867
+# for ailerons, left is min, right is max for the stick
+# for flaps, min is fully up, max is fully down
+controlmin = 0
+controlmax = 80
+maxopenspeed = 215kph
+maxclosespeed = 245kph
+maxdamagespeed = 225kph
+#blank1_pitchstart = -30
+#blank1_pitchstartfull = -20
+#blank1_pitchendfull = 30
+#blank1_pitchend = 45
+blank1_yawstart = -8
+blank1_yawstartfull = -30
+blank1_yawendfull = -160
+blank1_yawend = -170
+# flaps 60 degrees split
+flappos1cl = 0.85 
+flappos1cd = 0.10 
+flappos1cm = -0.5
+# propwash vortex effects
+vortexcomponent = propeller
+# how much of the propeller's propwash affects this component
+vortexeffectpercent = 0.9
+# offset for angled-velocity effects
+# a value of zero means only backwash is factored in
+# a value of one assumes one edge of the component
+# is along the vortex axis of rotation
+vortexoffset = 0.2
+stallsound = 1
+hitmapcomponent1 = rinnerwing
+hitmapcomponent2 = drflap
+hitmapcomponent3 = driflap
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+visdamage = rwing
+damagelevelfail = 150000
+
+[right_mid_mass]
+subtype = ballast
+x = 2.21
+y = -0.128
+z = -.557
+mass = 37.05
+inertiapitch = 18.081
+inertiaroll = 4.52
+inertiayaw = 22.6
+visdamage = rwing
+damagelevelfail = 150000
+
+[right_mid]
+type = airfoil
+subtype = flap
+criticalprimary = 1
+x = 2.21
+y = -0.493
+z = -.557
+# mass = 0
+# inertiapitch = 18.081
+# inertiaroll = 4.52
+# inertiayaw = 22.6
+attpitch = 1.5
+attroll = 6.5
+attyaw = 0
+airfoiltype = spit1mid
+area = 2.849
+wingspan = 11.21
+wingchord = 2.392
+innerchord = 2.5
+outerchord = 2.284
+aspectratio = 5.867
+controlmin = 0
+controlmax = 80
+maxopenspeed = 215kph
+maxclosespeed = 245kph
+maxdamagespeed = 225kph
+#blank1_pitchstart = -30
+#blank1_pitchstartfull = -25
+#blank1_pitchendfull = 5
+#blank1_pitchend = 25
+blank1_yawstart = -30
+blank1_yawstartfull = -45
+blank1_yawendfull = -150
+blank1_yawend = -160
+flappos1cl = 0.85 
+flappos1cd = 0.10 
+flappos1cm = -0.5
+stallsound = 1
+hitmapcomponent1 = rinnerwing
+hitmapcomponent2 = drflap
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+visdamage = rwing
+damagelevelfail = 150000
+
+[right_ailib_mass]
+subtype = aileron
+x = 3.328
+y = -0.128
+z = -0.425
+mass = 23.97
+inertiapitch = 9.475
+inertiaroll = 1.515
+inertiayaw = 10.1
+visdamage = rowing
+visdamageparent = rwing
+damagelevelfail = 150000
+
+[right_ailib]
+type = airfoil
+subtype = aileron
+x = 3.328
+y = -0.393
+z = -0.425
+# mass = 0
+# inertiapitch = 9.475
+# inertiaroll = 1.515
+# inertiayaw = 10.1
+attpitch = 1.0
+attroll = 6.5
+attyaw = 0
+airfoiltype = spit1ailib
+area = 2.184
+wingspan = 11.21
+wingchord = 2.104
+innerchord = 2.284
+outerchord = 1.924
+aspectratio = 5.867
+#blank1_pitchstart = -25
+#blank1_pitchstartfull = -15
+#blank1_pitchendfull = 5
+#blank1_pitchend = 15
+blank1_yawstart = -35
+blank1_yawstartfull = -65
+blank1_yawendfull = -125
+blank1_yawend = -145
+controlmin = -25
+controlmax = 19
+stallsound = 1
+wingtwistco = 0.00035
+hitmapcomponent1 = routerwing
+hitmapcomponent2 = drailer
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+visdamage = rowing
+visdamageparent = rwing
+damagelevelfail = 150000
+
+[right_ailob_mass]
+subtype = ballast
+x = 4.376
+y = -0.128
+z = -0.315
+mass = 25.86
+inertiapitch = 6.531
+inertiaroll = 2.904
+inertiayaw = 9.7
+visdamage = rowing
+visdamageparent = rwing
+damagelevelfail = 150000
+
+[right_ailob]
+type = airfoil
+subtype = aileron
+x = 4.376
+y = -0.252
+z = -0.315
+# mass = 0
+# inertiapitch = 6.531
+# inertiaroll = 2.904
+# inertiayaw = 9.7
+attpitch = 0.5
+attroll = 6.5
+attyaw = 0
+airfoiltype = spit1ailob
+area = 1.660
+wingspan = 11.21
+wingchord = 1.6
+innerchord = 1.924
+outerchord = 1.276
+aspectratio = 5.867
+#blank1_pitchstart = -20
+#blank1_pitchstartfull = -10
+#blank1_pitchendfull = 5
+#blank1_pitchend = 15
+blank1_yawstart = -40
+blank1_yawstartfull = -60
+blank1_yawendfull = -120
+blank1_yawend = -140
+controlmin = -25
+controlmax = 19
+stallsound = 1
+wingtwistco = 0.00035
+hitmapcomponent1 = routerwing
+hitmapcomponent2 = drailer
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+visdamage = rowing
+visdamageparent = rwing
+damagelevelfail = 150000
+
+[right_tip_mass]
+subtype = Ballast
+x = 5.227
+y = -0.128
+z = -0.222
+mass = 7.38
+inertiapitch = 0.466
+inertiaroll = 0.243
+inertiayaw = 1
+visdamage = rowing
+visdamageparent = rwing
+damagelevelfail = 150000
+
+[right_tip]
+type = airfoil
+subtype = airfoil
+x = 5.227
+y = -0.193
+z = -0.222
+# mass = 0.0
+# inertiapitch = 0.466
+# inertiaroll = 0.243
+# inertiayaw = 1
+attpitch = -0.5
+attroll = 6.5
+attyaw = 0
+airfoiltype = spit1tip
+area = .617
+wingspan = 11.21
+wingchord = .918
+innerchord = 1.276
+outerchord = .56
+aspectratio = 5.867
+#blank1_pitchstart = -20
+#blank1_pitchstartfull = -10
+#blank1_pitchendfull = 5
+#blank1_pitchend = 15
+blank1_yawstart = -60
+blank1_yawstartfull = -65
+blank1_yawendfull = -135
+blank1_yawend = -145
+stallsound = 1
+hitmapcomponent1 = routerwing
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+visdamage = rowing
+visdamageparent = rwing
+damagelevelfail = 150000
+
+[right_ID]
+type = airfoil
+subtype = vortexpointaileron
+x = 5.227
+y = -0.193
+z = -0.222
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = -0.5
+attroll = 6.5
+attyaw = 0
+airfoiltype = spit1ailob
+area = 0
+wingspan = 11.21
+wingchord = 0
+aspectratio = 5.75
+dragarea = 11.21
+dragk = 0.3183
+#blank1_pitchstart = -20
+#blank1_pitchstartfull = -10
+#blank1_pitchendfull = 5
+#blank1_pitchend = 15
+blank1_yawstart = -55
+blank1_yawstartfull = -60
+blank1_yawendfull = -135
+blank1_yawend = -140
+induceddragcomponent = right_ailob
+induceddragcomponent1 = right_root
+induceddragcomponent2 = right_mid
+induceddragcomponent3 = right_ailib
+induceddragcomponent4 = right_ailob
+induceddragcomponent5 = right_tip
+induceddragmult = 1.28
+visdamage = rwing
+
+[right_ID2]
+type = airfoil
+subtype = vortexpointaileron
+x = -5.227
+y = -0.193
+z = -0.222
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = 1
+attroll = -6.5
+attyaw = 0
+airfoiltype = spit1ailob
+area = 0
+wingspan = 5.581
+wingchord = 0
+aspectratio = 2.27
+dragarea = 13.72
+dragk = 0.3183
+#blank1_pitchstart = -20
+#blank1_pitchstartfull = -10
+#blank1_pitchendfull = 5
+#blank1_pitchend = 15
+blank1_yawstart = -55
+blank1_yawstartfull = -60
+blank1_yawendfull = -135
+blank1_yawend = -140
+induceddragcomponent1 = left_root
+induceddragcomponent2 = left_mid
+induceddragcomponent3 = left_ailib
+induceddragcomponent4 = left_ailob
+induceddragcomponent5 = left_tip
+induceddragmult = 1.5
+visdamage = rwing
+activateiffail = 1
+
+
+[left_horizstab]
+wingspan = 1.37
+type = airfoil
+subtype = elevator
+criticalsecondary = 1
+x = -0.926
+y = -5.851
+z = 0.29
+mass = 15
+inertiapitch = 1.135
+inertiaroll = 2.635
+inertiayaw = 4.2
+attpitch = 0
+attroll = 0
+attyaw = 0
+airfoiltype = spit1horizstab
+area = 1.646
+wingchord = .972
+innerchord = 1.448
+outerchord = .62
+aspectratio = 3.48
+controlmin = 26
+controlmax = -28
+# usesdownwash = 1
+# usesdownwash = 0
+# downwashcomponent = left_mid
+# downwashminaoa = -90
+# downwashmaxaoa = 90
+# blanking from fuselage
+#blank1_pitchstart = -20
+#blank1_pitchstartfull = -10
+#blank1_pitchendfull = 10
+#blank1_pitchend = 20
+blank1_yawstart = 6
+blank1_yawstartfull = 30
+blank1_yawendfull = 130
+blank1_yawend = 150
+# blanking from main wings
+#blank2_pitchstart = 21
+#blank2_pitchstartfull = 23
+#blank2_pitchendfull = 31
+#blank2_pitchend = 33
+blank2_yawstart = -60
+blank2_yawstartfull = -45
+blank2_yawendfull = 45
+blank2_yawend = 60
+# blanking from vert tail
+#blank3_pitchstart = -45
+#blank3_pitchstartfull = -45
+#blank3_pitchendfull = 90
+#blank3_pitchend = 90
+blank3_yawstart = 45
+blank3_yawstartfull = 65
+blank3_yawendfull = 125 
+blank3_yawend = 135
+vortexcomponent = propeller
+vortexeffectpercent = 1.0
+vortexoffset = -0.1
+hitmapcomponent1 = dlhstab
+hitmapcomponent2 = dlelev
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 30000
+damagelevel2 = 60000
+damagelevel3 = 80000
+damagelevel4 = 90000
+visdamage = lhstab
+visdamageparent = tail
+damagelevelfail = 90000
+
+
+[right_horizstab]
+wingspan = 1.37
+type = airfoil
+subtype = elevator
+criticalsecondary = 1
+x = 0.926
+y = -5.851
+z = 0.29
+mass = 15
+inertiapitch = 1.135
+inertiaroll = 2.635
+inertiayaw = 4.2
+attpitch = 0
+attroll = 0
+attyaw = 0
+airfoiltype = spit1horizstab
+area = 1.646
+wingchord = .972
+innerchord = 1.448
+outerchord = .62
+aspectratio = 3.48
+controlmin = 26
+controlmax = -28
+# usesdownwash = 1
+# usesdownwash = 0
+# downwashcomponent = right_mid
+# downwashminaoa = -90
+# downwashmaxaoa = 90
+# blanking from fuselage
+#blank1_pitchstart = -20
+#blank1_pitchstartfull = -10
+#blank1_pitchendfull = 10
+#blank1_pitchend = 20
+blank1_yawstart = 6
+blank1_yawstartfull = 30
+blank1_yawendfull = 130
+blank1_yawend = 150
+# blanking from main wings
+#blank2_pitchstart = 21
+#blank2_pitchstartfull = 23
+#blank2_pitchendfull = 31
+#blank2_pitchend = 33
+blank2_yawstart = -60
+blank2_yawstartfull = -45
+blank2_yawendfull = 45
+blank2_yawend = 60
+# blanking from vert tail
+#blank3_pitchstart = -45
+#blank3_pitchstartfull = -45
+#blank3_pitchendfull = 90
+#blank3_pitchend = 90
+blank3_yawstart = 45
+blank3_yawstartfull = 65
+blank3_yawendfull = 125 
+blank3_yawend = 135
+vortexcomponent = propeller
+vortexeffectpercent = 0.5
+vortexoffset = 0.1
+hitmapcomponent1 = drhstab
+hitmapcomponent2 = drelev
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 30000
+damagelevel2 = 60000
+damagelevel3 = 80000
+damagelevel4 = 90000
+visdamage = rhstab
+visdamageparent = tail
+damagelevelfail = 90000
+
+[vert_stab]
+type = airfoil
+subtype = rudder
+x = 0.0
+y = -6.142
+z = 0.532
+mass = 15
+inertiapitch = 4.203
+inertiaroll = 1.683
+inertiayaw = 4
+attpitch = 0.0
+attroll = -90
+attyaw = 0
+airfoiltype = spit1vertstab
+area = 1.737
+aspectratio = 10
+wingchord = 1.08
+innerchord = 1.584
+outerchord = .576		
+controlmin = -19
+controlmax = 19
+# blanking from fuselage
+#blank1_pitchstart = 6
+#blank1_pitchstartfull = 20
+#blank1_pitchendfull = 90
+#blank1_pitchend = 90
+blank1_yawstart = -10
+blank1_yawstartfull = -7
+blank1_yawendfull = 7
+blank1_yawend = 10
+# blanking from main wings
+#blank2_pitchstart = 21
+#blank2_pitchstartfull = 25
+#blank2_pitchendfull = 35
+#blank2_pitchend = 40
+blank2_yawstart = -60
+blank2_yawstartfull = -45
+blank2_yawendfull = 45
+blank2_yawend = 60
+# blanking from horiz tail
+#blank3_pitchstart = 45
+#blank3_pitchstartfull = 45
+#blank3_pitchendfull = 90
+#blank3_pitchend = 90
+blank3_yawstart = -80
+blank3_yawstartfull = -60
+blank3_yawendfull = 60
+blank3_yawend = 80
+vortexcomponent = propeller
+vortexeffectpercent = 0.5
+vortexoffset = -0.1
+hitmapcomponent1 = dvstab
+hitmapcomponent2 = rfuselage
+hitmapcomponent3 = drudd1
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 30000
+damagelevel2 = 60000
+damagelevel3 = 80000
+damagelevel4 = 90000
+visdamage = cvstab
+visdamageparent = tail
+damagelevelfail = 90000
+
+
+[fuse_horiz_front]
+type = airfoil
+subtype = fuselage
+criticalprimary = 1
+x = 0.0
+y = -1.102
+z = 0
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = 0
+attroll = 0
+attyaw = 0
+airfoiltype = fuselage
+area = 2.57
+wingchord = 6.008
+aspectratio = .071
+# propwash vortex effects
+vortexcomponent = propeller
+# how much of the propeller's propwash affects this component
+vortexeffectpercent = 0.75
+# offset for angled-velocity effects
+# a value of zero means only backwash is factored in
+# a value of one assumes one edge of the component
+# is along the vortex axis of rotation
+vortexoffset = 0
+# hitmapcomponent1 = d_aftfuselage
+hitmapcomponent1 = rfuselage
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+visdamage = tail
+damagelevelfail = 150000
+
+[fuse_vert_front]
+type = airfoil
+subtype = fuselage
+x = 0
+y = -1.102
+z = -0.1
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = 0
+attroll = 90
+attyaw = 0
+airfoiltype = flatplate
+area = 4.9
+wingchord = 6.008
+aspectratio = .135
+# propwash vortex effects
+vortexcomponent = propeller
+# how much of the propeller's propwash affects this component
+vortexeffectpercent = 0.75
+# offset for angled-velocity effects
+# a value of zero means only backwash is factored in
+# a value of one assumes one edge of the component
+# is along the vortex axis of rotation
+vortexoffset = 0
+hitmapcomponent1 = ffuselage
+hitmapcomponent2 = rfuselage
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+
+[mid_ID1]
+type = airfoil
+subtype = vortexpointaileron
+x = 0
+y = -0.15
+z = -0.25
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = 0
+attroll = 180
+attyaw = 0
+airfoiltype = fuselage
+area = 0
+aspectratio = 0.135
+dragarea = 0.77
+dragk = 0.32
+induceddragcomponent1 = fuse_horiz_front
+induceddragmult = 0.35
+
+
+[mid_ID2]
+type = airfoil
+subtype = vortexpointaileron
+x = 0
+y = -0.2
+z = -0.25
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = 0
+attroll = -90
+attyaw = 0
+airfoiltype = fuselage
+area = 0
+aspectratio = 0.135
+dragarea = 2.94
+dragk = 0.32
+induceddragcomponent1 = fuse_vert_front
+induceddragmult = 0.35
+
+[fuse_flat]
+type = airfoil
+subtype = fuselage
+x = 0
+y = -0.001
+z = -.1875
+attpitch = -90
+attroll = 0
+attyaw = 0
+airfoiltype = flatplate
+area = 0.075
+wingchord = .75
+aspectratio = 1
+
+[canopy_drag_cockpit]
+type = airfoil
+subtype = canopy
+canopynum = 1
+x = 0
+y = -1.824
+z = 0.48
+# attitude of component
+attpitch = 90
+attroll = 90
+attyaw = 0
+# component specific data
+airfoiltype = flatplate
+area = 0.113
+wingspan = 0.336
+innerchord = 0.144
+outerchord = 0.528
+# windchord is in meters, average chord for wing section
+wingchord = 0.336
+# aspectratio is used to "adjust" the angle of attack (hatch? should only be defining wing planform shape? span/chord?)
+aspectratio = 1
+maxopenspeed = 312kph
+maxclosespeed = 342kph
+maxdamagespeed = 322kph
+hitmapcomponent1 = d_fcanopy
+hitmapcomponent2 = d_canopy1
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 3000
+damagelevel2 = 10000
+damagelevel3 = 50000
+damagelevel4 = 100000
+visdamage = canopy1
+damagelevelfail = 100000
+
+[fueltank1]
+type = engine
+subtype = fueltank
+x = 0
+y = -0.408
+z = 0.144
+mass = 157
+inertiapitch = 13.305
+inertiaroll = 8.949
+inertiayaw = 13.305
+tanknum = 1
+fueltanktype = integral_with_lightselfsealing
+fuelburncomponent1 = oilsys1
+fuelburncomponent2 = dlflap
+fuelburncomponent3 = linnerwing
+fuelburncomponent4 = ffuselage
+fuelburncomponent5 = fuel1
+fuelburncomponent6 = fuel2
+hitmapcomponent1 = fuel1
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 1500
+damagelevel2 = 10500
+damagelevel3 = 50000
+damagelevel4 = 360000
+
+
+[fueltank2]
+type = engine
+subtype = fueltank
+x = 0
+y = -0.408
+z = -0.192
+mass = 121
+inertiapitch = 10.254
+inertiaroll = 6.897
+inertiayaw = 10.254
+tanknum = 2
+fueltanktype = integral_with_lightselfsealing
+fuelburncomponent1 = oilsys1
+fuelburncomponent2 = drflap
+fuelburncomponent3 = rinnerwing
+fuelburncomponent4 = ffuselage
+fuelburncomponent5 = fuel2
+fuelburncomponent6 = fuel1
+fuelburncomponent7 = darms1
+hitmapcomponent1 = fuel2
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 1500
+damagelevel2 = 10500
+damagelevel3 = 50000
+damagelevel4 = 360000
+
+[fueltank3]
+type = engine
+subtype = fueltank
+x = 0
+y = -2.016
+z = 0.144
+mass = 95
+inertiapitch = 8.754
+inertiaroll = 5.897
+inertiayaw = 8.754
+tanknum = 3
+# fueltanktype = integral
+# fuelburncomponent1 = lrflap
+# fuelburncomponent2 = engine1
+# fuelburncomponent3 = linnerwing
+# fuelburncomponent5 = ffuselage
+# fuelburncomponent6 = fuel2
+# yes, fueltank1 uses fuel2 for its damage map
+# hitmapcomponent1 = fuel2
+#damagelevel of zero or less means that level isn't used
+# damagelevel1 = 1500
+# damagelevel2 = 5000
+# damagelevel3 = 25000
+# damagelevel4 = 100000
+
+[oiltank]
+type = engine
+subtype = oiltank
+x = 0
+y = 0.672
+z = -0.576
+mass = 35
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+tanknum = 1
+hitmapcomponent1 = oilsys1
+hitmapcomponent2 = oilcool1
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 500
+damagelevel2 = 5000
+damagelevel3 = 15000
+damagelevel4 = 20000
+
+[radiator]
+type = engine
+subtype = radiator
+x = 0.888
+y = -0.864
+z = -0.912
+mass = 40
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+tanknum = 1
+hitmapcomponent1 = radiator1
+hitmapcomponent2 = cooltank1
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 100
+damagelevel2 = 1000
+damagelevel3 = 15000
+damagelevel4 = 20000
+visdamage = rwing
+
+[ballast_radiator]
+type = ballast
+x = -0.888
+y = -0.864
+z = -0.912
+mass = 40
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+visdamage = lwing
+
+[Engine]
+type = engine
+subtype = engine
+criticalprimary = 1
+enginetype = merlinII
+propellercomponent = propeller
+x = 0
+y = 0.96
+z = 0
+mass = 960
+inertiapitch = 201.915
+inertiaroll = 26.46
+inertiayaw = 201.915
+attpitch = 0
+attroll = 0
+attyaw = 0
+enginenumber = 1
+fueltank1component = fueltank1
+fueltank2component = fueltank2
+oiltankcomponent = oiltank
+radiator1component = radiator
+enginesound = sounds\spit1\engine.wav
+idlesound = sounds\spit1\idle.wav
+startersound = sounds\spit1\start.wav
+hitmapcomponent1 = engine1
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 150000
+damagelevel4 = 300000
+
+[left_inner_mount]
+type = weaponmount
+triggertype = secondary
+selectornum = 1
+confignum = 1
+mountnum = 1
+addtogrpammocount = 1
+weapon = 20mm_hispano
+minconvergence = 100
+usesconvergence = 1
+weaponsound = sounds\20mml.wav
+ammocount = 60
+ammofile = 20mm_hispano1uk.belt
+beltname = CANNON
+collidertype = front60deg
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+hitmapcomponent1 = dlcannon
+hitmapcomponent2 = dlcannonammo
+ammoexplosioncomponent1 = linnerwing
+ammoexplosioncomponent2 = dlcannonammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+damagelevel1 = 5000
+damagelevel2 = 15000
+damagelevel3 = 0
+damagelevel4 = 0
+visdamage = lwing
+
+#[left_center_mount]
+#type = weaponmount
+#triggertype = primary
+#selectornum = 1
+#confignum = 1
+#mountnum = 2
+#weapon = browning303air
+#minconvergence = 100
+#usesconvergence = 1
+#ammocount = 350
+#ammofile = 303trac2.belt
+#beltname = MG
+#weaponsound = sounds\spit1\30cal_1.wav
+# weapon = browning303air
+# weaponobject = brit303r
+# usesconvergence = 1
+# ammocount = 300
+# ammofile = 303trac3.belt
+# weaponsound = sounds\spit1\30cal_3.wav
+#collidertype = front60deg
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#hitmapcomponent1 = dlcgun
+# hitmapcomponent2 = dlcgunammo
+#ammoexplosioncomponent1 = linnerwing
+#ammoexplosioncomponent2 = louterwing
+#ammoexplosioncomponent3 = dlcgun
+#ammoexplosioncomponent4 = dlcgunammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+#damagelevel1 = 5000
+#damagelevel2 = 15000
+#damagelevel3 = 0
+#damagelevel4 = 0
+#visdamage = lwing
+
+#[left_outer_mount]
+#type = weaponmount
+#triggertype = primary
+#selectornum = 1
+#confignum = 1
+#mountnum = 3
+#weapon = browning303air
+#minconvergence = 100
+#usesconvergence = 1
+#weaponsound = sounds\spit1\30cal_1.wav
+#ammocount = 350
+#ammofile = 303trac4.belt
+#beltname = MG
+#collidertype = front60deg
+#hitmapcomponent1 = dlogun
+# hitmapcomponent2 = dlogunammo
+#ammoexplosioncomponent1 = louterwing
+#ammoexplosioncomponent2 = dlogun
+#ammoexplosioncomponent3 = dlogunammo
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+#damagelevel1 = 5000
+#damagelevel2 = 15000
+#damagelevel3 = 0
+#damagelevel4 = 0
+#visdamage = lwing
+
+[right_inner_mount]
+type = weaponmount
+triggertype = secondary
+selectornum = 1
+confignum = 1
+mountnum = 4
+addtogrpammocount = 1
+weapon = 20mm_hispano
+minconvergence = 100
+usesconvergence = 1
+weaponsound = sounds\20mmr.wav
+ammocount = 60
+ammofile = 20mm_hispano2uk.belt
+beltname = CANNON
+collidertype = front60deg
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = drcannon
+hitmapcomponent2 = drcannonammo
+ammoexplosioncomponent1 = drcannon
+ammoexplosioncomponent2 = drcannonammo
+ammoexplosioncomponent3 = rinnerwing
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 5000
+damagelevel2 = 15000
+damagelevel3 = 0
+damagelevel4 = 0
+visdamage = rwing
+
+#[right_center_mount]
+#type = weaponmount
+#triggertype = primary
+#selectornum = 1
+#confignum = 1
+#mountnum = 5
+#weapon = browning303air
+#minconvergence = 100
+#usesconvergence = 1
+#ammocount = 350
+#ammofile = 303trac2.belt
+#beltname = MG
+#weaponsound = sounds\spit1\30cal_1.wav
+# weapon = browning303air
+# weaponobject = brit303r
+# usesconvergence = 1
+# ammocount = 300
+# ammofile = 303trac3.belt
+# weaponsound = sounds\spit1\30cal_7.wav
+#collidertype = front60deg
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#hitmapcomponent1 = drcgun
+# hitmapcomponent2 = drcgunammo
+#ammoexplosioncomponent1 = rinnerwing
+#ammoexplosioncomponent2 = routerwing
+#ammoexplosioncomponent3 = drcgun
+#ammoexplosioncomponent4 = drcgunammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+#damagelevel1 = 5000
+#damagelevel2 = 15000
+#damagelevel3 = 0
+#damagelevel4 = 0
+#visdamage = rwing
+
+#[right_outer_mount]
+#type = weaponmount
+#triggertype = primary
+#selectornum = 1
+#confignum = 1
+#mountnum = 6
+#weapon = browning303air
+#minconvergence = 100
+#usesconvergence = 1
+#weaponsound = sounds\spit1\30cal_1.wav
+#ammocount = 350
+#ammofile = 303trac4.belt
+#beltname = MG
+#collidertype = front60deg
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#hitmapcomponent1 = drogun
+# hitmapcomponent2 = drogunammo
+#ammoexplosioncomponent1 = drogun
+#ammoexplosioncomponent2 = drcgunammo
+#ammoexplosioncomponent3 = routerwing
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+#damagelevel1 = 5000
+#damagelevel2 = 15000
+#damagelevel3 = 0
+#damagelevel4 = 0
+#visdamage = rwing
+
+
+[left_gear]
+type = gear
+subtype = wheel
+x = -1.308
+y = -0.336
+z = -0.72
+mass = 125
+gearnum = 1
+wheelradius = 0.302
+strutspringstrength = 45000
+strutshockstrength = 10000
+strutshockreturnstrength = 10000
+#strutspringstrength = 30000
+#strutshockstrength = 2000.0
+#strutshockreturnstrength = 500.0
+strutlength = 0.156
+contactpointtype = tire
+wheelrotationalinertia = 5
+braketype = left
+brakestrength = 6000
+hitmapcomponent1 = dllg
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 15000
+damagelevel2 = 30000
+damagelevel3 = 45000
+damagelevel4 = 60000
+visdamage = lgear
+visdamageparent = lwing
+damagelevelfail = 75000
+
+[left_gear_aero]
+type = airfoil
+subtype = gear
+gearnum = 1
+x = -0.816
+y = 0.0
+z = -1.332
+# attitude of component
+attpitch = 90
+attroll = -3
+attyaw = 0
+# component specific data
+airfoiltype = flatplate
+area = 0.194
+wingspan = 0.192
+innerchord = 1.008
+outerchord = 1.008
+# windchord is in meters, average chord for wing section
+wingchord = 1.008
+# aspectratio is used to "adjust" the angle of attack (hatch? should only be defining wing planform shape? span/chord?)
+aspectratio = .190
+maxopenspeed = 247kph
+maxclosespeed = 277kph
+maxdamagespeed = 257kph
+damagelevel1 = 15000
+damagelevel2 = 30000
+damagelevel3 = 45000
+damagelevel4 = 60000
+visdamage = lgear
+
+
+[right_gear]
+type = gear
+subtype = wheel
+x = 1.308
+y = -0.336
+z = -0.72
+mass = 125
+gearnum = 2
+wheelradius = 0.302
+strutspringstrength = 45000
+strutshockstrength = 10000
+strutshockreturnstrength = 10000
+strutlength = 0.156
+contactpointtype = tire
+wheelrotationalinertia = 5
+braketype = right
+brakestrength = 6000
+hitmapcomponent1 = drlg
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 15000
+damagelevel2 = 30000
+damagelevel3 = 45000
+damagelevel4 = 60000
+visdamage = rgear
+visdamageparent = rwing
+damagelevelfail = 75000
+
+[right_gear_aero]
+type = airfoil
+subtype = gear
+gearnum = 2
+x = 0.816
+y = 0.0
+z = -1.332
+# attitude of component
+attpitch = 90
+attroll = 3
+attyaw = 0
+# component specific data
+airfoiltype = flatplate
+area = 0.194
+wingspan = 0.192
+innerchord = 1.008
+outerchord = 1.008
+# windchord is in meters, average chord for wing section
+wingchord = 1.008
+# aspectratio is used to "adjust" the angle of attack (hatch? should only be defining wing planform shape? span/chord?)
+aspectratio = .190
+maxopenspeed = 247kph
+maxclosespeed = 277kph
+maxdamagespeed = 257kph
+damagelevel1 = 15000
+damagelevel2 = 30000
+damagelevel3 = 45000
+damagelevel4 = 60000
+visdamage = rgear
+
+
+[tail_gear]
+type = gear
+subtype = wheel
+x = 0.0
+y = -5.8
+z = -0.428
+mass = 50
+gearnum = 3
+wheelradius = 0.127
+strutspringstrength = 10000.0
+strutshockstrength = 2000.0
+strutshockreturnstrength = 2000.0
+strutlength = 1.0
+contactpointtype = tire
+wheelrotationalinertia = 10
+castorrotinertia = 15
+hitmapcomponent1 = dlgtl
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 5000
+damagelevel2 = 10000
+damagelevel3 = 15000
+damagelevel4 = 20000
+visdamage = tgear
+visdamageparent = tail
+damagelevelfail = 25000
+
+[pitot_tube]
+type = pitot
+subtype = none
+x = -4.501
+y = 0.193
+z = -0.968
+attpitch = 0
+attroll = 0
+attyaw = 0
+mass = 0
+
+[pilot]
+type = crew
+crewposition = 1
+criticalprimary = 1
+x = 0
+y = -1.632
+z = 0
+mass = 75
+type = crew
+crewposition = 1
+hitmapcomponent1 = dhead1
+hitmapcomponent2 = dtorso1
+hitmapcomponent3 = darms1
+hitmapcomponent4 = degs1
+
+[Ballast Weight2]
+type = ballast
+subtype = none
+x = 0
+y = -1.3
+# y = -1.35 Ricks Angular velocities
+# y = -3.365 Hoof's bug cancelling bug
+z = 0
+mass = 283
+inertiapitch = 2111.226
+inertiaroll = 77.02
+inertiayaw = 2111.226
+
+[Ballast Weight]
+type = ballast
+subtype = none
+x = 0
+y = -3.28
+z = 0
+mass = 77
+
+#totalmass = X should be the total historical mass of the vehicle
+#totalmass = 2684

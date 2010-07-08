@@ -1,0 +1,74 @@
+<?xml version='1.0'?>
+<!DOCTYPE content SYSTEM "content.dtd">
+<content>
+  <body>title = Utilisation de votre matériel
+1.0.label = Armes
+1.1.alert.modal = L’inventaire d’un soldat est composé de son arme principale  et plusieurs armes secondaires qui sont utiles selon différentes conditions. 
+1.1.alert1.modal = Pendant que nous visitons votre inventaire gardez un oeil sur votre HUD , indicateur des armes. Il vous donne des information comme l’arle sélectionnée, les munitions restantes, réglages de la distance, etc…
+1.1.alert1.hilite = primary
+1.1.alert2 = Votre arme principale est pour l’instant abbaissée.  Utilisez {fprelaxed} pour mettre en joue. 
+1.1.alert2.hilite = primary
+1.1.label = Inventaire
+1.2.alert.modal = En tant que fusilier, votre arme de principale est le fusil. Vous pouvez le sélectionner avec {fpweapon0}. Toutes les classe d&#39;infanterie utilise {fpweapon0} pour leur arme principale.
+1.2.alert.hilite = principale
+1.2.alert1.modal = tous les fusiliers opèrent de la même façon. La différence entre eux est surtout combien de munitions ils peuvent porter, type de balle, pénétration et le viseur. 
+1.2.alert2.modal = Vous pouvez aussi ajuster la hausse du viseur avec {gunsightrangedec} et {gunsightrangeinc}. Pour recharger utilisez {fpreload}.
+1.2.alert3 = Avancez et tirez quelques balles en utilisant la touche  {fpfire} 
+1.2.label = le fusil
+1.2.complete = Très bien!
+
+1.3.alert = Maintenant, étudions de près vos grenade HE en utilisant {fpweapon1}.
+ 1.3.label = Choisir la grenade HE
+1.4.alert.modal =  sont utiles pour nettoyer des bâtiments ou l&#39;arrière d&#39;une butte. En tant que fusilier vous pouvez toujours choisir une grenade par  {fpweapon1}.
+1.4.alert.hilite = primary
+1.4.alert1.modal = Pour jeter une grenade, regarder seulement dans la direction voulue et appuyer  {fpfire}. Plus vous maintenez appuyé {fpfire} et plus haut vous regardez plus la grenade ira loin.
+
+.
+1.4.alert3 = Essayez de jeter votre grenade au loin en utilisant {fpfire}. Vous raterez ce tutorial si vous mourrez, faites donc attention à ne pas jeter la grenade trop près de vous. 
+1.4.label = La grenade HE
+1.4.complete = Excellent!
+1.5.alert = Ok maintenant sélectionnez votre grenade fumigène avec la touche {fpweapon2}.
+1.5.label = sélectionnez fumigène
+1.6.alert.modal =  Elles sont utiles pour masquer votre chemin si celui-ci peut-être sous le feu ennemi. En tant que fusilier, utilisez {fpweapon2} pour la choisir.
+1.6.alert.hilite = primary
+1.6.alert1.modal = Lancer la grenade fumigène fonctionne de la même façon que la grenade HE. Regardez vers l&#39;endroit cible et jeter avec {fpfire}. Comme pour la HE plus vous maintenez appuyé plus vous lancerez loin.
+1.6.alert2.modal = Quand la grenade touché le sol elle lachera un nuage de fume pendant une courte période. Ceci fournira a vous et à vos amis une couverture pour traverser un espace.
+1.6.alert3 = Jetez ue grenade fumigène avec {fpfire} et prenez un moment pour  regarder.  Essayer de traverser le nuage et faites en aussi le tour.  
+1.6.label = La grenade fumigène
+1.7.alert3 =  Maintenant le couteau. Prenez le avec la touche{fpweapon3}.
+1.7.label = sélectionner le couteau
+
+1.8.alert.modal = Utilisez le couteau au corps à corps ou pour être silencieux. Soyez simplement au contact de votre victime et utilisez {fpfire}. Il est possible de devoir asséner plusieurs coups pour arriver à éliminer votre cible. 
+1.8.alert.hilite = primary
+1.8.alert1 = Prenez le temps d’essayer votre couteau en utilisant {fpfire}.
+1.8.label = Le couteau de combat
+1.8.complete = Super, maintenant regardons votre équipement restant. 
+2.0.label = Matériel qui n’est pas une arme
+2.1.alert =  Le prochain équipement étudié sera le pack de munition. Sélectionnez votre pack avec {fpweapon4}.
+2.1.label = sélectionnez le pack de munition
+2.2.alert.modal =  Votre pack de munition n&#39;est utilisable qu&#39;une seule fois, il vous permet de ravitailler un fantassin ami en munition. Allez simplement à coté de lui est utilisez  {fpfire} pour lui donner des munitions.  
+2.2.alert.hilite = primary
+2.2.alert1.modal = Le mieux est de ravitailler les unités avec peu de munitions comme les fusil-mitrailleurs ou les mortiers.
+2.2.alert2 = Allez y et utiliser {fpfire} pour voir à quoi cela ressemble de donner des munitions. Bien sur vous ne pouvez en donner que si vous avez quelqu’ un à coté de vous.
+2.2.label = le pack de munitions
+2.3.alert = Le prochain objet sont les jumelles. Faire {fpweapon9} pour les prendre 
+2.3.label = sélectionnez les jumelles
+2.4.alert.modal = Vos jumelles vous permettent de mieux voir de loin. Ceci est très important car le terrain où vous allez évoluer est très vaste
+2.4.alert.hilite = primary
+2.4.alert1.modal =  Les jumelles sont particulières car il faut le grade de capitaine pour les utiliser. Vous pouvez seulement les utiliser si vous êtes immobile. Au moindre mouvement vous reprenez votre arme principale. 
+2.4.alert2 = Passez un moment à regarder autour de vous avec les jumelles. Quand vous êtes prêt bougez seulement dans une direction. En utilisant  pour avancer {fpfoward}, reculer {fpbackward}, pas à gauche {fpstrafeleft} ou pas à droite {fpstraferight}.
+2.4.label = les jumelles
+2.4.complete = Comme vous pouvez le voir des que vous bougez vous perdez les jumelles et reprenez votre arme..
+
+2.5.alert.modal = Le dernier équipement qui n’est pas une arme est la carte. Le prochain tutorial vous fera découvrir tous les secrets de la carte mais jetons un bref coup d’oeil tout de même.
+2.5.alert1.modal = Pour accéder à la carte, utiliser la touche {showingamemap}. La carte contient plus d’infos que juste une simple carte. Vous pouvez voir les détails de mission, lire les manuels d’aide et modifier vous réglages.
+2.5.alert2 = Faites apparaître la carte avec la touche {showingamemap}. Une fois que vous avez jeté un œil à la carte, ré-appuyez sur {showingamemap} pour la faire disparaître et finir ce tutorial.
+2.5.label = ouvrir la carte
+
+2.6.alert = Fermer la carte en utilisant la touche {showingamemap} quand vous avez fini de la regarder pour clore ce tutorial. 
+2.6.label = fermer la carte</body>
+  <brief>Apprendre à choisir les différentes armes ou objets de votre inventaire. comme l&#39;utilisation de votre arme secondaire comme le couteau ou une grenade mais aussi les objets comme le pack de munitions.</brief>
+  <handler>basic.loadout</handler>
+  <requires>basic.rifle</requires>
+  <title>Utilisation des armes</title>
+</content>

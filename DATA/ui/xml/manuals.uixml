@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+<window id="manuals" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" onshow="initWin(this)">
+	<include file="widgets/template.uixml"/>
+	<include file="classes/ListControl.uixml"/>
+	<include file="classes/TreeControl.uixml"/>
+	<include file="classes/TreeNode.uixml"/>
+	<tabview id="body" x="43" y="140" width="930" height="450" ontab="quickhelp(this.getchild(this.value).id)" style="color: #BFE2CE;
+						background-color: #00000077;
+						border-top-corner: ui/textures/test/body_ul.bmp;
+						border-bottom-corner: ui/textures/test/body_br.bmp;
+						border-sides: ui/textures/test/body_sides.bmp;
+						border-top: ui/textures/test/body_top.bmp;
+						border-bottom: ui/textures/test/body_bottom.bmp;
+						control-on-endcap:  ui/textures/test/body_tab_cap.bmp;
+						control-on-back:  ui/textures/test/body_tab_filler.bmp;
+						control-off-endcap: ui/textures/test/body_tab_cap_on.bmp;
+						control-off-back: ui/textures/test/body_tab_filler_on.bmp;
+						border-width: 16;
+						border-height: 16;">
+		<tab id="manuals-tab" label="  &widgets.manuals.mantab;  " x="0" y="0" width="930" height="460" onshow="setHelp('&widgets.manuals.mantab.help;')">
+			<view id="left-pane" x="18" y="18" width="444" height="411">
+				<view x="10" y="10" width="425" rtop="10">
+					<caption label="&widgets.manuals.mantab.select;" x="0" rtop="10" height="20" width="400" style="font-size: +2; color: #FFFFFFFF;"/>
+					<image x="0" rtop="20" src="ui/textures/test/horiz_underline.bmp" width="425" height="12"/>
+					<list id="manualTree" x="0" y="5" width="425" rtop="30" style="color: #e9e3d9ff; " onselect="manualTree.clickTree()">
+						<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+					</list>
+				</view>
+			</view>
+			<include file="widgets/divider.uixml"/>
+			<view id="right-pane" x="468" y="18" width="444" height="411">
+				<view x="10" y="10" width="425" rtop="17">
+					<caption id="manuals-header" label="&widgets.manuals.mantab.read;" x="0" height="20" width="400" rtop="0" style="font-size: +2; color: #FFFFFFFF;"/>
+					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="12"/>
+					<text id="base" x="0" y="0" width="425" rtop="26" acceptfocus="no" style=" color: #e9e3d9ff;"/>
+				</view>
+			</view>
+		</tab>
+	</tabview>
+	<script>
+		<!--
+		
+		var manualTree		= new TreeControl(findview("manualTree"), "manual-title", selectManual, 413);
+		var base			= findview("base");
+		var header			= findview("manuals-header");
+		var manual			= null;
+		
+		function doBack()
+		{
+			if(manual != null)
+				manual.close();
+			
+			window.close();
+		}
+		
+		function initWin(win)
+		{
+			showIDCard(false);
+			setBack('widgets.manuals.back');
+			
+			var root = game.getcontent("manuals");
+			
+			if(root)
+			{
+				var links = root.links;
+				
+				for(var i = 0; i < links.length; i++)
+				{
+					var link 	= links[i];
+					var branch	= (link.type == "directory") ? true: false;
+					
+					manualTree.root.addNode(new TreeNode(link.title, link.path, 1, branch));
+				}
+			}
+			
+			manualTree.drawTree();
+			
+			setHelp(getlocstring('widgets.manuals.mantab.help'));
+			
+			forwardButton.visible = false;
+			quickhelp(window.name);
+		}
+		
+		function selectManual()
+		{
+			var node = manualTree.data;
+			
+			if(node != null)
+			{
+				var content = game.getcontent(node.data);
+				
+				if(content != null)
+				{
+					setManual(content);
+					
+					if(content.links && content.links.length != node.children.length)
+					{
+						var links = content.links;
+						var level = node.level + 1;
+						
+						for(var i = 0; i < links.length; i++)
+						{
+							var link 	= links[i];
+							var branch	= (link.type == "directory") ? true: false;
+							
+							node.addNode(new TreeNode(link.title, link.path, level, branch));
+						}
+					}
+				}
+				else
+				{
+					setDefaultManual();
+				}
+			}
+		}
+		
+		function loadManual(path)
+		{
+			setManual(game.getcontent(path));
+		}
+		
+		function setManual(content)
+		{
+			if(manual != null)
+				manual.close();
+			
+			manual 			= null;
+			base.text 		= "";
+			header.label 	= ""; //getlocstring('widgets.manuals.mantab.read');
+			
+			if(content != null)
+			{
+				if(content.title != null && content.title != "")
+					header.label += content.title.toUpperCase();
+				else
+					header.label = getlocstring('widgets.manuals.mantab.read');
+				
+				manual = (content.handler != null && content.handler != "") ? load(content.handler): load("handlers/default");
+				
+				if(manual)
+					manual.setContent(content, base);
+			}
+			else
+			{
+				setDefaultManual();
+			}
+		}
+		
+		function setDefaultManual()
+		{
+			base.text = getlocstring('widgets.manuals.mantab.default');
+		}
+		
+		-->
+	</script>
+</window>

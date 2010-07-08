@@ -1,0 +1,23 @@
+
+#Bofors 40mm State File
+
+#DOF state type, name of variable, name, time to articulate
+#multiple states require multiple lines
+dofstate 1 hatchstate1 hatch 1 2000
+#SMOKE: state type, name of variable, DOF name, smoke type, number
+#smokestate fuelleak1 fleak1 fuelleak 1
+sound 1 enginesound1 enginesound 1
+dofstate 1 bombbaydoor bombbaydoor 8000
+dofstate 1 canopystate1 canopy 1 2000
+dofstate 2 canopystate2 canopy 2 3000
+dofstate 2 canopystate3 canopy 3 2000
+
+# tread dust
+smokestate 1 treaddust1 tdustl1 treaddust 1
+smokestate 1 treaddust2 tdustl2 treaddust 2
+smokestate 1 treaddust3 tdustr1 treaddust 3
+smokestate 1 treaddust4 tdustr2 treaddust 4
+
+# Crash and burn stuff
+
+effect 1 crashexplosion crashexplosion

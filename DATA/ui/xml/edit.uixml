@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<window id="edit" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768" layer="100" aspectalign="center">
+	<include file="lib/common.uixml"/>
+	<view id="edit-popup" width="800" height="500" style="background-color: #000000EE; 
+							border-sides: ui/textures/hud/border_side.bmp;
+							border-corner: ui/textures/hud/border_corner.bmp;
+							border-width: 4;
+							border-height: 4;" moveondrag="yes">
+		<caption id="edit-title" x="10" height="20" rright="10" rtop="8" style="font-size: +1; color: #BFE2CE;"/>
+		<image x="10" height="12" rright="10" rtop="20" src="ui/textures/test/horiz_underline.bmp"/>
+		
+		<text id="edit-value" x="10" y="45" rtop="35" rright="10" acceptsfocus="true" style="background-color: #FFFFFF22;  color: #e9e3d9;"/>
+		
+		<button id="popup-no" x="30" y="10" width="150" height="25" label="&popup.cancel;" onclick="saveValue(false, true)"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+		<button id="popup-yes" y="10" width="150" height="25" rright="30" label="&popup.ok;" onclick="saveValue(true, true)"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+	</view>
+	<script>
+		<!--
+		
+		var editKey 	= null;
+		var editValue 	= null;
+		
+		function initEditor(key, title, val)
+		{
+			editKey 	= key;
+			editValue 	= val;
+			
+			findview("edit-title").label 	= title.toUpperCase();
+			findview("edit-value").text 	= val;
+		}
+		
+		function saveValue(apply, done)
+		{
+			soundPlayClick();
+			
+			// lookup value
+			if(apply)
+			{
+				var newValue = findview("edit-value").text;
+				game.uicallback(editKey, newValue);
+			}
+			
+			if(done)
+				window.close();
+		}
+		
+		-->
+	</script>
+</window>

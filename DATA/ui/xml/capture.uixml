@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<view id="capture" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768">
+	<view x="350" y="650" width="350" height="100" style="background-color: #00000088; 
+							border-sides: ui/textures/hud/border_side.bmp;
+							border-corner: ui/textures/hud/border_corner.bmp;
+							border-width: 4;
+							border-height: 4;">
+		<image id="capture-flag" x="10" rtop="10" width="50" height="50"/>
+		<caption id="facility-caption" x="65" rtop="10" height="15" rright="10" style=" color: #FFFFFF;"
+			onshow="this.label = (game.training) ? getlocstring('tutorials.capturing'): 'Querying host...'"/>
+		<caption id="country-caption" x="65" rtop="30" height="15" rright="10" style=" color: #ffffff"/>
+		<caption id="spawnable-caption" x="65" rtop="50" height="15" rright="10" style=" color: #ffffff;"/>
+		<image id="capture-lock" width="32" height="32" rtop="20" rright="10" src="ui/textures/lock.dds" style="color: #FF0000;"/>
+		<progressbar id="capture-progress" x="10" rright="10" y="10" height="16" minvalue="0" maxvalue="1"
+			fill="ui/textures/hud/blood-level-fill.bmp" background="ui/textures/hud/back-level-fill.bmp">
+			<caption x="0" y="0" rtop="0" rright="0" style="color: #000000;" align="center"
+				onupdate="this.label = Math.round(this.parent.value * 100) + '%'"/>
+		</progressbar>
+	</view>
+	<script>
+		<!--
+		
+		var progress 	= findview("capture-progress");
+		var facility 	= findview("facility-caption");
+		var country 	= findview("country-caption");
+		var spawner 	= findview("spawnable-caption");
+		var flag 		= findview("capture-flag");
+		var lock 		= findview("capture-lock");
+		
+		var mycountry		= game.player.client.country.code; 
+		var allcountries	= new Object();
+		
+		allcountries["UK"] 	= 1;
+		allcountries["FR"] 	= 3;
+		allcountries["DE"] 	= 4;
+		
+		function updateCaptureProgress(percent, name, owner, spawnable)
+		{
+			//consoleprint(percent + "/" + name + "/" + owner + "/" + spawnable + "\n");
+			
+			facility.label = game.utf16(name);
+			progress.value = percent;
+			
+			switch(owner)
+			{
+				case 1:
+					flag.src 		= "ui/textures/test/british_flag.bmp";
+					country.label 	= getlocstring('capture.british');
+				break;
+				case 3:
+					flag.src 		= "ui/textures/test/french_flag.bmp";
+					country.label 	= getlocstring('capture.french');
+				break;
+				case 4:
+					flag.src 		= "ui/textures/test/german_flag.bmp";
+					country.label 	= getlocstring('capture.german');
+				break;
+				default:
+					flag.src 		= "";
+					country.label 	= "";
+				break;
+			}
+			
+			if(!game.player.client.state.cancapture)
+			{
+				spawner.label = getlocstring('capture.slocked');
+				lock.visible = true;
+			}
+			else
+			{
+				if(spawnable == 1)
+				{
+					if(allcountries[mycountry] == owner)
+						spawner.label = getlocstring('capture.spawn');
+					else
+						spawner.label = getlocstring('capture.oncapture');
+				}
+				else
+				{
+					spawner.label = getlocstring('capture.nospawn');
+				}
+				
+				lock.visible = false;
+			}
+		}
+		
+		-->
+	</script>
+</view>

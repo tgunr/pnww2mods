@@ -1,0 +1,14 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="z34" type="sea" icon="Destroyer">
+<include file="z34.veh.xml"/>
+<include file="z34.state.xml"/>
+<include file="z34.hit.xml"/>
+<include file="z34.turret.xml"/>
+<include file="z34.loadout.xml"/>
+<include file="z34.xsound.xml"/>
+<include file="z34.control.xml"/>
+<variant id="uk_z34" shape="type1934-b" description="J-K Destroyer"/>
+<variant id="z34" shape="type1934" description="Zerstoerer Type 1934"/>
+<variant id="fr_z34" shape="type1934-f" description="Aigle Destroyer"/>
+</vehicle>

@@ -1,0 +1,42 @@
+# Mle 38 Hotchkiss 25mm AA turret file
+
+#multicrewpos position, whichcrew
+multicrewpos 1 1
+multicrewpos 2 2
+
+# Gun
+position = 2
+elevationrate = 2
+traverserate = 6
+type = 360turret
+gunsightfile = mle38.gs
+gunsightalignmentmountobject = mount
+gunsightalignmentrange = 800
+# conditions are undeployed, depolyed, canopyopen, canopyclosed, hatchopen, hatchclosed
+gunsightblocked = undeployed
+# added for centering gun
+# neutral can be: bombayopen/closed, hatchopen/closed, canopyopen/closed
+neutral = bombbayclosed
+# neutraltraverse -1 max deflection left, 1 max deflection right, 0 straight ahead 
+neutraltraverse = 0
+# neutralelevate -1 max down, 1 max up, 0 is midtraverse
+neutralelevate = 0
+# conditions are undeployed, depolyed, canopyopen, canopyclosed, hatchopen, hatchclosed
+
+#turret sound variables
+turrettraverse = turret/hand_turret_move.wav
+turretelevate = turret/hand_turret_move.wav
+
+
+
+#Commander head
+position = 1
+elevationrate = 2
+traverserate = 6
+type = 360turret
+neutral = bombbayclosed
+neutraltraverse = 0
+neutralelevate = 0
+gunsightfile = 8x30binoc.gs
+# conditions are undeployed, depolyed, canopyopen, canopyclosed, hatchopen, hatchclosed
+gunsightblocked = undeployed

@@ -1,0 +1,52 @@
+#bf110c.loadout file
+
+# sounds available for the mounts
+sound1 = sounds\ju87b\xgun1.wav
+sound2 = sounds\ju87b\xgun2.wav
+sound3 = sounds\ju87b\xgun3.wav
+sound4 = sounds\bf109e3\xgun2.wav
+
+loadout = 1
+
+mountnum = 1
+mountobject = midleftmg
+mountsound = sound1
+weapon = mg17
+weaponobject = genericgun1
+
+mountnum = 2
+mountobject = topleftmg
+mountsound = sound1
+weapon = mg17
+weaponobject = genericgun1
+
+mountnum = 3
+mountobject = toprightmg
+mountsound = sound1
+weapon = mg17
+weaponobject = genericgun1
+
+mountnum = 4
+mountobject = midrightmg
+mountsound = sound1
+weapon = mg17
+weaponobject = genericgun1
+
+mountnum = 5
+mountobject = 20mm1
+mountsound = sound4
+weapon = mgff
+weaponobject = genericgun1
+
+mountnum = 6
+mountobject = 20mm2
+mountsound = sound4
+weapon = mgff
+weaponobject = genericgun1
+
+
+mountnum = 7
+mountobject = rearmg
+mountsound = sound3
+weapon = mg15
+weaponobject = genericgun1

@@ -1,0 +1,87 @@
+# damage resistance file
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\tex\avhit1.wav
+-hitsound2 = sounds\tex\avhit2.wav
+-hitsound3 = sounds\tex\avhit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 5000
+
+#External
+
+d_louterwing,1.5,150,150
+d_linnerwing,1.5,150,150
+d_laileron,1,150,150
+d_lflap,1,150,150
+d_routerwing,1.5,150,150
+d_rinnerwing,1.5,150,150
+d_raileron,1.5,150,150
+d_rflap,1.5,150,150
+d_prop1,12,150,150
+d_tail,1.5,150,150
+d_lhstab,1.5,150,150
+d_lelevator,1.5,150,150
+d_rhstab,1.5,150,150
+d_relevator,1.5,150,150
+d_cvstab,1.5,150,150
+d_rudder,1.5,150,150
+d_canopy1,1,0,0
+d_armorglass,15,0,0
+d_fcanopy,1,0,0
+d_fwdfuselage,0.5,150,150
+d_aftfuselage,1.5,150,150
+d_liflap,1.5,150,150
+d_riflap,1.5,150,150
+d_frontarmor,6.5,150,150
+d_seat1,1.5,150,150
+
+#Internal
+
+d_oilcool1,3,0,0
+d_lgear,30,150,150
+dligun,30,150,150
+dligunammo,15,0,0,0,0
+dlcgun,30,150,150
+dlcgunammo,15,0,0,0,0
+dlogun,30,150,150
+dlogunammo,15,0,0,0,0
+d_radiator1,3,0,0
+d_rgear,30,150,150
+drigun,30,150,150
+drigunammo,15,0,0,0,0
+drcgun,30,150,150
+drcgunammo,15,0,0,0,0
+drogun,30,150,150
+drogunammo,15,0,0,0,0
+d_lgtl,1,100,100
+d_engine1,100,225,225
+d_oilsys1,3,0,0
+d_cooltank1,3,0,0
+d_fuel1,3,0,0
+d_fuel2,3,0,0
+d_legs1,1.0,0,0
+d_arms1,1.0,0,0
+d_torso1,1.2,0,0
+d_head1,0.4,0,0
+d_radio1,2,150,150
+d_oxy1,3,150,150

@@ -1,0 +1,81 @@
+# damage resistance file for Opel Blitz
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 1000000
+
+#Inside collider objects:
+d_radiator,8,0,0
+d_engine,250,0,0
+d_transmission,250,0,0
+d_coolant,8,0,0
+d_fuel,12,0,0
+d_driverlegs,5,0,0,0,35
+d_driverarms,5,0,0,0,35
+d_driverhead,6.5,0,0,0,40
+d_drivertorso,5,0,0,0,35
+d_commanderlegs,5,0,0,0,35
+d_commanderarms,5,0,0,0,35
+d_commanderhead,6.5,0,0,0,40
+d_commandertorso,5,0,0,0,35
+d_gunnerarms,5,0,0,0,35
+d_gunnerlegs,5,0,0,0,35
+d_gunnerhead,6.5,0,0,0,40
+d_gunnertorso,5,0,0,0,35
+d_25ammo,12,0,0
+
+#Outside collider objects:
+d_hullleftside,15,0,0
+d_hullrightside,15,0,0
+d_hullback,15,0,0
+d_hullfront,20,0,0
+d_hulltop,7,0,0
+d_hullbottom,7,0,0
+d_leftfender,7,0,0
+d_exhaust,6,0,0
+d_cannonmount,14,0,0
+d_25mmcannon,20,0,0,0,220000
+d_tophatch,14,0,0
+d_coax,12,0,0
+d_turretfront,26,0,0
+d_turrettop,7,0,0
+d_turretleft,15,0,0
+d_turretback,15,0,0
+d_turretright,15,0,0
+d_turretbottom,14,0,0
+d_rightdriverhatch,14,0,0
+d_rightarmorglass,6,0,0
+d_leftdriverhatch,14,0,0
+d_leftarmorglass,6,0,0
+d_frontdriverhatch,14,0,0
+d_frontarmorglass,6,0,0
+d_lefthullhatch,14,0,0
+d_righthullhatch,14,0,0
+d_rightfender,7,0,0
+d_frontrightwheel,25,0,0,0,5000
+d_frontleftwheel,25,0,0,0,5000
+d_backrightwheel,25,0,0,0,5000
+d_backleftwheel,25,0,0,0,5000

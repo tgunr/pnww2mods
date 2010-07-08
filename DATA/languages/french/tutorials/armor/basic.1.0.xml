@@ -1,0 +1,221 @@
+<?xml version='1.0'?>
+<content type="5">
+  <body>title = Entraînement avancé: Blindé: A-13
+ 
+ 
+bulleyes = Dans le mille!
+start = Début
+move = Bouger ici
+turn1 = Tournez à droite
+turn2 = Tournez à gauche
+setup = Arrêtez vous ici
+fire = Position de tir
+turn3 = Tournez à droite
+turn4 = Tournez à gauche
+turn5 = Tournez à droite
+stop = Fini
+berm1 = 200m Talus
+berm2 = 500m Talus
+berm3 = Talus au loin
+offroad = Hors de la route
+gunrange = Distance de tir
+
+# Spawn tanks at  60.3.39 N, 6.32..38 W  facing 270 (West)
+# -314230.38  3603625.27  101.34
+# facing front: -1.57    back: 1.58
+
+1.0.label = Introduction
+
+1.1.label = Le A-13 Mark II
+
+	1.1.alert.modal = Ceci est le A-13 Mark II, un des chars britanniques le plus commun.  IL possède 3 positions différentes jouables: Conducteur, commandant et le canonnier.
+        1.1.alert.camera = 0,5,45,360,0,0,10
+	// pan around
+	
+2.0.label = Le conducteur
+
+2.1.label = Vue du conducteur
+	2.1.alert = C&#39;est la position 1: le conducteur {positionone}.  D&#39;ici vous conduisez le véhicule. Le champ de vision du conducteur est limité par sa meurtrière de conduite.[NL][NL]Pressez {gunsightview} pour améliorer la vue.
+        2.1.alert.camera = internal
+	2.1.complete.modal = Vous pouvez utiliser {gunsightview} pour basculer de la vue améliorée à celle standard par la meurtrière. 
+	
+2.2.label = Protéger le conducteur
+	2.2.alert = La meurtrière de conduite du A13 est ouverte et il alors possible que le conducteur soit blessé à travers celle-ci.[NL][NL]Pressez {canopycontrol} Pour fermer l&#39;ouverture et protéger le conducteur.
+	2.2.complete.modal = Une fois fermé, le conducteur ne peut voir à l’extérieur mais il est protégé.  
+2.3.label = Etat du moteur
+	2.3.alert = Pressez {instrumentview} pour voir vos cadrans.
+	2.3.complete.modal = Ici vous pouvez voir le compte-tours, Température moteur, position de la tourelle ainsi que d’autres informations.
+
+2.4.label = Boîte de vitesse
+	2.4.alert.modal = A l&#39;entrée en jeu, quelque soit le véhicule, vous avez le moteur à l&#39;arrêt et vous êtes au point mort.[NL][NL]Chaque véhicule terrestre a une ou plusieurs vitesses pour avancer et une marche arrière.
+	2.4.alert1 =  Pour bouger, vous devez passer les vitesses du véhicule et appuyer sur l&#39;accélérateur.[NL][NL]Pour voir à quel rapport de vitesse vous êtes, affichez l&#39;information à l&#39;écran avec la touche {showstats}.
+	2.4.complete = Bien, Ceci affiche votre rapport de vitesse actuel (point mort par défaut).
+	2.4.complete.hilite = readout,target
+
+2.5.label = Démarrer le moteur
+	2.5.alert = Utilisez {gunsightview} et Pressez {canopycontrol} si besoin pour voir de nouveau par l&#39;ouverture du conducteur.[NL][NL]Démarrez le moteur en pressant {engstart}.
+	2.5.complete = Excellent!
+
+2.6.label = Passez la première
+	2.6.alert = Plus votre rapport est faible plus vous aurez de puissance et ceci est nécessaire pour démarrer ou grimper une pente. Plus votre rapport de vitesse est élevé plus vous irez vite mais sans beaucoup de puissance, aussi il faut l&#39;utiliser sur route le plus souvent.[NL][NL]{shiftdown} et {shiftup} contrôle les changements de vitesse des véhicules.[NL][NL]Pressez {shiftup} pour passer la première.
+	2.6.alert.hilite = readout,target
+
+3.0.label = Conduisez jusqu&#39;au champ de tir
+
+3.1.label = Controles du déplacement
+	3.1.alert.modal = Une fois la première passée, Utilisez {gas.10.4} pour avancer ou reculer, cela dépendra si vous êtes en marche arrière ou en marche avant.
+	3.1.alert1.modal = Utilisez {leftbrake.10.4} pour braquer à gauche et {rightbrake.10.4} pour tourner à droite. {bothbrake.10.4} ralentira le char.
+	3.1.alert2 = Une série de balises vous guidera vers le stand de tir. Aller de balise en balise pour finir cette partie du tutorial.[NL][NL]Utilisez {gas.10.4} pour accélérer[NL]Utilisez  {bothbrake.10.4}pour freiner.[NL]Utilisez {leftbrake.10.4} et {rightbrake.10.4} pour tourner à gauche ou à droite. 
+
+3.2.label = Votre 1er virage
+	3.2.alert = Faites votre 1er virage. En approche du virage, utilisez {bothbrake.10.4} pour ralentir le char si besoin.[NL][NL]Utilisez {leftbrake.10.4} et {rightbrake.10.4} pour contrôler votre virage sur la droite.
+
+3.3.label = Hors route	
+	3.3.alert = Sur la gauche de cette route il y a des bosses. Essayez d&#39;aller sur elle ou de les contourner.[NL][NL]La prochaine balise vous mènera hors de la route.
+
+3.4.label = Choisir une position
+	3.4.alert = Stoppez à la prochaine balise. Utilisez {bothbrake.10.4} pour arrêter le char.
+
+3.5.label = Protection
+	3.5.alert.modal = Une butte longe la route passant devant au champ de tir.
+	3.5.alert1.modal = Le blindage de votre char est plus important sur le devant que sur votre arrière.[NL][NL]Lorsque l&#39;on choisi une position de tir, Il est important de tenir compte de ce paramètre.
+	3.5.alert2.modal = Vous pouvez utilisez un monticule, une butte ou même un bâtiment pour améliorer votre protection contre un tir ennemi. Ceci est appelé se mettre &#34;défilement de tir&#34; et signifie simplement que vous protégez le châssis du véhicule par le relief du terrain empêchant ainsi l&#39;ennemi de le voir et de tirer dessus.
+	3.5.alert3.modal = Ces principes vous permettront d&#39;améliorer votre efficacité au combat.
+
+3.6.label = Position de tir
+	3.6.alert = Prenez une position de tir en vous plaçant contre la butte à droite de l&#39;autre char.[NL][NL]Assurez vous que votre char fait face au nord.[NL][NL]Prenez garde de ne pas grimper sur la butte. Si c&#39;était un vrai combat, ceci exposera plus votre char aux tirs ennemis.
+        3.6.complete.camera = -90,10,20,-90,-8,0,5
+	3.6.complete = Excellent, Vous êtes maintenant en position. 
+	
+	# Follow the Waypoints
+	# SW corner of track:  &#34;Southwest Corner&#34;
+	# -314333.57  3603628.25  101.98
+	# facing front: -0.77  back: 2.38
+	
+	# W track bumps: &#34;Road Bumps&#34;
+	# -314344.58  3603665.72  101.99
+	# facing front: -0.02   back:  3.12
+	
+	# NW corner of track:  &#34;Northwest Corner&#34;
+	# -314339.64  3603769.53  101.98
+	# facing frpmt&#34; -0.04  back: 3.11
+	
+	# Center of gun firing berm line: &#34;Armor Firing Range.&#34;
+	# -314306.27  3603792.69  102.06
+	# facing front: 0.07  back: -3.07
+	
+4.0.label = Le chef de char
+
+4.1.label = Couper votre moteur 
+	4.1.alert = En combat, Il est bien de couper son moteur si vous êtes à l&#39;arrêt. Ceci vous permet de mieux entendre vos ennemis et aussi de ne pas se faire repérer par votre bruit moteur.[NL][NL]Couper le en utilisant {engstart}.
+        4.1.alert.camera = internal
+
+4.2.label = Prenez la place du chef de char
+	4.2.alert = La position 2 dans ce char est le chef de char. Le chef de char a d&#39;habitude une meilleure vue  que les autres.[NL][NL]touche {positiontwo} pour aller à la place du  commandant.
+	4.2.complete.modal = Si vous y allez depuis la place du conducteur, le char conservera les dernières consignes données à celui-ci, le véhicule continuera son chemin selon les dernières données reçues.  Aussi, si vous avez l&#39;accélérateur enfoncé le véhicule continuera à avancer lorsque vous allez à la place d&#39;un autre membre de l&#39;équipage. Ceci peut être dangereux parfois car selon le terrain, le char peut changer de cap tout seul.
+
+4.3.label = Vues depuis le chef de char
+	4.3.alert = Le champ de vision du commandant est limité par 2 petites lucarnes, une avant droite et l&#39;autre arrière gauche. Cependant le chef de char peut ouvrir l&#39;écoutille et passer son torse à l’extérieur (position à découvert), il a ainsi une bien meilleure vue.[NL][NL]Pressez {canopycontrol} pour faire sortir à découvert le commandant.
+        4.3.complete.modal= Une fois dehors on contrôle la rotation du commandant avec {turrettraverse} et {turretelevate}.
+	
+4.4.label = Utilisez vos jumelles
+	4.4.alert = Une fois à l&#39;extérieur le chef de char peut observer les alentours avec ses jumelles.[NL][NL]Pressez {gunsightview} pour utiliser vos jumelles. 
+	
+4.5.label = Observez
+	4.5.alert = Prenez le temps de regardez autour de vous, vers le nord où vous pouvez voir des cibles.
+	4.5.complete.modal = La coupole peut tourner de 360°, sa position de départ dépend de celle de la tourelle.
+	
+5.0.label = Le tireur
+
+5.1.label = Prenez la place du canonnier
+	5.1.alert = C&#39;est la 3ème position dans ce char. Depuis cette position vous pouvez tirer avec le canon et avec la mitrailleuse coaxiale..[NL][NL]Pressez {positionthree} pour passer à la position du canonnier.
+
+5.2.label = Vues du Canonnier
+	5.2.alert = Il a 2 options pour regarder à l&#39;exterieur.[NL][NL]Pressez {canopycontrol} pour ouvrir la meurtrière.
+        5.2.complete.modal= Maintenant pressez {instrumentview} pour voir devant la tourelle.
+
+5.3.label = Le viseur du canon
+5.3.alert = Le Canonnier a aussi une vue aggrandie par le vieur.[NL][NL]Pressez {gunsightview} pour basculer en vue viseur (X2 grossissement max).
+		
+5.4.label = Bouger le tourelle
+	5.4.alert = La tourelle peut être déplacée comme le chef de char avec {turretraverse} et {turretelevate}.[NL][NL]Essayez de bouger votre tourelle de part et d&#39;autre.
+	5.4.complete.modal = La tourelle peut bouger de 360 degrés!
+
+5.5.label = Tirez avec le canon
+	5.5.alert = Prenez un moment pour tirer avec votre canon.[NL][NL]Appuyez {primarytrigger.1} Pour tirer avec votre canon.
+	5.5.complete.modal = Utilisez votre canon pour tirer sur les autres blindés et les bâtiments.
+	
+5.6.label = Utilisez la mitrailleuse
+	5.6.alert = Utilisez votre mitrailleuse un moment.[NL][NL]Appuyez {secondarytrigger.1} pour tirer avec votre mitrailleuse coaxiale.
+	5.6.complete.modal = Utilisez votre mitrailleuse contre l&#39;infanterie ou  des cibles peu blindées comme les camions.
+	
+6.0.label = Le canon
+
+6.1.label = Visez la cible sur la butte de la gauche
+	6.1.alert.modal = Le viseur du A13 est juste une croix. Avec une indication approximative des distances pour le canon et la mitrailleuse. L&#39;échelle est par 100 mètres. Utilisez les repères de gauche pour le canon et ceux de droite pour la mitrailleuse. Vous pouvez régler la distances avec {gunsightrangeinc} et {gunsightrangedec}.
+	6.1.alert1 = Tirez sur la cible la plus sur votre gauche en utilisant{primarytrigger.1}. c&#39;est à environ 200 m.
+	6.1.complete = Bien joué, vous avez touché la cible!
+
+6.2.label = Le viseur 
+	6.2.alert.modal = Celle-ci est une cible facile car elle est proche, mais des cibles plus lointaines demandent des réglages sur votre viseur car la trajectoire de votre obus n&#39;est pas droite mais forme une courbe.  
+	6.2.alert2 = Essayez de toucher l&#39;autre cible sur la droite. Elle est à environ 500m.[NL][NL]Utilisez les repères sur la gauche pour le réglage  de la distance à 500 m.[NL][NL]Tirez sur la cible à 500 m.
+	6.2.complete.modal = Bien. Si la distance est connue, il est facile d&#39;ajuster votre viseur pour toucher la cible.
+	
+6.3.label = Réglages du viseur
+	6.3.alert.modal = Maintenant essayons d&#39;avoir une cible plus difficile. Les 2 cibles sur la droite sont assez loin. Voyons si vous arrivez à les toucher en réglant correctement votre viseur.
+	6.3.alert1 = Pour commencer, Tirez avec votre canon pour voir où l&#39;obus atterri.[NL][NL]Si il est trop court, visez un peu plus haut.[NL][NL]si il est trop long visez un peu plus bas.    
+	6.3.complete.modal = Jolie tir. Comme vous pouvez le voir c&#39;est à plus de 1000 m. La plus part des combats entre blindés se font entre 500 m et 2000 m de distance. Le tir à la mitrailleuse s&#39;ajuste de la même façon avec les repères de droite.
+	
+6.4.label = Munitions pour le canon
+          6.4.alert.modal = Beaucoup de blindés ont différents types d&#39;obus de disponibles pour leur canon. Mais le A-13 a seuleument des obus perforants (AP).
+          6.4.complete.hilite = primary,target
+
+6.5.label = Essayez de tirer
+	6.5.alert = Tirez quelques obus.[NL][NL]Quand vous êtes prêt à continuer, passez à la place du conducteur {positionone}.
+
+7.0.label = Finir le parcours
+
+7.1.label = Démarrer votre moteur
+	7.1.alert = Démarrer votre moteur en utilisant {engstart} et améliorez la vue du conducteur avec {gunsightview}.
+
+7.2.label = Marche arrière
+	7.2.alert = Les chars peuvent aussi rouler en arrière, ce qui est souvent très utile.  Utilisez {reverse} pour basculer de la marche avant à l’arrière.[NL][NL]Quand vous utilisez {reverse}, vous serez automatiquement au point mort.[NL][NL]Passez en marche arrière.
+	7.2.alert.hilite = readout,target
+	
+7.3.label = passez une vitesse
+	7.3.alert = Vous devez toujours passez une vitesse; pressez {shiftup}.
+	7.3.alert.hilite = readout,target
+
+7.4.label = Revenez
+	7.4.alert = Revenez sur la route. Appuyez sur l’accélérateur {gas.10.4} et tournez à gauche {leftbrake.10.4} Jusqu’à ce que vous soyez en vue de la route.[NL][NL]Une fois celle-ci dans votre champ de vision, utilisez {bothbrake.10.4} pour stopper. Utilisez {reverse} pour repartir en marche avant. 
+	7.4.alert.hilite = readout,target
+	
+7.5.label = Retour
+	7.5.alert = Passez la première {shiftup}.[NL][NL]Maintenant suivez les balises pour revenir à votre point de depart.[NL][NL]Utilisez {gas.10.4} pour accélérer.[NL]Utilisez {bothbrake.10.4} pour freiner.[NL]Utilisez {leftbrake.10.4} et {rightbrake.10.4} pour braquer à gauche ou à droite.
+	7.5.alert.hilite = readout,target
+
+8.0.label = Complete
+
+8.1.label = Tutorial Fini
+	8.1.alert.modal = Bien ! vous avez fini le tutorial concernant les véhicules blindés.
+
+# NE corner &#34;Northeast Corner&#34; 
+# -314252.88  3603785.75  101.98
+# facing front: 1.84  back: -1.30
+
+
+# &#34;Bend Left&#34;
+# -314234.48  3603724.61  101.98
+# facing front: 2.21  back: -0.93
+
+# &#34;Bend Right&#34;
+# -314192.29  3603695.49  101.05
+# facing front: 2.19  back: -0.95
+
+# Final way point
+# -314230.38  3603625.27  101.34
+# facing front: -1.57    back: 1.58
+
+#	1.6.complete = Félicitations!  Entraînement aux blindés terminé</body>
+  <title>Entraînement de base: Blindé I: A-13</title>
+</content>

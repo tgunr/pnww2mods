@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+<contextmenu id="activate" height="15" width="150" vindent="-5" hindent="125" label="&widgets.map.waypoints.select;"
+	onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+	onclick="contextMenu.activateWaypoint()"
+	style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;">
+</contextmenu>
+

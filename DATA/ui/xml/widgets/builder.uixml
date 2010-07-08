@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<view id="builder" x="192" y="144" width="640" height="480" style="background-image: ui/uidata/builders/buildersplaque.bmp;">
+	<text id="description" x="100" y="100" width="440" height="190" acceptfocus="no" style="font-size: +3; color: #000000;"/>
+	<script>
+		<!--
+		
+		function setBuilder(view, content)
+		{
+			var description = view.findview("description");
+			
+			if(description)
+				description.text = content.title + "\n" + content.brief + "\n" + content.body;
+		}
+		
+		-->
+	</script>
+</view>

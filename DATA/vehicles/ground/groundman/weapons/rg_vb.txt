@@ -1,0 +1,88 @@
+# first thing in the weapon file should always be the weapontype
+# this causes the default_(weapontype).txt file to be loaded first
+# valid weapon types are:
+# SMG, SATCHEL, RIFLE, AUTO_PISTOL, GRENADE, REVOLVER, ITEM, KNIFE, LMG
+weaponType = RIFLE
+
+hiddenMeshes = lebelHighShell,vbgren
+
+# per bullet muzzle rize (in degrees)
+muzzleRise = 5.0
+
+# degrees per second of "push back to zero" per second
+muzzleReturn = 25.0
+
+# degrees of climb per second
+muzzleClimbRate = 75.0
+
+# per bullet "jump" .. this is the vertical component
+# the total formula is weapon.muzzleRize * weapon.bulletJitter * trooper.aimControl
+bulletJitter = 1.0
+
+# sound to play when reloading
+# **** FIXME UNTIL NEW SOUNDS INCORPORATED ****
+reloadSound = sounds\lebelopen.wav
+reload2Sound = sounds\lebelbullet.wav
+reload3Sound = sounds\lebelcls.wav
+
+rgReloadSound = sounds\troop\masrgreload.wav
+deploySound = sounds\troop\vbcupattach.wav
+undeploySound = sounds\troop\vbcupremove.wav
+
+# specify the weapon & clip (clip optional) model here
+# note that data\gr2data\FPS\ is prepended to these file names
+#weaponModel = mas36\gunmesh-mas36
+#weaponModel = lebel\lebelMesh
+weaponModel = lebel\lebelMesh@1
+#weaponModel = vb\gunmesh-mas36
+#clipModel = mas36\gunmesh-mas36-stripperclip
+
+
+#auxRGCupModel = vb\cupmesh-vb
+#auxRGCupModel = vb\vb_gunmesh_cup
+auxRGCupModel = lebel\lebelMesh
+auxRGCupConnect = cup-connect
+auxRGCupConnectTo = cup-connect
+auxRGCupConnectToAlt = firepoint
+auxAltRGCupConnectTime = .95
+auxAltRGCupDisconnectTime = 1.06
+
+#auxRGGrenadeModel = vb\vb_gunmesh_grenade
+#auxRGGrenadeConnect = vb-connect
+#auxRGGrenadeConnectTo = firepoint
+#auxRGGrenadeConnectToAlt = cup-connect
+auxAltRGGrenadeConnectTime = 0.0
+
+#rgFiringRules = 1
+#rgFiringAngle = 45.0
+
+# granny attach bone names for weapon & clip
+# the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
+weaponConnectTo = rifle-control
+weaponConnect = mas36-connect
+
+# the clipConnect bone in the clip attaches to the clipConnectTo bone in the gun
+#clipConnectTo = stripperclip-connect
+#clipConnect = stripperclip-connect
+
+# boresighting values .. how much off of "straight" does this gun need to fire
+#aimVerticalCorrection = 0.1
+#aimHorizontalCorrection = -0.42
+aimVerticalCorrection = 0.00
+aimHorizontalCorrection = 0.00
+
+# how far back along the barrel to start the bullet (firepoints are at the tip)
+firepointDisplacement = 0.90
+
+weapDeployUpAngleStand = 45.0
+weapDeployDownAngleStand = 60.0
+weapDeployUpAngleCrouch = 25.0
+weapDeployDownAngleCrouch = 75.0
+weapDeployUpAngleProne = 10.0
+weapDeployDownAngleProne = 10.0
+
+weaponBreathMultiplier = 0.5
+weaponHeartMultiplier = 1.0
+weaponMoveMultiplier = 1.0
+weaponPoseMultiplier = 0.5
+

@@ -1,0 +1,17 @@
+# Syncronized version of the German MG131 HMG (aircraft)
+# Created 2/May/075 - doc
+
+mass = 17.3
+firetype = auto
+rateoffire = 800
+dispersion = 0.15
+#dispersion is a placeholder
+
+ammotype1 = mg131ap
+ammotype2 = mg131tracer
+ghostrof = 200
+ghostammotype = mg131tracer
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = na

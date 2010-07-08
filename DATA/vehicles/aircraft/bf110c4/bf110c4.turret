@@ -1,0 +1,17 @@
+#bf110c.turret file
+
+#multicrewpos position, whichcrew
+multicrewpos 1 1
+multicrewpos 2 2
+
+position = 2
+elevationrate = 0.5
+traverserate = 0.5
+type = limitedturret
+#type = limitedturret
+gunsightblocked = canopyclosed
+neutral = canopyclosed
+neutraltraverse = 0
+neutralelevate = 0
+gunsightblocked = canopyclosed
+

@@ -1,0 +1,775 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+<window id="persona" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
+	onshow="initWin(this)" onupdate="updateList()" aspectalign="center">
+	<include file="widgets/template.uixml"/>
+	<include file="lib/tutorial.uixml"/>
+	<include file="classes/TreeControl2.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+	<tabview id="body" x="43" y="140" width="930" height="450" ontab="quickhelp()" style="color: #BFE2CE;
+						background-color: #000000BB; 
+						border-top-corner: ui/textures/test/body_ul.bmp;
+						border-bottom-corner: ui/textures/test/body_br.bmp;
+						border-sides: ui/textures/test/body_sides.bmp;
+						border-top: ui/textures/test/body_top.bmp;
+						border-bottom: ui/textures/test/body_bottom.bmp;
+						control-on-endcap:  ui/textures/test/body_tab_cap_on.bmp;
+						control-on-back:  ui/textures/test/body_tab_filler_on.bmp;
+						control-off-endcap: ui/textures/test/body_tab_cap.bmp;
+						control-off-back: ui/textures/test/body_tab_filler.bmp;
+						control-on-color: #FFFFCE;
+						border-width: 16;
+						border-height: 16;">
+		<tab label="  &persona.selecttab;  " x="0" y="0" width="930" height="460"
+			onshow="setHelp(getlocstring('persona.selecttab.help')); tplTab()" tip="&persona.selecttab.tip;">
+			<view id="left-pane" x="18" y="18" width="444" height="411" onupdate="updateStatus(false)">
+				
+				<view x="10" rtop="20" rright="10" height="50">
+					<caption label="&persona.selecttab.header;" x="0" rtop="0" rright="0" height="20" style="color: #BFE2CE; font-size: +2;"/>
+					<image src="ui/textures/test/horiz_underline.bmp" x="0" rtop="15" rright="0" height="12"/>
+				</view>
+				<!-- 
+					persona blocks are not translated because they
+					get updated below with real translations
+				-->
+				<view id="country0" x="10" rtop="50" rright="10" height="100">
+					<image id="flag" src="ui/textures/test/british_flag.bmp" x="0" rtop="30" width="50" height="50"/>
+					<caption id="header" label="BRITISH PERSONAS" x="70" rtop="10" rright="10" height="20" style="color: #BFE2CE; font-size: +2;"/>
+					<caption id="branch0" label="ARMY" x="90" rtop="30" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
+					<image id="lock0" x="75" rtop="32" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="&persona.details.career.status.slocked;"/>
+					<caption id="status0" label="Active Duty" x="90" rtop="30" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
+						onclick="selectPersona(0, false)" ondblclick="selectPersona(0, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 0)"/>
+					
+					<caption id="branch1" label="AIR FORCE" x="90" rtop="50" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
+					<image id="lock1" x="75" rtop="52" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="&persona.details.career.status.slocked;"/>
+					<caption id="status1" label="Active Duty" x="90" rtop="50" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
+						onclick="selectPersona(1, false)" ondblclick="selectPersona(1, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 1)"/>
+					
+					<caption id="branch2" label="NAVY" x="90" rtop="70" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
+					<image id="lock2" x="75" rtop="72" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="&persona.details.career.status.slocked;"/>
+					<caption id="status2" label="Active Duty" x="90" rtop="70" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
+						onclick="selectPersona(2, false)" ondblclick="selectPersona(2, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 2)"/>
+				</view>
+				
+				<view id="country1" x="10" rtop="150" rright="10" height="100">
+					<image id="flag" src="ui/textures/test/french_flag.bmp" x="0" rtop="30" width="50" height="50"/>
+					<caption id="header" label="FRENCH PERSONAS" x="70" rtop="10" rright="10" height="20" style="color: #BFE2CE; font-size: +2;"/>
+					<caption id="branch0" label="ARMY" x="90" rtop="30" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
+					<image id="lock0" x="75" rtop="32" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="&persona.details.career.status.slocked;"/>
+					<caption id="status0" label="Active Duty" x="90" rtop="30" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
+						onclick="selectPersona(3, false)" ondblclick="selectPersona(3, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 3)"/>
+					<caption id="branch1" label="AIR FORCE" x="90" rtop="50" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
+					<image id="lock1" x="75" rtop="52" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="&persona.details.career.status.slocked;"/>
+					<caption id="status1" label="Active Duty" x="90" rtop="50" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
+						onclick="selectPersona(4, false)" ondblclick="selectPersona(4, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 4)"/>
+					<caption id="branch2" label="NAVY" x="90" rtop="70" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
+					<image id="lock2" x="75" rtop="72" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="&persona.details.career.status.slocked;"/>
+					<caption id="status2" label="Active Duty" x="90" rtop="70" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
+						onclick="selectPersona(5, false)" ondblclick="selectPersona(5, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 5)"/>
+				</view>
+
+				<view id="country2" x="10" rtop="250" rright="10" height="100">
+					<image id="flag" src="ui/textures/test/german_flag.bmp" x="0" rtop="30" width="50" height="50"/>
+					<caption id="header" label="GERMAN PERSONAS" x="70" rtop="10" rright="10" height="20" style="color: #BFE2CE; font-size: +2;"/>
+					<caption id="branch0" label="ARMY" x="90" rtop="30" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
+					<image id="lock0" x="75" rtop="32" width="16" height="16" src="ui/textures/lock.dds" style="color: #FF0000;" tip="&persona.details.career.status.slocked;"/>
+					<caption id="status0" label="Active Duty" x="90" rtop="30" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
+						onclick="selectPersona(6, false)" ondblclick="selectPersona(6, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 6)"/>
+					<caption id="branch1" label="AIR FORCE" x="90" rtop="50" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
+					<image id="lock1" x="75" rtop="52" width="16" height="16" src="ui/textures/lock.dds" style="color: #FF0000;" tip="&persona.details.career.status.slocked;"/>
+					<caption id="status1" label="Active Duty" x="90" rtop="50" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
+						onclick="selectPersona(7, false)" ondblclick="selectPersona(7, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 7)"/>
+					<caption id="branch2" label="NAVY" x="90" rtop="70" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
+					<image id="lock2" x="75" rtop="72" width="16" height="16" src="ui/textures/lock.dds" style="color: #FF0000;" tip="&persona.details.career.status.slocked;"/>
+					<caption id="status2" label="Active Duty" x="90" rtop="70" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
+						onclick="selectPersona(8, false)" ondblclick="selectPersona(8, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 8)"/>
+				</view>
+			</view>
+			<include file="widgets/divider.uixml"/>
+			<view id="right-pane" x="468" y="18" width="444" height="411">
+				<!--  style="background-color: #0066FF;" -->
+				<view id="details" x="30" y="10" width="300" height="400" onupdate="updatePersonaDetails()">
+					<!-- CURRENTLY SELECTED PERSONA -->
+					<caption label="&persona.details.persona;" x="0" y="360" width="300" height="20" style="color: #BFE2CE; font-size: +2;"/>
+					<image x="0" y="355" src="ui/textures/test/horiz_underline.bmp" width="200" height="12"/>
+					<caption id="persona-caption" x="15" y="330" width="300" height="15" onshow="this.label = getlocstring('persona.details.persona.handle') + ': ' + client.handle" style="color: #e9e3d9ff; "/>
+					<image id="rank-lock" x="0" y="330" src="ui/textures/lock.dds" width="15" height="15" style="color: #FF0000;" tip="&persona.details.ranklock;"/>
+					<caption id="country-caption" x="15" y="310" width="300" height="15" style="color: #e9e3d9ff; "/>
+					<!-- BRIGADE ATTACHMENT -->
+					<caption label="&persona.details.brigade;" x="0" y="260" width="300" height="20" style="color: #BFE2CE; font-size: +2;"/>
+					<image x="0" y="255" src="ui/textures/test/horiz_underline.bmp" width="200" height="12"/>
+					<caption id="brigade-caption" x="15" y="230" width="300" height="15" style="color: #e9e3d9ff; "/>
+					<caption id="division-caption" x="15" y="210" width="300" height="15" style="color: #e9e3d9ff; "/>
+					<!-- CAREER NOTES -->
+					<caption label="&persona.details.career;" x="0" y="160" width="300" height="20" style="color: #BFE2CE; font-size: +2;"/>
+					<image x="0" y="155" src="ui/textures/test/horiz_underline.bmp" width="200" height="12"/>
+					<caption id="percent-caption" x="15" y="130" width="300" height="15" style="color: #e9e3d9ff; "
+						tip="&persona.details.career.rank.tip;"/>
+					<text id="locked-caption" x="15" y="10" width="200" height="115" style="color: #e9e3d9ff;"/>
+				</view>
+				<image id="persona-image" x="240" y="3" src="ui/textures/test/british.bmp" width="182" height="400"/>
+			</view>
+		</tab>
+		<include file="widgets/globals/squads.uixml"/>
+		<include file="widgets/globals/manuals.uixml"/>
+		<include file="widgets/globals/settings.uixml"/>
+	</tabview>
+	<include file="widgets/infobar.uixml"/>
+	<script>
+		<!--
+		
+		/*************** INIT GLOBALS **************/
+		
+		var client 				= game.player.client;
+		
+		// persona brief captions
+		var briefCountry		= findview("country-caption");
+		var briefPersona		= findview("persona-caption");
+		var briefBrigade		= findview("brigade-caption");
+		var briefDivision		= findview("division-caption");
+		var briefPercent		= findview("percent-caption");
+		var briefLocked			= findview("locked-caption");
+		var briefImage			= findview("persona-image");
+		var listTimer			= new CycleTimer(30000);
+		var statusTimer			= new CycleTimer(1000);
+		var rankLock			= findview("rank-lock");
+		
+		var graduated			= TutIsComplete("basic");
+		var shortcut			= false;
+		var welcomed			= false;
+		var requestpersonas		= true;
+		var selected			= 0;
+		var personas			= new Array();
+		var status				= new Array();
+		var locks				= new Array();
+		var trainingReport		= null;
+		
+		/*************** OVERRIDE COMMON FUNCTIONS **************/
+		
+		function doForward()
+		{
+			if(personas[selected] != null && personas[selected].lockedthru == 0)
+			{
+				if(getPersonaAvailability(personas[selected]) == "slocked")
+					return;
+				
+				if(graduated)
+				{
+					requestpersonas = false;
+					client.selectpersona(personas[selected]);
+					musicPlayIntro();
+					
+					if(game.settings.squadinvites &&
+					  (client.squad == null || client.squad.id == 0) &&
+					   client.requestrecruiters(game.settings.language) &&
+					   client.state.maxsquadrank > 0 &&
+					   client.recruiters.length > 0)
+					{
+						load("recruitment").initRecruitment(doRecruited);
+					}
+					else
+					{
+						doRecruited(false);	
+					}
+				}
+				else
+				{
+					requestpersonas = false;
+					
+					if(client.selectpersona(personas[selected]))
+					{
+						game.globals.skipgraduation = true;
+						loadWin("tutorials", true);
+					}
+				}
+			}
+			else
+			{
+			 	game.consoleprint("Forward check failed.\n");
+			}
+		}
+		
+		function doRecruited(recruited)
+		{
+			if(!recruited)
+			{
+				var jump = "brigades";
+				
+				// go to brigade select always for now
+				// gophur didn't like the shortcut
+				if(false && client.brigade.id > 0 && client.brigade.missions > 0)
+					jump = "brigade";
+				
+				load(jump);
+			}
+			
+			window.close();
+		}
+		
+		function initWin(win)
+		{
+			game.consoleclear();
+			
+			// lets hide chat
+			showChat(false);
+
+			// lets hide the id card
+			showIDCard(false);
+
+			// lets set the default message
+			setHelp(getlocstring('persona.selecttab.help'));
+			
+			if(game.getpref("ui.squads.recruitme", 0, true) && (client.squad == null || client.squad.id == 0))
+				setForward('persona.forward');
+			else if(client.brigade.id > 0)
+				setForward('persona.forward.brigade');
+			else
+				setForward('persona.forward.brigades');
+			
+			client.onpersonas = initPersonaList;
+			client.requestpersonalist();
+
+			updateInfoBar();
+
+			if(!game.globals.welcomed)
+			{
+				load("welcome");
+				game.globals.welcomed = true;
+			}
+			else
+			{
+				setWelcomed();
+			}
+
+			for(var c = 0; c < 3; c++)
+			{
+				var country = findview("country" + c);
+
+				for(var p = 0; p < 3; p++)
+				{
+					status.push(country.findview("status" + p));
+					locks.push(country.findview("lock" + p));
+				}
+			}
+
+			mouseEnter(status[0]);
+			runExtSquadUpdate();
+			//game.globals.map = null; // for testing map inits
+			
+			//consoleprint("Friend Color is " + game.settings.friendcolor + "\n");
+			//consoleprint("Enemy Color is " + game.settings.enemycolor + "\n");
+			//consoleprint("Squad Color is " + game.settings.squadcolor + "\n");
+			//consoleprint("Mission Color is " + game.settings.missioncolor + "\n");
+			//consoleprint("Leader Color is " + game.settings.leadercolor + "\n");
+			
+			var chat = game.findview("chat");
+			if(chat != null)
+			{
+				chat.x = window.width/2 - chat.width/2;
+				chat.y = 10;
+			}
+			
+			// make sure we're in the campaign instance
+			//TutSetInstance(1);
+			
+			rankLock.visible = false;
+			
+			quickhelp();
+			
+			TutSetInstance(1);
+		}
+		
+		/*************** PAGE FUNCTIONS **************/
+		
+		function updatePersonaDetails()
+		{
+			setForwardEnabled(false);
+			
+			if(personas[selected] != null)
+			{
+				var persona = personas[selected];
+				
+				briefCountry.label = getCountryBranch(persona.country, persona.branch);
+				
+				if(persona.rank != null && persona.rank.level > 0)
+				{
+					rankLock.visible = persona.rank.locked;
+					briefPersona.label 	= persona.rank.name + " " + client.handle;
+				}
+				else
+				{
+					rankLock.visible = false;
+					briefPersona.label 	= client.handle;
+				}
+				
+				if(persona.brigade.id > 0)
+				{
+					briefDivision.label 	= persona.brigade.division;
+					briefBrigade.label 		= persona.brigade.name;
+					
+					if(!graduated)
+						setForward('persona.forward.training');
+					else if(false && persona.brigade.missions > 0)
+						setForward('persona.forward.brigade');
+					else
+						setForward('persona.forward.brigades');
+						
+				}
+				else
+				{
+					briefBrigade.label 		= getlocstring('persona.details.brigade.na');
+					briefDivision.label 	= "";
+					
+					if(!graduated)
+						setForward('persona.forward.training');
+					else
+						setForward('persona.forward.brigades');
+				}
+				
+				var availability = getPersonaAvailability(persona);
+				
+				briefPercent.label 	= persona.rankpercent + "% " + getlocstring('persona.details.career.rank');
+				briefLocked.text = getVariableLocString('persona.details.career.status.' + availability, formatLockedThru(persona.lockedthru));
+				
+				if(client.spawndelay)
+				{
+					if((persona.country.side == 1 && client.sidebalance < 0) || (persona.country.side == 2 && client.sidebalance > 0))
+						briefLocked.text += "\n\n" + getlocstring('persona.details.spawndelayed').toUpperCase();
+				}
+				
+				briefLocked.setstyleproperty("color", getAvailabilityColor(persona, availability));
+				
+				if(briefImage != null)
+					briefImage.src = "ui/textures/test/" + persona.country.adjective + "_" + persona.branch + ".bmp";
+				
+				if(persona.lockedthru == 0 && availability != "slocked")
+					setForwardEnabled(true);					
+			}
+		}
+		
+		function formatLockedThru(len)
+		{
+			var minute 	= 60;
+			var hour 	= 60 * minute;
+			var day 	= 24 * hour;
+			
+			if(len >= day)
+			{
+				var days 		= Math.floor(len / day);
+				var hours		= Math.floor((len - (days * day))/ hour);
+				var formatted 	= getVariableLocString("common.time.day" + ((days > 1) ? "s": ""), days);
+				
+				if(hours > 0)
+				{
+					formatted += ", ";
+					formatted += getVariableLocString("common.time.hour" + ((hours > 1) ? "s": ""), hours);
+				}
+				
+				return formatted;
+			}
+			else if(len >= hour)
+			{
+				var hours 		= Math.floor(len / hour);
+				var minutes		= Math.floor((len - (hours * hour))/ minute);
+				var formatted 	= getVariableLocString("common.time.hour" + ((hours > 1) ? "s": ""), hours);
+				
+				if(minutes > 0)
+				{
+					formatted += ", ";
+					formatted += getVariableLocString("common.time.minute" + ((minutes > 1) ? "s": ""), minutes);
+				}
+				
+				return formatted;
+			}
+			else if(len >= minute)
+			{
+				var minutes 	= Math.floor(len / minute);
+				var seconds		= len - (minutes * minute);
+				var formatted 	= getVariableLocString("common.time.minute" + ((minutes > 1) ? "s": ""), minutes);
+				
+				if(seconds > 0)
+				{
+					formatted += ", ";
+					formatted += getVariableLocString("common.time.second" + ((seconds > 1) ? "s": ""), seconds);
+				}
+				
+				return formatted;
+			}
+			else if(len > 0)
+			{
+				return getVariableLocString("common.time.second" + ((len > 1) ? "s": ""), len);
+			}
+			
+			return getlocstring('common.time.now');
+		}
+		
+		function initPersonaList()
+		{
+			//consoleprint("Initing personas\n");
+			
+			personas = new Array(9);
+
+			var updateInterval 	= 30;
+			var activeMission	= client.activemission;
+			var sortedPersonas	= client.personas.sort(sortPersonas);
+			
+			for(var p = 0; p < sortedPersonas.length; p++)
+			{
+				var index	= 0;
+				var persona = sortedPersonas[p];
+				
+				//consoleprint("Doing " + persona.country.name + "/" + persona.branch + ": " + persona.lastused + "\n");
+				
+				while(index < personas.length)
+				{
+					if(personas[index] == null)
+					{
+						personas[index] = persona;
+						break;
+					}
+					else if(personas[index].country.id == persona.country.id)
+					{
+						index += 1;
+					}
+					else
+					{
+						index += 3;
+					}
+				}
+				
+				if(activeMission && activeMission.country == persona.country.id)
+					if(activeMission.branch == persona.branchid)
+						shortcut = true;
+				
+				if(persona.lockedthru > 0 && persona.lockedthru < updateInterval)
+					updateInterval = persona.lockedthru;
+			}
+			
+			for(var c = 0; c < 3; c++)
+				formatPersonas('country' + c, c * 3);
+
+			updateStatus(true);
+			listTimer.set(updateInterval * 1000);
+			
+			if(!graduated)
+				setForward('persona.forward.training');
+			
+			// turn this on when host starts sending it
+			if(false && !game.globals.subcheck && !game.player.client.state.subactive)
+			{
+				showOk(getlocstring('persona.subscription.inactive'));
+				game.globals.subcheck = true;
+			}
+		}
+
+		function formatPersonas(id, start)
+		{
+			//consoleprint("Formatting personas at position " + id + "\n");
+			
+			var view 		= findview(id);
+			var flag 		= view.findview("flag");
+			var header 		= view.findview("header");
+			var country		= personas[start].country;
+			var label		= getlocstring("common.countries." + country.code.toLowerCase() + ".adjective") + " " + getlocstring("persona.list");
+			var balance		= client.sidebalance;
+			
+			flag.src = "ui/textures/test/" + country.adjective.toLowerCase() + "_flag.bmp";
+			
+			label = label.toUpperCase();
+			
+			if(balance != 0)
+			{
+				if((balance < 0 && country.side == 1) || (balance > 0 && country.side == 2))
+					label += " - " + getlocstring("persona.list.overpopulated");
+				else
+					label += " - " + getlocstring("persona.list.requesting");
+			}
+			
+			header.label = label;
+			
+			for(var p = 0; p < 3; p++)
+			{
+				var persona = personas[start + p];
+				var branch	= view.findview("branch" + p);
+				
+				if(graduated)
+				{
+					branch.label = getlocstring("common.branches." + persona.branch.toLowerCase()).toUpperCase();
+				}
+				else
+				{
+					if(persona.branchid == 1)
+						branch.label = getlocstring("common.training").toUpperCase();
+					else
+						branch.label = "";
+				}
+			}
+			
+			//consoleprint("Done\n");
+		}
+		
+		function sortPersonas(a, b)
+		{
+			if(!graduated && a.branchid == 1 && b.branchid > 1)
+				return -1;
+			else if(!graduated && a.branchid > 1 && b.branchid == 1)
+				return 1;
+			else if(!graduated && a.branchid == 1 && b.branchid == 1)
+				return 0;
+			else if(a.lastused == 0 && b.lastused > 0)
+				return 1;
+			else if(a.lastused > 0 && b.lastused == 0)
+				return -1;
+			else if(a.lastused > b.lastused)
+				return 1;
+			else if(a.lastused < b.lastused)
+				return -1;
+			
+			return 0;
+		}
+		
+		/************** EVENT HANDLERS *****************/
+		
+		function updateStatus(force)
+		{
+			if(statusTimer.run() || force)
+			{
+				//consoleprint("Doing Status update\n");
+				
+				for(var i = 0; i < personas.length; i++)
+				{
+					var p = personas[i];
+					var s = status[i];
+					var l = locks[i];
+					
+					if(l) l.visible = false;
+					
+					if(p && s)
+					{
+						//consoleprint("Doing Status for persona " + i + "\n");
+						
+						var availability = getPersonaAvailability(p);
+
+						if(availability == "delayed")
+							availability = "onleave";
+
+						var color = getAvailabilityColor(p, availability);
+						s.setstyleproperty("color", color);
+						
+						if(availability == "slocked" && l)
+						{
+							var header = s.parent.findview("header");
+							
+							if(header.label.length > 0)
+							{
+								l.visible = true;
+								//l.x = header.x + header.stringlength + 5;
+							}
+						}
+						
+						if(graduated)
+						{
+							s.label = getVariableLocString('persona.list.' + availability, formatLockedThru(p.lockedthru));
+						}
+						else if(p.branchid == 1)
+						{
+							if(trainingReport == null)
+								trainingReport = getTrainingReport();
+							
+							s.label = getVariableLocString('common.training.status', trainingReport[0], trainingReport[1]);
+						}
+						else
+						{
+							s.label = "";
+							l.visible = false;
+						}
+					}
+					else
+					{
+						if(l) l.visible = false;
+					}
+				}
+			}
+		}
+		
+		function updateList()
+		{
+			if(requestpersonas && welcomed && listTimer.run())
+			{
+				//consoleprint("Requesting personas!!!\n");
+				client.requestpersonalist();
+			}
+		}
+
+		function doShortCut(ok)
+		{
+			if(ok)
+			{
+				var shortcut 		= null;
+				var activeMission 	= client.activemission;
+				
+				if(client.selectpersona(personas[selected]))
+				{
+					var brigade = client.brigade;
+					
+					if(activeMission.brigade > 0 &&  brigade.id != activeMission.brigade)
+					{
+						var brigades = client.brigades;
+						
+						for(var i = 0; i < brigades.length; i++)
+						{
+							if(brigades[i].id == activeMission.brigade)
+							{
+								client.selectbrigade(brigades[i]);
+								break;
+							}
+						}
+					}
+					
+					brigade = client.brigade; 
+					
+					if(brigade.id > 0)
+					{
+						shortcut = "brigade";
+						
+						if(brigade.id = activeMission.brigade)
+						{
+							if(activeMission.mission > 0 && client.acceptmission(activeMission.mission))
+								shortcut = "mission";
+						}
+					}
+				}
+				
+				if(shortcut)
+				{
+					musicPlayIntro();
+					loadWin(shortcut, true);
+				}
+			}
+		}
+		
+		function getPersonaAvailability(persona)
+		{
+			if(!game.player.client.state.paccess(persona))
+				return "slocked";
+			else if(persona.lockedthru == 0)
+				return (graduated) ? "available": "training";
+			
+			return persona.availability;
+		}
+		
+		function getAvailabilityColor(p, availability)
+		{
+			var color = "#00ff00"; // green					
+			
+			if(availability == "slocked")
+				color = "#ff0000";
+			else if(availability == "banned" || availability == "arenalock")
+				color = "#ffa000";
+			else if(availability == "onleave" || availability == "delayed" || availability == "noswap")
+				color = "#ff8800";
+			else if(getPersonaOverBalanced(p))
+				color = "#ffff00";
+			
+			return color;
+		}
+
+		function getPersonaOverBalanced(persona)
+		{
+			var balance = client.sidebalance;
+			
+			if((balance > 0 && persona.country.side == 2) || (balance < 0 && persona.country.side == 1))
+				return true;
+			
+			return false;
+		}
+		
+		function selectPersona(index, dblclick)
+		{
+			if(graduated || personas[index].branchid == 1)
+			{
+				soundPlayClick();
+				
+				selected = index;
+				
+				updatePersonaDetails();
+				
+				if(dblclick)
+					tplForward();
+				
+				for(var r = 0; r < status.length; r++)
+					mouseExit(status[r], r);
+			}
+		}
+		
+		function mouseEnter(row)
+		{
+			if(graduated || row.id == "status0")
+				row.setstyleproperty("background-color", "#FFFFFF33");
+		}
+		
+		function mouseExit(row, index)
+		{
+			if(index != selected)
+				row.setstyleproperty("background-color", "#00000000");
+		}
+		
+		function setWelcomed()
+		{
+			welcomed = true;
+			
+			if(shortcut && !game.globals.shortcut)
+			{
+				game.globals.shortcut = true;
+				var popup = showConfirm(getlocstring('persona.redirect'), doShortCut);
+				popup.setPopupClose(false);
+			}
+		}
+
+		function displayTime		(seconds)
+		{
+			if(seconds <= 60)
+				return seconds + " " + getVariableLocString("globals.time.seconds");
+			var t = seconds / 60;
+			if(t <= 90)
+				return parseInt(t) + " " + getVariableLocString("globals.time.minutes");
+			t /= 60;
+			if(t <= 36)
+				return parseInt(t) + " " + getVariableLocString("globals.time.hours");
+			t /= 7;
+			if (t <= 4)
+				return parseInt(t) + " " + getVariableLocString("globals.time.days");
+			t /= 30;
+			if (t < 24)
+				return parseInt(t) + " " + getVariableLocString("globals.time.months");
+			t = seconds / (365 * 24 * 60 * 60);
+			return parseInt(t) + " " + getVariableLocString("globals.time.years");
+		}
+		
+		function getTrainingReport()
+		{
+			var report 	= new Array(2);
+			var index 	= game.getcontent("tutorials/basic");
+			
+			report[0] = 0;
+			report[1] = 0;
+			
+			if(index != null)
+			{
+				var basics = index.links;
+				
+				for(var i = 0; i < basics.length; i++)
+				{
+					if(game.tutorialcompleted("basic", i + 1))
+						report[0]++;
+					
+					report[1]++;
+				}
+			}
+			
+			return report;
+		}
+		
+		-->
+	</script>
+</window>

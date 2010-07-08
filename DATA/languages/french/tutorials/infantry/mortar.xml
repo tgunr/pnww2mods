@@ -1,0 +1,70 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>7</key>
+  <body><?xml version=&#39;1.0&#39;?>
+<content type=&#34;5&#34;>
+  <key>7</key>
+  <body>title = Infantry: Light Mortar
+
+20mhit = 20 m Cible touchée!
+50mhit = 50 m Cible touchée!
+100mhit = 100 m Cible touchée! Good shooting.
+200mhit = 200 m Cible touchée! Bien joué!
+500mhit = 500 m Cible touchée! Excellent!
+gunrange = Ligne de tir
+vehiclerange = Tir sur véhicules
+truckhit = Vous avez touché le camion!
+carhit = Vous avez touché l&#39;auto blindée!
+tankhit = Vous avez touché le char!
+
+1.0.label = Le mortier léger
+
+1.1.label = Introduction
+  1.1.alert.modal = Une équipe de mortier léger peut fair du bon boulot contre une position fortifiée, Créer un écran de fumée qui permettra aux unités amies d&#39;avancer à découvert et de prendre à revers la position. 
+  
+1.2.label = Position de tir
+  1.2.alert = Allez jusqu&#39;à la ligne de tir.
+
+1.3.label = Déployer le Mortier
+  1.3.alert = Le mortier doit être déployer au sol. Mettez vous à plat ventre avec {fpprone}.
+
+1.4.label = Deployer le mortier (cont.)
+  1.4.alert = Deployez votre mortier avec la touche {fpdeploy}.
+  
+1.5.label = Utilisez la  carte pour repérer vos cibles
+  1.5.alert = Un bon Mortier doit être capable de bien évaluer la distance de leur cible. Avec un peu d&#39;entraînement pour pouvez apprendre à estimer les distances. Pour l&#39;instant, pressez {showingamemap} pour afficher la carte.
+  1.5.complete.modal = La carte affichera la position des ennemis marquée par vos coéquipiers. Elle peut aussi vous permettre d&#39;apprécier les distances en fonction des éléments du terrain affichés dessus, comme une route ou une maison.
+  
+ 1.6.label = Détermination de la distance
+  1.6.alert.modal = Zommez sur la carte et notez le cercle entourant votre position. Ce cercle à un rayon de 200 metres.Utiliser cette information est un bon moyen pour déterminer les distances (L&#39;échelle du rayon dépend du niveau de zoom).
+  1.6.alert1.modal = Le mortier à une portée de 50 à 500 mètres. Visez le char le plus proche et régler votre hausse à 100m avec {gunsightrangedec}.
+  
+1.7.label = Entraînez vous au tir
+  1.7.alert = Quand vous êtes prêt, tirez des obus HE en pressant {fpfire}.
+  1.7.complete.modal = Notiez le temps de rechargement du mortier et le temps que l&#39;obus arrive sur la cible. C&#39;est pour cela que le mortier n&#39;est pas vraiment fait pour tirer sur des cibles en mouvement. Cependant, Une bande de mortier tirant à une bonne distance sur un espace réduit peut être dévastateur sur des ennemis à couvert ou non.
+  
+1.8.label = Fournir de la couverture
+  1.8.alert.modal = Avoir une équipe de mortier pour vous couvrir  est un sérieux avantage pour donner l&#39;assaut à un position ennemie. En plus des obus HE pour détruire les fortifications ennemies, les mortiers sont équipés de fumigènes parfait pour fournir une couverture par un écran de fumée à un espace à découvert. Ces même obus fumigènes peuvent être utiles pour marquer une cible à un char ou avion ami et l&#39;aider à la repérer.
+  1.8.alert = Passez maintenant sur les obus fumigènes SMK avec {fpweapon1} et tirez pour faire un écran de fumée.
+  1.8.complete.modal = Pensez aussi que l&#39;écran de fumée marche pour tous le monde. Prenez garde à ne pas attirer l&#39;attention sur vous si l&#39;ennemi ne vous a pas encore repéré.
+  
+1.9.label = Mortier Tips
+  1.9.alert.modal = Les Mortiers sont aussi équipés d&#39;un fusil qui peut être pris en utilisant {fpweapon2}. Cependant chaque balle est précieuse. C&#39;est une bonne idée d&#39;avoir à ses côtées un fussiller avec son pack de munitions. Vous pouvez demander qu&#39;il vous recharge en obus en tapant /ammo dans la boîte de dialogue.
+  
+1.10.label = Fin du Tutoriel
+  1.10.alert.modal = Bravo! Vous avez fini le tutoriel sur le Mortier. Vous êtes libre de continuer en appuyant sur &#34;annuler&#34; dans la fenêtre. Des munitions supplémentaires sont disponibles au camion de ravitaillement.
+
+<branch>1</branch>
+  <brief>Learn how to use mortars.</brief>
+  <handler>infantry.mortar</handler>
+  <instance>2</instance>
+  <requires>infantry.lmg</requires>
+  <title>Infantry: Light Mortar</title>
+</content></body>
+  <branch>1</branch>
+  <brief>Apprenez à utiliser le Mortier Léger</brief>
+  <handler>infantry.mortar</handler>
+  <instance>2</instance>
+  <requires>infantry.lmg</requires>
+  <title>Infanterie: Mortier Léger</title>
+</content>

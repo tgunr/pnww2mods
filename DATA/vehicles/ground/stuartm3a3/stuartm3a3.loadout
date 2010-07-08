@@ -1,0 +1,33 @@
+#Stuart M3A3 loadout file
+#Created 10/08/03 -Doc.
+
+# sounds available for the mounts
+sound1 = sounds\37mmxgun.wav
+sound2 = sounds\p38t\xgun2.wav
+sound3 = sounds\p38t\xgun3.wav
+
+loadout = 1
+
+# Main Gun
+mountnum = 1
+mountobject = maingunmount
+mountsound = sound1
+weapon = 37mml54m6
+weaponobject = genericgun1
+recoilnum = 1
+recoiltime = .2
+shockdust = 1
+
+# Coax Mount
+mountnum = 2
+mountobject = mgcoaxmount
+mountsound = sound2
+weapon = besa
+weaponobject = genericgun1
+
+# Bow gun
+mountnum = 3
+mountobject = mghullmount
+mountsound = sound3
+weapon = besa
+weaponobject = genericgun1

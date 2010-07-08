@@ -1,0 +1,57 @@
+#engine stats file for p38f
+[V1710-49/53]
+type = propeller
+basehorsepower = 1325
+basehpalt = 7620
+basehppress = 1.571
+basehprpm = 3000
+basehpexhausttemp = 1100
+idlerpm = 800
+idlethrottlepos = 0.04
+# most engines mil power fuel consumption is 360-380
+fuelperhphour = 0.240
+# most engines econ power fuel consumption is 190-200
+# this setting used for econrpm only
+fuelperhphourecon = 0.235
+oilconsumptionperhour = 5
+
+# note: minimum pressure to maintain rpm will be used
+#wepmaxpress = 1.0
+#milmaxpress = .976
+#climbmaxpress = .923
+#econmaxpress = 0.84
+#idlepressureatidle = 0.05
+#idlepressureatmaxrpm = -0.2
+# in seconds
+maxweptime = 300
+maxmiltime = 1800
+weprpm = 3000
+milrpm = 3000
+climbrpm = 2600
+econrpm = 2300
+
+superchargetype = singlespeed
+speed1critalt = 7620
+speed1efficiencytop = .7
+speed1efficiencybottom = 1
+speed1maxclimbboost = 1.263
+speed1maxmilboost = 1.263
+speed1maxwepboost = 1.62
+
+
+#degrees from the thrust line for exhaust thrust
+exhaustthrustangle = 90
+# 1 lb = 4.45N this is in newtons
+exhaustthrustforce = 6
+
+weptype = normal
+
+propgearratio = 0.5
+
+# 1 = clockwise from pilot's perspective if he's behind the prop
+# -1 = counterclockwise
+propspindirection = -1
+
+criticalrpm = 200
+starterrpm = 100
+starterhp = 10

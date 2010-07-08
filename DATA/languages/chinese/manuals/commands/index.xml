@@ -1,0 +1,38 @@
+<?xml version='1.0'?>
+<content type="3">
+  <body>通过功能完善的聊天界面，你不光可以使用许多命令还可以获取信息。
+
+惯例:
+你既可以输入命令“/command”也可以输入“.command”，这没有任何分别。命令以大写的方式列出来是为了显得更加清楚，你可以输入/HELP，/HeLp或者是hELp都可以。有些命令可能需要使用额外的参数。这些命令是像下面这样表示的：
+    “（玩家的名字）” 表明一个呼叫对象是必须的
+    &#34;文字1|文字2&#34; 按照字面上的意思是说, 不是文字1就是文字2（这通常是以一种开|关的形式存在的）。
+
+恢复电台默认设置：
+你对电台进行的修改，将会被保存在服务器上，这样无论你使用哪个电脑登录游戏，都会拥有同样的设置。
+
+  /RESETRADIOS: 使用这个命令，可以恢复电台的设置为默认设置。
+
+
+快捷输入：
+在聊天的时候，可以使用“快捷输入”来代替比较长的名词。当信息被发送到其他玩家的面前时，将会显示它所指代的正确信息。
+
+$orig: 插入您的起点。
+$targ: 插入您的目标。
+$lead: 插入任务指挥官的名字。
+$unit: 插入您当前所在战斗旅的名字。
+$miss: 插入您的任务的名字。
+$town: 插入您当前所在城市的名字。
+$here: 插入您当前所在设施的名字和占领进度百分比。
+$hcid: 插入您当前所在战斗旅的缩写。
+
+
+你可以在输入的时候使用这些“快捷输入”，例如，如果您参加了一个攻击安特卫普的任务，你发送了“$targ 需要空中掩护”这样一条信息，那么将会显示为“安特卫普需要空中掩护”。</body>
+  <links>
+    <link path="manuals/commands/basic_chat.xml" title="基本命令" />
+    <link path="manuals/commands/action_chat.xml" title="通信和行动命令" />
+    <link path="manuals/commands/mission_chat.xml" title="任务命令" />
+    <link path="manuals/commands/squad_chat.xml" title="班组命令" />
+    <link path="manuals/commands/hc_chat.xml" title="高级命令" />
+  </links>
+  <title>聊天命令</title>
+</content>

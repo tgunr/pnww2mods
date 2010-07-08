@@ -1,0 +1,30 @@
+# PzIII H  5cm 38 L/42 HE Pzgr
+# Rev. 4/19/02 - bloo
+
+type = ballistic
+diameter = 0.05
+weight = 2.25
+velocity = 685
+tracertime = 7.9
+object = bullet1
+explosive = 431870
+# .077 kg Tretyl (TNT)
+
+fuzetime = 0.002
+bc = 0.80
+lifetime = 8.0
+ricochetangle = 87
+modelspall = 1
+penetrationconstant = 0.0000014548
+dontdisplayfirstframe = 1 
+
+numshrapnelpieces = 60
+totalshrapnelmass = 2.0
+
+explosionsoundnear = sounds\smlcloseexp.wav
+explosionsoundfar = sounds\smlfarexp.wav
+nearfardistance = 300
+
+muzzleflash = 3
+hiteffect = genericsmallexplosion
+tracerscale = 2.5

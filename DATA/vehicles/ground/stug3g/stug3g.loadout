@@ -1,0 +1,30 @@
+#StuG III Ausf G loadout file
+
+# sounds available for the mounts
+sound1 = sounds\pzivg\xgun.wav
+
+loadout = 1
+
+mountnum = 1
+mountobject = mount
+mountsound = sound1
+weapon = 75mmstuk40l48
+weaponobject = genericgun1
+recoilnum = 1
+recoiltime = .2
+shockdust = 1
+
+#mountnum = 2
+#mountobject = bowgun
+#mountsound = sound2
+#weapon = mg34tank
+#weaponobject = pnzr3fcoax
+
+#mountnum = 3
+#mountobject = mount2
+#mountsound = sound3
+#weapon = mg34tank
+#weaponobject = pnzr3fcoax
+#mountobject = mount2
+#weapon = mg34tank
+#weaponobject = pnzr3fcoax

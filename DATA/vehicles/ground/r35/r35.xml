@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="r35" type="ground" shape="r35" description="Renault R-35" icon="R-35">
+<include file="r35.veh.xml"/>
+<include file="r35.state.xml"/>
+<include file="r35.hit.xml"/>
+<include file="r35.turret.xml"/>
+<include file="r35.loadout.xml"/>
+<include file="r35.xsound.xml"/>
+<include file="r35.control.xml"/>
+<include file="r35.mass.xml"/>
+</vehicle>

@@ -1,0 +1,28 @@
+#engine stats file for Sd.Kfz. 7
+[Bussing-NAG_LV8-G]
+basehorsepower = 180
+basehpalt = 0
+basehprpm = 2200
+basehppress = 1.0
+basehpexhausttemp = 1000
+idlethrottlepos = 0.1
+idlerpm = 850
+fuelperhphour = 0.260
+oilconsumptionperhour = 0
+wepmaxpress = 1.0
+milmaxpress = 1.0
+weprpm = 3000
+milrpm = 3000
+climbrpm = 3000
+econrpm = 3000
+
+superchargertype = none
+weptype = none
+
+#criticalrpm is the rpm at which below this the engine might stall, also used for starting
+criticalrpm 180
+
+#starterrpm is the rpm at which the starter motor will spin the engine at
+starterrpm 120
+#starterhp is the power of the starter motor
+starterhp 4

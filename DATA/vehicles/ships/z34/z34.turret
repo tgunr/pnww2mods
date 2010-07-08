@@ -1,0 +1,91 @@
+# Z34 destroyer .turret file
+
+# multicrewpos position, whichcrew
+multicrewpos 1 1
+multicrewpos 2 1
+multicrewpos 3 1
+multicrewpos 4 2
+multicrewpos 5 2
+multicrewpos 6 1
+multicrewpos 7 2 
+multicrewpos 8 2 
+
+# Captain
+position = 2
+elevationrate = 2
+traverserate = 6
+type = 360turret
+gunsightfile = 8x30binoc.gs
+neutralelevate = -0.66666666
+neutraltraverse = 0.0
+
+# Forward Main Director
+position = 3
+elevationrate = 15
+traverserate = 42.0
+type = limitedturret
+gunsightfile = flak36.gs
+gunsightalignmentmountobject = mount_a
+gunsightalignmentrange = 5000
+
+#turret sound variables
+turrettraverse = turret/hydrolic_turret.wav
+turretelevate = turret/hand_turret_move.wav
+turretgeneral = turret/turret_traverse_general.wav
+
+# Forward 20mm Director (AA) 
+position = 4
+elevationrate = 2
+traverserate = 6
+type = 360turret
+gunsightfile = 20mmAA.gs
+gunsightalignmentmountobject = gview4
+gunsightalignmentrange = 250
+
+# Aft 20mm Director (AA)
+position = 5
+elevationrate = 2
+traverserate = 6
+type = 360turret
+gunsightfile = 20mmAA.gs
+gunsightalignmentmountobject = gview5
+gunsightalignmentrange = 250
+
+# Stdb. 37mm AA mount
+position = 6
+elevationrate = 4
+traverserate = 10
+type = 360turret
+gunsightfile = 37mmAA.gs
+gunsightalignmentmountobject = gview6
+gunsightalignmentrange = 250
+
+#turret sound variables
+turrettraverse = turret/hand_turret_move.wav
+turretelevate = turret/hand_turret_move.wav
+
+# Aft Director
+position = 7
+elevationrate = 15
+traverserate = 42.0
+type = limitedturret
+gunsightfile = flak36.gs
+gunsightalignmentmountobject = mount_b1
+gunsightalignmentrange = 5000
+
+#turret sound variables
+turrettraverse = turret/hydrolic_turret.wav
+turretelevate = turret/hand_turret_move.wav
+turretgeneral = turret/turret_traverse_general.wav
+
+# Torpedo Tubes
+position = 8
+elevationrate = 4
+traverserate = 20
+type = limitedturret
+gunsightfile = torpedo.gs
+
+#turret sound variables
+turrettraverse = turret/hand_turret_move.wav
+
+

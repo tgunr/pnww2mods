@@ -1,0 +1,60 @@
+# Laffly W-15TCC Maingun turret file
+# created 12-05-03 by Doc.
+
+#multicrewpos position, whichcrew
+multicrewpos 1 1
+multicrewpos 2 2
+multicrewpos 3 2
+multicrewpos 4 1
+
+# Gun
+position = 3
+elevationrate = 4
+traverserate = 4.0
+type = limitedturret
+gunsightfile = lafflyw15.gs
+gunsightalignmentmountobject = mount
+gunsightalignmentrange = 500
+# conditions are undeployed, depolyed, canopyopen, canopyclosed, hatchopen, hatchclosed
+#gunsightblocked = deployed
+
+# added for centering gun
+# neutral can be: bombayopen/closed, hatchopen/closed, canopyopen/closed
+#neutral = bombbayclosed
+# neutraltraverse -1 max deflection left, 1 max deflection right, 0 straight ahead 
+neutraltraverse = 0
+# neutralelevate -1 max down, 1 max up, 0 is midtraverse
+neutralelevate = 0
+
+#turret sound variables
+turrettraverse = turret/hand_turret_move.wav
+turretelevate = turret/hand_turret_move.wav
+
+# Commander head
+position = 2
+elevationrate = 2
+traverserate = 6
+type = 360turret
+#neutral = bombbayclosed
+# neutraltraverse -1 max deflection left, 1 max deflection right, 0 straight ahead 
+neutraltraverse = 0
+# neutralelevate -1 max down, 1 max up, 0 is midtraverse
+neutralelevate = 0
+gunsightfile = 8x30binoc.gs
+#gunsightblocked = deployed
+
+# Pintle gunner
+position = 4
+elevationrate = 0.4
+traverserate = 0.4
+type = limited traverse
+gunsightalignmentmountobject = pintlemount
+gunsightalignmentrange = 400
+gunsightblocked = canopyopen
+#neutral = bombbayclosed
+# neutraltraverse -1 max deflection left, 1 max deflection right, 0 straight ahead 
+neutraltraverse = 0
+# neutralelevate -1 max down, 1 max up, 0 is midtraverse
+neutralelevate = 0
+#gunsightfile = 8x30binoc.gs
+#gunsightblocked = undeployed

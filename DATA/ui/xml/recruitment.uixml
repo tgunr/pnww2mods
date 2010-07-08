@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<window id="recruitment" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768" style="background-color: #000000BB;" layer="90"
+	onupdate="runRecruitmentUpdate()">
+	<include file="lib/common.uixml"/>
+	<include file="classes/ListControl.uixml"/>
+	<view id="recruitment-popup" x="200" width="600" height="550" rtop="120" style="background-color: #00000055;
+							border-sides: ui/textures/hud/border_side.bmp;
+							border-corner: ui/textures/hud/border_corner.bmp;
+							border-width: 4;
+							border-height: 4;" moveondrag="yes">
+		
+		<view x="10" rtop="10" rright="10" height="50" style="background-color: #ffffff00;" followtop="true">
+			<caption label="&common.squads.recruitment.title;" x="0" rtop="0" rright="0" height="30" style="color: #BFE2CE; font-size: +4;"/>
+			<image src="ui/textures/test/horiz_underline.bmp" x="0" rtop="20" rright="0" height="12"/>
+		</view>
+			
+		<text x="10" height="100" rtop="50" rright="10" acceptsfocus="false" style="border-size-right: 10;  color: #e9e3d9;" maxlength="400"
+			onshow="this.text = getlocstring('common.squads.recruitment.description')"/>
+
+
+		<view x="10" y="65" rright="10" rtop="90">
+			<list id="recruitmentList" x="10" y="10" rright="10" rtop="10"
+				onselect="recruitmentList.clickList(false)" ondblselect="recruitmentList.clickList(true)">
+				<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+			</list>
+		</view>
+			
+		<checkbox id="show-recruitment" x="60" width="300" height="15" y="50" checked="true"
+			label="&common.squads.recruitment.show;"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+			onshow="this.checked = game.settings.squadinvites" onclick="soundPlayClick(); game.settings.squadinvites = this.checked;"/>
+		
+		<!-- close -->
+		<button id="recruiter-join-button" x="50" y="10" width="150" height="25" label="&common.squads.recruitment.join;" followbottom="true"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onclick="acceptRecruitment(true)" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+		<button y="10" width="150" height="25" rright="50" label="&common.squads.recruitment.nothanks;" followbottom="true"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onclick="acceptRecruitment(false)" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+			
+	</view>
+	<script>
+		<!--
+		
+		var callback 			= null;
+		var client				= game.player.client;
+		var xsquad 				= client.squad;
+		var recruitmentList		= new ListControl(findview("recruitmentList"), selectRecruiter, null, recruiterSelected);
+		var recruitmentTimer	= new CycleTimer(500);
+		var joinRecruiterButton	= findview("recruiter-join-button");
+		
+		function initRecruitment(cb)
+		{
+			consoleclear();
+			consoleprint("Recruitment INIT\n");
+			
+			callback = cb;
+			
+			if(client.persona.rank.level < 2)
+				window.findview("show-recruitment").visible = false;
+			
+			// run the initial update
+			runRecruitmentUpdate();
+		}
+		
+		function runRecruitmentUpdate()
+		{
+			if(recruitmentTimer.run())
+			{
+				consoleprint("Running recruitment update!!!\n");
+				
+				// only enable the button when we've selected something
+				joinRecruiterButton.enabled = (recruitmentList.data != null) ? true: false;
+				
+				// we only init the list once
+				if(recruitmentList.count > 0)
+					return;
+				
+				var listWidth 	= recruitmentList.list.width * (window.width / 1024);
+				var recruiters	= client.recruiters;
+				
+				//consoleprint("Original width is " + recruitmentList.list.width + "\n");
+				//consoleprint("Adjusted width is " + listWidth + "\n");
+				//consoleprint("Good width is " + 550 + "\n");
+				
+				recruitmentList.clearRows(true);
+				
+				for(var i = 0; i < recruiters.length; i++)
+				{
+					var recruiter 	= recruiters[i];
+					var flag 		= "ui/textures/test/" + recruiter.country.adjective.toLowerCase() + "_flag.bmp";
+					var branch		= getCountryBranch(recruiter.country, recruiter.branch, -1)
+					var language	= getlocstring("common.languages." + recruiter.language);
+					var slogan		= (recruiter.slogan != null && recruiter.slogan.length > 0) ? recruiter.slogan: getlocstring("common.squads.recruitment.slogan");
+					var info		= getVariableLocString("common.squads.recruitment.info", branch, language, recruiter.callsign.toLowerCase());
+					var squadShort	= (recruiter.squadshort != null) ? recruiter.squadshort.toUpperCase(): "";
+					var squadName	= (recruiter.squadname != null) ? recruiter.squadname.toUpperCase(): "";
+					var name		= "";
+					
+					if(squadName.length > 0 && squadShort.length > 0)
+						name = squadShort + " - " + squadName;
+					else if(squadShort.length > 0)
+						name = squadShort;
+					else if(squadName.length > 0)
+						name = squadName;
+					
+					consoleprint("Doing recruiter " + recruiter.callsign + "\n");
+					
+					var row = "\
+<view id='recruiter_" + i + "' width='" + 550 + "' height='95' onmouseenter='recruitmentMouseEnter(this)' onmouseexit='recruitmentMouseExit(this)'>\
+	<panel id='recruitment-panel' x='0' y='0' height='95' width='" + 550 + "' style='border-color: #3e5248; border-size: 1;'>\
+		<image src='" + flag + "' x='20' y='30' width='50' height='50'/>\
+		<caption x='80' y='60' label='" + htmlencode(name) + "' style='font-size: +3; color: #FFFFFF;'/>\
+		<caption x='80' y='45' label='" + htmlencode(slogan) + "' style='color: #e9e3d9ff;'/>\
+		<caption x='80' y='30' label='" + htmlencode(info) + "' style='color: #e9e3d9ff;'/>\
+	</panel>\
+</view>";
+					
+					recruitmentList.addRow(recruiter, row);
+				}
+				
+				//recruitmentList.postInit();
+				
+				consoleprint("Done running recruitment update!!!\n");
+			}
+		}
+		
+		/*
+		function runRecruitmentUpdate_Real()
+		{
+			if(recruitmentTimer.run())
+			{
+				joinRecruiterButton.enabled = false;
+				
+				var recruiters = client.recruiters;
+				
+				recruitmentList.clearRows(true);
+				
+				for(var i = 0; i < recruiters.length; i++)
+				{
+					var recruiter = recruiters[i];
+					
+					if(!recruiter.valid)
+						continue;
+					
+					var persona = getCountryBranch(recruiter.country.code, recruiter.branch);
+					
+					var row = "\
+<view id='recruiter_" + i + "' width='413' height='16' onmouseenter='recruitmentList.mouseEnter(this)' onmouseexit='recruitmentList.mouseExit(this)'>\
+	<caption x='0' y='0' width='70' height='15' style='color: #e9e3d9ff;' label='" + recruiter.callsign + "'/>\
+	<caption x='82' y='0' width='80' height='15' style='color: #e9e3d9ff;' label='" + recruiter.squadname + "'/>\
+	<caption x='166' y='0' width='400' height='15' style='color: #e9e3d9ff;' label='" + persona + "'/>\
+</view>";
+					
+					recruitmentList.addRow(recruiter, row);
+					joinRecruiterButton.enabled = true;
+				}
+				
+				recruitmentList.postInit();
+			}
+		}
+		*/
+		
+		function recruitmentMouseEnter(row)
+		{
+			row.findview("recruitment-panel").setstyleproperty("border-color", "#ffff00");
+		}
+		
+		function recruitmentMouseExit(row)
+		{
+			if(recruitmentList.row == null || row.id != recruitmentList.selected)
+				row.findview("recruitment-panel").setstyleproperty("border-color", "#3e5248");
+		}
+		
+		function recruiterSelected(oldrow, newrow)
+		{
+			if(oldrow != null)
+				oldrow.findview("recruitment-panel").setstyleproperty("border-color", "#3e5248");
+			
+			newrow.findview("recruitment-panel").setstyleproperty("border-color", "#ffff00");
+		}
+		
+		function selectRecruiter(dblclick)
+		{
+			// do hilights
+			
+			if(dblclick)
+				acceptRecruitment(true);
+		}
+		
+		function acceptRecruitment(recruited)
+		{
+			var recruiter = recruitmentList.data;
+			
+		 	soundPlayClick();
+		 	
+			if(recruited && recruiter != null)
+			{
+				// join needs to block until a squad control result of join is caught
+				// by then the invite will have been sent
+				// join returns true if result is accept, false otherwise
+				if(recruiter.join())
+				{
+					// don't move them if they are already in game
+					if(!game.ingame)
+					{
+						var invite = game.player.client.missioninvite;
+						
+						if(invite)
+						{
+							var country	= invite.country;
+							var branch	= invite.branch;
+							var brigade	= invite.brigade;
+							var mission	= invite.mission;
+							
+							doMissionInviteJump(country, branch, brigade, mission, true);
+						}
+					}
+					
+					// onrecruiter event shows an ok popup letting the user know
+				}
+				else
+				{
+					recruited = false;
+					showOk(getlocstring("common.squads.recruitment.failure"));
+				}
+			}
+			
+			if(callback != null)
+				callback(recruited);
+			
+			// close this window
+			window.close();
+		}
+		
+		-->
+	</script>
+</window>
+

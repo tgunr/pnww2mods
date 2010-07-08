@@ -1,0 +1,22 @@
+mass = 0.0
+firetype = singleshot
+rateoffire = 19
+dispersion = 0.08
+ammotype1 = ai_mle94mmhe1
+ammotype2 = ai_mle94mmhe2
+ammotype3 = ai_mle94mmhe3
+ammotype4 = ai_mle94mmhe4
+ammotype5 = ai_mle94mmhe5
+ammotype6 = ai_mle94mmhe6
+ammotype7 = ai_mle94mmhe7
+ammotype8 = ai_mle94mmhe8
+ghostrof = 19
+ghostammotype = ai_mle94mmhe5
+
+cliprounds = 1
+reloadtime = 3
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = na
+muzzleflash = tankgunflash

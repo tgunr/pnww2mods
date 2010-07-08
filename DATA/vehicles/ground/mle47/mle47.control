@@ -1,0 +1,35 @@
+
+# Mle 25 Control File
+
+# Commander
+position = 1
+control = radio
+#control = hatchcontrol
+#control = canopycontrol
+control = map
+control = auxsight
+control = deployweapon
+control = towbar
+control = primarytrigger
+control = atgunleftright
+control = atgunforwardbackwards
+control = leftbrake
+control = rightbrake
+control = enginerpm
+control = bothbrake
+control = turretraverse
+control = turretelevate
+control = hoist
+control = ridetransport
+
+# Main Gunner
+position = 2
+#control = hatchcontrol
+#control = canopycontrol
+control = map
+control = primarytrigger
+control = turretraverse
+control = turretelevate
+control = cycleammo
+control = gunsightrangedec
+control = gunsightrangeinc

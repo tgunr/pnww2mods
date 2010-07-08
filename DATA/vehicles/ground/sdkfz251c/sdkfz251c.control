@@ -1,0 +1,40 @@
+#sdkfz251c Control File
+#Created 09-30-03 by Doc.
+
+#driver
+position = 1
+control = radio
+control = hatchcontrol
+control = canopycontrol
+control = auxsight
+control = map
+control = enginerpm
+control = steering
+control = clutch
+control = shiftup
+control = shiftdown
+control = reverse
+control = gas
+control = engstart
+control = leftbrake
+control = rightbrake
+control = bothbrake
+control = lefttrackclutch
+control = righttrackclutch
+control = hoist
+control = ridetransport
+control = mobilespawn
+
+#gunner
+position = 2
+control = radio
+control = map
+control = primarytrigger
+control = turretraverse
+control = turretelevate
+#control = gunsightrangedec
+#control = gunsightrangeinc
+control = cycleammo
+control = canopycontrol
+
+

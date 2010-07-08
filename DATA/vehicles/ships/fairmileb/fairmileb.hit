@@ -1,0 +1,108 @@
+# damage resistance file for FairmileB
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+# format:
+# name,thickness,hardness1,hardness2
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-hitenergymaxvolume = 10000
+
+# Inside collider objects:
+d_engine1,100,0,0
+d_engine1_1,100,0,0
+d_fueltank1,3,0,0
+d_fueltank2,3,0,0
+d_oiltank,3,0,0
+d_oiltank2,3,0,0
+d_radiatior,3,0,0
+d_portprop,100,0,0
+d_stdbprop,100,0,0
+d_gun8,30,0,0
+d_gun7,30,0,0
+d_gun6,30,0,0
+d_gun6a,30,0,0
+d_gun4,30,0,0
+d_gun3,30,0,0
+d_gmount3_1,30,0,0
+d_gmount4,30,0,0
+d_gunmount6,30,0,0
+d_gun3ammo,3,0,0
+d_gun4ammo,3,0,0
+d_gun6ammo,3,0,0
+
+# Soft gooey parts
+#d_helmarms,1,0,0
+#d_helmlegs,1.2,0,0
+#d_helmtorso,1.2,0,0
+#d_helmhead,0.4,0,0
+d_coarms,1,0,0
+d_colegs,1.2,0,0
+d_cotorso,1.2,0,0
+d_cohead,0.4,0,0
+d_no1head,0.4,0,0
+d_no1torso,1.2,0,0
+d_no1egs,1.2,0,0
+d_no1arms,1,0,0
+d_gun3head,0.4,0,0
+d_gun3torso,1.2,0,0
+d_gun3arms,1,0,0
+d_gun3legs,1.2,0,0
+d_gun4head,0.4,0,0
+d_gun4torso,1.2,0,0
+d_gun4arms,1,0,0
+d_gun4legs,1.2,0,0
+d_gun6arms,1,0,0
+d_gun6torso,1.2,0,0
+d_gun6head,0.4,0,0
+d_gun6legs,1.2,0,0
+d_gun8legs,1.2,0,0
+d_gun8arms,1,0,0
+d_gun8torso,1.2,0,0
+d_gun8head,0.4,0,0
+d_gun7head,0.4,0,0
+d_gun7torso,1.2,0,0
+d_gun7arms,1,0,0
+d_gun7legs,1.2,0,0
+
+# Outside collider objects:
+d_hull,5,0,0
+d_bulkheads,5,0,0
+d_superstructure,5,0,0
+d_float1,5,0,0
+d_float2,5,0,0
+d_float3,5,0,0
+d_float4,5,0,0
+d_float5,5,0,0
+d_float6,5,0,0
+d_float7,5,0,0
+d_float8,5,0,0
+d_stack,3,0,0
+d_deck,5,0,0
+
+# Float damage objects
+# These are dummy objects (no 3D shapes)
+# and are used to apply "flooding" damage
+bow1,1,0,0
+bow2,1,0,0
+portfore,1,0,0
+portaft,1,0,0
+sbfore,1,0,0
+sbaft,1,0,0
+propulsion_steer1,1,0,0
+propulsion_steer2,1,0,0

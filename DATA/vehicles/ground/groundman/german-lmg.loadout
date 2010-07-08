@@ -1,0 +1,23 @@
+#German infantry LMG loadout file
+
+# sounds available for the mounts
+sound1 = sounds\troop\mg34.wav
+sound2 = sounds\troop\luger.wav
+
+loadout = 1
+
+# LightMachineGun
+mountnum = 1
+mountsound = sound1
+weapon = mg34lmg
+maxoversupply = 5
+
+# Pistol
+mountnum = 2
+mountsound = sound2
+weapon = luger
+
+# Knife
+mountnum = 3
+weapon = knifegeneric
+

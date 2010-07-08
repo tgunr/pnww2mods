@@ -1,0 +1,16 @@
+# French infantry LMG created Oct. 03 -Doc.
+
+mass = 9.25
+firetype = auto
+rateoffire = 500
+dispersion = 0.15
+ammotype1 = 7_5mmflmg
+ammotype2 = 7_5mmtracerf
+ghostrof = 200
+ghostammotype = 7_5mmtracerf
+cliprounds = 25
+reloadtime = 6
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = magazine

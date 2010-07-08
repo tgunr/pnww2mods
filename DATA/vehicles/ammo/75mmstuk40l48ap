@@ -1,0 +1,29 @@
+# StuGIIIg 75mm StuK40/L48 AP round
+# Created 10/12/04 -Doc
+
+type = ballistic
+diameter = .075
+weight = 6.80
+velocity = 770
+tracertime = 7.9
+object = bullet1
+explosive = 301160
+# exp. mass and type unknown
+
+fuzetime = 0.002
+bc = 2.5
+lifetime = 8.0
+ricochetangle = 87
+modelspall = 1
+penetrationconstant = 0.00000324
+dontdisplayfirstframe = 1 
+
+numshrapnelpieces = 50 (no specifics)
+totalshrapnelmass = 2.1 (no specifics)
+explosionsoundnear = sounds\smlcloseexp.wav
+explosionsoundfar = sounds\smlfarexp.wav
+nearfardistance = 300
+
+muzzleflash = 3
+hiteffect = incendiarymg
+tracerscale = 2

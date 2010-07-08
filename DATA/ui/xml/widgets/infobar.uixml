@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<view x="58" y="140" width="900" height="16" onshow="updateInfoBar()" style="background-color: #3e5248;"
+	tip="&widgets.infobar.tip;">
+	<caption id="info-campaign-caption" x="700" y="0" height="15" width="165" style=" color: #BFE2CE;" align="right"/>
+	<caption id="info-time-caption" x="865" y="0" height="15" width="35" style=" color: #BFE2CE;" onupdate="getGameTime(this)"/>
+	<script>
+		<!--
+		
+		var infoBarTimer = new CycleTimer(300);
+		
+		function updateInfoBar()
+		{
+			var day			= 0;
+			var now			= new Date();
+			var campaign 	= findview("info-campaign-caption");
+			
+			if(now != null)
+			{
+				var campaignStart = game.arena("campaign_start");
+				
+				if(campaignStart != null)
+				{
+					day 	= (((now.getTime()) / 1000) - campaignStart) / 86400;
+					day		= (day > 0) ? Math.floor(day): 0;
+				}
+			}
+			
+			campaign.label = getlocstring('widgets.infobar.day') + day + getlocstring('widgets.infobar.campaign') + game.arena("campaign_id");
+		}
+		
+		function getGameTime(caption)
+		{
+			if(infoBarTimer.run())
+			{
+				var stamp 	= game.time;
+				var hour 	= stamp / 3600;
+				var minute	= 0;
+				
+				hour 	= (hour < 1) ? 0: Math.floor(hour); 
+				minute	= (hour > 0) ? (stamp - (hour * 3600)) / 60: stamp / 60;
+				minute	= (minute < 1) ? 0: Math.floor(minute);
+				
+				if(hour < 10)
+					hour = "0" + hour;
+				
+				if(minute < 10)
+					minute = "0" + minute;
+				
+				caption.label = hour + ":" + minute;
+			}
+		}
+		
+		-->
+	</script>
+</view>

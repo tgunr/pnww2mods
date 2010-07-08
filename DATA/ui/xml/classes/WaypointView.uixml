@@ -1,0 +1,274 @@
+<script>
+	
+	<include file="lib/common.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+
+	<!--
+	
+	function WaypointView(caption, x, y, z)
+	{
+		// members
+		this.desc		= description;
+		this.valid		= false;
+		this.targetx	= 0;
+		this.targety	= 0;
+		this.targetw	= 0;
+		this.targeth	= 0;
+		this.startx		= 0;
+		this.starty		= 0;
+		this.timer		= new CycleTimer(50);
+		this.pause		= pause;
+		this.space		= space;
+		this.runs		= runs;
+		this.run		= this.runs;
+		this.start		= 0;
+		this.stage		= 0;
+		this.view		= null;
+		
+		// methods
+		this.update = function()
+		{
+			if(this.valid && this.view)
+			{
+				if(this.delay())
+					return true;
+				
+				if(this.mirror())
+					return true;
+				
+				if(this.hilite())
+					return true;
+			}
+			
+			return false;
+		}
+		
+		this.init = function()
+		{
+			if(this.desc)
+			{
+				var numberRE = /^\d/;
+				var stringRE = /^\w/;
+				
+				var parts = this.desc.split(",");
+				
+				if(numberRE.test(parts[0]))
+				{
+					// must be a specific position
+					if(parts.length >= 4)
+					{
+						this.targetx = scaleX(parseInt(parts[0]));
+						this.targety = scaleY(parseInt(parts[1]));
+						this.targetw = scaleX(parseInt(parts[2]));
+						this.targeth = scaleY(parseInt(parts[3]));
+						
+						this.targetx += this.targetw/2;
+						this.targety += this.targeth/2;
+						
+						if(parts.length >= 5 && parts[4] == 'target')
+						{
+							this.startx = this.targetx;
+							this.starty = this.targety;
+						}
+						else if(parts.length >= 6)
+						{
+							this.startx = scaleX(parseInt(parts[4]));
+							this.starty = scaleY(parseInt(parts[5]));
+						}
+						else
+						{
+							this.startx = game.screenwidth/2;
+							this.starty = game.screenheight/2;
+						}
+						
+						this.valid = true;
+					}
+				}
+				else if(stringRE.test(parts[0]))
+				{
+					// must be a view to look up
+					var target = game.findview(parts[0]);
+					
+					if(target)
+					{
+						this.targetx = target.screenx + (target.width/2);
+						this.targety = target.screeny + (target.height/2);
+						this.targetw = target.width;
+						this.targeth = target.height;
+						
+						if(parts.length >= 2 && parts[1] == 'target')
+						{
+							this.startx = this.targetx;
+							this.starty = this.targety;
+						}
+						else if(parts.length >= 3)
+						{
+							this.startx = scaleX(parseInt(parts[1]));
+							this.starty = scaleY(parseInt(parts[2]));
+						}
+						else
+						{
+							this.startx = game.screenwidth/2;
+							this.starty = game.screenheight/2;
+						}
+						
+						this.valid = true;
+					}
+				}
+			}
+			
+			if(this.valid)
+			{
+				this.originx = this.targetx - (this.targetw/2);
+				this.originy = this.targety - (this.targeth/2);
+				
+				var mx = normalizeX(this.originx);
+				var my = normalizeY(this.originy);
+				var mw = normalizeX(this.targetw);
+				var mh = normalizeY(this.targeth);
+				
+				this.start 	= (new Date()).getTime();
+				this.stage	= (this.startx != this.targetx || this.starty != this.targety) ? 1: 2;
+				this.body 	= 'x="' + mx + '" y="' + my + '" width="' + mw + '" height="' + mh + '" layer="100"';
+				
+				if(this.stage == 1)
+				{
+					this.createMirror(this.body);
+					
+					if(this.view != null)
+					{
+						this.view.snapshot(this.originx, this.originy, this.targetw, this.targeth);
+						this.view.x	= this.startx - (this.targetw/2);
+						this.view.y	= this.starty - (this.targeth/2);
+					}
+				}
+				else
+				{
+					this.createHilite(this.body);
+					this.pause = 0; // start pulsing right away
+				}
+				
+				if(this.view != null)
+				{
+					this.view.modal			= false;
+					this.view.acceptsmouse	= false;
+				}
+			}
+		}
+		
+		this.delay = function()
+		{
+			var now = new Date();
+			return (now.getTime() < (this.start + this.pause));
+		}
+		
+		this.mirror = function()
+		{
+			if(this.stage != 1 || this.view == null)
+				return false;
+			
+			if(this.timer.run())
+			{
+				// calculate center x,y
+				var wcx = this.view.screenx + this.view.width/2;
+				var wcy = this.view.screeny + this.view.height/2;
+				var vcx = this.targetx;
+				var vcy = this.targety;
+				
+				// calculate the direction
+				var dirx = (wcx - vcx) * -1;
+				var diry = (wcy - vcy) * -1;
+				
+				// get the length
+				var len = Math.sqrt((dirx * dirx) + (diry * diry));
+				
+				if(len <= 1)
+				{
+					this.createHilite(this.body);
+					this.stage = 2;
+					return false;
+				}
+				
+				// normalize it
+				dirx /= len;
+				diry /= len;
+				
+				// calculate move distance
+				var dist = 1 + (len * .1);
+				
+				//consoleprint("Length is " + len + ", distance is " + dist + "!\n");
+				
+				// calculate the next position
+				wcx += dirx * dist;
+				wcy += diry * dist;
+				
+				//consoleprint("Height is " + this.view.height + "\n");
+				
+				// move the view to the position
+				this.view.x = wcx - this.view.width/2;
+				this.view.y = wcy - this.view.height/2;
+			}
+			
+			return true;
+		}
+		
+		this.hilite = function()
+		{
+			if(this.stage != 2 || this.view == null)
+				return false;
+			
+			if(this.timer.run())
+			{
+				this.run -= 1;
+				
+				if(this.run < 0)
+					this.run = this.runs;
+				
+				var buffer = this.run * this.space * 2;
+				
+				this.view.width 	= this.targetw + buffer;
+				this.view.height 	= this.targeth + buffer;
+				this.view.x 		= this.targetx - (this.view.width / 2);
+				this.view.y 		= this.targety - (this.view.height / 2);
+			}
+			
+			return true;
+		}
+		
+		this.createMirror = function(body)
+		{
+			if(this.view != null)
+				this.view.close();
+			
+			var xml = '<mirror ' + body + ' style="border-color: #3e5248; border-size: 1;"/>';
+			
+			consoleprint("Creating mirror for " + window.id + ": " + xml + "\n");
+			
+			this.view = window.addview(xml);
+		}
+		
+		this.createHilite = function(body)
+		{
+			if(this.view != null)
+				this.view.close();
+			
+			var xml = '<view ' + body + ' style="border-color: #FF0000; border-size: 1;"/>';
+			
+			consoleprint("Creating hilite for " + window.id + ": " + xml + "\n");
+			
+			this.view = window.addview(xml);
+		}
+		
+		this.kill = function()
+		{
+			if(this.view != null)
+				this.view.close();
+			
+			this.view = null;
+		}
+		
+		this.init();
+	}
+	
+	-->
+</script>

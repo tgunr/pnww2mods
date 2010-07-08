@@ -1,0 +1,128 @@
+# damage resistance file for FairmileB
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+# format:
+# name,thickness,hardness1,hardness2
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-hitenergymaxvolume = 10000
+
+# Inside collider objects:
+
+d_engine1,100,0,0,0,30000
+d_engine2,100,0,0,0,30000
+d_boiler1,30,0,0,0,30000
+d_boiler2,30,0,0,0,30000
+d_boiler3,30,0,0,0,30000
+d_boiler4,30,0,0,0,30000
+d_boiler5,30,0,0,0,30000
+d_boiler6,30,0,0,0,30000
+d_fueltank1,3,0,0,0,30000
+d_fueltank2,3,0,0,0,30000
+d_steampipes2,3,0,0,0,30000
+d_steampipes1,3,0,0,0,30000
+d_fueltank3,3,0,0,0,30000
+d_fueltank4,3,0,0,0,30000
+d_portprop,100,0,0
+d_stdbprop,100,0,0
+d_atgun1,30,0,0,0,30000
+d_atgun2,30,0,0,0,30000
+d_btgun1,30,0,0,0,30000
+d_btgun2,30,0,0,0,30000
+d_xtgun2,30,0,0,0,30000
+d_xtgun1,30,0,0,0,30000
+d_ytgun2,30,0,0,0,30000
+d_ytgun1,30,0,0,0,30000
+d_ztgun2,30,0,0,0,30000
+d_ztgun1,30,0,0,0,30000
+d_37base1,30,0,0
+d_37gun1-1,30,0,0,0,30000
+d_37gun1-2,30,0,0,0,30000
+d_37gun2-1,30,0,0,0,30000
+d_37gun2-2,30,0,0,0,30000
+d_37base2,30,0,0
+d_20mmgun1,30,0,0,0,30000
+d_20mmgun2,30,0,0,0,30000
+d_20mmgun3,30,0,0,0,30000
+d_20mmgun4,30,0,0,0,30000
+d_ftorpammo,3,0,0
+d_atorpammo,3,0,0
+d_agunammo,3,0,0
+d_bgunammo,3,0,0
+d_xgunammo,3,0,0
+d_ygunammo,3,0,0
+d_zgunammo,3,0,0
+d_p37ammo,3,0,0
+d_s37ammo,3,0,0
+d_f20ammo,3,0,0
+d_a20ammo,3,0,0
+
+# Outside collider objects:
+
+d_superstructure,22,0,0
+d_stack,22,0,0
+d_super2,22,5,0,0
+d_super3,22,5,0,0
+d_deck,22,0,0
+d_float8,50,0,0,0,50000
+d_float7,50,0,0,0,50000
+d_float6,50,0,0,0,50000
+d_float5,50,0,0,0,50000
+d_float4,50,0,0,0,50000
+d_float3,50,0,0,0,50000
+d_float2,50,0,0,0,50000
+d_float1,50,0,0,0,50000
+d_cfloat1,50,0,0,0,50000
+d_cfloat2,50,0,0,0,50000
+d_bulkheads,80,0,0
+d_hull,80,0,0
+d_aturret2,30,0,0
+d_aturret1,30,0,0
+d_bturret2,30,0,0
+d_bturret1,30,0,0
+d_xturret2,30,0,0
+d_xturret1,30,0,0
+d_yturret2,30,0,0
+d_yturret1,30,0,0
+d_zturret2,30,0,0
+d_zturret1,30,0,0
+d_20armor1,30,0,0
+d_20armor2,30,0,0
+d_20armor3,30,0,0
+d_20armor4,30,0,0
+d_rightrudder,5,0,0
+#d_leftrudder,5,0,0
+d_ftorptubes,1,0,0
+d_atorptubes,1,0,0
+#masts_1,1,0,0
+d_sboat,1,0,0
+d_pboat,1,0,0
+
+# Float damage objects
+# These are dummy objects (no 3D shapes)
+# and are used to apply "flooding" damage
+
+bow1,1,0,0
+bow2,1,0,0
+portfore,1,0,0
+portaft,1,0,0
+sbfore,1,0,0
+sbaft,1,0,0
+propulsion_steer1,1,0,0
+propulsion_steer2,1,0,0

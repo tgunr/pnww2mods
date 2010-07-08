@@ -1,0 +1,29 @@
+
+# QF 2pounder Control File
+
+# Commander
+position = 1
+control = radio
+#control = hatchcontrol
+#control = canopycontrol
+control = map
+control = auxsight
+control = deployweapon
+control = towbar
+control = atgunleftright
+control = atgunforwardbackwards
+control = turretraverse
+control = turretelevate
+control = hoist
+control = ridetransport
+
+# Gunner
+position = 2
+#control = hatchcontrol
+#control = canopycontrol
+#control = deployweapon
+control = map
+control = primarytrigger
+control = turretraverse
+control = turretelevate
+control = cycleammo

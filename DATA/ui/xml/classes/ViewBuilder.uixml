@@ -1,0 +1,155 @@
+<script>
+
+	<!--
+	
+	function ViewBuilder(par, id, x, y, w, h)
+	{
+		this.addBuilder = function(builder, reset)
+		{
+			if(reset != null && reset == true)
+				this.builders = new Array();
+			
+			this.builders.push(builder);
+			
+			return builder;
+		}
+		
+		this.addStyle = function(key, value, reset)
+		{
+			if(reset != null && reset == true)
+				this.styles = new Object();
+			
+			if(key != null) 
+				this.styles[key] = value;
+		}
+		
+		this.addAttribute = function(key, value, reset)
+		{
+			if(reset != null && reset == true)
+				this.attributes = new Object();
+			
+			if(key != null)
+				this.attributes[key] = value;
+		}
+		
+		this.getStyle = function()
+		{
+			var style = "";
+			
+			for(var s in this.styles)
+			{
+				if(this.styles[s] != null)
+					style += s + ': ' + this.styles[s] + '; ';
+			}
+			
+			return 'style="' + style + '"';
+		}
+		
+		this.getAttributes = function()
+		{
+			var xml = "";
+			
+			for(var a in this.attributes)
+			{
+				if(this.attributes[a] != null)
+					xml += a + '="' + this.attributes[a] + '" ';
+			}
+			
+			return xml;
+		}
+
+		
+		// pview = parent view
+		this.buildView = function() 
+		{
+			// build xml
+			var xml = '<' + this.type + ' ' + this.getAttributes() + ' ' + this.getStyle() + '>';
+			
+			if(this.builders.length > 0)
+			{
+				for(var b = 0; b < this.builders.length; b++)
+					xml += this.builders[b].build();
+			}
+			
+			xml += '</' + this.type + '>';
+			
+			return xml;
+		}
+		
+		// override this in subclasses
+		this.build 						= this.buildView;
+		
+		this.par						= par;
+		this.type						= "view";
+		this.styles						= new Object();
+		this.attributes					= new Object();
+		this.builders					= new Array();
+		
+		// normalized size and position
+		this.nx							= (!isNaN(x)) ? x : 0;
+		this.ny							= (!isNaN(y)) ? y : 0;
+		this.nwidth						= (!isNaN(w)) ? w : 0;
+		this.nheight					= (!isNaN(h)) ? h : 0;
+		
+		// calculate based on parent if need be
+		if(this.par)
+		{
+			// compatibility
+			if(!this.par.nx) this.par.nx = this.par.x;
+			if(!this.par.ny) this.par.ny = this.par.y;
+			if(!this.par.nwidth) this.par.nwidth = this.par.width;
+			if(!this.par.nheight) this.par.nheight = this.par.height;
+			
+			if(this.nwidth == 0) // full width
+				this.nwidth = this.par.nwidth;
+			else if(this.nwidth > 0 && this.nwidth < 1) // percentage width
+				this.nwidth = this.par.nwidth * this.nwidth;
+
+			if(this.nheight == 0) // full height
+				this.nheight = this.par.nheight;
+			else if(this.nheight > 0 && this.nheight < 1) // percentage height
+				this.nheight = this.par.nheight * this.nheight;
+			
+			if(this.nx < 0) // from the right
+			{
+				if(this.nx <= -1)
+					this.nx = this.par.nwidth - this.nx - this.nwidth;
+				else if(this.nx > -1 && this.nx < 0) // percentage of width
+					this.nx = this.par.nwidth - (this.par.nwidth * (-1 * this.nx)) - this.nwidth;
+			}
+			else
+			{
+				if(this.nx > 0 && this.nx < 1) // percentage of width
+					this.nx = this.par.nwidth * this.nx;
+			}
+			
+			if(this.ny < 0) // from the top
+			{
+				if(this.ny <= -1)
+					this.ny = this.par.nheight - this.ny - this.nheight;
+				else if(this.ny > -1 && this.ny < 0) // percentage of height
+					this.ny = this.par.nheight - (this.par.nheight * (-1 * this.ny)) - this.nheight;
+			}
+			else
+			{
+				if(this.ny > 0 && this.ny < 1) // percentage of height
+					this.ny = this.par.nheight * this.ny;
+			}
+		}
+		
+		// standard attributes
+		this.addAttribute("id", id);
+		this.addAttribute("x", this.nx);
+		this.addAttribute("y", this.ny);
+		this.addAttribute("width", this.nwidth);
+		this.addAttribute("height", this.nheight);
+		this.addAttribute("aspectalign", "left");
+		
+		// standard styles
+		this.addStyle("color", "#BFE2CE");
+		
+		return this;
+	}
+	
+	-->
+</script>

@@ -1,0 +1,36 @@
+# (Pzkw.IIIh) 50mm "short" L/42 Early Standard APHE
+# Created 07/26/02 -bloo
+# modified December 08 - Doc.
+# modified July 09 to simulate APHEC capped round
+
+type = ballistic
+diameter = .05
+weight = 2.18
+#velocity = 685 
+# (upped to get correct penetration up close AND far away)
+velocity = 695
+tracertime = 7.9
+object = bullet1
+explosive = 125160 
+#(basing this off previous "short" 50mm round) - doc
+# xmass and type unknown - bloo
+
+fuzetime = 0.002
+#bc = 1.75
+bc = 1.15
+lifetime = 8.0
+ricochetangle = 87
+modelspall = 1
+penetrationconstant = 0.000002299
+#penetrationconstant = 0.0000019548
+dontdisplayfirstframe = 1 
+
+numshrapnelpieces = 50 (no specifics)
+totalshrapnelmass = 1.4 (no specifics)
+explosionsoundnear = sounds\smlcloseexp.wav
+explosionsoundfar = sounds\smlfarexp.wav
+nearfardistance = 400
+
+muzzleflash = 3
+hiteffect = incendiarymg
+tracerscale = 2.5

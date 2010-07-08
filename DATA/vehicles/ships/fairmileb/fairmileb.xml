@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="fairmileb" type="sea" description="Fairmile B Motor Launch" icon="Fairmile">
+<include file="fairmileb.veh.xml"/>
+<include file="fairmileb.state.xml"/>
+<include file="fairmileb.hit.xml"/>
+<include file="fairmileb.turret.xml"/>
+<include file="fairmileb.loadout.xml"/>
+<include file="fairmileb.xsound.xml"/>
+<include file="fairmileb.control.xml"/>
+<variant id="cn_fairmileb" shape="fairmileb"/>
+<variant id="fr_fair" shape="fairmileb-f"/>
+<variant id="fairb" shape="fairmileb"/>
+<variant id="de_mtb" shape="fairmileb-g"/>
+</vehicle>

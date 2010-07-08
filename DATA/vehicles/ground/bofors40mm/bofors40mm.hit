@@ -1,0 +1,70 @@
+
+# FlaK 36 Hit file
+
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 10000
+
+# Inside collider objects: Single sided
+d_gunhead,0.4,0,0
+d_gunarms,1,0,0
+d_gunrtrso,1.2,0,0
+d_gunlegs,1,0,0
+d_comarms,1,0,0
+d_comhead,0.4,0,0
+d_comrtrso,1.2,0,0
+d_comlegs,1,0,0
+
+# Outside collider objects: Double sided
+
+d_axlefr,12,0,0
+d_backaxle,12,0,0
+d_sights,12,0,0
+d_ltfrontwheel,12,0,0
+d_ltbkwheel,12,0,0
+d_rtfrontwheel,12,0,0
+d_rtbkwheels,12,0,0
+d_base,12,0,0
+d_spade01,12,0,0
+d_spade02,12,0,0
+d_deck,12,0,0
+d_basesides,15,0,0
+d_backaxle,15,0,0
+#d_sqbas,15,0,0
+d_basesides,12,0,0
+#d_stand1_5,12,0,0
+#d_outrger,12,0,0
+#d_outrigr,12,0,0
+#d_stand2,12,0,0
+
+
+# Gun Barrel and compensator
+
+d_barrel,40,0,0,0,30000
+#d_o5_2,40,0,0,0,30000
+#d_o5_3,40,0,0,0,30000
+#d_o6_1,40,0,0,0,30000

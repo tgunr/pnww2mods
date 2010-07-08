@@ -1,0 +1,23 @@
+#British infantry LMG loadout file
+
+# sounds available for the mounts
+sound1 = sounds\troop\bren.wav
+sound2 = sounds\troop\enfieldmk2no1.wav
+
+loadout = 1
+
+# LightMachineGun
+mountnum = 1
+mountsound = sound1
+weapon = brenmk1lmg
+maxoversupply = 5
+
+# Pistol
+mountnum = 2
+mounsound = sound2
+weapon = enfieldno2mk1
+
+# Knife
+mountnum = 3
+weapon = knifegeneric
+

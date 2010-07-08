@@ -1,0 +1,20 @@
+aimFOV = 75.0
+
+# how long to wait after pressing the fire button to actually shoot
+fireDelay = 0.4
+
+# flag for the control manager whether to allow the fire button to be held down or not
+# required for autofire weapons as well as recycling weapons
+holdfire = 1
+
+# what icon to display in the hud (1 = satchel)
+hudIconType = 7
+
+clipBullets = -1
+
+weaponBreathMultiplier = 1.0
+weaponHeartMultiplier = 1.0
+weaponMoveMultiplier = 1.0
+weaponPoseMultiplier = 1.0
+
+leanFireOK = 0

@@ -1,0 +1,10 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="morris" type="ground" shape="morris" description="Morris Gun Tractor" icon="Morris">
+<include file="morris.veh.xml"/>
+<include file="morris.state.xml"/>
+<include file="morris.hit.xml"/>
+<include file="morris.xsound.xml"/>
+<include file="morris.control.xml"/>
+<include file="morris.mass.xml"/>
+</vehicle>

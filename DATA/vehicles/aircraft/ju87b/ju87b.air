@@ -1,0 +1,49 @@
+#airfoils file for Ju 87 B-2
+[propeller]
+baseairfoil = propbase.pol
+up10degairfoil = prop_up10.pol
+down10degairfoil = prop_dn10.pol
+stallfile = prop.stall
+compressibilityfile = prop.compress
+
+[ju87broot]
+baseairfoil = 2415base.pol
+up10degairfoil = 2415up10.pol
+down10degairfoil = 2415down10.pol
+stallfile = 2415.sta
+compressibilityfile = 2415.compress
+
+[ju87bflap]
+baseairfoil = 2413base.pol
+up10degairfoil = 2413up10.pol
+down10degairfoil = 2413down10.pol
+stallfile = 2413.sta
+compressibilityfile = 2413.compress
+
+[ju87bail]
+baseairfoil = 2411base.pol
+up10degairfoil = 2411up10.pol
+down10degairfoil = 2411down10.pol
+stallfile = 2411.sta
+compressibilityfile = 2411.compress
+
+[ju87bstab]
+baseairfoil = 0010base.pol
+up10degairfoil = 0010ruddup10.pol
+down10degairfoil = 0010rudddown10.pol
+stallfile = 0010.stall
+compressibilityfile = 0010.compress
+
+[flatplate]
+baseairfoil = flatplat.pol
+up10degairfoil = flatplat.pol
+down10degairfoil = flatplat.pol
+stallfile = flatplat.stall
+compressibilityfile = flatplat.compress
+
+[fuselage]
+baseairfoil = 0010base.pol
+up10degairfoil = 0010base.pol
+down10degairfoil = 0010base.pol
+stallfile = 0010.stall
+compressibilityfile = 0010.compress

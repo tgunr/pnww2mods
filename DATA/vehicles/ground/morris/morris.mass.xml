@@ -1,0 +1,49 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<masses>
+<mass name="mass_wheel1"
+	mass="1" volume="0.165483"
+	modelcmx="-0.899210" modelcmy="+2.097722" modelcmz="+0.009663"
+	unitinertiaxx="+0.096450" unitinertiayy="+0.054651" unitinertiazz="+0.054651"
+	unitinertiaxy="-0.000002" unitinertiaxz="-0.000003" unitinertiayz="+0.000000"/>
+<mass name="mass_wheel2"
+	mass="1" volume="0.165455"
+	modelcmx="-0.899189" modelcmy="-0.696208" modelcmz="+0.009663"
+	unitinertiaxx="+0.096450" unitinertiayy="+0.054649" unitinertiazz="+0.054649"
+	unitinertiaxy="+0.000002" unitinertiaxz="+0.000001" unitinertiayz="+0.000000"/>
+<mass name="mass_wheel3"
+	mass="1" volume="0.165455"
+	modelcmx="-0.899189" modelcmy="-1.885698" modelcmz="+0.009663"
+	unitinertiaxx="+0.096450" unitinertiayy="+0.054649" unitinertiazz="+0.054649"
+	unitinertiaxy="+0.000002" unitinertiaxz="+0.000001" unitinertiayz="+0.000000"/>
+<mass name="mass_wheel4"
+	mass="1" volume="0.165464"
+	modelcmx="+0.899227" modelcmy="+2.097733" modelcmz="+0.009673"
+	unitinertiaxx="+0.096451" unitinertiayy="+0.054650" unitinertiazz="+0.054650"
+	unitinertiaxy="+0.000002" unitinertiaxz="+0.000000" unitinertiayz="+0.000000"/>
+<mass name="mass_wheel5"
+	mass="1" volume="0.165455"
+	modelcmx="+0.899187" modelcmy="-0.696227" modelcmz="+0.009670"
+	unitinertiaxx="+0.096450" unitinertiayy="+0.054649" unitinertiazz="+0.054649"
+	unitinertiaxy="+0.000002" unitinertiaxz="+0.000001" unitinertiayz="-0.000000"/>
+<mass name="mass_wheel6"
+	mass="1" volume="0.165455"
+	modelcmx="+0.899187" modelcmy="-1.885718" modelcmz="+0.009670"
+	unitinertiaxx="+0.096450" unitinertiayy="+0.054649" unitinertiazz="+0.054649"
+	unitinertiaxy="+0.000002" unitinertiaxz="+0.000001" unitinertiayz="+0.000000"/>
+<mass name="mass_fuel"
+	mass="1" volume="0.047251"
+	modelcmx="-0.008441" modelcmy="-0.446661" modelcmz="+1.998098"
+	unitinertiaxx="+0.071240" unitinertiayy="+0.273293" unitinertiazz="+0.344400"
+	unitinertiaxy="+0.000000" unitinertiaxz="+0.000000" unitinertiayz="+0.000000"/>
+<mass name="mass_fuel_1"
+	mass="1" volume="0.007655"
+	modelcmx="-1.017828" modelcmy="-0.065435" modelcmz="+0.968077"
+	unitinertiaxx="+0.081989" unitinertiayy="+0.061530" unitinertiazz="+0.020531"
+	unitinertiaxy="+0.000000" unitinertiaxz="-0.000000" unitinertiayz="+0.002026"/>
+<mass name="mass_fuel_2"
+	mass="1" volume="0.007170"
+	modelcmx="+1.000288" modelcmy="-0.065435" modelcmz="+0.968077"
+	unitinertiaxx="+0.081989" unitinertiayy="+0.061526" unitinertiazz="+0.020527"
+	unitinertiaxy="-0.000000" unitinertiaxz="+0.000000" unitinertiayz="+0.002026"/>
+</masses>

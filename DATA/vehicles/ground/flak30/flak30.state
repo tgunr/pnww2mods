@@ -1,0 +1,21 @@
+
+#FlaK 30 State File
+
+#DOF state type, name of variable, name, time to articulate
+#multiple states requier multiple lines
+dofstate 1 hatchstate1 hatch 1 2000
+#SMOKE: state type, name of variable, DOF name, smoke type, number
+sound 1 enginesound1 enginesound 1
+dofstate 1 bombbaydoor bombbaydoor 5000
+dofstate 1 canopystate1 canopy 1 2000
+dofstate 2 canopystate2 canopy 2 3000
+dofstate 2 canopystate3 canopy 3 2000
+
+# tread dust
+smokestate 1 treaddust1 tdustl1 treaddust 1
+smokestate 1 treaddust2 tdustr1 treaddust 2
+
+# Crash and burn stuff
+
+effect 1 crashexplosion crashexplosion
+

@@ -1,0 +1,110 @@
+#PzKpfw VI Ausf E (Created by Hatch 7/20/05)
+# damage resistance file for PzKpfw IV Ausf G
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+#
+#sounds and stuff
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 1000000
+#
+#Inside collider objects:
+d_engine,250,0,0,0,0
+d_transmission,250,0,0,0,0
+d_oiltank,8,0,0,0,0
+d_fueltank1,8,0,0,0,0
+d_fueltank2,8,0,0,0,0
+d_radiator1,8,0,0,0,0
+d_radiator2,8,0,0,0,0
+d_firewall,5,0,0,0,0
+d_turretammo,8,0,0,0,200
+d_hullammo,8,0,0,0,200
+d_tankcommanderhead,6.5,0,0,0,300
+d_tankcommandertorso,2.5,0,0,0,300
+d_tankcommanderarms,2.5,0,0,0,300
+d_tankcommanderlegs,1,0,0,0,800
+d_maingunnrhead,6.5,0,0,0,50
+d_maingunnrtorso,1.5,0,0,0,1000
+d_maingunnrarms,1,0,0,0,1000
+d_maingunnrlegs,1,0,0,0,1000
+d_loaderhead,6.5,0,0,0,850
+d_loadertorso,1.5,0,0,0,845
+d_loaderarms,1,0,0,0,845
+d_loaderlegs,1,0,0,0,845
+d_driverhead,6.5,0,0,0,1500
+d_drivertorso,1.5,0,0,0,1500
+d_driverarms,1,0,0,0,1500
+d_driverlegs,1,0,0,0,1500
+d_gunnerhead,6.5,0,0,0,1000
+d_gunnertorso,1.5,0,0,0,1000
+d_gunnerarms,1,0,0,0,1000
+d_gunnerlegs,1,0,0,0,1000
+#
+#Outside collider objects:
+d_turrettop,25,0,0,0,0
+d_turretbottom,25,0,0,0,0
+d_turretsides,80,0,0,0,0
+d_turretfront,100,0,0,0,0
+d_cupolahatch,25,0,0,0,0
+d_cupola,80,0,0,0,0
+d_cupolaarmor,25,0,0,0,0
+d_turretbustle,5,0,0,0,0
+d_mantlet,50,0,0,0,0
+d_75mmcanon,20,0,0,0,350000
+d_hullgun,20,0,0,0,0
+d_hulltop,25,0,0,0,0
+d_hullbottom,25,0,0,0,0
+d_drivershutter,100,0,0,0,0
+d_driverglass,80,0,0,0,0
+d_frontarmorplate,100,0,0,0,0
+d_hullsidetop,80,0,0,0,0
+d_hullsidebottom,60,0,0,0,0
+d_hullback,80,0,0,0,0
+d_hullfronttop,80,0,0,0,0
+d_hullfrontbottom,100,0,0,0,0
+d_righttreadguard,15,0,0,0,0
+d_lefttreadguard,15,0,0,0,0
+d_exhaust,15,0,0,0,0
+d_exhaustguards,15,0,0,0,0
+d_lefttread,25,0,0,0,145000
+d_leftdrivewheel,30,0,0,0,150000
+d_leftidlewheel,30,0,0,0,150000
+d_roadwheelleft1,30,0,0,0,125000
+d_roadwheelleft2,30,0,0,0,125000
+d_roadwheelleft3,30,0,0,0,125000
+d_roadwheelleft4,30,0,0,0,125000
+d_roadwheelleft5,30,0,0,0,125000
+d_roadwheelleft6,30,0,0,0,125000
+d_roadwheelleft7,30,0,0,0,125000
+d_roadwheelleft8,30,0,0,0,125000
+d_righttread,25,0,0,0,150000
+d_rightdrivewheel,30,0,0,0,150000
+d_rightidlewheel,30,0,0,0,150000
+d_roadwheelright1,30,0,0,0,125000
+d_roadwheelright2,30,0,0,0,125000
+d_roadwheelright3,30,0,0,0,125000
+d_roadwheelright4,30,0,0,0,125000
+d_roadwheelright5,30,0,0,0,125000
+d_roadwheelright6,30,0,0,0,125000
+d_roadwheelright7,30,0,0,0,125000
+d_roadwheelright8,30,0,0,0,125000

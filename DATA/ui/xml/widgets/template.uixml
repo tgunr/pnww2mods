@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<view id="template" x="0" y="0" width="1024" height="768" onshow="initTemplate(this)" style="background-image: ui/textures/test/bground_01.bmp;">
+	<include file="lib/common.uixml"/>
+	<include file="widgets/idcard.uixml"/>
+	<view x="43" y="600" width="930" height="32" style="
+					border-sides: ui/textures/test/infobox_side.bmp;
+					border-corner: ui/textures/test/infobox_corner.bmp;
+					border-width: 16;
+					border-height: 16;">
+		<caption id="quick-help" x="20" y="0" height="32" width="800" style="font-size: +1; color: #FFFFCE;"/>
+		<button id="quick-help-hotspot" x="895" y="6" height="20" width="20"
+			style=" color: #FFFFFF; control-on: ui/textures/test/info_icon_on.bmp; control-off: ui/textures/test/info_icon_off.bmp;"
+			onclick="soundPlayClick(); quickhelp(null, true);"/>
+	</view>
+	<button id="quit-button" x="980" y="725" width="30" height="30" onclick="tplQuit()"
+		style="control-on: ui/textures/test/exit_on.bmp; control-off: ui/textures/test/exit_off.bmp;"
+		tip="&widgets.template.quit.tip;"/>
+	<button id="back-button" label="@widgets.template.back;" x="832" y="62" width="150" height="30" onclick="tplBack()"
+		style="control-on: ui/textures/test/back_on.bmp; control-off: ui/textures/test/back_off.bmp; control-disabled: ui/textures/test/back_disabled.bmp; color: #FFFFFF; font-size: -3;"
+		onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+		tip="&widgets.template.back.tip;"/>
+	<button id="forward-button" label="@widgets.template.next;" x="832" y="28" width="150" height="30" onclick="tplForward()"
+		style="control-on: ui/textures/test/next_on.bmp; control-off: ui/textures/test/next_off.bmp; control-disabled: ui/textures/test/next_disabled.bmp; color: #FFFFFF; font-size: -3;"
+		onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+		tip="&widgets.template.next.tip;"/>
+	<script>
+		<!--
+		
+		// #BFE2CE <- tab pale green
+		// #3e5248 <- structure green
+		// #e9e3d9 <- offwhite regular text
+		// # FFFFFF header text
+		
+		var forwardButton 	= findview("forward-button");
+		var backButton 		= findview("back-button");
+		var helpWin 		= null;
+		
+		function initTemplate(template)
+		{
+			initGlobals();
+			
+			if(!window.doBack)
+			{
+				var back = template.findview("back-button");
+				
+				if(back)
+					back.visible = false;
+			}
+		}
+		
+		function tplForward()
+		{
+			soundPlayClick();
+			
+			if((!game.online || checkTimeLeft(game.player.client.state.timeleft)) && window.doForward != null)
+				window.doForward();
+		}
+		
+		function tplBack()
+		{
+			soundPlayClick();
+			
+			if((!game.online || checkTimeLeft(game.player.client.state.timeleft)) && window.doBack != null)
+				window.doBack();
+		}
+		
+		function tplQuit()
+		{
+			soundPlayClick();
+			loadWin("quit", false);
+		}
+		
+		function tplConfirmQuit(confirmed)
+		{
+			// this function is not used anymore
+		}
+		
+		function tplTab()
+		{
+			soundPlayShuffle();
+		}
+		
+		function showTab(index)
+		{
+			findview("body").value = index;
+		}
+		
+		function setBack(title, tip)
+		{
+			var titleText = getlocstring(title);
+			
+			backButton.label = titleText.toUpperCase();
+			backButton.settip(getlocstring(title + ".tip"));
+		}
+		
+		function setForward(title)
+		{
+			var titleText = getlocstring(title);
+			
+			forwardButton.label = titleText.toUpperCase();
+			forwardButton.settip(getlocstring(title + ".tip"));
+		}
+		
+		function setBackEnabled(flag)
+		{
+			backButton.enabled = flag;
+		}
+		
+		function setForwardEnabled(flag)
+		{
+			forwardButton.enabled = flag;
+		}
+	
+		function setHelp(message)
+		{
+			var caption = findview("quick-help");
+			
+			if(caption)
+				caption.label = message.toUpperCase();
+		}
+		
+		function doQuickHelp()
+		{
+			var body = game.findview("body");
+			
+			if(body != null && body.value > 0)
+				quickhelp(body.getchild(body.value).id, true);
+			else
+				quickhelp(window.name, true);
+		}
+		
+		-->
+	</script>
+</view>

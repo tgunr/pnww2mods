@@ -1,0 +1,36 @@
+# Hotchkiss 38 25mm
+# HE Round
+# Rev. 4/19/02 - bloo
+
+type = airburst
+diameter = .025
+weight = 0.250
+velocity = 900
+tracertime = 4.9
+stretchobject = 1
+object = bullet1
+dontdisplayfirstframe = 1
+explosive = 116370
+# .027 kg (TNT)
+
+fuzetime = 0.0001
+bc = 1.2
+lifetime = 5.0
+ricochetangle = 88
+# modelspall = 1
+penetrationconstant = 0.0000002561
+
+selfdestructtime = 6.0
+
+numshrapnelpieces = 30
+totalshrapnelmass = .223
+shrapnelpenetration = .0000005122
+
+explosionsoundnear = sounds\troop\grenade.wav
+explosionsoundfar = sounds\smlfarexp.wav
+
+nearfardistance = 300
+
+muzzleflash = 1
+hiteffect = incendiarymg
+tracerscale = 4

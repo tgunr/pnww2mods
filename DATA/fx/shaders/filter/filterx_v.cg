@@ -1,0 +1,26 @@
+struct appin
+{
+    float4 position  : POSITION;
+    float2 t0: TEXCOORD0;
+};
+
+struct vertout
+{
+    float4 position  : POSITION;
+    float2 t0: TEXCOORD0;
+};
+
+vertout main(appin IN)
+{
+	vertout OUT;
+
+	half2 p = sign(IN.position.xy);
+	OUT.position.xy = p;
+	OUT.position.z = 0;
+	OUT.position.w = 1;
+	
+	OUT.t0 = IN.t0;
+	
+	return OUT;
+}
+

@@ -1,0 +1,29 @@
+#engine stats file for pzivg
+[HL120TRM]
+basehorsepower = 300
+basehpalt = 0
+basehprpm = 2700
+basehppress = 1.0
+basehpexhausttemp = 1100
+idlethrottlepos = 0.05
+#idlerpm used only for downshifting purposes
+idlerpm = 800
+fuelperhphour = 0.260
+oilconsumptionperhour = 0
+wepmaxpress = 1.0
+milmaxpress = 1.0
+weprpm = 3000
+milrpm = 3000
+climbrpm = 3000
+econrpm = 3000
+
+superchargertype = none
+weptype = none
+
+#criticalrpm is the rpm at which below this the engine might stall, also used for starting
+criticalrpm 300
+
+#starterrpm is the rpm at which the starter motor will spin the engine at
+starterrpm 100
+#starterhp is the power of the starter motor
+starterhp 2

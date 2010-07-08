@@ -1,0 +1,1106 @@
+#M4A3(76) Sherman 
+#09/18/06 - created by Doc
+
+[drivewheelleft]
+criticalsecondary = 1
+#added for CC audit v1.13
+type = gear
+subtype = trackdrive
+gearnum = 14
+x = -1.01
+y = 2.67
+z = -0.142
+mass = 150
+inertiapitch = 7.96
+inertiaroll = 4.98
+inertiayaw = 4.98
+wheelradius = .307
+contactpointtype = metal
+#wheelrotationalinertia = 7.96
+wheelrotationalinertia = 85
+braketype = left
+brakestrength = 165000
+# Only Driver wheels get: 
+# atspeedrollcoefficient = to or < than rollcoefficient
+rollcoefficient = 0.015
+atspeedrollcoefficient = 0.041
+atspeedkph  = 50
+tracknum = 1
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_drivel
+hitmapcomponent2 = d_lefttread
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+visdamage = lefttread
+visdamage = drivewheelleft
+damagelevelfail = 600000
+
+[drivewheelright]
+criticalsecondary = 1
+#added for CC audit v1.13
+type = gear
+subtype = trackdrive
+gearnum = 16
+x = 1.01
+y = 2.67
+z = -0.142
+mass = 150
+inertiapitch = 7.96
+inertiaroll = 4.98
+inertiayaw = 4.98
+wheelradius = .307
+contactpointtype = metal
+#wheelrotationalinertia = 7.96
+wheelrotationalinertia = 85
+braketype = right
+brakestrength = 165000
+rollcoefficient = 0.015                                    
+atspeedrollcoefficient = 0.041
+atspeedkph  = 50
+tracknum = 2
+hitmapcomponent1 = d_driver
+hitmapcomponent2 = d_righttread
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+visdamage = righttread
+visdamage = drivewheelright
+damagelevelfail = 600000
+
+[idlerwheelleft]
+criticalsecondary = 1
+#added for CC audit v1.13
+type = gear
+subtype = trackroad
+gearnum = 13
+x = -1.01
+y = -2.053
+z = -0.203
+mass = 130
+inertiapitch = 5.4
+inertiaroll = 3.27
+inertiayaw = 3.27
+strutlength = 0
+wheelradius = 0.279
+contactpointtype = tire
+wheelrotationalinertia = 5.4
+drivewheel = drivewheelleft
+strutspringstrength = 65000
+strutshockstrength = 16250
+strutshockreturnstrength = 4000
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo or other weapon parts
+hitmapcomponent1 = d_idleleft
+hitmapcomponent2 = d_lefttread
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+visdamage = lefttread
+visdamage = idlerwheelleft
+damagelevelfail = 600000
+
+[idlerwheelright]
+criticalsecondary = 1
+#added for CC audit v1.13
+type = gear
+subtype = trackroad
+gearnum = 15
+x = 1.01
+y = -2.053
+z = -0.203
+mass = 130
+inertiapitch = 5.4
+inertiaroll = 3.27
+inertiayaw = 3.27
+strutlength = 0
+wheelradius = 0.279
+contactpointtype = tire
+wheelrotationalinertia = 5.4
+drivewheel = drivewheelright
+strutspringstrength = 65000
+strutshockstrength = 16250
+strutshockreturnstrength = 4000
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_idlelright
+hitmapcomponent2 = d_righttread
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+visdamage = righttread
+visdamage = idlerwheelright
+damagelevelfail = 600000
+
+
+[road1left]
+type = gear
+subtype = trackroad
+gearnum = 1
+x = -1.01
+y = 2.218
+z = -0.519
+mass = 130
+inertiapitch = 4.34
+inertiaroll = 2.74
+inertiayaw = 2.74
+strutlength = 0
+wheelradius = 0.254
+contactpointtype = metal
+wheelrotationalinertia = 4.34
+drivewheel = drivewheelleft
+strutspringstrength = 65000
+strutshockstrength = 16250
+strutshockreturnstrength = 4000
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_road1
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+visdamage = lefttread
+damagelevelfail = 600000
+
+[road2left]
+type = gear
+subtype = trackroad
+gearnum = 2
+x = -1.04
+y = 1.39
+z = -0.519
+mass = 130
+inertiapitch = 4.34
+inertiaroll = 2.74
+inertiayaw = 2.74
+strutlength = 0
+wheelradius = 0.254
+contactpointtype = metal
+wheelrotationalinertia = 4.34
+drivewheel = drivewheelleft
+strutspringstrength = 65000
+strutshockstrength = 16250
+strutshockreturnstrength = 4000
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_road2
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+visdamageparent = lefttread
+visdamage = road2left
+damagelevelfail = 600000
+
+[road3left]
+type = gear
+subtype = trackroad
+gearnum = 3
+x = -1.04
+y = 0.826
+z = -0.519
+mass = 130
+inertiapitch = 4.34
+inertiaroll = 2.74
+inertiayaw = 2.74
+strutlength = 0
+wheelradius = 0.254
+contactpointtype = metal
+wheelrotationalinertia = 4.34
+drivewheel = drivewheelleft
+strutspringstrength = 65000
+strutshockstrength = 16250
+strutshockreturnstrength = 4000
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_road4
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+visdamageparent = lefttread
+visdamage = road3left
+damagelevelfail = 600000
+
+[road4left]
+type = gear
+subtype = trackroad
+gearnum = 4
+x = -1.04
+y = 0
+z = -0.519
+mass = 130
+inertiapitch = 4.34
+inertiaroll = 2.74
+inertiayaw = 2.74
+strutlength = 0
+wheelradius = 0.254
+contactpointtype = metal
+wheelrotationalinertia = 4.34
+drivewheel = drivewheelleft
+strutspringstrength = 65000
+strutshockstrength = 16250
+strutshockreturnstrength = 4000
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_road4
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+visdamageparent = lefttread
+visdamage = road4left
+damagelevelfail = 600000
+
+[road5left]
+type = gear
+subtype = trackroad
+gearnum = 5
+x = -1.04
+y = -0.566
+z = -0.519
+mass = 130
+inertiapitch = 4.34
+inertiaroll = 2.74
+inertiayaw = 2.74
+strutlength = 0
+wheelradius = 0.254
+contactpointtype = metal
+wheelrotationalinertia = 4.34
+drivewheel = drivewheelleft
+strutspringstrength = 65000
+strutshockstrength = 16250
+strutshockreturnstrength = 4000
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_road5
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+visdamageparent = lefttread
+visdamage = road5left
+damagelevelfail = 600000
+
+[road6left]
+type = gear
+subtype = trackroad
+gearnum = 6
+x = -1.04
+y = -1.369
+z = -0.519
+mass = 130
+inertiapitch = 4.34
+inertiaroll = 2.74
+inertiayaw = 2.74
+strutlength = 0
+wheelradius = 0.254
+contactpointtype = metal
+wheelrotationalinertia = 4.34
+drivewheel = drivewheelleft
+strutspringstrength = 65000
+strutshockstrength = 16250
+strutshockreturnstrength = 4000
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_road6
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+visdamage = lefttread
+damagelevelfail = 600000
+
+[jittermassleft]
+type = ballast
+subtype = ballast
+x = -1.04
+y = 0.413
+z = 0
+mass = 1750
+inertiapitch = 10000
+inertiaroll = 10000
+inertiayaw = 10000
+visdamage = lefttread
+visdamageparent = turret
+activateiffail = 1
+
+[jittermassright]
+type = ballast
+subtype = ballast
+x = 1.04
+y = 0.413
+z = 0
+mass = 1750
+inertiapitch = 10000
+inertiaroll = 10000
+inertiayaw = 10000
+visdamage = righttread
+visdamageparent = turret
+activateiffail = 1
+
+
+[road1right]
+type = gear
+subtype = trackroad
+gearnum = 7
+x = 1.04
+y = 2.218
+z = -0.519
+mass = 130
+inertiapitch = 4.34
+inertiaroll = 2.74
+inertiayaw = 2.74
+strutlength = 0
+wheelradius = 0.254
+contactpointtype = metal
+wheelrotationalinertia = 4.34
+drivewheel = drivewheelright
+strutspringstrength = 65000
+strutshockstrength = 16250
+strutshockreturnstrength = 4000
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_road7
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+visdamage = righttread
+damagelevelfail = 600000
+
+[road2right]
+type = gear
+subtype = trackroad
+gearnum = 8
+x = 1.04
+y = 1.39
+z = -0.519
+mass = 130
+inertiapitch = 4.34
+inertiaroll = 2.74
+inertiayaw = 2.74
+strutlength = 0
+wheelradius = 0.254
+contactpointtype = metal
+wheelrotationalinertia = 4.34
+drivewheel = drivewheelright
+strutspringstrength = 65000
+strutshockstrength = 16250
+strutshockreturnstrength = 4000
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_road8
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+visdamageparent = righttread
+visdamage = road2right
+damagelevelfail = 600000
+
+[road3right]
+type = gear
+subtype = trackroad
+gearnum = 9
+x = 1.04
+y = 0.826
+z = -0.519
+mass = 130
+inertiapitch = 4.34
+inertiaroll = 2.74
+inertiayaw = 2.74
+strutlength = 0
+wheelradius = 0.254
+contactpointtype = metal
+wheelrotationalinertia = 4.34
+drivewheel = drivewheelright
+strutspringstrength = 65000
+strutshockstrength = 16250
+strutshockreturnstrength = 4000
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_road9
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+visdamageparent = righttread
+visdamage = road3right
+damagelevelfail = 600000
+
+[road4right]
+type = gear
+subtype = trackroad
+gearnum = 10
+x = 1.04
+y = 0
+z = -0.519
+mass = 130
+inertiapitch = 4.34
+inertiaroll = 2.74
+inertiayaw = 2.74
+strutlength = 0
+wheelradius = 0.254
+contactpointtype = metal
+wheelrotationalinertia = 4.34
+drivewheel = drivewheelright
+strutspringstrength = 65000
+strutshockstrength = 16250
+strutshockreturnstrength = 4000
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_road10
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+visdamageparent = righttread
+visdamage = road4right
+damagelevelfail = 600000
+
+[road5right]
+type = gear
+subtype = trackroad
+gearnum = 11
+x = 1.04
+y = -0.566
+z = -0.519
+mass = 130
+inertiapitch = 4.34
+inertiaroll = 2.74
+inertiayaw = 2.74
+strutlength = 0
+wheelradius = 0.254
+contactpointtype = metal
+wheelrotationalinertia = 4.34
+drivewheel = drivewheelright
+strutspringstrength = 65000
+strutshockstrength = 16250
+strutshockreturnstrength = 4000
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_road11
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+visdamageparent = righttread
+visdamage = road5right
+damagelevelfail = 600000
+
+[road6right]
+type = gear
+subtype = trackroad
+gearnum = 12
+x = 1.04
+y = -1.369
+z = -0.519
+mass = 130
+inertiapitch = 4.34
+inertiaroll = 2.74
+inertiayaw = 2.74
+strutlength = 0
+wheelradius = 0.254
+contactpointtype = metal
+wheelrotationalinertia = 4.34
+drivewheel = drivewheelright
+strutspringstrength = 65000
+strutshockstrength = 16250
+strutshockreturnstrength = 4000
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_road12
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+visdamage = righttread
+damagelevelfail = 600000
+
+[return1left]
+type = gear
+subtype = trackroad
+gearnum = 17
+x = 1.04
+y = 1.39
+z = 0
+mass = 80
+inertiapitch = 0.582
+inertiaroll = 0.641
+inertiayaw = 0.641
+wheelradius = 0.118
+wheelrotationalinertia = 11
+drivewheel = drivewheelleft
+contactpointtype = metal
+hitmapcomponent1 = d_return1
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+
+[return2left]
+type = gear
+subtype = trackroad
+gearnum = 18
+x = 1.04
+y = 0
+z = 0
+mass = 80
+inertiapitch = 0.582
+inertiaroll = 0.641
+inertiayaw = 0.641
+wheelradius = 0.118
+wheelrotationalinertia = 11
+drivewheel = drivewheelleft
+contactpointtype = metal
+hitmapcomponent1 = d_return2
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+
+[return3left]
+type = gear
+subtype = trackroad
+gearnum = 19
+x = 1.04
+y = -1.37
+z = 0
+mass = 80
+inertiapitch = 0.582
+inertiaroll = 0.641
+inertiayaw = 0.641
+wheelradius = 0.118
+wheelrotationalinertia = 11
+drivewheel = drivewheelleft
+contactpointtype = metal
+hitmapcomponent1 = d_return3
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+
+[return1right]
+type = gear
+subtype = trackroad
+gearnum = 20
+x = -1.04
+y = 1.39
+z = 0
+mass = 80
+inertiapitch = 0.582
+inertiaroll = 0.641
+inertiayaw = 0.641
+wheelradius = 0.118
+wheelrotationalinertia = 11
+drivewheel = drivewheelright
+contactpointtype = metal
+hitmapcomponent1 = d_return4
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+
+[return2right]
+type = gear
+subtype = trackroad
+gearnum = 21
+x = -1.04
+y = 0
+z = 0
+mass = 80
+inertiapitch = 0.582
+inertiaroll = 0.641
+inertiayaw = 0.641
+wheelradius = 0.118
+wheelrotationalinertia = 11
+drivewheel = drivewheelright
+contactpointtype = metal
+hitmapcomponent1 = d_return5
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+
+[return3right]
+type = gear
+subtype = trackroad
+gearnum = 22
+x = -1.04
+y = -1.37
+z = 0
+mass = 80
+inertiapitch = 0.582
+inertiaroll = 0.641
+inertiayaw = 0.641
+wheelradius = 0.118
+wheelrotationalinertia = 11
+drivewheel = drivewheelright
+contactpointtype = metal
+hitmapcomponent1 = d_return6
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 150000
+damagelevel2 = 300000
+damagelevel3 = 450000
+damagelevel4 = 600000
+
+[transmission]
+type = engine
+subtype = transmission
+transtype = clutchandbrake
+x = 0
+y = 2.14
+z = -0.224
+mass = 1000
+inertiapitch = 96.67
+inertiaroll = 26.67
+inertiayaw = 96.67
+drivewheel1 = drivewheelleft
+drivewheel2 = drivewheelright
+# Damage is done w/ engine componenet
+d_transmission
+hitmapcomponent1 = d_transmission
+damagelevel1 = 3000
+damagelevel2 = 30000
+damagelevel3 = 300000
+damagelevel4 = 600000
+
+[gearbox]
+type = engine
+subtype = gearbox
+x = 0
+y = 2.67
+z = -0.142
+mass = 800
+inertiapitch = 9.0
+inertiaroll = 166.32
+inertiayaw = 166.32
+numforwardgears = 5
+numreversegears = 1
+#gear1ratio = 83.82
+#gear2ratio = 34.48
+#gear3ratio = 19.74
+#gear4ratio = 12.31
+#gear5ratio = 7.24
+gear1ratio = 49.32
+gear2ratio = 27.76
+gear3ratio = 15.03
+gear4ratio = 9.45
+gear5ratio = 6.9
+#gear5ratio = 5.34
+#reverse1ratio = 20.01
+reverse1ratio = 41.35
+propellercomponent = transmission
+
+[clutch]
+type = engine
+subtype = clutch
+clutchforce = 10000
+clutchstart = 0.1
+clutchend = 0.8
+clutchdisengaged = 0.2
+flywheelrotinertia = 35
+propellercomponent = gearbox
+
+[fueltank1]
+type = engine
+subtype = fueltank
+x = -1.02
+y = -1.345
+z = 0.566
+mass = 250
+inertiapitch = 37.03
+inertiaroll = 10.25
+inertiayaw = 36.06
+tanknum = 2
+fueltanktype = integral
+hitmapcomponent1 = d_fuel1
+fuelburncomponent1 = d_fuel1
+fuelburncomponent2 = d_commlegs
+fuelburncomponent3 = d_gunnertorso
+fuelburncomponent4 = d_loadertorso
+fuelburncomponent5 = d_drivertorso_1
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 4500
+damagelevel2 = 16500
+damagelevel3 = 256500
+damagelevel4 = 480000
+
+[fueltank2]
+type = engine
+subtype = fueltank
+x = 1.02
+y = -1.345
+z = 0.566
+mass = 250
+inertiapitch = 37.03
+inertiaroll = 10.25
+inertiayaw = 36.06
+tanknum = 1
+fueltanktype = integral
+hitmapcomponent1 = d_fuel2
+fuelburncomponent1 = d_fuel2
+fuelburncomponent2 = d_commlegs
+fuelburncomponent3 = d_gunnertorso
+fuelburncomponent4 = d_loadertorso
+fuelburncomponent5 = d_drivertorso_1
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 4500
+damagelevel2 = 16500
+damagelevel3 = 256500
+damagelevel4 = 480000
+
+[oiltank1]
+type = engine
+subtype = oiltank
+x = -0.212
+y = -1.369
+z = -0.2
+mass = 12
+inertiapitch = 7.5
+inertiaroll = 1.55
+inertiayaw = 7.5
+tanknum = 1
+hitmapcomponent1 = d_engine1
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 4500
+damagelevel2 = 45000
+damagelevel3 = 135000
+
+[oiltank2]
+type = engine
+subtype = oiltank
+x = 0.212
+y = -1.369
+z = -0.2
+mass = 12
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+tanknum = 2
+hitmapcomponent1 = d_engine2
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 4500
+damagelevel2 = 45000
+damagelevel3 = 135000
+
+[radiator1]
+type = engine
+subtype = radiator
+x = -0.378
+y = -2.053
+z = 0.378
+mass = 37
+inertiapitch = 1.43
+inertiaroll = 2.79
+inertiayaw = 1.53
+tanknum = 1
+hitmapcomponent1 = d_radiator1
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 4500
+damagelevel2 = 45000
+damagelevel3 = 135000
+
+[radiator2]
+type = engine
+subtype = radiator
+x = 0.378
+y = -2.053
+z = 0.378
+mass = 37
+inertiapitch = 1.43
+inertiaroll = 2.79
+inertiayaw = 1.53
+tanknum = 2
+hitmapcomponent1 = d_radiator2
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 4500
+damagelevel2 = 45000
+damagelevel3 = 135000
+
+[Engine]
+type = engine
+subtype = engine
+criticalprimary = 1
+#changed for CC audit v1.13
+enginetype = Ford_GAA
+propellercomponent = clutch
+x = 0
+y = -1.169
+z = 0
+mass = 1158
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+#attpitch =
+#attroll =
+#attyaw = 
+enginenumber = 1
+fueltank1component = fueltank1
+fueltank2component = fueltank2
+oiltankcomponent = oiltank1
+radiator1component = radiator1
+enginesound = sounds\a13\engine.wav
+idlesound = sounds\a13\idle.wav
+startersound = sounds\startercrank.wav
+hitmapcomponent1 = d_engine1
+damagelevel1 = 3000
+damagelevel2 = 30000
+damagelevel3 = 300000
+damagelevel4 = 600000
+visdamage = engine
+damagelevelfail = 600000
+
+[engine_mass]
+type = ballast
+subtype = none
+x = 0
+y = -1.169
+z = 0
+mass = 2400
+inertiapitch = 139.44
+inertiaroll = 83.54
+inertiayaw = 83.54
+
+[Turret]
+type = ballast
+subtype = armor
+x = 0
+y = 0.5
+z = 1.227
+mass = 3000
+inertiapitch = 927.66
+inertiaroll = 927.66
+inertiayaw = 1533.72
+#hitmapcomponent1 = d_30calammo
+#hitmapcomponent2 = d_75ammo1
+#hitmapcomponent2 = d_75ammo2
+#damagelevel of zero or less means that level isn't used
+visdamage = turret
+visdamageparent = ammocook
+#damagelevelfail = 1000000
+hulkiffail = 1
+
+[76.2mm Main Gun]
+type = weaponmount
+triggertype = primary
+criticalprimary = 1
+inertiapitch = 306.12
+inertiaroll = 4.29
+inertiayaw = 306.12
+gunfiresmokelevel = 0.1
+position = 3
+selectornum = 1
+confignum = 1
+mountnum = 1
+weapon = 76l52m1a2
+weaponsound = sounds\m10\3inchm7.wav
+reloadsound = sounds\autoloader.wav
+ammocount = 56
+ammofile = 76mml52m79ap.belt
+ammocount2 = 15
+ammofile2 = 76l52m1a2he.belt
+beltname = AP
+beltname2 = HE
+collidertype = front60deg
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_gunbarrel
+hitmapcomponent2 = d_75ammo1
+hitmapcomponent3 = d_75ammo2
+ammoexplosioncomponent1 = d_gunbarrel
+ammoexplosioncomponent2 = d_gunnerhead
+ammoexplosioncomponent3 = d_commhead
+ammoexplosioncomponent4 = d_loaderhead
+ammoexplosioncomponent5 = d_driverhead_1
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 250000
+damagelevel2 = 1500
+damagelevel3 = 1500
+damagelevel4 = 0
+
+[coax_mount]
+type = weaponmount
+#criticalsecondary = 1
+triggertype = secondary
+position = 3
+selectornum = 1
+confignum = 1
+mountnum = 2
+weapon = besa
+weaponsound = sounds\m4a2\mg.wav
+reloadsound = sounds\mgreload.wav
+ammocount = 2400
+ammofile = besa.belt
+beltname = COAX
+collidertype = front60deg
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+#hitmapcomponent1 = d_coax
+#hitmapcomponent2 = d_75ammo1
+ammoexplosioncomponent1 = d_driverhead_1
+ammoexplosioncomponent2 = d_gunnerhead
+ammoexplosioncomponent3 = d_30calammo
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 15000
+damagelevel2 = 1500
+damagelevel3 = 0
+damagelevel4 = 0
+
+[bow_gun]
+type = weaponmount
+triggertype = primary
+position = 4
+selectornum = 1
+confignum = 1
+mountnum = 3
+weapon = besa
+weaponsound = sounds\m4a2\mg.wav
+reloadsound = sounds\mgreload.wav
+ammocount = 2400
+ammofile = besa.belt
+beltname = MG
+collidertype = front60deg
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_mgun
+hitmapcomponent2 = d_30calammo
+ammoexplosioncomponent1 = d_loaderhead
+ammoexplosioncomponent2 = d_driverhead_1
+ammoexplosioncomponent3 = d_gunnerhead
+ammoexplosioncomponent4 = d_30calammo
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 50000
+damagelevel2 = 1500
+damagelevel3 = 0
+damagelevel4 = 0
+
+[crew_driver]
+type = crew
+criticalprimary = 1
+crewposition = 1
+hitmapcomponent1 = d_driverhead_1
+hitmapcomponent2 = d_drivertorso_1
+hitmapcomponent3 = d_driverarms_1
+hitmapcomponent4 = d_driverlegs_1
+
+[crew_gunner]
+type = crew
+criticalprimary = 1
+crewposition = 3
+hitmapcomponent1 = d_gunnerhead
+hitmapcomponent2 = d_gunnertorso
+hitmapcomponent3 = d_gunnerarms
+hitmapcomponent4 = d_gunnerlegs
+
+[crew_commander]
+type = crew
+crewposition = 2
+hitmapcomponent1 = d_commhead
+hitmapcomponent2 = d_commtorso
+hitmapcomponent3 = d_commarms
+hitmapcomponent4 = d_commlegs
+
+[crew_loader]
+type = crew
+crewposition = 4
+hitmapcomponent1 = d_loaderhead
+hitmapcomponent2 = d_loadertorso
+hitmapcomponent3 = d_loaderarms
+hitmapcomponent4 = d_loaderlegs
+
+[hullmassleftfront]
+type = ballast
+subtype = armor
+x = -0.392
+y = 1.734
+z = 0.173
+mass = 5922
+#correct inertias commented out 
+#until fucking ground is fixed
+inertiapitch = 4504.34
+#inertiaroll = 1158.26
+inertiayaw = 3901.53
+#inertiapitch = 8307.53
+inertiaroll = 2136.23
+#inertiayaw = 7195.73
+
+[hullmassrightfront]
+type = ballast
+subtype = armor
+x = 0.392
+y = 1.734
+z = 0.173
+mass = 5922
+#correct inertias commented out 
+#until fucking ground is fixed
+inertiapitch = 4504.34
+#inertiaroll = 1158.26
+inertiayaw = 3901.53
+#inertiapitch = 8307.53
+inertiaroll = 2136.23
+#inertiayaw = 7195.73
+
+[hullmassleftrrear]
+type = ballast
+subtype = armor
+x = -0.392
+y = -0.84
+z = 0.173
+mass = 5922
+#correct inertias commented out 
+#until fucking ground is fixed
+inertiapitch = 4172.04
+#inertiaroll = 1072.81
+inertiayaw = 3613.7
+#inertiapitch = 8307.53
+inertiaroll = 2136.23
+#inertiayaw = 7195.73
+
+[hullmassrightrear]
+type = ballast
+subtype = armor
+x = 0.392
+y = -0.84
+z = 0.173
+mass = 5922
+#correct inertias commented out 
+#until fucking ground is fixed
+inertiapitch = 4172.04
+#inertiaroll = 1072.81
+inertiayaw = 3613.7
+#inertiapitch = 8307.53
+inertiaroll = 2136.23
+#inertiayaw = 7195.73
+
+#Total Weight
+#33840kg Total Sherman M4A3
+
+#totalmass = X should be the total historical mass of the vehicle
+totalmass = 33840

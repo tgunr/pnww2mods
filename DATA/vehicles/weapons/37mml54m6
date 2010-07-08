@@ -1,0 +1,17 @@
+# Created 10/06/03 -Doc.
+# M6 gun for Stuart M3 tank
+
+mass = 0.0
+firetype = singleshot
+rateoffire = 30
+dispersion = 0.07
+ammotype1 = 37mml54m6ap
+ammotype2 = 37mml54m6he
+ghostrof = 20
+ghostammotype = 37mml54m6he
+cliprounds = 1
+reloadtime = 3
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = na

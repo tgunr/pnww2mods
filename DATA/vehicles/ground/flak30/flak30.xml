@@ -1,0 +1,11 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="flak30" type="ground" shape="flak30" description="FlaK 30 (20 mm) AA Gun" icon="FlaK 30 Gun">
+<include file="flak30.veh.xml"/>
+<include file="flak30.state.xml"/>
+<include file="flak30.hit.xml"/>
+<include file="flak30.turret.xml"/>
+<include file="flak30.loadout.xml"/>
+<include file="flak30.xsound.xml"/>
+<include file="flak30.control.xml"/>
+</vehicle>

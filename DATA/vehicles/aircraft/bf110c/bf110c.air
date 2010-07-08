@@ -1,0 +1,86 @@
+#airfoils file for bf110c
+
+[propeller]
+baseairfoil = propbase.pol
+up10degairfoil = prop_up10.pol
+down10degairfoil = prop_dn10.pol
+stallfile = prop.stall
+compressibilityfile = prop.compress
+
+[bf110c_root]
+baseairfoil = naca2317.pol
+up10degairfoil = naca2317.pol
+down10degairfoil = naca2317.pol
+stallfile = naca2317.sta
+compressibilityfile = naca2317.compress
+
+[bf110c_mid_inner]
+baseairfoil = naca2315.pol
+up10degairfoil = naca2315.pol
+down10degairfoil = naca2315.pol
+stallfile = naca2315.sta
+compressibilityfile = naca2315.compress
+
+[bf110c_mid_outer]
+baseairfoil = naca2314.pol
+up10degairfoil = naca2314.pol
+down10degairfoil = naca2314.pol
+stallfile = naca2314.sta
+compressibilityfile = naca2314.compress
+
+[bf110c_ail_ib]
+baseairfoil = naca2313.pol
+up10degairfoil = naca2313up10.pol
+down10degairfoil = naca2313down10.pol
+stallfile = naca2313.sta
+compressibilityfile = naca2313.compress
+
+[bf110c_ail_ib_slotdeployed]
+baseairfoil = naca2313slat.pol
+up10degairfoil = naca2313up10slat.pol
+down10degairfoil = naca2313down10slat.pol
+stallfile = naca2313.sta
+compressibilityfile = naca2313.compress
+
+[bf110c_ail_ob]
+baseairfoil = naca2312.pol
+up10degairfoil = naca2312up10.pol
+down10degairfoil = naca2312down10.pol
+stallfile = naca2312.sta
+compressibilityfile = naca2312.compress
+
+[bf110c_ail_ob_slotdeployed]
+baseairfoil = naca2312slat.pol
+up10degairfoil = naca2312up10slat.pol
+down10degairfoil = naca2312down10slat.pol
+stallfile = naca2312.sta
+compressibilityfile = naca2312.compress
+
+[bf110c_vertstab]
+baseairfoil = naca0008.pol
+up10degairfoil = naca0008up10.pol
+down10degairfoil = naca0008down10.pol
+stallfile = naca0008.sta
+compressibilityfile = naca0008.compress
+
+[bf110c_horizstab]
+baseairfoil = 1310hstab31_5base.pol
+up10degairfoil = 1310hstab31_5up10.pol
+down10degairfoil = 1310hstab31_5down10.pol
+stallfile = 1310.sta
+compressibilityfile = 1310.compress
+
+[flatplate]
+baseairfoil = flatplat.pol
+up10degairfoil = flatplat.pol
+down10degairfoil = flatplat.pol
+stallfile = flatplat.stall
+compressibilityfile = flatplat.compress
+
+[fuselage]
+baseairfoil = 0010base.pol
+up10degairfoil = 0010base.pol
+down10degairfoil = 0010base.pol
+stallfile = 0010.stall
+compressibilityfile = 0010.compress
+

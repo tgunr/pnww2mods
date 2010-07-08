@@ -1,0 +1,88 @@
+struct app2vert
+{   
+    float4 Position     : POSITION;
+    float4 Normal       : NORMAL;
+    float4 TexCoord0    : TEXCOORD0;
+    float4 TexCoord1    : TEXCOORD1;
+};
+
+struct vertout
+{
+    float4 Position    : POSITION;
+    float4 Color       : COLOR;
+    float4 TexCoord0   : TEXCOORD0;
+    float  fog         : FOG;
+};
+
+vertout main(app2vert IN,
+             uniform half2 TimeAndPeriod,
+             uniform half2 lodParams,
+             uniform half4 windDir,
+             uniform half4 ambColor,
+             uniform float4x4 billboard,
+             uniform float4x4 mViewProj,
+             uniform float4x4 mModelView)
+{
+    vertout OUT;
+       
+    IN.Position.w = 1.0f;
+    
+    half4 distanceFromCam;
+       
+    half4 camPos = mModelView._m30_m31_m32_m33;
+    half4 pos = mul(mModelView, IN.Position);
+    
+    distanceFromCam = pos - camPos;
+    
+    // Next two operations uses one less instruction than just sqrt
+    distanceFromCam.x = rsqrt(dot(distanceFromCam, distanceFromCam));
+    distanceFromCam.x = 1.0f / distanceFromCam.x;
+
+    half4 offsetPos;
+
+    half4 r0 = half4(0, 0, 0, 0);
+    half4 r1 = half4(0, 0, 0, 0);
+
+    // IN.Color.w = move
+    // IN.TexCoord1.w = noise
+    r0   = IN.Position * TimeAndPeriod.y + IN.TexCoord1.w;
+    r0.w = 0;
+    
+    r0 = dot(r0, windDir);
+    r0.x += TimeAndPeriod.x;    
+        
+    // 0.63662f = 4.0f / 2PI
+    r1.x = 0.63662f * r0.x;
+        
+    sincos(r1.x, r0.y, r0.x);
+    
+    half4 windBlownPos = IN.Position;
+ 
+    // IN.TexCoord1.z = throw    
+    windBlownPos.x = IN.TexCoord1.z * r0.x + IN.Position.x;
+    windBlownPos.y = IN.TexCoord1.z * r0.y + IN.Position.y;
+
+    // IN.TexCoord1.x = corner
+    offsetPos = billboard[IN.TexCoord1.x] * IN.TexCoord1.y + windBlownPos;
+    offsetPos.w = 1.0f;
+       
+    half4 alphaValue;
+    
+    alphaValue.y = distanceFromCam.x - lodParams.x;
+    alphaValue.z = 1.0f / lodParams.y;
+    alphaValue.w = alphaValue.y * alphaValue.z;
+    alphaValue.x = 1.0f - alphaValue.w;
+    alphaValue.x = max(alphaValue.x, 0.0f);
+    alphaValue.x = min(alphaValue.x, 1.0f);
+   
+    OUT.Color = ambColor;
+    OUT.Color.w = alphaValue.x;
+  
+    OUT.Position = mul(mViewProj, offsetPos);
+
+    OUT.TexCoord0 = IN.TexCoord0;
+        
+    OUT.fog = dot(mViewProj[2], offsetPos);
+
+    return OUT;
+}

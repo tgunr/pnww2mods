@@ -1,0 +1,14 @@
+section, CATEGORY, weapClass
+default,,SV_riverine.0
+spawn,de_mtb,
+#spawn,z34,SV_sea.0
+
+
+section,riverine, weapClass
+default,,SV_riverine.0
+spawn,de_mtb,
+
+section,sea, weapClass
+default,,SV_sea.0
+spawn,z34,
+spawn,de_freighter,

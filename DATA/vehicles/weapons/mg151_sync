@@ -1,0 +1,20 @@
+# Syncronized version of the MG151/20E German aircraft cannon. 
+# Created 1/21/05 - doc
+
+mass = 42.3
+firetype = auto
+rateoffire = 610
+#syncrateoffire = 610
+dispersion = 0.15
+#dispersion is a placeholder
+
+ammotype1 = mg151he
+ammotype2 = mg151hei
+ammotype3 = mg151ap
+ammotype4 = mg151mine
+ghostrof = 200
+ghostammotype = mg151he
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = na

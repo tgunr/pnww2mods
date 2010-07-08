@@ -1,0 +1,72 @@
+#airfoils file for h81a2
+
+[propeller]
+baseairfoil = propbase.pol
+up10degairfoil = prop_up10.pol
+down10degairfoil = prop_dn10.pol
+stallfile = prop.stall
+compressibilityfile = prop.compress
+
+[h81a2root]
+baseairfoil = 2215.pol
+up10degairfoil = 2215up10.pol
+down10degairfoil = 2215down10.pol
+stallfile = 2215.stall
+compressibilityfile = 2215.compress
+
+[h81a2mid]
+baseairfoil = 2213.pol
+up10degairfoil = 2213up10.pol
+down10degairfoil = 2213down10.pol
+stallfile = 2213.stall
+compressibilityfile = 2213.compress
+
+[h81a2ailib]
+baseairfoil = 2211.pol
+up10degairfoil = 2211up10.pol
+down10degairfoil = 2211down10.pol
+stallfile = 2211.stall
+compressibilityfile = 2211.compress
+
+[h81a2ailob]
+baseairfoil = 2209.pol
+up10degairfoil = 2211up10.pol
+down10degairfoil = 2211down10.pol
+stallfile = 2209.stall
+compressibilityfile = 2209.compress
+
+[h81a2tip]
+baseairfoil = 2209.pol
+up10degairfoil = 2209.pol
+down10degairfoil = 2209.pol
+stallfile = 2209.stall
+compressibilityfile = 2209.compress
+
+[h81a2horizstab]
+baseairfoil = 0010base.pol
+up10degairfoil = 0010ruddup10.pol
+down10degairfoil = 0010rudddown10.pol
+stallfile = 0010.stall
+compressibilityfile = 0010.compress
+
+[h81a2vertstab]
+baseairfoil = 0010base.pol
+up10degairfoil = 0010ruddup10.pol
+down10degairfoil = 0010rudddown10.pol
+stallfile = 0010.stall
+compressibilityfile = 0010.compress
+
+[flatplate]
+baseairfoil = flatplat.pol
+up10degairfoil = flatplat.pol
+down10degairfoil = flatplat.pol
+stallfile = flatplat.stall
+compressibilityfile = flatplat.compress
+
+[fuselage]
+baseairfoil = 0010base.pol
+up10degairfoil = 0010base.pol
+down10degairfoil = 0010base.pol
+stallfile = 0010.stall
+compressibilityfile = 0010.compress
+

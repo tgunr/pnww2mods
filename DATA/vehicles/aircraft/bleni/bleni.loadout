@@ -1,0 +1,71 @@
+# Blenheim Mk IV loadout file
+
+# sounds available for the mounts
+sound1 = sounds\bleniv\xgun.wav
+# sound2 = sounds\ju87b\bombrel.wav
+
+loadout = 1
+
+mountnum = 1
+mountobject = winggunx
+mountsound = sound1
+weapon = browning303air
+weaponobject = brit303r
+
+mountnum = 2
+mountobject = turretgunx
+mountsound = sound1
+weapon = vickersk
+weaponobject = genericgun1
+
+mountnum = 3
+mountobject = gunpod
+mountsound = sound1
+weapon = browning303air
+weaponobject = genericgun1
+weapon = browning303air
+weaponobject = genericgun1
+weapon = browning303air
+weaponobject = genericgun1
+weapon = browning303air
+weaponobject = genericgun1
+
+mountnum = 5
+mountobject = gp40y2
+weapon = gp40
+weaponobject = gp40
+
+mountnum = 6
+mountobject = gp40y4
+weapon = gp40
+weaponobject = gp40
+
+mountnum = 7
+weapon = gp40
+weaponobject = gp40
+mountobject = gp40y3
+
+mountnum = 8
+weapon = gp40
+weaponobject = gp40
+mountobject = gp40y
+
+mountnum = 9
+weapon = gp40
+weaponobject = gp40
+mountobject = gp40x3
+
+mountnum = 10
+weapon = gp40
+weaponobject = gp40
+mountobject = gp40x
+
+mountnum = 11
+weapon = gp40
+weaponobject = gp40
+mountobject = gp40x2
+
+mountnum = 12
+weapon = gp40
+weaponobject = gp40
+mountobject = gp40x4

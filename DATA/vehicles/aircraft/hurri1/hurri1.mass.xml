@@ -1,0 +1,79 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<masses>
+<mass name="mass_lwing"
+	mass="136" volume="2.386564"
+	modelcmx="-2.664917" modelcmy="-0.525811" modelcmz="-0.520246"
+	unitinertiaxx="+0.342344" unitinertiayy="+1.956433" unitinertiazz="+2.276071"
+	unitinertiaxy="+0.021979" unitinertiaxz="+0.106147" unitinertiayz="-0.003286"/>
+<mass name="mass_lwing_1"
+	mass="10" volume="0.069532"
+	modelcmx="-4.232889" modelcmy="-1.190788" modelcmz="-0.464888"
+	unitinertiaxx="+0.021812" unitinertiayy="+0.400123" unitinertiazz="+0.417677"
+	unitinertiaxy="+0.051532" unitinertiaxz="+0.024437" unitinertiayz="-0.003164"/>
+<mass name="mass_lwing_2"
+	mass="85" volume="0.097432"
+	modelcmx="-0.698848" modelcmy="-0.107183" modelcmz="-0.720142"
+	unitinertiaxx="+0.028903" unitinertiayy="+0.114986" unitinertiazz="+0.137277"
+	unitinertiaxy="+0.032471" unitinertiaxz="+0.000000" unitinertiayz="-0.000000"/>
+<mass name="mass_rwing"
+	mass="136" volume="2.386564"
+	modelcmx="+2.664917" modelcmy="-0.525811" modelcmz="-0.520246"
+	unitinertiaxx="+0.342344" unitinertiayy="+1.956433" unitinertiazz="+2.276071"
+	unitinertiaxy="-0.021979" unitinertiaxz="-0.106147" unitinertiayz="-0.003286"/>
+<mass name="mass_rwing_1"
+	mass="10" volume="0.069532"
+	modelcmx="+4.232882" modelcmy="-1.190789" modelcmz="-0.464889"
+	unitinertiaxx="+0.021812" unitinertiayy="+0.400132" unitinertiazz="+0.417686"
+	unitinertiaxy="-0.051533" unitinertiaxz="-0.024437" unitinertiayz="-0.003164"/>
+<mass name="mass_rwing_2"
+	mass="85" volume="0.088993"
+	modelcmx="+0.698848" modelcmy="-0.107183" modelcmz="-0.787999"
+	unitinertiaxx="+0.028355" unitinertiayy="+0.114438" unitinertiazz="+0.137277"
+	unitinertiaxy="-0.032471" unitinertiaxz="+0.000000" unitinertiayz="-0.000000"/>
+<mass name="mass_tail"
+	mass="50" volume="1.052156"
+	modelcmx="+0.000000" modelcmy="-4.957716" modelcmz="-0.103965"
+	unitinertiaxx="+0.667382" unitinertiayy="+0.080710" unitinertiazz="+0.622702"
+	unitinertiaxy="+0.000000" unitinertiaxz="+0.000000" unitinertiayz="-0.018000"/>
+<mass name="mass_tail_1"
+	mass="65" volume="0.007931"
+	modelcmx="+0.002801" modelcmy="-6.126805" modelcmz="-0.785673"
+	unitinertiaxx="+0.020396" unitinertiayy="+0.013937" unitinertiazz="+0.007243"
+	unitinertiaxy="+0.000000" unitinertiaxz="-0.000000" unitinertiayz="+0.000000"/>
+<mass name="mass_lhstab"
+	mass="16" volume="0.101198"
+	modelcmx="-0.609694" modelcmy="-6.140267" modelcmz="+0.215096"
+	unitinertiaxx="+0.038359" unitinertiayy="+0.150156" unitinertiazz="+0.186217"
+	unitinertiaxy="-0.011261" unitinertiaxz="+0.000000" unitinertiayz="-0.000000"/>
+<mass name="mass_lhstab_1"
+	mass="10" volume="0.046392"
+	modelcmx="-0.751642" modelcmy="-6.629452" modelcmz="+0.216222"
+	unitinertiaxx="+0.009459" unitinertiayy="+0.134726" unitinertiazz="+0.141887"
+	unitinertiaxy="+0.003956" unitinertiaxz="+0.000000" unitinertiayz="+0.000000"/>
+<mass name="mass_rhstab"
+	mass="16" volume="0.101198"
+	modelcmx="+0.609694" modelcmy="-6.140267" modelcmz="+0.215096"
+	unitinertiaxx="+0.038359" unitinertiayy="+0.150156" unitinertiazz="+0.186217"
+	unitinertiaxy="+0.011261" unitinertiaxz="+0.000000" unitinertiayz="-0.000000"/>
+<mass name="mass_rhstab_1"
+	mass="10" volume="0.046392"
+	modelcmx="+0.751642" modelcmy="-6.629452" modelcmz="+0.216222"
+	unitinertiaxx="+0.009459" unitinertiayy="+0.134726" unitinertiazz="+0.141887"
+	unitinertiaxy="-0.003956" unitinertiaxz="-0.000000" unitinertiayz="+0.000000"/>
+<mass name="mass_cvstab"
+	mass="22" volume="0.105889"
+	modelcmx="+0.000000" modelcmy="-6.301531" modelcmz="+0.714876"
+	unitinertiaxx="+0.136369" unitinertiayy="+0.078990" unitinertiazz="+0.060666"
+	unitinertiaxy="+0.000000" unitinertiaxz="+0.000000" unitinertiayz="+0.012618"/>
+<mass name="mass_cvstab_1"
+	mass="16" volume="0.185258"
+	modelcmx="+0.000000" modelcmy="-7.012442" modelcmz="+0.397801"
+	unitinertiaxx="+0.319292" unitinertiayy="+0.277048" unitinertiazz="+0.045531"
+	unitinertiaxy="+0.000000" unitinertiaxz="+0.000000" unitinertiayz="+0.000000"/>
+<mass name="mass_canopy1"
+	mass="30" volume="0.090504"
+	modelcmx="+0.000002" modelcmy="-1.044275" modelcmz="+0.640628"
+	unitinertiaxx="+0.072632" unitinertiayy="+0.020303" unitinertiazz="+0.077094"
+	unitinertiaxy="-0.000000" unitinertiaxz="+0.000000" unitinertiayz="+0.001464"/>
+</masses>

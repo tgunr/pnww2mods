@@ -1,0 +1,136 @@
+# Fairmileb.loadout file
+
+# sounds available for the mounts
+sound1 = sounds\fairmileb\xgun1.wav
+sound2 = sounds\fairmileb\xgun2.wav
+sound3 = sounds\fairmileb\xgun3.wav
+sound4 = sounds\5inch.wav
+
+loadout = 1
+
+# TurretA
+mountnum = 1
+mountobject = mount_a
+mountsound = sound4
+weapon = 12_7cm_45
+weaponobject = genericgun1
+recoilnum = 1
+recoiltime = .4
+
+# TurretB
+mountnum = 2
+mountobject = mount_a1
+mountsound = sound4
+weapon = 12_7cm_45
+weaponobject = genericgun1
+recoilnum = 2
+recoiltime = .4
+
+# TurretX
+mountnum = 3
+mountobject = mount_a2
+mountsound = sound4
+weapon = 12_7cm_45
+weaponobject = genericgun1
+recoilnum = 3
+recoiltime = .4
+
+
+# AA 20mm Fwd Stdb
+mountnum = 4
+mountobject = 20mount1
+mountsound = sound2
+weapon = flak30kwk30
+weaponobject = genericgun1
+#recoilnum = 4
+#recoiltime = 0.03
+
+# AA 20mm Fwd Port
+mountnum = 5
+mountobject = 20mount2
+mountsound = sound2
+weapon = flak30kwk30
+weaponobject = genericgun1
+#recoilnum = 4
+#recoiltime = 0.03
+
+# AA 20mm Aft Fwd
+mountnum = 6
+mountobject = 20mount3
+mountsound = sound2
+weapon = flak30kwk30
+weaponobject = genericgun1
+#recoilnum = 4
+#recoiltime = 0.03
+
+# AA 20mm Aft Aft
+mountnum = 7
+mountobject = 20mount4
+mountsound = sound2
+weapon = flak30kwk30
+weaponobject = genericgun1
+#recoilnum = 4
+#recoiltime = 0.03
+
+# AA 37mm Starboard
+mountnum = 8
+mountobject = aa37smount
+mountsound = sound1
+weapon = 37mml83
+weaponobject = genericgun1
+recoilnum = 4
+recoiltime = 0.2
+mountobject = aa37smount
+mountsound = sound1
+weapon = 37mml83
+weaponobject = genericgun1
+recoilnum = 4
+recoiltime = 0.2
+
+# AA 37mm Port
+mountnum = 9
+mountobject = aa37pmount
+mountsound = sound1
+weapon = 37mml83
+weaponobject = genericgun1
+recoilnum = 5
+recoiltime = 0.2
+mountobject = aa37pmount
+mountsound = sound1
+weapon = 37mml83
+weaponobject = genericgun1
+recoilnum = 5
+recoiltime = 0.2
+
+# Turret Y
+mountnum = 10
+mountobject = mount_b1
+mountsound = sound4
+weapon = 12_7cm_45
+weaponobject = genericgun1
+recoilnum = 6
+recoiltime = .4
+
+# Turret Z
+mountnum = 11
+mountobject = mount_b2
+mountsound = sound4
+weapon = 12_7cm_45
+weaponobject = genericgun1
+recoilnum = 7
+recoiltime = .4
+
+# Fwd Torpedo Tubes
+mountnum = 12
+mountobject = mount_tt1
+mountsound = sound3
+weapon = g7at1
+weaponobject = genericgun1
+
+# Fwd Torpedo Tubes
+mountnum = 13
+mountobject = mount_tt2
+mountsound = sound3
+weapon = g7at1
+weaponobject = genericgun1
+

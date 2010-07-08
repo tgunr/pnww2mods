@@ -1,0 +1,11 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="flak36" type="ground" shape="flak36" description="FlaK 36 (88 mm) AA/AT Gun" icon="FlaK 36 Gun">
+<include file="flak36.veh.xml"/>
+<include file="flak36.state.xml"/>
+<include file="flak36.hit.xml"/>
+<include file="flak36.turret.xml"/>
+<include file="flak36.loadout.xml"/>
+<include file="flak36.xsound.xml"/>
+<include file="flak36.control.xml"/>
+</vehicle>

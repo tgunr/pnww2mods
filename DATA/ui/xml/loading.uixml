@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+<view id="loading" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
+	style="background-image: Splashscreen.bmp;" aspectalign="center" onshow="initWin(this)">
+	<progressbar id="progress" x="295" y="221" width="428" height="15" minvalue="0" maxvalue="1"
+		fill="ui/textures/hud/blood-level-fill.bmp" background="ui/textures/hud/back-level-fill.bmp"/>
+	<caption id="status" x="295" y="221" width="428" height="15" align="center" style="color: #000000;  background-color: #00000000"/>
+	<text id="loadlog" x="295" y="30" width="428" rtop="200" style="color: #000000;"/>
+	<caption id="version" x="2" y="2" width="200" height="17" style="color: #FFFFFF;"/>
+	<caption label="&loading.copyright;" rright="2" y="2" width="500" height="17" style="color: #FFFFFF;" align="right"/>
+	<script>
+		<!--
+		
+		var loadLog = findview("loadlog");
+		game.onloadevent = doLoadEvent;
+		
+		function initWin(win)
+		{
+			game.consoleclear();
+			
+			// game callbacks
+			game.onloadevent = doLoadEvent;
+		}
+		
+		function doLoadEvent(message)
+		{
+			game.consoleprint("New Loading message " + message + "\n");
+			loadLog.text = message + "\n" + loadLog.text;
+		}
+		
+		-->
+	</script>
+</view>

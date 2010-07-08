@@ -1,0 +1,41 @@
+# Hispano 20mm AP
+# I don't know for sure that this round existed
+# Characteristics for all 20mm Hispano rounds are
+# the same except for explosive and tracertime
+# Created 08/12/02 - bloo
+# adjusted to standardize 20mm aircrat AP penetration
+
+type = ballistic
+diameter = .020
+weight = 0.165
+ammoweight = 0.3
+velocity = 850
+tracertime = 1.0
+# tracertime is placeholder
+object = bullet1
+stretchobject = 1
+explosive = 0
+#explosive is placeholder
+
+fuzetime = 0.000
+# fuzetime unknown - apparently often fuzed too fast
+bc = .52
+lifetime = 2.0
+# lifetime is placeholder
+dontdisplayfirstframe = 1 
+penetrationconstant = 0.0000004042
+#penetration constant is placeholder
+ricochetangle = 88
+
+#numshrapnelpieces = 15
+#totalshrapnelmass = .60
+#selfdestructtime = 3.0
+# all of this is placeholder
+
+#explosionsoundnear = sounds\troop\grenade.wav
+#explosionsoundfar = sounds\smlfarexp.wav
+#nearfardistance = 300
+# all of this is placeholder
+muzzleflash = 1
+hiteffect = incendiarymg
+tracerscale = 4

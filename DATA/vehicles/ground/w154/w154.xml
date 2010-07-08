@@ -1,0 +1,11 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="w154" type="ground" shape="w154" description="Mercedes W154">
+<include file="w154.veh.xml"/>
+<include file="w154.state.xml"/>
+<include file="w154.hit.xml"/>
+<include file="w154.xsound.xml"/>
+<include file="w154.control.xml"/>
+<include file="w154.mass.xml"/>
+<variant id="w154" icon="W154"/>
+</vehicle>

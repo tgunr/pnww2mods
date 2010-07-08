@@ -1,0 +1,18 @@
+section, fighter, Alloc,#L,#M,Rel,Association,LOD,AlertDistance,Speed,Value, Bias,,,,
+default,,,,,P,IN_crew.2,,0,,10,FY_,10,SV_sea.0,AC_fighter.0,AC_bomber.0
+1,spit1,L3,0,50,,,6000,,450,68,,,,,
+2,hurri1,L1,0,50,,,6000,,400,60,,,,,
+3,bleni,L1,0,50,,,6000,,300,80,,,,,
+4,spitvb,L5,0,50,,,6000,,450,100,,,,,
+5,hurri2c,L3,0,50,,,6000,,400,124,,,,,
+6,spit9c,L5,0,50,,,6000,,450,112,,,,,
+7,hurri2b,L1,0,50,,,6000,,450,70,,,,,
+8,spit1b,L3,0,50,,,6000,,450,90,,,,,
+9,spit2b,L3,0,50,,,6000,,450,95,,,,,
+
+section, bomber, Alloc,#L,#M,Rel,Association,LOD,AlertDistance,Speed,Value, Bias,,,,
+default,,,,,P,IN_crew.2,,0,,10,FY_,10,SV_sea.0,AC_fighter.0,
+1,bleniv,L1,0,50,,,6000,,300,88,,,,,
+2,blent,L3,0,50,,,6000,,300,88,,,,,
+3,havoc1,L3,0,50,,,6000,6400,300,140
+4,c47,L5,0,50,,,6000,0,200,50

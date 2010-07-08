@@ -1,0 +1,76 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>2</key>
+  <body>title = Infanterie II: Leichtes Maschinengewehr
+
+20mhit = 20 m Ziel getroffen!
+50mhit = 50 m Ziel getroffen!
+100mhit = 100 m Ziel getroffen! Gut geschossen.
+200mhit = 200 m Ziel getroffen! Sehr gut gemacht!
+500mhit = 500 m Ziel getroffen! Exzellent!
+gunrange = Feuerlinie
+bunker = Sandsäcke/Bunker
+vehiclerange = Schießbahn für Fahrzeuge
+
+1.0.label = Das leichte Maschinengewehr
+
+1.1.label = Intro
+	1.1.alert.modal = Das leichte Maschinengewehr (LMG) ist eine sehr schlagkräftige Waffe wenn es richtig benutzt wird.[NL][NL]Am besten wird es für Sperrfeuer auf mittlere und lange Distanzen eingesetzt und ist um so wirkungsvoller, wenn es von einem Gewehrschützen begleitet wird. Dieser hält zusätzliche Munition bereit und kann die Flanken gegen Feinde schützen
+	
+1.2.label = Feuerposition
+	1.2.alert = Bewege Dich zur Feuerlinie.
+        #waypoint label: &#34;Feuerlinie&#34;
+        #waypoint: -314046.54,3603720.08,101.73
+
+1.3.label = Feuern ohne Zweibein
+	1.3.alert = Das leichte Maschinengewehr kann aus der Hüfte geschossen werden. Durch Rückschlag und Gewicht der Waffe ist es fast unmöglich, in dieser Anschlagsart zuverlässig zu treffen.[NL][NL]Drücke {fpfire}, um die Waffe abzufeuern.
+	1.3.complete.modal = Im Hüftanschlag sollte das LMG nur im Nahkampf eingesetzt werden.
+	
+1.4.label = Hinlegen
+	1.4.alert = Für wirkungsvolles Feuer muß das LMG auf das Zweibein gestellt werden. Zum Aufstellen der Waffe lege Dich hin oder knie Dich hinter niedrige Mauern, Kisten oder Fensterrahmen.[NL][NL]Drücke {fpprone}, um Dich hinzulegen.
+
+1.5.label = Aufstellen
+	1.5.alert = Drücke {fpdeploy} um das Zweibein des LMGs aufzustellen.[NL][NL]Alternativ kannst Du dazu auch die rechte Maustaste benutzen.
+
+1.6.label = Feuern mit Zweibein
+	1.6.alert = Ziele und feuere die Waffe mit {fpfire} ab .[NL][NL]Lade die Waffe mit {fpreload} nach wenn sich Dein Magazin leert.[NL][NL]Du mußt irgendein Ziel treffen, um fortzufahren.
+	1.6.complete.modal = Gut! Das Feuer ist wesentlich genauer, wenn du die Waffe aufgestellt hast.
+
+1.7.label = Visier-Entfernungseinstellung
+	1.7.alert.modal = LMGs verfügen, genau wie Gewehre, über verstellbare Visierungen. Dies ermöglicht treffsicheres Schießen auf verschiedene Entfernungen. Die Standardvisierentfernung ist 200 m.
+	1.7.alert.hilite = primary,target
+	1.7.alert1.modal = Bekämpfe ein paar Ziele mit verschiedenen Visiereinstellungen. Schau Dir an, wie verschiedene Einstellungen Deine Zielgenauigkeit beeinflussen.[NL][NL]Drücke {gunsightrangeinc} und {gunsightrangedec} zum Einstellen der Visierentfernung.
+	1.7.alert1.hilite = primary,target
+
+1.8.label = Waffe aufnehmen
+	1.8.alert = Wenn Du genug geschossen hast, drücke {fpdeploy} um Deine Waffe wieder aufzunehmen. 
+	1.8.complete.modal = Gut. Stehe jetzt mit {fpprone} auf.
+	
+2.0.label = Feuern auf Fahrzeuge
+
+2.1.label = Fahrzeuge bekämpfen
+	2.1.alert = Das leichte Maschinengewehr dient vorrangig zur Bekämpfung von Infanterie. Es kann aber auch effektiv gegen LKWs oder leicht gepanzerte Transport-Fahrzeuge eingesetzt werden.[NL][NL] Begib Dich zur Fahrzeug-Schießbahn.
+	#waypoint label &#34;Schießbahn für Fahrzeuge&#34;
+	#waypoint: -313992.15,3603761.89,100.82
+	
+2.2.label = Feuerposition
+	2.2.alert = Dies ist die Schießbahn für Fahrzeuge.[NL][NL]Laufe zu den Sandsäcken.
+	#waypoint label: &#34;Sandsäcke&#34;
+	#waypoint: -313969.40,3603763.17,100.32
+
+2.3.label = Waffe auf den Sandsäcken aufstellen
+	2.3.alert = Drücke {fpdeploy} um das LMG mittels des Zweibeins auf den Sandsäcken aufzustellen.[NL][NL] Bewege Dich näher heran, wenn das Aufstellen nicht möglich sein sollte.
+	2.3.complete = Exzellent!
+	
+2.4.label = Feuerradius
+	2.4.alert.modal = Bewege die Waffe nach links und rechts. So kannst Du den Wirkungsbereich sehen den Du mit der Waffe im aufgestellten Zustand abdeckst.[NL]Wenn man das LMG an einem Objekt aufstellt, erhöht das den Feuerradius meist beträchtlich.
+	2.4.alert.modal = Feuere jetzt auf das nächste Fahrzeug.
+	2.4.complete.modal = Exzellent.  Damit ist der Lehrgang Leichtes Maschinengewehr abgeschlossen.</body>
+  <branch>1</branch>
+  <brief>Lerne wie man ein leichtes Maschinengewehr bedient.</brief>
+  <handler>infantry.lmg</handler>
+  <instance>2</instance>
+  <requires>infantry.smg</requires>
+  <spawners>314051.47,3603774.41,101.00</spawners>
+  <title>Infanterie II: Leichtes Maschinengewehr</title>
+</content>

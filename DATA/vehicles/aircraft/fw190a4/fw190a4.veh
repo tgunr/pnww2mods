@@ -1,0 +1,53 @@
+# basic vehicle data file for Fw190a4
+# created 18/12/02 -Doc.
+
+physicsversion = 1
+vehicletype = ww2propplane
+vehiclename = fw190a4
+vehicleobjectname = fw190a4
+componentfile = fw190a4.cmp
+enginefile = fw190a4.eng
+airfoilfile = fw190a4.air
+positionfile = fw190a4.pos
+numberofflappositions= 1
+# next 3 are in kph
+aileronmaxspeed = 400
+ruddermaxspeed = 380
+elevatormaxspeed = 380
+# next 3 are in mach speed
+aileroncompressspeed = 0.79
+ruddercompressspeed = 0.87
+elevatorcompressspeed = 0.86
+# response times sec (full force)
+aileronresponsetime = 0.4
+elevatorresponsetime = 1.5
+#elevatorresponsetime = 2.0 (altered for testing v1.29 beta testing)
+rudderresponsetime = 1.5
+#rudderresponsetime = 0.5 (altered for testing v1.29 beta testing)
+throttleresponsetime = 1.0
+
+# static tabs, e.g. the tabs that are set on the ground
+# trim the plane for cruise flight, in an analysis FE
+# and copy the trim settings into the following fields
+ailerontabstatic = 0.0
+elevatortabstatic = -0.276
+ruddertabstatic = -0.0277
+
+# tab effects, ratio of tab force at full tab deflection to total surface force
+ailerontabratio = 0.1 
+elevatortabratio = 0.05
+ruddertabratio = 0.1
+# opposing movement tab effects, ratio of tab force at full tab deflection to total surface force
+aileronspringtabratio = 0
+elevatorspringtabratio = 0
+rudderspringtabratio = 0
+
+stallsound = sounds\stall.wav
+gearsound = sounds\pgear.wav
+flapssound = sounds\pflaps.wav
+windsound = sounds\wind.wav
+
+flapdeployspeed = 0.2
+geardeployspeed = .1
+canopyopenspeed = 0.3
+hatchopenspeed = 0.5

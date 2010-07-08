@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+<view id="map-finder" x="130" width="130" height="280" rtop="1" style="background-color: #00000099;"
+	onload="if(!this.mgr) new MapFinder(this)"
+	onmouseenter="this.mgr.expand()" onmouseexit="this.mgr.contract()">
+	<view id="map-finder-title" x="1" width="128" height="15" rtop="1">
+		<caption label="&widgets.map.finder.title;" x="3" width="100" height="12" rtop="2" style="font-size: -1; color: #FFFFFF;"/>
+		<image id="map-finder-arrow" src="ui/textures/test/down_arrow.bmp" x="110" width="10" height="10" rtop="3"/>
+	</view>
+	<view id="map-finder-body" x="1" width="128" y="5" rtop="8">
+		<image x="5" src="ui/textures/test/horiz_underline.bmp" width="118" height="12" rtop="0"/>
+		<textcontrol id="map-finder-input" x="5" height="15" width="118" rtop="15" acceptsfocus="true"
+			style="background-color: #FFFFFF;  color: #000000;" onenter="this.mgr.setSelection()"/>
+		<list id="map-finder-list" x="5" y="5" width="118" rtop="35" style="color: #FFFFFF; font-size: -1;"
+			onupdate="this.mgr.updateList()" onselect="this.mgr.setSelection()"/>
+	</view>
+</view>

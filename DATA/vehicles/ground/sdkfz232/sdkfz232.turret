@@ -1,0 +1,37 @@
+#sdkfz232.turret file
+
+#multicrewpos position, whichcrew
+multicrewpos 1 1
+multicrewpos 2 2
+multicrewpos 3 2
+multicrewpos 4 1
+
+# Main and coax
+position = 3
+elevationrate = 4.0
+traverserate = 20
+type = 360turret
+gunsightfile = sdkfz232main.gs
+#instgunsightfile = fernglas.gs
+gunsightalignmentmountobject = mount1
+gunsightalignmentrange = 400
+# conditions are undeployed, depolyed, canopyopen, canopyclosed, hatchopen, hatchclosed
+#gunsightblocked = canopyopen
+#instsightblocked = canopyclosed
+
+#turret sound variables
+turrettraverse = turret/hand_turret_move.wav
+turretelevate = turret/hand_turret_move.wav
+turretgeneral = turret/turret_traverse_general.wav
+
+
+#Commander head
+position = 2
+elevationrate = 6
+traverserate = 6
+type = 360turret
+instgunsightfile = fernglas.gs
+#gunsightfile = germmg.gs
+#gunsightalignmentmountobject = bowgun
+#gunsightalignmentrange = 200
+

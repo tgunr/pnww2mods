@@ -1,0 +1,101 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>6</key>
+  <body>// add directives here
+graduated = Vous êtes certifié pour le tutorial de base.
+tom = Temps de mission
+captures = Table Bumps
+damages = Joueurs blessés
+targetin = Vous êtes en zone de combat!
+targetout = Vous avez quittez la zone de combat!
+damaged = Vous avez blessé un autre joueur!
+dead = Malheureusement vous avez été battu par l’ennemi. Revenez en jeu et essayez de nouveau.
+bunker = Bunker
+
+
+
+1.0.label = Entraînement au combat d’infanterie
+
+	1.1.label = Baraquement 
+	1.1.alert.modal = Bienvenue pour votre 1er entraînement au combat !  Des soldats ennemis peuvent être présents.  Ceci est le baraquement d’une des bases militaire de  Philipville.  Les baraquements sont relativement protégés, les ennemis ne peuvent y pénétrer mais ils peuvent voir l’intérieur par les fenêtres.[NL][NL] Avant de vous aventurer à l’extérieur il y a deux ou trois choses à connaître
+	
+	1.2.label = Contrôle et Capture
+	1.2.alert = Le territoire est contrôlé par la celui qui possède les villes.  Les villes sont constituées d’installations. [NL][NL] Pour capturer une installation vous devez sécuriser sa zone de contrôle.  C’est la pièce qui contient une radio dans le  « bâtiment capturable » plus souvent une maison ou un bunker avec un drapeau dessus indiquant la nation qui le contrôle. [NL][NL]Pressez {showingamemap} pour ouvrir votre carte.
+	1.2.complete = Good
+	1.2.complete.position = 217760,3011388
+	1.2.complete.scale = .20
+	1.2.complete.selection = Phillipville
+
+1.3.label = La carte
+	1.3.alert.modal = Ces ville sont Remagen et Unkel.[NL][NL]Chaque ville à plusieurs dépôts et base.
+	1.3.alert.position = 348213,3034640
+	1.3.alert.scale = .20
+	1.3.alert.selection = Remagen et Unkel
+
+	1.3.alert1.modal = Au suf Remagen. La sud est détenues par les alliés
+	1.3.alert1.scale = .1
+	1.3.alert1.position = 347787,3034409
+	1.3.alert1.selection = Remagen
+
+        1.3.alert2.modal = La base NORD est Unkel sous contrôle allemand.
+	1.3.alert2.scale = .1
+	1.3.alert2.position = 347975,3034884
+	1.3.alert2.selection = UNKEL
+
+        1.3.alert3.modal = Vous êtes représenté par la flèche avec un cercle et vous êtes près du point d’origine.[NL][NL]Ce point d’origine indique l’endroit où vous rentrez en jeu.
+	1.3.alert3.position = 348213,3034640
+	1.3.alert3.scale = .20
+	1.3.alert3.selection = Remagen et Unkel
+
+
+	1.3.alert4.modal = Chaque installation est marquée sur la carte par un drapeau et avec une icône. Le drapeau indique qui la contrôle [NL][NL]Chaque installation est constituée d’un groupe de bâtiments dont un est le point de capture.
+	1.3.alert5.modal = Le repère bleu sur la carte indique votre point de départ.  Le rouge indique l’objectif de la mission.[NL][NL] Les balises sont placées par le leader de mission.  Une est marquée bunker, c’est le point de capture de votre base militaire.
+        1.3.alert6 = Clic droit sur la cible et choisissez activé.
+	1.3.complete = Bien.  La cible activée est maintenant en surbrillance sur la mini carte avec une flèche verte qui indique le cap.
+
+	1.4.label = Report des contacts
+	1.4.alert.modal = Un contact ennemi  clignotant est reporté près du repère  rouge. [NL][NL]Ce repère rouge indique le point de capture ennemi.
+      	1.4.alert.selection = Remagen et Unkel
+	1.4.alert1.modal = Les contacts ennemis sont reportés par les joueurs mais ne sont  enregistrés que si le chef de mission les valide.
+	1.4.alert2= Reportez vous même un contact en faisant un click droit  sur la carte près du contact déjà présent, utilisez ajouter un report .[NL][NL]choisissez le bon type de contact (Infanterie dans notre cas) et pressez OK.
+	1.4.complete = Bien. Vous pouvez aussi ajouter des notes sur le contact reporté dans la fenêtre prévue pour.
+
+        1.5.label = fermer la carte
+	1.5.alert = Pressez {showingamemap} pour fermer la carte.
+	1.5.alert.selection = Remagen et Unkel
+
+
+	1.6.label = Boîte de dialogue
+	1.6.alert = C’est très important de communiquer avec les alliés.[NL][NL]Pressez F1 pour ouvrir la boîte de dialogue et donnez le bonjour aux autres joueurs de votre camps comme cela ils savent que vous êtes là. 
+	1.6.complete.modal = Bien. Vous pouvez aussi juste utiliser “entrée” pour avoir un dialogue de proximité mais les joueurs ennemis pourront éventuellement vous entendre.
+
+        1.7.label = Bunker
+	1.7.alert = Quand vous êtes prêt, sortez du baraquement et  courrez vers la balise du Bunker!  Soyez prêt à rencontrer l’ennemi!  Souvenez vous d’utiliser tous les abris possibles pour vous protéger des tirs.
+	1.7.complete = Excellent!
+
+	
+	1.8.label = Bâtiment à drapeau
+	1.8.alert.modal = Pour capturer une installation, vous devez entrer dans le bâtiment et restez là jusqu&#39; a que la capture soit finie» [NL] [NL]A message apparaîtra en bas à droite pour vous informer que vous êtes au bon endroit et montrera une barre de progression
+        1.8.alert.hilite = binfo,target
+	1.8.complete.modal = Bien.  Pour cette exercice d’entraînement, la base militaire ne peut être capturée. 
+
+        1.9.label = Combattre l’ennemi
+	1.9.alert.modal = Pour finir cet exercice, vous devez quitter le Bunker:[NL][NL] – Survivre 30 mn ou [NL] faire 3 tirs sur un soldat ennemi,ou[NL] – Capturez le Bunker ennemi.[NL][NL]ALLEZ le bleu, il faut y aller maintenant!</body>
+  <branch>1</branch>
+  <brief>Expérience de combat dans un environnement sous contrôle.</brief>
+  <captures>1</captures>
+  <damages>3</damages>
+  <despawners>347849.40,3034925.79,70.85,-2.56 347876.98,3034925.38,70.85.2.38</despawners>
+  <devehicles>derifle</devehicles>
+  <frspawners>347417.68,3034440.53,70.85,2.35 347417.30,3034467.50,70.85,0.83</frspawners>
+  <frvehicles>frrifle</frvehicles>
+  <handler>basic.combat</handler>
+  <instance>3</instance>
+  <limited>true</limited>
+  <requires>basic.hud</requires>
+  <title>Entraînement de base au combat</title>
+  <tom>30</tom>
+  <ui>combat</ui>
+  <ukspawners>347417.68,3034440.53,70.85,2.35 347417.30,3034467.50,70.85,0.83</ukspawners>
+  <ukvehicles>ukrifle</ukvehicles>
+</content>

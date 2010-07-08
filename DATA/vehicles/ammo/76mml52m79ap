@@ -1,0 +1,23 @@
+# M79 ammo created for M4a3(76) (76L52M1a2) gun - Doc. 08/15/06
+
+
+type = ballistic
+diameter = .0762
+weight = 7
+velocity = 793
+tracertime = 7.9
+object = bullet1
+explosive = 0.0
+fuzetime = 0.000
+#bc = 2.72
+bc = 1.21
+lifetime = 8.0
+ricochetangle = 87
+modelspall = 1
+penetrationconstant = 0.00000383
+#penetrationconstant = 0.00000306
+dontdisplayfirstframe = 1 
+
+muzzleflash = 3
+hiteffect = incendiarymg
+tracerscale = 2

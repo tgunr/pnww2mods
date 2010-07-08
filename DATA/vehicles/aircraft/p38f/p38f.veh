@@ -1,0 +1,51 @@
+# basic vehicle data file for p38f
+physicsversion = 3
+vehicletype = ww2propplane
+vehiclename = p38f
+vehicleobjectname = p38f
+componentfile = p38f.cmp
+enginefile = v1710.eng
+airfoilfile = p38f.air
+positionfile = p38f.pos
+numberofflappositions= 1
+# next 3 are in kph
+aileronmaxspeed = 466
+ruddermaxspeed = 466
+elevatormaxspeed = 466
+# next 3 are in mach speed
+aileroncompressspeed = 0.87
+ruddercompressspeed = 0.87
+elevatorcompressspeed = 0.7
+# response times sec (full force)
+aileronresponsetime = 0.5
+elevatorresponsetime = 1.2
+#elevatorresponsetime = 0.5 (altered for v1.29 beta testing)
+rudderresponsetime = 1.6
+#rudderresponsetime = 0.8 (altered for v1.29 beta testing)
+throttleresponsetime = 1.0
+
+# static tabs, e.g. the tabs that are set on the ground
+# trim the plane for cruise flight, in an analysis FE
+# and copy the trim settings into the following fields
+ailerontabstatic = 0
+elevatortabstatic = -0.313
+ruddertabstatic = 0
+
+# tab effects, ratio of tab force at full tab deflection to total surface force
+ailerontabratio = 0.1 
+elevatortabratio = 0.25
+ruddertabratio = 0.1
+# opposing movement tab effects, ratio of tab force at full tab deflection to total surface force
+aileronspringtabratio = 0
+elevatorspringtabratio = 0
+rudderspringtabratio = 0
+
+stallsound = sounds\stall.wav
+gearsound = sounds\pgear.wav
+flapssound = sounds\pflaps.wav
+windsound = sounds\wind.wav
+
+flapdeployspeed = 0.2
+geardeployspeed = .1
+canopyopenspeed = 0.3
+hatchopenspeed = 0.5

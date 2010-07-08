@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="he111" type="air" shape="he111h2" description="He 111" icon="He 111">
+<include file="he111.veh.xml"/>
+<include file="he111.state.xml"/>
+<include file="he111.hit.xml"/>
+<include file="he111.turret.xml"/>
+<include file="he111.loadout.xml"/>
+<include file="he111.xsound.xml"/>
+<include file="he111.control.xml"/>
+<include file="he111.mass.xml"/>
+</vehicle>

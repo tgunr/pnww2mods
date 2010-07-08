@@ -1,0 +1,94 @@
+# damage resistance file
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\tex\avhit1.wav
+-hitsound2 = sounds\tex\avhit2.wav
+-hitsound3 = sounds\tex\avhit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 5000
+
+# Inside collider objects:
+
+d_turretgun,30,150,150,0,0
+d_winggun,3,150,150,0,0
+d_winggunammo,5,0,0,0,0
+engine1,100,225,225,0,0
+d_oilsys1,3,0,0,0,0
+d_oilcool1,3,0,0,0,0
+engine2,100,225,225,0,0
+d_oilsys2,3,0,0,0,0
+d_oilcool2,3,0,0,0,0
+d_fuel1,3,0,0,0,0
+d_fuel2,3,0,0,0,0
+d_fuel3,3,0,0,0,0
+d_fuel4,3,0,0,0,0
+d_radio1,15,0,0,0,0
+d_doxy1,15,0,0,0,0
+d_doxy2,15,0,0,0,0
+d_doxy3,15,0,0,0,0
+d_head1,0.4,0,0,0,0
+d_torso1,1.2,0,0,0,0
+d_arms1,1.0,0,0,0,0
+d_egs1,1.0,0,0,0,0
+d_head2,0.4,0,0,0,0
+d_torso2,1.2,0,0,0,0
+d_arms2,1.0,0,0,0,0
+d_egs2,1.0,0,0,0,0
+d_head3,0.4,0,0,0,0
+d_torso3,1.2,0,0,0,0
+d_arms3,1.0,0,0,0,0
+d_egs3,1.0,0,0,0,0
+
+# Outside collider objects:
+
+d_phatch,1.3,0,0,0,0
+d_fwdfuselage,1.75,0,0,0,0
+d_turretglass,1.3,0,0,0,0
+d_aftfuselage,1.75,0,0,0,0
+d_leftroot,1.5,0,0,0,0
+d_linnerflap,1.5,0,0,0,0
+d_leftmidwing,1.5,0,0,0,0
+dlouterflap,1.5,0,0,0,0
+d_louterwing,1.5,0,0,0,0
+d_laileron,1.5,0,0,0,0
+d_rightroot,1.5,0,0,0,0
+d_rinnerflap,1.5,0,0,0,0
+d_rightmidwing,1.5,0,0,0,0
+drouterflap,1.5,0,0,0,0
+d_routerwing,1.5,0,0,0,0
+d_raileron,1.5,0,0,0,0
+dprop1,12,0,0,0,0
+d_cowl1,0.75,0,0,0,0
+d_lfirewall,6,225,225,0,0
+dprop2,12,0,0,0,0
+d_cowl2,0.75,0,0,0,0
+d_rfirewall,6,225,225,0,0
+d_cvstab,1.5,0,0,0,0
+d_rudder,1.5,0,0,0,0
+d_lhstab,1.5,0,0,0,0
+d_lelevator,1.5,0,0,0,0
+d_rhstab,1.5,0,0,0,0
+d_relevator,1.5,0,0,0,0
+d_gear1,3,150,150,0,0
+d_gear1_1,3,150,150,0,0
+d_gear3,3,150,150,0,0

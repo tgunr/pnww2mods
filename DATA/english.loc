@@ -1,0 +1,828 @@
+0,DEFAULT MESSAGE
+1,Animation texture has no name!
+2,Released particle %d
+3,Count = %d
+4,Callback, size %d, string \"%s\"
+5,Specific, size %d, string \"%s\"
+6,Dynamic Lighting On.
+7,Dynamic Lighting Off.
+8,Afternoon Lighting.
+9,Dusk Lighting.
+10,Night Lighting.
+11,Sunrise Lighting.
+12,Noon Lighting.
+13,Accelerated sun movement.
+14,Normal sun movement.
+15,PropPitchChange = %d
+16,Set max RPM
+17,Set continuous RPM
+18,Set economy RPM
+19,Clutch must be disengaged to shift gears.
+20,Shifted to neutral.
+21,, in reverse.
+22,Must be in neutral to toggle reverse gear.
+23,Shifted to forward gears, in neutral.
+24,Shifted to reverse gears, in neutral.
+25,Shifted Gears.
+26,EngineRpm = %lf, throttlepos = %lf
+27,Shifted into neutral blower.
+28,Supercharger now in primary speed setting.
+29,Supercharger now in second speed setting.
+30,Boost = %lf, ata = %lf, rpm = %lf
+31,Starter on.
+32,Starter off.
+33,Engine running.
+34,Engine Stopped.
+35,R:%lf
+36,T:%lf
+37,%lf
+38,Economy power mode selected.
+39,Continuous power mode selected.
+40,Military power mode selected.
+41,War emergency power mode selected.
+42,Response = %lf
+43,Crew hit.
+44,Toggling Gear.
+45,Tail wheel is now locked.
+46,Tail wheel is now unlocked.
+47,Main bounding box check %s
+48,Total intersects = %d
+49,Left slot retracted.
+50,Right slot retracted.
+51,Left slot deployed.
+52,Right slot deployed.
+53,Deploy = %lf
+54,switching to gear up.
+55,switching to gear down.
+56,Average time = %d us
+57,numobj = %d
+58,Pos x = %f,y=%f,z=%f
+59,TPos.x = %lf,y=%lf,z=%lf
+60,Field Of View set to %g degrees.
+61,Persona created on host.
+62,Crew killed.
+63,Field Of View set to %g degrees.
+64,No ground under my feet!
+65,BBox TopObject = %s, %d
+66,Out of edit buffer space.
+67,Duplicate objects in octet not allowed.
+68,Cannot find a place to set the object!
+69,No more room for object placement!
+70,Could not load file as a texture.
+71,Number of tris = %d
+72,Loggin On....
+73,Unsuccessful logon attempt
+74,Successful logon attempt.
+75,Client INITIALIZING...
+76,Host Running.
+77,Client Running.
+78,Step %d
+79,Sequence Done.
+80,Enabling function.
+81,Disabling function.
+82,Executing function.
+83,Starting sequence.
+84,Cannot create a new vehicle.
+85,Vehicle Selected = %d
+86,Pos x = %lf, y = %lf, z = %lf
+87,Killing round #%d
+88,Hit %s, obliquity %lf
+89,Launching round #%d, type = %s
+90,Sphere collision %d occurred
+91,Paris
+92,London
+93,Copenhagen
+94,Berlin
+95,Oslo
+96,Luxembourg
+97,Amsterdam
+98,Brussels
+99,Dublin
+100,Germany
+101,Italy
+102,Japan
+103,France
+104,England
+105,China
+106,Commonwealth
+107,Russia
+108,United States
+109,ALLIES
+110,AXIS
+111,TARGETS
+112,SEA
+113,LAND
+114,AIR
+115,Side cannot be changed. Continue?
+116,Are you sure you want to quit WWIIOL?
+117,ALL
+118,MISSION
+119,ID
+120,COUNTRY
+121,EDIT
+122,PRIORITY
+123,VEHICLE
+124,ORIGIN
+125,TIME
+126,THEATER SELECTION
+127,BLITZKRIEG THEATER
+128,MISSION SELECTION
+129,VEHICLE SELECTION
+130,FACILITY
+131,Do you want to exit the vehicle?
+132,Exit WWII ONLINE?
+133,YES
+134,NO
+135,Leet bob has left the building.
+136,ORDNANCE
+137,AMMO SELECT
+138,CONVERGENCE
+139,MARKINGS
+140,FUEL
+141,Waiting for network response...
+142,KEYMAP SCREEN
+143,CREATE
+144,SELECT
+145,MISSION EDITOR
+146,TYPE
+147,WEAPON
+148,SQUAD
+149,This Mission Has Expired.
+150,AREA ATTACK
+151,POINT ATTACK
+152,AREA DEFENSE
+153,POINT DEFENSE
+154,ESCORT
+155,RESUPPLY
+156,RECON
+157,HIGH
+158,MEDIUM
+159,LOW
+160,Post
+161,VIEW MISSIONS
+162,Gear handle
+163,Mixture off
+164,Mixture lean
+165,Mixture rich
+166,Supercharger stage one
+167,Supercharger stage two
+168,Supercharger neutral
+169,LL switch
+170,Cock next fuel tank
+171,Cowl flaps
+172,Panel light
+173,Auxillary sight
+174,Radio
+175,Hatch control
+176,Canopy control
+177,Ordnance trigger
+178,Ordnance selection change
+179,Deploy dive brakes
+180,Auto dive
+181,Map
+182,Flap execute
+183,Toggle internal/external views
+184,Starter on
+185,Toggle tail lock
+186,Toggle bomb bay door
+187,Deploy weapon
+188,Toggle tow bar
+189,Shift up
+190,Shift down
+191,Reverse
+192,Stuka siren
+193,Adjust prop up
+194,Adjust prop down
+195,Toggle wep
+196,External locked
+197,External rubberband
+198,External fixed
+199,Set fixed camera
+200,Display gui
+201,Toggle cursor visibility
+202,Toggle chat window on/off
+203,Toggle radio buffer on/off
+204,Look Straight Ahead
+205,Look Forward + Up
+206,Look Up
+207,Look Down
+208,Look Forward + Right
+209,Look Forward + Left
+210,Look Right
+211,Look Left
+212,Look Back + Right
+213,Look Back + Left
+214,Look Forward + Up
+215,Look Forward + Right + Up
+216,Look Forward + Left + Up
+217,Look Right + Up
+218,Look Left + Up
+219,Look Back + Right + Up
+220,Look Back + Left + Up
+221,Look Forward + Down
+222,Look Forward + Right + Down
+223,Look Forward + Left + Down
+224,Look Down + Right
+225,Look Down + Left
+226,Look Back + Right + Down
+227,Look Back + Left + Down
+228,Look view twentyfive
+229,Look view twentysix
+230,Look view twentyseven
+231,Look view twentyeight
+232,Look view twentynine
+233,Look view thirty
+234,Look view thirtyone
+235,Look view thirtytwo
+236,Change field of view
+237,Instrument view
+238,Gunsight view
+239,Exit vehicle
+240,Cycle ammo
+241,Use primary weapon
+242,Use secondary weapon
+243,Slew view left
+244,Slew view right
+245,Slew view up
+246,Slew view down
+247,Roll view left
+248,Roll view right
+249,Position 1
+250,Position 2
+251,Position 3
+252,Position 4
+253,Position 5
+254,Position 6
+255,Position 7
+256,Position 8
+257,Position 9
+258,Position 10
+259,Kneel
+260,Prone
+261,Forward
+262,Backward
+263,Slow
+264,Fast
+265,Increase speed
+266,Decrease speed
+267,Get up
+268,Get down
+269,Strafe right
+270,Strafe left
+271,Turn left
+272,Turn right
+273,Aim
+274,Look left
+275,Look right
+276,Gun sight
+277,Weapon one
+278,Weapon two
+279,Weapon three
+280,Weapon four
+281,Weapon five
+282,Weapon six
+283,Weapon seven
+284,Weapon eight
+285,Weapon nine
+286,Weapon ten
+287,Ride/unride vehicle
+288,Use weapon
+289,Roll
+290,Pitch
+291,Yaw
+292,Throttle
+293,Gas
+294,Clutch
+295,Left track clutch
+296,Right track clutch
+297,RPM lever
+298,Pitch lever
+299,Flap lever
+300,Brake left
+301,Brake right
+302,Flap control
+303,Left brake
+304,Right brake
+305,Center brake
+306,Steering
+307,Turret traverse
+308,Turret elevate
+309,Elevator trim
+310,Aileron trim
+311,Rudder trim
+312,Brake left
+313,Brake right
+314,Vertical axis
+315,Horizontal axis
+316,Axis position
+317,Increase Key
+318,Decrease Key
+319,Rate per second (%)
+320,Key
+321,Key up value(%)
+322,Key down value(%)
+323,Keyboard
+324,Keyboard Function
+325,joystick x-axis
+326,joystick y-axis
+327,joystick z-axis
+328,joystick x-rotation
+329,joystick y-rotation
+330,joystick z-rotation
+331,Mouse x-axis
+332,Mouse y-axis
+333,Mouse z-axis
+334,Whole axis
+335,Positive range
+336,Negative range
+337,Map to axis
+338,Map to keyboard
+339,Axis Function
+340,(inverted)
+341,escape
+342,f1
+343,f2
+344,f3
+345,f4
+346,f5
+347,f6
+348,f7
+349,f8
+350,f9
+351,f10
+352,f11
+353,f12
+354,sys req
+355,scroll
+356,pause
+357,`
+358,1
+359,2
+360,3
+361,4
+362,5
+363,6
+364,7
+365,8
+366,9
+367,0
+368,-
+369,=
+370,backspace
+371,insert
+372,home
+373,page up
+374,num lock
+375,numpad /
+376,numpad *
+377,numpad -
+378,tab
+379,q
+380,w
+381,e
+382,r
+383,t
+384,y
+385,u
+386,i
+387,o
+388,p
+389,[
+390,]
+391,\
+392,delete
+393,end
+394,page down
+395,numpad 7
+396,numpad 8
+397,numpad 9
+398,numpad +
+399,caps lock
+400,a
+401,s
+402,d
+403,f
+404,g
+405,h
+406,j
+407,k
+408,l
+409,;
+410,'
+411,enter
+412,numpad 4
+413,numpad 5
+414,numpad 6
+415,left shift
+416,z
+417,x
+418,c
+419,v
+420,b
+421,n
+422,m
+423,,
+424,.
+425,/
+426,right shift
+427,up arrow
+428,numpad 1
+429,numpad 2
+430,numpad 3
+431,numpad enter
+432,left control
+433,left alt
+434,space
+435,right alt
+436,right control
+437,left arrow
+438,down arrow
+439,right arrow
+440,numpad 0
+441,numpad .
+442,mouse x
+443,mouse y
+444,mouse z
+445,mouse button 1
+446,mouse button 2
+447,mouse button 3
+448,mouse button 4
+449,mouse button 5
+450,joystick 1 x-axis
+451,joystick 1 y-axis
+452,joystick 1 z-axis
+453,joystick 1 x-rotation
+454,joystick 1 y-rotation
+455,joystick 1 z-rotation
+456,joystick 1 button 1
+457,joystick 1 button 2
+458,joystick 1 button 3
+459,joystick 1 button 4
+460,joystick 1 button 5
+461,joystick 1 button 6
+462,joystick 1 button 7
+463,joystick 1 button 8
+464,joystick 1 button 9
+465,joystick 1 button 10
+466,joystick 1 button 11
+467,joystick 1 button 12
+468,joystick 1 button 13
+469,joystick 1 button 14
+470,joystick 1 button 15
+471,joystick 1 button 16
+472,joystick 1 button 17
+473,joystick 1 button 18
+474,joystick 1 button 19
+475,joystick 1 button 20
+476,joystick 1 button 21
+477,joystick 1 button 22
+478,joystick 1 button 23
+479,joystick 1 button 24
+480,joystick 1 button 25
+481,joystick 1 button 26
+482,joystick 1 button 27
+483,joystick 1 button 28
+484,joystick 1 button 29
+485,joystick 1 button 30
+486,joystick 1 button 31
+487,joystick 1 button 32
+488,joystick 1 pov hat 1 n
+489,joystick 1 pov hat 1 ne
+490,joystick 1 pov hat 1 e
+491,joystick 1 pov hat 1 se
+492,joystick 1 pov hat 1 s
+493,joystick 1 pov hat 1 sw
+494,joystick 1 pov hat 1 w
+495,joystick 1 pov hat 1 nw
+496,joystick 1 pov hat 2 n
+497,joystick 1 pov hat 2 ne
+498,joystick 1 pov hat 2 e
+499,joystick 1 pov hat 2 se
+500,joystick 1 pov hat 2 s
+501,joystick 1 pov hat 2 sw
+502,joystick 1 pov hat 2 w
+503,joystick 1 pov hat 2 nw
+504,joystick 1 pov hat 3 n
+505,joystick 1 pov hat 3 ne
+506,joystick 1 pov hat 3 e
+507,joystick 1 pov hat 3 se
+508,joystick 1 pov hat 3 s
+509,joystick 1 pov hat 3 sw
+510,joystick 1 pov hat 3 w
+511,joystick 1 pov hat 3 nw
+512,joystick 1 pov hat 4 n
+513,joystick 1 pov hat 4 ne
+514,joystick 1 pov hat 4 e
+515,joystick 1 pov hat 4 se
+516,joystick 1 pov hat 4 s
+517,joystick 1 pov hat 4 sw
+518,joystick 1 pov hat 4 w
+519,joystick 1 pov hat 4 nw
+520,position
+521,ten
+522,(inverted)
+523,pos.
+524,neg.
+525,Save
+526,Exit
+527,Default
+528,Edit Offline Controls
+529,Edit View Controls
+530,Edit Vehicle Controls
+531,AT. traverse axis
+532,AT. elevate axis
+533,Restore
+534,Combination
+535,Key combos off
+536,Key combos on
+537,Apply to type
+538,Bern
+539,MULTI CREW
+540,Request Crew
+541,Join Vehicle
+542,Move axis(hold ctrl to invert)
+543,Request Crew
+544,Join Vehicle
+545,Your join has been accepted.
+546,Please wait for commander to spawn...
+547,Join Denied: Cannot find posted weapon.
+548,Join Denied: Poster weapon is full.
+549,Join Denied: Poster denied access.
+550,Join Denied: Post expired.
+551,Join Denied: Unknown Error.
+552,Waiting for response from:
+553,Look Up
+554,Look Down
+555,Request Denied: Cannot reserve vehicle.
+556,Max missions reached for this facility.
+557,Tgt:
+558,Origin:
+559,No Target Selected
+560,Error: Failed to create mission.
+561,Error: Insufficient privaleges.
+562,Error: Insufficient points.
+563,Mission ID %d was posted.
+564,TARGET
+565,Unable to log into host
+566,Connection to host lost
+567,HANDLE
+568,joystick 2 x-axis
+569,joystick 2 y-axis
+570,joystick 2 z-axis
+571,joystick 2 x-rotation
+572,joystick 2 y-rotation
+573,joystick 2 z-rotation
+574,joystick 2 button 1
+575,joystick 2 button 2
+576,joystick 2 button 3
+577,joystick 2 button 4
+578,joystick 2 button 5
+579,joystick 2 button 6
+580,joystick 2 button 7
+581,joystick 2 button 8
+582,joystick 2 button 9
+583,joystick 2 button 10
+584,joystick 2 button 11
+585,joystick 2 button 12
+586,joystick 2 button 13
+587,joystick 2 button 14
+588,joystick 2 button 15
+589,joystick 2 button 16
+590,joystick 2 button 17
+591,joystick 2 button 18
+592,joystick 2 button 19
+593,joystick 2 button 20
+594,joystick 2 button 21
+595,joystick 2 button 22
+596,joystick 2 button 23
+597,joystick 2 button 24
+598,joystick 2 button 25
+599,joystick 2 button 26
+600,joystick 2 button 27
+601,joystick 2 button 28
+602,joystick 2 button 29
+603,joystick 2 button 30
+604,joystick 2 button 31
+605,joystick 2 button 32
+606,joystick 3 x-axis
+607,joystick 3 y-axis
+608,joystick 3 z-axis
+609,joystick 3 x-rotation
+610,joystick 3 y-rotation
+611,joystick 3 z-rotation
+612,joystick 3 button 1
+613,joystick 3 button 2
+614,joystick 3 button 3
+615,joystick 3 button 4
+616,joystick 3 button 5
+617,joystick 3 button 6
+618,joystick 3 button 7
+619,joystick 3 button 8
+620,joystick 3 button 9
+621,joystick 3 button 10
+622,joystick 3 button 11
+623,joystick 3 button 12
+624,joystick 3 button 13
+625,joystick 3 button 14
+626,joystick 3 button 15
+627,joystick 3 button 16
+628,joystick 3 button 17
+629,joystick 3 button 18
+630,joystick 3 button 19
+631,joystick 3 button 20
+632,joystick 3 button 21
+633,joystick 3 button 22
+634,joystick 3 button 23
+635,joystick 3 button 24
+636,joystick 3 button 25
+637,joystick 3 button 26
+638,joystick 3 button 27
+639,joystick 3 button 28
+640,joystick 3 button 29
+641,joystick 3 button 30
+642,joystick 3 button 31
+643,joystick 3 button 32
+644,joystick 4 x-axis
+645,joystick 4 y-axis
+646,joystick 4 z-axis
+647,joystick 4 x-rotation
+648,joystick 4 y-rotation
+649,joystick 4 z-rotation
+650,joystick 4 button 1
+651,joystick 4 button 2
+652,joystick 4 button 3
+653,joystick 4 button 4
+654,joystick 4 button 5
+655,joystick 4 button 6
+656,joystick 4 button 7
+657,joystick 4 button 8
+658,joystick 4 button 9
+659,joystick 4 button 10
+660,joystick 4 button 11
+661,joystick 4 button 12
+662,joystick 4 button 13
+663,joystick 4 button 14
+664,joystick 4 button 15
+665,joystick 4 button 16
+666,joystick 4 button 17
+668,joystick 4 button 18
+669,joystick 4 button 19
+670,joystick 4 button 20
+671,joystick 4 button 21
+672,joystick 4 button 22
+673,joystick 4 button 23
+674,joystick 4 button 24
+675,joystick 4 button 25
+676,joystick 4 button 26
+677,joystick 4 button 27
+678,joystick 4 button 28
+679,joystick 4 button 29
+680,joystick 4 button 30
+681,joystick 4 button 31
+682,joystick 4 button 32
+683,Boot
+684,Drill
+685,System
+686,Country
+687,Station
+688,Allies
+689,Axis
+693,Invalid syntax
+694,joystick 1 slider 1
+695,joystick 1 slider 2
+696,joystick 2 slider 1
+697,joystick 2 slider 2
+698,joystick 3 slider 1
+699,joystick 3 slider 2
+700,joystick 4 slider 1
+701,joystick 4 slider 2
+702,empty
+703,Advanced Axis Settings
+704,Screen shot
+705,Save & Exit
+706,Axis Position (+/-100)
+707,Rate per keypress (%)
+708,Change HUD detail
+709,Sortie Results:
+710,Sortie results pending.
+711,Facility has changed sides. Reselect.
+712,HQ
+731,Show in game map
+732,joystick 2 pov hat 1 n
+733,joystick 2 pov hat 1 ne
+734,joystick 2 pov hat 1 e
+735,joystick 2 pov hat 1 se
+736,joystick 2 pov hat 1 s
+737,joystick 2 pov hat 1 sw
+738,joystick 2 pov hat 1 w
+739,joystick 2 pov hat 1 nw
+740,joystick 2 pov hat 2 n
+741,joystick 2 pov hat 2 ne
+742,joystick 2 pov hat 2 e
+743,joystick 2 pov hat 2 se
+744,joystick 2 pov hat 2 s
+745,joystick 2 pov hat 2 sw
+746,joystick 2 pov hat 2 w
+747,joystick 2 pov hat 2 nw
+748,joystick 3 pov hat 1 n
+749,joystick 3 pov hat 1 ne
+750,joystick 3 pov hat 1 e
+751,joystick 3 pov hat 1 se
+752,joystick 3 pov hat 1 s
+753,joystick 3 pov hat 1 sw
+754,joystick 3 pov hat 1 w
+755,joystick 3 pov hat 1 nw
+756,joystick 3 pov hat 2 n
+757,joystick 3 pov hat 2 ne
+758,joystick 3 pov hat 2 e
+759,joystick 3 pov hat 2 se
+760,joystick 3 pov hat 2 s
+761,joystick 3 pov hat 2 sw
+762,joystick 3 pov hat 2 w
+763,joystick 3 pov hat 2 nw
+764,joystick 4 pov hat 1 n
+765,joystick 4 pov hat 1 ne
+766,joystick 4 pov hat 1 e
+767,joystick 4 pov hat 1 se
+768,joystick 4 pov hat 1 s
+769,joystick 4 pov hat 1 sw
+770,joystick 4 pov hat 1 w
+771,joystick 4 pov hat 1 nw
+772,joystick 4 pov hat 2 n
+773,joystick 4 pov hat 2 ne
+774,joystick 4 pov hat 2 e
+775,joystick 4 pov hat 2 se
+776,joystick 4 pov hat 2 s
+777,joystick 4 pov hat 2 sw
+778,joystick 4 pov hat 2 w
+779,joystick 4 pov hat 2 nw
+780,You currently have %d points.
+781,This mission costs you %d points.
+782,Any
+783,No Origin
+784,No Target
+785,Offline Mode
+786,No Facility Name
+787,No Description File
+788,Invalid Weapon
+789,No Chokepoint Name
+790,Error
+791,Delete?
+792,- You can only post one mission per facility.
+793,- Missions may not be deleted.
+794,- Missions time-out after 30 minutes.
+795,Unknown Error.
+796,Mission by user already exists.
+797,This mission costs %d points. Continue?
+798,Crew has left vehicle.
+799,Please wait %d minutes before side change.
+800,Your rank prevents you from changing sides.
+801,Next
+802,Prev
+803,Squad
+804,Mission
+805,Origin
+806,World Lobby
+807,Blitz Lobby
+808,Version
+809,Crew member %d hit in %s
+810,Vehicle reservation has expired.
+811,* DEBRIEFING *
+812,Mission Elapsed Time:
+813,Mission Results:
+814,Total Kills Claimed This Sortie:
+815,Detailed Breakdown
+816,Vehicle Type
+817,Number Damaged
+818,Kills Claimed
+819,Mission results pending.
+820,Waiting for mission results...
+821,Lost chat connection, error %d, reconnecting.
+822,Lost chat connection, reconnect failed, error %d.
+823,Transport Error %d.
+824,Lost map connection, error %d.
+825,Lost game connection, error %d.
+826,Lost connection in transition %d.
+827,Mission Success
+828,Rescued!
+829,MIA
+830,KIA
+831,Could not connect to host, error %d.
+832,Unable to log into chat host.
+833,Gunsight Range Decrease
+834,Gunsight Range Increase
+835,Determine Range
+836,Unable to determine range
+837,Determining range ...
+838,Rangefinder determines range to be approximately %d meters
+839,Bombsight Speed Decrease
+840,Bombsight Speed Increase
+841,Bombsight Alt Decrease
+842,Bombsight Alt Increase
+843,Turret Traverse Secondary
+844,Turret Elevate Secondary
+845,Please wait...
+846,WEP On
+847,WEP Off
+848,Objective
+849,GM

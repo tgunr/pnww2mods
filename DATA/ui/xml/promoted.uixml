@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<window id="promoted" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768" style="background-color: #000000BB;" layer="100"
+	onshow="initPromotion()">
+	<include file="lib/common.uixml"/>
+	<view id="promoted-popup" x="300" rright="300" rtop="150" height="300" style="background-color: #00000088;
+							border-sides: ui/textures/hud/border_side.bmp;
+							border-corner: ui/textures/hud/border_corner.bmp;
+							border-width: 4;
+							border-height: 4;" moveondrag="yes">
+		<!-- display -->
+		<view id="promoted-display" x="20" y="30" rtop="20" rright="20" followtop="true">
+			<caption id="promoted-header" x="0" rtop="0" rright="0" height="30" style="color: #BFE2CE; font-size: +3;"/>
+			<text id="promoted-message" x="0" height="100" rtop="40" rright="0" acceptsfocus="false" style="font-size: +1; border-size-right: 10;  color: #e9e3d9;"/>
+			<view id="promoted-perks" x="20" y="20" rtop="90" rright="20" followtop="true"/>
+		</view>
+		
+		<!-- close -->
+		<button x="50" y="10" width="150" height="25" label="&popup.ok;" followbottom="true"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onclick="closePromoted()" onshow="positionClose(this)" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+	</view>
+	<script>
+		<!--
+		
+		function initPromotion()
+		{
+			// do something
+			var content = game.getcontent("gamevents/promoted.xml");
+			var display	= window.findview("promoted-display");
+			var header	= window.findview("promoted-header");
+			var message	= window.findview("promoted-message");
+			var perks	= window.findview("promoted-perks");
+			var persona	= game.player.client.persona;
+			var rank	= game.player.client.persona.rank;
+			var y 		= normalizeY(perks.height - 20);
+			
+			if(rank == null)
+				return;
+			
+			if(content)
+			{
+				header.label = content.title;
+				message.text = content.brief;
+				
+				var regex = new RegExp();
+				
+				regex.compile("\\{rank\\}", 'g');
+				message.text = message.text.replace(regex, rank.name);
+				
+				regex.compile("\\{service\\}", 'g');
+				message.text = message.text.replace(regex, getCountryBranch(game.player.client.country, game.player.client.branch));
+				
+				var v = display.addview("<caption class='rankicon' rank='" + (rank.level - 1) + "' x='" + normalizeX(display.width - 90) + "' y='" + normalizeY(display.height - 50) + "' width='36' height='36'/>");
+				
+				consoleprint("Rank icon added at " + v.x + "," + v.y + "," + v.width + "," + v.height + "\n");
+				consoleprint("Display id " + display.x + "," + display.y + "," + display.width + "," + display.height + "\n");
+			}
+			
+			// add in perks
+			y = addPerk(perks, 0, y, content.getloc("rank"), rank.level, rank.name);
+			
+			if(rank.level == 6)	y = addPerk(perks, 0, y, content.getloc("missions"));
+			if(rank.level == 6)	y = addPerk(perks, 0, y, content.getloc("binocs"));
+			if(rank.level == 9)	y = addPerk(perks, 0, y, content.getloc("officer"));
+			
+			var results = game.player.client.missionresults;
+			
+			if(results != null && results.nextrank != null)
+			{
+				y = addPerk(perks, 0, y, content.getloc("nextrank"), results.nextrank.name);
+				y = addPerk(perks, 0, y, content.getloc("pointsnextrank"), results.pointsnextrank);
+			}
+		}
+		
+		function positionClose(button)
+		{
+			var parent = button.parent;
+			button.x = (parent.width/2) - (button.width/2);
+		}
+		
+		function closePromoted()
+		{
+		 	soundPlayClick();
+			window.close();
+		}
+		
+		function addPerk(perks, x, y, message)
+		{
+			var regex		= new RegExp();
+			var alength 	= addPerk.arguments.length;
+			
+			if(alength > 4)
+			{
+				var argIndex = 1;
+				
+				for(var i = 4; i < alength; i++)
+				{
+					var arg = addPerk.arguments[i];
+					
+					if(arg != null)
+					{
+						regex.compile("\\{" + argIndex + "\\}", 'g');
+						message = message.replace(regex, arg);
+						argIndex++;
+					}
+				}
+			}
+			
+			var w = normalizeX(perks.width - x - 10);
+			var v = perks.addview("<view x='" + x + "' y='" + (y + 5) + "' width='4' height='4' style='background-color: #3e5248;'/>");
+			
+			v = perks.addview("<caption x='" + (x + 10) + "' y='" + y + "' width='" + w + "' height='20' style='color: #e9e3d9;'/>");
+			v.label = message;
+			
+			return normalizeY(v.y - 20);
+		}
+		
+		-->
+	</script>
+</window>
+

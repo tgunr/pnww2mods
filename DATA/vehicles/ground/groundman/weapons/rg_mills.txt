@@ -1,0 +1,63 @@
+# first thing in the weapon file should always be the weapontype
+# this causes the default_(weapontype).txt file to be loaded first
+# valid weapon types are:
+# SMG, SATCHEL, RIFLE, AUTO_PISTOL, GRENADE, REVOLVER, ITEM, KNIFE, LMG
+weaponType = RIFLE
+
+hiddenMeshes = shells,stripperclip,n68mk1
+
+# sound to play when reloading
+reloadSound = sounds\enfieldreload.wav
+rgReloadSound = sounds\troop\rgreload.wav
+deploySound = sounds\troop\millscupattach.wav
+undeploySound = sounds\troop\millscupremove.wav
+
+# specify the weapon & clip (clip optional) model here
+# note that data\gr2data\FPS\ is prepended to these file names
+#weaponModel = mills\gunmesh-mills
+weaponModel = mills\gunmesh-mills@1
+#clipModel = mills\gunmesh-mills-stripperclip
+
+# granny attach bone names for weapon & clip
+# the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
+weaponConnectTo = rifle-control
+weaponConnect = enfield-connect
+
+# the clipConnect bone in the clip attaches to the clipConnectTo bone in the gun
+#clipConnectTo = enfield-stripperclip-control
+#clipConnect = enfield-stripperclip-control
+
+# boresighting values .. how much off of "straight" does this gun need to fire
+#aimVerticalCorrection = 0.11
+#aimHorizontalCorrection = 0
+aimVerticalCorrection = -0.04
+aimHorizontalCorrection = 0.02
+
+# how far back along the barrel to start the bullet (firepoints are at the tip)
+firepointDisplacement = 0.74
+
+#auxRGCupModel = mills\cupmesh-mills
+auxRGCupModel = mills\gunmesh-mills
+auxRGCupConnect = cup-connect
+auxRGCupConnectTo = cup-connect
+auxRGCupConnectToAlt = firepoint
+auxAltRGCupConnectTime = 1.2
+auxAltRGCupDisconnectTime = 0.92
+
+#auxRGGrenadeModel = mills\grenademesh-n68mk1
+#auxRGGrenadeConnect = mills-connect
+#auxRGGrenadeConnectTo = mills-connect
+#auxRGGrenadeConnectToAlt = firepoint
+auxAltRGGrenadeConnectTime = 2.5
+
+#rgFiringRules = 1
+#rgFiringAngle = 45.0
+
+weapDeployUpAngleStand = 45.0
+weapDeployDownAngleStand = 60.0
+weapDeployUpAngleCrouch = 25.0
+weapDeployDownAngleCrouch = 75.0
+weapDeployUpAngleProne = 10.0
+weapDeployDownAngleProne = 10.0
+weapDeployKneelDeployUpAngle = 60.0
+weapDeployKneelDeployDownAngle = 30.0

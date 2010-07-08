@@ -1,0 +1,17 @@
+# Rev. 4/23/02 - bloo
+
+mass = 12.5
+firetype = auto
+rateoffire = 800
+#syncrateoffire = 918
+ammotype1 = 7_9mm_mg37t
+ammotype2 = 7_9mm_mg37ttracer
+ghostrof = 200
+ghostammotype = 7_9mm_mg37ttracer
+dispersion = 0.2
+cliprounds = 100
+reloadtime = 6
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = belt

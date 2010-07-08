@@ -1,0 +1,27 @@
+# Rev. 4/19/02 - bloo
+# Should it have an explosive amount because Incendiary?
+# yup and I addded it July-08 for v1.29 - Doc.
+
+type = ballistic
+diameter = .0079
+weight = 0.0103
+ammoweight = 0.03
+velocity = 830
+tracertime = 2.0
+object = bullet1
+stretchobject = 1
+explosive = 15.0
+fuzetime = 0.001
+bc = 0.31
+lifetime = 3.0
+dontdisplayfirstframe = 1
+penetrationconstant = 0.0000002916
+ricochetangle = 89
+muzzleflash = 1
+hiteffect= incendiarymg
+
+#added for explosion render
+
+numshrapnelpieces = 1
+totalshrapnelmass = .03
+shrapnelpenetration = .0000002122

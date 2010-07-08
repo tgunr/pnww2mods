@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<view id="ok" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" aspectalign="center"
+	style="background-color: #00000077;" layer="100">
+	<include file="lib/popup.uixml"/>
+	<view x="350" y="400" width="350" height="100" style="background-color: #00000088; 
+							border-sides: ui/textures/hud/border_side.bmp;
+							border-corner: ui/textures/hud/border_corner.bmp;
+							border-width: 4;
+							border-height: 4;" moveondrag="yes">
+		<text id="popup-caption" x="10" y="0" height="90" width="330" acceptfocus="no" style=" color: #FFFFFF;"/>
+	</view>
+</view>
+

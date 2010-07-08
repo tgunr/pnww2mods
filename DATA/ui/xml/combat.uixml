@@ -1,0 +1,353 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+<window id="combat" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" onshow="initWin()" onupdate="doForwardTimer()">
+	<include file="lib/tutorial.uixml"/>
+	<include file="widgets/template.uixml"/>
+	<include file="classes/ListControl.uixml"/>
+	<include file="classes/TreeControl2.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+	<include file="classes/IntelFile.uixml"/>
+	<tabview id="body" x="43" y="140" width="930" height="450" ontab="quickhelp()" style="color: #BFE2CE;
+						background-color: #000000BB; 
+						border-top-corner: ui/textures/test/body_ul.bmp;
+						border-bottom-corner: ui/textures/test/body_br.bmp;
+						border-sides: ui/textures/test/body_sides.bmp;
+						border-top: ui/textures/test/body_top.bmp;
+						border-bottom: ui/textures/test/body_bottom.bmp;
+						control-on-endcap:  ui/textures/test/body_tab_cap_on.bmp;
+						control-on-back:  ui/textures/test/body_tab_filler_on.bmp;
+						control-off-endcap: ui/textures/test/body_tab_cap.bmp;
+						control-off-back: ui/textures/test/body_tab_filler.bmp;
+						control-on-color: #FFFFCE;
+						border-width: 16;
+						border-height: 16;">
+		<tab label="  &combat.ready;  " x="0" y="0" width="930" height="460"
+			onshow='setHelp(getlocstring("combat.help")); tplTab()'>
+			<view id="left-pane" x="18" y="23" width="444" height="411">
+				<!-- weapon selection -->
+				<view x="10" width="425" height="400" rtop="12">
+					<caption id="forces-header" label="&combat.vehicle.choose;" x="0" height="20" width="425" rtop="0"
+						style="font-size: +2; color: #BFE2CE; tooltip: widgets/tooltips/supplytip.uixml;"/>
+					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
+					<view x="0" height="15" rtop="22" rright="0">
+						<caption x="0" y="0" height="15" rright="5" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+							label="&combat.vehicle.name;"/>
+					</view>
+					<list id="spawnList" x="0" height="300" rtop="40" rright="0"
+						onselect="spawnList.clickList(false)" ondblselect="spawnList.clickList(true)"/>
+				</view>
+			</view>
+			<include file="widgets/divider.uixml"/>
+			<view id="right-pane" x="468" y="23" width="444" height="411">
+				<view x="10" y="10" width="425" rtop="17">
+					<caption id="tut-header" x="0" height="20" width="400" rtop="2" style="font-size: +2; color: #BFE2CE;"/>
+					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="12"/>
+					<text id="tut-body" x="5" height="200" rright="5" rtop="26" acceptfocus="no" style="color: #e9e3d9ff;"/>
+					<panel id="tut-info" label="&tutorials.info;" align="center" x="0" y="10" height="100" rright="0"
+						style="color: #3e5248; border-color: #3e5248; border-size: 1; font-size: -1;">
+						<caption label="&tutorials.status;:" x="20" height="15" rright="20" rtop="20" style="color: #e9e3d9ff;"/>
+						<caption id="tut-status" x="20" height="15" rright="20" rtop="20" style="color: #e9e3d9ff;" align="right"/>
+						<caption label="&tutorials.prereq;:" x="20" height="15" rright="20" rtop="40" style="color: #e9e3d9ff;"/>
+						<caption id="tut-prereq" x="20" height="15" rright="20" rtop="40" style="color: #e9e3d9ff;" align="right"/>
+						<caption label="&tutorials.prereqstatus;:" x="20" height="15" rright="20" rtop="60" style="color: #e9e3d9ff;"/>
+						<caption id="tut-prereqstatus" x="20" height="15" rright="20" rtop="60" style="color: #e9e3d9ff;" align="right"/>
+					</panel>
+				</view>
+			</view>
+		</tab>
+		<tab id="map" label="  &common.map.tab;  " x="20" y="10" width="930" height="460"
+			onshow='setHelp(getlocstring("common.map.tab.help")); tplTab()' tip="&common.map.tab.tip;">
+			<include file="widgets/map.uixml"/>
+		</tab>
+		<include file="widgets/globals/manuals.uixml"/>
+		<include file="widgets/globals/settings.uixml"/>
+	</tabview>
+	<include file="widgets/infobar.uixml"/>
+	<script>
+		<!--
+		
+		game.consoleprint(">>> STARTING COMBAT PAGE\n");
+		
+		var trainWin		= "persona";
+		var trainTab		= 0;
+		var client 			= game.player.client;
+		var theatreMap		= findview("mapview");
+		var spawnList 		= new ListControl(findview("spawnList"));
+		var tutHeader		= findview("tut-header");
+		var tutBody			= findview("tut-body");
+		var tutInfo			= findview("tut-info");
+		var ftimer			= new CycleTimer(10000);
+		
+		/***************** COMMON FUNCTIONS *******************/
+		
+		function doBack()
+		{
+			var tutHud = game.findview("tutorial");
+			if(tutHud != null)
+			{
+				tutHud.close();
+			}
+				
+			game.stoptutorial(true);
+			loadWinToTab(trainWin, trainTab, true);
+		}
+		
+		function doForward()
+		{
+			if(spawnList.data != null)
+			{
+				var spawner = getSpawnPoint();
+				game.spawnAt(spawnList.data, spawner[0], spawner[1], spawner[2], spawner[3]);
+				setForwardEnabled(false);
+				
+				ftimer.reset();
+				ftimer.enabled = true;
+			}
+		}
+		
+		function initWin()
+		{
+			//game.consoleclear();
+			
+			var ok = game.findview("ok");
+			if(ok != null) ok.close();
+			
+			if(game.globals.tutorial != null)
+			{
+				tutContent = game.globals.tutorial;
+			}
+			else
+			{
+				showOk('Invalid Tutorial!');
+				return;
+			}
+			
+			if(game.globals.trainWin != null)
+				trainWin = game.globals.trainWin;
+			
+			if(game.globals.trainTab != null)
+				trainTab = game.globals.trainTab;
+			
+			var chat = game.findview("chat");
+			if(chat != null)
+			{
+				chat.x = window.width/2 - chat.width/2;
+				chat.y = 10;
+			}
+			
+			showChat(true);
+			setHelp(getlocstring('combat.help'));
+			setBack('combat.back');
+			setForward('combat.forward');
+			
+			// where is the mission target?
+			//theatreMap.mgr.jumpTo(mission.target);
+			//missionMap.mgr.jumpTo(mission.target);
+			
+			// setup our vehicle list
+			initVehicles();
+			initTutContent();
+			
+			game.player.client.onspawnerror = onSpawnDenied;
+			
+			if(TutIsComplete(tutContent))
+				setForwardEnabled(false);
+			
+			quickhelp();
+			
+			ftimer.enabled = false;
+		}
+		
+		function initVehicles()
+		{
+			consoleprint("Updating vehicles\n");
+			
+			var vehicles 	= game.personavehicles;
+			var allowed		= getAllowedVehicles();
+			
+			spawnList.clearRows(false);
+			
+			if(vehicles.length > 0)
+			{
+				for(var i = 0; i < vehicles.length; i++)
+				{
+					// need to check this vehicle against the tutorial's allowed vehicles
+					
+					var vehicle = vehicles[i];
+					var ok 		= false;
+					
+					for(var a = 0; a < allowed.length; a++)
+					{
+						consoleprint("Checking " + vehicle.id + " against " + allowed[a] + "\n");
+						if(vehicle.id == allowed[a])
+						{
+							ok = true;
+							break;
+						}
+					}
+					
+					if(!ok) continue;
+					
+					var row 	= "\
+<view id='" + vehicle.id + "' width='418' height='20' onmouseenter='spawnList.mouseEnter(this)' onmouseexit='spawnList.mouseExit(this)'>\
+	<caption id='mission-vehicle' x='10' y='3' width='400' height='16' style='font-size: -1; color: #FFFFFF;' label='" + htmlencode(vehicle.description) + "'/>\
+</view>";
+					
+					game.consoleprint(row + "\n");
+
+					spawnList.addRow(vehicle, row);
+				}
+			}
+			else
+			{
+				var row	= "\
+<view id='mission_empty' width='418' height='16'>\
+	<caption id='mission-vehicle' x='0' y='0' width='250' height='16' style='color: #e9e3d9ff; '\
+		label='None'/>\
+</view>";
+				spawnList.addRow(null, row);
+			}
+			
+			spawnList.postInit();
+		}
+		
+		function initTutContent()
+		{
+			if(tutContent != null)
+			{
+				tutHeader.label = tutContent.title.toUpperCase();
+				tutBody.text 	= tutContent.brief;
+				tutInfo.visible = true;
+				
+				var status 			= tutInfo.findview("tut-status");
+				var prereq 			= tutInfo.findview("tut-prereq");
+				var prereqstatus 	= tutInfo.findview("tut-prereqstatus");
+				var requires 		= TutGetContent(tutContent.requires, true);
+				
+				TutSetStatusView(requires, prereq, prereqstatus);
+				TutSetStatusView(tutContent, null, status);
+			}
+		}
+		
+		function OnTutorialCompleted()
+		{
+			if(!TutIsComplete(tutContent))
+			{
+				TutSetCompleted(tutContent.handler, true);
+				initTutContent();
+				showOk(tutContent.getloc("graduated"));
+			}
+		}
+		
+		function setCombatStatus(tom, captures, damages)
+		{
+			game.consoleprint("Setting combat status!\n");
+			
+			if(tutContent)
+			{
+				var tomComplete = false;
+				var capComplete = false;
+				var damComplete = false;
+				
+				// convert to ints
+				tom	= parseInt(tom);
+				cap	= parseInt(captures);
+				dam = parseInt(damages);
+				
+				targetTom = parseInt(tutContent.tom) * 60;
+				targetCap = parseInt(tutContent.captures);
+				targetDam = parseInt(tutContent.damages);
+				
+				if(tom >= targetTom)	tomComplete = true;
+				if(cap >= targetCap)	capComplete = true;
+				if(dam >= targetDam)	damComplete = true;
+				
+				var isComplete = TutIsComplete(tutContent);
+				
+				// complete the tutorial if one of these hit
+				if(!isComplete && (tomComplete || capComplete || damComplete))
+					OnTutorialCompleted();
+				
+				if(isComplete)
+					setForwardEnabled(false);
+			}
+		}
+		
+		function getAllowedVehicles()
+		{
+			var spec = tutContent[game.player.client.country.code.toLowerCase() + "vehicles"];
+			
+			if(spec == null)
+				spec = tutContent.vehicles;
+			
+			if(spec != null && spec != "")
+			{
+				consoleprint("Combat vehicle spec is " + spec + "\n");
+				return spec.split(/\s*,\s*/);
+			}
+			
+			return new Array();
+		}
+		
+		function getSpawnPoint()
+		{
+			var spec = tutContent[game.player.client.country.code.toLowerCase() + "spawners"];
+			
+			if(spec == null)
+				spec = tutContent.spawners;
+			
+			consoleprint("Spawn spec is: " + spec + "\n");
+				
+			if(spec != null && spec != "")
+			{
+				var spawners 	= spec.split(/[\s,]+/);
+				var count		= Math.floor(spawners.length / 4);
+				
+				consoleprint("Spawner count is: " + count + "\n");
+				
+				if(count > 0)
+				{
+					var index = Math.floor(Math.random()*count) * 4;
+					var spawner = new Array(4);
+					
+					spawner[0] = spawners[index];
+					spawner[1] = spawners[index + 1];
+					spawner[2] = spawners[index + 2];
+					spawner[3] = spawners[index + 3];
+					
+					consoleprint("Spawner index is: " + index + "\n");
+					consoleprint("Spawner 0: " + spawner[0] + "\n");
+					consoleprint("Spawner 1: " + spawner[1] + "\n");
+					consoleprint("Spawner 2: " + spawner[2] + "\n");
+					consoleprint("Spawner 3: " + spawner[3] + "\n");
+					
+					
+					return spawner;
+				}
+			}
+			
+			return null;
+		}
+		
+		function onSpawnDenied(code)
+		{
+			consoleprint("Processing Spawn Denied Code: " + code + "\n");
+			
+			if(code == null)
+				code = "";
+			
+			showOk(getlocstring('mission.spawn.denied' + code));
+		}
+		
+		function doForwardTimer()
+		{
+			if(ftimer.run())
+			{
+				ftimer.enabled = false;
+				setForwardEnabled(true);
+			}
+		}
+		
+		-->
+	</script>
+</window>

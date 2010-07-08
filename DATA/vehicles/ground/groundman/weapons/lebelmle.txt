@@ -1,0 +1,51 @@
+# first thing in the weapon file should always be the weapontype
+# this causes the default_(weapontype).txt file to be loaded first
+# valid weapon types are:
+# SMG, SATCHEL, RIFLE, AUTO_PISTOL, GRENADE, REVOLVER, ITEM, KNIFE, LMG
+weaponType = RIFLE
+
+hiddenMeshes = lebelHighShell
+
+# sound to play when reloading
+# **** FIXME UNTIL NEW SOUNDS INCORPORATED ****
+reloadSound = sounds\lebelopen.wav
+reload2Sound = sounds\lebelbullet.wav
+reload3Sound = sounds\lebelcls.wav
+
+# specify the weapon & clip (clip optional) model here
+# note that data\gr2data\FPS\ is prepended to these file names
+weaponModel = lebel\lebelSniperMesh
+#clipModel = mas36\gunmesh-mas36-stripperclip
+
+# granny attach bone names for weapon & clip
+# the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
+weaponConnectTo = rifle-control
+weaponConnect = mas36-connect
+
+# the clipConnect bone in the clip attaches to the clipConnectTo bone in the gun
+#clipConnectTo = stripperclip-control
+#clipConnect = stripperclip-connect
+
+# boresighting values .. how much off of "straight" does this gun need to fire
+#aimVerticalCorrection = -0.015
+#aimHorizontalCorrection = 0.03
+aimVerticalCorrection = -0.01
+aimHorizontalCorrection = -0.01
+
+# how far back along the barrel to start the bullet (firepoints are at the tip)
+firepointDisplacement = 0.90
+
+weaponBreathMultiplier = 0.05
+weaponHeartMultiplier = 1.0
+weaponMoveMultiplier = 1.0
+weaponPoseMultiplier = 0.5
+
+# This is an Experament of Snipper scope
+# Note sniperGunSight is the gs file for the scope. If it is not there it does not work.
+# sniperScopeDelay is the length beween the moment that aim animation starts and the scope 
+# sight appers. 
+sniperGunSight = vehicles\ground\groundman\4x_riflescope.gs
+sniperScopeDelay = 0.1
+sniperScopeEndDelay = 0.05
+
+minimumDispersion = 0.001666667

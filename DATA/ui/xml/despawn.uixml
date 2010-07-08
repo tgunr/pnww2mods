@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<window id="despawn" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" modal="true"
+	style="background-color: #00000077;" layer="100" aspectalign="center" onshow="initDespawnPopup(this)">
+	<include file="lib/popup.uixml"/>
+	<include file="lib/sound.uixml"/>
+	<view id="despawn-viewer" width="350" height="200" rtop="200" moveondrag="yes"
+		  		style="background-color: #00000088;
+							border-sides: ui/textures/hud/border_side.bmp;
+							border-corner: ui/textures/hud/border_corner.bmp;
+							border-width: 4;
+							border-height: 4;">
+		<text id="popup-caption" x="10" rtop="10" height="50" width="330" acceptfocus="no" acceptsmouseclick="false" style=" color: #FFFFFF;"
+			followtop="true"/>
+		<button id="popup-close" width="15" height="15" rtop="10" rright="10" followtop="true" onclick="doPopupClose()"
+			style="control-on: ui/textures/test/exit_on.bmp; control-off: ui/textures/test/exit_off.bmp;"
+			tip="&popup.quit;"/>
+		<text id="despawn-ms" width="300" height="60" x="20" rtop="50" style="color: #e9e3d9ff;" acceptfocus="no" acceptsmouseclick="false"
+			onshow="this.text = getlocstring('exitvehicle.ms')"/>
+		<image id="despawn-ms-checkbox" width="16" height="16" x="15" rtop="120" src="ui/textures/map-checkbox-on.bmp"
+			onclick="setUndeployState()"/>
+		<caption id="despawn-ms-checkbox-label" label="&exitvehicle.ms.leave;" x="30" width="300" height="15" rtop="121" style="color: #FFFFFFFF; "
+			onclick="setUndeployState()"/>
+		<button id="popup-no" x="20" y="10" width="150" height="25" label="&popup.cancel;" onclick="doDespawnAction(false)"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+		<button id="popup-yes" x="180" y="10" width="150" height="25" label="&popup.ok;" onclick="doDespawnAction(true)"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+	</view>
+	<script>
+		<!--
+		
+		var undeploy 		= false;
+		var client			= game.player.client;
+		var msCheckbox		= window.findview("despawn-ms-checkbox");
+		
+		function initDespawnPopup(win)
+		{
+			if(!client.ismobilespawn || !client.cansto)
+			{
+				if(client.ismobilespawn && !client.cansto)
+					undeploy = true;
+				
+				msCheckbox.visible = false;
+				
+				win.findview("despawn-ms").visible = false;
+				win.findview("despawn-ms-checkbox-label").visible = false;
+				win.findview("despawn-viewer").height -= 100;
+			}
+		}
+		
+		function doDespawnAction(response)
+		{
+			if(popupCallback != null)
+				popupCallback(response, undeploy);
+			
+			doPopupFree();
+		}
+		
+		function setUndeployState()
+		{
+			consoleprint("Setting despawn undeploy state!\n");
+			
+			soundPlayClick();
+			
+			undeploy 		= !undeploy;
+			msCheckbox.src 	= (undeploy) ? "ui/textures/map-checkbox-off.bmp": "ui/textures/map-checkbox-on.bmp";
+		}
+		
+		// -->
+	</script>
+</window>

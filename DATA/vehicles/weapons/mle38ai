@@ -1,0 +1,22 @@
+# AI version of Hotchkiss 38 AA 25mm Flak gun
+# Rev. 06/17/03 - Doc
+# Dispersion taken from PzII 20mm
+# Reload time needs checking
+
+mass = 0.0
+firetype = auto
+rateoffire = 360
+dispersion = 0.11
+ammotype1 = 25mm_1ai
+ammotype2 = 25mm_2ai
+ammotype3 = 25mm_3ai
+ammotype4 = 25mm_4ai
+ammotype5 = 25mm_5ai
+ghostrof = 250
+ghostammotype = 25mm_5ai
+cliprounds = 15
+reloadtime = 4
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = na

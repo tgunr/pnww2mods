@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<view id="terminal" x="1" y="0" width="1022" height="200" layer="100"
+	viewportwidth="1024" viewportheight="768">
+	<textcontrol id="terminal-input" x="0" height="15" rright="0" rtop="0" history="100"
+		onenter="doConsoleCommand(this)"
+		style="border-color: #FFFFFF; background-color: #000000; color: #FFFFFF;"/>
+	<console id="terminal-display" x="0" y="0" rright="0" height="185" acceptfocus="no"
+		style="font-size: -1; color: #FFFFFF; background-color: #000000; border-width: .5; border-height: .5; border-size-right: 10;">
+		<scrollbar minbarsize="30" style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+	</console>
+	<script>
+		<!--
+		
+		function doConsoleCommand(input)
+		{
+			var display = input.parent.findview("terminal-display");
+			
+			if(display != null)
+				display.addcommand(input.text);
+			
+			input.text = "";
+		}
+		
+		-->
+	</script>
+</view>

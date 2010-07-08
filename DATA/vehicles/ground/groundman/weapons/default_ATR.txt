@@ -1,0 +1,87 @@
+muzzleRise = 2.5
+muzzleReturn = 37.5
+muzzleClimbRate = 80.0
+
+# per bullet "jump" .. this is the vertical component
+# the total formula is weapon.muzzleRize * weapon.bulletJitter * trooper.aimControl
+bulletJitter = 3.5
+
+# sound to play when reloading
+reloadSound = sounds\k98reload.wav
+
+# additional multiplier for horizontal bullet jump
+horizJitterMult = 1.75
+
+speedMultiplier = 1.0
+
+minimumDispersion = 0.01666667
+# This is set VERY HIGH as a place holder for actual gun sway
+unaimedDispersionMod = 1.0
+controlability = 1.0
+aimFOV = 45.0
+
+recycleSound = sounds\\k98bolt.wav
+
+
+# these all MUST be specified in the weapon specific file
+# note that data\gr2data\FPS\ is prepended to these file names
+#weaponModel
+
+# granny attach bone names for weapon & clip
+# the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
+#weaponConnectTo
+#weaponConnect
+
+# boresight distance
+convergenceDistance = 200.0
+
+# flag for the control manager whether to allow the fire button to be held down or not
+# required for autofire weapons as well as recycling weapons
+holdfire = 1
+
+# says whether to eject the shells immediately or on a time delay
+ejectImmediate = 0
+ejectDelay = 0.6
+
+# size multilier for the shell model
+shellScale = 0.2
+
+# what icon to display in the hud (8 = smg)
+hudIconType = 13
+
+clipBullets = -1
+
+# how far back along the barrel to start the bullet (firepoints are at the tip)
+firepointDisplacement = 1.2
+
+weaponBreathMultiplier = 1.0
+weaponHeartMultiplier = 1.0
+weaponMoveMultiplier = 1.0
+weaponPoseMultiplier = 1.0
+
+staticDeploy = 1
+
+leanFireOK = 0
+
+onlyFireDeployed = 1
+suppressAim = 1
+
+perBulletATP = -0.1
+
+# variable sight data
+numConvDists = 10
+convDist1 = 100.0
+convDist2 = 200.0
+convDist3 = 300.0
+convDist4 = 400.0
+convDist5 = 500.0
+convDist6 = 600.0
+convDist7 = 700.0
+convDist8 = 800.0
+convDist9 = 900.0
+convDist10 = 1000.0
+sightAdjustTime = 1.0
+sightAdjustSound = sounds\wheelopen.wav
+
+dryFireSoundLength = 0.3
+dryFireSound = sounds\troop\LMG_ATR_dryfire.wav

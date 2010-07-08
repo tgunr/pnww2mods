@@ -1,0 +1,24 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<masses>
+<mass name="mass_turret"
+	mass="1" volume="2.911666"
+	modelcmx="+0.000000" modelcmy="+0.212839" modelcmz="+0.810876"
+	unitinertiaxx="+0.355501" unitinertiayy="+0.396487" unitinertiazz="+0.660358"
+	unitinertiaxy="-0.000000" unitinertiaxz="+0.000000" unitinertiayz="-0.000967"/>
+<mass name="mass_turret_1"
+	mass="1" volume="0.141383"
+	modelcmx="-0.000000" modelcmy="-0.861623" modelcmz="+0.921707"
+	unitinertiaxx="+0.027905" unitinertiayy="+0.091691" unitinertiazz="+0.087729"
+	unitinertiaxy="-0.000000" unitinertiaxz="-0.000000" unitinertiayz="-0.006169"/>
+<mass name="mass_lefttread"
+	mass="1" volume="0.171271"
+	modelcmx="-1.087958" modelcmy="+1.744592" modelcmz="-0.545149"
+	unitinertiaxx="+0.102687" unitinertiayy="+0.055649" unitinertiazz="+0.059940"
+	unitinertiaxy="+0.000000" unitinertiaxz="-0.000000" unitinertiayz="+0.000000"/>
+<mass name="mass_righttread"
+	mass="1" volume="0.069556"
+	modelcmx="+1.087958" modelcmy="+2.609227" modelcmz="-0.322469"
+	unitinertiaxx="+0.041667" unitinertiayy="+0.027284" unitinertiazz="+0.027284"
+	unitinertiaxy="+0.000000" unitinertiaxz="+0.000000" unitinertiayz="+0.000000"/>
+</masses>

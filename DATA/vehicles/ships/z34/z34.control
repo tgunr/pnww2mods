@@ -1,0 +1,127 @@
+# Type 1934 Control file
+
+# Helm
+position = 1
+control = radio
+# control = hatchcontrol
+control = canopycontrol
+control = map
+control = auxsight
+control = bothbrake
+control = leftbrake
+control = rightbrake
+control = enginerpm
+control = steering
+control = clutch
+control = shiftup
+control = shiftdown
+control = reverse
+control = gas
+control = engstart
+
+# Captain
+position = 2
+control = radio
+# control = hatchcontrol
+control = canopycontrol
+control = map
+control = auxsight
+control = turretraverse
+control = turretelevate
+
+# 2 Forward Fire Director
+position = 3
+control = radio
+# control = hatchcontrol
+#control = canopycontrol
+control = map
+control = auxsight
+control = turretraverse
+control = turretelevate
+control = primarytrigger
+control = secondarytrigger
+control = rangefind
+control = gunsightrangedec
+control = gunsightrangeinc
+
+# 20mm AA Fwd
+position = 4
+control = radio
+# control = hatchcontrol
+control = canopycontrol
+control = map
+control = auxsight
+control = turretraverse
+control = turretelevate
+control = primarytrigger
+control = secondarytrigger
+control = gunsightrangedec
+control = gunsightrangeinc
+
+# 20mm AA Aft
+position = 5
+control = radio
+# control = hatchcontrol
+control = canopycontrol
+control = map
+control = auxsight
+control = turretraverse
+control = turretelevate
+control = primarytrigger
+control = secondarytrigger
+control = gunsightrangedec
+control = gunsightrangeinc
+
+# 37mm AA
+position = 6
+control = radio
+# control = hatchcontrol
+control = canopycontrol
+control = map
+control = auxsight
+control = turretraverse
+control = turretelevate
+control = primarytrigger
+control = secondarytrigger
+#control = rangefind
+control = gunsightrangedec
+control = gunsightrangeinc
+
+
+# Aft Fire Director
+position = 7
+control = radio
+# control = hatchcontrol
+# control = canopycontrol
+control = map
+control = auxsight
+control = turretraverse
+control = turretelevate
+control = primarytrigger
+control = secondarytrigger
+control = rangefind
+control = gunsightrangedec
+control = gunsightrangeinc
+
+
+# Torpedo tubes
+position = 8
+control = radio
+# control = hatchcontrol
+# control = canopycontrol
+control = map
+control = auxsight
+control = turretraverse
+control = turretelevate
+control = primarytrigger
+control = secondarytrigger
+control = gunsightrangedec
+control = gunsightrangeinc
+control = targetspeedinc
+control = targetspeeddec
+control = targetangleinc
+control = targetangledec
+control = targetmarkbearing
+control = torpedodepthinc
+control = torpedodepthdec
+control = targetcalcsolution

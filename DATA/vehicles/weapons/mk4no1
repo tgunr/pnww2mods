@@ -1,0 +1,20 @@
+# Rev. 4/25/02 - bloo
+
+mass = 3.9
+firetype = singleshot
+rateoffire = 60
+#syncrateoffire = 40
+dispersion = 0.01
+ammotype1 = 303rifle
+ammotype2 = millsno68
+ghostrof = 60
+ghostammotype = 303rifle
+
+cliprounds = 10
+reloadtime = 6
+# skilled shooters of this weapon could fire
+# 40 rounds/minute maximum
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = reload

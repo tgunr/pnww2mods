@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+<!-- add context menu -->
+<contextmenu id="report" height="15" width="150" vindent="-5" hindent="125" label="&widgets.map.waypoints.contact;"
+	onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+	style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;">
+	<contextmenu height="15" width="150" label="&widgets.map.waypoints.contact.infantry;"
+		onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+		onclick="contextMenu.addReport('troop')"
+		style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;"/>
+	<contextmenu height="15" width="150" label="&widgets.map.waypoints.contact.armor;"
+		onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+		onclick="contextMenu.addReport('land')"
+		style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;"/>
+	<contextmenu height="15" width="150" label="&widgets.map.waypoints.contact.airforce;"
+		onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+		onclick="contextMenu.addReport('air')"
+		style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;"/>
+	<contextmenu height="15" width="150" label="&widgets.map.waypoints.contact.shipping;"
+		onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+		onclick="contextMenu.addReport('sea')"
+		style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;"/>
+</contextmenu>
+

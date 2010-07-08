@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<view id="content" x="0" y="0" width="425" height="358" viewportwidth="1024" viewportheight="768"
+	aspectalign="left" onshow="showContent(this)">
+	<include file="lib/content.uixml"/>
+	<text id="unit-brief" x="10" rtop="10" width="300" height="160" acceptsfocus="no" style="color: #e9e3d9; "/>
+	<image id="unit-image" width="160" height="350" rright="10" rtop="10" style="border-color: #BFE2CE;"/>
+	<image id="unit-divider" x="10" y="200" width="240" height="12" src="ui/textures/test/horiz_underline.bmp"/>
+	<text id="unit-body" x="10" y="10" width="240" height="190" acceptsfocus="no" style="border-size-right: 10; color: #e9e3d9; ">
+		<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+	</text>
+	<script>
+		<!--
+		
+		type = "handlers/infantry";
+		
+		function showContent(viewer)
+		{
+			showViewer(viewer);
+			
+			var brief 	= viewer.findview("unit-brief");
+			var divider	= viewer.findview("unit-divider");
+			var body 	= viewer.findview("unit-body");
+			var image 	= viewer.findview("unit-image");
+			
+			brief.text 	= content.brief;
+			
+			brief.resizetotext();
+			brief.y = viewer.height - brief.height - 10;
+			divider.y = brief.y - 20;
+			body.height = brief.y - 30;
+			
+			body.text 	= content.body;
+			image.src	= content.image;
+		}
+		
+		-->
+	</script>
+</view>
+
+

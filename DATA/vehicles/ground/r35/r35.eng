@@ -1,0 +1,34 @@
+#engine stats file for r35
+[RENAULT_85hp]
+basehorsepower = 105
+basehpalt = 0
+basehprpm = 2300
+basehppress = 1.0
+
+basehpexhausttemp = 1000
+idlethrottlepos = 0.1
+
+idlerpm = 800
+fuelperhphour = 0.260
+fuelperhphourecon = 0.260
+oilconsumptionperhour = 0
+wepmaxpress = 1.0
+milmaxpress = 1.0
+climbmaxpress = 1.0
+econmaxpress = 1.0
+idlepressure = 0.01
+weprpm = 2300
+milrpm = 2300
+climbrpm = 2300
+econrpm = 2300
+
+superchargertype = none
+weptype = none
+
+#criticalrpm is the rpm at which below this the engine might stall, also used for starting
+criticalrpm 400
+
+#starterrpm is the rpm at which the starter motor will spin the engine at
+starterrpm 100
+#starterhp is the power of the starter motor
+starterhp 2

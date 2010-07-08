@@ -1,0 +1,73 @@
+#airfoils file for HurriIIc
+
+[propeller]
+baseairfoil = propbase.pol
+up10degairfoil = prop_up10.pol
+down10degairfoil = prop_dn10.pol
+stallfile = prop.stall
+compressibilityfile = prop.compress
+
+[hurri1root]
+baseairfoil = clarkyh_19.pol
+up10degairfoil = clarkyh_19.pol
+down10degairfoil = clarkyh_19.pol
+stallfile = clarkyh_19.stall
+compressibilityfile = clarkyh_19.compress
+
+[hurri1mid]
+baseairfoil = clarkyh_17.pol
+up10degairfoil = clarkyh_17.pol
+down10degairfoil = clarkyh_17.pol
+stallfile = clarkyh_17.stall
+compressibilityfile = clarkyh_17.compress
+
+[hurri1ailib]
+baseairfoil = clarkyh_15.pol
+up10degairfoil = clarkyh_15up10.pol
+down10degairfoil = clarkyh_15down10.pol
+stallfile = clarkyh_15.stall
+compressibilityfile = clarkyh_15.compress
+
+[hurri1ailob]
+baseairfoil = clarkyh_13.pol
+up10degairfoil = clarkyh_13up10.pol
+down10degairfoil = clarkyh_13down10.pol
+stallfile = clarkyh_13.stall
+compressibilityfile = clarkyh_13.compress
+
+[hurri1tip]
+baseairfoil = clarkyh_12.pol
+up10degairfoil = clarkyh_12.pol
+down10degairfoil = clarkyh_12.pol
+stallfile = clarkyh_12.stall
+compressibilityfile = clarkyh_12.compress
+
+[hurri1horizstab]
+# Needs changed to a 0015
+baseairfoil = 0014base.pol
+up10degairfoil = 0014elevup10.pol
+down10degairfoil = 0014elevdown10.pol
+stallfile = 0014.stall
+compressibilityfile = 0014.compress
+
+[hurri1vertstab]
+#needs to be a 0022
+baseairfoil = 0010base.pol
+up10degairfoil = 0010ruddup10.pol
+down10degairfoil = 0010rudddown10.pol
+stallfile = 0010.stall
+compressibilityfile = 0010.compress
+
+[flatplate]
+baseairfoil = flatplat.pol
+up10degairfoil = flatplat.pol
+down10degairfoil = flatplat.pol
+stallfile = flatplat.stall
+compressibilityfile = flatplat.compress
+
+[fuselage]
+baseairfoil = 0010base.pol
+up10degairfoil = 0010base.pol
+down10degairfoil = 0010base.pol
+stallfile = 0010.stall
+compressibilityfile = 0010.compress

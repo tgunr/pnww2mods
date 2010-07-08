@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+<view id="map-options" x="262" width="130" height="300" rtop="1" style="background-color: #00000099;"
+	onload="if(!this.mgr) new MapOptions(this)" onshow="this.mgr.contract()"
+	onmouseenter="this.mgr.expand()" onmouseexit="this.mgr.contract()">
+	<view id="map-options-title" x="1" width="128" height="15" rtop="1">
+		<caption label="&widgets.map.options.title;" x="3" width="100" height="12" rtop="2" style="font-size: -1; color: #FFFFFF;"/>
+		<image id="map-options-arrow"  src="ui/textures/test/down_arrow.bmp" x="110" width="10" height="10" rtop="3"/>
+	</view>
+	<view id="map-options-body" x="1" width="128" y="5" rtop="8"
+		onshow="game.restoresettings(this)" onhide="game.savesettings(this)">
+		<image x="5" src="ui/textures/test/horiz_underline.bmp" width="118" height="12" rtop="0"/>
+		<!--
+		<checkbox id="filter.civilian"	label="&widgets.map.options.civilian;" 	x="5" width="120" height="15" rtop="20" checked="true"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/test/radio_button_on.bmp; control-off: ui/textures/test/radio_button_off.bmp;"
+			onshow="this.mgr.setStratFilter('showcivilian', this.checked)" onclick="this.mgr.setStratFilter('showcivilian', this.checked)"/>
+		<checkbox id="filter.bridges" label="&widgets.map.options.bridges;" x="5" width="120" height="15" rtop="40" checked="true"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/test/radio_button_on.bmp; control-off: ui/textures/test/radio_button_off.bmp;"
+			onshow="this.mgr.setStratFilter('showbridges', this.checked)" onclick="this.mgr.setStratFilter('showbridges', this.checked)"/>
+		<checkbox id="filter.army"	label="&widgets.map.options.army;" x="5" width="120" height="15" rtop="60" checked="true"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/test/radio_button_on.bmp; control-off: ui/textures/test/radio_button_off.bmp;"
+			onshow="this.mgr.setStratFilter('showarmy', this.checked)" onclick="this.mgr.setStratFilter('showarmy', this.checked)"/>
+		<checkbox id="filter.airforce" label="&widgets.map.options.airforce;" x="5" width="120" height="15" rtop="80" checked="true"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/test/radio_button_on.bmp; control-off: ui/textures/test/radio_button_off.bmp;"
+			onshow="this.mgr.setStratFilter('showairforce', this.checked)" onclick="this.mgr.setStratFilter('showairforce', this.checked)"/>
+		<checkbox id="filter.navy" label="&widgets.map.options.navy;" x="5" width="120" height="15" rtop="100" checked="true"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/test/radio_button_on.bmp; control-off: ui/textures/test/radio_button_off.bmp;"
+			onshow="this.mgr.setStratFilter('shownavy', this.checked)" onclick="this.mgr.setStratFilter('shownavy', this.checked)"/>
+		<checkbox id="filter.depots" 	label="&widgets.map.options.depots;" x="5" width="120" height="15" rtop="120" checked="true"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/test/radio_button_on.bmp; control-off: ui/textures/test/radio_button_off.bmp;"
+			onshow="this.mgr.setStratFilter('showdepots', this.checked)" onclick="this.mgr.setStratFilter('showdepots', this.checked)"/>
+		<checkbox id="filter.cpnames" 	label="&widgets.map.options.cpnames;" x="5" width="120" height="15" rtop="140" checked="true"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/test/radio_button_on.bmp; control-off: ui/textures/test/radio_button_off.bmp;"
+			onshow="this.mgr.setStratFilter('showcpnames', this.checked)" onclick="this.mgr.setStratFilter('showcpnames', this.checked)"/>
+		<checkbox id="filter.facnames" 	label="&widgets.map.options.facnames;" x="5" width="120" height="15" rtop="160"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/test/radio_button_on.bmp; control-off: ui/textures/test/radio_button_off.bmp;"
+			onshow="this.mgr.setStratFilter('showfacnames', this.checked)" onclick="this.mgr.setStratFilter('showfacnames', this.checked)"/>
+		<checkbox id="filter.icons" 	label="&widgets.map.options.icons;" x="5" width="120" height="15" rtop="180" checked="true"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/test/radio_button_on.bmp; control-off: ui/textures/test/radio_button_off.bmp;"
+			onshow="this.mgr.setStratFilter('showicons', this.checked)" onclick="this.mgr.setStratFilter('showicons', this.checked)"/>
+		<checkbox id="filter.flags" 	label="&widgets.map.options.flags;" x="5" width="120" height="15" rtop="200" checked="true"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/test/radio_button_on.bmp; control-off: ui/textures/test/radio_button_off.bmp;"
+			onshow="this.mgr.setStratFilter('showflags', this.checked)" onclick="this.mgr.setStratFilter('showflags', this.checked)"/>
+		-->
+		<checkbox id="filter.largecps"	label="Large Towns" 	x="5" width="120" height="15" rtop="20" checked="true"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+			onshow="this.mgr.setStratFilter('showlargecps', this.checked)" onclick="this.mgr.setStratFilter('showlargecps', this.checked)"/>
+		<checkbox id="filter.smallcps" label="Small Towns" x="5" width="120" height="15" rtop="40" checked="true"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+			onshow="this.mgr.setStratFilter('showsmallcps', this.checked)" onclick="this.mgr.setStratFilter('showsmallcps', this.checked)"/>
+		<checkbox id="filter.bridges"	label="Bridges" x="5" width="120" height="15" rtop="60" checked="true"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+			onshow="this.mgr.setStratFilter('showbridges', this.checked)" onclick="this.mgr.setStratFilter('showbridges', this.checked)"/>
+		<checkbox id="filter.ews" label="Contention/EWS" x="5" width="120" height="15" rtop="80" checked="true"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+			onshow="this.mgr.setStratFilter('showews', this.checked)" onclick="this.mgr.setStratFilter('showews', this.checked)"/>
+		<checkbox id="filter.front" label="Front Line Towns" x="5" width="120" height="15" rtop="100" checked="true"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+			onshow="this.mgr.setStratFilter('showfront', this.checked)" onclick="this.mgr.setStratFilter('showfront', this.checked)"/>
+		<checkbox id="filter.airfields" label="Airfields" x="5" width="120" height="15" rtop="120" checked="true"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+			onshow="this.mgr.setStratFilter('showairfields', this.checked)" onclick="this.mgr.setStratFilter('showairfields', this.checked)"/>
+		<checkbox id="filter.ports" label="Ports" x="5" width="120" height="15" rtop="140" checked="true"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+			onshow="this.mgr.setStratFilter('showports', this.checked)" onclick="this.mgr.setStratFilter('showports', this.checked)"/>
+		<checkbox id="filter.objectives" label="Objectives" x="5" width="120" height="15" rtop="160"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+			onshow="this.mgr.setStratFilter('showobjectives', this.checked)" onclick="this.mgr.setStratFilter('showobjectives', this.checked)"/>
+		<checkbox id="filter.brigades" label="Brigades" x="5" width="120" height="15" rtop="180" checked="true"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+			onshow="this.mgr.setStratFilter('showbrigades', this.checked)" onclick="this.mgr.setStratFilter('showbrigades', this.checked)"/>
+		<checkbox id="filter.deployments" label="Deployments" x="5" width="120" height="15" rtop="200" checked="true"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+			onshow="this.mgr.setStratFilter('showdeployments', this.checked)" onclick="this.mgr.setStratFilter('showdeployments', this.checked)"/>
+		<checkbox id="filter.declutter" label="&widgets.map.options.declutter;" x="5" width="120" height="15" rtop="220" checked="true"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+			onshow="this.mgr.setStratFilter('showclutter', !this.checked)" onclick="this.mgr.setStratFilter('showclutter', !this.checked)"/>
+		<checkbox id="options.centerme" label="&widgets.map.options.centerme;" x="5" width="120" height="15" rtop="240" checked="true"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+			onshow="this.checked = this.mgr.setCenterMe()" onclick="this.mgr.setCenterMe(this.checked)"/>
+		<checkbox id="options.fullscreen" label="&widgets.map.options.fullscreen;" x="5" width="120" height="15" rtop="260" checked="false"
+			style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+			onshow="this.checked = this.mgr.setFullScreen()" onclick="this.mgr.setFullScreen(this.checked)"/>
+		<slider id="options.scale" rright="20" rtop="20" height="130" width="15" orient="vertical" style="color: #FFFFFF;"
+			onshow="this.value = this.mgr.setScale()" ondrag="this.mgr.setScale(this.value)"/>
+	</view>
+</view>

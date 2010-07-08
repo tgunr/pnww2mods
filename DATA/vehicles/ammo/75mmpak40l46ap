@@ -1,0 +1,29 @@
+# PaK.40 ATG (75mm/L46) AP round
+# Created 12/10/06 -Doc
+
+type = ballistic
+diameter = .075
+weight = 6.80
+velocity = 793
+tracertime = 7.9
+object = bullet1
+explosive = 301160
+# exp. mass and type unknown
+
+fuzetime = 0.002
+bc = 1.79
+lifetime = 8.0
+ricochetangle = 87
+modelspall = 1
+penetrationconstant = 0.00000345
+dontdisplayfirstframe = 1 
+
+numshrapnelpieces = 50 (no specifics)
+totalshrapnelmass = 2.1 (no specifics)
+explosionsoundnear = sounds\smlcloseexp.wav
+explosionsoundfar = sounds\smlfarexp.wav
+nearfardistance = 300
+
+muzzleflash = 3
+hiteffect = incendiarymg
+tracerscale = 2

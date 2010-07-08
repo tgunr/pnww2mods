@@ -1,0 +1,85 @@
+# damage resistance file
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\tex\avhit1.wav
+-hitsound2 = sounds\tex\avhit2.wav
+-hitsound3 = sounds\tex\avhit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 5000
+
+# pilot armor deleted Sept.08 for E1 varient
+
+
+# Outside
+d_prop,12,150,150
+d_forwardfuselage,1.5,150,150
+d_rearfuselage,1.5,150,150
+d_tail,1.5,150,150
+d_airintake,1.05,0,0
+d_exhaust,1.5,0,0
+d_armorwindscreen,15,0,0
+d_canopy,0.5,0,0
+d_pilotseat,11,150,150,0,0
+#d_pilotarmor,1,0,0
+d_ibeam,11,150,150,0,0
+d_leftinnerwing,1.5,150,150
+d_leftouterwing,1.5,150,150
+d_leftflap,1,150,150
+d_leftaileron,1,150,150
+d_rightinnerwing,1.5,150,150
+d_rightouterwing,1.5,150,150
+d_rightflap,1,150,150
+d_rightaileron,1,150,150
+d_lhstab,1.5,150,150
+d_rhstab,1.5,150,150
+d_leftelevator,1,150,150
+d_righelevator,1,150,150
+d_vstab,1.5,150,150
+d_rudder,1,150,150
+
+# Inside
+
+d_legs,1,150,150
+d_arms,1,150,150
+d_torso,1.2,150,150
+d_head,0.4,150,150
+d_engine,100,225,225
+d_oiltank,3,0,0
+d_oilcooler,3,0,0
+d_coolant,3,0,0
+d_lradiator,3,0,0
+d_rradiator,3,0,0
+d_fuel,1,0,0
+d_radio,8,150,150
+d_oxygen,8,150,150
+d_lnosegun,30,150,150
+d_lnoseammo,5,0,0
+d_rnosegun,30,150,150
+d_rnoseammo,5,0,0
+d_lgun,30,150,150
+d_lammo,5,150,150
+d_rgun,30,150,150
+d_rammo,5,150,150
+d_leftlandinggear,3,150,150
+d_rightlandinggear,3,150,150
+d_tailwheel,3,150,150

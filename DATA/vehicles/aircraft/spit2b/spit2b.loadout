@@ -1,0 +1,45 @@
+# spit2b.loadout file
+# created Feb.09 - Doc.
+
+# sounds available for the mounts
+sound1 = sounds\spit1\xgun.wav
+
+loadout = 1
+
+mountnum = 1
+mountobject = ligunx
+mountsound = sound1
+weapon = 20mm_hispano
+weaponobject = bf109elngun
+
+mountnum = 2
+mountobject = lcgunx
+mountsound = sound1
+weapon = browning303air
+weaponobject = bf109elngun
+
+mountnum = 3
+mountobject = logunx
+mountsound = sound1
+weapon = browning303air
+weaponobject = bf109elngun
+
+mountnum = 4
+mountobject = rigunx
+mountsound = sound1
+weapon = 20mm_hispano
+weaponobject = bf109erngun
+
+mountnum = 5
+mountobject = rcgunx
+mountsound = sound1
+weapon = browning303air
+weaponobject = bf109erngun
+
+mountnum = 6
+mountobject = rogunx
+mountsound = sound1
+weapon = browning303air
+weaponobject = bf109erngun
+
+# Changed weaponobject for browning guns to mg17 (bf109elngun or bf109erngun) to position muzzle flash correctly relative to wing leading edge - Doc.

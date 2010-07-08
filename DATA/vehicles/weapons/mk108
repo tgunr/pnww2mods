@@ -1,0 +1,17 @@
+#data file for Mk.108 30mm autocannon (german aircraft)
+#created 2 may 2007 - Doc.
+
+mass = 60.5
+firetype = auto
+rateoffire = 600
+ammotype1 = mk108mine
+ammotype2 = mk108tracer
+ghostrof = 600
+ghostammotype = mk108tracer
+dispersion = 0.15
+cliprounds = 1
+reloadtime = 0.0
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = na

@@ -1,0 +1,120 @@
+# He111 h2 hit file
+
+# damage resistance file
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\tex\avhit1.wav
+-hitsound2 = sounds\tex\avhit2.wav
+-hitsound3 = sounds\tex\avhit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 5000
+
+#External
+
+d_fuselage,1.75,0,0,0,0
+d_glassnose,1.3,0,0,0,0
+d_nturret,1.3,0,0,0,0
+d_proofhatch,1.3,0,0,0,0
+d_tguncanopy,1.3,0,0,0,0
+dprop1,12,0,0,0,0
+dprop2,12,0,0,0,0
+d_lnacelle,0.75,0,0,0,0
+d_rnacelle,0.75,0,0,0,0
+d_cowl1,0.75,0,0,0,0
+d_cowl2,0.75,0,0,0,0
+o2434,1.75,0,0,0,0
+o2435,1.75,0,0,0,0
+d_leftroot,1.5,0,0,0,0
+d_lflap,1.5,0,0,0,0
+d_leftmidwing,1.5,0,0,0,0
+d_louterwing,1.5,0,0,0,0
+d_laileron,1.5,0,0,0,0
+d_rightroot,1.5,0,0,0,0
+d_rflap,1.5,0,0,0,0
+d_rightmidwing,1.5,0,0,0,0
+d_routerwing,1.5,0,0,0,0
+d_raileron,1.5,0,0,0,0
+d_lhstab,1.5,0,0,0,0
+d_lelevator,1.5,0,0,0,0
+d_rhstab,1.5,0,0,0,0
+d_relevator,1.5,0,0,0,0
+d_vstab,1.5,0,0,0,0
+d_rudder,1.5,0,0,0,0
+
+#Internal
+
+d_pilotseat,6,0,0,0,0
+d_cockpitbulkhead,8,0,0,0,0
+d_baybulkhead,8,0,0,0,0
+d_aftbulkhead,8,0,0,0,0
+d_tailbulkhead,8,0,0,0,0
+d_bombbay,0.75,0,0,0,0
+engine1,100,225,225,0,0
+engine2,100,225,225,0,0
+oilsys1,3,0,0,0,0
+oilsys2,3,0,0,0,0
+oilcool1,3,0,0,0,0
+oilcool2,3,0,0,0,0
+d_radiator1,3,0,0,0,0
+d_radiator2,3,0,0,0,0
+fuel1,3,0,0,0,0
+fuel2,3,0,0,0,0
+fuel3,3,0,0,0,0
+fuel4,3,0,0,0,0
+radio1,15,0,0,0,0
+doxy1,15,0,0,0,0
+doxy2,15,0,0,0,0
+doxy3,15,0,0,0,0
+d_gear1,5,150,150,0,0
+d_gear2,5,150,150,0,0
+d_gear3,5,150,150,0,0
+d_gun3,30,150,150
+d_gun4,30,150,150
+d_gun5,30,150,150
+d_gun6,30,150,150
+d_gun7,30,150,150
+d_ammo3,5,0,0,0,0
+d_ammo4,5,0,0,0,0
+d_ammo5,5,0,0,0,0
+d_ammo67,5,0,0,0,0
+dhead1,0.4,0,0,0,0
+darms1,1.0,0,0,0,0
+dtorso1,1.2,0,0,0,0
+degs1,1.0,0,0,0,0
+dhead4,0.4,0,0,0,0
+darms4,1.0,0,0,0,0
+dtorso4,1.2,0,0,0,0
+degs4,1.0,0,0,0,0
+dhead5,0.4,0,0,0,0
+darms5,1.0,0,0,0,0
+dtorso5,1.2,0,0,0,0
+degs5,1.0,0,0,0,0
+dhead4_1,0.4,0,0,0,0
+darms4_1,1.0,0,0,0,0
+dtorso4_1,1.2,0,0,0,0
+degs4_1,1.0,0,0,0,0
+dhead23,0.4,0,0,0,0
+darms23,1.0,0,0,0,0
+dtorso23,1.2,0,0,0,0
+degs23,1.0,0,0,0,0
+

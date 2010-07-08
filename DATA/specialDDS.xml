@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!-- This file is used for DDS textures ONLY!
+
+Notify DC of any changes to this file. Some properties may need
+a check for GL extensions.
+
+The following are checked for WRAP_T or WRAP_S elements:
+
+Default is GL_REPEAT. It is not necessary to use it in this file.
+
+GL_CLAMP
+GL_CLAMP_TO_EDGE
+GL_CLAMP_TO_BORDER - requires GL extension check
+GL_MIRROR_CLAMP_EXT - requires GL extension check
+GL_MIRROR_CLAMP_TO_EDGE_EXT - requires GL extension check
+GL_MIRROR_CLAMP_TO_BORDER_EXT - requires GL extension check
+GL_CLAMP_TO_BORDER_SGIS - requires GL extension check
+
+If extension check fails, GL_CLAMP_TO_EDGE is used.
+
+TEXNAME = texture name and path
+WRAP_T = parameter for GL_ADDRESS_WRAP_T
+WRAP_S = parameter for GL_ADDRESS_WRAP_S
+BASEMIPLEVEL = parameter for GL_TEXTURE_BASE_LEVEL
+MAXMIPLEVEL = parameter for GL_TEXTURE_MAX_LEVEL
+ -->
+<SPECIALCASETEXTURES>
+	<TEXTURE>
+		<TEXNAME>terrain\to\bushline1.dds</TEXNAME>
+		<BASEMIPLEVEL>0</BASEMIPLEVEL>
+		<MAXMIPLEVEL>5</MAXMIPLEVEL>
+		<WRAP_T>GL_CLAMP</WRAP_T>
+	</TEXTURE>
+	<TEXTURE>
+		<TEXNAME>terrain\to\stonerail1.dds</TEXNAME>
+		<BASEMIPLEVEL>0</BASEMIPLEVEL>
+		<MAXMIPLEVEL>3</MAXMIPLEVEL>
+	</TEXTURE>
+	<TEXTURE>
+		<TEXNAME>terrain\brdg\stonerail1.dds</TEXNAME>
+		<BASEMIPLEVEL>0</BASEMIPLEVEL>
+		<MAXMIPLEVEL>3</MAXMIPLEVEL>
+	</TEXTURE>
+	<TEXTURE>
+		<TEXNAME>terrain\brdg\urbrvbr1.dds</TEXNAME>
+		<BASEMIPLEVEL>0</BASEMIPLEVEL>
+		<MAXMIPLEVEL>4</MAXMIPLEVEL>
+	</TEXTURE>
+	<TEXTURE>
+		<TEXNAME>terrain\to\grass1.dds</TEXNAME>
+		<BASEMIPLEVEL>0</BASEMIPLEVEL>
+		<MAXMIPLEVEL>6</MAXMIPLEVEL>
+	</TEXTURE>
+</SPECIALCASETEXTURES>

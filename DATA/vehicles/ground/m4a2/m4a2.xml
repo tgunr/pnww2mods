@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="m4a2" type="ground" shape="m4a2" description="M4A2 Sherman" icon="Sherman">
+<include file="m4a2.veh.xml"/>
+<include file="m4a2.state.xml"/>
+<include file="m4a2.hit.xml"/>
+<include file="m4a2.turret.xml"/>
+<include file="m4a2.loadout.xml"/>
+<include file="m4a2.xsound.xml"/>
+<include file="m4a2.control.xml"/>
+<include file="m4a2.mass.xml"/>
+</vehicle>

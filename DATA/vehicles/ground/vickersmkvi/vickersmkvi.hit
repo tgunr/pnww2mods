@@ -1,0 +1,95 @@
+# damage resistance file for Vickers Mk VI
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2,concussive resistance, damage threshold
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 1000000
+
+#Outside collider objects:
+d_lefttrack,30,0,0,0,80000
+d_righttrack,30,0,0,0,80000
+d_leftreturnwheel,20,0,0,0,80000
+d_leftgroundwheel1,20,0,0,0,80000
+d_leftgroundwheel2,20,0,0,0,80000
+d_leftgroundwheel3,20,0,0,0,80000
+d_leftgroundwheel4,20,0,0,0,80000
+d_leftdrivewheel,20,0,0,0,80000
+d_rightdrivewheel,20,0,0,0,80000
+d_rightgroundwheel4,20,0,0,0,80000
+d_rightgroundwheel3,20,0,0,0,80000
+d_rightgroundwheel2,20,0,0,0,80000
+d_rightgroundwheel1,20,0,0,0,80000
+d_rightreturnwheel,20,0,0,0,80000
+d_hatch1,14,0,0
+d_hatch2,14,0,0
+d_hatch3,14,0,0
+d_hatch4,14,0,0
+d_cannon,20,0,0,0,200000
+d_cannonmount,20,0,0
+d_coax,12,0,0
+d_frontarmor,14,0,0
+d_leftsidearmor,13,0,0
+d_rightsidearmor,13,0,0
+d_reararmor,6,0,0
+d_toparmor,4,0,0
+d_bottomarmor,3,0,0
+d_enginearmor,4,0,0
+d_turretsides,14,0,0
+d_turretfront,14,0,0
+d_turrettop,4,0,0
+d_turretbottom,6,0,0
+d_cupola,6,0,0
+d_exhaust,6,0,0
+d_lefttreadcover,6,0,0
+d_righttreadcover,6,0,0
+d_turretback,11,0,0
+d_cupolaglass1,8,0,0
+d_cupolaglass2,8,0,0
+d_drivershatch1,14,0,0
+d_drivershatch2,14,0,0
+d_side cargo,6,0,0
+d_enginearmor,6,0,0
+
+
+#Inside collider objects:
+d_ammo,8,0,0
+d_gunnerhead,6.5,0,0,0,40
+d_gunnerlegs,1,0,0,0,35
+d_gunnertorso,1.5,0,0,0,35
+d_gunnerarms,1,0,0,0,35
+d_commanderlegs_1,1,0,0,0,35
+d_commanderarms_1,1,0,0,0,35
+d_commandertorso_1,1.5,0,0,0,35
+d_commanderhead_1,6.5,0,0,0,40
+d_driverhead,6.5,0,0,0,40
+d_driverlegs,1,0,0,0,35
+d_drivertorso,1.5,0,0,0,35
+d_driverarms,1,0,0,0,35
+d_transmission,250,0,0
+d_engine,250,0,0
+d_fueltank,8,0,0
+d_radiator,8,0,0
+d_coolanttank,8,0,0
+d_firewall,5,0,0

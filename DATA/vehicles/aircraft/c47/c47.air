@@ -1,0 +1,73 @@
+#airfoils file for c47 created 09/29/05 -Hatch.
+[propeller]
+baseairfoil = propbase.pol
+up10degairfoil = prop_up10.pol
+down10degairfoil = prop_dn10.pol
+stallfile = prop.stall
+compressibilityfile = prop.compress
+
+[c47root]
+baseairfoil = 2215_neut.pol
+up10degairfoil = 2215_neut.pol
+down10degairfoil = 2215_dn10_16.pol
+stallfile = 2215.sta
+compressibilityfile = 2215.compress
+
+[c47mid]
+baseairfoil = 2214_neut.pol
+up10degairfoil = 2214_neut.pol
+down10degairfoil = 2214_dn10_18.pol
+stallfile = 2214.sta
+compressibilityfile = 2214.compress
+
+[c47ailib]
+baseairfoil = 2211_neut.pol
+up10degairfoil = 2211_up10_22.pol
+down10degairfoil = 2211_dn10_22.pol
+stallfile = 2211.sta
+compressibilityfile = 2211.compress
+
+[c47ailob]
+baseairfoil = 2208_neut.pol
+up10degairfoil = 2208_up10_25.pol
+down10degairfoil = 2208_dn10_25.pol
+stallfile = 2208.sta
+compressibilityfile = 2208.compress
+
+[c47tip]
+baseairfoil = 2206_neut.pol
+up10degairfoil = 2206_neut.pol
+down10degairfoil = 2206_neut.pol
+stallfile = 2206.sta
+compressibilityfile = 2206.compress
+
+[c47stab]
+baseairfoil = 0010_neut.pol
+up10degairfoil = 0010_up10_48.pol
+down10degairfoil = 0010_dn10_48.pol
+stallfile = 0010.sta 
+compressibilityfile = 0010.compress
+
+[c47vstab]
+baseairfoil = 0010_neut.pol
+up10degairfoil = 0010_up10_43.pol
+down10degairfoil = 0010_dn10_43.pol
+stallfile = 0010.sta
+compressibilityfile = 0010.compress
+
+[flatplate]
+baseairfoil = flatplat.pol
+up10degairfoil = flatplat.pol
+down10degairfoil = flatplat.pol
+stallfile = flatplat.stall
+compressibilityfile = flatplat.compress
+
+[fuselage]
+#baseairfoil = 0012_neut.pol
+#up10degairfoil = 0012_neut.pol
+#down10degairfoil = 0012_neut.pol
+baseairfoil = flatplat.pol
+up10degairfoil = flatplat.pol
+down10degairfoil = flatplat.pol
+stallfile = 0012.sta
+compressibilityfile = 0012.compress

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+<window id="tutorials" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
+	onshow="initWin(this)" onupdate="updateForwardButton()" aspectalign="center">
+	<include file="widgets/template.uixml"/>
+	<tabview id="body" x="43" y="140" width="930" height="450" ontab="quickhelp()" style="color: #BFE2CE;
+						background-color: #000000BB; 
+						border-top-corner: ui/textures/test/body_ul.bmp;
+						border-bottom-corner: ui/textures/test/body_br.bmp;
+						border-sides: ui/textures/test/body_sides.bmp;
+						border-top: ui/textures/test/body_top.bmp;
+						border-bottom: ui/textures/test/body_bottom.bmp;
+						control-on-endcap:  ui/textures/test/body_tab_cap_on.bmp;
+						control-on-back:  ui/textures/test/body_tab_filler_on.bmp;
+						control-off-endcap: ui/textures/test/body_tab_cap.bmp;
+						control-off-back: ui/textures/test/body_tab_filler.bmp;
+						control-on-color: #FFFFCE;
+						border-width: 16;
+						border-height: 16;">
+		<include file="widgets/globals/tutorials.uixml"/>
+		<include file="widgets/globals/squads.uixml"/>
+		<include file="widgets/globals/manuals.uixml"/>
+		<include file="widgets/globals/settings.uixml"/>
+	</tabview>
+	<include file="widgets/infobar.uixml"/>
+	<script>
+		<!--
+		
+		function initWin(win)
+		{
+			game.consoleclear();
+			setHelp(getlocstring('tutorials.help'));
+			showChat(true);
+			setBack('widgets.template.back');
+			setForward('tutorials.start');
+			quickhelp(window.name);
+			initTutorials();
+		}
+		
+		function updateForwardButton()
+		{
+			forwardButton.enabled = updateStartTutorial();
+		}
+		
+		function doForward()
+		{
+			startTutorial();
+		}
+		
+		function doBack()
+		{
+			loadWin("persona", true);
+		}
+		
+		-->
+	</script>
+</window>

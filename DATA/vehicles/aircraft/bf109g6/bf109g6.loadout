@@ -1,0 +1,25 @@
+#bf109g6.loadout file (G6/U4 with 30mm Mk.108)
+
+# sounds available for the mounts
+sound1 = sounds\bf109e3\xgun1.wav
+sound2 = sounds\bf109e3\mgffr.wav
+
+loadout = 1
+
+mountnum = 1
+mountobject = lnmount
+mountsound = sound1
+weapon  = mg131_sync
+weaponobject = bf109elngun
+
+mountnum = 2
+mountobject = rnmount
+mountsound = sound1
+weapon  = mg131_sync
+weaponobject = bf109erngun
+
+mountnum = 3
+mountobject = spinnermount
+mountsound = sound2
+weapon  = mk108
+weaponobject = bf109elngun

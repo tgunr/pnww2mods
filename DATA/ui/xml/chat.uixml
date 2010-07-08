@@ -1,0 +1,332 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<view id="chat" y="10" width="600" height="768" viewportwidth="1024" viewportheight="768" aspectalign="center"
+	layer="53" moveondrag="yes" acceptmouseclick="false" onshow="initChatter()" onupdate="updateChatter()">
+	<include file="lib/sound.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+	<include file="classes/ChatChannel.uixml"/>
+	<!-- Channel Buttons -->
+	<view id="chatter" x="0" y="0" width="600" height="104" followtop="yes" acceptmouseclick="false">
+		<view id="channels" x="0" y="88" width="600" height="15" style="background-color: #000000BB;" followtop="yes">
+			<caption id="F1" label="F1" x="0" y="0" width="97" height="15"
+				onclick="showSetter(this)" onmouseenter="chatButtonInvert(this)" onmouseexit="chatButtonInvert(this)"
+				style="background-color: #3e5248BB; color: #BFE2CE;"
+				tip="&chat.f1.tip;">
+				<caption id="icon" class="chaticon" x="2" y='2' width='10' height='10' acceptmouseclick="false"/>
+				<!-- image src="ui/textures/test/chat_arrow_light.bmp" rright="5" y='2' width='8' height='8' acceptmouseclick="false"/ -->
+			</caption>
+			<caption id="F2" label="F2" x="100" y="0" width="97" height="15"
+				onclick="showSetter(this)" onmouseenter="chatButtonInvert(this)" onmouseexit="chatButtonInvert(this)"
+				style="background-color: #3e5248BB; color: #BFE2CE;"
+				tip="&chat.f2.tip;">
+				<caption id="icon" class="chaticon" x="2" y='2' width='10' height='10' acceptmouseclick="false"/>
+				<!-- image src="ui/textures/test/chat_arrow.bmp" rright="5" y='2' width='8' height='8' acceptmouseclick="false"/ -->
+			</caption>
+			<caption id="F3" label="F3" x="200" y="0" width="97" height="15"
+				onclick="showSetter(this)" onmouseenter="chatButtonInvert(this)" onmouseexit="chatButtonInvert(this)"
+				style="background-color: #3e5248BB; color: #BFE2CE;"
+				tip="&chat.f3.tip;">
+				<caption id="icon" class="chaticon" x="2" y='2' width='10' height='10' acceptmouseclick="false"/>
+				<!-- image src="ui/textures/test/chat_arrow.bmp" rright="5" y='2' width='8' height='8' acceptmouseclick="false"/ -->
+			</caption>
+			<caption id="F4" label="F4" x="300" y="0" width="97" height="15"
+				onclick="showSetter(this)" onmouseenter="chatButtonInvert(this)" onmouseexit="chatButtonInvert(this)"
+				style="background-color: #3e5248BB; color: #BFE2CE;"
+				tip="&chat.f4.tip;">
+				<caption id="icon" class="chaticon" x="2" y='2' width='10' height='10' acceptmouseclick="false"/>
+				<!-- image src="ui/textures/test/chat_arrow.bmp" rright="5" y='2' width='8' height='8' acceptmouseclick="false"/ -->
+			</caption>
+			<caption id="F5" label="F5" x="400" y="0" width="97" height="15"
+				onclick="showSetter(this)" onmouseenter="chatButtonInvert(this)" onmouseexit="chatButtonInvert(this)"
+				style="background-color: #3e5248BB; color: #BFE2CE;"
+				tip="&chat.f5.tip;">
+				<caption id="icon" class="chaticon" x="2" y='2' width='10' height='10' acceptmouseclick="false"/>
+				<!-- image src="ui/textures/test/chat_arrow.bmp" rright="5" y='2' width='8' height='8' acceptmouseclick="false"/ -->
+			</caption>
+			<caption id="F6" label="F6" x="500" y="0" width="100" height="15"
+				onclick="showSetter(this)" onmouseenter="chatButtonInvert(this)" onmouseexit="chatButtonInvert(this)"
+				style="background-color: #3e5248BB; color: #BFE2CE;"
+				tip="&chat.f6.tip;">
+				<caption id="icon" class="chaticon" x="2" y='2' width='10' height='10' acceptmouseclick="false"/>
+				<!-- image src="ui/textures/test/chat_arrow.bmp" rright="5" y='2' width='8' height='8' acceptmouseclick="false"/ -->
+			</caption>
+		</view>
+		<!-- Custom Input -->~
+		<textcontrol id="custom" x="0" y="88" width="100" height="15" onenter="setCustom(this)" style="background-color: #000000FF; color: #FFFFFF; "/>
+		<!-- Chat Reader -->
+		<window id="chatview" class="chat" x="0" y="13" width="600" height="75" acceptsfocus="no"
+			style="background-color: #000000BB; color: #FFFFFF; border-size-right: 13;" followall="yes">
+			<view id="chat-dragger" x="0" y="0" rright="0" rtop="0" followall="yes" layer="100"
+				ondrag="game.savesettings(this.parent.parent.parent, 2)"/>
+			<scrollbar minbarsize="30" style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+		</window>
+		<!-- Chat input -->
+		<view x="0" y="0" width="600" height="13" style="background-color: #000000BB;">
+			<!-- Send Button -->
+			<button id="chatsay" x="-6" y="-7" width="30" height="25" onclick="sendclick()" onenter="sendclick()"
+				style="color: #FFFFFF;  control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp;"
+				tip="&chat.chatter;">
+				<caption id="icon" class="chaticon" x="10" y='7' width='12' height='12' acceptmouseclick="false" onshow="this.channelname = 'say'"/>
+			</button>
+			<!-- Chat Input -->
+			<textcontrol class="chatinput" id="chatmsg" x="22" y="0" width="565" height="13" onenter="xmit()" history="100"
+				style="background-color: #000000FF; border-color: #BFE2CE; color: #FFFFFF; font-size: -1;"/>
+		</view>
+		<view rright="0" y="0" width="10" height="10" onclick="toggleChatHeight(this)"
+			style="background-image: ui/textures/test/treeview_expand.bmp;"
+			tip="&chat.expander;"/>
+		<!-- Channel Menu -->
+	</view>
+	<window id="setter" x="0" y="101" width="100" height="131" onmouseexit="this.visible = false" followtop="yes" style="background-color: #00000088;">
+		<caption id="set-clear" label="    &chat.channel.clear;" x="0" y="117" width="100" height="12" onclick="setChannel('')"
+			style="background-color: #BFE2CEBB; color: #3e5248; font-size: -1;" onmouseenter="chatButtonInvert(this)" onmouseexit="chatButtonInvert(this)"/>
+		<caption id="set-custom" label="    &chat.channel.custom;" x="0" y="104" width="100" height="12" onclick="setChannel('custom')"
+			style="background-color: #BFE2CEBB; color: #3e5248; font-size: -1;" onmouseenter="chatButtonInvert(this)" onmouseexit="chatButtonInvert(this)">
+			<caption id="icon" class="chaticon" x="2" y='0' width='10' height='10' acceptmouseclick="false" onshow="this.channelname = 'private'"/>
+		</caption>
+		<caption id="set-squad" label="    &chat.channel.squad;" x="0" y="91" width="100" height="12" onclick="setChannel('squad')"
+			style="background-color: #BFE2CEBB; color: #3e5248; font-size: -1;" onmouseenter="chatButtonInvert(this)" onmouseexit="chatButtonInvert(this)">
+			<caption id="icon" class="chaticon" x="2" y='0' width='10' height='10' acceptmouseclick="false" onshow="this.channelname = 'squad'"/>
+		</caption>
+		<caption id="set-origin" label="    &chat.channel.origin;" x="0" y="78" width="100" height="12" onclick="setChannel('origin')"
+			style="background-color: #BFE2CEBB; color: #3e5248; font-size: -1;" onmouseenter="chatButtonInvert(this)" onmouseexit="chatButtonInvert(this)">
+			<caption id="icon" class="chaticon" x="2" y='0' width='10' height='10' acceptmouseclick="false" onshow="this.channelname = 'origin'"/>
+		</caption>
+		<caption id="set-mission" label="    &chat.channel.mission;" x="0" y="65" width="100" height="12" onclick="setChannel('mission')"
+			style="background-color: #BFE2CEBB; color: #3e5248; font-size: -1;" onmouseenter="chatButtonInvert(this)" onmouseexit="chatButtonInvert(this)">
+			<caption id="icon" class="chaticon" x="2" y='0' width='10' height='10' acceptmouseclick="false" onshow="this.channelname = 'mission'"/>
+		</caption>
+		<caption id="set-objective" label="    &chat.channel.target;" x="0" y="52" width="100" height="12" onclick="setChannel('objective')"
+			style="background-color: #BFE2CEBB; color: #3e5248; font-size: -1;" onmouseenter="chatButtonInvert(this)" onmouseexit="chatButtonInvert(this)">
+			<caption id="icon" class="chaticon" x="2" y='0' width='10' height='10' acceptmouseclick="false" onshow="this.channelname = 'objective'"/>
+		</caption>
+		<caption id="set-brigade" label="    &chat.channel.brigade;" x="0" y="39" width="100" height="12" onclick="setChannel('brigade')"
+			style="background-color: #BFE2CEBB; color: #3e5248; font-size: -1;" onmouseenter="chatButtonInvert(this)" onmouseexit="chatButtonInvert(this)">
+			<caption id="icon" class="chaticon" x="2" y='0' width='10' height='10' acceptmouseclick="false" onshow="this.channelname = 'brigade'"/>
+		</caption>
+		<caption id="set-side" label="    &chat.channel.side;" x="0" y="26" width="100" height="12" onclick="setChannel('side')"
+			style="background-color: #BFE2CEBB; color: #3e5248; font-size: -1;" onmouseenter="chatButtonInvert(this)" onmouseexit="chatButtonInvert(this)">
+			<caption id="icon" class="chaticon" x="2" y='0' width='10' height='10' acceptmouseclick="false" onshow="this.channelname = 'side'"/>
+		</caption>
+		<caption id="set-ops" label="    &chat.channel.ops;" x="0" y="13" width="100" height="12" onclick="setChannel('ops')"
+			style="background-color: #BFE2CEBB; color: #3e5248; font-size: -1;" onmouseenter="chatButtonInvert(this)" onmouseexit="chatButtonInvert(this)">
+			<caption id="icon" class="chaticon" x="2" y='0' width='10' height='10' acceptmouseclick="false" onshow="this.channelname = 'ops'"/>
+		</caption>
+		<caption id="set-help" label="    &chat.channel.help;" x="0" y="0" width="100" height="12" onclick="setChannel('help')"
+			style="background-color: #BFE2CEBB; color: #3e5248; font-size: -1;" onmouseenter="chatButtonInvert(this)" onmouseexit="chatButtonInvert(this)">
+			<caption id="icon" class="chaticon" x="2" y='0' width='10' height='10' acceptmouseclick="false" onshow="this.channelname = 'help'"/>
+		</caption>
+	</window>
+	<script>
+		<!--
+		
+		var expanded		= false;
+		var expandSize		= 480;
+		var lastClick		= 0;
+		
+		var target			= "";
+		var channels 		= new Object();
+		var client 			= game.player.client;
+		
+		channels["F1"] 		= new ChatChannel(0);
+		channels["F2"] 		= new ChatChannel(1);
+		channels["F3"] 		= new ChatChannel(2);
+		channels["F4"] 		= new ChatChannel(3);
+		channels["F5"] 		= new ChatChannel(4);
+		channels["F6"] 		= new ChatChannel(5);
+		
+		var tunervis 		= 0;
+		var msgtext 		= findview("chatmsg");
+		var chatter			= findview("chatter");
+		var chatview		= findview("chatview");
+		var sendbutton 		= findview("chatsay");
+		var setter 			= findview("setter");
+		var custom 			= findview("custom");
+		var noPMNoiseUntil	= 0 ;
+		
+		saymode();
+		
+		function xmit()
+		{
+			sendchatmessage();
+			
+			for(var i = 0; i < client.chatchannels.length; i++)
+				client.chatchannels[i].xmit = false;
+			
+			chatview.scrollby(-1000);
+		}
+		
+		function initChatter()
+		{
+			msgtext.visible 	= (tunervis == 0) ? false: true;
+			setter.visible 		= false;
+			custom.visible 		= false;
+
+			game.onprivatemessage	= onPrivateMessage ;
+			
+			chatview.scrollby(-1000);
+		}
+		
+		function updateChatter()
+		{
+			for(var i = 0; i < client.chatchannels.length; i++)
+			{
+				var channel = channels[chatId(i)];
+				
+				if(channel != null)
+					channel.update(true);
+			}
+		}
+		
+		function showSetter(button)
+		{
+			if(setter.visible && button.id == target)
+			{
+				setter.visible = false;
+			}
+			else
+			{
+				target 			= button.id;
+				setter.x		= button.x;
+				setter.y		= chatter.y + chatter.height;
+				setter.visible 	= true;
+			}
+		}
+
+		function onPrivateMessage(fromCallsign, teultime)
+		{
+			consoleprint("On Private Message Called 1!\n");
+			if(!game.settings.wantmessagealert || teultime < noPMNoiseUntil)
+				return;
+			
+			consoleprint("On Private Message Called 2!\n");
+			
+			noPMNoiseUntil = teultime + 2;
+			soundPlayPMSound();
+			consoleprint("On Private Message Called 3!\n");
+		}
+		
+		function setChannel(to)
+		{
+			if(to == "custom")
+				showCustom();
+			else
+				tuneChannel(to);
+			
+			setter.visible = false;
+		}
+		
+		function showCustom()
+		{
+			custom.text 		= "";
+			custom.x 			= setter.x;
+			//custom.y 			= setter.y;
+			custom.visible 		= true;
+			custom.focused 		= true;
+		}
+		
+		function setCustom(input)
+		{
+			tuneChannel(input.text);
+			custom.visible = false;
+		}
+		
+		function tuneChannel(to)
+		{
+			var channel = channels[target];
+			
+			if(channel != null)
+				channel.tune(to, !custom.visible);
+			
+			target = "";
+		}
+		
+		function sendchatmessage()
+		{
+			//consoleprint("Sending chat message!!!\n");
+			client.sendchatmessage(msgtext.text);
+			saymode();
+		}
+		
+		function sendclick()
+		{
+			var now = (new Date()).getTime();
+			
+			if(now > lastClick)
+			{
+				if(msgtext.visible)
+					sendchatmessage();
+				else
+					xmitmode();
+			}
+			
+			lastClick = now;
+		}
+		
+		function saymode()
+		{
+			msgtext.text 		= "";
+			//sendbutton.label 	= "Say";
+			msgtext.visible 	= false;
+			tunervis 			= 0;
+		}
+		
+		function xmitmode()
+		{
+			//consoleprint("Setting xmit mode!!!\n");
+			
+			chatview.scrollby(-1000);
+			
+			//sendbutton.label 	= "Xmit";
+			msgtext.visible 	= true;
+			msgtext.focused 	= true;
+			tunervis 			= 1;
+		}
+		
+		function chatButtonInvert(view)
+		{
+			var color 	= view.getstyleproperty("color");
+			var bgcolor	= view.getstyleproperty("background-color");
+			
+			view.setstyleproperty("color", bgcolor);
+			view.setstyleproperty("background-color", color);
+		}
+		
+		function toggleChatHeight(view)
+		{
+			//consoleprint("Toggle Chat Height!!!\n");
+			
+			soundPlayClick();
+			
+			setter.visible = false;
+			
+			if(expanded)
+			{
+				chatter.height -= expandSize;
+				
+				if(view)
+					view.setstyleproperty("background-image","ui/textures/test/treeview_expand.bmp");
+			}
+			else
+			{
+				chatter.height += expandSize;
+				
+				if(view)
+					view.setstyleproperty("background-image","ui/textures/test/treeview_colapse.bmp");
+			}
+			
+			custom.y = chatter.y + chatter.height - custom.height;
+			
+			chatview.scrollby(-1000);
+			
+			expanded = !expanded;
+		}
+		
+		function chatId(index)
+		{
+			return "F" + (index + 1);
+		}
+		
+		-->
+	</script>
+</view>

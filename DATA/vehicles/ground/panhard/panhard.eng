@@ -1,0 +1,28 @@
+#engine stats file for pziiif
+[Panhard_4cyl]
+basehorsepower = 135
+basehpalt = 0
+basehprpm = 2200
+basehppress = 0.9
+basehpexhausttemp = 1000
+idlethrottlepos = 0.1
+idlerpm = 1100
+fuelperhphour = 0.260
+oilconsumptionperhour = 0
+wepmaxpress = 1.0
+milmaxpress = 1.0
+weprpm = 2600
+milrpm = 2600
+climbrpm = 2600
+econrpm = 2600
+
+superchargertype = none
+weptype = none
+
+#criticalrpm is the rpm at which below this the engine might stall, also used for starting
+criticalrpm 200
+
+#starterrpm is the rpm at which the starter motor will spin the engine at
+starterrpm 100
+#starterhp is the power of the starter motor
+starterhp 2

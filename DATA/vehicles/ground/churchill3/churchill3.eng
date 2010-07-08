@@ -1,0 +1,32 @@
+#engine stats file for British Churchill Mk III
+
+[Bedford_Twin_Six]
+basehorsepower = 350
+basehpalt = 0
+basehprpm = 2150
+basehppress = 1.0
+basehpexhausttemp = 650
+idlethrottlepos = 0.1
+#idlerpm used only for downshifting purposes
+idlerpm = 500
+fuelperhphour = 0.260
+oilconsumptionperhour = 0
+wepmaxpress = 1.0
+milmaxpress = 1.0
+weprpm = 2200
+milrpm = 2200
+climbrpm = 2200
+econrpm = 2200
+
+superchargertype = nosupercharging
+weptype = none
+
+#criticalrpm is the rpm at which below this the engine might stall, also used for starting
+criticalrpm 150
+
+#starterrpm is the rpm at which the starter motor will spin the engine at
+starterrpm 100
+#starterhp is the power of the starter motor
+starterhp 20
+
+

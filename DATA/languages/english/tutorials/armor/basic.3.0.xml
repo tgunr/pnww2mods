@@ -1,0 +1,219 @@
+<?xml version='1.0'?>
+<content type="5">
+  <body>title = Advanced Training: Armor: Hotchkiss H-39
+  
+bulleyes = You hit the bullseye!
+start = Start
+move = Move Here
+turn1 = Turn Right
+turn2 = Turn Right
+setup = Stop Here
+fire = Firing Position
+turn3 = Turn Right
+turn4 = Turn Left
+turn5 = Turn Right
+stop = Finish
+berm1 = 200 m Berm
+berm2 = 500 m Berm
+berm3 = 100 m Berm
+offroad = Offroad
+gunrange = Firing Range
+
+# Spawn tanks at  60.3.39 N, 6.32..38 W  facing 270 (West)
+# -314230.38  3603625.27  101.34
+# facing front: -1.57    back: 1.58
+
+1.0.label = Introduction
+
+1.1.label = The Hotchkiss H-39
+
+	1.1.alert.modal = This is the Hotchkiss H-39, one of the most common French tanks.  It has three playable crew positions: driver, commander and gunner.
+        1.1.alert.camera = 0,5,45,360,0,0,10
+	// pan around
+	
+2.0.label = The Driver
+
+2.1.label = Driver&#39;s View
+	2.1.alert = This is position 1: the driver.  From here you control the movement of the vehicle. The driver&#39;s view is limited through his vision slit.[NL][NL]Press {gunsightview} to improve the view.
+        2.1.alert.camera = internal
+	2.1.complete.modal = You can use {gunsightview} to toggle between the zoomed in view of the slit and the normal cockpit view. 
+	
+2.2.label = Button up the driver
+	2.2.alert = The H-39&#39;s vision slit is open and it is possible for the driver to be damaged through it.[NL][NL]Press {canopycontrol} to close the slit and protect the driver.
+	2.2.complete.modal = With the slit closed, the driver cannot see outside the tank but he is better protected.
+
+2.3.label = Engine Status
+	2.3.alert = Press {instrumentview} to view your instruments.
+	2.3.complete.modal = Here you can see various gauges depending on the tank.  Examples are: motor temperature, engine RPMs, and possibly other information like turret orientation.
+
+2.4.label = What gear am I in?
+	2.4.alert.modal = When you spawn in any ground vehicle, it starts with its engine off and in neutral.[NL][NL]Each ground vehicle has 1 or more forward gears and a single reverse gear.
+	2.4.alert1 =  In order to move, you must put the vehicle in gear and hit the gas.[NL][NL]To easily see what gear you are in, enable the Vehicle Status display by pressing {showstats}.
+	2.4.complete = Good, this displays the current gear the vehicle is in (neutral by default).
+	2.4.complete.hilite = readout,target
+
+2.5.label = Start the Engine
+	2.5.alert = Hit {gunsightview} to look back through your driver&#39;s vision slit.[NL][NL]Start the engine by pressing {engstart}.
+	2.5.complete = Excellent!
+
+2.6.label = Shift into 1st gear
+	2.6.alert = Lower gears have more power and are useful for starting off or climbing slopes. Higher gears let you go faster but don&#39;t have much power so use them as you build speed on roads.[NL][NL]{shiftdown} and {shiftup} control the vehicles gear.[NL][NL]Press {shiftup} to enter first gear.
+	2.6.alert.hilite = readout,target
+
+3.0.label = Drive to Gun Range
+
+3.1.label = Movement Controls
+	3.1.alert.modal = Once your tank is in gear, you can use {gas.10.4} to move forward or backward, depending on if the tank is in reverse or a forward gear.
+	3.1.alert1.modal = Use {leftbrake.10.4} to steer left and {rightbrake.10.4} to steer right. {bothbrake.10.4} will slow the tank.
+	3.1.alert2 = A series of waypoints will lead you to the main gun firing range. Drive through each waypoint to complete this part of training.[NL][NL]Use {gas.10.4} to accelerate.[NL]Use {bothbrake.10.4} to brake.[NL]Use {leftbrake.10.4} and {rightbrake.10.4} to steer left and right. 
+
+3.2.label = Your first turn
+	3.2.alert = Coming up is your first turn. As you approach the turn, use {bothbrake.10.4} to slow the tank if needed.[NL][NL]Use {leftbrake.10.4} and {rightbrake.10.4} to navigate the turn to the right.
+
+3.3.label = Head Offroad	
+	3.3.alert = On the left side of this straight away is a set of bumps. Feel free to go over them or around them.[NL][NL]The next waypoint takes you offroad.
+
+3.4.label = Choose Position
+	3.4.alert = Stop at the next waypoint. Use {bothbrake.10.4} to slow the tank to a stop.
+
+3.5.label = Hull Down 
+	3.5.alert.modal = A berm lines the road ahead separating you from the main gun firing range.
+	3.5.alert1.modal = Your tank&#39;s armor is thickest in the front and weakest in the rear.[NL][NL]When choosing a firing position, it is best to position your tank in a way that maximizes this fact.
+	3.5.alert2.modal = You can use berms, hills or even buildings to provide additional cover from enemy fire. This is commonly called &#34;hull-down&#34; and simply means that your hull is partially protected by the terrain because the enemy can&#39;t see or hit it.
+	3.5.alert3.modal = To be successful in armored combat, you must use both of these ideas.
+
+3.6.label = Firing Position
+	3.6.alert = Take up a firing position against the berm next to the other tank.[NL][NL]Make sure your tank is facing north downrange.[NL][NL]Take care not to drive up on the berm. If this was real combat, that would expose more of your hull to enemy fire.
+	3.6.complete.modal = Excellent, you are now in a hull down firing position. 
+        3.6.complete.camera = -90,10,20,-90,-8,0,5
+	
+	# Follow the Waypoints
+	# SW corner of track:  &#34;Southwest Corner&#34;
+	# -314333.57  3603628.25  101.98
+	# facing front: -0.77  back: 2.38
+	
+	# W track bumps: &#34;Road Bumps&#34;
+	# -314344.58  3603665.72  101.99
+	# facing front: -0.02   back:  3.12
+	
+	# NW corner of track:  &#34;Northwest Corner&#34;
+	# -314339.64  3603769.53  101.98
+	# facing frpmt&#34; -0.04  back: 3.11
+	
+	# Center of gun firing berm line: &#34;Armor Firing Range.&#34;
+	# -314306.27  3603792.69  102.06
+	# facing front: 0.07  back: -3.07
+	
+4.0.label = The Tank Commander
+
+4.1.label = Turn off your engine 
+	4.1.alert = In combat, it is a good idea to turn off your engine when not maneuvering. This will allow you to hear enemy tanks moving up and they won&#39;t be able to hear you.[NL][NL]Turn off your engine using {engstart}.
+        4.1.alert.camera = internal
+
+4.2.label = Move to the Commander
+	4.2.alert = The second position in this tank is the Tank Commander. Tank Commanders usually have a better view than the other positions.[NL][NL]Hit {positiontwo} to switch to the commander position.
+	4.2.complete.modal = If you switch positions away from the Driver, the vehicle will continue with the last input it had.  Thus, if you were holding down the gas, the vehicle will continue to move forward when you switch to another position.  This can be dangerous at times because it is difficult for the tank to remain straight due to the terrain.
+
+4.3.label = The Commander&#39;s View
+	4.3.alert = In the H-39, the commander is in the cupola of the turret with a viewing slit that is covered by armor plating.  Unlike most other tank commanders, he cannot open the top of the cupola or &#34;unbutton&#34;.[NL][NL]Press {canopycontrol} to open the vision slit.
+	
+4.4.label = Use Your Binoculars
+	4.4.alert = With the vision slit open, you can see even further by bringing up the Commander&#39;s binoculars.[NL][NL]Hit {gunsightview} to bring up your binoculars. 
+	
+4.5.label = Look Around
+	4.5.alert = You can also traverse and elevate the cupola with {turretraverse} and {turretelevate}[NL][NL]Take a moment to look NORTH down the gun range at the dirt mounds with targets on them.
+	4.5.complete.modal = The cupola can be rotated 360 degrees around your tank, but it is facing is dependent on the facing of the tank&#39;s turret. 
+	
+5.0.label = The Gunner
+
+5.1.label = Move to the Gunner
+	5.1.alert = The Gunner is the 3rd position this tank has. From the gunner&#39;s position, you can fire the main gun and the turret&#39;s coaxial machine gun.[NL][NL]Hit {positionthree} to switch to the gunner position.
+
+5.2.label = The Gunner&#39;s View
+	5.2.alert = The Gunner&#39;s view is very limited except through his gunsight.[NL][NL]Press {gunsightview} to look through the gunner&#39;s sight.
+
+5.3.label = Move the Turret
+	5.3.alert = Just like the commander&#39;s cupola, the turret can be moved with {turretraverse} and {turretelevate}.[NL][NL]Try moving the turret around.
+	5.3.complete.modal = The turret can be moved 360 degrees around the tank!
+
+5.4.label = Fire the Maingun
+	5.4.alert = Take a moment to fire the main gun down range.[NL][NL]Hit {primarytrigger.1} to fire the main gun.
+	5.4.complete.modal = Use the main gun to take out other vehicles and buildings.
+	
+5.5.label = Fire the Machinegun
+	5.5.alert = Take a moment to fire the machine gun down range.[NL][NL]Hit {secondarytrigger.1} to fire the turret&#39;s coaxial machine gun.
+	5.5.complete.modal = Use your machine gun against infantry and soft targets like trucks.
+	
+6.0.label = Gunnery
+
+6.1.label = Hit the left target
+	6.1.alert.modal = Notice the V-shaped gunsight. The turret&#39;s weapons are aimed at the lowest point of the V (approximately the center of the screen).
+	6.1.alert1 = Fire the main gun at the far left target using {primarytrigger.1}. It is about 200 meters away.
+	6.1.complete = Well done, you hit the target!
+
+6.2.label = The Gunsight
+	6.2.alert.modal = The left berm was easy to hit because it was close, but farther targets require you adjust your aim because the shell drops due to gravity. Luckily your gunsight is adjustable.  
+	6.2.alert1.modal = You can move the gunsight with {gunsightrangeinc} and {gunsightrangedec}.  The left range markings are for the machine gun and the right are for the main gun.[NL][NL]Each tick is in 100s of meters.
+	6.2.alert2 = Now try to hit the next target to the right. It is approximately 500 meters away.[NL][NL]Use {gunsightrangeinc} and {gunsightrangedec} to set the gunsight&#39;s range to be about 500.[NL][NL]Shoot the 500 meter target.
+	6.2.complete.modal = Well done. If the distance is known, it is easy to adjust your gunsight to hit the target.
+	
+6.3.label = Sight Adjustment
+	6.3.alert.modal = Now try to hit a harder target. The two right berms are pretty far out. Try to hit one adjusting your sights as needed.
+	6.3.alert1 = First, fire your main gun at one to see where your round hits.[NL][NL]If it falls short, increase the range of your sight, re-aim using the new sight position and fire.[NL][NL]Hit either of the far target berms by adjusting your sights using {gunsightrangeinc} and {gunsightrangedec}.    
+	6.3.complete.modal = Nice shot. As you can see, it is about 1000 meters away. Typically, armor combat is from 500 to 2000 meters away.[NL][NL]Machine guns are sighted the same way except you would use the left ticks for ranging.
+	
+6.4.label = Main Gun Ammo
+	6.4.alert = Many tanks have different ammo types available for the main gun. You can switch ammo types using {cycleammo}.[NL][NL]Use {cycleammo} to switch your main gun to using high-explosive (HE) ammunition.
+	6.4.alert.hilite = primary,target
+	6.4.complete.modal = Use armor piercing (AP) rounds to penetrate the armor of enemy tanks. Use high-explosive (HE) rounds to destroy softer targets like trucks and troops.
+	6.4.complete.hilite = primary,target
+
+6.5.label = Fire HE
+	6.5.alert = Fire a few of these rounds and notice how they behave differently from the armor piercing (AP) rounds in flight and in impact.[NL][NL]When you are ready to continue, switch to the driver&#39;s position {positionone}.
+
+7.0.label = Complete the Course
+
+7.1.label = Start Your Engine
+	7.1.alert = Start your tank&#39;s engine using {engstart} and zoom into the driver&#39;s vision slit using {gunsightview}.
+
+7.2.label = Reverse
+	7.2.alert = Tanks can also drive in reverse, which is often very helpful.  Use {reverse} to toggle between forward and reverse gears.[NL][NL]When you hit {reverse}, your tank&#39;s gear will automatically be set to neutral.[NL][NL]Put your tank in reverse.
+	7.2.alert.hilite = readout,target
+	
+7.3.label = Shift into Gear
+	7.3.alert = You still need to shift into reverse; do so by hitting {shiftup}.
+	7.3.alert.hilite = readout,target
+
+7.4.label = Back Out
+	7.4.alert = Back out onto the road. Give your tank some gas using {gas.10.4} and turn left using {leftbrake.10.4} until you can see the road.[NL][NL]Once the road is in sight, use {bothbrake.10.4} to stop the tank. Use {reverse} to re-engage the forward gears.
+	7.4.alert.hilite = readout,target
+	
+7.5.label = Drive Home
+	7.5.alert = Shift into first gear using {shiftup}.[NL][NL]Now follow the waypoints back to the beginning.[NL][NL]Use {gas.10.4} to accelerate.[NL]Use {bothbrake.10.4} to brake.[NL]Use {leftbrake.10.4} and {rightbrake.10.4} to steer left and right.
+	7.5.alert.hilite = readout,target
+
+8.0.label = Complete
+
+8.1.label = Tutorial Completed
+	8.1.alert.modal = Well done! You have completed the basic armor tutorial.
+
+# NE corner &#34;Northeast Corner&#34; 
+# -314252.88  3603785.75  101.98
+# facing front: 1.84  back: -1.30
+
+
+# &#34;Bend Left&#34;
+# -314234.48  3603724.61  101.98
+# facing front: 2.21  back: -0.93
+
+# &#34;Bend Right&#34;
+# -314192.29  3603695.49  101.05
+# facing front: 2.19  back: -0.95
+
+# Final way point
+# -314230.38  3603625.27  101.34
+# facing front: -1.57    back: 1.58
+
+#	1.6.complete = Congratulations!  You have completed Armor Training.</body>
+  <title>Armor I: Hotchkiss H-39</title>
+</content>

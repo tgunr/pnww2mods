@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<window id="tutbrief" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768" modal="true"
+	aspectalign="center" style="background-color: #00000077;" layer="100">
+	<include file="lib/popup.uixml"/>
+	<include file="lib/tutorial.uixml"/>
+	<view x="300" y="300" width="450" height="300" style="background-color: #00000088; 
+							border-sides: ui/textures/hud/border_side.bmp;
+							border-corner: ui/textures/hud/border_corner.bmp;
+							border-width: 4;
+							border-height: 4;" moveondrag="yes">
+		<text id="popup-caption" x="10" rtop="10" y="50" rright="10" acceptfocus="no" style=" color: #FFFFFF;"/>
+		<image x="10" src="ui/textures/test/horiz_underline.bmp" height="12" rtop="20" rright="10"/>
+		<text id="tut-body" x="10" height="120" rright="10" rtop="40" acceptfocus="no"
+			style="color: #e9e3d9ff;"/>
+		<panel id="tut-info" label="&tutorials.info;" align="center" x="0" y="40" height="100" rright="0"
+			style="color: #3e5248; border-color: #3e5248; border-size: 1; font-size: -1;">
+			<caption label="&tutorials.status;:" x="20" height="15" rright="20" rtop="20" style="color: #e9e3d9ff;"/>
+			<caption id="tut-status" x="20" height="15" rright="20" rtop="20" style="color: #e9e3d9ff;" align="right"/>
+			<caption label="&tutorials.prereq;:" x="20" height="15" rright="20" rtop="40" style="color: #e9e3d9ff;"/>
+			<caption id="tut-prereq" x="20" height="15" rright="20" rtop="40" style="color: #e9e3d9ff;" align="right"/>
+			<caption label="&tutorials.prereqstatus;:" x="20" height="15" rright="20" rtop="60" style="color: #e9e3d9ff;"/>
+			<caption id="tut-prereqstatus" x="20" height="15" rright="20" rtop="60" style="color: #e9e3d9ff;" align="right"/>
+		</panel>
+		<button id="popup-no" x="20" y="10" width="150" height="25" label="&popup.cancel;" onclick="doPopupAction(false)"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+		<button id="popup-yes" y="10" width="150" height="25" rright="20" label="&popup.ok;" onclick="doPopupAction(true)"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+	</view>
+	<script>
+		<!--
+		
+		function initContent(content, start)
+		{
+			var completed		= TutIsComplete(content);
+			var tutYes 			= window.findview("popup-yes");
+			var tutNo 			= window.findview("popup-no");
+			var tutBody			= window.findview("tut-body");
+			var tutInfo			= window.findview("tut-info");
+			var status 			= tutInfo.findview("tut-status");
+			var prereq 			= tutInfo.findview("tut-prereq");
+			var prereqstatus 	= tutInfo.findview("tut-prereqstatus");
+			var requires 		= TutGetContent(content.requires, true);
+			var prereqok		= true;
+			
+			TutSetStatusView(requires, prereq, prereqstatus);
+			TutSetStatusView(content, null, status);
+			
+			tutBody.text = content.brief;
+			
+			if(!start)
+			{
+				if(completed)
+					tutBody.text = game.getlocstring("tutorials.success");
+				else
+					tutBody.text = game.getlocstring("tutorials.failure");
+				
+				tutNo.visible = false;
+				tutYes.x = tutYes.parent.width/2 + tutYes.width/2;
+			}
+		}
+		
+		-->
+	</script>
+</window>
+

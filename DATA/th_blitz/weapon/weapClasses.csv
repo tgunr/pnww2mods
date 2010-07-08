@@ -1,0 +1,37 @@
+### THESE NUMBERS MUST BE INCREMENTAL AND UNIQUE,
+### WHEN ADDING A CLASS, TAKE YOUR TICKET HERE:
+# nextClass: 16
+### AND UPDATE  ^^  THIS NUMBER,
+#,
+# Assigns unique class numbers for weapon specs.,
+# These were supposed to unique-per-category,
+# but instead they were assigned sequentially,
+# as the parser encountered them in the _weap,
+# files. This meant that adding a new category,
+# would break all kinds of things on the server.,
+#,
+
+section, AC_
+1,bomber
+2,fighter
+3,gm
+
+section, GV_
+4,tank
+5,artillery
+6,truck
+7,gun
+
+section, IN_
+8,crew
+9,troop
+14,para
+15,depot
+
+section,MN_
+10,airBomb
+11,heavyInfantry
+
+section,SV_
+12,riverine
+13,sea

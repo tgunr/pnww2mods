@@ -1,0 +1,42 @@
+# Hispano404 20mm AP
+# I don't know for sure that this round existed
+# Characteristics for all 20mm Hispano rounds are
+# the same except for explosive and tracertime
+# Created 09/03/02 - doc (created 404 type from bloo's Mk.II type)
+# Adjusted to create standardization for penetration with other 20mm aircraft AP - Doc
+
+type = ballistic
+diameter = .020
+weight = 0.165
+ammoweight = 0.3
+velocity = 850
+#tracertime = 1.0
+object = bullet1
+stretchobject = 1
+explosive = 0
+#explosive is placeholder
+
+fuzetime = 0.000
+# fuzetime unknown - apparently often fuzed too fast
+bc = .52
+#bc is a placeholder
+lifetime = 2.0
+# lifetime is placeholder
+dontdisplayfirstframe = 1 
+penetrationconstant = 0.0000004042
+#penetration constant is anti-armour nerfed
+ricochetangle = 88
+
+#numshrapnelpieces = 10 (this is not an explosive round)
+#totalshrapnelmass = .60
+selfdestructtime = 3.0
+# all of this is placeholder
+
+#explosionsoundnear = sounds\troop\grenade.wav
+#explosionsoundfar = sounds\smlfarexp.wav
+nearfardistance = 300
+# all of this is placeholder
+
+muzzleflash = 1
+hiteffect = heavymachinegun
+tracerscale = 4

@@ -1,0 +1,17 @@
+# Created 11/15/04 -Doc.
+# M3 gun for Sherman M4a2 tank
+
+mass = 400
+firetype = singleshot
+rateoffire = 30
+dispersion = 0.08
+ammotype1 = 75mml40m3ap
+ammotype2 = 75mml40m3he
+ghostrof = 20
+ghostammotype = 75mml40m3he
+cliprounds = 1
+reloadtime = 3
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = na

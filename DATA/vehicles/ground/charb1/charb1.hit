@@ -1,0 +1,91 @@
+# charb1 Hit file
+
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2,concussive resistance, damage threshold
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 1000000
+
+# Inside collider objects: Single sided
+
+d_engine,250,0,0
+d_fuel1,8,0,0
+d_fuel2,8,0,0
+d_fuel3,8,0,0
+d_75ammo,8,0,0,0,200
+d_radiator_1,8,0,0
+d_coolant,8,0,0
+d_47ammo,8,0,0,0
+d_transmission,250,0,0
+d_driverlegs,1,0,0,0,1000
+d_drivertorso,1.5,0,0,0,1000
+d_driverarms,1,0,0,0,1000
+d_driverhead,6.5,0,0,0,1000
+d_commanderhead,6.5,0,0,0,300
+d_commandertorso,1.5,0,0,0,300
+d_commanderarms,1,0,0,0,300
+d_commanderlegs,1,0,0,0,3000
+d_radiohead,6.5,0,0,0,745
+d_radiotorso,1.5,0,0,0,745
+d_radioarms,1,0,0,0,745
+d_radiolegs,1,0,0,0,745
+d_loaderhead,6.5,0,0,0,745
+d_loadertorso,1.5,0,0,0,745
+d_loaderrarms,1,0,0,0,745
+d_loaderlegs,1,0,0,0,745
+
+# Outside collider objects: Double sided
+
+d_vent,47,0,0
+d_turretsides,50,0,0
+d_turretfront,55,0,0
+d_turrettop,20,0,0
+d_turretbottom,22,0,0
+d_coaxmount,12,0,0
+d_cupola,42,0,0
+d_turrethatch,50,0,0
+d_47mmgun,25,0,0,0,250000
+d_turretring,50,0,0
+d_mantletarmor,56,0,0
+d_rightbackwheel,45,0,0,0,110000
+d_leftbackwheel,45,0,0,0,110000
+d_leftdrivewheel,45,0,0,0,110000
+d_rightdrivewheel,45,0,0,0,110000
+d_fronthull,60,0,0
+d_backhull,54,0,0
+d_bottomhull,22,0,0
+d_tophull,20,0,0
+d_exhaust,15,0,0
+d_sidehatch,60,0,0
+d_75mmgun,50,0,0,0,350000
+d_righttread,25,0,0,0,110000
+d_lefttread,25,0,0,0,110000
+d_leftsidehull,54,0,0
+d_rightsidehull,54,0,0
+d_tophatch2,32,0,0
+d_tophatch1,32,0,0
+d_driverblock,60,0,0
+d_driverglass,8,0,0
+d_firewall,5,0,0

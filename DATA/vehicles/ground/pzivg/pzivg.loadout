@@ -1,0 +1,29 @@
+#pzivg.loadout file
+
+# sounds available for the mounts
+sound1 = sounds\pzivg\xgun.wav
+sound2 = sounds\troop\mg34.wav
+sound3 = sounds\troop\mg34.wav
+
+loadout = 1
+
+mountnum = 1
+mountobject = mount1
+mountsound = sound1
+weapon = 75mmkwk40l43
+weaponobject = genericgun1
+recoilnum = 1
+recoiltime = .2
+shockdust = 1
+
+mountnum = 2
+mountobject = mount2
+mountsound = sound2
+weapon = mg34tank
+weaponobject = genericgun1
+
+mountnum = 3
+mountobject = bowgun
+mountsound = sound3
+weapon = mg34tank
+weaponobject = genericgun1

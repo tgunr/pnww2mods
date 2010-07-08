@@ -1,0 +1,13 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="bleniv" type="air" shape="blenheim4" description="Blenheim Mk IV" icon="Blenheim">
+<include file="bleniv.veh.xml"/>
+<include file="bleniv.state.xml"/>
+<include file="bleniv.hit.xml"/>
+<include file="bleniv.turret.xml"/>
+<include file="bleniv.loadout.xml"/>
+<include file="bleniv.xsound.xml"/>
+<include file="bleniv.control.xml"/>
+<include file="bleniv.mass.xml"/>
+<variant id="fr_blen" shape="fr_blenheim4"/>
+</vehicle>

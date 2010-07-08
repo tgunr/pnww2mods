@@ -1,0 +1,58 @@
+section, CATEGORY, weapClass
+default,,GV_tank.0
+spawn, p38t,
+spawn,pziiif,
+spawn,stug3b,
+spawn,pziic,
+spawn,pzivd,
+spawn,sdkfz232,
+spawn,sdkfz251c,GV_truck.0
+spawn,pziiih,
+spawn,oplbltz,GV_truck.0
+spawn,pak36,GV_gun.0
+spawn,flak36,GV_gun.0
+spawn,flak30,GV_gun.0
+spawn,sdkfz7 ,GV_truck.0
+spawn,de_bofors,GV_gun.0
+spawn,pak38,GV_gun.0
+spawn,pzivg,
+spawn,stug3g,
+spawn,w154,GV_truck.0
+spawn,pzvie,
+spawn,pak40,GV_gun.0
+
+section, tank,weapClass
+default,,GV_tank.0
+spawn, p38t,
+spawn,pziiif,
+spawn,stug3b,
+spawn,pziic,
+spawn,pzivd,
+spawn,pziiih,
+spawn,sdkfz232,
+spawn,pzivg,
+spawn,stug3g,
+spawn,pzvie,
+
+section, truck,weapClass
+default,,GV_truck.0
+spawn,oplbltz,
+spawn,sdkfz7 ,
+spawn,sdkfz251c,
+spawn,w154,
+
+section,gun,weapClass
+default,,GV_gun.0
+spawn,pak36,
+spawn,flak36,
+spawn,flak30,
+spawn,de_bofors,
+spawn,pak38,
+spawn,pak40,
+
+section,depot,weapClass
+default,,GV_depot.0
+spawn,pak36,
+spawn,flak30,
+spawn,pak38,
+spawn,oplbltz,

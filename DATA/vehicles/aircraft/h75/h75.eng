@@ -1,0 +1,63 @@
+#engine stats file for H75
+# note: this engine apparantly handled supercharger overpressure
+# via lower RPM, we're altering this to work with the sim
+[r1830-31]
+type = propeller
+basehorsepower = 1050
+basehpalt = 2286
+basehppress = 1.18
+basehprpm = 2550
+basehpexhausttemp = 1100
+basehpexhausttemp = 5000
+idlerpm = 800
+idlethrottlepos = 0.037
+# most engines mil power fuel consumption is 360-380
+fuelperhphour = 0.240
+# most engines econ power fuel consumption is 190-200
+# this setting used for econrpm only
+oilconsumptionperhour = 5
+neg_g_fuel_cutout = 0
+neg_g_time_limit = 35
+
+# note: minimum pressure to maintain rpm will be used
+#wepmaxpress = 1.0
+#milmaxpress = .85
+#climbmaxpress = 0.85
+#conmaxpress = 0.65
+#idlepressureatidle = 0.05
+#idlepressureatmaxrpm = -0.2
+# in seconds
+maxweptime = 300
+maxmiltime = 1800
+weprpm = 2700
+milrpm = 2550
+climbrpm = 2549
+econrpm = 2250
+
+superchargetype = singlespeed
+speed1critalt = 4420
+speed1efficiencytop = 1.0
+speed1efficiencybottom = 1.0
+speed1maxmilboost = 1.18
+speed1maxwepboost = 1.35
+#neutralmaxmilboost = 1.0
+#neutralshiftalt = 2000
+#shiftalt = 470
+#speed2critalt = 10000
+
+#degrees from the thrust line for exhaust thrust
+exhaustthrustangle = 5
+# 1 lb = 4.45N this is in newtons
+exhaustthrustforce = 350
+
+weptype = normal
+
+propgearratio = 0.5625
+
+# 1 = clockwise from pilot's perspective if he's behind the prop
+# -1 = counterclockwise
+propspindirection = 1
+
+criticalrpm = 200
+starterrpm = 100
+starterhp = 10

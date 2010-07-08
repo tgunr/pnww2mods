@@ -1,0 +1,30 @@
+# 75mm KGr Rot.Pz AP
+# Rev. 4/18/02 - bloo
+
+type = ballistic
+diameter = .075
+weight = 6.8
+velocity = 385
+tracertime = 7.9
+object = bullet1
+explosive = 201160
+# .08 kg Gunpowder (Fp 02) 
+
+fuzetime = 0.002
+bc = 1.6
+lifetime = 8.0
+ricochetangle = 87
+modelspall = 1
+penetrationconstant = 0.0000037132
+dontdisplayfirstframe = 1
+
+numshrapnelpieces = 100
+totalshrapnelmass = 3
+
+explosionsoundnear = sounds\smlcloseexp.wav
+explosionsoundfar = sounds\smlfarexp.wav
+nearfardistance = 300
+
+muzzleflash = 3
+hiteffect = smallcannon
+tracerscale = 2

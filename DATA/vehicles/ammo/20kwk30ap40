@@ -1,0 +1,20 @@
+# Kwk30 (20mm)
+# AP Round
+# Rev. 4/18/02 - bloo
+
+type = ballistic
+diameter = .02
+weight = .1
+velocity = 1050
+tracertime = 4.9
+object = bullet1
+fuzetime = 0.000
+bc = .285
+lifetime = 5.0
+ricochetangle = 87
+modelspall = 1
+penetrationconstant = 0.000001086
+dontdisplayfirstframe = 1
+muzzleflash = 1
+hiteffect = heavymachinegun
+tracerscale = 4

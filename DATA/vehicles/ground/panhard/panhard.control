@@ -1,0 +1,45 @@
+# Driver
+position = 1
+control = radio
+# Hatch is there but art looks odd turned off until functionality more complete
+# control = hatchcontrol
+control = canopycontrol
+control = map
+control = auxsight
+control = bothbrake
+control = leftbrake
+control = rightbrake
+control = enginerpm
+control = steering
+control = clutch
+control = shiftup
+control = shiftdown
+control = reverse
+control = gas
+control = engstart
+#control = towbar
+control = hoist
+control = ridetransport
+
+# Commander
+position = 2
+control = hatchcontrol
+control = canopycontrol
+control = map
+control = turretraverse
+control = turretelevate
+control = gunsightrangedec
+control = gunsightrangeinc
+
+# Gunner
+position = 3
+control = hatchcontrol
+control = canopycontrol
+control = map
+control = primarytrigger
+control = secondarytrigger
+control = turretraverse
+control = turretelevate
+control = cycleammo
+control = gunsightrangedec
+control = gunsightrangeinc

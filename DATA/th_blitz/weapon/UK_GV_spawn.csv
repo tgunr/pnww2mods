@@ -1,0 +1,56 @@
+section, CATEGORY, weapClass
+default,,GV_tank.0
+spawn,a13,
+spawn,matilda2,
+#,uk_r35,
+#,uk_char,
+spawn,vickersmkvi,
+spawn,daimler,
+spawn,crusader2,
+spawn,crusader3,
+spawn,churchill7,
+spawn,churchill3,
+
+spawn,bedford,UK_GV_truck.0
+spawn,qf2pdr,UK_GV_gun.0
+#,uk_ml25,UK_GV_gun.0
+spawn,uk_mle38,UK_GV_gun.0
+spawn,bofors40mm,UK_GV_gun.0
+spawn,morris,UK_GV_truck.0
+spawn,qf6pdr,UK_GV_gun.0
+spawn,qf17pdr,UK_GV_gun.0
+
+section,tank, weapClass
+default,,GV_tank.0
+#,uk_char,
+spawn,matilda2,
+spawn,a13,
+#,uk_r35,
+spawn,vickersmkvi,
+spawn,daimler,
+spawn,crusader2,
+spawn,crusader3,
+spawn,churchill7,
+spawn,churchill3,
+
+section,truck, weapClass
+default,,GV_truck.0
+spawn,bedford,
+spawn,morris,
+
+section,gun, weapClass
+default,,UK_GV_gun.0
+spawn,qf2pdr,
+#,uk_ml25,
+spawn,uk_mle38,
+spawn,bofors40mm,
+spawn,qf6pdr,
+spawn,qf17pdr,
+
+
+section,depot,weapClass
+default,,GV_depot.0
+spawn,bedford,
+spawn,qf2pdr,
+spawn,uk_mle38,
+spawn,qf6pdr,

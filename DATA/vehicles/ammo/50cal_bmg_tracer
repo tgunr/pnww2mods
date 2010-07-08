@@ -1,0 +1,27 @@
+# Browning 12.7mm (.50 Cal) MG
+# Browning M2
+# Created 04/7/03 - Hatch
+# Last edit 2/2/05 Hatch
+# modified to reduce penetration 25/March/07 - Doc.
+
+type = ballistic
+diameter = .0127
+weight = 0.054
+ammoweight = 0.136
+velocity = 870
+tracertime = 1.0
+object = bullet1
+stretchobject = 1
+explosive = 0.0
+fuzetime = 0.000
+bc = 1.2
+# Place holder
+lifetime = 2.0
+#penetrationconstant = 0.00000045
+penetrationconstant = 0.00000033
+# Place holder
+ricochetangle = 87
+dontdisplayfirstframe = 1
+muzzleflash = 1
+hiteffect = incendiarymg
+tracerscale = 5

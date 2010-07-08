@@ -1,0 +1,1829 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+<window id="mission" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
+	onshow="initWin(this)" onupdate="updateSpawnDelay()" aspectalign="center">
+	<include file="lib/tutorial.uixml"/>
+	<include file="widgets/template.uixml"/>
+	<include file="classes/TreeControl2.uixml"/>
+	<include file="classes/IntelFile.uixml"/>
+	<include file="classes/MissionResults.uixml"/>
+	<include file="classes/MissionTotals.uixml"/>
+	<include file="classes/Timer.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+	<include file="classes/VehicleManager.uixml"/>
+	<include file="classes/VehicleClass.uixml"/>
+	<tabview id="body" x="43" y="140" width="930" height="450" ontab="quickhelp()" style="color: #BFE2CE;
+						background-color: #000000BB; 
+						border-top-corner: ui/textures/test/body_ul.bmp;
+						border-bottom-corner: ui/textures/test/body_br.bmp;
+						border-sides: ui/textures/test/body_sides.bmp;
+						border-top: ui/textures/test/body_top.bmp;
+						border-bottom: ui/textures/test/body_bottom.bmp;
+						control-on-endcap:  ui/textures/test/body_tab_cap_on.bmp;
+						control-on-back:  ui/textures/test/body_tab_filler_on.bmp;
+						control-off-endcap: ui/textures/test/body_tab_cap.bmp;
+						control-off-back: ui/textures/test/body_tab_filler.bmp;
+						control-on-color: #FFFFCE;
+						border-width: 16;
+						border-height: 16;">
+		<tab label="  &mission.readytab;  " x="0" y="0" width="930" height="460"
+			onshow='setHelp(getlocstring("mission.readytab.help")); tplTab()' onupdate="doWeaponPoll()" tip="&mission.readytab.tip;">
+			<view id="left-pane" x="18" y="23" width="444" height="411">
+				<tabview id="spawn-options" x="0" y="0" rright="0" rtop="0">
+					<tab x="0" y="0" rright="0" rtop="0" showtab='false'>
+						<!-- weapon selection -->
+						<view x="10" width="425" height="400" rtop="12">
+							<caption id="forces-header" x="0" height="20" width="425" rtop="0"
+								onshow="this.label = getlocstring('mission.readytab.forces') + ' - ' + mission.origin.name.toUpperCase()"
+								style="font-size: +2; color: #BFE2CE; tooltip: widgets/tooltips/supplytip.uixml;"/>
+							<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
+							<view x="0" width="425" height="15" rtop="22">
+								<caption x="0" y="0" width="190" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+									label="&mission.readytab.forces.name;"/>
+								<caption x="192" y="0" width="80" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+									label="&mission.readytab.forces.available;" align="right"/>
+								<caption x="274" y="0" width="80" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+									label="&mission.readytab.forces.capacity;" align="right"/>
+								<caption x="356" y="0" width="76" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+									label="&mission.readytab.forces.intel;        " align="right"/>
+							</view>
+							<list id="spawnTree" x="0" width="425" height="300" rtop="40" onselect="spawnTree.clickTree(false)" ondblselect="spawnTree.clickTree(true)"/>
+							<caption label="* mouse over any vehicle for information about its availability" x="10" height="15" y="65" rright="10"
+								 style="color: #e9e3d9ff; font-size: -1;" acceptmouseclick="false"/>
+							<text id="noVehicles" x="10" width="405" height="280" rtop="50"
+								 style="color: #e9e3d9ff;" acceptmouseclick="false"/>
+							<script>
+								<!--
+								
+								// solo playmode logic
+								
+								var spawnTree 		= new TreeControl("spawnTree", selectSpawnable, formatSpawnable, isSelectable);
+								var vehicles		= new Object();
+								var rootNodes		= new Array();
+								var forcesHeader	= findview("forces-header");
+								var noVehicles		= findview("noVehicles");
+								var bestSelection	= -1;
+								
+								function showWeaponSelect()
+								{
+									spawnOptions.value 	= 0;
+									multicrewing		= false;
+									
+									setReserveCallback("reserve", selectSpawnable);
+									setMultiCrewCallback("joinvehicle", showCommanderSelect);
+									
+									if(client.reservedweapon != null)
+										unreserveWeapon();
+									
+									setMissionWeapon();
+								}
+								
+								function findBestSelection(node)
+								{
+									/*
+									var s = (node.data == null || (vehicles[node.data].current > 0 && vehicles[node.data].spawnable == "spawnable")) ? true: false;
+									var v = vehicles[node.data];
+									
+									if(v)
+										consoleprint("CHECKING BEST: " + node.data + "/" + node.row + "/" + v.type.description + "/" + v.current + "/" + v.spawnable + "/" + s + "\n");
+									*/
+									
+									if(bestSelection == -1 && node.data && isSelectable(node))
+									{
+										bestSelection = node.row;
+										//consoleprint("FOUND BEST: " + bestSelection + "\n");
+									}
+								}
+								
+								function initSpawnableTree()
+								{
+									var spawnables = client.spawnablevehicles;
+									
+									if(spawnables.length > 0)
+									{
+										noVehicles.visible = false;
+										
+										var classes = new Object();
+										
+										for(var i = 0; i < spawnables.length; i++)
+										{
+											var vehicle = spawnables[i];
+											if(vehicle == null) continue;
+											
+											if(classes[vehicle.vclassid] == null)
+												classes[vehicle.vclassid] = new TreeNode(vehicle.vclassid, null, 1, true, vehicle.vclass);
+											
+											classes[vehicle.vclassid].addNode(new TreeNode(vehicle.id, vehicle.index, 2, false));
+											
+											vehicles[vehicle.index] = new VehicleClass(vehicle);
+										}
+										
+										var cids 	= new Array(9, 8, 4, 7, 5, 6, 2, 1, 12, 13, 14);
+										var preopen	= null;
+										
+										for(var c = 0; c < cids.length; c++)
+										{
+											var node = classes[cids[c]];
+											
+											if(node != null)
+											{
+												if(preopen == null)
+													preopen = node; // open the first node
+												
+												spawnTree.addNode(node, toggleNode);
+												rootNodes[rootNodes.length] = node;
+											}
+										}
+										
+										if(preopen)
+											preopen.expand();
+									}
+									else
+									{
+										if(client.lastspawnliststatus != null && client.lastspawnliststatus != "")
+											noVehicles.text = getVariableLocString('mission.readytab.supply.status.' + client.lastspawnliststatus, client.nextsupply);
+										else
+											noVehicles.text = getlocstring("mission.readytab.novehicles");
+										
+										spawnTree.init = false;
+									}
+									
+									spawnTree.setColorText(false);
+								}
+								
+								function initSpawnables()
+								{
+									if(!spawnTree.initTree())
+										initSpawnableTree();
+									
+									var counters 	= client.weaponcounter;
+									var vcount		= 0;
+									
+									for(var i = 0; i < counters.length; i++)
+									{
+										var counter	= counters[i];
+										if(counter == null) continue;
+										var vehicle = vehicles[counter.index];
+										
+										if(vehicle != null)
+										{
+											vehicle.capacity 		= counter.capacity;
+											vehicle.current 		= counter.current;
+											vehicle.minimumrank 	= counter.minimumrank;
+											vehicle.spawnable 		= counter.spawnable;
+											
+											vcount++;
+										}
+									}
+									
+									for(var i = 0; i < rootNodes.length; i++)
+										rootNodes[i].children = rootNodes[i].children.sort(sortNodes);
+									
+									spawnTree.drawTree();
+									
+									if(bestSelection == -1)
+									{
+										spawnTree.findNodes(findBestSelection);	
+										
+										if(bestSelection >= 0)
+											spawnTree.clickTree(false, bestSelection);
+									}
+
+									var spawnStatus = "";
+									
+									if(client.lastspawnlistsource != null)
+										spawnStatus += getlocstring('mission.readytab.supply.supplier') + " " + client.lastspawnlistsource.name + "\n";
+									
+									spawnStatus += getlocstring('mission.readytab.supply.state') + " ";
+									spawnStatus += getlocstring('mission.readytab.supply.state' + client.lastspawnliststate) + "\n\n";
+									spawnStatus += getVariableLocString('mission.readytab.supply.status.' + client.lastspawnliststatus, client.nextsupply);
+									
+									forcesHeader.settip(spawnStatus);
+								}
+								
+								function sortNodes(a, b)
+								{
+									if(vehicles[b.data].current < vehicles[a.data].current)
+										return -1;
+									else if(vehicles[b.data].current > vehicles[a.data].current)
+										return 1;
+									
+									if(vehicles[b.data].type.index < vehicles[a.data].type.index)
+										return -1;
+									else if(vehicles[b.data].type.index > vehicles[a.data].type.index)
+										return 1;
+									
+									return 0;
+								}
+								
+								function isSelectable(node)
+								{
+									var s = (node.data == null || (vehicles[node.data].current > 0 && vehicles[node.data].spawnable == "spawnable")) ? true: false;
+									var v = vehicles[node.data];
+									
+									//if(node.data != null)
+									//	consoleprint("ISSELECTABLE: " + node.data + "/" + v.type.description + "/" + v.current + "/" + v.spawnable + "/" + s + "\n");
+									
+									return s;
+								}
+								
+								function toggleNode(node)
+								{
+									if(!node.open)
+									{
+										for(var i = 0; i < rootNodes.length; i++)
+										{
+											if(rootNodes[i].open && rootNodes[i].id != node.id)
+												rootNodes[i].open = false;
+										}
+									}
+								}
+								
+								function formatSpawnable(tree, node)
+								{
+									var row 	= "";
+									var name	= tree.list.id;
+									var width	= tree.getWidth();
+									var indent 	= tree.indent * node.level;
+									
+									if(node.branch)
+									{
+										var icon = (node.open) ? tree.collapseIcon: tree.expandIcon;
+										
+										row = "\
+<view id='" + node.id + "' width='" + width + "' height='16' aspectalign='left' onmouseenter='" + name + ".mouseEnter(this)' onmouseexit='" + name + ".mouseExit(this)'\
+	tip='" + htmlencode(getlocstring('mission.readytab.forces.branch.tip')) + "'>\
+	<image src='" + icon + "' x='" + indent + "' y='3' width='10' height='10' onclick='" + name + ".clickTree(true, " + tree.count + ")'/>\
+	<caption id='branch_title' x='" + (indent + tree.indent) + "' y='0' rright='1' height='16' style='color: #e9e3d9ff; '\
+		label='" + htmlencode(node.description.toUpperCase()) + "'/>\
+</view>";
+									}
+									else
+									{
+										var vehicle		= vehicles[node.data];
+										var dcolor 		= (vehicle.current > 0) ? "#e9e3d9ff": "#AAAAAA";
+										var color 		= getVehicleColor(vehicle);
+										var mouseenter	= (vehicle.current > 0) ? "onmouseenter='" + name + ".mouseEnter(this)'": "";
+										var mouseexit	= (vehicle.current > 0) ? "onmouseexit='" + name + ".mouseExit(this)'": "";
+										var tip			= "";
+										
+										if((vehicle.spawnable != "invalid" && vehicle.spawnable != "spawnable") || vehicle.current == 0)
+										{
+											tip = (vehicle.current == 0) ?
+												getlocstring('mission.readytab.spawn.empty'):
+												getlocstring('mission.readytab.spawn.' + vehicle.spawnable);
+										}
+										
+										var lock = "";
+										var details = "\
+	<caption id='solo-capacity' x='192' y='0' width='80' height='16' style='color: " + dcolor + "; '\
+		label='" + vehicle.current + "' align='right'/>\
+	<caption id='solo-count' x='274' y='0' width='80' height='16' style='color: " + dcolor + "; '\
+		label='" + vehicle.capacity + "' align='right'/>";
+										
+										if(vehicle.spawnable == "slocked")
+										{
+											//details = "\
+	//<caption x='192' y='0' width='160' height='16' style='color: #ff0000;' label='" + getlocstring('mission.readytab.slocked') + "' align='right'/>";
+											
+											lock = "\
+	<image x='" + (indent - 12) + "' y='2' src='ui/textures/lock.dds' width='12' height='12' style='color: #FF0000;'/>";
+										}
+										
+										if(tip.length > 0)
+											tip += "\n\n";
+										
+										tip += getVariableLocString('mission.readytab.spawn.minimumrank', vehicle.minimumrank, client.persona.rank.level) + "\n";
+										tip	= "tip = '" + htmlencode(tip) + "'";
+										
+										//color = getVehicleColor(vehicle);
+										
+										row = "\
+<view id='" + node.id + "' width='" + width + "' height='16' aspectalign='left' " + mouseenter + " " + mouseexit + " " + tip + ">\
+	" + lock + "\
+	<caption x='" + indent + "' y='0' width='190' height='16' style='color: " + color + "; '\
+		label='" + htmlencode(vehicle.type.description) + "'/>\
+	" + details + "\
+	<image x='380' y='0' src='ui/textures/test/intel_icon.bmp' width='16' height='16' onclick='showVehicleManual(\"" + getVehicleManual(vehicle.type) + "\")'\
+	onmouseenter='this.src = \"ui/textures/test/intel_icon_on.bmp\"' onmouseexit='this.src = \"ui/textures/test/intel_icon.bmp\"'/>\
+</view>";
+									}
+									
+									return row;
+								}
+								
+								function getVehicleColor(vehicle)
+								{
+									if(vehicle.spawnable == "slocked")
+									{
+										return "#FF0000"; // subscription locked
+									}
+									else if(vehicle.minimumrank > client.persona.rank.level)
+									{
+										return "#FFFF00"; // rank limited
+									}
+									else if(vehicle.current == 0)
+									{
+										return "#AAAAAA"; // out of supply
+									}
+									
+									return "#00FF00"; // can spawn
+								}
+								
+								function selectSpawnable(reserve)
+								{
+									if(reserve)
+									{
+										unreserveWeapon();
+										
+										var weapon = vehicles[spawnTree.selectedData()];
+										
+										if(weapon != null)
+										{
+											reserveWeapon(weapon.type);
+											showReservedWeapon();
+										}
+									}
+									
+									setMissionWeapon();
+								}
+								
+								function showVehicleManual(path)
+								{
+									consoleprint("Loading Vehicle manual " + path + "\n");
+									findview("body").value = 5;
+									initManuals(false);
+									loadManual(path);
+								}
+								
+								-->
+							</script>
+						</view>
+					</tab>
+					<tab x="0" y="0" rright="0" rtop="0" showtab='false'>
+						<!-- commander panel -->
+						<view x="10" width="425" height="400" rtop="12">
+							<caption label="&mission.readytab.cmdr;" x="0" height="20" width="425" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
+							<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
+							<view x="0" width="425" height="15" rtop="22">
+								<caption x="0" y="0" width="425" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+									label="&mission.readytab.cmdr.crewman;"/>
+							</view>
+							<list id="crewList" x="0" width="425" height="295" rtop="40" 
+								onselect="crewList.clickList(false)" ondblselect="crewList.clickList(true)">
+								<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+							</list>
+							<script>
+								<!--
+								
+								// commonder list logic
+								
+								var crewList = new ListControl(findview("crewList"), crewSelect);
+								
+								function showCrewSelect()
+								{
+									var weapon = client.reservedweapon;
+									
+									if(weapon == null)
+									{
+										showWeaponSelect();
+									}
+									else if(!weapon.type.ismulticrew)
+									{
+										showReservedWeapon();
+									}
+									else
+									{
+										client.requestcrews();
+										spawnOptions.value = 1;
+										setReserveCallback("cancelreservation", showWeaponSelect);
+										setMultiCrewCallback("selectcrew", crewSelect);
+									}
+								}
+								
+								function initCrewList(crewmen)
+								{
+									//consoleprint("Init crew list with " + crewmen.length + " crewmen\n");
+									
+									crewList.clearRows(false);
+									
+									if(crewmen.length > 0)
+									{
+										for(var i = 0; i < crewmen.length; i++)
+										{
+											var row = "\
+<view id='crew" + i + "' width='413' height='16' aspectalign='left' onmouseenter='crewList.mouseEnter(this)' onmouseexit='crewList.mouseExit(this)'>\
+	<caption x='0' y='0' width='185' height='16' style='color: #e9e3d9ff; ' label='" + crewmen[i].callsign + "'/>\
+</view>";
+											
+											crewList.addRow(crewmen[i], row);
+										}
+									}
+									else
+									{
+										var row = "\
+<view id='crew" + i + "' width='413' height='16' aspectalign='left'>\
+	<caption x='0' y='0' width='350' height='16' style='color: #e9e3d9ff; '\
+		label='" + htmlencode(getlocstring('mission.readytab.panel.requestcrew.empty')) + "'/>\
+</view>";
+										
+										crewList.addRow(null, row);
+									}
+									
+									crewList.postInit();
+								}
+								
+								function crewSelect(accept)
+								{
+									if(accept && client.acceptcrew(crewList.data))
+										showReservedWeapon(true);
+								}
+								
+								-->
+							</script>
+						</view>
+					</tab>
+					<tab x="0" y="0" rright="0" rtop="0" showtab='false'>
+						<!-- crew panel -->
+						<view x="10" width="425" height="400" rtop="12">
+							<caption label="&mission.readytab.crew;" x="0" height="20" width="425" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
+							<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
+							<view x="0" width="425" height="15" rtop="22">
+								<caption x="0" y="0" width="185" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+									label="&mission.readytab.crew.commander;"/>
+								<caption x="187" y="0" width="245" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+									label="&mission.readytab.crew.vehicle;"/>
+							</view>
+							<list id="commanderList" x="0" width="425" height="295" rtop="40" 
+								onselect="commanderList.clickList(false)" ondblselect="commanderList.clickList(true)">
+								<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+							</list>
+							<script>
+								<!--
+								
+								// crew playmode logic
+								
+								var commanderList = new ListControl(findview("commanderList"), commanderSelect);
+								
+								function showCommanderSelect()
+								{
+									var weapon = client.reservedweapon;
+									
+									if(weapon != null)
+									{
+										showReservedWeapon();
+									}
+									else
+									{
+										spawnOptions.value = 2;
+										setReserveCallback("canceljoin", showWeaponSelect);
+										setMultiCrewCallback("selectcommander", commanderSelect);
+										client.requestcommanders();
+									}
+								}
+								
+								function initCommanderList(commanders)
+								{
+									//consoleprint("Init commander list with " + commanders.length + " commanders\n");
+									
+									commanderList.clearRows(false);
+									
+									if(commanders.length > 0)
+									{
+										for(var i = 0; i < commanders.length; i++)
+										{
+											var row = "\
+<view id='commander" + i + "' width='413' height='16' aspectalign='left' onmouseenter='commanderList.mouseEnter(this)' onmouseexit='commanderList.mouseExit(this)'>\
+	<caption x='0' y='0' width='185' height='16' style='color: #e9e3d9ff; '\
+		label='" + commanders[i].callsign + "'/>\
+	<caption x='187' y='0' width='233' height='16' style='color: #e9e3d9ff; '\
+		label='" + ((commanders[i].weapon != null) ? commanders[i].weapon.description: "-") + "'/>\
+</view>";
+											
+											commanderList.addRow(commanders[i], row);
+										}
+									}
+									else
+									{
+										var row = "\
+<view id='commander" + i + "' width='413' height='16' aspectalign='left'>\
+	<caption x='0' y='0' width='350' height='16' style='color: #e9e3d9ff; '\
+		label='" + htmlencode(getlocstring('mission.readytab.panel.joinvehicle.empty')) + "'/>\
+</view>";
+										
+										commanderList.addRow(null, row);
+									}
+									
+									commanderList.postInit();
+								}
+								
+								function commanderSelect(join)
+								{
+									if(join)
+										client.joincrew(commanderList.data);
+								}
+								
+								-->
+							</script>
+						</view>
+					</tab>
+					<tab x="0" y="0" rright="0" rtop="0" showtab='false'>
+						<!-- reserved panel -->
+						<view x="10" width="425" height="400" rtop="12">
+							<caption id="reserved-header" x="0" height="20" width="425" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
+							<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
+							<tabview id="reserved-viewer" x="0" y="60" rright="0" rtop="30" acceptmouseclick='false'>
+								<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'/>
+								<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false' onshow="showReservedInfo(this)">
+									<text id="info-brief" x="20" rtop="10" width="260" height="200" acceptsfocus="no" style="color: #e9e3d9; font-size: +1;"/>
+									<image id="info-image" width="140" height="300" rright="10" rtop="0" style="border-color: #BFE2CE;"/>
+								</tab>
+								<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false' onshow="showReservedInfo(this)">
+									<text id="info-brief" x="10" rtop="0" width="220" height="200" acceptsfocus="no" style="color: #e9e3d9; font-size: +1;"/>
+									<image id="info-image" width="200" height="150" rright="10" rtop="0" style="border-color: #BFE2CE;"/>
+									
+									<view id="multicrew-buddy" x="10" width="425" height="100" rtop="220">
+										<caption label="&mission.readytab.commander;:" x="0" height="20" width="425" rtop="10" style="color: #FFFFFF;"/>
+										<caption id="multicrew-commander" height="20" width="425" rright="10" rtop="10" style="color: #e9e3d9;" align="right"/>
+										<caption label="&mission.readytab.crewman;:" x="0" height="20" width="425" rtop="30" style="color: #FFFFFF;"/>
+										<caption id="multicrew-crewman" height="20" width="425" rright="10" rtop="30" style="color: #e9e3d9;" align="right"/>
+									</view>
+								</tab>
+							</tabview>
+							<script>
+								<!--
+								
+								// reserved weapon logic
+								
+								var reservedHeader 	= findview("reserved-header");
+								var reservedViewer	= findview("reserved-viewer");
+								
+								function showReservedWeapon(mc)
+								{
+									var weapon = client.reservedweapon;
+									
+									if(weapon != null)
+									{
+										reservedHeader.label 	= weapon.type.description.toUpperCase() + " " + getlocstring('mission.readytab.forces.reserved');; 
+										reservedViewer.value	= (weapon.type.vclassid == 9 || weapon.type.vclassid == 14) ? 1: 2;
+										
+										multicrewing = (mc) ? true: false;
+										
+										spawnOptions.value = 3;
+										setReserveCallback("cancelreservation", showWeaponSelect);
+										
+										if(multiMate != null)
+										{
+											var multiCommander 	= findview("multicrew-commander");
+											var multiCrewman 	= findview("multicrew-crewman");
+											
+											if(multiMate.commander)
+											{
+												multiCommander.label 	= multiMate.callsign;
+												multiCrewman.label 		= client.handle;
+											}
+											else
+											{
+												multiCommander.label 	= client.handle;
+												multiCrewman.label 		= multiMate.callsign;
+											}
+											
+											findview("multicrew-buddy").visible = true;
+										}
+										else
+										{
+											findview("multicrew-buddy").visible = false;
+										}
+										
+										consoleprint("Showing reserved weapon: " + weapon.type.description + "/" + weapon.type.ismulticrew + "\n");
+										
+										if(weapon.type.ismulticrew && !multicrewing)
+											setMultiCrewCallback("requestcrew", showCrewSelect);
+										else
+											multicrewButton.visible	= false;
+									}
+									else
+									{
+										showWeaponSelect();
+									}
+								}
+								
+								function showReservedInfo(viewer)
+								{
+									var weapon = client.reservedweapon;
+									
+									if(weapon != null)
+									{
+										var content = game.getcontent(getVehicleManual(weapon.type));
+										
+										if(content)
+										{
+											var infoBrief	= viewer.findview("info-brief");
+											var infoImage	= viewer.findview("info-image");
+											
+											infoBrief.text 	= content.brief;
+											infoImage.src 	= (weapon.type.vclassid == 9 || weapon.type.vclassid == 14) ? content.image: "ui/textures/vehicles/" + content.image + ".bmp";
+										}
+										
+										consoleprint("Showed reserved info!!!:  " + getVehicleManual(weapon.type) + "\n");
+									}
+									else
+									{
+										consoleprint("Trying to show reserved weapon, but if was null!!!\n");
+										showWeaponSelect();
+									}
+								}
+								
+								-->
+							</script>
+						</view>
+					</tab>
+				</tabview>
+				<view x="20" y="10" height="40" width="400" style="background-color: #00000088; 
+									border-sides: ui/textures/test/infobox_side.bmp;
+									border-corner: ui/textures/test/infobox_corner.bmp;
+									border-width: 16;
+									border-height: 16;">
+					<button id="reserve-button" label="&mission.readytab.panel.reserve;" x="35" y="5" height="27" width="160"
+						style="control-on: ui/textures/test/gen_button_on.bmp;
+							control-off: ui/textures/test/gen_button_off.bmp;
+							control-disabled: ui/textures/test/gen_button_disabled.bmp;
+							font-size: -3;
+							color: #FFFFFF;"
+						onclick="if(reserveCallback != null) reserveCallback(true); soundPlayClick()"
+						onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+					<button id="multicrew-button" label="&mission.readytab.panel.joinvehicle;" x="210" y="5" height="27" width="160"
+						style="control-on: ui/textures/test/gen_button_on.bmp;
+							control-off: ui/textures/test/gen_button_off.bmp;
+							control-disabled: ui/textures/test/gen_button_disabled.bmp;
+							font-size: -3;
+							color: #FFFFFF;"
+						onshow="this.visible = canJoinCrew()" onclick="if(multicrewCallback != null) multicrewCallback(true); soundPlayClick()"
+						onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+				</view>
+			</view>
+			<include file="widgets/divider.uixml"/>
+			<view id="right-pane" x="468" y="23" width="444" height="411">
+				<view x="10" width="425" height="35" rtop="12">
+					<!--  style="background-color: #000000;" -->
+					<caption x="0" height="20" width="425" rtop="0"
+						onshow="this.label = mission.target.name.toUpperCase() + ': ' + missionType.toUpperCase()" style="font-size: +2; color: #BFE2CE;"/>
+					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
+				</view>
+				<view x="10" width="425" height="90" rtop="35">
+					<caption label="&mission.readytab.brief.location;:" x="5" width="300" height="15" rtop="0" style="color: #FFFFFFFF; "/>
+					<caption id="mission-location" width="300" height="15" rright="20" rtop="0" style="color: #e9e3d9ff; " align="right"
+						onshow="this.label = mission.origin.name" onclick="missionMap.mgr.setSelection(mission.origin)"/>
+					<image width="16" height="16" rright="0" rtop="0" src="ui/textures/test/zoom_icon.bmp"
+						onclick="missionMap.mgr.setSelection(mission.origin)"
+						onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'" onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
+					
+					<caption label="&mission.readytab.brief.origin;:" x="5" width="300" height="15" rtop="15" style="color: #FFFFFFFF; "/>
+					<caption id="mission-origin" width="300" height="15" rright="20" rtop="15" style="color: #e9e3d9ff; " align="right"
+						onshow="this.label = mission.origin.name" onclick="missionMap.mgr.setSelection(mission.origin)"/>
+					<image width="16" height="16" rright="0" rtop="15" src="ui/textures/test/zoom_icon.bmp"
+						onclick="missionMap.mgr.setSelection(mission.origin)"
+						onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'" onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
+					
+					<caption label="&mission.readytab.brief.target;:" x="5" width="300" height="15" rtop="30" style="color: #FFFFFFFF; "/>
+					<caption id="mission-target" width="300" height="15" rright="20" rtop="30" style="color: #e9e3d9ff; " align="right"
+						onshow="this.label = mission.target.name" onclick="missionMap.mgr.setSelection(mission.target)"/>
+					<image width="16" height="16" rright="0" rtop="30" src="ui/textures/test/zoom_icon.bmp"
+						onclick="missionMap.mgr.setSelection(mission.target)"
+						onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'" onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
+					
+					<caption label="&mission.readytab.brief.weapon;:" x="5" width="300" height="15" rtop="45" style="color: #FFFFFFFF; "/>
+					<caption id="mission-weapon" width="300" height="15" rright="20" rtop="45" style="color: #e9e3d9ff; " align="right"/>
+
+					<caption label="&brigade.hqtab.brief.ms;:" x="5" width="300" height="15" rtop="70" style="color: #FFFFFFFF; "/>
+					<caption id="mission-ms" width="300" height="15" rright="20" rtop="70" style="color: #e9e3d9ff;" align="right" onupdate="doMSPoll(this)"
+						onclick="setMobileSpawn()"/>
+					<image id="mission-ms-checkbox" width="20" height="20" rright="0" rtop="65" src="ui/textures/map-checkbox-on.bmp"
+						onclick="setMobileSpawn()" tip="&mission.readytab.brief.ms.tip;"/>
+				</view>
+				<view id="mission-map" class="mapview" acceptsfocus="no" minscale=".03" maxscale="1.5" scale=".75"
+					x="10" y="5" width="425" height="270" sx="18" sy="235"
+					onload="if(!this.mgr) new MapManager(this, true)" onshow="this.mgr.onShow()" 
+					onupdate="this.mgr.onUpdate()" onclick="this.mgr.onClick()" ondblclick="this.mgr.onDblClick()"
+					ondrag="this.mgr.onDrag()" onmouseenter="this.mgr.onMouseEnter()" onmouseexit="this.mgr.onMouseExit()"
+					onrightclick="this.mgr.onRightClick()"
+					style="tooltip: widgets/tooltips/maptip.uixml;">
+					<layer type="texture" id="default-64-tex" minscale="0" maxscale="64" enabled="true" orign="-26x210" rowcolsize="1x1" cellsize="64x64"/>
+					<layer type="icon" id="icons" minscale="1" maxscale="8" enabled="true"/>
+					<layer type="icon" id="rendered" minscale="0" maxscale="1" enabled="true"/>
+					<layer type="terrainobj" id="terrainobj" minscale="0" maxscale=".5" enabled="true"/>
+					<layer type="hclinks" id="hclinks" minscale="0" maxscale="20" enabled="true"/>
+					<layer type="strat" id="strat" minscale="0" maxscale="20" enabled="true">
+						<filter name="showcivilian" value="no"/>
+						<filter name="showbrigdes" value="no"/>
+						<filter name="showarmy" value="yes"/>
+						<filter name="showairforce" value="yes"/>
+						<filter name="shownavy" value="yes"/>
+						<filter name="showdepots" value="yes"/>
+						<filter name="showcpnames" value="yes"/>
+						<filter name="showfacnames" value="no"/>
+						<filter name="showflags" value="yes"/>
+						<filter name="showicons" value="yes"/>
+						<filter name="fadeupdate" value="no"/>
+						<filter name="fadefrontline" value="yes"/>
+						<filter name="cptextcolor" value="#FFFF00"/>
+						<filter name="factextcolor" value="#FFFFFF"/>
+						<filter name="seltextcolor" value="#00FF00"/>
+						<filter name="factextsize" value="12"/>
+						<filter name="cptextsize" value="12"/>
+						<filter name="showclutter" value="no"/>
+						<filter name="cluttercutoff" value=".2"/>
+					</layer>
+				</view>
+			</view>
+			<script>
+				<!--
+				
+				// ready room specific scripts
+				var missionMap			= findview("mission-map");
+				var spawnOptions		= findview("spawn-options");
+				var reserveButton		= findview("reserve-button");
+				var multicrewButton		= findview("multicrew-button");
+				var missionWeapon		= findview("mission-weapon");
+				var missionMs			= findview("mission-ms");
+				var missionMsCheckbox	= findview("mission-ms-checkbox");
+				
+				var reserveCallback		= null;
+				var multicrewCallback	= null;
+				var multicrewing		= false;
+				
+				function setMobileSpawn()
+				{
+					if(client.currentmission.mobilespawn)
+					{
+						soundPlayClick();
+						mobileSpawn 			= !mobileSpawn;
+						missionMsCheckbox.src 	= (mobileSpawn) ? "ui/textures/map-checkbox-on.bmp": "ui/textures/map-checkbox-off.bmp";
+					}
+				}
+				
+				function setMissionWeapon()
+				{
+					var description = "N/A";
+					
+					if(client.reservedweapon != null)
+					{
+						description = client.reservedweapon.type.description; 
+					}
+					else
+					{
+						var weapon = vehicles[spawnTree.selectedData()];
+						
+						if(weapon != null)
+							description = weapon.type.description;
+					}
+					
+					missionWeapon.label = description;
+				}
+				
+				function reserveWeapon(weapon)
+				{
+					if(client.reservedweapon == null)
+						client.reserveweapon(weapon);
+				}
+				
+				function unreserveWeapon()
+				{
+					if(client.reservedweapon != null)
+						client.cancelweaponreservation();
+				}
+				
+				function setReserveCallback(label, callback)
+				{
+					reserveButton.label = getlocstring('mission.readytab.panel.' + label);
+					reserveButton.settip(getlocstring('mission.readytab.panel.' + label + '.tip'));
+					reserveCallback	= callback;
+				}
+				
+				function setMultiCrewCallback(label, callback)
+				{
+					multicrewButton.label = getlocstring('mission.readytab.panel.' + label);
+					multicrewButton.settip(getlocstring('mission.readytab.panel.' + label + '.tip'));
+					multicrewCallback = callback;
+					multicrewButton.visible	= true;
+				}
+				
+				function canJoinCrew()
+				{
+					return (!multicrewing && (client.reservedweapon == null || client.reservedweapon.type.ismulticrew));
+				}
+				
+				-->
+			</script>
+		</tab>
+		<tab id="briefing" label="  &mission.brieftab;  " x="0" y="0" width="930" height="460"
+			onshow="showMissionBriefing(); tplTab()" tip="&mission.brieftab.tip;">
+			<view id="left-pane" x="18" y="23" width="444" height="411">
+				<view x="10" width="425" height="380" rtop="12">
+					<caption label="&mission.brieftab.members;" x="0" height="20" width="400" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
+					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="12"/>
+					<view x="0" width="425" height="15" rtop="23">
+						<caption x="0" y="0" width="152" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+							label="  &mission.brieftab.members.handle;"/>
+						<caption x="154" y="0" width="234" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+							label="&mission.brieftab.members.equipment;"/>
+						<caption x="390" y="0" width="58" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+							label=" IN" tip="&mission.brieftab.brief.sstatus;"/>
+					</view>
+					<list id="memberList" x="0" y="5" width="425" height="336">
+						<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+					</list>
+				</view>
+			</view>
+			<include file="widgets/divider.uixml"/>
+			<view id="right-pane" x="468" y="23" width="444" height="411">
+				<view x="10" width="425" height="35" rtop="12">
+					<!--  style="background-color: #000000;" -->
+					<caption id="mission-header" x="0" width="400" height="20" rtop="0"
+						onshow="this.label = mission.target.name.toUpperCase() + ': ' + missionType.toUpperCase()" style="color: #BFE2CE; font-size: +2;"/>
+					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="12"/>
+				</view>
+				<view x="10" y="175" width="250" height="190">
+					<caption label="&mission.brieftab.brief;" x="5" y="170" width="225" height="20" style="color: #BFE2CE; font-size: +1;"/>
+					<image x="5" y="165" src="ui/textures/test/horiz_underline.bmp" width="225" height="12"/>
+					<caption label="&mission.brieftab.brief.leader;:" x="5" y="145" width="250" height="15" style="color: #FFFFFFFF; "/>
+					<caption id="mission-leader" x="0" y="145" rright="15" height="20" style="color: #e9e3d9ff; " align="right"
+						onupdate="this.label = mission.poster"/>
+					<caption label="&mission.brieftab.brief.origin;:" x="5" y="130" width="250" height="15" style="color: #FFFFFFFF; "/>
+					<caption id="mission-origin" x="0" y="130" rright="15" height="20" style="color: #e9e3d9ff; " align="right"
+						onshow="this.label = mission.origin.name"/>
+					<caption label="&mission.brieftab.brief.target;:" x="5" y="115" width="250" height="15" style="color: #FFFFFFFF; "/>
+					<caption id="mission-target" x="0" y="115" rright="15" height="20" style="color: #e9e3d9ff; " align="right"
+						onshow="this.label = mission.target.name"/>
+					<caption label="&mission.brieftab.brief.type;:" x="5" y="100" width="250" height="15" style="color: #FFFFFFFF; "/>
+					<caption id="mission-type" x="0" y="100" rright="15" height="20" style="color: #e9e3d9ff; " align="right"
+						onshow="this.label = missionType"/>
+					<caption label="&mission.brieftab.brief.members;:" x="5" y="85" width="250" height="15" style="color: #FFFFFFFF; "/>
+					<caption id="mission-members" label="18" x="0" y="85" rright="15" height="20" style="color: #e9e3d9ff; " align="right"
+						onupdate="this.label = membersCount"/>
+					<caption label="&mission.brieftab.brief.spawned;:" x="5" y="70" width="250" height="15" style="color: #FFFFFFFF; "/>
+					<caption id="mission-spawned" x="0" y="70" rright="15" height="20" style="color: #e9e3d9ff; " align="right"
+						onupdate="this.label = membersSpawned"/>
+				</view>
+				<view x="260" y="175" width="175" height="190">
+					<caption label="&mission.brieftab.brief.deployed;" x="5" y="170" width="165" height="20" style="color: #BFE2CE; font-size: +1;"/>
+					<image x="5" y="165" src="ui/textures/test/horiz_underline.bmp" width="165" height="12"/>
+					<list id="deployedList" x="5" y="8" width="165" height="155" style="color: #e9e3d9ff;">
+						<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+					</list>
+				</view>
+				<view x="10" y="5" width="425" height="175">
+					<caption label="&mission.brieftab.brief.orders;" x="0" height="20" width="300" rtop="0" style="font-size: +1; color: #BFE2CE;"/>
+					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="12"/>
+					<text x="5" y="5" width="415" height="145" acceptfocus="no" onshow="this.text = missionDescription()"
+						style=" color: #e9e3d9ff; border-size-right: 10;">
+						<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+					</text>
+				</view>
+			</view>
+			<script>
+				<!--
+				
+				// briefing specific scripts
+				
+				var memberList 		= new ListControl(findview("memberList"));
+				var deployedList	= new ListControl(findview("deployedList"));
+				
+				function initDeployedVehicles(vehicles)
+				{
+					deployedList.clearRows(true);
+					
+					for(var i = 0; i < vehicles.length; i++)
+					{
+						var vehicle = vehicles[i];
+						
+						var row = "\
+<view id='deployed_" + i + "' width='165' height='16' aspectalign='left'>\
+	<caption id='deployed-name-caption' x='0' y='0' width='105' height='16' style='color: #e9e3d9ff; '\
+		label='" + vehicle.name + "'/>\
+	<caption id='deployed-count-caption' x='105' y='0' width='48' height='16' style='color: #e9e3d9ff; '\
+		label='" + vehicle.count + "' align='right'/>\
+</view>";
+						
+						deployedList.addRow(vehicle, row);
+					}
+				}
+				
+				function showMissionBriefing()
+				{
+					setHelp(getlocstring('mission.brieftab.help'));
+				}
+				
+				function missionDescription()
+				{
+					var md = "";
+					
+					if(client.currentorders != null && client.currentorders != "")
+						md = client.currentorders + "\n\n";
+					
+					if(mission.description != null && mission.description != "")
+						md += mission.description;
+					
+					return md;
+				}
+				
+				-->
+			</script>
+		</tab>
+		<tab label="  &mission.aartab;  " x="0" y="0" width="930" height="460"
+			onshow="showAARTab(); tplTab()" tip="&mission.aartab.tip;">
+			<tabview id="mission-results" x="0" y="0" rright="0" rtop="0" acceptmouseclick='false'>
+				<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'>
+					<view id="left-pane" x="18" y="18" width="444" height="411">
+						<view x="10" width="425" height="25" rtop="10">
+							<caption id="debrief-header" x="0" width="400" height="20" rtop="0" label="&mission.aartab.aars;" style="color: #BFE2CE; font-size: +2;"/>
+							<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
+						</view>
+						<view x="10" width="425" height="15" rtop="32">
+							<caption x="0" y="0" width="85" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+								label="&mission.aartab.aars.id;"/>
+							<caption x="87" y="0" width="120" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+								label="&mission.aartab.aars.unit;"/>
+							<caption x="209" y="0" width="70" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+								label="&mission.aartab.aars.caps;" align="center"/>
+							<caption x="281" y="0" width="70" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+								label="&mission.aartab.aars.kills;" align="center"/>
+							<caption x="353" y="0" width="80" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+								label="&mission.aartab.aars.result;" align="center"/>
+						</view>
+						<list id="sorties" x="10" y="20" width="425" height="342" style="color: #e9e3d9ff; "
+							onselect="sortieList.clickList(false)" ondblselect="sortieList.clickList(true)">
+							<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+						</list>
+						<caption x="10" y="5" rright="10" height="15" style="color: #e9e3d9ff;"
+							label="&mission.aartab.aars.more;" align="center"/>
+					</view>
+					<include file="widgets/divider.uixml"/>
+					<view id="right-pane" x="468" y="18" width="444" height="411">
+						<tabview id="mission-results-details" x="0" y="0" rright="0" rtop="0" acceptmouseclick='false'>
+							<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'>
+								 <view x="10" y="10" rright="10" rtop="10">
+									<caption label="&mission.aartab.aars.summary;" x="0" height="20" width="400" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
+									<image x="0" width="425" height="12" rtop="10" src="ui/textures/test/horiz_underline.bmp"/>
+									
+									<caption label="&mission.aartab.aars.aar.scored;:" x="5" height="15" rright="5" rtop="25" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-pointsscored" x="5" height="15" rright="5" rtop="25" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<caption label="&mission.aartab.aars.aar.promotions;:" x="5" height="15" rright="5" rtop="40" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-promotions" x="5" height="15" rright="5" rtop="40" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<caption label="&mission.aartab.aars.aar.accumulated;:" x="5" height="15" rright="5" rtop="55" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-pointsaccumulated" x="5" height="15" rright="5" rtop="55" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<caption label="&mission.aartab.aars.aar.nextrank;:" x="5" height="15" rright="5" rtop="70" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-nextrank" x="5" height="15" rright="5" rtop="70" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<image x="5" rright="5" height="4" rtop="85" src="ui/textures/test/horiz_underline.bmp"/>
+
+									<caption label="&mission.aartab.aars.favorite;:" x="5" height="15" rright="5" rtop="90" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-favorite" x="5" height="15" rright="5" rtop="90" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<caption label="&mission.aartab.aars.best;:" x="5" height="15" rright="5" rtop="105" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-best" x="5" height="15" rright="5" rtop="105" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<caption label="&mission.aartab.aars.worst;:" x="5" height="15" rright="5" rtop="120" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-worst" x="5" height="15" rright="5" rtop="120" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<image x="5" rright="5" height="4" rtop="135" src="ui/textures/test/horiz_underline.bmp"/>
+
+									<caption label="&mission.aartab.aars.aar.sorties;:" x="5" height="15" rright="5" rtop="140" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-sorties" x="5" height="15" rright="5" rtop="140" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<caption label="&mission.aartab.aars.aar.tom;:" x="5" height="15" rright="5" rtop="155" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-tom" x="5" height="15" rright="5" rtop="155" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<caption label="&mission.aartab.aars.aar.kills;:" x="5" height="15" rright="5" rtop="170" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-kills" x="5" height="15" rright="5" rtop="170" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<caption label="&mission.aartab.aars.aar.captures;:" x="5" height="15" rright="5" rtop="185" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-captures" x="5" height="15" rright="5" rtop="185" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<caption label="&mission.aartab.aars.aar.ms;:" x="5" height="15" rright="5" rtop="200" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-msspawnees" x="5" height="15" rright="5" rtop="200" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<image x="5" rright="5" height="4" rtop="215" src="ui/textures/test/horiz_underline.bmp"/>
+
+									<caption label="&mission.aartab.aars.rtbs;:" x="5" height="15" rright="5" rtop="220" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-rtbs" x="5" height="15" rright="5" rtop="220" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<caption label="&mission.aartab.aars.rescues;:" x="5" height="15" rright="5" rtop="235" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-rescues" x="5" height="15" rright="5" rtop="235" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<caption label="&mission.aartab.aars.mias;:" x="5" height="15" rright="5" rtop="250" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-mias" x="5" height="15" rright="5" rtop="250" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<caption label="&mission.aartab.aars.kias;:" x="5" height="15" rright="5" rtop="265" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-kias" x="5" height="15" rright="5" rtop="265" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<image x="5" rright="5" height="4" rtop="280" src="ui/textures/test/horiz_underline.bmp"/>
+
+									<caption label="&mission.aartab.aars.aar.unitshit;:" x="5" height="15" rright="5" rtop="285" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-unitshit" x="5" height="15" rright="5" rtop="285" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<caption label="&mission.aartab.aars.aar.aishit;:" x="5" height="15" rright="5" rtop="300" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-aishit" x="5" height="15" rright="5" rtop="300" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<caption label="&mission.aartab.aars.aar.bridgeshit;:" x="5" height="15" rright="5" rtop="315" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-bridgeshit" x="5" height="15" rright="5" rtop="315" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<caption label="&mission.aartab.aars.aar.bridgesrepaired;:" x="5" height="15" rright="5" rtop="330" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-bridgesrepaired" x="5" height="15" rright="5" rtop="330" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<caption label="&mission.aartab.aars.aar.factorieshit;:" x="5" height="15" rright="5" rtop="345" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-factorieshit" x="5" height="15" rright="5" rtop="345" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<caption label="&mission.aartab.aars.aar.firebaseshit;:" x="5" height="15" rright="5" rtop="360" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-firebaseshit" x="5" height="15" rright="5" rtop="360" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+									<caption label="&mission.aartab.aars.aar.resupplies;:" x="5" height="15" rright="5" rtop="375" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption id="aar-summary-resupplies" x="5" height="15" rright="5" rtop="375" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+								</view>
+							</tab>
+							<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'>
+								<view x="10" rright="10" height="150" rtop="10">
+									<caption id="aar-title" x="0" height="20" rtop="0" width="400" style="font-size: +2; color: #BFE2CE;"/>
+									<image x="0" rright="0" height="12" rtop="10" src="ui/textures/test/horiz_underline.bmp"/>
+									<caption label="&mission.aartab.aars.aar.unit;:" x="5" rright="0" height="15" rtop="25" style="color: #FFFFFFFF; "/>
+									<caption id="aar-unit" x="5" rright="0" height="15" rtop="25" style="color: #e9e3d9ff; " align="right"/>
+									<caption label="&mission.aartab.aars.aar.spawned;:" x="5" rright="0" height="15" rtop="40" style="color: #FFFFFFFF; "/>
+									<caption id="aar-spawned" x="5" rright="0" height="15" rtop="40" style="color: #e9e3d9ff; " align="right"/>
+									<caption label="&mission.aartab.aars.aar.despawned;:" x="5" rright="0" height="15" rtop="55" style="color: #FFFFFFFF; "/>
+									<caption id="aar-despawned" x="5" rright="0" height="15" rtop="55" style="color: #e9e3d9ff; " align="right"/>
+									<caption label="&mission.aartab.aars.aar.started;:" x="5" rright="0" height="15" rtop="70" style="color: #FFFFFFFF; "/>
+									<caption id="aar-started" x="5" rright="0" height="15" rtop="70" style="color: #e9e3d9ff; " align="right"/>
+									<caption label="&mission.aartab.aars.aar.stopped;:" x="5" rright="0" height="15" rtop="85" style="color: #FFFFFFFF; "/>
+									<caption id="aar-stopped" x="5" rright="0" height="15" rtop="85" style="color: #e9e3d9ff; " align="right"/>
+									<caption label="&mission.aartab.aars.aar.tom;:" x="5" rright="0" height="15" rtop="100" style="color: #FFFFFFFF; "/>
+									<caption id="aar-tom" x="5" rright="0" height="15" rtop="100" style="color: #e9e3d9ff; " align="right"/>
+									<caption label="&mission.aartab.aars.aar.killedby;:" x="5" rright="0" height="15" rtop="115" style="color: #FFFFFFFF; "/>
+									<caption id="aar-killedby" x="5" rright="0" height="15" rtop="115" style="color: #e9e3d9ff; " align="right"/>
+								</view>
+								<!-- tab view test -->
+								<tabview x="10" y="40" height="220" rright="10" style="color: #BFE2CE;
+													background-color: #000000BB;
+													border-sides: ui/textures/test/infobox_side.bmp;
+													border-corner: ui/textures/test/infobox_corner.bmp;
+													control-on-endcap:  ui/textures/test/body_tab_cap_on.bmp;
+													control-on-back:  ui/textures/test/body_tab_filler_on.bmp;
+													control-off-endcap: ui/textures/test/body_tab_cap.bmp;
+													control-off-back: ui/textures/test/body_tab_filler.bmp;
+													control-on-color: #FFFFCE;
+													border-width: 16;
+													border-height: 16;">
+									<tab label="  &mission.aartab.aars.aar.summary;  " x="0" y="0" rright="0" rtop="0" onshow="soundPlayShuffle()">
+										<view x="10" rright="10" y="10" rtop="30">
+											<caption label="&mission.aartab.aars.aar.result;:" x="5" rright="0" height="15" rtop="0" style="color: #FFFFFFFF; "/>
+											<caption id="aar-result" x="5" rright="0" height="15" rtop="0" style="color: #e9e3d9ff; " align="right"/>
+											<caption label="&mission.aartab.aars.aar.kills;:" x="5" rright="0" height="15" rtop="15" style="color: #FFFFFFFF; "/>
+											<caption id="aar-kills" x="5" rright="0" height="15" rtop="15" style="color: #e9e3d9ff; " align="right"/>
+											<caption label="&mission.aartab.aars.aar.captures;:" x="5" rright="0" height="15" rtop="30" style="color: #FFFFFFFF; "/>
+											<caption id="aar-captures" x="5" rright="0" height="15" rtop="30" style="color: #e9e3d9ff; " align="right"/>
+											<caption label="&mission.aartab.aars.aar.scored;:" x="5" rright="0" height="15" rtop="45" style="color: #FFFFFFFF; "/>
+											<caption id="aar-scored" x="5" rright="0" height="15" rtop="45" style="color: #e9e3d9ff; " align="right"/>
+											<caption label="&mission.aartab.aars.aar.accumulated;:" x="5" rright="0" height="15" rtop="60" style="color: #FFFFFFFF; "/>
+											<caption id="aar-accumulated" x="5" rright="0" height="15" rtop="60" style="color: #e9e3d9ff; " align="right"/>
+											<caption label="&mission.aartab.aars.aar.nextrank;:" x="5" rright="0" height="15" rtop="75" style="color: #FFFFFFFF; "/>
+											<caption id="aar-nextrank" x="5" rright="0" height="15" rtop="75" style="color: #e9e3d9ff; " align="right"/>
+											<caption label="&mission.aartab.aars.aar.guardingpoints;:" x="5" rright="0" height="15" rtop="90" style="color: #FFFFFFFF; "/>
+											<caption id="aar-guardingpoints" x="5" rright="0" height="15" rtop="90" style="color: #e9e3d9ff; " align="right"/>
+											<caption label="&mission.aartab.aars.aar.notes;:" x="5" rright="0" height="15" rtop="120" style="color: #FFFFFFFF; "/>
+											<image x="5" src="ui/textures/test/horiz_underline.bmp" rright="0" height="12" rtop="130"/>
+											<text id="aar-notes" x="10" y="0" rright="0" rtop="142" acceptsfocus="no" style="color: #e9e3d9;"/>
+										</view>
+									</tab>
+									<tab label="  &mission.aartab.aars.aar.stats;  " x="0" y="0" rright="0" rtop="0" onshow="soundPlayShuffle()">
+										<view x="10" rright="10" y="10" rtop="30">
+											<caption label="&mission.aartab.aars.aar.kills;:" x="5" rright="0" height="15" rtop="0" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption id="aar-kills2" x="5" rright="0" height="15" rtop="0" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+											<caption label="&mission.aartab.aars.aar.captures;:" x="5" rright="0" height="15" rtop="10" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption id="aar-captures2" x="5" rright="0" height="15" rtop="10" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+											<image x="5" rright="5" height="4" rtop="25" src="ui/textures/test/horiz_underline.bmp"/>
+
+											<caption label="&mission.aartab.aars.aar.unitshit;:" x="5" rright="0" height="15" rtop="30" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption id="aar-unitshit" x="5" rright="0" height="15" rtop="30" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+											<caption label="&mission.aartab.aars.aar.aishit;:" x="5" rright="0" height="15" rtop="40" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption id="aar-aishit" x="5" rright="0" height="15" rtop="40" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+											<image x="5" rright="5" height="4" rtop="55" src="ui/textures/test/horiz_underline.bmp"/>
+
+											<caption label="&mission.aartab.aars.aar.bridgeshit;:" x="5" rright="0" height="15" rtop="60" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption id="aar-bridgeshit" x="5" rright="0" height="15" rtop="60" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+											<caption label="&mission.aartab.aars.aar.bridgesrepaired;:" x="5" rright="0" height="15" rtop="70" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption id="aar-bridgesrepaired" x="5" rright="0" height="15" rtop="70" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+											<image x="5" rright="5" height="4" rtop="85" src="ui/textures/test/horiz_underline.bmp"/>
+
+											<caption label="&mission.aartab.aars.aar.factorieshit;:" x="5" rright="0" height="15" rtop="90" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption id="aar-factorieshit" x="5" rright="0" height="15" rtop="90" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+											<caption label="&mission.aartab.aars.aar.firebaseshit;:" x="5" rright="0" height="15" rtop="100" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption id="aar-firebaseshit" x="5" rright="0" height="15" rtop="100" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+											<image x="5" rright="5" height="4" rtop="115" src="ui/textures/test/horiz_underline.bmp"/>
+
+											<caption label="&mission.aartab.aars.aar.resupplies;:" x="5" rright="0" height="15" rtop="120" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption id="aar-resupplies" x="5" rright="0" height="15" rtop="120" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+											<image x="5" rright="5" height="4" rtop="135" src="ui/textures/test/horiz_underline.bmp"/>
+
+											<caption label="&mission.aartab.aars.aar.guardingkills;:" x="5" rright="0" height="15" rtop="140" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption id="aar-guardingkills" x="5" rright="0" height="15" rtop="140" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+											<caption label="&mission.aartab.aars.aar.capperkills;:" x="5" rright="0" height="15" rtop="150" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption id="aar-capperkills" x="5" rright="0" height="15" rtop="150" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
+											
+										</view>
+									</tab>
+									<tab label="  &mission.aartab.aars.aar.kills;  " x="0" y="0" rright="0" rtop="0" onshow="soundPlayShuffle()">
+										<view x="10" y="10" width="400" rtop="20">
+											<image x="0" src="ui/textures/test/horiz_underline.bmp" width="400" height="12" rtop="0"/>
+											<view x="0" width="425" height="15" rtop="12">
+												<caption x="0" y="0" width="200" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+													label="&mission.aartab.aars.aar.kills.type;"/>
+												<caption x="202" y="0" width="100" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+													label="&mission.aartab.aars.aar.kills.hits;" align="right"/>
+												<caption x="304" y="0" width="100" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+													label="&mission.aartab.aars.aar.kills;    " align="right"/>
+											</view>
+											<list id="kills" x="0" y="0" width="400" height="160" style="color: #e9e3d9ff;">
+												<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+											</list>
+										</view>
+									</tab>
+								</tabview>
+								<!-- close -->
+								<button label="&common.squads.member.close;" x="150" y="5" width="150" height="25" followbottom="true"
+									style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+									onclick="resultsDetails.value = 0; soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+							</tab>
+						</tabview>
+					</view>
+				</tab>
+				<tab x="17" y="17" width="896" height="414" style="background-color: #00000066;" showtab='false' acceptmouseclick='false'>
+					<caption x="10" y="210" rright="10" height="20" style="font-size: +2; color: #ffffff;" align="center"
+						onshow="this.label = (pendingResults) ? getlocstring('mission.aartab.pending'): getlocstring('mission.aartab.pending.none')"/>
+				</tab>
+			</tabview>
+			<script>
+				<!--
+				
+				// aar specific scripts
+				
+				var pendingResults	= false;
+				var resultsView		= findview("mission-results");
+				var resultsDetails	= findview("mission-results-details");
+				var sortieList		= new ListControl(findview("sorties"), sortieSelect);
+				var killList		= new ListControl(findview("kills"));
+				
+				function showAARTab()
+				{
+					consoleprint("Show AAR\n");
+					
+					setHelp(getlocstring('mission.aartab.help'));
+					initSortieResults();
+					
+					if(!pendingResults && game.globals.sorties.length > 0)
+					{
+					 	resultsView.value = 0;
+					 	initMissionSummary();
+						quickhelp('aar');
+					}
+					else
+					{
+					 	resultsView.value = 1;
+					}
+				}
+				
+				function initSortieResults()
+				{
+					consoleprint("Init sorties\n");
+					
+					sortieList.clearRows(true);
+					
+					var sorties = game.globals.sorties;
+					var width	= sortieList.list.nwidth - 12;
+					
+					if(sorties != null)
+					{
+						for(var i = 0; i < sorties.length; i++)
+						{
+							var sortie = sorties[i];
+
+							var row = "\
+<view id='" + sortie.id + "' width='" + width + "' height='16' aspectalign='left' onmouseenter='sortieList.mouseEnter(this)' onmouseexit='sortieList.mouseExit(this)'>\
+	<caption id='sortie-spawned-caption' x='0' y='0' width='85' height='16' style='color: #e9e3d9ff; '\
+		label='" + sortie.id + "'/>\
+	<caption id='sortie-weapon-caption' x='87' y='0' width='118' height='16' style='color: #e9e3d9ff; '\
+		label='" + sortie.weapon + "'/>\
+	<caption id='sortie-caps-caption' x='209' y='0' width='68' height='16' style='color: #e9e3d9ff; '\
+		label='" + (sortie.numcaptures + " (" + sortie.numcapassists + ")") + "' align='center'/>\
+	<caption id='sortie-kills-caption' x='281' y='0' width='68' height='16' style='color: #e9e3d9ff; '\
+		label='" + sortie.numkills + "' align='center'/>\
+	<caption id='sortie-result-caption' x='353' y='0' width='78' height='16' style='color: #e9e3d9ff; '\
+		label='" + htmlencode(sortie.rtb(false)) + "' align='center'/>\
+</view>";
+							
+							sortieList.addRow(sortie, row);
+						}
+						
+						sortieList.postInit(0);
+					}
+				}
+				
+				function initSortieKills()
+				{
+					consoleprint("Init kills\n");
+					
+					killList.clearRows(true);
+					
+					if(sortieList.data != null)
+					{
+						var sortie 	= sortieList.data;
+						var types	= sortie.kills;
+						
+						if(types && types.length > 0)
+						{
+							for(var i = 0; i < types.length; i++)
+							{
+								var type = types[i];
+								
+								var row = "\
+<view id='sortie_0' width='400' height='16' aspectalign='left'>\
+	<caption id='kill-type-caption' x='0' y='0' width='198' height='16' style='color: #e9e3d9ff; '\
+		label='" + htmlencode(type.description) + "'/>\
+	<caption id='kill-hits-caption' x='202' y='0' width='98' height='16' style='color: #e9e3d9ff; '\
+		label='" + type.hits + "' align='right'/>\
+	<caption id='kill-kills-caption' x='304' y='0' width='80' height='16' style='color: #e9e3d9ff; '\
+		label='" + type.kills + "' align='right'/>\
+</view>";
+								
+								killList.addRow(null, row);
+							}
+						}
+						else
+						{
+							row = "\
+<view id='sortie_0' width='400' height='16' aspectalign='left'>\
+	<caption id='kill-type-caption' x='0' y='0' width='413' height='16' style='color: #e9e3d9ff; '\
+		label='" + htmlencode(getlocstring('mission.aartab.aars.aar.kills.none')) + "'/>\
+</view>";
+							
+							killList.addRow(null, row);
+						}
+					}
+				}
+				
+				function sortieSelect(dblclick)
+				{
+					consoleprint("Select sortie\n");
+					
+					if(sortieList.data != null && dblclick)
+					{
+						var sortie 		= sortieList.data;
+						var spawned		= sortie.spawned;
+						var despawned	= sortie.despawned;
+						var weapon 		= sortie.reserved;
+						var notes		= findview("aar-notes");
+						
+						notes.text = "";
+						
+						findview("aar-title").label 			= getlocstring('mission.aartab.aars.aar') + " #" + sortie.id;
+						findview("aar-unit").label 				= sortie.weapon;
+						findview("aar-spawned").label 			= mission.origin.name;
+						findview("aar-despawned").label 		= sortie.rtbfac;
+						findview("aar-started").label 			= MissionResults.formatTime(spawned);
+						findview("aar-stopped").label 			= MissionResults.formatTime(despawned);
+						findview("aar-tom").label 				= getVariableLocString("mission.aartab.aars.aar.minutes", sortie.tom);
+						findview("aar-killedby").label 			= sortie.killedby;
+
+						findview("aar-result").label 			= sortie.rtb(true);
+						findview("aar-kills").label 			= sortie.numkills;
+						findview("aar-captures").label 			= sortie.numcaptures + " (" + sortie.numcapassists + ")";
+						findview("aar-scored").label 			= sortie.pointsscored;
+						findview("aar-guardingpoints").label 	= sortie.guardingpoints;
+
+						if(sortie.nextrank != null && sortie.nextrank != "")
+						{
+							findview("aar-accumulated").label 		= getVariableLocString('mission.aartab.aars.aar.totalspoints', sortie.pointsaccumulated, sortie.pointsnextrank);
+							findview("aar-nextrank").label 			= sortie.nextrank;
+						}
+						else
+						{
+							findview("aar-accumulated").label 		= getlocstring('mission.aartab.aars.aar.nextrank.max');
+							findview("aar-nextrank").label 			= getlocstring('mission.aartab.aars.aar.nextrank.max');
+						}
+
+						findview("aar-kills2").label 			= sortie.numkills;
+						findview("aar-captures2").label 		= sortie.numcaptures + " (" + sortie.numcapassists + ")";
+						findview("aar-unitshit").label 			= sortie.unitshit;
+						findview("aar-aishit").label 			= sortie.aishit;
+						findview("aar-bridgeshit").label 		= sortie.bridgeshit;
+						findview("aar-bridgesrepaired").label 	= sortie.bridgesrepaired;
+						findview("aar-factorieshit").label 		= sortie.factorieshit;
+						findview("aar-firebaseshit").label 		= sortie.firebaseshit;
+						findview("aar-resupplies").label 		= getVariableLocString('mission.aartab.aars.aar.totalspoints', sortie.scoredresupplies, sortie.resupplies);
+						findview("aar-guardingkills").label 	= sortie.guardingkills;
+						findview("aar-capperkills").label 		= sortie.capperkills;
+
+						if(sortie.promoted)
+							notes.text += "* " + getlocstring('mission.aartab.aars.aar.notes.promoted') + "\n";
+
+						if(sortie.mobilespawnees && sortie.mobilespawnees > 0)
+							notes.text += "* " + getVariableLocString('mission.aartab.aars.aar.notes.ms', sortie.mobilespawnees) + "\n";
+
+						if(notes.text == "")
+							notes.text = getlocstring('mission.aartab.aars.aar.notes.none');
+
+						initSortieKills();
+
+						resultsDetails.value = 1;
+					}
+				}
+				
+				function showMissionResults()
+				{
+					consoleprint("Show Mission Results\n");
+					
+					musicPlayLoop();
+					pendingResults = true;
+					showTab(2);
+					
+					var timeleft = game.player.client.state.timeleft;
+					
+					if(timeleft != 0 && game.player.client.state.upsells)
+					{
+						game.load("upsell");
+					}
+					else if(timeleft >= 0)
+					{
+						checkTimeLeft(timeleft, true);
+					}
+				}
+				
+				function initMissionResults()
+				{
+					consoleprint("Init Mission Results\n");
+					
+					var results = new MissionResults(client.missionresults);
+					
+					if(client.reservedweapon != null)
+					{
+						consoleprint("Weapon already reserved!\n");
+						showReservedWeapon();
+					}
+					else if(results.weaponindex > 0)
+					{
+						consoleprint("Attempting to reserve the last spawned weapon!\n");
+						
+						var vehicles 	= client.spawnablevehicles;
+						var counts 		= client.weaponcounter;
+						
+						for(var i = 0; i < vehicles.length; i++)
+						{
+							if(vehicles[i].index == results.weaponindex && counts[i].current > 0)
+							{
+								consoleprint("Found a good match: " + vehicles[i].description + "\n");
+								reserveWeapon(vehicles[i]);
+								showReservedWeapon();
+								break;
+							}
+						}
+						
+						if(client.reservedweapon == null)
+							showWeaponSelect();
+					}
+					
+					if(game.globals.sortietotals == null)
+					{
+						game.globals.sortietotals = new MissionTotals();
+
+						for(var s = 0; s < game.globals.sorties.length; s++)
+						 	game.globals.sortietotals.addResults(game.globals.sorties[s]);
+					}
+
+					if(game.globals.sorties == null)
+						game.globals.sorties = new Array();
+
+					game.globals.sorties.unshift(results);
+					game.globals.sortietotals.addResults(results);
+
+					if(game.globals.sorties.length >= 10)
+						game.globals.sorties.pop();
+					
+					initSortieResults();
+					initMissionSummary();
+
+					resultsView.value = 0;
+					pendingResults = false;
+					sortieSelect(true);
+					
+					if(mission.state != null && mission.state != 1)
+						showOk(getlocstring('mission.state.' + mission.state));
+					
+					if(results.promoted)
+						game.load("promoted");
+				}
+				
+				function initMissionSummary()
+				{
+				 	consoleprint("Init mission summary!\n");
+
+				 	var sortietotals = game.globals.sortietotals;
+				 	
+				 	if(sortietotals != null)
+				 	{
+				 	 	sortietotals.calcUnits();
+
+						findview("aar-summary-sorties").label 			= sortietotals.sorties;
+						findview("aar-summary-tom").label 				= sortietotals.tom;
+						findview("aar-summary-kills").label 			= sortietotals.numkills;
+						findview("aar-summary-captures").label 			= sortietotals.numcaptures;
+						findview("aar-summary-promotions").label 		= sortietotals.promoted;
+						findview("aar-summary-msspawnees").label 		= sortietotals.mobilespawnees;
+						
+						findview("aar-summary-rtbs").label 				= sortietotals.rtbcodes[0];
+						findview("aar-summary-rescues").label 			= sortietotals.rtbcodes[1];
+						findview("aar-summary-mias").label 				= sortietotals.rtbcodes[2];
+						findview("aar-summary-kias").label 				= sortietotals.rtbcodes[3];
+
+						findview("aar-summary-favorite").label 			= sortietotals.favorite;
+						findview("aar-summary-best").label 				= sortietotals.best;
+						findview("aar-summary-worst").label 			= sortietotals.worst;
+
+						findview("aar-summary-unitshit").label 			= sortietotals.unitshit;
+						findview("aar-summary-aishit").label 			= sortietotals.aishit;
+						findview("aar-summary-bridgeshit").label 		= sortietotals.bridgeshit;
+						findview("aar-summary-bridgesrepaired").label 	= sortietotals.bridgesrepaired;
+						findview("aar-summary-factorieshit").label 		= sortietotals.factorieshit;
+						findview("aar-summary-firebaseshit").label 		= sortietotals.firebaseshit;
+						
+						findview("aar-summary-resupplies").label 		= getVariableLocString('mission.aartab.aars.aar.totalspoints', sortietotals.scoredresupplies, sortietotals.resupplies);
+
+						findview("aar-summary-pointsscored").label 		= sortietotals.pointsscored;
+						
+						if(sortietotals.nextrank != null)
+						{
+							findview("aar-summary-pointsaccumulated").label = getVariableLocString('mission.aartab.aars.aar.totalspoints', sortietotals.pointsaccumulated, sortietotals.pointsnextrank);
+							findview("aar-summary-nextrank").label 			= sortietotals.nextrank;
+						}
+						else
+						{
+						 	findview("aar-summary-pointsaccumulated").label = getlocstring('mission.aartab.aars.aar.nextrank.max');
+							findview("aar-summary-nextrank").label 			= getlocstring('mission.aartab.aars.aar.nextrank.max');
+						}
+					}
+				}
+
+				-->
+			</script>
+		</tab>
+		<tab id="map" label="  &common.map.tab;  " x="20" y="10" width="930" height="460"
+			onshow='setHelp(getlocstring("common.map.tab.help")); tplTab()' tip="&common.map.tab.tip;">
+			<include file="widgets/map.uixml"/>
+		</tab>
+		<include file="widgets/globals/squads.uixml"/>
+		<include file="widgets/globals/manuals.uixml"/>
+		<include file="widgets/globals/settings.uixml"/>
+	</tabview>
+	<include file="widgets/infobar.uixml"/>
+	<script>
+		<!--
+		
+		game.consoleprint(">>> STARTING MISSION PAGE\n");
+		
+		var client 				= game.player.client;
+		var mission 			= client.currentmission;
+		var missionType			= getlocstring('common.mission.' + mission.typeid); //getMissionType(mission.origin, mission.target);
+
+		var mobileSpawn			= true;					
+		var theatreMap			= findview("mapview");
+		var weaponPoll			= new CycleTimer(10000);
+		var msPoll				= new CycleTimer(5000);
+		var spawnDelay			= new CycleTimer(50);
+		
+		var membersCount		= 0; // total number of mission members
+		var membersSpawned		= 0; // total number of spawned members
+		var multiMate			= null;
+		
+		/***************** COMMON FUNCTIONS *******************/
+		
+		function doBack()
+		{
+			if(mission.poster == client.handle)
+			{
+				var popup = showConfirm(getlocstring('mission.back.decision'), doLeaderBack, getlocstring('common.yes'), getlocstring('common.no'));
+				popup.setPopupClose(false);
+			}
+			else
+			{
+				if(client.reservedweapon)
+					client.cancelweaponreservation();
+				
+				client.exitmission();
+				//TutSetInstance(1);
+				loadWin("brigade", true);
+			}
+		}
+		
+		function doLeaderBack(cancel)
+		{
+			if(cancel)
+			{
+				if(client.reservedweapon)
+					client.cancelweaponreservation();
+				
+				client.cancelandexitmission();
+				loadWin("brigade", true);
+			}
+		}
+		
+		function doForward()
+		{
+			setForwardEnabled(false);
+			spawnDelay.add(10000);
+			
+			var weapon = vehicles[spawnTree.selectedData()];
+			
+			if(weapon == null || weapon.spawnable != "spawnable")
+			{
+				unreserveWeapon();
+				return;
+			}
+			
+			if(!client.reservedweapon && weapon != null)
+				client.reserveweapon(weapon.type);
+			
+			if(client.reservedweapon)
+			{
+				if(spawnOptions.value != 3)
+					showReservedWeapon();
+				
+				doSpawn();
+			}
+		}
+		
+		function initWin(win)
+		{
+			game.consoleclear();
+			
+			var chat = game.findview("chat");
+			if(chat != null)
+			{
+				chat.x = window.width/2 - chat.width/2;
+				chat.y = 10;
+			}
+			
+			showChat(true, true);
+			setHelp(getlocstring('mission.readytab.help'));
+			setBack('mission.back');
+			setForward('mission.forward');
+			doWeaponPoll();
+			
+			// not sure why I need this
+			if(game.globals.despawning != true)
+				showWeaponSelect();
+			
+			// reset it
+			game.globals.despawning = false;
+			
+			updateMissionMembers();
+			
+			// game callbacks
+			client.onmissionroomchange		= updateMissionMembers;
+			client.onmissionresults 		= initMissionResults;
+			client.oncrewjoinaccept			= onCrewAccept;
+			client.oncrewjoindeny			= onCrewDeny;
+			client.oncrewbailed				= onCrewBailed;
+			client.oncrewpostexpired		= onWeaponExpired;
+			client.onbasecaptured 			= onBaseCaptured;
+			client.onweaponlist				= onWeaponUpdate;
+			client.onspawnerror				= onSpawnDenied;
+			
+			theatreMap.mgr.jumpTo(mission.target);
+			missionMap.mgr.jumpTo(mission.target);
+			
+			var exitingVehicle = game.findview("exitvehicle");
+
+			if(exitingVehicle != null)
+			{
+				var confirm = game.findview("despawn");
+				confirm.doDespawnAction(true);
+			}
+
+			if(game.globals.sortietotals == null)
+				game.globals.sortietotals = new MissionTotals();
+
+			if(game.globals.sorties == null)
+				game.globals.sorties = new Array();
+
+			consoleprint("Spawn delay is currently at " + mission.spawndelay + "\n");
+			
+			initMissionSummary();
+			quickhelp();
+		}
+		
+		/***************** PAGE FUNCTIONS *****************/
+		
+		function doSpawn()
+		{
+			var weapon = new Object();
+
+			weapon["description"] 	= client.reservedweapon.type.description;
+			weapon["index"] 		= client.reservedweapon.type.index;
+			weapon["serial"] 		= client.reservedweapon.serial;
+
+			game.globals.spawnedweapon = weapon;
+
+			musicKill();
+			client.spawn(mobileSpawn && client.currentmission.mobilespawn);
+		}
+		
+		function doWeaponPoll()
+		{
+			if(weaponPoll.run())
+			{
+				//game.consoleprint("Requesting weapon list\n");
+				client.requestweaponlist(mission.origin);
+				weaponPoll.add(30000); 
+			}
+		}
+		
+		function doMSPoll(caption)
+		{
+			if(msPoll.run())
+			{
+				if(client.currentmission.mobilespawn)
+				{
+					caption.label = getlocstring('brigade.hqtab.brief.ms.on');
+					caption.setstyleproperty("color", "#00ff00");
+					missionMsCheckbox.visible = true;
+				}
+				else
+				{
+					caption.label = getlocstring('brigade.hqtab.brief.ms.off');
+					caption.setstyleproperty("color", "#e9e3d9ff");
+					missionMsCheckbox.visible = false;
+				}
+			}
+		}
+		
+		function updateMissionMembers()
+		{
+			var started 		= new Date();
+			var members			= client.missionroomlist;
+			var vehicleMgr		= new VehicleManager();
+			var crewmen			= new Array();
+			var commanders		= new Array();
+			
+			multiMate			= null;
+			membersSpawned		= 0;
+			membersCount		= members.length;
+			
+			memberList.clearRows(false);
+
+			for(var i = 0; i < membersCount; i++)
+			{
+				/************ Update Member List **************/
+				
+				var member 	= members[i];
+				
+				//var leader		= "";
+				//var multicrew	= "";
+				var vehicle		= "-";
+				var spawned		= "<image x='400' y='3' src='ui/textures/test/notspawned_icon.bmp' width='10' height='10' tip='" + getlocstring('mission.brieftab.brief.sstatus') + "'/>";
+				
+				if(member.weapon != null)
+				{
+					var memberWeapon = member.weapon;
+					
+					if(memberWeapon.description.toLowerCase() == "buzzard")
+						continue;
+					
+					vehicle = memberWeapon.description;
+					
+					if(client.reservedweapon != null && member.serial == client.reservedweapon.serial && member.callsign.toUpperCase() != client.handle.toUpperCase())
+						multiMate = member;
+				}
+				
+				var rank		= member.rank;
+				var callsign 	= member.callsign;
+				
+				if(member.wantscrew && !member.spawned)
+					commanders[commanders.length] = member;
+				
+				if(member.iscrew)
+					crewmen[crewmen.length] = member;
+				
+				//if(member.missionleader)
+				//	leader = "<image x='366' y='3' src='ui/textures/test/leader_icon.bmp' width='10' height='10' tip='" + getlocstring('mission.brieftab.brief.lstatus') + "'/>";
+				
+				if(member.spawned)
+					spawned = "<image x='400' y='3' src='ui/textures/test/spawned_icon.bmp' width='10' height='10' tip='" + getlocstring('mission.brieftab.brief.sstatus') + "'/>";
+				/*
+				if(member.commander)
+					multicrew = "<image x='383' y='3' src='ui/textures/test/commander_icon.bmp' width='10' height='10' tip='" + getlocstring('mission.brieftab.brief.mstatus') + "'/>";
+				else if(member.iscrew)
+					multicrew = "<image x='383' y='3' src='ui/textures/test/gunner_icon.bmp' width='10' height='10' tip='" + getlocstring('mission.brieftab.brief.status') + "'/>";
+				*/
+				var row = "\
+<view id='member_" + i + "' width='413' height='16' aspectalign='left'>\
+	<caption id='member-rank-caption' class='rankicon' rank='" + (member.rank.level - 1) + "' x='5' y='1' width='14' height='14'/>\
+	<caption id='member-name-caption' x='24' y='0' width='115' height='16' style='color: #e9e3d9ff; '\
+		label='"+ callsign +"'/>\
+	<caption id='member-vehicle-caption' x='154' y='0' width='210' height='16' style='color: #e9e3d9ff; '\
+		label='" + vehicle + "'/>\
+	" + spawned + "\
+</view>";
+				
+				memberList.addRow(member, row);
+				
+				/************ Update Deployed List **************/
+				
+				if(vehicle != "-")
+					vehicleMgr.addVehicle(vehicle);
+				
+				if(member.spawned)
+					membersSpawned++;
+			}
+			
+			memberList.setScrollY();
+			
+			initCrewList(crewmen);
+			initCommanderList(commanders);
+			initDeployedVehicles(vehicleMgr.getVehicles());
+			
+			var stopped = new Date();
+			
+			//game.consoleprint("Member List Update took " + (stopped.getTime() - started.getTime()) + "ms with " + membersCount + " members\n");
+		}
+		
+		function getMissionType(missionOrigin, missionTarget)
+		{
+			var missionType = "";
+			
+			if(missionOrigin != null && missionTarget != null)
+			{
+				var originSide 	= missionOrigin.country.side;
+				var targetSide 	= missionTarget.country.side;
+				
+				if(originSide == targetSide)
+					missionType = (missionTarget.stratclass == "cp") ? getlocstring('common.mission.ad'): getlocstring('common.mission.pd');
+				else
+					missionType = (missionTarget.stratclass == "cp") ? getlocstring('common.mission.aa'): getlocstring('common.mission.pa');
+			}
+			else
+			{
+				missionType = "-";
+			}
+			
+			return missionType;
+		}
+		
+		function onCrewAccept()
+		{
+			showOk(getlocstring('mission.host.accept'), showReservedWeapon);
+		}
+		
+		function onCrewDeny()
+		{
+			showOk(getlocstring('mission.host.denied'), showWeaponSelect);
+		}
+		
+		function onCrewBailed()
+		{
+			showOk(getlocstring('mission.host.bailed'), showWeaponSelect);
+		}
+		
+		function onWeaponExpired()
+		{
+			showOk(getlocstring('mission.host.expired'), showWeaponSelect);
+		}
+		
+		function onBaseCaptured()
+		{
+			showOk(getlocstring('mission.host.captured'), doLeaderBack);
+		}
+		
+		function onSpawnDenied(code)
+		{
+			consoleprint("Processing Spawn Denied Code: " + code + "\n");
+			showOk(getlocstring('mission.spawn.denied' + code));
+		}
+		
+		function onWeaponUpdate()
+		{
+			//game.consoleprint("Handling Weapon Update\n");
+			
+			initSpawnables();
+			weaponPoll.reset();
+		}
+		
+		function updateSpawnDelay()
+		{
+			if(spawnDelay.run())
+			{
+				var delay = mission.spawndelay;
+				
+				if(mission.state != null && mission.state != 1)
+				{
+					setForward('mission.forward.closed');
+					forwardButton.settip(getlocstring('mission.state.' + mission.state));
+					setForwardEnabled(false);
+				}
+				else if(delay != null && delay > 0)
+				{
+					var titleText = getVariableLocString('mission.forward.delayed', delay);
+					
+					forwardButton.label = titleText.toUpperCase();
+					forwardButton.settip(getlocstring('mission.forward.delayed.tip'));
+					
+					setForwardEnabled(false);
+				}
+				else
+				{
+					setForward('mission.forward');
+					setForwardEnabled(true);
+				}
+			}
+		}
+		
+		-->
+	</script>
+</window>

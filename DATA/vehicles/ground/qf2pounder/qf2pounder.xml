@@ -1,0 +1,13 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="qf2pounder" type="ground" shape="qf2pounder" description="QF 2 Pounder (40 mm) AT Gun">
+<include file="qf2pounder.veh.xml"/>
+<include file="qf2pounder.state.xml"/>
+<include file="qf2pounder.hit.xml"/>
+<include file="qf2pounder.turret.xml"/>
+<include file="qf2pounder.loadout.xml"/>
+<include file="qf2pounder.xsound.xml"/>
+<include file="qf2pounder.control.xml"/>
+<variant id="cn_qf2pdr" icon="2 Pdr Gun"/>
+<variant id="qf2pdr" icon="2 Pdr Gun"/>
+</vehicle>

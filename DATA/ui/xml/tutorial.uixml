@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<view id="tutorial" x="0" y="0" width="1024" height="768" acceptmouseclick="false" layer="51"
+	onshow="InitTutorial()" onupdate="doUpdate()">
+	<include file="lib/common.uixml"/>
+	<include file="lib/tutorial.uixml"/>
+	<include file="classes/ListControl.uixml"/>
+	<include file="classes/FadeView.uixml"/>
+	<!-- GOAL LIST -->
+	<view id="goals" width="250" y="200" rtop="100" rright="5" acceptmouseclick="false" style="background-color: #00000066; border-color: #3e5248; border-size: 1;">
+		<list id="goalList" x="5" y="210" rtop="10" rright="5"/>
+		<!-- image src="ui/textures/test/horiz_underline.bmp" x="20" y="205" height="12" rright="20"/ -->
+		<view x="0" y="205" height="2" rright="0" style="background-color: #3e5248;"/>
+		<text id="tut-history" x="5" y="5" height="200" rright="5"
+			style="color: #FFFFFF; border-size-right: 12;" acceptmouseclick="false">
+			<!-- scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/ -->
+		</text>
+	</view>
+	<!-- GAMEALERT -->
+	<text id="tut-message" x="0" width="100" height="20" rtop="150"
+		maxwidth="500" fontshadowx=".08" fontshadowy="-.08"
+		style="color: #FFFFFF; font-size: +5; background-color: #00000066; border-width: 5; border-height: 5; border-color: #3e5248; border-size: 1;"
+		moveondrag="no" acceptmouseclick="false"/>
+	<text id="tut-quick-message" x="0" y="0" width="0" height="0"
+		maxwidth="200" fontshadowx=".08" fontshadowy="-.08"
+		style="color: #FFFFFF; font-size: +5;"
+		moveondrag="no" acceptmouseclick="false"/>
+	<script>
+		<!--
+			
+			var initialized		= false;
+			var goalsView		= window.findview("goals");
+			var goalList 		= new ListControl(findview("goalList"));
+			var messageView		= window.findview("tut-message");
+			var historyView		= window.findview("tut-history");
+			var fadeView		= new FadeView("tut-quick-message", 5000);
+			var targetView		= null; 
+			
+			function InitTutorial()
+			{
+				if(initialized) return;
+				initialized = true;
+				
+				TutAddCallback("addgoal", DrawSteps);
+				TutAddCallback("addstep", OnAddStep);
+				TutAddCallback("goalcomplete", DrawSteps);
+				TutAddCallback("stepcomplete", OnStepComplete);
+				TutAddCallback("addalert", OnAddAlert);
+				TutAddCallback("addmessage", OnAddMessage);
+				TutAddCallback("addwaypoint", OnAddWaypoint);
+				TutAddCallback("removewaypoint", OnRemoveWaypoint);
+				TutAddCallback("tutcompleted", OnTutorialCompleted);
+				
+				if(historyView != null)
+					historyView.text = "";
+				
+				var minimap = game.findview("minimap");
+				if(minimap != null) minimap.scale = .2;
+				
+				DrawSteps();
+			}
+			
+			function OnAddMessage(message)
+			{
+				fadeView.init(message);
+			}
+			
+			function doUpdate()
+			{
+				TutUpdate();
+				
+				fadeView.update();
+				
+				if(targetView != null)
+					updateWaypoint(targetView.waypoint);
+			}
+			
+			function OnStepComplete()
+			{
+				game.playsound("sounds/ding5.wav", 1, 0.05);
+				DrawSteps();
+			}
+			
+			function OnAddStep()
+			{
+				if(historyView != null)
+				{
+					historyView.text = "";
+					historyView.scrollto(0);
+				}
+				
+				DrawSteps();
+			}
+			
+			function DrawSteps()
+			{
+				cprint("Drawing tutorial steps");
+				
+				goalList.clearRows(false);
+				
+				cprint("Drawing " + tutGoals.length + " goals");
+				
+				for(var i = 0; i < tutGoals.length; i++)
+				{
+					var currentGoal = tutGoals[i];
+					var completed = (currentGoal.IsComplete()) ? "ui/textures/map-checkbox-on.bmp": "ui/textures/map-checkbox-off.bmp";
+					
+					var row = "\
+<view id='goal_" + i + "' width='250' height='16'>\
+	<image src='" + completed + "' x='0' y='5' width='12' height='12'/>\
+	<text id='rowlabel' x='20' y='1' width='230' height='15' style='color: #ffffff;' fontshadowx='.08' fontshadowy='-.08'/>\
+</view>";
+					
+					var newRow = goalList.addRow(null, row);
+					var rowLabel = newRow.findview("rowlabel");
+					if(rowLabel) rowLabel.text = currentGoal.GetLabel().toUpperCase();
+					
+					if(currentGoal.goal == tutGoal && !currentGoal.IsComplete())
+					{
+						cprint("Drawing " + currentGoal.steps.length + " steps for goal " + (i + 1));
+						
+						for(var s = 0; s < currentGoal.steps.length; s++)
+						{
+							var currentStep = currentGoal.steps[s];
+							
+							cprint("   Drawing step " + (s + 1));
+							
+							completed = (currentStep.IsComplete()) ? "ui/textures/map-checkbox-on.bmp": "ui/textures/map-checkbox-off.bmp";
+							
+							var row = "\
+<view id='step_" + i + "' width='250' height='16'>\
+	<image src='" + completed + "' x='20' y='2' width='12' height='12'/>\
+	<text id='rowlabel' x='40' y='1' width='210' height='15' style='color: #ffffff;' fontshadowx='.1' fontshadowy='-.1'/>\
+</view>";
+							
+							newRow = goalList.addRow(null, row);
+							rowLabel = newRow.findview("rowlabel");
+							if(rowLabel) rowLabel.text = currentStep.GetLabel();
+						}
+					}
+				}
+			}
+			
+			function OnAddAlert(alert)
+			{
+				if(cassert((alert != null), "NULL Alert"))
+					cprint("Adding alert to HUD " + alert.id);
+					
+				var lastMessage = messageView.text;
+				
+				alert.Show(messageView);
+				
+				// align it to the top of the goals list
+				messageView.y = goalsView.y + goalsView.height - messageView.height;
+				
+				if(historyView != null)
+					historyView.text = lastMessage + "\n\n" + historyView.text;
+			}
+			
+			function OnAddWaypoint(name)
+			{
+				cprint("Adding waypoint " + name + " 2\n");
+				
+				if(targetView != null)
+					targetView.close();
+				
+				var hud = game.findview("hud");
+				if(hud == null) return;
+				
+				var waypoint = tutWaypoints[name];
+				var lname = getlocstring("waypoints." + name);
+				
+				if(lname == null || lname == "" || lname.charAt(0) == "?")
+					lname = name;
+				
+				var xml = '<view id="' + lname + '" class="target" x="0" y="0" width="1024" height="768" style="color: #FFFFFFDD; background-color: #000000AA; border-color: #3e5248;"/>';
+				
+				targetView = hud.addview(xml);
+				if(targetView == null) return;
+				
+				targetView.name			= lname;
+				targetView.width		= hud.width;
+				targetView.height		= hud.height;
+				targetView.targettex 	= "ui/textures/targeticon1.bmp";
+				targetView.arrowtex 	= "ui/textures/arrow.dds";
+				targetView.targetsize 	= 40;
+				targetView.tx 			= waypoint.x;
+				targetView.ty 			= waypoint.y;
+				targetView.tz 			= waypoint.z - 1;
+				targetView.acceptsmouse = false;
+				targetView.modal		= false;
+			}
+			
+			function OnRemoveWaypoint(name)
+			{
+				if(targetView != null)
+					targetView.close();
+				
+				targetView = null;
+			}
+			
+			function updateWaypoint(name)
+			{
+				targetView.update();
+			}
+			
+			function OnTutorialCompleted()
+			{
+				if(goalsView != null) 	goalsView.visible = false;
+				if(messageView != null) messageView.visible = false;
+				if(fadeView != null) 	fadeView.visible = false;
+				if(targetView != null) 	targetView.visible = false;
+			}
+			
+		-->
+	</script>
+</view>
+

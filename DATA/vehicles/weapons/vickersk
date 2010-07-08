@@ -1,0 +1,17 @@
+# Rev. 4/23/02 - bloo
+
+mass = 12.5
+firetype = auto
+rateoffire = 950
+#syncrateoffire = 950
+ammotype1 = 303vic_k
+ammotype2 = 303vic_k_tracer
+ghostrof = 200
+ghostammotype = 303vic_k_tracer
+dispersion = 0.3
+cliprounds = 100
+reloadtime = 6
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = drum

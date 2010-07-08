@@ -1,0 +1,30 @@
+# created 03/May/07 - doc
+# bc is a placeholder
+# ammoweight is a placeholder
+
+type = ballistic
+diameter = .013
+weight = 0.038
+ammoweight = 0.072
+velocity = 755
+stretchobject = 1
+explosive = 17.3
+fuzetime = 0.001
+tracertime = 1.0
+object = bullet1
+bc = 1.2
+lifetime = 2.0
+dontdisplayfirstframe = 1
+ricochetangle = 89
+penetrationconstant = 0.00000042
+muzzleflash = 1
+hiteffect = incendiarymg
+tracerscale = 5
+
+#added for explosive render for HEI
+numshrapnelpieces = 1
+totalshrapnelmass = 0.0332
+shrapnelpenetration = .0000002122
+
+#last line for shrapnel model, HEI has no shrapnel modelled (0 = do not use new_HE)
+use_new_he = 0

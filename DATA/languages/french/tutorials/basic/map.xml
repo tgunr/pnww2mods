@@ -1,0 +1,114 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>3</key>
+  <body>title = Utilisation de la carte
+1.0.label =  La carte
+1.1.alert = Regardons ce que la carte permet de voir et de faire. Utilisez {showingamemap} pour y accéder.
+1.1.label = ouvrir la carte
+
+1.2.alert.modal =  La carte se découpe en 3 zones distinctes.[NL][NL] Le haut de la carte a de multiples onglets qui permettent d’accéder à des informations sur la mission, aux manuels ou pour modifier vos réglages 
+1.2.alert.position = 211614,3074656,false
+1.2.alert.scale = 1.17
+1.2.alert.selection = Antwerp
+1.2.alert.hilite = -57,627,904,28,target
+1.2.alert1.modal = Sur la gauche se trouve le panneau de contrôle.[NL][NL] Il permet d’avoir des informations, trouver des villes, modifier les filtres et aussi de faire certaines actions comme créer des missions ou enclencher le radar. 
+1.2.alert1.hilite = -49,-4,49,407,mapview
+1.2.alert2.modal = La plus large partie de l’écran montre la carte du jeu.[NL][NL]Cette partie du tutorial concerne surtout cette partie bien que l’on regardera aussi quelques fonctions de contrôles
+1.2.alert2.hilite = -3,-1,840,403,mapview
+1.2.alert3.modal = Normalement la carte s’ouvre en se centrant sur votre position, mais pour l’instant elle est centrée sur  Antwerp, Une ville Belge.
+1.2.alert3.hilite = 398,69,109,51,mapview
+1.2.alert5 = Centrez la ville sur vous en cliquant sur le bouton  &#34;center me&#34; ( centrer sur moi) sur le panneau de contrôle à gauche.
+1.2.alert5.hilite = map-centerme,target
+1.2.alert5.mouse = true
+1.2.label = centre la carte
+1.2.complete.modal = Un Click sur ce bouton centre la carte sur votre position où quelle soit.
+1.2.complete.mouse = false
+
+1.3.alert.modal = Vous êtes représenté par le cercle avec la flèche au centre de la carte..[NL][NL]La flèche pointe dans la direction vers la quelle vous êtes en train de regarder.[NL][NL]La  carte s’utilise comme une carte papier. Le Nord est en haut, l’Est sur la droite etc... 
+1.3.alert.hilite = 403,178,50,43,mapview
+1.3.alert1 = Maintenant la carte est centrée sur la ville Belge de Namur.[NL][NL] Zoomer progressivement en pressant {mapin} plusieurs fois ou en utilisant la roulette de la souris.
+1.3.alert1.position = 233874.05,3027401.75
+1.3.alert1.scale = 3.34
+1.3.alert1.selection = Namur
+1.3.alert1.mouse = true
+1.3.label = zoomer
+1.3.complete = Bien.[NL][NL]Vous pouvez voir plus de détails à ce niveau de grossissement comme les bâtiments et les structures.
+
+1.4.alert = Maintenant zoomer en utilisant plusieurs fois {mapout} ou la roulette de la souris.
+1.4.label = dé-zoomer
+1.4.complete.modal = A ce niveau, vous pouvez voir une région plus étendue qui inclut beaucoup d’éléments différents, comme les villes , les routes, les rivières, etc...
+
+1.5.alert = Vous pouvez déplacer la carte en faisant un click gauche sur le secteur voulu et en tirant la carte ou en double cliquant pour faire glisser la carte.[NL][NL] Faites bouger la carte.
+1.5.alert.scale = 3.33
+1.5.label = Bouger la carte
+1.5.complete.modal = Vous pouvez toujours recentrer la carte sur vous après l’avoir déplacée en utilisant le bouton &#34;center me&#34; (centrez sur moi) du panneau de contrôle
+
+1.6.alert.modal = Parfois il est utile de trouver une ville bien précise. Peut-être parce que vos amis y sont ou qu&#39;elle est particulièrement en danger.[NL][NL]c&#39;est là que le système de recherche est utile.
+1.6.alert.hilite = map-cp-find
+1.6.alert.scale = 3.33
+1.6.alert1 = Ouvrez le système de recherche de ville et entrez &#34;di&#34; dans la fenêtre. Toutes les villes commençant par di seront données.[NL][NL]Plus vous donnerez de lettres plus sera précise la liste.[NL][NL]Selectionnez &#34;Dinant&#34; pour centrer la carte dessus.
+1.6.alert1.hilite = map-cp-find
+1.6.label = Chercher un ville
+1.6.complete.modal = très bien. La carte est sur une ville Française sur la Meuse.
+1.6.complete.mouse = false
+
+2.0.label = Eléments de la carte
+
+2.1.alert.modal = Vous obtiendrez plus d’informations  sur les éléments stratégiques en maintenant la souris par-dessus. 
+2.1.alert.position = 220238,3071580
+2.1.alert.scale = 1.89
+2.1.alert.selection = Antwerp
+2.1.alert1.modal = Ici Il y a un groupe de villes sur le front.[NL][NL] Shilde est une ville sous le contrôle de l’Allemagne.[NL][NL]Au sud Lier appartient aux français.[NL][NL]Au nord ouest Antwerp est une grande ville sous contrôle anglais.
+2.1.alert1.hilite = 100,32,386,302,mapview
+2.1.alert2.modal = L&#39;icône à coté de ville indique à quel pays elle appartient.[NL][NL]La couleur des noms indique aussi l&#39;appartenance. Rouge pour l&#39;Axe et bleu pour les Alliés.[NL][NL] Antwerp est actuellement verte car la ville est sélectionnée.
+2.1.label = points stratégiques
+
+2.2.alert.modal = En zoomant vous pouvez voir les installations d’ Antwerp.[NL][NL]Ceux sont des groupes de bâtiments.[NL][NL]Comme les dépôts, les bases militaires, les docks,les aérodromes, les usines et d&#39;autres.
+2.2.alert.position = 214214,3074256,target
+2.2.alert.scale = .91
+2.2.alert.selection = Antwerp
+2.2.alert1.modal = Le drapeau à coté de chaque installation indique quel pays en a le contrôle.[NL][NL]Le type d&#39;icône indique la nature de l&#39;installation.[NL][NL]Si elles sont toutes capturées, la ville passe sous le contrôle du pays les ayant capturées et le front est déplacé.
+2.2.label = installations de Antwerp(Anvers)
+
+3.0.label = Balises tactique et reports de contact
+
+3.1.label = origin
+3.1.alert.modal = La carte permet aussi de fournir d’importantes informations avec un système de balises,  comme l’origine de votre mission et la position de l’objectif .[NL][NL]La balise bleue est placée sur le point d&#39;origine de votre mission.[NL][NL]Une fois votre mission finie  vous devez essayer de vous approchez de ce point, ou d&#39;un dépôt ami, pour sortir du champ de bataille.
+3.1.alert.position = 213197,3072505,target
+3.1.alert.scale = .42
+3.1.alert.selection = Antwerp
+3.1.alert.hilite = 282,96,76,58,mapview
+//3.1.alert.mouse = true
+3.1.alert1.modal = Si vous arrivez là sans avoir eu trop de dommage, Votre véhicule vous sera réservé.[NL][NL]Si vous avez reçu trop de dommage, il sera perdu et vous devrez en prendre un autre ou une infanterie si il n&#39;y en a plus de disponible.
+3.1.alert1.hilite = 282,96,76,58,mapview
+
+3.2.label = Cible
+3.2.alert.modal = Un triangle rouge est placé sur sur l&#39;objectif de votre mission.[NL][NL]Vous pouvez par un click droit rendre actif n&#39;importe quelle balise.[NL][NL]Ceci ajoutera une petite flèche verte sur la carte et la mini-carte.
+3.2.alert.position = 220780,3073893,target
+3.2.alert.hilite = 246,133,71,52,mapview
+3.2.alert.selection = Schilde
+
+3.3.alert.modal = Les reports de contact sont placées par d&#39;autres joueurs lorsqu&#39;ils ont vu un ennemi.[NL][NL]La forme de l&#39;icône indique la nature de l&#39;ennemi repéré.[NL][NL]Vous pouvez passer la souris sur le report pour avoir plus d&#39;informations.
+3.3.alert.position = 213197,3072505,target
+3.3.alert.scale = .31
+3.3.alert.selection = Antwerp
+3.3.alert1.modal = Le reports doit être approuvé par le chef de la mission.[NL][NL]Il clignotera un bref moment et disparaîtra si le chef de mission ne l&#39;approuve pas.
+3.3.alert2.modal = Si vous reportez un contact ennemi, soyez le plus précis possible en utilisant des points de repère pour estimer les distances.[NL][NL]Les autres joueurs le verront aussi il est important que l&#39;information soit fiable.
+3.3.alert3 = Faites un click-droit sur la carte n&#39;importe où et sélectionnez &#34;faire un report&#34;.[NL][NL]Choisissez un type de contact et saisissez un commentaire si vous voulez.[NL][NL]Maintenant un  click sur &#34;OK&#34;.
+3.3.alert3.mouse = true
+3.3.label = Ajouter un report
+3.3.complete.modal = Bien. Le report est maintenant sur la carte. Lors d&#39;une vrai mission le chef de mission aura une alerte lui signalant un contact reporté sur carte. Il devra l&#39;approuver[NL][NL]Passez la souris dessus pour voir vos commentaires.
+
+3.4.alert = Pressez {showingamemap} pour fermer la carte et finir ce tutorial.
+3.4.label = fermer la carte
+
+3.5.alert.modal = Ceci termine ce tutorial sur la carte.
+3.5.label = fait</body>
+  <branch>1</branch>
+  <brief>Vous apprend comment utiliser la carte.</brief>
+  <handler>basic.map</handler>
+  <instance>2</instance>
+  <next>basic.chat</next>
+  <requires>basic.rifleman</requires>
+  <title>La carte du jeu</title>
+</content>

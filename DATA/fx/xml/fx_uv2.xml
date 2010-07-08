@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<FXUV>
+	<particle name = "flame C1">
+		<u1>0.0000</u1>
+		<v1>1.0000</v1>
+		<u2>0.0625</u2>
+		<v2>0.9375</v2>
+	</particle>
+	<particle name = "flame C2">
+		<u1>0.0625</u1>
+		<v1>1.0000</v1>
+		<u2>0.1250</u2>
+		<v2>0.9375</v2>
+	</particle>
+  <particle name = "flame C3">
+    <u1>0.1250</u1>
+    <v1>1.0000</v1>
+    <u2>0.1875</u2>
+    <v2>0.9375</v2>
+  </particle>
+  <particle name = "flame C4">
+    <u1>0.1875</u1>
+    <v1>1.0000</v1>
+    <u2>0.2500</u2>
+    <v2>0.9375</v2>
+  </particle>
+  <particle name = "blood spurt 1">
+		<u1>0.2500</u1>
+		<v1>1.0000</v1>
+		<u2>0.3125</u2>
+		<v2>0.9375</v2>
+	</particle>
+	<particle name = "blood spurt 2">
+		<u1>0.3125</u1>
+		<v1>1.0000</v1>
+		<u2>0.3750</u2>
+		<v2>0.9375</v2>
+	</particle>
+	<particle name = "blood spurt 3">
+		<u1>0.3750</u1>
+		<v1>1.0000</v1>
+		<u2>0.4375</u2>
+		<v2>0.9375</v2>
+	</particle>
+	<particle name = "fire ball 1">
+		<u1>0.4375</u1>
+		<v1>1.0000</v1>
+		<u2>0.5000</u2>
+		<v2>0.9375</v2>
+	</particle>
+	<particle name = "fire ball 2">
+		<u1>0.5000</u1>
+		<v1>1.0000</v1>
+		<u2>0.5625</u2>
+		<v2>0.9375</v2>
+	</particle>
+	<particle name = "fire ball 3">
+		<u1>0.5625</u1>
+		<v1>1.0000</v1>
+		<u2>0.6250</u2>
+		<v2>0.9375</v2>
+	</particle>
+	<particle name = "fire ball 4">
+		<u1>0.6250</u1>
+		<v1>1.0000</v1>
+		<u2>0.6875</u2>
+		<v2>0.9375</v2>
+	</particle>
+	<particle name = "fire ball 5">
+		<u1>0.6875</u1>
+		<v1>1.0000</v1>
+		<u2>0.7500</u2>
+		<v2>0.9375</v2>
+	</particle>
+	<particle name = "fire ball 6">
+		<u1>0.7500</u1>
+		<v1>1.0000</v1>
+		<u2>0.8125</u2>
+		<v2>0.9375</v2>
+	</particle>
+	<particle name = "fire ball 7">
+		<u1>0.8125</u1>
+		<v1>1.0000</v1>
+		<u2>0.8750</u2>
+		<v2>0.9375</v2>
+	</particle>
+	<particle name = "fire ball 8">
+		<u1>0.8750</u1>
+		<v1>1.0000</v1>
+		<u2>0.9375</u2>
+		<v2>0.9375</v2>
+	</particle>
+	<particle name = "tracer">
+		<u1>0.9375</u1>
+		<v1>1.0000</v1>
+		<u2>1.0000</u2>
+		<v2>0.9375</v2>
+	</particle>
+	<particle name = "blood spurt 4">
+		<u1>0.0000</u1>
+		<v1>0.9375</v1>
+		<u2>0.1250</u2>
+		<v2>0.8125</v2>
+	</particle>
+	<particle name = "fire ball 9">
+		<u1>0.1250</u1>
+		<v1>0.9375</v1>
+		<u2>0.2500</u2>
+		<v2>0.8125</v2>
+	</particle>
+	<particle name = "fire ball 10">
+		<u1>0.2500</u1>
+		<v1>0.9375</v1>
+		<u2>0.3750</u2>
+		<v2>0.8125</v2>
+	</particle>
+	<particle name = "grouped sparks">
+		<u1>0.3750</u1>
+		<v1>0.9375</v1>
+		<u2>0.5000</u2>
+		<v2>0.8125</v2>
+	</particle>
+	<particle name = "corpse ground blood">
+		<u1>0.5000</u1>
+		<v1>0.9375</v1>
+		<u2>0.6250</u2>
+		<v2>0.8125</v2>
+	</particle>
+	<particle name = "bomb volume fire">
+		<u1>0.6250</u1>
+		<v1>0.9375</v1>
+		<u2>0.7500</u2>
+		<v2>0.8125</v2>
+	</particle>
+	<particle name = "bomb volume smoke">
+		<u1>0.7500</u1>
+		<v1>0.9375</v1>
+		<u2>0.8750</u2>
+		<v2>0.8125</v2>
+	</particle>
+	<particle name = "flame 8">
+		<u1>0.8750</u1>
+		<v1>0.9375</v1>
+		<u2>1.0000</u2>
+		<v2>0.8125</v2>
+	</particle>
+	<particle name = "rain">
+		<u1>0.0000</u1>
+		<v1>0.8125</v1>
+		<u2>0.1250</u2>
+		<v2>0.6875</v2>
+	</particle>
+	<particle name = "explosion dirt trails">
+		<u1>0.1250</u1>
+		<v1>0.8125</v1>
+		<u2>0.2500</u2>
+		<v2>0.6875</v2>
+	</particle>
+	<particle name = "blood hit 1">
+		<u1>0.2500</u1>
+		<v1>0.8125</v1>
+		<u2>0.3750</u2>
+		<v2>0.6875</v2>
+	</particle>
+	<particle name = "blood hit 2">
+		<u1>0.3750</u1>
+		<v1>0.8125</v1>
+		<u2>0.5000</u2>
+		<v2>0.6875</v2>
+	</particle>
+	<particle name = "blood hit 3">
+		<u1>0.5000</u1>
+		<v1>0.8125</v1>
+		<u2>0.6250</u2>
+		<v2>0.6875</v2>
+	</particle>
+	<particle name = "blood hit 4">
+		<u1>0.6250</u1>
+		<v1>0.8125</v1>
+		<u2>0.7500</u2>
+		<v2>0.6875</v2>
+	</particle>
+	<particle name = "blood hit 5">
+		<u1>0.7500</u1>
+		<v1>0.8125</v1>
+		<u2>0.8750</u2>
+		<v2>0.6875</v2>
+	</particle>
+	<particle name = "hit smoke">
+		<u1>0.8750</u1>
+		<v1>0.8125</v1>
+		<u2>0.9375</u2>
+		<v2>0.7500</v2>
+	</particle>
+  <particle name = "wood chip1">
+		<u1>0.93750</u1>
+		<v1>0.81250</v1>
+		<u2>0.96875</u2>
+		<v2>0.78125</v2>
+	</particle>
+	<particle name = "wood chip2">
+		<u1>0.96875</u1>
+		<v1>0.81250</v1>
+		<u2>1.00000</u2>
+		<v2>0.78125</v2>
+	</particle>
+	<particle name = "wood chip3">
+		<u1>0.96875</u1>
+		<v1>0.78125</v1>
+		<u2>1.00000</u2>
+		<v2>0.75000</v2>
+	</particle>
+	<particle name = "low res smoke1">
+		<u1>0.937500</u1>
+		<v1>0.781250</v1>
+		<u2>0.953125</u2>
+		<v2>0.765625</v2>
+	</particle>
+	<particle name = "low res smoke2">
+		<u1>0.953125</u1>
+		<v1>0.781250</v1>
+		<u2>0.968750</u2>
+		<v2>0.765625</v2>
+	</particle>
+	<particle name = "low res smoke3">
+		<u1>0.937500</u1>
+		<v1>0.765625</v1>
+		<u2>0.953125</u2>
+		<v2>0.750000</v2>
+	</particle>
+	<particle name = "low res smoke4">
+		<u1>0.953125</u1>
+		<v1>0.765625</v1>
+		<u2>0.968750</u2>
+		<v2>0.750000</v2>
+	</particle>
+	<particle name = "stone chip1">
+		<u1>0.87500</u1>
+		<v1>0.75000</v1>
+		<u2>0.90625</u2>
+		<v2>0.71875</v2>
+	</particle>
+	<particle name = "stone chip2">
+		<u1>0.90625</u1>
+		<v1>0.75000</v1>
+		<u2>0.93750</u2>
+		<v2>0.71875</v2>
+	</particle>
+	<particle name = "stone chip3">
+		<u1>0.87500</u1>
+		<v1>0.71875</v1>
+		<u2>0.90625</u2>
+		<v2>0.68750</v2>
+	</particle>
+	<particle name = "spark">
+		<u1>0.906250</u1>
+		<v1>0.718750</v1>
+		<u2>0.921875</u2>
+		<v2>0.703125</v2>
+	</particle>
+	<particle name = "dirt clod">
+		<u1>0.921875</u1>
+		<v1>0.718750</v1>
+		<u2>0.937500</u2>
+		<v2>0.687500</v2>
+	</particle>
+	<particle name = "tread dust">
+		<u1>0.906250</u1>
+		<v1>0.703125</v1>
+		<u2>0.921875</u2>
+		<v2>0.687500</v2>
+	</particle>
+	<particle name = "NOT USED">
+		<u1>0.921875</u1>
+		<v1>0.703125</v1>
+		<u2>0.937500</u2>
+		<v2>0.687500</v2>
+	</particle>
+	<particle name = "water spray1">
+		<u1>0.937500</u1>
+		<v1>0.750000</v1>
+		<u2>0.953125</u2>
+		<v2>0.734375</v2>
+	</particle>
+	<particle name = "water spray2">
+		<u1>0.953125</u1>
+		<v1>0.750000</v1>
+		<u2>0.968750</u2>
+		<v2>0.734375</v2>
+	</particle>
+	<particle name = "water spray3">
+		<u1>0.937500</u1>
+		<v1>0.734375</v1>
+		<u2>0.953125</u2>
+		<v2>0.718750</v2>
+	</particle>
+	<particle name = "water spray4">
+		<u1>0.953125</u1>
+		<v1>0.734375</v1>
+		<u2>0.968750</u2>
+		<v2>0.718750</v2>
+	</particle>
+	<particle name = "blood">
+		<u1>0.93750</u1>
+		<v1>0.71875</v1>
+		<u2>0.96875</u2>
+		<v2>0.68750</v2>
+	</particle>
+	<particle name = "NOT USED3">
+		<u1>0.96875</u1>
+		<v1>0.75000</v1>
+		<u2>1.00000</u2>
+		<v2>0.68750</v2>
+	</particle>
+	<particle name = "white volume smoke 1">
+		<u1>0.0000</u1>
+		<v1>0.6875</v1>
+		<u2>0.1250</u2>
+		<v2>0.5625</v2>
+	</particle>
+	<particle name = "white volume smoke 2">
+		<u1>0.1250</u1>
+		<v1>0.6875</v1>
+		<u2>0.2500</u2>
+		<v2>0.5625</v2>
+	</particle>
+	<particle name = "white smoke 1">
+		<u1>0.2500</u1>
+		<v1>0.6875</v1>
+		<u2>0.3750</u2>
+		<v2>0.5625</v2>
+	</particle>
+	<particle name = "white smoke 2">
+		<u1>0.3750</u1>
+		<v1>0.6875</v1>
+		<u2>0.5000</u2>
+		<v2>0.5625</v2>
+	</particle>
+	<particle name = "black smoke 1">
+		<u1>0.5000</u1>
+		<v1>0.6875</v1>
+		<u2>0.6250</u2>
+		<v2>0.5625</v2>
+	</particle>
+	<particle name = "black smoke 2">
+		<u1>0.6250</u1>
+		<v1>0.6875</v1>
+		<u2>0.7500</u2>
+		<v2>0.5625</v2>
+	</particle>
+	<particle name = "black smoke 3">
+		<u1>0.7500</u1>
+		<v1>0.6875</v1>
+		<u2>0.8750</u2>
+		<v2>0.5625</v2>
+	</particle>
+	<particle name = "black smoke 4">
+		<u1>0.8750</u1>
+		<v1>0.6875</v1>
+		<u2>1.0000</u2>
+		<v2>0.5625</v2>
+	</particle>
+	<particle name = "black volume smoke 1">
+		<u1>0.0000</u1>
+		<v1>0.5625</v1>
+		<u2>0.1250</u2>
+		<v2>0.4375</v2>
+	</particle>
+	<particle name = "black volume smoke 2">
+		<u1>0.1250</u1>
+		<v1>0.5625</v1>
+		<u2>0.2500</u2>
+		<v2>0.4375</v2>
+	</particle>
+	<particle name = "black volume smoke 3">
+		<u1>0.2500</u1>
+		<v1>0.5625</v1>
+		<u2>0.3750</u2>
+		<v2>0.4375</v2>
+	</particle>
+	<particle name = "black volume smoke 4">
+		<u1>0.3750</u1>
+		<v1>0.5625</v1>
+		<u2>0.5000</u2>
+		<v2>0.4375</v2>
+	</particle>
+	<particle name = "multiple sparks">
+		<u1>0.5000</u1>
+		<v1>0.5625</v1>
+		<u2>0.6250</u2>
+		<v2>0.4375</v2>
+	</particle>
+	<particle name = "water drop">
+		<u1>0.62500</u1>
+		<v1>0.56250</v1>
+		<u2>0.65625</u2>
+		<v2>0.53125</v2>
+	</particle>
+	<particle name = "old2">
+		<u1>0.65625</u1>
+		<v1>0.56250</v1>
+		<u2>0.68750</u2>
+		<v2>0.53125</v2>
+	</particle>
+	<particle name = "old3">
+		<u1>0.68750</u1>
+		<v1>0.56250</v1>
+		<u2>0.71875</u2>
+		<v2>0.53125</v2>
+	</particle>
+	<particle name = "old4">
+		<u1>0.71875</u1>
+		<v1>0.56250</v1>
+		<u2>0.75000</u2>
+		<v2>0.53125</v2>
+	</particle>
+	<particle name = "old5">
+		<u1>0.62500</u1>
+		<v1>0.53125</v1>
+		<u2>0.65625</u2>
+		<v2>0.50000</v2>
+	</particle>
+	<particle name = "old6">
+		<u1>0.65625</u1>
+		<v1>0.53125</v1>
+		<u2>0.68750</u2>
+		<v2>0.50000</v2>
+	</particle>
+	<particle name = "old7">
+		<u1>0.68750</u1>
+		<v1>0.53125</v1>
+		<u2>0.71875</u2>
+		<v2>0.50000</v2>
+	</particle>
+	<particle name = "old8">
+		<u1>0.71875</u1>
+		<v1>0.53125</v1>
+		<u2>0.75000</u2>
+		<v2>0.50000</v2>
+	</particle>
+	<particle name = "old9">
+		<u1>0.50000</u1>
+		<v1>0.484375</v1>
+		<u2>0.640625</u2>
+		<v2>0.484375</v2>
+	</particle>
+	<particle name = "old10">
+		<u1>0.640625</u1>
+		<v1>0.50000</v1>
+		<u2>0.656250</u2>
+		<v2>0.484375</v2>
+	</particle>
+	<particle name = "old11">
+		<u1>0.656250</u1>
+		<v1>0.50000</v1>
+		<u2>0.671875</u2>
+		<v2>0.484375</v2>
+	</particle>
+	<particle name = "day1blacksmoke">
+		<u1>0.671875</u1>
+		<v1>0.50000</v1>
+		<u2>0.687500</u2>
+		<v2>0.484375</v2>
+	</particle>
+	<particle name = "old13">
+		<u1>0.687500</u1>
+		<v1>0.50000</v1>
+		<u2>0.703125</u2>
+		<v2>0.484375</v2>
+	</particle>
+	<particle name = "old14">
+		<u1>0.703125</u1>
+		<v1>0.50000</v1>
+		<u2>0.718750</u2>
+		<v2>0.484375</v2>
+	</particle>
+	<particle name = "old15">
+		<u1>0.718750</u1>
+		<v1>0.50000</v1>
+		<u2>0.734375</u2>
+		<v2>0.484375</v2>
+	</particle>
+	<particle name = "old16">
+		<u1>0.734375</u1>
+		<v1>0.50000</v1>
+		<u2>0.750000</u2>
+		<v2>0.484375</v2>
+	</particle>
+	<particle name = "old17">
+		<u1>0.625000</u1>
+		<v1>0.484375</v1>
+		<u2>0.640625</u2>
+		<v2>0.46875</v2>
+	</particle>
+	<particle name = "old18">
+		<u1>0.640625</u1>
+		<v1>0.484375</v1>
+		<u2>0.656250</u2>
+		<v2>0.46875</v2>
+	</particle>
+	<particle name = "old19">
+		<u1>0.656250</u1>
+		<v1>0.484375</v1>
+		<u2>0.671875</u2>
+		<v2>0.46875</v2>
+	</particle>
+	<particle name = "old20">
+		<u1>0.671875</u1>
+		<v1>0.484375</v1>
+		<u2>0.687500</u2>
+		<v2>0.46875</v2>
+	</particle>
+	<particle name = "old21">
+		<u1>0.687500</u1>
+		<v1>0.484375</v1>
+		<u2>0.703125</u2>
+		<v2>0.46875</v2>
+	</particle>
+	<particle name = "old22">
+		<u1>0.703125</u1>
+		<v1>0.484375</v1>
+		<u2>0.718750</u2>
+		<v2>0.46875</v2>
+	</particle>
+	<particle name = "old23">
+		<u1>0.718750</u1>
+		<v1>0.484375</v1>
+		<u2>0.734375</u2>
+		<v2>0.46875</v2>
+	</particle>
+	<particle name = "old24">
+		<u1>0.734375</u1>
+		<v1>0.484375</v1>
+		<u2>0.750000</u2>
+		<v2>0.46875</v2>
+	</particle>
+	<particle name = "old25">
+		<u1>0.625000</u1>
+		<v1>0.46875</v1>
+		<u2>0.640625</u2>
+		<v2>0.453125</v2>
+	</particle>
+	<particle name = "old26">
+		<u1>0.640625</u1>
+		<v1>0.46875</v1>
+		<u2>0.656250</u2>
+		<v2>0.453125</v2>
+	</particle>
+	<particle name = "old27">
+		<u1>0.656250</u1>
+		<v1>0.46875</v1>
+		<u2>0.671875</u2>
+		<v2>0.453125</v2>
+	</particle>
+	<particle name = "old28">
+		<u1>0.671875</u1>
+		<v1>0.46875</v1>
+		<u2>0.687500</u2>
+		<v2>0.453125</v2>
+	</particle>
+	<particle name = "old29">
+		<u1>0.687500</u1>
+		<v1>0.46875</v1>
+		<u2>0.703125</u2>
+		<v2>0.453125</v2>
+	</particle>
+	<particle name = "old30">
+		<u1>0.703125</u1>
+		<v1>0.46875</v1>
+		<u2>0.718750</u2>
+		<v2>0.453125</v2>
+	</particle>
+	<particle name = "old31">
+		<u1>0.718750</u1>
+		<v1>0.46875</v1>
+		<u2>0.734375</u2>
+		<v2>0.453125</v2>
+	</particle>
+	<particle name = "old32">
+		<u1>0.734375</u1>
+		<v1>0.46875</v1>
+		<u2>0.750000</u2>
+		<v2>0.453125</v2>
+	</particle>
+	<particle name = "old33">
+		<u1>0.625000</u1>
+		<v1>0.453125</v1>
+		<u2>0.640625</u2>
+		<v2>0.4375</v2>
+	</particle>
+	<particle name = "old34">
+		<u2>0.640625</u2>
+		<v1>0.453125</v1>
+		<u2>0.656250</u2>
+		<v2>0.4375</v2>
+	</particle>
+	<particle name = "old35">
+		<u1>0.656250</u1>
+		<v1>0.453125</v1>
+		<u2>0.671875</u2>
+		<v2>0.4375</v2>
+	</particle>
+	<particle name = "old36">
+		<u1>0.671875</u1>
+		<v1>0.453125</v1>
+		<u2>0.687500</u2>
+		<v2>0.4375</v2>
+	</particle>
+	<particle name = "old37">
+		<u1>0.687500</u1>
+		<v1>0.453125</v1>
+		<u2>0.703125</u2>
+		<v2>0.4375</v2>
+	</particle>
+	<particle name = "old38">
+		<u1>0.703125</u1>
+		<v1>0.453125</v1>
+		<u2>0.718750</u2>
+		<v2>0.4375</v2>
+	</particle>
+	<particle name = "old39">
+		<u1>0.718750</u1>
+		<v1>0.453125</v1>
+		<u2>0.734375</u2>
+		<v2>0.4375</v2>
+	</particle>
+	<particle name = "old40">
+		<u1>0.734375</u1>
+		<v1>0.453125</v1>
+		<u2>0.750000</u2>
+		<v2>0.4375</v2>
+	</particle>
+  <particle name = "newspark">
+    <u1>0.75</u1>
+    <v1>0.56250</v1>
+    <u2>0.78125</u2>
+    <v2>0.53125</v2>
+  </particle>
+  <particle name = "scorch">
+    <u1>0.78125</u1>
+    <v1>0.56250</v1>
+    <u2>0.8125</u2>
+    <v2>0.53125</v2>
+  </particle>
+  <particle name = "woodbullethit">
+    <u1>0.8125</u1>
+    <v1>0.56250</v1>
+    <u2>0.828125</u2>
+    <v2>0.546875</v2>
+  </particle>
+  <particle name = "bloodbullethit">
+    <u1>0.828125</u1>
+    <v1>0.56250</v1>
+    <u2>0.84375</u2>
+    <v2>0.546875</v2>
+  </particle>
+  <particle name = "metaldent1">
+    <u1>0.84375</u1>
+    <v1>0.56250</v1>
+    <u2>0.859375</u2>
+    <v2>0.546875</v2>
+  </particle>
+  <particle name = "metalhole">
+    <u1>0.859375</u1>
+    <v1>0.56250</v1>
+    <u2>0.8750</u2>
+    <v2>0.546875</v2>
+  </particle>
+  <particle name = "metaldent2">
+    <u1>0.8125</u1>
+    <v1>0.546875</v1>
+    <u2>0.828125</u2>
+    <v2>0.53125</v2>
+  </particle>
+  <particle name = "dirtbullethit">
+    <u1>0.828125</u1>
+    <v1>0.546875</v1>
+    <u2>0.84375</u2>
+    <v2>0.53125</v2>
+  </particle>
+  <particle name = "small white smoke">
+    <u1>0.84375</u1>
+    <v1>0.546875</v1>
+    <u2>0.859375</u2>
+    <v2>0.53125</v2>
+  </particle>
+  <particle name = "metal debris">
+    <u1>0.75</u1>
+    <v1>0.53125</v1>
+    <u2>0.78125</u2>
+    <v2>0.50000</v2>
+  </particle>
+  <particle name = "bullet shell casing">
+    <u1>0.78125</u1>
+    <v1>0.53125</v1>
+    <u2>0.796875</u2>
+    <v2>0.515625</v2>
+  </particle>
+  <particle name = "glassbullethit">
+    <u1>0.796875</u1>
+    <v1>0.53125</v1>
+    <u2>0.8125</u2>
+    <v2>0.515625</v2>
+  </particle>
+  <particle name = "small gray dust">
+    <u1>0.8125</u1>
+    <v1>0.53125</v1>
+    <u2>0.828125</u2>
+    <v2>0.515625</v2>
+  </particle>
+  <particle name = "small water mist">
+    <u1>0.828125</u1>
+    <v1>0.53125</v1>
+    <u2>0.84375</u2>
+    <v2>0.515625</v2>
+  </particle>
+  <particle name = "concrete bullet hole">
+    <u1>0.78125</u1>
+    <v1>0.515625</v1>
+    <u2>0.796875</u2>
+    <v2>0.50000</v2>
+  </particle>
+  <particle name = "metaldent3">
+    <u1>0.796875</u1>
+    <v1>0.515625</v1>
+    <u2>0.8125</u2>
+    <v2>0.50000</v2>
+  </particle>
+  <particle name = "muzzleflash">
+    <u1>0.75000</u1>
+    <v1>0.50000</v1>
+    <u2>0.81250</u2>
+    <v2>0.43750</v2>
+  </particle>
+  <particle name = "osgsmoke">
+    <u1>0.81250</u1>
+    <v1>0.50000</v1>
+    <u2>0.8750</u2>
+    <v2>0.43750</v2>
+  </particle>
+  <particle name = "multiplesparks">
+    <u1>0.8750</u1>
+    <v1>0.56250</v1>
+    <u2>1.0</u2>
+    <v2>0.4375</v2>
+  </particle>
+</FXUV>

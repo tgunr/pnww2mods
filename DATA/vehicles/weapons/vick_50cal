@@ -1,0 +1,24 @@
+# Vickers 12.7mm (.50 cal) MG
+# Vickers Mk VI B
+# Rev. 07/31/02 - bloo
+
+mass = 12.5
+# placeholder (no data)
+firetype = auto
+rateoffire = 600
+# placeholder (no data)
+#syncrateoffire = 600
+# placeholder (no data)
+ammotype1 = 50cal_vick
+ammotype2 = 50cal_vick_tracer
+ghostrof = 600
+ghostammotype = 50cal_vick
+dispersion = 0.15
+# placeholder
+cliprounds = 100
+reloadtime = 6
+# placeholder (no data)
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = belt

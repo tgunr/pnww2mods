@@ -1,0 +1,19 @@
+# Bofors 40mm L/60
+# Needs dispersion
+# Reload time needs checking
+
+mass = 0.0
+firetype = singleshot
+rateoffire = 120
+ammotype1 = 40mml60he
+ghostrof = 120
+ghostammotype = 40mml60he
+dispersion = 0.2
+cliprounds = 4
+reloadtime = 0.0
+
+muzzleflash = boforsmuzzleflash
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = magazine

@@ -1,0 +1,382 @@
+# Bedford Component File
+# mass elements and inertias edited by Doc - 5 April 05
+
+[tow-point]
+type = towpoint
+subtype = none
+x = 0 
+y = 2
+z = 0
+towtype = light
+
+[drivewheelleft]
+type = gear
+subtype = wheel
+criticalsecondary = 1
+#added for CC audit v1.13
+gearnum = 2
+mass = 20
+inertiapitch = 5.48
+inertiaroll = 5.87
+inertiayaw = 5.87
+inertiapitch = 3
+inertiaroll = 5
+inertiayaw = 1      
+wheelradius = 0.45
+contactpointtype = tire
+wheelrotationalinertia = 85
+braketype = center
+brakestrength = 100000
+# Roll Coefficient Needs to be .02 for Wheeled vehicles
+rollcoefficient = 0.03
+strutspringstrength = 30000
+strutshockstrength = 500
+strutshockreturnstrength = 8500
+#strutspringstrength = 30000
+#strutshockstrength = 15000
+#strutshockreturnstrength = 1500
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_baklft1
+hitmapcomponent2 = d_lftfrnt
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 6000
+damagelevel2 = 12000
+damagelevel3 = 18000
+damagelevel4 = 22000
+visdamage = backleftwheel
+visdamage = frontleftwheel
+damagelevelfail = 22000
+
+[drivewheelright]
+type = gear
+subtype = wheel
+criticalsecondary = 2
+#added for CC audit v1.13
+gearnum = 4
+mass = 20
+inertiapitch = 5.48
+inertiaroll = 5.87
+inertiayaw = 5.87
+wheelradius = 0.45
+contactpointtype = tire
+wheelrotationalinertia = 85
+braketype = center
+brakestrength = 100000
+rollcoefficient = 0.03
+strutspringstrength = 30000
+strutshockstrength = 500
+strutshockreturnstrength =8500
+hitmapcomponent1 = d_bakrght1
+hitmapcomponent2 = d_rtfrnt
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 6000
+damagelevel2 = 12000
+damagelevel3 = 18000
+damagelevel4 = 22000
+visdamage = backrightwheel
+visdamage = frontrightwheel
+damagelevelfail = 22000
+
+
+[steerwheelleft]
+type = gear
+subtype = wheel
+criticalsecondary = 1
+#added for CC audit v1.13
+gearnum = 1
+mass = 30
+inertiapitch = 3
+inertiaroll = 2
+inertiayaw = 2
+wheelradius = 0.43
+contactpointtype = tire
+wheelrotationalinertia = 40
+strutspringstrength = 40000
+strutshockstrength = 400
+strutshockreturnstrength = 4000
+braketype = center
+brakestrength = 100000
+rollcoefficient = 0.03
+hitmapcomponent1 = d_lftfrnt
+hitmapcomponent2 = d_baklft1
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 6000
+damagelevel2 = 12000
+damagelevel3 = 18000
+damagelevel4 = 22000
+visdamage = frontleftwheel
+visdamage = backleftwheel
+damagelevelfail = 22000
+
+
+[steerwheelright]
+type = gear
+subtype = wheel
+criticalsecondary = 2
+#added for CC audit v1.13
+gearnum = 3
+mass = 30
+inertiapitch = 3
+inertiaroll = 2
+inertiayaw = 2
+wheelradius = 0.43
+contactpointtype = tire
+wheelrotationalinertia = 40
+strutspringstrength = 40000
+strutshockstrength = 400
+strutshockreturnstrength = 4000
+braketype = center
+brakestrength = 100000
+rollcoefficient = 0.03
+hitmapcomponent1 = d_rtfrnt
+hitmapcomponent2 = d_bakrght1
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 6000
+damagelevel2 = 12000
+damagelevel3 = 18000
+damagelevel4 = 22000
+visdamage = frontrightwheel
+visdamage = backrightwheel
+damagelevelfail = 22000
+
+
+[transmission]
+type = engine
+subtype = transmission
+transtype = limitedslip
+x = 0
+y = 1.1
+z = -0.1
+mass = 0
+ass = 0
+inertiapitch = 18
+inertiaroll = 12
+inertiayaw = 12
+drivewheel1 = drivewheelleft
+drivewheel2 = drivewheelright
+
+[gearbox]
+type = engine
+subtype = gearbox
+numforwardgears = 4
+numreversegears = 1
+gear1ratio = 27
+gear2ratio = 21
+gear3ratio = 16
+gear4ratio = 11.69
+reverse1ratio = 42
+#gear1ratio = 43.158
+#gear2ratio = 30.772
+#gear3ratio = 18.079
+#gear4ratio = 12.22
+#reverse1ratio = 40.9264
+preselector = 1
+propellercomponent = transmission
+
+[clutch]
+type = engine
+subtype = clutch
+clutchforce = 4000
+clutchstart = 0.3
+clutchend = 0.8
+clutchdisengaged = 0.4
+flywheelrotinertia = 15
+propellercomponent = gearbox
+
+
+[fueltank1]
+criticalprimary = 1
+type = engine
+subtype = fueltank
+x = 0.63
+y = 1.06
+z = -0.3
+mass = 50
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+tanknum = 1
+hitmapcomponent1 = d_lftank
+fuelburncomponent1 = d_lftank
+fuelburncomponent2 = d_engine
+fuelburncomponent3 = d_radiator
+fuelburncomponent4 = d_driverlegs
+fuelburncomponent5 = d_rtank
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 1500
+damagelevel2 = 5000
+damagelevel3 = 80000
+damagelevel4 = 160000
+visdamage = fuel
+damagelevelfail = 160000
+hulkiffail = 1
+
+[fueltank2]
+criticalprimary = 1
+type = engine
+subtype = fueltank
+x = -0.63
+y = 1.06
+z = -0.3
+mass = 50
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+tanknum = 1
+hitmapcomponent1 = d_rtank
+fuelburncomponent1 = d_rtank
+fuelburncomponent2 = d_engine
+fuelburncomponent3 = d_radiator
+fuelburncomponent4 = d_driverlegs
+fuelburncomponent5 = d_lftank
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 1500
+damagelevel2 = 5000
+damagelevel3 = 80000
+damagelevel4 = 160000
+visdamage = fuel
+damagelevelfail = 160000
+hulkiffail = 1
+
+[radiator1]
+type = engine
+subtype = radiator
+x = 0.0
+y = 2.5
+z = 0.15
+mass = 45
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+tanknum = 1
+hitmapcomponent1 = d_radiator
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 100
+damagelevel2 = 1000
+damagelevel3 = 15000
+damagelevel4 = 20000
+
+[oiltank]
+type = engine
+subtype = oiltank
+x = 0
+y = 2.11
+z = -0.166
+mass = 12
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+tanknum = 1
+hitmapcomponent1 = d_engine
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 4500
+damagelevel2 = 45000
+damagelevel3 = 135000
+
+[Engine]
+type = engine
+subtype = engine
+criticalprimary = 1
+#subtype = torquegenerator
+enginetype = Own_6cylinder
+propellercomponent = clutch
+x = 0
+y = 2.1
+z = -0.1
+mass = 0
+#inertiapitch = 18
+#inertiaroll = 12
+#inertiayaw = 12
+enginenumber = 1
+fueltank1component = fueltank1
+fueltank2component = fueltank2
+radiator1component = radiator1
+oiltankcomponent = oiltank
+#enginesound = sounds\oplblitz\engine.wav
+idlesound = sounds\bedford\idle.wav
+startersound = sounds\bedford\starter.wav
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_engine
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 3000
+damagelevel2 = 30000
+damagelevel3 = 300000
+damagelevel4 = 600000
+visdamage = engine
+damagelevelfail = 600000
+
+[driver]
+type = crew
+criticalprimary = 1
+crewposition = 1
+hitmapcomponent1 = d_driverhead
+hitmapcomponent2 = d_drivertorso
+hitmapcomponent3 = d_driverarms
+hitmapcomponent4 = d_driverlegs
+
+[frontleftballast]
+type = ballast
+x = -1.5
+y = 2.5
+z = -0.65
+mass = 140
+inertiapitch = 3129.05
+inertiaroll = 1105.3
+inertiayaw = 3226.25
+
+
+[frontrightballast]
+type = ballast
+x = 1.5
+y = 2.5
+z = -0.65
+mass = 140
+inertiapitch = 3129.05
+inertiaroll = 1105.3
+inertiayaw = 3226.25
+
+[boxballastleftrear]
+type = ballast
+x = -1.5
+y = -2.4
+z = -0.65
+mass = 300
+inertiapitch = 3129.05
+inertiaroll = 1105.3
+inertiayaw = 3226.25
+#inertiapitch = 538
+#inertiaroll = 241
+#inertiayaw = 621
+
+[boxballastrightrear]
+type = ballast
+x = 1.5
+y = -2.4
+z = -0.65
+mass = 300
+inertiapitch = 3129.05
+inertiaroll = 1105.3
+inertiayaw = 3226.25
+#inertiapitch = 538
+#inertiaroll = 241
+#inertiayaw = 621
+
+[GeneralWeightBallast]
+type = ballast
+subtype = armor
+x = 0
+y = -1.5
+z = -1
+mass = 690
+inertiapitch = 400
+inertiaroll = 200
+inertiayaw = 300
+
+#inertiapitch = 94938
+#inertiaroll = 39056
+#inertiayaw = 1800
+
+# Target Weight 6568kg loaded
+# Target Weight 5400kg Game Weight

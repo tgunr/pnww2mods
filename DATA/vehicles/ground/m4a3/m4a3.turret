@@ -1,0 +1,46 @@
+#m4a3.turret file
+#created 08-22-06 -Doc.
+
+#multicrewpos position, whichcrew
+multicrewpos 1 1
+multicrewpos 2 2
+multicrewpos 3 2
+multicrewpos 4 1
+
+# Main and coax
+position = 3
+elevationrate = 4.0
+traverserate = 15
+type = 360turret
+gunsightfile = m71d.gs
+gunsightalignmentmountobject = maingunmount
+gunsightalignmentrange = 800
+
+#turret sound variables
+turrettraverse = turret/hydrolic_turret.wav
+turretelevate = turret/hand_turret_move.wav
+turretgeneral = turret/turret_traverse_general.wav
+
+# Hull flex MG
+position = 4
+elevationrate = 1
+traverserate = 1
+type = limitedturret
+#gunsightfile = 30calbowmg.gs
+gunsightalignmentmountobject = bowgun
+gunsightalignmentrange = 200
+gunsightblocked = canopyopen
+
+#Commander
+position = 2
+elevationrate = 2
+traverserate = 6
+type = 360turret
+gunsightfile = 8x30binoc.gs
+#conditions are undeployed, deployed, canopyopen, canopyclosed, hatchopen, hatchclosed
+gunsightblocked = canopyclosed
+
+#driver
+position = 1
+gunsightfile = m4a2driver.gs
+gunsightblocked = canopyopen

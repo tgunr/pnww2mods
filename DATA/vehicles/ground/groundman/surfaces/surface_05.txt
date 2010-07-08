@@ -1,0 +1,59 @@
+#
+# METAL SURFACE (5)
+#
+
+
+# FPS sound data
+
+#fpsCrawlSound = sounds\troop\crawl.wav
+#fpsCreepSound = sounds\troop\creep.wav
+#fpsCreepAimSound = sounds\troop\creepaim.wav
+#fpsTrotSound = sounds\troop\trot.wav
+#fpsTrotAimSound = sounds\troop\trotaim.wav
+#fpsSprintSound = sounds\troop\sprint.wav
+
+
+
+# TPS sound data
+
+tpsCrawlSound = sounds\troop\crawl.wav
+#tpsCrawlLeftStep = sounds\troop\masmodel38.wav
+#tpsCrawlRightStep = sounds\troop\mp40.wav
+tpsCrawlSoundHalfDistance = 2.0
+tpsCrawlSoundMaxDistance = 5.0
+
+#tpsCreepSound = sounds\troop\creep.wav
+#tpsCreepLeftStep = sounds\troop\masmodel38.wav
+#tpsCreepRightStep = sounds\troop\mp40.wav
+tpsCreepSound = sounds\troop\gear_loop\walk.wav
+tpsCreepLeftStep = sounds\troop\metal\leftwalk.wav
+tpsCreepRightStep = sounds\troop\metal\rightwalk.wav
+tpsCreepSoundHalfDistance = 2.0
+tpsCreepSoundMaxDistance = 3.0
+
+#tpsCreepAimSound = sounds\troop\creepaim.wav
+#tpsCreepAimLeftStep = sounds\troop\masmodel38.wav
+#tpsCreepAimRightStep = sounds\troop\mp40.wav
+tpsCreepAimSound = sounds\troop\gear_loop\walk.wav
+tpsCreepAimLeftStep = sounds\troop\metal\leftwalk.wav
+tpsCreepAimRightStep = sounds\troop\metal\rightwalk.wav
+tpsCreepAimSoundHalfDistance = 2.0
+tpsCreepAimSoundMaxDistance = 3.0
+
+tpsTrotSound = sounds\troop\gear_loop\jog.wav
+tpsTrotLeftStep = sounds\troop\metal\leftjog.wav
+tpsTrotRightStep = sounds\troop\metal\rightjog.wav
+tpsTrotSoundHalfDistance = 7.0
+tpsTrotSoundMaxDistance = 40.0
+
+tpsTrotAimSound = sounds\troop\gear_loop\walk.wav
+tpsTrotAimLeftStep = sounds\troop\metal\leftwalk.wav
+tpsTrotAimRightStep = sounds\troop\metal\rightwalk.wav
+tpsTrotAimSoundHalfDistance = 5.0
+tpsTrotAimSoundMaxDistance = 30.0
+
+tpsSprintSound = sounds\troop\gear_loop\sprint.wav
+tpsSprintLeftStep = sounds\troop\metal\leftsprint.wav
+tpsSprintRightStep = sounds\troop\metal\rightsprint.wav
+tpsSprintSoundHalfDistance = 7.0
+tpsSprintSoundMaxDistance = 50.0

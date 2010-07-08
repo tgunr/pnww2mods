@@ -1,0 +1,25 @@
+#Charb1.loadout file
+
+# sounds available for the mounts
+sound1 = sounds\mle25\xgun.wav
+sound2 = sounds\charb1\xgun3.wav
+
+loadout = 1
+
+mountnum = 1
+mountobject = 25mount
+mountsound = sound1
+
+weapon = sa34l72
+#weapon = 37mmkwk46_5
+weaponobject = genericgun1
+recoilnum = 1
+recoiltime = .1
+shockdust = 1
+
+mountnum = 2
+mountobject = coaxmount
+mountsound = sound2
+weapon = mle31
+weaponobject = genericgun1
+

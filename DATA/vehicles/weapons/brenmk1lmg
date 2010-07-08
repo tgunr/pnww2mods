@@ -1,0 +1,16 @@
+# British infantry LMG created Oct.03 Doc.
+
+mass = 10.25
+firetype = auto
+rateoffire = 500
+dispersion = 0.15
+ammotype1 = 303ball
+ammotype2 = 303tracer
+ghostrof = 200
+ghostammotype = 303tracer
+cliprounds = 30
+reloadtime = 2
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = magazine

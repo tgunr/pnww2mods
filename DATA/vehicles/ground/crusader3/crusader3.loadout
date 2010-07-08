@@ -1,0 +1,25 @@
+##British Cruiser MkVI Crusader MkIII A15 .loadout file
+
+# sounds available for the mounts
+sound1 = sounds\qf6pdr\57mmxgun.wav
+sound2 = sounds\a13\xgun2.wav
+
+
+loadout = 1
+
+# Main Gun
+mountnum = 1
+mountobject = 2pndrmount
+mountsound = sound1
+weapon = qf6pdrmkiv
+weaponobject = genericgun1
+recoilnum = 1
+recoiltime = .2
+shockdust = 1
+
+# Coax Mount
+mountnum = 2
+mountobject = coaxmount
+mountsound = sound2
+weapon = besa
+weaponobject = genericgun1

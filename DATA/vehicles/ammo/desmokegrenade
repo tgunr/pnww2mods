@@ -1,0 +1,39 @@
+
+issmokegrenade = 1
+type = grenade
+diameter = .15
+weight = .773
+velocity = 25
+tracertime = 0.0
+object = axissmokegrenade
+explosive = 409
+
+
+fuzetime = 5.0
+selfdestructtime = 5.0
+bc = 1.5
+lifetime = 7.0
+ricochetangle = 89
+#modelspall = 1
+penetrationconstant = 0.0000000001
+
+dontdisplayfirstframe = 1
+
+#numshrapnelpieces = 150
+#totalshrapnelmass = .20
+
+explosionsoundnear = sounds\troop\grenade.wav
+explosionsoundfar = sounds\smlfarexp.wav
+nearfardistance = 150
+grenaderotaterate = -2
+
+modelcmx = -0.000982
+modelcmy = 0.001008
+modelcmz = -0.059848
+unitinertiaxx = 0.009770
+unitinertiayy = 0.009793
+unitinertiazz = 0.000258
+grenadeorient = 0
+grenaderestitution = .1
+
+ghostroundsto = 1

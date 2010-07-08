@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<window id="nomination" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768" layer="200">
+	<include file="lib/common.uixml"/>
+	<view id="nom-popup" x="0" y="0" width="1024" height="768" style="background-color: #000000DD;" moveondrag="no"
+		onupdate="checkTimer()">
+		<text id="nom-caption" x="10" y="40" height="50" width="330" acceptfocus="no" style="color: #FFFFFF; font-size: +1;"/>
+		<button id="nom-no" x="20" y="10" width="150" height="25" label="&common.no;" onclick="doAction(false)"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+		<button id="nom-yes" x="180" y="10" width="150" height="25" label="&common.yes;" onclick="doAction(true)"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+	</view>
+	<script>
+		<!--
+		
+		var timer = null;
+		
+		function initNominationPopup(brigade, timeout)
+		{
+			consoleprint("Initing Nomination Popup\n");
+			
+			var inited 	= false;
+			var chat 	= game.findview("chat");
+			var nom		= window.findview("nom-popup");
+			
+			timer = new CycleTimer(500);
+			timer.next = (new Date()).getTime() + (timeout*1000);
+			
+			if(chat != null && nom != null)
+			{
+				var chatter = chat.findview("chatter");
+				
+				if(chatter != null)
+				{
+					nom.x = chatter.screenx;
+					nom.y = chatter.screeny;
+					nom.width = chatter.width;
+					nom.height = chatter.height;
+					
+					var caption = nom.findview("nom-caption");
+					var yes		= nom.findview("nom-yes");
+					var no		= nom.findview("nom-no");
+					
+					caption.text = getVariableLocString('common.confirmoicnomination', brigade.name);
+					caption.resizetotext();
+					
+					caption.x = nom.width/2 - caption.width/2;
+					caption.y = nom.height/2 - caption.height/2;
+					
+					no.x = (nom.width/2) - no.width - 10;
+					no.y = caption.y - no.height - 10;
+					
+					yes.x = (nom.width/2) + 10;
+					yes.y = caption.y - yes.height - 10;
+					
+					inited = true;
+				}	
+			}
+			
+			if(!inited)
+				window.close();
+			
+			consoleprint("Completed Nomination Popup\n");
+		}
+		
+		function checkTimer()
+		{
+			if(timer.run())
+				window.close();
+		}
+		
+		function doAction(confirm)
+		{
+			soundPlayClick();
+			handleOICNomination(confirm);
+			window.close();
+		}
+		
+		// -->
+	</script>
+</window>

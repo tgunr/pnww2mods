@@ -1,0 +1,13 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="mle47" type="ground" shape="mle47mm" description="SA mle 37 (47 mm) AT Gun" icon="SA 37 Gun">
+<include file="mle47.veh.xml"/>
+<include file="mle47.state.xml"/>
+<include file="mle47.hit.xml"/>
+<include file="mle47.turret.xml"/>
+<include file="mle47.loadout.xml"/>
+<include file="mle47.xsound.xml"/>
+<include file="mle47.control.xml"/>
+<variant id="cn_mle47" icon="SA 37 Gun"/>
+<variant id="mle47" icon="SA 37 Gun"/>
+</vehicle>

@@ -1,0 +1,336 @@
+//to directory,,,
+section,TERRAIN,scale,flags
+default,0,1,1
+LoadModel, terrain\to\8treeclump1c.flt,1,1
+LoadModel, terrain\to\treedec1c.flt,1,1
+LoadModel, terrain\to\crkwillow1c.flt,1,1
+LoadModel, terrain\to\abfence1-1.flt,1,1
+LoadModel, terrain\to\dpfence1c.flt,1,1
+LoadModel, terrain\to\farms1.flt,1,1
+LoadModel, terrain\to\wilforest1c.flt,1,1
+LoadModel, terrain\to\wilforest2c.flt,1,1
+LoadModel, terrain\to\rdrrrv1-4.flt,1,1
+LoadModel, terrain\to\rdrrrv1-3.flt,1,1
+LoadModel, terrain\to\rdrr46rv36.flt,1,1
+LoadModel, terrain\to\rdrr6rv1-3.flt,1,1
+LoadModel, terrain\to\rdrr6rv1-4.flt,1,1
+LoadModel, terrain\to\rdrr1rv4-6.flt,1,1
+LoadModel, terrain\to\rdrrrv1-6.flt,1,1
+LoadModel, terrain\to\rdrrrv1-2.flt,1,1
+LoadModel, terrain\to\rdrrrv4-6.flt,1,1
+LoadModel, terrain\to\rdrrrv4i1-4.flt,1,1
+LoadModel, terrain\to\rd14r3-6.flt,1,1
+LoadModel, terrain\to\rd14r3-6ob1.flt,1,1
+LoadModel, terrain\to\rd14r3-6ob1a.flt,1,1
+LoadModel, terrain\to\rd36i14.flt,1,1
+LoadModel, terrain\to\rd36i14ob1.flt,1,1
+LoadModel, terrain\to\rd36i14ob2.flt,1,1
+LoadModel, terrain\to\rd3ti14.flt,1,1
+LoadModel, terrain\to\rd3ti14ob1.flt,1,1
+LoadModel, terrain\to\rd3ti14ob2.flt,1,1
+LoadModel, terrain\to\rd6ti14.flt,1,1
+LoadModel, terrain\to\rd6ti14ob1.flt,1,1
+LoadModel, terrain\to\rd6ti14ob2.flt,1,1
+LoadModel, terrain\to\rd1-4.flt,1,1
+LoadModel, terrain\to\rd1-4ob1.flt,1,1
+LoadModel, terrain\to\rd1-4ob2.flt,1,1
+LoadModel, terrain\to\rd1-4f.flt,1,1
+LoadModel, terrain\to\rd1-3.flt,1,1
+LoadModel, terrain\to\rd1-3f.flt,1,1
+LoadModel, terrain\to\rd1-3ob1.flt,1,1
+LoadModel, terrain\to\rd1-3ob2.flt,1,1
+LoadModel, terrain\to\rd1-6.flt,1,1
+LoadModel, terrain\to\rd1-6ob1.flt,1,1
+LoadModel, terrain\to\rd1-6ob2.flt,1,1
+LoadModel, terrain\to\rd3-4.flt,1,1
+LoadModel, terrain\to\rd3-4ob1.flt,1,1
+LoadModel, terrain\to\rd3-4ob2.flt,1,1
+LoadModel, terrain\to\rd4-6.flt,1,1
+LoadModel, terrain\to\rd4-6f.flt,1,1
+LoadModel, terrain\to\rd4-6ob1.flt,1,1
+LoadModel, terrain\to\rd4-6ob2.flt,1,1
+LoadModel, terrain\to\rr1-3.flt,1,1
+LoadModel, terrain\to\rr1-4.flt,1,1
+LoadModel, terrain\to\rr1-2.flt,1,1
+LoadModel,terrain\to\rr1-6.flt,1,1
+LoadModel, terrain\to\rr4-6.flt,1,1
+LoadModel, terrain\to\rr14i36.flt,1,1
+LoadModel, terrain\to\rr14t3.flt,1,1
+LoadModel, terrain\to\rr14t6.flt,1,1
+LoadModel, terrain\to\rr14rd36.flt,1,1
+LoadModel, terrain\to\rr14rd36ob1.flt,1,1
+LoadModel, terrain\to\btbase1.flt,1,1
+LoadModel, terrain\to\bigtree1c.flt,1,1
+LoadModel, terrain\to\wbush1c.flt,1,1
+LoadModel, terrain\to\hedgebush1c.flt,1,1
+LoadModel, terrain\to\scrub1c.flt,1,1
+LoadModel, terrain\to\startree2c.flt,1,1
+LoadModel, terrain\to\blumaine1c.flt,1,1
+LoadModel, terrain\to\crossclump1c.flt,1,1
+LoadModel, terrain\to\yellowcrops1.flt,1,1
+LoadModel, terrain\to\fullforest1.flt,1,1
+LoadModel, terrain\to\forest2ew.flt,1,1
+LoadModel, terrain\to\forest2ne.flt,1,1
+LoadModel, terrain\to\hforest1n.flt,1,1
+LoadModel, terrain\to\hforest1ne.flt,1,1
+LoadModel, terrain\to\hforestxne.flt,1,1
+LoadModel, terrain\to\cypress1.flt,1,1
+LoadModel, terrain\to\elm1.flt,1,1
+LoadModel, terrain\to\spruce1.flt,1,1
+LoadModel, terrain\to\tallpine1.flt,1,1
+LoadModel, terrain\to\whitefir1.flt,1,1
+LoadModel, terrain\to\shrubs1.flt,1,1
+LoadModel, terrain\to\shrubs2.flt,1,1
+LoadModel, terrain\to\evgshrub1.flt,1,1
+LoadModel, terrain\to\grass1c.flt,1,1
+LoadModel, terrain\to\grass2c.flt,1,1
+LoadModel, terrain\to\biggrass1c.flt,1,1
+LoadModel, terrain\to\medgrass1c.flt,1,1
+LoadModel, terrain\to\smlltree1.flt,1,1
+LoadModel, terrain\to\smlltree2.flt,1,1
+LoadModel, terrain\to\appletree.flt,1,1
+LoadModel, terrain\to\clouddeck1.flt,1,1
+LoadModel, terrain\to\farmfence1.flt,1,1
+LoadModel, terrain\to\farmwall1.flt,1,1
+LoadModel, terrain\to\danger1c.flt,1,1
+LoadModel, terrain\to\bumps1c.flt,1,1
+LoadModel, terrain\to\left1c.flt,1,1
+LoadModel, terrain\to\right1c.flt,1,1
+//LoadModel, terrain\to\citybldggrp1c.flt,1,1
+//LoadModel,terrain\to\dinantground1.flt,1,1
+LoadModel,terrain\to\ctfence5m1.flt,1,1
+LoadModel,terrain\to\rd14r3-6rrsta1.flt,1,1
+LoadModel,terrain\to\rd14r3-6rrsta2.flt,1,1
+LoadModel,terrain\to\rd1tordw4.flt,1,1
+LoadModel,terrain\to\rd4tordw1.flt,1,1
+LoadModel,terrain\to\rdw1-3.flt,1,1
+LoadModel,terrain\to\rdw1-4.flt,1,1
+LoadModel,terrain\to\rdw1-4bird3-6.flt,1,1
+LoadModel,terrain\to\rdw1-4bird3-6ob1.flt,1,1
+LoadModel,terrain\to\rdw14i36.flt,1,1
+LoadModel,terrain\to\rdw14r3-6.flt,1,1
+LoadModel,terrain\to\rdw14r3-6ob1.flt,1,1
+LoadModel,terrain\to\rdw1-6.flt,1,1
+LoadModel,terrain\to\rdw3-4.flt,1,1
+LoadModel,terrain\to\rdw3ti14.flt,1,1
+LoadModel,terrain\to\rdw4-6.flt,1,1
+LoadModel,terrain\to\rdw6ti14.flt,1,1
+LoadModel,terrain\to\clrk150_8-3.flt,1,1
+LoadModel,terrain\to\clrk150_8-5.flt,1,1
+LoadModel,terrain\to\clrk150_8-5x.flt,1,1
+LoadModel,terrain\to\clrk150_8-7.flt,1,1
+LoadModel,terrain\to\clrk150_8x-5.flt,1,1
+LoadModel,terrain\to\rr14rdw36.flt,1,1
+LoadModel,terrain\to\rr14rdw36ob1.flt,1,1
+LoadModel,terrain\to\twn1rd1.flt,1,1
+LoadModel,terrain\to\twn1rd1-3.flt,1,1
+LoadModel,terrain\to\twn1rd1-4.flt,1,1
+LoadModel,terrain\to\twn1rd14i36.flt,1,1
+LoadModel,terrain\to\twn1rd14r36.flt,1,1
+LoadModel,terrain\to\twn1rd14t3.flt,1,1
+LoadModel,terrain\to\twn1rd14t6.flt,1,1
+LoadModel,terrain\to\twn1rd1-6.flt,1,1
+LoadModel,terrain\to\twn1rd3-4.flt,1,1
+LoadModel,terrain\to\twn2rd15r36.flt,1,1
+LoadModel,terrain\to\twn2rd15r36ob1.flt,1,1
+LoadModel,terrain\to\clrk150_8-5xrd36.flt,1,1
+LoadModel,terrain\to\treelinee-wc.flt,1,1
+//LoadModel,terrain\to\offlineac_spawn1.flt,1,1
+LoadModel,terrain\to\practiceairfield1.flt,1,1
+LoadModel,terrain\to\practicetop1.flt,1,1
+LoadModel,terrain\to\strafingrange1.flt,1,1
+LoadModel,terrain\to\tankrangecenter1.flt,1,1
+LoadModel,terrain\to\tankrangetop1.flt,1,1
+LoadModel,terrain\to\riflerange1.flt,1,1
+LoadModel,terrain\to\practicecenter1.flt,1,1
+LoadModel,terrain\to\beach1-4.flt,1,1
+LoadModel,terrain\to\coast1-2.flt,1,1
+LoadModel,terrain\to\coast1-4.flt,1,1
+LoadModel,terrain\to\coast1-4a.flt,1,1
+LoadModel,terrain\to\coast1-4r3.flt,1,1
+LoadModel,terrain\to\coast1-5.flt,1,1
+LoadModel,terrain\to\coast1-6.flt,1,1
+LoadModel,terrain\to\coast1-6d.flt,1,1
+LoadModel,terrain\to\coast1-7.flt,1,1
+LoadModel,terrain\to\coast1beach4.flt,1,1
+LoadModel,terrain\to\coast3-4d.flt,1,1
+LoadModel,terrain\to\coast3-5.flt,1,1
+LoadModel,terrain\to\coast4-6.flt,1,1
+LoadModel,terrain\to\coast4beach1.flt,1,1
+LoadModel,terrain\to\coast8-3.flt,1,1
+LoadModel,terrain\to\coast8-3d.flt,1,1
+LoadModel,terrain\to\coast8-4.flt,1,1
+LoadModel,terrain\to\coast8-5.flt,1,1
+LoadModel,terrain\to\coast8-6.flt,1,1
+LoadModel,terrain\to\coast8-7.flt,1,1
+LoadModel,terrain\to\coast8-7d.flt,1,1,
+LoadModel,terrain\to\coasttown1r.flt,1,1,
+LoadModel,terrain\to\harbor1.flt,1,1,
+LoadModel,terrain\to\rivermouth1h.flt,1,1,
+LoadModel,terrain\to\rv4i1-4.flt,1,1,
+LoadModel,terrain\to\rv4-6.flt,1,1,
+LoadModel,terrain\to\rv1-6.flt,1,1,
+LoadModel,terrain\to\rv1-4.flt,1,1,
+LoadModel,terrain\to\rv1-3.flt,1,1,
+LoadModel,terrain\to\rv1-2.flt,1,1,
+LoadModel,terrain\to\urbrv4-6.flt,1,1,
+LoadModel,terrain\to\urbrv3-4.flt,1,1,
+LoadModel,terrain\to\urbrv1-4sta3.flt,1,1,
+LoadModel,terrain\to\urbrv1-4sta2.flt,1,1,
+LoadModel,terrain\to\urbrv1-4sta1.flt,1,1,
+LoadModel,terrain\to\urbrv1-4s.flt,1,1,
+LoadModel,terrain\to\urbrv1-4n.flt,1,1,
+LoadModel,terrain\to\urbrv1-4.flt,1,1,
+LoadModel,terrain\to\urbrv1-3.flt,1,1,
+LoadModel,terrain\to\urbrr1sta1n.flt,1,1,
+LoadModel,terrain\to\urbrdwi1n.flt,1,1,
+LoadModel,terrain\to\urbrdi1n.flt,1,1,
+LoadModel,terrain\to\urbnorrrv8-4.flt,1,1,
+LoadModel,terrain\to\urbnorrrv4-6.flt,1,1,
+LoadModel,terrain\to\urbnorrrv3-4.flt,1,1,
+LoadModel,terrain\to\urbnorrrv1-5.flt,1,1,
+LoadModel,terrain\to\urbnorrrv1-4.flt,1,1,
+LoadModel,terrain\to\urbnorrrv1-3.flt,1,1,
+LoadModel,terrain\to\urban1axne.flt,1,1,
+LoadModel,terrain\to\urban1ane.flt,1,1,
+LoadModel,terrain\to\urban1an.flt,1,1,
+LoadModel,terrain\to\urban1a3.flt,1,1,
+LoadModel,terrain\to\urban1a2xnesw.flt,1,1,
+LoadModel,terrain\to\urban1a2xne.flt,1,1,
+LoadModel,terrain\to\urban1a2nesw.flt,1,1,
+LoadModel,terrain\to\urban1a2ne.flt,1,1,
+LoadModel,terrain\to\urban1a2.flt,1,1,
+LoadModel,terrain\to\urban1a1.flt,1,1,
+LoadModel,terrain\to\urban1a.flt,1,1,
+
+
+section,CP,scale,flags,timeToProcess
+define,LARGE_CP,0,0,10
+define,MED_CP,0,0,10
+define,CP_BRIDGE,0,0,10
+define,SMALL_CP,0,0,10
+define,CP_GENERIC,0,0,10
+//LoadModel, terrain\cp\cpobject1.flt,1,1,,,,,
+LoadModel,terrain\cp\cpobject1c.flt,1,1,10,,,,
+
+section,FACILITY,scale,"	flags",shippingThreshold,requestThreshold,rpTransferLimit,rpUinitTime,multiplier
+default, ,1,1,500,20000,200,1000,2
+define,DEPOT,,,,,,,
+define,CITY,,,,,,,
+define,FACTORY,,,,,,,
+define,OMT,,,,,,,
+define,SHIPYARD,,,,,,,
+define,FIREBASE,,,,,,,
+define,ARMYBASE,,,,,,,
+define,AIRBASE,,,,,,,
+define,NAVALBASE,,,,,,,
+//define, default,1,"1							",,,,,
+//LoadModel, terrain\fac\facobject1.flt,1,1,,,,,
+LoadModel,terrain\fac\facobject1c.flt,1,1,,
+LoadModel,terrain\fac\facobject1ec.flt,1,1,,
+LoadModel,terrain\fac\facobject1gc.flt,1,1,,
+LoadModel,terrain\fac\facstat1c.flt,1,1,,
+LoadModel,terrain\fac\fackiosk1c.flt,1,1,,
+LoadModel,terrain\fac\facgun1c.flt,1,1,,
+LoadModel,terrain\fac\facfence1c.flt,1,1,,
+LoadModel,terrain\fac\facdinantgun1.flt,1,1,,
+LoadModel,terrain\fac\fbfac1c.flt,1,1,,
+
+section,DEPOT_LINK, haulSpeed, haulCapacity, minCapacity, maxCapacity
+default, ,1,2,3,4
+define, RAIL_LINK,,,,
+define, TRUCK_LINK,,,,
+define, BARGE_LINK,,,,
+define, PACK_ANIMAL_LINK,,,,
+define, WAGON_LINK,,,,,,,,,,,,
+define, PORTER_LINK,,,,,,,,,,,,
+
+
+section,BUILDING,scale,flags,maxDamage,rpsrepair,repairTime,rpsLevel,damageThreshold,pRebuild,flags,weaponSpec,slots,points
+
+default, ,1,1,1000000,1000,10,500,50000,0,0,NONE,100,5
+LoadModel, terrain\bld\bunker1-2.flt,1,1,,,,,,,,,,
+LoadModel, terrain\bld\barracks1-2.flt,1,1,,,,,,,,,,
+LoadModel, terrain\bld\barracks1-3.flt,1,1,,,,,,,,,,
+LoadModel, terrain\bld\barracks1-4.flt,1,1,,,,,,,,,,
+LoadModel, terrain\bld\mshack1c.flt,1,1,,,,,,,,,,
+LoadModel, terrain\bld\gatehs1c.flt,1,1,,,,,,,,,,
+LoadModel, terrain\bld\barracks1c.flt,1,1,,,,,,,,,,
+LoadModel, terrain\bld\ftank1c.flt,1,1,,,,,,,,,,
+LoadModel, terrain\bld\garage1c.flt,1,1,,,,,,,,,,
+LoadModel, terrain\bld\garage1-2.flt,1,1
+LoadModel, terrain\bld\office1c.flt,1,1
+LoadModel, terrain\bld\crates1c.flt,1,1
+LoadModel, terrain\bld\crates1-2.flt,1,1
+LoadModel, terrain\bld\crates1-3.flt,1,1
+LoadModel, terrain\bld\guardtw1c.flt,1,1
+LoadModel, terrain\cap\haphead1c.flt,1,1
+LoadModel, terrain\cap\urbrrstahaphead1b.flt,1,1
+LoadModel, terrain\cap\urbrrstahaphead1a.flt,1,1
+LoadModel, terrain\cap\haphead2.flt,1,1
+LoadModel, terrain\cap\rrstahaphead1.flt,1,1
+LoadModel, terrain\bld\citybldg1c.flt,1,1
+LoadModel, terrain\bld\citybldg2c.flt,1,1
+LoadModel, terrain\bld\citybild1.flt,1,1
+LoadModel, terrain\bld\citybild2.flt,1,1
+LoadModel, terrain\bld\citybild3.flt,1,1
+LoadModel, terrain\bld\citybild4.flt,1,1
+LoadModel, terrain\bld\citybild5.flt,1,1
+LoadModel, terrain\bld\citybild6.flt,1,1,,,,,,,,
+LoadModel, terrain\bld\factory1c.flt,1,1,,,,,,,,
+LoadModel, terrain\bld\tower1-2.flt,1,1,,,,,,,,
+LoadModel, terrain\bld\achangar1-2.flt,1,1,,,,,,,,
+LoadModel, terrain\bld\achangar1c.flt,1,1,,,,,,,,
+LoadModel, terrain\bld\achangar1-3.flt,1,1,,,,,,,,
+LoadModel, terrain\bld\achangar1-4.flt,1,1,,,,,,,,
+LoadModel, terrain\spwn\offlineac_spawn1.flt,1,1,,,,,,,,AC_null.0
+LoadModel, terrain\spwn\ac_spawn1.flt,1,1,,,,,,,,AC_null.0
+LoadModel, terrain\spwn\in_spawn1.flt,1,1,,,,,,,,IN_null.0
+LoadModel, terrain\spwn\gv_spawn1.flt,1,1,,,,,,,,GV_null.0
+LoadModel, terrain\spwn\in_spawnb1c.flt,1,1,,,,,,,,IN_null.0
+LoadModel, terrain\spwn\gv_spawng1c.flt,1,1,,,,,,,,GV_null.0
+LoadModel, terrain\spwn\in_spawnfb1c.flt,1,1,,,,,,,,IN_null.0
+//LoadModel, terrain\spwn\in_spawnfb2c.flt,1,1,,,,,,,,IN_null.0
+LoadModel, terrain\spwn\gv_spawnfb1c.flt,1,1,,,,,,,,GV_null.0
+//LoadModel, terrain\spwn\gv_spawnfb2c.flt,1,1,,,,,,,,GV_null.0
+//LoadModel, terrain\bld\belvil10.flt,1,1,,,,,,,,
+//LoadModel, terrain\bld\belvil2.flt,1,1,,,,,,,,
+//LoadModel, terrain\bld\belvil3.flt,1,1,,,,,,,,
+//LoadModel, terrain\bld\belvil4.flt,1,1,,,,,,,,
+//LoadModel, terrain\bld\belvil5.flt,1,1,,,,,,,,
+//LoadModel, terrain\bld\belvil6.flt,1,1,,,,,,,,
+//LoadModel, terrain\bld\belvil7.flt,1,1,,,,,,,,
+//LoadModel, terrain\bld\belvil8.flt,1,1,,,,,,,,
+//LoadModel, terrain\bld\belvil9.flt,1,1,,,,,,,,
+LoadModel, terrain\bld\stonehut1c.flt,1,1,,,,,,,,
+LoadModel, terrain\bld\station1c.flt,1,1,,,,,,,,
+LoadModel, terrain\bld\infantryfb1c.flt,1,1,,,,,,,,
+//LoadModel, terrain\bld\infantryfb2c.flt,1,1,,,,,,,,
+LoadModel, terrain\bld\armoredfb1c.flt,1,1,,,,,,,,
+//LoadModel, terrain\bld\armoredfb2c.flt,1,1,,,,,,,,
+LoadModel,terrain\bld\flagtable1.flt,1,1
+//LoadModel,terrain\bld\dinantbase1.flt,1,1
+//LoadModel,terrain\bld\dinantbasehmh1.flt,1,1
+//LoadModel,terrain\bld\dinantbasein_spawn1.flt,1,1
+LoadModel,terrain\bld\newchrch.flt,1,1
+LoadModel,terrain\bld\newcloister.flt,1,1
+LoadModel,terrain\bld\rrstation1.flt,1,1
+LoadModel,terrain\bld\urbrrsta1.flt,1,1
+
+//bridge directory,,,
+LoadModel, terrain\brdg\rvrrbr1-3.flt,1,1
+LoadModel, terrain\brdg\rvrrbr4-6.flt,1,1
+LoadModel, terrain\brdg\rvrdbr3-6.flt,1,1
+LoadModel, terrain\brdg\rvrdbr1-4.flt,1,1
+LoadModel, terrain\brdg\rvrdwbr1-4.flt,1,1
+LoadModel, terrain\brdg\urbrvbr1-4.flt,1,1
+
+//autogunner dir,,,
+LoadModel, terrain\ag\britbrennest.flt,1,1
+LoadModel, terrain\ag\frnchm24gunnest.flt,1,1
+LoadModel, terrain\ag\germmgnest1.flt,1,1
+LoadModel, terrain\ag\mgpit1.flt,1,1
+LoadModel, terrain\ag\agat2pounder.flt,1,1
+LoadModel, terrain\ag\agatmle25.flt,1,1
+LoadModel, terrain\ag\agatpak36.flt,1,1
+LoadModel, terrain\ag\atpit1.flt,1,1

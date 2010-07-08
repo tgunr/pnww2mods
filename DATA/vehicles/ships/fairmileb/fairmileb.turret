@@ -1,0 +1,65 @@
+# fairmileb.turret file
+
+# multicrewpos position, whichcrew
+multicrewpos 1 1
+multicrewpos 2 1
+multicrewpos 3 1
+multicrewpos 4 1
+multicrewpos 5 2
+multicrewpos 6 2
+multicrewpos 7 2 
+multicrewpos 8 2 
+
+# Captain
+position = 2
+elevationrate = 2
+traverserate = 6
+type = 360turret
+gunsightfile = 8x30binoc.gs
+neutralelevate = -0.66666666
+neutraltraverse = 0.0
+
+# 2 Pounder Deck Gun
+position = 3
+elevationrate = 4
+traverserate = 15.0
+type = limitedturret
+gunsightfile = vickers3pdr.gs
+gunsightalignmentmountobject = 2pndrmount
+gunsightalignmentrange = 457.2
+
+#turret sound variables
+turrettraverse = turret/hand_turret_move.wav
+turretelevate = turret/hand_turret_move.wav
+
+# Single 20mm (AA) 
+position = 4
+elevationrate = 2
+traverserate = 6
+type = 360turret
+
+# 1st Officer
+position = 5
+elevationrate = 2
+traverserate = 6
+type = 360turret
+gunsightfile = 8x30binoc.gs
+
+# Double mount 20mm (AS)
+position = 6
+elevationrate = 2
+traverserate = 6
+type = 360turret
+
+# Port MG
+position = 7
+elevationrate = 0.5
+traverserate = 0.5
+type = limitedturret
+
+# Starboard MG
+position = 8
+elevationrate = 0.5
+traverserate = 0.5
+type = limitedturret
+

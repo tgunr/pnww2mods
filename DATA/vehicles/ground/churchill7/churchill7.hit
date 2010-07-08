@@ -1,0 +1,152 @@
+# damage resistance file for #British Churchill MkVII
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2,concussive resistance, damage threshold
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 1000000
+
+#Outside collider objects:
+
+d_turrettopfront,20,0,0,0,0
+d_frontturret,152,0,0,0,0
+d_turretside,95,0,0,0,0
+d_turrettopback,20,0,0,0,0
+d_mantlet,152,0,0,0,0
+d_barrel,20,0,0,0,300000
+d_besa,20,0,0,0,30000
+d_rcanopy2,20,0,0,0,0
+d_lcanopy,20,0,0,0,0
+d_hullfrnttop,152,0,0,0,0
+d_glacis,57,0,0,0,0
+d_hullfrontlower,140,0,0,0,0
+d_hullrear,50,0,0,0,0
+d_hull,95,0,0,0,0
+d_hulltop,19,0,0,0,0
+d_hullbottom,25,0,0,0,0
+d_firewall,2,0,0,0,0
+d_drivershatch,140,0,0,0,0
+d_rtsidehatch1,25,0,0,0,0
+d_rtsidehatch2,25,0,0,0,0
+d_ltsidehatch1,25,0,0,0,0
+d_ltsidehatch2,25,0,0,0,0
+d_hullgun,20,0,0,0,30000
+d_lefttreadflap,2,0,0,0,0
+d_ltreadcover,5,0,0,0,0
+d_righttreadflap,2,0,0,0,0
+d_rtreadcover,5,0,0,0,0
+lefttread_6,30,0,0,0,120000
+lefttread_10,30,0,0,0,120000
+lefttread_16,30,0,0,0,120000
+lefttread_18,30,0,0,0,120000
+lefttread_20,30,0,0,0,120000
+lefttread_24,30,0,0,0,120000
+lefttread_26,30,0,0,0,120000
+lefttread_25,30,0,0,0,120000
+d_leftforks,30,0,0,0,120000
+d_idlelt,30,0,0,0,120000
+d_ldw1,30,0,0,0,120000
+d_ldw2,30,0,0,0,120000
+d_strut2,30,0,0,0,120000
+d_ldw3,30,0,0,0,120000
+d_strut3,30,0,0,0,120000
+d_ldw4,30,0,0,0,120000
+d_strut4,30,0,0,0,120000
+d_ldw5,30,0,0,0,120000
+d_strut5,30,0,0,0,120000
+d_ldw6,30,0,0,0,120000
+d_strut6,30,0,0,0,120000
+d_ldw7,30,0,0,0,120000
+d_strut7,30,0,0,0,120000
+d_ldw8,30,0,0,0,120000
+d_strut8,30,0,0,0,120000
+d_ldw9,30,0,0,0,120000
+d_strut9,30,0,0,0,120000
+d_ldw10,30,0,0,0,120000
+d_strut10,30,0,0,0,120000
+d_ldw11,30,0,0,0,120000
+d_strut11,30,0,0,0,120000
+d_drivelt,30,0,0,0,120000
+lefttread_27,25,0,0,0,120000
+lefttread_28,25,0,0,0,120000
+lefttread_29,25,0,0,0,120000
+lefttread_30,25,0,0,0,120000
+lefttread_31,25,0,0,0,120000
+lefttread_32,25,0,0,0,120000
+lefttread_34,25,0,0,0,120000
+lefttread_33,25,0,0,0,120000
+d_rightforks,30,0,0,0,120000
+d_idlert,30,0,0,0,120000
+d_rrdw12,30,0,0,0,120000
+d_rrdw13,30,0,0,0,120000
+d_strut13,30,0,0,0,120000
+d_rrdw14,30,0,0,0,120000
+d_strut14,30,0,0,0,120000
+d_rrdw15,30,0,0,0,120000
+d_strut15,30,0,0,0,120000
+d_rrdw16,30,0,0,0,120000
+d_strut16,30,0,0,0,120000
+d_rrdw17,30,0,0,0,120000
+d_strut17,30,0,0,0,120000
+d_rrdw18,30,0,0,0,120000
+d_strut18,30,0,0,0,120000
+d_rrdw19,30,0,0,0,120000
+d_strut19,30,0,0,0,120000
+d_rrdw20,30,0,0,0,120000
+d_strut20,30,0,0,0,120000
+d_rrdw21,30,0,0,0,120000
+d_strut21,30,0,0,0,120000
+d_rrdw22,30,0,0,0,120000
+d_strut22,30,0,0,0,120000
+d_drivert,30,0,0,0,120000
+
+#Inside collider objects:
+
+d_engine,250,0,0,0,0
+d_mgammo,8,0,0,0,200
+d_transmission,250,0,0,0,0
+d_fuel1,8,0,0,0,0
+d_fuel2,8,0,0,0,0
+d_6pdrammo2,8,0,0,0
+d_6pdr1,8,0,0,0
+d_radiator,8,0,0,0,0
+d_driverhead_1,6.5,0,0,0,1500
+d_drivertorso_1,1.5,0,0,0,1500
+d_driverarms_1,1,0,0,0,1500
+d_driverlegs_1,1,0,0,0,1500
+d_loaderhead,6.5,0,0,0,800
+d_loadertorso,1.5,0,0,0,800
+d_loaderarms,1,0,0,0,800
+d_loaderlegs,1,0,0,0,800
+d_commhead,6.5,0,0,0,300
+d_commtorso,2.5,0,0,0,300
+d_commarms,2.5,0,0,0,300
+d_commlegs,1,0,0,0,800
+d_gunnerhead,6.5,0,0,0,1000
+d_gunnertorso,1.5,0,0,0,1000
+d_gunnerarms,1,0,0,0,1000
+d_gunnerlegs,1,0,0,0,1000
+
+
+

@@ -1,0 +1,43 @@
+#H39 State file
+
+#DOF state type, name of variable, name, time to articulate
+#multiple states requier multiple lines
+dofstate 1 hatchstate1 hatch 1 2000
+#SMOKE: state type, name of variable, DOF name, smoke type, number
+sound 1 enginesound1 enginesound 1
+#smokestate tankfire (emitter point(s)) tankfire number of miliseconds to full intensity
+# eg: smokestate tankfire tfire(1-9) tankfire 4000
+
+smokestate 1 tankfire tfire1 tankfire 40000
+smokestate 1 tankfire tfire2 tankfire 40000
+smokestate 1 tankfire tfire3 tankfire 40000
+
+smokestate 1 fuelfire1 fleak fuelfire 1
+smokestate 1 fuelleak1 fleak fuelleak 1
+smokestate 1 glycolleak1 gleak glycolleak 1 1
+smokestate 1 enginefire1 efire enginefire 1
+smokestate 1 oilleak1 esmoke1 oilleak 1
+smokestate 1 exhaust1 eexh1 exhaust 1
+dofstate 1 canopystate1 canopy 1 2689
+dofstate 2 canopystate2 canopy 2 3557
+dofstate 2 canopystate3 canopy 3 2689
+
+#tread dust
+smokestate 1 treaddust1 tdustl1 treaddust 1
+smokestate 1 treaddust2 tdustl2 treaddust 2
+smokestate 1 treaddust3 tdustr1 treaddust 3
+smokestate 1 treaddust4 tdustr2 treaddust 4
+
+# Crash and burn stuff
+
+effect 1 crashexplosion crashexplosion
+
+effect 1 crashejectriders crashejectriders
+
+# visdamage <vis damage group name> <mass object name(in .mass file)> <emitter object> <ejectspeed>
+visdamage turret mass_turret turretcrap 20
+visdamage engine mass_engine enginecrap 33
+visdamage lefttread mass_lefttread lefttreadcrap 13
+visdamage righttread mass_righttread righttreadcrap 15
+ 
+visdamage hulk

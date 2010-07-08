@@ -1,0 +1,21 @@
+# 7.62mm
+# Rev. 4/18/02 - bloo
+
+type = ballistic
+diameter = .00762
+#weight = 0.0156
+weight = 0.0071
+ammoweight = 0.021
+velocity = 345
+tracertime = 0.0
+object = bullet1
+stretchobject = 1
+explosive = 0.0
+fuzetime = 0.000
+bc = 0.174
+lifetime = 3.0
+dontdisplayfirstframe = 1
+penetrationconstant = 0.00000011977
+ricochetangle = 87
+
+muzzleflash = 1

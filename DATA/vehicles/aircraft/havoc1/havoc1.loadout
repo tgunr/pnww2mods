@@ -1,0 +1,105 @@
+# havoc1 loadout file
+
+# sounds available for the mounts
+sound1 = sounds\bleniv\xgun.wav
+# sound2 = sounds\ju87b\bombrel.wav
+
+loadout = 1
+
+#nose guns
+mountnum = 1
+mountobject = nosegun1x
+mountsound = sound1
+weapon = browning303air
+weaponobject = genericgun1
+
+mountnum = 2
+mountobject = nosegun2x
+mountsound = sound1
+weapon = browning303air
+weaponobject = genericgun1
+
+mountnum = 3
+mountobject = nosegun1y
+mountsound = sound1
+weapon = browning303air
+weaponobject = genericgun1
+
+mountnum = 4
+mountobject = nosegun2y
+mountsound = sound1
+weapon = browning303air
+weaponobject = genericgun1
+
+#Upper Gun
+mountnum = 5
+mountobject = turretgunx
+mountsound = sound1
+weapon = vickersk
+weaponobject = genericgun1
+
+# #Tunnel Gun
+# mountnum = 6
+# mountobject = turretguny
+# mountsound = sound1
+# weapon = vickersk
+# weaponobject = genericgun1
+
+
+# Fwd bombbay 1
+mountnum = 7
+mountobject = f100x1
+# mountsound = sound2
+weapon = gp250
+weaponobject = gp250
+
+# Fwd bombbay 2
+mountnum = 8
+mountobject = f100x2
+# mountsound = sound2
+weapon = gp250
+weaponobject = gp250
+
+# Fwd bombbay 3
+mountnum = 9
+mountobject = f100x3
+# mountsound = sound2
+weapon = gp250
+weaponobject = gp250
+
+# Fwd bombbay 4
+mountnum = 10
+mountobject = f100x4
+# mountsound = sound2
+weapon = gp250
+weaponobject = gp250
+
+# Aft bombbay 1
+mountnum = 11
+mountobject = f100y1
+# mountsound = sound2
+weapon = gp250
+weaponobject = gp250
+
+# Aft bombbay 2
+mountnum = 12
+mountobject = f100y2
+# mountsound = sound2
+weapon = gp250
+weaponobject = gp250
+
+# Aft bombbay 3
+mountnum = 13
+mountobject = f100y3
+# mountsound = sound2
+weapon = gp250
+weaponobject = gp250
+
+# Aft bombbay 4
+mountnum = 14
+mountobject = f100y4
+# mountsound = sound2
+weapon = gp250
+weaponobject = gp250
+
+

@@ -1,0 +1,51 @@
+
+# FlaK 30 Hit file
+
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2,concussive resistance, damage threshold
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 10000
+
+# Inside collider objects: Single sided
+
+d_gunarms,1,0,0
+d_guntorso,1.2,0,0
+d_gunlegs,1,0,0
+d_gunhead,0.4,0,0
+d_comhead,0.4,0,0
+d_comlegs,1.2,0,0
+d_comtorso,1,0,0
+d_comarms,1,0,0
+
+# Outside collider objects: Double sided
+
+d_gunammo,8,0,0
+d_base,15,0,0
+d-lwheel,8,0,0
+d-rwheel,8,0,0
+d_barrel,30,0,0
+d_gun,20,0,0,0,30000
+

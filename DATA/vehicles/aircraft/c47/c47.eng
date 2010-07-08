@@ -1,0 +1,50 @@
+#engine stats file for c47 created 09/29/05 -Hatch.
+[r1830-92]
+type = propeller
+basehorsepower = 1450
+basehpalt = 1130
+basehppress = 1.55
+basehprpm = 2700
+basehpexhausttemp = 1100
+idlerpm = 800
+idlethrottlepos = 0.04
+fuelperhphour = 0.46
+fuelperhphourecon = 0.3
+oilconsumptionperhour = 5.5
+wepmaxpress = 1.6
+milmaxpress = 1.55
+climbmaxpress = 1.32
+econmaxpress = 0.94
+idlepressure = 1
+maxweptime = 300
+maxmiltime = 1800
+weprpm = 2950
+milrpm = 2750
+climbrpm = 2550
+econrpm = 2350
+
+superchargetype = singlespeed
+speed1critalt = 2286
+#speed1efficiency = 1
+speed1efficiencytop = 1
+speed1efficiencybottom = 1
+speed1maxmilboost = 1.55
+speed1maxwepboost = 1.6
+#speed2critalt = 4200
+#speed2efficiencytop = 0.88
+#speed2efficiencybottom = 0.875
+#speed2maxmilboost = 1.15
+#speed2maxwepboost = 1.35
+#shiftalt = 3600
+exhaustthrustangle = 45
+#exhaustthrustforce = 400
+exhaustthrustforce = 100
+weptype = normal
+propgearratio = 0.563
+propspindirection = 1
+
+criticalrpm = 200
+starterrpm = 100
+starterhp = 10
+
+

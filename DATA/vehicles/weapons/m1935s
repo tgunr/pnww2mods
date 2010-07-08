@@ -1,0 +1,16 @@
+# Rev. 4/22/02 - bloo
+
+mass = 0.795
+firetype =  singleshot
+rateoffire = 266
+#syncrateoffire = 133
+ammotype1 = 7_62mmf
+ghostrof = 133
+ghostammotype = 7_62mmf
+dispersion = 1.212
+cliprounds = 8
+reloadtime = 3
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = magazine

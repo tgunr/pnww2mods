@@ -1,0 +1,30 @@
+<?xml version='1.0'?>
+<!DOCTYPE content SYSTEM "content.dtd">
+<content>
+  <body>Arruolare un giocatore nella vostra squadra; livello reclutatore o superiore.
+/recruit &#60;giocatore&#62;
+
+Accetare l&#39;invito ad unirsi ad una squadra.
+/accept
+
+Rifiutare l&#39;invito ad unirsi ad una squadra; si annulla dopo un po&#39;.
+/decline
+
+Lasciare la vostra squadra attuale.
+/leave
+
+Sciogliere una squadra; solo i CO.
+/disdand
+
+Rimuovere un giocatore dalla squadra; livello XO o superiore.
+/remove &#60;giocatore&#62;
+
+Promuovere un giocatore di un livello fino ad un livello sotto il vostro; XO o superiore.
+/promote &#60;giocatore&#62;
+
+Retrocedere un giocatore; limitato ai giocatori sotto il vostro livello; XO o superiore.
+/demote &#60;giocatore&#62;
+
+Lasciare il comando; retrocedersi a XO e rendere il &#60;giocatore&#62; nuovo CO.
+/resign &#60;giocatore&#62;</body>
+</content>

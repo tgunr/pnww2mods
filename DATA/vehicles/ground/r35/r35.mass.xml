@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<masses>
+<mass name="mass_turret"
+	mass="1" volume="1.047368"
+	modelcmx="+0.021988" modelcmy="+0.401910" modelcmz="+1.051965"
+	unitinertiaxx="+0.197602" unitinertiayy="+0.167425" unitinertiazz="+0.311844"
+	unitinertiaxy="-0.000000" unitinertiaxz="-0.000000" unitinertiayz="-0.004883"/>
+<mass name="mass_turret_1"
+	mass="1" volume="0.031476"
+	modelcmx="-0.027888" modelcmy="-0.400530" modelcmz="+1.025625"
+	unitinertiaxx="+0.019041" unitinertiayy="+0.041048" unitinertiazz="+0.028410"
+	unitinertiaxy="+0.000000" unitinertiaxz="+0.000000" unitinertiayz="-0.005288"/>
+<mass name="mass_turret_2"
+	mass="1" volume="0.045208"
+	modelcmx="-0.197547" modelcmy="+0.156961" modelcmz="+1.422838"
+	unitinertiaxx="+0.021884" unitinertiayy="+0.022239" unitinertiazz="+0.037333"
+	unitinertiaxy="+0.000000" unitinertiaxz="-0.000000" unitinertiayz="+0.000000"/>
+<mass name="mass_lefttread"
+	mass="1" volume="0.053628"
+	modelcmx="-0.754840" modelcmy="-0.278265" modelcmz="-0.191746"
+	unitinertiaxx="+0.038269" unitinertiayy="+0.029603" unitinertiazz="+0.019808"
+	unitinertiaxy="+0.000000" unitinertiaxz="+0.000000" unitinertiayz="-0.002147"/>
+<mass name="mass_lefttread_1"
+	mass="1" volume="0.004676"
+	modelcmx="-0.754164" modelcmy="-0.006684" modelcmz="+0.241808"
+	unitinertiaxx="+0.003844" unitinertiayy="+0.005659" unitinertiazz="+0.005157"
+	unitinertiaxy="+0.000000" unitinertiaxz="-0.000000" unitinertiayz="+0.000000"/>
+<mass name="mass_righttread"
+	mass="1" volume="0.024769"
+	modelcmx="+0.798816" modelcmy="+1.256510" modelcmz="-0.271537"
+	unitinertiaxx="+0.020184" unitinertiayy="+0.013578" unitinertiazz="+0.013578"
+	unitinertiaxy="+0.000000" unitinertiaxz="+0.000000" unitinertiayz="-0.000000"/>
+<mass name="mass_righttread_1"
+	mass="1" volume="0.004687"
+	modelcmx="+0.798140" modelcmy="-0.006684" modelcmz="+0.241808"
+	unitinertiaxx="+0.003820" unitinertiayy="+0.005396" unitinertiazz="+0.005396"
+	unitinertiaxy="+0.000000" unitinertiaxz="-0.000000" unitinertiayz="+0.000000"/>
+</masses>

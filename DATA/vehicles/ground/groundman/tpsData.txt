@@ -1,0 +1,97 @@
+#
+# data file for TPS system
+#
+
+toProneInTime = 0.3
+toProneOutTime = 0.4
+toProneWeight = 2.0
+
+toStandInTime = 0.2
+toStandOutTime = 0.4
+toStandWeight = 2.0
+
+emoteCombatMaxDistance = 20.0
+emoteFullBodyMaxDistance = 20.0
+
+fireSnapUpTime = 0.3
+fireSnapDownTime = 0.5
+fireHoldTime = 0.5
+
+deathSoundFMin = 15.0
+deathSoundFMax = 75.0
+
+#
+# SOUNDS
+#
+#crawlSound = sounds\troop\crawl.wav
+#crawlSoundHalfDistance = 2.0
+#crawlSoundMaxDistance = 5.0
+
+#creepSound = sounds\troop\creep.wav
+#creepSoundHalfDistance = 2.0
+#creepSoundMaxDistance = 3.0
+
+#creepAimSound = sounds\troop\creepaim.wav
+#creepAimSoundHalfDistance = 2.0
+#creepAimSoundMaxDistance = 3.0
+
+#trotSound = sounds\troop\trottps.wav
+#trotSoundHalfDistance = 7.0
+#trotSoundMaxDistance = 40.0
+
+#trotAimSound = sounds\troop\trotaim.wav
+#trotAimSoundHalfDistance = 5.0
+#trotAimSoundMaxDistance = 30.0
+
+#sprintSound = sounds\troop\sprinttps.wav
+#sprintSoundHalfDistance = 7.0
+#sprintSoundMaxDistance = 50.0
+
+waterSound = sounds\troop\waterwalk.wav
+waterSoundHalfDistance = 2.0
+waterSoundMaxDistance = 20.0
+
+
+#
+# bone #/hit location mapping
+# 0 = head, 1 = torso, 2 = arms, 3 = legs, 4 = invalid
+# 
+boneLoc = 0 1
+boneLoc = 1 1
+boneLoc = 2 1
+boneLoc = 3 1
+boneLoc = 4 1
+boneLoc = 5 0
+boneLoc = 6 0
+boneLoc = 7 4
+boneLoc = 8 1
+boneLoc = 9 2
+boneLoc = 10 2
+boneLoc = 11 2
+boneLoc = 12 2
+boneLoc = 13 4
+boneLoc = 14 2
+boneLoc = 15 2
+boneLoc = 16 2
+boneLoc = 17 4
+boneLoc = 18 1
+boneLoc = 19 2
+boneLoc = 20 2
+boneLoc = 21 2
+boneLoc = 22 2
+boneLoc = 23 4
+boneLoc = 24 2
+boneLoc = 25 2
+boneLoc = 26 2
+boneLoc = 27 4
+boneLoc = 28 3
+boneLoc = 29 3
+boneLoc = 30 3
+boneLoc = 31 3
+boneLoc = 32 4
+boneLoc = 33 3
+boneLoc = 34 3
+boneLoc = 35 3
+boneLoc = 36 3
+boneLoc = 37 3
+boneLoc = 38 4

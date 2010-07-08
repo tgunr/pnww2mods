@@ -1,0 +1,110 @@
+#havoc1 hit file 
+#
+#thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\tex\avhit1.wav
+-hitsound2 = sounds\tex\avhit2.wav
+-hitsound3 = sounds\tex\avhit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 5000
+
+#External
+
+dprop1,12,0,0,0,0
+dprop2,12,0,0,0,0
+d_engine1cowl,0.75,0,0,0,0
+d_engine2cowl,0.75,0,0,0,0
+d_lnacelle,0.75,0,0,0,0
+d_rnacelle,0.75,0,0,0,0
+d_linnerwing,1.5,0,0,0,0
+d_linnerflap,1.5,0,0,0,0
+d_louterflap,1.5,0,0,0,0
+d_louterwing,1.5,0,0,0,0
+d_lailerion,1.5,0,0,0,0
+d_rinnerwing,1.5,0,0,0,0
+d_rinnerflap,1.5,0,0,0,0
+d_routerflap,1.5,0,0,0,0
+d_routerwing,1.5,0,0,0,0
+d_raileron,1.5,0,0,0,0
+d_lhstab,1.5,0,0,0,0
+d_lelevator,1.5,0,0,0,0
+d_rhstab,1.5,0,0,0,0
+d_relevator,1.5,0,0,0,0
+d_vstab,2,0,0,0,0
+d_rudder,1.5,0,0,0,0
+d_fuselage,1.75,0,0,0,0
+d_hatch2,0.3,0,0,0,0
+d_canopy3,0.3,0,0,0,0
+d_aftcanopyfixed,0.3,0,0,0,0
+d_hatch4,0.3,0,0,0,0
+d_pilotglass,0.3,0,0,0,0
+d_canopy1,0.3,0,0,0,0
+d_noseglass,0.3,0,0,0,0
+
+#Internal
+
+d_gear1,3,150,150
+d_gear2,3,150,150
+d_gear3,3,150,150
+d_fuel1,3,0,0,0,0
+d_fuel2,3,0,0,0,0
+engine1,100,225,225
+engine2,100,225,225
+oilsys1,3,0,0,0,0
+oilsys2,3,0,0,0,0
+oilcool1,3,0,0,0,0
+oilcool2,3,0,0,0,0
+doxy1,3,0,0,0,0
+doxy2,3,0,0,0,0
+doxy3,3,0,0,0,0
+radio1,3,0,0,0,0
+dhead1,0.4,0,0,0,0
+dhead2,1.4,0,0,0,0
+dhead3_1,1.4,0,0,0,0
+dtorso1,1.2,0,0,0,0
+dtorso2,1.2,0,0,0,0
+dtorso3_1,1.2,0,0,0,0
+darms1,1.0,0,0,0,0
+darms2,1.0,0,0,0,0
+darms3_1,1.0,0,0,0,0
+degs1,1.0,0,0,0,0
+degs2,1.0,0,0,0,0
+degs3_1,1.0,0,0,0,0
+d_nosebulkhead,1,0,0,0,0
+d_armorglass,15,0,0,0,0
+d_pilotheadarmor,11,225,225
+d_pilotbodyarmor,11,225,225
+d_pilotseatarmor,9,225,225
+d_fueltank1armor,9,225,225
+d_fueltank2armor,9,225,225
+d_gunnerarmor1,9,225,225
+d_gunnerarmor2,9,225,225
+d_gun3,30,150,150
+d_lunosegun,3,150,150
+d_lunosegunammo,5,150,150
+d_lbnosegun,3,150,150
+d_lbnosegunammo,5,150,150
+d_runosegun,3,150,150
+d_runosegunammo,5,150,150
+d_rbnosegun,3,150,150
+d_rbnosegunammo,5,150,150
+
+

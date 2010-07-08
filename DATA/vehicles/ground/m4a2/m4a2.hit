@@ -1,0 +1,128 @@
+# damage resistance file for m4a2 sherman (m4a2)
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2,concussive resistance, damage threshold
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 1000000
+
+#External
+
+d_ldrivehatch,19,0,0,0,0
+d_rdrivehatch,19,0,0,0,0
+d_turretguard,51,0,0,0,0
+d_gunbarrel,20,0,0,0,300000
+d_mantlet,64,0,0,0,0
+d_turretfront,74,0,0,0,0
+d_turretback,46,0,0,0,0
+d_turretleft,46,0,0,0,0
+d_turretright,46,0,0,0,0
+d_turrettop,20,0,0,0,0
+d_1cupola,25.4,0,0,0,0
+d_2cupola,25.4,0,0,0,0
+d_mgun,45,0,0,0,0
+d_topbak,19,0,0,0,0
+d_drivershatch,51,0,0,0,0
+d_sideback,38,0,0,0,0
+d_ammoarmor,25,0,0,0,0
+d_fronthull,80,0,0,0,0
+d_underarmor,25,0,0,0,0
+d_upperfront,51,0,0,0,0
+d_righthull,38,0,0,0,0
+d_lefthull,38,0,0,0,0
+d_leftbottom,38,0,0,0,0
+d_rightbottom,38,0,0,0,0
+d_l1,30,0,0,0,100000
+d_l2,30,0,0,0,100000
+d_l3,30,0,0,0,100000
+d_r1,30,0,0,0,100000
+d_r2,30,0,0,0,100000
+d_r3,30,0,0,0,100000
+d_righttread,25,0,0,0,100000
+d_return4,30,0,0,0,100000
+d_return5,30,0,0,0,100000
+d_return6,30,0,0,0,100000
+d_strutr 1,30,0,0,0,100000
+d_strutr 2,30,0,0,0,100000
+d_strutr 3,30,0,0,0,100000
+d_strutr 4,30,0,0,0,100000
+d_strutr 5,30,0,0,0,100000
+d_strutr 6,30,0,0,0,100000
+d_road7,30,0,0,0,100000
+d_road8,30,0,0,0,100000
+d_road9,30,0,0,0,100000
+d_road10,30,0,0,0,100000
+d_road11,30,0,0,0,100000
+d_road12,30,0,0,0,100000
+d_idlelright,30,0,0,0,100000
+d_driver,30,0,0,0,100000
+d_lefttread,25,0,0,0,100000
+d_return1,30,0,0,0,100000
+d_return2,30,0,0,0,100000
+d_return3,30,0,0,0,100000
+d_strutl 1,30,0,0,0,100000
+d_strutl 2,30,0,0,0,100000
+d_strutl 3,30,0,0,0,100000
+d_strutl 4,30,0,0,0,100000
+d_strutl 5,30,0,0,0,100000
+d_strutl 6,30,0,0,0,100000
+d_road1,30,0,0,0,100000
+d_road2,30,0,0,0,100000
+d_road3,30,0,0,0,100000
+d_road4,30,0,0,0,100000
+d_road5,30,0,0,0,100000
+d_road6,30,0,0,0,100000
+d_idleleft,30,0,0,0,100000
+d_drivel,30,0,0,0,100000
+d_firewall,5,0,0,0,0
+
+#Internal
+
+d_engine1,250,0,0,0,0
+d_engine2,250,0,0,0,0
+d_transmission,250,0,0,0,0
+d_radiator1,8,0,0,0,0
+d_radiator2,8,0,0,0,0
+d_fuel1,8,0,0,0,0
+d_fuel2,8,0,0,0,0
+d_75ammo1,8,0,0,0,0
+d_75ammo2,8,0,0,0,0
+d_75ammo3,8,0,0,0,0
+d_30calammo,8,0,0,0,200
+d_driverhead_1,6.5,0,0,0,1000
+d_driverarms_1,1,0,0,0,1000
+d_drivertorso_1,1.2,0,0,0,1000
+d_driverlegs_1,1,0,0,0,1000
+d_loaderlegs,1,0,0,0,800
+d_loaderhead,6.5,0,0,0,800
+d_loadertorso,1.2,0,0,0,800
+d_loaderarms,1,0,0,0,800
+d_commtorso,1,0,0,0,300
+d_commarms,1,0,0,0,300
+d_commhead,6.5,0,0,0,300
+d_commlegs,1,0,0,0,800
+d_gunnerlegs,1,0,0,0,1000
+d_gunnerhead,6.5,0,0,0,1000
+d_gunnerarms,1,0,0,0,1000
+d_gunnertorso,1.2,0,0,0,1000

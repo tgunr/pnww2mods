@@ -1,0 +1,43 @@
+position = 1
+control = radio
+# control = hatchcontrol
+control = canopycontrol
+control = auxsight
+control = map
+control = enginerpm
+control = steering
+control = clutch
+control = shiftup
+control = shiftdown
+control = reverse
+control = gas
+control = engstart
+control = leftbrake
+control = rightbrake
+control = bothbrake
+control = lefttrackclutch
+control = righttrackclutch
+control = hoist
+control = ridetransport
+
+# Commander
+position = 2
+control = radio
+control = canopycontrol
+control = map
+control = turretraverse
+control = turretelevate
+
+# Gunner
+position = 3
+control = radio
+control = canopycontrol
+control = map
+control = turretraverse
+control = primarytrigger
+control = secondarytrigger
+control = turretraverse
+control = turretelevate
+control = cycleammo
+control = gunsightrangedec
+control = gunsightrangeinc

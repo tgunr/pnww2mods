@@ -1,0 +1,19 @@
+# created for Stuart M6 gun - Doc. 10/07/03
+# modified for APCBC correction
+type = ballistic
+diameter = .037
+weight = 0.86
+velocity = 895
+tracertime = 7.9
+object = bullet1
+explosive = 0.0
+fuzetime = 0.0
+bc = 1.81
+lifetime = 8.0
+ricochetangle = 87
+modelspall = 1
+penetrationconstant = 0.000001455
+dontdisplayfirstframe = 1 
+muzzleflash = 3
+hiteffect = heavymachinegun
+tracerscale = 3

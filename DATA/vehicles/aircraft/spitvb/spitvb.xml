@@ -1,0 +1,11 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="spitvb" type="air" shape="spitvb" description="Spitfire Mk Vb" icon="Spitfire">
+<include file="spitvb.veh.xml"/>
+<include file="spitvb.state.xml"/>
+<include file="spitvb.hit.xml"/>
+<include file="spitvb.loadout.xml"/>
+<include file="spitvb.xsound.xml"/>
+<include file="spitvb.control.xml"/>
+<include file="spitvb.mass.xml"/>
+</vehicle>

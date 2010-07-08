@@ -1,0 +1,53 @@
+# driver
+# no hatch so volume 1.0
+# canopy takes care of being inside
+position = 1
+hatchclosedsoundvolume = 1.0
+hatchopensoundvolume = 1.0
+canopyclosedsoundvolume = 0.1
+canopyopensoundvolume = 1.0
+engineidlevol = 0.5
+enginefullpowervol = 0.1
+hatchsound = sounds\slide_hatch.wav
+canopysound = sounds\slide_hatch.wav
+
+# commander
+# no hatch so volume 1.0
+# canopy takes care of sticking head out
+# as well as being buttoned up
+position = 2
+hatchclosedsoundvolume = 1.0
+hatchopensoundvolume = 1.0
+canopyclosedsoundvolume = 0.1
+canopyopensoundvolume = 1.0
+engineidlevol = 0.5
+enginefullpowervol = 0.1
+canopysound = sounds\hatch_open2.wav
+canopyclosesound = sounds\hatch_close2.wav
+
+# gunner
+# that small window in front doesn't make much difference
+# however, that big hatch on the side sure as heck does
+position = 3
+hatchclosedsoundvolume = 1.0
+hatchopensoundvolume = 1.0
+canopyclosedsoundvolume = 0.1
+canopyopensoundvolume = 1.0
+engineidlevol = 0.5
+enginefullpowervol = 0.1
+hatchsound = sounds\slide_hatch.wav
+canopysound = sounds\slide_hatch.wav
+
+# loader
+# he's pretty shielded from the world
+# with no easy exit
+# however we use canopy part to ensure he's mostly deaf
+# to the outside world
+position = 4
+hatchclosedsoundvolume = 1.0
+hatchopensoundvolume = 1.0
+canopyclosedsoundvolume = 0.1
+canopyopensoundvolume = 1.0
+engineidlevol = 0.5
+enginefullpowervol = 0.1
+

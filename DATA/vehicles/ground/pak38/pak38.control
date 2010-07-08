@@ -1,0 +1,30 @@
+
+# PaK 36 Control File
+
+# Commander
+position = 1
+control = radio
+#control = canopycontrol
+control = map
+control = auxsight
+control = deployweapon
+control = towbar
+control = atgunleftright
+control = atgunforwardbackwards
+control = turretraverse
+control = turretelevate
+control = hoist
+control = ridetransport
+
+# Main Gunner
+position = 2
+#control = hatchcontrol
+#control = canopycontrol
+#control = deployweapon
+control = map
+control = primarytrigger
+control = turretraverse
+control = turretelevate
+control = cycleammo
+control = gunsightrangedec
+control = gunsightrangeinc

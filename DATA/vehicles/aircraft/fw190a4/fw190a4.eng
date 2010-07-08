@@ -1,0 +1,72 @@
+#engine stats file for Fw190a4
+#created 18/12/04 - Doc.
+
+[bmw801d2]
+type = propeller
+basehorsepower = 1730
+basehpalt = 800
+basehppress = 1.42
+basehprpm = 2700
+basehpexhausttemp = 1100
+idlerpm = 800
+idlethrottlepos = 0.037
+# most engines mil power fuel consumption is 360-380
+fuelperhphour = 0.240
+# most engines econ power fuel consumption is 190-200
+# this setting used for econrpm only
+oilconsumptionperhour = 5
+neg_g_fuel_cutout = 0
+neg_g_time_limit = 35
+
+# note: minimum pressure to maintain rpm will be used
+#wepmaxpress = 1.0
+#milmaxpress = .85
+#climbmaxpress = 0.85
+#conmaxpress = 0.65
+#idlepressureatidle = 0.05
+#idlepressureatmaxrpm = -0.2
+# in seconds
+maxweptime = 300
+maxmiltime = 1800
+weprpm = 2700
+milrpm = 2700
+climbrpm = 2400
+econrpm = 2300
+
+superchargetype = twospeed
+speed1critalt = 1700
+speed1efficiency = 1
+# 1efftop was 1
+speed1efficiencytop = 1
+# eeffbottom was .97
+speed1efficiencybottom = .97
+speed1maxclimbboost = 1.32
+speed1maxmilboost = 1.32
+speed1maxwepboost = 1.42
+speed2critalt = 5750
+speed2efficiency = 1
+# 2efftop was .775
+speed2efficiencytop = .84
+# 2effbottom was .79
+speed2efficiencybottom = .80
+speed2maxclimbboost = 1.32
+speed2maxmilboost = 1.32
+speed2maxwepboost = 1.42
+shiftalt = 3000
+
+#degrees from the thrust line for exhaust thrust
+exhaustthrustangle = 5
+# 1 lb = 4.45N this is in newtons
+exhaustthrustforce = 350
+
+weptype = normal
+
+propgearratio = 0.54
+
+# 1 = clockwise from pilot's perspective if he's behind the prop
+# -1 = counterclockwise
+propspindirection = 1
+
+criticalrpm = 200
+starterrpm = 125
+starterhp = 10

@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!-- Material Properties File -->
+<!-- 3 hit sounds for random selection -->
+<!-- Bullet types: 
+	1 = BULLET CONCRETE
+	2 = BULLET GROUND
+	3 = BULLET METALDENT
+	4 = BULLET METALHOLE
+	5 = BULLET WALLHOLE
+	6 = BULLET RICOCHET
+	7 = BULLET GLASS
+	8 = BULLET SKIN
+-->	 
+<MATERIALPROPS>
+	<material name = "prop clear">
+		<sound1>sounds/tex/gvhit1.wav</sound1>
+		<sound2>sounds/tex/gvhit2.wav</sound2>
+		<sound3>sounds/tex/gvhit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "aluminum">
+		<sound1>sounds/tex/gvhit1.wav</sound1>
+		<sound2>sounds/tex/gvhit2.wav</sound2>
+		<sound3>sounds/tex/gvhit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+		<bullettype>3</bullettype>
+		<bulleteffectname>metalbullethit</bulleteffectname>
+	</material>
+	<material name = "perspex">
+		<sound1>sounds/hitconcrete1.wav</sound1>
+		<sound2>sounds/hitconcrete2.wav</sound2>
+		<sound3>sounds/hitconcrete3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "43">
+		<sound1>sounds/hitconcrete1.wav</sound1>
+		<sound2>sounds/hitconcrete2.wav</sound2>
+		<sound3>sounds/hitconcrete3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "yellow lt 1">
+		<sound1>sounds/tex/gvhit1.wav</sound1>
+		<sound2>sounds/tex/gvhit2.wav</sound2>
+		<sound3>sounds/tex/gvhit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "dk matte mt">
+		<sound1>sounds/tex/gvhit1.wav</sound1>
+		<sound2>sounds/tex/gvhit2.wav</sound2>
+		<sound3>sounds/tex/gvhit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "tank metal">
+		<sound1>sounds/tex/gvhit1.wav</sound1>
+		<sound2>sounds/tex/gvhit2.wav</sound2>
+		<sound3>sounds/tex/gvhit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+		<bullettype>3</bullettype>
+		<bulleteffectname>metalbullethit</bulleteffectname>
+	</material>
+  <material name = "int_metal">
+    <sound1>sounds/tex/gvhit1.wav</sound1>
+    <sound2>sounds/tex/gvhit2.wav</sound2>
+    <sound3>sounds/tex/gvhit3.wav</sound3>
+    <minvolume>0.15</minvolume>
+    <maxvolumeenergy>100000</maxvolumeenergy>
+    <bullettype>3</bullettype>
+    <bulleteffectname>metalbullethit</bulleteffectname>
+  </material>
+  <material name = "s">
+		<sound1>sounds/hitconcrete1.wav</sound1>
+		<sound2>sounds/hitconcrete2.wav</sound2>
+		<sound3>sounds/hitconcrete3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "44">
+		<sound1>sounds/hitconcrete1.wav</sound1>
+		<sound2>sounds/hitconcrete2.wav</sound2>
+		<sound3>sounds/hitconcrete3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "med tank mt">
+		<sound1>sounds/tex/gvhit1.wav</sound1>
+		<sound2>sounds/tex/gvhit2.wav</sound2>
+		<sound3>sounds/tex/gvhit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "blk matte m">
+		<sound1>sounds/hitconcrete1.wav</sound1>
+		<sound2>sounds/hitconcrete2.wav</sound2>
+		<sound3>sounds/hitconcrete3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "foliage">
+		<sound1>sounds/hitwood1.wav</sound1>
+		<sound2>sounds/hitwood2.wav</sound2>
+		<sound3>sounds/hitwood3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "skin">
+		<sound1>sounds/fpshit1.wav</sound1>
+		<sound2>sounds/fpshit2.wav</sound2>
+		<sound3>sounds/fpshit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+		<bulleteffectname>bloodbullethit</bulleteffectname>
+	</material>
+	<material name = "blackmatte">
+		<sound1>sounds/tex/gvhit1.wav</sound1>
+		<sound2>sounds/tex/gvhit2.wav</sound2>
+		<sound3>sounds/tex/gvhit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "45">
+		<sound1>sounds/hitconcrete1.wav</sound1>
+		<sound2>sounds/hitconcrete2.wav</sound2>
+		<sound3>sounds/hitconcrete3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "dk tank mt">
+		<sound1>sounds/tex/gvhit1.wav</sound1>
+		<sound2>sounds/tex/gvhit2.wav</sound2>
+		<sound3>sounds/tex/gvhit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "med paint m">
+		<sound1>sounds/hitconcrete1.wav</sound1>
+		<sound2>sounds/hitconcrete2.wav</sound2>
+		<sound3>sounds/hitconcrete3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "british1">
+		<sound1>sounds/fpshit1.wav</sound1>
+		<sound2>sounds/fpshit2.wav</sound2>
+		<sound3>sounds/fpshit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "blk tank mt">
+		<sound1>sounds/tex/gvhit1.wav</sound1>
+		<sound2>sounds/tex/gvhit2.wav</sound2>
+		<sound3>sounds/tex/gvhit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+		<bullettype>3</bullettype>
+	</material>
+	<material name = "dk paint m">
+		<sound1>sounds/tex/gvhit1.wav</sound1>
+		<sound2>sounds/tex/gvhit2.wav</sound2>
+		<sound3>sounds/tex/gvhit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+		<bullettype>3</bullettype>
+	</material>
+	<material name = "german1">
+		<sound1>sounds/fpshit1.wav</sound1>
+		<sound2>sounds/fpshit2.wav</sound2>
+		<sound3>sounds/fpshit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+  <material name = "wood">
+    <sound1>sounds/hitwood1.wav</sound1>
+    <sound2>sounds/hitwood2.wav</sound2>
+    <sound3>sounds/hitwood3.wav</sound3>
+    <minvolume>0.15</minvolume>
+    <maxvolumeenergy>100000</maxvolumeenergy>
+    <bullettype>5</bullettype>
+    <bulleteffectname>woodbullethit</bulleteffectname>
+  </material>
+  <material name = "int_wood">
+    <sound1>sounds/hitwood1.wav</sound1>
+    <sound2>sounds/hitwood2.wav</sound2>
+    <sound3>sounds/hitwood3.wav</sound3>
+    <minvolume>0.15</minvolume>
+    <maxvolumeenergy>100000</maxvolumeenergy>
+    <bullettype>5</bullettype>
+    <bulleteffectname>woodbullethit</bulleteffectname>
+  </material>
+  <material name = "matte metal">
+		<sound1>sounds/tex/gvhit1.wav</sound1>
+		<sound2>sounds/tex/gvhit2.wav</sound2>
+		<sound3>sounds/tex/gvhit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+		<bullettype>3</bullettype>
+    <bulleteffectname>metalbullethit</bulleteffectname>
+  </material>
+  <material name = "paint metal">
+		<sound1>sounds/tex/gvhit1.wav</sound1>
+		<sound2>sounds/tex/gvhit2.wav</sound2>
+		<sound3>sounds/tex/gvhit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+    <bulleteffectname>metalbullethit</bulleteffectname>
+    <bullettype>3</bullettype>
+	</material>
+	<material name = "instrument">
+		<sound1>sounds/tex/gvhit1.wav</sound1>
+		<sound2>sounds/tex/gvhit2.wav</sound2>
+		<sound3>sounds/tex/gvhit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+		<bullettype>3</bullettype>
+	</material>
+  <material name = "build rock">
+    <sound1>sounds/hitconcrete1.wav</sound1>
+    <sound2>sounds/hitconcrete2.wav</sound2>
+    <sound3>sounds/hitconcrete3.wav</sound3>
+    <minvolume>0.15</minvolume>
+    <maxvolumeenergy>100000</maxvolumeenergy>
+    <bullettype>1</bullettype>
+    <bulleteffectname>stonebullethit</bulleteffectname>
+  </material>
+  <material name = "int_concret">
+    <sound1>sounds/hitconcrete1.wav</sound1>
+    <sound2>sounds/hitconcrete2.wav</sound2>
+    <sound3>sounds/hitconcrete3.wav</sound3>
+    <minvolume>0.15</minvolume>
+    <maxvolumeenergy>100000</maxvolumeenergy>
+    <bullettype>1</bullettype>
+    <bulleteffectname>stonebullethit</bulleteffectname>
+  </material>
+  <material name = "med int">
+		<sound1>sounds/hitconcrete1.wav</sound1>
+		<sound2>sounds/hitconcrete2.wav</sound2>
+		<sound3>sounds/hitconcrete3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "blue lt 1">
+		<sound1>sounds/hitconcrete1.wav</sound1>
+		<sound2>sounds/hitconcrete2.wav</sound2>
+		<sound3>sounds/hitconcrete3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "42">
+    <sound1>sounds/tex/gvhit1.wav</sound1>
+    <sound2>sounds/tex/gvhit2.wav</sound2>
+    <sound3>sounds/tex/gvhit3.wav</sound3>
+    <minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+		<bullettype>3</bullettype>
+		<bulleteffectname>metalbullethit</bulleteffectname>
+	</material>
+	<material name = "gloss metal">
+		<sound1>sounds/tex/gvhit1.wav</sound1>
+		<sound2>sounds/tex/gvhit2.wav</sound2>
+		<sound3>sounds/tex/gvhit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+		<bullettype>3</bullettype>
+	</material>
+	<material name = "gunsight">
+		<sound1>sounds/tex/gvhit1.wav</sound1>
+		<sound2>sounds/tex/gvhit2.wav</sound2>
+		<sound3>sounds/tex/gvhit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "build wood">
+		<sound1>sounds/hitwood1.wav</sound1>
+		<sound2>sounds/hitwood2.wav</sound2>
+		<sound3>sounds/hitwood3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+		<bullettype>5</bullettype>
+		<bulleteffectname>woodbullethit</bulleteffectname>
+	</material>
+	<material name = "dark int">
+		<sound1>sounds/tex/gvhit1.wav</sound1>
+		<sound2>sounds/tex/gvhit2.wav</sound2>
+		<sound3>sounds/tex/gvhit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "green lt 1">
+		<sound1>sounds/tex/gvhit1.wav</sound1>
+		<sound2>sounds/tex/gvhit2.wav</sound2>
+		<sound3>sounds/tex/gvhit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "troopshadow">
+		<sound1>sounds/hitconcrete1.wav</sound1>
+		<sound2>sounds/hitconcrete2.wav</sound2>
+		<sound3>sounds/hitconcrete3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+  <material name = "transglas">
+    <sound1>sounds/hitglass.wav</sound1>
+    <sound2>sounds/hitglass.wav</sound2>
+    <sound3>sounds/hitglass.wav</sound3>
+    <minvolume>0.15</minvolume>
+    <maxvolumeenergy>100000</maxvolumeenergy>
+    <bullettype>7</bullettype>
+  </material>
+  <material name = "int_glass">
+    <sound1>sounds/hitglass.wav</sound1>
+    <sound2>sounds/hitglass.wav</sound2>
+    <sound3>sounds/hitglass.wav</sound3>
+    <minvolume>0.15</minvolume>
+    <maxvolumeenergy>100000</maxvolumeenergy>
+    <bullettype>7</bullettype>
+  </material>
+  <material name = "interior">
+		<sound1>sounds/hitwood1.wav</sound1>
+		<sound2>sounds/hitwood2.wav</sound2>
+		<sound3>sounds/hitwood3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+		<bullettype>5</bullettype>
+		<bulleteffectname>stonebullethit</bulleteffectname>
+	</material>
+	<material name = "bronze">
+		<sound1>sounds/tex/gvhit1.wav</sound1>
+		<sound2>sounds/tex/gvhit2.wav</sound2>
+		<sound3>sounds/tex/gvhit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+		<bullettype>3</bullettype>
+	</material>
+	<material name = "red light 1">
+		<materialid>39</materialid>
+		<sound1>sounds/hitglass.wav</sound1>
+		<sound2>sounds/hitglass.wav</sound2>
+		<sound3>sounds/hitglass.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "redmetal">
+		<sound1>sounds/tex/gvhit1.wav</sound1>
+		<sound2>sounds/tex/gvhit2.wav</sound2>
+		<sound3>sounds/tex/gvhit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+		<bulleteffectname>metalbullethit</bulleteffectname>
+	</material>
+	<material name = "default">
+		<sound1>sounds/hitdirt1.wav</sound1>
+		<sound2>sounds/hitdirt2.wav</sound2>
+		<sound3>sounds/hitdirt3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+		<bullettype>2</bullettype>
+	</material>
+  <material name = "int_dirt">
+    <sound1>sounds/hitdirt1.wav</sound1>
+    <sound2>sounds/hitdirt2.wav</sound2>
+    <sound3>sounds/hitdirt3.wav</sound3>
+    <minvolume>0.15</minvolume>
+    <maxvolumeenergy>100000</maxvolumeenergy>
+    <bullettype>2</bullettype>
+  </material>
+  <material name = "int_fabric">
+    <sound1>sounds/hitfabric1.wav</sound1>
+    <sound2>sounds/hitfabric2.wav</sound2>
+    <sound3>sounds/hitfabric3.wav</sound3>
+    <minvolume>0.15</minvolume>
+    <maxvolumeenergy>100000</maxvolumeenergy>
+    <bullettype>5</bullettype>
+  </material>
+  <material name = "solidglas">
+		<sound1>sounds/hitglass.wav</sound1>
+		<sound2>sounds/hitglass.wav</sound2>
+		<sound3>sounds/hitglass.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "rock">
+		<sound1>sounds/hitconcrete1.wav</sound1>
+		<sound2>sounds/hitconcrete2.wav</sound2>
+		<sound3>sounds/hitconcrete3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+		<bullettype>1</bullettype>
+        <bulleteffectname>stonebullethit</bulleteffectname>
+	</material>
+	<material name = "french1">
+		<sound1>sounds/fpshit1.wav</sound1>
+		<sound2>sounds/fpshit2.wav</sound2>
+		<sound3>sounds/fpshit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "blk paint m">
+		<sound1>sounds/tex/gvhit1.wav</sound1>
+		<sound2>sounds/tex/gvhit2.wav</sound2>
+		<sound3>sounds/tex/gvhit3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "blueglas">
+		<sound1>sounds/hitglass.wav</sound1>
+		<sound2>sounds/hitglass.wav</sound2>
+		<sound3>sounds/hitglass.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "water1">
+		<sound1>sounds/hitwater1.wav</sound1>
+		<sound2>sounds/hitwater2.wav</sound2>
+		<sound3>sounds/hitwater2.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "rocky1">
+		<sound1>sounds/hitconcrete1.wav</sound1>
+		<sound2>sounds/hitconcrete2.wav</sound2>
+		<sound3>sounds/hitconcrete3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "farms1">
+		<sound1>sounds/hitdirt1.wav</sound1>
+		<sound2>sounds/hitdirt2.wav</sound2>
+		<sound3>sounds/hitdirt3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "moon">
+		<sound1>sounds/hitglass.wav</sound1>
+		<sound2>sounds/hitglass.wav</sound2>
+		<sound3>sounds/hitglass.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "tunnel">
+		<sound1>sounds/hitconcrete1.wav</sound1>
+		<sound2>sounds/hitconcrete2.wav</sound2>
+		<sound3>sounds/hitconcrete3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "sky">
+		<sound1>sounds/hitglass.wav</sound1>
+		<sound2>sounds/hitglass.wav</sound2>
+		<sound3>sounds/hitglass.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "forest1">
+		<sound1>sounds/hitdirt1.wav</sound1>
+		<sound2>sounds/hitdirt2.wav</sound2>
+		<sound3>sounds/hitdirt3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+		<bullettype>2</bullettype>
+		<bulleteffectname>dirtbullethit</bulleteffectname>
+	</material>
+	<material name = "sunset">
+		<sound1>sounds/hitglass.wav</sound1>
+		<sound2>sounds/hitglass.wav</sound2>
+		<sound3>sounds/hitglass.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "horizon">
+		<sound1>sounds/hitglass.wav</sound1>
+		<sound2>sounds/hitglass.wav</sound2>
+		<sound3>sounds/hitglass.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "sky_nite">
+		<sound1>sounds/hitglass.wav</sound1>
+		<sound2>sounds/hitglass.wav</sound2>
+		<sound3>sounds/hitglass.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "icy1">
+		<sound1>sounds/hitglass.wav</sound1>
+		<sound2>sounds/hitglass.wav</sound2>
+		<sound3>sounds/hitglass.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "clear1">
+		<sound1>sounds/hitdirt1.wav</sound1>
+		<sound2>sounds/hitdirt2.wav</sound2>
+		<sound3>sounds/hitdirt3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "vdkforest1">
+		<sound1>sounds/hitwood1.wav</sound1>
+		<sound2>sounds/hitwood2.wav</sound2>
+		<sound3>sounds/hitwood3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+		<bullettype>5</bullettype>
+	</material>
+	<material name = "sun_nite">
+		<sound1>sounds/hitglass.wav</sound1>
+		<sound2>sounds/hitglass.wav</sound2>
+		<sound3>sounds/hitglass.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "dunes1">
+		<sound1>sounds/hitdirt1.wav</sound1>
+		<sound2>sounds/hitdirt2.wav</sound2>
+		<sound3>sounds/hitdirt3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "pave1">
+		<sound1>sounds/hitconcrete1.wav</sound1>
+		<sound2>sounds/hitconcrete2.wav</sound2>
+		<sound3>sounds/hitconcrete3.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+		<bullettype>1</bullettype>
+	</material>
+	<material name = "sun_noon">
+		<sound1>sounds/hitglass.wav</sound1>
+		<sound2>sounds/hitglass.wav</sound2>
+		<sound3>sounds/hitglass.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "41">
+		<sound1>sounds/hitglass.wav</sound1>
+		<sound2>sounds/hitglass.wav</sound2>
+		<sound3>sounds/hitglass.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "dkwater1">
+		<sound1>sounds/hitwater1.wav</sound1>
+		<sound2>sounds/hitwater2.wav</sound2>
+		<sound3>sounds/hitwater2.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "sky_ambient">
+		<sound1>sounds/hitglass.wav</sound1>
+		<sound2>sounds/hitglass.wav</sound2>
+		<sound3>sounds/hitglass.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "40">
+		<sound1>sounds/hitglass.wav</sound1>
+		<sound2>sounds/hitglass.wav</sound2>
+		<sound3>sounds/hitglass.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "airbase1">
+		<sound1>sounds/hitglass.wav</sound1>
+		<sound2>sounds/hitglass.wav</sound2>
+		<sound3>sounds/hitglass.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+		<bullettype>2</bullettype>
+	</material>
+	<material name = "null1">
+		<sound1>sounds/hitglass.wav</sound1>
+		<sound2>sounds/hitglass.wav</sound2>
+		<sound3>sounds/hitglass.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+	<material name = "sky_clear">
+		<sound1>sounds/hitglass.wav</sound1>
+		<sound2>sounds/hitglass.wav</sound2>
+		<sound3>sounds/hitglass.wav</sound3>
+		<minvolume>0.15</minvolume>
+		<maxvolumeenergy>100000</maxvolumeenergy>
+	</material>
+  <material name = "metal">
+    <sound1>sounds/tex/gvhit1.wav</sound1>
+    <sound2>sounds/tex/gvhit2.wav</sound2>
+    <sound3>sounds/tex/gvhit3.wav</sound3>
+    <minvolume>0.15</minvolume>
+    <maxvolumeenergy>100000</maxvolumeenergy>
+    <bullettype>3</bullettype>
+    <bulleteffectname>metalbullethit</bulleteffectname>
+  </material>
+</MATERIALPROPS>

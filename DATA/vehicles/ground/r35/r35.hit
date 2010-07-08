@@ -1,0 +1,94 @@
+
+# R32 Hit file
+
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2,concussive resistance, damage threshold
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 1000000
+
+# Inside collider objects: Single sided
+
+d_mainammo2,8,0,0
+d_mainammo1,8,0,0
+d_engine,250,0,0
+d_fuel,8,0,0
+d_trans,250,0,0
+d_radiator,8,0,0
+d_driverlegs,1,0,0,0,35
+d_drivertorso,1.2,0,0,0,35
+d_driverarms,1,0,0,0,35
+d_driverhead,6.5,0,0,0,40
+d_comhead,6.5,0,0,0,40
+d_comtorso,1.2,0,0,0,35
+d_comarms,1,0,0,0,35
+d_comlegs,1,0,0,0,35
+d_firewall,5,0,0
+
+
+# Outside collider objects: Double sided
+
+d_maingun,39,0,0,0,220000
+d_turretbottom,34,0,0
+d_turret,34,0,0
+d_turrettop,20,0,0
+d_turretft,39,0,0
+d_cupola,34,0,0
+d_hulltop,15,0,0
+d_rtfender,10,0,0
+d_ltfender,10,0,0
+d_hullsides,34,0,0
+d_hullbottom,14,0,0
+# d_ftrtmantlet,45,0,0
+# d_ftltmantlet,45,0,0
+d_hullfront,36,0,0
+d_ltdrivew,25,0,0,0,100000
+d_ltidlerw,25,0,0,0,100000
+d_ltrw,15,0,0,0,100000
+d_ltrw2,15,0,0,0,100000
+d_ltrw3,15,0,0,0,100000
+d_ltretw1,10,0,0,0,100000
+d_ltretw2,10,0,0,0,100000
+d_ltretw3,10,0,0,0,100000
+d_rtdrivew,25,0,0,0,100000
+d_rtidlerw,25,0,0,0,100000
+d_rtrw,15,0,0,0,100000
+d_rtrw2,15,0,0,0,100000
+d_rtrw3,15,0,0,0,100000
+d_rtretw1,10,0,0,0,100000
+d_rtretw2,10,0,0,0,100000
+d_rtretw3,10,0,0,0,100000
+d_driverhatchbottom,34,0,0
+d_driverpeakhole,34,0,0
+d_driverhatchtop,34,0,0
+d_ltfenderft,10,0,0
+d_rtfenderft,10,0,0
+d_turhatch,34,0,0
+d_mgmount,12,0,0
+d_ltread,25,0,0,0,100000
+d_rtread,25,0,0,0,100000
+
+
+

@@ -1,0 +1,34 @@
+#bf109e1.loadout file - created July/08 - Doc.
+
+# sounds available for the mounts
+sound1 = sounds\bf109e3\xgun1.wav
+
+
+loadout = 1
+
+mountnum = 1
+mountobject = lnmount
+mountsound = sound1
+weapon  = mg17_sync
+weaponobject = bf109elngun
+
+mountnum = 2
+mountobject = rnmount
+mountsound = sound1
+weapon  = mg17_sync
+weaponobject = bf109erngun
+
+mountnum = 3
+mountobject = lwmount
+mountsound = sound1
+weapon  = mg17
+weaponobject = bf109elngun
+
+mountnum = 4
+mountobject = rwmount
+mountsound = sound1
+weapon  = mg17
+weaponobject = bf109erngun
+ 
+#changed weaponobject 3 & 4 to get the leading edge muzzle flash location - Doc.
+

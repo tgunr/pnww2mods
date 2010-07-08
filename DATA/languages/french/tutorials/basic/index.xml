@@ -1,0 +1,17 @@
+<?xml version='1.0'?>
+<content type="3">
+  <key>0</key>
+  <body>Ici vous allez apprendre les bases de l&#39;entrainement du Fantassin, comme les mouvements, les différentes positions, aller à couvert et utiliser son arme à feu.</body>
+  <brief>Ici vous allez apprendre les bases de l&#39;entrainement du Fantassin, comme les mouvements, les différentes positions, aller à couvert et utiliser son arme à feu.</brief>
+  <handler>basic</handler>
+  <links>
+    <link path="tutorials/basic/movement.xml" title="Mouvement" />
+    <link path="tutorials/basic/rifleman.xml" title="Utiliser le Fusil" />
+    <link path="tutorials/basic/map.xml" title="Carte" />
+    <link path="tutorials/basic/chat.xml" title="Chat" />
+    <link path="tutorials/basic/hud.xml" title="HUD" />
+    <link path="tutorials/basic/combat.xml" title="Entraînement au combat" />
+  </links>
+  <next>basic.movement</next>
+  <title>Entraînement élémentaire</title>
+</content>

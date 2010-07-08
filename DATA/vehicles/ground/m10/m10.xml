@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="m10" type="ground" shape="m10" description="M10 Wolverine" icon="M10">
+<include file="m10.veh.xml"/>
+<include file="m10.state.xml"/>
+<include file="m10.hit.xml"/>
+<include file="m10.turret.xml"/>
+<include file="m10.loadout.xml"/>
+<include file="m10.xsound.xml"/>
+<include file="m10.control.xml"/>
+<include file="m10.mass.xml"/>
+</vehicle>

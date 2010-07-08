@@ -1,0 +1,49 @@
+# basic vehicle data file for ju52/3m
+# modified 17Dec04 -Doc.
+
+physicsversion = 1
+vehicletype = ww2propplane
+vehiclename = ju52
+componentfile = ju52.cmp
+enginefile = ju52.eng
+airfoilfile = ju52.air
+positionfile = ju52.pos
+numberofflappositions = 1
+# next 3 are in kph
+aileronmaxspeed = 250
+ruddermaxspeed = 250
+elevatormaxspeed = 250
+# next 3 are in mach speed
+aileroncompressspeed = 0.65
+ruddercompressspeed = 0.65
+elevatorcompressspeed = 0.65
+aileronresponsetime = 0.4
+elevatorresponsetime = 0.8
+rudderresponsetime = 1.5
+#rudderresponsetime = 0.5(altered for v1.29 beta)
+throttleresponsetime = 2
+# tab effects, ratio of tab force at full tab deflection to total surface force
+ailerontabratio = 0.1
+elevatortabratio = 0.2
+ruddertabratio = 0.1
+# opposing movement tab effects, ratio of tab force at full tab deflection to total surface force
+aileronspringtabratio = 0
+elevatorspringtabratio = 0
+rudderspringtabratio = 0
+
+# static tabs, e.g. the tabs that are set on the ground
+# trim the plane for cruise flight, in an analysis FE
+# and copy the trim settings into the following fields
+ailerontabstatic = 0.02
+elevatortabstatic = -0.849
+ruddertabstatic = 0
+
+# Sounds
+stallsound = sounds\stall.wav
+flapssound = sounds\pflaps.wav
+windsound = sounds\wind.wav
+
+flapdeployspeed = 0.3
+geardeployspeed = .1
+canopyopenspeed = 0.3
+hatchopenspeed = 0.5

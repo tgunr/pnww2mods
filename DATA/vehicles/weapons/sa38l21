@@ -1,0 +1,19 @@
+# SA 38 L/21
+
+mass = 200
+firetype = singleshot
+rateoffire = 60
+#syncrateoffire = 15
+dispersion = 0.08
+ammotype1 = sa38l21
+ammotype2 = sa38l21apc
+ghostrof = 20
+ghostammotype = sa38l21
+
+cliprounds = 1
+reloadtime = 3
+#changed ghostround to "sa38l21" which is the HE round
+#(default ammotype 1)
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = na

@@ -1,0 +1,79 @@
+muzzleRise = 0
+muzzleReturn = 0
+muzzleClimbRate = 0
+
+# mortar rounds slide down the tube before firing
+fireDelay = 3.5
+
+# per bullet "jump" .. this is the vertical component
+# the total formula is weapon.muzzleRize * weapon.bulletJitter * trooper.aimControl
+bulletJitter = 0
+
+# additional multiplier for horizontal bullet jump
+horizJitterMult = 0
+
+speedMultiplier = 1.0
+
+minimumDispersion = 1.0
+# This is set VERY HIGH as a place holder for actual gun sway
+unaimedDispersionMod = 1
+controlability = 1.0
+aimFOV = 75.0
+
+# meshes to hide on load
+hiddenMeshes = lmortar_he,lmortar_smk
+
+# these all MUST be specified in the weapon specific file
+# note that data\gr2data\FPS\ is prepended to these file names
+#weaponModel
+
+# granny attach bone names for weapon & clip
+# the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
+#weaponConnectTo
+#weaponConnect
+
+# boresight distance
+convergenceDistance = 250.0
+
+# flag for the control manager whether to allow the fire button to be held down or not
+# required for autofire weapons as well as recycling weapons
+holdfire = 0
+
+# says whether to eject the shells immediately or on a time delay
+ejectImmediate = 0
+
+# size multilier for the shell model
+shellScale = 0.2
+
+# what icon to display in the hud (8 = smg)
+hudIconType = 13
+
+clipBullets = -1
+
+# how far back along the barrel to start the bullet (firepoints are at the tip)
+firepointDisplacement = 0
+
+weaponBreathMultiplier = 1.0
+weaponHeartMultiplier = 1.0
+weaponMoveMultiplier = 1.0
+weaponPoseMultiplier = 1.0
+
+staticDeploy = 1
+
+leanFireOK = 0
+
+deployPivotBone = BipodConnect
+
+# variable sight data
+# numConvDists is 1 + the number you
+# want because this number is one based
+# but the calculation is 0 based
+numConvDists = 46
+startConvDists = 50
+incConvDists = 10
+
+sightAdjustTime = .1
+sightAdjustSound = sounds\wheelopen.wav
+
+dryFireSoundLength = 0.3
+dryFireSound = sounds\troop\LMG_ATR_dryfire.wav

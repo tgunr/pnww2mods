@@ -1,0 +1,16 @@
+# Created 05/31/06 -Doc.
+# M1a2-76.2mm gun for M4a3(76) Sherman
+mass = 400
+firetype = singleshot
+rateoffire = 30
+dispersion = 0.08
+ammotype1 = 76mml52m79ap
+ammotype2 = 76l52m1a2he
+ghostrof = 20
+ghostammotype = 76l52m1a2he
+cliprounds = 1
+reloadtime = 3
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = na

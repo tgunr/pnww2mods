@@ -1,0 +1,31 @@
+# first thing in the weapon file should always be the weapontype
+# this causes the default_(weapontype).txt file to be loaded first
+# valid weapon types are:
+# SMG, SATCHEL, RIFLE, AUTO_PISTOL, GRENADE, REVOLVER, ITEM, KNIFE, LMG
+weaponType = AUTO_PISTOL
+
+# sound to play when reloading
+reloadSound = sounds\clipreload.wav
+
+# specify the weapon & clip (clip optional) model here
+# note that data\gr2data\FPS\ is prepended to these file names
+weaponModel = m1935a\gunmesh-m1935a
+#clipModel = m1935a\gunmesh-m1935a-mag
+
+# granny attach bone names for weapon & clip
+# the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
+weaponConnectTo = weapon-control
+weaponConnect = m1935-connect
+
+# the clipConnect bone in the clip attaches to the clipConnectTo bone in the gun
+#clipConnectTo = m1935aclip-mount
+#clipConnect = m1935aclip-mount
+
+# boresighting values .. how much off of "straight" does this gun need to fire
+#aimVerticalCorrection = 0.16
+#aimHorizontalCorrection = 0.60
+aimVerticalCorrection = -1.2
+aimHorizontalCorrection = -0.7
+
+# how far back along the barrel to start the bullet (firepoints are at the tip)
+firepointDisplacement = 0.50

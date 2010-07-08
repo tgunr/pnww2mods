@@ -1,0 +1,18 @@
+# Vickers Coaxial MG (303 caliber)
+# Created 4/22/02 - bloo
+
+mass = 12.5
+firetype = auto
+rateoffire = 950
+#syncrateoffire = 950
+ammotype1 = 303vic_coax
+ammotype2 = 303tracer
+ghostrof = 200
+ghostammotype = 303tracer
+dispersion = 0.2
+cliprounds = 250
+reloadtime = 6
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = belt

@@ -1,0 +1,35 @@
+section, CATEGORY, weapClass
+default,,AC_fighter.0
+spawn,spit1,
+spawn,hurri1,
+spawn,bleni,
+spawn,spitvb,
+spawn,hurri2c,
+#spawn,EYE,AC_gm.0
+spawn,bleniv,AC_bomber.0
+spawn,blent,AC_bomber.0
+spawn,havoc1,AC_bomber.0
+spawn,spit9c,
+spawn,c47,AC_bomber.0
+spawn,hurri2b,
+spawn,spit1b,
+spawn,spit2b,
+
+section,bomber, weapClass
+default,,AC_bomber.0
+spawn,bleniv,
+spawn,blent,
+spawn,havoc1,
+spawn,c47,
+
+section, fighter, weapClass
+default,,AC_fighter.0
+spawn,spit1,
+spawn,hurri1,
+spawn,bleni,
+spawn,spitvb,
+spawn,hurri2c,
+spawn,spit9c,
+spawn,hurri2b
+spawn,spit1b
+spawn,spit2b

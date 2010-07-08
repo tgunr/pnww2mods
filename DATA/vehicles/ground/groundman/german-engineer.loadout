@@ -1,0 +1,43 @@
+#British.loadout file
+
+# sounds available for the mounts
+sound1 = sounds\troop\k98.wav
+sound2 = sounds\troop\satchel-place.wav
+sound3 = sounds\troop\grenade-throw.wav
+sound4 = sounds\troop\grenade-throw.wav
+
+loadout = 1
+
+# Rifle
+mountnum = 1
+mountsound = sound1
+weapon = k98
+
+# Pistol
+#mountnum = 1
+#mounsound = sound1
+#weapon = luger
+
+# Satchel Charge
+mountnum = 2
+mounsound = sound2
+weapon = germsatchel
+
+# Grenade
+mountnum = 3
+mounsound = sound3
+weapon = stig24
+
+# Smoke Grenade
+mountnum = 4
+mountsound = sound4
+weapon = desmokegrenade
+
+# Knife
+mountnum = 5
+weapon = knifegeneric
+
+#this is the bridge repair
+# Bridgerepair
+mountnum = 6
+weapon = germsatchel

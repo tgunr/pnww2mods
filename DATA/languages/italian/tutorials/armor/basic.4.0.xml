@@ -1,0 +1,229 @@
+<?xml version='1.0'?>
+<content type="5">
+  <body>title = Addestramento avanzato: Corazzato: Panzer 38(t)
+  
+bulleyes = Hai colpito il bersaglio!
+start = Inizia
+move = Muovi qui
+turn1 = Gira a destra
+turn2 = Gira a destra
+setup = Fermati qui
+fire = Posizione di fuoco
+turn3 = Gira a destra
+turn4 = Gira a sinistra
+turn5 = Gira a destra
+stop = Finito
+berm1 = Cunetta a 200 m
+berm2 = Cunetta a 500 m
+berm3 = Cunetta a 1000 m
+offroad = Fuoristrada
+gunrange = Distanza di tiro
+
+# Spawn tanks at  60.3.39 N, 6.32..38 W  facing 270 (West)
+# -314230.38  3603625.27  101.34
+# facing front: -1.57    back: 1.58
+
+1.0.label = Introduzione
+
+1.1.label = Il Panzer 38(t)
+
+	1.1.alert.modal = Questo e&#39; il carro Panzer 38(t), uno dei piu&#39; comuni carri armati francesi. Ha 3 posizioni giocabili: pilota, comandante/puntatore. La maggior parte dei carri ha modellato anche il servente ma tale posizione puo&#39; solo guardare all&#39;interno della torretta.
+        1.1.alert.camera = 0,5,45,360,0,0,10
+	// pan around
+	
+2.0.label = Il pilota
+
+2.1.label = Visuale del pilota
+	2.1.alert = Questa e&#39; la posizione 1: il pilota. Da qui puoi controllare il movimento del veicolo. La visuale del pilota e&#39; limitata dal suo portello di visione. [NL][NL] Premi {gunsightview} per migliorare la visuale.
+        2.1.alert.camera = internal
+	2.1.complete.modal = Puoi usare {gunsightview} per commutare tra la vista zoomata dalla fessura e quella normale dell&#39;abitacolo. 
+	
+2.2.label = Proteggere il pilota
+	2.2.alert = Il portello di visione del Panzer 38(t) e&#39; protetto da un vetro corazzato, che ne limita la visuale. [NL][NL] Premi {canopycontrol} per sollevare il vetro antiproiettile.
+	2.2.complete.modal = La visuale e&#39; migliore ma il pilota e&#39; un po&#39; piu&#39; esposto al fuoco nemico.
+
+2.3.label = Stato del motore
+	2.3.alert = Premi {instrumentview} per vedere la tua strumentazione.
+	2.3.complete.modal = Qui puoi vedere vari strumenti a seconda del carro. Per esempio: temperatura motore, contagiri e altre possibili informazioni quali orientamento della torretta.
+
+2.4.label = Cambio marcia
+	2.4.alert.modal = Tutti i veicoli terrestri incominciano il gioco con il motore spento e il cambio in folle.[NL][NL]Tutti hanno 1 o piu&#39; marce in avanti e una retromarcia.
+	2.4.alert1 =  Per muoverti, devi inserire la marcia e usare l&#39;acceleratore.[NL][NL]Per vedere in quale marcia sei, abilita la finistra Stato del Veicolo premendo {showstats}.
+	2.4.complete = Ottimo, questo mostra la marcia attualmente inserita (N, o &#34;neutra&#34; - folle all&#39;inizio).
+	2.4.complete.hilite = readout,target
+
+2.5.label = Accendi il motore
+	2.5.alert = Premi {gunsightview} per guardare attraverso il portello di visione del piloa.[NL][NL]Accendi il motore premendo {engstart}.
+	2.5.complete = Eccellente!
+
+2.6.label = Inserisci la prima
+	2.6.alert = La marce piu&#39; basse hanno piu&#39; coppia e sono utili per la partenza e la salita di pendii. La marce piu&#39; alte ti permettono di andare piu&#39; veloce ma non danno molta coppia percio&#39; usale quando acquisti velocita&#39; sulle strade.[NL][NL]{shiftdown} e {shiftup} controllano la marcia del veicolo.[NL][NL]Premi {shiftup} per inserire la prima.
+	2.6.alert.hilite = readout,target
+
+3.0.label = Guida al Poligono di Tiro
+
+3.1.label = Controlli del movimento
+	3.1.alert.modal = Una volta inserita la marcia, puoi usare {gas.10.4} per muoverti in avanti (o indietro se in retromarcia).
+	3.1.alert1.modal = Usa {leftbrake.10.4} per sterzare a sinistra e {rightbrake.10.4} per sterzare a destra. {bothbrake.10.4} rallentera&#39; il carro.
+	3.1.alert2 = Una serie di punti di passaggio ti guidera&#39; al poligono di tiro. Guida attraverso ogni punto per completare questa parte dell&#39;addestramento.[NL][NL]Usa {gas.10.4} per accelerare.[NL]Usa {bothbrake.10.4} per frenare.[NL]Usa {leftbrake.10.4} e {rightbrake.10.4} per sterzare a sinistra e destra.
+
+3.2.label = Svoltare
+	3.2.alert = Si avvicina la tua prima svolta. Mentre ti avvicini alla svolta, usa {bothbrake.10.4} per rallentare il carro se necessario.[NL][NL]Usa {leftbrake.10.4} e {rightbrake.10.4} per controllare la svolta a destra.
+
+3.3.label = Guidare in fuoristrada	
+	3.3.alert = Sul lato sinistro di questa strada c&#39;è una serie di cunette. Scegli liberamente se superarle o aggirarle.[NL][NL]Il prossimo punto di passaggio ti portera&#39; in fuoristrada.
+
+3.4.label = Scegli la posizione
+	3.4.alert = Fermati al prossimo punto di passaggio. Usa {bothbrake.10.4} per rallentare il carro fino a fermarti.
+
+3.5.label = Tattica &#34;Hull Down&#34;
+	3.5.alert.modal = Una cunetta fiancheggia la strada di fronte separandoti dai bersagli del poligono di tiro.
+	3.5.alert1.modal = L&#39;armatura del tuo carro e&#39; piu&#39; spessa davanti e piu&#39; debole dietro. .[NL][NL]Tienilo a mente quando posizioni il tuo carro.
+	3.5.alert2.modal = Puoi usare cunette, colline o anche edifici per fornire protezione ulteriore dal fuoco nemico. Questo e&#39; comunemente chiamato &#34;hull-down&#34; e significa semplicemente che il tuo scafo (hull) e&#39; parzialmente protetto dal terrno poiche&#39; il nemico non puo&#39; vederlo o colpirlo.
+	3.5.alert3.modal = Per essere vincente nel combattimento tra corazzati, devi usare entrambe queste idee.
+
+3.6.label = Posizione di fuoco
+	3.6.alert = Occupa una posizione di fuoco contro la cunetta vicino all&#39;altro carro.[NL][NL]Assicurati che il tuo carro sia diretto a nord.[NL][NL]Attenzione a non superare la cunetta. Se questo fosse un combattimento, questo esporrebbe di piu&#39; il tuo scafo al fuoco nemico.
+        3.6.complete.camera = -90,10,20,-90,-8,0,5
+	3.6.complete.modal = Eccellente, sei ora in una posizione di fuoco &#34;hull down&#34;.
+	
+	# Follow the Waypoints
+	# SW corner of track:  &#34;Southwest Corner&#34;
+	# -314333.57  3603628.25  101.98
+	# facing front: -0.77  back: 2.38
+	
+	# W track bumps: &#34;Road Bumps&#34;
+	# -314344.58  3603665.72  101.99
+	# facing front: -0.02   back:  3.12
+	
+	# NW corner of track:  &#34;Northwest Corner&#34;
+	# -314339.64  3603769.53  101.98
+	# facing frpmt&#34; -0.04  back: 3.11
+	
+	# Center of gun firing berm line: &#34;Armor Firing Range.&#34;
+	# -314306.27  3603792.69  102.06
+	# facing front: 0.07  back: -3.07
+	
+4.0.label = Il comandante del carro
+
+4.1.label = Spegni il tuo motore 
+	4.1.alert = In combattimento, e&#39; prudente spegnere il motore quando non ti muovi. Questo di permettera&#39; di sentire muoversi i carri nemici e non saranno in grado di sentirti.[NL][NL]Spegni il tuo motore usando {engstart}.
+    4.1.alert.camera = internal
+
+4.2.label = Passa al comandante
+	4.2.alert = La seconda posizione in questo carro e&#39; il Comandante. Il comandante del carro solitamente ha la visuale migliore delle altre.[NL][NL]Premi {positiontwo} per spostarti alla posizione del comandante.
+	4.2.complete.modal = Se ti sposti dal pilota, il veicolo continuera&#39; con l&#39;ultimo input dato. Cosi&#39; se avevi l&#39;acceleratore premuto, il veicolo continuera&#39; a muoversi quando passi da un altra posizione. Questo potrebbe essere a volte pericoloso perche&#39; difficilmente il carro andra&#39; diritto a causa del terreno.
+
+4.3.label = La visuale del comandante
+	4.3.alert = La visuale del comandante e&#39; limitata da una piccola fessura frontale. Comunque il comandante puo&#39; aprire il portello superiore della torretta per avere una visuale molto piu&#39; ampia.[NL][NL]Nel Panzer 38(t) il comandante e&#39; anche il puntatore. Le funzioni cambiano a seconda se il portello del comandate e&#39; aperto. [NL][NL]Premi {canopycontrol} per aprire il portello del comandante
+	4.3.complete.modal = Controlla la visuale del comandante muovendola con {turretraverse} e {turretelevate}.  Nota come questo muove l&#39;intera torretta.
+
+4.4.label = Usa il tuo binocolo
+	4.4.alert = Osserva i dintorni usando il binocolo del comandante.[NL][NL]Premi {instrumentview} per utilizzare il tuo binocolo. 
+	
+4.5.label = Guardati attorno
+	4.5.alert = Prenditi un momento per guardare a NORD verso il poligono le montagnole di terra con sopra i bersagli.
+	
+4.6.label = Protezione
+	4.6.alert = Premi {canopycontrol} per chiudere il portello del comandante
+	
+5.0.label = La visuale del puntatore
+
+5.1.label = Passa al puntatore
+	5.1.alert = Questa e&#39; la stessa posizione del comandante ma ora ha la funzione di puntatore. La vista e&#39; molto limitata eccettro attraverso il mirino. Dalla posizione del puntatore, puoi sparare con il cannone principale e con la mitragliatrice coassiale.
+
+5.2.label = La visuale del puntatore
+	5.2.alert =Come puntatore, questa posizione ha una eccellente visuale attraverso il mirino.[NL][NL]Premi {gunsightview} per passare alle varie viste del mirino.
+	
+5.3.label = Movi la torretta
+	5.3.alertCome gia&#39; per la visuale del comandante, si puo&#39; muovere la torretta con {turretraverse} e {turretelevate}.[NL][NL]Prova a muovere la torretta.
+	5.3.complete.modal = La torretta si puo&#39; muovere di 360 gradi attorno al carro!
+
+5.4.label = Spara con il cannone principale
+	5.4.alert = Prenditi un momento per sparare.[NL][NL]Premi {primarytrigger.1} per sparare con il cannone principale.
+	5.4.complete.modal = Usa il cannone principale per distruggere gli altri veicolo e gli edifici.
+	
+5.5.label = Spara con la mitragliatrice
+	5.5.alert = Ora spara con la mitragliatrice.[NL][NL]Premi {secondarytrigger.1} per sparare con la mitragliatrice coassiale.
+	5.5.complete.modal = Usa la tua mitragliatrice contro la fanteria e i bersagli deboli come gli autocarri.
+	
+6.0.label = Cannoneggiamento
+
+6.1.label = Mira al bersaglio a sinistra
+	6.1.alert.modal = Il mirino del Panzer 38(t) ha 7 piccoli triancoli vicini al centro della visuale. E&#39; impostato per puntare sul vertice superiore del triangolo centrale. L&#39;impostazione della distanza e&#39; indicata sulla parte superiore dove un piccola linea verticale interseca un anello di numeri (in centinaia di metri). Puoi aggiustare la gitta con {gunsightrangeinc} e {gunsightrangedec}.
+	6.1.alert1 = Spara con il cannone principale al bersaglio lontano a sinistra usando {primarytrigger.1}. E&#39; approssimativamente a 200 metri.
+	6.1.complete = Ben fatto, hai colpito il bersaglio!
+
+6.2.label = Il mirino
+	6.2.alert.modal = Il berssaglio e&#39; facile da colpire perche&#39; e&#39; vicino, ma bergagli piu&#39; distanti richiedono di aggiustare la mira poiche&#39; il proiettile cade a causa della gravita&#39;.
+	6.2.alert1 = Prova a colpire il prossimo bersaglio sulla destra che si trova a circa 500 metri.[NL][NL]Usa  {gunsightrangeinc} e {gunsightrangedec} per impostare la gittata del mirino a circa 500 metri.[NL][NL]Spara al bersaglio a 500 metri.
+	6.2.complete.modal = Ben fatto. Se la distanza e&#39; nota, e&#39; facile aggiustare la tua mira per colpire il bersaglio.
+	
+6.3.label = Aggiustamento della mira
+	6.3.alert.modal = Ora prova a colpire un bersaglio piu&#39; difficile. I due bersagli a destra sono molto piu&#39; lontani. Prova a colpirne uno aggiustando la mira quanto serve.
+	6.3.alert1 = Prima, spara ad uno con il cannone principale per vedere dove colpisce il tuo proiettile.[NL][NL]Se cade corto, aumenta la gittata. Se va lungo, riducila.
+	6.3.complete.modal = Bel colpo! Come hai visto, questi bersagli sono a circa 1000 metri. Tipicamente, un combattimento tra veicoli corazzati avviene tra i 500 e i 2000 metri.[NL][NL]Nel Panzer 38(t) l&#39;indicazione della gittata non ha effetto sulla mitragliatrice, cosi&#39; devi stimarla da te.
+	
+6.4.label = Munizionamento del cannone principale
+	6.4.alert.modal = Molti carri hanno diversi tipi di munizionamento disponibili per il cannone principale. Puoi cambiare tipo di munizioni usando {cycleammo}.[NL][NL]Usa {cycleammo} per cambiare il munizionamento del cannone principare usando munizioni ad alto potenziale (HE).
+	6.4.alert.hilite = primary,target
+	6.4.complete.modal = Usa proiettili perforanti (AP) per penetrare la corazza dei carri nemici. Usa proiettili ad alto potenziale (HE) per distruggere bersagli meno resistenti come autocarri e truppe.
+	6.4.complete.hilite = primary,target
+
+6.5.label = Spara proiettili HE
+	6.5.alert = Spara alcuni di questi colpi e nota come si comportano diversamente dai proiettili perforanti (AP) in volo e nell&#39;impatto.[NL][NL]Quando sei pronto per continuare, passa alla posizione del pilota {positionone}.
+
+6.6.label = Mitragliere dello scafo
+6.6.alert = Il Panzer 38(t) ha un mitragliere di scafo che controlla la mitragliatrice montata nella parte frontale del carro.[NL][NL]Premi {gunsightview} per passare le varie visuali del mirino.
+
+6.7.label = Spara con la mitragliatrice dello scafo
+6.7.alert = Muovi la mitragliatrice e cambia la gittata allo stesso modo del cannone principale.[NL][NL]Premi {primarytrigger.1} per sparare con la mitragliatrice.
+6.8.label = Seleziona il pilota
+6.8.alert = Ottimo.  Quest&#39;arma puo&#39; essere efficiente a corto raggio quando hai di fronte bersagli poco resistenti.[NL][NL]Ora passa alla posizone del pilota {positionone}.
+
+7.0.label = Completa il corso
+
+7.1.label = Accendi il motore
+	7.1.alert = Accendi il motore usando {engstart} e zooma sul portello del pilota usando {gunsightview}.
+
+7.2.label = Retromarcia
+	7.2.alert = I carri possono anche andare in retromarcia, ed e&#39; spesso molto utile. Usa {reverse} per passare dalle marcia avanti alla retromarcia.[NL][NL]Quanto premi {reverse}, la marcia del carro passa automaticamente alla folle.[NL][NL]Metti il carro in retromarcia.
+	7.2.alert.hilite = readout,target
+	
+7.3.label = Inserisci la marcia
+	7.3.alert = Hai ancora bisogno di inserire la retromarcia; fallo premendo {shiftup}.
+	7.3.alert.hilite = readout,target
+
+7.4.label = Allontanarsi
+	7.4.alert = Torna indietro sulla strada. Accelera leggermente usando {gas.10.4} e gira a sinistra con {leftbrake.10.4} finche&#39; non vedi la strada.[NL][NL]Una volta che la strada e&#39; in vista, usa {bothbrake.10.4} per fermare il carro. Usa {reverse} per reinserire le marce avanti.
+	7.4.alert.hilite = readout,target
+	
+7.5.label = Guida verso casa
+	7.5.alert = Inserisci la prima usando {shiftup}.[NL][NL]Ora segui i punti di passaggio verso la posizione iniziale.[NL][NL]Usa {gas.10.4} per accelerare.[NL]Usa {bothbrake.10.4} per frenare.[NL]Usa {leftbrake.10.4} e {rightbrake.10.4} per sterzare a sinistra e a destra.
+	7.5.alert.hilite = readout,target
+
+8.0.label = Completato
+
+8.1.label = Tutorial Completato
+	8.1.alert.modal = Ben fatto! Hai completato il tutorial di base dei corazzati.
+
+# NE corner &#34;Northeast Corner&#34; 
+# -314252.88  3603785.75  101.98
+# facing front: 1.84  back: -1.30
+
+
+# &#34;Bend Left&#34;
+# -314234.48  3603724.61  101.98
+# facing front: 2.21  back: -0.93
+
+# &#34;Bend Right&#34;
+# -314192.29  3603695.49  101.05
+# facing front: 2.19  back: -0.95
+
+# Final way point
+# -314230.38  3603625.27  101.34
+# facing front: -1.57    back: 1.58
+
+#	1.6.complete = Congratulazioni! Hai completato l&#39;addestramento ai corazzati.</body>
+  <title>Corazzati di base I: Corazzato: Panzer 38(t)</title>
+</content>

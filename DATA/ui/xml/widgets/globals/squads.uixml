@@ -1,0 +1,1327 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<tab id="squad-tab" label="  &common.squads.tab;  " x="0" y="0" width="930" height="460" align="right"
+	onshow="showSquads()" tip="&common.squads.tab.tip;" onupdate="runSquadUpdate()">
+	<include file="classes/CycleTimer.uixml"/>
+	<include file="classes/MenuItem.uixml"/>
+	<include file="classes/MenuControl.uixml"/>
+	<tabview id="squad-options" x="0" y="0" rright="0" rtop="0" onshow='setSquadOption()' ontab="quickhelp()" acceptmouseclick='false'>
+		<tab id="squad" x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'>
+			<view id="left-pane" x="18" width="444" height="411" rtop="35" onshow="refreshSquadMembers()">
+				<view x="10" width="425" height="380" rtop="10">
+					<textcontrol id="squad-name-title" x="0" height="20" width="400" rtop="0" style="font-size: +2; color: #BFE2CE;"
+						acceptsfocus="false" maxlength="40"/>
+					<caption id="squad-counts" height="20" width="400" rright="0" rtop="0" style="color: #BFE2CE;" align="right"/>
+					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="12"/>
+					<view x="0" width="425" height="15" rtop="23">
+						<caption x="0" y="0" width="85" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="&common.squads.members.handle;"/>
+						<caption x="87" y="0" width="80" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="&common.squads.members.position;"/>
+						<caption x="169" y="0" width="204" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="&common.squads.members.persona;"/>
+						<caption rright="0" y="0" width="50" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="&common.squads.members.afk;"/>
+					</view>
+					<list id="squadMemberList" x="0" y="15" width="425" height="325"
+						onselect="squadMemberList.clickList(false)" ondblselect="squadMemberList.clickList(true)">
+						<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+					</list>
+				</view>
+				<view x="10" y="19" width="425" height="15">
+					<view x="0" y="0" width="100" height="15" style="background-color: #BFE2CE44;">
+						<caption id="squad-pageback" x="0" y="0" width="100" height="15" style="color: #BFE2CE;" label=" &lt; &common.page; 1"
+							onclick="pageSquadList(-1)"
+							onmouseenter="this.setstyleproperty('color', '#FFFF00')"
+							onmouseexit="this.setstyleproperty('color', '#BFE2CE')"/>
+					</view>
+					<caption id="squad-toggleoffline" x="102" y="0" width="222" height="13" style="border-color: #BFE2CE44; color: #BFE2CE; font-size: -1;" label="&common.squads.members.showoffline;" align="center"
+						onmouseenter="this.setstyleproperty('color', '#FFFF00')"
+						onmouseexit="this.setstyleproperty('color', '#BFE2CE')"
+						onclick="toggleOfflineMembers()" ondblclick="toggleOfflineMembers()"/>
+					<view x="326" y="0" width="100" height="15" style="background-color: #BFE2CE44;">
+						<caption id="squad-pagenext" x="0" y="0" width="100" height="15" style="color: #BFE2CE;" label="&common.page; 2 &gt; " align="right"
+							onclick="pageSquadList(1)"
+							onmouseenter="this.setstyleproperty('color', '#FFFF00')"
+							onmouseexit="this.setstyleproperty('color', '#BFE2CE')"/>
+					</view>
+				</view>
+				<!-- dblclick message here -->
+
+			</view>
+			<include file="widgets/divider.uixml"/>
+			<view id="right-pane" x="468" y="18" width="444" height="411">
+				<tabview id="squad-details"  x="10" y="10" rtop="10" width="420" style="color: #BFE2CE;
+									background-color: #000000BB; 
+									border-sides: ui/textures/test/infobox_side.bmp;
+									border-corner: ui/textures/test/infobox_corner.bmp;
+									control-on-endcap:  ui/textures/test/body_tab_cap_on.bmp;
+									control-on-back:  ui/textures/test/body_tab_filler_on.bmp;
+									control-off-endcap: ui/textures/test/body_tab_cap.bmp;
+									control-off-back: ui/textures/test/body_tab_filler.bmp;
+									control-on-color: #FFFFCE;
+									border-width: 16;
+									border-height: 16;">
+					<tab label="  &common.squads.details;  " x="0" y="0" rright="0" rtop="0" onshow="soundPlayShuffle(); updateSquadInfo();">
+						<caption label="&common.squads.details.name;:" x="10" width="300" height="15" rtop="30" style="color: #FFFFFFFF; "/>
+						<caption id="squad-name" width="312" height="20" rright="20" rtop="30" style="color: #e9e3d9ff; " align="right"/>
+						<image id="squad-edit-name" width="15" height="15" rright="5" rtop="32" src="ui/textures/test/edit_icon.bmp"
+								onclick="editMode('name')"
+								onmouseenter="this.src = 'ui/textures/test/edit_icon_on.bmp'"
+								onmouseexit="this.src = 'ui/textures/test/edit_icon.bmp'"
+								tip="&common.squads.edit.tip;"/>
+						<caption label="&common.squads.details.short;:" x="10" width="300" height="15" rtop="45" style="color: #FFFFFFFF; "/>
+						<caption id="squad-shortname" width="312" height="20" rright="20" rtop="45" style="color: #e9e3d9ff; " align="right"/>
+						<caption label="&common.squads.details.co;:" x="10" width="300" height="15" rtop="60" style="color: #FFFFFFFF; "/>
+						<caption id="squad-co" width="400" height="20" rright="20" rtop="60" style="color: #e9e3d9ff; " align="right"/>
+						<caption label="&common.squads.details.created;:" x="10" width="300" height="15" rtop="75" style="color: #FFFFFFFF; "/>
+						<caption id="squad-created" width="312" height="20" rright="20" rtop="75" style="color: #e9e3d9ff; " align="right"/>
+						<caption label="&common.squads.details.voting;:" x="10" width="300" height="15" rtop="90" style="color: #FFFFFFFF; "/>
+						<caption id="squad-voting" width="312" height="20" rright="20" rtop="90" style="color: #e9e3d9ff; " align="right"/>
+						<image id="squad-edit-voting" width="15" height="15" rright="5" rtop="92" src="ui/textures/test/edit_icon.bmp"
+								onclick="editMode('voting')"
+								onmouseenter="this.src = 'ui/textures/test/edit_icon_on.bmp'"
+								onmouseexit="this.src = 'ui/textures/test/edit_icon.bmp'"
+								tip="&common.squads.edit.tip;"/>
+						<caption label="&common.squads.details.recruiting;:" x="10" width="300" height="15" rtop="105" style="color: #FFFFFFFF; "/>
+						<caption id="squad-recruiting" width="312" height="20" rright="20" rtop="105" style="color: #e9e3d9ff; " align="right"/>
+						<image id="squad-edit-recruiting" width="15" height="15" rright="5" rtop="107" src="ui/textures/test/edit_icon.bmp"
+								onclick="editMode('recruiting')"
+								onmouseenter="this.src = 'ui/textures/test/edit_icon_on.bmp'"
+								onmouseexit="this.src = 'ui/textures/test/edit_icon.bmp'"
+								tip="&common.squads.edit.tip;"/>
+						<caption label="&common.squads.details.language;:" x="10" width="300" height="15" rtop="120" style="color: #FFFFFFFF; "/>
+						<caption id="squad-language" width="312" height="20" rright="20" rtop="120" style="color: #e9e3d9ff; " align="right"/>
+						<!-- image id="squad-edit-language" width="15" height="15" rright="5" rtop="122" src="ui/textures/test/edit_icon.bmp"
+								onclick="editMode('language')"
+								onmouseenter="this.src = 'ui/textures/test/edit_icon_on.bmp'"
+								onmouseexit="this.src = 'ui/textures/test/edit_icon.bmp'"
+								tip="&common.squads.edit.tip;"/ -->
+
+						<caption label="&common.squads.details.homepage;:" x="10" rright="300" height="15" rtop="135" style="color: #FFFFFFFF; "/>
+						<textcontrol id="squad-homepage" width="312" height="20" rright="20" rtop="135" align="right" maxlength="80" acceptsfocus="false"
+							style="color: #e9e3d9ff; start-color: #e9e3d9ff;"/>
+						<image id="squad-edit-homepage" width="15" height="15" rright="5" rtop="137" src="ui/textures/test/edit_icon.bmp"
+								onclick="editMode('homepage')"
+								onmouseenter="this.src = 'ui/textures/test/edit_icon_on.bmp'"
+								onmouseexit="this.src = 'ui/textures/test/edit_icon.bmp'"
+								tip="&common.squads.edit.tip;"/>
+						<caption label="&common.squads.details.night;:" x="10" width="300" height="15" rtop="150" style="color: #FFFFFFFF; "/>
+						<textcontrol id="squad-night" width="312" height="20" rright="20" rtop="150" style="color: #e9e3d9ff; start-color: #e9e3d9ff;" align="right"/>
+						<image id="squad-edit-night" width="15" height="15" rright="5" rtop="152" src="ui/textures/test/edit_icon.bmp"
+								onclick="editMode('night')"
+								onmouseenter="this.src = 'ui/textures/test/edit_icon_on.bmp'"
+								onmouseexit="this.src = 'ui/textures/test/edit_icon.bmp'"
+								tip="&common.squads.edit.tip;"/>
+						<caption id="squad-slogan" x="10" rright="10" height="15" y="195" style="color: #FFFFFFFF;" align="center"/>
+						<caption label="&common.squads.details.motd;" x="10" y="170" style="color: #FFFFFFFF; "/>
+						<image src="ui/textures/test/horiz_underline.bmp" x="10" y="160" rright="10" height="12"/>
+						<text id="squad-motd" x="10" y="10" rright="20" height="145" acceptsfocus="no"
+							style="color: #e9e3d9; start-color: #e9e3d9;" maxlength="400"/>
+						<image id="squad-edit-motd" width="15" height="15" rright="5" y="170"
+							src="ui/textures/test/edit_icon.bmp"
+							onclick="editMode('motd')" onshow="this.visible = (mySquadRank > 2) ? true: false"
+							onmouseenter="this.src = 'ui/textures/test/edit_icon_on.bmp'"
+							onmouseexit="this.src = 'ui/textures/test/edit_icon.bmp'"
+							tip="&common.squads.edit.tip;"/>
+					</tab>
+					<tab label="  &common.squads.details.description;  " x="0" y="0" rright="0" rtop="0" onshow="soundPlayShuffle()">
+						<text id="squad-description" x="10" y="10" rright="30" rtop="30" acceptsfocus="no"  maxlength="255" style="color: #e9e3d9; start-color: #e9e3d9;"/>
+						<image id="squad-edit-description" width="15" height="15" rright="5" rtop="25" src="ui/textures/test/edit_icon.bmp"
+							onclick="editMode('description')" onshow="this.visible = (mySquadRank > 2) ? true: false"
+							onmouseenter="this.src = 'ui/textures/test/edit_icon_on.bmp'"
+							onmouseexit="this.src = 'ui/textures/test/edit_icon.bmp'"
+							tip="&common.squads.edit.tip;"/>
+					</tab>
+					<tab label="  &common.squads.members.info;  " x="0" y="0" rright="0" rtop="0" onshow="soundPlayShuffle(); initSquaddie();">
+						<view id="squaddie-header" x="10" width="400" rtop="20" rbottom="0">
+							<view id="squaddie-header" x="10" rtop="10" width="380" height="30" followtop="true">
+								<caption id="squaddie-handle" x="0" rtop="5" rright="0" height="15" style="color: #BFE2CE; font-size: +2;"/>
+								<caption id="squaddie-online" x="0" rtop="5" rright="0" height="15" style="color: #BFE2CE; font-size: +2;" align="right"/>
+								<image src="ui/textures/test/horiz_underline.bmp" x="0" rtop="15" rright="0" height="12"/>
+							</view>
+					
+							<view id="squaddie-details" x="0" y="0" rright="0" rtop="32">
+						 		<!-- persona -->
+								<view x="10" rtop="5" width="380" height="50" followtop="true">
+									<caption label="&common.squads.member.joined;" x="0" rtop="0" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"/>
+									<caption id="squaddie-joined" x="0" rtop="0" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
+									<caption label="&common.squads.member.persona;" x="0" rtop="15" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"/>
+									<caption id="squaddie-persona" x="0" rtop="15" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
+									<caption label="&common.squads.member.rank;" x="0" rtop="30" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"/>
+									<caption id="squaddie-rank" x="0" rtop="30" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
+								</view>
+
+						 		<!-- brigade -->
+								<!-- view x="10" rtop="60" width="380" height="60" followtop="true">
+									<caption label="&common.squads.member.brigade;" x="0" rtop="0" rright="0" height="20" style="color: #BFE2CE; font-size: +2;"/>
+									<image src="ui/textures/test/horiz_underline.bmp" x="0" rtop="12" rright="0" height="12"/>
+									<button id="squaddie-brigade-join" rtop="0" rright="0" width="60" height="20" label="&common.squads.member.join;" followtop="true"
+										style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+										tip="&common.squads.member.join.brigade;"
+										onclick="joinSquaddie('brigade')" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+									<caption label="&common.squads.member.brigade;" x="0" rtop="25" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"/>
+									<caption id="squaddie-brigade" x="0" rtop="25" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
+									<caption label="&common.squads.member.division;" x="0" rtop="40" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"/>
+									<caption id="squaddie-division" x="0" rtop="40" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
+								</view -->
+
+								<!-- mission -->
+								<view x="10" rtop="90" width="380" height="140" followtop="true">
+									<caption label="&common.squads.member.mission;" x="0" rtop="0" rright="0" height="20" style="color: #BFE2CE; font-size: +2;"/>
+									<image src="ui/textures/test/horiz_underline.bmp" x="0" rtop="12" rright="0" height="12"/>
+									<button id="squaddie-join" rtop="0" rright="0" width="60" height="20" label="&common.squads.member.join;" followtop="true"
+										style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+										tip="&common.squads.member.join.mission;"
+										onclick="joinSquaddie()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+									<caption label="&common.squads.member.brigade;" x="0" rtop="25" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"/>
+									<caption id="squaddie-brigade" x="0" rtop="25" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
+									<caption label="&common.squads.member.division;" x="0" rtop="40" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"/>
+									<caption id="squaddie-division" x="0" rtop="40" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
+									<caption label="&common.squads.member.origin;" x="0" rtop="55" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"/>
+									<caption id="squaddie-origin" x="0" rtop="55" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
+									<caption label="&common.squads.member.target;" x="0" rtop="70" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"/>
+									<caption id="squaddie-target" x="0" rtop="70" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
+									<caption label="&common.squads.member.type;" x="0" rtop="85" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"/>
+									<caption id="squaddie-type" x="0" rtop="85" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
+									<caption label="&common.squads.member.leader;" x="0" rtop="100" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"/>
+									<caption id="squaddie-leader" x="0" rtop="100" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
+								</view>
+
+								<!-- flags -->
+								<view x="10" rtop="245" width="380" height="60" followtop="true">
+									<caption label="&common.squads.member.flags;" x="0" rtop="0" rright="0" height="20" style="color: #BFE2CE; font-size: +2;"/>
+									<image src="ui/textures/test/horiz_underline.bmp" x="0" rtop="12" rright="0" height="12"/>
+									<caption id="squaddie-flags" x="0" rtop="25" rright="0" height="15" style="color: #e9e3d9; font-size: +1;"/>
+								</view>
+							</view>
+						</view>
+					</tab>
+					<tab label="  &common.squads.details.options;  " x="0" y="0" rright="0" rtop="0" onshow="soundPlayShuffle()">
+						<panel label="&common.squads.details.options.prefs;" align="center" x="10" height="70" rright="10" rtop="25"
+							style="color: #3e5248; border-color: #3e5248; border-size: 1; font-size: -1;">
+							<caption label="&common.squads.details.options.prefs.invites;" x="20" height="20" width="150" rtop="15" style="color: #e9e3d9ff;"/>
+							<view id="squad-invites-radiogroup" width="150" height="15" rtop="15" rright="10">
+								<radiobutton label="&widgets.prefs.enabled;" x="5" y="0" width="70" height="15"
+									style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+									onclick="game.settings.squadinvites = true; soundPlayClick();"
+									onshow="this.value = game.settings.squadinvites;"/>
+								<radiobutton label="&widgets.prefs.disabled;" y="0" width="70" height="15" rright="5" 
+									style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+									onclick="game.settings.squadinvites = false; soundPlayClick();"
+									onshow="this.value = !game.settings.squadinvites;"/>
+							</view>
+							<caption label="&common.squads.details.options.prefs.recruiting;" x="20" height="20" width="150" rtop="35" style="color: #e9e3d9ff;"/>
+							<view id="squad-recruiting-radiogroup" width="150" height="15" rtop="35" rright="10">
+								<radiobutton label="&widgets.prefs.enabled;" x="5" y="0" width="70" height="15"
+									style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+									onclick="game.settings.isrecruiting = true; soundPlayClick();"
+									onshow="this.value = game.settings.isrecruiting;"/>
+								<radiobutton label="&widgets.prefs.disabled;" y="0" width="70" height="15" rright="5" 
+									style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+									onclick="game.settings.isrecruiting = false; soundPlayClick();"
+									onshow="this.value = !game.settings.isrecruiting;"/>
+							</view>
+						</panel>
+						<panel label="&common.squads.details.options.member;" align="center" x="10" height="55" rright="10" rtop="100"
+							style="color: #3e5248; border-color: #3e5248; border-size: 1; font-size: -1;">
+							<caption label="&common.squads.details.options.member.leave;" x="20" height="20" width="150" rtop="17" style="color: #e9e3d9ff;"/>
+							<button width="90" height="20" rright="10" rtop="17" label="&common.squads.details.options.member.leave.button;"
+								style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+								onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+								onclick="doSquadCommand('/leave', false)"/>
+						</panel>
+						<panel label="&common.squads.details.options.recruiter;" align="center" x="10" height="135" rright="10" rtop="160"
+							style="color: #3e5248; border-color: #3e5248; border-size: 1; font-size: -1;"
+							 onshow="this.visible = (mySquadRank > 2) ? true: false">
+							<caption label="&common.squads.details.options.recruiter.recruit;:" x="20" height="20" width="150" rtop="22" style="color: #e9e3d9ff;"/>
+							<textcontrol id="squad-recruit-callsign" width="80" height="12" rright="110" rtop="25" maxlength="8"
+								style="background-color: #FFFFFF22; border-color: #BFE2CE; color: #e9e3d9ff; start-color: #e9e3d9ff; font-size: -1;"/>
+							<button width="90" height="20" rright="10" rtop="22" label="&common.squads.details.options.recruiter.recruit.button;"
+								style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+								onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+								onclick="doSquadCommand('/recruit', false)"/>
+							<caption label="&common.squads.details.options.xo.remove;:" x="20" height="20" width="150" rtop="45" style="color: #e9e3d9ff;"/>
+							<button width="90" height="20" rright="10" rtop="45" label="&common.squads.details.options.xo.remove.button;"
+								style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+								onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+								onclick="doSquadCommand('/remove', true)"/>
+							<caption label="&common.squads.details.options.xo.promote;:" x="20" height="20" width="150" rtop="70" style="color: #e9e3d9ff;"/>
+							<button width="90" height="20" rright="10" rtop="70" label="&common.squads.details.options.xo.promote.button;"
+								style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+								onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+								onclick="doSquadCommand('/promote', true)"/>
+							<caption label="&common.squads.details.options.xo.demote;:" x="20" height="20" width="150" rtop="95" style="color: #e9e3d9ff;"/>
+							<button width="90" height="20" rright="10" rtop="95" label="&common.squads.details.options.xo.demote.button;"
+								style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+								onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+								onclick="doSquadCommand('/demote', true)"/>
+						</panel>
+						<panel label="&common.squads.details.options.co;" align="center" x="10" height="85" rright="10" rtop="300"
+							style="color: #3e5248; border-color: #3e5248; border-size: 1; font-size: -1;"
+							onshow="this.visible = (mySquadRank > 4) ? true: false">
+							<caption label="&common.squads.details.options.co.resign;:" x="20" height="20" width="150" rtop="20" style="color: #e9e3d9ff;"/>
+							<button width="90" height="20" rright="10" rtop="20" label="&common.squads.details.options.co.resign.button;"
+								style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+								onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+								onclick="doSquadCommand('/resign', true)"/>
+							<caption label="&common.squads.details.options.co.disband;" x="20" height="20" width="150" rtop="45" style="color: #e9e3d9ff;"/>
+							<button width="90" height="20" rright="10" rtop="45" label="&common.squads.details.options.co.disband.button;"
+								style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+								onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+								onclick="doSquadCommand('/disband', false)"/>
+						</panel>
+					</tab>
+					<tab label="  &common.squads.details.help;  " x="0" y="0" rright="0" rtop="0" onshow="soundPlayShuffle()" align="right">
+						<text id="squad-help" x="10" y="10" rright="10" rtop="30" acceptsfocus="no" style="color: #e9e3d9; border-size-right: 10;" onshow="this.text = getSquadHelp()">
+							<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+						</text>
+					</tab>
+				</tabview>
+			</view>
+		</tab>
+		<tab id="createsquad" x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false' onshow="showNoSquad()">
+			<view x="18" width="444" height="411" rtop="35">
+				<caption id="squad-create-title" x="10" rtop="12" height="20" width="400" style="font-size: +2; color: #BFE2CE;"/>
+				<image x="10" rtop="22" src="ui/textures/test/horiz_underline.bmp" width="425" height="12"/>
+				<text id="squad-create-body" x="10" height="150" rright="10" rtop="40" acceptsfocus="no" style="color: #e9e3d9;"/>
+				
+				<caption label="&common.squads.create.long;" x="10" height="15" width="150" rtop="210" style="color: #FFFFFFFF;"
+					tip="&common.squads.create.long.tip;"/>
+				<textcontrol id="squad-long-name" width="250" height="15" rright="15" rtop="210"
+					style="background-color: #FFFFFF22; border-color: #BFE2CE; color: #e9e3d9ff; start-color: #e9e3d9ff; font-size: -1;"
+					tip="&common.squads.create.long.tip;" align="right"/>
+					
+				<caption label="&common.squads.create.short;" x="10" height="15" width="150" rtop="230" style="color: #FFFFFFFF;"
+					tip="&common.squads.create.short.tip;"/>
+				<textcontrol id="squad-short-name" width="120" height="15" rright="15" rtop="230"
+					style="background-color: #FFFFFF22; border-color: #BFE2CE; color: #e9e3d9ff; start-color: #e9e3d9ff; font-size: -1;"
+					tip="&common.squads.create.short.tip;" align="right"/>
+					
+				<caption label="&common.squads.create.xo;" x="10" height="15" width="150" rtop="250" style="color: #FFFFFFFF;"
+					tip="&common.squads.create.xo.tip;"/>
+				<textcontrol id="squad-xo-name" width="120" height="15" rright="15" rtop="250"
+					style="background-color: #FFFFFF22; border-color: #BFE2CE; color: #e9e3d9ff; start-color: #e9e3d9ff; font-size: -1;"
+					tip="&common.squads.create.xo.tip;" align="right"/>
+
+				<caption label="&common.squads.create.member; #1" x="10" height="15" width="150" rtop="270" style="color: #FFFFFFFF;"
+					tip="&common.squads.create.member.tip;"/>
+				<textcontrol id="squad-member1-name" width="120" height="15" rright="15" rtop="270"
+					style="background-color: #FFFFFF22; border-color: #BFE2CE; color: #e9e3d9ff; start-color: #e9e3d9ff; font-size: -1;"
+					tip="&common.squads.create.member.tip;" align="right"/>
+					
+				<caption label="&common.squads.create.member; #2" x="10" height="15" width="150" rtop="290" style="color: #FFFFFFFF;"
+					tip="&common.squads.create.member.tip;"/>
+				<textcontrol id="squad-member2-name" width="120" height="15" rright="15" rtop="290"
+					style="background-color: #FFFFFF22; border-color: #BFE2CE; color: #e9e3d9ff; start-color: #e9e3d9ff; font-size: -1;"
+					tip="&common.squads.create.member.tip;" align="right"/>
+					
+				<caption label="&common.squads.create.member; #3" x="10" height="15" width="150" rtop="310" style="color: #FFFFFFFF;"
+					tip="&common.squads.create.member.tip;"/>
+				<textcontrol id="squad-member3-name" width="120" height="15" rright="15" rtop="310"
+					style="background-color: #FFFFFF22; border-color: #BFE2CE; color: #e9e3d9ff; start-color: #e9e3d9ff; font-size: -1;"
+					tip="&common.squads.create.member.tip;" align="right"/>
+					
+				<view x="20" y="10" height="40" width="400" style="background-color: #00000088; 
+									border-sides: ui/textures/test/infobox_side.bmp;
+									border-corner: ui/textures/test/infobox_corner.bmp;
+									border-width: 16;
+									border-height: 16;">
+					<button id="squad-clear-button" label="&common.squads.invite.clear;" x="35" y="5" height="27" width="160"
+						style="control-on: ui/textures/test/gen_button_on.bmp;
+							control-off: ui/textures/test/gen_button_off.bmp;
+							control-disabled: ui/textures/test/gen_button_disabled.bmp;
+							font-size: -2;
+							color: #FFFFFF;"
+						onclick="resetSquadCreate(); soundPlayClick()"
+						onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+					<button id="squad-create-button" label="&common.squads.create;" x="210" y="5" height="27" width="160"
+						style="control-on: ui/textures/test/gen_button_on.bmp;
+							control-off: ui/textures/test/gen_button_off.bmp;
+							control-disabled: ui/textures/test/gen_button_disabled.bmp;
+							font-size: -2;
+							color: #FFFFFF;"
+						onclick="createSquad(); soundPlayClick()"
+						onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+				</view>
+			</view>
+			<include file="widgets/divider.uixml"/>
+			<view x="468" width="444" height="411" rtop="35">
+				<caption id="squad-join-title" x="10" rtop="12" height="20" width="400" style="font-size: +2; color: #BFE2CE;"/>
+				<image x="10" rtop="22" src="ui/textures/test/horiz_underline.bmp" width="425" height="12"/>
+				<text id="squad-join-body" x="10" height="190" rright="10" rtop="40" acceptsfocus="no" style="color: #e9e3d9;"/>
+				<caption label="&common.squads.invite.current;:" x="10" height="20" width="400" rtop="250" style="color: #FFFFFF;"/>
+				<caption id="squad-inviter" height="20" width="400" rright="10" rtop="250" style="color: #e9e3d9;" align="right"/>
+				<caption label="&common.squads.invite.squad;:" x="10" height="20" width="400" rtop="270" style="color: #FFFFFF;"/>
+				<caption id="squad-inviter-squad" height="20" width="400" rright="10" rtop="270" style="color: #e9e3d9;" align="right"/>
+				
+				<checkbox x="80" width="16" height="16" rtop="310" checked="true"
+					style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+					onshow="this.checked = !game.settings.squadinvites" onclick="game.settings.squadinvites = !this.checked"/>
+				<caption label="&common.squads.invite.decline.auto;" x="100" height="15" rright="10" rtop="312" style="color: #e9e3d9;"/>
+				
+				<view x="20" y="10" height="40" width="400" style="background-color: #00000088; 
+									border-sides: ui/textures/test/infobox_side.bmp;
+									border-corner: ui/textures/test/infobox_corner.bmp;
+									border-width: 16;
+									border-height: 16;">
+					<button id="squad-recruiters-button" label="&common.squads.invite.recruiters;" x="20" y="5" height="27" width="120"
+						style="control-on: ui/textures/test/gen_button_on.bmp;
+							control-off: ui/textures/test/gen_button_off.bmp;
+							control-disabled: ui/textures/test/gen_button_disabled.bmp;
+							font-size: -2;
+							color: #FFFFFF;"
+						onclick="showRecruiters();"
+						onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+					<button id="squad-decline-button" label="&common.squads.invite.decline;" x="150" y="5" height="27" width="110"
+						style="control-on: ui/textures/test/gen_button_on.bmp;
+							control-off: ui/textures/test/gen_button_off.bmp;
+							control-disabled: ui/textures/test/gen_button_disabled.bmp;
+							font-size: -2;
+							color: #FFFFFF;"
+						onclick="player.client.sendchatmessage('/decline'); soundPlayClick()"
+						onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+					<button id="squad-accept-button" label="&common.squads.invite.accept;" y="5" height="27" width="110" rright="20"
+						style="control-on: ui/textures/test/gen_button_on.bmp;
+							control-off: ui/textures/test/gen_button_off.bmp;
+							control-disabled: ui/textures/test/gen_button_disabled.bmp;
+							font-size: -2;
+							color: #FFFFFF;"
+						onclick="player.client.sendchatmessage('/accept'); soundPlayClick()"
+						onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+				</view>
+			</view>
+		</tab>
+		<include file="widgets/globals/onlineonly.uixml"/>
+	</tabview>
+	<script>
+		<!--
+		
+		var squad				= player.client.squad;
+		
+		var initSquad			= true;
+		var showOfflineMates	= false;
+		var squadListSize		= 0;
+		var squadListPage		= 1;
+		var squadListPageSize	= 20;		
+		var mySquadRank			= 0;
+		var mySquadJoinedTF		= 0;
+		var mySquadJoined		= 0;
+		var totalSquadMembers	= 0;
+		var onlineSquadMembers	= 0;
+		var creatingSquad		= false;
+		var refreshingMembers	= false;
+		var mySquadCO			= "";
+		
+		var squadModifiedTimer	= new CycleTimer(1000);
+		var squadUpdateTimer	= new CycleTimer(10000);
+		var squadExtUpdateTimer	= new CycleTimer(30000);
+		var squadRefreshTimer	= new CycleTimer(5000);
+		var squadMemberList		= new ListControl(findview("squadMemberList"), selectSquadMember);
+
+		var squadName			= findview("squad-name");
+		var squadNameTitle		= findview("squad-name-title");
+		var squadShort			= findview("squad-shortname");
+		var squadCo				= findview("squad-co");
+		var squadCreated		= findview("squad-created");
+		var squadVoting			= findview("squad-voting");
+		var squadRecruiting		= findview("squad-recruiting");
+		var squadLanguage		= findview("squad-language");
+		var squadHomepage		= findview("squad-homepage");
+		var squadNight			= findview("squad-night");
+		var squadDescription	= findview("squad-description");
+		var squadMotd			= findview("squad-motd");
+		var squadOptions		= findview("squad-options");
+		var toggleOffline		= findview("squad-toggleoffline");
+		var squadPageBack		= findview("squad-pageback");
+		var squadPageNext		= findview("squad-pagenext");
+		var squadCounts			= findview("squad-counts");
+		var squadDetails		= findview("squad-details");
+		var squadSlogan			= findview("squad-slogan");
+		
+		var squadEditName			= findview("squad-edit-name");
+		var squadEditHomepage		= findview("squad-edit-homepage");
+		var squadEditNight			= findview("squad-edit-night");
+		var squadEditVoting			= findview("squad-edit-voting");
+		var squadEditRecruiting		= findview("squad-edit-recruiting");
+		//var squadEditLanguage		= findview("squad-edit-language");
+		var squadEditDescription	= findview("squad-edit-description");
+		var squadEditMotd			= findview("squad-edit-motd");
+		
+		function showSquads(tab)
+		{
+			squadUpdateTimer.run(); // bleed off one run
+			
+			if(!game.ingame)
+				setHelp(getlocstring('common.squads.tab.help'));
+			
+			if(initSquad)
+				soundPlayShuffle();
+			
+			pageSquadList(0);
+		}
+		
+		function showNoSquad()
+		{
+			if(!game.ingame)
+				setHelp(getlocstring('common.squads.create.help'));
+			
+			var createTitle 	= findview("squad-create-title");
+			var createBody 		= findview("squad-create-body");
+			var createContent	= game.getcontent("squads/create.xml");
+			
+			if(createContent != null)
+			{
+				createTitle.label 	= createContent.title;
+				createBody.text 	= createContent.body;
+			}
+			
+			var joinTitle 		= findview("squad-join-title");
+			var joinBody 		= findview("squad-join-body");
+			var joinContent		= game.getcontent("squads/join.xml");
+			
+			if(joinContent != null)
+			{
+				joinTitle.label = joinContent.title;
+				joinBody.text 	= joinContent.body;
+			}
+		}
+		
+		function setSquadOption()
+		{
+			// default is to show the squad tab
+			if(!game.online)
+				squadOptions.value = 2; // not online
+			else if(squad != null && squad.id > 0)
+				squadOptions.value = 0; // squad member
+			else
+				squadOptions.value = 1; // create
+			
+			// do squad quickhelp 
+			quickhelp(squadOptions.getchild(squadOptions.value).id);
+		}
+		
+		function runSquadUpdate()
+		{
+			if(squadModifiedTimer.run())
+			{
+				if(squad == null)
+					squad = player.client.squad;
+
+				if(squad != null && squad.id > 0)
+				{
+					if(initSquad || squad.modified)
+					{
+						updateSquadMembers();
+						updateSquadInfo();
+						pageSquadList(0, true);
+						initSquad = false;
+						
+						if(mySquadRank == 1 && game.globals.recruitmessage == null)
+						{
+							showOk(getVariableLocString('common.squads.member.recruit', squad.rookiedays, (squad.rookiedays >= mySquadJoined) ? squad.rookiedays - mySquadJoined: 0));
+							game.globals.recruitmessage = true;
+						}
+					}
+					else if(squadUpdateTimer.run())
+					{
+						consoleprint("Polling squad!\n");
+						squad.requestmembers();
+					}
+				}
+				else
+				{
+					// no squad left pane
+					if(creatingSquad != game.globals.creatingsquad)
+					{
+						//consoleprint("Create Squads are out of sync: " + game.globals.creatingsquad + "\n");
+						
+						if(game.globals.creatingsquad)
+						{
+							unfocusInput(findview("squad-long-name"));
+							unfocusInput(findview("squad-short-name"));
+							unfocusInput(findview("squad-xo-name"));
+							unfocusInput(findview("squad-member1-name"));
+							unfocusInput(findview("squad-member2-name"));
+							unfocusInput(findview("squad-member3-name"));
+							findview("squad-create-button").enabled = false;
+							findview("squad-clear-button").enabled = false;
+						}
+						else
+						{
+							focusInput(findview("squad-long-name"), false);
+							focusInput(findview("squad-short-name"), false);
+							focusInput(findview("squad-xo-name"), false);
+							focusInput(findview("squad-member1-name"), false);
+							focusInput(findview("squad-member2-name"), false);
+							focusInput(findview("squad-member3-name"), false);
+							findview("squad-create-button").enabled = true;
+							findview("squad-clear-button").enabled = true;
+						}
+						
+						creatingSquad = game.globals.creatingsquad;
+					}
+					
+					// no squad - right pane
+					var invite = player.client.squadinvite;
+					
+					if(invite != null && invite.valid)
+					{
+						findview("squad-inviter").label 			= getlocstring("common.squads.invite.inviter");
+						findview("squad-inviter-squad").label 		= getlocstring("common.squads.invite.squadname");
+						findview("squad-decline-button").enabled 	= true;
+						findview("squad-accept-button").enabled 	= true;
+					}
+					else
+					{
+						findview("squad-inviter").label 			= getlocstring("common.squads.invite.noinvite");
+						findview("squad-inviter-squad").label 		= getlocstring("common.squads.invite.noinvite");
+						findview("squad-decline-button").enabled 	= false;
+						findview("squad-accept-button").enabled 	= false;
+					}
+				}
+				
+				if(player.client.state.maxsquadrank < 5)
+				{
+					var btn = findview("squad-create-button");
+					btn.settip(getlocstring('squad.control.slocked'));
+					btn.enabled = false;
+					squadAddButtonLock(btn);
+				}
+				
+				if(player.client.state.maxsquadrank < 1)
+				{
+					var btn = findview("squad-accept-button");
+					btn.settip(getlocstring('squad.control.slocked'));
+					btn.enabled = false;
+					squadAddButtonLock(btn);
+					
+					btn = findview("squad-recruiters-button");
+					btn.settip(getlocstring('squad.control.slocked'));
+					btn.enabled = false;
+					squadAddButtonLock(btn);
+				}
+				
+				setSquadOption();
+			}
+		}
+		
+		function squadAddButtonLock(b)
+		{
+			var x = (b.width/2) - (b.stringlength/2) - b.scalev("x", 15);
+			var y = (b.height/2) - b.scalev("y", 6);
+			
+			b.addview("<image x='" + b.normv("x", x) + "' y='" + b.normv("y", y) + "' src='ui/textures/lock.dds' width='12' height='12' style='color: #FFFFFF;'/>");
+		}
+		
+		// run by other tabs or pages to update squad info at a slower rate
+		function runExtSquadUpdate()
+		{
+	 	 	if(squadExtUpdateTimer.run() && squad != null)
+	 	 	 	squad.requestmembers();
+		}
+		
+		function updateSquadInfo()
+		{
+			squadNameTitle.text		= squad.name.toUpperCase();
+			squadName.label			= squad.name;
+			squadShort.label		= squad.shortname;
+			squadCo.label			= squad.co;
+			squadCreated.label		= squad.created;
+			squadVoting.label		= getlocstring("common.squads.details.voting." + squad.voting);
+			squadRecruiting.label	= getlocstring("common.squads.details.recruiting." + squad.recruiting);
+			squadLanguage.label		= getlocstring("widgets.prefs.groups.game.language." + game.settings.languages[squad.language]);
+			squadHomepage.text		= squad.homepage;
+			squadNight.text			= squad.night;
+			squadDescription.text	= (squad.description.length) ? squad.description: getlocstring("common.squads.details.description.default");
+			squadMotd.text			= (squad.motd.length) ? squad.motd: getlocstring("common.squads.details.motd.default");
+			squadSlogan.label		= (squad.slogan.length) ? '"' + squad.slogan + '"': "";
+			
+			squadEditName.visible 			= false;
+			squadEditHomepage.visible 		= false;
+			squadEditNight.visible 			= false;
+			squadEditVoting.visible 		= false;
+			squadEditRecruiting.visible 	= false;
+			//squadEditLanguage.visible 		= false;
+			squadEditDescription.visible 	= false;
+			squadEditMotd.visible 			= false;
+			
+			if(mySquadRank > 2)
+			{
+				squadEditName.visible 			= true;
+				squadEditHomepage.visible 		= true;
+				squadEditNight.visible 			= true;
+				squadEditRecruiting.visible 	= true;
+				squadEditDescription.visible 	= true;
+				squadEditMotd.visible 			= true;
+				
+				if(mySquadRank > 3)
+				{
+					//squadEditLanguage.visible 		= true;
+					squadEditVoting.visible 		= true;
+				}
+			}
+		}
+		
+		function updateSquadMembers()
+		{
+			refreshingMembers = true;
+			
+			var members = (showOfflineMates) ? squad.members: squad.onlinemembers;
+			var start	= (squadListPage * squadListPageSize) - squadListPageSize;
+			var stop	= (start + squadListPageSize > members.length) ? members.length: start + squadListPageSize;
+
+			//consoleprint("DOING " + ((showOfflineMates) ? "ALL": "ONLINE") + " MEMBERS IN THE RANGE " + start + " -> " + stop + "!\n");
+			
+			squadListSize = members.length;
+			
+			squadMemberList.clearRows(false);
+			
+			for(var i = start; i < stop; i++)
+			{
+				/************ Update Member List **************/
+				
+				var member 		= members[i];
+				var persona		= (member.country && member.country.name != "None") ? getCountryBranch(member.country, member.branch): "-";
+				var position	= getlocstring('common.squads.ranks.rank' + member.squadrank);
+				var tip			= getlocstring('common.squads.members.tips.offline') + "\n";
+				var online		= "notspawned_icon";
+				
+				if(member.recruiting)
+					position += "*";
+				
+				if(member.online)
+				{
+					online		= "spawned_icon";
+					tip			= getlocstring('common.squads.members.tips.online') + "\n";
+				}
+				
+				if(member.brigade != null)
+					tip += htmlencode(member.brigade.name) + "\n";
+				
+				if(member.rank != null)
+					tip += htmlencode(member.rank.name) + "\n";
+				
+				if(member.leader)
+					tip += getlocstring('common.squads.members.tips.leader') + "\n";
+				
+				if(member.spawned)
+				{
+					tip += getlocstring('common.squads.members.tips.spawned') + "\n";
+					
+					if(member.nearestcp != null)
+						tip += getlocstring('common.squads.members.tips.near') + " " + htmlencode(member.nearestcp.name) + " ";
+				}
+
+				if(member.afk)
+					tip += "AFK ";
+				
+				if(member.hc)
+					tip += getlocstring('common.squads.members.tips.hc') + "\n"; 
+				
+				if(member.handle.toLowerCase() == player.client.handle.toLowerCase())
+				{
+					mySquadRank 		= member.squadrank;
+					mySquadJoined		= member.joined;
+					mySquadJoinedTF		= member.joinedtf;
+				}
+				
+				if(member.squadrank == 5)
+					mySquadCO = member.handle;
+				
+				var row = "\
+<view id='squaddie_" + i + "' width='413' height='16' onmouseenter='squadMemberList.mouseEnter(this)' onmouseexit='squadMemberList.mouseExit(this)' aspectalign='left'>\
+	<image x='0' y='3' src='ui/textures/test/" + online + ".bmp' width='10' height='10'/>\
+	<caption x='15' y='0' width='70' height='15' style='color: #e9e3d9ff;' label='" + member.handle + "'/>\
+	<caption x='87' y='0' width='80' height='15' style='color: #e9e3d9ff;' label='" + position + "'/>\
+	<caption x='169' y='0' width='204' height='15' style='color: #e9e3d9ff;' label='" + persona + "'/>\
+	<caption rright='0' y='0' width='35' height='15' style='color: #e9e3d9ff;' label='" + ((member.afk) ? htmlencode(getlocstring('common.yes')): "") + "'/>\
+</view>";
+				
+				var rowView = squadMemberList.addRow(member, row);
+				
+				if(rowView != null)
+					rowView.settip(tip);
+				
+				//consoleprint("      Added " + member.handle + " with rank " + member.squadrank + "\n");
+			}
+			
+			squadCounts.label = getVariableLocString('common.squads.counts', squad.onlinecount, squad.totalcount); 
+			
+			refreshingMembers = false;
+			
+			return true;
+		}
+		
+		function selectSquadMember(dblclick)
+		{
+			var squaddie = squadMemberList.data;
+			
+			consoleprint("Selecting squad mate: " + squaddie.handle + " and " + dblclick + "\n");
+		 	soundPlayClick();
+		 	initSquaddie();
+			
+			if(dblclick && squaddie.online && squaddie.missionid != null && squaddie.missionid > 0 && squaddie.handle != game.player.client.handle)
+			{
+				consoleprint("Showing join confirmation!\n");
+				showConfirm(getlocstring('common.squads.members.join'), doJoinSquaddie);
+			}
+		}
+		
+		function doJoinSquaddie(confirm)
+		{
+			if(confirm)
+				joinSquaddie();	
+		}
+		
+		function formatSquadCreation(created)
+		{
+			var when = new Date();
+			
+			when.setTime(created * 1000);
+			
+			return when.toLocaleString();
+		}
+		
+		function refreshSquadMembers()
+		{
+			if(squad != null && !squad.modified && squadRefreshTimer.run())
+				squad.requestmembers();
+		}
+		
+		function toggleOfflineMembers()
+		{
+			consoleprint("Toggling squad mates!!!!\n");
+			soundPlayClick();
+			
+			showOfflineMates 	= !showOfflineMates;
+			squadListPage		= 1;
+
+			toggleOffline.label = (showOfflineMates) ? getlocstring('common.squads.members.hideoffline'): getlocstring('common.squads.members.showoffline');
+			updateSquadMembers();
+			pageSquadList(0);
+		}
+		
+		function pageSquadList(diff, nosound)
+		{
+			if(nosound == null || !nosound)
+				soundPlayClick();
+			
+			var pages = 1;
+			var currentPage = squadListPage;
+			
+			if(squadListPageSize < squadListSize)
+			{
+				pages = Math.floor(squadListSize / squadListPageSize);
+				
+				if(squadListSize % squadListPageSize > 0)
+					pages++;
+			}
+			
+			if(squadListPage > pages)
+				squadListPage = pages;
+			
+			if(squadListPage < 1)
+				squadListPage = 1;
+			
+			if(diff > 0)
+			{
+				if(squadListPage < pages)
+					squadListPage += 1;
+			}
+			else if(diff < 0)
+			{
+				if(squadListPage > 1)
+					squadListPage += -1;
+			}
+			
+			if(squadListPage != currentPage)
+				updateSquadMembers();
+			
+			consoleprint("Current page is " + squadListPage + "/" + squadListPageSize + "/" + squadListSize + "/" + pages + "\n");
+			
+			squadPageBack.label = (squadListPage > 2) ? "     < " + getlocstring('common.page') + " " + (squadListPage - 1): "     < " + getlocstring('common.page') + " 1";
+			squadPageNext.label = getlocstring('common.page') + " " + (squadListPage + 1) + " >     ";     
+			
+			squadPageBack.visible = (squadListPage > 1)  ? true: false;
+			squadPageNext.visible = (squadListPage < pages)  ? true: false;
+		}
+		
+		function getSquadHelp()
+		{
+			var content = game.getcontent("squads/commands.xml");
+			
+			if(content != null)
+				return content.body;
+			
+			return "";
+		}
+		
+		function resetSquadCreate()
+		{
+			findview("squad-long-name").text 	= "";
+			findview("squad-short-name").text 	= "";
+			findview("squad-xo-name").text 		= "";
+			findview("squad-member1-name").text = "";
+			findview("squad-member2-name").text = "";
+			findview("squad-member3-name").text = "";
+		}
+		
+		function createSquad()
+		{
+			var longname 	= findview("squad-long-name").text;
+			var shortname 	= findview("squad-short-name").text;
+			var xo	 		= findview("squad-xo-name").text;
+			var member1 	= findview("squad-member1-name").text;
+			var member2 	= findview("squad-member2-name").text;
+			var member3 	= findview("squad-member3-name").text;
+			var handleRe	= new RegExp("^[A-Za-z0-9]+$");
+			
+			if(longname == "" || shortname == "" || xo == "" || member1 == "" || member2 == "" || member3 == "")
+			{
+				showOk(getlocstring('common.squads.create.msg.required'));
+				return;
+			}
+			
+			if(longname.length > 40)
+			{
+				showOk(getlocstring('common.squads.create.msg.longname'));
+				return;
+			}
+			
+			if(shortname.length > 80)
+			{
+				showOk(getlocstring('common.squads.create.msg.shortname'));
+				return;
+			}
+			
+			if(!handleRe.test(shortname))
+			{
+				showOk(getlocstring('common.squads.create.msg.shortname.invalid'));
+				return;
+			}
+			
+			if(!handleRe.test(xo) || xo.length > 10)
+			{
+				showOk(getVariableLocString('common.squads.create.msg.handle', xo));
+				return;
+			}
+			
+			if(!handleRe.test(member1) || member1.length > 10)
+			{
+				showOk(getVariableLocString('common.squads.create.msg.handle', member1));
+				return;
+			}
+			
+			if(!handleRe.test(member2) || member2.length > 10)
+			{
+				showOk(getVariableLocString('common.squads.create.msg.handle', member2));
+				return;
+			}
+			
+			if(!handleRe.test(member3) || member3.length > 10)
+			{
+				showOk(getVariableLocString('common.squads.create.msg.handle', member3));
+				return;
+			}
+			
+			if(player.client.createsquad(shortname, longname, xo, member1, member2, member3))
+			{
+				showOk(getlocstring('common.squads.create.msg.sent'));
+				game.globals.creatingsquad = true;
+			}
+			else
+			{
+				showOk(getlocstring('common.squads.create.msg.failed'));
+			}
+		}
+		
+		function editMode(which)
+		{
+			soundPlayClick();
+			
+			if(mySquadRank < 3)
+				return;
+			
+			consoleprint("Editing " + which + "/" + squad[which] + "\n");
+			
+			var editor = game.load("squadeditor");
+			
+			if(editor)
+				editor.initEditor(which);
+		}
+		
+		function focusInput(input, focused)
+		{
+			input.setstyleproperty("background-color", "#FFFFFF22");
+			input.setstyleproperty("color", "#FFFFFF");
+			input.acceptsfocus = true;
+			input.focused = focused;
+		}
+		
+		function unfocusInput(input)
+		{
+			input.focused = false;
+			input.acceptsfocus = false;
+			input.setstyleproperty("background-color", "#00000000");
+			input.setstyleproperty("color", input.getstyleproperty("start-color"));
+		}
+		
+		function initSquaddie(squaddie)
+		{
+		 	consoleprint("Doing squaddie\n");
+		 	
+		 	if(squaddie == null)
+		 	{
+		 		if(squadMemberList.data == null)
+		 			squadMemberList.select(0);
+		 		
+		 		squaddie = squadMemberList.data;
+		 	}
+			
+		 	var handleView 		= findview("squaddie-handle");
+		 	var statusView 		= findview("squaddie-online");
+		 	var personaView 	= findview("squaddie-persona");
+		 	var rankView 		= findview("squaddie-rank");
+		 	var joinedView		= findview("squaddie-joined");
+		 	var brigadeView 	= findview("squaddie-brigade");
+		 	var divisionView 	= findview("squaddie-division");
+		 	var originView 		= findview("squaddie-origin");
+		 	var targetView 		= findview("squaddie-target");
+		 	var typeView 		= findview("squaddie-type");
+		 	var leaderView 		= findview("squaddie-leader");
+		 	var flagsView 		= findview("squaddie-flags");
+		 	var squaddieJoin	= findview("squaddie-join");
+
+			squaddieJoin.enabled = false;
+			
+		 	if(squaddie != null)
+		 	{
+		 	 	consoleprint("Squaddie is not null\n");
+		 	 	
+		 	 	var sqaddieIsMe	= (squaddie.handle.toUpperCase() == player.client.handle.toUpperCase()) ? true: false;
+		 	 	var sameSide 	= (squaddie.country != null && client.persona != null && squaddie.country.side == client.persona.country.side) ? true: false;
+				
+			 	handleView.label = squaddie.handle.toUpperCase() + ", " + getlocstring('common.squads.ranks.rank' + squaddie.squadrank).toUpperCase();
+			 	joinedView.label = "-";
+				
+				if(squaddie.online)
+				{
+					statusView.label = getlocstring('common.squads.member.online');
+					statusView.setstyleproperty("color", "#00FF00");
+
+					if(squaddie.country != null && squaddie.country.name != "None")
+					{
+					 	personaView.label 	= getCountryBranch(squaddie.country, squaddie.branch);
+					 	rankView.label 		= squaddie.rank.name;
+					}
+					else
+					{
+					 	personaView.label 	= "-";
+					 	rankView.label 		= "-";
+					}
+					
+					if(squaddie.brigade != null)
+					{
+					 	brigadeView.label 	= squaddie.brigade.name;
+					 	divisionView.label 	= squaddie.brigade.parent.name;
+					 	
+					 	if(sameSide && !sqaddieIsMe && !game.ingame && (client.brigade == null || client.brigade.id != squaddie.brigade.id))
+							squaddieJoin.enabled = true;
+					}
+					else
+					{
+					 	brigadeView.label 	= "-";
+					 	divisionView.label 	= "-";
+					}
+
+					if(!game.ingame && squaddie.mission != null)
+					{
+					 	originView.label 	= squaddie.mission.origin.name;
+					 	targetView.label 	= squaddie.mission.target.name;
+					 	typeView.label 		= getSquadMissionType(squaddie.mission.origin, squaddie.mission.target);
+					 	leaderView.label 	= squaddie.mission.poster;
+					 	
+					 	if(sameSide && !sqaddieIsMe && !game.ingame && (client.currentmission == null || client.currentmission.id != squaddie.mission.id))
+							squaddieJoin.enabled = true;
+					}
+					else
+					{
+					 	originView.label 	= "-";
+					 	targetView.label 	= "-";
+					 	typeView.label 		= "-";
+					 	leaderView.label 	= "-";
+					}
+					
+					var flags = "";
+					
+					if(squaddie.hc)
+						flags += getlocstring('common.squads.member.flags.hc') + ", ";
+
+					if(squaddie.afk)
+						flags += getlocstring('common.squads.member.flags.afk') + ", ";
+					
+					if(squaddie.spawned)
+						flags += getlocstring('common.squads.member.flags.spawned') + ", ";
+
+					if(squaddie.leader)
+						flags += getlocstring('common.squads.member.flags.leader') + ", ";
+					
+					if(squaddie.recruiting)
+						flags += getlocstring('common.squads.member.flags.recruiting') + ", ";
+					
+					flagsView.label = getlocstring('common.squads.member.flags.none');
+					
+					if(flags.length > 0)
+					 	flagsView.label = flags.substr(0, flags.length - 2);
+
+				}
+				else
+				{
+					statusView.setstyleproperty("color", "#FF0000");
+				 	statusView.label = getlocstring('common.squads.member.offline');
+				 	personaView.label 	= "-";
+				 	rankView.label 		= "-";
+				 	brigadeView.label 	= "-";
+				 	divisionView.label 	= "-";
+				 	originView.label 	= "-";
+				 	targetView.label 	= "-";
+				 	typeView.label 		= "-";
+				 	leaderView.label 	= "-";
+				 	flagsView.label 	= getlocstring('common.squads.member.flags.none');
+				}
+				
+				switch(squaddie.joinedtf)
+				{
+					case 1: // today
+						joinedView.label = getlocstring('common.squads.member.joined.today');
+					break;	
+					case 2: // days
+						joinedView.label = getVariableLocString('common.squads.member.joined.day' + ((squaddie.joined != 1) ? "s": ""), squaddie.joined);
+					break;	
+					case 3: // months
+					{
+						var units = squaddie.joined;
+						var unittf = "month";
+						
+						if(squaddie.joined/12 >= 1)
+						{
+							units = Math.floor(squaddie.joined/12);
+							unittf = "year";
+						}
+						
+						var plural = (units > 1) ? "s": "";
+						
+						joinedView.label = getVariableLocString('common.squads.member.joined.' + unittf + plural, units);
+					}
+					break;	
+					default:
+						// do nothing
+					break;
+				}
+				
+				if(!refreshingMembers && squadDetails.value != 2 && squadDetails.value != 3)
+					squadDetails.value = 2;
+			}
+			else
+			{
+			 	consoleprint("Squaddie is null\n");
+			}
+		}
+		
+		function joinSquaddie()
+		{
+		 	// make sure its not me.
+		 	// query before proceeding if you are currently a mission leader
+		 	// exit mission first
+		 	
+		 	var squaddie = squadMemberList.data;
+
+		 	if(!game.ingame && squaddie != null)
+		 	{
+		 	 	var persona		= null;
+		 	 	var personas 	= client.personas;
+
+				for(var i = 0; i < personas.length; i++)
+				{
+				 	var check = personas[i];
+
+				 	if(squaddie.country.code == check.country.code && squaddie.branch.toUpperCase() == check.branch.toUpperCase())
+				 	{
+					 	if(check.lockedthru == 0)
+					 	{
+					 		persona = check;
+				 		}
+				 		else
+				 		{
+						 	showOk(getlocstring('common.squads.member.join.locked'));
+						 	return;
+				 		}
+
+					 	break;
+				 	}
+				}
+
+				if(persona == null)
+				{
+				 	showOk(getlocstring('common.squads.member.join.persona'));
+					return;
+				}
+
+				if(client.selectpersona(persona))
+				{
+					if(client.reservedweapon != null)
+						client.cancelweaponreservation();
+					
+				 	var shortcut = "brigades";
+
+				 	var brigade 	= squaddie.brigade;
+					var brigades 	= client.brigades;
+
+					for(var i = 0; i < brigades.length; i++)
+					{
+						if(brigades[i].id == brigade.id)
+						{
+							client.selectbrigade(brigades[i]);
+							break;
+						}
+					}
+					
+					var myBrigade = client.brigade;
+
+					if(myBrigade.id == brigade.id)
+					{
+					 	shortcut = "brigade";
+
+						if(squaddie.missionid > 0 && client.acceptmission(squaddie.missionid))
+							shortcut = "mission";
+					}
+
+					loadWin(shortcut, true);
+				}
+				else
+				{
+					showOk(getlocstring('common.squads.member.join.select'));
+				}
+			}
+			else
+			{
+			 	showOk(getlocstring('common.squads.member.join.ingame'));
+			}
+		}
+		
+		function getSquadMissionType(missionOrigin, missionTarget)
+		{
+			var missionType = "";
+
+			if(missionOrigin != null && missionTarget != null)
+			{
+				var originSide 	= missionOrigin.country.side;
+				var targetSide 	= missionTarget.country.side;
+
+				if(originSide == targetSide)
+					missionType = (missionTarget.stratclass == "cp") ? getlocstring('common.mission.ad'): getlocstring('common.mission.pd');
+				else
+					missionType = (missionTarget.stratclass == "cp") ? getlocstring('common.mission.aa'): getlocstring('common.mission.pa');
+			}
+			else
+			{
+				missionType = "-";
+			}
+
+			return missionType;
+		}
+		
+		/*
+		function rightClickMember()
+		{
+		 	consoleprint("Doing squaddie right click...\n");
+		 	
+		 	var squaddie = squadMemberList.data;
+
+			if(mySquadRank < 4 || squaddie == null || !squaddie.online || squaddie.squadrank >= mySquadRank)
+				return;
+
+			var menuroot = new MenuItem("ROOT");
+			
+			menuroot.addItem(new MenuItem("PROMOTE", squaddie, null, createSquaddiePromoteMenu));
+			menuroot.addItem(new MenuItem("DEMOTE", squaddie, null, createSquaddieDemoteMenu));
+			menuroot.addItem(new MenuItem("REMOVE", squaddie, null, createSquaddieRemoveMenu));
+
+			new MenuControl("squads_rcmenu", cursor.x, window.height - cursor.y, 160, 15, 90, -10, menuroot.items, null);
+		}
+		
+		function createSquaddiePromoteMenu(control, parent, item)
+		{
+			return createSquaddieActionMenu(control, parent, item, 'game.player.client.sendchatmessage("/promote " + this.selecteddata.handle)');
+		}
+		
+		function createSquaddieDemoteMenu(control, parent, item)
+		{
+			return createSquaddieActionMenu(control, parent, item, 'game.player.client.sendchatmessage("/demote " + this.selecteddata.handle)');
+		}
+
+		function createSquaddieRemoveMenu(control, parent, item)
+		{
+			return createSquaddieActionMenu(control, parent, item, 'game.player.client.sendchatmessage("/remove " + this.selecteddata.handle)');
+		}
+			
+		function createSquaddieActionMenu(control, parent, item, event)
+		{
+		 	var menu = parent.addmenu(control.createMenu(item.label), item.data);
+			
+			// add events
+			menu.addevent('onclick', event);
+		 	
+		 	return menu;
+		}
+		*/
+		
+		function doSquadCommand(command, targetted)
+		{
+			if(targetted)
+			{
+				var squaddie = squadMemberList.data;
+				
+				if(squaddie == null)
+				{
+					showOk(getlocstring('common.squads.details.notarget'));
+					return;
+				}
+				
+				command += " " + squaddie.handle;
+			}
+			
+			if(command == "/recruit")
+			{
+				var callsign = findview("squad-recruit-callsign").text;
+				
+				if(callsign.length == 0)
+				{
+					showOk(getlocstring('common.squads.details.norecruit'));
+					return;
+				}
+				
+				command += " " + callsign;
+			}
+			
+			consoleprint("Running squad command: " + command + "\n");
+			
+			game.player.client.sendchatmessage(command);
+		}
+		
+		function showRecruiters()
+		{
+			soundPlayClick();
+			
+			if(game.player.client.requestrecruiters(game.settings.language) && game.player.client.recruiters.length > 0)
+				load('recruitment').initRecruitment(doSquadRecruited);	
+			else
+				showOk(getlocstring('common.squads.recruitment.none'));
+		}
+		
+		function doSquadRecruited(recruited)
+		{
+			if(recruited && !game.ingame)
+				window.close();
+		}
+
+		//-->
+	</script>
+</tab>

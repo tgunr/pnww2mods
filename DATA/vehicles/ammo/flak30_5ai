@@ -1,0 +1,63 @@
+# FlaK 30 (20mm) HE Round (Airburst AI)
+# Created 06/17/03 - Doc
+
+type = airburst
+diameter = .02
+weight = .115
+velocity = 890
+tracertime = 2.0
+object = bullet1
+explosive = 36332
+# .0062 kg PETN
+fuzetime = 0.000
+bc = .725
+lifetime = 15.0
+ricochetangle = 89
+modelspall = 0
+penetrationconstant = 0.00000065
+dontdisplayfirstframe = 1 
+selfdestructtime = 4.500
+
+## removed shrap till we can get better functionality
+#numshrapnelpieces = 15
+#totalshrapnelmass = .104
+#shrapnelpenetration = .0000007
+numshrapnelpieces = 1
+totalshrapnelmass = .229
+
+explosionsoundnear = sounds\troop\grenade.wav
+explosionsoundfar = sounds\smlfarexp.wav
+nearfardistance = 50
+
+muzzleflash = 1
+
+# new HE model variables for stat. HE parameters
+#
+#  use_new_he .. set to 1 to enable (and set defaults for) the new HE model
+#  nhe_diameter ..  sets the diameter of the shrapnel bits
+#  nhe_weight .. sets the minimum weight for the shrapnel bits 
+#  nhe_min_pen_const .. the PC of the shrapnel bit will never be less than this (formula is very complex though)
+#  nhe_ric_angle .. sets the ricochet angle of the shrapnel bits
+#  nhe_energy_mult .. how much of the explosive energy is transferred to the shrapnel
+#  nhe_min_pieces .. see nhe_max_pieces
+#  nhe_max_pieces .. total number of shrapnel is linearly interpolated between min and max pieces
+#  nhe_max_per_veh .. caps the number of shrapnel bits fired at each vehicle (performance tuning)
+#  !!note that "removed" shrapnel is accumulated, so if 300 could hit, and you had this at 100, the average mass would be multiplied by 3 !!
+#  nhe_add_speed .. kicker speed for the shrapnel bits .. formula is (kicker + (rand(0,1) * energy speed))
+#  nhe_timeout .. how long to project the shrapnel bits in the world (seconds)
+#  nhe_max_mass_mult .. what is the maximum accumulation (multiplier) for the shrapnel mass when shrapnel is being culled due to nhe_max_per_veh
+#  set this to 1.0 to remove mass accumulation, anything below 1.0 will be raised to 1.0
+
+
+use_new_he = 1
+nhe_diameter = 0.008
+nhe_weight = 0.01
+nhe_min_pen_const = 0.0000001
+nhe_ric_angle = 89.9999
+nhe_energy_mult = 0.666
+nhe_min_pieces = 150
+nhe_max_pieces = 300
+nhe_max_per_veh = 30
+nhe_add_speed = 100.0
+nhe_timeout = 0.5
+nhe_max_mass_mult = 1.9

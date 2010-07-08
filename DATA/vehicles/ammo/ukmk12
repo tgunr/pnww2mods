@@ -1,0 +1,34 @@
+# ukmk12 Torpedo
+# CORN needs to set all this up
+
+type = torpedo
+diameter = 0.457
+weight = 702
+ammoweight = 702
+velocity = 0
+# for torpedoes this is velocity shot out of launcher
+tracertime = 0.0
+object = ukmk12
+explosive = 1492000000
+# 176 kg (TNT)
+# 811700000 Danaher
+
+fuzetime = 0.005
+bc = 2.95
+lifetime = 66
+# range 1370m at 40 kts
+penetrationconstant = 0.006
+dontdisplayfirstframe = 0
+
+numshrapnelpieces = 50
+totalshrapnelmass = 526.0
+shrapnelpenetration = 0.0001
+
+explosionsoundnear = sounds\medcloseexp.wav
+explosionsoundfar = sounds\medfarexp.wav
+nearfardistance = 800
+
+# 40 kts
+torpedorunspeed = 20.6
+# only set depth if it is *not* adjustable in game
+torpedorundepth = 3

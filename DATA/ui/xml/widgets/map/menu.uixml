@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+<contextmenu id="mapcontext" x="0" y="0" width="1024" height="768" layer="100">
+	<contextmenu id="reportmenu" height="15" width="160" vindent="-5" hindent="150" label="&widgets.map.waypoints.contact;"
+		onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+		style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;">
+		<contextmenu height="15" width="160" label="&widgets.map.waypoints.contact.infantry;"
+			onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+			onclick="contextMenu.addReport('troop')"
+			style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;"/>
+		<contextmenu height="15" width="160" label="&widgets.map.waypoints.contact.armor;"
+			onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+			onclick="contextMenu.addReport('land')"
+			style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;"/>
+		<contextmenu height="15" width="160" label="&widgets.map.waypoints.contact.airforce;"
+			onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+			onclick="contextMenu.addReport('air')"
+			style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;"/>
+		<contextmenu height="15" width="160" label="&widgets.map.waypoints.contact.shipping;"
+			onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+			onclick="contextMenu.addReport('sea')"
+			style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;"/>
+		<contextmenu height="15" width="160" label="&widgets.map.waypoints.contact.gun;"
+			onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+			onclick="contextMenu.addReport('gun')"
+			style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;"/>
+		<contextmenu height="15" width="160" label="&widgets.map.waypoints.contact.truck;"
+			onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+			onclick="contextMenu.addReport('truck')"
+			style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;"/>
+		<contextmenu height="15" width="160" label="&widgets.map.waypoints.contact.danger;"
+			onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+			onclick="contextMenu.addReport('danger')"
+			style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;"/>
+		<contextmenu height="15" width="160" label="&widgets.map.waypoints.contact.unknown;"
+			onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+			onclick="contextMenu.addReport('unknown')"
+			style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;"/>
+	</contextmenu>
+	<contextmenu id="waypointmenu" height="15" width="160" vindent="-5" hindent="150" label="&widgets.map.waypoints.add;"
+		onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+		style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;">
+		<contextmenu height="15" width="160" label="&widgets.map.waypoints.add.rally;"
+			onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+			onclick="contextMenu.addWaypoint('rally')"
+			style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;"/>
+		<contextmenu height="15" width="160" label="&widgets.map.waypoints.add.attack;"
+			onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+			onclick="contextMenu.addWaypoint('attack')"
+			style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;"/>
+	</contextmenu>
+	<contextmenu id="activate" height="15" width="160" vindent="-5" hindent="150" label="&widgets.map.waypoints.select;"
+		onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+		onclick="contextMenu.activateWaypoint()"
+		style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;">
+	</contextmenu>
+	<contextmenu id="approve" height="15" width="160" vindent="-5" hindent="150" label="&widgets.map.waypoints.approve;"
+		onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+		onclick="contextMenu.approveWaypoint()"
+		style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;">
+	</contextmenu>
+	<contextmenu id="delete" height="15" width="160" vindent="-5" hindent="150" label="&widgets.map.waypoints.delete;"
+		onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+		onclick="contextMenu.deleteWaypoint()"
+		style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;">
+	</contextmenu>
+	<contextmenu id="vehicle" height="15" width="160" vindent="-5" hindent="150" label="&widgets.map.waypoints.player;"
+		onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+		onclick="contextMenu.sendChat()"
+		style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;">
+	</contextmenu>
+	<include file="lib/mapcontext.uixml"/>
+</contextmenu>

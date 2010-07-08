@@ -1,0 +1,36 @@
+#Panhard 178 turret file
+
+#multicrewpos position, whichcrew
+multicrewpos 1 1
+multicrewpos 2 2
+multicrewpos 3 2
+multicrewpos 4 1
+
+# Cupola
+position = 2
+elevationrate = 2
+traverserate = 6
+type = 360turret
+gunsightfile = 8x30binoc.gs
+neutraltraverse = 0
+neutralelevate = 0
+#conditions are undeployed, depolyed, canopyopen, canopyclosed, hatchopen, hatchclosed
+gunsightblocked = canopyclosed
+
+# Main and coax
+position = 3
+elevationrate = 4.0
+traverserate = 19
+type = 360turret
+gunsightfile = panhard.gs
+gunsightalignmentmountobject = 25mount
+gunsightalignmentrange = 400
+instgunsightfile = 8x30binoc.gs
+#conditions are undeployed, depolyed, canopyopen, canopyclosed, hatchopen, hatchclosed
+instsightblocked = canopyclosed
+
+#turret sound variables
+turrettraverse = turret/electric_turret.wav
+turretelevate = turret/hand_turret_move.wav
+turretgeneral = turret/turret_traverse_general.wav
+

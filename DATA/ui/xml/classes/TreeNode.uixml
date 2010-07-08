@@ -1,0 +1,114 @@
+<script>
+	<!--
+	
+	function TreeNode(id, data, level, branch, description)
+	{
+		// members
+		this.id			= id;
+		this.data		= data;
+		this.level		= level;
+		this.branch		= branch;
+		this.description	= (description != null) ? description: this.id;
+		
+		this.row		= -1;
+		this.init		= false;
+		this.open		= false;
+		this.children		= new Array();
+		
+		// callbacks
+		this.ontoggle		= null;
+		this.ondraw		= null;
+		this.parentNode		= null;
+		
+		// methods
+		this.addNode = function(child)
+		{
+				this.children[this.children.length] = child;
+				child.parentNode = this;
+				return child;
+		}
+		
+		this.findNode = function(id)
+		{
+			var found = null;
+			
+			if(this.id == id)
+			{
+				found = this;
+			}
+			else if(this.children.length > 0)
+			{
+				var children = this.children;
+				
+				for(var i = 0; i < children.length; i++)
+				{
+					found = children[i].findNode(id);
+					
+					if(found != null)
+						break;
+				}
+			}
+			
+			return found;
+		}
+		
+		this.findNodes = function(filter)
+		{
+			if(this.children.length > 0)
+			{
+				var children = this.children;
+				
+				for(var i = 0; i < children.length; i++)
+				{
+					var child = children[i];
+					
+					filter(child);
+					child.findNodes(filter);
+				}
+			}
+		}
+		
+		this.setRow = function(row)
+		{
+			this.row = row;
+		}
+		
+		this.initNode = function()
+		{
+			var init 	= this.init;
+			this.init	= true;
+			
+			return init;
+		}
+		
+		this.reset	= function()
+		{
+			this.children 	= new Array();
+			this.data		= null;
+		}
+		
+		this.expand = function()
+		{
+			this.toggle(true); // force an expand
+		}
+		
+		this.collapse = function()
+		{
+			this.toggle(false); // force a collapse
+		}
+		
+		this.toggle = function(open)
+		{
+			if(open == null)
+				open = !this.open;
+			
+			if(open != this.open && this.ontoggle != null)
+				this.ontoggle(this);
+			
+			this.open = open;
+		}
+	}
+	
+	-->
+</script>
+

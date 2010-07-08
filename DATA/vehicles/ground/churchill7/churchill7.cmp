@@ -1,0 +1,1049 @@
+#British Churchill Mk VII
+
+[drivewheelleft]
+criticalsecondary = 1
+#added for CC audit v1.13
+type = gear
+subtype = trackdrive
+gearnum = 24
+mass = 130
+wheelradius = 0.4
+wheelrotationalinertia = 200
+drivewheel = drivewheelleft
+braketype = left
+#brakestrength = 190000
+brakestrength = 290000
+contactpointtype = metal
+rollcoefficient = 0.02
+atspeedrollcoefficient = 0.08
+atspeedkph = 50
+tracknum = 1
+hitmapcomponent1 = d_drivelt
+hitmapcomponent2 = lefttread_25
+hitmapcomponent3 = lefttread_24
+hitmapcomponent4 = lefttread_26
+hitmapcomponent5 = lefttread_20
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamage = lefttread
+visdamage = drivewheelleft
+damagelevelfail = 800000
+
+[drivewheelright]
+criticalsecondary = 1
+#added for CC audit v1.13
+type = gear
+subtype = trackdrive
+gearnum = 26
+mass = 130
+wheelradius = 0.4
+wheelrotationalinertia = 200
+braketype = right
+#brakestrength = 190000
+brakestrength = 290000
+contactpointtype = metal
+rollcoefficient = 0.02
+atspeedrollcoefficient = 0.08
+atspeedkph = 50
+tracknum = 2
+hitmapcomponent1 = d_drivert
+hitmapcomponent2 = lefttread_33
+hitmapcomponent3 = lefttread_32
+hitmapcomponent4 = lefttread_34
+hitmapcomponent5 = lefttread_31
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamage = righttread
+visdamage = drivewheelright
+damagelevelfail = 800000
+
+
+[drivewheelleft]
+criticalsecondary = 1
+#added for CC audit v1.13
+type = gear
+subtype = trackroad
+gearnum = 23
+mass = 130
+wheelradius = 0.4
+wheelrotationalinertia = 15
+drivewheel = drivewheelleft
+contactpointtype = metal
+tracknum = 1
+hitmapcomponent1 = d_idlelt
+hitmapcomponent2 = lefttread_6
+hitmapcomponent3 = lefttread_10
+hitmapcomponent4 = lefttread_16
+hitmapcomponent5 = lefttread_18
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamage = lefttread
+visdamage = drivewheelleft
+damagelevelfail = 800000
+
+
+[drivewheelleft]
+criticalsecondary = 1
+#added for CC audit v1.13
+type = gear
+subtype = trackroad
+gearnum = 25
+mass = 130
+wheelradius = 0.4
+wheelrotationalinertia = 15
+drivewheel = drivewheelright
+contactpointtype = metal
+tracknum = 2
+hitmapcomponent1 = d_idlert
+hitmapcomponent2 = lefttread_27
+hitmapcomponent3 = lefttread_28
+hitmapcomponent4 = lefttread_29
+hitmapcomponent5 = lefttread_30
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamage = righttread
+visdamage = drivewheelleft
+damagelevelfail = 800000
+
+
+[road1left]
+type = gear
+subtype = trackroad
+gearnum = 1
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelleft
+strutspringstrength = 70000
+strutshockstrength = 30000
+strutshockreturnstrength = 20000
+contactpointtype = metal
+tracknum = 1
+hitmapcomponent1 = d_ldw1
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamageparent = lefttread
+visdamage = road1left
+damagelevelfail = 800000
+
+[road2left]
+type = gear
+subtype = trackroad
+gearnum = 2
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelleft
+strutspringstrength = 70000
+strutshockstrength = 30000
+strutshockreturnstrength = 20000
+contactpointtype = metal
+tracknum = 1
+hitmapcomponent1 = d_ldw2
+hitmapcomponent2 = d_strut2
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamage = lefttread
+damagelevelfail = 800000
+
+[road3left]
+type = gear
+subtype = trackroad
+gearnum = 3
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelleft
+strutspringstrength = 70000
+strutshockstrength = 30000
+strutshockreturnstrength = 20000
+contactpointtype = metal
+tracknum = 1
+hitmapcomponent1 = d_ldw3
+hitmapcomponent2 = d_strut3
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamageparent = lefttread
+visdamage = road3left
+damagelevelfail = 800000
+
+[road4left]
+type = gear
+subtype = trackroad
+gearnum = 4
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelleft
+strutspringstrength = 70000
+strutshockstrength = 5000
+strutshockreturnstrength = 5000
+contactpointtype = metal
+tracknum = 1
+hitmapcomponent1 = d_ldw4
+hitmapcomponent2 = d_strut4
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamageparent = lefttread
+visdamage = road4left
+damagelevelfail = 800000
+
+[road5left]
+type = gear
+subtype = trackroad
+gearnum = 5
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelleft
+strutspringstrength = 70000
+strutshockstrength = 5000
+strutshockreturnstrength = 5000
+contactpointtype = metal
+tracknum = 1
+hitmapcomponent1 = d_ldw5
+hitmapcomponent2 = d_strut5
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamageparent = lefttread
+visdamage = road5left
+damagelevelfail = 800000
+
+[road6left]
+type = gear
+subtype = trackroad
+gearnum = 6
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelleft
+strutspringstrength = 70000
+strutshockstrength = 5000
+strutshockreturnstrength = 5000
+contactpointtype = metal
+tracknum = 1
+hitmapcomponent1 = d_ldw6
+hitmapcomponent2 = d_strut6
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamageparent = lefttread
+visdamage = road6left
+damagelevelfail = 800000
+
+[road7left]
+type = gear
+subtype = trackroad
+gearnum = 7
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelleft
+strutspringstrength = 70000
+strutshockstrength = 5000
+strutshockreturnstrength = 5000
+contactpointtype = metal
+tracknum = 1
+hitmapcomponent1 = d_ldw7
+hitmapcomponent2 = d_strut7
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamageparent = lefttread
+visdamage = road7left
+damagelevelfail = 800000
+
+[road8left]
+type = gear
+subtype = trackroad
+gearnum = 8
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelleft
+strutspringstrength = 70000
+strutshockstrength = 5000
+strutshockreturnstrength = 5000
+contactpointtype = metal
+tracknum = 1
+hitmapcomponent1 = d_ldw8
+hitmapcomponent2 = d_strut8
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamageparent = lefttread
+visdamage = road8left
+damagelevelfail = 800000
+
+[road9left]
+type = gear
+subtype = trackroad
+gearnum = 9
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelleft
+strutspringstrength = 70000
+strutshockstrength = 30000
+strutshockreturnstrength = 20000
+contactpointtype = metal
+tracknum = 1
+hitmapcomponent1 = d_ldw9
+hitmapcomponent2 = d_strut9
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamageparent = lefttread
+visdamage = road9left
+damagelevelfail = 800000
+
+[road10left]
+type = gear
+subtype = trackroad
+gearnum = 10
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelleft
+strutspringstrength = 70000
+strutshockstrength = 30000
+strutshockreturnstrength = 20000
+contactpointtype = metal
+tracknum = 1
+hitmapcomponent1 = d_ldw10
+hitmapcomponent2 = d_strut10
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamage = lefttread
+damagelevelfail = 800000
+
+[road11left]
+type = gear
+subtype = trackroad
+gearnum = 11
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelleft
+strutspringstrength = 70000
+strutshockstrength = 30000
+strutshockreturnstrength = 20000
+#strutspringstrength = 62570
+#strutshockstrength = 8257
+#strutshockreturnstrength = 4000
+contactpointtype = metal
+tracknum = 1
+hitmapcomponent1 = d_ldw11
+hitmapcomponent2 = d_strut11
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamageparent = lefttread
+visdamage = road11left
+damagelevelfail = 800000
+
+
+[jittermassleft]
+type = ballast
+subtype = ballast
+x = -1.15
+y = 0
+z = 0.2
+mass = 1750
+inertiapitch = 10000
+inertiaroll = 10000
+inertiayaw = 10000
+visdamage = lefttread
+visdamageparent = turret
+activateiffail = 1
+
+[jittermassright]
+type = ballast
+subtype = ballast
+x = 1.15
+y = 0
+z = 0.2
+mass = 1750
+inertiapitch = 10000
+inertiaroll = 10000
+inertiayaw = 10000
+visdamage = righttread
+visdamageparent = turret
+activateiffail = 1
+
+
+[road1right]
+type = gear
+subtype = trackroad
+gearnum = 12
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelright
+strutspringstrength = 80000
+strutshockstrength = 40000
+strutshockreturnstrength = 30000
+contactpointtype = metal
+tracknum = 2
+hitmapcomponent1 = d_rrdw12
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamageparent = righttread
+visdamage = road1right
+damagelevelfail = 800000
+
+[road2right]
+type = gear
+subtype = trackroad
+gearnum = 13
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelright
+strutspringstrength = 70000
+strutshockstrength = 30000
+strutshockreturnstrength = 20000
+contactpointtype = metal
+tracknum = 2
+hitmapcomponent1 = d_rrdw13
+hitmapcomponent2 = d_strut13
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamage = righttread
+damagelevelfail = 800000
+
+[road3right]
+type = gear
+subtype = trackroad
+gearnum = 14
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelright
+strutspringstrength = 70000
+strutshockstrength = 30000
+strutshockreturnstrength = 20000
+contactpointtype = metal
+tracknum = 2
+hitmapcomponent1 = d_rrdw14
+hitmapcomponent2 = d_strut14
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamageparent = righttread
+visdamage = road3right
+damagelevelfail = 800000
+
+[road4right]
+type = gear
+subtype = trackroad
+gearnum = 15
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelright
+strutspringstrength = 70000
+strutshockstrength = 5000
+strutshockreturnstrength = 5000
+contactpointtype = metal
+tracknum = 2
+hitmapcomponent1 = d_rrdw15
+hitmapcomponent2 = d_strut15
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamageparent = righttread
+visdamage = road4right
+damagelevelfail = 800000
+
+
+[road5right]
+type = gear
+subtype = trackroad
+gearnum = 16
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelright
+strutspringstrength = 70000
+strutshockstrength = 5000
+strutshockreturnstrength = 5000
+contactpointtype = metal
+tracknum = 2
+hitmapcomponent1 = d_rrdw16
+hitmapcomponent2 = d_strut16
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamageparent = righttread
+visdamage = road5right
+damagelevelfail = 800000
+
+
+[road6right]
+type = gear
+subtype = trackroad
+gearnum = 17
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelright
+strutspringstrength = 70000
+strutshockstrength = 5000
+strutshockreturnstrength = 5000
+contactpointtype = metal
+tracknum = 2
+hitmapcomponent1 = d_rrdw17
+hitmapcomponent2 = d_strut17
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamageparent = righttread
+visdamage = road6right
+damagelevelfail = 800000
+
+[road7right]
+type = gear
+subtype = trackroad
+gearnum = 18
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelright
+strutspringstrength = 70000
+strutshockstrength = 5000
+strutshockreturnstrength = 5000
+contactpointtype = metal
+tracknum = 2
+hitmapcomponent1 = d_rrdw18
+hitmapcomponent2 = d_strut18
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamageparent = righttread
+visdamage = road7right
+damagelevelfail = 800000
+
+[road8right]
+type = gear
+subtype = trackroad
+gearnum = 19
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelright
+strutspringstrength = 70000
+strutshockstrength = 5000
+strutshockreturnstrength = 5000
+contactpointtype = metal
+tracknum = 2
+hitmapcomponent1 = d_rrdw19
+hitmapcomponent2 = d_strut19
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamageparent = righttread
+visdamage = road8right
+damagelevelfail = 800000
+
+[road9right]
+type = gear
+subtype = trackroad
+gearnum = 20
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelright
+strutspringstrength = 70000
+strutshockstrength = 30000
+strutshockreturnstrength = 20000
+contactpointtype = metal
+tracknum = 2
+hitmapcomponent1 = d_rrdw20
+hitmapcomponent2 = d_strut20
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamageparent = righttread
+visdamage = road9right
+damagelevelfail = 800000
+
+[road10right]
+type = gear
+subtype = trackroad
+gearnum = 21
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelright
+strutspringstrength = 70000
+strutshockstrength = 30000
+strutshockreturnstrength = 20000
+contactpointtype = metal
+tracknum = 2
+hitmapcomponent1 = d_rrdw21
+hitmapcomponent2 = d_strut21
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamage = righttread
+damagelevelfail = 800000
+
+[road11right]
+type = gear
+subtype = trackroad
+gearnum = 22
+mass = 33
+wheelradius = 0.175
+wheelrotationalinertia = 7
+drivewheel = drivewheelright
+strutspringstrength = 70000
+strutshockstrength = 30000
+strutshockreturnstrength = 20000
+#strutspringstrength = 62570
+#strutshockstrength = 8257
+#strutshockreturnstrength = 4000
+contactpointtype = metal
+tracknum = 2
+hitmapcomponent1 = d_rrdw22
+hitmapcomponent2 = d_strut22
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 200000
+damagelevel2 = 400000
+damagelevel3 = 600000
+damagelevel4 = 800000
+visdamageparent = righttread
+visdamage = road11right
+damagelevelfail = 800000
+
+[transmission]
+type = engine
+subtype = transmission
+transtype = clutchandbrake
+x = 0
+y = -2.79
+z = 0.22
+mass = 650
+inertiapitch = 47.31
+inertiaroll = 140.06
+inertiayaw = 152.26
+drivewheel1 = drivewheelleft
+drivewheel2 = drivewheelright
+hitmapcomponent1 = d_transmission
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 3000
+damagelevel2 = 30000
+damagelevel3 = 300000
+damagelevel4 = 600000
+
+[gearbox]
+type = engine
+subtype = gearbox
+numforwardgears = 4
+numreversegears = 1
+gear1ratio = 43.4
+gear2ratio = 32.4
+gear3ratio = 22
+gear4ratio = 15.2
+reverse1ratio = 44
+preselector = 1
+propellercomponent = transmission
+
+[clutch]
+type = engine
+subtype = clutch
+#enginetype = Leyland_6cyl_Diesel
+clutchforce = 20000
+#clutchforce = 10000
+# clutchforce = 3800
+clutchstart = 0.3
+clutchend = 0.8
+clutchdisengaged = 0.2
+flywheelrotinertia = 25
+propellercomponent = gearbox
+
+[fueltankleft]
+type = engine
+subtype = fueltank
+x = -1
+y = -1.5
+z = 0.168
+mass = 251.4
+inertiapitch = 66.93
+inertiaroll = 20.92
+inertiayaw = 61.08
+tanknum = 1
+fueltanktype = integral
+hitmapcomponent1 = d_fuel2
+fuelburncomponent1 = d_commlegs
+fuelburncomponent2 = d_loadertorso
+fuelburncomponent3 = d_fuel1
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 1500
+damagelevel2 = 5000
+damagelevel3 = 80000
+damagelevel4 = 0
+
+[fueltankright]
+type = engine
+subtype = fueltank
+x = 1
+y = -1.5
+z = 0.168
+mass = 251.4
+inertiapitch = 66.93
+inertiaroll = 20.92
+inertiayaw = 61.08
+tanknum = 2
+fueltanktype = integral
+hitmapcomponent1 = d_fuel1
+fuelburncomponent1 = d_gunnerlegs
+fuelburncomponent2 = d_drivertorso_1
+fuelburncomponent3 = d_fuel2
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 1500
+damagelevel2 = 5000
+damagelevel3 = 80000
+damagelevel4 = 0
+
+[oiltank]
+type = engine
+subtype = oiltank
+x = 0
+y = -1.5
+z = 0
+mass = 45
+inertiapitch = 12.81
+inertiaroll = 3.43
+inertiayaw = 15.63
+tanknum = 1
+hitmapcomponent1 = d_engine
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 500
+damagelevel2 = 5000
+damagelevel3 = 15000
+damagelevel4 = 20000
+
+[radiator]
+type = engine
+subtype = radiator
+x = 0
+y = -3.4
+z = 0.325
+mass = 80
+inertiapitch = 12.37
+inertiaroll = 57.17
+inertiayaw = 46.67
+tanknum = 1
+hitmapcomponent1 = d_radiator
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 100
+damagelevel2 = 1000
+damagelevel3 = 15000
+damagelevel4 = 20000
+
+
+[Engine]
+type = engine
+#changed for CC audit v1.13
+subtype = engine
+criticalprimary = 1
+#changed for CC audit v1.13
+enginetype = Bedford_Twin_Six
+propellercomponent = clutch
+x = 0
+y = -1.5
+z = 0.25
+#mass = 1000
+#inertiapitch = 142.133
+#inertiaroll = 140.208
+#inertiayaw = 222.342
+#attpitch =
+#attroll =
+#attyaw = 
+enginenumber = 1
+fueltank1component = fueltankleft
+fueltank2component = fueltankright
+oiltankcomponent = oiltank
+radiator1component = radiator
+enginesound = sounds\matilda2\engine.wav
+idlesound = sounds\matilda2\idle.wav
+startersound = sounds\startercrank.wav
+hitmapcomponent1 = d_engine
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 3000
+damagelevel2 = 30000
+damagelevel3 = 300000
+damagelevel4 = 600000
+visdamage = engine
+damagelevelfail = 610000
+
+
+[engine_mass]
+type = ballast
+subtype = none
+x = 0
+y = -1.5
+z = 0.25
+mass = 1000
+inertiapitch = 142.133
+inertiaroll = 140.208
+inertiayaw = 222.342
+
+
+[Turret]
+type = ballast
+subtype = armor
+x = 0
+y = 0.2
+z = 1.15
+mass = 1600
+inertiapitch = 1843.75
+inertiaroll = 1843.75
+inertiayaw = 3453.12
+visdamage = turret
+visdamageparent = ammocook
+#damagelevelfail = 1000000
+hulkiffail = 1
+
+[75mm Main Gun]
+type = weaponmount
+criticalprimary = 1
+mass = 1
+inertiapitch = 1882.13
+inertiaroll = 14.2578
+inertiayaw = 1882.13
+#changed for CC audit v1.13
+triggertype = primary
+gunfiresmokelevel = 0.1
+position = 3
+selectornum = 1
+confignum = 1
+mountnum = 1
+weapon = 75mml40m3
+weaponsound = sounds\m4a2\75mm.wav
+reloadsound = sounds\autoloader.wav
+ammocount = 65
+ammofile = 75mml40m3ap.belt
+beltname = AP
+ammocount2 = 20
+ammofile2 = 75mml40m3he.belt
+beltname2 = HE
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_barrel
+hitmapcomponent2 = d_6pdr1
+hitmapcomponent3 = d_6pdrammo2
+ammoexplosioncomponent1 = d_loaderhead
+ammoexplosioncomponent2 = d_gunnerhead
+ammoexplosioncomponent3 = d_commhead
+ammoexplosioncomponent4 = d_driverhead_1
+ammoexplosioncomponent5 = d_barrel
+ammoexplosioncomponent6 = d_engine
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 250000
+damagelevel2 = 1500
+damagelevel3 = 1500
+damagelevel4 = 0
+
+[coax_mount]
+type = weaponmount
+#criticalsecondary = 1
+triggertype = secondary
+position = 3
+selectornum = 1
+confignum = 1
+mountnum = 2
+weapon = besa
+weaponsound = sounds\matilda2\coax.wav
+reloadsound = sounds\mgreload.wav
+ammocount = 3800
+ammofile = besa.belt
+beltname = COAX
+collidertype = front60deg
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_besa
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 50000
+damagelevel2 = 1500
+damagelevel3 = 0
+damagelevel4 = 0
+
+[bowgun_mount]
+type = weaponmount
+#criticalsecondary = 1
+triggertype = primary
+position = 4
+selectornum = 1
+confignum = 1
+mountnum = 3
+weapon = besa
+weaponsound = sounds\matilda2\coax.wav
+reloadsound = sounds\mgreload.wav
+ammocount = 3800
+ammofile = besa.belt
+beltname = MG
+collidertype = front60deg
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_hullgun
+#hitmapcomponent2 = d_mgammo
+ammoexplosioncomponent1 = d_hullgun
+ammoexplosioncomponent2 = d_mgammo
+ammoexplosioncomponent3 = d_loaderhead
+ammoexplosioncomponent4 = d_gunnerlegs
+ammoexplosioncomponent5 = d_commlegs
+ammoexplosioncomponent6 = d_drivertorso_1
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 50000
+damagelevel2 = 1500
+damagelevel3 = 0
+damagelevel4 = 0
+
+
+[crew_driver]
+type = crew
+criticalprimary = 1
+crewposition = 1
+hitmapcomponent1 = d_driverhead_1
+hitmapcomponent2 = d_drivertorso_1
+hitmapcomponent3 = d_driverarms_1
+hitmapcomponent4 = d_driverlegs_1
+
+[crew_loader]
+type = crew
+crewposition = 4
+hitmapcomponent1 = d_loaderhead
+hitmapcomponent2 = d_loadertorso
+hitmapcomponent3 = d_loaderarms
+hitmapcomponent4 = d_loaderlegs
+
+[crew_commander]
+type = crew
+crewposition = 2
+hitmapcomponent1 = d_commhead
+hitmapcomponent2 = d_commtorso
+hitmapcomponent3 = d_commarms
+hitmapcomponent4 = d_commlegs
+
+[crew_main_gunner]
+type = crew
+criticalprimary = 1
+crewposition = 3
+hitmapcomponent1 = d_gunnerhead
+hitmapcomponent2 = d_gunnertorso
+hitmapcomponent3 = d_gunnerarms
+hitmapcomponent4 = d_gunnerlegs
+
+[hullmassleftfront]
+type = ballast
+subtype = armor
+x = -0.683
+y = 1.7
+z = 0.2
+mass = 8008
+inertiapitch = 7097.21
+inertiaroll = 2379.15
+inertiayaw = 7461.08
+
+[hullmassrightfront]
+type = ballast
+subtype = armor
+x = 0.683
+y = 1.7
+z = 0.2
+mass = 8008
+inertiapitch = 7097.21
+inertiaroll = 2379.15
+inertiayaw = 7461.08
+
+[hullmassleftrrear]
+type = ballast
+subtype = armor
+x = -0.683
+y = -1.6 
+z = 0.2
+mass = 8008
+inertiapitch = 7097.21
+inertiaroll = 2379.15
+inertiayaw = 7461.08
+
+[hullmassrightrear]
+type = ballast
+subtype = armor
+x = 0.683
+y = -1.6 
+z = 0.2
+mass = 8008
+inertiapitch = 7097.21
+inertiaroll = 2379.15
+inertiayaw = 7461.08
+
+
+# Target weight: 40600
+
+# *total mass for concussive resistance only*
+totalmass = 60600

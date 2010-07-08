@@ -1,0 +1,44 @@
+#Fw190a4 .loadout file created 18/12/04 -Doc.
+
+sounds available for the mounts
+sound1 = sounds\spit1\xgun.wav
+sound2 = sounds\bf109e3\xgun2.wav
+
+loadout = 1
+
+
+mountnum = 3
+mountobject = loutercannon
+mountsound = sound2
+weapon = mgff
+weaponobject = genericgun1
+
+mountnum = 4
+mountobject = routercannon
+mountsound = sound2
+weapon = mgff
+weaponobject = genericgun1
+
+mountnum = 1
+mountobject = linnercannon
+mountsound = sound2
+weapon = mg151_sync
+weaponobject = genericgun1
+
+mountnum = 2
+mountobject = lnmount
+mountsound = sound1
+weapon = mg17_sync
+weaponobject = genericgun1
+
+mountnum = 5
+mountobject = rnmount
+mountsound = sound1
+weapon = mg17_sync
+weaponobject = genericgun1
+
+mountnum = 6
+mountobject = rinnercannon
+mountsound = sound2
+weapon = mg151_sync
+weaponobject = genericgun1

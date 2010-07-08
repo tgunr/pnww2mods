@@ -1,0 +1,191 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicles>
+<vehicle id="uk_buzzard"           file="eye/eye.xml" onlineonly="true"/>
+<vehicle id="uk_skull"             file="eye/eye.xml" onlineonly="true"/>
+<vehicle id="de_buzzard"           file="eye/eye.xml" onlineonly="true"/>
+<vehicle id="de_skull"             file="eye/eye.xml" onlineonly="true"/>
+<vehicle id="fr_buzzard"           file="eye/eye.xml" onlineonly="true"/>
+<vehicle id="fr_skull"             file="eye/eye.xml" onlineonly="true"/>
+<vehicle id="derifle"              file="ground/groundman/groundman.xml"/>
+<vehicle id="de-smg"               file="ground/groundman/groundman.xml"/>
+<vehicle id="degrenadier"          file="ground/groundman/groundman.xml"/>
+<vehicle id="de-eng"               file="ground/groundman/groundman.xml"/>
+<vehicle id="de-atr"               file="ground/groundman/groundman.xml"/>
+<vehicle id="de-lmg"               file="ground/groundman/groundman.xml"/>
+<vehicle id="de-sniper"            file="ground/groundman/groundman.xml"/>
+<vehicle id="de-ltmortar"          file="ground/groundman/groundman.xml"/>
+<vehicle id="de-para-rfl"          file="ground/groundman/groundman.xml"/>
+<vehicle id="de-para-smg"          file="ground/groundman/groundman.xml"/>
+<vehicle id="de-para-lmg"          file="ground/groundman/groundman.xml"/>
+<vehicle id="de-para-atr"          file="ground/groundman/groundman.xml"/>
+<vehicle id="de-para-gren"         file="ground/groundman/groundman.xml"/>
+<vehicle id="de-para-snpr"         file="ground/groundman/groundman.xml"/>
+<vehicle id="de-para-eng"          file="ground/groundman/groundman.xml"/>
+<vehicle id="de-para-mrtr"         file="ground/groundman/groundman.xml"/>
+<vehicle id="oplbltz"              file="ground/oplbltz/oplbltz.xml"/>
+<vehicle id="sdkfz7"               file="ground/sdkfz7/sdkfz7.xml"/>
+<vehicle id="sdkfz251c"            file="ground/sdkfz251c/sdkfz251c.xml"/>
+<vehicle id="w154"                 file="ground/w154/w154.xml" onlineonly="false"/>
+<vehicle id="flak30"               file="ground/flak30/flak30.xml"/>
+<vehicle id="de_bofors"            file="ground/bofors40mm/bofors40mm.xml" />
+<vehicle id="pak36"                file="ground/pak36/pak36.xml"/>
+<vehicle id="pak38"                file="ground/pak38/pak38.xml"/>
+<vehicle id="pak40"                file="ground/pak40/pak40.xml"/>
+<vehicle id="flak36"               file="ground/flak36/flak36.xml"/>
+<vehicle id="sdkfz232"             file="ground/sdkfz232/sdkfz232.xml"/>
+<vehicle id="pziic"                file="ground/pziic/pziic.xml"/>
+<vehicle id="p38t"                 file="ground/p38t/p38t.xml"/>
+<vehicle id="pziiif"               file="ground/pziiif/pziiif.xml"/>
+<vehicle id="pziiih"               file="ground/pziiih/pziiih.xml"/>
+<vehicle id="pzivd"                file="ground/pzivd/pzivd.xml"/>
+<vehicle id="pzivg"                file="ground/pzivg/pzivg.xml"/>
+<vehicle id="pzvie"                file="ground/pzvie/pzvie.xml"/>
+<vehicle id="stug3b"               file="ground/stug3b/stug3b.xml"/>
+<vehicle id="stug3g"               file="ground/stug3g/stug3g.xml"/>
+<vehicle id="bf110c"               file="aircraft/bf110c/bf110c.xml"/>
+<vehicle id="bf110fb"              file="aircraft/bf110fb/bf110fb.xml"/>
+<vehicle id="bf109e1"              file="aircraft/bf109e1/bf109e1.xml"/>
+<vehicle id="bf109e"               file="aircraft/bf109e3/bf109e3.xml"/>
+<vehicle id="bf109f1"              file="aircraft/bf109f1/bf109f1.xml"/>
+<vehicle id="bf109f4"              file="aircraft/bf109f4/bf109f4.xml"/>
+<vehicle id="me109g6"              file="aircraft/bf109g6/bf109g6.xml"/>
+<vehicle id="fw190a4"              file="aircraft/fw190a4/fw190a4.xml"/>
+<vehicle id="bf110c4"              file="aircraft/bf110c4/bf110c4.xml" onlineonly="true"/>
+<vehicle id="ju87b"                file="aircraft/ju87b/ju87b.xml"/>
+<vehicle id="de_blent"             file="aircraft/blent/blent.xml" onlineonly="true"/>
+<vehicle id="he111"                file="aircraft/he111/he111.xml"/>
+<vehicle id="ju52"                 file="aircraft/ju52/ju52.xml"/>
+<vehicle id="de_mtb"               file="ships/fairmileb/fairmileb.xml" />
+<vehicle id="z34"                  file="ships/z34/z34.xml"/>
+<vehicle id="de_freighter"         file="ships/ak-1/ak-1.xml" />
+
+<vehicle id="ukrifle"              file="ground/groundman/groundman.xml"/>
+<vehicle id="uk-smg"               file="ground/groundman/groundman.xml"/>
+<vehicle id="ukgrenadier"          file="ground/groundman/groundman.xml"/>
+<vehicle id="uk-eng"               file="ground/groundman/groundman.xml"/>
+<vehicle id="uk-atr"               file="ground/groundman/groundman.xml"/>
+<vehicle id="uk-lmg"               file="ground/groundman/groundman.xml"/>
+<vehicle id="uk-sniper"            file="ground/groundman/groundman.xml"/>
+<vehicle id="uk-ltmortar"          file="ground/groundman/groundman.xml"/>
+<vehicle id="uk-para-rfl"          file="ground/groundman/groundman.xml"/>
+<vehicle id="uk-para-smg"          file="ground/groundman/groundman.xml"/>
+<vehicle id="uk-para-lmg"          file="ground/groundman/groundman.xml"/>
+<vehicle id="uk-para-atr"          file="ground/groundman/groundman.xml"/>
+<vehicle id="uk-para-gren"         file="ground/groundman/groundman.xml"/>
+<vehicle id="uk-para-snpr"         file="ground/groundman/groundman.xml"/>
+<vehicle id="uk-para-eng"          file="ground/groundman/groundman.xml"/>
+<vehicle id="uk-para-mrtr"         file="ground/groundman/groundman.xml"/>
+<vehicle id="bedford"              file="ground/bedford/bedford.xml"/>
+<vehicle id="morris"               file="ground/morris/morris.xml"/>
+<vehicle id="uk_mle38"             file="ground/mle38/mle38.xml" />
+<vehicle id="bofors40mm"           file="ground/bofors40mm/bofors40mm.xml"/>
+<vehicle id="qf2pdr"               file="ground/qf2pounder/qf2pounder.xml"/>
+<vehicle id="qf6pdr"               file="ground/qf6pdrmkiv/qf6pdrmkiv.xml"/>
+<vehicle id="qf17pdr"              file="ground/qf17pdr/qf17pdr.xml"/>
+<vehicle id="vickersmkvi"          file="ground/vickersmkvi/vickersmkvi.xml"/>
+<vehicle id="daimler"              file="ground/daimler/daimler.xml"/>
+<vehicle id="a13"                  file="ground/a13/a13.xml"/>
+<vehicle id="crusader2"            file="ground/crusader2/crusader2.xml"/>
+<vehicle id="crusader3"            file="ground/crusader3/crusader3.xml"/>
+<vehicle id="matilda2"             file="ground/matilda2/matilda2.xml"/>
+<vehicle id="churchill3"           file="ground/churchill3/churchill3.xml"/>
+<vehicle id="churchill7"           file="ground/churchill7/churchill7.xml"/>
+<vehicle id="hurri1"               file="aircraft/hurri1/hurri1.xml"/>
+<vehicle id="hurri2b"              file="aircraft/hurri2b/hurri2b.xml"/>
+<vehicle id="hurri2c"              file="aircraft/hurri2c/hurri2c.xml"/>
+<vehicle id="spit1"                file="aircraft/spit1/spit1.xml"/>
+<vehicle id="spit1b"               file="aircraft/spit1b/spit1b.xml" onlineonly="true"/>
+<vehicle id="spit2b"               file="aircraft/spit2b/spit2b.xml"/>
+<vehicle id="spitvb"               file="aircraft/spitvb/spitvb.xml"/>
+<vehicle id="spit9c"               file="aircraft/spit9c/spit9c.xml"/>
+<vehicle id="bleni"                file="aircraft/bleni/bleni.xml"/>
+<vehicle id="blent"                file="aircraft/blent/blent.xml" onlineonly="true"/>
+<vehicle id="bleniv"               file="aircraft/bleniv/bleniv.xml"/>
+<vehicle id="havoc1"               file="aircraft/havoc1/havoc1.xml"/>
+<vehicle id="c47"                  file="aircraft/c47/c47.xml"/>
+<vehicle id="fairb"                file="ships/fairmileb/fairmileb.xml"/>
+<vehicle id="uk_z34"               file="ships/z34/z34.xml" />
+<vehicle id="uk_freighter"         file="ships/ak-1/ak-1.xml"/>
+
+<vehicle id="frrifle"              file="ground/groundman/groundman.xml"/>
+<vehicle id="fr-smg"               file="ground/groundman/groundman.xml"/>
+<vehicle id="frgrenadier"          file="ground/groundman/groundman.xml"/>
+<vehicle id="fr-eng"               file="ground/groundman/groundman.xml"/>
+<vehicle id="fr-atr"               file="ground/groundman/groundman.xml"/>
+<vehicle id="fr-lmg"               file="ground/groundman/groundman.xml"/>
+<vehicle id="fr-sniper"            file="ground/groundman/groundman.xml"/>
+<vehicle id="fr-ltmortar"          file="ground/groundman/groundman.xml"/>
+<vehicle id="fr-para-rfl"          file="ground/groundman/groundman.xml"/>
+<vehicle id="fr-para-smg"          file="ground/groundman/groundman.xml"/>
+<vehicle id="fr-para-lmg"          file="ground/groundman/groundman.xml"/>
+<vehicle id="fr-para-atr"          file="ground/groundman/groundman.xml"/>
+<vehicle id="fr-para-gren"         file="ground/groundman/groundman.xml"/>
+<vehicle id="fr-para-snpr"         file="ground/groundman/groundman.xml"/>
+<vehicle id="fr-para-eng"          file="ground/groundman/groundman.xml"/>
+<vehicle id="fr-para-mrtr"         file="ground/groundman/groundman.xml"/>
+<vehicle id="laffly"               file="ground/laffly/laffly.xml"/>
+<vehicle id="lafflyw15"            file="ground/lafflyw15tcc/lafflyw15tcc.xml"/>
+<vehicle id="mle38"                file="ground/mle38/mle38.xml"/>
+<vehicle id="fr_bofors"            file="ground/bofors40mm/bofors40mm.xml" />
+<vehicle id="mle25"                file="ground/mle25/mle25.xml"/>
+<vehicle id="mle47"                file="ground/mle47/mle47.xml"/>
+<vehicle id="m1m1a3"               file="ground/m1m1a3/m1m1a3.xml"/>
+<vehicle id="m1a2m5"               file="ground/m1a2m5/m1a2m5.xml"/>
+<vehicle id="panhard"              file="ground/panhard/panhard.xml"/>
+<vehicle id="r35"                  file="ground/r35/r35.xml"/>
+<vehicle id="h39"                  file="ground/h39/h39.xml"/>
+<vehicle id="stuartm3a3"           file="ground/stuartm3a3/stuartm3a3.xml"/>
+<vehicle id="s35"                  file="ground/s35/s35.xml"/>
+<vehicle id="charb1"               file="ground/charb1/charb1.xml"/>
+<vehicle id="m4a2"                 file="ground/m4a2/m4a2.xml"/>
+<vehicle id="m10"                  file="ground/m10/m10.xml"/>
+<vehicle id="m4a3"                 file="ground/m4a3/m4a3.xml"/>
+<vehicle id="hawk75"               file="aircraft/h75/h75.xml"/>
+<vehicle id="fr_hurri"             file="aircraft/hurri1/hurri1.xml" onlineonly="true"/>
+<vehicle id="d520"                 file="aircraft/d520/d520.xml"/>
+<vehicle id="h81a2"                file="aircraft/h81a2/h81a2.xml"/>
+<vehicle id="h87b3"                file="aircraft/h87b3/h87b3.xml"/>
+<vehicle id="bell14a"              file="aircraft/bell14a/bell14a.xml"/>
+<vehicle id="p38f"                 file="aircraft/p38f/p38f.xml"/>
+<vehicle id="fr_blen"              file="aircraft/bleniv/bleniv.xml"/>
+<vehicle id="db7"                  file="aircraft/db7/db7.xml"/>
+<vehicle id="fr_ju52"              file="aircraft/ju52/ju52.xml"/>
+<vehicle id="fr_fair"              file="ships/fairmileb/fairmileb.xml" />
+<vehicle id="fr_z34"               file="ships/z34/z34.xml" />
+<vehicle id="fr_freighter"         file="ships/ak-1/ak-1.xml" />
+
+<vehicle id="cn_oplbltz"           file="ground/oplbltz/oplbltz.xml" onlineonly="true"/>
+<vehicle id="cn_flak36"            file="ground/flak36/flak36.xml" onlineonly="true"/>
+<vehicle id="cn_pak36"             file="ground/pak36/pak36.xml" onlineonly="true"/>
+<vehicle id="cn_pziiif"            file="ground/pziiif/pziiif.xml" onlineonly="true"/>
+<vehicle id="cn_pziic"             file="ground/pziic/pziic.xml" onlineonly="true"/>
+<vehicle id="cn_sdkfz7"            file="ground/sdkfz7/sdkfz7.xml" onlineonly="true"/>
+<vehicle id="cn_p38t"              file="ground/p38t/p38t.xml" onlineonly="true"/>
+<vehicle id="cn_derifle"           file="ground/groundman/groundman.xml" onlineonly="true"/>
+<vehicle id="cn_de-smg"            file="ground/groundman/groundman.xml" onlineonly="true"/>
+<vehicle id="cn_de-eng"            file="ground/groundman/groundman.xml" onlineonly="true"/>
+<vehicle id="cn_ju87b"             file="aircraft/ju87b/ju87b.xml" onlineonly="true"/>
+<vehicle id="cn_bf109e"            file="aircraft/bf109e3/bf109e3.xml" onlineonly="true"/>
+<vehicle id="cn_qf2pdr"            file="ground/qf2pounder/qf2pounder.xml" onlineonly="true"/>
+<vehicle id="cn_mle25"             file="ground/mle25/mle25.xml" onlineonly="true"/>
+<vehicle id="cn_mle47"             file="ground/mle47/mle47.xml" onlineonly="true"/>
+<vehicle id="cn_a13"               file="ground/a13/a13.xml" onlineonly="true"/>
+<vehicle id="cn_bedford"           file="ground/bedford/bedford.xml" onlineonly="true"/>
+<vehicle id="cn_charb1"            file="ground/charb1/charb1.xml" onlineonly="true"/>
+<vehicle id="cn_r35"               file="ground/r35/r35.xml" onlineonly="true"/>
+<vehicle id="cn_frrifle"           file="ground/groundman/groundman.xml" onlineonly="true"/>
+<vehicle id="cn_fr-smg"            file="ground/groundman/groundman.xml" onlineonly="true"/>
+<vehicle id="cn_fr-eng"            file="ground/groundman/groundman.xml" onlineonly="true"/>
+<vehicle id="cn_ukrifle"           file="ground/groundman/groundman.xml" onlineonly="true"/>
+<vehicle id="cn_uk-smg"            file="ground/groundman/groundman.xml" onlineonly="true"/>
+<vehicle id="cn_uk-eng"            file="ground/groundman/groundman.xml" onlineonly="true"/>
+<vehicle id="cn_hawk75"            file="aircraft/h75/h75.xml" onlineonly="true"/>
+<vehicle id="cn_spit1"             file="aircraft/spit1/spit1.xml" onlineonly="true"/>
+<vehicle id="cn_hurri1"            file="aircraft/hurri1/hurri1.xml" onlineonly="true"/>
+<vehicle id="cn_blen"              file="aircraft/bleniv/bleniv.xml" onlineonly="true"/>
+<vehicle id="cn_bleni"             file="aircraft/bleni/bleni.xml" onlineonly="true"/>
+<vehicle id="cn_110c"              file="aircraft/bf110c/bf110c.xml" onlineonly="true"/>
+<vehicle id="cn_fairmileb"         file="ships/fairmileb/fairmileb.xml" onlineonly="true"/>
+<vehicle id="cn_s35"               file="ground/s35/s35.xml" onlineonly="true"/>
+</vehicles>

@@ -1,0 +1,131 @@
+<?xml version='1.0'?>
+<!DOCTYPE content SYSTEM "content.dtd">
+<content type="5">
+  <key>1</key>
+  <body># Spawn them off the field.
+# -314294.03    3602494.26   102.15
+# facing front: 2.33  back:  -0.81 (needs a tad tweaking to be perpendicular to runway)
+
+#title = Aircraft I: Preflight: Hurricane Mk I
+# vehicles.1.1.2.2 = Hurricane Mk I
+
+#title = Aircraft I: Preflight: Curtiss Hawk H75A-3 
+# vehicles.3.1.2.1 = Curtiss Hawk H75A-3 (P-36A)
+
+#title = Aircraft I: Preflight: Messerschmitt Bf 109E-1 
+# vehicles.4.1.2.6 = Messerschmitt Bf 109E-1
+
+
+1.0.label = Preflight Checklist
+
+	1.1.label = Intro
+	1.1.alert.modal = Taking off in an aircraft is dangerous!  It is very easy to veer off the runway, flip the vehicle, crash into something or fail to get off the ground.  This preflight checklist will help prepare you for taking off as safely as possible.
+
+2.0.label = The View Outside
+
+	2.1.label = Canopy Control
+	2.1.alert = The pilot&#39;s view is limited in directions by the fuselage and wings of the aircraft.[NL][NL]Press {canopycontrol} to open the canopy.
+
+	2.2.label = Cardinal Views
+	2.2.alert = Use your view controls to look around. By default, you can do this with the POV hat on your joystick or with the number keys on your keyboard&#39;s keypad.
+	2.2.complete.modal = Situational awareness is vital in air combat. When flying, always scan the sky for enemy airplanes.
+	
+	2.3.label = Free Look
+	2.3.alert = Free look is sometimes useful for a pilot, but dangerous to use while in a fight.[NL][NL]Press {togglemouselook} to more freely look around.
+	2.3.complete.modal = Well done! You can use your mouse to turn your head and look around the cockpit.
+	
+	2.4.label = Normal View
+	2.4.alert = Press {togglemouselook} again to return to normal view mode.
+
+3.0.label = Check Controls
+
+	3.1.label = Control Surfaces
+	3.1.alert.modal = Verifying that your controls work is critical to preventing take off accidents.  The primary controls are[NL][NL]Ailerons: control Roll[NL]Rudder: controls Yaw[NL]Elevators: control Pitch
+	
+	3.2.label = Right Aileron 
+	3.2.alert = Ailerons control your aircraft&#39;s rolling, the twisting clockwise or counterclockwise that allows you bank or fly upside down.[NL][NL]While holding {lookviewseven} use {aileron.3.4} to confirm that your right aileron works.
+	
+	3.3.label = Left Aileron
+	3.3.alert = Now hold {lookvieweight} and use {aileron.7.4} to confirm your left aileron works.
+	3.3.complete = Well done, both ailerons appear to be working.
+	
+	3.4.label = Rudder
+	3.4.alert = Your rudder controls your yaw, which turns you gently when flying level, or allows you to balance other movement.[NL][NL]In most aircraft, you cannot see your tail surfaces, so we&#39;ll show you for the purposes of this tutorial.[NL][NL]Use {rudder.4.4.5.3} to verify that your rudder pedals respond.
+	3.4.alert.camera = 120,10,15
+	3.4.complete = Good.
+	
+	3.5.label = Elevator
+	3.5.alert = Elevators are on the horizontal stabilizer at the rear of the aircraft fuselage.  Moving these points your aircraft up or down, relative to the direction it is facing.[NL][NL]Use {elevator.3.4.7.4} to move your elevators.
+	3.5.complete = Looks good.
+	
+	3.6.label = Flaps
+	3.6.alert.modal = Flaps changes the shape of your wing, creating more lift, which makes it easier to take off, but also adding a lot of drag, which slows you down.[NL][NL]From the pilot&#39;s position, it is not possible to see your flaps in most aircraft, but they can be heard deploying.
+	3.6.alert.camera = -7,-5,-7,2
+	3.6.alert1 = Press {flapcontrol.10.4.0.4} to deploy your flaps and listen for the sound.
+	3.6.complete = Well done.
+
+4.0.label = Gunsight View
+
+	4.1.label = Lean Forward
+	4.1.alert = The gunsight view has a zoom, which reflects a pilots ability to lean forward into the sight to enhance.[NL][NL]Press {gunsightview} to toggle the gunsight view.
+	4.1.alert.camera = internal
+	4.1.complete = Good.
+
+5.0.label = Instrument View
+
+	5.1.label = Altimeter
+	5.1.alert = When flying, it is critical to be aware of your situation; especially your airspeed and altitiude.[NL][NL]Press {instrumentview} to view your Instrument Panel.
+	
+	5.2.label = Air Speed
+	5.2.alert.modal = Locate the Air Speed Indicator for your aircraft.  Depending upon which country your are flying as, this gauge will be labelled mph (British), km/h (French and German).
+	
+	5.3.label = Altimeter
+	5.3.alert.modal = Good.  Now locate the Altimeter.  This indicates your altitude.  It is labelled Alt (British), Altimetre (French) or Höhe (German)
+	
+	5.4.label = Normal View
+	5.4.alert = Press {instrumentview} to return to the normal view.
+	
+6.0.label = Vehicle Status Display
+
+	6.1.label = Show Status
+	6.1.alert = Additional useful information is available in the Vehicle Status Display.[NL][NL]Press {showstats} to enable this display.
+	
+	6.2.label = G-Forces
+	6.2.alert.modal = The first listed value is the number of G forces currently applied to your pilot.  G forces are multiples of the force of gravity.  High Gs will cause your pilot to black out, and low Gs will cause him ot red out from changes in the amount of blood going to the brain.
+	
+	6.3.label = Angle of Attack
+	6.3.alert.modal = The next value is the Angle of Attack (AoA).  This is the difference between the direction of your wing and the vector of your aircraft.  A high angle of attack causes more lift (up to a point), and a low angle of attack means less.
+	
+	6.4.label = Slip Indicator
+	6.4.alert.modal = The final value is Slip, which is the difference between your forward direction and your rudder.  A high slip indicates that you getting more drag, and will be slower.
+
+7.0.label = Taxi to Start Point
+
+	# waypoint needs to be forward and to the left so that it is easily visible from the pilot&#39;s seat.
+
+	7.1.label = Engage Toe Brakes
+	7.1.alert.modal = Now we&#39;re going to taxi onto the runway and prepare for takeoff. The runway is to the left so we&#39;ll need to start the engine and taxi onto it.
+	7.1.alert.camera = 65,5,40
+	7.1.alert1 = Toe brakes effect your left and right landing gear.[NL][NL]Press and hold {leftbrake.10.4} and {rightbrake.10.4} to apply the brakes.[NL][NL]Keep these brakes on when you start the engine.
+	7.1.alert1.camera = internal
+
+	7.2.label = Start the Engine 
+	7.2.alert = Set your throttle to its lowest setting by using {throttle.2.3.3.3}, then press and on {engstart} until the engine is running smoothly.[NL][NL]Remember to keep your brakes on otherwise the plane will begin to roll.
+
+	7.3.label = Unlock the Tailwheel
+	7.3.alert = The tailwheel lock keeps the plane straight at slow speeds, but in order to taxi, you will need to unlock it.[NL][NL]Unlock the tail wheel by pressing {toggletaillock}.
+	
+	7.4.label = Taxi onto Runway
+	7.4.alert.modal = Release the toe brakes and the aircraft should begin to move forward. If it doesn&#39;t increase your throttle {throttle.2.3.3.3} slightly, but not too much.
+	7.4.alert1 = As the aircraft nears the center of the runway, use the left {leftbrake.10.4} and right {rightbrake.10.4} toe brakes to steer the aircraft so that it points down the runway to the left.[NL][NL]Once you are lined up, hold both toebrakes and lock the tailwheel {toggletaillock}.
+	
+	7.5.label = Stop the Engine
+	7.5.alert.modal = Well done![NL][NL]Stop the engine by pressing {engstart}. Keep the brakes pressed until engine stops completely.   
+	7.5.complete.modal = Excellent!  You are now prepared to take off.[NL][NL]You may attempt to take off now if you like.  Be sure to set your RPMs to Maximum by pressing {enginerpm} twice to have the most power available.</body>
+  <branch>2</branch>
+  <brief>Erlerne die Grundlagen der Bedienung eines Jägers.</brief>
+  <handler>fighter.basic</handler>
+  <instance>2</instance>
+  <requires>basic</requires>
+  <title>Jäger I: Checkliste vor dem Start</title>
+</content>

@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="panhard" type="ground" shape="panhard" description="Panhard 178 Scout Car" icon="Panhard">
+<include file="panhard.veh.xml"/>
+<include file="panhard.state.xml"/>
+<include file="panhard.hit.xml"/>
+<include file="panhard.turret.xml"/>
+<include file="panhard.loadout.xml"/>
+<include file="panhard.xsound.xml"/>
+<include file="panhard.control.xml"/>
+<include file="panhard.mass.xml"/>
+</vehicle>

@@ -1,0 +1,41 @@
+# Q.F. 6Pdr MkIV 57mm turret file
+
+#multicrewpos position, whichcrew
+multicrewpos 1 1
+multicrewpos 2 2
+
+# Gun
+position = 2
+elevationrate = 4
+traverserate = 4.0
+type = limitedturret
+gunsightfile = qf6pdrmkiv.gs
+gunsightalignmentmountobject = mount1
+gunsightalignmentrange = 700
+# conditions are undeployed, depolyed, canopyopen, canopyclosed, hatchopen, hatchclosed
+gunsightblocked = undeployed
+# added for centering gun
+# neutral can be: bombayopen/closed, hatchopen/closed, canopyopen/closed
+neutral = bombbayclosed
+# neutraltraverse -1 max deflection left, 1 max deflection right, 0 straight ahead 
+neutraltraverse = 0
+# neutralelevate -1 max down, 1 max up, 0 is midtraverse
+neutralelevate = 0
+# conditions are undeployed, depolyed, canopyopen, canopyclosed, hatchopen, hatchclosed
+
+#turret sound variables
+turrettraverse = turret/hand_turret_move.wav
+turretelevate = turret/hand_turret_move.wav
+
+
+#Commander head
+position = 1
+elevationrate = 2
+traverserate = 6
+type = 360turret
+neutral = bombbayclosed
+neutraltraverse = 0
+neutralelevate = 0
+gunsightfile = fernglas.gs
+# conditions are undeployed, depolyed, canopyopen, canopyclosed, hatchopen, hatchclosed
+gunsightblocked = undeployed

@@ -1,0 +1,59 @@
+# Douglas DB-7 file
+# modified 12th Mar.08 - Doc.
+
+#multicrewpos position, whichcrew
+multicrewpos 1 1
+multicrewpos 2 2
+multicrewpos 3 2
+multicrewpos 4 2
+
+# Gun
+position = 3
+elevationrate = 1
+traverserate = 0.5
+type = limitedturret
+gunsightalignmentmountobject = turretgunx
+gunsightalignmentrange = 200
+
+
+# added for centering gun
+# neutral can be: bombayopen/closed, hatchopen/closed, canopyopen/closed
+# neutral = bombbayclosed
+gunsightblocked = canopyclosed
+neutral = canopyclosed
+# neutraltraverse -1 max deflection left, 1 max deflection right, 0 straight ahead 
+neutraltraverse = 0
+# neutralelevate -1 max down, 1 max up, 0 is midtraverse
+neutralelevate = -1
+
+#bombadier
+position = 2
+bombsight = germlotfec7b
+bombmount = f100x1
+gunsightfile = db7.gs
+# sight turn turret
+position = 2
+elevationrate = 2
+traverserate = 2
+type = limitedturret
+
+# Gun
+position = 4
+elevationrate = 1
+traverserate = 0.5
+type = limitedturret
+gunsightalignmentmountobject = turretguny
+gunsightalignmentrange = 200
+gunsightblocked = canopyclosed
+
+
+# added for centering gun
+# neutral can be: bombayopen/closed, hatchopen/closed, canopyopen/closed
+# neutral = bombbayclosed
+gunsightblocked = canopyclosed
+neutral = canopyclosed
+# neutraltraverse -1 max deflection left, 1 max deflection right, 0 straight ahead 
+neutraltraverse = 0
+# neutralelevate -1 max down, 1 max up, 0 is midtraverse
+neutralelevate = 1
+gunsightblocked = canopyclosed

@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<view id="tutorial" x="0" y="0" width="1024" height="768" acceptmouseclick="false" layer="51"
+	onshow="InitTutorial(this)" onupdate="doUpdate()">
+	<include file="lib/common.uixml"/>
+	<include file="lib/tutorial.uixml"/>
+	<include file="classes/ListControl.uixml"/>
+	<text id="tut-message" width="180" height="350" rtop="170" rright="90"
+		maxwidth="500" fontshadowx=".08" fontshadowy="-.08"
+		style="color: #FFFFFF; font-size: +2; background-color: #00000099; border-width: 5; border-height: 5; border-color: #3e5248; border-size: 1;"
+		moveondrag="no" acceptmouseclick="false"/>
+	<script>
+		<!--
+			
+			var initialized		= false;
+			var messageView		= window.findview("tut-message");
+			var currentAlert	= null;
+			
+			function InitTutorial(tutWin)
+			{
+				if(initialized) return;
+				initialized = true;
+
+				TutAddCallback("oncontinue", OnContinue);
+				TutAddCallback("stepcomplete", OnStepComplete);
+				TutAddCallback("addalert", OnAddAlert);
+				TutAddCallback("tutcompleted", OnTutorialCompleted);
+			}
+			
+			function OnContinue()
+			{
+				if(currentAlert != null && currentAlert.modal)
+					currentAlert.SetExpired();
+			}
+			
+			function doUpdate()
+			{
+				TutUpdate(currentAlert);
+			}
+			
+			function OnStepComplete()
+			{
+				game.playsound("sounds/ding5.wav", 1, 0.05);
+			}
+			
+			function OnAddAlert(alert)
+			{
+				if(currentAlert != null)
+					currentAlert.Expire();
+				
+				currentAlert = alert;
+				currentAlert.Show(messageView);
+				
+				// center
+				messageView.x = game.screenwidth/2 - messageView.width/2;
+				messageView.y = game.screenheight - messageView.height - game.screenheight/3;
+			}
+			
+			function OnTutorialCompleted()
+			{
+				if(messageView != null) messageView.visible = false;
+			}
+			
+		-->
+	</script>
+</view>
+

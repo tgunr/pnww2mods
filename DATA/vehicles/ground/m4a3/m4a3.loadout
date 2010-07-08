@@ -1,0 +1,33 @@
+#M4A3(76) Sherman 
+#05/31/06 - created by Doc.
+
+# sounds available for the mounts
+sound1 = sounds\m10\xgun.wav
+sound2 = sounds\m4a2\xgun2.wav
+sound3 = sounds\m4a2\xgun2.wav
+
+loadout = 1
+
+# Main Gun
+mountnum = 1
+mountobject = maingunmount
+mountsound = sound1
+weapon = 76l52m1a2
+weaponobject = genericgun1
+recoilnum = 1
+recoiltime = .2
+shockdust = 1
+
+# Coax Mount
+mountnum = 2
+mountobject = mgcoaxmount
+mountsound = sound2
+weapon = besa
+weaponobject = genericgun1
+
+# Bow gun
+mountnum = 3
+mountobject = mghullmount
+mountsound = sound3
+weapon = besa
+weaponobject = genericgun1

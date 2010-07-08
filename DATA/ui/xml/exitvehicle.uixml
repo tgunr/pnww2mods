@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<window id="exitvehicle" x="0" y="0" width="1024" height="768" onupdate="updateWait()">
+	<include file="lib/common.uixml"/>
+	<script>
+		<!--
+		
+		var request	= (new Date()).getTime(); 
+		var client 	= game.player.client;
+		var popup 	= showPopup("despawn", getlocstring('exitvehicle.init'), doDespawn);
+		
+		game.enableimapinput(false);
+		client.enabledespawntimer(true);
+
+		popup.setPopupClose(false);
+		popup.setButtonEnabled("popup-yes", false);
+		
+		if(game.player.hulked)
+			popup.setButtonEnabled("popup-no", false);
+		
+		function rtbMsg(rtb)
+		{
+			var status = "mia";
+			
+			switch(rtb)
+			{
+				case 1:
+					status = "rtb";
+				break;
+				case 2:
+					status = "kia";
+				break;
+				case 3:
+					status = "mia";
+				break;
+				case 4:
+					status = "res";
+				break;
+			}
+
+			return getlocstring("exitvehicle.status." + status);
+		}
+
+		function updateWait()
+		{
+			var now 	= (new Date()).getTime();
+			var timer	= client.despawntimer;
+			var wait	= (timer == -1) ? true: false;
+			var msg		= "";
+			
+			if(game.player.vehicletype != "floater" &&  (wait || timer > 0))
+			{
+				if(timer > 0)
+					msg = getVariableLocString('exitvehicle.timer', timer);	
+			}
+			else
+			{
+				msg = getlocstring('exitvehicle.ok');
+				popup.setButtonEnabled("popup-yes", true);
+			}
+			
+			if(game.online) 
+			{
+				msg += "\n";
+				
+				var status = getlocstring("exitvehicle.status." + game.player.rtb);
+				
+				if(game.player.rtbfac != null)
+					msg += getVariableLocString('exitvehicle.status.to', status, game.player.rtbfac.name);
+				else
+					msg += status;
+			}
+		
+			popup.setPopupMessage(msg);
+		}
+		
+		function doDespawn(despawn, undeploy)
+		{
+			if(despawn)
+			{
+				var fullMap = game.findview("fullmap");
+				
+				if(fullMap)
+					fullMap.close();
+				
+				var gameMap = game.findview("ingamemap");
+				
+				if(gameMap)
+					gameMap.visible = false;
+				
+				var hud = game.findview("hud");
+				
+				if(hud)
+				{
+					var minimap = hud.findview("minimap");
+					if(minimap) game.setpref('hud.minimap.scale', 4, minimap.scale);
+				}
+				
+				if(undeploy && client.ismobilespawn)
+					client.undeployms();
+				
+				game.globals.despawning = true;
+				game.despawn();
+				popup.setPopupCursorState(true);
+			}
+			
+			game.enableimapinput(true);
+			client.enabledespawntimer(false);
+			window.close();
+		}
+		
+		-->
+	</script>
+</window>

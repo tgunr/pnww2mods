@@ -1,0 +1,39 @@
+# QF 2pounder pos file
+# driver
+# no hatch so volume 1.0
+# canopy takes care of being inside
+position = 1
+hatchclosedsoundvolume = 1.0
+hatchopensoundvolume = 1.0
+canopyclosedsoundvolume = 1.0
+canopyopensoundvolume = 0.1
+engineidlevol = 1.0
+enginefullpowervol = 0.1
+hatchsound = sounds\slide_hatch.wav
+canopysound = sounds\slide_hatch.wav
+
+# 
+# no hatch so volume 1.0
+# canopy takes care of sticking head out
+position = 2
+hatchclosedsoundvolume = 1.0
+hatchopensoundvolume = 1.0
+canopyclosedsoundvolume = 1.0
+canopyopensoundvolume = 1.0
+engineidlevol = 1.0
+enginefullpowervol = 0.1
+canopysound = sounds\hatch_openr35.wav
+canopyclosesound = sounds\hatch_closer35.wav
+
+
+# 
+position = 3
+hatchclosedsoundvolume = 1.0
+hatchopensoundvolume = 1.0
+canopyclosedsoundvolume = 0.1
+canopyopensoundvolume = 0.1
+engineidlevol = 1.0
+enginefullpowervol = 0.1
+hatchsound = sounds\slide_hatch.wav
+canopysound = sounds\slide_hatch.wav
+

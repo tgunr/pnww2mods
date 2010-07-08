@@ -1,0 +1,29 @@
+#engine stats file for flak30
+[human_power]
+#basehorsepower = 1.5 :edited for berm climbing 6jan05 -Doc.
+basehorsepower = 13.5
+basehpalt = 0
+basehprpm = 200
+basehppress = 1.0
+basehpexhausttemp = 1000
+idlethrottlepos = 0.1
+idlerpm = 200
+fuelperhphour = 0.260
+oilconsumptionperhour = 0
+wepmaxpress = 1.0
+milmaxpress = 1.0
+weprpm = 200
+milrpm = 200
+climbrpm = 200
+econrpm = 200
+
+superchargertype = none
+weptype = none
+
+#criticalrpm is the rpm at which below this the engine might stall, also used for starting
+criticalrpm 0
+
+#starterrpm is the rpm at which the starter motor will spin the engine at
+starterrpm 0
+#starterhp is the power of the starter motor
+starterhp 1.5

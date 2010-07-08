@@ -1,0 +1,10 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="laffly" type="ground" shape="laffly" description="Laffly S-20 Truck" icon="Laffly">
+<include file="laffly.veh.xml"/>
+<include file="laffly.state.xml"/>
+<include file="laffly.hit.xml"/>
+<include file="laffly.xsound.xml"/>
+<include file="laffly.control.xml"/>
+<include file="laffly.mass.xml"/>
+</vehicle>

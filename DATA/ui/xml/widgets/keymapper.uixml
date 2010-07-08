@@ -1,0 +1,315 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<view x="0" y="0" width="930" height="460" onupdate="updatekeymapper()" onshow="initKeyMapper()" onhide="game.killkeymaps()">
+	<view id="left-pane" x="18" y="18" width="315" height="411">
+		<caption label="&widgets.keymapper.cats;" x="10" height="20" width="300" rtop="10" style="font-size: +2; color: #BFE2CE;"/>
+		<image x="10" src="ui/textures/test/horiz_underline.bmp" width="300" height="12" rtop="20"/>
+		<view x="10" width="300" height="15" rtop="32">
+			<caption x="0" y="0" width="300" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="&widgets.keymapper.cats.name;"/>
+		</view>
+		<list id="categoryTree" x="10" y="35" width="300" height="327" style="color: #FFFFFF"
+			onselect="categoryTree.clickTree(false)" ondblselect="categoryTree.clickTree(true)">
+			<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+		</list>
+	</view>
+	<!-- include file="widgets/divider.uixml"/ -->
+	<view id="right-pane" x="330" y="18" width="570" height="411">
+		<caption id="header-keymaps" x="10" height="20" width="570" rtop="10" style="font-size: +2; color: #BFE2CE;"/>
+		<image x="10" src="ui/textures/test/horiz_underline.bmp" width="570" height="12" rtop="20"/>
+		<view x="10" width="570" height="15" rtop="32">
+			<caption x="0" y="0" width="175" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="&widgets.keymapper.keys.function;"/>
+			<caption x="177" y="0" width="192" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="&widgets.keymapper.keys.primary;" align="right"/>
+			<caption x="371" y="0" width="192" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="&widgets.keymapper.keys.secondary;     " align="right"/>
+		</view>
+		<list id="keymaps" x="10" y="35" width="560" height="327" style="color: #FFFFFF" onselect="selectKeymap()">
+			<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+		</list>
+	</view>
+	<view id="button-pane" x="20" y="10" width="890" height="30">
+		<button id="defaultcategory" x="10" y="0" height="25" width="140" label="&widgets.keymapper.button.def.cat;"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -3; color: #FFFFFF;"
+			onclick="soundPlayClick(); game.keymapremoveall(keymapCategory, keymapVehicle)" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+			tip="&widgets.keymapper.button.def.cat.tip;"/>
+		<button id="defaultkeymap" x="150" y="0" height="25" width="140" label="&widgets.keymapper.button.def.key;"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -3; color: #FFFFFF;"
+			onclick="soundPlayClick(); game.resetkeymap(keymapList.data, curkeymapindex)" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+			tip="&widgets.keymapper.button.def.key.tip;"/>
+		<button id="revertcategory" x="300" y="0" height="25" width="140" label="&widgets.keymapper.button.discard;"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -3; color: #FFFFFF;"
+			onclick="soundPlayClick(); game.keymaprestore(keymapCategory, keymapVehicle)" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+			tip="&widgets.keymapper.button.discard.tip;"/>
+		<button id="clearkeymap" x="450" y="0" height="25" width="140" label="&widgets.keymapper.button.clear;"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -3; color: #FFFFFF;"
+			onclick="soundPlayClick(); game.clearkeymap(keymapList.data, curkeymapindex)" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+			tip="&widgets.keymapper.button.clear.tip;"/>
+		<button id="savekeymaps" x="600" y="0" height="25" width="140" label="&widgets.keymapper.button.save;"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -3; color: #FFFFFF;"
+			onclick="soundPlayClick(); game.savekeymaps()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+			tip="&widgets.keymapper.button.save.tip;"/>
+		<caption id="presetsList" height="20" width="140" rtop="5" rright="10"
+			onshow="if(!this.mgr) new DDListControl(this, selectPreset, 50, true); initPresets(keymapCategory);"
+			onclick="this.mgr.toggleList()" onhide="this.mgr.hideList()"
+			style="color: #BFE2CE; border-color: #3e5248; border-size: 1;">
+			 <image rright="5" rtop="5" src="ui/textures/map-scaledown-off.bmp" width="10" height="10" acceptmouseclick="false"/>
+		</caption>
+	</view>
+	<script>
+		<!--
+		
+		var curkeymapindex 		= 0;
+		var keymapCategory 		= 0;
+		var keymapVehicle		= -1;
+		var pendingKeymapPopup	= null;
+		
+		var headerKeymaps 		= findview("header-keymaps");
+		var revertcategory 		= findview("revertcategory");
+		var defaultcategory		= findview("defaultcategory");
+		var clearkeymap			= findview("clearkeymap");
+		var defaultkeymap		= findview("defaultkeymap");
+		var presetsList			= findview("presetsList");
+		
+		var categoryTree 		= new TreeControl("categoryTree", selectCategory);
+		var keymapList 			= new ListControl(findview("keymaps"), null, formatKeymap);
+		
+		function initKeyMapper()
+		{
+			game.consoleclear();
+			game.onkeymapchange = hidePendingPopup;
+			game.onkeymapenter  = showPendingPopup;
+			
+			game.initkeymaps();
+			
+			if(!categoryTree.initTree())
+			{
+				initCategoryList();
+				initKeymapList(keymapCategory, keymapVehicle);
+				updateHeaders();
+			}
+			
+			if(presetsList.mgr != null)
+			{
+				game.consoleprint("Pre-Hiding presets list\n");
+				presetsList.mgr.hideList();
+			}
+		}
+		
+		function initCategoryList()
+		{
+			categoryTree.addNode(new TreeNode(getlocstring('widgets.keymapper.cats.general'), "0,0", 1, false));
+			categoryTree.addNode(new TreeNode(getlocstring('widgets.keymapper.cats.views'), "1,0", 1, false));
+			categoryTree.addNode(new TreeNode(getlocstring('widgets.keymapper.cats.infantry'), "6,0", 1, true));
+			categoryTree.addNode(new TreeNode(getlocstring('widgets.keymapper.cats.armor'), "3,0", 1, true));
+			categoryTree.addNode(new TreeNode(getlocstring('widgets.keymapper.cats.trucks'), "4,0", 1, true));
+			categoryTree.addNode(new TreeNode(getlocstring('widgets.keymapper.cats.guns'), "5,0", 1, true));
+			categoryTree.addNode(new TreeNode(getlocstring('widgets.keymapper.cats.planes'), "2,0", 1, true));
+			categoryTree.addNode(new TreeNode(getlocstring('widgets.keymapper.cats.ships'), "7,0", 1, true));
+			
+			categoryTree.drawTree();
+		}
+		
+		function initKeymapList(category, vehicle)
+		{
+			keymapList.clearRows(true);
+			
+			var keymaps = game.getkeymaps(category, vehicle);
+			var header	= null;
+			
+			for(var i = 0; i < keymaps.length; i++)
+			{
+				var keymap = keymaps[i];
+				
+				if(keymap.header != header)
+				{
+					header = keymap.header;
+					keymapList.addRow(header.toUpperCase());
+				}
+				
+				keymap.category = category;
+				keymap.vehicle 	= vehicle;
+				keymap.index 	= i;
+				
+				keymapList.addRow(keymap);
+			}
+		}
+		
+		function selectCategory()
+		{
+			var node = categoryTree.selectedNode();
+			
+			if(node != null)
+			{
+				var keymap = node.data.split(",");
+				
+				keymapCategory 	= keymap[0];
+				keymapVehicle 	= keymap[1] - 1;
+				
+				if(node.branch && !node.initNode())
+				{
+					var vehicles = game.getkeymapvehicles(keymapCategory);
+					
+					for(var i = 0; i < vehicles.length; i++)
+					{
+						var vehicle	= vehicles[i];
+						var index	= i + 1;
+						
+						if(vehicle != "")
+							node.addNode(new TreeNode(index, keymapCategory + "," + index, 1, false, vehicle));
+					}
+				}
+				
+				initKeymapList(keymapCategory, keymapVehicle);
+				
+				if(presetsList.mgr == null)
+					var ddc = new DDListControl(presetsList, selectPreset, 50, true);
+				
+				initPresets(keymapCategory);
+				updateHeaders();
+			}
+		}
+		
+		function initPresets(cat)
+		{
+			var options = game.getkeymappresets(cat);
+			var current = game.getkeymappreset(cat);
+			//getPreference('input.presets.' + cat, Preference.SINT, -1, false);
+			
+			game.consoleprint("Current preset is " + current + "\n");
+			
+			presetsList.mgr.clearRows(true);
+			
+			for(var i = 0; i < options.length; i++)
+				presetsList.mgr.addOption(getlocstring("presets." + options[i]), i, current);
+			
+			game.consoleprint("Hiding presets list from init\n");
+			presetsList.mgr.hideList();
+		}
+		
+		function selectPreset(init)
+		{
+			if(init != true)
+			{
+				game.savekeymaps();
+				game.killkeymaps();
+				presetsList.mgr.select();
+				game.setkeymappreset(keymapCategory, presetsList.mgr.data);
+				game.initkeymaps();
+				initKeymapList(keymapCategory, keymapVehicle);
+			}
+		}
+		
+		function selectKeymap()
+		{
+			keymapList.select();
+		}
+		
+		function formatKeymap(list, keymap)
+		{
+			//consoleprint("Formatting keymap " + typeof(keymap) + "\n");
+			var row = "";
+			var hwidth	= list.list.normv("w", list.list.width); // header width
+			var rwidth	= hwidth - 15; // row width - scroll bar
+			var lwidth 	= rwidth - 5 - 2 - 2; // content width - initial buffer - buffer - buffer
+			var cwidth	= lwidth / 3; // column width
+			
+			if(typeof(keymap) != "object")
+			{
+				row = "\
+<view id='header' width='" + hwidth + "' height='25' aspectalign='left'>\
+	<caption x='0' y='4' width='" + hwidth + "' height='16' style='color: #FFFFFFFF; font-size: +2;' label='" + htmlencode(keymap) + "'/>\
+</view>";
+			}
+			else
+			{
+				row = "\
+<view id='keymap_" + keymap.index + "' width='" + rwidth + "' height='16' onmouseenter='keymapList.mouseEnter(this)' onmouseexit='keymapList.mouseExit(this)' aspectalign='left'>\
+	<caption id='keymap-function' x='5' y='0' width='" + cwidth + "' height='16' style='color: #e9e3d9ff; '\
+		label='" + htmlencode(keymap.functionname) + "'/>\
+	<caption id='keymap-key' class='keymap' x='" + (cwidth + 2) + "' y='0' width='" + cwidth + "' height='16' style='color: #e9e3d9ff; '\
+		align='right' category='" + keymap.category + "' vehidx='" + keymap.vehicle + "' funcidx='" + keymap.index + "' keyidx='0' onmousedown='curkeymapindex=0'/>";
+				
+				var cx = 5 + (cwidth * 2) + 4;
+				var cw = cwidth/2;
+				
+				if(keymap.isaxis)
+				{
+					row += "\
+	<caption id='keymap-axis' class='keymap' x='" + cx + "' y='0' width='" + cw + "' height='16' style='color: #e9e3d9ff; '\
+		align='left' category='" + keymap.category + "' vehidx='" + keymap.vehicle + "' funcidx='" + keymap.index + "' keyidx='1' onmousedown='curkeymapindex=1'/> \
+	<caption id='keymap-axis' class='keymap' x='" + (cx + cw) + "' y='0' width='" + cw + "' height='16' style='color: #e9e3d9ff; '\
+		align='left' category='" + keymap.category + "' vehidx='" + keymap.vehicle + "' funcidx='" + keymap.index + "' keyidx='2' onmousedown='curkeymapindex=2'/> \
+</view>";
+						
+				}
+				else
+				{
+					row += "\
+	<caption id='keymap-axis' class='keymap' x='" + cx + "' y='0' width='" + cwidth + "' height='16' style='color: #e9e3d9ff; '\
+		align='right' category='" + keymap.category + "' vehidx='" + keymap.vehicle + "' funcidx='" + keymap.index + "' keyidx='1' onmousedown='curkeymapindex=1'/> \
+</view>";
+				}
+			}
+			
+			return row;
+		}
+		
+		function showPendingPopup(keymap)
+		{
+			var message = getlocstring('widgets.keymapper.pending.keymap') + ": " + categoryTree.selectedNode().description + " : " + keymap.functionname + "\n\n";
+			
+			if(keymap.isaxis)
+			{
+				if(keymap.keyidx == 0) // axis
+				{
+					message += getlocstring('widgets.keymapper.pending.move') + "\n";
+					message += getlocstring('widgets.keymapper.pending.invert')  + "\n";
+				}
+				else if(keymap.keyidx == 1) // negative
+				{
+					message += getlocstring('widgets.keymapper.pending.dec') + "\n";
+				}
+				else // positive
+				{
+					message += getlocstring('widgets.keymapper.pending.inc') + "\n";
+				}
+			}
+			else
+			{
+				if(keymap.keyidx == 0) // primary
+					message += getlocstring('widgets.keymapper.pending.pri') + "\n";
+				else // secondary
+					message += getlocstring('widgets.keymapper.pending.sec') + "\n";
+			}
+			
+			pendingKeymapPopup = game.load("pending");
+			pendingKeymapPopup.setPopupMessage(message);
+		}
+		
+		function hidePendingPopup()
+		{
+			if(pendingKeymapPopup != null)
+				pendingKeymapPopup.close();
+			
+			pendingKeymapPopup = null;
+		}
+		
+		function updatekeymapper()
+		{
+			var userkeymap 	= game.hasuserkeymap(keymapCategory, keymapVehicle);
+			var dirty 		= game.keymapisdirty(keymapCategory, keymapVehicle);
+			
+			defaultcategory.enabled = userkeymap || dirty;
+			revertcategory.enabled  = userkeymap && dirty;
+		}
+		
+		function updateHeaders()
+		{
+			var node = categoryTree.selectedNode();
+			
+			if(node != null)
+				headerKeymaps.label = getlocstring('widgets.keymapper.keys.modify') + ' ' + node.description.toUpperCase();
+		}
+		
+		-->
+	</script>
+</view>
+

@@ -1,0 +1,659 @@
+<script>
+	
+	<include file="lib/sound.uixml"/>
+	<include file="classes/MenuControl.uixml"/>
+	<include file="classes/MapManager.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+	
+	<!--
+	
+	function initGlobals()
+	{
+		if(game.globals == null)
+			game.globals = new Object();
+		
+		game.globals.musicLoop 		= musicPlayLoop;
+		game.cthlerror 				= handleConnectionLost;
+		game.confirmdotcommand		= showDotCommandConfirmation;
+		game.onsquadaccept			= onSquadAccept;
+		game.onsquadcreate			= onSquadCreate;
+		game.onrecruited			= onRecruited;
+		game.onmusicchange			= onMusicChange;
+		game.onoicnomination		= onOICNomination;
+		//game.onmissioninvite		= doMissionInvite;
+		game.onchangeinvites		= onChangeInvites;
+		game.onchangerecruiting		= onChangeRecruiting;
+	}
+	
+	function loadWin(name, close)
+	{
+		var loaded = game.load(name);
+		
+		if(close)
+			window.close();
+		
+		return loaded;
+	}
+	
+	function loadWinToTab(name, index, close)
+	{
+		var newWin = game.load(name);
+		
+		newWin.showTab(index);
+		
+		if(close)
+			window.close();
+	}
+	
+	function reloadWin()
+	{
+		var winName = window.name;
+		
+		window.close();
+		game.load(winName);
+	}
+	
+	function showChat(flag, setPos)
+	{
+		var chatWin = game.findview("chat");
+		
+		if(chatWin && chatWin.visible != flag)
+			chatWin.visible = flag;
+		
+		if(chatWin.visible && setPos == true)
+		{
+			chatWin.x = window.x + window.width/2 - chatWin.width/2;
+			chatWin.y = window.y + 10;
+		}
+	}
+	
+	function showPopup(name, message, action, yes, no)
+	{
+		var popupWin = game.findview(name);
+		
+		if(popupWin == null)
+		{
+			popupWin = game.load(name);
+			popupWin.initPopup(message, action, yes, no);
+		}
+		
+		return popupWin;
+	}
+	
+	function showOk(message, action, yes)
+	{
+		return showPopup("ok", message, action, yes);
+	}
+	
+	function showConfirm(message, action, yes, no)
+	{
+		return showPopup("confirm", message, action, yes, no);
+	}
+	
+	function getMousePosition(target)
+	{
+		var position = new Object();
+		
+		position.rx 	= game.cursor.x;
+		position.ry 	= game.cursor.y;
+		position.x 		= position.x;
+		position.y 		= window.height - position.y;
+		
+		if(target != null)
+		{
+			position.tx 	= position.x - target.x;
+			position.ty 	= position.y - target.y;
+			position.rtx 	= position.tx;
+			position.rty 	= target.height - position.ty;
+		}
+		
+		return position;
+	}
+	
+	function scaleX(val, type)
+	{
+		if(type != null && type == "x")
+			return window.scalev("x", val);
+		
+		return window.scalev("w", val);
+		
+		//return Math.floor(x * (game.viewwidth / 1024));
+	}
+	
+	function scaleY(val, type)
+	{
+		if(type != null && type == "y")
+			return window.scalev("y", val);
+		
+		return window.scalev("h", val);
+		
+		//return Math.floor(y * (game.viewheight / 768));
+	}
+	
+	function normalizeX(val, type)
+	{
+		if(type != null && type == "x")
+			return window.normv("x", val);
+		
+		return window.normv("w", val);
+		
+		//return Math.floor(x / (game.viewwidth / 1024));
+	}
+	
+	function normalizeY(val, type)
+	{
+		if(type != null && type == "y")
+			return window.normv("y", val);
+		
+		return window.normv("h", val);
+		
+		//return Math.floor(y / (game.viewheight / 768));
+	}
+	
+	function buttonMouseEnter(button)
+	{
+		if(button.enabled)
+			button.setstyleproperty('color', '#FFFF00');
+	}
+	
+	function buttonMouseExit(button)
+	{
+		button.setstyleproperty('color', '#FFFFFF');
+	}
+	
+	function findParentByName(view, name)
+	{
+		return view.findparent(name);
+	}
+	
+	// handle connection to host lost error (cthl)
+	function handleConnectionLost()
+	{
+		showOk(getlocstring('common.cthl'), game.quit);
+	}
+	
+	function showDotCommandConfirmation(cmd)
+	{
+		game.globals.dotcommand = cmd;
+		var popup = showConfirm(getlocstring('common.confirmdotcommand'), handleDotCommandConfirmation, getlocstring('common.yes'), getlocstring('common.no'));
+		popup.setPopupClose(false);
+	}
+	
+	function handleDotCommandConfirmation(confirm)
+	{
+		if(game.online && confirm)
+			player.client.sendchatmessage("/" + game.globals.dotcommand + " confirm");
+		
+		game.globals.dotcommand = null;
+	}
+	
+	function onSquadCreate(reason)
+	{
+		cprint("Got a squad create...\n");
+		
+		showOk(getlocstring(reason));
+		game.globals.creatingsquad = false;
+	}
+	
+	function onSquadAccept(callsign)
+	{
+		cprint("Got a squad accept: " + callsign + "\n");
+		
+		if(game.globals.squadcreators == null)
+			game.globals.squadcreators = new Object();
+		
+		game.globals.squadcreators[callsign] = accepted;
+	}
+	
+	function onRecruited(callsign)
+	{
+		var recruiter = game.player.client.recruiter;
+		var squadchat = -1;
+		
+		for(var i = 0; i < game.player.client.chatchannels.length; i++)
+		{
+			var channel = game.player.client.chatchannels[i];
+			
+			if(channel.name.toLowerCase() == "squad")
+			{
+				squadchat = i;
+				break;	
+			}
+		}
+		
+		var ok = getVariableLocString('common.squads.recruitment.success', recruiter.callsign.toUpperCase(), recruiter.squadshort.toUpperCase());
+		
+		if(!game.ingame)
+			ok += " " + getVariableLocString('common.squads.recruitment.success.mission', recruiter.callsign.toUpperCase());
+		
+		if(squadchat >= 0)
+			ok += " " + getVariableLocString('common.squads.recruitment.success.chat', "F" + (squadchat + 1));
+		
+		showOk(ok);
+	}
+	
+	function onOICNomination(brigadeid, timeout)
+	{
+		cprint("Incoming OIC nomination: " + brigadeid + "\n");
+		
+		var brigade = game.player.client.findbrigade(brigadeid);
+		
+		if(brigade != null)
+		{
+			//cprint("Found the brigade: " + brigade.name + "\n");
+			
+			game.globals.oicnomination 			= brigadeid;
+			game.globals.oicnominationtimeout 	= timeout;
+			
+			if(game.ingame)
+			{
+				var nom = loadWin("nomination", false);
+				
+				if(nom != null)
+					nom.initNominationPopup(brigade, timeout);
+			}
+			else
+			{
+				var message = getVariableLocString('common.confirmoicnomination', brigade.name);
+				var popup 	= showConfirm(message, handleOICNomination, getlocstring('common.yes'), getlocstring('common.no'));
+				
+				popup.setPopupClose(false);
+			}
+		}		
+	}
+	
+	function handleOICNomination(confirm)
+	{
+		if(game.globals.oicnomination != null)
+			game.player.client.acceptoicnomination(game.globals.oicnomination, confirm);
+		
+		game.globals.oicnomination = null;
+		game.globals.oicnominationtimeout = null;
+	}
+	
+	function doMissionInvite(country, branch, brigade, mission)
+	{
+		if(!game.online || game.ingame)
+			return -1; // nothing selected
+		
+ 	 	var persona		= null;
+		var client		= game.player.client;
+ 	 	var personas 	= client.personas;
+ 	 	
+		if(client.reservedweapon != null)
+			client.cancelweaponreservation();
+		
+		for(var i = 0; i < personas.length; i++)
+		{
+		 	var check = personas[i];
+
+		 	if(country == check.country.id && branch == check.branchid)
+		 	{
+		 		var current = client.persona;
+		 		
+		 		if(current != null &&
+		 		   current.country.code == check.country.code &&
+		 		   current.branchid == check.branchid)
+		 		{
+		 			persona = current;
+		 		}
+		 		else if(check.lockedthru == 0 && client.selectpersona(check))
+			 	{
+			 		persona = check;
+		 		}
+	 			
+		 		break;
+		 	}
+		}
+		
+		if(persona == null)
+			return 0; // nothing selected
+
+		var brigades = client.brigades;
+		var myBrigade = client.brigade;
+		
+		for(var i = 0; i < brigades.length; i++)
+		{
+			if(brigades[i].id == brigade)
+			{
+				if(myBrigade == null || myBrigade.id != brigade)
+					client.selectbrigade(brigades[i]);
+				
+				break;
+			}
+		}
+		
+		myBrigade = client.brigade;
+
+		if(myBrigade == null || myBrigade.id != brigade)
+			return 1; // persona selected
+		
+		if(!client.acceptmission(mission))
+			return 2; // brigade selected
+		
+		return 3; // mission selected
+	}
+	
+	function doMissionInviteJump(country, branch, brigade, mission, go)
+	{
+		cprint("Doing mission jump with " + country + " " + branch + " " + brigade + " " + mission + "\n");
+		
+		var jump	= "persona";
+		var result 	= doMissionInvite(country, branch, brigade, mission);
+		
+		cprint("Result of invite was " + result + "\n");
+		
+		switch(result)
+		{
+			case 0:
+				jump = "persona";
+				break;
+			case 1:
+				jump = "brigades";
+				break;
+			case 2:
+				jump = "brigade";
+				break;
+			case 3:
+				jump = "mission";
+				break;
+		}
+		
+		if(go != null && go == true)
+		{
+			cprint("Jumping to " + jump + "\n");
+			game.load(jump);
+		}
+		else
+		{
+			cprint("Not jumping to " + jump + "!!!\n");	
+		}
+		
+		return jump;
+	}
+	
+	function onChangeInvites()
+	{
+		var rg = game.findview("squad-invites-radiogroup");
+		
+		if(rg != null)
+		{
+			rg.getchild(0).value = game.settings.squadinvites;
+			rg.getchild(1).value = !game.settings.squadinvites;
+		}
+	}
+	
+	function onChangeRecruiting()
+	{
+		var rg = game.findview("squad-recruiting-radiogroup");
+		
+		if(rg != null)
+		{
+			rg.getchild(0).value = game.settings.isrecruiting;
+			rg.getchild(1).value = !game.settings.isrecruiting;
+		}
+	}
+	
+	function escapeStr(inStr)
+	{
+		inStr = inStr.replace(/\'/, "\\'");
+		inStr = inStr.replace(/\"/, "\\\"");
+		
+		return inStr;
+	}
+	
+	function getVariableLocString()
+	{
+		var locString 	= "";
+		var regex		= new RegExp();
+		var alength 	= getVariableLocString.arguments.length;
+		
+		if(alength > 0)
+		{
+			locString = getlocstring(getVariableLocString.arguments[0]);
+			
+			for(var i = 1; i < alength; i++)
+			{
+				var arg = getVariableLocString.arguments[i];
+				
+				if(arg != null)
+				{
+					regex.compile("\\{" + i + "\\}", 'g');
+					locString = locString.replace(regex, arg);
+				}
+			}
+		}
+		
+		return locString;
+	}
+	
+	function getVehicleManual(vehicle)
+	{
+		var path = "";
+		
+		if(vehicle)
+		{
+			path = "manuals/vehicles/";
+			path += vehicle.country.adjective + "/";
+			
+			if(vehicle.type == "person" || vehicle.type == "ground")
+				path += "land/";
+			else if(vehicle.type == "sea")
+				path += "sea/";
+			else if(vehicle.type == "air")
+				path += "air/";
+			
+			path += vehicle.id + ".xml";
+		}
+		
+		return path;
+	}
+	
+	function getCountryBranch(country, branch, casing)
+	{
+		return (country != null) ? getCommonLoc("common.countries", country.code, casing, branch): "";
+	}
+	
+	function getBranchName(source, casing)
+	{
+		return (source != null) ? getCommonLoc("common.branches", source, casing): "";
+	}
+	
+	function getCountryName(source, casing)
+	{
+		return (source != null) ? getCommonLoc("common.countries", source.code, casing, "name"): "";
+	}
+	
+	function getCountryAdj(source, casing)
+	{
+		return (source != null) ? getCommonLoc("common.countries", source.code, casing, "adjective"): "";
+	}
+	
+	function getCountrySide(source, casing)
+	{
+		return (source != null) ? getCommonLoc("common.countries", source.code, casing, "side"): "";
+	}
+
+	function getCommonLoc(prekey, thekey, casing, postkey)
+	{
+		var value 		= "";
+		var formatted 	= prekey + '.' + thekey.toLowerCase();
+		
+		if(postkey != null)
+			formatted += '.' + postkey;
+		
+		if(thekey)
+			value = getlocstring(formatted);
+		
+		if(casing == null)
+			casing = 0;
+		
+		if(casing > 0)
+			value = value.toUpperCase();
+		else if(casing < 0)
+			value = value.toLowerCase();
+		
+		return value;
+	}
+	
+	function quickhelp(id, force)
+	{
+		var tag = "quickhelp";
+		
+		if(id == null)
+		{
+			var body = window.findview("body");
+			
+			if(body)
+			{
+				var tab = body.getchild(body.value);
+				
+				if(tab)
+				{
+					id = tab.id;
+					
+					if((id == null || id == "") && body.value == 0)
+						id = window.id;
+				}
+			}
+		}
+		
+		if(id != null && id != "" && (force || !game.getpref(tag + "-" + id, 0, false)))
+		{
+			var help = game.getcontent("help/" + id + "/index.xml");
+			
+			if(help == null)
+				help = game.getcontent("help/" + id + ".xml");
+			
+			if(help != null)
+			{
+				var helper = game.findview("help");
+				
+				if(helper == null)
+					helper = game.load("help");
+				
+				helper.initHelp(help);
+				game.setpref(tag + "-" + id, 0, true);
+			}
+		}
+	}
+	
+	function hideViews()
+	{
+		var alength = hideViews.arguments.length;
+		
+		if(alength > 0)
+		{
+			var view = hideViews.arguments[0];
+			var flag = hideViews.arguments[1];
+			
+			for(var i = 2; i < alength; i++)
+			{
+				var child = view.findview(hideViews.arguments[i]);
+				
+				if(child != null)
+					child.visible = flag;
+			}
+		}
+	}
+	
+	function trim(target)
+	{
+		return target.replace(/^\s+|\s+$/g,"");
+	}
+	
+	function ltrim(target)
+	{
+		return target.replace(/^\s+/,"");
+	}
+	
+	function rtrim(target)
+	{
+		return target.replace(/\s+$/,"");
+	}
+	
+	function checkTimeLeft(t, report)
+	{
+		if(t >= 0)
+		{
+			if(t == 0 || report == true)
+			{
+				var key = 'mission.timeleft';
+				
+				if(t == 0)
+					key += '.expired';
+				
+				showOk(getVariableLocString(key, t), doTimeLeft);
+			}
+			
+			if(t == 0)
+				return false;
+		}
+		
+		return true;
+	}
+	
+	function doTimeLeft(ok)
+	{
+		if(game.player.client.state.timeleft == 0)
+		{
+			game.launchurl(getlocstring('mission.timeleft.url'));
+			game.quit();
+		}
+	}
+	
+	function cstack(start)
+	{
+		var out = "";
+		var c = start;
+		
+		while(c)
+		{
+			out = cfunc(c) + "\n" + out;
+			c = c.caller;
+		}
+		
+		return out;
+	}
+	
+	function cprint(message, addcaller)
+	{
+		if(addcaller != false)
+		{
+			var f = cprint;
+			var ac = cfunc(f.caller);
+			
+			consoleprint(window.name + "[" + ac + "]: " + message + "\n");
+		}
+		else
+		{
+			consoleprint(window.name + ": " + message + "\n");
+		}
+	}
+	
+	function cassert(ok, label)
+	{
+		var f = cassert;
+		
+		if(ok != true)
+		{
+			cprint("JS ASSERT FAILED(" + cfunc(f.caller) + "): " + label + "\n" + cstack(f.caller), false);
+			return false;
+		}
+		
+		return true;
+	}
+	
+	function cfunc(f)
+	{
+		var name = 'anonymous';
+		
+		if(f)
+			name = f.toString().match(/^\s*function (\w+)\s*\(/)
+		
+		return (f && name) ? name[1] : 'anonymous';
+	}
+	
+	-->
+</script>
+

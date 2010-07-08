@@ -1,0 +1,33 @@
+<?xml version='1.0'?>
+<content type="3">
+  <body>vous pouvez accéder à diverses commandes via la boîte de dialogue (chat) qui  permettent d&#39;obtenir diverses informations ou fonctionnalités.
+
+CONVENTIONS:
+Vous pouvez rentrer les commandes après soit  &#34;/ (commande)&#34; ou &#34;. (commande)&#34; La liste des commandes possible est donnée un peu plus haut mais vous pouvez utiliser la commande /HELP, /Help ou encore .help pour en avoir la liste. Certaines commandes demandent ou prennent en compte des paramètres additionnels. Ceci sont listés et notés selon:
+ &#34;PLAYER&#34; ou &#34;JOUEUR&#34; indique que le pseudo est demandé
+ &#34;word1/word2&#34; indique qu&#39;il faut soit le mot1 ou le mot2 (généralement pour arrêter ou utiliser un service, on/off) 
+
+Initialisation des canaux radio:
+Les changements que vous avez fait sur les canaux sont sauvegardés sur le serveur aussi vos choix  de canaux seront valides quelque soit l&#39;ordinateur avec lequel vous jouez.
+  /RESETRADIOS: Remet les réglages des canaux par défaut.
+
+
+ RACCOURCIS:
+Des abréviations peuvent être saisies dans la fenêtre de discussion pour simplifier l&#39;utilisation de certaines commandes ou action. L&#39;information complète est insérée dans le texte lors de l&#39;envoi aux autres joueurs.
+
+$orig: Insert votre ville d&#39;origine.
+$targ: Insert votre ville cible.
+$lead: Insert le nom de votre chef de mission.
+$unit: Insert le nom de votre brigade actuelle.
+$miss: Insert le nom de votre mission.
+
+Pour les utiliser,saisir les abréviations. Par exemple, si vous êtes sur une mission qui attaque Antwerp et vous envoyez le message &#34; Besoin de soutient aérien à $targ&#34;, les destinataires verront &#34; Besoin de soutient aérien à Antwerp.&#34;</body>
+  <links>
+    <link path="manuals/commands/basic_chat.xml" title="Commandes de base" />
+    <link path="manuals/commands/action_chat.xml" title="Commandes de Communication et d&#39;Action" />
+    <link path="manuals/commands/mission_chat.xml" title="Commandes de mission" />
+    <link path="manuals/commands/squad_chat.xml" title="Commandes de Squad" />
+    <link path="manuals/commands/hc_chat.xml" title="Commandes du QG" />
+  </links>
+  <title>Commandes de la boîte de dialogue</title>
+</content>

@@ -1,0 +1,267 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="groundman" type="person">
+<include file="groundman.veh.xml"/>
+<include file="groundman.hit.xml"/>
+<include file="groundman.turret.xml"/>
+<include file="groundman.control.xml"/>
+
+<!-- 
+  Units categorized by country: British, French, German, Chinese, Obsolete
+  listed in alphabetical order within country
+-->
+
+<!-- British Units -->
+
+<variant id="uk-atr" shape="british-atr" description="Anti-Tank Rifleman" icon="ATR">
+	<include file="british-atr.loadout.xml"/>
+</variant>
+
+<variant id="ukgrenadier" shape="british-nade" description="Grenadier" icon="Grenadier">
+	<include file="british-nade.loadout.xml"/>
+</variant>
+
+<variant id="uk-lmg" shape="british-lmg" description="Light Machinegunner" icon="LMG">
+	<include file="british-lmg.loadout.xml"/>
+</variant>
+
+<variant id="uk-ltmortar" shape="british-ltmortar" description="Light Mortarman" icon="Mortarman">
+	<include file="british-ltmortar.loadout.xml" />
+</variant>
+
+<!-- British Paratroop Units -->
+<variant id="ukrifle" shape="british-rifle" description="Rifleman" icon="Rifleman">
+	<include file="british-rifle.loadout.xml"/>
+</variant>
+
+<variant id="uk-eng" shape="british-engineer" description="Sapper" icon="Sapper">
+	<include file="british-engineer.loadout.xml"/>
+</variant>
+
+<variant id="uk-sniper" shape="british-sniper" description="Sniper" icon="Sniper">
+	<include file="british-sniper.loadout.xml"/>
+</variant>
+
+<variant id="uk-smg" shape="british-smg" description="Submachine Gunner" icon="SMG">
+	<include file="british-smg.loadout.xml"/>
+</variant>
+
+<variant id="uk-para-rfl" shape="british-para-rfl" description="Airborne Rifleman" icon="Rifleman">	
+	<include file="british-para-rfl.loadout.xml"/>
+</variant>	
+
+<variant id="uk-para-smg" shape="british-para-smg" description="Airborne SMG" icon="SMG">	
+	<include file="british-para-smg.loadout.xml"/>
+</variant>	
+
+<variant id="uk-para-lmg" shape="british-para-lmg" description="Airborne LMG" icon="LMG">	
+	<include file="british-para-lmg.loadout.xml"/>
+</variant>	
+
+<variant id="uk-para-atr" shape="british-para-atr" description="Airborne AT Rifleman" icon="ATR">	
+	<include file="british-para-atr.loadout.xml"/>
+</variant>	
+
+<variant id="uk-para-snpr" shape="british-para-snpr" description="Airborne Sniper" icon="Sniper">	
+	<include file="british-para-snpr.loadout.xml"/>
+</variant>	
+
+<variant id="uk-para-mrtr" shape="british-para-mrtr" description="Airborne Mortarman" icon="Mortarman">	
+	<include file="british-para-mrtr.loadout.xml"/>
+</variant>	
+
+
+<!-- French Units -->
+
+<variant id="fr-atr" shape="french-atr" description="Anti-Tank Rifleman" icon="ATR">
+	<include file="french-atr.loadout.xml"/>
+</variant>
+
+<variant id="frgrenadier" shape="french-nade" description="Grenadier" icon="Grenadier">
+	<include file="french-nade.loadout.xml"/>
+</variant>
+
+<variant id="fr-lmg" shape="french-lmg" description="Light Machinegunner" icon="LMG">
+	<include file="french-lmg.loadout.xml"/>
+</variant>
+
+<variant id="fr-ltmortar" shape="french-ltmortar" description="Light Mortarman" icon="Mortarman">
+	<include file="french-ltmortar.loadout.xml" />
+</variant>
+
+<variant id="frrifle" shape="french-rifle" description="Rifleman" icon="Rifleman">
+	<include file="french-rifle.loadout.xml"/>
+</variant>
+
+<variant id="fr-eng" shape="french-engineer" description="Sapper" icon="Sapper">
+	<include file="french-engineer.loadout.xml"/>
+</variant>
+
+<variant id="fr-sniper" shape="french-sniper" description="Sniper" icon="Sniper">
+	<include file="french-sniper.loadout.xml"/>
+</variant>
+
+<variant id="fr-smg" shape="french-smg" description="Submachine Gunner" icon="SMG">
+	<include file="french-smg.loadout.xml"/>
+</variant>
+
+<!-- French Paratroop Units -->
+
+<variant id="fr-para-rfl" shape="french-para-rfl" description="Airborne Rifleman" icon="Rifleman">	
+	<include file="french-para-rfl.loadout.xml"/>
+</variant>	
+
+<variant id="fr-para-smg" shape="french-para-smg" description="Airborne SMG" icon="SMG">	
+	<include file="french-para-smg.loadout.xml"/>
+</variant>	
+
+<variant id="fr-para-lmg" shape="french-para-lmg" description="Airborne LMG" icon="LMG">	
+	<include file="french-para-lmg.loadout.xml"/>
+</variant>	
+
+<variant id="fr-para-atr" shape="french-para-atr" description="Airborne AT Rifleman" icon="ATR">	
+	<include file="french-para-atr.loadout.xml"/>
+</variant>
+
+<variant id="fr-para-snpr" shape="french-para-snpr" description="Airborne Sniper" icon="Sniper">	
+	<include file="french-para-snpr.loadout.xml"/>
+</variant>	
+
+<variant id="fr-para-mrtr" shape="french-para-mrtr" description="Airborne Mortarman" icon="Mortarman">	
+	<include file="french-para-mrtr.loadout.xml"/>
+</variant>	
+
+
+<!-- German Units -->
+
+<variant id="de-atr" shape="german-atr" description="Anti-Tank Rifleman" icon="ATR">
+	<include file="german-atr.loadout.xml"/>
+</variant>
+
+<variant id="degrenadier" shape="german-nade" description="Grenadier" icon="Grenadier">
+	<include file="german-nade.loadout.xml"/>
+</variant>
+
+<variant id="de-lmg" shape="german-lmg" description="Light Machinegunner" icon="LMG">
+	<include file="german-lmg.loadout.xml"/>
+</variant>
+
+<variant id="de-ltmortar" shape="german-ltmortar" description="Light Mortarman" icon="Mortarman">
+	<include file="german-ltmortar.loadout.xml" />
+</variant>
+
+<variant id="derifle" shape="german-rifle" description="Rifleman" icon="Rifleman">
+	<include file="german-rifle.loadout.xml"/>
+</variant>
+
+<variant id="de-eng" shape="german-engineer" description="Sapper" icon="Sapper">
+	<include file="german-engineer.loadout.xml"/>
+</variant>
+
+<variant id="de-sniper" shape="german-sniper" description="Sniper" icon="Sniper">
+	<include file="german-sniper.loadout.xml"/>
+</variant>
+
+<variant id="de-smg" shape="german-smg" description="Submachine Gunner" icon="SMG">
+	<include file="german-smg.loadout.xml"/>
+</variant>
+
+<!-- German Paratroop Units -->
+
+<variant id="de-para-rfl" shape="german-para-rfl" description="Airborne Rifleman" icon="Rifleman">	
+	<include file="german-para-rfl.loadout.xml"/>
+</variant>	
+
+<variant id="de-para-smg" shape="german-para-smg" description="Airborne SMG" icon="SMG">	
+	<include file="german-para-smg.loadout.xml"/>
+</variant>	
+
+<variant id="de-para-lmg" shape="german-para-lmg" description="Airborne LMG" icon="LMG">	
+	<include file="german-para-lmg.loadout.xml"/>
+</variant>	
+
+<variant id="de-para-atr" shape="german-para-atr" description="Airborne AT Rifleman" icon="ATR">	
+	<include file="german-para-atr.loadout.xml"/>
+</variant>	
+
+<variant id="de-para-snpr" shape="german-para-snpr" description="Airborne Sniper" icon="Sniper">	
+	<include file="german-para-snpr.loadout.xml"/>
+</variant>	
+
+<variant id="de-para-mrtr" shape="german-para-mrtr" description="Airborne Mortarman" icon="Mortarman">	
+	<include file="german-para-mrtr.loadout.xml"/>
+</variant>	
+
+
+<!-- Chinese Units (subcategorized below) -->
+<!-- Chinese/British -->
+
+<variant id="cn_uk-smg" shape="british-smg" description="British Submachine Gunner" icon="SMG">
+	<include file="british-smg.loadout.xml"/>
+</variant>
+
+<variant id="cn_uk-eng" shape="british-engineer" description="British Sapper" icon="Sapper">
+	<include file="british-engineer.loadout.xml"/>
+</variant>
+
+<variant id="cn_ukrifle" shape="british-rifle" description="British Rifleman" icon="Rifleman">
+	<include file="british-rifle.loadout.xml"/>
+</variant>
+
+<!-- Chinese/French -->
+
+
+<variant id="cn_fr-eng" shape="french-engineer" description="French Sapper" icon="Sapper">
+	<include file="french-engineer.loadout.xml"/>
+</variant>
+
+<variant id="cn_frrifle" shape="french-rifle" description="French Rifle" icon="MAN">
+	<include file="french-rifle.loadout.xml"/>
+</variant>
+
+<variant id="cn_fr-smg" shape="french-smg" description="French Submachine Gunner" icon="SMG">
+	<include file="french-smg.loadout.xml"/>
+</variant>
+
+
+<!-- Chinese/German -->
+
+<variant id="cn_de-eng" shape="german-engineer" description="German Sapper" icon="Sapper">
+	<include file="german-engineer.loadout.xml"/>
+</variant>
+
+<variant id="cn_de-smg" shape="german-smg" description="German Submachine Gunner" icon="SMG">
+	<include file="german-smg.loadout.xml"/>
+</variant>
+
+<variant id="cn_derifle" shape="german-rifle" description="German Rifle" icon="Rifleman">
+	<include file="german-rifle.loadout.xml"/>
+</variant>
+
+<!-- Obsolete Units -->
+<variant id="de-ml" shape="german-ml" description="Mission Leader" icon="Commander">
+	<include file="german-ml.loadout.xml" />
+</variant>
+
+<variant id="de-hc" shape="german-hc" description="Commander" icon="Commander">
+	<include file="german-hc.loadout.xml"/>
+</variant>
+
+<variant id="fr-ml" shape="french-ml" description="Mission Leader" icon="Commander">
+	<include file="french-ml.loadout.xml" />
+</variant>
+
+<variant id="fr-hc" shape="french-hc" description="Commander" icon="Commander">
+	<include file="french-hc.loadout.xml"/>
+</variant>
+
+<variant id="uk-ml" shape="british-ml" description="Mission Leader" icon="Commander">
+	<include file="british-ml.loadout.xml" />
+</variant>
+
+<variant id="uk-hc" shape="british-hc" description="Commander" icon="Commander">
+	<include file="british-hc.loadout.xml"/>
+</variant>
+
+
+</vehicle>

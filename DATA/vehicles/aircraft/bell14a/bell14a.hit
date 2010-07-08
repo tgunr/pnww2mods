@@ -1,0 +1,100 @@
+# damage resistance file for bell14a
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\tex\avhit1.wav
+-hitsound2 = sounds\tex\avhit2.wav
+-hitsound3 = sounds\tex\avhit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 5000
+
+# Inside collider objects:
+
+d_transmission,100,225,225
+d_engine,100,225,225
+d_20mmammo,5,150,150
+d_oiltank,3,0,0
+d_radiator1,3,0,0
+cooltank1,3,0,0
+oilcool1,3,0,0
+oilcool2,3,0,0
+d_oxygen,3,150,150
+d_radio,3,150,150
+d_rwingammo,5,150,150
+d_rwinggun2,30,150,150
+d_rwinggun1,30,150,150
+d_lwinggun1,30,150,150
+d_lwinggun2,30,150,150
+d_lwingammo,5,150,150
+d_20mm,30,150,150
+d_legs,1.0,0,0
+d_arms,1.0,0,0
+d_torso,1.2,0,0
+d_head,0.4,0,0
+d_nosegear,3,0,0
+d_leftgear,10,0,0
+o1131_2,10,0,0
+d_lnosegun,30,150,150
+d_rnosegun,30,150,150
+d_lnosegunammo,5,150,150
+d_rnosegunammo,5,150,150
+d_fueltank1,3,0,0
+d_fueltank2,3,0,0
+
+# Outside collider objects:
+
+d_prop,12,150,150
+d_fwdfuselage,0.5,150,150
+d_aftfuselage,1.5,150,150
+o2219,1.5,150,150
+d_leftdoor,1,150,150
+d_rightdoor,1,150,150
+d_canopy,1,0,0
+d_gearboxarmor,16,150,150
+d_forwardarmor,16,150,150
+d_armorshield,7,150,150
+d_armorwindshield,11,0,0,0,0
+d_armorglass,18.3,0,0,0,0
+d_backarmor,13,150,150
+d_oiltankarmor,6.35,150,150
+d_lwingroot,1.5,150,150
+d_linnerwing,1.5,150,150
+d_lflap,1.5,150,150
+d_louterwing,1.5,150,150
+d_laileron,1.5,150,150
+d_centerwing,1.5,150,150
+d_rwingroot,1.5,150,150
+d_rinnerwing,1.5,150,150
+d_rflap,1.5,150,150
+d_routerwing,1.5,150,150
+d_raileron,1.5,150,150
+d_lhstab,1.5,150,150
+d_lelevator,1.5,150,150
+d_rhstab,1.5,150,150
+d_relevator,1.5,150,150
+d_vstab,1.5,150,150
+d_rudder,1.5,150,150
+
+
+
+
+

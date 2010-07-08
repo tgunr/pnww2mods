@@ -1,0 +1,72 @@
+#airfoils file for p38f
+
+[propeller]
+baseairfoil = propbase.pol
+up10degairfoil = prop_up10.pol
+down10degairfoil = prop_dn10.pol
+stallfile = prop.stall
+compressibilityfile = prop.compress
+
+[p38froot]
+baseairfoil = 23015_base.pol
+up10degairfoil = 23015_base.pol
+down10degairfoil = 23015_dn10_fowler.pol
+stallfile = 23015.sta
+compressibilityfile = 23015.compress
+
+[p38fmid]
+baseairfoil = 24014_base.pol
+up10degairfoil = 24014_base.pol
+down10degairfoil = 24014_dn10_fowler.pol
+stallfile = 24014.sta
+compressibilityfile = 24014.compress
+
+[p38failib]
+baseairfoil = 35013_base.pol
+up10degairfoil = 35013_up10_30.pol
+down10degairfoil = 35013_dn10_30.pol
+stallfile = 35013.sta
+compressibilityfile = 35013.compress
+
+[p38failob]
+baseairfoil = 46012_base.pol
+up10degairfoil = 46012_up10_30.pol
+down10degairfoil = 46012_dn10_30.pol
+stallfile = 46012.sta
+compressibilityfile = 46012.compress
+
+[p38ftip]
+baseairfoil = 4412_base.pol
+up10degairfoil = 4412_base.pol
+down10degairfoil = 4412_base.pol
+stallfile = 4412.sta
+compressibilityfile = 4412.compress
+
+[p38fhorizstab]
+baseairfoil = 0012_base.pol
+up10degairfoil = 0012_up10_44.pol
+down10degairfoil = 0012_dn10_44.pol
+stallfile = 0012.sta
+compressibilityfile = 0012.compress
+
+[p38fvertstab]
+baseairfoil = 0009_base.pol
+up10degairfoil = 0009_up10_44.pol
+down10degairfoil = 0009_dn10_44.pol
+stallfile = 0012.sta
+compressibilityfile = 0009.compress
+
+[flatplate]
+baseairfoil = flatplat.pol
+up10degairfoil = flatplat.pol
+down10degairfoil = flatplat.pol
+stallfile = flatplat.stall
+compressibilityfile = flatplat.compress
+
+[fuselage]
+baseairfoil = 0010_base.pol
+up10degairfoil = 0010_base.pol
+down10degairfoil = 0010_base.pol
+stallfile = 0010.sta
+compressibilityfile = 0010.compress
+

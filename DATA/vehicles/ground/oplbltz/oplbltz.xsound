@@ -1,0 +1,19 @@
+# engine sound
+engine = sounds\oplblitz\xeng.wav
+
+newspeedrange
+# engine speed range start, m/s
+enginespeedstart = 0.0
+# engine speed range 1 end, m/s
+enginespeedend = 6.0
+# pitch at start
+enginepitchstart = 0.3
+# pitch at end
+enginepitchend = 1.0
+
+
+# vehicle misc sounds
+hastreadsound = 1
+rollsound = sounds\whine.wav
+#hasbrakesound = 1
+#brakesound = sounds\squeek.wav

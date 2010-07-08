@@ -1,0 +1,29 @@
+#German infantry Light Mortar loadout file
+
+# sounds available for the mounts
+sound1 = sounds\troop\deltmortar.wav
+sound2 = sounds\troop\deltmortar.wav
+sound3 = sounds\troop\k98.wav
+
+loadout = 1
+
+# LightMortar HE
+mountnum = 1
+mountsound = sound1
+weapon = de50mmmortar
+maxoversupply = 5
+
+# LightMortar Smoke (alias weapon not actually used)
+mountnum = 2
+mountsound = sound1
+weapon = de50mmmortar
+
+# Rifle
+mountnum = 3
+mountsound = sound3
+weapon = k98
+
+# Knife
+mountnum = 4
+weapon = knifegeneric
+

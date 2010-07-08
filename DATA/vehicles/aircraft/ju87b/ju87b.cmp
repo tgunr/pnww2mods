@@ -1,0 +1,1743 @@
+# ju87b Component Data file
+
+# NOTE:  all performance was tuned to a weight of 4225kg, although the plane
+# is set to a base of 3890 in game, minus bomb
+
+[propeller]
+type = engine
+propairfoil = propeller
+subtype = propeller
+enginetype = jumo211da
+criticalprimary = 1
+x = 0
+y = 2.88
+z = 0
+mass = 160
+inertiapitch = 111.46
+inertiaroll = 221.24
+inertiayaw = 111.46
+propellerdiameter = 3.32
+# ideal is 1/pi for efficiency
+propellerefficiency = 0.32
+# area of prop
+propellerarea = 0.945 
+# critical mach drag speed of prop
+#propellermdiv = 0.76
+# max aoa of the prop
+#Power Multipler. Affects Speed, Range from 0.6 to 1.0
+proppowerefficiency = 1.0
+#prop induced Drag. Affects Climb, Range from 1.0 to 1.9
+propinduceddragmult = 0.9
+# equals 10 times the maxcl
+# maxcl is used for limiting prop "lift"
+#propellermaxcl = 1.4
+#propellermincl = -1.0
+# how many deg/sec the prop can adjust pitch
+propellerresponse = 5
+# range of pitch angles, set to constant value for fixed-pitch props
+propellermaxangle = 65
+propellerminangle = 8
+#propellercd = 0.010
+#propellerpowerefficiency = -1.0
+#propellerpowerefficiency = 1.5
+enginenumber = 1
+enginesound = sounds\ju87b\prop.wav
+flywheelrotinertia = 3
+governedprop = 1
+#propcldragmult = 1.27
+hitmapcomponent1 = d_spinner
+hitmapcomponent2 = d_prop1
+hitmapcomponent3 = d_prop2
+hitmapcomponent4 = d_propb3
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+#damagelevel1 = 100000 (changed DM audit)
+#damagelevel2 = 200000
+#damagelevel3 = 300000
+#damagelevel4 = 500000
+damagelevel1 = 30000
+damagelevel2 = 60000
+damagelevel3 = 80000
+damagelevel4 = 90000
+visdamage = prop1
+damagelevelfail = 90000
+
+[left_root_mass]
+type = ballast
+subtype = none
+x = -0.891
+y = -0.628
+z = -0.396
+mass = 104.2
+inertiapitch = 95.94
+inertiaroll = 13.59
+inertiayaw = 109.93
+visdamage = lwing
+damagelevelfail = 150000
+
+[left_root]
+type = airfoil
+subtype = flap
+criticalprimary = 1
+x = -0.891
+y = -1.043
+z = -0.396
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = 2
+attroll = 12
+attyaw = 0
+airfoiltype = ju87broot
+area = 4.16
+wingspan = 1.251
+wingchord = 3.324
+innerchord = 3.523
+outerchord = 3.126
+aspectratio = 6.0
+controlmin = 0
+controlmax = 40
+maxopenspeed = 310kph
+maxclosespeed = 340kph
+maxdamagespeed = 320kph
+flappos1cl = 0.65 
+flappos1cd = 0.03 
+flappos1cm = -0.3
+hitmapcomponent1 = d_leftinnerflap
+hitmapcomponent2 = d_leftwing1
+# propwash vortex effects
+vortexcomponent = propeller
+# how much of the propeller's propwash affects this component
+vortexeffectpercent = 0.9
+# offset for angled-velocity effects
+# a value of zero means only backwash is factored in
+# a value of one assumes one edge of the component
+# is along the vortex axis of rotation
+vortexoffset = -0.2
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+stallsound = 1
+visdamage = lwing
+damagelevelfail = 150000
+
+[left_midib_mass]
+type = ballast
+subtype = none
+x = -2.163
+y = -0.51
+z = -0.439
+mass = 94.89
+inertiapitch = 67.79
+inertiaroll = 13.24
+inertiayaw = 81.03
+visdamage = lwing
+damagelevelfail = 150000
+
+[left_midib]
+type = airfoil
+subtype = flap
+criticalprimary = 1
+x = -2.163
+y = -0.876
+z = -0.439
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = 2
+attroll = -8
+attyaw = 0
+airfoiltype = ju87bflap
+area = 3.788
+wingspan = 1.294
+wingchord = 2.928
+innerchord = 3.126
+outerchord = 2.73
+aspectratio = 6.0
+#vortexcomponent = left_prop
+#vortexeffectpercent = 0.4
+#vortexoffset = 1.0
+controlmin = 0
+controlmax = 40
+maxopenspeed = 310kph
+maxclosespeed = 340kph
+maxdamagespeed = 320kph
+flappos1cl = 0.65 
+flappos1cd = 0.03 
+flappos1cm = -0.3
+divebrakearea = 0.7
+hitmapcomponent1 = d_leftwing2
+hitmapcomponent2 = d_leftouterflap
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+stallsound = 1
+visdamage = lwing
+damagelevelfail = 150000
+
+[left_midob_mass]
+type = ballast
+subtype = none
+x = -3.457
+y = -0.413
+z = -0.25
+mass = 82.39
+inertiapitch = 43.73
+inertiaroll = 11.49
+inertiayaw = 55.23
+visdamage = lwing
+damagelevelfail = 150000
+
+[left_midob]
+type = airfoil
+subtype = flap
+criticalprimary = 1
+x = -3.457
+y = -0.73
+z = -0.25
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = 2
+attroll = -8
+attyaw = 0
+airfoiltype = ju87bflap
+area = 3.289
+wingspan = 1.294
+wingchord = 2.542
+innerchord = 2.73
+outerchord = 2.354
+aspectratio = 6.0
+#vortexcomponent = left_prop
+#vortexeffectpercent = 0.4
+#vortexoffset = 1.0
+controlmin = 0
+controlmax = 40
+#maxopenspeed = 250kph
+#maxclosespeed = 280kph
+#maxdamagespeed = 260kph
+maxopenspeed = 310kph
+maxclosespeed = 340kph
+maxdamagespeed = 320kph
+flappos1cl = 0.65 
+flappos1cd = 0.03 
+flappos1cm = -0.3
+divebrakearea = 0.7
+hitmapcomponent1 = d_leftwing2
+hitmapcomponent2 = d_leftouterflap
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+stallsound = 1
+visdamage = lwing
+damagelevelfail = 150000
+
+[left_ailib_mass]
+type = ballast
+subtype = none
+x = -4.805
+y = -0.282
+z = -0.066
+mass = 70.71
+inertiapitch = 24.04
+inertiaroll = 11.51
+inertiayaw = 35.56
+visdamage = lowing
+visdamageparent = lwing
+damagelevelfail = 150000
+
+[left_ailib]
+# type is the component type
+type = airfoil
+# subtype is component specific
+subtype = aileron
+# position of center of component in meters
+x = -4.805
+y = -0.534
+z = -0.066
+# mass in kg of component
+mass = 0
+# rotational inertia in kg*m^2
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+# attitude of component
+attpitch = 2
+attroll = -8
+attyaw = 0
+# component specific data
+airfoiltype = ju87bail
+area = 2.823
+wingspan = 1.398
+# windchord is in meters, average chord for wing section
+wingchord = 2.02
+innerchord = 2.354
+outerchord = 1.686
+# aspectratio is used to "adjust" the angle of attack
+aspectratio = 6.0
+controlmin = 20
+controlmax = -20
+hitmapcomponent1 = d_leftwing3
+hitmapcomponent2 = d_leftaileron
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+stallsound = 1
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+visdamage = lowing
+visdamageparent = lwing
+damagelevelfail = 150000
+
+[left_ailob_mass]
+type = ballast
+subtype = none
+x = -6.201
+y = -0.106
+z = 0.133
+mass = 47.34
+inertiapitch = 7.21
+inertiaroll = 7.71
+inertiayaw = 14.92
+visdamage = lowing
+visdamageparent = lwing
+damagelevelfail = 150000
+
+[left_ailob]
+# type is the component type
+type = airfoil
+# subtype is component specific
+subtype = aileron
+# position of center of component in meters
+x = -6.201
+y = -0.275
+z = 0.133
+# mass in kg of component
+mass = 0
+# rotational inertia in kg*m^2
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+# attitude of component
+attpitch = 2
+attroll = -8
+attyaw = 0
+# component specific data
+airfoiltype = ju87bail
+area = 1.89
+wingspan = 1.398
+# windchord is in meters, average chord for wing section
+wingchord = 1.352
+innerchord = 1.686
+outerchord = 1.018
+# aspectratio is used to "adjust" the angle of attack
+aspectratio = 6.0
+controlmin = 20
+controlmax = -20
+hitmapcomponent1 = d_leftwing3
+hitmapcomponent2 = d_leftaileron
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+stallsound = 1
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+visdamage = lowing
+visdamageparent = lwing
+damagelevelfail = 150000
+
+
+[left_ID]
+type = airfoil
+subtype = vortexpointaileron
+x = -6.9
+y = -0.459
+z = 0.233
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = 2
+attroll = -8
+attyaw = 0
+airfoiltype = ju87bail
+area = 0.0
+wingchord = 0.0
+aspectratio = 6.0
+dragarea = 16
+dragk = .33
+blank1_pitchstart = -20
+blank1_pitchstartfull = -10
+blank1_pitchendfull = 5
+blank1_pitchend = 15
+blank1_yawstart = 55
+blank1_yawstartfull = 60
+blank1_yawendfull = 135
+blank1_yawend = 140
+induceddragcomponent = left_ailob
+induceddragcomponent1 = left_root
+induceddragcomponent2 = left_midib
+induceddragcomponent3 = left_midob
+induceddragcomponent4 = left_ailib
+induceddragcomponent5 = left_ailob
+# induceddragmult = 1.45
+induceddragmult = 1.20
+visdamage = lwing
+
+[left_ID2]
+type = airfoil
+subtype = vortexpointaileron
+x = 6.9
+y = -0.459
+z = 0.233
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = 2
+attroll = 8
+attyaw = 0
+airfoiltype = ju87bail
+area = 0.0
+wingchord = 0.0
+aspectratio = 2.7
+dragarea = 23.231
+dragk = .33
+blank1_pitchstart = -20
+blank1_pitchstartfull = -10
+blank1_pitchendfull = 5
+blank1_pitchend = 15
+blank1_yawstart = 55
+blank1_yawstartfull = 60
+blank1_yawendfull = 135
+blank1_yawend = 140
+induceddragcomponent1 = right_root
+induceddragcomponent2 = right_midib
+induceddragcomponent3 = right_midob
+induceddragcomponent4 = right_ailib
+induceddragcomponent5 = right_ailob
+induceddragmult = 1.20
+visdamage = lwing
+activateiffail = 1
+
+[right_root_mass]
+type = ballast
+subtype = none
+x = 0.891
+y = -0.628
+z = -0.396
+mass = 104.2
+inertiapitch = 95.94
+inertiaroll = 13.59
+inertiayaw = 109.93
+visdamage = rwing
+damagelevelfail = 150000
+
+[right_root]
+type = airfoil
+subtype = flap
+criticalprimary = 1
+x = 0.891
+y = -1.043
+z = -0.396
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = 2
+attroll = -12
+attyaw = 0
+airfoiltype = ju87broot
+area = 4.16
+wingspan = 1.251
+wingchord = 3.324
+innerchord = 3.523
+outerchord = 3.126
+aspectratio = 6.0
+controlmin = 0
+controlmax = 40
+maxopenspeed = 310kph
+maxclosespeed = 340kph
+maxdamagespeed = 320kph
+flappos1cl = 0.65 
+flappos1cd = 0.03 
+flappos1cm = -0.3
+vortexcomponent = propeller
+# how much of the propeller's propwash affects this component
+vortexeffectpercent = 0.9
+# offset for angled-velocity effects
+# a value of zero means only backwash is factored in
+# a value of one assumes one edge of the component
+# is along the vortex axis of rotation
+vortexoffset = -0.2
+hitmapcomponent1 = d_rightwing1
+hitmapcomponent2 = d_rightinnerflap
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+stallsound = 1
+visdamage = rwing
+damagelevelfail = 150000
+
+[right_midib_mass]
+type = ballast
+subtype = none
+x = 2.163
+y = -0.51
+z = -0.439
+mass = 94.89
+inertiapitch = 67.79
+inertiaroll = 13.24
+inertiayaw = 81.03
+visdamage = rwing
+damagelevelfail = 150000
+
+[right_midib]
+type = airfoil
+subtype = flap
+criticalprimary = 1
+x = 2.163
+y = -0.876
+z = -0.439
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = 2
+attroll = 8
+attyaw = 0
+airfoiltype = ju87bflap
+area = 3.788
+wingspan = 1.294
+wingchord = 2.928
+innerchord = 3.126
+outerchord = 2.73
+aspectratio = 6.0
+controlmin = 0
+controlmax = 40
+maxopenspeed = 310kph
+maxclosespeed = 340kph
+maxdamagespeed = 320kph
+flappos1cl = 0.65 
+flappos1cd = 0.03 
+flappos1cm = -0.3
+divebrakearea = 0.7
+hitmapcomponent1 = d_rightwing2
+hitmapcomponent2 = d_rightouterflap
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+stallsound = 1
+visdamage = rwing
+damagelevelfail = 150000
+
+[right_midob_mass]
+type = ballast
+subtype = none
+x = 3.457
+y = -0.413
+z = -0.25
+mass = 82.39
+inertiapitch = 43.73
+inertiaroll = 11.49
+inertiayaw = 55.23
+visdamage = rwing
+damagelevelfail = 150000
+
+[right_midob]
+type = airfoil
+subtype = flap
+criticalprimary = 1
+x = 3.457
+y = -0.73
+z = -0.25
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = 2
+attroll = 8
+attyaw = 0
+airfoiltype = ju87bflap
+area = 3.289
+wingspan = 1.294
+wingchord = 2.542
+innerchord = 2.73
+outerchord = 2.354
+aspectratio = 6.0
+controlmin = 0
+controlmax = 40
+maxopenspeed = 310kph
+maxclosespeed = 340kph
+maxdamagespeed = 320kph
+flappos1cl = 0.65 
+flappos1cd = 0.03 
+flappos1cm = -0.3
+divebrakearea = 0.7
+hitmapcomponent1 = d_rightwing2
+hitmapcomponent2 = d_rightouterflap
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+stallsound = 1
+visdamage = rwing
+damagelevelfail = 150000
+
+
+[right_ailib_mass]
+type = ballast
+subtype = none
+x = 4.805
+y = -0.282
+z = -0.066
+mass = 70.71
+inertiapitch = 24.04
+inertiaroll = 11.51
+inertiayaw = 35.56
+visdamage = rowing
+visdamageparent = rwing
+damagelevelfail = 150000
+
+[right_ailib]
+type = airfoil
+subtype = aileron
+x = 4.805
+y = -0.534
+z = -0.066
+# mass in kg of component
+mass = 0
+# rotational inertia in kg*m^2
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+# attitude of component
+attpitch = 2
+attroll = 8
+attyaw = 0
+# component specific data
+airfoiltype = ju87bail
+area = 2.823
+wingspan = 1.398
+# windchord is in meters, average chord for wing section
+wingchord = 2.02
+innerchord = 2.354
+outerchord = 1.686
+# aspectratio is used to "adjust" the angle of attack
+aspectratio = 6.0
+controlmin = -20
+controlmax = 20
+hitmapcomponent1 = d_rightwing3
+hitmapcomponent2 = d_rightaileron
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+stallsound = 1
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+visdamage = rowing
+visdamageparent = rwing
+damagelevelfail = 150000
+
+[right_ailob_mass]
+type = ballast
+subtype = none
+x = 6.201
+y = -0.106
+z = 0.133
+mass = 47.34
+inertiapitch = 7.21
+inertiaroll = 7.71
+inertiayaw = 14.92
+visdamage = rowing
+visdamageparent = rwing
+damagelevelfail = 150000
+
+[right_ailob]
+type = airfoil
+subtype = aileron
+x = 6.201
+y = -0.275
+z = 0.133
+# mass in kg of component
+mass = 0
+# rotational inertia in kg*m^2
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+# attitude of component
+attpitch = 2
+attroll = 8
+attyaw = 0
+# component specific data
+airfoiltype = ju87bail
+area = 1.89
+wingspan = 1.398
+# windchord is in meters, average chord for wing section
+wingchord = 1.352
+innerchord = 1.686
+outerchord = 1.018
+# aspectratio is used to "adjust" the angle of attack
+aspectratio = 6.0
+controlmin = -20
+controlmax = 20
+hitmapcomponent1 = d_rightwing3
+hitmapcomponent2 = d_rightaileron
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+stallsound = 1
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+visdamage = rowing
+visdamageparent = rwing
+damagelevelfail = 150000
+
+
+[right_ID]
+type = airfoil
+subtype = vortexpointaileron
+x = 6.9
+y = -0.459
+z = 0.133
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = 2
+attroll = 8
+attyaw = 0
+airfoiltype = ju87bail
+area = 0.0
+wingchord = 0.0
+aspectratio = 6.0
+controlmin = 0
+controlmax = 0
+dragarea = 16
+dragk = .33
+blank1_pitchstart = -20
+blank1_pitchstartfull = -10
+blank1_pitchendfull = 5
+blank1_pitchend = 15
+blank1_yawstart = -55
+blank1_yawstartfull = -60
+blank1_yawendfull = -135
+blank1_yawend = -140
+induceddragcomponent = right_ailob
+induceddragcomponent1 = right_root
+induceddragcomponent2 = right_midib
+induceddragcomponent3 = right_midob
+induceddragcomponent4 = right_ailib
+induceddragcomponent5 = right_ailob
+# induceddragmult = 1.45
+induceddragmult = 1.20
+visdamage = rwing
+
+[right_ID2]
+type = airfoil
+subtype = vortexpointaileron
+x = -6.9
+y = -0.459
+z = 0.133
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = 2
+attroll = -8
+attyaw = 0
+airfoiltype = ju87bail
+area = 0.0
+wingchord = 0.0
+aspectratio = 2.7
+controlmin = 0
+controlmax = 0
+dragarea = 23.231
+dragk = .33
+blank1_pitchstart = -20
+blank1_pitchstartfull = -10
+blank1_pitchendfull = 5
+blank1_pitchend = 15
+blank1_yawstart = -55
+blank1_yawstartfull = -60
+blank1_yawendfull = -135
+blank1_yawend = -140
+induceddragcomponent1 = left_root
+induceddragcomponent2 = left_midib
+induceddragcomponent3 = left_midob
+induceddragcomponent4 = left_ailib
+induceddragcomponent5 = left_ailob
+# induceddragmult = 1.45
+induceddragmult = 1.20
+visdamage = rwing
+activateiffail = 1
+
+[left_horizstab]
+type = airfoil
+subtype = elevator
+criticalsecondary = 1
+x = -1.326
+y = -6.513
+z = 0.517
+mass = 24.04
+inertiapitch = 2.01
+inertiaroll = 11.54
+inertiayaw = 13.55
+attpitch = 1
+attroll = 0
+attyaw = 0
+airfoiltype = ju87bstab
+area = 2.404
+wingspan = 2.4
+# windchord is in meters, average chord for wing section
+wingchord = 1.352
+innerchord = 1.002
+outerchord = 1.002
+# aspectratio is used to "adjust" the angle of attack
+aspectratio = 5.5
+controlmin = 18
+controlmax = -37
+usesdownwash = 1
+downwashcomponent = left_root
+downwashminaoa = -90.0
+downwashmaxaoa = 90.0
+downwashmult = 0
+vortexcomponent = propeller
+vortexeffectpercent = 0.6
+vortexoffset = -0.1
+divebrakeangle = 2
+#horizstabtrimdegup = 5.0
+#horizstabtrimdegdown = 5.0
+#vortexcomponent = prop
+#vortexeffectpercent = 0
+#vortexoffset = 0
+hitmapcomponent1 = d_lefthorizontalstab
+hitmapcomponent2 = d_leftelevator
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+damagelevel1 = 30000
+damagelevel2 = 60000
+damagelevel3 = 80000
+damagelevel4 = 90000
+visdamage = lhstab
+visdamageparent = cvstab
+damagelevelfail = 90000
+
+[right_horizstab]
+type = airfoil
+subtype = elevator
+criticalsecondary = 1
+x = 1.326
+y = -6.513
+z = 0.517
+mass = 24.04
+inertiapitch = 2.01
+inertiaroll = 11.54
+inertiayaw = 13.55
+attpitch = 1
+attroll = 0
+attyaw = 0
+airfoiltype = ju87bstab
+area = 2.404
+wingspan = 2.4
+# windchord is in meters, average chord for wing section
+wingchord = 1.352
+innerchord = 1.002
+outerchord = 1.002
+# aspectratio is used to "adjust" the angle of attack
+aspectratio = 5.5
+controlmin = 18
+controlmax = -37
+usesdownwash = 1
+downwashcomponent = right_root
+downwashminaoa = -90.0
+downwashmaxaoa = 90.0
+downwashmult = 0
+#vortexcomponent = right_prop
+#vortexeffectpercent = 0
+#vortexoffset = 0
+vortexcomponent = propeller
+vortexeffectpercent = 0.6
+vortexoffset = 0.1
+divebrakeangle = 2
+hitmapcomponent1 = d_righthorizontalstab
+hitmapcomponent2 = d_rightelevator
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+damagelevel1 = 30000
+damagelevel2 = 60000
+damagelevel3 = 80000
+damagelevel4 = 90000
+visdamage = rhstab
+visdamageparent = cvstab
+damagelevelfail = 90000
+
+[v_stab]
+type = airfoil
+subtype = rudder
+criticalprimary = 1
+x = 0
+y = -6.805
+z = 0.835
+mass = 26.62
+inertiapitch = 14.09
+inertiaroll = 9.08
+inertiayaw = 5.01
+attpitch = 0
+attroll = -90
+attyaw = 0
+airfoiltype = ju87bstab
+area = 3.042
+wingchord = 1.503
+aspectratio = 1.346
+controlmin = -30
+controlmax = 30
+#vortexcomponent = prop
+#vortexeffectpercent = 1
+#vortexoffset = 0.0
+vortexcomponent = propeller
+vortexeffectpercent = 0.6
+vortexoffset = -0.1
+hitmapcomponent1 = d_vstab
+hitmapcomponent2 = d_rudder
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+damagelevel1 = 30000
+damagelevel2 = 60000
+damagelevel3 = 80000
+damagelevel4 = 90000
+visdamage = cvstab
+visdamageparent = tail
+damagelevelfail = 90000
+
+
+[fuse_horiz]
+type = airfoil
+subtype = fuselage
+criticalprimary = 1
+x = 0.0
+y = -1.363
+z = 0
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = 0
+attroll = 0
+attyaw = 0
+airfoiltype = fuselage
+area = 4.75
+wingchord = 7.932
+aspectratio = 0.075
+# propwash vortex effects
+vortexcomponent = propeller
+# how much of the propeller's propwash affects this component
+vortexeffectpercent = 0.8
+# offset for angled-velocity effects
+# a value of zero means only backwash is factored in
+# a value of one assumes one edge of the component
+# is along the vortex axis of rotation
+vortexoffset = 0
+hitmapcomponent1 = d_midfus
+hitmapcomponent2 = d_tail
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+visdamage = tail
+damagelevelfail = 150000
+
+[fuse_vert_mass]
+type = ballast
+subtype = none
+x = 0
+y = -1.363
+z = 0
+mass = 881
+inertiapitch = 5487
+inertiaroll = 163
+inertiayaw = 5487
+
+[fuse_vert]
+type = airfoil
+subtype = fuselage
+x = 0
+y = -1.363
+z = 0
+mass = 0
+# mass = 881
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = 0
+attroll = 90
+attyaw = 0
+airfoiltype = flatplate
+area = 7.281
+wingchord = 7.932
+aspectratio = 0.115
+# propwash vortex effects
+vortexcomponent = propeller
+# how much of the propeller's propwash affects this component
+vortexeffectpercent = 0.8
+# offset for angled-velocity effects
+# a value of zero means only backwash is factored in
+# a value of one assumes one edge of the component
+# is along the vortex axis of rotation
+vortexoffset = 0
+hitmapcomponent1 = d_nose
+hitmapcomponent2 = d_midfus
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 125000
+damagelevel4 = 150000
+
+[mid_ID1]
+type = airfoil
+subtype = vortexpointaileron
+x = 0
+y = -0.15
+z = -0.2
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = 0
+attroll = 180
+attyaw = 0
+airfoiltype = fuselage
+area = 0
+aspectratio = 0.115
+dragarea = 1.43
+dragk = 0.32
+induceddragcomponent1 = fuse_horiz
+induceddragmult = 0.3
+
+[mid_ID2]
+type = airfoil
+subtype = vortexpointaileron
+x = 0
+y = -0.15
+z = -0.3
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = 0
+attroll = -90
+attyaw = 0
+airfoiltype = fuselage
+area = 0
+aspectratio = 0.115
+dragarea = 4.368
+dragk = 0.32
+induceddragcomponent1 = fuse_vert
+induceddragmult = 0.3
+
+[fuse_flat]
+type = airfoil
+subtype = fuselage
+x = 0
+y = -0.1
+z = 0
+mass = 0
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+attpitch = -90
+attroll = 0
+attyaw = 0
+airfoiltype = flatplate
+area = 0.5
+wingchord = .707
+aspectratio = 1
+
+
+[canopy_drag_cockpit]
+type = airfoil
+subtype = canopy
+canopynum = 1
+x = 0
+y = -1.0
+z = 0.814
+mass = 0
+# attitude of component
+attpitch = 90
+attroll = 90
+attyaw = 0
+# component specific data
+airfoiltype = flatplate
+area = 0.262
+wingspan = 0.516
+innerchord = 0.335
+outerchord = 0.683
+# windchord is in meters, average chord for wing section
+wingchord = 0.509
+# aspectratio is used to "adjust" the angle of attack (hatch? should only be defining wing planform shape? span/chord?)
+aspectratio = 1.01
+maxopenspeed = 312kph
+maxclosespeed = 342kph
+maxdamagespeed = 322kph
+damagelevel1 = 1500
+damagelevel2 = 5000
+damagelevel3 = 25000
+damagelevel4 = 50000
+visdamage = canopy1
+damagelevelfail = 50000
+
+
+[right_ib_fuel]
+type = engine
+subtype = fueltank
+x = 0.891
+y = -0.438
+z = -0.396
+mass = 143.82
+inertiapitch = 12.03
+inertiaroll = 12.03
+inertiayaw = 24.06
+tanknum = 3
+fueltanktype = integral
+fuelburncomponent1 = d_rightwing1
+fuelburncomponent2 = d_rightelevator
+fuelburncomponent3 = d_starinnerfuel
+fuelburncomponent4 = d_starouterfuel
+hitmapcomponent1 = d_starinnerfuel
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 1500
+damagelevel2 = 10500
+damagelevel3 = 50000
+damagelevel4 = 360000
+visdamage = rwing
+
+[right_ob_fuel]
+type = engine
+subtype = fueltank
+x = 3.289
+y = -0.354
+z = -0.25
+mass = 89.89
+inertiapitch = 3.34
+inertiaroll = 10.97
+inertiayaw = 14.31
+tanknum = 4
+fueltanktype = integral
+fuelburncomponent1 = d_rightwing2
+fuelburncomponent2 = d_starouterfuel
+hitmapcomponent1 = d_starouterfuel
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 1500
+damagelevel2 = 10500
+damagelevel3 = 50000
+damagelevel4 = 360000
+visdamage = rwing
+
+[left_ib_fuel]
+type = engine
+subtype = fueltank
+x = -0.891
+y = -0.438
+z = -0.396
+mass = 143.82
+inertiapitch = 12.03
+inertiaroll = 12.03
+inertiayaw = 24.06
+tanknum = 1
+fueltanktype = integral
+fuelburncomponent1 = d_leftwing1
+fuelburncomponent2 = d_leftelevator
+fuelburncomponent3 = d_portinnerfuel
+fuelburncomponent4 = d_portouterfuel
+hitmapcomponent1 = d_portinnerfuel
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 1500
+damagelevel2 = 10500
+damagelevel3 = 50000
+damagelevel4 = 360000
+visdamage = lwing
+
+[left_ob_fuel]
+type = engine
+subtype = fueltank
+x = -3.289
+y = -0.354
+z = -0.25
+mass = 89.89
+inertiapitch = 3.34
+inertiaroll = 10.97
+inertiayaw = 14.31
+tanknum = 2
+fueltanktype = integral
+fuelburncomponent1 = d_leftwing2
+fuelburncomponent2 = d_portouterfuel
+hitmapcomponent1 = d_portouterfuel
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 1500
+damagelevel2 = 10500
+damagelevel3 = 50000
+damagelevel4 = 360000
+visdamage = lwing
+
+[oiltank1]
+type = engine
+subtype = oiltank
+x = 0
+y = 0.626
+z = -0.313
+mass = 22.3
+inertiapitch = 0.95
+inertiaroll = 1.77
+inertiayaw = 1.77
+tanknum = 1
+hitmapcomponent1 = d_mainoil
+hitmapcomponent2 = d_oiltank
+hitmapcomponent3 = d_oilcooler
+damagelevel1 = 500
+damagelevel2 = 5000
+damagelevel3 = 15000
+damagelevel4 = 20000
+
+[oiltank2]
+type = engine
+subtype = oiltank
+x = 0
+y = 0.334
+z = 0.602
+mass = 16.5
+inertiapitch = 0.24
+inertiaroll = 0.47
+inertiayaw = 0.71
+tanknum = 2
+hitmapcomponent1 = d_oiltank
+hitmapcomponent2 = d_mainoil
+hitmapcomponent3 = d_oilcooler
+damagelevel1 = 500
+damagelevel2 = 5000
+damagelevel3 = 15000
+damagelevel4 = 20000
+
+[oilcooler]
+type = engine
+subtype = oiltank
+x = 0
+y = 1.862
+z = -0.584
+mass = 15
+inertiapitch = 0.43
+inertiaroll = 1.3
+inertiayaw = 0.87
+tanknum = 3
+hitmapcomponent1 = d_oilcooler
+hitmapcomponent2 = d_mainoil
+hitmapcomponent3 = d_oiltank
+damagelevel1 = 500
+damagelevel2 = 5000
+damagelevel3 = 15000
+damagelevel4 = 20000
+
+
+[coolant_tank]
+type = engine
+subtype = radiator
+x = -0.396
+y = 2
+z = 0.083
+mass = 42.4
+inertiapitch = 1.3
+inertiaroll = 0.65
+inertiayaw = 1.3
+tanknum = 1
+hitmapcomponent1 = d_coolanttank1
+hitmapcomponent2 = d_radiator
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 100
+damagelevel2 = 1000
+damagelevel3 = 15000
+damagelevel4 = 20000
+
+[radiator1]
+type = engine
+subtype = radiator
+x = 0
+y = 2.062
+z = -0.584
+mass = 20
+inertiapitch = 0.57
+inertiaroll = 1.73
+inertiayaw = 1.16
+tanknum = 2
+hitmapcomponent1 = d_radiator
+hitmapcomponent2 = d_coolanttank1
+damagelevel1 = 500
+damagelevel2 = 5000
+damagelevel3 = 15000
+damagelevel4 = 20000
+
+
+[Engine]
+type = engine
+subtype = engine
+criticalprimary = 1
+enginetype = jumo211da
+propellercomponent = prop
+x = 0
+y = 1.753
+z = 0
+mass = 780
+inertiapitch = 371.27
+inertiaroll = 89.35
+inertiayaw = 371.27
+attpitch = 0
+attroll = 0
+attyaw = 0
+enginenumber = 1
+fueltank1component = left_ob_fuel
+fueltank2component = right_ob_fuel
+fueltank3component = left_ib_fuel
+fueltank4component = right_ib_fuel
+oiltankcomponent = oiltank1
+oiltank2component = oiltank2
+oiltank3component = oilcooler
+radiator1component = coolant_tank
+radiator2component = radiator1
+enginesound = sounds\ju87b\engine.wav
+idlesound = sounds\ju87b\idle.wav
+startersound = sounds\airstart.wav
+hitmapcomponent1 = d_engine
+##original values below
+##damagelevel1 = 30000
+##damagelevel2 = 90000
+##damagelevel3 = 300000
+##damagelevel4 = 600000
+damagelevel1 = 30000
+damagelevel2 = 90000
+damagelevel3 = 150000
+damagelevel4 = 300000
+
+
+[Pitot Tube]
+type = pitot
+subtype = none
+x = 6.7
+y = 0.88
+z = -0.16
+mass = 0.0
+attpitch = 1.0
+attroll = 0
+attyaw = 0
+
+
+[Pilot]
+type = crew
+crewposition = 1
+criticalprimary = 1
+x = 0
+y = -0.609
+z = 0.125
+mass = 91
+inertiapitch = 6.99
+inertiaroll = 6.99
+inertiayaw = 1.74
+hitmapcomponent1 = d_pilothead
+hitmapcomponent2 = d_pilottorso
+hitmapcomponent3 = d_pilotarms
+hitmapcomponent4 = d_pilotlegs
+
+[Gunner]
+type = crew
+crewposition = 2
+x = 0
+y = -1.377
+z = 0.125
+mass = 91
+inertiapitch = 6.99
+inertiaroll = 6.99
+inertiayaw = 1.74
+hitmapcomponent1 = d_gunnerhead
+hitmapcomponent2 = d_gunnertorso
+hitmapcomponent3 = d_gunnerarms
+hitmapcomponent4 = d_gunnerlegs
+
+
+[left_gear]
+type = gear
+subtype = wheel
+x = -1.461
+y = 0.375
+z = -1.44
+mass = 85
+inertiapitch = 19.75
+inertiaroll = 19.75
+inertiayaw = 4.94
+gearnum = 1
+wheelradius = 0.302
+strutspringstrength = 25000
+strutshockstrength = 2000.0
+strutshockreturnstrength = 500.0
+strutlength = 0.156
+contactpointtype = tire
+wheelrotationalinertia = 10
+rollcoefficient = 0.02
+braketype = left
+brakestrength = 7000
+hitmapcomponent1 = d_leftlandgear
+damagelevel1 = 15000
+damagelevel2 = 30000
+damagelevel3 = 45000
+damagelevel4 = 120000
+visdamage = lgear
+visdamageparent = lwing
+damagelevelfail = 135000
+
+[right_gear]
+type = gear
+subtype = wheel
+x = 1.461
+y = 0.375
+z = -1.44
+mass = 85
+inertiapitch = 19.75
+inertiaroll = 19.75
+inertiayaw = 4.94
+gearnum = 2
+wheelradius = 0.302
+strutspringstrength = 25000
+strutshockstrength = 2000.0
+strutshockreturnstrength = 500.0
+strutlength = 0.156
+contactpointtype = tire
+wheelrotationalinertia = 10
+rollcoefficient = 0.02
+braketype = right
+brakestrength = 7000
+hitmapcomponent1 = d_rightlandgear
+damagelevel1 = 15000
+damagelevel2 = 30000
+damagelevel3 = 45000
+damagelevel4 = 120000
+visdamage = rgear
+visdamageparent = rwing
+damagelevelfail = 135000
+
+[tail_gear]
+type = gear
+subtype = wheel
+x = 0
+y = -6.68
+z = -0.459
+mass = 64
+inertiapitch = 3.98
+inertiaroll = 3.98
+inertiayaw = 0.44
+gearnum = 3
+wheelradius = 0.102
+strutspringstrength = 20000
+strutshockstrength = 500.0
+strutshockreturnstrength = 10.0
+strutlength = 0.156
+contactpointtype = tire
+wheelrotationalinertia = 10
+castorrotinertia = 15
+#braketype = left
+#brakestrength = 7000
+damagelevel1 = 5000
+damagelevel2 = 10000
+damagelevel3 = 15000
+damagelevel4 = 20000
+visdamage = tgear
+visdamageparent = tail
+damagelevelfail = 25000
+
+
+[rightwing_mount]
+type = weaponmount
+triggertype = primary
+selectornum = 1
+position = 1
+confignum = 1
+mountnum = 1
+weapon = mg17
+minconvergence = 100
+usesconvergence = 1
+#weaponsound = sounds\ju87b\37mm_r.wav
+#weapon = browning303
+#weaponobject = ju87b_mg17
+#usesconvergence = 1
+weaponsound = sounds\bf109e3\mg17r.wav
+ammocount = 900
+ammofile = mg17air.belt
+beltname = MG
+#ammocount = 300
+#ammofile = 303trac4.belt
+collidertype = front60deg
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+hitmapcomponent1 = d_starmg
+# hitmapcomponent2 = d_starammo
+ammoexplosioncomponent1 = d_rightwing2
+ammoexplosioncomponent2 = d_starinnerfuel
+ammoexplosioncomponent3 = d_starouterfuel
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+damagelevel1 = 500
+damagelevel2 = 1500
+damagelevel3 = 0
+damagelevel4 = 0
+visdamage = rwing
+
+[leftwing_mount]
+type = weaponmount
+triggertype = primary
+selectornum = 1
+position = 1
+confignum = 1
+mountnum = 2
+weapon = mg17
+minconvergence = 100
+usesconvergence = 1
+#weaponsound = sounds\ju87b\37mm_l.wav
+#weapon = browning303
+#weaponobject = ju87b_mg17
+#usesconvergence = 1
+weaponsound = sounds\bf109e3\mg17l.wav
+ammocount = 900
+ammofile = mg17air.belt
+beltname = MG
+#ammocount = 300
+#ammofile = 303trac4.belt
+collidertype = front60deg
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+hitmapcomponent1 = d_portmg
+# hitmapcomponent2 = d_portammo
+ammoexplosioncomponent1 = d_leftwing2
+ammoexplosioncomponent2 = d_starinnerfuel
+ammoexplosioncomponent3 = d_starouterfuel
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+damagelevel1 = 500
+damagelevel2 = 1500
+damagelevel3 = 0
+damagelevel4 = 0
+visdamage = lwing
+
+[Tailgun mount]
+type = weaponmount
+triggertype = primary
+overridepos = 1
+position = 2
+selectornum = 1
+confignum = 1
+mountnum = 3
+checkifblocked = 1
+weapon = mg15
+weaponsound = sounds\ju87b\tailgun.wav
+reloadsound = sounds\mgreload.wav
+ammocount = 1050
+ammofile = mg15.belt
+beltname = MG15
+collidertype = front60deg
+ammoexplosioncomponent1 = d_gunnertorso
+ammoexplosioncomponent2 = d_midfus
+hitmapcomponent1 = d_rearmg
+# hitmapcomponent2 = d_reargunammo
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+damagelevel1 = 500
+damagelevel2 = 1500
+damagelevel3 = 0
+damagelevel4 = 0
+
+[bomb_mount]
+type = weaponmount
+triggertype = secondary
+selectornum = 1
+position = 1
+confignum = 1
+mountnum = 4
+addtogrpammocount = 1
+weapon = sc250
+bombmounttype = external
+usesconvergence = 0
+weaponsound = sounds\ju87b\bombrel.wav
+#weapon = browning303
+#weaponobject = ju87b_mg17
+#usesconvergence = 1
+#weaponsound = sounds\spit1\30cal_4.wav
+ammocount = 1
+ammofile = sc250.belt
+#beltname = 250kg (referanced in .pos file)
+#ammocount = 300
+#ammofile = 303trac4.belt
+collidertype = front60deg
+ammoexplosioncomponent1 = d_midfus
+ammoexplosioncomponent2 = d_gunnerlegs
+ammoexplosioncomponent3 = d_leftwing1
+ammoexplosioncomponent4 = d_rightwing1
+ammoexplosioncomponent5 = d_engine
+ammoexplosioncomponent6 = d_pilotlegs
+#hitmapcomponent2 = d_portammo
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+damagelevel1 = 500
+damagelevel2 = 1500
+damagelevel3 = 0
+damagelevel4 = 0
+
+[lw_bomb_1]
+[bomb_mount]
+type = weaponmount
+triggertype = secondary
+selectornum = 2
+position = 1
+confignum = 1
+mountnum = 5
+picklemount = 1
+addtogrpammocount = 1
+weapon = sc50
+bombmounttype = external
+usesconvergence = 0
+weaponsound = sounds\ju87b\bombrel.wav
+ammocount = 1
+ammofile = sc50.belt
+beltname = 50kg
+collidertype = front60deg
+ammoexplosioncomponent1 = d_leftwing3
+#hitmapcomponent2 = d_portammo
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+damagelevel1 = 500
+damagelevel2 = 1500
+damagelevel3 = 0
+damagelevel4 = 0
+visdamage = lwing
+
+[rw_bomb_1]
+[bomb_mount]
+type = weaponmount
+triggertype = secondary
+selectornum = 2
+position = 1
+confignum = 1
+mountnum = 7
+picklemount = 1
+addtogrpammocount = 1
+weapon = sc50
+bombmounttype = external
+usesconvergence = 0
+weaponsound = sounds\ju87b\bombrel.wav
+ammocount = 1
+ammofile = sc50.belt
+beltname = 50kg
+collidertype = front60deg
+ammoexplosioncomponent1 = d_rightwing3
+#hitmapcomponent2 = d_portammo
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+damagelevel1 = 500
+damagelevel2 = 1500
+damagelevel3 = 0
+damagelevel4 = 0
+visdamage = rwing
+
+[lw_bomb_2]
+[bomb_mount]
+type = weaponmount
+triggertype = secondary
+selectornum = 2
+position = 1
+confignum = 1
+mountnum = 6
+picklemount = 1
+addtogrpammocount = 1
+weapon = sc50
+bombmounttype = external
+usesconvergence = 0
+weaponsound = sounds\ju87b\bombrel.wav
+ammocount = 1
+ammofile = sc50.belt
+beltname = 50kg
+collidertype = front60deg
+ammoexplosioncomponent1 = d_leftwing3
+#hitmapcomponent2 = d_portammo
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+damagelevel1 = 500
+damagelevel2 = 1500
+damagelevel3 = 0
+damagelevel4 = 0
+visdamage = lwing
+
+[rw_bomb_2]
+[bomb_mount]
+type = weaponmount
+triggertype = secondary
+selectornum = 2
+position = 1
+confignum = 1
+mountnum = 8
+picklemount = 1
+addtogrpammocount = 1
+weapon = sc50
+bombmounttype = external
+usesconvergence = 0
+weaponsound = sounds\ju87b\bombrel.wav
+ammocount = 1
+ammofile = sc50.belt
+beltname = 50kg
+collidertype = front60deg
+ammoexplosioncomponent1 = d_rightwing3
+#hitmapcomponent2 = d_portammo
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+#damagelevel of zero or less means that level isn't used
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+damagelevel1 = 500
+damagelevel2 = 1500
+damagelevel3 = 0
+damagelevel4 = 0
+visdamage = rwing
+
+#totalmass = X should be the total historical mass of the vehicle
+#totalmass = 3890
+

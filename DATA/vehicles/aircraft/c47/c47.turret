@@ -1,0 +1,18 @@
+#c47.turret file created 09/29/05 -Hatch.
+
+#multicrewpos position, whichcrew
+multicrewpos 1 1
+multicrewpos 2 2
+#multicrewpos 3 2
+
+#Commander	
+position = 2
+elevationrate = 2
+traverserate = 6
+type = 360turret
+gunsightfile = 8x30binoc.gs
+
+#position = 3
+#elevationrate = 0.5
+#traverserate = 4.5
+#type = limitedturret

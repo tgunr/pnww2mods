@@ -1,0 +1,702 @@
+[bow1]
+type = gear
+subtype = wheel
+criticalprimary = 1
+gearnum = 1
+mass = 1450
+collidelength = 3
+wheelradius = 0.45
+contactpointtype = tire
+wheelrotationalinertia = 50
+strutspringstrength = 500000
+strutshockstrength = 500000
+strutshockreturnstrength = 100
+hitmapcomponent1 = bow1
+rollcoefficient = 0.02
+atspeedrollcoefficient = 0.025
+atspeedkph 40
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 4000
+damagelevel2 = 20000
+damagelevel3 = 45000
+damagelevel4 = 400000
+
+[bow1_tank]
+type = engine
+subtype = fueltank
+criticalprimary = 1
+mass = 1
+tanknum = 10
+fueltanktype = integral_with_lightselfsealing
+hitmapcomponent1 = d_float1
+fuelburncomponent1 = bow1
+damagelevel1 = 100000
+damagelevel2 = 4000000
+damagelevel3 = 200000000
+damagelevel4 = 0
+
+[bow2]
+type = gear
+#type = ballast
+subtype = wheel
+criticalprimary = 1
+gearnum = 2
+mass = 1450
+collidelength = 3
+wheelradius = 0.45
+contactpointtype = tire
+wheelrotationalinertia = 50
+strutspringstrength = 500000
+strutshockstrength = 500000
+strutshockreturnstrength = 100
+#braketype = center
+#brakestrength = 10000
+rollcoefficient = 0.02
+atspeedrollcoefficient = 0.025
+atspeedkph 40
+hitmapcomponent1 = bow2
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 4000
+damagelevel2 = 20000
+damagelevel3 = 45000
+damagelevel4 = 400000
+
+[bow2_tank]
+type = engine
+subtype = fueltank
+criticalprimary = 1
+mass = 1
+tanknum = 10
+fueltanktype = integral_with_lightselfsealing
+hitmapcomponent1 = d_float2
+fuelburncomponent1 = bow2
+damagelevel1 = 100000
+damagelevel2 = 4000000
+damagelevel3 = 200000000
+damagelevel4 = 0
+
+[portfore]
+type = gear
+#type = ballast
+subtype = wheel
+criticalprimary = 1
+gearnum = 3
+mass = 1450
+collidelength = 3
+wheelradius = 0.45
+contactpointtype = tire
+wheelrotationalinertia = 50
+strutspringstrength = 500000
+strutshockstrength = 500000
+strutshockreturnstrength = 100
+#braketype = center
+#brakestrength = 10000
+rollcoefficient = 0.02
+atspeedrollcoefficient = 0.025
+atspeedkph 40
+hitmapcomponent1 = portfore
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 4000
+damagelevel2 = 20000
+damagelevel3 = 45000
+damagelevel4 = 400000
+
+[portfore_tank]
+type = engine
+subtype = fueltank
+criticalprimary = 1
+mass = 1
+tanknum = 10
+fueltanktype = integral_with_lightselfsealing
+hitmapcomponent1 = d_float3
+fuelburncomponent1 = portfore
+damagelevel1 = 100000
+damagelevel2 = 4000000
+damagelevel3 = 200000000
+damagelevel4 = 0
+
+[portaft]
+type = gear
+#type = ballast
+subtype = wheel
+criticalprimary = 1
+gearnum = 4
+mass = 1450
+collidelength = 3
+wheelradius = 0.45
+contactpointtype = tire
+wheelrotationalinertia = 50
+strutspringstrength = 500000
+strutshockstrength = 500000
+strutshockreturnstrength = 100
+#braketype = center
+#brakestrength = 10000
+rollcoefficient = 0.02
+atspeedrollcoefficient = 0.025
+atspeedkph 40
+hitmapcomponent1 = portaft
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 4000
+damagelevel2 = 20000
+damagelevel3 = 45000
+damagelevel4 = 400000
+
+[portaft_tank]
+type = engine
+subtype = fueltank
+criticalprimary = 1
+mass = 1
+tanknum = 10
+fueltanktype = integral_with_lightselfsealing
+hitmapcomponent1 = d_float4
+fuelburncomponent1 = portaft
+damagelevel1 = 100000
+damagelevel2 = 4000000
+damagelevel3 = 200000000
+damagelevel4 = 0
+
+[sbfore]
+type = gear
+subtype = wheel
+criticalprimary = 1
+gearnum = 5
+mass = 1450
+collidelength = 3
+wheelradius = 0.45
+contactpointtype = tire
+wheelrotationalinertia = 50
+strutspringstrength = 500000
+strutshockstrength = 500000
+strutshockreturnstrength = 100
+#braketype = center
+#brakestrength = 10000
+rollcoefficient = 0.02
+atspeedrollcoefficient = 0.025
+atspeedkph 40
+hitmapcomponent1 = sbfore
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 4000
+damagelevel2 = 20000
+damagelevel3 = 45000
+damagelevel4 = 400000
+
+[sbfore_tank]
+type = engine
+subtype = fueltank
+criticalprimary = 1
+mass = 1
+tanknum = 10
+fueltanktype = integral_with_lightselfsealing
+hitmapcomponent1 = d_float5
+fuelburncomponent1 = sbfore
+damagelevel1 = 100000
+damagelevel2 = 4000000
+damagelevel3 = 200000000
+damagelevel4 = 0
+
+[sbaft]
+type = gear
+subtype = wheel
+criticalprimary = 1
+gearnum = 6
+mass = 1450
+collidelength = 3
+wheelradius = 0.45
+contactpointtype = tire
+wheelrotationalinertia = 50
+strutspringstrength = 500000
+strutshockstrength = 500000
+strutshockreturnstrength = 100
+#braketype = center
+#brakestrength = 10000
+rollcoefficient = 0.02
+atspeedrollcoefficient = 0.025
+atspeedkph 40
+hitmapcomponent1 = sbaft
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 4000
+damagelevel2 = 20000
+damagelevel3 = 45000
+damagelevel4 = 400000
+
+[sbaft_tank]
+type = engine
+subtype = fueltank
+criticalprimary = 1
+mass = 1
+tanknum = 10
+fueltanktype = integral_with_lightselfsealing
+hitmapcomponent1 = d_float6
+fuelburncomponent1 = sbaft
+damagelevel1 = 100000
+damagelevel2 = 4000000
+damagelevel3 = 200000000
+damagelevel4 = 0
+
+[propulsion_steer1]
+type = gear
+#type = ballast
+subtype = trackdrive
+criticalprimary = 1
+gearnum = 8
+mass = 1450
+collidelength = 3
+wheelradius = 0.45
+contactpointtype = tire
+wheelrotationalinertia = 50
+#braketype = center
+#brakestrength = 10000
+contactpointtype = tire
+# Roll Coefficient Needs to be .02 for Wheeled vehicles
+rollcoefficient = 0.02
+atspeedrollcoefficient = 0.025
+atspeedkph 40
+strutspringstrength = 500000
+strutshockstrength = 500000
+strutshockreturnstrength = 100
+hitmapcomponent1 = propulsion_steer1
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 4000
+damagelevel2 = 20000
+damagelevel3 = 45000
+damagelevel4 = 400000
+
+[propulsion_steer1_tank]
+type = engine
+subtype = fueltank
+criticalprimary = 1
+mass = 1
+tanknum = 10
+fueltanktype = integral_with_lightselfsealing
+hitmapcomponent1 = d_float8
+fuelburncomponent1 = propulsion_steer1
+damagelevel1 = 100000
+damagelevel2 = 4000000
+damagelevel3 = 200000000
+damagelevel4 = 0
+
+[propulsion_steer2]
+type = gear
+subtype = wheel
+criticalprimary = 1
+gearnum = 7
+mass = 1450
+collidelength = 3
+wheelradius = 0.45
+contactpointtype = tire
+wheelrotationalinertia = 50
+strutspringstrength = 500000
+strutshockstrength = 500000
+strutshockreturnstrength = 100
+#braketype = center
+#brakestrength = 10000
+rollcoefficient = 0.02
+atspeedrollcoefficient = 0.025
+atspeedkph 40
+hitmapcomponent1 = propulsion_steer2
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 4000
+damagelevel2 = 20000
+damagelevel3 = 45000
+damagelevel4 = 400000
+
+[propulsion_steer2_tank]
+type = engine
+subtype = fueltank
+criticalprimary = 1
+mass = 1
+tanknum = 10
+fueltanktype = integral_with_lightselfsealing
+hitmapcomponent1 = d_float7
+fuelburncomponent1 = propulsion_steer2
+damagelevel1 = 100000
+damagelevel2 = 4000000
+damagelevel3 = 200000000
+damagelevel4 = 0
+
+[transmission]
+type = engine
+subtype = transmission
+transtype = limitedslip
+mass = 0
+drivewheel1 = propulsion_steer1
+drivewheel2 = propulsion_steer2
+
+[gearbox]
+type = engine
+subtype = gearbox
+numforwardgears = 1
+numreversegears = 1
+gear1ratio = 5.5
+reverse1ratio = 6
+preselector = 1
+propellercomponent = transmission
+
+[clutch]
+type = engine
+subtype = clutch
+clutchforce = 2200
+clutchstart = 0.3
+clutchend = 0.8
+clutchdisengaged = 0.2
+flywheelrotinertia = 250
+propellercomponent = gearbox
+
+[fueltank1]
+type = engine
+subtype = fueltank
+criticalprimary = 1
+x = 0
+y = 0
+z = 0
+mass = 1670
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+tanknum = 1
+fueltanktype = integral
+hitmapcomponent1 = d_fueltank1
+fuelburncomponent1 = d_fueltank2
+fuelburncomponent2 = d_float4
+fuelburncomponent3 = d_fueltank1
+fuelburncomponent4 = d_engine1
+
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 1500
+damagelevel2 = 5000
+damagelevel3 = 80000
+
+[fueltank2]
+type = engine
+subtype = fueltank
+criticalprimary = 1
+x = 0
+y = 0
+z = 0
+mass = 1670
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+tanknum = 1
+fueltanktype = integral
+hitmapcomponent1 = d_fueltank2
+fuelburncomponent1 = d_fueltank1
+fuelburncomponent2 = d_float6
+fuelburncomponent3 = d_engine1
+fuelburncomponent4 = d_fueltank2
+
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 1500
+damagelevel2 = 5000
+damagelevel3 = 80000
+
+[fueltank3]
+type = engine
+subtype = fueltank
+criticalprimary = 1
+x = 0
+y = 0
+z = 0
+mass = 1670
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+tanknum = 1
+fueltanktype = integral
+hitmapcomponent1 = d_fueltank3
+fuelburncomponent1 = d_fueltank1
+fuelburncomponent2 = d_float6
+fuelburncomponent3 = d_engine1
+fuelburncomponent4 = d_fueltank2
+
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 1500
+damagelevel2 = 5000
+damagelevel3 = 80000
+
+[fueltank4]
+type = engine
+subtype = fueltank
+criticalprimary = 1
+x = 0
+y = 0
+z = 0
+mass = 1670
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+tanknum = 1
+fueltanktype = integral
+hitmapcomponent1 = d_fueltank4
+fuelburncomponent1 = d_fueltank1
+fuelburncomponent2 = d_float6
+fuelburncomponent3 = d_engine1
+fuelburncomponent4 = d_fueltank2
+
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 1500
+damagelevel2 = 5000
+damagelevel3 = 80000
+
+[Engine]
+#type = ballast
+type = engine
+#subtype = torquegenerator
+subtype = engine
+enginetype = Fairmile_B_engine
+criticalprimary = 1
+propellercomponent = clutch
+x = 0
+y = 0
+z = 0
+mass = 1537
+#inertiapitch =
+#inertiaroll =
+#inertiayaw =
+#attpitch =
+#attroll =
+#attyaw = 
+enginenumber = 1
+fueltank1component = fueltank1
+fueltank2component = fueltank2
+# enginesound = sounds\fairmileb\engine.wav
+idlesound = sounds\ak-1\engine.wav
+startersound = sounds\startercrank.wav
+hitmapcomponent1 = d_engine1
+# hitmapcomponent2 = d_engine1_1
+#damagelevel of zero or less means that level isn't used
+damagelevel1 = 3000
+damagelevel2 = 30000
+damagelevel3 = 300000
+damagelevel4 = 600000
+
+#all crew commented out as they do not exist as hit objects on the boat (cannot be damaged)
+#CC audit v1.13
+
+#[helm]
+#type = crew
+#criticalprimary = 1
+#crewposition = 1
+#hitmapcomponent1 = d_helmhead
+#hitmapcomponent2 = d_helmtorso
+#hitmapcomponent3 = d_helmarms
+#hitmapcomponent4 = d_helmlegs
+
+#[capt]
+#type = crew
+#crewposition = 2
+#hitmapcomponent1 = d_cohead
+#hitmapcomponent2 = d_cotorso
+#hitmapcomponent3 = d_coarms
+#hitmapcomponent4 = d_colegs
+
+#[2lb_crew]
+#type = crew
+#criticalsecondary = 1
+#crewposition = 3
+#hitmapcomponent1 = d_gun3head
+#hitmapcomponent2 = d_gun3torso
+#hitmapcomponent3 = d_gun3arms
+#hitmapcomponent4 = d_gun3legs
+
+
+#[number_one]
+#type = crew
+#crewposition = 5
+#hitmapcomponent1 = d_no1head
+#hitmapcomponent2 = d_no1torso
+#hitmapcomponent3 = d_no1arms
+#hitmapcomponent4 = d_no1egs
+
+#[dual_20mm_crew]
+#type = crew
+#criticalsecondary = 1
+#crewposition = 6
+#hitmapcomponent1 = d_gun6head
+#hitmapcomponent2 = d_gun6torso
+#hitmapcomponent3 = d_gun6arms
+#hitmapcomponent4 = d_gun6legs
+
+#[port_MG_crew]
+#type = crew
+#crewposition = 7
+#hitmapcomponent1 = d_gun7head
+#hitmapcomponent2 = d_gun7torso
+#hitmapcomponent3 = d_gun7arms
+#hitmapcomponent4 = d_gun7legs
+
+
+
+[ballast4]
+type = ballast
+#mass = 25000
+#mass = 70000
+#mass = 3137515
+mass = 70000
+x = 0
+y = 0
+z = 0
+#z = -0.20
+#inertiapitch = 22165
+#inertiaroll = 8639
+#inertiayaw = 22165
+
+inertiapitch = 7300000
+inertiaroll = 25000000
+inertiayaw = 750000000
+
+# used to measure forward speed
+[pitot_tube]
+type = pitot
+#type = ballast
+subtype = none
+x = 0.0
+y = 1.0
+z = 1.0
+attpitch = 0
+attroll = 0
+attyaw = 0
+mass = 0
+
+[aa_20mm_fwd_port]
+criticalsecondary = 1
+#added for CC audit v1.13
+type = weaponmount
+triggertype = primary
+position = 6
+selectornum = 1
+confignum = 1
+mountnum = 1
+weapon = oerlikon
+weaponsound = sounds\fairmileb\20mmx2r.wav
+reloadsound = sounds\mgreload.wav
+ammocount = 2000
+ammofile = oerlikon1.belt
+beltname = 20mm
+collidertype = front60deg
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_20mmgun2
+hitmapcomponent2 = d_f20ammo
+ammoexplosioncomponent1 = d_20mmgun2
+# ammoexplosioncomponent2 = d_maingunnrhead
+# ammoexplosioncomponent3 = d_tankcommanderhead
+# ammoexplosioncomponent4 = d_driverhead
+# ammoexplosioncomponent5 = d_cannon
+# ammoexplosioncomponent6 = d_fueltank
+# ammoexplosioncomponent7 = d_engine
+# damagelevel of zero or less means that level isn't used
+damagelevel1 = 50000
+damagelevel2 = 1500
+damagelevel3 = 0
+damagelevel4 = 0
+checkifblocked = 1
+
+[aa_20mm_fwd_stdb]
+criticalsecondary = 1
+#added for CC audit v1.13
+type = weaponmount
+triggertype = secondary
+position = 6
+selectornum = 1
+confignum = 1
+mountnum = 2
+weapon = oerlikon
+weaponsound = sounds\fairmileb\20mmx2r.wav
+reloadsound = sounds\mgreload.wav
+ammocount = 2000
+ammofile = oerlikon1.belt
+beltname = 20mm
+collidertype = front60deg
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_20mmgun1
+hitmapcomponent2 = d_f20ammo
+ammoexplosioncomponent1 = d_20mmgun1
+# ammoexplosioncomponent2 = d_maingunnrhead
+# ammoexplosioncomponent3 = d_tankcommanderhead
+# ammoexplosioncomponent4 = d_driverhead
+# ammoexplosioncomponent5 = d_cannon
+# ammoexplosioncomponent6 = d_fueltank
+# ammoexplosioncomponent7 = d_engine
+# damagelevel of zero or less means that level isn't used
+damagelevel1 = 50000
+damagelevel2 = 1500
+damagelevel3 = 0
+damagelevel4 = 0
+checkifblocked = 1
+
+[aa_20mm_aft_stdb]
+criticalsecondary = 1
+#added for CC audit v1.13
+type = weaponmount
+triggertype = primary
+position = 7
+selectornum = 1
+confignum = 1
+mountnum = 3
+weapon = oerlikon
+weaponsound = sounds\fairmileb\20mmx2r.wav
+reloadsound = sounds\mgreload.wav
+ammocount = 2000
+ammofile = oerlikon1.belt
+beltname = 20mm
+collidertype = front60deg
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_20mmgun4
+hitmapcomponent2 = d_a20ammo
+ammoexplosioncomponent1 = d_20mmgun4
+# ammoexplosioncomponent2 = d_maingunnrhead
+# ammoexplosioncomponent3 = d_tankcommanderhead
+# ammoexplosioncomponent4 = d_driverhead
+# ammoexplosioncomponent5 = d_cannon
+# ammoexplosioncomponent6 = d_fueltank
+# ammoexplosioncomponent7 = d_engine
+# damagelevel of zero or less means that level isn't used
+damagelevel1 = 50000
+damagelevel2 = 1500
+damagelevel3 = 0
+damagelevel4 = 0
+checkifblocked = 1
+
+[aa_20mm_aft_port]
+criticalsecondary = 1
+#added for CC audit v1.13
+type = weaponmount
+triggertype = secondary
+position = 7
+selectornum = 1
+confignum = 1
+mountnum = 4
+weapon = oerlikon
+weaponsound = sounds\fairmileb\20mmx2r.wav
+reloadsound = sounds\mgreload.wav
+ammocount = 2000
+ammofile = oerlikon1.belt
+beltname = 20mm
+collidertype = front60deg
+# for weapons, hitmapcomponent1 is the gun itself, 2-4 are the ammo
+# for weapons, damagelevel1 is the damage for the gun, damagelevel2 is the damage for the weapon
+hitmapcomponent1 = d_20mmgun3
+hitmapcomponent2 = d_a20ammo
+ammoexplosioncomponent1 = d_20mmgun3
+# ammoexplosioncomponent2 = d_maingunnrhead
+# ammoexplosioncomponent3 = d_tankcommanderhead
+# ammoexplosioncomponent4 = d_driverhead
+# ammoexplosioncomponent5 = d_cannon
+# ammoexplosioncomponent6 = d_fueltank
+# ammoexplosioncomponent7 = d_engine
+# damagelevel of zero or less means that level isn't used
+damagelevel1 = 50000
+damagelevel2 = 1500
+damagelevel3 = 0
+damagelevel4 = 0
+checkifblocked = 1
+
+
+
+# Target Weight 88770
+
+#totalmass = X should be the total historical mass of the vehicle
+# totalmass = 14200

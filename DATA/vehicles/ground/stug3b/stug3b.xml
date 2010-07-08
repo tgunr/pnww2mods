@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="stug3b" type="ground" shape="stug3b" description="StuG III B" icon="StuG 3B">
+<include file="stug3b.veh.xml"/>
+<include file="stug3b.state.xml"/>
+<include file="stug3b.hit.xml"/>
+<include file="stug3b.turret.xml"/>
+<include file="stug3b.loadout.xml"/>
+<include file="stug3b.xsound.xml"/>
+<include file="stug3b.control.xml"/>
+<include file="stug3b.mass.xml"/>
+</vehicle>

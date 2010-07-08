@@ -1,0 +1,14 @@
+<?xml version='1.0'?>
+<content type="3">
+  <body>Ceci est votre Quartier Général. Ici vous aurez la liste des missions disponibles pour cette brigade. vous pouvez voir où elle se trouve sur la carte en choisissant une mission. Vous pouvez aussi voir qui commande cette brigade.
+
+Si vous souhaitez changer de personnage pour jouer ou la brigade où vous vous trouvez, valider le bouton changement de brigade.</body>
+  <links>
+    <link path="help/brigade/comms.xml" title="Communications" />
+    <link path="help/brigade/mission_list.xml" title="Mission Liste" />
+    <link path="help/brigade/mission_map.xml" title="Carte Mission" />
+  </links>
+  <position>535x207</position>
+  <target>490x555</target>
+  <title>Quartier général des brigades</title>
+</content>

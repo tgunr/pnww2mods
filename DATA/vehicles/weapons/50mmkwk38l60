@@ -1,0 +1,17 @@
+# Rev. 8/13/04 - hatch
+
+mass = 316
+firetype = singleshot
+rateoffire = 60
+dispersion = 0.09
+ammotype1 = 5cm38l60_pzgr_patr38
+ammotype2 = 5cm38l60_sprgr_patr38
+#ammotype3 = 5cm38l60_pzgr40_patr38
+ghostrof = 20
+ghostammotype = 5cm38l60_sprgr_patr38
+cliprounds = 1
+reloadtime = 3
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = na

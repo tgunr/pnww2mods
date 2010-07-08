@@ -1,0 +1,30 @@
+# Created 23/feb/07 - Doc
+# DeWilde explosive Incendiary for British .303 aircraft MGs
+
+type = ballistic
+diameter = .0077
+weight = 0.0143
+ammoweight = 0.028
+velocity = 745
+tracertime = 0.0
+object = bullet1
+explosive = 12.3
+# explosive = 0.5g SR365
+fuzetime = 0.00
+bc = 0.251
+lifetime = 2.0
+penetrationconstant = 0.00000034
+ricochetangle = 89
+dontdisplayfirstframe = 1
+muzzleflash = 1
+hiteffect = incendiarymg
+tracerscale = 8
+
+#added for explosion render
+
+numshrapnelpieces = 1
+totalshrapnelmass = .028
+shrapnelpenetration = .0000002122
+
+#last line for shrapnel model, DeWilde has no shrapnel modelled (0 = do not use new_HE)
+use_new_he = 0

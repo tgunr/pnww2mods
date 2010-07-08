@@ -1,0 +1,38 @@
+#Charb1.loadout file
+
+# sounds available for the mounts
+sound1 = sounds\charb1\xgun1.wav
+sound2 = sounds\charb1\xgun2.wav
+sound3 = sounds\charb1\xgun3.wav
+
+loadout = 1
+
+mountnum = 1
+mountobject = 75mount
+mountsound = sound1
+weapon = 75mmsa32l17
+weaponobject = charb175
+recoilnum = 1
+recoiltime = .3
+shockdust = 1
+
+mountnum = 2
+mountobject = 47mount
+mountsound = sound2
+weapon = 47mmsa35l34
+weaponobject = charb147
+recoilnum = 3
+recoiltime = .2
+shockdust = 1
+
+mountnum = 3
+mountobject = coaxmount
+mountsound = sound3
+weapon = mle31
+weaponobject = charb1coax
+
+mountnum = 4
+mountobject = hullmount
+mountsound = sound3
+weapon = mle31
+weaponobject = charb1hull

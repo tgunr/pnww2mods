@@ -1,0 +1,14 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="ak-1" type="sea" description="Freighter" icon="Freighter">
+<include file="ak-1.veh.xml"/>
+<include file="ak-1.state.xml"/>
+<include file="ak-1.hit.xml"/>
+<include file="ak-1.turret.xml"/>
+<include file="ak-1.loadout.xml"/>
+<include file="ak-1.xsound.xml"/>
+<include file="ak-1.control.xml"/>
+<variant id="uk_freighter" shape="ak-1"/>
+<variant id="fr_freighter" shape="ak-1f"/>
+<variant id="de_freighter" shape="ak-1g"/>
+</vehicle>

@@ -1,0 +1,59 @@
+#bell14a loadout file
+
+# sounds available for the mounts
+sound1 = sounds\spit1\xgun.wav
+sound2 = sounds\bf109e3\xgun2.wav
+
+loadout = 1
+
+mountnum = 1
+mountobject = 20mm
+mountsound = sound2
+weapon = 20mm_hispano404
+weaponobject = genericgun1
+recoilnum = 1
+recoiltime = .1916
+
+mountnum = 2
+mountobject = lowinggun
+mountsound = sound1
+weapon = fn_browning
+weaponobject = genericgun1
+
+mountnum = 3
+mountobject = liwinggun
+mountsound = sound1
+weapon = fn_browning
+weaponobject = genericgun1
+
+mountnum = 4
+mountobject = riwinggun
+mountsound = sound1
+weapon = fn_browning
+weaponobject = genericgun1
+
+mountnum = 5
+mountobject = rowinggun
+mountsound = sound1
+weapon = fn_browning
+weaponobject = genericgun1
+
+mountnum = 6
+mountobject = lnosemg
+mountsound = sound1
+weapon = m2_50cal_air_sync
+weaponobject = genericgun1
+
+mountnum = 7
+mountobject = rnosemg
+mountsound = sound1
+weapon = m2_50cal_air_sync
+weaponobject = genericgun1
+
+mountnum = 8
+mountobject = f200x1
+mountsound = sound1
+weapon = f200
+weaponobject = f200
+
+

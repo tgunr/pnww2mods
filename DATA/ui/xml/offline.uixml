@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<window id="offline" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" aspectalign="center"
+	onunload="game.savesettings(findview('left-pane'))" onshow="initWin(this)" onupdate="updateLaunch()">
+	<include file="widgets/template.uixml"/>
+	<include file="classes/TreeControl2.uixml"/>
+	<tabview id="body" x="43" y="140" width="930" height="450" ontab="quickhelp()" style=" 
+						color: #BFE2CE;
+						background-color: #000000BB; 
+						border-top-corner: ui/textures/test/body_ul.bmp;
+						border-bottom-corner: ui/textures/test/body_br.bmp;
+						border-sides: ui/textures/test/body_sides.bmp;
+						border-top: ui/textures/test/body_top.bmp;
+						border-bottom: ui/textures/test/body_bottom.bmp;
+						control-on-endcap:  ui/textures/test/body_tab_cap_on.bmp;
+						control-on-back:  ui/textures/test/body_tab_filler_on.bmp;
+						control-off-endcap: ui/textures/test/body_tab_cap.bmp;
+						control-off-back: ui/textures/test/body_tab_filler.bmp;
+						control-on-color: #FFFFCE;
+						border-width: 16;
+						border-height: 16;">
+		<tab label="  &offline.spawntab; " x="0" y="0" width="930" height="460" style="color: #3e5248;"
+			onshow='setHelp(getlocstring("offline.spawntab.help")); tplTab()' tip="&offline.spawntab.tip;">
+			<view id="left-pane" x="18" y="18" width="444" height="411">
+				<view x="10" width="425" height="25" rtop="12">
+					<caption label="&offline.spawntab.selection;" x="0" height="20" width="425" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
+					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
+				</view>
+				<list id="vehicleTree" x="10" y="0" width="425" height="370"
+					onselect="vehicleTree.clickTree(false)" ondblselect="vehicleTree.clickTree(true)">
+					<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+				</list>
+			</view>
+			<include file="widgets/divider.uixml"/>
+			<view id="right-pane" x="468" y="18" width="444" height="411">
+				<tabview id="info-view" x="0" y="0" rright="0" rtop="0" acceptmouseclick='false'>
+					<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'>
+						<text x="70" width="300" height="100" rtop="50" style="font-size: +2; color: #e9e3d9ff;" onshow="this.text = getlocstring('offline.spawntab.selection.info')"/>
+					</tab>
+					<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false' onshow="showInfo(this)">
+						<view x="10" width="425" height="25" rtop="12">
+							<caption id="info-title" x="0" height="20" width="425" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
+							<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
+						</view>
+						<text id="info-brief" x="30" rtop="80" width="260" height="200" acceptsfocus="no" style="color: #e9e3d9; font-size: +1;"/>
+						<image id="info-image" width="160" height="350" rright="10" rtop="50" style="border-color: #BFE2CE;"/>
+					</tab>
+					<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false' onshow="showInfo(this)">
+						<view x="10" width="425" height="25" rtop="12">
+							<caption id="info-title" x="0" height="20" width="425" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
+							<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
+						</view>
+						<text id="info-brief" x="10" rtop="50" width="220" height="200" acceptsfocus="no" style="color: #e9e3d9; font-size: +1;"/>
+						<image id="info-image" width="200" height="150" rright="10" rtop="50" style="border-color: #BFE2CE;"/>
+					</tab>
+				</tabview>
+				<!--
+				<text id="test" x="10" y="10" rright="10" rtop="10" acceptsfocus="true"
+					style="color: #FFFFFF; background-color: #000000; border-color: #BFE2CE; border-width: 3; border-height: 3; border-size-right: 10;">
+					<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+				</text>
+				-->
+			</view>
+		</tab>
+		<tab id="map" label="  &common.map.tab;  " x="20" y="3" width="930" height="460"
+			onshow="setHelp(getlocstring('common.map.tab.help')); tplTab()"	tip="&common.map.tab.tip.offline;">
+			<include file="widgets/map.uixml"/>
+		</tab>
+		<include file="widgets/globals/manuals.uixml"/>
+		<include file="widgets/globals/settings.uixml"/>
+	</tabview>
+	<script>
+		<!--
+		
+		var theMap				= findview("mapview");
+		var vehicleTree			= new TreeControl("vehicleTree", selectVehicle);
+		
+		var stratSelection		= null;
+		
+		var tabbody				= findview("body");
+		var infoView			= findview("info-view");
+		
+		function initWin(win)
+		{
+			game.consoleclear();
+			
+			var chat = game.findview("chat");
+			if(chat != null)
+			{
+				chat.x = game.screenwidth/2 - chat.width/2;
+				chat.y = 6;
+			}
+			
+			game.restoresettings(findview("left-pane"));
+			
+			showChat(true);
+			initVehicleList();
+			setHelp(getlocstring('offline.spawntab.help'));
+			setForward('offline.forward');
+			musicPlayIntro();
+			quickhelp();
+		}
+		
+		function doForward()
+		{
+			if(forwardButton.enabled)
+			{
+				var result = false;
+				var weapon = vehicleTree.selectedData();
+				
+				if(weapon != null)
+				{
+					vehicleTree.saveState();
+					
+					musicKill();
+					
+					if(stratSelection != null && tabbody.value == 1)
+						result = game.spawn(weapon, stratSelection);
+					else
+						result = game.spawn(weapon);
+				}
+				
+				if(result)
+				{
+					showChat(false);
+					window.close();
+				}
+			}
+		}
+		
+		function initVehicleList()
+		{
+			var hasstate	= vehicleTree.hasState(); 
+			var spawnables 	= game.spawnablevehicles;
+			var countries 	= new Array('UK','FR','DE');
+			
+			for(var c = 0; c < countries.length; c++)
+			{
+				var country = countries[c];
+				
+				var classNode		= null;
+				var countryNode 	= new TreeNode(country, null, 1, true, getlocstring("common.countries." + country.toLowerCase() + ".name"));
+				
+				for(var v = 0; v < spawnables.length; v++)
+				{
+					var vehicle = spawnables[v];
+					
+					if(vehicle.country != null && vehicle.country.code == country)
+					{
+						consoleprint("Adding offline vehicle: " + vehicle.id + "\n");
+						
+						var badIDs = new RegExp("(skull|w154)", "gi");
+						
+						if(!vehicle.id.match(badIDs))
+						{
+							var classID = country + vehicle.vclassid;
+							
+							if(classNode == null || classNode.id != classID)
+							{
+								if(classNode != null)
+									countryNode.addNode(classNode);
+								
+								classNode = new TreeNode(classID, null, 2, true, vehicle.vclass);
+								
+								if(!hasstate && vehicle.vclassid == 9)
+									classNode.expand();
+							}
+							
+							classNode.addNode(new TreeNode(vehicle.index, vehicle, 3, false, vehicle.description));
+							
+							if(vehicle.id == "ukrifle")
+								vehicleTree.selected = vehicle.index;
+						}
+					}
+				}
+				
+				if(classNode != null)
+					countryNode.addNode(classNode);
+				
+				vehicleTree.addNode(countryNode);
+			}
+			
+			if(!vehicleTree.loadState())
+				vehicleTree.toggleNode("UK", true);
+			
+			vehicleTree.drawTree();
+		}
+		
+		function selectVehicle(action)
+		{
+			infoView.value = 0;
+			
+			var weapon = vehicleTree.selectedData(); 
+			
+			if(weapon != null)
+			{
+				if(action)
+				{
+					updateLaunch();
+					doForward();
+				}
+				
+				infoView.value = (weapon.vclassid == 9 || weapon.vclassid == 14) ? 1: 2;
+			}
+		}
+		
+		function updateLaunch()
+		{
+			if(theMap.selectedobject != null && theMap.selectedobject.stratobject != null)
+				stratSelection = theMap.selectedobject.stratobject;
+			else
+				stratSelection = null;
+			
+			var weapon 	= vehicleTree.selectedData();
+			var launch	= false;
+			
+			if(weapon != null)
+			{
+				if(stratSelection != null)
+				{
+					if(weapon.type == "air")
+					{
+						if(stratSelection.stratclass == "facility" && stratSelection.strattype == "airbase")
+							launch = true;				
+					}
+					else if(weapon.type == "sea")
+					{
+						if(stratSelection.stratclass == "facility" && stratSelection.strattype == "navalbase")
+							launch = true;
+					}
+					else if(weapon.type == "ground")
+					{
+						if(stratSelection.stratclass == "facility" && stratSelection.strattype == "armybase")
+							launch = true;
+					}
+					else
+					{
+						if(stratSelection.stratclass == "facility" && (stratSelection.strattype == "armybase" || stratSelection.strattype == "depot"))
+							launch = true;
+					}
+				}
+				else
+				{
+					launch = true;
+				}
+			}
+			
+			if(tabbody.value == 0)
+			{
+				stratSelection = null;
+				launch = true;
+			}
+			
+			setForwardEnabled(launch);
+		}
+		
+		function showInfo(viewer)
+		{
+			var weapon = vehicleTree.selectedData();
+			
+			if(weapon != null)
+			{
+				var content = game.getcontent(getVehicleManual(weapon));
+				
+				if(content)
+				{
+					var infoTitle	= viewer.findview("info-title");
+					var infoBrief	= viewer.findview("info-brief");
+					var infoImage	= viewer.findview("info-image");
+					
+					infoTitle.label = content.title.toUpperCase();
+					infoBrief.text 	= content.brief;
+					infoImage.src 	= (weapon.vclassid == 9 || weapon.vclassid == 14) ? content.image: "ui/textures/vehicles/" + content.image + ".bmp";
+				}
+				else
+				{
+					infoView.value = 0;
+				}
+			}
+		}
+		
+		-->
+	</script>
+</window>

@@ -1,0 +1,25 @@
+# 20mm Hispano for Hurricane IIC and Spitfive VB
+# These planes used Hispano No. 1 Mk I
+# Information taken from Hispano Mk II
+# Created 8/12/02 - bloo
+
+mass = 50.0
+firetype = auto
+rateoffire = 600
+dispersion = 0.03
+# dispersion is placeholder
+
+ammotype1 = 20mm_hispano_ap
+ammotype2 = 20mm_hispano_he
+ammotype3 = 20mm_hispano_tracer
+ghostrof = 200
+ghostammotype = 20mm_hispano_he
+#cliprounds = 90
+#reloadtime = 5
+# reloadtime is placeholder (doesn't reload)
+nomuzzlesmoke = 1
+# nomuzzlesmoke is placeholder
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = na

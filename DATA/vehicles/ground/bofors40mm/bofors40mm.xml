@@ -1,0 +1,14 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="bofors40mm" type="ground" icon="Bofors Gun">
+<include file="bofors40mm.veh.xml"/>
+<include file="bofors40mm.state.xml"/>
+<include file="bofors40mm.hit.xml"/>
+<include file="bofors40mm.turret.xml"/>
+<include file="bofors40mm.loadout.xml"/>
+<include file="bofors40mm.xsound.xml"/>
+<include file="bofors40mm.control.xml"/>
+<variant id="fr_bofors" shape="frenchbofors40mm" description="Bofors (40 mm) AA Gun"/>
+<variant id="de_bofors" shape="germanbofors40mm" description="FlaK 28 (40 mm) AA Gun"/>
+<variant id="bofors40mm" shape="bofors40mm" description="Bofors (40 mm) AA Gun"/>
+</vehicle>

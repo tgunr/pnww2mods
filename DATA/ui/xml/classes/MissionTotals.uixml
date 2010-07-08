@@ -1,0 +1,126 @@
+<script>
+	<!--
+	
+	function MissionTotals()
+	{
+	 	this.sorties			= 0;
+		this.tom				= 0;
+		this.elapsedtime 		= 0;
+		this.numkills 			= 0;
+		this.numcaptures		= 0;
+		this.numcapassists		= 0;
+		this.promoted			= 0;
+		this.mobilespawnees 	= 0;
+		this.unitshit			= 0;
+		this.aishit 			= 0;
+		this.bridgeshit 		= 0;
+		this.bridgesrepaired 	= 0;
+		this.factorieshit 		= 0;
+		this.firebaseshit 		= 0;
+		this.pointsscored 		= 0;
+		this.pointsaccumulated 	= 0;
+		this.pointsnextrank 	= 0;
+		this.resupplies			= 0;
+		this.scoredresupplies	= 0;
+		this.nextrank			= null;
+		this.rtbcodes 			= new Array(4);
+		this.kills				= new Object();
+		this.favorite			= "na";
+		this.best				= "na";
+		this.worst				= "na";
+
+		for(var r = 0; r < this.rtbcodes.length; r++)
+		{
+		 	this.rtbcodes[r] = 0;
+		}
+
+		this.addResults = function(results)
+		{
+		 	this.sorties			+= 1;
+			this.elapsedtime 		+= results.elapsedtime;
+			this.numkills 			+= results.numkills;
+			this.numcaptures		+= results.numcaptures;
+			this.numcapassists		+= results.numcapassists;
+			this.promoted			+= results.promoted;
+			this.mobilespawnees 	+= results.mobilespawnees;
+			this.unitshit			+= results.unitshit;
+			this.aishit 			+= results.aishit;
+			this.bridgeshit 		+= results.bridgeshit;
+			this.bridgesrepaired 	+= results.bridgesrepaired;
+			this.factorieshit 		+= results.factorieshit;
+			this.firebaseshit 		+= results.firebaseshit;
+			this.pointsscored 		+= results.pointsscored;
+			this.resupplies 		+= results.resupplies;
+			this.scoredresupplies 	+= results.scoredresupplies;
+			this.pointsaccumulated 	= results.pointsaccumulated;
+			this.pointsnextrank 	= results.pointsnextrank;
+			this.nextrank			= (results.nextrank != null) ? results.nextrank: null;
+			this.tom				= Math.floor(this.elapsedtime / 60);
+			
+			consoleprint("Summary Next rank is " + this.nextrank + "\n");
+
+			// accumulate rtb codes
+			this.rtbcodes[results.rtbcode]++;
+			
+			// calculate favorite/best/worst units
+			this.calcUnits();
+		}
+
+		this.calcUnits = function()
+		{
+		 	var sorties 	= game.globals.sorties;
+		 	var favorites	= new Object();
+		 	var bests		= new Object();
+
+		 	this.favorite 	= "na";
+		 	this.best 		= "na";
+		 	this.worst	 	= "na";
+
+		 	for(var s = 0; s < sorties.length; s++)
+		 	{
+		 	 	var sortie 	= sorties[s];
+		 	 	var score	= 1; // start off with at least 1 (for each sortie)
+
+			 	if(favorites[sortie.weapon] == null)
+					favorites[sortie.weapon] = 0;
+
+			 	if(bests[sortie.weapon] == null)
+					bests[sortie.weapon] = 0;
+
+				score += sortie.tom;
+				score += sortie.numkills;
+				score += (sortie.numcaptures * 3);
+				score += sortie.numcapassists;
+				//score += (sortie.mobilespawnees * 2);
+				score += sortie.unitshit;
+				score += sortie.aishit;
+				score += (sortie.bridgeshit * 3);
+				score += (sortie.bridgesrepaired * 4);
+				score += (sortie.factorieshit * 6);
+				score += (sortie.firebaseshit * 3);
+				score += sortie.pointsscored;
+				score *= (3 - sortie.rtbcode);
+
+				favorites[sortie.weapon]	+= 1;
+				bests[sortie.weapon] 		+= score;
+		 	}
+
+		 	for(var weapon in favorites)
+		 	{
+			 	if(this.favorite == "na" || favorites[weapon] > favorites[this.favorite])
+			 		this.favorite = weapon;
+		 	}
+
+		 	for(var weapon in bests)
+		 	{
+			 	if(this.best == "na" || bests[weapon] > bests[this.best])
+			 		this.best = weapon;
+
+			 	if(this.worst == "na" || bests[weapon] < bests[this.worst])
+			 		this.worst = weapon;
+		 	}
+		}
+	}
+
+	-->
+</script>

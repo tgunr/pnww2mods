@@ -1,0 +1,24 @@
+#Bofors 40mm.loadout file
+
+# sounds available for the mounts
+sound1 = sounds\boforsxgun.wav
+
+
+loadout = 1
+
+mountnum = 1
+mountobject = mount1
+mountsound = sound1
+weapon = 40mml60
+recoilnum = 1
+recoiltime = .3
+weaponobject = genericgun1
+shockdust = 1
+
+# added for centering gun
+# neutral can be: bombayopen/closed, hatchopen/closed, canopyopen/closed
+neutral = bombbayclosed
+# neutraltraverse -1 max deflection left, 1 max deflection right, 0 straight ahead 
+neutraltraverse = 0
+# neutralelevation -1 max down, 1 max up, 0 is midtraverse
+neutralelevation = -1

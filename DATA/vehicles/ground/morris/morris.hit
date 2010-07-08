@@ -1,0 +1,50 @@
+# damage resistance file for Opel Blitz
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 10000
+
+#Inside collider objects:
+d_radiator,8,0,0
+d_engine,250,0,0
+d_fueltank,8,0,0
+d_driverlegs,2,0,0
+d_driverarms,2,0,0
+d_driverhead,6.5,0,0
+d_drivertorso,2.2,0,0
+
+#Outside collider objects:
+d_front,1,0,0
+d_ltfrntweel,5,0,0
+d_ltbackweel,5,0,0
+d_ltfsecweel,5,0,0
+d_rtbackweel,5,0,0
+d_rtfrntweel,5,0,0
+d_rtsecweel,5,0,0
+d_bedoftruck,1,0,0
+d_grill,1,0,0
+d_tranny,250,0,0
+#d_drivetrain,12,0,0

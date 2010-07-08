@@ -1,0 +1,34 @@
+section, CATEGORY, weapClass
+default,,AC_fighter.0
+spawn, bf109e,
+spawn, bf110c,
+spawn, bf109f4,
+spawn, fw190a4,
+spawn, bf110c4, AC_bomber.0
+spawn, Ju87b, AC_bomber.0
+spawn, he111, AC_bomber.0
+spawn, de_blent, AC_bomber.0
+spawn, Ju52, AC_bomber.0
+spawn, me109g6,
+spawn, bf109e1,
+spawn, bf109f1,
+spawn, bf110fb,
+
+section, bomber, weapClass
+default,,AC_bomber.0
+spawn, Ju87b,
+spawn, he111,
+spawn, bf110c4,
+spawn, de_blent,
+spawn, Ju52,
+
+section, fighter, weapClass
+default,,AC_fighter.0
+spawn, bf109e,
+spawn, bf110c,
+spawn, bf109f4,
+spawn, fw190a4,
+spawn, me109g6,
+spawn, bf109e1,
+spawn, bf109f1
+spawn, bf110fb

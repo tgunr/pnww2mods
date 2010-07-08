@@ -1,0 +1,29 @@
+<?xml version='1.0'?>
+<content type="3">
+  <body>Recruter un joueur dans votre squad; niveau recruteur et sup�rieur.
+/recruit &#60;joueur&#62;
+
+Accepter une invitation  rejoindre un squad.
+/accept
+
+Dcliner une invitation  rejoindre un squad; disparait avec le temps.
+/decline
+
+Partir de votre squad actuel.
+/leave
+
+Supprime votre squad; seulement pour le responsable.
+/disband
+
+Supprime un joueur du squad; niveau officier en second minimum.
+/remove &#60;joueur&#62;
+
+Augmente le grade dun niveau dans la hirarchie du squad jusqu un niveau en dessous de vous; niveau officier en second minimum.
+/promote &#60;joueur&#62;
+
+Rtrograde un joueur; limit aux joueurs moins grads que vous, niveau officier en second minimum.
+/demote &#60;joueur&#62;
+
+Dmissionner de votre commandement; vous rtrograde au rang dofficier en second et fait de &#60;joueur&#62; votre chef. 
+/resign &#60;joueur&#62;</body>
+</content>

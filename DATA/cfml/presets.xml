@@ -1,0 +1,33 @@
+<?xml version='1.0'?>
+<!DOCTYPE imappresets SYSTEM "imappresets.dtd">
+<presets>
+	<category name="general">
+		<preset path="general.cfml"/>
+	</category>
+	<category name="views">
+		<preset path="views.cfml"/>
+	</category>
+	<category name="infantry">
+		<preset path="infantry.cfml"/>
+	</category>
+	<category name="tank">
+		<preset path="tank.cfml" requires="joystick"/>
+		<preset name="nojoy" path="tank.nojoy.cfml"/>
+	</category>
+	<category name="atgun">
+		<preset path="atgun.cfml" requires="joystick"/>
+		<preset name="nojoy" path="atgun.nojoy.cfml"/>
+	</category>
+	<category name="truck">
+		<preset path="truck.cfml" requires="joystick"/>
+		<preset name="nojoy" path="truck.nojoy.cfml"/>
+	</category>
+	<category name="air">
+		<preset path="air.cfml" requires="joystick"/>
+		<preset name="nojoy" path="air.nojoy.cfml"/>
+	</category>
+	<category name="sea">
+		<preset path="sea.cfml" requires="joystick"/>
+		<preset name="nojoy" path="sea.nojoy.cfml"/>
+	</category>
+</presets>

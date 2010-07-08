@@ -1,0 +1,57 @@
+#ju87b.loadout file
+
+# sounds available for the mounts
+sound1 = sounds\ju87b\xgun1.wav
+sound2 = sounds\ju87b\xgun2.wav
+sound3 = sounds\ju87b\xgun3.wav
+# sound4 = sounds\ju87b\bombrel.wav
+
+loadout = 1
+
+mountnum = 1
+mountobject = rwmount
+mountsound = sound1
+weapon = mg17
+weaponobject = ju87b_mg17
+
+mountnum = 2
+mountobject = lwmount
+mountsound = sound2
+weapon = mg17
+weaponobject = ju87b_mg17
+
+mountnum = 3
+mountobject = mgmount
+mountsound = sound3
+weapon = mg15
+weaponobject = ju87_mg15
+
+mountnum = 4
+mountobject = mbmount
+# mountsound = sound3
+weapon = sc250
+weaponobject = sc250
+
+mountnum = 5
+mountobject = lwbombmount1
+# mountsound = sound3
+weapon = sc50
+weaponobject = sc50
+
+mountnum = 6
+mountobject = lwbombmount2
+# mountsound = sound3
+weapon = sc50
+weaponobject = sc50
+
+mountnum = 7
+mountobject = rwbombmount1
+# mountsound = sound3
+weapon = sc50
+weaponobject = sc50
+
+mountnum = 8
+mountobject = rwbombmount2
+# mountsound = sount3
+weapon = sc50
+weaponobject = sc50

@@ -1,0 +1,16 @@
+section, fighter, Alloc,#L,#M,Rel,Association,LOD,AlertDistance,Speed,Value,Bias,,,,,
+default,,,,,P,IN_crew.2,,0,,10,FY_,10,SV_sea.0,AC_fighter.0,AC_bomber.0,AC_fighter.0
+1,hawk75,L1,0,50,,,6000,,450,60,,,,,,
+#2,fr_spit1,L1,0,0,,,6000,,450,10,,,,,,
+#3,fr_hurri,L3,0,0,,,6000,,450,60,,,,,,
+4,d520,L3,0,50,,,6000,,450,72,,,,,,
+5,h81a2,L3,0,50,,,6000,,450,84,,,,,,
+6,bell14a,L3,0,50,,,6000,,450,118,,,,,,
+7,p38f,L5,0,50,,,6000,,450,128,,,,,,
+8,h87b3,L5,0,50,,,6000,,450,108,,,,,,
+
+section, bomber, Alloc,#L,#M,Rel,Association,LOD,AlertDistance,Speed,Value, Bias,,,,,
+default,,,,,P,IN_crew.2,,0,,10,FY_,10,SV_sea.0,AC_fighter.0,,
+1,fr_blen,L1,0,50,,,6000,,300,88,,,,,,
+2,db7,L3,0,50,,,6000,6400,300,140,,,,,,
+3,fr_ju52,L5,0,50,,,6000,0,200,55,,,,,,

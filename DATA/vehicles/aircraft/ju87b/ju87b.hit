@@ -1,0 +1,102 @@
+# Damage Resistance file for Ju87B Stuka
+# Correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\tex\avhit1.wav
+-hitsound2 = sounds\tex\avhit2.wav
+-hitsound3 = sounds\tex\avhit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 5000
+
+
+#Exterior
+d_spinner,3,150,150
+d_prop1,12,150,150
+d_prop2,12,150,150
+d_propb3,12,150,150
+d_nose,1.5,150,150
+d_radflaps,1,0,0
+d_rad1,0.25,150,150
+d_rad2,0.25,150,150
+d_midfus,1.5,150,150
+d_rightwing1,1.5,150,150
+d_rightwing2,1.5,150,150
+d_rightwing3,1.5,150,150
+d_leftwing1,1.5,150,150
+d_leftwing2,1.5,150,150
+d_leftwing3,1.5,150,150
+d_leftlandgear,30,150,150
+d_rightlandgear,30,150,150
+d_rightinnerflap,1,150,150
+d_leftinnerflap,1,150,150
+d_rightouterflap,1,150,150
+d_leftouterflap,1,150,150
+d_rightaileron,1,150,150
+d_leftaileron,1,150,150
+d_tail,1.5,150,150
+d_lefthorizontalstab,1.5,150,150
+d_righthorizontalstab,1.5,150,150
+d_rightelevator,1.5,150,150
+d_leftelevator,1.5,150,150
+d_vstab,1.5,150,150
+d_rudder,1.5,150,150
+d_pilotcan1,5,0,0
+d_pilotcan2,5,0,0
+d_pilotcan3,5,0,0
+d_pilotseat,8,0,0
+d_pilotarmor,11,0,0
+d_gunnercan1,5,0,0
+d_bulkhead,11,0,0
+d_floorplatearmor,8,0,0
+#d_leftlandgear1,5,150,150
+#d_leftlandgear2,5,150,150
+#d_rightlandgear1,5,150,150
+#d_rightlandgear2,5,150,150
+
+#Interior
+
+d_engine,100,225,225
+d_radiator,3,0,0
+d_oilcooler,3,0,0
+d_oiltank,3,0,0
+d_coolanttank1,3,0,0
+d_mainoil,3,0,0
+d_starinnerfuel,3,0,0
+d_starouterfuel,3,0,0
+d_portinnerfuel,3,0,0
+d_portouterfuel,3,0,0
+d_pilothead,0.4,0,0
+d_pilottorso,1.2,0,0
+d_pilotarms,1.0,0,0
+d_pilotlegs,1.0,0,0
+d_gunnerhead,0.4,0,0
+d_gunnertorso,1.2,0,0
+d_gunnerarms,1.0,0,0
+d_gunnerlegs,1.0,0,0
+d_starmg,30,150,150
+d_starammo,5,150,150
+d_portmg,30,150,150
+d_portammo,5,150,150
+d_rearmg,30,150,150
+d_reargunammo,5,150,150
+d_staroxyg,8,150,150
+d_portoxyg,8,150,150

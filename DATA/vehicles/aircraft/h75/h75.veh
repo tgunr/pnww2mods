@@ -1,0 +1,51 @@
+# basic vehicle data file for Curtiss Hawk 75
+physicsversion = 1
+vehicletype = ww2propplane
+vehiclename = H75
+vehicleobjectname = hawk75
+componentfile = h75.cmp
+enginefile = h75.eng
+airfoilfile = h75.air
+positionfile = h75.pos
+numberofflappositions= 1
+# next 3 are in kph
+aileronmaxspeed = 580
+ruddermaxspeed = 420
+elevatormaxspeed = 350
+# next 3 are in mach speed
+aileroncompressspeed = 0.71
+ruddercompressspeed = 0.72
+elevatorcompressspeed = 0.69
+# response times sec (full force)
+aileronresponsetime = 0.1
+elevatorresponsetime = 0.80
+#elevatorresponsetime = 0.20 (altered for v1.29 beta)
+rudderresponsetime = 1.1
+#rudderresponsetime = 0.10 (altered for v1.29 beta)
+throttleresponsetime = 1.0
+
+# static tabs, e.g. the tabs that are set on the ground
+# trim the plane for cruise flight, in an analysis FE
+# and copy the trim settings into the following fields
+ailerontabstatic = -0.006
+elevatortabstatic = 0.761
+ruddertabstatic = 0.103
+
+# tab effects, ratio of tab force at full tab deflection to total surface force
+ailerontabratio = 0.1 
+elevatortabratio = 0.1
+ruddertabratio = 0.1
+# opposing movement tab effects, ratio of tab force at full tab deflection to total surface force
+aileronspringtabratio = 0
+elevatorspringtabratio = 0
+rudderspringtabratio = 0
+
+stallsound = sounds\stall.wav
+gearsound = sounds\pgear.wav
+flapssound = sounds\pflaps.wav
+windsound = sounds\wind.wav
+
+flapdeployspeed = 0.2
+geardeployspeed = .1
+canopyopenspeed = 0.3
+hatchopenspeed = 0.5

@@ -1,0 +1,201 @@
+<colliders>
+	<!-- included model definitions need to be defined before they are included -->
+	<!--
+	<model id="enfield">
+		<capsule name="riflemount" length=".73" diameter=".05" y=".025"/>
+		<capsule name="enfield" length=".33" diameter=".05" z=".33"/>
+	</model>
+	<model id="mills" include="enfield"/>
+	<model id="enfield-scoped" include="enfield"/>
+	-->
+	<model type="0" name="rifle">
+		<capsule mass="6" length=".73" diameter=".05" name="frame">
+			<rotate x="0" y="0" z="0" w="0"/>
+			<offset x="0" y=".03" z="0"/>
+		</capsule>
+		<capsule mass="1" length=".2" diameter=".05" name="barrelblock">
+			<rotate x="0" y="1" z="0" w="90"/>
+			<offset x=".55" y="0" z="0"/>
+		</capsule>
+		<capsule mass="2" length=".4" diameter=".05" name="stock">
+			<rotate x="0" y="0" z="0" w="0"/>
+			<offset x="0" y="-.04" z=".53"/>
+		</capsule>
+		<capsule mass="1" length=".2" diameter=".05" name="stockblock">
+			<rotate x="0" y="1" z="0" w="90"/>
+			<offset x="-.55" y="0" z="0"/>
+		</capsule>
+	</model>
+	<model type="11" name="rgmills">
+		<capsule mass="7" length=".73" diameter=".05" name="frame">
+			<rotate x="0" y="0" z="0" w="0"/>
+			<offset x="0" y=".03" z="0"/>
+		</capsule>
+		<capsule mass="3" length=".4" diameter=".05" name="stock">
+			<rotate x="0" y="0" z="0" w="0"/>
+			<offset x="0" y="-.04" z=".53"/>
+		</capsule>
+	</model>
+	<model type="1" weapon="1" name="thompson">
+		<capsule mass="8" length=".63" diameter=".05" name="frame">
+			<rotate x="0" y="1" z="0" w="90"/>
+			<offset x=".21" y="0" z=".08"/>
+		</capsule>
+		<capsule mass="1" length=".12" diameter=".05" name="clip">
+			<rotate x="0" y="0" z="0" w="0"/>
+			<offset x=".18" y="0" z="-.02"/>
+		</capsule>
+		<capsule mass=".05" length=".09" diameter=".05" name="grip">
+			<rotate x="0" y="0" z="0" w="0"/>
+			<offset x="-.05" y="0" z="0"/>
+		</capsule>
+		<capsule mass="2" length=".2" diameter=".05" name="stock">
+			<rotate x="0" y="1" z="0" w="90"/>
+			<offset x="-.3" y="0" z="0"/>
+		</capsule>
+	</model>
+	<model type="1" weapon="2" name="mp40">
+		<capsule mass="7" length=".85" diameter=".05" name="frame">
+			<rotate x="0" y="1" z="0" w="90"/>
+			<offset x=".20" y="0" z=".3"/>
+		</capsule>
+		<capsule mass="1" length=".15" diameter=".05" name="clip">
+			<rotate x="0" y="0" z="0" w="0"/>
+			<offset x=".26" y="0" z="-.02"/>
+		</capsule>
+		<capsule mass=".05" length=".08" diameter=".05" name="grip">
+			<rotate x="0" y="0" z="0" w="0"/>
+			<offset x="-.05" y="0" z="0"/>
+		</capsule>
+	</model>
+	<model type="1" weapon="3" name="mas">
+		<capsule mass="6" length=".74" diameter=".05" name="frame">
+			<rotate x="0" y="1" z="0" w="-90"/>
+			<offset x="-.15" y="0" z=".3"/>
+		</capsule>
+		<capsule mass="1" length=".14" diameter=".05" name="clip">
+			<rotate x="0" y="0" z="0" w="0"/>
+			<offset x=".26" y="0" z="-.02"/>
+		</capsule>
+		<capsule mass=".05" length=".14" diameter=".05" name="grip">
+			<rotate x="0" y="0" z="0" w="0"/>
+			<offset x="0" y="0" z="0"/>
+		</capsule>
+	</model>
+	<model type="9" name="lmg">
+		<capsule mass="3" length=".15" diameter=".08" name="butt">
+			<offset x="-.35" y="0" z="0"/>
+		</capsule>
+		<capsule mass="4" length=".15" diameter=".08" name="grip">
+			<offset x="0" y="0" z="0"/>
+		</capsule>
+		<capsule mass="4" length=".25" diameter=".08" name="clip">
+			<offset x=".08" y="0" z=".2"/>
+		</capsule>
+		<capsule mass="3" length=".15" diameter=".08" name="barrel">
+			<offset x=".8" y="0" z=".05"/>
+		</capsule>
+	</model>
+	<model type="10" name="mg34">
+		<capsule mass="3" length=".2" diameter=".1" name="grip"/>
+		<capsule mass="3" length=".2" diameter=".2" name="butt">
+			<offset x="-.35" y="0" z=".05"/>
+		</capsule>
+		<capsule mass="2" length=".07" diameter=".08" name="clip">
+			<offset x=".2" y=".1" z=".1"/>
+		</capsule>
+		<capsule mass="4" length=".07" diameter=".08" name="frame">
+			<offset x=".2" y="0" z=".1"/>
+		</capsule>
+		<capsule mass="2" length=".03" diameter=".05" name="barrel">
+			<offset x=".4" y="0" z=".1"/>
+		</capsule>
+		<capsule mass="2" length=".03" diameter=".1" name="tip">
+			<offset x=".65" y="0" z=".05"/>
+		</capsule>
+	</model>
+	<model type="4" name="grenade" damp="true">
+		<capsule mass="5" length=".1" diameter=".05" name="body">
+			<rotate x="0" y="0" z="0" w="0"/>
+			<offset x="0" y="0" z="0"/>
+		</capsule>
+	</model>
+	<model type="4" weapon="12" name="degrenade" damp="true">
+		<capsule mass="5" length=".35" diameter=".07" name="body">
+			<rotate x="0" y="0" z="0" w="0"/>
+			<offset x="0" y="0" z=".03"/>
+		</capsule>
+	</model>
+	<model type="4" weapon="20" name="desmoke" damp="true">
+		<capsule mass="5" length=".35" diameter=".07" name="body">
+			<rotate x="0" y="0" z="0" w="0"/>
+			<offset x="0" y="0" z=".03"/>
+		</capsule>
+	</model>
+	<model type="3" name="pistol">
+		<capsule mass="5" length=".20" diameter=".05" name="frame">
+			<rotate x="0" y="1" z="0" w="90"/>
+			<offset x=".08" y="0" z=".08"/>
+		</capsule>
+		<capsule mass="1" length=".13" diameter=".05" name="grip">
+			<rotate x="0" y="0" z="0" w="0"/>
+			<offset x="-.05" y="0" z=".02"/>
+		</capsule>
+	</model>
+	<model type="8" name="knife">
+		<capsule mass="5" length=".32" diameter=".05" name="body">
+			<rotate x="0" y="0" z="0" w="0"/>
+			<offset x="0" y="0" z=".08"/>
+		</capsule>
+	</model>
+	<model type="13" name="map">
+		<capsule mass="2" length=".3" diameter=".1" name="left">
+			<rotate x="0" y="0" z="0" w="0"/>
+			<offset x=".035" y="0" z="0"/>
+		</capsule>
+		<capsule mass="2" length=".3" diameter=".1" name="right">
+			<rotate x="0" y="0" z="0" w="0"/>
+			<offset x=".035" y="0" z="0"/>
+		</capsule>
+	</model>
+	<model type="7" name="binocs">
+		<capsule mass="2" length=".17" diameter=".1" name="left">
+			<rotate x="0" y="0" z="0" w="0"/>
+			<offset x="0" y=".08" z="0"/>
+		</capsule>
+		<capsule mass="2" length=".17" diameter=".1" name="right">
+			<rotate x="0" y="0" z="0" w="0"/>
+			<offset x="0" y="0" z="0"/>
+		</capsule>
+	</model>
+	<model type="6" name="satchel">
+		<capsule mass="2" length=".2" diameter=".1" name="left">
+			<rotate x="0" y="0" z="0" w="0"/>
+			<offset x="0" y=".05" z="0"/>
+		</capsule>
+		<capsule mass="2" length=".2" diameter=".1" name="right">
+			<rotate x="0" y="0" z="0" w="0"/>
+			<offset x="0" y=".15" z="0"/>
+		</capsule>
+	</model>
+	<model type="12" name="atr">
+		<capsule mass="30" length="1.6" diameter=".16" name="frame">
+			<!-- rotate x="0" y="1" z="0" w="90"/ -->
+			<offset x=".5" y="0" z=".03"/>
+		</capsule>
+		<!--
+		<capsule mass="4" length=".2" diameter=".1" name="butt">
+			<offset x="-.5" y="0" z=".08"/>
+		</capsule>
+		<capsule mass="3" length=".2" diameter=".1" name="clip">
+			<offset x=".3" y="0" z=".2"/>
+		</capsule>
+		<capsule mass="3" length=".15" diameter=".1" name="rest">
+			<offset x=".6" y="0" z=".025"/>
+		</capsule>
+		<capsule mass="3" length=".05" diameter=".05" name="tip">
+			<offset x="1.1" y="0" z=".2"/>
+		</capsule>
+		-->
+	</model>
+</colliders>

@@ -1,0 +1,32 @@
+# created 10/25/05 by Hatch
+# 88mm AP for Tiger tank (post 1942 ammo)
+
+# 9.65kg 88mmKwK36L56 AP shell
+
+type = ballistic
+diameter = .088
+weight = 9.39
+velocity = 800
+tracertime = 7.9
+object = bullet1
+explosive = 779442
+# .169 Kg (TNT)
+
+fuzetime = 0.002
+bc = 3.6
+lifetime = 8.0
+ricochetangle = 87
+modelspall = 1
+penetrationconstant = 0.00000362
+dontdisplayfirstframe = 1
+
+numshrapnelpieces = 100
+totalshrapnelmass = 9.4
+
+explosionsoundnear = sounds\smlcloseexp.wav
+explosionsoundfar = sounds\smlfarexp.wav
+nearfardistance = 300
+
+muzzleflash = 3
+hiteffect = smallcannon
+tracerscale = 1.8

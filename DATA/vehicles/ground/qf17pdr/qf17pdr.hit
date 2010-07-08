@@ -1,0 +1,56 @@
+
+# Q.F. 17Pdr 76.2mm Hit file - Doc. (13th Dec.2006)
+
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 10000
+
+#External
+
+d_lftwheel,8,0,0
+d_rghtwheel,8,0,0
+d_basearc,25,0,0
+d_gunsheild,16,0,0
+d_gunbase,25,0,0
+d_breech,115,0,0,0
+d_gunbarrel,25,0,0,0,30000
+d_lftaxle,15,0,0
+d_rghtaxle,15,0,0
+d_mainaxle,15,0,0
+d_lftarm,8,0,0
+d_rghtarm,8,0,0
+
+#Internal
+
+d_legs-c1,1,0,0
+d_torso-c1,1.5,0,0
+d_larm-c1,0.5,0,0
+d_head-c1,2.5,0,0
+d_legs-c2,1,0,0
+d_arms-c2,1,0,0
+d_torso-c2,1.5,0,0
+d_head-c2,0.5,0,0

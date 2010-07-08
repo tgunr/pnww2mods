@@ -1,0 +1,464 @@
+<?xml version="1.0"?>
+<view id="tutorial" x="0" y="0" width="1024" height="768" acceptmouseclick="false" layer="53" onupdate="doUpdate()">
+	<include file="classes/CycleTimer.uixml"/>
+	<include file="classes/TreeControl2.uixml"/>
+	<include file="classes/ListControl.uixml"/>
+	<include file="classes/FadeView.uixml"/>
+	<include file="lib/common.uixml"/>
+	<include file="lib/tutorial.uixml"/>
+		
+	<view id="tut-goals" width="250" y="0" rtop="100" rright="5" acceptmouseclick="false">
+		<text id="tom" x="5" height="20" rright="5" rtop="5" style="color: #FFFFFF;"
+			fontshadowx=".08" fontshadowy="-.08" moveondrag="no" acceptmouseclick="false"/>
+		<text id="tom-value" x="5" height="20" rright="5" rtop="35" style="color: #FF0000;"
+			fontshadowx=".08" fontshadowy="-.08" moveondrag="no" acceptmouseclick="false"/>
+		<text id="damages" x="5" height="20" rright="5" rtop="70" style="color: #FFFFFF;"
+			fontshadowx=".08" fontshadowy="-.08" moveondrag="no" acceptmouseclick="false"/>
+		<text id="damages-value" x="5" height="20" rright="5" rtop="105" style="color: #FF0000;"
+			fontshadowx=".08" fontshadowy="-.08" moveondrag="no" acceptmouseclick="false"/>
+		<text id="captures" x="5" height="20" rright="5" rtop="140" style="color: #FFFFFF;"
+			fontshadowx=".08" fontshadowy="-.08" moveondrag="no" acceptmouseclick="false"/>
+		<text id="captures-value" x="5" height="20" rright="5" rtop="175" style="color: #FF0000;"
+			fontshadowx=".08" fontshadowy="-.08" moveondrag="no" acceptmouseclick="false"/>
+	</view>
+	
+	<text id="tut-message" x="0" width="100" height="20" rtop="200"
+		maxwidth="500" fontshadowx=".08" fontshadowy="-.08"
+		style="color: #FFFFFF; font-size: +3; background-color: #00000088; border-width: 5; border-height: 5; border-color: #3e5248; border-size: 1;"
+		moveondrag="no" acceptmouseclick="false"/>
+	<text id="tut-quick-message" x="0" y="0" width="0" height="0"
+		maxwidth="500" fontshadowx=".08" fontshadowy="-.08"
+		style="color: #FFFFFF; font-size: +5;"
+		moveondrag="no" acceptmouseclick="false"/>
+	
+	<script>
+		<!--
+			
+			var initialized		= false;
+			var targetView		= null;
+			var goalsView		= window.findview("tut-goals");
+			var messageView		= window.findview("tut-message");
+			var fadeView		= new FadeView("tut-quick-message", 5000);
+			var canGraduate		= true;
+			var completed		= true;
+			var currentAlert	= null;
+			var map				= null;
+			var	capturePercent	= 0;
+			
+			function InitTutorial()
+			{
+				//game.consoleclear();
+				
+				consoleprint("Initing win from lua script!\n");
+				
+				messageView.visible = false;
+				
+				TutAddCallback("oncontinue", OnContinue);
+				TutAddCallback("addmessage", OnAddMessage);
+				TutAddCallback("addwaypoint", OnAddWaypoint);
+				TutAddCallback("removewaypoint", OnRemoveWaypoint);
+				TutAddCallback("addalert", OnAddAlert);
+				//TutAddCallback("tutcompleted", OnTutorialCompleted);
+			}
+			
+			function InitWin()
+			{
+				if(initialized) return;
+				initialized = true;
+				
+				consoleprint("Initing combat tutorial hud\n");
+				
+				completed = TutIsComplete(tutContent);
+				
+				if(tutContent == null || tutContent.graduate == "false")
+					canGraduate = false;
+				
+				if(completed)
+					canGraduate = false;
+					
+				initGoalView("tom");
+				initGoalView("damages");
+				initGoalView("captures");
+				
+				consoleprint("Done initing combat tutorial hud\n");
+			}
+			
+			function initGoalView(id)
+			{
+				var label = goalsView.findview(id);
+				var value = goalsView.findview(id + "-value");
+				
+				if(tutContent[id] != null)
+				{
+					var loc = tutContent.getloc(id);
+					
+					if(loc != null)
+						label.text = loc.toUpperCase(); 
+				}
+				else
+				{
+					label.visible = false;
+					value.visible = false;
+				}
+			}
+			
+			function OnContinue()
+			{
+				if(currentAlert != null && currentAlert.modal)
+					currentAlert.SetExpired();
+			}
+			
+			function OnAddAlert(alert)
+			{
+				consoleprint("Adding alert: " + alert.id + "/" + alert.message + "\n");
+				
+				if(currentAlert != null)
+					currentAlert.Expire();
+				
+				currentAlert = alert;
+				currentAlert.Show(messageView, true);
+				
+				if(initTutMap())
+				{
+					var bid 		= currentAlert.BaseID();
+					var parts		= new Array();
+					var scale 		= parseFloat(TutGetLoc(bid + ".scale", true));
+					var position 	= TutGetLoc(bid + ".position", true);
+					var selection 	= TutGetLoc(bid + ".selection", true);
+					var mouse 		= TutGetLoc(bid + ".mouse", true);
+					
+					if(position != "")
+					{
+						parts = position.split(",");
+						
+						var x 		= parseFloat(parts[0]);
+						var y 		= parseFloat(parts[1]);
+						var pan		= (parts.length > 2 && parts[2] == "false") ? false: true;
+						
+						setMapPos(x, y, scale, pan);
+					}
+					else if(!isNaN(scale))
+					{
+						setMapScale(scale);
+					}
+					
+					if(selection != "")
+					{
+						parts = selection.split(",");
+						
+						var cp 		= parts[0];
+						var fac 	= (parts.length > 1) ? parts[1]: "";
+						var jump	= (parts.length > 2 && parts[2] == "true") ? true: false;
+						
+						setMapSelection(cp, fac, jump);
+					}
+					
+					if(mouse != "")
+						setMapAcceptsMouse((mouse == "true") ? true: false);
+					
+					OnShowMap();
+				}
+				else
+				{
+					OnHideMap();
+				}
+			}
+			
+			function OnAddWaypoint(name)
+			{
+				consoleprint("Adding waypoint " + name + " 2\n");
+				
+				if(targetView != null)
+					targetView.close();
+				
+				var hud = game.findview("hud");
+				if(hud == null) return;
+				
+				var waypoint = tutWaypoints[name];
+				var lname = getlocstring("waypoints." + name);
+				
+				if(lname == null || lname == "" || lname.charAt(0) == "?")
+					lname = name;
+				
+				var xml = '<view id="' + lname + '" class="target" x="0" y="0" width="1024" height="768" style="color: #FFFFFFDD; background-color: #000000AA; border-color: #3e5248;"/>';
+				//var xml = '<view id="' + name + '" class="target" x="0" y="0" width="1024" height="768" style="color: #FFFFFFDD; background-color: #000000AA; border-color: #BFE2CEAA;"/>';
+				
+				targetView = hud.addview(xml);
+				if(targetView == null) return;
+				
+				targetView.name			= lname;
+				targetView.width		= hud.width;
+				targetView.height		= hud.height;
+				targetView.targettex 	= "ui/textures/targeticon1.bmp";
+				targetView.arrowtex 	= "ui/textures/arrow.dds";
+				targetView.targetsize 	= 40;
+				targetView.tx 			= waypoint.x;
+				targetView.ty 			= waypoint.y;
+				targetView.tz 			= waypoint.z - 1;
+				targetView.acceptsmouse = false;
+				targetView.modal		= false;
+			}
+			
+			function OnRemoveWaypoint(name)
+			{
+				if(targetView != null)
+					targetView.close();
+				
+				targetView = null;
+			}
+			
+			function OnTutorialCompleted()
+			{
+				if(canGraduate && !completed && !TutIsComplete(tutContent))
+				{
+					//TutSetCompleted(tutContent.handler, true);
+					showOk(tutContent.getloc("graduated"));
+					completed = true;
+				}
+			}
+			
+			function setCombatStatus(tom, captures, damages)
+			{
+				messageView.visible = false;
+				
+				InitWin();
+				
+				var tomComplete = false;
+				var capComplete = false;
+				var damComplete = false;
+				
+				// convert to ints
+				tom	= parseInt(tom);
+				cap	= parseInt(captures);
+				dam = parseInt(damages);
+				
+				targetTom = parseInt(tutContent.tom) * 60;
+				targetCap = parseInt(tutContent.captures);
+				targetDam = parseInt(tutContent.damages);
+				
+				if(tom >= targetTom)	tomComplete = true;
+				if(cap >= targetCap)	capComplete = true;
+				if(dam >= targetDam)	damComplete = true;
+				
+				var finComplete = (tomComplete || capComplete || damComplete);
+				
+				// complete the tutorial if one of these hit
+				if(canGraduate && !completed && finComplete)
+					OnTutorialCompleted();
+				
+				// update the views
+				formatScore("timed", "tom-value", (tomComplete || finComplete), tom, targetTom, formatTime);
+				formatScore("captured", "captures-value", (capComplete || finComplete), cap, targetCap);
+				formatScore("damaged", "damages-value", (damComplete || finComplete), dam, targetDam);
+			}
+			
+			function setCaptureStatus(percent)
+			{
+				var hud = game.findview("hud");
+				if(hud == null) return;
+				
+				capturePercent = percent;
+				
+				//game.chatprint("Capture Percentage is " + percent);
+				
+				if(capturePercent > 0)
+				{
+					hud.setCaptureCallback(captureCallback);
+				}
+				else
+				{
+					hud.setCaptureCallback(null);
+				}
+			}
+			
+			function captureCallback(fac)
+			{
+				var state = new Object();
+				
+				state.valid 			= true;
+				state.stage 			= 2;
+				state.capturable 		= true;
+				state.pending			= false;
+				state.pendingseconds	= 0;
+				state.progress			= capturePercent * 100;
+				state.rate				= 1;
+				
+				if(state.progress >= 100)
+				{
+					state.progress 	= 99.9
+					state.rate		= 0;
+				}
+				
+				return state;
+			}
+			
+			function doUpdate()
+			{
+				TutUpdate(currentAlert);
+				
+				if(targetView != null)
+					targetView.update();
+					
+				fadeView.update();
+			}
+			
+			function OnAddMessage(message)
+			{
+				fadeView.init(message);
+			}
+			
+			// in seconds
+			function formatScore(type, name, complete, current, total, formatter)
+			{
+				var v = goalsView.findview(name);
+				
+				if(v != null)
+				{
+					if(!complete)
+					{
+						var cFormat = (formatter != null) ? formatter(current): current;
+						var tFormat = (formatter != null) ? formatter(total): total;
+						
+						v.text = getVariableLocString("tutorials.score." + type, cFormat, tFormat);
+						v.setstyleproperty("color", (complete) ? "#00FF00": "#FF0000");
+					}
+					else
+					{
+						v.text = getlocstring("tutorials.complete");
+						v.setstyleproperty("color", "#00FF00");
+					}
+				}
+			}
+			
+			function formatTime(s)
+			{
+				var minutes = "0";
+				var seconds = "00";
+				
+				if(s > 0)
+				{
+					if(s >= 60)
+					{
+						var m = Math.floor(s / 60);
+						s -= m * 60;
+						minutes = m;
+					}
+					
+					seconds = (s < 10) ? "0" + s: s;
+				}
+				
+				return minutes + ":" + seconds;
+			}
+			
+			function setMapToSync()
+			{
+				map.mgr.MapToSync();
+			}
+			
+			function setMapPos(x, y, scale, pan)
+			{
+				game.consoleprint("Setting map pos to " + x + "," + y + " at " + scale + " with " + pan + "\n");
+				
+				if(!isNaN(x) && x > 0 && !isNaN(y) && y > 0)
+				{
+					if(isNaN(scale) || scale == 0)
+						scale = map.scale;
+					
+					map.mgr.setCenterMe(false);
+					map.mgr.setPosition(map.getposition(x, y), pan, scale);
+					map.mgr.MapToSync();
+				}
+			}
+			
+			function setMapScale(scale)
+			{
+				game.consoleprint("Setting map scale to " + scale + "\n");
+				
+				if(!isNaN(scale) && scale > 0)
+				{
+					map.mgr.setPosition(map.position, true, scale);
+					map.mgr.MapToSync();
+				}
+			}
+			
+			function setMapCP(to)
+			{
+				var cp = game.findview("mapcp");
+				
+				var index = parseInt(to);
+				
+				if(cp != null && cp.mgr.selected != index)
+				{
+					if(index >= 0)
+						cp.mgr.buttons.value = index;
+					
+					cp.mgr.select(false);
+				}
+			}
+			
+			function setMapSelection(cp, fac, jump)
+			{
+				if(map.mgr != null)
+				{
+					game.consoleprint("Setting map selection!\n");
+					
+					var strat = map.findstratob(cp, fac);
+					
+					if(strat != null)
+					{
+						game.consoleprint("Found strat: " + strat.name + "\n");
+						
+						map.mgr.setSelection(strat, true);
+						
+						if(jump)
+						{
+							game.consoleprint("Jump is true!\n");
+							map.mgr.jumpTo(strat);
+						}
+					}
+				}
+			}
+			
+			function setMapAcceptsMouse(ok)
+			{
+				var bval = !((ok == true || ok == "true") ? true: false);
+				
+				window.acceptsmouse = bval;
+				window.modal = bval;
+			}
+			
+			function initTutMap()
+			{
+				map	= game.findview("mapview");
+				return (map != null && map.visible) ? true: false;
+			}
+			
+			function OnShowMap()
+			{
+				if(canGraduate && !messageView.visible)
+					goalsView.visible = false;
+				
+				messageView.x		= scaleX(754);
+				messageView.y 		= scaleY(240);
+				messageView.width 	= scaleX(180);
+				messageView.height 	= scaleY(350);
+			}
+			
+			function OnHideMap()
+			{
+				if(canGraduate && !messageView.visible)
+					goalsView.visible = true;
+				
+				messageView.x		= scaleX(300);
+				messageView.y 		= scaleY(518);
+				messageView.width 	= scaleX(424);
+				messageView.height 	= scaleY(80);
+				
+				messageView.resizetotext();
+				messageView.y = window.height - messageView.height - 130;
+			}
+			
+		-->
+	</script>
+</view>
+

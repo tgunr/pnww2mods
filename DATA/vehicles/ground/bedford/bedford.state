@@ -1,0 +1,45 @@
+
+#Bedford State file
+
+#DOF state type, name of variable, name, time to articulate
+#multiple states requier multiple lines
+
+dofstate 1 hatchstate1 hatch 1 2000
+
+#SMOKE: state type, name of variable, DOF name, smoke type, number
+
+sound 1 enginesound1 enginesound 1
+smokestate 1 fuelfire1 fleak1 fuelfire 1
+smokestate 1 fuelfire1_1 fleak1_1 fuelfire 2
+smokestate 1 fleak1 fleak1 fleak 1
+smokestate 1 fleak1_1 fleak1_1 fleak 2
+smokestate 1 glycolleak1 gleak glycolleak 1 1
+smokestate 1 enginefire1 efire enginefire 1
+smokestate 1 enginesmoke1 esmoke enginesmoke 1
+smokestate 1 exhaust1 eexh1l exhaust 1
+dofstate 1 bombbaydoor bombbaydoor 2000
+dofstate 1 canopystate1 canopy 1 1350
+dofstate 1 canopystate2 canopy 2 5000
+dofstate 1 canopystate3 canopy 3 1350
+
+# tread dust
+smokestate 1 treaddust1 tdustl1 treaddust 1
+smokestate 1 treaddust2 tdustl2 treaddust 2
+smokestate 1 treaddust3 tdustr1 treaddust 3
+smokestate 1 treaddust4 tdustr2 treaddust 4
+
+# Crash and burn stuff
+
+effect 1 crashexplosion crashexplosion
+
+effect 1 crashejectriders crashejectriders
+
+# visdamage <vis damage group name> <mass object name(in .mass file)> <emitter object> <ejectspeed>
+visdamage backleftwheel mass_backleftwheel backleftwheelcrap 20
+visdamage backrightwheel mass_backrightwheel backrightwheelcrap 20
+visdamage frontrightwheel mass_frontrightwheel frontrightwheelcrap 20
+visdamage frontleftwheel mass_frontleftwheel frontleftwheelcrap 20
+visdamage fuel mass_fuel fleak1 30
+
+ 
+visdamage hulk

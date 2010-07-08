@@ -1,0 +1,51 @@
+# basic vehicle data file for bell14a
+physicsversion = 1
+vehicletype = ww2propplane
+vehiclename = bell14a
+vehicleobjectname = p39d1
+componentfile = bell14a.cmp
+enginefile = bell14a.eng
+airfoilfile = bell14a.air
+positionfile = bell14a.pos
+numberofflappositions= 1
+# next 3 are in kph
+aileronmaxspeed = 382
+ruddermaxspeed = 475
+elevatormaxspeed = 362
+# next 3 are in mach speed
+aileroncompressspeed = 0.78
+ruddercompressspeed = 0.87
+elevatorcompressspeed = 0.87
+# response times sec (full force)
+aileronresponsetime = 0.2
+#elevatorresponsetime = 0.20 (altered for testing v1.29 beta)
+elevatorresponsetime = 1.25
+rudderresponsetime = 2.5
+#rudderresponsetime = 0.40 (altered for testing v1.29 beta)
+throttleresponsetime = 1.0
+
+# static tabs, e.g. the tabs that are set on the ground
+# trim the plane for cruise flight, in an analysis FE
+# and copy the trim settings into the following fields
+ailerontabstatic = -0.025
+elevatortabstatic = 0.156
+ruddertabstatic = 0.038
+
+# tab effects, ratio of tab force at full tab deflection to total surface force
+ailerontabratio = 0.1 
+elevatortabratio = 0.1
+ruddertabratio = 0.1
+# opposing movement tab effects, ratio of tab force at full tab deflection to total surface force
+aileronspringtabratio = 0
+elevatorspringtabratio = 0
+rudderspringtabratio = 0
+
+stallsound = sounds\stall.wav
+gearsound = sounds\pgear.wav
+flapssound = sounds\pflaps.wav
+windsound = sounds\wind.wav
+
+flapdeployspeed = 0.2
+geardeployspeed = .1
+canopyopenspeed = 0.3
+hatchopenspeed = 0.5

@@ -1,0 +1,24 @@
+# Vickers 12.7mm (.50 Cal) MG
+# for Vickers Mk VI B
+# Created 07/31/02 - bloo
+
+type = ballistic
+diameter = .0127
+weight = 0.0376
+ammoweight = 0.09
+velocity = 780
+tracertime = 0.0
+object = bullet1
+stretchobject = 1
+explosive = 0.0
+fuzetime = 0.000
+bc = 0.351
+# Place holder
+lifetime = 5.0
+penetrationconstant = 0.0000003355
+# Place holder
+ricochetangle = 89
+dontdisplayfirstframe = 1
+muzzleflash = 1
+hiteffect = heavymachinegun
+tracerscale = 5

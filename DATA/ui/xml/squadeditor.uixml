@@ -1,0 +1,245 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<window id="squadeditor" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
+	style="background-color: #00000077;" layer="90" onmousedown="editList.mgr.hideList()">
+	<include file="lib/common.uixml"/>
+	<include file="classes/ListControl.uixml"/>
+	<include file="classes/DDListControl.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+	<view id="squadeditor-viewer" x="350" y="400" width="350" height="200" moveondrag="no" acceptmouseclick='false'
+		 onmousedown="editList.mgr.hideList()" style="background-color: #00000088;
+							border-sides: ui/textures/hud/border_side.bmp;
+							border-corner: ui/textures/hud/border_corner.bmp;
+							border-width: 4;
+							border-height: 4;">
+		
+		<text id="editLabel" x="10" rtop="10" height="45" rright="10" style="color: #e9e3d9ff; background-color: #ffffff11"/>		
+		
+		<view id="editTypes" x="10" y="50" rright="10" rtop="50" acceptmouseclick='false'>
+			<textcontrol id="editCaption" x="10" height="20" rright="10" rtop="10" acceptsfocus="true" maxlength="255"
+				style="font-size: +2; color: #FFFFFF; background-color: #000000; border-color: #BFE2CE;"/>
+			<text id="editText" x="10" y="10" rright="10" rtop="10" acceptsfocus="true"
+				style="font-size: +2; color: #FFFFFF; background-color: #000000; border-color: #BFE2CE; border-width: 3; border-height: 3; border-size-right: 10;">
+				<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+			</text>
+			<caption id="editList" height="20" x="10" rtop="10" width="150"
+			 	onclick="if(this.mgr) this.mgr.toggleList()" onhide="if(this.mgr) this.mgr.hideList()"
+			 	style="color: #BFE2CE; border-color: #3e5248; border-size: 1;">
+			 	 <image rright="5" rtop="5" src="ui/textures/map-scaledown-off.bmp" width="10" height="10" acceptmouseclick="false"/>
+			</caption>
+		</view>
+		
+		<button x="20" y="10" width="150" height="25" label="&popup.cancel;" onclick="doEditAction(false)"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onmouseenter="this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+		<button x="180" y="10" width="150" height="25" label="&widgets.prefs.save;" onclick="doEditAction(true)" onupdate="checkSaveButton(this)"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onmouseenter="this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+	</view>
+	<script>
+		<!--
+		
+		var edit 		= null;
+		var editor		= null;
+		var squad		= game.player.client.squad;
+		var editLabel	= findview("editLabel");
+		var editCaption	= findview("editCaption");
+		var editText	= findview("editText");
+		var editList	= findview("editList");
+		var saveTimer	= new CycleTimer(500);
+		
+		function initEditor(e)
+		{
+			edit = e;
+			
+			if(edit == "recruiting")
+			{
+				new DDListControl(editList, selectlist, 50, true);
+				initList(editList.mgr);
+				editCaption.visible = false;
+				editText.height -= 30;
+				editText.text = squad.slogan;
+			}
+			else if(edit == "voting" || edit == "language")
+			{
+				new DDListControl(editList, selectlist, 50, true);
+				initList(editList.mgr);
+				editCaption.visible = false;
+				editText.visible = false;
+			}
+			else if (edit == "description" || edit == "motd")
+			{
+				editList.visible = false;
+				editCaption.visible = false;
+				editText.text = squad[edit];
+			}
+			else
+			{
+				editList.visible = false;
+				editText.visible = false;
+				editCaption.text = squad[edit];
+			}
+			
+			editLabel.text = getlocstring("common.squads.edit." + edit);
+		}
+		
+		function initList(list)
+		{
+			list.clearRows(true);
+			
+			if(edit == "language")
+			{
+				var options = game.settings.languages;
+				
+				if(game.region == 5) // china
+				{
+					list.addOption(getlocstring("widgets.prefs.groups.game.language." + options[game.region]), game.region, game.region);
+				}
+				else
+				{
+					for(var i = 0; i < options.length - 1; i++)
+						list.addOption(getlocstring("widgets.prefs.groups.game.language." + options[i]), i, squad[edit]);
+				}
+			}
+			else
+			{
+				var options = new Array(true, false);
+				
+				for(var i = 0; i < options.length; i++)
+				{
+					var display = (options[i]) ? getlocstring("common.squads.edit.option.on"):
+												 getlocstring("common.squads.edit.option.off");
+					list.addOption(display, options[i], squad[edit]);
+				}
+			}
+			
+			list.resize();
+			list.hideList();
+		}
+		
+		function selectlist()
+		{
+			// do nothing	
+		}
+		
+		function doEditAction(confirm)
+		{
+			soundPlayClick();
+			
+			var modified = false;
+			
+			if(confirm)
+			{
+				if(edit == "night")
+				{
+					var night = parseSquadNight(editCaption.text);
+					
+					if(night != null && night != squad.night)
+					{
+						squad.updatefield("night", night);
+						modified = true;
+					}
+				}
+				else if(edit == "voting" || edit == "language" || edit == "recruiting")
+				{
+					var selected = editList.mgr.data;
+					
+					if(squad[edit] != selected)
+					{
+						squad[edit] = selected;
+						modified = true;
+					}
+					
+					if(edit == "recruiting" && editText.text != squad["slogan"])
+					{
+						squad.updatefield("slogan", editText.text);
+						modified = true;
+					}
+				}
+				else if (edit == "description" || edit == "motd")
+				{
+					if(editText.text != null && editText.text != squad[edit])
+					{
+						squad.updatefield(edit, editText.text);
+						modified = true;
+					}
+				}
+				else if(editCaption.text != squad[edit])
+				{
+					squad.updatefield(edit, editCaption.text);
+					modified = true;
+				}
+				
+				if(modified)
+					showOk(getlocstring('common.squads.details.edited'));
+			}
+			
+			window.close();
+		}
+		
+		function parseSquadNight(input)
+		{
+			var nightRE = /^([^\s]+)\s+(\d\d?):00\s+([\+\-\d]+):00\s+UTC$/gi;
+			var matched	= null;
+			
+			if(nightRE.test(input))
+			{
+				var dow 	= -1;
+				var hod		= RegExp.$2;
+				var tz		= RegExp.$3;
+				var dowName = RegExp.$1.toLowerCase();
+				
+				for(var i = 0; i < 7; i++)
+				{
+					var weekDay = getlocstring('common.squads.details.night.dow' + i);
+					
+					weekDay = weekDay.replace(/\s/g,'');
+					weekDay	= weekDay.toLowerCase();
+					
+					if(weekDay == dowName)
+					{
+						dow = i;
+						break;
+					}
+				}
+				
+				if(tz.charAt(0) == '+')
+					tz = tz.substring(1, tz.length);
+				
+				if(dow != -1 && hod >= 0 && hod <= 23 && tz >= -23 && tz <= 23)
+					matched = dow + "," + hod + "," + tz;
+			}
+						
+			return matched;
+		}
+		
+		function checkSaveButton(button)
+		{
+			if(saveTimer.run())
+			{
+				var modified = false;
+				
+				if(edit == "voting" || edit == "language" || edit == "recruiting")
+				{
+					var selected = editList.mgr.data;
+					
+					if(squad[edit] != selected || (edit == "recruiting" && editText.text != squad["slogan"]))
+						modified = true;
+				}
+				else if (edit == "description" || edit == "motd")
+				{
+					if(editText.text != null && editText.text != squad[edit])
+						modified = true;
+				}
+				else if(editCaption.text != squad[edit])
+				{
+					modified = true;
+				}
+				
+				button.enabled = modified;
+			}
+		}
+		
+		// -->
+	</script>
+</window>

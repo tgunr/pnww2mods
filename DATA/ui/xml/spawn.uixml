@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<view id="spawn" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
+	onshow="setBackground(this)" onupdate="doFeedback()" aspectalign="center">
+	<include file="lib/common.uixml"/>
+	<text x="40" y="260" height="275" width="450" acceptfocus="no" style="color: #FFFFFF; " onshow="this.text = getTip()"/>
+	<caption id="feedback-caption" x="20" y="10" width="900" height="50" style="color: #00000044; font-size: 20;" onshow="this.label = getlocstring('spawn.loading')"/>
+	<script>
+		<!--
+		
+		var feedbackCaption 	= findview("feedback-caption");
+		var updateTimer			= new CycleTimer(1000);
+		
+		function setBackground(view)
+		{
+			var index = Math.round(Math.random() * 13) + 1;
+			
+			if(index < 1 || index > 14)
+				index = 1;
+			
+			if(index < 10)
+				index = "0" + index;
+			
+			view.setstyleproperty("background-image", "ui/textures/test/spawnscreen_" + index + ".bmp");
+		}
+		
+		function doFeedback()
+		{
+			if(updateTimer.run())
+				feedbackCaption.label = feedbackCaption.label + ".";
+		}
+		
+		function getTip()
+		{
+			var index	= game.getcontent("tips/index.xml");
+			var tips	= index.links;
+			var winner 	= Math.round(Math.random() * (tips.length - 1));
+			var tip		= game.getcontent(tips[winner].path); 
+			var text	= (tip) ? tip.body: "";
+			
+			if(game.betarelease == 1)
+				text += "\n\nResource: tips/launch" + winner + ".xml";
+			
+			return text;
+		}
+		
+		-->
+	</script>
+</view>
+	

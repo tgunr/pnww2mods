@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<view id="content" x="0" y="0" width="425" height="358" viewportwidth="1024" viewportheight="768" aspectalign="left"
+	onshow="showContent(this)">
+	<include file="lib/content.uixml"/>
+	<text id="display" x="0" y="0" rright="0" rtop="0" acceptfocus="no" followall="yes" style="border-size-right: 10;  color: #e9e3d9ff;">
+		<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+	</text>
+	<script>
+		<!--
+		
+		function showContent(viewer)
+		{
+			showViewer(viewer);
+			viewer.findview("display").text = content.body;
+		}
+		
+		-->
+	</script>
+</view>
+
+

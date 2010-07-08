@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<window id="welcome" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768"
+	style="background-color: #000000BB;" layer="100" aspectalign="center" onshow="initWelcome()">
+	<include file="lib/common.uixml"/>
+	<include file="classes/ListControl.uixml"/>
+	<view id="welcome-popup" x="200" rright="200" rtop="120" height="550" style="background-color: #00000055;
+							border-sides: ui/textures/hud/border_side.bmp;
+							border-corner: ui/textures/hud/border_corner.bmp;
+							border-width: 4;
+							border-height: 4;" moveondrag="yes">
+		<!-- welcome -->
+		<view x="10" rtop="10" width="325" height="130" style="background-color: #ffffff00;" followtop="true">
+			<caption id="welcome-header" x="0" rtop="0" rright="0" height="30" style="color: #BFE2CE; font-size: +1;"/>
+			<text x="10" height="135" rtop="35" rright="10" acceptsfocus="false" style="border-size-right: 10;  color: #e9e3d9;"
+				onshow="this.text = getWelcomeMessage()"/>
+		</view>
+
+		<!-- population status -->
+		<view rright="10" rtop="10" width="270" height="130" style="background-color: #ffffff00;" followtop="true">
+			<caption label="&persona.welcome.population;" x="0" rtop="5" rright="0" height="30" style="color: #BFE2CE; font-size: +1;"/>
+			<image src="ui/textures/test/horiz_underline.bmp" x="0" rtop="20" rright="20" height="12"/>
+			<caption label="&persona.welcome.allied;" x="0" rtop="30" rright="0" height="30" style="color: #ffffff;"/>
+			<caption id="welcome-allies" x="0" rtop="30" rright="20" height="30" style="color: #e9e3d9;" align="right"/>
+			<caption label="&persona.welcome.axis;" x="0" rtop="45" rright="0" height="30" style="color: #ffffff;"/>
+			<caption id="welcome-axis" x="0" rtop="45" rright="20" height="30" style="color: #e9e3d9;" align="right"/>
+		</view>
+
+		<!-- message of the day -->
+		<view x="10" rtop="100" rright="10" height="150" style="background-color: #000000BB;" followtop="true"> <!--  border-color: #3e5248; border-size: 1; -->
+			<caption label="&persona.motd;" x="5" rtop="0" rright="5" height="30" style="color: #BFE2CE; font-size: +2;"/>
+			<image width="16" height="16" rright="5" rtop="5" src="ui/textures/test/edit_icon.bmp"
+				onshow="this.visible = (client.isplaynet) ? true: false" onclick="editCrsMotd()"
+				onmouseenter="this.src = 'ui/textures/test/edit_icon_on.bmp'"
+				onmouseexit="this.src = 'ui/textures/test/edit_icon.bmp'"/>
+			<image src="ui/textures/test/horiz_underline.bmp" x="5" rtop="20" rright="5" height="12"/>
+			<text id="crs-motd" x="10" y="10" rtop="40" rright="10" acceptsfocus="false" style="border-size-right: 10;  color: #e9e3d9;">
+				<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+			</text>
+		</view>
+		
+		<!-- squad message of the day -->
+		<view rtop="270" rright="10" width="300" height="200" style="background-color: #000000BB;" followtop="true"> <!--  border-color: #3e5248; border-size: 1; -->
+			<caption label="&persona.welcome.squad.motd;" x="5" rtop="0" rright="5" height="30" style="color: #BFE2CE; font-size: +2;"/>
+			<caption id="persona-squad-counts" height="15" width="100" rright="5" rtop="10" style="color: #BFE2CE;" align="right" label="1 online / 100 total"/>
+			<image src="ui/textures/test/horiz_underline.bmp" x="5" rtop="20" rright="5" height="12"/>
+			<text id="persona-squad-motd" x="10" y="10" rtop="40" rright="10" acceptsfocus="false" style="border-size-right: 10;  color: #e9e3d9;">
+				<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+			</text>
+		</view>
+
+		<!-- poll of the day -->
+		<view id="potd" x="10" rtop="270" width="300" height="200" style="background-color: #000000BB;" followbottom="true">
+			<caption id="header" label="&persona.potd;" x="5" rtop="0" rright="5" height="30" style="color: #BFE2CE; font-size: +2;"/>
+			<image src="ui/textures/test/horiz_underline.bmp" x="5" rtop="20" rright="5" height="12"/>
+			<text id="potd-question" x="10" height="15" rtop="35" rright="10" acceptsfocus="false" style="color: #e9e3d9;"/>
+			<list id="pollList" x="10" y="10" rtop="55" rright="10" onselect="pollList.clickList(false)" followbottom="true">
+				<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+			</list>
+		</view>
+
+		<!-- caption id="poll_results" label="&persona.welcome.pollresults;"
+			x="5" y="45" height="20" rright="5"  style="color: #FFFFFF;"
+			 onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+			onclick="game.launchurl('&persona.welcome.pollresults.url;');" align="center"/ -->
+
+		<!-- close -->
+		<button x="50" y="10" width="150" height="25" label="&popup.ok;" followbottom="true"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onclick="closeWelcome()" onshow="positionClose(this)" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+	</view>
+	<script>
+		<!--
+		
+		var motd 		= findview("crs-motd");
+		var welcome		= findview("welcome-popup");
+		var header 		= findview("welcome-header");
+		var client 		= game.player.client;
+		var poll 		= client.poll;
+		var pollList	= new ListControl(findview("pollList")); 
+		
+		function initWelcome()
+		{
+			var crsmotd		= client.requestmotd(0);
+			var allies 		= findview("welcome-allies");
+			var axis 		= findview("welcome-axis");
+			var potd		= findview("potd");
+			var question 	= potd.findview("potd-question");
+			var balance		= client.sidebalance;
+			var squad		= client.squad;
+			
+			if(game.globals.voted == null)
+				game.globals.voted = false;
+			
+			if(game.globals.voted)
+				poll = null;
+
+			if(crsmotd != null)
+				motd.text = crsmotd.message;
+				
+			header.label = getlocstring("persona.welcome");
+				
+			if(balance < 0)
+			{
+				allies.setstyleproperty("color","#ffff00");
+				axis.setstyleproperty("color","#00ff00");
+				
+				allies.label 	= getlocstring('persona.list.overpopulated');
+				axis.label 		= getlocstring('persona.list.requesting');
+			}
+			else if(balance > 0)
+			{
+				allies.setstyleproperty("color","#00ff00");
+				axis.setstyleproperty("color","#ffff00");
+				
+				allies.label 	= getlocstring('persona.list.requesting');
+				axis.label 		= getlocstring('persona.list.overpopulated');
+			}
+			else
+			{
+				allies.setstyleproperty("color", "#00ff00");
+				axis.setstyleproperty("color", "#00ff00");
+				
+				allies.label 	= getlocstring('persona.list.balanced');
+				axis.label 		= getlocstring('persona.list.balanced');
+			}
+			
+			if(poll != null && !poll.empty)
+			{
+				question.text = poll.title;
+		  		question.maxwidth = 280;
+				question.resizetotext();
+				
+				if(question.height > 15)
+				{
+				 	consoleprint("Adjusting poll question position\n");
+				 	question.y -= question.height - 15;
+				 	pollList.list.height -= (question.height - 15) + 5;
+		 		}
+
+				consoleprint("Initing poll list\n");
+				
+				pollList.clearRows(true);
+				
+				var options = poll.options;
+				
+				if(options)
+				{
+					consoleprint("Initing " + options.length + " poll options\n");
+
+					for(var i = 0; i < options.length; i++)
+					{
+						var option = options[i];
+						
+						consoleprint("Adding poll option " + i + ". " + option + "\n");
+						
+						var row = "\
+<view id='option" + i + "' width='" + (potd.width - 40) + "' height='16' onmouseenter='pollList.mouseEnter(this)' onmouseexit='pollList.mouseExit(this)'>\
+	<caption x='0' y='0' width='" + (potd.width - 40) + "' height='16' style='color: #e9e3d9ff; ' label='" + (i + 1) + ". " + htmlencode(option) + "'/>\
+</view>";
+						
+						pollList.addRow(i, row);
+					}
+				}
+				
+				consoleprint("Done\n");
+			}
+			else
+			{
+				question.text = getlocstring('persona.potd.empty');
+		  		question.maxwidth = 280;
+				question.resizetotext();
+
+				if(question.height > 15)
+				 	question.y -= question.height - 15;
+
+				pollList.list.visible = false;
+			}
+			
+			if(squad != null)
+			{
+			 	findview('persona-squad-motd').text 	= squad.motd;
+			 	findview('persona-squad-counts').label 	= getVariableLocString('common.squads.counts', squad.onlinecount, squad.totalcount);
+			}
+			else
+			{
+			 	findview('persona-squad-counts').visible = false;
+			 	findview('persona-squad-motd').text = getlocstring('persona.welcome.squad.motd.nosquad');
+			}
+
+			consoleprint("Final Done\n");
+		}
+		
+		function positionClose(button)
+		{
+			var parent = button.parent;
+			button.x = (parent.width/2) - (button.width/2);
+		}
+		
+		function editCrsMotd()
+		{
+			if(client.isplaynet)
+			{
+				soundPlayClick();
+				
+				if(motd.acceptsfocus)
+				{
+					motd.focused = false;
+					motd.acceptsfocus = false;
+					motd.setstyleproperty("background-color", "#00000000");
+					
+					client.setmotd(1, 0, motd.text);
+					var crsmotd = client.requestmotd(0);
+					
+					if(crsmotd != null)
+						motd.text = crsmotd.message;
+				}
+				else
+				{
+					motd.setstyleproperty("background-color", "#FFFFFF22");
+					motd.acceptsfocus = true;
+					motd.focused = true;
+				}
+			}
+		}
+		
+		function getWelcomeMessage()
+		{
+			return getlocstring("persona.welcome" + Math.round(Math.random() * 2));
+		}
+		
+		function closeWelcome()
+		{
+		 	soundPlayClick();
+
+			var vote = pollList.data;
+
+			if(poll != null && !poll.empty)
+			{
+				var options = poll.options;
+
+				consoleprint("Voted: " + vote + "\n");
+
+				if(vote != null && vote >= 0 && vote < options.length)
+				{
+				 	game.globals.voted = true;
+					poll.vote(vote);
+				}
+			}
+
+			var personaWin = game.findview("persona");
+
+			if(personaWin)
+				personaWin.setWelcomed();
+				
+			window.close();
+		}
+		
+		-->
+	</script>
+</window>
+

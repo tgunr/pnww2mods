@@ -1,0 +1,36 @@
+
+# Bofors 40mm Control File
+
+# Commander
+position = 1
+control = radio
+#control = hatchcontrol
+#control = canopycontrol
+control = map
+control = auxsight
+control = towbar
+control = deployweapon
+control = turretraverse
+control = turretelevate
+control = bothbrake
+control = leftbrake
+control = rightbrake
+control = rangefind
+control = atgunleftright
+control = atgunforwardbackwards
+control = hoist
+control = ridetransport
+
+# Main Gunner
+position = 2
+control = radio
+#control = hatchcontrol
+#control = canopycontrol
+control = map
+control = auxsight
+control = primarytrigger
+control = turretraverse
+control = turretelevate
+control = cycleammo
+control = gunsightrangedec
+control = gunsightrangeinc

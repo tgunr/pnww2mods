@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="ju52" type="air" description="Ju 52 Transport" icon="Ju 52">
+<include file="ju52.veh.xml"/>
+<include file="ju52.state.xml"/>
+<include file="ju52.hit.xml"/>
+<include file="ju52.turret.xml"/>
+<include file="ju52.loadout.xml"/>
+<include file="ju52.xsound.xml"/>
+<include file="ju52.control.xml"/>
+<include file="ju52.mass.xml"/>
+<variant id="fr_ju52" shape="fr_ju-52"/>
+<variant id="ju52" shape="ju-52"/>
+<variant id="uk_ju52" shape="uk_ju-52"/>
+</vehicle>

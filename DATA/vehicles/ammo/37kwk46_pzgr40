@@ -1,0 +1,21 @@
+# PzIII 37mm AP40
+# Rev. 4/18/02 - bloo
+
+type = ballistic
+diameter = .037
+weight = 0.368
+velocity = 1020
+tracertime = 4.9
+object = bullet1
+explosive = 0.0
+fuzetime = 0.002
+bc = 0.405
+lifetime = 5.0
+ricochetangle = 87
+modelspall = 1
+penetrationconstant = 0.000001400
+dontdisplayfirstframe = 1
+
+muzzleflash = 3
+hiteffect = incendiarymg
+tracerscale = 3

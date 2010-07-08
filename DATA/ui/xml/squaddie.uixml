@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+<window id="squaddie" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768" style="background-color: #000000BB;" layer="100">
+	<include file="lib/common.uixml"/>
+	<include file="classes/ListControl.uixml"/>
+	<view id="squaddie-popup" x="300" width="400" rtop="175" height="350" style="background-color: #00000055;
+							border-sides: ui/textures/hud/border_side.bmp;
+							border-corner: ui/textures/hud/border_corner.bmp;
+							border-width: 4;
+							border-height: 4;" moveondrag="yes">
+
+		<view id="squaddie-header" x="10" rtop="10" width="380" height="30" followtop="true">
+			<caption id="squaddie-handle" x="0" rtop="5" rright="0" height="15" style="color: #BFE2CE; font-size: +2;"/>
+			<caption id="squaddie-online" x="0" rtop="5" rright="0" height="15" style="color: #BFE2CE; font-size: +2;" align="right"/>
+			<image src="ui/textures/test/horiz_underline.bmp" x="0" rtop="15" rright="0" height="12"/>
+		</view>
+
+		<tabview id="squaddie-details" x="0" y="0" rright="0" rtop="32">
+			<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'>
+				<text x="70" width="300" height="100" rtop="50" style=" color: #e9e3d9ff;" onshow="this.text = getlocstring('brigade.hqtab.missions.empty')"/>
+			</tab>
+			<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'>
+		 		<!-- persona -->
+				<view x="10" rtop="5" width="380" height="30" followtop="true">
+					<caption x="0" rtop="0" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"
+						onshow="this.label = 'PERSONA'"/>
+					<caption id="squaddie-persona" x="0" rtop="0" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
+					<caption x="0" rtop="15" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"
+						onshow="this.label = 'RANK'"/>
+					<caption id="squaddie-rank" x="0" rtop="15" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
+				</view>
+
+		 		<!-- brigade -->
+				<view x="10" rtop="50" width="380" height="60" followtop="true">
+					<caption x="0" rtop="0" rright="0" height="20" style="color: #BFE2CE; font-size: +2;" onshow="this.label = 'BRIGADE'"/>
+					<caption x="0" rtop="0" rright="0" height="20" style="color: #BFE2CE; font-size: +2;" align="right" onshow="this.label = 'JOIN'"/>
+					<image src="ui/textures/test/horiz_underline.bmp" x="0" rtop="12" rright="0" height="12"/>
+					<caption x="0" rtop="25" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"
+						onshow="this.label = 'BRIGADE'"/>
+					<caption id="squaddie-brigade" x="0" rtop="25" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
+					<caption x="0" rtop="40" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"
+						onshow="this.label = 'DIVISION'"/>
+					<caption id="squaddie-division" x="0" rtop="40" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
+				</view>
+
+				<!-- mission -->
+				<view x="10" rtop="120" width="380" height="90" followtop="true">
+					<caption x="0" rtop="0" rright="0" height="20" style="color: #BFE2CE; font-size: +2;" onshow="this.label = 'MISSION'"/>
+					<caption x="0" rtop="0" rright="0" height="20" style="color: #BFE2CE; font-size: +2;" align="right" onshow="this.label = 'JOIN'"/>
+					<image src="ui/textures/test/horiz_underline.bmp" x="0" rtop="12" rright="0" height="12"/>
+					<caption x="0" rtop="25" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"
+						onshow="this.label = 'ORIGIN'"/>
+					<caption id="squaddie-origin" x="0" rtop="25" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
+					<caption x="0" rtop="40" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"
+						onshow="this.label = 'TARGET'"/>
+					<caption id="squaddie-target" x="0" rtop="40" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
+					<caption x="0" rtop="55" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"
+						onshow="this.label = 'TYPE'"/>
+					<caption id="squaddie-type" x="0" rtop="55" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
+					<caption x="0" rtop="70" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"
+						onshow="this.label = 'LEADER'"/>
+					<caption id="squaddie-leader" x="0" rtop="70" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
+				</view>
+
+				<!-- flags -->
+				<view x="10" rtop="225" width="380" height="60" followtop="true">
+					<caption x="0" rtop="0" rright="0" height="20" style="color: #BFE2CE; font-size: +2;" onshow="this.label = 'FLAGS'"/>
+					<image src="ui/textures/test/horiz_underline.bmp" x="0" rtop="12" rright="0" height="12"/>
+					<caption id="squaddie-flags" x="0" rtop="25" rright="0" height="15" style="color: #e9e3d9; font-size: +1;"/>
+				</view>
+
+			</tab>
+		</tabview>
+
+		<!-- close -->
+		<button x="130" y="10" width="150" height="25" label="CLOSE WINDOW" followbottom="true"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onclick="window.close()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+	</view>
+	<script>
+		<!--
+
+		function initSquaddie(squaddie)
+		{
+		 	var handleView 		= findview("squaddie-handle");
+		 	var statusView 		= findview("squaddie-online");
+		 	var detailsView 	= findview("squaddie-details");
+		 	var personaView 	= findview("squaddie-persona");
+		 	var rankView 		= findview("squaddie-rank");
+		 	var brigadeView 	= findview("squaddie-brigade");
+		 	var divisionView 	= findview("squaddie-division");
+		 	var originView 		= findview("squaddie-origin");
+		 	var targetView 		= findview("squaddie-target");
+		 	var typeView 		= findview("squaddie-type");
+		 	var leaderView 		= findview("squaddie-leader");
+		 	var flagsView 		= findview("squaddie-flags");
+
+		 	if(squaddie != null)
+		 	{
+			 	handleView.label = squaddie.handle.toUpperCase() + ", " + getlocstring('common.squads.ranks.rank' + squaddie.squadrank).toUpperCase();
+
+				if(squaddie.online)
+				{
+				 	detailsView.value = 1;
+					statusView.label = "ONLINE";
+					statusView.setstyleproperty("color", "#00FF00");
+
+					if(squaddie.country && squaddie.country.name != "None")
+					{
+					 	personaView.label 	= getCountryBranch(squaddie.country, squaddie.branch);
+					 	rankView.label 		= htmlencode(squaddie.rank.name);
+					}
+					else
+					{
+					 	personaView.label 	= "-";
+					 	rankView.label 		= "-";
+					}
+
+					if(squaddie.brigade != null)
+					{
+					 	brigadeView.label 	= htmlencode(squaddie.brigade.name);
+					 	divisionView.label 	= htmlencode(squaddie.brigade.parent.name);
+					}
+					else
+					{
+					 	brigadeView.label 	= "-";
+					 	divisionView.label 	= "-";
+					}
+
+					if(squaddie.mission != null)
+					{
+					 	originView.label 	= htmlencode(squaddie.mission.origin.name);
+					 	targetView.label 	= htmlencode(squaddie.mission.target.name);
+					 	typeView.label 		= getSquadMissionType(squaddie.mission.origin, squaddie.mission.target);
+					 	leaderView.label 	= htmlencode(squaddie.mission.poster);
+					}
+					else
+					{
+					 	originView.label 	= "-";
+					 	targetView.label 	= "-";
+					 	typeView.label 		= "-";
+					 	leaderView.label 	= "-";
+					}
+					
+					var flags = "";
+					
+					if(squaddie.hc)
+						flags += "High Commander, ";
+
+					if(squaddie.afk)
+						flags += "AFK, ";
+					
+					if(squaddie.spawned)
+						flags += "Spawned, ";
+
+					if(squaddie.leader)
+						flags += "Mission Leader, ";
+
+					if(flags.length > 0)
+					 	flagsView.label = flags.substr(0, flags.length - 2);
+					else
+					 	flagsView.label = "No flags apply";
+				}
+				else
+				{
+					statusView.setstyleproperty("color", "#FF0000");
+				 	statusView.label = "OFFLINE";
+				}
+			}
+		}
+		
+		function getSquadMissionType(missionOrigin, missionTarget)
+		{
+			var missionType = "";
+
+			if(missionOrigin != null && missionTarget != null)
+			{
+				var originSide 	= missionOrigin.country.side;
+				var targetSide 	= missionTarget.country.side;
+
+				if(originSide == targetSide)
+					missionType = (missionTarget.stratclass == "cp") ? getlocstring('common.mission.ad'): getlocstring('common.mission.pd');
+				else
+					missionType = (missionTarget.stratclass == "cp") ? getlocstring('common.mission.aa'): getlocstring('common.mission.pa');
+			}
+			else
+			{
+				missionType = "-";
+			}
+
+			return missionType;
+		}
+
+		-->
+	</script>
+</window>
+

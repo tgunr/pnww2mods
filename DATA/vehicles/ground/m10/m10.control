@@ -1,0 +1,54 @@
+#M10.turret file
+#created 07-05-05 -Hatch.
+
+# Driver
+position = 1
+control = canopycontrol
+control = map
+control = auxsight
+control = leftbrake
+control = rightbrake
+control = bothbrake
+control = clutch
+control = shiftup
+control = shiftdown
+control = reverse
+control = lefttrackclutch
+control = righttrackclutch
+control = gas
+control = engstart
+control = clutch
+control = hoist
+control = ridetransport
+
+# Commander
+position = 2
+control = radio
+#control = hatchcontrol
+control = canopycontrol
+control = map
+control = turretraverse
+control = turretelevate
+control = rangefind
+
+# Gunner
+position = 3
+#control = canopycontrol
+control = primarytrigger
+control = secondarytrigger
+control = turretraverse
+control = turretelevate
+control = gunsightrangedec
+control = gunsightrangeinc
+control = cycleammo
+
+
+# Bow Gunner
+position = 4
+control = map
+control = primarytrigger
+control = turretraverse
+control = turretelevate
+#control = hatchcontrol
+control = canopycontrol
+

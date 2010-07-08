@@ -1,0 +1,77 @@
+struct app2vert
+{   
+    float4 position     : POSITION;
+    float4 texcoord0    : TEXCOORD0;
+    float4 texcoord1    : TEXCOORD1;
+    float3 normal       : NORMAL;
+};
+
+struct vertout
+{
+    float4 position    : POSITION;
+    float4 texcoord0   : TEXCOORD0;
+    float  fog         : FOG;
+    float4 color       : COLOR0;
+};
+
+vertout main(app2vert IN,
+			 uniform half4 ambient,
+			 uniform float2 periods,
+			 uniform half4 sunpos,
+			 uniform half4 suncolor,
+			 uniform half4 gunpos,
+			 uniform half4 guncolor,
+			 uniform half4 bombpos,
+			 uniform half4 bombcolor,
+             uniform float4x4 modelviewproj)
+{
+    vertout OUT;
+     
+    half4 r0 = half4(0, 0, 0, 0);
+    half4 r1 = half4(0, 0, 0, 0);
+    
+	half4 ka = half4(0.32f, 0.32f, 0.38f, 1.0f);
+	half4 kd = half4(0.7f, 0.7f, 0.76f, 1.0f);
+
+    half3 normal = IN.normal;
+    
+	r0 = IN.position * periods.y;
+
+	r0.x += periods.x;    
+	    
+	// 0.3183098f = 2.0f / 2PI
+	r1.x = 0.3183098f * r0.x;
+	    
+	sincos(r1.x, r0.y, r0.x);
+	
+	half4 windBlownPos;
+		
+    // IN.texcoord1.x = throw
+    windBlownPos.x = r0.x * IN.texcoord1.x + IN.position.x;
+    windBlownPos.y = r0.y * IN.texcoord1.x + IN.position.y;
+	windBlownPos.z = IN.position.z;
+	windBlownPos.w = 1.0f;
+		
+	half3 L = sunpos.xyz;
+		
+	half diffusesun = max(dot(normal, L), 0);	
+	half4 diffuse1 = diffusesun * suncolor;
+	
+	L = normalize(gunpos.xyz - IN.position.xyz);
+
+	half gunattenuation = 3 / distance(gunpos.xyz, IN.position.xyz);
+
+	half diffusegun = max(dot(normal, L), 0);
+	half4 diffuse2 = diffusegun * guncolor * gunattenuation;
+
+    OUT.position = mul(modelviewproj, windBlownPos);
+
+    OUT.texcoord0 = IN.texcoord0;
+        
+    OUT.fog = dot(modelviewproj[2], windBlownPos);
+    
+	OUT.color = kd * (diffuse1 + diffuse2) + ka * ambient;
+	OUT.color.w = 1.0f;
+	
+    return OUT;
+}

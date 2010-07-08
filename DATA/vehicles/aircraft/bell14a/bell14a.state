@@ -1,0 +1,49 @@
+# State file for Bell bell14a
+sound 1 enginesound1 enginesound 1
+
+#DOF gear: state type, name of variable, name, time to articulate
+#DOF flaps: state type, name of variable, name, number of state, time to articulate
+#multiple states requier multiple lines
+#DOF prop: state type, name of variable, name, # of engine, RPM to disc state
+dofstate 1 gearstate gear 10000
+dofstate 1 flapstate1 flap 1 4178
+dofstate 1 propstate1 prop 1 500
+dofstate 1 canopystate1 canopy 1 1350
+
+#SMOKE: state type, name of variable, DOF name, smoke type, number
+smokestate 1 fuelleak1 fleak1 fuelleak 1
+smokestate 1 fuelleak2 fleak2 fuelleak 2
+smokestate 1 fuelfire1 fleak1 fuelfire 1
+smokestate 1 fuelfire2 fleak2 fuelfire 2
+smokestate 1 oilleak1 oleak1 oilleak 1
+smokestate 1 glycolleak1 gleak1 glycolleak 1 1
+smokestate 1 enginefire1 efire1 enginefire 1
+smokestate 1 wingtipvortexleft vortl wingvortex 1 
+smokestate 1 wingtipvortexright vortr wingvortex 2
+smokestate 1 exhaust1 eexhl1 exhaust 1
+smokestate 1 exhaust1 eexhr1 exhaust 1
+
+# Currently too many states
+# tread dust
+# smokestate 1 treaddust1 tdustr1 treaddust 1
+# smokestate 1 treaddust2 tdustl1 treaddust 2
+# smokestate 1 treaddust3 tdustm1 treaddust 3
+
+
+# This state is for Exploding planes	
+
+effect 1 crashexplosion crashexplosion
+
+# visdamage <vis damage group name> <mass object name(in .mass file)> <emitter object> <ejectspeed> <parent damage group name>
+visdamage lwing mass_lwing elwingcrap 0
+visdamage rwing mass_rwing erwingcrap 0
+
+visdamage tail mass_tail none 0
+visdamage lhstab mass_lhstab none 0 tail
+visdamage rhstab mass_rhstab none 0 tail
+visdamage cvstab mass_cvstab none 0 tail
+
+visdamage canopy1 mass_canopy1 none 0
+visdamage prop1 mass_prop1 none 0
+
+visdamage hulk

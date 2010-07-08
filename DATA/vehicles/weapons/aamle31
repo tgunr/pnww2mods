@@ -1,0 +1,17 @@
+# agm29f
+# Rev. 4/25/02 - bloo
+
+mass = 10.9
+firetype = auto
+rateoffire = 500
+dispersion = 0.15
+ammotype1 = 7_5mmf
+ammotype2 = 7_5mmtracerf
+ghostrof = 100
+ghostammotype = 7_5mmtracerf
+cliprounds = 300
+reloadtime = 2
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = magazine

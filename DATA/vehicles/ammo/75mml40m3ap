@@ -1,0 +1,29 @@
+# created for SHerman M4a2 (75mmL40M3) gun - Doc. 11/15/04
+# adjusted 13th Dec. 2006 - Doc.
+
+type = ballistic
+diameter = .075
+weight = 6.36
+velocity = 641
+tracertime = 7.9
+object = bullet1
+explosive = 276730
+# 0.06 kg (TNT)
+
+fuzetime = 0.002
+bc = 1.79
+lifetime = 8.0
+ricochetangle = 87
+modelspall = 1
+penetrationconstant = 0.00000357
+dontdisplayfirstframe = 1 
+
+numshrapnelpieces = 30
+totalshrapnelmass = 6.3
+explosionsoundnear = sounds\smlcloseexp.wav
+explosionsoundfar = sounds\smlfarexp.wav
+nearfardistance = 300
+
+muzzleflash = 3
+hiteffect = smallcannon
+tracerscale = 2

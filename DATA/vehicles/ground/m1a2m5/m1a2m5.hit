@@ -1,0 +1,38 @@
+#Hitmap file for M1a2/M5 76.2mm (3 inch) ATG - Doc. (Dec.13th.2006)
+
+#sounds and stuff
+
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 10000
+
+#External
+
+d_sheildelevate,9.5,0,0
+d_elev,15,0,0
+d_gunrailbottom,15,0,0
+d_gunbarrel,25,0,0,0,30000
+d_breech,115,0,0
+d_guntop,15,0,0
+d_sheildtraverse,9.5,0,0
+d_uppertra,15,0,0
+d_axle,15,0,0
+d_rtwheel,8,0,0
+d_lftwheel,8,0,0
+d_rtbogey,18,0,0
+d_lftbogey,18,0,0
+
+#Internal
+
+d_head-c1,0.5,0,0
+d_arms-c1,1,0,0
+d_legs-c1,1,0,0
+d_torso-c1,1.5,0,0
+d_head-c2,0.5,0,0
+d_legs-c2,1,0,0
+d_larm-c2,1,0,0
+d_torso-c2,1.5,0,0

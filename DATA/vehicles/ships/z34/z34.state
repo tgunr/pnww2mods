@@ -1,0 +1,33 @@
+
+# Z34 Destroyer State file
+
+# DOF state type, name of variable, name, time to articulate
+# multiple states requier multiple lines
+
+# dofstate 1 hatchstate1 hatch 1 2000
+
+# SMOKE: state type, name of variable, DOF name, smoke type, number
+
+sound 1 enginesound1 enginesound 1
+smokestate 1 fuelfire1 fleak1 fuelfire 1
+smokestate 1 fuelfire2 fleak2 fuelfire 2
+smokestate 1 fuelfire3 fleak1 fuelfire 3
+smokestate 1 fuelfire4 fleak2 fuelfire 4
+smokestate 1 glycolleak1 gleak1 glycolleak 1 1
+smokestate 1 enginefire1 efire1 enginefire 1
+smokestate 1 enginesmoke1 esmoke1 enginesmoke 1
+smokestate 1 exhaust1 eexh1 exhaust 1
+smokestate 1 exhaust1 eexh2 exhaust 1
+dofstate 1 canopystate1 canopy 1 30000
+dofstate 1 canopystate2 canopy 2 8000
+dofstate 2 canopystate4 canopy 4 4000
+dofstate 2 canopystate5 canopy 5 4000
+dofstate 1 canopystate6 canopy 6 6000
+# tread dust
+smokestate 1 treaddust1 rbow treaddust 1
+smokestate 1 treaddust2 lbow treaddust 2
+
+
+# Crash and burn stuff
+
+effect 1 crashexplosion crashexplosion

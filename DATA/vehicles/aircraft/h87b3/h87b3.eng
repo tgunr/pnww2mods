@@ -1,0 +1,70 @@
+#engine stats file for H87b3 (packard Merlin)
+[V1650-1]
+type = propeller
+basehorsepower = 1240
+basehpalt = 10
+# 6 lbs of boost
+basehppress = 1.61
+basehprpm = 3000
+basehpexhausttemp = 1100
+basehpexhausttemp = 5000
+idlerpm = 1000
+idlethrottlepos = 0.04
+# most engines mil power fuel consumption is 360-380
+fuelperhphour = 0.240
+# most engines econ power fuel consumption is 190-200
+# this setting used for econrpm only
+oilconsumptionperhour = 5
+# neg_g_fuel_cutout = 1
+
+# note: minimum pressure to maintain rpm will be used
+#wepmaxpress = 1.0
+#milmaxpress = .85
+#climbmaxpress = 0.85
+#conmaxpress = 0.65
+#idlepressureatidle = 0.05
+#idlepressureatmaxrpm = -0.2
+# in seconds
+maxweptime = 300
+maxmiltime = 1800
+weprpm = 3000
+milrpm = 3000
+climbrpm = 2850
+econrpm = 2300
+
+superchargetype = twospeed
+speed1critalt = 3700
+speed1efficiency = 1
+speed1efficiencytop = 1
+speed1efficiencybottom = .89
+speed1maxclimbboost = 1.48
+speed1maxmilboost = 1.61
+speed1maxwepboost = 1.81
+# stage two
+speed2critalt = 5800
+speed2efficiency = 1
+#speed2efficiencytop = .92
+#speed2efficiencybottom = .88
+speed2efficiencytop = 1.04
+speed2efficiencybottom = 0.98
+speed2maxclimbboost = 1.48
+speed2maxmilboost = 1.31
+speed2maxwepboost = 1.81
+shiftalt = 4600
+
+#degrees from the thrust line for exhaust thrust
+exhaustthrustangle = 5
+# 1 lb = 4.45N this is in newtons
+exhaustthrustforce = 350
+
+weptype = normal
+
+propgearratio = 0.447
+
+# 1 = clockwise from pilot's perspective if he's behind the prop
+# -1 = counterclockwise
+propspindirection = 1
+
+criticalrpm = 200
+starterrpm = 100
+starterhp = 10

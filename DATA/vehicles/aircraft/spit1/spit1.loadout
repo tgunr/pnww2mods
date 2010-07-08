@@ -1,0 +1,48 @@
+#spit1.loadout file
+
+# sounds available for the mounts
+sound1 = sounds\spit1\xgun.wav
+
+loadout = 1
+
+mountnum = 1
+mountobject = ligunx
+mountsound = sound1
+weapon = browning303air
+weaponobject = bf109elngun
+
+mountnum = 2
+mountobject = lcgunx
+mountsound = sound1
+weapon = browning303air
+weaponobject = bf109elngun
+weapon = browning303air
+weaponobject = bf109elngun
+
+mountnum = 3
+mountobject = logunx
+mountsound = sound1
+weapon = browning303air
+weaponobject = bf109elngun
+
+mountnum = 4
+mountobject = rigunx
+mountsound = sound1
+weapon = browning303air
+weaponobject = bf109erngun
+
+mountnum = 5
+mountobject = rcgunx
+mountsound = sound1
+weapon = browning303air
+weaponobject = bf109erngun
+weapon = browning303air
+weaponobject = bf109erngun
+
+mountnum = 6
+mountobject = rogunx
+mountsound = sound1
+weapon = browning303air
+weaponobject = bf109erngun
+
+#changed weaponobject to bf109elngun and bf109rngun (used as generic weaponobject for aircraft guns now) to propoerly locate muzzle flash - Doc.

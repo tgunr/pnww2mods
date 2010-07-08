@@ -1,0 +1,48 @@
+
+#r35 Control File
+
+#driver
+position = 1
+control = radio
+#control = hatchcontrol
+control = canopycontrol
+control = map
+control = auxsight
+control = leftbrake
+control = rightbrake
+control = bothbrake
+control = clutch
+control = shiftup
+control = shiftdown
+control = reverse
+control = lefttrackclutch
+control = righttrackclutch
+control = gas
+control = engstart
+control = hoist
+control = ridetransport
+
+# Commander in Cupola
+position = 2
+control = radio
+#control = hatchcontrol
+control = canopycontrol
+control = map
+control = turretraverse
+control = turretelevate
+
+# Commander
+position = 3
+control = radio
+control = canopycontrol
+#control = hatchcontrol
+control = map
+control = primarytrigger
+control = secondarytrigger
+control = turretraverse
+control = turretelevate
+control = gunsightrangedec
+control = gunsightrangeinc
+control = cycleammo
+
+

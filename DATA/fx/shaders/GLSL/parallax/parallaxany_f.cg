@@ -1,0 +1,98 @@
+//-----------------------------------------------------------------------------
+// Fragment shader for normal objects.
+//-----------------------------------------------------------------------------
+#define USE_LINEAR_FOG
+#undef USE_LINEAR_FOG
+
+struct appin
+{
+    float4 color     : COLOR;
+    float2 texcoord0 : TEXCOORD0;
+    float2 normalmap : TEXCOORD1;
+    float3 lightdir  : TEXCOORD2;
+    float3 halfdir   : TEXCOORD3;
+    float3 playdir   : TEXCOORD4;
+	float fogexp     : FOG;
+};
+
+/////////////////////////////////////////////////////////////////
+// Function: main
+// Description:
+//////////////////////////////////////////////////////////////////
+float4 main(appin IN, 
+			uniform sampler2D texmap,
+			uniform sampler2D reliefmap,
+            uniform half4 globalambient,
+            uniform half4 Kd,
+            uniform half4 Ka,
+            uniform half4 Ks,
+            uniform half4 Ke,
+            uniform half3 lightpos,
+            uniform half shininess,
+            uniform half4 lightcolor,
+            uniform half4 fogcolor) : COLOR
+{
+	float4 basecolor;
+	float4 normal;
+
+    // Get depth from the alpha (w) of the relief map
+    // and scale
+    float2 uv = IN.texcoord0;
+
+	float depth = (tex2D(reliefmap, uv).w) * 0.20f; //hole_depth
+
+    // Get the alpha from the original pixel to prevent holes at extreme angles
+    float orig_alpha = tex2D(texmap, uv).w;
+
+    float2 offset = depth * IN.playdir.xy;        
+
+    if(tex2D(reliefmap, uv + offset).w < 0.96)
+    {
+        offset *= tex2D(reliefmap, uv).w;
+    }
+
+    // get a new uv
+	uv += offset;
+	
+	basecolor = tex2D(texmap, uv);
+
+	normal = tex2D(reliefmap, uv);
+    normal.xy = normal.xy * 2.0 - 1.0; // transform to [-1,1] range
+    normal.z = sqrt(1.0 - dot(normal.xy, normal.xy)); // compute z component
+	
+    // Emissive component
+    half4 emissive = Ke;
+
+    // Ambient component
+    half4 ambient = globalambient * Ka;
+      
+    half diffuseLight = max(dot(normal.xyz, IN.lightdir), 0);
+    half4 diffuse = diffuseLight * Kd * lightcolor;
+    
+    // Specular component
+    half specularLight = pow(max(dot(normal.xyz, IN.halfdir), 0), shininess);
+
+    if(diffuseLight <= 0)
+    {
+        specularLight = 0.0f;
+    }
+
+    half4 specular = Ks * specularLight * lightcolor;
+    
+    // IN.color.x = attenuation
+    float4 lighting = emissive + ambient + IN.color.x * (diffuse + specular);   
+	float4 color = saturate(basecolor * (lighting));
+    
+    color.w = orig_alpha;
+
+    // Figure in fog component
+#ifdef USE_LINEAR_FOG
+    half factor = max(1 - IN.fogexp, 0);
+	color = lerp(fogcolor, color, min(factor, 1));
+#else
+	half factor = exp(-abs(IN.fogexp));
+	color = lerp(fogcolor, color, factor);
+#endif
+	
+    return color;
+}

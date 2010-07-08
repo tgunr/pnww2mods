@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<view id="hilite" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
+	layer="1000" acceptsmouseclick="false" onupdate="updateHilite()">
+	<include file="classes/HiliteViewMap.uixml"/>
+	<script>
+		<!--
+		
+		var hview = null;
+		
+		function hilite(description, view)
+		{
+			if(hview != null)
+			{
+				if(hview.desc == description)
+					return;
+				
+				hview.kill();
+			}
+			
+			hview = null;
+			
+			if(description != "" && description != null)
+			{
+				hview = new HiliteView(description, 2000, 4, 5, view);
+				window.visible = true;
+			}
+			else
+			{
+				window.visible = false;
+			}
+			
+			window.modal = false;
+			window.acceptsmouse = false;
+		}
+		
+		function updateHilite()
+		{
+			if(window.visible && hview != null)
+				hview.update();
+		}
+		
+		-->
+	</script>
+</view>
+

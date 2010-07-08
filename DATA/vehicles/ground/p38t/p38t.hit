@@ -1,0 +1,113 @@
+# Altered 11th September 2009 to reduce turret side armour to 15mm (ausf A thru D)
+# Doc.
+#
+# damage resistance file for PzKpfw 38(t)
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2,concussive resistance, damage threshold
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+# concussion protection is determined by distance in meters. eg: 20 mm of armor
+
+
+#sounds and stuff
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 1000000
+
+#outside Items: All are treated as double sided
+
+d_ltdrivew,20,0,0,0,100000
+d_ltidlew,20,0,0,0,100000
+d_ltread,25,0,0,0,100000
+d_rtread,25,0,0,0,100000
+d_ltrw,20,0,0,0,100000
+d_ltrw2hit,20,0,0,0,100000
+d_ltrw3hit,20,0,0,0,100000
+d_ltrw4hit,20,0,0,0,100000
+d_ltreturn1,20,0,0,0,100000
+d_lreturn2,20,0,0,0,100000
+d_rtdrivew,20,0,0,0,100000
+d_rtidlew,20,0,0,0,100000
+d_rtrw1hit,20,0,0,0,100000
+d_rtrw2hit,20,0,0,0,100000
+d_rtrw3hit,20,0,0,0,100000
+d_rtrw4,20,0,0,0,100000
+d_rtreturn1,20,0,0,0,100000
+d_rtreturn2,20,0,0,0,100000
+d_rrtreadcover,10,0,0
+d_rftreadcover,10,0,0
+d_lrtreadcover,10,0,0
+d_lftreadcover,10,0,0
+d_tophull,8,0,0
+d_bhupper,7.5,0,0
+# NOTE : this hull armour value (d_bhupper) is half it's real value (15mm)
+# because the plate has a double polygon
+d_hullbelly,8,0,0
+d_firewall,5,0,0
+d_drivehatch,15,0,0
+d_lcover,25,0,0
+d_mghull,25,0,0
+d_cupola,30,0,0
+d_turretb,8,0,0
+d_turrettop,15,0,0
+d_cuphatch,8,0,0
+d_mgturret,25,0,0
+d_37mm,20,0,0,0,220000
+d_hullsides,15,0,0
+d_hullfront,25,0,0
+d_rcover,25,0,0
+d_turret,15,0,0
+d_turretfront,25,0,0
+commander_1,2,0,0
+d_lefttoolbox,8,0,0
+d_righttoolbox,8,0,0
+
+# Interior
+d_frontaxle,40,0,0
+d_hullammo,8,0,0
+d_turammo,8,0,0,0,200
+d_rturammo,8,0,0,0,200
+d_engine,250,0,0
+d_oiltank,8,0,0
+d_radiator1,8,0,0
+d_radiator2,8,0,0
+d_gunhead,6.5,0,0,0,40
+d_gunlegs,1,0,0,0,35
+d_guntorso,1.5,0,0,0,35
+d_gunarms,1,0,0,0,35
+d_drivehead,6.5,0,0,0,40
+d_drivetorso,1.5,0,0,0,35
+d_drivearms,1,0,0,0,35
+d_drivelegs,1,0,0,0,35
+d_comhead,6.5,0,0,0,40
+d_comarms,1,0,0,0,35
+d_comtorso,1.5,0,0,0,35
+d_comlegs,1,0,0,0,35
+d_radhead,6.5,0,0,0,40
+d_radarms,1,0,0,0,35
+d_radlegs,1,0,0,0,35
+d_radtorso,1.5,0,0,0,35
+d_transm,250,0,0
+d_lfueltank,8,0,0
+d_rfueltank,8,0,0
+
+
+

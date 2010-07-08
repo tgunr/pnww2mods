@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="p38t" type="ground" shape="38t" description="Panzer 38(t)" icon="Panzer 38(t)">
+<include file="p38t.veh.xml"/>
+<include file="p38t.state.xml"/>
+<include file="p38t.hit.xml"/>
+<include file="p38t.turret.xml"/>
+<include file="p38t.loadout.xml"/>
+<include file="p38t.xsound.xml"/>
+<include file="p38t.control.xml"/>
+<include file="p38t.mass.xml"/>
+</vehicle>

@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<tab id="motd-tab" label="  &globals.brigade;  " x="0" y="0" width="930" height="460" onshow="soundPlayShuffle()" tip="&brigade.comtab.tip;">
+	<tabview x="0" y="0" rright="0" rtop="0" onshow='if(!game.online) this.value = 1' acceptmouseclick='false'>
+		<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'>
+			<view id="left-pane" x="18" y="18" width="444" height="411" onshow="showCommunications();">
+				<view x="10" y="335" width="425" height="75">
+					<caption id="details-brigade" x="0" y="45" width="400" height="25" style="color: #BFE2CE; font-size: +2;"
+						onshow="this.label = brigade.name.toUpperCase()"/>
+					<image x="0" y="45" src="ui/textures/test/horiz_underline.bmp" width="425" height="12"/>
+					<caption id="details-division" x="10" y="30" width="415" height="15" style="color: #e9e3d9ff; "
+						onshow="this.label = getCountryBranch(client.country, client.branch) + ', ' + brigade.division"/>
+					<caption id="details-command" x="10" y="15" width="415" height="15" style="color: #e9e3d9ff; "
+						onshow="this.label = getlocstring('common.commandedby') + ' ' + brigade.ownerrank.name + ' ' + brigade.owner"/>
+					<caption id="details-home" x="10" y="0" width="415" height="15" style="color: #e9e3d9ff; "
+						onshow="this.label = (brigade.home != null) ? getlocstring('common.basedoutof') + ' ' + brigade.home.name: ''"/>
+				</view>
+				<view x="20" y="200" width="200" height="120">
+					<caption label="&brigade.comtab.commanders;" x="0" rtop="0" width="200" height="20" style="color: #BFE2CE; font-size: +1;"/>
+					<image x="0" rtop="10" src="ui/textures/test/horiz_underline.bmp" width="197" height="12"/>
+					<list id="officers" x="0" y="0" width="195" height="98">
+						<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+					</list>
+				</view>
+				<view x="225" y="200" width="200" height="120">
+					<caption label="&brigade.comtab.status;" x="0" rtop="0" width="200" height="20" style="color: #BFE2CE; font-size: +1;"/>
+					<image x="0" rtop="10" src="ui/textures/test/horiz_underline.bmp" width="180" height="12"/>
+					<caption id="details-officers" x="5" rtop="22" width="150" height="15" style="color: #e9e3d9ff; "
+						 onshow="this.label = getlocstring('brigade.comtab.officers') + ': ' + client.brigade.officers"/>
+					<caption id="details-missions" x="5" rtop="37" width="150" height="15" style="color: #e9e3d9ff; "
+						 onshow="this.label = getlocstring('brigade.comtab.missions') + ': ' + client.brigade.missions"/>
+					<caption id="details-population" x="5" rtop="52" width="150" height="15" style="color: #e9e3d9ff; "
+						onshow="this.label = getlocstring('brigade.comtab.enlistments') + ': ' + getFriendlyPopulation(client.brigade.populationrank)"/>
+				</view>
+				<view x="20" y="10" width="430" height="180">
+					<caption label="&brigade.comtab.structure;" x="0" y="158" width="425" height="20" style="font-size: +1; color: #BFE2CE;"/>
+					<image x="0" y="155" src="ui/textures/test/horiz_underline.bmp" width="405" height="12"/>
+					<view x="0" width="425" height="15" rtop="25">
+						<caption x="0" y="0" width="215" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+							label="&brigade.comtab.structure.command;"/>
+						<caption x="217" y="0" width="188" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+							label="&brigade.comtab.structure.oic;" align="right"/>
+					</view>
+					<list id="commands" x="0" y="10" width="400" height="128"/>
+				</view>
+			</view>
+			<include file="widgets/divider.uixml"/>
+			<view id="right-pane" x="468" y="18" width="444" height="411">
+				<view x="10" y="235" width="430" height="170">
+					<caption label="&brigade.comtab.motd;" x="0" y="148" width="400" height="20" style="font-size: +1; color: #BFE2CE;"/>
+					<image x="0" y="145" src="ui/textures/test/horiz_underline.bmp" width="425" height="12"/>
+					<text id="details-motd" x="0" y="0" height="140" width="425" acceptsfocus="false" style="border-size-right: 10;  color: #e9e3d9;"
+						onshow="this.text = client.brigade.motd">
+						<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+					</text>
+				</view>
+				<view x="10" y="15" width="430" height="200">
+					<caption label="&brigade.comtab.news;" x="0" y="178" width="400" height="20" style="font-size: +1; color: #BFE2CE;"/>
+					<image x="0" y="175" src="ui/textures/test/horiz_underline.bmp" width="425" height="12"/>
+					<text id="side-motd" x="0" y="0" height="170" width="425" acceptsfocus="false" style="border-size-right: 10;  color: #e9e3d9;">
+						<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+					</text>
+				</view>
+			</view>
+		</tab>
+		<include file="widgets/globals/onlineonly.uixml"/>
+	</tabview>
+	<script>
+		<!--
+		
+		var client		= game.player.client;
+		var brigade		= client.brigade;
+		
+		var officerList = new ListControl(findview("officers"));
+		var commandList = new ListControl(findview("commands"));
+		
+		function showCommunications()
+		{
+			if(!game.ingame)
+				setHelp(getlocstring('brigade.comtab.help'));
+			
+			if(game.online && commandList.list.length == 0)
+			{
+				updateMotd();
+				initCommandList();
+				initOfficerList();
+			}
+		}
+		
+		function updateMotd()
+		{
+			var motd		= findview("side-motd");
+			var sidemotd 	= client.requestmotd(client.persona.country.side);
+			
+			if(sidemotd != null)
+				motd.text = sidemotd.message;
+		}
+		
+		function initCommandList()
+		{
+			game.consoleprint("Initing command list\n");
+			
+			var padding	= 3;
+			var hcunits	= new Array();
+			var hcunit 	= client.brigade;
+			var index 	= 0;
+			var width	= commandList.list.nwidth;
+			
+			while(hcunit != null)
+			{
+				hcunits[index] = hcunit;
+				hcunit = hcunit.parent;
+				index++;
+			}
+			
+			hcunits	= hcunits.reverse();
+			
+			commandList.clearRows(true);
+			
+			for(var i = 0; i < hcunits.length; i++)
+			{
+				hcunit = hcunits[i];
+				
+				var row	= "\
+<view id='hcunit_" + hcunit.id + "' width='" + width + "' height='16' aspectalign='left'>\
+	<caption id='unit-name-caption' x='0' y='0' height='16' rright='5' style='color: #e9e3d9ff; '\
+		label='" + htmlencode(hcunit.name) + "'/>\
+	<caption id='unit-co-caption' x='0' y='0' height='16' rright='5' style='color: #e9e3d9ff; '\
+		label='" + htmlencode(hcunit.ownerrank.name) + " " + hcunit.owner + "' align='right'/>\
+</view>";
+				
+				commandList.addRow(null, row);
+			}
+		}
+		
+		function initOfficerList()
+		{
+			var officers 	= client.brigade.officernames;
+			var ranks 		= client.brigade.officerranks;
+			var width		= officerList.list.nwidth;
+			
+			officerList.clearRows(true);
+			
+			for(var i = 0; i < officers.length; i++)
+			{
+				var officer 	= officers[i];
+				var rank 		= ranks[i];
+				var row			= "\
+<view id='officer_" + officer + "' width='" + width + "' height='12' aspectalign='left'>\
+	<caption id='officer-caption' x='0' y='0' width='190' height='12' style='color: #e9e3d9ff; '\
+		label='" + htmlencode(rank.name) + " " + officer + "'/>\
+</view>";
+				
+				officerList.addRow(null, row);
+			}
+		}
+		
+		function getFriendlyPopulation(rank)
+		{
+			if(rank > 6)
+				return getlocstring('common.population.heavy');
+			else if(rank > 3)
+				return getlocstring('common.population.medium');
+			else if(rank > 0)
+				return getlocstring('common.population.light');
+			
+			return getlocstring('common.population.empty');
+		}
+		
+		
+		-->
+	</script>
+</tab>

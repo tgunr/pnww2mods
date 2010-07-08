@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="pzivd" type="ground" shape="pnzr4d" description="Panzer IV D" icon="Panzer IV D">
+<include file="pzivd.veh.xml"/>
+<include file="pzivd.state.xml"/>
+<include file="pzivd.hit.xml"/>
+<include file="pzivd.turret.xml"/>
+<include file="pzivd.loadout.xml"/>
+<include file="pzivd.xsound.xml"/>
+<include file="pzivd.control.xml"/>
+<include file="pzivd.mass.xml"/>
+</vehicle>

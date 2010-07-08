@@ -1,0 +1,28 @@
+#engine stats file for W154
+[w154_v12]
+basehorsepower = 425
+basehpalt = 0
+basehprpm = 8000
+basehppress = 2.0
+basehpexhausttemp = 1000
+idlethrottlepos = 0.1
+idlerpm = 600
+fuelperhphour = 0.260
+oilconsumptionperhour = 0
+wepmaxpress = 2.0
+milmaxpress = 2.0
+weprpm = 8000
+milrpm = 8000
+climbrpm = 8000
+econrpm = 8000
+
+superchargertype = none
+weptype = none
+
+#criticalrpm is the rpm at which below this the engine might stall, also used for starting
+criticalrpm 200
+
+#starterrpm is the rpm at which the starter motor will spin the engine at
+starterrpm 100
+#starterhp is the power of the starter motor
+starterhp 2

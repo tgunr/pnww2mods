@@ -1,0 +1,62 @@
+#engine stats file for bf109e3
+[db601a]
+type = propeller
+basehorsepower = 900
+# basehpalt = 3962
+basehpalt = 500
+basehppress = 1.23
+basehprpm = 2400
+# basehprpm = 2300
+basehpexhausttemp = 1100
+basehpexhausttemp = 5000
+idlerpm = 950
+idlethrottlepos = 0.04
+# most engines mil power fuel consumption is 360-380
+fuelperhphour = 0.240
+# most engines econ power fuel consumption is 190-200
+# this setting used for econrpm only
+fuelperhphourecon = 0.235
+oilconsumptionperhour = 5
+
+# note: minimum pressure to maintain rpm will be used
+#wepmaxpress = 1.0
+#milmaxpress = .976
+#climbmaxpress = .923
+#econmaxpress = 0.84
+#idlepressureatidle = 0.05
+#idlepressureatmaxrpm = -0.2
+# in seconds
+maxweptime = 300
+maxmiltime = 1800
+weprpm = 2400
+milrpm = 2400
+climbrpm = 2300
+econrpm = 2200
+
+superchargetype = singlespeed
+speed1critalt = 4800
+speed1efficiencytop = 1.0
+speed1efficiencybottom = 0.98
+speed1maxwepboost = 1.300
+speed1maxmilboost = 1.255
+#shiftalt = 4700
+#speed2critalt = 0000
+#speed2efficiency = 0.8
+
+#degrees from the thrust line for exhaust thrust
+exhaustthrustangle = 0
+# 1 lb = 4.45N this is in newtons
+exhaustthrustforce = 380
+
+weptype = normal
+
+propgearratio = .645
+
+# 1 = clockwise from pilot's perspective if he's behind the prop
+# -1 = counterclockwise
+#propspindirection = 1
+propspindirection = 1
+
+criticalrpm = 200
+starterrpm = 100
+starterhp = 10

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<view id="memorial" x="192" y="144" width="640" height="480" style="background-image: ui/uidata/builders/memorialplaque.bmp;">
+	<caption id="title" x="50" rright="50" height="20" rtop="35" acceptfocus="no"
+		style="font-size: +7; color: #000000AA;" align="center"/>
+	<view x="65" rright="20" y="20" rtop="80">
+		<text id="namelist0" x="00" y="0" width="250" rtop="0" acceptfocus="no"
+			style="color: #000000AA;"/>
+		<text id="namelist1" x="170" y="0" width="250" rtop="0" acceptfocus="no"
+			style="color: #000000AA;"/>
+		<text id="namelist2" x="340" y="0" width="250" rtop="0" acceptfocus="no"
+			style="color: #000000AA;"/>
+	</view>
+	<script>
+		<!--
+		
+		function setMemorial(view, content)
+		{
+			view.findview("title").label = content.title.toUpperCase();
+			
+			var names 		= content.body.split(",");			
+			var lists		= new Array(3);
+			var listIndex 	= 0;
+			
+			for(var i = 0; i < 3; i++)
+			{
+				lists[i] = view.findview("namelist" + i);
+			}
+			
+			for(var i = 0; i < names.length; i++)
+			{
+				lists[listIndex].text += names[i] + "\n";
+				listIndex++;
+				
+				if(listIndex >= 3)
+					listIndex = 0;
+			}
+		}
+		
+		-->
+	</script>
+</view>

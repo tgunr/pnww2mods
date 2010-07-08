@@ -1,0 +1,21 @@
+# German 20mm cannon used after MGFF was retired from front-line service. 
+# Created 9/3/02 - doc
+
+mass = 42.3
+firetype = auto
+rateoffire = 740
+#syncrateoffire = 710
+dispersion = 0.15
+#dispersion is a placeholder
+
+ammotype1 = mg151he
+ammotype2 = mg151hei
+ammotype3 = mg151ap
+ammotype4 = mg151mine
+ghostrof = 200
+ghostammotype = mg151he
+
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = na

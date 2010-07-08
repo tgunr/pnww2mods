@@ -1,0 +1,168 @@
+//-----------------------------------------------------------------------------
+// Vertex shader for water
+//-----------------------------------------------------------------------------
+#define USE_LINEAR_FOG
+//#undef USE_LINEAR_FOG
+#define USE_EXP_FOG
+#undef USE_EXP_FOG
+#define USE_EXP2_FOG
+#undef USE_EXP2_FOG
+
+struct appin
+{
+    float4 position  : POSITION;
+    float3 normal    : NORMAL;
+    float4 color0    : COLOR0;
+    float2 texcoord0 : TEXCOORD0;
+    float4 texcoord1 : TEXCOORD1;
+};
+
+struct vertout
+{
+	float4 position   : POSITION;
+	float4 color0     : COLOR0;
+	float4 color1     : COLOR1;
+	float2 texcoord0  : TEXCOORD0;
+	float3 texcoord1  : TEXCOORD1; 
+	float3 texcoord2  : TEXCOORD2;
+	float3 texcoord3  : TEXCOORD3;
+	float2 bumpcoord0 : TEXCOORD4;
+	float2 bumpcoord1 : TEXCOORD5;
+	float2 bumpcoord2 : TEXCOORD6;
+	float4 eyeVector  : TEXCOORD7;
+	float fogExponent : FOG;
+};
+
+struct Wave 
+{
+  float freq;  // 2*PI / wavelength
+  float amp;   // amplitude
+  float phase; // speed * 2*PI / wavelength
+  float2 dir;
+};
+
+#define NWAVES 2
+
+Wave wave[NWAVES] = 
+{
+	{1.0, 1.0, 0.5, float2(-1, 0)},
+	{2.0, 0.5, 1.3, float2(-0.7, 0.7)}	
+};
+
+float evaluateWave(Wave w, float2 pos, float t)
+{
+    return w.amp * sin( dot(w.dir, pos)*w.freq + t*w.phase);
+}
+
+// derivative of wave function
+float evaluateWaveDeriv(Wave w, float2 pos, float t)
+{
+    return w.freq*w.amp * cos( dot(w.dir, pos)*w.freq + t*w.phase);
+}
+
+// sharp wave functions
+float evaluateWaveSharp(Wave w, float2 pos, float t, float k)
+{
+  return w.amp * pow(sin( dot(w.dir, pos)*w.freq + t*w.phase)* 0.5 + 0.5 , k);
+}
+
+float evaluateWaveDerivSharp(Wave w, float2 pos, float t, float k)
+{
+  return k*w.freq*w.amp * pow(sin( dot(w.dir, pos)*w.freq + t*w.phase)* 0.5 + 0.5 , k - 1) * cos( dot(w.dir, pos)*w.freq + t*w.phase);
+}
+
+vertout main(appin IN,
+		     uniform float4x4 modelViewProj,
+		     uniform float4x4 world,
+		     uniform float4x4 worldI,
+             uniform half2 textureScale,
+             uniform half2 bumpSpeed,
+             uniform half3 eye,
+             uniform half3 lightPos,
+             uniform half fogDensity,
+             uniform half bumpScale,
+             uniform float time,
+             uniform float fogNear,
+             uniform float fogFar)
+{
+	vertout OUT;
+
+    float4 P = IN.position;
+    P.w = 1.0f;
+        
+    // Hard code these to save instructions.
+    half3 T = half3(1.0f, 0.0f, 0.0f);
+    
+    half3 N = half3(0.0f, 0.0f, 1.0f);
+    
+    // B = cross(N, T) * T.w ==> (0, -1, 0) * -1 ==> (0, 1, 0)
+    half3 B = half3(0.0f, 1.0f, 0.0f); 
+        
+    // pass texture coordinates for fetching the normal map
+	float2 uv = IN.texcoord0.xy * textureScale;
+   
+	time = fmod(time, 100.0);
+	
+	float2 bs = time * bumpSpeed.xy;
+	
+    OUT.bumpcoord0.xy = uv + bs;
+    OUT.bumpcoord1.xy = uv * 2.0 + bs * 4.0;
+    OUT.bumpcoord2.xy = uv * 4.0 + bs * 8.0;
+    
+    // The only way I can get this to work.
+    // eye is in object space, P is in object space. Should reflect correctly.
+    // However, it doesn't, until we multiply by worldI.
+    
+    float4 w = mul(worldI, P);
+    float4 e = mul(worldI, half4(eye.x, eye.y, eye.z, 1.0f));
+    
+    // Get our incident vector.
+    OUT.eyeVector.xyz = w.xyz - e.xyz;
+    
+    // Required for vertex shaders
+    OUT.position = mul(modelViewProj, P);
+      
+	float3x3 objToTangentSpace;
+		
+	// first rows are the tangent and binormal scaled by the bump scale
+	objToTangentSpace[0] = bumpScale * T;
+	objToTangentSpace[1] = bumpScale * B;
+	objToTangentSpace[2] = N;
+	
+	OUT.texcoord0.xy = IN.texcoord0.xy;
+	   
+    OUT.texcoord1 = objToTangentSpace[0];
+    OUT.texcoord2 = objToTangentSpace[1];
+    OUT.texcoord3 = objToTangentSpace[2];
+    
+    // Fog element
+    float d = distance(eye.xyz, P.xyz);
+    
+#ifdef USE_LINEAR_FOG
+    OUT.fogExponent = d <= fogNear ? 0 : (d - fogNear) / (fogFar - fogNear);
+#elif defined(USE_EXP_FOG)
+	OUT.fogExponent = d * fogDensity;
+#else
+	OUT.fogExponent = d * fogDensity;
+    OUT.fogExponent *= OUT.fogExponent;
+#endif
+
+    // Diffuse
+    float3 L = lightPos.xyz;
+    
+    // Put in tangent space
+    OUT.color0.xyz = float3(dot(L.xyz, T.xyz),
+                            dot(L.xyz, B.xyz),
+                            dot(L.xyz, N.xyz));
+                            
+    // Specular       
+    float3 V = normalize(eye.xyz - P.xyz);
+    half3 H = normalize(L + V);
+    
+    // Put in tangent space
+    OUT.color1.rgb = half3(dot(H.xyz, T.xyz),
+                           dot(H.xyz, B.xyz),
+                           dot(H.xyz, N.xyz));
+                   
+	return OUT;
+}

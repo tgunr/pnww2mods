@@ -1,0 +1,18 @@
+# Browning M2 12.7mm (.50 cal) MG
+# Browning M2
+# Rev. 10/26/05 - Hatch
+
+mass = 29
+firetype = auto
+rateoffire = 750
+ammotype1 = 50cal_bmg_tracer
+ammotype2 = 50cal_bmg
+ghostrof = 750
+ghostammotype = 50cal_bmg_tracer
+dispersion = 0.2
+cliprounds = 100
+reloadtime = 6
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = belt

@@ -1,0 +1,131 @@
+<script>
+	<!--
+	
+	var gameAlertsIndex = 0;
+	
+	function GameAlert(type, text)
+	{
+		// members
+		this.type		= type;
+		this.id			= gameAlertsIndex++;
+		this.text		= text;
+		this.expires	= 3000 + Math.floor(7000 * game.getpref("hud.alerts.display", 4, .5));
+		this.expired	= false;
+		this.reset		= true;
+		this.start		= 0;
+		this.incAlpha	= 10;
+		this.minAlpha	= 150;
+		this.maxAlpha	= 255;
+		this.dirAlpha	= 1;
+		this.alpha		= this.minAlpha;
+		this.view		= null;
+		
+		this.isExpired = function(now)
+		{
+			return ((now > this.start + this.expires) || this.expired) ? true: false;
+		}
+		
+		this.getColor = function()
+		{
+			this.alpha += (this.dirAlpha >= 0) ? this.incAlpha: -this.incAlpha;
+			
+			if(this.alpha >= this.maxAlpha)
+			{
+				this.alpha 		= this.maxAlpha;
+				this.dirAlpha 	= -1;
+			}
+			else if(this.alpha <= this.minAlpha)
+			{
+				this.alpha 		= this.minAlpha;
+				this.dirAlpha 	= 1;
+			}
+			
+			return "#FFFF00" + this.alpha.toString(16);
+		}
+		
+		this.getIcon = function()
+		{
+			var icon = "";
+			
+			switch(this.type)
+			{
+				case 4: // oversupply received
+				case 17: // infantry resupply alert
+				case 25: // player needs ammo
+					icon = "ui/uidata/icons/alerts/oversupply_on.dds";
+				break;
+				case 6: // oversupply lost
+					icon = "ui/uidata/icons/alerts/oversupply_off.dds";
+				break;
+				case 14: // contact alert
+					icon = "ui/uidata/icons/alerts/contact.dds";
+				break;
+				case 15: // orders alert
+				case 16: // leader alert
+				case 18: // cp update
+				case 19: // facility update
+					icon = "ui/uidata/icons/alerts/order.dds";
+				break;
+				case 12: // strat alert
+				case 13: // hc alert
+				case 20: // strat alert
+				case 21: // hc alert
+				case 23: // cp under attack
+				case 24: // enemy spotted
+					icon = "ui/uidata/icons/alerts/command.dds";
+				break;
+				default:
+					icon = "ui/uidata/icons/alerts/info.dds";
+				break;
+			}
+			
+			return icon;
+		}
+		
+		this.getSound = function()
+		{
+			var sound = "ui/sounds/tab.wav";
+			
+			switch(this.type)
+			{
+				case 4: // oversupply received
+				case 17: // infantry resupply alert
+				case 5: // oversupply warning
+				case 25: // player needs ammo
+					sound = "ui/sounds/tab.wav";
+				break;
+				case 6: // oversupply lost
+				case 27: // hourly timeleft alert
+					sound = "ui/sounds/error.wav";
+				break;
+				case 26: // tutorial event
+					sound = "ui/sounds/recv_orders.wav";
+				break;
+				default:
+					sound = "ui/sounds/tab.wav";
+				break;
+			}
+			
+			return sound;
+		}
+		
+		this.isUnique = function()
+		{
+			var unique = false;
+			
+			switch(this.type)
+			{
+				case 14: // contact alert
+				case 15: // orders alert
+				case 16: // leader alert
+				case 28: // no fire zone
+					unique = true;
+				break;
+			}
+			
+			return unique;
+		}
+	}
+	
+	-->
+</script>

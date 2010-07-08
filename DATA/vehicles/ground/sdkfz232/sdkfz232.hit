@@ -1,0 +1,89 @@
+# damage resistance file for Sd. Kfz. 7
+# correlates parts with equivelant armor thickness
+# when hit, a part will act like a homogeneous plate of specified
+# thickness
+#
+#
+# format:
+# name,thickness,hardness1,hardness2
+#
+# where "name" is the object name in the hitmap tree for the vehicle
+# thickness is the thickness of homogeneous armor equivelant (std US class B type)
+#   NOTE: thickness is in MILLIMETERS! not inches
+# hardness1 is the face hardness (used for face hardness effects)
+# hardness2 is the average hardness (w/o this parameter, or set to zero, treated as 
+#    homogeneous armor
+# 
+# hardness is used to determine either face shatter or projectile breakup
+# use brinnell values (values of zero should be used for non-hard objects
+# like internals, where the odds of projectile breakup is very low
+
+#sounds and stuff
+-hitsound1 = sounds\hit1.wav
+-hitsound2 = sounds\hit2.wav
+-hitsound3 = sounds\hit3.wav
+-shraphitsound1 = sounds\shraphit1.wav
+-shraphitsound2 = sounds\shraphit2.wav
+-shraphitsound3 = sounds\shraphit3.wav
+-hitenergymaxvolume = 1000000
+
+#EXTERIOR
+#These components are all treated as double-sided
+
+#Inside collider objects:
+d_engine,250,0,0
+d_oiltank,8,0,0
+d_radiator,16,0,0
+d_fuel,8,0,0
+d_coolant,8,0,0
+d_20ammo,8,0,0
+d_transmission,250,0,0
+d_driverlegs,4,0,0,0,35
+d_driverarms,4,0,0,0,35
+d_drivertorso,4,0,0,0,35
+d_driverhead,6.5,0,0,0,40
+d_commanderlegs,4,0,0,0,35
+d_commanderarms,4,0,0,0,35
+d_commandertorso,4,0,0,0,35
+d_commanderhead,6,0,0,0,40
+d_gunnerlegs,4,0,0,0,35
+d_gunnerarms,4,0,0,0,35
+d_gunnertorso,4,0,0,0,35
+d_gunnerhead,6.5,0,0,0,40
+d_firewall,5,0,0
+
+#Outside collider objects:
+
+d_frontarmor,15,0,0
+d_leftsidearmor,8,0,0
+d_rightsidearmor,8,0,0
+d_toparmor,6,0,0
+d_backarmor,8,0,0
+d_bottomarmor,5,0,0
+d_driverhatchleft,15,0,0
+d_driverhatchright,15,0,0
+d_reardriverhatchright,8,0,0
+d_reardriverhatchleft,8,0,0
+d_wheelcovers,0.5,0,0
+d_commanderhatch,8,0,0
+d_cannon,20,0,0,0,220000
+d_coax,12,0,0
+d_mount,15,0,0
+d_backturrethatchright,8,0,0
+d_backturrethatchleft,8,0,0
+d_turretright,8,0,0
+d_turretleft,8,0,0
+d_turretbottom,8,0,0
+d_turretfront,15,0,0
+d_turrettop,6,0,0
+d_turretback,8,0,0
+d_exhaust,0.5,0,0
+d_wheel5,12,0,0,0,5000
+d_wheel1,12,0,0,0,5000
+d_wheel6,12,0,0,0,5000
+d_wheel2,12,0,0,0,5000
+d_wheel7,12,0,0,0,5000
+d_wheel3,12,0,0,0,5000
+d_wheel8,12,0,0,0,5000
+d_wheel4,12,0,0,0,5000
+

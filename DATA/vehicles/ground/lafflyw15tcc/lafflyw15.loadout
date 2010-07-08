@@ -1,0 +1,27 @@
+#Laffly W-15TCC loadout file
+#created 12-05-03 by Doc.
+
+# sounds available for the mounts
+
+sound1 = sounds\mle47\xgun.wav
+sound2 = sounds\charb1\xgun3.wav
+
+loadout = 1
+
+#Main Gun
+mountnum = 1
+mountobject = mount
+mountsound = sound1
+weapon = sa39l53
+weaponobject = genericgun1
+#weaponobject = mle47mmgun
+recoilnum = 3
+recoiltime = .2
+shockdust = 1
+
+#Pintle Gun
+mountnum = 2
+mountobject = pintlemount
+mountsound = sound2
+weapon = fmc29lmg
+weaponobject = genericgun1

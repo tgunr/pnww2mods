@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<view id="map-waypoints" width="128" rright="1" rtop="1" rbottom="19" style="background-color: #00000088;"
+	onload="if(!this.mgr) new MapWaypoints(this)" onshow="(!game.online || !player.client.currentmission) ? this.visible = false: this.mgr.contract()"
+	onmouseenter="this.mgr.expand();" onmouseexit="this.mgr.contract()">
+	<view id="map-waypoints-title" x="1" width="128" height="15" rtop="1">
+		<caption label="&widgets.map.waypoints.title;" x="3" width="100" height="12" rtop="2" style="font-size: -1; color: #FFFFFF;"/>
+		<image id="map-waypoints-arrow" src="ui/textures/test/down_arrow.bmp" x="110" width="10" height="10" rtop="3"/>
+	</view>
+	<view id="map-waypoints-body" x="1" width="128" y="5" rtop="8">
+		<image x="5" src="ui/textures/test/horiz_underline.bmp" width="118" height="12" rtop="0"/>
+		<list id="map-waypoints-list" x="0" y="1" width="128" rtop="11"
+			onshow="this.drawWaypoints()" onselect="this.selectWaypoint()"
+			onrightclick="this.rightClickWaypoint()">
+			<script private="true">
+				<!--
+				
+				this.waypointList = new ListControl(this);
+				
+				this.drawWaypoints = function()
+				{
+					consoleprint("DRAWING WAYPOINTS!!!\n");
+					
+					var control 		= this.findparent("map-waypoints");
+					var map				= control.mgr.map;
+					var waypoints 		= map.waypoints;
+					var reports			= map.reports;
+					var list			= this.waypointList;
+					
+					list.clearRows(true);
+					
+					for(var i = 0; i < waypoints.length; i++)
+					{
+						var waypoint = waypoints[i];
+						
+						consoleprint("Adding waypoint " + waypoint.name + "\n");
+						
+						var row = "\
+<view id='" + waypoint.name + "' x='2' width='124' height='13' onmouseenter='this.mouseEnter(this)' onmouseexit='this.mouseExit(this)'>\
+	<caption x='5' y='0' width='100' height='13' style='color: #e9e3d9ff; font-size: -1;' label='" + waypoint.name + "' tip='" + waypoint.notes + "'/>\
+</view>";
+						
+						var rowview = list.addRow(waypoint, row);
+						
+						rowview.mouseEnter 	= list.mouseEnter;
+						rowview.mouseExit 	= list.mouseExit;
+						
+						if(waypoint.active)
+							list.clickList(false, i);
+					}
+					
+					for(var i = 0; i < reports.length; i++)
+					{
+						var report 	= reports[i];
+						var name	= (report.shared && report.local) ? "C?": report.name;
+						
+						consoleprint("Adding report " + report.name + "\n");
+						
+						var row = "\
+<view id='" + report.name + "' x='2' width='124' height='13' onmouseenter='this.mouseEnter(this)' onmouseexit='this.mouseExit(this)'>\
+	<caption x='5' y='0' width='100' height='13' style='color: #e9e3d9ff; font-size: -1;' label='" + name + "' tip='" + report.notes + "'/>\
+</view>";
+						
+						var rowview = list.addRow(report, row);
+						
+						rowview.mouseEnter 	= list.mouseEnter;
+						rowview.mouseExit 	= list.mouseExit;
+						
+						if(report.active)
+							list.clickList(false, waypoints.length + i);
+					}
+				}
+				
+				this.selectWaypoint = function()
+				{
+					consoleprint("SELECTING WAYPOINTS!\n");
+					
+					this.waypointList.clickList(false);
+					
+					var control 	= this.findparent("map-waypoints");
+					var waypoint 	= this.selecteddata;
+					var map			= control.mgr.map;	
+					
+					if(waypoint != null && map != null)
+					{
+						map.setactivewaypoint(waypoint);
+						
+						if(game.ingame || player.client.currentmission.amleader)
+							map.mgr.setPosition(waypoint.position);
+					}
+				}
+				
+				this.rightClickWaypoint = function()
+				{
+					consoleprint("RIGHT CLICKING WAYPOINT!\n");
+					
+					var control 	= this.findparent("map-waypoints");
+					var waypoint 	= this.selecteddata;
+					var map			= control.mgr.map;	
+					
+					if(waypoint != null && map != null)
+						map.mgr.onRightClick(waypoint);
+				}
+				
+				-->
+			</script>
+		</list>
+	</view>
+</view>
+

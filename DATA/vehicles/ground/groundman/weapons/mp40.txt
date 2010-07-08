@@ -1,0 +1,46 @@
+# first thing in the weapon file should always be the weapontype
+# this causes the default_(weapontype).txt file to be loaded first
+# valid weapon types are:
+# SMG, SATCHEL, RIFLE, AUTO_PISTOL, GRENADE, REVOLVER, ITEM, KNIFE, LMG
+
+weaponType = SMG
+
+#minimumDispersion = 0.01666667
+minimumDispersion = 0.66
+# This is set VERY HIGH as a place holder for actual gun sway
+#unaimedDispersionMod = 120.0
+unaimedDispersionMod = 5.0
+
+# per bullet muzzle rize (in degrees)
+muzzleRise = 2.00
+
+# degrees per second of "push back to zero" per second
+muzzleReturn = 25.0
+
+# degrees of climb per second
+muzzleClimbRate = 30.0
+
+# per bullet "jump" .. this is the vertical component
+# the total formula is weapon.muzzleRize * weapon.bulletJitter * trooper.aimControl
+bulletJitter = 2.25
+
+# sound to play when reloading
+reloadSound = sounds\mp40-reload.wav
+
+# specify the weapon & clip (clip optional) model here
+# note that data\gr2data\FPS\ is prepended to these file names
+weaponModel = mp40\gunmesh-mp40
+#clipModel = mp40\gunmesh-mp40-mag
+
+# granny attach bone names for weapon & clip
+# the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
+weaponConnectTo = weapon-control
+weaponConnect = mp40-connect
+
+# the clipConnect bone in the clip attaches to the clipConnectTo bone in the gun
+#clipConnectTo = mp40-clip-mount
+#clipConnect = mp40-clip-connect
+
+# boresighting values .. how much off of "straight" does this gun need to fire
+aimVerticalCorrection = 0.00
+aimHorizontalCorrection = -0.50

@@ -1,0 +1,64 @@
+#engine stats file for Spit1b
+#created Sept.08 - Doc.
+[merlinII]
+type = propeller
+basehorsepower = 990
+# basehpalt = 0
+basehpalt = 3734
+# 6 lbs of boost
+basehppress = 1.37
+basehprpm = 3000
+basehpexhausttemp = 1100
+basehpexhausttemp = 5000
+idlerpm = 1000
+idlethrottlepos = 0.04
+# most engines mil power fuel consumption is 360-380
+fuelperhphour = 0.240
+# most engines econ power fuel consumption is 190-200
+# this setting used for econrpm only
+oilconsumptionperhour = 5
+neg_g_fuel_cutout = 1
+neg_g_time_limit = 35
+
+# note: minimum pressure to maintain rpm will be used
+#wepmaxpress = 1.0
+#milmaxpress = .85
+#climbmaxpress = 0.85
+#conmaxpress = 0.65
+#idlepressureatidle = 0.05
+#idlepressureatmaxrpm = -0.2
+# in seconds
+maxweptime = 300
+maxmiltime = 1800
+weprpm = 3500
+milrpm = 3000
+climbrpm = 2600
+econrpm = 2200
+
+superchargetype = singlespeed
+speed1critalt = 4500
+speed1efficiencytop = 1.0
+speed1efficiencybottom = 0.95
+speed1maxmilboost = 1.37
+speed1maxwepboost = 1.40
+#neutralmaxmilboost = 1.9
+#neutralshiftalt = 270
+#shiftalt = 470
+#speed2critalt = 10000
+
+#degrees from the thrust line for exhaust thrust
+exhaustthrustangle = 5
+# 1 lb = 4.45N this is in newtons
+exhaustthrustforce = 350
+
+weptype = normal
+
+propgearratio = 0.477
+
+# 1 = clockwise from pilot's perspective if he's behind the prop
+# -1 = counterclockwise
+propspindirection = 1
+
+criticalrpm = 200
+starterrpm = 100
+starterhp = 10

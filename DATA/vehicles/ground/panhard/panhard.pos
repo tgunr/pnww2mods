@@ -1,0 +1,39 @@
+# Panhard AMD-178 pos file
+# driver
+# no hatch so volume 1.0
+# canopy takes care of being inside
+position = 1
+hatchclosedsoundvolume = 1.0
+hatchopensoundvolume = 1.0
+canopyclosedsoundvolume = 0.1
+canopyopensoundvolume = 1.0
+engineidlevol = 0.5
+enginefullpowervol = 0.1
+hatchsound = sounds\slide_hatch.wav
+canopysound = sounds\slide_hatch.wav
+
+# commander
+position = 2
+hatchclosedsoundvolume = 1.0
+hatchopensoundvolume = 1.0
+canopyclosedsoundvolume = 0.1
+canopyopensoundvolume = 1.0
+engineidlevol = 0.5
+enginefullpowervol = 0.1
+canopysound = sounds\hatch_open.wav
+canopyclosesound = sounds\hatch_close.wav
+
+# gunner
+position = 3
+hatchclosedsoundvolume = 0.1
+hatchopensoundvolume = 1.0
+canopyclosedsoundvolume = 0.1
+canopyopensoundvolume = 1.0
+engineidlevol = 0.5
+enginefullpowervol = 0.1
+#hatchsound = sounds\slide_hatch.wav
+#canopysound = sounds\slide_hatch.wav
+
+
+
+

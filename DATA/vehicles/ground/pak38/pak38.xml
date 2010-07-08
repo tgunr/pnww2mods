@@ -1,0 +1,11 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="pak38" type="ground" shape="pak38" description="PaK 38 (50 mm) AT Gun" icon="PaK 38 Gun">
+<include file="pak38.veh.xml"/>
+<include file="pak38.state.xml"/>
+<include file="pak38.hit.xml"/>
+<include file="pak38.turret.xml"/>
+<include file="pak38.loadout.xml"/>
+<include file="pak38.xsound.xml"/>
+<include file="pak38.control.xml"/>
+</vehicle>

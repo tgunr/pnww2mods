@@ -1,0 +1,40 @@
+
+# A13 Turret file
+
+#multicrewpos position, whichcrew
+multicrewpos 1 1
+multicrewpos 2 2
+multicrewpos 3 2
+multicrewpos 4 1
+
+#Main gun and Coax
+position = 3
+elevationrate = 3
+traverserate = 15
+type = 360turret
+gunsightfile = crusader2.gs
+gunsightalignmentmountobject = 2pndrmount
+gunsightalignmentrange = 457.2
+
+#turret sound variables
+turrettraverse = turret/hydrolic_turret.wav
+#turretelevate = turret/hand_turret_move.wav
+turretgeneral = turret/turret_traverse_general.wav
+
+# Bow Gunner
+#position = 4
+#elevationrate = 1
+#traverserate = 1
+#type = flexible
+
+#Commander	
+position = 2
+elevationrate = 2
+traverserate = 6
+type = 360turret
+gunsightfile = 8x30binoc.gs
+# conditions are undeployed, depolyed, canopyopen, canopyclosed, hatchopen, hatchclosed
+neutral = canopyclosed
+neutraltraverse = 0
+neutralelevate = 0
+gunsightblocked = canopyclosed

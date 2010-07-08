@@ -1,0 +1,112 @@
+//--------------------------------------------------------------------
+// Fragment shader for water
+//--------------------------------------------------------------------
+#define USE_LINEAR_FOG
+//#undef USE_LINEAR_FOG
+
+struct appin 
+{
+    float4 color0     : COLOR0;
+    float4 color1     : COLOR1;
+	float4 position   : POSITION;
+	float2 texcoord0  : TEXCOORD0;
+	float3 texcoord1  : TEXCOORD1; 
+	float3 texcoord2  : TEXCOORD2;
+	float3 texcoord3  : TEXCOORD3;
+	float2 bumpcoord0 : TEXCOORD4;
+	float2 bumpcoord1 : TEXCOORD5;
+	float2 bumpcoord2 : TEXCOORD6;
+	float4 eyeVector  : TEXCOORD7;
+	float fogExponent : FOG;
+};
+
+struct colors
+{
+    half4 deepColor;
+    half4 shallowColor;
+    half4 reflectionColor;
+    half4 fogColor;
+    half3 lightColor;
+};
+    
+struct fresnel
+{
+    half fresnelPower;
+    half fresnelBias;
+    half fresnelScale;
+};
+
+float4 main(appin IN,
+            uniform sampler2D normalMap,
+            uniform sampler2D specMap,
+            uniform samplerCUBE envMap,
+            uniform colors c,
+            uniform half4 reflectionAmount,
+            uniform half4 waterAmount,
+            uniform fresnel f,
+            uniform half fogFactor,
+            uniform half hdrMultiplier,
+            uniform half3 globalAmbient,
+            uniform half3 kd,
+            uniform half3 ks
+            ) : COLOR
+{
+	// sum normal maps
+    half4 t0 = tex2D(normalMap, IN.bumpcoord0.xy) * 2.0f - 1.0f;
+    half4 t1 = tex2D(normalMap, IN.bumpcoord1.xy) * 2.0f - 1.0f;
+    half4 t2 = tex2D(normalMap, IN.bumpcoord2.xy) * 2.0f - 1.0f;
+                
+    half3 N = t0.xyz + t1.xyz + t2.xyz;
+        
+    half3x3 m; // For bump effect...tangent to world
+    m[0] = IN.texcoord1;
+    m[1] = IN.texcoord2;
+    m[2] = IN.texcoord3;
+    
+    half3 Nw = mul(m, N.xyz);
+    Nw = normalize(Nw);
+           
+	// reflection
+    half3 I = normalize(IN.eyeVector).xyz;
+                
+    half3 R = reflect(-I, Nw);
+       
+    // Yep.
+    I.z = -I.z;
+    
+    half4 reflection = texCUBE(envMap, R);
+    // hdr effect (multiplier in alpha channel)
+    // If hdrMultiplier has no effect, reflection.a is 0
+    // reflection.rgb *= (1.0f + reflection.a * hdrMultiplier);
+    
+    // Use 1D texture lookup when final constants have been determined.
+    half facing = 1.0f - max(dot(I, Nw), 0);
+    half fresnel = f.fresnelBias + pow(facing, f.fresnelPower) * f.fresnelScale;
+
+    half4 waterColor = lerp(c.deepColor, c.shallowColor, facing);
+        
+	half4 color = waterColor * waterAmount + 
+                  reflection * c.reflectionColor * reflectionAmount * fresnel;
+         
+    half4 light = tex2D(specMap, half2(dot(IN.color0.xyz, Nw), dot(IN.color1.xyz, Nw)));
+           
+    half3 diffuse = kd * light.rgb;    
+    half3 specular = light.a * ks;
+       
+    half3 externalLight = c.lightColor * (diffuse + globalAmbient + specular);
+    
+    color.xyz = color.xyz * externalLight;
+       
+    // Figure in fog component
+#ifdef USE_LINEAR_FOG
+    half fogFactor2 = max(1 - IN.fogExponent, 0);
+	color = lerp(c.fogColor, color, min(fogFactor2, 1));
+#else
+	half fogFactor2 = exp(-abs(IN.fogExponent));
+	color = lerp(c.fogColor, color, fogFactor2);
+#endif
+
+	color.w = 1.0f;
+	
+	return color;
+}

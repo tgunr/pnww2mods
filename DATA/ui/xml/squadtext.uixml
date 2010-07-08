@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<window id="squadtext" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768"
+	style="background-color: #00000077;" layer="100">
+	<include file="lib/common.uixml"/>
+	<view x="350" y="250" width="350" height="200" style="background-color: #00000088; 
+							border-sides: ui/textures/hud/border_side.bmp;
+							border-corner: ui/textures/hud/border_corner.bmp;
+							border-width: 4;
+							border-height: 4;" moveondrag="yes">
+		<caption label="UPDATE SQUAD INFO" x="10" width="300" height="20" rtop="8" style="font-size: +1; color: #BFE2CE;"/>
+		<image x="10" width="340" height="12" rtop="20" src="ui/textures/test/horiz_underline.bmp"/>
+		<caption id="edit-header" x="10" y="146" width="300" height="20" style="font-size: -1; color: #FFFFFF;"/>
+		<text id="edit-body" x="10" y="45" height="100" width="330" acceptsfocus="true" style="background-color: #FFFFFF22;  color: #e9e3d9;"/>
+		<button id="popup-no" x="20" y="10" width="150" height="25" label="&popup.cancel;" onclick="updateSquadText(false)"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+		<button id="popup-yes" x="180" y="10" width="150" height="25" label="&popup.ok;" onclick="updateSquadText(true)"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+	</view>
+	<script>
+		<!--
+		
+		var fieldType 	= null;
+		var fieldLength	= 0;
+		
+		function initEditPopup(field, current, maxlength)
+		{
+			fieldType 		= field;
+			fieldLength		= maxlength;
+			
+			var editHeader 	= findview("edit-header");
+			var editBody 	= findview("edit-body");
+			
+			editHeader.label 	= "SQUAD " + fieldType.toUpperCase() + " (up to " + fieldLength + " characters)"; 
+			editBody.text 		= current;
+		}
+		
+		function updateSquadText(confirm)
+		{
+			var client = player.client; 
+			
+			soundPlayClick();
+			
+			if(confirm && client.squad != null)
+			{
+				var text = findview("edit-body").text;
+				
+				if(text.length < fieldLength)
+				{
+					client.squad.updatefield(fieldType, text);
+					window.close();
+				}
+				else
+				{
+					// let them know
+				}
+			}
+			else
+			{
+				window.close();
+			}
+		}
+		
+		-->
+	</script>
+</window>

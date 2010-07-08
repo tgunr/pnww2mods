@@ -1,0 +1,29 @@
+#engine stats file for M10
+[GM_6046]
+basehorsepower = 410
+basehpalt = 0
+basehprpm = 2050
+basehppress = 1.0
+basehpexhausttemp = 1000
+idlethrottlepos = 0.1
+idlerpm = 800
+fuelperhphour = 0.2
+fuelperhphourecon = 0.2
+oilconsumptionperhour = 0
+wepmaxpress = 1.25
+milmaxpress = 1.25
+weprpm = 2900
+milrpm = 2900
+climbrpm = 2900
+econrpm = 2900
+
+superchargertype = nosupercharging
+weptype = none
+
+#criticalrpm is the rpm at which below this the engine might stall, also used for starting
+criticalrpm 150
+
+#starterrpm is the rpm at which the starter motor will spin the engine at
+starterrpm 100
+#starterhp is the power of the starter motor
+starterhp 15

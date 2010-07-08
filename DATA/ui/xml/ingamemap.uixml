@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<view id="ingamemap" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" modal="true"
+	frame="no" style="background-color: #00000066;" onshow="initIngameMap()" layer="52" aspectalign="center"> <!--  onshow="showMap()" onhide="hideMap()" -->
+	<include file="lib/common.uixml"/>
+	<include file="classes/TreeControl2.uixml"/>
+	<include file="classes/DDListControl.uixml"/>
+	<include file="classes/Preference.uixml"/>
+	<tabview id="body" width="930" height="450" style="color: #BFE2CE;
+						background-color: #000000BB;
+						border-top-corner: ui/textures/test/body_ul.bmp;
+						border-bottom-corner: ui/textures/test/body_br.bmp;
+						border-sides: ui/textures/test/body_sides.bmp;
+						border-top: ui/textures/test/body_top.bmp;
+						border-bottom: ui/textures/test/body_bottom.bmp;
+						control-on-endcap:  ui/textures/test/body_tab_cap_on.bmp;
+						control-on-back:  ui/textures/test/body_tab_filler_on.bmp;
+						control-off-endcap: ui/textures/test/body_tab_cap.bmp;
+						control-off-back: ui/textures/test/body_tab_filler.bmp;
+						control-on-color: #FFFFCE;
+						border-width: 16;
+						border-height: 16;">
+		<tab id="map-tab" label="  &common.map.tab;  " x="20" y="3" width="930" height="460"
+			onshow="soundPlayShuffle()" tip="&common.map.tab.tip;">
+			<include file="widgets/map.uixml"/>
+		</tab>
+		<include file="widgets/globals/mission.uixml"/>
+		<include file="widgets/globals/brigade.uixml"/>
+		<include file="widgets/globals/squads.uixml"/>
+		<include file="widgets/globals/manuals.uixml"/>
+		<include file="widgets/globals/keymapper.uixml"/>
+		<include file="widgets/globals/calibration.uixml"/>
+	</tabview>
+	<script>
+		<!--
+		
+		function initIngameMap()
+		{
+			if(presetsList && presetsList.mgr)
+				presetsList.mgr.hideList();
+		}
+		
+		function hideMap()
+		{
+			var fullMap = game.findview("fullmap");
+			var kenny 	= game.findview("kenny");
+			
+			if(fullMap)
+				fullMap.close();
+			
+			if(kenny)
+				kenny.visible = true;
+		}
+		
+		function showMap()
+		{
+			consoleclear();
+			
+			var kenny = game.findview("kenny");
+			
+			if(kenny)
+				kenny.visible = false;
+		}
+		
+		function onInGameMapActivate()
+		{
+		 	consoleprint("!!!!!!!!!!! onActivate called !!!!!!!!!!!\n");
+		}
+
+		function onDeactivate()
+		{
+		 	consoleprint("onDeactivate called\n");
+		}
+		
+		-->
+	</script>
+</view>

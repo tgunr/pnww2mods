@@ -1,0 +1,13 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="bf109e1" type="air" shape="bf109e1" description="Bf 109E1">
+<include file="bf109e1.veh.xml"/>
+<include file="bf109e1.state.xml"/>
+<include file="bf109e1.hit.xml"/>
+<include file="bf109e1.loadout.xml"/>
+<include file="bf109e3.xsound.xml"/>
+<include file="bf109e1.control.xml"/>
+<include file="bf109e1.mass.xml"/>
+<variant id="bf109e1" icon="Bf 109"/>
+<variant id="cn_bf109e1" icon="Bf 109"/>
+</vehicle>

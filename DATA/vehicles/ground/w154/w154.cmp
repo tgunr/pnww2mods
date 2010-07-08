@@ -1,0 +1,180 @@
+[Mercedes w154]
+
+[drivewheelleft]
+type = gear
+subtype = wheel
+gearnum = 2
+mass = 50
+wheelradius = 0.5
+contactpointtype = tire
+wheelrotationalinertia = 50
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+braketype = center
+brakestrength = 9000
+rollcoefficient = 0.02
+strutspringstrength = 10000
+strutshockstrength = 1000
+strutshockreturnstrength = 100
+
+[drivewheelright]
+type = gear
+subtype = wheel
+gearnum = 4
+mass = 50
+wheelradius = 0.5
+contactpointtype = tire
+wheelrotationalinertia = 50
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+braketype = center
+brakestrength = 9000
+rollcoefficient = 0.02
+strutspringstrength = 10000
+strutshockstrength = 1000
+strutshockreturnstrength = 100
+
+
+[steerwheelleft]
+type = gear
+subtype = wheel
+gearnum = 1
+mass = 45
+wheelradius = 0.45
+contactpointtype = tire
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+strutspringstrength = 10000
+strutshockstrength = 1000
+strutshockreturnstrength = 100
+braketype = center
+brakestrength = 9000
+rollcoefficient = 0.02
+
+
+[steerwheelright]
+type = gear
+subtype = wheel
+gearnum = 3
+mass = 45
+wheelradius = 0.45
+contactpointtype = tire
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+strutspringstrength = 250
+strutshockstrength = 0
+strutshockreturnstrength = 30
+braketype = center
+brakestrength = 9000
+rollcoefficient = 0.02
+
+[transmission]
+type = engine
+subtype = transmission
+transtype = limitedslip
+drivewheel1 = drivewheelleft
+drivewheel2 = drivewheelright
+
+[gearbox]
+type = engine
+subtype = gearbox
+numforwardgears = 5
+numreversegears = 1
+gear1ratio = 24
+gear2ratio = 15
+gear3ratio = 11
+gear4ratio = 9
+gear5ratio = 7
+reverse1ratio = 11
+preselector = 1
+propellercomponent = transmission
+
+[clutch]
+type = engine
+subtype = clutch
+clutchforce = 4000
+clutchstart = 0.3
+clutchend = 0.8
+clutchdisengaged = 0.2
+flywheelrotinertia = 5
+propellercomponent = gearbox
+
+[fueltank1]
+criticalprimary = 1
+type = engine
+subtype = fueltank
+x = 0
+y = 0
+z = -0.3
+mass = 55
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+tanknum = 1
+
+
+[radiator1]
+type = engine
+subtype = radiator
+x = 0.0
+y = 0.0
+z = 0.0
+mass = 40
+inertiapitch = 0
+inertiaroll = 0
+inertiayaw = 0
+tanknum = 1
+
+
+[Engine]
+type = engine
+subtype = engine
+criticalprimary = 1
+enginetype = w154_v12
+propellercomponent = clutch
+x = 0
+y = 0
+z = 0
+mass = 345
+inertiapitch = 18
+inertiaroll = 12
+inertiayaw = 12
+enginenumber = 1
+fueltank1component = fueltank1
+radiator1component = radiator1
+idlesound = sounds\w154\idle.wav
+startersound = sounds\w154\starter.wav
+
+
+[driver]
+type = crew
+crewposition = 1
+
+[front section]
+type = ballast
+x = 0
+y = 0
+z = -0.65
+
+[box]
+type = ballast
+x = 0
+y = 0
+z = -0.65
+
+[ballast]
+type = ballast
+mass = 350
+x = 0
+y = 0.5
+z = 0
+inertiapitch = 1500
+inertiaroll = 1500
+inertiayaw = 1500
+
+# Weight 980
+# Target Weight 980

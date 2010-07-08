@@ -1,0 +1,31 @@
+# Pz38t 37mm AP
+# Rev. 4/18/02 -bloo
+# modified Nov.08 - Doc
+
+type = ballistic
+diameter = .037
+weight = .85
+velocity = 741
+tracertime = 4.9
+object = bullet1
+explosive = 85000.0
+# xmass and type unknown
+
+fuzetime = 0.002
+bc = 1.75
+lifetime = 5.0
+ricochetangle = 87
+modelspall = 132514
+#penetrationconstant = 0.000001325
+penetrationconstant = 0.000001485
+dontdisplayfirstframe = 1 
+
+numshrapnelpieces = 50
+totalshrapnelmass = .4
+explosionsoundnear = sounds\smlcloseexp.wav
+explosionsoundfar = sounds\smlfarexp.wav
+nearfardistance = 300
+
+muzzleflash = 3
+hiteffect = incendiarymg
+tracerscale = 3

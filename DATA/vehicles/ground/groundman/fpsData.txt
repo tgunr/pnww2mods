@@ -1,0 +1,324 @@
+#
+# data file for FPS controls
+#
+
+#
+# weapon files
+# note that these files are located in data\vehicles\ground\groundman\weapons
+#
+# IMPORTANT:  all of these must be valid files, or "bad things" will happen
+#
+
+thompsonFile = thompson.txt
+mp40File = mp40.txt
+masFile = mas.txt
+
+satchelFile = satchel.txt
+satchelAxFile = satchelax.txt
+
+kar98kFile = kar98k.txt
+kar98ksFile = kar98ks.txt
+enfieldFile = enfield.txt
+enfieldMk4File = enfieldMk4.txt
+lebelFile = lebel.txt
+mas36File = mas36.txt
+lebelMleFile = lebelmle.txt
+
+m1935aFile = m1935a.txt
+lugerFile = luger.txt
+
+mills36mk1File = mills36mk1.txt
+frbangFile = frbang.txt
+stigrFile = stigr.txt
+
+enfmk2File = enfmk2.txt
+
+binocsFile = binocs.txt
+
+knife_axisFile = knife_axis.txt
+knife_alliedFile = knife_allied.txt
+
+brenFile = bren.txt
+mg34File = mg34.txt
+fm29File = fm29.txt
+
+hgr39File = hgr39.txt
+m18File = m18.txt
+frsmokeFile = frsmoke.txt
+
+ammoFile = ammo.txt
+bridgeRepairFile = bridgeRepair.txt
+
+g30File = rg_g30.txt
+vbFile = rg_vb.txt
+millsFile = rg_mills.txt
+
+boysmk1File = boysmk1.txt
+pzb39File = pzb39.txt
+
+ukltmortarFile = ltmortar_uk.txt
+frltmortarFile = ltmortar_fr.txt
+deltmortarFile = ltmortar_de.txt
+
+#
+# START TROOPER DATA
+#
+
+defaultFOV = 75.0
+FOVSpeed = 120.0
+
+weaponChangeTime = .8
+
+#
+# movement speeds
+#
+forwardAccel = 6.0
+# strafeAccel must be set equal to forwardAccel due to speed handling
+# otherwise the TPS angles will be off
+strafeAccel = 6.0
+stillSpeed = 0.0
+sprintSpeed = 6.0
+trotSpeed = 4.0
+walkSpeed = 2.0
+creepSpeed = 1.5
+crawlSpeed = 0.75
+swimSpeed = 0.75
+backwardsSpeed = 2.0
+backwardsCrouchSpeed = 0.75
+
+# not used anymore
+#standToCrouchTime = 0.5
+#standToProneTime = 0.5
+#crouchToStandTime = 0.25
+#crouchToProneTime = 0.25
+#proneToStandTime = 1.5
+#proneToCrouchTime = 1.0
+
+# 
+# eye height adjustments for poses
+#
+# not used anymore
+#standEyeHeightDisplacement = 0.0
+#crouchEyeHeightDisplacement = -0.5
+#proneEyeHeightDisplacement = -1.4
+#sitEyeHeightDisplacement = -0.5
+#swimDisplacement = 0.0
+
+# new eye height adjustments base don state
+# dead,prone,pronemove,proneaim,pronedeploy,crouch,crouchmove,crouchaim,crouchdeploy,stand,standmove,standaim,standdeploy
+eyeHeights = .26,.313,.313,.4,.4,1.229,1.3,1.322,1.142,1.577,1.602,1.702,1.577
+
+# note, this is a forward/backward displacement, not up/down
+eyeRideDisplacement = 0.12
+
+#
+# ride/unride specifics .. if below max, 0 damage.  if above kill .. death.  between, linear interpolate using unrideJoules
+#
+maxSafeVehicleSpeed = 3.0
+killVehicleSpeed = 20.0
+unrideJoules = 600.0
+
+#
+# rotation controls
+#
+maxRotationSpeed = 360
+keyRotationSpeed = 60
+
+#
+# vertical eye controls
+#
+maxEyeUpAngle = 80
+maxEyeDownAngle = 70
+maxRidingEyeUpAngle = 55
+maxRidingEyeDownAngle = 48
+
+#
+# horizontal eye controls
+#
+maxEyeAngle = 60
+minEyeMovement = 10
+eyeMoveMultiplier = 10
+
+#
+# mouse granularity adjustment
+# vertGranularityMultiplier is the how much the vertical movement is modified relative 
+# to the horizontal movement; can cause much disorientation with a bad value here
+# 
+
+vertGranularityMultiplier = 0.5
+
+#
+# LMG deployment specific data
+#
+deployedGranularityMultiplier = 0.5
+maxProneDeployedDownAngle = 12.0
+maxProneDeployedUpAngle = 12.0
+maxProneDeployedLeftAngle = 20.0
+maxProneDeployedRightAngle = 20.0
+
+proneDeployedClimbMultiplier = 0
+proneDeployedHorizShiftMultiplier = 0.25
+proneDeployedVertShiftMultiplier = 0.25
+
+#
+# atp data
+# 
+# most of these are per "tick" numbers .. multiply by 50 to get the per second number
+#
+
+atpStandStill = 0.004
+atpStandForward = 0.0005
+atpStandBackward = -0.001
+atpStandForwardWalk = 0.002
+atpStandBackwardWalk = 0.001
+
+atpStandStillRelaxed = 0.006
+atpStandForwardRelaxed = 0.001
+atpStandBackwardRelaxed = 0.0005
+atpStandForwardWalkRelaxed = 0.003
+atpStandBackwardWalkRelaxed = 0.002
+
+#0.00667
+atpStandSprint = -0.010005
+
+atpCrouchStill = 0.002
+atpCrouchForward = -0.0013
+
+atpCrouchStillRelaxed = 0.004
+atpCrouchForwardRelaxed = 0.0005
+
+atpProneStill = 0.008
+atpProneForward = -0.001995
+
+atpSwimStill = 0.0001
+atpSwimForward = -0.0025
+
+atpSitStill = 0.008
+
+atpSprintMinimum = 0.5
+#atpSprintMinimum = 0.8
+atpSprintAllowAgain = 0.55
+#atpSprintAllowAgain = 0.85
+atpBackwardMinimum = 0.8
+atpCreepMinimum = 0.5
+#atpCreepMinimum = 0.8
+atpCrawlMinimum = 0.8
+atpSwimMinimum = 0.5
+
+## fall short time set to crazy high value so it doesn't get called untill I can get patrick to remove this one###
+fallShortTime = 1000.5
+fallFarTime = 4.0
+
+#
+# gun wobble data
+#
+
+#
+# overall controls (tune these up or down to affect the overall strengths
+# of the sources of the gun wobble)
+#
+
+# aimControl is the trooper level control for "bullet jitter" .. this is multipled with the weapon's muzzleRise
+aimControl = 0.1
+
+moveMultiplier = 1.0
+#heartMultiplier = 0.75
+heartMultiplier = 0.05
+#breathMultiplier = 0.75
+breathMultiplier = 0.50
+poseMultiplier = 1.0
+
+#
+# detailed controls for wobble
+#
+restPulse = 60.0
+maxPulse = 150.0
+pulseBreathRatio = 4.0
+
+# how long aiming before breath/heart are at max strength
+timeToMaxHeartBreathMultiplier = 10.0
+maxHeartBreathMultiplier = 1.0
+
+# how long aiming before arm wobble is at max strength
+timeToMaxPoseMultiplier = 10.0
+maxPoseMultiplier = 2.0
+
+# how quickly do you recover from aiming (3.0 means recovery is 3x faster)
+rejuvTimeMultiplier = 3.0
+
+# modifiers for arm wobble based on pose
+standPoseWobbleMultiplier = 1.0
+kneelPoseWobbleMultiplier = 0.25
+pronePoseWobbleMultiplier = 0.05
+
+# arm wobble timing
+minArmWobbleTime = 0.5
+maxArmWobbleTime = 10.0
+
+# translation to angle multiplier (yes, this is cryptic)
+#horizWobbleAngleMultiplier = 500.0
+horizWobbleAngleMultiplier = 1250.0
+#vertWobbleAngleMultiplier = 500.0
+vertWobbleAngleMultiplier = 500.0
+
+#maxWobbleAngle = 5.0
+maxWobbleAngle = 5.0
+
+# how long after aiming do we hit "zero point"
+aimBreathTime = 3.75
+# what % of full wobble do we start at 
+aimStartValue = 0.75
+
+#
+# SOUNDS
+#
+crawlSound = sounds\troop\crawl.wav
+creepSound = sounds\troop\creep.wav
+creepAimSound = sounds\troop\creepaim.wav
+trotSound = sounds\troop\trot.wav
+trotAimSound = sounds\troop\trotaim.wav
+sprintSound = sounds\troop\sprint.wav
+waterSound = sounds\troop\waterwalk.wav
+fallNormalSound = sounds\troop\fall-normal.wav
+fallNormalHurtSound = sounds\troop\fall-hurt.wav
+fallWaterSound = sounds\troop\fallw.wav
+fallWaterHurtSound = sounds\troop\fallw-hurt.wav
+#fallShortSound = sounds\troop\scream2.wav
+#fallFarSound = sounds\troop\scream.wav
+aimBreathSound = sounds\troop\aim-breath.wav
+
+# lean data
+
+leanLeftHoriz = 0.3
+leanLeftVert = 0.15
+leanRightHoriz = 0.3
+leanRightVert = 0.15
+leanTime = 0.75
+
+# bridge data - overrides/handles bridge satchel damage
+# note that this is currently 2.5 times the normal satchel damage
+bridgeDamageJoules = 56250000
+bridgeRepairJoules = 56250000
+
+redScreenFadeTime = 15.0
+redScreenMinAlpha = 0.15
+
+# concussion damage modifier
+concussionMod = 1.5
+
+parachuteDeployTime = 3.0
+parachuteWornATPMultiplier = 2.0
+paratroopATPModifier = 0.8
+parachuteFallSpeed = 10
+minSafeFallDistance = 200
+
+paratroopFreeFallSound = sounds\wind.wav
+parachuteOpeningSound = sounds\troop\chuteopen.wav
+parachuteDeployedSound = sounds\troop\parachutewind.wav
+paratroopLandingSound = sounds\troop\landingground.wav
+paratroopLandingWaterSound = sounds\troop\landingwater.wav
+
+# oversupply variables
+
+# in meters
+oversupplyradius = 5.0

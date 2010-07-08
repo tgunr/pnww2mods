@@ -1,0 +1,21 @@
+# Pak38 50mm AP40
+# Rev. 8/13/04 - hatch
+
+type = ballistic
+diameter = .05
+weight = 0.85
+velocity = 1200
+tracertime = 7.9
+object = bullet1
+explosive = 0.0
+fuzetime = 0.002
+bc = 0.4
+lifetime = 8.0
+ricochetangle = 87
+modelspall = 1
+penetrationconstant = 0.000001400
+dontdisplayfirstframe = 1
+
+muzzleflash = 3
+hiteffect = incendiarymg
+tracerscale = 2.5

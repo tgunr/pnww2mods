@@ -1,0 +1,135 @@
+# He111 H2 loadout file
+
+# sounds available for the mounts
+sound1 = sounds\ju87b\xgun3.wav
+# sound2 = sounds\ju87b\bombrel.wav
+
+loadout = 1
+
+mountnum = 1
+mountobject = nosegunx
+mountsound = sound1
+weapon = mg15
+weaponobject = genericgun1
+
+mountnum = 2
+mountobject = turretgunx
+mountsound = sound1
+weapon = mg15
+weaponobject = genericgun1
+
+
+# Right side bombbay
+mountnum = 3
+mountobject = sc250x
+# mountsound = sound2
+#weapon = gp500
+#weaponobject = gp500
+weapon = sc250
+weaponobject = genericgun1
+recoilnum = 1
+recoiltime = .2
+
+# Belly Gun
+mountnum = 4
+mountobject = bellygunx
+mountsound = sound1
+weapon = mg15
+weaponobject = genericgun1
+
+# Right side bombbay
+mountnum = 5
+mountobject = sc250x2
+# mountsound = sound2
+#weapon = gp500
+#weaponobject = gp500
+weapon = sc250
+weaponobject = genericgun1
+recoilnum = 2
+recoiltime = .2
+
+# Right side bombbay
+mountnum = 6
+mountobject = sc250x3
+# mountsound = sound2
+#weapon = gp500
+#weaponobject = gp500
+weapon = sc250
+weaponobject = genericgun1
+recoilnum = 3
+recoiltime = .2
+
+# Right side bombbay
+mountnum = 7
+mountobject = sc250x4
+# mountsound = sound2
+#weapon = gp500
+#weaponobject = gp500
+weapon = sc250
+weaponobject = genericgun1
+recoilnum = 4
+recoiltime = .2
+
+# Left side bombbay
+mountnum = 8
+mountobject = sc250y
+# mountsound = sound2
+#weapon = gp500
+#weaponobject = gp500
+weapon = sc250
+weaponobject = genericgun1
+recoilnum = 5
+recoiltime = .2
+
+# Left side bombbay
+mountnum = 9
+mountobject = sc250y2
+# mountsound = sound2
+#weapon = gp500
+#weaponobject = gp500
+weapon = sc250
+weaponobject = genericgun1
+recoilnum = 6
+recoiltime = .2
+
+# Left side bombbay
+mountnum = 10
+mountobject = sc250y3
+# mountsound = sound2
+#weapon = gp500
+#weaponobject = gp500
+weapon = sc250
+weaponobject = genericgun1
+recoilnum = 7
+recoiltime = .2
+
+# Left side bombbay
+mountnum = 11
+mountobject = sc250y4
+# mountsound = sound2
+#weapon = gp500
+#weaponobject = gp500
+weapon = sc250
+weaponobject = genericgun1
+recoilnum = 8
+recoiltime = .2
+
+# Left Gun
+mountnum = 12
+mountobject = leftgunx
+mountsound = sound1
+weapon = mg15
+weaponobject = genericgun1
+
+# Right Gun
+mountnum = 13
+mountobject = rightgunx
+mountsound = sound1
+weapon = mg15
+weaponobject = genericgun1
+
+
+
+
+
+

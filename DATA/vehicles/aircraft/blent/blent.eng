@@ -1,0 +1,62 @@
+# engine stats file for Belnheim Mk IV
+[Mercury_XV]
+type = propeller
+basehorsepower = 905
+# basehpalt = 0
+basehpalt = 0
+basehppress = 1.61
+basehprpm = 2750
+basehpexhausttemp = 1100
+basehpexhausttemp = 5000
+idlerpm = 800
+idlethrottlepos = 0.037
+# most engines mil power fuel consumption is 360-380
+fuelperhphour = 0.240
+# most engines econ power fuel consumption is 190-200
+# this setting used for econrpm only
+oilconsumptionperhour = 5
+neg_g_fuel_cutout = 0
+neg_g_time_limit = 35
+
+# note: minimum pressure to maintain rpm will be used
+#wepmaxpress = 1.0
+#milmaxpress = .85
+#climbmaxpress = 0.85
+#conmaxpress = 0.65
+#idlepressureatidle = 0.05
+#idlepressureatmaxrpm = -0.2
+# in seconds
+maxweptime = 300
+maxmiltime = 1800
+weprpm = 4500
+milrpm = 2750
+climbrpm = 2650
+econrpm = 2400
+
+superchargetype = singlespeed
+speed1critalt = 3600
+speed1efficiencytop = 1.0
+speed1efficiencybottom = 1.0
+speed1maxmilboost = 1.61
+speed1maxwepboost = 1.61
+#neutralmaxmilboost = 1.0
+#neutralshiftalt = 2000
+#shiftalt = 470
+#speed2critalt = 10000
+
+#degrees from the thrust line for exhaust thrust
+exhaustthrustangle = 5
+# 1 lb = 4.45N this is in newtons
+exhaustthrustforce = 350
+
+weptype = normal
+
+propgearratio = 0.572
+
+# 1 = clockwise from pilot's perspective if he's behind the prop
+# -1 = counterclockwise
+propspindirection = -1
+
+criticalrpm = 200
+starterrpm = 100
+starterhp = 10

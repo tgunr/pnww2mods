@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+<contextmenu id="chat" height="15" width="150" vindent="-5" hindent="125" label="&widgets.map.waypoints.player;"
+	onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
+	onclick="contextMenu.sendChat()"
+	style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;">
+</contextmenu>
+

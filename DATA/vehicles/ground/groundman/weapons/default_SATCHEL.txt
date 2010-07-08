@@ -1,0 +1,37 @@
+aimFOV = 75.0
+
+# how long to wait after pressing the fire button to actually shoot
+fireDelay = 0.5
+
+# these all MUST be specified in the weapon specific file
+# note that data\gr2data\FPS\ is prepended to these file names
+#weaponModel
+#clipModel
+
+# granny attach bone names for weapon & clip
+# the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
+#weaponConnectTo
+#weaponConnect
+
+# the clipConnect bone in the clip attaches to the clipConnectTo bone in the gun
+#clipConnectTo
+#clipConnect
+
+# flag for the control manager whether to allow the fire button to be held down or not
+# required for autofire weapons as well as recycling weapons
+holdfire = 1
+
+# what icon to display in the hud (1 = satchel)
+hudIconType = 1
+
+clipBullets = -1
+
+# how far back along the barrel to start the bullet (firepoints are at the tip)
+firepointDisplacement = 0.50
+
+weaponBreathMultiplier = 1.0
+weaponHeartMultiplier = 1.0
+weaponMoveMultiplier = 1.0
+weaponPoseMultiplier = 1.0
+
+leanFireOK = 0

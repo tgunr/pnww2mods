@@ -1,0 +1,35 @@
+
+# P38t Turret file
+
+#multicrewpos position, whichcrew
+multicrewpos 1 1
+multicrewpos 2 2
+multicrewpos 3 2
+multicrewpos 4 1
+
+#Main gun and Coax
+position = 2
+elevationrate = 2
+traverserate = 30
+type = 360turret
+gunsightfile = p38tmain.gs
+instgunsightfile = fernglas.gs
+gunsightalignmentmountobject = maingunmount
+gunsightalignmentrange = 400
+# conditions are undeployed, depolyed, canopyopen, canopyclosed, hatchopen, hatchclosed
+gunsightblocked = canopyopen
+instsightblocked = canopyclosed
+
+#turret sound variables
+turrettraverse = turret/hand_turret_move.wav
+turretelevate = turret/hand_turret_move.wav
+turretgeneral = turret/turret_traverse_general.wav
+
+# Bow Gunner
+position = 4
+elevationrate = 1
+traverserate = 1
+type = limitedturret
+gunsightfile = p38thullgun.gs
+gunsightalignmentmountobject = mghullmount
+gunsightalignmentrange = 200

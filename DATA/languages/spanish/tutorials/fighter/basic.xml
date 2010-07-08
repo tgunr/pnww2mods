@@ -1,0 +1,131 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>1</key>
+  <body># Spawn them off the field.
+# -314294.03    3602494.26   102.15
+# facing front: 2.33  back:  -0.81 (needs a tad tweaking to be perpendicular to runway)
+
+#title = Aircraft I: Preflight: Hurricane Mk I
+# vehicles.1.1.2.2 = Hurricane Mk I
+
+#title = Aircraft I: Preflight: Curtiss Hawk H75A-3 
+# vehicles.3.1.2.1 = Curtiss Hawk H75A-3 (P-36A)
+
+#title = Aircraft I: Preflight: Messerschmitt Bf 109E-1 
+# vehicles.4.1.2.6 = Messerschmitt Bf 109E-1
+
+
+1.0.label = Lista de comprobación Pre-Vuelo
+
+	1.1.label = Introducción
+	1.1.alert.modal = ¡Despegar un avión es peligroso!  Es muy fácil salirse de la pista, volcar el aparato, colisionar con algo o fracasar en elevarse del suelo.  Esta lista de comprobación pre-vuelo le ayudará a despegar de la forma mas segura posible.
+
+2.0.label = La Vista Hacia Afuera
+
+	2.1.label = Control de Carlinga
+	2.1.alert = La visión del piloto está limitada en algunas direcciones por el fuselaje y las alas del avión.[NL][NL]Pulse {canopycontrol} para abrir la carlinga.
+
+	2.2.label = Vistas Cardinales
+	2.2.alert = Utilice los controles de visión para mirar alrededor. Por defecto, puedes hacer esto con el gorrito de visión de tu joystick o con las teclas numéricas del teclado numérico.
+	2.2.complete.modal = El conocimiento de la situación es vital en el combate aéreo. Cuando vueles, examina siempre el cielo en busca de aviones enemigos.
+	
+	2.3.label = Vista Libre
+	2.3.alert = La vista libre es útil a veces para un piloto, pero es difícil de utilizar cuando estás en un combate.[NL][NL]Pulse {togglemouselook} para mirar con mayor libertad el entorno.
+	2.3.complete.modal = ¡Bien hecho! Ahora puedes utilizar tu Ratón o tu dispositivo TrackIR (si lo posees) para girar tu cabeza alrededor de la carlinga.
+	
+	2.4.label = Vista Normal
+	2.4.alert = Pulse {togglemouselook} de nuevo para volver a la vista normal.
+
+3.0.label = Compruebe los Controles
+
+	3.1.label = Superficies de Control
+	3.1.alert.modal = Verificar que sus controles funcionan es crítico para prevenir accidentes de despegue.  Los controles principales son[NL][NL]Alerones: controla Balanceo[NL]Timón: controla Guiñada[NL]Elevadores: controla Cabeceo
+	
+	3.2.label = Alerón Derecho 
+	3.2.alert = Los alerones controlan el balanceo de tu avión, el giro del fuselaje que le permite ladearse o volar bocabajo.[NL][NL]Mientras mantiene presionado {lookviewseven} utilice {aileron.3.4.7.4} para confirmar que su alerón derecho funciona.
+	
+	3.3.label = Alerón Izquierdo
+	3.3.alert = Ahora mantenga {lookvieweight} y utilice {aileron.3.4.7.4} para confirmar que su alerón izquierdo funciona.
+	3.3.complete = Bien hecho, parece que ambos alerones funcionan.
+	
+	3.4.label = Timón
+	3.4.alert = El timón controla tu guiñada, lo que le permite girar en círculos suaves en vuelo nivelado, o permite compensar otros movimientos.[NL][NL]En la mayoría de aviones, no podrá ver las superficies de su cola, por lo que se lo mostraremos para el propósito de este tutorial.[NL][NL]Utilice {rudder.0.3.1.3} para verificar que los pedales de timón responden (puede que necesite presionar las teclas o mover el eje un montón para ver algo de movimiento).
+	3.4.alert.camera = 120,10,60
+	3.4.complete = Bien.
+	
+	3.5.label = Elevadores
+	3.5.alert = Los elevadores son estabilizadores horizontales en la parte trasera del fuselaje del avión.  Moviendo estos puntos su avión apunta el morro hacia arriba o hacia abajo, con respecto a la dirección que esté encarando.[NL][NL]Utilice {elevator.0.3.1.3} para mover sus elevadores.
+	3.5.complete = Parece correcto.
+	
+	3.6.label = Flaps
+	3.6.alert.modal = Los flaps cambian la forma de su ala, creando mas fuerza ascensional, lo que hace mas sencillo el despegue, pero también añaden mucho arrastre, lo que le ralentiza.[NL][NL]Desde la posición del piloto, no es posible ver los flaps en muchos aparatos, pero se puede escuchar como se despliegan.
+	3.6.alert.camera = -7,-5,-7,2
+	3.6.alert1 = Pulse {flapcontrol.10.4.0.4} para desplegar sus flaps y escuchar el sonido.
+	3.6.complete = Bien hecho.
+
+4.0.label = Visor de Tiro
+
+	4.1.label = Echarse hacia Adelante
+	4.1.alert = El visor de tiro tiene zoom, lo que refleja la capacidad del piloto para echarse hacia adelante para mejorar su visión.[NL][NL]Pulse {gunsightview} para cambiar a la vista del visor de tiro.
+	4.1.alert.camera = internal
+	4.1.complete = Bien.
+
+5.0.label = Vista de Instrumentos
+
+	5.1.label = Altímetro
+	5.1.alert = Cuando vuele, es crítico estar al tanto de su situación; especialmente de su velocidad y altitud.[NL][NL]Pulse {instrumentview} para ver su Panel de Instrumentos.
+	
+	5.2.label = Velocidad del Aire
+	5.2.alert.modal = Localice el Indicador de Velocidad del Aire de su aparato.  Dependiendo de que país esté volando, este indicador estará etiquetado con mph (Británicos), km/h (Franceses y Alemanes).
+	
+	5.3.label = Altímetro
+	5.3.alert.modal = Bien.  Ahora localice el Altímetro.  
+esto indica su altitud.  Está etiquetado como Alt (Británicos), Altimetre (Francés) o Höhe (Alemán)
+	
+	5.4.label = Vista Normal
+	5.4.alert = Pulse {instrumentview} para regresar a la vista normal.
+	
+6.0.label = Panel de Estado del Vehículo
+
+	6.1.label = Mostrar Estado
+	6.1.alert = Hay información útil adicional en el Panel de Estado del Vehículo.[NL][NL]Pulse {showstats} para activar este panel.
+	
+	6.2.label = Fuerzas-G
+	6.2.alert.modal = El primer valor listado es el número de fuerza G aplicado actualmente a su piloto.  Las fuerzas G son multiplicadores de la fuerza de la gravedad.  Altas G causarán que se oscurezca tu visión, y G negativas causarán que se enrojezca tu visión por los cambios de cantidad de sangre que acude a tu cerebro.
+	
+	6.3.label = Ángulo de Ataque
+	6.3.alert.modal = El siguiente valor es el Ángulo de Ataque (AoA).  Esta es la diferencia entre la dirección de tu ala y el vector de avance de tu avión.  Un alto ángulo de ataque causa mas fuerza ascensional (hasta un cierto límite), y un ángulo de ataque reducido significa menor fuerza ascensional pero también menor fricción con el aire (mayor velocidad aerodinámica).
+	
+	6.4.label = Indicador de Deriva
+	6.4.alert.modal = El último valor es la Deriva, que es la diferencia entre la dirección de avance y tu timón.  La deriva positiva es a la derecha, la deriva negativa es a la izquierda.  Una deriva alta, tanto positiva como negativa, indica que aumentas tu arrastre (fricción con el aire), y volarás mas lento.
+
+7.0.label = Dirigirse al Punto de Salida
+
+	# waypoint needs to be forward and to the left so that it is easily visible from the pilot&#39;s seat.
+
+	7.1.label = Accionar Frenos
+	7.1.alert.modal = Ahora vamos a dirigirnos a la pista para prepararnos para el despegue. La pista está a la izquierda por lo que necesitaremos arrancar el motor y dirigirnos a ella.
+	7.1.alert.camera = 65,5,40
+	7.1.alert1 = Los frenos afectan a tus ruedas de aterrizaje izquierda y derecha.[NL][NL]Presiona y mantén {leftbrake.10.4} y {rightbrake.10.4} para accionar los frenos.[NL][NL]Mantenga esos frenos accionados cuando arranque el motor.
+	7.1.alert1.camera = internal
+
+	7.2.label = Arrancar el Motor 
+	7.2.alert = Establezca la potencia al valor mas bajo utilizando {throttle.2.3.3.3}, después pulse y mantenga {engstart} hasta que el motor esté funcionando con suavidad.[NL][NL]Recuerde mantener los frenos o de otro modo el avión comenzará a girar.
+
+	7.3.label = Desbloquear la Rueda de Cola
+	7.3.alert = El bloqueo de la rueda de cola mantiene al avión recto a velocidades bajas, pero si deseamos dirigirnos a pista, necesitará desbloquearla.[NL][NL]Desbloquee la rueda de cola pulsando {toggletaillock}.
+	
+	7.4.label = Dirigirse a Pista
+	7.4.alert.modal = Libere los frenos y el avión debe comenzar a moverse hacia delante. Si no lo hace, incremente su potencia levemente con {throttle.2.3.3.3}, pero no demasiado.
+	7.4.alert1 = Con forme el avión se aproxime al centro de la pista, utilice los frenos izquierdo {leftbrake.10.4} y derecho {rightbrake.10.4} para girar el avión de forma que apunte a la pista hacia la izquierda.[NL][NL]Una vez que esté alineado, mantenga ambos frenos y bloquee la rueda de cola {toggletaillock}.
+	
+	7.5.label = Parar el Motor
+	7.5.alert.modal = ¡Bien hecho![NL][NL]Detenga el motor presionando {engstart}. Mantenga los frenos pulsados hasta que el motor se detenga completamente.   
+	7.5.complete.modal = ¡Excelente!  Ahora está preparado para despegar.[NL][NL]Puede intentar despegar ahora si lo desea.  Asegúrese de establecer sus Revoluciones de Motor (RPM) al máximo presionando {adjustpropup} dos veces para obtener el máximo empuje disponible.  Después incremente suavemente la potencia al máximo.[NL][NL]Recuerde cerrar la carlinga con {canopycontrol}.[NL][NL]Y una vez que despegue, eleve sus flaps y el tren de aterrizaje {gearhandle}.</body>
+  <branch>2</branch>
+  <brief>Aprenda lo básico de operar un caza.</brief>
+  <handler>fighter.basic</handler>
+  <instance>2</instance>
+  <requires>basic</requires>
+  <title>Cazas I: Lista de comprobación Pre-Vuelo</title>
+</content>

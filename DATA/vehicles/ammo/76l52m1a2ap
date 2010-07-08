@@ -1,0 +1,32 @@
+# created for M4a3(76) Sherman (76L52M1a2) gun - Doc. 05-31-06
+# modified after ballistic testing by Doc. 07-20-05
+# this is M62 APHE ammo
+
+type = ballistic
+diameter = .0762
+weight = 7
+velocity = 861
+tracertime = 7.9
+object = bullet1
+explosive = 376730
+# 0.06 kg (TNT)
+
+fuzetime = 0.002
+#bc = 2.72
+bc = 2.46
+lifetime = 8.0
+ricochetangle = 87
+modelspall = 1
+#penetrationconstant = 0.00000327
+penetrationconstant = 0.00000306
+dontdisplayfirstframe = 1 
+
+numshrapnelpieces = 30
+totalshrapnelmass = 6.94
+explosionsoundnear = sounds\smlcloseexp.wav
+explosionsoundfar = sounds\smlfarexp.wav
+nearfardistance = 300
+
+muzzleflash = 3
+hiteffect = incendiarymg
+tracerscale = 2

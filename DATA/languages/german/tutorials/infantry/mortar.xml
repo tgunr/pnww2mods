@@ -1,0 +1,70 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>7</key>
+  <body><?xml version=&#39;1.0&#39;?>
+<content type=&#34;5&#34;>
+  <key>7</key>
+  <body>title = Infanterie: Leichter Mörser
+
+20mhit = 20m Ziel getroffen!
+50mhit = 50m Ziel getroffen!
+100mhit = 100m Ziel getroffen! Gut geschossen.
+200mhit = 200m Ziel getroffen! Gut gemacht!
+500mhit = Exzellent! 500m Ziel getroffen! 
+gunrange = Feuerlinie
+vehiclerange = Schießplatz Fahrzeuge
+truckhit = Du hast den LKW getroffen
+carhit = Treffer auf Spähwagen erzielt!
+tankhit = Treffer auf Panzer erzielt!
+
+1.0.label = Der leichte Mörser
+
+1.1.label = Intro
+  1.1.alert.modal = Ein Team von leichten Mörsern kann Kleinholz aus befestigter Infanterie machen, eine Nebelwand zum ungehinderten Passieren offenen Geländes legen oder Angreifer aus der Deckung heraus mit Feuer belegen. 
+  
+1.2.label = Feuerposition
+  1.2.alert = Bewege Dich zur Feuerlinie.
+
+1.3.label = Mörser aufbauen
+  1.3.alert = Der Mörser muss zum Feuern auf dem Boden aufgebaut werden. Hocke Dich dazu hin {fpprone}.
+
+1.4.label = Mörser aufbauen
+  1.4.alert = Zum Aufbauen des Mörsers drücke {fpdeploy}.
+  
+1.5.label = Ziele auf der Karte finden
+  1.5.alert = Um effektiv wirken zu können, muss der Mörserschütze die Entfernung zu seinen Zielen genau bestimmen können.  Mit etwas Übung gelingt Dir das bald sehr leicht.[NL][NL]Drücke {showingamemap} zum Öffnen der Karte.
+  1.5.complete.modal = Wenn Deine Teammitglieder Feindberührung melden, werden die Kontakte auf der Karte angezeigt. Die Karte ist auch eine gute Hilfe zur Einschätzung von Entfernungen
+  
+ 1.6.label = Entfernungsbestimmung
+  1.6.alert.modal = Vergrößere die Karte bis zum Maximum. Fällt Dir der Kreis um Deine Position auf? Der Ring hat einen Radius von 200m und ist ein effektives Werkzeug zur Entfernungsbestimmung.
+  1.6.alert1.modal = Der Mörser hat eine Wirkungsbereich von minimal 50m bis maximal 500m. Ziele auf den Panzer auf dem Schießplatz.[NL][NL]Stelle die Visierentfernung mit {gunsightrangedec} auf 100m ein.
+  
+1.7.label = Mörser abfeuern
+  1.7.alert = Wenn Du bereit bist, feuere mit {fpfire} eine HE Granate ab.
+  1.7.complete.modal = Die Verzögerung zwischen dem Abfeuern des Mörsers und dem Einschlag der Granate macht den Mörser ungeeignet zum Bekämpfen von sich schnell bewegenden Zielen.[NL][NL]Besser geeignet ist der Mörser zum Einsatz gegen unbewegliche Ziele hinter Deckungen oder in offenem Gelände. Hier kann eine Gruppe von Mörsern mit konzentriertem Feuer beträchtlichen Schaden anrichten.
+  
+1.8.label = Deckung geben
+  1.8.alert.modal = Jeder Mörser ist neben HE Granaten zur Bekämpfung von Zielen auch mit Rauchranaten ausgerüstet. Mit Hilfe dieser Granaten kann ein für Infanterie tödliches, offenes Gelände innerhalb von Sekunden mit eine wirksamen Nebeltarnung belegt werden.[NL][NL]Die Nebelgranaten werden oft auch zur Markierung feindlicher Ziele für angreifende eigene Flugzeuge oder Panzer benutzt. 
+  1.8.alert = Wechsle mit {fpweapon1} zu den Nebelgranaten. Nimm Dir einen Moment Zeit, um das Legen einer Nebeltarnung zu üben.
+  1.8.complete.modal = Denke daran, das Nebelgranaten Deine Postion verraten können. Lenke niemals unnötig die Aufmerksamkeit auf Dich, wenn Du in einer gut gedeckten Stellung liegst und der Gegner Dich noch nicht bemerkt hat.
+  
+1.9.label = Tips zum Mörser
+  1.9.alert.modal = Mörserschützen sind zusätzlich mit einem Gewehr ausgerüstet. Diese Waffe kann mit {fpweapon2} ausgewählt werden.[NL][NL]Im Gefecht ist jede Mörsergranate und jeder Ladestreifen wertvoll.[NL][NL]Es ist also keine schlechte Idee, eine Gruppe von Gewehrschützen mitzunehmen - ein Gewehrschütze kann den Mörserschützen einmalig mit zusätzlicher Munition versorgen und ausserdem ankommende Feinde bekämpfen.[NL][NL]Munition kann über die Chatbox mit dem dot-Kommando .ammo angefordert werden.
+  
+1.10.label = Ende des Lehrgangs
+  1.10.alert.modal = Glückwunsch! Du hast den Lehrgang zum leichten Mörser abgeschlossen.[NL][NL]Wenn Du noch ein wenig mit dem Mörser üben möchtest, klicke im Despawn-Fenster auf &#34;Abbrechen&#34;. Der LKW am Schießplatz versorgt Dich mit Munitionsnachschub.
+
+<branch>1</branch>
+  <brief>Erlene die Bedieung des Mörsers.</brief>
+  <handler>infantry.mortar</handler>
+  <instance>2</instance>
+  <requires>infantry.lmg</requires>
+  <title>Infanterie: Leichter Mörser</title>
+</content></body>
+  <branch>1</branch>
+  <brief>Erlerne die Bedienung des leichten Mörsers</brief>
+  <handler>infantry.mortar</handler>
+  <instance>2</instance>
+  <requires>infantry.lmg</requires>
+  <title>Infanterie: Leichter Mörser</title>
+</content>

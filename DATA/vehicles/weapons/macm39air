@@ -1,0 +1,18 @@
+# Aircraft machine guns for fighter aircraft of French origin, 7.5mm caliber.
+# Created 09/03/02 - doc
+
+
+mass = 10.9
+firetype = auto
+rateoffire = 1000
+#syncrateoffire = 750
+#syncrateoffire is a placeholder
+dispersion = 0.2
+ammotype1 = macm39air
+ammotype2 = macm39air_tracer
+ghostrof = 200
+ghostammotype = macm39air_tracer
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = na

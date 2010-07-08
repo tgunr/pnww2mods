@@ -1,0 +1,22 @@
+# Blenheim Mk IV turret file
+
+#multicrewpos position, whichcrew
+multicrewpos 1 1
+multicrewpos 2 2
+
+# Gun
+position = 2
+elevationrate = 2.75
+traverserate = 1
+type = limitedturret
+gunsightalignmentmountobject = turretgunx
+gunsightalignmentrange = 200
+
+
+# added for centering gun
+# neutral can be: bombayopen/closed, hatchopen/closed, canopyopen/closed
+# neutral = bombbayclosed
+# neutraltraverse -1 max deflection left, 1 max deflection right, 0 straight ahead 
+neutraltraverse = 0
+# neutralelevate -1 max down, 1 max up, 0 is midtraverse
+neutralelevate = 0

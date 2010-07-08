@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+<!DOCTYPE vehicle SYSTEM "vehicle.dtd">
+<vehicle id="eye" type="float">
+<variant id="uk_skull" shape="skull1" description="SKULL" icon="SKULL">
+	<include file="skull.veh.xml"/>
+	<include file="skull.state.xml"/>
+</variant>
+<variant id="fr_skull" shape="skull1" description="SKULL" icon="SKULL">
+	<include file="skull.veh.xml"/>
+	<include file="skull.state.xml"/>
+</variant>
+<variant id="fr_buzzard" shape="eyeball1" description="BUZZARD" icon="BUZZARD">
+	<include file="eye.veh.xml"/>
+	<include file="eye.state.xml"/>
+</variant>
+<variant id="de_skull" shape="skull1" description="SKULL" icon="SKULL">
+	<include file="skull.veh.xml"/>
+	<include file="skull.state.xml"/>
+</variant>
+<variant id="uk_buzzard" shape="eyeball1" description="BUZZARD" icon="BUZZARD">
+	<include file="eye.veh.xml"/>
+	<include file="eye.state.xml"/>
+</variant>
+<variant id="de_buzzard" shape="eyeball1" description="BUZZARD" icon="BUZZARD">
+	<include file="eye.veh.xml"/>
+	<include file="eye.state.xml"/>
+</variant>
+</vehicle>

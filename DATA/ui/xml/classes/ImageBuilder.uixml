@@ -1,0 +1,18 @@
+<script>
+
+	<include file="classes/ViewBuilder.uixml"/>
+
+	<!--
+	
+	function ImageBuilder(par, id, src, x, y, w, h)
+	{
+		var self = new ViewBuilder(par, id, x, y, w, h);
+		
+		self.type = "image";
+		self.addAttribute("src", src);
+		
+		return self;
+	}
+	
+	-->
+</script>

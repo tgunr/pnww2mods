@@ -1,0 +1,30 @@
+# Hispano 20mm AP
+# I don't know for sure that this round existed
+# Characteristics for all 20mm Hispano rounds are
+# the same except for explosive and tracertime
+# Created 08/12/02 - bloo
+# Modified by Doc - 12/April/07
+
+type = ballistic
+diameter = .020
+weight = 0.165
+ammoweight = 0.3
+velocity = 850
+#tracertime = 1.0
+object = bullet1
+stretchobject = 1
+explosive = 0
+fuzetime = 0.000
+bc = .52
+lifetime = 2.0
+# lifetime is placeholder
+dontdisplayfirstframe = 1 
+penetrationconstant = 0.0000004042
+#penetration constant is anti-armour nerfed
+ricochetangle = 88
+
+nearfardistance = 300
+
+muzzleflash = 1
+hiteffect = heavymachinegun
+tracerscale = 4

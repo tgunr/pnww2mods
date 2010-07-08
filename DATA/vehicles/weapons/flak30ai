@@ -1,0 +1,22 @@
+# AI version of Flak 30 AA gun.
+# Rev. 06/17/03 - Doc
+
+mass = 0.0
+firetype = auto
+rateoffire = 360
+dispersion = 0.11
+ammotype1 = flak30_1ai
+ammotype2 = flak30_2ai
+ammotype3 = flak30_3ai
+ammotype4 = flak30_4ai
+ammotype5 = flak30_5ai
+ghostrof = 200
+ghostammotype = flak30_5ai
+cliprounds = 20
+reloadtime = 7
+
+muzzleflash = smalltankgunflash
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = magazine
