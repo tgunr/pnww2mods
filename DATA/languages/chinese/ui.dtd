@@ -1224,7 +1224,7 @@
 <!ENTITY loc.host.298 "任务">
 <!ENTITY loc.host.430 "/ban <玩家名字> <时间> <原因>">
 <!ENTITY loc.host.419 "&#39;{1}&#39; 不是一个有效 /um 设定。">
-<!ENTITY loc.host.132 "请求不惜一切代价坚守的命令以应对敌人超量，须在代码处输入提示信息中的4位代码。">
+<!ENTITY loc.host.132 "请求不惜一切代价坚守的命令以应对敌军超量，须在代码处输入城市的名称。">
 <!ENTITY loc.host.527 "MOTD: {1}">
 <!ENTITY loc.host.198 "红国">
 <!ENTITY loc.host.584 "未知的战斗旅/师 &#39;{1}&#39;">
@@ -1668,11 +1668,11 @@
 <!ENTITY loc.host.192 "/clear">
 <!ENTITY loc.host.68 "/grab <玩家名称> [<原因>]">
 <!ENTITY loc.host.302 "投票已启动。">
-<!ENTITY loc.host.130 "请求撤退以应对敌人超量，须在代码处输入提示信息中的4位代码。">
+<!ENTITY loc.host.130 "请求撤退以应对敌军超量，须在代码处输入城市的名称。">
 <!ENTITY loc.host.459 "*** &#39;{1}&#39; 已经被GM指定为{2}班组的指挥官（CO）！">
 <!ENTITY loc.host.219 "在线: {1}">
 <!ENTITY loc.host.25 "订阅了HQ(总部)频道。键入/hqoff可以取消订阅该频道。">
-<!ENTITY loc.host.128 "请求延迟以应对敌人超量，须在代码处输入提示信息中的4位代码。">
+<!ENTITY loc.host.128 "请求延迟应对敌军超量，须在代码处输入城市的名称。">
 <!ENTITY loc.host.568 "您进入了 {1}。">
 <!ENTITY loc.host.154 "坚守 {1}的命令已被批准了。">
 <!ENTITY loc.host.210 "/yell <要发送的信息>">
@@ -2399,6 +2399,7 @@
 <!ENTITY widgets.map.waypoints.create "创建导航点">
 <!ENTITY widgets.map.tooltip.orders.overrun "这座城镇敌军超量.">
 <!ENTITY widgets.map.info.mouse.title "鼠标纬度/经度">
+<!ENTITY widgets.prefs.groups.game.credits.tip "Enable this to show game credits when exiting.">
 <!ENTITY widgets.map.tooltip.town.neutral "这座城镇是中立的">
 <!ENTITY widgets.keymapper.button.def.cat "默认类别">
 <!ENTITY widgets.prefs.more "更多">
@@ -2520,6 +2521,7 @@
 <!ENTITY widgets.idcard.status "任务详情">
 <!ENTITY widgets.prefs.groups.sound.volume.music "音乐">
 <!ENTITY widgets.prefs.groups.alerts.display.panel.tip "警告信息在屏幕上存留的时间">
+<!ENTITY widgets.prefs.groups.game.credits "SHOW GAME CREDITS">
 <!ENTITY widgets.prefs.groups.ui.colors.enemy "敌军颜色">
 <!ENTITY widgets.prefs.groups.game.presets.performance "最佳表现">
 <!ENTITY widgets.prefs.slowest "最慢">
@@ -2531,8 +2533,8 @@
 <!ENTITY widgets.prefs.groups.connection "连接设置">
 <!ENTITY widgets.prefs.groups.visual.combatsmoke.tip "启用被摧毁建筑物上的烟雾效果。关闭该效果可以提高游戏的流畅度。">
 <!ENTITY widgets.prefs.discarded "已改的个性化设置已被丢弃！">
-<!ENTITY widgets.map.context.waypoints.approve "批准">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.zoom "缩放">
+<!ENTITY widgets.map.context.waypoints.approve "批准">
 <!ENTITY widgets.map.info.na "不可用">
 <!ENTITY widgets.prefs.groups.titles.hud "抬头显示器 (HUD)">
 <!ENTITY widgets.prefs.groups.shadows.custom "定制">
@@ -2665,6 +2667,7 @@
 <!ENTITY mission.readytab.panel.requestcrew.empty "请等待合适的乘员….">
 <!ENTITY mission.readytab.supply.status.cut "这个设施的补给被切断了；不可能进行增援了。">
 <!ENTITY mission.aartab.aars.aar.bridgeshit "桥梁攻击">
+<!ENTITY mission.spawn.denied12 "武器不再有效。">
 <!ENTITY mission.aartab.aars.id "出击 ID">
 <!ENTITY mission.readytab.panel.requestcrew.tip "点击这个按钮邀请炮手加入您的交通工具">
 <!ENTITY mission.aartab.aars.aar.guardingpoints "守卫分数">
@@ -2717,7 +2720,7 @@
 <!ENTITY mission.readytab.forces.name "名字">
 <!ENTITY mission.aartab.aars.aar.guardingkills "守卫击杀">
 <!ENTITY mission.aartab.aars.aar.minutes "{1}分钟">
-<!ENTITY mission.state.3 "您的任务被关闭，请离开当前任务，重新选择。">
+<!ENTITY mission.state.3 "您的任务已关闭，请离开当前任务，重新选择。">
 <!ENTITY mission.spawn.denied7 "你的乘员已经放弃；取消你的预订，再试一次。">
 <!ENTITY mission.readytab "待命室">
 <!ENTITY mission.aartab.aars.aar.despawned "离开">
@@ -2758,7 +2761,7 @@
 <!ENTITY mission.aartab.aars.aar.factorieshit "工厂攻击">
 <!ENTITY mission.brieftab.members.rank "军衔">
 <!ENTITY mission.aartab.aars.aar "出击">
-<!ENTITY mission.spawn.denied0 "您选择的出生设施不正确">
+<!ENTITY mission.spawn.denied0 "您选择的出生设施不正确。">
 <!ENTITY mission.readytab.spawn.spawnable "要想保存，首先点击选择，然后点击“保存按钮”。你也可以通过双击来保存。一个被保存过的交通工具将会属于你，直到你取消保存，或离开任务，又或者不能回到基地为止。">
 <!ENTITY mission.readytab.mouseover "鼠标悬停在任何武器上，可以查看该武器能否被你使用！">
 <!ENTITY mission.readytab.panel.selectcommander "选择车长">
@@ -2783,14 +2786,14 @@
 <!ENTITY mission.readytab.supply.state0 "不能生成">
 <!ENTITY mission.aartab.tip "您可以在这里查看您近期的战斗报告。">
 <!ENTITY mission.readytab.supply.status.nmeowns "敌军占领了这个设施；不能在这里出生了。">
-<!ENTITY mission.spawn.denied3 "您的任务已经终止或者不再有效了。">
+<!ENTITY mission.spawn.denied3 "您的任务已经过期或者不再有效了。">
 <!ENTITY mission.brieftab.members.handle "任务成员">
 <!ENTITY mission.aartab.aars.aar.totalspoints "{1} / {2}">
 <!ENTITY mission.aartab.aars.summary "任务概要">
 <!ENTITY mission.readytab.panel.reserve "预订武器">
 <!ENTITY mission.aartab.aars.aar.result "结果">
 <!ENTITY mission.readytab.help "待命室: 选择武器，然后点击-进入游戏。">
-<!ENTITY mission.spawn.denied2 "您的等级太低，不能使用该单位，请重新选择。">
+<!ENTITY mission.spawn.denied2 "您所预订的武器已经不能使用，请重新选择。">
 <!ENTITY mission.readytab.supply.status.supplyotw "这个设施的补给正在运送。增援将会在大概 {1} 分钟后到达。">
 <!ENTITY mission.readytab.supply.status.wrongsupply "友军的设施已经与这个设施进行了对接，但是因为国籍不同，所以不能在这里出生。">
 <!ENTITY mission.timeleft.expired "您的付费账户已经没有剩余时间。请到弹出页面充值。">
@@ -2805,14 +2808,14 @@
 <!ENTITY mission.readytab.panel.selectcommander.tip "选择一个车长，然后点击这个按钮，如果他接受您的请求，你就可以成为他的交通工具的炮手。">
 <!ENTITY mission.readytab.supply.state1 "能够生成，可以补给">
 <!ENTITY mission.readytab.brief.ms "移动兵站">
-<!ENTITY mission.spawn.denied6 "没有服务器支持出生">
+<!ENTITY mission.spawn.denied6 "没有服务器支持出生。">
 <!ENTITY mission.aartab.aars.aar.notes "战斗明细">
 <!ENTITY mission.spawn.denied8 "设施失去了补给：没有提供补给的战斗旅或师。">
 <!ENTITY mission.brieftab "简报">
 <!ENTITY mission.aartab.aars.aar.stopped "结束">
 <!ENTITY mission.brieftab.brief.deployed "军队部署">
 <!ENTITY mission.readytab.brief.ranking "队员">
-<!ENTITY mission.spawn.denied1 "您选择的出生设施已经被关闭了">
+<!ENTITY mission.spawn.denied1 "您选择的出生设施已经被关闭了。">
 <!ENTITY mission.contact "任务: {1}发送了触敌报告。">
 <!ENTITY mission.readytab.spawn.notpresent "这个单位被部署到了这里，但是现在没有供给。">
 <!ENTITY mission.aartab.aars.caps "占领">
@@ -2839,6 +2842,7 @@
 <!ENTITY mission.brieftab.help "任务简报: 回顾你的任务详情。">
 <!ENTITY mission.readytab.supply.status.closed "这个设施已经关闭，不能从这里出生。">
 <!ENTITY mission.readytab.crew.commander "车长">
+<!ENTITY mission.spawn.denied11 "您的付费账户所购买的分钟数已经用完，请重新充值。">
 <!ENTITY brigades.list.key.reserve "预订">
 <!ENTITY brigades.details.objective "目标">
 <!ENTITY brigades.list.status.planning "计划">
@@ -2970,7 +2974,7 @@
 <!ENTITY tutorials.tab "新兵营">
 <!ENTITY loading.sounds.init "初始化声音">
 <!ENTITY loading.network.chat "连接聊天系统">
-<!ENTITY loading.copyright "版权 © 1999 - 2009 Playnet, Inc.">
+<!ENTITY loading.copyright "版权 © 1999 - 2010 Playnet, Inc.">
 <!ENTITY loading.sounds "装载声音">
 <!ENTITY loading.network.loggingin "登录">
 <!ENTITY loading.network.auth "验证密码">
@@ -3432,6 +3436,7 @@
 <!ENTITY common.squads.create.long "班组全称">
 <!ENTITY common.squads.details.created "创建时间">
 <!ENTITY common.squads.details.night.dow6 "星期六">
+<!ENTITY common.exitclick "CLICK ANYWHERE TO EXIT">
 <!ENTITY common.time.minute "{1} 分钟">
 <!ENTITY common.vehicles.classes.3 "其他">
 <!ENTITY common.squads.invite.noinvite "没有邀请">
@@ -3534,12 +3539,12 @@
 <!ENTITY chat.ml "任务指挥官">
 <!ENTITY chat.ratelimited "请不要频繁的发送信息。">
 <!ENTITY chat.channel.custom "自定义">
-<!ENTITY chat.holdfall.req "代码 [{1}] {2} 请求执行 {3} 。当前投票数量为：坚守：{4}；撤退：{5}；延期：{6}。">
+<!ENTITY chat.holdfall.req "[{1}] {2} 请求执行 {3} 。当前投票数量为：坚守：{4}；撤退：{5}；延期：{6}。">
 <!ENTITY chat.channel.origin "任务起点">
 <!ENTITY chat.f6.tip "点击以设定频道 #6. 使用您键盘上的F6，在这个频道聊天。">
 <!ENTITY chat.holdfall.fall "撤退">
 <!ENTITY chat.channel.target "任务目标">
-<!ENTITY chat.holdfall.stand "代码 [{1}] 有高级军官建议执行 {2}。 {3} 之后执行。 当前投票数量为：坚守：{4}；撤退：{5}；延期：{6}。">
+<!ENTITY chat.holdfall.stand "[{1}] 当前投票结果为 {2}。 {3} 之后执行。 当前投票数量为：坚守：{4}；撤退：{5}；延期：{6}。">
 <!ENTITY chat.brigade.select "选择战斗旅">
 <!ENTITY chat.afk "暂时离开">
 <!ENTITY chat.channel.help "帮助">
@@ -4265,6 +4270,7 @@
 <!ENTITY vehicles.3.2.7.6.icon "76.2毫米重型反坦克炮">
 <!ENTITY vehicles.3.4.9.5 "秃鹰">
 <!ENTITY vehicles.1.4.14.9.icon "空降反坦克步枪兵">
+<!ENTITY vehicles.4.1.2.9 "Messerschmitt BF 109F-2">
 <!ENTITY vehicles.3.1.2.2.icon "SMk I">
 <!ENTITY vehicles.1.2.6.2 "MCDSW牵引车">
 <!ENTITY vehicles.3.1.2.4.icon "DD520">
