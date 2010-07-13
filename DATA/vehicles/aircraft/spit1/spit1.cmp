@@ -1010,7 +1010,8 @@ vortexcomponent = propeller
 vortexeffectpercent = 0.5
 vortexoffset = -0.1
 hitmapcomponent1 = d_cvstab
-hitmapcomponent2 = d_rudder
+hitmapcomponent2 = d_tail
+hitmapcomponent3 = d_rudder
 #damagelevel of zero or less means that level isn't used
 damagelevel1 = 30000
 damagelevel2 = 60000
@@ -1050,6 +1051,7 @@ vortexeffectpercent = 0.75
 vortexoffset = 0
 hitmapcomponent1 = d_aftfuselage
 hitmapcomponent2 = d_tail
+hitmapcomponent3 = d_cvstab
 #damagelevel of zero or less means that level isn't used
 damagelevel1 = 30000
 damagelevel2 = 90000
@@ -1086,6 +1088,7 @@ vortexeffectpercent = 0.75
 vortexoffset = 0
 hitmapcomponent1 = d_fwdfuselage
 hitmapcomponent2 = d_aftfuselage
+hitmapcomponent3 = d_tail
 #damagelevel of zero or less means that level isn't used
 damagelevel1 = 30000
 damagelevel2 = 90000

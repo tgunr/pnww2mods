@@ -231,7 +231,7 @@
 							style="color: #3e5248; border-color: #3e5248; border-size: 1; font-size: -1;"
 							 onshow="this.visible = (mySquadRank > 2) ? true: false">
 							<caption label="&common.squads.details.options.recruiter.recruit;:" x="20" height="20" width="150" rtop="22" style="color: #e9e3d9ff;"/>
-							<textcontrol id="squad-recruit-callsign" width="80" height="12" rright="110" rtop="25" maxlength="8"
+							<textcontrol id="squad-recruit-callsign" width="80" height="12" rright="110" rtop="25" maxlength="10"
 								style="background-color: #FFFFFF22; border-color: #BFE2CE; color: #e9e3d9ff; start-color: #e9e3d9ff; font-size: -1;"/>
 							<button width="90" height="20" rright="10" rtop="22" label="&common.squads.details.options.recruiter.recruit.button;"
 								style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"

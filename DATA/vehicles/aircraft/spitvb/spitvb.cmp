@@ -1045,13 +1045,14 @@ vortexeffectpercent = 0.75
 # is along the vortex axis of rotation
 vortexoffset = 0
 hitmapcomponent1 = rfuselage
+hitmapcomponent2 = dvstab
 #damagelevel of zero or less means that level isn't used
 damagelevel1 = 30000
 damagelevel2 = 90000
 damagelevel3 = 125000
-damagelevel4 = 150000
+damagelevel4 = 140000
 visdamage = tail
-damagelevelfail = 150000
+damagelevelfail = 140000
 
 [fuse_vert_front]
 type = airfoil
@@ -1085,7 +1086,7 @@ hitmapcomponent2 = rfuselage
 damagelevel1 = 30000
 damagelevel2 = 90000
 damagelevel3 = 125000
-damagelevel4 = 150000
+damagelevel4 = 140000
 
 
 [mid_ID1]
