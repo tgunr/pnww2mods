@@ -27,8 +27,8 @@ void main()
 	float alpha = in_pos.w;
 				
 	vec4 rotation;
-        rotation.xyz = in_tex2;
-        rotation.w = 1.0;
+    rotation.xyz = in_tex2;
+    rotation.w = 1.0;
 
 	pos.xy = vec2(dot(rotation.yxw, pos.xyz), dot(rotation.zyw, pos.xyz));
 

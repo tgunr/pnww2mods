@@ -10,6 +10,8 @@ uniform vec4 Ka;
 in vec3 N;
 in vec2 tex0;
 
+out vec4 out_color;
+
 vec4 fogThis(in vec4);
 void lightGetAmbientDiffuse(in vec3, out vec4, out vec4);
 
@@ -32,6 +34,6 @@ void main()
    
    vec4 color = base * (diffuse + ambient);
 
-   gl_FragColor = fogThis(color);
-   gl_FragColor.w = base.a;
+   out_color = fogThis(color);
+   out_color.w = base.a;
 }
