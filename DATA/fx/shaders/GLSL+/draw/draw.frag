@@ -5,6 +5,7 @@ uniform sampler2D src1;
 uniform vec4 globalambient;
 uniform vec4 Ka;
 uniform vec4 Kd;
+uniform vec4 Ks;
 uniform float shininess;
 
 in vec3 V;
@@ -43,6 +44,7 @@ void main()
 	ambient += globalambient;
 	ambient *= Ka;
 	diffuse *= Kd;
+    specular *= Ks;
 
 	vec4 color =  base * (diffuse + specular + ambient);
 	 	
