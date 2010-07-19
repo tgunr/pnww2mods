@@ -26,6 +26,6 @@ void main()
     N = NormalMatrix * in_normal;
 
     fogdist = abs(V.z);
-	
+
  	gl_Position = ProjectionMatrix * pos;
 }
