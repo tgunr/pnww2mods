@@ -10,7 +10,6 @@ uniform struct
    vec4 color;
 } fogparams;
 
-
 // 1.442695 = 1 / ln(2)
 const float LOG2E = 1.442695;
 

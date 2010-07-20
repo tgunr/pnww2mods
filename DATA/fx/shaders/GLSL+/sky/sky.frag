@@ -1,7 +1,5 @@
 #version 150
 
-uniform sampler2D src1;
-
 uniform vec4 globalambient;
 uniform vec4 Ka;
 uniform vec4 Kd;
@@ -19,8 +17,6 @@ void lightGetAmbientDiffuse(in vec3 normal,
 
 void main()
 {
-	vec4 base = texture2D(src1, tex0);
-	
 	vec4 diffuse;
 	vec4 ambient;
 	
@@ -34,8 +30,8 @@ void main()
 	ambient *= Ka;
 	diffuse *= Kd;
 
-	vec4 c =  base * (diffuse + ambient) * color;
+	vec4 c =  (diffuse + ambient) * color;
 	
 	out_color = fogThis(c);
-	out_color.w = base.a;
+	out_color.w = 1.0;
 }
