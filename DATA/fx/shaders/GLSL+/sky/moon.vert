@@ -2,7 +2,6 @@
 
 uniform mat4 MVMatrix;
 uniform mat4 ProjectionMatrix;
-uniform mat3 NormalMatrix;
 
 in vec3 in_pos;
 in vec3 in_normal;
@@ -20,7 +19,5 @@ void main()
 	pos = MVMatrix * pos;
     vertexpos = pos.xyz;
     
-    N = NormalMatrix * in_normal;
-
  	gl_Position = ProjectionMatrix * pos;
 }
