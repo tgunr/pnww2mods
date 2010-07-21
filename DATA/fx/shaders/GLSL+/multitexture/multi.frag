@@ -28,13 +28,13 @@ void lightGetAmbientDiffuseSpecular(in vec3 normal,
 
 void main()
 {
-	vec4 base = texture2D(src1, tex0);
-	vec4 col1 = texture2D(src2, tex1);
-	vec4 col2 = texture2D(src3, tex2);
+	vec4 c1 = texture2D(src1, tex0);
+	vec4 c2 = texture2D(src2, tex1);
+	vec4 c3 = texture2D(src3, tex2);
 
-    vec4 m = base * col1 * col2;
+    vec4 c = c1 * c2 * c3;
 
-	vec4 diffuse;
+    vec4 diffuse;
 	vec4 specular;
 	vec4 ambient;
 	
@@ -54,8 +54,6 @@ void main()
 	diffuse *= Kd;
     specular *= Ks;
 
-	vec4 color =  m * (diffuse + specular + ambient);
-	 	
+	vec4 color =  c * (diffuse + specular + ambient);
 	out_color = fogThis(color);
-	out_color.w = base.a;
 }

@@ -25,9 +25,7 @@ void main()
 	tex1 = (TextureMatrix[1] * vec4(in_tex1, 1.0, 1.0)).xy;
 	tex2 = (TextureMatrix[2] * vec4(in_tex2, 1.0, 1.0)).xy;
 
-	vec4 pos = vec4(in_pos, 1.0);
-
-	pos = MVMatrix * pos;
+	vec4 pos = MVMatrix * vec4(in_pos, 1.0);
 	V = pos.xyz;
     vertexpos = pos.xyz;
 
