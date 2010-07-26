@@ -3,7 +3,6 @@
 uniform sampler2D src1;
 
 uniform float lightadjust;
-uniform vec4 globalambient;
 
 in vec3 N;
 in vec2 tex0;
@@ -30,7 +29,6 @@ void main()
    float adjust = mix(tex1.x, tex1.y, lightadjust);
    diffuse *= adjust;
    
-   ambient += globalambient * tex1.z;
    ambient *= tex1.z;
 
    vec4 color = base * (diffuse + ambient);

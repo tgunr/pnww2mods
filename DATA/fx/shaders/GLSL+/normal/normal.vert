@@ -1,8 +1,11 @@
 #version 150
 
-uniform mat4 MVMatrix;
-uniform mat4 ProjectionMatrix;
-uniform mat3 NormalMatrix;
+uniform MatrixBlock
+{
+    mat4 MVMatrix;
+    mat4 ProjectionMatrix;
+    mat4 NormalMatrix;
+};
 
 in vec3 tangent;
 in vec3 in_normal;
@@ -19,8 +22,8 @@ out vec2 tex0;
 
 void main()
 {
-	T = normalize(NormalMatrix * tangent);
-	N = normalize(NormalMatrix * in_normal);
+	T = normalize(mat3(NormalMatrix) * tangent);
+	N = normalize(mat3(NormalMatrix) * in_normal);
 	B = cross(N, T);
 
 	tex0 = in_tex0;

@@ -1,8 +1,11 @@
 #version 150
 
-uniform mat4 MVMatrix;
-uniform mat4 ProjectionMatrix;
-uniform mat3 NormalMatrix;
+uniform MatrixBlock
+{
+    mat4 MVMatrix;
+    mat4 ProjectionMatrix;
+    mat4 NormalMatrix;
+};
 
 in vec4 in_pos;
 in vec2 in_tex0;
@@ -43,9 +46,9 @@ void main()
 	T.xy = vec2(dot(rotation.yxw, T), dot(rotation.zyw, T));
 	B.xy = vec2(dot(rotation.yxw, B), dot(rotation.zyw, B));
 
-	T = normalize(NormalMatrix * T);
-	N = normalize(NormalMatrix * N);
-	B = normalize(NormalMatrix * B);
+	T = normalize(mat3(NormalMatrix) * T);
+	N = normalize(mat3(NormalMatrix) * N);
+	B = normalize(mat3(NormalMatrix) * B);
 	
 	alpha = 1.0 - alpha + 0.3294112; //84.0 / 255.0;
 	

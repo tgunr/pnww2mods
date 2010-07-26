@@ -2,8 +2,6 @@
 
 uniform sampler2D src1;
 
-uniform vec4 globalambient;
-
 uniform vec4 Ka;
 uniform vec4 Kd;
 
@@ -31,7 +29,6 @@ void main()
 
    lightGetAmbientDiffuse(n, ambient, diffuse);
 
-   ambient += globalambient;
    ambient *= Ka;
    diffuse *= (Kd * diffcoef);
     

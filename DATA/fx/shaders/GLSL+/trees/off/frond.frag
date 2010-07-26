@@ -1,11 +1,11 @@
 #version 150
 
+uniform vec4 Ka;
+uniform vec4 Kd;
+
 uniform sampler2D src1;
 
 uniform float diffuseScale;
-uniform vec4 globalambient;
-
-uniform vec4 Ka;
 
 in vec3 N;
 in vec2 tex0;
@@ -29,7 +29,6 @@ void main()
   
    diffuse *= diffuseScale;
    
-   ambient += globalambient;
    ambient *= Ka;
    
    vec4 color = base * (diffuse + ambient);

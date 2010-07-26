@@ -1,8 +1,11 @@
 #version 150
 
-uniform mat4 MVMatrix;
-uniform mat4 ProjectionMatrix;
-uniform mat3 NormalMatrix;
+uniform MatrixBlock
+{
+    mat4 MVMatrix;
+    mat4 ProjectionMatrix;
+    mat4 NormalMatrix;
+};
 
 uniform vec4 rotation;
 uniform vec3 treepos;
@@ -34,7 +37,7 @@ void main()
    position.xyz += treepos.xyz;
    position.w = 1.0;
 
-   N = normalize(NormalMatrix * normal);
+   N = normalize(mat3(NormalMatrix) * normal);
      
    position = MVMatrix * position;
    fogdist = abs(position.z);

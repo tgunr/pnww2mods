@@ -1,13 +1,18 @@
 #version 150
+#extension GL_ARB_uniform_buffer_object : enable
 
-uniform mat4 MVMatrix;
-uniform mat4 ProjectionMatrix;
-uniform mat3 NormalMatrix;
+uniform TreeParamsBlock
+{
+    vec4 rotation;
+    vec3 treepos;
+};
 
-uniform vec4 rotation;
-uniform vec3 treepos;
-
-uniform float diffuseScale;
+uniform MatrixBlock
+{
+    mat4 MVMatrix;
+    mat4 ProjectionMatrix;
+    mat4 NormalMatrix;
+};
 
 in vec3 in_pos;
 in vec3 in_normal;
@@ -28,7 +33,7 @@ void main()
    normal.xy = vec2(dot(rotation.yxw, in_normal), dot(rotation.zyw, in_normal));
    normal.z = in_normal.z;
    
-   N = normalize(NormalMatrix * normal);
+   N = normalize(mat3(NormalMatrix) * normal);
    
    position.xyz += treepos;
    position.w = 1.0;

@@ -1,15 +1,22 @@
 #version 150
+#extension GL_ARB_uniform_buffer_object : enable
+
+uniform TreeParamsBlock
+{
+    vec4 rotation;
+    vec3 treepos;
+};
 
 uniform vec2 cameraangle;
 
 uniform float diffuseScale;
 
-uniform mat4 MVMatrix;
-uniform mat4 ProjectionMatrix;
-uniform mat3 NormalMatrix;
-
-uniform vec4 rotation;
-uniform vec3 treepos;
+uniform MatrixBlock
+{
+    mat4 MVMatrix;
+    mat4 ProjectionMatrix;
+    mat4 NormalMatrix;
+};
 
 in vec3 in_pos;
 in vec3 in_center;
@@ -41,7 +48,7 @@ void main()
 	vec4 position = vec4(in_center, 1.0);
 	position.xy = vec2(dot(rotation.yxw, position.xyz), dot(rotation.zyw, position.xyz));
 			
-    	diffcoef = dimming * diffuseScale;
+	diffcoef = dimming * diffuseScale;
 
 	vec3 cornerpt = in_pos.xyz;
 
@@ -71,12 +78,12 @@ void main()
 	cornerpt = rot * cornerpt;
 	    
  	normal.xy = vec2(dot(rotation.yxw, normal), dot(rotation.zyw, normal));
-	N = normalize(NormalMatrix * normal);
+	N = normalize(mat3(NormalMatrix) * normal);
 	
         tangent.xy = vec2(dot(rotation.yxw, tangent), dot(rotation.zyw, tangent));
-	T = normalize(NormalMatrix * tangent);
+	T = normalize(mat3(NormalMatrix) * tangent);
   
-        B = cross(normal, tangent);
+    B = cross(normal, tangent);
 	
 	position.xyz += cornerpt + treepos.xyz;
 	position.w = 1.0;

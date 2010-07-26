@@ -2,7 +2,6 @@
 
 uniform sampler2D src1;
 
-uniform vec4 globalambient;
 uniform vec4 Ka;
 uniform vec4 Kd;
 uniform vec4 Ks;
@@ -41,13 +40,12 @@ void main()
 	                               diffuse, 
 	                               specular);
 
-	ambient += globalambient;
 	ambient *= Ka;
 	diffuse *= Kd;
     specular *= Ks;
 
 	vec4 c =  base * (diffuse + specular + ambient);
-	
+
 	out_color = fogThis(c);
 	out_color.w = base.a;
 }

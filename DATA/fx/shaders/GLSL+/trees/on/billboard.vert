@@ -7,9 +7,12 @@ uniform vec4 scales[4];
 uniform vec4 unitSquare[4];
 uniform vec4 rotation;
 
-uniform mat4 MVMatrix;
-uniform mat4 ProjectionMatrix;
-uniform mat3 NormalMatrix;
+uniform MatrixBlock
+{
+    mat4 MVMatrix;
+    mat4 ProjectionMatrix;
+    mat4 NormalMatrix;
+};
 
 uniform vec3 normal;
 uniform vec3 tangent;
@@ -71,9 +74,9 @@ void main()
    pos.xyz += in_pos.xyz;   
    pos.w = 1.0;
        
-   T = normalize(NormalMatrix * tangent);
-   B = normalize(NormalMatrix * binormal);
-   N = normalize(NormalMatrix * normal);
+   T = normalize(mat3(NormalMatrix) * tangent);
+   B = normalize(mat3(NormalMatrix) * binormal);
+   N = normalize(mat3(NormalMatrix) * normal);
       
    T.x = -T.x;
    

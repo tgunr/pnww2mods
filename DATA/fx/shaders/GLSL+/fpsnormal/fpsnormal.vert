@@ -1,8 +1,11 @@
 #version 150
 
-uniform mat4 MVMatrix;
-uniform mat4 ProjectionMatrix;
-uniform mat3 NormalMatrix;
+uniform MatrixBlock
+{
+    mat4 MVMatrix;
+    mat4 ProjectionMatrix;
+    mat4 NormalMatrix;
+};
 
 in vec3 in_pos;
 in vec3 in_normal;
@@ -22,8 +25,8 @@ float fogValue(float);
 
 void main()
 {
-	N = normalize(NormalMatrix * in_normal);	
-	T = normalize(NormalMatrix * in_tex1);
+	N = normalize(mat3(NormalMatrix) * in_normal);	
+	T = normalize(mat3(NormalMatrix) * in_tex1);
 	B = normalize(cross(N, T));
 				
 	tex0 = in_tex0;

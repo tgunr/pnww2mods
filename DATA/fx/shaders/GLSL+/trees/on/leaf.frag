@@ -1,12 +1,10 @@
 #version 150
 
-uniform sampler2D src1;
-uniform sampler2D src2;
-
-uniform vec4 globalambient;
-
 uniform vec4 Ka;
 uniform vec4 Kd;
+
+uniform sampler2D src1;
+uniform sampler2D src2;
 
 in vec2 uv;
 in vec3 N;
@@ -40,7 +38,6 @@ void main()
 
    lightGetAmbientDiffuse(t, b, n, normal.xyz, ambient, diffuse);
 
-   ambient += globalambient;
    ambient *= Ka;
    diffuse *= (Kd * diffcoef);
     

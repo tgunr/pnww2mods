@@ -3,7 +3,7 @@
 
 #define LINEAR_FOG
 
-uniform struct
+uniform FogBlock
 {
    float end;
    float scale; // 1 / (end - start)

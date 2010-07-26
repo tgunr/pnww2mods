@@ -1,8 +1,11 @@
 #version 150
 
-uniform mat4 MVMatrix;
-uniform mat4 ProjectionMatrix;
-uniform mat3 NormalMatrix;
+uniform MatrixBlock
+{
+    mat4 MVMatrix;
+    mat4 ProjectionMatrix;
+    mat4 NormalMatrix;
+};
 
 in vec3 in_pos;
 in vec3 in_normal;
@@ -16,7 +19,7 @@ out vec2 tex0;
 
 void main()
 {
-	N = normalize(NormalMatrix * in_normal);
+	N = normalize(mat3(NormalMatrix) * in_normal);
 	
 	tex0 = in_tex0;
 	

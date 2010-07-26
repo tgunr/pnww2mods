@@ -1,8 +1,11 @@
 #version 150
 
-uniform mat4 MVMatrix;
-uniform mat4 ProjectionMatrix;
-uniform mat3 NormalMatrix;
+uniform MatrixBlock
+{
+    mat4 MVMatrix;
+    mat4 ProjectionMatrix;
+    mat4 NormalMatrix;
+};
 
 in vec4 in_pos;
 in vec2 in_tex0;
@@ -34,7 +37,7 @@ void main()
 	
 	pos.xyz += in_tex3;
 	
-	N = normalize(NormalMatrix * vec3(0, 0, -1));
+	N = normalize(mat3(NormalMatrix) * vec3(0, 0, -1));
 	
 	alpha = 1.0 - alpha + 0.3294112; //84.0 / 255.0;
 	

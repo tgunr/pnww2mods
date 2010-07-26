@@ -1,8 +1,12 @@
 #version 150
+#extension GL_ARB_uniform_buffer_object : enable
 
-uniform mat4 MVMatrix;
-uniform mat4 ProjectionMatrix;
-uniform mat3 NormalMatrix;
+uniform MatrixBlock
+{
+    mat4 MVMatrix;
+    mat4 ProjectionMatrix;
+    mat4 NormalMatrix;
+};
 
 in vec3 in_pos;
 in vec3 in_normal;
@@ -23,7 +27,7 @@ void main()
 	V = pos.xyz;
     vertexpos = pos.xyz;
 
-    N = NormalMatrix * in_normal;
+    N = mat3(NormalMatrix) * in_normal;
 
     fogdist = abs(V.z);
 

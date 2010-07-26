@@ -4,13 +4,9 @@ uniform sampler2D src1;
 uniform sampler2D src2;
 uniform sampler2D src3;
 
-uniform vec4 globalambient;
 uniform vec4 Ka;
 uniform vec4 Kd;
-uniform vec4 Ks;
-uniform float shininess;
 
-in vec3 V;
 in vec3 N;
 in vec2 tex0;
 in vec2 tex1;
@@ -19,12 +15,9 @@ in vec2 tex2;
 out vec4 out_color;
 
 vec4 fogThis(in vec4);
-void lightGetAmbientDiffuseSpecular(in vec3 normal,
-                                    in vec3 V,
-                                    in float shininess,
-                                    out vec4 ambient,
-                                    out vec4 diffuse,
-                                    out vec4 specular);
+void lightGetAmbientDiffuse(in vec3 normal,
+                            out vec4 ambient,
+                            out vec4 diffuse);
 
 void main()
 {
@@ -35,25 +28,15 @@ void main()
     vec4 c = c1 * c2 * c3;
 
     vec4 diffuse;
-	vec4 specular;
 	vec4 ambient;
 	
-	// These values are interpolated and need to be normalized
-	vec3 v = normalize(-V);
 	vec3 n = normalize(N);
 
-	lightGetAmbientDiffuseSpecular(n, 
-	                               v, 
-	                               shininess, 
-	                               ambient, 
-	                               diffuse, 
-	                               specular);
+	lightGetAmbientDiffuse(n, ambient, diffuse); 
 
-	ambient += globalambient;
 	ambient *= Ka;
 	diffuse *= Kd;
-    specular *= Ks;
 
-	vec4 color =  c * (diffuse + specular + ambient);
+	vec4 color =  c * (diffuse + ambient);
 	out_color = fogThis(color);
 }

@@ -1,4 +1,5 @@
 #version 150
+#extension GL_ARB_uniform_buffer_object : enable
 
 uniform vec4 table1[84];
 
@@ -6,9 +7,12 @@ uniform vec4 scales[4];
 uniform vec4 unitSquare[4];
 uniform vec4 rotation;
 
-uniform mat4 MVMatrix;
-uniform mat4 ProjectionMatrix;
-uniform mat3 NormalMatrix;
+uniform MatrixBlock
+{
+    mat4 MVMatrix;
+    mat4 ProjectionMatrix;
+    mat4 NormalMatrix;
+};
 
 uniform vec3 normal;
 
@@ -66,7 +70,7 @@ void main()
    pos.xyz += in_pos.xyz;   
    pos.w = 1.0;
        
-   N = normalize(NormalMatrix * normal);
+   N = normalize(mat3(NormalMatrix) * normal);
         
    tex0.x = texcoords.x - texcoords.z * scales[corner].x;
    tex0.y = texcoords.y - texcoords.w * scales[corner].y;
