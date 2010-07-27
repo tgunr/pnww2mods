@@ -4,6 +4,7 @@ uniform sampler2D src1;
 uniform sampler2D src2;
 
 uniform vec4 Ka;
+uniform vec4 Kd;
 uniform float shininess;
 
 in vec3 N;
@@ -43,7 +44,8 @@ void main()
 	specular *= Ks;
 	ambient *= Ka;
 	ambient *= occ;
-	
+	diffuse *= Kd;
+
 	vec4 color = base * (diffuse + ambient + specular);
 	
 	out_color = fogThis(color);
