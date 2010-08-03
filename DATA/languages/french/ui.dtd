@@ -2272,7 +2272,7 @@
 <!ENTITY widgets.idcard.oic "OIC">
 <!ENTITY widgets.globals.options.tip "D&#39;ici vous pouvez régler les touches, les joysticks et la souris.">
 <!ENTITY widgets.prefs.groups.shadows "REGLAGE DES OMBRES">
-<!ENTITY widgets.prefs.groups.infantry.corpse.density "CORPSE COUNT">
+<!ENTITY widgets.prefs.groups.infantry.corpse.density "Nombre de corps">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.settings "REGLAGES MINICARTE">
 <!ENTITY widgets.prefs.groups.sound.ambient.disabled "désactivés">
 <!ENTITY widgets.prefs.groups.hud.custom.orders "ORDRES">
@@ -2297,7 +2297,7 @@
 <!ENTITY widgets.map.options.showobjectives "OBJECTIFS">
 <!ENTITY widgets.map.waypoints.contact.airforce "AVIATION ENNEMIE">
 <!ENTITY widgets.prefs.na "Non utilisable">
-<!ENTITY widgets.prefs.groups.infantry.corpse.time "CORPSE DURATION">
+<!ENTITY widgets.prefs.groups.infantry.corpse.time "DUREE CORPS">
 <!ENTITY widgets.map.waypoints.add.attack "ATTAQUEZ ICI">
 <!ENTITY widgets.prefs.groups.game.network.secondary "secondaire">
 <!ENTITY widgets.prefs.groups.ui.colors.squad "MEME SQUAD">
@@ -2447,7 +2447,7 @@
 <!ENTITY widgets.prefs.groups.hud.mode.tip "Met le HUD  au choix par défaut.">
 <!ENTITY widgets.prefs.changed "Certaines modifications demandent de redémarrer le jeu.">
 <!ENTITY widgets.prefs.groups.game.languagefilter "FILTRE POUR LE LANGUAGE ORDURIE">
-<!ENTITY widgets.prefs.groups.infantry.corpse.detail.tip "Use this to use a higher quality corpse model. Disable this for performance.">
+<!ENTITY widgets.prefs.groups.infantry.corpse.detail.tip "Utilisez cela pour avoir les meilleures qualités graphiques. Ne pas utiliser pour de bonnes perf.">
 <!ENTITY widgets.prefs.groups.connection.vislimit "VISIBLE PLAYER LIMIT">
 <!ENTITY widgets.prefs.groups.alerts.textmode.onclick "montrer le texte en cliquant">
 <!ENTITY widgets.prefs.groups.sound.system.disabled "désactivé">
@@ -2464,7 +2464,7 @@
 <!ENTITY widgets.map.options.zoom.pan "TAILLE AUTO">
 <!ENTITY widgets.template.quit.confirm "Voulez-vous quitter WWII Online?">
 <!ENTITY widgets.prefs.groups.alerts.textmode "MESSAGE de COMPORTEMENT">
-<!ENTITY widgets.prefs.groups.infantry.corpse.time.tip "Select how long to keep corpses around. Use a lower setting for better performance.">
+<!ENTITY widgets.prefs.groups.infantry.corpse.time.tip "Selectionnez combien de temps les cadavres restent présents. Réduire pour de meilleure perf.">
 <!ENTITY widgets.map.context.waypoints.add.report "Rapport de contact">
 <!ENTITY widgets.map.context.waypoints.add.waypoint "Pt de passage">
 <!ENTITY widgets.keymapper.cats.planes "Chasseurs et bombardiers">
@@ -2654,11 +2654,11 @@
 <!ENTITY widgets.map.context.position.target "Mon objectif de mission">
 <!ENTITY widgets.calibration.mouse.desc "Bougez votre souris comme vous appréciez le faire quand vous jouez. A gauche, le réglage est moins sensible. A droite, il est plus sensible.">
 <!ENTITY widgets.map.tooltip.objective.defend "Il y a un objectif de défense ici.">
-<!ENTITY widgets.prefs.groups.infantry.corpse.detail "DETAILED CORPSES">
+<!ENTITY widgets.prefs.groups.infantry.corpse.detail "DETAILS DES CORPS">
 <!ENTITY widgets.prefs.groups.infantry.blood "TRACES DE SANG">
 <!ENTITY widgets.prefs.groups.ui.colors.aws.high "COULEUR pour BEAUCOUP">
 <!ENTITY widgets.prefs.groups.connection.network.secondary "secondary">
-<!ENTITY widgets.prefs.groups.infantry.corpse.density.tip "Select how many corpses to allow. Use a lower setting for better performance.">
+<!ENTITY widgets.prefs.groups.infantry.corpse.density.tip "Selectionnez le nombre de corps visible. Réduie pour de meilleure pref.">
 <!ENTITY widgets.keymapper.keys.modify "MODIFIER">
 <!ENTITY widgets.prefs.list "PREFERENCES">
 <!ENTITY widgets.prefs.groups.titles.video "Système vidéo">
@@ -2678,7 +2678,7 @@
 <!ENTITY mission.readytab.panel.requestcrew.empty "Merci d&#39;attendre un équipier...">
 <!ENTITY mission.readytab.supply.status.cut "Le ravitaillement en provenance de ce bâtiment a été interrompu. Aucun renfort disponible.">
 <!ENTITY mission.aartab.aars.aar.bridgeshit "PONTS TOUCHES">
-<!ENTITY mission.spawn.denied12 "Your account does not have access to this vehicle yet.">
+<!ENTITY mission.spawn.denied12 "Vous n&#39;avez pas accès à ce véhicule avec votre compte actuel.">
 <!ENTITY mission.aartab.aars.id "ID SORTIE">
 <!ENTITY mission.readytab.panel.requestcrew.tip "Cliquez sur ce bouton pour solliciter un équipier pour votre véhicule.">
 <!ENTITY mission.aartab.aars.aar.guardingpoints "POINTS DE GUARDE">
@@ -2853,7 +2853,7 @@
 <!ENTITY mission.brieftab.help "BRIEFING DE MISSION: VERIFIEZ LES DETAILS DE VOS ORDRES">
 <!ENTITY mission.readytab.supply.status.closed "Ce bâtiment est fermé. Impossible d&#39;entrer en jeu ici.">
 <!ENTITY mission.readytab.crew.commander "COMMANDANT/PILOTE">
-<!ENTITY mission.spawn.denied11 "Your account minute balance has run out.">
+<!ENTITY mission.spawn.denied11 "Le temps dispo sur votre compte est fini.">
 <!ENTITY brigades.list.key.reserve "EN RESERVE">
 <!ENTITY brigades.details.objective "Objectif actuel">
 <!ENTITY brigades.list.status.planning "en déploiement">
@@ -3447,7 +3447,7 @@
 <!ENTITY common.squads.create.long "NOM LONG">
 <!ENTITY common.squads.details.created "CREE">
 <!ENTITY common.squads.details.night.dow6 "Samedi">
-<!ENTITY common.exitclick "CLICK ANYWHERE TO EXIT">
+<!ENTITY common.exitclick "CLICK N&#39;IMPORTE OU POUR SORTIR">
 <!ENTITY common.time.minute "{1} minute">
 <!ENTITY common.vehicles.classes.3 "Autre">
 <!ENTITY common.squads.invite.noinvite "Pas d&#39;Invitation">
@@ -4117,7 +4117,7 @@
 <!ENTITY vehicles.3.3.13.1 "Destroyer Français">
 <!ENTITY vehicles.3.1.2.3 "Hurricane Mk I">
 <!ENTITY vehicles.3.4.9.5 "BUZZARD">
-<!ENTITY vehicles.4.1.2.9 "Messerschmitt BF 109F-2">
+<!ENTITY vehicles.4.1.2.9 "Messerschmitt Bf 109F-2">
 <!ENTITY vehicles.1.4.14.12 "Sniper Para Britannique">
 <!ENTITY vehicles.4.1.1.1 "Junker Ju 87B Stuka">
 <!ENTITY vehicles.4.4.14.6 "Fusil-mitrailleur Allemand">

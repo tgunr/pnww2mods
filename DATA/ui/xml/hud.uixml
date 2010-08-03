@@ -85,6 +85,9 @@
 			style="color: #FFFFFF;" tip="&hud.primary.tip;" acceptmouseclick="false"/>
 		<caption id="primary-clips" x="10" rright="8" rtop="0" height='15' align="right"
 			style="font-size: -1; color: #BFE2CE;" tip="&hud.primary.tip;" acceptmouseclick="false"/>
+		<progressbar id="primary-progress" width="75" height="10" y="12" rright="8" minvalue="0" maxvalue="1"
+			fill="ui/textures/hud/oxy-level-fill.bmp" background="ui/textures/hud/back-level-fill.bmp" orient="leftright"
+			style="color: #FFFF88; background-color: #FFFFFF88;" acceptmouseclick="false"/>
 	</view>
 	<!-- VEHICLE SECONDARY WEAPON -->
 	<view id="secondary" x="6" y="110" width="175" height="47" aspectlimit="width"
@@ -216,6 +219,7 @@
 		var primaryAmmo				= findview("primary-ammo");
 		var primaryClips			= findview("primary-clips");
 		var primaryIcon				= findview("primary-icon");
+		var primaryProgress			= findview("primary-progress");
 		var primaryOn				= game.getpref("view.primary.visible", 0, true);
 		
 		var secondary				= findview("secondary");
@@ -260,8 +264,9 @@
 			primary.visible		= false;
 			secondary.visible 	= false;
 			
-			primaryName.visible	= false;
-			primaryIcon.visible	= false;
+			primaryName.visible		= false;
+			primaryIcon.visible		= false;
+			primaryProgress.visible	= false;
 			
 			var state = hud.findview("state");
 			
@@ -313,6 +318,7 @@
 			game.onmapactivate		= onMapActivate;
 			game.onmapdeactivate 	= onMapDeactivate;
 			game.onchatdeactivate 	= onChatDeactivate;
+			game.oncooldown			= onCoolDown;
 			
 			// go ahead and set the position of the 
 			if(!game.training && player.client.currentorders.length > 0)
@@ -354,6 +360,8 @@
 				
 				updateResupplyIcon(resupply);
 			}
+			
+			primaryProgress.visible = false;
 			
 			// update weapon boxes
 			if(meType == "person")
@@ -444,7 +452,15 @@
 			
 			primaryLabel.label = getlocstring('hud.primary.weapon') + ((range > 0) ? ' - ' + range + 'm': '');
 			
-			if(clipSize > 1) // we're dealing with a clipped weapon
+			if(me.primaryammoname == "buildtool")
+			{
+				ammoView.visible = false;
+				clipView.visible = false;
+				
+				if(primaryProgress.value > 0)
+					primaryProgress.visible = true;
+			}
+			else if(clipSize > 1) // we're dealing with a clipped weapon
 			{
 				ammoView.label = clipAmmo;
 				
@@ -1009,6 +1025,11 @@
 				if(vis)
 					chat.initChatter();
 			}
+		}
+		
+		function onCoolDown(progress)
+		{
+			primaryProgress.value = progress;
 		}
 		
 		function onOrders(sendAlert)

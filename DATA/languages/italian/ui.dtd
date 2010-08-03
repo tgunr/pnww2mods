@@ -2465,7 +2465,7 @@
 <!ENTITY widgets.map.context.waypoints.add.waypoint "Aggiungi punto di passaggio">
 <!ENTITY widgets.keymapper.cats.planes "Caccia e Bombardieri">
 <!ENTITY widgets.map.context.waypoints.add.report.type "TIPO DI RAPPORTO">
-<!ENTITY widgets.prefs.groups.sound.music.tip "Selezionalo se vuoi ascoltare musica quando non sei in gioco.">
+<!ENTITY widgets.prefs.groups.sound.music.tip "Scegli se avere musica quando non sei nel gioco.">
 <!ENTITY widgets.map.options.showews "CONTESE/EWS">
 <!ENTITY widgets.prefs.groups.game.sse2 "ISTRUZIONI SSE2">
 <!ENTITY widgets.prefs.groups.titles.windows "Finestre HUD">
@@ -2586,7 +2586,7 @@
 <!ENTITY widgets.map.waypoints.contact.truck "Autocarro nemico">
 <!ENTITY widgets.prefs.discard "SCARTA LE MODIFICHE">
 <!ENTITY widgets.prefs.groups.game.language.english "inglese">
-<!ENTITY widgets.prefs.groups.hud.custom.tip "Seleziona quali finestre dell&#39;HUD sono accese di default.">
+<!ENTITY widgets.prefs.groups.hud.custom.tip "Scegli quali siano le finestre HUD attive di default.">
 <!ENTITY widgets.prefs.groups.sound.maxsounds "No. MASSIMO SUONI">
 <!ENTITY widgets.map.finder.title "TROVA CITTA&#39;">
 <!ENTITY widgets.map.tooltip.town.german "Questa città è Tedesca.">
@@ -2638,7 +2638,7 @@
 <!ENTITY widgets.prefs.pending "Hai modificato alcune preferenze. Vorresti salvarle ora?">
 <!ENTITY widgets.prefs.groups.video.vertsync.tip "Avvisa il gioco di sicronizzare le istruzioni di disegno con il rateo di refresh del monitor. Disabilitalo per incrementare le prestazioni.">
 <!ENTITY widgets.map.waypoints.contact.danger "Pericolo">
-<!ENTITY widgets.prefs.groups.sound.system.tip "Seleziona se i suoni 3d sono mixati dalla scheda audio o dal software. Uno può fornire migliore qualità audio o migliori prestazioni a seconda del tuo hardware.">
+<!ENTITY widgets.prefs.groups.sound.system.tip "Scegli se i suoni 3D siano mixati attraverso la scheda audio o via software. La prima scelta può fornire una migliore resa audio o prestazioni a seconda del tuo hardware.">
 <!ENTITY widgets.prefs.groups.hud.mode.hide "nascondi hud">
 <!ENTITY widgets.infobar.day "Giorno">
 <!ENTITY widgets.map.context.position.target "Il mio obiettivo di missione">
@@ -2668,7 +2668,7 @@
 <!ENTITY mission.readytab.panel.requestcrew.empty "Per favore aspetta un equipaggio disponibile...">
 <!ENTITY mission.readytab.supply.status.cut "I rifornimenti di questa struttura sono stati tagliati; nessun rinforzo disponibile.">
 <!ENTITY mission.aartab.aars.aar.bridgeshit "PONTI COLPITI">
-<!ENTITY mission.spawn.denied12 "Your account does not have access to this vehicle yet.">
+<!ENTITY mission.spawn.denied12 "Il tuo conto non ha ancora accesso a questo veicolo.">
 <!ENTITY mission.aartab.aars.id "ID SORTITA">
 <!ENTITY mission.readytab.panel.requestcrew.tip "Clicca questo pulsante per richiedere che un mitragliere si unisca la tuo veicolo multiequipaggio.">
 <!ENTITY mission.aartab.aars.aar.guardingpoints "PUNTI PER VIGILANZA">
@@ -2767,7 +2767,7 @@
 <!ENTITY mission.readytab.mouseover "mouse sopra ciascun veicolo per avere informazioni sulla sua disponibilità">
 <!ENTITY mission.readytab.panel.selectcommander "SELEZIONA COMANDANTE">
 <!ENTITY mission.aartab.aars.aar.kills.type "UNITA&#39; NEMICA">
-<!ENTITY mission.spawn.denied10 "Responto dal timer di lancio; per favore aspetta.">
+<!ENTITY mission.spawn.denied10 "Respinto dal timer di lancio; per favore aspetta.">
 <!ENTITY mission.state.0 "La tua missione non è più valida. Per favore lasciala e selezionane un&#39;altra.">
 <!ENTITY mission.spawn.denied5 "Il mobile spawn richiesto non è più disponibiler.">
 <!ENTITY mission.back.tip "Torna indietro al quartier generale della tua brigata. Se sei il comandante di missione, la tua missione verrà cancellata.">
@@ -2843,7 +2843,7 @@
 <!ENTITY mission.brieftab.help "BRIEFING DI MISSIONE: ESAMINA I DETTAGLI DELLA TUA MISSIONE">
 <!ENTITY mission.readytab.supply.status.closed "Questa struttura è chiusa; l&#39;ingresso non è disponibile.">
 <!ENTITY mission.readytab.crew.commander "COMANDANTE">
-<!ENTITY mission.spawn.denied11 "Your account minute balance has run out.">
+<!ENTITY mission.spawn.denied11 "Il saldo dei minuti del tuo conto è scaduto.">
 <!ENTITY brigades.list.key.reserve "RISERVA">
 <!ENTITY brigades.details.objective "OBIETTIVO">
 <!ENTITY brigades.list.status.planning "pianificazione">
@@ -2996,170 +2996,170 @@
 <!ENTITY loading.vehicles "Modelli veicoli">
 <!ENTITY loading.compress "Inizializzazione compressione texture">
 <!ENTITY loading.ui "Modelli UI">
-<!ENTITY brigade.control.appointed "{1} e&#39; ora il comandante di {2}.">
+<!ENTITY brigade.control.appointed "{1} è ora il comandante di {2}.">
 <!ENTITY brigade.hqtab.brief.target "OBIETTIVO DI MISSIONE">
 <!ENTITY brigade.back.decision.persona "PROFILO">
 <!ENTITY brigade.forward.create "Crea missione">
-<!ENTITY brigade.control.error.notfrontline "Richiesta negata: Questa non e&#39; una citta&#39; sul fronte.">
+<!ENTITY brigade.control.error.notfrontline "Richiesta negata: Questa non è una città di frontiera.">
 <!ENTITY brigade.createtab "CREA MISSIONE">
 <!ENTITY brigade.createtab.orders.help "CREAZIONE MISSIONE: INSERISCI I TUOI ORDINI E CLICCA IL PULSANTE CREA MISSIONE">
 <!ENTITY brigade.control.proposal.objective.defend.cp "{4} ha fatto apparire questo messaggio. Non dovrebbe. Sculaccia {4}.">
 <!ENTITY brigade.control.proposal.move "{1} ha proposto di muovere {2} da {3} a {4}.">
-<!ENTITY brigade.createtab.origin "ORIGINE DI MISSIONE">
+<!ENTITY brigade.createtab.origin "ORIDINE DI MISSIONE">
 <!ENTITY brigade.control.proposal.replace "{1} ha assunto il comando di {2}.">
-<!ENTITY brigade.control.error.hasotheroffer "Request Denied: Player already has an outstanding offer.">
+<!ENTITY brigade.control.error.hasotheroffer "Richiesta negata: il giocatore ha già una richiesta in sospeso.">
 <!ENTITY brigade.comtab.commanders "UFFICIALI ATTIVI">
 <!ENTITY brigade.comtab.news "NOTIZIE DALL&#39;ALTO COMANDO">
-<!ENTITY brigade.createtab.postreply.5 "La tua richiesta per la creazione della missione e&#39; scaduta. Per favore riprova.">
+<!ENTITY brigade.createtab.postreply.5 "La tua creazione missione è scaduta. Per favore riprova.">
 <!ENTITY brigade.control.replace.pending "{1} sta rimpiazzando {2} al comando di {3}.">
-<!ENTITY brigade.control.appointment.failed "L&#39;assegnazione di {1} al comando di {2} e&#39; fallita.">
+<!ENTITY brigade.control.appointment.failed "L&#39;assegnazione di {1} al comando di {2} è fallita.">
 <!ENTITY brigade.control.vetoed.nominate "{2} HA VIETATO la nomina di {1} al comando di {3}.">
 <!ENTITY brigade.createtab.type "TIPO DI MISSIONE">
 <!ENTITY brigade.comtab.structure "STRUTTURA DI COMANDO">
 <!ENTITY brigade.createtab.nobrigade "Puoi creare missioni solo dalla schermata del QG di Brigata.">
 <!ENTITY brigade.comtab.motd "ORDINE DEL GIORNO DI BRIGATA">
-<!ENTITY brigade.control.error.badrequest "Si e&#39; verificato un errore sconosciuto durante l&#39;elaborazione del messaggio del comandante!">
+<!ENTITY brigade.control.error.badrequest "Si è verificato un errore sconosciuto durante l&#39;elaborazione del messaggio del comandante!">
 <!ENTITY brigade.hqtab.missions.pop "ATTIVITA&#39;">
 <!ENTITY brigade.control.vetoed.objective.defend.bridge "{4} HA VIETATO di difendere {2}.">
-<!ENTITY brigade.control.error.notofficer "Richiesta negata: solo il personale dell&#39;Alto Comando puo&#39; farlo.">
+<!ENTITY brigade.control.error.notofficer "Richiesta negata: solo il personale dell&#39;Alto Comanda può farlo.">
 <!ENTITY brigade.createtab.postreply.0 "Missione creata - unisciti alla missione!">
-<!ENTITY brigade.control.objective.attack.cp "{1}: {3} ordina di prendere {2} il comandante e&#39; {4}">
+<!ENTITY brigade.control.objective.attack.cp "{1}: {3} ordina di prendere {2} il comandante è {4}">
 <!ENTITY brigade.hqtab.missions.empty "Seleziona una missione dalla lista. Se non ci sono missioni disponibili e hai un grado sufficiente, puoi creare una nuova missione dalla linguetta MAPPA TEATRO.">
 <!ENTITY brigade.control.error.notvoting "Veto negato: {2} non ha il diritto di veto.">
 <!ENTITY brigade.createtab.origin.default "seleziona un&#39;origine">
 <!ENTITY brigade.control.proposal.remove.me "{1} ha proposto di rimuoverti dal comando di {2}">
 <!ENTITY brigade.control.vetoed.nominate.me "{1} HA VIETATO la tua nomina al comando di {2}.">
-<!ENTITY brigade.control.error.isoic.me "Richiesta negata: Hai gia&#39; un comando (o stai duplicando una richiesta di comando).">
+<!ENTITY brigade.control.error.isoic.me "Richiesta negata: Hai giàun assegnazione di comandante (o duplicato la richiesta di comando).">
 <!ENTITY brigade.createtab.target "OBIETTIVO DI MISSIONE">
-<!ENTITY brigade.createtab.error.noperms "Non puoi creare una missione in questo momento. Questo capita se non hai un grado sufficiente o se hai gia&#39; creato una missione.">
+<!ENTITY brigade.createtab.error.noperms "Non puoi creare una missiona in questo momento. Questo capita se non hai un grado sufficiente o se hai già creato una missione.">
 <!ENTITY brigade.createtab.postreply.3 "Non hai un grado sufficiente per creare una missione.">
 <!ENTITY brigade.control.unit.moved "{1} ha mosso {2} da {3} a {4}.">
-<!ENTITY brigade.forward "Briefing missione">
+<!ENTITY brigade.forward "Istruzione di missione">
 <!ENTITY brigade.back.decision "Cosa vorresti cambiare?">
-<!ENTITY brigade.createtab.error.2 "Questa non e&#39; una struttura.">
-<!ENTITY brigade.control.removed "{1} non e&#39; piu&#39; il comandante di {2}.">
-<!ENTITY brigade.control.invalid "Ricevuto un avviso di controllo di brigata invalido!">
+<!ENTITY brigade.createtab.error.2 "Questa non è una struttura.">
+<!ENTITY brigade.control.removed "{1} non è più il comandante di {2}.">
+<!ENTITY brigade.control.invalid "Ricevuto un avviso di contro di brigata invalido!">
 <!ENTITY brigade.hqtab.missions.target "OBIETTIVO">
-<!ENTITY brigade.control.vetoed.move.me "{1} HA VIETATO di muovere {2} a {4}.">
+<!ENTITY brigade.control.vetoed.move.me "{1} HA VIETATOdi muovere {2} a {4}.">
 <!ENTITY brigade.createtab.options "OPZIONI DI MISSIONE">
-<!ENTITY brigade.control.error.badveto "Veto rifiutato: Questa azione non puo&#39; essere elaborata al momento.">
-<!ENTITY brigade.control.vetoed.objective.defend.cp "{4} HA VIETATO di difendere {2}. Questo e&#39; impossibile. Per favore chiama Doc e fallo piangere.">
-<!ENTITY brigade.createtab.error.5 "Questa struttura non e&#39; valida per la tua brigata o divisione.">
-<!ENTITY brigade.control.error.wrongbrigade "Richiest negata: non sei attualemente membro di {2}.">
-<!ENTITY brigade.createtab.postreply.1 "Risultato della pubblicazione della missione sconosciuto!">
+<!ENTITY brigade.control.error.badveto "Veto rifiutato: Questa azione non può essere elaborata al momento.">
+<!ENTITY brigade.control.vetoed.objective.defend.cp "{4} HA VIETATO di difendere {2}. Questo è impossibile. Per favore chiama Doc e fallo piangere.">
+<!ENTITY brigade.createtab.error.5 "Questa struttura non è valida per la tua brigata o divisione.">
+<!ENTITY brigade.control.error.wrongbrigade "Richiesta negata: non sei attualemente membro di {2}.">
+<!ENTITY brigade.createtab.postreply.1 "Risultato di missione sconosciuto!">
 <!ENTITY brigade.control.proposal.replace.me "Hai assunto il comando di {1}.">
 <!ENTITY brigade.hqtab.missions.none "Questa brigata non ha missioni attive.">
 <!ENTITY brigade.createtab.origin.help "CREAZIONE MISSIONE: SELEZIONA UN&#39;ORIGINE PER LA TUA MISSIONE">
-<!ENTITY brigade.hqtab.missions.sq.tip "Indica che qualche tuo compagno di squadra e&#39; in questa missione.">
+<!ENTITY brigade.hqtab.missions.sq.tip "Indica che qualche tuo compagno di squadra è in questa missione.">
 <!ENTITY brigade.control.proposal.objective.clear "{4} ha proposto di annullare {2}.">
 <!ENTITY brigade.hqtab.commandedby "Comandato da">
 <!ENTITY brigade.hqtab.brief "RIASSUNTO DI MISSIONE">
-<!ENTITY brigade.control.error.badtarget "Richiesta negata: {2} e&#39; gia&#39; *a* {1}">
-<!ENTITY brigade.control.error.owntown "Richiesta negata: la nostra fazione possiede gia&#39; questa citta&#39;.">
+<!ENTITY brigade.control.error.badtarget "Richiesta negata: {2} è già *a* {1}">
+<!ENTITY brigade.control.error.owntown "Richiesta negata: la nostra fazione possiede già questa città.">
 <!ENTITY brigade.control.unit.moved.system "Rischierato {1} da {2} a {3}.">
-<!ENTITY brigade.control.error.notobjective "Richiesta negata: questo non e&#39; un obiettivo valido.">
+<!ENTITY brigade.control.error.notobjective "Richiesta negata: questo non è un obiettivo valido.">
 <!ENTITY brigade.comtab.structure.command "COMANDO">
 <!ENTITY brigade.hqtab.missions.sq "SQ">
 <!ENTITY brigade.comtab.structure.oic "UFFICIALE COMANDANTE">
 <!ENTITY brigade.hqtab "QG DI BRIGATA">
-<!ENTITY brigade.createtab.postreply.6 "La struttura della tua origine e&#39; stata catturata. Per favore scegline un&#39;altra.">
-<!ENTITY brigade.control.removed.me "Non sei piu&#39; il comandante di {1}.">
+<!ENTITY brigade.createtab.postreply.6 "La struttura della tua origine è stata catturata. Per faovre scegline un&#39;altra.">
+<!ENTITY brigade.control.removed.me "Non sei più il comandante di {1}.">
 <!ENTITY brigade.comtab.officers "Ufficiali attivi">
-<!ENTITY brigade.control.offer.lapsed.me "L&#39;offerta di comando di {1} e&#39; scaduta.">
-<!ENTITY brigade.createtab.postreply.8 "La struttura della tua origine non si accorda con la forza armata scelta. Per favore scegline un&#39;altra.">
+<!ENTITY brigade.control.offer.lapsed.me "l&#39;offerta di comando di {1} è scaduta.">
+<!ENTITY brigade.createtab.postreply.8 "La struttura della tua origine non coincide con il tuo ramo. Per favore scegline un&#39;altra.">
 <!ENTITY brigade.control.vetoed.objective.attack.bridge "{4} HA VIETATO di attaccare {2}.">
-<!ENTITY brigade.control.error.hasleader "Richiesta negata: Il comando puo&#39; essere fornito solo dal comandante di {2} mentre la posizione e&#39; occupata.">
+<!ENTITY brigade.control.error.hasleader "Richiesta negata: Il comando può essere fornito solo dal comandante di {2} mentra la posizione è occupata.">
 <!ENTITY brigade.control.proposal.nominate "{1} ha proposto {2} al comando di {3}.">
-<!ENTITY brigade.control.error.alreadyobjective "Richiesta negata: Questa citta&#39; o brigata ha gia&#39; un obiettivo.">
+<!ENTITY brigade.control.error.alreadyobjective "Richiesta negata: Questa città o brigata ha già un obiettivo.">
 <!ENTITY brigade.createtab.help "CREAZIONE MISSIONE: SELEZIONA UN&#39;ORIGINE PER LA TUA MISSIONE">
-<!ENTITY brigade.control.error.cantnominate "Pfui! Solo personale non appartenente all&#39;Alto Comando necessita di nomina. Lo staff dell&#39;Alto Comando puo&#39; assumere il comando di qualsiasi unita&#39; combattente libera.">
+<!ENTITY brigade.control.error.cantnominate "Pfui! Solo lo personale non dell&#39;Alto Comando necessita di nomina. Lo staff dell&#39;Alto Comando può assumere il comando di qualsiasi unità combattente libera.">
 <!ENTITY brigade.createtab.error.4 "Questa struttura non appartiene al tuo schieramento.">
-<!ENTITY brigade.comtab.enlistments "Effettivi di truppa">
+<!ENTITY brigade.comtab.enlistments "Arruolamento di brigata">
 <!ENTITY brigade.control.error.voting "Richiesta negata: {2} sta considerando un&#39;altra proposta.">
 <!ENTITY brigade.control.vetoed.objective.clear "{4} HA VIETATO di annullare l&#39;ordine su {2}.">
 <!ENTITY brigade.control.vetoed.remove.me "{3} HA VIETATO la rimozione di {1} dal comando di {2}.">
 <!ENTITY brigade.control.vetoed.objective.attack.cp "{4} HA VIETATO a {3} di attaccare {2}.">
 <!ENTITY brigade.control.offer.lapsed "{1} non ha accettato il comando di {2} (richiesta scaduta).">
 <!ENTITY brigade.hqtab.help "QUARTIER GENERALE DI BRIGATA: SELEZIONA UNA MISSIONE">
-<!ENTITY brigade.control.removal.pending "{1} e&#39; stato rimosso dal comando di {2}.">
+<!ENTITY brigade.control.removal.pending "{1} è stato rimosso dal comando di {2}.">
 <!ENTITY brigade.hqtab.missions.leader "LEADER">
-<!ENTITY brigade.createtab.postreply.9 "La tua brigata non e&#39; attiva e non hai il grado sufficiente per attivarla.">
+<!ENTITY brigade.createtab.postreply.9 "La tua brigata non è attiva e non hai il grado sufficiente per attivarla.">
 <!ENTITY brigade.comtab.missions "Missioni attive">
 <!ENTITY brigade.hqtab.brief.ms "MOBILE SPAWN">
-<!ENTITY brigade.control.objective.clear "{1}: {4} sta annullando l&#39;obiettivo su {2}.">
+<!ENTITY brigade.control.objective.clear "{1}: {4} è stato annullato l&#39;obiettivo {2}.">
 <!ENTITY brigade.hqtab.brief.ms.on "disponibile">
-<!ENTITY brigade.control.error.selfveto "Non puoi bloccare i voti su di te. Chiedi ad un amico di farlo. Se non hai amici, allora dovresti forse ripensare alla tua strategia.">
-<!ENTITY brigade.control.error.noperms "Richiesta negata: Solo il proprietario di {2} puo&#39; farlo.">
+<!ENTITY brigade.control.error.selfveto "Non puoi bloccare i voti su di te. Chiedi ad un amico di farlo. Se non hai amici, allora dovresti ripensare al tuo metodo (non che ha funzionato per te).">
+<!ENTITY brigade.control.error.noperms "Richiesta negata: Solo il proprietario di {2} può farlo.">
 <!ENTITY brigade.control.replace.pending.me "{1} (Proprietario della brigata) sta assumendo il comando di {2}.">
 <!ENTITY brigade.createtab.lowrank "Non hai ancora un grado sufficiente per creare missioni.">
-<!ENTITY brigade.createtab.postreply.7 "Questa struttura non e&#39; valida per la tua brigata o divisione. Per favore segline un&#39;altra.">
+<!ENTITY brigade.createtab.postreply.7 "Questa struttura non è valida per la tua brigata o divisione. Per favore segline un&#39;altra.">
 <!ENTITY brigade.control.error.badplayer "Il giocatore &#39;{1}&#39; non è disponibile.">
 <!ENTITY brigade.control.objective.attack.bridge "{1}: Ordini pubblicati da {4} per attaccare {2}">
-<!ENTITY brigade.createtab.error.length "Le descrizioni delle missioni possono avere un massimo di 256 caratteri. La tua descrizione è di {1} caratteri. Per favore correggila.">
+<!ENTITY brigade.createtab.error.length "Le descrizioni di missioni possono avere un massimo di 256 caratteri. La tua descrizione è di {1} caratteri. Per favore correggila.">
 <!ENTITY brigade.control.appointed.me "Sei ora il comandante di {1}.">
 <!ENTITY brigade.control.error.cantcancel "Richiesta negata: non puoi cancellare questo obiettivo di difesa.">
 <!ENTITY brigade.back "Cambia brigata">
 <!ENTITY brigade.hqtab.missions.origin "ORIGINE">
 <!ENTITY brigade.comtab.status "STATO DELLE OPERAZIONI">
 <!ENTITY brigade.hqtab.missions.key.defend "DIFESA">
-<!ENTITY brigade.control.error.notpermitted "Request Denied: Player cannot be nominated.">
+<!ENTITY brigade.control.error.notpermitted "Richiesta negata: il giocatore non può essere nomintato.">
 <!ENTITY brigade.forward.tip "Unisciti alla misione selezionata.">
-<!ENTITY brigade.hqtab.basedoutof "Base a">
+<!ENTITY brigade.hqtab.basedoutof "Basato da">
 <!ENTITY brigade.createtab.orders "ORDINI DI MISSIONE">
 <!ENTITY brigade.hqtab.brief.origin "ORIGINE DI MISSIONE">
-<!ENTITY brigade.control.objective.defend.cp "{1}: Unita&#39; in {2} chiamate alla difesa!">
-<!ENTITY brigade.control.error.hasoic "Richiesta negata: {2} ha gia&#39; un comandante.">
-<!ENTITY brigade.control.error.isoic "Richiesta negata: {1} ha gia&#39; ricevuto un comando.">
-<!ENTITY brigade.createtab.postreply.4 "Stai gia&#39; guidando una missione, cancella prima tale missione.">
-<!ENTITY brigade.control.error.nothc "Richiesta negata: Solo i membri effettivi dell&#39;Alto Comando possono farlo.">
-<!ENTITY brigade.control.error.notoic "{1} non e&#39; attualmente il comandante di {2}!">
+<!ENTITY brigade.control.objective.defend.cp "{1}: Unità in {2} chiamate alla difesa!">
+<!ENTITY brigade.control.error.hasoic "Richiesta negata: {2} ha già un comandante.">
+<!ENTITY brigade.control.error.isoic "Richiesta negata: {1} è giàstato assegnato ad un comandante.">
+<!ENTITY brigade.createtab.postreply.4 "Stai già guidando una missione, cancella prima tale missione.">
+<!ENTITY brigade.control.error.nothc "Richiesta negata: Solo i membri arruolati nell&#39;Alto Comando possono farlo.">
+<!ENTITY brigade.control.error.notoic "{1} non è al momento un membro di {2}!">
 <!ENTITY brigade.hqtab.missions.key.attack "ATTACCO">
 <!ENTITY brigade.comtab.tip "Controlla l&#39;ordine del giorno della tua brigata, gli ufficiali online e la struttura di comando.">
 <!ENTITY brigade.comtab.help "ORDINE DEL GIORNO DI BRIGATA: CONTROLLA I TUOI ORDINI SOLDATO">
-<!ENTITY brigade.control.offering "{1} e&#39; stato proposto al comando di {2}.">
+<!ENTITY brigade.control.offering "{1} è stato proposto al comando di {2}.">
 <!ENTITY brigade.control.vetoed.remove "{3} HA VIETATO la rimozione di {1} dal comando di {2}.">
 <!ENTITY brigade.back.decision.brigade "BRIGATA">
 <!ENTITY brigade.control.objective.axis "ASSE">
 <!ENTITY brigade.createtab.target.help "CREAZIONE DI MISSIONE: SELEZIONA UN OBIETTIVO DELLA TUA MISSIONE">
-<!ENTITY brigade.createtab.postreply.2 "Impossibile creare la missione, per favore riprova piu&#39; tardi.">
+<!ENTITY brigade.createtab.postreply.2 "Impossibile creare la missione, per favore riprova più tardi.">
 <!ENTITY brigade.hqtab.brief.leader "LEADER DI MISSIONE">
 <!ENTITY brigade.forward.create.tip "Crea una missione e unisciti ad essa">
 <!ENTITY brigade.control.proposal.remove "{1} ha proposto di rimuovere {2} dal comando di {3}.">
 <!ENTITY brigade.hqtab.missions.ms "MS">
 <!ENTITY brigade.control.removal.pending.me "Sei stato rimosso dal comando di {1}.">
-<!ENTITY brigade.createtab.error.invalid "Questo non e&#39; un oggetto strategico valido.">
+<!ENTITY brigade.createtab.error.invalid "Questo non è un oggetto strategico valido.">
 <!ENTITY brigade.hqtab.brief.ms.off "indisponibile">
-<!ENTITY brigade.createtab.error.3 "Questa non e&#39; una struttura che permette l&#39;ingresso. Le strutture utilizzabili sono le basi esercito, aeronautiche e navali, le basi avanzate e i depositi.">
-<!ENTITY brigade.control.error.nooffer "Mi dispiace, {2} non ti e&#39; stata offerta per ora (o l&#39;offerta e&#39; scaduta).">
-<!ENTITY brigade.hqtab.missions.key.support "SUPPORTO">
+<!ENTITY brigade.createtab.error.3 "Questa non è una struttura che permette l&#39;ingresso. Le strutture utilizzabili son le basi esercito, aeronautiche e navali, le basi avanzate e i depositi.">
+<!ENTITY brigade.control.error.nooffer "Mi dispiace, {2} non è attualmente stato offerta a te (o offerta scaduta).">
+<!ENTITY brigade.hqtab.missions.key.support "SUPPORT">
 <!ENTITY brigade.control.proposal.objective.attack.bridge "{4} ha proposto di attaccare {2}.">
 <!ENTITY brigade.control.vetoed.move "{1} HA VIETATO di muovere {2} a {4}.">
-<!ENTITY brigade.control.objective.withdrawn "{1}: obiettivo {2} e&#39; stato annullato.">
-<!ENTITY brigade.control.error.notmember "Richiesta negata: {1} non e&#39; al momento un membro valido di {2}.">
+<!ENTITY brigade.control.objective.withdrawn "{1}: obiettivo {2} è stato annullato.">
+<!ENTITY brigade.control.error.notmember "Richiesta negata: {1} non è al momento un membro valido di {2}.">
 <!ENTITY brigade.hqtab.tip "Esamina i dettagli della tua brigata e scegli una missione.">
-<!ENTITY brigade.control.error.badcallsign "&#39;{1}&#39; non e&#39; un nominativo valido di un giocatore.">
+<!ENTITY brigade.control.error.badcallsign "&#39;{1}&#39; non è un nominativo valido di un giocatore.">
 <!ENTITY brigade.control.objective.defend.bridge "{1}: Ordini pubblicati da {4} per difendere {2}.">
 <!ENTITY brigade.control.objective.allied "ALLEATI">
-<!ENTITY brigade.control.error.badorigin "Richiesta negata: {2} non e&#39; a {3} (potrebbe essere gia&#39; stato mosso/richiesta doppia).">
+<!ENTITY brigade.control.error.badorigin "Richiesta negata: {2} non è a {3} (potrebbe essere già stato mosso/richiesta doppia).">
 <!ENTITY brigade.control.proposal.objective.defend.bridge "{4} ha proposto di difendere {2}.">
-<!ENTITY brigade.createtab.tip "Se hai permessi sufficienti e non hai gia&#39; creato una missione, puoi farlo da qui.">
+<!ENTITY brigade.createtab.tip "Se hai permessi sufficienti e non hai già creato una missione, puoi farlo da qui.">
 <!ENTITY brigade.hqtab.brief.type "TIPO DI MISSIONE">
 <!ENTITY brigade.control.proposal.nominate.me "You should not see this message#001. Do not translate.">
 <!ENTITY brigade.hqtab.missions.pop.tip "Indica quanti sono i giocatori in questa missione.">
-<!ENTITY brigade.control.error.notleader "Richiesta negata: Solo il comandante puo&#39; farlo.">
+<!ENTITY brigade.control.error.notleader "Richiesta negata: Solo il comandante può farlo.">
 <!ENTITY brigade.createtab.orders.default "Inserisci gli ordini">
 <!ENTITY brigade.createtab.target.default "seleziona un bersaglio">
-<!ENTITY brigade.hqtab.missions.ms.tip "Indica che questa missione ha un mobile spawn schierato.">
+<!ENTITY brigade.hqtab.missions.ms.tip "Indica che questa missione ha un ingresso mobile schierato.">
 <!ENTITY brigade.control.proposal.objective.attack.cp "{4} ha proposto a {3} di attaccare {2}.">
 <!ENTITY brigade.hqtab.missions "MISSIONI ATTIVE">
-<!ENTITY brigade.control.error.hasoffer "Mi dispiace, {2} e&#39; stato offerto ad un altro giocatore.">
-<!ENTITY brigade.control.appointment.failed.me "La tua assegnazione al comando di {1} e&#39; fallita.">
+<!ENTITY brigade.control.error.hasoffer "Mi dispiace, {2} è stato offerto ad un altro giocatore.">
+<!ENTITY brigade.control.appointment.failed.me "La tua assegnazione al comando di {1} è fallita.">
 <!ENTITY brigade.back.tip "Torna indietro e trasferisciti ad un profilo differente o mantieni l&#39;attuale profilo e trasferisciti ad una nuova brigata.">
-<!ENTITY brigade.control.offering.me "Ti e&#39; stato proposto il comando di {1}.">
+<!ENTITY brigade.control.offering.me "Ti è stato proposto il comando di {1}.">
 <!ENTITY brigade.comtab "COMUNICAZIONI">
-<!ENTITY brigade.createtab.error.owner "Devi selezionare una base esercito, una base avanzata o un deposito di una citta&#39; che appartiene al tuo schieramento per definire l&#39;origine della tua missione.">
+<!ENTITY brigade.createtab.error.owner "Devi selezionare una base esercito, una base avanzata o un deposito di una città che appartiene al tuo schieramento per definire l&#39;origine della tua missione.">
 <!ENTITY brigade.control.proposal.move.me "Hai proposto di muovere {2} da {3} a {4}.">
-<!ENTITY brigade.createtab.error.select "Per favore selezione una citta&#39; o struttura dalla mappa per definire l&#39;obiettivo della tua missione.">
+<!ENTITY brigade.createtab.error.select "Per favore selezione una città o struttura dalla mappa per definire l&#39;obiettivo della tua missione.">
 <!ENTITY squad.control.positiontaken "Questa posizione e&#39; gia&#39; presa.">
 <!ENTITY squad.control.playerconsideringother "Il giocatore sta considerando un altro invito.">
 <!ENTITY squad.control.operationfailed "Operazione di controllo della squadra fallite.">
@@ -3437,7 +3437,7 @@
 <!ENTITY common.squads.create.long "NOME ESTESO">
 <!ENTITY common.squads.details.created "CREATO">
 <!ENTITY common.squads.details.night.dow6 "Sabato">
-<!ENTITY common.exitclick "CLICK ANYWHERE TO EXIT">
+<!ENTITY common.exitclick "CLICCA DOVE VUOI PER USCIRE">
 <!ENTITY common.time.minute "{1} minuto">
 <!ENTITY common.vehicles.classes.3 "Altro">
 <!ENTITY common.squads.invite.noinvite "Nessun invito">
@@ -3930,7 +3930,7 @@
 <!ENTITY dotcom.oicveto.help "Uso: .oicveto <brigata> <giocatore>">
 <!ENTITY dotcom.obj.help "Elenca gli obiettivi correnti per il tuo schieramento. Uso: .obj <L, I ,C or N>: Elenca (L), Informazioni (I), Città (C), Numero (N)">
 <!ENTITY dotcom.octettriangles.help "">
-<!ENTITY dotcom.em.help "Uso: .em <emozione>: esegue l&#39;emozione selezionata (acclamazione, carica, gyrus (resa), risata, saluto, stop, salta)">
+<!ENTITY dotcom.em.help "Uso: .em <emozione>: esegue l&#39;emozione selezionata: &#34;attention&#34; (attenzione), &#34;salute&#34; (saluto), &#34;cheer&#34; (acclamazione), &#34;double&#34; (carica), &#34;gyrus&#34; (resa), &#34;laugh&#34; (risata), &#34;jump&#34; (saltare - per avvisare i giocatori di lanciarsi dall&#39;aereo)">
 <!ENTITY dotcom.oicresign.help "Uso: .oicresign <brigata>">
 <!ENTITY dotcom.vehlod.help "Uso: .vehlod (Disabilita/abilita i LOD del veicolo: default Abilitati)">
 <!ENTITY dotcom.overrun.help "Notifica all&#39;Alto Comando che la base è invasa">
@@ -4027,37 +4027,37 @@
 <!ENTITY vehicles.4.1.2.8 "Messerschmitt Bf 110F-B">
 <!ENTITY vehicles.4.2.4.8 "Panzer IV G">
 <!ENTITY vehicles.4.3.12.1 "Fairmile B Tedesca">
-<!ENTITY vehicles.4.4.14.12 "Cecchino Paracadutista Tedesco">
-<!ENTITY vehicles.1.4.9.12 "Cecchino Britannico">
+<!ENTITY vehicles.4.4.14.12 "Cecchino Paracadutista">
+<!ENTITY vehicles.1.4.9.12 "Cecchino">
 <!ENTITY vehicles.3.2.7.1 "Cannone anticarro 25 mm SA mle 1934">
 <!ENTITY vehicles.3.2.4.9 "M4A3 Sherman 76">
 <!ENTITY vehicles.1.2.4.10 "A22 Churchill Mk III">
 <!ENTITY vehicles.1.2.4.9 "A22 Churchill Mk VII">
 <!ENTITY vehicles.1.1.2.7 "Hurricane Mk IIb">
 <!ENTITY vehicles.4.1.1.2 "Heinkel He 111H-2">
-<!ENTITY vehicles.1.4.9.8 "Comandante Britannico">
+<!ENTITY vehicles.1.4.9.8 "Comandante">
 <!ENTITY vehicles.1.2.7.6 "Cannone anticarro ROQF 17 Pounder">
 <!ENTITY vehicles.1.1.2.8 "Spitfire Mk Ib">
 <!ENTITY vehicles.3.1.1.2 "Douglas DB-7">
 <!ENTITY vehicles.3.3.13.2 "Cargo Francese">
-<!ENTITY vehicles.4.4.9.2 "Assaltatore Tedesco">
+<!ENTITY vehicles.4.4.9.2 "Assaltatore">
 <!ENTITY vehicles.1.3.13.2 "Cargo Britannico">
 <!ENTITY vehicles.4.2.7.2 "Cannone anticarro/antiaereo FlaK 36 (88 mm)">
-<!ENTITY vehicles.3.4.9.3 "Geniere Francese">
+<!ENTITY vehicles.3.4.9.3 "Geniere">
 <!ENTITY vehicles.4.2.4.1 "Panzer III F">
-<!ENTITY vehicles.1.4.9.7 "Granatiere Britannico">
-<!ENTITY vehicles.1.4.14.13 "Mortaista Paracadutista Britannico">
-<!ENTITY vehicles.4.4.9.13 "Mortaista Leggero Tedesco">
-<!ENTITY vehicles.3.4.14.1 "Fuciliere Paracadutista Francese">
+<!ENTITY vehicles.1.4.9.7 "Granatiere">
+<!ENTITY vehicles.1.4.14.13 "Mortaista Paracadutista">
+<!ENTITY vehicles.4.4.9.13 "Mortaista Leggero">
+<!ENTITY vehicles.3.4.14.1 "Fuciliere Paracadutista">
 <!ENTITY vehicles.4.2.7.4 "Cannone antiaereo Flak 28 (40 mm">
 <!ENTITY vehicles.3.1.2.2 "Spitfire Mk I">
 <!ENTITY vehicles.3.1.2.7 "Lockheed mle 322/15 (P-38F)">
 <!ENTITY vehicles.4.2.7.6 "Cannone anticarro PaK 40 (75 mm)">
 <!ENTITY vehicles.4.2.6.3 "SdKfz 251 C">
 <!ENTITY vehicles.3.2.6.2 "Autocarro Laffly S-20">
-<!ENTITY vehicles.4.4.14.1 "Fuciliere Paracadutista Tedesco">
+<!ENTITY vehicles.4.4.14.1 "Fuciliere Paracadutista">
 <!ENTITY vehicles.4.2.4.2 "Panzer 38(t)">
-<!ENTITY vehicles.4.4.9.1 "Fuciliere Tedesco">
+<!ENTITY vehicles.4.4.9.1 "Fuciliere">
 <!ENTITY vehicles.3.2.4.4 "Panhard AMD 178">
 <!ENTITY vehicles.3.1.2.1 "Curtiss Hawk H75A-3 (P-36A)">
 <!ENTITY vehicles.4.2.6.1 "Autocarro Opel Blitz">
@@ -4069,69 +4069,69 @@
 <!ENTITY vehicles.3.2.7.4 "Cannone antiaereo Bofors 40 mm">
 <!ENTITY vehicles.4.1.1.4 "German Blenheim Mk IV T">
 <!ENTITY vehicles.1.2.7.2 "Cannone anticarro 25 mm SA mle 1934">
-<!ENTITY vehicles.3.4.9.2 "Assaltatore Francese">
+<!ENTITY vehicles.3.4.9.2 "Assaltatore">
 <!ENTITY vehicles.3.2.4.2 "Renault R-35">
-<!ENTITY vehicles.4.4.9.8 "Comandante Tedesco">
+<!ENTITY vehicles.4.4.9.8 "Comandante">
 <!ENTITY vehicles.4.2.4.4 "StuG III B">
 <!ENTITY vehicles.3.1.1.3 "Junkers Ju-52 3M">
-<!ENTITY vehicles.4.4.14.9 "Fuciliere Anticarro Paracadutista Tedesco">
-<!ENTITY vehicles.3.4.9.1 "Fuciliere Francese">
+<!ENTITY vehicles.4.4.14.9 "Fuciliere Anticarro Paracadutista">
+<!ENTITY vehicles.3.4.9.1 "Fuciliere">
 <!ENTITY vehicles.3.2.4.8 "M10 Wolverine">
 <!ENTITY vehicles.1.1.2.1 "Spitfire Mk Ia">
 <!ENTITY vehicles.3.2.7.6 "Cannone anticarro M5A2 3&#34; (76.2 mm)">
 <!ENTITY vehicles.3.1.2.4 "Dewoitine D.520">
-<!ENTITY vehicles.1.4.9.10 "Paracadutista Britannico">
+<!ENTITY vehicles.1.4.9.10 "Paracadutista">
 <!ENTITY vehicles.3.1.1.1 "Blenheim Mk IV">
 <!ENTITY vehicles.4.3.13.2 "Cargo Tedesco">
 <!ENTITY vehicles.1.2.6.1 "Autocarro Bedford OY">
-<!ENTITY vehicles.1.4.9.9 "Fuciliere Anticarro Britannico">
+<!ENTITY vehicles.1.4.9.9 "Fuciliere Anticarro">
 <!ENTITY vehicles.4.1.2.7 "Messerschmitt Bf 109F-1">
-<!ENTITY vehicles.3.4.14.6 "Mitragliere Paracadutista Francese">
+<!ENTITY vehicles.3.4.14.6 "Mitragliere Paracadutista">
 <!ENTITY vehicles.1.1.2.3 "Blenheim Mk I">
 <!ENTITY vehicles.3.1.2.8 "Curtiss Hawk H87B-3 (P-40F)">
-<!ENTITY vehicles.4.4.14.13 "Mortaista Paracadutista Tedesco">
-<!ENTITY vehicles.3.4.9.9 "Fuciliere Anticarro Francese">
+<!ENTITY vehicles.4.4.14.13 "Mortaista Paracadutista">
+<!ENTITY vehicles.3.4.9.9 "Fuciliere Anticarro">
 <!ENTITY vehicles.4.2.4.7 "SdKfz 232">
 <!ENTITY vehicles.1.2.7.4 "Cannone antiaereo Bofors 40 mm">
 <!ENTITY vehicles.1.1.2.6 "Spitfire Mk IXc">
 <!ENTITY vehicles.3.2.6.3 "Trattore per cannoni Laffly W15">
-<!ENTITY vehicles.3.4.14.12 "Cecchino Paracadutista Francese">
+<!ENTITY vehicles.3.4.14.12 "Cecchino Paracadutista">
 <!ENTITY vehicles.1.2.4.4 "Matilda Mk II">
-<!ENTITY vehicles.3.4.9.6 "Mitragliere Francese">
+<!ENTITY vehicles.3.4.9.6 "Mitragliere">
 <!ENTITY vehicles.3.2.4.6 "M3A3 Stuart">
 <!ENTITY vehicles.1.1.1.2 "Blenheim Mk IV-T">
-<!ENTITY vehicles.1.4.9.13 "Mortaista Leggero Britannico">
+<!ENTITY vehicles.1.4.9.13 "Mortaista Leggero">
 <!ENTITY vehicles.4.1.2.5 "Messerschmitt Bf 109G-6/U4">
 <!ENTITY vehicles.1.2.4.7 "A15 Crusader Mk II">
 <!ENTITY vehicles.3.3.13.1 "Cacciatorpediniere Francese">
 <!ENTITY vehicles.3.1.2.3 "Hurricane Mk I">
 <!ENTITY vehicles.3.4.9.5 "BUZZARD">
-<!ENTITY vehicles.4.1.2.9 "Messerschmitt BF 109F-2">
-<!ENTITY vehicles.1.4.14.12 "Cecchino Paracadutista Britannico">
+<!ENTITY vehicles.4.1.2.9 "Messerschmitt Bf 109F-2">
+<!ENTITY vehicles.1.4.14.12 "Cecchino Paracadutista">
 <!ENTITY vehicles.4.1.1.1 "Junkers Ju 87B Stuka">
-<!ENTITY vehicles.4.4.14.6 "Mitragliere Paracadutista Tedesco">
+<!ENTITY vehicles.4.4.14.6 "Mitragliere Paracadutista">
 <!ENTITY vehicles.1.2.6.2 "Trattore per cannone Morris CDSW">
 <!ENTITY vehicles.3.2.7.5 "Cannone antiaereo M1 (57 mm)">
-<!ENTITY vehicles.1.4.14.9 "Fuciliere Anticarro Paracadutista Britannico">
-<!ENTITY vehicles.1.4.9.3 "Geniere Britannico">
+<!ENTITY vehicles.1.4.14.9 "Fuciliere Anticarro Paracadutista">
+<!ENTITY vehicles.1.4.9.3 "Geniere">
 <!ENTITY vehicles.4.1.2.2 "Messerschmitt Bf 110C-4">
 <!ENTITY vehicles.3.2.4.7 "M4A2 Sherman">
 <!ENTITY vehicles.1.1.2.4 "Spitfire Mk Vb">
-<!ENTITY vehicles.1.4.14.1 "Fuciliere Paracadutista Britannico">
-<!ENTITY vehicles.3.4.14.2 "Assaltatore Paracadutista Francese">
-<!ENTITY vehicles.4.4.9.9 "Fuciliere Anticarro Tedesco">
+<!ENTITY vehicles.1.4.14.1 "Fuciliere Paracadutista">
+<!ENTITY vehicles.3.4.14.2 "Assaltatore Paracadutista">
+<!ENTITY vehicles.4.4.9.9 "Fuciliere Anticarro">
 <!ENTITY vehicles.1.1.1.4 "Douglas C47">
-<!ENTITY vehicles.1.4.9.1 "Fuciliere Britannico">
+<!ENTITY vehicles.1.4.9.1 "Fuciliere">
 <!ENTITY vehicles.3.3.12.1 "Fairmile B Francese">
-<!ENTITY vehicles.4.4.9.7 "Granatiere Tedesco">
-<!ENTITY vehicles.3.4.9.12 "Cecchino Francese">
+<!ENTITY vehicles.4.4.9.7 "Granatiere">
+<!ENTITY vehicles.3.4.9.12 "Cecchino">
 <!ENTITY vehicles.1.2.7.3 "Cannone antiaereo Hotchkiss 25 mm">
 <!ENTITY vehicles.3.2.7.2 "Cannone anticarro 47 mm SA mle 1937">
-<!ENTITY vehicles.3.4.9.10 "Paracadutista Francese">
+<!ENTITY vehicles.3.4.9.10 "Paracadutista">
 <!ENTITY vehicles.4.3.13.1 "Zerstoerer Tipo 1934">
-<!ENTITY vehicles.1.4.14.6 "Mitragliere Paracadutista Britannico">
+<!ENTITY vehicles.1.4.14.6 "Mitragliere Paracadutista">
 <!ENTITY vehicles.1.1.2.9 "Spitfire Mk IIb">
-<!ENTITY vehicles.reload "Caricando &#37;ls per la prossima salva di &#37;ls">
+<!ENTITY vehicles.reload "Caricando &#37;ls per la prossima salva">
 <!ENTITY vehicles.4.2.7.1 "Cannone anticarro PaK 36 (37 mm)">
 <!ENTITY vehicles.4.2.4.5 "Panzer IV D">
 <!ENTITY vehicles.1.1.2.5 "Hurricane Mk IIc">
@@ -4139,24 +4139,24 @@
 <!ENTITY vehicles.4.1.2.6 "Messerschmitt Bf 109E-1">
 <!ENTITY vehicles.4.2.7.5 "Cannone anticarro PaK 38 (50 mm)">
 <!ENTITY vehicles.1.2.4.5 "Vickers Mk IV">
-<!ENTITY vehicles.4.4.9.12 "Cecchino Tedesco">
+<!ENTITY vehicles.4.4.9.12 "Cecchino">
 <!ENTITY vehicles.4.1.2.4 "Focke Wulf Fw 190A-4">
 <!ENTITY vehicles.4.2.6.4 "w154">
 <!ENTITY vehicles.1.3.12.1 "Fairmile B Britannica">
 <!ENTITY vehicles.4.1.1.5 "Junkers Ju 52-3M">
-<!ENTITY vehicles.1.4.9.2 "Assaltatore Britannico">
+<!ENTITY vehicles.1.4.9.2 "Assaltatore">
 <!ENTITY vehicles.4.2.7.3 "Cannone antiaereo FlaK 30 (20 mm)">
 <!ENTITY vehicles.3.1.2.6 "Bell mle 14a (P-39D)">
-<!ENTITY vehicles.1.4.14.2 "Assaltatore Paracadutista Britannico">
-<!ENTITY vehicles.3.4.9.13 "Mortaista Leggero Francese">
-<!ENTITY vehicles.3.4.14.9 "Fuciliere Anticarro Paracadutista Francese">
-<!ENTITY vehicles.1.4.9.6 "Mitragliere Britannico">
+<!ENTITY vehicles.1.4.14.2 "Assaltatore Paracadutista">
+<!ENTITY vehicles.3.4.9.13 "Mortaista Leggero">
+<!ENTITY vehicles.3.4.14.9 "Fuciliere Anticarro Paracadutista">
+<!ENTITY vehicles.1.4.9.6 "Mitragliere">
 <!ENTITY vehicles.3.2.4.1 "Renault B1 bis">
-<!ENTITY vehicles.3.4.9.8 "Comandante Francese">
+<!ENTITY vehicles.3.4.9.8 "Comandante">
 <!ENTITY vehicles.1.2.7.5 "Cannone anticarro ROQF 6 Pounder">
-<!ENTITY vehicles.4.4.14.2 "Assaltatore Paracadutista Tedesco">
+<!ENTITY vehicles.4.4.14.2 "Assaltatore Paracadutista">
 <!ENTITY vehicles.3.2.4.5 "Hotchkiss H-39">
-<!ENTITY vehicles.4.4.9.3 "Geniere Tedesco">
+<!ENTITY vehicles.4.4.9.3 "Geniere">
 <!ENTITY vehicles.4.2.4.6 "Panzer III H">
 <!ENTITY vehicles.1.2.7.1 "Cannone anticarro ROQF 2 Pounder">
 <!ENTITY vehicles.3.2.6.1 "Autocarro Bedford OY">
@@ -4166,17 +4166,17 @@
 <!ENTITY vehicles.1.1.2.2 "Hurricane Mk I">
 <!ENTITY vehicles.1.2.4.8 "A15 Crusader Mk III">
 <!ENTITY vehicles.4.2.4.3 "Panzer II C">
-<!ENTITY vehicles.4.4.9.6 "Mitragliere Tedesco">
+<!ENTITY vehicles.4.4.9.6 "Mitragliere">
 <!ENTITY vehicles.1.1.1.3 "Havoc Mk I">
 <!ENTITY vehicles.4.1.1.3 "Messerschmitt Bf 110C-4/B">
 <!ENTITY vehicles.3.1.2.5 "Curtiss Hawk H81A-2 (P-40C)">
 <!ENTITY vehicles.1.2.4.3 "Renault B1 bis">
-<!ENTITY vehicles.4.4.9.10 "Paracadutista Tedesco">
+<!ENTITY vehicles.4.4.9.10 "Paracadutista">
 <!ENTITY vehicles.3.2.4.3 "Somua S-35">
 <!ENTITY vehicles.4.1.2.3 "Messerschmitt Bf 109F-4">
-<!ENTITY vehicles.1.4.9.11 "Sottoufficiale Britannico">
-<!ENTITY vehicles.3.4.9.7 "Granatiere Francese">
-<!ENTITY vehicles.3.4.14.13 "Mortaista Paracadutista Francese">
+<!ENTITY vehicles.1.4.9.11 "Sottoufficiale">
+<!ENTITY vehicles.3.4.9.7 "Granatiere">
+<!ENTITY vehicles.3.4.14.13 "Mortaista Paracadutista">
 <!ENTITY vehicles.1.2.4.2 "Renault R-35">
 <!ENTITY vehicles.1.1.1.1 "Blenheim Mk IV">
 <!ENTITY combat.crew.arms "braccia">

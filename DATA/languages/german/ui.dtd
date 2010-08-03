@@ -2341,7 +2341,7 @@
 <!ENTITY widgets.map.context.hc "HC Optionen">
 <!ENTITY widgets.prefs.groups.hud.windows.reset.button "ZURÜCKSETZEN">
 <!ENTITY widgets.prefs.groups.game.language.french "französisch">
-<!ENTITY widgets.prefs.groups.game.lowmemory.tip "Enable this option to decrease the amount of pre-cached data the game loads on startup. May help systems with less than 2GB of memory. This setting may also cause some additional stutters on first spawn in.">
+<!ENTITY widgets.prefs.groups.game.lowmemory.tip "Aktiviere diesee Option, um die Menge der beim Spielstart vorgeladenen Daten zu verringern. Dies kann Systemen mit weniger als 2GB Speicher entlasten aber es kann zu kleinen Rucklern beim ersten Betreten der Spielwelt führen.">
 <!ENTITY widgets.keymapper.cats "TASTENBELEGUNGS-KATEGORIEN">
 <!ENTITY widgets.manuals.mantab.default "Dieses Handbuch ist nicht verfügbar. Ein Bericht wurde an den Server gesendet.">
 <!ENTITY widgets.manuals.mantab.read "HANDBUCH LESEN">
@@ -2350,7 +2350,7 @@
 <!ENTITY widgets.calibration.device.mouse1 "Maus 1">
 <!ENTITY widgets.prefs.groups.shadows.presets "SCHATTEN">
 <!ENTITY widgets.prefs.groups.video.noframerunahead "KEIN FRAME RUN AHEAD">
-<!ENTITY widgets.globals.manuals.tip "Hier kannst Du die Online-Manuals und Trainingsvideos finden. Alles über wie man ein guter Soldat wird bis hin zum Fliegen eines Flugzeugs. Es kommt bei jedem Patch etwas dazu, schau hier öfter mal vorbei">
+<!ENTITY widgets.globals.manuals.tip "Online Handbücher und Trainingsvideos. Hier findest Du Tips darüber, wie man ein guter Soldat wird bis hin zum Fliegen eines Flugzeugs. Es kommt bei jedem Patch etwas dazu, schau hier öfter mal vorbei">
 <!ENTITY widgets.prefs.groups.visual.limitlod.tip "Begrenzt die Anzahl der Änderungen des Detaillevels pro Frame. Verbessert Performance">
 <!ENTITY widgets.prefs.groups.visual.texreduce "TEXTURREDUZIERUNG">
 <!ENTITY widgets.map.context.hc.clear "Zielvorgaben löschen">
@@ -2408,7 +2408,7 @@
 <!ENTITY widgets.map.waypoints.create "WEGPUNKT ERSTELLEN">
 <!ENTITY widgets.map.tooltip.orders.overrun "Diese Stadt wurde überrannt.">
 <!ENTITY widgets.map.info.mouse.title "MAUS LAT/LON">
-<!ENTITY widgets.prefs.groups.game.credits.tip "Enable this to show game credits when exiting.">
+<!ENTITY widgets.prefs.groups.game.credits.tip "Aktiviere diese Option um bei Verlassen des Spiels den Abspann anzuzeigen.">
 <!ENTITY widgets.map.tooltip.town.neutral "Diese Stadt ist neutral.">
 <!ENTITY widgets.keymapper.button.def.cat "KATEGORIESTANDARDS">
 <!ENTITY widgets.prefs.more "mehr">
@@ -2461,7 +2461,7 @@
 <!ENTITY widgets.prefs.groups.game.language.chinese "chinesisch">
 <!ENTITY widgets.prefs.groups.chat.reset.button "RESET">
 <!ENTITY widgets.map.context.waypoints.delete.all "Alle Kontaktmeldungen">
-<!ENTITY widgets.prefs.groups.game.lowmemory "LOW MEMORY SYSTEM (2GB or less)">
+<!ENTITY widgets.prefs.groups.game.lowmemory "SYSTEM MIT 2GB SPEICHER (oder weniger)">
 <!ENTITY widgets.prefs.groups.hud.custom "HUD FENSTER">
 <!ENTITY widgets.keymapper.pending.move "Bewege Deine Maus/Joystickachse.">
 <!ENTITY widgets.prefs.groups.sound.ambient "UMGEBUNGSGERÄUSCHE">
@@ -2536,7 +2536,7 @@
 <!ENTITY widgets.idcard.status "STATUS">
 <!ENTITY widgets.prefs.groups.sound.volume.music "MUSIK">
 <!ENTITY widgets.prefs.groups.alerts.display.panel.tip "Wie lange sind die Alarme sichtbar">
-<!ENTITY widgets.prefs.groups.game.credits "SHOW GAME CREDITS">
+<!ENTITY widgets.prefs.groups.game.credits "SPIELABSPANN ANZEIGEN">
 <!ENTITY widgets.prefs.groups.ui.colors.enemy "FEINDE">
 <!ENTITY widgets.prefs.groups.game.presets.performance "BESTE LEISTUNG">
 <!ENTITY widgets.prefs.slowest "am langsamsten">
@@ -2547,7 +2547,7 @@
 <!ENTITY widgets.prefs.groups.shaders.reflections "WASSERREFLEKTIONEN">
 <!ENTITY widgets.calibration.none.desc "Erweitere die Achsenliste des Joysticks und wähle eine Achse zum Konfigurieren aus.">
 <!ENTITY widgets.prefs.groups.game.language "SPRACHE">
-<!ENTITY widgets.prefs.groups.connection "CONNECTION PREFERENCES">
+<!ENTITY widgets.prefs.groups.connection "VERBINDUNGEN">
 <!ENTITY widgets.prefs.groups.visual.combatsmoke.tip "Schaltet Rauch bei zerstörten Gebäuden ein. Bei Performanceproblemen abschalten.">
 <!ENTITY widgets.prefs.discarded "Die Änderungen wurden verworfen!">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.zoom "VERGRÖßERUNG">
@@ -2970,7 +2970,7 @@
 <!ENTITY tutorials.start.tip "Hier klicken, um den gewählten Lehrgang zu beginnen">
 <!ENTITY tutorials.open "offen">
 <!ENTITY tutorials.score.damaged "{1} von {2} getroffen">
-<!ENTITY tutorials.tab.tip "Complete several training operations to be a better warrior!">
+<!ENTITY tutorials.tab.tip "Absolviere Trainingskurse um das Spiel besser kennenzulernen">
 <!ENTITY tutorials.start.failed.instance "Konnte Instanz nicht erstellen. Versuch es später noch einmal.">
 <!ENTITY tutorials.unavailable "nicht berechtigt">
 <!ENTITY tutorials.score.timed "{1} von {2} Minuten">
@@ -3134,7 +3134,7 @@
 <!ENTITY brigade.control.error.nothc "Request Denied: Only enlisted members of the High Command Staff can do that.">
 <!ENTITY brigade.control.error.notoic "{1} is not currently OIC of {2}!">
 <!ENTITY brigade.hqtab.missions.key.attack "ANGREIFEN">
-<!ENTITY brigade.comtab.tip "Überprüfe den Tagesbefehl der Brigade, Offiziere, die online sind und die Kommandostruktur.">
+<!ENTITY brigade.comtab.tip "Anzeigen der Kommandostruktur und des Tagesbefehls der Brigade">
 <!ENTITY brigade.comtab.help "BRIGADE-MOTD: BEACHTE DEINE BEFEHLE, SOLDAT">
 <!ENTITY brigade.control.offering "{1} offered OIC of {2}.">
 <!ENTITY brigade.control.vetoed.remove "{3} VETOED {1} OIC removal from {2}.">
@@ -3174,7 +3174,7 @@
 <!ENTITY brigade.hqtab.missions "AKTIVE MISSIONEN">
 <!ENTITY brigade.control.error.hasoffer "Sorry, {2} has been offered to another player.">
 <!ENTITY brigade.control.appointment.failed.me "Your appointment to command of {1} has failed.">
-<!ENTITY brigade.back.tip "Zurück um die Persona zu wechseln oder um die aktuelle Persona aktiv zu halten und zu einer neuen Brigade beizutreten.">
+<!ENTITY brigade.back.tip "Persona wechseln oder zu einer neuen Brigade beitreten.">
 <!ENTITY brigade.control.offering.me "You have been offered OIC of {1}.">
 <!ENTITY brigade.comtab "NACHRICHTEN">
 <!ENTITY brigade.createtab.error.owner "Du musst eine Kaserne, Stellung oder ein Depot in einer Stadt, die von Deinem Land kontrolliert wird, als Urprungsort auswählen.">
@@ -4145,7 +4145,7 @@
 <!ENTITY vehicles.3.3.13.1 "Franz. Zerstörer">
 <!ENTITY vehicles.3.1.2.3 "Hurricane Mk I">
 <!ENTITY vehicles.3.4.9.5 "BUZZARD">
-<!ENTITY vehicles.4.1.2.9 "Messerschmitt BF 109F-2">
+<!ENTITY vehicles.4.1.2.9 "Messerschmitt Bf 109F-2">
 <!ENTITY vehicles.1.4.14.12 "Luftlande Scharfschütze">
 <!ENTITY vehicles.4.1.1.1 "Junkers Ju 87B Stuka">
 <!ENTITY vehicles.4.4.14.6 "Luftlande LMG">
