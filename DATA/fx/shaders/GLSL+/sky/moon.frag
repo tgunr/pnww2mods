@@ -15,7 +15,6 @@ void lightGetAmbientDiffuse(out vec4 ambient,
 void main()
 {
 	vec4 base = texture2D(src1, tex0);
-	base *= base * base;
 
 	vec4 diffuse;
 	vec4 ambient;
