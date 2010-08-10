@@ -52,6 +52,8 @@
 			
 			if(doQuit > 0)
 			{
+				cprint("Quitting!");
+				
 				if(now >= doQuit)
 					game.quit();
 				
@@ -62,8 +64,8 @@
 			{
 				if(stageTimer == null)
 				{
-					stageTimer = new CycleTimer(3000);
-					stageTimer.add(3000);
+					stageTimer = new CycleTimer(2000);
+					stageTimer.add(2000);
 				}
 				
 				if(stageTimer.run())
@@ -109,6 +111,7 @@
 		
 		function quitNow()
 		{
+			cprint("Quit Now!");
 			musicKill();
 			doQuit = (new Date()).getTime() + 1000;
 		}
