@@ -21,22 +21,22 @@ void lightGetAmbientDiffuse(in vec3 normal,
 
 void main()
 {
-	vec4 c1 = texture2D(src1, tex0);
-	vec4 c2 = texture2D(src2, tex1);
-	vec4 c3 = texture2D(src3, tex2);
+    vec4 c1 = texture2D(src1, tex0);
+    vec4 c2 = texture2D(src2, tex1);
+    vec4 c3 = texture2D(src3, tex2);
 
     vec4 c = c1 * c2 * c3;
 
     vec4 diffuse;
-	vec4 ambient;
-	
-	vec3 n = normalize(N);
+    vec4 ambient;
 
-	lightGetAmbientDiffuse(n, ambient, diffuse); 
+    vec3 n = normalize(N);
 
-	ambient *= Ka;
-	diffuse *= Kd;
+    lightGetAmbientDiffuse(n, ambient, diffuse); 
 
-	vec4 color =  c * (diffuse + ambient);
-	out_color = fogThis(color);
+    ambient *= Ka;
+    diffuse *= Kd;
+
+    vec4 color =  c * (diffuse + ambient);
+    out_color = fogThis(color);
 }
