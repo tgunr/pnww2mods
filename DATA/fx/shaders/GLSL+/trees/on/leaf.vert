@@ -3,8 +3,8 @@
 
 uniform TreeParamsBlock
 {
-    vec4 rotation;
-    vec3 treepos;
+    vec4 rotation[128];
+    vec4 treepos[128];
 };
 
 uniform vec2 cameraangle;
@@ -31,10 +31,13 @@ out vec3 B;
 out vec3 vertexpos;
 out float diffcoef;
 out float fogdist;
+out float alphatest;
 out vec2 uv;
 
 void main()
 {
+    alphatest = treepos[gl_InstanceID].w;
+
 	float azimuth = cameraangle.x;
 	float pitch = cameraangle.y;
 
@@ -45,8 +48,11 @@ void main()
 	vec3 normal = in_normal;
 	vec3 tangent = in_tangent;
 	
+    vec4 rot = rotation[gl_InstanceID];
+    vec3 pos = treepos[gl_InstanceID].xyz;
+
 	vec4 position = vec4(in_center, 1.0);
-	position.xy = vec2(dot(rotation.yxw, position.xyz), dot(rotation.zyw, position.xyz));
+	position.xy = vec2(dot(rot.yxw, position.xyz), dot(rot.zyw, position.xyz));
 			
 	diffcoef = dimming * diffuseScale;
 
@@ -71,21 +77,21 @@ void main()
 	y13 = -y13;
 	
 	// rotz * roty
-	mat3 rot = mat3(z11 * y11, z21 * y11, y31,
-                        z12, z22, 0,
-	                z11 * y13, z21 * y13, y33);
+	mat3 rotmat = mat3(z11 * y11, z21 * y11, y31,
+                       z12, z22, 0,
+	                   z11 * y13, z21 * y13, y33);
                
-	cornerpt = rot * cornerpt;
+	cornerpt = rotmat * cornerpt;
 	    
- 	normal.xy = vec2(dot(rotation.yxw, normal), dot(rotation.zyw, normal));
+ 	normal.xy = vec2(dot(rot.yxw, normal), dot(rot.zyw, normal));
 	N = normalize(mat3(NormalMatrix) * normal);
 	
-        tangent.xy = vec2(dot(rotation.yxw, tangent), dot(rotation.zyw, tangent));
+    tangent.xy = vec2(dot(rot.yxw, tangent), dot(rot.zyw, tangent));
 	T = normalize(mat3(NormalMatrix) * tangent);
   
     B = cross(normal, tangent);
 	
-	position.xyz += cornerpt + treepos.xyz;
+	position.xyz += cornerpt + pos;
 	position.w = 1.0;
 	
 	position = MVMatrix * position;

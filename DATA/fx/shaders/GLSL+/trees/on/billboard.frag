@@ -24,6 +24,10 @@ void lightGetAmbientDiffuse(in vec3,
 void main()
 {
    vec4 base = texture2D(src1, tex0);
+
+    if(base.a <= 0.32941176)
+        discard;
+
    vec4 normal = texture2D(src2, tex0) * 2.0 - 1.0;
    
    vec4 diffuse;
