@@ -9,7 +9,7 @@
 		var popup 	= showPopup("despawn", getlocstring('exitvehicle.init'), doDespawn);
 		
 		game.enableimapinput(false);
-		client.enabledespawntimer(true);
+		client.enabledespawntimer(!game.bailedout);
 
 		popup.setPopupClose(false);
 		popup.setButtonEnabled("popup-yes", false);

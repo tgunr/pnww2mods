@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
 <window id="bailout" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768" aspectalign="center"
-	style="background-color: #00000077;" layer="100" onshow="initBailoutPopup(this)" modal="true"> <!-- onupdate="checkBailout()" -->
+	style="background-color: #00000077;" layer="100" onshow="initBailoutPopup(this)" modal="true" onupdate="checkBailout()">
 	<include file="lib/popup.uixml"/>
 	<view x="350" y="400" width="350" height="100" style="background-color: #00000088; 
 							border-sides: ui/textures/hud/border_side.bmp;
@@ -22,7 +22,9 @@
 	<script>
 		<!--
 		
-		var bailoutTimer = new CycleTimer(200);
+		var bailoutBtn		= window.findview("popup-yes");
+		var bailoutTimer 	= new CycleTimer(1000);
+		var checkCount		= 0;
 		
 		function initBailoutPopup(win)
 		{
@@ -49,8 +51,14 @@
 		
 		function checkBailout()
 		{
-			//if(bailoutTimer.run())
-			//	game.quit();
+			if(bailoutTimer.run())
+			{
+				bailoutBtn.enabled = game.canbail;
+				checkCount++;
+				
+				if(checkCount > 6)
+					doBailoutAction(false);
+			}
 		}
 		
 		// -->
