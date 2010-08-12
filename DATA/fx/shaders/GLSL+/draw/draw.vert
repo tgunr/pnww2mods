@@ -8,6 +8,11 @@ uniform MatrixBlock
     mat4 NormalMatrix;
 };
 
+uniform InstanceParamsBlock
+{
+    vec4 mat[128]; // 32 mat4 matrices
+};
+
 in vec3 in_pos;
 in vec3 in_normal;
 in vec2 in_tex0;
@@ -22,6 +27,15 @@ void main()
 {
 	tex0 = in_tex0;
 	vec4 pos = vec4(in_pos, 1.0);
+
+    int idx = gl_InstanceID * 4;
+
+    mat4 world = mat4(mat[idx + 0],
+                      mat[idx + 1],
+                      mat[idx + 2],
+                      mat[idx + 3]);
+                      
+    pos = world * pos;
 
 	pos = MVMatrix * pos;
 	V = pos.xyz;
