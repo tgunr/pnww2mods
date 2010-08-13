@@ -66,6 +66,7 @@
 		<weapon lastresort="true">alliedknife</weapon>
 		<weapon>alliedsatchel</weapon>
 		<weapon>ammo</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>	
 	<visloadout id="uk-para-smg" arms="ukpara" atp="2" para="true">	
 		<weapon>thompson</weapon>
@@ -75,12 +76,14 @@
 		<weapon lastresort="true">alliedknife</weapon>
 		<weapon>alliedsatchel</weapon>
 		<weapon>ammo</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>	
 	<visloadout id="uk-para-lmg" arms="ukpara" atp="2" para="true">	
 		<weapon>bren</weapon>
 		<weapon>webley</weapon>
 		<weapon>m18</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>	
 	<visloadout id="uk-para-atr" arms="ukpara" atp="2" para="true">	
 		<weapon>boysmk1</weapon>
@@ -88,16 +91,19 @@
 		<weapon>mills36mk1</weapon>
 		<weapon>m18</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>	
 	<visloadout id="uk-para-gren" arms="ukpara" atp="2" para="true">	
 		<weapon aux="true">rgmills</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>	
 	<visloadout id="uk-para-snpr" arms="ukpara" atp="2" para="true">	
 		<weapon>enfieldmk4</weapon>
 		<weapon>webley</weapon>
 		<weapon>m18</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>	
 	<visloadout id="uk-para-eng" arms="ukpara" atp="2" para="true">	
 		<weapon>enfield</weapon>
@@ -106,12 +112,14 @@
 		<weapon>m18</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
 		<weapon>bridgerepair</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>	
 	<visloadout id="uk-para-mrtr" arms="ukpara" atp="2" para="true">	
 		<weapon>ukltmortar</weapon>
 		<weapon>ukltmortar</weapon>
 		<weapon>enfield</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>	
 	<!-- French Army Troops -->
 	<visloadout id="frrifle" arms="frarmy">
@@ -120,6 +128,7 @@
 		<weapon>frsmoke</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
 		<weapon>ammo</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>
 	<visloadout id="fr-smg" arms="frarmy">
 		<weapon>mas</weapon>
@@ -127,6 +136,7 @@
 		<weapon>frbang</weapon>
 		<weapon>frsmoke</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>
 	<visloadout id="fr-eng" arms="frarmy" atp="2">
 		<weapon>mas36</weapon>
@@ -135,32 +145,38 @@
 		<weapon>frsmoke</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
 		<weapon>bridgerepair</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>
 	<visloadout id="fr-lmg" arms="frarmy" atp="2">
 		<weapon>fm29</weapon>
 		<weapon>m1935a</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>
 	<visloadout id="frgrenadier" arms="frarmy">
 		<weapon aux="true">rgvb</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>
 	<visloadout id="fr-atr" arms="frarmy" atp="2">
 		<weapon>boysmk1</weapon>
 		<weapon>m1935a</weapon>
 		<weapon>frsmoke</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>
 	<visloadout id="fr-sniper" arms="frarmy">
 		<weapon>lebelmle</weapon>
 		<weapon>frsmoke</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>
 	<visloadout id="fr-ltmortar" arms="frarmy" atp="2">
 		<weapon>frltmortar</weapon>
 		<weapon>frltmortar</weapon>
 		<weapon>mas36</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>
 	<!-- French Airborne Troops -->
 	<visloadout id="fr-para-rfl" arms="frpara" atp="2" para="true">	
@@ -170,6 +186,7 @@
 		<weapon lastresort="true">alliedknife</weapon>
 		<weapon>alliedsatchel</weapon>
 		<weapon>ammo</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>	
 	<visloadout id="fr-para-smg" arms="frpara" atp="2" para="true">	
 		<weapon>mas</weapon>
@@ -179,12 +196,14 @@
 		<weapon lastresort="true">alliedknife</weapon>
 		<weapon>alliedsatchel</weapon>
 		<weapon>ammo</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>	
 	<visloadout id="fr-para-lmg" arms="frpara" atp="2" para="true">	
 		<weapon>fm29</weapon>
 		<weapon>m1935a</weapon>
 		<weapon>frsmoke</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>	
 	<visloadout id="fr-para-atr" arms="frpara" atp="2" para="true">	
 		<weapon>boysmk1</weapon>
@@ -192,18 +211,21 @@
 		<weapon>frbang</weapon>
 		<weapon>frsmoke</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>	
 	<visloadout id="fr-para-snpr" arms="frpara" atp="2" para="true">	
 		<weapon>lebelmle</weapon>
 		<weapon>m1935a</weapon>
 		<weapon>frsmoke</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>	
 	<visloadout id="fr-para-mrtr" arms="frpara" atp="2" para="true">	
 		<weapon>frltmortar</weapon>
 		<weapon>frltmortar</weapon>
 		<weapon>mas36</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>	
 	<!-- German Army Troops -->
 	<visloadout id="derifle" arms="dearmy">
@@ -212,6 +234,7 @@
 		<weapon>hgr39</weapon>
 		<weapon lastresort="true">axisknife</weapon>
 		<weapon>ammo</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>
 	<visloadout id="de-smg" arms="dearmy">
 		<weapon>mp40</weapon>
@@ -219,6 +242,7 @@
 		<weapon>stigr</weapon>
 		<weapon>hgr39</weapon>
 		<weapon lastresort="true">axisknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>
 	<visloadout id="de-eng" arms="dearmy" atp="2">
 		<weapon>kar98k</weapon>
@@ -227,32 +251,38 @@
 		<weapon>hgr39</weapon>
 		<weapon lastresort="true">axisknife</weapon>
 		<weapon>bridgerepair</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>
 	<visloadout id="de-lmg" arms="dearmy" atp="2">
 		<weapon>mg34</weapon>
 		<weapon>luger</weapon>
 		<weapon lastresort="true">axisknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>
 	<visloadout id="degrenadier" arms="dearmy">
 		<weapon aux="true">rgg30</weapon>
 		<weapon lastresort="true">axisknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>
 	<visloadout id="de-atr" arms="dearmy" atp="2">
 		<weapon>pzb39</weapon>
 		<weapon>luger</weapon>
 		<weapon>hgr39</weapon>
 		<weapon lastresort="true">axisknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>
 	<visloadout id="de-sniper" arms="dearmy">
 		<weapon>kar98ks</weapon>
 		<weapon>hgr39</weapon>
 		<weapon lastresort="true">axisknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>
 	<visloadout id="de-ltmortar" arms="dearmy" atp="2">
 		<weapon>deltmortar</weapon>
 		<weapon>deltmortar</weapon>
 		<weapon>kar98k</weapon>
 		<weapon lastresort="true">axisknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>
 	<!-- German Airborne Troops -->
 	<visloadout id="de-para-rfl" arms="depara" atp="2" para="true">	
@@ -262,6 +292,7 @@
 		<weapon lastresort="true">axisknife</weapon>
 		<weapon>axissatchel</weapon>
 		<weapon>ammo</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>	
 	<visloadout id="de-para-smg" arms="depara" atp="2" para="true">	
 		<weapon>mp40</weapon>
@@ -271,12 +302,14 @@
 		<weapon lastresort="true">axisknife</weapon>
 		<weapon>axissatchel</weapon>
 		<weapon>ammo</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>	
 	<visloadout id="de-para-lmg" arms="depara" atp="2" para="true">	
 		<weapon>mg34</weapon>
 		<weapon>luger</weapon>
 		<weapon>hgr39</weapon>
 		<weapon lastresort="true">axisknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>	
 	<visloadout id="de-para-atr" arms="depara" atp="2" para="true">	
 		<weapon>pzb39</weapon>
@@ -284,18 +317,21 @@
 		<weapon>stigr</weapon>
 		<weapon>hgr39</weapon>
 		<weapon lastresort="true">axisknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>	
 	<visloadout id="de-para-snpr" arms="depara" atp="2" para="true">	
 		<weapon>kar98ks</weapon>
 		<weapon>luger</weapon>
 		<weapon>hgr39</weapon>
 		<weapon lastresort="true">axisknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>
 	<visloadout id="de-para-mrtr" arms="depara" atp="2" para="true">	
 		<weapon>deltmortar</weapon>
 		<weapon>deltmortar</weapon>
 		<weapon>kar98k</weapon>
 		<weapon lastresort="true">axisknife</weapon>
+		<weapon>buildtool</weapon>
 	</visloadout>	
 	<!-- arms names
 		"blueforce", 	(fres only)
@@ -354,6 +390,7 @@
 		"binocs"
 		"bridgerepair"
 		"map"
+		"buildtool"
 		ANTI-TANK RIFLE
 		"pzb39"
 		"boysmk1"
