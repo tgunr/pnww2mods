@@ -371,9 +371,14 @@
 					// primary is visible
 					if(!primary.visible)
 						primary.visible	= true;
+						
+					var iconName = me.primaryammoname;
+					
+					if(iconName == "buildtool")
+						iconName = "repair";
 					
 					// set icon
-					primaryIcon.src = "ui/textures/hud/weapon_" + me.primaryammoname + ".bmp";
+					primaryIcon.src = "ui/textures/hud/weapon_" + iconName + ".bmp";
 					
 					// update ammo
 					updateAmmo(primary);
