@@ -10,7 +10,8 @@ uniform MatrixBlock
 
 uniform InstanceParamsBlock
 {
-    vec4 mat[128]; // 32 mat4 matrices
+    vec4 mv[128]; // 32 mat4 matrices
+    vec4 nm[128]; // 32 mat4 matrices
 };
 
 in vec3 in_pos;
@@ -30,18 +31,20 @@ void main()
 
     int idx = gl_InstanceID * 4;
 
-    mat4 world = mat4(mat[idx + 0],
-                      mat[idx + 1],
-                      mat[idx + 2],
-                      mat[idx + 3]);
-                      
-    pos = world * pos;
+    mat4 modelview = mat4(mv[idx + 0],
+                          mv[idx + 1],
+                          mv[idx + 2],
+                          mv[idx + 3]);
 
-	pos = MVMatrix * pos;
+    mat3 normal = mat3(nm[idx + 0].xyz,
+                       nm[idx + 1].xyz,
+                       nm[idx + 2].xyz);
+                      
+    pos = modelview * pos;
+    N = normal * in_normal;
+
 	V = pos.xyz;
     vertexpos = pos.xyz;
-
-    N = mat3(NormalMatrix) * in_normal;
 
     fogdist = abs(V.z);
 
