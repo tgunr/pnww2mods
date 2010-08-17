@@ -450,6 +450,7 @@
 					{
 					 	//consoleprint("Were a leader...\n");
 
+					 	/*
 					 	if(approveList.length > 0)
 					 	{
 					 	 	//consoleprint("Adding approve menu items...\n");
@@ -461,6 +462,7 @@
 					   		for(var s = 0; s < approveList.length; s++)
 								approveMenu.addItem(new MenuItem(approveList[s].displayname, approveList[s], this, this.createApproveMenu));
 						}
+						*/
 
 						if(waypointsList.length > 0 || contactsList.length > 0)
 						{
@@ -469,7 +471,10 @@
 						 	var deleteMenu = root.addItem(new MenuItem(getlocstring("widgets.map.context.waypoints.delete") + " >"));
 						 	
 						 	if(contactsList.length > 0)
-						 		deleteMenu.addItem(new MenuItem(getlocstring("widgets.map.context.waypoints.delete.all"), "all", this, this.createDeleteAllMenu));
+						 		deleteMenu.addItem(new MenuItem(getlocstring("widgets.map.context.contacts.delete.all"), "allcontacts", this, this.createDeleteAllMenu));
+						 		
+						 	if(waypointsList.length > 0)
+						 		deleteMenu.addItem(new MenuItem(getlocstring("widgets.map.context.waypoints.delete.all"), "allwaypoints", this, this.createDeleteAllMenu));
 							
 					   		for(var s = 0; s < waypointsList.length; s++)
 								deleteMenu.addItem(new MenuItem(waypointsList[s].displayname, waypointsList[s], this, this.createDeleteMenu));
@@ -891,7 +896,7 @@
 
 		this.createDeleteAllMenu = function(control, parent, item)
 		{
-			return MapManager.createActionMenu(control, parent, item, 'this.mgr.map.deletereports()');
+			return MapManager.createActionMenu(control, parent, item, 'this.mgr.map.deletereports(this.selecteddata)');
 		}
 
 		this.createPlayerMenu = function(control, parent, item)

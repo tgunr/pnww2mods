@@ -1193,7 +1193,7 @@
 	<caption id='sortie-weapon-caption' x='87' y='0' width='118' height='16' style='color: #e9e3d9ff; '\
 		label='" + sortie.weapon + "'/>\
 	<caption id='sortie-caps-caption' x='209' y='0' width='68' height='16' style='color: #e9e3d9ff; '\
-		label='" + (sortie.numcaptures + " (" + sortie.numcapassists + ")") + "' align='center'/>\
+		label='" + sortie.numcaptures + "' align='center'/>\
 	<caption id='sortie-kills-caption' x='281' y='0' width='68' height='16' style='color: #e9e3d9ff; '\
 		label='" + sortie.numkills + "' align='center'/>\
 	<caption id='sortie-result-caption' x='353' y='0' width='78' height='16' style='color: #e9e3d9ff; '\
@@ -1275,7 +1275,7 @@
 
 						findview("aar-result").label 			= sortie.rtb(true);
 						findview("aar-kills").label 			= sortie.numkills;
-						findview("aar-captures").label 			= sortie.numcaptures + " (" + sortie.numcapassists + ")";
+						findview("aar-captures").label 			= sortie.numcaptures; // + " (" + sortie.numcapassists + ")";
 						findview("aar-scored").label 			= sortie.pointsscored;
 						findview("aar-guardingpoints").label 	= sortie.guardingpoints;
 
@@ -1291,7 +1291,7 @@
 						}
 
 						findview("aar-kills2").label 			= sortie.numkills;
-						findview("aar-captures2").label 		= sortie.numcaptures + " (" + sortie.numcapassists + ")";
+						findview("aar-captures2").label 		= sortie.numcaptures; // + " (" + sortie.numcapassists + ")";
 						findview("aar-unitshit").label 			= sortie.unitshit;
 						findview("aar-aishit").label 			= sortie.aishit;
 						findview("aar-bridgeshit").label 		= sortie.bridgeshit;
