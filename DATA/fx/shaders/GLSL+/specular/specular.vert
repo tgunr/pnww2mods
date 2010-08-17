@@ -7,8 +7,10 @@ uniform InstanceParamsBlock
     vec4 nm[128]; // 32 mat4 matrices
 };
 
-uniform ProjectionMatrixBlock
+uniform MatrixBlock
 {
+    mat4 MVMatrix;  
+    mat4 NormalMatrix;
     mat4 ProjectionMatrix;
 };
 

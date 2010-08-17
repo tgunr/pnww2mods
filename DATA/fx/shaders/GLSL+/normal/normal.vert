@@ -1,8 +1,10 @@
 #version 150
 #extension GL_ARB_uniform_buffer_object : enable
 
-uniform ProjectionMatrixBlock
+uniform MatrixBlock
 {
+    mat4 MVMatrix;  
+    mat4 NormalMatrix;
     mat4 ProjectionMatrix;
 };
 
