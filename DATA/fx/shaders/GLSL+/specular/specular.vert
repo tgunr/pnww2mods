@@ -1,10 +1,15 @@
 #version 150
+#extension GL_ARB_uniform_buffer_object : enable
 
-uniform MatrixBlock
+uniform InstanceParamsBlock
 {
-    mat4 MVMatrix;
+    vec4 mv[128]; // 32 mat4 matrices
+    vec4 nm[128]; // 32 mat4 matrices
+};
+
+uniform ProjectionMatrixBlock
+{
     mat4 ProjectionMatrix;
-    mat4 NormalMatrix;
 };
 
 in vec3 in_pos;
@@ -19,11 +24,22 @@ out vec2 tex0;
 
 void main()
 {
-	N = normalize(mat3(NormalMatrix) * in_normal);
+    int idx = gl_InstanceID * 4;
+
+    mat4 modelview = mat4(mv[idx + 0],
+                          mv[idx + 1],
+                          mv[idx + 2],
+                          mv[idx + 3]);
+           
+    mat3 normal = mat3(nm[idx + 0].xyz,
+                       nm[idx + 1].xyz,
+                       nm[idx + 2].xyz);
+
+	N = normalize(normal * in_normal);
 	
 	tex0 = in_tex0;
 	
-	vec4 pos = MVMatrix * vec4(in_pos, 1.0);
+	vec4 pos = modelview * vec4(in_pos, 1.0);
 	vertexpos = pos.xyz;
     V = pos.xyz;
 

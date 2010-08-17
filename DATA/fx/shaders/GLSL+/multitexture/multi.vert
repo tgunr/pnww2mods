@@ -4,8 +4,12 @@
 uniform MatrixBlock
 {
     mat4 MVMatrix;
-    mat4 ProjectionMatrix;
     mat4 NormalMatrix;
+};
+
+uniform ProjectionMatrixBlock
+{
+    mat4 ProjectionMatrix;
 };
 
 uniform TextureMatrixBlock

@@ -3,8 +3,12 @@
 uniform MatrixBlock
 {
     mat4 MVMatrix;
-    mat4 ProjectionMatrix;
     mat4 NormalMatrix;
+};
+
+uniform ProjectionMatrixBlock
+{
+    mat4 ProjectionMatrix;
 };
 
 in vec4 in_pos;

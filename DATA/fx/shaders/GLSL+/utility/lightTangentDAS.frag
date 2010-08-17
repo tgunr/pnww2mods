@@ -38,12 +38,12 @@ void lightGetAmbientDiffuseSpecular(in vec3 t,
    float d;
    float s;
    
+   float a;
+   
    ambient = vec4(0, 0, 0, 0);
    diffuse = vec4(0, 0, 0, 0);
    specular = vec4(0, 0, 0, 0);
 
-   float a;
-   
    if(lightsource[0].enabled > 0.0)
    {
       L = lightsource[0].dir;
@@ -138,39 +138,39 @@ void lightGetAmbientDiffuseSpecular(in vec3 t,
       ambient += a * lightsource[2].ambient;
    }
 
-   if(lightsource[3].enabled > 0.0)
-   {
-      d = distance(vertexpos, lightsource[3].pos);   
-      a = (lightsource[3].kc + d * (lightsource[3].kl + lightsource[3].kq * d));
-      a = (a > 1.0) ? (1.0 / a) : 1.0;
+    if(lightsource[3].enabled > 0.0)
+    {
+        d = distance(vertexpos, lightsource[3].pos);   
+        a = (lightsource[3].kc + d * (lightsource[3].kl + lightsource[3].kq * d));
+        a = (a > 1.0) ? (1.0 / a) : 1.0;
 
-      L = lightsource[3].dir;
-      
-      Ltan.x = dot(L, t);
-      Ltan.y = dot(L, b);
-      Ltan.z = dot(L, n);
-      
-      d = max(dot(normal, Ltan), 0.0);
+        L = lightsource[3].dir;
+
+        Ltan.x = dot(L, t);
+        Ltan.y = dot(L, b);
+        Ltan.z = dot(L, n);
+
+        d = max(dot(normal, Ltan), 0.0);
             
-      if(d > 0.0)
-      {
-         diffuse += a * d * lightsource[3].diffuse;
-         
-         H = normalize(L + V);
-      
-         // Tangent
-         Htan.x = dot(H, t);
-         Htan.y = dot(H, b);
-         Htan.z = dot(H, n);
-   
-         s = max(dot(normal, Htan), 0.0);
-         s = pow(s, shininess);
-      
-         specular += a * s * lightsource[3].specular;
+        if(d > 0.0)
+        {
+            diffuse += a * d * lightsource[3].diffuse;
+
+            H = normalize(L + V);
+
+            // Tangent
+            Htan.x = dot(H, t);
+            Htan.y = dot(H, b);
+            Htan.z = dot(H, n);
+
+            s = max(dot(normal, Htan), 0.0);
+            s = pow(s, shininess);
+
+            specular += a * s * lightsource[3].specular;
         }
 
-      ambient += a * lightsource[3].ambient;
-   }
+        ambient += a * lightsource[3].ambient;
+    }
 
-   ambient += globalambient;
+    ambient += globalambient;
 }
