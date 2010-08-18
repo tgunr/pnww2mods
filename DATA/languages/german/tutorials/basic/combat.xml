@@ -64,20 +64,20 @@ bunker = Bunker
 	1.5.alert = Zum Schliessen der Karte drücke {showingamemap}.
 //	1.5.alert.selection = Remagen and Unkel
 	1.6.label = Wiederholung Chatfenster
-	1.6.alert = Es ist sehr wichtig, untereinander zu kommunizieren.[NL][NL]Drücke F1 und gib einen Gruß an Deine Verbündeten ein, damit sie wissen, das Du hier bist.
+	1.6.alert = Es ist sehr wichtig, untereinander zu kommunizieren.[NL][NL]Drücke F1 und gib einen Gruß an Deine Verbündeten ein, damit sie wissen, daß Du hier bist.
 	1.6.complete.modal = Du kannst auch (enter) drücken, um eine Nachricht in Deiner näheren Umgebung zu versenden. Sei vorsichtig, der Feind kann Dich so auch hören.
 	
 	1.7.label = Laufschritt zum Bunker!
-	1.7.alert = Wenn Du soweit bist, verlasse das Gebäude und renne zum Wegpunkt &#34;Bunker&#34;. Der Gegner wird auf Dich warten!  Vergiss nicht, Dich vor feindlichen Feuer zu schützen.
+	1.7.alert = Wenn Du soweit bist, verlasse das Gebäude und renne zum Wegpunkt &#34;Bunker&#34;. Der Gegner wird auf Dich warten!  Vergiss nicht, Dich vor feindlichem Feuer zu schützen.
 	1.7.complete = Exzellent!
 
-	1.8.label = Radio sichern
-	1.8.alert.modal = Zur Einnahme einer Anlage musst Du 30 Sekunden neben dem Radio im Kontrollraum stehen. Manchmal wird das als &#34;Tisch hochbringen (bumping the table)&#34; bezeichnet.[NL][NL]Ein Fenster mit einem Fortschrittsbalken taucht auf, sobald Du Dich in der richtigen Position befindest.
-	1.8.alert1 = Finde das Radio im Bunker und stelle dich daneben.[NL][NL]Sei auf der Hut vor eventuell auftauchenden Feinden.
-	1.8.complete.modal = Gut. Zu Übungszwecken kann die Armeebasis nicht eingenommen werden.  
+	1.8.label = Flaggengebäude
+	1.8.alert.modal = Zur Einnahme einer Anlage musst Du das Gebäude betreten und dort verweilen, bis die Zeit für die Einnahme abgelaufen ist.[NL][NL]Ein Fenster mit einem Fortschrittsbalken taucht auf, sobald Du Dich an der richtigen Position befindest.[NL][NL]Je mehr Mitspieler sich mit Dir im Gebäude befinden, umso schneller ist die Einnahme beendet.
+        1.8.alert.hilite = binfo,target
+	1.8.complete.modal = Gut.[NL][NL]Beachte den Fortschrittsbalken.[NL][NL]Da dies ein Training ist, kann das Gebäude nicht komplett eingenommen werden.
 	
 	1.9.label = Auf in den Kampf
-	1.9.alert.modal = Für einen erfolgreichen Abschluß der Übung musst Du den Bunker verlassen und entweder:[NL][NL] - 30 Minuten überleben oder[NL] - 3 Treffer auf gegnerische Soldaten erzielen oder [NL] - das gegnerische Radio bumpen (Eroberungen sind im Training nicht möglich).[NL][NL]Auf in den  Kampf, Soldat!</body>
+	1.9.alert.modal = Für einen erfolgreichen Abschluß der Übung musst Du den Bunker verlassen und entweder:[NL][NL] - 30 Minuten überleben oder[NL] - 3 Treffer auf gegnerische Soldaten erzielen oder [NL] - oder den gegnerischen Bunker für 1 Minute erobern.[NL][NL]Auf in den  Kampf, Soldat!</body>
   <branch>1</branch>
   <brief>Kampftraining in einem kontrollierten Umfeld.</brief>
   <captures>1</captures>
