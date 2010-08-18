@@ -10,6 +10,7 @@ uniform float shininess;
 in vec3 V;
 in vec3 N;
 in vec2 tex0;
+in float alphatest;
 
 out vec4 out_color;
 
@@ -25,6 +26,10 @@ void main()
 {
 	vec4 base = texture2D(src1, tex0);
 	
+    // Alpha test
+    if(base.a <= alphatest)
+        discard;
+
 	vec4 diffuse;
 	vec4 specular;
 	vec4 ambient;

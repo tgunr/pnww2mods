@@ -23,10 +23,13 @@ out vec3 V;
 out vec3 vertexpos;
 out float fogdist;
 out vec2 tex0;
+out float alphatest;
 
 void main()
 {
     int idx = gl_InstanceID * 4;
+
+    alphatest = nm[idx + 0].w;
 
     mat4 modelview = mat4(mv[idx + 0],
                           mv[idx + 1],

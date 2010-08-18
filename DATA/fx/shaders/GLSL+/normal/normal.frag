@@ -13,6 +13,7 @@ in vec3 B;
 in vec3 N;
 in vec3 V;
 in vec2 tex0;
+in float alphatest;
 
 out vec4 out_color;
 
@@ -30,6 +31,11 @@ void lightGetAmbientDiffuseSpecular(in vec3 t,
 void main()
 {
 	vec4 base = texture2D(src1, tex0);
+
+    // Alpha test
+    if(base.a <= alphatest)
+        discard;
+
 	vec3 normal = texture2D(src2, tex0).rgb * 2.0 - 1.0;
 	float Ks = texture2D(src3, tex0).r;
 	float occ = texture2D(src3, tex0).g;

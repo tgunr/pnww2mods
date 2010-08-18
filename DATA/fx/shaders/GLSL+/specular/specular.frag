@@ -10,6 +10,7 @@ uniform float shininess;
 in vec3 N;
 in vec3 V;
 in vec2 tex0;
+in float alphatest;
 
 out vec4 out_color;
 
@@ -23,6 +24,11 @@ void lightGetAmbientDiffuseSpecular(in vec3 normal,
 void main()
 {
 	vec4 base = texture2D(src1, tex0);
+
+    // Alpha test
+    if(base.a <= alphatest)
+        discard;
+
 	float Ks = texture2D(src2, tex0).r;
 	float occ = texture2D(src2, tex0).g;
 	
