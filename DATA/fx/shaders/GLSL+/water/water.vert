@@ -11,7 +11,6 @@ uniform MatrixBlock
 uniform WaterBlock
 {
     vec4 position[64];
-    float rotation[64];
 };
 
 uniform float time;
@@ -51,8 +50,8 @@ void main()
 	tex1.xy = 2.5 * (uv - bs);
 	tex1.zw = 4.0 * (uv + bs);
 				
-    float rot = rotation[gl_InstanceID];
-    vec4 pos = vec4(in_pos, 1.0);
+    float rot = position[gl_InstanceID].w;
+    vec4 pos = vec4(in_pos.xyz, 1.0);
 
     // Has to be boolean expression
     if(rot != 0)
