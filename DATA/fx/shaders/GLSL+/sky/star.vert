@@ -8,9 +8,11 @@ uniform MatrixBlock
     mat4 ProjectionMatrix;
 };
 
-in vec3 in_pos;
+in vec4 in_pos;
+out float alpha;
 
 void main()
 {
-	gl_Position = ProjectionMatrix * MVMatrix * vec4(in_pos, 1.0);
+    alpha = in_pos.w;
+	gl_Position = ProjectionMatrix * MVMatrix * vec4(in_pos.xyz, 1.0);
 }
