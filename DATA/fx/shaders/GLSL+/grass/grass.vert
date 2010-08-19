@@ -8,7 +8,7 @@ uniform MatrixBlock
     mat4 ProjectionMatrix;
 };
 
-in vec2 in_pos;
+in vec3 in_pos;
 in vec2 in_tex0;
 in float in_tex1;
 
@@ -18,7 +18,7 @@ out vec2 tex0;
 
 void main()
 {
-    vec4 pos = vec4(in_pos.x, in_pos.y, -484.0, 1.0);
+    vec4 pos = vec4(in_pos.x, in_pos.y, in_pos.z + in_tex1, 1.0);
     
     pos = MVMatrix * pos;
    

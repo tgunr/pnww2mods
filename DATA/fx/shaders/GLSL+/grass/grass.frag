@@ -3,6 +3,8 @@ uniform sampler2D src1;
 uniform vec4 Ka;
 uniform vec4 Kd;
 
+uniform float alphatest;
+
 in vec2 tex0;
 
 out vec4 out_color;
@@ -14,7 +16,7 @@ void main()
 {
 	vec4 base = texture2D(src1, tex0);
 
-    if(base.a <= 0.329417)
+    if(base.a <= alphatest)
         discard;
 
 	vec4 amb;
@@ -28,5 +30,4 @@ void main()
 	vec4 color = base * (amb + dif);
 
 	out_color = fogThis(color);
-	out_color.a = base.a;
 }
