@@ -10,8 +10,7 @@ uniform MatrixBlock
 
 uniform InstanceParamsBlock
 {
-    vec4 mv[128]; // 32 mat4 matrices
-    vec4 nm[128]; // 32 mat4 matrices
+	vec4 data[1024];
 };
 
 in vec3 tangent;
@@ -30,19 +29,19 @@ out float alphatest;
 
 void main()
 {
-    int idx = gl_InstanceID * 4;
+    int idx = gl_InstanceID * 8;
 
-    alphatest = nm[idx + 0].w;
+    alphatest = data[idx + 0].w;
 
-    mat4 modelview = mat4(mv[idx + 0],
-                          mv[idx + 1],
-                          mv[idx + 2],
-                          mv[idx + 3]);
-           
-    mat3 normal = mat3(nm[idx + 0].xyz,
-                       nm[idx + 1].xyz,
-                       nm[idx + 2].xyz);
+    mat4 modelview = mat4(data[idx + 0],
+                          data[idx + 1],
+                          data[idx + 2],
+                          data[idx + 3]);
 
+    mat3 normal = mat3(data[idx + 0].xyz,
+                       data[idx + 1].xyz,
+                       data[idx + 2].xyz);
+    
 	vec4 pos = vec4(in_pos, 1.0);
 
     pos = modelview * pos;

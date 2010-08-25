@@ -1,10 +1,9 @@
 #version 150
 #extension GL_ARB_uniform_buffer_object : enable
 
-uniform TreeParamsBlock
+uniform InstanceParamsBlock
 {
-    vec4 rotation[128];
-    vec4 treepos[128];
+	vec4 data[1024];
 };
 
 uniform vec2 cameraangle;
@@ -36,7 +35,7 @@ out vec2 uv;
 
 void main()
 {
-    alphatest = treepos[gl_InstanceID].w;
+    int idx = gl_InstanceID * 2;
 
 	float azimuth = cameraangle.x;
 	float pitch = cameraangle.y;
@@ -48,8 +47,9 @@ void main()
 	vec3 normal = in_normal;
 	vec3 tangent = in_tangent;
 	
-    vec4 rot = rotation[gl_InstanceID];
-    vec3 pos = treepos[gl_InstanceID].xyz;
+    vec4 rot = data[idx + 1];
+    vec3 pos = data[idx + 0].xyz;
+    alphatest = data[idx + 0].w;
 
 	vec4 position = vec4(in_center, 1.0);
 	position.xy = vec2(dot(rot.yxw, position.xyz), dot(rot.zyw, position.xyz));
@@ -67,7 +67,7 @@ void main()
 	z22 = z11;
 	z12 = -z12;
 	
-        // rotation y
+	// rotation y
 	float y11, y13, y31, y33;
 	
 	y11 = cos(pitch + rotatey);

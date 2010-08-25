@@ -50,7 +50,7 @@ void main()
 	tex1.xy = 2.5 * (uv - bs);
 	tex1.zw = 4.0 * (uv + bs);
 				
-    float rot = position[gl_InstanceID].w;
+	float rot = position[gl_InstanceID].w;  
     vec4 pos = vec4(in_pos.xyz, 1.0);
 
     // Has to be boolean expression

@@ -1,11 +1,18 @@
 #version 150
+#extension GL_ARB_uniform_buffer_object : enable
 
 uniform sampler2D src1;
 uniform sampler2D src2;
 uniform sampler2D src3;
 
-uniform vec4 Ka;
-uniform float shininess;
+uniform MaterialBlock
+{
+	vec4 Kd;
+	vec4 Ka;
+	vec4 Ks;
+	vec4 Ke;
+	float shininess;
+};
 
 in vec3 T;
 in vec3 B;

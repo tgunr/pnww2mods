@@ -1,7 +1,14 @@
 uniform sampler2D src1;
+#extension GL_ARB_uniform_buffer_object : enable
 
-uniform vec4 Ka;
-uniform vec4 Kd;
+uniform MaterialBlock
+{
+	vec4 Kd;
+	vec4 Ka;
+	vec4 Ks;
+	vec4 Ke;
+	float shininess;
+};
 
 uniform float alphatest;
 
