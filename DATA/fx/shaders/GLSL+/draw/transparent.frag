@@ -49,8 +49,7 @@ void main()
 	diffuse *= Kd;
     specular *= Ks;
 
-	vec4 c =  base * (diffuse + specular + ambient);
+	vec4 c = base * (diffuse + specular + ambient);
 
 	out_color = fogThis(c);
-	out_color.w = base.a;
 }
