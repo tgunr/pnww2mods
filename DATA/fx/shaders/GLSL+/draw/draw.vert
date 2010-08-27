@@ -31,16 +31,16 @@ void main()
 
     int idx = gl_InstanceID * 8;
 
-    alphatest = data[idx + 0].w;
+    alphatest = data[idx + 4].w;
 
     mat4 modelview = mat4(data[idx + 0],
                           data[idx + 1],
                           data[idx + 2],
                           data[idx + 3]);
 
-    mat3 normal = mat3(data[idx + 0].xyz,
-                       data[idx + 1].xyz,
-                       data[idx + 2].xyz);
+    mat3 normal = mat3(data[idx + 4].xyz,
+                       data[idx + 5].xyz,
+                       data[idx + 6].xyz);
 	
     pos = modelview * pos;
     N = normal * in_normal;
