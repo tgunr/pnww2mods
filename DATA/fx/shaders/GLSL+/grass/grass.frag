@@ -1,5 +1,6 @@
-uniform sampler2D src1;
 #extension GL_ARB_uniform_buffer_object : enable
+
+uniform sampler2D src1;
 
 uniform MaterialBlock
 {
