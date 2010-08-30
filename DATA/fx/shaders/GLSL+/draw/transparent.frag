@@ -1,8 +1,6 @@
 #version 150
 #extension GL_ARB_uniform_buffer_object : enable
 
-uniform sampler2D src1;
-
 uniform MaterialBlock
 {
 	vec4 Kd;
@@ -14,7 +12,6 @@ uniform MaterialBlock
 
 in vec3 V;
 in vec3 N;
-in vec2 tex0;
 
 out vec4 out_color;
 
@@ -28,8 +25,6 @@ void lightGetAmbientDiffuseSpecular(in vec3 normal,
 
 void main()
 {
-	vec4 base = texture2D(src1, tex0);
-	
 	vec4 diffuse;
 	vec4 specular;
 	vec4 ambient;
@@ -49,7 +44,7 @@ void main()
 	diffuse *= Kd;
     specular *= Ks;
 
-	vec4 c = base * (diffuse + specular + ambient);
+	vec4 c = diffuse + specular + ambient;
 
 	out_color = fogThis(c);
 }
