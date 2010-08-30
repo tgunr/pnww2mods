@@ -1,0 +1,47 @@
+#version 150
+#extension GL_ARB_uniform_buffer_object : enable
+
+uniform MaterialBlock
+{
+	vec4 Kd;
+	vec4 Ka;
+	vec4 Ks;
+	vec4 Ke;
+	float shininess;
+};
+
+in vec3 V;
+in vec3 N;
+
+out vec4 out_color;
+
+void lightGetAmbientDiffuseSpecular(in vec3 normal,
+                                    in vec3 V,
+                                    in float shininess,
+                                    out vec4 ambient,
+                                    out vec4 diffuse,
+                                    out vec4 specular);
+
+void main()
+{
+	vec4 diffuse;
+	vec4 specular;
+	vec4 ambient;
+	
+	// These values are interpolated and need to be normalized
+	vec3 v = normalize(-V);
+	vec3 n = normalize(N);
+
+	lightGetAmbientDiffuseSpecular(n, 
+	                               v, 
+	                               shininess, 
+	                               ambient, 
+	                               diffuse, 
+	                               specular);
+
+	ambient *= Ka;
+	diffuse *= Kd;
+    specular *= Ks;
+
+	out_color = diffuse + specular + ambient;
+}
