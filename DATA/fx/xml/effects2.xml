@@ -776,7 +776,8 @@
   <transformeffect name = "manysparks">
     <emitter>
       <flags>particleeffectonly</flags>
-      <particleeffect>bombsparks</particleeffect>
+      <lifetime>1</lifetime>
+      <particleeffect>manysparks</particleeffect>
     </emitter>
   </transformeffect>
 <!-- ===================================================================== -->
@@ -3231,6 +3232,32 @@
 		<posvariance>0.0 0.0 1.0 0.0 0.0 30.0</posvariance>
     <material>fire</material>
 	</particleeffect>
+  <!-- ===================================================================== -->
+  <particleeffect name = "manysparks">
+    <number>64</number>
+    <texture>spark</texture>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>0.0</alpha>
+    <size>0.015</size>
+    <size>0.015</size>
+    <size>0.015</size>
+    <size>0.015</size>
+    <time>0</time>
+    <time>100</time>
+    <time>100</time>
+    <time>1500</time>
+    <speed>32</speed>
+    <glow></glow>
+    <drag>8.0</drag>
+    <material>fire</material>
+    <gravity>3.0</gravity>
+    <fixstretch>4.0</fixstretch>
+    <randomdirection>180</randomdirection>
+    <velvariance>-4.0 -4.0 0.1 4.0 4.0 1.0</velvariance>
+    <material>fire</material>
+  </particleeffect>
   <!-- ===================================================================== -->
 	<particleeffect name = "bombfire">
 		<number>15</number>
