@@ -2237,6 +2237,7 @@
 <!ENTITY widgets.prefs.groups.sound.maxsounds.sounds "suoni">
 <!ENTITY widgets.prefs.groups.infantry.weapons.tip "Scegli se i ragdoll abbiano armi. Disattivalo per incrementare le prestazioni.">
 <!ENTITY widgets.map.context.waypoints.add.waypoint.type "TIPO PUNTO DI PASSAGGIO">
+<!ENTITY widgets.prefs.groups.hud.ppos.ok.tip "This color will be used to indicate a GOOD spot to place a player placed object.">
 <!ENTITY widgets.prefs.groups.titles.shadow "Ombre">
 <!ENTITY widgets.keymapper.keys.function "NOME FUNZIONE">
 <!ENTITY widgets.prefs.groups.titles.visual "Impostazioni Visive">
@@ -2301,6 +2302,7 @@
 <!ENTITY widgets.map.waypoints.add.attack "Attacca qui!">
 <!ENTITY widgets.prefs.groups.ui.colors.squad "COLORE SQUADRA">
 <!ENTITY widgets.map.context.hc.objectives "Obiettivi">
+<!ENTITY widgets.prefs.groups.hud.ppos.tip "Choose which colors to use when indicating good and bad spots for player placed objects.">
 <!ENTITY widgets.prefs.groups.hud.custom.readout "PANNELLO DI LETTURA">
 <!ENTITY widgets.map.context.hc.na "Nulla da fare">
 <!ENTITY widgets.map.options.showdeployments "SCHIERAMENTI">
@@ -2435,6 +2437,7 @@
 <!ENTITY widgets.map.context.contacts.delete.all "All Reports">
 <!ENTITY widgets.prefs.groups.shadows.vehicles.tip "Scegli se i veicoli o le truppe abbiano l&#39;ombra. Disattivale per incrementare le prestazioni.">
 <!ENTITY widgets.prefs.groups.sound.volume "CONTROLLO VOLUME">
+<!ENTITY widgets.prefs.groups.hud.ppos.nok.tip "This color will be used to indicate a BAD spot to place a player placed object.">
 <!ENTITY widgets.prefs.groups.visual.water "SHADER ACQUA">
 <!ENTITY widgets.prefs.groups.shadows.off "Spento">
 <!ENTITY widgets.map.context.waypoints.add.report.truck "Autocarro">
@@ -2497,12 +2500,14 @@
 <!ENTITY widgets.prefs.groups.shadows.terrain "OMBRE ABILITATE">
 <!ENTITY widgets.map.waypoints.name "NOME DEL PUNTO DI PASSAGGIO (massimo 10 caratteri)">
 <!ENTITY widgets.prefs.groups.visual.reflections "RIFLESSIONI ACQUA">
+<!ENTITY widgets.prefs.groups.hud.ppos.nok "BAD PLACEMENT">
 <!ENTITY widgets.prefs.groups.shadows.objects "OGGETTI">
 <!ENTITY widgets.map.waypoints.contact.shipping "Marina nemica">
 <!ENTITY widgets.map.options.zoom.sector "SETTORE">
 <!ENTITY widgets.prefs.groups.ui.colors.aws.tip "Seleziona i colori per il sistema di avviso aereo della tua mappa.">
 <!ENTITY widgets.prefs.groups.sound.ambient.infrequent "poco frequenti">
 <!ENTITY widgets.map.info.target.tip "Mostra la città obiettivo della tua missione attuale">
+<!ENTITY widgets.prefs.groups.hud.ppos.ok "GOOD PLACEMENT">
 <!ENTITY widgets.map.waypoints.title "PUNTI DI PASSAGGIO">
 <!ENTITY widgets.keymapper.button.clear "AZZERA CONFIGURAZIONE">
 <!ENTITY widgets.keymapper.pending.inc "Premi un tasto per impostare l&#39;aumento di questa funzione.">
@@ -2629,6 +2634,7 @@
 <!ENTITY widgets.keymapper.button.def.key.tip "Imposta la configurazione dei tasti attualment selezionata ai valori di default.">
 <!ENTITY widgets.prefs.groups.game.presets.balanced "BILANCIATO">
 <!ENTITY widgets.map.info.hq.title "QG DI BRIGATA">
+<!ENTITY widgets.prefs.groups.hud.ppos "PPO PLACEMENT">
 <!ENTITY widgets.prefs.groups.hud.custom.gameinfo "INFO GIOCO">
 <!ENTITY widgets.prefs.groups.connection.netcode2.tip "Abilita netcode2 che è un metodo alternativo di comunicazione con l&#39;host del gioco. Potrebbe migliorare il lag o i giocatori ultrasonici.">
 <!ENTITY widgets.prefs.groups.visual.grass "SHADERS DELL&#39;ERBA">

@@ -2236,6 +2236,7 @@
 <!ENTITY widgets.prefs.groups.sound.maxsounds.sounds "位">
 <!ENTITY widgets.prefs.groups.infantry.weapons.tip "选择是否在武器上应用布娃娃效果。关闭该效果可以提高游戏的流畅度。">
 <!ENTITY widgets.map.context.waypoints.add.waypoint.type "导航点类型">
+<!ENTITY widgets.prefs.groups.hud.ppos.ok.tip "This color will be used to indicate a GOOD spot to place a player placed object.">
 <!ENTITY widgets.prefs.groups.titles.shadow "阴影设置">
 <!ENTITY widgets.keymapper.keys.function "操作名称">
 <!ENTITY widgets.prefs.groups.titles.visual "可视化设置">
@@ -2300,6 +2301,7 @@
 <!ENTITY widgets.map.waypoints.add.attack "攻击这里!">
 <!ENTITY widgets.prefs.groups.ui.colors.squad "班组颜色">
 <!ENTITY widgets.map.context.hc.objectives "目标">
+<!ENTITY widgets.prefs.groups.hud.ppos.tip "Choose which colors to use when indicating good and bad spots for player placed objects.">
 <!ENTITY widgets.prefs.groups.hud.custom.readout "读出">
 <!ENTITY widgets.map.context.hc.na "不可用">
 <!ENTITY widgets.map.options.showdeployments "部署">
@@ -2431,9 +2433,10 @@
 <!ENTITY widgets.keymapper.pending.pri "点击单键或者组合键来设定这项功能的初始设置。">
 <!ENTITY widgets.map.info.origin.tip "显示你当前任务的基地城市">
 <!ENTITY widgets.prefs.groups.infantry.blood.tip "选择是否在玩家死亡之后，显示血迹。">
-<!ENTITY widgets.map.context.contacts.delete.all "All Reports">
+<!ENTITY widgets.map.context.contacts.delete.all "所有报告">
 <!ENTITY widgets.prefs.groups.shadows.vehicles.tip "选择是否显示武器装备的阴影效果。关闭该效果可以提高游戏的流畅度。">
 <!ENTITY widgets.prefs.groups.sound.volume "音量控制">
+<!ENTITY widgets.prefs.groups.hud.ppos.nok.tip "This color will be used to indicate a BAD spot to place a player placed object.">
 <!ENTITY widgets.prefs.groups.visual.water "水渲染">
 <!ENTITY widgets.prefs.groups.shadows.off "关闭">
 <!ENTITY widgets.map.context.waypoints.add.report.truck "卡车">
@@ -2450,7 +2453,7 @@
 <!ENTITY widgets.prefs.groups.game.languagefilter.tip "启动该选项可以过滤交流中的垃圾词语。">
 <!ENTITY widgets.prefs.groups.game.language.chinese "中文">
 <!ENTITY widgets.prefs.groups.chat.reset.button "复位">
-<!ENTITY widgets.map.context.waypoints.delete.all "所有报告">
+<!ENTITY widgets.map.context.waypoints.delete.all "所有导航点">
 <!ENTITY widgets.prefs.groups.game.lowmemory "系统内存较低（2GB或更少）">
 <!ENTITY widgets.prefs.groups.hud.custom "常规设定">
 <!ENTITY widgets.keymapper.pending.move "移动你的鼠标或者摇杆轴进行设置.">
@@ -2496,12 +2499,14 @@
 <!ENTITY widgets.prefs.groups.shadows.terrain "阴影已开启">
 <!ENTITY widgets.map.waypoints.name "导航点名称（最多4个汉字；注意请不要中英文混合使用）">
 <!ENTITY widgets.prefs.groups.visual.reflections "水影效果">
+<!ENTITY widgets.prefs.groups.hud.ppos.nok "BAD PLACEMENT">
 <!ENTITY widgets.prefs.groups.shadows.objects "物体">
 <!ENTITY widgets.map.waypoints.contact.shipping "敌军战舰">
 <!ENTITY widgets.map.options.zoom.sector "防区">
 <!ENTITY widgets.prefs.groups.ui.colors.aws.tip "选择你的地图上空袭警报系统不同程度的颜色区间。">
 <!ENTITY widgets.prefs.groups.sound.ambient.infrequent "偶尔">
 <!ENTITY widgets.map.info.target.tip "显示你当前任务的目标城市">
+<!ENTITY widgets.prefs.groups.hud.ppos.ok "GOOD PLACEMENT">
 <!ENTITY widgets.map.waypoints.title "导航点">
 <!ENTITY widgets.keymapper.button.clear "清除设置">
 <!ENTITY widgets.keymapper.pending.inc "点击按键设置这项功能的增强作用">
@@ -2628,6 +2633,7 @@
 <!ENTITY widgets.keymapper.button.def.key.tip "还原当前所有设置为默认设置。">
 <!ENTITY widgets.prefs.groups.game.presets.balanced "平衡">
 <!ENTITY widgets.map.info.hq.title "战斗旅总部">
+<!ENTITY widgets.prefs.groups.hud.ppos "PPO PLACEMENT">
 <!ENTITY widgets.prefs.groups.hud.custom.gameinfo "游戏信息">
 <!ENTITY widgets.prefs.groups.connection.netcode2.tip "启用Netcode2可以使用UDP协议与游戏服务器进行沟通，可能会提高延迟较大玩家的连接质量。">
 <!ENTITY widgets.prefs.groups.visual.grass "草地渲染">

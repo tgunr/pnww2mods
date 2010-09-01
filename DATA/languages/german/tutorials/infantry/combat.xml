@@ -7,7 +7,7 @@ dead = Der Gegner hat Dich geschlagen. Spawne neu und versuch es noch einmal!
 1.0.label = Infanteriekampftraining
 
      1.1.label = intro
-     1.1.alert.modal = Dieses Gebiet ist jetzt für das Live Feuer Training freigegeben.  Arbeite mit Deinen Teamkollegen zusammen, um den Gegner zu schlagen.[NL][NL]Diese Übung endet nach 40 Minuten oder wenn nur noch ein Spieler am Leben ist.[NL][NL]Das Zielgebiet ist eine Gruppe von zerstörten Bauernhäusern auf dem halben Weg zwischen dem eigenen und dem gegnerischen Spawnpunkt.[NL][NL]Gute Jagd!</body>
+     1.1.alert.modal = Dieses Gebiet ist jetzt für das Live Feuer Training freigegeben.  Arbeite mit Deinen Teamkollegen zusammen, um den Gegner zu schlagen.[NL][NL]Diese Übung endet nach 40 Minuten oder wenn nur noch ein Spieler am Leben ist.[NL][NL]Das Zielgebiet ist eine Gruppe von zerstörten Bauernhäusern auf halbem Weg zwischen eigenem und gegnerischem Spawnpunkt.[NL][NL]Gute Jagd!</body>
   <branch>1</branch>
   <brief>In dieser Arena übst Du den Kampf gegen andere Infanteristen.</brief>
   <checkstate>true</checkstate>
@@ -20,7 +20,7 @@ dead = Der Gegner hat Dich geschlagen. Spawne neu und versuch es noch einmal!
   <instance>4</instance>
   <instype>1</instype>
   <requires>infantry.lmg</requires>
-  <title>Infanterie Kampftraining</title>
+  <title>Infanterie: Kampftraining</title>
   <ui>combat</ui>
   <ukspawners>212943.46,3101367.74,2.95,-2.16</ukspawners>
   <ukvehicles>ukrifle,uk-smg,ukgrenadier,uk-eng,uk-atr,uk-lmg,uk-sniper,uk-ltmortar</ukvehicles>
