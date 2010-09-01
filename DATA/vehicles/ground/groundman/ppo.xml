@@ -27,6 +27,7 @@
 	</ppo>
 	<ppo>
 		<param name="modelname" value="atgunpit1"/>
+		<param name="avoidance" value="10"/>
 		<param name="rayadjust" value="4,4,-.5"/>
 		<param name="raytolerance" value="10"/>
 		<param name="tilttolerance" value="20"/>
@@ -34,6 +35,7 @@
 		<param name="viewoffset" value="15"/>
 		<param name="cooldown" value="60000"/>
 		<param name="buildtime" value="30000"/>
+		<param name="badtextures" value="rails1,rails2,road1,asphault1,airbase1,provinggroundairfield1"/>
 	</ppo>
 	<ppo>
 		<param name="modelname" value="infantrypit1"/>
@@ -42,6 +44,7 @@
 		<param name="tilttolerance" value="20"/>
 		<param name="rotation" value="180"/>
 		<param name="viewoffset" value="15"/>
+		<param name="badtextures" value="rails1,rails2,road1,asphault1,airbase1,provinggroundairfield1"/>
 	</ppo>
 	<ppo>
 		<param name="modelname" value="atpit1"/>

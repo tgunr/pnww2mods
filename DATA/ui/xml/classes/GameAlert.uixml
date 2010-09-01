@@ -96,6 +96,7 @@
 				break;
 				case 6: // oversupply lost
 				case 27: // hourly timeleft alert
+				case 30: // no bailout
 					sound = "ui/sounds/error.wav";
 				break;
 				case 26: // tutorial event
@@ -119,6 +120,7 @@
 				case 15: // orders alert
 				case 16: // leader alert
 				case 28: // no fire zone
+				case 30: // no bailout
 					unique = true;
 				break;
 			}

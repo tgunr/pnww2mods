@@ -870,6 +870,7 @@
 				break;
 				case 11: // game alert
 				case 26: // game alert
+				case 30: // game alert
 					addGameAlert(type, data);
 				break;
 				case 12: // strat
