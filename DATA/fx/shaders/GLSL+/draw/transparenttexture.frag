@@ -30,6 +30,10 @@ void main()
 {
 	vec4 base = texture2D(src1, tex0);
 	
+    // Alpha test
+    if(base.a <= 0.32941176)
+        discard;
+
 	vec4 diffuse;
 	vec4 specular;
 	vec4 ambient;
