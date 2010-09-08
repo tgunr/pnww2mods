@@ -1292,19 +1292,20 @@
 		<texture>black smoke 2</texture>
 		<texture>black smoke 3</texture>
 		<texture>black smoke 4</texture>
-		<alpha>1.0</alpha>
-		<alpha>1.0</alpha>
+		<alpha>0.0</alpha>
+		<alpha>0.0</alpha>
 		<alpha>1.0</alpha>
 		<alpha>0.0</alpha>
 		<size>0.1</size>
 		<size>0.5</size>
 		<size>8.0</size>
 		<size>10.0</size>
-		<time>100</time>
+		<time>0</time>
 		<time>50</time>
 		<time>50</time>
 		<time>2000</time>
-    <glow>200</glow>
+    <colorstart>0 0 0</colorstart>
+    <colorend>0 0 0</colorend>
 		<rotate>45</rotate>
 		<velvariance>-2.0 -2.0 -2.0 2.0 2.0 2.0</velvariance>
     <material>smoke</material>
@@ -1320,13 +1321,13 @@
     <alpha>1.0</alpha>
     <alpha>0.0</alpha>
     <size>0.1</size>
-    <size>0.5</size>
-    <size>8.0</size>
-    <size>10.0</size>
+    <size>4.0</size>
+    <size>4.0</size>
+    <size>4.0</size>
     <time>0</time>
-    <time>250</time>
-    <time>250</time>
-    <time>250</time>
+    <time>50</time>
+    <time>50</time>
+    <time>50</time>
     <glow></glow>
     <material>fire</material>
   </particleeffect>
