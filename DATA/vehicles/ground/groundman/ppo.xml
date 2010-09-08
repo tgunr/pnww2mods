@@ -37,6 +37,16 @@
 		<param name="buildtime" value="30000"/>
 	</ppo>
 	<ppo>
+		<param name="modelname" value="ppo_ifp_002"/>
+		<param name="rayadjust" value="1,1,-.5"/>
+		<param name="raytolerance" value="10"/>
+		<param name="tilttolerance" value="40"/>
+		<param name="rotation" value="180"/>
+		<param name="viewoffset" value="6"/>
+		<param name="cooldown" value="30000"/>
+		<param name="buildtime" value="15000"/>
+	</ppo>
+	<ppo>
 		<param name="modelname" value="infantrypit1"/>
 		<param name="rayadjust" value="5.5,5.5,-.5"/>
 		<param name="raytolerance" value="10"/>

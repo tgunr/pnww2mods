@@ -11,7 +11,7 @@
 							border-width: 4;
 							border-height: 4;">
 		<text id="popup-caption" x="10" rtop="10" height="50" width="330" acceptfocus="no" acceptsmouseclick="false" style=" color: #FFFFFF;"
-			followtop="true" onshow="this.text = 'Building player placed object!'"/>
+			followtop="true" onshow="this.text = getPPOCaption()"/>
 		<progressbar id="build-progress" x="20" y="45" height="10" rright="20" minvalue="0" maxvalue="1"
 			fill="ui/textures/hud/blood-level-fill.bmp" background="ui/textures/hud/back-level-fill.bmp" orient="leftright"
 			acceptmouseclick="false"/>
@@ -22,10 +22,12 @@
 	<script>
 		<!--
 		
+		var ppoID = -1;
 		var progress = findview("build-progress");
 		
 		function initPPOPopup(type)
 		{
+			ppoID = type;
 			initPopup(type, null, null, "cancel");
 		}
 		
@@ -33,6 +35,13 @@
 		{
 			//cprint("Setting progress to " + p + "\n");
 			progress.value = p;
+		}
+		
+		function getPPOCaption()
+		{
+			var ppoName = game.getlocstring("ppos.ob" + ppoID);
+			cprint("Building ppo: " + ppoName);
+			return getVariableLocString("ppos.building", ppoName);
 		}
 		
 		function doCancelAction()

@@ -870,7 +870,8 @@
 				break;
 				case 11: // game alert
 				case 26: // game alert
-				case 30: // game alert
+				case 29: // ppo
+				case 30: // no bailout
 					addGameAlert(type, data);
 				break;
 				case 12: // strat

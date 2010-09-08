@@ -1242,12 +1242,12 @@
 						<caption label="&widgets.prefs.groups.hud.ppos.ok;" x="25" height="20" width="150" rtop="30" style="color: #e9e3d9ff;"/>
 						<view id="ppook" height="10" width="10" rtop="35" rright="25"
 						 	style="background-color: #0000FF; border-color: #ffffff; border-size: 1;"
-						 	onshow="this.setstyleproperty('background-color', getPreference(this.id, Preference.STRING, '#00FF00', true))"
+						 	onshow="this.setstyleproperty('background-color', getPreference(this.id, Preference.UINT, '#00FF00', true))"
 						 	onclick="showColorPicker(this.id)"/>
 						<caption label="&widgets.prefs.groups.hud.ppos.nok;" x="25" height="20" width="150" rtop="50" style="color: #e9e3d9ff;"/>
 						<view id="pponok" height="10" width="10" rtop="55" rright="25"
 						 	style="background-color: #FF0000; border-color: #ffffff; border-size: 1;"
-						 	onshow="this.setstyleproperty('background-color', getPreference(this.id, Preference.STRING, '#FF0000', true))"
+						 	onshow="this.setstyleproperty('background-color', getPreference(this.id, Preference.UINT, '#FF0000', true))"
 						 	onclick="showColorPicker(this.id)"/>
 				</panel>
 				<script>
