@@ -10,7 +10,7 @@ uniform MatrixBlock
 
 uniform InstanceParamsBlock
 {
-	vec4 data[1024];
+	vec4 data[2048];
 };
 
 uniform float time;
