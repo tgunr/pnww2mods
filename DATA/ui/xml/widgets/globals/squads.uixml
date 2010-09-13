@@ -563,8 +563,8 @@
 					
 					if(invite != null && invite.valid)
 					{
-						findview("squad-inviter").label 			= getlocstring("common.squads.invite.inviter");
-						findview("squad-inviter-squad").label 		= getlocstring("common.squads.invite.squadname");
+						findview("squad-inviter").label 			= invite.inviter;
+						findview("squad-inviter-squad").label 		= invite.squadname;
 						findview("squad-decline-button").enabled 	= true;
 						findview("squad-accept-button").enabled 	= true;
 					}
