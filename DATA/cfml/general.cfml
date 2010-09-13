@@ -130,7 +130,10 @@
 	</control>
 	<control>
 		<function>change chat height</function>
-		<key>tab</key>
+		<combo>
+			<key>right control</key>
+			<key>backspace</key>
+		</combo>
 	</control>
 	<control>
 		<function>map zoom in</function>
