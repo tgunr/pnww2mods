@@ -1,0 +1,79 @@
+#airfoils file for bf109e3 (used on the F1 and F2 also)
+
+[propeller]
+baseairfoil = propbase.pol
+up10degairfoil = prop_up10.pol
+down10degairfoil = prop_dn10.pol
+stallfile = prop.stall
+compressibilityfile = prop.compress
+
+[bf109e_root]
+baseairfoil = 2314neut.pol
+up10degairfoil = 2314_up10_25.pol
+down10degairfoil = 2314_dn10_25.pol
+stallfile = 2314.sta
+compressibilityfile = 2314.compress
+
+[bf109e_mid_inner]
+baseairfoil = naca2313.pol
+up10degairfoil = naca2313up10.pol
+down10degairfoil = naca2313down10.pol
+stallfile = naca2313.sta
+compressibilityfile = naca2313.compress
+
+[bf109e_mid_slot]
+baseairfoil = naca2312.pol
+up10degairfoil = naca2312up10.pol
+down10degairfoil = naca2312down10.pol
+stallfile = naca2312.sta
+compressibilityfile = naca2312.compress
+
+[bf109e_mid_slot_slotdeployed]
+baseairfoil = naca2312slat.pol
+up10degairfoil = naca2312up10slat.pol
+down10degairfoil = naca2312down10slat.pol
+stallfile = naca2312.sta
+compressibilityfile = naca2312.compress
+
+[bf109e_ail]
+baseairfoil = 2411base.pol
+up10degairfoil = 2411up10.pol
+down10degairfoil = 2411down10.pol
+stallfile = 2411.sta
+compressibilityfile = 2411.compress
+
+[bf109e_ail_slotdeployed]
+baseairfoil = 2411slotopenbase.pol
+up10degairfoil = 2411slotopenup10.pol
+down10degairfoil = 2411slotopendown10.pol
+stallfile = 2411.sta
+compressibilityfile = 2411.compress
+
+[bf109e_vertstab]
+baseairfoil = 2408_neut.pol
+up10degairfoil = 2408_up10_46.pol
+down10degairfoil = 2408_dn10_46.pol
+stallfile = 2408.sta
+compressibilityfile = 2408.compress
+
+[bf109e_horizstab]
+baseairfoil = 0011_neut.pol
+up10degairfoil = 0011_35up10.pol
+down10degairfoil = 0011_35down10.pol
+stallfile = 0011.sta
+compressibilityfile = 0011.compress
+
+[flatplate]
+baseairfoil = flatplat.pol
+up10degairfoil = flatplat.pol
+down10degairfoil = flatplat.pol
+stallfile = flatplat.stall
+compressibilityfile = flatplat.compress
+
+[fuselage]
+baseairfoil = 0010_base.pol
+up10degairfoil = 0010_base.pol
+down10degairfoil = 0010_base.pol
+stallfile = 0010.stall
+compressibilityfile = 0010.compress
+

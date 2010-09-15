@@ -1,0 +1,32 @@
+#bf109f2.loadout file
+
+# sounds available for the mounts
+sound1 = sounds\bf109e3\xgun1.wav
+sound2 = sounds\bf109e3\xgun2.wav
+
+loadout = 1
+
+mountnum = 1
+mountobject = lnmount
+mountsound = sound1
+weapon  = mg17_sync
+weaponobject = bf109elngun
+
+mountnum = 2
+mountobject = rnmount
+mountsound = sound1
+weapon  = mg17_sync
+weaponobject = bf109erngun
+
+mountnum = 3
+mountobject = spinnermount
+mountsound = sound2
+weapon  = mg151_15
+weaponobject = bf109elngun
+
+#mountnum = 4
+#mountobject = rwmount
+#mountsound = sound2
+#weapon  = mgff
+#weaponobject = bf109erwgun
+
