@@ -16,7 +16,7 @@
 	</defaults>
 	<!-- ppos definitions start here; ppos get an id starting at 1 and counting up in the order listed here -->
 	<ppo>
-		<param name="modelname" value="ppo_ifp_001"/>
+		<param name="modelname" value="ppo_ifp_002"/>
 		<param name="rayadjust" value="1,1,-.5"/>
 		<param name="raytolerance" value="10"/>
 		<param name="tilttolerance" value="40"/>
@@ -24,6 +24,7 @@
 		<param name="viewoffset" value="6"/>
 		<param name="cooldown" value="30000"/>
 		<param name="buildtime" value="15000"/>
+		<param name="avoidance" value="4"/>
 	</ppo>
 	<ppo>
 		<param name="modelname" value="atgunpit1"/>
@@ -37,7 +38,7 @@
 		<param name="buildtime" value="30000"/>
 	</ppo>
 	<ppo>
-		<param name="modelname" value="ppo_ifp_002"/>
+		<param name="modelname" value="ppo_ifp_001"/>
 		<param name="rayadjust" value="1,1,-.5"/>
 		<param name="raytolerance" value="10"/>
 		<param name="tilttolerance" value="40"/>
@@ -45,6 +46,7 @@
 		<param name="viewoffset" value="6"/>
 		<param name="cooldown" value="30000"/>
 		<param name="buildtime" value="15000"/>
+		<param name="avoidance" value="4"/>
 	</ppo>
 	<ppo>
 		<param name="modelname" value="infantrypit1"/>

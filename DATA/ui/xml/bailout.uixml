@@ -23,7 +23,7 @@
 		<!--
 		
 		var bailoutBtn		= window.findview("popup-yes");
-		var bailoutTimer 	= new CycleTimer(1000);
+		var bailoutTimer 	= new CycleTimer(500);
 		var checkCount		= 0;
 		
 		function initBailoutPopup(win)
@@ -56,7 +56,7 @@
 				bailoutBtn.enabled = game.canbail;
 				checkCount++;
 				
-				if(checkCount > 6)
+				if(checkCount > 12) // about 6 seconds
 					doBailoutAction(false);
 			}
 		}
