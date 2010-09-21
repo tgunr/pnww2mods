@@ -12,6 +12,11 @@
 		<param name="avoidflags" value="5,6,7,9,10,11"/>
 		<param name="surfaceflags" value="0,3"/>
 		<param name="allowinterior" value="false"/>
+		<param name="treecheck" value="false"/>
+		<param name="maxspeed" value=".1"/>
+		<param name="enemyfacdist" value="0"/>
+		<param name="friendlyfacdist" value="0"/>
+		<param name="targetdist" value="0"/>
 		<param name="badtextures" value="rails1,rails2,road1,asphault1,airbase1,airfield1,provinggroundairfield1"/>
 	</defaults>
 	<!-- ppos definitions start here; ppos get an id starting at 1 and counting up in the order listed here -->
@@ -36,6 +41,15 @@
 		<param name="viewoffset" value="15"/>
 		<param name="cooldown" value="60000"/>
 		<param name="buildtime" value="30000"/>
+	</ppo>
+	<ppo>
+		<param name="modelname" value="msp"/>
+		<param name="rayadjust" value=".75,1.5,0"/>
+		<param name="rotation" value="90"/>
+		<param name="viewoffset" value="6"/>
+		<param name="enemyfacdist" value="400"/>
+		<param name="targetdist" value="-1350"/>
+		<param name="treecheck" value="true"/>
 	</ppo>
 	<ppo>
 		<param name="modelname" value="ppo_ifp_001"/>
@@ -79,11 +93,5 @@
 		<param name="tilttolerance" value="40"/>
 		<param name="rotation" value="180"/>
 		<param name="viewoffset" value="7"/>
-	</ppo>
-	<ppo>
-		<param name="modelname" value="msp"/>
-		<param name="rayadjust" value=".75,1.5,0"/>
-		<param name="rotation" value="90"/>
-		<param name="viewoffset" value="6"/>
 	</ppo>
 </ppos>
