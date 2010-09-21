@@ -3565,6 +3565,7 @@
 <!ENTITY hud.health.atp.tip "Your ATP is currently at {1}. ATP is used when running, going prone and other tiring actions.">
 <!ENTITY hud.alerts.17 "You have been resupplied by {1}">
 <!ENTITY hud.readout.vehicles "Vehicles">
+<!ENTITY hud.hqintel.weight.0 "Light">
 <!ENTITY hud.alerts.24.sea "Enemy sea forces spotted near {1}">
 <!ENTITY hud.readout.aoa "AOA">
 <!ENTITY hud.alerts.4 "You have been oversupplied by {1}">
@@ -3581,8 +3582,10 @@
 <!ENTITY hud.minimap.out "Zoom Out">
 <!ENTITY hud.readout.infantry "Infantry">
 <!ENTITY hud.gameinfo.fov "Field of View">
+<!ENTITY hud.hqintel.dir.5 "southwest">
 <!ENTITY hud.readout.riding.stowed "Stowed in position">
 <!ENTITY hud.readout.slip "Slip">
+<!ENTITY hud.hqintel.far "Intel: &#37;ls enemy infantry presence &#37;ls of your position!">
 <!ENTITY hud.alerts.5 "You are about to lose your stockpiled ammo">
 <!ENTITY hud.alerts.18.liberated "Our forces have liberated {1}">
 <!ENTITY hud.readout.agl "AGL Alt">
@@ -3590,6 +3593,7 @@
 <!ENTITY hud.cliptype.2.plural "belts">
 <!ENTITY hud.alerts.18.captured "Enemy forces have captured {1}">
 <!ENTITY hud.readout.riding.seated "Riding in seat">
+<!ENTITY hud.hqintel.dir.2 "east">
 <!ENTITY hud.readout.visible "Visible">
 <!ENTITY hud.gameinfo.fps "FPS">
 <!ENTITY hud.readout.gear "Gear">
@@ -3598,6 +3602,7 @@
 <!ENTITY hud.alerts.19.liberated "Our forces have liberated {1}">
 <!ENTITY hud.readout.position "Position">
 <!ENTITY hud.health.state.crew "CREW">
+<!ENTITY hud.hqintel.dir.0 "north">
 <!ENTITY hud.readout.torp.bearing "Relative Bearing">
 <!ENTITY hud.alerts.13.hold "Your brigade has been ordered to hold at all costs">
 <!ENTITY hud.alerts.21.withdrawn "Attack Objective has been withdrawn from {1}">
@@ -3605,6 +3610,7 @@
 <!ENTITY hud.alerts.24.air "Enemy air forces spotted near {1}">
 <!ENTITY hud.readout.torp.control.angle "Lead Angle">
 <!ENTITY hud.readout.range "Range Setting">
+<!ENTITY hud.hqintel.dir.6 "west">
 <!ENTITY hud.minimap.in "Zoom In">
 <!ENTITY hud.cliptype.1.plural "mags">
 <!ENTITY hud.readout.riding.lifeboat "In Lifeboat">
@@ -3631,6 +3637,7 @@
 <!ENTITY hud.alerts.19.acquired "Our forces have acquired {1}">
 <!ENTITY hud.readout.torp.depth "Torpedo Depth">
 <!ENTITY hud.alerts.27 "You have less than {1} minutes left on your hourly subscription!">
+<!ENTITY hud.hqintel.dir.4 "south">
 <!ENTITY hud.readout.torp.control.time "Impact Time">
 <!ENTITY hud.primary.weapon "WEAPON">
 <!ENTITY hud.secondary "SECONDARY">
@@ -3643,21 +3650,27 @@
 <!ENTITY hud.alerts.18.deliberated "Enemy forces have regained {1}">
 <!ENTITY hud.cliptype.0.plural "clips">
 <!ENTITY hud.readout.infantry.ship "aboard ship">
+<!ENTITY hud.hqintel.close "Intel: &#37;ls enemy infantry presence near your position!">
 <!ENTITY hud.readout.gear.engines "Engines">
 <!ENTITY hud.alerts.15 "You have been issued new orders">
 <!ENTITY hud.readout.gforce "G">
 <!ENTITY hud.alerts.24.armor "Enemy armor spotted near {1}">
 <!ENTITY hud.alerts.24.ground "Enemy troops spotted near {1}">
 <!ENTITY hud.health.state "This icon represent&#39;s your current state">
+<!ENTITY hud.hqintel.weight.1 "Moderate">
+<!ENTITY hud.hqintel.dir.3 "southeast">
 <!ENTITY hud.health.state.pilot "FLIGHT CREW">
 <!ENTITY hud.readout.riding.towed "Being Towed">
 <!ENTITY hud.alerts.19.deliberated "Enemy forces have regained {1}">
 <!ENTITY hud.readout.gear.kaput "Dead">
+<!ENTITY hud.hqintel.weight.2 "Heavy">
 <!ENTITY hud.cliptype.2 "belt">
 <!ENTITY hud.alerts.14 "Incoming contact report">
+<!ENTITY hud.hqintel.dir.1 "northeast">
+<!ENTITY hud.hqintel.dir.7 "northwest">
+<!ENTITY hud.gameinfo.icon.0 "Normal">
 <!ENTITY hud.health.blood "This icon represent&#39;s your current state">
 <!ENTITY hud.minimap.nearest "The closest town to you">
-<!ENTITY hud.gameinfo.icon.0 "Normal">
 <!ENTITY hud.readout.vehicles.onhoist "on hoist">
 <!ENTITY hud.readout.torp.aob "Angle On Bow">
 <!ENTITY persona.welcome.axis "AXIS FORCES">

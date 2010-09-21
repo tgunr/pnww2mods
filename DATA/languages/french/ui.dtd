@@ -3576,6 +3576,7 @@
 <!ENTITY hud.health.atp.tip "Votre condition physique est à {1}. Elle est utilisée pour courir, ramper et d&#39;autres actions fatigantes.">
 <!ENTITY hud.alerts.17 "Vous avez été ravitaillé par {1}">
 <!ENTITY hud.readout.vehicles "Véhicules">
+<!ENTITY hud.hqintel.weight.0 "Light">
 <!ENTITY hud.alerts.24.sea "Bateau ennemi repéré près de {1}">
 <!ENTITY hud.readout.aoa "AOA">
 <!ENTITY hud.alerts.4 "Vous avez été sur-ravitaillé par{1}">
@@ -3592,8 +3593,10 @@
 <!ENTITY hud.minimap.out "Dézoommer">
 <!ENTITY hud.readout.infantry "Infanterie">
 <!ENTITY hud.gameinfo.fov "Champ de vision">
+<!ENTITY hud.hqintel.dir.5 "southwest">
 <!ENTITY hud.readout.riding.stowed "En position arrimée">
 <!ENTITY hud.readout.slip "Glissement">
+<!ENTITY hud.hqintel.far "Intel: &#37;ls enemy infantry presence &#37;ls of your position!">
 <!ENTITY hud.alerts.5 "Vous êtes en train de perdre votre stock de munitions">
 <!ENTITY hud.alerts.18.liberated "Nos forces ont libéré {1}">
 <!ENTITY hud.readout.agl "AGL Alt">
@@ -3601,6 +3604,7 @@
 <!ENTITY hud.cliptype.2.plural "Bandes">
 <!ENTITY hud.alerts.18.captured "Les forces ennemies ont capturé{1}">
 <!ENTITY hud.readout.riding.seated "Passager">
+<!ENTITY hud.hqintel.dir.2 "east">
 <!ENTITY hud.readout.visible "Visible">
 <!ENTITY hud.gameinfo.fps "FPS">
 <!ENTITY hud.readout.gear "rapport">
@@ -3609,6 +3613,7 @@
 <!ENTITY hud.alerts.19.liberated "Nos forces ont libéré  {1}">
 <!ENTITY hud.readout.position "Position">
 <!ENTITY hud.health.state.crew "EQUIPAGE">
+<!ENTITY hud.hqintel.dir.0 "north">
 <!ENTITY hud.readout.torp.bearing "Relative Bearing">
 <!ENTITY hud.alerts.13.hold "Votre brigade doit tenir sa position à tous prix">
 <!ENTITY hud.alerts.21.withdrawn "L&#39;objective d&#39;attaque à été retiré par {1}">
@@ -3616,6 +3621,7 @@
 <!ENTITY hud.alerts.24.air "Avion ennemi repéré près de {1}">
 <!ENTITY hud.readout.torp.control.angle "Angle directeur">
 <!ENTITY hud.readout.range "Réglage de la distance">
+<!ENTITY hud.hqintel.dir.6 "west">
 <!ENTITY hud.minimap.in "Zoomer">
 <!ENTITY hud.cliptype.1.plural "mags">
 <!ENTITY hud.readout.riding.lifeboat "Dans le bateau">
@@ -3642,6 +3648,7 @@
 <!ENTITY hud.alerts.19.acquired "Nos forces ont pris {1}">
 <!ENTITY hud.readout.torp.depth "profondeur de la Torpille">
 <!ENTITY hud.alerts.27 "Il reste moins d&#39;1 minute de vous souscription d&#39;1 heure!">
+<!ENTITY hud.hqintel.dir.4 "south">
 <!ENTITY hud.readout.torp.control.time "temsp d&#39;impact">
 <!ENTITY hud.primary.weapon "ARME">
 <!ENTITY hud.secondary "SECONDAIRE">
@@ -3654,21 +3661,27 @@
 <!ENTITY hud.alerts.18.deliberated "Les forces ennemis on repris {1}">
 <!ENTITY hud.cliptype.0.plural "clips">
 <!ENTITY hud.readout.infantry.ship "A bord du bateau">
+<!ENTITY hud.hqintel.close "Intel: &#37;ls enemy infantry presence near your position!">
 <!ENTITY hud.readout.gear.engines "Moteurs">
 <!ENTITY hud.alerts.15 "Vous avez de nouveaux ordres">
 <!ENTITY hud.readout.gforce "G">
 <!ENTITY hud.alerts.24.armor "Blindé ennemi repéré près de {1}">
 <!ENTITY hud.alerts.24.ground "Unité ennemie repérée près de {1}">
 <!ENTITY hud.health.state "Cet icône représente votre état actuel">
+<!ENTITY hud.hqintel.weight.1 "Moderate">
+<!ENTITY hud.hqintel.dir.3 "southeast">
 <!ENTITY hud.health.state.pilot "PILOTE">
 <!ENTITY hud.readout.riding.towed "En train d&#39;être tracté">
 <!ENTITY hud.alerts.19.deliberated "Les forces ennemies on repris  {1}">
 <!ENTITY hud.readout.gear.kaput "Mort">
+<!ENTITY hud.hqintel.weight.2 "Heavy">
 <!ENTITY hud.cliptype.2 "Bande">
 <!ENTITY hud.alerts.14 "Contact ennemi observé">
+<!ENTITY hud.hqintel.dir.1 "northeast">
+<!ENTITY hud.hqintel.dir.7 "northwest">
+<!ENTITY hud.gameinfo.icon.0 "Normal">
 <!ENTITY hud.health.blood "Cet icône représente l&#39;état de votre pression artérielle">
 <!ENTITY hud.minimap.nearest "La ville la plus proche de votre position">
-<!ENTITY hud.gameinfo.icon.0 "Normal">
 <!ENTITY hud.readout.vehicles.onhoist "suspendu">
 <!ENTITY hud.readout.torp.aob "Angle On Bow">
 <!ENTITY persona.welcome.axis "FORCES DE L&#39;AXE">

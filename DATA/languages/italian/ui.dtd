@@ -3566,6 +3566,7 @@
 <!ENTITY hud.health.atp.tip "La tua condizione fisica è attualmente al {1}. E&#39; utilizzata quando corri, ti arrampichi o altre azioni faticose.">
 <!ENTITY hud.alerts.17 "Stai facendo rifornimento da {1}">
 <!ENTITY hud.readout.vehicles "Veicoli">
+<!ENTITY hud.hqintel.weight.0 "Light">
 <!ENTITY hud.alerts.24.sea "Forze navali nemiche avvistate presso {1}">
 <!ENTITY hud.readout.aoa "AOA">
 <!ENTITY hud.alerts.4 "Hai ricevuto più di quanto richiesto da {1}">
@@ -3582,8 +3583,10 @@
 <!ENTITY hud.minimap.out "Riduci">
 <!ENTITY hud.readout.infantry "Fanteria">
 <!ENTITY hud.gameinfo.fov "Campo di visione">
+<!ENTITY hud.hqintel.dir.5 "southwest">
 <!ENTITY hud.readout.riding.stowed "Stivato">
 <!ENTITY hud.readout.slip "Slip">
+<!ENTITY hud.hqintel.far "Intel: &#37;ls enemy infantry presence &#37;ls of your position!">
 <!ENTITY hud.alerts.5 "Stai per perdere la tua riserva di munizioni">
 <!ENTITY hud.alerts.18.liberated "Le nostre forze hanno liberato {1}">
 <!ENTITY hud.readout.agl "AGL Alt">
@@ -3591,6 +3594,7 @@
 <!ENTITY hud.cliptype.2.plural "cartuccere">
 <!ENTITY hud.alerts.18.captured "Le forze nemiche hanno catturato {1}">
 <!ENTITY hud.readout.riding.seated "Seduto">
+<!ENTITY hud.hqintel.dir.2 "east">
 <!ENTITY hud.readout.visible "Visibile">
 <!ENTITY hud.gameinfo.fps "FPS">
 <!ENTITY hud.readout.gear "Marcia">
@@ -3599,6 +3603,7 @@
 <!ENTITY hud.alerts.19.liberated "Le nostre forze hanno liberato {1}">
 <!ENTITY hud.readout.position "Posizione">
 <!ENTITY hud.health.state.crew "EQUIPAGGIO">
+<!ENTITY hud.hqintel.dir.0 "north">
 <!ENTITY hud.readout.torp.bearing "Rilevamento relatico">
 <!ENTITY hud.alerts.13.hold "La tua brigata ha ricevuto l&#39;ordine di resistere a tutti i costi">
 <!ENTITY hud.alerts.21.withdrawn "L&#39;obiettivo di attacco è stato rimosso da {1}">
@@ -3606,6 +3611,7 @@
 <!ENTITY hud.alerts.24.air "Aviazione nemica avvistata presso {1}">
 <!ENTITY hud.readout.torp.control.angle "Angolo di anticipo">
 <!ENTITY hud.readout.range "Regolazione della distanza">
+<!ENTITY hud.hqintel.dir.6 "west">
 <!ENTITY hud.minimap.in "Ingrandisci">
 <!ENTITY hud.cliptype.1.plural "caricatori">
 <!ENTITY hud.readout.riding.lifeboat "Sulla barca di salvataggio">
@@ -3632,6 +3638,7 @@
 <!ENTITY hud.alerts.19.acquired "Le nostre forze hanno conquistato {1}">
 <!ENTITY hud.readout.torp.depth "Profondità">
 <!ENTITY hud.alerts.27 "Ti sono rimasti meno di {1} minuti per il tuo abbonamento orario!">
+<!ENTITY hud.hqintel.dir.4 "south">
 <!ENTITY hud.readout.torp.control.time "Tempo di impatto">
 <!ENTITY hud.primary.weapon "ARMA">
 <!ENTITY hud.secondary "SECONDARIO">
@@ -3644,21 +3651,27 @@
 <!ENTITY hud.alerts.18.deliberated "Le forze nemiche hanno riguadagnato {1}">
 <!ENTITY hud.cliptype.0.plural "nastri">
 <!ENTITY hud.readout.infantry.ship "imbarcato">
+<!ENTITY hud.hqintel.close "Intel: &#37;ls enemy infantry presence near your position!">
 <!ENTITY hud.readout.gear.engines "Motori">
 <!ENTITY hud.alerts.15 "Sono stati emanati nuovi ordini">
 <!ENTITY hud.readout.gforce "G">
 <!ENTITY hud.alerts.24.armor "Forze corazzate nemiche avvistate presso {1}">
 <!ENTITY hud.alerts.24.ground "Fanteria nemica avvistata presso {1}">
 <!ENTITY hud.health.state "Questa icona rappresenta il tuo stato attuale">
+<!ENTITY hud.hqintel.weight.1 "Moderate">
+<!ENTITY hud.hqintel.dir.3 "southeast">
 <!ENTITY hud.health.state.pilot "PILOTA">
 <!ENTITY hud.readout.riding.towed "Trainato">
 <!ENTITY hud.alerts.19.deliberated "Le forze nemiche hanno riguadagnato {1}">
 <!ENTITY hud.readout.gear.kaput "Rotto">
+<!ENTITY hud.hqintel.weight.2 "Heavy">
 <!ENTITY hud.cliptype.2 "cartuccera">
 <!ENTITY hud.alerts.14 "Rapporto di contatto in arrivo">
+<!ENTITY hud.hqintel.dir.1 "northeast">
+<!ENTITY hud.hqintel.dir.7 "northwest">
+<!ENTITY hud.gameinfo.icon.0 "Normale">
 <!ENTITY hud.health.blood "Questa icona rappresenta la tua pressione arteriosa attuale">
 <!ENTITY hud.minimap.nearest "La città più vicina">
-<!ENTITY hud.gameinfo.icon.0 "Normale">
 <!ENTITY hud.readout.vehicles.onhoist "sollevato">
 <!ENTITY hud.readout.torp.aob "Angolazione di prua">
 <!ENTITY persona.welcome.axis "FORZE ASSE">

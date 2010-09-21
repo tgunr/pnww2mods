@@ -3585,6 +3585,7 @@
 <!ENTITY hud.health.atp.tip "Su nivel de fatiga está actualmente al {1}. La fatiga es utilizada cuando corres, o realizas otras acciones que provoquen cansancio .">
 <!ENTITY hud.alerts.17 "Has sido reaprovisionado por {1}">
 <!ENTITY hud.readout.vehicles "Vehículos">
+<!ENTITY hud.hqintel.weight.0 "Light">
 <!ENTITY hud.alerts.24.sea "Fuerzas navales enemigas avistadas cerca de {1}">
 <!ENTITY hud.readout.aoa "Ataque">
 <!ENTITY hud.alerts.4 "Recibes suministros extra de {1}, apilados junto a tí">
@@ -3601,8 +3602,10 @@
 <!ENTITY hud.minimap.out "Disminuir Zoom">
 <!ENTITY hud.readout.infantry "Infantería">
 <!ENTITY hud.gameinfo.fov "Campo de Visión">
+<!ENTITY hud.hqintel.dir.5 "southwest">
 <!ENTITY hud.readout.riding.stowed "Ubicado en posición">
 <!ENTITY hud.readout.slip "Deriva">
+<!ENTITY hud.hqintel.far "Intel: &#37;ls enemy infantry presence &#37;ls of your position!">
 <!ENTITY hud.alerts.5 "Estás a punto de perder el apilamiento de suministros">
 <!ENTITY hud.alerts.18.liberated "Nuestras fuerzas han liberado {1}">
 <!ENTITY hud.readout.agl "AGL Alt">
@@ -3610,6 +3613,7 @@
 <!ENTITY hud.cliptype.2.plural "cintas">
 <!ENTITY hud.alerts.18.captured "Las fuerzas enemigas han capturado {1}">
 <!ENTITY hud.readout.riding.seated "Montado en asiento">
+<!ENTITY hud.hqintel.dir.2 "east">
 <!ENTITY hud.readout.visible "Visible">
 <!ENTITY hud.gameinfo.fps "FPS">
 <!ENTITY hud.readout.gear "Marchas">
@@ -3618,6 +3622,7 @@
 <!ENTITY hud.alerts.19.liberated "Nuestras fuerzas han liberado {1}">
 <!ENTITY hud.readout.position "Posición">
 <!ENTITY hud.health.state.crew "TRIPULACIÓN">
+<!ENTITY hud.hqintel.dir.0 "north">
 <!ENTITY hud.readout.torp.bearing "Rumbo Relativo">
 <!ENTITY hud.alerts.13.hold "Se ha ordenado a tu brigada que se mantenga a cualquier precio">
 <!ENTITY hud.alerts.21.withdrawn "El objetivo de ataque ha sido retirado de {1}">
@@ -3625,6 +3630,7 @@
 <!ENTITY hud.alerts.24.air "Aviación enemiga avistada cerca de {1}">
 <!ENTITY hud.readout.torp.control.angle "Ángulo de Anticipación">
 <!ENTITY hud.readout.range "Ajuste de Rango">
+<!ENTITY hud.hqintel.dir.6 "west">
 <!ENTITY hud.minimap.in "Aumentar Zoom">
 <!ENTITY hud.cliptype.1.plural "cargadores">
 <!ENTITY hud.readout.riding.lifeboat "En Bote">
@@ -3651,6 +3657,7 @@
 <!ENTITY hud.alerts.19.acquired "Nuestras fuerzas han tomado {1}">
 <!ENTITY hud.readout.torp.depth "Pofundidad del Torpedo">
 <!ENTITY hud.alerts.27 "¡Te quedan menos de {1} minutos en su suscripción por horas!">
+<!ENTITY hud.hqintel.dir.4 "south">
 <!ENTITY hud.readout.torp.control.time "Tiempo de Impacto">
 <!ENTITY hud.primary.weapon "ARMA">
 <!ENTITY hud.secondary "SECUNDARIO">
@@ -3663,21 +3670,27 @@
 <!ENTITY hud.alerts.18.deliberated "Las fuerzas enemigas han retomado {1}">
 <!ENTITY hud.cliptype.0.plural "peines">
 <!ENTITY hud.readout.infantry.ship "a bordo del barco">
+<!ENTITY hud.hqintel.close "Intel: &#37;ls enemy infantry presence near your position!">
 <!ENTITY hud.readout.gear.engines "Motores">
 <!ENTITY hud.alerts.15 "Se te han dado nuevas órdenes">
 <!ENTITY hud.readout.gforce "G">
 <!ENTITY hud.alerts.24.armor "Blindados enemigos avistados cerca de {1}">
 <!ENTITY hud.alerts.24.ground "Tropas enemigas avistadas cerca de {1}">
 <!ENTITY hud.health.state "Este icono representa su estado actual">
+<!ENTITY hud.hqintel.weight.1 "Moderate">
+<!ENTITY hud.hqintel.dir.3 "southeast">
 <!ENTITY hud.health.state.pilot "TRIPULACIÓN">
 <!ENTITY hud.readout.riding.towed "Siendo Remolcado">
 <!ENTITY hud.alerts.19.deliberated "Las fuerzas enemigas han retomado {1}">
 <!ENTITY hud.readout.gear.kaput "Roto">
+<!ENTITY hud.hqintel.weight.2 "Heavy">
 <!ENTITY hud.cliptype.2 "cinta">
 <!ENTITY hud.alerts.14 "Ha llegado un informe de contacto">
+<!ENTITY hud.hqintel.dir.1 "northeast">
+<!ENTITY hud.hqintel.dir.7 "northwest">
+<!ENTITY hud.gameinfo.icon.0 "Normal">
 <!ENTITY hud.health.blood "Este icono representa su estado actual">
 <!ENTITY hud.minimap.nearest "La ciudad mas cercana a tu posición">
-<!ENTITY hud.gameinfo.icon.0 "Normal">
 <!ENTITY hud.readout.vehicles.onhoist "Izado">
 <!ENTITY hud.readout.torp.aob "Ángulo al Casco">
 <!ENTITY persona.welcome.axis "FUERZAS DEL EJE">
