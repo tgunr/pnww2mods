@@ -7,7 +7,7 @@ uniform FogBlock
 {
    float end;
    float scale; // 1 / (end - start)
-   vec4 color;
+   vec4 fogcolor;
 };
 
 // 1.442695 = 1 / ln(2)
@@ -20,7 +20,7 @@ vec4 fogThis(in vec4 c)
 #ifdef LINEAR_FOG
    float f = (end - fogdist) * scale;
    f = clamp(f, 0.0, 1.0);
-   return mix(color, c, f);
+   return mix(fogcolor, c, f);
 #else
    // exp(x) = exp2(x / ln(2));
    //float fog = exp2(-gl_Fog.density * gl_FogFragCoord * LOG2E);
