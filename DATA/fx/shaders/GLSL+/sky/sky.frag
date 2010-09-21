@@ -1,6 +1,6 @@
 #version 150
 
-in vec4 color;
+in vec4 skycolor;
 
 out vec4 out_color;
 
@@ -8,5 +8,5 @@ vec4 fogThis(in vec4);
 
 void main()
 {
-	out_color = fogThis(color);
+	out_color = fogThis(skycolor);
 }

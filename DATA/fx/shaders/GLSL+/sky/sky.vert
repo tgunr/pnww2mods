@@ -12,7 +12,7 @@ in vec3 in_pos;
 in vec4 in_color;
 
 out float fogdist;
-out vec4 color;
+out vec4 skycolor;
 
 void main()
 {
@@ -21,7 +21,7 @@ void main()
 	pos = MVMatrix * pos;
 
     fogdist = abs(pos.z);
-    color = in_color / 255.0;
+    skycolor = in_color / 255.0;
 
  	gl_Position = ProjectionMatrix * pos;
 }
