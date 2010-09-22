@@ -23,6 +23,7 @@
 		//game.onmissioninvite		= doMissionInvite;
 		game.onchangeinvites		= onChangeInvites;
 		game.onchangerecruiting		= onChangeRecruiting;
+		game.buildirp				= onBuildIRP;
 	}
 	
 	function loadWin(name, close)
@@ -652,6 +653,17 @@
 			name = f.toString().match(/^\s*function (\w+)\s*\(/)
 		
 		return (f && name) ? name[1] : 'anonymous';
+	}
+	
+	function onBuildIRP()
+	{
+		var popup = showConfirm(getlocstring('ppos.irp.build'), handleBuildIRP);
+		popup.setPopupClose(false);
+	}
+	
+	function handleBuildIRP(confirm)
+	{
+		game.uicallback(confirm);
 	}
 	
 	-->
