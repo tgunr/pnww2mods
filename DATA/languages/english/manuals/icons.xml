@@ -2,23 +2,14 @@
 <content type="3">
   <body>Icons are displayed over different types of player units. Friendly Unit Icons are blue (or green if the unit is a new player) by default, and display many other types of information. (You can change default icon colors for all friendlies and enemy air units in your settings.)
 
-A friendly unit&#39;s icon may contain their nametag and squad ID, mission leader or high command symbols [M] or [C], or equipment &#38; vehicle type, and are displayed above friendly air, ground &#38; sea units, depending on which setting you use.
-
 Friendly and enemy AIR units both begin with a grey circle at distance, but once they are closer, they will have a blue or red circle and unit type. Enemy GROUND and SEA units, including troops, trucks, towable guns, tanks, armored cars, and ships, DO NOT display icons at all. You must acquire and identify enemy ground and sea targets visually.
+
+A friendly unit&#39;s icon may contain their nametag and squad ID, mission leader or high command symbols [M] or [C], or equipment &#38; vehicle type, and are displayed above friendly air, ground &#38; sea units, depending on which setting you use.
 
 Pressing [LEFT-CONTROL + I] three times will cycle your icons through different settings: NORMAL, VEHICLE TYPE, or NO ICONS. (You can use your keymapper to change this default at anytime.) All icons can be cycled off when in heavy combat to get a better visual of distant targets. Friendly ground unit icons will blink when requesting ammo if you happen to be carrying the proper type of ammo that can be used to supply that player.
 
 When turning your view, the distant icons will not be clearly visible at first. All icons (friendly or enemy air) have a &#34;fade in&#34; feature that gradually increases the brightness of the icon the longer you have that unit in view. This system requires you to keep your eyes peeled in combat and adds a bit to the fog of war.
 
-For aircraft, the icons have a couple of extra elements: a dynamic range circle, and a dynamic color indicator. The range circle is scaled in the following manner:
-
-6000+ m = Full Circle
-3400 m = 3/4 Circle
-1500 m = 1/2 Circle
-1499 m = Color Change (Red = Enemy, Blue = Friendly)
-499 m = Friendly Squad Name Visible
-400 m = 1/4 Circle
-
-At distances where a reasonably trained pilot would recognize an airplane, you will see a type or name element added along with a color indicator. This tells you if the aircraft is friendly (blue) or enemy (red) and either what type it is or who is flying it (friendly only). With fast moving aircraft, the fade in system is even more critical. Managing who you are &#34;looking at&#34; and keeping them in view, can often mean the difference between life and death.</body>
+For aircraft, the icons have a couple of extra elements: a dynamic range circle, and a dynamic color indicator. The  range circle is scaled to 4 km at it&#39;s full display 1 km at half-circle, and a quarter circle is 250 m. At distances where a reasonably trained pilot would recognize an airplane, you will see a type or name element added along with a color indicator. This tells you if the aircraft is friendly (blue) or enemy (red) and either what type it is or who is flying it (friendly only). With fast moving aircraft, the fade in system is even more critical. Managing who you are &#34;looking at&#34; and keeping them in view, can often mean the difference between life and death.</body>
   <title>Icons Manual</title>
 </content>

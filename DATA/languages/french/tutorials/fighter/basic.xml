@@ -39,7 +39,7 @@
 3.0.label = Verifier les commandes
 
 	3.1.label = Commandes de vol
-	3.1.alert.modal = Vérifier que vos commandes fonctionnent est important pour éviter un accident au décollage.  Pour commencer [NL][NL]Ailerons : ils contrôlent le roulis[NL]Palonnier: il contrôle le lacet [NL]Gouvernes de Profondeur : contrôlent du tangage 	
+	3.1.alert.modal = Vérifier que vos commandes fonctionnent est important pour éviter un accident au décollage.  Pour commencer [NL][NL]Ailerons : ils contrôles le roulis[NL]Palonnier: il contrôle le lacet [NL]Gouvernes de Profondeur : contrôle du tangage 	
 	3.2.label =  Aileron droit
 	3.2.alert = Les Ailerons contrôlent le roulis de l’avion. Le basculement à droite ou à gauche qui vous permet de pencher d’un côté  pour faire un virage.[NL][NL]Pendant que vous maintenez {lookviewseven} utilisez {aileron.3.4.7.4} pour vérifier que votre aileron droit fonctionne.
 	
@@ -48,8 +48,8 @@
 	3.3.complete = Bien, les 2 ailerons semblent bien fonctionner.
 	
 	3.4.label = Palonnier
-	3.4.alert = Le palonnier contrôle votre lacet. C&#39;est-à-dire vous fait pivoter sur un axe vertical, ou associé à d’autres commandes vous permet de faire certains mouvements.[NL][NL] Pour la plus part des avions, vous ne pouvez voir votre gouverne de direction de l&#39;intérieur, mais  vos pédales de palonnier sont visibles dans le cockpit.[NL][NL] Utilisez {rudder.0.3.1.3} pour vérifier que votre palonnier répond bien.
-        3.4.alert.camera = 60,10,40
+	3.4.alert = Le palonnier contrôle votre lacet. C&#39;est-à-dire vous fait pivoter sur un axe vertical, ou associé à d’autres commandes vous permet de faire certains mouvements. Sur la plus part des avions, vous ne pouvez voir votre gouverne de direction de l&#39;intérieur, mais  vos pédales de palonnier sont visibles dans le cockpit.[NL][NL] Utilisez {rudder.0.3.1.3} pour vérifier que votre palonnier répond bien.
+        3.4.alert.camera = 120,10,40
 	3.4.complete = Bien.
 	
 	3.5.label = Gouverne de profondeur
@@ -120,9 +120,7 @@
 	7.5.alert.modal = Bien![NL][NL]Arrêtez le moteur en pressant {engstart}. Maintenez les freins appuyés tant que le moteur n‘est pas complètement à l’arrêt.   
 	7.5.complete.modal = Excellent!  Vous êtes maintenant prêt pour le décollage.[NL][NL]Vous pouvez essayer de décoller maintenant si vous voulez. Assurez vous d’avoir le régime maximum du moteur en appuyant 2 fois  {adjustpropup} et mettez les gaz à fond {throttle}.[NL][NL]ne pas oublier de fermer sa verrière avec {canopycontrol}![NL][NL]Une fois dans le ciel pensez à rentrer vos volets ainsi que vos trains d&#39;atterrissage {gearhandle}.</body>
   <branch>2</branch>
-  <brief>Apprenez les bases pour décoller.
-
-Remarque: Certains cadrans du tableau de bord peuvent être difficiles à lire si une basse résolution est configurée. Si c&#39;est le cas, modifiez vos réglages pour augmenter la résolution.</brief>
+  <brief>Apprenez les bases pour décoller.</brief>
   <handler>fighter.basic</handler>
   <instance>2</instance>
   <requires>basic</requires>

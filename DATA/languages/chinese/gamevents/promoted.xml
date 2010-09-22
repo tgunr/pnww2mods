@@ -1,12 +1,12 @@
 <?xml version='1.0'?>
 <content type="3">
-  <body>rank = 您当前的军衔等级为 {1} - {2}。
-binocs = 恭喜您的等级获得了提升。
+  <body>rank = 您获得了等级 {1} - {2}。
+binocs = 双筒望远镜已经添加进您的背包中。
 missions = 您现在可以自己创建和发布任务了。
-officer = 您现在已经是高级军官了。
+officer = 您现在已经是军官了。
 nextrank = 您的下一个等级是 {1}。
 pointsnextrank = 您只需要再获得 {1} 分就可以升级了。</body>
   <bodyloc>true</bodyloc>
-  <brief>您在  {service} 的军衔等级被提升到了 {rank}。</brief>
+  <brief>由于 {service}的原因，您的军衔等级被提升到了 {rank}。</brief>
   <title>恭喜，您的等级得到了提升！</title>
 </content>

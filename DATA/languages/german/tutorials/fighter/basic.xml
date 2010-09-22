@@ -47,8 +47,8 @@
 	3.3.complete = Gut gemacht, beide Querruder scheinen zu funktionieren.
 	
 	3.4.label = Seitenruder
-	3.4.alert = Das Seitenruder steuert das Gieren des Flugzeuges. Es wird zum sanften Kurven oder zum Ausbalancieren anderer Bewegungen des Flugzeugs benutzt.[NL][NL]In vielen Flugzeugen ist das Seitenleitwerk nicht aus dem Cockpit sichtbar. Für diesen Lehrgang haben wir eine Ausnahme gemacht.[NL][NL]Benutze {rudder.3.4.7.4} um zu sehen, ob sich das Seitenruder bewegt.
-	3.4.alert.camera = 60,10,60
+	3.4.alert = Die Seitenruder steuern das Gieren des Flugzeuges. Sie werden zum sanften Kurven oder zum Ausbalancieren anderer Bewegungen des Flugzeugs benutzt.[NL][NL]In vielen Flugzeugen ist das Seitenleitwerk nicht aus dem Cockpit sichtbar. Für diesen Lehrgang haben wir eine Ausnahme gemacht.[NL][NL]Benutze {rudder.3.4.7.4} um zu sehen, ob sich die Seitenruder bewegen.
+	3.4.alert.camera = 120,10,60
 	3.4.complete = OK.
 	
 	3.5.label = Höhenruder
@@ -69,10 +69,7 @@
 
 5.0.label = Instrumentenansicht
 	5.1.label = Höhe und Geschwindigkeit
-// this line causes a crash for some reason
-// checked but couldn&#39;t find any non word characters, maybe it is the Umlaut in the label? --rote7
-// Beim Fliegen ist es wichtig, immer genau über Deine momentane Lage Bescheid zu wissen. Besonders wichtig sind Höhe und Geschwindigkeit.[NL][NL]Mit {instrumentview} wird in die Instrumentenansicht umgeschaltet.
-	5.1.alert = Mit {instrumentview} wird in die Instrumentenansicht umgeschaltet.
+	5.1.alert = Beim Fliegen ist es wichtig, immer genau über Deine momentane Lage Bescheid zu wissen. Besonders wichtig sind Höhe und Geschwindigkeit.[NL][NL]Mit {instrumentview} wird in die Instrumentenansicht umgeschaltet.
 	
 	5.2.label = Geschwindigkeitsanzeige
 	5.2.alert.modal = Finde die Geschwindigkeitsanzeige Deines Flugzeuges. Abhängig vom Typ des Flugzeuges ist diese Anzeige mit mph (Britisch) oder km/h (Frankreich und Deutschland) beschriftet.
@@ -119,11 +116,9 @@
 	
 	7.5.label = Motor ausschalten
 	7.5.alert.modal = Schalte den Motor mit {engstart} aus. Halte die Bremsen, bis sich der Propeller nicht mehr bewegt.   
-	7.5.complete.modal = Exzellent! Du bist jetzt zum Start bereit.[NL][NL]Wenn Du möchtest, kannst Du versuchen abzuheben.  Stelle sicher, daß für den Start die maximale Motordrehzahl eingestellt ist. Drücke dazu zweimal {enginerpm} und stelle vorsichtig vollen Schub ein.[NL][NL]Vergiß nicht, die Kabinenhaube zu schließen {canopycontrol}.[NL][NL]Wenn Du in der Luft bist, fahre die Klappen und das Fahrwerk ein {gearhandle}.</body>
+	7.5.complete.modal = Exzellent! Du bist jetzt zum Start bereit.[NL][NL]Wenn Du möchtest, kannst Du versuchen abzuheben.  Stelle sicher, daß für den Start die maximale Motordrehzahl eingestellt ist. Drücke dazu zweimal {enginerpm}.[NL][NL]Vergiß nicht, die Kabinenhaube zu schließen {canopycontrol}.[NL][NL]Wenn Du in der Luft bist, fahre die Klappen und das Fahrwerk ein.</body>
   <branch>2</branch>
-  <brief>Erlerne die Grundlagen der Bedienung eines Jägers.
-
-In einigen Flugzeugen sind die Instrumente bei niedrigen Auflösungen schlecht zu erkennen. Wenn die Instrumente nicht gut ablesbar sind, erhöhe bitte Deine Bildschirmauflösung.</brief>
+  <brief>Erlerne die Grundlagen der Bedienung eines Jägers.</brief>
   <handler>fighter.basic</handler>
   <instance>2</instance>
   <requires>basic</requires>

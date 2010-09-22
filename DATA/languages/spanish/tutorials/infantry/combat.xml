@@ -7,7 +7,7 @@ dead = Has sido derrotado por el enemigo. ¡Salga de nuevo e inténtelo!
 1.0.label = Entrenamiento en Combate de Infantería
 
      1.1.label = Introducción
-     1.1.alert.modal = Este área está abierta para entrenamiento con fuego real.  Trabaje en equipo con sus compañeros de equipo para derrotar al enemigo.[NL][NL]El objetivo es un grupo de casas de campo destruidas a medio camino entre los puntos de salida nuestros y del enemigo.[NL][NL]¡Buena caza!</body>
+     1.1.alert.modal = Este área está abierta para entrenamiento con fuego real.  Trabaje en equipo con sus compañeros de equipo para derrotar al enemigo.[NL][NL]Este ejercicio permanecerá abierto durante 40 minutos o hasta que un sólo jugador permanezca vivo.[NL][NL]El objetivo es un grupo de casas de campo destruidas a medio camino entre los puntos de salida nuestros y del enemigo.[NL][NL]¡Buena caza!</body>
   <branch>1</branch>
   <brief>Practique el combate de infantería con otros jugadores.</brief>
   <checkstate>true</checkstate>
@@ -21,6 +21,7 @@ dead = Has sido derrotado por el enemigo. ¡Salga de nuevo e inténtelo!
   <instype>1</instype>
   <requires>infantry.lmg</requires>
   <title>Entrenamiento en Combate de Infantería</title>
+  <tom>40</tom>
   <ui>combat</ui>
   <ukspawners>212943.46,3101367.74,2.95,-2.16</ukspawners>
   <ukvehicles>ukrifle,uk-smg,ukgrenadier,uk-eng,uk-atr,uk-lmg,uk-sniper,uk-ltmortar</ukvehicles>

@@ -1,13 +1,10 @@
 <?xml version='1.0'?>
 <content type="5">
   <key>6</key>
-  <body>// MOVING to Remagen and Unkel
-
-
-// add directives here
-graduated = 恭喜，你成功的完成了步兵基本战斗训练任务！请按ESC键退出本任务，返回角色选择界面后，直接进入战场！
+  <body>// add directives here
+graduated = 恭喜，你成功的完成了步兵基本战斗训练任务！
 tom = 任务时间
-captures = 占领敌方基地
+captures = 接触敌方基地的电台
 damages = 击中玩家
 targetin = 你现在已经进入了目标区域！
 targetout = 你已经离开了目标区域！
@@ -18,78 +15,75 @@ bunker = 地堡
 1.0.label = 基本步兵战斗训练
 
 	1.1.label = 兵营出生
-	1.1.alert.modal = 欢迎开始你的第一次战斗训练。[NL][NL]警告！敌军的士兵也许已经出现。你当前的位置是基地的兵营里。兵营相对来说是比较安全的，敌人是不能进入这些建筑的高层，但是他们可以从窗口和其他地方向房间里射击，所以还是要小心一点。[NL][NL]在冒险出去之前，有几件事情，你必须首先了解。
+	1.1.alert.modal = 欢迎开始你的第一次战斗训练。[NL][NL]警告！敌军的士兵也许已经出现。你当前的位置是菲利普威欧基地的兵营里。兵营相对来说是比较安全的，敌人也许不会进入这些建筑的高层，但是他们可以从窗口和其他地方向房间里射击，所以还是要小心一点。[NL][NL]在冒险出去之前，有几件事情，你必须首先了解。
 	
 	1.2.label = 控制和占领
-	1.2.alert = 游戏中，通过占领城市可以达到占领领土的目的。而城市则是由各种设施构成的。[NL][NL]想要占领一个设施，你必须控制这个设施的占领室。这些“占领室”一般指的就是那些悬挂有旗帜的建筑或地堡。[NL][NL]现在，请按 {showingamemap}打开地图。
+	1.2.alert = 游戏中，通过占领城市来达到占领领土的目的。而城市则是由各种设施构成的。[NL][NL]想要占领一个设施，你必须控制这个设施的占领室。而控制占领室通常是通过占领“占领室”里的电台来体现的。这些“占领室”一般指的就是那些悬挂有旗帜的建筑或地堡。[NL][NL]现在，请按 {showingamemap}打开地图。
 	1.2.complete = 很好。
-	1.2.complete.position = 348213,3034640
+	1.2.complete.position = 217760,3011388
 	1.2.complete.scale = .20
-//	1.2.complete.selection = Remagen and Unkel
+	1.2.complete.selection = Philipville
 	
 	1.3.label = 地图
-	1.3.alert.modal = 现在地图上展示的是相邻的两座城市：瑞麻根和安克尔。[NL][NL] 它们都分别拥有多个设施和一个基地。
-	1.3.alert.position = 348213,3034640
+	1.3.alert.modal = 现在地图上展示的就是菲利普威欧的形势。[NL][NL] 菲利普威欧拥有10个设施，这包括两个基地。
+	1.3.alert.position = 217760,3011388
 	1.3.alert.scale = .20
-//	1.3.alert.selection = Remagen and Unkel
+	1.3.alert.selection = Philipville
 
-        1.3.alert1.modal = 地图上，位于南部的城市是瑞麻根，由联盟国占领。
-	1.3.alert1.scale = .1
-	1.3.alert1.position = 347787,3034409
-	1.3.alert1.selection = Remagen
+        1.3.alert1.modal = 菲利普威欧拥有两个基地。南部的基地由联盟国占领
+	1.3.alert1.scale = .06
+	1.3.alert1.position = 217487,3011070
+	1.3.alert1.selection = Philipville
 
-        1.3.alert2.modal = 地图上，位于北部的城市是安克尔，由红国占领。
-	1.3.alert2.scale = .1
-	1.3.alert2.position = 347975,3034884
-	1.3.alert2.selection = Unkel
+        1.3.alert2.modal = 北部的基地由十字国占领。
+	1.3.alert2.scale = .06
+	1.3.alert2.position = 217627,3011657
+	1.3.alert2.selection = Philipville
 
-	1.3.alert3.modal = 地图上，带有圆圈的箭头代表的就是你，箭头的方向代表你的朝向，你当前的位置离任务起点很近。[NL][NL]蓝色的导航点显示的是你的出生位置。
-	1.3.alert3.position = 348213,3034640
+	1.3.alert3.modal = 地图上，带有圆圈的箭头代表的就是你，箭头的方向代表你的朝向，你当前的位置离任务的起点很近。[NL][NL]蓝色的导航点显示的是你的出生位置。
+	1.3.alert3.position = 217760,3011388
 	1.3.alert3.scale = .20
-//	1.3.alert3.selection = Remagen and Unkel
+	1.3.alert3.selection = Philipville
 
 	1.3.alert4.modal =设施在地图上的显示，由旗帜和类型图标构成。旗帜表明当前谁拥有这个设施。[NL][NL]游戏中，每个设施都是由一组建筑构成的，包括这个设施的占领室。
 
-	1.3.alert5.modal = 蓝色的导航点显示的是“任务起点”。红色的导航点显示的是“任务目标”。[NL][NL]导航点只有任务指挥官才能放置。[NL][NL]地图上标记为“地堡”的导航点所在，就是你的基地的占领室的位置。
-         1.3.alert6 = 现在，使用鼠标右键点击地图上的红色三角（目标），选择“激活”，然后选择“任务目标”。
-	1.3.complete = 很好。当“任务目标”被激活之后，你的“迷你地图”上将会显示一个绿色的三角来指示“任务目标”的方向。
+	1.3.alert5.modal = 蓝色的导航点显示的是任务起点。红色的导航点显示的是任务目标。[NL][NL]导航点只有任务指挥官才能放置。[NL][NL]地图上标记为“地堡”的导航点所在，就是你的基地的占领室的位置。
+         1.3.alert6.modal = 现在，右击地图上的红色三角（目标），选择“激活”，然后选择“目标”。
+	1.3.complete = 很好。当目标被你激活之后，你的迷你地图上将会显示一个绿色的三角来指示“目标”的方向。
 	
 	1.4.label = 触敌报告
-	1.4.alert.modal = 现在，系统在红色导航点旁边设置了一个闪烁的“触敌报告”。[NL][NL]地图上，红色的导航点所在的位置就是敌军基地的占领室的位置。
-//	1.4.alert.selection = Remagen and Unkel
-//1.4.alert.selection = 
-	1.4.alert1.modal = 由玩家发布的“触敌报告”并不会存在很长时间，除非任务指挥官批准了这个报告。
-	1.4.alert2 = 现在你需要添加自己的“触敌报告”。请首先在当前的触敌报告的旁边点击鼠标右键，在弹出的菜单中选择“添加报告”。[NL][NL]然后，在弹出的窗口中选择合适的报告类型（在本次任务中，请选择敌军步兵），最后点击“确定”。
+	1.4.alert.modal = 现在，系统在红色导航点旁边设置了一个闪烁的触敌报告。[NL][NL]地图上，红色的导航点所在的位置就是敌军基地的占领室的位置。
+	1.4.alert.selection = Phillipville
+	1.4.alert1.modal = 由玩家发布的触敌报告并不会存在很长时间，除非任务指挥官批准了这个报告。
+	1.4.alert2 = 现在你需要添加自己的触敌报告。请首先在当前的触敌报告的旁边右击，在弹出的菜单中选择“添加报告”。[NL][NL]然后，在弹出的窗口中选择合适的报告类型（在本次任务中，请选择敌军步兵），最后点击确定。
 	1.4.complete = 很好。如果有必要，你还可以为“触敌报告”添加一定的说明文字，以便更好的警示其他玩家。
 	
 	1.5.label = 关闭地图
 	1.5.alert = 现在，请按 {showingamemap}关闭地图。
-//	1.5.alert.selection = Remagen and Unkel
-//1.5.alert.selection = 
+	1.5.alert.selection = Phillipville
 	
 	1.6.label = 聊天回顾
-	1.6.alert = 游戏中，与你的战友保持沟通是非常重要的。[NL][NL]现在，请按F1打开聊天框，然后在里面输入信息，向你的盟友们打声招呼，让他们知道你在这里。
+	1.6.alert = 游戏中，与你的战友保持沟通是非常重要的。[NL][NL]现在，请按F1打开聊天框，然后在里面输入信息，向你盟友们打声招呼，让他们知道你在这里。
 	1.6.complete.modal = 很好。除此之外，你还可以按（回车键）发送区域聊天信息，但是这样的操作一定要很谨慎，因为附近的敌军很可能也会收到这条信息。
 	
 	1.7.label = 前往地堡
 	1.7.alert = 当你准备好以后，请离开兵营，前往导航点所在的我方地堡。做好与敌人战斗的准备！记住，你可以使用各种掩体来躲避敌人的炮火。
 	1.7.complete = 棒极了！
 
-	1.8.label = 占领室
-	1.8.alert.modal = 要想占领一个设施，你必须进入它的占领室，然后待在那里直到占领完成为止。[NL][NL]当你进入占领室后，游戏的HUD将会提示您，还会显示一个占领进度条。在占领室里，你所在阵营的的友军越多，你们阵营占领该设施的速度也就越快。
-        1.8.alert.hilite = binfo,target
-	1.8.complete.modal = 很好。[NL][NL]占领是自动开始的。注意HUD的提示。[NL][NL]（在本次训练任务中，敌人的基地是不能占领的。）
-// Highlight box around HUD capture progress meter.  Here, not capturable because you&#39;re in your own bunker.
+	1.8.label = 占领电台
+	1.8.alert.modal = 要想占领一个设施，你必须进入它的占领室，紧挨着它的电台呆足30秒钟。[NL][NL]当你接触电台以后，将会激活一个弹出窗口，显示你当前的占领进度。
+	1.8.alert1 = 现在，找到电台的位置，然后靠近它来激发弹出窗口。[NL][NL]一定要小心敌人，他们随时可能进入这里。
+	1.8.complete.modal = 很好。在本次训练中，为了达到训练目的，基地是不能被占领的。  
 	
 	1.9.label = 开始战斗
-	1.9.alert.modal = 要想完成本次训练任务，你必须离开地堡完成下面任意分支任务：[NL][NL]— 在本场景中存活30分钟。[NL]— 击中敌军士兵3次。[NL]— 在敌人的基地的占领室存活1分钟。[NL][NL]现在，你可以向目标挺进了。最后，祝你好运，士兵！</body>
+	1.9.alert.modal = 要想完成本次训练任务，你必须离开地堡完成下面任意分支任务：[NL][NL]— 在本场景中存活30分钟。[NL]— 击中敌军士兵3次。[NL]— 接触敌人基地中的电台。[NL][NL]现在，你可以向目标挺进了。最后，祝你好运，士兵！</body>
   <branch>1</branch>
   <brief>在本次任务中，你将经历真正的战斗！</brief>
   <captures>1</captures>
   <damages>3</damages>
-  <despawners>347849.40,3034925.79,70.85,-2.56 347876.98,3034925.38,70.85.2.38</despawners>
+  <despawners>217470.53,3011643.53,234.95,-2.37 217460.25,3011670.69,234.95,-0.56</despawners>
   <devehicles>derifle</devehicles>
-  <frspawners>347417.68,3034440.53,70.85,2.35 347417.30,3034467.50,70.85,0.83</frspawners>
+  <frspawners>217276.85,3011030.80,234.95,-2.18 217304.68,3011030.50,234.95,2.44</frspawners>
   <frvehicles>frrifle</frvehicles>
   <handler>basic.combat</handler>
   <instance>3</instance>
@@ -98,6 +92,6 @@ bunker = 地堡
   <title>基本战斗训练任务</title>
   <tom>30</tom>
   <ui>combat</ui>
-  <ukspawners>347417.68,3034440.53,70.85,2.35 347417.30,3034467.50,70.85,0.83</ukspawners>
+  <ukspawners>217276.85,3011030.80,234.95,-2.18 217304.68,3011030.50,234.95,2.44</ukspawners>
   <ukvehicles>ukrifle</ukvehicles>
 </content>

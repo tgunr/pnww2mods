@@ -27,7 +27,7 @@ gunrange = Firing Range
 
 1.1.label = The Panzer 38(t)
 
-	1.1.alert.modal = This is the Panzer 38(t), one of the most common German tanks.  It has three playable crew positions: driver and commander/gunner.  Most tanks also have a loader modeled but that position can only look around within the turret.
+	1.1.alert.modal = This is the Panzer 38(t), the most common German tank.  It has three playable crew positions: driver and commander/gunner.  Most tanks also have a loader modeled but that position can only look around within the turret.
         1.1.alert.camera = 0,5,45,360,0,0,10
 	// pan around
 	
@@ -44,7 +44,7 @@ gunrange = Firing Range
 
 2.3.label = Engine Status
 	2.3.alert = Press {instrumentview} to view your instruments.
-	2.3.complete.modal = Here you can see various gauges depending on the tank.  Examples are: motor temperature, engine RPMs, and possibly other information like turret orientation.
+	2.3.complete.modal = Here you can see your speed and engine temperature.  Most other tanks display more information than does the Panzer 38(t).
 
 2.4.label = Gear Shifting
 	2.4.alert.modal = All ground vehicles begin play with their engines off and in neutral gear.[NL][NL]They all have 1 or more forward gears and a single reverse gear.
@@ -53,7 +53,7 @@ gunrange = Firing Range
 	2.4.complete.hilite = readout,target
 
 2.5.label = Start the Engine
-	2.5.alert = Press {gunsightview} to look back through your driver&#39;s view port.[NL][NL]Start the engine by pressing {engstart}.
+	2.5.alert = Press {gunsightview} to look back through your driver&#39;s view port.[NL][NL]Start the engine by pressing and holding {engstart} until the engine stays on.
 	2.5.complete = Excellent!
 
 2.6.label = Shift into First Gear
@@ -122,10 +122,10 @@ gunrange = Firing Range
 	4.4.alert = View your surroundings through the commander&#39;s binoculars.[NL][NL]Press {instrumentview} to bring up your binoculars. 
 	
 4.5.label = Look Around
-	4.5.alert = Take a moment to look North down the gun range at the dirt mounds with targets on them.
+	4.5.alert = Take a moment to look North down the gunrange at the dirt mounds with targets on them.
 	
 4.6.label = Button Up
-	4.6.alert = Press {instrumentview} to return to normal view.  Then press {canopycontrol} to close the commander&#39;s hatch.
+	4.6.alert = Press {canopycontrol} to close the commander&#39;s hatch.
 	
 5.0.label = The Gunner&#39;s View
 
@@ -171,15 +171,15 @@ gunrange = Firing Range
 	6.4.complete.hilite = primary,target
 
 6.5.label = Fire HE
-	6.5.alert = Fire a few of these rounds and notice how they behave differently from the armor piercing (AP) rounds in flight and in impact.[NL][NL]When you are ready to continue, switch to the hull gunner&#39;s position {positionfour}.
+	6.5.alert = Fire a few of these rounds and notice how they behave differently from the armor piercing (AP) rounds in flight and in impact.[NL][NL]When you are ready to continue, switch to the driver&#39;s position {positionone}.
 
-6.6.label = Hull Gunner
-6.6.alert = The Panzer 38(t) has a hull gunner position that controls a machine gun mounted on the front of the tank.[NL][NL]Press {gunsightview} to cycle through the gunsight views.
 
-6.7.label = Fire Hull Gun
-6.7.alert = Move the gun and change the gunsight range the same as you would the tank&#39;s main gun.[NL][NL]Press {primarytrigger.1} to fire the machine guns.
-6.8.label = Select Driver
-6.8.alert = Good.  This weapon can be effective at close range when you are facing soft targets in front of you.[NL][NL]Now switch to the driver&#39;s position {positionone}.
+// When enabling this, changein 6.5.alert last line to read:
+// &#34;When you are ready to continue, switch to the hull gunner&#39;s position {positionfour}.
+// 6.6.label = Hull Gunner
+// 6.6.alert = The Panzer 38(t) has a hull gunner position that controls a machine gun mounted on the front of the tank.[NL][NL]Press {gunsightview} to cycle through the gunsight views.
+// 6.6.alert1 = Move the gun and change the gunsight range the same as you would the tank&#39;s main gun.[NL][NL]Press {primarytrigger.1} to fire the machine guns.
+// 6.6.alert2 = Good.  This weapon can be effective at close range when you are facing soft targets in front of you.[NL][NL]Now switch to the driver&#39;s position {positionone}.
 
 7.0.label = Complete the Course
 

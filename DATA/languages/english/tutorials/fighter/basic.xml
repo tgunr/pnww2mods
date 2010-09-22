@@ -50,7 +50,7 @@
 	
 	3.4.label = Rudder
 	3.4.alert = Your rudder controls your yaw, which turns you gently when flying level, or allows you to balance other movement.[NL][NL]In most aircraft, you cannot see your tail surfaces, so we&#39;ll show you for the purposes of this tutorial.[NL][NL]Use {rudder.0.3.1.3} to verify that your rudder pedals respond (you may need to press the keys or move the axis a lot to see any movement).
-	3.4.alert.camera = 60,10,60
+	3.4.alert.camera = 120,10,60
 	3.4.complete = Good.
 	
 	3.5.label = Elevator
@@ -122,9 +122,7 @@
 	7.5.alert.modal = Well done![NL][NL]Stop the engine by pressing {engstart}. Keep the brakes pressed until engine stops completely.   
 	7.5.complete.modal = Excellent!  You are now prepared to take off.[NL][NL]You may attempt to take off now if you like.  Be sure to set your RPMs to Maximum by pressing {adjustpropup} twice to have the most power available.  Then gently increase the throttle to full.[NL][NL]Remember to close the cockpit with {canopycontrol}![NL][NL]And once you are airborne, raise your flaps and landing gear {gearhandle}.</body>
   <branch>2</branch>
-  <brief>Learn the basics of fighter aircraft controls.
-
-Note: some aircraft instrument gauges are difficult to read at lower screen resolutions.  If you cannot read them, please increase your resolution.</brief>
+  <brief>Learn the basics of operating an fighter.</brief>
   <handler>fighter.basic</handler>
   <instance>2</instance>
   <requires>basic</requires>

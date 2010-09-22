@@ -1,22 +1,12 @@
 <?xml version='1.0'?>
 <content type="3">
-  <body>Des icônes sont affichées A dessus des joueurs amis au sol, elles sont bleues (ou vertes si c&#39;est des nouveaux joueurs ). Elle peuvent aussi montrer tout un tas  d&#39;informations. (vous pouvez changer les codes de couleurs utilisés dans le menue de configuration du jeu)
-
-Les icônes des unités amies affichent le pseudo du joueur ainsi que son squad. On peut aussi voir le leader de mission ou si il est membre du haut commandement [M] ou [c]. On peut aussi visualiser le type d&#39;unité au-dessus des forces aériennes ,terrestres ou maritime.
+  <body>Des icônes sont affichées A dessus des joueurs amis au sol, elles sont bleues (ou vertes si c&#39;est des nouveaux joueurs ). Elle peuvent aussi montrer tout un tas  d&#39;informations. (vous pouvez changer les codes de couleurs utilisés dans le menue réglage du jeu)
 
 Les avions amis ou ennemis affichent des icônes en forme de cercle autour, gris à longue distance. Plus proche le cercle devient de couleur, bleu ami ou rouge ennemi par défaut. Les unités ennemies au sol comme les troupes, les blindés, les camions, les canons et les navires n&#39;affichent PAS d&#39;icône, quelquesoit le réglage. Vous devez repérer et identifier les unités ennemies visuellement et sans aide.
-
-En utilisant [LEFT-CONTROL + I] successivement vous basculer selon les différents types d&#39;affichage souhaité, NORMAL, TYPE DE VEHICULE, PAS D ICÔNE. ( vous pouvez utiliser le menu de configuration des touches pour modifier cette configuration). Vous pouvez supprimer toutes les icônes en cas de combat intense pour un meilleure visibilité.
+Les icônes pour les unités/joueurs amis affichent le nom du joueur, le nom de leur squad, un symble s&#39;il est le leader de la mission (M) ou membre du HC (C), le type de véhicule, de fantassin ou d&#39;avion peuvent être montrés selon vos réglages
+En utilisant [LEFT-CONTROL + I] successivement vous basculer selon les différents types d&#39;affichage souhaité, NORMAL, TYPE DE VEHICULE, PAS D ICONE. ( vous pouvez utiliser le menu de configuration des touches pour modifier cette configuration). Vous pouvez supprimer toutes les icônes en cas de combat intense pour un meilleure visibilité.
 Un joueur ami demandant des munitions aura son icône clignotante, si vous avez le nécessaire ( camion ou certain type de fantassin) vous pouvez lui en donner selon si vous avez le bon type de munitions.
 
- Pour les avions le cercle gris de loin sera plus moins fermé selon la distance. 
-6000+ m =  Cercle plein
-3400 m = 3/4 de Cercle
-1500 m = 1/2 Cercle
-1499 m = Changement de couleur (Rouge = Ennemi, Bleu = Ami)
-499 m = Nom de squad ami visible
-400 m = 1/4 Cercle 
-
-A des distances à partir desquelles un pilote correct serait capable de reconnaître l&#39;avion, le type de l&#39;avion s&#39;affiche avec la couleur indiquant s&#39;il s&#39;agit d&#39;un avion ami ou ennemi (rouge, par défaut). Si l&#39;avion est ami, alors l&#39;icône indique le nom du pilote. Bien juger son adversaire et ne pas le quitter des yeux fera bien souvent la différence entre la vis et la mort.</body>
+ Pour les avions le cercle gris de loin sera plus moins fermé selon la distance.  Le cercle complet correspond à un avion distant de 4 km. Un avion à 1 km affiche un cercle à moitié dessiné et un avion à 250 m, un quart de cercle. A des distances à partir desquelles un pilote correct serait capable de reconnaître l&#39;avion, le type de l&#39;avion s&#39;affiche avec la couleur indiquant s&#39;il s&#39;agit d&#39;un avion ami ou ennemi (rouge, par défaut). Si l&#39;avion est ami, alors l&#39;icône indique le nom du pilote. Bien juger son adversaire et ne pas le quitter des yeux fera bien souvent la différence entre la vis et la mort.</body>
   <title>Manuel des icônes</title>
 </content>

@@ -27,7 +27,7 @@ gunrange = Firing Range
 
 1.1.label = The Hotchkiss H-39
 
-	1.1.alert.modal = This is the Hotchkiss H-39, one of the most common French tanks.  It has three playable crew positions: driver, commander and gunner.
+	1.1.alert.modal = This is the Hotchkiss H-39, the most common French tank.  It has three playable crew positions: driver, commander and gunner.
         1.1.alert.camera = 0,5,45,360,0,0,10
 	// pan around
 	
@@ -44,7 +44,7 @@ gunrange = Firing Range
 
 2.3.label = Engine Status
 	2.3.alert = Press {instrumentview} to view your instruments.
-	2.3.complete.modal = Here you can see various gauges depending on the tank.  Examples are: motor temperature, engine RPMs, and possibly other information like turret orientation.
+	2.3.complete.modal = Here you can see your engine RPMs, motor temperature, turret orientation and other information.
 
 2.4.label = What gear am I in?
 	2.4.alert.modal = When you spawn in any ground vehicle, it starts with its engine off and in neutral.[NL][NL]Each ground vehicle has 1 or more forward gears and a single reverse gear.
@@ -53,14 +53,14 @@ gunrange = Firing Range
 	2.4.complete.hilite = readout,target
 
 2.5.label = Start the Engine
-	2.5.alert = Hit {gunsightview} to look back through your driver&#39;s vision slit.[NL][NL]Start the engine by pressing {engstart}.
+	2.5.alert = Hit {gunsightview} to look back through your driver&#39;s vision slit.[NL][NL]Start the engine by pressing and holding {engstart} until the engine stays on.
 	2.5.complete = Excellent!
 
 2.6.label = Shift into 1st gear
 	2.6.alert = Lower gears have more power and are useful for starting off or climbing slopes. Higher gears let you go faster but don&#39;t have much power so use them as you build speed on roads.[NL][NL]{shiftdown} and {shiftup} control the vehicles gear.[NL][NL]Press {shiftup} to enter first gear.
 	2.6.alert.hilite = readout,target
 
-3.0.label = Drive to Gun Range
+3.0.label = Drive to Gunrange
 
 3.1.label = Movement Controls
 	3.1.alert.modal = Once your tank is in gear, you can use {gas.10.4} to move forward or backward, depending on if the tank is in reverse or a forward gear.
@@ -121,7 +121,7 @@ gunrange = Firing Range
 	4.4.alert = With the vision slit open, you can see even further by bringing up the Commander&#39;s binoculars.[NL][NL]Hit {gunsightview} to bring up your binoculars. 
 	
 4.5.label = Look Around
-	4.5.alert = You can also traverse and elevate the cupola with {turretraverse} and {turretelevate}[NL][NL]Take a moment to look NORTH down the gun range at the dirt mounds with targets on them.
+	4.5.alert = You can also traverse and elevate the cupola with {turretraverse} and {turretelevate}[NL][NL]Take a moment to look NORTH down the gunrange at the dirt mounds with targets on them.
 	4.5.complete.modal = The cupola can be rotated 360 degrees around your tank, but it is facing is dependent on the facing of the tank&#39;s turret. 
 	
 5.0.label = The Gunner

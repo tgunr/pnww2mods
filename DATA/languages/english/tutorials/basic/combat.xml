@@ -1,13 +1,10 @@
 <?xml version='1.0'?>
 <content type="5">
   <key>6</key>
-  <body>// MOVING to Remagen and Unkel
-
-
-// add directives here
+  <body>// add directives here
 graduated = You have graduated from the Basic Combat Tutorial.
 tom = Time On Mission
-captures = Facility Captures
+captures = Table Bumps
 damages = Players Damaged
 targetin = You are now in the target area!
 targetout = You have left the target area!
@@ -18,57 +15,52 @@ bunker = Bunker
 1.0.label = Basic Infantry Combat
 
 	1.1.label = Barrack Spawning
-	1.1.alert.modal = Welcome to your first combat training.[NL][NL]Warning! Enemy soldiers may be present!  You are in the barracks building of an armybase.  Barracks are relatively safe, the enemy may not enter the upper levels of these buildings but he can shoot through windows and openings so be careful.[NL][NL]Before venturing out, there are a few things you need to know.
+	1.1.alert.modal = Welcome to your first combat training.[NL][NL]Warning! Enemy soldiers may be present.  This is the barracks of one of the Philipville armybases.  Barracks are relatively safe, the enemy may not enter the upper levels of these buildings but he can shoot through windows and openings so be careful.[NL][NL]Before venturing out, there are a few things you need to know.
 	
 	1.2.label = Control and Capture
-	1.2.alert = Territory is controlled by owning cities.  Cities are made up of facilities.[NL][NL]To capture a facility, you must secure its Flag Building.  This is usually an office or small bunker with a flag outside denoting the current ownership.[NL][NL]Press {showingamemap} to open your map.
+	1.2.alert = Territory is controlled by owning cities.  Cities are made up of facilities.[NL][NL]To capture a facility, you must secure its control room.  This is represented by a radio in a &#34;Capture Building&#34;, usually an office or small bunker with a flag outside denoting the current ownership.[NL][NL]Press {showingamemap} to open your map.
 	1.2.complete = Good.
-	1.2.complete.position = 348213,3034640
+	1.2.complete.position = 217760,3011388
 	1.2.complete.scale = .20
-//	1.2.complete.selection = Remagen and Unkel
+	1.2.complete.selection = Philipville
 	
 	1.3.label = The Map
-	1.3.alert.modal = These are the neighboring towns of Remagen and Unkel.[NL][NL]Each town has several facilities and an armybase.
-	1.3.alert.position = 348213,3034640
+	1.3.alert.modal = This is the town of Philipville.[NL][NL]Philipville has 10 facilities including two armybases.
+	1.3.alert.position = 217760,3011388
 	1.3.alert.scale = .20
-//	1.3.alert.selection = Remagen and Unkel
+	1.3.alert.selection = Philipville
 
-	1.3.alert1.modal = The southern town is Remagen and is owned by the Allies.
-	1.3.alert1.scale = .1
-	1.3.alert1.position = 347787,3034409
-	1.3.alert1.selection = Remagen
+        1.3.alert1.modal = Philipville has two armybases. The southern one is owned by the allies.
+	1.3.alert1.scale = .06
+	1.3.alert1.position = 217487,3011070
+	1.3.alert1.selection = Philipville
 
-        1.3.alert2.modal = The northern town is Unkel and is owned by the Axis.
-	1.3.alert2.scale = .1
-	1.3.alert2.position = 347975,3034884
-	1.3.alert2.selection = Unkel
+        1.3.alert2.modal = The northern one is owned by the axis.
+	1.3.alert2.scale = .06
+	1.3.alert2.position = 217627,3011657
+	1.3.alert2.selection = Philipville
 
 	1.3.alert3.modal = You are represented by the circle arrow and are near the origin waypoint.[NL][NL]The origin waypoint indicates where you spawned from.
-	1.3.alert3.position = 348213,3034640
+	1.3.alert3.position = 217760,3011388
 	1.3.alert3.scale = .20
-//	1.3.alert3.selection = Remagen and Unkel
+	1.3.alert3.selection = Philipville
 
 	1.3.alert4.modal = Each facility is marked on the map with a flag and type icon. The flag indicates who owns the facility.[NL][NL]Each facility in the game world is made up of a group of buildings including its capture building.
 
-	1.3.alert5.modal = Blue waypoints indicate informational positions on the map. Red waypoints indicate mission targets.[NL][NL]Waypoints can only be placed by mission leaders.[NL][NL]One is marked &#34;bunker&#34;. This is your armybase&#39;s &#34;flag building&#34;.
-        1.3.alert6 = Right click the target and select Activate, then Target.
+	1.3.alert5.modal = Blue waypoints indicate informational positions on the map. Red waypoints indicate mission targets.[NL][NL]Waypoints can only be placed by mission leaders.[NL][NL]One is marked &#34;bunker&#34;. This is your armybase&#39;s &#34;capture building&#34;.
+        1.3.alert6.modal = Right click the target and select Activate, then Target.
 	1.3.complete = Good.  The activated target is now highlighted on your mini-map with a green arrow that indicates its direction.
 	
 	1.4.label = Contact Reports
-	1.4.alert.modal = A blinking enemy contact report has been placed near the red triangle target waypoint.[NL][NL]The red triangle target waypoint indicates the location of the enemy&#39;s armybase flag building.
-//	1.4.alert.selection = Remagen and Unkel
-
-//1.4.alert.selection = 
-
+	1.4.alert.modal = A blinking enemy contact report has been placed near the red triangle target waypoint.[NL][NL]The red triangle target waypoint indicates the location of the enemy&#39;s capture building.
+	1.4.alert.selection = Phillipville
 	1.4.alert1.modal = Contact reports are placed by players but do not remain unless they are approved by the mission leader.
 	1.4.alert2 = Make your own contact report by right clicking the map near the current enemy report and selecting Add Report.[NL][NL]Check the appropriate report type (Enemy Infantry in this case) and then press OK.
 	1.4.complete = Good. You can also add relevant notes in the contact report text window when appropriate.
 	
 	1.5.label = Close The Map
 	1.5.alert = Press {showingamemap} to close your map.
-//	1.5.alert.selection = Remagen and Unkel
-
-//1.5.alert.selection = 
+	1.5.alert.selection = Phillipville
 	
 	1.6.label = Chat Review
 	1.6.alert = It is very important to communicate with allies.[NL][NL]Press F1 to open the chat bar and type a greeting to your allies so they know you are here.
@@ -78,24 +70,20 @@ bunker = Bunker
 	1.7.alert = When you are ready, exit the barracks building and sprint to the bunker waypoint!  Be prepared to encounter the enemy!  Remember to use cover to protect yourself from enemy fire.
 	1.7.complete = Excellent!
 
-	1.8.label = Flag Buildings
-	1.8.alert.modal = To capture a facility, you must enter its flag building and remain there until the capture is complete.[NL][NL]The HUD element will notify you when you are in the correct location and show a progress meter.  The more teammates you have with you in the flag building, the faster you will capture the facility
-        1.8.alert.hilite = binfo,target
-	1.8.complete.modal = Good.[NL][NL]Capturing begins automatically.  Notice the HUD elemement[NL][NL](For the purposes of this training exercise, armybases cannot be captured).
-
-// Highlight box around HUD capture progress meter.  Here, not capturable because you&#39;re in your own bunker.
-
-	1.9.label = Begin Combat
-	1.9.alert.modal = To complete this training exercise, you must leave this bunker and either:[NL][NL] - Survive for 30 minutes, or[NL] - Score 3 Hits upon enemy soldiers, or[NL] - Capture the enemy bunker for one minute.[NL][NL]Now move out!
+	1.8.label = Capture Radios
+	1.8.alert.modal = To capture a facility, you must enter its control room and stand next to the radio for 30 seconds, which is sometimes referred to as &#34;bumping the table.&#34;[NL][NL]A pop-up alert will notify you when you are in the correct location and show you a progress meter.
+	1.8.alert1 = Locate the radio in the bunker and stand next to it to trigger the progress meter.[NL][NL]Be alert for the enemy who may enter at any time.
+	1.8.complete.modal = Good.  For the purposes of this training exercise, armybases may not be captured.
 	
-// Ideally, fake 1 minute capture bar.</body>
+	1.9.label = Begin Combat
+	1.9.alert.modal = To complete this training exercise, you must leave the bunker and either:[NL][NL] - Survive for 30 minutes. or[NL] - Score 3 Hits upon enemy soldiers, or[NL] - Bump the enemy radio table.[NL][NL]Now move out!</body>
   <branch>1</branch>
   <brief>Experience combat in a controlled environment.</brief>
   <captures>1</captures>
   <damages>3</damages>
-  <despawners>347849.40,3034925.79,70.85,-2.56 347876.98,3034925.38,70.85.2.38</despawners>
+  <despawners>217470.53,3011643.53,234.95,-2.37 217460.25,3011670.69,234.95,-0.56</despawners>
   <devehicles>derifle</devehicles>
-  <frspawners>347417.68,3034440.53,70.85,2.35 347417.30,3034467.50,70.85,0.83</frspawners>
+  <frspawners>217276.85,3011030.80,234.95,-2.18 217304.68,3011030.50,234.95,2.44</frspawners>
   <frvehicles>frrifle</frvehicles>
   <handler>basic.combat</handler>
   <instance>3</instance>
@@ -104,6 +92,6 @@ bunker = Bunker
   <title>Basic Combat Training</title>
   <tom>30</tom>
   <ui>combat</ui>
-  <ukspawners>347417.68,3034440.53,70.85,2.35 347417.30,3034467.50,70.85,0.83</ukspawners>
+  <ukspawners>217276.85,3011030.80,234.95,-2.18 217304.68,3011030.50,234.95,2.44</ukspawners>
   <ukvehicles>ukrifle</ukvehicles>
 </content>
