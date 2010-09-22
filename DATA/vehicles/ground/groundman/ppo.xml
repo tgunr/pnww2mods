@@ -12,7 +12,7 @@
 		<param name="avoidflags" value="5,6,7,9,10,11"/>
 		<param name="surfaceflags" value="0,3"/>
 		<param name="allowinterior" value="false"/>
-		<param name="treecheck" value="false"/>
+		<param name="treecheck" value="0"/>
 		<param name="maxspeed" value=".1"/>
 		<param name="enemyfacdist" value="0"/>
 		<param name="friendlyfacdist" value="0"/>
@@ -21,7 +21,7 @@
 	</defaults>
 	<!-- ppos definitions start here; ppos get an id starting at 1 and counting up in the order listed here -->
 	<ppo>
-		<param name="modelname" value="ppo_ifp_002"/>
+		<param name="modelname" value="ppo_ifp_001"/>
 		<param name="rayadjust" value="1,1,-.5"/>
 		<param name="raytolerance" value="10"/>
 		<param name="tilttolerance" value="40"/>
@@ -42,6 +42,7 @@
 		<param name="cooldown" value="60000"/>
 		<param name="buildtime" value="30000"/>
 	</ppo>
+	<!-- troop irp (slightly different paremeters than truck) -->
 	<ppo>
 		<param name="modelname" value="msp"/>
 		<param name="rayadjust" value=".75,1.5,0"/>
@@ -49,7 +50,17 @@
 		<param name="viewoffset" value="6"/>
 		<param name="enemyfacdist" value="400"/>
 		<param name="targetdist" value="-1350"/>
-		<param name="treecheck" value="true"/>
+		<param name="treecheck" value="5"/>
+	</ppo>
+	<!-- truck irp (slightly different paremeters than truck) -->
+	<ppo>
+		<param name="modelname" value="msp"/>
+		<param name="rayadjust" value=".75,1.5,0"/>
+		<param name="rotation" value="90"/>
+		<param name="viewoffset" value="12"/>
+		<param name="enemyfacdist" value="400"/>
+		<param name="targetdist" value="-1350"/>
+		<param name="treecheck" value="5"/>
 	</ppo>
 	<ppo>
 		<param name="modelname" value="ppo_ifp_001"/>
