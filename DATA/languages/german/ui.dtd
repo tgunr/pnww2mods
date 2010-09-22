@@ -169,7 +169,7 @@
 <!ENTITY loc.ui.102 "W&#228;hle ein Fahrzeug oder trete einer Besatzung bei">
 <!ENTITY loc.ui.8 "SPIELERLISTE">
 <!ENTITY loc.ui.286 "Zugriff verweigert: Der Host wurde durch den GM gesperrt!">
-<!ENTITY loc.ui.83 "Derzeitige Punkte">
+<!ENTITY loc.ui.83 "Punkte">
 <!ENTITY loc.ui.152 "MISSIONS-ERGEBNISSE">
 <!ENTITY loc.ui.11102 "signalisiert HALT!">
 <!ENTITY loc.ui.11004 "ergibt sich">
@@ -435,7 +435,7 @@
 <!ENTITY loc.english.331 "Maus x-Achse">
 <!ENTITY loc.english.27 "Gebl&#228;se auf Neutral.">
 <!ENTITY loc.english.847 "Gefechtsnotreserve AUS">
-<!ENTITY loc.english.838 "Entfernungsmesser gibt Enfernung mit etwa &#37;d Metern an">
+<!ENTITY loc.english.838 "Entfernungsmesser gibt Enfernung mit etwa &#37;d Metern an (&#37;d yards)">
 <!ENTITY loc.english.338 "F&#252;r Tastatur festlegen">
 <!ENTITY loc.english.405 "h">
 <!ENTITY loc.english.511 "Joystick 1 Coolie Hat 3 NW">
@@ -1247,7 +1247,7 @@
 <!ENTITY loc.host.81 "Schaltet den Empfang von HQ-Nachrichten ab.">
 <!ENTITY loc.host.603 "Auto-Reparatur an {1}.">
 <!ENTITY loc.host.329 "Keine Hafenanlagen von denen gestartet werden kann in {1}.">
-<!ENTITY loc.host.252 "Derzeit keine Befehle f&#252;r diese Mission.">
+<!ENTITY loc.host.252 "Im Moment gibt es keine Befehle f&#252;r diese Mission.">
 <!ENTITY loc.host.521 "/gridsnapshot <on | off | full>">
 <!ENTITY loc.host.337 "Du bist ab jetzt der Anf&#252;hrer dieser Mission! Tipp: Benutze das &#34;/autoleader off&#34;-Kommando, um nicht automatisch die F&#252;hrung von Missionen zu erhalten.">
 <!ENTITY loc.host.447 "Keine Einnahmen gefunden">
@@ -1292,7 +1292,7 @@
 <!ENTITY loc.host.221 "Mission-Kanal nicht verf&#252;gbar: Keine Mission gew&#228;hlt.">
 <!ENTITY loc.host.570 "Elvis ist rausgegangen. Imitatoren aller Laender, vereinigt Euch!">
 <!ENTITY loc.host.576 "Kill credit an {1} bekommen!">
-<!ENTITY loc.host.301 "Dein Squad f&#252;hrt derzeit keine Wahl zum Kommandierenden Offizier durch.">
+<!ENTITY loc.host.301 "Dein Squad f&#252;hrt aktuell keine Wahl zum Kommandierenden Offizier durch.">
 <!ENTITY loc.host.73 "Listet alle im HC-Kanal eingeloggten HC-Offiziere.">
 <!ENTITY loc.host.562 "Added: {1}">
 <!ENTITY loc.host.645 "{1} kann nicht repariert werden: Kein Verteidigungsbefehl.">
@@ -1331,7 +1331,7 @@
 <!ENTITY loc.host.255 "Verbindung zum Host wiederhergestellt.">
 <!ENTITY loc.host.387 "Du bist jetzt drei Stunden im Spiel. Bitte logge Dich aus und geh an die frsiche Luft oder mache etwas Sport.">
 <!ENTITY loc.host.311 "{1} ist bereits in {2} stationiert.">
-<!ENTITY loc.host.244 "&#34;.home&#34; gibt den derzeitigen Brigade-Ort bekannt. Brigade Leader k&#246;nnen mit &#34;.home move&#34; den Brigade-Ort &#228;ndern.">
+<!ENTITY loc.host.244 "&#34;.home&#34; gibt den aktuellen Brigade-Ort bekannt. Brigade Leader k&#246;nnen mit &#34;.home move&#34; den Brigade-Ort &#228;ndern.">
 <!ENTITY loc.host.9 "Spieler &#34;{1}&#34; ist nicht verf&#252;gbar.">
 <!ENTITY loc.host.546 "/checkstos">
 <!ENTITY loc.host.421 "F&#252;r diese Kommando gibt es zur Zeit noch keine Hilfe.">
@@ -1341,10 +1341,10 @@
 <!ENTITY loc.host.270 "*{1} hat {2} zum CO bef&#246;rdert.">
 <!ENTITY loc.host.65 "Ohne Parameter: listet alle eingeloggten GMs. Mit Parameter: sendet eine Nachricht an den GM-Kanal.">
 <!ENTITY loc.host.522 "Enables or disables chat-grid snapshot recording (for debugging purposes only). Only to be used when instructed to by CRS staff members.">
-<!ENTITY loc.host.182 "Listet derzeitige Kampfziele f&#252;r Deine Seite auf.">
+<!ENTITY loc.host.182 "Listet aktuelle Kampfziele f&#252;r Deine Seite auf.">
 <!ENTITY loc.host.449 "/lastdeath <Spieler>">
 <!ENTITY loc.host.85 "Wenn der Spieler in die Spielwelt eingestiegen ist, wird er gezwungen das Spiel zu beenden. Nachricht ist optional. Wird protokolliert.">
-<!ENTITY loc.host.33 "Du hast {1} unehrenhaft rausgeworfen.">
+<!ENTITY loc.host.33 "Du hast {1} unehrenhaft entlassen.">
 <!ENTITY loc.host.306 "Wahlen wurden vom Kommandierenden Offizier ausgeschaltet.">
 <!ENTITY loc.host.45 "Keine &#252;bereinstimmungen.">
 <!ENTITY loc.host.236 "{1}: Verteidigen - Halten um jeden Preis!">
@@ -1402,12 +1402,12 @@
 <!ENTITY loc.host.542 "{1} joules to Server Tracked Object ignored due tool object&#39;s {2} joules threshold.">
 <!ENTITY loc.host.623 "ERROR">
 <!ENTITY loc.host.481 "Use &#39;/{1} off&#39; first to end your current snoop on &#39;{2}&#39;.">
-<!ENTITY loc.host.258 "Listet Mitglieder des Trainingsprogramms auf, die derzeit online sind.">
+<!ENTITY loc.host.258 "Listet Mitglieder des Trainingsprogramms auf, die online sind.">
 <!ENTITY loc.host.544 "Ignoring damage to hulk: it&#39;s already dead.">
 <!ENTITY loc.host.289 "Spieler {1} ist nicht in Deinem Squad.">
 <!ENTITY loc.host.145 "M&#252;ssen {1} besitzen und halten, um {2} ausf&#252;hren zu k&#246;nnen.">
 <!ENTITY loc.host.218 "Offline: {1}">
-<!ENTITY loc.host.216 "Deine Freundeliste ist derzeit leer.">
+<!ENTITY loc.host.216 "Deine Freundeliste ist leer.">
 <!ENTITY loc.host.519 "RDP (Forschung, Entwicklung und Produktion) werden generiert, /{1} zwecklos.">
 <!ENTITY loc.host.417 "/buzzardspawn <Spieler><Grund>">
 <!ENTITY loc.host.168 "{1} wird nicht vom Feind gehalten.">
@@ -1466,7 +1466,7 @@
 <!ENTITY loc.host.617 "{1} <cp name | &#34;all&#34;>">
 <!ENTITY loc.host.125 "Mit Stadt: Zeigt den Angriffsbasis-Status f&#252;r eine bestimmte Stadt an. Ohne Stadt: Zeigt den Angriffsbasis-Status f&#252;r die n&#228;chstgelegene Stadt an.">
 <!ENTITY loc.host.397 "DIe Bewegung wird von einer feindlichen FB blockiert.">
-<!ENTITY loc.host.347 "&#39;{1}&#39; zu Deine Freundesliste hinzugef&#252;gt.">
+<!ENTITY loc.host.347 "&#39;{1}&#39; wurde zu Deiner Freundesliste hinzugef&#252;gt.">
 <!ENTITY loc.host.499 "/dumpresupply [<brigade>]">
 <!ENTITY loc.host.593 "Grid snapshots enabled on FULL.">
 <!ENTITY loc.host.176 ".nowho">
@@ -1501,7 +1501,7 @@
 <!ENTITY loc.host.177 "Schaltet Deine Sichtbarkeit f&#252;r .who an oder aus.">
 <!ENTITY loc.host.560 "Opening the spam can: {1} repetitions, {2} between repetitions.">
 <!ENTITY loc.host.426 "&#39;{1}&#39; is not a valid /um setting.">
-<!ENTITY loc.host.234 "Br&#252;cke ist derzeit zerst&#246;rt.">
+<!ENTITY loc.host.234 "Br&#252;cke ist zerst&#246;rt.">
 <!ENTITY loc.host.423 "Trainer: {1}.">
 <!ENTITY loc.host.31 "GM Modus deaktiviert.">
 <!ENTITY loc.host.52 "BEFEHL">
@@ -1514,7 +1514,7 @@
 <!ENTITY loc.host.114 ".cpinfo [<Stadt>]">
 <!ENTITY loc.host.250 "Eine Mission muss ausgew&#228;hlt sein um diesen Befehl zu benutzen.">
 <!ENTITY loc.host.431 "Verweigert den Zugriff auf das Spiel f&#252;r einen Zeitraum. Der Spieler kommt nicht &#252;ber die Persona Auswahl hinaus. <Dauer> steht f&#252;r Tage, kann aber auch als &#34;1d&#34;, &#34;2h&#34; oder &#34;15m&#34; angegeben werden. **NOTIZ** Trennt NICHT die Verbindung -- siehe /kickban.">
-<!ENTITY loc.host.348 "&#39;{1}&#39; von Deiner Freundesliste entfernt.">
+<!ENTITY loc.host.348 "&#39;{1}&#39; wurde von Deiner Freundesliste entfernt.">
 <!ENTITY loc.host.474 "/shutdown time must be between {1} minutes and {2} hours.">
 <!ENTITY loc.host.550 "/liststos">
 <!ENTITY loc.host.457 "Der jetzige CO von &#39;{1}&#39; ist online: {2}. Squad CO kann nicht abgesetzt werden.">
@@ -1599,7 +1599,7 @@
 <!ENTITY loc.host.2 "SYSTEM">
 <!ENTITY loc.host.98 ".sys <Nachricht>">
 <!ENTITY loc.host.112 ".cpdump [Detail] [<Stadt>]">
-<!ENTITY loc.host.319 "Der Spieler &#39;{1}&#39; nimmt derzeit nicht an der Mission teil.">
+<!ENTITY loc.host.319 "Der Spieler &#39;{1}&#39; nimmt im Moment nicht an der Mission teil.">
 <!ENTITY loc.host.184 "Schaltet den Empfang von feindlichem Bereichs-Chat an/aus">
 <!ENTITY loc.host.567 "Killed by building {1} desctruction [by sortie {2}].">
 <!ENTITY loc.host.195 "Bereichs-Chat funktioniert nur w&#228;hrend des Spiels.">
@@ -1622,7 +1622,7 @@
 <!ENTITY loc.host.312 "*** Interner Fehler. Versuche es erneut. Falls das Problem weiterhin besteht, melde es bitte mittels /report.">
 <!ENTITY loc.host.497 "/arenalock < 0 - 15 | ? >">
 <!ENTITY loc.host.607 "*FORCED* ownership of {1} to {2}.">
-<!ENTITY loc.host.318 "Nur f&#252;r den derzeitigen Missionsanf&#252;hrer: &#220;bergibt die F&#252;hrung der derzeitigen Mission an den Spieler &#34;Rufname&#34;. Beide Spieler m&#252;ssen an der Mission teilnehmen.">
+<!ENTITY loc.host.318 "Nur f&#252;r den Missionsanf&#252;hrer: &#220;bergibt die F&#252;hrung der Mission an den Spieler &#34;Rufname&#34;. Beide Spieler m&#252;ssen an der Mission teilnehmen.">
 <!ENTITY loc.host.37 "{1}> {2}">
 <!ENTITY loc.host.641 "Radio channels for &#39;{1}&#39; have been retuned to the server defaults. Channels are saved on the game server.">
 <!ENTITY loc.host.555 "Manage/view/run the &#34;spam can&#34;. The spam can is a list of text messages to be periodically broadcast to the playerbase as SYSTEM messages. Use &#34;/spam&#34; on its own to view the current spam can and settings; use &#34;/spam +my message&#34; to add &#34;my message&#34; to the end of the can; use &#34;/spam start 5 3m&#34; to repeat the spam can 5 times with 3 minutes between each repeat&#34;; use &#34;/spam stop&#34; to stop (and clear) the current can.">
@@ -1643,14 +1643,14 @@
 <!ENTITY loc.host.512 "Aendert den Kurznamen des Souads. Es gelten die selben Regeln wie bei Spielernamen.">
 <!ENTITY loc.host.103 "Zeigt die System-M.O.T.D (&#34;Nachricht des Tages&#34;) an.">
 <!ENTITY loc.host.54 ".afk [<Nachricht>]">
-<!ENTITY loc.host.249 "&#34;.orders&#34; zeigt die derzeitigen Missionsbefehle. Mission Leader k&#246;nnen auch &#34;.orders&#34; benutzen, um die Befehle zu &#228;ndern/erneuern.">
+<!ENTITY loc.host.249 "&#34;.orders&#34; zeigt die aktuellen Missionsbefehle. Mission Leader k&#246;nnen auch &#34;.orders&#34; benutzen, um die Befehle zu &#228;ndern/erneuern.">
 <!ENTITY loc.host.91 "Sendet eine <Nachricht> nur an den ausgew&#228;hlten Funkkanal (1-4)">
-<!ENTITY loc.host.323 "Du bist ab jetzt der Anf&#252;hrer dieser Mission! Tip: Du kannst die F&#252;hrung an einen anderen Spieler mittels dem &#34;/makeleader&#34;-Kommando &#252;bertragen.">
+<!ENTITY loc.host.323 "Du bist ab jetzt der Anf&#252;hrer dieser Mission! Tip: Mit dem &#34;/makeleader&#34;-Kommando kannst Du die F&#252;hrung an einen anderen Spieler &#252;bertragen.">
 <!ENTITY loc.host.523 "[*] Game server shutdown has been cancelled! [*]">
 <!ENTITY loc.host.123 "Zur Zeit bist Du in keinem Squad.">
 <!ENTITY loc.host.490 "Zeigt die letzten Brigadebewegungen an">
 <!ENTITY loc.host.631 "/oicvolunteer <unit>">
-<!ENTITY loc.host.293 "Du ignorierst derzeit niemanden.">
+<!ENTITY loc.host.293 "Du ignorierst im Moment niemanden.">
 <!ENTITY loc.host.282 "Du hast noch nicht abgestimmt. Mit &#34;/voteco playername&#34; kannst Du Deine Stimme abgeben. Ende der Abstimmung in {1}.">
 <!ENTITY loc.host.479 "You are not {1} anyone at this time.">
 <!ENTITY loc.host.264 "{1} ist zu {2} beigetreten.">
@@ -1696,7 +1696,7 @@
 <!ENTITY loc.host.477 "/snoop <Spieler> <Grund>  or  /snoop off">
 <!ENTITY loc.host.276 "*{1} hat Deine Squad-Einladung akzeptiert.">
 <!ENTITY loc.host.547 "Checks all the current Server Tracked Objects being tracked by the server to see if any have entered an invalid state and should be cancelled. Any found this way are immediately canceled.">
-<!ENTITY loc.host.215 "Zeigt oder &#228;ndert die derzeitige High Command Message Of The Day (MOTD)">
+<!ENTITY loc.host.215 "Zeigt oder &#228;ndert die High Command Message Of The Day (MOTD)">
 <!ENTITY loc.host.5 "Du bist nun nicht mehr A.F.K">
 <!ENTITY loc.host.78 ".help [<Befehl>]">
 <!ENTITY loc.host.83 "Schaltet den Empfang von HQ-Nachrichten an.">
@@ -1708,7 +1708,7 @@
 <!ENTITY loc.host.510 "Reports the movement time and current fallback location for your current brigade or the specified brigade(s).">
 <!ENTITY loc.host.149 "{1} berichtet bereits {2}.">
 <!ENTITY loc.host.97 "Zeigt die Spieleranzahl an.">
-<!ENTITY loc.host.322 "Du bist ab jetzt der Anf&#252;hrer dieser Mission! Tip: Eingehende Kontaktmeldungen m&#252;ssen von Dir best&#228;tigt werden, um f&#252;r andere Spieler sichtbar zu werden. Nach der Best&#228;tigung k&#246;nnen sie von allen freundlichen Einheiten mit Missionen in der selben Stadt gesehen werden.">
+<!ENTITY loc.host.322 "Du bist ab jetzt der Anf&#252;hrer dieser Mission!">
 <!ENTITY loc.host.141 "OVERRUN-Bericht ist ung&#252;ltig oder wurde bereits entgegen genommen.">
 <!ENTITY loc.host.382 "Die Verteidigungspositionen in {1} wurden kompromittiert. Alle Einheiten ziehen sich zur&#252;ck!">
 <!ENTITY loc.host.372 "Zeigt die Zeit in der echten Welt und auf dem Server an.">
@@ -1770,7 +1770,7 @@
 <!ENTITY loc.host.536 "/msp">
 <!ENTITY loc.host.104 ".ungrab">
 <!ENTITY loc.host.566 "*Alle Squad-CO Wahlstimmen f&#252;r {1} wurden zur&#252;ckgezogen, die Wahl geht weiter.">
-<!ENTITY loc.host.165 "Alle verf&#252;gbaren Kampfziele sind derzeit plaziert.">
+<!ENTITY loc.host.165 "Im Moment sind alle verf&#252;gbaren Kampfbefehle ausgegeben.">
 <!ENTITY loc.host.173 "Feindeinheiten ziehen sich aus {1} zur&#252;ck">
 <!ENTITY loc.host.86 ".kickall <Begr&#252;ndung>">
 <!ENTITY loc.host.291 "Du hast bereits Deine Stimme in dieser Wahl abgegeben.">
@@ -1790,15 +1790,15 @@
 <!ENTITY loc.host.402 "[GM:MOTD] {1}">
 <!ENTITY loc.host.627 "Kill-A-Rat: Kunde wurde bedient! {2} von {1} zur Strecke gebracht.">
 <!ENTITY loc.host.118 "HC-Kanal aus.">
-<!ENTITY loc.host.212 "Sie sind derzeit kein aktiver High Commander.">
-<!ENTITY loc.host.207 "Derzeit sind keine aktiven Missionen f&#252;r diese Brigade vorhanden.">
+<!ENTITY loc.host.212 "Sie sind kein aktiver High Commander.">
+<!ENTITY loc.host.207 "Im Moment sind keine aktiven Missionen f&#252;r diese Brigade vorhanden.">
 <!ENTITY loc.host.62 ".crs [<Nachricht>]">
 <!ENTITY loc.host.624 "Dein Freund {1} loggt ein.">
 <!ENTITY loc.host.266 "*{1} hat von seiner Position als XO abgedankt zu {2}.">
 <!ENTITY loc.host.373 "/ignore  oder  /ignore player  oder  /ignore player1 player2 ... player10">
 <!ENTITY loc.host.445 "/lastcap [<Spieler> | global | all | allied | axis | uk | de | fr]">
 <!ENTITY loc.host.261 "&#34;/hclist&#34;">
-<!ENTITY loc.host.310 "Anfrage zum Verlegen des Divisionshauptquartiers der derzeitigen Brigade zu der auf der Karte ausgew&#228;hlten Stadt.">
+<!ENTITY loc.host.310 "Anfrage zum Verlegen des Divisionshauptquartiers der aktuellen Brigade zu der auf der Karte ausgew&#228;hlten Stadt.">
 <!ENTITY loc.host.610 "Keine Geb&#228;ude in {1} betroffen.">
 <!ENTITY loc.host.137 ".friends +<Spieler> oder .friends -<Spieler> oder .friends">
 <!ENTITY loc.host.280 "SQUAD">
@@ -1808,7 +1808,7 @@
 <!ENTITY loc.host.343 "Unbemannter Mobile Spawn (UMS) zerst&#246;rt!">
 <!ENTITY loc.host.338 "&#34;/autoleader on&#34; oder &#34;/autoleader off&#34;">
 <!ENTITY loc.host.405 "{1} fallback order issued: Armybases surrender in approximately {2}.">
-<!ENTITY loc.host.256 "Derzeit sind keine Trainer verf&#252;gbar.">
+<!ENTITY loc.host.256 "Es sind gerade keine Trainer verf&#252;gbar.">
 <!ENTITY loc.host.612 "[*] Strat Server STARTET: Einige Funktionen sind nicht verf&#252;gbar. [*]">
 <!ENTITY loc.host.186 "Du kannst jetzt feindlichen Bereichs-Chat empfangen.">
 <!ENTITY loc.host.220 "Brigade-Kanal nicht verf&#252;gbar: In keiner Brigade.">
@@ -1842,7 +1842,7 @@
 <!ENTITY loc.host.321 "Du bist ab jetzt der Anf&#252;hrer dieser Mission! Tip: Benutze das &#34;/orders&#34;-Kommando, um Deine Truppen zu f&#252;hren und platziere Wegpunkte auf der Karte um ihnen den Weg zu zeigen.">
 <!ENTITY loc.host.503 "/rdp">
 <!ENTITY loc.host.190 ".defend">
-<!ENTITY loc.host.308 "Anfrage zum Verlegen der derzeitigen Brigade zu der auf der Karte ausgew&#228;hten Stadt.">
+<!ENTITY loc.host.308 "Anfrage zum Verlegen der aktuellen Brigade zu der auf der Karte ausgew&#228;hten Stadt.">
 <!ENTITY loc.host.533 "Error: Unable to change the mission&#39;s leader at this time.">
 <!ENTITY loc.host.553 "Current STOs: {1}.">
 <!ENTITY loc.mspawn.12 "Die Mission hat bereits einen Mobile Spawn aufgestellt.">
@@ -1894,7 +1894,7 @@
 <!ENTITY loc.function.172 "Instrumentenbeleuchtung">
 <!ENTITY loc.function.238 "Visieransicht">
 <!ENTITY loc.function.532 "PAK-Neigung">
-<!ENTITY loc.function.270 "Nach links schießen">
+<!ENTITY loc.function.270 "Nach links bewegen">
 <!ENTITY loc.function.2004 "Cockpitsteuerung">
 <!ENTITY loc.function.202 "Chatfenster &#246;ffnen/schliessen">
 <!ENTITY loc.function.192 "Stukasirene">
@@ -1908,6 +1908,7 @@
 <!ENTITY loc.function.1000 "Im Laufschritt!">
 <!ENTITY loc.function.251 "Position 3">
 <!ENTITY loc.function.162 "Fahrwerkshebel">
+<!ENTITY loc.function.3000 "VSpawn">
 <!ENTITY loc.function.7 "Bombenabwurf">
 <!ENTITY loc.function.164 "Gemisch mager">
 <!ENTITY loc.function.923 "Head-Translate X">
@@ -1953,7 +1954,7 @@
 <!ENTITY loc.function.245 "Blick nach oben wenden">
 <!ENTITY loc.function.279 "Waffe 3">
 <!ENTITY loc.function.906 "Torpedo-Lauftiefe verringern">
-<!ENTITY loc.function.288 "Waffe benutzen">
+<!ENTITY loc.function.288 "Waffe abfeuern">
 <!ENTITY loc.function.900 "Ziel-Geschwindigkeit erh&#246;hen">
 <!ENTITY loc.function.731 "Zeige Karte">
 <!ENTITY loc.function.242 "Sekund&#228;rwaffe verwenden">
@@ -1986,11 +1987,12 @@
 <!ENTITY loc.function.1002 "Halt!">
 <!ENTITY loc.function.280 "Waffe 4">
 <!ENTITY loc.function.732 "Map Zoom In">
-<!ENTITY loc.function.316 "Slew view in">
+<!ENTITY loc.function.316 "Ansicht schwenken">
 <!ENTITY loc.function.252 "Position 4">
 <!ENTITY loc.function.2007 "Chat">
 <!ENTITY loc.function.293 "Gas">
 <!ENTITY loc.function.286 "Waffe 10">
+<!ENTITY loc.function.10 "Clone Vehicle">
 <!ENTITY loc.function.277 "Waffe 1">
 <!ENTITY loc.function.253 "Position 5">
 <!ENTITY loc.function.244 "Blick nach rechts drehen">
@@ -2005,12 +2007,12 @@
 <!ENTITY loc.function.843 "Turmdrehung Sekund&#228;r">
 <!ENTITY loc.function.178 "Bombenlast Auswahl &#228;ndern">
 <!ENTITY loc.function.903 "Ziel-Peilungswinkel verringern">
-<!ENTITY loc.function.187 "Waffe ausfahren">
+<!ENTITY loc.function.187 "Waffe aufbauen">
 <!ENTITY loc.function.922 "Mobile Spawn">
 <!ENTITY loc.function.212 "nach rechts hinten schauen">
 <!ENTITY loc.function.198 "Externe Sicht - fester Standpunkt">
 <!ENTITY loc.function.224 "nach rechts unten schauen">
-<!ENTITY loc.function.317 "Slew view out">
+<!ENTITY loc.function.317 "Ansicht schenken">
 <!ENTITY loc.function.167 "Kompressor-zweite Stufe">
 <!ENTITY loc.function.185 "Spornradsicherung">
 <!ENTITY loc.function.197 "Externe Sicht - &#34;Gummiband&#34;">
@@ -2024,7 +2026,7 @@
 <!ENTITY loc.function.183 "Interne/externe Ansicht wechseln">
 <!ENTITY loc.function.1001 "Hinlegen!">
 <!ENTITY loc.function.216 "nach vorn links oben schauen">
-<!ENTITY loc.function.269 "Nach rechts schießen">
+<!ENTITY loc.function.269 "Nach rechts bewegen">
 <!ENTITY loc.function.276 "Visieransicht">
 <!ENTITY loc.function.310 "Querruder-Trimmung">
 <!ENTITY loc.function.201 "Sichtbarkeit des Cursor einstellen">
@@ -2220,33 +2222,48 @@
 <!ENTITY widgets.map.context.waypoints.add.report.air "Luftwaffe">
 <!ENTITY widgets.keymapper.cats.name "NAME">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.zoom.lowest "hoch">
+<!ENTITY widgets.prefs.groups.visual.postrender "POST RENDER FILTER">
 <!ENTITY widgets.map.context.waypoints.add.report.sea "Schiff">
 <!ENTITY widgets.prefs.groups.visual.nomuzzlesmoke "MÜNDUNGSQUALM UNTERDRÜCKEN">
 <!ENTITY widgets.map.tooltip.orders.haac "Ohne Rücksicht auf Verluste halten.">
 <!ENTITY widgets.manuals.mantab "HANDBÜCHER">
 <!ENTITY widgets.prefs.groups.game.presets.description "Wähle eine der drei Voreinstellungen aus. Danach kannst Du einzelne Einstellungen verändern, um das Spiel Deinem Rechner anzupassen.">
 <!ENTITY widgets.calibration.device.reread.ok "Die Spielsteuerungen wurden neu eingelesen.">
-<!ENTITY widgets.prefs.groups.shaders.reflections.update "UPDATE RATE">
-<!ENTITY widgets.prefs.groups.ui.colors.aws "FARBEN LUFTWARNSYSTEM (AWS)">
+<!ENTITY widgets.prefs.groups.shaders.reflections.update "UPDATERATE">
+<!ENTITY widgets.prefs.groups.connection.network.primary "primär">
+<!ENTITY widgets.prefs.groups.visual.grass.tip "Schaltet Grasanimationen ein. Bei Performanceproblemen abschalten.">
+<!ENTITY widgets.prefs.groups.ui.colors.aws "LUFTWARNSYSTEM (AWS)">
 <!ENTITY widgets.prefs.unsupported "Diese Einstellung wird von Deiner Konfiguration nicht unterstützt.">
+<!ENTITY widgets.prefs.groups.shadows.corpses.tip "Schatten für Leichen anzeigen. Bei Performanceproblemen abschalten.">
 <!ENTITY widgets.keymapper.button.def.key "STANDARDTASTE">
 <!ENTITY widgets.prefs.groups.sound.maxsounds.sounds "sounds">
+<!ENTITY widgets.prefs.groups.infantry.weapons.tip "Anzeige der Waffen bei Ragdolleffekten. Bei Performanceproblemen abschalten.">
 <!ENTITY widgets.map.context.waypoints.add.waypoint.type "TYP DES WEGPUNKTS">
+<!ENTITY widgets.prefs.groups.hud.ppos.ok.tip "This color will be used to indicate a GOOD spot to place a player placed object.">
 <!ENTITY widgets.prefs.groups.game.vislimit.medium "mittel">
+<!ENTITY widgets.prefs.groups.titles.shadow "Schatten">
 <!ENTITY widgets.keymapper.keys.function "FUNKTIONSNAME">
 <!ENTITY widgets.prefs.groups.titles.visual "visuelle Effekte">
+<!ENTITY widgets.prefs.groups.sound.maxsounds.tip "Anzahl der gleichzeitig abgespielten Sounds. Bei Performanceproblemen heruntersetzen.">
 <!ENTITY widgets.prefs.groups.hud.icons.vehtype "Vehikeltyp">
+<!ENTITY widgets.prefs.groups.visual.shadows "SCHATTENGRÖßE">
 <!ENTITY widgets.prefs.groups.game.language.spanish "spanisch">
-<!ENTITY widgets.idcard.tip "Die ID-Karte zeigt wichtige Informationen über Deine derzeitige Persona">
+<!ENTITY widgets.idcard.tip "Die ID-Karte zeigt wichtige Informationen über Deine aktuelle Persona">
+<!ENTITY widgets.prefs.groups.chat.squadinvites "SQUADEINLADUNGEN">
+<!ENTITY widgets.prefs.groups.visual.shadows.tip "Größe des Schattens einstellen. Kleinere Werte erhöhen die Performance.">
+<!ENTITY widgets.prefs.groups.connection.vislimit.medium "mittel">
 <!ENTITY widgets.keymapper.cats.views "Ansichten">
 <!ENTITY widgets.map.waypoints.add.mortar "Mörser Sperrfeuer!">
 <!ENTITY widgets.map.waypoints.approve "BESTÄTIGEN">
+<!ENTITY widgets.prefs.groups.shadows.vehicles "SPIELEREINHEITEN">
 <!ENTITY widgets.map.options.fullscreen "VOLLBILD">
 <!ENTITY widgets.keymapper.cats.guns "Geschütze">
+<!ENTITY widgets.prefs.groups.video.card.tip "Auswahl des Videotreibers">
 <!ENTITY widgets.prefs.groups.ui.colors.leader "MISSIONSFÜHRER">
 <!ENTITY widgets.map.waypoints.delete "LÖSCHEN">
 <!ENTITY widgets.map.options.options "KARTENOPTIONEN">
-<!ENTITY widgets.map.options.zoom.title "KARTEN ZOOM LEVEL">
+<!ENTITY widgets.map.options.zoom.title "KARTEN ZOOMLEVEL">
+<!ENTITY widgets.prefs.groups.chat.squadinvites.tip "Ausschalten um Squadeinladungen automatisch abzulehnen">
 <!ENTITY widgets.prefs.groups.visual.clutter.density "DICHTE">
 <!ENTITY widgets.prefs.groups.hud.custom.chat "CHAT">
 <!ENTITY widgets.calibration.device "WÄHLE EIN GERÄT">
@@ -2254,14 +2271,17 @@
 <!ENTITY widgets.map.context.position "Zentrieren auf">
 <!ENTITY widgets.prefs.groups.ui.fontsize "SCHRIFTGRÖßE">
 <!ENTITY widgets.keymapper.cats.armor "Panzer und Radpanzer">
+<!ENTITY widgets.prefs.groups.visual.nomuzzlelight.tip "Disables muzzle flash lights when guns fire. Enable to improve performance.">
 <!ENTITY widgets.prefs.groups.video.gamma.green "GRÜN NACHSTELLEN">
 <!ENTITY widgets.idcard.oic "OIC">
 <!ENTITY widgets.globals.options.tip "Hier kannst Du die Tasten und Steuerungen konfigurieren.">
+<!ENTITY widgets.prefs.groups.shadows "SCHATTENEINSTELLUNGEN">
+<!ENTITY widgets.prefs.groups.infantry.corpse.density "CORPSE COUNT">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.settings "EINSTELLUNGEN MINIKARTE">
 <!ENTITY widgets.prefs.groups.sound.ambient.disabled "keine">
 <!ENTITY widgets.prefs.groups.hud.custom.orders "BEFEHLE">
 <!ENTITY widgets.globals.manuals "HANDBÜCHER">
-<!ENTITY widgets.prefs.groups.alerts.textmode.automatic "Automatische Anzeige">
+<!ENTITY widgets.prefs.groups.alerts.textmode.automatic "Automatisch">
 <!ENTITY widgets.map.tooltip.town.french "Diese Stadt ist französisch kontrolliert.">
 <!ENTITY widgets.prefs.far "weit">
 <!ENTITY widgets.map.options.zoom.facilities "ANLAGEN">
@@ -2271,6 +2291,7 @@
 <!ENTITY widgets.prefs.groups.ui.colors.aws.low "WENIG FEINDE">
 <!ENTITY widgets.map.info.none "None">
 <!ENTITY widgets.map.context.waypoints.add.report.infantry "Infanterie">
+<!ENTITY widgets.prefs.groups.infantry.corpses.tip "Auswahl ob tote Spieler Leichen hinterlassen. Bei Performanceproblemen abschalten.">
 <!ENTITY widgets.prefs.groups.ui.colors.picker "Die jetzige Farbe ist:">
 <!ENTITY widgets.prefs.groups.hud.icons.namerank "Name und Rang">
 <!ENTITY widgets.prefs "EINSTELLUNGEN">
@@ -2280,11 +2301,13 @@
 <!ENTITY widgets.map.options.showobjectives "BEFEHLE">
 <!ENTITY widgets.map.waypoints.contact.airforce "FEINDLICHE FLUGZEUGE">
 <!ENTITY widgets.prefs.na "nicht verfügbar">
+<!ENTITY widgets.prefs.groups.infantry.corpse.time "CORPSE DURATION">
 <!ENTITY widgets.map.waypoints.add.attack "HIER ANGREIFEN">
-<!ENTITY widgets.prefs.groups.ui.colors.squad "SQUAD">
 <!ENTITY widgets.prefs.groups.game.network.secondary "sekundäre">
+<!ENTITY widgets.prefs.groups.ui.colors.squad "SQUAD">
 <!ENTITY widgets.map.context.hc.objectives "Zielvorgaben">
-<!ENTITY widgets.prefs.groups.hud.custom.readout "ANZEIGE">
+<!ENTITY widgets.prefs.groups.hud.ppos.tip "Choose which colors to use when indicating good and bad spots for player placed objects.">
+<!ENTITY widgets.prefs.groups.hud.custom.readout "VEHIKELDATEN">
 <!ENTITY widgets.map.context.hc.na "Nix">
 <!ENTITY widgets.map.options.showdeployments "STATIONIERUNGEN">
 <!ENTITY widgets.map.context.waypoints.approve.all "Alle Kontaktmeldungen">
@@ -2292,7 +2315,9 @@
 <!ENTITY widgets.prefs.groups.visual.specular "SPIEGELUNGEN">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.mode.map "Karte">
 <!ENTITY widgets.map.info.target.title "ZIEL">
+<!ENTITY widgets.prefs.groups.alerts.show.tip "Alarmmeldungen im HUD anzeigen. Beispiele: Einnahme einer Anlage oder ein Spieler hat Dir Munition gegeben">
 <!ENTITY widgets.prefs.groups.sound.card "SOUNDKARTE">
+<!ENTITY widgets.prefs.groups.shadows.corpses "LEICHEN">
 <!ENTITY widgets.prefs.groups.game.netcode2 "NETCODE2 BENUTZEN (beta)">
 <!ENTITY widgets.map.options.showports "HAFENANLAGEN">
 <!ENTITY widgets.keymapper.keys.primary "PRIMÄRE TASTE">
@@ -2302,9 +2327,11 @@
 <!ENTITY widgets.prefs.groups.ui.tooltips "TOOLTIPS">
 <!ENTITY widgets.map.waypoints.contact.infantry "FEINDLICHE INFANTERIE">
 <!ENTITY widgets.map.context.hc.takecharge "Führung übernehmen">
+<!ENTITY widgets.prefs.groups.shadows.cockpits.tip "Schatten in Cockpits anzeigen. Bei Performanceproblemen abschalten.">
+<!ENTITY widgets.prefs.groups.sound.card.tip "Auswahl des Treibers für die Soundwiedergabe">
 <!ENTITY widgets.prefs.groups.hud.mode.show "anzeigen">
 <!ENTITY widgets.prefs.fastest "am schnellsten">
-<!ENTITY widgets.infobar.tip "Derzeitige Kampagne und die Dauer der Kampagne in Tagen. Entspricht der Zeitangabe im Spiel.">
+<!ENTITY widgets.infobar.tip "Aktive Kampagne und die Dauer der Kampagne in Tagen. Entspricht der Zeitangabe im Spiel.">
 <!ENTITY widgets.prefs.groups.sound.alerts "ALARME">
 <!ENTITY widgets.map.options.zoom.regional "REGIONAL">
 <!ENTITY widgets.map.waypoints.contact "KONTAKT MELDEN">
@@ -2316,114 +2343,152 @@
 <!ENTITY widgets.map.context.hc "HC Optionen">
 <!ENTITY widgets.prefs.groups.hud.windows.reset.button "ZURÜCKSETZEN">
 <!ENTITY widgets.prefs.groups.game.language.french "französisch">
+<!ENTITY widgets.prefs.groups.game.lowmemory.tip "Aktiviere diesee Option, um die Menge der beim Spielstart vorgeladenen Daten zu verringern. Dies kann Systemen mit weniger als 2GB Speicher entlasten aber es kann zu kleinen Rucklern beim ersten Betreten der Spielwelt führen.">
 <!ENTITY widgets.keymapper.cats "TASTENBELEGUNGS-KATEGORIEN">
 <!ENTITY widgets.manuals.mantab.default "Dieses Handbuch ist nicht verfügbar. Ein Bericht wurde an den Server gesendet.">
 <!ENTITY widgets.manuals.mantab.read "HANDBUCH LESEN">
 <!ENTITY widgets.prefs.groups.chat "CHATEINSTELLUNGEN">
 <!ENTITY widgets.prefs.groups.video.gamma.red "ROT NACHSTELLEN">
 <!ENTITY widgets.calibration.device.mouse1 "Maus 1">
+<!ENTITY widgets.prefs.groups.shadows.presets "SCHATTEN">
 <!ENTITY widgets.prefs.groups.video.noframerunahead "KEIN FRAME RUN AHEAD">
-<!ENTITY widgets.globals.manuals.tip "Hier kannst Du die Online-Manuals und Trainingsvideos finden. Alles über wie man ein guter Soldat wird bis hin zum Fliegen eines Flugzeugs. Es kommt bei jedem Patch etwas dazu, schau hier öfter mal vorbei">
+<!ENTITY widgets.globals.manuals.tip "Online Handbücher und Trainingsvideos. Hier findest Du Tips darüber, wie man ein guter Soldat wird bis hin zum Fliegen eines Flugzeugs. Es kommt bei jedem Patch etwas dazu, schau hier öfter mal vorbei">
+<!ENTITY widgets.prefs.groups.visual.limitlod.tip "Begrenzt die Anzahl der Änderungen des Detaillevels pro Frame. Verbessert Performance">
 <!ENTITY widgets.prefs.groups.visual.texreduce "TEXTURREDUZIERUNG">
 <!ENTITY widgets.map.context.hc.clear "Zielvorgaben löschen">
 <!ENTITY widgets.prefs.enabled "an">
 <!ENTITY widgets.keymapper.button.save "SPEICHERN">
-<!ENTITY widgets.prefs.groups.titles.shader "Shader Einstellungen">
+<!ENTITY widgets.prefs.groups.titles.shader "Shader">
 <!ENTITY widgets.template.back "ZURÜCK">
+<!ENTITY widgets.prefs.groups.connection.network.best "Beste verwenden">
 <!ENTITY widgets.map.context.hc.brigades "Brigaden">
 <!ENTITY widgets.idcard.progress "FORTSCHRITT">
-<!ENTITY widgets.keymapper.button.def.cat.tip "Setzt alle Tastenbelegungen in der derzeitigen Kategorie auf die Standardbelegung zurück.">
+<!ENTITY widgets.keymapper.button.def.cat.tip "Setzt alle Tastenbelegungen in der ausgewählten Kategorie auf die Standardbelegung zurück.">
 <!ENTITY widgets.map.options.showbrigades "BRIGADEN">
 <!ENTITY widgets.map.context.waypoints.delete "Löschen">
 <!ENTITY widgets.map.context.brigade.join "Brigade beitreten">
-<!ENTITY widgets.prefs.groups.shaders.water "WASSER SHADER">
+<!ENTITY widgets.prefs.groups.shaders.water "WASSERSHADER">
 <!ENTITY widgets.prefs.disabled "aus">
 <!ENTITY widgets.map.waypoints.contact.unknown "FEINDPRÄSENZ">
 <!ENTITY widgets.prefs.groups.visual.clutter.radius "RADIUS">
-<!ENTITY widgets.map.context.activate "Aktiv machen">
+<!ENTITY widgets.map.context.activate "Aktivieren">
+<!ENTITY widgets.prefs.groups.infantry "INFANTERIE">
 <!ENTITY widgets.calibration.device.reread.tip "Klicke auf diesen Button, um Deine Joysticks neu ins Spiel einzulesen.">
-<!ENTITY widgets.keymapper.button.save.tip "Sichert alle Änderungen seit der letzten Sicherung.">
+<!ENTITY widgets.prefs.groups.infantry.ragdolls.tip "Anzeige der Todesanimationen sterbender Spieler. Bei Performanceproblemen abschalten.">
+<!ENTITY widgets.keymapper.button.save.tip "Sichert alle Änderungen">
 <!ENTITY widgets.keymapper.keys.secondary "SEKUNDÄRE TASTE">
+<!ENTITY widgets.prefs.groups.shadows.terrain.tip "Schatten ein- oder ausschalten. Bei Performanceproblemen Schatten auschalten.">
+<!ENTITY widgets.prefs.groups.connection.vislimit.high "hoch">
 <!ENTITY widgets.map.tooltip.enemy "Feind in der Nähe gesichtet.">
+<!ENTITY widgets.prefs.groups.visual.clutter.tip "Setzt den Radius und die Dichte der Bodenvegetation. Diese Einstellung hat einen grossen Einfluss auf die Performance, weniger Bodenvegetation - mehr Performance.">
 <!ENTITY widgets.prefs.groups "EINSTELLUNGSGRUPPEN">
 <!ENTITY widgets.keymapper.cats.ships "Schiffe und Boote">
+<!ENTITY widgets.prefs.groups.titles.infantry "Infanterie">
 <!ENTITY widgets.map.waypoints.notes "WEGPUNKT NOTIZEN (bis zu 128 Zeichen)">
+<!ENTITY widgets.prefs.groups.shadows.grass "GRAS">
 <!ENTITY widgets.map.info.me.title "DEINE LAT/LON">
+<!ENTITY widgets.prefs.groups.visual.limitfov.tip "Berücksichtigt das Sichtfeld bei der Berechung des Detaillevels (LOD). Bei Performanceproblemen abschalten.">
 <!ENTITY widgets.template.next "VORWÄRTS">
 <!ENTITY widgets.map.options.showbridges "BRÜCKEN">
 <!ENTITY widgets.idcard.duty "Einsatzbereit">
+<!ENTITY widgets.prefs.groups.shadows.objects.tip "Schatten für Terrainobjekten anzeigen. Bei Performanceproblemen abschalten.">
 <!ENTITY widgets.prefs.groups.ui "BENUTZERINTERFACE">
 <!ENTITY widgets.prefs.groups.hud.windows.reset "HUD ZRÜCKSETZEN">
 <!ENTITY widgets.map.context.selection "Kartenauswahl">
 <!ENTITY widgets.prefs.groups.sound.ambient.frequent "oft">
+<!ENTITY widgets.prefs.groups.connection.network.tip "Auswahl der Netzwerkroute">
 <!ENTITY widgets.prefs.groups.shaders.shadows "SCHATTEN">
 <!ENTITY widgets.idcard.nextrank "zum nächsten Rang">
+<!ENTITY widgets.prefs.groups.shadows.flying "SCHATTEN BEIM FLIEGEN">
 <!ENTITY widgets.calibration.mouse.more "mehr">
 <!ENTITY widgets.prefs.groups.chat.reset.tip "Dieser Button stellt die voreingestellten Radiokanäle wieder her. Dies funktioniert im Online Modus.">
 <!ENTITY widgets.prefs.groups.titles.sound "Soundsystem">
 <!ENTITY widgets.map.options.showairfields "FLUGFELDER">
-<!ENTITY widgets.prefs.groups.alerts.display.panel "INTERVALL NACHRICHTENANZEIGE">
+<!ENTITY widgets.prefs.groups.alerts.display.panel "INTERVALL ALARMANZEIGE">
 <!ENTITY widgets.calibration.device.axisx "X-Achse">
 <!ENTITY widgets.prefs.groups.chat.reset.ok "Deine Anfrage wurde an den Host geschickt und wird in Kürze verarbeitet.">
 <!ENTITY widgets.map.waypoints.create "WEGPUNKT ERSTELLEN">
 <!ENTITY widgets.map.tooltip.orders.overrun "Diese Stadt wurde überrannt.">
 <!ENTITY widgets.map.info.mouse.title "MAUS LAT/LON">
+<!ENTITY widgets.prefs.groups.game.credits.tip "Aktiviere diese Option um bei Verlassen des Spiels den Abspann anzuzeigen.">
 <!ENTITY widgets.map.tooltip.town.neutral "Diese Stadt ist neutral.">
 <!ENTITY widgets.keymapper.button.def.cat "KATEGORIESTANDARDS">
 <!ENTITY widgets.prefs.more "mehr">
 <!ENTITY widgets.map.tooltip.orders.fallback "Rückzug angeordnet.">
 <!ENTITY widgets.map.context.chat "Chatten">
 <!ENTITY widgets.map.context.waypoints.add "Hinzufügen">
+<!ENTITY widgets.prefs.groups.visual.normalmaps.tip "Normal Maps anzeigen. Bei Performanceproblemen abschalten.">
+<!ENTITY widgets.prefs.groups.ui.colors.tip "Auswahl der Farben für eigene und feindliche Einheiten. Diese Farben werden für Spieler-Icons und Chatmeldungen verwendet.">
 <!ENTITY widgets.calibration.device.axisrz "Ruder Z-Achse">
 <!ENTITY widgets.prefs.groups.ui.colors "ICON FARBEN">
 <!ENTITY widgets.calibration.device.joystick3 "Joystick 3">
-<!ENTITY widgets.prefs.groups.visual.clutter.short "CLUTTER">
+<!ENTITY widgets.prefs.groups.visual.clutter.short "VEGETATION">
 <!ENTITY widgets.prefs.groups.hud "HUD EINSTELLUNGEN">
 <!ENTITY widgets.map.waypoints.add.type "WEGPUNKT TYP">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.mode "MODUS">
+<!ENTITY widgets.prefs.groups.shadows.cockpits "COCKPITS">
 <!ENTITY widgets.prefs.groups.visual.limitlod "LOD ÄNDERUNGEN BEGRENZEN">
 <!ENTITY widgets.prefs.groups.alerts.display "INTERVALL">
 <!ENTITY widgets.prefs.groups.ui.colors.aws.alpha "DECKKRAFT">
 <!ENTITY widgets.keymapper.cats.infantry "Infanterie">
+<!ENTITY widgets.prefs.groups.hud.windows.reset.tip "Setzt Head Up Display (HUD) Fenster und Anzeigemodus auf die Voreinstellung zurück.">
 <!ENTITY widgets.map.options.zoom.tactical "TAKTISCH">
 <!ENTITY widgets.map.waypoints.add.rally "HIER SAMMELN">
 <!ENTITY widgets.calibration.mouse.title "MAUS-EMPFINDLICHKEIT">
 <!ENTITY widgets.prefs.groups.shaders.postrender "POST RENDER FILTER">
-<!ENTITY widgets.prefs.groups.visual.nomuzzlelight "MÜNDUNGSFEUER UNTERDRÜCKEN">
+<!ENTITY widgets.prefs.groups.visual.nomuzzlelight "SUPPRESS MUZZLE LIGHT">
+<!ENTITY widgets.prefs.groups.connection.vislimit.tip "Auswahl der Anzahl gleichzeitig sichtbarer Spieler. Bei Performanceproblemen heruntersetzen.">
 <!ENTITY widgets.prefs.groups.game.presets.quality "BESTE QUALITÄT">
+<!ENTITY widgets.prefs.groups.infantry.weapons "RAGDOLL WAFFEN">
 <!ENTITY widgets.keymapper.pending.pri "Drücke eine Taste oder eine Tastenkombination, um die primäre Taste für diese Funktion einzustellen.">
-<!ENTITY widgets.map.info.origin.tip "Basisstadt der derzeitigen Mission">
+<!ENTITY widgets.map.info.origin.tip "Basisstadt Deiner Mission">
+<!ENTITY widgets.prefs.groups.infantry.blood.tip "Blutpfützen und -spritzer anzeigen. Bei Performanceproblemen abschalten.">
+<!ENTITY widgets.map.context.contacts.delete.all "All Reports">
+<!ENTITY widgets.prefs.groups.shadows.vehicles.tip "Schatten für Spielereinheiten anzeigen. Bei Performanceproblemen abschalten.">
 <!ENTITY widgets.prefs.groups.sound.volume "LAUTSTÄRKE">
+<!ENTITY widgets.prefs.groups.hud.ppos.nok.tip "This color will be used to indicate a BAD spot to place a player placed object.">
+<!ENTITY widgets.prefs.groups.visual.water "WASSER SHADER">
+<!ENTITY widgets.prefs.groups.shadows.off "Off">
 <!ENTITY widgets.map.context.waypoints.add.report.truck "Lastwagen">
+<!ENTITY widgets.prefs.groups.visual.muzzlelight "MÜNDUNGSFEUER">
 <!ENTITY widgets.map.tooltip.yours "Deine Brigade ist mit einem * markiert.">
-<!ENTITY widgets.prefs.groups.alerts.show "ALARME ZEIGEN">
+<!ENTITY widgets.prefs.groups.alerts.show "HUD ALARME">
+<!ENTITY widgets.prefs.groups.hud.mode.tip "Anzeigemodus des Heads Up Display (HUD) einstellen">
 <!ENTITY widgets.prefs.changed "Einige Änderungen erfordern einen Neustart des Spieles.">
 <!ENTITY widgets.prefs.groups.game.languagefilter "SCHIMPFWORTFILTER">
 <!ENTITY widgets.prefs.groups.shaders.grass "GRAS SHADER">
-<!ENTITY widgets.prefs.groups.alerts.textmode.onclick "Text nach Klick anzeigen">
+<!ENTITY widgets.prefs.groups.infantry.corpse.detail.tip "Use this to use a higher quality corpse model. Disable this for performance.">
+<!ENTITY widgets.prefs.groups.connection.vislimit "ANZAHL SICHTBARER SPIELER">
+<!ENTITY widgets.prefs.groups.alerts.textmode.onclick "nach Klick anzeigen">
 <!ENTITY widgets.prefs.groups.sound.system.disabled "aus">
+<!ENTITY widgets.prefs.groups.game.languagefilter.tip "Schimpfwortfilter für Chat aktivieren">
 <!ENTITY widgets.prefs.groups.game.language.chinese "chinesisch">
 <!ENTITY widgets.prefs.groups.chat.reset.button "RESET">
 <!ENTITY widgets.map.context.waypoints.delete.all "Alle Kontaktmeldungen">
-<!ENTITY widgets.prefs.groups.hud.custom "EIGENE EINSTELLUNGEN">
+<!ENTITY widgets.prefs.groups.game.lowmemory "SYSTEM MIT 2GB SPEICHER (oder weniger)">
+<!ENTITY widgets.prefs.groups.hud.custom "HUD FENSTER">
 <!ENTITY widgets.keymapper.pending.move "Bewege Deine Maus/Joystickachse.">
 <!ENTITY widgets.prefs.groups.sound.ambient "UMGEBUNGSGERÄUSCHE">
 <!ENTITY widgets.prefs.groups.visual.dithering "DITHERING">
+<!ENTITY widgets.prefs.groups.titles.connection "Netzanbindung">
 <!ENTITY widgets.map.options.zoom.pan "AUTO PAN">
 <!ENTITY widgets.template.quit.confirm "Soll Battleground Europe beendet werden?">
-<!ENTITY widgets.prefs.groups.alerts.textmode "VERHALTEN DER NACHRICHT">
-<!ENTITY widgets.map.context.waypoints.add.report "Kontaktmeldungen">
+<!ENTITY widgets.prefs.groups.alerts.textmode "ANZEIGEN DER ALARME">
+<!ENTITY widgets.prefs.groups.infantry.corpse.time.tip "Select how long to keep corpses around. Use a lower setting for better performance.">
+<!ENTITY widgets.map.context.waypoints.add.report "Kontakt melden">
 <!ENTITY widgets.map.context.waypoints.add.waypoint "Wegpunkt hinzufügen">
 <!ENTITY widgets.keymapper.cats.planes "Jäger und Bomber">
 <!ENTITY widgets.map.context.waypoints.add.report.type "TYP DER EINHEIT">
+<!ENTITY widgets.prefs.groups.sound.music.tip "Musik ausserhalb der Spielwelt">
 <!ENTITY widgets.map.options.showews "KONFLIKT/EWS">
 <!ENTITY widgets.prefs.groups.game.sse2 "SSE2 ERWEITERUNGEN">
 <!ENTITY widgets.prefs.groups.titles.windows "HUD Fenster">
 <!ENTITY widgets.manuals.mantab.select "WÄHLE EIN HANDBUCH">
 <!ENTITY widgets.map.options.filters "KARTENFILTER">
+<!ENTITY widgets.prefs.groups.game.vislimit.low "wenig">
+<!ENTITY widgets.prefs.groups.visual.shaders "SHADER EINSTELLUNGEN">
 <!ENTITY widgets.calibration.none.title "WÄHLE EINE JOYSTICK-ACHSE">
 <!ENTITY widgets.keymapper.pending.sec "Drücke eine Taste oder eine Tastenkombination, um die sekundäre Taste für diese Funktion einzustellen.">
-<!ENTITY widgets.prefs.groups.game.vislimit.low "wenig">
 <!ENTITY widgets.keymapper.pending.dec "Drücke eine Taste um die Verminderungsaktion dieser Funktion einzustellen.">
 <!ENTITY widgets.map.options.declutter "STADT ENTWIRREN">
 <!ENTITY widgets.prefs.groups.hud.custom.health "GESUNDHEITSBALKEN">
@@ -2433,21 +2498,30 @@
 <!ENTITY widgets.prefs.groups.hud.custom.secondary "SEKUNDÄRMUNITION">
 <!ENTITY widgets.map.info.mouse.tip "Zeigt die Position der Maus in Breiten- und Längengrad.">
 <!ENTITY widgets.map.options.defaults "STANDARDS">
-<!ENTITY widgets.map.tooltip.units "EINHEITEN">
 <!ENTITY widgets.prefs.groups.game.vislimit.high "viele">
+<!ENTITY widgets.map.tooltip.units "EINHEITEN">
 <!ENTITY widgets.calibration.device.axisy "Y-Achse">
 <!ENTITY widgets.prefs.groups.game.network.primary "primäre">
-<!ENTITY widgets.keymapper.button.discard.tip "Verwirft alle Änderungen wie vorgenommen wurden seit der letzten Sicherung.">
+<!ENTITY widgets.prefs.groups.hud.custom.minimap.settings.tip "Einstellungen zur Minikarte">
+<!ENTITY widgets.keymapper.button.discard.tip "Verwirft alle Änderungen">
 <!ENTITY widgets.map.tooltip.objective.attack "Hier wurde ein Angriff befohlen">
 <!ENTITY widgets.prefs.groups.game "SPIELEINSTELLUNGEN">
-<!ENTITY widgets.prefs.groups.shaders "SHADER EINSTELLUNGEN">
+<!ENTITY widgets.prefs.groups.shaders "SHADER">
+<!ENTITY widgets.prefs.groups.alerts.textmode.tip "Auswahl ob automatische Anzeige oder nach Klick auf das Icon">
 <!ENTITY widgets.prefs.groups.video.vertsync "VERTIKALE SYNCHRONISATION">
 <!ENTITY widgets.prefs.groups.ui.colors.mission "MISSIONSMITGLIEDER">
+<!ENTITY widgets.prefs.groups.sound.alerts.tip "akustisches Signal bei neuen Alarmen">
+<!ENTITY widgets.prefs.groups.shadows.terrain "SCHATTEN EINGESCHALTET">
 <!ENTITY widgets.map.waypoints.name "WEGPUNKT NAME (max 10 Zeichen)">
+<!ENTITY widgets.prefs.groups.visual.reflections "WASSERREFLEKTIONEN">
+<!ENTITY widgets.prefs.groups.hud.ppos.nok "BAD PLACEMENT">
+<!ENTITY widgets.prefs.groups.shadows.objects "OBJEKTE">
 <!ENTITY widgets.map.waypoints.contact.shipping "FEINDLICHE SCHIFFE">
 <!ENTITY widgets.map.options.zoom.sector "SEKTOR">
+<!ENTITY widgets.prefs.groups.ui.colors.aws.tip "Auswahl der Farben für wenig und viele Feinde">
 <!ENTITY widgets.prefs.groups.sound.ambient.infrequent "selten">
-<!ENTITY widgets.map.info.target.tip "Zielstadt der derzeitigen Mission">
+<!ENTITY widgets.map.info.target.tip "Zielstadt Deiner Mission">
+<!ENTITY widgets.prefs.groups.hud.ppos.ok "GOOD PLACEMENT">
 <!ENTITY widgets.map.waypoints.title "WEGPUNKTE">
 <!ENTITY widgets.keymapper.button.clear "TASTE LÖSCHEN">
 <!ENTITY widgets.keymapper.pending.inc "Drücke eine Taste um die Erhöhungssaktion dieser Funktion einzustellen.">
@@ -2458,31 +2532,40 @@
 <!ENTITY widgets.map.context.position.brigade "Meine Brigade">
 <!ENTITY widgets.prefs.groups.ui.squadinvites "SQUADEINLADUNGEN">
 <!ENTITY widgets.prefs.groups.ui.squadrecruiting "REKRUTIEREN">
-<!ENTITY widgets.prefs.groups.titles.game "Spiel / Applikation">
+<!ENTITY widgets.prefs.groups.visual.normalmaps "NORMAL MAPS">
+<!ENTITY widgets.prefs.groups.titles.game "Spiel/Applikation">
 <!ENTITY widgets.map.tooltip.contested "In dieser Stadt wurde ein Anlage vom Feind erobert.">
 <!ENTITY widgets.manuals.back "ZURÜCK">
 <!ENTITY widgets.map.context.hc.resign "Zurücktreten">
 <!ENTITY widgets.map.tooltip.town.british "Diese Stadt ist britisch kontrolliert.">
+<!ENTITY widgets.prefs.groups.visual.postrender.tip "Schaltet Post Render Filter ein (Bild erscheint weicher). Bei Performanceproblemen abschalten.">
 <!ENTITY widgets.idcard.status "STATUS">
 <!ENTITY widgets.prefs.groups.sound.volume.music "MUSIK">
+<!ENTITY widgets.prefs.groups.alerts.display.panel.tip "Wie lange sind die Alarme sichtbar">
+<!ENTITY widgets.prefs.groups.game.credits "SPIELABSPANN ANZEIGEN">
 <!ENTITY widgets.prefs.groups.ui.colors.enemy "FEINDE">
 <!ENTITY widgets.prefs.groups.game.presets.performance "BESTE LEISTUNG">
 <!ENTITY widgets.prefs.slowest "am langsamsten">
-<!ENTITY widgets.prefs.min "min">
 <!ENTITY widgets.prefs.groups.shaders.reflections.short "REFLEKTIONEN">
-<!ENTITY widgets.map.info.me.tip "Zeigt die derzeitige ingame Position in Breiten- und Längengrad.">
+<!ENTITY widgets.prefs.min "min">
 <!ENTITY widgets.prefs.groups.hud.custom.primary "PRIMÄRMUNITION">
+<!ENTITY widgets.map.info.me.tip "Zeigt Deine Position in der Spielwelt in Breiten- und Längengraden.">
 <!ENTITY widgets.prefs.groups.shaders.reflections "WASSERREFLEKTIONEN">
 <!ENTITY widgets.calibration.none.desc "Erweitere die Achsenliste des Joysticks und wähle eine Achse zum Konfigurieren aus.">
 <!ENTITY widgets.prefs.groups.game.language "SPRACHE">
+<!ENTITY widgets.prefs.groups.connection "VERBINDUNGEN">
+<!ENTITY widgets.prefs.groups.visual.combatsmoke.tip "Schaltet Rauch bei zerstörten Gebäuden ein. Bei Performanceproblemen abschalten.">
 <!ENTITY widgets.prefs.discarded "Die Änderungen wurden verworfen!">
-<!ENTITY widgets.map.context.waypoints.approve "Bestätigen">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.zoom "VERGRÖßERUNG">
+<!ENTITY widgets.map.context.waypoints.approve "Bestätigen">
 <!ENTITY widgets.map.info.na "nicht verfügbar">
 <!ENTITY widgets.prefs.groups.titles.hud "Heads Up Display (HUD)">
+<!ENTITY widgets.prefs.groups.shadows.custom "Custom">
 <!ENTITY widgets.prefs.groups.titles.ui "Benutzeroberfläche">
+<!ENTITY widgets.prefs.groups.infantry.corpses "LEICHEN ANZEIGEN">
 <!ENTITY widgets.map.context.waypoints "Wegpunkte/Reports">
 <!ENTITY widgets.prefs.groups.game.language.italian "italienisch">
+<!ENTITY widgets.prefs.groups.connection.vislimit.low "niedrig">
 <!ENTITY widgets.map.context.hc.move "Hierher bewegen">
 <!ENTITY widgets.map.context.waypoints.add.report.unknown "Unbekannt">
 <!ENTITY widgets.prefs.groups.game.language.german "deutsch">
@@ -2491,13 +2574,15 @@
 <!ENTITY widgets.manuals.mantab.help "HANDBÜCHER: WÄHLE EIN HANDBUCH AUS UM MEHR INFORMATIONEN ZU ERHALTEN">
 <!ENTITY widgets.map.waypoints.player "MIT SPIELER CHATTEN">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.mode.compass "Kompaß">
-<!ENTITY widgets.prefs.groups.sound.volume.fx "SOUND FX">
+<!ENTITY widgets.prefs.groups.sound.volume.fx "SOUNDEFFEKTE">
 <!ENTITY widgets.prefs.groups.game.network "NETZWERK ROUTE">
+<!ENTITY widgets.prefs.groups.visual.combatsmoke "RAUCH">
 <!ENTITY widgets.idcard.name "NAME">
 <!ENTITY widgets.prefs.groups.game.presets "VOREINSTELLUNGEN">
+<!ENTITY widgets.prefs.groups.connection.network "NETZWERKROUTE">
 <!ENTITY widgets.map.context.waypoints.add.report.gun "Geschütz">
-<!ENTITY widgets.map.options.showcps "ALLE STÄDTE">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.zoom.highest "gering">
+<!ENTITY widgets.map.options.showcps "ALLE STÄDTE">
 <!ENTITY widgets.map.context.position.division "Meine Division">
 <!ENTITY widgets.prefs.max "max">
 <!ENTITY widgets.prefs.groups.hud.windows.reset.note "Wenn Du im Spiel bist, kannst Du das HUD mit der &#39;HUD zurücksetzen&#39; Taste (Voreinstellung ctrl-y) zurücksetzen.">
@@ -2508,8 +2593,10 @@
 <!ENTITY widgets.prefs.groups.visual.clutter "RADIAL CLUTTER">
 <!ENTITY widgets.infobar.campaign "Kampagne #">
 <!ENTITY widgets.prefs.save "SPEICHERN">
+<!ENTITY widgets.prefs.groups.infantry.ragdolls "RAGDOLL EFFEKT">
 <!ENTITY widgets.prefs.near "nah">
 <!ENTITY widgets.calibration.joystick.title "JOYSTICK-EMPFINDLICHKEIT">
+<!ENTITY widgets.prefs.groups.visual.clutter.flying "BEIM FLIEGEN">
 <!ENTITY widgets.map.info.origin.title "START">
 <!ENTITY widgets.map.waypoints.select "AKTIV MACHEN">
 <!ENTITY widgets.map.legend.title "LEGENDE">
@@ -2522,52 +2609,72 @@
 <!ENTITY widgets.map.waypoints.contact.truck "FEINDLICHER LKW">
 <!ENTITY widgets.prefs.discard "ÄNDERUNGEN VERWERFEN">
 <!ENTITY widgets.prefs.groups.game.language.english "englisch">
+<!ENTITY widgets.prefs.groups.hud.custom.tip "Auswahl der aktiven Heads Up Display (HUD) Fenster">
 <!ENTITY widgets.prefs.groups.sound.maxsounds "MAXIMALE SOUNDS">
 <!ENTITY widgets.map.finder.title "STÄDTEFINDER">
 <!ENTITY widgets.map.tooltip.town.german "Diese Stadt ist unter deutscher Kontrolle.">
 <!ENTITY widgets.calibration.device.joystick1 "Joystick 1">
-<!ENTITY widgets.prefs.groups.titles.chat "Chateinstellungen">
+<!ENTITY widgets.prefs.groups.titles.chat "Chat">
 <!ENTITY widgets.map.options.zoom.city "STADT">
+<!ENTITY widgets.prefs.groups.visual.reflections.tip "Schaltet reflektierende Wasseroberfläche ein. Bei Performanceproblemen abschalten.">
+<!ENTITY widgets.prefs.groups.shadows.grass.tip "Schatten für Gras anzeigen. Bei Performanceproblemen abschalten.">
 <!ENTITY widgets.map.waypoints.contact.armor "FEINDLICHE PANZER">
 <!ENTITY widgets.prefs.groups.chat.reset "ZURÜCK ZUR VOREINSTELLUNG">
 <!ENTITY widgets.prefs.groups.sound.system "SOUNDSYSTEM">
 <!ENTITY widgets.map.context.hc.nominate "OIC ernennen">
-<!ENTITY widgets.prefs.groups.sound "SOUNDEINSTELLUNGEN">
+<!ENTITY widgets.prefs.groups.sound "SOUND">
 <!ENTITY widgets.map.context.waypoints.add.waypoint.rally "Hier treffen">
-<!ENTITY widgets.keymapper.button.clear.tip "Löscht die derzeit ausgewählte Tastenbelegung.">
+<!ENTITY widgets.keymapper.button.clear.tip "Löscht die ausgewählte Tastenbelegung.">
 <!ENTITY widgets.map.waypoints.add "WEGPUNKT HINZUFÜGEN">
-<!ENTITY widgets.prefs.groups.ui.squadrecruitment "SQUAD REKRUTIERUNG">
+<!ENTITY widgets.prefs.groups.ui.squadrecruitment "SQUADREKRUTIERUNG">
 <!ENTITY widgets.map.context.position.origin "Missionsursprung">
 <!ENTITY widgets.map.context.hc.remove "OIC löschen">
 <!ENTITY widgets.prefs.groups.visual.limitfov "FOV ÄNDERUNGEN BEGRENZEN">
+<!ENTITY widgets.prefs.groups.connection.netcode2 "NETCODE2">
+<!ENTITY widgets.prefs.groups.shadows.flying.tip "Schatten beim Fliegen anzeigen. Bei Performanceproblemen abschalten.">
 <!ENTITY widgets.prefs.groups.game.network.best "beste verwenden">
+<!ENTITY widgets.prefs.groups.visual.water.tip "Lässt Wasser realistischer erscheinen. Bei Performanceproblemen abschalten.">
+<!ENTITY widgets.prefs.groups.visual.texreduce.tip "Reduziert die Qualität der Texturen. Verbessert die Leistung.">
 <!ENTITY widgets.prefs.groups.video.card "VIDEOKARTE">
 <!ENTITY widgets.calibration.device.axisslider1 "Schieber 1">
 <!ENTITY widgets.template.quit.tip "Battleground Europe beenden?">
 <!ENTITY widgets.calibration.device.axisrx "Ruder X-Achse">
 <!ENTITY widgets.prefs.less "wenig">
+<!ENTITY widgets.prefs.groups.hud.icons.tip "Icons sind Symbole, die über eigenen und feindlichen Einheiten erscheinen">
 <!ENTITY widgets.prefs.groups.ui.colors.friendly "EIGENE EINHEITEN">
 <!ENTITY widgets.prefs.groups.video.gamma.sliders "SCHIEBER SPERREN">
+<!ENTITY widgets.prefs.groups.sound.ambient.tip "Auswahl, wie häufig Umgebungsgeräusche (Vogelzwitschern, Hundegebell etc.) zu hören sind.">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap "MINIKARTE">
 <!ENTITY widgets.prefs.groups.sound.system.hardware "Hardware">
 <!ENTITY widgets.keymapper.button.discard "VERWERFEN">
 <!ENTITY widgets.prefs.groups.visual "VISUELLE EFFEKTE">
-<!ENTITY widgets.keymapper.button.def.key.tip "Setzt die derzeitig ausgewählte Tastenbelegung wieder auf die Standardbelegung zurück.">
+<!ENTITY widgets.prefs.groups.video.resolution.tip "Wähle die Auflösung in der das Spiel läuft. Bei Performanceproblemen setze die Auflösung herunter.">
+<!ENTITY widgets.keymapper.button.def.key.tip "Setzt die ausgewählte Tastenbelegung wieder auf die Standardbelegung zurück.">
 <!ENTITY widgets.prefs.groups.game.presets.balanced "AUSGEWOGEN">
 <!ENTITY widgets.map.info.hq.title "BRIGADE-HQ">
+<!ENTITY widgets.prefs.groups.hud.ppos "PPO PLACEMENT">
 <!ENTITY widgets.prefs.groups.hud.custom.gameinfo "SPIEL INFO">
+<!ENTITY widgets.prefs.groups.connection.netcode2.tip "Schaltet Netcode2 ein. Verbessert die Verbindung zum Spieleserver und schaltet die Pinganzeige ein.">
 <!ENTITY widgets.prefs.groups.shaders.normalmaps "NORMAL MAPS">
+<!ENTITY widgets.prefs.groups.visual.grass "GRAS SHADER">
+<!ENTITY widgets.prefs.groups.visual.muzzlelight.tip "Schaltet Mündungsfeuer ein. Bei Performanceproblemen abschalten.">
 <!ENTITY widgets.keymapper.cats.general "Allgemeines">
 <!ENTITY widgets.template.back.tip "ZURÜCK zur vorherigen Seite">
 <!ENTITY widgets.calibration.device.axisz "Z-Achse">
-<!ENTITY widgets.prefs.pending "Du hast einige Einstellungen geändert. Möchtest Du diese jetzt speichern?">
+<!ENTITY widgets.prefs.pending "Möchtest Du die geänderten Einstellungen speichern?">
+<!ENTITY widgets.prefs.groups.video.vertsync.tip "Legt Framerate auf die Bildwiederholrate des Monitors fest. Bei Performanceproblemen abschalten.">
 <!ENTITY widgets.map.waypoints.contact.danger "GEFAHR">
+<!ENTITY widgets.prefs.groups.sound.system.tip "3D Sounds mit Soundkarte oder per Software berechnen">
 <!ENTITY widgets.prefs.groups.hud.mode.hide "verstecken">
 <!ENTITY widgets.infobar.day "Tag">
 <!ENTITY widgets.map.context.position.target "Missionsziel">
 <!ENTITY widgets.calibration.mouse.desc "Dieser Schieber regelt die Empfindlichkeit der Maus. Links entspricht geringer Empfindlichkeit, während rechts die Empfindlichkeit am Höchsten ist.">
 <!ENTITY widgets.map.tooltip.objective.defend "Hier wurde Verteidigung befohlen.">
+<!ENTITY widgets.prefs.groups.infantry.corpse.detail "DETAILED CORPSES">
+<!ENTITY widgets.prefs.groups.infantry.blood "BLUTPFÜTZEN">
 <!ENTITY widgets.prefs.groups.ui.colors.aws.high "VIELE FEINDE">
+<!ENTITY widgets.prefs.groups.connection.network.secondary "sekundär">
+<!ENTITY widgets.prefs.groups.infantry.corpse.density.tip "Select how many corpses to allow. Use a lower setting for better performance.">
 <!ENTITY widgets.keymapper.keys.modify "ÄNDERN">
 <!ENTITY widgets.prefs.list "EINSTELLUNGEN">
 <!ENTITY widgets.prefs.groups.titles.video "Videosystem">
@@ -2581,12 +2688,13 @@
 <!ENTITY mission.brieftab.members "MISSIONSMITGLIEDER">
 <!ENTITY mission.brieftab.brief.sstatus "Ein rotes Icon zeigt an, dass sich der Benutzer noch im UI befindet während ein grünes anzeigt, dass der Benutzer im Spiel ist.">
 <!ENTITY mission.aartab.aars.worst "SCHLECHTESTE EINHEIT">
-<!ENTITY mission.readytab.tip "Der Bereitschaftsraum deiner Mission. Wähle ein Vehikel oder eine Einheit zum Spielen und überblicke die Map deiner Mission.">
+<!ENTITY mission.readytab.tip "Der Bereitschaftsraum Deiner Mission. Wähle eine Einheit zum Spielen und verschaffe Dir einen Überblick auf der Karte.">
 <!ENTITY mission.host.expired "Deine Reservierung ist ausgelaufen.">
 <!ENTITY mission.brieftab.brief.mstatus "Ein dunkelblaues Symbol steht für einen Multi-Crew-Kommandanten und ein hellblaues Symbol steht für einen Multi-Crew-Teilnehmer.">
 <!ENTITY mission.readytab.panel.requestcrew.empty "Bitte warte auf eine verfügbare Besatzung...">
 <!ENTITY mission.readytab.supply.status.cut "Der Nachschub dieser Anlage wurde abgeschnitten, keine Verstärkung verfügbar.">
 <!ENTITY mission.aartab.aars.aar.bridgeshit "GETROFFENE BRÜCKEN">
+<!ENTITY mission.spawn.denied12 "Your account does not have access to this vehicle yet.">
 <!ENTITY mission.aartab.aars.id "EINSATZ-ID">
 <!ENTITY mission.readytab.panel.requestcrew.tip "Klicke diesen Button um einen anderen Spieler als Kanonier für dein Vehikel anzufordern.">
 <!ENTITY mission.aartab.aars.aar.guardingpoints "PUNKTE FÜR BEWACHUNG">
@@ -2594,17 +2702,17 @@
 <!ENTITY mission.aartab.aars.aar.stats "STATISTIKEN">
 <!ENTITY mission.aartab.aars.rescues "BERGUNGEN">
 <!ENTITY mission.readytab.crew.vehicle "VEHIKEL">
-<!ENTITY mission.forward.tip "Starte Deine Mission mit dem derzeit ausgewählten Vehikel oder Truppe.">
+<!ENTITY mission.forward.tip "Starte Deine Mission mit der ausgewählten Einheit">
 <!ENTITY mission.readytab.panel.joinvehicle.tip "Falls Du ein KANONIER für ein Vehikel sein willst, klicke diesen Button; falls Du ein KOMMANDANT für ein Vehikel sein willst, musst Du zuerst das Vehikel reservieren und dann auf BESATZUNG ANFORDERN klicken.">
 <!ENTITY mission.aartab.pending "Deine Missionsresultate sind unterwegs. Bitte warten...">
 <!ENTITY mission.aartab.aars.rtbs "ZUR BASIS ZURÜCKGEKEHRT (RTB)">
 <!ENTITY mission.readytab.supply.status.empty "Die Truppen dieser Anlage sind erschöpft; hier kann nicht eingestiegen werden.">
-<!ENTITY mission.readytab.spawn.notpermitted "Diese Einheit ist für dich derzeit nicht verfügbar, weil dein Rang noch zu niedrig ist.">
+<!ENTITY mission.readytab.spawn.notpermitted "Diese Einheit ist für Dich nicht verfügbar, weil Dein Rang noch zu niedrig ist.">
 <!ENTITY mission.aartab.aars "EINSATZBERICHTE">
 <!ENTITY mission.forward.delayed "VERZÖGERUNG: {1}">
 <!ENTITY mission.aartab.aars.kias "IM KAMPF GEFALLEN (KIA)">
 <!ENTITY mission.aartab.aars.aar.bridgesrepaired "REPARIERTE BRÜCKEN">
-<!ENTITY mission.aartab.aars.aar.notes.ms "{1} Soldaten starteten von Deinem Mobile Spawn">
+<!ENTITY mission.aartab.aars.aar.notes.ms "{1} Soldaten starteten von Deinem mobilen Spawn">
 <!ENTITY mission.spawn.denied9 "Deine Reservierung ist ausgelaufen. Lösche die Reservierung und versuche es noch einmal.">
 <!ENTITY mission.readytab.supply.status.notlinked "Keine Nachschublinien gefunden; hier kann nicht eingestiegen werden.">
 <!ENTITY mission.readytab.brief.origin "START">
@@ -2620,17 +2728,18 @@
 <!ENTITY mission.aartab.aars.more "Doppelklick auf einen Einsatz für mehr Informationen.">
 <!ENTITY mission.aartab.aars.best "BESTE EINHEIT">
 <!ENTITY mission.aartab.aars.aar.accumulated "PUNKTE ZUM NÄCHSTEN RANG">
-<!ENTITY mission.brieftab.brief.type "TYPE">
+<!ENTITY mission.brieftab.brief.type "TYP">
 <!ENTITY mission.readytab.slocked "Nur für Abonnenten">
 <!ENTITY mission.state.2 "Diese Mission ist nicht mehr aktiv. Bitte verlasse sie und such Dir eine andere Mission.">
 <!ENTITY mission.readytab.brief.ms.tip "Diese Checkbox kontrolliert, ob Du beim Mobile Spawn einsteigst oder nicht (falls vorhanden)">
 <!ENTITY mission.readytab.supply.state "STATUS:">
 <!ENTITY mission.aartab.aars.unit "EINHEIT">
-<!ENTITY mission.readytab.spawn.notdeployed "Diese Einheit ist nicht verfügbar, weil sie derzeit hier nicht stationiert ist.">
+<!ENTITY mission.readytab.spawn.notdeployed "Diese Einheit ist nicht verfügbar, weil sie hier nicht stationiert ist.">
 <!ENTITY mission.aartab.aars.aar.captures "EINNAHMEN">
 <!ENTITY mission.readytab.panel.requestcrew "BESATZUNG ANFORDERN">
 <!ENTITY mission.aartab.help "EINSATZBERICHT: DEINE LETZTEN RESULTATE">
-<!ENTITY mission.aartab.aars.aar.ms "MOBILE SPAWNEES">
+<!ENTITY mission.readytab.supply.info "* mouse over any vehicle for information about its availability">
+<!ENTITY mission.aartab.aars.aar.ms "MOBILE SPAWNER">
 <!ENTITY mission.readytab.forces.reserved "RESERVIERT">
 <!ENTITY mission.aartab.aars.aar.spawned "EINGESTIEGEN">
 <!ENTITY mission.readytab.supply.status.nmeownscp "Der Feind kontrolliert diesen CP; hier kann nicht eingestiegen werden.">
@@ -2653,17 +2762,17 @@
 <!ENTITY mission.aartab.aars.favorite "LIEBLINGSEINHEIT">
 <!ENTITY mission.readytab.panel.cancelreservation "RESERVIERUNG AUFHEBEN">
 <!ENTITY mission.aartab.aars.aar.scored "ERREICHTE PUNKTE">
-<!ENTITY mission.aartab.aars.mias "VERMISST IM KAMPF (MIAS)">
+<!ENTITY mission.aartab.aars.mias "VERMISST IM KAMPF (MIA)">
 <!ENTITY mission.aartab.aars.aar.nextrank "NÄCHSTER RANG">
 <!ENTITY mission.timeleft.url "https://secure.wwiionline.com/scripts/wwiionline/user/subscription.jsps">
-<!ENTITY mission.readytab.spawn.minimumrank "Der erforderliche Mindestrang für diese Einheit ist {1}. Dein derzeitiger Rang ist {2}.">
-<!ENTITY mission.readytab.panel.reserve.tip "Dieser Button reserviert die derzeit ausgewählte Waffe.">
+<!ENTITY mission.readytab.spawn.minimumrank "Der erforderliche Mindestrang für diese Einheit ist {1}. Dein aktueller Rang ist {2}.">
+<!ENTITY mission.readytab.panel.reserve.tip "Dieser Button reserviert die ausgewählte Waffe.">
 <!ENTITY mission.readytab.panel.joinvehicle "VEHIKEL BEITRETEN">
 <!ENTITY mission.state.1 "Deine Mission ist noch gültig.">
 <!ENTITY mission.aartab.aars.aar.notes.promoted "Du wurdest befördert">
 <!ENTITY mission.aartab.aars.aar.capperkills "KILLS BEI EINNAHMEN">
 <!ENTITY mission.brieftab.brief "MISSIONSDETAILS">
-<!ENTITY mission.readytab.brief.weapon "DERZEITIGE WAFFE">
+<!ENTITY mission.readytab.brief.weapon "WAFFE">
 <!ENTITY mission.brieftab.brief.target "ZIEL">
 <!ENTITY mission.readytab.crew "WÄHLE EINEN KOMMANDANTEN">
 <!ENTITY mission.host.accept "Crew-Beitritt akzeptiert">
@@ -2680,17 +2789,18 @@
 <!ENTITY mission.brieftab.members.rank "RANG">
 <!ENTITY mission.aartab.aars.aar "EINSATZ">
 <!ENTITY mission.spawn.denied0 "Deine Einstiegsanlage ist nicht gültig.">
-<!ENTITY mission.readytab.spawn.spawnable "Um zu reservieren, klicke einmal zum Auswählen und dann den RESERVIEREN-Button. Du kannst auch doppelklicken. Ein reserviertes Vehikel is deines, bis Du Deine Reservierung abbrichst, die Mission verlässt oder nicht zur Basis zurückkehrst.">
+<!ENTITY mission.readytab.spawn.spawnable "Um zu reservieren, klicke einmal zum Auswählen und dann den RESERVIEREN-Button. Du kannst auch doppelklicken. Ein Vehikel ist für Dich reserviert bis Du die Reservierung aufhebst, die Mission verlässt oder nicht zur Basis zurückkehrst.">
+<!ENTITY mission.readytab.mouseover "mouse over any vehicle for information about its availability">
 <!ENTITY mission.readytab.panel.selectcommander "KOMMANDANT WÄHLEN">
 <!ENTITY mission.aartab.aars.aar.kills.type "TYP">
 <!ENTITY mission.spawn.denied10 "Startverzögerung, bitte warten.">
 <!ENTITY mission.state.0 "Bitte verlasse Deine Mission, sie ist nicht mehr gültig.">
 <!ENTITY mission.spawn.denied5 "Der angeforderte Mobile Spawn ist nicht mehr verfügbar.">
-<!ENTITY mission.back.tip "Zurück zum Hauptquartier deiner Brigade. Wenn Du der Anführer der Mission bist, wird Deine Mission abgebrochen.">
+<!ENTITY mission.back.tip "Zurück zum Hauptquartier Deiner Brigade. Wenn Du der Anführer der Mission bist, wird ein anderer Anführer bestimmt.">
 <!ENTITY mission.readytab.commander "COMMANDER">
 <!ENTITY mission.readytab.supply.status.normal "Diese Anlage wird versorgt; Nachschub fließt normal.">
 <!ENTITY mission.readytab.spawn.slocked "Dieses Vehikel ist Abonnenten vorbehalten.">
-<!ENTITY mission.readytab.panel.selectcrew.tip "Wähle eine Besatzung für dein Vehikel und klicke diesen Button.">
+<!ENTITY mission.readytab.panel.selectcrew.tip "Wähle eine Besatzung für Dein Vehikel und klicke diesen Button.">
 <!ENTITY mission.readytab.panel.joinvehicle.empty "Bitte warte auf einen verfügbaren Kommandanten...">
 <!ENTITY mission.readytab.brief.members "TEAM">
 <!ENTITY mission.readytab.forces "VERFÜGBARE EINHEITEN">
@@ -2698,10 +2808,10 @@
 <!ENTITY mission.timeleft "Dein Stundenabonnement endet in {1}.">
 <!ENTITY mission.readytab.supply.status.cutbymate "Der Nachschub dieser Anlage wurde abgeschnitten; keine freundlichen Versorgungsdepots gefunden; keine Verstärkung verfügbar.">
 <!ENTITY mission.aartab.aars.aar.resupplies "PUNKTE FÜR NACHSCHUB">
-<!ENTITY mission.readytab.forces.branch.tip "Doppelklick um diese Vehikelklasse zu expandieren.">
+<!ENTITY mission.readytab.forces.branch.tip "Doppelklick um diese Vehikelklasse auszuklappen.">
 <!ENTITY mission.aartab.aars.aar.firebaseshit "GETROFFENE STELLUNGEN">
 <!ENTITY mission.readytab.supply.state0 "Hier kann nicht eingestiegen werden">
-<!ENTITY mission.aartab.tip "Hier kannst Du Deine letzten Einsatzberichte finden.">
+<!ENTITY mission.aartab.tip "Hier findest Du Deine letzten Einsatzberichte.">
 <!ENTITY mission.readytab.supply.status.nmeowns "Der Feind kontrolliert diese Anlage; hier kann nicht eingestiegen werden.">
 <!ENTITY mission.spawn.denied3 "Deine Mission ist abgelaufen oder nicht mehr gültig.">
 <!ENTITY mission.brieftab.members.handle "NAME">
@@ -2710,15 +2820,15 @@
 <!ENTITY mission.readytab.panel.reserve "WAFFE RESERVIEREN">
 <!ENTITY mission.aartab.aars.aar.result "RESULTAT">
 <!ENTITY mission.readytab.help "BEREITSCHAFTSRAUM: WÄHLE EINE WAFFE UND KLICKE SPIELWELT BETRETEN">
-<!ENTITY mission.spawn.denied2 "Deine derzeit reservierte Einheit ist nicht mehr verfügbar, bitte wähle eine andere.">
+<!ENTITY mission.spawn.denied2 "Deine reservierte Einheit ist nicht mehr verfügbar, bitte wähle eine andere.">
 <!ENTITY mission.readytab.supply.status.supplyotw "Der Nachschub für diese Anlage ist unterwegs und wird in ungefähr {1} Minute(n) eintreffen.">
 <!ENTITY mission.readytab.supply.status.wrongsupply "Eine freundliche Anlage ist mit dieser Anlage verbunden, jedoch stimmen die Länder nicht überein; hier kann nicht eingestiegen werden.">
 <!ENTITY mission.timeleft.expired "Dein Stundenabonnement ist ausgelaufen! Das Spiel leitet jetzt zu einer Bestellseite weiter.">
 <!ENTITY mission.readytab.supply.status.nmecontrols "Der Feind kontrolliert die Kaserne dieses CPs; hier kann nicht eingestiegen werden.">
 <!ENTITY mission.aartab.pending.none "Keine Missionsresultate verfügbar.">
 <!ENTITY mission.aartab.aars.aar.notes.none "Keine">
-<!ENTITY mission.brieftab.tip "Hier kannst Du die Liste der Spieler sehen, die in Deiner Mission teilnehmen und auch detaillierte Informationen über die Mission.">
-<!ENTITY mission.back.decision "Du bist derzeit der Anführer dieser Mission. Beim Verlassen wird die Mission abgebrochen. Willst Du fortfahren?">
+<!ENTITY mission.brieftab.tip "Hier siehst Du die Liste der Spieler in Deiner Mission und detaillierte Missionsinformationen.">
+<!ENTITY mission.back.decision "Du bist derAnführer dieser Mission. Beim Verlassen wird ein anderer Missionsführer festgelegt. Willst Du fortfahren?">
 <!ENTITY mission.readytab.supply.status.supplyclosed "Die Anlage, die diese Anlage versorgt ist geschlossen; hier kann nicht eingestiegen werden.">
 <!ENTITY mission.readytab.supply.supplier "VERSORGER:">
 <!ENTITY mission.brieftab.members.equipment "EQUIPMENT">
@@ -2753,16 +2863,17 @@
 <!ENTITY mission.readytab.brief "MISSIONSÜBERSICHT">
 <!ENTITY mission.readytab.brief.target "ZIEL">
 <!ENTITY mission.aartab.aars.aar.unit "EINHEIT">
-<!ENTITY mission.brieftab.brief.members "TEAM">
-<!ENTITY mission.forward.delayed.tip "Aufgrund einer Unausgeglichenheit der Seiten, wurde Deine Mission einstiegsverzögert. Sobald der Timer abgelaufen ist, kannst Du einsteigen.">
+<!ENTITY mission.brieftab.brief.members "GESAMT">
+<!ENTITY mission.forward.delayed.tip "Aufgrund einer Unausgeglichenheit der Seiten wurde Deine Mission einstiegsverzögert. Sobald der Timer abgelaufen ist, kannst Du einsteigen.">
 <!ENTITY mission.brieftab.brief.orders "MISSIONSBEFEHLE">
-<!ENTITY mission.brieftab.help "BESPRECHUNG: ÜBERPRÜFE DEINE MISSIONSDETEILS">
+<!ENTITY mission.brieftab.help "BESPRECHUNG: MISSIONSDETAILS">
 <!ENTITY mission.readytab.supply.status.closed "Diese Anlage ist geschlossen; hier kann nicht eingestiegen werden.">
 <!ENTITY mission.readytab.crew.commander "KOMMANDANT">
+<!ENTITY mission.spawn.denied11 "Your account minute balance has run out.">
 <!ENTITY brigades.list.key.reserve "RESERVE">
-<!ENTITY brigades.details.objective "DERZEITIGES ZIEL">
+<!ENTITY brigades.details.objective "ZIEL">
 <!ENTITY brigades.list.status.planning "Planung">
-<!ENTITY brigades.list.status.active.tip "Diese Brigade ist aktiv und hat mindestes eine Mission.">
+<!ENTITY brigades.list.status.active.tip "Diese Brigade ist aktiv und hat mindestes eine aktive Mission">
 <!ENTITY brigades.details.ms.multi "({1} MOBILE SPAWNS)">
 <!ENTITY brigades.list.inactive "inaktive Brigaden aus">
 <!ENTITY brigades.list.status.active "aktiv">
@@ -2770,10 +2881,10 @@
 <!ENTITY brigades.list.objective "ZIEL">
 <!ENTITY brigades.back "Persona wechseln">
 <!ENTITY brigades.details.home "BRIGADE-HQ">
-<!ENTITY brigades.list.status.inactive.tip "Diese Brigade ist inaktiv. Eine inaktive Brigade ist eine Brigade mit keinen Missionen.">
+<!ENTITY brigades.list.status.inactive.tip "Diese Brigade hat keine aktiven Missionen">
 <!ENTITY brigades.list.status.objective.tip "Diese Brigade hat ein Ziel, aber keine Missionen. Erstelle eine Mission für diese Brigade oder warte, bis ein Ranghöherer eine Mission erstellt.">
 <!ENTITY brigades.list.sq "SQ">
-<!ENTITY brigades.details.enlistments "EINTRAGUNGEN">
+<!ENTITY brigades.details.enlistments "AKTIVITÄT">
 <!ENTITY brigades.list.key.defend "VERTEIDIGEN">
 <!ENTITY brigades.forward "BRIGADE-HQ">
 <!ENTITY brigades.rostertab "BRIGADENLISTE">
@@ -2784,27 +2895,27 @@
 <!ENTITY brigades.list "HEERESGLIEDERUNG">
 <!ENTITY brigades.rostertab.help "Brigadeauswahl: Wähle eine Brigademitgliedschaft">
 <!ENTITY brigades.list.name "BRIGADE">
-<!ENTITY brigades.list.oic.tip "Spieler, der die Brigade im Moment führt.">
+<!ENTITY brigades.list.oic.tip "Spieler, der die Brigade im Moment führt">
 <!ENTITY brigades.list.status.tip "Zeigt an, ob diese Brigade aktiv ist oder nicht. Eine aktive Brigade hat mindestens 1 aktive Mission.">
 <!ENTITY brigades.list.inactive2 "Wähle eine AKTIVE Brigade von der Liste der verfügbaren Brigaden auf der linken Seite. Brigaden werden aktiv wenn eine oder mehr Offiziere darin eine Mission erstellen.">
 <!ENTITY brigades.list.key.inactive "INAKTIV">
 <!ENTITY brigades.list.ms.tip "Zeigt an, ob die Brigade aktive Mobile Spawns für eine ihrer Missionen hat.">
 <!ENTITY brigades.list.status.defensive "defensiv">
-<!ENTITY brigades.list.inactive.tip "Diese Brigade ist derzeit INAKTIV. Sobald ein Offizier eine Mission für diese Brigade erstellt, wird sie aktiv und Du kannst ihr beitreten.">
-<!ENTITY brigades.back.tip "Zurück zur Persona Auswahl.">
+<!ENTITY brigades.list.inactive.tip "Diese Brigade ist INAKTIV. Sobald ein Offizier eine Mission für diese Brigade erstellt, wird sie aktiv und Du kannst ihr beitreten.">
+<!ENTITY brigades.back.tip "Zurück zur Persona Auswahl">
 <!ENTITY brigades.list.dd "Zerstörer">
 <!ENTITY brigades.details.ms.single "(1 MOBILE SPAWN)">
-<!ENTITY brigades.list.pop.tip "Anzahl der Spieler in der Brigade.">
+<!ENTITY brigades.list.pop.tip "Anzahl der Spieler in der Brigade">
 <!ENTITY brigades.list.tip "Klicke auf eine Brigade um mehr Informationen auf der rechten Seite zu erhalten">
 <!ENTITY brigades.details.commander "CO">
 <!ENTITY brigades.list.dd.tip "Zeigt an, ob die Brigade an einem Hochseehafen stationiert ist. In Hochseehäfen können Zerstörer und Frachter gespawnt werden.">
-<!ENTITY brigades.rostertab.tip "Wähle Deine Brigadezugehörigkeit von einer Liste der verfügbaren Brigaden.">
-<!ENTITY brigades.forward.tip "Gib das Hauptquartier der ausgewählten Brigade ein.">
+<!ENTITY brigades.rostertab.tip "Wähle Deine Brigadezugehörigkeit von einer Liste der verfügbaren Brigaden">
+<!ENTITY brigades.forward.tip "Gib das Hauptquartier der ausgewählten Brigade ein">
 <!ENTITY brigades.list.status "STATUS">
-<!ENTITY brigades.list.status.planning.tip "Diese Brigade ist aktiv, jedoch wurde ihr noch kein Auftrag zugeteilt. Das Oberkommando deiner Seite wird einen Auftrag für diese Brigade bestimmen.">
+<!ENTITY brigades.list.status.planning.tip "Diese Brigade ist aktiv, jedoch wurde ihr noch kein Auftrag zugeteilt. Das Oberkommando Deiner Seite wird einen Auftrag für diese Brigade bestimmen.">
 <!ENTITY brigades.list.status.inactive "inaktiv">
 <!ENTITY brigades.details.division "DIVISION">
-<!ENTITY brigades.list.sq.tip "Zeigt an, ob ein Squadmitglied in dieser Brigade spielt.">
+<!ENTITY brigades.list.sq.tip "Zeigt an, ob ein Squadmitglied in dieser Brigade spielt">
 <!ENTITY content.ranks.navy "MARINE">
 <!ENTITY content.movies.rewind "ZURÜCKSPULEN">
 <!ENTITY content.ranks.level "LEVEL">
@@ -2841,7 +2952,7 @@
 <!ENTITY map.legend "Kartenlegende anschauen.">
 <!ENTITY offline.spawntab.tip "Wähle ein Vehikel oder eine Einheit.">
 <!ENTITY offline.spawntab.filter.country.tip "Filtert die angezeigte Vehikel/Truppenliste nach dem ausgewählten Land.">
-<!ENTITY offline.forward.tip "Steig offline ein um die Welt zu erkunden.">
+<!ENTITY offline.forward.tip "Steige offline ein um die Welt zu erkunden.">
 <!ENTITY offline.forward "SPIELWELT BETRETEN">
 <!ENTITY offline.spawntab.selection.forces "VERFÜGBARE TRUPPEN">
 <!ENTITY offline.spawntab.filter.branch "NACH WAFFENGATTUNG FILTERN">
@@ -2866,7 +2977,7 @@
 <!ENTITY tutorials.start.tip "Hier klicken, um den gewählten Lehrgang zu beginnen">
 <!ENTITY tutorials.open "offen">
 <!ENTITY tutorials.score.damaged "{1} von {2} getroffen">
-<!ENTITY tutorials.tab.tip "Complete several training operations to be a better warrior!">
+<!ENTITY tutorials.tab.tip "Absolviere Trainingskurse um das Spiel besser kennenzulernen">
 <!ENTITY tutorials.start.failed.instance "Konnte Instanz nicht erstellen. Versuch es später noch einmal.">
 <!ENTITY tutorials.unavailable "nicht berechtigt">
 <!ENTITY tutorials.score.timed "{1} von {2} Minuten">
@@ -2879,7 +2990,7 @@
 <!ENTITY tutorials.limited "Dieser Lehrgang kann nur einmal abgeschlossen werden">
 <!ENTITY tutorials.dead "Leider hat Dich der Gegner besiegt. Spawne neu und versuch es noch einmal.">
 <!ENTITY tutorials.failure "Leider hast Du den Lehrgang nicht bestanden. Bitte versuche es noch einmal.">
-<!ENTITY tutorials.capturing "Anlagen können während des Trainings nich eingenommen werden.">
+<!ENTITY tutorials.capturing "Anlagen können während des Trainings nicht eingenommen werden.">
 <!ENTITY tutorials.score.captured "{1} von {2} Einnahmen">
 <!ENTITY tutorials.select "Lehrgang auswählen">
 <!ENTITY tutorials.graduation "Exzellent, Du hast {1} absolviert!">
@@ -2891,15 +3002,15 @@
 <!ENTITY tutorials.tab "TRAINING">
 <!ENTITY loading.sounds.init "Initialisiere Sounds">
 <!ENTITY loading.network.chat "Stelle Verbindung zum Chat her">
-<!ENTITY loading.copyright "copyright © 1999 - 2009 Playnet, Inc.">
+<!ENTITY loading.copyright "copyright © 1999 - 2010 Playnet, Inc.">
 <!ENTITY loading.sounds "Lade Sounds">
 <!ENTITY loading.network.loggingin "Einloggen">
 <!ENTITY loading.network.auth "Authentifizieren">
 <!ENTITY loading.network "Verbinde mit Netzwerk">
-<!ENTITY loading.gameloop "Initialisiere Spielkreislauf">
+<!ENTITY loading.gameloop "Initialisiere Loop">
 <!ENTITY loading.trees "Lade Bäume">
 <!ENTITY loading.network.complete "Login erfolgreich">
-<!ENTITY loading.sdms "Vorladen der SDMs">
+<!ENTITY loading.sdms "Initialisiere Schadensmodelle">
 <!ENTITY loading.extresource "Initialisiere Externe Ressourcen">
 <!ENTITY loading.fps "Initialisiere FPS-System">
 <!ENTITY loading.network.host "Stelle Verbindung zum Host her">
@@ -2923,6 +3034,7 @@
 <!ENTITY brigade.control.proposal.move "{1} proposed {2} moving {3} to {4}.">
 <!ENTITY brigade.createtab.origin "URSPRUNG">
 <!ENTITY brigade.control.proposal.replace "{1} assumed command of {2}.">
+<!ENTITY brigade.control.error.hasotheroffer "Request Denied: Player already has an outstanding offer.">
 <!ENTITY brigade.comtab.commanders "AKTIVE OFFIZIERE">
 <!ENTITY brigade.comtab.news "MELDUNGEN VOM OBERKOMMANDO">
 <!ENTITY brigade.createtab.postreply.5 "Deine Missionserstellungsanfrage ist abgelaufen. Bitte versuche es erneut.">
@@ -2946,7 +3058,7 @@
 <!ENTITY brigade.control.vetoed.nominate.me "{1} VETOED your nomination to command {2}.">
 <!ENTITY brigade.control.error.isoic.me "Request Denied: You already have an OIC position (or duplicate assume-command request).">
 <!ENTITY brigade.createtab.target "MISSIONSZIEL">
-<!ENTITY brigade.createtab.error.noperms "Du kannst derzeit keine Mission erstellen. Dein Rang reicht nicht aus oder Du hast erst kürzlich Missionen erstellt.">
+<!ENTITY brigade.createtab.error.noperms "Du kannst keine Mission erstellen. Dein Rang reicht nicht aus oder Du hast erst kürzlich Missionen erstellt.">
 <!ENTITY brigade.createtab.postreply.3 "Dein Rang reicht nicht dafür aus, eine Mission zu erstellen.">
 <!ENTITY brigade.control.unit.moved "{1} moved {2} from {3} to {4}.">
 <!ENTITY brigade.forward "Besprechung">
@@ -2989,7 +3101,7 @@
 <!ENTITY brigade.createtab.help "ERSTELLEN: WÄHLE EINEN STARTPUNKT FÜR DIE MISSION">
 <!ENTITY brigade.control.error.cantnominate "Duh! Only non-HC staff require nomination. HC staff can assume command of any non-occupied orbat unit.">
 <!ENTITY brigade.createtab.error.4 "That facility does not belong to your side.">
-<!ENTITY brigade.comtab.enlistments "Eintragungen">
+<!ENTITY brigade.comtab.enlistments "Aktivität">
 <!ENTITY brigade.control.error.voting "Request Denied: {2} is considering another proposal.">
 <!ENTITY brigade.control.vetoed.objective.clear "{4} VETOED clear {2}.">
 <!ENTITY brigade.control.vetoed.remove.me "{3} VETOED {1} OIC removal from {2}.">
@@ -3000,7 +3112,7 @@
 <!ENTITY brigade.hqtab.missions.leader "ANFÜHRER">
 <!ENTITY brigade.createtab.postreply.9 "Deine Brigade ist nicht aktiv und Dein Rang reicht nicht zum Aktivieren der Brigade aus.">
 <!ENTITY brigade.comtab.missions "Aktive Missionen">
-<!ENTITY brigade.hqtab.brief.ms "MOBILE SPAWN">
+<!ENTITY brigade.hqtab.brief.ms "MOBILER SPAWN">
 <!ENTITY brigade.control.objective.clear "{1}: {4} is withdrawing {2} objective.">
 <!ENTITY brigade.hqtab.brief.ms.on "verfügbar">
 <!ENTITY brigade.control.error.selfveto "You can&#39;t block votes on yourself. Ask a friend to do it. If you have no friends, then maybe you should rethink your approach (not that it&#39;s worked for me).">
@@ -3017,6 +3129,7 @@
 <!ENTITY brigade.hqtab.missions.origin "URSPRUNG">
 <!ENTITY brigade.comtab.status "OPERATIONALER STATUS">
 <!ENTITY brigade.hqtab.missions.key.defend "VERTEIDIGEN">
+<!ENTITY brigade.control.error.notpermitted "Request Denied: Player cannot be nominated.">
 <!ENTITY brigade.forward.tip "Der gewählten Mission beitreten.">
 <!ENTITY brigade.hqtab.basedoutof "stationiert in">
 <!ENTITY brigade.createtab.orders "MISSIONSBEFEHLE">
@@ -3028,8 +3141,8 @@
 <!ENTITY brigade.control.error.nothc "Request Denied: Only enlisted members of the High Command Staff can do that.">
 <!ENTITY brigade.control.error.notoic "{1} is not currently OIC of {2}!">
 <!ENTITY brigade.hqtab.missions.key.attack "ANGREIFEN">
-<!ENTITY brigade.comtab.tip "Überprüfe den Tagesbefehl der Brigade, Offiziere, die online sind und die Kommandostruktur.">
-<!ENTITY brigade.comtab.help "BRIGADE-MOTD: BEACHTE DEINE BEFEHLE, SOLDAT">
+<!ENTITY brigade.comtab.tip "Anzeigen der Kommandostruktur und des Tagesbefehls der Brigade">
+<!ENTITY brigade.comtab.help "TAGESBEFEHL: BEACHTE DEINE BEFEHLE, SOLDAT">
 <!ENTITY brigade.control.offering "{1} offered OIC of {2}.">
 <!ENTITY brigade.control.vetoed.remove "{3} VETOED {1} OIC removal from {2}.">
 <!ENTITY brigade.back.decision.brigade "BRIGADE">
@@ -3057,7 +3170,7 @@
 <!ENTITY brigade.control.error.badorigin "Request Denied: {2} is not at {3} (may already have been moved/duplicate request).">
 <!ENTITY brigade.control.proposal.objective.defend.bridge "{4} proposed defend {2}.">
 <!ENTITY brigade.createtab.tip "Falls Du genug Rechte besitzt und noch keine Mission erstellt hast, kannst Du hier eine erstellen.">
-<!ENTITY brigade.hqtab.brief.type "MISSIONSZIEL">
+<!ENTITY brigade.hqtab.brief.type "MISSIONSTYP">
 <!ENTITY brigade.control.proposal.nominate.me "You should not see this message#001. Do not translate.">
 <!ENTITY brigade.hqtab.missions.pop.tip "Zeigt an, wieviele Spieler an dieser Mission teilnehmen.">
 <!ENTITY brigade.control.error.notleader "Request Denied: You must be OIC to do that.">
@@ -3068,7 +3181,7 @@
 <!ENTITY brigade.hqtab.missions "AKTIVE MISSIONEN">
 <!ENTITY brigade.control.error.hasoffer "Sorry, {2} has been offered to another player.">
 <!ENTITY brigade.control.appointment.failed.me "Your appointment to command of {1} has failed.">
-<!ENTITY brigade.back.tip "Zurück um die Persona zu wechseln oder um die derzeitige Persona aktiv zu halten und zu einer neuen Brigade beizutreten.">
+<!ENTITY brigade.back.tip "Persona wechseln oder zu einer neuen Brigade beitreten.">
 <!ENTITY brigade.control.offering.me "You have been offered OIC of {1}.">
 <!ENTITY brigade.comtab "NACHRICHTEN">
 <!ENTITY brigade.createtab.error.owner "Du musst eine Kaserne, Stellung oder ein Depot in einer Stadt, die von Deinem Land kontrolliert wird, als Urprungsort auswählen.">
@@ -3133,7 +3246,7 @@
 <!ENTITY legend.airbase "Flugfeld">
 <!ENTITY legend.defend "Verteidigung">
 <!ENTITY legend.overrun "Überrannt">
-<!ENTITY common.squads.create.xo.tip "Dies ist dein XO. Er hilft dabei, das Squad zu betreiben. Du kannst den XO jederzeit ändern, indem Du ihn degradierst und einen anderen Spieler beförderst.">
+<!ENTITY common.squads.create.xo.tip "Dies ist Dein XO. Er hilft dabei, das Squad zu betreiben. Du kannst den XO jederzeit ändern, indem Du ihn degradierst und einen anderen Spieler beförderst.">
 <!ENTITY common.squads.recruitment.title "FINDE EINE SQUAD UND STÜRZ DICH IN DEN KAMPF!">
 <!ENTITY common.squads.member.flags.afk "AFK">
 <!ENTITY common.countries.it.side "Achsen">
@@ -3146,7 +3259,7 @@
 <!ENTITY common.time.minutes "{1} Minuten">
 <!ENTITY common.squads.details.options.prefs.recruiting "Rekrutierung einschalten?">
 <!ENTITY common.vehicles.classes.6 "LKW/Zugmaschine">
-<!ENTITY common.squads.create.short.tip "Kurznamen müssen eindeutig sein. Es können nur Buchstaben und/oder Nummern verwendet werden. Kurznamen scheinen im Spiel unter Deinem Namen auf.">
+<!ENTITY common.squads.create.short.tip "Kurznamen müssen eindeutig sein. Es können nur Buchstaben und/oder Nummern verwendet werden. Der Kurzname erscheint im Spiel unter Deinem Namen.">
 <!ENTITY common.training "Grundlagentraining">
 <!ENTITY common.squads.edit.night "Squadabend">
 <!ENTITY common.squads.create.xo "AUSFÜHRENDER OFFIZIER">
@@ -3176,7 +3289,7 @@
 <!ENTITY common.squads.invite.decline.auto "Squadeinladungen automatisch ablehnen.">
 <!ENTITY common.languages.5 "chinesisch">
 <!ENTITY common.squads.member.type "TYP">
-<!ENTITY common.squads.details.options.xo.remove "Wähle einen Spieler zum Entfernen aus">
+<!ENTITY common.squads.details.options.xo.remove "Spieler aus Squad entfernen">
 <!ENTITY common.squads.details.description "BESCHREIBUNG">
 <!ENTITY common.squads.details.options.co.disband "Squad auflösen?">
 <!ENTITY common.squads.edit.language "Welches ist die hauptsächlich gesprochene Sprache?">
@@ -3186,21 +3299,21 @@
 <!ENTITY common.vehicles.categories.3 "Wasserfahrzeug">
 <!ENTITY common.squads.recruitment.description "Hier findest Du eine Liste aller Squads, die Mitglieder suchen. Squads sind ein wichtig für den Spielspaß. Such Dir ein Squad aus, Du kannst jederzeit wechseln, wenn es Dir nicht gefällt.">
 <!ENTITY common.map.tab.tip.offline "Lerne die Karte der Spielwelt kennen. Vergrößere die Ansicht, um Städte, Brücken und andere Features zu sehen.">
-<!ENTITY common.squads.edit.motd "Bitte gib einen Tagesbefehl ein. So kann jedes Mitglied sehen, was gerade gemacht wird. Der Text darf maximal 400 Zeichen lang sein.">
+<!ENTITY common.squads.edit.motd "Gib einen Tagesbefehl ein. So kann jedes Mitglied sehen, was gerade gemacht wird. Der Text darf maximal 400 Zeichen lang sein.">
 <!ENTITY common.commandedby "Kommandiert von">
 <!ENTITY common.squads.create "ERSTELLEN">
 <!ENTITY common.squads.member.joined.month "vor {1} Monat">
 <!ENTITY common.squads.recruitment.join "SQUAD BEITRETEN">
 <!ENTITY common.countries.it.name "Italien">
 <!ENTITY common.page "SEITE">
-<!ENTITY common.squads.create.help "SQUADS: ERSTELLE ODER TRETE EINEM SQUAD BEI">
+<!ENTITY common.squads.create.help "SQUADS: ERSTELLE ODER TRITT EINEM SQUAD BEI">
 <!ENTITY common.squads.member.offline "OFFLINE">
 <!ENTITY common.squads.details.recruiting.false "Rekrutierung ist ausgeschaltet">
 <!ENTITY common.more.dbclick "Doppelklick auf einen Listeneintrag für mehr Informationen.">
 <!ENTITY common.controllers.tab.tip "Einstellen der Sensibilität der Kontroller-Achsen.">
 <!ENTITY common.squads.details.options.recruiter "REKRUTIERUNGSOPTIONEN">
 <!ENTITY common.squads.members.tips.offline "Dieser Spieler ist OFFLINE">
-<!ENTITY common.squads.invite.clear "CLEAR">
+<!ENTITY common.squads.invite.clear "NEU EINGEBEN">
 <!ENTITY common.squads.details.voting "ABSTIMMUNGEN MÖGLICH">
 <!ENTITY common.squads.member.join.mission "Hier klicken, um der Mission dieses Squaddies beizutreten. Eventuelle Seitensperrungen sind aktiv.">
 <!ENTITY common.mission.5 "Versorgen">
@@ -3209,13 +3322,13 @@
 <!ENTITY common.squads.member.joined.days "vor {1} Tagen">
 <!ENTITY common.vehicles.classes.1 "Bomber">
 <!ENTITY common.yes "JA">
-<!ENTITY common.squads.create.msg.shortname "Das Kurznamenfeld ist zu lang!">
+<!ENTITY common.squads.create.msg.shortname "Das Kurzname ist zu lang!">
 <!ENTITY common.squads.details.options.prefs "EINSTELLUNGEN">
 <!ENTITY common.squads.member.joined.year "vor {1} Jahr">
 <!ENTITY common.squads.details.name "NAME">
 <!ENTITY common.squads.create.member "MITGLIED">
 <!ENTITY common.languages.2 "französisch">
-<!ENTITY common.squads.details.options.xo.demote "Wahle eine Spieler zum Degradieren aus.">
+<!ENTITY common.squads.details.options.xo.demote "Squadmitglied degradieren">
 <!ENTITY common.squads.details.motd.default "Kein Tagesbefehl angegeben">
 <!ENTITY common.mission.1.short "Angriff">
 <!ENTITY common.squads.counts "{1} online / {2} gesamt">
@@ -3255,7 +3368,7 @@
 <!ENTITY common.vehicles.classes.12 "Boot">
 <!ENTITY common.squads.create.msg.handle "{0} scheint kein gültiger Mitgliedsname zu sein!">
 <!ENTITY common.countries.de.navy "Deutsche Marine">
-<!ENTITY common.squads.edit.tip "Hier klicken um in den Editor-Modus zu gelangen. Sobald Du mit deinen Änderungen zufrieden bist, klicke diesen Button erneut um Deine Änderungen einzureichen.">
+<!ENTITY common.squads.edit.tip "Hier klicken um in den Editor-Modus zu gelangen. Klicke diese Knopf noch einmal, um Deine Änderungen einzureichen.">
 <!ENTITY common.squads.invite.accept "AKZEPTIEREN">
 <!ENTITY common.time.now "jetzt">
 <!ENTITY common.squads.ranks.rank2 "Mitglied">
@@ -3267,7 +3380,7 @@
 <!ENTITY common.squads.member.joined.years "vor {1} Jahren">
 <!ENTITY common.squads.member.join "BEITRETEN">
 <!ENTITY common.settings.help "ZUM SPEICHERN DER EINSTELLUNGEN DEN &#39;SPEICHERN&#39;-KNOPF BETÄTIGEN">
-<!ENTITY common.squads.create.msg.longname "Das Feld für den vollen Namen ist zu lang!">
+<!ENTITY common.squads.create.msg.longname "Der volle Name des Squads ist zu lang!">
 <!ENTITY common.squads.recruitment.success.mission "Du wirst auf eine Mission nach {1} geschickt.">
 <!ENTITY common.branches.navy "Marine">
 <!ENTITY common.countries.none.name "Unbekannt">
@@ -3277,7 +3390,7 @@
 <!ENTITY common.squads.details.recruiting.true "Rekrutierung ist eingeschaltet">
 <!ENTITY common.squads.create.member.tip "Du musst einen XO und 3 Anfangsmitglieder festlegen um die Anforderungen zum Erstellen des Squads zu erfüllen. Gib den Spielnamen eines Spielers hier ein.">
 <!ENTITY common.squads.invite.recruiters "REKRUTIERER">
-<!ENTITY common.squads.tab.tip "In diesem Tab kannst Du nach Squads zum Beitreten suchen, oder wenn Du in einem Squad bist, kannst Du Dir die Mitgliederliste ansehen oder Informationen auf den neuesten Stand bringen, wenn Du die Erlaubnis hast.">
+<!ENTITY common.squads.tab.tip "In diesem Tab kannst Du nach rekrutierenden Squads suchen. Wenn Du Mitglied eines Squads bist, findest Du hier die Mitgliederliste und Squadfunktionen.">
 <!ENTITY common.squads.member.joined.today "Heute">
 <!ENTITY common.squads.details.voting.true "Abstimmen ist eingeschaltet">
 <!ENTITY common.languages.3 "deutsch">
@@ -3315,7 +3428,7 @@
 <!ENTITY common.mission.ad "Gebietsverteidigung">
 <!ENTITY common.squads.invite.decline "ABLEHNEN">
 <!ENTITY common.countries.it.army "Italienische Armee">
-<!ENTITY common.squads.edit.homepage "Bitte gib die Homepage Deiner Squad an. Der Link kann bis zu 80 Zeichen lang sein.">
+<!ENTITY common.squads.edit.homepage "Link zur Homepage Deiner Squad. Der Link kann bis zu 80 Zeichen lang sein.">
 <!ENTITY common.map.tab.tip "Frontüberblick. Vergrößere die Ansicht und plane Deinen Angriff oder Deine Verteidigung.">
 <!ENTITY common.countries.fr.army "Französische Armee">
 <!ENTITY common.squads.member.flags.none "Keine">
@@ -3329,7 +3442,7 @@
 <!ENTITY common.countries.de.airforce "Deutsche Luftwaffe">
 <!ENTITY common.squads.details.motd "TAGESBEFEHL">
 <!ENTITY common.languages.0 "englisch">
-<!ENTITY common.squads.create.long.tip "Der volle Name ist der komplette Name deines Squads. Er kann jedes normale Zeichen beinhalten und kann bis zu 40 Zeichen lang sein.">
+<!ENTITY common.squads.create.long.tip "Der volle Name ist der komplette Name Deines Squads. Er kann jedes normale Zeichen beinhalten und bis zu 40 Zeichen lang sein.">
 <!ENTITY common.squads.details.night.dow0 "Sonntag">
 <!ENTITY common.squads.edit.description "Bitte gib eine Beschreibung Deines Squads ein. Der Text kann maximal 255 Zeichen lang sein.">
 <!ENTITY common.squads.members.refresh "AKTUALISIEREN">
@@ -3347,10 +3460,11 @@
 <!ENTITY common.squads.details.night.dow3 "Mittwoch">
 <!ENTITY common.countries.uk.navy "Britische Marine">
 <!ENTITY common.squads.details.options.member.leave.button "VERLASSEN">
-<!ENTITY common.squads.members.persona "DERZEITIGE PERSONA">
+<!ENTITY common.squads.members.persona "AKTUELLE PERSONA">
 <!ENTITY common.squads.create.long "VOLLER NAME">
 <!ENTITY common.squads.details.created "ERSTELLT">
 <!ENTITY common.squads.details.night.dow6 "Samstag">
+<!ENTITY common.exitclick "CLICK ANYWHERE TO EXIT">
 <!ENTITY common.time.minute "{1} Minute">
 <!ENTITY common.vehicles.classes.3 "Andere">
 <!ENTITY common.squads.invite.noinvite "No Invitation">
@@ -3373,7 +3487,7 @@
 <!ENTITY common.squads.details.options.prefs.invites "Squadeinladungen akzeptieren?">
 <!ENTITY common.countries.none.army "Unbekannte Armee">
 <!ENTITY common.countries.it.adjective "Italienisch">
-<!ENTITY common.squads.details.options.xo.promote "Wähle einen Spieler für eine Beförderung aus.">
+<!ENTITY common.squads.details.options.xo.promote "Squadmitglied befördern">
 <!ENTITY common.squads.member.persona "PERSONA">
 <!ENTITY common.languages.4 "spanisch">
 <!ENTITY common.vehicles.classes.5 "Artillerie">
@@ -3385,9 +3499,9 @@
 <!ENTITY common.squads.members "SQUAD MITGLIEDER">
 <!ENTITY common.squads.recruitment.info "kämpft für {1} | spricht {2} | Rekrutierer ist {3}">
 <!ENTITY common.mission.3.short "Verteidigung">
-<!ENTITY common.squads.create.msg.sent "Anfrage zur Erstellung des Squads gesendet! Falls der Host Deine Anfrage akzeptiert, wird das Squad erstellt, sobald die ersten Mitglieder die Mitgliedschaft akzeptieren.">
+<!ENTITY common.squads.create.msg.sent "Anfrage zur Erstellung des Squads gesendet! Falls der Host Deine Anfrage akzeptiert, wird das Squad erstellt, sobald die Erstmitglieder die Mitgliedschaft akzeptieren.">
 <!ENTITY common.squads.details.night.dow4 "Donnerstag">
-<!ENTITY common.squads.edit.voting "Schalte diese option ein, um Squad Wahlen (Co und ähnliches) zu erlauben.">
+<!ENTITY common.squads.edit.voting "Schalte diese Option ein, um Squad Wahlen (CO/XO) zu erlauben.">
 <!ENTITY common.squads.member.join.select "Beitritt nicht möglich, weil der Host Deine neue Persona-Wahl abgelehnt hat.">
 <!ENTITY common.countries.fr.side "Alliierte">
 <!ENTITY common.squads.tab.offline "Dieser Tab ist nur im Online-Modus verfügbar.">
@@ -3451,6 +3565,7 @@
 <!ENTITY chat.f5.tip "Klicke um den Kanal #5 einzustellen. Benutze die F5 Taste um auf diesem Kanal zu chatten.">
 <!ENTITY chat.hc "HC">
 <!ENTITY chat.ml "ML">
+<!ENTITY chat.ratelimited "Bitte schicke die Nachrichten nicht so häufig ab.">
 <!ENTITY chat.channel.custom "Eigener">
 <!ENTITY chat.holdfall.req "[{1}] {2} hat {3} angefordert. Halten:{4}/Rückz:{5}/Verzög:{6}">
 <!ENTITY chat.channel.origin "Startpkt">
@@ -3462,7 +3577,7 @@
 <!ENTITY chat.afk "AFK">
 <!ENTITY chat.channel.help "Hilfe">
 <!ENTITY chat.f1.tip "Klicke um den Kanal #1 einzustellen. Benutze die F1 Taste um auf diesem Kanal zu chatten.">
-<!ENTITY hud.secondary.tip "Dein derzeitiger sekundärer Munitionsvorrat in der Form Munition : Magazine">
+<!ENTITY hud.secondary.tip "Dein sekundärer Munitionsvorrat in der Form Munition : Magazine">
 <!ENTITY hud.readout.torp.control.invalid "Keine gültige Feuerlösung!">
 <!ENTITY hud.gameinfo.icon "Icon Modus">
 <!ENTITY hud.readout.torp.control "Feuerlösung Feuerwinkel">
@@ -3471,12 +3586,14 @@
 <!ENTITY hud.health.atp.tip "Dein ATP ist auf {1}. ATP wird zum Rennen, Kriechen oder Ducken gebraucht">
 <!ENTITY hud.alerts.17 "Du hast von {1} Nachschub erhalten">
 <!ENTITY hud.readout.vehicles "Vehikel">
+<!ENTITY hud.hqintel.weight.0 "Light">
 <!ENTITY hud.alerts.24.sea "Feindliche Schiffe bei {1} gesichtet">
 <!ENTITY hud.readout.aoa "AOA">
 <!ENTITY hud.alerts.4 "Du wurdest von {1} mit Nachschub versorgt">
+<!ENTITY hud.alerts.30.minalt "You are below the minimum altitude for bailing!">
 <!ENTITY hud.readout.invisible "Unsichtbar">
 <!ENTITY hud.alerts.12.lost "Wir haben {1} an den Feind verloren">
-<!ENTITY hud.minimap.latlon "Deine derzeitige Position in Längen- und Breitengraden">
+<!ENTITY hud.minimap.latlon "Deine Position in Längen- und Breitengraden">
 <!ENTITY hud.readout.infantry.seat "Sitz">
 <!ENTITY hud.readout.gear.engine "Motor">
 <!ENTITY hud.minimap "Karte der näheren Umgebung">
@@ -3486,22 +3603,27 @@
 <!ENTITY hud.minimap.out "Verkleinern">
 <!ENTITY hud.readout.infantry "Infanterie">
 <!ENTITY hud.gameinfo.fov "Blickfeld">
+<!ENTITY hud.hqintel.dir.5 "southwest">
 <!ENTITY hud.readout.riding.stowed "Verstaut in Position">
 <!ENTITY hud.readout.slip "Slip">
+<!ENTITY hud.hqintel.far "Intel: &#37;ls enemy infantry presence &#37;ls of your position!">
 <!ENTITY hud.alerts.5 "Du hast bald keinen Munitonssvorrat mehr">
 <!ENTITY hud.alerts.18.liberated "Eigene Streikräfte haben {1} befreit">
 <!ENTITY hud.readout.agl "HÖHE ÜBER GRUND">
+<!ENTITY hud.alerts.28 "Enemy Spawn Point! Firing disabled- please leave the area!">
 <!ENTITY hud.cliptype.2.plural "Gurte">
 <!ENTITY hud.alerts.18.captured "Feindliche Streitkräfte haben {1} erobert">
 <!ENTITY hud.readout.riding.seated "Sitz Nummer">
+<!ENTITY hud.hqintel.dir.2 "east">
 <!ENTITY hud.readout.visible "Sichtbar">
 <!ENTITY hud.gameinfo.fps "FPS">
 <!ENTITY hud.readout.gear "Gang">
 <!ENTITY hud.minimap.nearest.none "Keine">
-<!ENTITY hud.health.atp "Dieses Icon zeigt Deinen derzeitigen Status an">
+<!ENTITY hud.health.atp "Dieses Icon zeigt Deinen aktuellen Status an">
 <!ENTITY hud.alerts.19.liberated "Eigene Streitkräfte haben {1} befreit">
 <!ENTITY hud.readout.position "Position">
 <!ENTITY hud.health.state.crew "BESATZUNG">
+<!ENTITY hud.hqintel.dir.0 "north">
 <!ENTITY hud.readout.torp.bearing "Relativer Kurs">
 <!ENTITY hud.alerts.13.hold "Deine Brigade soll die Stellung unter allen Umständen halten">
 <!ENTITY hud.alerts.21.withdrawn "Der Angriffsbefehl für {1} wurde aufgehoben">
@@ -3509,6 +3631,7 @@
 <!ENTITY hud.alerts.24.air "Feindflieger bei {1} gesichtet">
 <!ENTITY hud.readout.torp.control.angle "VORHALTEWINKEL">
 <!ENTITY hud.readout.range "Enfernungseinstellung">
+<!ENTITY hud.hqintel.dir.6 "west">
 <!ENTITY hud.minimap.in "Vergrößern">
 <!ENTITY hud.cliptype.1.plural "Magazine">
 <!ENTITY hud.readout.riding.lifeboat "Im Rettungsboot">
@@ -3535,6 +3658,7 @@
 <!ENTITY hud.alerts.19.acquired "Eigene Streitkräfte haben {1} erobert">
 <!ENTITY hud.readout.torp.depth "Lauftiefe">
 <!ENTITY hud.alerts.27 "Es verbleiben weniger als {1} Minuten von Deinem stündlichen Abo übrig!">
+<!ENTITY hud.hqintel.dir.4 "south">
 <!ENTITY hud.readout.torp.control.time "Laufzeit">
 <!ENTITY hud.primary.weapon "WAFFE">
 <!ENTITY hud.secondary "SEKUNDÄR">
@@ -3542,30 +3666,37 @@
 <!ENTITY hud.readout.enemy "Feind an Bord">
 <!ENTITY hud.alerts.23 "{1} wird angegriffen">
 <!ENTITY hud.health.state.infantry "INFANTERIE">
-<!ENTITY hud.primary.tip "Dein derzeitiger primärer Munitionsvorrat in der Form Munition : Magazine">
+<!ENTITY hud.primary.tip "Dein primärer Munitionsvorrat in der Form Munition : Magazine">
+<!ENTITY hud.alerts.30.deadpilot "Your pilot is dead!">
 <!ENTITY hud.alerts.18.deliberated "Feindliche Streikräfte haben {1} zurückerobert">
 <!ENTITY hud.cliptype.0.plural "Streifen">
 <!ENTITY hud.readout.infantry.ship "An Bord">
+<!ENTITY hud.hqintel.close "Intel: &#37;ls enemy infantry presence near your position!">
 <!ENTITY hud.readout.gear.engines "Motoren">
 <!ENTITY hud.alerts.15 "Es sind neue Befehle eingetroffen">
 <!ENTITY hud.readout.gforce "G">
 <!ENTITY hud.alerts.24.armor "Feindpanzer bei {1} gesichtet">
 <!ENTITY hud.alerts.24.ground "Feindliche Truppen bei {1} gesichtet">
-<!ENTITY hud.health.state "Dieses Icon zeigt Deinen derzeitigen Status an">
+<!ENTITY hud.health.state "Dieses Icon zeigt Deinen aktuellen Status an">
+<!ENTITY hud.hqintel.weight.1 "Moderate">
+<!ENTITY hud.hqintel.dir.3 "southeast">
 <!ENTITY hud.health.state.pilot "BESATZUNG">
 <!ENTITY hud.readout.riding.towed "Im Schlepp">
 <!ENTITY hud.alerts.19.deliberated "Feindliche Streitkräfte haben {1} zurückerobert">
 <!ENTITY hud.readout.gear.kaput "Kaputt">
+<!ENTITY hud.hqintel.weight.2 "Heavy">
 <!ENTITY hud.cliptype.2 "Gurt">
 <!ENTITY hud.alerts.14 "eingehende Kontaktmeldung">
-<!ENTITY hud.health.blood "Dieses Icon zeigt Deinen derzeitigen Status an">
-<!ENTITY hud.minimap.nearest "nächstgelegene Stadt">
+<!ENTITY hud.hqintel.dir.1 "northeast">
+<!ENTITY hud.hqintel.dir.7 "northwest">
 <!ENTITY hud.gameinfo.icon.0 "Normal">
+<!ENTITY hud.health.blood "Dieses Icon zeigt Deinen aktuellen Status an">
+<!ENTITY hud.minimap.nearest "nächstgelegene Stadt">
 <!ENTITY hud.readout.vehicles.onhoist "am Kranhaken">
 <!ENTITY hud.readout.torp.aob "Winkel zum Bug">
 <!ENTITY persona.welcome.axis "ACHSEN MÄCHTE">
 <!ENTITY persona.list.arenalock "Server gesperrt">
-<!ENTITY persona.details.career.status.arenalock "Die Spielserver sind derzeit geschlossen und nicht verfügbar zum Spielen. Diese Seite wird aktualisiert, sobald die Server verfügbar sind.">
+<!ENTITY persona.details.career.status.arenalock "Die Spielserver sind geschlossen und nicht verfügbar zum Spielen. Diese Seite wird aktualisiert, sobald die Server verfügbar sind.">
 <!ENTITY persona.list.overpopulated.1 "leicht">
 <!ENTITY persona.details.career "KARRIEREDETAILS">
 <!ENTITY persona.details.career.status.banned "Account ist für {1} Sekunden gesperrt. Das Spielen ist wieder möglich, sobald die Sperre abgelaufen ist oder ein Spielmanager sie manuell aufhebt. http://support.playnet.com/">
@@ -3573,10 +3704,10 @@
 <!ENTITY persona.list.imbalanced "Die Population der {1} ist {2} überbevölkert. Aus diesem Grund haben alle {3} Personas einen verzögerten Einstieg und alle {4} Personas sind ohne Einschränkung verfügbar.">
 <!ENTITY persona.details.career.status.tip "EINSATZBEREIT zeigt an, dass die Persona zum Spielen bereit ist, während NICHT VERFÜGBAR bedeuted, dass die Persona auf begrenzte Zeit gesperrt ist wegen den Seitenversperrungsbeschränkungen.">
 <!ENTITY persona.list.onleave "nicht verfügbar für {1}">
-<!ENTITY persona.details.career.status.onleave "Nicht verfügbar für {1} Sekunden. Diese Persona ist aufgrund der Seitensperre nicht verfügbar zum Spielen.">
+<!ENTITY persona.details.career.status.onleave "Wegen Seitensperre nicht verfügbar für {1} Sekunden.">
 <!ENTITY persona.redirect "Du bist Mitglied einer laufenden Mission, wechsle zum Bereitschaftsraum der Mission...">
 <!ENTITY persona.motd.tip "Hier findest Du wichtige Informationen über Updates und Events.">
-<!ENTITY persona.details.career.status.noswap "Diese Persona ist aufgrund deiner vorherigen Seitenwahl jetzt nicht verfügbar.">
+<!ENTITY persona.details.career.status.noswap "Diese Persona ist aufgrund Deiner vorherigen Seitenwahl jetzt nicht verfügbar.">
 <!ENTITY persona.list.requesting "benötigt Verstärkung">
 <!ENTITY persona.welcome.pollresults "Für die letzten Umfrageergebnisse hier klicken -- powered by WWII Online Polls">
 <!ENTITY persona.forward.brigade "Brigade-HQ">
@@ -3590,9 +3721,9 @@
 <!ENTITY persona.list.overpopulated.2 "mittel">
 <!ENTITY persona.list.slocked "Nur für Abonnenten">
 <!ENTITY persona.details.brigade "BRIGADEZUGEHÖRIGKEIT">
-<!ENTITY persona.details.career.rank.tip "Wieviel Prozent zum nächsten Rang  Du erreicht hast.">
+<!ENTITY persona.details.career.rank.tip "Fortschritt zum nächsten Rang.">
 <!ENTITY persona.details.career.status.available "Einsatzbereit. Diese Persona ist sofort zum Spielen verfügbar.">
-<!ENTITY persona.welcome.squad.motd.nosquad "Willst Du Spaß haben? Willst Du schnell Action finden oder mit Deinen Freunden zusammen spielen? Tritt einem Squad bei und erlebe Battleground Europe wie nie zuvor!">
+<!ENTITY persona.welcome.squad.motd.nosquad "Willst Du schnell Action finden oder mit Freunden zusammen spielen? Tritt einem Squad bei und erlebe Battleground Europe wie nie zuvor!">
 <!ENTITY persona.list.available "Einsatzbereit">
 <!ENTITY persona.details.persona.recruit "Rekrut">
 <!ENTITY persona.selecttab.tip "Wähle eine Persona zum Spielen.">
@@ -3606,24 +3737,24 @@
 <!ENTITY persona.list "PERSONAS">
 <!ENTITY persona.details.persona.handle "Name">
 <!ENTITY persona.details.persona "AUSGEWÄHLTE PERSONA">
-<!ENTITY persona.details.career.rank "bis zur nächsten Beförderung">
+<!ENTITY persona.details.career.rank "zum nächsten Rang erreicht">
 <!ENTITY persona.list.tip "Wähle eine Persona zum Spielen aus">
 <!ENTITY persona.list.overpopulated "überbevölkert">
 <!ENTITY persona.welcome.pollresults.url "http://www.polls.wwiionline.com/crspolls.htm">
 <!ENTITY persona.welcome.population "SPIELERPOPULATION">
 <!ENTITY persona.welcome.squad.motd "SQUAD NACHRICHT">
-<!ENTITY persona.list.banned "gesperrt für {1}s">
+<!ENTITY persona.list.banned "gesperrt für {1}">
 <!ENTITY persona.list.overpopulated.3 "viele">
 <!ENTITY persona.list.delayed "verzögerter Zugriff">
-<!ENTITY persona.details.career.status.leave.help "Nicht verfügbar -  nicht verfügbar zum Spielen, Seitensperre">
+<!ENTITY persona.details.career.status.leave.help "Nicht verfügbar -  nicht verfügbar zum Spielen, Seitensperre.">
 <!ENTITY persona.welcome "WILLKOMMEN BEI BATTLEGROUND EUROPE">
 <!ENTITY persona.details.career.status.delayed "Verzögert für {1} Sekunden. Zugriff auf diese Persona wurde verzögert wegen Unausgeglichenheit der Seiten.">
 <!ENTITY persona.forward.brigade.tip "Wechsle zum Hauptquartier der ausgewählten Brigade.">
-<!ENTITY persona.forward.training.tip "Absolviere die Traningslehrgänge um mit dem sktiven Dienst zu beginnen.">
+<!ENTITY persona.forward.training.tip "Absolviere die Traningslehrgänge um mit dem aktiven Dienst zu beginnen.">
 <!ENTITY persona.forward "Auswählen">
 <!ENTITY persona.welcome.allied "ALLIIERTE MÄCHTE">
 <!ENTITY persona.potd "UMFRAGE DES TAGES">
-<!ENTITY persona.potd.empty "Es gibt derzeit keine Umfragen. Schau später noch einmal vorbei.">
+<!ENTITY persona.potd.empty "Es gibt keine aktuellen Umfragen. Schau später noch einmal vorbei.">
 <!ENTITY persona.motd "TAGESBEFEHL">
 <!ENTITY persona.forward.brigades.tip "Wähle eine Brigade, um beizutreten.">
 <!ENTITY persona.details.career.status.active.help "Einsatzbereit - verfügbar zum Spielen, keine Seitensperre.">
@@ -3634,9 +3765,10 @@
 <!ENTITY chatchan.mission "Mission">
 <!ENTITY conn.init.error1 "Verbindung mit Spielnetzwerk konnte nicht geöffnet werden">
 <!ENTITY presets.tank.nojoy "ohne Joystick">
+<!ENTITY spec.bad.openglversion "OpenGL version 2.0 oder höher wird benötigt!">
 <!ENTITY conn.init.timeout2 "Verbindung abgelaufen beim Erhalten der Verbindungsdaten">
 <!ENTITY popup.quit "Schließe dieses Fenster">
-<!ENTITY waypoints.origin "Missionsursprung: Dies ist der Punkt, an dem Du Deine Mission gestartet hast. Überprüfe das Missionsziel für mehr Details zur Mission.">
+<!ENTITY waypoints.origin "Missionsursprung">
 <!ENTITY exitvehicle.status.3 "MIA">
 <!ENTITY conn.init.timeout1 "Verbindung mit Spielnetzwerk ist abgelaufen">
 <!ENTITY request.ammo.ok "Du hast Munition angefordert!">
@@ -3668,6 +3800,7 @@
 <!ENTITY popup.ok "OK">
 <!ENTITY globals.brigade "BRIGADE">
 <!ENTITY chatchan.origin "Ursprung">
+<!ENTITY spec.bad "MINIMALANFORDERUNGEN NICHT ERREICHT">
 <!ENTITY exitvehicle.ms "Du bist der Mobile Spawn dieser Mission. Standardmäßig wird beim Aussteigen automatisch ein unbemannter Mobile Spawn an deiner Position hinterlassen.">
 <!ENTITY capture.british "In britischem Besitz">
 <!ENTITY presets.views "Voreinstellung">
@@ -3681,10 +3814,11 @@
 <!ENTITY waypoints.invalid "Wegpunkt ungültig">
 <!ENTITY presets.truck.nojoy "ohne Joystick">
 <!ENTITY hccp.tabs.notices.veto.button "VETO AUSWAHL">
+<!ENTITY spec.bad.systemmemory "Es werden mindestens 2GB Hauptspeicher benötigt!">
 <!ENTITY conn.init.fail1 "Initialisierung des Netzwerkes fehlgeschlagen/Kein Netzwerk verfügbar">
 <!ENTITY capture.slocked "Mit diesem Abonnement kannst Du keine Anlagen einnehmen">
 <!ENTITY waypoints.restricted "Du kannst nur Kontakte melden, wenn Du in der Spielwelt bist.">
-<!ENTITY waypoints.reportedby "Gemeldet von">
+<!ENTITY waypoints.reportedby "Von">
 <!ENTITY chatchan.numbered "Nummeriert">
 <!ENTITY popup.cancel "ABBRUCH">
 <!ENTITY presets.sea.nojoy "ohne Joystick">
@@ -3695,18 +3829,20 @@
 <!ENTITY exitvehicle.timer "Du kannst in {1} Sekunden aussteigen">
 <!ENTITY capture.french "In französischem Besitz">
 <!ENTITY conn.init.help "Verbindung mit Spielnetzwerk nicht möglich: Entweder sind die Spielserver nicht verfügbar, Du hast keine Verbindung mit dem Internet oder Deine Firewall erlaubt keine TCP Verbindungen mit den Ports 27015-27020. Für weitere Unterstützung besuche bitte http://support.playnet.com/">
+<!ENTITY spec.bad.continue "Dein System erfüllt nicht die Minimalanforderungen für dieses Spiel. Es kann zu verminderter Leistung und Abstürzen kommen. Fortsetzen?">
 <!ENTITY globals.time.days "Tage">
 <!ENTITY exitvehicle.status.to "{1} to {2}">
 <!ENTITY spawn.loading "LADE...">
-<!ENTITY waypoints.secondsago "Sekunden vorher">
+<!ENTITY waypoints.secondsago "Sekunden zuvor gemeldet">
 <!ENTITY waypoints.minutesago "Minuten vorher">
 <!ENTITY chatchan.objective "Ziel">
 <!ENTITY chatchan.brigade "Brigade">
 <!ENTITY globals.time.years "Jahre">
+<!ENTITY spec.bad.shadermodel "Shader Modell 1.2 oder höher wird benötigt!">
 <!ENTITY hccp.title "HIGH COMMANDER FUNKTONEN">
 <!ENTITY conn.init.error2 "Fehler beim Erhalten der Verbindungsdaten">
 <!ENTITY exitvehicle.status.2 "KIA">
-<!ENTITY exitvehicle.ms.leave "Unbemannten Mobile Spawn hier hinterlassen?">
+<!ENTITY exitvehicle.ms.leave "Unbemannten Mobile Spawn hier aufstellen?">
 <!ENTITY globals.time.hours "Stunden">
 <!ENTITY globals.time.minutes "Minuten">
 <!ENTITY globals.time.weeks "Wochen">
@@ -3855,7 +3991,7 @@
 <!ENTITY dotcom.oicveto.help ".oicveto <brigade> <Spielername> Veto gegen OIC einlegen">
 <!ENTITY dotcom.obj.help "List current objectives for your side. Usage: .obj <L, I ,C or N>: List, Info, Cities, Number">
 <!ENTITY dotcom.octettriangles.help "">
-<!ENTITY dotcom.em.help "Usage: .em <emote>: performs selected emote (cheer, double, gyrus (surrender), laugh, salute, stop, jump)">
+<!ENTITY dotcom.em.help "Usage: .em <emote>: performs selected emote (attention, salute, cheer, double(time), gyrus(surrender), laugh, jump(to tell players to jump from plane))">
 <!ENTITY dotcom.oicresign.help ".oicresign <Spielername> Als OIC zurücktreten">
 <!ENTITY dotcom.vehlod.help "Usage: .vehlod (Disables/Enables vehicle LODs : default Enabled)">
 <!ENTITY dotcom.overrun.help "Notify HC that base is overrun">
@@ -3951,111 +4087,112 @@
 <!ENTITY vehicles.1.2.4.1 "A13 Cruiser Mk II">
 <!ENTITY vehicles.4.1.2.8 "Messerschmitt Bf 110F-B">
 <!ENTITY vehicles.4.2.4.8 "Panzer IV G">
-<!ENTITY vehicles.4.3.12.1 "Deutsches Patrouillenboot B">
-<!ENTITY vehicles.4.4.14.12 "Deutscher Luftlande Scharfschütze">
-<!ENTITY vehicles.1.4.9.12 "Britischer Scharfschütze">
+<!ENTITY vehicles.4.3.12.1 "Dt. Patrouillenboot B">
+<!ENTITY vehicles.4.4.14.12 "Luftlande Scharfschütze">
+<!ENTITY vehicles.1.4.9.12 "Scharfschütze">
 <!ENTITY vehicles.3.2.7.1 "25 mm SA mle 1934 PAK">
 <!ENTITY vehicles.3.2.4.9 "M4A3 Sherman 76">
 <!ENTITY vehicles.1.2.4.10 "A22 Churchill Mk III">
 <!ENTITY vehicles.1.2.4.9 "A22 Churchill Mk VII">
 <!ENTITY vehicles.1.1.2.7 "Hurricane Mk IIb">
 <!ENTITY vehicles.4.1.1.2 "Heinkel He 111H-2">
-<!ENTITY vehicles.1.4.9.8 "Britischer Kommandeur">
+<!ENTITY vehicles.1.4.9.8 "Kommandeur">
 <!ENTITY vehicles.1.2.7.6 "ROQF 17 Pfünder PAK">
 <!ENTITY vehicles.1.1.2.8 "Spitfire Mk Ib">
 <!ENTITY vehicles.3.1.1.2 "Douglas DB-7">
-<!ENTITY vehicles.3.3.13.2 "Französischer Frachter">
-<!ENTITY vehicles.4.4.9.2 "Deutsche Maschinenpistole">
-<!ENTITY vehicles.1.3.13.2 "Britischer Frachter">
+<!ENTITY vehicles.3.3.13.2 "Franz. Frachter">
+<!ENTITY vehicles.4.4.9.2 "Maschinenpistole">
+<!ENTITY vehicles.1.3.13.2 "Brit. Frachter">
 <!ENTITY vehicles.4.2.7.2 "FlaK 36 (88 mm) FLAK/PAK">
-<!ENTITY vehicles.3.4.9.3 "Französischer Sturmpionier">
+<!ENTITY vehicles.3.4.9.3 "Sturmpionier">
 <!ENTITY vehicles.4.2.4.1 "Panzer III F">
-<!ENTITY vehicles.1.4.9.7 "Britischer Grenadier">
-<!ENTITY vehicles.1.4.14.13 "Britischer Luftlande Mörser">
-<!ENTITY vehicles.4.4.9.13 "Deutscher leichter Mörser">
-<!ENTITY vehicles.3.4.14.1 "Französischer Luftlandeschütze">
+<!ENTITY vehicles.1.4.9.7 "Grenadier">
+<!ENTITY vehicles.1.4.14.13 "Luftlande Mörser">
+<!ENTITY vehicles.4.4.9.13 "Leichter Mörser">
+<!ENTITY vehicles.3.4.14.1 "Luftlandeschütze">
 <!ENTITY vehicles.4.2.7.4 "Flak 28 (40 mm)">
 <!ENTITY vehicles.3.1.2.2 "Spitfire Mk I">
 <!ENTITY vehicles.3.1.2.7 "Lockheed mle 322/15 (P-38F)">
 <!ENTITY vehicles.4.2.7.6 "PaK 40 (75 mm)">
 <!ENTITY vehicles.4.2.6.3 "SdKfz 251 C">
 <!ENTITY vehicles.3.2.6.2 "Laffly S-20 LKW">
-<!ENTITY vehicles.4.4.14.1 "Deutscher Luftlandeschütze">
+<!ENTITY vehicles.4.4.14.1 "Luftlandeschütze">
 <!ENTITY vehicles.4.2.4.2 "Panzer 38(t)">
-<!ENTITY vehicles.4.4.9.1 "Deutscher Gewehrschütze">
+<!ENTITY vehicles.4.4.9.1 "Gewehrschütze">
 <!ENTITY vehicles.3.2.4.4 "Panhard AMD 178">
 <!ENTITY vehicles.3.1.2.1 "Curtiss Hawk H75A-3 (P-36A)">
 <!ENTITY vehicles.4.2.6.1 "Opel Blitz LKW">
 <!ENTITY vehicles.3.2.7.3 "25 mm CA mle 1938 FLAK">
-<!ENTITY vehicles.1.3.13.1 "Britischer Zerstörer">
+<!ENTITY vehicles.1.3.13.1 "Brit. Zerstörer">
 <!ENTITY vehicles.4.2.4.10 "Panzer VI E Tiger">
 <!ENTITY vehicles.1.4.9.5 "BUZZARD">
 <!ENTITY vehicles.4.4.9.5 "BUZZARD">
 <!ENTITY vehicles.3.2.7.4 "Bofors 40mm FLAK">
-<!ENTITY vehicles.4.1.1.4 "Deutsche Blenheim Mk IV T">
+<!ENTITY vehicles.4.1.1.4 "Blenheim Mk IV T">
 <!ENTITY vehicles.1.2.7.2 "25 mm SA mle 1934 PAK">
-<!ENTITY vehicles.3.4.9.2 "Französische Maschinenpistole">
+<!ENTITY vehicles.3.4.9.2 "Maschinenpistole">
 <!ENTITY vehicles.3.2.4.2 "Renault R-35">
-<!ENTITY vehicles.4.4.9.8 "Deutscher Kommandeur">
+<!ENTITY vehicles.4.4.9.8 "Kommandeur">
 <!ENTITY vehicles.4.2.4.4 "StuG III B">
 <!ENTITY vehicles.3.1.1.3 "Junkers Ju-52 3M">
-<!ENTITY vehicles.4.4.14.9 "Deutsche Luftlande Panzerbüchse">
-<!ENTITY vehicles.3.4.9.1 "Französischer Gewehrschütze">
+<!ENTITY vehicles.4.4.14.9 "Luftlande Panzerbüchse">
+<!ENTITY vehicles.3.4.9.1 "Gewehrschütze">
 <!ENTITY vehicles.3.2.4.8 "M10 Wolverine">
 <!ENTITY vehicles.1.1.2.1 "Spitfire Mk Ia">
 <!ENTITY vehicles.3.2.7.6 "M5A2 3&#34; (76.2 mm) PAK">
 <!ENTITY vehicles.3.1.2.4 "Dewoitine D.520">
-<!ENTITY vehicles.1.4.9.10 "Britischer Fallschirmjäger">
+<!ENTITY vehicles.1.4.9.10 "Fallschirmjäger">
 <!ENTITY vehicles.3.1.1.1 "Blenheim Mk IV">
-<!ENTITY vehicles.4.3.13.2 "Deutscher Frachter">
+<!ENTITY vehicles.4.3.13.2 "Dt. Frachter">
 <!ENTITY vehicles.1.2.6.1 "Bedford OY LKW">
-<!ENTITY vehicles.1.4.9.9 "Britische Panzerbüchse">
+<!ENTITY vehicles.1.4.9.9 "Panzerbüchse">
 <!ENTITY vehicles.4.1.2.7 "Messerschmitt Bf 109F-1">
-<!ENTITY vehicles.3.4.14.6 "Französisches Luftlande LMG">
+<!ENTITY vehicles.3.4.14.6 "Luftlande LMG">
 <!ENTITY vehicles.1.1.2.3 "Blenheim Mk I">
 <!ENTITY vehicles.3.1.2.8 "Curtiss Hawk H87B-3 (P-40F)">
-<!ENTITY vehicles.4.4.14.13 "Deutscher Luftlande Mörser">
-<!ENTITY vehicles.3.4.9.9 "Französische Panzerbüchse">
+<!ENTITY vehicles.4.4.14.13 "Luftlande Mörser">
+<!ENTITY vehicles.3.4.9.9 "Panzerbüchse">
 <!ENTITY vehicles.4.2.4.7 "SdKfz 232">
 <!ENTITY vehicles.1.2.7.4 "Bofors 40 mm FLAK">
 <!ENTITY vehicles.1.1.2.6 "Spitfire Mk IXc">
 <!ENTITY vehicles.3.2.6.3 "Laffly W15 TCC">
-<!ENTITY vehicles.3.4.14.12 "Französischer Luftlande Scharfschütze">
+<!ENTITY vehicles.3.4.14.12 "Luftlande Scharfschütze">
 <!ENTITY vehicles.1.2.4.4 "Matilda Mk II">
-<!ENTITY vehicles.3.4.9.6 "Französisches LMG">
+<!ENTITY vehicles.3.4.9.6 "Leichtes MG">
 <!ENTITY vehicles.3.2.4.6 "M3A3 Stuart">
 <!ENTITY vehicles.1.1.1.2 "Blenheim Mk IV-T">
-<!ENTITY vehicles.1.4.9.13 "Britischer leichter Mörser">
+<!ENTITY vehicles.1.4.9.13 "Leichter Mörser">
 <!ENTITY vehicles.4.1.2.5 "Messerschmitt Bf 109G-6/U4">
 <!ENTITY vehicles.1.2.4.7 "A15 Crusader Mk II">
-<!ENTITY vehicles.3.3.13.1 "Französischer Zerstörer">
+<!ENTITY vehicles.3.3.13.1 "Franz. Zerstörer">
 <!ENTITY vehicles.3.1.2.3 "Hurricane Mk I">
 <!ENTITY vehicles.3.4.9.5 "BUZZARD">
-<!ENTITY vehicles.1.4.14.12 "Britischer Luftlande Scharfschütze">
+<!ENTITY vehicles.4.1.2.9 "Messerschmitt Bf 109F-2">
+<!ENTITY vehicles.1.4.14.12 "Luftlande Scharfschütze">
 <!ENTITY vehicles.4.1.1.1 "Junkers Ju 87B Stuka">
-<!ENTITY vehicles.4.4.14.6 "Deutsches Luftlande LMG">
+<!ENTITY vehicles.4.4.14.6 "Luftlande LMG">
 <!ENTITY vehicles.1.2.6.2 "Morris CDSW Schlepper">
 <!ENTITY vehicles.3.2.7.5 "M1 (57 mm) Boden/Luft Kanone">
-<!ENTITY vehicles.1.4.14.9 "Britische Luftlande Panzerbüchse">
-<!ENTITY vehicles.1.4.9.3 "Britischer Sturmpionier">
+<!ENTITY vehicles.1.4.14.9 "Luftlande Panzerbüchse">
+<!ENTITY vehicles.1.4.9.3 "Sturmpionier">
 <!ENTITY vehicles.4.1.2.2 "Messerschmitt Bf 110C-4">
 <!ENTITY vehicles.3.2.4.7 "M4A2 Sherman">
 <!ENTITY vehicles.1.1.2.4 "Spitfire Mk Vb">
-<!ENTITY vehicles.1.4.14.1 "Britischer Luftlandeschütze">
-<!ENTITY vehicles.3.4.14.2 "Französische Luftlande MP">
-<!ENTITY vehicles.4.4.9.9 "Deutsche Panzerbüchse">
+<!ENTITY vehicles.1.4.14.1 "Luftlandeschütze">
+<!ENTITY vehicles.3.4.14.2 "Luftlande MP">
+<!ENTITY vehicles.4.4.9.9 "Panzerbüchse">
 <!ENTITY vehicles.1.1.1.4 "Douglas C47">
-<!ENTITY vehicles.1.4.9.1 "Britischer Gewehrschütze">
-<!ENTITY vehicles.3.3.12.1 "Französisches Patrouillenboot B">
-<!ENTITY vehicles.4.4.9.7 "Deutscher Grenadier">
-<!ENTITY vehicles.3.4.9.12 "Französischer Scharfschütze">
+<!ENTITY vehicles.1.4.9.1 "Gewehrschütze">
+<!ENTITY vehicles.3.3.12.1 "Franz. Patrouillenboot B">
+<!ENTITY vehicles.4.4.9.7 "Grenadier">
+<!ENTITY vehicles.3.4.9.12 "Scharfschütze">
 <!ENTITY vehicles.1.2.7.3 "Hotchkiss 25 mm FLAK">
 <!ENTITY vehicles.3.2.7.2 "47 mm SA mle 1937 PAK">
-<!ENTITY vehicles.3.4.9.10 "Französischer Fallschirmjäger">
-<!ENTITY vehicles.4.3.13.1 "Zerstörer Typ 1934">
-<!ENTITY vehicles.1.4.14.6 "Britisches Luftlande LMG">
+<!ENTITY vehicles.3.4.9.10 "Fallschirmjäger">
+<!ENTITY vehicles.4.3.13.1 "Dt. Zerstörer Typ 1934">
+<!ENTITY vehicles.1.4.14.6 "Luftlande LMG">
 <!ENTITY vehicles.1.1.2.9 "Spitfire Mk IIb">
-<!ENTITY vehicles.reload "Loading &#37;ls for &#37;ls next">
+<!ENTITY vehicles.reload "Loading &#37;ls for main gun next">
 <!ENTITY vehicles.4.2.7.1 "PaK 36 (37 mm)">
 <!ENTITY vehicles.4.2.4.5 "Panzer IV D">
 <!ENTITY vehicles.1.1.2.5 "Hurricane Mk IIc">
@@ -4063,24 +4200,24 @@
 <!ENTITY vehicles.4.1.2.6 "Messerschmitt Bf 109E-1">
 <!ENTITY vehicles.4.2.7.5 "PaK 38 (50 mm)">
 <!ENTITY vehicles.1.2.4.5 "Vickers Mk IV">
-<!ENTITY vehicles.4.4.9.12 "Deutscher Scharfschütze">
+<!ENTITY vehicles.4.4.9.12 "Scharfschütze">
 <!ENTITY vehicles.4.1.2.4 "Focke Wulf Fw 190A-4">
 <!ENTITY vehicles.4.2.6.4 "w154">
-<!ENTITY vehicles.1.3.12.1 "Britischer Patrouillenboot B">
+<!ENTITY vehicles.1.3.12.1 "Brit. Patrouillenboot B">
 <!ENTITY vehicles.4.1.1.5 "Junkers Ju 52-3M">
-<!ENTITY vehicles.1.4.9.2 "Britische Maschinenpistole">
+<!ENTITY vehicles.1.4.9.2 "Maschinenpistole">
 <!ENTITY vehicles.4.2.7.3 "FlaK 30 (20 mm)">
 <!ENTITY vehicles.3.1.2.6 "Bell mle 14a (P-39D)">
-<!ENTITY vehicles.1.4.14.2 "Britische Luftlande MP">
-<!ENTITY vehicles.3.4.9.13 "Französischer leichter Mörser">
-<!ENTITY vehicles.3.4.14.9 "Französische Luftlande Panzerbüchse">
-<!ENTITY vehicles.1.4.9.6 "Britischer LMG">
+<!ENTITY vehicles.1.4.14.2 "Luftlande MP">
+<!ENTITY vehicles.3.4.9.13 "Leichter Mörser">
+<!ENTITY vehicles.3.4.14.9 "Luftlande Panzerbüchse">
+<!ENTITY vehicles.1.4.9.6 "Leichtes MG">
 <!ENTITY vehicles.3.2.4.1 "Renault B1 bis">
-<!ENTITY vehicles.3.4.9.8 "Französischer Kommandeur">
+<!ENTITY vehicles.3.4.9.8 "Kommandeur">
 <!ENTITY vehicles.1.2.7.5 "ROQF 6 Pfünder PAK">
-<!ENTITY vehicles.4.4.14.2 "Deutsche Luftlande MP">
+<!ENTITY vehicles.4.4.14.2 "Luftlande MP">
 <!ENTITY vehicles.3.2.4.5 "Hotchkiss H-39">
-<!ENTITY vehicles.4.4.9.3 "Deutscher Sturmpionier">
+<!ENTITY vehicles.4.4.9.3 "Sturmpionier">
 <!ENTITY vehicles.4.2.4.6 "Panzer III H">
 <!ENTITY vehicles.1.2.7.1 "ROQF 2 Pfünder PAK">
 <!ENTITY vehicles.3.2.6.1 "Bedford OY LKW">
@@ -4090,27 +4227,60 @@
 <!ENTITY vehicles.1.1.2.2 "Hurricane Mk I">
 <!ENTITY vehicles.1.2.4.8 "A15 Crusader Mk III">
 <!ENTITY vehicles.4.2.4.3 "Panzer II C">
-<!ENTITY vehicles.4.4.9.6 "Deutsches LMG">
+<!ENTITY vehicles.4.4.9.6 "Leichtes MG">
 <!ENTITY vehicles.1.1.1.3 "Havoc Mk I">
 <!ENTITY vehicles.4.1.1.3 "Messerschmitt Bf 110C-4/B">
 <!ENTITY vehicles.3.1.2.5 "Curtiss Hawk H81A-2 (P-40C)">
 <!ENTITY vehicles.1.2.4.3 "Renault B1 bis">
-<!ENTITY vehicles.4.4.9.10 "Deutscher Fallschirmjäger">
+<!ENTITY vehicles.4.4.9.10 "Fallschirmjäger">
 <!ENTITY vehicles.3.2.4.3 "Somua S-35">
 <!ENTITY vehicles.4.1.2.3 "Messerschmitt Bf 109F-4">
-<!ENTITY vehicles.1.4.9.11 "Britischer Anführer">
-<!ENTITY vehicles.3.4.9.7 "Französischer Grenadier">
-<!ENTITY vehicles.3.4.14.13 "Französischer Luftlande Mörser">
+<!ENTITY vehicles.1.4.9.11 "Anführer">
+<!ENTITY vehicles.3.4.9.7 "Grenadier">
+<!ENTITY vehicles.3.4.14.13 "Luftlande Mörser">
 <!ENTITY vehicles.1.2.4.2 "Renault R-35">
 <!ENTITY vehicles.1.1.1.1 "Blenheim Mk IV">
+<!ENTITY combat.crew.arms "Arm">
 <!ENTITY combat.forward.tip "Spawne und kämpfe mit anderen Spielern!">
 <!ENTITY combat.back "ZURÜCK">
 <!ENTITY combat.forward "LOS GEHT&#39;S">
 <!ENTITY combat.help "WÄHLE EINE WAFFE ZUM SPAWNEN">
+<!ENTITY combat.crew.legs "Bein">
 <!ENTITY combat.vehicle.choose "Wähle eine Waffe">
+<!ENTITY combat.crew.torso "Körper">
+<!ENTITY combat.crew.head "head">
 <!ENTITY combat.ready "BESPRECHUNG">
-<!ENTITY combat.back.tip "Zurück zu den Tutorials.">
+<!ENTITY combat.back.tip "Zurück zu den Tutorials">
 <!ENTITY combat.vehicle.name "EINHEIT">
+<!ENTITY connect.login.handshake.lost "Verbindungsabbruch beim Handshake">
+<!ENTITY connect.lost.reconnect "Chatverbindung verloren, versuche neue Verbindung aufzubauen">
+<!ENTITY connect.login.auth.failed "Authentifizierung fehlgeschlagen">
+<!ENTITY connect.chat.noredirect "Netzwerkfehler während Chat Login">
+<!ENTITY connect.login.noopen "Keine Verbindung zum Host">
+<!ENTITY connect.chat.fail "Chatverbindung fehlgeschlagen">
+<!ENTITY connect.lost.world "Verbindung zum Welt Server verloren">
+<!ENTITY connect.popup.title "Netzwerkfehler">
+<!ENTITY connect.find.nonefound "Netzwerkinitialisierung fehlgeschlagen/kein Netzwerk gefunden">
+<!ENTITY connect.login.auth.lost "Verbindung verloren bei">
+<!ENTITY connect.login.timeout "Zeitüberschreitung beim Verbinden zum Host">
+<!ENTITY connect.login.chat.timeout "Zeitüberschreitung der Chatverbindung">
+<!ENTITY connect.find.cantopen "Verbindung zum Spielenetzwerk fehlgeschlagen">
+<!ENTITY connect.lost.chat "Verbindung zum Chathost verloren">
+<!ENTITY connect.login.badlogin "Unerwarteter Loginfehler">
+<!ENTITY connect.lost.game "Verbindung zum Spiel verloren">
+<!ENTITY connect.find.timeout.network "Zeitüberschreitung beim Verbindungsaufbau">
+<!ENTITY connect.find.timeout.data "Zeitüberschreitung bei Übermittlung Verbindungsdaten">
+<!ENTITY connect.login.chat.lost "Verbindung zum Spiel während des Verbindungsaufbaus zum Chat verloren">
+<!ENTITY connect.find.nodata "Fehler bei Übermittlung der Verbindungsdaten">
+<!ENTITY connect.fail "Verbindung fehlgeschlagen">
+<!ENTITY connect.login.auth.timeout "Zeitüberschreitung bei Authentifizierng">
+<!ENTITY connect.reconnect.failed "Hostverbindung verloren, Wiederaufbau fehlgeschlagen">
+<!ENTITY connect.login.chat.error "Konnte nicht zum Chathost verbinden">
+<!ENTITY connect.login.error "Fehler beim Verbinden zum Host">
+<!ENTITY connect.refused "Verbindungsaufbau vom Host abgelehnt">
+<!ENTITY connect.find.nobest "Konnte nicht zum Spielenetzwerk verbinden">
+<!ENTITY connect.lost "&#37;ls: Fehler #&#37;u">
+<!ENTITY connect.login.nochat "Keine Verbindung zum Chat">
 <!ENTITY waypoints.stop "Halt">
 <!ENTITY waypoints.turn4 "4. Kurve">
 <!ENTITY waypoints.turn5 "5. Kurve">
@@ -4119,18 +4289,20 @@
 <!ENTITY waypoints.resupply "Nachschub">
 <!ENTITY waypoints.setup "Aufstellung">
 <!ENTITY waypoints.origin "Ursprung">
+<!ENTITY waypoints.mspawn "MSPAWN">
 <!ENTITY waypoints.approved "Wegpunkt bestätigt">
 <!ENTITY waypoints.ums "UMS">
 <!ENTITY waypoints.gunrange "Schießplatz">
 <!ENTITY waypoints.turn3 "3. Kurve">
-<!ENTITY waypoints.secondsago "Sekunden vorher">
+<!ENTITY waypoints.secondsago "Sekunden zuvor gemeldet">
 <!ENTITY waypoints.minutesago "Minuten vorher">
 <!ENTITY waypoints.invalid "ungültiger Wegpunkt">
 <!ENTITY waypoints.move "Hierher bewegen">
+<!ENTITY waypoints.mspawn.tip "Current mobile spawn for this mission.">
 <!ENTITY waypoints.offroad "Gelände">
 <!ENTITY waypoints.limited "Die maximale Anzahl von Wegpunkten und Kontaktreports ist erreicht.">
 <!ENTITY waypoints.restricted "Kontakte können nur gemeldet werden, wenn Du Dich in der Spielwelt befindest.">
-<!ENTITY waypoints.reportedby "Gemeldet von">
+<!ENTITY waypoints.reportedby "Von">
 <!ENTITY waypoints.vehiclerange "Übungsplatz">
 <!ENTITY waypoints.turn1 "1. Kurve">
 <!ENTITY waypoints.origin.tip "Missionsursprung: Hier wurde die Mission gestartet. Missionsdetails findest Du am Wegpunkt &#34;Ziel&#34;">

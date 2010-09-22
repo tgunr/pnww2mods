@@ -27,7 +27,7 @@ gunrange = Distance de tir
 
 1.1.label = Le Hotchkiss H-39
 
-	1.1.alert.modal = Ceci est le Hotchkiss H-39 , le char français le plus commun. IL possède 3 positions différentes jouables: Conducteur, commandant et le canonnier.
+	1.1.alert.modal = Ceci est le Hotchkiss H-39 , un des chars français le plus commun. IL possède 3 positions différentes jouables: Conducteur, commandant et le canonnier.
         1.1.alert.camera = 0,5,45,360,0,0,10
 	// pan around
 	
@@ -43,7 +43,7 @@ gunrange = Distance de tir
 	2.2.complete.modal = Une fois fermé, le conducteur ne peut voir à l’extérieur mais il est protégé.  
 2.3.label = Etat du moteur
 	2.3.alert = Pressez {instrumentview} pour voir vos cadrans.
-	2.3.complete.modal = Ici vous pouvez voir le compte-tours, Température moteur, position de la tourelle ainsi que d’autres infomartions.
+	2.3.complete.modal = Ici vous pouvez voir le compte-tours, Température moteur, position de la tourelle ainsi que d’autres informations. Les cadrans visibles dépendent du modèle de char.
 
 2.4.label = A quel rapport suis je?
 	2.4.alert.modal = Quand vous rentrez en jeu, quelque soit le véhicule, vous avez le moteur à l&#39;arrêt et vous êtes au point mort.[NL][NL]Chaque véhicule terrestre a une ou plusieurs vitesses pour avancer et une marche arrière.
@@ -52,7 +52,7 @@ gunrange = Distance de tir
 	2.4.complete.hilite = readout,target
 
 2.5.label = Démarrer le moteur
-	2.5.alert = Utilisez {gunsightview} et pressez {canopycontrol} pour voir de nouveau par l&#39;ouverture du conducteur si besoin.[NL][NL]Démarrez le moteur en pressant et en maintenant {engstart} jusqu&#39;à que vous entendiez le moteur démarrer.
+	2.5.alert = Utilisez {gunsightview} et pressez {canopycontrol} pour voir de nouveau par l&#39;ouverture du conducteur si besoin.[NL][NL]Démarrez le moteur en pressant {engstart}, vous entendrez le moteur ronronner.
 	2.5.complete = Excellent!
 
 2.6.label = Passez la première
@@ -213,7 +213,6 @@ gunrange = Distance de tir
 # -314230.38  3603625.27  101.34
 # facing front: -1.57    back: 1.58
 
-#	1.6.complete = Félicitations!  Entraînement aux blindés terminé.
-{positiontwo}</body>
+#	1.6.complete = Félicitations!  Entraînement aux blindés terminé.</body>
   <title>Blindé I: Hotchkiss H-39</title>
 </content>

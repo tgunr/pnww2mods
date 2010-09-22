@@ -7,9 +7,9 @@ dead = You have been defeated by the enemy. Respawn and try again!
 1.0.label = Air Combat Training
 
      1.1.label = intro
-     1.1.alert.modal = This area is now open for live-fire training.  Work together with your teammates to defeat the enemy.[NL][NL]This exercise will be remain open for 40 minutes or until only one player remains alive.[NL][NL]Good hunting!</body>
+     1.1.alert.modal = This area is now open for live-fire training.  Work together with your teammates to defeat the enemy.[NL][NL]Good hunting!</body>
   <branch>2</branch>
-  <brief>Learn the basic fighter combat.</brief>
+  <brief>Practice fighter combat against opponents.</brief>
   <checkstate>true</checkstate>
   <despawners>349786.75,3022325.44,179,-2.67 349679.31,3022271.34,179,-2.51</despawners>
   <devehicles>bf109e1</devehicles>
@@ -21,7 +21,6 @@ dead = You have been defeated by the enemy. Respawn and try again!
   <instype>3</instype>
   <requires>fighter.basic</requires>
   <title>Air Combat Training</title>
-  <tom>40</tom>
   <ui>combat</ui>
   <ukspawners>348903.22,2996887.27,484,-0.97 348876.43,2996937.82,484,-1.04</ukspawners>
   <ukvehicles>hurri1</ukvehicles>

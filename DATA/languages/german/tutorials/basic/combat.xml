@@ -5,7 +5,7 @@
 graduated = Du hast den Grundlagenlehrgang Infanteriekampf bestanden.
 tom = Missionszeit
 captures = Einnahmen
-damages = Verwundete Spieler
+damages = Getroffene Spieler
 targetin = Du bist jetzt im Zielgebiet!
 targetout = Du hast das Zielgebiet verlassen!
 damaged = Du hast einen anderen Spieler verwundet!
@@ -15,76 +15,76 @@ bunker = Bunker
 1.0.label = Basic Infantry Combat
 
 	1.1.label = Spawnen in der Kaserne
-	1.1.alert.modal = Willkommen zu Deinen ersten Kampftraining.[NL][NL]Achtung, es sind feindliche Soldaten gesichtet worden! Du befindest Dich in der Kaserne einer der Armeebasen von Philipville. Hier ist es relativ sicher, der Gegner darf die oberen Etagen nicht betreten. Er kann aber durch die Fenster und andere Öffnungen schiessen, sei also vorsichtig.[NL][NL]Bevor Du nach draussen gehst... es gibt ein paar Dinge, die Du wissen solltest.
+	1.1.alert.modal = Willkommen zu Deinem ersten Kampftraining.[NL][NL]Achtung, es sind feindliche Soldaten gesichtet worden! Du befindest Dich in der Kaserne einer Armeebasis. Hier ist es relativ sicher, der Gegner darf die oberen Etagen nicht betreten. Er kann aber durch die Fenster und andere Öffnungen schiessen, sei also vorsichtig.[NL][NL]Bevor Du nach draussen gehst... es gibt ein paar Dinge, die Du wissen solltest.
 	
 	1.2.label = Gebietskontrolle und Einnahmen
 	1.2.alert = Ein Gebiet wird durch Besitz von Städten kontrolliert. Städte bestehen aus Anlagen (Docks, Armeebasen, Depots).[NL][NL]Zum Einnehmen einer Anlage musst Du das im Kontrollraum zu findende Radio sichern.  Dieser Raum befindet sich gewöhnlich in einem Gebäude oder einem kleinen Bunker mit einer Flagge davor. An der Flagge erkennst Du, wem das Gebäude zur Zeit gehört.[NL][NL]Drücke {showingamemap} zum Öffnen der Karte.
 	1.2.complete = Gut.
-	1.2.complete.position = 217760,3011388
+	1.2.complete.position = 348213,3034640
 	1.2.complete.scale = .20
-	1.2.complete.selection = Philipville
+//	1.2.complete.selection = Remagen and Unkel
 	
 	1.3.label = Die Karte
-	1.3.alert.modal = Dies ist Philpville.[NL][NL]Die Stadt hat 10 Anlagen inklusive zweier Armeebasen.
-	1.3.alert.position = 217760,3011388
+	1.3.alert.modal = Dies sind die Nachbarstädte Remagen und Unkel.[NL][NL]Jede Stadt hat mehrere Anlagen und eine Armeebasis.
+	1.3.alert.position = 348213,3034640
 	1.3.alert.scale = .20
-	1.3.alert.selection = Philipville
+//	1.3.alert.selection = Remagen and Unkel
 
-        1.3.alert1.modal = Die südliche Armeebasis ist unter alliierter Kontrolle.
-	1.3.alert1.scale = .06
-	1.3.alert1.position = 217487,3011070
-	1.3.alert1.selection = Philipville
+        1.3.alert1.modal = Die südliche Stadt Remagen ist unter alliierter Kontrolle.
+	1.3.alert1.scale = .1
+	1.3.alert1.position = 347787,3034409
+	1.3.alert1.selection = Remagen
 
-        1.3.alert2.modal = Die nördliche AB wird von der Achsensenseite kontrolliert.
-	1.3.alert2.scale = .06
-	1.3.alert2.position = 217627,3011657
-	1.3.alert2.selection = Philipville
+        1.3.alert2.modal = Die nördliche Stadt Unkel wird von der Achsensenseite kontrolliert.
+	1.3.alert2.scale = .1
+	1.3.alert2.position = 347975,3034884
+	1.3.alert2.selection = Unkel
 
-	1.3.alert3.modal = Deine Position wird durch den eingekreisten Pfeil dargestellt.[NL][NL]Der ORIGIN Wegpunkt zeigt an, wo Du gespawnt bist.
-	1.3.alert3.position = 217760,3011388
+	1.3.alert3.modal = Deine Position wird durch den eingekreisten Pfeil dargestellt.[NL][NL]Der Wegpunkt &#34;Missionsursprung&#34; zeigt an, wo Du gespawnt bist.
+	1.3.alert3.position = 348213,3034640
 	1.3.alert3.scale = .20
-	1.3.alert3.selection = Philipville
+//	1.3.alert3.selection = Remagen and Unkel
 
-	1.3.alert4.modal = Jede Anlage ist durch eine Flagge gekennzeichnet. Die Flagge zeigt an, wer die Anlage kontrolliert.[NL][NL]Jede Anlage besteht aus einer Gruppe von Gebäuden.
+
+	1.3.alert4.modal = Anlagen bestehen aus einer Gruppe von Gebäuden und sind durch eine Flagge gekennzeichnet. Die Flagge zeigt an, wer die Anlage kontrolliert.[NL][NL]
 
 	1.3.alert5.modal = Missionsziele sind rot und informelle Wegpunkte blau dargestellt.[NL][NL]Ein Wegpunkt ist mit &#34;Bunker&#34; gekennzeichnet. Dies ist das Gebäude zur Einnahme der Armeebasis.
-	
+        1.3.alert6 = Klicke mit der rechten Maustaste auf das Ziel und wähle Aktivieren -> Ziel aus.
+	1.3.complete = Gut. Der Weg zum aktivierten Ziel wird jetzt auf der Karte durch einen grünen Pfeil angezeigt.
+
 	1.4.label = Kontaktmeldungen
-	1.4.alert.modal = Neben dem roten Wegpunkt &#34;Bunker&#34; ist eine blinkendes Icon als Zeichen für eine Kontaktmeldung aufgetaucht.
-	1.4.alert.selection = Phillipville
+	1.4.alert.modal = Neben dem roten Wegpunkt &#34;Ziel&#34; ist eine blinkendes Icon als Zeichen für eine Kontaktmeldung aufgetaucht.
+//	1.4.alert.selection = Remagen and Unkel
+//1.4.alert.selection = 
 	1.4.alert1.modal = Kontaktmeldungen werden von Spielern erstellt. Sie müssen vom Missionsführer bestätigt werden, damit sie von allen Spielern gesehen werden können.
 	1.4.alert2 = Erstelle eine eigene Kontaktmeldung. Klicke mit der rechten Maustaste neben den Kontaktreport und wähle &#34;Kontakt melden&#34; aus.[NL][NL]Markiere den zutreffenden Meldungstyp (Feindliche Infanterie in diesem Fall) und klicke auf OK.
 	1.4.complete = Gut. Wenn nötig, kannst Du auch Notizen im Textfeld des Meldungsfenster hinterlassen.
 	
 	1.5.label = Karte schliessen
 	1.5.alert = Zum Schliessen der Karte drücke {showingamemap}.
-	1.5.alert.selection = Phillipville
-	
+//	1.5.alert.selection = Remagen and Unkel
 	1.6.label = Wiederholung Chatfenster
-	1.6.alert = Es ist sehr wichtig, untereinander zu kommunizieren.[NL][NL]Drücke F1 und gib einen Gruß an Deine Verbündeten ein, damit sie wissen, das Du hier bist.
+	1.6.alert = Es ist sehr wichtig, untereinander zu kommunizieren.[NL][NL]Drücke F1 und gib einen Gruß an Deine Verbündeten ein, damit sie wissen, daß Du hier bist.
 	1.6.complete.modal = Du kannst auch (enter) drücken, um eine Nachricht in Deiner näheren Umgebung zu versenden. Sei vorsichtig, der Feind kann Dich so auch hören.
 	
 	1.7.label = Laufschritt zum Bunker!
-	1.7.alert = Wenn Du soweit bist, verlasse das Gebäude und renne zum Wegpunkt &#34;Bunker&#34;. Der Gegner wird auf Dich warten!  Vergiss nicht, Dich vor feindlichen Feuer zu schützen.
+	1.7.alert = Wenn Du soweit bist, verlasse das Gebäude und renne zum Wegpunkt &#34;Bunker&#34;. Der Gegner wird auf Dich warten!  Vergiss nicht, Dich vor feindlichem Feuer zu schützen.
 	1.7.complete = Exzellent!
 
-	1.8.label = Radio sichern
-	1.8.alert.modal = Zur Einnahme einer Anlage musst Du 30 Sekunden neben dem Radio im Kontrollraum stehen. Manchmal wird das als &#34;Tisch hochbringen (bumping the table)&#34; bezeichnet.[NL][NL]Ein Fenster mit einem Fortschrittsbalken taucht auf, sobald Du Dich in der richtigen Position befindest.
-	1.8.alert1 = Finde das Radio im Bunker und stelle dich daneben.[NL][NL]Sei auf der Hut vor eventuell auftauchenden Feinden.
-	1.8.complete.modal = Gut. Zu Übungszwecken kann die Armeebasis nicht eingenommen werden.  
+	1.8.label = Flaggengebäude
+	1.8.alert.modal = Zur Einnahme einer Anlage musst Du das Gebäude betreten und dort verweilen, bis die Zeit für die Einnahme abgelaufen ist.[NL][NL]Ein Fenster mit einem Fortschrittsbalken taucht auf, sobald Du Dich an der richtigen Position befindest.[NL][NL]Je mehr Mitspieler sich mit Dir im Gebäude befinden, umso schneller ist die Einnahme beendet.
+        1.8.alert.hilite = binfo,target
+	1.8.complete.modal = Gut.[NL][NL]Beachte den Fortschrittsbalken.[NL][NL]Da dies ein Training ist, kann das Gebäude nicht komplett eingenommen werden.
 	
 	1.9.label = Auf in den Kampf
-	1.9.alert.modal = Für einen erfolgreichen Abschluß der Übung musst Du den Bunker verlassen und entweder:[NL][NL] - 30 Minuten überleben oder[NL] - 3 Treffer auf gegnerische Soldaten erzielen oder [NL] - den gegnerischen Radiotisch bumpen.
-	1.9.alert1.modal = Öffne die Kartenansicht damit Du die das markierte Ziel sehen kannst.
-	1.9.alert2.modal = Klicke mit der rechten Maustaste auf das Ziel und wähle &#34;Aktivieren&#34;
-	1.9.complete = Gut. Dar Weg zum aktivierten Ziel wird jetzt auf der Minikarte mit einem kleinen grünen Pfeil angezeigt.[NL][NL]Los geht&#39;s!</body>
+	1.9.alert.modal = Für einen erfolgreichen Abschluß der Übung musst Du den Bunker verlassen und entweder:[NL][NL] - 30 Minuten überleben oder[NL] - 3 Treffer auf gegnerische Soldaten erzielen oder [NL] - oder den gegnerischen Bunker für 1 Minute erobern.[NL][NL]Auf in den  Kampf, Soldat!</body>
   <branch>1</branch>
   <brief>Kampftraining in einem kontrollierten Umfeld.</brief>
   <captures>1</captures>
   <damages>3</damages>
-  <despawners>217470.53,3011643.53,234.95,-2.37 217460.25,3011670.69,234.95,-0.56</despawners>
+  <despawners>347849.40,3034925.79,70.85,-2.56 347876.98,3034925.38,70.85.2.38</despawners>
   <devehicles>derifle</devehicles>
-  <frspawners>217276.85,3011030.80,234.95,-2.18 217304.68,3011030.50,234.95,2.44</frspawners>
+  <frspawners>347417.68,3034440.53,70.85,2.35 347417.30,3034467.50,70.85,0.83</frspawners>
   <frvehicles>frrifle</frvehicles>
   <handler>basic.combat</handler>
   <instance>3</instance>
@@ -93,6 +93,6 @@ bunker = Bunker
   <title>Grundlegendes Kampftraining</title>
   <tom>30</tom>
   <ui>combat</ui>
-  <ukspawners>217276.85,3011030.80,234.95,-2.18 217304.68,3011030.50,234.95,2.44</ukspawners>
+  <ukspawners>347417.68,3034440.53,70.85,2.35 347417.30,3034467.50,70.85,0.83</ukspawners>
   <ukvehicles>ukrifle</ukvehicles>
 </content>

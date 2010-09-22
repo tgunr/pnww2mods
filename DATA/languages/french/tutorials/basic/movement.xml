@@ -4,7 +4,7 @@
   <body>title = Mouvement de base de l&#39;infanterie
 1.0.label = Apprenez à vous DEPLACER
 
-        1.1.alert.modal = Bienvenue sur le terrain d&#39;entrainement. Ici vous allez apprendre comment vous déplacer et changer de position. 
+        1.1.alert.modal = Bienvenue sur le terrain d&#39;entrainement. Ici vous allez apprendre comment vous déplacer et changer de position. [NL][NL]NOTE: Vous pouvez utiliser la touche{exitgameworld} pour quitter la session d&#39;entrainement à tous moment et revenir au  menu.
         1.1.alert1 = La souris contrôle votre direction.
         
        1.1.label = Regardez dans les environs avec la souris
@@ -66,7 +66,7 @@
 
 2.2.alert.modal = Accroupi vous bougerez plus lentement que si vous marchez ou courrez , Mais vous ferez moins de bruit et vous serez moins visible pour l&#39;ennemi, surtout si vous marchez à couvert. Ceci demande un peu plus d&#39;énergie que de trottiner.
 
-	2.2.alert1 = Vous pouvez courir accroupi, cela va moins vite que courir debout et demandera plus d&#39;énergie mais vous serez moins visible.[NL][NL]Acccroupi, bougez en avant en utilisant la touche {fpforward}.
+	2.2.alert1 = Vous pouvez courir accroupi, cela va moins vite que courir debout et demandera plus d&#39;énergie mais vous serez moins visible.[NL][NL]Accroupi, bougez en avant en utilisant la touche {fpforward}.
 
 	2.2.label = Bougez en étant accroupi.
 
@@ -80,7 +80,7 @@
 
 	2.3.complete = Bien. Vous êtes à plat ventre.
 
-2.4.alert.modal = A plat ventre vous bougez très lentement et cela demandera plus d&#39;énergie. L&#39;avantage c&#39;est qu&#39;à l&#39;arrêt vos forces reviendront plus vite et que vous êtes une petite cible pour l&#39;ennemi. Cela augmente aussi vos chance de vous en sortir face à une explosion.[NL][NL]Rampez en utilisant la touche{fpforward}.
+2.4.alert.modal = A plat ventre vous bougez très lentement et cela demandera plus d&#39;énergie. L&#39;avantage c&#39;est qu&#39;à l&#39;arrêt vos forces reviendront plus vite et que vous êtes une petite cible pour l&#39;ennemi. Cela augmente aussi vos chances de vous en sortir face à une explosion.[NL][NL]Rampez en utilisant la touche{fpforward}.
 
 	2.4.label = Ramper
 
@@ -95,7 +95,7 @@
 3.0.label = Point mobile de renfort
 
 	3.1.label = Allez au point de Spawn 
-    3.1.alert.modal = La plus part du temps le fantassin entre sur le champ de bataille, ou &#39;spawn&#39;, dans la base militaire ou un dépot.  Mais les joueurs peuvent créer des point mobiles de renfort en amenant un camion proche des lignes ennemies et en le laissant là.[NL][NL]Ceci permet aux joueurs de rentrer sur le champ de bataille à cette place là, ce qui réduit de beaucoup la distance à parcourir pour aller au combat.
+    3.1.alert.modal = La plus part du temps le fantassin entre sur le champ de bataille, ou &#39;spawn&#39;, dans la base militaire ou un dépôt.  Mais les joueurs peuvent créer des point mobiles de renfort en amenant un camion proche des lignes ennemies et en le laissant là.[NL][NL]Ceci permet aux joueurs de rentrer sur le champ de bataille à cette place là, ce qui réduit de beaucoup la distance à parcourir pour aller au combat.
 	3.1.alert1 = Vous &#34;spawnez&#34; là, point mobile.[NL][NL]Allez maintenant vers ce point mobile d&#39;où vous venez d&#39;arriver.
     
 	3.2.label = Missions de point mobile
@@ -103,14 +103,14 @@
     
     #can you fake the map icon in the text here?
     
-    3.2.alert2.modal = L&#39;icône camion indique qu&#39;il y a un point mobile &#34;MSP&#34; (&#34;Mobile Spawn Point&#34;) ou &#34;UMS&#34; (&#34;Unmanned Spawn Point&#34;).  La différence est qu&#39;un joueur est encore au commande du camion pour le MSP - Il peut redéplacer le camion si besoin. Mais un UMS ne peut plus être déplacé.
+    3.2.alert2.modal = L&#39;icône camion indique qu&#39;il y a un point mobile &#34;MSP&#34; (&#34;Mobile Spawn Point&#34;) ou &#34;UMS&#34; (&#34;Unmanned Spawn Point&#34;).  La différence est qu&#39;un joueur est encore au commande du camion pour le MSP - Il peut déplacer le camion de nouveau si besoin. Mais un UMS ne peut plus être déplacé.
     
     3.2.alert3.modal = Les deux MSP et UMS, soit les camions, sont aussi des points de ravitaillements qui vous donneront des munitions des que vous serez à coté d&#39;eux.
     
     3.2.alert3.hilite = persona-resupply
 
 	3.3.label = Terminé
-	3.3.alert.modal = Ceci termine ce tutorial.</body>
+	3.3.alert.modal = Ceci termine ce tutoriel.</body>
   <branch>1</branch>
   <brief>Vous apprend les différentes façons de déplacer votre fantassin sur le champ de bataille.</brief>
   <handler>basic.movement</handler>

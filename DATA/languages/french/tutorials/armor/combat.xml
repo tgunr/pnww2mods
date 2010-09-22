@@ -6,7 +6,7 @@ dead = Vous avez été détruit par l&#39;ennemi. Revenez en jeu et essayez une 
 
 1.0.label = Entraînement au combat entre blindés
      1.1.label = introduction
-     1.1.alert.modal = Cette espace est désormais ouvert pour un entraînement au combat.  Travaillez en équipe avec vos partenaires pour éliminer l&#39;ennemi.[NL][NL]Cet exercice restera ouvert pendant 40 minutes ou jusqu&#39;à qu&#39;il ne reste plus qu&#39;un seul joueur.[NL][NL]Bonne chasse!</body>
+     1.1.alert.modal = Cette espace est désormais ouvert pour un entraînement au combat.  Travaillez en équipe avec vos partenaires pour éliminer l&#39;ennemi.[NL][NL]Bonne chasse!</body>
   <branch>1</branch>
   <brief>Entraînez vous au combat entre blindés.</brief>
   <checkstate>true</checkstate>
@@ -20,7 +20,6 @@ dead = Vous avez été détruit par l&#39;ennemi. Revenez en jeu et essayez une 
   <instype>2</instype>
   <requires>armor.basic</requires>
   <title>Entraînement au combat de blindés</title>
-  <tom>40</tom>
   <ui>combat</ui>
   <ukspawners>212510.00,3015094.09,232.87,-1.5 212510.23,3015107.38,232.87,-1.5 212510.54,3015114.78,232.87,-1.5</ukspawners>
   <ukvehicles>a13</ukvehicles>

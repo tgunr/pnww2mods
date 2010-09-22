@@ -434,8 +434,8 @@
 <!ENTITY loc.english.353 "f12">
 <!ENTITY loc.english.331 "Mouse x-axis">
 <!ENTITY loc.english.27 "Shifted into neutral blower.">
-<!ENTITY loc.english.847 "WEP Off">
-<!ENTITY loc.english.838 "Rangefinder determines range to be approximately &#37;d meters">
+<!ENTITY loc.english.847 "Engine &#37;d WEP Off">
+<!ENTITY loc.english.838 "Rangefinder determines range to be approximately &#37;d meters (&#37;d yards)">
 <!ENTITY loc.english.338 "Map to keyboard">
 <!ENTITY loc.english.405 "h">
 <!ENTITY loc.english.511 "joystick 1 pov hat 3 nw">
@@ -524,7 +524,7 @@
 <!ENTITY loc.english.123 "VEHICLE">
 <!ENTITY loc.english.525 "Save">
 <!ENTITY loc.english.448 "mouse button 4">
-<!ENTITY loc.english.18 "Set economy RPM">
+<!ENTITY loc.english.18 "Engine &#37;d Set economy RPM">
 <!ENTITY loc.english.531 "AT. traverse axis">
 <!ENTITY loc.english.840 "Bombsight Speed Increase">
 <!ENTITY loc.english.244 "Slew view right">
@@ -879,7 +879,7 @@
 <!ENTITY loc.english.272 "Turn right">
 <!ENTITY loc.english.835 "Determine Range">
 <!ENTITY loc.english.40 "Military power mode selected.">
-<!ENTITY loc.english.16 "Set max RPM">
+<!ENTITY loc.english.16 "Engine &#37;d Set max RPM">
 <!ENTITY loc.english.110 "AXIS">
 <!ENTITY loc.english.287 "Ride/unride vehicle">
 <!ENTITY loc.english.850 "neutral">
@@ -986,7 +986,7 @@
 <!ENTITY loc.english.70 "Could not load file as a texture.">
 <!ENTITY loc.english.749 "joystick 3 pov hat 1 ne">
 <!ENTITY loc.english.695 "joystick 1 slider 2">
-<!ENTITY loc.english.17 "Set continuous RPM">
+<!ENTITY loc.english.17 "Engine &#37;d Set continuous RPM">
 <!ENTITY loc.english.568 "joystick 2 x-axis">
 <!ENTITY loc.english.144 "SELECT">
 <!ENTITY loc.english.328 "joystick x-rotation">
@@ -1150,7 +1150,7 @@
 <!ENTITY loc.english.596 "joystick 2 button 23">
 <!ENTITY loc.english.255 "Position 7">
 <!ENTITY loc.english.520 "position">
-<!ENTITY loc.english.846 "WEP On">
+<!ENTITY loc.english.846 "Engine &#37;d WEP On">
 <!ENTITY loc.english.703 "Advanced Axis Settings">
 <!ENTITY loc.english.474 "joystick 1 button 19">
 <!ENTITY loc.english.88 "Hit &#37;ls, obliquity &#37;lf">
@@ -1908,6 +1908,7 @@
 <!ENTITY loc.function.1000 "Doubletime emote">
 <!ENTITY loc.function.251 "Position 3">
 <!ENTITY loc.function.162 "Gear handle">
+<!ENTITY loc.function.3000 "VSpawn">
 <!ENTITY loc.function.7 "Jettison Ordnance">
 <!ENTITY loc.function.164 "Mixture lean">
 <!ENTITY loc.function.923 "Head Translate X">
@@ -1991,6 +1992,7 @@
 <!ENTITY loc.function.2007 "Chat">
 <!ENTITY loc.function.293 "Gas">
 <!ENTITY loc.function.286 "Select Weapon 10">
+<!ENTITY loc.function.10 "Clone Vehicle">
 <!ENTITY loc.function.277 "Select Weapon 1">
 <!ENTITY loc.function.253 "Position 5">
 <!ENTITY loc.function.244 "Slew view right">
@@ -2218,33 +2220,46 @@
 <!ENTITY widgets.map.context.waypoints.add.report.air "Air Force">
 <!ENTITY widgets.keymapper.cats.name "NAME">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.zoom.lowest "lowest">
+<!ENTITY widgets.prefs.groups.visual.postrender "POST RENDER FILTER">
 <!ENTITY widgets.map.context.waypoints.add.report.sea "Shipping">
 <!ENTITY widgets.prefs.groups.visual.nomuzzlesmoke "SUPPRESS MUZZLE SMOKE">
 <!ENTITY widgets.map.tooltip.orders.haac "Current orders are to hold at all costs.">
 <!ENTITY widgets.manuals.mantab "MANUALS">
 <!ENTITY widgets.prefs.groups.game.presets.description "Choose between 3 sets of preset options. These range from the best quality to the best performance. Once set, you can go through and turn on or off various options to suit your game experience.">
 <!ENTITY widgets.calibration.device.reread.ok "Your game controllers have been re-read.">
-<!ENTITY widgets.prefs.groups.shaders.reflections.update "UPDATE RATE">
+<!ENTITY widgets.prefs.groups.connection.network.primary "primary">
+<!ENTITY widgets.prefs.groups.visual.grass.tip "Turns on swaying grass. Disable to improve performance.">
 <!ENTITY widgets.prefs.groups.ui.colors.aws "AWS COLORS">
 <!ENTITY widgets.prefs.unsupported "This preference is not supported by your configuration.">
+<!ENTITY widgets.prefs.groups.shadows.corpses.tip "Select whether corpses are shadowed. Turn off to increase performance.">
 <!ENTITY widgets.keymapper.button.def.key "DEFAULT KEYMAP">
 <!ENTITY widgets.prefs.groups.sound.maxsounds.sounds "sounds">
+<!ENTITY widgets.prefs.groups.infantry.weapons.tip "Select whether ragdolls have weapons. Turn off to increase performance.">
 <!ENTITY widgets.map.context.waypoints.add.waypoint.type "WAYPOINT TYPE">
-<!ENTITY widgets.prefs.groups.game.vislimit.medium "medium">
+<!ENTITY widgets.prefs.groups.hud.ppos.ok.tip "This color will be used to indicate a GOOD spot to place a player placed object.">
+<!ENTITY widgets.prefs.groups.titles.shadow "Shadows">
 <!ENTITY widgets.keymapper.keys.function "FUNCTION NAME">
-<!ENTITY widgets.prefs.groups.titles.visual "Visual Settings">
+<!ENTITY widgets.prefs.groups.titles.visual "Effects">
+<!ENTITY widgets.prefs.groups.sound.maxsounds.tip "Select how many sounds can play at any one time. Decrease to improve performance.">
 <!ENTITY widgets.prefs.groups.hud.icons.vehtype "vehicle type">
+<!ENTITY widgets.prefs.groups.visual.shadows "SHADOW SIZE">
 <!ENTITY widgets.prefs.groups.game.language.spanish "spanish">
 <!ENTITY widgets.idcard.tip "The ID Card shows important information about your current persona">
+<!ENTITY widgets.prefs.groups.chat.squadinvites "SQUAD INVITES">
+<!ENTITY widgets.prefs.groups.visual.shadows.tip "Select a shadow size. Select a smaller number for improved performance.">
+<!ENTITY widgets.prefs.groups.connection.vislimit.medium "medium">
 <!ENTITY widgets.keymapper.cats.views "Views">
 <!ENTITY widgets.map.waypoints.add.mortar "Mortar Barrage!">
 <!ENTITY widgets.map.waypoints.approve "APPROVE">
+<!ENTITY widgets.prefs.groups.shadows.vehicles "PLAYER VEHICLES">
 <!ENTITY widgets.map.options.fullscreen "FULL SCREEN">
 <!ENTITY widgets.keymapper.cats.guns "AT and AAA Guns">
+<!ENTITY widgets.prefs.groups.video.card.tip "Select which video driver to use in a multi video card setup.">
 <!ENTITY widgets.prefs.groups.ui.colors.leader "MISSION LEADER COLOR">
 <!ENTITY widgets.map.waypoints.delete "DELETE">
 <!ENTITY widgets.map.options.options "MAP OPTIONS">
 <!ENTITY widgets.map.options.zoom.title "MAP ZOOM LEVEL">
+<!ENTITY widgets.prefs.groups.chat.squadinvites.tip "Disable this to automatically deny squad invites sent to you.">
 <!ENTITY widgets.prefs.groups.visual.clutter.density "DENSITY">
 <!ENTITY widgets.prefs.groups.hud.custom.chat "CHAT">
 <!ENTITY widgets.calibration.device "SELECT A DEVICE">
@@ -2252,10 +2267,13 @@
 <!ENTITY widgets.map.context.position "Center On">
 <!ENTITY widgets.prefs.groups.ui.fontsize "FONT SIZE">
 <!ENTITY widgets.keymapper.cats.armor "Tanks and Armored Cars">
+<!ENTITY widgets.prefs.groups.visual.nomuzzlelight.tip "Disables muzzle flash lights when guns fire. Enable to improve performance.">
 <!ENTITY widgets.prefs.groups.video.gamma.green "GREEN ADJUSTMENT">
 <!ENTITY widgets.idcard.oic "OIC">
 <!ENTITY widgets.globals.options.tip "From here you can configure keys and controllers.">
-<!ENTITY widgets.prefs.groups.hud.custom.minimap.settings "MINIMAP SETTINGS">
+<!ENTITY widgets.prefs.groups.shadows "SHADOW PREFERENCES">
+<!ENTITY widgets.prefs.groups.infantry.corpse.density "CORPSE COUNT">
+<!ENTITY widgets.prefs.groups.hud.custom.minimap.settings "MINIMAP PREFERENCES">
 <!ENTITY widgets.prefs.groups.sound.ambient.disabled "disabled">
 <!ENTITY widgets.prefs.groups.hud.custom.orders "ORDERS">
 <!ENTITY widgets.globals.manuals "MANUALS">
@@ -2269,6 +2287,7 @@
 <!ENTITY widgets.prefs.groups.ui.colors.aws.low "LOW COLOR">
 <!ENTITY widgets.map.info.none "None">
 <!ENTITY widgets.map.context.waypoints.add.report.infantry "Infantry">
+<!ENTITY widgets.prefs.groups.infantry.corpses.tip "Select whether dead players leave corpses. Turn off to increase performance.">
 <!ENTITY widgets.prefs.groups.ui.colors.picker "The current color is">
 <!ENTITY widgets.prefs.groups.hud.icons.namerank "name and rank">
 <!ENTITY widgets.prefs "PREFERENCES">
@@ -2278,10 +2297,11 @@
 <!ENTITY widgets.map.options.showobjectives "OBJECTIVES">
 <!ENTITY widgets.map.waypoints.contact.airforce "Enemy Air Force">
 <!ENTITY widgets.prefs.na "not applicable">
+<!ENTITY widgets.prefs.groups.infantry.corpse.time "CORPSE DURATION">
 <!ENTITY widgets.map.waypoints.add.attack "Attack Here!">
 <!ENTITY widgets.prefs.groups.ui.colors.squad "SQUAD COLOR">
-<!ENTITY widgets.prefs.groups.game.network.secondary "secondary">
 <!ENTITY widgets.map.context.hc.objectives "Objectives">
+<!ENTITY widgets.prefs.groups.hud.ppos.tip "Choose which colors to use when indicating good and bad spots for player placed objects.">
 <!ENTITY widgets.prefs.groups.hud.custom.readout "READOUT">
 <!ENTITY widgets.map.context.hc.na "Nothing to do">
 <!ENTITY widgets.map.options.showdeployments "DEPLOYMENTS">
@@ -2290,8 +2310,9 @@
 <!ENTITY widgets.prefs.groups.visual.specular "SPECULAR">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.mode.map "map">
 <!ENTITY widgets.map.info.target.title "TARGET">
+<!ENTITY widgets.prefs.groups.alerts.show.tip "Alerts show on your HUD when certain game events happen. Example alerts are when a facility is captured or when you receive ammo from a buddy.">
 <!ENTITY widgets.prefs.groups.sound.card "SOUND CARD">
-<!ENTITY widgets.prefs.groups.game.netcode2 "USE NETCODE2 (beta)">
+<!ENTITY widgets.prefs.groups.shadows.corpses "CORPSES">
 <!ENTITY widgets.map.options.showports "PORTS">
 <!ENTITY widgets.keymapper.keys.primary "PRIMARY KEYMAP">
 <!ENTITY widgets.map.context.waypoints.add.waypoint.attack "Attack">
@@ -2300,6 +2321,8 @@
 <!ENTITY widgets.prefs.groups.ui.tooltips "TOOLTIPS">
 <!ENTITY widgets.map.waypoints.contact.infantry "Enemy Infantry">
 <!ENTITY widgets.map.context.hc.takecharge "Take Charge">
+<!ENTITY widgets.prefs.groups.shadows.cockpits.tip "Select whether cockpits are shadowed. Turn off to increase performance.">
+<!ENTITY widgets.prefs.groups.sound.card.tip "Select which sound driver to use. One may provide better sound quality or performance depending on your hardware setup.">
 <!ENTITY widgets.prefs.groups.hud.mode.show "show hud">
 <!ENTITY widgets.prefs.fastest "fastest">
 <!ENTITY widgets.infobar.tip "Current Campaign and the number of days this campaign has run. Time is indicated in game time.">
@@ -2307,58 +2330,70 @@
 <!ENTITY widgets.map.options.zoom.regional "REGIONAL">
 <!ENTITY widgets.map.waypoints.contact "REPORT CONTACT">
 <!ENTITY widgets.map.tooltip.divhq "Division HQ">
-<!ENTITY widgets.prefs.groups.game.vislimit "VISIBLE PLAYER LIMIT">
 <!ENTITY widgets.calibration.device.reread "DETECT CONTROLLERS">
 <!ENTITY widgets.calibration.device.label "NAME">
-<!ENTITY widgets.globals.options "SETTINGS">
+<!ENTITY widgets.globals.options "PREFERENCES">
 <!ENTITY widgets.map.context.hc "HC Options">
 <!ENTITY widgets.prefs.groups.hud.windows.reset.button "RESET">
 <!ENTITY widgets.prefs.groups.game.language.french "french">
+<!ENTITY widgets.prefs.groups.game.lowmemory.tip "Enable this option to decrease the amount of pre-cached data the game loads on startup. May help systems with less than 2GB of memory. This setting may also cause some additional stutters on first spawn in.">
 <!ENTITY widgets.keymapper.cats "KEYMAP CATEGORIES">
 <!ENTITY widgets.manuals.mantab.default "No manual found for this entry">
 <!ENTITY widgets.manuals.mantab.read "READ MANUAL">
-<!ENTITY widgets.prefs.groups.chat "CHAT SETTINGS">
+<!ENTITY widgets.prefs.groups.chat "CHAT PREFERENCES">
 <!ENTITY widgets.prefs.groups.video.gamma.red "RED ADJUSTMENT">
 <!ENTITY widgets.calibration.device.mouse1 "Mouse 1">
+<!ENTITY widgets.prefs.groups.shadows.presets "SHADOW PRESETS">
 <!ENTITY widgets.prefs.groups.video.noframerunahead "NO FRAME RUN AHEAD">
 <!ENTITY widgets.globals.manuals.tip "Read online manuals about the combat vehicles and additional commands you can use.">
+<!ENTITY widgets.prefs.groups.visual.limitlod.tip "Limits the number of LOD changes per frame. Enable to improve performance.">
 <!ENTITY widgets.prefs.groups.visual.texreduce "TEXTURE REDUCTION">
 <!ENTITY widgets.map.context.hc.clear "Clear Objectives">
 <!ENTITY widgets.prefs.enabled "enabled">
 <!ENTITY widgets.keymapper.button.save "SAVE CHANGES">
-<!ENTITY widgets.prefs.groups.titles.shader "Shader Settings">
+<!ENTITY widgets.prefs.groups.titles.shader "Shaders">
 <!ENTITY widgets.template.back "BACK">
+<!ENTITY widgets.prefs.groups.connection.network.best "use best">
 <!ENTITY widgets.map.context.hc.brigades "Brigades">
 <!ENTITY widgets.idcard.progress "PROGRESS">
 <!ENTITY widgets.keymapper.button.def.cat.tip "Set all keymaps in the current category back to the game defaults.">
 <!ENTITY widgets.map.options.showbrigades "BRIGADES">
 <!ENTITY widgets.map.context.waypoints.delete "Delete">
 <!ENTITY widgets.map.context.brigade.join "Join Brigade">
-<!ENTITY widgets.prefs.groups.shaders.water "WATER SHADERS">
 <!ENTITY widgets.prefs.disabled "disabled">
 <!ENTITY widgets.map.waypoints.contact.unknown "Enemy Presence">
 <!ENTITY widgets.prefs.groups.visual.clutter.radius "RADIUS">
 <!ENTITY widgets.map.context.activate "Make Active">
+<!ENTITY widgets.prefs.groups.infantry "INFANTRY PREFERENCES">
 <!ENTITY widgets.calibration.device.reread.tip "Click this button to re-read your game controllers. Use this if your game controller doesn&#39;t respond to input.">
+<!ENTITY widgets.prefs.groups.infantry.ragdolls.tip "Select whether dying players leave a ragdoll or animated death. Turn off ragdoll deaths to increase performance.">
 <!ENTITY widgets.keymapper.button.save.tip "Saves any changes since the last save.">
 <!ENTITY widgets.keymapper.keys.secondary "SECONDARY KEYMAP">
+<!ENTITY widgets.prefs.groups.shadows.terrain.tip "Select whether shadows are turned on. Turn off to increase performance.">
+<!ENTITY widgets.prefs.groups.connection.vislimit.high "high">
 <!ENTITY widgets.map.tooltip.enemy "The enemy has been spotted near here.">
+<!ENTITY widgets.prefs.groups.visual.clutter.tip "Set the radius and density of ground clutter. These options can significantly affect performance. Decrease ground clutter to improve performance.">
 <!ENTITY widgets.prefs.groups "PREFERENCE GROUPS">
 <!ENTITY widgets.keymapper.cats.ships "Ships and Boats">
+<!ENTITY widgets.prefs.groups.titles.infantry "Infantry">
 <!ENTITY widgets.map.waypoints.notes "WAYPOINT NOTES (up to 128 characters)">
+<!ENTITY widgets.prefs.groups.shadows.grass "GRASS">
 <!ENTITY widgets.map.info.me.title "YOUR LAT/LON">
+<!ENTITY widgets.prefs.groups.visual.limitfov.tip "Takes field of view into account when calculating LODs. Enable to improve performance.">
 <!ENTITY widgets.template.next "NEXT">
 <!ENTITY widgets.map.options.showbridges "BRIDGES">
 <!ENTITY widgets.idcard.duty "Active Duty">
+<!ENTITY widgets.prefs.groups.shadows.objects.tip "Select whether terrain objects are shadowed. Turn off to increase performance.">
 <!ENTITY widgets.prefs.groups.ui "USER INTERFACE">
 <!ENTITY widgets.prefs.groups.hud.windows.reset "RESET HUD">
 <!ENTITY widgets.map.context.selection "Map Selection">
 <!ENTITY widgets.prefs.groups.sound.ambient.frequent "frequent">
-<!ENTITY widgets.prefs.groups.shaders.shadows "SHADOWS">
+<!ENTITY widgets.prefs.groups.connection.network.tip "Select which network route to use. &#34;Use best&#34; is the preferred option but you can force your connection to use a specific route to the game host if needed. Might improve lag or warpy players.">
 <!ENTITY widgets.idcard.nextrank "to next rank">
+<!ENTITY widgets.prefs.groups.shadows.flying "SHADOWS WHEN FLYING">
 <!ENTITY widgets.calibration.mouse.more "more">
 <!ENTITY widgets.prefs.groups.chat.reset.tip "Click this button to reset your radio channels to the host defaults. Only applicable during online play.">
-<!ENTITY widgets.prefs.groups.titles.sound "Sound System">
+<!ENTITY widgets.prefs.groups.titles.sound "Sound">
 <!ENTITY widgets.map.options.showairfields "AIRFIELDS">
 <!ENTITY widgets.prefs.groups.alerts.display.panel "MESSAGE DISPLAY INTERVAL">
 <!ENTITY widgets.calibration.device.axisx "X Axis">
@@ -2366,62 +2401,82 @@
 <!ENTITY widgets.map.waypoints.create "CREATE A WAYPOINT">
 <!ENTITY widgets.map.tooltip.orders.overrun "This town has been overrun.">
 <!ENTITY widgets.map.info.mouse.title "MOUSE LAT/LON">
+<!ENTITY widgets.prefs.groups.game.credits.tip "Enable this to show game credits when exiting.">
 <!ENTITY widgets.map.tooltip.town.neutral "This town is neutral.">
 <!ENTITY widgets.keymapper.button.def.cat "CATEGORY DEFAULTS">
 <!ENTITY widgets.prefs.more "more">
 <!ENTITY widgets.map.tooltip.orders.fallback "Current orders are to fall back.">
 <!ENTITY widgets.map.context.chat "Send Chat">
 <!ENTITY widgets.map.context.waypoints.add "Add">
+<!ENTITY widgets.prefs.groups.visual.normalmaps.tip "Turns on normal maps. Disable to improve performance.">
+<!ENTITY widgets.prefs.groups.ui.colors.tip "Select your friendly and enemy colors. These colors are used when drawing player icons and chats.">
 <!ENTITY widgets.calibration.device.axisrz "Rudder Z Axis">
-<!ENTITY widgets.prefs.groups.ui.colors "ICON COLOR SETTINGS">
+<!ENTITY widgets.prefs.groups.ui.colors "ICON COLOR PEREFERENCES">
 <!ENTITY widgets.calibration.device.joystick3 "Joystick 3">
 <!ENTITY widgets.prefs.groups.visual.clutter.short "CLUTTER">
-<!ENTITY widgets.prefs.groups.hud "HUD SETTINGS">
+<!ENTITY widgets.prefs.groups.hud "HUD PREFERENCES">
 <!ENTITY widgets.map.waypoints.add.type "WAYPOINT TYPE">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.mode "MODE">
+<!ENTITY widgets.prefs.groups.shadows.cockpits "COCKPITS">
 <!ENTITY widgets.prefs.groups.visual.limitlod "LIMIT LOD CHANGES">
 <!ENTITY widgets.prefs.groups.alerts.display "INTERVAL">
 <!ENTITY widgets.prefs.groups.ui.colors.aws.alpha "OPACITY">
 <!ENTITY widgets.keymapper.cats.infantry "Infantry">
+<!ENTITY widgets.prefs.groups.hud.windows.reset.tip "Reset your HUD window positions and visibility.">
 <!ENTITY widgets.map.options.zoom.tactical "TACTICAL">
 <!ENTITY widgets.map.waypoints.add.rally "Rally Here!">
 <!ENTITY widgets.calibration.mouse.title "MOUSE SENSITIVITY">
-<!ENTITY widgets.prefs.groups.shaders.postrender "POST RENDER FILTER">
 <!ENTITY widgets.prefs.groups.visual.nomuzzlelight "SUPPRESS MUZZLE LIGHT">
+<!ENTITY widgets.prefs.groups.connection.vislimit.tip "Select how many visible players you can see. Decrease to improve performance.">
 <!ENTITY widgets.prefs.groups.game.presets.quality "BEST QUALITY">
+<!ENTITY widgets.prefs.groups.infantry.weapons "RAGDOLL WEAPONS">
 <!ENTITY widgets.keymapper.pending.pri "Hit a key or combination of keys to set this function&#39;s primary keymap.">
 <!ENTITY widgets.map.info.origin.tip "Shows your current mission&#39;s base city">
+<!ENTITY widgets.prefs.groups.infantry.blood.tip "Select whether or not dead players leave blood splats behind.">
+<!ENTITY widgets.map.context.contacts.delete.all "All Reports">
+<!ENTITY widgets.prefs.groups.shadows.vehicles.tip "Select whether vehicles or troops are shadowed. Turn off to increase performance.">
 <!ENTITY widgets.prefs.groups.sound.volume "VOLUME CONTROL">
+<!ENTITY widgets.prefs.groups.hud.ppos.nok.tip "This color will be used to indicate a BAD spot to place a player placed object.">
+<!ENTITY widgets.prefs.groups.visual.water "WATER SHADERS">
+<!ENTITY widgets.prefs.groups.shadows.off "Off">
 <!ENTITY widgets.map.context.waypoints.add.report.truck "Truck">
+<!ENTITY widgets.prefs.groups.visual.muzzlelight "MUZZLE FLASH LIGHTS">
 <!ENTITY widgets.map.tooltip.yours "Your brigade is marked with an *.">
 <!ENTITY widgets.prefs.groups.alerts.show "SHOW ALERTS">
-<!ENTITY widgets.prefs.changed "Some settings have changed that require a restart.">
+<!ENTITY widgets.prefs.groups.hud.mode.tip "Set the default HUD visibility mode.">
+<!ENTITY widgets.prefs.changed "Some preferences have changed that require a restart.">
 <!ENTITY widgets.prefs.groups.game.languagefilter "BAD LANGUAGE FILTER">
-<!ENTITY widgets.prefs.groups.shaders.grass "GRASS SHADERS">
+<!ENTITY widgets.prefs.groups.infantry.corpse.detail.tip "Use this to use a higher quality corpse model. Disable this for performance.">
+<!ENTITY widgets.prefs.groups.connection.vislimit "VISIBLE PLAYER LIMIT">
 <!ENTITY widgets.prefs.groups.alerts.textmode.onclick "display text on click">
 <!ENTITY widgets.prefs.groups.sound.system.disabled "disabled">
+<!ENTITY widgets.prefs.groups.game.languagefilter.tip "Enable this to filter our bad language from incoming chats.">
 <!ENTITY widgets.prefs.groups.game.language.chinese "chinese">
 <!ENTITY widgets.prefs.groups.chat.reset.button "RESET">
-<!ENTITY widgets.map.context.waypoints.delete.all "All Reports">
+<!ENTITY widgets.map.context.waypoints.delete.all "All Waypoints">
+<!ENTITY widgets.prefs.groups.game.lowmemory "LOW MEMORY SYSTEM (2GB or less)">
 <!ENTITY widgets.prefs.groups.hud.custom "CUSTOM SETUP">
 <!ENTITY widgets.keymapper.pending.move "Move your mouse/joystick axis to set.">
 <!ENTITY widgets.prefs.groups.sound.ambient "AMBIENT SOUNDS">
 <!ENTITY widgets.prefs.groups.visual.dithering "DITHERING">
+<!ENTITY widgets.prefs.groups.titles.connection "Connection">
 <!ENTITY widgets.map.options.zoom.pan "AUTO PAN">
 <!ENTITY widgets.template.quit.confirm "Do you want to exit WWII Online?">
 <!ENTITY widgets.prefs.groups.alerts.textmode "MESSAGE BEHAVIOR">
+<!ENTITY widgets.prefs.groups.infantry.corpse.time.tip "Select how long to keep corpses around. Use a lower setting for better performance.">
 <!ENTITY widgets.map.context.waypoints.add.report "Add Report">
 <!ENTITY widgets.map.context.waypoints.add.waypoint "Add Waypoint">
 <!ENTITY widgets.keymapper.cats.planes "Fighters and Bombers">
 <!ENTITY widgets.map.context.waypoints.add.report.type "REPORT TYPE">
+<!ENTITY widgets.prefs.groups.sound.music.tip "Select whether music when not in game.">
 <!ENTITY widgets.map.options.showews "CONTENTION/EWS">
 <!ENTITY widgets.prefs.groups.game.sse2 "SSE2 EXTENSIONS">
 <!ENTITY widgets.prefs.groups.titles.windows "HUD Windows">
 <!ENTITY widgets.manuals.mantab.select "SELECT A MANUAL">
 <!ENTITY widgets.map.options.filters "MAP FILTERS">
+<!ENTITY widgets.prefs.groups.visual.shaders "SHADER PREFERENCES">
 <!ENTITY widgets.calibration.none.title "SELECT A JOYSTICK AXIS">
 <!ENTITY widgets.keymapper.pending.sec "Hit a key or combination of keys to set this function&#39;s secondary keymap.">
-<!ENTITY widgets.prefs.groups.game.vislimit.low "low">
 <!ENTITY widgets.keymapper.pending.dec "Hit a key to set this function&#39;s decrease action.">
 <!ENTITY widgets.map.options.declutter "DECLUTTER TOWN">
 <!ENTITY widgets.prefs.groups.hud.custom.health "HEALTH BAR">
@@ -2432,55 +2487,68 @@
 <!ENTITY widgets.map.info.mouse.tip "Shows your mouse&#39;s position in latitude and longitude">
 <!ENTITY widgets.map.options.defaults "DEFAULTS">
 <!ENTITY widgets.map.tooltip.units "UNITS">
-<!ENTITY widgets.prefs.groups.game.vislimit.high "high">
 <!ENTITY widgets.calibration.device.axisy "Y Axis">
-<!ENTITY widgets.prefs.groups.game.network.primary "primary">
+<!ENTITY widgets.prefs.groups.hud.custom.minimap.settings.tip "Select your minimap preferences.">
 <!ENTITY widgets.keymapper.button.discard.tip "Discard any changes that have occurred since the last save.">
 <!ENTITY widgets.map.tooltip.objective.attack "There is an attack objective here.">
-<!ENTITY widgets.prefs.groups.game "GAME SETTINGS">
-<!ENTITY widgets.prefs.groups.shaders "SHADER SETTINGS">
+<!ENTITY widgets.prefs.groups.game "GAME PREFERENCES">
+<!ENTITY widgets.prefs.groups.alerts.textmode.tip "Select whether the next alert is shown after a delay or when the alert&#39;s icon is clicked.">
 <!ENTITY widgets.prefs.groups.video.vertsync "VERTICAL SYNCING">
 <!ENTITY widgets.prefs.groups.ui.colors.mission "MISSION COLOR">
+<!ENTITY widgets.prefs.groups.sound.alerts.tip "Enable this to play a sound when a new alert comes in.">
+<!ENTITY widgets.prefs.groups.shadows.terrain "SHADOWS ENABLED">
 <!ENTITY widgets.map.waypoints.name "WAYPOINT NAME (max of 10 characters)">
+<!ENTITY widgets.prefs.groups.visual.reflections "WATER REFLECTIONS">
+<!ENTITY widgets.prefs.groups.hud.ppos.nok "BAD PLACEMENT">
+<!ENTITY widgets.prefs.groups.shadows.objects "OBJECTS">
 <!ENTITY widgets.map.waypoints.contact.shipping "Enemy Shipping">
 <!ENTITY widgets.map.options.zoom.sector "SECTOR">
+<!ENTITY widgets.prefs.groups.ui.colors.aws.tip "Select your map&#39;s Air Warning System low and high volume colors.">
 <!ENTITY widgets.prefs.groups.sound.ambient.infrequent "infrequent">
 <!ENTITY widgets.map.info.target.tip "Shows your current mission&#39;s target city">
+<!ENTITY widgets.prefs.groups.hud.ppos.ok "GOOD PLACEMENT">
 <!ENTITY widgets.map.waypoints.title "WAYPOINTS">
 <!ENTITY widgets.keymapper.button.clear "CLEAR KEYMAP">
 <!ENTITY widgets.keymapper.pending.inc "Hit a key to set this function&#39;s increase action.">
 <!ENTITY widgets.template.next.tip "Move FORWARD to the next screen">
-<!ENTITY widgets.prefs.groups.video "VIDEO SETTINGS">
+<!ENTITY widgets.prefs.groups.video "VIDEO PREFERENCES">
 <!ENTITY widgets.prefs.groups.titles.alerts "HUD Alerts">
 <!ENTITY widgets.calibration.device.joystick2 "Joystick 2">
 <!ENTITY widgets.map.context.position.brigade "My Brigade">
 <!ENTITY widgets.prefs.groups.ui.squadinvites "SQUAD INVITES">
 <!ENTITY widgets.prefs.groups.ui.squadrecruiting "RECRUIT OTHERS">
-<!ENTITY widgets.prefs.groups.titles.game "Game / Application">
+<!ENTITY widgets.prefs.groups.visual.normalmaps "NORMAL MAPS">
+<!ENTITY widgets.prefs.groups.titles.game "Game">
 <!ENTITY widgets.map.tooltip.contested "This town is contested.">
 <!ENTITY widgets.manuals.back "BACK">
 <!ENTITY widgets.map.context.hc.resign "Resign">
 <!ENTITY widgets.map.tooltip.town.british "This town is British owned.">
+<!ENTITY widgets.prefs.groups.visual.postrender.tip "Turns on the post render filter or bloom. Disable to improve performance.">
 <!ENTITY widgets.idcard.status "DUTY STATUS">
 <!ENTITY widgets.prefs.groups.sound.volume.music "MUSIC">
+<!ENTITY widgets.prefs.groups.alerts.display.panel.tip "How long do game alerts stay on screen.">
+<!ENTITY widgets.prefs.groups.game.credits "SHOW GAME CREDITS">
 <!ENTITY widgets.prefs.groups.ui.colors.enemy "ENEMY COLOR">
 <!ENTITY widgets.prefs.groups.game.presets.performance "BEST PERFORMANCE">
 <!ENTITY widgets.prefs.slowest "slowest">
 <!ENTITY widgets.prefs.min "min">
-<!ENTITY widgets.prefs.groups.shaders.reflections.short "REFLECTIONS">
-<!ENTITY widgets.map.info.me.tip "Shows your current position in latitude and longitude while in game">
 <!ENTITY widgets.prefs.groups.hud.custom.primary "PRIMARY AMMO">
-<!ENTITY widgets.prefs.groups.shaders.reflections "WATER REFLECTIONS">
+<!ENTITY widgets.map.info.me.tip "Shows your current position in latitude and longitude while in game">
 <!ENTITY widgets.calibration.none.desc "Expand the joystick axis list and select an axis to configure.">
 <!ENTITY widgets.prefs.groups.game.language "LANGUAGE">
+<!ENTITY widgets.prefs.groups.connection "CONNECTION PREFERENCES">
+<!ENTITY widgets.prefs.groups.visual.combatsmoke.tip "Enables extra ambient smoke from damaged buildings. Disable to improve performance.">
 <!ENTITY widgets.prefs.discarded "Changed preferences have been discarded!">
-<!ENTITY widgets.map.context.waypoints.approve "Approve">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.zoom "ZOOM">
+<!ENTITY widgets.map.context.waypoints.approve "Approve">
 <!ENTITY widgets.map.info.na "not available">
 <!ENTITY widgets.prefs.groups.titles.hud "Heads Up Display (HUD)">
+<!ENTITY widgets.prefs.groups.shadows.custom "Custom">
 <!ENTITY widgets.prefs.groups.titles.ui "User Interface">
+<!ENTITY widgets.prefs.groups.infantry.corpses "LEAVE CORPSES">
 <!ENTITY widgets.map.context.waypoints "Waypoints/Reports">
 <!ENTITY widgets.prefs.groups.game.language.italian "italian">
+<!ENTITY widgets.prefs.groups.connection.vislimit.low "low">
 <!ENTITY widgets.map.context.hc.move "Move Here">
 <!ENTITY widgets.map.context.waypoints.add.report.unknown "Unknown">
 <!ENTITY widgets.prefs.groups.game.language.german "german">
@@ -2490,12 +2558,13 @@
 <!ENTITY widgets.map.waypoints.player "CHAT WITH PLAYER">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.mode.compass "compass">
 <!ENTITY widgets.prefs.groups.sound.volume.fx "SOUND FX">
-<!ENTITY widgets.prefs.groups.game.network "NETWORK ROUTE">
+<!ENTITY widgets.prefs.groups.visual.combatsmoke "COMBAT SMOKE">
 <!ENTITY widgets.idcard.name "NAME">
 <!ENTITY widgets.prefs.groups.game.presets "PRESET OPTIONS">
+<!ENTITY widgets.prefs.groups.connection.network "NETWORK ROUTE">
 <!ENTITY widgets.map.context.waypoints.add.report.gun "Gun">
-<!ENTITY widgets.map.options.showcps "SHOW ALL TOWNS">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.zoom.highest "highest">
+<!ENTITY widgets.map.options.showcps "SHOW ALL TOWNS">
 <!ENTITY widgets.map.context.position.division "My Division">
 <!ENTITY widgets.prefs.max "max">
 <!ENTITY widgets.prefs.groups.hud.windows.reset.note "NOTE: when in game, you can reset your HUD by pressing the &#39;Reset HUD&#39; keymap (default ctrl-y)">
@@ -2506,8 +2575,10 @@
 <!ENTITY widgets.prefs.groups.visual.clutter "RADIAL CLUTTER">
 <!ENTITY widgets.infobar.campaign "Campaign #">
 <!ENTITY widgets.prefs.save "SAVE CHANGES">
+<!ENTITY widgets.prefs.groups.infantry.ragdolls "RAGDOLL TROOPS">
 <!ENTITY widgets.prefs.near "near">
 <!ENTITY widgets.calibration.joystick.title "JOYSTICK SENSITIVITY">
+<!ENTITY widgets.prefs.groups.visual.clutter.flying "WHEN FLYING">
 <!ENTITY widgets.map.info.origin.title "ORIGIN">
 <!ENTITY widgets.map.waypoints.select "MAKE ACTIVE">
 <!ENTITY widgets.map.legend.title "MAP LEGEND">
@@ -2520,17 +2591,20 @@
 <!ENTITY widgets.map.waypoints.contact.truck "Enemy Truck">
 <!ENTITY widgets.prefs.discard "DISCARD CHANGES">
 <!ENTITY widgets.prefs.groups.game.language.english "english">
+<!ENTITY widgets.prefs.groups.hud.custom.tip "Select which HUD windows are on by default.">
 <!ENTITY widgets.prefs.groups.sound.maxsounds "MAX SOUNDS">
 <!ENTITY widgets.map.finder.title "CITY FINDER">
 <!ENTITY widgets.map.tooltip.town.german "This town is German owned.">
 <!ENTITY widgets.calibration.device.joystick1 "Joystick 1">
-<!ENTITY widgets.prefs.groups.titles.chat "Chat Settings">
+<!ENTITY widgets.prefs.groups.titles.chat "Chat">
 <!ENTITY widgets.map.options.zoom.city "CITY">
+<!ENTITY widgets.prefs.groups.visual.reflections.tip "Turns on water reflections. Disable to improve performance.">
+<!ENTITY widgets.prefs.groups.shadows.grass.tip "Select whether grass is shadowed. Turn off to increase performance.">
 <!ENTITY widgets.map.waypoints.contact.armor "Enemy Armor">
 <!ENTITY widgets.prefs.groups.chat.reset "RESET TO DEFAULT RADIOS">
 <!ENTITY widgets.prefs.groups.sound.system "SOUND SYSTEM">
 <!ENTITY widgets.map.context.hc.nominate "Nominate OIC">
-<!ENTITY widgets.prefs.groups.sound "SOUND SETTINGS">
+<!ENTITY widgets.prefs.groups.sound "AUDIO PREFERENCES">
 <!ENTITY widgets.map.context.waypoints.add.waypoint.rally "Rally">
 <!ENTITY widgets.keymapper.button.clear.tip "Clears the currently selected keymap.">
 <!ENTITY widgets.map.waypoints.add "ADD WAYPOINT">
@@ -2538,37 +2612,52 @@
 <!ENTITY widgets.map.context.position.origin "My Mission Origin">
 <!ENTITY widgets.map.context.hc.remove "Remove OIC">
 <!ENTITY widgets.prefs.groups.visual.limitfov "LIMIT FOV CHANGES">
-<!ENTITY widgets.prefs.groups.game.network.best "use best">
+<!ENTITY widgets.prefs.groups.connection.netcode2 "USE NETCODE2 (beta)">
+<!ENTITY widgets.prefs.groups.shadows.flying.tip "Enable this to show shadows while flying planes. Turn off to increase performance.">
+<!ENTITY widgets.prefs.groups.visual.water.tip "Turns on realistic looking water. Disable to improve performance.">
+<!ENTITY widgets.prefs.groups.visual.texreduce.tip "Decreases the quality of in game textures. Enable to increase performance.">
 <!ENTITY widgets.prefs.groups.video.card "VIDEO CARD">
 <!ENTITY widgets.calibration.device.axisslider1 "Slider 1">
 <!ENTITY widgets.template.quit.tip "Exit WWII Online?">
 <!ENTITY widgets.calibration.device.axisrx "Rudder X Axis">
 <!ENTITY widgets.prefs.less "less">
+<!ENTITY widgets.prefs.groups.hud.icons.tip "Icons are what show up above friendly and enemy troops and vehicles.">
 <!ENTITY widgets.prefs.groups.ui.colors.friendly "FRIENDLY COLOR">
 <!ENTITY widgets.prefs.groups.video.gamma.sliders "LOCK SLIDERS">
+<!ENTITY widgets.prefs.groups.sound.ambient.tip "Select how often you hear environmental sounds such as birds chirping or wind.">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap "MINIMAP">
 <!ENTITY widgets.prefs.groups.sound.system.hardware "hardware">
 <!ENTITY widgets.keymapper.button.discard "DISCARD CHANGES">
-<!ENTITY widgets.prefs.groups.visual "VISUAL SETTINGS">
+<!ENTITY widgets.prefs.groups.visual "EFFECT PREFERENCES">
+<!ENTITY widgets.prefs.groups.video.resolution.tip "Select which resolution to run the game at. Decrease resolution to improve performance.">
 <!ENTITY widgets.keymapper.button.def.key.tip "Set the currently selected keymap back to the game default.">
 <!ENTITY widgets.prefs.groups.game.presets.balanced "BALANCED">
 <!ENTITY widgets.map.info.hq.title "BRIGADE HQ">
+<!ENTITY widgets.prefs.groups.hud.ppos "PPO PLACEMENT">
 <!ENTITY widgets.prefs.groups.hud.custom.gameinfo "GAME INFO">
-<!ENTITY widgets.prefs.groups.shaders.normalmaps "NORMAL MAPS">
+<!ENTITY widgets.prefs.groups.connection.netcode2.tip "Enables netcode2 which is an alternate method of communication with the game host. Might improve lag or warpy players.">
+<!ENTITY widgets.prefs.groups.visual.grass "GRASS SHADERS">
+<!ENTITY widgets.prefs.groups.visual.muzzlelight.tip "Enables muzzle flash lights when guns fire. Disable to improve performance.">
 <!ENTITY widgets.keymapper.cats.general "General">
 <!ENTITY widgets.template.back.tip "Move BACK to the previous screen">
 <!ENTITY widgets.calibration.device.axisz "Z Axis">
 <!ENTITY widgets.prefs.pending "You have changed some of your preferences. Would you like to save them now?">
+<!ENTITY widgets.prefs.groups.video.vertsync.tip "Tells the game to sync draw calls which the monitor&#39;s refresh rate. Disable to increase performance.">
 <!ENTITY widgets.map.waypoints.contact.danger "Danger">
+<!ENTITY widgets.prefs.groups.sound.system.tip "Select whether 3d sounds are mixed through the sound card or software. One may provide better sound quality or performance depending on your hardware setup.">
 <!ENTITY widgets.prefs.groups.hud.mode.hide "hide hud">
 <!ENTITY widgets.infobar.day "Day">
 <!ENTITY widgets.map.context.position.target "My Mission Target">
 <!ENTITY widgets.calibration.mouse.desc "Move the mouse slider to suit your style of play. Left is less sensitive while right is more sensitive.">
 <!ENTITY widgets.map.tooltip.objective.defend "There is a defend objective here.">
+<!ENTITY widgets.prefs.groups.infantry.corpse.detail "DETAILED CORPSES">
+<!ENTITY widgets.prefs.groups.infantry.blood "LEAVE BLOOD">
 <!ENTITY widgets.prefs.groups.ui.colors.aws.high "HIGH COLOR">
+<!ENTITY widgets.prefs.groups.connection.network.secondary "secondary">
+<!ENTITY widgets.prefs.groups.infantry.corpse.density.tip "Select how many corpses to allow. Use a lower setting for better performance.">
 <!ENTITY widgets.keymapper.keys.modify "MODIFY">
 <!ENTITY widgets.prefs.list "PREFERENCES">
-<!ENTITY widgets.prefs.groups.titles.video "Video System">
+<!ENTITY widgets.prefs.groups.titles.video "Video">
 <!ENTITY widgets.prefs.groups.hud.icons.none "none">
 <!ENTITY widgets.keymapper.pending.invert "Hold down CTRL key to invert an axis, + - for half axis.">
 <!ENTITY widgets.map.details.deployed "DEPLOYED UNITS">
@@ -2585,6 +2674,7 @@
 <!ENTITY mission.readytab.panel.requestcrew.empty "Please wait for an available crewmen...">
 <!ENTITY mission.readytab.supply.status.cut "This facility&#39;s supply has been cut; no reinforcements available.">
 <!ENTITY mission.aartab.aars.aar.bridgeshit "BRIDGES HIT">
+<!ENTITY mission.spawn.denied12 "Your account does not have access to this vehicle yet.">
 <!ENTITY mission.aartab.aars.id "SORTIE ID">
 <!ENTITY mission.readytab.panel.requestcrew.tip "Click this button to request a multicrew gunner join your vehicle.">
 <!ENTITY mission.aartab.aars.aar.guardingpoints "GUARDING POINTS">
@@ -2625,9 +2715,10 @@
 <!ENTITY mission.readytab.supply.state "STATUS:">
 <!ENTITY mission.aartab.aars.unit "UNIT">
 <!ENTITY mission.readytab.spawn.notdeployed "This unit is unavailable because it is not currently deployed here.">
-<!ENTITY mission.aartab.aars.aar.captures "CAPTURES (ASSISTS)">
+<!ENTITY mission.aartab.aars.aar.captures "CAPTURES">
 <!ENTITY mission.readytab.panel.requestcrew "REQUEST CREW">
 <!ENTITY mission.aartab.help "SORTIE DEBRIEFING: REVIEW RESULTS">
+<!ENTITY mission.readytab.supply.info "* mouse over any vehicle for information about its availability">
 <!ENTITY mission.aartab.aars.aar.ms "MOBILE SPAWNS">
 <!ENTITY mission.readytab.forces.reserved "RESERVED">
 <!ENTITY mission.aartab.aars.aar.spawned "SPAWNED">
@@ -2679,6 +2770,7 @@
 <!ENTITY mission.aartab.aars.aar "SORTIE">
 <!ENTITY mission.spawn.denied0 "Your spawn facility is not valid.">
 <!ENTITY mission.readytab.spawn.spawnable "To reserve click once to select, then click the RESERVE button. You may also double click to reserve. A reserved vehicle is yours until you cancel the reservation, leave the mission or fail to RTB on despawn.">
+<!ENTITY mission.readytab.mouseover "mouse over any vehicle for information about its availability">
 <!ENTITY mission.readytab.panel.selectcommander "SELECT COMMANDER">
 <!ENTITY mission.aartab.aars.aar.kills.type "ENEMY UNIT">
 <!ENTITY mission.spawn.denied10 "Denied by launch timer; please wait.">
@@ -2757,6 +2849,7 @@
 <!ENTITY mission.brieftab.help "MISSION BRIEFING: REVIEW YOUR MISSION DETAILS">
 <!ENTITY mission.readytab.supply.status.closed "This facility is closed; spawning is unavailable.">
 <!ENTITY mission.readytab.crew.commander "COMMANDER">
+<!ENTITY mission.spawn.denied11 "Your account minute balance has run out.">
 <!ENTITY brigades.list.key.reserve "RESERVE">
 <!ENTITY brigades.details.objective "OBJECTIVE">
 <!ENTITY brigades.list.status.planning "planning">
@@ -2874,7 +2967,7 @@
 <!ENTITY tutorials.enrolled "enrolled">
 <!ENTITY tutorials.success "Congratulations, you have successfully completed this tutorial.">
 <!ENTITY tutorials.limited "This tutorial can only be completed once.">
-<!ENTITY tutorials.dead "Unfortunately, the enemy defeated you. Respawn and try again.">
+<!ENTITY tutorials.dead "Unfortunately, you have died. Respawn and try again.">
 <!ENTITY tutorials.failure "Unfortunately, you have failed to complete this tutorial. Please try again from the tutorial&#39;s screen.">
 <!ENTITY tutorials.capturing "Facilities cannot be captured while training.">
 <!ENTITY tutorials.score.captured "{1} of {2} captures">
@@ -2888,7 +2981,7 @@
 <!ENTITY tutorials.tab "TRAINING">
 <!ENTITY loading.sounds.init "Initializing Sounds">
 <!ENTITY loading.network.chat "Connecting to chat">
-<!ENTITY loading.copyright "copyright © 1999 - 2009 Playnet, Inc.">
+<!ENTITY loading.copyright "copyright © 1999 - 2010 Playnet, Inc.">
 <!ENTITY loading.sounds "Loading Sounds">
 <!ENTITY loading.network.loggingin "Logging in">
 <!ENTITY loading.network.auth "Authenticating">
@@ -2920,6 +3013,7 @@
 <!ENTITY brigade.control.proposal.move "{1} proposed {2} moving {3} to {4}.">
 <!ENTITY brigade.createtab.origin "MISSION ORIGIN">
 <!ENTITY brigade.control.proposal.replace "{1} assumed command of {2}.">
+<!ENTITY brigade.control.error.hasotheroffer "Request Denied: Player already has an outstanding offer.">
 <!ENTITY brigade.comtab.commanders "ACTIVE OFFICERS">
 <!ENTITY brigade.comtab.news "NEWS FROM THE HIGH COMMAND">
 <!ENTITY brigade.createtab.postreply.5 "Your mission creation request has expired. Please try again.">
@@ -3014,6 +3108,7 @@
 <!ENTITY brigade.hqtab.missions.origin "ORIGIN">
 <!ENTITY brigade.comtab.status "OPERATIONAL STATUS">
 <!ENTITY brigade.hqtab.missions.key.defend "DEFEND">
+<!ENTITY brigade.control.error.notpermitted "Request Denied: Player cannot be nominated.">
 <!ENTITY brigade.forward.tip "Join the selected mission.">
 <!ENTITY brigade.hqtab.basedoutof "Based out of">
 <!ENTITY brigade.createtab.orders "MISSION ORDERS">
@@ -3263,7 +3358,7 @@
 <!ENTITY common.squads.members.join "Do you wish to join this squadmate on mission?">
 <!ENTITY common.squads.member.joined.years "{1} years ago">
 <!ENTITY common.squads.member.join "JOIN">
-<!ENTITY common.settings.help "MODIFY SETTINGS AND CLICK SAVE">
+<!ENTITY common.settings.help "MODIFY PREFERENCES AND CLICK SAVE">
 <!ENTITY common.squads.create.msg.longname "The long name field is too long!">
 <!ENTITY common.squads.recruitment.success.mission "You are now being sent to {1} on mission.">
 <!ENTITY common.branches.navy "Navy">
@@ -3348,6 +3443,7 @@
 <!ENTITY common.squads.create.long "LONG NAME">
 <!ENTITY common.squads.details.created "CREATED">
 <!ENTITY common.squads.details.night.dow6 "Saturday">
+<!ENTITY common.exitclick "CLICK ANYWHERE TO EXIT">
 <!ENTITY common.time.minute "{1} minute">
 <!ENTITY common.vehicles.classes.3 "Other">
 <!ENTITY common.squads.invite.noinvite "No Invitation">
@@ -3448,6 +3544,7 @@
 <!ENTITY chat.f5.tip "Click to set channel #5. Use F5 on your keyboard to chat on this channel.">
 <!ENTITY chat.hc "HC">
 <!ENTITY chat.ml "ML">
+<!ENTITY chat.ratelimited "Please don’t send the messages so frequently.">
 <!ENTITY chat.channel.custom "custom">
 <!ENTITY chat.holdfall.req "[{1}] {2} has requested {3} Holds:{4}/Falls:{5}/Delays:{6}">
 <!ENTITY chat.channel.origin "origin">
@@ -3468,9 +3565,11 @@
 <!ENTITY hud.health.atp.tip "Your ATP is currently at {1}. ATP is used when running, going prone and other tiring actions.">
 <!ENTITY hud.alerts.17 "You have been resupplied by {1}">
 <!ENTITY hud.readout.vehicles "Vehicles">
+<!ENTITY hud.hqintel.weight.0 "Light">
 <!ENTITY hud.alerts.24.sea "Enemy sea forces spotted near {1}">
 <!ENTITY hud.readout.aoa "AOA">
 <!ENTITY hud.alerts.4 "You have been oversupplied by {1}">
+<!ENTITY hud.alerts.30.minalt "You are below the minimum altitude for bailing!">
 <!ENTITY hud.readout.invisible "Invisible">
 <!ENTITY hud.alerts.12.lost "We have lost {1} to the enemy">
 <!ENTITY hud.minimap.latlon "Your current position in latitude and longitude">
@@ -3483,14 +3582,18 @@
 <!ENTITY hud.minimap.out "Zoom Out">
 <!ENTITY hud.readout.infantry "Infantry">
 <!ENTITY hud.gameinfo.fov "Field of View">
+<!ENTITY hud.hqintel.dir.5 "southwest">
 <!ENTITY hud.readout.riding.stowed "Stowed in position">
 <!ENTITY hud.readout.slip "Slip">
+<!ENTITY hud.hqintel.far "Intel: &#37;ls enemy infantry presence &#37;ls of your position!">
 <!ENTITY hud.alerts.5 "You are about to lose your stockpiled ammo">
 <!ENTITY hud.alerts.18.liberated "Our forces have liberated {1}">
 <!ENTITY hud.readout.agl "AGL Alt">
+<!ENTITY hud.alerts.28 "Enemy Spawn Point! Firing disabled- please leave the area!">
 <!ENTITY hud.cliptype.2.plural "belts">
 <!ENTITY hud.alerts.18.captured "Enemy forces have captured {1}">
 <!ENTITY hud.readout.riding.seated "Riding in seat">
+<!ENTITY hud.hqintel.dir.2 "east">
 <!ENTITY hud.readout.visible "Visible">
 <!ENTITY hud.gameinfo.fps "FPS">
 <!ENTITY hud.readout.gear "Gear">
@@ -3499,6 +3602,7 @@
 <!ENTITY hud.alerts.19.liberated "Our forces have liberated {1}">
 <!ENTITY hud.readout.position "Position">
 <!ENTITY hud.health.state.crew "CREW">
+<!ENTITY hud.hqintel.dir.0 "north">
 <!ENTITY hud.readout.torp.bearing "Relative Bearing">
 <!ENTITY hud.alerts.13.hold "Your brigade has been ordered to hold at all costs">
 <!ENTITY hud.alerts.21.withdrawn "Attack Objective has been withdrawn from {1}">
@@ -3506,6 +3610,7 @@
 <!ENTITY hud.alerts.24.air "Enemy air forces spotted near {1}">
 <!ENTITY hud.readout.torp.control.angle "Lead Angle">
 <!ENTITY hud.readout.range "Range Setting">
+<!ENTITY hud.hqintel.dir.6 "west">
 <!ENTITY hud.minimap.in "Zoom In">
 <!ENTITY hud.cliptype.1.plural "mags">
 <!ENTITY hud.readout.riding.lifeboat "In Lifeboat">
@@ -3532,6 +3637,7 @@
 <!ENTITY hud.alerts.19.acquired "Our forces have acquired {1}">
 <!ENTITY hud.readout.torp.depth "Torpedo Depth">
 <!ENTITY hud.alerts.27 "You have less than {1} minutes left on your hourly subscription!">
+<!ENTITY hud.hqintel.dir.4 "south">
 <!ENTITY hud.readout.torp.control.time "Impact Time">
 <!ENTITY hud.primary.weapon "WEAPON">
 <!ENTITY hud.secondary "SECONDARY">
@@ -3540,24 +3646,31 @@
 <!ENTITY hud.alerts.23 "{1} is under attack">
 <!ENTITY hud.health.state.infantry "INFANTRY">
 <!ENTITY hud.primary.tip "Your current primary ammo load in the form ammo : clips">
+<!ENTITY hud.alerts.30.deadpilot "Your pilot is dead!">
 <!ENTITY hud.alerts.18.deliberated "Enemy forces have regained {1}">
 <!ENTITY hud.cliptype.0.plural "clips">
 <!ENTITY hud.readout.infantry.ship "aboard ship">
+<!ENTITY hud.hqintel.close "Intel: &#37;ls enemy infantry presence near your position!">
 <!ENTITY hud.readout.gear.engines "Engines">
 <!ENTITY hud.alerts.15 "You have been issued new orders">
 <!ENTITY hud.readout.gforce "G">
 <!ENTITY hud.alerts.24.armor "Enemy armor spotted near {1}">
 <!ENTITY hud.alerts.24.ground "Enemy troops spotted near {1}">
 <!ENTITY hud.health.state "This icon represent&#39;s your current state">
+<!ENTITY hud.hqintel.weight.1 "Moderate">
+<!ENTITY hud.hqintel.dir.3 "southeast">
 <!ENTITY hud.health.state.pilot "FLIGHT CREW">
 <!ENTITY hud.readout.riding.towed "Being Towed">
 <!ENTITY hud.alerts.19.deliberated "Enemy forces have regained {1}">
 <!ENTITY hud.readout.gear.kaput "Dead">
+<!ENTITY hud.hqintel.weight.2 "Heavy">
 <!ENTITY hud.cliptype.2 "belt">
 <!ENTITY hud.alerts.14 "Incoming contact report">
+<!ENTITY hud.hqintel.dir.1 "northeast">
+<!ENTITY hud.hqintel.dir.7 "northwest">
+<!ENTITY hud.gameinfo.icon.0 "Normal">
 <!ENTITY hud.health.blood "This icon represent&#39;s your current state">
 <!ENTITY hud.minimap.nearest "The closest town to you">
-<!ENTITY hud.gameinfo.icon.0 "Normal">
 <!ENTITY hud.readout.vehicles.onhoist "on hoist">
 <!ENTITY hud.readout.torp.aob "Angle On Bow">
 <!ENTITY persona.welcome.axis "AXIS FORCES">
@@ -3583,7 +3696,7 @@
 <!ENTITY persona.details.career.status.slocked "Subscription Locked - your subscription level doesn&#39;t allow you access to this persona.">
 <!ENTITY persona.details.spawndelayed "Spawn delays are in effect.">
 <!ENTITY persona.welcome0 "You are about to join in a relentless battle for Western Europe. Forces are clashing in brutal PvP combat.">
-<!ENTITY persona.details.ranklock "Your maximum rank is locked by your subscription.">
+<!ENTITY persona.details.ranklock "Congratulations! You have reached the maximum rank possible for your subscription.">
 <!ENTITY persona.list.overpopulated.2 "moderately">
 <!ENTITY persona.list.slocked "Subscription Locked">
 <!ENTITY persona.details.brigade "BRIGADE ATTACHMENT">
@@ -3629,6 +3742,7 @@
 <!ENTITY classes.missionresults.mia "Missing in Action">
 <!ENTITY chatchan.mission "Mission">
 <!ENTITY presets.tank.nojoy "no joystick">
+<!ENTITY spec.bad.openglversion "You must have OpenGL version 2.0 or greater!">
 <!ENTITY popup.quit "Close this popup">
 <!ENTITY exitvehicle.status.3 "MIA">
 <!ENTITY request.ammo.ok "You have requested ammo!">
@@ -3657,6 +3771,7 @@
 <!ENTITY popup.ok "OK">
 <!ENTITY globals.brigade "BRIGADE">
 <!ENTITY chatchan.origin "Origin">
+<!ENTITY spec.bad "BAD MINIMUM SPEC">
 <!ENTITY exitvehicle.ms "You are the mobile spawn for this mission. By default, despawning will automatically leave an unmanned mobile spawn in your place.">
 <!ENTITY capture.british "British Owned">
 <!ENTITY presets.views "default">
@@ -3668,6 +3783,7 @@
 <!ENTITY resupply.received "Ammunition received from &#37;ls">
 <!ENTITY presets.truck.nojoy "no joystick">
 <!ENTITY hccp.tabs.notices.veto.button "VETO SELECTION">
+<!ENTITY spec.bad.systemmemory "You must have 2GB of memory system memory!">
 <!ENTITY capture.slocked "Your subscription level prevents you from capturing.">
 <!ENTITY chatchan.numbered "Numbered">
 <!ENTITY popup.cancel "CANCEL">
@@ -3678,12 +3794,14 @@
 <!ENTITY globals.time.seconds "seconds">
 <!ENTITY exitvehicle.timer "Can despawn in {1} seconds">
 <!ENTITY capture.french "French Owned">
+<!ENTITY spec.bad.continue "Your system does not meet the minimum specs. You may experience degraded performance or crashes. Continue?">
 <!ENTITY globals.time.days "days">
 <!ENTITY exitvehicle.status.to "{1} to {2}">
 <!ENTITY spawn.loading "LOADING...">
 <!ENTITY chatchan.objective "Objective">
 <!ENTITY chatchan.brigade "Brigade">
 <!ENTITY globals.time.years "years">
+<!ENTITY spec.bad.shadermodel "You must have shader model 1.2 or greater!">
 <!ENTITY hccp.title "HIGH COMMANDER CONTROL PANEL">
 <!ENTITY exitvehicle.status.2 "KIA">
 <!ENTITY exitvehicle.ms.leave "Leave an unmanned mobile spawn here?">
@@ -3795,7 +3913,7 @@
 <!ENTITY dotcom.rank.help "Usage: .rank <name> <1-13> (Changes the rank of the specified player)">
 <!ENTITY dotcom.reloadclutter.help "">
 <!ENTITY dotcom.fpsresupply.help "Usage: .fpsresupply">
-<!ENTITY dotcom.fuze.help "Usage: .fuze <sec/meters (depends on fuze type, 0 resets to default)> (Sets fuze interval for rounds that have this ability. With no arguments, prints current setting)">
+<!ENTITY dotcom.fuze.help "Usage: .fuze <sec/meters> (depends on fuze type, 0 resets to default)> (Sets fuze interval for rounds that have this ability. With no arguments, prints current setting)">
 <!ENTITY dotcom.1.help "Send a message to radio 1">
 <!ENTITY dotcom.clutter.help "">
 <!ENTITY dotcom.defend.help "Issue a defense objective on targeted CP">
@@ -3833,7 +3951,7 @@
 <!ENTITY dotcom.oicveto.help "Usage: .oicveto <brigade> <player>">
 <!ENTITY dotcom.obj.help "List current objectives for your side. Usage: .obj <L, I ,C or N>: List, Info, Cities, Number">
 <!ENTITY dotcom.octettriangles.help "">
-<!ENTITY dotcom.em.help "Usage: .em <emote>: performs selected emote (cheer, double, gyrus (surrender), laugh, salute, stop, jump)">
+<!ENTITY dotcom.em.help "Usage: .em <emote>: performs selected emote (attention, salute, cheer, double(time), gyrus(surrender), laugh, jump(to tell players to jump from plane))">
 <!ENTITY dotcom.oicresign.help "Usage: .oicresign <brigade>">
 <!ENTITY dotcom.vehlod.help "Usage: .vehlod (Disables/Enables vehicle LODs : default Enabled)">
 <!ENTITY dotcom.overrun.help "Notify HC that base is overrun">
@@ -3880,7 +3998,7 @@
 <!ENTITY dotcom.clear.help "Withdraw an objective on targetted CP">
 <!ENTITY dotcom.create.help ".create <shortname>">
 <!ENTITY dotcom.infcoltest.help "Usage: .infcoltest (Toggles chat display of infantry hits)">
-<!ENTITY dotcom.discochat.help "Usage: .dscochat (Interrupts the chat connection)">
+<!ENTITY dotcom.discochat.help "Usage: .discochat (Interrupts the chat connection)">
 <!ENTITY dotcom.decline.help "Usage: .decline: Decline a squad invitation">
 <!ENTITY dotcom.countads.help "">
 <!ENTITY dotcom.hccp.help "Usage: .hccp (Toggles the High Command Control Panel)">
@@ -3930,37 +4048,37 @@
 <!ENTITY vehicles.4.1.2.8 "Messerschmitt Bf 110F-B">
 <!ENTITY vehicles.4.2.4.8 "Panzer IV G">
 <!ENTITY vehicles.4.3.12.1 "German Fairmile B">
-<!ENTITY vehicles.4.4.14.12 "German Airborne Sniper">
-<!ENTITY vehicles.1.4.9.12 "British Sniper">
+<!ENTITY vehicles.4.4.14.12 "Airborne Sniper">
+<!ENTITY vehicles.1.4.9.12 "Sniper">
 <!ENTITY vehicles.3.2.7.1 "25 mm SA mle 1934 AT Gun">
 <!ENTITY vehicles.3.2.4.9 "M4A3 Sherman 76">
 <!ENTITY vehicles.1.2.4.10 "A22 Churchill Mk III">
 <!ENTITY vehicles.1.2.4.9 "A22 Churchill Mk VII">
 <!ENTITY vehicles.1.1.2.7 "Hurricane Mk IIb">
 <!ENTITY vehicles.4.1.1.2 "Heinkel He 111H-2">
-<!ENTITY vehicles.1.4.9.8 "British Commander">
+<!ENTITY vehicles.1.4.9.8 "Commander">
 <!ENTITY vehicles.1.2.7.6 "ROQF 17 Pounder AT Gun">
 <!ENTITY vehicles.1.1.2.8 "Spitfire Mk Ib">
 <!ENTITY vehicles.3.1.1.2 "Douglas DB-7">
 <!ENTITY vehicles.3.3.13.2 "French Freighter">
-<!ENTITY vehicles.4.4.9.2 "German SMG">
+<!ENTITY vehicles.4.4.9.2 "Submachine Gunner">
 <!ENTITY vehicles.1.3.13.2 "British Freighter">
 <!ENTITY vehicles.4.2.7.2 "FlaK 36 (88 mm) AA/AT Gun">
-<!ENTITY vehicles.3.4.9.3 "French Sapper">
+<!ENTITY vehicles.3.4.9.3 "Sapper">
 <!ENTITY vehicles.4.2.4.1 "Panzer III F">
-<!ENTITY vehicles.1.4.9.7 "British Grenadier">
-<!ENTITY vehicles.1.4.14.13 "British Airborne Mortar">
-<!ENTITY vehicles.4.4.9.13 "German Light Mortarman">
-<!ENTITY vehicles.3.4.14.1 "French Airborne Rifle">
+<!ENTITY vehicles.1.4.9.7 "Grenadier">
+<!ENTITY vehicles.1.4.14.13 "Airborne Mortar">
+<!ENTITY vehicles.4.4.9.13 "Light Mortarman">
+<!ENTITY vehicles.3.4.14.1 "Airborne Rifle">
 <!ENTITY vehicles.4.2.7.4 "Flak 28 (40 mm) AA Gun">
 <!ENTITY vehicles.3.1.2.2 "Spitfire Mk I">
 <!ENTITY vehicles.3.1.2.7 "Lockheed mle 322/15 (P-38F)">
 <!ENTITY vehicles.4.2.7.6 "PaK 40 (75 mm) AT Gun">
 <!ENTITY vehicles.4.2.6.3 "SdKfz 251 C">
 <!ENTITY vehicles.3.2.6.2 "Laffly S-20 Truck">
-<!ENTITY vehicles.4.4.14.1 "German Airborne Rifle">
+<!ENTITY vehicles.4.4.14.1 "Airborne Rifleman">
 <!ENTITY vehicles.4.2.4.2 "Panzer 38(t)">
-<!ENTITY vehicles.4.4.9.1 "German Rifleman">
+<!ENTITY vehicles.4.4.9.1 "Rifleman">
 <!ENTITY vehicles.3.2.4.4 "Panhard AMD 178">
 <!ENTITY vehicles.3.1.2.1 "Curtiss Hawk H75A-3 (P-36A)">
 <!ENTITY vehicles.4.2.6.1 "Opel Blitz Truck">
@@ -3972,68 +4090,69 @@
 <!ENTITY vehicles.3.2.7.4 "Bofors 40 mm AA Gun">
 <!ENTITY vehicles.4.1.1.4 "German Blenheim Mk IV T">
 <!ENTITY vehicles.1.2.7.2 "25 mm SA mle 1934 AT Gun">
-<!ENTITY vehicles.3.4.9.2 "French SMG">
+<!ENTITY vehicles.3.4.9.2 "Submachine Gunner">
 <!ENTITY vehicles.3.2.4.2 "Renault R-35">
-<!ENTITY vehicles.4.4.9.8 "German Commander">
+<!ENTITY vehicles.4.4.9.8 "Commander">
 <!ENTITY vehicles.4.2.4.4 "StuG III B">
 <!ENTITY vehicles.3.1.1.3 "Junkers Ju-52 3M">
-<!ENTITY vehicles.4.4.14.9 "German Airborne ATR">
-<!ENTITY vehicles.3.4.9.1 "French Rifleman">
+<!ENTITY vehicles.4.4.14.9 "Airborne Anti-Tank Rifle">
+<!ENTITY vehicles.3.4.9.1 "Rifleman">
 <!ENTITY vehicles.3.2.4.8 "M10 Wolverine">
 <!ENTITY vehicles.1.1.2.1 "Spitfire Mk Ia">
 <!ENTITY vehicles.3.2.7.6 "M5A2 3&#34; (76.2 mm) AT Gun">
 <!ENTITY vehicles.3.1.2.4 "Dewoitine D.520">
-<!ENTITY vehicles.1.4.9.10 "British Paratrooper">
+<!ENTITY vehicles.1.4.9.10 "Paratrooper">
 <!ENTITY vehicles.3.1.1.1 "Blenheim Mk IV">
 <!ENTITY vehicles.4.3.13.2 "German Freighter">
 <!ENTITY vehicles.1.2.6.1 "Bedford OY Truck">
-<!ENTITY vehicles.1.4.9.9 "British Anti-Tank Rifle">
+<!ENTITY vehicles.1.4.9.9 "Anti-Tank Rifleman">
 <!ENTITY vehicles.4.1.2.7 "Messerschmitt Bf 109F-1">
-<!ENTITY vehicles.3.4.14.6 "French Airborne LMG">
+<!ENTITY vehicles.3.4.14.6 "Airborne LMG">
 <!ENTITY vehicles.1.1.2.3 "Blenheim Mk I">
 <!ENTITY vehicles.3.1.2.8 "Curtiss Hawk H87B-3 (P-40F)">
-<!ENTITY vehicles.4.4.14.13 "German Airborne Mortar">
-<!ENTITY vehicles.3.4.9.9 "French Anti-Tank Rifle">
+<!ENTITY vehicles.4.4.14.13 "Airborne Mortarman">
+<!ENTITY vehicles.3.4.9.9 "Anti-Tank Rifleman">
 <!ENTITY vehicles.4.2.4.7 "SdKfz 232">
 <!ENTITY vehicles.1.2.7.4 "Bofors 40 mm AA Gun">
 <!ENTITY vehicles.1.1.2.6 "Spitfire Mk IXc">
 <!ENTITY vehicles.3.2.6.3 "Laffly W15 TCC">
-<!ENTITY vehicles.3.4.14.12 "French Airborne Sniper">
+<!ENTITY vehicles.3.4.14.12 "Airborne Sniper">
 <!ENTITY vehicles.1.2.4.4 "Matilda Mk II">
-<!ENTITY vehicles.3.4.9.6 "French LMG">
+<!ENTITY vehicles.3.4.9.6 "Light Machine Gunner">
 <!ENTITY vehicles.3.2.4.6 "M3A3 Stuart">
 <!ENTITY vehicles.1.1.1.2 "Blenheim Mk IV-T">
-<!ENTITY vehicles.1.4.9.13 "British Light Mortarman">
+<!ENTITY vehicles.1.4.9.13 "Light Mortarman">
 <!ENTITY vehicles.4.1.2.5 "Messerschmitt Bf 109G-6/U4">
 <!ENTITY vehicles.1.2.4.7 "A15 Crusader Mk II">
 <!ENTITY vehicles.3.3.13.1 "French Destroyer">
 <!ENTITY vehicles.3.1.2.3 "Hurricane Mk I">
 <!ENTITY vehicles.3.4.9.5 "BUZZARD">
-<!ENTITY vehicles.1.4.14.12 "British Airborne Sniper">
+<!ENTITY vehicles.4.1.2.9 "Messerschmitt Bf 109F-2">
+<!ENTITY vehicles.1.4.14.12 "Airborne Sniper">
 <!ENTITY vehicles.4.1.1.1 "Junkers Ju 87B Stuka">
-<!ENTITY vehicles.4.4.14.6 "German Airborne LMG">
+<!ENTITY vehicles.4.4.14.6 "Airborne LMG">
 <!ENTITY vehicles.1.2.6.2 "Morris CDSW Gun Tractor">
 <!ENTITY vehicles.3.2.7.5 "M1 (57 mm) AT Gun">
-<!ENTITY vehicles.1.4.14.9 "British Airborne ATR">
-<!ENTITY vehicles.1.4.9.3 "British Sapper">
+<!ENTITY vehicles.1.4.14.9 "Airborne Anti-Tank Rifle">
+<!ENTITY vehicles.1.4.9.3 "Sapper">
 <!ENTITY vehicles.4.1.2.2 "Messerschmitt Bf 110C-4">
 <!ENTITY vehicles.3.2.4.7 "M4A2 Sherman">
 <!ENTITY vehicles.1.1.2.4 "Spitfire Mk Vb">
-<!ENTITY vehicles.1.4.14.1 "British Airborne Rifle">
-<!ENTITY vehicles.3.4.14.2 "French Airborne SMG">
-<!ENTITY vehicles.4.4.9.9 "German Anti-Tank Rifle">
+<!ENTITY vehicles.1.4.14.1 "Airborne Rifle">
+<!ENTITY vehicles.3.4.14.2 "Airborne SMG">
+<!ENTITY vehicles.4.4.9.9 "Anti-Tank Rifle">
 <!ENTITY vehicles.1.1.1.4 "Douglas C47">
-<!ENTITY vehicles.1.4.9.1 "British Rifleman">
+<!ENTITY vehicles.1.4.9.1 "Rifleman">
 <!ENTITY vehicles.3.3.12.1 "French Fairmile B">
-<!ENTITY vehicles.4.4.9.7 "German Grenadier">
-<!ENTITY vehicles.3.4.9.12 "French Sniper">
+<!ENTITY vehicles.4.4.9.7 "Grenadier">
+<!ENTITY vehicles.3.4.9.12 "Sniper">
 <!ENTITY vehicles.1.2.7.3 "Hotchkiss 25 mm AA Gun">
 <!ENTITY vehicles.3.2.7.2 "47 mm SA mle 1937 AT Gun">
-<!ENTITY vehicles.3.4.9.10 "French Paratrooper">
+<!ENTITY vehicles.3.4.9.10 "Paratrooper">
 <!ENTITY vehicles.4.3.13.1 "Zerstoerer Type 1934">
-<!ENTITY vehicles.1.4.14.6 "British Airborne LMG">
+<!ENTITY vehicles.1.4.14.6 "Airborne LMG">
 <!ENTITY vehicles.1.1.2.9 "Spitfire Mk IIb">
-<!ENTITY vehicles.reload "Loading &#37;ls for &#37;ls next">
+<!ENTITY vehicles.reload "Loading &#37;ls for main gun next">
 <!ENTITY vehicles.4.2.7.1 "PaK 36 (37 mm) AT Gun">
 <!ENTITY vehicles.4.2.4.5 "Panzer IV D">
 <!ENTITY vehicles.1.1.2.5 "Hurricane Mk IIc">
@@ -4041,24 +4160,24 @@
 <!ENTITY vehicles.4.1.2.6 "Messerschmitt Bf 109E-1">
 <!ENTITY vehicles.4.2.7.5 "PaK 38 (50 mm) AT Gun">
 <!ENTITY vehicles.1.2.4.5 "Vickers Mk IV">
-<!ENTITY vehicles.4.4.9.12 "German Sniper">
+<!ENTITY vehicles.4.4.9.12 "Sniper">
 <!ENTITY vehicles.4.1.2.4 "Focke Wulf Fw 190A-4">
 <!ENTITY vehicles.4.2.6.4 "w154">
 <!ENTITY vehicles.1.3.12.1 "British Fairmile B">
 <!ENTITY vehicles.4.1.1.5 "Junkers Ju 52-3M">
-<!ENTITY vehicles.1.4.9.2 "British SMG">
+<!ENTITY vehicles.1.4.9.2 "Submachine Gunner">
 <!ENTITY vehicles.4.2.7.3 "FlaK 30 (20 mm) AA Gun">
 <!ENTITY vehicles.3.1.2.6 "Bell mle 14a (P-39D)">
-<!ENTITY vehicles.1.4.14.2 "British Airborne SMG">
-<!ENTITY vehicles.3.4.9.13 "French Light Mortarman">
-<!ENTITY vehicles.3.4.14.9 "French Airborne ATR">
-<!ENTITY vehicles.1.4.9.6 "British LMG">
+<!ENTITY vehicles.1.4.14.2 "Airborne SMG">
+<!ENTITY vehicles.3.4.9.13 "Light Mortarman">
+<!ENTITY vehicles.3.4.14.9 "Airborne Anti-Tank Rifle">
+<!ENTITY vehicles.1.4.9.6 "Light Machine Gunner">
 <!ENTITY vehicles.3.2.4.1 "Renault B1 bis">
-<!ENTITY vehicles.3.4.9.8 "French Commander">
+<!ENTITY vehicles.3.4.9.8 "Commander">
 <!ENTITY vehicles.1.2.7.5 "ROQF 6 Pounder AT Gun">
-<!ENTITY vehicles.4.4.14.2 "German Airborne SMG">
+<!ENTITY vehicles.4.4.14.2 "Airborne SMG">
 <!ENTITY vehicles.3.2.4.5 "Hotchkiss H-39">
-<!ENTITY vehicles.4.4.9.3 "German Sapper">
+<!ENTITY vehicles.4.4.9.3 "Sapper">
 <!ENTITY vehicles.4.2.4.6 "Panzer III H">
 <!ENTITY vehicles.1.2.7.1 "ROQF 2 Pounder AT Gun">
 <!ENTITY vehicles.3.2.6.1 "Bedford OY Truck">
@@ -4068,24 +4187,28 @@
 <!ENTITY vehicles.1.1.2.2 "Hurricane Mk I">
 <!ENTITY vehicles.1.2.4.8 "A15 Crusader Mk III">
 <!ENTITY vehicles.4.2.4.3 "Panzer II C">
-<!ENTITY vehicles.4.4.9.6 "German LMG">
+<!ENTITY vehicles.4.4.9.6 "Light Machine Gunner">
 <!ENTITY vehicles.1.1.1.3 "Havoc Mk I">
 <!ENTITY vehicles.4.1.1.3 "Messerschmitt Bf 110C-4/B">
 <!ENTITY vehicles.3.1.2.5 "Curtiss Hawk H81A-2 (P-40C)">
 <!ENTITY vehicles.1.2.4.3 "Renault B1 bis">
-<!ENTITY vehicles.4.4.9.10 "German Paratrooper">
+<!ENTITY vehicles.4.4.9.10 "Paratrooper">
 <!ENTITY vehicles.3.2.4.3 "Somua S-35">
 <!ENTITY vehicles.4.1.2.3 "Messerschmitt Bf 109F-4">
-<!ENTITY vehicles.1.4.9.11 "British Leader">
-<!ENTITY vehicles.3.4.9.7 "French Grenadier">
-<!ENTITY vehicles.3.4.14.13 "French Airborne Mortar">
+<!ENTITY vehicles.1.4.9.11 "Leader">
+<!ENTITY vehicles.3.4.9.7 "Grenadier">
+<!ENTITY vehicles.3.4.14.13 "Airborne Mortarman">
 <!ENTITY vehicles.1.2.4.2 "Renault R-35">
 <!ENTITY vehicles.1.1.1.1 "Blenheim Mk IV">
+<!ENTITY combat.crew.arms "arms">
 <!ENTITY combat.forward.tip "Spawn in and fight with other players!">
 <!ENTITY combat.back "BACK">
 <!ENTITY combat.forward "FIGHT">
 <!ENTITY combat.help "CHOOSE A WEAPON TO SPAWN">
+<!ENTITY combat.crew.legs "legs">
 <!ENTITY combat.vehicle.choose "Choose a Weapon">
+<!ENTITY combat.crew.torso "torso">
+<!ENTITY combat.crew.head "head">
 <!ENTITY combat.ready "READY ROOM">
 <!ENTITY combat.back.tip "Back to tutorials.">
 <!ENTITY combat.vehicle.name "UNIT">
@@ -4126,14 +4249,16 @@
 <!ENTITY waypoints.resupply "resupply">
 <!ENTITY waypoints.setup "setup">
 <!ENTITY waypoints.origin "origin">
+<!ENTITY waypoints.mspawn "MSPAWN">
 <!ENTITY waypoints.approved "Waypoint Approved">
 <!ENTITY waypoints.ums "UMS">
-<!ENTITY waypoints.gunrange "gunrange">
+<!ENTITY waypoints.gunrange "gun range">
 <!ENTITY waypoints.turn3 "turn 3">
 <!ENTITY waypoints.secondsago "seconds ago">
 <!ENTITY waypoints.minutesago "minutes ago">
 <!ENTITY waypoints.invalid "Waypoint Invalid">
 <!ENTITY waypoints.move "move here">
+<!ENTITY waypoints.mspawn.tip "Current mobile spawn for this mission.">
 <!ENTITY waypoints.offroad "offroad">
 <!ENTITY waypoints.limited "You have reached the maximum number of waypoints or contact reports available to you.">
 <!ENTITY waypoints.restricted "You may only add contact reports while in the game world.">
@@ -4143,3 +4268,26 @@
 <!ENTITY waypoints.origin.tip "Mission Origin: This is where you started your mission; check the mission target for more mission details.">
 <!ENTITY waypoints.target "target">
 <!ENTITY waypoints.turn2 "turn 2">
+<!ENTITY ppos.badlocation "You cannot place this type of object in this area of the terrain!">
+<!ENTITY ppos.badtrees "There is a tree blocking your object!">
+<!ENTITY ppos.badtarget.toofar "You are too far from your mission target for this object type!">
+<!ENTITY ppos.badavoidance "You are too close to another terrain object!">
+<!ENTITY ppos.ob3 "Infantry Resupply Point">
+<!ENTITY ppos.badplayer "You must be spawned in to place objects!">
+<!ENTITY ppos.badtarget.tooclose "You are too close to your mission target for this object type!">
+<!ENTITY ppos.ob1 "Infantry Fighting Position">
+<!ENTITY ppos.badspeed "You cannot place this type of object while moving!">
+<!ENTITY ppos.badenemyfac.toofar "You are too far from the nearest enemy facility for this object type!">
+<!ENTITY ppos.coolingdown "You must wait for the cooldown timer to complete!">
+<!ENTITY ppos.badfriendlyfac.tooclose "You are too close to the nearest friendly facility for this object type!">
+<!ENTITY ppos.building "Building: {1}">
+<!ENTITY ppos.badfriendlyfac.toofar "You are too far from the nearest friendly facility for this object type!">
+<!ENTITY ppos.badenemyfac.tooclose "You are too close to the nearest enemy facility for this object type!">
+<!ENTITY ppos.badvehicle "Another player is blocking your object!">
+<!ENTITY ppos.ob2 "Gun Emplacement">
+<!ENTITY ppos.noinside "You cannot place this type of object while in a building!">
+<!ENTITY ppos.badplacement "That is not a valid position!">
+<!ENTITY ppos.ob4 "Infantry Resupply Point">
+<!ENTITY ppos.built "&#37;ls built!">
+<!ENTITY ppos.invalidnow "Object position is no longer valid!">
+<!ENTITY ppos.badangle "The angle of the ground is too steep!">

@@ -9,18 +9,21 @@ You can enter commands as either &#34;/(command)&#34; or &#34;.(command)&#34;, t
 an On|Off toggle).
 
 RESET DEFAULT RADIOS:
-Changes you make to your radios are preserved on the host so that the settings are the same for you on any computer you access the game with..
+Changes you make to your radios are preserved on the host so that the settings are the same for you on any computer you access the game with.
 
   /RESETRADIOS: restores your radio assignments to the game defaults.
 
 SHORTCUT SUBSTITUTIONS:
 Shortcuts can be entered into the chat buffer to simplify the typing of long names for various things.  The correct information is inserted into the text when it is sent to other players.
 
-$ORIG: Inserts your Origin city.
-$TARG: Inserts your Mission Target city.
-$LEAD: Inserts the name of your Mission Leader.
-$UNIT: Inserts the name of your current Brigade
-$MISS: Inserts the name of your Mission.
+$orig: Inserts your Origin city.
+$targ: Inserts your Mission Target city.
+$lead: Inserts the name of your Mission Leader.
+$unit: Inserts the name of your current Brigade
+$miss: Inserts the name of your Mission.
+$town: Inserts the city you are currently in.
+$here: Inserts the name of the Facility and capture &#37;.
+$hcid: Inserts short ID of current Brigade
 
 To use these, enter the shortcut as you type.  For example, if you are on a mission attacking Antwerp and you send &#34;Air cover needed at $targ&#34;, will be seen as &#34;Air cover needed at Antwerp.&#34;</body>
   <links>

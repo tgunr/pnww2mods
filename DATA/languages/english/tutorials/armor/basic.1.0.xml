@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <content type="5">
-  <body>title = Advanced Training: Armor: A-13 Mark II
+  <body>title = Advanced Training: Armor: A13 Mark II
   
 bulleyes = You hit the bullseye!
 start = Start
@@ -27,7 +27,7 @@ gunrange = Firing Range
 
 1.1.label = The A-13 Mark II
 
-	1.1.alert.modal = This is the A-13 Mk II, the most common British tank.  It has three playable crew positions: driver, commander and gunner.
+	1.1.alert.modal = This is the A13 Mk II Cruiser Tank, one of the most common British tanks.  It has three playable crew positions: driver, commander and gunner.
         1.1.alert.camera = 0,5,45,360,0,0,10
 	// pan around
 	
@@ -39,12 +39,12 @@ gunrange = Firing Range
 	2.1.complete.modal = You can use {gunsightview} to toggle between the zoomed in view of the slit and the normal cockpit view. 
 	
 2.2.label = Button up the Driver
-	2.2.alert = The A-13&#39;s view port is open and it is possible for the driver to be damaged through it.[NL][NL]Press {canopycontrol} to close the slit and protect the driver.
+	2.2.alert = The A13&#39;s view port is open and it is possible for the driver to be damaged through it.[NL][NL]Press {canopycontrol} to close the slit and protect the driver.
 	2.2.complete.modal = With the slit closed, the driver cannot see outside the tank but he is better protected.
 
 2.3.label = Engine Status
 	2.3.alert = Press {instrumentview} to view your instruments.
-	2.3.complete.modal = Here you can see your engine RPMs, motor temperature, turret orientation and other information.
+	2.3.complete.modal = Here you can see various gauges depending on the tank.  Examples are: motor temperature, engine RPMs, and possibly other information like turret orientation.
 
 2.4.label = Gear Shifting
 	2.4.alert.modal = All ground vehicles begin play with their engines off and in neutral gear.[NL][NL]They all have 1 or more forward gears and a single reverse gear.
@@ -53,7 +53,7 @@ gunrange = Firing Range
 	2.4.complete.hilite = readout,target
 
 2.5.label = Start the Engine
-	2.5.alert = Press {gunsightview} to look back through your driver&#39;s view port.[NL][NL]Start the engine by pressing and holding {engstart} until the engine stays on.
+	2.5.alert = Press {gunsightview} to return to the driver&#39;s front view and press {canopycontrol} to open the view port.[NL][NL]Start the engine by pressing {engstart}.
 	2.5.complete = Excellent!
 
 2.6.label = Shift into 1st gear
@@ -122,7 +122,7 @@ gunrange = Firing Range
 	4.4.alert = View your surroundings through the commander&#39;s binoculars.[NL][NL]Press {gunsightview} to bring up your binoculars. 
 	
 4.5.label = Look Around
-	4.5.alert = Take a moment to look North down the gunrange at the dirt mounds with targets on them.
+	4.5.alert = Take a moment to look North down the gun range at the dirt mounds with targets on them.
 	4.5.complete.modal = The cupola can be rotated 360 degrees around your tank, but its facing is dependent on the facing of the tank&#39;s turret. 
 	
 5.0.label = The Gunner
@@ -152,7 +152,7 @@ gunrange = Firing Range
 6.0.label = Gunnery
 
 6.1.label = Shoot the Left Target
-	6.1.alert.modal = The A-13&#39;s gunsight is a simple crosshair with approximate range indicators for the main gun and the machine gun.  The ranges are shown in hundreds of meters.  Use the left marks for the tank&#39;s main gun rounds and the right for the coaxial machine gun.
+	6.1.alert.modal = The A13&#39;s gunsight is a simple crosshair with approximate range indicators for the main gun and the machine gun.  The ranges are shown in hundreds of meters.  Use the left marks for the tank&#39;s main gun rounds and the right for the coaxial machine gun.
 	6.1.alert1 = Fire the main gun at the far left target using {primarytrigger.1}. It is approximately 200 meters away.
 	6.1.complete = Well done, you hit the target!
 
@@ -167,7 +167,7 @@ gunrange = Firing Range
 	6.3.complete.modal = Nice shot! As you can see, those targets are about 1000 meters away. Typically, armored vehicle combat takes place between 500 and 2000 meters.[NL][NL]Machine guns are sighted the same way except you would use the right marks for ranging.
 	
 6.4.label = Main Gun Ammo
-	6.4.alert.modal = Many tanks have different ammunition types available for the main gun. But the A-13 is equipped only with armor-piercing (AP) rounds.
+	6.4.alert.modal = Many tanks have different ammunition types available for the main gun. But the A13 is equipped only with armor-piercing (AP) rounds.
 	6.4.complete.hilite = primary,target
 
 6.5.label = Practice Firing
@@ -217,5 +217,5 @@ gunrange = Firing Range
 # facing front: -1.57    back: 1.58
 
 #	1.6.complete = Congratulations!  You have completed Armor Training.</body>
-  <title>Basic Armor I: Armor: A-13 Mark II</title>
+  <title>Basic Armor I: Armor: A13 Mark II</title>
 </content>

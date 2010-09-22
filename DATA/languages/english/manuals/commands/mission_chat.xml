@@ -8,7 +8,7 @@
 
 MISSION LEADERS
 
-/BACKUPLEADER (PLAYER): Assigns a player to be given leadership in the case of your leaving the mission. If you do not assign a backupleader, the system will choose a player who has leadership promotion enabled (see /autoleader). Counts as activity against &#34;/takelead&#34;. Note: backup leader&#39;s can /takelead at any time.
+/BACKUPLEADER (PLAYER): Assigns a player to be given leadership in case you leave the mission. If you do not assign a backupleader, the system will choose a player who has leadership promotion enabled (see /autoleader). Counts as activity against &#34;/takelead&#34;. Note: backup leader&#39;s can /takelead at any time.
 /MAKELEADER (PLAYER): Hands over leadership of your mission to the named player (must be on your mission).
 /ORDERS (TEXT): Sets the current orders for your mission which plays a sound on each member&#39;s computer and is displayed at the top of their screen. Counts as activity against /takelead.
 /ORDERS CLEAR: Removes the current orders.</body>

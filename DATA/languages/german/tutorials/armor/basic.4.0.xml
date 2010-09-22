@@ -112,7 +112,7 @@ gunrange = Schießplatz
 
 4.2.label = Kommandant bewegen
 	4.2.alert = Die zweite Position in diesem Panzer ist die des Kommandanten. Panzerkommandanten haben gewöhnlich eine bessere Sicht als die anderen Besatzungsmitglieder.[NL][NL]Drücke {positiontwo} zum Wechseln auf die Kommandantenposition.
-	4.2.complete.modal = Beim Positionswechsel von der Fahrerpostion behält der Panzer die Steuerungseinstellung bei. Wenn Du beim Umschalten Gas gegeben hast, wird sich der Panzer auch nach dem Positionswechsel weiter nach vorne bewegen.  Das kann in einigen Situation gefährlich werden, so zum Beispiel im Gelände, wo es nicht immer geradeaus geht.
+	4.2.complete.modal = Beim Positionswechsel von der Fahrerpostion behält der Panzer die Steuerungseinstellung bei.[NL][NL]Wenn Du beim Umschalten Gas gegeben hast, wird sich der Panzer auch nach dem Positionswechsel weiter nach vorne bewegen.[NL][NL]Das kann in einigen Situation gefährlich werden, so zum Beispiel im Gelände, wo es nicht immer geradeaus geht.
 
 4.3.label = Die Sicht des Kommandanten
 	4.3.alert = Die Sicht des Kommandanten durch die Sichtluke ist etwas eingeschränkt. Deshalb kann der Kommandant die Turmluke öffnen. dadurch erhält er eine wesentlich bessere Sicht.[NL][NL]Im Paner 38(t) bedient der Kommandant gleichzeitig auch Kanone. Ist die Turmluke geöffnet, verlässt der Kommandant die Position des Kanoniers.[NL][NL]Drücke {canopycontrol} zum Öffnen der Luke.
@@ -121,11 +121,11 @@ gunrange = Schießplatz
 	4.4.alert = Mit dem Fernglas siehst Du noch mehr.[NL][NL]Drücke {gunsightview} zum Benutzen des Fernglases. 
 	
 4.5.label = Umschauen
-	4.5.alert = Die Kuppel wird mit {turretraverse} und {turretelevate} bewegt.[NL][NL]Schaue kurz nach NORDEN entlang der Schießbahn zu den Erdhügeln. Dort befinden sich die Übungsziele.
+	4.5.alert = Die Kuppel wird mit {turretraverse} und {turretelevate} bewegt.[NL][NL]Schaue nach NORDEN entlang der Schießbahn zu den Erdhügeln. Dort befinden sich die Übungsziele.
 	4.5.complete.modal = Die Kuppel kann um 360° gedreht werden. Die Ausrichtung der Kuppel ist abhängig von der Ausrichtung des Turmes. 
 
 4.6.label = Turmluke schliessen
-	4.6.alert = Drücke {canopycontrol} zum Schliessen der Turmluke.
+	4.6.alert = Kehre mit {instrumentview} in die normal Ansicht zurück und drücke {canopycontrol} zum Schliessen der Turmluke.
 	
 5.0.label = Der Kanonier
 
@@ -150,7 +150,7 @@ gunrange = Schießplatz
 6.0.label = Gunnery
 
 6.1.label = Ziel: Böschung links
-	6.1.alert.modal = Das Visier des Panzer 38(t) besteht aus 7 kleinen Dreiecken in der Nähe der Visiermitte. Alle Waffen sind auf die Spitze des mittleren Dreiecks ausgerichtet. Die eingestellte Visierentfernung wird am oberen Rand angezeigt, dort wo die vertikale Linie die ringförmige Skala schneidet. Die Visierentfernung wird mit {gunsightrangeinc} und {gunsightrangedec} verändert.
+	6.1.alert.modal = Das Visier des Panzer 38(t) besteht aus 7 kleinen Dreiecken in der Nähe der Visiermitte.[NL][NL]Alle Waffen sind auf die Spitze des mittleren Dreiecks ausgerichtet.[NL][NL]Die eingestellte Visierentfernung wird am oberen Rand angezeigt, dort wo die vertikale Linie die ringförmige Skala schneidet. Die Visierentfernung wird mit {gunsightrangeinc} und {gunsightrangedec} verändert.
 	6.1.alert1 = Schieß mit der Kanone {primarytrigger.1} auf das Ziel links vor Dir. Es ist ungefähr 200 Meter entfernt. 
 	6.1.complete = Gut gemacht, Du hast das Ziel getroffen!
 
@@ -171,14 +171,18 @@ gunrange = Schießplatz
 	6.4.complete.hilite = primary,target
 
 6.5.label = Schießen mit HE
-	6.5.alert = Gib noch ein paar Schuss ab und schau Dir an, wie sich Flugbahn und Einschlag gegenüber panzerbrechender Munition verändern.[NL][NL]Wenn Du den Lehrgang fortsetzen möchtest, wechsle auf die Fahrerposition {positionone}.
+	6.5.alert = Gib noch ein paar Schuss ab und schau Dir an, wie sich Flugbahn und Einschlag gegenüber panzerbrechender Munition verändern.[NL][NL]Wenn Du den Lehrgang fortsetzen möchtest, wechsle auf die Position Bug MG {positionfour}.
 
 // When enabling this, changein 6.5.alert last line to read:
 // &#34;When you are ready to continue, switch to the hull gunner&#39;s position {positionfour}.
-// 6.6.label = Hull Gunner
-// 6.6.alert = Der Panzer 38(t) hat eine zusätzliche Position für das Bug MG.[NL][NL]Drücke {gunsightview} zum Wechseln der Visieransichten.
-// 6.6.alert1 = Das Bug MG wird genauso bewegt wie die Kanone. Die Visiereinstellung wird ebenfalls wie bei der Kanone verändert.[NL][NL]Drücke {primarytrigger.1}, um das MG abzufeuern.
-// 6.6.alert2 = Gut. Diese Waffe kann effektiv gegen weiche Ziele vor dem Panzer eingesetzt werden.[NL][NL]Schalte jetzt mit {positionone} wieder auf die Fahreransicht um.
+6.6.label = Hull Gunner
+6.6.alert = Der Panzer 38(t) hat eine zusätzliche Position für das Bug MG.[NL][NL]Drücke {gunsightview} zum Wechseln der Visieransichten.
+
+6.7.label = Bug MG abfeuern
+6.7.alert = Das Bug MG wird genauso bewegt wie die Kanone. Die Visiereinstellung wird ebenfalls wie bei der Kanone verändert.[NL][NL]Drücke {primarytrigger.1}, um das MG abzufeuern.
+
+6.8.label = zurück zur Fahrerposition
+6.8.alert = Gut. Diese Waffe kann effektiv gegen weiche Ziele vor dem Panzer eingesetzt werden.[NL][NL]Schalte jetzt mit {positionone} wieder auf die Fahreransicht um.
 
 7.0.label = Kursabschluß
 
@@ -198,7 +202,7 @@ gunrange = Schießplatz
 	7.4.alert.hilite = readout,target
 	
 7.5.label = Heimfahrt
-	7.5.alert = Leg den ersten Gang ein {shiftup}.[NL][NL]Folge den Wegpunkten zurück zum Ausgangspunkt.[NL][NL]Benutze {gas.10.4} zum Beschleunigen.[NL]{bothbrake.10.4} bremst den Panzer ab.[NL]Mit {leftbrake.10.4} und {rightbrake.10.4} lenkst Du nach links und rechts.
+	7.5.alert = Leg den ersten Gang ein {shiftup}.[NL][NL]Folge den Wegpunkten zurück zum Ausgangspunkt.[NL][NL]Benutze {gas.10.4} zum Beschleunigen.[NL][NL]{bothbrake.10.4} bremst den Panzer ab.[NL][NL]Mit {leftbrake.10.4} und {rightbrake.10.4} lenkst Du nach links und rechts.
 	7.5.alert.hilite = readout,target
 
 8.0.label = Geschafft!

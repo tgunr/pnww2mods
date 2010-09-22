@@ -7,7 +7,7 @@ dead = You have been defeated by the enemy. Respawn and try again!
 1.0.label = Infantry Combat Training
 
      1.1.label = intro
-     1.1.alert.modal = This area is now open for live-fire training.  Work together with your teammates to defeat the enemy.[NL][NL]This exercise will be remain open for 40 minutes or until only one player remains alive.[NL][NL]The target is a group of destroyed farm houses half way between the spawn points of you and your enemy.[NL][NL]Good hunting!</body>
+     1.1.alert.modal = This area is now open for live-fire training.  Work together with your teammates to defeat the enemy.[NL][NL]The target is a group of destroyed farm houses half way between the spawn points of you and your enemy.[NL][NL]Good hunting!</body>
   <branch>1</branch>
   <brief>Practice infantry combat in a arena with other infantry.</brief>
   <checkstate>true</checkstate>
@@ -21,7 +21,6 @@ dead = You have been defeated by the enemy. Respawn and try again!
   <instype>1</instype>
   <requires>infantry.lmg</requires>
   <title>Infantry Combat Training</title>
-  <tom>40</tom>
   <ui>combat</ui>
   <ukspawners>212943.46,3101367.74,2.95,-2.16</ukspawners>
   <ukvehicles>ukrifle,uk-smg,ukgrenadier,uk-eng,uk-atr,uk-lmg,uk-sniper,uk-ltmortar</ukvehicles>

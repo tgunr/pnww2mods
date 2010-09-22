@@ -27,7 +27,7 @@ gunrange = Distance de tir
 
 1.1.label = Le Panzer 38(t)
 
-	1.1.alert.modal = Ceci est  PZ 38(t), le char allemand le plus commun.  IL possède 3 positions différentes jouables: Conducteur, commandant et le canonnier. Certains autres chars ont aussi un 4éme membre d&#39;équipage de modélisé mais il ne peut que regarder autour de soit dans la tourelle.
+	1.1.alert.modal = Ceci est  PZ 38(t), un des chars allemands le plus commun.  IL possède 3 positions différentes jouables: Conducteur, commandant et le canonnier. Certains autres chars ont aussi un 4éme membre d&#39;équipage de modélisé mais il ne peut que regarder autour de soit dans la tourelle.
         1.1.alert.camera = 0,5,45,360,0,0,10
 	// pan around
 	
@@ -53,7 +53,7 @@ gunrange = Distance de tir
 	2.4.complete.hilite = readout,target
 
 2.5.label = Démarrer le moteur
-	2.5.alert = Utilisez {gunsightview} et Pressez {canopycontrol}si besoin  pour voir de nouveau par l&#39;ouverture du conducteur.[NL][NL]Démarrez le moteur en pressant et en maintenant {engstart} jusqu&#39;à que vous entendiez le moteur démarrer.
+	2.5.alert = Utilisez {gunsightview} et Pressez {canopycontrol}si besoin  pour voir de nouveau par l&#39;ouverture du conducteur.[NL][NL]Démarrez le moteur en pressant {engstart}.
 	2.5.complete = Excellent!
 
 2.6.label = Passez la première
@@ -125,7 +125,7 @@ gunrange = Distance de tir
 	4.5.alert = Prenez le temps de regardez autour de vous, vers le nord où vous pouvez voir des monticules avec des cibles.
 
 4.6.label = Rentrer
-	4.6.alert = Pressez {canopycontrol} pour rentrer à l&#39;abri de la tourelle.
+	4.6.alert =  Utilisez {instrumentview} pour un retour à la vue normale et Pressez {canopycontrol} pour rentrer à l&#39;abri de la tourelle.
 		
 5.0.label = Le tireur
 
@@ -172,7 +172,17 @@ Vous pouvez régler la distances avec {gunsightrangeinc} et {gunsightrangedec}.
 	6.4.complete.hilite = primary,target
 
 6.5.label = Tirez un  HE
-	6.5.alert = Tirez quelques uns de ces obus et remarquez le comportement différent qu&#39;ils ont par rapport aux obus perforants (AP) en terme de balistique.[NL][NL]Quand vous êtes prêt à continuer, passez à la place du conducteur {positionone}.
+	6.5.alert = Tirez quelques uns de ces obus et remarquez le comportement différent qu&#39;ils ont par rapport aux obus perforants (AP) en terme de balistique.[NL][NL]Quand vous êtes prêt à continuer, passez à la place du conducteur {positionfour}.
+
+6.6.label = Hull Gunner
+6.6.alert = The Panzer 38(t) has a hull gunner position that controls a machine gun mounted on the front of the tank.[NL][NL]Press {gunsightview} to cycle through the gunsight views.
+
+6.7.label = Fire Hull Gun
+6.7.alert = Move the gun and change the gunsight range the same as you would the tank&#39;s main gun.[NL][NL]Press {primarytrigger.1} to fire the machine guns.
+
+6.8.label = Select Driver
+6.8.alert = Good.  This weapon can be effective at close range when you are facing soft targets in front of you.[NL][NL]Now switch to the driver&#39;s position {positionone}.
+
 
 7.0.label = Finir le parcours
 

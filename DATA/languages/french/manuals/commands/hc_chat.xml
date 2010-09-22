@@ -4,33 +4,39 @@
 
 Ces commandes sont réservées aux membres de haut commandement, et certaines même au très haut niveaux.  Beaucoup de ces commandes demandent d&#39;utiliser le &#34;nom court&#34;(shortname) des brigades. 
 
-.ALLIED (TEXT): Envoie un message à tous les joueurs alliés (limité au  Div CO et au-dessus)
-.AXIS (TEXT): Envoie un message à tous les joueurs axes (limité au  Div CO et au-dessus)
-.HOLD: Supprime la limite de spawn pour les dépôts amis. Aussi connu sous &#34; tenir à tous prix&#34; (Hold At All Costs) ou &#34;HAAC&#34;.
-.FALLBACK: Demmande de choisir une ville sur carte pour le faire. La ville doit avoir au moins 1 dépôt de capturé par l&#39;ennemi.
-.HCCP: Montre le panneau de contrôle du haut commandement.  
-.OICOCVOLUNTEER (BRIGADE): Informe le HC que vous êtes volontaires pour prendre le commandement de votre brigade.
-.OICNOMINATE (BRIGADE) (PLAYER): Avertie le HC que vous avez nommé le joueur cité pour prendre en main la brigade nommée.
-.OICVETO (BRIGADE) (PLAYER): Veto sur la nomination du joueur cité pour devenir OIC de la brigade nommée.
-.OICRESIGN (BRIGADE): L&#39;OIC demissionne de sont commandement de brigade.
-.OICREPLACE (BRIGADE): Vous remplacez l&#39;OIC de la brigade nommée.
-.OICREMOVE (BRIGADE) (PLAYER): Supprime le joueur cité de sa position d&#39;OIC de la brigade nommée.
-.HC: Affiche les joueurs du HC en ligne and les OIC, avec leurs brigades attachées.
-.HCLIST: Affiche tous les membres du HC en ligne, avec les OIC.
-.HOME: Affiche votre brigade.
+/ALLIED (TEXT): Envoie un message à tous les joueurs alliés (limité au  Div CO et au-dessus)
+/AXIS (TEXT): Envoie un message à tous les joueurs axes (limité au  Div CO et au-dessus)
+/HOLD: Supprime la limite de spawn pour les dépôts amis. Aussi connu sous &#34; tenir à tous prix&#34; (Hold At All Costs) ou &#34;HAAC&#34;.
+/FALLBACK: Demmande de choisir une ville sur carte pour le faire. La ville doit avoir au moins 1 dépôt de capturé par l&#39;ennemi.
+/HCCP: Montre le panneau de contrôle du haut commandement.
+/LASTMOVES: Liste des derniers mouvements des brigades.
+/OICOCVOLUNTEER (BRIGADE): Informe le HC que vous êtes volontaires pour prendre le commandement de votre brigade.
+/OICNOMINATE (BRIGADE) (PLAYER): Avertie le HC que vous avez nommé le joueur cité pour prendre en main la brigade nommée.
+/OICVETO (BRIGADE) (PLAYER): Veto sur la nomination du joueur cité pour devenir OIC de la brigade nommée.
+/OICRESIGN (BRIGADE): L&#39;OIC démissionne de son commandement de brigade.
+/OICREPLACE (BRIGADE): Vous remplacez l&#39;OIC de la brigade nommée.
+/OICREMOVE (BRIGADE) (PLAYER): Supprime le joueur cité de sa position d&#39;OIC de la brigade nommée.
+/HC: Affiche les joueurs du HC en ligne et les OIC, avec leurs brigades attachées.
+/HCLIST: Affiche tous les membres du HC en ligne, avec les OIC.
+/HOME: Affiche le statut de votre brigade.
+/HOME (avec une ville sélectionnée sur carte):Allows the official Officer in Charge of a brigade to update its prestige &#34;home&#34; location.
 .LISTOICS: Affiche les brigades de chaque OIC.
 
-STRATEGIC
+STRATEGIQUE
 
-.HQOFF: Supprime les messages de capture du  &#34;HQ&#34;.
-.HQON: affiche les messages de capture du &#34;HQ&#34;.
-.FBS: Affiche le statut des FB de la ville la plus proche.
-.FBS (TOWN): Montre le statut des FB de la ville spécifiée.
-.OBJECTIVES I: Informations générales sur l&#39;objectif sélectionné. (aussi .OBJ I)
-.OBJECTIVES L: Liste des objectifs d&#39;attaque et de défense. (aussi .OBJ L)
-.OBJECTIVES N: Montre de nombre d&#39;objectif de votre armée. (Aussi .OBJ N)
-.OVERRUN: Alerte le Haut commandement que votre ville est débordée par l&#39;attaque.
-.OWN: Montre vos villes amies les plus proche.
-.OWN (CITY): donne les infos sur la nommée.</body>
+/HQOFF: Supprime les messages de capture du  &#34;HQ&#34;.
+/HQON: affiche les messages de capture du &#34;HQ&#34;.
+/FBS: Affiche le statut des FB de la ville la plus proche.
+/FBS (TOWN): Montre le statut des FB de la ville spécifiée.
+/OBJECTIVES CITY (ou /OBJ C): Liste des objectifs d&#39;attaque ou de défense sur les villes.
+/OBJECTIVES INFO (ou /OBJ I): Informations générales sur l&#39;objectif sélectionné ou sur la ville sélectionée
+/OBJECTIVES LIST: Liste des objectifs d&#39;attaque et de défense. (aussi .OBJ L)
+/OBJECTIVES NUM: Montre de nombre d&#39;objectif de votre armée. (Aussi .OBJ N)
+/OVERRUN: Alerte le Haut commandement que votre ville est débordée par l&#39;attaque.
+/OWN: Montre vos villes amies les plus proche.
+/OWN (CITY): donne les infos sur la ville nommée.
+/OWN ( avec un pont sélectionné sur la carte): Donne l&#39;état du pont (détruit ou non), son &#37; de dommage et si il peut être réparé ou détruit par votre camps.
+/OWN ( avec une usine sélectionnée sur carte):Donne l&#39;actuel niveau de production de l&#39;usine.
+/OWN ( avec une ville sélectionée): Donne le camps a qui appartient la ville.</body>
   <title>Haut commandement</title>
 </content>
