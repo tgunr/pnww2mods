@@ -42,7 +42,6 @@
 		<param name="cooldown" value="60000"/>
 		<param name="buildtime" value="30000"/>
 	</ppo>
-	<!-- troop irp (slightly different paremeters than truck) -->
 	<ppo>
 		<param name="modelname" value="msp"/>
 		<param name="rayadjust" value=".75,1.5,0"/>
@@ -50,59 +49,6 @@
 		<param name="viewoffset" value="6"/>
 		<param name="enemyfacdist" value="400"/>
 		<param name="targetdist" value="-1350"/>
-		<param name="treecheck" value="5"/>
-	</ppo>
-	<!-- truck irp (slightly different paremeters than truck) -->
-	<ppo>
-		<param name="modelname" value="msp"/>
-		<param name="rayadjust" value=".75,1.5,0"/>
-		<param name="rotation" value="90"/>
-		<param name="viewoffset" value="12"/>
-		<param name="enemyfacdist" value="400"/>
-		<param name="targetdist" value="-1350"/>
-		<param name="treecheck" value="5"/>
-	</ppo>
-	<ppo>
-		<param name="modelname" value="ppo_ifp_001"/>
-		<param name="rayadjust" value="1,1,-.5"/>
-		<param name="raytolerance" value="10"/>
-		<param name="tilttolerance" value="40"/>
-		<param name="rotation" value="180"/>
-		<param name="viewoffset" value="6"/>
-		<param name="cooldown" value="30000"/>
-		<param name="buildtime" value="15000"/>
-		<param name="avoidance" value="4"/>
-	</ppo>
-	<ppo>
-		<param name="modelname" value="infantrypit1"/>
-		<param name="rayadjust" value="5.5,5.5,-.5"/>
-		<param name="raytolerance" value="10"/>
-		<param name="tilttolerance" value="20"/>
-		<param name="rotation" value="180"/>
-		<param name="viewoffset" value="15"/>
-	</ppo>
-	<ppo>
-		<param name="modelname" value="atpit1"/>
-		<param name="raytolerance" value="10"/>
-		<param name="tilttolerance" value="20"/>
-		<param name="rotation" value="180"/>
-		<param name="viewoffset" value="10"/>
-		<param name="rayadjust" value="2,2,0"/>
-	</ppo>
-	<ppo>
-		<param name="modelname" value="aiheavyaapit"/>
-		<param name="rayadjust" value="3,3,-.5"/>
-		<param name="raytolerance" value="10"/>
-		<param name="tilttolerance" value="40"/>
-		<param name="rotation" value="0"/>
-		<param name="viewoffset" value="9"/>
-	</ppo>
-	<ppo>
-		<param name="modelname" value="aimediumaapit"/>
-		<param name="rayadjust" value="2,2,-.5"/>
-		<param name="raytolerance" value="10"/>
-		<param name="tilttolerance" value="40"/>
-		<param name="rotation" value="180"/>
-		<param name="viewoffset" value="7"/>
+		<param name="treecheck" value="4"/>
 	</ppo>
 </ppos>
