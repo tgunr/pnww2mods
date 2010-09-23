@@ -3,7 +3,7 @@
 
 uniform InstanceParamsBlock
 {
-	vec4 data[2048];
+	vec4 data[1024];
 };
 
 uniform MatrixBlock
