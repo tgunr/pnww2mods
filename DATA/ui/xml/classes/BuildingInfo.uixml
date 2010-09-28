@@ -204,6 +204,16 @@
 				   londeg + "." + lonmin + "." + lonsec + ((pos.lon > 0) ? "E":"W");
 		}
 		
+		this.onEnter = function()
+		{
+		
+		}
+		
+		this.onLeave = function()
+		{
+		
+		}
+		
 		return this;
 	}
 	
