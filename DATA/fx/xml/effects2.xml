@@ -445,10 +445,10 @@
 <!-- ===================================================================== -->
 	<transformeffect name = "genericsmallexplosion">
 	    <emitter>
-		    <flags>particleeffectonly</flags>
-		    <lifetime>1</lifetime>
-	        <particleeffect>genericsmallexplosionparticle1</particleeffect>
-	        <particleeffect>genericsmallexplosionparticle2</particleeffect>
+        <flags>particleeffectonly</flags>
+        <lifetime>1</lifetime>
+        <particleeffect>genericsmallexplosionparticle1</particleeffect>
+        <particleeffect>genericsmallexplosionparticle2</particleeffect>
 	    </emitter>
 	</transformeffect>
 <!-- ===================================================================== -->
@@ -2439,11 +2439,11 @@
 		<size>3.0</size>
 		<size>4.0</size>
 		<size>5.0</size>
-		<time>0</time>
-		<time>100</time>
-		<time>100</time>
-		<time>400</time>
-		<drag>3.0</drag>
+    <time>0</time>
+    <time>50</time>
+    <time>50</time>
+    <time>50</time>
+    <drag>3.0</drag>
 		<rotate>40</rotate>
 		<glow></glow>
 		<velvariance>-1.0 -1.0 0.1 1.0 1.0 0.5</velvariance>
@@ -2459,17 +2459,17 @@
 		<texture>black volume smoke 4</texture>
 		<alpha>0.0</alpha>
 		<alpha>0.1</alpha>
-		<alpha>0.1</alpha>
+		<alpha>0.3</alpha>
 		<alpha>0.0</alpha>
 		<size>0.1</size>
 		<size>5.0</size>
 		<size>7.0</size>
 		<size>10.0</size>
-		<time>0</time>
-		<time>100</time>
-		<time>500</time>
-		<time>1000</time>
-		<drag>1.0</drag>
+    <time>0</time>
+    <time>50</time>
+    <time>50</time>
+    <time>2000</time>
+    <drag>1.0</drag>
 		<delayeachparticle>5</delayeachparticle>
 		<rotate>20</rotate>
 		<velvariance>-6.0 -6.0 0.1 6.0 6.0 6.0</velvariance>
