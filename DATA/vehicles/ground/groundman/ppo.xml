@@ -1,22 +1,71 @@
+<!--
+	COLLIDER_NORAGDOLL		= 0,		// don't ragdoll here
+	COLLIDER_TRN_GROUND		= 1,		// earth
+	COLLIDER_TRN_BUSH		= 2,		// non-tree foliage
+	COLLIDER_TRN_TREE		= 3,
+	COLLIDER_TRN_WATER		= 4,
+	COLLIDER_TRN_BUILDING	= 5,		// buildings
+	COLLIDER_TRN_BRIDGE		= 6,		// bridges
+	COLLIDER_TRN_CULTURAL	= 7,		// man made objects
+	COLLIDER_VEH_TROOP		= 8,
+	COLLIDER_VEH_GROUND		= 9,
+	COLLIDER_VEH_AIR		= 10,
+	COLLIDER_VEH_SEA		= 11,
+	COLLIDER_AMMO			= 12,	// active in flight ammo
+	COLLIDER_FPS			= 13,	// fps infantry collider for movement
+	COLLIDER_CORPSE			= 14,    // duh
+    COLLIDER_VEH_HULK		= 15,
+	COLLIDER_DEBRIS			= 16,
+	COLLIDER_WEAPON			= 17,
+	COLLIDER_CAPTURE		= 18,
+	COLLIDER_NOFIRE			= 19,
+	COLLIDER_HEIGHTMAP		= 20,
+	COLLIDER_WALK			= 21,
+	COLLIDER_ENTERABLE		= 22,	// anything you can get in or under (disallow grass or rain in these areas)
+	COLLIDER_TILE			= 23,	// a terrain replacement tile
+	COLLIDER_BLANK			= 24,	// any blank terrain space (bbox where stuff can't be placed)
+	COLLIDER_STO			= 25,	// sto objects
+	COLLIDER_AREA			= 26,	// collider type used to differentiate this collider as one that detects other collider types
+-->
+
 <ppos>
 	<defaults>
 		<param name="rayadjust" value="0,0,0"/>
+		<!-- bounding box in meters for checking objects against the avoid flags -->
 		<param name="avoidance" value="1"/>
+		<!-- degrees of tilt each ray can be off from the center ray (non-planar checks) -->
 		<param name="raytolerance" value="20"/>
+		<!-- degrees of tilt the object can be tilted in the world (world oriented tilt limitations) -->
 		<param name="tilttolerance" value="45"/>
+		<!-- how far in front the object displays -->
 		<param name="viewoffset" value="8"/>
+		<!-- degrees of rotation we draw the object at -->
 		<param name="rotation" value="0"/>
+		<!-- cooldown in milliseconds -->
 		<param name="cooldown" value="30000"/>
+		<!-- buildtime in milliseconds -->
 		<param name="buildtime" value="15000"/>
+		<!-- what we can build on (see above) -->
 		<param name="buildflags" value="1,23"/>
+		<!-- what we must avoid (see above) -->
 		<param name="avoidflags" value="5,6,7,9,10,11"/>
+		<!-- infantry surface ids (found in ground.cvs) -->
 		<param name="surfaceflags" value="0,3"/>
 		<param name="allowinterior" value="false"/>
+		<!-- radius in meters we must be away from trees (0 means don't check)  -->
 		<param name="treecheck" value="0"/>
+		<!-- max moving speed in order to build  -->
 		<param name="maxspeed" value=".1"/>
+		<!-- next 3 parameters follow these rules: -->
+		<!-- positive means we must be further away than value -->
+		<!-- negative means we must be closer than value -->
+		<!-- distance any meters from enemy facility  -->
 		<param name="enemyfacdist" value="0"/>
+		<!-- distance any meters from friendly facility  -->
 		<param name="friendlyfacdist" value="0"/>
+		<!-- distance any meters from target  -->
 		<param name="targetdist" value="0"/>
+		<!-- texture list we cannot build on  -->
 		<param name="badtextures" value="rails1,rails2,road1,asphault1,airbase1,airfield1,provinggroundairfield1"/>
 	</defaults>
 	<!-- ppos definitions start here; ppos get an id starting at 1 and counting up in the order listed here -->
