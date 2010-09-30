@@ -2532,6 +2532,7 @@
 <!ENTITY widgets.prefs.groups.game.presets.performance "BEST PERFORMANCE">
 <!ENTITY widgets.prefs.slowest "slowest">
 <!ENTITY widgets.prefs.min "min">
+<!ENTITY widgets.prefs.groups.visual.specular.tip "Enables better lighting. Disable for better performance.">
 <!ENTITY widgets.prefs.groups.hud.custom.primary "PRIMARY AMMO">
 <!ENTITY widgets.map.info.me.tip "Shows your current position in latitude and longitude while in game">
 <!ENTITY widgets.calibration.none.desc "Expand the joystick axis list and select an axis to configure.">
@@ -3568,6 +3569,7 @@
 <!ENTITY hud.readout.vehicles "Vehicles">
 <!ENTITY hud.hqintel.weight.0 "Light">
 <!ENTITY hud.alerts.24.sea "Enemy sea forces spotted near {1}">
+<!ENTITY hud.alerts.11.nocapture "Only Premium subscribers can capture! Upgrade your subscription today!">
 <!ENTITY hud.readout.aoa "AOA">
 <!ENTITY hud.alerts.4 "You have been oversupplied by {1}">
 <!ENTITY hud.alerts.30.minalt "You are below the minimum altitude for bailing!">
@@ -3670,8 +3672,8 @@
 <!ENTITY hud.hqintel.dir.1 "northeast">
 <!ENTITY hud.hqintel.dir.7 "northwest">
 <!ENTITY hud.gameinfo.icon.0 "Normal">
-<!ENTITY hud.health.blood "This icon represent&#39;s your current state">
 <!ENTITY hud.minimap.nearest "The closest town to you">
+<!ENTITY hud.health.blood "This icon represent&#39;s your current state">
 <!ENTITY hud.readout.vehicles.onhoist "on hoist">
 <!ENTITY hud.readout.torp.aob "Angle On Bow">
 <!ENTITY persona.welcome.axis "AXIS FORCES">
@@ -4273,7 +4275,7 @@
 <!ENTITY ppos.badtrees "There is a tree blocking your object!">
 <!ENTITY ppos.badtarget.toofar "You are too far from your mission target for this object type!">
 <!ENTITY ppos.badavoidance "You are too close to another terrain object!">
-<!ENTITY ppos.ob3 "Infantry Resupply Point">
+<!ENTITY ppos.ob3 "Forward Resupply Unit">
 <!ENTITY ppos.badplayer "You must be spawned in to place objects!">
 <!ENTITY ppos.badtarget.tooclose "You are too close to your mission target for this object type!">
 <!ENTITY ppos.ob1 "Infantry Fighting Position">
@@ -4288,7 +4290,7 @@
 <!ENTITY ppos.ob2 "Gun Emplacement">
 <!ENTITY ppos.noinside "You cannot place this type of object while in a building!">
 <!ENTITY ppos.badplacement "That is not a valid position!">
-<!ENTITY ppos.ob4 "Infantry Resupply Point">
+<!ENTITY ppos.ob4 "Forward Resupply Unit">
 <!ENTITY ppos.built "&#37;ls built!">
 <!ENTITY ppos.invalidnow "Object position is no longer valid!">
 <!ENTITY ppos.badangle "The angle of the ground is too steep!">
