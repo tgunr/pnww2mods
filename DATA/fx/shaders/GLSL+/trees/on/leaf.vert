@@ -22,7 +22,7 @@ in vec3 in_center;
 in vec3 in_normal;
 in vec3 in_tangent;
 in vec4 in_params;
-in vec2 in_uv;
+in vec2 in_tex0;
 
 out vec3 N;
 out vec3 T;
@@ -31,7 +31,7 @@ out vec3 vertexpos;
 out float diffcoef;
 out float fogdist;
 out float alphatest;
-out vec2 uv;
+out vec2 tex0;
 
 void main()
 {
@@ -99,7 +99,7 @@ void main()
 
 	gl_Position = ProjectionMatrix * position;
 
-	uv = in_uv.xy;
+	tex0 = in_tex0;
 
 	vertexpos = position.xyz;
 }

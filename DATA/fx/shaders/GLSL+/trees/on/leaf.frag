@@ -13,7 +13,7 @@ uniform MaterialBlock
 uniform sampler2D src1;
 uniform sampler2D src2;
 
-in vec2 uv;
+in vec2 tex0;
 in vec3 N;
 in vec3 T;
 in vec3 B;
@@ -33,12 +33,12 @@ void lightGetAmbientDiffuse(in vec3,
 
 void main()
 {
-    vec4 base = texture2D(src1, uv);
+    vec4 base = texture2D(src1, tex0);
 
     if(base.a <= alphatest)
         discard;
 
-    vec4 normal = texture2D(src2, uv) * 2.0 - 1.0;
+    vec4 normal = texture2D(src2, tex0) * 2.0 - 1.0;
       
     vec4 diffuse;
     vec4 ambient;
