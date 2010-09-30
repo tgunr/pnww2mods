@@ -17,7 +17,6 @@ in vec2 tex0;
 
 out vec4 out_color;
 
-vec4 fogThis(in vec4);
 void lightGetAmbientDiffuse(out vec4 amb, out vec4 dif);
 
 void main()
@@ -34,8 +33,6 @@ void main()
 	
     diffuse.rgb *= color.rgb;
 
-	vec4 c = map * (diffuse + ambient + Ke);
-	
-	out_color = fogThis(c);
+	out_color = map * (diffuse + ambient + Ke);
 	out_color.a = map.a * color.a;
 }
