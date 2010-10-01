@@ -1,9 +1,10 @@
 #version 150
 #extension GL_ARB_uniform_buffer_object : enable
 
-uniform InstanceParamsBlock
+uniform InstanceBlock
 {
-	vec4 data[1024];
+    vec4 rotation[1000];
+	vec4 position[1000];
 };
 
 uniform MatrixBlock
@@ -25,30 +26,28 @@ out float alphatest;
 
 void main()
 {
-    int idx = gl_InstanceID * 2;
-
-    vec4 position = vec4(in_pos, 1.0);
+    vec4 inpos = vec4(in_pos, 1.0);
       
-    vec4 rot = data[idx + 1];
-    vec3 pos = data[idx + 0].xyz;
-    alphatest = data[idx + 0].w;
+    vec4 rot = rotation[gl_InstanceID];
+    vec3 pos = position[gl_InstanceID].xyz;
+    alphatest = position[gl_InstanceID].w;
 
     vec3 normal;
           
-    position.xy = vec2(dot(rot.yxw, position.xyz), dot(rot.zyw, position.xyz));
+    inpos.xy = vec2(dot(rot.yxw, inpos.xyz), dot(rot.zyw, inpos.xyz));
     normal.xy = vec2(dot(rot.yxw, in_normal), dot(rot.zyw, in_normal));
     normal.z = in_normal.z;
 
     N = normalize(mat3(NormalMatrix) * normal);
 
-    position.xyz += pos;
-    position.w = 1.0;
+    inpos.xyz += pos;
+    inpos.w = 1.0;
 
-    position = MVMatrix * position;
-    fogdist = abs(position.z);
+    inpos = MVMatrix * inpos;
+    fogdist = abs(inpos.z);
 
     tex0 = in_tex0;  
-    vertexpos = position.xyz;
+    vertexpos = inpos.xyz;
 
-    gl_Position = ProjectionMatrix * position;
+    gl_Position = ProjectionMatrix * inpos;
 }

@@ -8,9 +8,10 @@ uniform MatrixBlock
     mat4 ProjectionMatrix;
 };
 
-uniform InstanceParamsBlock
+uniform InstanceBlock
 {
-	vec4 data[1024];
+    vec4 rotation[1000];
+	vec4 position[1000];
 };
 
 in vec3 tangent;
@@ -27,32 +28,32 @@ out vec3 vertexpos;
 out vec2 tex0;
 out float alphatest;
 
+mat4 quaternionToMatrix(in vec4 q);
+mat3 modelviewToNormal(in mat4 mv);
+
 void main()
 {
-    int idx = gl_InstanceID * 8;
+    mat4 modelview = quaternionToMatrix(rotation[gl_InstanceID]);
 
-    alphatest = data[idx + 4].w;
+	modelview[3][0] = position[gl_InstanceID].x;
+	modelview[3][1] = position[gl_InstanceID].y;
+	modelview[3][2] = position[gl_InstanceID].z;
 
-    mat4 modelview = mat4(data[idx + 0],
-                          data[idx + 1],
-                          data[idx + 2],
-                          data[idx + 3]);
+    modelview = MVMatrix * modelview;
 
-    mat3 normal = mat3(data[idx + 4].xyz,
-                       data[idx + 5].xyz,
-                       data[idx + 6].xyz);
+    alphatest = position[gl_InstanceID].w;
     
-	vec4 pos = vec4(in_pos, 1.0);
-
-    pos = modelview * pos;
+    vec4 pos = modelview * vec4(in_pos, 1.0);
 
 	V = pos.xyz;
     vertexpos = pos.xyz;
 
-    N = normal * in_normal;
+    mat3 normalmatrix = modelviewToNormal(modelview);
 
-	T = normalize(normal * tangent);
-	N = normalize(normal * in_normal);
+    N = normalmatrix * in_normal;
+
+	T = normalize(normalmatrix * tangent);
+	N = normalize(normalmatrix * in_normal);
 	B = cross(N, T);
 
 	tex0 = in_tex0;

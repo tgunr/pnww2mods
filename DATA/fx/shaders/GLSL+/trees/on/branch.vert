@@ -1,9 +1,10 @@
 #version 150
 #extension GL_ARB_uniform_buffer_object : enable
 
-uniform InstanceParamsBlock
+uniform InstanceBlock
 {
-	vec4 data[1024];
+    vec4 rotation[1000];
+	vec4 position[1000];
 };
 
 uniform MatrixBlock
@@ -29,19 +30,17 @@ out float fogdist;
 out float alphatest;
 
 void main() 
-{
-    int idx = gl_InstanceID * 2;
-    
-    vec4 position = vec4(in_pos, 1.0);
+{   
+    vec4 inpos = vec4(in_pos, 1.0);
 
     vec3 tangent = in_tangent;
 
-    vec3 pos = data[idx + 0].xyz;
-    alphatest = data[idx + 0].w;
-    vec4 rot = data[idx + 1];
+    vec4 rot = rotation[gl_InstanceID];
+    vec3 pos = position[gl_InstanceID].xyz;
+    alphatest = position[gl_InstanceID].w;
 
     /* Rotate Tree */
-    position.xy = vec2(dot(rot.yxw, position.xyz), dot(rot.zyw, position.xyz));
+    inpos.xy = vec2(dot(rot.yxw, inpos.xyz), dot(rot.zyw, inpos.xyz));
    
     /* Rotate Normal */
     vec3 normal;
@@ -49,8 +48,8 @@ void main()
     normal.z = in_normal.z;
 
     /* Set tree to world position */
-    position.xyz += pos.xyz;
-    position.w = 1.0;
+    inpos.xyz += pos.xyz;
+    inpos.w = 1.0;
 
     /* Apply normal mapping */
     tangent.xy = vec2(dot(rot.yxw, tangent.xyz), dot(rot.zyw, tangent.xyz));
@@ -60,13 +59,13 @@ void main()
     B = normalize(mat3(NormalMatrix) * binormal);
     N = normalize(mat3(NormalMatrix) * normal);
      
-    position = MVMatrix * position;
-    fogdist = abs(position.z);
+    inpos = MVMatrix * inpos;
+    fogdist = abs(inpos.z);
       
     tex0 = in_tex0;
     tex1 = in_tex1;
 
-    vertexpos = position.xyz;
+    vertexpos = inpos.xyz;
 
-    gl_Position = ProjectionMatrix * position;
+    gl_Position = ProjectionMatrix * inpos;
 }

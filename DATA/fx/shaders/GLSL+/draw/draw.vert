@@ -8,9 +8,10 @@ uniform MatrixBlock
     mat4 ProjectionMatrix;
 };
 
-uniform InstanceParamsBlock
+uniform InstanceBlock
 {
-	vec4 data[1024];
+    vec4 rotation[1000];
+	vec4 position[1000];
 };
 
 in vec3 in_pos;
@@ -21,26 +22,27 @@ out vec3 N;
 out float fogdist;
 out vec3 vertexpos;
 
+mat4 quaternionToMatrix(in vec4 q);
+mat3 modelviewToNormal(in mat4 mv);
+
 void main()
 {
-	vec4 pos = vec4(in_pos, 1.0);
+    mat4 modelview = quaternionToMatrix(rotation[gl_InstanceID]);
 
-    int idx = gl_InstanceID * 8;
+	modelview[3][0] = position[gl_InstanceID].x;
+	modelview[3][1] = position[gl_InstanceID].y;
+	modelview[3][2] = position[gl_InstanceID].z;
 
-    mat4 modelview = mat4(data[idx + 0],
-                          data[idx + 1],
-                          data[idx + 2],
-                          data[idx + 3]);
+    modelview = MVMatrix * modelview;
 
-    mat3 normal = mat3(data[idx + 4].xyz,
-                       data[idx + 5].xyz,
-                       data[idx + 6].xyz);
-	
-    pos = modelview * pos;
-    N = normal * in_normal;
+    vec4 pos = modelview * vec4(in_pos, 1.0);
 
 	V = pos.xyz;
     vertexpos = pos.xyz;
+
+    mat3 normalmatrix = modelviewToNormal(modelview);
+
+    N = normalmatrix * in_normal;
 
     fogdist = abs(V.z);
 

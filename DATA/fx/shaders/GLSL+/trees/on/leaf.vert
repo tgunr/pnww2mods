@@ -1,9 +1,10 @@
 #version 150
 #extension GL_ARB_uniform_buffer_object : enable
 
-uniform InstanceParamsBlock
+uniform InstanceBlock
 {
-	vec4 data[1024];
+    vec4 rotation[1000];
+	vec4 position[1000];
 };
 
 uniform vec2 cameraangle;
@@ -35,8 +36,6 @@ out vec2 tex0;
 
 void main()
 {
-    int idx = gl_InstanceID * 2;
-
 	float azimuth = cameraangle.x;
 	float pitch = cameraangle.y;
 
@@ -47,12 +46,12 @@ void main()
 	vec3 normal = in_normal;
 	vec3 tangent = in_tangent;
 	
-    vec4 rot = data[idx + 1];
-    vec3 pos = data[idx + 0].xyz;
-    alphatest = data[idx + 0].w;
+    vec4 rot = rotation[gl_InstanceID];
+    vec3 pos = position[gl_InstanceID].xyz;
+    alphatest = position[gl_InstanceID].w;
 
-	vec4 position = vec4(in_center, 1.0);
-	position.xy = vec2(dot(rot.yxw, position.xyz), dot(rot.zyw, position.xyz));
+	vec4 center = vec4(in_center, 1.0);
+	center.xy = vec2(dot(rot.yxw, center.xyz), dot(rot.zyw, center.xyz));
 			
 	diffcoef = dimming * diffuseScale;
 
@@ -91,15 +90,15 @@ void main()
   
     B = cross(normal, tangent);
 	
-	position.xyz += cornerpt + pos;
-	position.w = 1.0;
+	center.xyz += cornerpt + pos;
+	center.w = 1.0;
 	
-	position = MVMatrix * position;
-	fogdist = abs(position.z);
+	center = MVMatrix * center;
+	fogdist = abs(center.z);
 
-	gl_Position = ProjectionMatrix * position;
+	gl_Position = ProjectionMatrix * center;
 
 	tex0 = in_tex0;
 
-	vertexpos = position.xyz;
+	vertexpos = center.xyz;
 }

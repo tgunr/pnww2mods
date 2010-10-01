@@ -8,9 +8,10 @@ uniform MatrixBlock
     mat4 ProjectionMatrix;
 };
 
-uniform InstanceParamsBlock
+uniform InstanceBlock
 {
-	vec4 data[1024];
+    vec4 rotation[1000];
+	vec4 position[1000];
 };
 
 uniform float time;
@@ -50,7 +51,7 @@ void main()
 	tex1.xy = 2.5 * (uv - bs);
 	tex1.zw = 4.0 * (uv + bs);
 				
-	float rot = data[gl_InstanceID].w;  
+	float rot = position[gl_InstanceID].w;  
     vec4 pos = vec4(in_pos.xyz, 1.0);
 
     // Has to be boolean expression
@@ -67,7 +68,7 @@ void main()
     }
 
     // Translate to world
-    pos.xyz += data[gl_InstanceID].xyz;
+    pos.xyz += position[gl_InstanceID].xyz;
 
     // Eye space
     pos = MVMatrix * pos;
