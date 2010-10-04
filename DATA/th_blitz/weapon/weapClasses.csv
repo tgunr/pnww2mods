@@ -1,15 +1,15 @@
-### THESE NUMBERS MUST BE INCREMENTAL AND UNIQUE,
+### THESE NUMBERS MUST BE INCREMENTAL AND UNIQUE
 ### WHEN ADDING A CLASS, TAKE YOUR TICKET HERE:
 # nextClass: 16
-### AND UPDATE  ^^  THIS NUMBER,
-#,
-# Assigns unique class numbers for weapon specs.,
-# These were supposed to unique-per-category,
-# but instead they were assigned sequentially,
-# as the parser encountered them in the _weap,
-# files. This meant that adding a new category,
-# would break all kinds of things on the server.,
-#,
+### AND UPDATE  ^^  THIS NUMBER
+#
+# Assigns unique class numbers for weapon specs.
+# These were supposed to unique-per-category
+# but instead they were assigned sequentially
+# as the parser encountered them in the _weap
+# files. This meant that adding a new category
+# would break all kinds of things on the server.
+#
 
 section, AC_
 1,bomber
