@@ -1619,7 +1619,7 @@
 		{
 			if(weaponPoll.run())
 			{
-				//game.consoleprint("Requesting weapon list\n");
+				cprint("<<< Requesting weapon list\n");
 				client.requestweaponlist(mission.origin);
 				weaponPoll.add(30000); 
 			}
@@ -1790,6 +1790,7 @@
 		function onWeaponUpdate()
 		{
 			//game.consoleprint("Handling Weapon Update\n");
+			cprint(">>> Received weapon list\n");
 			
 			initSpawnables();
 			weaponPoll.reset();

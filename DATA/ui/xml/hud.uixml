@@ -201,7 +201,7 @@
 		var binfoView				= findview("binfo");
 		var cinfoView				= findview("cinfo");
 		var infoTimer				= new CycleTimer(200);
-		var capCheckTimer			= new CycleTimer(0);
+		var capCheckTimer			= new CycleTimer(game.player.client.state.cancapturecheck);
 		
 		var currentOrders			= findview("current-orders");
 		var currentOrdersTimeout	= 0;
@@ -376,7 +376,7 @@
 					var iconName = me.primaryammoname;
 					
 					if(iconName == "buildtool")
-						iconName = "repair";
+						iconName = "shovel";
 					
 					// set icon
 					primaryIcon.src = "ui/textures/hud/weapon_" + iconName + ".bmp";
@@ -1310,24 +1310,22 @@
 		{
 			//binfoView.mgr.onEnter();
 			
-			var capCheck = game.client.state.cancapturecheck;
+			var capCheck = game.player.client.state.cancapturecheck;
 			
 			if(game.online && capCheck > 0 && capCheckTimer.run())
 			{
 				var le 			= game.lastentered;
 				var fac			= (le != null) ? le.parent : null;
 				
-				if(game.player.capturezone && fac != null && !game.client.state.cancapture)
-				{
+				if(game.player.capturezone && fac != null && !game.player.client.state.cancapture)
 					doGameEvent(11, getlocstring("hud.alerts.11.nocapture"));
-					capCheckTimer.set(capCheck);
-				}
 			}
 		}
 		
 		function onLeaveBuilding()
 		{
 			//binfoView.mgr.onLeave();
+			cprint("onLeaveBuilding\n");
 		}
 		
 		function updateInfo()
