@@ -6,12 +6,12 @@ weaponType = SATCHEL
 
 # specify the weapon & clip (clip optional) model here
 # note that data\gr2data\FPS\ is prepended to these file names
-weaponModel = bridge_repair\repairtool
+weaponModel = shovel\meshes\shovel
 
 # granny attach bone names for weapon & clip
 # the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
 weaponConnectTo = weapon-control
-weaponConnect = satchel-connect
+weaponConnect = shovelmount
 # resupply icon = 11
 hudIconType = 11
 
