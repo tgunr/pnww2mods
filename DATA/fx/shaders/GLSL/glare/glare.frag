@@ -1,16 +1,12 @@
-/*---------------------------------------------------
-Glare frag
-----------------------------------------------------*/
-#version 120
+#version 150
 
 uniform sampler2D src;
 
-varying vec2 texcoord;
+in vec2 tex0;
+in vec4 color;
+out vec4 out_color;
 
 void main()
 {
-	vec4 suncolor = texture2D(src, texcoord);
-
-	gl_FragColor.rgb = suncolor.rgb;
-	gl_FragColor.a = suncolor.r;
+	out_color = texture2D(src, tex0) * color;
 }
