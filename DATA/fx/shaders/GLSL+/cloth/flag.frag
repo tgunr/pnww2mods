@@ -1,0 +1,49 @@
+#version 150
+#extension GL_ARB_uniform_buffer_object : enable
+
+uniform sampler2D src1;
+
+uniform MaterialBlock
+{
+	vec4 Kd;
+	vec4 Ka;
+	vec4 Ks;
+	vec4 Ke;
+	float shininess;
+};
+
+in vec3 N;
+in vec3 V;
+in vec2 tex0;
+
+out vec4 out_color;
+vec4 fogThis(in vec4);
+
+void lightGetAmbientDiffuseSpecular(in vec3 normal,
+                                    in vec3 V,
+                                    in float shininess,
+                                    out vec4 ambient,
+                                    out vec4 diffuse,
+                                    out vec4 specular);
+
+void main()
+{
+	vec4 base = texture2D(src1, tex0);
+
+	vec3 n = normalize(N);
+	vec3 v = normalize(-V);
+	
+	vec4 amb;
+	vec4 dif;
+	vec4 spec;
+	
+	lightGetAmbientDiffuseSpecular(n, v, shininess, amb, dif, spec);
+	
+	amb *= Ka;
+	spec *= Ks;
+	
+	vec4 color = base * (dif + amb + spec);
+
+    out_color = fogThis(color);
+	out_color.a = base.a;
+}
