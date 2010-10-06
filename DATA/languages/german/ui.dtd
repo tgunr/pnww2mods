@@ -1246,7 +1246,7 @@
 <!ENTITY loc.host.366 "{1} hat Dich als Missionsf&#252;hrer abgesetzt - Du hast 8 Minuten Zeit, um die Kontrolle ohne Einschr&#228;nkungen wieder zu &#252;bernehmen.">
 <!ENTITY loc.host.81 "Schaltet den Empfang von HQ-Nachrichten ab.">
 <!ENTITY loc.host.603 "Auto-Reparatur an {1}.">
-<!ENTITY loc.host.329 "Keine Hafenanlagen von denen gestartet werden kann in {1}.">
+<!ENTITY loc.host.329 "Keine Hafenanlagen in {1} von denen gestartet werden kann.">
 <!ENTITY loc.host.252 "Im Moment gibt es keine Befehle f&#252;r diese Mission.">
 <!ENTITY loc.host.521 "/gridsnapshot <on | off | full>">
 <!ENTITY loc.host.337 "Du bist ab jetzt der Anf&#252;hrer dieser Mission! Tipp: Benutze das &#34;/autoleader off&#34;-Kommando, um nicht automatisch die F&#252;hrung von Missionen zu erhalten.">
@@ -1692,7 +1692,7 @@
 <!ENTITY loc.host.611 "[X] Strat Server EXIT: Einige Funktionen sind nicht verf&#252;gbar. [X]">
 <!ENTITY loc.host.564 "Spam Can Containers {1} lines. Repetitions: {2} apart.">
 <!ENTITY loc.host.385 "Deine Spielzeit hat eine Stunde erreicht.">
-<!ENTITY loc.host.260 "Unerkanntes Kommando: &#34;{1}&#34;">
+<!ENTITY loc.host.260 "Unbekanntes Kommando: &#34;{1}&#34;">
 <!ENTITY loc.host.477 "/snoop <Spieler> <Grund>  or  /snoop off">
 <!ENTITY loc.host.276 "*{1} hat Deine Squad-Einladung akzeptiert.">
 <!ENTITY loc.host.547 "Checks all the current Server Tracked Objects being tracked by the server to see if any have entered an invalid state and should be cancelled. Any found this way are immediately canceled.">
@@ -1760,7 +1760,7 @@
 <!ENTITY loc.host.386 "Deine Spielzeit hat zwei Stunden erreicht.">
 <!ENTITY loc.host.648 "Du hast schon eine aktive Mission.">
 <!ENTITY loc.host.14 "Du wurdest von Spiel Manager {1} freigelassen.">
-<!ENTITY loc.host.330 "Keine Flugfelder von denen gestartet werden kann in {1}.">
+<!ENTITY loc.host.330 "Keine Flugfelder in {1} von denen gestartet werden kann.">
 <!ENTITY loc.host.482 "Sorry, no snooping on staff members allowed.">
 <!ENTITY loc.host.360 "Achtung Rekrut! Deine {1} t&#228;gige Probezeit im Squad <{2}> ist beendet. Du kannst das SQUADS tab benutzen, um ein anderes Squad zu finden. Wenn Du ein Squad gefunden hast, bei dem Du bleiben m&#246;chtest, frage dort nach, ob man Dich zum Mitglied bef&#246;rdert.">
 <!ENTITY loc.host.389 "Deine Onlinezeit hat f&#252;nf Stunden &#252;berschritten, Du bist in der Erm&#252;dungsphase. Du erh&#228;ltst nur noch 50&#37; der normalen Punktzahl. Aus gesundheitlichen Gr&#252;nden solltest Du Dich ausloggen, Dich ausruhen oder etwas Sport treiben.">
@@ -1813,7 +1813,7 @@
 <!ENTITY loc.host.186 "Du kannst jetzt feindlichen Bereichs-Chat empfangen.">
 <!ENTITY loc.host.220 "Brigade-Kanal nicht verf&#252;gbar: In keiner Brigade.">
 <!ENTITY loc.host.275 "*{1} hat Deine Squad-Einladung abgelehnt.">
-<!ENTITY loc.host.328 "Keine Kasernen von denen gestartet werden kann in {1}.">
+<!ENTITY loc.host.328 "Keine Kasernen  in {1} von denen gestartet werden kann.">
 <!ENTITY loc.host.369 "/mlist">
 <!ENTITY loc.host.383 "{1} reserviert in {2}.">
 <!ENTITY loc.host.463 "/shutdown stop">
@@ -2029,7 +2029,7 @@
 <!ENTITY loc.function.269 "Nach rechts bewegen">
 <!ENTITY loc.function.276 "Visieransicht">
 <!ENTITY loc.function.310 "Querruder-Trimmung">
-<!ENTITY loc.function.201 "Sichtbarkeit des Cursor einstellen">
+<!ENTITY loc.function.201 "Mauszeiger einblenden">
 <!ENTITY loc.function.165 "Gemisch fett">
 <!ENTITY loc.function.258 "Position 10">
 <!ENTITY loc.function.2008 "Ingame">

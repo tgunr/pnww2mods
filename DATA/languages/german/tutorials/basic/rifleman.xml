@@ -14,17 +14,17 @@
 1.1.alert1 = Du befindest Dich auf dem Trainingsplatz.[NL][NL]Folge dem angezeigten Pfeil und bewege Dich zum in der Nähe befindlichen Schießstand.
 1.1.label = Zum Schießstand
 
-1.2.alert = Der Karabiner ist Deine primäre Waffe. Es schiesst zwar langsam kann aber beträchtlichen Schaden anrichten.[NL][NL]Dein Gewehr ist normalerweise in Ruhestellung.[NL][NL]Versuch einmal mit {fpfire} ein paar Schüsse aus der Hüfte abzugeben.
+1.2.alert = Der Karabiner ist Deine primäre Waffe. Er schiesst zwar langsam kann aber beträchtlichen Schaden anrichten.[NL][NL]Normalerweise befindet sich Deine Waffe in Ruhestellung.[NL][NL]Versuch einmal mit {fpfire} ein paar Schüsse aus der Hüfte abzugeben.
 1.2.label = Der erste Schuss
 1.2.complete.modal = Wie Du siehst, ist es schwer genau zu treffen, wenn Du aus der Hüfte schießt.
 
-1.3.alert.modal = Solange sich noch Patronen in der Waffe befinden, wird der nächste Schuss automatisch nachgeladen.[NL][NL]Ist das die Waffe leer, hörst Du ein deutliches Klicken sobald Du schiessen willst. Der Munitionszähler zeigt dann eine &#34;0&#34;.
+1.3.alert.modal = Solange sich noch Patronen in der Waffe befinden, wird der nächste Schuss automatisch nachgeladen.[NL][NL]Ist die Waffe leer, hörst Du ein deutliches Klicken sobald Du schiessen willst. Der Munitionszähler zeigt dann eine &#34;0&#34;.
 1.3.alert1 = Gib noch ein paar Schüsse ab und lade dann die Waffe mit {fpreload} nach. Behalte den Munitionszähler und die Anzahl der Ladestreifen im Auge.[NL][NL]Gute Infanteristen wissen immer, wie viele Schuss gerade noch in der Waffe sind.
 1.3.alert1.hilite = primary
 1.3.label = Schiessen und Nachladen
 1.3.complete.modal = Das Gewehr ist jetzt nachgeladen und die Anzahl der Ladestreifen hat sich verringert.[NL][NL]Du kannst jederzeit nachladen, auch wenn sich noch Patronen in der Waffe befinden.
 
-1.4.alert.modal = Zum besseren Zielen nutze die Visieransicht des Gewehres.[NL][NL]Während des Zielens hält der Schütze ab und zu den Atem an, um die Waffe ruhiger zu halten.[NL][NL]Je länger Du zielst, umso schwerer wird es, die Waffe ruhig zu halten.
+1.4.alert.modal = Zum besseren Zielen nutze die Visieransicht des Gewehres.[NL][NL]Während des Zielens hält der Schütze ab und zu den Atem an, um die Waffe ruhiger zu halten.[NL][NL]Je länger Du zielst umso schwerer wird es, die Waffe ruhig zu halten.
 1.4.alert1 = Schieß auf irgendein Ziel in der zweiten Reihe. Ziele mit {fpgunsight} und feuere mit {fpfire}.[NL][NL]Du brauchst drei Treffer, um weiterzumachen.
 1.4.label = Gezieltes Schiessen
 1.4.complete = Exzellent! Die Visieransicht ist sehr wichtig im Gefecht.
@@ -91,7 +91,7 @@
 5.2.label = Munitionspaket benutzen
 5.2.complete = Gut. Wäre ein Mitspieler hier, hätte er jetzt die Munition empfangen.
 
-5.3.alert.modal = Du kannst jederzeit Munition von anderen Mitspielern anforden, indem Du  &#34;/ammo&#34; in den Chat eingibst.[NL][NL]Wenn Du Dein Munitionspaket noch hast, blinken auf der Karte die Zeichen der Spieler, die Munition angefordert haben.
+5.3.alert.modal = Du kannst jederzeit Munition von anderen Mitspielern anforden, indem Du  &#34;/ammo&#34; in den Chat eingibst.[NL][NL]Wenn Du Dein Munitionspaket noch hast, blinken auf der Karte die Zeichen der Spieler die Munition angefordert haben.
 5.3.label = Ende des Lehrgangs
 5.3.complete.modal = Glückwunsch! Du hast das Grundlagentraining Gewehrschütze absolviert!</body>
   <branch>1</branch>
