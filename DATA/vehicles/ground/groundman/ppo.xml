@@ -67,9 +67,11 @@
 		<param name="targetdist" value="0"/>
 		<!-- texture list we cannot build on  -->
 		<param name="badtextures" value="rails1,rails2,road1,asphault1,airbase1,airfield1,provinggroundairfield1"/>
+		<!-- lifetime on the host [default: don't] -->
+		<param name="timeout-minutes" value="0"/>
 	</defaults>
 	<!-- ppos definitions start here; ppos get an id starting at 1 and counting up in the order listed here -->
-	<ppo>
+	<ppo name="ifp" description="Infantry Fighting Position" sto-type="6">
 		<param name="modelname" value="ppo_ifp_001"/>
 		<param name="rayadjust" value="1,1,-.5"/>
 		<param name="raytolerance" value="10"/>
@@ -78,8 +80,9 @@
 		<param name="viewoffset" value="2"/>
 		<param name="buildtime" value="15000"/>
 		<param name="avoidance" value="4"/>
+		<param name="timeout-minutes" value="5"/>
 	</ppo>
-	<ppo>
+	<ppo name="ge" description="Gun Emplacement" sto-type="6">
 		<param name="modelname" value="atgunpit1"/>
 		<param name="avoidance" value="10"/>
 		<param name="rayadjust" value="4,4,-.5"/>
@@ -89,8 +92,9 @@
 		<param name="viewoffset" value="6"/>
 		<param name="cooldown" value="300000"/>
 		<param name="buildtime" value="30000"/>
+		<param name="timeout-minutes" value="15"/>
 	</ppo>
-	<ppo>
+	<ppo name="fru" description="Field Reinforcement Unit" sto-type="7">
 		<param name="modelname" value="msp"/>
 		<param name="surfaceflags" value="0,1,3"/>
 		<param name="rayadjust" value=".75,1.5,0"/>
