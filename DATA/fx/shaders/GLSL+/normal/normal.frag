@@ -70,11 +70,10 @@ void main()
 
 	ambient *= Ka;
 	ambient *= occ;
-	diffuse *= Kd;
 	specular.rgb *= Ks;
 	
 	vec4 color = base * (diffuse + specular + ambient);
-	 	
+
 	out_color = fogThis(color);
 	out_color.w = base.a;
 }
