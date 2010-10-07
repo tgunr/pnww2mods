@@ -339,6 +339,11 @@
 							}									
 						}
 					}
+					
+					function mouseclickhack()
+					{
+					  return false;
+					}
 							
 					-->
 				</script>				
@@ -396,9 +401,9 @@
 						onshow="this.value = !getPreference('lodlimitperframe', Preference.BOOL, false, true);"/>
 				</view>
 				-->
-				<caption label="&widgets.prefs.groups.visual.normalmaps;" x="20" height="20" rright="0" rtop="50" style="color: #e9e3d9ff;"
+				<caption label="&widgets.prefs.groups.visual.normalmaps;" x="20" height="20" rright="160" rtop="50" style="color: #e9e3d9ff;"
 					tip="&widgets.prefs.groups.visual.normalmaps.tip;"/>
-				<view id="normalMapOptions" width="150" height="15" rtop="50" rright="10">
+				<view id="normalMapOptions" width="150" height="15" rtop="50" rright="10" tip="&widgets.prefs.groups.visual.normalmaps.tip;">
 					<radiobutton label="&widgets.prefs.enabled;" x="5" y="0" width="70" height="15"
 						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 						onclick="addPreference('normalmaps', Preference.BOOL, true, true);"
@@ -408,9 +413,9 @@
 						onclick="addPreference('normalmaps', Preference.BOOL, false, true);"
 						onshow="this.value = !getPreference('normalmaps', Preference.BOOL, false, true);"/>
 				</view>
-				<caption label="&widgets.prefs.groups.visual.postrender;" x="20" height="20" rright="0" rtop="80" style="color: #e9e3d9ff;"
+				<caption label="&widgets.prefs.groups.visual.postrender;" x="20" height="20" rright="160" rtop="80" style="color: #e9e3d9ff;"
 					tip="&widgets.prefs.groups.visual.postrender.tip;"/>
-				<view id="postRenderOptions" width="150" height="15" rtop="80" rright="10">
+				<view id="postRenderOptions" width="150" height="15" rtop="80" rright="10" tip="&widgets.prefs.groups.visual.postrender.tip;">
 					<radiobutton label="&widgets.prefs.enabled;" x="5" y="0" width="70" height="15"
 						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 						onclick="addPreference('postrenderfilter', Preference.BOOL, true, true);"
@@ -420,9 +425,9 @@
 						onclick="addPreference('postrenderfilter', Preference.BOOL, false, true);"
 						onshow="this.value = !getPreference('postrenderfilter', Preference.BOOL, false, true);"/>
 				</view>
-				<caption label="&widgets.prefs.groups.visual.water;" x="20" height="20" rright="0" rtop="110" style="color: #e9e3d9ff;"
+				<caption label="&widgets.prefs.groups.visual.water;" x="20" height="20" rright="160" rtop="110" style="color: #e9e3d9ff;"
 					tip="&widgets.prefs.groups.visual.water.tip;"/>
-				<view id="waterOptions" width="150" height="15" rtop="110" rright="10">
+				<view id="waterOptions" width="150" height="15" rtop="110" rright="10" tip="&widgets.prefs.groups.visual.water.tip;">
 					<radiobutton label="&widgets.prefs.enabled;" x="5" y="0" width="70" height="15"
 						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 						onclick="addPreference('enableh2oshaders', Preference.BOOL, true, true);"
@@ -432,9 +437,9 @@
 						onclick="addPreference('enableh2oshaders', Preference.BOOL, false, true);"
 						onshow="this.value = !getPreference('enableh2oshaders', Preference.BOOL, true, true);"/>
 				</view>
-				<caption label="&widgets.prefs.groups.visual.reflections;" x="20" height="20" rright="0" rtop="140" style="color: #e9e3d9ff;"
+				<caption label="&widgets.prefs.groups.visual.reflections;" x="20" height="20" rright="160" rtop="140" style="color: #e9e3d9ff;"
 					tip="&widgets.prefs.groups.visual.reflections.tip;"/>
-				<view id="waterOptions" width="150" height="15" rtop="140" rright="10">
+				<view id="waterOptions" width="150" height="15" rtop="140" rright="10" tip="&widgets.prefs.groups.visual.reflections.tip;">
 					<radiobutton label="&widgets.prefs.enabled;" x="5" y="0" width="70" height="15"
 						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 						onclick="addPreference('waterreflections', Preference.BOOL, true, true);"
@@ -444,9 +449,9 @@
 						onclick="addPreference('waterreflections', Preference.BOOL, false, true);"
 						onshow="this.value = !getPreference('waterreflections', Preference.BOOL, true, true);"/>
 				</view>
-				<caption label="&widgets.prefs.groups.visual.muzzlelight;" x="20" height="20" rright="0" rtop="170" style="color: #e9e3d9ff;"
+				<caption label="&widgets.prefs.groups.visual.muzzlelight;" x="20" height="20" rright="160" rtop="170" style="color: #e9e3d9ff;"
 					tip="&widgets.prefs.groups.visual.muzzlelight.tip;"/>
-				<view width="150" height="15" rtop="170" rright="10">
+				<view width="150" height="15" rtop="170" rright="10" tip="&widgets.prefs.groups.visual.muzzlelight.tip;">
 					<radiobutton label="&widgets.prefs.enabled;" x="5" y="0" width="70" height="15"
 						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 						onclick="addPreference('suppressmuzzlelight', Preference.BOOL, false, true);"
@@ -456,9 +461,9 @@
 						onclick="addPreference('suppressmuzzlelight', Preference.BOOL, true, true);"
 						onshow="this.value = getPreference('suppressmuzzlelight', Preference.BOOL, false, true);"/>
 				</view>
-				<caption label="&widgets.prefs.groups.visual.combatsmoke;" x="20" height="20" rright="0" rtop="200" style="color: #e9e3d9ff;"
+				<caption label="&widgets.prefs.groups.visual.combatsmoke;" x="20" height="20" rright="160" rtop="200" style="color: #e9e3d9ff;"
 					tip="&widgets.prefs.groups.visual.combatsmoke.tip;"/>
-				<view width="150" height="15" rtop="200" rright="10">
+				<view width="150" height="15" rtop="200" rright="10" tip="&widgets.prefs.groups.visual.combatsmoke.tip;">
 					<radiobutton label="&widgets.prefs.enabled;" x="5" y="0" width="70" height="15"
 						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 						onclick="addPreference('combatsmoke', Preference.BOOL, true, true);"
@@ -468,9 +473,9 @@
 						onclick="addPreference('combatsmoke', Preference.BOOL, false, true);"
 						onshow="this.value = !getPreference('combatsmoke', Preference.BOOL, true, true);"/>
 				</view>
-				<caption label="&widgets.prefs.groups.visual.specular;" x="20" height="20" rright="0" rtop="230" style="color: #e9e3d9ff;"
+				<caption label="&widgets.prefs.groups.visual.specular;" x="20" height="20" rright="160" rtop="230" style="color: #e9e3d9ff;"
 					tip="&widgets.prefs.groups.visual.specular.tip;"/>
-				<view width="150" height="15" rtop="230" rright="10">
+				<view width="150" height="15" rtop="230" rright="10" tip="&widgets.prefs.groups.visual.specular.tip;">
 					<radiobutton label="&widgets.prefs.enabled;" x="5" y="0" width="70" height="15"
 						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 						onclick="addPreference('bspecular', Preference.BOOL, true, true);"
