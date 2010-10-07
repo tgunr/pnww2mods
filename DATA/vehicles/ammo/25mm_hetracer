@@ -6,7 +6,7 @@ type = airburst
 diameter = .025
 weight = 0.250
 velocity = 900
-tracertime = 4.9
+tracertime = 3.9
 stretchobject = 1
 object = bullet1
 dontdisplayfirstframe = 1
@@ -15,12 +15,12 @@ explosive = 116370
 
 fuzetime = 0.0001
 bc = 1.2
-lifetime = 5.0
+lifetime = 4.0
 ricochetangle = 88
 # modelspall = 1
 penetrationconstant = 0.0000002561
 
-selfdestructtime = 6.0
+selfdestructtime = 4.0
 
 numshrapnelpieces = 30
 totalshrapnelmass = .223
@@ -32,5 +32,5 @@ explosionsoundfar = sounds\smlfarexp.wav
 nearfardistance = 300
 
 muzzleflash = 1
-hiteffect = incendiarymg
+hiteffect = smallcannon
 tracerscale = 4
