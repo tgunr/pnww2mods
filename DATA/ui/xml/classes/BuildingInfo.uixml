@@ -27,8 +27,12 @@
 			
 			this.view.visible = false;
 			
+			//cprint("BInfo Update...cp is " + game.player.capturezone + "\n");
+			
 			if(game.player.capturezone && fac != null)
 			{
+				//cprint("Capture zone\n");
+				
 				state = this.facState(fac);
 				
 				this.view.visible 		= true;
@@ -42,6 +46,7 @@
 				
 				if(state != null && state.valid && state.capturable && state.progress > 0 && state.progress < 100)
 				{
+					//cprint("Capping");
 					var progress = (state.progress / 100) * this.bars.width;
 					var oprogress = this.bars.width - progress;
 					
@@ -65,6 +70,8 @@
 				}
 				else
 				{
+					//cprint("Showing");
+					
 					if(ally)
 					{
 						this.friendly.visible 	= true;

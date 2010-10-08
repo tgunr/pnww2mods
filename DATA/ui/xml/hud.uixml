@@ -377,6 +377,8 @@
 					
 					if(iconName == "buildtool")
 						iconName = "shovel";
+						
+					//cprint("Weapon is " + iconName + "\n");
 					
 					// set icon
 					primaryIcon.src = "ui/textures/hud/weapon_" + iconName + ".bmp";

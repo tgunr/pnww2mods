@@ -657,7 +657,7 @@
 	
 	function onBuildIRP()
 	{
-		var popup = showConfirm(getlocstring('ppos.irp.build'), handleBuildIRP);
+		var popup = showConfirm(getlocstring('ppos.fru.build'), handleBuildIRP);
 		popup.setPopupClose(false);
 	}
 	
