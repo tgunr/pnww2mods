@@ -8,6 +8,8 @@ weaponType = SATCHEL
 # note that data\gr2data\FPS\ is prepended to these file names
 weaponModel = shovel\meshes\shovel
 
+fireDelay = 0
+
 # granny attach bone names for weapon & clip
 # the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
 weaponConnectTo = weapon-control
