@@ -2236,7 +2236,7 @@
 <!ENTITY widgets.prefs.groups.sound.maxsounds.sounds "位">
 <!ENTITY widgets.prefs.groups.infantry.weapons.tip "选择是否在武器上应用布娃娃效果。关闭该效果可以提高游戏的流畅度。">
 <!ENTITY widgets.map.context.waypoints.add.waypoint.type "导航点类型">
-<!ENTITY widgets.prefs.groups.hud.ppos.ok.tip "This color will be used to indicate a GOOD spot to place a player placed object.">
+<!ENTITY widgets.prefs.groups.hud.ppos.ok.tip "该颜色将被用来标示正确放置的玩家布置物体">
 <!ENTITY widgets.prefs.groups.titles.shadow "阴影设置">
 <!ENTITY widgets.keymapper.keys.function "操作名称">
 <!ENTITY widgets.prefs.groups.titles.visual "可视化设置">
@@ -2301,7 +2301,7 @@
 <!ENTITY widgets.map.waypoints.add.attack "攻击这里!">
 <!ENTITY widgets.prefs.groups.ui.colors.squad "班组颜色">
 <!ENTITY widgets.map.context.hc.objectives "目标">
-<!ENTITY widgets.prefs.groups.hud.ppos.tip "Choose which colors to use when indicating good and bad spots for player placed objects.">
+<!ENTITY widgets.prefs.groups.hud.ppos.tip "选择使用何种颜色来标示正确或不正确的玩家布置物体的放置">
 <!ENTITY widgets.prefs.groups.hud.custom.readout "读出">
 <!ENTITY widgets.map.context.hc.na "不可用">
 <!ENTITY widgets.map.options.showdeployments "部署">
@@ -2436,7 +2436,7 @@
 <!ENTITY widgets.map.context.contacts.delete.all "所有报告">
 <!ENTITY widgets.prefs.groups.shadows.vehicles.tip "选择是否显示武器装备的阴影效果。关闭该效果可以提高游戏的流畅度。">
 <!ENTITY widgets.prefs.groups.sound.volume "音量控制">
-<!ENTITY widgets.prefs.groups.hud.ppos.nok.tip "This color will be used to indicate a BAD spot to place a player placed object.">
+<!ENTITY widgets.prefs.groups.hud.ppos.nok.tip "该颜色将被用来标示不正确放置的玩家布置物体">
 <!ENTITY widgets.prefs.groups.visual.water "水渲染">
 <!ENTITY widgets.prefs.groups.shadows.off "关闭">
 <!ENTITY widgets.map.context.waypoints.add.report.truck "卡车">
@@ -2499,14 +2499,14 @@
 <!ENTITY widgets.prefs.groups.shadows.terrain "阴影已开启">
 <!ENTITY widgets.map.waypoints.name "导航点名称（最多4个汉字；注意请不要中英文混合使用）">
 <!ENTITY widgets.prefs.groups.visual.reflections "水影效果">
-<!ENTITY widgets.prefs.groups.hud.ppos.nok "BAD PLACEMENT">
+<!ENTITY widgets.prefs.groups.hud.ppos.nok "不正确放置">
 <!ENTITY widgets.prefs.groups.shadows.objects "物体">
 <!ENTITY widgets.map.waypoints.contact.shipping "敌军战舰">
 <!ENTITY widgets.map.options.zoom.sector "防区">
 <!ENTITY widgets.prefs.groups.ui.colors.aws.tip "选择你的地图上空袭警报系统不同程度的颜色区间。">
 <!ENTITY widgets.prefs.groups.sound.ambient.infrequent "偶尔">
 <!ENTITY widgets.map.info.target.tip "显示你当前任务的目标城市">
-<!ENTITY widgets.prefs.groups.hud.ppos.ok "GOOD PLACEMENT">
+<!ENTITY widgets.prefs.groups.hud.ppos.ok "正确放置">
 <!ENTITY widgets.map.waypoints.title "导航点">
 <!ENTITY widgets.keymapper.button.clear "清除设置">
 <!ENTITY widgets.keymapper.pending.inc "点击按键设置这项功能的增强作用">
@@ -2532,7 +2532,7 @@
 <!ENTITY widgets.prefs.groups.game.presets.performance "最佳表现">
 <!ENTITY widgets.prefs.slowest "最慢">
 <!ENTITY widgets.prefs.min "最小">
-<!ENTITY widgets.prefs.groups.visual.specular.tip "Enables better lighting. Disable for better performance.">
+<!ENTITY widgets.prefs.groups.visual.specular.tip "打开该功能以提升光影效果。关闭该功能可以提高游戏的流畅度。">
 <!ENTITY widgets.prefs.groups.hud.custom.primary "主武器弹药">
 <!ENTITY widgets.map.info.me.tip "在游戏中显示你当前位置的经纬度。">
 <!ENTITY widgets.calibration.none.desc "展开摇杆轴列表，选择一个轴进行配置">
@@ -2586,7 +2586,7 @@
 <!ENTITY widgets.map.options.centerme "以我为中心">
 <!ENTITY widgets.keymapper.cats.trucks "卡车和牵引车">
 <!ENTITY widgets.prefs.groups.video.resolution "分辨率">
-<!ENTITY widgets.prefs.groups.shadows.tip "Select the level of shadows. Use a lower setting for better performance.">
+<!ENTITY widgets.prefs.groups.shadows.tip "选择阴影程度大小。如果想要更好的游戏效果，请使用较小的阴影设置">
 <!ENTITY widgets.prefs.groups.hud.icons "图标模式">
 <!ENTITY widgets.prefs.groups.visual.notracersmoke "关闭曳光弹轨迹">
 <!ENTITY widgets.map.options.showmydivision "我的师">
@@ -2635,7 +2635,7 @@
 <!ENTITY widgets.keymapper.button.def.key.tip "还原当前所有设置为默认设置。">
 <!ENTITY widgets.prefs.groups.game.presets.balanced "平衡">
 <!ENTITY widgets.map.info.hq.title "战斗旅总部">
-<!ENTITY widgets.prefs.groups.hud.ppos "PPO PLACEMENT">
+<!ENTITY widgets.prefs.groups.hud.ppos "玩家布置物体放置">
 <!ENTITY widgets.prefs.groups.hud.custom.gameinfo "游戏信息">
 <!ENTITY widgets.prefs.groups.connection.netcode2.tip "启用Netcode2可以使用UDP协议与游戏服务器进行沟通，可能会提高延迟较大玩家的连接质量。">
 <!ENTITY widgets.prefs.groups.visual.grass "草地渲染">
@@ -3567,12 +3567,12 @@
 <!ENTITY hud.health.atp.tip "您的体力数值是 {1}. 在您进行奔跑，匍匐前进和其他一些活动时都会消耗体力值。.">
 <!ENTITY hud.alerts.17 "您由 {1} 提供了补给">
 <!ENTITY hud.readout.vehicles "交通工具">
-<!ENTITY hud.hqintel.weight.0 "Light">
+<!ENTITY hud.hqintel.weight.0 "轻">
 <!ENTITY hud.alerts.24.sea "{1} 附近发现敌人海军力量">
-<!ENTITY hud.alerts.11.nocapture "Only Premium subscribers can capture! Upgrade your subscription today!">
+<!ENTITY hud.alerts.11.nocapture "只有付费用户才能占领。请上官网的&#34;快乐商城&#34;充值。">
 <!ENTITY hud.readout.aoa "迎角">
 <!ENTITY hud.alerts.4 "{1} 向您提供了过多的补给">
-<!ENTITY hud.alerts.30.minalt "You are below the minimum altitude for bailing!">
+<!ENTITY hud.alerts.30.minalt "你的高度在跳伞所需最低高度之下!">
 <!ENTITY hud.readout.invisible "不可见">
 <!ENTITY hud.alerts.12.lost "我们失去了 {1}">
 <!ENTITY hud.minimap.latlon "您当前位置的经纬度">
@@ -3585,10 +3585,10 @@
 <!ENTITY hud.minimap.out "缩小">
 <!ENTITY hud.readout.infantry "步兵">
 <!ENTITY hud.gameinfo.fov "视野">
-<!ENTITY hud.hqintel.dir.5 "southwest">
+<!ENTITY hud.hqintel.dir.5 "西南">
 <!ENTITY hud.readout.riding.stowed "装填到位">
 <!ENTITY hud.readout.slip "侧滑角">
-<!ENTITY hud.hqintel.far "Intel: &#37;ls enemy infantry presence &#37;ls of your position!">
+<!ENTITY hud.hqintel.far "Intel: &#37;ls 敌步兵显示 &#37;ls 你位置!">
 <!ENTITY hud.alerts.5 "您即将失去您的储备弹药">
 <!ENTITY hud.alerts.18.liberated "我军解放了 {1}">
 <!ENTITY hud.readout.agl "离地高度">
@@ -3596,7 +3596,7 @@
 <!ENTITY hud.cliptype.2.plural "弹链">
 <!ENTITY hud.alerts.18.captured "敌军已经占领了 {1}">
 <!ENTITY hud.readout.riding.seated "驾驶">
-<!ENTITY hud.hqintel.dir.2 "east">
+<!ENTITY hud.hqintel.dir.2 "东">
 <!ENTITY hud.readout.visible "可见">
 <!ENTITY hud.gameinfo.fps "帧数">
 <!ENTITY hud.readout.gear "档位">
@@ -3605,7 +3605,7 @@
 <!ENTITY hud.alerts.19.liberated "我军解放了 {1}">
 <!ENTITY hud.readout.position "位置">
 <!ENTITY hud.health.state.crew "乘员">
-<!ENTITY hud.hqintel.dir.0 "north">
+<!ENTITY hud.hqintel.dir.0 "北">
 <!ENTITY hud.readout.torp.bearing "相对方位">
 <!ENTITY hud.alerts.13.hold "您的战斗旅被命令不惜一切坚守">
 <!ENTITY hud.alerts.21.withdrawn "攻击目标已经从 {1} 撤销了">
@@ -3613,7 +3613,7 @@
 <!ENTITY hud.alerts.24.air "{1} 附近发现敌空军力量">
 <!ENTITY hud.readout.torp.control.angle "超前角">
 <!ENTITY hud.readout.range "射程设置">
-<!ENTITY hud.hqintel.dir.6 "west">
+<!ENTITY hud.hqintel.dir.6 "西">
 <!ENTITY hud.minimap.in "放大">
 <!ENTITY hud.cliptype.1.plural "弹夹">
 <!ENTITY hud.readout.riding.lifeboat "在救生船">
@@ -3640,7 +3640,7 @@
 <!ENTITY hud.alerts.19.acquired "我军占领了 {1}">
 <!ENTITY hud.readout.torp.depth "鱼雷深度">
 <!ENTITY hud.alerts.27 "您的付费账户剩余时间少于 {1} 分钟！">
-<!ENTITY hud.hqintel.dir.4 "south">
+<!ENTITY hud.hqintel.dir.4 "南">
 <!ENTITY hud.readout.torp.control.time "碰撞时间">
 <!ENTITY hud.primary.weapon "武器">
 <!ENTITY hud.secondary "辅助武器">
@@ -3649,28 +3649,28 @@
 <!ENTITY hud.alerts.23 "{1} 正在遭受攻击">
 <!ENTITY hud.health.state.infantry "步兵">
 <!ENTITY hud.primary.tip "您当前主武器弹药的装载形式：弹药夹">
-<!ENTITY hud.alerts.30.deadpilot "Your pilot is dead!">
+<!ENTITY hud.alerts.30.deadpilot "你的飞行员已死!">
 <!ENTITY hud.alerts.18.deliberated "敌军收复了 {1}">
 <!ENTITY hud.cliptype.0.plural "弹夹">
 <!ENTITY hud.readout.infantry.ship "在船板上">
-<!ENTITY hud.hqintel.close "Intel: &#37;ls enemy infantry presence near your position!">
+<!ENTITY hud.hqintel.close "Intel: &#37;ls 敌步兵显示靠近你的位置!">
 <!ENTITY hud.readout.gear.engines "引擎">
 <!ENTITY hud.alerts.15 "您接收到了新的命令">
 <!ENTITY hud.readout.gforce "G">
 <!ENTITY hud.alerts.24.armor "{1} 附近发现敌装甲力量">
 <!ENTITY hud.alerts.24.ground "{1} 附近发现敌人军队">
 <!ENTITY hud.health.state "这个图标显示的是你的当前状态">
-<!ENTITY hud.hqintel.weight.1 "Moderate">
-<!ENTITY hud.hqintel.dir.3 "southeast">
+<!ENTITY hud.hqintel.weight.1 "中等">
+<!ENTITY hud.hqintel.dir.3 "东南">
 <!ENTITY hud.health.state.pilot "飞机乘员">
 <!ENTITY hud.readout.riding.towed "拖曳">
 <!ENTITY hud.alerts.19.deliberated "敌军收复了 {1}">
 <!ENTITY hud.readout.gear.kaput "损毁">
-<!ENTITY hud.hqintel.weight.2 "Heavy">
+<!ENTITY hud.hqintel.weight.2 "很重">
 <!ENTITY hud.cliptype.2 "弹链">
 <!ENTITY hud.alerts.14 "引入的接触报告">
-<!ENTITY hud.hqintel.dir.1 "northeast">
-<!ENTITY hud.hqintel.dir.7 "northwest">
+<!ENTITY hud.hqintel.dir.1 "东北">
+<!ENTITY hud.hqintel.dir.7 "西北">
 <!ENTITY hud.gameinfo.icon.0 "正常">
 <!ENTITY hud.minimap.nearest "离您最近的城镇">
 <!ENTITY hud.health.blood "这个图标显示的是您的当前状态">
@@ -4502,3 +4502,28 @@
 <!ENTITY waypoints.origin.tip "任务起点: 这里是您的任务起点；查看任务目标可以了解更多的任务细节信息。">
 <!ENTITY waypoints.target "任务目标">
 <!ENTITY waypoints.turn2 "转弯 2">
+<!ENTITY ppos.badlocation "你不能在这种地形里配置这类物体!">
+<!ENTITY ppos.badtrees "有棵树正堵着你的物体!">
+<!ENTITY ppos.badtarget.toofar "你离你的任务目标太远, 不能配置这类物体!!">
+<!ENTITY ppos.badavoidance "你离另一个物体太近!">
+<!ENTITY ppos.ob3 "野外补给单位">
+<!ENTITY ppos.badplayer "你必须进入战场才能配置物体!">
+<!ENTITY ppos.badtarget.tooclose "你离你的任务目标太近, 不能配置这类物体!">
+<!ENTITY ppos.ob1 "步兵掩体">
+<!ENTITY ppos.badspeed "你不能在移动中配置这类物体!">
+<!ENTITY ppos.fru.notleader "这个任务现在已有一个野外补给单位">
+<!ENTITY ppos.badenemyfac.toofar "你离最近的敌人设施太远, 不能配置这类物体!">
+<!ENTITY ppos.coolingdown "你必须等到冷却时间完成!">
+<!ENTITY ppos.badfriendlyfac.tooclose "你离最近的你方设施太近, 不能配置这类物体!">
+<!ENTITY ppos.building "建筑: {1}">
+<!ENTITY ppos.badfriendlyfac.toofar "你离最近的你方设施太远, 不能配置这类物体!">
+<!ENTITY ppos.badenemyfac.tooclose "你离最近的敌人设施太近, 不能配置这类物体!">
+<!ENTITY ppos.fru.build "你是否要在这建一个野外补给单位?">
+<!ENTITY ppos.badvehicle "另一个玩家正堵着你的物体!">
+<!ENTITY ppos.ob2 "防御工事">
+<!ENTITY ppos.noinside "你不能在建筑中配置这类物体!">
+<!ENTITY ppos.badplacement "地点不正确!">
+<!ENTITY ppos.ob4 "野外补给单位">
+<!ENTITY ppos.built "&#37;ls 建筑!">
+<!ENTITY ppos.invalidnow "物体位置不再有效!">
+<!ENTITY ppos.badangle "地面坡度太陡!">
