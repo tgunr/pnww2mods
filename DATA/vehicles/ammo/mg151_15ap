@@ -1,0 +1,22 @@
+# 15mm MG151 AP round - created 06/25/10 - doc
+# bc is a placeholder
+# ammoweight is a placeholder
+
+type = ballistic
+diameter = .015
+weight = 0.065
+ammoweight = 0.151
+velocity = 915
+stretchobject = 1
+explosive = 0.0
+fuzetime = 0.000
+tracertime = 0.0
+bc = 1.22
+lifetime = 2.0
+dontdisplayfirstframe = 1
+ricochetangle = 88
+penetrationconstant = 0.00000032
+
+muzzleflash = 1
+hiteffect = heavymachinegun
+tracerscale = 5
