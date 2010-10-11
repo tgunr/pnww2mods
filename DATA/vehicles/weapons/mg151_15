@@ -1,0 +1,19 @@
+# German 15mm cannon that predates the 20mm version. 
+# Created 6/25/10 - doc
+
+mass = 42.3
+firetype = auto
+rateoffire = 740
+#syncrateoffire = 710
+dispersion = 0.15
+#dispersion is a placeholder
+
+ammotype1 = mg151_15hei
+ammotype2 = mg151_15ap
+ghostrof = 200
+ghostammotype = mg151_15hei
+
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = na
