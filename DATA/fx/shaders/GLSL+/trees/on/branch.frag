@@ -19,7 +19,6 @@ uniform float diffuseScale;
 in vec3 T;
 in vec3 B;
 in vec3 N;
-in vec3 vpos;
 in vec2 tex0;
 in vec4 tex1;
 in float alphatest;
