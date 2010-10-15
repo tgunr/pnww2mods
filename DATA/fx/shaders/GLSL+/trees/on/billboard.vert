@@ -74,9 +74,11 @@ void main()
    pos.xyz += in_pos.xyz;   
    pos.w = 1.0;
        
-   T = normalize(mat3(NormalMatrix) * tangent);
-   B = normalize(mat3(NormalMatrix) * binormal);
-   N = normalize(mat3(NormalMatrix) * normal);
+    mat3 normalmatrix = mat3(NormalMatrix);
+
+   T = normalize(normalmatrix * tangent);
+   B = normalize(normalmatrix * binormal);
+   N = normalize(normalmatrix * normal);
       
    T.x = -T.x;
    

@@ -47,9 +47,11 @@ void main()
 	T.xy = vec2(dot(rotation.yxw, T), dot(rotation.zyw, T));
 	B.xy = vec2(dot(rotation.yxw, B), dot(rotation.zyw, B));
 
-	T = normalize(mat3(NormalMatrix) * T);
-	N = normalize(mat3(NormalMatrix) * N);
-	B = normalize(mat3(NormalMatrix) * B);
+    mat3 normalmatrix = mat3(NormalMatrix);
+
+	T = normalize(normalmatrix * T);
+	N = normalize(normalmatrix * N);
+	B = normalize(normalmatrix * B);
 	
 	alpha = 1.0 - alpha + 0.3294112; //84.0 / 255.0;
 	

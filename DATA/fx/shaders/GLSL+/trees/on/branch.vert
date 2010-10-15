@@ -55,10 +55,12 @@ void main()
     tangent.xy = vec2(dot(rot.yxw, tangent.xyz), dot(rot.zyw, tangent.xyz));
     vec3 binormal = cross(normal, tangent);
      
-    T = normalize(mat3(NormalMatrix) * tangent);
-    B = normalize(mat3(NormalMatrix) * binormal);
-    N = normalize(mat3(NormalMatrix) * normal);
-     
+    mat3 normalmatrix = mat3(NormalMatrix);
+
+    T = normalize(normalmatrix * tangent);
+    B = normalize(normalmatrix * binormal);
+    N = normalize(normalmatrix * normal);
+
     inpos = MVMatrix * inpos;
     fogdist = abs(inpos.z);
       

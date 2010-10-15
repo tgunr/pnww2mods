@@ -82,11 +82,13 @@ void main()
                
 	cornerpt = rotmat * cornerpt;
 	    
+    mat3 normalmatrix = mat3(NormalMatrix);
+
  	normal.xy = vec2(dot(rot.yxw, normal), dot(rot.zyw, normal));
-	N = normalize(mat3(NormalMatrix) * normal);
+	N = normalize(normalmatrix * normal);
 	
     tangent.xy = vec2(dot(rot.yxw, tangent), dot(rot.zyw, tangent));
-	T = normalize(mat3(NormalMatrix) * tangent);
+	T = normalize(normalmatrix * tangent);
   
     B = cross(normal, tangent);
 	
