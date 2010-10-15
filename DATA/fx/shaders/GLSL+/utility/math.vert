@@ -42,35 +42,40 @@ mat4 quaternionToMatrix(in vec4 q)
 
 mat3 modelviewToNormal(in mat4 mv)
 {
-    mat3 nm;
+    float det = mv[0][0] * mv[1][1] * mv[2][2] +
+                mv[0][1] * mv[1][2] * mv[2][0] +
+                mv[0][2] * mv[1][0] * mv[2][1] -
+                mv[0][0] * mv[1][2] * mv[2][1] -
+                mv[0][1] * mv[1][0] * mv[2][2] -
+                mv[0][2] * mv[1][1] * mv[2][0];
 
-    // Inverse
-    nm[0][0] = mv[0][0];
-    nm[0][1] = mv[1][0];
-    nm[0][2] = mv[2][0];
+    det = 1.0 / det;
 
-    nm[1][0] = mv[0][1];
-    nm[1][1] = mv[1][1];
-    nm[1][2] = mv[2][1];
-
-    nm[2][0] = mv[0][2];
-    nm[2][1] = mv[1][2];
-    nm[2][2] = mv[2][2];
+    mat3 inv;
+ 
+    inv[0][0] = (mv[1][1] * mv[2][2] - mv[1][2] * mv[2][1]) * det;
+    inv[0][1] = (mv[0][2] * mv[2][1] - mv[0][1] * mv[2][2]) * det;
+    inv[0][2] = (mv[0][1] * mv[1][2] - mv[0][2] * mv[1][1]) * det;
+    inv[1][0] = (mv[1][2] * mv[2][0] - mv[1][0] * mv[2][2]) * det;
+    inv[1][1] = (mv[0][0] * mv[2][2] - mv[0][2] * mv[2][0]) * det;
+    inv[1][2] = (mv[0][2] * mv[1][0] - mv[0][0] * mv[1][2]) * det;
+    inv[2][0] = (mv[1][0] * mv[2][1] - mv[1][1] * mv[2][0]) * det;
+    inv[2][1] = (mv[0][1] * mv[2][0] - mv[0][0] * mv[2][1]) * det;
+    inv[2][2] = (mv[0][0] * mv[1][1] - mv[0][1] * mv[1][0]) * det;
 
     mat3 ret;
 
-    // Transpose
-    ret[0][0] = nm[0][0];
-    ret[0][1] = nm[1][0];
-    ret[0][2] = nm[2][0];
+    ret[0][0] = inv[0][0];
+    ret[0][1] = inv[1][0];
+    ret[0][2] = inv[2][0];
 
-    ret[1][0] = nm[0][1];
-    ret[1][1] = nm[1][1];
-    ret[1][2] = nm[2][1];
+    ret[1][0] = inv[0][1];
+    ret[1][1] = inv[1][1];
+    ret[1][2] = inv[2][1];
 
-    ret[2][0] = nm[0][2];
-    ret[2][1] = nm[1][2];
-    ret[2][2] = nm[2][2];
+    ret[2][0] = inv[0][2];
+    ret[2][1] = inv[1][2];
+    ret[2][2] = inv[2][2];
 
     return ret;
 }
