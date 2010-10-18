@@ -1,5 +1,4 @@
 #version 150
-#extension GL_ARB_uniform_buffer_object : enable
 
 in vec3 in_pos;
 in vec2 in_tex0;
