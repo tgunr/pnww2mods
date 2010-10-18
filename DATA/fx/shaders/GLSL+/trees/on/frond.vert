@@ -19,7 +19,7 @@ in vec3 in_normal;
 in vec2 in_tex0;
 
 out vec3 N;
-out vec3 vertexpos;
+out vec3 eyepos;
 out vec2 tex0;
 out float fogdist;
 out float alphatest;
@@ -47,7 +47,7 @@ void main()
     fogdist = abs(inpos.z);
 
     tex0 = in_tex0;  
-    vertexpos = inpos.xyz;
+    eyepos = inpos.xyz;
 
     gl_Position = ProjectionMatrix * inpos;
 }

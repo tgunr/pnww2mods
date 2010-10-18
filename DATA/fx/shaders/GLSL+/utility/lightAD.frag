@@ -19,7 +19,7 @@ uniform AmbientBlock
     vec4 globalambient;
 };
 
-in vec3 vertexpos;
+in vec3 eyepos;
 
 void lightGetAmbientDiffuse(out vec4 ambient, out vec4 diffuse)
 {   
@@ -42,7 +42,7 @@ void lightGetAmbientDiffuse(out vec4 ambient, out vec4 diffuse)
 
    if(lightsource[2].enabled > 0.0)
    {
-      d = distance(vertexpos, lightsource[2].pos);   
+      d = distance(eyepos, lightsource[2].pos);   
       a = (lightsource[2].kc + d * (lightsource[2].kl + lightsource[2].kq * d));
       a = (a > 1.0) ? (1.0 / a) : 1.0;
       
@@ -52,7 +52,7 @@ void lightGetAmbientDiffuse(out vec4 ambient, out vec4 diffuse)
 
    if(lightsource[3].enabled > 0.0)
    {
-      d = distance(vertexpos, lightsource[3].pos);   
+      d = distance(eyepos, lightsource[3].pos);   
       a = (lightsource[3].kc + d * (lightsource[3].kl + lightsource[3].kq * d));
       a = (a > 1.0) ? (1.0 / a) : 1.0;
       

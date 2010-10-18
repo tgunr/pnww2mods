@@ -17,7 +17,7 @@ uniform MaterialBlock
 in vec3 T;
 in vec3 B;
 in vec3 N;
-in vec3 V;
+in vec3 eyepos;
 in vec2 tex0;
 in float alphatest;
 
@@ -53,7 +53,7 @@ void main()
 	vec4 ambient;
 	
 	// These values are interpolated and need to be normalized
-	vec3 v = normalize(-V);
+	vec3 v = normalize(-eyepos);
 	vec3 t = normalize(T);
 	vec3 b = normalize(B);
 	vec3 n = normalize(N);

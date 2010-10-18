@@ -24,7 +24,7 @@ in vec2 in_tex2;
 
 out vec3 N;
 out float fogdist;
-out vec3 vertexpos;
+out vec3 eyepos;
 out vec2 tex0;
 out vec2 tex1;
 out vec2 tex2;
@@ -36,11 +36,11 @@ void main()
     tex2 = (TextureMatrix2 * vec4(in_tex2, 1.0, 1.0)).xy;
 
     vec4 pos = MVMatrix * vec4(in_pos, 1.0);
-    vertexpos = pos.xyz;
+    eyepos = pos.xyz;
 
     N = mat3(NormalMatrix) * in_normal;
 
-    fogdist = abs(vertexpos.z);
+    fogdist = abs(eyepos.z);
 
     gl_Position = ProjectionMatrix * pos;
 }

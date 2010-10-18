@@ -11,10 +11,9 @@ uniform MatrixBlock
 in vec3 in_pos;
 in vec3 in_normal;
 
-out vec3 V;
 out vec3 N;
 out float fogdist;
-out vec3 vertexpos;
+out vec3 eyepos;
 
 void main()
 {
@@ -23,10 +22,9 @@ void main()
     pos = MVMatrix * pos;
     N = mat3(NormalMatrix) * in_normal;
 
-	V = pos.xyz;
-    vertexpos = pos.xyz;
+    eyepos = pos.xyz;
 
-    fogdist = abs(V.z);
+    fogdist = abs(eyepos.z);
 
  	gl_Position = ProjectionMatrix * pos;
 }

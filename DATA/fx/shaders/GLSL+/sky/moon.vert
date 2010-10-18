@@ -13,7 +13,7 @@ in vec3 in_normal;
 in vec2 in_tex0;
 
 out vec3 N;
-out vec3 vertexpos;
+out vec3 eyepos;
 out vec2 tex0;
 
 void main()
@@ -22,7 +22,7 @@ void main()
 	vec4 pos = vec4(in_pos, 1.0);
 
 	pos = MVMatrix * pos;
-    vertexpos = pos.xyz;
+    eyepos = pos.xyz;
     
  	gl_Position = ProjectionMatrix * pos;
 }

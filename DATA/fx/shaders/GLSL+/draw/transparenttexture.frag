@@ -12,7 +12,7 @@ uniform MaterialBlock
 	float shininess;
 };
 
-in vec3 V;
+in vec3 eyepos;
 in vec3 N;
 in vec2 tex0;
 
@@ -39,7 +39,7 @@ void main()
 	vec4 ambient;
 	
 	// These values are interpolated and need to be normalized
-	vec3 v = normalize(-V);
+	vec3 v = normalize(-eyepos);
 	vec3 n = normalize(N);
 
 	lightGetAmbientDiffuseSpecular(n, 

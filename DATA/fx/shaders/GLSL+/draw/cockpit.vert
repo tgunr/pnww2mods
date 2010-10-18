@@ -11,17 +11,15 @@ uniform MatrixBlock
 in vec3 in_pos;
 in vec3 in_normal;
 
-out vec3 V;
 out vec3 N;
-out vec3 vertexpos;
+out vec3 eyepos;
 
 void main()
 {
     vec4 pos = MVMatrix * vec4(in_pos, 1.0);
     N = mat3(NormalMatrix) * in_normal;
 
-	V = pos.xyz;
-    vertexpos = pos.xyz;
+    eyepos = pos.xyz;
 
  	gl_Position = ProjectionMatrix * pos;
 }

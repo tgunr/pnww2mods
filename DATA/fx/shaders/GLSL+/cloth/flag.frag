@@ -13,7 +13,7 @@ uniform MaterialBlock
 };
 
 in vec3 N;
-in vec3 V;
+in vec3 eyepos;
 in vec2 tex0;
 
 out vec4 out_color;
@@ -31,7 +31,7 @@ void main()
 	vec4 base = texture2D(src1, tex0);
 
 	vec3 n = normalize(N);
-	vec3 v = normalize(-V);
+	vec3 v = normalize(-eyepos);
 	
 	vec4 amb;
 	vec4 dif;

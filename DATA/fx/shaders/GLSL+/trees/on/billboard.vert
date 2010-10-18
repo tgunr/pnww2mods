@@ -28,7 +28,7 @@ in vec3 in_tex2;
 out vec3 T;
 out vec3 B;
 out vec3 N;
-out vec3 vertexpos;
+out vec3 eyepos;
 out float fogdist;
 out vec4 tex1;
 out vec2 tex0;
@@ -74,7 +74,7 @@ void main()
    pos.xyz += in_pos.xyz;   
    pos.w = 1.0;
        
-    mat3 normalmatrix = mat3(NormalMatrix);
+   mat3 normalmatrix = mat3(NormalMatrix);
 
    T = normalize(normalmatrix * tangent);
    B = normalize(normalmatrix * binormal);
@@ -92,5 +92,5 @@ void main()
    fogdist = abs(pos.z);
       
    gl_Position = ProjectionMatrix * pos;
-   vertexpos = pos.xyz;
+   eyepos = pos.xyz;
 }

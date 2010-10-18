@@ -16,11 +16,10 @@ in vec3 in_tex1;
 out vec3 T;
 out vec3 B;
 out vec3 N;
-out vec3 V;
 out vec2 tex0;
 
 out float fogdist;
-out vec3 vertexpos;
+out vec3 eyepos;
 
 float fogValue(float);
 
@@ -35,8 +34,7 @@ void main()
 	vec4 pos = (MVMatrix * vec4(in_pos, 1.0));
 		
 	fogdist = abs(pos.z);
-    vertexpos = pos.xyz;
-    V = pos.xyz;
+    eyepos = pos.xyz;
 
  	gl_Position = ProjectionMatrix * pos;
 }

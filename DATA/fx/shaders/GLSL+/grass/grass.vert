@@ -13,7 +13,7 @@ in vec2 in_tex0;
 in float in_tex1;
 
 out float fogdist;
-out vec3 vertexpos;
+out vec3 eyepos;
 out vec2 tex0;
 
 void main()
@@ -22,10 +22,10 @@ void main()
     
     pos = MVMatrix * pos;
    
-    vertexpos = pos.xyz;
+    eyepos = pos.xyz;
     tex0 = in_tex0;
 
-    fogdist = abs(vertexpos.z);
+    fogdist = abs(eyepos.z);
 
 	gl_Position = ProjectionMatrix * pos;
 }

@@ -17,10 +17,9 @@ uniform InstanceBlock
 in vec3 in_pos;
 in vec3 in_normal;
 
-out vec3 V;
 out vec3 N;
 out float fogdist;
-out vec3 vertexpos;
+out vec3 eyepos;
 
 mat4 quaternionToMatrix(in vec4 q);
 mat3 modelviewToNormal(in mat4 mv);
@@ -37,14 +36,13 @@ void main()
 
     vec4 pos = modelview * vec4(in_pos, 1.0);
 
-	V = pos.xyz;
-    vertexpos = pos.xyz;
+    eyepos = pos.xyz;
 
     mat3 normalmatrix = modelviewToNormal(modelview);
 
     N = normalmatrix * in_normal;
 
-    fogdist = abs(V.z);
+    fogdist = abs(eyepos.z);
 
  	gl_Position = ProjectionMatrix * pos;
 }

@@ -18,10 +18,9 @@ uniform vec3 right;
 uniform float currentAngle;
 
 out vec3 N;
-out vec3 V;
 out vec2 tex0;
 out float fogdist;
-out vec3 vertexpos;
+out vec3 eyepos;
 
 void main()
 {
@@ -48,8 +47,7 @@ void main()
 	N = normalize(mat3(NormalMatrix) * N);
     pos = MVMatrix * pos;
 
-	V = pos.xyz;
-	vertexpos = pos.xyz;
+	eyepos = pos.xyz;
 
 	fogdist = abs(pos.z);
 	

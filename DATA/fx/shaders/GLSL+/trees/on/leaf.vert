@@ -28,7 +28,7 @@ in vec2 in_tex0;
 out vec3 N;
 out vec3 T;
 out vec3 B;
-out vec3 vertexpos;
+out vec3 eyepos;
 out float diffcoef;
 out float fogdist;
 out float alphatest;
@@ -102,5 +102,5 @@ void main()
 
 	tex0 = in_tex0;
 
-	vertexpos = center.xyz;
+	eyepos = center.xyz;
 }
