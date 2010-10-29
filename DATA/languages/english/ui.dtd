@@ -4273,11 +4273,9 @@
 <!ENTITY waypoints.turn2 "turn 2">
 <!ENTITY ppos.badlocation "You cannot place this type of object in this area of the terrain!">
 <!ENTITY ppos.badtrees "There is a tree blocking your object!">
-<!ENTITY ppos.badtarget.toofar "You are too far from your mission target for this object type!">
 <!ENTITY ppos.badavoidance "You are too close to another terrain object!">
 <!ENTITY ppos.ob3 "Field Resupply Unit">
 <!ENTITY ppos.badplayer "You must be spawned in to place objects!">
-<!ENTITY ppos.badtarget.tooclose "You are too close to your mission target for this object type!">
 <!ENTITY ppos.ob1 "Infantry Fighting Position">
 <!ENTITY ppos.badspeed "You cannot place this type of object while moving!">
 <!ENTITY ppos.fru.notleader "This mission currently has a Field Resupply Unit">
@@ -4287,8 +4285,10 @@
 <!ENTITY ppos.building "Building: {1}">
 <!ENTITY ppos.badfriendlyfac.toofar "You are too far from the nearest friendly facility for this object type!">
 <!ENTITY ppos.badenemyfac.tooclose "You are too close to the nearest enemy facility for this object type!">
+<!ENTITY ppos.badtargetrange.tooclose "You are too close to your mission target for this object type!">
 <!ENTITY ppos.fru.build "Do you want to build an Field Resupply Unit here?">
 <!ENTITY ppos.badvehicle "Another player is blocking your object!">
+<!ENTITY ppos.badtargetrange.toofar "You are too far from your mission target for this object type!">
 <!ENTITY ppos.ob2 "Gun Emplacement">
 <!ENTITY ppos.noinside "You cannot place this type of object while in a building!">
 <!ENTITY ppos.badplacement "That is not a valid position!">
