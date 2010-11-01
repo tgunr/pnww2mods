@@ -123,8 +123,8 @@
 			if(content)
 			{
 				helpTitle.label = content.title;
-				helpBody.text = content.body;
-				helpInfo.label = (helpIndex + 2) + " / " + helpPages;
+				helpBody.text 	= initBody(content.body);
+				helpInfo.label 	= (helpIndex + 2) + " / " + helpPages;
 				
 				// reset the scroll position
 				helpBody.scrollto(0);
@@ -326,6 +326,71 @@
 				setContent(game.getcontent(helpTOC.links[helpIndex].path));
 			else
 				setContent(helpTOC);
+		}
+		
+		function initBody(body)
+		{
+			if(body != null)
+			{
+				var input		= false;
+				var regex 		= /\{([^\}]+)\}/;
+				var match 		= regex.exec(body);
+				var maxloops	= 5;
+				
+				while(match != null && match.length > 0)
+				{
+					if(!input)
+					{
+						game.initkeymaps();
+						input = true;
+					}
+					
+					var parts 	= match[1].split(".");
+					var control	= parts[0];
+					var keyname	= game.getkeymapkey(control);
+					
+					if(keyname == control)
+					{
+						if(parts.length == 2)
+						{
+							cprint("looking up keyname 2\n");
+							keyname = game.getkeymapkey(control, parseInt(parts[1]), -1);
+						}
+						else if(parts.length >= 3)
+						{
+							cprint("looking up keyname 3\n");
+							keyname = game.getkeymapkey(control, parseInt(parts[1]), parseInt(parts[2]));
+							
+							if(parts.length == 5) // used by axis
+							{
+								cprint("looking up keyname 5\n");
+								var keyname2 = game.getkeymapkey(control, parseInt(parts[3]), parseInt(parts[4]));
+								
+								if(keyname2 != control)
+									keyname += "/" + keyname2;
+							}
+
+						}
+					}
+					
+					var replace = "(" + keyname + ")";
+					
+					cprint("Found input match: " + match.join('/') + '/' + replace + "\n");
+					
+					body 	= body.replace(match[0], replace);
+					match 	= regex.exec(body);
+					
+					maxloops -= 1;
+					
+					if(maxloops <= 0)
+						break;
+				}
+				
+				if(input)
+					game.killkeymaps();
+			}
+			
+			return body;
 		}
 		
 		-->

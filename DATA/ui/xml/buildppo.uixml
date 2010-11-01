@@ -28,7 +28,7 @@
 		function initPPOPopup(type)
 		{
 			ppoID = type;
-			initPopup(type, null, null, "cancel");
+			initPopup(type, null, null, getlocstring("popup.cancel"));
 		}
 		
 		function updatePPOPopup(p)

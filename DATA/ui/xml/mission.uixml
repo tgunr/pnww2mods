@@ -48,7 +48,7 @@
 									label="&mission.readytab.forces.intel;        " align="right"/>
 							</view>
 							<list id="spawnTree" x="0" width="425" height="300" rtop="40" onselect="spawnTree.clickTree(false)" ondblselect="spawnTree.clickTree(true)"/>
-							<caption label="* mouse over any vehicle for information about its availability" x="10" height="15" y="65" rright="10"
+							<caption label="&mission.readytab.supply.info;" x="10" height="15" y="65" rright="10"
 								 style="color: #e9e3d9ff; font-size: -1;" acceptmouseclick="false"/>
 							<text id="noVehicles" x="10" width="405" height="280" rtop="50"
 								 style="color: #e9e3d9ff;" acceptmouseclick="false"/>

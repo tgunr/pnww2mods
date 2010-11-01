@@ -138,25 +138,25 @@
 			
 			if(game.player.nofirezone)
 			{
-				return "No Fire Zone!";
+				return getlocstring('hud.binfo.state.nofire');
 			}
 			else if(!game.player.capturezone || state == null || !state.valid)
 			{
-				return "Not Capturable";
+				return getlocstring('hud.binfo.state.cantcapture');
 			}
 			else if(state.pending && state.pendingseconds > 0)
 			{
 				// format time better
 				if(state.pendingseconds < 60)
 				{
-					return "Capturable in " + state.pendingseconds + "s";
+					return getVariableLocString('hud.binfo.state.capturein.s', state.pendingseconds);
 				}
 				else
 				{
 					var mins = Math.floor(state.pendingseconds/60);
 					var secs = (state.pendingseconds % 60);
 					
-					return "Capturable in " + mins + "m " + secs + "s";
+					return getVariableLocString('hud.binfo.state.capturein.m.s', mins, secs);
 				}
 			}
 			else if(state.capturable || (state.pending && state.pendingseconds == 0))
@@ -164,18 +164,18 @@
 				if(state.progress > 0 && state.progress < 100)
 				{
 					if(state.rate < 0 && friendly)
-						return "Friendlies Defending";
+						return getlocstring('hud.binfo.state.wedefend');
 					else if(state.rate > 0 && friendly)
-						return "Enemy Capturing!";
+						return getlocstring('hud.binfo.state.theycapture');
 					else if(state.rate < 0 && !friendly)
-						return "Enemy Capturing!";
+						return getlocstring('hud.binfo.state.theycapture');
 					else if(state.rate > 0 && !friendly)
-						return "Friendlies Capturing";
+						return getlocstring('hud.binfo.state.wecapture');
 					else if(state.rate == 0)
-						return "Contested Facility!";
+						return getlocstring('hud.binfo.state.contested');
 				}
 				
-				return "Can Be Captured";
+				return getlocstring('hud.binfo.state.cancapture');
 			}
 			
 			// either AO not placed or mil fac and not contested
@@ -183,15 +183,15 @@
 			{
 				if(!fac.hasao)
 				{
-					return "No Attack Objective!";
+					return getlocstring('hud.binfo.state.noao');
 				}
 				else if(!fac.contested)
 				{
-					return "City is not Contested!";
+					return getlocstring('hud.binfo.state.notcontested');
 				}
 			}
 			
-			return (client.persona.side == 1) ? "Allied Owned": "Axis Owned";
+			return (client.persona.side == 1) ? getlocstring('hud.binfo.state.alliesown'): getlocstring('hud.binfo.state.axisown');
 		}
 		
 		this.latlon = function()
