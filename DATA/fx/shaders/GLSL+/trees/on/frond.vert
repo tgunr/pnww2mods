@@ -3,8 +3,8 @@
 
 uniform InstanceBlock
 {
-    vec4 rotation[1000];
-	vec4 position[1000];
+    vec4 rotation[100];
+	vec4 position[100];
 };
 
 uniform MatrixBlock
