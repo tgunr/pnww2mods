@@ -3579,12 +3579,9 @@
 <!ENTITY chat.channel.help "ayuda">
 <!ENTITY chat.f1.tip "Click para elegir el canal #1. Utilice F1 en su teclado para chatear en este canal.">
 <!ENTITY hud.secondary.tip "Tu actual carga secundaria de munición en forma de : cargadores">
-<!ENTITY hud.readout.torp.control.invalid "¡Solución de Control de Fuego no válida!">
 <!ENTITY hud.gameinfo.icon "Modo Icono">
-<!ENTITY hud.readout.torp.control "Ángulo de Solución de Control de Fuego">
 <!ENTITY hud.primary "PRIMARIO">
 <!ENTITY hud.alerts.18.acquired "Nuestras fuerzas han tomado {1}">
-<!ENTITY hud.health.atp.tip "Su nivel de fatiga está actualmente al {1}. La fatiga es utilizada cuando corres, o realizas otras acciones que provoquen cansancio .">
 <!ENTITY hud.alerts.17 "Has sido reaprovisionado por {1}">
 <!ENTITY hud.readout.vehicles "Vehículos">
 <!ENTITY hud.hqintel.weight.0 "Light">
@@ -3595,90 +3592,45 @@
 <!ENTITY hud.alerts.30.minalt "You are below the minimum altitude for bailing!">
 <!ENTITY hud.readout.invisible "Invisible">
 <!ENTITY hud.alerts.12.lost "Hemos perdido {1} a manos del enemigo">
-<!ENTITY hud.minimap.latlon "Su posición actual en Latitud y Longitud">
-<!ENTITY hud.readout.infantry.seat "asiento">
+<!ENTITY hud.binfo.state.axisown "Axis Owned">
 <!ENTITY hud.readout.gear.engine "Motor">
-<!ENTITY hud.minimap "Un mapa de los alrededores cercanos">
 <!ENTITY hud.alerts.19.captured "Las fuerzas enemigas han capturado {1}">
-<!ENTITY hud.gameinfo.icon.2 "Sin Iconos">
 <!ENTITY hud.cliptype.4 "tambor">
-<!ENTITY hud.minimap.out "Disminuir Zoom">
-<!ENTITY hud.readout.infantry "Infantería">
 <!ENTITY hud.gameinfo.fov "Campo de Visión">
 <!ENTITY hud.hqintel.dir.5 "southwest">
 <!ENTITY hud.readout.riding.stowed "Ubicado en posición">
 <!ENTITY hud.readout.slip "Deriva">
-<!ENTITY hud.hqintel.far "Intel: &#37;ls enemy infantry presence &#37;ls of your position!">
 <!ENTITY hud.alerts.5 "Estás a punto de perder el apilamiento de suministros">
 <!ENTITY hud.alerts.18.liberated "Nuestras fuerzas han liberado {1}">
-<!ENTITY hud.readout.agl "AGL Alt">
-<!ENTITY hud.alerts.28 "Enemy Spawn Point! Firing disabled- please leave the area!">
-<!ENTITY hud.cliptype.2.plural "cintas">
-<!ENTITY hud.alerts.18.captured "Las fuerzas enemigas han capturado {1}">
-<!ENTITY hud.readout.riding.seated "Montado en asiento">
 <!ENTITY hud.hqintel.dir.2 "east">
 <!ENTITY hud.readout.visible "Visible">
 <!ENTITY hud.gameinfo.fps "FPS">
 <!ENTITY hud.readout.gear "Marchas">
-<!ENTITY hud.minimap.nearest.none "lejos de ciudad">
-<!ENTITY hud.health.atp "Este icono representa su estado actual">
-<!ENTITY hud.alerts.19.liberated "Nuestras fuerzas han liberado {1}">
 <!ENTITY hud.readout.position "Posición">
-<!ENTITY hud.health.state.crew "TRIPULACIÓN">
-<!ENTITY hud.hqintel.dir.0 "north">
 <!ENTITY hud.readout.torp.bearing "Rumbo Relativo">
 <!ENTITY hud.alerts.13.hold "Se ha ordenado a tu brigada que se mantenga a cualquier precio">
-<!ENTITY hud.alerts.21.withdrawn "El objetivo de ataque ha sido retirado de {1}">
 <!ENTITY hud.readout.riding.ship "Abordo de Barco">
 <!ENTITY hud.alerts.24.air "Aviación enemiga avistada cerca de {1}">
-<!ENTITY hud.readout.torp.control.angle "Ángulo de Anticipación">
 <!ENTITY hud.readout.range "Ajuste de Rango">
-<!ENTITY hud.hqintel.dir.6 "west">
-<!ENTITY hud.minimap.in "Aumentar Zoom">
 <!ENTITY hud.cliptype.1.plural "cargadores">
-<!ENTITY hud.readout.riding.lifeboat "En Bote">
-<!ENTITY hud.alerts.13.fallback "Tu brigada está replegandose">
-<!ENTITY hud.alerts.16 "{1} está liderando tu misión ahora">
-<!ENTITY hud.readout.gear.neutral "N">
 <!ENTITY hud.readout.riding.hoisted "Siendo Izado">
-<!ENTITY hud.readout.torp.range "Distancia">
-<!ENTITY hud.alerts.25 "¡{1} necesita munición!">
-<!ENTITY hud.cliptype.3 "recarga">
-<!ENTITY hud.gameinfo.icon.1 "Tipo de Vehículo">
-<!ENTITY hud.alerts.12.gained "Hemos ganado {1}">
 <!ENTITY hud.readout.infantry.lifeboat "bote">
 <!ENTITY hud.readout.vehicles.stowed "Ubicado">
-<!ENTITY hud.alerts.6 "Has perdido el apilamiento de suministros al alejarte">
+<!ENTITY hud.binfo.state.nofire "No Fire Zone!">
 <!ENTITY hud.cliptype.3.plural "recargas">
-<!ENTITY hud.cliptype.1 "cargador">
 <!ENTITY hud.cliptype.0 "peine">
-<!ENTITY hud.readout.vehicles.towed "Remolcado">
 <!ENTITY hud.readout.gear.reverse "R">
 <!ENTITY hud.health.blood.tip "Su nivel de sangre está actualmente al {1}.">
 <!ENTITY hud.gameinfo.time "HORA">
+<!ENTITY hud.binfo.state.capturein.m.s "Capturable in {1}m {2}s">
 <!ENTITY hud.readout.torp.speed "Velocidad">
-<!ENTITY hud.alerts.19.acquired "Nuestras fuerzas han tomado {1}">
 <!ENTITY hud.readout.torp.depth "Pofundidad del Torpedo">
-<!ENTITY hud.alerts.27 "¡Te quedan menos de {1} minutos en su suscripción por horas!">
-<!ENTITY hud.hqintel.dir.4 "south">
-<!ENTITY hud.readout.torp.control.time "Tiempo de Impacto">
 <!ENTITY hud.primary.weapon "ARMA">
-<!ENTITY hud.secondary "SECUNDARIO">
 <!ENTITY hud.cliptype.4.plural "tambores">
-<!ENTITY hud.readout.enemy "Enemigo a bordo">
-<!ENTITY hud.alerts.23 "{1} está bajo ataque">
-<!ENTITY hud.health.state.infantry "INFANTERÍA">
 <!ENTITY hud.primary.tip "Tu actual carga primaria de munición en forma de : cargadores">
 <!ENTITY hud.alerts.30.deadpilot "Your pilot is dead!">
-<!ENTITY hud.alerts.18.deliberated "Las fuerzas enemigas han retomado {1}">
-<!ENTITY hud.cliptype.0.plural "peines">
-<!ENTITY hud.readout.infantry.ship "a bordo del barco">
-<!ENTITY hud.hqintel.close "Intel: &#37;ls enemy infantry presence near your position!">
-<!ENTITY hud.readout.gear.engines "Motores">
-<!ENTITY hud.alerts.15 "Se te han dado nuevas órdenes">
 <!ENTITY hud.readout.gforce "G">
 <!ENTITY hud.alerts.24.armor "Blindados enemigos avistados cerca de {1}">
-<!ENTITY hud.alerts.24.ground "Tropas enemigas avistadas cerca de {1}">
 <!ENTITY hud.health.state "Este icono representa su estado actual">
 <!ENTITY hud.hqintel.weight.1 "Moderate">
 <!ENTITY hud.hqintel.dir.3 "southeast">
@@ -3686,14 +3638,76 @@
 <!ENTITY hud.readout.riding.towed "Siendo Remolcado">
 <!ENTITY hud.alerts.19.deliberated "Las fuerzas enemigas han retomado {1}">
 <!ENTITY hud.readout.gear.kaput "Roto">
-<!ENTITY hud.hqintel.weight.2 "Heavy">
 <!ENTITY hud.cliptype.2 "cinta">
 <!ENTITY hud.alerts.14 "Ha llegado un informe de contacto">
-<!ENTITY hud.hqintel.dir.1 "northeast">
 <!ENTITY hud.hqintel.dir.7 "northwest">
 <!ENTITY hud.gameinfo.icon.0 "Normal">
-<!ENTITY hud.minimap.nearest "La ciudad mas cercana a tu posición">
+<!ENTITY hud.readout.torp.control.invalid "¡Solución de Control de Fuego no válida!">
+<!ENTITY hud.readout.torp.control "Ángulo de Solución de Control de Fuego">
+<!ENTITY hud.health.atp.tip "Su nivel de fatiga está actualmente al {1}. La fatiga es utilizada cuando corres, o realizas otras acciones que provoquen cansancio .">
+<!ENTITY hud.bailout.confirm "Do you want to bailout?">
+<!ENTITY hud.minimap.latlon "Su posición actual en Latitud y Longitud">
+<!ENTITY hud.readout.infantry.seat "asiento">
+<!ENTITY hud.minimap "Un mapa de los alrededores cercanos">
+<!ENTITY hud.gameinfo.icon.2 "Sin Iconos">
+<!ENTITY hud.minimap.out "Disminuir Zoom">
+<!ENTITY hud.binfo.state.theycapture "Enemy Capturing!">
+<!ENTITY hud.readout.infantry "Infantería">
+<!ENTITY hud.hqintel.far "Intel: &#37;ls enemy infantry presence &#37;ls of your position!">
+<!ENTITY hud.readout.agl "AGL Alt">
+<!ENTITY hud.alerts.28 "Enemy Spawn Point! Firing disabled- please leave the area!">
+<!ENTITY hud.alerts.18.captured "Las fuerzas enemigas han capturado {1}">
+<!ENTITY hud.cliptype.2.plural "cintas">
+<!ENTITY hud.readout.riding.seated "Montado en asiento">
+<!ENTITY hud.health.atp "Este icono representa su estado actual">
+<!ENTITY hud.minimap.nearest.none "lejos de ciudad">
+<!ENTITY hud.alerts.19.liberated "Nuestras fuerzas han liberado {1}">
+<!ENTITY hud.binfo.state.cancapture "Can Be Captured">
+<!ENTITY hud.hqintel.dir.0 "north">
+<!ENTITY hud.health.state.crew "TRIPULACIÓN">
+<!ENTITY hud.alerts.21.withdrawn "El objetivo de ataque ha sido retirado de {1}">
+<!ENTITY hud.hqintel.dir.6 "west">
+<!ENTITY hud.readout.torp.control.angle "Ángulo de Anticipación">
+<!ENTITY hud.minimap.in "Aumentar Zoom">
+<!ENTITY hud.binfo.state.alliesown "Allied Owned">
+<!ENTITY hud.alerts.16 "{1} está liderando tu misión ahora">
+<!ENTITY hud.alerts.13.fallback "Tu brigada está replegandose">
+<!ENTITY hud.readout.riding.lifeboat "En Bote">
+<!ENTITY hud.readout.gear.neutral "N">
+<!ENTITY hud.readout.torp.range "Distancia">
+<!ENTITY hud.binfo.state.wedefend "Friendlies Defending">
+<!ENTITY hud.cliptype.3 "recarga">
+<!ENTITY hud.alerts.25 "¡{1} necesita munición!">
+<!ENTITY hud.binfo.state.cantcapture "Not Capturable">
+<!ENTITY hud.binfo.state.notcontested "City is not Contested!">
+<!ENTITY hud.gameinfo.icon.1 "Tipo de Vehículo">
+<!ENTITY hud.binfo.state.contested "Contested Facility!">
+<!ENTITY hud.alerts.12.gained "Hemos ganado {1}">
+<!ENTITY hud.binfo.state.noao "No Attack Objective!">
+<!ENTITY hud.alerts.6 "Has perdido el apilamiento de suministros al alejarte">
+<!ENTITY hud.cliptype.1 "cargador">
+<!ENTITY hud.readout.vehicles.towed "Remolcado">
+<!ENTITY hud.binfo.state.capturein.s "Capturable in {1}s">
+<!ENTITY hud.alerts.19.acquired "Nuestras fuerzas han tomado {1}">
+<!ENTITY hud.alerts.27 "¡Te quedan menos de {1} minutos en su suscripción por horas!">
+<!ENTITY hud.hqintel.dir.4 "south">
+<!ENTITY hud.readout.torp.control.time "Tiempo de Impacto">
+<!ENTITY hud.secondary "SECUNDARIO">
+<!ENTITY hud.health.state.infantry "INFANTERÍA">
+<!ENTITY hud.alerts.23 "{1} está bajo ataque">
+<!ENTITY hud.readout.enemy "Enemigo a bordo">
+<!ENTITY hud.alerts.18.deliberated "Las fuerzas enemigas han retomado {1}">
+<!ENTITY hud.cliptype.0.plural "peines">
+<!ENTITY hud.readout.infantry.ship "a bordo del barco">
+<!ENTITY hud.hqintel.close "Intel: &#37;ls enemy infantry presence near your position!">
+<!ENTITY hud.readout.gear.engines "Motores">
+<!ENTITY hud.alerts.15 "Se te han dado nuevas órdenes">
+<!ENTITY hud.alerts.24.ground "Tropas enemigas avistadas cerca de {1}">
+<!ENTITY hud.binfo.state.wecapture "Friendlies Capturing">
+<!ENTITY hud.hqintel.weight.2 "Heavy">
+<!ENTITY hud.hqintel.dir.1 "northeast">
 <!ENTITY hud.health.blood "Este icono representa su estado actual">
+<!ENTITY hud.minimap.nearest "La ciudad mas cercana a tu posición">
 <!ENTITY hud.readout.vehicles.onhoist "Izado">
 <!ENTITY hud.readout.torp.aob "Ángulo al Casco">
 <!ENTITY persona.welcome.axis "FUERZAS DEL EJE">
@@ -4237,33 +4251,43 @@
 <!ENTITY combat.back.tip "Volver a Tutoriales.">
 <!ENTITY combat.vehicle.name "UNIDAD">
 <!ENTITY connect.login.handshake.lost "Perdida conexión al servidor durante la sincronización">
-<!ENTITY connect.lost.reconnect "Conexión al chat perdida, reconectando">
 <!ENTITY connect.login.auth.failed "Autentificación fallida">
-<!ENTITY connect.chat.noredirect "Error en la red durante la autentificación en el chat">
-<!ENTITY connect.login.noopen "Imposible abrir conexión contra el servidor">
-<!ENTITY connect.chat.fail "Conexión al chat fallida">
-<!ENTITY connect.lost.world "Conexión al terreno de juego perdida">
+<!ENTITY connect.ping.notactive "Ping: ...">
 <!ENTITY connect.popup.title "Error de Red">
 <!ENTITY connect.find.nonefound "Inicialización de la red fallida/no hay red disponible">
-<!ENTITY connect.login.auth.lost "Perdida la conexión durante la autentificación">
+<!ENTITY connect.ping.stats.full "Ping: &#37;ums, Avg: &#37;ums, &#37;ls: &#37;.1f&#37;&#37;.">
 <!ENTITY connect.login.timeout "Ha expirado la conexión al servidor">
-<!ENTITY connect.login.chat.timeout "Ha expirado la conexión al chat">
 <!ENTITY connect.find.cantopen "Imposible abrir una conexión a la red del juego">
-<!ENTITY connect.lost.chat "Perdida la conexión al servidor de chat">
-<!ENTITY connect.login.badlogin "Fallo inesperado al autentificarse con su cuenta">
 <!ENTITY connect.lost.game "Conexión al juego perdida">
-<!ENTITY connect.find.timeout.network "Ha expirado la conexión a la red del juego">
 <!ENTITY connect.find.timeout.data "Ha expirado al obtener datos de conexión">
 <!ENTITY connect.login.chat.lost "Perdida la conexión al juego durante la conexión al chat">
+<!ENTITY connect.ping.lossbig "*PACKET LOSS*">
+<!ENTITY connect.ping.stats.brief "Ping: &#37;u(&#37;u)ms">
 <!ENTITY connect.find.nodata "Error obteniendo datos de conexión">
+<!ENTITY connect.ping.loss "Loss">
 <!ENTITY connect.fail "Conexión fallida">
 <!ENTITY connect.login.auth.timeout "Tiempo expirado durante la autentificación">
-<!ENTITY connect.reconnect.failed "perdida la conexión al servidor, reconexión fallida">
 <!ENTITY connect.login.chat.error "Imposible conectar al servidor de chat">
-<!ENTITY connect.login.error "Error al conectar al servidor">
-<!ENTITY connect.refused "Conexión rechazada por el servidor">
-<!ENTITY connect.find.nobest "Imposible conectar a la red del juego">
+<!ENTITY connect.ping.kbps "Kbps: &#37;.1f in, &#37;.1f out.">
 <!ENTITY connect.lost "&#37;ls: Error #&#37;u">
+<!ENTITY connect.lost.reconnect "Conexión al chat perdida, reconectando">
+<!ENTITY connect.login.noopen "Imposible abrir conexión contra el servidor">
+<!ENTITY connect.chat.noredirect "Error en la red durante la autentificación en el chat">
+<!ENTITY connect.chat.fail "Conexión al chat fallida">
+<!ENTITY connect.lost.world "Conexión al terreno de juego perdida">
+<!ENTITY connect.login.auth.lost "Perdida la conexión durante la autentificación">
+<!ENTITY connect.login.chat.timeout "Ha expirado la conexión al chat">
+<!ENTITY connect.lost.chat "Perdida la conexión al servidor de chat">
+<!ENTITY connect.login.badlogin "Fallo inesperado al autentificarse con su cuenta">
+<!ENTITY connect.find.timeout.network "Ha expirado la conexión a la red del juego">
+<!ENTITY connect.netcode2.reverting "[netcode2 connection failed, please check your firewall - reverting to standard network usage]">
+<!ENTITY connect.ping.na "Ping: N/A">
+<!ENTITY connect.netcode2.firewall "[netcode2 connection failed, please check your firewall - reverting to standard network usage]">
+<!ENTITY connect.login.error "Error al conectar al servidor">
+<!ENTITY connect.reconnect.failed "perdida la conexión al servidor, reconexión fallida">
+<!ENTITY connect.refused "Conexión rechazada por el servidor">
+<!ENTITY connect.netcode2.disabled "[netcode2 disabled on server]">
+<!ENTITY connect.find.nobest "Imposible conectar a la red del juego">
 <!ENTITY connect.login.nochat "Fallo al conectar al chat">
 <!ENTITY waypoints.stop "parada">
 <!ENTITY waypoints.turn4 "giro 4">

@@ -3559,12 +3559,9 @@
 <!ENTITY chat.channel.help "帮助">
 <!ENTITY chat.f1.tip "点击以设定频道 #1. 使用您键盘上的F1，在这个频道聊天。">
 <!ENTITY hud.secondary.tip "您当前辅助武器弹药的装载形式：弹药夹">
-<!ENTITY hud.readout.torp.control.invalid "没有有效的火控方案！">
 <!ENTITY hud.gameinfo.icon "图标模式">
-<!ENTITY hud.readout.torp.control "射击方案火力射角">
 <!ENTITY hud.primary "主武器">
 <!ENTITY hud.alerts.18.acquired "我军已经占领了 {1}">
-<!ENTITY hud.health.atp.tip "您的体力数值是 {1}. 在您进行奔跑，匍匐前进和其他一些活动时都会消耗体力值。.">
 <!ENTITY hud.alerts.17 "您由 {1} 提供了补给">
 <!ENTITY hud.readout.vehicles "交通工具">
 <!ENTITY hud.hqintel.weight.0 "轻">
@@ -3575,90 +3572,45 @@
 <!ENTITY hud.alerts.30.minalt "你的高度在跳伞所需最低高度之下!">
 <!ENTITY hud.readout.invisible "不可见">
 <!ENTITY hud.alerts.12.lost "我们失去了 {1}">
-<!ENTITY hud.minimap.latlon "您当前位置的经纬度">
-<!ENTITY hud.readout.infantry.seat "座位">
+<!ENTITY hud.binfo.state.axisown "红军拥有">
 <!ENTITY hud.readout.gear.engine "引擎">
-<!ENTITY hud.minimap "您周围地形的地图">
 <!ENTITY hud.alerts.19.captured "敌军占领了 {1}">
-<!ENTITY hud.gameinfo.icon.2 "没有图标">
 <!ENTITY hud.cliptype.4 "鼓形弹夹">
-<!ENTITY hud.minimap.out "缩小">
-<!ENTITY hud.readout.infantry "步兵">
 <!ENTITY hud.gameinfo.fov "视野">
 <!ENTITY hud.hqintel.dir.5 "西南">
 <!ENTITY hud.readout.riding.stowed "装填到位">
 <!ENTITY hud.readout.slip "侧滑角">
-<!ENTITY hud.hqintel.far "Intel: &#37;ls 敌步兵显示 &#37;ls 你位置!">
 <!ENTITY hud.alerts.5 "您即将失去您的储备弹药">
 <!ENTITY hud.alerts.18.liberated "我军解放了 {1}">
-<!ENTITY hud.readout.agl "离地高度">
-<!ENTITY hud.alerts.28 "敌军的出生点！无法开火-请撤离此区域！">
-<!ENTITY hud.cliptype.2.plural "弹链">
-<!ENTITY hud.alerts.18.captured "敌军已经占领了 {1}">
-<!ENTITY hud.readout.riding.seated "驾驶">
 <!ENTITY hud.hqintel.dir.2 "东">
 <!ENTITY hud.readout.visible "可见">
 <!ENTITY hud.gameinfo.fps "帧数">
 <!ENTITY hud.readout.gear "档位">
-<!ENTITY hud.minimap.nearest.none "附近没有城镇">
-<!ENTITY hud.health.atp "这个图标显示的是您的当前的状态。">
-<!ENTITY hud.alerts.19.liberated "我军解放了 {1}">
 <!ENTITY hud.readout.position "位置">
-<!ENTITY hud.health.state.crew "乘员">
-<!ENTITY hud.hqintel.dir.0 "北">
 <!ENTITY hud.readout.torp.bearing "相对方位">
 <!ENTITY hud.alerts.13.hold "您的战斗旅被命令不惜一切坚守">
-<!ENTITY hud.alerts.21.withdrawn "攻击目标已经从 {1} 撤销了">
 <!ENTITY hud.readout.riding.ship "在船板上">
 <!ENTITY hud.alerts.24.air "{1} 附近发现敌空军力量">
-<!ENTITY hud.readout.torp.control.angle "超前角">
 <!ENTITY hud.readout.range "射程设置">
-<!ENTITY hud.hqintel.dir.6 "西">
-<!ENTITY hud.minimap.in "放大">
 <!ENTITY hud.cliptype.1.plural "弹夹">
-<!ENTITY hud.readout.riding.lifeboat "在救生船">
-<!ENTITY hud.alerts.13.fallback "您的战斗旅正在撤退">
-<!ENTITY hud.alerts.16 "{1}正在领导整个任务">
-<!ENTITY hud.readout.gear.neutral "空挡">
 <!ENTITY hud.readout.riding.hoisted "正被吊起">
-<!ENTITY hud.readout.torp.range "射程">
-<!ENTITY hud.alerts.25 "{1} 需要弹药！">
-<!ENTITY hud.cliptype.3 "弹夹">
-<!ENTITY hud.gameinfo.icon.1 "交通工具模式">
-<!ENTITY hud.alerts.12.gained "我们现在拥有 {1}">
 <!ENTITY hud.readout.infantry.lifeboat "救生船">
 <!ENTITY hud.readout.vehicles.stowed "理仓">
-<!ENTITY hud.alerts.6 "您已经失去了您的储备弹药">
+<!ENTITY hud.binfo.state.nofire "该区域不能射击!">
 <!ENTITY hud.cliptype.3.plural "弹夹">
-<!ENTITY hud.cliptype.1 "弹夹">
 <!ENTITY hud.cliptype.0 "弹夹">
-<!ENTITY hud.readout.vehicles.towed "拖曳">
 <!ENTITY hud.readout.gear.reverse "倒档">
 <!ENTITY hud.health.blood.tip "您的当前生命值是 {1}.">
 <!ENTITY hud.gameinfo.time "时间">
+<!ENTITY hud.binfo.state.capturein.m.s "在 {1}分{2}秒后才可占领">
 <!ENTITY hud.readout.torp.speed "速度">
-<!ENTITY hud.alerts.19.acquired "我军占领了 {1}">
 <!ENTITY hud.readout.torp.depth "鱼雷深度">
-<!ENTITY hud.alerts.27 "您的付费账户剩余时间少于 {1} 分钟！">
-<!ENTITY hud.hqintel.dir.4 "南">
-<!ENTITY hud.readout.torp.control.time "碰撞时间">
 <!ENTITY hud.primary.weapon "武器">
-<!ENTITY hud.secondary "辅助武器">
 <!ENTITY hud.cliptype.4.plural "鼓形弹夹">
-<!ENTITY hud.readout.enemy "敌军船上">
-<!ENTITY hud.alerts.23 "{1} 正在遭受攻击">
-<!ENTITY hud.health.state.infantry "步兵">
 <!ENTITY hud.primary.tip "您当前主武器弹药的装载形式：弹药夹">
 <!ENTITY hud.alerts.30.deadpilot "你的飞行员已死!">
-<!ENTITY hud.alerts.18.deliberated "敌军收复了 {1}">
-<!ENTITY hud.cliptype.0.plural "弹夹">
-<!ENTITY hud.readout.infantry.ship "在船板上">
-<!ENTITY hud.hqintel.close "Intel: &#37;ls 敌步兵显示靠近你的位置!">
-<!ENTITY hud.readout.gear.engines "引擎">
-<!ENTITY hud.alerts.15 "您接收到了新的命令">
 <!ENTITY hud.readout.gforce "G">
 <!ENTITY hud.alerts.24.armor "{1} 附近发现敌装甲力量">
-<!ENTITY hud.alerts.24.ground "{1} 附近发现敌人军队">
 <!ENTITY hud.health.state "这个图标显示的是你的当前状态">
 <!ENTITY hud.hqintel.weight.1 "中等">
 <!ENTITY hud.hqintel.dir.3 "东南">
@@ -3666,14 +3618,76 @@
 <!ENTITY hud.readout.riding.towed "拖曳">
 <!ENTITY hud.alerts.19.deliberated "敌军收复了 {1}">
 <!ENTITY hud.readout.gear.kaput "损毁">
-<!ENTITY hud.hqintel.weight.2 "很重">
 <!ENTITY hud.cliptype.2 "弹链">
 <!ENTITY hud.alerts.14 "引入的接触报告">
-<!ENTITY hud.hqintel.dir.1 "东北">
 <!ENTITY hud.hqintel.dir.7 "西北">
 <!ENTITY hud.gameinfo.icon.0 "正常">
-<!ENTITY hud.minimap.nearest "离您最近的城镇">
+<!ENTITY hud.readout.torp.control.invalid "没有有效的火控方案！">
+<!ENTITY hud.readout.torp.control "射击方案火力射角">
+<!ENTITY hud.health.atp.tip "您的体力数值是 {1}. 在您进行奔跑，匍匐前进和其他一些活动时都会消耗体力值。.">
+<!ENTITY hud.bailout.confirm "你要跳伞吗?">
+<!ENTITY hud.minimap.latlon "您当前位置的经纬度">
+<!ENTITY hud.readout.infantry.seat "座位">
+<!ENTITY hud.minimap "您周围地形的地图">
+<!ENTITY hud.gameinfo.icon.2 "没有图标">
+<!ENTITY hud.minimap.out "缩小">
+<!ENTITY hud.binfo.state.theycapture "敌军占领!">
+<!ENTITY hud.readout.infantry "步兵">
+<!ENTITY hud.hqintel.far "Intel: &#37;ls 敌步兵显示 &#37;ls 你位置!">
+<!ENTITY hud.readout.agl "离地高度">
+<!ENTITY hud.alerts.28 "敌军的出生点！无法开火-请撤离此区域！">
+<!ENTITY hud.alerts.18.captured "敌军已经占领了 {1}">
+<!ENTITY hud.cliptype.2.plural "弹链">
+<!ENTITY hud.readout.riding.seated "驾驶">
+<!ENTITY hud.health.atp "这个图标显示的是您的当前的状态。">
+<!ENTITY hud.minimap.nearest.none "附近没有城镇">
+<!ENTITY hud.alerts.19.liberated "我军解放了 {1}">
+<!ENTITY hud.binfo.state.cancapture "可以占领">
+<!ENTITY hud.hqintel.dir.0 "北">
+<!ENTITY hud.health.state.crew "乘员">
+<!ENTITY hud.alerts.21.withdrawn "攻击目标已经从 {1} 撤销了">
+<!ENTITY hud.hqintel.dir.6 "西">
+<!ENTITY hud.readout.torp.control.angle "超前角">
+<!ENTITY hud.minimap.in "放大">
+<!ENTITY hud.binfo.state.alliesown "盟军拥有">
+<!ENTITY hud.alerts.16 "{1}正在领导整个任务">
+<!ENTITY hud.alerts.13.fallback "您的战斗旅正在撤退">
+<!ENTITY hud.readout.riding.lifeboat "在救生船">
+<!ENTITY hud.readout.gear.neutral "空挡">
+<!ENTITY hud.readout.torp.range "射程">
+<!ENTITY hud.binfo.state.wedefend "友军防守">
+<!ENTITY hud.cliptype.3 "弹夹">
+<!ENTITY hud.alerts.25 "{1} 需要弹药！">
+<!ENTITY hud.binfo.state.cantcapture "不能占领">
+<!ENTITY hud.binfo.state.notcontested "城市不在争夺中!">
+<!ENTITY hud.gameinfo.icon.1 "交通工具模式">
+<!ENTITY hud.binfo.state.contested "争夺中的设施!">
+<!ENTITY hud.alerts.12.gained "我们现在拥有 {1}">
+<!ENTITY hud.binfo.state.noao "没有攻击目标!">
+<!ENTITY hud.alerts.6 "您已经失去了您的储备弹药">
+<!ENTITY hud.cliptype.1 "弹夹">
+<!ENTITY hud.readout.vehicles.towed "拖曳">
+<!ENTITY hud.binfo.state.capturein.s "在 {1}秒后才可占领">
+<!ENTITY hud.alerts.19.acquired "我军占领了 {1}">
+<!ENTITY hud.alerts.27 "您的付费账户剩余时间少于 {1} 分钟！">
+<!ENTITY hud.hqintel.dir.4 "南">
+<!ENTITY hud.readout.torp.control.time "碰撞时间">
+<!ENTITY hud.secondary "辅助武器">
+<!ENTITY hud.health.state.infantry "步兵">
+<!ENTITY hud.alerts.23 "{1} 正在遭受攻击">
+<!ENTITY hud.readout.enemy "敌军船上">
+<!ENTITY hud.alerts.18.deliberated "敌军收复了 {1}">
+<!ENTITY hud.cliptype.0.plural "弹夹">
+<!ENTITY hud.readout.infantry.ship "在船板上">
+<!ENTITY hud.hqintel.close "Intel: &#37;ls 敌步兵显示靠近你的位置!">
+<!ENTITY hud.readout.gear.engines "引擎">
+<!ENTITY hud.alerts.15 "您接收到了新的命令">
+<!ENTITY hud.alerts.24.ground "{1} 附近发现敌人军队">
+<!ENTITY hud.binfo.state.wecapture "友军占领!">
+<!ENTITY hud.hqintel.weight.2 "很重">
+<!ENTITY hud.hqintel.dir.1 "东北">
 <!ENTITY hud.health.blood "这个图标显示的是您的当前状态">
+<!ENTITY hud.minimap.nearest "离您最近的城镇">
 <!ENTITY hud.readout.vehicles.onhoist "起重">
 <!ENTITY hud.readout.torp.aob "船首角">
 <!ENTITY persona.welcome.axis "红国">
@@ -4446,33 +4460,43 @@
 <!ENTITY combat.back.tip "返回训练任务选择界面。">
 <!ENTITY combat.vehicle.name "单位">
 <!ENTITY connect.login.handshake.lost "在网络初始化阶段与服务器失去连接">
-<!ENTITY connect.lost.reconnect "与聊天服务器失去联系，正在尝试重新连接">
 <!ENTITY connect.login.auth.failed "验证失败">
-<!ENTITY connect.chat.noredirect "登录聊天服务器时，发生网络错误">
-<!ENTITY connect.login.noopen "无法打开战场服务器的连接">
-<!ENTITY connect.chat.fail "连接聊天服务器失败">
-<!ENTITY connect.lost.world "与战场服务器失去联系">
+<!ENTITY connect.ping.notactive "Ping: ...">
 <!ENTITY connect.popup.title "网络错误">
 <!ENTITY connect.find.nonefound "网络初始化失败或者没有可用网络">
-<!ENTITY connect.login.auth.lost "验证期间，失去连接">
+<!ENTITY connect.ping.stats.full "Ping: &#37;ums, Avg: &#37;ums, &#37;ls: &#37;.1f&#37;&#37;.">
 <!ENTITY connect.login.timeout "连接游戏服务器超时">
-<!ENTITY connect.login.chat.timeout "连接聊天服务器超时">
 <!ENTITY connect.find.cantopen "无法打开游戏的网络连接">
-<!ENTITY connect.lost.chat "与聊天服务器失去联系">
-<!ENTITY connect.login.badlogin "未预料的登录失败">
 <!ENTITY connect.lost.game "游戏连接丢失">
-<!ENTITY connect.find.timeout.network "与游戏网络连接超时">
 <!ENTITY connect.find.timeout.data "获取连接数据超时">
 <!ENTITY connect.login.chat.lost "在连接聊天服务器过程中失去与游戏的连接">
+<!ENTITY connect.ping.lossbig "*PACKET LOSS*">
+<!ENTITY connect.ping.stats.brief "Ping: &#37;u(&#37;u)ms">
 <!ENTITY connect.find.nodata "请求连接数据出错">
+<!ENTITY connect.ping.loss "Loss">
 <!ENTITY connect.fail "连接失败">
 <!ENTITY connect.login.auth.timeout "验证超时">
-<!ENTITY connect.reconnect.failed "与战场服务器失去联系，重新尝试连接失败">
 <!ENTITY connect.login.chat.error "无法连接聊天服务器">
-<!ENTITY connect.login.error "连接游戏服务器出错">
-<!ENTITY connect.refused "战场服务器拒绝连接">
-<!ENTITY connect.find.nobest "无法连接游戏网络">
+<!ENTITY connect.ping.kbps "Kbps: &#37;.1f in, &#37;.1f out.">
 <!ENTITY connect.lost "&#37;ls: Error #&#37;u">
+<!ENTITY connect.lost.reconnect "与聊天服务器失去联系，正在尝试重新连接">
+<!ENTITY connect.login.noopen "无法打开战场服务器的连接">
+<!ENTITY connect.chat.noredirect "登录聊天服务器时，发生网络错误">
+<!ENTITY connect.chat.fail "连接聊天服务器失败">
+<!ENTITY connect.lost.world "与战场服务器失去联系">
+<!ENTITY connect.login.auth.lost "验证期间，失去连接">
+<!ENTITY connect.login.chat.timeout "连接聊天服务器超时">
+<!ENTITY connect.lost.chat "与聊天服务器失去联系">
+<!ENTITY connect.login.badlogin "未预料的登录失败">
+<!ENTITY connect.find.timeout.network "与游戏网络连接超时">
+<!ENTITY connect.netcode2.reverting "[netcode2 第二连接方案（UDP)失败，请检查你的防火墙或其它设置 - 正换成标准网络连接（TCP）]">
+<!ENTITY connect.ping.na "Ping: N/A">
+<!ENTITY connect.netcode2.firewall "[netcode2 第二连接方案（UDP)失败，请检查你的防火墙或其它设置 - 正换成标准网络连接（TCP）]">
+<!ENTITY connect.login.error "连接游戏服务器出错">
+<!ENTITY connect.reconnect.failed "与战场服务器失去联系，重新尝试连接失败">
+<!ENTITY connect.refused "战场服务器拒绝连接">
+<!ENTITY connect.netcode2.disabled "[服务器已关闭netcode2第二连接方案（UDP)]">
+<!ENTITY connect.find.nobest "无法连接游戏网络">
 <!ENTITY connect.login.nochat "聊天服务器连接失败">
 <!ENTITY waypoints.stop "停止">
 <!ENTITY waypoints.turn4 "转弯 4">
@@ -4502,30 +4526,3 @@
 <!ENTITY waypoints.origin.tip "任务起点: 这里是您的任务起点；查看任务目标可以了解更多的任务细节信息。">
 <!ENTITY waypoints.target "任务目标">
 <!ENTITY waypoints.turn2 "转弯 2">
-<!ENTITY ppos.badlocation "你不能在这种地形里部署这类物体!">
-<!ENTITY ppos.badtrees "有棵树正堵着你的物体！">
-<!ENTITY ppos.badtarget.toofar "你离你的任务目标太远，不能部署这类物体！！">
-<!ENTITY ppos.badavoidance "你离另一个物体太近！">
-<!ENTITY ppos.ob3 "野外补给单位（移动兵站）">
-<!ENTITY ppos.badtarget.tooclose "你离你的任务目标太近，不能部署这类物体！">
-<!ENTITY ppos.badplayer "你只有进入战场才能部署物体！">
-<!ENTITY ppos.ob1 "步兵掩体">
-<!ENTITY ppos.badspeed "你不能在移动中部署这类物体！">
-<!ENTITY ppos.fru.notleader "这个任务当前已有一个野外补给单位（移动兵站）">
-<!ENTITY ppos.badenemyfac.toofar "你离敌人设施太远，不能部署这类物体！">
-<!ENTITY ppos.coolingdown "间隔时间太短，请稍后再部署！">
-<!ENTITY ppos.badfriendlyfac.tooclose "你离你方的设施太近，不能部署这类物体！">
-<!ENTITY ppos.building "建筑: {1}">
-<!ENTITY ppos.badfriendlyfac.toofar "你离你方设施太远，不能部署这类物体！">
-<!ENTITY ppos.badenemyfac.tooclose "你离敌人设施太近，不能部署这类物体！">
-<!ENTITY ppos.badtargetrange.tooclose "You are too close to your mission target for this object type!">
-<!ENTITY ppos.fru.build "你是否要在这建一个野外补给单位（移动兵站）？">
-<!ENTITY ppos.badvehicle "另一个玩家正堵着你的物体！">
-<!ENTITY ppos.badtargetrange.toofar "You are too far from your mission target for this object type!">
-<!ENTITY ppos.ob2 "防御工事">
-<!ENTITY ppos.noinside "你不能在建筑中部署这类物体！">
-<!ENTITY ppos.badplacement "地点不正确!">
-<!ENTITY ppos.ob4 "野外补给单位（移动兵站）">
-<!ENTITY ppos.built "&#37;ls 部署完成！">
-<!ENTITY ppos.invalidnow "目标位置无效！">
-<!ENTITY ppos.badangle "地面坡度太陡!">
