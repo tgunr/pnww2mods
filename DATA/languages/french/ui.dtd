@@ -2781,6 +2781,7 @@
 <!ENTITY mission.aartab.aars.aar.factorieshit "USINES TOUCHEES">
 <!ENTITY mission.brieftab.members.rank "GRADE">
 <!ENTITY mission.aartab.aars.aar "SORTIE">
+<!ENTITY mission.orders.objectdestroyed "Votre base avancée &#37;ls à été détruite!">
 <!ENTITY mission.spawn.denied0 "Votre base d&#39;entrée n&#39;est pas valide.">
 <!ENTITY mission.readytab.spawn.spawnable "Pour réserver un véhicule ou une troupe, cliquez une fois sur le matériel de votre choix, puis sur le bouton RESERVER. Vous pouvez également faire un double-clic. Le matériel est à vous jusqu&#39;à ce que vous annuliez la réservation. Si vous quittez la mission ou si vous ne ramenez pas le véhicule à la base, vous perdez également le matériel.">
 <!ENTITY mission.readytab.mouseover "Passez le curseur de la souris sur une unité pour avoir des informations sur sa disponibilité">
@@ -2789,6 +2790,7 @@
 <!ENTITY mission.spawn.denied10 "Délai activé. Attendez la fin du compteur...">
 <!ENTITY mission.state.0 "Votre mission n&#39;est plus disponible. Merci de la quitter et d&#39;en choisir une autre.">
 <!ENTITY mission.spawn.denied5 "Le point mobile de renforts n&#39;est plus disponible.">
+<!ENTITY mission.orders.basecaptured "Votre base &#37;ls a été capturée!">
 <!ENTITY mission.back.tip "Retour au QG de votre brigade. Si vous êtes le chef de la mission, la mission sera annulée.">
 <!ENTITY mission.readytab.commander "COMMANDANT">
 <!ENTITY mission.readytab.supply.status.normal "Ce bâtiment est ravitaillé. Les renforts sont envoyés normalement.">
@@ -3583,7 +3585,7 @@
 <!ENTITY hud.alerts.30.minalt "Vous êtes sous l&#39;altitude minimum pour sauter!">
 <!ENTITY hud.readout.invisible "Invisible">
 <!ENTITY hud.alerts.12.lost "{1} est occupé par l&#39;ennemi">
-<!ENTITY hud.binfo.state.axisown "Axis Owned">
+<!ENTITY hud.binfo.state.axisown "Tenus par l&#39;axe">
 <!ENTITY hud.readout.gear.engine "Moteur">
 <!ENTITY hud.alerts.19.captured "Les forces ennemies ont capturé {1}">
 <!ENTITY hud.cliptype.4 "tambour">
@@ -3607,13 +3609,13 @@
 <!ENTITY hud.readout.riding.hoisted "en train d&#39;être levé">
 <!ENTITY hud.readout.infantry.lifeboat "Bateau de secours">
 <!ENTITY hud.readout.vehicles.stowed "Levé">
-<!ENTITY hud.binfo.state.nofire "No Fire Zone!">
+<!ENTITY hud.binfo.state.nofire "Pas une zone de tir!">
 <!ENTITY hud.cliptype.3.plural "recharges">
 <!ENTITY hud.cliptype.0 "clip">
 <!ENTITY hud.readout.gear.reverse "R">
 <!ENTITY hud.health.blood.tip "Votre pression artérielle est à {1}.">
 <!ENTITY hud.gameinfo.time "TEMPS">
-<!ENTITY hud.binfo.state.capturein.m.s "Capturable in {1}m {2}s">
+<!ENTITY hud.binfo.state.capturein.m.s "Capturable dans {1}m {2}s">
 <!ENTITY hud.readout.torp.speed "Vitesse">
 <!ENTITY hud.readout.torp.depth "profondeur de la Torpille">
 <!ENTITY hud.primary.weapon "ARME">
@@ -3636,13 +3638,13 @@
 <!ENTITY hud.readout.torp.control.invalid "Pas de solution de tir valide!">
 <!ENTITY hud.readout.torp.control "Solution de tir  angle de feu">
 <!ENTITY hud.health.atp.tip "Votre condition physique est à {1}. Elle est utilisée pour courir, ramper et d&#39;autres actions fatigantes.">
-<!ENTITY hud.bailout.confirm "Do you want to bailout?">
+<!ENTITY hud.bailout.confirm "Vous voulez sauter?">
 <!ENTITY hud.minimap.latlon "Votre position actuelle, latitude et longitude">
 <!ENTITY hud.readout.infantry.seat "siège">
 <!ENTITY hud.minimap "Une carte de vos abords immédiats">
 <!ENTITY hud.gameinfo.icon.2 "Pas d&#39;icône">
 <!ENTITY hud.minimap.out "Dézoommer">
-<!ENTITY hud.binfo.state.theycapture "Enemy Capturing!">
+<!ENTITY hud.binfo.state.theycapture "Capturé par l&#39;ennemi!">
 <!ENTITY hud.readout.infantry "Infanterie">
 <!ENTITY hud.hqintel.far "Intel: &#37;ls Infanterie ennemie à  &#37;ls de votre position!">
 <!ENTITY hud.readout.agl "AGL Alt">
@@ -3653,32 +3655,32 @@
 <!ENTITY hud.health.atp "Cet icône représente l&#39;état de votre condition physique">
 <!ENTITY hud.minimap.nearest.none "Aucune ville à proximité">
 <!ENTITY hud.alerts.19.liberated "Nos forces ont libéré  {1}">
-<!ENTITY hud.binfo.state.cancapture "Can Be Captured">
+<!ENTITY hud.binfo.state.cancapture "Peut être capturé">
 <!ENTITY hud.hqintel.dir.0 "Nord">
 <!ENTITY hud.health.state.crew "EQUIPAGE">
 <!ENTITY hud.alerts.21.withdrawn "L&#39;objective d&#39;attaque à été retiré par {1}">
 <!ENTITY hud.hqintel.dir.6 "Ouest">
 <!ENTITY hud.readout.torp.control.angle "Angle directeur">
 <!ENTITY hud.minimap.in "Zoomer">
-<!ENTITY hud.binfo.state.alliesown "Allied Owned">
+<!ENTITY hud.binfo.state.alliesown "Tenue par les alliés">
 <!ENTITY hud.alerts.16 "{1} est désormais le leader de la mission">
 <!ENTITY hud.alerts.13.fallback "Votre brigade fait retraite">
 <!ENTITY hud.readout.riding.lifeboat "Dans le bateau">
 <!ENTITY hud.readout.gear.neutral "N">
 <!ENTITY hud.readout.torp.range "Distance">
-<!ENTITY hud.binfo.state.wedefend "Friendlies Defending">
+<!ENTITY hud.binfo.state.wedefend "Défense amie">
 <!ENTITY hud.cliptype.3 "recharge">
 <!ENTITY hud.alerts.25 "{1} Besoin de munition!">
-<!ENTITY hud.binfo.state.cantcapture "Not Capturable">
-<!ENTITY hud.binfo.state.notcontested "City is not Contested!">
+<!ENTITY hud.binfo.state.cantcapture "Non capturable">
+<!ENTITY hud.binfo.state.notcontested "Ville non contestée">
 <!ENTITY hud.gameinfo.icon.1 "Type de véhicule">
-<!ENTITY hud.binfo.state.contested "Contested Facility!">
+<!ENTITY hud.binfo.state.contested "Facilité contestée!">
 <!ENTITY hud.alerts.12.gained "Nous avons capturé {1}">
-<!ENTITY hud.binfo.state.noao "No Attack Objective!">
+<!ENTITY hud.binfo.state.noao "N&#39;est pas un objectif d&#39;attaque!">
 <!ENTITY hud.alerts.6 "Vous avez perdu votre stock de munitions">
 <!ENTITY hud.cliptype.1 "mag">
 <!ENTITY hud.readout.vehicles.towed "tracté">
-<!ENTITY hud.binfo.state.capturein.s "Capturable in {1}s">
+<!ENTITY hud.binfo.state.capturein.s "Capturable dans {1}s">
 <!ENTITY hud.alerts.19.acquired "Nos forces ont pris {1}">
 <!ENTITY hud.alerts.27 "Il reste moins d&#39;1 minute de vous souscription d&#39;1 heure!">
 <!ENTITY hud.hqintel.dir.4 "Sud">
@@ -3694,7 +3696,7 @@
 <!ENTITY hud.readout.gear.engines "Moteurs">
 <!ENTITY hud.alerts.15 "Vous avez de nouveaux ordres">
 <!ENTITY hud.alerts.24.ground "Unité ennemie repérée près de {1}">
-<!ENTITY hud.binfo.state.wecapture "Friendlies Capturing">
+<!ENTITY hud.binfo.state.wecapture "Capturé par les amis">
 <!ENTITY hud.hqintel.weight.2 "Lourd">
 <!ENTITY hud.hqintel.dir.1 "Nord Est">
 <!ENTITY hud.health.blood "Cet icône représente l&#39;état de votre pression artérielle">
@@ -4271,13 +4273,13 @@
 <!ENTITY connect.lost.chat "Perte de la connexion au serveur Chat">
 <!ENTITY connect.login.badlogin "Erreur de login imprévue">
 <!ENTITY connect.find.timeout.network "Temps de connexion au réseau dépassé">
-<!ENTITY connect.netcode2.reverting "[netcode2 connection failed, please check your firewall - reverting to standard network usage]">
+<!ENTITY connect.netcode2.reverting "[netcode2 connection failed, Vérifiez votre pare feu - reverting to standard network usage]">
 <!ENTITY connect.ping.na "Ping: N/A">
-<!ENTITY connect.netcode2.firewall "[netcode2 connection failed, please check your firewall - reverting to standard network usage]">
+<!ENTITY connect.netcode2.firewall "[netcode2 connection failed, vérifiez votre pare feu - reverting to standard network usage]">
 <!ENTITY connect.login.error "Erreur en se connectant au serveur">
 <!ENTITY connect.reconnect.failed "Connexion avec le serveur perdu, reconnexion échouée">
 <!ENTITY connect.refused "Connexion refusée avec le serveur">
-<!ENTITY connect.netcode2.disabled "[netcode2 disabled on server]">
+<!ENTITY connect.netcode2.disabled "[netcode2 Hors service sur le serveur]">
 <!ENTITY connect.find.nobest "Impossible de se connecter au réseau">
 <!ENTITY connect.login.nochat "Echec de la connexion au Chat">
 <!ENTITY waypoints.stop "stop">
