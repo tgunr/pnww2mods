@@ -428,7 +428,13 @@
 				var tip 	= getlocstring('brigades.list.status.inactive.tip');
 				var status 	= (brigade.objective) ? brigade.objective.name: getlocstring('brigades.list.status.active');
 				var squad	= (brigade.issquadbrigade) ? "<caption class='chaticon' x='370' y='2' width='12' height='12' acceptmouseclick='false' onshow='this.channelname = \"squad\"'/>": "";
-				var icon	= (brigade.mobilespawns > 0) ? "<image x='389' y='2' src='ui/textures/test/mobilespawn_icon.bmp' width='16' height='16'/>": "";
+				var icon	= "";//(brigade.mobilespawns > 0) ? "<image x='389' y='2' src='ui/textures/test/mobilespawn_icon.bmp' width='16' height='16'/>": "";
+				
+				if(brigade.mobilespawns > 0)
+					icon = "<image x='389' y='2' src='ui/textures/map-checkbox-on.bmp' width='16' height='16'/>";
+				else
+					icon = "<image x='389' y='2' src='ui/textures/map-checkbox-off.bmp' width='16' height='16'/>";
+				
 				var color 	= getBrigadeColor(brigade);
 				var pop		= brigade.populationrank / 9;
 				var label	= htmlencode(brigade.nick);

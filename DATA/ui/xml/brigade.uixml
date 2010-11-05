@@ -170,9 +170,20 @@
 
 						for(var i = 0; i < missions.length; i++)
 						{
-							var mission = missions[i];
+							var mission 	= missions[i];
 							
-							var ms 			= (mission.mobilespawn) ? "<image x='397' y='4' src='ui/textures/test/mobilespawn_icon.bmp' width='16' height='16'/>": "";
+							if(!mission.open && game.betarelease == 0)
+								continue;
+							
+							var ms = "";
+							
+							if(mission.mobilespawn)
+								ms = "<image x='397' y='4' src='ui/textures/map-checkbox-on.bmp' width='16' height='16'/>";
+							else if(mission.canmobilespawn)
+								ms = "<image x='397' y='4' src='ui/textures/map-checkbox-off.bmp' width='16' height='16'/>";
+							else
+								ms = "<image x='397' y='4' src='ui/textures/map-checkbox-off.bmp' width='16' height='16'/><caption label='x' x='395' y='4' width='16' height='16' acceptmouseclick='false' style='color: #FF0000l' align='center'/>";
+							
 							var squad		= (mission.issquadmission) ? "<caption class='chaticon' x='375' y='4' width='12' height='12' acceptmouseclick='false' onshow='this.channelname = \"squad\"'/>": "";
 							var origin 		= (mission.origin.stratclass != "cp") ? mission.origin.parent.name: mission.origin.name;
 							var target		= (mission.target.stratclass != "cp") ? mission.target.parent.name: mission.target.name;
