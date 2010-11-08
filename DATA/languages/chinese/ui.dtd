@@ -2770,7 +2770,7 @@
 <!ENTITY mission.aartab.aars.aar.factorieshit "工厂攻击">
 <!ENTITY mission.brieftab.members.rank "军衔">
 <!ENTITY mission.aartab.aars.aar "出击">
-<!ENTITY mission.orders.objectdestroyed "Your firebase &#37;ls has been destroyed!">
+<!ENTITY mission.orders.objectdestroyed "你的据点 &#37;ls 被摧毁了!">
 <!ENTITY mission.spawn.denied0 "您选择的出生设施不正确。">
 <!ENTITY mission.readytab.spawn.spawnable "要想保存，首先点击选择，然后点击“保存按钮”。你也可以通过双击来保存。一个被保存过的交通工具将会属于你，直到你取消保存，或离开任务，又或者不能回到基地为止。">
 <!ENTITY mission.readytab.mouseover "鼠标悬停在任何武器上，可以查看该武器能否被你使用！">
@@ -2779,7 +2779,7 @@
 <!ENTITY mission.spawn.denied10 "被登录计时器拒绝，请等待。">
 <!ENTITY mission.state.0 "您的任务已经被取消.请离开当前任务并重新选择。">
 <!ENTITY mission.spawn.denied5 "此移动兵站已经不能使用了。">
-<!ENTITY mission.orders.basecaptured "Your base &#37;ls has been captured!">
+<!ENTITY mission.orders.basecaptured "你的基地 &#37;ls 被占领了!">
 <!ENTITY mission.back.tip "回到您所在战斗旅的总部。如果您是任务指挥官，将会取消任务。">
 <!ENTITY mission.readytab.commander "车长">
 <!ENTITY mission.readytab.supply.status.normal "这个设施可以供给，增援将会在大概{1} 分钟到达。">
@@ -4463,24 +4463,24 @@
 <!ENTITY combat.vehicle.name "单位">
 <!ENTITY connect.login.handshake.lost "在网络初始化阶段与服务器失去连接">
 <!ENTITY connect.login.auth.failed "验证失败">
-<!ENTITY connect.ping.notactive "Ping: ...">
+<!ENTITY connect.ping.notactive "网速延迟: ...">
 <!ENTITY connect.popup.title "网络错误">
 <!ENTITY connect.find.nonefound "网络初始化失败或者没有可用网络">
-<!ENTITY connect.ping.stats.full "Ping: &#37;ums, Avg: &#37;ums, &#37;ls: &#37;.1f&#37;&#37;.">
+<!ENTITY connect.ping.stats.full "网速延迟: &#37;ums, 平均: &#37;ums, &#37;ls: &#37;.1f&#37;&#37;.">
 <!ENTITY connect.login.timeout "连接游戏服务器超时">
 <!ENTITY connect.find.cantopen "无法打开游戏的网络连接">
 <!ENTITY connect.lost.game "游戏连接丢失">
 <!ENTITY connect.find.timeout.data "获取连接数据超时">
 <!ENTITY connect.login.chat.lost "在连接聊天服务器过程中失去与游戏的连接">
-<!ENTITY connect.ping.lossbig "*PACKET LOSS*">
-<!ENTITY connect.ping.stats.brief "Ping: &#37;u(&#37;u)ms">
+<!ENTITY connect.ping.lossbig "*数据包丢失*">
+<!ENTITY connect.ping.stats.brief "延迟: &#37;u(&#37;u)ms">
 <!ENTITY connect.find.nodata "请求连接数据出错">
-<!ENTITY connect.ping.loss "Loss">
+<!ENTITY connect.ping.loss "丢失">
 <!ENTITY connect.fail "连接失败">
 <!ENTITY connect.login.auth.timeout "验证超时">
 <!ENTITY connect.login.chat.error "无法连接聊天服务器">
-<!ENTITY connect.ping.kbps "Kbps: &#37;.1f in, &#37;.1f out.">
-<!ENTITY connect.lost "&#37;ls: Error #&#37;u">
+<!ENTITY connect.ping.kbps "网速: &#37;.1f 进, &#37;.1f 出(kbps).">
+<!ENTITY connect.lost "&#37;ls: 错误 #&#37;u">
 <!ENTITY connect.lost.reconnect "与聊天服务器失去联系，正在尝试重新连接">
 <!ENTITY connect.login.noopen "无法打开战场服务器的连接">
 <!ENTITY connect.chat.noredirect "登录聊天服务器时，发生网络错误">
@@ -4492,7 +4492,7 @@
 <!ENTITY connect.login.badlogin "未预料的登录失败">
 <!ENTITY connect.find.timeout.network "与游戏网络连接超时">
 <!ENTITY connect.netcode2.reverting "[netcode2 第二连接方案（UDP)失败，请检查你的防火墙或其它设置 - 正换成标准网络连接（TCP）]">
-<!ENTITY connect.ping.na "Ping: N/A">
+<!ENTITY connect.ping.na "网速延迟测试不能进行">
 <!ENTITY connect.netcode2.firewall "[netcode2 第二连接方案（UDP)失败，请检查你的防火墙或其它设置 - 正换成标准网络连接（TCP）]">
 <!ENTITY connect.login.error "连接游戏服务器出错">
 <!ENTITY connect.reconnect.failed "与战场服务器失去联系，重新尝试连接失败">
