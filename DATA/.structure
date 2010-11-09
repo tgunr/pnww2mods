@@ -1,0 +1,7 @@
+#!/bin/dash
+# Set DEST to where you want the files copied.
+cp -a blitzWor.csv ${DEST}/
+cp -a Terrain/xml ${DEST}/
+cp -a th_blitz ${DEST}/
+cp -a vehicles/ground/groundman/ppo.xml ${DEST}/
+
