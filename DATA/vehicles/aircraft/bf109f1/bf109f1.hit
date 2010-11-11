@@ -44,7 +44,6 @@ d_canopy,0.5,0,0
 d_canopyglass,0.5,0,0 
 d_canopyrails,1.5,0,0
 d_leftinnerwing,1.5,150,150
-d_leftgear,3,0,0
 d_leftflap,1.5,150,150
 d_leftouterwing,1.5,150,150
 d_leftslat,1,150,150
@@ -82,8 +81,10 @@ d_lnosegun,30,150,150
 d_lnoseammo,5,0,0
 d_rnosegun,30,150,150
 d_rnoseammo,5,0,0
-d_leftlandinggear,3,150,150
-d_rightlandinggear,3,150,150
+d_leftgear,3,150,150
+#d_leftlandinggear,3,150,150
+d_rightgear,3,150,150 
+#d_rightlandinggear,3,150,150
 d_tailgear,3,150,150
 d_tailwheel,30,150,150
 
