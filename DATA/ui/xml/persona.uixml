@@ -134,7 +134,7 @@
 		var statusTimer			= new CycleTimer(1000);
 		var rankLock			= findview("rank-lock");
 		
-		var graduated			= TutIsComplete("basic");
+		var graduated			= (game.region == 5) ? TutIsComplete("basic"): true;
 		var shortcut			= false;
 		var welcomed			= false;
 		var requestpersonas		= true;
