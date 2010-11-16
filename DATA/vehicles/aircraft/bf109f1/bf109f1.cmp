@@ -736,7 +736,7 @@ aspectratio = 1.668
 # aspectratio = 3.34
 #controlmin is "fwd stick" and controlmax is "back stick"
 controlmin = 26
-controlmax = -24
+controlmax = -27
 #controlmin = 31.6
 #controlmax = -33.6
 # blanking from fuselage
@@ -792,7 +792,7 @@ wingchord = 0.828
 aspectratio = 1.668
 # aspectratio = 3.34
 controlmin = 26
-controlmax = -24
+controlmax = -27
 #controlmin = 31.6
 #controlmax = -33.6
 # blanking from fuselage
@@ -1192,7 +1192,6 @@ wheelrotationalinertia = 4
 rollcoefficient = 0.02
 braketype = left
 brakestrength = 5000
-# left and right gear objects reversed in damage map
 hitmapcomponent1 = d_leftgear
 # damagelevel of zero or less means that level isn't used
 damagelevel1 = 15000
@@ -1254,7 +1253,6 @@ wheelrotationalinertia = 4
 rollcoefficient = 0.02
 braketype = right
 brakestrength = 5000
-# left and right gear objects reversed in damage map
 hitmapcomponent1 = d_rightgear
 #damagelevel of zero or less means that level isn't used
 damagelevel1 = 15000
