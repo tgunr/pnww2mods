@@ -729,8 +729,10 @@ wingchord = 0.828
 aspectratio = 1.668
 # aspectratio = 3.34
 #controlmin is "fwd stick" and controlmax is "back stick"
-controlmin = 31.6
-controlmax = -33.6
+controlmin = 26
+controlmax = -27
+#controlmin = 31.6
+#controlmax = -33.6
 # blanking from fuselage
 #Bf109 shows no serious fuselage blanking on horiz stab surfaces
 # blanking from main wings
@@ -783,8 +785,10 @@ outerchord = 0.624
 wingchord = 0.828
 aspectratio = 1.668
 # aspectratio = 3.34
-controlmin = 31.6
-controlmax = -33.6
+controlmin = 26
+controlmax = -27
+#controlmin = 31.6
+#controlmax = -33.6
 # blanking from fuselage
 #Bf109 shows no serious fuselage blanking on horiz stab surfaces
 # blanking from main wings
@@ -1024,7 +1028,7 @@ subtype = fueltank
 x = 0
 y = -0.764
 z = -0.32
-mass = 288
+mass = 280
 inertiapitch = 10.254
 inertiaroll = 6.897
 inertiayaw = 10.254
@@ -1181,7 +1185,7 @@ rollcoefficient = 0.02
 braketype = left
 brakestrength = 5000
 # left and right gear objects reversed in damage map
-hitmapcomponent1 = d_rightlandinggear
+hitmapcomponent1 = d_leftgear
 # damagelevel of zero or less means that level isn't used
 damagelevel1 = 15000
 damagelevel2 = 30000
@@ -1240,7 +1244,7 @@ rollcoefficient = 0.02
 braketype = right
 brakestrength = 5000
 # left and right gear objects reversed in damage map
-hitmapcomponent1 = d_leftlandinggear
+hitmapcomponent1 = d_rightgear
 #damagelevel of zero or less means that level isn't used
 damagelevel1 = 15000
 damagelevel2 = 30000
@@ -1346,7 +1350,7 @@ subtype = none
 x = 0
 y = -0.1
 z = 0
-mass = 569.3
+mass = 567
 # mass = 365
 inertiapitch = 2111.226
 inertiaroll = 77.02
@@ -1358,7 +1362,7 @@ subtype = none
 x = 0
 y = -1.5
 z = 0
-mass = 350
+mass = 327
 
 [left_cowl_mg131]
 type = weaponmount
