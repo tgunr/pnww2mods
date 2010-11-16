@@ -45,6 +45,7 @@ void main()
     specular *= Ks;
 
 	vec4 c = diffuse + specular + ambient;
+    c.a = clamp(c.a, 0.0, 1.0);
 
 	out_color = fogThis(c);
 }

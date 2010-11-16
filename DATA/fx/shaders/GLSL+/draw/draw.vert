@@ -26,13 +26,11 @@ mat3 modelviewToNormal(in mat4 mv);
 
 void main()
 {
-    mat4 modelview = quaternionToMatrix(rotation[gl_InstanceID]);
+    mat4 world = quaternionToMatrix(rotation[gl_InstanceID]);
 
-	modelview[3][0] = position[gl_InstanceID].x;
-	modelview[3][1] = position[gl_InstanceID].y;
-	modelview[3][2] = position[gl_InstanceID].z;
+	world[3].xyz = position[gl_InstanceID].xyz;
 
-    modelview = MVMatrix * modelview;
+    mat4 modelview = MVMatrix * world;
 
     vec4 pos = modelview * vec4(in_pos, 1.0);
 
