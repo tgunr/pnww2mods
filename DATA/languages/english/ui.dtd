@@ -4259,7 +4259,7 @@
 <!ENTITY connect.find.nonefound "Network initialization failed/no network available">
 <!ENTITY connect.ping.stats.full "Ping: &#37;ums, Avg: &#37;ums, &#37;ls: &#37;.1f&#37;&#37;.">
 <!ENTITY connect.login.timeout "Timed out connecting to host">
-<!ENTITY connect.find.cantopen "Unable to open connection to game network">
+<!ENTITY connect.find.cantopen "Unable to resolve network selection">
 <!ENTITY connect.lost.game "Game connection lost">
 <!ENTITY connect.find.timeout.data "Timed out getting connection data">
 <!ENTITY connect.login.chat.lost "Lost game connection during chat connect">
@@ -4319,6 +4319,7 @@
 <!ENTITY waypoints.target "target">
 <!ENTITY waypoints.turn2 "turn 2">
 <!ENTITY ppos.badlocation "You cannot place this type of object in this area of the terrain!">
+<!ENTITY ppos.fru.built "Another player has built an FRU for this mission!">
 <!ENTITY ppos.badtrees "There is a tree blocking your object!">
 <!ENTITY ppos.badavoidance "You are too close to another terrain object!">
 <!ENTITY ppos.ob3 "Field Resupply Unit">
@@ -4335,6 +4336,7 @@
 <!ENTITY ppos.badtargetrange.tooclose "You are too close to your mission target for this object type!">
 <!ENTITY ppos.fru.build "Do you want to build an Field Resupply Unit here?">
 <!ENTITY ppos.badvehicle "Another player is blocking your object!">
+<!ENTITY ppos.cantsee "You must be able to see your object to place it!">
 <!ENTITY ppos.noaccess "You don&#39;t have permissions for this object. Upgrade your subscription to unlock.">
 <!ENTITY ppos.badtargetrange.toofar "You are too far from your mission target for this object type!">
 <!ENTITY ppos.ob2 "Gun Emplacement">
