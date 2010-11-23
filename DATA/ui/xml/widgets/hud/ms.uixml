@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<view id="hud-fru" class="target" x="0" y="0" width="1024" height="768" layer="0" acceptsmouse='false' onshow="initHUDObject(this)">
+	<include file="lib/hud.uixml"/>
+	<caption  id="display" label='FRU' x="0" y="0" height="15" width="40" acceptsmouse='false' style="color: #FFFFFF; background-color: #00000044;" align='center'/>
+</view>
+
