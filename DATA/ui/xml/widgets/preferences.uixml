@@ -1233,7 +1233,34 @@
 					tip="&widgets.prefs.groups.hud.icons.tip;">
 				 	 <image rright="5" rtop="5" src="ui/textures/map-scaledown-off.bmp" width="10" height="10" acceptmouseclick="false"/>
 				</caption>
-				<panel label="&widgets.prefs.groups.hud.windows.reset;" align="center" x="10" height="120" rright="10" rtop="110"
+				
+				<caption label="&widgets.prefs.groups.hud.missionwaypoints;" x="20" height="20" rright="0" rtop="115" style="color: #e9e3d9ff;"
+					tip="&widgets.prefs.groups.hud.missionwaypoints.tip;"/>
+				<view width="150" height="15" rtop="115" rright="10">
+					<radiobutton label="&widgets.prefs.enabled;" x="5" y="0" width="70" height="15"
+						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+						onclick="addPreference('app.missionwaypoints', Preference.BOOL, true, false);"
+						onshow="this.value = getPreference('app.missionwaypoints', Preference.BOOL, true, false);"/>
+					<radiobutton label="&widgets.prefs.disabled;" y="0" width="70" height="15" rright="5" 
+						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+						onclick="addPreference('app.missionwaypoints', Preference.BOOL, false, false);"
+						onshow="this.value = !getPreference('app.missionwaypoints', Preference.BOOL, true, false);"/>
+				</view>
+				
+				<caption label="&widgets.prefs.groups.hud.deathicons;" x="20" height="20" rright="0" rtop="135" style="color: #e9e3d9ff;"
+					tip="&widgets.prefs.groups.hud.deathicons.tip;"/>
+				<view width="150" height="15" rtop="135" rright="10">
+					<radiobutton label="&widgets.prefs.enabled;" x="5" y="0" width="70" height="15"
+						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+						onclick="addPreference('app.deathicons', Preference.BOOL, true, false);"
+						onshow="this.value = getPreference('app.deathicons', Preference.BOOL, true, true);"/>
+					<radiobutton label="&widgets.prefs.disabled;" y="0" width="70" height="15" rright="5" 
+						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+						onclick="addPreference('app.deathicons', Preference.BOOL, false, false);"
+						onshow="this.value = !getPreference('app.deathicons', Preference.BOOL, true, false);"/>
+				</view>
+				
+				<panel label="&widgets.prefs.groups.hud.windows.reset;" align="center" x="10" height="120" rright="10" rtop="170"
 						style="color: #3e5248; border-color: #3e5248; border-size: 1; font-size: -1;"
 						tip="&widgets.prefs.groups.hud.windows.reset.tip;">
 						<caption label="&widgets.prefs.groups.hud.windows.reset;" x="20" height="20" width="150" rtop="22" style="color: #e9e3d9ff;"/>
@@ -1243,7 +1270,7 @@
 						<text x="25" y="15" height="40" rright="15" align="center" style="color: #e9e3d9ff;"
 							onshow="this.text = getlocstring('widgets.prefs.groups.hud.windows.reset.note')"/>
 				</panel>
-				<panel label="&widgets.prefs.groups.hud.ppos;" align="center" x="10" height="100" rright="10" rtop="240"
+				<panel label="&widgets.prefs.groups.hud.ppos;" align="center" x="10" height="100" rright="10" rtop="300"
 						style="color: #3e5248; border-color: #3e5248; border-size: 1; font-size: -1;"
 						tip="&widgets.prefs.groups.hud.ppos.tip;">
 						<caption label="&widgets.prefs.groups.hud.ppos.ok;" x="25" height="20" width="150" rtop="30" style="color: #e9e3d9ff;"/>
