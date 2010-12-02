@@ -2285,6 +2285,7 @@
 <!ENTITY widgets.prefs.groups.hud.custom.chat "TCHAT">
 <!ENTITY widgets.calibration.device "SELECTIONNEZ UN PERIPHERIQUE">
 <!ENTITY widgets.map.context.hc.attack "Attaquer ici">
+<!ENTITY widgets.prefs.groups.hud.deathicons.tip "Show onscreen death icons for fallen friendlies. Also marks a position on your minimap. Useful for finding the action!">
 <!ENTITY widgets.map.context.position "Centrer">
 <!ENTITY widgets.prefs.groups.ui.fontsize "TAILLE POLICE">
 <!ENTITY widgets.keymapper.cats.armor "Chars et véhicules blindés">
@@ -2302,6 +2303,7 @@
 <!ENTITY widgets.map.tooltip.town.french "Cette ville est tenue par les Français.">
 <!ENTITY widgets.prefs.far "loin">
 <!ENTITY widgets.map.options.zoom.facilities "INTALLATIONS">
+<!ENTITY widgets.prefs.groups.hud.missionwaypoints "MISSION WAYPOINTS">
 <!ENTITY widgets.calibration.device.axisry "Rudder axe Y">
 <!ENTITY widgets.map.waypoints.contact.gun "CANON ENNEMI">
 <!ENTITY widgets.idcard.rank "GRADE">
@@ -2332,6 +2334,7 @@
 <!ENTITY widgets.prefs.groups.visual.specular "SPECULAR">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.mode.map "carte">
 <!ENTITY widgets.map.info.target.title "CIBLE">
+<!ENTITY widgets.prefs.groups.hud.deathicons "DEATH ICONS">
 <!ENTITY widgets.prefs.groups.alerts.show.tip "Informations données à l&#39;écran selon certains évènements. Exemple, des alertes sont affichées quand une installation est capturée ou si vous recevez des munitions de quelqu&#39;un.">
 <!ENTITY widgets.prefs.groups.sound.card "CARTE SON">
 <!ENTITY widgets.prefs.groups.shadows.corpses "CORPS">
@@ -2561,6 +2564,7 @@
 <!ENTITY widgets.prefs.slowest "le plus lent">
 <!ENTITY widgets.prefs.min "min">
 <!ENTITY widgets.prefs.groups.visual.specular.tip "Utilisé donne une meilleure lumière. Ne pas utiliser pour de meilleures perfs.">
+<!ENTITY widgets.prefs.groups.hud.missionwaypoints.tip "Show onscreen waypoints to important mission locations like your target or the nearest resupply point.">
 <!ENTITY widgets.prefs.groups.hud.custom.primary "MUN PRIMAIRES">
 <!ENTITY widgets.map.info.me.tip "Affiche votre position actuelle, latitude et longitude en jeu">
 <!ENTITY widgets.calibration.none.desc "Permet de sélectionner un axe du joystick pour le régler.">
@@ -3596,6 +3600,7 @@
 <!ENTITY hud.primary "PRINCIPALE">
 <!ENTITY hud.alerts.18.acquired "Nos forces ont pris {1}">
 <!ENTITY hud.alerts.17 "Vous avez été ravitaillé par {1}">
+<!ENTITY hud.waypoints.origin "ORIGIN">
 <!ENTITY hud.readout.vehicles "Véhicules">
 <!ENTITY hud.hqintel.weight.0 "Léger">
 <!ENTITY hud.alerts.24.sea "Bateau ennemi repéré près de {1}">
@@ -3630,6 +3635,7 @@
 <!ENTITY hud.readout.infantry.lifeboat "Bateau de secours">
 <!ENTITY hud.readout.vehicles.stowed "Levé">
 <!ENTITY hud.binfo.state.nofire "Pas une zone de tir!">
+<!ENTITY hud.waypoints.leader "LEADER">
 <!ENTITY hud.cliptype.3.plural "recharges">
 <!ENTITY hud.cliptype.0 "clip">
 <!ENTITY hud.readout.gear.reverse "R">
@@ -3650,14 +3656,17 @@
 <!ENTITY hud.health.state.pilot "PILOTE">
 <!ENTITY hud.readout.riding.towed "En train d&#39;être tracté">
 <!ENTITY hud.alerts.19.deliberated "Les forces ennemies on repris  {1}">
+<!ENTITY hud.dead "&#37;ls died here">
 <!ENTITY hud.readout.gear.kaput "Mort">
 <!ENTITY hud.cliptype.2 "Bande">
 <!ENTITY hud.alerts.14 "Contact ennemi observé">
 <!ENTITY hud.hqintel.dir.7 "Nord Ouest">
 <!ENTITY hud.gameinfo.icon.0 "Normal">
 <!ENTITY hud.readout.torp.control.invalid "Pas de solution de tir valide!">
+<!ENTITY hud.waypoints.target "TARGET">
 <!ENTITY hud.readout.torp.control "Solution de tir  angle de feu">
 <!ENTITY hud.health.atp.tip "Votre condition physique est à {1}. Elle est utilisée pour courir, ramper et d&#39;autres actions fatigantes.">
+<!ENTITY hud.waypoints.fru "FRU">
 <!ENTITY hud.bailout.confirm "Vous voulez sauter?">
 <!ENTITY hud.minimap.latlon "Votre position actuelle, latitude et longitude">
 <!ENTITY hud.readout.infantry.seat "siège">
@@ -3768,6 +3777,7 @@
 <!ENTITY persona.details.persona "PERSONNAGE SELECTIONNE">
 <!ENTITY persona.details.career.rank "jusqu&#39;à la prochaine promotion">
 <!ENTITY persona.list.tip "Choisissez un personnage à jouer">
+<!ENTITY persona.notgraduated "You are currently a recruit and have not graduated from basic training. Would you like to enter training now?">
 <!ENTITY persona.list.overpopulated "Déséquilibré">
 <!ENTITY persona.welcome.pollresults.url "http://www.polls.wwiionline.com/crspolls.htm">
 <!ENTITY persona.welcome.population "JOUEURS PRESENTS">
@@ -4270,7 +4280,7 @@
 <!ENTITY connect.popup.title "Erreur réseau">
 <!ENTITY connect.find.nonefound "Echec de l’initialisation du réseau/réseau indisponible">
 <!ENTITY connect.ping.stats.full "Ping: &#37;ums, Avg: &#37;ums, &#37;ls: &#37;.1f&#37;&#37;.">
-<!ENTITY connect.login.timeout "Tempsd e connexion au serveur dépassé">
+<!ENTITY connect.login.timeout "Temps de connexion au serveur dépassé">
 <!ENTITY connect.find.cantopen "Impossible d’ouvrir une connexion avec le réseau du jeu">
 <!ENTITY connect.lost.game "Connexion au jeu perdu">
 <!ENTITY connect.find.timeout.data "Temps de chargement des données dépassé">

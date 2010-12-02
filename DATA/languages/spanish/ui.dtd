@@ -2287,6 +2287,7 @@
 <!ENTITY widgets.prefs.groups.hud.custom.chat "CHAT">
 <!ENTITY widgets.calibration.device "SELECCIONE UN DISPOSITIVO">
 <!ENTITY widgets.map.context.hc.attack "Atacar Aquí">
+<!ENTITY widgets.prefs.groups.hud.deathicons.tip "Show onscreen death icons for fallen friendlies. Also marks a position on your minimap. Useful for finding the action!">
 <!ENTITY widgets.map.context.position "Centrar en">
 <!ENTITY widgets.prefs.groups.ui.fontsize "TAMAÑO DE TEXTO">
 <!ENTITY widgets.keymapper.cats.armor "Tanques y Coches Blindados">
@@ -2304,6 +2305,7 @@
 <!ENTITY widgets.map.tooltip.town.french "Esta ciudad está bajo posesión Francesa.">
 <!ENTITY widgets.prefs.far "lejos">
 <!ENTITY widgets.map.options.zoom.facilities "INSTALACIONES">
+<!ENTITY widgets.prefs.groups.hud.missionwaypoints "MISSION WAYPOINTS">
 <!ENTITY widgets.calibration.device.axisry "Timón Eje Y">
 <!ENTITY widgets.map.waypoints.contact.gun "Cañón Enemigo">
 <!ENTITY widgets.idcard.rank "RANGO">
@@ -2334,6 +2336,7 @@
 <!ENTITY widgets.prefs.groups.visual.specular "REFLEJO ESPECULAR">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.mode.map "mapa">
 <!ENTITY widgets.map.info.target.title "OBJETIVO">
+<!ENTITY widgets.prefs.groups.hud.deathicons "DEATH ICONS">
 <!ENTITY widgets.prefs.groups.alerts.show.tip "Alerts show on your HUD when certain game events happen. Example alerts are when a facility is captured or when you receive ammo from a buddy.">
 <!ENTITY widgets.prefs.groups.sound.card "TARJETA DE SONIDO">
 <!ENTITY widgets.prefs.groups.shadows.corpses "CORPSES">
@@ -2568,6 +2571,7 @@
 <!ENTITY widgets.prefs.groups.shaders.reflections.short "REFLEJOS">
 <!ENTITY widgets.prefs.min "min">
 <!ENTITY widgets.prefs.groups.visual.specular.tip "Enables better lighting. Disable for better performance.">
+<!ENTITY widgets.prefs.groups.hud.missionwaypoints.tip "Show onscreen waypoints to important mission locations like your target or the nearest resupply point.">
 <!ENTITY widgets.prefs.groups.hud.custom.primary "MUNICIÓN PRIMARIA">
 <!ENTITY widgets.map.info.me.tip "Muestra su actual posición en latitud y longitud mientras está en una partida">
 <!ENTITY widgets.prefs.groups.shaders.reflections "REFLEJOS EN AGUA">
@@ -3604,6 +3608,7 @@
 <!ENTITY hud.primary "PRIMARIO">
 <!ENTITY hud.alerts.18.acquired "Nuestras fuerzas han tomado {1}">
 <!ENTITY hud.alerts.17 "Has sido reaprovisionado por {1}">
+<!ENTITY hud.waypoints.origin "ORIGIN">
 <!ENTITY hud.readout.vehicles "Vehículos">
 <!ENTITY hud.hqintel.weight.0 "Light">
 <!ENTITY hud.alerts.24.sea "Fuerzas navales enemigas avistadas cerca de {1}">
@@ -3638,6 +3643,7 @@
 <!ENTITY hud.readout.infantry.lifeboat "bote">
 <!ENTITY hud.readout.vehicles.stowed "Ubicado">
 <!ENTITY hud.binfo.state.nofire "No Fire Zone!">
+<!ENTITY hud.waypoints.leader "LEADER">
 <!ENTITY hud.cliptype.3.plural "recargas">
 <!ENTITY hud.cliptype.0 "peine">
 <!ENTITY hud.readout.gear.reverse "R">
@@ -3658,14 +3664,17 @@
 <!ENTITY hud.health.state.pilot "TRIPULACIÓN">
 <!ENTITY hud.readout.riding.towed "Siendo Remolcado">
 <!ENTITY hud.alerts.19.deliberated "Las fuerzas enemigas han retomado {1}">
+<!ENTITY hud.dead "&#37;ls died here">
 <!ENTITY hud.readout.gear.kaput "Roto">
 <!ENTITY hud.cliptype.2 "cinta">
 <!ENTITY hud.alerts.14 "Ha llegado un informe de contacto">
 <!ENTITY hud.hqintel.dir.7 "northwest">
 <!ENTITY hud.gameinfo.icon.0 "Normal">
 <!ENTITY hud.readout.torp.control.invalid "¡Solución de Control de Fuego no válida!">
+<!ENTITY hud.waypoints.target "TARGET">
 <!ENTITY hud.readout.torp.control "Ángulo de Solución de Control de Fuego">
 <!ENTITY hud.health.atp.tip "Su nivel de fatiga está actualmente al {1}. La fatiga es utilizada cuando corres, o realizas otras acciones que provoquen cansancio .">
+<!ENTITY hud.waypoints.fru "FRU">
 <!ENTITY hud.bailout.confirm "Do you want to bailout?">
 <!ENTITY hud.minimap.latlon "Su posición actual en Latitud y Longitud">
 <!ENTITY hud.readout.infantry.seat "asiento">
@@ -3776,6 +3785,7 @@
 <!ENTITY persona.details.persona "PERSONAJE SELECCIONADO">
 <!ENTITY persona.details.career.rank "hasta el próximo ascenso">
 <!ENTITY persona.list.tip "Elija un personaje para jugar">
+<!ENTITY persona.notgraduated "You are currently a recruit and have not graduated from basic training. Would you like to enter training now?">
 <!ENTITY persona.list.overpopulated "superpoblado">
 <!ENTITY persona.welcome.pollresults.url "http://www.polls.wwiionline.com/crspolls.htm">
 <!ENTITY persona.welcome.population "POBLACIÓN DE JUGADORES">

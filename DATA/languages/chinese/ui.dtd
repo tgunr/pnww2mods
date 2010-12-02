@@ -116,7 +116,7 @@
 <!ENTITY loc.ui.5 "设施名称">
 <!ENTITY loc.ui.224 "选择登录按钮从您的选择的设施登录">
 <!ENTITY loc.ui.181 "加入被拒绝: 未知错误...">
-<!ENTITY loc.ui.21 "班组">
+<!ENTITY loc.ui.21 "战队">
 <!ENTITY loc.ui.44 "双击放大">
 <!ENTITY loc.ui.539 "I国人">
 <!ENTITY loc.ui.10004 "您投降并垂下头">
@@ -552,7 +552,7 @@
 <!ENTITY loc.english.660 "摇杆4 按钮 11">
 <!ENTITY loc.english.639 "摇杆3 按钮 28">
 <!ENTITY loc.english.339 "坐标功能">
-<!ENTITY loc.english.148 "班组">
+<!ENTITY loc.english.148 "战队">
 <!ENTITY loc.english.20 "转换到空挡">
 <!ENTITY loc.english.72 "注册....">
 <!ENTITY loc.english.456 "摇杆1 按钮 1">
@@ -724,7 +724,7 @@
 <!ENTITY loc.english.697 "摇杆2 滑块 2">
 <!ENTITY loc.english.825 "游戏连接丢失, 错误 &#37;d.">
 <!ENTITY loc.english.154 "护卫">
-<!ENTITY loc.english.803 "班组">
+<!ENTITY loc.english.803 "战队">
 <!ENTITY loc.english.318 "降低键">
 <!ENTITY loc.english.28 "增压器在初速设定值">
 <!ENTITY loc.english.816 "战车类型">
@@ -1213,7 +1213,7 @@
 <!ENTITY loc.host.292 "您的表决登记了。">
 <!ENTITY loc.host.535 "新兵 &#39;{1}&#39; 已经离开了任务。">
 <!ENTITY loc.host.394 "不能从有工厂链接存在的城镇移出地图。">
-<!ENTITY loc.host.284 "班组CO（指挥官）竞选结束: {1} 被再确认为指挥官。">
+<!ENTITY loc.host.284 "战队CO（指挥官）竞选结束: {1} 被再确认为指挥官。">
 <!ENTITY loc.host.1 "注意">
 <!ENTITY loc.host.232 "{1}: 攻击/摧毁">
 <!ENTITY loc.host.206 "无效等级, 合法的等级应该是从1级到 {1}级。">
@@ -1253,7 +1253,7 @@
 <!ENTITY loc.host.368 "您现在无法夺取 {1}的任务指挥官职位，必须等待 {2} 。">
 <!ENTITY loc.host.344 "帮助频道是为玩家间的技术帮助而设置的。非战斗的一般交谈请使用“阵营”频道。">
 <!ENTITY loc.host.28 "玩家 {1} 已被加进您的黑名单中。">
-<!ENTITY loc.host.454 "玩家&#39;{1}&#39; 当前不在班组之内。">
+<!ENTITY loc.host.454 "玩家&#39;{1}&#39; 当前不在战队之内。">
 <!ENTITY loc.host.224 "目标频道不可用: 因您当前没有加入任何任务。">
 <!ENTITY loc.host.442 "自动踢出所有玩家：{1}.">
 <!ENTITY loc.host.516 "反抗无效.">
@@ -1286,7 +1286,7 @@
 <!ENTITY loc.host.580 "不能把战斗旅设为目标。">
 <!ENTITY loc.host.395 "在 {1}&#37;&#37; 或者更多步兵力量还存在的情况下，单位不能投降。">
 <!ENTITY loc.host.485 "在 {1}的记录中没有注释。">
-<!ENTITY loc.host.263 "*{1} 解散了班组“{2}” 。">
+<!ENTITY loc.host.263 "*{1} 解散了战队“{2}” 。">
 <!ENTITY loc.host.55 "变换AFK(Away From Keyboard 离开键盘)之开/关状态。如果设定了回应信息，则当你为AFK状态时，自动提供该回复信息。即当你在AFK状态时，你仍够能接受信息，但当别人对你发送信息时，会收到AFK的通知。">
 <!ENTITY loc.host.552 "当前没有服务器追踪目标。">
 <!ENTITY loc.host.563 "当前没有正在轮播的信息。">
@@ -1309,20 +1309,20 @@
 <!ENTITY loc.host.221 "任务频道不可用: 因您当前没有加入任何任务。">
 <!ENTITY loc.host.570 "你已经离开了建筑。">
 <!ENTITY loc.host.576 "您通过攻击 {1} 获得积分奖励！">
-<!ENTITY loc.host.301 "您的班组当前没举行指挥官竞选。">
+<!ENTITY loc.host.301 "您的战队当前没举行指挥官竞选。">
 <!ENTITY loc.host.73 "列出HC（高级军官）军官名单。">
 <!ENTITY loc.host.562 "添加：{1}">
 <!ENTITY loc.host.645 "无法修复 {1}：没有部署防御目标。">
-<!ENTITY loc.host.285 "班组CO（指挥官）竞选结束: {1}被任命为指挥官，共有{2}票。">
+<!ENTITY loc.host.285 "战队CO（指挥官）竞选结束: {1}被任命为指挥官，共有{2}票。">
 <!ENTITY loc.host.269 "*{1} 提拔 {2}为XO（执行官）。">
 <!ENTITY loc.host.109 "寄发一个报警信息给所有在线玩家。信息会被纪录">
-<!ENTITY loc.host.277 "{1} 已经加入了某个班组。">
+<!ENTITY loc.host.277 "{1} 已经加入了某个战队。">
 <!ENTITY loc.host.465 "/shutdown in <时间间隔> <信息>">
 <!ENTITY loc.host.41 "所有GM 命令的使用都由官方营运商每日记录并复查。不当使用将引发您相关权利的剥夺或被禁。">
 <!ENTITY loc.host.517 "请不要忽视系统，它会不高兴的。">
 <!ENTITY loc.host.229 "欢迎来到“帮助”频道- 使用该频道来获得其他玩家的帮助和建议。如有技术问题，请联系客服或登录官方论坛。">
 <!ENTITY loc.host.6 "{1} 当前是A.F.K（离开键盘状态）">
-<!ENTITY loc.host.359 "{1} 被吸收进了您的班组。由 {2}招募。">
+<!ENTITY loc.host.359 "{1} 被吸收进了您的战队。由 {2}招募。">
 <!ENTITY loc.host.163 "在桥上的防御目标只能被手工安置或清除。">
 <!ENTITY loc.host.135 "/find <玩家名称>">
 <!ENTITY loc.host.336 "在您退出任务时任命一个具体玩家担任任务领导。">
@@ -1335,7 +1335,7 @@
 <!ENTITY loc.host.64 "/gm [<要发送的信息>]">
 <!ENTITY loc.host.653 "任务起点设施不在你方的控制之下。">
 <!ENTITY loc.host.433 "使玩家从当前位置/向你/移动。例如：移动一个clipper。玩家水平方向对移动+/-4米，垂直方向最多移动+/-6米 。注意不要把玩家移动到地下。特别注意的是使用“-up”命令时，无论你的相对位置在什么地方，都会直直移动。而使用“-down”命令时，如果你身处他们下方的话，将会把玩家向下移动。">
-<!ENTITY loc.host.494 "/listsquad [-all] <班组名称>">
+<!ENTITY loc.host.494 "/listsquad [-all] <战队名称>">
 <!ENTITY loc.host.116 "/own [<城镇>]">
 <!ENTITY loc.host.196 "没有激活的前进基地">
 <!ENTITY loc.host.134 "强制再启全域（或单个玩家）权限许可。">
@@ -1354,7 +1354,7 @@
 <!ENTITY loc.host.421 "这个命令当前没有任何帮助文档说明。">
 <!ENTITY loc.host.637 "/oicremove <unit> <玩家名称>">
 <!ENTITY loc.host.443 "/kickban <玩家名字> <时间> <信息>">
-<!ENTITY loc.host.345 "您的班组名称已从 {1}改为 {2}。">
+<!ENTITY loc.host.345 "您的战队名称已从 {1}改为 {2}。">
 <!ENTITY loc.host.270 "*{1} 提拔了 {2}为CO（指挥官)。">
 <!ENTITY loc.host.65 "没有参数: 列出在线GM名单。有参数: 给GM频道发一则消息。">
 <!ENTITY loc.host.522 "启用或关闭聊天框快照记录功能（只可以用来做调试）。只能CRS成员在做教导的时候可以使用。">
@@ -1365,7 +1365,7 @@
 <!ENTITY loc.host.306 "指挥官关闭了竞选。">
 <!ENTITY loc.host.45 "没有匹配。">
 <!ENTITY loc.host.236 "{1}: 防御 - 不惜一切代价持有!">
-<!ENTITY loc.host.455 "玩家 &#39;{1}&#39; 已经是班组&#39;{2}&#39;的指挥官了。">
+<!ENTITY loc.host.455 "玩家 &#39;{1}&#39; 已经是战队&#39;{2}&#39;的指挥官了。">
 <!ENTITY loc.host.167 "{1}没被分配目标 。">
 <!ENTITY loc.host.22 "您因为 {1}被GM踢出了游戏！">
 <!ENTITY loc.host.365 "当您是AFK(Away From Keyboard离开键盘)时您不能/takelead 。">
@@ -1390,7 +1390,7 @@
 <!ENTITY loc.host.416 "{1} 支持数据服务器重启。">
 <!ENTITY loc.host.51 "您当前没有/grab&#39;d（联系）任何人">
 <!ENTITY loc.host.583 "红国前进基地：{1}">
-<!ENTITY loc.host.279 "*{1} 离开班组了。">
+<!ENTITY loc.host.279 "*{1} 离开战队了。">
 <!ENTITY loc.host.326 "对不起，地面部队的移动只能每次跨越一个链接（每两个拥有道路相连的城市之间为一个链接）。">
 <!ENTITY loc.host.425 "设定当前更新模式。 Type /um ? 显示当前模式。">
 <!ENTITY loc.host.251 "必须是任务领导才能使用那个命令。">
@@ -1421,7 +1421,7 @@
 <!ENTITY loc.host.481 "首先使用&#39;/{1} off&#39; 结束你当前对 &#39;{2}&#39;的查看。">
 <!ENTITY loc.host.258 "列出当前在线的教官。">
 <!ENTITY loc.host.544 "忽略对废车的伤害：它已经被损毁了。">
-<!ENTITY loc.host.289 "玩家 {1}不在您的班组。">
+<!ENTITY loc.host.289 "玩家 {1}不在您的战队。">
 <!ENTITY loc.host.145 "必需拥有和控制 {1} 才能执行 {2}。">
 <!ENTITY loc.host.218 "离线: {1}">
 <!ENTITY loc.host.216 "您的好友列表当前是空的。">
@@ -1430,9 +1430,9 @@
 <!ENTITY loc.host.168 "敌人没有占领 {1}。">
 <!ENTITY loc.host.538 "想要使用/{1} 命令的话，必须在这个登录阶段内已经进入过游戏世界。">
 <!ENTITY loc.host.8 "感到迷惑吗？ 键入/booton 以预订bootcamp 频道来获得详细的介绍！">
-<!ENTITY loc.host.290 "您的班组最近选举了新CO（指挥官）">
+<!ENTITY loc.host.290 "您的战队最近选举了新CO（指挥官）">
 <!ENTITY loc.host.179 "“/who”现在不能看见您。">
-<!ENTITY loc.host.456 "班组 &#39;{1}&#39; 不存在或者当前没有加载进游戏 – 这也许是一个错误又或者没有玩家在线。请稍候再次尝试。">
+<!ENTITY loc.host.456 "战队 &#39;{1}&#39; 不存在或者当前没有加载进游戏 – 这也许是一个错误又或者没有玩家在线。请稍候再次尝试。">
 <!ENTITY loc.host.157 "“ {1} ” 不存在或到期了。">
 <!ENTITY loc.host.94 "/report <要发送的内容>">
 <!ENTITY loc.host.66 "/gmmode">
@@ -1449,16 +1449,16 @@
 <!ENTITY loc.host.333 "您选定的备用领导“ {1} ” 离开了该任务。">
 <!ENTITY loc.host.32 "您踢出了{1} - {2}。">
 <!ENTITY loc.host.317 "/makeleader 玩家名称">
-<!ENTITY loc.host.283 "班组CO（指挥官）竞选失败: 没有提名人赢。">
+<!ENTITY loc.host.283 "战队CO（指挥官）竞选失败: 没有提名人赢。">
 <!ENTITY loc.host.620 "[!] 停火已生效：攻击无效[!]">
 <!ENTITY loc.host.205 "设置军衔等级与 {1}相同。等级下次选择角色时生效">
 <!ENTITY loc.host.652 "无效的任务起点设施：{1}.">
-<!ENTITY loc.host.460 "您已经制定&#39;{1}&#39;作为&#39;{2}&#39;班组的指挥官（CO）。">
+<!ENTITY loc.host.460 "您已经制定&#39;{1}&#39;作为&#39;{2}&#39;战队的指挥官（CO）。">
 <!ENTITY loc.host.222 "城市频道不可用: 因您当前没有加入任何任务。">
 <!ENTITY loc.host.502 "改变特定城镇或者在你的地图上被标出的特定国家城镇的归属关系。">
 <!ENTITY loc.host.303 "投票已关闭。">
 <!ENTITY loc.host.349 "&#39;{1}&#39; 已在您的好友列表里。">
-<!ENTITY loc.host.493 "列出当前在线的指挥官（CO）的名字和他们的班组的名称。">
+<!ENTITY loc.host.493 "列出当前在线的指挥官（CO）的名字和他们的战队的名称。">
 <!ENTITY loc.host.79 "列出服务器命令或展示对所指定命令的解释">
 <!ENTITY loc.host.651 "这个军种的角色等级不足以创建任务。">
 <!ENTITY loc.host.194 "对所有玩家发布/kick命令。">
@@ -1468,14 +1468,14 @@
 <!ENTITY loc.host.296 "已经把 {1}加入了您的黑名单 。">
 <!ENTITY loc.host.573 "*** 战斗旅选择失败：无效的战斗旅说明。如果这个问题一直存在，您需要重新启动客户端，当前您不能选择战斗旅。">
 <!ENTITY loc.host.272 "*{1} 降职了 {2}为招募者。">
-<!ENTITY loc.host.138 "从您的好友列表中增加, 去除或列出玩家。在您的好友列表中你可最多可添加42个玩家。使用“/who”命令来找出哪些班组成员在线。">
+<!ENTITY loc.host.138 "从您的好友列表中增加, 去除或列出玩家。在您的好友列表中你可最多可添加42个玩家。使用“/who”命令来找出哪些战队成员在线。">
 <!ENTITY loc.host.183 "/noechat">
 <!ENTITY loc.host.72 "/hc">
 <!ENTITY loc.host.40 "报告">
 <!ENTITY loc.host.632 "允许高级指挥官自愿成为某个单位的指挥官。">
 <!ENTITY loc.host.615 "所有的据点情况都已经被重新发送给了聊天，地图和Cell主机。">
 <!ENTITY loc.host.628 "注意！ {1} 击杀了 {2}！">
-<!ENTITY loc.host.378 "该功能打开后，班组成员能以/voteco 命令选择一位新指挥官。该功能属自动打开。使用/voting off 来关闭该功能。">
+<!ENTITY loc.host.378 "该功能打开后，战队成员能以/voteco 命令选择一位新指挥官。该功能属自动打开。使用/voting off 来关闭该功能。">
 <!ENTITY loc.host.133 "/resync [<玩家名称>]">
 <!ENTITY loc.host.152 "您对该命令已经投票了。">
 <!ENTITY loc.host.440 "强制所有玩家离开游戏世界。首先锁定战斗领域。">
@@ -1492,7 +1492,7 @@
 <!ENTITY loc.host.82 "/hqon">
 <!ENTITY loc.host.11 "GM {1} 联系上了您：您将直接与其交流。这次交谈将被纪录。">
 <!ENTITY loc.host.489 "/lastmoves">
-<!ENTITY loc.host.278 "*{1} 被{2}从班组被开除了 。">
+<!ENTITY loc.host.278 "*{1} 被{2}从战队被开除了 。">
 <!ENTITY loc.host.586 "对不起，您只能对战斗旅或师采取这种操作。">
 <!ENTITY loc.host.24 "您必须先选好阵营才能调校bootcamp频道。">
 <!ENTITY loc.host.3 "警告">
@@ -1523,7 +1523,7 @@
 <!ENTITY loc.host.31 "GM模式关闭。">
 <!ENTITY loc.host.52 "用法">
 <!ENTITY loc.host.95 "可以递交一行有关问题/错误/欺骗/开发/抱怨的信息给官方。这些报告每天都将被浏览或被GM在线审阅，但我们不会单独回应/report命令。">
-<!ENTITY loc.host.513 "班组&#39;{1}&#39;已经存在，请尝试另外一个名称。">
+<!ENTITY loc.host.513 "战队&#39;{1}&#39;已经存在，请尝试另外一个名称。">
 <!ENTITY loc.host.609 "GM改变了{2}的{1}的归属权。">
 <!ENTITY loc.host.428 "把&#39; {1}&#39;踢出游戏。">
 <!ENTITY loc.host.169 "小心">
@@ -1534,10 +1534,10 @@
 <!ENTITY loc.host.348 "&#39;{1}&#39; 已从您的好友列表中去除。">
 <!ENTITY loc.host.474 "/shutdown 命令的时间必须在{1} 分和 {2} 小时之间。">
 <!ENTITY loc.host.550 "/liststos">
-<!ENTITY loc.host.457 "&#39;{1}&#39;班组的的指挥官（CO）当前在线：{2}。当他在线时不能提升指挥官。">
+<!ENTITY loc.host.457 "&#39;{1}&#39;战队的的指挥官（CO）当前在线：{2}。当他在线时不能提升指挥官。">
 <!ENTITY loc.host.101 "设置或显示系统的每日信息">
 <!ENTITY loc.host.38 "使用/report<要发送的信息>命令来递交欺骗/开发/错误方面的报告">
-<!ENTITY loc.host.225 "班组频道不可用: 因您当前没有加入任何班组。">
+<!ENTITY loc.host.225 "战队频道不可用: 因您当前没有加入任何战队。">
 <!ENTITY loc.host.487 "所有玩家：{1}">
 <!ENTITY loc.host.578 "玩家{1}已经杀死了一个官方的玩家：{2}！">
 <!ENTITY loc.host.262 "当值高级军官短目录">
@@ -1554,10 +1554,10 @@
 <!ENTITY loc.host.498 "Sets or queries the current arena lock state. Arena locks are a series of binary flags that can be combined to form various combination locks. 0=Unlock, 1=NoCapture, 2=NoSpawn, 4=NoKill, 8=NoSideSelect. So arenalock 5 = 1+4 = NoCapture + NoKill. Common Arenalocks are 7 (NoCapture/NoSpawn/NoKill) and 15 (Arena closed)">
 <!ENTITY loc.host.334 "任务领导权将移交给 {1} 。">
 <!ENTITY loc.host.240 "最新发布的目标。">
-<!ENTITY loc.host.458 "班组 &#39;{1}&#39; 已经拥有指挥官（CO）&#39;{2}&#39;了。 使用&#34;/makeco -force&#34; 命令夺取现任指挥官的权限。">
+<!ENTITY loc.host.458 "战队 &#39;{1}&#39; 已经拥有指挥官（CO）&#39;{2}&#39;了。 使用&#34;/makeco -force&#34; 命令夺取现任指挥官的权限。">
 <!ENTITY loc.host.172 "{1}的目标被取消了">
 <!ENTITY loc.host.71 "没有参数: 列出收听HC（高级军官）频道的玩家。有参数: 向HC（高级军官）频道发消息。">
-<!ENTITY loc.host.565 "*因为投票撤销，班组的指挥官（CO）选举被取消。">
+<!ENTITY loc.host.565 "*因为投票撤销，战队的指挥官（CO）选举被取消。">
 <!ENTITY loc.host.16 "值日官（D.O.）{1} 联系上了您:您将直接与其交流。这次交谈将被纪录。">
 <!ENTITY loc.host.371 "/time">
 <!ENTITY loc.host.380 "&#39;{1}&#39; 不能撤退: 没有撤退目的地。">
@@ -1581,9 +1581,9 @@
 <!ENTITY loc.host.350 "您的好友列表已满，请先删除某人。">
 <!ENTITY loc.host.67 "开关GM “隐蔽”模式">
 <!ENTITY loc.host.155 "在 {1} 申请了“ {2} ”。">
-<!ENTITY loc.host.511 "/renamesquad <旧的班组名称> <新的班组名称>">
+<!ENTITY loc.host.511 "/renamesquad <旧的战队名称> <新的战队名称>">
 <!ENTITY loc.host.209 "短程区域交谈。">
-<!ENTITY loc.host.288 "允许您为您的班组提名或投票支持一位新指挥官。">
+<!ENTITY loc.host.288 "允许您为您的战队提名或投票支持一位新指挥官。">
 <!ENTITY loc.host.299 "{1} 为这个任务部署了一个移动兵站。">
 <!ENTITY loc.host.259 "您的任务已被任务指挥官撤销。">
 <!ENTITY loc.host.353 "{1} 关闭了招兵功能。">
@@ -1599,7 +1599,7 @@
 <!ENTITY loc.host.600 "在 {1}的防御部队正在撤退。">
 <!ENTITY loc.host.470 "没有像这样 /shutdown 的命令 &#39;{1}&#39;。">
 <!ENTITY loc.host.187 "收到- 等候其它玩家确认。">
-<!ENTITY loc.host.281 "班组CO（指挥官）竞选进展中。票数: {1}. 被提名人: {2} 。">
+<!ENTITY loc.host.281 "战队CO（指挥官）竞选进展中。票数: {1}. 被提名人: {2} 。">
 <!ENTITY loc.host.526 "[X] 游戏服务器即将关闭：您拥有{1}秒时间离开游戏世界或者失去这次出击的成绩！[X]">
 <!ENTITY loc.host.556 "清除正在播放的信息。">
 <!ENTITY loc.host.53 "详情">
@@ -1609,7 +1609,7 @@
 <!ENTITY loc.host.429 "&#39;{1}&#39; 当前在线。如果需要可以使用&#39;/kick&#39;命令把他们踢出游戏。">
 <!ENTITY loc.host.630 "提名玩家为某个特定单位的临时指挥官。">
 <!ENTITY loc.host.572 "*** 战斗旅选择失败：没有选择角色。您的客户端同步失败，重新启动游戏可以解决这个问题。">
-<!ENTITY loc.host.304 "{1} 已在班组启动指挥官竞选。">
+<!ENTITY loc.host.304 "{1} 已在战队启动指挥官竞选。">
 <!ENTITY loc.host.435 "对不起，玩家 &#39;{1}&#39; 当前没有出生。">
 <!ENTITY loc.host.473 "“/shutdown” 命令提供了设置自动，定时且能自动喊话的关闭任务的能力。">
 <!ENTITY loc.host.274 "*游戏服务器关闭: 现在。">
@@ -1630,7 +1630,7 @@
 <!ENTITY loc.host.213 "每 {2} （秒）钟，您只能 {1} 一次。">
 <!ENTITY loc.host.49 "BETA（测试）">
 <!ENTITY loc.host.634 "否决或移除特定玩家作为特定单位的指挥官的提名。">
-<!ENTITY loc.host.514 "&#39;{1}&#39; 不是班组的有效名称。">
+<!ENTITY loc.host.514 "&#39;{1}&#39; 不是战队的有效名称。">
 <!ENTITY loc.host.201 "在 {2}内不能撤销部署于 {1} 的目标">
 <!ENTITY loc.host.649 "您当前没有加入战斗旅。">
 <!ENTITY loc.host.131 "/hold <代码>">
@@ -1657,7 +1657,7 @@
 <!ENTITY loc.host.230 "本地时间: {1}">
 <!ENTITY loc.host.587 "向 {1}手动提供设备。">
 <!ENTITY loc.host.629 "/oicnominate <unit> <玩家名称>">
-<!ENTITY loc.host.512 "更改玩家班组的游戏名称（简称）。有效名称等同于玩家的游戏名称。">
+<!ENTITY loc.host.512 "更改玩家战队的游戏名称（简称）。有效名称等同于玩家的游戏名称。">
 <!ENTITY loc.host.188 "/attack">
 <!ENTITY loc.host.103 "显示当前的系统每日信息">
 <!ENTITY loc.host.54 "/afk [<要发送的信息>]">
@@ -1665,7 +1665,7 @@
 <!ENTITY loc.host.91 "只给在聊天窗口的指定频道（N指的是1-6）送发<要发送的信息>">
 <!ENTITY loc.host.323 "您现在是这个任务领导！权限: 您可使用“/makeleader&#34;命令来给另一个玩家分配领导权。">
 <!ENTITY loc.host.523 "[*] 游戏服务器关闭已经被取消! [*]">
-<!ENTITY loc.host.123 "您还没有加入班组。">
+<!ENTITY loc.host.123 "您还没有加入战队。">
 <!ENTITY loc.host.490 "列出了你当前的国家最新的几个战斗旅的活动情况。">
 <!ENTITY loc.host.631 "/oicvolunteer <unit>">
 <!ENTITY loc.host.293 "您的黑名单中没有人。">
@@ -1674,7 +1674,7 @@
 <!ENTITY loc.host.264 "{1} 加入了 {2} 。">
 <!ENTITY loc.host.403 "不能部署攻击目标。">
 <!ENTITY loc.host.352 "{1} 启动了招兵功能。">
-<!ENTITY loc.host.361 "新兵&#39;{1}&#39; 在 {2}天后被从班组去除。">
+<!ENTITY loc.host.361 "新兵&#39;{1}&#39; 在 {2}天后被从战队去除。">
 <!ENTITY loc.host.598 "步兵师攻击时，必须是师里有成员与目标有直接的连接。">
 <!ENTITY loc.host.175 "攻击 {1}的命令取消了">
 <!ENTITY loc.host.472 "/shutdown 子命令集： /shutdown in, /shutdown downtime, /shutdown stop。 输入 /shutdown <命令> 可以得到更多的特定的子命令集的信息。">
@@ -1687,7 +1687,7 @@
 <!ENTITY loc.host.68 "/grab <玩家名称> [<原因>]">
 <!ENTITY loc.host.302 "投票已启动。">
 <!ENTITY loc.host.130 "请求撤退以应对敌军超量，须在代码处输入城市的名称。">
-<!ENTITY loc.host.459 "*** &#39;{1}&#39; 已经被GM指定为{2}班组的指挥官（CO）！">
+<!ENTITY loc.host.459 "*** &#39;{1}&#39; 已经被GM指定为{2}战队的指挥官（CO）！">
 <!ENTITY loc.host.219 "在线: {1}">
 <!ENTITY loc.host.25 "订阅了HQ(总部)频道。键入/hqoff可以取消订阅该频道。">
 <!ENTITY loc.host.128 "请求延迟应对敌军超量，须在代码处输入城市的名称。">
@@ -1696,10 +1696,10 @@
 <!ENTITY loc.host.210 "/yell <要发送的信息>">
 <!ENTITY loc.host.452 "/makeco [-force] <玩家名字>">
 <!ENTITY loc.host.633 "/oicveto <unit> <玩家名称>">
-<!ENTITY loc.host.111 "没有参数: 列出在线班组成员; 有参数:显示指定玩家是否在线-如果玩家是班组成员则显示他们在游戏中何处。">
+<!ENTITY loc.host.111 "没有参数: 列出在线战队成员; 有参数:显示指定玩家是否在线-如果玩家是战队成员则显示他们在游戏中何处。">
 <!ENTITY loc.host.461 "已重新加载所有的聊天许可。">
 <!ENTITY loc.host.626 "高级组织频道是为了进行高级操作和组织交流而准备的。请使用阵营频道进行正常的聊天和讨论，或者使用帮助频道寻求技术支持和帮助。">
-<!ENTITY loc.host.305 "{1} 已在班组关闭指挥官竞选。">
+<!ENTITY loc.host.305 "{1} 已在战队关闭指挥官竞选。">
 <!ENTITY loc.host.99 "对所有玩家播放一个匿名系统信息。信息会被纪录">
 <!ENTITY loc.host.571 "*** 战斗旅选择失败：战斗旅ID为0。您的客户端同步失败或者有新的版本。请退出游戏并重新登录。">
 <!ENTITY loc.host.185 "在此连接期间，您将不会接收到敌方的区域聊天信息。">
@@ -1712,7 +1712,7 @@
 <!ENTITY loc.host.385 "您累计在线时间已满1小时。">
 <!ENTITY loc.host.260 "不能认出命令: “{1}”">
 <!ENTITY loc.host.477 "/snoop <玩家名字>  或者  /snoop off">
-<!ENTITY loc.host.276 "*{1} 接受了您的班组邀请。">
+<!ENTITY loc.host.276 "*{1} 接受了您的战队邀请。">
 <!ENTITY loc.host.547 "查看当前所有被服务器追踪的服务器追踪对象，如果有进入无效状态的，将被删除。无论是什么一经发现立即删除。">
 <!ENTITY loc.host.215 "观看或设置当值高级军官的每日信息">
 <!ENTITY loc.host.5 "您不再是A.F.K（离开键盘状态）">
@@ -1721,7 +1721,7 @@
 <!ENTITY loc.host.162 "目标必定是一个城镇或桥梁。">
 <!ENTITY loc.host.239 "{1} 是在与敌争夺之中。">
 <!ENTITY loc.host.376 "此命令已无法使用- 请使用/own。">
-<!ENTITY loc.host.226 "班组频道不可用: 您还没有选择角色。">
+<!ENTITY loc.host.226 "战队频道不可用: 您还没有选择角色。">
 <!ENTITY loc.host.61 "对所有红国玩家播放一则消息。消息被纪录">
 <!ENTITY loc.host.510 "报告你当前所在战斗旅或特定战斗旅的移动时间和当前的撤退位置。">
 <!ENTITY loc.host.149 "{1} 已经报告{2} 。">
@@ -1748,7 +1748,7 @@
 <!ENTITY loc.host.391 "√Ç√Ö‚Ä¢√Ç‚à´‚àë√ã√Ñ√â√ã√¥√´">
 <!ENTITY loc.host.108 "/warnall <要发送的信息>">
 <!ENTITY loc.host.43 "C国军官/GMs:">
-<!ENTITY loc.host.286 "班组CO（指挥官）竞选失败: 领先提名人离开班组。">
+<!ENTITY loc.host.286 "战队CO（指挥官）竞选失败: 领先提名人离开战队。">
 <!ENTITY loc.host.294 "黑名单中的玩家:">
 <!ENTITY loc.host.432 "/bump [-up | -down] <玩家名字> <原因>">
 <!ENTITY loc.host.636 "主动交出你对特定单位的指挥官职位，申请辞职。">
@@ -1780,14 +1780,14 @@
 <!ENTITY loc.host.14 "GM {1} 断开了与您的连接。">
 <!ENTITY loc.host.330 "在 {1}没有可使用的飞机场 。">
 <!ENTITY loc.host.482 "对不起，不允许对职员使用查看功能。">
-<!ENTITY loc.host.360 "注意, 新兵! 您的 {1}天与 {2}的新兵游览已结束。您可使用“班组”图标来找到另一个班组。当找到您想留的班组时，可要求他们提拔您为成员。">
+<!ENTITY loc.host.360 "注意, 新兵! 您的 {1}天与 {2}的新兵游览已结束。您可使用“战队”图标来找到另一个战队。当找到您想留的战队时，可要求他们提拔您为成员。">
 <!ENTITY loc.host.389 "您已进入不健康游戏时间，为了您的健康，请您立即下线休息。如不下线，您的身体将受到损害，您的收益已降为零，直到您的累计下线时间满5小时后，才能恢复正常。">
 <!ENTITY loc.host.121 "释放当前的/grab 。">
-<!ENTITY loc.host.496 "没有这样的班组：{1}.">
+<!ENTITY loc.host.496 "没有这样的战队：{1}.">
 <!ENTITY loc.host.34 "信息无法发送，对方无法联系。解开联接。">
 <!ENTITY loc.host.536 "/msp">
 <!ENTITY loc.host.104 "/ungrab">
-<!ENTITY loc.host.566 "*所有支持{1} 为班组指挥官的选票已经全部撤消，选举继续进行。">
+<!ENTITY loc.host.566 "*所有支持{1} 为战队指挥官的选票已经全部撤消，选举继续进行。">
 <!ENTITY loc.host.165 "所有可以使用的攻击目标都已制定。">
 <!ENTITY loc.host.173 "敌军从 {1}撤退了">
 <!ENTITY loc.host.86 "/kickall <原因>">
@@ -1819,10 +1819,10 @@
 <!ENTITY loc.host.310 "请求您当前旅的师总部移向您地图上选择的城市。">
 <!ENTITY loc.host.610 "{1} 的设施没有受到影响。">
 <!ENTITY loc.host.137 "/friends or/friends 玩家名称 or/friends 玩家名称1 玩家名称2...玩家名称10">
-<!ENTITY loc.host.280 "班组">
+<!ENTITY loc.host.280 "战队">
 <!ENTITY loc.host.650 "此账户这个军种的角色不能创建任务。请访问www.pkhlk.com来更新您的账户。">
 <!ENTITY loc.host.7 "{1} 是A.F.K（离开键盘状态）：{2}">
-<!ENTITY loc.host.495 "列出特定班组在线（或所有）的成员。">
+<!ENTITY loc.host.495 "列出特定战队在线（或所有）的成员。">
 <!ENTITY loc.host.343 "撤销无人控制的移动兵站！">
 <!ENTITY loc.host.338 "“/autoleader on” 或 “/autoleader off”">
 <!ENTITY loc.host.405 "{1} 撤退命令：基地大概在 {2}后投降。">
@@ -1830,7 +1830,7 @@
 <!ENTITY loc.host.612 "[*] 数据服务器正在启动：游戏某些功能将暂时不可用。[*]">
 <!ENTITY loc.host.186 "您现在可以接收到敌方的区域聊天信息。">
 <!ENTITY loc.host.220 "战斗旅频道不可用: 因您当前没有加入任何战斗旅。">
-<!ENTITY loc.host.275 "*{1} 拒绝了您的班组邀请。">
+<!ENTITY loc.host.275 "*{1} 拒绝了您的战队邀请。">
 <!ENTITY loc.host.328 "在 {1}没有可使用的AB(armybase 基地)。">
 <!ENTITY loc.host.369 "/mlist">
 <!ENTITY loc.host.383 "{1} 被预留在{2} 。">
@@ -1849,12 +1849,12 @@
 <!ENTITY loc.host.287 "/voteco 玩家名称">
 <!ENTITY loc.host.643 "无法对 {1}造成伤害：没有部署攻击目标。">
 <!ENTITY loc.host.446 "最新少数占领列表。把地图上的兵站定为目标，通过位置来限制结果。">
-<!ENTITY loc.host.515 "改变班组的名称，新名字必须与旧名字（duh）不同。">
+<!ENTITY loc.host.515 "改变战队的名称，新名字必须与旧名字（duh）不同。">
 <!ENTITY loc.host.27 "玩家 {1} 已从您的黑名单中剔除。">
 <!ENTITY loc.host.483 "/pnote <玩家名字> <信息>  或者  /pnote <玩家名字>">
 <!ENTITY loc.host.540 "当前不能在这个任务里添加移动兵站。">
 <!ENTITY loc.host.242 "每日信息">
-<!ENTITY loc.host.453 "提升班组里的特定玩家到指挥官（CO）的位置。对没有在班组的玩家没有任何效果。">
+<!ENTITY loc.host.453 "提升战队里的特定玩家到指挥官（CO）的位置。对没有在战队的玩家没有任何效果。">
 <!ENTITY loc.host.635 "/oicresign <unit>">
 <!ENTITY loc.host.529 "列出当前对战斗旅/师的OIC任命。">
 <!ENTITY loc.host.321 "您现在是这个任务领导！权限: 使用&#34;/orders&#34;命令来指挥部队，并在地图上设置导航来指引他们。">
@@ -2265,7 +2265,7 @@
 <!ENTITY widgets.prefs.groups.visual.shadows "阴影大小">
 <!ENTITY widgets.prefs.groups.game.language.spanish "西班牙语">
 <!ENTITY widgets.idcard.tip "ID卡上显示了您当前角色的一些重要信息。">
-<!ENTITY widgets.prefs.groups.chat.squadinvites "班组邀请">
+<!ENTITY widgets.prefs.groups.chat.squadinvites "战队邀请">
 <!ENTITY widgets.prefs.groups.visual.shadows.tip "选择阴影大小。选择较小的数字可以提高游戏的流畅度。">
 <!ENTITY widgets.prefs.groups.connection.vislimit.medium "中">
 <!ENTITY widgets.keymapper.cats.views "视野">
@@ -2279,11 +2279,12 @@
 <!ENTITY widgets.map.waypoints.delete "删除">
 <!ENTITY widgets.map.options.options "地图选项">
 <!ENTITY widgets.map.options.zoom.title "地图缩放等级">
-<!ENTITY widgets.prefs.groups.chat.squadinvites.tip "关闭此选项将会自动拒绝所有向你发送的班组邀请。">
+<!ENTITY widgets.prefs.groups.chat.squadinvites.tip "关闭此选项将会自动拒绝所有向你发送的战队邀请。">
 <!ENTITY widgets.prefs.groups.visual.clutter.density "密度">
 <!ENTITY widgets.prefs.groups.hud.custom.chat "聊天">
 <!ENTITY widgets.calibration.device "选择一个设备">
 <!ENTITY widgets.map.context.hc.attack "攻击目标">
+<!ENTITY widgets.prefs.groups.hud.deathicons.tip "Show onscreen death icons for fallen friendlies. Also marks a position on your minimap. Useful for finding the action!">
 <!ENTITY widgets.map.context.position "居中">
 <!ENTITY widgets.prefs.groups.ui.fontsize "字体大小">
 <!ENTITY widgets.keymapper.cats.armor "坦克和装甲车">
@@ -2301,6 +2302,7 @@
 <!ENTITY widgets.map.tooltip.town.french "这座城镇由绿（A）国占领。">
 <!ENTITY widgets.prefs.far "远">
 <!ENTITY widgets.map.options.zoom.facilities "设施">
+<!ENTITY widgets.prefs.groups.hud.missionwaypoints "MISSION WAYPOINTS">
 <!ENTITY widgets.calibration.device.axisry "方向舵 Y 轴">
 <!ENTITY widgets.map.waypoints.contact.gun "敌军炮手">
 <!ENTITY widgets.idcard.rank "等级">
@@ -2319,7 +2321,7 @@
 <!ENTITY widgets.prefs.na "不适用">
 <!ENTITY widgets.prefs.groups.infantry.corpse.time "尸体存留时间">
 <!ENTITY widgets.map.waypoints.add.attack "攻击这里!">
-<!ENTITY widgets.prefs.groups.ui.colors.squad "班组颜色">
+<!ENTITY widgets.prefs.groups.ui.colors.squad "战队颜色">
 <!ENTITY widgets.map.context.hc.objectives "目标">
 <!ENTITY widgets.prefs.groups.hud.ppos.tip "选择使用何种颜色来标示正确或不正确的玩家布置物体的放置">
 <!ENTITY widgets.prefs.groups.hud.custom.readout "读出">
@@ -2330,6 +2332,7 @@
 <!ENTITY widgets.prefs.groups.visual.specular "镜面反射">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.mode.map "地图">
 <!ENTITY widgets.map.info.target.title "任务目标">
+<!ENTITY widgets.prefs.groups.hud.deathicons "DEATH ICONS">
 <!ENTITY widgets.prefs.groups.alerts.show.tip "当特定的事件发生时，在屏幕上显示相关内容">
 <!ENTITY widgets.prefs.groups.sound.card "声卡">
 <!ENTITY widgets.prefs.groups.shadows.corpses "尸体">
@@ -2535,7 +2538,7 @@
 <!ENTITY widgets.prefs.groups.titles.alerts "HUD 警告">
 <!ENTITY widgets.calibration.device.joystick2 "摇杆 2">
 <!ENTITY widgets.map.context.position.brigade "我的战斗旅">
-<!ENTITY widgets.prefs.groups.ui.squadinvites "班组邀请">
+<!ENTITY widgets.prefs.groups.ui.squadinvites "战队邀请">
 <!ENTITY widgets.prefs.groups.ui.squadrecruiting "征募其他人">
 <!ENTITY widgets.prefs.groups.visual.normalmaps "标准地图">
 <!ENTITY widgets.prefs.groups.titles.game "游戏/应用程序">
@@ -2553,6 +2556,7 @@
 <!ENTITY widgets.prefs.slowest "最慢">
 <!ENTITY widgets.prefs.min "最小">
 <!ENTITY widgets.prefs.groups.visual.specular.tip "打开该功能以提升光影效果。关闭该功能可以提高游戏的流畅度。">
+<!ENTITY widgets.prefs.groups.hud.missionwaypoints.tip "Show onscreen waypoints to important mission locations like your target or the nearest resupply point.">
 <!ENTITY widgets.prefs.groups.hud.custom.primary "主武器弹药">
 <!ENTITY widgets.map.info.me.tip "在游戏中显示你当前位置的经纬度。">
 <!ENTITY widgets.calibration.none.desc "展开摇杆轴列表，选择一个轴进行配置">
@@ -2630,7 +2634,7 @@
 <!ENTITY widgets.map.context.waypoints.add.waypoint.rally "集结">
 <!ENTITY widgets.keymapper.button.clear.tip "清除近期更改的设置.">
 <!ENTITY widgets.map.waypoints.add "添加导航点">
-<!ENTITY widgets.prefs.groups.ui.squadrecruitment "班组征募">
+<!ENTITY widgets.prefs.groups.ui.squadrecruitment "战队征募">
 <!ENTITY widgets.map.context.position.origin "我的任务起点">
 <!ENTITY widgets.map.context.hc.remove "开除指挥官">
 <!ENTITY widgets.prefs.groups.visual.limitfov "限制FOV的改变">
@@ -2919,7 +2923,7 @@
 <!ENTITY brigades.list.status.planning.tip "这个战斗旅已经被激活，但是没有被指派任何目标。您的高级官员将会为这个战斗旅创建一个目标。">
 <!ENTITY brigades.list.status.inactive "休整">
 <!ENTITY brigades.details.division "师">
-<!ENTITY brigades.list.sq.tip "显示是否有你的班组成员加入了这个战斗旅。">
+<!ENTITY brigades.list.sq.tip "显示是否有你的战队成员加入了这个战斗旅。">
 <!ENTITY content.ranks.navy "海军">
 <!ENTITY content.movies.rewind "倒带">
 <!ENTITY content.ranks.officers "军官">
@@ -3080,7 +3084,7 @@
 <!ENTITY brigade.control.proposal.replace.me "您已经承担了{1}的指挥责任。">
 <!ENTITY brigade.hqtab.missions.none "这个战斗旅没有可以进行的任务。">
 <!ENTITY brigade.createtab.origin.help "任务创建者：为您的任务创建一个任务起点。">
-<!ENTITY brigade.hqtab.missions.sq.tip "显示您的班组成员也在这个任务里。">
+<!ENTITY brigade.hqtab.missions.sq.tip "显示您的战队成员也在这个任务里。">
 <!ENTITY brigade.control.proposal.objective.clear "{4}建议清除{2}的目标。">
 <!ENTITY brigade.hqtab.commandedby "听命于">
 <!ENTITY brigade.hqtab.brief "任务简报">
@@ -3089,7 +3093,7 @@
 <!ENTITY brigade.control.unit.moved.system "把{1}从{2} 移动到 {3}。">
 <!ENTITY brigade.control.error.notobjective "请求被拒绝: 那不是一个有效目标。">
 <!ENTITY brigade.comtab.structure.command "战斗序列">
-<!ENTITY brigade.hqtab.missions.sq "班组">
+<!ENTITY brigade.hqtab.missions.sq "战队">
 <!ENTITY brigade.comtab.structure.oic "指挥官">
 <!ENTITY brigade.hqtab "战斗旅总部">
 <!ENTITY brigade.createtab.postreply.6 "您的起点设施已经被占领，请选择另外一个。">
@@ -3192,49 +3196,49 @@
 <!ENTITY brigade.createtab.error.select "请从地图上选择一个城市或设施来作为您的任务的目标。">
 <!ENTITY squad.control.positiontaken "该职位已经有人了。">
 <!ENTITY squad.control.playerconsideringother "玩家正在考虑另一份邀请。">
-<!ENTITY squad.control.operationfailed "班组控制操作失败。">
+<!ENTITY squad.control.operationfailed "战队控制操作失败。">
 <!ENTITY squad.control.positionoccupied "该职位已经有人了。">
-<!ENTITY squad.control.createexpired "班组创建失败：请求超时。">
+<!ENTITY squad.control.createexpired "战队创建失败：请求超时。">
 <!ENTITY squad.control.promotelimit "该玩家职位已经不能再被提升了。">
-<!ENTITY squad.control.createinvite2 "同意加入这个班组并且接受&#37;ls 的职务，请输入/accept，如果不同意，请输入/decline。">
+<!ENTITY squad.control.createinvite2 "同意加入这个战队并且接受&#37;ls 的职务，请输入/accept，如果不同意，请输入/decline。">
 <!ENTITY squad.control.texttoolong "文本太长">
 <!ENTITY squad.control.noinvite "没有未完成的邀请需要接受。">
 <!ENTITY squad.control.mustresign "首先，您必须放弃您的命令。 输入/resign <代替者>，例如：/resign 玩家2">
-<!ENTITY squad.control.invalidsquadfull "班组创建失败: 无效的班组全称。">
-<!ENTITY squad.control.declined "班组邀请被拒绝。">
-<!ENTITY squad.control.created "您的班组已经创建完成了！">
+<!ENTITY squad.control.invalidsquadfull "战队创建失败: 无效的战队全称。">
+<!ENTITY squad.control.declined "战队邀请被拒绝。">
+<!ENTITY squad.control.created "您的战队已经创建完成了！">
 <!ENTITY squad.control.playerconsidering "玩家正在考虑您的邀请。">
-<!ENTITY squad.control.createinprogress "班组创建失败：您先前的申请仍然有效。">
-<!ENTITY squad.control.invalid "无效的班组命令。">
-<!ENTITY squad.control.createinvite1 "&#37;ls 正在创建新的班组 &#37;ls (&#37;ls) 。新班组的初始创建人数必须满足 &#37;u 人。">
-<!ENTITY squad.control.createmembererror "班组创建失败: 人数不能满足条件。">
-<!ENTITY squad.control.havekicked "您把&#37;ls 移出了班组。">
+<!ENTITY squad.control.createinprogress "战队创建失败：您先前的申请仍然有效。">
+<!ENTITY squad.control.invalid "无效的战队命令。">
+<!ENTITY squad.control.createinvite1 "&#37;ls 正在创建新的战队 &#37;ls (&#37;ls) 。新战队的初始创建人数必须满足 &#37;u 人。">
+<!ENTITY squad.control.createmembererror "战队创建失败: 人数不能满足条件。">
+<!ENTITY squad.control.havekicked "您把&#37;ls 移出了战队。">
 <!ENTITY squad.control.cantdotoself "您不能对自己那样做。">
 <!ENTITY squad.control.playeroutranks "那个玩家等级超过你">
 <!ENTITY squad.control.nosuchplayer "玩家不存在。">
 <!ENTITY squad.control.playernotonline "玩家没有在线。">
-<!ENTITY squad.control.joininvite "&#37;ls 邀请您加入他们的班组： &#39;&#37;ls: &#37;ls&#39;。如果同意加入，请输入 /accept，如果不同意，请输入 /decline。">
-<!ENTITY squad.control.squadexists "那个班组已经存在了。">
-<!ENTITY squad.control.slocked "您当前的账户类别不能参加这个班组行动。">
+<!ENTITY squad.control.joininvite "&#37;ls 邀请您加入他们的战队： &#39;&#37;ls: &#37;ls&#39;。如果同意加入，请输入 /accept，如果不同意，请输入 /decline。">
+<!ENTITY squad.control.squadexists "那个战队已经存在了。">
+<!ENTITY squad.control.slocked "您当前的账户类别不能参加这个战队行动。">
 <!ENTITY squad.control.ranktolow "您的军衔等级太低了。">
-<!ENTITY squad.control.done "班组命令已完成。">
-<!ENTITY squad.control.playerinothersquad "玩家已经加入了另一个班组。">
+<!ENTITY squad.control.done "战队命令已完成。">
+<!ENTITY squad.control.playerinothersquad "玩家已经加入了另一个战队。">
 <!ENTITY squad.control.notimplemented "未执行。">
-<!ENTITY squad.control.invalidshortname "班组创建失败: 无效的班组简称。">
+<!ENTITY squad.control.invalidshortname "战队创建失败: 无效的战队简称。">
 <!ENTITY squad.control.playerdeclined "玩家已经拒绝了您的邀请。">
-<!ENTITY squad.control.playernotinsquad "玩家没有加入任何班组。">
-<!ENTITY squad.control.accepted "接受班组邀请 – 你现在已经是&#37;ls的成员了。">
-<!ENTITY squad.control.notinsquad "您现在没有加入班组。">
-<!ENTITY squad.control.kicked "您已经被移出了班组。">
-<!ENTITY squad.control.squadunavailable "班组标签现在不可用，请稍候再次尝试。">
-<!ENTITY squad.control.playerinsquad "玩家已经加入你的班组。">
-<!ENTITY squad.control.newaccept "&#37;ls 已经接受了您的班组创建邀请。">
+<!ENTITY squad.control.playernotinsquad "玩家没有加入任何战队。">
+<!ENTITY squad.control.accepted "接受战队邀请 – 你现在已经是&#37;ls的成员了。">
+<!ENTITY squad.control.notinsquad "您现在没有加入战队。">
+<!ENTITY squad.control.kicked "您已经被移出了战队。">
+<!ENTITY squad.control.squadunavailable "战队标签现在不可用，请稍候再次尝试。">
+<!ENTITY squad.control.playerinsquad "玩家已经加入你的战队。">
+<!ENTITY squad.control.newaccept "&#37;ls 已经接受了您的战队创建邀请。">
 <!ENTITY squad.control.textinvalid "文本不可用">
 <!ENTITY squad.control.demotelimit "玩家已经降到了最低一级。">
-<!ENTITY squad.control.alreadyinsquad "您已经加入了班组。">
-<!ENTITY squad.control.createtoofewmembers "创建班组的的人数不足。">
+<!ENTITY squad.control.alreadyinsquad "您已经加入了战队。">
+<!ENTITY squad.control.createtoofewmembers "创建战队的的人数不足。">
 <!ENTITY squad.control.texttooshort "文本太短">
-<!ENTITY squad.control.createwaitingothers "谢谢。一旦其他成员都接受了邀请，班组就可以创建成功了。">
+<!ENTITY squad.control.createwaitingothers "谢谢。一旦其他成员都接受了邀请，战队就可以创建成功了。">
 <!ENTITY squad.control.left "您已经不再是 &#37;ls的成员了。">
 <!ENTITY legend.navybase "海军基地">
 <!ENTITY legend.civilian "平民">
@@ -3249,33 +3253,33 @@
 <!ENTITY legend.airbase "空军基地">
 <!ENTITY legend.defend "防御">
 <!ENTITY legend.overrun "敌军超量">
-<!ENTITY common.squads.create.xo.tip "这是你的执行官，他将帮助你来经营整个班组。 你可以在任何时间更改你的执行官，你可以对他降职，也可以提升另外的玩家接替他。">
-<!ENTITY common.squads.recruitment.title "找到一个班组，然后加入战斗">
+<!ENTITY common.squads.create.xo.tip "这是你的执行官，他将帮助你来经营整个战队。 你可以在任何时间更改你的执行官，你可以对他降职，也可以提升另外的玩家接替他。">
+<!ENTITY common.squads.recruitment.title "找到一个战队，然后加入战斗">
 <!ENTITY common.squads.member.flags.afk "暂时离开">
 <!ENTITY common.countries.it.side "红国">
-<!ENTITY common.squads.recruitment.success "您被 {1} 征募，加入了班组 {2}。">
+<!ENTITY common.squads.recruitment.success "您被 {1} 征募，加入了战队 {2}。">
 <!ENTITY common.squads.member.join.persona "因为不能建立合适的角色，所以不能加入。">
 <!ENTITY common.nominateoic "输入一个玩家的名字，提名他为 {1} 的指挥官。">
 <!ENTITY common.countries.uk.airforce "蓝（B）国空军">
-<!ENTITY common.squads.details.options.member.leave "离开班组？">
+<!ENTITY common.squads.details.options.member.leave "离开战队？">
 <!ENTITY common.countries.none.none "未知国家">
 <!ENTITY common.time.minutes "{1} 分钟">
 <!ENTITY common.squads.details.options.prefs.recruiting "启用您的招募旗帜？">
 <!ENTITY common.vehicles.classes.6 "卡车/牵引车">
-<!ENTITY common.squads.create.short.tip "班组简称必须是唯一的。班组简称只能包含10个字母或数字！班组简称可以是纯字母或者字母与数字的混合，但不能是纯数字。班组简称在游戏中显示在你的名字下面。">
+<!ENTITY common.squads.create.short.tip "战队简称必须是唯一的。战队简称只能包含10个字母或数字！战队简称可以是纯字母或者字母与数字的混合，但不能是纯数字。战队简称在游戏中显示在你的名字下面。">
 <!ENTITY common.training "基础训练">
-<!ENTITY common.squads.edit.night "请按照例子的样式输入您正式的班组之夜的时间: 星期天 12:30 +00:00 UTC">
+<!ENTITY common.squads.edit.night "请按照例子的样式输入您正式的战队之夜的时间: 星期天 12:30 +00:00 UTC">
 <!ENTITY common.squads.create.xo "执行官">
-<!ENTITY common.squads.edit.name "请输入班组的全称。它最长可以达到40字符。">
+<!ENTITY common.squads.edit.name "请输入战队的全称。它最长可以达到40字符。">
 <!ENTITY common.mission.re.short "侦察">
 <!ENTITY common.mission.3 "区域防御">
-<!ENTITY common.squads.details.short "班组简称">
+<!ENTITY common.squads.details.short "战队简称">
 <!ENTITY common.squads.ranks.rank3 "招募者">
 <!ENTITY common.vehicles.classes.2 "战斗机">
-<!ENTITY common.squads.details.night "班组之夜">
+<!ENTITY common.squads.details.night "战队之夜">
 <!ENTITY common.squads.member.joined "参加">
 <!ENTITY common.countries.it.airforce "意大利空军">
-<!ENTITY common.squads.create.short "班组简称">
+<!ENTITY common.squads.create.short "战队简称">
 <!ENTITY common.languages.1 "意大利语">
 <!ENTITY common.countries.it "IT">
 <!ENTITY common.quit "您想要离开吗?">
@@ -3284,32 +3288,32 @@
 <!ENTITY common.mission.rs "再次补给">
 <!ENTITY common.squads.details.options.xo.promote.button "升职">
 <!ENTITY common.squads.members.tips.hc "高级军官">
-<!ENTITY common.squads.tab "班组">
-<!ENTITY common.squads.create.msg.shortname.invalid "班组简称只能包含字母和数字！">
+<!ENTITY common.squads.tab "战队">
+<!ENTITY common.squads.create.msg.shortname.invalid "战队简称只能包含字母和数字！">
 <!ENTITY common.squads.create.msg.required "所有的字段都必须填满！">
 <!ENTITY common.squads.details.language "语言">
 <!ENTITY common.mission.pa.short "攻击">
-<!ENTITY common.squads.invite.decline.auto "自动拒绝新的班组邀请。">
+<!ENTITY common.squads.invite.decline.auto "自动拒绝新的战队邀请。">
 <!ENTITY common.languages.5 "汉语">
 <!ENTITY common.squads.member.type "类型">
 <!ENTITY common.squads.details.options.xo.remove "选择要开除的玩家">
-<!ENTITY common.squads.details.description "班组介绍">
-<!ENTITY common.squads.details.options.co.disband "是否解散班组？">
-<!ENTITY common.squads.edit.language "您的班组那种语言使用的最多？">
+<!ENTITY common.squads.details.description "战队介绍">
+<!ENTITY common.squads.details.options.co.disband "是否解散战队？">
+<!ENTITY common.squads.edit.language "您的战队那种语言使用的最多？">
 <!ENTITY common.squads.details.voting.false "投票不可用">
 <!ENTITY common.countries.none.adjective "未知">
 <!ENTITY common.countries.none.navy "未知海军">
 <!ENTITY common.vehicles.categories.3 "海上交通工具">
-<!ENTITY common.squads.recruitment.description "下面是一些班组的招募邀请函。加入班组是一种非常好游戏体验方式，所以选择一个你比较感兴趣的班组，然后点击“加入班组”按钮加入吧。 您将可以参加他们当前的任务。即使您被分配进了这个班组，您也可以随时离开，选择另外的班组。">
+<!ENTITY common.squads.recruitment.description "下面是一些战队的招募邀请函。加入战队是一种非常好游戏体验方式，所以选择一个你比较感兴趣的战队，然后点击“加入战队”按钮加入吧。 您将可以参加他们当前的任务。即使您被分配进了这个战队，您也可以随时离开，选择另外的战队。">
 <!ENTITY common.map.tab.tip.offline "了解世界地图。扩大查看城市，桥梁和其他设施。">
-<!ENTITY common.squads.edit.motd "请输入每日信息。这可以告诉您的班组成员，进来您的班组的动向。它的长度可以达到400字符。">
+<!ENTITY common.squads.edit.motd "请输入每日信息。这可以告诉您的战队成员，进来您的战队的动向。它的长度可以达到400字符。">
 <!ENTITY common.commandedby "听命于">
 <!ENTITY common.squads.create "创建">
 <!ENTITY common.squads.member.joined.month "{1} 个月以前">
-<!ENTITY common.squads.recruitment.join "加入班组">
+<!ENTITY common.squads.recruitment.join "加入战队">
 <!ENTITY common.countries.it.name "意大利">
 <!ENTITY common.page "网页">
-<!ENTITY common.squads.create.help "班组: 创建或加入一个班组">
+<!ENTITY common.squads.create.help "战队: 创建或加入一个战队">
 <!ENTITY common.squads.member.offline "离线">
 <!ENTITY common.squads.details.recruiting.false "招募不可用">
 <!ENTITY common.more.dbclick "双击查看更多的信息。">
@@ -3321,18 +3325,18 @@
 <!ENTITY common.squads.member.join.mission "点击这里加入这个新兵任务。这里将应用阵营限制。">
 <!ENTITY common.mission.5 "再次补给">
 <!ENTITY common.squads.member.joined.months "{1}个月以前">
-<!ENTITY common.squads.invite.squadname "班组名称">
+<!ENTITY common.squads.invite.squadname "战队名称">
 <!ENTITY common.squads.member.joined.days "{1} 天以前">
 <!ENTITY common.vehicles.classes.1 "轰炸机/运输机">
 <!ENTITY common.yes "确定">
-<!ENTITY common.squads.create.msg.shortname "班组简称字数太少！">
+<!ENTITY common.squads.create.msg.shortname "战队简称字数太少！">
 <!ENTITY common.squads.details.options.prefs "个性化">
 <!ENTITY common.squads.member.joined.year "{1} 年以前">
 <!ENTITY common.squads.details.name "名字">
 <!ENTITY common.squads.create.member "组员">
 <!ENTITY common.languages.2 "法语">
 <!ENTITY common.squads.details.options.xo.demote "选择要降职的玩家">
-<!ENTITY common.squads.details.motd.default "这个班组没有提供每日信息。">
+<!ENTITY common.squads.details.motd.default "这个战队没有提供每日信息。">
 <!ENTITY common.mission.1.short "防御">
 <!ENTITY common.squads.counts "{1} 在线 / {2} 总数">
 <!ENTITY common.squads.members.info "正式成员">
@@ -3345,10 +3349,10 @@
 <!ENTITY common.squads.member.join.ingame "进入游戏世界以后，您不能进行加入新兵的操作。">
 <!ENTITY common.squads.details.night.dow2 "星期二">
 <!ENTITY common.squads.member.rank "军衔">
-<!ENTITY common.squads.edit.recruiting "启用班组招募。你还可以输入长度不超过80字符的招募口号。任务中的招募者必须积极的回应新的成员。">
+<!ENTITY common.squads.edit.recruiting "启用战队招募。你还可以输入长度不超过80字符的招募口号。任务中的招募者必须积极的回应新的成员。">
 <!ENTITY common.squads.edit.option.on "打开">
 <!ENTITY common.map.tab "战区地图">
-<!ENTITY common.squads.details.description.default "这个班组没有任何的介绍。">
+<!ENTITY common.squads.details.description.default "这个战队没有任何的介绍。">
 <!ENTITY common.vehicles.classes.7 "高射炮/反坦克炮">
 <!ENTITY common.squads.details.options.co.resign.button "辞职">
 <!ENTITY common.mission.pd "点防御">
@@ -3365,7 +3369,7 @@
 <!ENTITY common.squads.members.hideoffline "离线隐藏">
 <!ENTITY common.countries.de.army "红（C）国陆军">
 <!ENTITY common.keymapper.tab.tip "配置快捷键和摇杆坐标轴。">
-<!ENTITY common.squads.recruitment.none "近期没有班组在招募。请稍候尝试。">
+<!ENTITY common.squads.recruitment.none "近期没有战队在招募。请稍候尝试。">
 <!ENTITY common.squads.member.division "师">
 <!ENTITY common.countries.uk "B">
 <!ENTITY common.vehicles.classes.12 "河船">
@@ -3379,11 +3383,11 @@
 <!ENTITY common.squads.edit.option.off "关闭">
 <!ENTITY common.no "取消">
 <!ENTITY common.vehicles.classes.14 "空降兵">
-<!ENTITY common.squads.members.join "你想要加入这个班组的任务吗？">
+<!ENTITY common.squads.members.join "你想要加入这个战队的任务吗？">
 <!ENTITY common.squads.member.joined.years "{1} 年以前">
 <!ENTITY common.squads.member.join "加入">
 <!ENTITY common.settings.help "修改设定然后点击保存">
-<!ENTITY common.squads.create.msg.longname "班组全称的字数太多！">
+<!ENTITY common.squads.create.msg.longname "战队全称的字数太多！">
 <!ENTITY common.squads.recruitment.success.mission "现在您将被派去与 {1} 一同执行任务。">
 <!ENTITY common.branches.navy "海军">
 <!ENTITY common.countries.none.name "未知">
@@ -3391,14 +3395,14 @@
 <!ENTITY common.mission.ad.short "防御">
 <!ENTITY common.squads.details.night.dow5 "星期五">
 <!ENTITY common.squads.details.recruiting.true "招募可用">
-<!ENTITY common.squads.create.member.tip "要想创建班组，你除了必须指明一个执行官（XO）外，还至少需要拥有3个组员。在这里输入玩家的游戏昵称。">
+<!ENTITY common.squads.create.member.tip "要想创建战队，你除了必须指明一个执行官（XO）外，还至少需要拥有3个组员。在这里输入玩家的游戏昵称。">
 <!ENTITY common.squads.invite.recruiters "招募者">
-<!ENTITY common.squads.tab.tip "从这个标签，你可以查找班组来加入，或者你已经加入了班组，你可以查看您的班组的成员列表。如果您的权限允许的话，您还可以更新你的班组的信息。">
+<!ENTITY common.squads.tab.tip "从这个标签，你可以查找战队来加入，或者你已经加入了战队，你可以查看您的战队的成员列表。如果您的权限允许的话，您还可以更新你的战队的信息。">
 <!ENTITY common.squads.member.joined.today "今天">
 <!ENTITY common.squads.details.voting.true "投票可用">
 <!ENTITY common.languages.3 "德语">
 <!ENTITY common.countries.it.navy "意大利海军">
-<!ENTITY common.squads.details.notarget "这项命令是一个目标性的命令。你必须从班组成员列表中选择一个玩家。">
+<!ENTITY common.squads.details.notarget "这项命令是一个目标性的命令。你必须从战队成员列表中选择一个玩家。">
 <!ENTITY common.mission.aa.short "攻击">
 <!ENTITY common.squads.details.options.xo "执行官选项">
 <!ENTITY common.vehicles.categories.4 "步兵">
@@ -3409,7 +3413,7 @@
 <!ENTITY common.training.status "{2}项中的{1}项已完成">
 <!ENTITY common.mission.5.short "再次补给">
 <!ENTITY common.mission.4 "侦察">
-<!ENTITY common.squads.recruitment.slogan "加入我们班组，让我们一起探索游戏的乐趣！">
+<!ENTITY common.squads.recruitment.slogan "加入我们战队，让我们一起探索游戏的乐趣！">
 <!ENTITY common.squads.details.options.co "指挥官选项">
 <!ENTITY common.countries.de "C">
 <!ENTITY common.squads.details.options.co.disband.button "解散">
@@ -3421,7 +3425,7 @@
 <!ENTITY common.countries.fr.name "绿（A）国">
 <!ENTITY common.time.seconds "{1} 秒">
 <!ENTITY common.mission.0 "点攻击">
-<!ENTITY common.squads.invite.squad "正在招募的班组">
+<!ENTITY common.squads.invite.squad "正在招募的战队">
 <!ENTITY common.squads.member.target "任务目标">
 <!ENTITY common.countries.us.side "联盟国">
 <!ENTITY common.squads.details.options.xo.remove.button "开除">
@@ -3431,7 +3435,7 @@
 <!ENTITY common.mission.ad "区域防御">
 <!ENTITY common.squads.invite.decline "拒绝">
 <!ENTITY common.countries.it.army "意大利陆军">
-<!ENTITY common.squads.edit.homepage "请在页面上输入您的班组的主页地址。它的长度可以达到80字符。">
+<!ENTITY common.squads.edit.homepage "请在页面上输入您的战队的主页地址。它的长度可以达到80字符。">
 <!ENTITY common.map.tab.tip "查看前线地图。扩大前线地图，然后计划你的攻击和防御。">
 <!ENTITY common.countries.fr.army "绿（A）国陆军">
 <!ENTITY common.squads.member.flags.none "没有旗帜申请">
@@ -3445,9 +3449,9 @@
 <!ENTITY common.countries.de.airforce "红（C）国空军">
 <!ENTITY common.squads.details.motd "每日信息">
 <!ENTITY common.languages.0 "英语">
-<!ENTITY common.squads.create.long.tip "班组全称指是你的要创建的班组的完整名称。它可以包含任何标准字符，最长可以有13个汉字。">
+<!ENTITY common.squads.create.long.tip "战队全称指是你的要创建的战队的完整名称。它可以包含任何标准字符，最长可以有13个汉字。">
 <!ENTITY common.squads.details.night.dow0 "星期日">
-<!ENTITY common.squads.edit.description "请输入关于您的班组的大体的描述。 这段描述长度可以达到255字符。">
+<!ENTITY common.squads.edit.description "请输入关于您的战队的大体的描述。 这段描述长度可以达到255字符。">
 <!ENTITY common.squads.members.refresh "刷新">
 <!ENTITY common.countries.uk.adjective "蓝（B）国">
 <!ENTITY common.squads.member.leader "领导者">
@@ -3464,7 +3468,7 @@
 <!ENTITY common.countries.uk.navy "蓝（B）国海军">
 <!ENTITY common.squads.details.options.member.leave.button "离开">
 <!ENTITY common.squads.members.persona "当前角色">
-<!ENTITY common.squads.create.long "班组全称">
+<!ENTITY common.squads.create.long "战队全称">
 <!ENTITY common.squads.details.created "创建时间">
 <!ENTITY common.squads.details.night.dow6 "星期六">
 <!ENTITY common.exitclick "鼠标点击任何位置即可直接退出游戏！">
@@ -3484,10 +3488,10 @@
 <!ENTITY common.squads.details "信息">
 <!ENTITY common.squads.details.options.xo.demote.button "降职">
 <!ENTITY common.squads.members.tips.online "这个玩家在线">
-<!ENTITY common.squads.tab.help "班组: 管理班组信息和成员">
+<!ENTITY common.squads.tab.help "战队: 管理战队信息和成员">
 <!ENTITY common.squads.invite.inviter "招募者">
 <!ENTITY common.countries.us.navy "美国海军">
-<!ENTITY common.squads.details.options.prefs.invites "接受班组邀请？">
+<!ENTITY common.squads.details.options.prefs.invites "接受战队邀请？">
 <!ENTITY common.countries.none.army "未知陆军">
 <!ENTITY common.countries.it.adjective "意大利">
 <!ENTITY common.squads.details.options.xo.promote "选择要升职的玩家">
@@ -3499,18 +3503,18 @@
 <!ENTITY common.time.days "{1} 天">
 <!ENTITY common.time.second "{1} 秒">
 <!ENTITY common.squads.ranks.rank4 "执行官">
-<!ENTITY common.squads.members "班组成员">
+<!ENTITY common.squads.members "战队成员">
 <!ENTITY common.squads.recruitment.info "为 {1} 而战 | 使用语言 {2} |招募者是 {3}">
 <!ENTITY common.mission.3.short "防御">
-<!ENTITY common.squads.create.msg.sent "班组创建申请已发送！如果您的申请被主机接受，那么当您最初的组员接受并成为班组成员以后，您的班组就建立了。">
+<!ENTITY common.squads.create.msg.sent "战队创建申请已发送！如果您的申请被主机接受，那么当您最初的组员接受并成为战队成员以后，您的战队就建立了。">
 <!ENTITY common.squads.details.night.dow4 "星期四">
-<!ENTITY common.squads.edit.voting "启用这个选项可以允许班组投票选举新的指挥官等等。">
+<!ENTITY common.squads.edit.voting "启用这个选项可以允许战队投票选举新的指挥官等等。">
 <!ENTITY common.squads.member.join.select "因为主机拒绝了您的新角色申请，所以不能加入。">
 <!ENTITY common.countries.fr.side "绿（A）国">
 <!ENTITY common.squads.tab.offline "这个标签只有联网进行游戏的时候才可用。">
 <!ENTITY common.time.hours "{1} 小时">
-<!ENTITY common.squads.recruitment.show "显示招募邀请函和班组邀请。">
-<!ENTITY common.squads.member.recruit "您当前的班组等级是新兵。新兵将会在{1}天以后自动开除。距离您被开除还有{2} 天。想要继续留在这个班组，您必须由招募者一级或者更高的班组成员把你提升到“正式成员”的等级。">
+<!ENTITY common.squads.recruitment.show "显示招募邀请函和战队邀请。">
+<!ENTITY common.squads.member.recruit "您当前的战队等级是新兵。新兵将会在{1}天以后自动开除。距离您被开除还有{2} 天。想要继续留在这个战队，您必须由招募者一级或者更高的战队成员把你提升到“正式成员”的等级。">
 <!ENTITY common.squads.edit "编辑">
 <!ENTITY common.squads.invite.current "当前邀请">
 <!ENTITY common.squads.member.online "在线">
@@ -3520,7 +3524,7 @@
 <!ENTITY common.keymapper.tab "设置面板">
 <!ENTITY common.mission.4.short "侦察">
 <!ENTITY common.countries.uk.name "蓝（B）国">
-<!ENTITY common.squads.recruitment.success.chat "您可以点击 {1} 去与你的班组成员进行交流！">
+<!ENTITY common.squads.recruitment.success.chat "您可以点击 {1} 去与你的战队成员进行交流！">
 <!ENTITY common.branches.airforce "空军">
 <!ENTITY common.squads.details.options.recruiter.recruit.button "招募">
 <!ENTITY common.countries.none "NA">
@@ -3533,7 +3537,7 @@
 <!ENTITY common.countries.fr.airforce "绿（A）国空军">
 <!ENTITY common.controllers.tab "控制器">
 <!ENTITY common.cthl "与服务器失去联系!">
-<!ENTITY common.squads.create.msg.failed "班组申请失败，请回顾您输入的内容，再次尝试！">
+<!ENTITY common.squads.create.msg.failed "战队申请失败，请回顾您输入的内容，再次尝试！">
 <!ENTITY common.mission.aa "区域攻击">
 <!ENTITY common.confirmoicnomination "您被提名去指挥 {1}。您接受这份任命吗？">
 <!ENTITY common.vehicles.categories.1 "航空器">
@@ -3563,7 +3567,7 @@
 <!ENTITY chat.holdfall.report "[{1}] 敌军超量报告：正在等待坚守，撤退或延期的命令。">
 <!ENTITY chat.f3.tip "点击以设定频道 #3. 使用您键盘上的F3，在这个频道聊天。">
 <!ENTITY chat.chatter "点击这个按钮开始聊天。你也可以按键盘上的“回车”键开始聊天。">
-<!ENTITY chat.channel.squad "班组">
+<!ENTITY chat.channel.squad "战队">
 <!ENTITY chat.holdfall.hold "坚守">
 <!ENTITY chat.f5.tip "点击以设定频道 #5. 使用您键盘上的F5，在这个频道聊天。">
 <!ENTITY chat.hc "高级军官">
@@ -3585,6 +3589,7 @@
 <!ENTITY hud.primary "主武器">
 <!ENTITY hud.alerts.18.acquired "我军已经占领了 {1}">
 <!ENTITY hud.alerts.17 "您由 {1} 提供了补给">
+<!ENTITY hud.waypoints.origin "ORIGIN">
 <!ENTITY hud.readout.vehicles "交通工具">
 <!ENTITY hud.hqintel.weight.0 "轻">
 <!ENTITY hud.alerts.24.sea "{1} 附近发现敌人海军力量">
@@ -3619,6 +3624,7 @@
 <!ENTITY hud.readout.infantry.lifeboat "救生船">
 <!ENTITY hud.readout.vehicles.stowed "理仓">
 <!ENTITY hud.binfo.state.nofire "该区域不能射击!">
+<!ENTITY hud.waypoints.leader "LEADER">
 <!ENTITY hud.cliptype.3.plural "弹夹">
 <!ENTITY hud.cliptype.0 "弹夹">
 <!ENTITY hud.readout.gear.reverse "倒档">
@@ -3639,14 +3645,17 @@
 <!ENTITY hud.health.state.pilot "飞机乘员">
 <!ENTITY hud.readout.riding.towed "拖曳">
 <!ENTITY hud.alerts.19.deliberated "敌军收复了 {1}">
+<!ENTITY hud.dead "&#37;ls 死在这里">
 <!ENTITY hud.readout.gear.kaput "损毁">
 <!ENTITY hud.cliptype.2 "弹链">
 <!ENTITY hud.alerts.14 "引入的接触报告">
 <!ENTITY hud.hqintel.dir.7 "西北">
 <!ENTITY hud.gameinfo.icon.0 "正常">
 <!ENTITY hud.readout.torp.control.invalid "没有有效的火控方案！">
+<!ENTITY hud.waypoints.target "TARGET">
 <!ENTITY hud.readout.torp.control "射击方案火力射角">
 <!ENTITY hud.health.atp.tip "您的体力数值是 {1}. 在您进行奔跑，匍匐前进和其他一些活动时都会消耗体力值。.">
+<!ENTITY hud.waypoints.fru "FRU">
 <!ENTITY hud.bailout.confirm "你要跳伞吗?">
 <!ENTITY hud.minimap.latlon "您当前位置的经纬度">
 <!ENTITY hud.readout.infantry.seat "座位">
@@ -3741,7 +3750,7 @@
 <!ENTITY persona.details.brigade "战斗旅附录">
 <!ENTITY persona.details.career.rank.tip "距离升级的百分比">
 <!ENTITY persona.details.career.status.available "准备完毕. 这个角色可以直接进入游戏。">
-<!ENTITY persona.welcome.squad.motd.nosquad "想要获得乐趣吗？想要快速找到任务参加吗？想要和朋友一起游戏吗？那么你还等什么，赶快加入班组吧，去体验你从没接触到的欧洲战场！">
+<!ENTITY persona.welcome.squad.motd.nosquad "想要获得乐趣吗？想要快速找到任务参加吗？想要和朋友一起游戏吗？那么你还等什么，赶快加入战队吧，去体验你从没接触到的欧洲战场！">
 <!ENTITY persona.list.available "现役">
 <!ENTITY persona.details.persona.recruit "征募">
 <!ENTITY persona.selecttab.tip "在这个标签选择一个角色。">
@@ -3757,10 +3766,11 @@
 <!ENTITY persona.details.persona "已选择的角色">
 <!ENTITY persona.details.career.rank "到下一级的进展">
 <!ENTITY persona.list.tip "选择角色">
+<!ENTITY persona.notgraduated "You are currently a recruit and have not graduated from basic training. Would you like to enter training now?">
 <!ENTITY persona.list.overpopulated "人数过多">
 <!ENTITY persona.welcome.pollresults.url "www.pkhlk.com">
 <!ENTITY persona.welcome.population "玩家数量">
-<!ENTITY persona.welcome.squad.motd "班组信息">
+<!ENTITY persona.welcome.squad.motd "战队信息">
 <!ENTITY persona.list.banned "禁止{1}">
 <!ENTITY persona.list.overpopulated.3 "高度">
 <!ENTITY persona.list.delayed "接入延迟">
@@ -3798,7 +3808,7 @@
 <!ENTITY hccp.tabs.notices.title "战斗旅通告">
 <!ENTITY exitvehicle.status "离开状态：{1}">
 <!ENTITY globals.time.months "月">
-<!ENTITY chatchan.squad "班组">
+<!ENTITY chatchan.squad "战队">
 <!ENTITY presets.general "默认">
 <!ENTITY presets.atgun.nojoy "没有摇杆">
 <!ENTITY capture.spawn "这个设施可以作为单位的出生点。">
@@ -3878,10 +3888,10 @@
 <!ENTITY dotcom.set.help "用法：.set <vel/spd>（为交通工具设定不同的物理数值）">
 <!ENTITY dotcom.movebrigade.help "更改战斗旅的驻地">
 <!ENTITY dotcom.aion.help "启动/关闭AI">
-<!ENTITY dotcom.recruit.help "用法：.recruit <游戏名称>：邀请其他玩家加入班组">
+<!ENTITY dotcom.recruit.help "用法：.recruit <游戏名称>：邀请其他玩家加入战队">
 <!ENTITY dotcom.nukepersonas.help "请求服务器删除你所有的角色信息">
 <!ENTITY dotcom.help.help "用法：.help =  [<命令名称>]（显示所有你可以使用的命令列表）">
-<!ENTITY dotcom.who.help "显示当前在线的班组成员">
+<!ENTITY dotcom.who.help "显示当前在线的战队成员">
 <!ENTITY dotcom.undeploy.help "">
 <!ENTITY dotcom.reloadammo.help "">
 <!ENTITY dotcom.leak.help "用法：.leak（进行装甲裂缝测试）">
@@ -3926,13 +3936,13 @@
 <!ENTITY dotcom.concuss.help "用法：.concuss（启动/关闭震毁伤害）">
 <!ENTITY dotcom.builder.help "">
 <!ENTITY dotcom.resetstrat.help "强制重启数据服务器">
-<!ENTITY dotcom.makeco.help "提升玩家成为他所在班组的班组指挥官">
+<!ENTITY dotcom.makeco.help "提升玩家成为他所在战队的战队指挥官">
 <!ENTITY dotcom.warn.help "向特定玩家发送匿名警告信息">
 <!ENTITY dotcom.oicremove.help "用法：.oicremove <战斗旅名称> <玩家名称>">
 <!ENTITY dotcom.normal.help "togglenormalmap">
 <!ENTITY dotcom.reset.help "用法：.reset（重置trncd fx旗帜）">
 <!ENTITY dotcom.ttraverseconv.help "">
-<!ENTITY dotcom.voting.help "启动或关闭班组投票系统">
+<!ENTITY dotcom.voting.help "启动或关闭战队投票系统">
 <!ENTITY dotcom.speed.help "">
 <!ENTITY dotcom.friends.help "查看/整理好友列表">
 <!ENTITY dotcom.hitmap.help "用法：.hitmap <vehiclename/all> [<validhit/validcmp>]（显示或确证hitmap命令所影响的地图组成的名称）">
@@ -3949,7 +3959,7 @@
 <!ENTITY dotcom.orders.help "查看/设定当前的任务命令">
 <!ENTITY dotcom.5.help "向电台5发送一条信息">
 <!ENTITY dotcom.infanimtest.help "用法：.infanimtest （开关混合物的日志输出）">
-<!ENTITY dotcom.demote.help "用法：.demote <游戏名称>（降低你所在班组的某个玩家的职位）">
+<!ENTITY dotcom.demote.help "用法：.demote <游戏名称>（降低你所在战队的某个玩家的职位）">
 <!ENTITY dotcom.rank.help "用法：.rank <名称> <1-13>（更改特定玩家的等级）">
 <!ENTITY dotcom.reloadclutter.help "">
 <!ENTITY dotcom.fpsresupply.help "用法：.fpsresupply">
@@ -3961,11 +3971,11 @@
 <!ENTITY dotcom.fbo.help "">
 <!ENTITY dotcom.trntex.help "用法：.trntex（识别特定位置的材质）">
 <!ENTITY dotcom.um.help "设置当前的更新模式（0 thru 12 inclusive）">
-<!ENTITY dotcom.renamesquad.help "用法：.renamesquad <旧的名称> <新的名称>：更改班组的简称">
+<!ENTITY dotcom.renamesquad.help "用法：.renamesquad <旧的名称> <新的名称>：更改战队的简称">
 <!ENTITY dotcom.testpacket.help "发送高/中/低数据封包">
 <!ENTITY dotcom.addweap.help "添加或移除某个城镇所拥有的出生列表中战车">
 <!ENTITY dotcom.setmotd.help "设置系统的每日信息">
-<!ENTITY dotcom.recruiting.help "用法：.recruiting [on|off]：开启或关闭班组的自动招募功能">
+<!ENTITY dotcom.recruiting.help "用法：.recruiting [on|off]：开启或关闭战队的自动招募功能">
 <!ENTITY dotcom.kickban.help "把某个特定玩家踢出游戏并暂时封停他们的账号">
 <!ENTITY dotcom.gridsnapshot.help "启动/关闭网格快照记录功能">
 <!ENTITY dotcom.invite.help ".invite <游戏名称>">
@@ -3973,9 +3983,9 @@
 <!ENTITY dotcom.hcoff.help "关闭高级军官频道">
 <!ENTITY dotcom.grab.help "与特定玩家直接联系">
 <!ENTITY dotcom.backupleader.help ".backupleader <玩家名字>：设定候补任务指挥官">
-<!ENTITY dotcom.accept.help "接受班组邀请">
+<!ENTITY dotcom.accept.help "接受战队邀请">
 <!ENTITY dotcom.sendads.help "">
-<!ENTITY dotcom.promote.help "用法：.promote <游戏名称>：提升玩家在班组里的职位">
+<!ENTITY dotcom.promote.help "用法：.promote <游戏名称>：提升玩家在战队里的职位">
 <!ENTITY dotcom.force.help "用法：.force （开关力）">
 <!ENTITY dotcom.6.help "向电台6发送一条信息">
 <!ENTITY dotcom.warnall.help "向所有玩家发送匿名警告信息">
@@ -4008,8 +4018,8 @@
 <!ENTITY dotcom.objectives.help "列举当前你方阵营的所有目标">
 <!ENTITY dotcom.doover.help "用法：.doover [次数]（执行最后输入的命令，可以通过输入数字来决定执行的次数）">
 <!ENTITY dotcom.tobbox.help "">
-<!ENTITY dotcom.disband.help "解散班组">
-<!ENTITY dotcom.listsquad.help "列举某个[活跃]班组的成员信息">
+<!ENTITY dotcom.disband.help "解散战队">
+<!ENTITY dotcom.listsquad.help "列举某个[活跃]战队的成员信息">
 <!ENTITY dotcom.ride.help "">
 <!ENTITY dotcom.c.help "用法：.c <评论>（向日志中添加评论）">
 <!ENTITY dotcom.hcmotd.help "显示/设定高级军官的每日信息">
@@ -4027,9 +4037,9 @@
 <!ENTITY dotcom.invites.help ".invites [on|off]">
 <!ENTITY dotcom.msp.help "在最后的已知地点部署移动兵站">
 <!ENTITY dotcom.cpdump.help "集中显示城镇据点和设施的详细信息">
-<!ENTITY dotcom.resign.help "用法：.resign：辞去班组指挥官的职位">
+<!ENTITY dotcom.resign.help "用法：.resign：辞去战队指挥官的职位">
 <!ENTITY dotcom.np.help "在新旧步兵探测器之间进行切换">
-<!ENTITY dotcom.changesquadname.help "申请更改班组的简称">
+<!ENTITY dotcom.changesquadname.help "申请更改战队的简称">
 <!ENTITY dotcom.gizmo.help "用法：.gizmo [foils/forces/inertia/clearlines] <on/off>（开关战车对象分析）">
 <!ENTITY dotcom.resync.help "强制重新载入聊天许可">
 <!ENTITY dotcom.bdamage.help "">
@@ -4039,7 +4049,7 @@
 <!ENTITY dotcom.create.help ".create <简称>">
 <!ENTITY dotcom.infcoltest.help "用法：.infcoltest（开关在聊天窗口显示步兵击中信息的功能）">
 <!ENTITY dotcom.discochat.help "用法：.discochat（切断聊天服务器的连接）">
-<!ENTITY dotcom.decline.help "用法：.decline：谢绝班组的邀请">
+<!ENTITY dotcom.decline.help "用法：.decline：谢绝战队的邀请">
 <!ENTITY dotcom.countads.help "">
 <!ENTITY dotcom.hccp.help "用法：.hccp（开关高级军官控制面板）">
 <!ENTITY dotcom.wttest.help "用法.windtunnel [<stats/hp/stall/top/climb/roll/clcd/thrust>]（运行风洞系统）">
@@ -4050,7 +4060,7 @@
 <!ENTITY dotcom.gmmode.help "开关GM模式">
 <!ENTITY dotcom.sysmotd.help "查看系统的每日信息">
 <!ENTITY dotcom.hold.help "开始坚守">
-<!ENTITY dotcom.voteco.help "投票选举班组指挥官">
+<!ENTITY dotcom.voteco.help "投票选举战队指挥官">
 <!ENTITY dotcom.home.help "显示战斗旅的驻地">
 <!ENTITY dotcom.water.help "启动/关闭水影效果">
 <!ENTITY dotcom.terraindraw.help "">
@@ -4061,7 +4071,7 @@
 <!ENTITY dotcom.gm.help "Roster or message the GM channel">
 <!ENTITY dotcom.ignore.help "查看/整理黑名单列表">
 <!ENTITY dotcom.sys.help "向所有玩家发送匿名信息">
-<!ENTITY dotcom.remove.help "用法：.remove <游戏名称>：把特定的玩家踢出班组">
+<!ENTITY dotcom.remove.help "用法：.remove <游戏名称>：把特定的玩家踢出战队">
 <!ENTITY dotcom.obdraw.help "">
 <!ENTITY dotcom.lighttool.help "">
 <!ENTITY dotcom.nowho.help "允许你无视.who 命令所产生的效力">
@@ -4077,7 +4087,7 @@
 <!ENTITY dotcom.slomo.help "">
 <!ENTITY dotcom.yell.help "大范围聊天">
 <!ENTITY dotcom.ungrab.help "释放先前捕获的玩家">
-<!ENTITY dotcom.listcos.help "列举所有当前在线的班组指挥官">
+<!ENTITY dotcom.listcos.help "列举所有当前在线的战队指挥官">
 <!ENTITY dotcom.whisper.help "小范围聊天">
 <!ENTITY dotcom.snoop.help "记录或展示特定玩家接受和发送的所有信息">
 <!ENTITY dotcom.altspd.help "用法：.altspd <高度数值> [速度数值]（设定高度和速度）。">
@@ -4552,10 +4562,8 @@
 <!ENTITY ppos.badlocation "你不能在这种地形里部署这类物体!">
 <!ENTITY ppos.fru.built "Another player has built an FRU for this mission!">
 <!ENTITY ppos.badtrees "有棵树正堵着你的物体！">
-<!ENTITY ppos.badtarget.toofar "你离你的任务目标太远，不能部署这类物体！！">
 <!ENTITY ppos.badavoidance "你离另一个物体太近！">
 <!ENTITY ppos.ob3 "野外补给单位（移动兵站）">
-<!ENTITY ppos.badtarget.tooclose "你离你的任务目标太近，不能部署这类物体！">
 <!ENTITY ppos.badplayer "你只有进入战场才能部署物体！">
 <!ENTITY ppos.ob1 "步兵掩体">
 <!ENTITY ppos.badspeed "你不能在移动中部署这类物体！">
@@ -4566,12 +4574,12 @@
 <!ENTITY ppos.building "建筑: {1}">
 <!ENTITY ppos.badfriendlyfac.toofar "你离你方设施太远，不能部署这类物体！">
 <!ENTITY ppos.badenemyfac.tooclose "你离敌人设施太近，不能部署这类物体！">
-<!ENTITY ppos.badtargetrange.tooclose "You are too close to your mission target for this object type!">
+<!ENTITY ppos.badtargetrange.tooclose "你离你的任务目标太近，不能部署这类物体！">
 <!ENTITY ppos.fru.build "你是否要在这建一个野外补给单位（移动兵站）？">
 <!ENTITY ppos.badvehicle "另一个玩家正堵着你的物体！">
-<!ENTITY ppos.cantsee "You must be able to see your object to place it!">
+<!ENTITY ppos.cantsee "你必须要能够看到才能部署这类物体！">
 <!ENTITY ppos.noaccess "你没有得到部署这类物体的许可。请付费以得到许可。">
-<!ENTITY ppos.badtargetrange.toofar "You are too far from your mission target for this object type!">
+<!ENTITY ppos.badtargetrange.toofar "你离你的任务目标太远，不能部署这类物体！！">
 <!ENTITY ppos.ob2 "防御工事">
 <!ENTITY ppos.noinside "你不能在建筑中部署这类物体！">
 <!ENTITY ppos.badplacement "地点不正确!">

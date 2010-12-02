@@ -2284,6 +2284,7 @@
 <!ENTITY widgets.prefs.groups.hud.custom.chat "CHAT">
 <!ENTITY widgets.calibration.device "SELECT A DEVICE">
 <!ENTITY widgets.map.context.hc.attack "Attack Here">
+<!ENTITY widgets.prefs.groups.hud.deathicons.tip "Show onscreen death icons for fallen friendlies. Also marks a position on your minimap. Useful for finding the action!">
 <!ENTITY widgets.map.context.position "Center On">
 <!ENTITY widgets.prefs.groups.ui.fontsize "FONT SIZE">
 <!ENTITY widgets.keymapper.cats.armor "Tanks and Armored Cars">
@@ -2301,6 +2302,7 @@
 <!ENTITY widgets.map.tooltip.town.french "This town is French owned.">
 <!ENTITY widgets.prefs.far "far">
 <!ENTITY widgets.map.options.zoom.facilities "FACILITIES">
+<!ENTITY widgets.prefs.groups.hud.missionwaypoints "MISSION WAYPOINTS">
 <!ENTITY widgets.calibration.device.axisry "Rudder Y Axis">
 <!ENTITY widgets.map.waypoints.contact.gun "Enemy Gun">
 <!ENTITY widgets.idcard.rank "RANK">
@@ -2330,6 +2332,7 @@
 <!ENTITY widgets.prefs.groups.visual.specular "SPECULAR">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.mode.map "map">
 <!ENTITY widgets.map.info.target.title "TARGET">
+<!ENTITY widgets.prefs.groups.hud.deathicons "DEATH ICONS">
 <!ENTITY widgets.prefs.groups.alerts.show.tip "Alerts show on your HUD when certain game events happen. Example alerts are when a facility is captured or when you receive ammo from a buddy.">
 <!ENTITY widgets.prefs.groups.sound.card "SOUND CARD">
 <!ENTITY widgets.prefs.groups.shadows.corpses "CORPSES">
@@ -2553,6 +2556,7 @@
 <!ENTITY widgets.prefs.slowest "slowest">
 <!ENTITY widgets.prefs.min "min">
 <!ENTITY widgets.prefs.groups.visual.specular.tip "Enables better lighting. Disable for better performance.">
+<!ENTITY widgets.prefs.groups.hud.missionwaypoints.tip "Show onscreen waypoints to important mission locations like your target or the nearest resupply point.">
 <!ENTITY widgets.prefs.groups.hud.custom.primary "PRIMARY AMMO">
 <!ENTITY widgets.map.info.me.tip "Shows your current position in latitude and longitude while in game">
 <!ENTITY widgets.calibration.none.desc "Expand the joystick axis list and select an axis to configure.">
@@ -3585,6 +3589,7 @@
 <!ENTITY hud.primary "PRIMARY">
 <!ENTITY hud.alerts.18.acquired "Our forces have acquired {1}">
 <!ENTITY hud.alerts.17 "You have been resupplied by {1}">
+<!ENTITY hud.waypoints.origin "ORIGIN">
 <!ENTITY hud.readout.vehicles "Vehicles">
 <!ENTITY hud.hqintel.weight.0 "Light">
 <!ENTITY hud.alerts.24.sea "Enemy sea forces spotted near {1}">
@@ -3619,6 +3624,7 @@
 <!ENTITY hud.readout.infantry.lifeboat "lifeboat">
 <!ENTITY hud.readout.vehicles.stowed "stowed">
 <!ENTITY hud.binfo.state.nofire "No Fire Zone!">
+<!ENTITY hud.waypoints.leader "LEADER">
 <!ENTITY hud.cliptype.3.plural "reloads">
 <!ENTITY hud.cliptype.0 "clip">
 <!ENTITY hud.readout.gear.reverse "R">
@@ -3639,14 +3645,17 @@
 <!ENTITY hud.health.state.pilot "FLIGHT CREW">
 <!ENTITY hud.readout.riding.towed "Being Towed">
 <!ENTITY hud.alerts.19.deliberated "Enemy forces have regained {1}">
+<!ENTITY hud.dead "&#37;ls died here">
 <!ENTITY hud.readout.gear.kaput "Dead">
 <!ENTITY hud.cliptype.2 "belt">
 <!ENTITY hud.alerts.14 "Incoming contact report">
 <!ENTITY hud.hqintel.dir.7 "northwest">
 <!ENTITY hud.gameinfo.icon.0 "Normal">
 <!ENTITY hud.readout.torp.control.invalid "No Valid Fire Control Solution!">
+<!ENTITY hud.waypoints.target "TARGET">
 <!ENTITY hud.readout.torp.control "Fire Control Solution FireAngle">
 <!ENTITY hud.health.atp.tip "Your ATP is currently at {1}. ATP is used when running, going prone and other tiring actions.">
+<!ENTITY hud.waypoints.fru "FRU">
 <!ENTITY hud.bailout.confirm "Do you want to bailout?">
 <!ENTITY hud.minimap.latlon "Your current position in latitude and longitude">
 <!ENTITY hud.readout.infantry.seat "seat">
@@ -3757,6 +3766,7 @@
 <!ENTITY persona.details.persona "SELECTED PERSONA">
 <!ENTITY persona.details.career.rank "Progress toward next rank">
 <!ENTITY persona.list.tip "Choose a persona to play">
+<!ENTITY persona.notgraduated "You are currently a recruit and have not graduated from basic training. Would you like to enter training now?">
 <!ENTITY persona.list.overpopulated "over populated">
 <!ENTITY persona.welcome.pollresults.url "http://www.polls.wwiionline.com/crspolls.htm">
 <!ENTITY persona.welcome.population "PLAYER POPULATION">

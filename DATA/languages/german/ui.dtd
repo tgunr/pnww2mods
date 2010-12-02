@@ -2286,6 +2286,7 @@
 <!ENTITY widgets.prefs.groups.hud.custom.chat "CHAT">
 <!ENTITY widgets.calibration.device "WÄHLE EIN GERÄT">
 <!ENTITY widgets.map.context.hc.attack "Hier angreifen">
+<!ENTITY widgets.prefs.groups.hud.deathicons.tip "Show onscreen death icons for fallen friendlies. Also marks a position on your minimap. Useful for finding the action!">
 <!ENTITY widgets.map.context.position "Zentrieren auf">
 <!ENTITY widgets.prefs.groups.ui.fontsize "SCHRIFTGRÖßE">
 <!ENTITY widgets.keymapper.cats.armor "Panzer und Radpanzer">
@@ -2303,6 +2304,7 @@
 <!ENTITY widgets.map.tooltip.town.french "Diese Stadt ist französisch kontrolliert.">
 <!ENTITY widgets.prefs.far "weit">
 <!ENTITY widgets.map.options.zoom.facilities "ANLAGEN">
+<!ENTITY widgets.prefs.groups.hud.missionwaypoints "MISSION WAYPOINTS">
 <!ENTITY widgets.calibration.device.axisry "Ruder Y-Achse">
 <!ENTITY widgets.map.waypoints.contact.gun "FEINDLICHES GESCHÜTZ">
 <!ENTITY widgets.idcard.rank "RANG">
@@ -2333,6 +2335,7 @@
 <!ENTITY widgets.prefs.groups.visual.specular "SPIEGELUNGEN">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.mode.map "Karte">
 <!ENTITY widgets.map.info.target.title "ZIEL">
+<!ENTITY widgets.prefs.groups.hud.deathicons "DEATH ICONS">
 <!ENTITY widgets.prefs.groups.alerts.show.tip "Alarmmeldungen im HUD anzeigen. Beispiele: Einnahme einer Anlage oder ein Spieler hat Dir Munition gegeben">
 <!ENTITY widgets.prefs.groups.sound.card "SOUNDKARTE">
 <!ENTITY widgets.prefs.groups.shadows.corpses "LEICHEN">
@@ -2567,6 +2570,7 @@
 <!ENTITY widgets.prefs.groups.shaders.reflections.short "REFLEKTIONEN">
 <!ENTITY widgets.prefs.min "min">
 <!ENTITY widgets.prefs.groups.visual.specular.tip "Enables better lighting. Disable for better performance.">
+<!ENTITY widgets.prefs.groups.hud.missionwaypoints.tip "Show onscreen waypoints to important mission locations like your target or the nearest resupply point.">
 <!ENTITY widgets.prefs.groups.hud.custom.primary "PRIMÄRMUNITION">
 <!ENTITY widgets.map.info.me.tip "Zeigt Deine Position in der Spielwelt in Breiten- und Längengraden.">
 <!ENTITY widgets.prefs.groups.shaders.reflections "WASSERREFLEKTIONEN">
@@ -3604,6 +3608,7 @@
 <!ENTITY hud.primary "PRIMÄR">
 <!ENTITY hud.alerts.18.acquired "Unsere Kräfte haben {1} erobert">
 <!ENTITY hud.alerts.17 "Du hast von {1} Nachschub erhalten">
+<!ENTITY hud.waypoints.origin "ORIGIN">
 <!ENTITY hud.readout.vehicles "Vehikel">
 <!ENTITY hud.hqintel.weight.0 "Light">
 <!ENTITY hud.alerts.24.sea "Feindliche Schiffe bei {1} gesichtet">
@@ -3638,6 +3643,7 @@
 <!ENTITY hud.readout.infantry.lifeboat "Rettungsboot">
 <!ENTITY hud.readout.vehicles.stowed "verstaut">
 <!ENTITY hud.binfo.state.nofire "No Fire Zone!">
+<!ENTITY hud.waypoints.leader "LEADER">
 <!ENTITY hud.cliptype.3.plural "Ladungen">
 <!ENTITY hud.cliptype.0 "Streifen">
 <!ENTITY hud.readout.gear.reverse "R">
@@ -3658,14 +3664,17 @@
 <!ENTITY hud.health.state.pilot "BESATZUNG">
 <!ENTITY hud.readout.riding.towed "Im Schlepp">
 <!ENTITY hud.alerts.19.deliberated "Feindliche Streitkräfte haben {1} zurückerobert">
+<!ENTITY hud.dead "&#37;ls died here">
 <!ENTITY hud.readout.gear.kaput "Kaputt">
 <!ENTITY hud.cliptype.2 "Gurt">
 <!ENTITY hud.alerts.14 "eingehende Kontaktmeldung">
 <!ENTITY hud.hqintel.dir.7 "northwest">
 <!ENTITY hud.gameinfo.icon.0 "Normal">
 <!ENTITY hud.readout.torp.control.invalid "Keine gültige Feuerlösung!">
+<!ENTITY hud.waypoints.target "TARGET">
 <!ENTITY hud.readout.torp.control "Feuerlösung Feuerwinkel">
 <!ENTITY hud.health.atp.tip "Dein ATP ist auf {1}. ATP wird zum Rennen, Kriechen oder Ducken gebraucht">
+<!ENTITY hud.waypoints.fru "FRU">
 <!ENTITY hud.bailout.confirm "Do you want to bailout?">
 <!ENTITY hud.minimap.latlon "Deine Position in Längen- und Breitengraden">
 <!ENTITY hud.readout.infantry.seat "Sitz">
@@ -3776,6 +3785,7 @@
 <!ENTITY persona.details.persona "AUSGEWÄHLTE PERSONA">
 <!ENTITY persona.details.career.rank "zum nächsten Rang erreicht">
 <!ENTITY persona.list.tip "Wähle eine Persona zum Spielen aus">
+<!ENTITY persona.notgraduated "You are currently a recruit and have not graduated from basic training. Would you like to enter training now?">
 <!ENTITY persona.list.overpopulated "überbevölkert">
 <!ENTITY persona.welcome.pollresults.url "http://www.polls.wwiionline.com/crspolls.htm">
 <!ENTITY persona.welcome.population "SPIELERPOPULATION">

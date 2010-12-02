@@ -2284,6 +2284,7 @@
 <!ENTITY widgets.prefs.groups.hud.custom.chat "CHAT">
 <!ENTITY widgets.calibration.device "SCEGLI UN DISPOSITIVO">
 <!ENTITY widgets.map.context.hc.attack "Attacca qui">
+<!ENTITY widgets.prefs.groups.hud.deathicons.tip "Show onscreen death icons for fallen friendlies. Also marks a position on your minimap. Useful for finding the action!">
 <!ENTITY widgets.map.context.position "Centra su">
 <!ENTITY widgets.prefs.groups.ui.fontsize "DIMENSIONE FONT">
 <!ENTITY widgets.keymapper.cats.armor "Carri e Veicoli Blindati">
@@ -2301,6 +2302,7 @@
 <!ENTITY widgets.map.tooltip.town.french "Questa città è Francese.">
 <!ENTITY widgets.prefs.far "lontano">
 <!ENTITY widgets.map.options.zoom.facilities "STRUTTURE">
+<!ENTITY widgets.prefs.groups.hud.missionwaypoints "MISSION WAYPOINTS">
 <!ENTITY widgets.calibration.device.axisry "Timone Asse Y">
 <!ENTITY widgets.map.waypoints.contact.gun "Artiglieria nemica">
 <!ENTITY widgets.idcard.rank "GRADO">
@@ -2330,6 +2332,7 @@
 <!ENTITY widgets.prefs.groups.visual.specular "SPECULARE">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.mode.map "mappa">
 <!ENTITY widgets.map.info.target.title "OBIETTIVO">
+<!ENTITY widgets.prefs.groups.hud.deathicons "DEATH ICONS">
 <!ENTITY widgets.prefs.groups.alerts.show.tip "Allerte mostrate sul tuo HUD quando accadono certi eventi del gioco. Allerte di esempio sono quando una struttura viene catturata o quando ricevi munizioni da un compagno.">
 <!ENTITY widgets.prefs.groups.sound.card "SCHEDA AUDIO">
 <!ENTITY widgets.prefs.groups.shadows.corpses "Corpi">
@@ -2553,6 +2556,7 @@
 <!ENTITY widgets.prefs.slowest "lentissimo">
 <!ENTITY widgets.prefs.min "min">
 <!ENTITY widgets.prefs.groups.visual.specular.tip "Enables better lighting. Disable for better performance.">
+<!ENTITY widgets.prefs.groups.hud.missionwaypoints.tip "Show onscreen waypoints to important mission locations like your target or the nearest resupply point.">
 <!ENTITY widgets.prefs.groups.hud.custom.primary "MUNIZIONAMENTO PRIMARIO">
 <!ENTITY widgets.map.info.me.tip "Mostra la tua posizione in latitudine e longitudine mentre sei in gioco">
 <!ENTITY widgets.calibration.none.desc "Espandi la lista degli assi del joystick per selezionare un asse da configurare.">
@@ -3270,7 +3274,7 @@
 <!ENTITY common.mission.re.short "Ricognizione">
 <!ENTITY common.mission.3 "Difesa d&#39;area">
 <!ENTITY common.squads.details.short "NOME BREVE">
-<!ENTITY common.squads.ranks.rank3 "Recluatatore">
+<!ENTITY common.squads.ranks.rank3 "Reclutatore">
 <!ENTITY common.vehicles.classes.2 "Caccia">
 <!ENTITY common.squads.details.night "NOTTE DELLA SQUADRA">
 <!ENTITY common.squads.member.joined "UNITO">
@@ -3585,6 +3589,7 @@
 <!ENTITY hud.primary "PRIMARIO">
 <!ENTITY hud.alerts.18.acquired "Le nostre forze hanno conquistato {1}">
 <!ENTITY hud.alerts.17 "Stai facendo rifornimento da {1}">
+<!ENTITY hud.waypoints.origin "ORIGIN">
 <!ENTITY hud.readout.vehicles "Veicoli">
 <!ENTITY hud.hqintel.weight.0 "Light">
 <!ENTITY hud.alerts.24.sea "Forze navali nemiche avvistate presso {1}">
@@ -3619,6 +3624,7 @@
 <!ENTITY hud.readout.infantry.lifeboat "barca di salvataggio">
 <!ENTITY hud.readout.vehicles.stowed "stivato">
 <!ENTITY hud.binfo.state.nofire "No Fire Zone!">
+<!ENTITY hud.waypoints.leader "LEADER">
 <!ENTITY hud.cliptype.3.plural "ricariche">
 <!ENTITY hud.cliptype.0 "nastro">
 <!ENTITY hud.readout.gear.reverse "R">
@@ -3639,14 +3645,17 @@
 <!ENTITY hud.health.state.pilot "PILOTA">
 <!ENTITY hud.readout.riding.towed "Trainato">
 <!ENTITY hud.alerts.19.deliberated "Le forze nemiche hanno riguadagnato {1}">
+<!ENTITY hud.dead "&#37;ls died here">
 <!ENTITY hud.readout.gear.kaput "Rotto">
 <!ENTITY hud.cliptype.2 "cartuccera">
 <!ENTITY hud.alerts.14 "Rapporto di contatto in arrivo">
 <!ENTITY hud.hqintel.dir.7 "northwest">
 <!ENTITY hud.gameinfo.icon.0 "Normale">
 <!ENTITY hud.readout.torp.control.invalid "Nessuna soluzione di tiro valida!">
+<!ENTITY hud.waypoints.target "TARGET">
 <!ENTITY hud.readout.torp.control "Soluzione di tiro Angolo di fuoco">
 <!ENTITY hud.health.atp.tip "La tua condizione fisica è attualmente al {1}. E&#39; utilizzata quando corri, ti arrampichi o altre azioni faticose.">
+<!ENTITY hud.waypoints.fru "FRU">
 <!ENTITY hud.bailout.confirm "Do you want to bailout?">
 <!ENTITY hud.minimap.latlon "La tua attuale posizione in latitudine e longitudine">
 <!ENTITY hud.readout.infantry.seat "seduto">
@@ -3757,6 +3766,7 @@
 <!ENTITY persona.details.persona "SELEZIONA PROFILO">
 <!ENTITY persona.details.career.rank "Avanzamento per il prossimo grado">
 <!ENTITY persona.list.tip "Scegli un profilo con cui giocare">
+<!ENTITY persona.notgraduated "You are currently a recruit and have not graduated from basic training. Would you like to enter training now?">
 <!ENTITY persona.list.overpopulated "sovrappopolato">
 <!ENTITY persona.welcome.pollresults.url "http://www.polls.wwiionline.com/crspolls.htm">
 <!ENTITY persona.welcome.population "POPOLAZIONE DEI GIOCATORI">
