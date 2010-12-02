@@ -102,9 +102,10 @@
 				game.despawn();
 				popup.setPopupCursorState(true);
 			}
-			
+						
 			game.enableimapinput(true);
 			client.enabledespawntimer(false);
+			game.cancelppo();
 			window.close();
 		}
 		
