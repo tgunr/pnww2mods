@@ -1,0 +1,36 @@
+<script>
+	<!--
+	
+	var display = null;
+	
+	function initHUDObject(v)
+	{
+		display = v.findview("display");
+	}
+	
+	function setAlpha(d)
+	{
+		if(display != null)
+		{
+			if(d == 0)
+			{
+				if(display.visible)
+					display.visible = false;
+			}
+			else
+			{
+				if(!display.visible)
+					display.visible = true;
+					
+				var color = 255 * d;
+				var bg = 128 * d;
+				
+				display.setstyleproperty("color", "#FFFFFF" + color.toString(16));
+				display.setstyleproperty("backgound-color", "#000000" + bg.toString(16));
+			}
+		}
+	}
+	
+	-->
+</script>
+
