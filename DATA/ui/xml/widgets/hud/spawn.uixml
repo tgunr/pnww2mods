@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
-<view id="hud-spawn" class="target" x="0" y="0" width="1024" height="768" layer="-10" acceptsmouse='false' onshow="initHUDObject(this)">
+<view id="hud-spawn" class="target" x="0" y="0" width="1024" height="768" layer="-10" acceptsmouse='false' onshow="initHUDObject(this)" acceptsmouseclick='false'>
 	<include file="lib/hud.uixml"/>
-	<caption  id="display" label='&hud.waypoints.origin;' x="0" y="0" height="15" width="40" acceptsmouse='false' style="color: #FFFFFF; background-color: #00000044;" align='center'/>
+	<text  id="display" x="0" y="0" height="15" width="40" acceptsmouseclick='false'
+		style="color: #FFFFFF; shadow-type: point; shadow-color: #00000088; border-width: 2;"/>
 </view>
 
