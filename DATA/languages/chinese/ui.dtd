@@ -1339,6 +1339,7 @@
 <!ENTITY loc.host.116 "/own [<城镇>]">
 <!ENTITY loc.host.196 "没有激活的前进基地">
 <!ENTITY loc.host.134 "强制再启全域（或单个玩家）权限许可。">
+<!ENTITY loc.host.656 "{1} has surrendered to the enemy.">
 <!ENTITY loc.host.50 "您必须首先选择阵营。">
 <!ENTITY loc.host.375 "/status">
 <!ENTITY loc.host.559 "时间间隔至少30 秒。">
@@ -1555,6 +1556,7 @@
 <!ENTITY loc.host.334 "任务领导权将移交给 {1} 。">
 <!ENTITY loc.host.240 "最新发布的目标。">
 <!ENTITY loc.host.458 "战队 &#39;{1}&#39; 已经拥有指挥官（CO）&#39;{2}&#39;了。 使用&#34;/makeco -force&#34; 命令夺取现任指挥官的权限。">
+<!ENTITY loc.host.659 "{1} will surrender to the enemy in {2} minutes.">
 <!ENTITY loc.host.172 "{1}的目标被取消了">
 <!ENTITY loc.host.71 "没有参数: 列出收听HC（高级军官）频道的玩家。有参数: 向HC（高级军官）频道发消息。">
 <!ENTITY loc.host.565 "*因为投票撤销，战队的指挥官（CO）选举被取消。">
@@ -1726,6 +1728,7 @@
 <!ENTITY loc.host.510 "报告你当前所在战斗旅或特定战斗旅的移动时间和当前的撤退位置。">
 <!ENTITY loc.host.149 "{1} 已经报告{2} 。">
 <!ENTITY loc.host.97 "显示玩家数字">
+<!ENTITY loc.host.657 "{1} has surrendered to us!">
 <!ENTITY loc.host.322 "您现在是这个任务领导！权限: 玩家发送的触敌报告须您同意才能被别的玩家看到。您批准后所有具相同任务的友好玩家都可看到。">
 <!ENTITY loc.host.141 "敌军超量报告过期了或已经处理。">
 <!ENTITY loc.host.382 "在 {1}的防御已经撤销。所有单位正赶往撤退位置。">
@@ -1837,6 +1840,7 @@
 <!ENTITY loc.host.463 "/shutdown stop">
 <!ENTITY loc.host.467 "When the countdown reaches zero arenalock 15 is applied and players are given a final 30 seconds to despawn and exit if they wish to save their current sorties.">
 <!ENTITY loc.host.351 "您的黑名单已满，请先删除某人。">
+<!ENTITY loc.host.658 "{1} will surrender to the enemy in {2} hours.">
 <!ENTITY loc.host.390 "您已进入不健康游戏时间，为了您的健康，请您立即下线休息。如不下线，您的身体将受到损害，您的收益已降为零，直到您的累计下线时间满5小时后，才能恢复正常。">
 <!ENTITY loc.host.15 "您有值日官（D.O.）联系上了玩家{1} - 交谈将被纪录。">
 <!ENTITY loc.host.356 "新兵&#39;{1}&#39; 退出游戏，脱离您的监督。">
@@ -2284,7 +2288,7 @@
 <!ENTITY widgets.prefs.groups.hud.custom.chat "聊天">
 <!ENTITY widgets.calibration.device "选择一个设备">
 <!ENTITY widgets.map.context.hc.attack "攻击目标">
-<!ENTITY widgets.prefs.groups.hud.deathicons.tip "Show onscreen death icons for fallen friendlies. Also marks a position on your minimap. Useful for finding the action!">
+<!ENTITY widgets.prefs.groups.hud.deathicons.tip "在游戏里标示死去战友的位置，同时也在小地图上标示。这些标识对识别敌我的行动意图都有用。">
 <!ENTITY widgets.map.context.position "居中">
 <!ENTITY widgets.prefs.groups.ui.fontsize "字体大小">
 <!ENTITY widgets.keymapper.cats.armor "坦克和装甲车">
@@ -2302,7 +2306,7 @@
 <!ENTITY widgets.map.tooltip.town.french "这座城镇由绿（A）国占领。">
 <!ENTITY widgets.prefs.far "远">
 <!ENTITY widgets.map.options.zoom.facilities "设施">
-<!ENTITY widgets.prefs.groups.hud.missionwaypoints "MISSION WAYPOINTS">
+<!ENTITY widgets.prefs.groups.hud.missionwaypoints "任务导航点">
 <!ENTITY widgets.calibration.device.axisry "方向舵 Y 轴">
 <!ENTITY widgets.map.waypoints.contact.gun "敌军炮手">
 <!ENTITY widgets.idcard.rank "等级">
@@ -2332,7 +2336,7 @@
 <!ENTITY widgets.prefs.groups.visual.specular "镜面反射">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.mode.map "地图">
 <!ENTITY widgets.map.info.target.title "任务目标">
-<!ENTITY widgets.prefs.groups.hud.deathicons "DEATH ICONS">
+<!ENTITY widgets.prefs.groups.hud.deathicons "死亡图标">
 <!ENTITY widgets.prefs.groups.alerts.show.tip "当特定的事件发生时，在屏幕上显示相关内容">
 <!ENTITY widgets.prefs.groups.sound.card "声卡">
 <!ENTITY widgets.prefs.groups.shadows.corpses "尸体">
@@ -2556,7 +2560,7 @@
 <!ENTITY widgets.prefs.slowest "最慢">
 <!ENTITY widgets.prefs.min "最小">
 <!ENTITY widgets.prefs.groups.visual.specular.tip "打开该功能以提升光影效果。关闭该功能可以提高游戏的流畅度。">
-<!ENTITY widgets.prefs.groups.hud.missionwaypoints.tip "Show onscreen waypoints to important mission locations like your target or the nearest resupply point.">
+<!ENTITY widgets.prefs.groups.hud.missionwaypoints.tip "在游戏里标示重要的与任务相关的导航点，如任务目标或最近的补给点。">
 <!ENTITY widgets.prefs.groups.hud.custom.primary "主武器弹药">
 <!ENTITY widgets.map.info.me.tip "在游戏中显示你当前位置的经纬度。">
 <!ENTITY widgets.calibration.none.desc "展开摇杆轴列表，选择一个轴进行配置">
@@ -3589,7 +3593,7 @@
 <!ENTITY hud.primary "主武器">
 <!ENTITY hud.alerts.18.acquired "我军已经占领了 {1}">
 <!ENTITY hud.alerts.17 "您由 {1} 提供了补给">
-<!ENTITY hud.waypoints.origin "ORIGIN">
+<!ENTITY hud.waypoints.origin "起始点">
 <!ENTITY hud.readout.vehicles "交通工具">
 <!ENTITY hud.hqintel.weight.0 "轻">
 <!ENTITY hud.alerts.24.sea "{1} 附近发现敌人海军力量">
@@ -3624,7 +3628,7 @@
 <!ENTITY hud.readout.infantry.lifeboat "救生船">
 <!ENTITY hud.readout.vehicles.stowed "理仓">
 <!ENTITY hud.binfo.state.nofire "该区域不能射击!">
-<!ENTITY hud.waypoints.leader "LEADER">
+<!ENTITY hud.waypoints.leader "指挥官">
 <!ENTITY hud.cliptype.3.plural "弹夹">
 <!ENTITY hud.cliptype.0 "弹夹">
 <!ENTITY hud.readout.gear.reverse "倒档">
@@ -3645,17 +3649,16 @@
 <!ENTITY hud.health.state.pilot "飞机乘员">
 <!ENTITY hud.readout.riding.towed "拖曳">
 <!ENTITY hud.alerts.19.deliberated "敌军收复了 {1}">
-<!ENTITY hud.dead "&#37;ls 死在这里">
 <!ENTITY hud.readout.gear.kaput "损毁">
 <!ENTITY hud.cliptype.2 "弹链">
 <!ENTITY hud.alerts.14 "引入的接触报告">
 <!ENTITY hud.hqintel.dir.7 "西北">
 <!ENTITY hud.gameinfo.icon.0 "正常">
 <!ENTITY hud.readout.torp.control.invalid "没有有效的火控方案！">
-<!ENTITY hud.waypoints.target "TARGET">
+<!ENTITY hud.waypoints.target "目标">
 <!ENTITY hud.readout.torp.control "射击方案火力射角">
 <!ENTITY hud.health.atp.tip "您的体力数值是 {1}. 在您进行奔跑，匍匐前进和其他一些活动时都会消耗体力值。.">
-<!ENTITY hud.waypoints.fru "FRU">
+<!ENTITY hud.waypoints.fru "野外补给单位（移动兵站）">
 <!ENTITY hud.bailout.confirm "你要跳伞吗?">
 <!ENTITY hud.minimap.latlon "您当前位置的经纬度">
 <!ENTITY hud.readout.infantry.seat "座位">
@@ -3715,6 +3718,7 @@
 <!ENTITY hud.alerts.15 "您接收到了新的命令">
 <!ENTITY hud.alerts.24.ground "{1} 附近发现敌人军队">
 <!ENTITY hud.binfo.state.wecapture "友军占领!">
+<!ENTITY hud.death "&#37;ls 死在这里">
 <!ENTITY hud.hqintel.weight.2 "很重">
 <!ENTITY hud.hqintel.dir.1 "东北">
 <!ENTITY hud.health.blood "这个图标显示的是您的当前状态">
@@ -3766,7 +3770,7 @@
 <!ENTITY persona.details.persona "已选择的角色">
 <!ENTITY persona.details.career.rank "到下一级的进展">
 <!ENTITY persona.list.tip "选择角色">
-<!ENTITY persona.notgraduated "You are currently a recruit and have not graduated from basic training. Would you like to enter training now?">
+<!ENTITY persona.notgraduated "你还是新兵，尚未从新兵营毕业。你愿意进新兵营训练吗？">
 <!ENTITY persona.list.overpopulated "人数过多">
 <!ENTITY persona.welcome.pollresults.url "www.pkhlk.com">
 <!ENTITY persona.welcome.population "玩家数量">
@@ -4548,10 +4552,9 @@
 <!ENTITY waypoints.minutesago "分钟前">
 <!ENTITY waypoints.invalid "无效的导航点">
 <!ENTITY waypoints.move "移动到这里">
-<!ENTITY waypoints.mspawn.tip "Current mobile spawn for this mission.">
+<!ENTITY waypoints.mspawn.tip "这是本任务当前的移动兵站。">
 <!ENTITY waypoints.offroad "离开公路">
 <!ENTITY waypoints.limited "您所能递交的导航点或触敌报告的数量已经达到了最高值。">
-<!ENTITY waypoints.msp "这是本任务当前的移动兵站。">
 <!ENTITY waypoints.restricted "只有在游戏世界里，您才可以添加接触报告。">
 <!ENTITY waypoints.reportedby "报告人">
 <!ENTITY waypoints.vehiclerange "战车靶场">

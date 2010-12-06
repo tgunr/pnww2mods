@@ -1339,6 +1339,7 @@
 <!ENTITY loc.host.116 "/own [<población>]">
 <!ENTITY loc.host.196 "No hay (Bases Avanzadas) &#34;FBs&#34; activas.">
 <!ENTITY loc.host.134 "Fuerza la recarga de los permisos de chat globales o de un jugador individual.">
+<!ENTITY loc.host.656 "{1} has surrendered to the enemy.">
 <!ENTITY loc.host.50 "Debes elegir primero un bando.">
 <!ENTITY loc.host.375 "/status">
 <!ENTITY loc.host.559 "El intervalo debe ser al menos de 30 segundos.">
@@ -1555,6 +1556,7 @@
 <!ENTITY loc.host.334 "El liderazgo de la misión será transferido a {1}.">
 <!ENTITY loc.host.240 "Objetivo despachado recientemente.">
 <!ENTITY loc.host.458 "La unidad &#39;{1}&#39; ya tiene un Oficial al Mando (CO) &#39;{2}&#39;. Utilice &#34;/makeco -force&#34; para usurpar el mando existente.">
+<!ENTITY loc.host.659 "{1} will surrender to the enemy in {2} minutes.">
 <!ENTITY loc.host.172 "El objetivo en {1} está siendo retirado">
 <!ENTITY loc.host.71 "Sin un mensaje: lista la gente sintonizada al canal HC. De otro modo envía el <mensaje> al canal HC.">
 <!ENTITY loc.host.565 "*Elecciones de CO de unidad canceladas debido a la retirada de votos.">
@@ -1726,6 +1728,7 @@
 <!ENTITY loc.host.510 "Informa del tiempo de movimiento y la localización de retirada actual de tu brigada actual o las brigadas especificadas.">
 <!ENTITY loc.host.149 "{1} ya está informando un {2}.">
 <!ENTITY loc.host.97 "Muestra el numero de jugadores">
+<!ENTITY loc.host.657 "{1} has surrendered to us!">
 <!ENTITY loc.host.322 "¡Ahora eres el líder de la misión! Consejo: los avistamientos de contactos enemigos deben ser aprobados por ti para que sean visibles por los demás. Una vez aprobados, todos los jugadores de tu bando en misiones hacia la misma ciudad los verán.">
 <!ENTITY loc.host.141 "El informe de &#34;OVERRUN&#34; (Rebasamiento) ha expirado o ya se ha tratado.">
 <!ENTITY loc.host.382 "Las posiciones defensivas en {1} están comprometidas. ¡Todas las unidades se están moviendo a sus posiciones de repliegue!">
@@ -1838,6 +1841,7 @@
 <!ENTITY loc.host.463 "/shutdown stop">
 <!ENTITY loc.host.467 "Cuando la cuenta atrás llega a cero se aplica un bloqueo con arenalock 15 y se conceden unos últimos 30 segundos a los jugadores para salir si quieren salvar su misión actual.">
 <!ENTITY loc.host.351 "Tu lista de ignorados está llena, elimine a alguien primero.">
+<!ENTITY loc.host.658 "{1} will surrender to the enemy in {2} hours.">
 <!ENTITY loc.host.390 "Su tiempo acumulado online ha entrado en Tiempo de Penalización. Por su salud, por favor salga inmediatamente. Sus capacidades de avance en el juego se han reducido a cero. Retornarán a valores normales después de que esté desconectado durante 5 o más horas.">
 <!ENTITY loc.host.15 "Has bloqueado al jugador {1} como Oficial de Servicio.">
 <!ENTITY loc.host.356 "El recluta &#39;{1}&#39; ha dejado tu supervisión por salir del juego.">
@@ -3664,7 +3668,6 @@
 <!ENTITY hud.health.state.pilot "TRIPULACIÓN">
 <!ENTITY hud.readout.riding.towed "Siendo Remolcado">
 <!ENTITY hud.alerts.19.deliberated "Las fuerzas enemigas han retomado {1}">
-<!ENTITY hud.dead "&#37;ls died here">
 <!ENTITY hud.readout.gear.kaput "Roto">
 <!ENTITY hud.cliptype.2 "cinta">
 <!ENTITY hud.alerts.14 "Ha llegado un informe de contacto">
@@ -3734,6 +3737,7 @@
 <!ENTITY hud.alerts.15 "Se te han dado nuevas órdenes">
 <!ENTITY hud.alerts.24.ground "Tropas enemigas avistadas cerca de {1}">
 <!ENTITY hud.binfo.state.wecapture "Friendlies Capturing">
+<!ENTITY hud.death "&#37;ls died here">
 <!ENTITY hud.hqintel.weight.2 "Heavy">
 <!ENTITY hud.hqintel.dir.1 "northeast">
 <!ENTITY hud.health.blood "Este icono representa su estado actual">

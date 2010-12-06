@@ -1339,6 +1339,7 @@
 <!ENTITY loc.host.116 "/own [<town>]">
 <!ENTITY loc.host.196 "No active firebases.">
 <!ENTITY loc.host.134 "Forces reload of global (or single player) chat permissions.">
+<!ENTITY loc.host.656 "{1} has surrendered to the enemy.">
 <!ENTITY loc.host.50 "You must select a side first.">
 <!ENTITY loc.host.375 "/status">
 <!ENTITY loc.host.559 "Interval must be at least 30 seconds.">
@@ -1555,6 +1556,7 @@
 <!ENTITY loc.host.334 "Mission leadership will be transferred to {1}.">
 <!ENTITY loc.host.240 "Newly issued objective.">
 <!ENTITY loc.host.458 "Squad &#39;{1}&#39; already has a Commanding Officer (CO) &#39;{2}&#39;. Use &#34;/makeco -force&#34; to usurp the existing CO.">
+<!ENTITY loc.host.659 "{1} will surrender to the enemy in {2} minutes.">
 <!ENTITY loc.host.172 "{1} objective is being withdrawn">
 <!ENTITY loc.host.71 "Without a message: lists people tuned to HC channel. Otherwise sends <message> to the HC channel.">
 <!ENTITY loc.host.565 "*Squad-CO election cancelled due to withdrawal of votes.">
@@ -1726,6 +1728,7 @@
 <!ENTITY loc.host.510 "Reports the movement time and current fallback location for your current brigade or the specified brigade(s).">
 <!ENTITY loc.host.149 "{1} is already reporting {2}.">
 <!ENTITY loc.host.97 "Shows player numbers">
+<!ENTITY loc.host.657 "{1} has surrendered to us!">
 <!ENTITY loc.host.322 "You are now the leader of this mission! Tip: Incoming contact reports must be approved by you to be visible to other players. Once approved all friendly players on missions to the same city will see them.">
 <!ENTITY loc.host.141 "OVERRUN report has expired or already been dealt with.">
 <!ENTITY loc.host.382 "Defensive positions in {1} have been compromised. All units are moving to fall back positions!">
@@ -1837,6 +1840,7 @@
 <!ENTITY loc.host.463 "/shutdown stop">
 <!ENTITY loc.host.467 "When the countdown reaches zero arenalock 15 is applied and players are given a final 30 seconds to despawn and exit if they wish to save their current sorties.">
 <!ENTITY loc.host.351 "Your ignore list is full, remove someone first.">
+<!ENTITY loc.host.658 "{1} will surrender to the enemy in {2} hours.">
 <!ENTITY loc.host.390 "Your accumulated online time has now entered Penalty Time. For your health, please log out immediately. Your game advancement abilities have been reduced to zero. They will be back to normal after you have been offline for 5 or more hours.">
 <!ENTITY loc.host.15 "You have d.o. grabbed player {1} - the conversation will be logged.">
 <!ENTITY loc.host.356 "Recruit &#39;{1}&#39; has left your supervision by exiting the game.">
@@ -3645,7 +3649,6 @@
 <!ENTITY hud.health.state.pilot "FLIGHT CREW">
 <!ENTITY hud.readout.riding.towed "Being Towed">
 <!ENTITY hud.alerts.19.deliberated "Enemy forces have regained {1}">
-<!ENTITY hud.dead "&#37;ls died here">
 <!ENTITY hud.readout.gear.kaput "Dead">
 <!ENTITY hud.cliptype.2 "belt">
 <!ENTITY hud.alerts.14 "Incoming contact report">
@@ -3715,6 +3718,7 @@
 <!ENTITY hud.alerts.15 "You have been issued new orders">
 <!ENTITY hud.alerts.24.ground "Enemy troops spotted near {1}">
 <!ENTITY hud.binfo.state.wecapture "Friendlies Capturing">
+<!ENTITY hud.death "&#37;ls died here">
 <!ENTITY hud.hqintel.weight.2 "Heavy">
 <!ENTITY hud.hqintel.dir.1 "northeast">
 <!ENTITY hud.health.blood "This icon represent&#39;s your current state">

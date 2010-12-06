@@ -1339,6 +1339,7 @@
 <!ENTITY loc.host.116 "/own [<citta&#39;>]">
 <!ENTITY loc.host.196 "Nessuna base avanzata attiva.">
 <!ENTITY loc.host.134 "Forza i ricaricamento dei permessi di chat globali (o per un singolo giocatore)">
+<!ENTITY loc.host.656 "{1} has surrendered to the enemy.">
 <!ENTITY loc.host.50 "Devi prime selezionare una fazione.">
 <!ENTITY loc.host.375 "/status">
 <!ENTITY loc.host.559 "L&#39;intervallo deve essere almeno di 30 secondi.">
@@ -1555,6 +1556,7 @@
 <!ENTITY loc.host.334 "Il comando della missione sara&#39; trasferito a {1}.">
 <!ENTITY loc.host.240 "Obiettivo nuovamente emanato.">
 <!ENTITY loc.host.458 "La squadra &#39;{1}&#39; ha gia&#39; un comandante &#39;{2}&#39;. Usa &#34;/makeco -force&#34; per usurpare l&#39;attuale comandante.">
+<!ENTITY loc.host.659 "{1} will surrender to the enemy in {2} minutes.">
 <!ENTITY loc.host.172 "L&#39;obiettivo {1} e&#39; stato ritirato">
 <!ENTITY loc.host.71 "Senza un messagio: elenca le persone sintonizzate sul canale HC. Altrimenti invia un messagio al canale HC.">
 <!ENTITY loc.host.565 "*Elezione del comandante di squadra cancellata a causa del ritiro dei voti.">
@@ -1726,6 +1728,7 @@
 <!ENTITY loc.host.510 "Elenca l&#39;ora di movimento e l&#39;attuale posizione di ritiro per la tua attuale brigata o per la/le brigate specificate.">
 <!ENTITY loc.host.149 "{1} sta gia&#39; riferendo {2}.">
 <!ENTITY loc.host.97 "Mostra i dati del giocatore">
+<!ENTITY loc.host.657 "{1} has surrendered to us!">
 <!ENTITY loc.host.322 "Sei ora il comandante di questa missione! Suggerimento: I rapporti di contatto in arrivo devono essere approvati da te per essere visibili dagli altri giocatori. Una volta approvati, tutti i giocatori amici nella missione sulla stessa citta&#39; li vedranno.">
 <!ENTITY loc.host.141 "Il rapporto di INVASIONE e&#39; scaduto o e&#39; gia&#39; stato trattato.">
 <!ENTITY loc.host.382 "Le posizioni difensive in {1} sono state compromesse. Tutte le unita&#39; si stanno muovendo sulle posizioni di ritirata!">
@@ -1837,6 +1840,7 @@
 <!ENTITY loc.host.463 "/shutdown stop">
 <!ENTITY loc.host.467 "Quand i conto alla rovescia raggiunge lo zero, viene eseguito &#34;/arenalock 15&#34; e i giocatori hanno 30 secondi per uscire se voglio salvare i risultati della missione.">
 <!ENTITY loc.host.351 "La tua lista delle persone da ignorare e&#39; piena, rimuovi qualcuno prima.">
+<!ENTITY loc.host.658 "{1} will surrender to the enemy in {2} hours.">
 <!ENTITY loc.host.390 "Stai giocando consecutivamente da cosi&#39; tanto da entrare nel periodo di penalita&#39;. Pe la tua salute, esci immediatamente. La tue capacita&#39; di avamamento nel gioco sono ridotte a zero. Torneranno normali dopo che sarai stato offline per 5 o piu&#39; ore.">
 <!ENTITY loc.host.15 "Hai agganciato il giocatore {1} come ufficiale di servizio - la conversazione sara&#39; registrata.">
 <!ENTITY loc.host.356 "La recluta &#39;{1}&#39; ha lasciato la tua supervisione uscendo dal gioco.">
@@ -3645,7 +3649,6 @@
 <!ENTITY hud.health.state.pilot "PILOTA">
 <!ENTITY hud.readout.riding.towed "Trainato">
 <!ENTITY hud.alerts.19.deliberated "Le forze nemiche hanno riguadagnato {1}">
-<!ENTITY hud.dead "&#37;ls died here">
 <!ENTITY hud.readout.gear.kaput "Rotto">
 <!ENTITY hud.cliptype.2 "cartuccera">
 <!ENTITY hud.alerts.14 "Rapporto di contatto in arrivo">
@@ -3715,6 +3718,7 @@
 <!ENTITY hud.alerts.15 "Sono stati emanati nuovi ordini">
 <!ENTITY hud.alerts.24.ground "Fanteria nemica avvistata presso {1}">
 <!ENTITY hud.binfo.state.wecapture "Friendlies Capturing">
+<!ENTITY hud.death "&#37;ls died here">
 <!ENTITY hud.hqintel.weight.2 "Heavy">
 <!ENTITY hud.hqintel.dir.1 "northeast">
 <!ENTITY hud.health.blood "Questa icona rappresenta la tua pressione arteriosa attuale">

@@ -1339,6 +1339,7 @@
 <!ENTITY loc.host.116 "/own [<ville>]">
 <!ENTITY loc.host.196 "Aucune FB active.">
 <!ENTITY loc.host.134 "Force le redémarrage global (ou pour un seul joueur) des permissions de tchat.">
+<!ENTITY loc.host.656 "{1} has surrendered to the enemy.">
 <!ENTITY loc.host.50 "Vous devez d&#39;abord choisir un camp.">
 <!ENTITY loc.host.375 "/status">
 <!ENTITY loc.host.559 "Interval must be at least 30 seconds.">
@@ -1555,6 +1556,7 @@
 <!ENTITY loc.host.334 "Le commandement de la mission sera transféré à {1}.">
 <!ENTITY loc.host.240 "Nouvel objectif assigné.">
 <!ENTITY loc.host.458 "Le Squad &#39;{1}&#39; a déjà un Commandant (CO) &#39;{2}&#39;. Utilisez &#34;/makeco -force&#34; pour le remplacer.">
+<!ENTITY loc.host.659 "{1} will surrender to the enemy in {2} minutes.">
 <!ENTITY loc.host.172 "L’objectif à {1} est annulé">
 <!ENTITY loc.host.71 "Sans extension: liste des commandants en ligne. Avec extension: envoie un message sur le canal du Haut-Commandement.">
 <!ENTITY loc.host.565 "Election du *Squad-CO annulé du a l&#39;abandon des votes.">
@@ -1726,6 +1728,7 @@
 <!ENTITY loc.host.510 "Reports the movement time and current fallback location for your current brigade or the specified brigade(s).">
 <!ENTITY loc.host.149 "{1} déclare déjà être en statut {2}.">
 <!ENTITY loc.host.97 "Montre le nombre de joueurs.">
+<!ENTITY loc.host.657 "{1} has surrendered to us!">
 <!ENTITY loc.host.322 "Vous êtes maintenant le chef de cette mission ! Petit truc: Les rapports de contacts visuels doivent être approuvés par vous afin d’apparaître sur la carte des autres joueurs.">
 <!ENTITY loc.host.141 "Le rapport &#34;défenses enfoncées&#34; (Overrun) a expiré ou a été déjà pris en compte.">
 <!ENTITY loc.host.382 "La position défensive à {1} a été compromise. Toutes les unités sont en train de bouger vers une position de recul!">
@@ -1837,6 +1840,7 @@
 <!ENTITY loc.host.463 "/shutdown stop">
 <!ENTITY loc.host.467 "Quand le compteur atteint 0 fermeture de l&#39;arenne 15 est appliqué et le joueur ont 30 s pour quitter s&#39;ils veulent enregistrer leur dernière sortie.">
 <!ENTITY loc.host.351 "Votre liste d’amis est pleine, enlevez quelqu’un d’abord.">
+<!ENTITY loc.host.658 "{1} will surrender to the enemy in {2} hours.">
 <!ENTITY loc.host.390 "Votre temps de jeu sans intéruption vient d&#39;entrer dans une phase de pénalités. Pour votre santé stopper imédiatement. Vos capacités en jeu sont réduite à zéro. Elles reviendront à la normale après au minimum 5 heures d&#39;arrêt.">
 <!ENTITY loc.host.15 "Vous avez attrapé {1} en tant qu&#39;officier en faction.">
 <!ENTITY loc.host.356 "La recrue ‘{1}’ n’est plus sous votre aile et a quitté le jeu.">
@@ -2285,7 +2289,7 @@
 <!ENTITY widgets.prefs.groups.hud.custom.chat "TCHAT">
 <!ENTITY widgets.calibration.device "SELECTIONNEZ UN PERIPHERIQUE">
 <!ENTITY widgets.map.context.hc.attack "Attaquer ici">
-<!ENTITY widgets.prefs.groups.hud.deathicons.tip "Show onscreen death icons for fallen friendlies. Also marks a position on your minimap. Useful for finding the action!">
+<!ENTITY widgets.prefs.groups.hud.deathicons.tip "Montre à l&#39;écran une icône danger où sont tombés vos frères d&#39;armes. Indique aussi la position sur la mini-carte. Utile pour trouver où se passe l&#39;action!">
 <!ENTITY widgets.map.context.position "Centrer">
 <!ENTITY widgets.prefs.groups.ui.fontsize "TAILLE POLICE">
 <!ENTITY widgets.keymapper.cats.armor "Chars et véhicules blindés">
@@ -2303,7 +2307,7 @@
 <!ENTITY widgets.map.tooltip.town.french "Cette ville est tenue par les Français.">
 <!ENTITY widgets.prefs.far "loin">
 <!ENTITY widgets.map.options.zoom.facilities "INTALLATIONS">
-<!ENTITY widgets.prefs.groups.hud.missionwaypoints "MISSION WAYPOINTS">
+<!ENTITY widgets.prefs.groups.hud.missionwaypoints "BALISES MISSION">
 <!ENTITY widgets.calibration.device.axisry "Rudder axe Y">
 <!ENTITY widgets.map.waypoints.contact.gun "CANON ENNEMI">
 <!ENTITY widgets.idcard.rank "GRADE">
@@ -2334,7 +2338,7 @@
 <!ENTITY widgets.prefs.groups.visual.specular "SPECULAR">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.mode.map "carte">
 <!ENTITY widgets.map.info.target.title "CIBLE">
-<!ENTITY widgets.prefs.groups.hud.deathicons "DEATH ICONS">
+<!ENTITY widgets.prefs.groups.hud.deathicons "ICONES DANGER">
 <!ENTITY widgets.prefs.groups.alerts.show.tip "Informations données à l&#39;écran selon certains évènements. Exemple, des alertes sont affichées quand une installation est capturée ou si vous recevez des munitions de quelqu&#39;un.">
 <!ENTITY widgets.prefs.groups.sound.card "CARTE SON">
 <!ENTITY widgets.prefs.groups.shadows.corpses "CORPS">
@@ -2564,7 +2568,7 @@
 <!ENTITY widgets.prefs.slowest "le plus lent">
 <!ENTITY widgets.prefs.min "min">
 <!ENTITY widgets.prefs.groups.visual.specular.tip "Utilisé donne une meilleure lumière. Ne pas utiliser pour de meilleures perfs.">
-<!ENTITY widgets.prefs.groups.hud.missionwaypoints.tip "Show onscreen waypoints to important mission locations like your target or the nearest resupply point.">
+<!ENTITY widgets.prefs.groups.hud.missionwaypoints.tip "Montre sur l&#39;écran les balises vers une cible importante ou un point de ravitaillement le plus proche.">
 <!ENTITY widgets.prefs.groups.hud.custom.primary "MUN PRIMAIRES">
 <!ENTITY widgets.map.info.me.tip "Affiche votre position actuelle, latitude et longitude en jeu">
 <!ENTITY widgets.calibration.none.desc "Permet de sélectionner un axe du joystick pour le régler.">
@@ -3600,7 +3604,7 @@
 <!ENTITY hud.primary "PRINCIPALE">
 <!ENTITY hud.alerts.18.acquired "Nos forces ont pris {1}">
 <!ENTITY hud.alerts.17 "Vous avez été ravitaillé par {1}">
-<!ENTITY hud.waypoints.origin "ORIGIN">
+<!ENTITY hud.waypoints.origin "ORIGINE">
 <!ENTITY hud.readout.vehicles "Véhicules">
 <!ENTITY hud.hqintel.weight.0 "Léger">
 <!ENTITY hud.alerts.24.sea "Bateau ennemi repéré près de {1}">
@@ -3656,14 +3660,14 @@
 <!ENTITY hud.health.state.pilot "PILOTE">
 <!ENTITY hud.readout.riding.towed "En train d&#39;être tracté">
 <!ENTITY hud.alerts.19.deliberated "Les forces ennemies on repris  {1}">
-<!ENTITY hud.dead "&#37;ls died here">
+<!ENTITY hud.dead "&#37;ls mort ici">
 <!ENTITY hud.readout.gear.kaput "Mort">
 <!ENTITY hud.cliptype.2 "Bande">
 <!ENTITY hud.alerts.14 "Contact ennemi observé">
 <!ENTITY hud.hqintel.dir.7 "Nord Ouest">
 <!ENTITY hud.gameinfo.icon.0 "Normal">
 <!ENTITY hud.readout.torp.control.invalid "Pas de solution de tir valide!">
-<!ENTITY hud.waypoints.target "TARGET">
+<!ENTITY hud.waypoints.target "CIBLE">
 <!ENTITY hud.readout.torp.control "Solution de tir  angle de feu">
 <!ENTITY hud.health.atp.tip "Votre condition physique est à {1}. Elle est utilisée pour courir, ramper et d&#39;autres actions fatigantes.">
 <!ENTITY hud.waypoints.fru "FRU">
@@ -3726,6 +3730,7 @@
 <!ENTITY hud.alerts.15 "Vous avez de nouveaux ordres">
 <!ENTITY hud.alerts.24.ground "Unité ennemie repérée près de {1}">
 <!ENTITY hud.binfo.state.wecapture "Capturé par les amis">
+<!ENTITY hud.death "&#37;ls died here">
 <!ENTITY hud.hqintel.weight.2 "Lourd">
 <!ENTITY hud.hqintel.dir.1 "Nord Est">
 <!ENTITY hud.health.blood "Cet icône représente l&#39;état de votre pression artérielle">
@@ -3777,7 +3782,7 @@
 <!ENTITY persona.details.persona "PERSONNAGE SELECTIONNE">
 <!ENTITY persona.details.career.rank "jusqu&#39;à la prochaine promotion">
 <!ENTITY persona.list.tip "Choisissez un personnage à jouer">
-<!ENTITY persona.notgraduated "You are currently a recruit and have not graduated from basic training. Would you like to enter training now?">
+<!ENTITY persona.notgraduated "Vous êtes actuellement une recrue et vous n&#39;avez passez aucune étape de l&#39;entraînement. Voulez vous allez faire cet entraînement maintenant?">
 <!ENTITY persona.list.overpopulated "Déséquilibré">
 <!ENTITY persona.welcome.pollresults.url "http://www.polls.wwiionline.com/crspolls.htm">
 <!ENTITY persona.welcome.population "JOUEURS PRESENTS">
