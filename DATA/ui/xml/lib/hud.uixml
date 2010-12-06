@@ -2,17 +2,26 @@
 	<!--
 	
 	var display = null;
+	var label = null;
 	
 	function initHUDObject(v)
 	{
 		display = v.findview("display");
+		
+		var loc = v.id.split("-");
+		
+		label = getlocstring("hud.waypoints." + loc[1]);
+		
+		if(label.charAt(0) == "?")
+			label = null;
 	}
 	
-	function setAlpha(d)
+	function updateHUDObject(placement, distance, alpha)
 	{
 		if(display != null)
 		{
-			if(d == 0)
+			
+			if(alpha == 0)
 			{
 				if(display.visible)
 					display.visible = false;
@@ -22,11 +31,27 @@
 				if(!display.visible)
 					display.visible = true;
 					
-				var color = 255 * d;
-				var bg = 128 * d;
+				var color = 255 * alpha;
+				var bg = 128 * alpha;
 				
 				display.setstyleproperty("color", "#FFFFFF" + color.toString(16));
-				display.setstyleproperty("backgound-color", "#000000" + bg.toString(16));
+				display.setstyleproperty("shadow-color", "#000000" + bg.toString(16));
+				
+				var newLabel = "";
+				
+				if(label != null)
+					newLabel = (placement == 0) ? label : label.charAt(0);
+				
+				if(distance >= 0 && placement == 0)
+				{
+					if(label != null)
+						newLabel += ": ";
+					
+					newLabel += distance + "m";
+				}
+				
+				display.text = newLabel;
+				display.resizetotext();
 			}
 		}
 	}
