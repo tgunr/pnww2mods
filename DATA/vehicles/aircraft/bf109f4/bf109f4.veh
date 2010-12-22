@@ -38,7 +38,8 @@ rudderspringtabratio = 0
 # trim the plane for cruise flight, in an analysis FE
 # and copy the trim settings into the following fields
 ailerontabstatic = 0.077
-elevatortabstatic = -0.654
+#elevatortabstatic = -0.654 (altered below for aspect ratio fix)
+elevatortabstatic = -0.607
 ruddertabstatic = -0.23
 
 
