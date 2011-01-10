@@ -602,7 +602,7 @@
 <!ENTITY loc.english.434 "空格键">
 <!ENTITY loc.english.580 "摇杆2 按钮 7">
 <!ENTITY loc.english.617 "摇杆3 按钮 6">
-<!ENTITY loc.english.843 "炮塔旋转中等Turret Traverse Secondary">
+<!ENTITY loc.english.843 "炮塔旋转中等">
 <!ENTITY loc.english.493 "摇杆1 pov hat 1 sw">
 <!ENTITY loc.english.712 "总部">
 <!ENTITY loc.english.444 "鼠标 z">
@@ -801,7 +801,7 @@
 <!ENTITY loc.english.599 "摇杆2 按钮 26">
 <!ENTITY loc.english.361 "4">
 <!ENTITY loc.english.198 "外部固定">
-<!ENTITY loc.english.844 "炮塔上升中等Turret Elevate Secondary">
+<!ENTITY loc.english.844 "炮塔上升中等">
 <!ENTITY loc.english.206 "向上看">
 <!ENTITY loc.english.547 "加入被拒绝: 不能找到发布的武器。">
 <!ENTITY loc.english.375 "小键盘 /">
@@ -1339,7 +1339,7 @@
 <!ENTITY loc.host.116 "/own [<城镇>]">
 <!ENTITY loc.host.196 "没有激活的前进基地">
 <!ENTITY loc.host.134 "强制再启全域（或单个玩家）权限许可。">
-<!ENTITY loc.host.656 "{1} has surrendered to the enemy.">
+<!ENTITY loc.host.656 "{1} 已经向敌人投降了。">
 <!ENTITY loc.host.50 "您必须首先选择阵营。">
 <!ENTITY loc.host.375 "/status">
 <!ENTITY loc.host.559 "时间间隔至少30 秒。">
@@ -1556,7 +1556,7 @@
 <!ENTITY loc.host.334 "任务领导权将移交给 {1} 。">
 <!ENTITY loc.host.240 "最新发布的目标。">
 <!ENTITY loc.host.458 "战队 &#39;{1}&#39; 已经拥有指挥官（CO）&#39;{2}&#39;了。 使用&#34;/makeco -force&#34; 命令夺取现任指挥官的权限。">
-<!ENTITY loc.host.659 "{1} will surrender to the enemy in {2} minutes.">
+<!ENTITY loc.host.659 "{1} 将于 {2} 分钟后向敌人投降。">
 <!ENTITY loc.host.172 "{1}的目标被取消了">
 <!ENTITY loc.host.71 "没有参数: 列出收听HC（高级军官）频道的玩家。有参数: 向HC（高级军官）频道发消息。">
 <!ENTITY loc.host.565 "*因为投票撤销，战队的指挥官（CO）选举被取消。">
@@ -1728,7 +1728,7 @@
 <!ENTITY loc.host.510 "报告你当前所在战斗旅或特定战斗旅的移动时间和当前的撤退位置。">
 <!ENTITY loc.host.149 "{1} 已经报告{2} 。">
 <!ENTITY loc.host.97 "显示玩家数字">
-<!ENTITY loc.host.657 "{1} has surrendered to us!">
+<!ENTITY loc.host.657 "{1} 已经向我们投降了！">
 <!ENTITY loc.host.322 "您现在是这个任务领导！权限: 玩家发送的触敌报告须您同意才能被别的玩家看到。您批准后所有具相同任务的友好玩家都可看到。">
 <!ENTITY loc.host.141 "敌军超量报告过期了或已经处理。">
 <!ENTITY loc.host.382 "在 {1}的防御已经撤销。所有单位正赶往撤退位置。">
@@ -1840,7 +1840,7 @@
 <!ENTITY loc.host.463 "/shutdown stop">
 <!ENTITY loc.host.467 "When the countdown reaches zero arenalock 15 is applied and players are given a final 30 seconds to despawn and exit if they wish to save their current sorties.">
 <!ENTITY loc.host.351 "您的黑名单已满，请先删除某人。">
-<!ENTITY loc.host.658 "{1} will surrender to the enemy in {2} hours.">
+<!ENTITY loc.host.658 "{1} 将于 {2} 小时后向敌人投降。">
 <!ENTITY loc.host.390 "您已进入不健康游戏时间，为了您的健康，请您立即下线休息。如不下线，您的身体将受到损害，您的收益已降为零，直到您的累计下线时间满5小时后，才能恢复正常。">
 <!ENTITY loc.host.15 "您有值日官（D.O.）联系上了玩家{1} - 交谈将被纪录。">
 <!ENTITY loc.host.356 "新兵&#39;{1}&#39; 退出游戏，脱离您的监督。">
@@ -2764,7 +2764,7 @@
 <!ENTITY mission.spawn.denied "不能完成出生请求。">
 <!ENTITY mission.readytab.panel.canceljoin "取消加入">
 <!ENTITY mission.readytab.supply.state2 "能够生成，不可补给">
-<!ENTITY mission.brieftab.brief.leader "指挥官">
+<!ENTITY mission.brieftab.brief.leader "任务指挥官">
 <!ENTITY mission.aartab.aars.aar.promotions "晋升">
 <!ENTITY mission.aartab.aars.aar.summary "摘要">
 <!ENTITY mission.brieftab.brief.lstatus "这个图标显示使用者为任务指挥官。">
@@ -2895,7 +2895,7 @@
 <!ENTITY brigades.details.home "驻地">
 <!ENTITY brigades.list.status.inactive.tip "这个战斗旅正在休整。一个正在休整的战斗旅指的是一个没有任务的战斗旅。">
 <!ENTITY brigades.list.status.objective.tip "这个战斗旅有目标，但是没有任务。为这个战斗旅创建一个任务或者等待高级玩家来创建。">
-<!ENTITY brigades.list.sq "组员">
+<!ENTITY brigades.list.sq "队员">
 <!ENTITY brigades.details.enlistments "征募">
 <!ENTITY brigades.list.key.defend "防御">
 <!ENTITY brigades.forward "战斗旅总部">
@@ -3120,7 +3120,7 @@
 <!ENTITY brigade.control.offer.lapsed "{1}没有接受{2}的命令（已过期）。">
 <!ENTITY brigade.hqtab.help "战斗旅总部: 选择一个任务">
 <!ENTITY brigade.control.removal.pending "{1} 被撤销了作为{2}的指挥官的职务。">
-<!ENTITY brigade.hqtab.missions.leader "领导">
+<!ENTITY brigade.hqtab.missions.leader "任务指挥官">
 <!ENTITY brigade.createtab.postreply.9 "您的战斗旅正在休整，您的军衔等级不能激活它。">
 <!ENTITY brigade.comtab.missions "可进行任务">
 <!ENTITY brigade.hqtab.brief.ms "移动兵站">
@@ -3337,7 +3337,7 @@
 <!ENTITY common.squads.details.options.prefs "个性化">
 <!ENTITY common.squads.member.joined.year "{1} 年以前">
 <!ENTITY common.squads.details.name "名字">
-<!ENTITY common.squads.create.member "组员">
+<!ENTITY common.squads.create.member "队员">
 <!ENTITY common.languages.2 "法语">
 <!ENTITY common.squads.details.options.xo.demote "选择要降职的玩家">
 <!ENTITY common.squads.details.motd.default "这个战队没有提供每日信息。">
@@ -3377,7 +3377,7 @@
 <!ENTITY common.squads.member.division "师">
 <!ENTITY common.countries.uk "B">
 <!ENTITY common.vehicles.classes.12 "河船">
-<!ENTITY common.squads.create.msg.handle "{1} 不是一个有效的组员名称！">
+<!ENTITY common.squads.create.msg.handle "{1} 不是一个有效的队员名称！">
 <!ENTITY common.countries.de.navy "红（C）国海军">
 <!ENTITY common.squads.edit.tip "点击这里来编辑这段信息。">
 <!ENTITY common.squads.invite.accept "接受">
@@ -3399,7 +3399,7 @@
 <!ENTITY common.mission.ad.short "防御">
 <!ENTITY common.squads.details.night.dow5 "星期五">
 <!ENTITY common.squads.details.recruiting.true "招募可用">
-<!ENTITY common.squads.create.member.tip "要想创建战队，你除了必须指明一个执行官（XO）外，还至少需要拥有3个组员。在这里输入玩家的游戏昵称。">
+<!ENTITY common.squads.create.member.tip "要想创建战队，你除了必须指明一个执行官（XO）外，还至少需要拥有3个队员。在这里输入玩家的游戏昵称。">
 <!ENTITY common.squads.invite.recruiters "招募者">
 <!ENTITY common.squads.tab.tip "从这个标签，你可以查找战队来加入，或者你已经加入了战队，你可以查看您的战队的成员列表。如果您的权限允许的话，您还可以更新你的战队的信息。">
 <!ENTITY common.squads.member.joined.today "今天">
@@ -3510,7 +3510,7 @@
 <!ENTITY common.squads.members "战队成员">
 <!ENTITY common.squads.recruitment.info "为 {1} 而战 | 使用语言 {2} |招募者是 {3}">
 <!ENTITY common.mission.3.short "防御">
-<!ENTITY common.squads.create.msg.sent "战队创建申请已发送！如果您的申请被主机接受，那么当您最初的组员接受并成为战队成员以后，您的战队就建立了。">
+<!ENTITY common.squads.create.msg.sent "战队创建申请已发送！如果您的申请被主机接受，那么当您最初的队员接受并成为战队成员以后，您的战队就建立了。">
 <!ENTITY common.squads.details.night.dow4 "星期四">
 <!ENTITY common.squads.edit.voting "启用这个选项可以允许战队投票选举新的指挥官等等。">
 <!ENTITY common.squads.member.join.select "因为主机拒绝了您的新角色申请，所以不能加入。">
@@ -3628,7 +3628,7 @@
 <!ENTITY hud.readout.infantry.lifeboat "救生船">
 <!ENTITY hud.readout.vehicles.stowed "理仓">
 <!ENTITY hud.binfo.state.nofire "该区域不能射击!">
-<!ENTITY hud.waypoints.leader "指挥官">
+<!ENTITY hud.waypoints.leader "任务指挥官">
 <!ENTITY hud.cliptype.3.plural "弹夹">
 <!ENTITY hud.cliptype.0 "弹夹">
 <!ENTITY hud.readout.gear.reverse "倒档">
@@ -3644,7 +3644,7 @@
 <!ENTITY hud.readout.gforce "G">
 <!ENTITY hud.alerts.24.armor "{1} 附近发现敌装甲力量">
 <!ENTITY hud.health.state "这个图标显示的是你的当前状态">
-<!ENTITY hud.hqintel.weight.1 "中等">
+<!ENTITY hud.hqintel.weight.1 "中">
 <!ENTITY hud.hqintel.dir.3 "东南">
 <!ENTITY hud.health.state.pilot "飞机乘员">
 <!ENTITY hud.readout.riding.towed "拖曳">
@@ -3667,7 +3667,7 @@
 <!ENTITY hud.minimap.out "缩小">
 <!ENTITY hud.binfo.state.theycapture "敌军占领!">
 <!ENTITY hud.readout.infantry "步兵">
-<!ENTITY hud.hqintel.far "Intel: &#37;ls 敌步兵显示 &#37;ls 你位置!">
+<!ENTITY hud.hqintel.far "有情况: 发现敌步兵（量级：&#37;ls ; 方位：&#37;ls ）">
 <!ENTITY hud.readout.agl "离地高度">
 <!ENTITY hud.alerts.28 "敌军的出生点！无法开火-请撤离此区域！">
 <!ENTITY hud.alerts.18.captured "敌军已经占领了 {1}">
@@ -3713,13 +3713,13 @@
 <!ENTITY hud.alerts.18.deliberated "敌军收复了 {1}">
 <!ENTITY hud.cliptype.0.plural "弹夹">
 <!ENTITY hud.readout.infantry.ship "在船板上">
-<!ENTITY hud.hqintel.close "Intel: &#37;ls 敌步兵显示靠近你的位置!">
+<!ENTITY hud.hqintel.close "有情况：敌步兵（ 量级：&#37;ls ）在你附近出现！">
 <!ENTITY hud.readout.gear.engines "引擎">
 <!ENTITY hud.alerts.15 "您接收到了新的命令">
 <!ENTITY hud.alerts.24.ground "{1} 附近发现敌人军队">
 <!ENTITY hud.binfo.state.wecapture "友军占领!">
 <!ENTITY hud.death "&#37;ls 死在这里">
-<!ENTITY hud.hqintel.weight.2 "很重">
+<!ENTITY hud.hqintel.weight.2 "多">
 <!ENTITY hud.hqintel.dir.1 "东北">
 <!ENTITY hud.health.blood "这个图标显示的是您的当前状态">
 <!ENTITY hud.minimap.nearest "离您最近的城镇">
