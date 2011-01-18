@@ -1,0 +1,401 @@
+<kits>
+	<!-- models represent a visible mesh and can have 1 or more lods -->
+	<!-- attach = bone number, get from toto -->
+	<!-- lod is in meters and is the max range the object can be seen at 
+		this is the LOD FOR THE KIT OBJECT -->
+	<!-- multiple lods can be specified in each model group -->
+	<models lod="20">
+	
+		<!-- BRITISH MODELS -->
+		<model name="uk_helmet_01" path="TPS\meshes\british_inf\kit_uk_helmet_01_lod1" attach="18" lod="0"/>
+		<model name="uk_canteen" path="TPS\meshes\british_inf\kit_uk_canteen_lf_hip_lod1" attach="3"/>
+		<!-- Entrenching tool-->
+		<model name="uk_etool" path="TPS\meshes\british_inf\kit_uk_etool_lf_bk_lod1" attach="4"/>
+		<!-- Bren Pouch, Left -->
+		<model name="uk_brenp_lf" path="TPS\meshes\british_inf\kit_uk_brenp_lf_lod1" attach="4"/>
+		<!-- Bren Pouch, Right -->
+		<model name="uk_brenp_rt" path="TPS\meshes\british_inf\kit_uk_brenp_rt_lod1" attach="4"/>
+		<!-- Pistol Holster -->
+		<model name="uk_pholster_rt" path="TPS\meshes\british_inf\kit_uk_pholster_rt_hip_lod1" attach="3"/>
+		<!-- Gas mask bag / respirator bag -->
+		<model name="uk_gas_lf" path="TPS\meshes\british_inf\kit_uk_gas_lf_bk_lod1" attach="4"/>
+		<!-- Rucksack -->
+		<model name="uk_ruck" path="TPS\meshes\british_inf\kit_uk_rsack_lod1" attach="9" lod="100"/>
+		
+		<!-- british para helmet -->
+		<model name="uk_parahelm_01" path="TPS\meshes\para_brit\kit_uk_parahelm_lod1" attach="18" lod="0"/>
+		
+		<!-- FRENCH MODELS -->
+		<model name="fr_helmet_01" path="TPS\meshes\french_inf\kit_fr_helmet_01_lod1" attach="18" lod="0"/>
+		<model name="fr_ammobag_lf" path="TPS\meshes\french_inf\kit_fr_ammobag_lf_bk_lod1" attach="4"/>
+		<model name="fr_canteen" path="TPS\meshes\french_inf\kit_fr_canteen_lf_hip_lod1" attach="4"/>
+		<model name="fr_gas_rt" path="TPS\meshes\french_inf\kit_fr_gas_rt_bk_lod1" attach="4"/>
+		<!-- TOTO HASN'T ADDED PISTOL YET -->
+		<!-- model name="fr_pholster_rt_hip" path="TPS\meshes\french_inf\kit_fr_pholster_rt_hp_lod1" attach="3"/ -->
+		<!-- large rifle ammo pouch, left -->
+		<model name="fr_lg_ammo_lf" path="TPS\meshes\french_inf\kit_fr_lg_ammo_lf_lod1" attach="4"/>
+		<!-- large rifle ammo pouch, right -->
+		<model name="fr_lg_ammo_rt" path="TPS\meshes\french_inf\kit_fr_lg_ammo_rt_lod1" attach="4"/>
+		<!-- small rifle ammo pouch, left (don't use if Lebel unit) -->
+		<model name="fr_sm_ammo_lf" path="TPS\meshes\french_inf\kit_fr_sm_ammo_lf_lod1" attach="4"/>
+		<!-- small rifle ammo pouch, right (don't use if Lebel unit)-->
+		<model name="fr_sm_ammo_rt" path="TPS\meshes\french_inf\kit_fr_sm_ammo_rt_lod1" attach="4"/>
+		<!-- Rucksack -->
+		<model name="fr_ruck" path="TPS\meshes\french_inf\kit_fr_rucksack_lod1" attach="10" lod="100"/>
+		
+		<!-- french para helmet -->
+		<model name="fr_parahelm_01" path="TPS\meshes\para_french\kit_fr_parahelm_lod1" attach="18" lod="0"/>
+
+		<!-- GERMAN MODELS -->
+		<model name="de_helmet_01" path="TPS\meshes\german_inf\kit_de_helmet_01_lod1" attach="18" lod="0"/>
+		<model name="de_bread" path="TPS\meshes\german_inf\kit_de_bread_bk_lod1" attach="4"/>
+		<model name="de_canteen_rt" path="TPS\meshes\german_inf\kit_de_canteen_rt_hip_lod1" attach="4"/>
+		<!-- Entrenching tool -->
+		<model name="de_etool" path="TPS\meshes\german_inf\kit_de_etool_lf_hip_lod1" attach="4"/>
+		<model name="de_gas" path="TPS\meshes\german_inf\kit_de_gas_bk_lod1" attach="4"/>
+		<!-- TOTO HASN'T ADDED PISTOL YET -->
+		<!-- model name="de_pholster_rt_hip" path="TPS\meshes\german_inf\kit_de_pholst_lod1" attach="3"/ -->
+		<!-- Rifle Ammo, Left -->
+		<model name="de_rifle_ammo_lf" path="TPS\meshes\german_inf\kit_de_rifle_ammo_lf_lod1" attach="4"/>
+		<!-- Rifle Ammo, Right -->
+		<model name="de_rifle_ammo_rt" path="TPS\meshes\german_inf\kit_de_rifle_ammo_rt_lod1" attach="4"/>
+		<!-- SMG Ammo, Left -->
+		<model name="de_smg_ammo_lf" path="TPS\meshes\german_inf\kit_de_smg_ammo_lf_lod1" attach="4"/>
+
+		<model name="uk_example" path="path\to\example\model_lod1" attach="9" lod="20">
+			<lod path="path\to\example\model_lod2" lod="100"/>
+			<lod path="path\to\example\model_lod3" lod="500"/>
+		</model>
+		-->
+		
+	</models>
+	
+	<objects>
+		<!-- BRITISH OBJECTS -->
+		<object name="uk_parahelm" model="uk_parahelm_01"/>
+		<object name="uk_helmet" model="uk_helmet_01"/>
+		<object name="uk_canteen" model="uk_canteen"/>
+		<object name="uk_etool" model="uk_etool"/>
+		<object name="uk_brenp_lf" model="uk_brenp_lf"/>
+		<object name="uk_brenp_rt" model="uk_brenp_rt"/>
+		<object name="uk_pholster_rt" model="uk_pholster_rt"/>
+		<object name="uk_gas_lf" model="uk_gas_lf"/>
+		<object name="uk_ruck" model="uk_ruck"/>
+		
+		<!-- FRENCH OBJECTS -->
+		<object name="fr_parahelm" model="fr_parahelm_01"/>
+		<object name="fr_helmet" model="fr_helmet_01"/>
+		<object name="fr_ammobag_lf" model="fr_ammobag_lf"/>
+		<object name="fr_canteen" model="fr_canteen"/>
+		<object name="fr_gas_rt" model="fr_gas_rt"/>
+		<object name="fr_lg_ammo_lf" model="fr_lg_ammo_lf"/>
+		<object name="fr_sm_ammo_lf" model="fr_sm_ammo_lf"/>
+		<object name="fr_lg_ammo_rt" model="fr_lg_ammo_rt"/>
+		<object name="fr_sm_ammo_rt" model="fr_sm_ammo_rt"/>
+		<object name="fr_ruck" model="fr_ruck"/>
+		<!-- <object name="fr_pholster_rt_hip" model="fr_pholster_rt_hip"/> -->
+		
+		<!-- GERMAN OBJECTS -->
+		<object name="de_helmet" model="de_helmet_01"/>
+		<object name="de_bread" model="de_bread"/>
+		<object name="de_canteen_rt" model="de_canteen_rt"/>
+		<object name="de_etool" model="de_etool"/>
+		<object name="de_gas" model="de_gas"/>
+		<object name="de_rifle_ammo_lf" model="de_rifle_ammo_lf"/>
+		<object name="de_rifle_ammo_rt" model="de_rifle_ammo_rt"/>
+		<object name="de_smg_ammo_lf" model="de_smg_ammo_lf"/>
+		<!-- <object name="de_pholster_rt_hip" model="de_pholster_rt_hip"/> -->
+		
+	<!-- System will randomly select from the group of sub object.
+		<object name="uk_helmet">
+			<model name="uk_helmet_1"/>
+			<model name="uk_helmet_2"/>
+			<model name="uk_helmet_3"/>
+		</object>
+	-->
+		<object name="example">
+			<model name="uk_example1"/>
+			<model name="uk_example2"/>
+			<model name="uk_example3"/>
+		</object>
+	</objects>
+	
+	<!-- objects represent an attached game object and have at least one model representing it visually -->
+	<!-- you can specify multiple models an object can choose from randomly or vis seed in the kit definition -->
+	
+	<kits>
+		<!-- BRITISH KITS -->
+		<kit name="ukrifle">
+			<object name="uk_helmet"/>
+			<object name="uk_canteen"/>
+			<object name="uk_etool"/>			
+			<object name="uk_gas_lf"/>
+			<object name="uk_brenp_lf"/>
+			<object name="uk_brenp_rt"/>
+			<object name="uk_ruck"/>
+		</kit>
+		
+		<kit name="ukrifle2">
+			<object name="uk_helmet"/>
+			<object name="uk_ruck"/>
+		</kit>
+		
+		<kit name="ukrifle3">
+			<object name="uk_helmet"/>
+		</kit>
+		
+		<kit name="ukgrenadier">
+			<object name="uk_helmet"/>
+			<object name="uk_gas_lf"/>
+			<object name="uk_etool"/>
+			<object name="uk_pholster_rt"/>
+			<object name="uk_brenp_lf"/>
+			<object name="uk_brenp_rt"/>
+			<object name="uk_ruck"/>
+		</kit>
+		
+		<kit name="uk-smg">
+			<object name="uk_helmet"/>
+			<object name="uk_canteen"/>
+			<object name="uk_brenp_lf"/>
+			<!-- Needs pholster_rt_web.  Need to get toto to do -->
+			<object name="uk_pholster_rt"/>
+			<object name="uk_gas_lf"/>
+			
+		</kit>
+		
+		<kit name="uk-eng">
+			<object name="uk_helmet"/>
+			<object name="uk_canteen"/>
+			<object name="uk_etool"/>
+			<object name="uk_brenp_lf"/>
+			<object name="uk_brenp_rt"/>
+			<object name="uk_ruck"/>
+		</kit>
+		
+		<kit name="uk-lmg">
+			<object name="uk_helmet"/>
+			<object name="uk_brenp_lf"/>
+			<!-- Needs pholster_rt_web.  Need to get toto to do -->
+			<object name="uk_pholster_rt"/>
+			<object name="uk_ruck"/>
+		</kit>
+		
+		<kit name="uk-sniper">
+			<object name="uk_helmet"/>
+			<object name="uk_canteen"/>
+		</kit>
+		
+		<kit name="uk-atr">
+			<object name="uk_helmet"/>
+			<object name="uk_canteen"/>
+			<object name="uk_etool"/>
+			<object name="uk_brenp_lf"/>
+			<!-- Needs pholster_rt_web.  Need to get toto to do -->
+			<object name="uk_pholster_rt"/>
+			<object name="uk_gas_lf"/>
+		</kit>
+		
+		<kit name="uk-ltmortar">
+			<object name="uk_helmet"/>
+			<object name="uk_etool"/>
+			<object name="uk_ruck"/>
+		</kit>
+		
+		<kit name="uk-para-rfl">
+			<object name="uk_parahelm"/>
+		</kit>
+		
+		<!-- FRENCH KITS -->
+		<kit name="frrifle">
+			<object name="fr_helmet"/>
+			<object name="fr_ammobag_lf"/>
+			<object name="fr_canteen"/>
+			<object name="fr_gas_rt"/>
+			<object name="fr_ruck"/>
+			<object name="fr_lg_ammo_lf"/>
+			<object name="fr_lg_ammo_rt"/>
+			<object name="fr_sm_ammo_lf"/>
+			<object name="fr_sm_ammo_rt"/>
+	</kit>
+		
+		<kit name="fr-atr">
+			<!-- Needs pholster_rt_web.  Need to get toto to do -->
+			<!-- <object name="fr_pholster_rt_hip"/> -->
+			<object name="fr_helmet"/>
+			<object name="fr_canteen"/>
+			<object name="fr_gas_rt"/>			
+			<object name="fr_ammobag_lf"/>
+			<object name="fr_lg_ammo_lf"/>
+			<object name="fr_sm_ammo_lf"/>
+		</kit>
+			
+		<kit name="fr-eng">
+			<object name="fr_helmet"/>
+			<object name="fr_canteen"/>
+			<object name="fr_ruck"/>
+			<object name="fr_ammobag_lf"/>
+			<object name="fr_lg_ammo_lf"/>
+			<object name="fr_lg_ammo_rt"/>
+			<object name="fr_sm_ammo_lf"/>
+			<object name="fr_sm_ammo_rt"/>
+		</kit>
+		
+		<kit name="fr-lmg">
+			<!-- Needs pholster_rt_web.  Need to get toto to do -->
+			<!-- <object name="fr_pholster_rt_hip"/> -->
+			<object name="fr_helmet"/>
+			<object name="fr_ruck"/>
+			<object name="fr_ammobag_lf"/>
+			<object name="fr_lg_ammo_lf"/>
+			<object name="fr_sm_ammo_lf"/>
+		</kit>
+		
+		<kit name="fr-smg">
+			<object name="fr_helmet"/>
+			<object name="fr_canteen"/>
+			<object name="fr_gas_rt"/>
+			<!-- Needs pholster_rt_web.  Need to get toto to do -->
+			<!-- <object name="fr_pholster_rt_hip"/> -->
+		</kit>
+		
+		<kit name="frgrenadier">			
+			<object name="fr_lg_ammo_lf"/>
+			<!-- <object name="fr_pholster_rt_hip"/> -->
+			<object name="fr_helmet"/>
+			<object name="fr_gas_rt"/>
+			<object name="fr_ruck"/>
+		</kit>
+		
+		<kit name="fr-sniper">
+			<object name="fr_lg_ammo_lf"/>
+			<object name="fr_lg_ammo_rt"/>
+			<object name="fr_helmet"/>
+			<object name="fr_canteen"/>
+		</kit>
+		
+		<kit name="fr-ltmortar">
+			<object name="fr_helmet"/>
+			<object name="fr_ruck"/>
+			<object name="fr_ammobag_lf"/>
+			<object name="fr_lg_ammo_lf"/>
+			<object name="fr_lg_ammo_rt"/>
+			<object name="fr_sm_ammo_lf"/>
+			<object name="fr_sm_ammo_rt"/>
+		</kit>
+
+		<kit name="fr-para-rfl">
+			<object name="fr_parahelm"/>
+		</kit>
+		
+		<!-- GERMAN KITS -->
+		<kit name="derifle">
+			<object name="de_helmet"/>
+			<object name="de_bread"/>
+			<object name="de_canteen_rt"/>
+			<object name="de_etool"/>
+			<object name="de_gas"/>
+			<object name="de_rifle_ammo_lf"/>
+			<object name="de_rifle_ammo_rt"/>
+		</kit>
+		
+		<kit name="de-smg">
+			<object name="de_helmet"/>
+			<object name="de_bread"/>
+			<object name="de_canteen_rt"/>
+			<object name="de_etool"/>
+			<object name="de_gas"/>
+			<!-- Need SMG Ammo for right webbing -->
+			<object name="de_smg_ammo_lf"/>
+			<!-- <object name="de_pholster_rt_hip"/> -->			
+		</kit>
+			
+		<kit name="degrenadier">
+			<object name="de_helmet"/>
+			<object name="de_gas"/>
+			<object name="de_etool"/>
+			<!-- Needs pholster_rt_web.  Need to get toto to do -->
+			<!-- <object name="de_pholster_rt_hip"/> -->
+			<object name="de_rifle_ammo_lf"/>
+		</kit>
+		
+		<kit name="de-eng">
+			<object name="de_helmet"/>
+			<object name="de_canteen_rt"/>
+			<object name="de_etool"/>
+			<object name="de_rifle_ammo_lf"/>
+			<object name="de_rifle_ammo_rt"/>
+		</kit>
+		
+		<kit name="de-atr">
+			<object name="de_helmet"/>
+			<object name="de_canteen_rt"/>
+			<object name="de_gas"/>
+			<object name="de_etool"/>
+			<!-- Needs pholster_rt_web.  Need to get toto to do -->
+			<!-- <object name="de_pholster_rt_hip"/> -->
+		</kit>
+		
+		<kit name="de-lmg">
+			<object name="de_helmet"/>
+			<!-- Needs pholster_rt_web.  Need to get toto to do -->
+			<!-- <object name="de_pholster_rt_hip"/> -->
+			<object name="de_bread"/>
+		</kit>
+		
+		<kit name="de-sniper">
+			<object name="de_helmet"/>
+			<object name="de_canteen_rt"/>
+			<object name="de_rifle_ammo_lf"/>
+			<object name="de_rifle_ammo_rt"/>
+		</kit>
+		
+		<kit name="de-ltmortar">
+			<object name="de_helmet"/>
+			<object name="de_etool"/>
+			<object name="de_bread"/>
+			<object name="de_rifle_ammo_lf"/>
+			<object name="de_rifle_ammo_rt"/>
+		</kit>
+
+	</kits>
+	
+	<!-- each infantry type can have any number of kits -->
+	<!-- currently they are randomly(seeded) selected from the available list by vehicle id -->
+	<troopers>
+		<!-- 
+			I specifically added some specs for the rifleman to show you how to use multiple specs
+		-->
+		<trooper id="ukrifle" kit="ukrifle">
+			<!-- here we have an extra kit that can be used for the ukrifle -->
+			<kit name="ukrifle2"/>
+		</trooper>
+		
+		<!-- 
+		<trooper id="ukrifle">			
+			<kit name="ukrifle"/>
+			<kit name="ukrifle2"/>
+		</trooper>
+		-->
+		
+		
+		<!-- 
+			this one isn't needed since the default behavior looks for a kit if a vehicle id isn't found
+			but I added it here anyway to show you could
+		-->
+		<trooper id="ukgrenadier" kit="ukgrenadier"/>
+		
+		<!-- these aren't needed because the default behavior is to lookup
+			a kit by vehicle id if a trooper kit spec isn't found here
+			<trooper id="ukgrenadier" kit="ukgrenadier"/>
+			<trooper id="uk-smg" kit="uk-smg"/>
+			<trooper id="ukr-eng" kit="uk-eng"/>
+			<trooper id="uk-lmg" kit="uk-lmg"/>
+			<trooper id="uk-sniper" kit="uk-sniper"/>
+			<trooper id="uk-atr" kit="uk-atr"/>
+			<trooper id="uk-ltmortar" kit="uk-ltmortrr"/>
+		-->
+		
+		<trooper id="frrifle" kit="frrifle"/>
+	</troopers>
+</kits>
