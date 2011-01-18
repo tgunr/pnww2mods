@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+ 
 <window id="despawn" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" modal="true"
 	style="background-color: #00000077;" layer="100" aspectalign="center" onshow="initDespawnPopup(this)">
 	<include file="lib/popup.uixml"/>
@@ -14,17 +14,17 @@
 			followtop="true"/>
 		<button id="popup-close" width="15" height="15" rtop="10" rright="10" followtop="true" onclick="doPopupClose()"
 			style="control-on: ui/textures/test/exit_on.bmp; control-off: ui/textures/test/exit_off.bmp;"
-			tip="&popup.quit;"/>
+			tip="${popup.quit}"/>
 		<text id="despawn-ms" width="300" height="60" x="20" rtop="50" style="color: #e9e3d9ff;" acceptfocus="no" acceptsmouseclick="false"
 			onshow="this.text = getlocstring('exitvehicle.ms')"/>
 		<image id="despawn-ms-checkbox" width="16" height="16" x="15" rtop="120" src="ui/textures/map-checkbox-on.bmp"
 			onclick="setUndeployState()"/>
-		<caption id="despawn-ms-checkbox-label" label="&exitvehicle.ms.leave;" x="30" width="300" height="15" rtop="121" style="color: #FFFFFFFF; "
+		<caption id="despawn-ms-checkbox-label" label="${exitvehicle.ms.leave}" x="30" width="300" height="15" rtop="121" style="color: #FFFFFFFF; "
 			onclick="setUndeployState()"/>
-		<button id="popup-no" x="20" y="10" width="150" height="25" label="&popup.cancel;" onclick="doDespawnAction(false)"
+		<button id="popup-no" x="20" y="10" width="150" height="25" label="${popup.cancel}" onclick="doDespawnAction(false)"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
-		<button id="popup-yes" x="180" y="10" width="150" height="25" label="&popup.ok;" onclick="doDespawnAction(true)"
+		<button id="popup-yes" x="180" y="10" width="150" height="25" label="${popup.ok}" onclick="doDespawnAction(true)"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
 	</view>

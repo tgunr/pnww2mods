@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+ 
 <window id="help" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768" layer="90" modal="true"
 	onclick="doNextHelp()" aspectalign="center">
 	<include file="lib/common.uixml"/>
@@ -21,7 +21,7 @@
 				control-on-color: #FFFFCE;
 				border-width: 16;
 				border-height: 16;">
-			<tab label="   &help.current;   " x="0" y="0" rright="0" rtop="0">
+			<tab label="   ${help.current}   " x="0" y="0" rright="0" rtop="0">
 				<view x="0" y="0" rright="0" rtop="20" style="border-color: #3e5248;">
 					<caption id="help-title" x="10" height="20" rright="10" rtop="10" style="font-size: +3; color: #FFFFFFFF;"/>
 					<text id="help-body" x="15" y="10" rtop="40" rright="10" acceptfocus="no"
@@ -30,7 +30,7 @@
 					</text>
 				</view>
 			</tab>
-			<tab label="   &help.index;   " x="0" y="0" rright="0" rtop="0">
+			<tab label="   ${help.index}   " x="0" y="0" rright="0" rtop="0">
 				<view x="0" y="0" rright="0" rtop="20" style="border-color: #3e5248;">
 					<list id="help-toc" x="5" y="5" rright="5" rtop="5"
 						onselect="helpTocList.clickList(false)" ondblselect="helpTocList.clickList(true)">
@@ -42,14 +42,14 @@
 		<caption width="130" height="15" rright="40" rtop="10"
 			style="color: #FFFFFFFF;" onupdate="showPosition(this)"/>
 		<caption id="help-info" width="130" height="15" rright="10" rtop="10" align="right"
-			style="color: #BFE2CE;" tip="&help.nav.current.tip;"/>
+			style="color: #BFE2CE;" tip="${help.nav.current.tip}"/>
 		<view id="help-cp" x="5" y="5" rright="5" height="20">
 			<caption id="help-last" x="5" y="5" width="100" height="15" align="left"
 				style="background-color: #BFE2CE44;  color: #BFE2CE;"
 				onclick="doLastHelp()" ondblclick="doLastHelp()"/>
 			<caption id="help-close" x="107" y="5" height="15" rright="107" align="center"
 				style="background-color: #BFE2CE44;  color: #BFE2CE;"
-				label="&help.nav.close;" onclick="doCloseHelp()"/>
+				label="${help.nav.close}" onclick="doCloseHelp()"/>
 			<caption id="help-next" y="5" width="100" height="15" rright="5" align="right"
 				style="background-color: #BFE2CE44;  color: #BFE2CE;"
 				onclick="doNextHelp()" ondblclick="doNextHelp()"/>

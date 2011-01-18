@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+
 <view id="mapframe" x="5" y="15" width="880" height="400" sx="18" sy="235" onload="MapInit(this, 'mapview','mapcp', false)">
 	<view id="mapcp" width="228" x="0" rtop="0" rbottom="0" aspectlimit='width'>
 		<list id="mapcpbuttons" width="40" x="0" rtop="0" rbottom="0" style="border-color: #3e5248; background-color: #00000088;"
@@ -9,8 +9,8 @@
 				onshow="((!this.mgr) ? new MapInfo(this) : this.mgr.showInfo())" onupdate="this.mgr.updateInfo()">
 				<!-- shows bottom info and waypoints -->
 				<view x="10" width="165" rtop="0" rbottom="0">
-					<view x="0" rtop="0" width="165" height="50" tip="&widgets.map.info.hq.tip;">
-						<caption label="&widgets.map.info.hq.title;" x="0" y="23" width="125" height="20" style="font-size: -1; color: #BFE2CE;"
+					<view x="0" rtop="0" width="165" height="50" tip="${widgets.map.info.hq.tip}">
+						<caption label="${widgets.map.info.hq.title}" x="0" y="23" width="125" height="20" style="font-size: -1; color: #BFE2CE;"
 							acceptsmouseclick="false"/>
 						<image x="0" y="20" src="ui/textures/test/horiz_underline.bmp" width="165" height="12"/>
 						<caption id="map-info-brigade" x="0" y="0" height="20" width="165" style="font-size: -1; color: #e9e3d9; "/>
@@ -19,8 +19,8 @@
 							onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'"
 							onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
 					</view>
-					<view x="0" rtop="55" width="165" height="50" tip="&widgets.map.info.origin.tip;">
-						<caption label="&widgets.map.info.origin.title;" x="0" y="23" width="125" height="20" style="font-size: -1; color: #BFE2CE;"
+					<view x="0" rtop="55" width="165" height="50" tip="${widgets.map.info.origin.tip}">
+						<caption label="${widgets.map.info.origin.title}" x="0" y="23" width="125" height="20" style="font-size: -1; color: #BFE2CE;"
 							acceptsmouseclick="false"/>
 						<image x="0" y="20" src="ui/textures/test/horiz_underline.bmp" width="165" height="12"/>
 						<caption id="map-info-origin" x="0" y="0" height="20" width="165" style="font-size: -1; color: #e9e3d9; "/>
@@ -29,8 +29,8 @@
 							onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'"
 							onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
 					</view>
-					<view x="0" rtop="110" width="165" height="50" tip="&widgets.map.info.target.tip;">
-						<caption label="&widgets.map.info.target.title;" x="0" y="23" width="125" height="20" style="font-size: -1; color: #BFE2CE;"
+					<view x="0" rtop="110" width="165" height="50" tip="${widgets.map.info.target.tip}">
+						<caption label="${widgets.map.info.target.title}" x="0" y="23" width="125" height="20" style="font-size: -1; color: #BFE2CE;"
 							acceptsmouseclick="false"/>
 						<image x="0" y="20" src="ui/textures/test/horiz_underline.bmp" width="165" height="12"/>
 						<caption id="map-info-target" x="0" y="0" height="20" width="165" style="font-size: -1; color: #e9e3d9; "/>
@@ -39,8 +39,8 @@
 							onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'"
 							onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
 					</view>
-					<view x="0" rtop="165" width="165" height="50" tip="&widgets.map.info.me.tip;">
-						<caption label="&widgets.map.info.me.title;" x="0" y="23" width="125" height="20" style="font-size: -1; color: #BFE2CE;"
+					<view x="0" rtop="165" width="165" height="50" tip="${widgets.map.info.me.tip}">
+						<caption label="${widgets.map.info.me.title}" x="0" y="23" width="125" height="20" style="font-size: -1; color: #BFE2CE;"
 							acceptsmouseclick="false"/>
 						<image x="0" y="20" src="ui/textures/test/horiz_underline.bmp" width="165" height="12"/>
 						<caption id="map-info-playerpos" x="0" y="0" height="20" width="165" style="font-size: -1; color: #e9e3d9; "/>
@@ -49,13 +49,13 @@
 							onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'"
 							onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
 					</view>
-					<view x="0" rtop="220" width="165" height="50" tip="&widgets.map.info.mouse.tip;">
-						<caption label="&widgets.map.info.mouse.title;" x="0" y="23" width="125" height="20" style="font-size: -1; color: #BFE2CE;"/>
+					<view x="0" rtop="220" width="165" height="50" tip="${widgets.map.info.mouse.tip}">
+						<caption label="${widgets.map.info.mouse.title}" x="0" y="23" width="125" height="20" style="font-size: -1; color: #BFE2CE;"/>
 						<image x="0" y="20" src="ui/textures/test/horiz_underline.bmp" width="165" height="12"/>
 						<caption id="map-info-mousepos" x="0" y="0" height="20" width="165" style="font-size: -1; color: #e9e3d9; "/>
 					</view>
 					<view x="0" rtop="280" width="165" rbottom="0">
-						<caption label="&widgets.map.waypoints.title;" x="0" width="125" height="20" rtop="5" style="font-size: -1; color: #BFE2CE;"/>
+						<caption label="${widgets.map.waypoints.title}" x="0" width="125" height="20" rtop="5" style="font-size: -1; color: #BFE2CE;"/>
 						<image x="0" src="ui/textures/test/horiz_underline.bmp" width="165" height="12" rtop="15"/>
 						<list id="map-waypoints-list" x="0" y="0" width="155" rtop="30" style="background-color: #ffffff11;"
 							onselect="this.mgr.selectWaypoint()">
@@ -67,7 +67,7 @@
 			<tab id="map-finder" x="0" y="0" rright="0" rtop="0" showtab='false' onshow="if(!this.mgr) new MapFinder(this)">
 				<!-- shows cp finder stuff -->
 				<view x="10" rtop="2" width="165" rbottom="0">
-					<caption label="&widgets.map.finder.title;" x="0" width="165" height="20" rtop="5" style="font-size: -1; color: #BFE2CE;"/>
+					<caption label="${widgets.map.finder.title}" x="0" width="165" height="20" rtop="5" style="font-size: -1; color: #BFE2CE;"/>
 					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="165" height="12" rtop="15" />
 					<textcontrol id="map-finder-input" x="0" height="20" width="165" rtop="30" acceptsfocus="true"
 						style="font-size: -1; background-color: #FFFFFF; color: #000000;" onenter="this.mgr.setSelection()"/>
@@ -95,7 +95,7 @@
 						</list>
 					</view>
 					<view x="0" height="100" width="165" rbottom="5">
-						<caption label="&widgets.map.details.deployed;" x="0" width="125" height="20" rtop="5" style="font-size: -1; color: #BFE2CE;"/>
+						<caption label="${widgets.map.details.deployed}" x="0" width="125" height="20" rtop="5" style="font-size: -1; color: #BFE2CE;"/>
 						<image x="0" src="ui/textures/test/horiz_underline.bmp" width="165" height="12" rtop="15"/>
 						<list id="map-brigades-list" x="0" y="0" width="165" rtop="30" style="background-color: #ffffff11;"
 							onselect="this.mgr.selectBrigade()">
@@ -106,71 +106,71 @@
 			</tab>
 			<tab id="map-options" x="0" y="0" rright="0" rtop="0" showtab='false' onhide="game.savesettings(this)">
 				<view x="10" rtop="2" width="165" rbottom="0">
-					<caption label="&widgets.map.options.options;" x="0" width="165" height="20" rtop="5" style="font-size: -1; color: #BFE2CE;"/>
+					<caption label="${widgets.map.options.options}" x="0" width="165" height="20" rtop="5" style="font-size: -1; color: #BFE2CE;"/>
 					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="165" height="12" rtop="15"/>
 					<view x="0" width="165" y="5" rtop="10">
-						<checkbox id="centerMe.centerme" label="&widgets.map.options.centerme;" x="0" width="120" height="15" rtop="20" checked="true"
+						<checkbox id="centerMe.centerme" label="${widgets.map.options.centerme}" x="0" width="120" height="15" rtop="20" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.centerMe(this.checked)"/>
-						<checkbox id="autoPan.autopan" label="&widgets.map.options.zoom.pan;" x="0" width="120" height="15" rtop="35" checked="true"
+						<checkbox id="autoPan.autopan" label="${widgets.map.options.zoom.pan}" x="0" width="120" height="15" rtop="35" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.autoPan(this.checked)"/>
 
-						<!-- checkbox id="stratFilter.showclutter" label="&widgets.map.options.declutter;" x="0" width="120" height="15" rtop="35" checked="false"
+						<!-- checkbox id="stratFilter.showclutter" label="${widgets.map.options.declutter}" x="0" width="120" height="15" rtop="35" checked="false"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.stratFilter(!this.checked, 'showclutter')"/ -->
 					</view>
 					
-					<caption label="&widgets.map.options.filters;" x="0" width="165" height="20" rtop="65" style="font-size: -1; color: #BFE2CE;"/>
+					<caption label="${widgets.map.options.filters}" x="0" width="165" height="20" rtop="65" style="font-size: -1; color: #BFE2CE;"/>
 					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="165" height="12" rtop="75" />
 					<view x="0" width="165" y="5" rtop="70">
-						<checkbox id="stratFilter.showcps" label="&widgets.map.options.showcps;" x="0" width="120" height="15" rtop="20" checked="true"
+						<checkbox id="stratFilter.showcps" label="${widgets.map.options.showcps}" x="0" width="120" height="15" rtop="20" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.stratFilter(this.checked, 'showcps')"/>
-						<checkbox id="stratFilter.showairfields" label="&widgets.map.options.showairfields;" x="0" width="120" height="15" rtop="35" checked="true"
+						<checkbox id="stratFilter.showairfields" label="${widgets.map.options.showairfields}" x="0" width="120" height="15" rtop="35" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.stratFilter(this.checked, 'showairfields')"/>
-						<checkbox id="stratFilter.showports" label="&widgets.map.options.showports;" x="0" width="120" height="15" rtop="50" checked="true"
+						<checkbox id="stratFilter.showports" label="${widgets.map.options.showports}" x="0" width="120" height="15" rtop="50" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.stratFilter(this.checked, 'showports')"/>
-						<checkbox id="stratFilter.showbridges"	label="&widgets.map.options.showbridges;" x="0" width="120" height="15" rtop="65" checked="true"
+						<checkbox id="stratFilter.showbridges"	label="${widgets.map.options.showbridges}" x="0" width="120" height="15" rtop="65" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.stratFilter(this.checked, 'showbridges')"/>
-						<checkbox id="stratFilter.showews" label="&widgets.map.options.showews;" x="0" width="120" height="15" rtop="80" checked="true"
+						<checkbox id="stratFilter.showews" label="${widgets.map.options.showews}" x="0" width="120" height="15" rtop="80" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.stratFilter(this.checked, 'showews')"/>
-						<checkbox id="stratFilter.showobjectives" label="&widgets.map.options.showobjectives;" x="0" width="120" height="15" rtop="95"
+						<checkbox id="stratFilter.showobjectives" label="${widgets.map.options.showobjectives}" x="0" width="120" height="15" rtop="95"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.stratFilter(this.checked, 'showobjectives')"/>
-						<checkbox id="stratFilter.showbrigades" label="&widgets.map.options.showbrigades;" x="0" width="120" height="15" rtop="110" checked="true"
+						<checkbox id="stratFilter.showbrigades" label="${widgets.map.options.showbrigades}" x="0" width="120" height="15" rtop="110" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.stratFilter(this.checked, 'showbrigades')"/>
-						<checkbox id="stratFilter.showmydivision" label="&widgets.map.options.showmydivision;" x="0" width="120" height="15" rtop="125" checked="true"
+						<checkbox id="stratFilter.showmydivision" label="${widgets.map.options.showmydivision}" x="0" width="120" height="15" rtop="125" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.stratFilter(this.checked, 'showmydivision')"/>
 						<!--
-						<checkbox id="stratFilter.showdeployments" label="&widgets.map.options.showdeployments;" x="0" width="120" height="15" rtop="140" checked="true"
+						<checkbox id="stratFilter.showdeployments" label="${widgets.map.options.showdeployments}" x="0" width="120" height="15" rtop="140" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.stratFilter(this.checked, 'showdeployments')"/>
 						-->
 					</view>
 					
-					<caption label="&widgets.map.options.zoom.title;" x="0" width="165" height="20" rtop="230" style="font-size: -1; color: #BFE2CE;"/>
+					<caption label="${widgets.map.options.zoom.title}" x="0" width="165" height="20" rtop="230" style="font-size: -1; color: #BFE2CE;"/>
 					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="165" height="12" rtop="240" />
 					<view x="0" width="165" y="5" rtop="240">
-						<checkbox id="scaleMap.4" label="&widgets.map.options.zoom.sector;" x="0" width="120" height="15" rtop="15" checked="true"
+						<checkbox id="scaleMap.4" label="${widgets.map.options.zoom.sector}" x="0" width="120" height="15" rtop="15" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-radio-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.scaleMap(this, 7.5)" onshow="this.value = false"/>
-						<checkbox id="scaleMap.3" label="&widgets.map.options.zoom.regional;" x="0" width="120" height="15" rtop="30" checked="true"
+						<checkbox id="scaleMap.3" label="${widgets.map.options.zoom.regional}" x="0" width="120" height="15" rtop="30" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-radio-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.scaleMap(this, 2)" onshow="this.value = false"/>
-						<checkbox id="scaleMap.2" label="&widgets.map.options.zoom.city;" x="0" width="120" height="15" rtop="45" checked="true"
+						<checkbox id="scaleMap.2" label="${widgets.map.options.zoom.city}" x="0" width="120" height="15" rtop="45" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-radio-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.scaleMap(this, .75)" onshow="this.value = false"/>
-						<checkbox id="scaleMap.1" label="&widgets.map.options.zoom.facilities;" x="0" width="120" height="15" rtop="60" checked="true"
+						<checkbox id="scaleMap.1" label="${widgets.map.options.zoom.facilities}" x="0" width="120" height="15" rtop="60" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-radio-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.scaleMap(this, .25)" onshow="this.value = false"/>
-						<checkbox id="scaleMap.0" label="&widgets.map.options.zoom.tactical;" x="0" width="120" height="15" rtop="75" checked="true"
+						<checkbox id="scaleMap.0" label="${widgets.map.options.zoom.tactical}" x="0" width="120" height="15" rtop="75" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-radio-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.scaleMap(this, .0625)" onshow="this.value = false"/>
 						<button id="scaleMapInc.scaleup" height="20" width="20" rright="30" rtop="30"
@@ -181,7 +181,7 @@
 								onclick="this.mgr.scaleMapInc(this, false)"/>
 					</view>
 					
-					<button id="mapDefaults.setDefaults" label="&widgets.map.options.defaults;" x="10" y="10" height="25" rright="10"
+					<button id="mapDefaults.setDefaults" label="${widgets.map.options.defaults}" x="10" y="10" height="25" rright="10"
 						style="control-on: ui/textures/test/gen_button_on.bmp;
 							control-off: ui/textures/test/gen_button_off.bmp;
 							font-size: -3;
@@ -194,7 +194,7 @@
 			<tab id="map-legend" x="0" y="0" rright="0" rtop="0" showtab='false' onshow="if(!this.mgr) new MapLegend(this)">
 				<!-- shows map legend -->
 				<view x="10" rtop="0" width="165" rbottom="0">
-					<caption label="&widgets.map.legend.title;" x="0" width="165" height="20" rtop="0" style="font-size: -1; color: #BFE2CE;"/>
+					<caption label="${widgets.map.legend.title}" x="0" width="165" height="20" rtop="0" style="font-size: -1; color: #BFE2CE;"/>
 					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="165" height="12" rtop="10" />
 					<list id="map-legend-list" x="0" y="0" width="165" rtop="20">
 						<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
@@ -212,9 +212,9 @@
 					<tab x="0" y="0" rright="0" rtop="0" showtab='false'>
 						<view id="creator-tab" x="10" width="165" rtop="0" rbottom="0">
 							<view x="0" rtop="0" width="165" height="50">
-								<caption label="&brigade.createtab.origin;" x="0" y="23" width="125" height="20" style="font-size: -1; color: #BFE2CE;"/>
+								<caption label="${brigade.createtab.origin}" x="0" y="23" width="125" height="20" style="font-size: -1; color: #BFE2CE;"/>
 								<image x="0" y="20" src="ui/textures/test/horiz_underline.bmp" width="165" height="12"/>
-								<caption id="creator-origin" x="0" y="0" height="20" width="165" label="&lt;&brigade.createtab.origin.default;&gt;"
+								<caption id="creator-origin" x="0" y="0" height="20" width="165" label="${brigade.createtab.origin.default}"
 									onclick="this.mgr.setOrigin()" style="font-size: -1; color: #e9e3d9; "/>
 								<image id="creator-origin-edit" x="128" y="25" width="16" height="16" src="ui/textures/test/edit_icon.bmp"
 									onmouseenter="this.src = 'ui/textures/test/edit_icon_on.bmp'" onmouseexit="this.src = 'ui/textures/test/edit_icon.bmp'"
@@ -224,9 +224,9 @@
 									onclick="this.mgr.centerOrigin()"/>
 							</view>
 							<view x="0" rtop="50" width="165" height="50">
-								<caption label="&brigade.createtab.target;" x="0" y="23" width="125" height="20" style="font-size: -1; color: #BFE2CE;"/>
+								<caption label="${brigade.createtab.target}" x="0" y="23" width="125" height="20" style="font-size: -1; color: #BFE2CE;"/>
 								<image x="0" y="20" src="ui/textures/test/horiz_underline.bmp" width="165" height="12"/>
-								<caption id="creator-target" x="0" y="0" height="20" width="165" label="&lt;&brigade.createtab.target.default;&gt;"
+								<caption id="creator-target" x="0" y="0" height="20" width="165" label="${brigade.createtab.target.default}"
 									onclick="this.mgr.setTarget()" style="font-size: -1; color: #e9e3d9; "/>
 								<image id="creator-target-edit" x="128" y="25" width="16" height="16" src="ui/textures/test/edit_icon.bmp"
 									onmouseenter="this.src = 'ui/textures/test/edit_icon_on.bmp'" onmouseexit="this.src = 'ui/textures/test/edit_icon.bmp'"
@@ -236,19 +236,19 @@
 									onclick="this.mgr.centerTarget()"/>
 							</view>
 							<view x="0" rtop="105" width="165" height="110">
-								<caption label="&brigade.createtab.type;" x="0" width="165" height="20" rtop="5" style="font-size: -1; color: #BFE2CE;"/>
+								<caption label="${brigade.createtab.type}" x="0" width="165" height="20" rtop="5" style="font-size: -1; color: #BFE2CE;"/>
 								<image x="0" src="ui/textures/test/horiz_underline.bmp" width="165" height="12" rtop="15"/>
 								<!-- caption id="creator-type" x="0" height="20" width="165" rtop="25" label="-" style="font-size: -1; color: #e9e3d9; "/ -->
 								<list id="creator-type" x="0" y="0" width="165" rtop="25"
 									  style="background-color: #ffffff11;" onselect="this.mgr.selectType()"/>
 							</view>
 							<view x="0" rtop="210" width="165" rbottom="40">
-								<caption label="&brigade.createtab.orders;" x="0" width="165" height="20" rtop="5" style="font-size: -1; color: #BFE2CE;"/>
+								<caption label="${brigade.createtab.orders}" x="0" width="165" height="20" rtop="5" style="font-size: -1; color: #BFE2CE;"/>
 								<image x="0" src="ui/textures/test/horiz_underline.bmp" width="165" height="12" rtop="15" />
 								<text id="creator-description" x="0" width="165" rtop="30" rbottom="0" acceptsfocus="true"
-									style="font-size: -1; background-color: #FFFFFF22;  color: #FFFFFF;">&brigade.createtab.orders.default;</text>
+									style="font-size: -1; background-color: #FFFFFF22;  color: #FFFFFF;">${brigade.createtab.orders.default}</text>
 							</view>
-							<button id="creator-button" label="&brigade.forward.create;" x="5" y="0" height="30" width="160"
+							<button id="creator-button" label="${brigade.forward.create}" x="5" y="0" height="30" width="160"
 								style="control-on: ui/textures/test/gen_button_on.bmp;
 									control-off: ui/textures/test/gen_button_off.bmp;
 									control-disabled: ui/textures/test/gen_button_disabled.bmp;
@@ -271,19 +271,19 @@
 			       control-off: ui/textures/map/panel/aws_off.bmp;
 				   control-disabled: ui/textures/map/panel/aws_off.bmp;"
 			onshow="if(!this.mgr) new MapRadar(this)" onclick="this.mgr.clickRadar()"
-			tip="&map.radar;"/>
+			tip="${map.radar}"/>
 		<button id="map-centerme" x='5' y='40' width='32' height='32'
 			style="control-on: ui/textures/map/panel/centerme_on.bmp;
 			       control-off: ui/textures/map/panel/centerme_off.bmp;
 				   control-disabled: ui/textures/map/panel/centerme_off.bmp;"
 			onshow="if(!this.mgr) new MapCenterMe(this)" onclick="this.mgr.clickCenterMe()"
-			tip="&map.center;"/>
+			tip="${map.center}"/>
 		<button id="map-sizer" x='5' y='5' width='32' height='32'
 			style="control-on: ui/textures/map/panel/mapsize_on.bmp;
 				   control-off: ui/textures/map/panel/mapsize_off.bmp;
 				   control-disabled: ui/textures/map/panel/mapsize_off.bmp;"
 			onshow="if(!this.mgr) new MapSizer(this)" onclick="this.mgr.clickSizer()"
-			tip="&map.size;"/>
+			tip="${map.size}"/>
 	</view>
 	<view id="mapview" class="mapview" x="45" y="0" width="855" height="400" sx="18" sy="235"
 		acceptsfocus="no" minscale=".0625" maxscale="7.5" scale="1" scalebar="on"

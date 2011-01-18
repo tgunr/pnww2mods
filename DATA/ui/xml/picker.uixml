@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+ 
 <window id="picker" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768"
 	style="background-color: #00000077;" layer="100">
 	<view x="350" y="250" width="350" height="300" style="background-color: #00000088; 
@@ -9,12 +9,12 @@
 							border-height: 4;" moveondrag="yes">
 		<text id="popup-caption" x="10" y="40" height="50" width="330" acceptfocus="no" style=" color: #FFFFFF;"/>
 		<view id="swatches" x="10" y="70" rright="10" rtop="10"/>
-		<caption label="&widgets.prefs.groups.ui.colors.picker;:" x="10" y="45" width="125" height="25" style="color: #ffffff;" align="right"/>
+		<caption label="${widgets.prefs.groups.ui.colors.picker}:" x="10" y="45" width="125" height="25" style="color: #ffffff;" align="right"/>
 		<view id="color" x="145" y="45" width="20" height="20" style="border-color: #ffffff; border-size: 1;"/>
-		<button id="popup-no" x="20" y="10" width="150" height="25" label="&popup.cancel;" onclick="doPickColor(false)"
+		<button id="popup-no" x="20" y="10" width="150" height="25" label="${popup.cancel}" onclick="doPickColor(false)"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
-		<button id="popup-yes" x="180" y="10" width="150" height="25" label="&popup.ok;" onclick="doPickColor(true)"
+		<button id="popup-yes" x="180" y="10" width="150" height="25" label="${popup.ok}" onclick="doPickColor(true)"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
 	</view>

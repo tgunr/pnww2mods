@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+ 
 <window id="hccp" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768" layer="100"
 	onshow="initHCCOntrol()">
 	<include file="lib/common.uixml"/>
@@ -11,7 +11,7 @@
 							border-height: 4;" moveondrag="yes">
 		<!-- welcome -->
 		<view x="10" rtop="10" width="325" height="40" style="background-color: #ffffff00;" followtop="true">
-			<caption label="&hccp.title;" x="0" rtop="0" rright="0" height="30" style="color: #BFE2CE; font-size: +4;"/>
+			<caption label="${hccp.title}" x="0" rtop="0" rright="0" height="30" style="color: #BFE2CE; font-size: +4;"/>
 			<-- image src="ui/textures/test/horiz_underline.bmp" x="0" rtop="20" rright="0" height="12"/>
 		</view>
 		
@@ -26,15 +26,15 @@
 			control-on-color: #FFFFCE;
 			border-width: 4;
 			border-height: 4;">
-			<tab label="  &hccp.tabs.notices;  " x="0" y="0" rright="0" rtop="0" onshow="setHCCPTab(0)">
+			<tab label="  ${hccp.tabs.notices}  " x="0" y="0" rright="0" rtop="0" onshow="setHCCPTab(0)">
 				<view x="10" rright="10" y="10" rtop="25">
-					<caption label="&hccp.tabs.notices.title;" x="10" height="20" rright="10" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
+					<caption label="${hccp.tabs.notices.title}" x="10" height="20" rright="10" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
 					<image x="10" src="ui/textures/test/horiz_underline.bmp" rright="10" height="12" rtop="12"/>
 					<view x="10" rright="10" height="15" rtop="23">
 						<caption x="0" y="0" rright="76" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-							label="&hccp.tabs.notices.text;"/>
+							label="${hccp.tabs.notices.text}"/>
 						<caption y="0" width="75" height="15" rright="0" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-							label="&hccp.tabs.notices.veto;" center="true"/>
+							label="${hccp.tabs.notices.veto}" center="true"/>
 					</view>
 					<list id="noticeList" x="10" y="5" rright="10" rtop="42" onselect="noticeList.clickList(false)" onupdate="if(noticeUpdater.run()) updateNotices(true);">
 						<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
@@ -42,7 +42,7 @@
 				</view>
 
 			</tab>
-			<tab label="  &hccp.tabs.map;  " x="0" y="0" rright="0" rtop="0" onshow="setHCCPTab(1)">
+			<tab label="  ${hccp.tabs.map}  " x="0" y="0" rright="0" rtop="0" onshow="setHCCPTab(1)">
 				<view id="hccp-map" class="mapview" acceptsfocus="no" minscale=".03" maxscale="4.0" scale=".75"
 					x="10" y="10" rright="10" rtop="30" sx="18" sy="235"
 					onload="if(!this.mgr) new MapManager(this, true)" onshow="this.mgr.onShow()" 
@@ -81,12 +81,12 @@
 		</tabview>
 		
 		<!-- close -->
-		<button id="veto-button" x="150" y="10" width="150" height="25" label="&hccp.tabs.notices.veto.button;" followbottom="true"
+		<button id="veto-button" x="150" y="10" width="150" height="25" label="${hccp.tabs.notices.veto.button}" followbottom="true"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 			onclick="clickVetoProposal()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
 			enabled="false"/>
 			
-		<button x="325" y="10" width="150" height="25" label="&popup.ok;" followbottom="true"
+		<button x="325" y="10" width="150" height="25" label="${popup.ok}" followbottom="true"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 			onclick="closeHCControl()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
 	</view>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
-<tab id="calibration" label="  &common.controllers.tab;  " x="0" y="0" width="930" height="460" align="right"
-	onshow="soundPlayShuffle()" tip="&common.controllers.tab.tip;">
+
+<tab id="calibration" label="  ${common.controllers.tab}  " x="0" y="0" width="930" height="460" align="right"
+	onshow="soundPlayShuffle()" tip="${common.controllers.tab.tip}">
 	<include file="widgets/calibration.uixml"/>
 </tab>
 

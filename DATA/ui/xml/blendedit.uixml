@@ -1,0 +1,789 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<viewport id="blendedit" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
+	onshow="initEditor()" onupdate="updateEditor()" moveondrag="no" acceptmouseclick="no"> <!-- onshow="initEditor()"  -->
+	<include file="lib/common.uixml"/>
+	<include file="classes/BlendTypes.uixml"/>
+	<include file="classes/BlendManager.uixml"/>
+	<include file="classes/ListControl.uixml"/>
+	<include file="classes/DDListControl.uixml"/>
+	<include file="classes/MenuControl.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+	<view id="modelControl" x="0" y="0" rtop="0" rright="0" moveondrag="yes" acceptmouseclick="yes"
+		onmousedown="modelDrag(true)" onclick="modelDrag(false)"/>
+	<view id="states" x="5" height="30" rtop="5" rright="5" moveondrag="no" aspectlimit="width"
+		 style="background-color: #000000AA; border-color: #3e5248; border-size: 1;">
+		<caption label="LOAD BLEND:" x="5" width="100" height="20" rtop="5" style="color: #BFE2CE;"
+			acceptsmouseclick="false"/>
+		<caption id="types" x="100" height="20" width="100" rtop="5"
+			onshow="if(!this.mgr) new DDListControl(this, selectType, 30, true); initTypes(this.mgr);"
+			onclick="if(this.mgr) this.mgr.toggleList()" onhide="if(this.mgr) this.mgr.hideList()"
+			style="color: #BFE2CE; border-color: #3e5248; border-size: 1;">
+			 <image rright="5" rtop="5" src="ui/textures/map-scaledown-off.bmp" width="10" height="10" acceptmouseclick="false"/>
+		</caption>
+		<caption id="state1" x="255" height="20" width="100" rtop="5"
+			onshow="if(!this.mgr) new DDListControl(this, selectState, 100, true); initStates(this.mgr, 1);"
+			onclick="if(this.mgr) this.mgr.toggleList()" onhide="if(this.mgr) this.mgr.hideList()"
+			style="color: #BFE2CE; border-color: #3e5248; border-size: 1;">
+			 <image rright="5" rtop="5" src="ui/textures/map-scaledown-off.bmp" width="10" height="10" acceptmouseclick="false"/>
+		</caption>
+		<caption id="state2" x="410" height="20" width="100" rtop="5"
+			onshow="if(!this.mgr) new DDListControl(this, selectState, 210, true); initStates(this.mgr, 2);"
+			onclick="if(this.mgr) this.mgr.toggleList()" onhide="if(this.mgr) this.mgr.hideList()"
+			style="color: #BFE2CE; border-color: #3e5248; border-size: 1;">
+			 <image rright="5" rtop="5" src="ui/textures/map-scaledown-off.bmp" width="10" height="10" acceptmouseclick="false"/>
+		</caption>
+		<caption id="state3" x="565" height="20" width="100" rtop="5"
+			onshow="if(!this.mgr) new DDListControl(this, selectState, 250, true); initStates(this.mgr, 3);"
+			onclick="if(this.mgr) this.mgr.toggleList()" onhide="if(this.mgr) this.mgr.hideList()"
+			style="color: #BFE2CE; border-color: #3e5248; border-size: 1;">
+			 <image rright="5" rtop="5" src="ui/textures/map-scaledown-off.bmp" width="10" height="10" acceptmouseclick="false"/>
+		</caption>
+		<caption id="state4" x="720" height="20" width="100" rtop="5"
+			onshow="if(!this.mgr) new DDListControl(this, selectState, 220, true); initStates(this.mgr, 4);"
+			onclick="if(this.mgr) this.mgr.toggleList()" onhide="if(this.mgr) this.mgr.hideList()"
+			style="color: #BFE2CE; border-color: #3e5248; border-size: 1;">
+			 <image rright="5" rtop="5" src="ui/textures/map-scaledown-off.bmp" width="10" height="10" acceptmouseclick="false"/>
+		</caption>
+		<button id="loadButton" height="20" width="140" rtop="5" rright="50" label="LOAD"
+			style="control-on: ui/textures/test/gen_button_on.bmp;
+				   control-off: ui/textures/test/gen_button_off.bmp;
+				   control-disabled: ui/textures/test/gen_button_disabled.bmp;
+				   font-size:
+				   -3; color: #FFFFFF;"
+				   onclick="addBlend()"
+				   onmouseenter="buttonMouseEnter(this)"
+				   onmouseexit="buttonMouseExit(this)"/>
+	</view>
+	<view x="0" width="20" rtop="50" rbottom="5" onmouseenter="animListMove = moveAmount;" moveondrag="no"/>
+	<view id="animPanel" x="0" width="150" rtop="50" rbottom="5" moveondrag="no" onmouseenter="animListMove = moveAmount;" onmouseexit="animListMove = -moveAmount;">
+		<textcontrol id="animFilter" x="5" height="20" rtop="5" rright="5" acceptsfocus="true"
+			style="background-color: #FFFFFF22; border-color: #BFE2CE; color: #e9e3d9ff; start-color: #e9e3d9ff; font-size: -1;"/>
+		<list id="animList" x="5" rtop="30" rright="5" rbottom="5" style="background-color: #000000AA; color: #FFFFFF; font-size: -2;"
+			moveondrag="no" onselect="animList.clickList(false)" ondblselect="animList.clickList(true)">
+			<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+		</list>
+	</view>
+	<view width="20" rtop="50" rbottom="5" rright="0" onmouseenter="blendListMove = -moveAmount;" moveondrag="no"/>
+	<view id="blendPanel" width="200" rtop="50" rbottom="5" rright="0" moveondrag="no" onmouseenter="blendListMove = -moveAmount;" onmouseexit="blendListMove = moveAmount;"
+		style="background-color: #000000AA;">
+		<list id="blendList" x="5" rtop="5" rright="5" rbottom="200" style="color: #FFFFFF; font-size: -2;"
+			moveondrag="no" onselect="blendList.clickList(false)" ondblselect="blendList.clickList(true)">
+			<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+		</list>
+		<tabview x="10" y="55" height="130" rright="10"
+			 style="color: #BFE2CE;
+					background-color: #000000BB;
+					border-sides: ui/textures/test/infobox_side.bmp;
+					border-corner: ui/textures/test/infobox_corner.bmp;
+					control-on-endcap:  ui/textures/test/body_tab_cap_on.bmp;
+					control-on-back:  ui/textures/test/body_tab_filler_on.bmp;
+					control-off-endcap: ui/textures/test/body_tab_cap.bmp;
+					control-off-back: ui/textures/test/body_tab_filler.bmp;
+					control-on-color: #FFFFCE;
+					border-width: 16;
+					border-height: 16;
+					font-size: -3;">
+			<tab label="WEIGHTS" x="0" y="0" rright="0" rtop="0">
+					<caption label="SCOPE" x="10" height="15" rright="10" rtop="25" style="color: #BFE2CE; font-size: -1;"
+						tip=""/>
+					<view id="scopeMode" x="5" height="25" rtop="35" rright="5">
+						<radiobutton label="bone" x="5" width="60" height="15" rtop="5"
+							style="color: #ffffff; font-size: -2; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+							onclick="blendMgr.setBoneScope(0)"
+							onshow="this.value = true"/>
+						<radiobutton label="group" x="50" width="60" height="15" rtop="5" 
+							style="color: #ffffff; font-size: -2; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+							onclick="blendMgr.setBoneScope(1)"
+							onshow="this.value = false"/>
+						<radiobutton label="children" x="90" width="60" height="15" rtop="5" 
+							style="color: #ffffff; font-size: -2; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+							onclick="blendMgr.setBoneScope(2)"
+							onshow="this.value = false"/>
+					</view>
+					<caption label="WEIGHTING" x="10" height="15" rright="10" rtop="75" style="color: #BFE2CE; font-size: -1;"/>
+					<view id="weightMode" x="5" height="25" rtop="85" rright="5">
+						<radiobutton label="relative" x="5" width="60" height="15" rtop="5"
+							style="color: #ffffff; font-size: -2; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+							onclick="blendMgr.setRelativeWeighting(true)"
+							onshow="this.value = true"/>
+						<radiobutton label="absolute" x="50" width="60" height="15" rtop="5" 
+							style="color: #ffffff; font-size: -2; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+							onclick="blendMgr.setRelativeWeighting(false)"
+							onshow="this.value = false"/>
+					</view>
+			</tab>
+			<tab label="BLEND" x="0" y="0" rright="0" rtop="0">
+				<caption label="INTERPOLATE:" x="5" height="15" rright="10" rtop="25" style="color: #BFE2CE; font-size: -1;"/>
+				<slider id="oscillationTime" x="70" height="15" rtop="25" rright="10" minvalue="0" maxvalue="1"
+					style="thumb-off-color: #3e5248; thumb-width: 7; thumb-height: 12;"
+					onclick="oscControl = false" onmousedown="oscControl = true" onshow="this.value = 0"/>
+					
+				<caption label="TYPE:" x="5" height="15" rright="10" rtop="50" style="color: #BFE2CE; font-size: -1;"/>
+				<caption id="blendType" x="70" height="20" width="75" rtop="45"
+					onshow="if(!this.mgr) new DDListControl(this, setBlendingType, 75, true); initBlendWeighting();"
+					onclick="if(this.mgr) this.mgr.toggleList()" onhide="if(this.mgr) this.mgr.hideList()"
+					style="color: #BFE2CE; border-color: #3e5248; border-size: 1;">
+					 <image rright="5" rtop="5" src="ui/textures/map-scaledown-off.bmp" width="10" height="10" acceptmouseclick="false"/>
+				</caption>
+				
+				<caption label="PLAY MODE:" x="5" height="15" rright="10" rtop="75" style="color: #BFE2CE; font-size: -1;"/>
+				<radiobutton id="playModeOn" label="on" x="70" width="60" height="15" rtop="75" 
+					style="color: #ffffff; font-size: -2; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+					onclick="blendMgr.setBlendPlayMode(true)"/>
+				<radiobutton id="playModeOff" label="off" x="100" width="60" height="15" rtop="75" 
+					style="color: #ffffff; font-size: -2; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+					onclick="blendMgr.setBlendPlayMode(false)"/>
+					
+				<caption label="WEIGHT:" x="5" height="15" rright="10" rtop="100" style="color: #BFE2CE; font-size: -1;"/>
+				<textcontrol id="blendWeight" x="70" width="60" height="15" rtop="100"
+					 onenter="setBlendWeight(this)" style="background-color: #000000FF; color: #FFFFFF; border-color: #3e5248;"/>
+
+				<!-- caption label="first" x="10" height="20" rtop="45" rright="10"
+					style="color: #e9e3d9ff; font-size: -1;" acceptmouseclick="false"/ -->
+			</tab>
+			<tab label="ANIMATION" x="0" y="0" rright="0" rtop="0">
+				<caption label="POSITION:" x="20" height="15" rright="10" rtop="25" style="color: #BFE2CE; font-size: -1;"/>
+				<button id="animUp" width="50" height="25" rright="20" rtop="25" label="MOVE UP" onclick="blendMgr.moveAnimation(-1);"
+					onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+					style="control-on: ui/textures/test/gen_button_on.bmp;
+						   control-off: ui/textures/test/gen_button_off.bmp;
+						   control-disabled: ui/textures/test/gen_button_disabled.bmp;
+						   font-size: -3;
+						   color: #FFFFFF;"/>
+				<button id="animDown" width="50" height="25" rright="20" rtop="55" label="MOVE DOWN" onclick="blendMgr.moveAnimation(1)"
+					onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+					style="control-on: ui/textures/test/gen_button_on.bmp;
+						   control-off: ui/textures/test/gen_button_off.bmp;
+						   control-disabled: ui/textures/test/gen_button_disabled.bmp;
+						   font-size: -3;
+						   color: #FFFFFF;"/>
+			</tab>
+			<tab label="TRANSITION" x="0" y="0" rright="0" rtop="0">
+				<view id="animscale" class="animscale" x="5" y="5" rtop="20" rright="5" style="background-color: #FFFFFF"/>
+			</tab>
+		</tabview>
+		<button id="removeButton" x="10" y="10" width="90" height="25" label="REMOVE" onclick="blendMgr.removeRow(); updateLoadButton()"
+			onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+			style="control-on: ui/textures/test/gen_button_on.bmp;
+				   control-off: ui/textures/test/gen_button_off.bmp;
+				   control-disabled: ui/textures/test/gen_button_disabled.bmp;
+				   font-size: -3;
+				   color: #FFFFFF;"/>
+		<button id="saveButton" y="10" width="90" height="25" rright="10" label="SAVE" onclick="blendMgr.saveBlend()"
+			onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+			style="control-on: ui/textures/test/gen_button_on.bmp;
+				   control-off: ui/textures/test/gen_button_off.bmp;
+				   control-disabled: ui/textures/test/gen_button_disabled.bmp;
+				   font-size: -3;
+				   color: #FFFFFF;"/>
+	</view>
+	<view id="animControl" x="250" y="10" height="20" rright="250" moveondrag="no"
+		style="background-color: #000000; border-color: #3e5248;">
+		<image id="animButton" x="10" src="ui/textures/PauseCapIcon.dds" width="10" height="10" rtop="5"
+			style="color: #FF0000;" onclick="setAnimControl(!animControl)" acceptmouseclick="true"/>
+		<slider id="animTime" x="30" height="15" width="300" rtop="5" minvalue="0" maxvalue="1"
+			style="thumb-off-color: #3e5248; thumb-width: 7; thumb-height: 12;"
+			onmousedown="setAnimControl(true)" onshow="this.value = 0"/>
+		
+		<caption label="slow" height="20" width="40" rtop="0" rright="120"
+			style="color: #e9e3d9ff; font-size: -1;" acceptmouseclick="false"/>
+		<slider id="animSpeed" width="100" height="15" rtop="5" rright="35" minvalue="0" maxvalue="1"
+			style="thumb-off-color: #3e5248; thumb-width: 7; thumb-height: 12;"
+			onclick="setAnimSpeed(this.value)" onshow="this.value = 1"/>
+		<caption label="fast" height="20" width="40" rtop="0" rright="10"
+			style="color: #e9e3d9ff; font-size: -1;" align="right" acceptmouseclick="false"/>
+			
+	</view>
+	<script>
+		<!--
+		
+		var moveAmount			= 500;
+		var animPanel 				= findview("animPanel");
+		var blendPanel 			= findview("blendPanel");
+		var animFilter 				= findview("animFilter");
+		var loadButton				= findview("loadButton");
+		var saveButton			= findview("saveButton");
+		var removeButton		= findview("removeButton");
+		var animSpeed				= findview("animSpeed");
+		var animTime				= findview("animTime");
+		var oscSlider				= findview("oscillationTime");
+		var types						= findview("types");
+		var state1					= findview("state1");
+		var state2					= findview("state2");
+		var state3					= findview("state3");
+		var state4					= findview("state4");
+		var animUp					= findview("animUp");
+		var animDown				= findview("animDown");
+		var blendType				= findview("blendType");
+		var blendWeight			= findview("blendWeight");
+		var playModeOn			= findview("playModeOn");
+		var playModeOff			= findview("playModeOff");
+		var animFilterText		= "";
+		var animList 				= new ListControl(findview("animList"), selectAnimation);
+		var animListMove			= -moveAmount;
+		var blendList 				= new SimpleListControl(findview("blendList"));
+		var blendListMove		= moveAmount;
+		var skeleton					= new GrannySkeleton();
+		var blendMgr				= new BlendManager(blendList, skeleton);
+		var editor						= game.blendeditor;
+		var updateTimer			= new CycleTimer(100);
+		var lastUpdate				= (new Date()).getTime();
+		var modified					= false;
+		var animPause				= true;
+		var animControl			= false;
+		var oscillation				= false;
+		var oscControl				= false;
+		var currentBlend			= null;
+		
+		var animListGroups		= false;
+		var blendGroups			= false;
+		var lastShowGroups		= false;
+		
+		function initEditor()
+		{
+			if(editor == null)
+				editor = game.blendeditor;
+				
+			//cprint("Initing BLEND EDITOR !!!\n");
+			
+			//blendList.addCallback("onadd", addBlend);
+			blendList.addCallback("onremove", updateLoadButton);
+			blendList.addCallback("onclick", updateLoadButton);
+			blendList.addCallback("onselect", selectBlend);
+			blendList.addCallback("ondeselect", deselectBlend);
+			
+			initAnimations();
+			
+			animFilter.text = "anim_";
+		}
+		
+		function initBlendWeighting()
+		{
+			if(blendType != null && blendType.mgr != null)
+			{
+				var options = new Array("secondary","selected","full", "transition");
+				var list = blendType.mgr;
+				
+				list.clearRows();
+				
+				var selected = (blendMgr.blend != null) ? blendMgr.blend.type : -1;
+				
+				for(var i = 0; i < options.length; i++)
+					list.addOption(options[i], i, selected);
+				
+				list.hideList();
+			}
+		}
+		
+		function updateEditor()
+		{
+			if(editor == null)
+				return;
+			
+			var now = (new Date()).getTime();
+			
+			if(animListMove != 0)
+			{
+				//savePlanBtn.enabled = modified;
+				
+				if((animListMove < 0 && animPanel.x > -animPanel.width - 5) || (animListMove > 0 && animPanel.x < 5))
+				{
+					var diff 	= (now - lastUpdate);
+					var tics 	= Math.floor(diff / moveAmount);
+					var delta	= diff / 1000;
+					
+					if(tics < 1)
+						tics = 1;
+					
+					var ticDelta 	= delta / tics;
+					var move 		= animListMove * ticDelta; 
+					
+					for(var t = 0; t < tics; t++)
+						animPanel.x += move;
+					
+					animListGroups = (animPanel.x >= (-animPanel.width / 2)) ? false: true;
+				}
+				else
+				{
+					if(animListMove < 0)
+						animFilter.focused = false;
+					
+					animListMove = 0;
+				}
+			}
+			
+			/*
+			if(blendListMove != 0)
+			{
+				if((blendListMove < 0 && blendPanel.x > window.width - blendPanel.width - 5) || (blendListMove > 0 && blendPanel.x < blendPanel.width + 5))
+				{
+					var diff 	= (now - lastUpdate);
+					var tics 	= Math.floor(diff / moveAmount);
+					var delta	= diff / 1000;
+					
+					if(tics < 1)
+						tics = 1;
+					
+					var ticDelta 	= delta / tics;
+					var move 		= blendListMove * ticDelta; 
+					
+					for(var t = 0; t < tics; t++)
+						blendPanel.x += move;
+				}
+				else
+				{
+					blendListMove = 0;
+				}
+			}
+			*/
+			
+			lastUpdate = now;
+			
+			if(updateTimer.run())
+			{
+				if(animFilter.focused && animFilterText != animFilter.text)
+				{
+					var anims 	= editor.animations;
+					var pwidth 	= animList.list.normv("w", animList.list.width) - 15;
+					var regex 	= eval("/" + animFilter.text + "/gi");
+					
+					animList.clearRows(false);
+					
+					//cprint("Checking " + anims.length + " animations against " + animFilter.text + "!"); 
+					
+					for(var i = 0; i < anims.length; i++)
+					{
+						var filename = anims[i];
+						
+						if(animFilter.text == "" || filename.match(regex))
+						{
+							var lrb = new ListRowBuilder(animList.list, "anim" + i, -15, 16);
+							var label = new TextBuilder(lrb, "label", "caption", filename, 5, 1, -5, 15);
+			
+							label.addStyle("color", "#e9e3d9ff");
+							label.addStyle("font-size", "-2");
+			
+							lrb.addBuilder(label);
+							
+							animList.addRow(filename, lrb.build());
+						}
+					}
+					
+					animFilterText = animFilter.text;
+				}
+				
+				if(currentBlend != blendMgr.getBlend())
+				{
+					currentBlend = blendMgr.getBlend();
+					blendGroups = (currentBlend >= 0) ? true: false;
+					restartBlend();
+				}
+				
+				var showGroups = (blendGroups && animListGroups) ? true : false;
+				
+				if(showGroups != lastShowGroups)
+				{
+					lastShowGroups = showGroups;
+					
+					if(showGroups)
+						blendMgr.showGroups();
+					else
+						blendMgr.hideGroups();
+				}
+				
+				if(!game.cursor.visible)
+					game.cursor.visible = true;
+				
+				removeButton.enabled = (blendList.row != null) ? true : false; 
+				saveButton.enabled = (blendMgr.blend != null) ? blendMgr.blend.modified: false;
+			}
+			
+			if(oscControl)
+				blendMgr.setOscillation(oscSlider.value);
+			
+			blendMgr.onUpdate();
+			
+			setAnimTime(animTime.value);
+			
+			animUp.enabled 		= blendMgr.canMoveAnimation(-1);
+			animDown.enabled 	= blendMgr.canMoveAnimation(1);
+		}
+		
+		function addBone(id, name, pid)
+		{
+			skeleton.addBone(id, name, pid);
+		}
+		
+		function processBones()
+		{
+			skeleton.processBones();
+			
+			skeleton.addGroup("Bip01 Neck", "Head");
+			skeleton.addGroup("Bip01 L Clavicle", "Left Arm");
+			skeleton.addGroup("Bip01 L Hand", "Left Hand");
+			skeleton.addGroup("Bip01 R Clavicle", "Right Arm");
+			skeleton.addGroup("Bip01 R Hand", "Right Hand");
+			skeleton.addGroup("Bip01 Pelvis", "Torso");
+			skeleton.addGroup("Bip01 L Thigh", "Left Leg");
+			skeleton.addGroup("Bip01 R Thigh", "Right Leg");
+			skeleton.addGroup("COM", "Position");
+			
+			//cprint("Processing groups!\n");
+			
+			blendMgr.initGroups();
+			blendMgr.hideGroups();
+		}
+		
+		function initAnimations()
+		{
+			cprint("Showing animations!\n");
+			
+			animList.clearRows(false);
+			
+			var pwidth = animList.list.normv("w", animList.list.width) - 15;
+			var anims = editor.animations;
+			
+			for(var i = 0; i < anims.length; i++)
+			{
+				var filename = anims[i];
+				
+				var lrb = new ListRowBuilder(animList.list, "anim" + i, -15, 16);
+				var label = new TextBuilder(lrb, "label", "caption", filename, 5, 1, -5, 15);
+
+				label.addStyle("color", "#e9e3d9ff");
+				label.addStyle("font-size", "-2");
+
+				lrb.addBuilder(label);
+
+				animList.addRow(filename, lrb.build());
+			}
+		}
+		
+		function restartBlend()
+		{
+			animTime.value = 0;
+			setAnimControl(false);
+		}
+		
+		function initTypes(list)
+		{
+			var options = editor.types;
+			
+			list.clearRows(true);
+			
+			for(var i = 0; i < options.length; i++)
+				list.addOption(options[i], i, 0);
+			
+			list.hideList();
+		}
+		
+		function initStates(list, state)
+		{
+			var options = editor["state" + state];
+			
+			list.clearRows(true);
+			
+			for(var i = 0; i < options.length; i++)
+			{
+				cprint("Add state " + i + " option: " + options[i]);
+				list.addOption(options[i], i, 0);
+			}
+			
+			list.hideList();
+		}
+		
+		function updateStates()
+		{
+			if(state4 == null || state4.mgr == null || state4.mgr.data == null)
+				return;
+			
+			var states = new Array();
+			
+			states.push(0);
+			states.push(parseInt(state1.mgr.data));
+			states.push(parseInt(state2.mgr.data));
+			states.push(parseInt(state3.mgr.data));
+			states.push(parseInt(state4.mgr.data));
+			
+			updateState(1, states);
+			updateState(2, states);
+			updateState(3, states);
+			updateState(4, states);
+		}
+		
+		function updateState(id, selected)
+		{
+			var state = findview("state" +  id);
+			
+			cprint("UPDATING STATE: " + state.id);
+			
+			if(state == null || state.mgr == null || editor == null)
+				return;
+			
+			cprint("Using list: " + state.mgr.list.id);
+				
+			var options 	= editor["state" + id];
+			var list			= state.mgr.list;
+			var content 	= list.getchild(0);
+			var states 	= new Array();
+			
+			if(!content)
+				return;
+			
+			var rows = list.length;
+			
+			//cprint("Setting initial states");
+			
+			for(var s = 0; s < selected.length; s++)
+			{
+				states.push(selected[s]);
+				//cprint("Adding state: " + states[s]);
+			}
+				
+			cprint("Looping over rows " + rows);
+			
+			for(var i = 0; i < rows; i++)
+			{
+				//cprint("Setting temp state " + i);
+				states[id] = i;
+				
+				var row = list.findview(list.id + "_item_" + i);
+				
+				if(row != null)
+				{
+					cprint("Found row: " + row.id);
+					
+					var caption = row.findview("row-value");
+					
+					if(caption != null)
+					{
+						var label =  options[i];
+						
+						if(!game.validblend(states[0], states[1], states[2], states[3], states[4]))
+							label += " (new)";
+						
+						var ok = game.usedblend(states[0], states[1], states[2], states[3], states[4]);
+						
+						cprint("Setting row caption: " + label);
+						
+						caption.label = label;
+						caption.setstyleproperty("color", (ok) ? "#00FF00" : "#FF0000");
+					}
+				}
+				else
+				{
+					cprint("Row " + i + " was null!");
+				}
+			}
+			
+		}
+		
+		function updatePoints()
+		{
+			if(state4 == null)
+				return;
+				
+			var options 	= editor["state4"];
+			
+			for(var i = 0; i < options.length; i++)
+			{
+				var label =  options[i];
+				
+				if(!game.validblend(types.mgr.data, state1.mgr.data, state2.mgr.data, state3.mgr.data, i))
+					label += " (new)";
+				
+				var child = state4.getchild(i);
+				
+				if(child != null)
+				{
+					var row = child.findview("row-value");
+					cprint("Setting point type label to " + label);
+					
+					if(row != null)
+					{
+						cprint("Setting point type label to " + label);
+						row.label = label;
+					}
+				}
+			}
+		}
+		
+		function selectAnimation(add)
+		{
+			if(animList.data != null)
+			{
+				if(add)
+					blendMgr.addAnimation(animList.data);
+				else
+					blendMgr.playAnimation(animList.data);
+			}
+		}
+		
+		function updateLoadButton()
+		{
+			if(types.mgr == null || state1.mgr == null || state2.mgr == null || state3.mgr == null || state4.mgr == null)
+				return;
+				
+			//updatePoints();
+			
+			if(game.validblend(types.mgr.data, state1.mgr.data, state2.mgr.data, state3.mgr.data, state4.mgr.data))
+				loadButton.label = "LOAD";
+			else
+				loadButton.label = "CREATE";
+			
+			loadButton.enabled = true;
+			
+			var blendName = game.blendname(types.mgr.data, state1.mgr.data, state2.mgr.data, state3.mgr.data, state4.mgr.data);
+			var blends = editor.blends;
+			
+			for(var b = 0; b < blends.length; b++)
+			{
+				var blend = blends[b];
+				
+				if(blend.filename == blendName)
+				{
+					loadButton.enabled = false;
+					loadButton.label = "ALREADY LOADED";
+					break;
+				}
+			}
+		}
+		
+		function selectType()
+		{
+			updateLoadButton();
+		}
+		
+		function selectState()
+		{
+			if(state3.mgr && state3.mgr.data != null)
+				blendMgr.setWeapon(state3.mgr.data);
+			
+			updateStates();
+			updateLoadButton();
+		}
+		
+		function selectBlend()
+		{
+			blendMgr.select();
+			initBlendWeighting();
+			
+			if(blendMgr.blend != null)
+			{
+				if(blendMgr.blend.play)
+					playModeOn.value = true;
+				else
+					playModeOff.value = true;
+				
+				blendWeight.text = blendMgr.blend.weight;
+			}
+			else
+			{
+				playModeOff.value = false;
+				blendWeight.text = "0";
+			}
+		}
+		
+		function deselectBlend()
+		{
+			blendMgr.deselect();
+		}
+		
+		function doAddBlend(ok)
+		{
+			if(ok && types.mgr != null)
+			{
+				blendMgr.addBlend(types.mgr.data, state1.mgr.data, state2.mgr.data, state3.mgr.data, state4.mgr.data);
+				updateLoadButton();
+			}
+		}
+		
+		function addBlend()
+		{
+			if(loadButton.label == "CREATE")
+				showConfirm("This action will create a new blend. Do you wish to proceeed?", doAddBlend);
+			else
+				doAddBlend(true);
+		}
+		
+		/*
+		function removeBlend(index)
+		{
+			//blendMgr.removeBlend(index);
+			updateLoadButton();
+		}
+		*/
+		
+		function saveBlend(ok)
+		{
+			if(modified)
+				blendMgr.saveBlend();
+			
+			modified = false;
+		}
+		
+		function setAnimControl(on)
+		{
+			var btn = findview("animButton");
+			
+			animControl = on;
+			
+			if(animControl)
+			{
+				btn.src = "ui/textures/FArrowCapIcon.dds";
+				btn.setstyleproperty("color","#00FF00");
+				setAnimSpeed(0);
+			}
+			else
+			{
+				btn.src = "ui/textures/PauseCapIcon.dds";
+				btn.setstyleproperty("color","#FF0000");
+				setAnimSpeed(animSpeed.value);
+			}
+			
+			setAnimTime(animTime.value);
+		}
+		
+		function setAnimTime(t)
+		{
+			if(blendMgr.blend != null)
+			{
+				blendMgr.blend.time = t;
+				
+				//if(blendMgr.blend.type == 3)
+				//	blendMgr.setBlendWeights(blendMgr.blend.index, t, 0, 0, 0);
+			}
+		}
+		
+		function setAnimSpeed(s)
+		{
+			if(blendMgr.blend != null)
+				blendMgr.blend.speed = s;
+		}
+		
+		function setBlendingType()
+		{
+			blendMgr.blend.type = blendType.mgr.data;
+		}
+		
+		function modelDrag(start)
+		{
+			editor.rotatemodel = start;
+		}
+		
+		function setOscillationTime(slider)
+		{
+			blendMgr.setOscillation(slider.value);
+			//editor.oscillation = (slider.value * 10) * 1000;
+		}
+		
+		function setBlendWeight(tc)
+		{
+			if(blendMgr.blend != null)
+				blendMgr.blend.weight = parseFloat(tc.text);
+		}
+		
+		-->
+	</script>
+</viewport>

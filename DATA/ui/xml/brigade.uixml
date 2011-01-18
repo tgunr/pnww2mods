@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+
 <window id="brigade" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
 	onshow="initWin(this)" aspectalign="center">
 	<include file="widgets/template.uixml"/>
@@ -18,9 +18,9 @@
 						control-on-color: #FFFFCE;
 						border-width: 16;
 						border-height: 16;" onupdate="updateTabs()">
-		<tab label="  &brigade.hqtab;  " x="0" y="0" width="930" height="460"
+		<tab label="  ${brigade.hqtab}  " x="0" y="0" width="930" height="460"
 			onshow='setHelp(getlocstring("brigade.hqtab.help")); tplTab()' onupdate="runExtSquadUpdate()" 
-			tip="&brigade.hqtab.tip;">
+			tip="${brigade.hqtab.tip}">
 			<view id="left-pane" x="18" y="18" width="444" height="411">
 				<view x="10" y="335" width="425" height="75">
 					<caption id="details-brigade" x="0" y="45" width="400" height="25" style="color: #BFE2CE; font-size: +2;"
@@ -34,23 +34,23 @@
 						onshow="this.label = (brigade.home != null) ? getlocstring('brigade.hqtab.basedoutof') + ' ' + brigade.home.name: ''"/>
 				</view>
 				<view x="10" y="20" width="430" height="300">
-					<caption label="&brigade.hqtab.missions;" x="0" y="277" height="20" width="300" style="font-size: +1; color: #BFE2CE;"/>
+					<caption label="${brigade.hqtab.missions}" x="0" y="277" height="20" width="300" style="font-size: +1; color: #BFE2CE;"/>
 					<image x="0" y="275" src="ui/textures/test/horiz_underline.bmp" width="430" height="12"/>
 					<view x="0" y="260" width="430" height="15">
 						<caption x="0" y="0" width="33" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-							label="&mission.brieftab.brief.type;"/>
+							label="${mission.brieftab.brief.type}"/>
 						<caption x="35" y="0" width="63" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-							label="&brigade.hqtab.missions.leader;"/>
+							label="${brigade.hqtab.missions.leader}"/>
 						<caption x="100" y="0" width="98" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-							label="&brigade.hqtab.missions.origin;"/>
+							label="${brigade.hqtab.missions.origin}"/>
 						<caption x="200" y="0" width="104" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-							label="&brigade.hqtab.missions.target;"/>
+							label="${brigade.hqtab.missions.target}"/>
 						<caption x="306" y="0" width="61" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" align="center"
-							label="&brigade.hqtab.missions.pop;" tip="&brigade.hqtab.missions.pop.tip;"/>
+							label="${brigade.hqtab.missions.pop}" tip="${brigade.hqtab.missions.pop.tip}"/>
 						<caption x="369" y="0" width="24" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-							label="&brigades.list.sq;" align="center" tip="&brigade.hqtab.missions.sq.tip;"/>
+							label="${brigades.list.sq}" align="center" tip="${brigade.hqtab.missions.sq.tip}"/>
 						<caption x="395" y="0" width="35" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-							label="&brigade.hqtab.missions.ms;" tip="&brigade.hqtab.missions.ms.tip;"/>
+							label="${brigade.hqtab.missions.ms}" tip="${brigade.hqtab.missions.ms.tip}"/>
 					</view>
 					<list id="missionList" x="0" y="0" width="425" height="258" onupdate="doMissionCheck()"
 						onselect="missionList.clickList(false)" ondblselect="missionList.clickList(true)">
@@ -60,11 +60,11 @@
 				</view>
 				<view x="10" y="0" width="430" height="20">
 					<view x="40" y="4" width="10" height="7" onshow="this.setstyleproperty('background-color', getMissionColor(0))"/>
-					<caption label="&brigade.hqtab.missions.key.attack;" x="55" y="0" width="100" height="15" style="color: #BFE2CE; font-size: -1;" onshow="this.setstyleproperty('color', getMissionColor(0))"/>
+					<caption label="${brigade.hqtab.missions.key.attack}" x="55" y="0" width="100" height="15" style="color: #BFE2CE; font-size: -1;" onshow="this.setstyleproperty('color', getMissionColor(0))"/>
 					<view x="170" y="4" width="10" height="7" onshow="this.setstyleproperty('background-color', getMissionColor(1))"/>
-					<caption label="&brigade.hqtab.missions.key.defend;" x="185" y="0" width="100" height="15" style="color: #BFE2CE; font-size: -1;" onshow="this.setstyleproperty('color', getMissionColor(1))"/>
+					<caption label="${brigade.hqtab.missions.key.defend}" x="185" y="0" width="100" height="15" style="color: #BFE2CE; font-size: -1;" onshow="this.setstyleproperty('color', getMissionColor(1))"/>
 					<view x="300" y="4" width="10" height="7" onshow="this.setstyleproperty('background-color', getMissionColor(4))"/>
-					<caption label="&brigade.hqtab.missions.key.support;" x="315" y="0" width="100" height="15" style="color: #BFE2CE; font-size: -1;" onshow="this.setstyleproperty('color', getMissionColor(4))"/>
+					<caption label="${brigade.hqtab.missions.key.support}" x="315" y="0" width="100" height="15" style="color: #BFE2CE; font-size: -1;" onshow="this.setstyleproperty('color', getMissionColor(4))"/>
 				</view>
 			</view>
 			<include file="widgets/divider.uixml"/>
@@ -72,7 +72,7 @@
 				<tabview id="mission-view" x="0" y="0" rright="0" rtop="0" acceptmouseclick='false'>
 					<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'>
 						<text x="70" width="300" height="100" rtop="50" style=" color: #e9e3d9ff;" onshow="this.text = getlocstring('brigade.hqtab.missions.empty')"/>
-						<button id="brigade-quick-create" rtop="150" x="125" width="200" height="30" label="&brigade.forward.create;" followtop="true"
+						<button id="brigade-quick-create" rtop="150" x="125" width="200" height="30" label="${brigade.forward.create}" followtop="true"
 							style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 							onclick="startCreateMission()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
 
@@ -81,23 +81,23 @@
 						<view x="10" y="10" width="435" height="450">
 							<view x="0" y="295" width="425" height="100">
 								<!-- style="background-color: #000000;"  -->
-								<caption id="mission-brief-header" label="&brigade.hqtab.brief;" x="0" y="78" height="20" width="400" style="font-size: +2; color: #BFE2CE;"/>
+								<caption id="mission-brief-header" label="${brigade.hqtab.brief}" x="0" y="78" height="20" width="400" style="font-size: +2; color: #BFE2CE;"/>
 								<image x="0" y="75" src="ui/textures/test/horiz_underline.bmp" width="425" height="12"/>
-								<caption x="0" y="60" height="15" width="425" label="&brigade.hqtab.brief.leader;:" style="color: #ffffff; "/>
+								<caption x="0" y="60" height="15" width="425" label="${brigade.hqtab.brief.leader}:" style="color: #ffffff; "/>
 								<caption id="mission-brief-leader" x="0" y="60" height="15" rright="15" label="-" style="color: #e9e3d9ff; " align="right"/>
-								<caption x="0" y="45" height="15" width="425" label="&brigade.hqtab.brief.origin;:" style="color: #ffffff; "/>
+								<caption x="0" y="45" height="15" width="425" label="${brigade.hqtab.brief.origin}:" style="color: #ffffff; "/>
 								<caption id="mission-brief-origin" x="0" y="45" height="15" rright="15" label="-" style="color: #e9e3d9ff; " align="right"/>
 								<image x="410" y="45" width="16" height="16" src="ui/textures/test/zoom_icon.bmp"
 									onclick="if(missionList.data) missionPreviewMap.mgr.setSelection(missionList.data.origin)"
 									onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'" onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
-								<caption x="0" y="30" height="15" width="425" label="&brigade.hqtab.brief.target;:" style="color: #ffffff; "/>
+								<caption x="0" y="30" height="15" width="425" label="${brigade.hqtab.brief.target}:" style="color: #ffffff; "/>
 								<caption id="mission-brief-target" x="0" y="30" height="15" rright="15" label="-" style="color: #e9e3d9ff; " align="right"/>
 								<image x="410" y="28" width="16" height="16" src="ui/textures/test/zoom_icon.bmp"
 									onclick="if(missionList.data) missionPreviewMap.mgr.setSelection(missionList.data.target)"
 									onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'" onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
-								<caption x="0" y="15" height="15" width="425" label="&brigade.hqtab.brief.type;:" style="color: #ffffff; "/>
+								<caption x="0" y="15" height="15" width="425" label="${brigade.hqtab.brief.type}:" style="color: #ffffff; "/>
 								<caption id="mission-brief-type" x="0" y="15" height="15" rright="15" label="-" style="color: #e9e3d9ff; " align="right"/>
-								<caption x="0" y="0" height="15" width="425" label="&brigade.hqtab.brief.ms;:" style="color: #ffffff; "/>
+								<caption x="0" y="0" height="15" width="425" label="${brigade.hqtab.brief.ms}:" style="color: #ffffff; "/>
 								<caption id="mission-brief-ms" x="0" y="0" height="15" rright="15" label="-" style="color: #e9e3d9ff; " align="right"/>
 							</view>
 							<view id="mission-map" class="mapview" acceptsfocus="no" minscale=".03" maxscale="1.5" scale=".75"
@@ -307,8 +307,8 @@
 				-->
 			</script>
 		</tab>
-		<tab id="communications" label="  &brigade.comtab;  " x="0" y="0" width="930" height="460"
-			onshow="showCommunications(); tplTab()" tip="&brigade.comtab.tip;">
+		<tab id="communications" label="  ${brigade.comtab}  " x="0" y="0" width="930" height="460"
+			onshow="showCommunications(); tplTab()" tip="${brigade.comtab.tip}">
 			<view id="left-pane" x="18" y="18" width="444" height="411">
 				<view x="10" y="335" width="425" height="75">
 					<caption id="details-brigade" x="0" y="45" width="400" height="25" style="color: #BFE2CE; font-size: +2;"
@@ -322,14 +322,14 @@
 						onshow="this.label = (brigade.home != null) ? getlocstring('common.basedoutof') + ' ' + brigade.home.name: ''"/>
 				</view>
 				<view x="20" y="200" width="200" height="120">
-					<caption label="&brigade.comtab.commanders;" x="0" rtop="0" width="200" height="20" style="color: #BFE2CE; font-size: +1;"/>
+					<caption label="${brigade.comtab.commanders}" x="0" rtop="0" width="200" height="20" style="color: #BFE2CE; font-size: +1;"/>
 					<image x="0" rtop="10" src="ui/textures/test/horiz_underline.bmp" width="197" height="12"/>
 					<list id="officers" x="0" y="0" width="195" height="97">
 						<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
 					</list>
 				</view>
 				<view x="225" y="200" width="200" height="120">
-					<caption label="&brigade.comtab.status;" x="0" rtop="0" width="200" height="20" style="color: #BFE2CE; font-size: +1;"/>
+					<caption label="${brigade.comtab.status}" x="0" rtop="0" width="200" height="20" style="color: #BFE2CE; font-size: +1;"/>
 					<image x="0" rtop="10" src="ui/textures/test/horiz_underline.bmp" width="180" height="12"/>
 					<caption id="details-officers" x="5" rtop="22" width="150" height="15" style="color: #e9e3d9ff; "
 						 onshow="this.label = getlocstring('brigade.comtab.officers') + ': ' + client.brigade.officers"/>
@@ -339,13 +339,13 @@
 					 	onshow="this.label = getlocstring('brigade.comtab.enlistments') + ': ' + getFriendlyPopulation(client.brigade.populationrank)"/>
 				</view>
 				<view x="20" y="10" width="430" height="180">
-					<caption label="&brigade.comtab.structure;" x="0" y="158" width="425" height="20" style="font-size: +1; color: #BFE2CE;"/>
+					<caption label="${brigade.comtab.structure}" x="0" y="158" width="425" height="20" style="font-size: +1; color: #BFE2CE;"/>
 					<image x="0" y="155" src="ui/textures/test/horiz_underline.bmp" width="405" height="12"/>
 					<view x="0" width="425" height="15" rtop="25">
 						<caption x="0" y="0" width="215" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-							label="&brigade.comtab.structure.command;"/>
+							label="${brigade.comtab.structure.command}"/>
 						<caption x="217" y="0" width="188" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-							label="&brigade.comtab.structure.oic;" align="right"/>
+							label="${brigade.comtab.structure.oic}" align="right"/>
 					</view>
 					<list id="commands" x="0" y="10" width="415" height="128"/>
 				</view>
@@ -353,7 +353,7 @@
 			<include file="widgets/divider.uixml"/>
 			<view id="right-pane" x="468" y="18" width="444" height="411">
 				<view x="10" y="235" width="430" height="170">
-					<caption label="&brigade.comtab.motd;" x="0" y="148" width="400" height="20" style="font-size: +1; color: #BFE2CE;"/>
+					<caption label="${brigade.comtab.motd}" x="0" y="148" width="400" height="20" style="font-size: +1; color: #BFE2CE;"/>
 					<image width="16" height="16" rright="5" rtop="3" src="ui/textures/test/edit_icon.bmp"
 						onshow="this.visible = (client.isplaynet || client.persona.rank.level >= 14) ? true: false" onclick="editMotd(2)"
 						onmouseenter="this.src = 'ui/textures/test/edit_icon_on.bmp'"
@@ -365,7 +365,7 @@
 					</text>
 				</view>
 				<view x="10" y="15" width="430" height="200">
-					<caption label="&brigade.comtab.news;" x="0" y="178" width="400" height="20" style="font-size: +1; color: #BFE2CE;"/>
+					<caption label="${brigade.comtab.news}" x="0" y="178" width="400" height="20" style="font-size: +1; color: #BFE2CE;"/>
 					<image width="16" height="16" rright="5" rtop="3" src="ui/textures/test/edit_icon.bmp"
 						onshow="this.visible = (client.isplaynet || client.persona.rank.level >= 14) ? true: false" onclick="editMotd(1)"
 						onmouseenter="this.src = 'ui/textures/test/edit_icon_on.bmp'"
@@ -467,8 +467,8 @@
 				-->
 			</script>
 		</tab>
-		<tab id="map" label="  &common.map.tab;  " x="20" y="10" width="930" height="460"
-			onshow='showMap()' tip="&common.map.tab.tip;">
+		<tab id="map" label="  ${common.map.tab}  " x="20" y="10" width="930" height="460"
+			onshow='showMap()' tip="${common.map.tab.tip}">
 			<include file="widgets/map.uixml"/>
 		</tab>
 		<include file="widgets/globals/tutorials.uixml"/>

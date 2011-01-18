@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+ 
 <window id="upsell" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768"
 	style="background-color: #000000BB;" layer="100" aspectalign="center" onshow="initUpsell()">
 	<include file="lib/common.uixml"/>
@@ -17,7 +17,7 @@
 		<text id="timeleft-message" x="20" y="45" height="15" rright="20" acceptsfocus="false" style="border-size-right: 10;  color: #e9e3d9;"/>
 		
 		<!-- close -->
-		<button x="50" y="10" width="150" height="25" label="&popup.ok;" followbottom="true"
+		<button x="50" y="10" width="150" height="25" label="${popup.ok}" followbottom="true"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 			onclick="closeUpsell()" onshow="positionClose(this)" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
 	</view>

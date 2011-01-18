@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
-<contextmenu id="delete" height="15" width="150" vindent="-5" hindent="125" label="&widgets.map.waypoints.delete;"
+
+<contextmenu id="delete" height="15" width="150" vindent="-5" hindent="125" label="${widgets.map.waypoints.delete}"
 	onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
 	onclick="contextMenu.deleteWaypoint()"
 	style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;">

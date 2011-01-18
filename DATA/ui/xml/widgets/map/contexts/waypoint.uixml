@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+
 <!-- add context menu -->
-<contextmenu id="waypoint" height="15" width="400" vindent="-5" hindent="375" label="&widgets.map.waypoints.add;"
+<contextmenu id="waypoint" height="15" width="400" vindent="-5" hindent="375" label="${widgets.map.waypoints.add}"
 	onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
 	style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;">
-	<contextmenu height="15" width="400" label="&widgets.map.waypoints.add.rally;"
+	<contextmenu height="15" width="400" label="${widgets.map.waypoints.add.rally}"
 		onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
 		onclick="contextMenu.addWaypoint('rally')"
 		style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;"/>
-	<contextmenu height="15" width="400" label="&widgets.map.waypoints.add.attack;"
+	<contextmenu height="15" width="400" label="${widgets.map.waypoints.add.attack}"
 		onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
 		onclick="contextMenu.addWaypoint('attack')"
 		style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+ 
 <viewport id="hud" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
 	onshow="initHud(this)" onupdate="updateHud(this)">
 	<include file="lib/common.uixml"/>
@@ -57,7 +57,7 @@
 		<image id="persona-resupply" src='ui/textures/test/mobilespawn_icon.bmp' rright="10" rtop="-3" width='16' height='16'/>
 		<caption id="state" label="Other" x="5" y="33" height="13" width="100" style="font-size: -1; color: #BFE2CE;"
 			acceptmouseclick="false"/>
-		<image id="state-icon" x="5" y="5" width="25" height="25" tip="&hud.health.state;" acceptmouseclick="false"/>
+		<image id="state-icon" x="5" y="5" width="25" height="25" tip="${hud.health.state}" acceptmouseclick="false"/>
 		<progressbar id="health-bar" left="36" right="167" bottom="21" top="28" minvalue="0" maxvalue="1"
 			fill="ui/textures/hud/blood-level-fill.bmp" background="ui/textures/hud/back-level-fill.bmp" orient="leftright"
 			acceptmouseclick="false"/>
@@ -82,9 +82,9 @@
 		<caption id="primary-name" x="5" y="5" height="23" width="100" style="font-size: +4; color: #FFFFFF;"
 			acceptmouseclick="false"/>
 		<caption id="primary-ammo" x="10" rright="8" rtop="22" height='15' align="right"
-			style="color: #FFFFFF;" tip="&hud.primary.tip;" acceptmouseclick="false"/>
+			style="color: #FFFFFF;" tip="${hud.primary.tip}" acceptmouseclick="false"/>
 		<caption id="primary-clips" x="10" rright="8" rtop="0" height='15' align="right"
-			style="font-size: -1; color: #BFE2CE;" tip="&hud.primary.tip;" acceptmouseclick="false"/>
+			style="font-size: -1; color: #BFE2CE;" tip="${hud.primary.tip}" acceptmouseclick="false"/>
 		<progressbar id="primary-progress" width="75" height="10" y="12" rright="8" minvalue="0" maxvalue="1"
 			fill="ui/textures/hud/oxy-level-fill.bmp" background="ui/textures/hud/back-level-fill.bmp" orient="leftright"
 			style="color: #FFFF88; background-color: #FFFFFF88;" acceptmouseclick="false"/>
@@ -100,14 +100,14 @@
 			border-size-top: 14;
 			border-size-bottom: 4;" moveondrag="yes"
 		ondrag="saveCustomPosition(this)">
-		<caption label="&hud.secondary;" x="5" y="33" height="13" width="100" style="font-size: -1; color: #BFE2CE;"
+		<caption label="${hud.secondary}" x="5" y="33" height="13" width="100" style="font-size: -1; color: #BFE2CE;"
 			acceptmouseclick="false"/>
 		<caption id="secondary-name" x="5" y="5" height="23" width="100" style="font-size: +4; color: #FFFFFF;"
 			acceptmouseclick="false"/>
 		<caption id="secondary-ammo" x="10" rright="8" rtop="22" height='15' align="right" style=" color: #FFFFFF;"
-			tip="&hud.secondary.tip;" acceptmouseclick="false"/>
+			tip="${hud.secondary.tip}" acceptmouseclick="false"/>
 		<caption id="secondary-clips" x="10" rright="8" rtop="0" height='15' align="right" style="font-size: -1; color: #BFE2CE;"
-			tip="&hud.secondary.tip;" acceptmouseclick="false"/>
+			tip="${hud.secondary.tip}" acceptmouseclick="false"/>
 	</view>
 	<!-- MINIMAP -->
 	<view id="kenny" width="175" height="165" rright="6" rtop="6" frame="no" aspectlimit="width"
@@ -130,7 +130,7 @@
 				border-width: 4;
 				border-size-top: 14;
 				border-size-bottom: 4;"/>
-		<caption id="minimaplabel" label="&widgets.prefs.groups.hud.custom.minimap;" x="5" height="13" rright="5" rtop="1"
+		<caption id="minimaplabel" label="${widgets.prefs.groups.hud.custom.minimap}" x="5" height="13" rright="5" rtop="1"
 			style="font-size: -1; color: #BFE2CE;" acceptmouseclick="false" onshow="this.y = this.parent.height - this.height - 2;"/>
 		<caption id="minimapscale" x="5" height="13" rright="5" rtop="1" style="font-size: -1; color: #BFE2CE;"
 			 onshow="this.y = this.parent.height - this.height - 2;" acceptmouseclick="false" align="right"/>
@@ -460,13 +460,15 @@
 			
 			primaryLabel.label = getlocstring('hud.primary.weapon') + ((range > 0) ? ' - ' + range + 'm': '');
 			
+			var progress = false;
+			
 			if(me.primaryammoname == "buildtool")
 			{
 				ammoView.visible = false;
 				clipView.visible = false;
 				
 				if(primaryProgress.value > 0)
-					primaryProgress.visible = true;
+					progress = true;
 			}
 			else if(clipSize > 1) // we're dealing with a clipped weapon
 			{
@@ -600,6 +602,9 @@
 					ammoView.visible = false;
 				}
 			}
+			
+			if(primaryProgress.visible != progress)
+				primaryProgress.visible = progress;
 		}
 		
 		function updateVehicleAmmo(weapon)

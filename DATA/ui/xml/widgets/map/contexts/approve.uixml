@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
-<contextmenu id="approve" height="15" width="150" vindent="-5" hindent="125" label="&widgets.map.waypoints.approve;"
+
+<contextmenu id="approve" height="15" width="150" vindent="-5" hindent="125" label="${widgets.map.waypoints.approve}"
 	onmouseenter="contextMenu.mouseEnter(this)" onmouseexit="contextMenu.mouseExit(this)"
 	onclick="contextMenu.approveWaypoint()"
 	style="color: #FFFFFF; background-color: #00000088; border-color: #FFFFFF;">

@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+ 
 <window id="nomination" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768" layer="200">
 	<include file="lib/common.uixml"/>
 	<view id="nom-popup" x="0" y="0" width="1024" height="768" style="background-color: #000000DD;" moveondrag="no"
 		onupdate="checkTimer()">
 		<text id="nom-caption" x="10" y="40" height="50" width="330" acceptfocus="no" style="color: #FFFFFF; font-size: +1;"/>
-		<button id="nom-no" x="20" y="10" width="150" height="25" label="&common.no;" onclick="doAction(false)"
+		<button id="nom-no" x="20" y="10" width="150" height="25" label="${common.no}" onclick="doAction(false)"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
-		<button id="nom-yes" x="180" y="10" width="150" height="25" label="&common.yes;" onclick="doAction(true)"
+		<button id="nom-yes" x="180" y="10" width="150" height="25" label="${common.yes}" onclick="doAction(true)"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
 	</view>

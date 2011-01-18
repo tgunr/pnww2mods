@@ -1,23 +1,23 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+ 
 <view id="id-card" x="5" y="640" width="200" height="120" style="background-image: ui/textures/test/idcard.bmp;" onupdate="updateIDCard()"
-	tip="&widgets.idcard.tip;">
+	tip="${widgets.idcard.tip}">
 	
-	<caption x="10" height="15" width="200" rtop="6" style="font-size: -2; color: #00000066;" label="&widgets.idcard.status;:"/>
-	<caption id="id-dutystatus" height="15" width="200" rright="20" rtop="6" style="color: #00000099; font-size: -1;" label="&widgets.idcard.duty;" align="right"/>	
+	<caption x="10" height="15" width="200" rtop="6" style="font-size: -2; color: #00000066;" label="${widgets.idcard.status}:"/>
+	<caption id="id-dutystatus" height="15" width="200" rright="20" rtop="6" style="color: #00000099; font-size: -1;" label="${widgets.idcard.duty}" align="right"/>	
 	
 	<caption id="id-persona" x="10" height="15" width="170" rtop="20" style="font-size: -2; color: #00000099;"/>
 	<caption id="id-brigade" x="20" height="15" width="160" rtop="35" style="font-size: -2; color: #00000099;"/>
 	<caption id="id-division" x="20" height="15" width="160" rtop="48" style="font-size: -2; color: #00000099;"/>
 	
-	<caption x="10" height="12" width="200" rtop="65" style="font-size: -2; color: #00000077;" label="&widgets.idcard.name;:"/>
+	<caption x="10" height="12" width="200" rtop="65" style="font-size: -2; color: #00000077;" label="${widgets.idcard.name}:"/>
 	<caption id="id-handle" x="10" height="12" rright="20" rtop="65" style="font-size: -2; color: #00000099;" align="right"/>
 	
-	<caption x="10" height="12" width="200" rtop="75" style="font-size: -2; color: #00000077;" label="&widgets.idcard.rank;:"/>
+	<caption x="10" height="12" width="200" rtop="75" style="font-size: -2; color: #00000077;" label="${widgets.idcard.rank}:"/>
 	<image id="id-rank-lock" x="0" width="10" height="10" rtop="75" src="ui/textures/lock.dds" style="color: #FF0000;"/>
 	<caption id="id-rank" x="10" height="12" rright="20" rtop="75" style="font-size: -2; color: #00000099;" align="right"/>
 	
-	<caption x="10" height="12" width="200" rtop="85" style="font-size: -2; color: #00000077;" label="&widgets.idcard.progress;:"/>
+	<caption x="10" height="12" width="200" rtop="85" style="font-size: -2; color: #00000077;" label="${widgets.idcard.progress}:"/>
 	<caption id="id-progression" x="10" height="12" rright="20" rtop="85" style="font-size: -2; color: #00000099;" align="right"/>
 	
 	<script>

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+ 
 <window id="settings" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" onshow="initWin(this)"
 	aspectalign="center">
 	<include file="widgets/template.uixml"/>
@@ -18,13 +18,13 @@
 						control-on-color: #FFFFCE;
 						border-width: 16;
 						border-height: 16;">
-		<tab id="preferences" label="  &widgets.prefs;  " x="0" y="0" width="930" height="460" onshow="tplTab()">
+		<tab id="preferences" label="  ${widgets.prefs}  " x="0" y="0" width="930" height="460" onshow="tplTab()">
 			<include file="widgets/preferences.uixml"/>
 		</tab>
-		<tab id="keymapper" label="  &common.keymapper.tab;  " x="0" y="0" width="930" height="460" onshow="tplTab()">
+		<tab id="keymapper" label="  ${common.keymapper.tab}  " x="0" y="0" width="930" height="460" onshow="tplTab()">
 			<include file="widgets/keymapper.uixml"/>
 		</tab>
-		<tab id="calibration" label="  &common.controllers.tab;  " x="0" y="0" width="930" height="460" onshow="tplTab()">
+		<tab id="calibration" label="  ${common.controllers.tab}  " x="0" y="0" width="930" height="460" onshow="tplTab()">
 			<include file="widgets/calibration.uixml"/>
 		</tab>
 	</tabview>

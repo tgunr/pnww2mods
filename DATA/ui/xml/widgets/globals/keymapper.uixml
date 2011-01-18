@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
-<tab id="keymapper" label="  &common.keymapper.tab;  " x="0" y="0" width="930" height="460" align="right"
-	onshow="soundPlayShuffle()" tip="&common.keymapper.tab.tip;">
+ 
+<tab id="keymapper" label="  ${common.keymapper.tab}  " x="0" y="0" width="930" height="460" align="right"
+	onshow="soundPlayShuffle()" tip="${common.keymapper.tab.tip}">
 	<include file="widgets/keymapper.uixml"/>
 </tab>
 

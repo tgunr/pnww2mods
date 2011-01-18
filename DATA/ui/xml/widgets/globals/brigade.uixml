@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
-<tab id="motd-tab" label="  &globals.brigade;  " x="0" y="0" width="930" height="460" onshow="soundPlayShuffle()" tip="&brigade.comtab.tip;">
+ 
+<tab id="motd-tab" label="  ${globals.brigade}  " x="0" y="0" width="930" height="460" onshow="soundPlayShuffle()" tip="${brigade.comtab.tip}">
 	<tabview x="0" y="0" rright="0" rtop="0" onshow='if(!game.online) this.value = 1' acceptmouseclick='false'>
 		<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'>
 			<view id="left-pane" x="18" y="18" width="444" height="411" onshow="showCommunications();">
@@ -16,14 +16,14 @@
 						onshow="this.label = (brigade.home != null) ? getlocstring('common.basedoutof') + ' ' + brigade.home.name: ''"/>
 				</view>
 				<view x="20" y="200" width="200" height="120">
-					<caption label="&brigade.comtab.commanders;" x="0" rtop="0" width="200" height="20" style="color: #BFE2CE; font-size: +1;"/>
+					<caption label="${brigade.comtab.commanders}" x="0" rtop="0" width="200" height="20" style="color: #BFE2CE; font-size: +1;"/>
 					<image x="0" rtop="10" src="ui/textures/test/horiz_underline.bmp" width="197" height="12"/>
 					<list id="officers" x="0" y="0" width="195" height="98">
 						<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
 					</list>
 				</view>
 				<view x="225" y="200" width="200" height="120">
-					<caption label="&brigade.comtab.status;" x="0" rtop="0" width="200" height="20" style="color: #BFE2CE; font-size: +1;"/>
+					<caption label="${brigade.comtab.status}" x="0" rtop="0" width="200" height="20" style="color: #BFE2CE; font-size: +1;"/>
 					<image x="0" rtop="10" src="ui/textures/test/horiz_underline.bmp" width="180" height="12"/>
 					<caption id="details-officers" x="5" rtop="22" width="150" height="15" style="color: #e9e3d9ff; "
 						 onshow="this.label = getlocstring('brigade.comtab.officers') + ': ' + client.brigade.officers"/>
@@ -33,13 +33,13 @@
 						onshow="this.label = getlocstring('brigade.comtab.enlistments') + ': ' + getFriendlyPopulation(client.brigade.populationrank)"/>
 				</view>
 				<view x="20" y="10" width="430" height="180">
-					<caption label="&brigade.comtab.structure;" x="0" y="158" width="425" height="20" style="font-size: +1; color: #BFE2CE;"/>
+					<caption label="${brigade.comtab.structure}" x="0" y="158" width="425" height="20" style="font-size: +1; color: #BFE2CE;"/>
 					<image x="0" y="155" src="ui/textures/test/horiz_underline.bmp" width="405" height="12"/>
 					<view x="0" width="425" height="15" rtop="25">
 						<caption x="0" y="0" width="215" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-							label="&brigade.comtab.structure.command;"/>
+							label="${brigade.comtab.structure.command}"/>
 						<caption x="217" y="0" width="188" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-							label="&brigade.comtab.structure.oic;" align="right"/>
+							label="${brigade.comtab.structure.oic}" align="right"/>
 					</view>
 					<list id="commands" x="0" y="10" width="400" height="128"/>
 				</view>
@@ -47,7 +47,7 @@
 			<include file="widgets/divider.uixml"/>
 			<view id="right-pane" x="468" y="18" width="444" height="411">
 				<view x="10" y="235" width="430" height="170">
-					<caption label="&brigade.comtab.motd;" x="0" y="148" width="400" height="20" style="font-size: +1; color: #BFE2CE;"/>
+					<caption label="${brigade.comtab.motd}" x="0" y="148" width="400" height="20" style="font-size: +1; color: #BFE2CE;"/>
 					<image x="0" y="145" src="ui/textures/test/horiz_underline.bmp" width="425" height="12"/>
 					<text id="details-motd" x="0" y="0" height="140" width="425" acceptsfocus="false" style="border-size-right: 10;  color: #e9e3d9;"
 						onshow="this.text = client.brigade.motd">
@@ -55,7 +55,7 @@
 					</text>
 				</view>
 				<view x="10" y="15" width="430" height="200">
-					<caption label="&brigade.comtab.news;" x="0" y="178" width="400" height="20" style="font-size: +1; color: #BFE2CE;"/>
+					<caption label="${brigade.comtab.news}" x="0" y="178" width="400" height="20" style="font-size: +1; color: #BFE2CE;"/>
 					<image x="0" y="175" src="ui/textures/test/horiz_underline.bmp" width="425" height="12"/>
 					<text id="side-motd" x="0" y="0" height="170" width="425" acceptsfocus="false" style="border-size-right: 10;  color: #e9e3d9;">
 						<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>

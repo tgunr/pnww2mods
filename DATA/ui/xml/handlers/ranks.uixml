@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+
 <view id="content" x="0" y="0" width="425" height="358" viewportwidth="1024" viewportheight="768" aspectalign="left"
 	onshow="showContent(this)">
 	<include file="lib/content.uixml"/>
 	<view x="0" height="15" rright="0" rtop="0">
 		<caption x="0" y="0" width="72" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-			label="&content.ranks.level;"/>
+			label="${content.ranks.level}"/>
 		<caption x="75" y="0" width="107" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-			label="&content.ranks.army;"/>
+			label="${content.ranks.army}"/>
 		<caption x="185" y="0" width="107" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-			label="&content.ranks.airforce;"/>
+			label="${content.ranks.airforce}"/>
 		<caption x="295" y="0" width="127" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-			label="&content.ranks.navy;"/>
+			label="${content.ranks.navy}"/>
 	</view>
 	<list id="display" x="0" y="0" rright="0" rtop="20" followall="yes" style=" color: #e9e3d9ff;">
 		<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>

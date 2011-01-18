@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+
 <window id="mission" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
 	onshow="initWin(this)" onupdate="updateSpawnDelay()" aspectalign="center">
 	<include file="lib/tutorial.uixml"/>
@@ -26,8 +26,8 @@
 						control-on-color: #FFFFCE;
 						border-width: 16;
 						border-height: 16;">
-		<tab label="  &mission.readytab;  " x="0" y="0" width="930" height="460"
-			onshow='setHelp(getlocstring("mission.readytab.help")); tplTab()' onupdate="doWeaponPoll()" tip="&mission.readytab.tip;">
+		<tab label="  ${mission.readytab}  " x="0" y="0" width="930" height="460"
+			onshow='setHelp(getlocstring("mission.readytab.help")); tplTab()' onupdate="doWeaponPoll()" tip="${mission.readytab.tip}">
 			<view id="left-pane" x="18" y="23" width="444" height="411">
 				<tabview id="spawn-options" x="0" y="0" rright="0" rtop="0">
 					<tab x="0" y="0" rright="0" rtop="0" showtab='false'>
@@ -39,16 +39,16 @@
 							<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
 							<view x="0" width="425" height="15" rtop="22">
 								<caption x="0" y="0" width="190" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-									label="&mission.readytab.forces.name;"/>
+									label="${mission.readytab.forces.name}"/>
 								<caption x="192" y="0" width="80" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-									label="&mission.readytab.forces.available;" align="right"/>
+									label="${mission.readytab.forces.available}" align="right"/>
 								<caption x="274" y="0" width="80" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-									label="&mission.readytab.forces.capacity;" align="right"/>
+									label="${mission.readytab.forces.capacity}" align="right"/>
 								<caption x="356" y="0" width="76" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-									label="&mission.readytab.forces.intel;        " align="right"/>
+									label="${mission.readytab.forces.intel}        " align="right"/>
 							</view>
 							<list id="spawnTree" x="0" width="425" height="300" rtop="40" onselect="spawnTree.clickTree(false)" ondblselect="spawnTree.clickTree(true)"/>
-							<caption label="&mission.readytab.supply.info;" x="10" height="15" y="65" rright="10"
+							<caption label="${mission.readytab.supply.info}" x="10" height="15" y="65" rright="10"
 								 style="color: #e9e3d9ff; font-size: -1;" acceptmouseclick="false"/>
 							<text id="noVehicles" x="10" width="405" height="280" rtop="50"
 								 style="color: #e9e3d9ff;" acceptmouseclick="false"/>
@@ -363,11 +363,11 @@
 					<tab x="0" y="0" rright="0" rtop="0" showtab='false'>
 						<!-- commander panel -->
 						<view x="10" width="425" height="400" rtop="12">
-							<caption label="&mission.readytab.cmdr;" x="0" height="20" width="425" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
+							<caption label="${mission.readytab.cmdr}" x="0" height="20" width="425" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
 							<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
 							<view x="0" width="425" height="15" rtop="22">
 								<caption x="0" y="0" width="425" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-									label="&mission.readytab.cmdr.crewman;"/>
+									label="${mission.readytab.cmdr.crewman}"/>
 							</view>
 							<list id="crewList" x="0" width="425" height="295" rtop="40" 
 								onselect="crewList.clickList(false)" ondblselect="crewList.clickList(true)">
@@ -446,13 +446,13 @@
 					<tab x="0" y="0" rright="0" rtop="0" showtab='false'>
 						<!-- crew panel -->
 						<view x="10" width="425" height="400" rtop="12">
-							<caption label="&mission.readytab.crew;" x="0" height="20" width="425" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
+							<caption label="${mission.readytab.crew}" x="0" height="20" width="425" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
 							<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
 							<view x="0" width="425" height="15" rtop="22">
 								<caption x="0" y="0" width="185" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-									label="&mission.readytab.crew.commander;"/>
+									label="${mission.readytab.crew.commander}"/>
 								<caption x="187" y="0" width="245" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-									label="&mission.readytab.crew.vehicle;"/>
+									label="${mission.readytab.crew.vehicle}"/>
 							</view>
 							<list id="commanderList" x="0" width="425" height="295" rtop="40" 
 								onselect="commanderList.clickList(false)" ondblselect="commanderList.clickList(true)">
@@ -543,9 +543,9 @@
 									<image id="info-image" width="200" height="150" rright="10" rtop="0" style="border-color: #BFE2CE;"/>
 									
 									<view id="multicrew-buddy" x="10" width="425" height="100" rtop="220">
-										<caption label="&mission.readytab.commander;:" x="0" height="20" width="425" rtop="10" style="color: #FFFFFF;"/>
+										<caption label="${mission.readytab.commander}:" x="0" height="20" width="425" rtop="10" style="color: #FFFFFF;"/>
 										<caption id="multicrew-commander" height="20" width="425" rright="10" rtop="10" style="color: #e9e3d9;" align="right"/>
-										<caption label="&mission.readytab.crewman;:" x="0" height="20" width="425" rtop="30" style="color: #FFFFFF;"/>
+										<caption label="${mission.readytab.crewman}:" x="0" height="20" width="425" rtop="30" style="color: #FFFFFF;"/>
 										<caption id="multicrew-crewman" height="20" width="425" rright="10" rtop="30" style="color: #e9e3d9;" align="right"/>
 									</view>
 								</tab>
@@ -644,7 +644,7 @@
 									border-corner: ui/textures/test/infobox_corner.bmp;
 									border-width: 16;
 									border-height: 16;">
-					<button id="reserve-button" label="&mission.readytab.panel.reserve;" x="35" y="5" height="27" width="160"
+					<button id="reserve-button" label="${mission.readytab.panel.reserve}" x="35" y="5" height="27" width="160"
 						style="control-on: ui/textures/test/gen_button_on.bmp;
 							control-off: ui/textures/test/gen_button_off.bmp;
 							control-disabled: ui/textures/test/gen_button_disabled.bmp;
@@ -652,7 +652,7 @@
 							color: #FFFFFF;"
 						onclick="if(reserveCallback != null) reserveCallback(true); soundPlayClick()"
 						onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
-					<button id="multicrew-button" label="&mission.readytab.panel.joinvehicle;" x="210" y="5" height="27" width="160"
+					<button id="multicrew-button" label="${mission.readytab.panel.joinvehicle}" x="210" y="5" height="27" width="160"
 						style="control-on: ui/textures/test/gen_button_on.bmp;
 							control-off: ui/textures/test/gen_button_off.bmp;
 							control-disabled: ui/textures/test/gen_button_disabled.bmp;
@@ -671,35 +671,35 @@
 					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
 				</view>
 				<view x="10" width="425" height="90" rtop="35">
-					<caption label="&mission.readytab.brief.location;:" x="5" width="300" height="15" rtop="0" style="color: #FFFFFFFF; "/>
+					<caption label="${mission.readytab.brief.location}:" x="5" width="300" height="15" rtop="0" style="color: #FFFFFFFF; "/>
 					<caption id="mission-location" width="300" height="15" rright="20" rtop="0" style="color: #e9e3d9ff; " align="right"
 						onshow="this.label = mission.origin.name" onclick="missionMap.mgr.setSelection(mission.origin)"/>
 					<image width="16" height="16" rright="0" rtop="0" src="ui/textures/test/zoom_icon.bmp"
 						onclick="missionMap.mgr.setSelection(mission.origin)"
 						onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'" onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
 					
-					<caption label="&mission.readytab.brief.origin;:" x="5" width="300" height="15" rtop="15" style="color: #FFFFFFFF; "/>
+					<caption label="${mission.readytab.brief.origin}:" x="5" width="300" height="15" rtop="15" style="color: #FFFFFFFF; "/>
 					<caption id="mission-origin" width="300" height="15" rright="20" rtop="15" style="color: #e9e3d9ff; " align="right"
 						onshow="this.label = mission.origin.name" onclick="missionMap.mgr.setSelection(mission.origin)"/>
 					<image width="16" height="16" rright="0" rtop="15" src="ui/textures/test/zoom_icon.bmp"
 						onclick="missionMap.mgr.setSelection(mission.origin)"
 						onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'" onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
 					
-					<caption label="&mission.readytab.brief.target;:" x="5" width="300" height="15" rtop="30" style="color: #FFFFFFFF; "/>
+					<caption label="${mission.readytab.brief.target}:" x="5" width="300" height="15" rtop="30" style="color: #FFFFFFFF; "/>
 					<caption id="mission-target" width="300" height="15" rright="20" rtop="30" style="color: #e9e3d9ff; " align="right"
 						onshow="this.label = mission.target.name" onclick="missionMap.mgr.setSelection(mission.target)"/>
 					<image width="16" height="16" rright="0" rtop="30" src="ui/textures/test/zoom_icon.bmp"
 						onclick="missionMap.mgr.setSelection(mission.target)"
 						onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'" onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
 					
-					<caption label="&mission.readytab.brief.weapon;:" x="5" width="300" height="15" rtop="45" style="color: #FFFFFFFF; "/>
+					<caption label="${mission.readytab.brief.weapon}:" x="5" width="300" height="15" rtop="45" style="color: #FFFFFFFF; "/>
 					<caption id="mission-weapon" width="300" height="15" rright="20" rtop="45" style="color: #e9e3d9ff; " align="right"/>
 
-					<caption label="&brigade.hqtab.brief.ms;:" x="5" width="300" height="15" rtop="70" style="color: #FFFFFFFF; "/>
+					<caption label="${brigade.hqtab.brief.ms}:" x="5" width="300" height="15" rtop="70" style="color: #FFFFFFFF; "/>
 					<caption id="mission-ms" width="300" height="15" rright="20" rtop="70" style="color: #e9e3d9ff;" align="right" onupdate="doMSPoll(this)"
 						onclick="setMobileSpawn()"/>
 					<image id="mission-ms-checkbox" width="20" height="20" rright="0" rtop="65" src="ui/textures/map-checkbox-on.bmp"
-						onclick="setMobileSpawn()" tip="&mission.readytab.brief.ms.tip;"/>
+						onclick="setMobileSpawn()" tip="${mission.readytab.brief.ms.tip}"/>
 				</view>
 				<view id="mission-map" class="mapview" acceptsfocus="no" minscale=".03" maxscale="1.5" scale=".75"
 					x="10" y="5" width="425" height="270" sx="18" sy="235"
@@ -816,19 +816,19 @@
 				-->
 			</script>
 		</tab>
-		<tab id="briefing" label="  &mission.brieftab;  " x="0" y="0" width="930" height="460"
-			onshow="showMissionBriefing(); tplTab()" tip="&mission.brieftab.tip;">
+		<tab id="briefing" label="  ${mission.brieftab}  " x="0" y="0" width="930" height="460"
+			onshow="showMissionBriefing(); tplTab()" tip="${mission.brieftab.tip}">
 			<view id="left-pane" x="18" y="23" width="444" height="411">
 				<view x="10" width="425" height="380" rtop="12">
-					<caption label="&mission.brieftab.members;" x="0" height="20" width="400" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
+					<caption label="${mission.brieftab.members}" x="0" height="20" width="400" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
 					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="12"/>
 					<view x="0" width="425" height="15" rtop="23">
 						<caption x="0" y="0" width="152" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-							label="  &mission.brieftab.members.handle;"/>
+							label="  ${mission.brieftab.members.handle}"/>
 						<caption x="154" y="0" width="234" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-							label="&mission.brieftab.members.equipment;"/>
+							label="${mission.brieftab.members.equipment}"/>
 						<caption x="390" y="0" width="58" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-							label=" IN" tip="&mission.brieftab.brief.sstatus;"/>
+							label=" IN" tip="${mission.brieftab.brief.sstatus}"/>
 					</view>
 					<list id="memberList" x="0" y="5" width="425" height="336">
 						<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
@@ -844,36 +844,36 @@
 					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="12"/>
 				</view>
 				<view x="10" y="175" width="250" height="190">
-					<caption label="&mission.brieftab.brief;" x="5" y="170" width="225" height="20" style="color: #BFE2CE; font-size: +1;"/>
+					<caption label="${mission.brieftab.brief}" x="5" y="170" width="225" height="20" style="color: #BFE2CE; font-size: +1;"/>
 					<image x="5" y="165" src="ui/textures/test/horiz_underline.bmp" width="225" height="12"/>
-					<caption label="&mission.brieftab.brief.leader;:" x="5" y="145" width="250" height="15" style="color: #FFFFFFFF; "/>
+					<caption label="${mission.brieftab.brief.leader}:" x="5" y="145" width="250" height="15" style="color: #FFFFFFFF; "/>
 					<caption id="mission-leader" x="0" y="145" rright="15" height="20" style="color: #e9e3d9ff; " align="right"
 						onupdate="this.label = mission.poster"/>
-					<caption label="&mission.brieftab.brief.origin;:" x="5" y="130" width="250" height="15" style="color: #FFFFFFFF; "/>
+					<caption label="${mission.brieftab.brief.origin}:" x="5" y="130" width="250" height="15" style="color: #FFFFFFFF; "/>
 					<caption id="mission-origin" x="0" y="130" rright="15" height="20" style="color: #e9e3d9ff; " align="right"
 						onshow="this.label = mission.origin.name"/>
-					<caption label="&mission.brieftab.brief.target;:" x="5" y="115" width="250" height="15" style="color: #FFFFFFFF; "/>
+					<caption label="${mission.brieftab.brief.target}:" x="5" y="115" width="250" height="15" style="color: #FFFFFFFF; "/>
 					<caption id="mission-target" x="0" y="115" rright="15" height="20" style="color: #e9e3d9ff; " align="right"
 						onshow="this.label = mission.target.name"/>
-					<caption label="&mission.brieftab.brief.type;:" x="5" y="100" width="250" height="15" style="color: #FFFFFFFF; "/>
+					<caption label="${mission.brieftab.brief.type}:" x="5" y="100" width="250" height="15" style="color: #FFFFFFFF; "/>
 					<caption id="mission-type" x="0" y="100" rright="15" height="20" style="color: #e9e3d9ff; " align="right"
 						onshow="this.label = missionType"/>
-					<caption label="&mission.brieftab.brief.members;:" x="5" y="85" width="250" height="15" style="color: #FFFFFFFF; "/>
+					<caption label="${mission.brieftab.brief.members}:" x="5" y="85" width="250" height="15" style="color: #FFFFFFFF; "/>
 					<caption id="mission-members" label="18" x="0" y="85" rright="15" height="20" style="color: #e9e3d9ff; " align="right"
 						onupdate="this.label = membersCount"/>
-					<caption label="&mission.brieftab.brief.spawned;:" x="5" y="70" width="250" height="15" style="color: #FFFFFFFF; "/>
+					<caption label="${mission.brieftab.brief.spawned}:" x="5" y="70" width="250" height="15" style="color: #FFFFFFFF; "/>
 					<caption id="mission-spawned" x="0" y="70" rright="15" height="20" style="color: #e9e3d9ff; " align="right"
 						onupdate="this.label = membersSpawned"/>
 				</view>
 				<view x="260" y="175" width="175" height="190">
-					<caption label="&mission.brieftab.brief.deployed;" x="5" y="170" width="165" height="20" style="color: #BFE2CE; font-size: +1;"/>
+					<caption label="${mission.brieftab.brief.deployed}" x="5" y="170" width="165" height="20" style="color: #BFE2CE; font-size: +1;"/>
 					<image x="5" y="165" src="ui/textures/test/horiz_underline.bmp" width="165" height="12"/>
 					<list id="deployedList" x="5" y="8" width="165" height="155" style="color: #e9e3d9ff;">
 						<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
 					</list>
 				</view>
 				<view x="10" y="5" width="425" height="175">
-					<caption label="&mission.brieftab.brief.orders;" x="0" height="20" width="300" rtop="0" style="font-size: +1; color: #BFE2CE;"/>
+					<caption label="${mission.brieftab.brief.orders}" x="0" height="20" width="300" rtop="0" style="font-size: +1; color: #BFE2CE;"/>
 					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="12"/>
 					<text x="5" y="5" width="415" height="145" acceptfocus="no" onshow="this.text = missionDescription()"
 						style=" color: #e9e3d9ff; border-size-right: 10;">
@@ -930,95 +930,95 @@
 				-->
 			</script>
 		</tab>
-		<tab label="  &mission.aartab;  " x="0" y="0" width="930" height="460"
-			onshow="showAARTab(); tplTab()" tip="&mission.aartab.tip;">
+		<tab label="  ${mission.aartab}  " x="0" y="0" width="930" height="460"
+			onshow="showAARTab(); tplTab()" tip="${mission.aartab.tip}">
 			<tabview id="mission-results" x="0" y="0" rright="0" rtop="0" acceptmouseclick='false'>
 				<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'>
 					<view id="left-pane" x="18" y="18" width="444" height="411">
 						<view x="10" width="425" height="25" rtop="10">
-							<caption id="debrief-header" x="0" width="400" height="20" rtop="0" label="&mission.aartab.aars;" style="color: #BFE2CE; font-size: +2;"/>
+							<caption id="debrief-header" x="0" width="400" height="20" rtop="0" label="${mission.aartab.aars}" style="color: #BFE2CE; font-size: +2;"/>
 							<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
 						</view>
 						<view x="10" width="425" height="15" rtop="32">
 							<caption x="0" y="0" width="85" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-								label="&mission.aartab.aars.id;"/>
+								label="${mission.aartab.aars.id}"/>
 							<caption x="87" y="0" width="120" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-								label="&mission.aartab.aars.unit;"/>
+								label="${mission.aartab.aars.unit}"/>
 							<caption x="209" y="0" width="70" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-								label="&mission.aartab.aars.caps;" align="center"/>
+								label="${mission.aartab.aars.caps}" align="center"/>
 							<caption x="281" y="0" width="70" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-								label="&mission.aartab.aars.kills;" align="center"/>
+								label="${mission.aartab.aars.kills}" align="center"/>
 							<caption x="353" y="0" width="80" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-								label="&mission.aartab.aars.result;" align="center"/>
+								label="${mission.aartab.aars.result}" align="center"/>
 						</view>
 						<list id="sorties" x="10" y="20" width="425" height="342" style="color: #e9e3d9ff; "
 							onselect="sortieList.clickList(false)" ondblselect="sortieList.clickList(true)">
 							<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
 						</list>
 						<caption x="10" y="5" rright="10" height="15" style="color: #e9e3d9ff;"
-							label="&mission.aartab.aars.more;" align="center"/>
+							label="${mission.aartab.aars.more}" align="center"/>
 					</view>
 					<include file="widgets/divider.uixml"/>
 					<view id="right-pane" x="468" y="18" width="444" height="411">
 						<tabview id="mission-results-details" x="0" y="0" rright="0" rtop="0" acceptmouseclick='false'>
 							<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'>
 								 <view x="10" y="10" rright="10" rtop="10">
-									<caption label="&mission.aartab.aars.summary;" x="0" height="20" width="400" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
+									<caption label="${mission.aartab.aars.summary}" x="0" height="20" width="400" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
 									<image x="0" width="425" height="12" rtop="10" src="ui/textures/test/horiz_underline.bmp"/>
 									
-									<caption label="&mission.aartab.aars.aar.scored;:" x="5" height="15" rright="5" rtop="25" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.aar.scored}:" x="5" height="15" rright="5" rtop="25" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-pointsscored" x="5" height="15" rright="5" rtop="25" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-									<caption label="&mission.aartab.aars.aar.promotions;:" x="5" height="15" rright="5" rtop="40" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.aar.promotions}:" x="5" height="15" rright="5" rtop="40" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-promotions" x="5" height="15" rright="5" rtop="40" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-									<caption label="&mission.aartab.aars.aar.accumulated;:" x="5" height="15" rright="5" rtop="55" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.aar.accumulated}:" x="5" height="15" rright="5" rtop="55" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-pointsaccumulated" x="5" height="15" rright="5" rtop="55" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-									<caption label="&mission.aartab.aars.aar.nextrank;:" x="5" height="15" rright="5" rtop="70" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.aar.nextrank}:" x="5" height="15" rright="5" rtop="70" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-nextrank" x="5" height="15" rright="5" rtop="70" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
 									<image x="5" rright="5" height="4" rtop="85" src="ui/textures/test/horiz_underline.bmp"/>
 
-									<caption label="&mission.aartab.aars.favorite;:" x="5" height="15" rright="5" rtop="90" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.favorite}:" x="5" height="15" rright="5" rtop="90" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-favorite" x="5" height="15" rright="5" rtop="90" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-									<caption label="&mission.aartab.aars.best;:" x="5" height="15" rright="5" rtop="105" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.best}:" x="5" height="15" rright="5" rtop="105" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-best" x="5" height="15" rright="5" rtop="105" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-									<caption label="&mission.aartab.aars.worst;:" x="5" height="15" rright="5" rtop="120" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.worst}:" x="5" height="15" rright="5" rtop="120" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-worst" x="5" height="15" rright="5" rtop="120" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
 									<image x="5" rright="5" height="4" rtop="135" src="ui/textures/test/horiz_underline.bmp"/>
 
-									<caption label="&mission.aartab.aars.aar.sorties;:" x="5" height="15" rright="5" rtop="140" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.aar.sorties}:" x="5" height="15" rright="5" rtop="140" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-sorties" x="5" height="15" rright="5" rtop="140" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-									<caption label="&mission.aartab.aars.aar.tom;:" x="5" height="15" rright="5" rtop="155" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.aar.tom}:" x="5" height="15" rright="5" rtop="155" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-tom" x="5" height="15" rright="5" rtop="155" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-									<caption label="&mission.aartab.aars.aar.kills;:" x="5" height="15" rright="5" rtop="170" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.aar.kills}:" x="5" height="15" rright="5" rtop="170" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-kills" x="5" height="15" rright="5" rtop="170" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-									<caption label="&mission.aartab.aars.aar.captures;:" x="5" height="15" rright="5" rtop="185" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.aar.captures}:" x="5" height="15" rright="5" rtop="185" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-captures" x="5" height="15" rright="5" rtop="185" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-									<caption label="&mission.aartab.aars.aar.ms;:" x="5" height="15" rright="5" rtop="200" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.aar.ms}:" x="5" height="15" rright="5" rtop="200" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-msspawnees" x="5" height="15" rright="5" rtop="200" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
 									<image x="5" rright="5" height="4" rtop="215" src="ui/textures/test/horiz_underline.bmp"/>
 
-									<caption label="&mission.aartab.aars.rtbs;:" x="5" height="15" rright="5" rtop="220" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.rtbs}:" x="5" height="15" rright="5" rtop="220" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-rtbs" x="5" height="15" rright="5" rtop="220" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-									<caption label="&mission.aartab.aars.rescues;:" x="5" height="15" rright="5" rtop="235" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.rescues}:" x="5" height="15" rright="5" rtop="235" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-rescues" x="5" height="15" rright="5" rtop="235" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-									<caption label="&mission.aartab.aars.mias;:" x="5" height="15" rright="5" rtop="250" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.mias}:" x="5" height="15" rright="5" rtop="250" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-mias" x="5" height="15" rright="5" rtop="250" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-									<caption label="&mission.aartab.aars.kias;:" x="5" height="15" rright="5" rtop="265" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.kias}:" x="5" height="15" rright="5" rtop="265" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-kias" x="5" height="15" rright="5" rtop="265" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
 									<image x="5" rright="5" height="4" rtop="280" src="ui/textures/test/horiz_underline.bmp"/>
 
-									<caption label="&mission.aartab.aars.aar.unitshit;:" x="5" height="15" rright="5" rtop="285" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.aar.unitshit}:" x="5" height="15" rright="5" rtop="285" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-unitshit" x="5" height="15" rright="5" rtop="285" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-									<caption label="&mission.aartab.aars.aar.aishit;:" x="5" height="15" rright="5" rtop="300" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.aar.aishit}:" x="5" height="15" rright="5" rtop="300" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-aishit" x="5" height="15" rright="5" rtop="300" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-									<caption label="&mission.aartab.aars.aar.bridgeshit;:" x="5" height="15" rright="5" rtop="315" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.aar.bridgeshit}:" x="5" height="15" rright="5" rtop="315" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-bridgeshit" x="5" height="15" rright="5" rtop="315" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-									<caption label="&mission.aartab.aars.aar.bridgesrepaired;:" x="5" height="15" rright="5" rtop="330" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.aar.bridgesrepaired}:" x="5" height="15" rright="5" rtop="330" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-bridgesrepaired" x="5" height="15" rright="5" rtop="330" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-									<caption label="&mission.aartab.aars.aar.factorieshit;:" x="5" height="15" rright="5" rtop="345" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.aar.factorieshit}:" x="5" height="15" rright="5" rtop="345" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-factorieshit" x="5" height="15" rright="5" rtop="345" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-									<caption label="&mission.aartab.aars.aar.firebaseshit;:" x="5" height="15" rright="5" rtop="360" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.aar.firebaseshit}:" x="5" height="15" rright="5" rtop="360" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-firebaseshit" x="5" height="15" rright="5" rtop="360" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-									<caption label="&mission.aartab.aars.aar.resupplies;:" x="5" height="15" rright="5" rtop="375" style="color: #FFFFFFFF; font-size: -1;"/>
+									<caption label="${mission.aartab.aars.aar.resupplies}:" x="5" height="15" rright="5" rtop="375" style="color: #FFFFFFFF; font-size: -1;"/>
 									<caption id="aar-summary-resupplies" x="5" height="15" rright="5" rtop="375" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
 								</view>
 							</tab>
@@ -1026,19 +1026,19 @@
 								<view x="10" rright="10" height="150" rtop="10">
 									<caption id="aar-title" x="0" height="20" rtop="0" width="400" style="font-size: +2; color: #BFE2CE;"/>
 									<image x="0" rright="0" height="12" rtop="10" src="ui/textures/test/horiz_underline.bmp"/>
-									<caption label="&mission.aartab.aars.aar.unit;:" x="5" rright="0" height="15" rtop="25" style="color: #FFFFFFFF; "/>
+									<caption label="${mission.aartab.aars.aar.unit}:" x="5" rright="0" height="15" rtop="25" style="color: #FFFFFFFF; "/>
 									<caption id="aar-unit" x="5" rright="0" height="15" rtop="25" style="color: #e9e3d9ff; " align="right"/>
-									<caption label="&mission.aartab.aars.aar.spawned;:" x="5" rright="0" height="15" rtop="40" style="color: #FFFFFFFF; "/>
+									<caption label="${mission.aartab.aars.aar.spawned}:" x="5" rright="0" height="15" rtop="40" style="color: #FFFFFFFF; "/>
 									<caption id="aar-spawned" x="5" rright="0" height="15" rtop="40" style="color: #e9e3d9ff; " align="right"/>
-									<caption label="&mission.aartab.aars.aar.despawned;:" x="5" rright="0" height="15" rtop="55" style="color: #FFFFFFFF; "/>
+									<caption label="${mission.aartab.aars.aar.despawned}:" x="5" rright="0" height="15" rtop="55" style="color: #FFFFFFFF; "/>
 									<caption id="aar-despawned" x="5" rright="0" height="15" rtop="55" style="color: #e9e3d9ff; " align="right"/>
-									<caption label="&mission.aartab.aars.aar.started;:" x="5" rright="0" height="15" rtop="70" style="color: #FFFFFFFF; "/>
+									<caption label="${mission.aartab.aars.aar.started}:" x="5" rright="0" height="15" rtop="70" style="color: #FFFFFFFF; "/>
 									<caption id="aar-started" x="5" rright="0" height="15" rtop="70" style="color: #e9e3d9ff; " align="right"/>
-									<caption label="&mission.aartab.aars.aar.stopped;:" x="5" rright="0" height="15" rtop="85" style="color: #FFFFFFFF; "/>
+									<caption label="${mission.aartab.aars.aar.stopped}:" x="5" rright="0" height="15" rtop="85" style="color: #FFFFFFFF; "/>
 									<caption id="aar-stopped" x="5" rright="0" height="15" rtop="85" style="color: #e9e3d9ff; " align="right"/>
-									<caption label="&mission.aartab.aars.aar.tom;:" x="5" rright="0" height="15" rtop="100" style="color: #FFFFFFFF; "/>
+									<caption label="${mission.aartab.aars.aar.tom}:" x="5" rright="0" height="15" rtop="100" style="color: #FFFFFFFF; "/>
 									<caption id="aar-tom" x="5" rright="0" height="15" rtop="100" style="color: #e9e3d9ff; " align="right"/>
-									<caption label="&mission.aartab.aars.aar.killedby;:" x="5" rright="0" height="15" rtop="115" style="color: #FFFFFFFF; "/>
+									<caption label="${mission.aartab.aars.aar.killedby}:" x="5" rright="0" height="15" rtop="115" style="color: #FFFFFFFF; "/>
 									<caption id="aar-killedby" x="5" rright="0" height="15" rtop="115" style="color: #e9e3d9ff; " align="right"/>
 								</view>
 								<!-- tab view test -->
@@ -1053,74 +1053,74 @@
 													control-on-color: #FFFFCE;
 													border-width: 16;
 													border-height: 16;">
-									<tab label="  &mission.aartab.aars.aar.summary;  " x="0" y="0" rright="0" rtop="0" onshow="soundPlayShuffle()">
+									<tab label="  ${mission.aartab.aars.aar.summary}  " x="0" y="0" rright="0" rtop="0" onshow="soundPlayShuffle()">
 										<view x="10" rright="10" y="10" rtop="30">
-											<caption label="&mission.aartab.aars.aar.result;:" x="5" rright="0" height="15" rtop="0" style="color: #FFFFFFFF; "/>
+											<caption label="${mission.aartab.aars.aar.result}:" x="5" rright="0" height="15" rtop="0" style="color: #FFFFFFFF; "/>
 											<caption id="aar-result" x="5" rright="0" height="15" rtop="0" style="color: #e9e3d9ff; " align="right"/>
-											<caption label="&mission.aartab.aars.aar.kills;:" x="5" rright="0" height="15" rtop="15" style="color: #FFFFFFFF; "/>
+											<caption label="${mission.aartab.aars.aar.kills}:" x="5" rright="0" height="15" rtop="15" style="color: #FFFFFFFF; "/>
 											<caption id="aar-kills" x="5" rright="0" height="15" rtop="15" style="color: #e9e3d9ff; " align="right"/>
-											<caption label="&mission.aartab.aars.aar.captures;:" x="5" rright="0" height="15" rtop="30" style="color: #FFFFFFFF; "/>
+											<caption label="${mission.aartab.aars.aar.captures}:" x="5" rright="0" height="15" rtop="30" style="color: #FFFFFFFF; "/>
 											<caption id="aar-captures" x="5" rright="0" height="15" rtop="30" style="color: #e9e3d9ff; " align="right"/>
-											<caption label="&mission.aartab.aars.aar.scored;:" x="5" rright="0" height="15" rtop="45" style="color: #FFFFFFFF; "/>
+											<caption label="${mission.aartab.aars.aar.scored}:" x="5" rright="0" height="15" rtop="45" style="color: #FFFFFFFF; "/>
 											<caption id="aar-scored" x="5" rright="0" height="15" rtop="45" style="color: #e9e3d9ff; " align="right"/>
-											<caption label="&mission.aartab.aars.aar.accumulated;:" x="5" rright="0" height="15" rtop="60" style="color: #FFFFFFFF; "/>
+											<caption label="${mission.aartab.aars.aar.accumulated}:" x="5" rright="0" height="15" rtop="60" style="color: #FFFFFFFF; "/>
 											<caption id="aar-accumulated" x="5" rright="0" height="15" rtop="60" style="color: #e9e3d9ff; " align="right"/>
-											<caption label="&mission.aartab.aars.aar.nextrank;:" x="5" rright="0" height="15" rtop="75" style="color: #FFFFFFFF; "/>
+											<caption label="${mission.aartab.aars.aar.nextrank}:" x="5" rright="0" height="15" rtop="75" style="color: #FFFFFFFF; "/>
 											<caption id="aar-nextrank" x="5" rright="0" height="15" rtop="75" style="color: #e9e3d9ff; " align="right"/>
-											<caption label="&mission.aartab.aars.aar.guardingpoints;:" x="5" rright="0" height="15" rtop="90" style="color: #FFFFFFFF; "/>
+											<caption label="${mission.aartab.aars.aar.guardingpoints}:" x="5" rright="0" height="15" rtop="90" style="color: #FFFFFFFF; "/>
 											<caption id="aar-guardingpoints" x="5" rright="0" height="15" rtop="90" style="color: #e9e3d9ff; " align="right"/>
-											<caption label="&mission.aartab.aars.aar.notes;:" x="5" rright="0" height="15" rtop="120" style="color: #FFFFFFFF; "/>
+											<caption label="${mission.aartab.aars.aar.notes}:" x="5" rright="0" height="15" rtop="120" style="color: #FFFFFFFF; "/>
 											<image x="5" src="ui/textures/test/horiz_underline.bmp" rright="0" height="12" rtop="130"/>
 											<text id="aar-notes" x="10" y="0" rright="0" rtop="142" acceptsfocus="no" style="color: #e9e3d9;"/>
 										</view>
 									</tab>
-									<tab label="  &mission.aartab.aars.aar.stats;  " x="0" y="0" rright="0" rtop="0" onshow="soundPlayShuffle()">
+									<tab label="  ${mission.aartab.aars.aar.stats}  " x="0" y="0" rright="0" rtop="0" onshow="soundPlayShuffle()">
 										<view x="10" rright="10" y="10" rtop="30">
-											<caption label="&mission.aartab.aars.aar.kills;:" x="5" rright="0" height="15" rtop="0" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption label="${mission.aartab.aars.aar.kills}:" x="5" rright="0" height="15" rtop="0" style="color: #FFFFFFFF; font-size: -1;"/>
 											<caption id="aar-kills2" x="5" rright="0" height="15" rtop="0" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-											<caption label="&mission.aartab.aars.aar.captures;:" x="5" rright="0" height="15" rtop="10" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption label="${mission.aartab.aars.aar.captures}:" x="5" rright="0" height="15" rtop="10" style="color: #FFFFFFFF; font-size: -1;"/>
 											<caption id="aar-captures2" x="5" rright="0" height="15" rtop="10" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
 											<image x="5" rright="5" height="4" rtop="25" src="ui/textures/test/horiz_underline.bmp"/>
 
-											<caption label="&mission.aartab.aars.aar.unitshit;:" x="5" rright="0" height="15" rtop="30" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption label="${mission.aartab.aars.aar.unitshit}:" x="5" rright="0" height="15" rtop="30" style="color: #FFFFFFFF; font-size: -1;"/>
 											<caption id="aar-unitshit" x="5" rright="0" height="15" rtop="30" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-											<caption label="&mission.aartab.aars.aar.aishit;:" x="5" rright="0" height="15" rtop="40" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption label="${mission.aartab.aars.aar.aishit}:" x="5" rright="0" height="15" rtop="40" style="color: #FFFFFFFF; font-size: -1;"/>
 											<caption id="aar-aishit" x="5" rright="0" height="15" rtop="40" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
 											<image x="5" rright="5" height="4" rtop="55" src="ui/textures/test/horiz_underline.bmp"/>
 
-											<caption label="&mission.aartab.aars.aar.bridgeshit;:" x="5" rright="0" height="15" rtop="60" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption label="${mission.aartab.aars.aar.bridgeshit}:" x="5" rright="0" height="15" rtop="60" style="color: #FFFFFFFF; font-size: -1;"/>
 											<caption id="aar-bridgeshit" x="5" rright="0" height="15" rtop="60" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-											<caption label="&mission.aartab.aars.aar.bridgesrepaired;:" x="5" rright="0" height="15" rtop="70" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption label="${mission.aartab.aars.aar.bridgesrepaired}:" x="5" rright="0" height="15" rtop="70" style="color: #FFFFFFFF; font-size: -1;"/>
 											<caption id="aar-bridgesrepaired" x="5" rright="0" height="15" rtop="70" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
 											<image x="5" rright="5" height="4" rtop="85" src="ui/textures/test/horiz_underline.bmp"/>
 
-											<caption label="&mission.aartab.aars.aar.factorieshit;:" x="5" rright="0" height="15" rtop="90" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption label="${mission.aartab.aars.aar.factorieshit}:" x="5" rright="0" height="15" rtop="90" style="color: #FFFFFFFF; font-size: -1;"/>
 											<caption id="aar-factorieshit" x="5" rright="0" height="15" rtop="90" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-											<caption label="&mission.aartab.aars.aar.firebaseshit;:" x="5" rright="0" height="15" rtop="100" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption label="${mission.aartab.aars.aar.firebaseshit}:" x="5" rright="0" height="15" rtop="100" style="color: #FFFFFFFF; font-size: -1;"/>
 											<caption id="aar-firebaseshit" x="5" rright="0" height="15" rtop="100" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
 											<image x="5" rright="5" height="4" rtop="115" src="ui/textures/test/horiz_underline.bmp"/>
 
-											<caption label="&mission.aartab.aars.aar.resupplies;:" x="5" rright="0" height="15" rtop="120" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption label="${mission.aartab.aars.aar.resupplies}:" x="5" rright="0" height="15" rtop="120" style="color: #FFFFFFFF; font-size: -1;"/>
 											<caption id="aar-resupplies" x="5" rright="0" height="15" rtop="120" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
 											<image x="5" rright="5" height="4" rtop="135" src="ui/textures/test/horiz_underline.bmp"/>
 
-											<caption label="&mission.aartab.aars.aar.guardingkills;:" x="5" rright="0" height="15" rtop="140" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption label="${mission.aartab.aars.aar.guardingkills}:" x="5" rright="0" height="15" rtop="140" style="color: #FFFFFFFF; font-size: -1;"/>
 											<caption id="aar-guardingkills" x="5" rright="0" height="15" rtop="140" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
-											<caption label="&mission.aartab.aars.aar.capperkills;:" x="5" rright="0" height="15" rtop="150" style="color: #FFFFFFFF; font-size: -1;"/>
+											<caption label="${mission.aartab.aars.aar.capperkills}:" x="5" rright="0" height="15" rtop="150" style="color: #FFFFFFFF; font-size: -1;"/>
 											<caption id="aar-capperkills" x="5" rright="0" height="15" rtop="150" style="color: #e9e3d9ff; font-size: -1;" align="right"/>
 											
 										</view>
 									</tab>
-									<tab label="  &mission.aartab.aars.aar.kills;  " x="0" y="0" rright="0" rtop="0" onshow="soundPlayShuffle()">
+									<tab label="  ${mission.aartab.aars.aar.kills}  " x="0" y="0" rright="0" rtop="0" onshow="soundPlayShuffle()">
 										<view x="10" y="10" width="400" rtop="20">
 											<image x="0" src="ui/textures/test/horiz_underline.bmp" width="400" height="12" rtop="0"/>
 											<view x="0" width="425" height="15" rtop="12">
 												<caption x="0" y="0" width="200" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-													label="&mission.aartab.aars.aar.kills.type;"/>
+													label="${mission.aartab.aars.aar.kills.type}"/>
 												<caption x="202" y="0" width="100" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-													label="&mission.aartab.aars.aar.kills.hits;" align="right"/>
+													label="${mission.aartab.aars.aar.kills.hits}" align="right"/>
 												<caption x="304" y="0" width="100" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-													label="&mission.aartab.aars.aar.kills;    " align="right"/>
+													label="${mission.aartab.aars.aar.kills}    " align="right"/>
 											</view>
 											<list id="kills" x="0" y="0" width="400" height="160" style="color: #e9e3d9ff;">
 												<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
@@ -1129,7 +1129,7 @@
 									</tab>
 								</tabview>
 								<!-- close -->
-								<button label="&common.squads.member.close;" x="150" y="5" width="150" height="25" followbottom="true"
+								<button label="${common.squads.member.close}" x="150" y="5" width="150" height="25" followbottom="true"
 									style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 									onclick="resultsDetails.value = 0; soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
 							</tab>
@@ -1454,8 +1454,8 @@
 				-->
 			</script>
 		</tab>
-		<tab id="map" label="  &common.map.tab;  " x="20" y="10" width="930" height="460"
-			onshow='setHelp(getlocstring("common.map.tab.help")); tplTab()' tip="&common.map.tab.tip;">
+		<tab id="map" label="  ${common.map.tab}  " x="20" y="10" width="930" height="460"
+			onshow='setHelp(getlocstring("common.map.tab.help")); tplTab()' tip="${common.map.tab.tip}">
 			<include file="widgets/map.uixml"/>
 		</tab>
 		<include file="widgets/globals/squads.uixml"/>

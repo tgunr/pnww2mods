@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+ 
 <window id="squadeditor" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
 	style="background-color: #00000077;" layer="90" onmousedown="editList.mgr.hideList()">
 	<include file="lib/common.uixml"/>
@@ -29,10 +29,10 @@
 			</caption>
 		</view>
 		
-		<button x="20" y="10" width="150" height="25" label="&popup.cancel;" onclick="doEditAction(false)"
+		<button x="20" y="10" width="150" height="25" label="${popup.cancel}" onclick="doEditAction(false)"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 			onmouseenter="this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
-		<button x="180" y="10" width="150" height="25" label="&widgets.prefs.save;" onclick="doEditAction(true)" onupdate="checkSaveButton(this)"
+		<button x="180" y="10" width="150" height="25" label="${widgets.prefs.save}" onclick="doEditAction(true)" onupdate="checkSaveButton(this)"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 			onmouseenter="this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
 	</view>

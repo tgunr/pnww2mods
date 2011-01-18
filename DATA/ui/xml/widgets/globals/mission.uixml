@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
-<tab id="mission-tab" label="  &globals.missions;  " x="0" y="0" width="930" height="460"
-	onshow="soundPlayShuffle()" tip="&mission.brieftab.tip;">
+ 
+<tab id="mission-tab" label="  ${globals.missions}  " x="0" y="0" width="930" height="460"
+	onshow="soundPlayShuffle()" tip="${mission.brieftab.tip}">
 	<include file="classes/CycleTimer.uixml"/>
 	<include file="classes/VehicleManager.uixml"/>
 	<tabview x="0" y="0" rright="0" rtop="0" onshow='if(!game.online) this.value = 1' acceptmouseclick='false'>
 		<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'>
 			<view id="left-pane" x="18" y="10" width="444" height="424" onupdate="updateMissionMembers()" onshow="showMissionBriefing()">
 				<view x="10" width="425" height="410" rtop="12">
-					<caption label="&mission.brieftab.members;" x="0" height="20" width="400" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
+					<caption label="${mission.brieftab.members}" x="0" height="20" width="400" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
 					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="12"/>
 					<view x="0" width="425" height="15" rtop="23">
 						<caption x="0" y="0" width="152" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-							label="&mission.brieftab.members.handle;"/>
+							label="${mission.brieftab.members.handle}"/>
 						<caption x="154" y="0" width="234" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-							label="&mission.brieftab.members.equipment;"/>
+							label="${mission.brieftab.members.equipment}"/>
 						<caption x="390" y="0" width="58" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-							label=" IN" tip="&mission.brieftab.brief.sstatus;"/>
+							label=" IN" tip="${mission.brieftab.brief.sstatus}"/>
 					</view>
 					<list id="memberList" x="0" y="5" width="425" height="363">
 						<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
@@ -32,36 +32,36 @@
 					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="12"/>
 				</view>
 				<view x="10" y="175" width="250" height="190">
-					<caption label="&mission.brieftab.brief;" x="5" y="170" width="245" height="20" style="color: #BFE2CE; font-size: +1;"/>
+					<caption label="${mission.brieftab.brief}" x="5" y="170" width="245" height="20" style="color: #BFE2CE; font-size: +1;"/>
 					<image x="5" y="165" src="ui/textures/test/horiz_underline.bmp" width="225" height="12"/>
-					<caption label="&mission.brieftab.brief.leader;:" x="5" y="145" width="245" height="15" style="color: #FFFFFFFF; "/>
+					<caption label="${mission.brieftab.brief.leader}:" x="5" y="145" width="245" height="15" style="color: #FFFFFFFF; "/>
 					<caption id="mission-leader" x="0" y="145" rright="15" height="20" style="color: #e9e3d9ff; " align="right"
 						onupdate="this.label = (mission != null) ? mission.poster: ''"/>
-					<caption label="&mission.brieftab.brief.origin;:" x="5" y="130" width="245" height="15" style="color: #FFFFFFFF; "/>
+					<caption label="${mission.brieftab.brief.origin}:" x="5" y="130" width="245" height="15" style="color: #FFFFFFFF; "/>
 					<caption id="mission-origin" x="0" y="130" rright="15" height="20" style="color: #e9e3d9ff; " align="right"
 						onshow="this.label = (mission != null) ? mission.origin.name: ''"/>
-					<caption label="&mission.brieftab.brief.target;:" x="5" y="115" width="245" height="15" style="color: #FFFFFFFF; "/>
+					<caption label="${mission.brieftab.brief.target}:" x="5" y="115" width="245" height="15" style="color: #FFFFFFFF; "/>
 					<caption id="mission-target" x="0" y="115" rright="15" height="20" style="color: #e9e3d9ff; " align="right"
 						onshow="this.label = (mission != null) ? mission.target.name: ''"/>
-					<caption label="&mission.brieftab.brief.type;:" x="5" y="100" width="245" height="15" style="color: #FFFFFFFF; "/>
+					<caption label="${mission.brieftab.brief.type}:" x="5" y="100" width="245" height="15" style="color: #FFFFFFFF; "/>
 					<caption id="mission-type" x="0" y="100" rright="15" height="20" style="color: #e9e3d9ff; " align="right"
 						onshow="this.label = missionType"/>
-					<caption label="&mission.brieftab.brief.members;:" x="5" y="85" width="245" height="15" style="color: #FFFFFFFF; "/>
+					<caption label="${mission.brieftab.brief.members}:" x="5" y="85" width="245" height="15" style="color: #FFFFFFFF; "/>
 					<caption id="mission-members" label="18" x="0" y="85" rright="15" height="20" style="color: #e9e3d9ff; " align="right"
 						onupdate="this.label = membersCount"/>
-					<caption label="&mission.brieftab.brief.spawned;:" x="5" y="70" width="245" height="15" style="color: #FFFFFFFF; "/>
+					<caption label="${mission.brieftab.brief.spawned}:" x="5" y="70" width="245" height="15" style="color: #FFFFFFFF; "/>
 					<caption id="mission-spawned" x="0" y="70" rright="15" height="20" style="color: #e9e3d9ff; " align="right"
 						onupdate="this.label = membersSpawned"/>
 				</view>
 				<view x="260" y="175" width="175" height="190">
-					<caption label="&mission.brieftab.brief.deployed;" x="5" y="170" width="165" height="20" style="color: #BFE2CE; font-size: +1;"/>
+					<caption label="${mission.brieftab.brief.deployed}" x="5" y="170" width="165" height="20" style="color: #BFE2CE; font-size: +1;"/>
 					<image x="5" y="165" src="ui/textures/test/horiz_underline.bmp" width="165" height="12"/>
 					<list id="deployedList" x="5" y="8" width="165" height="155" style="color: #e9e3d9ff;">
 						<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
 					</list>
 				</view>
 				<view x="10" y="5" width="425" height="175">
-					<caption label="&mission.brieftab.brief.orders;" x="0" height="20" width="300" rtop="0" style="font-size: +1; color: #BFE2CE;"/>
+					<caption label="${mission.brieftab.brief.orders}" x="0" height="20" width="300" rtop="0" style="font-size: +1; color: #BFE2CE;"/>
 					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="12"/>
 					<text x="5" y="5" width="415" height="145" acceptfocus="no" onshow="this.text = (mission != null) ? mission.description: ''"
 						style=" color: #e9e3d9ff; border-size-right: 10;">

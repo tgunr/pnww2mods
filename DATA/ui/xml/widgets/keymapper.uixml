@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+ 
 <view x="0" y="0" width="930" height="460" onupdate="updatekeymapper()" onshow="initKeyMapper()" onhide="game.killkeymaps()">
 	<view id="left-pane" x="18" y="18" width="315" height="411">
-		<caption label="&widgets.keymapper.cats;" x="10" height="20" width="300" rtop="10" style="font-size: +2; color: #BFE2CE;"/>
+		<caption label="${widgets.keymapper.cats}" x="10" height="20" width="300" rtop="10" style="font-size: +2; color: #BFE2CE;"/>
 		<image x="10" src="ui/textures/test/horiz_underline.bmp" width="300" height="12" rtop="20"/>
 		<view x="10" width="300" height="15" rtop="32">
-			<caption x="0" y="0" width="300" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="&widgets.keymapper.cats.name;"/>
+			<caption x="0" y="0" width="300" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="${widgets.keymapper.cats.name}"/>
 		</view>
 		<list id="categoryTree" x="10" y="35" width="300" height="327" style="color: #FFFFFF"
 			onselect="categoryTree.clickTree(false)" ondblselect="categoryTree.clickTree(true)">
@@ -17,35 +17,35 @@
 		<caption id="header-keymaps" x="10" height="20" width="570" rtop="10" style="font-size: +2; color: #BFE2CE;"/>
 		<image x="10" src="ui/textures/test/horiz_underline.bmp" width="570" height="12" rtop="20"/>
 		<view x="10" width="570" height="15" rtop="32">
-			<caption x="0" y="0" width="175" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="&widgets.keymapper.keys.function;"/>
-			<caption x="177" y="0" width="192" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="&widgets.keymapper.keys.primary;" align="right"/>
-			<caption x="371" y="0" width="192" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="&widgets.keymapper.keys.secondary;     " align="right"/>
+			<caption x="0" y="0" width="175" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="${widgets.keymapper.keys.function}"/>
+			<caption x="177" y="0" width="192" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="${widgets.keymapper.keys.primary}" align="right"/>
+			<caption x="371" y="0" width="192" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="${widgets.keymapper.keys.secondary}     " align="right"/>
 		</view>
 		<list id="keymaps" x="10" y="35" width="560" height="327" style="color: #FFFFFF" onselect="selectKeymap()">
 			<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
 		</list>
 	</view>
 	<view id="button-pane" x="20" y="10" width="890" height="30">
-		<button id="defaultcategory" x="10" y="0" height="25" width="140" label="&widgets.keymapper.button.def.cat;"
+		<button id="defaultcategory" x="10" y="0" height="25" width="140" label="${widgets.keymapper.button.def.cat}"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -3; color: #FFFFFF;"
 			onclick="soundPlayClick(); game.keymapremoveall(keymapCategory, keymapVehicle)" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
-			tip="&widgets.keymapper.button.def.cat.tip;"/>
-		<button id="defaultkeymap" x="150" y="0" height="25" width="140" label="&widgets.keymapper.button.def.key;"
+			tip="${widgets.keymapper.button.def.cat.tip}"/>
+		<button id="defaultkeymap" x="150" y="0" height="25" width="140" label="${widgets.keymapper.button.def.key}"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -3; color: #FFFFFF;"
 			onclick="soundPlayClick(); game.resetkeymap(keymapList.data, curkeymapindex)" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
-			tip="&widgets.keymapper.button.def.key.tip;"/>
-		<button id="revertcategory" x="300" y="0" height="25" width="140" label="&widgets.keymapper.button.discard;"
+			tip="${widgets.keymapper.button.def.key.tip}"/>
+		<button id="revertcategory" x="300" y="0" height="25" width="140" label="${widgets.keymapper.button.discard}"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -3; color: #FFFFFF;"
 			onclick="soundPlayClick(); game.keymaprestore(keymapCategory, keymapVehicle)" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
-			tip="&widgets.keymapper.button.discard.tip;"/>
-		<button id="clearkeymap" x="450" y="0" height="25" width="140" label="&widgets.keymapper.button.clear;"
+			tip="${widgets.keymapper.button.discard.tip}"/>
+		<button id="clearkeymap" x="450" y="0" height="25" width="140" label="${widgets.keymapper.button.clear}"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -3; color: #FFFFFF;"
 			onclick="soundPlayClick(); game.clearkeymap(keymapList.data, curkeymapindex)" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
-			tip="&widgets.keymapper.button.clear.tip;"/>
-		<button id="savekeymaps" x="600" y="0" height="25" width="140" label="&widgets.keymapper.button.save;"
+			tip="${widgets.keymapper.button.clear.tip}"/>
+		<button id="savekeymaps" x="600" y="0" height="25" width="140" label="${widgets.keymapper.button.save}"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -3; color: #FFFFFF;"
 			onclick="soundPlayClick(); game.savekeymaps()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
-			tip="&widgets.keymapper.button.save.tip;"/>
+			tip="${widgets.keymapper.button.save.tip}"/>
 		<caption id="presetsList" height="20" width="140" rtop="5" rright="10"
 			onshow="if(!this.mgr) new DDListControl(this, selectPreset, 50, true); initPresets(keymapCategory);"
 			onclick="this.mgr.toggleList()" onhide="this.mgr.hideList()"

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+ 
 <view id="template" x="0" y="0" width="1024" height="768" onshow="initTemplate(this)" style="background-image: ui/textures/test/bground_01.bmp;">
 	<include file="lib/common.uixml"/>
 	<include file="widgets/idcard.uixml"/>
@@ -15,15 +15,15 @@
 	</view>
 	<button id="quit-button" x="980" y="725" width="30" height="30" onclick="tplQuit()"
 		style="control-on: ui/textures/test/exit_on.bmp; control-off: ui/textures/test/exit_off.bmp;"
-		tip="&widgets.template.quit.tip;"/>
+		tip="${widgets.template.quit.tip}"/>
 	<button id="back-button" label="@widgets.template.back;" x="832" y="62" width="150" height="30" onclick="tplBack()"
 		style="control-on: ui/textures/test/back_on.bmp; control-off: ui/textures/test/back_off.bmp; control-disabled: ui/textures/test/back_disabled.bmp; color: #FFFFFF; font-size: -3;"
 		onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
-		tip="&widgets.template.back.tip;"/>
+		tip="${widgets.template.back.tip}"/>
 	<button id="forward-button" label="@widgets.template.next;" x="832" y="28" width="150" height="30" onclick="tplForward()"
 		style="control-on: ui/textures/test/next_on.bmp; control-off: ui/textures/test/next_off.bmp; control-disabled: ui/textures/test/next_disabled.bmp; color: #FFFFFF; font-size: -3;"
 		onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
-		tip="&widgets.template.next.tip;"/>
+		tip="${widgets.template.next.tip}"/>
 	<script>
 		<!--
 		

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+ 
 <view x="58" y="140" width="900" height="16" onshow="updateInfoBar()" style="background-color: #3e5248;"
-	tip="&widgets.infobar.tip;">
+	tip="${widgets.infobar.tip}">
 	<caption id="info-campaign-caption" x="700" y="0" height="15" width="165" style=" color: #BFE2CE;" align="right"/>
 	<caption id="info-time-caption" x="865" y="0" height="15" width="35" style=" color: #BFE2CE;" onupdate="getGameTime(this)"/>
 	<script>

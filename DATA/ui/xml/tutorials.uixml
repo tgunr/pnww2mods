@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+
 <window id="tutorials" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
 	onshow="initWin(this)" onupdate="updateForwardButton()" aspectalign="center">
 	<include file="widgets/template.uixml"/>

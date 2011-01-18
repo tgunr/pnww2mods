@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+ 
 <view id="globals" x="655" y="573" width="300" height="15">
-	<button id="manuals-button" x="99" y="0" width="100" height="15" label="&widgets.globals.manuals;" onclick="tplTab(); loadWin('manuals', false)" aligh="right"
+	<button id="manuals-button" x="99" y="0" width="100" height="15" label="${widgets.globals.manuals}" onclick="tplTab(); loadWin('manuals', false)" aligh="right"
 		style="color: #BFE2CE;  control-on: ui/textures/test/faketab_on.bmp; control-off: ui/textures/test/faketab_off.bmp;"/>
-	<button id="settings-button" x="200" y="0" width="100" height="15" label="&widgets.globals.options;" onclick="tplTab(); loadWin('settings', false)" aligh="right"
+	<button id="settings-button" x="200" y="0" width="100" height="15" label="${widgets.globals.options}" onclick="tplTab(); loadWin('settings', false)" aligh="right"
 		style="color: #BFE2CE;  control-on: ui/textures/test/faketab_on.bmp; control-off: ui/textures/test/faketab_off.bmp;"/>
 </view>

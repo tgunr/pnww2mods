@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+
 <tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'>
-	<caption label="&common.tab.offline;" x="0" y="0" width="300" height="15" style="font-size: +4; color: #FFFFFFFF;" align="center" onshow="centerCaption(this)">
+	<caption label="${common.tab.offline}" x="0" y="0" width="300" height="15" style="font-size: +4; color: #FFFFFFFF;" align="center" onshow="centerCaption(this)">
 		<script private="true">
 			<!--
 			

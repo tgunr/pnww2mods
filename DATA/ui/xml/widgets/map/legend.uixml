@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+ 
 <view id="map-legend" width="128" x="1" rtop="1" rbottom="19" style="background-color: #00000088;"
 	onload="if(!this.mgr) new MapLegend(this)" onshow="this.mgr.contract()" onmouseenter="this.mgr.expand()" onmouseexit="this.mgr.contract()">
 	<view id="map-legend-title" x="1" width="128" height="15" rtop="1">
-		<caption label="&widgets.map.legend.title;" x="3" width="100" height="12" rtop="2" style="font-size: -1; color: #FFFFFF;"/>
+		<caption label="${widgets.map.legend.title}" x="3" width="100" height="12" rtop="2" style="font-size: -1; color: #FFFFFF;"/>
 		<image id="map-legend-arrow" src="ui/textures/test/down_arrow.bmp" x="110" width="10" height="10" rtop="3"/>
 	</view>
 	<view id="map-legend-body" x="1" width="128" y="5" rtop="8">

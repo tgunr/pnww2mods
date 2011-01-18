@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+
 <window id="persona" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
 	onshow="initWin(this)" onupdate="updateList()" aspectalign="center">
 	<include file="widgets/template.uixml"/>
@@ -20,12 +20,12 @@
 						control-on-color: #FFFFCE;
 						border-width: 16;
 						border-height: 16;">
-		<tab label="  &persona.selecttab;  " x="0" y="0" width="930" height="460"
-			onshow="setHelp(getlocstring('persona.selecttab.help')); tplTab()" tip="&persona.selecttab.tip;">
+		<tab label="  ${persona.selecttab}  " x="0" y="0" width="930" height="460"
+			onshow="setHelp(getlocstring('persona.selecttab.help')); tplTab()" tip="${persona.selecttab.tip}">
 			<view id="left-pane" x="18" y="18" width="444" height="411" onupdate="updateStatus(false)">
 				
 				<view x="10" rtop="20" rright="10" height="50">
-					<caption label="&persona.selecttab.header;" x="0" rtop="0" rright="0" height="20" style="color: #BFE2CE; font-size: +2;"/>
+					<caption label="${persona.selecttab.header}" x="0" rtop="0" rright="0" height="20" style="color: #BFE2CE; font-size: +2;"/>
 					<image src="ui/textures/test/horiz_underline.bmp" x="0" rtop="15" rright="0" height="12"/>
 				</view>
 				<!-- 
@@ -36,17 +36,17 @@
 					<image id="flag" src="ui/textures/test/british_flag.bmp" x="0" rtop="30" width="50" height="50"/>
 					<caption id="header" label="BRITISH PERSONAS" x="70" rtop="10" rright="10" height="20" style="color: #BFE2CE; font-size: +2;"/>
 					<caption id="branch0" label="ARMY" x="90" rtop="30" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
-					<image id="lock0" x="75" rtop="32" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="&persona.details.career.status.slocked;"/>
+					<image id="lock0" x="75" rtop="32" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
 					<caption id="status0" label="Active Duty" x="90" rtop="30" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
 						onclick="selectPersona(0, false)" ondblclick="selectPersona(0, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 0)"/>
 					
 					<caption id="branch1" label="AIR FORCE" x="90" rtop="50" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
-					<image id="lock1" x="75" rtop="52" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="&persona.details.career.status.slocked;"/>
+					<image id="lock1" x="75" rtop="52" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
 					<caption id="status1" label="Active Duty" x="90" rtop="50" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
 						onclick="selectPersona(1, false)" ondblclick="selectPersona(1, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 1)"/>
 					
 					<caption id="branch2" label="NAVY" x="90" rtop="70" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
-					<image id="lock2" x="75" rtop="72" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="&persona.details.career.status.slocked;"/>
+					<image id="lock2" x="75" rtop="72" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
 					<caption id="status2" label="Active Duty" x="90" rtop="70" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
 						onclick="selectPersona(2, false)" ondblclick="selectPersona(2, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 2)"/>
 				</view>
@@ -55,15 +55,15 @@
 					<image id="flag" src="ui/textures/test/french_flag.bmp" x="0" rtop="30" width="50" height="50"/>
 					<caption id="header" label="FRENCH PERSONAS" x="70" rtop="10" rright="10" height="20" style="color: #BFE2CE; font-size: +2;"/>
 					<caption id="branch0" label="ARMY" x="90" rtop="30" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
-					<image id="lock0" x="75" rtop="32" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="&persona.details.career.status.slocked;"/>
+					<image id="lock0" x="75" rtop="32" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
 					<caption id="status0" label="Active Duty" x="90" rtop="30" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
 						onclick="selectPersona(3, false)" ondblclick="selectPersona(3, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 3)"/>
 					<caption id="branch1" label="AIR FORCE" x="90" rtop="50" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
-					<image id="lock1" x="75" rtop="52" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="&persona.details.career.status.slocked;"/>
+					<image id="lock1" x="75" rtop="52" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
 					<caption id="status1" label="Active Duty" x="90" rtop="50" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
 						onclick="selectPersona(4, false)" ondblclick="selectPersona(4, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 4)"/>
 					<caption id="branch2" label="NAVY" x="90" rtop="70" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
-					<image id="lock2" x="75" rtop="72" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="&persona.details.career.status.slocked;"/>
+					<image id="lock2" x="75" rtop="72" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
 					<caption id="status2" label="Active Duty" x="90" rtop="70" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
 						onclick="selectPersona(5, false)" ondblclick="selectPersona(5, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 5)"/>
 				</view>
@@ -72,15 +72,15 @@
 					<image id="flag" src="ui/textures/test/german_flag.bmp" x="0" rtop="30" width="50" height="50"/>
 					<caption id="header" label="GERMAN PERSONAS" x="70" rtop="10" rright="10" height="20" style="color: #BFE2CE; font-size: +2;"/>
 					<caption id="branch0" label="ARMY" x="90" rtop="30" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
-					<image id="lock0" x="75" rtop="32" width="16" height="16" src="ui/textures/lock.dds" style="color: #FF0000;" tip="&persona.details.career.status.slocked;"/>
+					<image id="lock0" x="75" rtop="32" width="16" height="16" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
 					<caption id="status0" label="Active Duty" x="90" rtop="30" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
 						onclick="selectPersona(6, false)" ondblclick="selectPersona(6, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 6)"/>
 					<caption id="branch1" label="AIR FORCE" x="90" rtop="50" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
-					<image id="lock1" x="75" rtop="52" width="16" height="16" src="ui/textures/lock.dds" style="color: #FF0000;" tip="&persona.details.career.status.slocked;"/>
+					<image id="lock1" x="75" rtop="52" width="16" height="16" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
 					<caption id="status1" label="Active Duty" x="90" rtop="50" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
 						onclick="selectPersona(7, false)" ondblclick="selectPersona(7, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 7)"/>
 					<caption id="branch2" label="NAVY" x="90" rtop="70" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
-					<image id="lock2" x="75" rtop="72" width="16" height="16" src="ui/textures/lock.dds" style="color: #FF0000;" tip="&persona.details.career.status.slocked;"/>
+					<image id="lock2" x="75" rtop="72" width="16" height="16" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
 					<caption id="status2" label="Active Duty" x="90" rtop="70" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
 						onclick="selectPersona(8, false)" ondblclick="selectPersona(8, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 8)"/>
 				</view>
@@ -90,21 +90,21 @@
 				<!--  style="background-color: #0066FF;" -->
 				<view id="details" x="30" y="10" width="300" height="400" onupdate="updatePersonaDetails()">
 					<!-- CURRENTLY SELECTED PERSONA -->
-					<caption label="&persona.details.persona;" x="0" y="360" width="300" height="20" style="color: #BFE2CE; font-size: +2;"/>
+					<caption label="${persona.details.persona}" x="0" y="360" width="300" height="20" style="color: #BFE2CE; font-size: +2;"/>
 					<image x="0" y="355" src="ui/textures/test/horiz_underline.bmp" width="200" height="12"/>
 					<caption id="persona-caption" x="15" y="330" width="300" height="15" onshow="this.label = getlocstring('persona.details.persona.handle') + ': ' + client.handle" style="color: #e9e3d9ff; "/>
-					<image id="rank-lock" x="0" y="330" src="ui/textures/lock.dds" width="15" height="15" style="color: #FF0000;" tip="&persona.details.ranklock;"/>
+					<image id="rank-lock" x="0" y="330" src="ui/textures/lock.dds" width="15" height="15" style="color: #FF0000;" tip="${persona.details.ranklock}"/>
 					<caption id="country-caption" x="15" y="310" width="300" height="15" style="color: #e9e3d9ff; "/>
 					<!-- BRIGADE ATTACHMENT -->
-					<caption label="&persona.details.brigade;" x="0" y="260" width="300" height="20" style="color: #BFE2CE; font-size: +2;"/>
+					<caption label="${persona.details.brigade}" x="0" y="260" width="300" height="20" style="color: #BFE2CE; font-size: +2;"/>
 					<image x="0" y="255" src="ui/textures/test/horiz_underline.bmp" width="200" height="12"/>
 					<caption id="brigade-caption" x="15" y="230" width="300" height="15" style="color: #e9e3d9ff; "/>
 					<caption id="division-caption" x="15" y="210" width="300" height="15" style="color: #e9e3d9ff; "/>
 					<!-- CAREER NOTES -->
-					<caption label="&persona.details.career;" x="0" y="160" width="300" height="20" style="color: #BFE2CE; font-size: +2;"/>
+					<caption label="${persona.details.career}" x="0" y="160" width="300" height="20" style="color: #BFE2CE; font-size: +2;"/>
 					<image x="0" y="155" src="ui/textures/test/horiz_underline.bmp" width="200" height="12"/>
 					<caption id="percent-caption" x="15" y="130" width="300" height="15" style="color: #e9e3d9ff; "
-						tip="&persona.details.career.rank.tip;"/>
+						tip="${persona.details.career.rank.tip}"/>
 					<text id="locked-caption" x="15" y="10" width="200" height="115" style="color: #e9e3d9ff;"/>
 				</view>
 				<image id="persona-image" x="240" y="3" src="ui/textures/test/british.bmp" width="182" height="400"/>
@@ -134,7 +134,6 @@
 		var statusTimer			= new CycleTimer(1000);
 		var rankLock				= findview("rank-lock");
 		
-		var noTrainingForMe	= false;
 		var requireTraining 		= false;
 		var graduated				= TutIsComplete("basic");
 		var shortcut					= false;
