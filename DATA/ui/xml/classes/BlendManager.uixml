@@ -1,0 +1,942 @@
+<script>
+
+	<include file="classes/ViewBuilder.uixml"/>
+	<include file="classes/TextBuilder.uixml"/>
+	<include file="classes/SliderBuilder.uixml"/>
+	<include file="classes/TabBuilder.uixml"/>
+	<include file="classes/ListBuilder.uixml"/>
+
+	<!--
+
+	function BlendManager(listMgr, skel)
+	{
+		this.addBlend = function(t, s1, s2, s3, s4)
+		{
+			// deselect any current blend
+			//this.listMgr.deselect();
+			
+			game.addblend(t, s1, s2, s3, s4);
+			
+			// populate our new list item
+			this.updateList();
+			
+			// this will select the last one
+			this.selectLast();
+		}
+		
+		this.setWeapon = function(type)
+		{
+			game.setblendweapon(type);
+		}
+		
+		this.addAnimation = function(animation)
+		{
+			var path = "TPS\\animations\\" + animation;
+			var parts = path.split(".");
+			
+			var b = this.getBlend();
+			
+			cprint("Adding animation " + animation + " to blend " + b);
+			
+			// add the animation
+			game.addanimation(b, parts[0]);
+			
+			// re-select
+			//this.selectBlend(this.lastBlend);
+			
+			// update our display
+			this.updateList();
+			
+			//this.lastBlend = -1;
+		}
+		
+		this.playAnimation = function(animation)
+		{
+			var path = "TPS\\animations\\" + animation;
+			var parts = path.split(".");
+			
+			//if(this.lastBlend == -1)
+			//	this.lastBlend = this.getBlend();
+			
+			//this.listMgr.deselect(true);
+			
+			game.playanimation(parts[0]);
+		}
+		
+		this.removeRow = function()
+		{
+			if(this.animSelected())
+			{
+				// grab out current blend number
+				var blend = this.getBlend(); 
+				var anim	= this.getAnim();
+				
+				// remove the animation
+				game.removeanimation(blend, anim);
+				
+				// update our display list
+				this.updateList();
+				
+				// make the blend the selected this
+				this.selectBlend(blend);
+			}
+			else if(this.blendSelected())
+			{
+				// remove the blend entirely
+				game.removeblend(this.getBlend());
+				
+				// update our display list
+				this.updateList();
+				
+				// select the last blend
+				this.selectLast();
+			}
+		}
+		
+		this.saveBlend = function()
+		{
+			if(this.blend.modified)
+				game.saveblend(this.blend.index);
+			
+			this.updateList();
+		}
+		
+		this.onUpdate = function()
+		{
+			if(this.activeSlider)
+				this.activeSlider.setWeight();
+		}
+		
+		this.blendSelected = function()
+		{
+			return (this.getType() == "blend") ? true: false;
+		}
+		
+		this.animSelected = function()
+		{
+			return (this.getType() == "anim") ? true: false;
+		}
+		
+		this.deselect = function(update)
+		{
+			cprint("Calling deselect()");
+			
+			if(this.blend)
+			{
+				cprint("Deselecting " + this.getBlend());
+				this.blend.selected = false;
+			}
+			
+			// resets
+			this.blend 			= null;
+			this.animations 	= null;
+			this.animation 		= null;
+			this.weights			= null;
+			
+			if(update == true)
+			{
+				//this.updateList();
+				
+				// set the bone weight sliders to their respective values
+				this.initSliders();
+				
+				this.modified = (this.blend != null) ? this.blend.modified: false;
+			}
+		}
+		
+		this.selectLast = function()
+		{
+			this.selectBlend(game.blendeditor.blends.length - 1);
+		}
+		
+		this.selectBlend = function(b)
+		{
+			this.listMgr.select("blend." +  b);
+		}
+		
+		this.selectAnimation = function(b, a)
+		{
+			this.listMgr.select("anim." +  b + "." + a);
+		}
+		
+		this.select = function()
+		{
+			cprint("Calling select()");
+			
+			var blend		= this.getBlend();
+			var blends 	= game.blendeditor.blends;
+			
+			if(blend >= 0 && blend < blends.length)
+			{
+				this.blend 				= blends[blend];
+				this.animations 		= this.blend.animations;
+				//this.blend.weight 	= 1;
+				
+				if(!this.blend.selected)
+				{
+					//this.setBlendWeights(blend, 1, 0, 0, 0);
+					this.blend.selected	= true;
+				}
+				
+				cprint("Selecting blend " + blend);
+			}
+			else
+			{
+				this.deselect();
+			}
+			
+			if(this.animations != null)
+			{
+				var anim = this.getAnim();
+				
+				if(anim >= 0)
+				{
+					cprint("Using anim " + blend + "." + anim + "!\n");
+					this.animation 	= this.animations[anim];
+					this.weights	= this.animation.weights;
+					
+					this.setAnimWeight(blend, anim, 1);
+				}
+				else
+				{
+					this.animation 	= null;
+					this.weights	= null; 
+				}
+			}
+			
+			// set the bone weight sliders to their respective values
+			//this.updateList();
+			
+			// set the bone weight sliders to their respective values
+			this.initSliders();
+			
+			this.modified = (this.blend != null) ? this.blend.modified: false;
+		}
+		
+		this.setAnimWeight = function(b, a, weight)
+		{
+			if(b >= 0 && b < game.blendeditor.blends.length)
+			{
+				var blend 			= game.blendeditor.blends[b];
+				var animations = blend.animations;
+				
+				var weights 	= new Array(0,0,0,0);
+				var index		= 0;
+				
+				if(blend.type == 0)
+				{
+					if(a > 1)
+						index = a - 1;
+				}
+				else if(blend.type == 1 || blend.type == 2)
+				{
+					index = a;
+				}
+				else if(blend.type == 2)
+				{
+					index = 0;
+				}
+				
+				if(index >= 0 && index < 4)
+					weights[index] = weight;
+				
+				this.setBlendWeights(b, weights[0], weights[1], weights[2], weights[3]);
+			}
+		}
+		
+		this.setBlendPlayMode = function(on)
+		{
+			if(this.blend != null)
+				this.blend.play = on;
+		}
+		
+		this.setOscillation = function(balance)
+		{
+			// can only oscillate non equally blended animation blends 
+			
+			if(this.blend != null)
+			{
+				/*
+				// transition
+				if(this.blend.type == 3)
+				{
+					this.setBlendWeights(this.blend.index, balance, 0, 0, 0);
+					return;
+				}
+				*/
+				
+				var count = this.blend.animations.length;
+				
+				// base animation is weighted fully in this case so we dont count it
+				if(this.blend.type == 0)
+					count -= 1;
+				
+				if(count > 1)
+				{
+					var zone = 0;
+					var zones = count - 1;
+					var influence = 1 / zones;
+					var anim1 = 0;
+					var anim2 = 1;
+					
+					for(var z = 0; z < zones; z++)
+					{
+						if(balance <= ((z * influence) + influence))
+						{
+							zone = z;
+							break;
+						}
+					}
+					
+					anim1 = zone;
+					anim2 = zone + 1;
+					
+					var weights 			= new Array(0,0,0,0);
+					var zoneBalance 	= (balance - (anim1 * influence)) / influence; 
+					
+					weights[anim1] = 1- zoneBalance;
+					weights[anim2] = zoneBalance;
+					
+					/*
+					cprint("Oscillation:");
+					cprint(" balance=" + balance);
+					cprint(" type=" + this.blend.type);
+					cprint(" count=" + count);
+					cprint(" influence=" + influence);
+					cprint(" anim1=" + anim1 + " " + weights[anim1]);
+					cprint(" anim2=" + anim2 + " " + weights[anim2]);
+					cprint(" zones=" + zones);
+					cprint(" zone=" + zone);
+					cprint(" zoneBalance=" + zoneBalance);
+					*/
+					
+					this.setBlendWeights(this.blend.index, weights[0], weights[1], weights[2], weights[3]);
+				}
+			}
+		}
+		
+		this.setBlendWeights = function(index, w1, w2, w3, w4)
+		{
+			game.setblendweights(index, w1, w2, w3, w4);
+		}
+		
+		this.canMoveAnimation = function(direction)
+		{
+			if(this.animSelected())
+			{
+				var newAnim = parseInt(this.getAnim()) + direction;
+				
+				cprint("Checking animation "  + newAnim + " against " + this.animations.length);
+				
+				if(newAnim >= 0 && newAnim < this.animations.length)
+					return true;
+			}
+			
+			return false;
+		}
+		
+		this.moveAnimation = function(direction)
+		{
+			if(this.canMoveAnimation(direction))
+			{
+				var blend = this.getBlend();
+				var anim = this.getAnim();
+				
+				//this.deselect(true);
+				
+				game.reorderblend(blend, anim, direction);
+				
+				this.updateList();
+				this.selectAnimation(blend, parseInt(anim) + direction);
+			}
+		}
+		
+		this.updateList = function()
+		{
+			var blends = game.blendeditor.blends;
+			
+			this.listMgr.clearRows(false);
+			
+			cprint("Select row is " + this.listMgr.selected);
+			
+			for(var b = 0; b < blends.length; b++)
+			{
+				var blendID 	= "blend." + b;
+				var filename	= blends[b].filename + ((blends[b].modified) ? " *": "");
+				var brb 		= new BlendRowBuilder(this.view, blendID, filename);
+				
+				this.listMgr.addRow(blendID, brb.build());
+				
+				for(var a = 0; a < blends[b].animations.length; a++)
+				{
+					var animID 	= "anim." + b + "." + a;
+					var arb 	= new AnimRowBuilder(this.view, animID, blends[b].animations[a].filename);
+					
+					this.listMgr.addRow(animID, arb.build());
+				}
+			}
+		}
+		
+		this.getBlend = function()
+		{
+			var selected = this.listMgr.selectedID();
+			
+			if(selected != null)
+			{
+				var id = selected.split(".");
+				return id[1];
+			}
+			
+			return -1;
+		}
+		
+		this.getAnim = function()
+		{
+			if(this.animSelected())
+			{
+				var selected = this.listMgr.selectedID();
+				
+				if(selected != null)
+				{
+					var id = selected.split(".");
+					return id[2];
+				}
+			}
+			
+			return (this.animations.length > 0) ? 0: -1;
+		}
+		
+		this.getType = function()
+		{
+			var selected = this.listMgr.selectedID();
+			
+			if(selected != null)
+			{
+				var id = selected.split(".");
+				return id[0];
+			}
+			
+			return "null";
+		}
+		
+		this.initGroups = function()
+		{
+			var groups = this.skeleton.findGroups();
+			
+			//cprint("Found " + groups.length + " groups!\n");
+			
+			for(var i = 0; i < groups.length; i++)
+			{
+				var groupBone	= groups[i];
+				var groupName 	= groupBone.group;
+				var groupBones	= this.skeleton.findBonesByGroup(groupName);
+				var bgb 		= new BoneGroupBuilder(window, this.skeleton, groupName, "group-" + groupName, 120, 20);
+				
+				cprint("Building group " + groupName + "!\n");
+				
+				for(var b = 0; b < groupBones.length; b++)
+				{
+					var bone = groupBones[b];
+					
+					//cprint("Adding bone weight builder for " + bone.name + "!\n");
+					
+					bgb.addBuilder(new BoneWeightBuilder(bgb, bone));
+				}
+				
+				var xml = bgb.build();
+				
+				//cprint("Adding group views: " + xml + "\n");
+				
+				var groupView = window.addview(xml);
+				
+				if(groupView.mgr == null)
+					groupView.mgr = new BoneGroupView(groupView);
+				
+				// link up our bones with our sliders
+				for(var b = 0; b < groupBones.length; b++)
+				{
+					var bone 		= groupBones[b];
+					var boneView	= groupView.findview("bone" + bone.id);
+					
+					bone.view = boneView.findview("weight");
+					
+					if(bone.view.mgr == null)
+						bone.view.mgr = new BoneWeightSlider(this, bone);
+				}
+				
+				groupView.mgr.restore();
+			}
+		}
+		
+		this.hideGroups = function()
+		{
+			this.setGroups(false);
+			
+			var blends = game.blendeditor.blends;
+			
+			for(var b = 0; b < blends.length; b++)
+				blends[b].active = false;
+			
+			game.updateblends();
+		}
+		
+		this.showGroups = function()
+		{
+			this.setGroups(true);
+			
+			var blends = game.blendeditor.blends;
+			
+			for(var b = 0; b < blends.length; b++)
+				blends[b].active = true;
+			
+			game.updateblends();
+			
+			this.initSliders();
+		}
+		
+		this.setGroups = function(on)
+		{
+			var groups = this.skeleton.findGroups();
+			
+			for(var i = 0; i < groups.length; i++)
+			{
+				var gv = window.findview("group-" + groups[i].group);
+				
+				if(gv != null && gv.visible != on)
+				{
+					gv.visible = on;
+					
+					if(gv.visible && gv.mgr)
+						gv.mgr.onShow();
+				}
+			}
+		}
+		
+		this.initSliders = function()
+		{
+			for(var b in this.skeleton.bones)
+			{
+				var bone = this.skeleton.bones[b];
+				if(bone) bone.getWeight();
+			}
+			
+			/*
+			var groups = this.skeleton.findGroups();
+			
+			for(var i = 0; i < groups.length; i++)
+			{
+				var gv = window.findview("group-" + groups[i].group);
+				
+				if(gv != null)
+				{
+					var slider = gv.findview("weight");
+					
+					if(slider && slider.mgr)
+					{
+						cprint("Setting header slider " + gv.id);
+						slider.mgr.getWeight();
+					}
+				}
+			}
+			*/
+		}
+		
+		this.setActiveSlider = function(s)
+		{
+			this.activeSlider = s;
+		}
+		
+		this.setWeight = function(index, weight)
+		{
+			if(this.weights != null && index >= 0 && index < this.weights.length)
+			{
+				this.weights[index].value = weight;
+				
+				if(this.relativeWeighting)
+				{
+					var anim = this.getAnim();
+					
+					for(var a = 0; a < this.animations.length; a++)
+					{
+						if(a == anim)
+							continue;
+						
+						cprint("Setting relative weights for animation: " + a);
+						
+						var animation = this.animations[a];
+						var weights = animation.weights;
+						
+						if(this.blend.type == 1 || (this.blend.type == 0 && anim > 0 && a != 0))
+							weights[index].value = weight;
+						else
+							weights[index].value = (1 - weight);
+					}
+				}
+			}
+			
+			if(this.boneScope > 0)
+			{
+				// do children too
+				var children = this.skeleton.findChildren(index);
+				
+				for(var i = 0; i < children.length; i++)
+				{
+					var child = children[i];
+					
+					if(this.boneScope == 2 || child.group == null)
+						child.view.mgr.setWeight(weight);
+				}
+			}
+		}
+		
+		this.getWeight = function(index)
+		{
+			if(this.weights != null && index >= 0 && index < this.weights.length)
+				return this.weights[index].value;
+			
+			return 0;
+		}
+		
+		this.setBoneScope = function(mode)
+		{
+			this.boneScope = mode;
+		}
+		
+		this.setRelativeWeighting = function(mode)
+		{
+			this.relativeWeighting = mode;
+		}
+		
+		//this.lastBlend				= -1;
+		this.update					= false;
+		this.modified				= false;
+		this.skeleton				= skel;
+		this.boneCount			= 0;
+		this.listMgr					= listMgr;
+		this.view 						= listMgr.list;
+		this.weightScope 		= 0; 
+		this.activeSlider			= null;
+		this.boneScope 			= 0; // true = bone, false = children
+		this.relativeWeighting 	= true; // true = relative, false = absolute
+		
+		return this;
+	}
+	
+	function BoneGroupView(view)
+	{
+		this.toggle = function(init)
+		{
+			var lastHeight 	= this.view.height;
+			var topY		= this.view.y + this.view.height;
+			
+			if(this.expanded)
+			{
+				// contract it
+				this.view.height = this.minHeight;
+				
+				if(init != true)
+					this.view.y = topY - this.view.height;
+				
+				// hide kids
+				for(var c = 1; c < this.children; c++)
+				{
+					var child = this.view.getchild(c);
+					
+					if(child != null)
+						child.visible = false;
+				}
+				
+				// show header
+				var child = this.view.getchild(0);
+				
+				if(child != null)
+				{
+					child.y = 0;
+					child.visible = true;
+					
+					//cprint("Header y = " + child.y);
+				}
+				
+				// show first slider
+				child = this.view.getchild(1);
+				
+				if(child != null)
+				{
+					child.y = 0;
+					child.visible = true;
+					
+					var label = child.findview("label");
+					if(label) label.visible = false;
+				}
+			}
+			else
+			{
+				// expand
+				this.view.height = this.maxHeight;
+				this.view.y = topY - this.view.height;
+				
+				// hide kids
+				for(var c = 0; c < this.children; c++)
+				{
+					var child = this.view.getchild(c);
+					
+					if(child != null)
+					{
+						child.visible = true;
+						child.y = this.view.height - (this.minHeight * c) - this.minHeight;
+						
+						if(c == 1)
+						{
+							var label = child.findview("label");
+							if(label) label.visible = true;
+						}
+					}
+				}
+			}
+			
+			this.expanded = !this.expanded;
+			
+			this.save();
+		}
+		
+		this.save = function()
+		{
+			game.savesettings(this.view, 2);
+			game.setpref("view." + this.view.id + ".expanded", 0, this.expanded);
+		}
+		
+		this.restore = function()
+		{
+			game.restoresettings(this.view, 2);
+			
+			if(!game.getpref("view." + this.view.id + ".expanded", 0, true))
+				this.toggle(true);
+		}
+		
+		this.onShow = function()
+		{
+			if(!this.expanded)
+			{
+				this.toggle(); // expand first
+				this.toggle(); // contract again
+			}
+		}
+		
+		this.expanded 	= true;
+		this.view 		= view;
+		this.maxHeight	= view.height;
+		this.minHeight 	= 0;
+		this.children 	= 0;
+		
+		// supports up to 128 child views
+		for(var c = 0; c < 128; c++)
+		{
+			var child = view.getchild(c);
+			if(child == null) break;
+			
+			if(c == 0)
+				this.minHeight 	= child.height;
+			
+			this.children++;
+		}
+		
+		return this;
+	}
+	
+	function BoneWeightSlider(bm, bone)
+	{
+		this.setBlendManager = function(bm)
+		{
+			this.blendMgr = bm;
+			
+			if(this.blendMgr == null)
+				cprint("Tried to set blend manager for bone weight slider but failed!");
+		}
+		
+		this.onClick = function()
+		{
+			cprint("Updating bone weights for " + this.id + " to " + this.view.value);
+			
+			if(this.blendMgr == null)
+				cprint("Bone weight slider blend manager is null!");
+			
+			this.setWeight();
+			this.blendMgr.setActiveSlider(null);
+		}
+		
+		this.onMouseDown = function()
+		{
+			if(this.blendMgr == null)
+				cprint("Bone weight slider blend manager is null!");
+			
+			this.blendMgr.setActiveSlider(this);
+		}
+		
+		this.getWeight = function()
+		{
+			if(this.id == null || this.id < 0)
+				return;
+			
+			if(this.blendMgr == null)
+				cprint("Bone weight slider blend manager is null!");
+			
+			//cprint("Setting slider " + this.view.id + " weight!");
+			
+			var weight = this.blendMgr.getWeight(this.id);
+			
+			this.view.value = weight;
+			
+			return weight;
+		}
+		
+		this.setWeight = function(weight)
+		{
+			if(this.id == null || this.id < 0)
+				return;
+			
+			if(this.blendMgr == null)
+			{
+				cprint("Bone weight slider blend manager is null!");
+				cprint("Bone weight slider id is " + this.id + "!");
+				cprint("Bone weight slider view is " + this.view.id + "!");
+				cprint("Bone weight slider parent is " + this.view.parent.id + "!");
+			}
+			
+			if(weight != null)
+				this.view.value = weight;
+			else if(weight == null)
+				weight = this.view.value;
+			
+			this.blendMgr.setWeight(this.id, weight);
+		}
+		
+		this.blendMgr 	= bm;
+		this.bone		= bone;
+		this.view 		= bone.view;
+		this.id 		= bone.id;
+		this.header		= (this.view.parent.id == "boneheader") ? true : false ;
+		
+		return this;
+	}
+	
+	function BoneWeightBuilder(bgb, bone)
+	{
+		var self = new ViewBuilder(bgb, "bone" + bone.id, 0, 0, bgb.nwidth, bgb.nheight);
+		
+		self.bone = bone;
+		
+		self.buildBoneWeight = function()
+		{
+			var tb = new TextBuilder(this, "label", "caption", this.bone.name, 0, 0, this.nwidth/2, this.nheight);
+			var sb = new SliderBuilder(this, "weight", this.nwidth/2, 0, (this.nwidth/2) - 5, this.nheight);
+			
+			tb.addStyle("font-size", "8");
+			tb.addAttribute("acceptmouseclick", "false");
+			
+			sb.addStyle("thumb-width", "7");
+			sb.addStyle("thumb-height", "12");
+			//sb.addAttribute("onshow", "if(!this.mgr) this.mgr = new BoneWeightSlider(this, " + bone.id + ")");
+			sb.addAttribute("onclick", "if(this.mgr) this.mgr.onClick()");
+			sb.addAttribute("onmousedown", "if(this.mgr) this.mgr.onMouseDown()");
+			
+			this.addBuilder(tb);
+			this.addBuilder(sb);
+			
+			return this.buildView();
+		}
+		
+		self.addAttribute("acceptmouseclick", "false");
+		self.build = self.buildBoneWeight;
+		
+		return self;
+	}
+	
+	function BoneGroupBuilder(pview, skel, title, id, w, h)
+	{
+		var self 			= new ViewBuilder(pview, id, pview.nwidth/2, pview.nheight/2, w, h);
+		self.title 			= title;
+		
+		self.buildBoneGroup = function()
+		{
+			// save it
+			var height = this.nheight;
+			
+			// reset it based on the number of children
+			this.nheight = this.builders.length * this.nheight;
+			this.addAttribute("height", this.nheight);
+			
+			//cprint("Using " + this.builders.length + " builders count to adjust height to " + this.nheight + "!");
+			
+			for(var b = 0; b < this.builders.length; b++)
+			{
+				this.builders[b].ny = this.nheight - (height * b) - height;
+				this.builders[b].addAttribute("y", this.builders[b].ny);
+			}
+			
+			return this.buildView();
+		}
+		
+		self.addStyle("background-color", "#000000");
+		self.addAttribute("moveondrag", "true");
+		self.addAttribute("ondrag", "if(this.mgr) this.mgr.save()");
+		self.addAttribute("onshow", "if(!this.mgr) this.mgr = new BoneGroupView(this)");
+		self.addAttribute("ondblclick", "if(this.mgr) this.mgr.toggle()");
+		
+		var header 	= new ViewBuilder(self, "boneheader", 0, 0, self.nwidth, self.nheight);
+		var label 	= new TextBuilder(header, "label", "caption", title.toUpperCase(), 0, 0, self.nwidth/2, self.nheight);
+		//var slider	= new SliderBuilder(header, "weight", self.nwidth/2, 0, (self.nwidth/2) - 5, self.nheight);
+			
+		label.addStyle("font-size", "10");
+		label.addAttribute("acceptmouseclick", "false");
+		
+		//cprint("Looking up root bone for " + title + "!");
+		//var groupRootBone 	= skel.findGroup(title);
+		//var groupRootID		= (groupRootBone != null) ? groupRootBone.id: -1;
+		//cprint("Creating header views!");
+		
+		//slider.addStyle("thumb-width", "5");
+		//slider.addStyle("thumb-height", "10");
+		//slider.addAttribute("onshow", "if(!this.mgr) this.mgr = new BoneWeightSlider(this, " + groupRootID + ")");
+		//slider.addAttribute("onclick", "if(this.mgr) this.mgr.onClick()");
+		//slider.addAttribute("onmousedown", "if(this.mgr) this.mgr.onMouseDown()");
+		
+		header.addStyle("background-color", "#FFFFFF22");
+		header.addAttribute("acceptmouseclick", "false");
+		header.addBuilder(label);
+		//header.addBuilder(slider);
+		
+		self.addBuilder(header);
+		
+		self.build = self.buildBoneGroup;
+		
+		return self;
+	}
+	
+	function BlendRowBuilder(lv, id, label)
+	{
+		var self = new ListRowBuilder(lv, id, -15, 20);
+		var label = new TextBuilder(self, "label", "caption", label.toUpperCase(), 0, 0, 0, 20);
+		
+		label.addStyle("color", "#e9e3d9ff");
+		label.addStyle("font-size", "-1");
+		
+		self.addBuilder(label);
+		
+		return self;
+	}
+	
+	function AnimRowBuilder(lv, id, label)
+	{
+		var self = new ListRowBuilder(lv, id, -15, 20);
+		var label = new TextBuilder(self, "label", "caption", label.toLowerCase(), 10, 0, 0, 20);
+		
+		label.addStyle("color", "#e9e3d9ff");
+		label.addStyle("font-size", "-2");
+		
+		self.addBuilder(label);
+		
+		return self;
+	}
+	
+	-->
+</script>
