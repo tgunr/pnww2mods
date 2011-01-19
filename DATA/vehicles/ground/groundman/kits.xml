@@ -204,6 +204,70 @@
 		
 		<kit name="uk-para-rfl">
 			<object name="uk_parahelm"/>
+			<object name="uk_canteen"/>
+			<object name="uk_etool"/>			
+			<object name="uk_gas_lf"/>
+			<object name="uk_brenp_lf"/>
+			<object name="uk_brenp_rt"/>
+			<object name="uk_ruck"/>
+		</kit>
+		
+		<kit name="uk-para-gren">
+			<object name="uk_parahelm"/>
+			<object name="uk_gas_lf"/>
+			<object name="uk_etool"/>
+			<object name="uk_pholster_rt"/>
+			<object name="uk_brenp_lf"/>
+			<object name="uk_brenp_rt"/>
+			<object name="uk_ruck"/>
+		</kit>
+		
+		<kit name="uk-para-smg">
+			<object name="uk_parahelm"/>
+			<object name="uk_canteen"/>
+			<object name="uk_brenp_lf"/>
+			<!-- Needs pholster_rt_web.  Need to get toto to do -->
+			<object name="uk_pholster_rt"/>
+			<object name="uk_gas_lf"/>
+			
+		</kit>
+		
+		<kit name="uk-para-eng">
+			<object name="uk_parahelm"/>
+			<object name="uk_canteen"/>
+			<object name="uk_etool"/>
+			<object name="uk_brenp_lf"/>
+			<object name="uk_brenp_rt"/>
+			<object name="uk_ruck"/>
+		</kit>
+		
+		<kit name="uk-para-lmg">
+			<object name="uk_parahelm"/>
+			<object name="uk_brenp_lf"/>
+			<!-- Needs pholster_rt_web.  Need to get toto to do -->
+			<object name="uk_pholster_rt"/>
+			<object name="uk_ruck"/>
+		</kit>
+		
+		<kit name="uk-para-snpr">
+			<object name="uk_parahelm"/>
+			<object name="uk_canteen"/>
+		</kit>
+		
+		<kit name="uk-para-atr">
+			<object name="uk_parahelm"/>
+			<object name="uk_canteen"/>
+			<object name="uk_etool"/>
+			<object name="uk_brenp_lf"/>
+			<!-- Needs pholster_rt_web.  Need to get toto to do -->
+			<object name="uk_pholster_rt"/>
+			<object name="uk_gas_lf"/>
+		</kit>
+		
+		<kit name="uk-para-mrtr">
+			<object name="uk_parahelm"/>
+			<object name="uk_etool"/>
+			<object name="uk_ruck"/>
 		</kit>
 		
 		<!-- FRENCH KITS -->
@@ -286,6 +350,79 @@
 
 		<kit name="fr-para-rfl">
 			<object name="fr_parahelm"/>
+			<object name="fr_ammobag_lf"/>
+			<object name="fr_canteen"/>
+			<object name="fr_gas_rt"/>
+			<object name="fr_ruck"/>
+			<object name="fr_lg_ammo_lf"/>
+			<object name="fr_lg_ammo_rt"/>
+			<object name="fr_sm_ammo_lf"/>
+			<object name="fr_sm_ammo_rt"/>
+	</kit>
+		
+		<kit name="fr-para-atr">
+			<!-- Needs pholster_rt_web.  Need to get toto to do -->
+			<!-- <object name="fr_pholster_rt_hip"/> -->
+			<object name="fr_parahelm"/>
+			<object name="fr_canteen"/>
+			<object name="fr_gas_rt"/>			
+			<object name="fr_ammobag_lf"/>
+			<object name="fr_lg_ammo_lf"/>
+			<object name="fr_sm_ammo_lf"/>
+		</kit>
+			
+		<kit name="fr-para-eng">
+			<object name="fr_parahelm"/>
+			<object name="fr_canteen"/>
+			<object name="fr_ruck"/>
+			<object name="fr_ammobag_lf"/>
+			<object name="fr_lg_ammo_lf"/>
+			<object name="fr_lg_ammo_rt"/>
+			<object name="fr_sm_ammo_lf"/>
+			<object name="fr_sm_ammo_rt"/>
+		</kit>
+		
+		<kit name="fr-para-lmg">
+			<!-- Needs pholster_rt_web.  Need to get toto to do -->
+			<!-- <object name="fr_pholster_rt_hip"/> -->
+			<object name="fr_parahelm"/>
+			<object name="fr_ruck"/>
+			<object name="fr_ammobag_lf"/>
+			<object name="fr_lg_ammo_lf"/>
+			<object name="fr_sm_ammo_lf"/>
+		</kit>
+		
+		<kit name="fr-para-smg">
+			<object name="fr_parahelm"/>
+			<object name="fr_canteen"/>
+			<object name="fr_gas_rt"/>
+			<!-- Needs pholster_rt_web.  Need to get toto to do -->
+			<!-- <object name="fr_pholster_rt_hip"/> -->
+		</kit>
+		
+		<kit name="fr-para-gren">			
+			<object name="fr_lg_ammo_lf"/>
+			<!-- <object name="fr_pholster_rt_hip"/> -->
+			<object name="fr_parahelm"/>
+			<object name="fr_gas_rt"/>
+			<object name="fr_ruck"/>
+		</kit>
+		
+		<kit name="fr-para-snpr">
+			<object name="fr_lg_ammo_lf"/>
+			<object name="fr_lg_ammo_rt"/>
+			<object name="fr_parahelm"/>
+			<object name="fr_canteen"/>
+		</kit>
+		
+		<kit name="fr-para-mrtr">
+			<object name="fr_parahelm"/>
+			<object name="fr_ruck"/>
+			<object name="fr_ammobag_lf"/>
+			<object name="fr_lg_ammo_lf"/>
+			<object name="fr_lg_ammo_rt"/>
+			<object name="fr_sm_ammo_lf"/>
+			<object name="fr_sm_ammo_rt"/>
 		</kit>
 		
 		<!-- GERMAN KITS -->
