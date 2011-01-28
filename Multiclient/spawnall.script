@@ -1,25 +1,25 @@
 #Spawn british at Brussels AF
-login 0-2 1 1
+login 0-99 1 1
 pos 213153.54 3053243.76 45
-spawn 0-2 ukrifle
-formation 0-2 circle 15
+spawn 0-99 ukrifle
+formation 0-99 circle 15
 
 #Spawn germans at Bertrix AF
-#login 300-599 4 1
-#pos 252377.81 2991643.36 430
-#spawn 300-599 derifle
-#formation 300-599 circle 15
+login 100-199 4 1
+pos 252377.81 991643.36 430
+spawn 100-199 derifle
+formation 100-199 circle 15
 
 #Spawn french at Lille AF
-#login 600-899 3 1
-#pos 147536.98 3038863.24 35
-#spawn 600-899 frrifle
-#formation 600-899 circle 15
+login 200-299 3 1
+pos 147536.98 3038863.24 35
+spawn 200-299 frrifle
+formation 200-299 circle 15
 
 # Position Notes
 # Brussels AF 
 # pos 213153.54 3053243.76 45
 #Bertrix AF
-# pos 252377.81 2991643.36 430
+# pos 252377.81 991643.36 430
 # Lille AF
 #pos 147536.98 3038863.24 35
