@@ -3,6 +3,8 @@ pos 213156.54 3053243.76 45
 ticket multiclient.tkt
 
 # Chat Settings
+# wantchat can be set to true to stress test chat or false 
+# setting want chat to false will allow for more virtual connections per client
 # Each frame, each client will do a random check to see if it should send a chat message
 # range is from 0.00 to 1.00
 wantchat true
