@@ -61,7 +61,10 @@
 		<model name="de_rifle_ammo_rt" path="TPS\meshes\german_inf\kit_de_rifle_ammo_rt_lod1" attach="4"/>
 		<!-- SMG Ammo, Left -->
 		<model name="de_smg_ammo_lf" path="TPS\meshes\german_inf\kit_de_smg_ammo_lf_lod1" attach="4"/>
-
+		
+		<!-- german para helmet -->
+		<model name="de_parahelm_01" path="TPS\meshes\para_germ\kit_de_parahelm_lod1" attach="18" lod="0"/>
+		
 		<model name="uk_example" path="path\to\example\model_lod1" attach="9" lod="20">
 			<lod path="path\to\example\model_lod2" lod="100"/>
 			<lod path="path\to\example\model_lod3" lod="500"/>
@@ -96,6 +99,7 @@
 		<!-- <object name="fr_pholster_rt_hip" model="fr_pholster_rt_hip"/> -->
 		
 		<!-- GERMAN OBJECTS -->
+		<object name="de_parahelm" model="de_parahelm_01"/>
 		<object name="de_helmet" model="de_helmet_01"/>
 		<object name="de_bread" model="de_bread"/>
 		<object name="de_canteen_rt" model="de_canteen_rt"/>
@@ -209,7 +213,6 @@
 			<object name="uk_gas_lf"/>
 			<object name="uk_brenp_lf"/>
 			<object name="uk_brenp_rt"/>
-			<object name="uk_ruck"/>
 		</kit>
 		
 		<kit name="uk-para-gren">
@@ -219,7 +222,6 @@
 			<object name="uk_pholster_rt"/>
 			<object name="uk_brenp_lf"/>
 			<object name="uk_brenp_rt"/>
-			<object name="uk_ruck"/>
 		</kit>
 		
 		<kit name="uk-para-smg">
@@ -238,7 +240,6 @@
 			<object name="uk_etool"/>
 			<object name="uk_brenp_lf"/>
 			<object name="uk_brenp_rt"/>
-			<object name="uk_ruck"/>
 		</kit>
 		
 		<kit name="uk-para-lmg">
@@ -246,7 +247,6 @@
 			<object name="uk_brenp_lf"/>
 			<!-- Needs pholster_rt_web.  Need to get toto to do -->
 			<object name="uk_pholster_rt"/>
-			<object name="uk_ruck"/>
 		</kit>
 		
 		<kit name="uk-para-snpr">
@@ -267,7 +267,6 @@
 		<kit name="uk-para-mrtr">
 			<object name="uk_parahelm"/>
 			<object name="uk_etool"/>
-			<object name="uk_ruck"/>
 		</kit>
 		
 		<!-- FRENCH KITS -->
@@ -353,7 +352,6 @@
 			<object name="fr_ammobag_lf"/>
 			<object name="fr_canteen"/>
 			<object name="fr_gas_rt"/>
-			<object name="fr_ruck"/>
 			<object name="fr_lg_ammo_lf"/>
 			<object name="fr_lg_ammo_rt"/>
 			<object name="fr_sm_ammo_lf"/>
@@ -374,7 +372,6 @@
 		<kit name="fr-para-eng">
 			<object name="fr_parahelm"/>
 			<object name="fr_canteen"/>
-			<object name="fr_ruck"/>
 			<object name="fr_ammobag_lf"/>
 			<object name="fr_lg_ammo_lf"/>
 			<object name="fr_lg_ammo_rt"/>
@@ -386,7 +383,6 @@
 			<!-- Needs pholster_rt_web.  Need to get toto to do -->
 			<!-- <object name="fr_pholster_rt_hip"/> -->
 			<object name="fr_parahelm"/>
-			<object name="fr_ruck"/>
 			<object name="fr_ammobag_lf"/>
 			<object name="fr_lg_ammo_lf"/>
 			<object name="fr_sm_ammo_lf"/>
@@ -405,7 +401,6 @@
 			<!-- <object name="fr_pholster_rt_hip"/> -->
 			<object name="fr_parahelm"/>
 			<object name="fr_gas_rt"/>
-			<object name="fr_ruck"/>
 		</kit>
 		
 		<kit name="fr-para-snpr">
@@ -417,7 +412,6 @@
 		
 		<kit name="fr-para-mrtr">
 			<object name="fr_parahelm"/>
-			<object name="fr_ruck"/>
 			<object name="fr_ammobag_lf"/>
 			<object name="fr_lg_ammo_lf"/>
 			<object name="fr_lg_ammo_rt"/>
@@ -494,7 +488,76 @@
 			<object name="de_rifle_ammo_lf"/>
 			<object name="de_rifle_ammo_rt"/>
 		</kit>
-
+		
+		<kit name="de-para-rfl">
+			<object name="de_parahelm"/>
+			<object name="de_bread"/>
+			<object name="de_canteen_rt"/>
+			<object name="de_etool"/>
+			<object name="de_gas"/>
+			<object name="de_rifle_ammo_lf"/>
+			<object name="de_rifle_ammo_rt"/>
+		</kit>
+		
+		<kit name="de-para-smg">
+			<object name="de_parahelm"/>
+			<object name="de_bread"/>
+			<object name="de_canteen_rt"/>
+			<object name="de_etool"/>
+			<object name="de_gas"/>
+			<!-- Need SMG Ammo for right webbing -->
+			<object name="de_smg_ammo_lf"/>
+			<!-- <object name="de_pholster_rt_hip"/> -->			
+		</kit>
+			
+		<kit name="de-para-gren">
+			<object name="de_parahelm"/>
+			<object name="de_gas"/>
+			<object name="de_etool"/>
+			<!-- Needs pholster_rt_web.  Need to get toto to do -->
+			<!-- <object name="de_pholster_rt_hip"/> -->
+			<object name="de_rifle_ammo_lf"/>
+		</kit>
+		
+		<kit name="de-para-eng">
+			<object name="de_parahelm"/>
+			<object name="de_canteen_rt"/>
+			<object name="de_etool"/>
+			<object name="de_rifle_ammo_lf"/>
+			<object name="de_rifle_ammo_rt"/>
+		</kit>
+		
+		<kit name="de-para-atr">
+			<object name="de_parahelm"/>
+			<object name="de_canteen_rt"/>
+			<object name="de_gas"/>
+			<object name="de_etool"/>
+			<!-- Needs pholster_rt_web.  Need to get toto to do -->
+			<!-- <object name="de_pholster_rt_hip"/> -->
+		</kit>
+		
+		<kit name="de-para-lmg">
+			<object name="de_parahelm"/>
+			<!-- Needs pholster_rt_web.  Need to get toto to do -->
+			<!-- <object name="de_pholster_rt_hip"/> -->
+			<object name="de_bread"/>
+		</kit>
+		
+		<kit name="de-para-snpr">
+			<object name="de_parahelm"/>
+			<object name="de_canteen_rt"/>
+			<object name="de_rifle_ammo_lf"/>
+			<object name="de_rifle_ammo_rt"/>
+		</kit>
+		
+		<kit name="de-para-mrtr">
+			<object name="de_parahelm"/>
+			<object name="de_etool"/>
+			<object name="de_bread"/>
+			<object name="de_rifle_ammo_lf"/>
+			<object name="de_rifle_ammo_rt"/>
+		</kit>
+		
 	</kits>
 	
 	<!-- each infantry type can have any number of kits -->
