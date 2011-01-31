@@ -1,25 +1,45 @@
+#This example script has a couple of problems
+#The biggest issue is that the parser reads the pos file and overwrites it thus all spawns happen at Lille
+#To address this suggest using several individual files, one for each location, preferrign 0-200 players per location
+#I usually address this by commenting out certain sections each time I call the script in game
+
 #Spawn british at Brussels AF
-login 0-99 1 1
+login 0-199 1 1
 pos 213153.54 3053243.76 45
-spawn 0-99 ukrifle
-formation 0-99 circle 15
+spawn 0-199 ukrifle
 
 #Spawn germans at Bertrix AF
-login 100-199 4 1
-pos 252377.81 991643.36 430
-spawn 100-199 derifle
-formation 100-199 circle 15
+ login 300-499 4 1
+ pos 252377.81 991643.36 430
+ spawn 300-499 derifle
 
 #Spawn french at Lille AF
-login 200-299 3 1
-pos 147536.98 3038863.24 35
-spawn 200-299 frrifle
-formation 200-299 circle 15
+ login 600-799 3 1
+ pos 147536.98 3038863.24 35
+ spawn 600-799 frrifle
 
-# Position Notes
+# Spawn locations you can use for testing
+
+#UK
 # Brussels AF 
 # pos 213153.54 3053243.76 45
+# Antwerp AF
+# pos 212397 3072454 13
+# Knokke AF
+# pos 160451 3081177 14
+
+#DE
 #Bertrix AF
 # pos 252377.81 991643.36 430
+# Verviers AF
+# pos 280421 3034002 346
+# Wiltz AF
+# pos 284357 2998026 453
+
+#FR
 # Lille AF
-#pos 147536.98 3038863.24 35
+# pos 147536.98 3038863.24 35
+# Calais AF
+# pos 90050 3057244 6
+# Amiens AF
+# 113159 2994773 40
