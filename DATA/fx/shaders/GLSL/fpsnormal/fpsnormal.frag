@@ -52,9 +52,10 @@ void main()
 	ambientColor += gl_LightModel.ambient;
 	
 	ambientColor *= gl_FrontMaterial.ambient;
+    specularColor *= gl_FrontMaterial.specular;
 	specularColor.rgb *= spec;
-	
-	vec4 color = base *(diffuseColor + ambientColor + specularColor);
+
+	vec4 color = base * (diffuseColor + ambientColor + specularColor);
 		
 	gl_FragColor = fogThis(color);
 	gl_FragColor.w = base.a;
