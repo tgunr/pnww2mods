@@ -216,6 +216,8 @@
 			<object name="uk_brenp_rt"/>
 		</kit>
 		
+	<!-- This unit not in spawn lists
+		
 		<kit name="uk-para-gren">
 			<object name="uk_parahelm"/>
 			<object name="uk_gas_lf"/>
@@ -224,6 +226,7 @@
 			<object name="uk_brenp_lf"/>
 			<object name="uk_brenp_rt"/>
 		</kit>
+		-->
 		
 		<kit name="uk-para-smg">
 			<object name="uk_parahelm"/>
@@ -234,7 +237,7 @@
 			<object name="uk_gas_lf"/>
 			
 		</kit>
-		
+	<!-- This unit not in spawn lists
 		<kit name="uk-para-eng">
 			<object name="uk_parahelm"/>
 			<object name="uk_canteen"/>
@@ -242,7 +245,8 @@
 			<object name="uk_brenp_lf"/>
 			<object name="uk_brenp_rt"/>
 		</kit>
-		
+	-->
+	
 		<kit name="uk-para-lmg">
 			<object name="uk_parahelm"/>
 			<object name="uk_brenp_lf"/>
@@ -369,7 +373,7 @@
 			<object name="fr_lg_ammo_lf"/>
 			<object name="fr_sm_ammo_lf"/>
 		</kit>
-			
+	<!-- This unit not in spawn lists
 		<kit name="fr-para-eng">
 			<object name="fr_parahelm"/>
 			<object name="fr_canteen"/>
@@ -379,6 +383,7 @@
 			<object name="fr_sm_ammo_lf"/>
 			<object name="fr_sm_ammo_rt"/>
 		</kit>
+	-->
 		
 		<kit name="fr-para-lmg">
 			<!-- Needs pholster_rt_web.  Need to get toto to do -->
@@ -397,12 +402,16 @@
 			<!-- <object name="fr_pholster_rt_hip"/> -->
 		</kit>
 		
+	<!-- This unit not in spawn lists
 		<kit name="fr-para-gren">			
 			<object name="fr_lg_ammo_lf"/>
-			<!-- <object name="fr_pholster_rt_hip"/> -->
+			Doesn't exist yet: object name="fr_pholster_rt_hip"
 			<object name="fr_parahelm"/>
 			<object name="fr_gas_rt"/>
 		</kit>
+	
+	-->
+		
 		
 		<kit name="fr-para-snpr">
 			<object name="fr_lg_ammo_lf"/>
@@ -510,16 +519,19 @@
 			<object name="de_smg_ammo_lf"/>
 			<!-- <object name="de_pholster_rt_hip"/> -->			
 		</kit>
-			
+	
+	<!-- This unit not in spawn lists		
 		<kit name="de-para-gren">
 			<object name="de_parahelm"/>
 			<object name="de_gas"/>
 			<object name="de_etool"/>
-			<!-- Needs pholster_rt_web.  Need to get toto to do -->
-			<!-- <object name="de_pholster_rt_hip"/> -->
+			Needs pholster_rt_web.  Need to get toto to do
+				<object name="de_pholster_rt_hip"/>
 			<object name="de_rifle_ammo_lf"/>
 		</kit>
-		
+	-->	
+	
+	<!-- This unit not in spawn lists
 		<kit name="de-para-eng">
 			<object name="de_parahelm"/>
 			<object name="de_canteen_rt"/>
@@ -527,7 +539,7 @@
 			<object name="de_rifle_ammo_lf"/>
 			<object name="de_rifle_ammo_rt"/>
 		</kit>
-		
+	-->
 		<kit name="de-para-atr">
 			<object name="de_parahelm"/>
 			<object name="de_canteen_rt"/>
