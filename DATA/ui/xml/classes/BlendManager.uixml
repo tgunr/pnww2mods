@@ -830,7 +830,7 @@
 			var tb = new TextBuilder(this, "label", "caption", this.bone.name, 0, 0, this.nwidth/2, this.nheight);
 			var sb = new SliderBuilder(this, "weight", this.nwidth/2, 0, (this.nwidth/2) - 5, this.nheight);
 			
-			tb.addStyle("font-size", "8");
+			tb.addStyle("font-size", "6");
 			tb.addAttribute("acceptmouseclick", "false");
 			
 			sb.addStyle("thumb-width", "7");
@@ -877,6 +877,7 @@
 		}
 		
 		self.addStyle("background-color", "#000000");
+		self.addStyle("font-size", "-1");
 		self.addAttribute("moveondrag", "true");
 		self.addAttribute("ondrag", "if(this.mgr) this.mgr.save()");
 		self.addAttribute("onshow", "if(!this.mgr) this.mgr = new BoneGroupView(this)");

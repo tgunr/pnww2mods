@@ -142,7 +142,7 @@
 				<!-- caption label="first" x="10" height="20" rtop="45" rright="10"
 					style="color: #e9e3d9ff; font-size: -1;" acceptmouseclick="false"/ -->
 			</tab>
-			<tab label="ANIMATION" x="0" y="0" rright="0" rtop="0">
+			<tab label="ANIM" x="0" y="0" rright="0" rtop="0">
 				<caption label="POSITION:" x="20" height="15" rright="10" rtop="25" style="color: #BFE2CE; font-size: -1;"/>
 				<button id="animUp" width="50" height="25" rright="20" rtop="25" label="MOVE UP" onclick="blendMgr.moveAnimation(-1);"
 					onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
@@ -159,7 +159,7 @@
 						   font-size: -3;
 						   color: #FFFFFF;"/>
 			</tab>
-			<tab label="TRANSITION" x="0" y="0" rright="0" rtop="0">
+			<tab label="TRANS" x="0" y="0" rright="0" rtop="0">
 				<view id="animscale" class="animscale" x="5" y="5" rtop="20" rright="5" style="background-color: #FFFFFF"/>
 			</tab>
 		</tabview>
@@ -404,7 +404,8 @@
 			
 			blendMgr.onUpdate();
 			
-			setAnimTime(animTime.value);
+			if(animControl)
+				setAnimTime(animTime.value);
 			
 			animUp.enabled 		= blendMgr.canMoveAnimation(-1);
 			animDown.enabled 	= blendMgr.canMoveAnimation(1);

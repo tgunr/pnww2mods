@@ -63,17 +63,22 @@
 		this.buildView = function() 
 		{
 			// build xml
-			var xml = '<' + this.type + ' ' + this.getAttributes() + ' ' + this.getStyle() + '>';
+			var xml = '<' + this.type + ' ' + this.getAttributes() + ' ' + this.getStyle() + ">\n";
 			
 			if(this.builders.length > 0)
 			{
 				for(var b = 0; b < this.builders.length; b++)
-					xml += this.builders[b].build();
+					xml += this.builders[b].build() + "\n";
 			}
 			
-			xml += '</' + this.type + '>';
+			xml += '</' + this.type + ">\n";
 			
 			return xml;
+		}
+		
+		this.buildIncremental = function(pv)
+		{
+			
 		}
 		
 		// override this in subclasses
@@ -104,11 +109,15 @@
 				this.nwidth = this.par.nwidth;
 			else if(this.nwidth > 0 && this.nwidth < 1) // percentage width
 				this.nwidth = this.par.nwidth * this.nwidth;
+			else if(this.nwidth < 0) // from right
+				this.nwidth = this.par.nwidth + this.nwidth  - this.nx;
 
 			if(this.nheight == 0) // full height
 				this.nheight = this.par.nheight;
 			else if(this.nheight > 0 && this.nheight < 1) // percentage height
 				this.nheight = this.par.nheight * this.nheight;
+			else if(this.nheight < 0) // from top
+				this.nheight = this.par.nheight + this.nheight  - this.ny;
 			
 			if(this.nx < 0) // from the right
 			{
