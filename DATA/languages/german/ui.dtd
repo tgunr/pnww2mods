@@ -1319,7 +1319,7 @@
 <!ENTITY loc.host.277 "{1} ist bereits in einem Squad.">
 <!ENTITY loc.host.465 "/shutdown in <Zeit Intervall> <Nachricht>">
 <!ENTITY loc.host.41 "CRS-Mitarbeiter pr&#252;fen die Benutzung der Spielmanager-Kommandos t&#228;glich. Unangemessene Verwendung wird zum Verlust der Privilegien oder zum Ausschluss f&#252;hren.">
-<!ENTITY loc.host.517 "Bitte SYSTEM nicht ignorieren. Sie ist sehr launisch und hat .">
+<!ENTITY loc.host.517 "Bitte SYSTEM nicht ignorieren, das würde ihr nicht gefallen.">
 <!ENTITY loc.host.229 "Willkommen auf dem Hilfe-Kanal. Nutze diesen Kanal um Hilfe, Unterst&#252;tzung und Ratschl&#228;ge von anderen Spielern zu bekommen. Bei technischen Schwierigkeiten besuche das Community Support Forum unter http://discussions.playnet.com/">
 <!ENTITY loc.host.6 "{1} ist gerade A.F.K (Away From Keyboard)">
 <!ENTITY loc.host.359 "{1} wurde f&#252;r Dein Squad von {2} rekrutiert!">
@@ -2396,6 +2396,7 @@
 <!ENTITY widgets.prefs.disabled "aus">
 <!ENTITY widgets.map.waypoints.contact.unknown "FEINDPRÄSENZ">
 <!ENTITY widgets.prefs.groups.visual.clutter.radius "RADIUS">
+<!ENTITY widgets.prefs.groups.sound.volume.tip "Control the level of volume for sound effects and music.">
 <!ENTITY widgets.map.context.activate "Aktivieren">
 <!ENTITY widgets.prefs.groups.infantry "INFANTERIE">
 <!ENTITY widgets.calibration.device.reread.tip "Klicke auf diesen Button, um Deine Joysticks neu ins Spiel einzulesen.">
@@ -3032,7 +3033,7 @@
 <!ENTITY tutorials.tab "TRAINING">
 <!ENTITY loading.sounds.init "Initialisiere Sounds">
 <!ENTITY loading.network.chat "Stelle Verbindung zum Chat her">
-<!ENTITY loading.copyright "copyright © 1999 - 2010 Playnet, Inc.">
+<!ENTITY loading.copyright "copyright © 1999 - 2011 Playnet, Inc.">
 <!ENTITY loading.sounds "Lade Sounds">
 <!ENTITY loading.network.loggingin "Einloggen">
 <!ENTITY loading.network.auth "Authentifizieren">
@@ -3527,6 +3528,7 @@
 <!ENTITY common.time.second "{1} Sekunde">
 <!ENTITY common.squads.ranks.rank4 "XO">
 <!ENTITY common.squads.members "SQUAD MITGLIEDER">
+<!ENTITY common.version "Version">
 <!ENTITY common.squads.recruitment.info "kämpft für {1} | spricht {2} | Rekrutierer ist {3}">
 <!ENTITY common.mission.3.short "Verteidigung">
 <!ENTITY common.squads.create.msg.sent "Anfrage zur Erstellung des Squads gesendet! Falls der Host Deine Anfrage akzeptiert, wird das Squad erstellt, sobald die Erstmitglieder die Mitgliedschaft akzeptieren.">
@@ -3607,32 +3609,32 @@
 <!ENTITY chat.afk "AFK">
 <!ENTITY chat.channel.help "Hilfe">
 <!ENTITY chat.f1.tip "Klicke um den Kanal #1 einzustellen. Benutze die F1 Taste um auf diesem Kanal zu chatten.">
-<!ENTITY hud.secondary.tip "Dein sekundärer Munitionsvorrat in der Form Munition : Magazine">
+<!ENTITY hud.secondary.tip "Dein sekundärer Munitionsvorrat (Munition : Magazine)">
 <!ENTITY hud.gameinfo.icon "Icon Modus">
 <!ENTITY hud.primary "PRIMÄR">
-<!ENTITY hud.alerts.18.acquired "Unsere Kräfte haben {1} erobert">
+<!ENTITY hud.alerts.18.acquired "Wir haben haben {1} eingenommen">
 <!ENTITY hud.alerts.17 "Du hast von {1} Nachschub erhalten">
-<!ENTITY hud.waypoints.origin "ORIGIN">
+<!ENTITY hud.waypoints.origin "URSPRUNG">
 <!ENTITY hud.readout.vehicles "Vehikel">
-<!ENTITY hud.hqintel.weight.0 "Light">
+<!ENTITY hud.hqintel.weight.0 "Ein kleiner Trupp">
 <!ENTITY hud.alerts.24.sea "Feindliche Schiffe bei {1} gesichtet">
 <!ENTITY hud.alerts.11.nocapture "Only Premium subscribers can capture! Upgrade your subscription today!">
 <!ENTITY hud.readout.aoa "AOA">
-<!ENTITY hud.alerts.4 "Du wurdest von {1} mit Nachschub versorgt">
-<!ENTITY hud.alerts.30.minalt "You are below the minimum altitude for bailing!">
+<!ENTITY hud.alerts.4 "{1} hat Dir mehr Muniton gegeben, als Du tragen kannst">
+<!ENTITY hud.alerts.30.minalt "Du bist zu tief zum Abspringen!">
 <!ENTITY hud.readout.invisible "Unsichtbar">
 <!ENTITY hud.alerts.12.lost "Wir haben {1} an den Feind verloren">
-<!ENTITY hud.binfo.state.axisown "Axis Owned">
+<!ENTITY hud.binfo.state.axisown "Achse">
 <!ENTITY hud.readout.gear.engine "Motor">
 <!ENTITY hud.alerts.19.captured "Feindliche Streitkräfte haben {1} erobert">
 <!ENTITY hud.cliptype.4 "Trommel">
 <!ENTITY hud.gameinfo.fov "Blickfeld">
-<!ENTITY hud.hqintel.dir.5 "southwest">
+<!ENTITY hud.hqintel.dir.5 "südwestlich">
 <!ENTITY hud.readout.riding.stowed "Verstaut in Position">
 <!ENTITY hud.readout.slip "Slip">
-<!ENTITY hud.alerts.5 "Du hast bald keinen Munitonssvorrat mehr">
+<!ENTITY hud.alerts.5 "Du wirst Deine überzählige Munition verlieren">
 <!ENTITY hud.alerts.18.liberated "Eigene Streikräfte haben {1} befreit">
-<!ENTITY hud.hqintel.dir.2 "east">
+<!ENTITY hud.hqintel.dir.2 "östlich">
 <!ENTITY hud.readout.visible "Sichtbar">
 <!ENTITY hud.gameinfo.fps "FPS">
 <!ENTITY hud.readout.gear "Gang">
@@ -3647,83 +3649,83 @@
 <!ENTITY hud.readout.infantry.lifeboat "Rettungsboot">
 <!ENTITY hud.readout.vehicles.stowed "verstaut">
 <!ENTITY hud.binfo.state.nofire "No Fire Zone!">
-<!ENTITY hud.waypoints.leader "LEADER">
+<!ENTITY hud.waypoints.leader "ANFÜHRER">
 <!ENTITY hud.cliptype.3.plural "Ladungen">
 <!ENTITY hud.cliptype.0 "Streifen">
 <!ENTITY hud.readout.gear.reverse "R">
 <!ENTITY hud.health.blood.tip "Dein Blutlevel ist auf {1}.">
 <!ENTITY hud.gameinfo.time "ZEIT">
-<!ENTITY hud.binfo.state.capturein.m.s "Capturable in {1}m {2}s">
+<!ENTITY hud.binfo.state.capturein.m.s "Einnehmbar in {1}m {2}s">
 <!ENTITY hud.readout.torp.speed "Geschwindigkeit">
 <!ENTITY hud.readout.torp.depth "Lauftiefe">
 <!ENTITY hud.primary.weapon "WAFFE">
 <!ENTITY hud.cliptype.4.plural "Trommeln">
-<!ENTITY hud.primary.tip "Dein primärer Munitionsvorrat in der Form Munition : Magazine">
-<!ENTITY hud.alerts.30.deadpilot "Your pilot is dead!">
+<!ENTITY hud.primary.tip "Dein primärer Munitionsvorrat (Munition : Magazine)">
+<!ENTITY hud.alerts.30.deadpilot "Dein Pilot ist tot!">
 <!ENTITY hud.readout.gforce "G">
 <!ENTITY hud.alerts.24.armor "Feindpanzer bei {1} gesichtet">
 <!ENTITY hud.health.state "Dieses Icon zeigt Deinen aktuellen Status an">
-<!ENTITY hud.hqintel.weight.1 "Moderate">
-<!ENTITY hud.hqintel.dir.3 "southeast">
+<!ENTITY hud.hqintel.weight.1 "Ein Trupp">
+<!ENTITY hud.hqintel.dir.3 "südöstlich">
 <!ENTITY hud.health.state.pilot "BESATZUNG">
 <!ENTITY hud.readout.riding.towed "Im Schlepp">
 <!ENTITY hud.alerts.19.deliberated "Feindliche Streitkräfte haben {1} zurückerobert">
 <!ENTITY hud.readout.gear.kaput "Kaputt">
 <!ENTITY hud.cliptype.2 "Gurt">
 <!ENTITY hud.alerts.14 "eingehende Kontaktmeldung">
-<!ENTITY hud.hqintel.dir.7 "northwest">
+<!ENTITY hud.hqintel.dir.7 "nordwestlich">
 <!ENTITY hud.gameinfo.icon.0 "Normal">
 <!ENTITY hud.readout.torp.control.invalid "Keine gültige Feuerlösung!">
-<!ENTITY hud.waypoints.target "TARGET">
+<!ENTITY hud.waypoints.target "ZIEL">
 <!ENTITY hud.readout.torp.control "Feuerlösung Feuerwinkel">
 <!ENTITY hud.health.atp.tip "Dein ATP ist auf {1}. ATP wird zum Rennen, Kriechen oder Ducken gebraucht">
-<!ENTITY hud.waypoints.fru "FRU">
-<!ENTITY hud.bailout.confirm "Do you want to bailout?">
+<!ENTITY hud.waypoints.fru "NACHSCHUB">
+<!ENTITY hud.bailout.confirm "Willst Du mit dem Fallschirm abspringen?">
 <!ENTITY hud.minimap.latlon "Deine Position in Längen- und Breitengraden">
 <!ENTITY hud.readout.infantry.seat "Sitz">
 <!ENTITY hud.minimap "Karte der näheren Umgebung">
 <!ENTITY hud.gameinfo.icon.2 "Keine Icons">
 <!ENTITY hud.minimap.out "Verkleinern">
-<!ENTITY hud.binfo.state.theycapture "Enemy Capturing!">
+<!ENTITY hud.binfo.state.theycapture "Feind nimmt ein!">
 <!ENTITY hud.readout.infantry "Infanterie">
-<!ENTITY hud.hqintel.far "Intel: &#37;ls enemy infantry presence &#37;ls of your position!">
-<!ENTITY hud.readout.agl "HÖHE ÜBER GRUND">
-<!ENTITY hud.alerts.28 "Enemy Spawn Point! Firing disabled- please leave the area!">
+<!ENTITY hud.hqintel.far "Info: &#37;ls feindlicher Infanterie &#37;ls Deiner Position gesichtet!">
+<!ENTITY hud.readout.agl "HÖHE">
+<!ENTITY hud.alerts.28 "Feindlicher Spawnpunkt, Deine Waffe funktioniert hier nicht!">
 <!ENTITY hud.alerts.18.captured "Feindliche Streitkräfte haben {1} erobert">
 <!ENTITY hud.cliptype.2.plural "Gurte">
 <!ENTITY hud.readout.riding.seated "Sitz Nummer">
 <!ENTITY hud.health.atp "Dieses Icon zeigt Deinen aktuellen Status an">
 <!ENTITY hud.minimap.nearest.none "Keine">
 <!ENTITY hud.alerts.19.liberated "Eigene Streitkräfte haben {1} befreit">
-<!ENTITY hud.binfo.state.cancapture "Can Be Captured">
-<!ENTITY hud.hqintel.dir.0 "north">
+<!ENTITY hud.binfo.state.cancapture "Einnehmbar">
+<!ENTITY hud.hqintel.dir.0 "nördlich">
 <!ENTITY hud.health.state.crew "BESATZUNG">
 <!ENTITY hud.alerts.21.withdrawn "Der Angriffsbefehl für {1} wurde aufgehoben">
-<!ENTITY hud.hqintel.dir.6 "west">
+<!ENTITY hud.hqintel.dir.6 "westlich">
 <!ENTITY hud.readout.torp.control.angle "VORHALTEWINKEL">
 <!ENTITY hud.minimap.in "Vergrößern">
-<!ENTITY hud.binfo.state.alliesown "Allied Owned">
+<!ENTITY hud.binfo.state.alliesown "Alliiert">
 <!ENTITY hud.alerts.16 "{1} führt jetzt die Mission an">
 <!ENTITY hud.alerts.13.fallback "Deine Brigade ist auf dem Rückzug">
 <!ENTITY hud.readout.riding.lifeboat "Im Rettungsboot">
 <!ENTITY hud.readout.gear.neutral "N">
 <!ENTITY hud.readout.torp.range "Entfernung">
-<!ENTITY hud.binfo.state.wedefend "Friendlies Defending">
+<!ENTITY hud.binfo.state.wedefend "wird von uns verteidigt">
 <!ENTITY hud.cliptype.3 "Ladung">
 <!ENTITY hud.alerts.25 "{1} braucht Munition">
-<!ENTITY hud.binfo.state.cantcapture "Not Capturable">
-<!ENTITY hud.binfo.state.notcontested "City is not Contested!">
+<!ENTITY hud.binfo.state.cantcapture "Nicht einnehmbar">
+<!ENTITY hud.binfo.state.notcontested "Stadt ist nicht contested!">
 <!ENTITY hud.gameinfo.icon.1 "Vehikeltyp">
-<!ENTITY hud.binfo.state.contested "Contested Facility!">
+<!ENTITY hud.binfo.state.contested "Teilweise Erobert!">
 <!ENTITY hud.alerts.12.gained "Wir haben {1} eingenommen">
-<!ENTITY hud.binfo.state.noao "No Attack Objective!">
-<!ENTITY hud.alerts.6 "Du hast keinen Munitionsvorrat mehr">
+<!ENTITY hud.binfo.state.noao "Kein Angriffsbefehl!">
+<!ENTITY hud.alerts.6 "Du hast Deine überzählige Munition verloren">
 <!ENTITY hud.cliptype.1 "Magazin">
 <!ENTITY hud.readout.vehicles.towed "geschleppt">
-<!ENTITY hud.binfo.state.capturein.s "Capturable in {1}s">
+<!ENTITY hud.binfo.state.capturein.s "Einnehmbar in {1}s">
 <!ENTITY hud.alerts.19.acquired "Eigene Streitkräfte haben {1} erobert">
-<!ENTITY hud.alerts.27 "Es verbleiben weniger als {1} Minuten von Deinem stündlichen Abo übrig!">
-<!ENTITY hud.hqintel.dir.4 "south">
+<!ENTITY hud.alerts.27 "Es verbleiben weniger als {1} Minuten von Deinem stündlichen Abo!">
+<!ENTITY hud.hqintel.dir.4 "südlich">
 <!ENTITY hud.readout.torp.control.time "Laufzeit">
 <!ENTITY hud.secondary "SEKUNDÄR">
 <!ENTITY hud.health.state.infantry "INFANTERIE">
@@ -3732,14 +3734,14 @@
 <!ENTITY hud.alerts.18.deliberated "Feindliche Streikräfte haben {1} zurückerobert">
 <!ENTITY hud.cliptype.0.plural "Streifen">
 <!ENTITY hud.readout.infantry.ship "An Bord">
-<!ENTITY hud.hqintel.close "Intel: &#37;ls enemy infantry presence near your position!">
+<!ENTITY hud.hqintel.close "Info: &#37;ls feindlicher Infanterie wurde in Deiner Nähe gesichtet!">
 <!ENTITY hud.readout.gear.engines "Motoren">
 <!ENTITY hud.alerts.15 "Es sind neue Befehle eingetroffen">
 <!ENTITY hud.alerts.24.ground "Feindliche Truppen bei {1} gesichtet">
-<!ENTITY hud.binfo.state.wecapture "Friendlies Capturing">
-<!ENTITY hud.death "&#37;ls died here">
-<!ENTITY hud.hqintel.weight.2 "Heavy">
-<!ENTITY hud.hqintel.dir.1 "northeast">
+<!ENTITY hud.binfo.state.wecapture "wird von uns erobert">
+<!ENTITY hud.death "&#37;ls ist hier gestorben">
+<!ENTITY hud.hqintel.weight.2 "Eine große Anzahl">
+<!ENTITY hud.hqintel.dir.1 "nordöstlich">
 <!ENTITY hud.health.blood "Dieses Icon zeigt Deinen aktuellen Status an">
 <!ENTITY hud.minimap.nearest "nächstgelegene Stadt">
 <!ENTITY hud.readout.vehicles.onhoist "am Kranhaken">
@@ -4314,10 +4316,10 @@
 <!ENTITY connect.lost.game "Verbindung zum Spiel verloren">
 <!ENTITY connect.find.timeout.data "Zeitüberschreitung bei Übermittlung Verbindungsdaten">
 <!ENTITY connect.login.chat.lost "Verbindung zum Spiel während des Verbindungsaufbaus zum Chat verloren">
-<!ENTITY connect.ping.lossbig "*PACKET LOSS*">
+<!ENTITY connect.ping.lossbig "*PAKETVERLUST*">
 <!ENTITY connect.ping.stats.brief "Ping: &#37;u(&#37;u)ms">
 <!ENTITY connect.find.nodata "Fehler bei Übermittlung der Verbindungsdaten">
-<!ENTITY connect.ping.loss "Loss">
+<!ENTITY connect.ping.loss "Verlust">
 <!ENTITY connect.fail "Verbindung fehlgeschlagen">
 <!ENTITY connect.login.auth.timeout "Zeitüberschreitung bei Authentifizierng">
 <!ENTITY connect.login.chat.error "Konnte nicht zum Chathost verbinden">
@@ -4333,13 +4335,13 @@
 <!ENTITY connect.lost.chat "Verbindung zum Chathost verloren">
 <!ENTITY connect.login.badlogin "Unerwarteter Loginfehler">
 <!ENTITY connect.find.timeout.network "Zeitüberschreitung beim Verbindungsaufbau">
-<!ENTITY connect.netcode2.reverting "[netcode2 connection failed, please check your firewall - reverting to standard network usage]">
+<!ENTITY connect.netcode2.reverting "[Netcode2-Verbindung verloren, bitte überprüfe Deine Firewall - verwende Standard Netzwerkverbindung]">
 <!ENTITY connect.ping.na "Ping: N/A">
-<!ENTITY connect.netcode2.firewall "[netcode2 connection failed, please check your firewall - reverting to standard network usage]">
+<!ENTITY connect.netcode2.firewall "[Netcode2 Verbindungsfehler, bitte überprüfe Deine Firewall - verwende Standard Netzwerkverbindung]">
 <!ENTITY connect.login.error "Fehler beim Verbinden zum Host">
 <!ENTITY connect.reconnect.failed "Hostverbindung verloren, Wiederaufbau fehlgeschlagen">
 <!ENTITY connect.refused "Verbindungsaufbau vom Host abgelehnt">
-<!ENTITY connect.netcode2.disabled "[netcode2 disabled on server]">
+<!ENTITY connect.netcode2.disabled "[Netcode2 auf dem Server abgeschaltet]">
 <!ENTITY connect.find.nobest "Konnte nicht zum Spielenetzwerk verbinden">
 <!ENTITY connect.login.nochat "Keine Verbindung zum Chat">
 <!ENTITY waypoints.stop "Halt">
@@ -4369,31 +4371,31 @@
 <!ENTITY waypoints.origin.tip "Missionsursprung: Hier wurde die Mission gestartet. Missionsdetails findest Du am Wegpunkt &#34;Ziel&#34;">
 <!ENTITY waypoints.target "Ziel">
 <!ENTITY waypoints.turn2 "2. Kurve">
-<!ENTITY ppos.badlocation "Dieser Objekttyp kann hier nicht aufgebaut werden.">
+<!ENTITY ppos.badlocation "Dieser Objekttyp kann hier nicht aufgebaut werden">
 <!ENTITY ppos.fru.built "Another player has built an FRU for this mission!">
 <!ENTITY ppos.badtrees "Fritz, da steht ein Baum im Weg!">
-<!ENTITY ppos.badavoidance "Du bist zu nah an einem anderen Geländeobjekt.">
+<!ENTITY ppos.badavoidance "Du bist zu nah an einem anderen Geländeobjekt">
 <!ENTITY ppos.ob3 "Nachschubstellung">
-<!ENTITY ppos.badplayer "Du musst Dich in der Spielwelt befinden, um Objekte aufbauen zu können.">
+<!ENTITY ppos.badplayer "Du musst Dich in der Spielwelt befinden, um Objekte aufbauen zu können">
 <!ENTITY ppos.ob1 "Schützenmulde">
-<!ENTITY ppos.badspeed "Dieses Objekt kann nicht aufgebaut werden während Du Dich bewegst.">
-<!ENTITY ppos.fru.notleader "Diese Mission hat bereits eine aktive Nachschubstellung.">
-<!ENTITY ppos.badenemyfac.toofar "Die Entfernung zur nächsten feindlichen Anlage ist zu groß.">
+<!ENTITY ppos.badspeed "Dieses Objekt kann nicht aufgebaut werden während Du Dich bewegst">
+<!ENTITY ppos.fru.notleader "Diese Mission hat bereits eine aktive Nachschubstellung">
+<!ENTITY ppos.badenemyfac.toofar "Die Entfernung zur nächsten feindlichen Anlage ist zu groß">
 <!ENTITY ppos.coolingdown "Die Wartezeit ist noch nicht abgelaufen.">
-<!ENTITY ppos.badfriendlyfac.tooclose "Die Entfernung zur nächsten eigenen Anlage ist zu klein.">
+<!ENTITY ppos.badfriendlyfac.tooclose "Die Entfernung zur nächsten eigenen Anlage ist zu klein">
 <!ENTITY ppos.building "Baue eine {1} auf ...">
-<!ENTITY ppos.badfriendlyfac.toofar "Die Entfernung zur nächsten eigenen Anlage ist zu groß.">
-<!ENTITY ppos.badenemyfac.tooclose "Die Entfernung zur nächsten feindlichen Anlage ist zu klein.">
-<!ENTITY ppos.badtargetrange.tooclose "Du bist zu nah am Missionsziel.">
+<!ENTITY ppos.badfriendlyfac.toofar "Die Entfernung zur nächsten eigenen Anlage ist zu groß">
+<!ENTITY ppos.badenemyfac.tooclose "Die Entfernung zur nächsten feindlichen Anlage ist zu klein">
+<!ENTITY ppos.badtargetrange.tooclose "Du bist zu nah am Missionsziel">
 <!ENTITY ppos.fru.build "Möchtest Du hier eine Nachschubstellung aufbauen?">
-<!ENTITY ppos.badvehicle "Ein anderer Spieler blockiert Dein Objekt.">
-<!ENTITY ppos.cantsee "You must be able to see your object to place it!">
+<!ENTITY ppos.badvehicle "Ein anderer Spieler blockiert Dein Objekt">
+<!ENTITY ppos.cantsee "Du musst das Objekt sehen können um es aufzubauen!">
 <!ENTITY ppos.noaccess "Dieses Objekt ist gesperrt. Upgrade Dein Abonnement, um das Objekt benutzen zu können.">
-<!ENTITY ppos.badtargetrange.toofar "Du bist zu weit entfernt vom Missionsziel.">
+<!ENTITY ppos.badtargetrange.toofar "Du bist zu weit entfernt vom Missionsziel">
 <!ENTITY ppos.ob2 "Geschützstellung">
 <!ENTITY ppos.noinside "Dieses Objekt kann nicht in einem Gebäude aufgebaut werden.">
-<!ENTITY ppos.badplacement "An dieser Stelle kann nichts aufgebaut werden.">
+<!ENTITY ppos.badplacement "An dieser Stelle kann nichts aufgebaut werden">
 <!ENTITY ppos.ob4 "Nachschubstellung">
 <!ENTITY ppos.built "&#37;ls aufgebaut!">
-<!ENTITY ppos.invalidnow "Die Position des Objektes ist nicht mehr gültig.">
-<!ENTITY ppos.badangle "Das Gelände ist zu steil.">
+<!ENTITY ppos.invalidnow "Die Position des Objektes ist nicht mehr gültig">
+<!ENTITY ppos.badangle "Das Gelände ist zu steil">

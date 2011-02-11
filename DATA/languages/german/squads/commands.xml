@@ -1,7 +1,6 @@
 <?xml version='1.0'?>
 <content type="3">
-  <body>Rekrutiere einen Spieler für dein Squad (Rekruter oder höher).
-/recruit &#60;player&#62;
+  <body>Der Stern (*) neben dem Rang zeigt an, daß der Spieler sein &#34;Squad rekrutiert&#34; Flag eingeschaltet hat.
 
 Akzeptiere eine Einladung zum Beitritt eines Squads.
 /accept
@@ -9,21 +8,24 @@ Akzeptiere eine Einladung zum Beitritt eines Squads.
 Lehne eine Einladung zum Beitritt eines Squads ab (verfällt nach einer Weile).
 /decline
 
-Verlasse dein derzeitiges Squad.
+Verlasse Dein derzeitiges Squad.
 /leave
 
-Löse dein Squad auf (nur COs).
-/disband
+Rekrutiere einen Spieler für Dein Squad (Rekrutierer oder höher).
+/recruit <player>
 
 Entferne einen Spieler vom Squad (XO und höher).
-/remove &#60;player&#62;
+/remove <player>
 
 Befördere einen Spieler um eine Position bis zu einer Position unter deiner (XO und höher).
-/promote &#60;player&#62;
+/promote <player>
 
 Degradiere einen Spieler (nur bei Spielern unter deiner Position möglich; XO und höher).
-/demote &#60;player&#62;
+/demote <player>
 
-Trete von deinem Kommando zurück (degradiert dich zu XO und macht &#60;player&#62; zum CO). 
-/resign &#60;player&#62;</body>
+Tritt von deinem Kommando zurück (degradiert dich zu XO und macht <player> zum CO). 
+/resign <player>
+
+Löse dein Squad auf (nur COs).
+/disband</body>
 </content>
