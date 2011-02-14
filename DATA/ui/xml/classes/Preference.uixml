@@ -82,8 +82,8 @@
 			addPreference('musicmultiplier', Preference.FLOAT, 1, true);
 			//addPreference("sound", Preference.STRING, null, true);
 			addPreference("bsoundenable", Preference.BOOL, true, true);
-			addPreference("b3dsoundenable", Preference.BOOL, false, true);
-			addPreference("maxnumbersounds", Preference.UINT, 32, true);
+			//addPreference("b3dsoundenable", Preference.BOOL, false, true);
+			//addPreference("maxnumbersounds", Preference.UINT, 128, true);
 			addPreference("ambientlevel", Preference.SINT, 0, true);
 			addPreference('ui.tooltips', Preference.BOOL, true, false);
 			addPreference('squadinvites', Preference.BOOL, true, true);
@@ -104,11 +104,11 @@
 			addPreference('hud.minimap.scale', Preference.FLOAT, .8, false);
 			addPreference("hud.iconmode", Preference.UINT, 0, false);
 			addPreference("hud.mode", Preference.UINT, 0, false);
-			addPreference("ragdolls", Preference.BOOL, true, true);
+			//addPreference("ragdolls", Preference.BOOL, true, true);
 			addPreference("wantbloodeffects", Preference.BOOL, true, true);
 			addPreference("shadowreceivers", Preference.UINT, (1 | 4 | 16 | 32), true);
 			addPreference("corpses", Preference.BOOL, true, true);
-			addPreference("ragdollweapons", Preference.BOOL, true, true);
+			//addPreference("ragdollweapons", Preference.BOOL, true, true);
 			addPreference("combatsmoke", Preference.BOOL, true, true);
 			
 			// set any balanced options
@@ -143,14 +143,14 @@
 					addPreference('reflectionupdate', Preference.SINT, 1, true);
 					//addPreference("bsoundenable", Preference.BOOL, true, true);
 					//addPreference("b3dsoundenable", Preference.BOOL, true, true);
-					addPreference("maxnumbersounds", Preference.UINT, 64, true);
+					//addPreference("maxnumbersounds", Preference.UINT, 64, true);
 					addPreference("ambientlevel", Preference.SINT, 0, true);
-					addPreference("ragdolls", Preference.BOOL, true, true);
+					//addPreference("ragdolls", Preference.BOOL, true, true);
 					addPreference("wantbloodeffects", Preference.BOOL, true, true);
 					addPreference("shadowreceivers", Preference.UINT, (1 | 2 | 4 | 8 | 16 | 32), true);
 					addPreference("app.shadows", Preference.UINT, 2, false);
 					addPreference("corpses", Preference.BOOL, true, true);
-					addPreference("ragdollweapons", Preference.BOOL, true, true);
+					//addPreference("ragdollweapons", Preference.BOOL, true, true);
 					addPreference("combatsmoke", Preference.BOOL, true, true);
 					addPreference("corpsetime", Preference.FLOAT, 1, true);
 					addPreference("corpsecount", Preference.FLOAT, 1, true);
@@ -181,14 +181,14 @@
 					addPreference('reflectionupdate', Preference.SINT, 5, true);
 					//addPreference("bsoundenable", Preference.BOOL, true, true);
 					//addPreference("b3dsoundenable", Preference.BOOL, false, true);
-					addPreference("maxnumbersounds", Preference.UINT, 32, true);
+					//addPreference("maxnumbersounds", Preference.UINT, 32, true);
 					addPreference("ambientlevel", Preference.SINT, 1, true);
-					addPreference("ragdolls", Preference.BOOL, true, true);
+					//addPreference("ragdolls", Preference.BOOL, true, true);
 					addPreference("wantbloodeffects", Preference.BOOL, true, true);
 					addPreference("shadowreceivers", Preference.UINT, (1 | 4 | 16 | 32), true);
 					addPreference("app.shadows", Preference.UINT, 1, false);
 					addPreference("corpses", Preference.BOOL, true, true);
-					addPreference("ragdollweapons", Preference.BOOL, false, true);
+					//addPreference("ragdollweapons", Preference.BOOL, false, true);
 					addPreference("combatsmoke", Preference.BOOL, false, true);
 					addPreference("corpsetime", Preference.FLOAT, .2, true);
 					addPreference("corpsecount", Preference.FLOAT, .2, true);
@@ -218,14 +218,14 @@
 					addPreference('reflectionupdate', Preference.SINT, 5, true);
 					//addPreference("bsoundenable", Preference.BOOL, true, true);
 					//addPreference("b3dsoundenable", Preference.BOOL, false, true);
-					addPreference("maxnumbersounds", Preference.UINT, 16, true);
+					//addPreference("maxnumbersounds", Preference.UINT, 16, true);
 					addPreference("ambientlevel", Preference.SINT, 2, true);
-					addPreference("ragdolls", Preference.BOOL, false, true);
+					//addPreference("ragdolls", Preference.BOOL, false, true);
 					addPreference("wantbloodeffects", Preference.BOOL, false, true);
 					addPreference("shadowreceivers", Preference.UINT, (1 | 4 | 32), true);
 					addPreference("app.shadows", Preference.UINT, 0, false);
 					addPreference("corpses", Preference.BOOL, false, true);
-					addPreference("ragdollweapons", Preference.BOOL, false, true);
+					//addPreference("ragdollweapons", Preference.BOOL, false, true);
 					addPreference("combatsmoke", Preference.BOOL, false, true);
 					addPreference("corpsetime", Preference.FLOAT, .2, true);
 					addPreference("corpsecount", Preference.FLOAT, .2, true);

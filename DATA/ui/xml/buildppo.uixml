@@ -15,7 +15,7 @@
 		<progressbar id="build-progress" x="20" y="45" height="10" rright="20" minvalue="0" maxvalue="1"
 			fill="ui/textures/hud/blood-level-fill.bmp" background="ui/textures/hud/back-level-fill.bmp" orient="leftright"
 			acceptmouseclick="false"/>
-		<button id="popup-no" x="20" y="10" width="150" height="25" label="${popup.cancel}" onclick="doCancelAction()"
+		<button id="popup-no" x="100" y="10" width="150" height="25" label="${popup.cancel}" onclick="doCancelAction()"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
 	</view>

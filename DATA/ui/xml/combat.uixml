@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<window id="combat" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" onshow="initWin()" onupdate="doForwardTimer()">
+<window id="combat" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" onshow="initWin()" onupdate="doForwardTimer()" aspectalign="center">
 	<include file="lib/tutorial.uixml"/>
 	<include file="widgets/template.uixml"/>
 	<include file="classes/ListControl.uixml"/>
@@ -190,7 +190,7 @@
 					
 					var row 	= "\
 <view id='" + vehicle.id + "' width='418' height='20' onmouseenter='spawnList.mouseEnter(this)' onmouseexit='spawnList.mouseExit(this)'>\
-	<caption id='mission-vehicle' x='10' y='3' width='400' height='16' style='font-size: -1; color: #FFFFFF;' label='" + htmlencode(vehicle.description) + "'/>\
+	<caption id='mission-vehicle' x='10' y='3' width='400' height='16' style='font-size: +0; color: #FFFFFF;' label='" + htmlencode(vehicle.description) + "'/>\
 </view>";
 					
 					game.consoleprint(row + "\n");

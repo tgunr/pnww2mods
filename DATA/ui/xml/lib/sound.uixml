@@ -40,7 +40,7 @@
 	{
 		musicKill();
 		
-		var play = game.getpref('app.playmusic', 0, true);
+		var play = game.getpref('app.playmusic', 0, false);
 		
 		if(play && game.globals && game.settings.musicmultiplier > 0)
 			game.globals.musicId = game.playsound("ui/sounds/" + musicGetSide() + "_main.wav", 1, game.settings.musicmultiplier, "game.globals.musicLoop()", 0);
@@ -50,7 +50,7 @@
 	{
 		musicKill();
 		
-		var play = game.getpref('app.playmusic', 0, true);
+		var play = game.getpref('app.playmusic', 0, false);
 		
 		if(play && game.globals && game.settings.musicmultiplier > 0)
 			game.globals.musicId = game.playsound("ui/sounds/" + musicGetSide() + "_loop.wav", 0, game.settings.musicmultiplier, null, 0);

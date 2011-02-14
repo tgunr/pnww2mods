@@ -246,7 +246,7 @@
 								<caption label="${brigade.createtab.orders}" x="0" width="165" height="20" rtop="5" style="font-size: -1; color: #BFE2CE;"/>
 								<image x="0" src="ui/textures/test/horiz_underline.bmp" width="165" height="12" rtop="15" />
 								<text id="creator-description" x="0" width="165" rtop="30" rbottom="0" acceptsfocus="true"
-									style="font-size: -1; background-color: #FFFFFF22;  color: #FFFFFF;">${brigade.createtab.orders.default}</text>
+									style="font-size: -1; background-color: #FFFFFF22;  color: #FFFFFF;" onshow="this.text = getlocstring('brigade.createtab.orders.default')"/>
 							</view>
 							<button id="creator-button" label="${brigade.forward.create}" x="5" y="0" height="30" width="160"
 								style="control-on: ui/textures/test/gen_button_on.bmp;

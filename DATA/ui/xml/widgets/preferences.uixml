@@ -778,33 +778,35 @@
 			<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'>
 				<caption label="${widgets.prefs.groups.infantry}" x="10" height="20" width="425" rtop="10" style="font-size: +2; color: #BFE2CE;"/>
 				<image x="10" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="20"/>
-				<caption label="${widgets.prefs.groups.infantry.ragdolls}" x="20" height="20" rright="0" rtop="50" style="color: #e9e3d9ff;"
-					tip="${widgets.prefs.groups.infantry.ragdolls.tip}"/>
-				<view width="150" height="15" rtop="50" rright="10">
-					<radiobutton label="${widgets.prefs.enabled}" x="5" y="0" width="70" height="15"
-						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
-						onclick="addPreference('ragdolls', Preference.BOOL, true, true);"
-						onshow="this.value = getPreference('ragdolls', Preference.BOOL, false, true);"/>
-					<radiobutton label="${widgets.prefs.disabled}" y="0" width="70" height="15" rright="5" 
-						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
-						onclick="addPreference('ragdolls', Preference.BOOL, false, true);"
-						onshow="this.value = !getPreference('ragdolls', Preference.BOOL, false, true);"/>
+				<!-- DEPRECATED:
+					<caption label="${widgets.prefs.groups.infantry.ragdolls}" x="20" height="20" rright="0" rtop="50" style="color: #e9e3d9ff;"
+						tip="${widgets.prefs.groups.infantry.ragdolls.tip}"/>
+					<view width="150" height="15" rtop="50" rright="10">
+						<radiobutton label="${widgets.prefs.enabled}" x="5" y="0" width="70" height="15"
+							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+							onclick="addPreference('ragdolls', Preference.BOOL, true, true);"
+							onshow="this.value = getPreference('ragdolls', Preference.BOOL, false, true);"/>
+						<radiobutton label="${widgets.prefs.disabled}" y="0" width="70" height="15" rright="5" 
+							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+							onclick="addPreference('ragdolls', Preference.BOOL, false, true);"
+							onshow="this.value = !getPreference('ragdolls', Preference.BOOL, false, true);"/>
+					</view>
+					<caption label="${widgets.prefs.groups.infantry.weapons}" x="20" height="20" rright="0" rtop="80" style="color: #e9e3d9ff;"
+						tip="${widgets.prefs.groups.infantry.weapons.tip}"/>
+					<view width="150" height="15" rtop="80" rright="10">
+						<radiobutton label="${widgets.prefs.enabled}" x="5" y="0" width="70" height="15"
+							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+							onclick="addPreference('ragdollweapons', Preference.BOOL, true, true);"
+							onshow="this.value = getPreference('ragdollweapons', Preference.BOOL, false, true);"/>
+						<radiobutton label="${widgets.prefs.disabled}" y="0" width="70" height="15" rright="5" 
+							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+							onclick="addPreference('ragdollweapons', Preference.BOOL, false, true);"
+							onshow="this.value = !getPreference('ragdollweapons', Preference.BOOL, false, true);"/>
 				</view>
-				<caption label="${widgets.prefs.groups.infantry.weapons}" x="20" height="20" rright="0" rtop="80" style="color: #e9e3d9ff;"
-					tip="${widgets.prefs.groups.infantry.weapons.tip}"/>
-				<view width="150" height="15" rtop="80" rright="10">
-					<radiobutton label="${widgets.prefs.enabled}" x="5" y="0" width="70" height="15"
-						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
-						onclick="addPreference('ragdollweapons', Preference.BOOL, true, true);"
-						onshow="this.value = getPreference('ragdollweapons', Preference.BOOL, false, true);"/>
-					<radiobutton label="${widgets.prefs.disabled}" y="0" width="70" height="15" rright="5" 
-						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
-						onclick="addPreference('ragdollweapons', Preference.BOOL, false, true);"
-						onshow="this.value = !getPreference('ragdollweapons', Preference.BOOL, false, true);"/>
-				</view>
-				<caption label="${widgets.prefs.groups.infantry.corpses}" x="20" height="20" rright="0" rtop="110" style="color: #e9e3d9ff;"
+				-->
+				<caption label="${widgets.prefs.groups.infantry.corpses}" x="20" height="20" rright="0" rtop="50" style="color: #e9e3d9ff;"
 					tip="${widgets.prefs.groups.infantry.corpses.tip}"/>
-				<view width="150" height="15" rtop="110" rright="10">
+				<view width="150" height="15" rtop="50" rright="10">
 					<radiobutton label="${widgets.prefs.enabled}" x="5" y="0" width="70" height="15"
 						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 						onclick="addPreference('corpses', Preference.BOOL, true, true);"
@@ -814,9 +816,9 @@
 						onclick="addPreference('corpses', Preference.BOOL, false, true);"
 						onshow="this.value = !getPreference('corpses', Preference.BOOL, false, true);"/>
 				</view>
-				<caption id="blood-caption" label="${widgets.prefs.groups.infantry.blood}" x="20" height="20" rright="0" rtop="140" style="color: #e9e3d9ff;"
+				<caption id="blood-caption" label="${widgets.prefs.groups.infantry.blood}" x="20" height="20" rright="0" rtop="90" style="color: #e9e3d9ff;"
 					tip="${widgets.prefs.groups.infantry.blood.tip}"/>
-				<view id="blood-options" width="150" height="15" rtop="140" rright="10">
+				<view id="blood-options" width="150" height="15" rtop="90" rright="10">
 					<radiobutton label="${widgets.prefs.enabled}" x="5" y="0" width="70" height="15"
 						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 						onclick="addPreference('wantbloodeffects', Preference.BOOL, true, true);"
@@ -834,7 +836,8 @@
 						<slider width="120" height="15" rtop="20" rright="70" minvalue="0" maxvalue="1"
 							style="thumb-off-color: #3e5248;"
 							onshow="this.value = getSliderPreference('corpsecount', Preference.FLOAT, .2, true)"
-							onclick="addSliderPreference('corpsecount', Preference.FLOAT, this.value, true)"/>
+							onclick="addSliderPreference('corpsecount', Preference.FLOAT, this.value, true)"
+							tip="${widgets.prefs.groups.infantry.corpse.density.tip}"/>
 						<caption label="100" height="20" width="40" rtop="20" rright="30" style="color: #e9e3d9ff; font-size: -1;" align="right" acceptmouseclick="false"/>
 						<caption label="${widgets.prefs.groups.infantry.corpse.time}" x="25" height="20" width="150" rtop="50" style="color: #e9e3d9ff;"
 							tip="${widgets.prefs.groups.infantry.corpse.time.tip}"/>
@@ -842,20 +845,25 @@
 						<slider width="120" height="15" rtop="50" rright="70" minvalue="0" maxvalue="1"
 							style="thumb-off-color: #3e5248;"
 							onclick="addSliderPreference('corpsetime', Preference.FLOAT, this.value, true)"
-							onshow="this.value = getSliderPreference('corpsetime', Preference.FLOAT, .2, true);"/>
+							onshow="this.value = getSliderPreference('corpsetime', Preference.FLOAT, .2, true);"
+							tip="${widgets.prefs.groups.infantry.corpse.time.tip}"/>
 						<caption label="10 min" height="20" width="40" rtop="50" rright="30" style="color: #e9e3d9ff; font-size: -1;" align="right" acceptmouseclick="false"/>
+						<!-- DEPRECATED in TPR
 						<caption label="${widgets.prefs.groups.infantry.corpse.detail}" x="25" height="20" width="170" rtop="80" style="color: #e9e3d9ff;"
 							tip="${widgets.prefs.groups.infantry.corpse.detail.tip}"/>
 						<view width="150" height="15" rtop="80" rright="20">
 							<radiobutton label="${widgets.prefs.enabled}" x="5" y="0" width="70" height="15"
 								style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 								onclick="addPreference('corpsedetail', Preference.BOOL, true, true);"
-								onshow="this.value = getPreference('corpsedetail', Preference.BOOL, true, true);"/>
+								onshow="this.value = getPreference('corpsedetail', Preference.BOOL, true, true);"
+								tip="${widgets.prefs.groups.infantry.corpse.detail.tip}"/>
 							<radiobutton label="${widgets.prefs.disabled}" y="0" width="70" height="15" rright="5"
 								style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 								onclick="addPreference('corpsedetail', Preference.BOOL, false, true);"
-								onshow="this.value = !getPreference('corpsedetail', Preference.BOOL, true, true);"/>
+								onshow="this.value = !getPreference('corpsedetail', Preference.BOOL, true, true);"
+								tip="${widgets.prefs.groups.infantry.corpse.detail.tip}"/>
 						</view>
+						-->
 				</panel>
 			</tab>
 			<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'>
@@ -869,33 +877,35 @@
 				 	style="color: #BFE2CE; border-color: #3e5248; border-size: 1;">
 				 	 <image rright="5" rtop="5" src="ui/textures/map-scaledown-off.bmp" width="10" height="10" acceptmouseclick="false"/>
 				</caption>
-				<caption label="${widgets.prefs.groups.sound.system}" x="20" height="20" rright="0" rtop="90" style="color: #e9e3d9ff;"
-					tip="${widgets.prefs.groups.sound.system.tip}"/>
-				<caption id="audioSystemList" height="20" width="150" rtop="90" rright="20"
-					onshow="if(!this.mgr) new DDListControl(this, selectAudioSystem, 75, true); initAudioSystem(this.mgr);"
-				 	onclick="this.mgr.toggleList()" onhide="this.mgr.hideList()"
-				 	style="color: #BFE2CE; border-color: #3e5248; border-size: 1;">
-				 	 <image rright="5" rtop="5" src="ui/textures/map-scaledown-off.bmp" width="10" height="10" acceptmouseclick="false"/>
-				</caption>
-				<caption label="${widgets.prefs.groups.sound.maxsounds}" x="20" height="20" rright="0" rtop="130" style="color: #e9e3d9ff;"
-					tip="${widgets.prefs.groups.sound.maxsounds.tip}"/>
-				<caption id="audioMaxList" height="20" width="150" rtop="130" rright="20"
-					onshow="if(!this.mgr) new DDListControl(this, selectAudioMax, 75, true); initAudioMax(this.mgr);"
-				 	onclick="this.mgr.toggleList()" onhide="this.mgr.hideList()"
-				 	style="color: #BFE2CE; border-color: #3e5248; border-size: 1;">
-				 	 <image rright="5" rtop="5" src="ui/textures/map-scaledown-off.bmp" width="10" height="10" acceptmouseclick="false"/>
-				</caption>
-				<caption label="${widgets.prefs.groups.sound.ambient}" x="20" height="20" rright="0" rtop="170" style="color: #e9e3d9ff;"
+				<!-- DEPRECATED:
+					<caption label="${widgets.prefs.groups.sound.system}" x="20" height="20" rright="0" rtop="90" style="color: #e9e3d9ff;"
+						tip="${widgets.prefs.groups.sound.system.tip}"/>
+					<caption id="audioSystemList" height="20" width="150" rtop="90" rright="20"
+						onshow="if(!this.mgr) new DDListControl(this, selectAudioSystem, 75, true); initAudioSystem(this.mgr);"
+						onclick="this.mgr.toggleList()" onhide="this.mgr.hideList()"
+						style="color: #BFE2CE; border-color: #3e5248; border-size: 1;">
+						 <image rright="5" rtop="5" src="ui/textures/map-scaledown-off.bmp" width="10" height="10" acceptmouseclick="false"/>
+					</caption>
+					<caption label="${widgets.prefs.groups.sound.maxsounds}" x="20" height="20" rright="0" rtop="130" style="color: #e9e3d9ff;"
+						tip="${widgets.prefs.groups.sound.maxsounds.tip}"/>
+					<caption id="audioMaxList" height="20" width="150" rtop="130" rright="20"
+						onshow="if(!this.mgr) new DDListControl(this, selectAudioMax, 75, true); initAudioMax(this.mgr);"
+						onclick="this.mgr.toggleList()" onhide="this.mgr.hideList()"
+						style="color: #BFE2CE; border-color: #3e5248; border-size: 1;">
+						 <image rright="5" rtop="5" src="ui/textures/map-scaledown-off.bmp" width="10" height="10" acceptmouseclick="false"/>
+					</caption>
+				-->
+				<caption label="${widgets.prefs.groups.sound.ambient}" x="20" height="20" rright="0" rtop="90" style="color: #e9e3d9ff;"
 					tip="${widgets.prefs.groups.sound.ambient.tip}"/>
-				<caption id="ambienceList" height="20" width="150" rtop="170" rright="20"
+				<caption id="ambienceList" height="20" width="150" rtop="90" rright="20"
 					onshow="if(!this.mgr) new DDListControl(this, selectAmbience, 75, true); initAmbience(this.mgr);"
 				 	onclick="this.mgr.toggleList()" onhide="this.mgr.hideList()"
 				 	style="color: #BFE2CE; border-color: #3e5248; border-size: 1;">
 				 	 <image rright="5" rtop="5" src="ui/textures/map-scaledown-off.bmp" width="10" height="10" acceptmouseclick="false"/>
 				</caption>
-				<caption label="${widgets.prefs.groups.sound.alerts}" x="20" height="20" rright="0" rtop="210" style="color: #e9e3d9ff;"
+				<caption label="${widgets.prefs.groups.sound.alerts}" x="20" height="20" rright="0" rtop="130" style="color: #e9e3d9ff;"
 					tip="${widgets.prefs.groups.sound.alerts.tip}"/>
-				<view width="150" height="15" rtop="210" rright="10">
+				<view width="150" height="15" rtop="130" rright="10">
 					<radiobutton label="${widgets.prefs.enabled}" x="5" y="0" width="70" height="15"
 						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 						onclick="addPreference('wantmessagealert', Preference.BOOL, true, true);"
@@ -905,9 +915,9 @@
 						onclick="addPreference('wantmessagealert', Preference.BOOL, false, true);"
 						onshow="this.value = !getPreference('wantmessagealert', Preference.BOOL, true, true);"/>
 				</view>
-				<caption label="${widgets.prefs.groups.sound.music}" x="20" height="20" rright="0" rtop="250" style="color: #e9e3d9ff;"
+				<caption label="${widgets.prefs.groups.sound.music}" x="20" height="20" rright="0" rtop="170" style="color: #e9e3d9ff;"
 					tip="${widgets.prefs.groups.sound.music.tip}"/>
-				<view width="150" height="15" rtop="250" rright="10">
+				<view width="150" height="15" rtop="170" rright="10">
 					<radiobutton label="${widgets.prefs.enabled}" x="5" y="0" width="70" height="15"
 						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 						onclick="addPreference('playmusic', Preference.BOOL, true, true);"
@@ -915,7 +925,7 @@
 					<radiobutton label="${widgets.prefs.disabled}" y="0" width="70" height="15" rright="5" 
 						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 						onclick="addPreference('playmusic', Preference.BOOL, false, true);"
-						onshow="this.value = !getPreference('playmusic', Preference.BOOL, true, true);"/>
+						onshow="this.value = !getPreference('playmusic', Preference.BOOL, false, true);"/>
 				</view>
 				<panel label="${widgets.prefs.groups.sound.volume}" align="center" x="10" y="0" rright="10" rtop="290"
 						style="color: #3e5248; border-color: #3e5248; border-size: 1; font-size: -1;"
@@ -998,7 +1008,7 @@
 					function initAudioMax(list)
 					{
 						var options	= new Array(16, 32, 64, 128);
-						var current = getPreference("maxnumbersounds", Preference.UINT, 16, true);
+						var current = getPreference("maxnumbersounds", Preference.UINT, 128, true);
 						
 						list.clearRows(true);
 						
@@ -1042,15 +1052,21 @@
 						{
 							case 0:
 								addPreference("bsoundenable", Preference.BOOL, true, true);
-								addPreference("b3dsoundenable", Preference.BOOL, true, true);
+								/* DEPRECATED:
+								* addPreference("b3dsoundenable", Preference.BOOL, true, true);
+								*/
 								break;
 							case 1:
 								addPreference("bsoundenable", Preference.BOOL, true, true);
-								addPreference("b3dsoundenable", Preference.BOOL, false, true);
+								/* DEPRECATED:
+								* addPreference("b3dsoundenable", Preference.BOOL, false, true);
+								*/
 								break;
 							default:
 								addPreference("bsoundenable", Preference.BOOL, false, true);
-								addPreference("b3dsoundenable", Preference.BOOL, false, true);
+								/* DEPRECATED:
+								* addPreference("b3dsoundenable", Preference.BOOL, false, true);
+								*/
 								break;
 						}
 					}

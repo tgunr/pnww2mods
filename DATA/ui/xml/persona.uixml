@@ -203,7 +203,7 @@
 				var persona = personas[selected];
 				
 				if(persona.rank != null && persona.rank.level == 1)
-					showConfirm(getlocstring('persona.notgraduated'), doTraining);
+					showConfirm(getlocstring('persona.notgraduated'), doTraining, getlocstring('common.yes'), getlocstring('common.no'));
 				else
 					doSquadCheck();
 			}
