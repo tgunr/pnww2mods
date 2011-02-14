@@ -10,14 +10,14 @@
 	<fps pose="swim" adjust=".313"/>
 	<fps pose="sit" adjust="1.0"/>
 	<fps pose="prone" adjust=".45"/>
-	<fps pose="prone" move="idle" point="aim" adjust=".45"/>
+	<fps pose="prone" move="still" point="aim" adjust=".45"/>
 	<fps pose="prone" move="deployed" adjust=".45"/>
 	<fps pose="crouch" adjust="1.3"/>
 	<fps pose="crouch" move="forward" adjust="1.3"/>
 	<fps pose="crouch" move="backward" adjust="1.3"/>
 	<fps pose="crouch" move="sprint" adjust="1.322"/>
 	<fps pose="crouch" move="forward" point="aim" adjust="1.3"/>
-	<fps pose="crouch" move="idle" point="aim" adjust="1.3"/>
+	<fps pose="crouch" move="still" point="aim" adjust="1.3"/>
 	<fps pose="crouch" move="turn" point="aim" adjust="1.3"/>
 	<fps pose="crouch" move="deployed" adjust="1.142"/>
 	<fps pose="stand" move="forward" adjust="1.602"/>
@@ -25,7 +25,7 @@
 	<fps pose="stand" move="turn" adjust="1.602"/>
 	<fps pose="stand" move="sprint" adjust="1.602"/>
 	<fps pose="stand" move="forward" point="aim" adjust="1.602"/>
-	<fps pose="stand" move="idle" point="aim" adjust="1.602"/>
+	<fps pose="stand" move="still" point="aim" adjust="1.602"/>
 	<fps pose="stand" move="turn" point="aim" adjust="1.602"/>
 	<fps pose="stand" move="deployed" adjust="1.577"/>
 </adjustments>
