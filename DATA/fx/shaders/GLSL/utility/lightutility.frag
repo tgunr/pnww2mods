@@ -15,6 +15,8 @@ uniform struct
 
 vec3 vertexpos;
 
+const vec4 zerovector = vec4(0, 0, 0, 0);
+
 /*----------------------------------------------------------
 Set vertex position for light attenuation
 -----------------------------------------------------------*/
@@ -28,7 +30,7 @@ Return total diffuse (usually for billboard lighting)
 -----------------------------------------------------------*/
 void lightGetDiffuse(out vec4 diffuse)
 {
-	diffuse = vec4(0, 0, 0, 0);
+	diffuse = zerovector;
 	float a;
 	float d;
 	
@@ -45,8 +47,7 @@ void lightGetDiffuse(out vec4 diffuse)
 	if(lightsource[2].enabled > 0.0)
 	{
 		d = distance(vertexpos, lightsource[2].pos);   
-		a = (lightsource[2].kc + d * (lightsource[2].kl + lightsource[2].kq * d));
-		a = (a > 1.0) ? (1.0 / a) : 1.0;
+		a = 1.0 / clamp(lightsource[2].kc + d * (lightsource[2].kl + lightsource[2].kq * d), 1.0, 10000.0);
 		
 		diffuse += a * lightsource[2].diffuse;
 	}
@@ -54,8 +55,7 @@ void lightGetDiffuse(out vec4 diffuse)
 	if(lightsource[3].enabled > 0.0)
 	{
 		d = distance(vertexpos, lightsource[3].pos);   
-		a = (lightsource[3].kc + d * (lightsource[3].kl + lightsource[3].kq * d));
-		a = (a > 1.0) ? (1.0 / a) : 1.0;
+		a = 1.0 / clamp(lightsource[3].kc + d * (lightsource[3].kl + lightsource[3].kq * d), 1.0, 10000.0);
 		
 		diffuse += a * lightsource[3].diffuse;
 	}
@@ -66,7 +66,7 @@ Return total ambient
 -----------------------------------------------------------*/
 void lightGetAmbient(out vec4 ambient)
 {
-	ambient = vec4(0, 0, 0, 0);
+	ambient = zerovector;
 	float a;
 	float d;
 
@@ -83,8 +83,7 @@ void lightGetAmbient(out vec4 ambient)
     if(lightsource[2].enabled > 0.0)
 	{
 		d = distance(vertexpos, lightsource[2].pos);   
-		a = (lightsource[2].kc + d * (lightsource[2].kl + lightsource[2].kq * d));
-		a = (a > 1.0) ? (1.0 / a) : 1.0;
+		a = 1.0 / clamp(lightsource[2].kc + d * (lightsource[2].kl + lightsource[2].kq * d), 1.0, 10000.0);
 		
 		ambient += a * lightsource[2].ambient;
 	}
@@ -92,8 +91,7 @@ void lightGetAmbient(out vec4 ambient)
 	if(lightsource[3].enabled > 0.0)
 	{
 		d = distance(vertexpos, lightsource[3].pos);   
-		a = (lightsource[3].kc + d * (lightsource[3].kl + lightsource[3].kq * d));
-		a = (a > 1.0) ? (1.0 / a) : 1.0;
+		a = 1.0 / clamp(lightsource[3].kc + d * (lightsource[3].kl + lightsource[3].kq * d), 1.0, 10000.0);
 		
 		ambient += a * lightsource[3].ambient;
 	}
@@ -104,8 +102,8 @@ Non-tangent space lighting for ambient and diffuse
 -----------------------------------------------------------*/
 void lightGetAmbientDiffuse(out vec4 ambient, out vec4 diffuse)
 {	
-	ambient = vec4(0, 0, 0, 0);
-	diffuse = vec4(0, 0, 0, 0);
+	ambient = zerovector;
+	diffuse = zerovector;
 	float a;
 	float d;
 
@@ -124,8 +122,7 @@ void lightGetAmbientDiffuse(out vec4 ambient, out vec4 diffuse)
 	if(lightsource[2].enabled > 0.0)
 	{
 		d = distance(vertexpos, lightsource[2].pos);   
-		a = (lightsource[2].kc + d * (lightsource[2].kl + lightsource[2].kq * d));
-		a = (a > 1.0) ? (1.0 / a) : 1.0;
+		a = 1.0 / clamp(lightsource[2].kc + d * (lightsource[2].kl + lightsource[2].kq * d), 1.0, 10000.0);
 		
 		diffuse += a * lightsource[2].diffuse;	
 		ambient += a * lightsource[2].ambient;
@@ -134,8 +131,7 @@ void lightGetAmbientDiffuse(out vec4 ambient, out vec4 diffuse)
 	if(lightsource[3].enabled > 0.0)
 	{
 		d = distance(vertexpos, lightsource[3].pos);   
-		a = (lightsource[3].kc + d * (lightsource[3].kl + lightsource[3].kq * d));
-		a = (a > 1.0) ? (1.0 / a) : 1.0;
+		a = 1.0 / clamp(lightsource[3].kc + d * (lightsource[3].kl + lightsource[3].kq * d), 1.0, 10000.0);
 		
 		diffuse += a * lightsource[3].diffuse;	
 		ambient += a * lightsource[3].ambient;
@@ -152,8 +148,8 @@ void lightGetAmbientDiffuse(in vec3 normal,
 	vec3 L;
 	float d;
 	
-	ambient = vec4(0, 0, 0, 0);
-	diffuse = vec4(0, 0, 0, 0);
+	ambient = zerovector;
+	diffuse = zerovector;
 	float a;
 	
 	if(lightsource[0].enabled > 0.0)
@@ -181,8 +177,7 @@ void lightGetAmbientDiffuse(in vec3 normal,
 	if(lightsource[2].enabled > 0.0)
 	{
 		d = distance(vertexpos, lightsource[2].pos);   
-		a = (lightsource[2].kc + d * (lightsource[2].kl + lightsource[2].kq * d));
-		a = (a > 1.0) ? (1.0 / a) : 1.0;
+		a = 1.0 / clamp(lightsource[2].kc + d * (lightsource[2].kl + lightsource[2].kq * d), 1.0, 10000.0);
 
 		L = lightsource[2].dir;
 		
@@ -196,8 +191,7 @@ void lightGetAmbientDiffuse(in vec3 normal,
 	if(lightsource[3].enabled > 0.0)
 	{
 		d = distance(vertexpos, lightsource[3].pos);   
-		a = (lightsource[3].kc + d * (lightsource[3].kl + lightsource[3].kq * d));
-		a = (a > 1.0) ? (1.0 / a) : 1.0;
+		a = 1.0 / clamp(lightsource[3].kc + d * (lightsource[3].kl + lightsource[3].kq * d), 1.0, 10000.0);
 
 		L = lightsource[3].dir;
 		
@@ -223,9 +217,9 @@ void lightGetAmbientDiffuseSpecular(in vec3 normal,
 	float d;
 	float s;
 
-	ambient = vec4(0, 0, 0, 0);
-	diffuse = vec4(0, 0, 0, 0);
-	specular = vec4(0, 0, 0, 0);
+	ambient = zerovector;
+	diffuse = zerovector;
+	specular = zerovector;
 	float a;
 	
 	float level = gl_FrontMaterial.shininess;
@@ -273,8 +267,7 @@ void lightGetAmbientDiffuseSpecular(in vec3 normal,
 	if(lightsource[2].enabled > 0.0)
 	{
 		d = distance(vertexpos, lightsource[2].pos);   
-		a = (lightsource[2].kc + d * (lightsource[2].kl + lightsource[2].kq * d));
-		a = (a > 1.0) ? (1.0 / a) : 1.0;
+		a = 1.0 / clamp(lightsource[2].kc + d * (lightsource[2].kl + lightsource[2].kq * d), 1.0, 10000.0);
 
 		L = lightsource[2].dir;	
 			
@@ -297,8 +290,7 @@ void lightGetAmbientDiffuseSpecular(in vec3 normal,
 	if(lightsource[3].enabled > 0.0)
 	{
 		d = distance(vertexpos, lightsource[3].pos);   
-		a = (lightsource[3].kc + d * (lightsource[3].kl + lightsource[3].kq * d));
-		a = (a > 1.0) ? (1.0 / a) : 1.0;
+		a = 1.0 / clamp(lightsource[3].kc + d * (lightsource[3].kl + lightsource[3].kq * d), 1.0, 10000.0);
 
 		L = lightsource[3].dir;	
 			
@@ -333,8 +325,8 @@ void lightGetAmbientDiffuse(in vec3 t,
 	vec3 Ltan;
 	float d;
 	
-	ambient = vec4(0, 0, 0, 0);
-	diffuse = vec4(0, 0, 0, 0);
+	ambient = zerovector;
+	diffuse = zerovector;
 	float a;
 	
 	if(lightsource[0].enabled > 0.0)
@@ -370,8 +362,7 @@ void lightGetAmbientDiffuse(in vec3 t,
 	if(lightsource[2].enabled > 0.0)
 	{
 		d = distance(vertexpos, lightsource[2].pos);   
-		a = (lightsource[2].kc + d * (lightsource[2].kl + lightsource[2].kq * d));
-		a = (a > 1.0) ? (1.0 / a) : 1.0;
+		a = 1.0 / clamp(lightsource[2].kc + d * (lightsource[2].kl + lightsource[2].kq * d), 1.0, 10000.0);
 
 		L = lightsource[2].dir;
 		
@@ -389,8 +380,7 @@ void lightGetAmbientDiffuse(in vec3 t,
 	if(lightsource[3].enabled > 0.0)
 	{
 		d = distance(vertexpos, lightsource[3].pos);   
-		a = (lightsource[3].kc + d * (lightsource[3].kl + lightsource[3].kq * d));
-		a = (a > 1.0) ? (1.0 / a) : 1.0;
+		a = 1.0 / clamp(lightsource[3].kc + d * (lightsource[3].kl + lightsource[3].kq * d), 1.0, 10000.0);
 
 		L = lightsource[3].dir;
 		
@@ -425,9 +415,9 @@ void lightGetAmbientDiffuseSpecular(in vec3 t,
 	float d;
 	float s;
 	
-	ambient = vec4(0, 0, 0, 0);
-	diffuse = vec4(0, 0, 0, 0);
-	specular = vec4(0, 0, 0, 0);
+	ambient = zerovector;
+	diffuse = zerovector;
+	specular = zerovector;
 
 	float level = gl_FrontMaterial.shininess;
 	float a;
@@ -495,8 +485,7 @@ void lightGetAmbientDiffuseSpecular(in vec3 t,
 	if(lightsource[2].enabled > 0.0)
 	{
 		d = distance(vertexpos, lightsource[2].pos);   
-		a = (lightsource[2].kc + d * (lightsource[2].kl + lightsource[2].kq * d));
-		a = (a > 1.0) ? (1.0 / a) : 1.0;
+		a = 1.0 / clamp(lightsource[2].kc + d * (lightsource[2].kl + lightsource[2].kq * d), 1.0, 10000.0);
 
 		L = lightsource[2].dir;
 		
@@ -529,8 +518,7 @@ void lightGetAmbientDiffuseSpecular(in vec3 t,
 	if(lightsource[3].enabled > 0.0)
 	{
 		d = distance(vertexpos, lightsource[3].pos);   
-		a = (lightsource[3].kc + d * (lightsource[3].kl + lightsource[3].kq * d));
-		a = (a > 1.0) ? (1.0 / a) : 1.0;
+		a = 1.0 / clamp(lightsource[3].kc + d * (lightsource[3].kl + lightsource[3].kq * d), 1.0, 10000.0);
 
 		L = lightsource[3].dir;
 		
