@@ -26,9 +26,7 @@ void main()
 	vec3 normal = texture2D(src2, gl_TexCoord[0].xy).rgb * 2.0 - 1.0;
 	float spec = texture2D(src3, gl_TexCoord[0].xy).r;
 	
-	normal.z = sqrt(1.0 - normal.x * normal.x - normal.y * normal.y);
-
-	// These values are interpolated and need to be normalized
+    // These values are interpolated and need to be normalized
 	vec3 t = normalize(T);
 	vec3 b = normalize(B);
 	vec3 n = normalize(N);
