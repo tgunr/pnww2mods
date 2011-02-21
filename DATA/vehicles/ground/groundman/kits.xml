@@ -15,8 +15,10 @@
 		<model name="uk_brenp_lf" path="TPS\meshes\british_inf\kit_uk_brenp_lf_lod1" attach="4"/>
 		<!-- Bren Pouch, Right -->
 		<model name="uk_brenp_rt" path="TPS\meshes\british_inf\kit_uk_brenp_rt_lod1" attach="4"/>
-		<!-- Pistol Holster -->
+		<!-- Pistol Holster, Right Hip -->
 		<model name="uk_pholster_rt" path="TPS\meshes\british_inf\kit_uk_pholster_rt_hip_lod1" attach="3"/>
+		<!-- Pistol Holster, Right Belt Webbing -->
+		<model name="uk_pholster_rt_web" path="TPS\meshes\british_inf\kit_uk_pholster_rt_web_lod1" attach="3"/>
 		<!-- Gas mask bag / respirator bag -->
 		<model name="uk_gas_lf" path="TPS\meshes\british_inf\kit_uk_gas_lf_bk_lod1" attach="4"/>
 		<!-- Rucksack -->
@@ -61,6 +63,8 @@
 		<model name="de_rifle_ammo_rt" path="TPS\meshes\german_inf\kit_de_rifle_ammo_rt_lod1" attach="4"/>
 		<!-- SMG Ammo, Left -->
 		<model name="de_smg_ammo_lf" path="TPS\meshes\german_inf\kit_de_smg_ammo_lf_lod1" attach="4"/>
+		<!-- SMG Ammo, Right -->
+		<model name="de_smg_ammo_rt" path="TPS\meshes\german_inf\kit_de_smg_ammo_rt_lod1" attach="4"/>
 		
 		<!-- german para helmet -->
 		<model name="de_parahelm_01" path="TPS\meshes\para_germ\kit_de_parahelm_lod1" attach="18" lod="0"/>
@@ -83,6 +87,7 @@
 		<object name="uk_brenp_lf" model="uk_brenp_lf"/>
 		<object name="uk_brenp_rt" model="uk_brenp_rt"/>
 		<object name="uk_pholster_rt" model="uk_pholster_rt"/>
+		<object name="uk_pholster_rt_web" model="uk_pholster_rt_web"/>
 		<object name="uk_gas_lf" model="uk_gas_lf"/>
 		<object name="uk_ruck" model="uk_ruck"/>
 		
@@ -109,6 +114,7 @@
 		<object name="de_rifle_ammo_lf" model="de_rifle_ammo_lf"/>
 		<object name="de_rifle_ammo_rt" model="de_rifle_ammo_rt"/>
 		<object name="de_smg_ammo_lf" model="de_smg_ammo_lf"/>
+		<object name="de_smg_ammo_rt" model="de_smg_ammo_rt"/>
 		<!-- <object name="de_pholster_rt_hip" model="de_pholster_rt_hip"/> -->
 		
 	<!-- System will randomly select from the group of sub object.
@@ -163,8 +169,7 @@
 			<object name="uk_helmet"/>
 			<object name="uk_canteen"/>
 			<object name="uk_brenp_lf"/>
-			<!-- Needs pholster_rt_web.  Need to get toto to do -->
-			<object name="uk_pholster_rt"/>
+			<object name="uk_pholster_rt_web"/>
 			<object name="uk_gas_lf"/>
 			
 		</kit>
@@ -181,8 +186,7 @@
 		<kit name="uk-lmg">
 			<object name="uk_helmet"/>
 			<object name="uk_brenp_lf"/>
-			<!-- Needs pholster_rt_web.  Need to get toto to do -->
-			<object name="uk_pholster_rt"/>
+			<object name="uk_pholster_rt_web"/>
 			<object name="uk_ruck"/>
 		</kit>
 		
@@ -196,8 +200,7 @@
 			<object name="uk_canteen"/>
 			<object name="uk_etool"/>
 			<object name="uk_brenp_lf"/>
-			<!-- Needs pholster_rt_web.  Need to get toto to do -->
-			<object name="uk_pholster_rt"/>
+			<object name="uk_pholster_rt_web"/>
 			<object name="uk_gas_lf"/>
 		</kit>
 		
@@ -232,8 +235,7 @@
 			<object name="uk_parahelm"/>
 			<object name="uk_canteen"/>
 			<object name="uk_brenp_lf"/>
-			<!-- Needs pholster_rt_web.  Need to get toto to do -->
-			<object name="uk_pholster_rt"/>
+			<object name="uk_pholster_rt_web"/>
 			<object name="uk_gas_lf"/>
 			
 		</kit>
@@ -249,9 +251,8 @@
 	
 		<kit name="uk-para-lmg">
 			<object name="uk_parahelm"/>
-			<object name="uk_brenp_lf"/>
-			<!-- Needs pholster_rt_web.  Need to get toto to do -->
-			<object name="uk_pholster_rt"/>
+			<object name="uk_brenp_lf"/>			
+			<object name="uk_pholster_rt_web"/>
 		</kit>
 		
 		<kit name="uk-para-snpr">
@@ -263,9 +264,8 @@
 			<object name="uk_parahelm"/>
 			<object name="uk_canteen"/>
 			<object name="uk_etool"/>
-			<object name="uk_brenp_lf"/>
-			<!-- Needs pholster_rt_web.  Need to get toto to do -->
-			<object name="uk_pholster_rt"/>
+			<object name="uk_brenp_lf"/>			
+			<object name="uk_pholster_rt_web"/>
 			<object name="uk_gas_lf"/>
 		</kit>
 		
@@ -446,8 +446,8 @@
 			<object name="de_canteen_rt"/>
 			<object name="de_etool"/>
 			<object name="de_gas"/>
-			<!-- Need SMG Ammo for right webbing -->
 			<object name="de_smg_ammo_lf"/>
+			<object name="de_smg_ammo_rt"/>
 			<!-- <object name="de_pholster_rt_hip"/> -->			
 		</kit>
 			
@@ -515,7 +515,7 @@
 			<object name="de_canteen_rt"/>
 			<object name="de_etool"/>
 			<object name="de_gas"/>
-			<!-- Need SMG Ammo for right webbing -->
+			<object name="de_smg_ammo_rt"/>
 			<object name="de_smg_ammo_lf"/>
 			<!-- <object name="de_pholster_rt_hip"/> -->			
 		</kit>
