@@ -2799,8 +2799,8 @@
 <!ENTITY mission.readytab.panel.joinvehicle "VEHIKEL BEITRETEN">
 <!ENTITY mission.state.1 "Deine Mission ist noch gültig.">
 <!ENTITY mission.aartab.aars.aar.notes.promoted "Du wurdest befördert">
-<!ENTITY mission.aartab.aars.aar.capperkills "KILLS BEI EINNAHMEN">
 <!ENTITY mission.brieftab.brief "MISSIONSDETAILS">
+<!ENTITY mission.aartab.aars.aar.capperkills "KILLS BEI EINNAHMEN">
 <!ENTITY mission.readytab.brief.weapon "WAFFE">
 <!ENTITY mission.brieftab.brief.target "ZIEL">
 <!ENTITY mission.readytab.crew "WÄHLE EINEN KOMMANDANTEN">
@@ -2900,6 +2900,7 @@
 <!ENTITY mission.brieftab.help "BESPRECHUNG: MISSIONSDETAILS">
 <!ENTITY mission.readytab.supply.status.closed "Diese Anlage ist geschlossen; hier kann nicht eingestiegen werden.">
 <!ENTITY mission.readytab.crew.commander "KOMMANDANT">
+<!ENTITY mission.aartab.aars.aar.ai "Enemy Forces">
 <!ENTITY mission.spawn.denied11 "Your account minute balance has run out.">
 <!ENTITY brigades.list.key.reserve "RESERVE">
 <!ENTITY brigades.details.objective "ZIEL">
@@ -3704,6 +3705,7 @@
 <!ENTITY hud.hqintel.dir.6 "westlich">
 <!ENTITY hud.readout.torp.control.angle "VORHALTEWINKEL">
 <!ENTITY hud.minimap.in "Vergrößern">
+<!ENTITY hud.bailout.bailedpilot "Air Crew">
 <!ENTITY hud.binfo.state.alliesown "Alliiert">
 <!ENTITY hud.alerts.16 "{1} führt jetzt die Mission an">
 <!ENTITY hud.alerts.13.fallback "Deine Brigade ist auf dem Rückzug">
@@ -3711,6 +3713,7 @@
 <!ENTITY hud.readout.gear.neutral "N">
 <!ENTITY hud.readout.torp.range "Entfernung">
 <!ENTITY hud.binfo.state.wedefend "wird von uns verteidigt">
+<!ENTITY hud.binfo.state.enemycancapture "Can Be Captured by Enemy">
 <!ENTITY hud.cliptype.3 "Ladung">
 <!ENTITY hud.alerts.25 "{1} braucht Munition">
 <!ENTITY hud.binfo.state.cantcapture "Nicht einnehmbar">
@@ -3892,7 +3895,7 @@
 <!ENTITY chatchan.brigade "Brigade">
 <!ENTITY globals.time.years "Jahre">
 <!ENTITY spec.bad.shadermodel "Shader Modell 1.2 oder höher wird benötigt!">
-<!ENTITY hccp.title "HIGH COMMANDER FUNKTONEN">
+<!ENTITY hccp.title "OBERKOMMANDO FUNKTIONEN">
 <!ENTITY conn.init.error2 "Fehler beim Erhalten der Verbindungsdaten">
 <!ENTITY exitvehicle.status.2 "KIA">
 <!ENTITY exitvehicle.ms.leave "Unbemannten Mobile Spawn hier aufstellen?">
