@@ -43,7 +43,7 @@
 							<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
 						</view>
 						<text id="info-brief" x="30" rtop="80" width="260" height="200" acceptsfocus="no" style="color: #e9e3d9; font-size: +1;"/>
-						<image id="info-image" width="160" height="350" rright="10" rtop="50" style="border-color: #BFE2CE;"/>
+						<image id="info-image" width="175" height="350" rright="10" rtop="50" style="border-color: #BFE2CE;" aspectlimit="width"/>
 					</tab>
 					<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false' onshow="showInfo(this)">
 						<view x="10" width="425" height="25" rtop="12">
