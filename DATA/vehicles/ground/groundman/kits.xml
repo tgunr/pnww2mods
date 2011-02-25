@@ -209,69 +209,62 @@
 			<object name="uk_etool"/>
 			<object name="uk_ruck"/>
 		</kit>
-		
+
+<!-- UK Parakit being removed pending adding webbing to that unit, due to clipping ugliness -->
 		<kit name="uk-para-rfl">
 			<object name="uk_parahelm"/>
+			<!--
 			<object name="uk_canteen"/>
 			<object name="uk_etool"/>			
 			<object name="uk_gas_lf"/>
 			<object name="uk_brenp_lf"/>
 			<object name="uk_brenp_rt"/>
+			-->
 		</kit>
-		
-	<!-- This unit not in spawn lists
-		
-		<kit name="uk-para-gren">
-			<object name="uk_parahelm"/>
-			<object name="uk_gas_lf"/>
-			<object name="uk_etool"/>
-			<object name="uk_pholster_rt"/>
-			<object name="uk_brenp_lf"/>
-			<object name="uk_brenp_rt"/>
-		</kit>
-		-->
 		
 		<kit name="uk-para-smg">
 			<object name="uk_parahelm"/>
+			<!--
 			<object name="uk_canteen"/>
 			<object name="uk_brenp_lf"/>
 			<object name="uk_pholster_rt_web"/>
 			<object name="uk_gas_lf"/>
-			
+			-->
 		</kit>
-	<!-- This unit not in spawn lists
-		<kit name="uk-para-eng">
-			<object name="uk_parahelm"/>
-			<object name="uk_canteen"/>
-			<object name="uk_etool"/>
-			<object name="uk_brenp_lf"/>
-			<object name="uk_brenp_rt"/>
-		</kit>
-	-->
+
+	<!-- There is no uk para engineer, nor para grenadier -->
 	
 		<kit name="uk-para-lmg">
 			<object name="uk_parahelm"/>
+			<!--
 			<object name="uk_brenp_lf"/>			
 			<object name="uk_pholster_rt_web"/>
+			-->
 		</kit>
 		
 		<kit name="uk-para-snpr">
 			<object name="uk_parahelm"/>
+			<!--
 			<object name="uk_canteen"/>
+			-->
 		</kit>
 		
 		<kit name="uk-para-atr">
 			<object name="uk_parahelm"/>
+			<!--
 			<object name="uk_canteen"/>
 			<object name="uk_etool"/>
 			<object name="uk_brenp_lf"/>			
 			<object name="uk_pholster_rt_web"/>
 			<object name="uk_gas_lf"/>
+			-->
 		</kit>
 		
 		<kit name="uk-para-mrtr">
 			<object name="uk_parahelm"/>
+			<!--
 			<object name="uk_etool"/>
+			-->
 		</kit>
 		
 		<!-- FRENCH KITS -->
