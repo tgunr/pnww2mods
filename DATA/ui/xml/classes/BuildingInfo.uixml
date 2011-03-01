@@ -175,7 +175,11 @@
 						return getlocstring('hud.binfo.state.contested');
 				}
 				
-				return getlocstring('hud.binfo.state.cancapture');
+				// Clarifying: If friendly-owned, enemy can capture. If enemy-owned, YOU can capture
+				if(friendly)
+					return getlocstring('hud.binfo.state.enemycancapture');
+				else
+					return getlocstring('hud.binfo.state.cancapture');
 			}
 			
 			// either AO not placed or mil fac and not contested

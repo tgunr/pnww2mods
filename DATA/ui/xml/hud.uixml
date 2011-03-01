@@ -467,7 +467,7 @@
 				ammoView.visible = false;
 				clipView.visible = false;
 				
-				if(primaryProgress.value > 0)
+				// if(primaryProgress.value > 0)
 					progress = true;
 			}
 			else if(clipSize > 1) // we're dealing with a clipped weapon

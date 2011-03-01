@@ -23,7 +23,7 @@
 		style="control-on: ui/textures/test/next_on.bmp; control-off: ui/textures/test/next_off.bmp; control-disabled: ui/textures/test/next_disabled.bmp; color: #FFFFFF; font-size: -3;"
 		onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
 		tip="${widgets.template.next.tip}"/>
-	<caption id="version" x="832" y="5" width="114" height="17" align="right" style="color: #000000;" onshow="showVersion(this)" />
+	<caption id="version" x="25" y="7" width="114" height="17" align="right" style="color: #000000; font-size: +1;" onshow="showVersion(this)" />
 	<script>
 		<!--
 		
