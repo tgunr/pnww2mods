@@ -54,6 +54,7 @@
 				 	style="color: #BFE2CE; border-color: #3e5248; border-size: 1;">
 				 	 <image rright="5" rtop="5" src="ui/textures/map-scaledown-off.bmp" width="10" height="10" acceptmouseclick="false"/>
 				</caption>
+				<!-- DEPRECATED 1.33
 				<caption label="${widgets.prefs.groups.game.lowmemory}" x="20" height="20" rright="0" rtop="250" style="color: #e9e3d9ff;"
 					tip="${widgets.prefs.groups.game.lowmemory.tip}"/>
 				<view id="lowMemorySystem" width="150" height="15" rtop="250" rright="10">
@@ -66,6 +67,7 @@
 						onclick="addPreference('lowmemory', Preference.BOOL, false, true);"
 						onshow="this.value = !getPreference('lowmemory', Preference.BOOL, false, true);"/>
 				</view>
+				-->
 				<caption label="${widgets.prefs.groups.game.credits}" x="20" height="20" rright="0" rtop="280" style="color: #e9e3d9ff;"
 					tip="${widgets.prefs.groups.game.credits.tip}"/>
 				<view id="showCredits" width="150" height="15" rtop="280" rright="10">
