@@ -871,7 +871,7 @@
 			var member1 	= findview("squad-member1-name").text;
 			var member2 	= findview("squad-member2-name").text;
 			var member3 	= findview("squad-member3-name").text;
-			var handleRe	= new RegExp("^[A-Za-z0-9]+$");
+			var handleRe	= (game.region == 5) ? new RegExp("^.+$") : new RegExp("^[A-Za-z0-9]+$");
 			
 			if(longname == "" || shortname == "" || xo == "" || member1 == "" || member2 == "" || member3 == "")
 			{
