@@ -44,8 +44,16 @@
 		<model name="fr_sm_ammo_rt" path="TPS\meshes\french_inf\kit_fr_sm_ammo_rt_lod1" attach="4"/>
 		<!-- Rucksack -->
 		<model name="fr_ruck" path="TPS\meshes\french_inf\kit_fr_rucksack_lod1" attach="10" lod="100"/>
-		
-		<!-- french para helmet -->
+
+		<!-- FRENCH PARA MODELS -->
+
+		<model name="fr_p_ammobag_lf_bk" path="TPS\meshes\para_french\kit_fr_p_ammobag_lf_bk" attach="4"/>
+		<model name="fr_p_canteen_lf_hip" path="TPS\meshes\para_french\kit_fr_p_canteen_lf_hip" attach="4"/>
+		<model name="fr_p_gas_rt_bk" path="TPS\meshes\para_french\kit_fr_p_gas_rt_bk" attach="4"/>
+		<model name="fr_p_lg_ammo_lf" path="TPS\meshes\para_french\kit_fr_p_lg_ammo_lf" attach="4"/>
+		<model name="fr_p_lg_ammo_rt" path="TPS\meshes\para_french\kit_fr_p_lg_ammo_rt" attach="4"/>
+		<model name="fr_p_sm_ammo_lf" path="TPS\meshes\para_french\kit_fr_p_sm_ammo_lf" attach="4"/>
+		<model name="fr_p_sm_ammo_rt" path="TPS\meshes\para_french\kit_fr_p_sm_ammo_rt" attach="4"/>
 		<model name="fr_parahelm_01" path="TPS\meshes\para_french\kit_fr_parahelm_lod1" attach="18" lod="0"/>
 
 		<!-- GERMAN MODELS -->
@@ -102,6 +110,13 @@
 		<object name="fr_lg_ammo_rt" model="fr_lg_ammo_rt"/>
 		<object name="fr_sm_ammo_rt" model="fr_sm_ammo_rt"/>
 		<object name="fr_ruck" model="fr_ruck"/>
+		<object name="fr_p_ammobag" model="fr_p_ammobag_lf_bk"/>
+		<object name="fr_p_canteen" model="fr_p_canteen_lf_hip"/>
+		<object name="fr_p_gas" model="fr_p_gas_rt_bk"/>
+		<object name="fr_p_lg_ammo_lf" model="fr_p_lg_ammo_lf"/>
+		<object name="fr_p_lg_ammo_rt" model="fr_p_lg_ammo_rt"/>
+		<object name="fr_p_sm_ammo_lf" model="fr_p_sm_ammo_lf"/>
+		<object name="fr_p_sm_ammo_rt" model="fr_p_sm_ammo_rt"/>
 		<!-- <object name="fr_pholster_rt_hip" model="fr_pholster_rt_hip"/> -->
 		
 		<!-- GERMAN OBJECTS -->
@@ -347,79 +362,57 @@
 
 		<kit name="fr-para-rfl">
 			<object name="fr_parahelm"/>
-			<object name="fr_ammobag_lf"/>
-			<object name="fr_canteen"/>
-			<object name="fr_gas_rt"/>
-			<object name="fr_lg_ammo_lf"/>
-			<object name="fr_lg_ammo_rt"/>
-			<object name="fr_sm_ammo_lf"/>
-			<object name="fr_sm_ammo_rt"/>
+			<object name="fr_p_ammobag"/>
+			<object name="fr_p_canteen"/>
+			<object name="fr_p_gas"/>
+			<object name="fr_p_lg_ammo_lf"/>
+			<object name="fr_p_lg_ammo_rt"/>
+			<object name="fr_p_sm_ammo_lf"/>
+			<object name="fr_p_sm_ammo_rt"/>
 	</kit>
 		
 		<kit name="fr-para-atr">
 			<!-- Needs pholster_rt_web.  Need to get toto to do -->
 			<!-- <object name="fr_pholster_rt_hip"/> -->
 			<object name="fr_parahelm"/>
-			<object name="fr_canteen"/>
-			<object name="fr_gas_rt"/>			
-			<object name="fr_ammobag_lf"/>
-			<object name="fr_lg_ammo_lf"/>
-			<object name="fr_sm_ammo_lf"/>
+			<object name="fr_p_canteen"/>
+			<object name="fr_p_gas"/>			
+			<object name="fr_p_ammobag_lf"/>
+			<object name="fr_p_lg_ammo_lf"/>
+			<object name="fr_p_sm_ammo_lf"/>
 		</kit>
-	<!-- This unit not in spawn lists
-		<kit name="fr-para-eng">
-			<object name="fr_parahelm"/>
-			<object name="fr_canteen"/>
-			<object name="fr_ammobag_lf"/>
-			<object name="fr_lg_ammo_lf"/>
-			<object name="fr_lg_ammo_rt"/>
-			<object name="fr_sm_ammo_lf"/>
-			<object name="fr_sm_ammo_rt"/>
-		</kit>
-	-->
 		
 		<kit name="fr-para-lmg">
 			<!-- Needs pholster_rt_web.  Need to get toto to do -->
 			<!-- <object name="fr_pholster_rt_hip"/> -->
 			<object name="fr_parahelm"/>
-			<object name="fr_ammobag_lf"/>
-			<object name="fr_lg_ammo_lf"/>
-			<object name="fr_sm_ammo_lf"/>
+			<object name="fr_p_ammobag"/>
+			<object name="fr_p_lg_ammo_lf"/>
+			<object name="fr_p_sm_ammo_lf"/>
 		</kit>
 		
 		<kit name="fr-para-smg">
 			<object name="fr_parahelm"/>
-			<object name="fr_canteen"/>
-			<object name="fr_gas_rt"/>
+			<object name="fr_p_canteen"/>
+			<object name="fr_p_gas"/>
 			<!-- Needs pholster_rt_web.  Need to get toto to do -->
 			<!-- <object name="fr_pholster_rt_hip"/> -->
 		</kit>
 		
-	<!-- This unit not in spawn lists
-		<kit name="fr-para-gren">			
-			<object name="fr_lg_ammo_lf"/>
-			Doesn't exist yet: object name="fr_pholster_rt_hip"
-			<object name="fr_parahelm"/>
-			<object name="fr_gas_rt"/>
-		</kit>
-	
-	-->
-		
-		
 		<kit name="fr-para-snpr">
-			<object name="fr_lg_ammo_lf"/>
-			<object name="fr_lg_ammo_rt"/>
+			<object name="fr_p_lg_ammo_lf"/>
+			<object name="fr_p_lg_ammo_rt"/>
 			<object name="fr_parahelm"/>
-			<object name="fr_canteen"/>
+			<object name="fr_p_canteen"/>
 		</kit>
 		
 		<kit name="fr-para-mrtr">
 			<object name="fr_parahelm"/>
-			<object name="fr_ammobag_lf"/>
-			<object name="fr_lg_ammo_lf"/>
-			<object name="fr_lg_ammo_rt"/>
-			<object name="fr_sm_ammo_lf"/>
-			<object name="fr_sm_ammo_rt"/>
+			<object name="fr_p_ammobag"/>
+			<object name="fr_p_lg_ammo_lf"/>
+			<object name="fr_p_lg_ammo_rt"/>
+			<object name="fr_p_sm_ammo_lf"/>
+			<object name="fr_p_sm_ammo_rt"/>
 		</kit>
 		
 		<!-- GERMAN KITS -->
@@ -512,26 +505,7 @@
 			<object name="de_smg_ammo_lf"/>
 			<!-- <object name="de_pholster_rt_hip"/> -->			
 		</kit>
-	
-	<!-- This unit not in spawn lists		
-		<kit name="de-para-gren">
-			<object name="de_parahelm"/>
-			<object name="de_gas"/>
-			<object name="de_etool"/>
-			Needs pholster_rt_web.  Need to get toto to do
-				<object name="de_pholster_rt_hip"/>
-			<object name="de_rifle_ammo_lf"/>
-		</kit>
-	-->	
-	
-	<!-- This unit not in spawn lists
-		<kit name="de-para-eng">
-			<object name="de_parahelm"/>
-			<object name="de_canteen_rt"/>
-			<object name="de_etool"/>
-			<object name="de_rifle_ammo_lf"/>
-			<object name="de_rifle_ammo_rt"/>
-		</kit>
+
 	-->
 		<kit name="de-para-atr">
 			<object name="de_parahelm"/>
