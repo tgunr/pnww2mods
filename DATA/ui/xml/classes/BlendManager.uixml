@@ -326,7 +326,7 @@
 			{
 				var newAnim = parseInt(this.getAnim()) + direction;
 				
-				cprint("Checking animation "  + newAnim + " against " + this.animations.length);
+				//cprint("Checking animation "  + newAnim + " against " + this.animations.length);
 				
 				if(newAnim >= 0 && newAnim < this.animations.length)
 					return true;
@@ -404,6 +404,26 @@
 			}
 			
 			return (this.animations.length > 0) ? 0: -1;
+		}
+		
+		this.getTime = function()
+		{
+			if(this.animation != null)
+				return this.animation.time;
+			else if(this.blend != null)
+				return this.blend.time;
+			
+			return 0;
+		}
+		
+		this.getLength = function()
+		{
+			if(this.animation != null)
+				return this.animation.length;
+			else if(this.blend != null)
+				return this.blend.length;
+			
+			return 0;
 		}
 		
 		this.getType = function()

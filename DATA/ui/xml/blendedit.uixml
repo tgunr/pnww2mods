@@ -178,20 +178,24 @@
 				   font-size: -3;
 				   color: #FFFFFF;"/>
 	</view>
-	<view id="animControl" x="250" y="10" height="20" rright="250" moveondrag="no"
+	<view id="animControl" x="200" y="10" height="20" rright="250" moveondrag="no"
 		style="background-color: #000000; border-color: #3e5248;">
-		<image id="animButton" x="10" src="ui/textures/PauseCapIcon.dds" width="10" height="10" rtop="5"
+		<image id="eventButton" x="5" src="ui\uidata\chat\hqchan1-off.bmp" width="10" height="10" rtop="5"
+			onclick="selectAnimEvent()" acceptmouseclick="true"/>
+		<image id="animButton" x="15" src="ui/textures/PauseCapIcon.dds" width="10" height="10" rtop="5"
 			style="color: #FF0000;" onclick="setAnimControl(!animControl)" acceptmouseclick="true"/>
 		<slider id="animTime" x="30" height="15" width="300" rtop="5" minvalue="0" maxvalue="1"
 			style="thumb-off-color: #3e5248; thumb-width: 7; thumb-height: 12;"
 			onmousedown="setAnimControl(true)" onshow="this.value = 0"/>
+		<caption id="animPos" label=".3 of 2.33" x="340" height="20" width="60" rtop="0"
+			style="color: #e9e3d9ff; font-size: -1;" acceptmouseclick="false"/>
 		
-		<caption label="slow" height="20" width="40" rtop="0" rright="120"
+		<caption label="stop" height="20" width="40" rtop="0" rright="120"
 			style="color: #e9e3d9ff; font-size: -1;" acceptmouseclick="false"/>
 		<slider id="animSpeed" width="100" height="15" rtop="5" rright="35" minvalue="0" maxvalue="1"
 			style="thumb-off-color: #3e5248; thumb-width: 7; thumb-height: 12;"
 			onclick="setAnimSpeed(this.value)" onshow="this.value = 1"/>
-		<caption label="fast" height="20" width="40" rtop="0" rright="10"
+		<caption label="full" height="20" width="40" rtop="0" rright="10"
 			style="color: #e9e3d9ff; font-size: -1;" align="right" acceptmouseclick="false"/>
 			
 	</view>
@@ -207,6 +211,7 @@
 		var removeButton		= findview("removeButton");
 		var animSpeed				= findview("animSpeed");
 		var animTime				= findview("animTime");
+		var animPos					= findview("animPos");
 		var oscSlider				= findview("oscillationTime");
 		var types						= findview("types");
 		var state1					= findview("state1");
@@ -239,6 +244,8 @@
 		var animListGroups		= false;
 		var blendGroups			= false;
 		var lastShowGroups		= false;
+		
+		var animEventViews		= 0;
 		
 		function initEditor()
 		{
@@ -406,6 +413,8 @@
 			
 			if(animControl)
 				setAnimTime(animTime.value);
+				
+			animPos.label = blendMgr.getTime().toFixed(2) + " of " + blendMgr.getLength().toFixed(2);
 			
 			animUp.enabled 		= blendMgr.canMoveAnimation(-1);
 			animDown.enabled 	= blendMgr.canMoveAnimation(1);
@@ -684,6 +693,8 @@
 				playModeOff.value = false;
 				blendWeight.text = "0";
 			}
+			
+			updateAnimEvents();
 		}
 		
 		function deselectBlend()
@@ -744,6 +755,70 @@
 			}
 			
 			setAnimTime(animTime.value);
+		}
+		
+		function selectAnimEvent()
+		{
+			if(blendMgr.animSelected())
+			{
+				var p = game.load("blendeventselect");
+				p.initEvents(setAnimEvent);
+			}
+		}
+		
+		function setAnimEvent(type)
+		{
+			cprint("Add event " + type + " to animation " + blendMgr.getAnim() + " at " + blendMgr.getTime());
+			game.addanimevent(blendMgr.getAnim(), type,  blendMgr.getTime());
+			blendMgr.updateList();
+			updateAnimEvents();
+		}
+		
+		function updateAnimEvents()
+		{
+			for(var i = 0; i < animEventViews; i++)
+			{
+				var view = findview("animevent" + i);
+				if(view) view.close();
+			}
+			
+			animEventViews = 0;
+			
+			if(blendMgr.animSelected())
+			{
+				for(var i = 0; i < blendMgr.animation.events.length; i++)
+				{
+					var event = blendMgr.animation.events[i];
+					if(!event) break;
+					
+					var label = "?";
+					
+					if(event.type == 0)
+						label = "L";
+					else if(event.type == 1)
+						label = "R";
+					
+					var tb = new TextBuilder(window, "animevent" + i, "caption", label, 0, 0, 10, 15);
+					
+					tb.addAttribute("layer", 200);
+					tb.addStyle("color", "#FFFFFF");
+					tb.addStyle("background-color", "#00000088");
+					
+					var view = window.addview(tb.build());
+					
+					// resize it
+					view.visible = true;
+					//view.resizetotext();
+					
+					// now position it
+					view.x = animTime.screenx + (animTime.width * (event.time / blendMgr.getLength())) - (view.width * .5);
+					view.y = animTime.screeny + animTime.height + 5;
+					
+					animEventViews++;
+					
+					cprint("Added event view " + view.id + " label: " + view.label + " at " + view.x + "," + view.y + "," + view.width + "," + view.height);
+				}
+			}
 		}
 		
 		function setAnimTime(t)
