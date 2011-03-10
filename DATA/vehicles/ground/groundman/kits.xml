@@ -18,7 +18,7 @@
 		<!-- Pistol Holster, Right Hip -->
 		<model name="uk_pholster_rt" path="TPS\meshes\british_inf\kit_uk_pholster_rt_hip_lod1" attach="3"/>
 		<!-- Pistol Holster, Right Belt Webbing -->
-		<model name="uk_pholster_rt_web" path="TPS\meshes\british_inf\kit_uk_pholster_rt_web_lod1" attach="3"/>
+		<model name="uk_pholster_rt_web" path="TPS\meshes\british_inf\kit_uk_pholster_rt_web_lod1" attach="4"/>
 		<!-- Gas mask bag / respirator bag -->
 		<model name="uk_gas_lf" path="TPS\meshes\british_inf\kit_uk_gas_lf_bk_lod1" attach="4"/>
 		<!-- Rucksack -->
@@ -45,7 +45,7 @@
 		<!-- Rucksack -->
 		<model name="fr_ruck" path="TPS\meshes\french_inf\kit_fr_rucksack_lod1" attach="10" lod="100"/>
 
-		<!-- FRENCH PARA MODELS -->
+		<!-- FRENCH PARA MODELS (needed lower mount points) -->
 
 		<model name="fr_p_ammobag_lf_bk" path="TPS\meshes\para_french\kit_fr_p_ammobag_lf_bk" attach="4"/>
 		<model name="fr_p_canteen_lf_hip" path="TPS\meshes\para_french\kit_fr_p_canteen_lf_hip" attach="4"/>
@@ -63,8 +63,10 @@
 		<!-- Entrenching tool -->
 		<model name="de_etool" path="TPS\meshes\german_inf\kit_de_etool_lf_hip_lod1" attach="4"/>
 		<model name="de_gas" path="TPS\meshes\german_inf\kit_de_gas_bk_lod1" attach="4"/>
-		<!-- TOTO HASN'T ADDED PISTOL YET -->
-		<!-- model name="de_pholster_rt_hip" path="TPS\meshes\german_inf\kit_de_pholst_lod1" attach="3"/ -->
+		<!-- Pistols -->
+		<model name="de_pholster_rt_hip" path="TPS\meshes\german_inf\kit_de_pholster_rt_hip_lod1" attach="4"/>
+		<model name="de_pholster_lf_web" path="TPS\meshes\german_inf\kit_de_pholster_lf_web_lod1" attach="4"/>
+		
 		<!-- Rifle Ammo, Left -->
 		<model name="de_rifle_ammo_lf" path="TPS\meshes\german_inf\kit_de_rifle_ammo_lf_lod1" attach="4"/>
 		<!-- Rifle Ammo, Right -->
@@ -130,7 +132,8 @@
 		<object name="de_rifle_ammo_rt" model="de_rifle_ammo_rt"/>
 		<object name="de_smg_ammo_lf" model="de_smg_ammo_lf"/>
 		<object name="de_smg_ammo_rt" model="de_smg_ammo_rt"/>
-		<!-- <object name="de_pholster_rt_hip" model="de_pholster_rt_hip"/> -->
+		<object name="de_pholster_rt_hip" model="de_pholster_rt_hip"/>
+		<object name="de_pholster_lf_web" model="de_pholster_lf_web"/>
 		
 	<!-- System will randomly select from the group of sub object.
 		<object name="uk_helmet">
@@ -431,19 +434,17 @@
 			<object name="de_bread"/>
 			<object name="de_canteen_rt"/>
 			<object name="de_etool"/>
-			<object name="de_gas"/>
-			<object name="de_smg_ammo_lf"/>
+			<object name="de_gas"/>			
 			<object name="de_smg_ammo_rt"/>
-			<!-- <object name="de_pholster_rt_hip"/> -->			
+			<object name="de_pholster_lf_web"/>			
 		</kit>
 			
 		<kit name="degrenadier">
 			<object name="de_helmet"/>
 			<object name="de_gas"/>
 			<object name="de_etool"/>
-			<!-- Needs pholster_rt_web.  Need to get toto to do -->
-			<!-- <object name="de_pholster_rt_hip"/> -->
-			<object name="de_rifle_ammo_lf"/>
+			<object name="de_pholster_lf_web"/>
+			<object name="de_rifle_ammo_rt"/>
 		</kit>
 		
 		<kit name="de-eng">
@@ -459,14 +460,12 @@
 			<object name="de_canteen_rt"/>
 			<object name="de_gas"/>
 			<object name="de_etool"/>
-			<!-- Needs pholster_rt_web.  Need to get toto to do -->
-			<!-- <object name="de_pholster_rt_hip"/> -->
+			<object name="de_pholster_rt_hip"/>
 		</kit>
 		
 		<kit name="de-lmg">
 			<object name="de_helmet"/>
-			<!-- Needs pholster_rt_web.  Need to get toto to do -->
-			<!-- <object name="de_pholster_rt_hip"/> -->
+			<object name="de_pholster_lf_web"/>
 			<object name="de_bread"/>
 		</kit>
 		
@@ -503,7 +502,7 @@
 			<object name="de_gas"/>
 			<object name="de_smg_ammo_rt"/>
 			<object name="de_smg_ammo_lf"/>
-			<!-- <object name="de_pholster_rt_hip"/> -->			
+			<object name="de_pholster_rt_hip"/>			
 		</kit>
 
 	-->
@@ -512,14 +511,12 @@
 			<object name="de_canteen_rt"/>
 			<object name="de_gas"/>
 			<object name="de_etool"/>
-			<!-- Needs pholster_rt_web.  Need to get toto to do -->
-			<!-- <object name="de_pholster_rt_hip"/> -->
+			<object name="de_pholster_lf_web"/>
 		</kit>
 		
 		<kit name="de-para-lmg">
 			<object name="de_parahelm"/>
-			<!-- Needs pholster_rt_web.  Need to get toto to do -->
-			<!-- <object name="de_pholster_rt_hip"/> -->
+			<object name="de_pholster_lf_web"/>
 			<object name="de_bread"/>
 		</kit>
 		
