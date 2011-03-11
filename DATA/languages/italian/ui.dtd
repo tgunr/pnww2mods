@@ -4273,23 +4273,23 @@
 <!ENTITY combat.back.tip "Indietro ai tutorial.">
 <!ENTITY combat.vehicle.name "UNITA&#39;">
 <!ENTITY connect.login.handshake.lost "Connessione all&#39;host persa durante la transizione (handshake)">
-<!ENTITY connect.login.auth.failed "Autenticazione fallita">
+<!ENTITY connect.login.auth.failed "Autentificazione fallita">
 <!ENTITY connect.ping.notactive "Ping: ...">
 <!ENTITY connect.popup.title "Errore di rete">
 <!ENTITY connect.find.nonefound "Inizializzazione della rete fallita/nessuna rete disponibile">
 <!ENTITY connect.ping.stats.full "Ping: &#37;ums, Avg: &#37;ums, &#37;ls: &#37;.1f&#37;&#37;.">
 <!ENTITY connect.login.timeout "Tempo di connessione all&#39;host esaurito">
-<!ENTITY connect.find.cantopen "Impossibile aprire la connessione alla rete del gioco">
+<!ENTITY connect.find.cantopen "Impossibile risolvere la selezione della rete">
 <!ENTITY connect.lost.game "Connessione al gioco persa">
-<!ENTITY connect.find.timeout.data "Tempo di ricezione dei dati di connessione esaurito">
+<!ENTITY connect.find.timeout.data "Esaurito il tempo di ricezione per i dati di connessione">
 <!ENTITY connect.login.chat.lost "Connessione al gioco persa durante la connessione alla chat">
-<!ENTITY connect.ping.lossbig "*PACKET LOSS*">
+<!ENTITY connect.ping.lossbig "*PACCHETTI PERSI*">
 <!ENTITY connect.ping.stats.brief "Ping: &#37;u(&#37;u)ms">
 <!ENTITY connect.find.nodata "Errore nella ricezione dei dati di connessione">
-<!ENTITY connect.ping.loss "Loss">
+<!ENTITY connect.ping.loss "Persa">
 <!ENTITY connect.fail "Connessione fallita">
-<!ENTITY connect.login.auth.timeout "Tempo esaurito durante l&#39;autenticazione">
-<!ENTITY connect.login.chat.error "Impossibile connetersi al host della chat">
+<!ENTITY connect.login.auth.timeout "Tempo esaurito durante l&#39;autentificazione">
+<!ENTITY connect.login.chat.error "Impossibile connettersi all’host della chat">
 <!ENTITY connect.ping.kbps "Kbps: &#37;.1f in, &#37;.1f out.">
 <!ENTITY connect.lost "&#37;ls: Errore #&#37;u">
 <!ENTITY connect.lost.reconnect "Connessione alla chat persa, riconnessione">
@@ -4302,15 +4302,15 @@
 <!ENTITY connect.lost.chat "Connessione all&#39;host della chat persa">
 <!ENTITY connect.login.badlogin "Errore di accesso imprevisto">
 <!ENTITY connect.find.timeout.network "Tempo di connessione alla rete del gioco esaurito">
-<!ENTITY connect.netcode2.reverting "[netcode2 connection failed, please check your firewall - reverting to standard network usage]">
+<!ENTITY connect.netcode2.reverting "[connessione netcode2 fallita, per favore controlla il tuo firewall - sto ritornando all&#39;uso standard della rete]">
 <!ENTITY connect.ping.na "Ping: N/A">
-<!ENTITY connect.netcode2.firewall "[netcode2 connection failed, please check your firewall - reverting to standard network usage]">
+<!ENTITY connect.netcode2.firewall "[connessione netcode2 fallita, per favore controlla il tuo firewall - sto ritornando all&#39;uso standard della rete]">
 <!ENTITY connect.login.error "Errore di connessione all&#39;host">
 <!ENTITY connect.reconnect.failed "Connessione all&#39;host persa, riconnessione fallita">
 <!ENTITY connect.refused "Connessione rifiutata dall&#39;host">
-<!ENTITY connect.netcode2.disabled "[netcode2 disabled on server]">
+<!ENTITY connect.netcode2.disabled "[netcode2 disabilitato sul server]">
 <!ENTITY connect.find.nobest "Impossibile connettersi alla rete del gioco">
-<!ENTITY connect.login.nochat "Connessione alla chat fallito">
+<!ENTITY connect.login.nochat "Connessione alla chat fallita">
 <!ENTITY waypoints.stop "stop">
 <!ENTITY waypoints.turn4 "svolta 4">
 <!ENTITY waypoints.turn5 "svolta 5">
@@ -4338,3 +4338,31 @@
 <!ENTITY waypoints.origin.tip "Origine di missione: Qui è da dove è iniziata la tua missione; controlla l&#39;obiettivo di missione per maggiori dettagli.">
 <!ENTITY waypoints.target "obiettivo">
 <!ENTITY waypoints.turn2 "svolta 2">
+<!ENTITY ppos.badlocation "Non puoi posizione questo tipo di oggetto in questa zona del terreno!">
+<!ENTITY ppos.fru.built "Un altro giocatore ha costruito un FRU per questa missione!">
+<!ENTITY ppos.badtrees "C&#39;è un albero che blocca il tuo oggetto!">
+<!ENTITY ppos.badavoidance "Sei troppo vicino ad un altro oggetto!">
+<!ENTITY ppos.ob3 "Unità di rifornimento sul campo (FRU)">
+<!ENTITY ppos.badplayer "Devi essere entrato in gioco per poter posizionare gli oggetti!">
+<!ENTITY ppos.ob1 "Posizione di combattimento della fanteria">
+<!ENTITY ppos.badspeed "Non puoi posizionare questo tipo di oggetto mentre ti muovi!">
+<!ENTITY ppos.fru.notleader "Questa missione ha attualmente un&#39;unità di rifornimento sul campo (FRU)">
+<!ENTITY ppos.badenemyfac.toofar "Sei troppo lontano dalla struttura nemica per questo tipo di oggetto!">
+<!ENTITY ppos.coolingdown "Devi aspettare il conto alla rovescia per completare!">
+<!ENTITY ppos.badfriendlyfac.tooclose "Sei troppo vicino alla struttura amica per questo tipo di oggetto!">
+<!ENTITY ppos.building "Edificio: {1}">
+<!ENTITY ppos.badfriendlyfac.toofar "Sei troppo lontano dalla struttura amica per questo tipo di oggetto!">
+<!ENTITY ppos.badenemyfac.tooclose "Sei troppo vicino alla struttura nemica per questo tipo di oggetto!">
+<!ENTITY ppos.badtargetrange.tooclose "Sei troppo vicino all&#39;obiettivo di missione per questo tipo di oggetto!">
+<!ENTITY ppos.fru.build "Vuoi cotruire un&#39;unità di rifornimento sul campo (FRU) qui?">
+<!ENTITY ppos.badvehicle "Un altro giocatore sta bloccando il tuo oggetto!">
+<!ENTITY ppos.cantsee "Devi essere in grado di vedere il tuo oggetto per posizionarlo!">
+<!ENTITY ppos.noaccess "Non hai i permessi per questo oggetto. Aggiorna il tuo abbonamento per sbloccarlo.">
+<!ENTITY ppos.badtargetrange.toofar "Sei troppo lontano dall&#39;obiettivo di missione per questo tipo di oggetto!">
+<!ENTITY ppos.ob2 "Nido di mitragliatrice">
+<!ENTITY ppos.noinside "Non puoi posizionare questo tipo di oggetto mentre sei in un edificio!">
+<!ENTITY ppos.badplacement "Questo non è una posizione valida!">
+<!ENTITY ppos.ob4 "Unità di rifornimento sul campo (FRU)">
+<!ENTITY ppos.built "&#37;ls costruito!">
+<!ENTITY ppos.invalidnow "La posizione dell&#39;oggetto non è più valida!">
+<!ENTITY ppos.badangle "La pendenza del terreno è eccessiva!">
