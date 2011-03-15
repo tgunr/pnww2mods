@@ -350,7 +350,10 @@
 			if(personaView.visible)
 			{
 				// update player state icon
-				stateIcon.src = "ui/textures/hud/" + "state_" + me.state + ".bmp";
+				if(me.state == "stand")
+					stateIcon.src = "ui/textures/hud/" + "state_" + me.walkrun + ".bmp";
+				else
+					stateIcon.src = "ui/textures/hud/" + "state_" + me.state + ".bmp";
 				
 				// update health
 				atpBar.value 	= me.atp;
@@ -467,8 +470,7 @@
 				ammoView.visible = false;
 				clipView.visible = false;
 				
-				// if(primaryProgress.value > 0)
-					progress = true;
+				progress = true;					
 			}
 			else if(clipSize > 1) // we're dealing with a clipped weapon
 			{
@@ -1044,7 +1046,7 @@
 		
 		function onCoolDown(progress)
 		{
-			primaryProgress.value = progress;
+			primaryProgress.value = progress;			
 		}
 		
 		function onOrders(sendAlert)
