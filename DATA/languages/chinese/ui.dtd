@@ -104,7 +104,7 @@
 <!ENTITY loc.ui.504 "在你尝试驾驶交通工具之前，你必须进入正确的位置。">
 <!ENTITY loc.ui.217 "敏感度">
 <!ENTITY loc.ui.16 "重置任务">
-<!ENTITY loc.ui.227 "确定">
+<!ENTITY loc.ui.227 "是">
 <!ENTITY loc.ui.92 "任务 &#37;u 被发布了。">
 <!ENTITY loc.ui.17 "编辑命令">
 <!ENTITY loc.ui.66 "任务">
@@ -234,7 +234,7 @@
 <!ENTITY loc.ui.195 "绝对">
 <!ENTITY loc.ui.150 "任务简报">
 <!ENTITY loc.ui.263 "用法: .hqon_接受来自总部的信息.">
-<!ENTITY loc.ui.228 "取消">
+<!ENTITY loc.ui.228 "否">
 <!ENTITY loc.ui.247 "在 &#37;ls 附近发现敌军装甲部队。">
 <!ENTITY loc.ui.280 "正在测量距离...">
 <!ENTITY loc.ui.171 "乘员需求">
@@ -598,7 +598,7 @@
 <!ENTITY loc.english.241 "使用主武器">
 <!ENTITY loc.english.273 "瞄准">
 <!ENTITY loc.english.471 "摇杆1 按钮 16">
-<!ENTITY loc.english.133 "确定">
+<!ENTITY loc.english.133 "是">
 <!ENTITY loc.english.434 "空格键">
 <!ENTITY loc.english.580 "摇杆2 按钮 7">
 <!ENTITY loc.english.617 "摇杆3 按钮 6">
@@ -911,7 +911,7 @@
 <!ENTITY loc.english.354 "sys req">
 <!ENTITY loc.english.551 "加入被拒绝: 未知错误。">
 <!ENTITY loc.english.85 "已选择战车 = &#37;d">
-<!ENTITY loc.english.134 "取消">
+<!ENTITY loc.english.134 "否">
 <!ENTITY loc.english.278 "武器2">
 <!ENTITY loc.english.335 "正向范围">
 <!ENTITY loc.english.290 "升降舵">
@@ -2709,11 +2709,11 @@
 <!ENTITY mission.aartab.aars.id "出击 ID">
 <!ENTITY mission.readytab.panel.requestcrew.tip "点击这个按钮邀请炮手加入您的交通工具">
 <!ENTITY mission.aartab.aars.aar.guardingpoints "守卫分数">
-<!ENTITY mission.forward "进入游戏世界">
+<!ENTITY mission.forward "进入游戏战场">
 <!ENTITY mission.aartab.aars.aar.stats "状态">
 <!ENTITY mission.aartab.aars.rescues "援救">
 <!ENTITY mission.readytab.crew.vehicle "交通工具">
-<!ENTITY mission.forward.tip "以当前选定的交通工具或兵种开始任务。">
+<!ENTITY mission.forward.tip "以当前选定的角色进入游戏战场开始游戏。">
 <!ENTITY mission.readytab.panel.joinvehicle.tip "如果你想成为多人操交通工具的炮手的话，请点击这个按钮；如果你想成为车长的话，你必须提前预订，然后才能点击“乘员申请”按钮。">
 <!ENTITY mission.aartab.pending "您的战斗报告正在生成。请等待...">
 <!ENTITY mission.aartab.aars.rtbs "返回基地">
@@ -2729,7 +2729,7 @@
 <!ENTITY mission.readytab.brief.origin "任务起点">
 <!ENTITY mission.readytab.panel.canceljoin.tip "点击这个按钮可以取消您申请加入多人交通工具的请求。">
 <!ENTITY mission.aartab.aars.aar.started "开始">
-<!ENTITY mission.back "战斗旅总部">
+<!ENTITY mission.back "返回任务选择">
 <!ENTITY mission.spawn.denied4 "游戏被锁定。">
 <!ENTITY mission.aartab.aars.aar.tom "任务时间（分）">
 <!ENTITY mission.forward.closed "任务关闭">
@@ -2809,7 +2809,7 @@
 <!ENTITY mission.state.0 "您的任务已经被取消.请离开当前任务并重新选择。">
 <!ENTITY mission.spawn.denied5 "此移动兵站已经不能使用了。">
 <!ENTITY mission.orders.basecaptured "你的基地 &#37;ls 被占领了!">
-<!ENTITY mission.back.tip "回到您所在战斗旅的总部。如果您是任务指挥官，将会取消任务。">
+<!ENTITY mission.back.tip "回到您所在战斗旅的总部重新选择任务。如果您是任务指挥官，将会取消任务。">
 <!ENTITY mission.readytab.commander "车长">
 <!ENTITY mission.readytab.supply.status.normal "这个设施可以供给，增援将会在大概{1} 分钟到达。">
 <!ENTITY mission.readytab.spawn.slocked "这个战车或兵种只有付费用户才能使用。">
@@ -2893,14 +2893,14 @@
 <!ENTITY brigades.list.status.active "激活">
 <!ENTITY brigades.list.key.attack "攻击">
 <!ENTITY brigades.list.objective "目标">
-<!ENTITY brigades.back "更改角色">
+<!ENTITY brigades.back "返回阵营军种选择">
 <!ENTITY brigades.details.home "驻地">
 <!ENTITY brigades.list.status.inactive.tip "这个战斗旅正在休整。一个正在休整的战斗旅指的是一个没有任务的战斗旅。">
 <!ENTITY brigades.list.status.objective.tip "这个战斗旅有目标，但是没有任务。为这个战斗旅创建一个任务或者等待高级玩家来创建。">
 <!ENTITY brigades.list.sq "队员">
 <!ENTITY brigades.details.enlistments "征募">
 <!ENTITY brigades.list.key.defend "防御">
-<!ENTITY brigades.forward "战斗旅总部">
+<!ENTITY brigades.forward "加入">
 <!ENTITY brigades.rostertab "战斗旅名册">
 <!ENTITY brigades.list.ms "移动兵站">
 <!ENTITY brigades.list.pop "人数">
@@ -2916,7 +2916,7 @@
 <!ENTITY brigades.list.ms.tip "显示这个战斗旅所拥有的任务中是否拥有已经被激活的移动兵站。">
 <!ENTITY brigades.list.status.defensive "防御">
 <!ENTITY brigades.list.inactive.tip "现在这个战斗旅正在休整。一旦官员为这个战斗旅设置了任务，那么这个战斗旅就被激活了，你就可以加入它了。">
-<!ENTITY brigades.back.tip "返回并选择一个新的角色">
+<!ENTITY brigades.back.tip "返回并选择一个新的阵营或军种">
 <!ENTITY brigades.list.dd "DD">
 <!ENTITY brigades.details.ms.single "(1 移动兵站)">
 <!ENTITY brigades.list.pop.tip "这个旅的人数显示条">
@@ -3074,7 +3074,7 @@
 <!ENTITY brigade.createtab.error.noperms "现在您不能创建任务。这可能是因为您的军衔太低或者您已经创建了一个任务。">
 <!ENTITY brigade.createtab.postreply.3 "您现在的军衔等级不能创建任务。">
 <!ENTITY brigade.control.unit.moved "{1}把{2}从{3}移动到了{4}。">
-<!ENTITY brigade.forward "任务简报">
+<!ENTITY brigade.forward "加入">
 <!ENTITY brigade.back.decision "您想要更改什么？">
 <!ENTITY brigade.createtab.error.2 "那不是一个设施。游戏的起点必须是可以生成角色的设施，这些设施为陆军，空军和海军的基地，前进基地和兵站。">
 <!ENTITY brigade.control.removed "{1}不再是{2}的指挥官了。">
@@ -3138,7 +3138,7 @@
 <!ENTITY brigade.createtab.error.length "任务描述最多256个字符。您的描述有{1}个字符。请进行修改。">
 <!ENTITY brigade.control.appointed.me "您现在是{1}的指挥官。">
 <!ENTITY brigade.control.error.cantcancel "请求被拒绝: 你不能撤销这个防御目标。">
-<!ENTITY brigade.back "更改战斗旅">
+<!ENTITY brigade.back "返回战斗旅选择">
 <!ENTITY brigade.hqtab.missions.origin "任务起点">
 <!ENTITY brigade.comtab.status "操作状态">
 <!ENTITY brigade.hqtab.missions.key.defend "防御">
@@ -3738,15 +3738,15 @@
 <!ENTITY persona.details.career.status.banned "您的帐户暂时被禁止，{1} 内不能进入游戏。寻求帮助可以登录官网http://www.pkhlk.com或联系客服 kf@pkhlk.com。">
 <!ENTITY persona.list.balanced "已平衡">
 <!ENTITY persona.list.imbalanced "{1} 人数是 {2} 过多. 因此所有的 {3} 角色进入游戏将会延迟，而 {4} 的角色则不会受到影响。">
-<!ENTITY persona.details.career.status.tip "现役显示这个角色可以用，而休假显示这个角色因为阵营限制不可用。">
+<!ENTITY persona.details.career.status.tip "现役显示这个军种可以用，而休假显示这个军种因为阵营限制不可用。">
 <!ENTITY persona.list.onleave "休假时间将持续 {1}">
-<!ENTITY persona.details.career.status.onleave "休假将持续 {1} 。由于阵营限制，当前角色不可用。">
+<!ENTITY persona.details.career.status.onleave "休假将持续 {1} 。由于阵营限制，当前军种不可用。">
 <!ENTITY persona.redirect "您是某个正在进行的任务中的一员，转到待命室………">
 <!ENTITY persona.motd.tip "在这里查看重要游戏更新信息或者事件。">
-<!ENTITY persona.details.career.status.noswap "由于先前的阵营选择，您现在不能使用这个的角色。">
+<!ENTITY persona.details.career.status.noswap "由于先前的阵营选择，您现在不能使用这个军种。">
 <!ENTITY persona.list.requesting "要求增援">
 <!ENTITY persona.welcome.pollresults "点击这里查看最新的测验结果！--由官方提供技术支持。">
-<!ENTITY persona.forward.brigade "战斗旅总部">
+<!ENTITY persona.forward.brigade "加入">
 <!ENTITY persona.welcome1 "抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。">
 <!ENTITY persona.list.noswap "不可用">
 <!ENTITY persona.subscription.inactive "您的账户是非付费账户。某些游戏功能将受到限制。">
@@ -3758,21 +3758,21 @@
 <!ENTITY persona.list.slocked "付费锁定">
 <!ENTITY persona.details.brigade "战斗旅附录">
 <!ENTITY persona.details.career.rank.tip "距离升级的百分比">
-<!ENTITY persona.details.career.status.available "准备完毕. 这个角色可以直接进入游戏。">
+<!ENTITY persona.details.career.status.available "准备完毕. 这个军种可以直接进入游戏。">
 <!ENTITY persona.welcome.squad.motd.nosquad "想要获得乐趣吗？想要快速找到任务参加吗？想要和朋友一起游戏吗？那么你还等什么，赶快加入战队吧，去体验你从没接触到的欧洲战场！">
 <!ENTITY persona.list.available "现役">
 <!ENTITY persona.details.persona.recruit "征募">
-<!ENTITY persona.selecttab.tip "在这个标签选择一个角色。">
+<!ENTITY persona.selecttab.tip "在这个标签选择一个阵营军种。">
 <!ENTITY persona.details.career.status.training "该角色还在基础训练中。完成该训练可以进入到现役。">
-<!ENTITY persona.forward.brigades "选择战斗旅">
-<!ENTITY persona.selecttab.help "角色选择：选择一个角色">
+<!ENTITY persona.forward.brigades "加入">
+<!ENTITY persona.selecttab.help "阵营和军种选择：选择一个阵营和军种">
 <!ENTITY persona.forward.training "开始训练">
-<!ENTITY persona.selecttab "角色选择">
+<!ENTITY persona.selecttab "阵营选择">
 <!ENTITY persona.details.brigade.na "没有附录">
 <!ENTITY persona.welcome2 "抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。">
 <!ENTITY persona.list "角色">
 <!ENTITY persona.details.persona.handle "操作">
-<!ENTITY persona.details.persona "已选择的角色">
+<!ENTITY persona.details.persona "已选择的阵营和军种">
 <!ENTITY persona.details.career.rank "到下一级的进展">
 <!ENTITY persona.list.tip "选择角色">
 <!ENTITY persona.notgraduated "你还是新兵，尚未从新兵营毕业。你愿意进新兵营训练吗？">
@@ -3785,7 +3785,7 @@
 <!ENTITY persona.list.delayed "接入延迟">
 <!ENTITY persona.details.career.status.leave.help "休假 – 由于阵营限制，现在不能进行游戏。">
 <!ENTITY persona.welcome "健康游戏公告">
-<!ENTITY persona.details.career.status.delayed "由于阵营平衡的考虑，选择这个角色将被延迟 {1}。">
+<!ENTITY persona.details.career.status.delayed "由于阵营平衡的考虑，选择这个军种将被延迟 {1}。">
 <!ENTITY persona.forward.brigade.tip "进入您选择的战斗旅的总部。">
 <!ENTITY persona.forward.training.tip "学习训练教程。训练毕业后可开始进入现役。">
 <!ENTITY persona.forward "选择角色">
@@ -3795,7 +3795,7 @@
 <!ENTITY persona.motd "欢迎进入《激战海陆空》">
 <!ENTITY persona.forward.brigades.tip "选择一个战斗旅加入">
 <!ENTITY persona.details.career.status.active.help "当前任务 – 可以游戏，没有阵营限制。">
-<!ENTITY persona.selecttab.header "选择一个角色">
+<!ENTITY persona.selecttab.header "选择一个阵营军种">
 <!ENTITY exitvehicle.ok "点击“确定”离开">
 <!ENTITY classes.missionresults.mia "作战失踪">
 <!ENTITY chatchan.mission "任务">
