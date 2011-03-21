@@ -155,6 +155,7 @@
 					addPreference("corpsetime", Preference.FLOAT, 1, true);
 					addPreference("corpsecount", Preference.FLOAT, 1, true);
 					addPreference("corpsedetail", Preference.BOOL, true, true);
+					addPreference('inflodmod', Preference.FLOAT, 1, true);
 
 					break;
 				case 1: // balanced
@@ -193,6 +194,7 @@
 					addPreference("corpsetime", Preference.FLOAT, .2, true);
 					addPreference("corpsecount", Preference.FLOAT, .2, true);
 					addPreference("corpsedetail", Preference.BOOL, false, true);
+					addPreference('inflodmod', Preference.FLOAT, 2, true);
 					break;
 				case 2: // performance
 					//addPreference('shademode', Preference.UINT, 0, true);
@@ -230,6 +232,7 @@
 					addPreference("corpsetime", Preference.FLOAT, .2, true);
 					addPreference("corpsecount", Preference.FLOAT, .2, true);
 					addPreference("corpsedetail", Preference.BOOL, false, true);
+					addPreference('inflodmod', Preference.FLOAT, 4, true);
 					break;
 			}
 		}
