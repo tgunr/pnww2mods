@@ -350,10 +350,7 @@
 			if(personaView.visible)
 			{
 				// update player state icon
-				if(me.state == "stand" && me.walkrun != null)
-					stateIcon.src = "ui/textures/hud/" + "state_" + me.walkrun + ".bmp";
-				else
-					stateIcon.src = "ui/textures/hud/" + "state_" + me.state + ".bmp";
+				stateIcon.src = "ui/textures/hud/" + "state_" + me.state + ".bmp";
 				
 				// update health
 				atpBar.value 	= me.atp;
