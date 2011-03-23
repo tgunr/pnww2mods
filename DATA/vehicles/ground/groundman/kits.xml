@@ -64,6 +64,7 @@
 		<model name="de_helmet_01" path="TPS\meshes\german_inf\kit_de_helmet_lod1" attach="18" lod="0"/>
 		<model name="de_bread" path="TPS\meshes\german_inf\kit_de_bread_bk_lod1" attach="4"/>
 		<model name="de_canteen_rt" path="TPS\meshes\german_inf\kit_de_canteen_rt_hip_lod1" attach="4"/>
+		<model name="de_ruck" path="TPS\meshes\german_inf\kit_de_rucksack_lod1" attach="10"/>
 		<!-- Entrenching tool -->
 		<model name="de_etool" path="TPS\meshes\german_inf\kit_de_etool_lf_hip_lod1" attach="4"/>
 		<model name="de_gas" path="TPS\meshes\german_inf\kit_de_gas_bk_lod1" attach="4"/>
@@ -141,6 +142,7 @@
 		<object name="de_smg_ammo_rt" model="de_smg_ammo_rt"/>
 		<object name="de_pholster_rt_hip" model="de_pholster_rt_hip"/>
 		<object name="de_pholster_lf_web" model="de_pholster_lf_web"/>
+		<object name="de_ruck" model="de_ruck"/>
 		
 	<!-- System will randomly select from the group of sub object.
 		<object name="uk_helmet">
@@ -451,6 +453,7 @@
 			<object name="de_etool"/>
 			<object name="de_pholster_lf_web"/>
 			<object name="de_rifle_ammo_rt"/>
+			<object name="de_ruck"/>
 		</kit>
 		
 		<kit name="de-eng">
@@ -459,6 +462,7 @@
 			<object name="de_etool"/>
 			<object name="de_rifle_ammo_lf"/>
 			<object name="de_rifle_ammo_rt"/>
+			<object name="de_ruck"/>
 		</kit>
 		
 		<kit name="de-atr">
@@ -473,6 +477,7 @@
 			<object name="de_helmet"/>
 			<object name="de_pholster_lf_web"/>
 			<object name="de_bread"/>
+			<object name="de_ruck"/>
 		</kit>
 		
 		<kit name="de-sniper">
@@ -488,6 +493,7 @@
 			<object name="de_bread"/>
 			<object name="de_rifle_ammo_lf"/>
 			<object name="de_rifle_ammo_rt"/>
+			<object name="de_ruck"/>
 		</kit>
 		
 		<kit name="de-para-rfl">
@@ -524,6 +530,7 @@
 			<object name="de_parahelm"/>
 			<object name="de_pholster_lf_web"/>
 			<object name="de_bread"/>
+			<object name="de_ruck"/>
 		</kit>
 		
 		<kit name="de-para-snpr">
@@ -539,6 +546,7 @@
 			<object name="de_bread"/>
 			<object name="de_rifle_ammo_lf"/>
 			<object name="de_rifle_ammo_rt"/>
+			<object name="de_ruck"/>
 		</kit>
 		
 	</kits>
