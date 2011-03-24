@@ -23,6 +23,7 @@
 		<model name="uk_gas_lf" path="TPS\meshes\british_inf\kit_uk_gas_lf_bk_lod1" attach="4"/>
 		<!-- Rucksack -->
 		<model name="uk_ruck" path="TPS\meshes\british_inf\kit_uk_rsack_lod1" attach="9" lod="100"/>
+		<model name="uk_satchelbag_rt" path="TPS\meshes\british_inf\kit_uk_satchelbag_rt_lod1" attach="4"/>
 		
 		<!-- british para helmet -->
 		<model name="uk_parahelm_01" path="TPS\meshes\para_brit\kit_uk_parahelm_lod1" attach="18" lod="0"/>
@@ -105,6 +106,7 @@
 		<object name="uk_pholster_rt_web" model="uk_pholster_rt_web"/>
 		<object name="uk_gas_lf" model="uk_gas_lf"/>
 		<object name="uk_ruck" model="uk_ruck"/>
+		<object name="uk_satchelbag_rt" model="uk_satchelbag_rt"/>
 		
 		<!-- FRENCH OBJECTS -->
 		<object name="fr_parahelm" model="fr_parahelm_01"/>
@@ -207,7 +209,7 @@
 			<object name="uk_etool"/>
 			<object name="uk_brenp_lf"/>
 			<object name="uk_brenp_rt"/>
-			<object name="uk_ruck"/>
+			<object name="uk_satchelbag_rt"/>
 		</kit>
 		
 		<kit name="uk-lmg">
@@ -235,6 +237,7 @@
 			<object name="uk_helmet"/>
 			<object name="uk_etool"/>
 			<object name="uk_ruck"/>
+			<object name="uk_satchelbag_rt"/>
 		</kit>
 
 <!-- UK Parakit being removed pending adding webbing to that unit, due to clipping ugliness -->
