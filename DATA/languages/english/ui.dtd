@@ -610,6 +610,7 @@
 <!ENTITY loc.english.399 "caps lock">
 <!ENTITY loc.english.824 "Lost map connection, error &#37;d.">
 <!ENTITY loc.english.616 "joystick 3 button 5">
+<!ENTITY loc.english.851 "&#37;ls supply depleted for &#37;ls, switching to &#37;ls">
 <!ENTITY loc.english.311 "Rudder trim">
 <!ENTITY loc.english.142 "KEYMAP SCREEN">
 <!ENTITY loc.english.813 "Mission Results:">
@@ -2265,6 +2266,7 @@
 <!ENTITY widgets.keymapper.keys.function "FUNCTION NAME">
 <!ENTITY widgets.prefs.groups.titles.visual "Effects">
 <!ENTITY widgets.prefs.groups.sound.maxsounds.tip "Select how many sounds can play at any one time. Decrease to improve performance.">
+<!ENTITY widgets.prefs.groups.infantry.lod.highest "highest">
 <!ENTITY widgets.prefs.groups.hud.icons.vehtype "vehicle type">
 <!ENTITY widgets.prefs.groups.visual.shadows "SHADOW SIZE">
 <!ENTITY widgets.prefs.groups.game.language.spanish "spanish">
@@ -2418,6 +2420,7 @@
 <!ENTITY widgets.prefs.groups.sound.ambient.frequent "frequent">
 <!ENTITY widgets.prefs.groups.connection.network.tip "Select which network route to use. &#34;Use best&#34; is the preferred option but you can force your connection to use a specific route to the game host if needed. Might improve lag or warpy players.">
 <!ENTITY widgets.idcard.nextrank "to next rank">
+<!ENTITY widgets.prefs.groups.infantry.lod.tip "Select how detailed third person troops are. Lower performs better while higher looks better.">
 <!ENTITY widgets.prefs.groups.shadows.flying "SHADOWS WHEN FLYING">
 <!ENTITY widgets.calibration.mouse.more "more">
 <!ENTITY widgets.prefs.groups.chat.reset.tip "Click this button to reset your radio channels to the host defaults. Only applicable during online play.">
@@ -2533,6 +2536,7 @@
 <!ENTITY widgets.map.options.zoom.sector "SECTOR">
 <!ENTITY widgets.prefs.groups.ui.colors.aws.tip "Select your map&#39;s Air Warning System low and high volume colors.">
 <!ENTITY widgets.prefs.groups.sound.ambient.infrequent "infrequent">
+<!ENTITY widgets.prefs.groups.infantry.lod "LEVEL OF DETAIL">
 <!ENTITY widgets.map.info.target.tip "Shows your current mission&#39;s target city">
 <!ENTITY widgets.prefs.groups.hud.ppos.ok "GOOD PLACEMENT">
 <!ENTITY widgets.map.waypoints.title "WAYPOINTS">
@@ -2674,6 +2678,7 @@
 <!ENTITY widgets.calibration.device.axisz "Z Axis">
 <!ENTITY widgets.prefs.pending "You have changed some of your preferences. Would you like to save them now?">
 <!ENTITY widgets.prefs.groups.video.vertsync.tip "Tells the game to sync draw calls which the monitor&#39;s refresh rate. Disable to increase performance.">
+<!ENTITY widgets.prefs.groups.infantry.lod.lowest "lowest">
 <!ENTITY widgets.map.waypoints.contact.danger "Danger">
 <!ENTITY widgets.prefs.groups.sound.system.tip "Select whether 3d sounds are mixed through the sound card or software. One may provide better sound quality or performance depending on your hardware setup.">
 <!ENTITY widgets.prefs.groups.hud.mode.hide "hide hud">
