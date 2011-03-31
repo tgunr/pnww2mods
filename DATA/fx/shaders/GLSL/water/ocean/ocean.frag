@@ -27,7 +27,7 @@ void main()
 {
 	vec4 base = texture2D(src1, gl_TexCoord[0].xy);
 	
-	vec3 t0 = texture2D(src2, gl_TexCoord[0].xy).rgb;
+	vec3 t0 = texture2D(src2, gl_TexCoord[0].zw).rgb;
 	vec3 t1 = texture2D(src2, gl_TexCoord[1].xy).rgb;
 	vec3 t2 = texture2D(src2, gl_TexCoord[1].zw).rgb;
 	

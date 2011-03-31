@@ -52,6 +52,7 @@ void main()
 	ambientColor *= gl_FrontMaterial.ambient;
     specularColor *= gl_FrontMaterial.specular;
 	specularColor.rgb *= spec;
+	diffuseColor *= gl_FrontMaterial.diffuse;
 
 	vec4 color = base * (diffuseColor + ambientColor + specularColor);
 		
