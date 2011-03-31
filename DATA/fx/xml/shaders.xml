@@ -1,0 +1,524 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<glslprograms>
+  <!--=================================================================-->
+  <program name ="drawtexture">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/draw/drawtexture.vert</vertexshader>
+      <vertexshader>fx/shaders/GLSL+/utility/math.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightDAS.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/draw/drawtexture.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka ks kd shininess"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="data" type="samplerbuffer" unit="1" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="draw">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/draw/draw.vert</vertexshader>
+      <vertexshader>fx/shaders/GLSL+/utility/math.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightDAS.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/draw/draw.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka ks kd shininess"></materialconstants>
+    <uniform name="data" type="samplerbuffer" unit="1" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="multitexture">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/multitexture/multi.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightADnormal.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/multitexture/multi.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka kd"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="src3" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_tex1" type="attribute_texcoord1"></attribute>
+    <attribute name="in_tex2" type="attribute_texcoord2"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="multimask">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/multitexture/multimask.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightADnormal.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/multitexture/multimask.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka kd"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="src3" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="src4" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="src5" type="sampler2d" unit="4" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="transparenttexture">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/draw/transparenttexture.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightDAS.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/draw/transparenttexture.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka kd ks shininess"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="transparent">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/draw/transparent.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightDAS.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/draw/transparent.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka kd ks shininess"></materialconstants>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="cloud">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/sky/cloud.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightADnormal.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/sky/cloud.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka kd"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="cockpittexture">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/draw/cockpittexture.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightDAS.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/draw/cockpittexture.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka kd ks shininess"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="cockpit">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/draw/cockpit.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightDAS.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/draw/cockpit.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka kd ks shininess"></materialconstants>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="basiccolor">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/draw/basiccolor.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/draw/basiccolor.frag</fragmentshader>
+    </shaders>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_color" type="attribute_color"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="basictexture">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/draw/basictexture.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/draw/basictexture.frag</fragmentshader>
+    </shaders>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="spdgrass">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/grass/spdgrass.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightAD.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/grass/spdgrass.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka kd"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="data" type="samplerbuffer" unit="1" onetimeapply="true"></uniform>
+    <uniform name="origin" type="float_vec3"></uniform>
+    <uniform name="uv" type="float_vec2" numelements="64" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+  </program>
+  <!--=================================================================
+  <program name ="spdgrasscull">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/grass/spdgrasscull.vert</vertexshader>
+      <geometryshader>fx/shaders/GLSL+/grass/spdgrasscull.geom</geometryshader>
+    </shaders>
+    <transformfeedbackvaryings name1="pos" name2="params"></transformfeedbackvaryings>
+    <uniform name="data" type="samplerbuffer" unit="1" onetimeapply="true"></uniform>
+    <uniform name="origin" type="float_vec3"></uniform>
+  </program>
+  =================================================================-->
+  <program name ="normalmap">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/normal/normal.vert</vertexshader>
+      <vertexshader>fx/shaders/GLSL+/utility/math.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightTangentDAS.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/normal/normal.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka shininess"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="src3" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="data" type="samplerbuffer" unit="3" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+    <attribute name="in_tangent" type="attribute_tangent"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="fpsnormal">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/fpsnormal/fpsnormal.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightTangentDAS.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/fpsnormal/fpsnormal.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka kd shininess"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="src3" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+    <attribute name="in_tex1" type="attribute_tangent"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="fpsnormaldef">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/fpsnormal/fpsnormaldef.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightTangentDAS.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/fpsnormal/fpsnormal.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka kd shininess"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="src3" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="data" type="samplerbuffer" unit="3" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+    <attribute name="in_tex1" type="attribute_tangent"></attribute>
+    <attribute name="in_weights" type="attribute_texcoord1"></attribute>
+    <attribute name="in_indices" type="attribute_texcoord2"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="fpsnormalinst">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/fpsnormal/fpsnormalinst.vert</vertexshader>
+      <vertexshader>fx/shaders/GLSL+/utility/math.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightTangentDAS.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/fpsnormal/fpsnormal.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka kd shininess"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="src3" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="data" type="samplerbuffer" unit="3" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+    <attribute name="in_tex1" type="attribute_tangent"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="fpsdef">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/fpsnormal/fpsdef.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightDAS.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/fpsnormal/fpsdef.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka kd ks shininess"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="data" type="samplerbuffer" unit="1" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_weights" type="attribute_texcoord1"></attribute>
+    <attribute name="in_indices" type="attribute_texcoord2"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="fpsinst">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/fpsnormal/fpsinst.vert</vertexshader>
+      <vertexshader>fx/shaders/GLSL+/utility/math.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightDAS.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/fpsnormal/fps.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka kd ks shininess"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="data" type="samplerbuffer" unit="1" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="specularmap">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/specular/specular.vert</vertexshader>
+      <vertexshader>fx/shaders/GLSL+/utility/math.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightDAS.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/specular/specular.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka kd shininess"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="data" type="samplerbuffer" unit="2" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="water">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/water/water.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightTangentDAS.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/water/water.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka ks shininess"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="refl" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="data" type="samplerbuffer" unit="4" onetimeapply="true"></uniform>
+    <uniform name="time" type="float"></uniform>
+    <uniform name="alpha" type="float" onetimeappy="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="flagprogram">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/cloth/flag.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightDAS.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/cloth/flag.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka ks shininess"></materialconstants>
+    <uniform name="pos1" type="float_vec3"></uniform>
+    <uniform name="pos2" type="float_vec3"></uniform>
+    <uniform name="right" type="float_vec3"></uniform>
+    <uniform name="currentAngle" type="float"></uniform>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="particle">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/particle/particle.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightAD.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/particle/particle.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka kd ke"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_color" type="attribute_color"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="BranchShaderNormal">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/trees/on/branch.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightTangentAD.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/trees/on/branch.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka kd"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="src3" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="data" type="samplerbuffer" unit="5" onetimeapply="true"></uniform>
+    <uniform name="diffuseScale" type="float"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+    <attribute name="in_tangent" type="attribute_tangent"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_tex1" type="attribute_texcoord1"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="LeafShaderNormal">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/trees/on/leaf.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightTangentAD.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/trees/on/leaf.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka kd"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="data" type="samplerbuffer" unit="5" onetimeapply="true"></uniform>
+    <uniform name="cameraangle" type="float_vec2"></uniform>
+    <uniform name="diffuseScale" type="float"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+    <attribute name="in_tangent" type="attribute_tangent"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_center" type="attribute_texcoord1"></attribute>
+    <attribute name="in_params" type="attribute_texcoord2"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="FrondShader">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/trees/on/frond.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightADnormal.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/trees/on/frond.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="data" type="samplerbuffer" unit="5" onetimeapply="true"></uniform>
+    <uniform name="diffuseScale" type="float"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="HorizShaderNormal">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/trees/on/horizbillboard.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightTangentAD.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/trees/on/billboard.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_tex1" type="attribute_texcoord1"></attribute>
+    <attribute name="in_tex2" type="attribute_texcoord2"></attribute>
+    <attribute name="in_tex3" type="attribute_texcoord3"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="BillboardShaderNormal">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/trees/on/billboard.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightTangentAD.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/trees/on/billboard.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="billboardAzimuth" type="float"></uniform>
+    <uniform name="lightadjust" type="float"></uniform>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="normal" type="float_vec3"></uniform>
+    <uniform name="binormal" type="float_vec3"></uniform>
+    <uniform name="tangent" type="float_vec3"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_tex1" type="attribute_texcoord1"></attribute>
+    <attribute name="in_tex2" type="attribute_texcoord2"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="glare">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/glare/glare.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/glare/glare.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_color" type="attribute_color"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="icon">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/draw/icon.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/draw/icon.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_color" type="attribute_color"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="horiz">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/sky/horiz.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/sky/horiz.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_color" type="attribute_color"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="sky">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/sky/sky.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/sky/sky.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+    </shaders>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_color" type="attribute_color"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="skybox">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/sky/skybox.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/sky/skybox.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2Darray" unit="0" onetimeapply="true"></uniform>
+    <uniform name="campos" type="float_vec3"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="moon">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/sky/moon.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/sky/moon.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightAD.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka kd"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="stars">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/sky/star.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/sky/star.frag</fragmentshader>
+    </shaders>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+  </program>
+  <!--=================================================================-->
+</glslprograms>
