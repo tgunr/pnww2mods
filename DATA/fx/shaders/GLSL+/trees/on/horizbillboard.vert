@@ -3,9 +3,9 @@
 
 uniform MatrixBlock
 {
-    mat4 MVMatrix;  
-    mat4 NormalMatrix;
-    mat4 ProjectionMatrix;
+    mat4 b_MVMatrix;  
+    mat4 b_NormalMatrix;
+    mat4 b_ProjectionMatrix;
 };
 
 in vec4 in_pos;
@@ -47,7 +47,7 @@ void main()
 	T.xy = vec2(dot(rotation.yxw, T), dot(rotation.zyw, T));
 	B.xy = vec2(dot(rotation.yxw, B), dot(rotation.zyw, B));
 
-    mat3 normalmatrix = mat3(NormalMatrix);
+    mat3 normalmatrix = mat3(b_NormalMatrix);
 
 	T = normalize(normalmatrix * T);
 	N = normalize(normalmatrix * N);
@@ -59,9 +59,9 @@ void main()
 	tex1.xyz = in_tex1;
 	tex1.w = alpha;
 
-	pos = MVMatrix * pos;
+	pos = b_MVMatrix * pos;
 	fogdist = abs(pos.z);
 	
-	gl_Position = ProjectionMatrix * pos;
+	gl_Position = b_ProjectionMatrix * pos;
 	eyepos = pos.xyz;
 }

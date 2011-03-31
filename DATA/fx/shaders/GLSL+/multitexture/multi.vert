@@ -3,17 +3,17 @@
 
 uniform MatrixBlock
 {
-    mat4 MVMatrix;  
-    mat4 NormalMatrix;
-    mat4 ProjectionMatrix;
+    mat4 b_MVMatrix;  
+    mat4 b_NormalMatrix;
+    mat4 b_ProjectionMatrix;
 };
 
 uniform TextureMatrixBlock
 {
     // Having TextureMatrix[3] gives incorrect byte size (driver???)
-    mat4 TextureMatrix0;
-    mat4 TextureMatrix1;
-    mat4 TextureMatrix2;
+    mat4 b_TextureMatrix0;
+    mat4 b_TextureMatrix1;
+    mat4 b_TextureMatrix2;
 };
 
 in vec3 in_pos;
@@ -31,16 +31,16 @@ out vec2 tex2;
 
 void main()
 {
-    tex0 = (TextureMatrix0 * vec4(in_tex0, 1.0, 1.0)).xy;
-    tex1 = (TextureMatrix1 * vec4(in_tex1, 1.0, 1.0)).xy;
-    tex2 = (TextureMatrix2 * vec4(in_tex2, 1.0, 1.0)).xy;
+    tex0 = (b_TextureMatrix0 * vec4(in_tex0, 1.0, 1.0)).xy;
+    tex1 = (b_TextureMatrix1 * vec4(in_tex1, 1.0, 1.0)).xy;
+    tex2 = (b_TextureMatrix2 * vec4(in_tex2, 1.0, 1.0)).xy;
 
-    vec4 pos = MVMatrix * vec4(in_pos, 1.0);
+    vec4 pos = b_MVMatrix * vec4(in_pos, 1.0);
     eyepos = pos.xyz;
 
-    N = mat3(NormalMatrix) * in_normal;
+    N = mat3(b_NormalMatrix) * in_normal;
 
     fogdist = abs(eyepos.z);
 
-    gl_Position = ProjectionMatrix * pos;
+    gl_Position = b_ProjectionMatrix * pos;
 }

@@ -3,9 +3,9 @@
 
 uniform MatrixBlock
 {
-    mat4 MVMatrix;  
-    mat4 NormalMatrix;
-    mat4 ProjectionMatrix;
+    mat4 b_MVMatrix;  
+    mat4 b_NormalMatrix;
+    mat4 b_ProjectionMatrix;
 };
 
 in vec3 in_pos;
@@ -25,16 +25,16 @@ float fogValue(float);
 
 void main()
 {
-	N = normalize(mat3(NormalMatrix) * in_normal);	
-	T = normalize(mat3(NormalMatrix) * in_tex1);
+	N = normalize(mat3(b_NormalMatrix) * in_normal);	
+	T = normalize(mat3(b_NormalMatrix) * in_tex1);
 	B = normalize(cross(N, T));
 				
 	tex0 = in_tex0;
 	
-	vec4 pos = (MVMatrix * vec4(in_pos, 1.0));
+	vec4 pos = (b_MVMatrix * vec4(in_pos, 1.0));
 		
 	fogdist = abs(pos.z);
     eyepos = pos.xyz;
 
- 	gl_Position = ProjectionMatrix * pos;
+ 	gl_Position = b_ProjectionMatrix * pos;
 }

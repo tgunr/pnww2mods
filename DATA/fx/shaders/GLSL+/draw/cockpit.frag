@@ -3,11 +3,11 @@
 
 uniform MaterialBlock
 {
-	vec4 Kd;
-	vec4 Ka;
-	vec4 Ks;
-	vec4 Ke;
-	float shininess;
+	vec4 b_Kd;
+	vec4 b_Ka;
+	vec4 b_Ks;
+	vec4 b_Ke;
+	float b_shininess;
 };
 
 in vec3 eyepos;
@@ -34,14 +34,10 @@ void main()
 
 	lightGetAmbientDiffuseSpecular(n, 
 	                               v, 
-	                               shininess, 
+	                               b_shininess, 
 	                               ambient, 
 	                               diffuse, 
 	                               specular);
 
-	ambient *= Ka;
-	diffuse *= Kd;
-    specular *= Ks;
-
-	out_color = diffuse + specular + ambient;
+	out_color = diffuse * b_Kd + specular * b_Ks + ambient * b_Ka;
 }

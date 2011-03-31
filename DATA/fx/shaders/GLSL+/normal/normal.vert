@@ -1,20 +1,17 @@
 #version 150
 #extension GL_ARB_uniform_buffer_object : enable
+#extension GL_EXT_gpu_shader4 : enable                             
+
+uniform samplerBuffer data;
 
 uniform MatrixBlock
 {
-    mat4 MVMatrix;  
-    mat4 NormalMatrix;
-    mat4 ProjectionMatrix;
+    mat4 b_MVMatrix;  
+    mat4 b_NormalMatrix;
+    mat4 b_ProjectionMatrix;
 };
 
-uniform InstanceBlock
-{
-    vec4 rotation[1000];
-	vec4 position[1000];
-};
-
-in vec3 tangent;
+in vec3 in_tangent;
 in vec3 in_normal;
 in vec3 in_pos;
 in vec2 in_tex0;
@@ -32,13 +29,18 @@ mat3 modelviewToNormal(in mat4 mv);
 
 void main()
 {
-    mat4 world = quaternionToMatrix(rotation[gl_InstanceID]);
+    int idx = gl_InstanceID * 2;
 
-	world[3].xyz = position[gl_InstanceID].xyz;
+    vec4 rotation = texelFetchBuffer(data, idx);
+    vec4 position = texelFetchBuffer(data, idx + 1);
 
-    mat4 modelview = MVMatrix * world;
+    mat4 world = quaternionToMatrix(rotation);
 
-    alphatest = position[gl_InstanceID].w;
+	world[3].xyz = position.xyz;
+
+    mat4 modelview = b_MVMatrix * world;
+
+    alphatest = position.w;
     
     vec4 pos = modelview * vec4(in_pos, 1.0);
 
@@ -48,7 +50,7 @@ void main()
 
     N = normalmatrix * in_normal;
 
-	T = normalize(normalmatrix * tangent);
+	T = normalize(normalmatrix * in_tangent);
 	N = normalize(normalmatrix * in_normal);
 	B = cross(N, T);
 
@@ -56,5 +58,5 @@ void main()
 
     fogdist = abs(eyepos.z);
 	
- 	gl_Position = ProjectionMatrix * pos;
+ 	gl_Position = b_ProjectionMatrix * pos;
 }

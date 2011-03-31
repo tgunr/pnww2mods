@@ -3,11 +3,11 @@
 
 uniform MaterialBlock
 {
-	vec4 Kd;
-	vec4 Ka;
-	vec4 Ks;
-	vec4 Ke;
-	float shininess;
+	vec4 b_Kd;
+	vec4 b_Ka;
+	vec4 b_Ks;
+	vec4 b_Ke;
+	float b_shininess;
 };
 
 uniform sampler2D src1;
@@ -28,11 +28,8 @@ void main()
 	
 	lightGetAmbientDiffuse(ambient, diffuse);
 
-	diffuse *= Kd;
-	ambient *= Ka;
-	
     diffuse.rgb *= color.rgb;
 
-	out_color = map * (diffuse + ambient + Ke);
+	out_color = map * (diffuse * b_Kd + ambient * b_Ka + b_Ke);
 	out_color.a = map.a * color.a;
 }

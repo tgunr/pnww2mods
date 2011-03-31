@@ -1,18 +1,15 @@
 #version 150
 #extension GL_ARB_uniform_buffer_object : enable
+#extension GL_EXT_gpu_shader4 : enable                             
 
 uniform MatrixBlock
 {
-    mat4 MVMatrix;  
-    mat4 NormalMatrix;
-    mat4 ProjectionMatrix;
+    mat4 b_MVMatrix;  
+    mat4 b_NormalMatrix;
+    mat4 b_ProjectionMatrix;
 };
 
-uniform InstanceBlock
-{
-    vec4 rotation[1000];
-	vec4 position[1000];
-};
+uniform samplerBuffer data;
 
 uniform float time;
 
@@ -25,7 +22,7 @@ in vec3 in_pos;
 
 out vec4 tex1;
 out vec4 tex2;
-out vec2 tex0;
+out vec4 tex0;
 out vec3 V;
 out vec3 T;
 out vec3 B;
@@ -40,18 +37,21 @@ const mat4 Mr = mat4(0.5, 0.0, 0.0, 0.0,
 
 void main()
 {
-	N = vec3(-NormalMatrix[2][0], -NormalMatrix[2][1], -NormalMatrix[2][2]);
-	T = vec3(NormalMatrix[0][0], NormalMatrix[0][1], NormalMatrix[0][2]);
-	B = vec3(NormalMatrix[1][0], NormalMatrix[1][1], NormalMatrix[1][2]);
+    vec4 position = texelFetchBuffer(data, gl_InstanceID);
+
+	N = vec3(-b_NormalMatrix[2][0], -b_NormalMatrix[2][1], -b_NormalMatrix[2][2]);
+	T = vec3(b_NormalMatrix[0][0], b_NormalMatrix[0][1], b_NormalMatrix[0][2]);
+	B = vec3(b_NormalMatrix[1][0], b_NormalMatrix[1][1], b_NormalMatrix[1][2]);
 	
 	vec2 uv = in_tex0 * texscale;
 	vec2 bs = time * speed;
 
-	tex0.xy = uv + bs;
+    tex0.xy = uv;
+	tex0.zw = uv + bs;
 	tex1.xy = 2.5 * (uv - bs);
 	tex1.zw = 4.0 * (uv + bs);
 				
-	float rot = position[gl_InstanceID].w;  
+	float rot = position.w;  
     vec4 pos = vec4(in_pos.xyz, 1.0);
 
     // Has to be boolean expression
@@ -68,15 +68,15 @@ void main()
     }
 
     // Translate to world
-    pos.xyz += position[gl_InstanceID].xyz;
+    pos.xyz += position.xyz;
 
     // Eye space
-    pos = MVMatrix * pos;
+    pos = b_MVMatrix * pos;
 
     V = pos.xyz;
     vertexpos = pos.xyz;
 
-    gl_Position = ProjectionMatrix * pos;
+    gl_Position = b_ProjectionMatrix * pos;
 			
 	tex2 = Mr * gl_Position;
 	fogdist = abs(V.z);

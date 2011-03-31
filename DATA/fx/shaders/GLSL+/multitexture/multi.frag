@@ -7,11 +7,11 @@ uniform sampler2D src3;
 
 uniform MaterialBlock
 {
-	vec4 Kd;
-	vec4 Ka;
-	vec4 Ks;
-	vec4 Ke;
-	float shininess;
+	vec4 b_Kd;
+	vec4 b_Ka;
+	vec4 b_Ks;
+	vec4 b_Ke;
+	float b_shininess;
 };
 
 in vec3 N;
@@ -41,9 +41,6 @@ void main()
 
     lightGetAmbientDiffuse(n, ambient, diffuse); 
 
-    ambient *= Ka;
-    diffuse *= Kd;
-
-    vec4 color =  c * (diffuse + ambient);
+    vec4 color =  c * (diffuse * b_Kd + ambient * b_Ka);
     out_color = fogThis(color);
 }

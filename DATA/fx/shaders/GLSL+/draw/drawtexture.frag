@@ -5,11 +5,11 @@ uniform sampler2D src1;
 
 uniform MaterialBlock
 {
-	vec4 Kd;
-	vec4 Ka;
-	vec4 Ks;
-	vec4 Ke;
-	float shininess;
+	vec4 b_Kd;
+	vec4 b_Ka;
+	vec4 b_Ks;
+	vec4 b_Ke;
+	float b_shininess;
 };
 
 in vec3 eyepos;
@@ -32,30 +32,26 @@ void main()
 	vec4 base = texture2D(src1, tex0);
 	
     // Alpha test
-    if(base.a <= alphatest)
+    if(base.a < alphatest)
         discard;
 
-	vec4 diffuse;
-	vec4 specular;
-	vec4 ambient;
+    vec4 diffuse;
+    vec4 specular;
+    vec4 ambient;
 	
-	// These values are interpolated and need to be normalized
-	vec3 v = normalize(-eyepos);
-	vec3 n = normalize(N);
+    // These values are interpolated and need to be normalized
+    vec3 v = normalize(-eyepos);
+    vec3 n = normalize(N);
 
-	lightGetAmbientDiffuseSpecular(n, 
-	                               v, 
-	                               shininess, 
-	                               ambient, 
-	                               diffuse, 
-	                               specular);
+    lightGetAmbientDiffuseSpecular(n, 
+                                   v, 
+                                   b_shininess, 
+                                   ambient, 
+                                   diffuse, 
+                                   specular);
 
-	ambient *= Ka;
-	diffuse *= Kd;
-    specular *= Ks;
+    vec4 c =  base * (diffuse * b_Kd + specular * b_Ks + ambient * b_Ka);
 
-	vec4 c =  base * (diffuse + specular + ambient);
-
-	out_color = fogThis(c);
-	out_color.w = base.a;
+    out_color = fogThis(c);
+    out_color.w = base.a;
 }

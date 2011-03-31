@@ -3,13 +3,12 @@
 
 uniform MatrixBlock
 {
-    mat4 MVMatrix;  
-    mat4 NormalMatrix;
-    mat4 ProjectionMatrix;
+    mat4 b_MVMatrix;  
+    mat4 b_NormalMatrix;
+    mat4 b_ProjectionMatrix;
 };
 
 in vec3 in_pos;
-in vec4 in_color;
 in vec2 in_tex0;
 
 out vec4 color;
@@ -17,8 +16,7 @@ out vec2 tex0;
 
 void main()
 {
-    color = in_color / 255.0;
     tex0 = in_tex0;
 
- 	gl_Position = ProjectionMatrix * MVMatrix * vec4(in_pos, 1.0);
+ 	gl_Position = b_ProjectionMatrix * (b_MVMatrix * vec4(in_pos, 1.0));
 }

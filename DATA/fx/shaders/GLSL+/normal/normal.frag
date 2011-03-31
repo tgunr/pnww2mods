@@ -7,11 +7,11 @@ uniform sampler2D src3;
 
 uniform MaterialBlock
 {
-	vec4 Kd;
-	vec4 Ka;
-	vec4 Ks;
-	vec4 Ke;
-	float shininess;
+	vec4 b_Kd;
+	vec4 b_Ka;
+	vec4 b_Ks;
+	vec4 b_Ke;
+	float b_shininess;
 };
 
 in vec3 T;
@@ -39,41 +39,35 @@ void main()
 	vec4 base = texture2D(src1, tex0);
 
     // Alpha test
-    if(base.a <= alphatest)
+    if(base.a < alphatest)
         discard;
 
-	vec3 normal = texture2D(src2, tex0).rgb * 2.0 - 1.0;
-	float Ks = texture2D(src3, tex0).r;
-	float occ = texture2D(src3, tex0).g;
+    vec3 normal = texture2D(src2, tex0).rgb * 2.0 - 1.0;
+    float spec = texture2D(src3, tex0).r;
+    float occ = texture2D(src3, tex0).g;
 	
-	normal.z = sqrt(1.0 - normal.x * normal.x - normal.y * normal.y);
+    vec4 diffuse;
+    vec4 specular;
+    vec4 ambient;
 	
-	vec4 diffuse;
-	vec4 specular;
-	vec4 ambient;
-	
-	// These values are interpolated and need to be normalized
-	vec3 v = normalize(-eyepos);
-	vec3 t = normalize(T);
-	vec3 b = normalize(B);
-	vec3 n = normalize(N);
+    // These values are interpolated and need to be normalized
+    vec3 v = normalize(-eyepos);
+    vec3 t = normalize(T);
+    vec3 b = normalize(B);
+    vec3 n = normalize(N);
 
-	lightGetAmbientDiffuseSpecular(t, 
-	                               b, 
-	                               n, 
-	                               v,
-	                               normal, 
-                                   shininess,
-	                               ambient, 
-	                               diffuse, 
-	                               specular);
+    lightGetAmbientDiffuseSpecular(t, 
+                                   b, 
+                                   n, 
+                                   v,
+                                   normal, 
+                                   b_shininess,
+                                   ambient, 
+                                   diffuse, 
+                                   specular);
 
-	ambient *= Ka;
-	ambient *= occ;
-	specular.rgb *= Ks;
-	
-	vec4 color = base * (diffuse + specular + ambient);
+    vec4 color = base * (diffuse + specular * spec + ambient * occ * b_Ka);
 
-	out_color = fogThis(color);
-	out_color.w = base.a;
+    out_color = fogThis(color);
+    out_color.w = base.a;
 }

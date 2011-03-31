@@ -6,20 +6,22 @@ uniform sampler2D src2;
 uniform sampler2D refl;
 uniform sampler2D surf;
 
+uniform float alpha;
+
 uniform MaterialBlock
 {
-	vec4 Kd;
-	vec4 Ka;
-	vec4 Ks;
-	vec4 Ke;
-	float shininess;
+	vec4 b_Kd;
+	vec4 b_Ka;
+	vec4 b_Ks;
+	vec4 b_Ke;
+	float b_shininess;
 };
 
 in vec3 V;
 in vec3 T;
 in vec3 B;
 in vec3 N;
-in vec2 tex0;
+in vec4 tex0;
 in vec4 tex1;
 in vec4 tex2;
 
@@ -38,9 +40,9 @@ vec4 fogThis(in vec4);
 
 void main()
 {
-	vec4 base = texture2D(src1, tex0);
+	vec4 base = texture2D(src1, tex0.xy);
 	
-	vec3 t0 = texture2D(src2, tex0).rgb;
+	vec3 t0 = texture2D(src2, tex0.zw).rgb;
 	vec3 t1 = texture2D(src2, tex1.xy).rgb;
 	vec3 t2 = texture2D(src2, tex1.zw).rgb;
 	
@@ -71,14 +73,10 @@ void main()
 	                               n, 
 	                               v, 
 	                               m, 
-                                   shininess,
+                                   b_shininess,
 	                               ambient, 
 	                               diffuse, 
 	                               specular);
-
-	specular *= Ks;
-	diffuse *= base;
-	ambient *= Ka;
 
 	float facing = max(dot(n, v), 0.0);
 
@@ -86,9 +84,9 @@ void main()
 	vec4 color = mix(t3, base, facing);
 	color.rgb += t4.rgb;
 
-	color = color * (diffuse + ambient) + specular;
+	color = color * (diffuse * base + ambient * b_Ka) + specular * b_Ks;
 
 	// Fog factor
 	out_color = fogThis(color);
-	out_color.w = base.a;
+	out_color.w = alpha;
 }

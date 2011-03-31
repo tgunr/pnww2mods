@@ -5,11 +5,11 @@ uniform sampler2D src1;
 
 uniform MaterialBlock
 {
-	vec4 Kd;
-	vec4 Ka;
-	vec4 Ks;
-	vec4 Ke;
-	float shininess;
+	vec4 b_Kd;
+	vec4 b_Ka;
+	vec4 b_Ks;
+	vec4 b_Ke;
+	float b_shininess;
 };
 
 in vec3 eyepos;
@@ -30,7 +30,7 @@ void main()
 	vec4 base = texture2D(src1, tex0);
 	
     // Alpha test
-    if(base.a <= 0.32941176)
+    if(base.a < 0.32941176)
         discard;
 
 	vec4 diffuse;
@@ -43,14 +43,10 @@ void main()
 
 	lightGetAmbientDiffuseSpecular(n, 
 	                               v, 
-	                               shininess, 
+	                               b_shininess, 
 	                               ambient, 
 	                               diffuse, 
 	                               specular);
 
-	ambient *= Ka;
-	diffuse *= Kd;
-    specular *= Ks;
-
-	out_color = base * (diffuse + specular + ambient);
+	out_color = base * (diffuse * b_Kd + specular * b_Ks + ambient * b_Ka);
 }

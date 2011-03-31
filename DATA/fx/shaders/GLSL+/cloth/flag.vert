@@ -3,9 +3,9 @@
 
 uniform MatrixBlock
 {
-    mat4 MVMatrix;  
-    mat4 NormalMatrix;
-    mat4 ProjectionMatrix;
+    mat4 b_MVMatrix;  
+    mat4 b_NormalMatrix;
+    mat4 b_ProjectionMatrix;
 };
 
 in vec3 in_pos;
@@ -44,12 +44,12 @@ void main()
 	N.x += y * right.x;
 	N.y += x * right.y;
 	
-	N = normalize(mat3(NormalMatrix) * N);
-    pos = MVMatrix * pos;
+	N = normalize(mat3(b_NormalMatrix) * N);
+    pos = b_MVMatrix * pos;
 
 	eyepos = pos.xyz;
 
 	fogdist = abs(pos.z);
 	
-	gl_Position = ProjectionMatrix * pos;
+	gl_Position = b_ProjectionMatrix * pos;
 }

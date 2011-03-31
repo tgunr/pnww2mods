@@ -1,17 +1,14 @@
 #version 150
 #extension GL_ARB_uniform_buffer_object : enable
+#extension GL_EXT_gpu_shader4 : enable                             
 
-uniform InstanceBlock
-{
-    vec4 rotation[1000];
-	vec4 position[1000];
-};
+uniform samplerBuffer data;
 
 uniform MatrixBlock
 {
-    mat4 MVMatrix;  
-    mat4 NormalMatrix;
-    mat4 ProjectionMatrix;
+    mat4 b_MVMatrix;  
+    mat4 b_NormalMatrix;
+    mat4 b_ProjectionMatrix;
 };
 
 in vec3 in_pos;
@@ -26,11 +23,15 @@ out float alphatest;
 
 void main()
 {
+    int idx = gl_InstanceID * 2;
+
     vec4 inpos = vec4(in_pos, 1.0);
       
-    vec4 rot = rotation[gl_InstanceID];
-    vec3 pos = position[gl_InstanceID].xyz;
-    alphatest = position[gl_InstanceID].w;
+    vec4 rot = texelFetchBuffer(data, idx);
+    vec4 pos = texelFetchBuffer(data, idx + 1);
+
+    alphatest = pos.w;
+    pos.w = 1.0;
 
     vec3 normal;
           
@@ -38,16 +39,16 @@ void main()
     normal.xy = vec2(dot(rot.yxw, in_normal), dot(rot.zyw, in_normal));
     normal.z = in_normal.z;
 
-    N = normalize(mat3(NormalMatrix) * normal);
+    N = normalize(mat3(b_NormalMatrix) * normal);
 
-    inpos.xyz += pos;
+    inpos.xyz += pos.xyz;
     inpos.w = 1.0;
 
-    inpos = MVMatrix * inpos;
+    inpos = b_MVMatrix * inpos;
     fogdist = abs(inpos.z);
 
     tex0 = in_tex0;  
     eyepos = inpos.xyz;
 
-    gl_Position = ProjectionMatrix * inpos;
+    gl_Position = b_ProjectionMatrix * inpos;
 }

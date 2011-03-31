@@ -1,11 +1,8 @@
 #version 150
 #extension GL_ARB_uniform_buffer_object : enable
+#extension GL_EXT_gpu_shader4 : enable                             
 
-uniform InstanceBlock
-{
-    vec4 rotation[1000];
-	vec4 position[1000];
-};
+uniform samplerBuffer data;
 
 uniform vec2 cameraangle;
 
@@ -13,9 +10,9 @@ uniform float diffuseScale;
 
 uniform MatrixBlock
 {
-    mat4 MVMatrix;  
-    mat4 NormalMatrix;
-    mat4 ProjectionMatrix;
+    mat4 b_MVMatrix;  
+    mat4 b_NormalMatrix;
+    mat4 b_ProjectionMatrix;
 };
 
 in vec3 in_pos;
@@ -36,7 +33,9 @@ out vec2 tex0;
 
 void main()
 {
-	float azimuth = cameraangle.x;
+    int idx = gl_InstanceID * 2;
+
+    float azimuth = cameraangle.x;
 	float pitch = cameraangle.y;
 
 	float rotatex = in_params.x;
@@ -46,9 +45,11 @@ void main()
 	vec3 normal = in_normal;
 	vec3 tangent = in_tangent;
 	
-    vec4 rot = rotation[gl_InstanceID];
-    vec3 pos = position[gl_InstanceID].xyz;
-    alphatest = position[gl_InstanceID].w;
+    vec4 rot = texelFetchBuffer(data, idx);
+    vec4 pos = texelFetchBuffer(data, idx + 1);
+
+    alphatest = pos.w;
+    pos.w = 1.0;
 
 	vec4 center = vec4(in_center, 1.0);
 	center.xy = vec2(dot(rot.yxw, center.xyz), dot(rot.zyw, center.xyz));
@@ -82,7 +83,7 @@ void main()
                
 	cornerpt = rotmat * cornerpt;
 	    
-    mat3 normalmatrix = mat3(NormalMatrix);
+    mat3 normalmatrix = mat3(b_NormalMatrix);
 
  	normal.xy = vec2(dot(rot.yxw, normal), dot(rot.zyw, normal));
 	N = normalize(normalmatrix * normal);
@@ -92,13 +93,13 @@ void main()
   
     B = cross(normal, tangent);
 	
-	center.xyz += cornerpt + pos;
+	center.xyz += cornerpt + pos.xyz;
 	center.w = 1.0;
 	
-	center = MVMatrix * center;
+	center = b_MVMatrix * center;
 	fogdist = abs(center.z);
 
-	gl_Position = ProjectionMatrix * center;
+	gl_Position = b_ProjectionMatrix * center;
 
 	tex0 = in_tex0;
 

@@ -3,9 +3,9 @@
 
 uniform MatrixBlock
 {
-    mat4 MVMatrix;  
-    mat4 NormalMatrix;
-    mat4 ProjectionMatrix;
+    mat4 b_MVMatrix;  
+    mat4 b_NormalMatrix;
+    mat4 b_ProjectionMatrix;
 };
 
 in vec3 in_pos;
@@ -18,10 +18,10 @@ void main()
 {
 	vec4 pos = vec4(in_pos, 1.0);
 
-	pos = MVMatrix * pos;
+	pos = b_MVMatrix * pos;
 
     fogdist = abs(pos.z);
     skycolor = in_color / 255.0;
 
- 	gl_Position = ProjectionMatrix * pos;
+ 	gl_Position = b_ProjectionMatrix * pos;
 }

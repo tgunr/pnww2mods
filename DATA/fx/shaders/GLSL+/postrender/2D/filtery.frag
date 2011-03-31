@@ -1,35 +1,21 @@
-#version 120
+#version 150
 
 uniform sampler2D src;
+uniform vec2 offsets[16];
 
-vec4 filter[7];
 in vec2 tex0;
+out vec4 out_color;
 
 void main()
 {
-	float scale = 1.0 / 389.119995;
+	vec4 c = vec4(0, 0, 0, 0);
+	vec2 uv;
 
-    float w1 = 0.16131 * 0.58;
-    float w2 = 0.21297 * 0.58;
-    float w3 = 0.25159 * 0.58;
-   
-	filter[0] = vec4(0, -3.0, 0, w1);
-	filter[1] = vec4(0, -2.0, 0, w2);
-	filter[2] = vec4(0, -1.0, 0, w3);
-	filter[3] = vec4(0,  0.0, 0, 0.26596 * 0.58);
-	filter[4] = vec4(0,  1.0, 0, w3);
-	filter[5] = vec4(0,  2.0, 0, w2);
-	filter[6] = vec4(0,  3.0, 0, w1);
-	
-	vec4 color = vec4(0, 0, 0, 0);
-
-	for(int i = 0; i < 7; i++)
+	for(int i = 0; i < 16; i++)
 	{
-		vec2 uv = vec2(tex0.x, tex0.y + filter[i].y * scale);
-		color += texture2D(src, uv) * filter[i].w;
+        uv = vec2(tex0.x, tex0.y + offsets[i].y);
+		c += texture2D(src, uv);
 	}
 	
-	color.a = 1.0;
-	
-	gl_FragColor = color;
+	out_color = c * 0.0625; //1/16
 }
