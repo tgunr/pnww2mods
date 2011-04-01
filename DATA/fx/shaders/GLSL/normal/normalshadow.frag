@@ -66,11 +66,6 @@ void main()
 
 	vec4 s1 = shadow2D(src4, c1);
 
-	s1 += shadow2D(src4, c1 + vec3(scale, 0, 0)) ;
-	s1 += shadow2D(src4, c1 + vec3(0, scale, 0));
-	s1 += shadow2D(src4, c1 + vec3(scale, scale, 0));
-    s1 *= 0.25;
-
     s1.rgb = clamp(s1.rgb + shadowambient, 0.0, 1.0);
     color.rgb *= s1.rgb;
 
