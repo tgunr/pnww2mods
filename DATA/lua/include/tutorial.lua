@@ -160,7 +160,7 @@ tutorial.OnSpawn = function(handler)
 	end
 	
 	-- setup any vspawn vehicles
-	if(tutorial.state.spawn.vspawn ~= nil) then
+	if(tutorial.state.spawn and tutorial.state.spawn.vspawn ~= nil) then
 		tutorial.state.spawn.vspawned = {};
 		for i,v in ipairs(tutorial.state.spawn.vspawn) do 
 			local req = {
@@ -183,7 +183,7 @@ tutorial.OnSpawn = function(handler)
 	end
 	
 	-- set our initial control blocks, if any
-	if(tutorial.state.spawn.block) then
+	if(tutorial.state.spawn and tutorial.state.spawn.block) then
 		for index,value in ipairs(tutorial.state.spawn.block) do 
 			fp.fpFPSControlBlockSet(value);
 		end
@@ -273,7 +273,7 @@ function OnDespawn(handler)
 end
 
 tutorial.OnDespawn = function(handler)
-	if(tutorial.state.spawn.vspawned ~= nil) then
+	if(tutorial.state.spawn and tutorial.state.spawn.vspawned ~= nil) then
 		for i,v in ipairs(tutorial.state.spawn.vspawned) do 
 			vehicle.vehmainRemoveSTO(v);
 		end
