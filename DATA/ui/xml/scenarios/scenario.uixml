@@ -1,0 +1,574 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+<window id="scenarios/scenario" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" onshow="initWin()" onupdate="doForwardTimer()">
+	<include file="lib/tutorial.uixml"/>
+	<include file="lib/scenarios.uixml"/>
+	<include file="widgets/template.uixml"/>
+	<include file="classes/ListControl.uixml"/>
+	<include file="classes/TreeControl2.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+	<include file="classes/IntelFile.uixml"/>
+	<include file="classes/VehicleManager.uixml"/>
+	<include file="classes/VehicleClass.uixml"/>
+	<include file="classes/ViewBuilder.uixml"/>
+	<include file="classes/TextBuilder.uixml"/>
+	<include file="classes/ImageBuilder.uixml"/>
+	<tabview id="body" x="43" y="140" width="930" height="450" ontab="quickhelp()" style="color: #BFE2CE;
+						background-color: #000000BB; 
+						border-top-corner: ui/textures/test/body_ul.bmp;
+						border-bottom-corner: ui/textures/test/body_br.bmp;
+						border-sides: ui/textures/test/body_sides.bmp;
+						border-top: ui/textures/test/body_top.bmp;
+						border-bottom: ui/textures/test/body_bottom.bmp;
+						control-on-endcap:  ui/textures/test/body_tab_cap_on.bmp;
+						control-on-back:  ui/textures/test/body_tab_filler_on.bmp;
+						control-off-endcap: ui/textures/test/body_tab_cap.bmp;
+						control-off-back: ui/textures/test/body_tab_filler.bmp;
+						control-on-color: #FFFFCE;
+						border-width: 16;
+						border-height: 16;">
+		<tab label="  &combat.ready;  " x="0" y="0" width="930" height="460"
+			onshow='setHelp(getlocstring("combat.help")); tplTab()'>
+			
+			<view id="left-pane" x="18" y="23" width="444" height="411">
+				<tabview id="selection-tab" x="0" y="0" rright="0" rtop="0">
+					<tab x="0" y="0" rright="0" rtop="0" showtab='false'>
+						<view x="10" width="425" height="400" rtop="12">
+							<caption id="forces-header" x="0" height="20" width="425" rtop="0" style="font-size: +2; color: #BFE2CE; tooltip: widgets/tooltips/supplytip.uixml;"/>
+							<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
+							<view x="0" width="425" height="15" rtop="22">
+								<caption x="0" y="0" height="15" rright="0" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="UNITS"/>
+							</view>
+							<list id="spawnTree" x="0" width="425" height="300" rtop="40" onselect="spawnTree.clickTree(false)" ondblselect="spawnTree.clickTree(true)"/>
+						</view>
+					</tab>
+					<tab x="0" y="0" rright="0" rtop="0" showtab='false'>
+						<view x="10" width="425" height="380" rtop="12">
+							<caption label="&mission.brieftab.members;" x="0" height="20" width="400" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
+							<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="12"/>
+							<view x="0" width="425" height="15" rtop="23">
+								<caption x="0" y="0" width="152" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+									label="  &mission.brieftab.members.handle;"/>
+								<caption x="154" y="0" width="234" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+									label="&mission.brieftab.members.equipment;"/>
+								<caption x="390" y="0" width="58" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
+									label=" IN" tip="&mission.brieftab.brief.sstatus;"/>
+							</view>
+							<list id="memberList" x="0" y="5" width="425" height="336">
+								<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+							</list>
+						</view>
+					</tab>
+				</tabview>
+				<button id="team-button" label="CHANGE TEAM" x="20" y="10" height="25" width="160"
+					style="control-on: ui/textures/test/gen_button_on.bmp;
+						control-off: ui/textures/test/gen_button_off.bmp;
+						control-disabled: ui/textures/test/gen_button_disabled.bmp;
+						font-size: -3;
+						color: #FFFFFF;"
+					onclick="switchSides(); soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+				<button id="show-button" label="SHOW PLAYERS" y="10" height="25" width="160" rright="20"
+					style="control-on: ui/textures/test/gen_button_on.bmp;
+						control-off: ui/textures/test/gen_button_off.bmp;
+						control-disabled: ui/textures/test/gen_button_disabled.bmp;
+						font-size: -3;
+						color: #FFFFFF;"
+					onclick="toggleSelection(this); soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+			</view>
+			
+			<!--
+			<view id="left-pane" x="18" y="23" width="444" height="411">
+				<view x="10" width="425" height="400" rtop="12">
+					<caption id="forces-header" x="0" height="20" width="425" rtop="0" style="font-size: +2; color: #BFE2CE; tooltip: widgets/tooltips/supplytip.uixml;"/>
+					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
+					<view x="0" width="425" height="15" rtop="22">
+						<caption x="0" y="0" height="15" rright="0" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="UNITS"/>
+					</view>
+					<list id="spawnTree" x="0" width="425" height="300" rtop="40" onselect="spawnTree.clickTree(false)" ondblselect="spawnTree.clickTree(true)"/>
+				</view>
+				<button id="switch-button" label="SWITCH TEAMS" x="40" y="10" height="25" width="160"
+					style="control-on: ui/textures/test/gen_button_on.bmp;
+						control-off: ui/textures/test/gen_button_off.bmp;
+						control-disabled: ui/textures/test/gen_button_disabled.bmp;
+						font-size: -3;
+						color: #FFFFFF;"
+					onclick="switchSides(); soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+			</view>
+			-->
+			
+			<include file="widgets/divider.uixml"/>
+			<view id="right-pane" x="468" y="23" width="444" height="411">
+				<!--
+				<view x="10" width="425" height="35" rtop="12">
+					<caption x="0" height="20" width="425" rtop="0"
+						onshow="this.label = mission.target.name.toUpperCase() + ': ' + missionType.toUpperCase()" style="font-size: +2; color: #BFE2CE;"/>
+					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
+				</view>
+				<view x="10" width="425" height="90" rtop="35">
+					<caption label="&mission.readytab.brief.location;:" x="5" width="300" height="15" rtop="0" style="color: #FFFFFFFF; "/>
+					<caption id="mission-location" width="300" height="15" rright="20" rtop="0" style="color: #e9e3d9ff; " align="right"
+						onshow="this.label = mission.origin.name" onclick="missionMap.mgr.setSelection(mission.origin)"/>
+					<image width="16" height="16" rright="0" rtop="0" src="ui/textures/test/zoom_icon.bmp"
+						onclick="missionMap.mgr.setSelection(mission.origin)"
+						onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'" onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
+					
+					<caption label="&mission.readytab.brief.origin;:" x="5" width="300" height="15" rtop="15" style="color: #FFFFFFFF; "/>
+					<caption id="mission-origin" width="300" height="15" rright="20" rtop="15" style="color: #e9e3d9ff; " align="right"
+						onshow="this.label = mission.origin.name" onclick="missionMap.mgr.setSelection(mission.origin)"/>
+					<image width="16" height="16" rright="0" rtop="15" src="ui/textures/test/zoom_icon.bmp"
+						onclick="missionMap.mgr.setSelection(mission.origin)"
+						onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'" onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
+					
+					<caption label="&mission.readytab.brief.target;:" x="5" width="300" height="15" rtop="30" style="color: #FFFFFFFF; "/>
+					<caption id="mission-target" width="300" height="15" rright="20" rtop="30" style="color: #e9e3d9ff; " align="right"
+						onshow="this.label = mission.target.name" onclick="missionMap.mgr.setSelection(mission.target)"/>
+					<image width="16" height="16" rright="0" rtop="30" src="ui/textures/test/zoom_icon.bmp"
+						onclick="missionMap.mgr.setSelection(mission.target)"
+						onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'" onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
+					
+					<caption label="&mission.readytab.brief.weapon;:" x="5" width="300" height="15" rtop="45" style="color: #FFFFFFFF; "/>
+					<caption id="mission-weapon" width="300" height="15" rright="20" rtop="45" style="color: #e9e3d9ff; " align="right"/>
+
+					<caption label="&brigade.hqtab.brief.ms;:" x="5" width="300" height="15" rtop="70" style="color: #FFFFFFFF; "/>
+					<caption id="mission-ms" width="300" height="15" rright="20" rtop="70" style="color: #e9e3d9ff;" align="right" onupdate="doMSPoll(this)"
+						onclick="setMobileSpawn()"/>
+					<image id="mission-ms-checkbox" width="20" height="20" rright="0" rtop="65" src="ui/textures/map-checkbox-on.bmp"
+						onclick="setMobileSpawn()" tip="&mission.readytab.brief.ms.tip;"/>
+				</view>
+				-->
+				<view id="scenario-map" class="mapview" acceptsfocus="no" minscale=".03" maxscale="1.5" scale=".75"
+					x="10" y="10" rright="10" rtop="30" sx="18" sy="235"
+					onload="if(!this.mgr) new MapManager(this, true)" onshow="this.mgr.onShow()" 
+					onupdate="this.mgr.onUpdate()" onclick="this.mgr.onClick()" ondblclick="this.mgr.onDblClick()"
+					ondrag="this.mgr.onDrag()" onmouseenter="this.mgr.onMouseEnter()" onmouseexit="this.mgr.onMouseExit()"
+					onrightclick="this.mgr.onRightClick()"
+					style="tooltip: widgets/tooltips/maptip.uixml;">
+					<layer type="texture" id="default-64-tex" minscale="0" maxscale="64" enabled="true" orign="-26x210" rowcolsize="1x1" cellsize="64x64"/>
+					<layer type="icon" id="icons" minscale="1" maxscale="8" enabled="true"/>
+					<layer type="icon" id="rendered" minscale="0" maxscale="1" enabled="true"/>
+					<layer type="terrainobj" id="terrainobj" minscale="0" maxscale=".5" enabled="true"/>
+					<layer type="hclinks" id="hclinks" minscale="0" maxscale="20" enabled="true"/>
+					<layer type="strat" id="strat" minscale="0" maxscale="20" enabled="true">
+						<filter name="showcivilian" value="no"/>
+						<filter name="showbrigdes" value="no"/>
+						<filter name="showarmy" value="yes"/>
+						<filter name="showairforce" value="yes"/>
+						<filter name="shownavy" value="yes"/>
+						<filter name="showdepots" value="yes"/>
+						<filter name="showcpnames" value="yes"/>
+						<filter name="showfacnames" value="no"/>
+						<filter name="showflags" value="yes"/>
+						<filter name="showicons" value="yes"/>
+						<filter name="fadeupdate" value="no"/>
+						<filter name="fadefrontline" value="yes"/>
+						<filter name="cptextcolor" value="#FFFF00"/>
+						<filter name="factextcolor" value="#FFFFFF"/>
+						<filter name="seltextcolor" value="#00FF00"/>
+						<filter name="factextsize" value="12"/>
+						<filter name="cptextsize" value="12"/>
+						<filter name="showclutter" value="no"/>
+						<filter name="cluttercutoff" value=".2"/>
+					</layer>
+				</view>
+			</view>
+		</tab>
+		<include file="widgets/globals/settings.uixml"/>
+	</tabview>
+	<include file="widgets/infobar.uixml"/>
+	<script>
+		<!--
+		
+		game.consoleprint(">>> STARTING COMBAT PAGE\n");
+		
+		var client 				= game.player.client;
+		var theatreMap	= findview("mapview");
+		var ftimer				= new CycleTimer(10000);
+		var scenario			= game.globals.scenario;
+		var selections		= findview("selection-tab");
+		var showButton	= findview("show-button");
+		
+		var spawnTree 	= new TreeControl("spawnTree", selectSpawnable, formatSpawnable, isSelectable);
+		var memberList 	= new ListControl(findview("memberList"));
+		
+		var vehicles			= new Object();
+		var rootNodes		= new Array();
+		
+		/***************** COMMON FUNCTIONS *******************/
+		
+		function doBack()
+		{
+			joinLobby();
+		}
+		
+		function doForward()
+		{
+			var index = spawnTree.selectedData();
+			
+			if(index != null)
+			{
+				cprint("Attempting to spawn 1!");
+				
+				var vehicle = vehicles[index];
+				
+				cprint("Attempting to spawn 2!");
+				
+				// this call  
+				game.spawn(vehicle.type);
+				setForwardEnabled(false);
+				ftimer.reset();
+				ftimer.enabled = true;
+			}
+			else
+			{
+				cprint("Spawn vehicle not found!");
+			}
+		}
+		
+		function initWin()
+		{
+			//game.consoleclear();
+			
+			var ok = game.findview("ok");
+			if(ok != null) ok.close();
+			
+			var chat = game.findview("chat");
+			if(chat != null)
+			{
+				chat.x = window.width/2 - chat.width/2;
+				chat.y = 10;
+			}
+			
+			showIDCard(false);
+			showChat(true);
+			
+			setHelp(getlocstring('scenario.help'));
+			setBack('combat.back');
+			setForward('combat.forward');
+			
+			// setup our scenario
+			initSpawnables();
+			initMissionMembers();
+			
+			game.player.client.onspawnerror = onSpawnDenied;
+			
+			quickhelp();
+			
+			setForcesHeader();
+			
+			ftimer.enabled = false;
+			
+			// mission members coming and going
+			client.onmissionroomchange = initMissionMembers;
+		}
+				
+		function initSpawnableTree()
+		{
+			var spawnables = game.spawnablevehicles;
+			
+			if(spawnables.length > 0)
+			{
+				var classes = new Object();
+				
+				for(var i = 0; i < spawnables.length; i++)
+				{
+					var vehicle = spawnables[i];
+					if(vehicle == null) continue;
+					
+					if(classes[vehicle.vclassid] == null)
+						classes[vehicle.vclassid] = new TreeNode(vehicle.vclassid, null, 1, true, vehicle.vclass);
+					
+					classes[vehicle.vclassid].addNode(new TreeNode(vehicle.id, vehicle.index, 2, false));
+					
+					vehicles[vehicle.index] = new VehicleClass(vehicle);
+				}
+				
+				var cids 	= new Array(9, 8, 4, 7, 5, 6, 2, 1, 12, 13, 14);
+				var preopen	= null;
+				
+				for(var c = 0; c < cids.length; c++)
+				{
+					var node = classes[cids[c]];
+					
+					if(node != null)
+					{
+						if(preopen == null)
+							preopen = node; // open the first node
+						
+						spawnTree.addNode(node, toggleNode);
+						rootNodes[rootNodes.length] = node;
+					}
+				}
+				
+				if(preopen)
+					preopen.expand();
+			}
+			
+			spawnTree.setColorText(false);
+		}
+		
+		function initSpawnables()
+		{
+			if(!spawnTree.initTree())
+				initSpawnableTree();
+			
+			for(var i = 0; i < rootNodes.length; i++)
+				rootNodes[i].children = rootNodes[i].children.sort(sortNodes);
+				
+			cprint("Drawing tree!");
+			
+			spawnTree.drawTree();
+		}
+		
+		function sortNodes(a, b)
+		{
+			if(vehicles[b.data].current < vehicles[a.data].current)
+				return -1;
+			else if(vehicles[b.data].current > vehicles[a.data].current)
+				return 1;
+			
+			if(vehicles[b.data].type.index < vehicles[a.data].type.index)
+				return -1;
+			else if(vehicles[b.data].type.index > vehicles[a.data].type.index)
+				return 1;
+			
+			return 0;
+		}
+								
+		function isSelectable(node)
+		{
+			return true;
+		}
+		
+		function toggleNode(node)
+		{
+			if(!node.open)
+			{
+				for(var i = 0; i < rootNodes.length; i++)
+				{
+					if(rootNodes[i].open && rootNodes[i].id != node.id)
+						rootNodes[i].open = false;
+				}
+			}
+		}
+		
+		function formatSpawnable(tree, node)
+		{
+			var name				= tree.list.id;
+			var indent 			= tree.indent * node.level;
+			var mouseenter	= name + ".mouseEnter(this)";
+			var mouseexit		= name + ".mouseExit(this)";
+			
+			//cprint("Formatting " + node.description);
+			
+			if(node.branch)
+			{
+				var icon 			= (node.open) ? tree.collapseIcon: tree.expandIcon;
+				var label			= node.description.toUpperCase();
+				
+				var row 			= new ViewBuilder(tree.list, node.id, 0, 0, 0, 16);
+				var expander 	= row.addBuilder(new ImageBuilder(row, "image", icon, indent, 3, 10, 10));
+				var caption		= row.addBuilder(new TextBuilder(row, "title", "caption", label, (indent + tree.indent), 0, 0, 16));
+				
+				row.addAttribute("aspectalign", "left");
+				row.addAttribute("onmouseenter", mouseenter);
+				row.addAttribute("onmouseexit", mouseexit);
+				
+				expander.addAttribute("onclick", name + ".clickTree(true, " + tree.count + ")");
+				caption.addStyle("color", "#e9e3d9ff");
+				
+				return row.build(); 				
+			}
+			else
+			{
+				var vehicle			= vehicles[node.data];
+				var label				= vehicle.type.description;
+				
+				var row 				= new ViewBuilder(tree.list, node.id, 0, 0, 0, 16);
+				var caption			= row.addBuilder(new TextBuilder(row, "title", "caption", label, indent, 0, -indent, 16));
+				
+				row.addAttribute("aspectalign", "left");
+				row.addAttribute("onmouseenter", mouseenter);
+				row.addAttribute("onmouseexit", mouseexit);
+				
+				caption.addStyle("color", "#00FF00");
+				
+				return row.build();
+			}
+		}
+		
+		function selectSpawnable(spawn)
+		{
+			cprint("Vehicle selected!");
+			
+			if(spawn)
+				doForward();
+		}
+		
+		function setCombatStatus(tom, captures, damages)
+		{
+			/*
+			game.consoleprint("Setting combat status!\n");
+			
+			if(tutContent)
+			{
+				var tomComplete = false;
+				var capComplete = false;
+				var damComplete = false;
+				
+				// convert to ints
+				tom	= parseInt(tom);
+				cap	= parseInt(captures);
+				dam = parseInt(damages);
+				
+				targetTom = parseInt(tutContent.tom) * 60;
+				targetCap = parseInt(tutContent.captures);
+				targetDam = parseInt(tutContent.damages);
+				
+				if(tom >= targetTom)	tomComplete = true;
+				if(cap >= targetCap)	capComplete = true;
+				if(dam >= targetDam)	damComplete = true;
+				
+				var isComplete = TutIsComplete(tutContent);
+				
+				// complete the tutorial if one of these hit
+				if(!isComplete && (tomComplete || capComplete || damComplete))
+					OnTutorialCompleted();
+				
+				if(isComplete)
+					setForwardEnabled(false);
+			}
+			*/
+		}
+		
+		function onSpawnDenied(code)
+		{
+			consoleprint("Processing Spawn Denied Code: " + code + "\n");
+			
+			if(code == null)
+				code = "";
+			
+			showOk(getlocstring('mission.spawn.denied' + code));
+		}
+		
+		function doForwardTimer()
+		{
+			if(ftimer.run())
+			{
+				ftimer.enabled = false;
+				setForwardEnabled(true);
+			}
+		}
+		
+		function setForcesHeader()
+		{
+			var header 	= findview("forces-header");
+			var side 		= client.persona.country.side;  
+			
+			header.label = (side == 1) ? "ALLIED FORCES" : "AXIS FORCES" ;
+		}
+		
+		function switchSides()
+		{
+			if(switchTeams(scenario))
+			{
+				//setForcesHeader();
+				//initSpawnables();
+				loadWin("scenarios/scenario", true);
+			}
+		}
+		
+		function initMissionMembers()
+		{
+			var started 				= new Date();
+			var members			= client.missionroomlist;
+			var vehicleMgr			= new VehicleManager();
+			
+			if(members == null)
+				return;
+			
+			membersSpawned	= 0;
+			membersCount		= members.length;
+			
+			memberList.clearRows(false);
+			
+			for(var i = 0; i < membersCount; i++)
+			{
+				/************ Update Member List **************/
+				
+				var member 			= members[i];
+				var vehicle			= "-";
+				var spawned		= "ui/textures/test/notspawned_icon.bmp";
+				
+				if(member.weapon != null)
+				{
+					var memberWeapon = member.weapon;
+					
+					if(memberWeapon.description.toLowerCase() == "buzzard")
+						continue;
+					
+					vehicle = memberWeapon.description;
+				}
+				
+				var rank		= member.rank;
+				var callsign 	= member.callsign;
+				
+				if(member.spawned)
+					spawned = "ui/textures/test/spawned_icon.bmp";
+					
+				var row 						= new ViewBuilder(memberList.list, "member_" + i, 0, 0, 0, 16);
+				var rankBuilder				= row.addBuilder(new TextBuilder(row, "member-rank-caption", "caption", "", 5, 1, 14, 14));
+				var nameBuilder			= row.addBuilder(new TextBuilder(row, "member-name-caption", "caption", callsign, 24, 0, 115, 16));
+				var vehicleBuilder			= row.addBuilder(new TextBuilder(row, "member-vehicle-caption", "caption", vehicle, 154, 0, 210, 16));
+				var spawnedBuilder	 	= row.addBuilder(new ImageBuilder(row, "image", spawnIcon, 400, 3, 10, 10));
+				
+				row.addAttribute("aspectalign", "left");
+				//row.addAttribute("onmouseenter", mouseenter);
+				//row.addAttribute("onmouseexit", mouseexit);
+				
+				// rank attributes
+				rankBuilder.addAttribute("class", "rankicon");
+				rankBuilder.addAttribute("rank", member.rank.level - 1);
+				
+				// name attributes
+				nameBuilder.addStyle("color", "#e9e3d9ff");
+
+				// name attributes
+				vehicleBuilder.addStyle("color", "#e9e3d9ff");
+				
+				memberList.addRow(member, row.build());
+				
+				/************ Update Deployed List **************/
+				
+				if(vehicle != "-")
+					vehicleMgr.addVehicle(vehicle);
+				
+				if(member.spawned)
+					membersSpawned++;
+			}
+			
+			memberList.setScrollY();
+			
+			var stopped = new Date();
+			
+			//game.consoleprint("Member List Update took " + (stopped.getTime() - started.getTime()) + "ms with " + membersCount + " members\n");
+		}
+		
+		function toggleSelection()
+		{
+			if(selections.value == 0)
+			{
+				selections.value = 1;
+				showButton.label = "CHANGE WEAPON";
+			}
+			else
+			{
+				selections.value = 0;
+				showButton.label = "SHOW PLAYERS";
+			}
+			
+			 setForcesHeader();
+		}
+		
+		-->
+	</script>
+</window>

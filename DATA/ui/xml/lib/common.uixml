@@ -4,6 +4,7 @@
 	<include file="classes/MenuControl.uixml"/>
 	<include file="classes/MapManager.uixml"/>
 	<include file="classes/CycleTimer.uixml"/>
+	<include file="classes/ViewManager.uixml"/>
 	
 	<!--
 	
@@ -495,6 +496,16 @@
 			value = value.toLowerCase();
 		
 		return value;
+	}
+	
+	function getBodyTab()
+	{
+		var body = window.findview("body");
+		
+		if(body)
+			return body.getchild(body.value);
+		
+		return null;
 	}
 	
 	function quickhelp(id, force)

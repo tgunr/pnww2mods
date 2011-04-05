@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<window id="blendeventselect" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768" layer="90" modal="true" aspectalign="center">
+	<include file="lib/common.uixml"/>
+	<include file="classes/ListControl.uixml"/>
+	<include file="classes/ViewBuilder.uixml"/>
+	<include file="classes/TextBuilder.uixml"/>
+	<view id="blendeventselect-popup" x="300" width="400" height="200" rtop="120" moveondrag="no" aspectlimit='width'
+		style="background-color: #000000; border-width: 4; border-height: 4;" onshow="centerme(this)">
+				<list id="eventList" x="5" y="35" rright="5" rtop="5" style="border-color: #3e5248;" aspectlimit='width'
+					onselect="eventList.clickList(false)" ondblselect="eventList.clickList(true)"/>
+		<view x="5" y="5" rright="5" height="30">
+			<button id="popup-no" x="20" y="2" width="150" height="20" label="CANCEL" onclick="done()"
+				style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+				onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+			<button id="popup-yes"  y="2" width="150" height="20" rright="20" label="SELECT" onclick="selectEvent(true)"
+				style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+				onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+		</view>
+	</view>
+	<script>
+		<!--
+		
+		var eventList = new ListControl(findview("eventList"));
+		var callback = null;
+
+		function initEvents(c)
+		{
+			consoleclear();
+			
+			callback = c;
+			
+			if(!game.cursor.visible)
+					game.cursor.visible = true;
+			
+			var nwidth 			= eventList.list.nwidth - 5;
+			var events 			= new Array();
+			var descriptions 	= new Array();
+			
+			events.push(0);
+			events.push(1);
+			
+			descriptions.push("Left Foot Down");
+			descriptions.push("Right Foot Down");
+			
+			eventList.clearRows(true);
+			
+			for(var i = 0; i < events.length; i++)
+			{
+				var rb = new ViewBuilder(eventList.list, events[i], 0, 0, nwidth, 16);
+				rb.addAttribute("onmouseenter", "eventList.mouseEnter(this)");
+				rb.addAttribute("onmouseexit", "eventList.mouseExit(this)");
+				
+				var vb = rb.addBuilder(new TextBuilder(rb, null, "caption", descriptions[i]));
+				vb.addStyle("color", "#e9e3d9ff");
+				
+				eventList.addRow(events[i], rb.build());
+			}
+			
+			eventList.postInit();
+		}
+		
+		function centerme(v)
+		{
+			v.x = (v.parent.width / 2) - (v.width / 2);
+			v.y = (v.parent.height / 2) - (v.height / 2) + 100;
+		}
+		
+		function selectEvent(action)
+		{
+			if(action)
+			{
+				var type = eventList.data; 
+				game.player.client.sendchatmessage("New Event: " + type);
+				callback(type);
+				done();
+			}
+		}
+		
+		function done()
+		{
+			game.cursor.update(window.name);
+			soundPlayClick();
+			window.close();
+		}
+		
+		-->
+	</script>
+</window>
+

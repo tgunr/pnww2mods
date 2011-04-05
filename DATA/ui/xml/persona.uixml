@@ -20,7 +20,7 @@
 						control-on-color: #FFFFCE;
 						border-width: 16;
 						border-height: 16;">
-		<tab label="  ${persona.selecttab}  " x="0" y="0" width="930" height="460"
+		<tab label="  ${online.campaign}  " x="0" y="0" width="930" height="460"
 			onshow="setHelp(getlocstring('persona.selecttab.help')); tplTab()" tip="${persona.selecttab.tip}">
 			<view id="left-pane" x="18" y="18" width="444" height="411" onupdate="updateStatus(false)">
 				
@@ -110,6 +110,8 @@
 				<image id="persona-image" x="240" y="3" src="ui/textures/test/british.bmp" width="182" height="400"/>
 			</view>
 		</tab>
+		<tab label="  ${online.scenarios}  " x="0" y="0" width="930" height="460"
+			onshow="tplTab(); loadWinToTab('scenarios/lobby', 1, true);" tip="${online.scenarios.tip}"/>
 		<include file="widgets/globals/squads.uixml"/>
 		<include file="widgets/globals/manuals.uixml"/>
 		<include file="widgets/globals/settings.uixml"/>
@@ -249,6 +251,19 @@
 		function initWin(win)
 		{
 			game.consoleclear();
+			
+			var campaignPlay 	= (game.arena("campaign_play") != "false") ? true : false;
+			var scenarioPlay 		= false; //(game.arena("scenarios_play") != "false") ? true : false;
+			
+			if(!scenarioPlay)
+			{
+				var body = findview("body");
+				if(body) body.showtab(1, false);
+			}
+			else if(!campaignPlay)
+			{
+				loadWinToTab("scenarios/lobby", 1, true);
+			}
 			
 			// lets hide chat
 			showChat(false);

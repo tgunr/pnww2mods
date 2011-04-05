@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<script>
+	
+	<!--
+	
+		var scenariosRoot = null;
+		
+		function loadRoot()
+		{
+			if(scenariosRoot == null)
+				scenariosRoot = game.getcontent("scenarios");
+			
+			return scenariosRoot; 
+		}
+		
+		function loadCategory(category)
+		{
+			cprint("Loading category: " + category);
+			
+			var root = loadRoot();
+			if(root == null) return null;
+			
+			for(var i = 0; i < root.links.length; i++)
+			{
+				var link = root.links[i];
+				if(link == null) continue;
+				
+				var content = game.getcontent(link.path);
+				
+				if(content.category == category)
+					return content;
+			}
+			
+			return null;
+		}
+		
+		function loadScenario(category, map)
+		{
+			cprint("Loading scenario: " + category + "/" + map);
+			
+			var content = loadCategory(category);
+			if(content == null) return null;
+			
+			if(map >= 0 && map < content.links.length)
+			{
+				var c = game.getcontent(content.links[map].path);
+				
+				if(!c) cprint("Couldnt load scenario!");
+				
+				return c;
+			}
+			
+			return null;
+		}
+		
+		function joinLobby()
+		{
+			var hud = game.findview("scenhud");
+			if(hud != null) hud.close();
+			
+			// make sure no scenario is running
+			game.stopscenario();
+			
+			var root = loadRoot();
+			var client = game.player.client;
+			
+			if(client.instance.category != root.category)
+				client.joininstance(root.category, 0, 0, 0);
+			
+			// load our lobby windows 
+			loadWin("scenarios/lobby", true);
+		}
+	
+		function joinInstance(instance)
+		{
+			if(instance == null)
+				return false;
+			
+			cprint("Joining instance " + instance.category + "/" + instance.type);
+			
+			var scenario = loadScenario(instance.category, instance.type);
+			
+			// start the scenario
+			if(scenario != null && game.startscenario(scenario.config))
+			{
+				if(client.joininstance(instance.category, instance.type, instance.owner, instance.id))
+				{
+					// save our content
+					game.globals.scenario = scenario;
+					
+					// move to the scenario screen
+					loadWin("scenarios/scenario", true);
+					
+					return true;
+				}
+			}
+			
+			return false;
+		}
+		
+		function createInstance(category, map)
+		{
+			cprint("Creating new instance: " + category + "/" + map);
+			
+			if(game.player.client.createinstance(category, map))
+				return true;
+			
+			return false;
+		}
+		
+		function selectTeam(scenario, team)
+		{
+			var country 	=  scenario["team" + team];
+			var client		= game.player.client;
+				
+			if(client.persona.country.id != country)
+			{
+				var personas 	= client.personas;
+				var persona		= null;
+				
+				for(var i = 0; i < personas.length; i++)
+				{
+					if(personas[i].country.id == country && personas[i].branchid == 1)
+					{
+						persona = personas[i];
+						break;
+					}
+				}
+				
+				if(persona == null)
+					return false;
+				
+				return client.selectpersona(persona);
+			}
+			
+			return true;
+		}
+		
+		function switchTeams(scenario)
+		{
+			return selectTeam(scenario,  ((game.player.client.persona.country.side == 1) ? 2 : 1));
+		}
+		
+	-->
+</script>
+

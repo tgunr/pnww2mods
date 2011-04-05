@@ -1,0 +1,674 @@
+<script>
+	
+	<include file="classes/BodyTab.uixml"/>
+
+	<!--
+	
+	function PersonaView(r)
+	{
+		var self 						= new BodyTab(r); 	
+		
+		self.client 						= game.player.client;
+		
+		// persona brief captions
+		self.briefCountry			= findview("country-caption");
+		self.briefPersona			= findview("persona-caption");
+		self.briefBrigade			= findview("brigade-caption");
+		self.briefDivision			= findview("division-caption");
+		self.briefPercent			= findview("percent-caption");
+		self.briefLocked			= findview("locked-caption");
+		self.briefImage				= findview("persona-image");
+		self.listTimer					= new CycleTimer(30000);
+		self.statusTimer			= new CycleTimer(1000);
+		self.rankLock				= findview("rank-lock");
+		
+		self.requireTraining 		= false;
+		self.graduated				= TutIsComplete("basic");
+		self.shortcut					= false;
+		self.welcomed				= false;
+		self.requestpersonas	= true;
+		self.selected					= 0;
+		self.personas				= new Array();
+		self.status					= new Array();
+		self.locks						= new Array();
+		self.trainingReport		= null;
+		
+		// override methods
+		self.onInit = function()
+		{
+		}
+		
+		self.onShow = function()
+		{
+		}
+		
+		self.onUpdate = function()
+		{
+		}
+		
+		self.doForward = function()
+		{
+			if(this.personas[this.selected] != null && this.personas[this.selected].lockedthru == 0)
+			{
+				if(this.getPersonaAvailability(this.personas[this.selected]) == "slocked")
+					return;
+				
+				this.requestpersonas = false;
+					
+				if(this.graduated)
+					this.doSquadCheck();
+				else
+					this.doTrainingCheck();
+			}
+			else
+			{
+			 	game.consoleprint("Forward check failed.\n");
+			}
+		}
+		
+		self.doSquadCheck = function()
+		{
+			if(this.client.selectpersona(this.personas[this.selected]))
+			{
+				musicPlayIntro();
+				
+				if(game.settings.squadinvites &&
+				  (this.client.squad == null || this.client.squad.id == 0) &&
+				   this.client.requestrecruiters(game.settings.language) &&
+				   this.client.state.maxsquadrank > 0 &&
+				   this.client.recruiters.length > 0)
+				{
+					load("recruitment").initRecruitment(this.doRecruited);
+				}
+				else
+				{
+					this.doRecruited(false);	
+				}
+			}
+			else
+			{
+				this.requestpersonas = true;
+			}
+		}
+		
+		self.doTrainingCheck = function()
+		{
+			if(this.requireTraining)
+			{
+				this.doTraining(true);
+			}
+			else
+			{
+				var persona = this.personas[this.selected];
+				
+				if(persona.rank != null && persona.rank.level == 1)
+					showConfirm(getlocstring('persona.notgraduated'), this.doTraining, getlocstring('common.yes'), getlocstring('common.no'));
+				else
+					this.doSquadCheck();
+			}
+		}
+		
+		self.doTraining = function(yes)
+		{
+			if(yes)
+			{
+				if(this.client.selectpersona(this.personas[this.selected]))
+				{
+						game.globals.skipgraduation = true;
+						loadWin("tutorials", true);
+				}
+				else
+				{
+					this.requestpersonas = true;
+				}
+			}
+			else
+			{
+				this.doSquadCheck();
+			}
+		}
+		
+		self.doRecruited = function(recruited)
+		{
+			if(!this.recruited)
+				load(brigades);
+			
+			window.close();
+		}
+		
+		self.initWin = function(win)
+		{
+			game.consoleclear();
+			
+			// lets hide chat
+			showChat(false);
+
+			// lets hide the id card
+			showIDCard(false);
+
+			// lets set the default message
+			setHelp(getlocstring('online.campaign.help'));
+			
+			if(game.getpref("ui.squads.recruitme", 0, true) && (this.client.squad == null || this.client.squad.id == 0))
+				setForward('persona.forward');
+			else if(this.client.brigade.id > 0)
+				setForward('persona.forward.brigade');
+			else
+				setForward('persona.forward.brigades');
+			
+			this.client.onpersonas = this.initPersonaList;
+			this.client.requestpersonalist();
+
+			for(var c = 0; c < 3; c++)
+			{
+				var country = this.root.findview("country" + c);
+
+				for(var p = 0; p < 3; p++)
+				{
+					this.status.push(country.findview("status" + p));
+					this.locks.push(country.findview("lock" + p));
+				}
+			}
+
+			this.mouseEnter(status[0]);
+			this.runExtSquadUpdate();
+			
+			this.rankLock.visible = false;
+		}
+		
+		/*************** PAGE FUNCTIONS **************/
+		
+		self.updatePersonaDetails = function()
+		{
+			setForwardEnabled(false);
+			
+			if(personas[selected] != null)
+			{
+				var persona = personas[selected];
+				
+				briefCountry.label = getCountryBranch(persona.country, persona.branch);
+				
+				if(persona.rank != null && persona.rank.level > 0)
+				{
+					rankLock.visible = persona.rank.locked;
+					briefPersona.label 	= persona.rank.name + " " + client.handle;
+				}
+				else
+				{
+					rankLock.visible = false;
+					briefPersona.label 	= client.handle;
+				}
+				
+				if(persona.brigade.id > 0)
+				{
+					briefDivision.label 	= persona.brigade.division;
+					briefBrigade.label 		= persona.brigade.name;
+					
+					if(requireTraining && !graduated)
+						setForward('persona.forward.training');
+					else if(false && persona.brigade.missions > 0)
+						setForward('persona.forward.brigade');
+					else
+						setForward('persona.forward.brigades');
+						
+				}
+				else
+				{
+					briefBrigade.label 		= getlocstring('persona.details.brigade.na');
+					briefDivision.label 	= "";
+					
+					if(requireTraining && !graduated)
+						setForward('persona.forward.training');
+					else
+						setForward('persona.forward.brigades');
+				}
+				
+				var availability = getPersonaAvailability(persona);
+				
+				briefPercent.label 	= persona.rankpercent + "% " + getlocstring('persona.details.career.rank');
+				briefLocked.text = getVariableLocString('persona.details.career.status.' + availability, formatLockedThru(persona.lockedthru));
+				
+				if(client.spawndelay)
+				{
+					if((persona.country.side == 1 && client.sidebalance < 0) || (persona.country.side == 2 && client.sidebalance > 0))
+						briefLocked.text += "\n\n" + getlocstring('persona.details.spawndelayed').toUpperCase();
+				}
+				
+				briefLocked.setstyleproperty("color", getAvailabilityColor(persona, availability));
+				
+				if(briefImage != null)
+					briefImage.src = "ui/textures/test/" + persona.country.adjective + "_" + persona.branch + ".bmp";
+				
+				if(persona.lockedthru == 0 && availability != "slocked")
+					setForwardEnabled(true);					
+			}
+		}
+		
+		function formatLockedThru(len)
+		{
+			var minute 	= 60;
+			var hour 	= 60 * minute;
+			var day 	= 24 * hour;
+			
+			if(len >= day)
+			{
+				var days 		= Math.floor(len / day);
+				var hours		= Math.floor((len - (days * day))/ hour);
+				var formatted 	= getVariableLocString("common.time.day" + ((days > 1) ? "s": ""), days);
+				
+				if(hours > 0)
+				{
+					formatted += ", ";
+					formatted += getVariableLocString("common.time.hour" + ((hours > 1) ? "s": ""), hours);
+				}
+				
+				return formatted;
+			}
+			else if(len >= hour)
+			{
+				var hours 		= Math.floor(len / hour);
+				var minutes		= Math.floor((len - (hours * hour))/ minute);
+				var formatted 	= getVariableLocString("common.time.hour" + ((hours > 1) ? "s": ""), hours);
+				
+				if(minutes > 0)
+				{
+					formatted += ", ";
+					formatted += getVariableLocString("common.time.minute" + ((minutes > 1) ? "s": ""), minutes);
+				}
+				
+				return formatted;
+			}
+			else if(len >= minute)
+			{
+				var minutes 	= Math.floor(len / minute);
+				var seconds		= len - (minutes * minute);
+				var formatted 	= getVariableLocString("common.time.minute" + ((minutes > 1) ? "s": ""), minutes);
+				
+				if(seconds > 0)
+				{
+					formatted += ", ";
+					formatted += getVariableLocString("common.time.second" + ((seconds > 1) ? "s": ""), seconds);
+				}
+				
+				return formatted;
+			}
+			else if(len > 0)
+			{
+				return getVariableLocString("common.time.second" + ((len > 1) ? "s": ""), len);
+			}
+			
+			return getlocstring('common.time.now');
+		}
+		
+		function initPersonaList()
+		{
+			//consoleprint("Initing personas\n");
+			
+			personas = new Array(9);
+
+			var updateInterval 	= 30;
+			var activeMission	= client.activemission;
+			var sortedPersonas	= client.personas.sort(sortPersonas);
+			
+			for(var p = 0; p < sortedPersonas.length; p++)
+			{
+				var index	= 0;
+				var persona = sortedPersonas[p];
+				
+				//consoleprint("Doing " + persona.country.name + "/" + persona.branch + ": " + persona.lastused + "\n");
+				
+				while(index < personas.length)
+				{
+					if(personas[index] == null)
+					{
+						personas[index] = persona;
+						break;
+					}
+					else if(personas[index].country.id == persona.country.id)
+					{
+						index += 1;
+					}
+					else
+					{
+						index += 3;
+					}
+				}
+				
+				if(activeMission && activeMission.country == persona.country.id)
+					if(activeMission.branch == persona.branchid)
+						shortcut = true;
+				
+				if(persona.lockedthru > 0 && persona.lockedthru < updateInterval)
+					updateInterval = persona.lockedthru;
+			}
+			
+			for(var c = 0; c < 3; c++)
+				formatPersonas('country' + c, c * 3);
+
+			updateStatus(true);
+			listTimer.set(updateInterval * 1000);
+			
+			if(requireTraining && !graduated)
+				setForward('persona.forward.training');
+			
+			// turn this on when host starts sending it
+			if(false && !game.globals.subcheck && !game.player.client.state.subactive)
+			{
+				showOk(getlocstring('persona.subscription.inactive'));
+				game.globals.subcheck = true;
+			}
+		}
+
+		function formatPersonas(id, start)
+		{
+			//consoleprint("Formatting personas at position " + id + "\n");
+			
+			var view 		= findview(id);
+			var flag 		= view.findview("flag");
+			var header 		= view.findview("header");
+			var country		= personas[start].country;
+			var label		= getlocstring("common.countries." + country.code.toLowerCase() + ".adjective") + " " + getlocstring("persona.list");
+			var balance		= client.sidebalance;
+			
+			flag.src = "ui/textures/test/" + country.adjective.toLowerCase() + "_flag.bmp";
+			
+			label = label.toUpperCase();
+			
+			if(balance != 0)
+			{
+				if((balance < 0 && country.side == 1) || (balance > 0 && country.side == 2))
+					label += " - " + getlocstring("persona.list.overpopulated");
+				else
+					label += " - " + getlocstring("persona.list.requesting");
+			}
+			
+			header.label = label;
+			
+			for(var p = 0; p < 3; p++)
+			{
+				var persona = personas[start + p];
+				var branch	= view.findview("branch" + p);
+				
+				if(!requireTraining || graduated)
+				{
+					branch.label = getlocstring("common.branches." + persona.branch.toLowerCase()).toUpperCase();
+				}
+				else
+				{
+					if(persona.branchid == 1)
+						branch.label = getlocstring("common.training").toUpperCase();
+					else
+						branch.label = "";
+				}
+			}
+			
+			//consoleprint("Done\n");
+		}
+		
+		function sortPersonas(a, b)
+		{
+			if(requireTraining && !graduated && a.branchid == 1 && b.branchid > 1)
+				return -1;
+			else if(requireTraining && !graduated && a.branchid > 1 && b.branchid == 1)
+				return 1;
+			else if(requireTraining && !graduated && a.branchid == 1 && b.branchid == 1)
+				return 0;
+			else if(a.lastused == 0 && b.lastused > 0)
+				return 1;
+			else if(a.lastused > 0 && b.lastused == 0)
+				return -1;
+			else if(a.lastused > b.lastused)
+				return 1;
+			else if(a.lastused < b.lastused)
+				return -1;
+			
+			return 0;
+		}
+		
+		/************** EVENT HANDLERS *****************/
+		
+		function updateStatus(force)
+		{
+			if(statusTimer.run() || force)
+			{
+				//consoleprint("Doing Status update\n");
+				
+				for(var i = 0; i < personas.length; i++)
+				{
+					var p = personas[i];
+					var s = status[i];
+					var l = locks[i];
+					
+					if(l) l.visible = false;
+					
+					if(p && s)
+					{
+						//consoleprint("Doing Status for persona " + i + "\n");
+						
+						var availability = getPersonaAvailability(p);
+
+						if(availability == "delayed")
+							availability = "onleave";
+
+						var color = getAvailabilityColor(p, availability);
+						s.setstyleproperty("color", color);
+						
+						if(availability == "slocked" && l)
+						{
+							var header = s.parent.findview("header");
+							
+							if(header.label.length > 0)
+							{
+								l.visible = true;
+								//l.x = header.x + header.stringlength + 5;
+							}
+						}
+						
+						if(!requireTraining || graduated)
+						{
+							s.label = getVariableLocString('persona.list.' + availability, formatLockedThru(p.lockedthru));
+						}
+						else if(p.branchid == 1)
+						{
+							if(trainingReport == null)
+								trainingReport = getTrainingReport();
+							
+							s.label = getVariableLocString('common.training.status', trainingReport[0], trainingReport[1]);
+						}
+						else
+						{
+							s.label = "";
+							l.visible = false;
+						}
+					}
+					else
+					{
+						if(l) l.visible = false;
+					}
+				}
+			}
+		}
+		
+		function updateList()
+		{
+			if(requestpersonas && welcomed && listTimer.run())
+			{
+				//consoleprint("Requesting personas!!!\n");
+				client.requestpersonalist();
+			}
+		}
+
+		function doShortCut(ok)
+		{
+			if(ok)
+			{
+				var shortcut 		= null;
+				var activeMission 	= client.activemission;
+				
+				if(client.selectpersona(personas[selected]))
+				{
+					var brigade = client.brigade;
+					
+					if(activeMission.brigade > 0 &&  brigade.id != activeMission.brigade)
+					{
+						var brigades = client.brigades;
+						
+						for(var i = 0; i < brigades.length; i++)
+						{
+							if(brigades[i].id == activeMission.brigade)
+							{
+								client.selectbrigade(brigades[i]);
+								break;
+							}
+						}
+					}
+					
+					brigade = client.brigade; 
+					
+					if(brigade.id > 0)
+					{
+						shortcut = "brigade";
+						
+						if(brigade.id = activeMission.brigade)
+						{
+							if(activeMission.mission > 0 && client.acceptmission(activeMission.mission))
+								shortcut = "mission";
+						}
+					}
+				}
+				
+				if(shortcut)
+				{
+					musicPlayIntro();
+					loadWin(shortcut, true);
+				}
+			}
+		}
+		
+		function getPersonaAvailability(persona)
+		{
+			if(!game.player.client.state.paccess(persona))
+				return "slocked";
+			else if(persona.lockedthru == 0)
+				return (!requireTraining || graduated) ? "available": "training";
+			
+			return persona.availability;
+		}
+		
+		function getAvailabilityColor(p, availability)
+		{
+			var color = "#00ff00"; // green					
+			
+			if(availability == "slocked")
+				color = "#ff0000";
+			else if(availability == "banned" || availability == "arenalock")
+				color = "#ffa000";
+			else if(availability == "onleave" || availability == "delayed" || availability == "noswap")
+				color = "#ff8800";
+			else if(getPersonaOverBalanced(p))
+				color = "#ffff00";
+			
+			return color;
+		}
+
+		function getPersonaOverBalanced(persona)
+		{
+			var balance = client.sidebalance;
+			
+			if((balance > 0 && persona.country.side == 2) || (balance < 0 && persona.country.side == 1))
+				return true;
+			
+			return false;
+		}
+		
+		function selectPersona(index, dblclick)
+		{
+			if(!requireTraining || graduated || personas[index].branchid == 1)
+			{
+				soundPlayClick();
+				
+				selected = index;
+				
+				updatePersonaDetails();
+				
+				if(dblclick)
+					tplForward();
+				
+				for(var r = 0; r < status.length; r++)
+					mouseExit(status[r], r);
+			}
+		}
+		
+		function mouseEnter(row)
+		{
+			if(!requireTraining || graduated || row.id == "status0")
+				row.setstyleproperty("background-color", "#FFFFFF33");
+		}
+		
+		function mouseExit(row, index)
+		{
+			if(index != selected)
+				row.setstyleproperty("background-color", "#00000000");
+		}
+		
+		function setWelcomed()
+		{
+			welcomed = true;
+			
+			if(shortcut && !game.globals.shortcut)
+			{
+				game.globals.shortcut = true;
+				var popup = showConfirm(getlocstring('persona.redirect'), doShortCut);
+				popup.setPopupClose(false);
+			}
+		}
+
+		function displayTime		(seconds)
+		{
+			if(seconds <= 60)
+				return seconds + " " + getVariableLocString("globals.time.seconds");
+			var t = seconds / 60;
+			if(t <= 90)
+				return parseInt(t) + " " + getVariableLocString("globals.time.minutes");
+			t /= 60;
+			if(t <= 36)
+				return parseInt(t) + " " + getVariableLocString("globals.time.hours");
+			t /= 7;
+			if (t <= 4)
+				return parseInt(t) + " " + getVariableLocString("globals.time.days");
+			t /= 30;
+			if (t < 24)
+				return parseInt(t) + " " + getVariableLocString("globals.time.months");
+			t = seconds / (365 * 24 * 60 * 60);
+			return parseInt(t) + " " + getVariableLocString("globals.time.years");
+		}
+		
+		function getTrainingReport()
+		{
+			var report 	= new Array(2);
+			var index 	= game.getcontent("tutorials/basic");
+			
+			report[0] = 0;
+			report[1] = 0;
+			
+			if(index != null)
+			{
+				var basics = index.links;
+				
+				for(var i = 0; i < basics.length; i++)
+				{
+					if(game.tutorialcompleted("basic", i + 1))
+						report[0]++;
+					
+					report[1]++;
+				}
+			}
+			
+			return report;
+		}
+		
+		return self;
+	}
+	
+	-->
+</script>
