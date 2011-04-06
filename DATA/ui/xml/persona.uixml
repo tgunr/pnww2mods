@@ -253,7 +253,7 @@
 			game.consoleclear();
 			
 			var campaignPlay 	= (game.arena("campaign_play") != "false") ? true : false;
-			var scenarioPlay 		= false; //(game.arena("scenarios_play") != "false") ? true : false;
+			var scenarioPlay 		= (game.arena("scenarios_play") != "false") ? true : false;
 			
 			if(!scenarioPlay)
 			{
