@@ -1,0 +1,16 @@
+# Gewehr.43 German SA rifle created 4/4/11 - Doc.
+
+mass = 4.1
+firetype = singleshot
+rateoffire = 90
+dispersion = 0.1
+ammotype1 = 7_9mmrifle
+#ammotype2 =
+ghostrof = 90
+ghostammotype = 7_9mmrifle
+cliprounds = 10
+reloadtime = 6
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = reload
