@@ -1,0 +1,21 @@
+#Rev. 4/4/11 - Doc
+#Colt 1911 SA pistol
+
+mass = 1.1
+firetype = singleshot
+rateoffire = 250
+#syncrateoffire = 24
+ammotype1 = 45acp
+ghostrof = 125
+ghostammotype = 45acp
+dispersion = 1.212
+
+# number of rounds in one clip
+cliprounds = 7
+
+# Amount of time in seconds for reloading
+reloadtime = 3
+
+# type of clip; used in the ui for clip name display
+# possible values: na, clip, magazine, belt, reload
+cliptype = reload
