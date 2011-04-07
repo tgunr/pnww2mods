@@ -1,0 +1,16 @@
+# Garand M1a1 .30 cal SA rifle created 4/4/11 - Doc.
+
+mass = 4.8
+firetype = singleshot
+rateoffire = 90
+dispersion = 0.1
+ammotype1 = garand_m2ball
+#ammotype2 =
+ghostrof = 90
+ghostammotype = garand_m2ball
+cliprounds = 8
+reloadtime = 5
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = reload
