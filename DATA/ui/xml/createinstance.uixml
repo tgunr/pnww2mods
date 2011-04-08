@@ -1,0 +1,285 @@
+<?xml version="1.0"?>
+<window id="createinstance" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768" layer="90" modal="true" aspectalign="center">
+	<include file="lib/common.uixml"/>
+	<include file="lib/scenarios.uixml"/>
+	<include file="classes/TreeControl2.uixml"/>
+	<include file="classes/ViewBuilder.uixml"/>
+	<include file="classes/TextBuilder.uixml"/>
+	<include file="classes/ImageBuilder.uixml"/>
+	<view id="createinstance-popup" x="300" width="400" height="200" rtop="120" moveondrag="no" aspectlimit='width'
+		style="background-color: #000000; border-width: 4; border-height: 4;" onshow="centerme(this)">
+				<list id="scenarioTree" x="5" y="35" rright="5" rtop="5" style="border-color: #3e5248;" aspectlimit='width'
+					onselect="scenarioTree.clickTree(false)" ondblselect="scenarioTree.clickTree(true)"/>
+		<view x="5" y="5" rright="5" height="30">
+			<button id="popup-no" x="20" y="2" width="150" height="20" label="CANCEL" onclick="doAction(false)"
+				style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+				onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+			<button id="popup-yes"  y="2" width="150" height="20" rright="20" label="CREATE" onclick="doAction(true)"
+				style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+				onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+		</view>
+	</view>
+	<script>
+		<!--
+		
+		var client				= game.player.client;
+		var scenarioTree 	= new TreeControl("scenarioTree", selectScenario, formatScenario, isSelectable);
+		var scenarios		= loadRoot();
+		var categories		= new Object();
+		var rootNodes		= new Array();
+		var callback			= null;
+		var createBtn		= window.findview("popup-yes");
+		
+		function centerme(v)
+		{
+			v.x = (v.parent.width / 2) - (v.width / 2);
+			v.y = (v.parent.height / 2) - (v.height / 2) + 100;
+		}
+		
+		function initCreateWin(c)
+		{
+			callback = c;
+			
+			//consoleclear();
+			
+			cprint("Init win");
+			
+			if(!game.cursor.visible)
+					game.cursor.visible = true;
+					
+			cprint("cursor on");
+					
+			var preopen	= null;
+			
+			cprint("adding categories");
+			
+			// add our categories
+			for(var i = 0; i < scenarios.links.length; i++)
+			{
+				var content 	= game.getcontent(scenarios.links[i].path);
+				if(content == null) continue;
+				
+				cprint("Adding category " + content.title);
+				
+				var id = "category." + content.category;
+				var node = new TreeNode(id, id, 1, true, content.title.toUpperCase());
+				
+				if(preopen == null)
+					preopen = node; // open the first node
+				
+				// add it to our tree
+				scenarioTree.addNode(node, toggleNode);
+				
+				// save a reference by category
+				categories[node.data] = node;
+				
+				// save a reference
+				rootNodes.push(node);
+				
+				// add our new scenario links
+				addScenarioNodes(node);
+			}
+			
+			cprint("done adding categories");
+			
+			if(preopen)
+				preopen.expand();
+			
+			cprint("drawing tree");
+			
+			scenarioTree.setColorText(false);
+			scenarioTree.drawTree();
+		}
+		
+		function isSelectable(node)
+		{
+			return true;
+		}
+		
+		function addScenarioNodes(catNode)
+		{
+			cprint("Adding category scenarios");
+			
+			if(catNode == null)
+				return;
+			
+			var cid					= catNode.data.split(".");
+			var catID				= cid[1];
+			var category 		= loadCategory(catID);
+			
+			if(category == null)
+				return;
+			
+			for(var i = 0; i < category.links.length; i++)
+			{
+				cprint("Trying new scenario " + catID + "/" + i);
+				
+				var scenario = loadScenario(catID, i);
+				if(scenario == null) continue;
+				
+				var sid = "scenario." + catID + "." + i;
+				
+				cprint("Adding new scenario " + sid);
+				
+				catNode.addNode(new TreeNode(sid, sid, 2, false, scenario.title));
+			}
+		}
+		
+		function getOpenCategory()
+		{
+			for(var c in categories)
+			{
+				if(categories[c].open)
+					return categories[c];
+			}
+			
+			return null;
+		}
+		
+		function toggleNode(node)
+		{
+			if(!node.open)
+			{
+				for(var i = 0; i < rootNodes.length; i++)
+				{
+					if(rootNodes[i].open && rootNodes[i].id != node.id)
+						rootNodes[i].open = false;
+				}
+			}
+		}
+		
+		function selectScenario()
+		{
+			var node = scenarioTree.selectedNode();
+			createBtn.enabled = !node.branch;
+		}
+		
+		function formatScenario(tree, node)
+		{
+			var name				= tree.list.id;
+			var indent 			= tree.indent * node.level;
+			var mouseenter	= name + ".mouseEnter(this)";
+			var mouseexit		= name + ".mouseExit(this)";
+			var id					= node.id.split("."); 
+			
+			if(node.branch)
+			{
+				var icon 			= (node.open) ? tree.collapseIcon: tree.expandIcon;
+				var label			= node.description;
+				
+				cprint("Formatting tree node " + label);
+				
+				var row = new ViewBuilder(tree.list, node.id, 0, 0, 0, 16);
+				
+				var expander = row.addBuilder(new ImageBuilder(row, "image", icon, indent, 3, 10, 10));
+				
+				expander.addAttribute("onclick", name + ".clickTree(true, " + tree.count + ")");
+				
+				var caption = row.addBuilder(new TextBuilder(row, "title", "caption", label, (indent + tree.indent), 0, 0, 16));
+				
+				row.addAttribute("aspectalign", "left");
+				row.addAttribute("onmouseenter", mouseenter);
+				row.addAttribute("onmouseexit", mouseexit);
+				
+				caption.addStyle("color", "#e9e3d9ff");
+				
+				return row.build();			
+			}
+			else
+			{
+				var label 		= "[unknown]";
+				var color 		= "#00FF00";
+				
+				if(node.data != null)
+				{
+					var id					= node.data.split(".");
+					var content			= loadScenario(id[1], id[2]);
+					label						= content.title;
+				}
+				
+				indent += tree.indent;
+				
+				//cprint("Formatting tree instance " + label);
+				
+				var row 				= new ViewBuilder(tree.list, node.id, 0, 0, 0, 16);
+				var caption			= row.addBuilder(new TextBuilder(row, "title", "caption", label, indent, 0, -indent, 16));
+				
+				row.addAttribute("aspectalign", "left");
+				row.addAttribute("onmouseenter", mouseenter);
+				row.addAttribute("onmouseexit", mouseexit);
+				
+				caption.addStyle("color", color);
+				
+				return row.build();
+			}
+		}
+		
+		function doAction(action)
+		{
+			var joined = false;
+			
+			soundPlayClick();
+			
+			if(action && scenarioTree.selectedData() != null)
+			{
+				var id 				= scenarioTree.selectedData().split(".");
+				var category 	= id[1];
+				var map 			= id[2];
+				
+				cprint("Creating new instance!");
+				
+				// create a new instance
+				if(createInstance(category, map))
+				{
+					cprint("Instance created!");
+					
+					if(client.listinstances(category, map))
+					{
+						var instances = client.instances;
+						
+						cprint("Looking for created instance: " + instances.length);
+						
+						for(var i = 0; i < instances.length; i++)
+						{
+							// join an existing instance
+							var instance = instances[i];
+							
+							cprint("Mine is: " + instance.description.mine);
+							
+							if(!instance.description.mine)
+								continue;
+								
+							cprint("Found created instance!");
+							
+							var bestSide = (client.persona) ? client.persona.country.side : 1;
+							var scenario = loadScenario(category, map);
+							
+							if(instance.axis > instance.allies)
+								bestSide = 1;
+							else if(instance.allies > instance.axis)
+								bestSide = 2;
+							
+							cprint("Joining created instance!");
+							
+							if(selectTeam(scenario, bestSide) && joinInstance(instance.description))
+								joined = true;
+							
+							break;
+						}
+					}
+				}
+			}
+			
+			cprint("Join is " + joined);
+			
+			if(callback != null)
+				callback(joined);
+			
+			game.cursor.update(window.name);
+			window.close();
+		}
+		
+		-->
+	</script>
+</window>
+

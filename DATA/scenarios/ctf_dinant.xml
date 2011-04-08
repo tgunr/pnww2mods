@@ -1,0 +1,101 @@
+<!-- type controls which lua script is run to manage this scenario -->
+<scenario type="ctf">
+	<!-- 
+		these config variables are scenario type dependent and
+		are injected directly into the controlling lua script
+	-->
+	<config>
+		<param name="duration" value="30"/>
+		<param name="kills" value="50"/>
+	</config>
+	<!-- terrain handling: map and offset are optional -->
+	<terrain> <!-- map="riverrrun" offset="100,20,0" -->
+		<!-- where we can spawn at -->
+		<spawns>
+			<!-- allies -->
+			<spawn group="alliedtroops" position="234814.0,3015342.0,96.9" rotation="-2.43"/>
+			<spawn group="alliedtroops" position="234849.0,3015904.0,101.0" rotation="-.85"/>
+			<spawn group="alliedtroops" position="234783.0,3015528.0,96.2" rotation="2.95"/>
+			<spawn group="alliedvehicles" position="234751.0,3015414.0,96.0" rotation="0"/>
+			<!-- axis -->
+			<spawn group="axistroops" position="235077.0,3015789.0,96.0" rotation="1.96"/>
+			<spawn group="axistroops" position="235091.0,3015678.0,96.0" rotation="-3.02"/>
+			<spawn group="axistroops" position="235069.0,3015431.0,96.2" rotation="1.86"/>
+			<spawn group="axisvehicles" position="235129.0,3015695.0,96.2" rotation="0"/>
+		</spawns>
+		<!-- additional objects to place in the world -->
+		<objects>
+			<!-- object file="garage1c" position="" rotation=""/ -->
+		</objects>
+		<!-- additional cloned vehicles for atmosphere -->
+		<clones>
+			<clone id="charb1" position="" rotation=""/>
+		</clones>
+		<!-- additional atmospheric effects: smoke, fires, sounds -->
+		<effects>
+			<effect type="visual" name="smoke1" position=""/>
+			<effect type="sound" name="ambientfighting1"/>
+			<effect type="recording" name="bomberflyby1"/>
+		</effects>
+		<!-- terrain masks: trees, water, textures -->
+		<layers>
+			<layer type="tree" file=""/>
+			<layer type="grass" file=""/>
+			<layer type="texture" file=""/>
+		</layers>
+		<!-- terrain masks: trees, water, textures -->
+		<waypoints>
+			<waypoint side="1" label="attack"/>
+			<waypoint side="2" label="attack"/>
+		</waypoints>
+	</terrain>
+	<!-- 
+		the vehicles block controls what vehicles can be spawned
+		
+		vehicle masks are defined like IP addresess...as dotted quads and
+		are based on the following members in this order:
+		
+		country.category.class.type
+		
+		an asterisk (*) can be placed in any field and is the default for
+		any defined mask
+		
+		countries:
+		1 - england
+		3 - france
+		4 - germany
+		
+		categories:
+		1 - aircraft
+		2 - ground vehicle
+		3 - sea vehicle
+		4 - infantry
+		
+		classes:
+		1 - bombers
+		2 - fighters
+		4 - tank
+		5 - artillery
+		6 - truck
+		7 - gun
+		9 - troop
+		14 - para
+		12 - riverine
+		13 - sea
+		
+		* invidiual vehicles can be specified vehicle its id
+		
+		example:
+		
+		<vehicle country="*" category="*" class="9" type="*" spawn="spawngroupname"/>
+		<vehicle id="bedford" spawn="spawngroupname"/>
+	-->
+	<vehicles>
+		<vehicle country="1" class="9" spawn="alliedtroops"/>
+		<vehicle country="1" class="6" spawn="alliedvehicles"/>
+		<vehicle country="1" class="7" spawn="alliedvehicles"/>
+		<vehicle country="4" class="9" spawn="axistroops"/>
+		<vehicle country="4" class="6" spawn="axisvehicles"/>
+		<vehicle country="4" class="7" spawn="axisvehicles"/>
+	</vehicles>
+</scenario>

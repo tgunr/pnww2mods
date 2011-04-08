@@ -26,6 +26,7 @@ function OnStart(handler)
 	state.captures		= 0; -- how many enemy table captures have we done
 	state.spawned 	= 0; -- start of mission time
 	state.spawns		= 0;
+	state.freePos		= {0,0,0};
 	
 	-- setup some general event handlers
 	-- some game types might override these
@@ -56,6 +57,12 @@ function OnSpawn(handler)
 	
 	-- AddWP("origin", 8, 0);
 	-- AddWP("target", 9, 0);
+	
+	veh = player.playerGetVehicle();
+	
+	state.freePos[1] = veh:GetPos(1);
+	state.freePos[2] = veh:GetPos(2);
+	state.freePos[3] = veh:GetPos(3);
 	
 	-- keep handler going
 	return 1;
@@ -109,9 +116,17 @@ function OnMission(handler)
 	if(not game.Ingame()) then
 		return 1;
 	end
+	
+	veh = player.playerGetVehicle();
 
-	if(state.inbounds and state.lastinbounds) then
-		
+	if(veh ~= nil) then
+		if(state.inbounds) then
+			state.freePos[1] = veh:GetPos(1);
+			state.freePos[2] = veh:GetPos(2);
+			state.freePos[3] = veh:GetPos(3);
+		else
+			veh:SetPosition(state.freePos[1], state.freePos[2], state.freePos[3]);
+		end
 	end
 	
 	-- local tom 		= state.tom;
@@ -154,12 +169,12 @@ function OnDead()
 end
 
 function OnBoundary(handler)
-	if(handler.state == tutorial.THS_EVENT_OUT and state.inbounds == 0) then
-		state.inbounds = game.Frametime();
-		game.ChatPrint("You have left the playable area!");
-	elseif(handler.state == tutorial.THS_EVENT_IN and state.inbounds > 0) then
-		state.inbounds = 0;
-		game.ChatPrint("You have re-entered the playable area!");
+	if(handler.state == tutorial.THS_EVENT_OUT and state.inbounds) then
+		state.inbounds = false;
+		ui.ChatPrint("You have left the playable area!");
+	elseif(handler.state == tutorial.THS_EVENT_IN and not state.inbounds) then
+		state.inbounds = true;
+		ui.ChatPrint("You have re-entered the playable area!");
 	end
 	
 	return 1;

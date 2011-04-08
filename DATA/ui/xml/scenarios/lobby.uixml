@@ -5,7 +5,6 @@
 	<include file="lib/scenarios.uixml"/>
 	<include file="widgets/template.uixml"/>
 	<include file="classes/ListControl.uixml"/>
-	<include file="classes/TreeControl2.uixml"/>
 	<include file="classes/CycleTimer.uixml"/>
 	<include file="classes/ViewBuilder.uixml"/>
 	<include file="classes/TextBuilder.uixml"/>
@@ -37,11 +36,16 @@
 					<view x="0" width="425" height="15" rtop="22">
 						<caption x="0" y="0" height="15" rright="0" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="MAPS"/> <!-- width="190" -->
 					</view>
-					<list id="instanceTree" x="0" width="425" height="300" rtop="40" onselect="instanceTree.clickTree(false)" ondblselect="instanceTree.clickTree(true)"/>
+					<list id="instanceList" x="0" width="425" height="300" rtop="40" onselect="instanceList.clickList(false)" ondblselect="instanceList.clickList(true)"/>
 				</view>
-				<caption label="* ${online.scenarios.create}" x="30" y="0" height="20" rright="10" 
-						style="color: #BFE2CE; tooltip: widgets/tooltips/supplytip.uixml;"/>
 			</view>
+			<button id="create-button" label="CREATE" x="20" y="10" height="25" width="160"
+				style="control-on: ui/textures/test/gen_button_on.bmp;
+					control-off: ui/textures/test/gen_button_off.bmp;
+					control-disabled: ui/textures/test/gen_button_disabled.bmp;
+					font-size: -3;
+					color: #FFFFFF;"
+				onclick="doCreate(this); soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
 			<include file="widgets/divider.uixml"/>
 			<view id="right-pane" x="468" y="23" width="444" height="411">
 				<view id="scenario-map" class="mapview" acceptsfocus="no" minscale=".03" maxscale="1.5" scale=".75"
@@ -92,18 +96,16 @@
 		var mapView		= findview("scenario-map");
 		var updateTimer	= new CycleTimer(3000);
 		var scenarios		= loadRoot();
-		var instanceTree 	= new TreeControl("instanceTree", selectInstance, formatInstance, isSelectable);
+		var instanceList	= new ListControl(findview("instanceList"), selectInstance);
+		var running			= new Array();
+		var createWin		= null;
 		var initialized		= false;
-		
-		var running			= new Object();
-		var rootNodes		= new Array();
-		var categories 		= new Object();
 		
 		/***************** COMMON FUNCTIONS *******************/
 		
 		function doForward()
 		{
-			var instance = running[instanceTree.selectedData()];
+			var instance = running[instanceList.data];
 			
 			if(instance != null)
 				joinInstance(instance.description);
@@ -145,8 +147,7 @@
 			setForwardEnabled(false);
 			
 			backButton.visible = false;
-			//forwardButton.visible = false;
-			
+						
 			quickhelp();
 			
 			game.globals.scenario = null;
@@ -155,65 +156,10 @@
 			client.requestpersonalist();
 		}
 		
-		function initInstanceTree()
-		{
-			if(scenarios == null)
-				return;
-			
-			var preopen	= null;
-			
-			// add our categories
-			for(var i = 0; i < scenarios.links.length; i++)
-			{
-				var content 	= game.getcontent(scenarios.links[i].path);
-				if(content == null) continue;
-				
-				cprint("Adding category " + content.title);
-				
-				var node = new TreeNode(content.category, content.category, 1, true, content.title.toUpperCase());
-				
-				if(preopen == null)
-					preopen = node; // open the first node
-				
-				// add it to our tree
-				instanceTree.addNode(node, toggleNode);
-				
-				// save a reference by category
-				categories[node.data] = node;
-				
-				// might not need this
-				rootNodes[rootNodes.length] = node;
-				
-				// add our new scenario links
-				addNewScenarioNodes(node);
-			}
-			
-			if(preopen)
-				preopen.expand();
-			
-			instanceTree.setColorText(false);
-		}
-		
 		function initInstances()
 		{
-			if(!instanceTree.initTree())
-				initInstanceTree();
-			
 			// reset our running list of instances 
-			running = new Object();
-			
-			// clear the children under each category
-			for(var c in categories)
-			{
-				// remember our creation node
-				var newNode = categories[c].findNode("new." + c);
-				
-				// reset our children
-				categories[c].children = new Array();
-				
-				// re-add our creation node
-				categories[c].addNode(newNode);
-			}
+			running = new Array();
 			
 			// some temp vars
 			var instances = client.instances;
@@ -224,240 +170,91 @@
 				var instance = instances[i];
 				if(instance == null) continue;
 				
-				var category = instance.description.category;
-				var id = instance.description.id;
+				var content = loadScenario(instance.description.category, instance.description.type);
+				if(content == null) continue;
 				
-				categories[category].addNode(new TreeNode(id, id, 2, false));
+				var scenario = new Object();
 				
-				running[id] = instance;
+				scenario.content = content;
+				scenario.instance = instance;
+				
+				running.push(scenario);
 			}
 			
-			//for(var i = 0; i < rootNodes.length; i++)
-			//	rootNodes[i].children = rootNodes[i].children.sort(sortNodes);
-				
-			//cprint("Drawing tree!");
+			// now sort our running instances
+			// running = running.sort(sortScenarios);
 			
-			instanceTree.drawTree();
-		}
-								
-		function isSelectable(node)
-		{
-			return true;
-		}
-		
-		function addNewScenarioNodes(categoryNode)
-		{
-			if(categoryNode == null)
-				return;
+			// now update our visible list
+			instanceList.clearRows(false);
 			
-			var categoryID		= categoryNode.data;
-			var newNode 		= categoryNode.addNode(new TreeNode("new." + categoryID, categoryID, 2, true, "Create a new instance ..."));
-			var category 		= loadCategory(categoryID);
-			
-			if(category == null)
-				return;
-			
-			for(var i = 0; i < category.links.length; i++)
+			if(running.length > 0)
 			{
-				cprint("Trying new scenario " + categoryID + "/" + i);
-				
-				var scenario = loadScenario(categoryID, i);
-				if(scenario == null) continue;
-				
-				var id = newNode.id + "." + i;
-				
-				cprint("Adding new scenario " + id + "/" + newNode.description);
-				
-				newNode.addNode(new TreeNode(id, i, 3, false, scenario.title));
-			}
-		}
-		
-		function getOpenCategory()
-		{
-			for(var c in categories)
-			{
-				if(categories[c].open)
-					return categories[c];
-			}
-			
-			return null;
-		}
-		
-		function toggleNode(node)
-		{
-			if(!node.open)
-			{
-				for(var i = 0; i < rootNodes.length; i++)
+				for(var i = 0; i < running.length; i++)
 				{
-					if(rootNodes[i].open && rootNodes[i].id != node.id)
-						rootNodes[i].open = false;
-				}
-			}
-		}
-		
-		function formatInstance(tree, node)
-		{
-			var name				= tree.list.id;
-			var indent 			= tree.indent * node.level;
-			var mouseenter	= name + ".mouseEnter(this)";
-			var mouseexit		= name + ".mouseExit(this)";
-			var id					= node.id.split("."); 
-			
-			if(node.branch)
-			{
-				var icon 			= (node.open) ? tree.collapseIcon: tree.expandIcon;
-				var label			= node.description;
-				
-				cprint("Formatting tree node " + label);
-				
-				var row = new ViewBuilder(tree.list, node.id, 0, 0, 0, 16);
-				
-				if(id[0] != "new")
-				{
-					var expander = row.addBuilder(new ImageBuilder(row, "image", icon, indent, 3, 10, 10));
-					expander.addAttribute("onclick", name + ".clickTree(true, " + tree.count + ")");
-				}
-				
-				var caption = row.addBuilder(new TextBuilder(row, "title", "caption", label, (indent + tree.indent), 0, 0, 16));
-				
-				row.addAttribute("aspectalign", "left");
-				row.addAttribute("onmouseenter", mouseenter);
-				row.addAttribute("onmouseexit", mouseexit);
-				
-				caption.addStyle("color", "#e9e3d9ff");
-				
-				return row.build();			
-			}
-			else
-			{
-				var label 		= "[unknown]";
-				var color 		= "#00FF00";
-				
-				if(id[0] == "new")
-				{
-					label = node.description; //.toUpperCase();
-					color = "#e9e3d9ff";
-				}
-				else if(node.data != null)
-				{
-					var instance			= running[node.data];
-					var description		= instance.description;
-					var content			= loadScenario(description.category, description.type);
-					label						= content.title;
+					var scenario 	= running[i];
+					var content 		= scenario.content;
+					var instance 	= scenario.instance;
+					var id				= instance.description.id;
+					
+					var label 		= content.title;
+					var color 		= "#00FF00";
 					
 					label += " axis=" + instance.axis;
 					label += " allies=" + instance.allies;
-					
+						
 					if(instance.running)
 						label += " running";
+					
+					var row 				= new ViewBuilder(instanceList.list, "instance" + id, 0, 0, 0, 16);
+					var caption			= row.addBuilder(new TextBuilder(row, "title", "caption", label, 0, 0, 0, 16));
+					
+					row.addAttribute("aspectalign", "left");
+					//row.addAttribute("onmouseenter", mouseenter);
+					//row.addAttribute("onmouseexit", mouseexit);
+					
+					caption.addStyle("color", color);
+					
+					instanceList.addRow(scenario, row.build());
 				}
-				
-				indent += tree.indent;
-				
-				//cprint("Formatting tree instance " + label);
-				
-				var row 				= new ViewBuilder(tree.list, node.id, 0, 0, 0, 16);
-				var caption			= row.addBuilder(new TextBuilder(row, "title", "caption", label, indent, 0, -indent, 16));
-				
-				row.addAttribute("aspectalign", "left");
-				row.addAttribute("onmouseenter", mouseenter);
-				row.addAttribute("onmouseexit", mouseexit);
-				
-				caption.addStyle("color", color);
-				
-				return row.build();
 			}
+			
+			instanceList.postInit();
 		}
 		
 		function selectInstance(action)
 		{
-			//cprint("Instance selected with " + action);
+			cprint("Select instance called: " + instanceList.data);
 			
-			setForwardEnabled(false);
+			var scenario = instanceList.data;
+			if(scenario == null) return;
 			
-			var node = instanceTree.selectedNode();
-
-			if(node != null && node.data != null)
-			{
-				/*
-				var content = look up content
+			cprint("Found instance " + instanceList.data);
+			
+			var instance 	= scenario.instance;
+			var bestSide 	= (client.persona) ? client.persona.country.side : 1;
+			
+			if(instance.axis > instance.allies)
+				bestSide = 1;
+			else if(instance.allies > instance.axis)
+				bestSide = 2;
 				
-				if(content.target && mapView != null)
-				{
-					var parts 	= content.target.split(",");
-					var x 		= parseFloat(parts[0]);
-					var y 		= parseFloat(parts[1]);
-					var scale	= (content.scale != null) ? parseFloat(content.scale) : mapView.scale ;
-					var pan	= true;
-					
-					mapView.mgr.setCenterMe(false);
-					mapView.mgr.setPosition(mapView.getposition(x, y), pan, scale);
-					mapView.mgr.MapToSync();
-				}
-				*/
-			}
+			if(!selectTeam(scenario.content, bestSide))
+				return;
 			
-			cprint("Selected node is " + ((node != null) ? node.id : ""));
+			setForwardEnabled(true);
 			
-			if(node != null && !node.branch)
-			{
-				//cprint("Selected node is " + ((node != null) ? node.id : ""));
-				
-				var id = node.id.split(".");
-				
-				if(id[0] == "new")
-				{
-					if(action)
-					{
-						// create a new instance
-						createInstance(id[1], id[2]);
-						
-						// collapse the creation node upon create
-						if(node.parentNode != null)
-							node.parentNode.toggle();
-					}
-				}
-				else
-				{
-					// join an existing instance
-					var instance = running[node.data];
-					var bestSide = client.persona.country.side;
-					var scenario = loadScenario(instance.description.category, instance.description.type);
-					
-					if(instance.axis > instance.allies)
-						bestSide = 1;
-					else if(instance.allies > instance.axis)
-						bestSide = 2;
-						
-					if(!selectTeam(scenario, bestSide))
-						return;
-						
-					setForwardEnabled(true);
-					
-					if(action && !joinInstance(instance.description))
-						joinLobby();
-				}
-			}
+			if(action && !joinInstance(instance.description))
+				joinLobby();
 		}
 		
 		function updateLobby()
 		{
-			if(initialized && updateTimer.run())
+			if(initialized && updateTimer.run() && createWin == null)
 			{
-				var category = 0;
+				// grab all instances
+				client.listinstances(0, 0, "");
 				
-				for(var i = 0; i < rootNodes.length; i++)
-				{
-					if(rootNodes[i].open)
-					{
-						category = rootNodes[i].id;
-						break;
-					}
-				}
-				
-				if(category > 0)
-					client.listinstances(category, 0, "");
-				
+				// update our visible list
 				initInstances();
 			}
 		}
@@ -472,6 +269,23 @@
 			cprint("Lobby personas called!");
 			
 			initialized = true;
+		}
+		
+		function onJoin(joined)
+		{
+			createWin = null;
+			
+			if(joined)
+				window.close();
+		}
+		
+		function doCreate()
+		{
+			if(createWin != null)
+				createWin.close();
+				
+			createWin = load("createinstance");
+			createWin.initCreateWin(onJoin);
 		}
 		
 		-->

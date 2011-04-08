@@ -113,7 +113,7 @@
 			var country 	=  scenario["team" + team];
 			var client		= game.player.client;
 				
-			if(client.persona.country.id != country)
+			if(!client.persona || client.persona.country.id != country)
 			{
 				var personas 	= client.personas;
 				var persona		= null;
