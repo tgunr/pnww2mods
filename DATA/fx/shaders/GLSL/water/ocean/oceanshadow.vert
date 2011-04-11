@@ -22,6 +22,8 @@ void main()
 	T = vec3(gl_NormalMatrix[0][0], gl_NormalMatrix[0][1], gl_NormalMatrix[0][2]);
 	B = vec3(gl_NormalMatrix[1][0], gl_NormalMatrix[1][1], gl_NormalMatrix[1][2]);
 
+    vec4 pos = gl_ModelViewMatrix * gl_Vertex;
+
 	vec2 uv = gl_MultiTexCoord0.xy * texscale;
 	vec2 bs = time * speed;
 
@@ -30,9 +32,9 @@ void main()
 	gl_TexCoord[1].xy = 2.5 * (uv - bs);
 	gl_TexCoord[1].zw = 4.0 * (uv + bs);
 				
-    gl_TexCoord[3] = gl_TextureMatrix[4] * gl_ModelViewMatrix * gl_Vertex;
+    gl_TexCoord[3] = gl_TextureMatrix[4] * pos;
 
-	V = (gl_ModelViewMatrix * gl_Vertex).xyz;
+	V = pos.xyz;
 	
 	gl_Position = ftransform();
 			

@@ -10,9 +10,11 @@ void main()
     gl_TexCoord[1].xy = (gl_TextureMatrix[1] * gl_MultiTexCoord0).xy;
     gl_TexCoord[1].zw = (gl_TextureMatrix[1] * gl_MultiTexCoord0).xy;
     gl_TexCoord[2].xy = gl_MultiTexCoord0.xy;
-    gl_TexCoord[3] = gl_TextureMatrix[5] * gl_ModelViewMatrix * gl_Vertex;
 
     vec4 pos = gl_ModelViewMatrix * gl_Vertex;
+
+    gl_TexCoord[3] = gl_TextureMatrix[5] * pos;
+
     eyepos = pos.xyz;
 
     N = gl_NormalMatrix * gl_Normal;
