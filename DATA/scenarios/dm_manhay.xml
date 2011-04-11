@@ -1,0 +1,129 @@
+<!-- type controls which lua script is run to manage this scenario -->
+<scenario script="deathmatch">
+	<!-- 
+		these config variables are scenario type dependent and
+		are injected directly into the controlling lua script
+	-->
+	<config>
+		<param name="duration" value="30"/>
+		<param name="kills" value="50"/>
+	</config>
+	<!-- terrain handling: map and offset are optional -->
+	<terrain>
+		<!-- NULL <!-- map="" offset=" 0,0,0" --> -->
+		<!-- where we can spawn at -->
+		<spawns>
+			<!-- allies -->
+			<spawn group="alliedtroops" position="272912,3016943,481" rotation="0"/>
+			<spawn group="alliedtroops" position="272899,3016961,482" rotation="0"/>
+			<!-- NULL <spawn group="alliedtroops" position="234783,3015528,97" rotation="2.95"/> -->
+			<!-- NULL <spawn group="alliedvehicles" position="234751,3015414,96" rotation="0"/> -->
+			<!-- axis -->
+			<spawn group="axistroops" position="273108,3017041,482" rotation="0"/>
+			<spawn group="axistroops" position="273107,3017052,482" rotation="0"/>
+			<!-- NULL <spawn group="axistroops" position="235069,3015431,96.2" rotation="1.86"/> -->
+			<!-- NULL <spawn group="axisvehicles" position="235129,3015695,96.2" rotation="0"/> -->
+		</spawns>
+		<!-- additional objects to place in the world -->
+		<objects>
+			<!-- object file="garage1c" position="" rotation=""/ -->
+		</objects>
+		<!-- additional cloned vehicles for atmosphere -->
+		<clones>
+			<clone id="charb1" position="" rotation=""/>
+		</clones>
+		<!-- additional atmospheric effects: smoke, fires, sounds -->
+		<effects>
+			<effect type="emitter" name="hulksmoke" position="273094,3017051,481"/>
+			<effect type="emitter" name="hulksmoke" position="272920,3016948,481"/>
+			<!-- effect type="sound" name="ambientfighting1"/ -->
+			<!-- effect type="recording" name="bomberflyby1"/ -->
+		</effects>
+		<!-- terrain masks: trees, water, textures -->
+		<layers>
+			<!-- NULL <layer type="tree" file=""/> -->
+			<!-- NULL <layer type="grass" file=""/> -->
+			<!-- NULL <layer type="texture" file=""/> -->
+		</layers>
+		<!-- terrain masks: trees, water, textures -->
+		<waypoints>
+			<!-- NULL <waypoint side="1" label="attack"/>  -->
+			<!-- NULL <waypoint side="2" label="attack"/>  -->
+		</waypoints>
+		<!-- restricted areas; handlers are lua functions defined in the scenario type lua script -->
+		<areas>
+			<area handler="OnBoundary">
+				<!-- <point position="234629.11,3015264.47,96.00"/> -->
+				
+			</area>
+		</areas>
+	</terrain>
+	<!-- 
+		the commands block allows you to run dot commands at various points in the process
+		each block is simply a set of slash commands one per line and are run in the order they
+		appear here; the slash or dot is optional
+	-->
+	<commands>
+		<onstart>
+			<!-- these dot commands are run when a player joins a scenario -->
+		</onstart>
+		<onspawn>
+			<!-- these dot commands are run when a player spawns -->
+		</onspawn>
+		<ondespawn>
+			<!-- these dot commands are run when a player despawns -->
+		</ondespawn>
+		<onstop>
+			<!-- these dot commands are run when a player leaves a scenario -->
+		</onstop>
+	</commands>
+	<!-- 
+		the vehicles block controls what vehicles can be spawned
+		
+		vehicle masks are defined like IP addresess...as dotted quads and
+		are based on the following members in this order:
+		
+		country.category.class.type
+		
+		an asterisk (*) can be placed in any field and is the default for
+		any defined mask
+		
+		countries:
+		1 - england
+		3 - france
+		4 - germany
+		
+		categories:
+		1 - aircraft
+		2 - ground vehicle
+		3 - sea vehicle
+		4 - infantry
+		
+		classes:
+		1 - bombers
+		2 - fighters
+		4 - tank
+		5 - artillery
+		6 - truck
+		7 - gun
+		9 - troop
+		14 - para
+		12 - riverine
+		13 - sea
+		
+		* invidiual vehicles can be specified vehicle by its id
+		
+		example:
+		
+		<vehicle country="*" category="*" class="9" type="*" spawn="spawngroupname"/>
+		<vehicle id="bedford" spawn="spawngroupname"/>
+	-->
+	<vehicles>
+		<vehicle country="1" class="9" spawn="alliedtroops"/>
+		<!-- NULL <vehicle country="1" class="6" spawn="alliedvehicles"/> -->
+		<!-- NULL <vehicle country="1" class="7" spawn="alliedvehicles"/> -->
+		<vehicle country="4" class="9" spawn="axistroops"/>
+		<!-- NULL <vehicle country="4" class="6" spawn="axisvehicles"/> -->
+		<!-- NULL <vehicle country="4" class="7" spawn="axisvehicles"/> -->
+	</vehicles>
+</scenario>
