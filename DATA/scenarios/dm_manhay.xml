@@ -14,12 +14,12 @@
 		<!-- where we can spawn at -->
 		<spawns>
 			<!-- allies -->
-			<spawn group="alliedtroops" position="272912,3016943,481" rotation="0"/>
-			<spawn group="alliedtroops" position="272899,3016961,482" rotation="0"/>
+			<spawn group="alliedtroops" position="272929.74,3016907.12,481.00" rotation="0"/>
+			<spawn group="alliedtroops" position="272874.21,3016976.01,481.00" rotation="0"/>
 			<!-- NULL <spawn group="alliedtroops" position="234783,3015528,97" rotation="2.95"/> -->
 			<!-- NULL <spawn group="alliedvehicles" position="234751,3015414,96" rotation="0"/> -->
 			<!-- axis -->
-			<spawn group="axistroops" position="273108,3017041,482" rotation="0"/>
+			<spawn group="axistroops" position="273113.98,3017043.62,481.20" rotation="0"/>
 			<spawn group="axistroops" position="273107,3017052,482" rotation="0"/>
 			<!-- NULL <spawn group="axistroops" position="235069,3015431,96.2" rotation="1.86"/> -->
 			<!-- NULL <spawn group="axisvehicles" position="235129,3015695,96.2" rotation="0"/> -->
@@ -52,8 +52,27 @@
 		</waypoints>
 		<!-- restricted areas; handlers are lua functions defined in the scenario type lua script -->
 		<areas>
-			<area handler="OnBoundary">
-				<!-- <point position="234629.11,3015264.47,96.00"/> -->
+			 <area handler="OnBoundary">
+				<point position="272830.98,3017001.46,481.33"/>
+				<point position="273000.72,3017000.80,481.32"/>
+				<point position="273000.72,3017028.17,481.46"/>
+				<point position="273011.78,3017028.17,481.51"/>
+				<point position="273011.78,3017053.41,481.36"/>
+				<point position="273000.21,3017053.41,481.70"/>
+				<point position="273000.21,3017111.03,481.49"/>
+				<point position="273089.03,3017111.03,481.31"/>
+				<point position="273205.11,3016991.49,481.50"/>
+				<point position="273207.28,3016945.44,482.39"/>
+				<point position="273124.86,3016946.40,481.23"/>
+				<point position="273124.05,3016924.97,481.23"/>
+				<point position="273001.08,3016927.99,481.39"/>
+				<point position="273003.93,3016903.60,481.61"/>
+				<point position="272774.25,3016912.33,481.57"/>
+				<point position="272777.68,3017002.58,481.25"/>
+
+
+
+
 				
 			</area>
 		</areas>
