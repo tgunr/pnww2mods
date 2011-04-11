@@ -116,16 +116,18 @@ function OnMission(handler)
 	if(not game.Ingame()) then
 		return 1;
 	end
-	
-	veh = player.playerGetVehicle();
 
-	if(veh ~= nil) then
-		if(state.inbounds) then
-			state.freePos[1] = veh:GetPos(1);
-			state.freePos[2] = veh:GetPos(2);
-			state.freePos[3] = veh:GetPos(3);
-		else
-			veh:SetPosition(state.freePos[1], state.freePos[2], state.freePos[3]);
+	if(not game.SuperFloat() and not game.SuperTroop()) then 	
+		veh = player.playerGetVehicle();
+	
+		if(veh ~= nil) then
+			if(state.inbounds) then
+				state.freePos[1] = veh:GetPos(1);
+				state.freePos[2] = veh:GetPos(2);
+				state.freePos[3] = veh:GetPos(3);
+			else
+				veh:SetPosition(state.freePos[1], state.freePos[2], state.freePos[3]);
+			end
 		end
 	end
 	
