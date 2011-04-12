@@ -26,7 +26,7 @@
 				}
 			}
 			
-			campaign.label = getlocstring('widgets.infobar.day') + day + getlocstring('widgets.infobar.campaign') + game.arena("campaign_id");
+			campaign.label = getlocstring('widgets.infobar.day') + " " + day + " " + getlocstring('widgets.infobar.campaign') + game.arena("campaign_id");
 		}
 		
 		function getGameTime(caption)
