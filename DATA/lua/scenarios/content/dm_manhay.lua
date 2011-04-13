@@ -17,25 +17,25 @@ state.content =
 	
 	-- areas
 	-- command,scripthandler,worldx,worldy,worldz
-	"area OnBoundary 272955.44,3017114.22,481.00",
-	"area OnBoundary 273091.53,3017111.58,481.00",
-	"area OnBoundary 273196.44,3017005.89,481.00",
-	"area OnBoundary 273194.88,3016924.10,481.00",
-	"area OnBoundary 273008.03,3016923.33,481.00",
-	"area OnBoundary 273007.94,3016909.77,481.54",
-	"area OnBoundary 272917.06,3016911.96,481.00",
-	"area OnBoundary 272876.21,3016953.86,481.00",
-	"area OnBoundary 272877.96,3017035.83,481.24",
-	"area OnBoundary 272955.46,3017035.81,481.00",
+	"area OnBoundary 272955.44 3017114.22 481.00",
+	"area OnBoundary 273091.53 3017111.58 481.00",
+	"area OnBoundary 273196.44 3017005.89 481.00",
+	"area OnBoundary 273194.88 3016924.10 481.00",
+	"area OnBoundary 273008.03 3016923.33 481.00",
+	"area OnBoundary 273007.94 3016909.77 481.54",
+	"area OnBoundary 272917.06 3016911.96 481.00",
+	"area OnBoundary 272876.21 3016953.86 481.00",
+	"area OnBoundary 272877.96 3017035.83 481.24",
+	"area OnBoundary 272955.46 3017035.81 481.00",
 	
 	-- spawn points
 	-- command,spawngroup,worldx,worldy,worldz,yaw
-	"spawn alliedtroops 272890.99,3016947.85,487.16",
-	"spawn alliedtroops 272889.54,3016950.37,481.20",
-	"spawn alliedtroops 272896.46,3016945.17,481.20",
-	"spawn axistroops 273082.02,3017098.82,487.16",
-	"spawn axistroops 273082.50,3017095.11,481.20",
-	"spawn axistroops 273055.25,3017095.18,481.20",
+	"spawn alliedtroops 272890.99 3016947.85 487.16",
+	"spawn alliedtroops 272889.54 3016950.37 481.20",
+	"spawn alliedtroops 272896.46 3016945.17 481.20",
+	"spawn axistroops 273082.02 3017098.82 487.16",
+	"spawn axistroops 273082.50 3017095.11 481.20",
+	"spawn axistroops 273055.25 3017095.18 481.20",
 	
 	-- vehicle masks
 	
