@@ -1,5 +1,5 @@
 <!-- type controls which lua script is run to manage this scenario -->
-<scenario type="deathmatch">
+<scenario type="dm_riverrun">
 	<!-- 
 		these config variables are scenario type dependent and
 		are injected directly into the controlling lua script
@@ -10,103 +10,5 @@
 		<param name="kills" value="50"/>
 	</config>
 	<!-- terrain handling: map and offset are optional -->
-	<terrain> <!-- map="riverrun" offset="0,0,0" -->
-		<!-- where players can spawn -->
-		<spawns>
-			<!-- allies -->
-			<spawn group="alliedtroops" position="-81.908,-133.644,-8.1336" rotation="0"/>
-			<spawn group="alliedtroops" position="-49.405,-149.874,-8.413" rotation="0"/>
-			<!-- NULL <spawn group="alliedtroops" position="234783.0,3015528.0,96.2" rotation="2.95"/> -->
-			<!-- NULL <spawn group="alliedvehicles" position="234751.0,3015414.0,96.0" rotation="0"/> -->
-			<!-- axis -->
-			<spawn group="axistroops" position="213.029,-17.762,-7.803" rotation="0"/>
-			<spawn group="axistroops" position="174.593,-10.185,-8.133" rotation="0"/>
-			<!-- NULL <spawn group="axistroops" position="235069.0,3015431.0,96.2" rotation="1.86"/> -->
-			<!-- NULL <spawn group="axisvehicles" position="235129.0,3015695.0,96.2" rotation="0"/> -->
-		</spawns>
-		<!-- additional objects to place in the world -->
-		<objects>
-			<!-- object file="garage1c" position="" rotation=""/ -->
-		</objects>
-		<!-- additional cloned vehicles for atmosphere -->
-		<clones>
-			<clone id="bedford" position="-15.956,-156.402,-11.318" rotation="0"/>
-			<clone id="bedford" position="-33.051,-147.389,-10.738" rotation="0"/>
-			<clone id="bedford" position="-56.969,-135.243,-18.714" rotation="0"/>
-		</clones>
-		<!-- additional atmospheric effects: smoke, fires, sounds -->
-		<effects>
-			<effect type="visual" name="hulksmoke" position="155.819,-17.774,-7.675"/>
-			<effect type="visual" name="hulksmoke" position="129.676,-56.159,-7.173"/>
-			<effect type="visual" name="hulksmoke" position="-24.986,-97.120,-8.493"/>
-			<effect type="visual" name="hulksmoke" position="-29.638,-105.618,-8.693"/>
-			<!-- NULL <effect type="sound" name="ambientfighting1"/> -->
-			<!-- NULL <effect type="recording" name="bomberflyby1"/> -->
-		</effects>
-		<!-- terrain masks: trees, water, textures -->
-		<layers>
-			<layer type="tree" file="riverrun_treemask"/>
-			<layer type="grass" file="riverrun_grassmask"/>
-			<layer type="texture" file="riverrun_masks"/>
-		</layers>
-		<!-- terrain masks: trees, water, textures -->
-		<waypoints>
-		<!-- missing position co-ordinates? -->
-			<!-- NULL <waypoint side="1" label="attack"/> -->
-			<!-- NULL <waypoint side="2" label="attack"/> -->
-		</waypoints>
-	</terrain>
-	<!-- 
-		the vehicles block controls what vehicles can be spawned
-		
-		vehicle masks are defined like IP addresess...as dotted quads and
-		are based on the following members in this order:
-		
-		country.category.class.type
-		
-		an asterisk (*) can be placed in any field and is the default for
-		any defined mask
-		
-		countries:
-		1 - england
-		3 - france
-		4 - germany
-		
-		categories:
-		1 - aircraft
-		2 - ground vehicle
-		3 - sea vehicle
-		4 - infantry
-		
-		classes:
-		1 - bombers
-		2 - fighters
-		4 - tank
-		5 - artillery
-		6 - truck
-		7 - gun
-		9 - troop
-		14 - para
-		12 - riverine
-		13 - sea
-		
-		* invidiual vehicles can be specified vehicle its id
-		
-		example:
-		(leave any attribute out for wildcard selection)
-		
-		<vehicle country="1" category="*" class="9" type="1" spawn="spawngroupname"/>
-		<vehicle id="bedford" spawn="spawngroupname"/>
-	-->
-	<vehicles>
-		<!-- use spawn group from above to link units to spawn groups -->
-		<vehicle country="1" category="4" class="9" spawn="alliedtroops"/>
-		<vehicle country="4" category="4" class="9" spawn="axistroops"/>
-		<!-- NULL <vehicle country="1" class="9" spawn="alliedtroops"/> -->
-		<!-- NULL <vehicle country="1" class="6" spawn="alliedvehicles"/> -->
-		<!-- NULL <vehicle country="1" class="7" spawn="alliedvehicles"/> -->
-		<!-- NULL <vehicle country="4" class="9" spawn="axistroops"/> -->
-		<!-- NULL <vehicle country="4" class="6" spawn="axisvehicles"/> -->
-		<!-- NULL <vehicle country="4" class="7" spawn="axisvehicles"/> -->
-	</vehicles>
+	<terrain map="riverrun" offset="0,0,0"/>
 </scenario>
