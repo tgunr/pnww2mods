@@ -6,8 +6,10 @@ Include("terrain");
 Include("player");
 Include("state"); -- includes default state
 Include("strat");
+game.LoadLib("scenario");
 
 -- set tutorial state here
+scenario.manager		=  scenario.ScenarioManager:GetInstance();
 state.name					= "scenario.generic";
 state.ui 						= "scenhud";
 state.spawn					= nil;
@@ -99,11 +101,33 @@ function OnSet(handler, name, value)
 	if(name == "map") then
 		-- try to load any map resources available to this map
 		game.RunScript("scenarios/maps/" .. value .. ".lua");
+	elseif(name == "content" and value == "load") then
+		LoadContent();
 	elseif(name == "junk") then
 		-- do something here
 	end
 	
 	return 1;  -- this handle will continue to handle events
+end
+
+function LoadContent()
+	-- unload any previously loaded data
+	scenario.manager:UnLoadContent();
+	
+	-- now let's reload our content
+	if(state.contentScript ~= nil) then
+		game.RunScript(state.contentScript);
+	end
+	
+	-- loop over and add any content
+	if(state.content ~= nil) then
+		for i,v in ipairs(state.content) do 
+			scenario.manager:AddContent(v);
+		end
+	end
+	
+	-- load any area handlers defined by our content
+	-- scenario.manager:LoadAreas();
 end
 
 function OnDamage(handler, energy, obj)

@@ -1,22 +1,15 @@
 
--- set tutorial state here
-state.name 		= "scenario.dm_manhay";
-state.enablemap	= true;
+-- run our base gameplay script
+game.RunScript("scenarios/base/deathmatch.lua");
 
--- various useful map locations
-state.locations = 
-{
-	-- allied
-	{
-		origin 		= {212970, 3101368, 0},
-		target 		= {213599, 3101225, 0}
-	},
-	-- axis
-	{
-		origin 		= {214216, 3101223, 0},
-		target 		= {213599, 3101225, 0}
-	}
-};
+-- after content is initialized, you can override stuff in state.content if needed
+
+-- set tutorial state here
+state.name = "scenario.dm_manhay";
+state.contentScript = "scenarios/content/dm_manhay.lua";
+
+-- now let's load our content
+-- game.RunScript(state.contentScript);
 
 -- set our initial tutorial state
 tutorial.SetState(state);
