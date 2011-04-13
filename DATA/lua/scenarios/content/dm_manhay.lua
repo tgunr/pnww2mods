@@ -8,8 +8,8 @@ state.content =
 	
 	-- fx emitters
 	-- command,effectname,worldx,worldy,worldz
-	"emitter hulksmoke 273239.41 3016934.89 481",
-	
+	"emitter hulksmoke 272911.21 3016949.12 481.00",
+
 	-- fx sounds
 	-- command,filename,worldx,worldy,worldz, minvol, maxvol, chance, loop
 	"sound sounds/airraidsiren.wav 273239.41 3016934.89 481 10 40 1 1",
