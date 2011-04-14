@@ -4,10 +4,7 @@ uniform sampler2D billboardMap;
 uniform float lightadjust;
 
 vec4 fogThis(in vec4);
-void lightSetVertexPos(in vec3);
 void lightGetAmbientDiffuse(out vec4, out vec4);
-
-varying vec3 vpos;
 
 void main()
 {
@@ -15,9 +12,7 @@ void main()
 
 	vec4 ambient, diffuse;
 	
-	lightSetVertexPos(vpos);
 	lightGetAmbientDiffuse(ambient, diffuse);
-	lightSetVertexPos(vec3(0, 0, 0));
 	
   	float adjust = mix(gl_TexCoord[1].x, gl_TexCoord[1].y, lightadjust);
 	vec4 d = diffuse * adjust;

@@ -5,7 +5,7 @@ uniform sampler2D src2;
 uniform sampler2D refl;
 uniform sampler2D surf;
 
-varying vec3 V;
+varying vec3 vertexpos;
 varying vec3 T;
 varying vec3 B;
 varying vec3 N;
@@ -48,7 +48,7 @@ void main()
 	vec4 ambientColor;
 	
 	// These values are interpolated and need to be normalized
-	vec3 v = normalize(-V);
+	vec3 v = normalize(-vertexpos);
 	vec3 t = normalize(T);
 	vec3 b = normalize(B);
 	vec3 n = normalize(N);

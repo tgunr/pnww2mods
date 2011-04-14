@@ -6,7 +6,7 @@ uniform vec3 right;
 uniform float currentAngle;
 
 varying vec3 N;
-varying vec3 V;
+varying vec3 vertexpos;
 
 void main()
 {
@@ -31,8 +31,8 @@ void main()
 	N.y += x * right.y;
 	
 	N = normalize(gl_NormalMatrix * N);
-	V = (gl_ModelViewMatrix * gl_Vertex).xyz;
-	
+	vertexpos = (gl_ModelViewMatrix * gl_Vertex).xyz;
+
 	pos = gl_ModelViewMatrix * pos;
 	gl_FogFragCoord = abs(pos.z);
 	

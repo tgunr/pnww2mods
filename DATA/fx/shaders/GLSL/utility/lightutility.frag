@@ -13,17 +13,9 @@ uniform struct
 	vec4 specular;
 } lightsource[4];
 
-vec3 vertexpos;
+varying vec3 vertexpos;
 
 const vec4 zerovector = vec4(0, 0, 0, 0);
-
-/*----------------------------------------------------------
-Set vertex position for light attenuation
------------------------------------------------------------*/
-void lightSetVertexPos(in vec3 p)
-{
-	vertexpos = p;
-}
 
 /*----------------------------------------------------------
 Return total diffuse (usually for billboard lighting)

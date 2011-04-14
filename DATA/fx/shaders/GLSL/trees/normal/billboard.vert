@@ -16,7 +16,7 @@ uniform float billboardAzimuth;
 varying vec3 T;
 varying vec3 B;
 varying vec3 N;
-varying vec3 vpos;
+varying vec3 vertexpos;
 
 const float clearalpha = 255.0;  // alpha testing, 255 means not visible
 const float opaquealpha = 84.0;  // alpha testing, 84 means fully visible
@@ -78,5 +78,5 @@ void main()
    	gl_FogFragCoord = abs(pos.z);
    	
 	gl_Position = gl_ProjectionMatrix * pos;
-	vpos = pos.xyz;
+	vertexpos = pos.xyz;
 }

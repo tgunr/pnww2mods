@@ -1,6 +1,6 @@
 #version 120
 
-varying vec3 vpos;
+varying vec3 vertexpos;
 
 void main()
 {
@@ -27,7 +27,7 @@ void main()
 	gl_TexCoord[1].w = alpha;
 	
 	pos = gl_ModelViewMatrix * pos;
-	vpos = pos.xyz;
+	vertexpos = pos.xyz;
 	
 	gl_FogFragCoord = abs(pos.z);
 	

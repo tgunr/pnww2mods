@@ -19,9 +19,7 @@ void main()
 	vec4 amb;
 	vec4 dif;
 	
-	lightSetVertexPos(eyepos);
 	lightGetAmbientDiffuse(amb, dif);
-	lightSetVertexPos(vec3(0, 0, 0));
 	
     amb += gl_LightModel.ambient;
 

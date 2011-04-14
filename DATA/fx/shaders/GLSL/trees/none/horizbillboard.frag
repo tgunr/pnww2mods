@@ -3,11 +3,9 @@
 uniform sampler2D billboardMap;
 
 vec4 fogThis(in vec4);
-void lightSetVertexPos(in vec3);
 void lightGetAmbientDiffuse(in vec3, out vec4, out vec4);
 
 varying vec3 N;
-varying vec3 vpos;
 
 void main()
 {
@@ -18,9 +16,7 @@ void main()
 	vec4 dif;
 	vec4 amb;
 	
-	lightSetVertexPos(vpos);
 	lightGetAmbientDiffuse(n, amb, dif);
-	lightSetVertexPos(vec3(0, 0, 0));
 	
 	amb *= gl_TexCoord[0].w;
 	

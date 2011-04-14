@@ -3,10 +3,8 @@
 uniform sampler2D src1;
 
 varying vec4 color;
-varying vec3 vpos;
 
 vec4 fogThis(in vec4);
-void lightSetVertexPos(in vec3);
 void lightGetAmbientDiffuse(out vec4 ambient, out vec4 diffuse);
 
 void main()
@@ -17,9 +15,7 @@ void main()
 	vec4 diffuse;
 	vec4 emissive;
 	
-	lightSetVertexPos(vpos);
 	lightGetAmbientDiffuse(ambient, diffuse);
-	lightSetVertexPos(vec3(0, 0, 0));
 
 	ambient += gl_LightModel.ambient;
 	

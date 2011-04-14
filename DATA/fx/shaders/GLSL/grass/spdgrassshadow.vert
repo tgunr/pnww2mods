@@ -3,7 +3,7 @@
 uniform vec2 uv[64];
 
 uniform vec3 origin;
-varying vec3 eyepos;
+varying vec3 vertexpos;
 
 void main()
 {   
@@ -18,8 +18,8 @@ void main()
     int c = int(gl_Vertex.w);
 
     p1 = gl_ModelViewMatrix * p1;
-    eyepos = p1.xyz;
-      
+    vertexpos = p1.xyz;
+
     gl_TexCoord[0].xy = uv[c];
 
 	gl_Position = gl_ProjectionMatrix * p1;

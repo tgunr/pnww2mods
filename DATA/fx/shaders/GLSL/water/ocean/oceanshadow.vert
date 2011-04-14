@@ -6,7 +6,7 @@ const float texscale = 75.0;
 
 const vec2 speed = vec2(0.005, 0.005);
 
-varying vec3 V;
+varying vec3 vertexpos;
 varying vec3 T;
 varying vec3 B;
 varying vec3 N;
@@ -34,10 +34,10 @@ void main()
 				
     gl_TexCoord[3] = gl_TextureMatrix[4] * pos;
 
-	V = pos.xyz;
+	vertexpos = pos.xyz;
 	
 	gl_Position = ftransform();
 			
 	gl_TexCoord[2] = Mr * gl_Position;
-	gl_FogFragCoord = abs(V.z);
+	gl_FogFragCoord = abs(vertexpos.z);
 }

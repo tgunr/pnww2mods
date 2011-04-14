@@ -7,7 +7,7 @@ uniform vec4 rotation;
 varying vec3 N;
 varying vec3 T;
 varying vec3 B;
-varying vec3 vpos;
+varying vec3 vertexpos;
 
 uniform float diffuseScale;
 
@@ -72,5 +72,5 @@ void main()
 	gl_TexCoord[0] = gl_MultiTexCoord0;
     gl_TexCoord[0].z = 0.0f;
     gl_TexCoord[0].w = 1.0f;
-	vpos = position.xyz;
+	vertexpos = position.xyz;
 }

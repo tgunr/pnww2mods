@@ -1,7 +1,7 @@
 #version 120
 
 varying vec4 color;
-varying vec3 vpos;
+varying vec3 vertexpos;
 
 void main()
 {
@@ -9,10 +9,9 @@ void main()
 
 	gl_TexCoord[0] = gl_MultiTexCoord0;
 	
-	vec4 eyepos = gl_ModelViewMatrix * gl_Vertex;
-	gl_FogFragCoord = abs(eyepos.z);
+	vertexpos = gl_ModelViewMatrix * gl_Vertex;
+	gl_FogFragCoord = abs(vertexpos.z);
 	
 	// Particle may have color interpolated
 	color = gl_Color;
-	vpos = eyepos.xyz;
 }

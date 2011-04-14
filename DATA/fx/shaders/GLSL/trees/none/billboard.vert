@@ -14,7 +14,7 @@ const float clearalpha = 255.0;  // alpha testing, 255 means not visible
 const float opaquealpha = 84.0;  // alpha testing, 84 means fully visible
 const float alphaspread = 171.0; // 171 = 255 - 84
 
-varying vec3 vpos;
+varying vec3 vertexpos;
 
 void main()
 {
@@ -60,7 +60,7 @@ void main()
 	gl_TexCoord[1].w = alpha;
 		
    	pos = gl_ModelViewMatrix * pos;
-   	vpos = pos.xyz;
+   	vertexpos = pos.xyz;
    	
    	gl_FogFragCoord = abs(pos.z);
    	

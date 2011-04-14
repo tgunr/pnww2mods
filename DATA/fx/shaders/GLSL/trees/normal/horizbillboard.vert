@@ -5,7 +5,7 @@ varying float fog;
 varying vec3 T;
 varying vec3 B;
 varying vec3 N;
-varying vec3 vpos;
+varying vec3 vertexpos;
 
 void main()
 {
@@ -48,5 +48,5 @@ void main()
 	gl_FogFragCoord = abs(pos.z);
 	
 	gl_Position = gl_ProjectionMatrix * pos;
-	vpos = pos.xyz;
+	vertexpos = pos.xyz;
 }

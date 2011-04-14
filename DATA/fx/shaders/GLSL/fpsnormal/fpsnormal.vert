@@ -3,7 +3,7 @@
 varying vec3 T;
 varying vec3 B;
 varying vec3 N;
-varying vec3 V;
+varying vec3 vertexpos;
 
 varying float fogFactor;
 
@@ -19,8 +19,8 @@ void main()
 				
 	gl_TexCoord[0] = gl_MultiTexCoord0;
 	
-	V = (gl_ModelViewMatrix * gl_Vertex).xyz;
-		
+	vertexpos = (gl_ModelViewMatrix * gl_Vertex).xyz;
+
  	gl_Position = ftransform();
-	gl_FogFragCoord = abs(V.z);
+	gl_FogFragCoord = abs(vertexpos.z);
 }

@@ -19,6 +19,29 @@ void lightGetAmbientDiffuse(in vec3 normal,
                             out vec4 diffuse);
 void lightSetVertexPos(in vec3 p);
 
+float GetShadowValue()
+{
+    vec3 c1 = gl_TexCoord[3].xyz / gl_TexCoord[3].w;
+    c1.z -= 0.0005;
+    c1.z = clamp(c1.z, 0.0, 1.0);
+
+	float scale = 0.000488;
+    float shadow = 0.0;
+
+	for(float y = -1.5 ; y <= 1.5 ; y += 1.0)
+    {
+		for(float x = -1.5 ; x <= 1.5 ; x += 1.0)
+        {
+            shadow += shadow2D(src6, c1.xyz + vec3(x * scale, y * scale, 0.0)).r;
+        }
+    }
+
+	shadow *= 0.0625;
+    shadow = clamp(shadow + shadowambient.r, 0.0, 1.0);
+
+    return shadow;
+}
+
 void main()
 {
     vec4 c1 = texture2D(src1, gl_TexCoord[0].xy);
@@ -48,13 +71,8 @@ void main()
 
     ambient *= gl_FrontMaterial.ambient;
     diffuse *= gl_FrontMaterial.diffuse;
-
-	vec3 cc = gl_TexCoord[3].xyz / gl_TexCoord[3].w;
-
-	vec4 s1 = shadow2D(src6, cc);
-
-    s1.rgb = clamp(s1.rgb + shadowambient, 0.0, 1.0);
-	c.rgb *= s1.rgb;
+  
+    c.rgb *= GetShadowValue();
 
     vec4 color =  c * (diffuse + ambient);
     gl_FragColor = fogThis(color);

@@ -9,7 +9,7 @@ uniform sampler2DShadow src3;
 uniform float scale;
 uniform vec3 shadowambient;
 
-varying vec3 V;
+varying vec3 vertexpos;
 varying vec3 T;
 varying vec3 B;
 varying vec3 N;
@@ -24,6 +24,29 @@ void lightGetAmbientDiffuseSpecular(in vec3,
                                     out vec4);
 
 vec4 fogThis(in vec4);
+
+float GetShadowValue()
+{
+    vec3 c1 = gl_TexCoord[3].xyz / gl_TexCoord[3].w;
+    c1.z -= 0.0005;
+    c1.z = clamp(c1.z, 0.0, 1.0);
+
+	float scale = 0.000488;
+    float shadow = 0.0;
+
+	for(float y = -1.5 ; y <= 1.5 ; y += 1.0)
+    {
+		for(float x = -1.5 ; x <= 1.5 ; x += 1.0)
+        {
+            shadow += shadow2D(src3, c1.xyz + vec3(x * scale, y * scale, 0.0)).r;
+        }
+    }
+
+	shadow *= 0.0625;
+    shadow = clamp(shadow + shadowambient.r, 0.0, 1.0);
+
+    return shadow;
+}
 
 // We can either do all lights in one pass or multipass with
 // each light. It's more expensive with the multipass.
@@ -52,7 +75,7 @@ void main()
 	vec4 ambientColor;
 	
 	// These values are interpolated and need to be normalized
-	vec3 v = normalize(-V);
+	vec3 v = normalize(-vertexpos);
 	vec3 t = normalize(T);
 	vec3 b = normalize(B);
 	vec3 n = normalize(N);
@@ -81,13 +104,7 @@ void main()
 
 	color = color * (diffuseColor + ambientColor) + specularColor;
 
-    vec3 c1 = gl_TexCoord[3].xyz / gl_TexCoord[3].w;
-
-	vec4 s1 = shadow2D(src3, c1);
-
-    s1.rgb = clamp(s1.rgb + shadowambient, 0.0, 1.0);
-
-	color.rgb *= s1.rgb;
+	color.rgb *= GetShadowValue();
 
 	gl_FragColor = fogThis(color);
 	gl_FragColor.w = base.a;

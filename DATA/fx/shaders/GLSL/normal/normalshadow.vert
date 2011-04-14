@@ -7,7 +7,7 @@ attribute vec3 normal;
 varying vec3 N;
 varying vec3 T;
 varying vec3 B;
-varying vec3 V;
+varying vec3 vertexpos;
 
 void main()
 {
@@ -21,8 +21,9 @@ void main()
 
 	gl_TexCoord[0] = gl_MultiTexCoord0;
 	
-	V = pos.xyz;
-	gl_FogFragCoord = abs(V.z);
+	vertexpos = pos.xyz;
+
+	gl_FogFragCoord = abs(vertexpos.z);
 	
- 	gl_Position = ftransform();
+ 	gl_Position = gl_ProjectionMatrix * pos;
 }

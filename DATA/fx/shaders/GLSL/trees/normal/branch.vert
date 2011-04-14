@@ -6,7 +6,7 @@ uniform vec3 treepos;
 varying vec3 T;
 varying vec3 B;
 varying vec3 N;
-varying vec3 vpos;
+varying vec3 vertexpos;
 
 void main()
 {
@@ -46,5 +46,5 @@ void main()
 	/* Normal Map Coords */
 	gl_TexCoord[1] = gl_MultiTexCoord1;
 
-	vpos = position.xyz;
+	vertexpos = position.xyz;
 }

@@ -6,10 +6,8 @@ uniform sampler2D normalmap;
 varying vec3 N;
 varying vec3 T;
 varying vec3 B;
-varying vec3 vpos;
 
 vec4 fogThis(in vec4);
-void lightSetVertexPos(in vec3);
 void lightGetAmbientDiffuse(in vec3, 
                             in vec3, 
                             in vec3, 
@@ -30,9 +28,7 @@ void main()
 	vec3 b = normalize(B);
 	vec3 n = normalize(N);
 
-	lightSetVertexPos(vpos);
 	lightGetAmbientDiffuse(t, b, n, normal.xyz, ambientColor, diffuseColor);
-	lightSetVertexPos(vec3(0, 0, 0));
 
 	ambientColor += gl_LightModel.ambient;
 	ambientColor *= gl_FrontMaterial.ambient;

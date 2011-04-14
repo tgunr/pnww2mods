@@ -6,7 +6,7 @@ uniform vec3 treepos;
 uniform float diffuseScale;
 
 varying vec3 N;
-varying vec3 vpos;
+varying vec3 vertexpos;
 
 void main()
 {
@@ -29,5 +29,5 @@ void main()
 	
 	gl_Position = gl_ProjectionMatrix * position;
 	gl_TexCoord[0] = gl_MultiTexCoord0;
-	vpos = position.xyz;
+	vertexpos = position.xyz;
 }

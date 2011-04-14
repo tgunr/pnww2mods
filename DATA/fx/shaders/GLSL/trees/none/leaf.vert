@@ -5,7 +5,7 @@ uniform vec3 treepos;
 uniform vec4 rotation;
 
 varying vec3 N;
-varying vec3 vpos;
+varying vec3 vertexpos;
 
 void main()
 {
@@ -57,7 +57,7 @@ void main()
 	position.w = 1.0;
 	
 	position = gl_ModelViewMatrix * position;
-	vpos = position.xyz;
+	vertexpos = position.xyz;
 	
 	gl_FogFragCoord = abs(position.z);
 

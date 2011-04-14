@@ -7,10 +7,9 @@ uniform sampler2D src3;
 varying vec3 T;
 varying vec3 B;
 varying vec3 N;
-varying vec3 V;
+varying vec3 vertexpos;
 
 vec4 fogThis(in vec4);
-void lightSetVertexPos(in vec3);
 void lightGetAmbientDiffuseSpecular(in vec3 t,
                                     in vec3 b,
                                     in vec3 n,
@@ -34,12 +33,11 @@ void main()
 	vec4 ambient;
 	
 	// These values are interpolated and need to be normalized
-	vec3 v = normalize(-V);
+	vec3 v = normalize(-vertexpos);
 	vec3 t = normalize(T);
 	vec3 b = normalize(B);
 	vec3 n = normalize(N);
 
-	lightSetVertexPos(V);
 	lightGetAmbientDiffuseSpecular(t, 
 	                               b, 
 	                               n, 
@@ -48,7 +46,6 @@ void main()
 	                               ambient, 
 	                               diffuse, 
 	                               specular);
-	lightSetVertexPos(vec3(0, 0, 0));
 
 	ambient += gl_LightModel.ambient;
 	ambient *= gl_FrontMaterial.ambient;
