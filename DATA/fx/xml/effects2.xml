@@ -687,7 +687,7 @@
 		<emitter>
 			<lifetime>30000</lifetime>
 			<fountain>10</fountain>
-      <particleeffect>smokegrenadeparticle1</particleeffect>
+     <!-- <particleeffect>smokegrenadeparticle1</particleeffect> -->
 		</emitter>
 		<emitter>
 			<lifetime>30000</lifetime>
@@ -780,6 +780,15 @@
       <particleeffect>manysparks</particleeffect>
     </emitter>
   </transformeffect>
+<!-- ===================================================================== -->
+	<transformeffect name = "smokescreen">
+		<emitter>
+			<lifetime>-1</lifetime>
+			<fountain>1</fountain>
+      <particleeffect>smokescreenparticle</particleeffect>
+		</emitter>
+	</transformeffect>
+  <!-- ===================================================================== -->
 <!-- ===================================================================== -->
 <!-- ===================================================================== -->
 <!-- ===================================================================== -->
@@ -4008,5 +4017,34 @@
     <dontupdateposition></dontupdateposition>
     <posvariance>-0.25 -0.25 0.0 0.25 0.25 0.0</posvariance>
     <material>waterwake</material>
-  </particleeffect>
+	</particleeffect>
+<!-- ===================================================================== -->
+	<particleeffect name = "smokescreenparticle">
+		<number>1</number>
+		<texture>low res smoke1</texture>
+		<texture>low res smoke2</texture>
+		<texture>low res smoke3</texture>
+		<texture>low res smoke4</texture>
+		<texture>white smoke 1</texture>
+		<texture>white smoke 2</texture>
+		<alpha>0.0</alpha>
+		<alpha>0.2</alpha>
+		<alpha>0.2.5</alpha>
+		<alpha>0.15</alpha>
+		<alpha>0.0</alpha>
+		<size>0</size>
+		<size>15</size>
+		<size>30</size>
+		<size>45</size>
+		<size>50</size>
+		<time>0</time>
+		<time>3000</time>
+		<time>5000</time>
+		<time>6000</time>
+		<time>8000</time>
+		<rotate>5</rotate>
+		<posvariance>-5 0 0 5 0 0</posvariance>
+		<velvariance>-0.1 -0.2 0 0.1 0.2 0.1</velvariance>
+    <material>smoke</material>
+	</particleeffect>
 </FXEFFECTS>
