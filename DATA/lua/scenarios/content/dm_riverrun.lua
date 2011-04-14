@@ -4,7 +4,9 @@ state.content =
 {
 	-- placed objects
 	-- command,filename,worldx,worldy,worldz,roll,pitch,yaw,scalex,scaley,scalez,damage
-	-- "place bel4 272868.26 3016897.34 481 0 0 90 0 0 0 1",
+	"place bel4 -75.0592 -117.812 8.2 0 0 16 0 0 0 1",
+	"place bel6 -18.3792 -147.545 7.45 0 0 200 0 0 0 1",
+	"place bel6 -10.867 -118.518 7.6 0 0 112 0 0 0 1",
 	
 	-- fx emitters
 	-- command,effectname,worldx,worldy,worldz
