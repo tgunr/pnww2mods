@@ -610,7 +610,7 @@
 <!ENTITY loc.english.399 "caps lock">
 <!ENTITY loc.english.824 "地图连接丢失, 错误 &#37;d.">
 <!ENTITY loc.english.616 "摇杆3 按钮 5">
-<!ENTITY loc.english.851 "&#37;ls弹药供给消耗完毕（供&#37;ls），自动切换成&#37;ls弹药">
+<!ENTITY loc.english.851 "&#37;ls弹药供给消耗完毕(供&#37;ls火炮),自动切换成&#37;ls弹药">
 <!ENTITY loc.english.311 "方向舵配平">
 <!ENTITY loc.english.142 "键盘设置界面">
 <!ENTITY loc.english.813 "任务结果:">
@@ -2381,7 +2381,7 @@
 <!ENTITY widgets.prefs.enabled "启用">
 <!ENTITY widgets.keymapper.button.save "保存更改">
 <!ENTITY widgets.prefs.groups.titles.shader "渲染">
-<!ENTITY widgets.template.back "后退">
+<!ENTITY widgets.template.back "返回">
 <!ENTITY widgets.prefs.groups.connection.network.best "自由选择">
 <!ENTITY widgets.map.context.hc.brigades "战斗旅">
 <!ENTITY widgets.idcard.progress "进阶">
@@ -2765,7 +2765,7 @@
 <!ENTITY mission.aartab.aars.aar.minutes "{1}分钟">
 <!ENTITY mission.state.3 "您的任务已关闭，请离开当前任务，重新选择。">
 <!ENTITY mission.spawn.denied7 "你的乘员已经放弃；取消你的预订，再试一次。">
-<!ENTITY mission.readytab "待命室">
+<!ENTITY mission.readytab "武器选择">
 <!ENTITY mission.aartab.aars.aar.despawned "离开">
 <!ENTITY mission.spawn.denied "不能完成出生请求。">
 <!ENTITY mission.readytab.panel.canceljoin "取消加入">
@@ -2783,7 +2783,7 @@
 <!ENTITY mission.timeleft.url "http://www.pkhlk.com/website/cardcharge/cardcharge.jsp">
 <!ENTITY mission.readytab.spawn.minimumrank "使用这个单位的最低等级是{1}。您的当前等级是{2}。">
 <!ENTITY mission.readytab.panel.reserve.tip "这个按钮将会预订您近期选择的武器。">
-<!ENTITY mission.readytab.panel.joinvehicle "加入交通工具">
+<!ENTITY mission.readytab.panel.joinvehicle "加入多人驾驶">
 <!ENTITY mission.state.1 "您的任务仍旧有效.">
 <!ENTITY mission.aartab.aars.aar.notes.promoted "您获得了晋升">
 <!ENTITY mission.brieftab.brief "任务详情">
@@ -2819,7 +2819,7 @@
 <!ENTITY mission.readytab.supply.status.normal "这个设施可以供给，增援将会在大概{1} 分钟到达。">
 <!ENTITY mission.readytab.spawn.slocked "这个战车或兵种只有付费用户才能使用。">
 <!ENTITY mission.readytab.panel.selectcrew.tip "点击这个按钮，为你的交通工具选择乘员。">
-<!ENTITY mission.readytab.panel.joinvehicle.empty "请等待有用的命令…..">
+<!ENTITY mission.readytab.panel.joinvehicle.empty "请等待多人驾驶邀请..">
 <!ENTITY mission.readytab.brief.members "成员">
 <!ENTITY mission.readytab.forces "可用军队">
 <!ENTITY mission.aartab.aars.result "结果">
@@ -2837,7 +2837,7 @@
 <!ENTITY mission.aartab.aars.summary "任务概要">
 <!ENTITY mission.readytab.panel.reserve "预订武器">
 <!ENTITY mission.aartab.aars.aar.result "结果">
-<!ENTITY mission.readytab.help "待命室: 选择武器，然后点击-进入游戏。">
+<!ENTITY mission.readytab.help "武器选择: 选择武器，然后点击-进入游戏。">
 <!ENTITY mission.spawn.denied2 "您所预订的武器已经不能使用，请重新选择。">
 <!ENTITY mission.readytab.supply.status.supplyotw "这个设施的补给正在运送。增援将会在大概 {1} 分钟后到达。">
 <!ENTITY mission.readytab.supply.status.wrongsupply "友军的设施已经与这个设施进行了对接，但是因为国籍不同，所以不能在这里出生。">
@@ -2906,14 +2906,14 @@
 <!ENTITY brigades.details.enlistments "征募">
 <!ENTITY brigades.list.key.defend "防御">
 <!ENTITY brigades.forward "加入">
-<!ENTITY brigades.rostertab "战斗旅名册">
+<!ENTITY brigades.rostertab "部队选择">
 <!ENTITY brigades.list.ms "移动兵站">
 <!ENTITY brigades.list.pop "人数">
 <!ENTITY brigades.list.oic "指挥官">
 <!ENTITY brigades.details.missions "可选择任务">
-<!ENTITY brigades.list "战斗序列">
-<!ENTITY brigades.rostertab.help "战斗旅选择: 选择一个战斗旅加入。">
-<!ENTITY brigades.list.name "战斗旅">
+<!ENTITY brigades.list "部队列表">
+<!ENTITY brigades.rostertab.help "部队选择: 选择一支部队加入。">
+<!ENTITY brigades.list.name "部队列表">
 <!ENTITY brigades.list.oic.tip "现在正在掌控这个旅的玩家。">
 <!ENTITY brigades.list.status.tip "显示这个战斗旅是否被激活。一个被激活的战斗旅至少拥有一个任务。">
 <!ENTITY brigades.list.inactive2 "从左边的可供选择的战斗旅中选择一个已经激活的旅加入。当一个或更多官员为这个旅添加了任务以后，这个旅就被激活了。">
@@ -2928,7 +2928,7 @@
 <!ENTITY brigades.list.tip "点击一个战斗旅，可以在右边看到它的更多的信息。">
 <!ENTITY brigades.details.commander "指挥官">
 <!ENTITY brigades.list.dd.tip "显示海军战斗旅是否处于深水港。深水港允许驱逐舰，护卫舰和其他海军兵种的生成。">
-<!ENTITY brigades.rostertab.tip "从可供选择的战斗旅中选择一个加入。">
+<!ENTITY brigades.rostertab.tip "从可供选择的部队中选择一个加入。">
 <!ENTITY brigades.forward.tip "进入您选择的战斗旅的总部。">
 <!ENTITY brigades.list.status "状态">
 <!ENTITY brigades.list.status.planning.tip "这个战斗旅已经被激活，但是没有被指派任何目标。您的高级官员将会为这个战斗旅创建一个目标。">
@@ -3002,7 +3002,7 @@
 <!ENTITY tutorials.skip "按空格键跳过">
 <!ENTITY tutorials.donext "你想要进行接下来的训练任务吗？">
 <!ENTITY tutorials.continue "按空格键继续">
-<!ENTITY tutorials.start "开始">
+<!ENTITY tutorials.start "加入训练任务">
 <!ENTITY tutorials.enrolled "任务进行中">
 <!ENTITY tutorials.success "恭喜，你已经非常成功的完成了这次训练任务。你获得了10分的积分奖励！">
 <!ENTITY tutorials.limited "这个训练任务只可以完成一次。">
@@ -3103,10 +3103,10 @@
 <!ENTITY brigade.control.error.owntown "请求被拒绝:我方已经占领这个城镇。">
 <!ENTITY brigade.control.unit.moved.system "把{1}从{2} 移动到 {3}。">
 <!ENTITY brigade.control.error.notobjective "请求被拒绝: 那不是一个有效目标。">
-<!ENTITY brigade.comtab.structure.command "战斗序列">
+<!ENTITY brigade.comtab.structure.command "部队列表">
 <!ENTITY brigade.hqtab.missions.sq "战队">
 <!ENTITY brigade.comtab.structure.oic "指挥官">
-<!ENTITY brigade.hqtab "战斗旅总部">
+<!ENTITY brigade.hqtab "任务选择">
 <!ENTITY brigade.createtab.postreply.6 "您的起点设施已经被占领，请选择另外一个。">
 <!ENTITY brigade.control.removed.me "您不再是{1}的指挥官了。">
 <!ENTITY brigade.comtab.officers "活跃官员">
