@@ -81,7 +81,7 @@
 			var scenario = loadScenario(instance.category, instance.type);
 			
 			// start the scenario
-			if(scenario != null && game.startscenario(scenario.config))
+			if(scenario != null && game.startscenario(scenario.path))
 			{
 				if(client.joininstance(instance.category, instance.type, instance.owner, instance.id))
 				{
