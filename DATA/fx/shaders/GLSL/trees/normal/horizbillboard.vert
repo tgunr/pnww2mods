@@ -1,7 +1,5 @@
 #version 120
 
-varying float fog;
-
 varying vec3 T;
 varying vec3 B;
 varying vec3 N;

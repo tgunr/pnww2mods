@@ -6,7 +6,6 @@ uniform vec4 table1[84];
 uniform vec4 scales[4];
 uniform vec4 unitSquare[4];
 uniform vec4 rotation;
-uniform vec3 normal;
 
 uniform float billboardAzimuth;
    

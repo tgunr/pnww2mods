@@ -178,4 +178,134 @@
     <uniform name="alphatest" type="float"></uniform>
     <uniform name="uv" type="float_vec2" numelements="64" onetimeapply="true"></uniform>
   </program>
+  <!--=================================================================-->
+  <program name ="BranchShader">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/none/branch.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/trees/none/branch.frag</fragmentshader>
+    </shaders>
+    <uniform name="diffuse" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="detailmap" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="diffuseScale" type="float"></uniform>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="treepos" type="float_vec3"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="BranchShaderNormal">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/normal/branch.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/trees/normal/branch.frag</fragmentshader>
+    </shaders>
+    <uniform name="diffuse" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="detailmap" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="normalmap" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="diffuseScale" type="float"></uniform>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="treepos" type="float_vec3"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="FrondShader">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/none/frond.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/trees/none/frond.frag</fragmentshader>
+    </shaders>
+    <uniform name="diffuse" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="treepos" type="float_vec3"></uniform>
+    <uniform name="diffuseScale" type="float"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="LeafShader">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/none/leaf.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/trees/none/leaf.frag</fragmentshader>
+    </shaders>
+    <uniform name="diffuse" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="treepos" type="float_vec3"></uniform>
+    <uniform name="cameraangle" type="float_vec2"></uniform>
+    <uniform name="diffuseScale" type="float"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="LeafShaderNormal">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/normal/leaf.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/trees/normal/leaf.frag</fragmentshader>
+    </shaders>
+    <uniform name="diffuse" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="normalmap" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="treepos" type="float_vec3"></uniform>
+    <uniform name="cameraangle" type="float_vec2"></uniform>
+    <uniform name="diffuseScale" type="float"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="BillboardShader">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/none/billboard.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/trees/none/billboard.frag</fragmentshader>
+    </shaders>
+    <uniform name="lightadjust" type="float"></uniform>
+    <uniform name="billboardAzimuth" type="float"></uniform>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="table1" type="float_vec4" numelements="84" onetimeapply="true"></uniform>
+    <uniform name="scales" type="float_vec4" numelements="4" onetimeapply="true"></uniform>
+    <uniform name="unitSquare" type="float_vec4" numelements="4" onetimeapply="true"></uniform>
+    <uniform name="billboardMap" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="BillboardShaderNormal">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/normal/billboard.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/trees/normal/billboard.frag</fragmentshader>
+    </shaders>
+    <uniform name="lightadjust" type="float"></uniform>
+    <uniform name="billboardAzimuth" type="float"></uniform>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="table1" type="float_vec4" numelements="84" onetimeapply="true"></uniform>
+    <uniform name="scales" type="float_vec4" numelements="4" onetimeapply="true"></uniform>
+    <uniform name="unitSquare" type="float_vec4" numelements="4" onetimeapply="true"></uniform>
+    <uniform name="normal" type="float_vec3"></uniform>
+    <uniform name="tangent" type="float_vec3"></uniform>
+    <uniform name="binormal" type="float_vec3"></uniform>
+    <uniform name="billboardMap" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="billboardNormal" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="HorizShader">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/none/horizbillboard.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/trees/none/billboard.frag</fragmentshader>
+    </shaders>
+    <uniform name="lightadjust" type="float"></uniform>
+    <uniform name="billboardMap" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="HorizShaderNormal">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/normal/horizbillboard.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/trees/normal/billboard.frag</fragmentshader>
+    </shaders>
+    <uniform name="lightadjust" type="float"></uniform>
+    <uniform name="billboardMap" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="billboardNormal" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+  </program>
 </glslprograms>
