@@ -127,7 +127,7 @@ function LoadContent()
 	end
 	
 	-- load any area handlers defined by our content
-	-- scenario.manager:LoadAreas();
+	-- scenario.manager:LoadObjects();
 end
 
 function OnDamage(handler, energy, obj)
