@@ -11,13 +11,11 @@ uniform float scale;
 uniform vec3 shadowambient;
 
 varying vec3 N;
-varying vec3 eyepos;
 
 vec4 fogThis(in vec4);
 void lightGetAmbientDiffuse(in vec3 normal,
                             out vec4 ambient,
                             out vec4 diffuse);
-void lightSetVertexPos(in vec3 p);
 
 float GetShadowValue()
 {
@@ -63,9 +61,7 @@ void main()
 
     vec3 n = normalize(N);
 
-	lightSetVertexPos(eyepos);
     lightGetAmbientDiffuse(n, ambient, diffuse); 
-	lightSetVertexPos(vec3(0, 0, 0));
 
 	ambient += gl_LightModel.ambient;
 

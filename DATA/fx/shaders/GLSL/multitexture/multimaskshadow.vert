@@ -1,7 +1,7 @@
 #version 120
 
 varying vec3 N;
-varying vec3 eyepos;
+varying vec3 vertexpos;
 
 void main()
 {
@@ -15,11 +15,11 @@ void main()
 
     gl_TexCoord[3] = gl_TextureMatrix[5] * pos;
 
-    eyepos = pos.xyz;
+    vertexpos = pos.xyz;
 
     N = gl_NormalMatrix * gl_Normal;
 
-    gl_FogFragCoord = abs(eyepos.z);
+    gl_FogFragCoord = abs(vertexpos.z);
 
     gl_Position = gl_ProjectionMatrix * pos;
 }
