@@ -308,4 +308,14 @@
     <uniform name="billboardMap" type="sampler2d" unit="0" onetimeapply="true"></uniform>
     <uniform name="billboardNormal" type="sampler2d" unit="2" onetimeapply="true"></uniform>
   </program>
+  <!--=================================================================-->
+  <program name ="shadow">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/shadow/shadow.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/shadow/shadow.frag</fragmentshader>
+    </shaders>
+    <uniform name="ambient" type="float_vec3"></uniform>
+    <uniform name="src1" type="sampler2dshadow" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2dshadow" unit="1" onetimeapply="true"></uniform>
+  </program>
 </glslprograms>
