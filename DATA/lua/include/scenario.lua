@@ -98,13 +98,8 @@ function OnSet(handler, name, value)
 	state.config[name] = value;
 	
 	-- for known config vars, do something
-	if(name == "map") then
-		-- try to load any map resources available to this map
-		game.RunScript("scenarios/maps/" .. value .. ".lua");
-	elseif(name == "content" and value == "load") then
+	if(name == "load" and value == "content") then
 		LoadContent();
-	elseif(name == "junk") then
-		-- do something here
 	end
 	
 	return 1;  -- this handle will continue to handle events
@@ -115,15 +110,10 @@ function LoadContent()
 	scenario.manager:UnLoadContent();
 	
 	-- now let's reload our content
-	if(state.contentScript ~= nil) then
-		game.RunScript(state.contentScript);
-	end
-	
-	-- loop over and add any content
-	if(state.content ~= nil) then
-		for i,v in ipairs(state.content) do 
-			scenario.manager:AddContent(v);
-		end
+	if(state.config.content ~= nil) then
+		game.RunScript("scenarios/content/" .. state.config.content .. ".lua");
+	elseif(state.config.name ~= nil) then
+		game.RunScript("scenarios/content/" .. state.config.name .. ".lua");
 	end
 	
 	-- load any area handlers defined by our content
