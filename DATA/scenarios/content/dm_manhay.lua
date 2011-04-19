@@ -3,15 +3,15 @@
 state.content = 
 {
 	-- placed objects
-	-- command,filename,worldx,worldy,worldz,roll,pitch,yaw,scalex,scaley,scalez,damage
+	-- command,name,filename,worldx,worldy,worldz,roll,pitch,yaw,scalex,scaley,scalez,damage
 	"place oildrums_outside 272911.21 3016949.12 481.00 0 0 90 0 0 0 1",
 	
 	-- fx emitters
-	-- command,effectname,worldx,worldy,worldz
+	-- command,name,effectname,worldx,worldy,worldz
 	"emitter hulksmoke 272911.21 3016949.12 481.00",
 
 	-- fx sounds
-	-- command,filename,worldx,worldy,worldz, minvol, maxvol, chance, loop
+	-- command,name,filename,worldx,worldy,worldz, minvol, maxvol, chance, loop
 	"sound sounds/airraidsiren.wav 273239.41 3016934.89 481 10 40 1 1",
 	-- "sound airraidsiren 273155.37 3017155.68 -481.00 10 40 .1 0",
 	
