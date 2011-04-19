@@ -42,7 +42,7 @@ if(true) then
 		"bombingrun bombing1 gp250 -69.51 80.01 6.21 -177.68 11.25 6.21",
 		
 		-- a area effect bombing
-		-- "barrage barrage1 gp40",
+		"barrage barrage1 gp40",
 		
 		-- triggers
 		-- commandname,pctg chance each second,wait in seconds
