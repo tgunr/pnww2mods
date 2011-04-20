@@ -210,8 +210,18 @@ if(true) then
 		"place windmill1 -235.17 274.79 19.43 0 0 185 0 0 0 0",
 		"place vinbarn1 -28.71 272.04 14.50 0 0 180 0 0 0 0",
 		"place blumaine1c -6.00 8.00 6.12 0 0 210 0 0 0 0",
-		"place dd_tobruk_mg -11.00 5.00 6.08 0 0 0 0 0 0 0",
-		"place dd_bunker_mg -20.00 45.00 4.82 0 0 0 0 0 0 0"
+		"place ammocrate 60.55 -88.75 27.15 0 0 0 0 0 0 0",
+		"place crate 61.54 -89.90 27.15 0 0 30 0 0 0 0",
+
+
+
+
+
+
+
+
+
+
 	};
 	
 	for i,v in ipairs(content) do 
