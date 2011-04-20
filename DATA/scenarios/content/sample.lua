@@ -25,6 +25,20 @@ if(true) then
 		-- command path
 		"include scenarios/terrain/riverrun/map.lua",
 		
+		-- ADD A CHAT TO THE CHAT WINDOW
+		
+		-- these are always named
+		-- the lockey is a lockey looked up from the scenario content in the web translation tool
+		-- command name lockey
+		"chat spawnin spawnin.moveout",
+		
+		-- ADD A HUD ALERT
+		
+		-- these are always named
+		-- the lockey is a lockey looked up from the scenario content in the web translation tool
+		-- command name lockey
+		"hudalert spawnin spawnin.moveout",
+		
 		-- PLACE AN OBJECT IN THE TERRAIN --
 		
 		-- named version
@@ -81,10 +95,11 @@ if(true) then
 		-- BOMBING BARRAGE --
 		
 		-- named version	-- you probably always want these to be named and tied to events
-		-- these are tied to areas of the same name; the area defines where the barrage will happen
+		-- the x,y,z is the center of the barrage
+		-- the distance is the radius of a circle around the center to randomly fire off the ammo in
 		
-		-- command name ammo
-		"barrage barrage1 gp40",
+		-- command name ammo x y z distance
+		"barrage barrage1 gp40 210.96 -227.13 19.97 100",
 		
 		-- TIMED EVENTS -- 
 		
@@ -119,8 +134,12 @@ if(true) then
 		
 		-- named version
 		-- command name scripthandler x y z
-		"area barrage1 na 272792.27 3016974.34 481",
-		"area barrage1 na 272792.27 3016974.34 481",
+		"area spawnin OnTrigger 272792.27 3016974.34 481",
+		"area spawnin OnTrigger 272792.27 3016974.34 481",
+		"area spawnin OnTrigger 272792.27 3016974.34 481",
+		"area spawnin OnTrigger 272792.27 3016974.34 481",
+		"area spawnin OnTrigger 272792.27 3016974.34 481",
+		"area spawnin OnTrigger 272792.27 3016974.34 481",
 		
 		-- anonymous version
 		-- command scripthandler x y z
