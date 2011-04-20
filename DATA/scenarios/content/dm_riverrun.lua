@@ -24,7 +24,6 @@ if(true) then
 		-- fires
 		"emitter vehiclefire 107.62 -29.90 9.36",
 
-
 		
 		-- absolute sounds
 		-- command,name,filename,0,0,0,minvol, maxvol
@@ -48,12 +47,9 @@ if(true) then
 
 
 		-- positional sounds
-		-- command name filename volume loop x y z mindist attenuation
-		"sound sounds/tank_burn.wav 2.0 1 107.62 -29.90 9.36 10 20",
-		"sound sounds/bedford/idle.wav 1.0 1 -31.63 -148.86 8.36 10 20",
-		"sound sounds/bedford/idle.wav 1.0 1 -22.40 -151.75 9.02 10 20",
-
-
+		-- command name filename volume loop x y z mindist maxdist
+		"sound sounds/tank_burn.wav 1 1 108 -29 8 5 20",
+		"sound sounds/bedford/idle.wav 0.5 1 -22 -151 10 5 10",
 
 		
 		-- a line of bombs (as from a plane)
@@ -65,15 +61,20 @@ if(true) then
 		"bombingrun bombing2 gp40 33.14 -165.89 7.68 6.27 -182.85 2.72",
 		"bombingrun bombing2 gp40 212.53 -134.06 19.33 163.59 -134.66 4.72",
 
-
-
-
-
-
-
 		
 		-- a area effect bombing
-		"barrage barrage1 gp40",
+		-- the x,y,z is the center of the barrage
+		-- the distance is the radius of a circle around the center to randomly fire off the ammo in
+		-- command name ammo x y z distance
+		"barrage barrage1 gp40 -154.25 -107.17 8.77 25",
+		"barrage barrage1 gp40 84.84 306.73 21.79 50",
+		"barrage barrage1 gp40 -266.85 -36.03 5.26 50",
+
+
+
+
+
+
 		
 		-- triggers
 		-- commandname,pctg chance each second,wait in seconds
@@ -83,9 +84,9 @@ if(true) then
 		"event guns1 .15 10000",
 		"event guns2 .20 30000",
 		"event wind .5 5000",
-		"event bombing1 .20 15000 500 6",
-		"event bombing2 .18 20000 750 3",
-		-- "event barrage1 .3 30000 2000 10",
+		"event bombing1 .10 15000 500 6",
+		"event bombing2 .10 20000 750 3",
+		"event barrage1 .20 60000 700 10",
 
 
 		
@@ -121,19 +122,6 @@ if(true) then
 		"area OnBoundary 226.64 -33.89 6.81",
 		"area OnBoundary 236.02 -13.51 7.30",
 		"area OnBoundary 130.67 14.12 8.45",
-
-
-
-
-
-
-
-
-
-		-- "area OnBoundary 272765.70 3017002.75 481.00",
-		
-		-- "area barrage1 na -0.96 -38.87 8.25",
-		-- "area barrage1 na 69.38 -143.93 8.13",
 		
 		-- spawn points
 		-- command,spawngroup,worldx,worldy,worldz,yaw
