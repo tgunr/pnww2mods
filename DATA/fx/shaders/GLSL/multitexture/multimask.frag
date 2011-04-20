@@ -27,7 +27,7 @@ void main()
     c = (1.0 - mask.r) * c1 + mask.r * c2;
     c = (1.0 - mask.g) * c + mask.g * c3;
     c = (1.0 - mask.b) * c + mask.b * c4;
-    c = (1.0 - mask.a) * c + mask.a * vec4(0.25, 0.25, 0.25, 1.0);
+    c = (1.0 - mask.a) * c + mask.a * vec4(0.0, 0.0, 0.0, 0.9);
 
     vec4 diffuse;
     vec4 ambient;
