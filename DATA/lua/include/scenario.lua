@@ -107,7 +107,7 @@ end
 
 function LoadContent()
 	-- unload any previously loaded data
-	scenario.manager:UnLoadContent();
+	scenario.manager:UnloadContent();
 	
 	-- now let's reload our content
 	if(state.config.content ~= nil) then
@@ -191,6 +191,15 @@ function OnBoundary(handler)
 	elseif(handler.state == tutorial.THS_EVENT_IN and not state.inbounds) then
 		state.inbounds = true;
 		ui.ChatPrint("You have re-entered the playable area!");
+	end
+	
+	return 1;
+end
+
+function OnTrigger(handler)
+	if(handler.state == tutorial.THS_EVENT_IN) then
+		scenario.manager:RunEvent(handler.name);
+		-- ui.ChatPrint("Trigger!");
 	end
 	
 	return 1;
