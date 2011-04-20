@@ -74,7 +74,17 @@ if(true) then
 
 		
 		-- a area effect bombing
-		"barrage barrage1 gp40",
+		-- the x,y,z is the center of the barrage
+		-- the distance is the radius of a circle around the center to randomly fire off the ammo in
+		-- command name ammo x y z distance
+		"barrage barrage1 gp40 272858.40 3017087.65 482.95 20",
+		"barrage barrage1 gp40 273084.18 3016862.53 483.58 25",
+		"barrage barrage1 gp40 273213.38 3016970.93 483.21 25",
+
+
+
+
+
 		
 		-- triggers
 		-- commandname,pctg chance each second,wait in seconds
@@ -84,9 +94,9 @@ if(true) then
 		"event guns1 .15 10000",
 		"event guns2 .20 30000",
 		"event wind .5 5000",
-		"event bombing1 .15 15000 500 6",
+		"event bombing1 .15 30000 500 6",
 		-- "event bombing2 .18 20000 750 3",
-		-- "event barrage1 .3 30000 2000 10",
+		"event barrage1 .10 30000 650 7",
 
 
 		
