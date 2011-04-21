@@ -66,6 +66,9 @@ function OnSpawn(handler)
 	state.freePos[2] = veh:GetPos(2);
 	state.freePos[3] = veh:GetPos(3);
 	
+	-- try to run any scenario events associated with despawning
+	scenario.manager:RunEvent("onspawn");
+	
 	-- keep handler going
 	return 1;
 end
@@ -84,6 +87,9 @@ function OnDespawn(handler)
 	
 	-- kill the ui that was hanging around
 	tutorial.HideUI(true);
+	
+	-- try to run any scenario events associated with despawning
+	scenario.manager:RunEvent("ondespawn");
 	
 	-- keep handler going
 	return 1;
@@ -174,6 +180,7 @@ function OnMission(handler)
 end
 
 function OnDie(handler)
+	scenario.manager:RunEvent("ondie");
 	tutorial.ShowOK("dead", "OnDead");
 	return 1;
 end
@@ -186,6 +193,9 @@ end
 
 function OnBoundary(handler)
 	if(handler.state == tutorial.THS_EVENT_OUT and state.inbounds) then
+		-- try to run any scenario events associated with despawning
+		scenario.manager:RunEvent("onboundary");
+		-- save our state
 		state.inbounds = false;
 		ui.ChatPrint("You have left the playable area!");
 	elseif(handler.state == tutorial.THS_EVENT_IN and not state.inbounds) then
@@ -198,8 +208,8 @@ end
 
 function OnTrigger(handler)
 	if(handler.state == tutorial.THS_EVENT_IN) then
+		-- try to run any events associated with this area
 		scenario.manager:RunEvent(handler.name);
-		-- ui.ChatPrint("Trigger!");
 	end
 	
 	return 1;
