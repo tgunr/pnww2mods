@@ -25,6 +25,30 @@ if(true) then
 		-- command path
 		"include scenarios/terrain/riverrun/map.lua",
 		
+		-- ADD CLONE VEHICLE TO THE WORLD --
+		
+		-- named version
+		-- command name typeid x y z roll pitch yaw
+		"clone bedford1 bedford 273239.41 3016934.89 481 0 0 90",
+		
+		-- anonymous version
+		-- command name typeid x y z roll pitch yaw
+		"clone bedford 273239.41 3016934.89 481 0 0 90",
+		
+		-- ADD A BLOCKING VOLUME TO THE WORLD --
+		
+		-- the scale parameters are from 0 to some real number
+		-- 1 means no scale, 2 means twice the size and .5 means
+		-- half the size, etc...
+		
+		-- named version
+		-- command name filename x y z roll pitch yaw scalex scaley scalez
+		"block block1 blockvolume 273239.41 3016934.89 481 0 0 90",
+		
+		-- anonymous version
+		-- command name filename x y z roll pitch yaw scalex scaley scalez
+		"block blockvolume 273239.41 3016934.89 481 0 0 90",
+		
 		-- ADD A CHAT TO THE CHAT WINDOW
 		
 		-- these are always named
