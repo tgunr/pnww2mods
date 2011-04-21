@@ -20,18 +20,17 @@ if(true) then
 		"place kr_brg_s_dam 0.00 0.00 0.62 0 0 0 0 0 0 0",
 		"place bel4 -4.03 -123.47 8.44 0 0 21 0 0 0 0",
 		"place vinbarn1 14.39 -131.72 8.42 0 0 20 0 0 0 0",
-		"place brokencart 12.40 -134.00 8.39 0 0 -90 0 0 0 0",
+		"place brokencart 11.5 -136.5 8.39 0 0 -90 0 0 0 0",
+		"place crate 8.68 -129.54 8.75 0 0 -70 0 0 0 0",
 		
+
+
 		"place brokencart 118.00 -58.00 8.05 0 0 110 0 0 0 0",
-		"place oildrums_outside 38.00 -148.50 8.34 0 0 -45 0 0 0 0",
-		"place oildrums_outside 37.20 -151.50 7.60 0 0 -45 0 0 0 1",
+		"place oildrums_outside 55.5 -144.41 8.5 0 0 -45 0 0 0 0",
 		"place citybild1 40.19 -138.39 7.93 0 -3 110 0 0 0 1",
 		"place truck_dam_outside 24.95 -145.90 8.63 5 0 20 0 0 0 0",
 		"place boarding1 36.25 -149.20 9.04 10 0 -67 0 0 0 0",
 		"place bel6 40.11 -139.90 8.31 0 3 21 0 0 0 1",
-		"place oildrums_outside 57.20 -148.93 8.37 0 0 110 0 0 0 0",
-		"place oildrums_outside 58.70 -147.70 8.39 0 0 110 0 0 0 1",
-		"place oildrums_outside 61.40 -146.50 8.39 0 0 -50 0 0 0 1",
 		"place sandbagwall_outside 66.50 -147.60 7.91 0 0 110 0 0 0 0",
 		"place sandbagwall_outside 69.40 -148.61 7.97 0 0 110 0 0 0 0",
 		"place wall03 61.50 -145.00 7.34 0 0 200 0 0 0 0",
@@ -77,6 +76,11 @@ if(true) then
 		"place boarding1 110.65 -42.00 7.96 0 0 110 0 0 0 0",
 		"place boarding1 124.80 -32.00 8.02 0 0 110 0 0 0 0",
 		"place boarding1 112.70 -36.50 8.25 0 0 109 0 0 0 0",
+		"place boarding1 2.29 -126.075 8.75 0 0 18 0 0 0 0",
+
+
+
+
 		"place cratepile_outside 126.50 -31.60 7.83 0 0 200 0 0 0 0",
 		"place bel1 120.39 -16.04 7.89 0 0 20 0 0 0 1",
 		"place sandbagwall_outside 136.25 -21.00 7.59 -5 0 93 0 0 0 0",
