@@ -260,7 +260,7 @@
     <uniform name="lightadjust" type="float"></uniform>
     <uniform name="billboardAzimuth" type="float"></uniform>
     <uniform name="rotation" type="float_vec4"></uniform>
-    <uniform name="table1" type="float_vec4" numelements="84" onetimeapply="true"></uniform>
+    <uniform name="table1" type="float_vec4" numelements="84"></uniform>
     <uniform name="scales" type="float_vec4" numelements="4" onetimeapply="true"></uniform>
     <uniform name="unitSquare" type="float_vec4" numelements="4" onetimeapply="true"></uniform>
     <uniform name="billboardMap" type="sampler2d" unit="0" onetimeapply="true"></uniform>
@@ -276,7 +276,7 @@
     <uniform name="lightadjust" type="float"></uniform>
     <uniform name="billboardAzimuth" type="float"></uniform>
     <uniform name="rotation" type="float_vec4"></uniform>
-    <uniform name="table1" type="float_vec4" numelements="84" onetimeapply="true"></uniform>
+    <uniform name="table1" type="float_vec4" numelements="84"></uniform>
     <uniform name="scales" type="float_vec4" numelements="4" onetimeapply="true"></uniform>
     <uniform name="unitSquare" type="float_vec4" numelements="4" onetimeapply="true"></uniform>
     <uniform name="normal" type="float_vec3"></uniform>
