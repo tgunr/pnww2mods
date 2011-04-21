@@ -190,9 +190,20 @@ if(true) then
 		"block blockvol_vis -4.2 -135.8 8.2 0 0 20 .3 1.2 2",
 		"block blockvol_vis -72 -98.5 8.1 0 0 110 .3 21 2",
 		"block blockvol_vis -48.91 -117.6 8.1 0 0 110 .3 1.5 2",
-		"block blockvol_vis 11.5 -136.02 8 0 0 110 .3 1.7 2",
+		"block blockvol_vis 11.5 -136.02 8 0 0 110 .3 1.9 2",
+		"block blockvol_vis 8.75 -128.75 8.25 0 0 110 .3 1 1",
+		"block blockvol_vis 37.5 -149 8.2 0 0 110 .3 1.6 2",
+		"block blockvol_vis 63.57 -147.67 8.0 0 0 20 8.5 1.6 2.5",
+
+
+
+
 		-- church
 		"block blockvol_vis 61 -90.00 27 0 0 -20 .3 2 1",
+
+		-- truck in building
+		"block blockvol_vis 24.92 -146.93 8.5 0 0 -20 .3 2.9 1.8",
+
 
 
 
