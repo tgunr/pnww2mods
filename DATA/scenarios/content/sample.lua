@@ -43,11 +43,11 @@ if(true) then
 		
 		-- named version
 		-- command name filename x y z roll pitch yaw scalex scaley scalez
-		"block block1 blockvolume 273239.41 3016934.89 481 0 0 90",
+		"block block1 blockvolume 273239.41 3016934.89 481 0 0 90 1 1 1",
 		
 		-- anonymous version
 		-- command name filename x y z roll pitch yaw scalex scaley scalez
-		"block blockvolume 273239.41 3016934.89 481 0 0 90",
+		"block blockvolume 273239.41 3016934.89 481 0 0 90 1 1 1",
 		
 		-- ADD A CHAT TO THE CHAT WINDOW
 		
