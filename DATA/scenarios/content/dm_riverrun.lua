@@ -10,6 +10,7 @@ if(true) then
 		
 		-- fx emitters
 		-- command,effectname,worldx,worldy,worldz
+		-- SMOKE
 		-- barrels
 		"emitter hulksmoke -25.16 -97.95 9.39",
 		"emitter hulksmoke -29.35 -105.79 9.06",
@@ -17,12 +18,24 @@ if(true) then
 		"emitter hulksmoke 173.40 -38.89 6.9",
 		"emitter hulksmoke 129.71 -55.96 7.0",
 		-- smokescreen
-		"emitter smokescreen -46.03 -224.78 15.92",
-		"emitter smokescreen -1.73 -226.20 16.42",
+		-- "emitter smokescreen -46.03 -224.78 15.92",
+		-- "emitter smokescreen -1.73 -226.20 16.42",
+		-- vehicles
+		"emitter hulksmoke -28.16 -171.19 3.25",
+		"emitter hulksmoke 158.46 -16.93 9.0",
 
 
-		-- fires
+
+
+
+
+
+		-- FIRES
 		"emitter vehiclefire 107.62 -29.90 9.36",
+		"emitter vehiclefire 157.34 -16.48 8.08",
+
+
+
 
 		
 		-- absolute sounds
@@ -48,8 +61,13 @@ if(true) then
 
 		-- positional sounds
 		-- command name filename volume loop x y z mindist maxdist
-		"sound sounds/tank_burn.wav 1 1 108 -29 8 5 20",
-		"sound sounds/bedford/idle.wav 0.5 1 -22 -151 10 5 10",
+		-- "sound sounds/tank_burn.wav 1 1 108 157 -16 8 5 20",
+		-- "sound sounds/tank_burn.wav 1 1 158 -15 10 5 20",
+		-- "sound sounds/bedford/idle.wav 0.5 1 -22 -151 10 5 10",
+
+
+
+
 
 		
 		-- a line of bombs (as from a plane)
@@ -70,23 +88,18 @@ if(true) then
 		"barrage barrage1 gp40 84.84 306.73 21.79 50",
 		"barrage barrage1 gp40 -266.85 -36.03 5.26 50",
 
-
-
-
-
-
 		
 		-- triggers
 		-- commandname,pctg chance each second,wait in seconds
-		"event planes .40 120000",
-		"event bombs .10 20000",
-		"event explosions .20 25000",
-		"event guns1 .15 10000",
-		"event guns2 .20 30000",
-		"event wind .5 5000",
-		"event bombing1 .10 15000 500 6",
-		"event bombing2 .10 20000 750 3",
-		"event barrage1 .20 60000 700 10",
+		-- "event planes .40 120000",
+		-- "event bombs .10 20000",
+		-- "event explosions .20 25000",
+		-- "event guns1 .15 10000",
+		-- "event guns2 .20 30000",
+		-- "event wind .5 5000",
+		-- "event bombing1 .10 15000 500 6",
+		-- "event bombing2 .10 20000 750 3",
+		-- "event barrage1 .20 60000 700 10",
 
 
 		
@@ -129,6 +142,94 @@ if(true) then
 		"spawn alliedtroops -25.47 -167.30 7.82 0.41",
 		"spawn axistroops 210.55 -15.95 7.81 -2.20",
 		"spawn axistroops 216.89 -17.83 7.80 -2.29",
+
+		-- ADD CLONE VEHICLE TO THE WORLD --
+		
+		-- named version
+		-- command name typeid x y z roll pitch yaw
+		-- "clone bedford1 bedford -20.11 -156.51 8.77 0 0 90",
+		
+		-- anonymous version
+		-- command name typeid x y z roll pitch yaw
+		"clone bedford -28.25 -172.75 2.5 15 -10 20",
+		"clone bedford -19.75 -153.93 9.05 2 0 0",
+		"clone bedford -27.34 -150.10 8.9 4 0 285",
+		"clone bedford -35.21 -147.32 8.85 6 2 285",
+
+		"clone oplbltz 192.79 -31.45 8.5 5 -4.25 205",
+		"clone oplbltz 176.32 -20.12 8.55 0 0 180",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		-- ADD A BLOCKING VOLUME TO THE WORLD --
+		
+		-- the scale parameters are from 0 to some real number
+		-- 1 means no scale, 2 means twice the size and .5 means
+		-- half the size, etc...
+		
+		-- named version
+		-- command name filename x y z roll pitch yaw scalex scaley scalez
+		-- "block block1 blockvolume 273239.41 3016934.89 481 0 0 90",
+		
+		-- anonymous version
+		-- command name filename x y z roll pitch yaw scalex scaley scalez
+		"block blockvol_vis -25.89 -133.5 8.2 0 0 22 .3 1.7 1",
+		"block blockvol_vis -19.00 -115.75 7.5 0 0 20 .3 3.3 2.5",
+		"block blockvol_vis -4.2 -135.8 8.2 0 0 20 .3 1.2 2",
+		"block blockvol_vis -72 -98.5 8.1 0 0 110 .3 21 2",
+		"block blockvol_vis -48.91 -117.6 8.1 0 0 110 .3 1.5 2",
+		"block blockvol_vis 11.5 -136.02 8 0 0 110 .3 1.7 2",
+		-- church
+		"block blockvol_vis 61 -90.00 27 0 0 -20 .3 2 1",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		-- ADD A CHAT TO THE CHAT WINDOW
+		
+		-- these are always named
+		-- the lockey is a lockey looked up from the scenario content in the web translation tool
+		-- command name lockey
+		"chat spawnin spawnin.moveout",
+		
+		-- ADD A HUD ALERT
+		
+		-- these are always named
+		-- the lockey is a lockey looked up from the scenario content in the web translation tool
+		-- command name lockey
+		"hudalert spawnin spawnin.moveout",
+
 		
 		-- vehicle masks
 		
