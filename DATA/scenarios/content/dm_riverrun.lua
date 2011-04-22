@@ -15,14 +15,26 @@ if(true) then
 		"emitter hulksmoke -25.16 -97.95 9.39",
 		"emitter hulksmoke -29.35 -105.79 9.06",
 		-- craters
-		"emitter hulksmoke 173.40 -38.89 6.9",
-		"emitter hulksmoke 129.71 -55.96 7.0",
+		"emitter cratersmoke 173.40 -38.89 13",
+		"emitter cratersmoke 129.71 -55.96 13",
+		"emitter cratersmoke -45.56 -78.53 13",
+		"emitter cratersmoke 26.02 -82.75 13",
+		"emitter cratersmoke -49.62 -130.94 13",
+
+
+
+
+
 		-- smokescreen
 		-- "emitter smokescreen -46.03 -224.78 15.92",
 		-- "emitter smokescreen -1.73 -226.20 16.42",
 		-- vehicles
-		"emitter hulksmoke -28.16 -171.19 3.25",
-		"emitter hulksmoke 158.46 -16.93 9.0",
+		"emitter buildingdamagesmoke -28.16 -171.19 3.25",
+		"emitter buildingdamagesmoke 158.6 -16.7 11.25",
+		"emitter buildingdamagesmoke 158.46 -16.93 11",
+		"emitter buildingdamagesmoke 107.60 -29.68 9",
+
+
 
 
 
@@ -33,6 +45,9 @@ if(true) then
 		-- FIRES
 		"emitter vehiclefire 107.62 -29.90 9.36",
 		"emitter vehiclefire 157.34 -16.48 8.08",
+		"emitter vehiclefire 31.39 -57.25 9.73",
+
+
 
 
 
@@ -61,9 +76,13 @@ if(true) then
 
 		-- positional sounds
 		-- command name filename volume loop x y z mindist maxdist
-		-- "sound sounds/tank_burn.wav 1 1 108 157 -16 8 5 20",
-		-- "sound sounds/tank_burn.wav 1 1 158 -15 10 5 20",
-		-- "sound sounds/bedford/idle.wav 0.5 1 -22 -151 10 5 10",
+		"sound sounds/tank_burn.wav 1 1 155 -16 9 5 30",
+		"sound sounds/tank_burn.wav 1 1 109 -29 9 5 30",
+		"sound sounds/bedford/idle.wav 0.5 1 -29 -149 10 5 30",
+		"sound sounds/tank_burn.wav 1 1 29 -57 9 5 30",
+
+
+
 
 
 
@@ -91,15 +110,15 @@ if(true) then
 		
 		-- triggers
 		-- commandname,pctg chance each second,wait in seconds
-		-- "event planes .40 120000",
-		-- "event bombs .10 20000",
-		-- "event explosions .20 25000",
-		-- "event guns1 .15 10000",
-		-- "event guns2 .20 30000",
-		-- "event wind .5 5000",
-		-- "event bombing1 .10 15000 500 6",
-		-- "event bombing2 .10 20000 750 3",
-		-- "event barrage1 .20 60000 700 10",
+		"event planes .40 120000",
+		"event bombs .10 20000",
+		"event explosions .20 25000",
+		"event guns1 .15 10000",
+		"event guns2 .20 30000",
+		"event wind .5 5000",
+		"event bombing1 .10 15000 500 6",
+		"event bombing2 .10 20000 750 3",
+		"event barrage1 .20 60000 700 10",
 
 
 		
@@ -107,7 +126,13 @@ if(true) then
 		-- command,scripthandler,worldx,worldy,worldz
 		"area OnBoundary 127.32 15.89 8.39",
 		"area OnBoundary 119.71 8.58 8.72",
-		"area OnBoundary 89.20 -11.75 8.72",
+		"area OnBoundary 113.75 -1.80 8.5",
+		"area OnBoundary 101.82 -30.57 8.5",
+
+
+
+
+		-- "area OnBoundary 89.20 -11.75 8.72",
 		"area OnBoundary 72.14 -19.26 8.72",
 		"area OnBoundary 70.13 -25.14 8.72",
 		"area OnBoundary 52.20 -23.69 8.06",
@@ -139,9 +164,11 @@ if(true) then
 		-- spawn points
 		-- command,spawngroup,worldx,worldy,worldz,yaw
 		"spawn alliedtroops -35.72 -152.77 7.82 0.44",
-		"spawn alliedtroops -25.47 -167.30 7.82 0.41",
+		"spawn alliedtroops -22.44 -161.92 7.82 0.41",
 		"spawn axistroops 210.55 -15.95 7.81 -2.20",
 		"spawn axistroops 216.89 -17.83 7.80 -2.29",
+
+
 
 		-- ADD CLONE VEHICLE TO THE WORLD --
 		
@@ -185,24 +212,36 @@ if(true) then
 		
 		-- anonymous version
 		-- command name filename x y z roll pitch yaw scalex scaley scalez
-		"block blockvol_vis -25.89 -133.5 8.2 0 0 22 .3 1.7 1",
-		"block blockvol_vis -19.00 -115.75 7.5 0 0 20 .3 3.3 2.5",
-		"block blockvol_vis -4.2 -135.8 8.2 0 0 20 .3 1.2 2",
-		"block blockvol_vis -72 -98.5 8.1 0 0 110 .3 21 2",
-		"block blockvol_vis -48.91 -117.6 8.1 0 0 110 .3 1.5 2",
-		"block blockvol_vis 11.5 -136.02 8 0 0 110 .3 1.9 2",
-		"block blockvol_vis 8.75 -128.75 8.25 0 0 110 .3 1 1",
-		"block blockvol_vis 37.5 -149 8.2 0 0 110 .3 1.6 2",
-		"block blockvol_vis 63.57 -147.67 8.0 0 0 20 8.5 1.6 2.5",
+		"block block blockvol_invis -25.89 -133.5 8.2 0 0 22 .3 1.7 1",
+		"block block blockvol_invis -18.25 -113 7.5 0 0 20 .3 7.7 3.25",
+		"block block blockvol_invis -4.2 -135.8 8.2 0 0 20 .3 1.2 2",
+		"block block blockvol_invis -72 -98.5 8.1 0 0 110 .3 21 2",
+		"block block blockvol_invis -48.91 -117.6 8.1 0 0 110 .3 1.5 2",
+		"block block blockvol_invis 11.5 -136.02 8 0 0 110 .3 1.9 2",
+		"block block blockvol_invis 8.75 -128.75 8.25 0 0 110 .3 1 1",
+		"block block blockvol_invis 37.5 -149 8.2 0 0 110 .3 1.6 2",
+		"block block blockvol_invis 63.57 -147.67 8.0 0 0 20 8.5 1.6 2.5",
+		"block block blockvol_invis 77.9 -57.5 8.0 0 0 20 .5 3.1 1",
+		"block block blockvol_invis 88.76 -41 8.0 0 0 20 .5 7 2",
+		"block block blockvol_invis 117.0 -55 8.0 0 0 20 .5 23 2",
+		"block block blockvol_invis 112.5 -24 7.0 0 0 -68 .5 7 1.5",
+		"block block blockvol_invis 170.0 -86.0 7.0 0 0 110 1.5 15 2.7",
+
+
+
+
+
+
+
 
 
 
 
 		-- church
-		"block blockvol_vis 61 -90.00 27 0 0 -20 .3 2 1",
+		"block block blockvol_invis 61 -90.00 27 0 0 -20 .3 2 1",
 
 		-- truck in building
-		"block blockvol_vis 24.92 -146.93 8.5 0 0 -20 .3 2.9 1.8",
+		"block block blockvol_invis 24.92 -146.93 8.5 0 0 -20 .3 2.9 1.8",
 
 
 
