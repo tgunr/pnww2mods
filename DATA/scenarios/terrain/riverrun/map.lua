@@ -1,6 +1,5 @@
 
 
-
 if(true) then
 	-- content we're going to add
 	local content = 
@@ -102,8 +101,6 @@ if(true) then
 		"place bel6 94.01 -44.26 8.15 0 -4 111 0 0 0 1",
 		"place crate 78.80 -54.30 8.24 0 0 18 0 0 0 0",
 		"place crate 78.60 -58.40 8.03 0 3 25 0 0 0 0",
-		"place crate 78.60 -58.40 9.04 0 3 15 0 0 0 0",
-		"place oildrums_outside 75.50 -54.70 8.05 0 0 0 0 0 0 1",
 		"place bel3 89.02 -73.61 8.12 0 0 200 0 0 0 0",
 		"place vinbarn1 53.55 -53.11 8.24 0 0 20 0 0 0 0",
 		"place bel1 37.09 -53.88 8.03 0 0 200 0 0 0 0",
@@ -113,7 +110,7 @@ if(true) then
 		"place bel6 7.29 -61.58 8.37 0 0 114 0 0 0 1",
 		"place citybild1 -14.22 -90.11 8.35 0 0 290 0 0 0 0",
 		"place bel4 -11.69 -94.65 8.46 0 0 106 0 0 0 1",
-		"place instance_hulk1_dam -14.00 -112.00 8.07 11 10 0 0 0 0 0",
+		"place instance_hulk1_dam -14 -108.13 8.25 0 0 30 0 0 0 0",
 		"place wall01 -19.00 -115.10 7.52 0 0 108 0 0 0 0",
 		"place crate -26.35 -128.50 8.28 0 0 20 0 0 0 0",
 		"place crate -26.35 -128.50 9.30 0 0 15 0 0 0 0",
@@ -147,7 +144,6 @@ if(true) then
 		"place truck_dam_outside 63.93 -53.93 8.15 0 0 0 0 0 0 0",
 		"place sandbagwall_outside -16.60 -157.00 7.59 5 0 25 0 0 0 0",
 		"place sandbagwall_outside -12.80 -150.00 7.95 0 -10 20 0 0 0 0",
-		"place oildrums_outside -61.93 -93.93 8.36 0 0 110 0 0 0 0",
 		"place oildrums_outside -59.93 -92.93 8.45 0 0 75 0 0 0 1",
 		"place haystack_outside 112.48 -66.75 8.00 0 0 110 0 0 0 0",
 		"place haystack_outside -94.93 -224.93 15.56 0 0 110 0 0 0 0",
@@ -214,6 +210,11 @@ if(true) then
 		"place ammocrate 60.55 -88.75 27.15 0 0 0 0 0 0 0",
 		"place crate 61.54 -89.90 27.15 0 0 30 0 0 0 0",
 		"place truck_dam_outside 156.29 -16.3 7.3 -10 -5 0 0 0 0 0",
+		"place instance_hulk2_dam 31.26 -57.52 8.0 -10 0 -120 0 0 0 0",
+
+
+
+
 
 
 
