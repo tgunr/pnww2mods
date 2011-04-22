@@ -122,8 +122,6 @@ if(true) then
 		"event bombing2 .10 20000 750 3",
 		"event barrage1 .20 60000 700 10",
 
-		"event onspawn 1 0",
-
 
 		
 		-- areas
@@ -275,14 +273,14 @@ if(true) then
 		-- these are always named
 		-- the lockey is a lockey looked up from the scenario content in the web translation tool
 		-- command name lockey
-		"chat onspawn spawnin.moveout",
+		"chat spawnin spawnin.moveout",
 		
 		-- ADD A HUD ALERT
 		
 		-- these are always named
 		-- the lockey is a lockey looked up from the scenario content in the web translation tool
 		-- command name lockey
-		"alert onspawn spawnin.moveout",
+		"hudalert spawnin spawnin.moveout",
 
 		
 		-- vehicle masks
