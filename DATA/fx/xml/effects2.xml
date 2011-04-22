@@ -788,6 +788,13 @@
       <particleeffect>smokescreenparticle</particleeffect>
 		</emitter>
 	</transformeffect>
+<!-- ===================================================================== -->
+	<transformeffect name = "cratersmoke">
+		<emitter>
+			<fountain>2</fountain>
+			<particleeffect>cratersmokeparticle</particleeffect>
+		</emitter>
+	</transformeffect>
   <!-- ===================================================================== -->
 <!-- ===================================================================== -->
 <!-- ===================================================================== -->
@@ -4029,7 +4036,7 @@
 		<texture>white smoke 2</texture>
 		<alpha>0.0</alpha>
 		<alpha>0.2</alpha>
-		<alpha>0.2.5</alpha>
+		<alpha>0.25</alpha>
 		<alpha>0.15</alpha>
 		<alpha>0.0</alpha>
 		<size>0</size>
@@ -4037,6 +4044,31 @@
 		<size>30</size>
 		<size>45</size>
 		<size>50</size>
+		<time>0</time>
+		<time>3000</time>
+		<time>5000</time>
+		<time>6000</time>
+		<time>8000</time>
+		<rotate>5</rotate>
+		<posvariance>-5 0 0 5 0 0</posvariance>
+		<velvariance>-0.1 -0.2 0 0.1 0.2 0.1</velvariance>
+    <material>smoke</material>
+	</particleeffect>
+<!-- ===================================================================== -->
+		<particleeffect name = "cratersmokeparticle">
+		<number>1</number>
+		<texture>low res smoke1</texture>
+		<texture>black smoke 1</texture>
+		<texture>black smoke 1</texture>
+		<texture>black smoke 2</texture>
+		<alpha>0.0</alpha>
+		<alpha>0.2</alpha>
+		<alpha>0.25</alpha>
+		<size>0</size>
+		<size>3</size>
+		<size>5</size>
+		<size>10</size>
+		<size>15</size>
 		<time>0</time>
 		<time>3000</time>
 		<time>5000</time>
