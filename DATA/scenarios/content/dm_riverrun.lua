@@ -12,33 +12,35 @@ if(true) then
 		-- command,effectname,worldx,worldy,worldz
 		-- SMOKE
 		-- barrels
-		"emitter hulksmoke -25.16 -97.95 9.39",
-		"emitter hulksmoke -29.35 -105.79 9.06",
+		"emitter hulksmoke -25.16 -97.95 8.75",
+		"emitter hulksmoke -29.35 -105.79 8.75",
 		-- craters
-		"emitter cratersmoke 173.40 -38.89 13",
-		"emitter cratersmoke 129.71 -55.96 13",
-		"emitter cratersmoke -45.56 -78.53 13",
-		"emitter cratersmoke 26.02 -82.75 13",
-		"emitter cratersmoke -49.62 -130.94 13",
+		"emitter cratersmoke 173.40 -38.89 8",
+		"emitter cratersmoke 129.71 -55.96 8",
+		"emitter cratersmoke -45.56 -78.53 8",
+		"emitter cratersmoke 26.02 -82.75 8",
+		"emitter cratersmoke -49.62 -130.94 8",
 
 
 
 
 
 		-- smokescreen
-		-- "emitter smokescreen -46.03 -224.78 15.92",
-		-- "emitter smokescreen -1.73 -226.20 16.42",
+		"emitter smokescreen -46.03 -224.78 15.92",
+		"emitter smokescreen -1.73 -226.20 16.42",
+
+		"emitter smokescreen 160.11 86.18 9.15",
+		"emitter smokescreen 106.73 130.54 5.40",
+
+
+
+
+
+
 		-- vehicles
 		"emitter buildingdamagesmoke -28.16 -171.19 3.25",
 		"emitter buildingdamagesmoke 158.6 -16.7 11.25",
 		"emitter buildingdamagesmoke 158.46 -16.93 11",
-		"emitter buildingdamagesmoke 107.60 -29.68 9",
-
-
-
-
-
-
 
 
 
@@ -119,6 +121,8 @@ if(true) then
 		"event bombing1 .10 15000 500 6",
 		"event bombing2 .10 20000 750 3",
 		"event barrage1 .20 60000 700 10",
+
+		"event onspawn 1 0",
 
 
 		
@@ -212,20 +216,20 @@ if(true) then
 		
 		-- anonymous version
 		-- command name filename x y z roll pitch yaw scalex scaley scalez
-		"block block blockvol_invis -25.89 -133.5 8.2 0 0 22 .3 1.7 1",
-		"block block blockvol_invis -18.25 -113 7.5 0 0 20 .3 7.7 3.25",
-		"block block blockvol_invis -4.2 -135.8 8.2 0 0 20 .3 1.2 2",
-		"block block blockvol_invis -72 -98.5 8.1 0 0 110 .3 21 2",
-		"block block blockvol_invis -48.91 -117.6 8.1 0 0 110 .3 1.5 2",
-		"block block blockvol_invis 11.5 -136.02 8 0 0 110 .3 1.9 2",
-		"block block blockvol_invis 8.75 -128.75 8.25 0 0 110 .3 1 1",
-		"block block blockvol_invis 37.5 -149 8.2 0 0 110 .3 1.6 2",
-		"block block blockvol_invis 63.57 -147.67 8.0 0 0 20 8.5 1.6 2.5",
-		"block block blockvol_invis 77.9 -57.5 8.0 0 0 20 .5 3.1 1",
-		"block block blockvol_invis 88.76 -41 8.0 0 0 20 .5 7 2",
-		"block block blockvol_invis 117.0 -55 8.0 0 0 20 .5 23 2",
-		"block block blockvol_invis 112.5 -24 7.0 0 0 -68 .5 7 1.5",
-		"block block blockvol_invis 170.0 -86.0 7.0 0 0 110 1.5 15 2.7",
+		"block block blockvol_vis -25.89 -133.5 8.2 0 0 22 .3 1.7 1",
+		"block block blockvol_vis -18.25 -113 7.5 0 0 20 .3 7.7 3.25",
+		"block block blockvol_vis -4.2 -135.8 8.2 0 0 20 .3 1.2 2",
+		"block block blockvol_vis -72 -98.5 8.1 0 0 110 .3 21 2",
+		"block block blockvol_vis -48.91 -117.6 8.1 0 0 110 .3 1.5 2",
+		"block block blockvol_vis 11.5 -136.02 8 0 0 110 .3 1.9 2",
+		"block block blockvol_vis 8.75 -128.75 8.25 0 0 110 .3 1 1",
+		"block block blockvol_vis 37.5 -149 8.2 0 0 110 .3 1.6 2",
+		"block block blockvol_vis 63.57 -147.67 8.0 0 0 20 8.5 1.6 2.5",
+		"block block blockvol_vis 77.9 -57.5 8.0 0 0 20 .5 3.1 1",
+		"block block blockvol_vis 88.76 -41 8.0 0 0 20 .5 7 2",
+		"block block blockvol_vis 117.0 -55 8.0 0 0 20 .5 23 2",
+		"block block blockvol_vis 112.5 -24 7.0 0 0 -68 .5 7 1.5",
+		"block block blockvol_vis 170.0 -86.0 7.0 0 0 110 1.5 15 2.7",
 
 
 
@@ -238,10 +242,10 @@ if(true) then
 
 
 		-- church
-		"block block blockvol_invis 61 -90.00 27 0 0 -20 .3 2 1",
+		"block block blockvol_vis 61 -90.00 27 0 0 -20 .3 2 1",
 
 		-- truck in building
-		"block block blockvol_invis 24.92 -146.93 8.5 0 0 -20 .3 2.9 1.8",
+		"block block blockvol_vis 24.92 -146.93 8.5 0 0 -20 .3 2.9 1.8",
 
 
 
@@ -271,14 +275,14 @@ if(true) then
 		-- these are always named
 		-- the lockey is a lockey looked up from the scenario content in the web translation tool
 		-- command name lockey
-		"chat spawnin spawnin.moveout",
+		"chat onspawn spawnin.moveout",
 		
 		-- ADD A HUD ALERT
 		
 		-- these are always named
 		-- the lockey is a lockey looked up from the scenario content in the web translation tool
 		-- command name lockey
-		"hudalert spawnin spawnin.moveout",
+		"alert onspawn spawnin.moveout",
 
 		
 		-- vehicle masks
