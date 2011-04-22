@@ -61,7 +61,7 @@ if(true) then
 		-- these are always named
 		-- the lockey is a lockey looked up from the scenario content in the web translation tool
 		-- command name lockey
-		"hudalert spawnin spawnin.moveout",
+		"alert spawnin spawnin.moveout",
 		
 		-- PLACE AN OBJECT IN THE TERRAIN --
 		
