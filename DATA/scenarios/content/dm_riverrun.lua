@@ -8,7 +8,8 @@ if(true) then
 		-- command,path
 		"include scenarios/terrain/riverrun/map.lua",
 		
-		-- fx emitters
+		-- FX EMMITERS
+		
 		-- command,effectname,worldx,worldy,worldz
 		-- SMOKE
 		-- barrels
@@ -20,44 +21,24 @@ if(true) then
 		"emitter cratersmoke -45.56 -78.53 8",
 		"emitter cratersmoke 26.02 -82.75 8",
 		"emitter cratersmoke -49.62 -130.94 8",
-
-
-
-
-
 		-- smokescreen
 		"emitter smokescreen -46.03 -224.78 15.92",
 		"emitter smokescreen -1.73 -226.20 16.42",
-
 		"emitter smokescreen 160.11 86.18 9.15",
 		"emitter smokescreen 106.73 130.54 5.40",
-
-
-
-
-
-
 		-- vehicles
 		"emitter buildingdamagesmoke -28.16 -171.19 3.25",
 		"emitter buildingdamagesmoke 158.6 -16.7 11.25",
 		"emitter buildingdamagesmoke 158.46 -16.93 11",
-
-
-
 		-- FIRES
 		"emitter vehiclefire 107.62 -29.90 9.36",
 		"emitter vehiclefire 157.34 -16.48 8.08",
 		"emitter vehiclefire 31.39 -57.25 9.73",
 
-
-
-
-
-
+		-- SOUNDS
 		
-		-- absolute sounds
+		-- ABSOLUTE SOUNDS
 		-- command,name,filename,0,0,0,minvol, maxvol
-		
 		"sound planes sounds/scenarios/ambient_aircraft_squadron1.wav .2 0",
 		"sound planes sounds/scenarios/ambient_aircraft_squadron2.wav .3 0",
 		"sound bombs sounds/scenarios/ambient_bombs_distantshells1.wav .4 0",
@@ -75,15 +56,12 @@ if(true) then
 		"sound wind sounds/ambience/gust1.wav .9 0",
 		"sound wind sounds/ambience/gust2.wav .9 0",
 
-
-		-- positional sounds
+		-- POSITIONAL SOUNDS
 		-- command name filename volume loop x y z mindist maxdist
 		"sound sounds/tank_burn.wav 1 1 155 -16 9 5 30",
 		"sound sounds/tank_burn.wav 1 1 109 -29 9 5 30",
 		"sound sounds/bedford/idle.wav 0.5 1 -29 -149 10 5 30",
 		"sound sounds/tank_burn.wav 1 1 29 -57 9 5 30",
-
-		
 		-- a line of bombs (as from a plane)
 		-- command,name,ammo,worldx1,worldy1,worldz1,worldx2,worldy2,worldz2
 		"bombingrun bombing1 gp250 -184.65 -279.50 22.84 46.61 -297.32 22.54",
@@ -92,9 +70,7 @@ if(true) then
 		"bombingrun bombing1 gp250 -69.51 80.01 6.21 -177.68 11.25 6.21",
 		"bombingrun bombing2 gp40 33.14 -165.89 7.68 6.27 -182.85 2.72",
 		"bombingrun bombing2 gp40 212.53 -134.06 19.33 163.59 -134.66 4.72",
-
-		
-		-- a area effect bombing
+		-- an area effect bombing
 		-- the x,y,z is the center of the barrage
 		-- the distance is the radius of a circle around the center to randomly fire off the ammo in
 		-- command name ammo x y z distance
@@ -103,27 +79,24 @@ if(true) then
 		"barrage barrage1 gp40 -266.85 -36.03 5.26 50",
 
 		
-		-- triggers
+		-- TRIGGERS
+		
 		-- commandname,pctg chance each second,wait in seconds
-		"event planes .40 120000",
-		"event bombs .10 20000",
-		"event explosions .20 25000",
-		"event guns1 .15 10000",
-		"event guns2 .20 30000",
-		"event wind .5 5000",
+		-- "event planes .40 120000",
+		-- "event bombs .10 20000",
+		-- "event explosions .20 25000",
+		-- "event guns1 .15 10000",
+		-- "event guns2 .20 30000",
+		-- "event wind .5 5000",
 		-- "event bombing1 .10 15000 500 6",
 		-- "event bombing2 .10 20000 750 3",
 		-- "event barrage1 .20 60000 700 10",
 
 		
-		-- areas
+		-- AREAS
 		-- command,scripthandler,worldx,worldy,worldz
-		"area OnBoundary 127.32 15.89 8.39",
-		"area OnBoundary 119.71 8.58 8.72",
-		"area OnBoundary 113.75 -1.80 8.5",
-		"area OnBoundary 101.82 -30.57 8.5",
-
 		-- "area OnBoundary 89.20 -11.75 8.72",
+		-- bounding box
 		"area boundingbox OnBoundary 72.14 -19.26 8.72",
 		"area boundingbox OnBoundary 70.13 -25.14 8.72",
 		"area boundingbox OnBoundary 52.20 -23.69 8.06",
@@ -151,12 +124,24 @@ if(true) then
 		"area boundingbox OnBoundary 226.64 -33.89 6.81",
 		"area boundingbox OnBoundary 236.02 -13.51 7.30",
 		"area boundingbox OnBoundary 130.67 14.12 8.45",
-
+		-- church entry
 		"area churchentry OnTrigger 69.31 -94.28 8.56",
 		"area churchentry OnTrigger 65.96 -109.12 8.91",
 		"area churchentry OnTrigger 53.12 -102.63 8.56",
 		"area churchentry OnTrigger 57.99 -88.71 8.56",
+		-- directions to axis spawn 1
+		"area toaxisspawn OnTrigger -21.23 -148.85 9.48",		
+		"area toaxisspawn OnTrigger -17.12 -137.68 9.48",
+		"area toaxisspawn OnTrigger -8.90 -140.18 9.48",
+		"area toaxisspawn OnTrigger -13.67 -150.27 9.48",	
 
+		-- directions to allied spawn 1
+		"area toalliedspawn OnTrigger 206.57 -6.40 8.17",	
+		"area toalliedspawn OnTrigger 199.36 -22.17 8.17",	
+		"area toalliedspawn OnTrigger 178.45 -19.22 8.17",	
+		"area toalliedspawn OnTrigger 176.68 1.85 8.17",			
+		
+		
 		
 		-- spawn points
 		-- command,spawngroup,worldx,worldy,worldz,yaw
@@ -165,10 +150,8 @@ if(true) then
 		"spawn axistroops 210.55 -15.95 7.81 -2.20",
 		"spawn axistroops 216.89 -17.83 7.80 -2.29",
 
+		-- CLONES --
 
-
-		-- ADD CLONE VEHICLE TO THE WORLD --
-		
 		-- named version
 		-- command name typeid x y z roll pitch yaw
 		-- "clone bedford1 bedford -20.11 -156.51 8.77 0 0 90",
@@ -179,14 +162,10 @@ if(true) then
 		"clone bedford -19.75 -153.93 9.05 2 0 0",
 		"clone bedford -27.34 -150.10 8.9 4 0 285",
 		"clone bedford -35.21 -147.32 8.85 6 2 285",
-
 		"clone oplbltz 192.79 -31.45 8.5 5 -4.25 205",
 		"clone oplbltz 176.32 -20.12 8.55 0 0 180",
 
-
-
-	
-		-- ADD A BLOCKING VOLUME TO THE WORLD --
+		-- BLOCKING VOLUMES --
 		
 		-- the scale parameters are from 0 to some real number
 		-- 1 means no scale, 2 means twice the size and .5 means
@@ -236,6 +215,8 @@ if(true) then
 		-- command name lockey
 		"alert onspawn spawnin.moveout",
 		"alert churchentry churchentry",
+		"alert toaxisspawn toaxisspawn",
+		"alert toalliedspawn toalliedspawn",
 
 		
 		-- vehicle masks
