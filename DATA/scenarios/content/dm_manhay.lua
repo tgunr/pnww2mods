@@ -109,14 +109,16 @@ if(true) then
 
 
 
-		"area boundingbox OnBoundary 273193.44 3017038.87 481.67",
-		"area boundingbox OnBoundary 273194.88 3016924.10 481.00",
-		"area boundingbox OnBoundary 273008.03 3016923.33 481.00",
-		"area boundingbox OnBoundary 273007.94 3016909.77 481.54",
-		"area boundingbox OnBoundary 272917.06 3016911.96 481.00",
-		"area boundingbox OnBoundary 272876.21 3016953.86 481.00",
-		"area boundingbox OnBoundary 272877.96 3017035.83 481.24",
-		"area boundingbox OnBoundary 272955.46 3017035.81 481.00",
+		"area boundingbox OnBoundary 272955.44,3017114.22,481.00",
+		"area boundingbox OnBoundary 273091.53,3017111.58,481.00",
+		"area boundingbox OnBoundary 273196.44,3017005.89,481.00",
+		"area boundingbox OnBoundary 273194.88,3016924.10,481.00",
+		"area boundingbox OnBoundary 273008.03,3016923.33,481.00",
+		"area boundingbox OnBoundary 273007.94,3016909.77,481.00",
+		"area boundingbox OnBoundary 272917.06,3016911.96,481.00",
+		"area boundingbox OnBoundary 272876.21,3016953.86,481.00",
+		"area boundingbox OnBoundary 272877.96,3017035.83,481.00",
+		"area boundingbox OnBoundary 272955.46,3017035.81,481.00",
 
 
 		-- directions to allied spawn
