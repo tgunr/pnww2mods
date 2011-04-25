@@ -183,12 +183,13 @@ if(true) then
 
 		-- Allied tank types --		
 
-		"vehicle alliedtanks 1 2 4 0",
-		"vehicle alliedtanks 3 2 4 0",
+		"vehicle alliedtanks m4a2",
+		"vehicle alliedtanks m10",
 
 		-- German tank types --
 
-		"vehicle axistanks 4 2 4 0",
+		"vehicle axistanks pzivg",
+		"vehicle axistanks stug3g",
 		
 
 		-- alternatively you can use a vehicle's string id 
