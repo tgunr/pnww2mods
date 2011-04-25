@@ -97,38 +97,93 @@ if(true) then
 		"event bombing1 .15 30000 500 6",
 		-- "event bombing2 .18 20000 750 3",
 		"event barrage1 .10 30000 650 7",
+		
 
 
 		
 		-- areas
 		-- command,scripthandler,worldx,worldy,worldz
-		"area OnBoundary 272955.44 3017114.22 481.00",
-		"area OnBoundary 272989.81 3017119.77 481.00",
-		"area OnBoundary 273076.59 3017139.48 480.53",
+		-- "area boundingbox OnBoundary 272955.44 3017114.22 481.00",
+		-- "area boundingbox OnBoundary 272989.81 3017119.77 481.00",
+		-- "area boundingbox OnBoundary 273076.59 3017139.48 480.53",
 
 
 
-		"area OnBoundary 273193.44 3017038.87 481.67",
-		"area OnBoundary 273194.88 3016924.10 481.00",
-		"area OnBoundary 273008.03 3016923.33 481.00",
-		"area OnBoundary 273007.94 3016909.77 481.54",
-		"area OnBoundary 272917.06 3016911.96 481.00",
-		"area OnBoundary 272876.21 3016953.86 481.00",
-		"area OnBoundary 272877.96 3017035.83 481.24",
-		"area OnBoundary 272955.46 3017035.81 481.00",
+		"area boundingbox OnBoundary 273193.44 3017038.87 481.67",
+		"area boundingbox OnBoundary 273194.88 3016924.10 481.00",
+		"area boundingbox OnBoundary 273008.03 3016923.33 481.00",
+		"area boundingbox OnBoundary 273007.94 3016909.77 481.54",
+		"area boundingbox OnBoundary 272917.06 3016911.96 481.00",
+		"area boundingbox OnBoundary 272876.21 3016953.86 481.00",
+		"area boundingbox OnBoundary 272877.96 3017035.83 481.24",
+		"area boundingbox OnBoundary 272955.46 3017035.81 481.00",
 
 
+		-- directions to allied spawn
+		"area toalliedspawn OnTrigger 273072.68 3017105.01 481.04",
+		"area toalliedspawn OnTrigger 273083.87 3017104.83 481.04",
+		"area toalliedspawn OnTrigger 273084.30 3017091.38 481.04",
+		"area toalliedspawn OnTrigger 273064.71 3017091.61 481.04",
+		"area toalliedspawn OnTrigger 273065.58 3017086.03 481.00",
+		"area toalliedspawn OnTrigger 273091.97 3017086.82 481.00",
+		"area toalliedspawn OnTrigger 273101.01 3017097.40 481.00",
+		"area toalliedspawn OnTrigger 273089.52 3017110.12 481.004",
+		"area toalliedspawn OnTrigger 273073.21 3017110.48 481.00",
+		
+		-- directions to axis spawn
+		"area toaxisspawn OnTrigger 272896.87 3016931.75 481.02",
+		"area toaxisspawn OnTrigger 272892.58 3016929.13 481.00",
+		"area toaxisspawn OnTrigger 272872.11 3016943.18 481.00",
+		"area toaxisspawn OnTrigger 272890.21 3016961.04 481.00",
+		"area toaxisspawn OnTrigger 272907.17 3016945.80 481.00",
+		"area toaxisspawn OnTrigger 272903.36 3016940.54 481.00",
+		"area toaxisspawn OnTrigger 272890.03 3016954.54 481.04",		
+		"area toaxisspawn OnTrigger 272881.98 3016946.62 481.19",
+
+																
 
 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
-
-
-
-
-		-- "area OnBoundary 272765.70 3017002.75 481.00",
 		
 		-- "area barrage1 na -0.96 -38.87 8.25",
 		-- "area barrage1 na 69.38 -143.93 8.13",
+
+
+		-- ALERTS AND CHATS
+		-- ADD A CHAT TO THE CHAT WINDOW
+		
+		-- these are always named
+		-- the lockey is a lockey looked up from the scenario content in the web translation tool
+		-- command name lockey
+		--"chat spawnin spawnin.moveout",
+		
+		-- ADD A HUD ALERT
+		
+		-- these are always named
+		-- the lockey is a lockey looked up from the scenario content in the web translation tool
+		-- command name lockey
+		"alert onspawn spawnin.moveout",
+		"alert churchentry churchentry",
+		"alert toaxisspawn toaxisspawn",
+		"alert toalliedspawn toalliedspawn",
+
+
+
+
 		
 		-- spawn points
 		-- command,spawngroup,worldx,worldy,worldz,yaw
