@@ -1,9 +1,18 @@
 <?xml version='1.0'?>
 <content type="3">
-  <body>test</body>
+  <name>dm_riverrun</name>
+  <body>onspawn.moveout = Move Out Soldier!
+churchenter = The church tower is a perfect spot for snipers. Watch Out!</body>
+  <bodyloc>true</bodyloc>
   <brief>test</brief>
-  <config>dm_riverrun</config>
+  <duration>30</duration>
+  <fog>3</fog>
+  <hour>5</hour>
+  <kills>50</kills>
+  <rules>deathmatch</rules>
   <team1>3</team1>
   <team2>4</team2>
+  <terrain>riverrun</terrain>
   <title>River Run Fire Fight</title>
+  <weather>2</weather>
 </content>
