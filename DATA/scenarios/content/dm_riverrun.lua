@@ -83,13 +83,6 @@ if(true) then
 		"sound sounds/bedford/idle.wav 0.5 1 -29 -149 10 5 30",
 		"sound sounds/tank_burn.wav 1 1 29 -57 9 5 30",
 
-
-
-
-
-
-
-
 		
 		-- a line of bombs (as from a plane)
 		-- command,name,ammo,worldx1,worldy1,worldz1,worldx2,worldy2,worldz2
@@ -118,10 +111,9 @@ if(true) then
 		"event guns1 .15 10000",
 		"event guns2 .20 30000",
 		"event wind .5 5000",
-		"event bombing1 .10 15000 500 6",
-		"event bombing2 .10 20000 750 3",
-		"event barrage1 .20 60000 700 10",
-
+		-- "event bombing1 .10 15000 500 6",
+		-- "event bombing2 .10 20000 750 3",
+		-- "event barrage1 .20 60000 700 10",
 
 		
 		-- areas
@@ -131,37 +123,40 @@ if(true) then
 		"area OnBoundary 113.75 -1.80 8.5",
 		"area OnBoundary 101.82 -30.57 8.5",
 
-
-
-
 		-- "area OnBoundary 89.20 -11.75 8.72",
-		"area OnBoundary 72.14 -19.26 8.72",
-		"area OnBoundary 70.13 -25.14 8.72",
-		"area OnBoundary 52.20 -23.69 8.06",
-		"area OnBoundary 44.19 -18.79 8.07",
-		"area OnBoundary -6.22 -27.59 8.07",
-		"area OnBoundary -8.91 -25.96 8.07",
-		"area OnBoundary -34.50 -32.33 8.08",
-		"area OnBoundary -40.21 -34.92 8.09",
-		"area OnBoundary -50.11 -45.41 8.09",
-		"area OnBoundary -85.21 -95.83 8.99",
-		"area OnBoundary -90.96 -112.08 8.97",
-		"area OnBoundary -89.51 -125.04 8.01",
-		"area OnBoundary -88.01 -134.17 7.51",
-		"area OnBoundary -87.32 -148.08 8.18",
-		"area OnBoundary -47.24 -159.94 7.19",
-		"area OnBoundary -24.50 -160.02 8.18",
-		"area OnBoundary -26.84 -167.96 8.84",
-		"area OnBoundary -20.96 -167.33 8.84",
-		"area OnBoundary -12.62 -149.44 10.08",
-		"area OnBoundary 58.00 -172.00 8.10",
-		"area OnBoundary 94.96 -158.02 8.10",
-		"area OnBoundary 163.22 -117.42 7.30",
-		"area OnBoundary 188.94 -93.27 6.46",
-		"area OnBoundary 213.55 -51.72 6.64",
-		"area OnBoundary 226.64 -33.89 6.81",
-		"area OnBoundary 236.02 -13.51 7.30",
-		"area OnBoundary 130.67 14.12 8.45",
+		"area boundingbox OnBoundary 72.14 -19.26 8.72",
+		"area boundingbox OnBoundary 70.13 -25.14 8.72",
+		"area boundingbox OnBoundary 52.20 -23.69 8.06",
+		"area boundingbox OnBoundary 44.19 -18.79 8.07",
+		"area boundingbox OnBoundary -6.22 -27.59 8.07",
+		"area boundingbox OnBoundary -8.91 -25.96 8.07",
+		"area boundingbox OnBoundary -34.50 -32.33 8.08",
+		"area boundingbox OnBoundary -40.21 -34.92 8.09",
+		"area boundingbox OnBoundary -50.11 -45.41 8.09",
+		"area boundingbox OnBoundary -85.21 -95.83 8.99",
+		"area boundingbox OnBoundary -90.96 -112.08 8.97",
+		"area boundingbox OnBoundary -89.51 -125.04 8.01",
+		"area boundingbox OnBoundary -88.01 -134.17 7.51",
+		"area boundingbox OnBoundary -87.32 -148.08 8.18",
+		"area boundingbox OnBoundary -47.24 -159.94 7.19",
+		"area boundingbox OnBoundary -24.50 -160.02 8.18",
+		"area boundingbox OnBoundary -26.84 -167.96 8.84",
+		"area boundingbox OnBoundary -20.96 -167.33 8.84",
+		"area boundingbox OnBoundary -12.62 -149.44 10.08",
+		"area boundingbox OnBoundary 58.00 -172.00 8.10",
+		"area boundingbox OnBoundary 94.96 -158.02 8.10",
+		"area boundingbox OnBoundary 163.22 -117.42 7.30",
+		"area boundingbox OnBoundary 188.94 -93.27 6.46",
+		"area boundingbox OnBoundary 213.55 -51.72 6.64",
+		"area boundingbox OnBoundary 226.64 -33.89 6.81",
+		"area boundingbox OnBoundary 236.02 -13.51 7.30",
+		"area boundingbox OnBoundary 130.67 14.12 8.45",
+
+		"area churchentry OnTrigger 69.31 -94.28 8.56",
+		"area churchentry OnTrigger 65.96 -109.12 8.91",
+		"area churchentry OnTrigger 53.12 -102.63 8.56",
+		"area churchentry OnTrigger 57.99 -88.71 8.56",
+
 		
 		-- spawn points
 		-- command,spawngroup,worldx,worldy,worldz,yaw
@@ -187,17 +182,6 @@ if(true) then
 
 		"clone oplbltz 192.79 -31.45 8.5 5 -4.25 205",
 		"clone oplbltz 176.32 -20.12 8.55 0 0 180",
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -229,16 +213,6 @@ if(true) then
 		"block block blockvol_vis 112.5 -24 7.0 0 0 -68 .5 7 1.5",
 		"block block blockvol_vis 170.0 -86.0 7.0 0 0 110 1.5 15 2.7",
 
-
-
-
-
-
-
-
-
-
-
 		-- church
 		"block block blockvol_vis 61 -90.00 27 0 0 -20 .3 2 1",
 
@@ -247,40 +221,21 @@ if(true) then
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
+		-- ALERTS AND CHATS
 		-- ADD A CHAT TO THE CHAT WINDOW
 		
 		-- these are always named
 		-- the lockey is a lockey looked up from the scenario content in the web translation tool
 		-- command name lockey
-		"chat spawnin spawnin.moveout",
+		--"chat spawnin spawnin.moveout",
 		
 		-- ADD A HUD ALERT
 		
 		-- these are always named
 		-- the lockey is a lockey looked up from the scenario content in the web translation tool
 		-- command name lockey
-		"hudalert spawnin spawnin.moveout",
+		"alert onspawn spawnin.moveout",
+		"alert churchentry churchentry",
 
 		
 		-- vehicle masks
