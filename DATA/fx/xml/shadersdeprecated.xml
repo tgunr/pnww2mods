@@ -193,6 +193,15 @@
     <uniform name="treepos" type="float_vec3"></uniform>
   </program>
   <!--=================================================================-->
+  <program name ="BranchDepth">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/none/branchdepth.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/trees/none/branchdepth.frag</fragmentshader>
+    </shaders>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="treepos" type="float_vec3"></uniform>
+  </program>
+  <!--=================================================================-->
   <program name ="BranchShaderNormal">
     <shaders>
       <vertexshader>fx/shaders/GLSL/trees/normal/branch.vert</vertexshader>
@@ -221,6 +230,16 @@
     <uniform name="diffuseScale" type="float"></uniform>
   </program>
   <!--=================================================================-->
+  <program name ="FrondDepth">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/none/fronddepth.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/trees/none/fronddepth.frag</fragmentshader>
+    </shaders>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="treepos" type="float_vec3"></uniform>
+    <uniform name="diffuse" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
   <program name ="LeafShader">
     <shaders>
       <vertexshader>fx/shaders/GLSL/trees/none/leaf.vert</vertexshader>
@@ -233,6 +252,17 @@
     <uniform name="treepos" type="float_vec3"></uniform>
     <uniform name="cameraangle" type="float_vec2"></uniform>
     <uniform name="diffuseScale" type="float"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="LeafDepth">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/none/leafdepth.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/trees/none/leafdepth.frag</fragmentshader>
+    </shaders>
+    <uniform name="diffuse" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="treepos" type="float_vec3"></uniform>
+    <uniform name="cameraangle" type="float_vec2"></uniform>
   </program>
   <!--=================================================================-->
   <program name ="LeafShaderNormal">

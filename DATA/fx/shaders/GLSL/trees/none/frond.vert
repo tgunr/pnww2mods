@@ -11,7 +11,6 @@ void main()
 	vec4 position = vec4(gl_Vertex.x, gl_Vertex.y, gl_Vertex.z, 1.0);
 		
 	vec3 normal;
-	vec2 diffusecoords = gl_MultiTexCoord0.xy;
 			
 	position.xy = vec2(dot(rotation.yxw, position.xyz), dot(rotation.zyw, position.xyz));
 	normal.xy = vec2(dot(rotation.yxw, gl_Normal), dot(rotation.zyw, gl_Normal));
