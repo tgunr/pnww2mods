@@ -209,7 +209,9 @@ end
 function OnTrigger(handler)
 	if(handler.state == tutorial.THS_EVENT_IN) then
 		-- try to run any events associated with this area
-		scenario.manager:RunEvent(handler.name);
+		scenario.manager:RunObject(handler.name, 1);
+	else
+		scenario.manager:RunObject(handler.name, 0);
 	end
 	
 	return 1;
