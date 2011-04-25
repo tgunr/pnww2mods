@@ -112,10 +112,10 @@ if(true) then
 		
 		-- anonymous version
 		-- command scripthandler x y z
-		"area OnBoundary 294148.65 2978115.09 274.00",
-		"area OnBoundary 292250.70 2978133.30 274.00",
-		"area OnBoundary 292220.53 2976287.02 274.00",
-		"area OnBoundary 294165.63 2976271.93 274.00",
+		"area boundingbox OnBoundary 294148.65 2978115.09 274.00",
+		"area boundingbox OnBoundary 292250.70 2978133.30 274.00",
+		"area boundingbox OnBoundary 292220.53 2976287.02 274.00",
+		"area boundingbox OnBoundary 294165.63 2976271.93 274.00",
 				
 		-- ADD A SPAWN POINT FOR VEHICLES AND TROOPS
 		
