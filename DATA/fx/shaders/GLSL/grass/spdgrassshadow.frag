@@ -41,5 +41,5 @@ void main()
 
 	color.rgb *= s1.rgb;
 
-    gl_FragColor = color;
+    gl_FragColor = fogThis(color);
 }
