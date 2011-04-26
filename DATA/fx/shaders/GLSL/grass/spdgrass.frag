@@ -7,7 +7,6 @@ varying vec3 eyepos;
 
 vec4 fogThis(in vec4);
 void lightGetAmbientDiffuse(out vec4 amb, out vec4 dif);
-void lightSetVertexPos(in vec3 p);
 
 void main()
 {
