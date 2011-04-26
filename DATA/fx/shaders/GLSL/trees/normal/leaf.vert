@@ -18,7 +18,7 @@ void main()
 	vec3 normal = gl_Normal;
 	vec3 tangent = gl_MultiTexCoord3.xyz;
 	
-	vec4 position = gl_MultiTexCoord1;;
+	vec4 position = gl_MultiTexCoord1;
 	position.xy = vec2(dot(rotation.yxw, position.xyz), dot(rotation.zyw, position.xyz));
 			
     gl_TexCoord[1].x = dimming * diffuseScale;

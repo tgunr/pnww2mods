@@ -12,9 +12,8 @@ void main()
 	float dimming = gl_MultiTexCoord2.w;
 	
 	int corner = int(gl_Vertex.w);
-	int windangleindex = int(gl_MultiTexCoord2.z);
 	
-	vec4 position = gl_MultiTexCoord1;;
+	vec4 position = gl_MultiTexCoord1;
 	position.xy = vec2(dot(rotation.yxw, position.xyz), dot(rotation.zyw, position.xyz));
 	
 	vec3 normal = gl_Normal;
