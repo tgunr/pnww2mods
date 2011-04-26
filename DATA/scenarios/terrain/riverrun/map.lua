@@ -211,6 +211,8 @@ if(true) then
 		"place crate 61.54 -89.90 27.15 0 0 30 0 0 0 0",
 		"place truck_dam_outside 156.29 -16.3 7.3 -10 -5 0 0 0 0 0",
 		"place instance_hulk2_dam 31.26 -57.52 8.0 -10 0 -120 0 0 0 0",
+		"place oildrums_outside 37.89 -147.87 8.2 0 0 0 0 0 0 1",
+		
 
 
 
