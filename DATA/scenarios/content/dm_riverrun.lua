@@ -93,37 +93,76 @@ if(true) then
 		-- "event barrage1 .20 60000 700 10",
 
 		
-		-- AREAS
-		-- command,scripthandler,worldx,worldy,worldz
-		-- "area OnBoundary 89.20 -11.75 8.72",
-		-- bounding box
-		"area boundingbox OnBoundary 72.14 -19.26 8.72",
-		"area boundingbox OnBoundary 70.13 -25.14 8.72",
-		"area boundingbox OnBoundary 52.20 -23.69 8.06",
-		"area boundingbox OnBoundary 44.19 -18.79 8.07",
-		"area boundingbox OnBoundary -6.22 -27.59 8.07",
-		"area boundingbox OnBoundary -8.91 -25.96 8.07",
-		"area boundingbox OnBoundary -34.50 -32.33 8.08",
-		"area boundingbox OnBoundary -40.21 -34.92 8.09",
-		"area boundingbox OnBoundary -50.11 -45.41 8.09",
-		"area boundingbox OnBoundary -85.21 -95.83 8.99",
-		"area boundingbox OnBoundary -90.96 -112.08 8.97",
-		"area boundingbox OnBoundary -89.51 -125.04 8.01",
-		"area boundingbox OnBoundary -88.01 -134.17 7.51",
-		"area boundingbox OnBoundary -87.32 -148.08 8.18",
-		"area boundingbox OnBoundary -47.24 -159.94 7.19",
-		"area boundingbox OnBoundary -24.50 -160.02 8.18",
-		"area boundingbox OnBoundary -26.84 -167.96 8.84",
-		"area boundingbox OnBoundary -20.96 -167.33 8.84",
-		"area boundingbox OnBoundary -12.62 -149.44 10.08",
-		"area boundingbox OnBoundary 58.00 -172.00 8.10",
-		"area boundingbox OnBoundary 94.96 -158.02 8.10",
-		"area boundingbox OnBoundary 163.22 -117.42 7.30",
-		"area boundingbox OnBoundary 188.94 -93.27 6.46",
-		"area boundingbox OnBoundary 213.55 -51.72 6.64",
-		"area boundingbox OnBoundary 226.64 -33.89 6.81",
-		"area boundingbox OnBoundary 236.02 -13.51 7.30",
-		"area boundingbox OnBoundary 130.67 14.12 8.45",
+-- play area boundary
+-- boundary name x y z
+        "boundary  playarea 123.50 16.88 8.81",
+		"boundary  playarea 119.96 7.25 8.81",
+		"boundary  playarea 117.94 6.58 8.81",
+		"boundary  playarea 103.32 -30.96 8.81",
+		"boundary  playarea 72.26 -18.62 8.13",
+		"boundary  playarea 44.86 -17.87 8.62",
+		"boundary  playarea 14.04 -22.06 7.96",
+		"boundary  playarea -40.83 -33.68 9.94",
+		"boundary  playarea -61.39 -60.51 9.28",
+		"boundary  playarea -84.86 -96.73 9.28",
+		"boundary  playarea -93.22 -116.15 8.78",
+		"boundary  playarea -86.72 -148.06 8.12",
+		"boundary  playarea -47.49 -160.09 8.12",
+		"boundary  playarea -24.34 -160.30 8.94",
+		"boundary  playarea -25.94 -167.04 8.94",
+		"boundary  playarea -21.34 -167.12 8.94",
+		"boundary  playarea -16.20 -156.55 8.29",
+		"boundary  playarea -12.32 -149.09 10.60",
+		"boundary  playarea 58.91 -171.27 8.45",
+		"boundary  playarea 95.91 -157.52 8.11",
+		"boundary  playarea 162.80 -117.61 7.44",
+		"boundary  playarea 188.78 -94.16 7.10",
+		"boundary  playarea 213.74 -51.82 6.77",
+		"boundary  playarea 236.67 -12.60 7.58",
+		"boundary  playarea 211.11 -6.05 8.25",
+		"boundary  playarea 132.75 14.76 9.53",
+		
+		
+		
+
+
+-- blocking volume x
+-- block name x1 y1 z1 x2 y2 z2 thickness height
+
+        "block 115.87 -26.77 9.13 104.61 -22.48 9.13 .5 5",
+        "block 110.22 -43.30 9.13 108.01 -49.00 9.13 .5 5",
+        "block 118.74 -46.93 9.29 118.07 -49.31 9.29 .5 5",
+		"block 113.11 -64.25 9.14 111.41 -69.99 9.14 .5 5",
+		"block 86.81 -35.48 8.65 87.71 -33.34 8.65 .5 5",
+		"block 87.93 -39.84 9.03 86.42 -44.80 9.03 .5 5",
+		"block 79.63 -56.51 8.88 78.30 -59.16 8.88 .5 5",
+		-- problem
+		"block 160.19 -84.15 9.05 192.00 -91.65 8.39 .5 20",
+		"block 72.00 -149.67 9.21 63.92 -146.79 9.21 .5 5",
+		"block 55.07 -148.98 9.40 56.09 -143.18 9.40 .5 5",
+		"block 40.01 -149.97 8.88 36.44 -148.25 8.88 .5 5",
+		"block 27.60 -149.99 10.20 25.01 -143.62 10.20 1 5",
+		"block 14.39 -137.70 8.91 10.16 -135.92 8.91 .5 5",
+		"block 10.79 -129.29 9.39 8.11 -128.38 9.39 .5 5",
+		"block -4.19 -133.01 9.36 -5.21 -135.98 9.36 .5 5",
+		"block -16.14 -109.44 9.72 -15.41 -106.91 9.72 .5 5",
+		"block -25.06 -130.99 8.56 -26.12 -134.46 8.56 .5 5",
+		"block -42.03 -109.82 9.05 -64.68 -101.46 9.05 .5 5",
+		"block -70.64 -100.33 9.24 -87.29 -95.49 9.24 .5 5",
+		"block -51.12 -116.98 9.22 -46.69 -118.53 9.05 .5 5",
+		"block 59.69 -86.42 28.86 62.89 -93.85 28.86 .5 5",
+		"block 128.77 -20.17 8.10 127.36 -24.06 8.10 .5 5",
+		"block 128.62 -25.49 8.49 125.71 -28.49 8.49 .5 5",
+		
+		
+		
+		
+		
+		
+
+
+
+ -- Trigger Areas
 		-- church entry
 		"area churchentry OnTrigger 69.31 -94.28 8.56",
 		"area churchentry OnTrigger 65.96 -109.12 8.91",
@@ -141,7 +180,7 @@ if(true) then
 		"area toalliedspawn OnTrigger 178.45 -19.22 8.17",	
 		"area toalliedspawn OnTrigger 176.68 1.85 8.17",			
 		
-		
+-- SPAWNS		
 		
 		-- spawn points
 		-- command,spawngroup,worldx,worldy,worldz,yaw
@@ -150,7 +189,7 @@ if(true) then
 		"spawn axistroops 210.55 -15.95 7.81 -2.20",
 		"spawn axistroops 216.89 -17.83 7.80 -2.29",
 
-		-- CLONES --
+-- CLONES --
 
 		-- named version
 		-- command name typeid x y z roll pitch yaw
@@ -164,41 +203,6 @@ if(true) then
 		"clone bedford -35.21 -147.32 8.85 6 2 285",
 		"clone oplbltz 192.79 -31.45 8.5 5 -4.25 205",
 		"clone oplbltz 176.32 -20.12 8.55 0 0 180",
-
-		-- BLOCKING VOLUMES --
-		
-		-- the scale parameters are from 0 to some real number
-		-- 1 means no scale, 2 means twice the size and .5 means
-		-- half the size, etc...
-		
-		-- named version
-		-- command name filename x y z roll pitch yaw scalex scaley scalez
-		-- "block block1 blockvolume 273239.41 3016934.89 481 0 0 90",
-		
-		-- anonymous version
-		-- command name filename x y z roll pitch yaw scalex scaley scalez
-		"block block blockvol_vis -25.89 -133.5 8.2 0 0 22 .3 1.7 1",
-		"block block blockvol_vis -18.25 -113 7.5 0 0 20 .3 7.7 3.25",
-		"block block blockvol_vis -4.2 -135.8 8.2 0 0 20 .3 1.2 2",
-		"block block blockvol_vis -72 -98.5 8.1 0 0 110 .3 21 2",
-		"block block blockvol_vis -48.91 -117.6 8.1 0 0 110 .3 1.5 2",
-		"block block blockvol_vis 11.5 -136.02 8 0 0 110 .3 1.9 2",
-		"block block blockvol_vis 8.75 -128.75 8.25 0 0 110 .3 1 1",
-		"block block blockvol_vis 37.5 -149 8.2 0 0 110 .3 1.6 2",
-		"block block blockvol_vis 63.57 -147.67 8.0 0 0 20 8.5 1.6 2.5",
-		"block block blockvol_vis 77.9 -57.5 8.0 0 0 20 .5 3.1 1",
-		"block block blockvol_vis 88.76 -41 8.0 0 0 20 .5 7 2",
-		"block block blockvol_vis 117.0 -55 8.0 0 0 20 .5 23 2",
-		"block block blockvol_vis 112.5 -24 7.0 0 0 -68 .5 7 1.5",
-		"block block blockvol_vis 170.0 -86.0 7.0 0 0 110 1.5 15 2.7",
-
-		-- church
-		"block block blockvol_vis 61 -90.00 27 0 0 -20 .3 2 1",
-
-		-- truck in building
-		"block block blockvol_vis 24.92 -146.93 8.5 0 0 -20 .3 2.9 1.8",
-
-
 
 		-- ALERTS AND CHATS
 		-- ADD A CHAT TO THE CHAT WINDOW
