@@ -168,12 +168,12 @@ if(true) then
 		"place dd_telegraph_07 -18.00 -40.50 7.23 -3 -2 110 0 0 0 0",
 		"place dd_telegraph_07 12.00 -53.50 7.22 0 0 110 0 0 0 0",
 		"place dd_telegraph_07 -4.00 -96.00 7.34 0 0 110 0 0 0 0",
-		"place dd_telegraph_07 -3.00 -123.00 7.46 0 0 20 0 0 0 0",
-		"place dd_telegraph_07 -83.35 -94.51 8.52 0 0 0 0 0 0 0",
+		-- "place dd_telegraph_07 -3.00 -123.00 7.46 0 0 20 0 0 0 0",
+		"place dd_telegraph_07 -81.0 -97.15 8.67 20 77 -25 0 0 0 0",
 		"place wall03 -67.93 -100.7 8.05 0 0 20 0 0 0 0",
 		"place tanktrap -80.02 -96.88 7.85 0 5 0 0 0 0 0",
-		"place tanktrap -77.96 -98.55 7.8 0 0 45 0 0 0 0",
-		"place tanktrap -75.66 -100.43 8 0 -10 0 0 0 0 0",
+		"place tanktrap -78.01 -97.99 7.8 0 0 45 0 0 0 0",
+		"place tanktrap -75.01 -98.40 8.0 0 -10 0 0 0 0 0",
 		"place dd_telegraph_07 42.00 -138.00 8.77 84 60 20 0 0 0 0",
 		"place dd_telegraph_07 164.00 -84.00 6.79 0 0 55 0 0 0 0",
 		"place instance_rockwallberm1 104.50 -26.25 6.94 0 0 22 0 0 0 0",
@@ -212,7 +212,22 @@ if(true) then
 		"place truck_dam_outside 156.29 -16.3 7.3 -10 -5 0 0 0 0 0",
 		"place instance_hulk2_dam 31.26 -57.52 8.0 -10 0 -120 0 0 0 0",
 		"place oildrums_outside 37.89 -147.87 8.2 0 0 0 0 0 0 1",
+		"place oildrums_outside -82.61 -95.68 8.2 0 0 45 0 0 0 1",
 		
+		
+		
+		
+		-- "place instance_rockwallberm1 -85 12 -337 -1 16 0 0 0 0",
+		-- "place instance_rockwallberm1 -79 14 -340 -1 16 0 0 0 0",
+		-- "place instance_rockwallberm1 -79 12 -317 -1 16 0 0 0 0",
+		-- "place instance_rockwallberm1 -72 12 -297 -1 16 0 0 0 0",
+		-- "place instance_rockwallberm1 -72 14 -317 -1 16 0 0 0 0",
+		
+		
+		
+		
+		
+	
 
 
 
