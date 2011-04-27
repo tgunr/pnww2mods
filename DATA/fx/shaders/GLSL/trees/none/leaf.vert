@@ -23,26 +23,15 @@ void main()
 		
 	vec3 cornerpt = gl_Vertex.xyz;
 
-	// rotation z
-	float z11, z12, z21, z22;
-	
-	z11 = cos(cameraangle.x + gl_MultiTexCoord2.x);
-	z12 = sin(cameraangle.x + gl_MultiTexCoord2.x);
-	z21 = -z12;
-	z22 = z11;
-	
-    // rotation y
-	float y11, y13, y31, y33;
-	
-	y11 = cos(cameraangle.y + gl_MultiTexCoord2.y);
-	y13 = sin(cameraangle.y + gl_MultiTexCoord2.y);
-	y31 = -y13;
-	y33 = y11;
-	
+	float c1 = cos(cameraangle.x + gl_MultiTexCoord2.x);
+	float s1 = sin(cameraangle.x + gl_MultiTexCoord2.x);
+	float c2 = cos(cameraangle.y + gl_MultiTexCoord2.y);
+	float s2 = sin(cameraangle.y + gl_MultiTexCoord2.y);
+
 	// rotz * roty
-	mat3 rot = mat3(z11 * y11, z21 * y11, y31,
-                    z12, z22, 0,
-	                z11 * y13, z21 * y13, y33);
+	mat3 rot = mat3(c1 * c2, -s1 * c2, -s2,
+                    s1, c1, 0,
+	                c1 * s2, -s1 * s2, c2);
                
 	cornerpt = rot * cornerpt;
 
