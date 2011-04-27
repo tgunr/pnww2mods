@@ -15,6 +15,9 @@ if(true) then
 		-- barrels
 		"emitter hulksmoke -25.16 -97.95 8.75",
 		"emitter hulksmoke -29.35 -105.79 8.75",
+		"emitter hulksmoke -82.57 -95.59 8.5",
+		
+		
 		-- craters
 		"emitter cratersmoke 173.40 -38.89 8",
 		"emitter cratersmoke 129.71 -55.96 8",
@@ -82,11 +85,11 @@ if(true) then
 		-- TRIGGERS
 		
 		-- commandname,pctg chance each second,wait in seconds
-		-- "event planes .40 120000",
-		-- "event bombs .10 20000",
-		-- "event explosions .20 25000",
-		-- "event guns1 .15 10000",
-		-- "event guns2 .20 30000",
+		"event planes .40 120000",
+		"event bombs .10 20000",
+		"event explosions .20 25000",
+		"event guns1 .15 10000",
+		"event guns2 .20 30000",
 		-- "event wind .5 5000",
 		-- "event bombing1 .10 15000 500 6",
 		-- "event bombing2 .10 20000 750 3",
@@ -95,32 +98,23 @@ if(true) then
 		
 -- play area boundary
 -- boundary name x y z
-        "boundary  playarea 123.50 16.88 8.81",
-		"boundary  playarea 119.96 7.25 8.81",
-		"boundary  playarea 117.94 6.58 8.81",
-		"boundary  playarea 103.32 -30.96 8.81",
-		"boundary  playarea 72.26 -18.62 8.13",
-		"boundary  playarea 44.86 -17.87 8.62",
-		"boundary  playarea 14.04 -22.06 7.96",
-		"boundary  playarea -40.83 -33.68 9.94",
-		"boundary  playarea -61.39 -60.51 9.28",
-		"boundary  playarea -84.86 -96.73 9.28",
-		"boundary  playarea -93.22 -116.15 8.78",
-		"boundary  playarea -86.72 -148.06 8.12",
-		"boundary  playarea -47.49 -160.09 8.12",
-		"boundary  playarea -24.34 -160.30 8.94",
-		"boundary  playarea -25.94 -167.04 8.94",
-		"boundary  playarea -21.34 -167.12 8.94",
-		"boundary  playarea -16.20 -156.55 8.29",
-		"boundary  playarea -12.32 -149.09 10.60",
-		"boundary  playarea 58.91 -171.27 8.45",
-		"boundary  playarea 95.91 -157.52 8.11",
-		"boundary  playarea 162.80 -117.61 7.44",
-		"boundary  playarea 188.78 -94.16 7.10",
-		"boundary  playarea 213.74 -51.82 6.77",
-		"boundary  playarea 236.67 -12.60 7.58",
-		"boundary  playarea 211.11 -6.05 8.25",
-		"boundary  playarea 132.75 14.76 9.53",
+        "boundary  playarea -18.52 -163.28 7.49",
+		"boundary  playarea 77.25 -168.82 6.80",
+		"boundary  playarea 172.56 -112.25 6.64",
+		"boundary  playarea 199.10 -84.36 5.14",
+		"boundary  playarea 215.36 -50.64 5.80",
+		"boundary  playarea 247.29 -14.12 7.45",
+		"boundary  playarea 131.47 17.21 9.06",
+		"boundary  playarea 114.97 2.62 9.06",
+		"boundary  playarea 102.41 -30.24 8.41",
+		"boundary  playarea 72.04 -16.81 7.74",
+		"boundary  playarea -7.73 -22.81 7.25",
+		"boundary  playarea -44.07 -32.18 7.91",
+		"boundary  playarea -65.81 -64.97 8.43",
+		"boundary  playarea -95.09 -112.12 8.43",
+		"boundary  playarea -89.99 -148.66 6.78",
+		"boundary  playarea -51.07 -162.15 7.11",
+
 		
 		
 		
@@ -129,30 +123,30 @@ if(true) then
 -- blocking volume x
 -- block name x1 y1 z1 x2 y2 z2 thickness height
 
-        "block 115.87 -26.77 9.13 104.61 -22.48 9.13 .5 5",
-        "block 110.22 -43.30 9.13 108.01 -49.00 9.13 .5 5",
-        "block 118.74 -46.93 9.29 118.07 -49.31 9.29 .5 5",
-		"block 113.11 -64.25 9.14 111.41 -69.99 9.14 .5 5",
-		"block 86.81 -35.48 8.65 87.71 -33.34 8.65 .5 5",
-		"block 87.93 -39.84 9.03 86.42 -44.80 9.03 .5 5",
-		"block 79.63 -56.51 8.88 78.30 -59.16 8.88 .5 5",
+        "block 115.87 -26.77 9.13 104.61 -22.48 9.13 1 5",
+        "block 110.22 -43.30 9.13 108.01 -49.00 9.13 1 5",
+        "block 118.74 -46.93 9.29 118.07 -49.31 9.29 1 5",
+		"block 113.11 -64.25 9.14 111.41 -69.99 9.14 1 5",
+		"block 86.81 -35.48 8.65 87.71 -33.34 8.65 1 5",
+		"block 87.93 -39.84 9.03 86.42 -44.80 9.03 1 5",
+		"block 79.63 -56.51 8.88 78.30 -59.16 8.88 1 5",
 		-- problem
-		"block 160.19 -84.15 9.05 192.00 -91.65 8.39 .5 20",
-		"block 72.00 -149.67 9.21 63.92 -146.79 9.21 .5 5",
-		"block 55.07 -148.98 9.40 56.09 -143.18 9.40 .5 5",
-		"block 40.01 -149.97 8.88 36.44 -148.25 8.88 .5 5",
+		"block 160.19 -84.15 9.05 192.00 -91.65 8.39 1 20",
+		"block 72.00 -149.67 9.21 63.92 -146.79 9.21 1 5",
+		"block 55.07 -148.98 9.40 56.09 -143.18 9.40 1 5",
+		"block 40.01 -149.97 8.88 36.44 -148.25 8.88 1 5",
 		"block 27.60 -149.99 10.20 25.01 -143.62 10.20 1 5",
-		"block 14.39 -137.70 8.91 10.16 -135.92 8.91 .5 5",
-		"block 10.79 -129.29 9.39 8.11 -128.38 9.39 .5 5",
-		"block -4.19 -133.01 9.36 -5.21 -135.98 9.36 .5 5",
-		"block -16.14 -109.44 9.72 -15.41 -106.91 9.72 .5 5",
-		"block -25.06 -130.99 8.56 -26.12 -134.46 8.56 .5 5",
-		"block -42.03 -109.82 9.05 -64.68 -101.46 9.05 .5 5",
-		"block -70.64 -100.33 9.24 -87.29 -95.49 9.24 .5 5",
-		"block -51.12 -116.98 9.22 -46.69 -118.53 9.05 .5 5",
-		"block 59.69 -86.42 28.86 62.89 -93.85 28.86 .5 5",
-		"block 128.77 -20.17 8.10 127.36 -24.06 8.10 .5 5",
-		"block 128.62 -25.49 8.49 125.71 -28.49 8.49 .5 5",
+		"block 14.39 -137.70 8.91 10.16 -135.92 8.91 1 5",
+		"block 10.79 -129.29 9.39 8.11 -128.38 9.39 1 5",
+		"block -4.19 -133.01 9.36 -5.21 -135.98 9.36 1 5",
+		"block -16.14 -109.44 9.72 -15.41 -106.91 9.72 1 5",
+		"block -25.06 -130.99 8.56 -26.12 -134.46 8.56 1 5",
+		"block -42.03 -109.82 9.05 -64.68 -101.46 9.05 1 5",
+		"block -70.64 -100.33 9.24 -87.29 -95.49 9.24 1 5",
+		"block -51.12 -116.98 9.22 -46.69 -118.53 9.05 1 5",
+		"block 59.69 -86.42 28.86 62.89 -93.85 28.86 1 5",
+		"block 128.77 -20.17 8.10 127.36 -24.06 8.10 1 5",
+		"block 128.62 -25.49 8.49 125.71 -28.49 8.49 1 5",
 		
 		
 		
@@ -217,7 +211,7 @@ if(true) then
 		-- these are always named
 		-- the lockey is a lockey looked up from the scenario content in the web translation tool
 		-- command name lockey
-		"alert onspawn spawnin.moveout",
+		"alert onspawn onspawn.moveout",
 		"alert churchentry churchentry",
 		"alert toaxisspawn toaxisspawn",
 		"alert toalliedspawn toalliedspawn",
