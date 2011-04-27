@@ -19,7 +19,7 @@ void main()
 	vec3 normal = gl_Normal;
 	normal.xy = vec2(dot(rotation.yxw, gl_Normal), dot(rotation.zyw, gl_Normal));
 	
-	N = normalize(gl_NormalMatrix * normal);
+	N = gl_NormalMatrix * normal;
 		
 	vec3 cornerpt = gl_Vertex.xyz;
 
