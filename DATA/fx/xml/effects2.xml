@@ -783,7 +783,6 @@
 <!-- ===================================================================== -->
 	<transformeffect name = "smokescreen">
 		<emitter>
-			<lifetime>-1</lifetime>
 			<fountain>1</fountain>
       <particleeffect>smokescreenparticle</particleeffect>
 		</emitter>
@@ -4030,28 +4029,28 @@
 		<number>1</number>
 		<texture>low res smoke1</texture>
 		<texture>low res smoke2</texture>
-		<texture>low res smoke3</texture>
-		<texture>low res smoke4</texture>
+    <texture>white smoke 2</texture>
+    <texture>low res smoke3</texture>
+    <texture>black smoke 2</texture>
+    <texture>low res smoke4</texture>
 		<texture>white smoke 1</texture>
-		<texture>white smoke 2</texture>
-		<alpha>0.0</alpha>
-		<alpha>0.2</alpha>
-		<alpha>0.25</alpha>
-		<alpha>0.15</alpha>
-		<alpha>0.0</alpha>
-		<size>0</size>
-		<size>15</size>
-		<size>30</size>
-		<size>45</size>
-		<size>50</size>
+    <texture>black smoke 1</texture>
+    <alpha>0.0</alpha>
+    <alpha>0.4</alpha>
+    <alpha>0.2</alpha>
+    <alpha>0.0</alpha>
+    <drag>1</drag>
+    <size>0</size>
+    <size>8</size>
+    <size>16</size>
+    <size>32</size>
 		<time>0</time>
 		<time>3000</time>
 		<time>5000</time>
 		<time>6000</time>
-		<time>8000</time>
-		<rotate>5</rotate>
-		<posvariance>-5 0 0 5 0 0</posvariance>
-		<velvariance>-0.1 -0.2 0 0.1 0.2 0.1</velvariance>
+		<rotate>15</rotate>
+		<posvariance>-25 0 0 25 0 0</posvariance>
+		<velvariance>-2.0 -2.0 0 2.0 2.0 2.0</velvariance>
     <material>smoke</material>
 	</particleeffect>
 <!-- ===================================================================== -->
