@@ -1,18 +1,22 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>dm_riverrun</name>
-  <body>onspawn.moveout = Move Out Soldier!
-churchenter = The church tower is a perfect spot for snipers. Watch Out!</body>
+  <body>
+onspawn.moveout = Eliminate as many enemy as possible before time runs out!
+churchenter = The church tower is a perfect spot for snipers. Watch Out!
+toaxisspawn = German forces are camped northeast.
+toalliedspawn = American forces have crossed the southwest bridge.
+</body>
   <bodyloc>true</bodyloc>
   <brief>test</brief>
   <duration>30</duration>
   <fog>3</fog>
-  <hour>5</hour>
+  <hour>1600</hour>
   <kills>50</kills>
   <rules>deathmatch</rules>
   <team1>3</team1>
   <team2>4</team2>
   <terrain>riverrun</terrain>
   <title>River Run Fire Fight</title>
-  <weather>2</weather>
+  <weather>1</weather>
 </content>
