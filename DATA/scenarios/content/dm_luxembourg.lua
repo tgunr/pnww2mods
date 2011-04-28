@@ -103,12 +103,12 @@ if(true) then
 		
 		-- named version
 		-- command name scripthandler x y z
-		"area spawnin OnTrigger 272792.27 3016974.34 481",
-		"area spawnin OnTrigger 272792.27 3016974.34 481",
-		"area spawnin OnTrigger 272792.27 3016974.34 481",
-		"area spawnin OnTrigger 272792.27 3016974.34 481",
-		"area spawnin OnTrigger 272792.27 3016974.34 481",
-		"area spawnin OnTrigger 272792.27 3016974.34 481",
+		"area spawnin OnTrigger x y z",
+		"area spawnin OnTrigger x y z",
+		"area spawnin OnTrigger x y z",
+		"area spawnin OnTrigger x y z",
+		"area spawnin OnTrigger x y z",
+		"area spawnin OnTrigger x y z",
 		
 		-- anonymous version
 		-- command scripthandler x y z
@@ -194,7 +194,7 @@ if(true) then
 
 		-- alternatively you can use a vehicle's string id 
 		-- command spawngroup id
-		"vehicle alliedtrucks bedford",
+		-- "vehicle <spawn object filename>",
 	};
 
 	for i,v in ipairs(content) do 
