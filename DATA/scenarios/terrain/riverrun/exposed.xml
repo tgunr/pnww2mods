@@ -18,18 +18,18 @@
   </trees>
   <grass>
     <!-- The higher the weight, the lest dense -->
-    <greenweight>5</greenweight>
-    <blueweight>10</blueweight>
+    <greenweight>0</greenweight>
+    <blueweight>15</blueweight>
     <redweight>0</redweight>
     <!-- Color clamped between 0 - 255 -->
     <!-- Example: redclamp 100 will clamp red mask grass to red color >= 100 -->
     <!-- The higher the clamp, the less number of blades placed-->
-    <redclamp>230</redclamp>
-    <grnclamp>200</grnclamp>
-    <bluclamp>200</bluclamp>
+    <redclamp>125</redclamp>
+    <grnclamp>175</grnclamp>
+    <bluclamp>100</bluclamp>
     <!-- default is 1.0 -->
-    <redscale>0.65</redscale>
-    <grnscale>1.5</grnscale>
+    <redscale>0.50</redscale>
+    <grnscale>1.0</grnscale>
     <bluscale>2.5</bluscale>
   </grass>
 </exposed>
