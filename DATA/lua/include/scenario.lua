@@ -1,11 +1,13 @@
 
 -- ui and tutorial libs already loaded by tutorial manager
 -- imported additional game libs as needed
+Include("fp");
 Include("input");
 Include("terrain");
 Include("player");
 Include("state"); -- includes default state
 Include("strat");
+-- Include("zmq");
 game.LoadLib("scenario");
 
 -- set tutorial state here
@@ -16,6 +18,8 @@ state.spawn					= nil;
 state.config					= {};
 state.inbounds				= true;
 state.lastinbounds		= true;
+state.minefield				= nil;
+state.minearea			= nil;
 --state.ingameupdate	= true;
 
 function OnStart(handler)
@@ -150,7 +154,7 @@ function OnMission(handler)
 			end
 		end
 	end
-	
+		
 	-- local tom 		= state.tom;
 	-- local captures	= state.captures;
 	-- local damages 	= 0;
@@ -214,6 +218,35 @@ function OnTrigger(handler)
 		scenario.manager:RunObject(handler.name, 0);
 	end
 	
+	return 1;
+end
+
+function OnMineArea(handler)
+	if(handler.state == tutorial.THS_EVENT_IN) then
+		-- get our player
+		local v = player.playerGetVehicle();
+		-- add a landmine handler
+		tutorial.manager:AddLocationHandler("OnLandmine", nil, v:GetPos(1), v:GetPos(2), v:GetPos(3), 1);
+	else
+		tutorial.manager:RemoveHandler("OnLandmine");
+		state.minearea = nil;
+	end
+	
+	return 1;
+end
+
+function OnLandmine(handler)
+	if(handler.state == tutorial.THS_EVENT_OUT) then
+		-- check to see if we have stepped on a mine
+		if(math.random() < .1) then
+			scenario.manager:RunObject("landmine", 1);
+			fp.fpFPSKillTrooper();
+		else
+			local v = player.playerGetVehicle();
+			-- update our landmine position
+			tutorial.manager:AddLocationHandler("OnLandmine", nil, v:GetPos(1), v:GetPos(2), v:GetPos(3), 1);
+		end
+	end
 	return 1;
 end
 
