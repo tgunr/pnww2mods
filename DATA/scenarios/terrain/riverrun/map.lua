@@ -146,13 +146,11 @@ if(true) then
 		"place sandbagwall_outside -12.80 -150.00 7.95 0 -10 20 0 0 0 0",
 		"place oildrums_outside -59.93 -92.93 8.45 0 0 75 0 0 0 1",
 		"place haystack_outside 112.48 -66.75 8.00 0 0 110 0 0 0 0",
-		"place haystack_outside -94.93 -224.93 15.56 0 0 110 0 0 0 0",
 		"place haystack_outside 107.93 -115.93 8.43 0 0 110 0 0 0 0",
 		"place haystack_outside 109.93 -109.93 8.52 0 0 110 0 0 0 0",
 		"place cratepile_outside 50.93 -40.93 8.21 0 0 0 0 0 0 0",
 		"place cratepile_outside 46.93 -54.93 7.82 0 0 110 0 0 0 0",
 		"place cratepile_outside 97.93 -85.93 8.22 0 0 25 0 0 0 0",
-		"place sandbagwall_curved_outside 137.00 22.00 7.76 0 0 25 0 0 0 0",
 		"place crates1c 204.50 -15.50 7.36 0 0 25 0 0 0 0",
 		"place cratepile_outside 171.00 -12.00 7.86 0 0 0 0 0 0 0",
 		"place cratepile_outside 161.00 -3.00 7.92 0 0 0 0 0 0 0",
@@ -178,7 +176,7 @@ if(true) then
 		"place dd_telegraph_07 164.00 -84.00 6.79 0 0 55 0 0 0 0",
 		"place instance_rockwallberm1 104.50 -26.25 6.94 0 0 22 0 0 0 0",
 		"place instance_rockwallberm1 111.00 -10.00 6.79 0 0 22 0 0 0 0",
-		"place instance_rockwallberm1 138.00 13.50 7.23 0 0 105 0 0 0 0",
+		"place instance_rockwallberm1 138.00 13.50 7.0 -3 0 105 0 0 0 0",
 		"place instance_rockwallberm1 156.00 8.75 7.10 0 0 105 0 0 0 0",
 		"place instance_rockwallberm1 174.00 4.00 6.95 0 0 105 0 0 0 0",
 		"place instance_rockwallberm1 192.00 -0.75 6.68 0 0 105 0 0 0 0",
@@ -215,13 +213,30 @@ if(true) then
 		"place oildrums_outside -82.61 -95.68 8.2 0 0 45 0 0 0 1",
 		
 		
+	
+	
+
 		
-		
-		-- "place instance_rockwallberm1 -85 12 -337 -1 16 0 0 0 0",
-		-- "place instance_rockwallberm1 -79 14 -340 -1 16 0 0 0 0",
-		-- "place instance_rockwallberm1 -79 12 -317 -1 16 0 0 0 0",
-		-- "place instance_rockwallberm1 -72 12 -297 -1 16 0 0 0 0",
-		-- "place instance_rockwallberm1 -72 14 -317 -1 16 0 0 0 0",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
 		
 		
