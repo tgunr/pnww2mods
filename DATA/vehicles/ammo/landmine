@@ -1,0 +1,77 @@
+# generic landmine
+# Rev. 4/30/11 - Ramp.
+
+type = airburst
+diameter = .19
+weight = .567
+ammoweight = .567
+velocity = 0
+tracertime = 0.0
+#object = landmine
+explosive = 784500
+# .17kg (TNT)
+# explosive 1800000
+# Old Grenade Standard
+
+fuzetime = .001
+selfdestructtime = 1
+bc = 1.5
+lifetime = 1.0
+ricochetangle = 89
+#modelspall = 1
+penetrationconstant = 0.0000000001
+selfdestructtime = .1
+
+dontdisplayfirstframe = 1
+
+# Gryf changed the shrapnel amount. This Grenade was more concussive!
+numshrapnelpieces = 75
+totalshrapnelmass = .4
+
+explosionsoundnear = sounds\troop\grenade.wav
+explosionsoundfar = sounds\smlfarexp.wav
+hiteffect = genericmediumexplosion
+nearfardistance = 150
+
+grenaderotaterate = -2
+
+ghostroundsto = 0
+
+# new HE model variables
+#
+#  use_new_he .. set to 1 to enable (and set defaults for) the new HE model
+#  nhe_diameter ..  sets the diameter of the shrapnel bits
+#  nhe_weight .. sets the minimum weight for the shrapnel bits 
+#  nhe_min_pen_const .. the PC of the shrapnel bit will never be less than this (formula is very complex though)
+#  nhe_ric_angle .. sets the ricochet angle of the shrapnel bits
+#  nhe_energy_mult .. how much of the explosive energy is transferred to the shrapnel
+#  nhe_min_pieces .. see nhe_max_pieces
+#  nhe_max_pieces .. total number of shrapnel is linearly interpolated between min and max pieces
+#  nhe_max_per_veh .. caps the number of shrapnel bits fired at each vehicle (performance tuning)
+#      note that "removed" shrapnel is accumulated, so if 300 could hit, and you had this at 100, the average mass would be multiplied by 3
+#  nhe_add_speed .. kicker speed for the shrapnel bits .. formula is (kicker + (rand(0,1) * energy speed))
+#  nhe_timeout .. how long to project the shrapnel bits in the world (seconds)
+#  nhe_max_mass_mult .. what is the maximum accumulation (multiplier) for the shrapnel mass when shrapnel is being culled due to nhe_max_per_veh
+#     set this to 1.0 to remove mass accumulation, anything below 1.0 will be raised to 1.0
+
+use_new_he = 1
+nhe_diameter = 0.008
+nhe_weight = 0.005
+nhe_min_pen_const = 0.0000001
+nhe_ric_angle = 79.9999
+nhe_energy_mult = 1
+nhe_min_pieces = 343
+nhe_max_pieces = 343
+nhe_max_per_veh = 75
+nhe_add_speed = 100.0
+nhe_timeout = 0.15
+nhe_max_mass_mult = 10
+
+modelcmx = -0.000982
+modelcmy = 0.001008
+modelcmz = -0.059848
+unitinertiaxx = 0.009770
+unitinertiayy = 0.009793
+unitinertiazz = 0.000258
+grenadeorient = 0
+grenaderestitution = .1
