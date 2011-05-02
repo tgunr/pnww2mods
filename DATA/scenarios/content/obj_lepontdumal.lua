@@ -102,9 +102,9 @@ if(true) then
 		-- "event guns1 .15 10000",
 		"event guns2 .20 30000",
 		"event wind .5 5000",
-		-- "event bombing1 .10 100000 500 6",
-		-- "event bombing2 .10 20000 750 3",
-		-- "event barrage1 .25 60000 700 10",
+		"event bombing1 .10 100000 500 6",
+		"event bombing2 .10 20000 750 3",
+		"event barrage1 .25 60000 700 10",
 
 		
 -- play area boundary
@@ -231,6 +231,14 @@ if(true) then
 		-- "area pathfield1 OnMineArea 185.42 16.89 8.77",
 		-- "area pathfield1 OnMineArea 185.42 16.89 8.77",
 		
+		-- bridge capture
+		"area bridgecapture OnTrigger 128.28 19.45 7.13",
+		"area bridgecapture OnTrigger 133.82 35.82 7.13",
+		"area bridgecapture OnTrigger 130.04 37.17 7.13",
+		"area bridgecapture OnTrigger 123.71 19.42 7.13",
+		
+		
+		
 		
 		
 		
@@ -309,6 +317,7 @@ if(true) then
 		"alert churchentry churchentry",
 		"alert toaxisspawn toaxisspawn",
 		"alert toalliedspawn toalliedspawn",
+		"alert bridgecapture bridgecapture",
 
 		
 		-- vehicle masks
