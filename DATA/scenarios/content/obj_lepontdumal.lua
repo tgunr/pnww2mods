@@ -29,6 +29,10 @@ if(true) then
 		"emitter smokescreen 263.71 229.63 5.5",
 		"emitter smokescreen 115.21 115.45 6.69",
 		"emitter smokescreen 157.29 164.70 9.15",
+		"emitter smokescreen 117.08 -128.89 8.53",
+		
+		
+		
 		
 		
 
@@ -47,8 +51,8 @@ if(true) then
 		-- "emitter buildingdamagesmoke 158.46 -16.93 11",
 		-- FIRES
 		"emitter vehiclefire 152.80 64.43 3.21",
-		-- "emitter vehiclefire 157.34 -16.48 8.08",
-		-- "emitter vehiclefire 31.39 -57.25 9.73",
+		"emitter vehiclefire 105.14 -36.56 9.01",
+		"emitter vehiclefire 94.85 -28.05 9.2",
 
 		-- SOUNDS
 		
@@ -74,7 +78,17 @@ if(true) then
 		-- POSITIONAL SOUNDS
 		-- command name filename volume loop x y z mindist maxdist
 		"sound sounds/tank_burn.wav 1.5 1 151 62 3 5 30",
+		"sound sounds/tank_burn.wav 1.5 1 108 -30 9 5 30",
+		"sound sounds/tank_burn.wav 1.5 195 -26 8 5 30",
+		
+		
+		
+		
 		"sound sounds/bedford/idle.wav 0.5 1 198 148 8 15 40",
+		
+		
+		
+		
 		-- "sound sounds/tank_burn.wav 1 1 29 -57 9 5 30",
 		-- a line of bombs (as from a plane)
 		-- command,name,ammo,worldx1,worldy1,worldz1,worldx2,worldy2,worldz2
@@ -149,30 +163,31 @@ if(true) then
 -- blocking volume x
 -- block name x1 y1 z1 x2 y2 z2 thickness height
 
-        "block 115.87 -26.77 9.13 104.61 -22.48 9.13 1 5",
-        "block 110.22 -43.30 9.13 108.01 -49.00 9.13 1 5",
-        "block 118.74 -46.93 9.29 118.07 -49.31 9.29 1 5",
-		"block 113.11 -64.25 9.14 111.41 -69.99 9.14 1 5",
-		"block 86.81 -35.48 8.65 87.71 -33.34 8.65 1 5",
-		"block 87.93 -39.84 9.03 86.42 -44.80 9.03 1 5",
-		"block 79.63 -56.51 8.88 78.30 -59.16 8.88 1 5",
-		-- problem
-		"block 160.19 -84.15 9.05 192.00 -91.65 8.39 1 20",
-		"block 72.00 -149.67 9.21 63.92 -146.79 9.21 1 5",
-		"block 55.07 -148.98 9.40 56.09 -143.18 9.40 1 5",
-		"block 40.01 -149.97 8.88 36.44 -148.25 8.88 1 5",
-		"block 27.60 -149.99 10.20 25.01 -143.62 10.20 1 5",
-		"block 14.39 -137.70 8.91 10.16 -135.92 8.91 1 5",
-		"block 10.79 -129.29 9.39 8.11 -128.38 9.39 1 5",
-		"block -4.19 -133.01 9.36 -5.21 -135.98 9.36 1 5",
-		"block -16.14 -109.44 9.72 -15.41 -106.91 9.72 1 5",
-		"block -25.06 -130.99 8.56 -26.12 -134.46 8.56 1 5",
-		"block -42.03 -109.82 9.05 -64.68 -101.46 9.05 1 5",
-		"block -70.64 -100.33 9.24 -87.29 -95.49 9.24 1 5",
-		"block -51.12 -116.98 9.22 -46.69 -118.53 9.05 1 5",
-		"block 59.69 -86.42 28.86 62.89 -93.85 28.86 1 5",
-		"block 128.77 -20.17 8.10 127.36 -24.06 8.10 1 5",
-		"block 128.62 -25.49 8.49 125.71 -28.49 8.49 1 5",
+        "block 139.59 -86.67 8.69 104.30 -72.64 8.68 1 10",
+		"block 112.42 -69.95 9.00 119.31 -46.78 8.68 1 10",
+		"block 123.98 -34.23 8.53 127.56 -26.02 8.70 1 10",
+		"block 193.16 -93.40 7.36 160.99 -84.63 7.88 1 10",
+		"block 113.12 -36.77 8.49 71.74 -19.79 7.67 1 10",
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
 		
 		
 		
@@ -183,11 +198,7 @@ if(true) then
 
 
  -- Trigger Areas
-		-- church entry
-		"area churchentry OnTrigger 69.31 -94.28 8.56",
-		"area churchentry OnTrigger 65.96 -109.12 8.91",
-		"area churchentry OnTrigger 53.12 -102.63 8.56",
-		"area churchentry OnTrigger 57.99 -88.71 8.56",
+
 		-- directions to axis spawn 1
 		"area toaxisspawn OnTrigger -21.23 -148.85 9.48",		
 		"area toaxisspawn OnTrigger -17.12 -137.68 9.48",
@@ -284,6 +295,8 @@ if(true) then
 		"clone bedford 192.31 147.46 7.33 3 -1 -130",
 		"clone pzivd 95.72 156.42 8.3 3 -1 0",
 		"clone pzivd 79.79 108.67 5.58 3 -1 20",
+		"clone oplbltz 192.79 -31.45 8.5 5 -4.25 205",
+		"clone oplbltz 176.32 -20.12 8.55 0 0 180",
 		
 		
 		
@@ -297,8 +310,7 @@ if(true) then
 		-- "clone bedford -19.75 -153.93 9.05 2 0 0",
 		-- "clone bedford -27.34 -150.10 8.9 4 0 285",
 		-- "clone bedford -35.21 -147.32 8.85 6 2 285",
-		-- "clone oplbltz 192.79 -31.45 8.5 5 -4.25 205",
-		-- "clone oplbltz 176.32 -20.12 8.55 0 0 180",
+
 
 		-- ALERTS AND CHATS
 		-- ADD A CHAT TO THE CHAT WINDOW
@@ -314,7 +326,6 @@ if(true) then
 		-- the lockey is a lockey looked up from the scenario content in the web translation tool
 		-- command name lockey
 		"alert onspawn onspawn.moveout",
-		"alert churchentry churchentry",
 		"alert toaxisspawn toaxisspawn",
 		"alert toalliedspawn toalliedspawn",
 		"alert bridgecapture bridgecapture",
