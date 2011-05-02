@@ -77,9 +77,12 @@ if(true) then
 
 		-- POSITIONAL SOUNDS
 		-- command name filename volume loop x y z mindist maxdist
-		"sound sounds/tank_burn.wav 1.5 1 151 62 3 5 30",
-		"sound sounds/tank_burn.wav 1.5 1 108 -30 9 5 30",
-		"sound sounds/tank_burn.wav 1.5 195 -26 8 5 30",
+		"sound sounds/tank_burn.wav 1 1 151 62 3 5 30",
+		"sound sounds/tank_burn.wav 1 1 108 -30 9 5 30",
+		"sound sounds/tank_burn.wav 1 1 95 -26 8 5 30",
+		"sound sounds/ambience/stream.wav 1.75 1 123 11 2 10 30",
+		
+		
 		
 		
 		
