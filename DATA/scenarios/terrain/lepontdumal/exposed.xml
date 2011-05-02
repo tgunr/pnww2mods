@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- values are 0 based -->
+<exposed>
+  <trees>
+    <!-- weight the higher the number the less dense -->
+    <redweight>35</redweight>
+    <greenweight>10</greenweight>
+    <blueweight>25</blueweight>
+    <red>3 4 5 6 7 8 3 4</red>
+    <green>15 15 17 18</green>
+    <blue>0 1 2 1</blue>
+    <!-- Color clamped between 0 - 255 -->
+    <!-- Example: redclamp 240 will clamp red mask trees to red color >= 240 -->
+    <!-- The higher the clamp, the less number of trees placed-->
+    <redclamp>240</redclamp>
+    <grnclamp>175</grnclamp>
+    <bluclamp>240</bluclamp>
+  </trees>
+  <grass>
+    <!-- The higher the weight, the lest dense -->
+    <greenweight>0</greenweight>
+    <blueweight>15</blueweight>
+    <redweight>0</redweight>
+    <!-- Color clamped between 0 - 255 -->
+    <!-- Example: redclamp 100 will clamp red mask grass to red color >= 100 -->
+    <!-- The higher the clamp, the less number of blades placed-->
+    <redclamp>125</redclamp>
+    <grnclamp>100</grnclamp>
+    <bluclamp>100</bluclamp>
+    <!-- default is 1.0 -->
+    <redscale>0.50</redscale>
+    <grnscale>1.0</grnscale>
+    <bluscale>2.5</bluscale>
+  </grass>
+</exposed>
+
