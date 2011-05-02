@@ -173,7 +173,7 @@ if(true) then
 		"place tanktrap -78.01 -97.99 7.8 0 0 45 0 0 0 0",
 		"place tanktrap -75.01 -98.40 8.0 0 -10 0 0 0 0 0",
 		"place dd_telegraph_07 42.00 -138.00 8.77 84 60 20 0 0 0 0",
-		"place dd_telegraph_07 164.00 -84.00 6.79 0 0 55 0 0 0 0",
+		"place dd_telegraph_07 165.00 -85.00 8 61 70 0 0 0 0 0",
 		"place instance_rockwallberm1 104.50 -26.25 6.94 0 0 22 0 0 0 0",
 		"place instance_rockwallberm1 111.00 -10.00 6.79 0 0 22 0 0 0 0",
 		"place instance_rockwallberm1 138.00 13.50 7.0 -3 0 105 0 0 0 0",
