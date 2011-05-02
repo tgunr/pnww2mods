@@ -1,12 +1,18 @@
 <?xml version='1.0'?>
 <!DOCTYPE vehicle SYSTEM "vehicle.dtd">
 <vehicles>
+
+<!-- SKULLS, BUZZARDS -->
+
 <vehicle id="uk_buzzard"           file="eye/eye.xml" onlineonly="true"/>
 <vehicle id="uk_skull"             file="eye/eye.xml" onlineonly="true"/>
 <vehicle id="de_buzzard"           file="eye/eye.xml" onlineonly="true"/>
 <vehicle id="de_skull"             file="eye/eye.xml" onlineonly="true"/>
 <vehicle id="fr_buzzard"           file="eye/eye.xml" onlineonly="true"/>
 <vehicle id="fr_skull"             file="eye/eye.xml" onlineonly="true"/>
+
+<!-- GERMAN -->
+
 <vehicle id="derifle"              file="ground/groundman/groundman.xml"/>
 <vehicle id="de-smg"               file="ground/groundman/groundman.xml"/>
 <vehicle id="degrenadier"          file="ground/groundman/groundman.xml"/>
@@ -15,6 +21,7 @@
 <vehicle id="de-lmg"               file="ground/groundman/groundman.xml"/>
 <vehicle id="de-sniper"            file="ground/groundman/groundman.xml"/>
 <vehicle id="de-ltmortar"          file="ground/groundman/groundman.xml"/>
+<vehicle id="de-assault"	file="ground/groundman/groundman.xml"/>
 <vehicle id="de-para-rfl"          file="ground/groundman/groundman.xml"/>
 <vehicle id="de-para-smg"          file="ground/groundman/groundman.xml"/>
 <vehicle id="de-para-lmg"          file="ground/groundman/groundman.xml"/>
@@ -60,6 +67,8 @@
 <vehicle id="de_mtb"               file="ships/fairmileb/fairmileb.xml" />
 <vehicle id="z34"                  file="ships/z34/z34.xml"/>
 <vehicle id="de_freighter"         file="ships/ak-1/ak-1.xml" />
+
+<!-- BRITISH -->
 
 <vehicle id="ukrifle"              file="ground/groundman/groundman.xml"/>
 <vehicle id="uk-smg"               file="ground/groundman/groundman.xml"/>
@@ -109,6 +118,8 @@
 <vehicle id="uk_z34"               file="ships/z34/z34.xml" />
 <vehicle id="uk_freighter"         file="ships/ak-1/ak-1.xml"/>
 
+<!-- FRANCE -->
+
 <vehicle id="frrifle"              file="ground/groundman/groundman.xml"/>
 <vehicle id="fr-smg"               file="ground/groundman/groundman.xml"/>
 <vehicle id="frgrenadier"          file="ground/groundman/groundman.xml"/>
@@ -155,6 +166,15 @@
 <vehicle id="fr_fair"              file="ships/fairmileb/fairmileb.xml" />
 <vehicle id="fr_z34"               file="ships/z34/z34.xml" />
 <vehicle id="fr_freighter"         file="ships/ak-1/ak-1.xml" />
+
+<!-- USA -->
+<vehicle id="us-assault" file="ground/groundman/groundman.xml"/>
+<vehicle id="us-smg" file="ground/groundman/groundman.xml"/>
+<vehicle id="us-bar" file="ground/groundman/groundman.xml"/>
+<vehicle id="us-eng" file="ground/groundman/groundman.xml"/>
+<vehicle id="us-sniper" file="ground/groundman/groundman.xml"/>
+<vehicle id="de-assault" file="ground/groundman/groundman.xml"/>
+
 
 <vehicle id="cn_oplbltz"           file="ground/oplbltz/oplbltz.xml" onlineonly="true"/>
 <vehicle id="cn_flak36"            file="ground/flak36/flak36.xml" onlineonly="true"/>
