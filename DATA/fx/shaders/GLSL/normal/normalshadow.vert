@@ -11,9 +11,9 @@ varying vec3 vertexpos;
 
 void main()
 {
-	N = normalize(gl_NormalMatrix * normal.xyz);
-	T = normalize(gl_NormalMatrix * tangent.xyz);
-	B = normalize(gl_NormalMatrix * binormal.xyz);
+	N = gl_NormalMatrix * normal.xyz;
+	T = gl_NormalMatrix * tangent.xyz;
+	B = gl_NormalMatrix * binormal.xyz;
 	
     vec4 pos = gl_ModelViewMatrix * gl_Vertex;
 
