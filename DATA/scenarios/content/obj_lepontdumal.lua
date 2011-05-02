@@ -6,7 +6,8 @@ if(true) then
 	{
 		-- include lua file
 		-- command,path
-		"include scenarios/terrain/riverrun/map.lua",
+		"include scenarios/terrain/lepontdumal/map.lua",
+		"ammo landmine landmine",
 		
 		-- FX EMMITERS
 		
@@ -25,16 +26,27 @@ if(true) then
 		-- "emitter cratersmoke 26.02 -82.75 8",
 		-- "emitter cratersmoke -49.62 -130.94 8",
 		-- smokescreen
-		-- "emitter smokescreen -46.03 -224.78 15.92",
-		-- "emitter smokescreen -1.73 -226.20 16.42",
-		-- "emitter smokescreen 160.11 86.18 9.15",
-		-- "emitter smokescreen 106.73 130.54 5.40",
-		-- vehicles
-		-- "emitter buildingdamagesmoke -28.16 -171.19 3.25",
+		"emitter smokescreen 263.71 229.63 5.5",
+		"emitter smokescreen 115.21 115.45 6.69",
+		"emitter smokescreen 157.29 164.70 9.15",
+		
+		
+
+		
+		
+		
+		
+		-- VEHICLES
+		-- SMOKE
+		"emitter hulksmoke 96.32 156.61 8.39",
+		"emitter hulksmoke 80.36 109.08 6.5",
+		
+		
+		
 		-- "emitter buildingdamagesmoke 158.6 -16.7 11.25",
 		-- "emitter buildingdamagesmoke 158.46 -16.93 11",
 		-- FIRES
-		-- "emitter vehiclefire 107.62 -29.90 9.36",
+		"emitter vehiclefire 152.80 64.43 3.21",
 		-- "emitter vehiclefire 157.34 -16.48 8.08",
 		-- "emitter vehiclefire 31.39 -57.25 9.73",
 
@@ -61,24 +73,23 @@ if(true) then
 
 		-- POSITIONAL SOUNDS
 		-- command name filename volume loop x y z mindist maxdist
-		-- "sound sounds/tank_burn.wav 1 1 155 -16 9 5 30",
-		-- "sound sounds/tank_burn.wav 1 1 109 -29 9 5 30",
-		-- "sound sounds/bedford/idle.wav 0.5 1 -29 -149 10 5 30",
+		"sound sounds/tank_burn.wav 1.5 1 151 62 3 5 30",
+		"sound sounds/bedford/idle.wav 0.5 1 198 148 8 15 40",
 		-- "sound sounds/tank_burn.wav 1 1 29 -57 9 5 30",
 		-- a line of bombs (as from a plane)
 		-- command,name,ammo,worldx1,worldy1,worldz1,worldx2,worldy2,worldz2
-		-- "bombingrun bombing1 gp250 -184.65 -279.50 22.84 46.61 -297.32 22.54",
-		-- "bombingrun bombing1 gp250 210.96 -227.13 19.97 274.58 -85.40 19.97",
-		-- "bombingrun bombing1 gp500 268.23 77.65 6.21 152.83 123.03 6.21",
+		"bombingrun bombing1 gp250 90.62 211.47 18.81 12.92 91.85 18.81",
+		"bombingrun bombing1 gp250 35.65 250.44 21.31 -16.21 206.43 21.31",
+		"bombingrun bombing1 gp500 142.60 -153.42 6.93 -4.35 -116.20 21.49",
 		-- "bombingrun bombing1 gp250 -69.51 80.01 6.21 -177.68 11.25 6.21",
-		-- "bombingrun bombing2 gp40 33.14 -165.89 7.68 6.27 -182.85 2.72",
+		-- "bombingrun bombing2 gp40 142.60 -153.42 6.93 6.27 -182.85 2.72",
 		-- "bombingrun bombing2 gp40 212.53 -134.06 19.33 163.59 -134.66 4.72",
 		-- an area effect bombing
 		-- the x,y,z is the center of the barrage
 		-- the distance is the radius of a circle around the center to randomly fire off the ammo in
 		-- command name ammo x y z distance
-		-- "barrage barrage1 gp40 -154.25 -107.17 8.77 25",
-		-- "barrage barrage1 gp40 84.84 306.73 21.79 50",
+		"barrage barrage1 gp40 -136.68 204.49 12.79 50",
+		"barrage barrage1 gp40 48.05 317.05 18.90 25",
 		-- "barrage barrage1 gp40 -266.85 -36.03 5.26 50",
 
 		
@@ -87,33 +98,48 @@ if(true) then
 		-- commandname,pctg chance each second,wait in seconds
 		"event planes .40 120000",
 		"event bombs .10 20000",
-		"event explosions .20 25000",
-		"event guns1 .15 10000",
+		-- "event explosions .20 25000",
+		-- "event guns1 .15 10000",
 		"event guns2 .20 30000",
-		-- "event wind .5 5000",
-		-- "event bombing1 .10 15000 500 6",
+		"event wind .5 5000",
+		-- "event bombing1 .10 100000 500 6",
 		-- "event bombing2 .10 20000 750 3",
-		-- "event barrage1 .20 60000 700 10",
+		-- "event barrage1 .25 60000 700 10",
 
 		
 -- play area boundary
 -- boundary name x y z
-        "boundary  playarea -18.52 -163.28 7.49",
-		"boundary  playarea 77.25 -168.82 6.80",
-		"boundary  playarea 172.56 -112.25 6.64",
-		"boundary  playarea 199.10 -84.36 5.14",
-		"boundary  playarea 215.36 -50.64 5.80",
-		"boundary  playarea 247.29 -14.12 7.45",
-		"boundary  playarea 131.47 17.21 9.06",
-		"boundary  playarea 114.97 2.62 9.06",
-		"boundary  playarea 102.41 -30.24 8.41",
-		"boundary  playarea 72.04 -16.81 7.74",
-		"boundary  playarea -7.73 -22.81 7.25",
-		"boundary  playarea -44.07 -32.18 7.91",
-		"boundary  playarea -65.81 -64.97 8.43",
-		"boundary  playarea -95.09 -112.12 8.43",
-		"boundary  playarea -89.99 -148.66 6.78",
-		"boundary  playarea -51.07 -162.15 7.11",
+		"boundary  playarea 293.95 48.96 4.02",
+		"boundary  playarea 291.80 20.31 3.54",
+		"boundary  playarea 272.08 -1.04 4.86",
+		"boundary  playarea 233.77 -27.03 6.49",
+		"boundary  playarea 214.87 -51.04 6.16",
+		"boundary  playarea 194.60 -89.02 5.51",
+		"boundary  playarea 180.68 -104.04 7.40",
+		"boundary  playarea 65.32 -65.03 8.72",
+		"boundary  playarea 71.66 -18.64 7.97",
+		"boundary  playarea 50.53 41.71 6.76",
+		"boundary  playarea 253.17 235.51 8.20",
+		"boundary  playarea 278.89 205.99 2.88",
+		"boundary  playarea 267.66 196.51 2.71",
+		"boundary  playarea 255.16 188.76 3.37",
+		"boundary  playarea 230.83 161.14 3.86",
+		"boundary  playarea 226.47 143.70 3.36",
+		"boundary  playarea 219.33 110.95 3.04",
+		"boundary  playarea 208.76 97.85 2.87",
+		"boundary  playarea 192.89 90.25 3.19",
+		"boundary  playarea 173.55 78.37 2.70",
+		"boundary  playarea 160.32 74.79 2.86",
+		"boundary  playarea 154.56 71.03 3.68",
+		"boundary  playarea 148.51 60.52 3.68",
+		"boundary  playarea 227.37 48.91 7.64",
+		
+		
+		
+		
+	
+		
+
 
 		
 		
@@ -172,14 +198,65 @@ if(true) then
 		"area toalliedspawn OnTrigger 206.57 -6.40 8.17",	
 		"area toalliedspawn OnTrigger 199.36 -22.17 8.17",	
 		"area toalliedspawn OnTrigger 178.45 -19.22 8.17",	
-		"area toalliedspawn OnTrigger 176.68 1.85 8.17",			
+		"area toalliedspawn OnTrigger 176.68 1.85 8.17",		
+
+		-- minefield near axis spawn
+		"area axisminefield1 OnMineArea 146.43 21.67 8.48",
+		"area axisminefield1 OnMineArea 293.38 18.17 4.19",
+		"area axisminefield1 OnMineArea 297.08 32.59 4.69",
+		"area axisminefield1 OnMineArea 156.79 60.77 7.16",
+		
+		-- minefield east side of path
+		"area pathfield1 OnMineArea 97.08 5.36 2.36",
+		"area pathfield1 OnMineArea 95.03 24.23 5.85",
+		"area pathfield1 OnMineArea 98.29 30.91 5.85",
+		"area pathfield1 OnMineArea 110.15 31.92 5.69",
+		"area pathfield1 OnMineArea 128.99 36.36 5.87",
+		"area pathfield1 OnMineArea 123.00 27.80 2.72",
+		"area pathfield1 OnMineArea 104.61 11.56 2.74",
+		
+		-- minefield west side of path
+		"area pathfield2 OnMineArea 117.64 42.08 6.42",
+		"area pathfield2 OnMineArea 112.25 41.53 5.79",
+		"area pathfield2 OnMineArea 106.57 37.60 5.96",
+		"area pathfield2 OnMineArea 94.90 34.81 5.97",
+		"area pathfield2 OnMineArea 92.26 26.99 5.97",
+		"area pathfield2 OnMineArea 90.99 23.24 5.80",
+		"area pathfield2 OnMineArea 91.77 -4.09 3.30",
+		"area pathfield2 OnMineArea 65.86 -8.48 3.85",
+		"area pathfield2 OnMineArea 51.85 41.89 7.02",
+		"area pathfield2 OnMineArea 94.70 84.00 7.55",
+		-- "area pathfield1 OnMineArea 185.42 16.89 8.77",
+		-- "area pathfield1 OnMineArea 185.42 16.89 8.77",
+		-- "area pathfield1 OnMineArea 185.42 16.89 8.77",
+		-- "area pathfield1 OnMineArea 185.42 16.89 8.77",
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+			
+		
+		
+		
+		
+
+
+
+		
 		
 -- SPAWNS		
 		
 		-- spawn points
 		-- command,spawngroup,worldx,worldy,worldz,yaw
-		"spawn alliedtroops -35.72 -152.77 7.82 0.44",
-		"spawn alliedtroops -22.44 -161.92 7.82 0.41",
+		"spawn alliedtroops 213.11 152.80 5.55 -1.35",
+		"spawn alliedtroops 203.77 146.97 6.37 -1.8",
 		"spawn axistroops 210.55 -15.95 7.81 -2.20",
 		"spawn axistroops 216.89 -17.83 7.80 -2.29",
 
@@ -189,9 +266,26 @@ if(true) then
 		-- command name typeid x y z roll pitch yaw
 		-- "clone bedford1 bedford -20.11 -156.51 8.77 0 0 90",
 		
+		
+		
+		
 		-- anonymous version
 		-- command name typeid x y z roll pitch yaw
-		-- "clone bedford -28.25 -172.75 2.5 15 -10 20",
+		"clone bedford 199.68 144.04 6.9 5 0 -90",
+		"clone bedford 200.34 148.35 6.9 5 0 -110",
+		"clone bedford 192.31 147.46 7.33 3 -1 -130",
+		"clone pzivd 95.72 156.42 8.3 3 -1 0",
+		"clone pzivd 79.79 108.67 5.58 3 -1 20",
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
 		-- "clone bedford -19.75 -153.93 9.05 2 0 0",
 		-- "clone bedford -27.34 -150.10 8.9 4 0 285",
 		-- "clone bedford -35.21 -147.32 8.85 6 2 285",
