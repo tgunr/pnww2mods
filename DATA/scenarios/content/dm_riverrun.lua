@@ -65,6 +65,7 @@ if(true) then
 		"sound sounds/tank_burn.wav 1 1 109 -29 9 5 30",
 		"sound sounds/bedford/idle.wav 0.5 1 -29 -149 10 5 30",
 		"sound sounds/tank_burn.wav 1 1 29 -57 9 5 30",
+		"sound sounds/ambience/stream.wav 1.75 1 123 11 2 10 30",
 		-- a line of bombs (as from a plane)
 		-- command,name,ammo,worldx1,worldy1,worldz1,worldx2,worldy2,worldz2
 		"bombingrun bombing1 gp250 -184.65 -279.50 22.84 46.61 -297.32 22.54",
