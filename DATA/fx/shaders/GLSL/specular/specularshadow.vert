@@ -5,7 +5,7 @@ varying vec3 vertexpos;
 
 void main()
 {
-	N = normalize(gl_NormalMatrix * gl_Normal.xyz);
+	N = gl_NormalMatrix * gl_Normal.xyz;
 	
 	gl_TexCoord[0] = gl_MultiTexCoord0;
 
