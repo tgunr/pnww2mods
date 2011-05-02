@@ -32,5 +32,15 @@
     <grnscale>1.0</grnscale>
     <bluscale>2.5</bluscale>
   </grass>
+  <terrainmaterials>
+    <!-- Keep in ascending order (layer0, layer1, layer2...etc)-->
+    <!-- These are texture names included in grounds.csv -->
+    <!-- If there is no texture with the wanted effect, a new texture will need to be added to grounds.csv -->
+    <!-- Or modify one already in use (i.e., grass1 can be modified since it's no longer in use) -->
+    <!-- These materials are used for effects and walk sounds -->
+    <layer0>grass1</layer0>
+    <layer1>rubble</layer1>
+    <layer2>dirt01</layer2>
+    <layer3>tent</layer3>
+  </terrainmaterials>
 </exposed>
-
