@@ -1,0 +1,25 @@
+# US sniper .loadout file
+
+# sounds available for the mounts
+# sound1 = sounds\troop\ (springfield)
+sound2 = sounds\troop\grenade-throw.wav
+
+loadout = 1
+
+# Rifle
+mountnum = 1
+mountsound = sound1
+weapon = springfld1903
+
+# Smoke Grenade (british placeholder)
+mountnum = 2
+mountsound = sound2
+weapon = uk_smokegrenade
+
+# Knife
+mountnum = 3
+weapon = knifegeneric
+
+# build tool
+mountnum = 8
+weapon = satchelgeneric

@@ -1,0 +1,27 @@
+# US BAR loadout file
+
+# sounds available for the mounts
+# sound1 = sounds\troop\ (Bar)
+# sound2 = sounds\troop\ (pistol)
+
+loadout = 1
+
+# LightMachineGun
+mountnum = 1
+mountsound = sound1
+weapon = browningBAR
+maxoversupply = 5
+
+# Pistol
+mountnum = 2
+mounsound = sound2
+weapon = colt1911
+
+# Knife
+mountnum = 3
+weapon = knifegeneric
+
+# build tool
+mountnum = 8
+weapon = satchelgeneric
+
