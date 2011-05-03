@@ -32,14 +32,7 @@ if(true) then
 		"emitter smokescreen 117.08 -128.89 8.53",
 		
 		
-		
-		
-		
-
-		
-		
-		
-		
+				
 		-- VEHICLES
 		-- SMOKE
 		"emitter hulksmoke 96.32 156.61 8.39",
@@ -82,10 +75,7 @@ if(true) then
 		"sound sounds/tank_burn.wav 1 1 95 -26 8 5 30",
 		"sound sounds/ambience/stream.wav 1.75 1 123 11 2 10 30",
 		
-		
-		
-		
-		
+			
 		
 		"sound sounds/bedford/idle.wav 0.5 1 198 148 8 15 40",
 		
@@ -150,17 +140,7 @@ if(true) then
 		"boundary  playarea 154.56 71.03 3.68",
 		"boundary  playarea 148.51 60.52 3.68",
 		"boundary  playarea 227.37 48.91 7.64",
-		
-		
-		
-		
 	
-		
-
-
-		
-		
-		
 
 
 -- blocking volume x
@@ -173,33 +153,7 @@ if(true) then
 		"block 113.12 -36.77 8.49 71.74 -19.79 7.67 1 10",
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-		
-		
-		
-		
-		
-		
-		
-		
-
-
-
+	
  -- Trigger Areas
 
 		-- directions to axis spawn 1
@@ -251,28 +205,7 @@ if(true) then
 		"area bridgecapture OnTrigger 130.04 37.17 7.13",
 		"area bridgecapture OnTrigger 123.71 19.42 7.13",
 		
-		
-		
-		
-		
-		
-		
-		
-		
-
-		
-		
-		
 			
-		
-		
-		
-		
-
-
-
-		
-		
 -- SPAWNS		
 		
 		-- spawn points
@@ -300,15 +233,6 @@ if(true) then
 		"clone pzivd 79.79 108.67 5.58 3 -1 20",
 		"clone oplbltz 192.79 -31.45 8.5 5 -4.25 205",
 		"clone oplbltz 176.32 -20.12 8.55 0 0 180",
-		
-		
-		
-		
-		
-		
-	
-		
-		
 		
 		-- "clone bedford -19.75 -153.93 9.05 2 0 0",
 		-- "clone bedford -27.34 -150.10 8.9 4 0 285",
