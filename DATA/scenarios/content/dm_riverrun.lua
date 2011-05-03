@@ -34,9 +34,12 @@ if(true) then
 		"emitter buildingdamagesmoke 158.6 -16.7 11.25",
 		"emitter buildingdamagesmoke 158.46 -16.93 11",
 		-- FIRES
-		"emitter vehiclefire 107.62 -29.90 9.36",
+		"emitter vehiclefire 104.5 -36.35 8.2",
 		"emitter vehiclefire 157.34 -16.48 8.08",
 		"emitter vehiclefire 31.39 -57.25 9.73",
+		"emitter vehiclefire 94.85 -28.05 9.2",
+		
+	
 
 		-- SOUNDS
 		
@@ -62,9 +65,11 @@ if(true) then
 		-- POSITIONAL SOUNDS
 		-- command name filename volume loop x y z mindist maxdist
 		"sound sounds/tank_burn.wav 1 1 155 -16 9 5 30",
-		"sound sounds/tank_burn.wav 1 1 109 -29 9 5 30",
+		"sound sounds/tank_burn.wav 1 1 104 -36 7 5 30",
 		"sound sounds/bedford/idle.wav 0.5 1 -29 -149 10 5 30",
 		"sound sounds/tank_burn.wav 1 1 29 -57 9 5 30",
+		"sound sounds/tank_burn.wav 1 1 95 -285 95 5 30",
+		"emitter vehiclefire 94.85 -28.05 9.2",
 		"sound sounds/ambience/stream.wav 1.75 1 123 11 2 10 30",
 		-- a line of bombs (as from a plane)
 		-- command,name,ammo,worldx1,worldy1,worldz1,worldx2,worldy2,worldz2
@@ -107,8 +112,11 @@ if(true) then
 		"boundary  playarea 247.29 -14.12 7.45",
 		"boundary  playarea 131.47 17.21 9.06",
 		"boundary  playarea 114.97 2.62 9.06",
-		"boundary  playarea 102.41 -30.24 8.41",
-		"boundary  playarea 72.04 -16.81 7.74",
+		-- "boundary  playarea 102.41 -30.24 8.41",
+		
+		
+		"boundary  playarea 72.36 -15.00 7.81",
+		"boundary  playarea 71.65 -19.75 7.81",
 		"boundary  playarea -7.73 -22.81 7.25",
 		"boundary  playarea -44.07 -32.18 7.91",
 		"boundary  playarea -65.81 -64.97 8.43",
@@ -124,7 +132,7 @@ if(true) then
 -- blocking volume x
 -- block name x1 y1 z1 x2 y2 z2 thickness height
 
-        "block 115.87 -26.77 9.13 104.61 -22.48 9.13 1 5",
+        "block 113.75 -36.33 8.36 64.86 -17.38 7.99 1 10",
         "block 110.22 -43.30 9.13 108.01 -49.00 9.13 1 5",
         "block 118.74 -46.93 9.29 118.07 -49.31 9.29 1 5",
 		"block 113.11 -64.25 9.14 111.41 -69.99 9.14 1 5",
