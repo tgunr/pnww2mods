@@ -74,8 +74,14 @@ if(true) then
 		"sound sounds/tank_burn.wav 1 1 108 -30 9 5 30",
 		"sound sounds/tank_burn.wav 1 1 95 -26 8 5 30",
 		"sound sounds/ambience/stream.wav 1.75 1 123 11 2 10 30",
+		"sound sounds/ambience/stream.wav 1.75 1 90 0 3 10 30",
+		"sound sounds/ambience/stream.wav 1.75 1 167 76 3 10 30",
+		"sound sounds/ambience/stream.wav 1.75 1 220 -46 7 10 30",
 		
 			
+		
+		
+		
 		
 		"sound sounds/bedford/idle.wav 0.5 1 198 148 8 15 40",
 		
@@ -103,15 +109,15 @@ if(true) then
 		-- TRIGGERS
 		
 		-- commandname,pctg chance each second,wait in seconds
-		"event planes .40 120000",
-		"event bombs .10 20000",
+		-- "event planes .40 120000",
+		-- "event bombs .10 20000",
 		-- "event explosions .20 25000",
 		-- "event guns1 .15 10000",
-		"event guns2 .20 30000",
-		"event wind .5 5000",
-		"event bombing1 .10 100000 500 6",
-		"event bombing2 .10 20000 750 3",
-		"event barrage1 .25 60000 700 10",
+		-- "event guns2 .20 30000",
+		-- "event wind .5 5000",
+		-- "event bombing1 .10 100000 500 6",
+		-- "event bombing2 .10 20000 750 3",
+		-- "event barrage1 .25 60000 700 10",
 
 		
 -- play area boundary
@@ -157,10 +163,12 @@ if(true) then
  -- Trigger Areas
 
 		-- directions to axis spawn 1
-		"area toaxisspawn OnTrigger -21.23 -148.85 9.48",		
-		"area toaxisspawn OnTrigger -17.12 -137.68 9.48",
-		"area toaxisspawn OnTrigger -8.90 -140.18 9.48",
-		"area toaxisspawn OnTrigger -13.67 -150.27 9.48",	
+		"area toaxisspawn OnTrigger 205.20 155.44 6.70",		
+		"area toaxisspawn OnTrigger 196.16 145.35 7.05",
+		"area toaxisspawn OnTrigger 213.49 122.02 6.87",
+		"area toaxisspawn OnTrigger 210.93 117.77 6.87",
+		"area toaxisspawn OnTrigger 161.99 147.53 7.52",
+		"area toaxisspawn OnTrigger 190.28 170.11 8.02",		
 
 		-- directions to allied spawn 1
 		"area toalliedspawn OnTrigger 206.57 -6.40 8.17",	
@@ -175,13 +183,13 @@ if(true) then
 		"area axisminefield1 OnMineArea 156.79 60.77 7.16",
 		
 		-- minefield east side of path
-		"area pathfield1 OnMineArea 97.08 5.36 2.36",
+		"area pathfield1 OnMineArea 100.42 0.63 5.37",
 		"area pathfield1 OnMineArea 95.03 24.23 5.85",
 		"area pathfield1 OnMineArea 98.29 30.91 5.85",
 		"area pathfield1 OnMineArea 110.15 31.92 5.69",
 		"area pathfield1 OnMineArea 128.99 36.36 5.87",
 		"area pathfield1 OnMineArea 123.00 27.80 2.72",
-		"area pathfield1 OnMineArea 104.61 11.56 2.74",
+		"area pathfield1 OnMineArea 121.50 16.70 5.37",
 		
 		-- minefield west side of path
 		"area pathfield2 OnMineArea 117.64 42.08 6.42",
@@ -194,10 +202,7 @@ if(true) then
 		"area pathfield2 OnMineArea 65.86 -8.48 3.85",
 		"area pathfield2 OnMineArea 51.85 41.89 7.02",
 		"area pathfield2 OnMineArea 94.70 84.00 7.55",
-		-- "area pathfield1 OnMineArea 185.42 16.89 8.77",
-		-- "area pathfield1 OnMineArea 185.42 16.89 8.77",
-		-- "area pathfield1 OnMineArea 185.42 16.89 8.77",
-		-- "area pathfield1 OnMineArea 185.42 16.89 8.77",
+
 		
 		-- bridge capture
 		"area bridgecapture OnTrigger 128.28 19.45 7.13",
