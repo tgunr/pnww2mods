@@ -85,6 +85,8 @@
 		<!-- german para helmet -->
 		<model name="de_parahelm_01" path="TPS\meshes\para_germ\kit_de_parahelm_lod1" attach="18" lod="0"/>
 		
+		<model name="us_helmet_01" path="TPS\meshes\american_inf\kit_us_helmet" attach="18" lod="0"/>
+		
 		<!--
 		<model name="uk_example" path="path\to\example\model_lod1" attach="9" lod="20">
 			<lod path="path\to\example\model_lod2" lod="100"/>
@@ -145,6 +147,8 @@
 		<object name="de_pholster_rt_hip" model="de_pholster_rt_hip"/>
 		<object name="de_pholster_lf_web" model="de_pholster_lf_web"/>
 		<object name="de_ruck" model="de_ruck"/>
+		
+		<object name="us_helmet" model="us_helmet_01"/>
 		
 	<!-- System will randomly select from the group of sub object.
 		<object name="uk_helmet">
@@ -550,6 +554,10 @@
 			<object name="de_rifle_ammo_lf"/>
 			<object name="de_rifle_ammo_rt"/>
 			<object name="de_ruck"/>
+		</kit>
+		
+		<kit name="us-assault">
+			<object name="us_helmet"/>
 		</kit>
 		
 	</kits>
