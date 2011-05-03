@@ -1,0 +1,47 @@
+# first thing in the weapon file should always be the weapontype
+# this causes the default_(weapontype).txt file to be loaded first
+# valid weapon types are:
+# SMG, SATCHEL, RIFLE, AUTO_PISTOL, GRENADE, REVOLVER, ITEM, KNIFE, LMG
+weaponType = LMG
+
+# per bullet muzzle rize (in degrees)
+# muzzleRise = 3.5
+muzzleRise = 2.5
+
+# degrees per second of "push back to zero" per second
+muzzleReturn = 37.5
+
+# degrees of climb per second
+muzzleClimbRate = 80.0
+
+# per bullet "jump" .. this is the vertical component
+# the total formula is weapon.muzzleRize * weapon.bulletJitter * trooper.aimControl
+bulletJitter = 3.5
+
+# sound to play when reloading
+reloadSound = sounds\mp40-reload.wav
+
+# specify the weapon & clip (clip optional) model here
+# note that data\gr2data\FPS\ is prepended to these file names
+weaponModel = bren\bren
+#clipModel = bren\bren-clip
+
+# granny attach bone names for weapon & clip
+# the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
+weaponConnectTo = weapon-control
+weaponConnect = bren-connect
+
+# the clipConnect bone in the clip attaches to the clipConnectTo bone in the gun
+#clipConnectTo = clip-mount
+#clipConnect = clip-control
+
+# boresighting values .. how much off of "straight" does this gun need to fire
+#aimVerticalCorrection = -0.15
+#aimHorizontalCorrection = -0.35
+#aimVerticalCorrection = -0.04
+#aimHorizontalCorrection = -0.035
+aimVerticalCorrection = -1.20
+aimHorizontalCorrection = 0.35
+
+# LMGs have their own icons (8 is bren)
+hudIconType = 8
