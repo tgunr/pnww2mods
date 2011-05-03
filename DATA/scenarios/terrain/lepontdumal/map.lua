@@ -223,28 +223,23 @@ if(true) then
 		
 		
 
-		-- stuff for le pont du mal
 
-		"place logpile_outside 79.75 -5.43 1.6 0 0 70 0 0 0",
-		"place logpile_outside 80.25 -6.8 1.6 0 0 70 0 0 0",
-		"place logpile_outside 80.8 -8.3 1.6 0 0 70 0 0 0",
 
-		
+
+		-- allied hulks near bridge
 		"place instance_hulk2_dam 144.60 72.28 6.95 0 -2 30 0 0 0 0",
-		
-		
 		"place instance_hulk2_dam 152.80 64.43 2.08 25 -14 -35 0 0 0 0",
 		
 		 
 		
-		
+		-- near bridge
 		"place tanktrap 142.43 56.22 6.6 15 30 0 0 0 0 0",
 		"place tanktrap 137.0 58.5 7.0 -20 0 15 0 0 0 0",
 		"place tanktrap 136.20 59.62 6.9 10 0 0 0 0 0",
 		"place sandbagwall_curved_outside 132.08 18.19 7.7 0 0 80 0 0 0 0",
 		"place ammocrate 135.38 16.71 8.1 0 0 80 0 0 0 0",
 		"place crate 135.39 18.43 7.85 -3 -2 -30 0 0 0 0",
-		
+		-- minefield signs
 		"place dangersign 156.67 60.02 5.7 0 0 110 0 0 0",
 		"place dangersign 152.83 49.54 5.8 0 0 112 0 0 0",
 		"place dangersign 150.37 39.46 6.9 0 0 110 0 0 0",
@@ -255,12 +250,20 @@ if(true) then
 		"place dangersign 230.86 17.78 7.2 0 0 5 0 0 0",
 		"place dangersign 256.56 18.20 6.8 0 0 5 0 0 0",
 		"place dangersign 289.66 19.51 3.7 15 0 5 0 0 0",
-		"place dangersign 126.95 37.23 6.01 0 0 170 0 0 0",
-		"place dangersign 96.23 83.09 6.99 0 10 240 0 0 0",
-		"place dangersign 100.66 74.60 6.83 0 0 235 0 0 0",
-		"place dangersign 107.61 61.40 6.3 0 0 240 0 0 0",
+		"place dangersign 125.43 40.20 5.7 0 0 170 0 0 0",
+		"place dangersign 96.23 83.09 6.5 0 10 240 0 0 0",
+		"place dangersign 100.66 74.60 6.2 0 0 235 0 0 0",
+		"place dangersign 107.61 61.40 6.0 0 0 240 0 0 0",
 		"place dangersign 117.95 42.16 5 0 0 240 0 0 0",
-		"place oildrums_outside 95.27 -27.98 8.3 0 6 0 0 0 0 1",
+		"place dangersign 109.42 4.50 5.9 0 0 -50 0 0 0",
+		"place dangersign 82.02 -12.05 6 0 0 -40 0 0 0",
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -292,22 +295,26 @@ if(true) then
 		"place wall03 120.5 -79.55 6.8 0 0 21 0 0 0 0",
 		"place sandbagwall_outside 115.09 -77.91 8.0 0 0 -68 0 0 0 0",
 		"place sandbagwall_outside 113.4 -77.16 8.0 0 0 -68 0 0 0 0",
+		"place oildrums_outside 95.27 -27.98 8.3 0 6 0 0 0 0 1",
+		"place wall02 102 -31.5 6.5 0 0 205 0 0 0 0",
 		
-		"place wall02 102 -31.5 7.0 0 0 205 0 0 0 0",
-		
-		
-		
-		
-	
-		
-		
-		
-		
-		
+		-- RIVER CROSSING
+		"place crate 93.53 2.87 1.5 0 0 55 0 0 0 0",
+		"place crate 93.98 1.36 1.5 0 0 80 0 0 0 0",
+		"place crate 93.87 -1.68 1.5 0 0 80 0 0 0 0",
+		"place ammocrate 93.8 -0.1 1.9 0 0 0 0 0 0 0",
 		
 
-
+		-- "place boarding1 93.92 3.01 2.6 90 0 0 0 0 0 0",
+		-- "place boarding1 93.96 1 2.6 90 0 0 0 0 0 0",
+		
+		
+		"place instance_rockwallberm1 86 -16 6.7 -15 -8 60 0 0 0 0",
+		"place instance_rockwallberm1 105.46 -3.96 6.7 -10 -5 60 0 0 0 0",
+		
 	
+
+
 
 	
 		
