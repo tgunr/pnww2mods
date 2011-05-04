@@ -26,10 +26,10 @@ if(true) then
 		-- "emitter cratersmoke 26.02 -82.75 8",
 		-- "emitter cratersmoke -49.62 -130.94 8",
 		-- smokescreen
-		"emitter smokescreen 263.71 229.63 5.5",
-		"emitter smokescreen 115.21 115.45 6.69",
-		"emitter smokescreen 157.29 164.70 9.15",
-		"emitter smokescreen 117.08 -128.89 8.53",
+		"emitter smokescreen 140.63 209.79 8.70",
+		"emitter smokescreen 55.05 174.74 7.84",
+		"emitter smokescreen 15.26 118.73 6.35",
+		"emitter smokescreen 278.33 248.17 2.96",
 		
 		
 				
@@ -46,6 +46,9 @@ if(true) then
 		"emitter vehiclefire 152.80 64.43 3.21",
 		"emitter vehiclefire 105.14 -36.56 9.01",
 		"emitter vehiclefire 94.85 -28.05 9.2",
+		"emitter vehiclefire 261.35 227.52 4.32",
+		
+		
 
 		-- SOUNDS
 		
@@ -73,10 +76,14 @@ if(true) then
 		"sound sounds/tank_burn.wav 1 1 151 62 3 5 30",
 		"sound sounds/tank_burn.wav 1 1 108 -30 9 5 30",
 		"sound sounds/tank_burn.wav 1 1 95 -26 8 5 30",
+		"sound sounds/tank_burn.wav 1 1 261 227 4 5 30",
 		"sound sounds/ambience/stream.wav 1.75 1 123 11 2 10 30",
 		"sound sounds/ambience/stream.wav 1.75 1 90 0 3 10 30",
 		"sound sounds/ambience/stream.wav 1.75 1 167 76 3 10 30",
 		"sound sounds/ambience/stream.wav 1.75 1 220 -46 7 10 30",
+		
+		
+		
 		
 			
 		
