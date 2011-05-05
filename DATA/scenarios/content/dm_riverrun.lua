@@ -178,16 +178,16 @@ if(true) then
 		"area churchentry OnTrigger 53.12 -102.63 8.56",
 		"area churchentry OnTrigger 57.99 -88.71 8.56",
 		-- directions to axis spawn 1
-		"area toaxisspawn OnTrigger -21.23 -148.85 9.48",		
-		"area toaxisspawn OnTrigger -17.12 -137.68 9.48",
-		"area toaxisspawn OnTrigger -8.90 -140.18 9.48",
-		"area toaxisspawn OnTrigger -13.67 -150.27 9.48",	
+		"area toaxisspawn OnTrigger -3.47 -92.71 9.64",		
+		"area toaxisspawn OnTrigger -1.69 -92.32 9.64",
+		"area toaxisspawn OnTrigger 3.11 -125.35 9.64",
+		"area toaxisspawn OnTrigger 0.38 -124.98 9.64",	
 
 		-- directions to allied spawn 1
-		"area toalliedspawn OnTrigger 206.57 -6.40 8.17",	
-		"area toalliedspawn OnTrigger 199.36 -22.17 8.17",	
-		"area toalliedspawn OnTrigger 178.45 -19.22 8.17",	
-		"area toalliedspawn OnTrigger 176.68 1.85 8.17",			
+		"area toalliedspawn OnTrigger 137.66 -74.92 9.80",	
+		"area toalliedspawn OnTrigger 136.96 -76.61 9.80",	
+		"area toalliedspawn OnTrigger 114.20 -73.10 9.80",	
+		"area toalliedspawn OnTrigger 114.30 -70.45 9.80",	
 		
 -- SPAWNS		
 		
