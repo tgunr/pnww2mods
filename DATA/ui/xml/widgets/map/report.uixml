@@ -16,33 +16,40 @@
 			
 		<view x="200" y="40" rright="20" rtop="30" rright="10">
 			<caption label="${widgets.map.context.waypoints.add.report.type}" x="5" height="20" rright="5" rtop="0" maxlength="128"
-				style="font-size: -1; color: #FFFFFF;"/>
+				style="font-size: -1; color: #FFFFFF;"/>				
 			<radiobutton label="${widgets.map.waypoints.contact.infantry}" x="5" rright="5" height="15" rtop="30"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('troop')" onshow="this.value = true;"/>
+			<view class="contacticon"  x="100" height="15" width="15" rtop="30" index="8" style="color: #FF0000;"/>
 			<radiobutton label="${widgets.map.waypoints.contact.armor}" x="5" rright="5" height="15" rtop="45"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('land')"/>
+			<view class="contacticon"  x="100" height="15" width="15" rtop="45" index="2" style="color: #FF0000;"/>
 			<radiobutton label="${widgets.map.waypoints.contact.airforce}" x="5" rright="5" height="15" rtop="60"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('air')"/>
+			<view class="contacticon"  x="100" height="15" width="15" rtop="60" index="0" style="color: #FF0000;"/>
 			<radiobutton label="${widgets.map.waypoints.contact.shipping}" x="5" rright="5" height="15" rtop="75"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('sea')"/>
+			<view class="contacticon"  x="100" height="15" width="15" rtop="75" index="1" style="color: #FF0000;"/>	
 			<radiobutton label="${widgets.map.waypoints.contact.gun}" x="5" rright="5" height="15" rtop="90"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('gun')"/>
+			<view class="contacticon"  x="100" height="15" width="15" rtop="90" index="3" style="color: #FF0000;"/>
 			<radiobutton label="${widgets.map.waypoints.contact.truck}" x="5" rright="5" height="15" rtop="105"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('truck')"/>
+			<view class="contacticon"  x="100" height="15" width="15" rtop="105" index="4" style="color: #FF0000;"/>
 			<radiobutton label="${widgets.map.waypoints.contact.danger}" x="5" rright="5" height="15" rtop="120"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('danger')"/>
+			<view class="contacticon"  x="100" height="15" width="15" rtop="120" index="5" style="color: #FF0000;"/>
 			<radiobutton label="${widgets.map.waypoints.contact.unknown}" x="5" rright="5" height="15" rtop="135"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('unknown')"/>
+			<view class="contacticon"  x="100" height="15" width="15" rtop="135" index="6" style="color: #FF0000;"/>
 		</view>
-			
 		<button id="popup-no" x="20" y="10" width="150" height="25" label="${popup.cancel}" onclick="addReport(false)"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>

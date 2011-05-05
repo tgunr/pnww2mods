@@ -297,6 +297,7 @@
 		<layer type="icon" id="rendered" minscale="0" maxscale="1" enabled="true"/>
 		<layer type="terrainobj" id="terrainobj" minscale="0" maxscale=".5" enabled="true"/>
 		<layer type="hclinks" id="hclinks" minscale="0" maxscale="20" enabled="true"/>
+		<layer type="front" id="front" minscale="0" maxscale="20" enabled="true"/>
 		<layer type="strat" id="strat" minscale="0" maxscale="20" enabled="true">
 			<filter name="showorders" value="yes"/>
 			<filter name="showdeployments" value="yes"/>
