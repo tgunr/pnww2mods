@@ -14,17 +14,20 @@ if(true) then
 		-- command,effectname,worldx,worldy,worldz
 		-- SMOKE
 		-- barrels
-		-- "emitter hulksmoke -25.16 -97.95 8.75",
-		-- "emitter hulksmoke -29.35 -105.79 8.75",
-		-- "emitter hulksmoke -82.57 -95.59 8.5",
+		"emitter hulksmoke -25.16 -97.95 8.75",
+		"emitter hulksmoke -29.35 -105.79 8.75",
+		"emitter hulksmoke -82.57 -95.59 8.5",
 		
 		
 		-- craters
-		-- "emitter cratersmoke 173.40 -38.89 8",
-		-- "emitter cratersmoke 129.71 -55.96 8",
-		-- "emitter cratersmoke -45.56 -78.53 8",
-		-- "emitter cratersmoke 26.02 -82.75 8",
-		-- "emitter cratersmoke -49.62 -130.94 8",
+		"emitter cratersmoke 173.40 -38.89 8",
+		"emitter cratersmoke 129.71 -55.96 8",
+		"emitter cratersmoke -45.56 -78.53 8",
+		"emitter cratersmoke 26.02 -82.75 8",
+		"emitter cratersmoke -49.62 -130.94 8",
+		"emitter cratersmoke 109.09 27.70 4.5",
+		
+		
 		-- smokescreen
 		"emitter smokescreen 140.63 209.79 8.70",
 		"emitter smokescreen 55.05 174.74 7.84",
@@ -243,7 +246,7 @@ if(true) then
 		"clone bedford 192.31 147.46 7.33 3 -1 -130",
 		"clone pzivd 95.72 156.42 8.3 3 -1 0",
 		"clone pzivd 79.79 108.67 5.58 3 -1 20",
-		"clone oplbltz 192.79 -31.45 8.5 5 -4.25 205",
+		"clone oplbltz 121.93 6.84 8.08 -3 0 205",
 		"clone oplbltz 176.32 -20.12 8.55 0 0 180",
 		
 		-- "clone bedford -19.75 -153.93 9.05 2 0 0",
