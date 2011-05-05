@@ -126,10 +126,10 @@ if(true) then
 		-- "place oildrums_outside -30.00 -106.00 8.22 0 0 30 0 0 0 1",
 		-- "place cratepile_outside -22.70 -88.50 8.26 0 0 -70 0 0 0 0",
 		-- "place bel3 -25.56 -46.58 8.36 0 0 125 0 0 0 0",
-		"place tanktrap 106.74 -33.49 7.3 0 0 0 0 0 0 0",
-		"place tanktrap 108.65 -34.12 7.5 0 0 20 0 0 0 0",
+		"place tanktrap 106.74 -33.49 7.3 0 15 0 0 0 0 0",
+		"place tanktrap 108.65 -34.12 7.5 0 0 -90 0 0 0 0",
 		"place tanktrap 110.29 -35.06 7.6 0 0 -10 0 0 0 0",
-		"place tanktrap 112.06 -34.00 7.7 0 0 -10 0 0 0 0",
+		"place tanktrap 112.06 -34.00 7.7 0 0 -45 0 0 0 0",
 		-- "place sandbagwall_outside 114.50 -25.00 7.41 1 -3 -65 0 0 0 0",
 		-- "place sandbagwall_outside 108.50 -22.50 7.09 1 0 -65 0 0 0 0",
 		"place instance_hulk2_dam 104.5 -36.35 7.4 0 5 -120 0 0 0 0",
@@ -257,6 +257,8 @@ if(true) then
 		"place dangersign 117.95 42.16 5 0 0 240 0 0 0",
 		"place dangersign 109.42 4.50 5.9 0 0 -50 0 0 0",
 		"place dangersign 82.02 -12.05 6 0 0 -40 0 0 0",
+		"place crate 138.30 -85.64 7.9 0 0 0 0 0 0 0",
+		
 		
 		
 		
