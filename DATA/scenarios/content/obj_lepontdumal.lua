@@ -42,7 +42,7 @@ if(true) then
 -- DEFINE WHERE PLAYERS SPAWN		
 		
 	-- spawn points
-	-- command,spawngroup,worldx,worldy,worldz,yaw
+	-- command spawngroup worldx worldy worldz yaw
 
 		"spawn alliedtroops 213.11 152.80 5.55 -1.35",
 		"spawn alliedtroops 203.77 146.97 6.37 -1.8",
