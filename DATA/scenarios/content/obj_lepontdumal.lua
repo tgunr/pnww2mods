@@ -48,8 +48,8 @@ if(true) then
 		-- FIRES
 		"emitter vehiclefire 152.80 64.43 3.21",
 		"emitter vehiclefire 105.14 -36.56 9.01",
-		"emitter vehiclefire 94.85 -28.05 9.2",
-		"emitter vehiclefire 261.35 227.52 4.32",
+		"emitter smallfire 95.18 -27.96 8.85",
+		"emitter smallfire 261.35 227.52 4.0",
 		
 		
 
