@@ -11,27 +11,32 @@ if(true) then
 -- DEFINE THE PLAY AREA
 	-- boundary name x y z
 
-        	"boundary  playarea 272955.44,3017114.22,481.00",
-		"boundary  playarea 273091.53,3017111.58,481.00",
-		"boundary  playarea 273196.44,3017005.89,481.00",
-		"boundary  playarea 273194.88,3016924.10,481.00",
-		"boundary  playarea 273008.03,3016923.33,481.00",
-		"boundary  playarea 273007.94,3016909.77,481.00",
-		"boundary  playarea 272917.06,3016911.96,481.00",
-		"boundary  playarea 272876.21,3016953.86,481.00",
-		"boundary  playarea 272877.96,3017035.83,481.00",
-		"boundary  playarea 272955.46,3017035.81,481.00",
+        	"boundary  playarea 272955.44 3017114.22 481.00",
+		"boundary  playarea 273091.53 3017111.58 481.00",
+		"boundary  playarea 273196.44 3017005.89 481.00",
+		"boundary  playarea 273194.88 3016924.10 481.00",
+		"boundary  playarea 273008.03 3016923.33 481.00",
+		"boundary  playarea 273007.94 3016909.77 481.00",
+		"boundary  playarea 272917.06 3016911.96 481.00",
+		"boundary  playarea 272876.21 3016953.86 481.00",
+		"boundary  playarea 272877.96 3017035.83 481.00",
+		"boundary  playarea 272955.46 3017035.81 481.00",
 		
 				
-		-- fx emitters
-		-- command,effectname,worldx,worldy,worldz
-		-- barrels
+-- fx emitters
+	-- command,effectname,worldx,worldy,worldz
+	-- barrels
+
 		"emitter hulksmoke 273119.68 3016921.62 482.00",
 		-- "emitter hulksmoke -29.35 -105.79 9.06",
-		-- craters
+
+	-- craters
+
 		"emitter hulksmoke 173.40 -38.89 6.9",
 		"emitter hulksmoke 129.71 -55.96 7.0",
-		-- smokescreen
+
+	-- smokescreen
+
 		"emitter smokescreen -46.03 -224.78 15.92",
 		"emitter smokescreen -1.73 -226.20 16.42",
 		-- vehicles
@@ -69,9 +74,6 @@ if(true) then
 		-- command name filename volume loop x y z mindist attenuation
 
 
-
-
-		
 		-- a line of bombs (as from a plane)
 		-- command,name,ammo,worldx1,worldy1,worldz1,worldx2,worldy2,worldz2
 		"bombingrun bombing1 gp500 272970.33 3016753.34 487.99 273011.34 3016751.15 487.99",
@@ -80,12 +82,6 @@ if(true) then
 		"bombingrun bombing1 gp250 274041.21 3016923.54 539.90 274040.94 3016998.48 539.56",
 		"bombingrun bombing2 gp40 33.14 -165.89 7.68 6.27 -182.85 2.72",
 		"bombingrun bombing2 gp40 212.53 -134.06 19.33 163.59 -134.66 4.72",
-
-
-
-
-
-
 
 		
 		-- a area effect bombing
@@ -146,24 +142,7 @@ if(true) then
 		"area toaxisspawn OnTrigger 272890.03 3016954.54 481.04",		
 		"area toaxisspawn OnTrigger 272881.98 3016946.62 481.19",
 
-																
-
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
+	
 		
 		-- "area barrage1 na -0.96 -38.87 8.25",
 		-- "area barrage1 na 69.38 -143.93 8.13",
@@ -186,9 +165,6 @@ if(true) then
 		"alert churchentry churchentry",
 		"alert toaxisspawn toaxisspawn",
 		"alert toalliedspawn toalliedspawn",
-
-
-
 
 		
 		-- spawn points
