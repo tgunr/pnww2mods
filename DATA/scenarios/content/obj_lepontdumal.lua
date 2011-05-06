@@ -167,7 +167,7 @@ if(true) then
 -- TRIGGERS
 	
 	-- EVENT TRIGGERS	
-	-- commandname,pctg chance each second,wait in seconds
+	-- command name pctgchance-each-second wait-in-seconds
 
 		-- "event planes .40 120000",
 		-- "event bombs .10 20000",
@@ -182,6 +182,7 @@ if(true) then
 		
 
 	-- AREA TRIGGERS
+	-- command name triggertype worldx worldy worldz
 	-- directions near axis spawn 1
 
 		"area toaxisspawn OnTrigger 205.20 155.44 6.70",		
@@ -246,7 +247,7 @@ if(true) then
 		
 				
 	-- ANONYMOUS VERSION
-	-- command name typeid x y z roll pitch yaw
+	-- command typeid x y z roll pitch yaw
 
 		"clone bedford 199.68 144.04 6.9 5 0 -90",
 		"clone bedford 200.34 148.35 6.9 5 0 -110",
