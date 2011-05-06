@@ -7,7 +7,22 @@ if(true) then
 		-- include lua file
 		-- command,path
 		"include scenarios/terrain/manhay/map.lua",
+
+-- DEFINE THE PLAY AREA
+	-- boundary name x y z
+
+        	"boundary  playarea 272955.44,3017114.22,481.00",
+		"boundary  playarea 273091.53,3017111.58,481.00",
+		"boundary  playarea 273196.44,3017005.89,481.00",
+		"boundary  playarea 273194.88,3016924.10,481.00",
+		"boundary  playarea 273008.03,3016923.33,481.00",
+		"boundary  playarea 273007.94,3016909.77,481.00",
+		"boundary  playarea 272917.06,3016911.96,481.00",
+		"boundary  playarea 272876.21,3016953.86,481.00",
+		"boundary  playarea 272877.96,3017035.83,481.00",
+		"boundary  playarea 272955.46,3017035.81,481.00",
 		
+				
 		-- fx emitters
 		-- command,effectname,worldx,worldy,worldz
 		-- barrels
@@ -109,18 +124,7 @@ if(true) then
 
 
 
-		"area boundingbox OnBoundary 272955.44,3017114.22,481.00",
-		"area boundingbox OnBoundary 273091.53,3017111.58,481.00",
-		"area boundingbox OnBoundary 273196.44,3017005.89,481.00",
-		"area boundingbox OnBoundary 273194.88,3016924.10,481.00",
-		"area boundingbox OnBoundary 273008.03,3016923.33,481.00",
-		"area boundingbox OnBoundary 273007.94,3016909.77,481.00",
-		"area boundingbox OnBoundary 272917.06,3016911.96,481.00",
-		"area boundingbox OnBoundary 272876.21,3016953.86,481.00",
-		"area boundingbox OnBoundary 272877.96,3017035.83,481.00",
-		"area boundingbox OnBoundary 272955.46,3017035.81,481.00",
-
-
+		
 		-- directions to allied spawn
 		"area toalliedspawn OnTrigger 273072.68 3017105.01 481.04",
 		"area toalliedspawn OnTrigger 273083.87 3017104.83 481.04",
