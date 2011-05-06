@@ -9,13 +9,13 @@ reloadSound = sounds\clipreload.wav
 
 # specify the weapon & clip (clip optional) model here
 # note that data\gr2data\FPS\ is prepended to these file names
-weaponModel = m1935a\gunmesh-m1935a
+weaponModel = colt\gunmesh_colt
 #clipModel = m1935a\gunmesh-m1935a-mag
 
 # granny attach bone names for weapon & clip
 # the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
 weaponConnectTo = weapon-control
-weaponConnect = m1935-connect
+weaponConnect = colt-connect
 
 # the clipConnect bone in the clip attaches to the clipConnectTo bone in the gun
 #clipConnectTo = m1935aclip-mount

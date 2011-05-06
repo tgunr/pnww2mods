@@ -23,13 +23,13 @@ reloadSound = sounds\mp40-reload.wav
 
 # specify the weapon & clip (clip optional) model here
 # note that data\gr2data\FPS\ is prepended to these file names
-weaponModel = bren\bren
+weaponModel = bar\bar
 #clipModel = bren\bren-clip
 
 # granny attach bone names for weapon & clip
 # the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
 weaponConnectTo = weapon-control
-weaponConnect = bren-connect
+weaponConnect = bar-connect
 
 # the clipConnect bone in the clip attaches to the clipConnectTo bone in the gun
 #clipConnectTo = clip-mount
