@@ -110,7 +110,7 @@ if(true) then
 -- SOUNDS
 		
 	-- ABSOLUTE SOUNDS
-	-- command,name,filename,0,0,0,minvol, maxvol
+	-- command name filename minvol, maxvol
 
 		"sound planes sounds/scenarios/ambient_aircraft_squadron1.wav .2 0",
 		"sound planes sounds/scenarios/ambient_aircraft_squadron2.wav .3 0",
