@@ -45,14 +45,16 @@
   </terrainmaterials>
   <!-- Clutter that uses FLTs -->
   <objectclutter>
-    <redweight>77</redweight>
+  <!-- weight the higher the number the less dense -->
+    <redweight>1</redweight>
     <greenweight>85</greenweight>
     <blueweight>90</blueweight>
+	<!-- Color clamped between 0 - 255 -->
     <redclamp>240</redclamp>
     <grnclamp>240</grnclamp>
     <bluclamp>240</bluclamp>
     <!-- clutter FLT object for specific color -->
-    <redtypestring>left1c cpobject1c</redtypestring>
+    <redtypestring>blumaine1c</redtypestring>
     <greentypestring>facgun1c</greentypestring>
     <bluetypestring>msp</bluetypestring>
   </objectclutter>
