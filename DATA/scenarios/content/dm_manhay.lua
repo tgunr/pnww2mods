@@ -9,6 +9,7 @@ if(true) then
 		"include scenarios/terrain/manhay/map.lua",
 
 -- DEFINE THE PLAY AREA
+
 	-- boundary name x y z
 
         	"boundary  playarea 272955.44 3017114.22 481.00",
@@ -21,36 +22,61 @@ if(true) then
 		"boundary  playarea 272876.21 3016953.86 481.00",
 		"boundary  playarea 272877.96 3017035.83 481.00",
 		"boundary  playarea 272955.46 3017035.81 481.00",
+
+
+-- DEFINE WHERE PLAYERS SPAWN
+
+	-- command spawngroup worldx worldy,worldz yaw
+
+		"spawn alliedtroops 272890.99 3016947.85 487.16",
+		"spawn alliedtroops 272889.54 3016950.37 481.20",
+		"spawn alliedtroops 272896.46 3016945.17 481.20",
+		"spawn axistroops 273082.02 3017098.82 487.16",
+		"spawn axistroops 273082.50 3017095.11 481.20",
+		"spawn axistroops 273055.25 3017095.18 481.20",
+
+-- DEFINE BLOCKED AREAS OF NO ACCESS BY PLAYERS
+
+	-- blocking volume x
+	-- block name x1 y1 z1 x2 y2 z2 thickness height
+
+        	--"block 139.59 -86.67 8.69 104.30 -72.64 8.68 1 10",
 		
 				
--- fx emitters
+-- FX EMITTERS
+
 	-- command,effectname,worldx,worldy,worldz
-	-- barrels
+	-- smoke effects
+
+		-- SMOKING BARRELS
 
 		"emitter hulksmoke 273119.68 3016921.62 482.00",
 		-- "emitter hulksmoke -29.35 -105.79 9.06",
 
-	-- craters
+		-- SMOKING CRATERS
 
 		"emitter hulksmoke 173.40 -38.89 6.9",
 		"emitter hulksmoke 129.71 -55.96 7.0",
 
-	-- smokescreen
+		-- SMOKESCREEN
 
 		"emitter smokescreen -46.03 -224.78 15.92",
 		"emitter smokescreen -1.73 -226.20 16.42",
-		-- vehicles
-		"emitter hulksmoke 272998.02 3016996.20 481.5",
+		
+		-- SMOKING VEHICLES
 
+		"emitter hulksmoke 272998.02 3016996.20 481.5",
 		"emitter hulksmoke 272922.72 3016995.51 481.5",
 
-		-- fires
+		-- BURNING VEHICLES
+
 		-- "emitter vehiclefire 107.62 -29.90 9.36",
 
-
 		
-		-- absolute sounds
-		-- command,name,filename,0,0,0,minvol, maxvol
+-- SOUNDS
+		
+	-- ABSOLUTE SOUNDS
+	-- command name filename minvol, maxvol
 		
 		"sound planes sounds/scenarios/ambient_aircraft_squadron1.wav .3 0",
 		"sound planes sounds/scenarios/ambient_aircraft_squadron2.wav .4 0",
@@ -70,12 +96,13 @@ if(true) then
 		"sound wind sounds/ambience/gust2.wav .9 0",
 
 
-		-- positional sounds
-		-- command name filename volume loop x y z mindist attenuation
+	-- POSITIONAL SOUNDS
+	-- command name filename volume loop x y z mindist maxdist
 
 
-		-- a line of bombs (as from a plane)
-		-- command,name,ammo,worldx1,worldy1,worldz1,worldx2,worldy2,worldz2
+	-- A LINE OF BOMBS (as if dropped from a plane)
+	-- command name ammo worldx1 worldy1 worldz1 worldx2 worldy2 worldz2
+
 		"bombingrun bombing1 gp500 272970.33 3016753.34 487.99 273011.34 3016751.15 487.99",
 		"bombingrun bombing1 gp250 273079.40 3016700.38 493.43 273103.98 3016699.07 494.59",
 		"bombingrun bombing1 gp250 272745.39 3017000.12 482.21 272780.73 3016999.68 482.21",
@@ -84,21 +111,22 @@ if(true) then
 		"bombingrun bombing2 gp40 212.53 -134.06 19.33 163.59 -134.66 4.72",
 
 		
-		-- a area effect bombing
-		-- the x,y,z is the center of the barrage
-		-- the distance is the radius of a circle around the center to randomly fire off the ammo in
-		-- command name ammo x y z distance
+	-- AREA EFFECT BOMBING OR BARRAGE (simulating artillery barrage)
+	-- the x,y,z is the center of the barrage
+	-- the distance is the radius of a circle around the center to randomly fire off the ammo in
+	-- command name ammo x y z distance
+
 		"barrage barrage1 gp40 272858.40 3017087.65 482.95 20",
 		"barrage barrage1 gp40 273084.18 3016862.53 483.58 25",
 		"barrage barrage1 gp40 273213.38 3016970.93 483.21 25",
 
 
-
-
-
 		
-		-- triggers
-		-- commandname,pctg chance each second,wait in seconds
+-- TRIGGERS
+	
+	-- EVENT TRIGGERS	
+	-- command name pctgchance-each-second wait-in-seconds
+
 		"event planes .40 120000",
 		"event bombs .10 20000",
 		"event explosions .20 25000",
@@ -110,18 +138,12 @@ if(true) then
 		"event barrage1 .10 30000 650 7",
 		
 
+	-- AREA TRIGGERS
+	-- command name triggertype worldx worldy worldz
+	-- directions near axis spawn 1
+				
+		-- directions near allied spawn 1
 
-		
-		-- areas
-		-- command,scripthandler,worldx,worldy,worldz
-		-- "area boundingbox OnBoundary 272955.44 3017114.22 481.00",
-		-- "area boundingbox OnBoundary 272989.81 3017119.77 481.00",
-		-- "area boundingbox OnBoundary 273076.59 3017139.48 480.53",
-
-
-
-		
-		-- directions to allied spawn
 		"area toalliedspawn OnTrigger 273072.68 3017105.01 481.04",
 		"area toalliedspawn OnTrigger 273083.87 3017104.83 481.04",
 		"area toalliedspawn OnTrigger 273084.30 3017091.38 481.04",
@@ -132,7 +154,8 @@ if(true) then
 		"area toalliedspawn OnTrigger 273089.52 3017110.12 481.004",
 		"area toalliedspawn OnTrigger 273073.21 3017110.48 481.00",
 		
-		-- directions to axis spawn
+		-- directions near axis spawn 1
+
 		"area toaxisspawn OnTrigger 272896.87 3016931.75 481.02",
 		"area toaxisspawn OnTrigger 272892.58 3016929.13 481.00",
 		"area toaxisspawn OnTrigger 272872.11 3016943.18 481.00",
@@ -142,41 +165,35 @@ if(true) then
 		"area toaxisspawn OnTrigger 272890.03 3016954.54 481.04",		
 		"area toaxisspawn OnTrigger 272881.98 3016946.62 481.19",
 
-	
+-- CLONES --
+
+	-- NAMED VERSION
+	-- command name typeid x y z roll pitch yaw
+
+		-- "clone bedford1 bedford -20.11 -156.51 8.77 0 0 90",
 		
-		-- "area barrage1 na -0.96 -38.87 8.25",
-		-- "area barrage1 na 69.38 -143.93 8.13",
+				
+	-- ANONYMOUS VERSION
+	-- command name typeid x y z roll pitch yaw
 
+		-- "clone bedford -19.75 -153.93 9.05 2 0 0",
+		-- "clone bedford -27.34 -150.10 8.9 4 0 285",
+		-- "clone bedford -35.21 -147.32 8.85 6 2 285",
 
-		-- ALERTS AND CHATS
-		-- ADD A CHAT TO THE CHAT WINDOW
+-- ADD A HUD ALERT
 		
 		-- these are always named
 		-- the lockey is a lockey looked up from the scenario content in the web translation tool
 		-- command name lockey
-		--"chat spawnin spawnin.moveout",
-		
-		-- ADD A HUD ALERT
-		
-		-- these are always named
-		-- the lockey is a lockey looked up from the scenario content in the web translation tool
-		-- command name lockey
+
 		"alert onspawn spawnin.moveout",
 		"alert churchentry churchentry",
 		"alert toaxisspawn toaxisspawn",
 		"alert toalliedspawn toalliedspawn",
 
 		
-		-- spawn points
-		-- command,spawngroup,worldx,worldy,worldz,yaw
-		"spawn alliedtroops 272890.99 3016947.85 487.16",
-		"spawn alliedtroops 272889.54 3016950.37 481.20",
-		"spawn alliedtroops 272896.46 3016945.17 481.20",
-		"spawn axistroops 273082.02 3017098.82 487.16",
-		"spawn axistroops 273082.50 3017095.11 481.20",
-		"spawn axistroops 273055.25 3017095.18 481.20",
 		
-		-- vehicle masks
+-- MAKE A VEHICLE AVAILABLE FOR SPAWNING
 		
 		-- the vehicles block controls what vehicles can be spawned
 		-- 	
