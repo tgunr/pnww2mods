@@ -742,6 +742,17 @@
 			<particleeffect>vehiclefireparticle2</particleeffect>
 		</emitter>
 	</transformeffect>
+  <!-- ===================================================================== -->
+  <transformeffect name = "smallfire">
+    <emitter>
+      <fountain>3</fountain>
+      <particleeffect>smallfireparticle1</particleeffect>
+    </emitter>
+    <emitter>
+      <fountain>5</fountain>
+      <particleeffect>smallfireparticle2</particleeffect>
+    </emitter>
+  </transformeffect>
 <!-- ===================================================================== -->
 	<transformeffect name = "shipsmokestacklarge">
 		<emitter>
@@ -3760,7 +3771,52 @@
 		<separation>2.0</separation>
     <material>fire</material>
 	</particleeffect>
-<!-- ===================================================================== -->
+  <!-- ===================================================================== -->
+  <particleeffect name = "smallfireparticle1">
+    <number>1</number>
+    <texture>old30</texture>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>0.5</alpha>
+    <alpha>0.0</alpha>
+    <size>0.15</size>
+    <size>0.25</size>
+    <size>0.5</size>
+    <size>1.0</size>
+    <time>0</time>
+    <time>50</time>
+    <time>200</time>
+    <time>1000</time>
+    <rotate>45</rotate>
+    <glow></glow>
+    <velvariance>-0.5 -0.5 0.0 0.5 0.5 0.05</velvariance>
+    <posvariance>-0.15 -0.15 0.0 0.15 0.15 0.1</posvariance>
+    <material>fire</material>
+  </particleeffect>
+  <!-- ===================================================================== -->
+  <particleeffect name = "smallfireparticle2">
+    <number>1</number>
+    <texture>osgsmoke</texture>
+    <alpha>0.2</alpha>
+    <alpha>0.2</alpha>
+    <alpha>0.2</alpha>
+    <alpha>0.0</alpha>
+    <size>0.25</size>
+    <size>0.5</size>
+    <size>0.8</size>
+    <size>1.0</size>
+    <time>0</time>
+    <time>500</time>
+    <time>500</time>
+    <time>1500</time>
+    <rotate>45</rotate>
+    <colorstart>0.25 0.25 0.25</colorstart>
+    <colorend>0.25 0.25 0.25</colorend>
+    <velvariance>-0.5 -0.5 0.0 0.5 0.5 0.05</velvariance>
+    <posvariance>-0.15 -0.15 0.5 0.15 0.15 0.5</posvariance>
+    <material>fire</material>
+  </particleeffect>
+  <!-- ===================================================================== -->
 	<particleeffect name = "vehiclefireparticle2">
 		<number>1</number>
 		<texture>black smoke 1</texture>
