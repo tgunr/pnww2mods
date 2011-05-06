@@ -6,6 +6,13 @@
 	<!-- multiple lods can be specified in each model group -->
 	<models lod="20">
 	
+		<!-- AMERICAN MODELS -->
+
+		<model name="us_helmet_01" path="TPS\meshes\american_inf\kit_us_helmet" attach="18" lod="0" />
+		<model name="us_canteen" path="TPS\meshes\american_inf\kit_us_canteen" attach="3" />
+		<model name="us_haversack" path="TPS\meshes\american_inf\kit_us_haversack" attach="9" />
+		<model name="us_riflebelt" path="TPS\meshes\american_inf\kit_us_riflebelt" attach="4" />
+		
 		<!-- BRITISH MODELS -->
 		<model name="uk_helmet_01" path="TPS\meshes\british_inf\kit_uk_helmet_01_lod1" attach="18" lod="0"/>
 		<model name="uk_canteen" path="TPS\meshes\british_inf\kit_uk_canteen_lf_hip_lod1" attach="3"/>
@@ -61,6 +68,7 @@
 		<model name="fr_parahelm_01" path="TPS\meshes\para_french\kit_fr_parahelm_lod1" attach="18" lod="0"/>
 		<model name="fr_p_pholster_rt_hip" path="TPS\meshes\para_french\kit_fr_p_pholster_rt_hip_lod1" attach="4"/>
 
+	
 		<!-- GERMAN MODELS -->
 		<model name="de_helmet_01" path="TPS\meshes\german_inf\kit_de_helmet_lod1" attach="18" lod="0"/>
 		<model name="de_bread" path="TPS\meshes\german_inf\kit_de_bread_bk_lod1" attach="4"/>
@@ -86,6 +94,8 @@
 		<model name="de_parahelm_01" path="TPS\meshes\para_germ\kit_de_parahelm_lod1" attach="18" lod="0"/>
 		
 		<model name="us_helmet_01" path="TPS\meshes\american_inf\kit_us_helmet" attach="18" lod="0"/>
+				
+		
 		
 		<!--
 		<model name="uk_example" path="path\to\example\model_lod1" attach="9" lod="20">
@@ -97,6 +107,12 @@
 	</models>
 	
 	<objects>
+		<!-- AMERICAN OBJECTS -->
+		<object name="us_helmet" model="us_helmet_01"/>
+		<object name="us_riflebelt" model="us_riflebelt"/>
+		<object name="us_haversack" model="us_haversack"/>
+		<object name="us_canteen" model="us_canteen"/>
+		
 		<!-- BRITISH OBJECTS -->
 		<object name="uk_parahelm" model="uk_parahelm_01"/>
 		<object name="uk_helmet" model="uk_helmet_01"/>
@@ -168,6 +184,35 @@
 	<!-- you can specify multiple models an object can choose from randomly or vis seed in the kit definition -->
 	
 	<kits>
+		<!-- AMERICAN KITS-->
+		<kit name="us-assault">
+			<object name="us_helmet" model="us_helmet_01"/>
+			<object name="us_riflebelt" model="us_riflebelt"/>
+			<object name="us_haversack" model="us_haversack"/>
+			<object name="us_canteen" model="us_canteen"/>
+		</kit>
+
+		<kit name="us-smg">
+			<object name="us_helmet" model="us_helmet_01"/>
+			<object name="us_canteen" model="us_canteen"/>
+		</kit>
+
+		<kit name="us-bar">
+			<object name="us_helmet" model="us_helmet_01"/>
+			<object name="us_haversack" model="us_haversack"/>
+		</kit>
+
+		<kit name="us-eng">
+			<object name="us_helmet" model="us_helmet_01"/>
+			<object name="us_riflebelt" model="us_riflebelt"/>
+			<object name="us_haversack" model="us_haversack"/>
+		</kit>
+
+		<kit name="us-sniper">
+			<object name="us_helmet" model="us_helmet_01"/>
+			<object name="us_canteen" model="us_canteen"/>
+		</kit>
+		
 		<!-- BRITISH KITS -->
 		<kit name="ukrifle">
 			<object name="uk_helmet"/>
@@ -555,11 +600,7 @@
 			<object name="de_rifle_ammo_rt"/>
 			<object name="de_ruck"/>
 		</kit>
-		
-		<kit name="us-assault">
-			<object name="us_helmet"/>
-		</kit>
-		
+				
 	</kits>
 	
 	<!-- each infantry type can have any number of kits -->
