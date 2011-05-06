@@ -6,9 +6,9 @@
     <redweight>77</redweight>
     <greenweight>5</greenweight>
     <blueweight>90</blueweight>
-    <red>3 4 5 6 7 8 3 4</red>
-    <green>15 15 17 18</green>
-    <blue>0 1 2 1 1 19</blue>
+    <redtypeint>3 4 5 6 7 8 3 4</redtypeint>
+    <greentypeint>15 15 17 18</greentypeint>
+    <bluetypeint>0 1 2 1 1 19</bluetypeint>
     <!-- Color clamped between 0 - 255 -->
     <!-- Example: redclamp 240 will clamp red mask trees to red color >= 240 -->
     <!-- The higher the clamp, the less number of trees placed-->
@@ -43,4 +43,17 @@
     <layer2>dirt01</layer2>
     <layer3>tent</layer3>
   </terrainmaterials>
+  <!-- Clutter that uses FLTs -->
+  <objectclutter>
+    <redweight>77</redweight>
+    <greenweight>85</greenweight>
+    <blueweight>90</blueweight>
+    <redclamp>240</redclamp>
+    <grnclamp>240</grnclamp>
+    <bluclamp>240</bluclamp>
+    <!-- clutter FLT object for specific color -->
+    <redtypestring>left1c cpobject1c</redtypestring>
+    <greentypestring>facgun1c</greentypestring>
+    <bluetypestring>msp</bluetypestring>
+  </objectclutter>
 </exposed>
