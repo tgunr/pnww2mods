@@ -4,8 +4,13 @@ if(true) then
 	-- content we're going to add
 	local content = 
 	{
-		-- placed objects
-		-- command,filename,worldx,worldy,worldz,roll,pitch,yaw,scalex,scaley,scalez,damage
+		
+
+-- PLACE OBJECTS IN THE TERRAIN
+
+	-- placed objects
+	-- command,filename,worldx,worldy,worldz,roll,pitch,yaw,scalex,scaley,scalez,damage
+
 		"place water1 0 0 2 0 0 0 0 0 0 0",
 		-- "place bel4 -75.06 -117.81 7.80 0 0 16 0 0 0 1",
 		-- "place bel6 -18.38 -147.54 8.28 0 0 200 0 0 0 1",
@@ -21,9 +26,6 @@ if(true) then
 		-- "place vinbarn1 14.39 -131.72 8.42 0 0 20 0 0 0 0",
 		-- "place brokencart 11.5 -136.5 8.39 0 0 -90 0 0 0 0",
 		-- "place crate 8.68 -129.54 8.75 0 0 -70 0 0 0 0",
-		
-
-
 		-- "place brokencart 118.00 -58.00 8.05 0 0 110 0 0 0 0",
 		-- "place oildrums_outside 55.5 -144.41 8.5 0 0 -45 0 0 0 0",
 		-- "place citybild1 40.19 -138.39 7.93 0 -3 110 0 0 0 1",
@@ -39,10 +41,6 @@ if(true) then
 		-- "place wall03 85.75 -153.90 7.25 0 0 200 0 0 0 0",
 		-- "place wall03 91.60 -156.00 7.21 0 0 200 0 0 0 0",
 		-- "place boarding1 50.60 -154.25 7.58 0 0 20 0 0 0 0",
-		
-		
-		
-		
 		-- "place citybild1 26.04 -109.09 8.39 0 0 110 0 0 0 0",
 		-- "place bel6 41.06 -112.12 8.48 0 0 111 0 0 0 1",
 		-- "place bel4 47.75 -123.90 8.42 0 0 18 0 0 0 0",
@@ -80,10 +78,6 @@ if(true) then
 		"place boarding1 124.80 -32.00 8.02 0 0 110 0 0 0 0",
 		"place boarding1 112.70 -36.50 8.25 0 0 109 0 0 0 0",
 		-- "place boarding1 2.29 -126.075 8.75 0 0 18 0 0 0 0",
-
-
-
-
 		"place cratepile_outside 126.50 -31.60 7.83 0 0 200 0 0 0 0",
 		"place bel1 120.39 -16.04 7.89 0 0 20 0 0 0 1",
 		"place sandbagwall_outside 136.25 -21.00 7.59 -5 0 93 0 0 0 0",
@@ -126,10 +120,10 @@ if(true) then
 		-- "place oildrums_outside -30.00 -106.00 8.22 0 0 30 0 0 0 1",
 		-- "place cratepile_outside -22.70 -88.50 8.26 0 0 -70 0 0 0 0",
 		-- "place bel3 -25.56 -46.58 8.36 0 0 125 0 0 0 0",
-		"place tanktrap 106.74 -33.49 7.3 0 15 0 0 0 0 0",
-		"place tanktrap 108.65 -34.12 7.5 0 0 -90 0 0 0 0",
+		"place tanktrap 106.74 -33.49 7.3 0 0 0 0 0 0 0",
+		"place tanktrap 108.65 -34.12 7.5 0 0 20 0 0 0 0",
 		"place tanktrap 110.29 -35.06 7.6 0 0 -10 0 0 0 0",
-		"place tanktrap 112.06 -34.00 7.7 0 0 -45 0 0 0 0",
+		"place tanktrap 112.06 -34.00 7.7 0 0 -10 0 0 0 0",
 		-- "place sandbagwall_outside 114.50 -25.00 7.41 1 -3 -65 0 0 0 0",
 		-- "place sandbagwall_outside 108.50 -22.50 7.09 1 0 -65 0 0 0 0",
 		"place instance_hulk2_dam 104.5 -36.35 7.4 0 5 -120 0 0 0 0",
@@ -217,29 +211,23 @@ if(true) then
 		-- "place oildrums_outside -82.61 -95.68 8.2 0 0 45 0 0 0 1",
 
 		
-		
-		
-		
-		
-		
+		-- ALLIED HULKS NEAR THE BRIDGE
 
-
-
-
-		-- allied hulks near bridge
 		"place instance_hulk2_dam 144.60 72.28 6.95 0 -2 30 0 0 0 0",
 		"place instance_hulk2_dam 152.80 64.43 2.08 25 -14 -35 0 0 0 0",
+				 
 		
-		 
-		
-		-- near bridge
+		-- NEAR BRIDGE
+
 		"place tanktrap 142.43 56.22 6.6 15 30 0 0 0 0 0",
 		"place tanktrap 137.0 58.5 7.0 -20 0 15 0 0 0 0",
 		"place tanktrap 136.20 59.62 6.9 10 0 0 0 0 0",
 		"place sandbagwall_curved_outside 132.08 18.19 7.7 0 0 80 0 0 0 0",
 		"place ammocrate 135.38 16.71 8.1 0 0 80 0 0 0 0",
 		"place crate 135.39 18.43 7.85 -3 -2 -30 0 0 0 0",
-		-- minefield signs
+
+		-- MINEFIELD WARNING SIGNS
+
 		"place dangersign 156.67 60.02 5.7 0 0 110 0 0 0",
 		"place dangersign 152.83 49.54 5.8 0 0 112 0 0 0",
 		"place dangersign 150.37 39.46 6.9 0 0 110 0 0 0",
@@ -257,34 +245,20 @@ if(true) then
 		"place dangersign 117.95 42.16 5 0 0 240 0 0 0",
 		"place dangersign 109.42 4.50 5.9 0 0 -50 0 0 0",
 		"place dangersign 82.02 -12.05 6 0 0 -40 0 0 0",
-		"place crate 138.30 -85.64 7.9 0 0 0 0 0 0 0",
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		-- ALLIED SPAWN
+		-- NEAR ALLIED SPAWN
 		
 		"place cratepile_outside 207.10 141.04 5.3 2 0 30 0 0 0",
 		
 		-- ROCK WALLS ALONG ROAD
+
 		"place instance_rockwallberm2 196.22 179.71 6.3 0 0 44 0 0 0 0",
 		"place instance_rockwallberm2 177.66 162.34 6.3 0 0 44 0 0 0 0",
 		"place instance_rockwallberm2 161.36 147.27 6.3 0 0 44 0 0 0 0",
 		"place instance_rockwallberm2 148.24 134.07 6.3 0 0 44 0 0 0 0",
 		"place instance_rockwallberm1 127.84 115.2 4.6 0 0 44 0 0 0 0",
 		"place instance_rockwallberm2 106.26 93.17 4.3 0 4 44 0 0 0 0",
-		
-		
-		"place instance_rockwallberm2 226.66 159.00 3.4 4 0 10 0 0 0 0",
+				"place instance_rockwallberm2 226.66 159.00 3.4 4 0 10 0 0 0 0",
 		"place instance_rockwallberm2 222.58 131.44 3.1 -2 0 10 0 0 0 0",
 		"place instance_rockwallberm2 214.31 110.05 3.5 -2 0 40 0 0 0 0",
 		"place instance_rockwallberm2 198.73 98.92 3.5 -5 0 70 0 0 0 0",
@@ -292,6 +266,7 @@ if(true) then
 		"place instance_rockwallberm1 158.71 79.64 4.2 5 10 70 0 0 0 0",
 		
 		-- WALL BLOCKING TOWN
+
 		"place wall03 132 -83.89 6.8 0 0 21 0 0 0 0",
 		"place wall03 126.2 -81.7 6.8 0 0 21 0 0 0 0",
 		"place wall03 120.5 -79.55 6.8 0 0 21 0 0 0 0",
@@ -301,81 +276,17 @@ if(true) then
 		"place wall02 102 -31.5 6.5 0 0 205 0 0 0 0",
 		
 		-- RIVER CROSSING
+
 		"place crate 93.53 2.87 1.5 0 0 55 0 0 0 0",
 		"place crate 93.98 1.36 1.5 0 0 80 0 0 0 0",
 		"place crate 93.87 -1.68 1.5 0 0 80 0 0 0 0",
 		"place ammocrate 93.8 -0.1 1.9 0 0 0 0 0 0 0",
-		
-
 		-- "place boarding1 93.92 3.01 2.6 90 0 0 0 0 0 0",
 		-- "place boarding1 93.96 1 2.6 90 0 0 0 0 0 0",
-		
-		
 		"place instance_rockwallberm1 86 -16 6.7 -15 -8 60 0 0 0 0",
 		"place instance_rockwallberm1 105.46 -3.96 6.7 -10 -5 60 0 0 0 0",
 		"place oildrums_outside 261.45 227.30 3.85 0 0 0 0 0 0 1",
 		"place cratepile_outside 93.65 -18.45 7.9 0 -3 25 0 0 0 0",
-
-
-
-		
-		
-	
-
-
-
-	
-		
-		
-
-		
-		
-		
-
-		
-		
-		
-		
-		
-		
-		
-		
-	
-
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
-		
-		
-		
-		
-	
-
-
-
-
-
-
-
 
 
 	};
