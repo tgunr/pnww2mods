@@ -9,9 +9,8 @@ if(true) then
 		"include scenarios/terrain/lepontdumal/map.lua",
 		"ammo landmine landmine",
 
--- DEFINE THE PLAY AREA
 
-	-- play area boundary
+-- DEFINE THE PLAY AREA
 	-- boundary name x y z
 
 		"boundary  playarea 293.95 48.96 4.02",
@@ -44,15 +43,19 @@ if(true) then
 	-- spawn points
 	-- command spawngroup worldx worldy worldz yaw
 
+		-- Allied Infantry Spawn Points
+
 		"spawn alliedtroops 213.11 152.80 5.55 -1.35",
 		"spawn alliedtroops 203.77 146.97 6.37 -1.8",
+
+		-- Axis Infantry spawn Points
+
 		"spawn axistroops 210.55 -15.95 7.81 -2.20",
 		"spawn axistroops 216.89 -17.83 7.80 -2.29",
 
--- DEFINE BLOCK AREAS OF NO ACCESS BY PLAYERS
-
-	-- blocking volume x
-	-- block name x1 y1 z1 x2 y2 z2 thickness height
+-- DEFINE BLOCKED AREAS OF NO ACCESS TO PLAYERS
+	
+	-- blockname x1 y1 z1 x2 y2 z2 thickness height
 
         	"block 139.59 -86.67 8.69 104.30 -72.64 8.68 1 10",
 		"block 112.42 -69.95 9.00 119.31 -46.78 8.68 1 10",
@@ -60,58 +63,53 @@ if(true) then
 		"block 193.16 -93.40 7.36 160.99 -84.63 7.88 1 10",
 		"block 113.12 -36.77 8.49 71.74 -19.79 7.67 1 10",
 
-
 		
 -- FX EMMITERS
-		-- command,effectname,worldx,worldy,worldz
+		
+	-- command,effectname,worldx,worldy,worldz
+	-- smoke effects
+		
+		-- SMOKING BARRELS
 
-	-- Smoke Effects (note these are commented out for this scenario)
-
-		-- (attached to barrel objects in DATA\scenarios\terrain\obj_lepontdumal\map.lua)
 		"emitter hulksmoke -25.16 -97.95 8.75",
 		"emitter hulksmoke -29.35 -105.79 8.75",
 		"emitter hulksmoke -82.57 -95.59 8.5",
-		
-		
-	-- Crater Smoke Effects (note these are commented out for this scenario)
+				
+		-- SMOKING CRATERS
+
 		"emitter cratersmoke 173.40 -38.89 8",
 		"emitter cratersmoke 129.71 -55.96 8",
 		"emitter cratersmoke -45.56 -78.53 8",
 		"emitter cratersmoke 26.02 -82.75 8",
 		"emitter cratersmoke -49.62 -130.94 8",
 		"emitter cratersmoke 109.09 27.70 4.5",
-		
-		
+				
+		-- SMOKESCREEN
 
-	-- Smokescreen Effects
 		"emitter smokescreen 140.63 209.79 8.70",
 		"emitter smokescreen 55.05 174.74 7.84",
 		"emitter smokescreen 15.26 118.73 6.35",
 		"emitter smokescreen 278.33 248.17 2.96",
+				
+		-- SMOKING VEHICLES
 		
-						
-	-- Vehicle Smoke Effects (attached to vehicle objects in DATA\scenarios\terrain\obj_lepontdumal\map.lua)
 		"emitter hulksmoke 96.32 156.61 8.39",
 		"emitter hulksmoke 80.36 109.08 6.5",
-
 		
-	-- Building Fire Effects (note these are commented out for this scenario)
-		-- "emitter buildingdamagesmoke 158.6 -16.7 11.25",
-		-- "emitter buildingdamagesmoke 158.46 -16.93 11",
+		-- BURNING VEHICLES
 
-
-	-- Burning Vehicle Effects (attached to vehicle objects in DATA\scenarios\terrain\obj_lepontdumal\map.lua)
 		"emitter vehiclefire 152.80 64.43 3.21",
 		"emitter vehiclefire 105.14 -36.56 9.01",
+
+
+		-- FIRES
+
 		"emitter smallfire 95.18 -27.96 8.85",
 		"emitter smallfire 261.35 227.52 4.0",
 		
-		
-
 -- SOUNDS
 		
-	-- Absolute Sounds
-
+	-- ABSOLUTE SOUNDS
 	-- command,name,filename,0,0,0,minvol, maxvol
 
 		"sound planes sounds/scenarios/ambient_aircraft_squadron1.wav .2 0",
@@ -131,8 +129,7 @@ if(true) then
 		"sound wind sounds/ambience/gust1.wav .9 0",
 		"sound wind sounds/ambience/gust2.wav .9 0",
 
-	-- Positional Sounds
-
+	-- POSITIONAL SOUNDS
 	-- command name filename volume loop x y z mindist maxdist
 
 		"sound sounds/tank_burn.wav 1 1 151 62 3 5 30",
@@ -145,10 +142,9 @@ if(true) then
 		"sound sounds/ambience/stream.wav 1.75 1 220 -46 7 10 30",
 		"sound sounds/bedford/idle.wav 0.5 1 198 148 8 15 40",
 		-- "sound sounds/tank_burn.wav 1 1 29 -57 9 5 30",
-		
--- a line of bombs (as from a plane)
 
-	-- command,name,ammo,worldx1,worldy1,worldz1,worldx2,worldy2,worldz2
+	-- A LINE OF BOMBS (as if dropped from a plane)
+	-- command name ammo worldx1 worldy1 worldz1 worldx2 worldy2 worldz2
 
 		"bombingrun bombing1 gp250 90.62 211.47 18.81 12.92 91.85 18.81",
 		"bombingrun bombing1 gp250 35.65 250.44 21.31 -16.21 206.43 21.31",
@@ -157,8 +153,8 @@ if(true) then
 		-- "bombingrun bombing2 gp40 142.60 -153.42 6.93 6.27 -182.85 2.72",
 		-- "bombingrun bombing2 gp40 212.53 -134.06 19.33 163.59 -134.66 4.72",
 		
--- an area effect bombing (as from an artillery barrage)
 
+	-- AREA EFFECT BOMBING OR BARRAGE (simulating artillery barrage)
 	-- the x,y,z is the center of the barrage
 	-- the distance is the radius of a circle around the center to randomly fire off the ammo in
 	-- command name ammo x y z distance
@@ -166,11 +162,11 @@ if(true) then
 		"barrage barrage1 gp40 -136.68 204.49 12.79 50",
 		"barrage barrage1 gp40 48.05 317.05 18.90 25",
 		-- "barrage barrage1 gp40 -266.85 -36.03 5.26 50",
+
 		
 -- TRIGGERS
-
-	-- Event Triggers
-		
+	
+	-- EVENT TRIGGERS	
 	-- commandname,pctg chance each second,wait in seconds
 
 		-- "event planes .40 120000",
@@ -182,11 +178,11 @@ if(true) then
 		-- "event bombing1 .10 100000 500 6",
 		-- "event bombing2 .10 20000 750 3",
 		-- "event barrage1 .25 60000 700 10",
-		
-	
-	-- Area Triggers
 
-	-- directions to axis spawn 1
+		
+
+	-- AREA TRIGGERS
+	-- directions near axis spawn 1
 
 		"area toaxisspawn OnTrigger 205.20 155.44 6.70",		
 		"area toaxisspawn OnTrigger 196.16 145.35 7.05",
@@ -195,7 +191,7 @@ if(true) then
 		"area toaxisspawn OnTrigger 161.99 147.53 7.52",
 		"area toaxisspawn OnTrigger 190.28 170.11 8.02",		
 
-	-- directions to allied spawn 1
+	-- directions near allied spawn 1
 
 		"area toalliedspawn OnTrigger 206.57 -6.40 8.17",	
 		"area toalliedspawn OnTrigger 199.36 -22.17 8.17",	
@@ -233,21 +229,23 @@ if(true) then
 		"area pathfield2 OnMineArea 94.70 84.00 7.55",
 
 		
-	-- bridge capture
+	-- bridge capture objective
 
 		"area bridgecapture OnTrigger 128.28 19.45 7.13",
 		"area bridgecapture OnTrigger 133.82 35.82 7.13",
 		"area bridgecapture OnTrigger 130.04 37.17 7.13",
 		"area bridgecapture OnTrigger 123.71 19.42 7.13",
-
+		
+			
 -- CLONES --
 
-	-- named version
+	-- NAMED VERSION
 	-- command name typeid x y z roll pitch yaw
 
 		-- "clone bedford1 bedford -20.11 -156.51 8.77 0 0 90",
 		
-	-- anonymous version
+				
+	-- ANONYMOUS VERSION
 	-- command name typeid x y z roll pitch yaw
 
 		"clone bedford 199.68 144.04 6.9 5 0 -90",
@@ -257,19 +255,20 @@ if(true) then
 		"clone pzivd 79.79 108.67 5.58 3 -1 20",
 		"clone oplbltz 121.93 6.84 8.08 -3 0 205",
 		"clone oplbltz 176.32 -20.12 8.55 0 0 180",
-		
-		
+		-- "clone bedford -19.75 -153.93 9.05 2 0 0",
+		-- "clone bedford -27.34 -150.10 8.9 4 0 285",
+		-- "clone bedford -35.21 -147.32 8.85 6 2 285",
+
+
 -- ALERTS AND CHATS
-		
-	-- ADD A CHAT TO THE CHAT WINDOW
+-- ADD AN INFORMATION MESSAGE TO THE CHAT WINDOW
 		
 	-- these are always named
 	-- the lockey is a lockey looked up from the scenario content in the web translation tool
 	-- command name lockey
-	
-		--"chat spawnin spawnin.moveout",
+	--"chat spawnin spawnin.moveout",
 		
-	-- ADD A HUD ALERT
+-- ADD A HUD ALERT
 		
 	-- these are always named
 	-- the lockey is a lockey looked up from the scenario content in the web translation tool
@@ -281,30 +280,30 @@ if(true) then
 		"alert bridgecapture bridgecapture",
 
 		
-		-- vehicle masks
+-- DEFINE AVAILABLE VEHICLES FOR THE SCENARIO
 		
-		-- the vehicles block controls what vehicles can be spawned
-		-- 	
-		-- vehicle masks are defined like IP addresess...as dotted quads and
-		-- are based on the following members in this order:
-		-- 
-		-- country.category.class.type
-		-- 
-		-- an asterisk (*) can be placed in any field and is the default for
-		-- any defined mask
-		-- 
-		-- countries:
+	-- the vehicles block controls what vehicles can be spawned
+	-- 	
+	-- vehicle masks are defined like IP addresess...as dotted quads and
+	-- are based on the following members in this order:
+	-- 
+	-- country.category.class.type
+	-- 
+	-- an asterisk (*) can be placed in any field and is the default for
+	-- any defined mask
+	-- 
+	-- countries:
 		-- 1 - england
 		-- 3 - france
 		-- 4 - germany
 		-- 
-		-- categories:
+	-- categories:
 		-- 1 - aircraft
 		-- 2 - ground vehicle
 		-- 3 - sea vehicle
 		-- 4 - infantry
 		-- 
-		-- classes:
+	-- classes:
 		-- 1 - bombers
 		-- 2 - fighters
 		-- 4 - tank
@@ -316,10 +315,11 @@ if(true) then
 		-- 12 - riverine
 		-- 13 - sea
 		-- 
-		-- * invidiual vehicles can be specified vehicle by its id
+	-- * invidiual vehicles can be specified vehicle by its id
 		
-		-- command,spawngroup,country,category,class,type
-		-- a 0 is considered a wildcard
+	-- command,spawngroup,country,category,class,type
+	-- a 0 is considered a wildcard
+
 		"vehicle alliedtroops 1 0 9 0",
 		"vehicle axistroops 4 0 9 0",
 	};
