@@ -13,7 +13,6 @@ if(true) then
 		-- command,effectname,worldx,worldy,worldz
 		-- SMOKE
 		-- barrels
-		"emitter hulksmoke -25.16 -97.95 8.75",
 		"emitter hulksmoke -29.35 -105.79 8.75",
 		"emitter hulksmoke -82.57 -95.59 8.5",
 		
@@ -34,10 +33,10 @@ if(true) then
 		"emitter buildingdamagesmoke 158.6 -16.7 11.25",
 		"emitter buildingdamagesmoke 158.46 -16.93 11",
 		-- FIRES
-		"emitter vehiclefire 104.5 -36.35 8.2",
-		"emitter vehiclefire 157.34 -16.48 8.08",
-		"emitter vehiclefire 31.39 -57.25 9.73",
-		"emitter vehiclefire 94.85 -28.05 9.2",
+		"emitter vehiclefire 104.93 -36.76 9.16",
+		"emitter smallfire 157.34 -16.48 8.0",
+		"emitter smallfire 31.39 -57.25 9.73",
+		"emitter smallfire 95.18 -27.96 8.85",
 		
 	
 
@@ -69,7 +68,6 @@ if(true) then
 		"sound sounds/bedford/idle.wav 0.5 1 -29 -149 10 5 30",
 		"sound sounds/tank_burn.wav 1 1 29 -57 9 5 30",
 		"sound sounds/tank_burn.wav 1 1 95 -285 95 5 30",
-		"emitter vehiclefire 94.85 -28.05 9.2",
 		"sound sounds/ambience/stream.wav 1.75 1 123 11 2 10 30",
 		-- a line of bombs (as from a plane)
 		-- command,name,ammo,worldx1,worldy1,worldz1,worldx2,worldy2,worldz2
