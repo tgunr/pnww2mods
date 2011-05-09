@@ -75,67 +75,11 @@
 						color: #FFFFFF;"
 					onclick="toggleSelection(this); soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
 			</view>
-			
-			<!--
-			<view id="left-pane" x="18" y="23" width="444" height="411">
-				<view x="10" width="425" height="400" rtop="12">
-					<caption id="forces-header" x="0" height="20" width="425" rtop="0" style="font-size: +2; color: #BFE2CE; tooltip: widgets/tooltips/supplytip.uixml;"/>
-					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
-					<view x="0" width="425" height="15" rtop="22">
-						<caption x="0" y="0" height="15" rright="0" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="UNITS"/>
-					</view>
-					<list id="spawnTree" x="0" width="425" height="300" rtop="40" onselect="spawnTree.clickTree(false)" ondblselect="spawnTree.clickTree(true)"/>
-				</view>
-				<button id="switch-button" label="SWITCH TEAMS" x="40" y="10" height="25" width="160"
-					style="control-on: ui/textures/test/gen_button_on.bmp;
-						control-off: ui/textures/test/gen_button_off.bmp;
-						control-disabled: ui/textures/test/gen_button_disabled.bmp;
-						font-size: -3;
-						color: #FFFFFF;"
-					onclick="switchSides(); soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
-			</view>
-			-->
-			
 			<include file="widgets/divider.uixml"/>
 			<view id="right-pane" x="468" y="23" width="444" height="411">
+				<view id="scenario-map" class="scenimage" src="map.bmp" acceptsfocus="no" x="10" y="10" rright="10" rtop="30"
+					style="tooltip: widgets/tooltips/maptip.uixml;"/>
 				<!--
-				<view x="10" width="425" height="35" rtop="12">
-					<caption x="0" height="20" width="425" rtop="0"
-						onshow="this.label = mission.target.name.toUpperCase() + ': ' + missionType.toUpperCase()" style="font-size: +2; color: #BFE2CE;"/>
-					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
-				</view>
-				<view x="10" width="425" height="90" rtop="35">
-					<caption label="&mission.readytab.brief.location;:" x="5" width="300" height="15" rtop="0" style="color: #FFFFFFFF; "/>
-					<caption id="mission-location" width="300" height="15" rright="20" rtop="0" style="color: #e9e3d9ff; " align="right"
-						onshow="this.label = mission.origin.name" onclick="missionMap.mgr.setSelection(mission.origin)"/>
-					<image width="16" height="16" rright="0" rtop="0" src="ui/textures/test/zoom_icon.bmp"
-						onclick="missionMap.mgr.setSelection(mission.origin)"
-						onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'" onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
-					
-					<caption label="&mission.readytab.brief.origin;:" x="5" width="300" height="15" rtop="15" style="color: #FFFFFFFF; "/>
-					<caption id="mission-origin" width="300" height="15" rright="20" rtop="15" style="color: #e9e3d9ff; " align="right"
-						onshow="this.label = mission.origin.name" onclick="missionMap.mgr.setSelection(mission.origin)"/>
-					<image width="16" height="16" rright="0" rtop="15" src="ui/textures/test/zoom_icon.bmp"
-						onclick="missionMap.mgr.setSelection(mission.origin)"
-						onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'" onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
-					
-					<caption label="&mission.readytab.brief.target;:" x="5" width="300" height="15" rtop="30" style="color: #FFFFFFFF; "/>
-					<caption id="mission-target" width="300" height="15" rright="20" rtop="30" style="color: #e9e3d9ff; " align="right"
-						onshow="this.label = mission.target.name" onclick="missionMap.mgr.setSelection(mission.target)"/>
-					<image width="16" height="16" rright="0" rtop="30" src="ui/textures/test/zoom_icon.bmp"
-						onclick="missionMap.mgr.setSelection(mission.target)"
-						onmouseenter="this.src = 'ui/textures/test/zoom_icon_on.bmp'" onmouseexit="this.src = 'ui/textures/test/zoom_icon.bmp'"/>
-					
-					<caption label="&mission.readytab.brief.weapon;:" x="5" width="300" height="15" rtop="45" style="color: #FFFFFFFF; "/>
-					<caption id="mission-weapon" width="300" height="15" rright="20" rtop="45" style="color: #e9e3d9ff; " align="right"/>
-
-					<caption label="&brigade.hqtab.brief.ms;:" x="5" width="300" height="15" rtop="70" style="color: #FFFFFFFF; "/>
-					<caption id="mission-ms" width="300" height="15" rright="20" rtop="70" style="color: #e9e3d9ff;" align="right" onupdate="doMSPoll(this)"
-						onclick="setMobileSpawn()"/>
-					<image id="mission-ms-checkbox" width="20" height="20" rright="0" rtop="65" src="ui/textures/map-checkbox-on.bmp"
-						onclick="setMobileSpawn()" tip="&mission.readytab.brief.ms.tip;"/>
-				</view>
-				-->
 				<view id="scenario-map" class="mapview" acceptsfocus="no" minscale=".03" maxscale="1.5" scale=".75"
 					x="10" y="10" rright="10" rtop="30" sx="18" sy="235"
 					onload="if(!this.mgr) new MapManager(this, true)" onshow="this.mgr.onShow()" 
@@ -170,6 +114,7 @@
 						<filter name="cluttercutoff" value=".2"/>
 					</layer>
 				</view>
+				-->
 			</view>
 		</tab>
 		<include file="widgets/globals/settings.uixml"/>

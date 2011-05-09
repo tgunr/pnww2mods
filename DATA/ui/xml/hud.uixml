@@ -1001,7 +1001,7 @@
 			
 			var hudVisible 	= game.settings.hudvisible;
 			
-			if(hudVisible > 0 && kennyOn)
+			if(hudVisible > 0 && kennyOn && !game.customterrain)
 			{
 				cprint("setting kenny visible!\n");
 				kenny.visible = true;
@@ -1162,6 +1162,12 @@
 			
 			if(chat.visible)
 				chat.initChatter();
+				
+			if(game.customterrain)
+			{
+				kennyOn = false;
+				kenny.visible = false;
+			}
 			
 			onOrders(false);
 		}
@@ -1225,6 +1231,13 @@
 			primaryOn = true;
 			secondaryOn = true;
 			kennyOn = true;
+			
+			if(game.customterrain)
+			{
+				kennyOn = false;
+				kenny.visible = false;
+			}
+
 			
 			chat.initChatter();
 			onOrders(false);

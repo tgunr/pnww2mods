@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<view id="mapframe" x="5" y="5" rright="5" rtop="5">
+	<view id="mapview" class="mapview" x="0" y="10" width="834" height="400" aspectlimit="width"
+		sx="18" sy="235"
+		acceptsfocus="no" minscale=".00001" maxscale="7.5" scale="1" scalebar="on"
+		onload="if(!this.mgr) new MapManager(this, true)"
+		onshow="centerMap(this); this.mgr.onShow()" ondrag="this.mgr.onDrag()"
+		onupdate="this.mgr.onUpdate()" onclick="this.mgr.onClick()"
+		ondblclick="this.mgr.onDblClick()" onrightclick="this.mgr.onRightClick()"
+		onmouseenter="this.mgr.onMouseEnter()" onmouseexit="this.mgr.onMouseExit()">
+	</view>
+	<script>
+		<!--
+		
+		function centerMap(mv)
+		{
+			var x = (mv.parent.width - mv.width) / 2;
+			//var y = (mv.parent.height - mv.height) / 2;
+			
+			mv.x = x;
+			//mv.y = y;
+		}
+		
+		-->
+	</script>
+</view>
