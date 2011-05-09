@@ -48,8 +48,8 @@ if(true) then
 
 		-- Allied Infantry Spawn Points
 
-		"spawn alliedtroops 213.11 152.80 5.55 -1.35",
-		"spawn alliedtroops 203.77 146.97 6.37 -1.8",
+		"spawn alliedtroops 205.29 159.24 6.25 -2.4",
+		"spawn alliedtroops 198.76 174.98 6.5 -3",
 
 		-- Axis Infantry spawn Points
 
@@ -200,8 +200,14 @@ if(true) then
 		"area toalliedspawn OnTrigger 206.57 -6.40 8.17",	
 		"area toalliedspawn OnTrigger 199.36 -22.17 8.17",	
 		"area toalliedspawn OnTrigger 178.45 -19.22 8.17",	
-		"area toalliedspawn OnTrigger 176.68 1.85 8.17",		
+		"area toalliedspawn OnTrigger 176.68 1.85 8.17",	
 
+	-- telling allies they are going the wrong way
+		"area allieswrongway OnTrigger 231.07 218.35 6.09",	
+		"area allieswrongway OnTrigger 265.87 195.50 4.61",
+		"area allieswrongway OnTrigger 272.18 201.09 4.61",
+		"area allieswrongway OnTrigger 241.43 223.96 7.07",		
+	
 	-- minefield near axis spawn
 
 		"area axisminefield1 OnMineArea 146.43 21.67 8.48",
@@ -252,16 +258,13 @@ if(true) then
 	-- ANONYMOUS VERSION
 	-- command typeid x y z roll pitch yaw
 
-		"clone bedford 199.68 144.04 6.9 5 0 -90",
-		"clone bedford 200.34 148.35 6.9 5 0 -110",
+		"clone bedford 197.19 152.25 7.3 1 -3 -90",
+		"clone bedford 191.03 152.07 7.68 3 -1 -130",
 		"clone bedford 192.31 147.46 7.33 3 -1 -130",
 		"clone pzivd 95.72 156.42 8.3 3 -1 0",
 		"clone pzivd 79.79 108.67 5.58 3 -1 20",
 		"clone oplbltz 121.93 6.84 8.08 -3 0 205",
 		"clone oplbltz 176.32 -20.12 8.55 0 0 180",
-		-- "clone bedford -19.75 -153.93 9.05 2 0 0",
-		-- "clone bedford -27.34 -150.10 8.9 4 0 285",
-		-- "clone bedford -35.21 -147.32 8.85 6 2 285",
 
 
 -- ALERTS AND CHATS
@@ -287,6 +290,7 @@ if(true) then
 		"alert toalliedspawn toalliedspawn -1",
 		-- every entry to the area
 		"alert bridgecapture bridgecapture",
+		"alert allieswrongway allieswrongway",
 
 		
 -- DEFINE AVAILABLE VEHICLES FOR THE SCENARIO
