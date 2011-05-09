@@ -18,8 +18,7 @@ state.spawn					= nil;
 state.config					= {};
 state.inbounds				= true;
 state.lastinbounds		= true;
-state.minefield				= nil;
-state.minearea			= nil;
+state.landmine				= nil; -- current landmine
 --state.ingameupdate	= true;
 
 function OnStart(handler)
@@ -211,18 +210,28 @@ function OnBoundary(handler)
 end
 
 function OnTrigger(handler)
+	-- bail if this trigger doesn't pertain to us
+	if(not scenario.manager:PlayerRelevant(handler.name)) then
+		return 1;
+	end
+	
 	if(handler.state == tutorial.THS_EVENT_IN) then
 		-- try to run any events associated with this area
 		scenario.manager:RunObject(handler.name, 1);
 	else
 		scenario.manager:RunObject(handler.name, 0);
 	end
-	
 	return 1;
 end
 
 function OnMineArea(handler)
+	-- see if this mine area pertains to us
+	if(not scenario.manager:PlayerRelevant(handler.name)) then
+		return 1;
+	end
+	
 	if(handler.state == tutorial.THS_EVENT_IN) then
+		state.landmine = handler.name;
 		-- get our player
 		local v = player.playerGetVehicle();
 		-- add a landmine handler
@@ -231,22 +240,34 @@ function OnMineArea(handler)
 		tutorial.manager:RemoveHandler("OnLandmine");
 		state.minearea = nil;
 	end
-	
 	return 1;
 end
 
 function OnLandmine(handler)
 	if(handler.state == tutorial.THS_EVENT_OUT) then
+		
+		-- default to adding a new mine
+		local addNewMine = true;
+		
 		-- check to see if we have stepped on a mine
 		if(math.random() < .1) then
-			scenario.manager:RunObject("landmine", 1);
-			fp.fpFPSKillTrooper();
-		else
+			-- try to run an ammo, effect or sound
+			scenario.manager:RunObject(state.landmine, 1);
+			if(not game.SuperTroop()) then
+				fp.fpFPSKillTrooper();
+				-- we're dead, new mine not needed
+				addNewMine = false;
+			end
+		end
+		
+		-- add a new one if needed
+		if(addNewMine) then
 			local v = player.playerGetVehicle();
-			-- update our landmine position
 			tutorial.manager:AddLocationHandler("OnLandmine", nil, v:GetPos(1), v:GetPos(2), v:GetPos(3), 1);
 		end
 	end
+	
+	-- always run this handler
 	return 1;
 end
 
