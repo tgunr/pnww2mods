@@ -1,6 +1,10 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>obj_lepontdumal</name>
+  <body>onspawn.moveout = 美军正在试图占领桥梁！
+toaxisspawn = 在时间耗尽前占领桥梁！
+toalliedspawn = 防守桥梁，阻止美军的推进！
+bridgecapture = 你正在占领这座桥梁，务必坚守此地！</body>
   <bodyloc>true</bodyloc>
   <brief>UI text</brief>
   <duration>30</duration>
@@ -11,6 +15,6 @@
   <team1>3</team1>
   <team2>4</team2>
   <terrain>lepontdumal</terrain>
-  <title>Le pont du mal</title>
+  <title>邪恶桥</title>
   <weather>2</weather>
 </content>
