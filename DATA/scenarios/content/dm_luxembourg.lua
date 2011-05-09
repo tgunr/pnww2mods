@@ -79,6 +79,15 @@ if(true) then
 		"emitter smokescreen 293388.02 2976624.70 274.00",
 		"emitter smokescreen 293620.67 2977666.88 274.00",
 		"emitter smokescreen 293673.70 2977662.64 274.00",
+		"emitter smokescreen 292499.80 2977188.93 274.00",
+		"emitter smokescreen 292450.22 2977172.96 274.00",
+		"emitter smokescreen 293779.78 2978014.31 274.00",
+		"emitter smokescreen 293765.03 2977870.80 274.00",
+		"emitter smokescreen 293737.02 2977882.86 274.00",
+		"emitter smokescreen 293593.45 2976749.93 274.00",
+		"emitter smokescreen 293620.84 2976755.37 274.00",
+		"emitter smokescreen 293647.55 2976763.88 274.00",
+		"emitter smokescreen 293694.14 2976775.99 274.00",
 				
 		-- SMOKING VEHICLES
 		
@@ -110,13 +119,13 @@ if(true) then
 		"sound bombs sounds/scenarios/ambient_bombs_distantshells2.wav .4 1",
 		"sound explosions sounds/scenarios/ambient_explosions_fourinarow.wav .60 1",
 		--"sound explosions sounds/troop/grenade.wav .40 0",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav .35 1",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun2.wav .45 1",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun3.wav .50 1",
-		"sound guns1 sounds/airraidsiren.wav .1 1",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun4.wav .35 1",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav .65 1",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav .25 1",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav .20 1",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun2.wav .15 1",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun3.wav .25 1",
+		"sound siren1 sounds/airraidsiren.wav .2 1",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun4.wav .10 1",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav .30 1",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav .35 1",
 		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav .4 1",
 		--"sound wind sounds/ambience/gust1.wav .9 0",
 		--"sound wind sounds/ambience/gust2.wav .9 0",
@@ -152,38 +161,38 @@ if(true) then
 -- TRIGGERS
 	
 	-- EVENT TRIGGERS	
-	-- command name pctgchance-each-second wait-in-seconds
+	-- command name pctgchance-each-second wait-in-seconds milliseconds-between-bomb-drops number-of-bombs
 
-		-- "event planes .40 120000",
-		-- "event bombs .10 20000",
-		-- "event explosions .20 25000",
-		-- "event guns1 .15 10000",
-		-- "event guns2 .20 30000",
+		"event planes .35 80000",
+		"event bombs .45 80000",
+		"event explosions .20 45000",
+		"event guns1 .25 20000",
+		"event guns2 .25 40000",
+		"event siren1 .33 80000",
 		-- "event wind .5 5000",
-		"event bombing1 25 100000 500 6",
-		"event bombing2 25 100000 750 3",
-		"event barrage1 25 60000 700 10",
+		"event bombing1 .25 40000 500 12",
+		"event bombing2 .35 50000 650 9",
+		"event barrage1 .45 60000 550 15",
 
 		
 
 	-- AREA TRIGGERS
 	-- command name triggertype worldx worldy worldz
 
-		-- directions near axis spawn 1
+		-- directions at axis spawn 1
 
-		--"area toaxisspawn OnTrigger 205.20 155.44 6.70",		
-		--"area toaxisspawn OnTrigger 196.16 145.35 7.05",
-		--"area toaxisspawn OnTrigger 213.49 122.02 6.87",
-		--"area toaxisspawn OnTrigger 210.93 117.77 6.87",
-		--"area toaxisspawn OnTrigger 161.99 147.53 7.52",
-		--"area toaxisspawn OnTrigger 190.28 170.11 8.02",		
+		"area toaxisspawn OnTrigger 293624.50 2976351.22 274.00",		
+		"area toaxisspawn OnTrigger 293623.44 2976319.32 274.00",
+		"area toaxisspawn OnTrigger 293830.51 2976317.97 274.00",
+		"area toaxisspawn OnTrigger 293830.95 2976351.00 274.00",
+				
 
-		-- directions near allied spawn 1
+		-- directions at allied spawn 1
 
-		--"area toalliedspawn OnTrigger 206.57 -6.40 8.17",	
-		--"area toalliedspawn OnTrigger 199.36 -22.17 8.17",	
-		--"area toalliedspawn OnTrigger 178.45 -19.22 8.17",	
-		--"area toalliedspawn OnTrigger 176.68 1.85 8.17",		
+		--"area toalliedspawn OnTrigger 293783.85 2978058.41 274.00",	
+		--"area toalliedspawn OnTrigger 293695.87 2978060.53 274.00",	
+		--"area toalliedspawn OnTrigger 293695.54 2978014.89 274.00",	
+		--"area toalliedspawn OnTrigger 293779.78 2978014.31 274.00",		
 
 	-- minefield near axis spawn
 
@@ -222,6 +231,13 @@ if(true) then
 		--"area bridgecapture OnTrigger 133.82 35.82 7.13",
 		--"area bridgecapture OnTrigger 130.04 37.17 7.13",
 		--"area bridgecapture OnTrigger 123.71 19.42 7.13",
+
+	-- center of map area between spawns
+
+		"area mapcenter OnTrigger 293109.64 2977080.80 274.00",
+		"area mapcenter OnTrigger 293110.12 2977312.77 274.00",
+		"area mapcenter OnTrigger 293281.78 2977306.03 274.00",
+		"area mapcenter OnTrigger 293279.28 2977087.93 274.00",
 		
 			
 -- CLONES --
