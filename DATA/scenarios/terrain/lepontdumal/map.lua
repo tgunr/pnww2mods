@@ -286,7 +286,7 @@ if(true) then
 		"place instance_rockwallberm1 86 -16 6.7 -15 -8 60 0 0 0 0",
 		"place instance_rockwallberm1 105.46 -3.96 6.7 -10 -5 60 0 0 0 0",
 		"place oildrums_outside 261.45 227.30 3.85 0 0 0 0 0 0 1",
-		"place cratepile_outside 93.65 -18.45 7.9 0 -3 25 0 0 0 0",
+		"place cratepile_outside 209.43 160.36 5.7 3 0 25 0 0 0 0",
 
 
 	};
