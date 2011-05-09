@@ -12,11 +12,11 @@ if(true) then
 		
 		-- named version
 		-- command name filename x y z roll pitch yaw scalex scaley scalez damage
-		"place waterplane water1 0 0 2 0 0 0 0 0 0 0",
+		-- "place waterplane water1 0 0 2 0 0 0 0 0 0 0",
 		
 		-- anonymous version
 		-- command filename x y z roll pitch yaw scalex scaley scalez damage
-		"place water1 0 0 2 0 0 0 0 0 0 0",
+		-- "place water1 0 0 2 0 0 0 0 0 0 0",
 		
 		-- PLACE AN FX EMITTER --
 		

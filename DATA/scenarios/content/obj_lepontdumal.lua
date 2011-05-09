@@ -7,36 +7,39 @@ if(true) then
 		-- include lua file
 		-- command,path
 		"include scenarios/terrain/lepontdumal/map.lua",
-		"ammo landmine landmine",
-
+		
+		-- these link up the areas below to the ammo to use
+		"ammo axisminefield1 landmine",
+		"ammo pathfield1 landmine",
+		"ammo pathfield2 landmine",
 
 -- DEFINE THE PLAY AREA
 	-- boundary name x y z
 
-		"boundary  playarea 293.95 48.96 4.02",
-		"boundary  playarea 291.80 20.31 3.54",
-		"boundary  playarea 272.08 -1.04 4.86",
-		"boundary  playarea 233.77 -27.03 6.49",
-		"boundary  playarea 214.87 -51.04 6.16",
-		"boundary  playarea 194.60 -89.02 5.51",
-		"boundary  playarea 180.68 -104.04 7.40",
-		"boundary  playarea 65.32 -65.03 8.72",
-		"boundary  playarea 71.66 -18.64 7.97",
-		"boundary  playarea 50.53 41.71 6.76",
-		"boundary  playarea 253.17 235.51 8.20",
-		"boundary  playarea 278.89 205.99 2.88",
-		"boundary  playarea 267.66 196.51 2.71",
-		"boundary  playarea 255.16 188.76 3.37",
-		"boundary  playarea 230.83 161.14 3.86",
-		"boundary  playarea 226.47 143.70 3.36",
-		"boundary  playarea 219.33 110.95 3.04",
-		"boundary  playarea 208.76 97.85 2.87",
-		"boundary  playarea 192.89 90.25 3.19",
-		"boundary  playarea 173.55 78.37 2.70",
-		"boundary  playarea 160.32 74.79 2.86",
-		"boundary  playarea 154.56 71.03 3.68",
-		"boundary  playarea 148.51 60.52 3.68",
-		"boundary  playarea 227.37 48.91 7.64",
+		"boundary playarea 293.95 48.96 4.02",
+		"boundary playarea 291.80 20.31 3.54",
+		"boundary playarea 272.08 -1.04 4.86",
+		"boundary playarea 233.77 -27.03 6.49",
+		"boundary playarea 214.87 -51.04 6.16",
+		"boundary playarea 194.60 -89.02 5.51",
+		"boundary playarea 180.68 -104.04 7.40",
+		"boundary playarea 65.32 -65.03 8.72",
+		"boundary playarea 71.66 -18.64 7.97",
+		"boundary playarea 50.53 41.71 6.76",
+		"boundary playarea 253.17 235.51 8.20",
+		"boundary playarea 278.89 205.99 2.88",
+		"boundary playarea 267.66 196.51 2.71",
+		"boundary playarea 255.16 188.76 3.37",
+		"boundary playarea 230.83 161.14 3.86",
+		"boundary playarea 226.47 143.70 3.36",
+		"boundary playarea 219.33 110.95 3.04",
+		"boundary playarea 208.76 97.85 2.87",
+		"boundary playarea 192.89 90.25 3.19",
+		"boundary playarea 173.55 78.37 2.70",
+		"boundary playarea 160.32 74.79 2.86",
+		"boundary playarea 154.56 71.03 3.68",
+		"boundary playarea 148.51 60.52 3.68",
+		"boundary playarea 227.37 48.91 7.64",
 
 -- DEFINE WHERE PLAYERS SPAWN		
 		
@@ -57,7 +60,7 @@ if(true) then
 	
 	-- blockname x1 y1 z1 x2 y2 z2 thickness height
 
-        	"block 139.59 -86.67 8.69 104.30 -72.64 8.68 1 10",
+        "block 139.59 -86.67 8.69 104.30 -72.64 8.68 1 10",
 		"block 112.42 -69.95 9.00 119.31 -46.78 8.68 1 10",
 		"block 123.98 -34.23 8.53 127.56 -26.02 8.70 1 10",
 		"block 193.16 -93.40 7.36 160.99 -84.63 7.88 1 10",
@@ -275,9 +278,14 @@ if(true) then
 	-- the lockey is a lockey looked up from the scenario content in the web translation tool
 	-- command name lockey
 
+		-- every 10 seconds
+		"alert playarea playarea 10000",
+		-- on spawn in
 		"alert onspawn onspawn.moveout",
-		"alert toaxisspawn toaxisspawn",
-		"alert toalliedspawn toalliedspawn",
+		-- once per instance
+		"alert toaxisspawn toaxisspawn -1",
+		"alert toalliedspawn toalliedspawn -1",
+		-- every entry to the area
 		"alert bridgecapture bridgecapture",
 
 		

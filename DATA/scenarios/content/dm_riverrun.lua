@@ -225,9 +225,9 @@ if(true) then
 		-- the lockey is a lockey looked up from the scenario content in the web translation tool
 		-- command name lockey
 		"alert onspawn onspawn.moveout",
-		"alert churchentry churchentry",
-		"alert toaxisspawn toaxisspawn",
-		"alert toalliedspawn toalliedspawn",
+		"alert churchentry churchentry 30000",
+		"alert toaxisspawn toaxisspawn -1",
+		"alert toalliedspawn toalliedspawn -1",
 
 		
 		-- vehicle masks

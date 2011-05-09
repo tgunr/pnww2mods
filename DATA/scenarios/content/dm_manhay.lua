@@ -187,9 +187,9 @@ if(true) then
 		-- command name lockey
 
 		"alert onspawn spawnin.moveout",
-		"alert churchentry churchentry",
-		"alert toaxisspawn toaxisspawn",
-		"alert toalliedspawn toalliedspawn",
+		"alert churchentry churchentry 20000",
+		"alert toaxisspawn toaxisspawn -1",
+		"alert toalliedspawn toalliedspawn -1",
 
 		
 		
