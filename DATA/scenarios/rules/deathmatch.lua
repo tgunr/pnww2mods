@@ -49,6 +49,10 @@ function OnRoundStop(name, value)
 	end
 end
 
+scenario.manager:AddContent("alert victory1 victory1");
+scenario.manager:AddContent("alert victory2 victory2");
+scenario.manager:AddContent("alert roundstop roundstop");
+
 -- set our initial tutorial state
 tutorial.SetState(state);
 

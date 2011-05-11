@@ -4,12 +4,18 @@ if(true) then
 	-- content we're going to add
 	local content = 
 	{
+		-- we're using minefields, so include that functionality
+		"include scenarios/content/minefields.lua",
+		
 		-- include lua file
 		-- command,path
 		"include scenarios/terrain/lepontdumal/map.lua",
-		"ammo landmine landmine",
-
-
+		
+		-- landmines
+		"ammo axisminefield1 landmine",
+		"ammo pathfield1 landmine",
+		"ammo pathfield2 landmine",
+		
 -- DEFINE THE PLAY AREA
 	-- boundary name x y z
 
