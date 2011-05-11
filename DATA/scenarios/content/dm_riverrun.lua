@@ -226,8 +226,8 @@ if(true) then
 		-- command name lockey
 		"alert onspawn onspawn.moveout",
 		"alert churchentry churchentry 30000",
-		"alert toaxisspawn toaxisspawn -1",
-		"alert toalliedspawn toalliedspawn -1",
+		"alert toaxisspawn toaxisspawn",
+		"alert toalliedspawn toalliedspawn",
 
 		
 		-- vehicle masks
