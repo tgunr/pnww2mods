@@ -48,10 +48,8 @@ void main()
 
     mat3 normalmatrix = modelviewToNormal(modelview);
 
-    N = normalmatrix * in_normal;
-
-	T = normalize(normalmatrix * in_tangent);
-	N = normalize(normalmatrix * in_normal);
+	T = normalmatrix * in_tangent;
+	N = normalmatrix * in_normal;
 	B = cross(N, T);
 
 	tex0 = in_tex0;

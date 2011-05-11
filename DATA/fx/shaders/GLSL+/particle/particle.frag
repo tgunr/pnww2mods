@@ -28,8 +28,7 @@ void main()
 	
 	lightGetAmbientDiffuse(ambient, diffuse);
 
-    diffuse.rgb *= color.rgb;
+	out_color = map * (diffuse * b_Kd + ambient * b_Ka + b_Ke) * color;
 
-	out_color = map * (diffuse * b_Kd + ambient * b_Ka + b_Ke);
 	out_color.a = map.a * color.a;
 }
