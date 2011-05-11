@@ -55,6 +55,7 @@ function DoLandmine(name, value)
 	
 	if(veh ~= nil and veh:IsMe() and not game.SuperTroop()) then
 		fp.fpFPSKillTrooper();
+		tutorial.manager:RemoveHandler("OnLandmine");
 	end
 end
 
