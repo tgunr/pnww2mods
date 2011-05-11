@@ -262,7 +262,13 @@
 							cprint("Joining created instance!");
 							
 							if(selectTeam(scenario, bestSide) && joinInstance(instance.description))
+							{
 								joined = true;
+							}
+							else
+							{
+								joinLobby();
+							}
 							
 							break;
 						}

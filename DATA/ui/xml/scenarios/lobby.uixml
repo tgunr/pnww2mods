@@ -107,8 +107,8 @@
 		{
 			var instance = running[instanceList.data];
 			
-			if(instance != null)
-				joinInstance(instance.description);
+			if(instance != null ||	!joinInstance(instance.description)
+				joinLobby();
 		}
 		
 		function initLobby(win)

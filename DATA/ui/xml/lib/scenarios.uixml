@@ -70,7 +70,7 @@
 			// load our lobby windows 
 			loadWin("scenarios/lobby", true);
 		}
-	
+		
 		function joinInstance(instance)
 		{
 			if(instance == null)
@@ -79,11 +79,12 @@
 			cprint("Joining instance " + instance.category + "/" + instance.type);
 			
 			var scenario = loadScenario(instance.category, instance.type);
+			//var creator	= (instance.owner == ); 
 			
 			// start the scenario
-			if(scenario != null && game.startscenario(scenario.path))
+			if(client.joininstance(instance.category, instance.type, instance.owner, instance.id))
 			{
-				if(client.joininstance(instance.category, instance.type, instance.owner, instance.id))
+				if(scenario != null && game.startscenario(scenario.path))
 				{
 					// save our content
 					game.globals.scenario = scenario;
