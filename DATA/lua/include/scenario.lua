@@ -7,19 +7,27 @@ Include("terrain");
 Include("player");
 Include("state"); -- includes default state
 Include("strat");
--- Include("zmq");
+Include("zmq");
 game.LoadLib("scenario");
 
 -- set tutorial state here
 scenario.manager		=  scenario.ScenarioManager:GetInstance();
 state.name					= "scenario.generic";
 state.ui 						= "scenhud";
+state.rounds				= {};
+state.round					= 1;
 state.spawn					= nil;
 state.config					= {};
 state.inbounds				= true;
 state.lastinbounds		= true;
-state.landmine				= nil; -- current landmine
---state.ingameupdate	= true;
+
+function RegisterState(state, handler)
+	Instancing:RegisterHandler(state, handler);
+end
+
+function OnVictory()
+	-- nothing done by default
+end
 
 function OnStart(handler)
 	-- make sure strat doesn't run while in combat 
@@ -31,16 +39,48 @@ function OnStart(handler)
 	state.captures		= 0; -- how many enemy table captures have we done
 	state.spawned 	= 0; -- start of mission time
 	state.spawns		= 0;
-	state.freePos		= {0,0,0};
+	state.network		= false;
 	
 	-- setup some general event handlers
 	-- some game types might override these
 	tutorial.AddHandler(tutorial.TUT_EVENT_SET, "OnSet");
 	tutorial.AddHandler(tutorial.TUT_EVENT_DAMAGE, "OnDamage");
-	tutorial.AddHandler(tutorial.TUT_EVENT_UPDATE, "OnMission");
+	tutorial.AddHandler(tutorial.TUT_EVENT_UPDATE, "OnScenario");
 	
 	-- setup our ownerships
-	SetUpMap();
+	-- SetUpMap();
+
+	-- setup any host state monitoring
+	if(state.hoststates ~= nil) then
+		for i,hs in ipairs(state.hoststates) do
+			-- register our state handler
+			RegisterState(hs[1], hs[2]);
+		end
+	end
+end
+
+function StartNetwork()
+	-- setup our network state
+	local result = Instancing:SetInstance(tonumber(state.config.instance));
+	
+	if(result[1] == Instancing.SuccessCode) then
+		ui.ChatPrint("Initing scenario network state!");
+		
+		-- if we're the creator, send our initial state up
+		if(state.config.creator == "true") then
+			-- do some state init stuff
+			local ms = tonumber(state.config.duration) * 60;
+			Instancing:TimedEvent(ms, "roundstop", true);
+		end
+		
+		-- get our initial state
+		Instancing:GetInstanceState();
+		
+		-- we have networking
+		state.network = true;
+	else
+		ui.ChatPrint("Unable to init scenario network state: " .. result[2]);
+	end
 end
 
 function OnSpawn(handler)
@@ -58,19 +98,19 @@ function OnSpawn(handler)
 	state.spawns		= state.spawns + 1;
 	
 	-- make the map is right
-	SetUpMap();
+	-- SetUpMap();
 	
 	-- AddWP("origin", 8, 0);
 	-- AddWP("target", 9, 0);
 	
-	veh = player.playerGetVehicle();
-	
-	state.freePos[1] = veh:GetPos(1);
-	state.freePos[2] = veh:GetPos(2);
-	state.freePos[3] = veh:GetPos(3);
-	
 	-- try to run any scenario events associated with despawning
-	scenario.manager:RunEvent("onspawn");
+	scenario.manager:RunObject("onspawn", 1);
+	
+	-- testing
+	local v = player.playerGetVehicle();
+	local deathstate = "deaths" .. v:GetSide();
+	
+	ui.ChatPrint(string.format("You have died %d times!", Instancing:GetStateNumber(deathstate)));
 	
 	-- keep handler going
 	return 1;
@@ -86,7 +126,7 @@ function OnDespawn(handler)
 	-- tutorial.RemoveWaypoint("target");
 	
 	-- let the ui know our status
-	OnMission(nil);
+	OnScenario();
 	
 	-- kill the ui that was hanging around
 	tutorial.HideUI(true);
@@ -109,6 +149,8 @@ function OnSet(handler, name, value)
 	-- for known config vars, do something
 	if(name == "load" and value == "content") then
 		LoadContent();
+	elseif(name == "network" and value == "start") then
+		StartNetwork();
 	end
 	
 	return 1;  -- this handle will continue to handle events
@@ -134,64 +176,34 @@ function OnDamage(handler, energy, obj)
 	return 1;
 end
 
-function OnMission(handler)
-	
-	if(not game.Ingame()) then
-		return 1;
-	end
+-- main update functio for any scenario
+-- might be overriden by a rules handler 
+-- that includes this file
+function OnScenario(handler)
 
-	if(not game.SuperFloat() and not game.SuperTroop()) then 	
-		veh = player.playerGetVehicle();
-	
-		if(veh ~= nil) then
-			if(state.inbounds) then
-				state.freePos[1] = veh:GetPos(1);
-				state.freePos[2] = veh:GetPos(2);
-				state.freePos[3] = veh:GetPos(3);
-			else
-				veh:SetPosition(state.freePos[1], state.freePos[2], state.freePos[3]);
-			end
-		end
+	-- get any new network events
+	if(state.network) then
+		Instancing:PollEvents();
 	end
-		
-	-- local tom 		= state.tom;
-	-- local captures	= state.captures;
-	-- local damages 	= 0;
 	
-	-- if(state.spawned > 0) then
-	-- 	tom = tom + game.Frametime() - state.spawned;
-	-- end
-	
-	-- for k,v in pairs(state.damages) do
-	-- 	damages = damages + 1;
-	-- end
-	
-	-- convert to seconds
-	-- tom = math.floor(tom/1000);
-	
-	-- let the UI know
-	-- if(game.Ingame()) then
-	-- 	tutorial.CallJS("setCombatStatus", tom, captures, damages);
-	-- else
-	-- 	local combat = ui.FindView("combat");
-	-- 	if(combat ~= nil) then
-	-- 		combat:CallJS("setCombatStatus", tom, captures, damages);
-	-- 	end
-	-- end
+	-- check round timers
 	
 	return 1;
 end
 
 function OnDie(handler)
+	if(state.network) then
+		local v = player.playerGetVehicle();
+		Instancing:AddState("deaths" .. v:GetSide(), 1);
+	end
 	scenario.manager:RunEvent("ondie");
-	tutorial.ShowOK("dead", "OnDead");
 	return 1;
 end
 
 function OnDead()
-	if(game.Ingame()) then
-		ui.LoadView("exitvehicle");
-	end
+	--if(game.Ingame()) then
+	--	ui.LoadView("exitvehicle");
+	--end
 end
 
 function OnBoundary(handler)
@@ -224,63 +236,16 @@ function OnTrigger(handler)
 	return 1;
 end
 
-function OnMineArea(handler)
-	-- see if this mine area pertains to us
-	if(not scenario.manager:PlayerRelevant(handler.name)) then
-		return 1;
-	end
-	
-	if(handler.state == tutorial.THS_EVENT_IN) then
-		state.landmine = handler.name;
-		-- get our player
-		local v = player.playerGetVehicle();
-		-- add a landmine handler
-		tutorial.manager:AddLocationHandler("OnLandmine", nil, v:GetPos(1), v:GetPos(2), v:GetPos(3), 1);
-	else
-		tutorial.manager:RemoveHandler("OnLandmine");
-		state.minearea = nil;
-	end
-	return 1;
-end
-
-function OnLandmine(handler)
-	if(handler.state == tutorial.THS_EVENT_OUT) then
-		
-		-- default to adding a new mine
-		local addNewMine = true;
-		
-		-- check to see if we have stepped on a mine
-		if(math.random() < .1) then
-			-- try to run an ammo, effect or sound
-			scenario.manager:RunObject(state.landmine, 1);
-			if(not game.SuperTroop()) then
-				fp.fpFPSKillTrooper();
-				-- we're dead, new mine not needed
-				addNewMine = false;
-			end
-		end
-		
-		-- add a new one if needed
-		if(addNewMine) then
-			local v = player.playerGetVehicle();
-			tutorial.manager:AddLocationHandler("OnLandmine", nil, v:GetPos(1), v:GetPos(2), v:GetPos(3), 1);
-		end
-	end
-	
-	-- always run this handler
-	return 1;
-end
-
 function SetUpMap()
 	
-	if(state.mapstate == nil) then
-		return;
-	end
+	--if(state.mapstate == nil) then
+	--	return;
+	--end
 	
-	for i,ms in ipairs(state.mapstate) do
+	--for i,ms in ipairs(state.mapstate) do
 		-- owner, cp, fac (fac is optional)
-		strat.PwnStrat(ms[1], ms[2], ms[3]);
-	end
+	--	strat.PwnStrat(ms[1], ms[2], ms[3]);
+	--end
 end
 
 function GetLocation(name, side)
@@ -303,4 +268,15 @@ function AddWP(name, t, s, add)
 	if(pos ~= nil) then
 		tutorial.AddWaypoint(name, t, s, pos[1], pos[2], pos[3], add);
 	end
+end
+
+function GetStringData(delimiter, value)
+		local sd = {};
+		
+		-- collect our data parts
+		for d in string.gmatch(value, delimiter) do
+			table.insert(sd, d);
+		end
+		
+		return sd;
 end

@@ -11,10 +11,12 @@ function Instancing.SendEvent(self, instanceNo, code)
 	end
 
 	if self.EventSock == nil then
-		return { Instancing.ErrorCode, "EventSocket not connected." }
+		return { Instancing.ErrorCode, "EventSock not connected." }
 	end
 
-	local instanceId = self._formatInstanceId(instanceNo)
+	local instanceId = self.formatInstanceNo(instanceNo)
+
+	print( "sending event " .. instanceId .. ", " .. code )
 
 	-- Send the instanceId as the first part of the message,
 	-- the code as the second.
@@ -25,7 +27,7 @@ function Instancing.SendEvent(self, instanceNo, code)
 end
 
 -- Start the communications stuff.
-Instancing.Start("Server")
+Instancing:Start("Server")
 
 local parts
 
@@ -62,24 +64,26 @@ function drainCommand(zmqSocket)
 		else
 			print("D --cmd-> " .. parts[1])
 			local result = Instancing.runCode(parts[1])
-			print("D result: " .. result[1] .. ", " .. result[2])
+			print("D result: " .. result[1] .. ", " .. tostring(result[2]))
 		end
 	end
 end
 	
 -- Set up a poller for the incoming sockets.
-local poller = zmq.poller(2)
+zmq.poller = require "zmq/poller"
+poller = zmq.poller(2)
 
-poller:add(Instancing.CommandSocket, zmq.POLLIN, drainCommand)
-poller:add(Instancing.ConsoleSocket, zmq.POLLIN, drainConsole)
+poller:add(Instancing.CommandSock, zmq.POLLIN, drainCommand)
+poller:add(Instancing.ConsoleSock, zmq.POLLIN, drainConsole)
 
 -- Ok, now sit and watch.
 while Instancing.Running
 do
-	-- Wait upto 50ms for events.
-	poller:poll(50 * 1000)
+	-- Wait upto 100ms for events.
+	poller:poll(100 * 1000)
 
 	-- TODO:PERSIST: If we have a timer/event queue, process it here.
 end
 
 print("N shutting down.")
+

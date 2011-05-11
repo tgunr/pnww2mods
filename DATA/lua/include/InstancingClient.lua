@@ -2,7 +2,14 @@
 -- Lua client code
 --
 
--- require 'Instancing'
+-- Helper function that will unpack results from the instancing routines.
+function write(x)
+	if type(x) == "table" then
+		print(unpack(x))
+	else
+		print(tostring(x))
+	end
+end
 
 -- Adds
 --	Instancing:DoRemoteLua(code) [blocking]
@@ -13,9 +20,9 @@
 
 --------- --------- --------- --------- --------- ---------
 -- Grab any events that we haven't picked up yet, and
--- process them.
+-- process them. Defaults to BLOCKING.
 
-function Instancing.PollEvents(self)
+function Instancing.GetEvents(self, zmqOptions, maxEvents)
 	if self.Context == nil then
 		return { Instancing.ErrorCode, "No Context" }
 	end
@@ -23,10 +30,14 @@ function Instancing.PollEvents(self)
 		return { Instancing.ErrorCode, "EventSock not connected" }
 	end
 
+	if not maxEvents or type(maxEvents) ~= "number" then
+		maxEvents = 64
+	end
+
 	-- If we haven't selected an instance, do nothing.
-	while self.Running == true and self.InstanceId ~= nil
+	while self.Running == true and self.InstanceId ~= nil and maxEvents > 0
 	do
-		local parts = self.getMessage(self.EventSock, zmq.NOBLOCK)
+		local parts = self.getMessage(self.EventSock, zmqOptions)
 		if parts == nil or #parts == 0 then break end
 		if #parts < 2 then
 			print("W Event format error (short)")
@@ -35,6 +46,7 @@ function Instancing.PollEvents(self)
 		else
 			-- Make sure it's for our current instance, lest we are
 			-- late in picking up a message for an instance we left.
+			write( parts )
 			if parts[1] == self.InstanceId then
 				local success, message = pcall(loadstring(parts[2]))
 				if success == false then
@@ -42,9 +54,18 @@ function Instancing.PollEvents(self)
 				end
 			end
 		end
+		maxEvents = maxEvents - 1
 	end
 
-	return { self.SuccessCode, "" }
+	return { Instancing.SuccessCode, "" }
+end
+
+--------- --------- --------- --------- --------- ---------
+-- Grab any events that we haven't picked up yet, and
+-- process them. NON-BLOCKING version.
+
+function Instancing.PollEvents(self)
+	return self:GetEvents(zmq.NOBLOCK)
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -64,7 +85,7 @@ function Instancing.DoRemoteLua(self, code)
 		return { Instancing.ErrorCode, "Send failed" }
 	end
 
-	local parts = self.getMessages(self.ConsoleSock)
+	local parts = self.getMessage(self.ConsoleSock)
 	if not parts then
 		return { Instancing.ErrorCode, "Communications error (probably disconnected)" }
 	end
@@ -93,7 +114,7 @@ function Instancing.SendLua(self, code)
 		return { Instancing.ErrorCode, "Send failed" }
 	end
 
-	return { self.SuccessCode, "-- passed to zmq, data may not actually have been sent or received." }
+	return { Instancing.SuccessCode, "-- passed to zmq, data may not actually have been sent or received." }
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -105,12 +126,13 @@ function Instancing.GetInstanceState(self)
 	end
 
 	local query = string.format([[
+		require "string"
 		local keyvalues = ""
 		local instanceStates = Instancing.InstanceStates[%q]
 		if instanceStates then
-			for k, v in ipairs(instanceStates)
+			for k, v in pairs(instanceStates)
 			do
-				keyvalues = keyvalues .. string.format("['%%q']=['%%v'],", k, v)
+				keyvalues = keyvalues .. string.format("['%%q']=['%%q'],", k, v)
 			end
 		end
 		return "{"..keyvalues.."}"
@@ -121,28 +143,34 @@ function Instancing.GetInstanceState(self)
 		return { Instancing.ErrorCode, "GetInstanceState result error (nil)" }
 	elseif #parts < 2 then
 		return { Instancing.ErrorCode, "GetInstanceState result error (short)" }
-	elseif #results > 2 then
+	elseif #parts > 2 then
 		return { Instancing.ErrorCode, "GetInstanceState result error (long)" }
-	else
-		print("D inst:"..self.InstanceNo.." state:" .. parts[2])
-		local results = pcall(loadstring(parts[2]))
-		if results[1] == false then
-			return { Instancing.ErrorCode, "GetInstanceState execution error: " .. results[2] }
-		end
 	end
 
-	return { self.SuccessCode, "" }
+	print("D inst:"..self.InstanceNo.." state:" .. parts[2])
+	local success, message = pcall(loadstring("Instancing.InstanceStates["..self.InstanceNo.."] = "..parts[2]))
+	if success == false then
+		return { Instancing.ErrorCode, "GetInstanceState execution error: " .. message }
+	end
+
+	return { Instancing.SuccessCode, message }
 end
 
 --------- --------- --------- --------- --------- ---------
 -- Send an event message up to the server.
 
 function Instancing.SendEvent(self, instanceNo, code)
-	return self.SendLua(code)
+	print("D SendEvent " .. instanceNo .. " [" .. code .. "]")
+	return self:SendLua(code)
 end
 
-function Instancing.GetCurrentStatesTable(self)
-	local states = self.Instances[self.InstanceId]
+--------- --------- --------- --------- --------- ---------
+-- Returns the local copy of the states table, note that
+-- unless GetInstanceState() has been called once, this
+-- will be empty or partial.
+
+function Instancing.GetLocalStatesTable(self)
+	local states = self.InstanceStates[self.InstanceId]
 	if states == nil then
 		return { Instancing.ErrorCode, "No state table for current instance." }
 	end
@@ -155,19 +183,123 @@ end
 
 function Instancing.GetStateValue(self, stateName)
 	if self.InstanceId == nil then
-		return nil, "No Instance selected"
+		return { nil, "No Instance selected" }
 	end
-	local states = self.Instances[self.InstanceId]
+	local states = self.InstanceStates[self.InstanceId]
 	if states == nil then
-		return nil, "No state table for current instance."
+		return { nil, "No state table for current instance." }
 	end
 
 	local state = states[stateName]
 	if state == nil then
-		return nil, "not set"
+		return { nil, "not set" }
 	end
 
-	return state, nil
+	return { state, nil }
+end
+
+function Instancing.GetStateString(self, stateName, defValue)
+	local state = Instancing:GetStateValue(stateName)
+
+	if(state[1] == nil) then
+		if(defValue ~= nil) then
+			return tostring(defValue)
+		else
+			return ""
+		end
+	end
+	
+	return tostring(state[1])
+end
+
+function Instancing.GetStateNumber(self, stateName, defValue)
+	local state = Instancing:GetStateValue(stateName)
+
+	if(state[1] == nil) then
+		if(defValue ~= nil) then
+			return tonumber(defValue)
+		else
+			return 0
+		end
+	end
+	
+	return tonumber(state[1])
+end
+
+function Instancing.GetStateBool(self, stateName, defValue)
+	local state = Instancing:GetStateValue(stateName)
+
+	if(state[1] == nil) then
+		if(defValue ~= nil and defValue ~= 0 and defValue ~= "false" and defValue ~= false) then
+			return true
+		else
+			return false
+		end
+	end
+	
+	if(state[1] ~= nil and state[1] ~= 0 and state[1] ~= "false" and state[1] ~= false) then
+		return true
+	else
+		return false
+	end
+end
+
+--------- --------- --------- --------- --------- ---------
+-- Adjust the value of a state in the current instance.
+
+function Instancing.SetState(self, valueName, value)
+	if self.Context == nil then
+		return { Instancing.ErrorCode, "Tried to call SetState with no Context." }
+	end
+	if self.InstanceNo == nil or self.InstanceNo == 0 then
+		return { Instancing.ErrorCode, "Tried to call SetState with no Instance selected." }
+	end
+	if valueName == nil then
+		return { Instancing.ErrorCode, "Called SetState with no valueName." }
+	end
+	return self:SetInstanceState(self.InstanceNo, valueName, value, true, true)
+end
+
+--------- --------- --------- --------- --------- ---------
+-- Add to the value of a state in the current instance.
+
+function Instancing.AddState(self, valueName, value)
+	if self.Context == nil then
+		return { Instancing.ErrorCode, "Tried to call AddState with no Context." }
+	end
+	if self.InstanceNo == nil or self.InstanceNo == 0 then
+		return { Instancing.ErrorCode, "Tried to call AddState with no Instance selected." }
+	end
+	if valueName == nil then
+		return { Instancing.ErrorCode, "Called AddState with no valueName." }
+	end
+	return self:AddInstanceState(self.InstanceNo, valueName, value, true, true)
+end
+
+function Instancing.TimedEvent(self, duration, valueName, value)
+	if self.Context == nil then
+		return { Instancing.ErrorCode, "Tried to call TimedEvent with no Context." }
+	end
+	if self.InstanceNo == nil or self.InstanceNo == 0 then
+		return { Instancing.ErrorCode, "Tried to call TimedEvent with no Instance selected." }
+	end
+	if valueName == nil then
+		return { Instancing.ErrorCode, "Called TimedEvent with no valueName." }
+	end
+	return self:AddTimer(self.InstanceNo, duration, valueName, value)
+end
+
+function Instancing.BroadcastEvent(self, valueName, value)
+	if self.Context == nil then
+		return { Instancing.ErrorCode, "Tried to call BroadcastEvent with no Context." }
+	end
+	if self.InstanceNo == nil or self.InstanceNo == 0 then
+		return { Instancing.ErrorCode, "Tried to call BroadcastEvent with no Instance selected." }
+	end
+	if valueName == nil then
+		return { Instancing.ErrorCode, "Called BroadcastEvent with no valueName." }
+	end
+	return self:DoInstanceEvent(self.InstanceNo, valueName, value, true, true)
 end
 
 Instancing:Start("Client", "192.168.0.61")
