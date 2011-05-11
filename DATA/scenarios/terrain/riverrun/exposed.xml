@@ -46,16 +46,16 @@
   <!-- Clutter that uses FLTs -->
   <objectclutter>
   <!-- weight the higher the number the less dense -->
-    <redweight>1</redweight>
-    <greenweight>85</greenweight>
+    <redweight>5</redweight>
+    <greenweight>60</greenweight>
     <blueweight>90</blueweight>
 	<!-- Color clamped between 0 - 255 -->
-    <redclamp>240</redclamp>
+    <redclamp>90</redclamp>
     <grnclamp>240</grnclamp>
     <bluclamp>240</bluclamp>
     <!-- clutter FLT object for specific color -->
     <redtypestring>blumaine1c</redtypestring>
-    <greentypestring>facgun1c</greentypestring>
-    <bluetypestring>msp</bluetypestring>
+    <greentypestring>haystack_outside</greentypestring>
+    <bluetypestring>null</bluetypestring>
   </objectclutter>
 </exposed>
