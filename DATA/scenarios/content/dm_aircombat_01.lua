@@ -326,11 +326,13 @@ if(true) then
 
 		"vehicle alliedplanes spitvb",
 		"vehicle alliedplanes h81a2",
+		"vehicle alliedplanes d520",
 
 	-- German plane types --
 
 		"vehicle axisplanes bf109f4",
-		"vehicle axisplanes bf109g6",
+		"vehicle axisplanes bf109f2",
+		"vehicle axisplanes bf109e3",
 		
 
 	-- alternatively you can use a vehicle's string id 
