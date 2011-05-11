@@ -43,5 +43,21 @@
     <layer2>dirt01</layer2>
     <layer3>tent</layer3>
   </terrainmaterials>
+    <!-- Clutter that uses FLTs -->
+  <objectclutter>
+  <!-- weight the higher the number the less dense -->
+    <redweight>5</redweight>
+    <greenweight>60</greenweight>
+    <blueweight>90</blueweight>
+	<!-- Color clamped between 0 - 255 -->
+    <redclamp>90</redclamp>
+    <grnclamp>240</grnclamp>
+    <bluclamp>240</bluclamp>
+    <!-- clutter FLT object for specific color -->
+    <redtypestring>blumaine1c</redtypestring>
+    <greentypestring>haystack_outside</greentypestring>
+    <bluetypestring>null</bluetypestring>
+  </objectclutter>
+</exposed>
 </exposed>
 
