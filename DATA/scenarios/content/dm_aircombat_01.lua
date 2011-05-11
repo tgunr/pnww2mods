@@ -13,10 +13,10 @@ if(true) then
 	-- play area boundary
 	-- boundary name x y z
 
-		--"boundary playarea 294148.65 2978115.09 274.00",
-		--"boundary playarea 292250.70 2978133.30 274.00",
-		--"boundary playarea 292220.53 2976287.02 274.00",
-		--"boundary playarea 294165.63 2976271.93 274.00",
+		"boundary playarea 243938.60 2958923.16 292.00",
+		"boundary playarea 275345.92 2958491.45 284.00",
+		"boundary playarea 275244.24 2949796.18 197.00",
+		"boundary playarea 244250.59 2950219.33 222.00",
 
 -- DEFINE WHERE PLAYERS SPAWN		
 		
@@ -27,21 +27,18 @@ if(true) then
 
 		-- Allied aircraft spawns
 		
-		--"spawn alliedplanes 293771.56 2978035.74 274.00 275",
-		--"spawn alliedplanes 293772.42 2978050.57 274.00 275",
-		--"spawn alliedplanes 293703.56 2978054.89 274.00 90",
-		--"spawn alliedplanes 293727.11 2978022.63 274.00 90",
-		--"spawn alliedplanes 293753.62 2978036.77 274.00 180",
-		--"spawn alliedplanes 293754.72 2978051.16 274.00 180",
-
+		"spawn alliedplanes 246320.24 2957081.44 293.86 295",
+		"spawn alliedplanes 246379.55 2957507.01 293.87 225",
+		"spawn alliedplanes 245614.16 2956838.66 293.88 45",
+		"spawn alliedplanes 245677.78 2957438.97 293.87 115",
+		
 		-- German aircraft spawns
 
-		--"spawn axisplanes 293640.49 2976346.94 274.00 90",
-		--"spawn axisplanes 293639.40 2976334.24 274.00 90",
-		--"spawn axisplanes 293820.24 2976329.96 274.00 275",
-		--"spawn axisplanes 293821.55 2976345.00 274.00 275",
-		--"spawn axisplanes 293743.47 2976330.79 274.00 0",
-		--"spawn axisplanes 293743.52 2976345.67 274.00 0",
+		"spawn axisplanes 272737.49 2952112.86 222.62 305",
+		"spawn axisplanes 272671.76 2952553.72 222.57 230",
+		"spawn axisplanes 272031.55 2952684.22 222.63 140",
+		"spawn axisplanes 272024.65 2952041.86 222.57 50",
+		
 
 -- DEFINE BLOCKED AREAS OF NO ACCESS BY PLAYERS
 
