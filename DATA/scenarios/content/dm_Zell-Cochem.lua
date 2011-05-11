@@ -6,7 +6,7 @@ if(true) then
 	{
 		-- INCLUDE A LUA FILE --
 		-- command path
-		"include scenarios/terrain/luxembourg/map.lua",
+		"include scenarios/terrain/zell-cochem/map.lua",
 
 -- DEFINE THE PLAY AREA
 
