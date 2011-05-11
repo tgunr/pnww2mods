@@ -112,8 +112,8 @@ if(true) then
 	-- command name ammo x y z distance
 
 		"barrage barrage1 gp40 190956.63 3015992.07 142.00 40",
-		--"barrage barrage1 gp40 273084.18 3016862.53 483.58 25",
-		--"barrage barrage1 gp40 273213.38 3016970.93 483.21 25",
+		"barrage barrage1 gp40 190956.63 3015992.07 142.00 20",
+		"barrage barrage1 gp40 190956.63 3015992.07 142.00 30",
 
 
 		
@@ -131,6 +131,8 @@ if(true) then
 		-- "event bombing1 .15 30000 500 6",
 		-- "event bombing2 .18 20000 750 3",
 		"event barrage1 .10 30000 650 12",
+		"event barrage1 .10 30000 550 12",
+		"event barrage1 .10 30000 750 12",
 		
 
 	-- AREA TRIGGERS
