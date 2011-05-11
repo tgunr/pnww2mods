@@ -60,9 +60,6 @@ function OnStart(handler)
 end
 
 function StartNetwork()
-	-- setup our network state
-	local result = Instancing:SetInstance(tonumber(state.config.instance));
-	
 	if(result[1] == Instancing.SuccessCode) then
 		ui.ChatPrint("Initing scenario network state!");
 		
@@ -149,6 +146,8 @@ function OnSet(handler, name, value)
 	-- for known config vars, do something
 	if(name == "load" and value == "content") then
 		LoadContent();
+	elseif(name == "instance") then
+		Instancing:SetInstance(tonumber(state.config.instance));
 	elseif(name == "network" and value == "start") then
 		StartNetwork();
 	end
