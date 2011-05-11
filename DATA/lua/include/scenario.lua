@@ -20,6 +20,7 @@ state.spawn					= nil;
 state.config					= {};
 state.inbounds				= true;
 state.lastinbounds		= true;
+state.network				= false;
 
 function RegisterState(state, handler)
 	Instancing:RegisterHandler(state, handler);
@@ -60,7 +61,7 @@ function OnStart(handler)
 end
 
 function StartNetwork()
-	if(result[1] == Instancing.SuccessCode) then
+	if(state.network) then
 		ui.ChatPrint("Initing scenario network state!");
 		
 		-- if we're the creator, send our initial state up
@@ -72,11 +73,8 @@ function StartNetwork()
 		
 		-- get our initial state
 		Instancing:GetInstanceState();
-		
-		-- we have networking
-		state.network = true;
 	else
-		ui.ChatPrint("Unable to init scenario network state: " .. result[2]);
+		ui.ChatPrint("Unable to init scenario network state.");
 	end
 end
 
@@ -147,7 +145,10 @@ function OnSet(handler, name, value)
 	if(name == "load" and value == "content") then
 		LoadContent();
 	elseif(name == "instance") then
-		Instancing:SetInstance(tonumber(state.config.instance));
+		local result = Instancing:SetInstance(tonumber(state.config.instance));
+		if(result[1] == Instancing.SuccessCode) then
+			state.network = true;
+		end
 	elseif(name == "network" and value == "start") then
 		StartNetwork();
 	end
