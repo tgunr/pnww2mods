@@ -1,6 +1,6 @@
 if(true) then
 	-- content we're going to add
-	local content = Zell-Cochem tank fight
+	local content =
 	{
 
 -- PLACE ENVIRONMENTAL TERRAIN OBJECTS INTO THE PLAYSPACE
