@@ -287,6 +287,16 @@ if(true) then
 		"place instance_rockwallberm1 105.46 -3.96 6.7 -10 -5 60 0 0 0 0",
 		"place oildrums_outside 261.45 227.30 3.85 0 0 0 0 0 0 1",
 		"place cratepile_outside 209.43 160.36 5.7 3 0 25 0 0 0 0",
+		
+		
+		-- temp bridge
+		"place cratepile_outside 130 29.27 5.4 0 0 15 0 0 0 0",
+		"place crate 129.13 29.34 6.0 0 0 15 0 0 0 0",
+		
+		
+		
+		
+		
 
 
 	};
