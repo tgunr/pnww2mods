@@ -127,15 +127,15 @@ if(true) then
 	-- EVENT TRIGGERS	
 	-- command name pctgchance-each-second wait-in-milliseconds
 
-		"event planes .40 120000",
-		"event bombs .10 20000",
-		"event explosions .20 25000",
-		"event guns1 .15 10000",
-		"event guns2 .20 30000",
-		"event wind .5 5000",
-		"event bombing1 .15 30000 500 6",
-		-- "event bombing2 .18 20000 750 3",
-		"event barrage1 .10 30000 650 7",
+		"event planes .20 240000",
+		"event bombs .05 50000",
+		"event explosions .10 75000",
+		"event guns1 .15 100000",
+		"event guns2 .25 300000",
+		"event wind .5 50000",
+		"event bombing1 .15 300000 500 9",
+		"event bombing2 .18 20000 750 6",
+		"event barrage1 .10 30000 650 12",
 		
 
 	-- AREA TRIGGERS
