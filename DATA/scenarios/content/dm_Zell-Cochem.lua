@@ -156,7 +156,7 @@ if(true) then
 -- TRIGGERS
 	
 	-- EVENT TRIGGERS	
-	-- command name pctgchance-each-second wait-in-seconds milliseconds-between-bomb-drops number-of-bombs
+	-- command name pctgchance-each-second wait-in-milliseconds milliseconds-between-bomb-drops number-of-bombs
 
 		"event planes .40 80000",
 		"event bombs .45 80000",
