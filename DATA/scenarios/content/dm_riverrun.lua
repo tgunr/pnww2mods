@@ -261,8 +261,10 @@ if(true) then
 		
 		-- command,spawngroup,country,category,class,type
 		-- a 0 is considered a wildcard
+
 		"vehicle alliedtroops 1 0 9 0",
 		"vehicle axistroops 4 0 9 0",
+
 	};
 
 	for i,v in ipairs(content) do 
