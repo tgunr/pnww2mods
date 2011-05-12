@@ -120,7 +120,7 @@ if(true) then
 -- TRIGGERS
 	
 	-- EVENT TRIGGERS	
-	-- command name pctgchance-each-second wait-in-seconds
+	-- command name pctgchance-each-second wait-in-milliseconds
 
 		"event planes .40 120000",
 		"event bombs .10 20000",
