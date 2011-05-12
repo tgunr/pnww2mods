@@ -68,7 +68,7 @@ function StartNetwork()
 		if(state.config.creator == "true") then
 			-- do some state init stuff
 			local ms = tonumber(state.config.duration) * 60;
-			Instancing:TimedEvent(ms, "roundstop", true);
+			Instancing:TimedEvent("roundstop", ms);
 		end
 		
 		-- get our initial state
@@ -105,6 +105,8 @@ function OnSpawn(handler)
 	local v = player.playerGetVehicle();
 	local deathstate = "deaths" .. v:GetSide();
 	
+	local temp = Instancing:GetStateString(deathstate);
+	-- ui.ChatPrint("You have deaths is " .. temp);
 	ui.ChatPrint(string.format("You have died %d times!", Instancing:GetStateNumber(deathstate)));
 	
 	-- keep handler going

@@ -102,25 +102,25 @@ if(true) then
 		
 -- play area boundary
 -- boundary name x y z
-        "boundary  playarea -18.52 -163.28 7.49",
-		"boundary  playarea 77.25 -168.82 6.80",
-		"boundary  playarea 172.56 -112.25 6.64",
-		"boundary  playarea 199.10 -84.36 5.14",
-		"boundary  playarea 215.36 -50.64 5.80",
-		"boundary  playarea 247.29 -14.12 7.45",
-		"boundary  playarea 131.47 17.21 9.06",
-		"boundary  playarea 114.97 2.62 9.06",
-		-- "boundary  playarea 102.41 -30.24 8.41",
+        "boundary playarea -18.52 -163.28 7.49",
+		"boundary playarea 77.25 -168.82 6.80",
+		"boundary playarea 172.56 -112.25 6.64",
+		"boundary playarea 199.10 -84.36 5.14",
+		"boundary playarea 215.36 -50.64 5.80",
+		"boundary playarea 247.29 -14.12 7.45",
+		"boundary playarea 131.47 17.21 9.06",
+		"boundary playarea 114.97 2.62 9.06",
+		-- "boundary playarea 102.41 -30.24 8.41",
 		
 		
-		"boundary  playarea 72.36 -15.00 7.81",
-		"boundary  playarea 71.65 -19.75 7.81",
-		"boundary  playarea -7.73 -22.81 7.25",
-		"boundary  playarea -44.07 -32.18 7.91",
-		"boundary  playarea -65.81 -64.97 8.43",
-		"boundary  playarea -95.09 -112.12 8.43",
-		"boundary  playarea -89.99 -148.66 6.78",
-		"boundary  playarea -51.07 -162.15 7.11",
+		"boundary playarea 72.36 -15.00 7.81",
+		"boundary playarea 71.65 -19.75 7.81",
+		"boundary playarea -7.73 -22.81 7.25",
+		"boundary playarea -44.07 -32.18 7.91",
+		"boundary playarea -65.81 -64.97 8.43",
+		"boundary playarea -95.09 -112.12 8.43",
+		"boundary playarea -89.99 -148.66 6.78",
+		"boundary playarea -51.07 -162.15 7.11",
 
 		
 		
@@ -158,17 +158,6 @@ if(true) then
 		"block -10.47 -142.64 7.52 -18.59 -161.42 7.00 2.0 25",
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-
-
-
  -- Trigger Areas
 		-- church entry
 		"area churchentry OnTrigger 69.31 -94.28 8.56",
@@ -228,7 +217,10 @@ if(true) then
 		"alert churchentry churchentry 30000",
 		"alert toaxisspawn toaxisspawn",
 		"alert toalliedspawn toalliedspawn",
-
+		"alert roundstop roundstop",
+		"alert victory1 victory1",
+		"alert victory2 victory2",
+		"alert playarea playarea",
 		
 		-- vehicle masks
 		

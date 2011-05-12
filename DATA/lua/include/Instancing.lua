@@ -267,6 +267,7 @@ Instancing =
 			if not msg then break end
 			table.insert(parts, msg)
 			print("part #" .. #parts .. ": " .. tostring(msg))
+			ui.ChatPrint("part #" .. #parts .. ": " .. tostring(msg))
 			
 			-- ZMQ will set the "RCVMORE" value on a socket
 			-- if the message was a non-terminal part of a
@@ -357,7 +358,7 @@ Instancing =
 
 			instanceStates[state] = value
 			
-			Instancing:HandleStateChange(state, value)
+			Instancing:HandleStateChange(instanceId, state, value)
 
 			return { Instancing.SuccessCode, "-- State change applied" }
 		else
@@ -365,7 +366,92 @@ Instancing =
 		end
 	end
 	
+	        -- Add to an instance states, expects a number
 ,	AddInstanceState = function (self, instanceNo, state, value, broadcast, forward)
+		if instanceNo == nil
+		or state == nil or type(state) ~= "string"
+		or broadcast == nil
+		or forward == nil
+			then return { Instancing.ErrorCode, "Incorrect usage of AddInstanceState: expects instanceNo, state, value, broadcast, forward" }
+		end
+		if type(instanceNo) == "string" then
+			local no = tonumber(instanceNo)
+			if no == nil or no == 0 then
+				return { Instancing.ErrorCode, "Incorrect usage of AddInstanceState: unrecognized instanceNo " .. instanceNo .. "." }
+			end
+			instanceNo = no
+		end
+		if not self.Context then
+			return { Instancing.ErrorCode, "Tried to call AddInstanceState without a Context." }
+		end
+
+		-- Convert to hex format for better hashing.
+		local instanceId = self.formatInstanceNo(instanceNo)
+		local instanceStates = self.InstanceStates[instanceId]
+		
+		if not instanceStates then
+			instanceStates = { ['id'] = instanceId, ['no'] = instanceNo }
+			self.InstanceStates[instanceId] = instanceStates
+		end
+		
+		if self:IsServer() then
+			
+				local newValue = instanceStates[state]
+				
+				if(newValue == nil) then
+					newValue = 0
+				end
+				
+				newValue = newValue + tonumber(value) 
+			
+				-- update our state
+				instanceStates[state] = newValue
+			
+				-- broadcast should be either true or false, anything else we
+				-- consider to be false.
+				if type(broadcast) ~= "boolean" then
+					broadcast = false
+				end
+				
+				if broadcast == true then
+					-- Client and Server implement SendEvent themselves,
+					-- which means we can't access it as self.Event
+					local bcastFn = self['SendEvent']
+					if bcastFn then
+						-- Always pass "false" in the forward column.
+						-- We can't use : notation, so we have to manually
+						-- pass the "self" argument.
+						print("forwarding")
+						print( unpack( bcastFn(self, instanceNo, string.format("return Instancing:SetInstanceState(%u, %q, %q, false, false)", instanceId, state, tostring(newValue))) ) )
+					end
+				end
+				
+				return { Instancing.SuccessCode, "-- State change applied" }
+		else
+			-- we're the client
+			-- broadcast should be either true or false, anything else we
+			-- consider to be false.
+			if type(broadcast) ~= "boolean" then broadcast = false end
+			if broadcast == false or type(forward) ~= "boolean" then forward = false end
+	
+			if broadcast == true then
+				-- Client and Server implement SendEvent themselves,
+				-- which means we can't access it as self.Event
+				local bcastFn = self['SendEvent']
+				if bcastFn then
+					-- Always pass "false" in the forward column.
+					-- We can't use : notation, so we have to manually
+					-- pass the "self" argument.
+					print("forwarding")
+					print( unpack( bcastFn(self, instanceNo, string.format("return Instancing:AddInstanceState(%u, %q, %q, %s, false)", instanceId, state, tostring(value), tostring(forward))) ) )
+				end
+			end
+			
+			return { Instancing.SuccessCode, "-- State change forwarded" }
+		end
+	end
+	
+,	AddInstanceState2 = function (self, instanceNo, state, value, broadcast, forward)
 		if instanceNo == nil
 		or state == nil or type(state) ~= "string"
 		or broadcast == nil
@@ -428,7 +514,7 @@ Instancing =
 		
 			instanceStates[state] = newValue
 			
-			Instancing:HandleStateChange(state, newValue)
+			Instancing:HandleStateChange(instanceId, state, newValue)
 			
 			return { Instancing.SuccessCode, "-- State change applied" }
 		else
@@ -479,18 +565,18 @@ Instancing =
 				print( unpack( bcastFn(self, instanceNo, string.format("return Instancing:DoInstanceEvent(%u, %q, %q, %s, false)", instanceId, state, tostring(value), tostring(forward))) ) )
 			end
 		elseif self:IsServer() == false then
-			Instancing:HandleStateChange(state, value)
+			Instancing:HandleStateChange(instanceId, state, value)
 		end
 		
 		-- Only update state on the server or when we are the
 		return { Instancing.SuccessCode, "-- Instance event sent" }
 	end
 	
-,	AddTimer = function (self, instanceNo, duration, valueName, value)
+,	AddTimer = function (self, instanceNo, valueName, duration)
 		if instanceNo == nil
 		or valueName == nil or type(valueName) ~= "string"
 		or duration == nil
-			then return { Instancing.ErrorCode, "Incorrect usage of AddTimer: expects instanceNo, duration, valueName, value" }
+			then return { Instancing.ErrorCode, "Incorrect usage of AddTimer: expects instanceNo, valueName, duration" }
 		end
 		if type(instanceNo) == "string" then
 			local no = tonumber(instanceNo)
@@ -514,7 +600,7 @@ Instancing =
 			-- We can't use : notation, so we have to manually
 			-- pass the "self" argument.
 			print("forwarding")
-			print( unpack( bcastFn(self, instanceNo, string.format("return Instancing:AddTimer(%u, %d, %q, %q)", instanceId, duration, valueName, tostring(value))) ) )
+			print( unpack( bcastFn(self, instanceNo, string.format("return Instancing:AddTimer(%u, %q, %d)", instanceId, valueName, duration)) ) )
 		end
 		
 		-- Only update state on the server or when we are the
@@ -527,8 +613,8 @@ Instancing =
 		end
 	end
 	
-,	HandleStateChange = function(self, state, value)
-		if self:IsClient() then
+,	HandleStateChange = function(self, instanceId, state, value)
+		if self:IsClient() and self.InstanceId == instanceId then
 			local handler = Instancing.InstanceHandlers[state]
 			
 			if(handler ~= nil and _G[handler] ~= nil) then

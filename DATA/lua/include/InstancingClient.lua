@@ -132,7 +132,7 @@ function Instancing.GetInstanceState(self)
 		if instanceStates then
 			for k, v in pairs(instanceStates)
 			do
-				keyvalues = keyvalues .. string.format("['%%q']=['%%q'],", k, v)
+				keyvalues = keyvalues .. string.format("[%%q]=%%q,", k, v)
 			end
 		end
 		return "{"..keyvalues.."}"
@@ -148,7 +148,10 @@ function Instancing.GetInstanceState(self)
 	end
 
 	print("D inst:"..self.InstanceNo.." state:" .. parts[2])
-	local success, message = pcall(loadstring("Instancing.InstanceStates["..self.InstanceNo.."] = "..parts[2]))
+	local success, message = pcall(loadstring("Instancing.InstanceStates['"..self.InstanceId.."'] = "..parts[2]))
+	
+	--ui.ChatPrint("Deaths is " .. Instancing.InstanceStates["0000000000000100"]["deaths1"])
+	
 	if success == false then
 		return { Instancing.ErrorCode, "GetInstanceState execution error: " .. message }
 	end
@@ -276,7 +279,7 @@ function Instancing.AddState(self, valueName, value)
 	return self:AddInstanceState(self.InstanceNo, valueName, value, true, true)
 end
 
-function Instancing.TimedEvent(self, duration, valueName, value)
+function Instancing.TimedEvent(self, valueName, duration)
 	if self.Context == nil then
 		return { Instancing.ErrorCode, "Tried to call TimedEvent with no Context." }
 	end
@@ -286,7 +289,7 @@ function Instancing.TimedEvent(self, duration, valueName, value)
 	if valueName == nil then
 		return { Instancing.ErrorCode, "Called TimedEvent with no valueName." }
 	end
-	return self:AddTimer(self.InstanceNo, duration, valueName, value)
+	return self:AddTimer(self.InstanceNo, valueName, duration)
 end
 
 function Instancing.BroadcastEvent(self, valueName, value)

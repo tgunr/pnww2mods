@@ -39,12 +39,12 @@ function OnVictory(name, value)
 end
 
 function OnRoundStop(name, value)
-	local timeLeft = string.match(value, "left ([%d%.]+)");
+	local timeLeft = tonumber(value);
 	
-	if(timeLeft ~= nil) then
+	if(timeLeft > 0) then
 		local minutes = timeLeft / 60;
 		ui.ChatPrint(string.format("There are %d minutes left in this round!", minutes));
-	elseif(value == "true") then
+	else
 		scenario.manager:RunObject("roundstop", 1);
 	end
 end
