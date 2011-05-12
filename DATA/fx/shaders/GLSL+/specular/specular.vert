@@ -22,7 +22,6 @@ out vec2 tex0;
 out float alphatest;
 
 mat4 quaternionToMatrix(in vec4 q);
-mat3 modelviewToNormal(in mat4 mv);
 
 void main()
 {
@@ -43,9 +42,7 @@ void main()
 
     eyepos = pos.xyz;
 
-    mat3 normalmatrix = modelviewToNormal(modelview);
-
-    N = normalmatrix * in_normal;
+    N = mat3(modelview) * in_normal;
 	
 	tex0 = in_tex0;
 	
