@@ -4,8 +4,11 @@ if(true) then
 	-- content we're going to add
 	local content = 
 	{
-		-- placed objects
-		-- command,filename,worldx,worldy,worldz,roll,pitch,yaw,scalex,scaley,scalez,damage
+
+-- TERRAIN OBJECTS PLACEMENTS
+
+	-- command,filename,worldx,worldy,worldz,roll,pitch,yaw,scalex,scaley,scalez,damage
+
 		"place water1 0 0 2 0 0 0 0 0 0 0",
 		"place bel4 -75.06 -117.81 7.80 0 0 16 0 0 0 1",
 		"place bel6 -18.38 -147.54 8.28 0 0 200 0 0 0 1",
@@ -21,9 +24,6 @@ if(true) then
 		"place vinbarn1 14.39 -131.72 8.42 0 0 20 0 0 0 0",
 		"place brokencart 11.5 -136.5 8.39 0 0 -90 0 0 0 0",
 		"place crate 8.68 -129.54 8.75 0 0 -70 0 0 0 0",
-		
-
-
 		"place brokencart 118.00 -58.00 8.05 0 0 110 0 0 0 0",
 		"place oildrums_outside 55.5 -144.41 8.5 0 0 -45 0 0 0 0",
 		"place citybild1 40.19 -138.39 7.93 0 -3 110 0 0 0 1",
@@ -76,10 +76,6 @@ if(true) then
 		"place boarding1 124.80 -32.00 8.02 0 0 110 0 0 0 0",
 		"place boarding1 112.70 -36.50 8.25 0 0 109 0 0 0 0",
 		"place boarding1 2.29 -126.075 8.75 0 0 18 0 0 0 0",
-
-
-
-
 		"place cratepile_outside 126.50 -31.60 7.83 0 0 200 0 0 0 0",
 		"place bel1 120.39 -16.04 7.89 0 0 20 0 0 0 1",
 		"place sandbagwall_outside 136.25 -21.00 7.59 -5 0 93 0 0 0 0",
@@ -106,7 +102,7 @@ if(true) then
 		"place bel1 37.09 -53.88 8.03 0 0 200 0 0 0 0",
 		"place bel4 29.50 -26.39 7.93 0 0 16 0 0 0 1",
 		"place citybild2 -8.58 -46.45 8.27 0 0 115 0 0 0 1",
-		"place bel1 -3.96 -49.92 -0.75 0 0 20 0 0 0 1",
+		"place bel1 -3.96 -49.92 8.44 0 0 20 0 0 0 1",
 		"place bel6 7.29 -61.58 8.37 0 0 114 0 0 0 1",
 		"place citybild1 -14.22 -90.11 8.35 0 0 290 0 0 0 0",
 		"place bel4 -11.69 -94.65 8.46 0 0 106 0 0 0 1",
@@ -126,7 +122,6 @@ if(true) then
 		"place tanktrap 108.65 -34.12 7.5 0 0 20 0 0 0 0",
 		"place tanktrap 110.29 -35.06 7.6 0 0 -10 0 0 0 0",
 		"place tanktrap 112.06 -34.00 7.7 0 0 -10 0 0 0 0",
-
 		"place instance_hulk2_dam 104.5 -36.35 7.4 0 5 -120 0 0 0 0",
 		"place bel6 -30.13 -68.99 7.84 0 -2 19 0 0 0 1",
 		"place bel6 -57.89 -84.67 8.35 0 0 22 0 0 0 1",
@@ -210,48 +205,8 @@ if(true) then
 		"place instance_hulk2_dam 31.26 -57.52 8.0 -10 0 -120 0 0 0 0",
 		"place oildrums_outside 37.89 -147.87 8.2 0 0 0 0 0 0 1",
 		"place oildrums_outside -82.61 -95.68 8.2 0 0 45 0 0 0 1",
-		
 		"place wall02 102 -31.5 6.5 0 0 205 0 0 0 0",
 		"place oildrums_outside 95.27 -27.98 8.3 0 6 0 0 0 0 1",
-		
-		
-	
-	
-
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
-		
-		
-		
-		
-	
-
-
-
-
-
-
-
 
 
 	};
