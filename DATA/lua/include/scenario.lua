@@ -65,7 +65,7 @@ function StartNetwork()
 		ui.ChatPrint("Initing scenario network state!");
 		
 		-- if we're the creator, send our initial state up
-		if(state.config.creator == "true") then
+		if(state.config.init == "true") then
 			-- do some state init stuff
 			local ms = tonumber(state.config.duration) * 60;
 			Instancing:TimedEvent("roundstop", ms);

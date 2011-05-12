@@ -44,8 +44,10 @@ function OnRoundStop(name, value)
 	if(timeLeft > 0) then
 		local minutes = timeLeft / 60;
 		ui.ChatPrint(string.format("There are %d minutes left in this round!", minutes));
-	else
+	elseif(timeLeft == 0) then
 		scenario.manager:RunObject("roundstop", 1);
+	else
+		-- this timer was just inited
 	end
 end
 

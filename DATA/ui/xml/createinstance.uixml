@@ -261,7 +261,7 @@
 							
 							cprint("Joining created instance!");
 							
-							if(selectTeam(scenario, bestSide) && joinInstance(instance.description))
+							if(selectTeam(scenario, bestSide) && joinInstance(instance.description, true))
 							{
 								joined = true;
 							}

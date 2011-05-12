@@ -572,21 +572,21 @@ Instancing =
 		return { Instancing.SuccessCode, "-- Instance event sent" }
 	end
 	
-,	AddTimer = function (self, instanceNo, valueName, duration)
+,	SetTimer = function (self, instanceNo, valueName, duration)
 		if instanceNo == nil
 		or valueName == nil or type(valueName) ~= "string"
 		or duration == nil
-			then return { Instancing.ErrorCode, "Incorrect usage of AddTimer: expects instanceNo, valueName, duration" }
+			then return { Instancing.ErrorCode, "Incorrect usage of SetTimer: expects instanceNo, valueName, duration" }
 		end
 		if type(instanceNo) == "string" then
 			local no = tonumber(instanceNo)
 			if no == nil or no == 0 then
-				return { Instancing.ErrorCode, "Incorrect usage of AddTimer: unrecognized instanceNo " .. instanceNo .. "." }
+				return { Instancing.ErrorCode, "Incorrect usage of SetTimer: unrecognized instanceNo " .. instanceNo .. "." }
 			end
 			instanceNo = no
 		end
 		if not self.Context then
-			return { Instancing.ErrorCode, "Tried to call AddTimer without a Context." }
+			return { Instancing.ErrorCode, "Tried to call SetTimer without a Context." }
 		end
 		
 		-- Convert to hex format for better hashing.
@@ -600,7 +600,7 @@ Instancing =
 			-- We can't use : notation, so we have to manually
 			-- pass the "self" argument.
 			print("forwarding")
-			print( unpack( bcastFn(self, instanceNo, string.format("return Instancing:AddTimer(%u, %q, %d)", instanceId, valueName, duration)) ) )
+			print( unpack( bcastFn(self, instanceNo, string.format("return Instancing:SetTimer(%u, %q, %d)", instanceId, valueName, duration)) ) )
 		end
 		
 		-- Only update state on the server or when we are the

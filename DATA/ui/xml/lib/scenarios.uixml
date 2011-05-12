@@ -71,7 +71,7 @@
 			loadWin("scenarios/lobby", true);
 		}
 		
-		function joinInstance(instance)
+		function joinInstance(instance, init)
 		{
 			if(instance == null)
 				return false;
@@ -84,7 +84,7 @@
 			// start the scenario
 			if(client.joininstance(instance.category, instance.type, instance.owner, instance.id))
 			{
-				if(scenario != null && game.startscenario(scenario.path))
+				if(scenario != null && game.startscenario(scenario.path, init))
 				{
 					// save our content
 					game.globals.scenario = scenario;

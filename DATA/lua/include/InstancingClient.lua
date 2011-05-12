@@ -289,7 +289,7 @@ function Instancing.TimedEvent(self, valueName, duration)
 	if valueName == nil then
 		return { Instancing.ErrorCode, "Called TimedEvent with no valueName." }
 	end
-	return self:AddTimer(self.InstanceNo, valueName, duration)
+	return self:SetTimer(self.InstanceNo, valueName, duration)
 end
 
 function Instancing.BroadcastEvent(self, valueName, value)

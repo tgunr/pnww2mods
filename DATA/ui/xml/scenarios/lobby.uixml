@@ -107,7 +107,7 @@
 		{
 			var instance = running[instanceList.data];
 			
-			if(instance != null ||	!joinInstance(instance.description))
+			if(instance != null ||	!joinInstance(instance.description, false))
 				joinLobby();
 		}
 		
@@ -243,7 +243,7 @@
 			
 			setForwardEnabled(true);
 			
-			if(action && !joinInstance(instance.description))
+			if(action && !joinInstance(instance.description, false))
 				joinLobby();
 		}
 		
