@@ -141,8 +141,7 @@ if(true) then
 		"event barrage1 .10 30000 650 12",
 		"event bombing3 .20 30000 500 9",
 		
-
-	-- AREA TRIGGERS
+-- AREA TRIGGERS
 	-- command name triggertype worldx worldy worldz
 	-- directions near axis spawn 1
 				
@@ -168,6 +167,13 @@ if(true) then
 		--"area toaxisspawn OnTrigger 272903.36 3016940.54 481.00",
 		--"area toaxisspawn OnTrigger 272890.03 3016954.54 481.04",		
 		--"area toaxisspawn OnTrigger 272881.98 3016946.62 481.19",
+
+		-- AT NORTHEASTERN BOUNDARY CORNER
+
+		"area NECORNERWARN OnTrigger 281207.51 3029532.10 307.00",
+		"area NECORNERWARN OnTrigger 281192.77 3029531.76 307.00",
+		"area NECORNERWARN OnTrigger 281196.42 3029528.09 307.00",
+		"area NECORNERWARN OnTrigger 281207.84 3029527.26 307.00",
 
 -- CLONES --
 
