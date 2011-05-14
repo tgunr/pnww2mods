@@ -25,6 +25,7 @@
 		game.onchangeinvites		= onChangeInvites;
 		game.onchangerecruiting		= onChangeRecruiting;
 		game.buildirp				= onBuildIRP;
+		game.neterror				= onNetError;
 	}
 	
 	function loadWin(name, close)
@@ -172,6 +173,17 @@
 	function handleConnectionLost()
 	{
 		showOk(getlocstring('common.cthl'), game.quit);
+	}
+	
+	function onNetError(host, error, code, callback)
+	{
+		var message = getlocstring(host) + " (" + code + "):\n" + getlocstring(error);
+		var handler = (game[callback] != null) ? game[callback] : null; 
+		
+		if(handler != null)
+			showOk(message, handler);
+		else
+			showOk(message);
 	}
 	
 	function showDotCommandConfirmation(cmd)
