@@ -322,6 +322,7 @@ if(true) then
 	-- command,spawngroup,country,category,class,type
 	-- a 0 is considered a wildcard
 
+	-- spawn masks
 		"vehicle alliedtroops us-assault",
 		"vehicle alliedtroops us-smg",
 		"vehicle alliedtroops us-bar",
@@ -331,6 +332,21 @@ if(true) then
 		"vehicle axistroops de-smg",
 		"vehicleaxistroops de-lmg",
 		"vehicle axistroops de-sniper ",
+		
+	-- alert masks	DOC THIS IS NEW
+	-- define a mask to block who gets a named alert
+	-- definedalertname definedspawnmask country category class
+	-- or
+	-- definedalertname definedspawnmask vehicleid
+	-- note, by defining which team does get the alert, the other team will not get the alert
+			
+		"bridgecapture alliedtroops 1 0 0 0",
+		-- above Ive defined all allied troops get the bridgecapture alert,
+		-- by not defining which axis troops get the alert, axis wont get it
+		"toaxisspawn alliedtroops 1 0 0 0",
+		"toalliedspawn axistroops 1 0 0 0",
+
+	
 	};
 
 	for i,v in ipairs(content) do 
