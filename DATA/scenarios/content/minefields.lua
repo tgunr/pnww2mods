@@ -54,6 +54,7 @@ function DoLandmine(name, value)
 	local veh = vehicle.vehFindVehicleByChatHandle(tonumber(data[2]));
 	
 	if(veh ~= nil and veh:IsMe()) then
+		ui.ChatPrint("You have detonated a " .. data[1]);
 		fp.fpFPSKillTrooper();
 		tutorial.manager:RemoveHandler("OnLandmine");
 	end
