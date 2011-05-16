@@ -6,7 +6,7 @@ if(true) then
 	{
 		-- placed objects
 		-- command,filename,worldx,worldy,worldz,roll,pitch,yaw,scalex,scaley,scalez,damage
-		"place water1 0 0 3.3 0 0 0 0 0 0 0",
+		"place water1 0 0 3.3 0 0 90 0 0 0 0",
 		"place doggreen_ob3 0 0 0 0 0 0 0 0 0 0",
 		
 		-- higgins boats
