@@ -26,7 +26,7 @@ function OnLandmine(handler)
 		-- check to see if we have stepped on a mine
 		if(math.random() < .1) then
 			-- try to run an ammo, effect or sound
-			local sharedData = string.format("%s %u %.2f %.2f %.2f", state.landmine, v:GetChatHandle(), v:GetPos(1), v:GetPos(2), v:GetPos(3));
+			local sharedData = string.format("%s %u %.2f %.2f %.2f", state.landmine, v.VehicleHostIndex, v:GetPos(1), v:GetPos(2), v:GetPos(3));
 			
 			--ui.ChatPrint("Sending shared data: " .. sharedData);
 			
@@ -51,7 +51,7 @@ function DoLandmine(name, value)
 	scenario.manager:RunObject(data[1], 1, pos);
 	
 	-- do we need to kill ourself?
-	local veh = vehicle.vehFindVehicleByChatHandle(tonumber(data[2]));
+	local veh = vehicle.vehFindVehicle(tonumber(data[2]));
 	
 	if(veh ~= nil and veh:IsMe()) then
 		ui.ChatPrint("You have detonated a " .. data[1]);
