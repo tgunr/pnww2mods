@@ -199,7 +199,15 @@ if(true) then
 		"area toalliedspawn OnTrigger 206.57 -6.40 8.17",	
 		"area toalliedspawn OnTrigger 199.36 -22.17 8.17",	
 		"area toalliedspawn OnTrigger 178.45 -19.22 8.17",	
-		"area toalliedspawn OnTrigger 176.68 1.85 8.17",		
+		"area toalliedspawn OnTrigger 176.68 1.85 8.17",
+
+	-- telling allies to turn around and go the other way
+		"area allieswrongway OnTrigger 272.23 192.78 4.61",
+		"area allieswrongway OnTrigger 235.79 221.19 6.78",
+		"area allieswrongway OnTrigger 243.40 228.29 6.78",
+		"area allieswrongway OnTrigger 273.78 201.61 6.78",
+	
+	
 
 	-- minefield near axis spawn
 
@@ -279,6 +287,7 @@ if(true) then
 		"alert toaxisspawn toaxisspawn",
 		"alert toalliedspawn toalliedspawn",
 		"alert bridgecapture bridgecapture",
+		"alert allieswrongway allieswrongway",
 
 		
 -- DEFINE AVAILABLE VEHICLES FOR THE SCENARIO
@@ -345,6 +354,7 @@ if(true) then
 		-- by not defining which axis troops get the alert, axis wont get it
 		"toaxisspawn alliedtroops 1 0 0 0",
 		"toalliedspawn axistroops 1 0 0 0",
+		"allieswrongway alliedtroops 1 0 0 0",
 
 	
 	};
