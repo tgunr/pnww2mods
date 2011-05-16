@@ -63,7 +63,7 @@ if(true) then
 	
 	-- blockname x1 y1 z1 x2 y2 z2 thickness height
 
-        	"block 139.59 -86.67 8.69 104.30 -72.64 8.68 1 10",
+        "block 139.59 -86.67 8.69 104.30 -72.64 8.68 1 10",
 		"block 112.42 -69.95 9.00 119.31 -46.78 8.68 1 10",
 		"block 123.98 -34.23 8.53 127.56 -26.02 8.70 1 10",
 		"block 193.16 -93.40 7.36 160.99 -84.63 7.88 1 10",
@@ -118,22 +118,22 @@ if(true) then
 	-- ABSOLUTE SOUNDS
 	-- command name filename minvol, maxvol
 
-		"sound planes sounds/scenarios/ambient_aircraft_squadron1.wav .2 0",
-		"sound planes sounds/scenarios/ambient_aircraft_squadron2.wav .3 0",
+		"sound planes sounds/scenarios/ambient_aircraft_squadron1.wav .1 0",
+		"sound planes sounds/scenarios/ambient_aircraft_squadron2.wav .2 0",
 		"sound bombs sounds/scenarios/ambient_bombs_distantshells1.wav .4 0",
 		"sound bombs sounds/scenarios/ambient_bombs_distantshells2.wav .4 0",
-		"sound explosions sounds/scenarios/ambient_explosions_fourinarow.wav .60 0",
+		"sound explosions sounds/scenarios/ambient_explosions_fourinarow.wav .4 0",
 		"sound explosions sounds/troop/grenade.wav .40 0",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav .20 0",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun2.wav .25 0",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun3.wav .30 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav .10 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun2.wav .10 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun3.wav .10 0",
 		"sound guns1 sounds/airraidsiren.wav .06 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun4.wav .25 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav .25 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav .15 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav .4 0",
-		"sound wind sounds/ambience/gust1.wav .9 0",
-		"sound wind sounds/ambience/gust2.wav .9 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun4.wav .10 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav .10 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav .10 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav .1 0",
+		"sound wind sounds/ambience/gust1.wav .3 0",
+		"sound wind sounds/ambience/gust2.wav .3 0",
 
 	-- POSITIONAL SOUNDS
 	-- command name filename volume loop x y z mindist maxdist
@@ -155,10 +155,6 @@ if(true) then
 		"bombingrun bombing1 gp250 90.62 211.47 18.81 12.92 91.85 18.81",
 		"bombingrun bombing1 gp250 35.65 250.44 21.31 -16.21 206.43 21.31",
 		"bombingrun bombing1 gp500 142.60 -153.42 6.93 -4.35 -116.20 21.49",
-		-- "bombingrun bombing1 gp250 -69.51 80.01 6.21 -177.68 11.25 6.21",
-		-- "bombingrun bombing2 gp40 142.60 -153.42 6.93 6.27 -182.85 2.72",
-		-- "bombingrun bombing2 gp40 212.53 -134.06 19.33 163.59 -134.66 4.72",
-		
 
 	-- AREA EFFECT BOMBING OR BARRAGE (simulating artillery barrage)
 	-- the x,y,z is the center of the barrage
@@ -167,7 +163,7 @@ if(true) then
 
 		"barrage barrage1 gp40 -136.68 204.49 12.79 50",
 		"barrage barrage1 gp40 48.05 317.05 18.90 25",
-		-- "barrage barrage1 gp40 -266.85 -36.03 5.26 50",
+
 
 		
 -- TRIGGERS
@@ -175,15 +171,15 @@ if(true) then
 	-- EVENT TRIGGERS	
 	-- command name pctgchance-each-second wait-in-seconds
 
-		-- "event planes .40 120000",
-		-- "event bombs .10 20000",
-		-- "event explosions .10 25000",
+		"event planes .40 120000",
+		"event bombs .10 20000",
+		"event explosions .10 25000",
 		-- "event guns1 .15 10000",
 		-- "event guns2 .20 30000",
-		-- "event wind .5 5000",
-		-- "event bombing1 .20 10000 500 6",
-		-- "event bombing2 .10 20000 750 3",
-		-- "event barrage1 .25 60000 700 10",
+		"event wind .5 5000",
+		"event bombing1 .20 10000 30000 6",
+		"event bombing2 .10 20000 30000 3",
+		"event barrage1 .25 60000 60000 10",
 
 		
 
@@ -238,10 +234,10 @@ if(true) then
 		
 	-- bridge capture objective
 
-		"area bridgecapture OnTrigger 128.28 19.45 7.13",
-		"area bridgecapture OnTrigger 133.82 35.82 7.13",
-		"area bridgecapture OnTrigger 130.04 37.17 7.13",
-		"area bridgecapture OnTrigger 123.71 19.42 7.13",
+		"area bridgecapture OnCapture 128.28 19.45 7.13",
+		"area bridgecapture OnCapture 133.82 35.82 7.13",
+		"area bridgecapture OnCapture 130.04 37.17 7.13",
+		"area bridgecapture OnCapture 123.71 19.42 7.13",
 		
 			
 -- CLONES --
@@ -262,9 +258,7 @@ if(true) then
 		"clone pzivd 79.79 108.67 5.58 3 -1 20",
 		"clone oplbltz 121.93 6.84 8.08 -3 0 205",
 		"clone oplbltz 176.32 -20.12 8.55 0 0 180",
-		-- "clone bedford -19.75 -153.93 9.05 2 0 0",
-		-- "clone bedford -27.34 -150.10 8.9 4 0 285",
-		-- "clone bedford -35.21 -147.32 8.85 6 2 285",
+
 
 
 -- ALERTS AND CHATS
@@ -301,6 +295,7 @@ if(true) then
 	-- 
 	-- countries:
 		-- 1 - england
+		-- 2 - usa
 		-- 3 - france
 		-- 4 - germany
 		-- 
@@ -327,8 +322,15 @@ if(true) then
 	-- command,spawngroup,country,category,class,type
 	-- a 0 is considered a wildcard
 
-		"vehicle alliedtroops 1 0 9 0",
-		"vehicle axistroops 4 0 9 0",
+		"vehicle alliedtroops us-assault",
+		"vehicle alliedtroops us-smg",
+		"vehicle alliedtroops us-bar",
+		"vehicle alliedtroops us-sniper ",
+		
+		"vehicle axistroops de-assault",
+		"vehicle axistroops de-smg",
+		"vehicleaxistroops de-lmg",
+		"vehicle axistroops de-sniper ",
 	};
 
 	for i,v in ipairs(content) do 
