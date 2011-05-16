@@ -1,20 +1,24 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>obj_lepontdumal</name>
-  <body>onspawn.moveout = The Americans are trying to take the bridge!
+  <body>onspawn.moveout = The Americans are trying to take the bridge! Germans must defend.
 toaxisspawn = Capture the bridge before time runs out!
 toalliedspawn = Defend the bridge from advancing American troops!
-bridgecapture = You are capturing the bridge and must hang onto it!</body>
+bridgecapture = You are capturing the bridge! Hold it until fresh troops arrive.
+allieswrongway = The objective is south. Turn around and follow the road.
+victory1 = Americans have secured the bridge! Re-enforcements have arrived.
+victory2 = The Germans have defended the bridge!
+roundstop = This round is over!</body>
   <bodyloc>true</bodyloc>
-  <brief>UI text</brief>
-  <duration>30</duration>
+  <brief>An American convoy is headed south towards the bridge and have orders to capture and hold it until reinforcements arrive. A small German unit is camped in town and are desperate to defend the bridge from capture.</brief>
+  <duration>15</duration>
   <fog>3</fog>
   <hour>16</hour>
-  <kills>50</kills>
-  <rules>deathmatch</rules>
-  <team1>3</team1>
+  <rules>dday</rules>
+  <team1>2</team1>
   <team2>4</team2>
   <terrain>lepontdumal</terrain>
   <title>Le pont du mal</title>
+  <victory>30</victory>
   <weather>2</weather>
 </content>

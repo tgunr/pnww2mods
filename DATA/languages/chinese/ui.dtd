@@ -4510,22 +4510,29 @@
 <!ENTITY connect.login.handshake.lost "在网络初始化阶段与服务器失去连接">
 <!ENTITY connect.login.auth.failed "验证失败">
 <!ENTITY connect.ping.notactive "网速延迟: ...">
+<!ENTITY connect.error.econnrefused "错误：连接被拒绝">
 <!ENTITY connect.popup.title "网络错误">
+<!ENTITY connect.error.enobufs "错误：系统没有缓冲内存">
 <!ENTITY connect.find.nonefound "网络初始化失败或者没有可用网络">
+<!ENTITY connect.error.enotconn "错误：没有连接">
 <!ENTITY connect.ping.stats.full "网速延迟: &#37;ums, 平均: &#37;ums, &#37;ls: &#37;.1f&#37;&#37;.">
 <!ENTITY connect.login.timeout "连接游戏服务器超时">
 <!ENTITY connect.find.cantopen "无法打开游戏的网络连接">
 <!ENTITY connect.lost.game "游戏连接丢失">
 <!ENTITY connect.find.timeout.data "获取连接数据超时">
+<!ENTITY connect.error.enetdown "错误：当前网络宕了">
 <!ENTITY connect.login.chat.lost "在连接聊天服务器过程中失去与游戏的连接">
 <!ENTITY connect.ping.lossbig "*数据包丢失*">
 <!ENTITY connect.ping.stats.brief "延迟: &#37;u(&#37;u)ms">
 <!ENTITY connect.find.nodata "请求连接数据出错">
 <!ENTITY connect.ping.loss "丢失">
+<!ENTITY connect.error.eagain "错误：还是错误">
 <!ENTITY connect.fail "连接失败">
 <!ENTITY connect.login.auth.timeout "验证超时">
+<!ENTITY connect.host.cell "cell服务器">
 <!ENTITY connect.login.chat.error "无法连接聊天服务器">
 <!ENTITY connect.ping.kbps "网速: &#37;.1f 进, &#37;.1f 出(kbps).">
+<!ENTITY connect.error.ehostunreach "错误：服务器无法连接">
 <!ENTITY connect.lost "&#37;ls: 错误 #&#37;u">
 <!ENTITY connect.lost.reconnect "与聊天服务器失去联系，正在尝试重新连接">
 <!ENTITY connect.login.noopen "无法打开战场服务器的连接">
@@ -4534,17 +4541,26 @@
 <!ENTITY connect.lost.world "与战场服务器失去联系">
 <!ENTITY connect.login.auth.lost "验证期间，失去连接">
 <!ENTITY connect.login.chat.timeout "连接聊天服务器超时">
+<!ENTITY connect.error.econnaborted "错误：连接被中止了">
 <!ENTITY connect.lost.chat "与聊天服务器失去联系">
+<!ENTITY connect.error.enetreset "错误：网络已重设了">
 <!ENTITY connect.login.badlogin "未预料的登录失败">
 <!ENTITY connect.find.timeout.network "与游戏网络连接超时">
 <!ENTITY connect.netcode2.reverting "[netcode2 第二连接方案（UDP)失败，请检查你的防火墙或其它设置 - 正换成标准网络连接（TCP）]">
+<!ENTITY connect.error.eaddrinuse "错误：地址已使用">
+<!ENTITY connect.error.enetunreach "错误：无法连接至指定网络">
+<!ENTITY connect.error.eaddrnotavail "错误：没有这个地址">
 <!ENTITY connect.ping.na "网速延迟测试不能进行">
+<!ENTITY connect.error.etimedout "错误：超时">
 <!ENTITY connect.netcode2.firewall "[netcode2 第二连接方案（UDP)失败，请检查你的防火墙或其它设置 - 正换成标准网络连接（TCP）]">
 <!ENTITY connect.login.error "连接游戏服务器出错">
 <!ENTITY connect.reconnect.failed "与战场服务器失去联系，重新尝试连接失败">
+<!ENTITY connect.host.chat "chat服务器">
 <!ENTITY connect.refused "战场服务器拒绝连接">
+<!ENTITY connect.host.map "map服务器">
 <!ENTITY connect.netcode2.disabled "[服务器已关闭netcode2第二连接方案（UDP)]">
 <!ENTITY connect.find.nobest "无法连接游戏网络">
+<!ENTITY connect.error.econnreset "错误：连接已重设了">
 <!ENTITY connect.login.nochat "聊天服务器连接失败">
 <!ENTITY waypoints.stop "停止">
 <!ENTITY waypoints.turn4 "转弯 4">

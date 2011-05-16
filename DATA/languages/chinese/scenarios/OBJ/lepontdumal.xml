@@ -4,17 +4,21 @@
   <body>onspawn.moveout = 美军正在试图占领桥梁！
 toaxisspawn = 在时间耗尽前占领桥梁！
 toalliedspawn = 防守桥梁，阻止美军的推进！
-bridgecapture = 你正在占领这座桥梁，务必坚守此地！</body>
+bridgecapture = 你正在占领这座桥梁，务必坚守此地！
+allieswrongway = 士兵，转身！你走错方向了。
+victory1 = 美军保住了桥梁！增援部队抵达！
+victory2 = 红国军队守住了桥梁！
+roundstop = 本回合结束！</body>
   <bodyloc>true</bodyloc>
-  <brief>UI text</brief>
-  <duration>30</duration>
+  <brief>一支美国护卫队朝南部的桥梁进发，军令为：占领并控制住桥梁直到增援部队抵达。一支红国小分队驻扎在镇上，需要不惜一切代价防守住桥梁，避免桥梁被占领。</brief>
+  <duration>15</duration>
   <fog>3</fog>
   <hour>16</hour>
-  <kills>50</kills>
-  <rules>deathmatch</rules>
-  <team1>3</team1>
+  <rules>dday</rules>
+  <team1>2</team1>
   <team2>4</team2>
   <terrain>lepontdumal</terrain>
   <title>邪恶桥</title>
+  <victory>30</victory>
   <weather>2</weather>
 </content>

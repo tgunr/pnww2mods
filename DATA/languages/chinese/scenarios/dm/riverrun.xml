@@ -3,18 +3,23 @@
   <name>dm_riverrun</name>
   <body>onspawn.moveout = 在时间耗尽前，尽可能多的去消灭敌人！
 churchenter = 当心！教堂的高塔是敌方狙击手绝佳的埋伏点。
-toaxisspawn = 德军驻扎在东北部。
-toalliedspawn = 美军已经通过西南桥梁！</body>
+toaxisspawn = 红国军队驻扎在东北部。
+toalliedspawn = 美军已经通过西南桥梁！
+victory1 = 盟国胜利！
+victory2 = 红国胜利！
+roundstop = 本回合结束！
+playarea = 你已到达边界，不能继续向前。否则将离开有效的游戏区域！</body>
   <bodyloc>true</bodyloc>
-  <brief>test</brief>
-  <duration>30</duration>
+  <brief>测试</brief>
+  <draw>35</draw>
+  <duration>10</duration>
   <fog>3</fog>
   <hour>16</hour>
-  <kills>50</kills>
   <rules>deathmatch</rules>
   <team1>3</team1>
   <team2>4</team2>
   <terrain>riverrun</terrain>
-  <title>River Run Fire Fight</title>
+  <title>淌河激战</title>
+  <victory>50</victory>
   <weather>1</weather>
 </content>

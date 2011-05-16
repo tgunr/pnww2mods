@@ -4317,22 +4317,29 @@
 <!ENTITY connect.login.handshake.lost "Verbindungsabbruch beim Handshake">
 <!ENTITY connect.login.auth.failed "Authentifizierung fehlgeschlagen">
 <!ENTITY connect.ping.notactive "Ping: ...">
+<!ENTITY connect.error.econnrefused "econnrefused">
 <!ENTITY connect.popup.title "Netzwerkfehler">
+<!ENTITY connect.error.enobufs "enobufs">
 <!ENTITY connect.find.nonefound "Netzwerkinitialisierung fehlgeschlagen/kein Netzwerk gefunden">
+<!ENTITY connect.error.enotconn "enotconn">
 <!ENTITY connect.ping.stats.full "Ping: &#37;ums, Avg: &#37;ums, &#37;ls: &#37;.1f&#37;&#37;.">
 <!ENTITY connect.login.timeout "Zeitüberschreitung beim Verbinden zum Host">
 <!ENTITY connect.find.cantopen "Verbindung zum Spielenetzwerk fehlgeschlagen">
 <!ENTITY connect.lost.game "Verbindung zum Spiel verloren">
 <!ENTITY connect.find.timeout.data "Zeitüberschreitung bei Übermittlung Verbindungsdaten">
+<!ENTITY connect.error.enetdown "enetdown">
 <!ENTITY connect.login.chat.lost "Verbindung zum Spiel während des Verbindungsaufbaus zum Chat verloren">
 <!ENTITY connect.ping.lossbig "*PAKETVERLUST*">
 <!ENTITY connect.ping.stats.brief "Ping: &#37;u(&#37;u)ms">
 <!ENTITY connect.find.nodata "Fehler bei Übermittlung der Verbindungsdaten">
 <!ENTITY connect.ping.loss "Verlust">
+<!ENTITY connect.error.eagain "eagain">
 <!ENTITY connect.fail "Verbindung fehlgeschlagen">
 <!ENTITY connect.login.auth.timeout "Zeitüberschreitung bei Authentifizierng">
+<!ENTITY connect.host.cell "cellhost">
 <!ENTITY connect.login.chat.error "Konnte nicht zum Chathost verbinden">
 <!ENTITY connect.ping.kbps "Kbps: &#37;.1f in, &#37;.1f out.">
+<!ENTITY connect.error.ehostunreach "ehostunreach">
 <!ENTITY connect.lost "&#37;ls: Fehler #&#37;u">
 <!ENTITY connect.lost.reconnect "Chatverbindung verloren, versuche neue Verbindung aufzubauen">
 <!ENTITY connect.login.noopen "Keine Verbindung zum Host">
@@ -4341,17 +4348,26 @@
 <!ENTITY connect.lost.world "Verbindung zum Welt Server verloren">
 <!ENTITY connect.login.auth.lost "Verbindung verloren bei">
 <!ENTITY connect.login.chat.timeout "Zeitüberschreitung der Chatverbindung">
+<!ENTITY connect.error.econnaborted "econnaborted">
 <!ENTITY connect.lost.chat "Verbindung zum Chathost verloren">
+<!ENTITY connect.error.enetreset "enetreset">
 <!ENTITY connect.login.badlogin "Unerwarteter Loginfehler">
 <!ENTITY connect.find.timeout.network "Zeitüberschreitung beim Verbindungsaufbau">
 <!ENTITY connect.netcode2.reverting "[Netcode2-Verbindung verloren, bitte überprüfe Deine Firewall - verwende Standard Netzwerkverbindung]">
+<!ENTITY connect.error.eaddrinuse "eaddrinuse">
+<!ENTITY connect.error.enetunreach "enetunreach">
+<!ENTITY connect.error.eaddrnotavail "eaddrnotavail">
 <!ENTITY connect.ping.na "Ping: N/A">
+<!ENTITY connect.error.etimedout "etimedout">
 <!ENTITY connect.netcode2.firewall "[Netcode2 Verbindungsfehler, bitte überprüfe Deine Firewall - verwende Standard Netzwerkverbindung]">
 <!ENTITY connect.login.error "Fehler beim Verbinden zum Host">
 <!ENTITY connect.reconnect.failed "Hostverbindung verloren, Wiederaufbau fehlgeschlagen">
+<!ENTITY connect.host.chat "chathost">
 <!ENTITY connect.refused "Verbindungsaufbau vom Host abgelehnt">
+<!ENTITY connect.host.map "maphost">
 <!ENTITY connect.netcode2.disabled "[Netcode2 auf dem Server abgeschaltet]">
 <!ENTITY connect.find.nobest "Konnte nicht zum Spielenetzwerk verbinden">
+<!ENTITY connect.error.econnreset "econnreset">
 <!ENTITY connect.login.nochat "Keine Verbindung zum Chat">
 <!ENTITY waypoints.stop "Halt">
 <!ENTITY waypoints.turn4 "4. Kurve">
