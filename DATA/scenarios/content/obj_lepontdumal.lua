@@ -332,14 +332,15 @@ if(true) then
 	-- a 0 is considered a wildcard
 
 	-- spawn masks
-		"vehicle alliedtroops us-assault",
-		"vehicle alliedtroops us-smg",
-		"vehicle alliedtroops us-bar",
-		"vehicle alliedtroops us-sniper ",
+		--"vehicle alliedtroops us-assault",
+		--"vehicle alliedtroops us-smg",
+		--"vehicle alliedtroops us-bar",
+		--"vehicle alliedtroops us-sniper ",
+		"vehicle alliedtroops 1 0 9 0",
 		
-		"vehicle axistroops de-assault",
+		"vehicle axistroops derifle",
 		"vehicle axistroops de-smg",
-		"vehicleaxistroops de-lmg",
+		"vehicle axistroops de-lmg",
 		"vehicle axistroops de-sniper ",
 		
 	-- alert masks	DOC THIS IS NEW
@@ -349,12 +350,12 @@ if(true) then
 	-- definedalertname definedspawnmask vehicleid
 	-- note, by defining which team does get the alert, the other team will not get the alert
 			
-		"bridgecapture alliedtroops 1 0 0 0",
+		"vehicle bridgecapture 1 0 0 0",
 		-- above Ive defined all allied troops get the bridgecapture alert,
 		-- by not defining which axis troops get the alert, axis wont get it
-		"toaxisspawn alliedtroops 1 0 0 0",
-		"toalliedspawn axistroops 1 0 0 0",
-		"allieswrongway alliedtroops 1 0 0 0",
+		"vehicle toaxisspawn 1 0 0 0",
+		"vehicle toalliedspawn 4 0 0 0",
+		"vehicle allieswrongway 1 0 0 0",
 
 	
 	};
