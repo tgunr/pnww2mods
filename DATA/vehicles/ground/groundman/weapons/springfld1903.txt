@@ -4,20 +4,20 @@
 # SMG, SATCHEL, RIFLE, AUTO_PISTOL, GRENADE, REVOLVER, ITEM, KNIFE, LMG
 weaponType = RIFLE
 
-hiddenMeshes = shells,stripperclip
+#hiddenMeshes = shells,stripperclip
 
 # sound to play when reloading
 reloadSound = sounds\enfieldreload.wav
 
 # specify the weapon & clip (clip optional) model here
 # note that data\gr2data\FPS\ is prepended to these file names
-weaponModel = enfield\gunmesh-enfieldscope
+weaponModel = springfield\springfield
 #clipModel = enfield\enfield-gunmesh-5roundstripperclip
 
 # granny attach bone names for weapon & clip
 # the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
 weaponConnectTo = rifle-control
-weaponConnect = enfield-connect
+weaponConnect = springfield-connect
 
 # the clipConnect bone in the clip attaches to the clipConnectTo bone in the gun
 #clipConnectTo = enfield-stripperclip-control
