@@ -146,6 +146,7 @@
 			setForward('combat.forward');
 			setForwardEnabled(false);
 			
+			forwardButton.visible = false;
 			backButton.visible = false;
 						
 			quickhelp();

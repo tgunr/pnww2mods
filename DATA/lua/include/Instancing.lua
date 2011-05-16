@@ -267,7 +267,7 @@ Instancing =
 			if not msg then break end
 			table.insert(parts, msg)
 			print("part #" .. #parts .. ": " .. tostring(msg))
-			ui.ChatPrint("part #" .. #parts .. ": " .. tostring(msg))
+			-- ui.ChatPrint("part #" .. #parts .. ": " .. tostring(msg))
 			
 			-- ZMQ will set the "RCVMORE" value on a socket
 			-- if the message was a non-terminal part of a
@@ -618,7 +618,7 @@ Instancing =
 			local handler = Instancing.InstanceHandlers[state]
 			
 			if(handler ~= nil and _G[handler] ~= nil) then
-				ui.ChatPrint("Handling new state change " .. handler .. "(" .. state .. "/" .. value .. ")");
+				-- ui.ChatPrint("Handling new state change " .. handler .. "(" .. state .. "/" .. value .. ")");
 				_G[handler](state, value);
 			end
 		end

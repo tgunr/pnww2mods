@@ -145,7 +145,7 @@ end
 
 -- call after you enter the world
 function OnSpawn(handler)
-	tutorial.OnSpawn(handler);
+	return tutorial.OnSpawn(handler);
 end
 
 tutorial.OnSpawn = function(handler)
@@ -204,6 +204,8 @@ tutorial.OnSpawn = function(handler)
 	
 	-- lock the hud on
 	player.persHUDLock(true);
+	
+	return 1;
 end
 
 -- set the current script update callback
@@ -269,7 +271,7 @@ end
 
 -- called after getting back to the UI
 function OnDespawn(handler)
-	tutorial.OnDespawn(handler);
+	return tutorial.OnDespawn(handler);
 end
 
 tutorial.OnDespawn = function(handler)
@@ -298,12 +300,13 @@ end
 
 -- called whent tutorial is finished
 function OnDie(handler)
-	tutorial.OnDie(handler);
+	return tutorial.OnDie(handler);
 end
 
 tutorial.OnDie = function(handler)
 	-- what to do?
 	tutorial.ShowOK("died", "tutorial.OnDead");
+	return 1;
 end
 
 tutorial.OnDead = function()

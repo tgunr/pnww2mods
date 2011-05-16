@@ -21,13 +21,54 @@ state.config					= {};
 state.inbounds				= true;
 state.lastinbounds		= true;
 state.network				= false;
+state.victory					= 0;
+
+-- states we'll monitor
+state.hoststates			= 
+{
+	{"roundtimer", "OnRoundTimer"},
+	{"victory", "OnVictory"},
+	{"victory1", "CheckVictory"},
+	{"victory2", "CheckVictory"},
+};
+
+scenario.AddFriendlyScore = function(points)
+	if(not game.Ingame()) then
+		return;
+	end
+	local team = 0;
+	local v = player.playerGetVehicle();
+	if(v ~= nil) then
+		team = v:GetSide();
+	end
+	scenario.AddScore(team, points);
+end
+
+scenario.AddEnemyScore = function(points)
+	if(not game.Ingame()) then
+		return;
+	end
+	local team = 0;
+	local v = player.playerGetVehicle();
+	if(v ~= nil) then
+		team = wwii.wwiiOtherSide(v:GetSide());
+	end
+	scenario.AddScore(team, points);
+end
+
+scenario.AddScore = function(team, points)
+	if(not state.network or not game.Ingame()) then
+		return;
+	end
+	team = tonumber(team);
+	if(team >= 1 and team <= 2 and state.victory == 0) then
+		--ui.ChatPrint("Adding " .. points .. " points to team " .. team .. " while victory is at " .. state.victory);
+		Instancing:AddState("victory" .. team, points);
+	end
+end
 
 function RegisterState(state, handler)
 	Instancing:RegisterHandler(state, handler);
-end
-
-function OnVictory()
-	-- nothing done by default
 end
 
 function OnStart(handler)
@@ -47,6 +88,11 @@ function OnStart(handler)
 	tutorial.AddHandler(tutorial.TUT_EVENT_SET, "OnSet");
 	tutorial.AddHandler(tutorial.TUT_EVENT_DAMAGE, "OnDamage");
 	tutorial.AddHandler(tutorial.TUT_EVENT_UPDATE, "OnScenario");
+	
+	-- setup some default handlers
+	-- scenario.manager:AddContent("alert victory1 victory1");
+	-- scenario.manager:AddContent("alert victory2 victory2");
+	-- scenario.manager:AddContent("alert roundstop roundstop");
 	
 	-- setup our ownerships
 	-- SetUpMap();
@@ -68,7 +114,7 @@ function StartNetwork()
 		if(state.config.init == "true") then
 			-- do some state init stuff
 			local ms = tonumber(state.config.duration) * 60;
-			Instancing:TimedEvent("roundstop", ms);
+			Instancing:TimedEvent("roundtimer", ms);
 		end
 		
 		-- get our initial state
@@ -102,12 +148,12 @@ function OnSpawn(handler)
 	scenario.manager:RunObject("onspawn", 1);
 	
 	-- testing
-	local v = player.playerGetVehicle();
-	local deathstate = "deaths" .. v:GetSide();
+	-- local v = player.playerGetVehicle();
+	-- local deathstate = "deaths" .. v:GetSide();
 	
-	local temp = Instancing:GetStateString(deathstate);
+	-- local temp = Instancing:GetStateString(deathstate);
 	-- ui.ChatPrint("You have deaths is " .. temp);
-	ui.ChatPrint(string.format("You have died %d times!", Instancing:GetStateNumber(deathstate)));
+	-- ui.ChatPrint(string.format("You have died %d times!", Instancing:GetStateNumber(deathstate)));
 	
 	-- keep handler going
 	return 1;
@@ -130,6 +176,10 @@ function OnDespawn(handler)
 	
 	-- try to run any scenario events associated with despawning
 	scenario.manager:RunEvent("ondespawn");
+	
+	if(state.victory > 0) then
+		-- move them back to the lobby
+	end
 	
 	-- keep handler going
 	return 1;
@@ -181,7 +231,7 @@ end
 -- main update functio for any scenario
 -- might be overriden by a rules handler 
 -- that includes this file
-function OnScenario(handler)
+scenario.OnScenario = function(handler)
 
 	-- get any new network events
 	if(state.network) then
@@ -193,13 +243,12 @@ function OnScenario(handler)
 	return 1;
 end
 
+function OnScenario(handler)
+	return scenario.OnScenario(handler);
+end
+
 function OnDie(handler)
-	if(state.network) then
-		local v = player.playerGetVehicle();
-		Instancing:AddState("deaths" .. v:GetSide(), 1);
-	end
-	scenario.manager:RunEvent("ondie");
-	return 1;
+ 	return 1;
 end
 
 function OnDead()
@@ -234,6 +283,62 @@ function OnTrigger(handler)
 		scenario.manager:RunObject(handler.name, 1);
 	else
 		scenario.manager:RunObject(handler.name, 0);
+	end
+	return 1;
+end
+
+function CheckVictory(name, value)
+
+	local score 	=  Instancing:GetStateNumber(name);
+	local victory 	= tonumber(state.config.victory);
+
+	-- ui.ChatPrint("Checking " .. score .. " against " .. victory);	
+	
+	if(score >= victory) then
+		if(name == "victory1") then
+			Instancing:SetState("victory", 1);
+		elseif(name == "victory2") then
+			Instancing:SetState("victory", 2);
+		end
+	end
+	
+	return 1;
+end
+
+function OnVictory(name, value)
+	-- save our victor
+	if(state.victory == 0) then
+		state.victory = tonumber(value);
+		
+		-- load our victory ui
+		local ui = ui.LoadView("scenarios/result");
+		
+		-- grab our victory points for each team
+		local victory1 =  Instancing:GetStateNumber("victory1");
+		local victory2 =  Instancing:GetStateNumber("victory2");
+		
+		-- tell our ui who won 
+		ui:CallJS("SetResult", state.victory, victory1, victory2);
+		
+		-- scenario.manager:RunObject("victory"..value, 1);
+	end
+	return 1;
+end
+
+function OnRoundTimer(name, value)
+	local timeLeft = tonumber(value);
+	
+	if(timeLeft > 0) then
+		local minutes = timeLeft / 60;
+		ui.ChatPrint(string.format("There are %d minutes left in this round!", minutes));
+	elseif(timeLeft == 0) then
+		local ui = ui.LoadView("scenarios/result");
+		local victory1 =  Instancing:GetStateNumber("victory1");
+		local victory2 =  Instancing:GetStateNumber("victory2");
+		state.victory = -1;
+		ui:CallJS("SetResult", state.victory, victory1, victory2);
+	else
+		-- this timer was just inited
 	end
 	return 1;
 end
@@ -281,4 +386,12 @@ function GetStringData(delimiter, value)
 		end
 		
 		return sd;
+end
+
+function GetTeam()
+	local v = player.playerGetVehicle();
+	if(v ~= nil) then
+		return v:GetSide();
+	end
+	return 0;
 end

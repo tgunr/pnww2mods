@@ -68,7 +68,7 @@
 				client.joininstance(root.category, 0, 0, 0);
 			
 			// load our lobby windows 
-			loadWin("scenarios/lobby", true);
+			loadWinToTab("scenarios/lobby", 1, true);
 		}
 		
 		function joinInstance(instance, init)
@@ -113,7 +113,7 @@
 		{
 			var country 	=  scenario["team" + team];
 			var client		= game.player.client;
-				
+			
 			if(!client.persona || client.persona.country.id != country)
 			{
 				var personas 	= client.personas;

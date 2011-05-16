@@ -9,7 +9,7 @@ reloadSound = sounds\enfieldreload.wav
 
 # specify the weapon & clip (clip optional) model here
 # note that data\gr2data\FPS\ is prepended to these file names
-weaponModel = enfield\gunmesh-enfield
+weaponModel = garand\garand
 #clipModel = enfield\enfield-gunmesh-5roundstripperclip
 
 hiddenMeshes = shells,stripperclip
@@ -17,7 +17,7 @@ hiddenMeshes = shells,stripperclip
 # granny attach bone names for weapon & clip
 # the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
 weaponConnectTo = rifle-control
-weaponConnect = enfield-connect
+weaponConnect = garand-connect
 
 # the clipConnect bone in the clip attaches to the clipConnectTo bone in the gun
 #clipConnectTo = enfield-stripperclip-control
