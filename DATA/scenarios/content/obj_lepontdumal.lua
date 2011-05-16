@@ -207,10 +207,13 @@ if(true) then
 		"area allieswrongway OnTrigger 273.78 201.61 6.78",
 		
 	-- telling the allies they are in the bridge capture area
-		"area bridgecapture OnTrigger 128.28 19.45 7.13",
-		"area bridgecapture OnTrigger 133.82 35.82 7.13",
-		"area bridgecapture OnTrigger 130.04 37.17 7.13",
-		"area bridgecapture OnTrigger 123.71 19.42 7.13",
+		"area bridgecapture OnTrigger 134.13 35.69 7.82",
+		"area bridgecapture OnTrigger 128.57 19.24 7.75",	
+		"area bridgecapture OnTrigger 123.54 19.40 7.83",	
+		"area bridgecapture OnTrigger 129.65 37.45 7.84",			
+
+
+
 	
 	-- minefield near axis spawn
 
@@ -245,10 +248,12 @@ if(true) then
 		
 	-- bridge capture objective
 
-		"area bridgecapture OnCapture 128.28 19.45 7.13",
-		"area bridgecapture OnCapture 133.82 35.82 7.13",
-		"area bridgecapture OnCapture 130.04 37.17 7.13",
-		"area bridgecapture OnCapture 123.71 19.42 7.13",
+		"area bridgecapture OnCapture 134.15 35.70 7.80",
+		"area bridgecapture OnCapture 128.55 19.25 7.78",
+		"area bridgecapture OnCapture 123.57 19.45 7.80",
+		"area bridgecapture OnCapture 129.63 37.40 7.82",
+		
+	
 		
 			
 -- CLONES --
@@ -335,12 +340,11 @@ if(true) then
 	-- a 0 is considered a wildcard
 
 	-- spawn masks
-		"vehicle alliedtroops us-assault",
-		"vehicle alliedtroops us-smg",
-		"vehicle alliedtroops us-bar",
-		--"vehicle alliedtroops us-sniper ",
-		-- "vehicle alliedtroops 1 0 9 0",
-		
+		-- "vehicle alliedtroops us-assault",
+		-- "vehicle alliedtroops us-smg",
+		-- "vehicle alliedtroops us-bar",
+		-- "vehicle alliedtroops us-sniper ",
+		"vehicle alliedtroops 1 0 9 0",
 		"vehicle axistroops derifle",
 		"vehicle axistroops de-smg",
 		"vehicle axistroops de-lmg",
@@ -353,12 +357,12 @@ if(true) then
 	-- definethemask definethemessage vehicleid
 	-- note, by defining which team does get the alert, the other team will not get the alert
 			
-		"vehicle bridgecapture 2 0 0 0",
+		"vehicle bridgecapture 1 0 0 0",
 		-- above Ive defined all American troops get the bridgecapture alert,
 		-- by not defining which axis troops get the alert, axis wont get it
-		"vehicle toaxisspawn 2 0 0 0",
+		"vehicle toaxisspawn 1 0 0 0",
 		"vehicle toalliedspawn 4 0 0 0",
-		"vehicle allieswrongway 2 0 0 0",
+		"vehicle allieswrongway 1 0 0 0",
 
 	
 	};
