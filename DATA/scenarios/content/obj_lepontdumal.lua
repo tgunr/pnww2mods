@@ -107,7 +107,6 @@ if(true) then
 		"emitter vehiclefire 152.80 64.43 3.21",
 		"emitter vehiclefire 105.14 -36.56 9.01",
 
-
 		-- FIRES
 
 		"emitter smallfire 95.18 -27.96 8.85",
@@ -206,9 +205,13 @@ if(true) then
 		"area allieswrongway OnTrigger 235.79 221.19 6.78",
 		"area allieswrongway OnTrigger 243.40 228.29 6.78",
 		"area allieswrongway OnTrigger 273.78 201.61 6.78",
+		
+	-- telling the allies they are in the bridge capture area
+		"area bridgecapture OnTrigger 128.28 19.45 7.13",
+		"area bridgecapture OnTrigger 133.82 35.82 7.13",
+		"area bridgecapture OnTrigger 130.04 37.17 7.13",
+		"area bridgecapture OnTrigger 123.71 19.42 7.13",
 	
-	
-
 	-- minefield near axis spawn
 
 		"area axisminefield1 OnMineArea 146.43 21.67 8.48",
@@ -332,30 +335,30 @@ if(true) then
 	-- a 0 is considered a wildcard
 
 	-- spawn masks
-		--"vehicle alliedtroops us-assault",
-		--"vehicle alliedtroops us-smg",
-		--"vehicle alliedtroops us-bar",
+		"vehicle alliedtroops us-assault",
+		"vehicle alliedtroops us-smg",
+		"vehicle alliedtroops us-bar",
 		--"vehicle alliedtroops us-sniper ",
-		"vehicle alliedtroops 1 0 9 0",
+		-- "vehicle alliedtroops 1 0 9 0",
 		
 		"vehicle axistroops derifle",
 		"vehicle axistroops de-smg",
 		"vehicle axistroops de-lmg",
-		"vehicle axistroops de-sniper ",
+		-- "vehicle axistroops de-sniper",
 		
 	-- alert masks	DOC THIS IS NEW
 	-- define a mask to block who gets a named alert
-	-- definedalertname definedspawnmask country category class
+	-- definethemask definethemessage country category class
 	-- or
-	-- definedalertname definedspawnmask vehicleid
+	-- definethemask definethemessage vehicleid
 	-- note, by defining which team does get the alert, the other team will not get the alert
 			
-		"vehicle bridgecapture 1 0 0 0",
-		-- above Ive defined all allied troops get the bridgecapture alert,
+		"vehicle bridgecapture 2 0 0 0",
+		-- above Ive defined all American troops get the bridgecapture alert,
 		-- by not defining which axis troops get the alert, axis wont get it
-		"vehicle toaxisspawn 1 0 0 0",
+		"vehicle toaxisspawn 2 0 0 0",
 		"vehicle toalliedspawn 4 0 0 0",
-		"vehicle allieswrongway 1 0 0 0",
+		"vehicle allieswrongway 2 0 0 0",
 
 	
 	};
