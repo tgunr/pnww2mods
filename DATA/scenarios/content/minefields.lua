@@ -53,7 +53,7 @@ function DoLandmine(name, value)
 	-- do we need to kill ourself?
 	local veh = vehicle.vehFindVehicleByChatHandle(tonumber(data[2]));
 	
-	if(veh ~= nil and veh:IsMe() and not game.SuperTroop()) then
+	if(veh ~= nil and veh:IsMe()) then
 		fp.fpFPSKillTrooper();
 		tutorial.manager:RemoveHandler("OnLandmine");
 	end
