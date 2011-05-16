@@ -19,30 +19,30 @@ if(true) then
 -- DEFINE THE PLAY AREA
 	-- boundary name x y z
 
-		"boundary  playarea 293.95 48.96 4.02",
-		"boundary  playarea 291.80 20.31 3.54",
-		"boundary  playarea 272.08 -1.04 4.86",
-		"boundary  playarea 233.77 -27.03 6.49",
-		"boundary  playarea 214.87 -51.04 6.16",
-		"boundary  playarea 194.60 -89.02 5.51",
-		"boundary  playarea 180.68 -104.04 7.40",
-		"boundary  playarea 65.32 -65.03 8.72",
-		"boundary  playarea 71.66 -18.64 7.97",
-		"boundary  playarea 50.53 41.71 6.76",
-		"boundary  playarea 253.17 235.51 8.20",
-		"boundary  playarea 278.89 205.99 2.88",
-		"boundary  playarea 267.66 196.51 2.71",
-		"boundary  playarea 255.16 188.76 3.37",
-		"boundary  playarea 230.83 161.14 3.86",
-		"boundary  playarea 226.47 143.70 3.36",
-		"boundary  playarea 219.33 110.95 3.04",
-		"boundary  playarea 208.76 97.85 2.87",
-		"boundary  playarea 192.89 90.25 3.19",
-		"boundary  playarea 173.55 78.37 2.70",
-		"boundary  playarea 160.32 74.79 2.86",
-		"boundary  playarea 154.56 71.03 3.68",
-		"boundary  playarea 148.51 60.52 3.68",
-		"boundary  playarea 227.37 48.91 7.64",
+		"boundary playarea 293.95 48.96 4.02",
+		"boundary playarea 291.80 20.31 3.54",
+		"boundary playarea 272.08 -1.04 4.86",
+		"boundary playarea 233.77 -27.03 6.49",
+		"boundary playarea 214.87 -51.04 6.16",
+		"boundary playarea 194.60 -89.02 5.51",
+		"boundary playarea 180.68 -104.04 7.40",
+		"boundary playarea 65.32 -65.03 8.72",
+		"boundary playarea 71.66 -18.64 7.97",
+		"boundary playarea 50.53 41.71 6.76",
+		"boundary playarea 253.17 235.51 8.20",
+		"boundary playarea 278.89 205.99 2.88",
+		"boundary playarea 267.66 196.51 2.71",
+		"boundary playarea 255.16 188.76 3.37",
+		"boundary playarea 230.83 161.14 3.86",
+		"boundary playarea 226.47 143.70 3.36",
+		"boundary playarea 219.33 110.95 3.04",
+		"boundary playarea 208.76 97.85 2.87",
+		"boundary playarea 192.89 90.25 3.19",
+		"boundary playarea 173.55 78.37 2.70",
+		"boundary playarea 160.32 74.79 2.86",
+		"boundary playarea 154.56 71.03 3.68",
+		"boundary playarea 148.51 60.52 3.68",
+		"boundary playarea 227.37 48.91 7.64",
 
 -- DEFINE WHERE PLAYERS SPAWN		
 		
@@ -207,10 +207,10 @@ if(true) then
 		"area allieswrongway OnTrigger 273.78 201.61 6.78",
 		
 	-- telling the allies they are in the bridge capture area
-		"area bridgecapture OnTrigger 134.13 35.69 7.82",
-		"area bridgecapture OnTrigger 128.57 19.24 7.75",	
-		"area bridgecapture OnTrigger 123.54 19.40 7.83",	
-		"area bridgecapture OnTrigger 129.65 37.45 7.84",			
+		"area bridgecapture1 OnTrigger 134.13 35.69 7.82",
+		"area bridgecapture1 OnTrigger 128.57 19.24 7.75",	
+		"area bridgecapture1 OnTrigger 123.54 19.40 7.83",	
+		"area bridgecapture1 OnTrigger 129.65 37.45 7.84",			
 
 
 
@@ -291,10 +291,10 @@ if(true) then
 	-- the lockey is a lockey looked up from the scenario content in the web translation tool
 	-- command name lockey
 
-		"alert onspawn onspawn.moveout",
+		"alert onspawn onspawn 1",
 		"alert toaxisspawn toaxisspawn",
 		"alert toalliedspawn toalliedspawn",
-		"alert bridgecapture bridgecapture",
+		"alert bridgecapture1 bridgecapture 5",
 		"alert allieswrongway allieswrongway",
 
 		
@@ -358,6 +358,7 @@ if(true) then
 	-- note, by defining which team does get the alert, the other team will not get the alert
 			
 		"vehicle bridgecapture 1 0 0 0",
+		"vehicle bridgecapture1 1 0 0 0",
 		-- above Ive defined all American troops get the bridgecapture alert,
 		-- by not defining which axis troops get the alert, axis wont get it
 		"vehicle toaxisspawn 1 0 0 0",
