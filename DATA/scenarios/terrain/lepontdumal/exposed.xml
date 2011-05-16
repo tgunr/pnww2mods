@@ -27,13 +27,13 @@
     <!-- Color clamped between 0 - 255 -->
     <!-- Example: redclamp 100 will clamp red mask grass to red color >= 100 -->
     <!-- The higher the clamp, the less number of blades placed-->
-    <redclamp>100</redclamp>
-    <grnclamp>100</grnclamp>
-    <bluclamp>100</bluclamp>
+    <redclamp>50</redclamp>
+    <grnclamp>50</grnclamp>
+    <bluclamp>50</bluclamp>
     <!-- default is 1.0 -->
     <redscale>0.50</redscale>
     <grnscale>1.0</grnscale>
-    <bluscale>2.5</bluscale>
+    <bluscale>1.75</bluscale>
   </grass>
   <terrainmaterials>
     <!-- Keep in ascending order (layer0, layer1, layer2...etc)-->
@@ -60,6 +60,10 @@
     <redtypestring>blumaine1c</redtypestring>
     <greentypestring>haystack_outside</greentypestring>
     <bluetypestring>null</bluetypestring>
+	    <!--== random rotate (-# #) -->
+    <redparams>300</redparams>
+    <greenparams>180</greenparams>
+    <blueparams>5</blueparams>
   </objectclutter>
 </exposed>
 </exposed>
