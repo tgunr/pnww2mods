@@ -16,6 +16,11 @@ tutorial.SetState(state);
 tutorial.manager:AddTimedHandler("DoCapture", nil, 1);
 tutorial.manager:AddTimedHandler("CaptureReport", nil, 5);
 
+function OnDie(handler)
+	state.capturing = false;
+ 	return 1;
+end
+
 function OnDespawn(handler)
 	state.capturing = false;
 	return 1;
