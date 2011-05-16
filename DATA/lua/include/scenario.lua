@@ -287,8 +287,7 @@ function OnTrigger(handler)
 	return 1;
 end
 
-function CheckVictory(name, value)
-
+scenario.CheckVictory = function(name, value)
 	local score 	=  Instancing:GetStateNumber(name);
 	local victory 	= tonumber(state.config.victory);
 
@@ -303,6 +302,10 @@ function CheckVictory(name, value)
 	end
 	
 	return 1;
+end
+
+function CheckVictory(name, value)
+	return scenario.CheckVictory(name, value);
 end
 
 function OnVictory(name, value)
