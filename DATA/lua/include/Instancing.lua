@@ -64,6 +64,8 @@ end
 
 require 'string'	-- For the string format function
 require 'table'		-- For table.insert
+require "InstancingCommands"
+
 
 Instancing =
 {
@@ -82,6 +84,16 @@ Instancing =
 	  , ['Command']	=	{ ['Port'] = '27021', ['Type'] = { ['Client'] = zmq.PUSH, ['Server'] = zmq.PULL } }
 	  , ['Events']	=	{ ['Port'] = '27022', ['Type'] = { ['Client'] = zmq.SUB, ['Server'] = zmq.PUB } }
 	  }
+	}
+
+	--------- --------- --------- --------- --------- ---------
+	-- Ordered list of commands.
+	-- This must be shared between client/host to keep them in
+	-- synchronization.
+,	Commands =
+	{
+		"GetInstanceState"
+	,	"SetStateValue"
 	}
 
 	-- Number of IO threads to tell ZeroMQ to use.
@@ -116,12 +128,14 @@ Instancing =
 
 	--------- --------- --------- --------- --------- ---------
 	-- Return true/false whether we are the client.
+
 ,	IsClient = function(self)
 		return self.Role and self.Role == "Client"
 	end
 
 	--------- --------- --------- --------- --------- ---------
 	-- Return true/false whether we are the server.
+
 ,	IsServer = function(self)
 		return self.Role and self.Role == "Server"
 	end
@@ -129,6 +143,7 @@ Instancing =
 	--------- --------- --------- --------- --------- ---------
 	-- Turn an instance's unique ID into a hex 16-char string
 	-- public: static
+
 ,	formatInstanceNo = function (instanceNo)
 		return string.format("%016u", tonumber(instanceNo))
 	end
@@ -136,6 +151,7 @@ Instancing =
 	--------- --------- --------- --------- --------- ---------
 	-- Create and connect a socket for a given interface based on our current role.
 	-- private:
+
 ,	_OpenInterface = function (self, ifName)
 		-- Gotta have a context to do anything.
 		if self.Context == nil then
@@ -171,6 +187,7 @@ Instancing =
 	--------- --------- --------- --------- --------- ---------
 	-- Tune the Events interface to a specific instance ID.
 	-- public:
+
 ,	SetInstance = function (self, instanceNo)
 		if not self.Context then
 			return { Instancing.ErrorCode, "Tried to call Instancing.SetInstance without a Context" }
@@ -188,7 +205,7 @@ Instancing =
 		if self:IsClient() then
 			if self.InstanceId ~= nil then
 				-- Purge the old state information.
-				self.InstanceStates[self.InstanceNo] = nil
+				self.InstanceStates[self.InstanceId] = nil
 
 				if self.EventSock ~= nil then
 					-- Unsubscribe from whatever instance we were previously in.
@@ -209,10 +226,98 @@ Instancing =
 		return { Instancing.SuccessCode, "Instance " .. instanceNo .. "(" .. instanceId .. ") selected." }
 	end
 
+	--------- --------- --------- --------- --------- --------- --------- ---------
+	-- Look up a command by name.
+
+,	LookupCommand = function (self, cmdName)
+		for cNum, cName in ipairs(self.Commands)
+		do
+			if cName == cmdName then
+				return { Instancing.SuccessCode, cNum }
+			end
+		end
+		return { Instancing.ErrorCode, "No such command "..cmdName.."." }
+	end
+
+	--------- --------- --------- --------- --------- --------- --------- ---------
+	-- Invoke (run locally) a command by index number along with variable args.
+	-- e.g. Instancing:InvokeCommand(3, "hello", "world")
+
+,	InvokeCommand = function (self, cmdNum, ...)
+		-- Command number argument must be numeric.
+		if type(cmdNum) ~= "number" then
+			return { Instancing.ErrorCode, "Invalid InvokeCommand usage (arg #1)" }
+		end
+
+		-- It must also be in the range 1 .. len(Commands)
+		-- Note, because Lua tables are 1 based, being == #Commands
+		-- is quite legal.
+		if cmdNum < 1 or cmdNum > #self.Commands then
+			return { Instancing.ErrorCode, "Invalid command number #"..cmdNum }
+		end
+
+		-- Name of the command.
+		local cmdName = self[cmdNum]
+		if cmdName == nil then
+			return { Instancing.ErrorCode, "No function registered for #"..cmdNum..". Something is foobar." }
+		end
+
+		local fn = self[cmdName]
+		if not fn then
+			return { Instancing.ErrorCode, "Could not find registered function Instancing."..cmdName.."." }
+		end
+		if type(fn) ~= "function" then
+			return { Instancing.ErrorCode, "Instancing."..cmdName.." does not appear to be a function." }
+		end
+
+		-- Invoke the function, passing any remaining args to it.
+		table.insert(arg, 1, self)	-- Needs self at the start of the arg list.
+
+		local success, output = pcall( fn(unpack(arg)) )
+		if success then
+			return { Instancing.SuccessCode, output }
+		else
+			return { Instancing.ErrorCode, output }
+		end
+	end
+
+	--------- --------- --------- --------- --------- --------- --------- ---------
+	-- Send an instruction to execute a command to the remote.
+	-- Takes a registered command name and a vararg list of arguments.
+
+,	SendCommand = function (self, zmqSocket, cmdName, ...)
+		if zmqSocket == nil or type(zmqSocket) ~= "userdata" then
+			return { Instancing.ErrorCode, "Invalid zms argument - expected socket." }
+		end
+
+		-- First argument must be a string.
+		if type(cmdName) ~= string then
+			return { Instancing.ErrorCode, "Invalid cmd argument - expected string." }
+		end
+
+		-- Look for the command.
+		local lookup = self:LookupCommand(cmdName)
+		if lookup[1] ~= Instancing.SuccessCode then
+			return lookup
+		end
+
+		-- Send all of the arguments as parts.
+		for _, val in arg
+		do
+			zmqSocket:send(string.format("%q", arg), zmq.SNDMORE)
+		end
+
+		-- Finish the message with the cmd number.
+		zmqSocket:send(tonumber(lookup[2]), zmq.NOBLOCK)
+
+		return { Instancing.SuccessCode, "-- data passed to zmq, may not actually have been sent yet." }
+	end
+
 	--------- --------- --------- --------- --------- ---------
 	-- Tear up the ZeroMQ communications system and open the interfaces.
 	-- public:
-,	Start  = function (self, role, address)
+
+,	Start = function (self, role, address)
 		print(string.format("D Instancing:Start(%s, %s)", tostring(role), tostring(address)))
 
 		-- Validate the role argument, must be client or server.
@@ -262,6 +367,7 @@ Instancing =
 	-- if you want to avoid blocking.
 	-- Returns NIL if no messages were received.
 	-- public: static
+
 ,	getMessage = function (zmqSocket, zmqOptions)
 		local parts = {}
 		local msg
@@ -286,177 +392,10 @@ Instancing =
 		return parts
 	end
 
-	--------- --------- --------- --------- --------- ---------
-	-- Publish a state change, non-blocking.
-	--  broadcast: whether the message should be
-	--    transmitted "upstream" (i.e. Client->Server,
-	--	  or Server->Client).
-	--  forward: when broadcasting, determines if
-	--    we should re-broadcast the event.
-	-- If "broadcast" is true, we will send the
-	-- message "upstream" (Client->Server, Server->Client)
-	-- with the value of "forward" as the remote argument
-	-- to "broadcast".
-	-- public:
-,	SetInstanceState = function (self, instanceNo, state, value, broadcast, forward)
-		if instanceNo == nil
-		or state == nil or type(state) ~= "string"
-		or broadcast == nil
-		or forward == nil
-			then return { Instancing.ErrorCode, "Incorrect usage of SetInstanceState: expects instanceNo, state, value, broadcast, forward" }
-		end
-		if type(instanceNo) == "string" then
-			local no = tonumber(instanceNo)
-			if no == nil or no == 0 then
-				return { Instancing.ErrorCode, "Incorrect usage of SetInstanceState: unrecognized instanceNo " .. instanceNo .. "." }
-			end
-			instanceNo = no
-		end
-		if not self.Context then
-			return { Instancing.ErrorCode, "Tried to call SetInstanceState without a Context." }
-		end
-
-		-- Convert to hex format for better hashing.
-		local instanceId = self.formatInstanceNo(instanceNo)
-
-		-- Check to see if the value needs modifying.
-		local instanceStates = self.InstanceStates[instanceId]
-		if instanceStates then
-			local currentValue = instanceStates[stateName]
-			if tostring(currentValue) == tostring(value) then
-				return { Instancing.SuccessCode, "-- No change made" }
-			end
-		end
-
-		-- broadcast should be either true or false, anything else we
-		-- consider to be false.
-		if type(broadcast) ~= "boolean" then broadcast = false end
-		if broadcast == false or type(forward) ~= "boolean" then forward = false end
-
-		if broadcast == true then
-			if self:IsServer() == true then
-				-- Server should never tell clients to forward state.
-				forward = false
-			end
-
-			-- Client and Server implement SendEvent themselves,
-			-- which means we can't access it as self.Event
-			local bcastFn = self['SendEvent']
-			if bcastFn then
-				-- Always pass "false" in the forward column.
-				-- We can't use : notation, so we have to manually
-				-- pass the "self" argument.
-				print("forwarding")
-				print( unpack( bcastFn(self, instanceNo, string.format("return Instancing:SetInstanceState(%u, %q, %q, %s, false)", instanceId, state, value, tostring(forward))) ) )
-			end
-		end
-
-		-- Only update state on the server or when we are the
-		-- final recipient of the state.
-		if self:IsServer() or broadcast == false then
-			instanceStates = self.InstanceStates[instanceId]
-			if not instanceStates then
-				instanceStates = { ['id'] = instanceId, ['no'] = instanceNo }
-				self.InstanceStates[instanceId] = instanceStates
-			end
-
-			instanceStates[state] = value
-
-			Instancing:HandleStateChange(instanceId, state, value)
-
-			return { Instancing.SuccessCode, "-- State change applied" }
-		else
-			return { Instancing.SuccessCode, "-- State change forwarded" }
-		end
-	end
-
-	--------- --------- --------- --------- --------- ---------
-	-- Add to an instance states, expects a number
-,	AddInstanceState = function (self, instanceNo, state, value, broadcast, forward)
-		if instanceNo == nil
-		or state == nil or type(state) ~= "string"
-		or broadcast == nil
-		or forward == nil
-			then return { Instancing.ErrorCode, "Incorrect usage of AddInstanceState: expects instanceNo, state, value, broadcast, forward" }
-		end
-		if type(instanceNo) == "string" then
-			local no = tonumber(instanceNo)
-			if no == nil or no == 0 then
-				return { Instancing.ErrorCode, "Incorrect usage of AddInstanceState: unrecognized instanceNo " .. instanceNo .. "." }
-			end
-			instanceNo = no
-		end
-		if not self.Context then
-			return { Instancing.ErrorCode, "Tried to call AddInstanceState without a Context." }
-		end
-
-		-- Convert to hex format for better hashing.
-		local instanceId = self.formatInstanceNo(instanceNo)
-		local instanceStates = self.InstanceStates[instanceId]
-
-		if not instanceStates then
-			instanceStates = { ['id'] = instanceId, ['no'] = instanceNo }
-			self.InstanceStates[instanceId] = instanceStates
-		end
-
-		if self:IsServer() then
-
-				local newValue = instanceStates[state]
-
-				if(newValue == nil) then
-					newValue = 0
-				end
-
-				newValue = newValue + tonumber(value)
-
-				-- update our state
-				instanceStates[state] = newValue
-
-				-- broadcast should be either true or false, anything else we
-				-- consider to be false.
-				if type(broadcast) ~= "boolean" then
-					broadcast = false
-				end
-
-				if broadcast == true then
-					-- Client and Server implement SendEvent themselves,
-					-- which means we can't access it as self.Event
-					local bcastFn = self['SendEvent']
-					if bcastFn then
-						-- Always pass "false" in the forward column.
-						-- We can't use : notation, so we have to manually
-						-- pass the "self" argument.
-						print("forwarding")
-						print( unpack( bcastFn(self, instanceNo, string.format("return Instancing:SetInstanceState(%u, %q, %q, false, false)", instanceId, state, tostring(newValue))) ) )
-					end
-				end
-
-				return { Instancing.SuccessCode, "-- State change applied" }
-		else
-			-- we're the client
-			-- broadcast should be either true or false, anything else we
-			-- consider to be false.
-			if type(broadcast) ~= "boolean" then broadcast = false end
-			if broadcast == false or type(forward) ~= "boolean" then forward = false end
-
-			if broadcast == true then
-				-- Client and Server implement SendEvent themselves,
-				-- which means we can't access it as self.Event
-				local bcastFn = self['SendEvent']
-				if bcastFn then
-					-- Always pass "false" in the forward column.
-					-- We can't use : notation, so we have to manually
-					-- pass the "self" argument.
-					print("forwarding")
-					print( unpack( bcastFn(self, instanceNo, string.format("return Instancing:AddInstanceState(%u, %q, %q, %s, false)", instanceId, state, tostring(value), tostring(forward))) ) )
-				end
-			end
-
-			return { Instancing.SuccessCode, "-- State change forwarded" }
-		end
-	end
 
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+	-- ??
+
 ,	DoInstanceEvent = function (self, instanceNo, state, value, broadcast, forward)
 		if instanceNo == nil
 		or state == nil or type(state) ~= "string"
@@ -508,6 +447,8 @@ Instancing =
 	end
 
 	--------- --------- --------- --------- --------- ---------
+	-- ??
+
 ,	SetTimer = function (self, instanceNo, valueName, duration)
 		if instanceNo == nil
 		or valueName == nil or type(valueName) ~= "string"
@@ -543,24 +484,8 @@ Instancing =
 		return { Instancing.SuccessCode, "-- Instance timer sent" }
 	end
 
-, 	RegisterHandler = function(self, state, handler)
-		if self:IsClient() then
-			Instancing.InstanceHandlers[state] = handler
-		end
-	end
-
-,	HandleStateChange = function(self, instanceId, state, value)
-		if self:IsClient() and self.InstanceId == instanceId then
-			local handler = Instancing.InstanceHandlers[state]
-
-			if(handler ~= nil and _G[handler] ~= nil) then
-				-- ui.ChatPrint("Handling new state change " .. handler .. "(" .. state .. "/" .. value .. ")");
-				_G[handler](state, value);
-			end
-		end
-	end
 	--------- --------- --------- --------- --------- ---------
-	-- make sure we're dealing with a number
+	-- Translate an instance ID into a numeric value.
 
 , 	formatInstanceId = function(instanceId)
 		return tonumber(instanceNo)
@@ -571,6 +496,7 @@ Instancing =
 	-- Returns <success code>, <return value> on success,
 	-- otherwise <error code>, <error message>.
 	-- public: static
+
 ,	runCode = function(code)
 		local success, retval = pcall(loadstring(code))
 
@@ -585,3 +511,33 @@ Instancing =
 	end
 }
 
+--------- --------- --------- --------- --------- ---------
+-- Helper function that will unpack results from the instancing routines.
+
+function write(x)
+	if type(x) == "table" then
+		print(unpack(x))
+	else
+		print(tostring(x))
+	end
+end
+
+--------- --------- --------- --------- --------- ---------
+-- Display a textual representation of the structure of a
+-- Lua table.
+--	e.g.
+--	crawl(myTable)
+
+function crawl(tbl, indent)
+	local str = ""
+	if indent == nil then indent = "" end
+
+	for k, v in pairs(tbl)
+	do
+		str = str .. string.format("%s%s %s %s\n", indent, k, type(v), tostring(v))
+		if type(v) == "table" then
+			str = str .. crawl(v, indent .. "  ")
+		end
+	end
+	return str
+end

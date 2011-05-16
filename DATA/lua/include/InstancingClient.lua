@@ -1,15 +1,36 @@
 --
 -- Lua client code
 --
+--[[
 
--- Helper function that will unpack results from the instancing routines.
-function write(x)
-	if type(x) == "table" then
-		print(unpack(x))
+To send a console-command (one that waits for a response)
+
+	Instancing:DoRemoteLua("your code here")
+
+To send a command (without waiting or wanting a response)
+
+	Instancing:SendLua("your code here")
+
+To set your current instance:
+
+	Instancing:SetInstance(instanceNo)
+
+To get the current value of a state of the current instance...
+
+	result, error = Instancing:GetStateValue(stateName)
+	if result == nil and error ~= nil then
+		-- If result is nil, error will contain text explaining why.
+		print("I couldn't get " .. stateName .. " because " .. error)
 	else
-		print(tostring(x))
+		-- process your state value here
 	end
-end
+
+To check for and process any incoming event messages:
+
+	Instancing:PollEvents()
+
+	(This will consume all outstanding events in the network buffer)
+]]--
 
 -- Adds
 --	Instancing:DoRemoteLua(code) [blocking]
@@ -17,6 +38,50 @@ end
 --  Instancing:SendEvent(instanceNo, code)   [non-blocking]
 --	Instancing:GetInstanceState()
 --	Instancing:PollEvents()		 [non-blocking]
+
+	--------- --------- --------- --------- --------- ---------
+	-- Tune the Events interface to a specific instance ID.
+	-- public:
+
+function Instancing.SetInstance(self, instanceNo)
+	if not self.Context then
+		return { Instancing.ErrorCode, "Tried to call Instancing.SetInstance without a Context" }
+	end
+
+	-- Numeric argument required.
+	if type(instanceNo) ~= "number" then
+		return { Instancing.ErrorCode, "SetInstance requires a numeric instance argument." }
+	end
+
+	local instanceId = self.formatInstanceNo(instanceNo)
+
+	-- Only mess with ZeroMQ stuff if we have an EventSock connected.
+	-- Also, the server doesn't do any sub/unsub stuff.
+	if self.InstanceId ~= nil then
+		-- Purge the old state information.
+		self.InstanceStates[self.InstanceId] = nil
+		self.InstanceHandlers[self.InstanceId] = nil
+
+		if self.EventSock ~= nil then
+			-- Unsubscribe from whatever instance we were previously in.
+			self.EventSock:setopt(zmq.UNSUBSCRIBE, self.InstanceId)
+			self.InstanceId = nil
+			self.InstanceNo = nil
+		end
+	end
+	if self.EventSock ~= nil then
+		self.EventSock:setopt(zmq.SUBSCRIBE, instanceId)
+		print("subscribed EventSock to " .. instanceId)
+	end
+
+	self.InstanceId = instanceId
+	self.InstanceNo = instanceNo
+
+	self.InstanceStates[instanceId] = {}
+	self.InstanceHandlers[instanceId] = {}
+
+	return { Instancing.SuccessCode, "Instance " .. instanceNo .. "(" .. instanceId .. ") selected." }
+end
 
 --------- --------- --------- --------- --------- ---------
 -- Grab any events that we haven't picked up yet, and
@@ -41,17 +106,16 @@ function Instancing.GetEvents(self, zmqOptions, maxEvents)
 		if parts == nil or #parts == 0 then break end
 		if #parts < 2 then
 			print("W Event format error (short)")
-		elseif #parts > 2 then
-			print("W Event format error (long)")
 		else
 			-- Make sure it's for our current instance, lest we are
 			-- late in picking up a message for an instance we left.
 			write( parts )
-			if parts[1] == self.InstanceId then
-				local success, message = pcall(loadstring(parts[2]))
-				if success == false then
-					print("W event execution error: " .. message)
-				end
+
+			-- Final part of the list should be the command.
+			local cmdNum = table.remove(parts, #parts)
+			local result = self.InvokeCommand(cmdNum, unpack(parts))
+			if result[1] ~= Instancing.SuccessCode then
+				print("W event execution error: " .. result[2])
 			end
 		end
 		maxEvents = maxEvents - 1
@@ -69,52 +133,94 @@ function Instancing.PollEvents(self)
 end
 
 --------- --------- --------- --------- --------- ---------
--- Send code to the Console socket and retrieve the result
--- from the server.
--- Returns ( SuccessCode, <result> ) or ( ErrorCode, <message> )
--- Note: This is BLOCKING.
-function Instancing.DoRemoteLua(self, code)
+-- Execute a piece of remote code on the host using the
+-- relevant socket.
+-- If "wantResult" is true then this call will require the
+-- host to send a response, and will block until it
+-- receives one.
+
+function Instancing._doRemote(self, wantResult, command, ...)
 	if self.Context == nil then
 		return { Instancing.ErrorCode, "No Context" }
 	end
-	if self.ConsoleSock == nil then
-		return { Instancing.ErrorCode, "Console not connected." }
+
+	local sock
+	if wantResult then
+		sock = self.ConsoleSock
+	else
+		sock = self.CommandSock
 	end
 
-	if not self.ConsoleSock:send(code) then
-		return { Instancing.ErrorCode, "Send failed" }
+	if sock == nil then
+		return { Instancing.ErrorCode, "Socket not connected." }
 	end
 
-	local parts = self.getMessage(self.ConsoleSock)
-	if not parts then
-		return { Instancing.ErrorCode, "Communications error (probably disconnected)" }
-	end
-	if #parts < 2 then
-		return { Instancing.ErrorCode, "Communication error (short)" }
-	elseif #parts > 2 then
-		return { Instancing.ErrorCode, "Communication error (long)" }
+	local parts = self:SendCommand(sock, command, ...)
+	if wantResult and parts[1] == Instancing.SuccessCode then
+		parts = self.getMessage(sock)
+		if not parts then
+			return { Instancing.ErrorCode, "GetInstanceState result error (nil)" }
+		elseif #parts < 2 then
+			return { Instancing.ErrorCode, "GetInstanceState result error (short)" }
+		elseif #parts > 2 then
+			return { Instancing.ErrorCode, "GetInstanceState result error (long)" }
+		end
 	end
 
 	return parts
 end
 
 --------- --------- --------- --------- --------- ---------
--- Send code to the Command Socket without blocking or
--- receiving any feedback on the result.
-function Instancing.SendLua(self, code)
+-- Send an instruction to the remote host which produces
+-- no response.
+
+function Instancing.SendRemoteInstruction(self, ...)
+	return self:_doRemote(false, ...)
+end
+
+--------- --------- --------- --------- --------- ---------
+-- Send an instruction to the remote host which anticipates
+-- a [BLOCKING!] response from the server.
+
+function Instancing.GetRemoteResults(self, ...)
+	return self:_doRemote(true, ...)
+end
+
+--------- --------- --------- --------- --------- ---------
+-- Tell the server to change a state value.
+
+function Instancing.SendStateValue(self, valueName, value)
 	if self.Context == nil then
-		return { Instancing.ErrorCode, "No Context" }
+		return { Instancing.ErrorCode, "Tried to call SetState with no Context." }
 	end
-	if self.CommandSock == nil then
-		return { Instancing.ErrorCode, "CommandSock not connected." }
+	if self.InstanceNo == nil or self.InstanceNo == 0 then
+		return { Instancing.ErrorCode, "Tried to call SetState with no Instance selected." }
 	end
+	if valueName == nil then
+		return { Instancing.ErrorCode, "Called SetState with no valueName." }
+	end
+	return self:SendRemoteInstruction("SetStateValue", self.InstanceNo, valueName, value)
+end
 
-	-- Send without blocking.
-	if not self.CommandSock:send(code, zmq.NOBLOCK) then
-		return { Instancing.ErrorCode, "Send failed" }
-	end
+--------- --------- --------- --------- --------- ---------
+-- Tell thes erver to add a new state value.
 
-	return { Instancing.SuccessCode, "-- passed to zmq, data may not actually have been sent or received." }
+function Instancing.SendAddState(self, valueName, value)
+	return self:SendStateValue(valueName, value)
+end
+
+--------- --------- --------- --------- --------- ---------
+-- Tell the server to do something with a timed event?
+
+function Instancing.TimedEvent(self, valueName, duration)
+	return self:SendStateValue(valueName, duration)
+end
+
+--------- --------- --------- --------- --------- ---------
+-- Some kind of general broadcast???
+
+function Instancing.BroadcastEvent(self, valueName, value)
+	return self:SendStateValue(valueName, value)
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -125,46 +231,20 @@ function Instancing.GetInstanceState(self)
 		return { Instancing.ErrorCode, "GetInstanceState called with no instance selected" }
 	end
 
-	local query = string.format([[
-		require "string"
-		local keyvalues = ""
-		local instanceStates = Instancing.InstanceStates[%q]
-		if instanceStates then
-			for k, v in pairs(instanceStates)
-			do
-				keyvalues = keyvalues .. string.format("[%%q]=%%q,", k, v)
-			end
-		end
-		return "{"..keyvalues.."}"
-	]], self.InstanceId)
-	
-	local parts = self:DoRemoteLua(query)
-	if not parts then
-		return { Instancing.ErrorCode, "GetInstanceState result error (nil)" }
-	elseif #parts < 2 then
-		return { Instancing.ErrorCode, "GetInstanceState result error (short)" }
-	elseif #parts > 2 then
-		return { Instancing.ErrorCode, "GetInstanceState result error (long)" }
+	local parts = self:GetRemoteResults("GetInstanceState", self.InstanceId)
+	if parts[1] ~= Instancing.SuccessCode then
+		return parts
 	end
 
 	print("D inst:"..self.InstanceNo.." state:" .. parts[2])
-	local success, message = pcall(loadstring("Instancing.InstanceStates['"..self.InstanceId.."'] = "..parts[2]))
-	
-	--ui.ChatPrint("Deaths is " .. Instancing.InstanceStates["0000000000000100"]["deaths1"])
-	
+	local success, result = pcall(loadstring("return " .. parts[2]))
 	if success == false then
-		return { Instancing.ErrorCode, "GetInstanceState execution error: " .. message }
+		return { Instancing.ErrorCode, "GetInstanceState execution error: " .. result }
 	end
 
-	return { Instancing.SuccessCode, message }
-end
+	self.InstanceStates[self.InstanceId] = result
 
---------- --------- --------- --------- --------- ---------
--- Send an event message up to the server.
-
-function Instancing.SendEvent(self, instanceNo, code)
-	print("D SendEvent " .. instanceNo .. " [" .. code .. "]")
-	return self:SendLua(code)
+	return { Instancing.SuccessCode, "-- got instance state" }
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -211,7 +291,7 @@ function Instancing.GetStateString(self, stateName, defValue)
 			return ""
 		end
 	end
-	
+
 	return tostring(state[1])
 end
 
@@ -225,7 +305,7 @@ function Instancing.GetStateNumber(self, stateName, defValue)
 			return 0
 		end
 	end
-	
+
 	return tonumber(state[1])
 end
 
@@ -239,7 +319,7 @@ function Instancing.GetStateBool(self, stateName, defValue)
 			return false
 		end
 	end
-	
+
 	if(state[1] ~= nil and state[1] ~= 0 and state[1] ~= "false" and state[1] ~= false) then
 		return true
 	else
@@ -248,93 +328,38 @@ function Instancing.GetStateBool(self, stateName, defValue)
 end
 
 --------- --------- --------- --------- --------- ---------
--- Adjust the value of a state in the current instance.
+-- Instruction to change a state value from the server.
 
-function Instancing.SetState(self, valueName, value)
-	if self.Context == nil then
-		return { Instancing.ErrorCode, "Tried to call SetState with no Context." }
+function Instancing.SetStateValue(self, instanceNo, stateName, value)
+	local instanceId = self.formatInstanceNo(instanceNo)
+	if instanceId ~= self.InstanceId then
+		return { Instancing.ErrorCode, "Message no-longer applies." }
 	end
-	if self.InstanceNo == nil or self.InstanceNo == 0 then
-		return { Instancing.ErrorCode, "Tried to call SetState with no Instance selected." }
+
+	-- Make sure that states for this instance exist.
+	local states = self.InstanceStates[self.InstanceId]
+	if states == nil then
+		local result = self:GetInstanceState()
+		if result[1] ~= Instancing.SuccessCode then
+			return result
+		end
+		states = self.InstanceStates[self.InstanceId]
+		if states == nil then
+			return { Instancing.ErrorCode, "No data available for instance." }
+		end
 	end
-	if valueName == nil then
-		return { Instancing.ErrorCode, "Called SetState with no valueName." }
-	end
-	return self:SetInstanceState(self.InstanceNo, valueName, value, true, true)
+
+	-- Update the value in our local copy and, if there
+	-- is a handler registered, execute it.
+	self:ChangeStateValue(self.instanceNo, stateName, value)
+
+	return { Instancing.SuccessCode, "-- value applied" }
 end
 
 --------- --------- --------- --------- --------- ---------
--- Add to the value of a state in the current instance.
+-- Main entry point.
 
-function Instancing.AddState(self, valueName, value)
-	if self.Context == nil then
-		return { Instancing.ErrorCode, "Tried to call AddState with no Context." }
-	end
-	if self.InstanceNo == nil or self.InstanceNo == 0 then
-		return { Instancing.ErrorCode, "Tried to call AddState with no Instance selected." }
-	end
-	if valueName == nil then
-		return { Instancing.ErrorCode, "Called AddState with no valueName." }
-	end
-	return self:AddInstanceState(self.InstanceNo, valueName, value, true, true)
-end
+--local serverIp = "192.168.0.61"
+--Instancing:Start("Client", "192.168.0.61")
+--TODO: Call from the C++ layer with the correct IP address.
 
-function Instancing.TimedEvent(self, valueName, duration)
-	if self.Context == nil then
-		return { Instancing.ErrorCode, "Tried to call TimedEvent with no Context." }
-	end
-	if self.InstanceNo == nil or self.InstanceNo == 0 then
-		return { Instancing.ErrorCode, "Tried to call TimedEvent with no Instance selected." }
-	end
-	if valueName == nil then
-		return { Instancing.ErrorCode, "Called TimedEvent with no valueName." }
-	end
-	return self:SetTimer(self.InstanceNo, valueName, duration)
-end
-
-function Instancing.BroadcastEvent(self, valueName, value)
-	if self.Context == nil then
-		return { Instancing.ErrorCode, "Tried to call BroadcastEvent with no Context." }
-	end
-	if self.InstanceNo == nil or self.InstanceNo == 0 then
-		return { Instancing.ErrorCode, "Tried to call BroadcastEvent with no Instance selected." }
-	end
-	if valueName == nil then
-		return { Instancing.ErrorCode, "Called BroadcastEvent with no valueName." }
-	end
-	return self:DoInstanceEvent(self.InstanceNo, valueName, value, true, true)
-end
-
-Instancing:Start("Client", "192.168.0.61")
--- Or: Instancing:Start("Client", "ser.ver.ip.addr")
-
---[[
-
-To send a console-command (one that waits for a response)
-
-	Instancing:DoRemoteLua("your code here")
-
-To send a command (without waiting or wanting a response)
-
-	Instancing:SendLua("your code here")
-
-To set your current instance:
-
-	Instancing:SetInstance(instanceNo)
-
-To get the current value of a state of the current instance...
-
-	result, error = Instancing:GetStateValue(stateName)
-	if result == nil and error ~= nil then
-		-- If result is nil, error will contain text explaining why.
-		print("I couldn't get " .. stateName .. " because " .. error)
-	else
-		-- process your state value here
-	end
-
-To check for and process any incoming event messages:
-
-	Instancing:PollEvents()
-
-	(This will consume all outstanding events in the network buffer)
-]]--
