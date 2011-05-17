@@ -29,28 +29,6 @@
 		zmqSocket and returns it as an array of parts, even
 		if there is only one message part.
 
-	Instancing:SetInstanceState(<instanceNo>, <stateName>, <value>, broadcast = true | false, forward = true | false)
-		Changes the value of <stateName> for the given instance.
-		If broadcast is true, the change will be forwarded upstream,
-		i.e. from Client to Server or Server to Client.
-		Forward controls whether the message will be forwarded on
-		from the upstream.
-		Thus a Client calling
-			Instancing:SetInstanceState(1, "lastuser", "oliver", false, false)
-		will only change the state locally, whereas
-			Instancing:SetInstanceState(1, "lastuser", "oliver", true, false)
-		will update the server but not forward it on to instance
-		occupants, local state will not be changed until the event
-		is received back from the server.
-			Instancing:SetInstanceState(1, "lastuser", "oliver", true, true)
-		will update the server and forward on to instance members,
-		only updating the local state when the event arrives back.
-
-	Instancing.runCode(<code string>)
-		Safely executes the given code.
-		Returns (Instancing.SuccessCode, <return value>) on success
-		Otherwise (Instancing.ErrorCode, <error message>)
-
 	See InstancingClient.lua for Client specific functions,
 	See InstancingServer.lua for Server specific functions.
 ]]--
@@ -94,6 +72,7 @@ Instancing =
 	{
 		"GetInstanceState"
 	,	"SetStateValue"
+	,	"InstanceEvent"
 	}
 
 	-- Number of IO threads to tell ZeroMQ to use.
@@ -110,7 +89,7 @@ Instancing =
 ,	SuccessCode		=	'OK'	-- Returned to indicate things went well
 ,	ErrorCode		=	'ERR'	-- Returned to indicate something failed.
 
-, 	InstanceHandlers = {}
+, 	InstanceHandlers =	{}		-- Routines for handling changes to instances.
 ,	InstanceStates	=	{}
 ,	InstanceId		=	nil		-- Current instance (formatted)
 ,	InstanceNo		=	nil		-- Current instance (number)
@@ -182,48 +161,6 @@ Instancing =
 		end
 
 		return sock
-	end
-
-	--------- --------- --------- --------- --------- ---------
-	-- Tune the Events interface to a specific instance ID.
-	-- public:
-
-,	SetInstance = function (self, instanceNo)
-		if not self.Context then
-			return { Instancing.ErrorCode, "Tried to call Instancing.SetInstance without a Context" }
-		end
-
-		-- Numeric argument required.
-		if type(instanceNo) ~= "number" then
-			return { Instancing.ErrorCode, "SetInstance requires a numeric instance argument." }
-		end
-
-		local instanceId = self.formatInstanceNo(instanceNo)
-
-		-- Only mess with ZeroMQ stuff if we have an EventSock connected.
-		-- Also, the server doesn't do any sub/unsub stuff.
-		if self:IsClient() then
-			if self.InstanceId ~= nil then
-				-- Purge the old state information.
-				self.InstanceStates[self.InstanceId] = nil
-
-				if self.EventSock ~= nil then
-					-- Unsubscribe from whatever instance we were previously in.
-					self.EventSock:setopt(zmq.UNSUBSCRIBE, self.InstanceId)
-					self.InstanceId = nil
-					self.InstanceNo = nil
-				end
-			end
-			if self.EventSock ~= nil then
-				self.EventSock:setopt(zmq.SUBSCRIBE, instanceId)
-				print("subscribed EventSock to " .. instanceId)
-			end
-		end
-
-		self.InstanceId = instanceId
-		self.InstanceNo = instanceNo
-
-		return { Instancing.SuccessCode, "Instance " .. instanceNo .. "(" .. instanceId .. ") selected." }
 	end
 
 	--------- --------- --------- --------- --------- --------- --------- ---------
@@ -393,95 +330,45 @@ Instancing =
 	end
 
 
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-	-- ??
 
-,	DoInstanceEvent = function (self, instanceNo, state, value, broadcast, forward)
-		if instanceNo == nil
-		or state == nil or type(state) ~= "string"
-		or broadcast == nil
-		or forward == nil
-			then return { Instancing.ErrorCode, "Incorrect usage of DoInstanceEvent: expects instanceNo, state, value, broadcast, forward" }
-		end
-		if type(instanceNo) == "string" then
-			local no = tonumber(instanceNo)
-			if no == nil or no == 0 then
-				return { Instancing.ErrorCode, "Incorrect usage of DoInstanceEvent: unrecognized instanceNo " .. instanceNo .. "." }
-			end
-			instanceNo = no
-		end
-		if not self.Context then
-			return { Instancing.ErrorCode, "Tried to call DoInstanceEvent without a Context." }
-		end
+	--------- --------- --------- --------- --------- ---------
+	-- Register a handler function for tracking changes to a
+	-- particular state.
 
-		-- Convert to hex format for better hashing.
-		local instanceId = self.formatInstanceNo(instanceNo)
-
-		-- broadcast should be either true or false, anything else we
-		-- consider to be false.
-		if type(broadcast) ~= "boolean" then broadcast = false end
-		if broadcast == false or type(forward) ~= "boolean" then forward = false end
-
-		if broadcast == true then
-			if self:IsServer() == true then
-				-- Server should never tell clients to forward state.
-				forward = false
-			end
-
-			-- Client and Server implement SendEvent themselves,
-			-- which means we can't access it as self.Event
-			local bcastFn = self['SendEvent']
-			if bcastFn then
-				-- Always pass "false" in the forward column.
-				-- We can't use : notation, so we have to manually
-				-- pass the "self" argument.
-				print("forwarding")
-				print( unpack( bcastFn(self, instanceNo, string.format("return Instancing:DoInstanceEvent(%u, %q, %q, %s, false)", instanceId, state, tostring(value), tostring(forward))) ) )
-			end
-		elseif self:IsServer() == false then
-			Instancing:HandleStateChange(instanceId, state, value)
-		end
-
-		-- Only update state on the server or when we are the
-		return { Instancing.SuccessCode, "-- Instance event sent" }
+	function Instancing.RegisterHandler(self, state, handler)
+		Instancing.InstanceHandlers[state] = handler
 	end
 
 	--------- --------- --------- --------- --------- ---------
-	-- ??
+	-- Apply a change to an instance value and, if there is a
+	-- handler (trigger) associated with the valueName, call it.
 
-,	SetTimer = function (self, instanceNo, valueName, duration)
-		if instanceNo == nil
-		or valueName == nil or type(valueName) ~= "string"
-		or duration == nil
-			then return { Instancing.ErrorCode, "Incorrect usage of SetTimer: expects instanceNo, valueName, duration" }
+,	ChangeValue = function (self, instanceNo, valueName, value)
+		local instanceId = self.formatInstanceNo(tonumber(instanceNo))
+		-- Client needs to make sure it only processes changes for
+		-- it's instance.
+		if self:IsClient() and self.InstanceId ~= instanceId then
+			return { Instancing.ErrorCode, "Message does not apply to current state." }
 		end
-		if type(instanceNo) == "string" then
-			local no = tonumber(instanceNo)
-			if no == nil or no == 0 then
-				return { Instancing.ErrorCode, "Incorrect usage of SetTimer: unrecognized instanceNo " .. instanceNo .. "." }
+
+		-- Grab the old value and swap in the new.
+		local state = Instancing.InstanceStates[instanceId]
+		local oldValue = state[valueName]
+		state[valueName] = value
+
+		local handlers = Instancing.InstanceHandles[instanceId]
+		if type(handlers) == 'table' then
+			local handler = handlers[state]
+				if handler ~= nil and type(_G[handler]) == "function" then
+					local status, msg = pcall(_G[handler](state, value, oldValue))
+					if not status then
+						return { Instancing.ErrorCode, valueName.." state change handler error: "..msg.."." }
+					end
+				end
 			end
-			instanceNo = no
-		end
-		if not self.Context then
-			return { Instancing.ErrorCode, "Tried to call SetTimer without a Context." }
 		end
 
-		-- Convert to hex format for better hashing.
-		local instanceId = self.formatInstanceNo(instanceNo)
-
-		-- Client and Server implement SendEvent themselves,
-		-- which means we can't access it as self.Event
-		local bcastFn = self['SendEvent']
-		if bcastFn then
-			-- Always pass "false" in the forward column.
-			-- We can't use : notation, so we have to manually
-			-- pass the "self" argument.
-			print("forwarding")
-			print( unpack( bcastFn(self, instanceNo, string.format("return Instancing:SetTimer(%u, %q, %d)", instanceId, valueName, duration)) ) )
-		end
-
-		-- Only update state on the server or when we are the
-		return { Instancing.SuccessCode, "-- Instance timer sent" }
+		return { Instancing.SuccessCode, "-- "..valueName.." value changed '"..oldValue.."' -> '"..value.."'." }
 	end
 
 	--------- --------- --------- --------- --------- ---------
@@ -489,25 +376,6 @@ Instancing =
 
 , 	formatInstanceId = function(instanceId)
 		return tonumber(instanceNo)
-	end
-
-	--------- --------- --------- --------- --------- ---------
-	-- Run an arbitrary piece of Lua code.
-	-- Returns <success code>, <return value> on success,
-	-- otherwise <error code>, <error message>.
-	-- public: static
-
-,	runCode = function(code)
-		local success, retval = pcall(loadstring(code))
-
-		-- Ensure retval is something to avoid complaints about nil.
-		if retval == nil then retval = "" end
-
-		if success then
-			return { Instancing.SuccessCode, retval }
-		else
-			return { Instancing.ErrorCode, retval }
-		end
 	end
 }
 

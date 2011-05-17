@@ -66,37 +66,6 @@ function Instancing.SetStateValue(self, instanceNo, stateName, value)
 	return self:PublishCmd(tonumber(instanceId), "SetStateValue", stateName, value)
 end
 
-function Instancing.InstanceEvent(self, instanceNo, state, value, broadcast, forward)
-	if instanceNo == nil
-	or state == nil or type(state) ~= "string"
-	or broadcast == nil
-	or forward == nil
-		then return { Instancing.ErrorCode, "Incorrect usage of InstanceEvent: expects instanceNo, state, value, broadcast, forward" }
-	end
-
-	-- Handle the case where we received an instanceId instead of an instanceNo.
-	instanceNo = tonumber(instanceNo)
-	if instanceNo == 0 then
-		return { Instancing.ErrorCode, "InstanceEvent needs an instanceNo" }
-	end
-
-	self:PublishCmd(instanceNo, "ChangeStateValue",
-	-- Client and Server implement SendEvent themselves,
-	-- which means we can't access it as self.Event
-	local bcastFn = self['SendEvent']
-	if bcastFn then
-		-- Always pass "false" in the forward column.
-		-- We can't use : notation, so we have to manually
-		-- pass the "self" argument.
-		print("forwarding")
-		print( unpack( bcastFn(self, instanceNo, string.format("return Instancing:DoInstanceEvent(%u, %q, %q, %s, false)", instanceId, state, tostring(value), tostring(forward))) ) )
-	end
-
-	-- Only update state on the server or when we are the
-	return { Instancing.SuccessCode, "-- Instance event sent" }
-end
-
-
 --------- --------- --------- --------- --------- ---------
 -- Retrieve a dump of instance state variables etc.
 -- Course, this doesn't provide timers and stuff.
