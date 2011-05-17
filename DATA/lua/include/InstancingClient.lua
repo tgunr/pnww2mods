@@ -61,7 +61,7 @@ function Instancing.SetInstance(self, instanceNo)
 		if self.InstanceId ~= nil then
 			-- Purge the old state information.
 			self.InstanceStates[self.InstanceId] = nil
-			self.InstanceHandlers = nil
+			-- self.InstanceHandlers = nil
 	
 			if self.EventSock ~= nil then
 				-- Unsubscribe from whatever instance we were previously in.
@@ -76,7 +76,10 @@ function Instancing.SetInstance(self, instanceNo)
 	self.InstanceNo = instanceNo
 
 	self.InstanceStates[instanceId] = {}
-	self.InstanceHandlers = {}
+	
+	if self.InstanceHandlers == nil then
+		self.InstanceHandlers = {}
+	end
 
 	return { Instancing.SuccessCode, "Instance " .. instanceNo .. "(" .. instanceId .. ") selected." }
 end
@@ -409,7 +412,7 @@ function Instancing.SetStateValue(self, instanceNo, stateName, value)
 
 	-- Update the value in our local copy and, if there
 	-- is a handler registered, execute it.
-	self:ChangeValue(self.instanceNo, stateName, value)
+	self:ChangeValue(self.InstanceNo, stateName, value)
 
 	return { Instancing.SuccessCode, "-- value applied" }
 end

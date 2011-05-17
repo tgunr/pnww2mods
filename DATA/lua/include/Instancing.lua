@@ -338,9 +338,8 @@ Instancing =
 			msg = zmqSocket:recv(zmqOptions)
 			if msg == nil then break end
 			data = loadstring("return " .. msg)()
-			if data == nil then print("DATA IS NIL!") end
 			table.insert(parts, data)
-			print("part #" .. #parts .. ": " .. tostring(msg))
+			--print("part #" .. #parts .. ": " .. tostring(msg))
 			-- ui.ChatPrint("part #" .. #parts .. ": " .. tostring(msg))
 
 			-- ZMQ will set the "RCVMORE" value on a socket
@@ -353,7 +352,7 @@ Instancing =
 		-- No parts, no array.
 		if #parts == 0 then return nil end
 
-		print("#parts = " .. #parts)
+		--print("#parts = " .. #parts)
 
 		return parts
 	end
@@ -388,7 +387,7 @@ Instancing =
 		instanceState[valueName] = value
 		
 		-- only execute handlers on the client
-		if self:IsClient() and self.InstanceId ~= instanceId then
+		if self:IsClient() and self.InstanceId == instanceId then
 			local handler = Instancing.InstanceHandlers[valueName]
 			if handler ~= nil and type(_G[handler]) == "function" then
 				local status, msg = pcall(_G[handler], valueName, value, oldValue)

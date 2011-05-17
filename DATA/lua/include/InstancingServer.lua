@@ -18,20 +18,25 @@ function Instancing.PublishCmd(self, instanceNo, cmdName, ...)
 
 	local instanceId = self.formatInstanceNo(instanceNo)
 
-	print( "sending event " .. instanceId .. ", " .. code )
-
 	local lookup = self:LookupCommand(cmdName)
 	if lookup[1] ~= Instancing.SuccessCode then
 		return lookup
 	end
 	local cmdNum = lookup[2]
 
+	local dbug = "D Publishing cmd " .. cmdName .. "(" .. instanceId .. ","
+	for i, v in ipairs(arg) do dbug = dbug .. tostring(v).."," end
+	dbug = dbug .. ") -- #" .. cmdNum
+	print(dbug)
+
 	-- Send the instanceId as the first part of the message,
 	-- the code as the second.
 	self.EventSock:send(instanceId, zmq.SNDMORE)
-	for _, v in arg
+	for _, v in ipairs(arg)
 	do
-		self.EventSock:send(arg, zmq.SNDMORE)
+		local value = v
+		if type(value) ~= "number" then value = string.format("%q", v) end
+		self.EventSock:send(value, zmq.SNDMORE)
 	end
 	self.EventSock:send(cmdNum, zmq.NOBLOCK)
 
@@ -140,13 +145,6 @@ function Instancing.InstanceEvent(self, instanceNo, stateName, value)
 
 	-- Convert to hex format for better hashing.
 	local instanceId = self.formatInstanceNo(instanceNo)
-
-	-- Look up our instance state
-	local instanceStates = self.InstanceStates[instanceId]
-	if not instanceStates then
-		instanceStates = self._BlankInstance(instanceId, instanceNo)
-		self.InstanceStates[instanceId] = instanceStates
-	end
 	
 	-- instance events don't save, they just get passed along
 

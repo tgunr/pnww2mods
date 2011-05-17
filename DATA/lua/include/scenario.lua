@@ -62,12 +62,8 @@ scenario.AddScore = function(team, points)
 	end
 	team = tonumber(team);
 	if(team >= 1 and team <= 2 and state.victory == 0) then
-		ui.ChatPrint("Adding " .. points .. " points to team " .. team .. " while victory is at " .. state.victory);
-		local result = Instancing:SendAddState("victory" .. team, points);
-		ui.ChatPrint("result type is "..type(result));
-		if(type(result) == "table") then
-			ui.ChatPrint(crawl(result));
-		end
+		ui.ChatPrint("Adding " .. points .. " points to team " .. team);
+		Instancing:SendAddState("victory" .. team, points);
 	end
 end
 
@@ -301,7 +297,7 @@ scenario.CheckVictory = function(name, value)
 	local score 	=  Instancing:GetStateNumber(name);
 	local victory 	= tonumber(state.config.victory);
 
-	-- ui.ChatPrint("Checking " .. score .. " against " .. victory);	
+	ui.ChatPrint("Checking " .. score .. " against " .. victory);	
 	
 	if(score >= victory) then
 		if(name == "victory1") then
