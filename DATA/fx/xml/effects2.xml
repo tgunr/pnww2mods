@@ -15,10 +15,20 @@
       <particleeffect>boattrailparticle1</particleeffect>
     </emitter>
     <emitter>
-      <flags>watertrail</flags>
+      <flags>watersurface</flags>
       <particleeffect>screwwatertrail</particleeffect>
     </emitter>
   </transformeffect>
+   <!-- ===================================================================== -->
+  <!--
+  <transformeffect name = "oceanfoam">
+    <emitter>
+      <fountain>0.25</fountain>
+      <flags>watersurface</flags>
+      <particleeffect>oceanfoamparticle</particleeffect>
+    </emitter>
+  </transformeffect>
+  -->
   <!-- ===================================================================== -->
   <transformeffect name = "torpedotrail">
 		<emitter>
@@ -26,7 +36,7 @@
 			<particleeffect>torpedotrailparticle1</particleeffect>
 		</emitter>
     <emitter>
-      <flags>watertrail</flags>
+      <flags>watersurface</flags>
       <particleeffect>torpedowatertrail</particleeffect>
     </emitter>
 	</transformeffect>
@@ -34,7 +44,7 @@
   <transformeffect name = "trooperwatertrail">
     <emitter>
       <fountain>2</fountain>
-      <flags>watertrail</flags>
+      <flags>watersurface</flags>
       <particleeffect>trooperwatertrail</particleeffect>
     </emitter>
   </transformeffect>
@@ -601,7 +611,7 @@
     </emitter>
     <emitter>
       <lifetime>1</lifetime>
-      <flags>watertrail</flags>
+      <flags>watersurface</flags>
       <flags>particleeffectonly</flags>
       <particleeffect>waterhitwakeparticle</particleeffect>
     </emitter>
@@ -716,7 +726,7 @@
       <particleeffect>water_treaddustparticle</particleeffect>
     </emitter>
     <emitter>
-      <flags>watertrail</flags>
+      <flags>watersurface</flags>
       <particleeffect>bowwatertrail</particleeffect>
     </emitter>
   </transformeffect>
@@ -3982,7 +3992,33 @@
     <posvariance>-0.5 -0.5 0.0 0.5 0.5 0.0</posvariance>
     <material>waterwake</material>
   </particleeffect>
- <!-- ===================================================================== -->
+  <!-- ===================================================================== -->
+  <!--
+  <particleeffect name = "oceanfoamparticle">
+    <number>1</number>
+    <texture>water spray1</texture>
+    <texture>water spray2</texture>
+    <texture>water spray3</texture>
+    <texture>tread dust</texture>
+    <texture>water spray4</texture>
+    <alpha>0.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>0.0</alpha>
+    <size>4.0</size>
+    <size>4.0</size>
+    <size>4.0</size>
+    <size>6.0</size>
+    <time>0</time>
+    <time>4000</time>
+    <time>4000</time>
+    <time>4000</time>
+    <dontupdateposition></dontupdateposition>
+    <posvariance>-10 -1 0 10 1 0</posvariance>
+    <material>waterwake</material>
+  </particleeffect>
+  -->
+  <!-- ===================================================================== -->
   <particleeffect name = "bowwatertrail">
     <number>1</number>
     <texture>water spray1</texture>
