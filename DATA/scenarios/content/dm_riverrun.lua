@@ -110,9 +110,6 @@ if(true) then
 		"boundary playarea 247.29 -14.12 7.45",
 		"boundary playarea 131.47 17.21 9.06",
 		"boundary playarea 114.97 2.62 9.06",
-		-- "boundary playarea 102.41 -30.24 8.41",
-		
-		
 		"boundary playarea 72.36 -15.00 7.81",
 		"boundary playarea 71.65 -19.75 7.81",
 		"boundary playarea -7.73 -22.81 7.25",
@@ -121,10 +118,6 @@ if(true) then
 		"boundary playarea -95.09 -112.12 8.43",
 		"boundary playarea -89.99 -148.66 6.78",
 		"boundary playarea -51.07 -162.15 7.11",
-
-		
-		
-		
 
 
 -- blocking volume x
@@ -213,14 +206,22 @@ if(true) then
 		-- these are always named
 		-- the lockey is a lockey looked up from the scenario content in the web translation tool
 		-- command name lockey
-		"alert onspawn onspawn.moveout",
-		"alert churchentry churchentry 30000",
+		
+		--  #### DOC LOOK AT THIS!! ####
+		
+		-- command categorynamealert namealert numberofsecondsbetweenrepeatalerts
+		-- numberofsecondsbetweenrepeatalerts 0= no limit, 1= onetime per scenario, unit measure is seconds 
+		-- "chat spawnin spawnin.moveout 0",
+		"alert onspawn onspawn.moveout 60",
+		"alert churchentry churchentry 30",
 		"alert toaxisspawn toaxisspawn",
 		"alert toalliedspawn toalliedspawn",
 		"alert roundstop roundstop",
 		"alert victory1 victory1",
 		"alert victory2 victory2",
-		"alert playarea playarea",
+		"alert playarea playarea 10",
+		
+		--  #### END DOC LOOK AT THIS ####
 		
 		-- vehicle masks
 		
@@ -264,6 +265,26 @@ if(true) then
 
 		"vehicle alliedtroops 1 0 9 0",
 		"vehicle axistroops 4 0 9 0",
+		
+		
+		--  #### DOC LOOK AT THIS!! ####
+		
+	-- alert masks
+	-- define a mask to block who gets a named alert
+	-- masktype maskname country category class
+	-- or
+	-- definethemask definethemessage vehicleid
+	-- note, by defining which team does get the alert, the other team will not get the alert
+		-- only country 1 gets toaxisspawn alert
+		"vehicle toaxisspawn 1 0 0 0",
+		-- only country 4 gets toalliedspawn alert
+		"vehicle toalliedspawn 4 0 0 0",	
+		
+	-- objective masks
+	-- none
+				
+		
+--  #### END DOC LOOK AT THIS ####
 
 	};
 
