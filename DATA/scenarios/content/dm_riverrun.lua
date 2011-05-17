@@ -213,9 +213,9 @@ if(true) then
 		-- numberofsecondsbetweenrepeatalerts 0= no limit, 1= onetime per scenario, unit measure is seconds 
 		-- "chat spawnin spawnin.moveout 0",
 		"alert onspawn onspawn.moveout 60",
-		"alert churchentry churchentry 30",
-		"alert toaxisspawn toaxisspawn",
-		"alert toalliedspawn toalliedspawn",
+		"alert churchentry churchentry 120",
+		"alert toaxisspawn toaxisspawn 60",
+		"alert toalliedspawn toalliedspawn 60",
 		"alert roundstop roundstop",
 		"alert victory1 victory1",
 		"alert victory2 victory2",
@@ -262,9 +262,20 @@ if(true) then
 		
 		-- command,spawngroup,country,category,class,type
 		-- a 0 is considered a wildcard
+		
+		-- allied spawn list
+		"vehicle alliedtroops us-smg",
+		"vehicle alliedtroops us-bar",
 
-		"vehicle alliedtroops 1 0 9 0",
-		"vehicle axistroops 4 0 9 0",
+		-- axis spawn list
+		"vehicle axistroops de-smg",
+		"vehicle axistroops de-lmg",
+		
+		-- "vehicle alliedtroops us-assault",
+		-- "vehicle alliedtroops us-smg",
+		-- "vehicle alliedtroops us-bar",
+		-- "vehicle alliedtroops us-sniper ",
+		-- "vehicle axistroops de-sniper",
 		
 		
 		--  #### DOC LOOK AT THIS!! ####
@@ -275,8 +286,8 @@ if(true) then
 	-- or
 	-- definethemask definethemessage vehicleid
 	-- note, by defining which team does get the alert, the other team will not get the alert
-		-- only country 1 gets toaxisspawn alert
-		"vehicle toaxisspawn 1 0 0 0",
+		-- only country 2 gets toaxisspawn alert
+		"vehicle toaxisspawn 2 0 0 0",
 		-- only country 4 gets toalliedspawn alert
 		"vehicle toalliedspawn 4 0 0 0",	
 		
