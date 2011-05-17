@@ -289,13 +289,20 @@ if(true) then
 		
 	-- these are always named
 	-- the lockey is a lockey looked up from the scenario content in the web translation tool
-	-- command name lockey
-
+	-- command name lockey		
+		
+--  #### DOC LOOK AT THIS!! ####
+		
+		-- command categorynamealert namealert numberofsecondsbetweenrepeatalerts
+		-- numberofsecondsbetweenrepeatalerts 0= no limit, 1= onetime per scenario, unit measure is seconds 
+		-- "chat spawnin spawnin.moveout 0",
 		"alert onspawn onspawn 1",
-		"alert toaxisspawn toaxisspawn",
-		"alert toalliedspawn toalliedspawn",
+		"alert toaxisspawn toaxisspawn 60",
+		"alert toalliedspawn toalliedspawn 60",
 		"alert bridgecapture1 bridgecapture 5",
-		"alert allieswrongway allieswrongway",
+		"alert allieswrongway allieswrongway 30" ,
+		
+--  #### END DOC LOOK AT THIS ####
 
 		
 -- DEFINE AVAILABLE VEHICLES FOR THE SCENARIO
@@ -350,21 +357,25 @@ if(true) then
 		"vehicle axistroops de-lmg",
 		-- "vehicle axistroops de-sniper",
 		
-	-- alert masks	DOC THIS IS NEW
+--  #### DOC LOOK AT THIS!! ####
+		
+	-- alert masks
 	-- define a mask to block who gets a named alert
-	-- definethemask definethemessage country category class
+	-- masktype maskname country category class
 	-- or
 	-- definethemask definethemessage vehicleid
 	-- note, by defining which team does get the alert, the other team will not get the alert
-			
-		"vehicle bridgecapture 1 0 0 0",
+				
 		"vehicle bridgecapture1 1 0 0 0",
-		-- above Ive defined all American troops get the bridgecapture alert,
-		-- by not defining which axis troops get the alert, axis wont get it
 		"vehicle toaxisspawn 1 0 0 0",
 		"vehicle toalliedspawn 4 0 0 0",
 		"vehicle allieswrongway 1 0 0 0",
-
+		
+	-- objective masks
+	-- the bridgecapture objective applies only to country 1
+		"vehicle bridgecapture 1 0 0 0",		
+		
+--  #### END DOC LOOK AT THIS ####
 	
 	};
 
