@@ -39,6 +39,9 @@ To check for and process any incoming event messages:
 --	Instancing:GetInstanceState()
 --	Instancing:PollEvents()		 [non-blocking]
 
+if game == nil or game.LoadLib == nil or type(game.LoadLib) ~= "function" then
+	require "Instancing"
+end
 	--------- --------- --------- --------- --------- ---------
 	-- Set our instance ID.
 	-- public:
@@ -137,7 +140,7 @@ function Instancing.GetEvents(self, zmqOptions, maxEvents)
 
 			-- Final part of the list should be the command.
 			local cmdNum = table.remove(parts, #parts)
-			local result = self.InvokeCommand(cmdNum, unpack(parts))
+			local result = self:InvokeCommand(cmdNum, unpack(parts))
 			if result[1] ~= Instancing.SuccessCode then
 				print("W event execution error: " .. result[2])
 			end
@@ -291,11 +294,11 @@ function Instancing.GetInstanceState(self)
 		return parts
 	end
 
-	print("D inst:"..self.InstanceNo.." state:" .. parts[2])
-	local success, result = pcall(loadstring("return " .. parts[2]))
-	if success == false then
-		return { Instancing.ErrorCode, "GetInstanceState execution error: " .. result }
+	local result = parts[2]
+	if type(result) ~= "table" then
+		return { Instancing.ErrorCode, "GetInstanceState expected a table result." }
 	end
+	print( crawl(result) )
 
 	self.InstanceStates[self.InstanceId] = result
 

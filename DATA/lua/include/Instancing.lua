@@ -42,8 +42,6 @@ end
 
 require 'string'	-- For the string format function
 require 'table'		-- For table.insert
--- require "InstancingCommands"
-
 
 Instancing =
 {
@@ -126,8 +124,18 @@ Instancing =
 	-- Turn an instance's unique ID into a hex 16-char string
 	-- public: static
 
-,	formatInstanceNo = function (instanceNo)
-		return string.format("%016u", tonumber(instanceNo))
+,	formatInstanceNo = function (num)
+		return string.format("%016u", tonumber(num))
+	end
+
+	--------- --------- --------- --------- --------- ---------
+	-- Returns a new, blank instance entity.
+
+,	_BlankInstance = function (instanceId, instanceNo)
+		local self = {}
+		self['id'] = instanceId
+		self['no'] = tonumber(instanceNo)
+		return self
 	end
 
 	--------- --------- --------- --------- --------- ---------
@@ -209,18 +217,25 @@ Instancing =
 		if type(fn) ~= "function" then
 			return { Instancing.ErrorCode, "Instancing."..cmdName.." does not appear to be a function." }
 		end
-		
-		print(string.format("Invoking command %d with function %s", cmdNum, cmdName))
+
+		local dbug = "D Invoking "..cmdName.."("
+		for i, v in ipairs(arg) do dbug = dbug .. tostring(v).." " end
+		dbug = dbug .. ")"
+		print(dbug)
 
 		-- Invoke the function, passing any remaining args to it.
-		table.insert(arg, 1, self)	-- Needs self at the start of the arg list.
-
-		local success, output = pcall( fn(unpack(arg)) )
-		if success then
-			return { Instancing.SuccessCode, output }
-		else
+		local success, output = pcall(fn, self, unpack(arg))
+		if success == false then
 			return { Instancing.ErrorCode, output }
 		end
+
+		-- Handle case where we return {code, result}
+		if type(output) == "table" and #output == 2 then
+			return { output[1], output[2] }
+		else
+			return { Instancing.SuccessCode, output }
+		end
+
 	end
 
 	--------- --------- --------- --------- --------- --------- --------- ---------
@@ -246,7 +261,11 @@ Instancing =
 		-- Send all of the arguments as parts.
 		for _, val in ipairs(arg)
 		do
-			zmqSocket:send(string.format("%q", val), zmq.SNDMORE)
+			if type(val) == "number" then
+				zmqSocket:send(tostring(val), zmq.SNDMORE)
+			else
+				zmqSocket:send(string.format("%q", val), zmq.SNDMORE)
+			end
 		end
 
 		-- Finish the message with the cmd number.
@@ -313,11 +332,14 @@ Instancing =
 ,	getMessage = function (zmqSocket, zmqOptions)
 		local parts = {}
 		local msg
+		local data
 		while true
 		do
 			msg = zmqSocket:recv(zmqOptions)
-			if not msg then break end
-			table.insert(parts, msg)
+			if msg == nil then break end
+			data = loadstring("return " .. msg)()
+			if data == nil then print("DATA IS NIL!") end
+			table.insert(parts, data)
 			print("part #" .. #parts .. ": " .. tostring(msg))
 			-- ui.ChatPrint("part #" .. #parts .. ": " .. tostring(msg))
 
@@ -328,10 +350,10 @@ Instancing =
 			if zmqSocket:getopt(zmq.RCVMORE) == 0 then break end
 		end
 		
-		print(crawl(parts))
-
 		-- No parts, no array.
 		if #parts == 0 then return nil end
+
+		print("#parts = " .. #parts)
 
 		return parts
 	end
@@ -369,7 +391,7 @@ Instancing =
 		if self:IsClient() and self.InstanceId ~= instanceId then
 			local handler = Instancing.InstanceHandlers[valueName]
 			if handler ~= nil and type(_G[handler]) == "function" then
-				local status, msg = pcall(_G[handler](valueName, value, oldValue))
+				local status, msg = pcall(_G[handler], valueName, value, oldValue)
 				if not status then
 					return { Instancing.ErrorCode, valueName.." state change handler error: "..msg.."." }
 				end

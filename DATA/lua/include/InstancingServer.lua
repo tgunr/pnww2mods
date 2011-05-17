@@ -42,27 +42,29 @@ end
 -- Setup an instance timer
 
 function Instancing.SetTimer(self, instanceNo, name, duration)
+		instanceNo = tonumber(instanceNo)
+		duration = tonumber(duration)
 		local now = os.time()
 		-- see if we already have this timer
-		for i,t in ipairs(Instancing.Timers) do
-				if(t[1] == instanceNo and t[5] == name) then
+		for i,t in ipairs(self.InstanceTimers) do
+				if t[1] == instanceNo and t[5] == name then
 						if(duration > 0) then
 								print(string.format("Updating timer %s to %d minutes", name, duration))
-								Instancing:SetInstanceState(t[1], t[5], -1, true, false)
+								Instancing:SetStateValue(t[1], t[5], -1)
 								t[2] = 0
 								t[3] = now
 								t[4] = now + duration
 						else
 								print(string.format("Removing timer %s", name))
-								table.remove(Instancing.Timers, i)
+								table.remove(self.InstanceTimers, i)
 						end
 						return
 				end
 		end
-		if(duration > 0) then
+		if duration > 0 then
 				print("Adding timer for instance " .. instanceNo .. " named " .. name .. " " .. (tonumber(duration) / 60) .. " minutes from now.")
-				Instancing:SetInstanceState(instanceNo, name, -1, true, false)
-				table.insert(Instancing.Timers, {instanceNo, 0, now, now + duration, name})
+				Instancing:SetStateValue(instanceNo, name, -1)
+				table.insert(self.InstanceTimers, {instanceNo, 0, now, now + duration, name})
 		end
 end
 
@@ -80,7 +82,7 @@ function Instancing.SetStateValue(self, instanceNo, stateName, value)
 	-- Check to see if the value needs modifying.
 	local instanceStates = self.InstanceStates[instanceId]
 	if not instanceStates then
-		instanceStates = { ['id'] = instanceId, ['no'] = instanceNo }
+		instanceStates = self._BlankInstance(instanceId, instanceNo)
 		self.InstanceStates[instanceId] = instanceStates
 	end
 
@@ -109,7 +111,7 @@ function Instancing.AddStateValue(self, instanceNo, stateName, value)
 	-- Check to see if the value needs modifying.
 	local instanceStates = self.InstanceStates[instanceId]
 	if not instanceStates then
-		instanceStates = { ['id'] = instanceId, ['no'] = instanceNo }
+		instanceStates = self._BlankInstance(instanceId, instanceNo)
 		self.InstanceStates[instanceId] = instanceStates
 	end
 
@@ -127,7 +129,6 @@ function Instancing.AddStateValue(self, instanceNo, stateName, value)
 	return self:PublishCmd(tonumber(instanceId), "SetStateValue", stateName, newValue)
 end
 
-
 --------- --------- --------- --------- --------- ---------
 -- Broadcast a generic event to each client.
 -- Don't save anything in the state though.
@@ -143,7 +144,7 @@ function Instancing.InstanceEvent(self, instanceNo, stateName, value)
 	-- Look up our instance state
 	local instanceStates = self.InstanceStates[instanceId]
 	if not instanceStates then
-		instanceStates = { ['id'] = instanceId, ['no'] = instanceNo }
+		instanceStates = self._BlankInstance(instanceId, instanceNo)
 		self.InstanceStates[instanceId] = instanceStates
 	end
 	
@@ -160,13 +161,18 @@ function Instancing.GetInstanceState(self, instanceNo)
 	local instanceId = self.formatInstanceNo(instanceNo)
 	local instanceStates = self.InstanceStates[instanceId]
 	if not instanceStates or type(intanceStates) ~= "table" then
-		return { Instancing.ErrorCode, "No such instance "..instanceNo.."." }
+		instanceStates = self._BlankInstance(instanceId, instanceNo)
+		self.InstanceStates[instanceId] = instanceStates
 	end
 
 	local keyvalues = ""
 	for k, v in pairs(instanceStates)
 	do
-		keyvalues = keyvalues .. string.format("[%q]=%q,", k, v)
+		if type(v) ~= "number" then
+			keyvalues = keyvalues .. string.format("[%q]=%q,", k, v)
+		else
+			keyvalues = keyvalues .. string.format("[%q]=", k) .. tostring(v)
+		end
 	end
 	return { Instancing.SuccessCode, "{"..keyvalues.."}" }
 end
@@ -190,10 +196,10 @@ function drainConsole(zmqSocket)
 		print("D --con-> cmd#"..cmdNum)
 
 		-- Execute and get the result pair.
-		local result = Instancing:InvokeCommand(cmdNum, parts)
+		local result = Instancing:InvokeCommand(cmdNum, unpack(parts))
 
 		print("D <-con-- " .. result[1] .. ", " .. tostring(result[2]))
-		zmqSocket:send(result[1], zmq.SNDMORE)
+		zmqSocket:send('"'..result[1]..'"', zmq.SNDMORE)
 		zmqSocket:send(result[2], zmq.NOBLOCK)
 	end
 end
@@ -208,12 +214,11 @@ function drainCommand(zmqSocket)
 
 		-- Pop the command number off the end of the list,
 		-- leaving "parts" as the argument list.
-		--local cmdNum = tonumber(parts, #parts)
 		local cmdNum = tonumber(table.remove(parts, #parts))
 		print("D --con-> cmd#"..cmdNum)
 
 		-- Execute and get the result pair.
-		local result = Instancing:InvokeCommand(cmdNum, parts)
+		local result = Instancing:InvokeCommand(cmdNum, unpack(parts))
 		print("D result: " .. result[1] .. ", " .. tostring(result[2]))
 	end
 end
@@ -244,13 +249,13 @@ do
 			end
 
 			-- push our time remaining for each timer every minute
-			if(now >= t[2] and i ~= completed) then
+			if now >= t[2] and i ~= completed then
 					Instancing:InstanceEvent(t[1], t[5], t[4] - now)
 					t[2] = now + 60
 			end
 	end
 
-	if(completed > 0) then
+	if completed > 0 then
 			local t = Instancing.InstanceTimers[completed]
 			Instancing:SetStateValue(t[1], t[5], 0)
 			table.remove(Instancing.InstanceTimers, completed)
