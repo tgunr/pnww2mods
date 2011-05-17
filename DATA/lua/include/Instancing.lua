@@ -42,7 +42,7 @@ end
 
 require 'string'	-- For the string format function
 require 'table'		-- For table.insert
-require "InstancingCommands"
+-- require "InstancingCommands"
 
 
 Instancing =
@@ -73,6 +73,8 @@ Instancing =
 		"GetInstanceState"
 	,	"SetStateValue"
 	,	"InstanceEvent"
+	,	"AddStateValue"
+	,	"SetTimer"
 	}
 
 	-- Number of IO threads to tell ZeroMQ to use.
@@ -89,8 +91,9 @@ Instancing =
 ,	SuccessCode		=	'OK'	-- Returned to indicate things went well
 ,	ErrorCode		=	'ERR'	-- Returned to indicate something failed.
 
-, 	InstanceHandlers =	{}		-- Routines for handling changes to instances.
-,	InstanceStates	=	{}
+,   InstanceTimers		= {}
+, 	InstanceHandlers 	=	{}		-- Routines for handling changes to instances.
+,	InstanceStates		=	{}
 ,	InstanceId		=	nil		-- Current instance (formatted)
 ,	InstanceNo		=	nil		-- Current instance (number)
 
@@ -194,7 +197,7 @@ Instancing =
 		end
 
 		-- Name of the command.
-		local cmdName = self[cmdNum]
+		local cmdName = self.Commands[cmdNum]
 		if cmdName == nil then
 			return { Instancing.ErrorCode, "No function registered for #"..cmdNum..". Something is foobar." }
 		end
@@ -206,6 +209,8 @@ Instancing =
 		if type(fn) ~= "function" then
 			return { Instancing.ErrorCode, "Instancing."..cmdName.." does not appear to be a function." }
 		end
+		
+		print(string.format("Invoking command %d with function %s", cmdNum, cmdName))
 
 		-- Invoke the function, passing any remaining args to it.
 		table.insert(arg, 1, self)	-- Needs self at the start of the arg list.
@@ -228,7 +233,7 @@ Instancing =
 		end
 
 		-- First argument must be a string.
-		if type(cmdName) ~= string then
+		if type(cmdName) ~= "string" then
 			return { Instancing.ErrorCode, "Invalid cmd argument - expected string." }
 		end
 
@@ -239,9 +244,9 @@ Instancing =
 		end
 
 		-- Send all of the arguments as parts.
-		for _, val in arg
+		for _, val in ipairs(arg)
 		do
-			zmqSocket:send(string.format("%q", arg), zmq.SNDMORE)
+			zmqSocket:send(string.format("%q", val), zmq.SNDMORE)
 		end
 
 		-- Finish the message with the cmd number.
@@ -288,8 +293,8 @@ Instancing =
 		-- On the client, we need to subscribe to something
 		-- if we're going to receive events;
 		-- Start with a default instance of 0 (the campaign).
-		if self:IsClient() and self.EventSock then
-			self:SetInstance(0)
+		if self:IsClient() and self.EventSock and self.InstanceNo then
+			self:Subscribe(self.InstanceNo)
 		end
 
 		self.Running = true
@@ -322,6 +327,8 @@ Instancing =
 			-- If RCVMORE is not set, it's time to stop.
 			if zmqSocket:getopt(zmq.RCVMORE) == 0 then break end
 		end
+		
+		print(crawl(parts))
 
 		-- No parts, no array.
 		if #parts == 0 then return nil end
@@ -329,14 +336,15 @@ Instancing =
 		return parts
 	end
 
-
-
 	--------- --------- --------- --------- --------- ---------
 	-- Register a handler function for tracking changes to a
-	-- particular state.
-
-	function Instancing.RegisterHandler(self, state, handler)
-		Instancing.InstanceHandlers[state] = handler
+	-- particular state. Currently only useful on the client
+	-- since we're not separating handlers by instance id.
+	-- This is because some handlers get set before we have
+	-- an instance id set (ie on script load)
+	
+,	RegisterHandler = function(stateName, handler)
+		Instancing.InstanceHandlers[stateName] = handler
 	end
 
 	--------- --------- --------- --------- --------- ---------
@@ -347,27 +355,27 @@ Instancing =
 		local instanceId = self.formatInstanceNo(tonumber(instanceNo))
 		-- Client needs to make sure it only processes changes for
 		-- it's instance.
+		
 		if self:IsClient() and self.InstanceId ~= instanceId then
 			return { Instancing.ErrorCode, "Message does not apply to current state." }
 		end
 
 		-- Grab the old value and swap in the new.
-		local state = Instancing.InstanceStates[instanceId]
-		local oldValue = state[valueName]
-		state[valueName] = value
-
-		local handlers = Instancing.InstanceHandles[instanceId]
-		if type(handlers) == 'table' then
-			local handler = handlers[state]
-				if handler ~= nil and type(_G[handler]) == "function" then
-					local status, msg = pcall(_G[handler](state, value, oldValue))
-					if not status then
-						return { Instancing.ErrorCode, valueName.." state change handler error: "..msg.."." }
-					end
+		local instanceState = Instancing.InstanceStates[instanceId]
+		local oldValue = instanceState[valueName]
+		instanceState[valueName] = value
+		
+		-- only execute handlers on the client
+		if self:IsClient() and self.InstanceId ~= instanceId then
+			local handler = Instancing.InstanceHandlers[valueName]
+			if handler ~= nil and type(_G[handler]) == "function" then
+				local status, msg = pcall(_G[handler](valueName, value, oldValue))
+				if not status then
+					return { Instancing.ErrorCode, valueName.." state change handler error: "..msg.."." }
 				end
 			end
 		end
-
+		
 		return { Instancing.SuccessCode, "-- "..valueName.." value changed '"..oldValue.."' -> '"..value.."'." }
 	end
 

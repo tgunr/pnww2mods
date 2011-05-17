@@ -40,14 +40,10 @@ To check for and process any incoming event messages:
 --	Instancing:PollEvents()		 [non-blocking]
 
 	--------- --------- --------- --------- --------- ---------
-	-- Tune the Events interface to a specific instance ID.
+	-- Set our instance ID.
 	-- public:
 
 function Instancing.SetInstance(self, instanceNo)
-	if not self.Context then
-		return { Instancing.ErrorCode, "Tried to call Instancing.SetInstance without a Context" }
-	end
-
 	-- Numeric argument required.
 	if type(instanceNo) ~= "number" then
 		return { Instancing.ErrorCode, "SetInstance requires a numeric instance argument." }
@@ -55,32 +51,60 @@ function Instancing.SetInstance(self, instanceNo)
 
 	local instanceId = self.formatInstanceNo(instanceNo)
 
-	-- Only mess with ZeroMQ stuff if we have an EventSock connected.
-	-- Also, the server doesn't do any sub/unsub stuff.
-	if self.InstanceId ~= nil then
-		-- Purge the old state information.
-		self.InstanceStates[self.InstanceId] = nil
-		self.InstanceHandlers[self.InstanceId] = nil
-
-		if self.EventSock ~= nil then
-			-- Unsubscribe from whatever instance we were previously in.
-			self.EventSock:setopt(zmq.UNSUBSCRIBE, self.InstanceId)
-			self.InstanceId = nil
-			self.InstanceNo = nil
+	-- set up some subscriptions if we have a context
+	if self.Context ~= nil then
+		-- Only mess with ZeroMQ stuff if we have an EventSock connected.
+		-- Also, the server doesn't do any sub/unsub stuff.
+		if self.InstanceId ~= nil then
+			-- Purge the old state information.
+			self.InstanceStates[self.InstanceId] = nil
+			self.InstanceHandlers = nil
+	
+			if self.EventSock ~= nil then
+				-- Unsubscribe from whatever instance we were previously in.
+				self.EventSock:setopt(zmq.UNSUBSCRIBE, self.InstanceId)
+				self.InstanceId = nil
+				self.InstanceNo = nil
+			end
 		end
-	end
-	if self.EventSock ~= nil then
-		self.EventSock:setopt(zmq.SUBSCRIBE, instanceId)
-		print("subscribed EventSock to " .. instanceId)
 	end
 
 	self.InstanceId = instanceId
 	self.InstanceNo = instanceNo
 
 	self.InstanceStates[instanceId] = {}
-	self.InstanceHandlers[instanceId] = {}
+	self.InstanceHandlers = {}
 
 	return { Instancing.SuccessCode, "Instance " .. instanceNo .. "(" .. instanceId .. ") selected." }
+end
+
+	--------- --------- --------- --------- --------- ---------
+	-- Tune the Events interface to a specific instance ID.
+	-- public:
+
+function Instancing.Subscribe(self, instanceNo)
+	-- Numeric argument required.
+	if type(instanceNo) ~= "number" then
+		return { Instancing.ErrorCode, "Subscribe requires a numeric instance argument." }
+	end
+
+	local instanceId = self.formatInstanceNo(instanceNo)
+
+	-- set up some subscriptions if we have a context
+	if self.Context ~= nil then
+		-- Only mess with ZeroMQ stuff if we have an EventSock connected.
+		-- Also, the server doesn't do any sub/unsub stuff.
+		if self.EventSock ~= nil then
+			self.EventSock:setopt(zmq.SUBSCRIBE, instanceId)
+			print("subscribed EventSock to " .. instanceId)
+		else
+			return { Instancing.ErrorCode, "EventSock not found while trying to subscribe!" }
+		end
+	else
+		return { Instancing.ErrorCode, "Context not found while trying to subscribe!" }
+	end
+
+	return { Instancing.SuccessCode, "Instance " .. instanceNo .. "(" .. instanceId .. ") subscribed." }
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -202,25 +226,56 @@ function Instancing.SendStateValue(self, valueName, value)
 	return self:SendRemoteInstruction("SetStateValue", self.InstanceNo, valueName, value)
 end
 
+Instancing.SetState = Instancing.SendStateValue
+
 --------- --------- --------- --------- --------- ---------
 -- Tell thes erver to add a new state value.
 
 function Instancing.SendAddState(self, valueName, value)
-	return self:SendStateValue(valueName, value)
+	if self.Context == nil then
+		return { Instancing.ErrorCode, "Tried to call SendAddState with no Context." }
+	end
+	if self.InstanceNo == nil or self.InstanceNo == 0 then
+		return { Instancing.ErrorCode, "Tried to call SendAddState with no Instance selected." }
+	end
+	if valueName == nil then
+		return { Instancing.ErrorCode, "Called SendAddState with no valueName." }
+	end
+	return self:SendRemoteInstruction("AddStateValue", self.InstanceNo, valueName, value)
 end
+
+Instancing.AddState = Instancing.SendAddState
 
 --------- --------- --------- --------- --------- ---------
 -- Tell the server to do something with a timed event?
 
-function Instancing.TimedEvent(self, valueName, duration)
-	return self:SendStateValue(valueName, duration)
+function Instancing.TimedEvent(self, timerName, duration)
+	if self.Context == nil then
+		return { Instancing.ErrorCode, "Tried to call TimedEvent with no Context." }
+	end
+	if self.InstanceNo == nil or self.InstanceNo == 0 then
+		return { Instancing.ErrorCode, "Tried to call TimedEvent with no Instance selected." }
+	end
+	if timerName == nil then
+		return { Instancing.ErrorCode, "Called TimedEvent with no valueName." }
+	end
+	return self:SendRemoteInstruction("SetTimer", self.InstanceNo, timerName, duration)
 end
 
 --------- --------- --------- --------- --------- ---------
 -- Some kind of general broadcast???
 
 function Instancing.BroadcastEvent(self, valueName, value)
-	return self:SendStateValue(valueName, value)
+	if self.Context == nil then
+		return { Instancing.ErrorCode, "Tried to call BroadcastEvent with no Context." }
+	end
+	if self.InstanceNo == nil or self.InstanceNo == 0 then
+		return { Instancing.ErrorCode, "Tried to call BroadcastEvent with no Instance selected." }
+	end
+	if valueName == nil then
+		return { Instancing.ErrorCode, "Called BroadcastEvent with no valueName." }
+	end
+	return self:SendRemoteInstruction("InstanceEvent", self.InstanceNo, valueName, value)
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -351,10 +406,34 @@ function Instancing.SetStateValue(self, instanceNo, stateName, value)
 
 	-- Update the value in our local copy and, if there
 	-- is a handler registered, execute it.
-	self:ChangeStateValue(self.instanceNo, stateName, value)
+	self:ChangeValue(self.instanceNo, stateName, value)
 
 	return { Instancing.SuccessCode, "-- value applied" }
 end
+
+--------- --------- --------- --------- --------- ---------
+-- Instruction to handle a named broadcast from the server
+
+function Instancing.InstanceEvent(self, instanceNo, stateName, value)
+	local instanceId = self.formatInstanceNo(instanceNo)
+	
+	if instanceId ~= self.InstanceId then
+		return { Instancing.ErrorCode, "Message no-longer applies." }
+	end
+
+	-- run any hooks we have
+	local handler = Instancing.InstanceHandlers[stateName]
+	
+	if handler ~= nil and type(_G[handler]) == "function" then
+		local status, msg = pcall(_G[handler](stateName, value))
+		if not status then
+			return { Instancing.ErrorCode, stateName.." event handler error: "..msg.."." }
+		end
+	end
+	
+	return { Instancing.SuccessCode, "-- event handled" }
+end
+
 
 --------- --------- --------- --------- --------- ---------
 -- Main entry point.

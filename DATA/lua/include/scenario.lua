@@ -62,13 +62,17 @@ scenario.AddScore = function(team, points)
 	end
 	team = tonumber(team);
 	if(team >= 1 and team <= 2 and state.victory == 0) then
-		--ui.ChatPrint("Adding " .. points .. " points to team " .. team .. " while victory is at " .. state.victory);
-		Instancing:AddState("victory" .. team, points);
+		ui.ChatPrint("Adding " .. points .. " points to team " .. team .. " while victory is at " .. state.victory);
+		local result = Instancing:SendAddState("victory" .. team, points);
+		ui.ChatPrint("result type is "..type(result));
+		if(type(result) == "table") then
+			ui.ChatPrint(crawl(result));
+		end
 	end
 end
 
-function RegisterState(state, handler)
-	Instancing:RegisterHandler(state, handler);
+function RegisterState(stateName, handler)
+	Instancing.RegisterHandler(stateName, handler);
 end
 
 function OnStart(handler)
@@ -107,7 +111,10 @@ function OnStart(handler)
 end
 
 function StartNetwork()
-	if(state.network) then
+	if(Instancing.InstanceId ~= nil) then
+		-- start the instancing framework
+		Instancing:Start("Client", "192.168.0.61")
+		
 		ui.ChatPrint("Initing scenario network state!");
 		
 		-- if we're the creator, send our initial state up
@@ -119,8 +126,11 @@ function StartNetwork()
 		
 		-- get our initial state
 		Instancing:GetInstanceState();
+		
+		-- we have a proper network
+		state.network = true;
 	else
-		ui.ChatPrint("Unable to init scenario network state.");
+		ui.ChatPrint("Unable to init scenario network state: no instance set");
 	end
 end
 
@@ -198,8 +208,8 @@ function OnSet(handler, name, value)
 		LoadContent();
 	elseif(name == "instance") then
 		local result = Instancing:SetInstance(tonumber(state.config.instance));
-		if(result[1] == Instancing.SuccessCode) then
-			state.network = true;
+		if(result[1] ~= Instancing.SuccessCode) then
+			ui.ChatPrint(result[2]);
 		end
 	elseif(name == "network" and value == "start") then
 		StartNetwork();
@@ -295,9 +305,9 @@ scenario.CheckVictory = function(name, value)
 	
 	if(score >= victory) then
 		if(name == "victory1") then
-			Instancing:SetState("victory", 1);
+			Instancing:SendSetState("victory", 1);
 		elseif(name == "victory2") then
-			Instancing:SetState("victory", 2);
+			Instancing:SendSetState("victory", 2);
 		end
 	end
 	
