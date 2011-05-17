@@ -1,0 +1,86 @@
+muzzleRise = 5.0
+muzzleReturn = 25.0
+muzzleClimbRate = 75.0
+
+# per bullet "jump" .. this is the vertical component
+# the total formula is weapon.muzzleRize * weapon.bulletJitter * trooper.aimControl
+bulletJitter = 1.0
+
+# additional multiplier for horizontal bullet jump
+horizJitterMult = 1.75
+
+speedMultiplier = 1.0
+
+minimumDispersion = 0.01666667
+# This is set VERY HIGH as a place holder for actual gun sway
+unaimedDispersionMod = 120.0
+controlability = 1.0
+aimFOV = 45.0
+
+# sound to play when reloading
+reloadSound = sounds\k98reload.wav
+
+recycleSound = sounds\k98bolt.wav
+
+# these all MUST be specified in the weapon specific file
+# note that data\gr2data\FPS\ is prepended to these file names
+#weaponModel
+#clipModel
+
+# granny attach bone names for weapon & clip
+# the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
+#weaponConnectTo
+#weaponConnect
+
+# the clipConnect bone in the clip attaches to the clipConnectTo bone in the gun
+#clipConnectTo
+#clipConnect
+
+# boresighting values .. how much off of "straight" does this gun need to fire
+aimVerticalCorrection = 0.0
+aimHorizontalCorrection = 0.0
+
+# boresight distance
+convergenceDistance = 200.0
+
+# flag for the control manager whether to allow the fire button to be held down or not
+# required for autofire weapons as well as recycling weapons
+holdfire = 1
+
+ejectDelay = 0.6
+
+# size multilier for the shell model
+shellScale = 0.25
+
+# what icon to display in the hud (0 = smg)
+hudIconType = 2
+
+clipBullets = -1
+
+# how far back along the barrel to start the bullet (firepoints are at the tip)
+firepointDisplacement = 0.80
+
+weaponBreathMultiplier = 1.0
+weaponHeartMultiplier = 1.0
+weaponMoveMultiplier = 1.0
+weaponPoseMultiplier = 1.0
+
+leanFireOK = 1
+
+# variable sight data
+numConvDists = 10
+convDist1 = 100.0
+convDist2 = 200.0
+convDist3 = 300.0
+convDist4 = 400.0
+convDist5 = 500.0
+convDist6 = 600.0
+convDist7 = 700.0
+convDist8 = 800.0
+convDist9 = 900.0
+convDist10 = 1000.0
+sightAdjustTime = .5
+sightAdjustSound = sounds\wheelopen.wav
+
+dryFireSoundLength = 0.3
+dryFireSound = sounds\troop\Rifle_Dryfire.wav
