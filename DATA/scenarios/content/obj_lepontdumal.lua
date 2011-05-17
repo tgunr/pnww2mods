@@ -301,6 +301,7 @@ if(true) then
 		"alert toalliedspawn toalliedspawn 60",
 		"alert bridgecapture1 bridgecapture 5",
 		"alert allieswrongway allieswrongway 30" ,
+		"alert playarea playarea 10",
 		
 --  #### END DOC LOOK AT THIS ####
 
@@ -347,14 +348,20 @@ if(true) then
 	-- a 0 is considered a wildcard
 
 	-- spawn masks
+		-- allied spawn list
+		"vehicle alliedtroops ukrifle",
+		"vehicle alliedtroops uk-smg",
+		"vehicle alliedtroops uk-lmg",
+		-- axis spawn list
+		"vehicle axistroops derifle",
+		"vehicle axistroops de-smg",
+		"vehicle axistroops de-lmg",
+	
+	
 		-- "vehicle alliedtroops us-assault",
 		-- "vehicle alliedtroops us-smg",
 		-- "vehicle alliedtroops us-bar",
 		-- "vehicle alliedtroops us-sniper ",
-		"vehicle alliedtroops 1 0 9 0",
-		"vehicle axistroops derifle",
-		"vehicle axistroops de-smg",
-		"vehicle axistroops de-lmg",
 		-- "vehicle axistroops de-sniper",
 		
 --  #### DOC LOOK AT THIS!! ####
