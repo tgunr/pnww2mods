@@ -10,8 +10,7 @@ if(true) then
 		
 		-- we're using minefields, so include that functionality
 		"include scenarios/content/minefields.lua",
-		
-		-- landmines
+-- landmines
 		"ammo landmine1 landmine",
 		"ammo landmine2 landmine",
 		"ammo landmine3 landmine",
@@ -203,7 +202,7 @@ if(true) then
 		-- command,spawngroup,country,category,class,type
 		-- a 0 is considered a wildcard
 
-		-- "vehicle alliedtroops 2 0 9 0",
+		-- "vehicle alliedtroops 1 0 9 0",
 		-- "vehicle axistroops 4 0 9 0",
 		
 		
@@ -216,6 +215,7 @@ if(true) then
 		"spawn axistroops -131.18 -94.50 42.86",
 
 		
+				
 		
 		
 		
