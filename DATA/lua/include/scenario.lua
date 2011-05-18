@@ -23,6 +23,9 @@ state.lastinbounds		= true;
 state.network				= false;
 state.victory					= 0;
 
+-- default server
+state.config['server'] 	= '192.168.0.61';
+
 -- states we'll monitor
 state.hoststates			= 
 {
@@ -109,7 +112,7 @@ end
 function StartNetwork()
 	if(Instancing.InstanceId ~= nil) then
 		-- start the instancing framework
-		Instancing:Start("Client", "192.168.0.61")
+		Instancing:Start("Client", state.config.server)
 		
 		ui.ChatPrint("Initing scenario network state!");
 		
