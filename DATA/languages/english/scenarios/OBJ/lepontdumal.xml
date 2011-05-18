@@ -8,9 +8,14 @@ bridgecapture = You are capturing the bridge! Hold it until fresh troops arrive.
 allieswrongway = The objective is south. Turn around and follow the road.
 victory1 = Americans have secured the bridge! Re-enforcements have arrived.
 victory2 = The Germans have defended the bridge!
+playarea = Turn around
 roundstop = This round is over!</body>
   <bodyloc>true</bodyloc>
-  <brief>An American convoy is headed south towards the bridge and have orders to capture and hold it until reinforcements arrive. A small German unit is camped in town and are desperate to defend the bridge from capture.</brief>
+  <brief>An American convoy is headed south towards the bridge and have orders to capture and hold it until reinforcements arrive. A small German unit is camped in town and are desperate to defend the bridge from capture.
+<br><br>
+Americans- capture and hold the bridge for 30 seconds
+<br>
+Germans- keep the enemy from reaching their objective for 15 minutes</brief>
   <duration>15</duration>
   <fog>3</fog>
   <hour>16</hour>
@@ -20,5 +25,5 @@ roundstop = This round is over!</body>
   <terrain>lepontdumal</terrain>
   <title>Le pont du mal</title>
   <victory>30</victory>
-  <weather>2</weather>
+  <weather>1</weather>
 </content>

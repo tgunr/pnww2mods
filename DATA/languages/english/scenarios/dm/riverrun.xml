@@ -8,18 +8,20 @@ toalliedspawn = American forces have crossed the southwest bridge!
 victory1 = Allies victorious!
 victory2 = Axis victorious!
 roundstop = This round is over!
-playarea = You are leaving the play area solider!</body>
+playarea = Turn around</body>
   <bodyloc>true</bodyloc>
-  <brief>test</brief>
+  <brief>The Americans advanced via the south bridge before it was blown. Now the Germans must defend the town from their camp.<br><br>
+Kill as many enemy soliders as possible in 10 minutes<br>
+The first team to reach 50 kills wins.</brief>
   <draw>35</draw>
   <duration>10</duration>
   <fog>3</fog>
   <hour>16</hour>
   <rules>deathmatch</rules>
-  <team1>3</team1>
+  <team1>2</team1>
   <team2>4</team2>
   <terrain>riverrun</terrain>
-  <title>River Run Fire Fight</title>
+  <title>River Run</title>
   <victory>50</victory>
   <weather>1</weather>
 </content>
