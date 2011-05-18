@@ -4,7 +4,7 @@
 # SMG, SATCHEL, RIFLE, AUTO_PISTOL, GRENADE, REVOLVER, ITEM, KNIFE, LMG
 weaponType = AUTO_RIFLE
 
-hiddenMeshes = k98kClip,stripperclip,g30,gewcup,singleshell
+#hiddenMeshes = k98kClip,stripperclip,g30,gewcup,singleshell
 
 # per bullet muzzle rize (in degrees)
 muzzleRise = 5.0
@@ -24,13 +24,13 @@ reloadSound = sounds\k98reload.wav
 
 # specify the weapon & clip (clip optional) model here
 # note that data\gr2data\FPS\ is prepended to these file names
-weaponModel = kar98k\gunmesh-kar98k
+weaponModel = gewehr\gewehr
 #clipModel = kar98k\gunmesh-5roundstripperclip
 
 # granny attach bone names for weapon & clip
 # the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
-weaponConnectTo = rifle-control
-weaponConnect = k98k-connect
+weaponConnectTo = weapon-control
+weaponConnect = gewehr-connect
 
 # the clipConnect bone in the clip attaches to the clipConnectTo bone in the gun
 #clipConnectTo = stripperclip-control
