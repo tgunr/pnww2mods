@@ -21,11 +21,20 @@
 		<tab label="  ${brigade.hqtab}  " x="0" y="0" width="930" height="460"
 			onshow='setHelp(getlocstring("brigade.hqtab.help")); tplTab()' onupdate="runExtSquadUpdate()" 
 			tip="${brigade.hqtab.tip}">
-			<view id="left-pane" x="18" y="18" width="444" height="411">
-				<view x="10" y="335" width="425" height="75">
+			<view id="left-pane" x="18" y="18" width="444" height="411">	
+
+				
+				<!-- Brigade View -->
+				
+				<view id="brigadedecalholder" x="10" y="325" width="70" height="70" />
+				
+				<!-- -->
+				
+			
+				<view x="90" y="335" width="425" height="75">
 					<caption id="details-brigade" x="0" y="45" width="400" height="25" style="color: #BFE2CE; font-size: +2;"
 						onshow="this.label = brigade.name.toUpperCase()"/>
-					<image x="0" y="45" src="ui/textures/test/horiz_underline.bmp" width="425" height="12"/>
+					<image x="0" y="45" src="ui/textures/test/horiz_underline.bmp" width="410" height="12"/>
 					<caption id="details-division" x="10" y="30" width="415" height="15" style="color: #e9e3d9ff; "
 						onshow="this.label = getCountryBranch(client.country, client.branch) + ', ' + brigade.division"/>
 					<caption id="details-command" x="10" y="15" width="415" height="15" style="color: #e9e3d9ff; "
@@ -33,6 +42,7 @@
 					<caption id="details-home" x="10" y="0" width="415" height="15" style="color: #e9e3d9ff; "
 						onshow="this.label = (brigade.home != null) ? getlocstring('brigade.hqtab.basedoutof') + ' ' + brigade.home.name: ''"/>
 				</view>
+				
 				<view x="10" y="20" width="430" height="300">
 					<caption label="${brigade.hqtab.missions}" x="0" y="277" height="20" width="300" style="font-size: +1; color: #BFE2CE;"/>
 					<image x="0" y="275" src="ui/textures/test/horiz_underline.bmp" width="430" height="12"/>
@@ -538,10 +548,18 @@
 			
 			missionPreviewMap.mgr.SyncToMap();
 			missionList.setColorText(false);
-			quickhelp();
-			initTutorials();
+			quickhelp(); 
+			initTutorials(); 
 			
-			game.consoleprint("Brigade HQ inited\n");
+			cprint("@@@");
+			cprint("Adding new brigade view!");
+			// Add brigade decal to left pane
+			var holder = findview("brigadedecalholder");
+			var bid = brigade.id;
+			var bgd = "<view class=\"brigadedecal\" id=\"brigdecal\" brigadeid=\"" + bid + "\" x=\"0\" y=\"0\" width=\"70\" height=\"70\" />";
+			var brigdecal = holder.addview(bgd);			
+			brigdecal.visible = true;
+
 		}
 
 		function updateTabs()
