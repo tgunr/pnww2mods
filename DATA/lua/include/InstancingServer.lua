@@ -83,14 +83,10 @@ function Instancing.SetStateValue(self, instanceNo, stateName, value)
 
 	-- Convert to hex format for better hashing.
 	local instanceId = self.formatInstanceNo(instanceNo)
-
-	-- Check to see if the value needs modifying.
-	local instanceStates = self.InstanceStates[instanceId]
-	if not instanceStates then
-		instanceStates = self._BlankInstance(instanceId, instanceNo)
-		self.InstanceStates[instanceId] = instanceStates
-	end
-
+	
+	-- grab our state
+	local instanceStates = self:GetState(instanceNo)
+	
 	-- this might cause new clients to miss updated data?
 	local currentValue = instanceStates[stateName]
 	if tostring(currentValue) == tostring(value) then
@@ -113,12 +109,8 @@ function Instancing.AddStateValue(self, instanceNo, stateName, value)
 	-- Convert to hex format for better hashing.
 	local instanceId = self.formatInstanceNo(instanceNo)
 
-	-- Check to see if the value needs modifying.
-	local instanceStates = self.InstanceStates[instanceId]
-	if not instanceStates then
-		instanceStates = self._BlankInstance(instanceId, instanceNo)
-		self.InstanceStates[instanceId] = instanceStates
-	end
+	-- grab our state
+	local instanceStates = self:GetState(instanceNo)
 
 	if(instanceStates[stateName] == nil) then
 		instanceStates[stateName] = 0
@@ -156,12 +148,9 @@ end
 -- Course, this doesn't provide timers and stuff.
 
 function Instancing.GetInstanceState(self, instanceNo)
-	local instanceId = self.formatInstanceNo(instanceNo)
-	local instanceStates = self.InstanceStates[instanceId]
-	if not instanceStates or type(intanceStates) ~= "table" then
-		instanceStates = self._BlankInstance(instanceId, instanceNo)
-		self.InstanceStates[instanceId] = instanceStates
-	end
+	
+	-- grab our state
+	local instanceStates = self:GetState(instanceNo)
 
 	local keyvalues = ""
 	for k, v in pairs(instanceStates)
@@ -169,10 +158,33 @@ function Instancing.GetInstanceState(self, instanceNo)
 		if type(v) ~= "number" then
 			keyvalues = keyvalues .. string.format("[%q]=%q,", k, v)
 		else
-			keyvalues = keyvalues .. string.format("[%q]=", k) .. tostring(v)
+			keyvalues = keyvalues .. string.format("[%q]=", k) .. tostring(v) .. ","
 		end
 	end
 	return { Instancing.SuccessCode, "{"..keyvalues.."}" }
+end
+
+--------- --------- --------- --------- --------- ---------
+-- Retrieve a dump of instance state variables etc.
+-- Course, this doesn't provide timers and stuff.
+
+function Instancing.GetState(self, instanceNo)
+	-- format our index
+	local instanceId = self.formatInstanceNo(instanceNo)
+	
+	-- return it if we have one
+	local instanceStates = self.InstanceStates[instanceId]
+	
+	-- if we found one, return it
+	if instanceStates ~= nil and type(instanceStates) == "table" then
+		return instanceStates
+	end
+	
+	-- create a blank one
+	self.InstanceStates[instanceId] = self._BlankInstance(instanceId, instanceNo)
+	
+	-- return it
+	return self.InstanceStates[instanceId]
 end
 
 -- Start the communications stuff.

@@ -125,6 +125,9 @@ Instancing =
 	-- public: static
 
 ,	formatInstanceNo = function (num)
+		if num == nil then
+			return "bad_instance"
+		end
 		return string.format("%016u", tonumber(num))
 	end
 
@@ -132,6 +135,7 @@ Instancing =
 	-- Returns a new, blank instance entity.
 
 ,	_BlankInstance = function (instanceId, instanceNo)
+		print("Creating new blank state for "..instanceId.."/"..tostring(instanceNo))
 		local self = {}
 		self['id'] = instanceId
 		self['no'] = tonumber(instanceNo)
