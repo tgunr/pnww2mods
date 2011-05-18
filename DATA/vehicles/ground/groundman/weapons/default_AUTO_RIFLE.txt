@@ -47,7 +47,9 @@ convergenceDistance = 200.0
 # required for autofire weapons as well as recycling weapons
 holdfire = 1
 
-ejectDelay = 0.6
+# says whether to eject the shells immediately or on a time delay
+ejectImmediate = 1
+#ejectDelay = 0.6
 
 # size multilier for the shell model
 shellScale = 0.25
