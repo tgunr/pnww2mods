@@ -109,8 +109,9 @@ if(true) then
 		"place windmill1 -235.17 274.79 19.43 0 0 185 0 0 0 0",
 		"place vinbarn1 -28.71 272.04 14.50 0 0 180 0 0 0 0",
 		"place blumaine1c -6.00 8.00 6.12 0 0 210 0 0 0 0",
-		"place cratepile_outside 94.08 -19.59 7.9 -2 0 180 0 0 0 0",
+		"place cratepile_outside 94.63 -22.22 7.9 -2 0 180 0 0 0 0",
 		"place cratepile_outside 109 -6.27 7.7 -2 0 65 0 0 0 0",
+		
 		
 		
 		
