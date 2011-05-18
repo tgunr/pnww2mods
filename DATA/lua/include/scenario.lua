@@ -62,7 +62,7 @@ scenario.AddScore = function(team, points)
 	end
 	team = tonumber(team);
 	if(team >= 1 and team <= 2 and state.victory == 0) then
-		ui.ChatPrint("Adding " .. points .. " points to team " .. team);
+		--ui.ChatPrint("Adding " .. points .. " points to team " .. team);
 		Instancing:SendAddState("victory" .. team, points);
 	end
 end
