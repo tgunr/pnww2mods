@@ -32,7 +32,7 @@ end
 
 -- give a point to the enemy each time I die
 function OnDie(handler)
-	ui.ChatPrint("On die called!");
+	--ui.ChatPrint("On die called!");
 	scenario.AddEnemyScore(1);	
 	-- scenario.manager:RunEvent("ondie");
 	return 1;

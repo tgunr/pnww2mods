@@ -54,7 +54,7 @@ function DoLandmine(name, value)
 	local veh = vehicle.vehFindVehicle(tonumber(data[2]));
 	
 	if(veh ~= nil and veh:IsMe() and not game.SuperTroop()) then
-		ui.ChatPrint("You have detonated a " .. data[1]);
+		ui.ChatPrint("You have detonated a mine!");
 		fp.fpFPSKillTrooper();
 		tutorial.manager:RemoveHandler("OnLandmine");
 	end

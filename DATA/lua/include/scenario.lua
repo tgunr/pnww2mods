@@ -297,13 +297,13 @@ scenario.CheckVictory = function(name, value)
 	local score 	=  Instancing:GetStateNumber(name);
 	local victory 	= tonumber(state.config.victory);
 
-	ui.ChatPrint("Checking " .. score .. " against " .. victory);	
+	-- ui.ChatPrint("Checking " .. score .. " against " .. victory .. " for " .. name);	
 	
 	if(score >= victory) then
 		if(name == "victory1") then
-			Instancing:SendSetState("victory", 1);
+			Instancing:SendStateValue("victory", 1);
 		elseif(name == "victory2") then
-			Instancing:SendSetState("victory", 2);
+			Instancing:SendStateValue("victory", 2);
 		end
 	end
 	
