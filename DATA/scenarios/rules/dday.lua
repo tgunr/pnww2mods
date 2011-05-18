@@ -69,7 +69,7 @@ function OnRoundTimer(name, value)
 		ui.ChatPrint(string.format("There are %d minutes left in this round!", minutes));
 	elseif(timeLeft == 0) then
 		-- team 2 axis wins if its the round ends
-		Instancing:SetState("victory2", state.config.victory);
+		Instancing:SendSetState("victory2", state.config.victory);
 	else
 		-- this timer was just inited
 	end
