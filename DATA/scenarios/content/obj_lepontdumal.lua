@@ -68,6 +68,11 @@ if(true) then
 		"block 123.98 -34.23 8.53 127.56 -26.02 8.70 1 10",
 		"block 193.16 -93.40 7.36 160.99 -84.63 7.88 1 10",
 		"block 113.12 -36.77 8.49 71.74 -19.79 7.67 1 10",
+		
+		-- temporary blocking below placeholder north bridge
+		"block 126.71 19.92 6.09 135.42 47.96 3.33 3.5 5",
+
+		
 
 		
 -- FX EMMITERS
