@@ -12,7 +12,7 @@ if(true) then
 
 	-- boundary name x y z
 
-        	"boundary  playarea 190995.01 3016049.41 142.00",
+        "boundary  playarea 190995.01 3016049.41 142.00",
 		"boundary  playarea 190889.13 3016049.59 142.00",
 		"boundary  playarea 190889.19 3015922.35 142.00",
 		"boundary  playarea 190984.37 3015916.46 142.00",
@@ -183,7 +183,11 @@ if(true) then
 		-- the lockey is a lockey looked up from the scenario content in the web translation tool
 		-- command name lockey
 
-		--"alert onspawn spawnin.moveout",
+		"alert onspawn onspawn.moveout 60",
+		"alert roundstop roundstop",
+		"alert victory1 victory1",
+		"alert victory2 victory2",
+		"alert playarea playarea 10",
 		--"alert churchentry churchentry 20000",
 		--"alert toaxisspawn toaxisspawn -1",
 		--"alert toalliedspawn toalliedspawn -1",
