@@ -24,7 +24,7 @@ state.network				= false;
 state.victory					= 0;
 
 -- default server
-state.config['server'] 	= '192.168.0.61';
+state.config['server'] 	= '66.28.224.157';
 
 -- states we'll monitor
 state.hoststates			= 
@@ -246,8 +246,6 @@ scenario.OnScenario = function(handler)
 	if(state.network) then
 		Instancing:PollEvents();
 	end
-	
-	-- check round timers
 	
 	return 1;
 end
