@@ -359,7 +359,7 @@ if(true) then
 		-- allied spawn list
 		"vehicle alliedtroops us-assault",
 		"vehicle alliedtroops us-smg",
-		"vehicle alliedtroops us-lmg",
+		"vehicle alliedtroops us-bar",
 		-- axis spawn list
 		"vehicle axistroops de-assault",
 		"vehicle axistroops de-smg",
