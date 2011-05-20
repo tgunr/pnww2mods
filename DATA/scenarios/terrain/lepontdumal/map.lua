@@ -113,6 +113,9 @@ if(true) then
 		"place cratepile_outside 109 -6.27 7.7 -2 0 65 0 0 0 0",
 		"place vinbarn1 153.5 81.5 6.5 0 0 -67 0 0 0 1",
 		"place vinbarn1 137.0 79.0 5.85 0 0 -250 0 0 0 0",
+		"place cratepile_outside 178.78 -66.67 7.3 0 0 -60 0 0 0 0",
+		
+		
 		
 		
 		
