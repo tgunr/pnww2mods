@@ -610,7 +610,7 @@
 <!ENTITY loc.english.399 "Verrou MAJ">
 <!ENTITY loc.english.824 "Connexion à la carte du monde perdue, erreur &#37;d.">
 <!ENTITY loc.english.616 "joystick 3 button 5">
-<!ENTITY loc.english.851 "&#37;ls supply depleted for &#37;ls, switching to &#37;ls">
+<!ENTITY loc.english.851 "&#37;ls ravitaillement bas pour &#37;ls, basculant vers &#37;ls">
 <!ENTITY loc.english.311 "Gouvernail de direction">
 <!ENTITY loc.english.142 "CONFIG ECRAN">
 <!ENTITY loc.english.813 "Résultat de la mission:">
@@ -2267,7 +2267,7 @@
 <!ENTITY widgets.keymapper.keys.function "NOM DE LA FONCTION">
 <!ENTITY widgets.prefs.groups.titles.visual "Réglages visuels">
 <!ENTITY widgets.prefs.groups.sound.maxsounds.tip "Selectionnez combien de sons seront audibles en même temp. Réduire pour plus de performance.">
-<!ENTITY widgets.prefs.groups.infantry.lod.highest "highest">
+<!ENTITY widgets.prefs.groups.infantry.lod.highest "Plus haut">
 <!ENTITY widgets.prefs.groups.hud.icons.vehtype "type de véhicule">
 <!ENTITY widgets.prefs.groups.visual.shadows "NOMBRE OMBRES">
 <!ENTITY widgets.prefs.groups.game.language.spanish "castillan">
@@ -2424,7 +2424,7 @@
 <!ENTITY widgets.prefs.groups.sound.ambient.frequent "fréquents">
 <!ENTITY widgets.prefs.groups.connection.network.tip "Selectionnez le chemin suivi par votre connexion. &#34;Meilleure&#34; est l&#39;option la meilleure mais vous pouvez forcer votre connexion à utiliser une autres voie vers le serveur si besoin. Peut améliorer le Lag/Stabilité.">
 <!ENTITY widgets.idcard.nextrank "jusqu&#39;au prochain grade">
-<!ENTITY widgets.prefs.groups.infantry.lod.tip "Select how detailed third person troops are. Lower performs better while higher looks better.">
+<!ENTITY widgets.prefs.groups.infantry.lod.tip "Sélectionnez quel niveau de détail vous souhaitez sur les fantassins. Faible = plus de performances, élevé = plus jolie.">
 <!ENTITY widgets.prefs.groups.shadows.flying "OMBRES EN VOL">
 <!ENTITY widgets.calibration.mouse.more "plus">
 <!ENTITY widgets.prefs.groups.chat.reset.tip "Cliquez sur ce bouton pour remettre les réglages initiaux des radios. Utilisable en ligne uniquement.">
@@ -2544,7 +2544,7 @@
 <!ENTITY widgets.map.options.zoom.sector "SECTEUR">
 <!ENTITY widgets.prefs.groups.ui.colors.aws.tip "Selectionnez les couleurs pour le Air Warning System (Radar) indiquant la population avion par zone.">
 <!ENTITY widgets.prefs.groups.sound.ambient.infrequent "rares">
-<!ENTITY widgets.prefs.groups.infantry.lod "LEVEL OF DETAIL">
+<!ENTITY widgets.prefs.groups.infantry.lod "NINVEAU DE DETAILS">
 <!ENTITY widgets.map.info.target.tip "Indique l&#39;objectif de votre mission actuelle">
 <!ENTITY widgets.prefs.groups.hud.ppos.ok "EMPLACEMENT CORRECT">
 <!ENTITY widgets.map.waypoints.title "POINTS DE PASSAGE">
@@ -2689,7 +2689,7 @@
 <!ENTITY widgets.calibration.device.axisz "Axe Z">
 <!ENTITY widgets.prefs.pending "Vous avez modifié des paramètres. Voulez-vous les conserver?">
 <!ENTITY widgets.prefs.groups.video.vertsync.tip "Demande au jeu de se synchroniser avec la vitesse d&#39;affichage de l&#39;écran. Désactiver pour une amélioration des performances.">
-<!ENTITY widgets.prefs.groups.infantry.lod.lowest "lowest">
+<!ENTITY widgets.prefs.groups.infantry.lod.lowest "Plus faible">
 <!ENTITY widgets.map.waypoints.contact.danger "DANGER">
 <!ENTITY widgets.prefs.groups.sound.system.tip "Selectionnez si le son est par la carte son ou par un software. Le choix peut jouer sur la qualité du son ou les performances selon votre matériel.">
 <!ENTITY widgets.prefs.groups.hud.mode.hide "hide hud">
@@ -3397,7 +3397,7 @@
 <!ENTITY common.vehicles.classes.12 "Navire côtier">
 <!ENTITY common.squads.create.msg.handle "{0} ne semble pas être le pseudo d&#39;un joueur.">
 <!ENTITY common.countries.de.navy "Marine allemande">
-<!ENTITY common.squads.edit.tip "Cliquez pour activer le mode d&#39;édition. Une fois que vous avez effectué vos changements, cliquez à nouveau sur ce bouton pour soumettre vos modifications.">
+<!ENTITY common.squads.edit.tip "Cliquez pour activer le mode d&#39;édition.">
 <!ENTITY common.squads.invite.accept "ACCEPTER">
 <!ENTITY common.time.now "maintenant">
 <!ENTITY common.squads.ranks.rank2 "Membre">
@@ -3457,6 +3457,7 @@
 <!ENTITY common.mission.ad "Défense de zone">
 <!ENTITY common.squads.invite.decline "REFUSER">
 <!ENTITY common.countries.it.army "Armée italienne">
+<!ENTITY common.buildinfo "Informations">
 <!ENTITY common.squads.edit.homepage "Merci d&#39;entrer l&#39;adresse web de votre squad.">
 <!ENTITY common.map.tab.tip "Visualisez les lignes de front. Zoomez sur les zones de combat et planifiez votre attaque ou votre défense.">
 <!ENTITY common.countries.fr.army "Armée française">
@@ -4135,7 +4136,7 @@
 <!ENTITY vehicles.1.4.9.8 "Commandant Britannique">
 <!ENTITY vehicles.1.2.7.6 "Canon AC ROQF 17pdr 76mm">
 <!ENTITY vehicles.1.1.2.8 "Spitfire Mk Ib">
-<!ENTITY vehicles.bailedcrew "Bailed Air Crew">
+<!ENTITY vehicles.bailedcrew "Equipage(s) parachuté(s)">
 <!ENTITY vehicles.3.1.1.2 "Douglas DB-7">
 <!ENTITY vehicles.3.3.13.2 "Cargo Français">
 <!ENTITY vehicles.4.4.9.2 "Pistolet-mitrailleur Allemand">
@@ -4200,7 +4201,7 @@
 <!ENTITY vehicles.3.2.4.6 "M3A3 Stuart">
 <!ENTITY vehicles.1.1.1.2 "Blenheim MK IV-T">
 <!ENTITY vehicles.1.4.9.13 "Mortier léger Britannique">
-<!ENTITY vehicles.4.1.2.5 "Messerschmitt Bf109G-6">
+<!ENTITY vehicles.4.1.2.5 "Messerschmitt Bf109G-6/U4">
 <!ENTITY vehicles.1.2.4.7 "A15 Crusader Mk II">
 <!ENTITY vehicles.3.3.13.1 "Destroyer Français">
 <!ENTITY vehicles.3.1.2.3 "Hurricane Mk I">
@@ -4312,7 +4313,7 @@
 <!ENTITY connect.error.eagain "eagain">
 <!ENTITY connect.fail "Connexion échouée">
 <!ENTITY connect.login.auth.timeout "Temps d’authentification dépassé">
-<!ENTITY connect.host.cell "cellhost">
+<!ENTITY connect.host.cell "serveur">
 <!ENTITY connect.login.chat.error "Impossible de se connecter au serveur Chat">
 <!ENTITY connect.ping.kbps "Kbps: &#37;.1f in, &#37;.1f out.">
 <!ENTITY connect.error.ehostunreach "ehostunreach">
@@ -4338,9 +4339,9 @@
 <!ENTITY connect.netcode2.firewall "[netcode2 connection failed, vérifiez votre pare feu - reverting to standard network usage]">
 <!ENTITY connect.login.error "Erreur en se connectant au serveur">
 <!ENTITY connect.reconnect.failed "Connexion avec le serveur perdu, reconnexion échouée">
-<!ENTITY connect.host.chat "chathost">
+<!ENTITY connect.host.chat "serveur chat">
 <!ENTITY connect.refused "Connexion refusée avec le serveur">
-<!ENTITY connect.host.map "maphost">
+<!ENTITY connect.host.map "Serveur carte">
 <!ENTITY connect.netcode2.disabled "[netcode2 Hors service sur le serveur]">
 <!ENTITY connect.find.nobest "Impossible de se connecter au réseau">
 <!ENTITY connect.error.econnreset "econnreset">
