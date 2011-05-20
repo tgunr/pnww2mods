@@ -15,11 +15,15 @@ if(true) then
 		"place doggreen_ob3 0 0 0 0 0 0 0 0 0 0",
 		
 		-- higgins boats
-		"place vn_veh_lcvp -45.56 200.06 3.2 0 0 120 0 0 0 0",
-		"place vn_veh_lcvp -38.89 174.78 3.50 0 0 105 0 0 0 0",
-		"place vn_veh_lcvp -8.51 170.86 3.2 0 0 135 0 0 0 0",
-		"place vn_veh_lcvp -35.66 189.92 3.2 0 0 130 0 0 0 0",
-		"place vn_veh_lcvp 1.72 157.33 3.4 0 0 125 0 0 0 0",
+		"place dg_veh_lcvp -45.56 200.06 3.2 0 0 120 0 0 0 0",
+		"place dg_veh_lcvp -38.89 174.78 3.50 0 0 105 0 0 0 0",
+		"place dg_veh_lcvp -8.51 170.86 3.2 0 0 135 0 0 0 0",
+		"place dg_veh_lcvp -35.66 189.92 3.2 0 0 130 0 0 0 0",
+		"place dg_veh_lcvp 1.72 157.33 3.4 0 0 125 0 0 0 0",
+		"place dg_veh_lcvp -42.57 244.33 2.7 -15 -10 125 0 0 0 0",
+		
+		
+		
 
 		-- belgium gates filenamemissing low poly
 		"place dg_obs_elementc -14.31 270.78 2.75 0 0 195 0 0 0 0",
@@ -39,9 +43,9 @@ if(true) then
 		"place dg_obs_elementc 170.79 169.18 2.8 0 0 205 0 0 0 0",
 		
 		-- sherman hulks
-		"place instance_hulk2_dam -49.85 162.93 3.85 0 -5 5 0 0 0 0",
-		"place instance_hulk2_dam -18.65 165.73 2.7 0 10 0 0 0 0 0",
-		"place instance_hulk2_dam -12.08 136.99 4.2 5 5 0 0 0 0 0",
+		"place m4a2hulk -49.85 162.93 3.95 0 5 205 0 0 0 0",
+		"place m4a2hulk -18.65 165.73 2.7 0 -5 200 0 0 0 0",
+		"place m4a2hulk -12.08 136.99 4.0 5 15 180 0 0 0 0",
 		
 		
 		
@@ -80,91 +84,16 @@ if(true) then
 		"place dangersign -205.00 -226.65 40.9 0 0 180 0 0 0 0",
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		"place dangersign -22.75 -200.99 45.4 0 0 -10 0 0 0 0",
+		"place dangersign -72.48 -197.40 45.4 0 0 0 0 0 0 0",
+		"place dangersign -144.63 -172.68 44 0 0 -5 0 0 0 0",
+		"place dangersign -162.73 -120.95 39.7 0 0 90 0 0 0 0",
+		"place dangersign -150.62 -112.39 41.3 0 0 160 0 0 0 0",
+		"place dangersign -122.74 -156.73 44.0 0 0 175 0 0 0 0",
+		-- "place dangersign -212.32 -246.59 40.5 0 0 -10 0 0 0 0",
+		-- "place dangersign -212.32 -246.59 40.5 0 0 -10 0 0 0 0",
 		
 	
-		
-		
-		
-		
-		
-		
-		
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-		
-		
-		
-	
-	
-
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
-		
-		
-		
-		
-	
-
-
-
-
-
-
-
 
 
 	};
