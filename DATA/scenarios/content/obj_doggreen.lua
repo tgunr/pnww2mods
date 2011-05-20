@@ -236,7 +236,7 @@ if(true) then
 	-- ANONYMOUS VERSION
 	-- command typeid x y z roll pitch yaw
 
-		"clone uk_z34 509.16 922.13 -5 0 0 90",
+		"clone uk_z34 509.16 922.13 3.3 0 0 90",
 		"clone pak40 -350.63 199.13 22.5 0 0 90 ",
 		"clone pak40 -172.00 93.24 12.2 0 0 90 ",
 		"clone pak40 -124.42 46.24 12.6 0 -10 90 ",
