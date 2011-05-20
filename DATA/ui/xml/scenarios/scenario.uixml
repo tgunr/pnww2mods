@@ -382,6 +382,7 @@
 			var side 		= client.persona.country.side;  
 			
 			header.label = (side == 1) ? "ALLIED FORCES" : "AXIS FORCES" ;
+			header.label +=  " - #" + client.instance.id ;
 		}
 		
 		function switchSides()

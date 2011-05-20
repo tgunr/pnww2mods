@@ -136,6 +136,10 @@
 			 onshow="this.y = this.parent.height - this.height - 2;" acceptmouseclick="false" align="right"/>
 	</view>
 	
+	<!-- compass -->
+	<view id="compass" class="compass" src="ui/textures/compass_bg.bmp" width="100" height="100" rright="6" rtop="6" frame="no" aspectlimit="width"
+		moveondrag="yes" acceptmouseclick="true" followall="true"/>
+	
 	<!-- GAME INFO -->
 	<view id="binfo" y="58" width="175" height="47" rright="6" aspectlimit="width" visible="false"
 		style="background-color: #00000088; 
@@ -270,6 +274,10 @@
 			primaryProgress.visible	= false;
 			
 			var state = hud.findview("state");
+			var compass = hud.findview("compass");
+			
+			if(!game.scenario || !game.customterrain)
+				compass.visible = false;
 			
 			if(meType == "person")
 			{

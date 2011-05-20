@@ -197,12 +197,12 @@
 					var instance 	= scenario.instance;
 					var id				= instance.description.id;
 					
-					var label 		= content.title;
+					var label 		= "#" + id + " - " + content.title;
 					var color 		= "#00FF00";
 					
 					label += " axis=" + instance.axis;
 					label += " allies=" + instance.allies;
-						
+					
 					if(instance.running)
 						label += " running";
 					

@@ -473,6 +473,10 @@
 				var index	= 0;
 				var persona = sortedPersonas[p];
 				
+				// no US persona selection for now
+				if(persona.country.id == 2)
+					continue;
+				
 				//consoleprint("Doing " + persona.country.name + "/" + persona.branch + ": " + persona.lastused + "\n");
 				
 				while(index < personas.length)

@@ -16,11 +16,15 @@
 			label = null;
 	}
 	
+	function setDisplay(loc)
+	{
+		label = getlocstring(loc);
+	}
+	
 	function updateHUDObject(placement, distance, alpha)
 	{
 		if(display != null)
 		{
-			
 			if(alpha == 0)
 			{
 				if(display.visible)
