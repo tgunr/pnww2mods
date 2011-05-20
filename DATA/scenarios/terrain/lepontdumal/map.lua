@@ -73,9 +73,9 @@ if(true) then
 		"place tanktrap 108.65 -34.12 7.5 0 0 20 0 0 0 0",
 		"place tanktrap 110.29 -35.06 7.6 0 0 -10 0 0 0 0",
 		"place tanktrap 112.06 -34.00 7.7 0 0 -10 0 0 0 0",
-		"place instance_hulk2_dam 104.5 -36.35 7.4 0 5 -120 0 0 0 0",
+		"place instance_hulk1_dam 104.5 -36.35 7.4 0 5 -120 0 0 0 0",
 		"place kr_brg_n_dam 0.00 0.00 0.62 0 0 0 0 0 0 0",
-		"place instance_hulk2_dam 92.00 -78.00 7.76 -3 5 125 0 0 0 0",
+		"place instance_hulk1_dam 92.00 -78.00 7.76 -3 5 125 0 0 0 0",
 		"place truck_dam_outside 63.93 -53.93 8.15 0 0 0 0 0 0 0",
 		"place haystack_outside 112.48 -66.75 8.00 0 0 110 0 0 0 0",
 		"place cratepile_outside 50.93 -40.93 8.21 0 0 0 0 0 0 0",
@@ -111,6 +111,11 @@ if(true) then
 		"place blumaine1c -6.00 8.00 6.12 0 0 210 0 0 0 0",
 		"place cratepile_outside 94.63 -22.22 7.9 -2 0 180 0 0 0 0",
 		"place cratepile_outside 109 -6.27 7.7 -2 0 65 0 0 0 0",
+		"place vinbarn1 153.5 81.5 6.5 0 0 -67 0 0 0 1",
+		"place vinbarn1 137.0 79.0 5.85 0 0 -250 0 0 0 0",
+		
+		
+		
 		
 		
 		
@@ -119,8 +124,8 @@ if(true) then
 		
 		-- ALLIED HULKS NEAR THE BRIDGE
 
-		"place instance_hulk2_dam 144.60 72.28 6.95 0 -2 30 0 0 0 0",
-		"place instance_hulk2_dam 152.80 64.43 2.08 25 -14 -35 0 0 0 0",
+		"place m4a2hulk 144.60 72.28 6.95 0 0 185 0 0 0 0",
+		"place m4a2hulk 152.80 64.43 2.08 25 -14 -35 0 0 0 0",
 				 
 		
 		-- NEAR BRIDGE
@@ -151,6 +156,10 @@ if(true) then
 		"place dangersign 117.95 42.16 5 0 0 240 0 0 0",
 		"place dangersign 109.42 4.50 5.9 0 0 -50 0 0 0",
 		"place dangersign 82.02 -12.05 6 0 0 -40 0 0 0",
+		"place dangersign 219.18 19.13 7 0 0 0 0 0 0",
+		
+		
+		
 		
 		-- NEAR ALLIED SPAWN
 		
@@ -169,7 +178,10 @@ if(true) then
 		"place instance_rockwallberm2 214.31 110.05 3.5 -2 0 40 0 0 0 0",
 		"place instance_rockwallberm2 198.73 98.92 3.5 -5 0 70 0 0 0 0",
 		"place instance_rockwallberm2 181.18 89.42 3.5 -5 0 70 0 0 0 0",
-		"place instance_rockwallberm1 158.71 79.64 4.2 5 10 70 0 0 0 0",
+		"place instance_rockwallberm1 167.28 78.93 3.0 10 10 70 0 0 0 0",
+		
+		
+		
 		
 		-- WALL BLOCKING TOWN
 
