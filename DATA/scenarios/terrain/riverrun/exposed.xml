@@ -27,13 +27,13 @@
     <!-- Color clamped between 0 - 255 -->
     <!-- Example: redclamp 100 will clamp red mask grass to red color >= 100 -->
     <!-- The higher the clamp, the less number of blades placed-->
-    <redclamp>1</redclamp>
-    <grnclamp>100</grnclamp>
-    <bluclamp>100</bluclamp>
+    <redclamp>200</redclamp>
+    <grnclamp>200</grnclamp>
+    <bluclamp>200</bluclamp>
     <!-- default is 1.0 -->
     <redscale>0.55</redscale>
-    <grnscale>1.15</grnscale>
-    <bluscale>1.4</bluscale>
+    <grnscale>1.05</grnscale>
+    <bluscale>1.3</bluscale>
   </grass>
   <terrainmaterials>
     <!-- Keep in ascending order (layer0, layer1, layer2...etc)-->
