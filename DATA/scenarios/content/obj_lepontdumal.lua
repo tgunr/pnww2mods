@@ -51,13 +51,13 @@ if(true) then
 
 		-- Allied Infantry Spawn Points
 
-		"spawn alliedtroops 213.11 152.80 5.55 -1.35",
-		"spawn alliedtroops 203.77 146.97 6.37 -1.8",
+		"spawn alliedtroops 213.11 152.80 5.55 180",
+		"spawn alliedtroops 203.77 146.97 6.37 180",
 
 		-- Axis Infantry spawn Points
 
-		"spawn axistroops 210.55 -15.95 7.81 -2.20",
-		"spawn axistroops 216.89 -17.83 7.80 -2.29",
+		"spawn axistroops 186.96 -84.36 7.66 0",
+		"spawn axistroops 178.17 -81.09 8.23 0",
 
 -- DEFINE BLOCKED AREAS OF NO ACCESS TO PLAYERS
 	
@@ -70,7 +70,10 @@ if(true) then
 		"block 113.12 -36.77 8.49 71.74 -19.79 7.67 1 10",
 		
 		-- temporary blocking below placeholder north bridge
-		"block 126.71 19.92 6.09 135.42 47.96 3.33 3.5 5",
+		"block 130.07 36.89 4.66 124.52 19.44 5.19 2 3.5",
+		"block 137.03 44.28 5.06 130.01 22.29 5.45 2 3.5",
+		
+		
 
 		
 
@@ -189,7 +192,7 @@ if(true) then
 
 	-- AREA TRIGGERS
 	-- command name triggertype worldx worldy worldz
-	-- directions near axis spawn 1
+	-- directions near allied spawn 1
 
 		"area toaxisspawn OnTrigger 205.20 155.44 6.70",		
 		"area toaxisspawn OnTrigger 196.16 145.35 7.05",
@@ -198,12 +201,12 @@ if(true) then
 		"area toaxisspawn OnTrigger 161.99 147.53 7.52",
 		"area toaxisspawn OnTrigger 190.28 170.11 8.02",		
 
-	-- directions near allied spawn 1
+	-- directions near axis spawn 1
 
-		"area toalliedspawn OnTrigger 206.57 -6.40 8.17",	
-		"area toalliedspawn OnTrigger 199.36 -22.17 8.17",	
-		"area toalliedspawn OnTrigger 178.45 -19.22 8.17",	
-		"area toalliedspawn OnTrigger 176.68 1.85 8.17",
+		"area toalliedspawn OnTrigger 199.46 -81.38 6.34",	
+		"area toalliedspawn OnTrigger 169.44 -67.58 8.56",	
+		"area toalliedspawn OnTrigger 173.63 -56.17 9.19",	
+		"area toalliedspawn OnTrigger 205.99 -69.41 7.07",
 
 	-- telling allies to turn around and go the other way
 		"area allieswrongway OnTrigger 272.23 192.78 4.61",
@@ -354,11 +357,11 @@ if(true) then
 
 	-- spawn masks
 		-- allied spawn list
-		"vehicle alliedtroops ukrifle",
-		"vehicle alliedtroops uk-smg",
-		"vehicle alliedtroops uk-lmg",
+		"vehicle alliedtroops us-assault",
+		"vehicle alliedtroops us-smg",
+		"vehicle alliedtroops us-lmg",
 		-- axis spawn list
-		"vehicle axistroops derifle",
+		"vehicle axistroops de-assault",
 		"vehicle axistroops de-smg",
 		"vehicle axistroops de-lmg",
 	
@@ -378,14 +381,14 @@ if(true) then
 	-- definethemask definethemessage vehicleid
 	-- note, by defining which team does get the alert, the other team will not get the alert
 				
-		"vehicle bridgecapture1 1 0 0 0",
-		"vehicle toaxisspawn 1 0 0 0",
+		"vehicle bridgecapture1 2 0 0 0",
+		"vehicle toaxisspawn 2 0 0 0",
 		"vehicle toalliedspawn 4 0 0 0",
-		"vehicle allieswrongway 1 0 0 0",
+		"vehicle allieswrongway 2 0 0 0",
 		
 	-- objective masks
-	-- the bridgecapture objective applies only to country 1
-		"vehicle bridgecapture 1 0 0 0",		
+	-- the bridgecapture objective applies only to country 2
+		"vehicle bridgecapture 2 0 0 0",		
 		
 --  #### END DOC LOOK AT THIS ####
 	
