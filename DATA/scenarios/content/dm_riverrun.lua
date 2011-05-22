@@ -173,10 +173,10 @@ if(true) then
 		
 		-- spawn points
 		-- command,spawngroup,worldx,worldy,worldz,yaw
-		"spawn alliedtroops -35.72 -152.77 7.82 0.44",
-		"spawn alliedtroops -22.44 -161.92 7.82 0.41",
-		"spawn axistroops 210.55 -15.95 7.81 -2.20",
-		"spawn axistroops 216.89 -17.83 7.80 -2.29",
+		"spawn alliedtroops -35.72 -152.77 7.82 75",
+		"spawn alliedtroops -22.44 -161.92 7.82 65",
+		"spawn axistroops 210.55 -15.95 7.81 200",
+		"spawn axistroops 216.89 -17.83 7.80 250",
 
 -- CLONES --
 
@@ -192,6 +192,8 @@ if(true) then
 		"clone bedford -35.21 -147.32 8.85 6 2 285",
 		"clone oplbltz 192.79 -31.45 8.5 5 -4.25 205",
 		"clone oplbltz 176.32 -20.12 8.55 0 0 180",
+		
+		--"waypoint churchentry -10.0 -10.0 10.0",
 
 		-- ALERTS AND CHATS
 		-- ADD A CHAT TO THE CHAT WINDOW
@@ -265,11 +267,11 @@ if(true) then
 		
 		-- allied spawn list
 		"vehicle alliedtroops us-smg",
-		"vehicle alliedtroops us-bar",
+		"vehicle alliedtroops us-bar 1",
 
 		-- axis spawn list
 		"vehicle axistroops de-smg",
-		"vehicle axistroops de-lmg",
+		"vehicle axistroops de-lmg 1",
 		
 		-- "vehicle alliedtroops us-assault",
 		-- "vehicle alliedtroops us-smg",

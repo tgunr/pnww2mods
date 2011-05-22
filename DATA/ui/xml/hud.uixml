@@ -137,8 +137,18 @@
 	</view>
 	
 	<!-- compass -->
-	<view id="compass" class="compass" src="ui/textures/compass_bg.bmp" width="100" height="100" rright="6" rtop="6" frame="no" aspectlimit="width"
-		moveondrag="yes" acceptmouseclick="true" followall="true"/>
+	<view id="compass" width="110" height="110" rright="6" rtop="6" aspectlimit="width"
+			moveondrag="yes" acceptmouseclick="true" followall="true">
+		<view class="compass" src="ui/textures/compass_bg.bmp" x="5" y="5" width="100" height="100" frame="no" aspectlimit="width"/>
+		<caption label="N" x="0" height="10" rright="0" rtop="0" style="font-size: -1; color: #BFE2CE;"
+			acceptmouseclick="false" align="center"/>
+		<caption label="S" x="0" y="0" height="10" rright="0" style="font-size: -1; color: #BFE2CE;"
+			acceptmouseclick="false" align="center"/>
+		<caption label="E" height="10" width="10" rright="0" rtop="52" style="font-size: -1; color: #BFE2CE;"
+			acceptmouseclick="false" align="right"/>
+		<caption label="W" x="0" height="10" width="10" rtop="52" style="font-size: -1; color: #BFE2CE;"
+			acceptmouseclick="false" align="left"/>
+	</view>
 	
 	<!-- GAME INFO -->
 	<view id="binfo" y="58" width="175" height="47" rright="6" aspectlimit="width" visible="false"
@@ -274,10 +284,6 @@
 			primaryProgress.visible	= false;
 			
 			var state = hud.findview("state");
-			var compass = hud.findview("compass");
-			
-			if(!game.scenario || !game.customterrain)
-				compass.visible = false;
 			
 			if(meType == "person")
 			{
@@ -347,6 +353,11 @@
 			
 			// make sure this gets reset
 			setCaptureCallback(null);
+			
+			var compass = hud.findview("compass");
+			
+			if(!game.customterrain)
+				compass.visible = false;
 			
 			hudInited = true;
 		}

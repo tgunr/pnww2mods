@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE uixml SYSTEM "loc://ui.dtd">
-<window id="scenarios/scenario" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" onshow="initWin()" onupdate="doForwardTimer()">
+<window id="scenarios/scenario" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" onshow="initWin()" onupdate="scenarioUpdate()">
 	<include file="lib/tutorial.uixml"/>
 	<include file="lib/scenarios.uixml"/>
 	<include file="widgets/template.uixml"/>
@@ -91,7 +91,8 @@
 		
 		var client 				= game.player.client;
 		var theatreMap	= findview("mapview");
-		var ftimer				= new CycleTimer(10000);
+		var forwardTimer	= new CycleTimer(5000);
+		var listTimer			= new CycleTimer(1000);
 		var scenario			= game.globals.scenario;
 		var selections		= findview("selection-tab");
 		var showButton	= findview("show-button");
@@ -100,6 +101,7 @@
 		var memberList 	= new ListControl(findview("memberList"));
 		
 		var vehicles			= new Object();
+		var classes			= new Object();
 		var rootNodes		= new Array();
 		
 		/***************** COMMON FUNCTIONS *******************/
@@ -118,17 +120,15 @@
 			
 			if(index != null)
 			{
-				cprint("Attempting to spawn 1!");
-				
 				var vehicle = vehicles[index];
 				
-				cprint("Attempting to spawn 2!");
-				
-				// this call  
-				game.spawn(vehicle.type);
+				// this call
 				setForwardEnabled(false);
-				ftimer.reset();
-				ftimer.enabled = true;
+				forwardTimer.reset();
+				forwardTimer.enabled = true;
+				
+				if(vehicle.spawnable == "spawnable")
+					game.spawn(vehicle.type);
 			}
 			else
 			{
@@ -167,65 +167,98 @@
 			
 			setForcesHeader();
 			
-			ftimer.enabled = false;
+			forwardTimer.enabled = false;
 			
 			// mission members coming and going
 			client.onmissionroomchange = initMissionMembers;
 		}
 				
-		function initSpawnableTree()
+		function initSpawnableTree(spawnables)
 		{
-			var spawnables = game.spawnablevehicles;
-			
-			if(spawnables.length > 0)
+			if(spawnables.length == 0)
+				return;
+				
+			for(var i = 0; i < spawnables.length; i++)
 			{
-				var classes = new Object();
+				var vehicle = spawnables[i];
+				if(vehicle == null) continue;
 				
-				for(var i = 0; i < spawnables.length; i++)
-				{
-					var vehicle = spawnables[i];
-					if(vehicle == null) continue;
-					
-					if(classes[vehicle.vclassid] == null)
-						classes[vehicle.vclassid] = new TreeNode(vehicle.vclassid, null, 1, true, vehicle.vclass);
-					
-					classes[vehicle.vclassid].addNode(new TreeNode(vehicle.id, vehicle.index, 2, false));
-					
-					vehicles[vehicle.index] = new VehicleClass(vehicle);
-				}
-				
-				var cids 	= new Array(9, 8, 4, 7, 5, 6, 2, 1, 12, 13, 14);
-				var preopen	= null;
-				
-				for(var c = 0; c < cids.length; c++)
-				{
-					var node = classes[cids[c]];
-					
-					if(node != null)
-					{
-						if(preopen == null)
-							preopen = node; // open the first node
-						
-						spawnTree.addNode(node, toggleNode);
-						rootNodes[rootNodes.length] = node;
-					}
-				}
-				
-				if(preopen)
-					preopen.expand();
+				if(classes[vehicle.vclassid] == null)
+					classes[vehicle.vclassid] = new TreeNode(vehicle.vclassid, null, 1, true, vehicle.vclass);
 			}
+			
+			var cids 	= new Array(9, 8, 4, 7, 5, 6, 2, 1, 12, 13, 14);
+			var preopen	= null;
+			
+			for(var c = 0; c < cids.length; c++)
+			{
+				var node = classes[cids[c]];
+				
+				if(node != null)
+				{
+					if(preopen == null)
+						preopen = node; // open the first node
+					
+					spawnTree.addNode(node, toggleNode);
+					rootNodes[rootNodes.length] = node;
+				}
+			}
+			
+			if(preopen)
+				preopen.expand();
 			
 			spawnTree.setColorText(false);
 		}
 		
 		function initSpawnables()
 		{
-			if(!spawnTree.initTree())
-				initSpawnableTree();
+			var spawnables 	= game.spawnablevehicles;
+			var counters			= game.scenariospawns;
 			
-			for(var i = 0; i < rootNodes.length; i++)
-				rootNodes[i].children = rootNodes[i].children.sort(sortNodes);
+			if(!spawnTree.initTree())
+				initSpawnableTree(spawnables);
 				
+			// clear out previous data
+			for(var i in classes)
+				classes[i].reset();
+			
+			vehicles = new Object();
+			
+			// rebuild data
+			for(var i = 0; i < spawnables.length; i++)
+			{
+				var vehicle = spawnables[i];
+				
+				if(vehicle == null || classes[vehicle.vclassid] == null)
+					continue;
+				
+				classes[vehicle.vclassid].addNode(new TreeNode(vehicle.id, vehicle.index, 2, false));
+				
+				var vc = new VehicleClass(vehicle);
+				
+				vc.capacity 			= counters[i].capacity;
+				vc.current 			= counters[i].current;
+				vc.minimumrank 	= counters[i].minimumrank;
+				vc.spawnable 		= counters[i].spawnable;
+				
+				if(vc.capacity == -1)
+				{
+					vc.available = -1;
+				}
+				else
+				{
+					vc.available = vc.capacity - vc.current;
+					
+					if(vc.available < 0)
+						vc.available = 0;
+				}
+				
+				vehicles[vehicle.index] = vc;
+			}
+			
+			for(var i in classes)
+				classes[i].children = classes[i].children.sort(sortNodes);
+			
 			cprint("Drawing tree!");
 			
 			spawnTree.drawTree();
@@ -294,15 +327,34 @@
 			{
 				var vehicle			= vehicles[node.data];
 				var label				= vehicle.type.description;
+				var availability		= "n/a";
+				var color				= "#00FF00";
+				
+				if(vehicle.capacity == -1)
+					availability = vehicle.current + " of unlimited spawned";
+				else
+					availability = vehicle.current + " of " + vehicle.capacity + "  spawned";
+				
+				if(vehicle.capacity == -1 || vehicle.available > 0)
+				{
+					color	 = "#00FF00";
+				}
+				else
+				{
+					color	 = "#FF0000";
+				}
 				
 				var row 				= new ViewBuilder(tree.list, node.id, 0, 0, 0, 16);
-				var caption			= row.addBuilder(new TextBuilder(row, "title", "caption", label, indent, 0, -indent, 16));
+				var vcaption			= row.addBuilder(new TextBuilder(row, "title", "caption", label, indent, 0, -indent, 16));
+				var acaption			= row.addBuilder(new TextBuilder(row, "avail", "caption", availability, indent, 0, -(indent + 5), 16));
 				
 				row.addAttribute("aspectalign", "left");
 				row.addAttribute("onmouseenter", mouseenter);
 				row.addAttribute("onmouseexit", mouseexit);
 				
-				caption.addStyle("color", "#00FF00");
+				vcaption.addStyle("color", color);
+				acaption.addStyle("color", color);
+				acaption.addAttribute("align", "right");
 				
 				return row.build();
 			}
@@ -362,18 +414,24 @@
 			showOk(getlocstring('mission.spawn.denied' + code));
 		}
 		
-		function doForwardTimer()
+		function scenarioUpdate()
 		{
 			if(game.scenariocomplete)
 			{
-				ftimer.enabled = false;
 				setForwardEnabled(false);
 				joinLobby();
 				return;
 			}
 			
-			//ftimer.enabled = false;
-			setForwardEnabled(true);
+			// rebuild our spawn list
+			if(listTimer.run())
+				initSpawnables();
+			
+			if(forwardTimer.run())
+			{
+				setForwardEnabled(true);
+				forwardTimer.enabled = false;
+			}
 		}
 		
 		function setForcesHeader()
