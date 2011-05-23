@@ -50,23 +50,23 @@ if(true) then
 
 		-- SMOKING BARRELS
 
-		"emitter hulksmoke 273119.68 3016921.62 482.00",
+		--"emitter hulksmoke 273119.68 3016921.62 482.00",
 		-- "emitter hulksmoke -29.35 -105.79 9.06",
 
 		-- SMOKING CRATERS
 
-		"emitter hulksmoke 173.40 -38.89 6.9",
-		"emitter hulksmoke 129.71 -55.96 7.0",
+		--"emitter hulksmoke 173.40 -38.89 6.9",
+		--"emitter hulksmoke 129.71 -55.96 7.0",
 
 		-- SMOKESCREEN
 
-		"emitter smokescreen -46.03 -224.78 15.92",
-		"emitter smokescreen -1.73 -226.20 16.42",
+		--"emitter smokescreen -46.03 -224.78 15.92",
+		--"emitter smokescreen -1.73 -226.20 16.42",
 		
 		-- SMOKING VEHICLES
 
-		"emitter hulksmoke 272998.02 3016996.20 481.5",
-		"emitter hulksmoke 272922.72 3016995.51 481.5",
+		--"emitter hulksmoke 272998.02 3016996.20 481.5",
+		--"emitter hulksmoke 272922.72 3016995.51 481.5",
 
 		-- BURNING VEHICLES
 
