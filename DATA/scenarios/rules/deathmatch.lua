@@ -8,6 +8,9 @@ Include("scenario");
 state.name 					= "scenario.deathmatch";
 state.enablemap			= true;
 
+state.config['duration'] 	= 10;
+state.config['kills'] 			= 30;
+
 -- set our initial tutorial state
 tutorial.SetState(state);
 
