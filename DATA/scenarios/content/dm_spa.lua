@@ -145,19 +145,19 @@ if(true) then
 	-- command name triggertype worldx worldy worldz
 	-- directions near axis spawn 1
 				
-		-- directions near allied spawn 1
+		-- directions on allied spawn 1
 
-		--"area toalliedspawn OnTrigger 273072.68 3017105.01 481.04",
-		--"area toalliedspawn OnTrigger 273083.87 3017104.83 481.04",
-		--"area toalliedspawn OnTrigger 273084.30 3017091.38 481.04",
-		--"area toalliedspawn OnTrigger 273064.71 3017091.61 481.04",
+		"area toalliedspawn OnTrigger 281265.40 3029325.10 307.00",
+		"area toalliedspawn OnTrigger 281216.83 3029326.95 307.00",
+		"area toalliedspawn OnTrigger 281217.05 3029274.24 307.00",
+		"area toalliedspawn OnTrigger 281271.93 3029276.93 307.00",
 		--"area toalliedspawn OnTrigger 273065.58 3017086.03 481.00",
 		--"area toalliedspawn OnTrigger 273091.97 3017086.82 481.00",
 		--"area toalliedspawn OnTrigger 273101.01 3017097.40 481.00",
 		--"area toalliedspawn OnTrigger 273089.52 3017110.12 481.004",
 		--"area toalliedspawn OnTrigger 273073.21 3017110.48 481.00",
 		
-		-- directions near axis spawn 1
+		-- directions on axis spawn 1
 
 		--"area toaxisspawn OnTrigger 272896.87 3016931.75 481.02",
 		--"area toaxisspawn OnTrigger 272892.58 3016929.13 481.00",
@@ -197,10 +197,10 @@ if(true) then
 		-- command name lockey
 
 		--"alert onspawn spawnin.moveout",
-		"alert churchentry churchentry 20000",
+		"alert churchentry churchentry 1",
 		--"alert toaxisspawn toaxisspawn -1",
 		--"alert toalliedspawn toalliedspawn -1",
-		"alert NWCORNERWARN NWCORNERWARN",
+		"alert NWCORNERWARN NWCORNERWARN 0",
 
 		
 		
