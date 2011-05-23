@@ -113,8 +113,17 @@
 		
 		function doForward()
 		{
-			if(game.scenariocomplete)
+			if(game.scenariocomplete || scenario.instance == null)// || !scenario.instance.running)
+			{
+				showOk("Bad scenario state!");
 				return;
+			}
+			
+			if(!canScenarioSpawn(scenario))
+			{
+				showOk("Waiting for more players to join!");
+				return;
+			}
 			
 			var index = spawnTree.selectedData();
 			
@@ -171,6 +180,9 @@
 			
 			// mission members coming and going
 			client.onmissionroomchange = initMissionMembers;
+			
+			// get our scenario state
+			scenario.instance = getScenarioState();
 		}
 				
 		function initSpawnableTree(spawnables)
@@ -259,7 +271,7 @@
 			for(var i in classes)
 				classes[i].children = classes[i].children.sort(sortNodes);
 			
-			cprint("Drawing tree!");
+			//cprint("Drawing tree!");
 			
 			spawnTree.drawTree();
 		}
@@ -362,7 +374,7 @@
 		
 		function selectSpawnable(spawn)
 		{
-			cprint("Vehicle selected!");
+			//cprint("Vehicle selected!");
 			
 			if(spawn)
 				doForward();
@@ -425,7 +437,12 @@
 			
 			// rebuild our spawn list
 			if(listTimer.run())
+			{
 				initSpawnables();
+				
+				// update our scenario state
+				scenario.instance = getScenarioState();
+			}
 			
 			if(forwardTimer.run())
 			{
@@ -446,11 +463,7 @@
 		function switchSides()
 		{
 			if(switchTeams(scenario))
-			{
-				//setForcesHeader();
-				//initSpawnables();
 				loadWin("scenarios/scenario", true);
-			}
 		}
 		
 		function initMissionMembers()

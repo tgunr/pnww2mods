@@ -1,9 +1,14 @@
 <?xml version="1.0"?>
 <script>
+
+	<include file="classes/ScenarioPopulation.uixml"/>
 	
 	<!--
 	
 		var scenariosRoot = null;
+		var lastScenarioError = null;
+		var MAX_SIDE_PLAYERS = 64;
+		var balanceChecking = false;
 		
 		function loadRoot()
 		{
@@ -43,11 +48,19 @@
 			
 			if(map >= 0 && map < content.links.length)
 			{
-				var c = game.getcontent(content.links[map].path);
+				var sc = game.getcontent(content.links[map].path);
 				
-				if(!c) cprint("Couldnt load scenario!");
+				if(sc)
+				{
+					sc.type = map;
+					sc.population = new ScenarioPopulation(sc);
+				}
+				else
+				{
+					cprint("Couldnt load scenario!");
+				}
 				
-				return c;
+				return sc;
 			}
 			
 			return null;
@@ -111,8 +124,91 @@
 		
 		function selectTeam(scenario, team)
 		{
-			var country 	=  scenario["team" + team];
+			var population 	= scenario.population;
+			var instance	= scenario.instance;
+			
+			// find the best team
+			if(team == null)
+				team = 0;
+			
+			//var maxplayers	= population.maxPlayers();
+			var team1ratio 	= population.teamRatio(1);
+			var team2ratio 	= population.teamRatio(2);
+			var team1count 	= instance.allies;
+			var team2count 	= instance.axis;
+			var totalplayers	= team1count + team2count; 
+			
+			if(team == 0)
+			{
+				if(totalplayers == 0)
+					return selectTeam(scenario, game.player.client.persona.country.side);
+				
+				// find the team with the smallest imbalance
+				var pop1Ratio = team1count / totalplayers;
+				var pop2Ratio = team2count / totalplayers;
+				
+				var team1diff = (team1ratio - pop1Ratio);
+				var team2diff = (team2ratio - pop2Ratio);
+				
+				if(team1diff > team2diff)
+					return selectTeam(scenario, 1);
+				else if(team2diff > team1diff)
+					return selectTeam(scenario, 2);
+				else
+					return selectTeam(scenario, (team1count < team2count) ? 1 : 2);
+			}
+			else if(team == 1)
+			{
+				if(balanceChecking && totalplayers > 0)
+				{
+					cprint("totalplayers is " + totalplayers);
+					cprint("team1ratio is " + team1ratio);
+					cprint("team1count is " + team1count);
+					cprint("team1max is " + population.team1max);
+					
+					if(team1count >= population.team1max)
+						return scenarioError("sidefull");
+					
+					var teamratio = team1count / totalplayers;
+					
+					if(teamratio == 0)
+						teamratio = team1ratio;
+					
+					//cprint("team1diff is " + team1diff);
+					cprint("teamratio is " + teamratio);
+					cprint("allowance is " + population.allowance);
+					
+					if(team1ratio < teamratio - population.allowance || team1ratio > teamratio + population.allowance)
+						return scenarioError("sideimbalance");
+				}
+			}
+			else
+			{
+				if(balanceChecking && totalplayers > 0)
+				{
+					cprint("totalplayers is " + totalplayers);
+					cprint("team2ratio is " + team2ratio);
+					cprint("team2count is " + team2count);
+					cprint("team2max is " + population.team2max);
+					
+					if(team2count >= this.team2max)
+						return scenarioError("sidefull");
+					
+					var teamRatio = team2count / totalplayers;
+					
+					if(teamratio == 0)
+						teamratio = team2ratio;
+					
+					cprint("teamratio is " + teamRatio);
+					cprint("allowance is " + population.allowance);
+					
+					if(team2ratio < teamratio - population.allowance || team2ratio > teamratio + population.allowance)
+						return scenarioError("sideimbalance");
+				}
+			}
+			
 			var client		= game.player.client;
+			var country 	=  scenario["team" + team];
 			
 			if(!client.persona || client.persona.country.id != country)
 			{
@@ -129,9 +225,12 @@
 				}
 				
 				if(persona == null)
-					return false;
+					return scenarioError("badpersona");
 				
-				return client.selectpersona(persona);
+				if(client.selectpersona(persona))
+					return true;
+				else
+					return scenarioError("failedpersona");
 			}
 			
 			return true;
@@ -140,6 +239,75 @@
 		function switchTeams(scenario)
 		{
 			return selectTeam(scenario,  ((game.player.client.persona.country.side == 1) ? 2 : 1));
+		}
+		
+		// potentially expensive call, don't use it to often (calls across network and blocks)
+		function getScenarioState(instance)
+		{
+			if(instance == null)
+				instance = game.player.client.instance;
+			
+			if(game.player.client.listinstances(instance.category, instance.type, instance.owner))
+			{
+				var instances = client.instances;
+				
+				for(var i = 0; i < instances.length; i++)
+				{
+					var state = instances[i];
+					
+					if(state.description.id == instance.id)
+						return state;
+				}
+			}
+			
+			return null;
+		}
+		
+		function canJoinScenario(scenario)
+		{
+			if(!balanceChecking)
+				return true;
+			
+			if(scenario == null || scenario.instance == null)// || !scenario.instance.running)
+				return scenarioError("badscenario");
+			
+			var maxplayers	= scenario.population.maxPlayers();
+			var team1count	= scenario.instance.allies;
+			var team2count	= scenario.instance.axis;
+			
+			if(team1count + team2count >= maxplayers)
+				return scenarioError("fullscenario");
+			
+			return true;
+		}
+		
+		function canScenarioSpawn(scenario)
+		{
+			if(!balanceChecking)
+				return true;
+			
+			if(scenario == null || scenario.instance == null)// || !scenario.instance.running)
+				return scenarioError("badscenario");
+			
+			var team1min = scenario.population.team1min;
+			var team2min = scenario.population.team2min;
+			
+			var team1count = scenario.instance.allies;
+			var team2count = scenario.instance.axis;
+			
+			//cprint("Found " + team1count + " of " + team1min + " allied players!");
+			//cprint("Found " + team2count + " of " + team2min + " axis players!");
+			
+			if(team1count < team1min || team2count < team2min)
+				return scenarioError("moreplayers");
+			
+			return true;
+		}
+		
+		function scenarioError(code)
+		{
+				lastScenarioError = "scenarios." + code;
+				return false;
 		}
 		
 	-->

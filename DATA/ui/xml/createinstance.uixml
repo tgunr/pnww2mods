@@ -251,22 +251,19 @@
 								
 							cprint("Found created instance!");
 							
-							var bestSide = (client.persona) ? client.persona.country.side : 1;
 							var scenario = loadScenario(category, map);
 							
-							if(instance.axis > instance.allies)
-								bestSide = 1;
-							else if(instance.allies > instance.axis)
-								bestSide = 2;
+							scenario.instance = instance;
 							
 							cprint("Joining created instance!");
 							
-							if(selectTeam(scenario, bestSide) && joinInstance(instance.description, true))
+							if(selectTeam(scenario) && joinInstance(instance.description, true))
 							{
 								joined = true;
 							}
 							else
 							{
+								showOk(lastScenarioError);
 								joinLobby();
 							}
 							

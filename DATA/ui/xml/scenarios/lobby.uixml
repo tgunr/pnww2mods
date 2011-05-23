@@ -197,14 +197,20 @@
 					var instance 	= scenario.instance;
 					var id				= instance.description.id;
 					
-					var label 		= "#" + id + " - " + content.title;
-					var color 		= "#00FF00";
+					if(!instance.running)
+						continue;
 					
-					label += " axis=" + instance.axis;
-					label += " allies=" + instance.allies;
+					var label 			= "#" + id + " - " + content.title;
+					var color 			= "#00FF00";
+					var players		= instance.axis + instance.allies;
 					
-					if(instance.running)
-						label += " running";
+					var team1max	= parseInt(content.team1max);
+					if(isNaN(team1max)) team1max = MAX_SIDE_PLAYERS;
+					
+					var team2max	= parseInt(content.team2max);
+					if(isNaN(team2max)) team2max = MAX_SIDE_PLAYERS;
+					
+					var population	= (players < team1max + team2max) ? players + " players" : "full (" + players + " players)"; 
 					
 					var row 				= new ViewBuilder(instanceList.list, "instance" + id, 0, 0, 0, 16);
 					var caption			= row.addBuilder(new TextBuilder(row, "title", "caption", label, 0, 0, 0, 16));
@@ -231,21 +237,27 @@
 			
 			cprint("Found instance " + instanceList.data);
 			
-			var instance 	= scenario.instance;
-			var bestSide 	= (client.persona) ? client.persona.country.side : 1;
-			
-			if(instance.axis > instance.allies)
-				bestSide = 1;
-			else if(instance.allies > instance.axis)
-				bestSide = 2;
-				
-			if(!selectTeam(scenario.content, bestSide))
+			if(!canJoinScenario(scenario.content, scenario.instance))
+			{
+				showOk('Scenario full!');
 				return;
+			}
+			
+			if(!selectTeam(scenario))
+			{
+				showOk(lastScenarioError);	
+				return;
+			}
 			
 			setForwardEnabled(true);
 			
+			var instance = scenario.instance;
+			
 			if(action && !joinInstance(instance.description, false))
+			{
+				showOk("Failed to join instance!");
 				joinLobby();
+			}
 		}
 		
 		function updateLobby()
