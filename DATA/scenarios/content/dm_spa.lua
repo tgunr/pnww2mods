@@ -151,22 +151,17 @@ if(true) then
 		"area toalliedspawn OnTrigger 281216.83 3029326.95 307.00",
 		"area toalliedspawn OnTrigger 281217.05 3029274.24 307.00",
 		"area toalliedspawn OnTrigger 281271.93 3029276.93 307.00",
-		--"area toalliedspawn OnTrigger 273065.58 3017086.03 481.00",
-		--"area toalliedspawn OnTrigger 273091.97 3017086.82 481.00",
-		--"area toalliedspawn OnTrigger 273101.01 3017097.40 481.00",
-		--"area toalliedspawn OnTrigger 273089.52 3017110.12 481.004",
-		--"area toalliedspawn OnTrigger 273073.21 3017110.48 481.00",
+		
 		
 		-- directions on axis spawn 1
 
-		--"area toaxisspawn OnTrigger 272896.87 3016931.75 481.02",
-		--"area toaxisspawn OnTrigger 272892.58 3016929.13 481.00",
-		--"area toaxisspawn OnTrigger 272872.11 3016943.18 481.00",
-		--"area toaxisspawn OnTrigger 272890.21 3016961.04 481.00",
-		--"area toaxisspawn OnTrigger 272907.17 3016945.80 481.00",
-		--"area toaxisspawn OnTrigger 272903.36 3016940.54 481.00",
-		--"area toaxisspawn OnTrigger 272890.03 3016954.54 481.04",		
-		--"area toaxisspawn OnTrigger 272881.98 3016946.62 481.19",
+		"area toaxisspawn OnTrigger 281546.83 3029529.25 307.00",
+		"area toaxisspawn OnTrigger 281555.68 3029529.81 307.00",
+		"area toaxisspawn OnTrigger 281575.41 3029546.94 307.00",
+		"area toaxisspawn OnTrigger 281573.45 3029566.03 307.00",
+		"area toaxisspawn OnTrigger 281554.49 3029566.11 307.00",
+		"area toaxisspawn OnTrigger 281544.37 3029545.23 307.00",
+		
 
 		-- AT NORTHWESTERN BOUNDARY CORNER
 
@@ -174,6 +169,14 @@ if(true) then
 		"area NWCORNERWARN OnTrigger 281192.77 3029531.76 307.00",
 		"area NWCORNERWARN OnTrigger 281196.42 3029528.09 307.00",
 		"area NWCORNERWARN OnTrigger 281207.84 3029527.26 307.00",
+
+		-- AROUND CHURCH
+		
+		"area churchentry OnTrigger 281463.61 3029446.88 307.00",
+		"area churchentry OnTrigger 281457.93 3029441.14 307.00",
+		"area churchentry OnTrigger 281475.24 3029418.35 307.00",
+		"area churchentry OnTrigger 281483.07 3029425.05 307.00",
+
 
 -- CLONES --
 
@@ -195,12 +198,14 @@ if(true) then
 		-- these are always named
 		-- the lockey is a lockey looked up from the scenario content in the web translation tool
 		-- command name lockey
+		-- command categorynamealert namealert numberofsecondsbetweenrepeatalerts
+		-- numberofsecondsbetweenrepeatalerts 0= no limit, 1= onetime per scenario, unit measure is seconds 
 
-		--"alert onspawn spawnin.moveout",
 		"alert churchentry churchentry 1",
-		--"alert toaxisspawn toaxisspawn -1",
-		--"alert toalliedspawn toalliedspawn -1",
-		"alert NWCORNERWARN NWCORNERWARN 0",
+		"alert toaxisspawn toaxisspawn 1",
+		"alert toalliedspawn toalliedspawn 1",
+		"alert NWCORNERWARN NWCORNERWARN 1",
+		"alert playarea playarea 15",
 
 		
 		
