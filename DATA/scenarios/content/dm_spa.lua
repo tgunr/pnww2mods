@@ -168,12 +168,12 @@ if(true) then
 		--"area toaxisspawn OnTrigger 272890.03 3016954.54 481.04",		
 		--"area toaxisspawn OnTrigger 272881.98 3016946.62 481.19",
 
-		-- AT NORTHEASTERN BOUNDARY CORNER
+		-- AT NORTHWESTERN BOUNDARY CORNER
 
-		"area NECORNERWARN OnTrigger 281207.51 3029532.10 307.00",
-		"area NECORNERWARN OnTrigger 281192.77 3029531.76 307.00",
-		"area NECORNERWARN OnTrigger 281196.42 3029528.09 307.00",
-		"area NECORNERWARN OnTrigger 281207.84 3029527.26 307.00",
+		"area NWCORNERWARN OnTrigger 281207.51 3029532.10 307.00",
+		"area NWCORNERWARN OnTrigger 281192.77 3029531.76 307.00",
+		"area NWCORNERWARN OnTrigger 281196.42 3029528.09 307.00",
+		"area NWCORNERWARN OnTrigger 281207.84 3029527.26 307.00",
 
 -- CLONES --
 
@@ -197,9 +197,10 @@ if(true) then
 		-- command name lockey
 
 		--"alert onspawn spawnin.moveout",
-		--"alert churchentry churchentry 20000",
+		"alert churchentry churchentry 20000",
 		--"alert toaxisspawn toaxisspawn -1",
 		--"alert toalliedspawn toalliedspawn -1",
+		"alert NWCORNERWARN NWCORNERWARN",
 
 		
 		
