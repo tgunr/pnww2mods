@@ -39,17 +39,18 @@ if(true) then
 		"place crate 190994.19 3015989.10 142.00 0 0 0 0 0 0 0",
 		"place crate 190941.93 3016048.81 142.00 0 0 0 0 0 0 0",
 		"place crate 190890.12 3016002.26 142.00 0 0 0 0 0 0 0",
-		--"place crate 190904.33 3015922.28 142.00 0 0 0 0 0 0 0",
-		--"place crate 190904.33 3015922.28 142.00 0 0 0 0 0 0 0",
-		--"place crate 190904.33 3015922.28 142.00 0 0 0 0 0 0 0",
-		--"place crate 190904.33 3015922.28 142.00 0 0 0 0 0 0 0",
+		"place crate 190904.33 3015922.20 142.00 0 0 0 0 0 0 0",
+		"place crate 190940.23 3016027.13 142.00 0 0 0 0 0 0 0",
+		"place crate 190940.58 3016026.32 142.00 0 0 0 0 0 0 0",
+		"place crate 190941.87 3016024.87 142.00 0 0 0 0 0 0 0",
 		--"place crate 190904.33 3015922.28 142.00 0 0 0 0 0 0 0",
 		--"place crate 190904.33 3015922.28 142.00 0 0 0 0 0 0 0",
 
 
 
 	-- Extra Buildings and Objects
-
+		
+		"place oildrums_outside 190948.10 3016028.12 142.00 0 0 0 0 0 0 1",		
 		"place oildrums_outside 190904.52 3015925.27 142.00 0 0 0 0 0 0 0",
 		"place oildrums_outside 190947.99 3015921.97 142.00 0 0 0 0 0 0 0",
 		"place oildrums_outside 190993.19 3015989.17 142.00 0 0 0 0 0 0 0",
@@ -64,8 +65,15 @@ if(true) then
 		"place sandbagwall_curved_outside 190929.66 3016029.08 142.00 0 0 270 0 0 0 0",
 		"place sandbagwall_curved_outside 190944.70 3016029.22 142.00 0 0 90 0 0 0 0",
 		"place sandbagwall_curved_outside 190938.19 3016029.32 142.00 0 0 0 0 0 0 0",
+		"place sandbagwall_curved_outside 190960.80 3015945.34 142.00 0 0 35 0 0 0 0",
+		"place sandbagwall_curved_outside 190965.23 3015946.80 142.00 0 0 90 0 0 0 0",
+		"place sandbagwall_curved_outside 190981.93 3016041.64 142.00 0 0 315 0 0 0 0",
+		"place sandbagwall_curved_outside 190945.39 3016025.29 142.00 0 0 245 0 0 0 0",	
+		"place sandbagwall_curved_outside 190931.88 3016032.53 142.00 0 0 192 0 0 0 0",
+		"place sandbagwall_curved_outside 190992.18 3015934.37 142.00 0 0 96 0 0 0 0",
+		"place sandbagwall_curved_outside 190977.55 3015925.58 142.00 0 0 16 0 0 0 0",
+		"place sandbagwall_curved_outside 190960.02 3015941.58 142.00 0 0 345 0 0 0 0",
 
-	
 		
 		-- MINEFIELD WARNING SIGNS
 
