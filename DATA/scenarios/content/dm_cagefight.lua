@@ -12,23 +12,28 @@ if(true) then
 
 	-- boundary name x y z
 
-        "boundary  playarea 190995.01 3016049.41 142.00",
-		"boundary  playarea 190889.13 3016049.59 142.00",
-		"boundary  playarea 190889.19 3015922.35 142.00",
-		"boundary  playarea 190984.37 3015916.46 142.00",
-		"boundary  playarea 190994.93 3015927.71 142.00",
+        	"boundary playarea 190995.13 3016049.28 142.00",
+		"boundary playarea 190889.14 3016049.59 142.00",
+		"boundary playarea 190889.23 3015922.34 142.00",
+		"boundary playarea 190984.46 3015916.46 142.00",
+		"boundary playarea 190994.97 3015927.81 142.00",
 		
 
 -- DEFINE WHERE PLAYERS SPAWN
 
+	-- Allied Infantry Spawns
+	-- command spawngroup worldx worldy,worldz yaw
+	
+		"spawn alliedtroops 190900.52 3016040.81 145.55 180",
+		"spawn alliedtroops 190907.37 3016040.87 145.55 180",
+		"spawn alliedtroops 190904.22 3016023.94 145.55 0",
+
+	-- Axis Infantry Spawns
 	-- command spawngroup worldx worldy,worldz yaw
 
-		"spawn alliedtroops 272890.99 3016947.85 487.16",
-		"spawn alliedtroops 272889.54 3016950.37 481.20",
-		"spawn alliedtroops 272896.46 3016945.17 481.20",
-		"spawn axistroops 273082.02 3017098.82 487.16",
-		"spawn axistroops 273082.50 3017095.11 481.20",
-		"spawn axistroops 273055.25 3017095.18 481.20",
+		"spawn axistroops 190979.58 3015947.05 145.55 204",
+		"spawn axistroops 190984.56 3015941.84 145.55 245",
+		"spawn axistroops 190970.10 3015932.28 145.55 44",
 
 -- DEFINE BLOCKED AREAS OF NO ACCESS BY PLAYERS
 
@@ -46,7 +51,7 @@ if(true) then
 	-- SMOKING BARRELS
 
 		--"emitter hulksmoke 273119.68 3016921.62 482.00",
-		-- "emitter hulksmoke -29.35 -105.79 9.06",
+		--"emitter hulksmoke -29.35 -105.79 9.06",
 
 	-- SMOKING CRATERS
 
@@ -183,11 +188,11 @@ if(true) then
 		-- the lockey is a lockey looked up from the scenario content in the web translation tool
 		-- command name lockey
 
-		"alert onspawn onspawn.moveout 60",
-		"alert roundstop roundstop",
-		"alert victory1 victory1",
-		"alert victory2 victory2",
-		"alert playarea playarea 10",
+		--"alert onspawn onspawn.moveout 60",
+		--"alert roundstop roundstop",
+		--"alert victory1 victory1",
+		--"alert victory2 victory2",
+		--"alert playarea playarea 10",
 		--"alert churchentry churchentry 20000",
 		--"alert toaxisspawn toaxisspawn -1",
 		--"alert toalliedspawn toalliedspawn -1",
