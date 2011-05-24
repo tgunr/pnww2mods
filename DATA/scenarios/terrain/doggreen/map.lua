@@ -4,13 +4,16 @@ if(true) then
 	-- content we're going to add
 	local content = 
 	{
+		-- special handling
+		-- type shader x y z yaw
+		"coast water1 doggreen_coast 0 0 3.3 0.0",
+
 		-- placed objects
 		-- command,filename,worldx,worldy,worldz,roll,pitch,yaw,scalex,scaley,scalez,damage
-		"place water1 0 0 3.3 0 0 90 0 0 0 0",
-		"place water1 800 0 3.3 0 0 90 0 0 0 0",
-		"place water1 0 800 3.3 0 0 90 0 0 0 0",
-		"place water1 800 800 3.3 0 0 90 0 0 0 0",
-		"place water1 800 1600 3.3 0 0 90 0 0 0 0",
+		"place water1 800 0 3.3 0 0 0 0 0 0 0",
+		"place water1 0 800 3.3 0 0 0 0 0 0 0",
+		"place water1 800 800 3.3 0 0 0 0 0 0 0",
+		"place water1 800 1600 3.3 0 0 0 0 0 0 0",
 			
 		"place doggreen_ob3 0 0 0 0 0 0 0 0 0 0",
 		
