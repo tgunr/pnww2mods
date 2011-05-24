@@ -197,8 +197,8 @@
 					var instance 	= scenario.instance;
 					var id				= instance.description.id;
 					
-					if(!instance.running)
-						continue;
+					//if(!instance.running)
+					//	continue;
 					
 					var label 			= "#" + id + " - " + content.title;
 					var color 			= "#00FF00";
@@ -210,7 +210,8 @@
 					var team2max	= parseInt(content.team2max);
 					if(isNaN(team2max)) team2max = MAX_SIDE_PLAYERS;
 					
-					var population	= (players < team1max + team2max) ? players + " players" : "full (" + players + " players)"; 
+					label += " - ";
+					label += (players < team1max + team2max) ? players + " players" : " full (" + players + " players)"; 
 					
 					var row 				= new ViewBuilder(instanceList.list, "instance" + id, 0, 0, 0, 16);
 					var caption			= row.addBuilder(new TextBuilder(row, "title", "caption", label, 0, 0, 0, 16));
@@ -237,13 +238,17 @@
 			
 			cprint("Found instance " + instanceList.data);
 			
-			if(!canJoinScenario(scenario.content, scenario.instance))
+			scenario.content.instance = scenario.instance;
+			
+			/*
+			if(!canJoinScenario(scenario.content))
 			{
 				showOk('Scenario full!');
 				return;
 			}
+			*/
 			
-			if(!selectTeam(scenario))
+			if(!selectTeam(scenario.content))
 			{
 				showOk(lastScenarioError);	
 				return;
