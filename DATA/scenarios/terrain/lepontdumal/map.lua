@@ -45,10 +45,10 @@ if(true) then
 		"place boarding1 112.70 -36.50 8.25 0 0 109 0 0 0 0",
 		"place cratepile_outside 126.50 -31.60 7.83 0 0 200 0 0 0 0",
 		"place bel1 120.39 -16.04 7.89 0 0 20 0 0 0 1",
-		"place sandbagwall_outside 136.25 -21.00 7.59 -5 0 93 0 0 0 0",
-		"place sandbagwall_outside 139.50 -22.25 7.58 0 0 -50 0 0 0 0",
-		"place sandbagwall_outside 141.00 -26.00 7.50 0 0 0 0 0 0 0",
-		"place oildrums_outside 135.50 -23.00 8.08 0 0 30 0 0 0 1",
+		-- "place sandbagwall_outside 136.25 -21.00 7.59 -5 0 93 0 0 0 0",
+		-- "place sandbagwall_outside 139.50 -22.25 7.58 0 0 -50 0 0 0 0",
+		-- "place sandbagwall_outside 141.00 -26.00 7.50 0 0 0 0 0 0 0",
+		"place oildrums_outside 135.50 -23.00 7.9 0 0 30 0 0 0 1",
 		"place citybild2 99.74 -29.71 7.68 0 2 113 0 0 0 1",
 		"place wall02 87.70 -25.50 6.58 0 0 19 0 0 0 0",
 		"place wall02 81.40 -23.30 6.60 0 0 19 0 0 0 0",
@@ -74,20 +74,24 @@ if(true) then
 		"place tanktrap 110.29 -35.06 7.6 0 0 -10 0 0 0 0",
 		"place tanktrap 112.06 -34.00 7.7 0 0 -10 0 0 0 0",
 		"place instance_hulk1_dam 104.5 -36.35 7.4 0 5 -120 0 0 0 0",
-		"place kr_brg_n_dam 0.00 0.00 0.62 0 0 0 0 0 0 0",
+		
+		
+		"place stonebridgeshort 123.25 23.25 6.55 0 0 -16 0 0 0 0",
+		
+		
 		"place instance_hulk1_dam 92.00 -78.00 7.76 -3 5 125 0 0 0 0",
 		"place truck_dam_outside 63.93 -53.93 8.15 0 0 0 0 0 0 0",
 		"place haystack_outside 112.48 -66.75 8.00 0 0 110 0 0 0 0",
 		"place cratepile_outside 50.93 -40.93 8.21 0 0 0 0 0 0 0",
-		"place crates1c 204.50 -15.50 7.36 0 0 25 0 0 0 0",
+		"place crates1c 204.50 -15.50 7.0 -0.5 0 25 0 0 0 1",
 		"place cratepile_outside 171.00 -12.00 7.86 0 0 0 0 0 0 0",
 		"place cratepile_outside 161.00 -3.00 7.92 0 0 0 0 0 0 0",
-		"place sandbagwall_outside 189.00 -24.50 7.43 0 1 -70 0 0 0 0",
-		"place sandbagwall_outside 185.00 -22.50 7.47 0 1 -58 0 0 0 0",
-		"place sandbagwall_outside 182.40 -19.00 7.52 0 1 -11 0 0 0 0",
-		"place sandbagwall_outside 182.00 -15.00 7.48 0 1 0 0 0 0 0",
-		"place sandbagwall_outside 180.00 -58.50 7.36 0 1 -50 0 0 0 0",
-		"place sandbagwall_outside 175.50 -54.00 7.55 0 1 -25 0 0 0 0",
+		-- "place sandbagwall_outside 189.00 -24.50 7.43 0 1 -70 0 0 0 0",
+		-- "place sandbagwall_outside 185.00 -22.50 7.47 0 1 -58 0 0 0 0",
+		-- "place sandbagwall_outside 182.40 -19.00 7.52 0 1 -11 0 0 0 0",
+		-- "place sandbagwall_outside 182.00 -15.00 7.48 0 1 0 0 0 0 0",
+		-- "place sandbagwall_outside 180.00 -58.50 7.36 0 1 -50 0 0 0 0",
+		--"place sandbagwall_outside 175.50 -54.00 7.55 0 1 -25 0 0 0 0",
 		"place dd_telegraph_07 102.00 -28.00 7.06 5 10 20 0 0 0 0",
 		"place dd_telegraph_07 96.50 -44.00 7.09 0 5 20 0 0 0 0",
 		"place dd_telegraph_07 64.00 -128.00 7.81 0 0 20 0 0 0 0",
@@ -96,11 +100,11 @@ if(true) then
 		"place dd_telegraph_07 -4.00 -96.00 7.34 0 0 110 0 0 0 0",
 		"place dd_telegraph_07 42.00 -138.00 8.77 84 60 20 0 0 0 0",
 		"place dd_telegraph_07 165.00 -85.00 8 61 70 0 0 0 0 0",
-		"place instance_rockwallberm1 138.00 13.50 7.0 -3 0 105 0 0 0 0",
+		-- "place instance_rockwallberm1 138.00 13.50 7.0 -3 0 105 0 0 0 0",
 		"place instance_rockwallberm1 156.00 8.75 7.10 0 0 105 0 0 0 0",
-		"place instance_rockwallberm1 174.00 4.00 6.95 0 0 105 0 0 0 0",
+		-- "place instance_rockwallberm1 174.00 4.00 6.95 0 0 105 0 0 0 0",
 		"place instance_rockwallberm1 192.00 -0.75 6.68 0 0 105 0 0 0 0",
-		"place instance_rockwallberm1 210.00 -5.40 6.49 0 0 105 0 0 0 0",
+		--"place instance_rockwallberm1 210.00 -5.40 6.49 0 0 105 0 0 0 0",
 		"place instance_rockwallberm1 228.00 -10.00 6.26 0 0 105 0 0 0 0",
 		"place instance_rockwallberm1 60.00 -24.00 6.82 0 -2 95 0 0 0 0",
 		"place instance_rockwallberm1 193.00 -84.00 5.41 0 0 25 0 0 0 0",
@@ -109,57 +113,110 @@ if(true) then
 		"place windmill1 -235.17 274.79 19.43 0 0 185 0 0 0 0",
 		"place vinbarn1 -28.71 272.04 14.50 0 0 180 0 0 0 0",
 		"place blumaine1c -6.00 8.00 6.12 0 0 210 0 0 0 0",
-		"place cratepile_outside 94.63 -22.22 7.9 -2 0 180 0 0 0 0",
-		"place cratepile_outside 109 -6.27 7.7 -2 0 65 0 0 0 0",
+		"place cratepile_outside 94.63 -21.0 7.9 -2 0 180 0 0 0 0",
+		"place cratepile_outside 109.5 -6.27 7.5 -2 0 65 0 0 0 0",
 		"place vinbarn1 153.5 81.5 6.5 0 0 -67 0 0 0 1",
 		"place vinbarn1 137.0 79.0 5.85 0 0 -250 0 0 0 0",
 		"place cratepile_outside 178.78 -66.67 7.3 0 0 -60 0 0 0 0",
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		"place haystack_outside 124.81 79.15 5.5 0 0 0 0 0 0 0",
+		"place haystack_outside 122.64 71.44 5.4 0 0 25 0 0 0 0",
+		"place haystack_outside 168.33 85.51 4.0 0 0 0 0 0 0 0",
+		"place crate 138.20 -86.09 8.1 0 0 20 0 0 0 0",
+		"place crate 126.6 -28.5 9.5 0 0 0 0 0 0 0",
+		"place crate 127.48 -27.06 9.5 0 0 45 0 0 0 0",
+		"place instance_hulk1_dam 148.05 -63.81 8.0 -1 2 115 0 0 0 0",
+		"place cratepile_outside 158.58 -51.01 8.0 0 0 -70 0 0 0 0",
+		-- "place dg_wire_barbed_apron	113.59 -78.90 8.59 0 0 0 0 0 0",
 
 		
 		-- ALLIED HULKS NEAR THE BRIDGE
 
 		"place m4a2hulk 144.60 72.28 6.95 0 0 185 0 0 0 0",
-		"place m4a2hulk 152.80 64.43 2.08 25 -14 -35 0 0 0 0",
+		"place m4a2hulk 159.67 70.33 1.5 10 -14 150 0 0 0 0",
+		"place m4a2hulk 152.80 -82.57 -95.59 8.5 -14 -35 0 0 0 0",
+		"place m4a2hulk 62.97 41.79 6.0 -8 0 -160 0 0 0",
+		"place m4a2hulk 125.36 16.61 7.55 5 0 -200 0 0 0",
+		
+		
+		
+		
+		"place dg_wire_barbed_box 164.17 66.20 5.8 -30 -15 60 0 0 0",
+		"place dg_wire_barbed_box 167.34 62.24 7.1 0 0 60 0 0 0",
+		
+		--"place sandbagwall_outside 161.70 61.90 6.95 0 0 45 0 0 0 0",
+		
+		
+		
+		
 				 
 		
 		-- NEAR BRIDGE
 
-		"place tanktrap 142.43 56.22 6.6 15 30 0 0 0 0 0",
-		"place tanktrap 137.0 58.5 7.0 -20 0 15 0 0 0 0",
-		"place tanktrap 136.20 59.62 6.9 10 0 0 0 0 0",
+		"place tanktrap 140.01 62.25 7.57 60 60 0 0 0 0 0",
+		"place tanktrap 138.36 63.89 6.8 0 0 -15 0 0 0 0",
+		"place tanktrap 136.25 64.72 6.5 10 0 0 0 0 0",
 		"place sandbagwall_curved_outside 132.08 18.19 7.7 0 0 80 0 0 0 0",
 		"place ammocrate 135.38 16.71 8.1 0 0 80 0 0 0 0",
 		"place crate 135.39 18.43 7.85 -3 -2 -30 0 0 0 0",
+		"place dg_wire_barbed_apron	120.0 9.94 6.65 -10 -10 -55 0 0 0",
+		"place dg_wire_barbed_apron	132.25 24.75 6.75 -10 -10 -45 0 0 0",
+
+		
+		
+		
+
+		
+		
+		
+		
 
 		-- MINEFIELD WARNING SIGNS
+		"place dangersign 147.07 19.0 8 0 0 10 0 0 0",
+		"place dangersign 214.53 1.53 7.32 0 0 10 0 0 0",
+		"place dangersign 234.01 -3.37 7.18 0 0 10 0 0 0",
+		"place dangersign 257.93 -8.97 6 0 0 10 0 0 0",
+		"place dangersign 197.71 6.01 7.25 0 0 10 0 0 0",
+		"place dangersign 180.65 10.29 7.46 0 0 10 0 0 0",
+		"place dangersign 166.21 13.93 7.75 0 0 10 0 0 0",
+		"place dangersign 156.11 57.98 6.4 0 0 105 0 0 0",
+		"place dangersign 161.22 59.48 7.02 0 0 -180 0 0 0",
+		"place dangersign 170.31 57.02 7.40 0 0 -180 0 0 0",
+		"place dangersign 146.77 22.51 8.07 0 0 105 0 0 0",
+		"place dangersign 149.63 33.88 7.49 0 0 105 0 0 0",
+		
+		"place dangersign 117.55 30.02 7.38 0 0 -80 0 0 0",
+		"place dangersign 119.22 54.20 6.27 0 0 -80 0 0 0",
+		"place dangersign 118.71 43.71 7.25 0 0 -80 0 0 0",
+		"place dangersign 117.08 56.56 5.8 0 0 -150 0 0 0",
+		"place dangersign 98.70 64.93 6.4 0 0 -150 0 0 0",
+		"place dangersign 80.89 73.83 5.1 0 0 -150 0 0 0",
+		"place dangersign 65.92 81.19 4.8 0 0 -150 0 0 0",
+		"place dangersign 73.63 1.45 5.6 0 0 -25 0 0 0",
+		"place dangersign 60.02 -3.73 4.98 0 0 -25 0 0 0",
+		"place dangersign 115.59 26.46 6.47 0 0 -25 0 0 0",
+		"place dangersign 102.25 14.77 5.01 0 0 -25 0 0 0",
+		"place dangersign 88.77 8.53 5.35 0 0 -25 0 0 0",
+		--"place dangersign 149.63 33.88 7.49 0 0 105 0 0 0",
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
-		"place dangersign 156.67 60.02 5.7 0 0 110 0 0 0",
-		"place dangersign 152.83 49.54 5.8 0 0 112 0 0 0",
-		"place dangersign 150.37 39.46 6.9 0 0 110 0 0 0",
-		"place dangersign 146.41 22.67 7.8 0 0 110 0 0 0",
-		"place dangersign 154.02 20.63 7.7 0 0 0 0 0 0",
-		"place dangersign 173.21 18.03 7.6 0 0 5 0 0 0",
-		"place dangersign 202.39 17.01 7.2 0 0 5 0 0 0",
-		"place dangersign 230.86 17.78 7.2 0 0 5 0 0 0",
-		"place dangersign 256.56 18.20 6.8 0 0 5 0 0 0",
-		"place dangersign 289.66 19.51 3.7 15 0 5 0 0 0",
-		"place dangersign 125.43 40.20 5.7 0 0 170 0 0 0",
-		"place dangersign 96.23 83.09 6.5 0 10 240 0 0 0",
-		"place dangersign 100.66 74.60 6.2 0 0 235 0 0 0",
-		"place dangersign 107.61 61.40 6.0 0 0 240 0 0 0",
-		"place dangersign 117.95 42.16 5 0 0 240 0 0 0",
-		"place dangersign 109.42 4.50 5.9 0 0 -50 0 0 0",
-		"place dangersign 82.02 -12.05 6 0 0 -40 0 0 0",
-		"place dangersign 219.18 19.13 7 0 0 0 0 0 0",
 		
 		
 		
@@ -170,21 +227,36 @@ if(true) then
 		
 		-- ROCK WALLS ALONG ROAD
 
-		"place instance_rockwallberm2 196.22 179.71 6.3 0 0 44 0 0 0 0",
-		"place instance_rockwallberm2 177.66 162.34 6.3 0 0 44 0 0 0 0",
-		"place instance_rockwallberm2 161.36 147.27 6.3 0 0 44 0 0 0 0",
-		"place instance_rockwallberm2 148.24 134.07 6.3 0 0 44 0 0 0 0",
-		"place instance_rockwallberm1 127.84 115.2 4.6 0 0 44 0 0 0 0",
-		"place instance_rockwallberm2 106.26 93.17 4.3 0 4 44 0 0 0 0",
+		"place instance_rockwallberm2 196.67 191.00 6.3 0 0 55 0 0 0 0",
+		"place instance_rockwallberm2 179.35 177.93 6.3 0 0 53 0 0 0 0",
+		"place instance_rockwallberm2 161.75 163.45 6.3 0 0 52 0 0 0 0",
+		"place instance_rockwallberm2 145.51 150.69 6.3 0 0 52 0 0 0 0",
+		"place instance_rockwallberm1 123.31 133.95 4.6 0 0 52 0 0 0 0",
+		"place instance_rockwallberm2 98.23 113.15 4.3 0 4 52 0 0 0 0",
+		"place instance_rockwallberm2 66.78 89.91 4.2 0 0 52 0 0 0 0",
+		"place instance_rockwallberm2 57.4 72.97 4.0 0 4 8 0 0 0 0",
+		"place instance_rockwallberm2 54.29 50.72 4.5 -3 4 8 0 0 0 0",
+		"place instance_rockwallberm2 51.55 27.61 5.3 0 4 8 0 0 0 0",
+		"place instance_rockwallberm2 48.52 8.72 4.6 0 -2 8 0 0 0 0",
+		--"place instance_rockwallberm2 57.4 72.97 4.0 0 4 8 0 0 0 0",
+		--"place instance_rockwallberm2 57.4 72.97 4.0 0 4 8 0 0 0 0",
+		--"place instance_rockwallberm2 57.4 72.97 4.0 0 4 8 0 0 0 0",
+
+
+		
+		
+		
+		
+		
 		"place instance_rockwallberm2 226.66 159.00 3.4 4 0 10 0 0 0 0",
 		"place instance_rockwallberm2 222.58 131.44 3.1 -2 0 10 0 0 0 0",
 		"place instance_rockwallberm2 214.31 110.05 3.5 -2 0 40 0 0 0 0",
-		"place instance_rockwallberm2 198.73 98.92 3.5 -5 0 70 0 0 0 0",
-		"place instance_rockwallberm2 181.18 89.42 3.5 -5 0 70 0 0 0 0",
-		"place instance_rockwallberm1 167.28 78.93 3.0 10 10 70 0 0 0 0",
+		--"place instance_rockwallberm2 198.73 98.92 3.5 -5 0 70 0 0 0 0",
+		"place instance_rockwallberm2 189.94 90.5 3.25 0 0 55 0 0 0 0",
+		"place instance_rockwallberm2 170.40 78.83 2.6 20 10 70 0 0 0 0",
 		
 		
-		
+
 		
 		-- WALL BLOCKING TOWN
 
@@ -196,21 +268,8 @@ if(true) then
 		"place oildrums_outside 95.27 -27.98 8.3 0 6 0 0 0 0 1",
 		"place wall02 102 -31.5 6.5 0 0 205 0 0 0 0",
 		
-		-- RIVER CROSSING
 
-		"place crate 93.53 2.87 1.5 0 0 55 0 0 0 0",
-		"place crate 93.98 1.36 1.5 0 0 80 0 0 0 0",
-		"place crate 93.87 -1.68 1.5 0 0 80 0 0 0 0",
-		"place ammocrate 93.8 -0.1 1.9 0 0 0 0 0 0 0",
-		"place instance_rockwallberm1 86 -16 6.7 -15 -8 60 0 0 0 0",
-		"place instance_rockwallberm1 105.46 -3.96 6.7 -10 -5 60 0 0 0 0",
-		"place oildrums_outside 261.45 227.30 3.85 0 0 0 0 0 0 1",
-		"place cratepile_outside 209.43 160.36 5.7 3 0 25 0 0 0 0",
-		
-		
-		-- temp bridge delete this when undestroyed bridge model is available
-		"place cratepile_outside 130 29.27 5.4 0 0 15 0 0 0 0",
-		"place crate 129.13 29.34 6.0 0 0 15 0 0 0 0",
+
 		
 		
 		
