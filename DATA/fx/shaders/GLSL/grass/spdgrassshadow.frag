@@ -2,7 +2,6 @@
 
 uniform sampler2D src1;
 uniform sampler2DShadow src2;
-uniform sampler2DShadow src3;
 
 uniform float alphatest;
 uniform vec3 shadowambient;
@@ -33,12 +32,6 @@ void main()
 	    vec3 c1 = gl_TexCoord[1].xyz / gl_TexCoord[1].w;
 
 	    vec4 s1 = shadow2D(src2, c1);
-
-        c1 = gl_TexCoord[2].xyz / gl_TexCoord[2].w;
-
-	    vec4 s2 = shadow2D(src3, c1);
-
-        s1 *= s2;
 
         s1.rgb = clamp(s1.rgb + shadowambient, 0.0, 1.0);
 

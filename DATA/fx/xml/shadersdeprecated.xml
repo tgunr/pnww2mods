@@ -199,7 +199,6 @@
     </shaders>
     <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
     <uniform name="src2" type="sampler2dshadow" unit="1" onetimeapply="true"></uniform>
-    <uniform name="src3" type="sampler2dshadow" unit="2" onetimeapply="true"></uniform>
     <uniform name="origin" type="float_vec3"></uniform>
     <uniform name="scale" type="float"></uniform>
     <uniform name="shadowambient" type="float_vec3"></uniform>
