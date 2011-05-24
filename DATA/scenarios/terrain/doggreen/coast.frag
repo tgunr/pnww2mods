@@ -73,7 +73,7 @@ void main()
 	float facing = max(dot(n, v), 0.0);
 	
 	// Reflect less if closer to water. 	
-	vec4 color = mix(base, t3, facing);
+	vec4 color = mix(t3, base, facing);
 
     vec4 h = texture2D(height, gl_TexCoord[4].xy);
 
