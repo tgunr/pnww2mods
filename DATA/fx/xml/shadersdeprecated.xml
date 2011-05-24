@@ -135,6 +135,34 @@
     <uniform name="shadowambient" type="float_vec3"></uniform>
   </program>
   <!--=================================================================-->
+  <program name ="coasteffect">
+    <shaders>
+      <vertexshader>scenarios/terrain/doggreen/coasteffect.vert</vertexshader>
+      <fragmentshader>scenarios/terrain/doggreen/coasteffect.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="src3" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="alpha" type="float"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="doggreen_coast">
+    <shaders>
+      <vertexshader>scenarios/terrain/doggreen/coast.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>scenarios/terrain/doggreen/coast.frag</fragmentshader>
+    </shaders>
+    <uniform name="refr" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="refl" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="height" type="sampler2d" unit="4" onetimeapply="true"></uniform>
+    <uniform name="src1" type="sampler2d" unit="5" onetimeapply="true"></uniform>
+    <uniform name="time" type="float"></uniform>
+    <uniform name="alpha" type="float" onetimeappy="true"></uniform>
+  </program>
+  <!--=================================================================-->
   <program name ="flagprogram">
     <shaders>
       <vertexshader>fx/shaders/GLSL/flag/flag.vert</vertexshader>
