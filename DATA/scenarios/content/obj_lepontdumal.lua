@@ -19,8 +19,7 @@ if(true) then
 -- DEFINE THE PLAY AREA
 	-- boundary name x y z
 
-		"boundary playarea 293.95 48.96 4.02",
-		"boundary playarea 291.80 20.31 3.54",
+		"boundary playarea 292.12 21.89 4.24",
 		"boundary playarea 272.08 -1.04 4.86",
 		"boundary playarea 233.77 -27.03 6.49",
 		"boundary playarea 214.87 -51.04 6.16",
@@ -28,7 +27,8 @@ if(true) then
 		"boundary playarea 180.68 -104.04 7.40",
 		"boundary playarea 65.32 -65.03 8.72",
 		"boundary playarea 71.66 -18.64 7.97",
-		"boundary playarea 50.53 41.71 6.76",
+		"boundary playarea 44.76 -18.14 7.28",
+		"boundary playarea 58.89 83.92 6.70",		
 		"boundary playarea 253.17 235.51 8.20",
 		"boundary playarea 278.89 205.99 2.88",
 		"boundary playarea 267.66 196.51 2.71",
@@ -40,9 +40,9 @@ if(true) then
 		"boundary playarea 192.89 90.25 3.19",
 		"boundary playarea 173.55 78.37 2.70",
 		"boundary playarea 160.32 74.79 2.86",
-		"boundary playarea 154.56 71.03 3.68",
-		"boundary playarea 148.51 60.52 3.68",
-		"boundary playarea 227.37 48.91 7.64",
+		"boundary playarea 167.62 59.02 3.68",
+		
+		
 
 -- DEFINE WHERE PLAYERS SPAWN		
 		
@@ -51,28 +51,28 @@ if(true) then
 
 		-- Allied Infantry Spawn Points
 
-		"spawn alliedtroops 213.11 152.80 5.55 180",
-		"spawn alliedtroops 203.77 146.97 6.37 180",
+		"spawn alliedtroops 211.01 158.77 5.71 200",
+		"spawn alliedtroops 203.01 148.59 5.67 265",
 
 		-- Axis Infantry spawn Points
 
-		"spawn axistroops 186.96 -84.36 7.66 0",
-		"spawn axistroops 178.17 -81.09 8.23 0",
+		"spawn axistroops 141.06 -86.28 8.05 20",
+		"spawn axistroops 142.02 -84.55 10.98 100",
 
 -- DEFINE BLOCKED AREAS OF NO ACCESS TO PLAYERS
 	
 	-- blockname x1 y1 z1 x2 y2 z2 thickness height
 
-        "block 139.59 -86.67 8.69 104.30 -72.64 8.68 1 10",
+        "block 138.89 -87.04 9.0 137.01 -86.26 9.0 1 5",
 		"block 112.42 -69.95 9.00 119.31 -46.78 8.68 1 10",
 		"block 123.98 -34.23 8.53 127.56 -26.02 8.70 1 10",
 		"block 193.16 -93.40 7.36 160.99 -84.63 7.88 1 10",
 		"block 113.12 -36.77 8.49 71.74 -19.79 7.67 1 10",
 		
 		-- temporary blocking below placeholder north bridge
-		"block 130.07 36.89 4.66 124.52 19.44 5.19 2 3.5",
-		"block 137.03 44.28 5.06 130.01 22.29 5.45 2 3.5",
-		
+
+		"block 124.91 28.42 2.0 127.25 20.06 2.0 1 5.0",
+		"block 119.20 26.63 4.79 121.67 17.95 2.0 1 5.0",
 		
 
 		
@@ -96,7 +96,7 @@ if(true) then
 		"emitter cratersmoke -45.56 -78.53 8",
 		"emitter cratersmoke 26.02 -82.75 8",
 		"emitter cratersmoke -49.62 -130.94 8",
-		"emitter cratersmoke 109.09 27.70 4.5",
+		--"emitter cratersmoke 109.09 27.70 4.5",
 				
 		-- SMOKESCREEN
 
@@ -107,13 +107,17 @@ if(true) then
 				
 		-- SMOKING VEHICLES
 		
-		"emitter hulksmoke 96.32 156.61 8.39",
-		"emitter hulksmoke 80.36 109.08 6.5",
+		"emitter hulksmoke 63.47 42.70 6.56",
+		"emitter hulksmoke 124.96 17.35 8.40",
+		
+		
+		
+		
 		
 		-- BURNING VEHICLES
 
-		"emitter vehiclefire 152.80 64.43 3.21",
-		"emitter vehiclefire 105.14 -36.56 9.01",
+		"emitter vehiclefire 159.46 70.28 2.93",
+		-- "emitter vehiclefire 105.14 -36.56 9.01",
 
 		-- FIRES
 
@@ -145,15 +149,15 @@ if(true) then
 	-- POSITIONAL SOUNDS
 	-- command name filename volume loop x y z mindist maxdist
 
-		"sound sounds/tank_burn.wav 1 1 151 62 3 5 30",
-		"sound sounds/tank_burn.wav 1 1 108 -30 9 5 30",
-		"sound sounds/tank_burn.wav 1 1 95 -26 8 5 30",
+		"sound sounds/tank_burn.wav 1 1 159 70 3 5 30",
+		-- "sound sounds/tank_burn.wav 1 1 108 -30 9 5 30",
+		"sound sounds/tank_burn.wav .5 1 95 -26 8 5 20",
 		"sound sounds/tank_burn.wav 1 1 261 227 4 5 30",
 		"sound sounds/ambience/stream.wav 1.75 1 123 11 2 10 30",
 		"sound sounds/ambience/stream.wav 1.75 1 90 0 3 10 30",
 		"sound sounds/ambience/stream.wav 1.75 1 167 76 3 10 30",
 		"sound sounds/ambience/stream.wav 1.75 1 220 -46 7 10 30",
-		"sound sounds/bedford/idle.wav 0.5 1 198 148 8 15 40",
+		"sound sounds/bedford/idle.wav 0.3 1 198 148 8 15 40",
 		-- "sound sounds/tank_burn.wav 1 1 29 -57 9 5 30",
 
 	-- A LINE OF BOMBS (as if dropped from a plane)
@@ -178,12 +182,12 @@ if(true) then
 	-- EVENT TRIGGERS	
 	-- command name pctgchance-each-second wait-in-seconds
 
-		"event planes .40 120000",
-		"event bombs .10 20000",
+		-- "event planes .40 120000",
+		-- "event bombs .10 20000",
 		"event explosions .10 25000",
 		-- "event guns1 .15 10000",
 		-- "event guns2 .20 30000",
-		"event wind .5 5000",
+		-- "event wind .5 5000",
 		"event bombing1 .20 10000 30000 6",
 		"event bombing2 .10 20000 30000 3",
 		"event barrage1 .25 60000 60000 10",
@@ -201,12 +205,12 @@ if(true) then
 		"area toaxisspawn OnTrigger 161.99 147.53 7.52",
 		"area toaxisspawn OnTrigger 190.28 170.11 8.02",		
 
-	-- directions near axis spawn 1
+	-- directions for axis to bridge
 
-		"area toalliedspawn OnTrigger 199.46 -81.38 6.34",	
-		"area toalliedspawn OnTrigger 169.44 -67.58 8.56",	
-		"area toalliedspawn OnTrigger 173.63 -56.17 9.19",	
-		"area toalliedspawn OnTrigger 205.99 -69.41 7.07",
+		"area toalliedspawn OnTrigger 160.66 -87.12 9.0",	
+		"area toalliedspawn OnTrigger 162.66 -83.58 9.0",	
+		"area toalliedspawn OnTrigger 139.34 -73.02 9.0",	
+		"area toalliedspawn OnTrigger 136.65 -80.40 9.0",
 
 	-- telling allies to turn around and go the other way
 		"area allieswrongway OnTrigger 272.23 192.78 4.61",
@@ -215,51 +219,64 @@ if(true) then
 		"area allieswrongway OnTrigger 273.78 201.61 6.78",
 		
 	-- telling the allies they are in the bridge capture area
-		"area bridgecapture1 OnTrigger 134.13 35.69 7.82",
-		"area bridgecapture1 OnTrigger 128.57 19.24 7.75",	
-		"area bridgecapture1 OnTrigger 123.54 19.40 7.83",	
-		"area bridgecapture1 OnTrigger 129.65 37.45 7.84",			
+		"area bridgecapture1 OnTrigger 120.60 25.17 8.0",
+		"area bridgecapture1 OnTrigger 122.42 18.39 8.0",
+		"area bridgecapture1 OnTrigger 126.41 19.46 8.0",
+		"area bridgecapture1 OnTrigger 124.58 26.28 8.0",		
 
 
 
 	
 	-- minefield near axis spawn
 
-		"area axisminefield1 OnMineArea 146.43 21.67 8.48",
-		"area axisminefield1 OnMineArea 293.38 18.17 4.19",
-		"area axisminefield1 OnMineArea 297.08 32.59 4.69",
-		"area axisminefield1 OnMineArea 156.79 60.77 7.16",
+		"area axisminefield1 OnMineArea 145.71 19.25 6",
+		"area axisminefield1 OnMineArea 283.44 -15.31 6",
+		
+		
+		
+		
+		"area axisminefield1 OnMineArea 294.98 21.29 6",
+		"area axisminefield1 OnMineArea 156.79 60.77 6",
+		
+		
 		
 	-- minefield east side of path
 
-		"area pathfield1 OnMineArea 100.42 0.63 5.37",
-		"area pathfield1 OnMineArea 95.03 24.23 5.85",
-		"area pathfield1 OnMineArea 98.29 30.91 5.85",
-		"area pathfield1 OnMineArea 110.15 31.92 5.69",
-		"area pathfield1 OnMineArea 128.99 36.36 5.87",
-		"area pathfield1 OnMineArea 123.00 27.80 2.72",
-		"area pathfield1 OnMineArea 121.50 16.70 5.37",
+		-- "area pathfield1 OnMineArea 103.89 63.99 6",
+		"area pathfield1 OnMineArea 119.59 55.22 6",
+		"area pathfield1 OnMineArea 80.32 73.44 6",		
+		"area pathfield1 OnMineArea 67.66 66.27 6",	
+		"area pathfield1 OnMineArea 59.56 19.08 6",
+		"area pathfield1 OnMineArea 70.01 7.38 6",	
+		"area pathfield1 OnMineArea 69.91 -0.19 6",
+		"area pathfield1 OnMineArea 102.39 14.90 6",
+		"area pathfield1 OnMineArea 117.02 28.02 6",
+		
+		
+		
+
 		
 	-- minefield west side of path
 
-		"area pathfield2 OnMineArea 117.64 42.08 6.42",
-		"area pathfield2 OnMineArea 112.25 41.53 5.79",
-		"area pathfield2 OnMineArea 106.57 37.60 5.96",
-		"area pathfield2 OnMineArea 94.90 34.81 5.97",
-		"area pathfield2 OnMineArea 92.26 26.99 5.97",
-		"area pathfield2 OnMineArea 90.99 23.24 5.80",
-		"area pathfield2 OnMineArea 91.77 -4.09 3.30",
-		"area pathfield2 OnMineArea 65.86 -8.48 3.85",
-		"area pathfield2 OnMineArea 51.85 41.89 7.02",
-		"area pathfield2 OnMineArea 94.70 84.00 7.55",
+		-- "area pathfield2 OnMineArea 101.78 66.28 6",
+		-- "area pathfield2 OnMineArea 83.85 73.54 6",
+		-- "area pathfield2 OnMineArea 50.53 41.57 6",
+		-- "area pathfield2 OnMineArea 70.93 -16.95 6",
+		-- "area pathfield2 OnMineArea 91.91 -6.34 6",
+		-- "area pathfield2 OnMineArea 91.15 6.56 6",
+		-- "area pathfield2 OnMineArea 89.22 24.69 6",
+		-- "area pathfield2 OnMineArea 85.92 50.46 6",
+		-- "area pathfield2 OnMineArea 88.88 56.80 6",
 
+		
+		
 		
 	-- bridge capture objective
 
-		"area bridgecapture OnCapture 134.15 35.70 7.80",
-		"area bridgecapture OnCapture 128.55 19.25 7.78",
-		"area bridgecapture OnCapture 123.57 19.45 7.80",
-		"area bridgecapture OnCapture 129.63 37.40 7.82",
+		"area bridgecapture OnCapture 120.60 25.17 8.0",
+		"area bridgecapture OnCapture 122.42 18.39 8.0",
+		"area bridgecapture OnCapture 126.41 19.46 8.0",
+		"area bridgecapture OnCapture 124.58 26.28 8.0",
 		
 	
 		
@@ -275,13 +292,9 @@ if(true) then
 	-- ANONYMOUS VERSION
 	-- command typeid x y z roll pitch yaw
 
-		"clone bedford 199.68 144.04 6.9 5 0 -90",
-		"clone bedford 200.34 148.35 6.9 5 0 -110",
-		"clone bedford 192.31 147.46 7.33 3 -1 -130",
-		"clone pzivd 95.72 156.42 8.3 3 -1 0",
-		"clone pzivd 79.79 108.67 5.58 3 -1 20",
-		"clone oplbltz 121.93 6.84 8.08 -3 0 205",
-		"clone oplbltz 176.32 -20.12 8.55 0 0 180",
+		"clone bedford 195.46 151.93 7.5 5 0 -120",
+		"clone bedford 198.09 158.75 7.55 5 0 -145",
+		"clone bedford 200.15 150.18 7.15 3 -1 -130",
 
 
 
