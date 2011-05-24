@@ -99,6 +99,8 @@
 		
 		var spawnTree 	= new TreeControl("spawnTree", selectSpawnable, formatSpawnable, isSelectable);
 		var memberList 	= new ListControl(findview("memberList"));
+		var membersSpawned	= 0;
+		var membersCount = 0;
 		
 		var vehicles			= new Object();
 		var classes			= new Object();

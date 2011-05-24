@@ -229,21 +229,8 @@
 			{
 				if(this.centerme && game.ingame)
 				{
-					if(game.customterrain)
-					{
-						if(!this.scenariopos)
-						{
-							this.scenariopos = this.map.getposition(76,-69);
-							this.map.scale = .038;
-							//this.map.position = this.scenariopos;
-						}
-						
-						this.map.position = this.scenariopos;
-					}
-					else
-					{
+					if(!game.customterrain)
 						this.map.position = player.position;
-					}
 				}
 				
 				this.updatePending();
