@@ -1,10 +1,6 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>dm_riverrun</name>
-  <# team1max>16</# team1max>
-  <# team1min>2</# team1min>
-  <# team2max>16</# team2max>
-  <# team2min>2</# team2min>
   <body>onspawn.moveout = 在时间耗尽前，尽可能多的去消灭敌人！
 churchentry = 当心！教堂的高塔是敌方狙击手绝佳的埋伏点。
 toaxisspawn = 红国军队驻扎在东北部。
@@ -23,10 +19,14 @@ playarea = 转身调头！</body>
   <firingenemyicons>true</firingenemyicons>
   <fog>3</fog>
   <hour>16</hour>
-  <movingenemyicons>true</movingenemyicons>
+  <ingamemap>76 -69 .038</ingamemap>
   <rules>deathmatch</rules>
   <team1>2</team1>
+  <team1max>16</team1max>
+  <team1min>2</team1min>
   <team2>4</team2>
+  <team2max>16</team2max>
+  <team2min>2</team2min>
   <terrain>riverrun</terrain>
   <title>淌河激战</title>
   <victory>50</victory>
