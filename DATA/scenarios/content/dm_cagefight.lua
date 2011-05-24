@@ -239,8 +239,20 @@ if(true) then
 		-- command,spawngroup,country,category,class,type
 		-- a 0 is considered a wildcard
 
-		"vehicle alliedtroops 1 0 9 0",
-		"vehicle axistroops 4 0 9 0",
+		-- ALIIED SPAWN list
+
+		"vehicle alliedtroops fr-lmg",
+		"vehicle alliedtroops fr-smg",
+		"vehicle alliedtroops fr-rifle",
+		"vehicle alliedtroops uk-lmg",
+		"vehicle alliedtroops uk-smg",
+		"vehicle alliedtroops uk-rifle",
+
+		-- AXIS SPAWN list
+
+		"vehicle axistroops de-smg",
+		"vehicle axistroops de-lmg",
+		"vehicle axistroops de-sniper",
 	};
 
 	for i,v in ipairs(content) do 
