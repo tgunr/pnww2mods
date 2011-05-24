@@ -1,6 +1,10 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>dm_riverrun</name>
+  <# team1max>16</# team1max>
+  <# team1min>2</# team1min>
+  <# team2max>16</# team2max>
+  <# team2min>2</# team2min>
   <body>onspawn.moveout = Eliminate as many enemy as possible before time runs out!
 churchentry = The church tower is a perfect spot for snipers. Watch Out!
 toaxisspawn = German forces are camped northeast.
@@ -15,8 +19,11 @@ Kill as many enemy soliders as possible in 10 minutes<br>
 The first team to reach 50 kills wins.</brief>
   <draw>35</draw>
   <duration>10</duration>
+  <enemydeaths>true</enemydeaths>
+  <firingenemyicons>true</firingenemyicons>
   <fog>3</fog>
   <hour>16</hour>
+  <movingenemyicons>true</movingenemyicons>
   <rules>deathmatch</rules>
   <team1>2</team1>
   <team2>4</team2>
