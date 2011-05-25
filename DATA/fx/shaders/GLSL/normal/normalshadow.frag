@@ -29,7 +29,6 @@ float GetShadowValue()
     c1.z -= 0.0005;
     c1.z = clamp(c1.z, 0.0, 1.0);
 
-	float scale = 0.000488;
     float shadow = 0.0;
 
 	for(float y = -1.5 ; y <= 1.5 ; y += 1.0)
