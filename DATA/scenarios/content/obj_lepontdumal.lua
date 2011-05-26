@@ -317,7 +317,7 @@ if(true) then
 		-- command categorynamealert namealert numberofsecondsbetweenrepeatalerts
 		-- numberofsecondsbetweenrepeatalerts 0= no limit, 1= onetime per scenario, unit measure is seconds 
 		-- "chat spawnin spawnin.moveout 0",
-		"alert onspawn onspawn 1",
+		"alert onspawn onspawn.moveout",
 		"alert toaxisspawn toaxisspawn 60",
 		"alert toalliedspawn toalliedspawn 60",
 		"alert bridgecapture1 bridgecapture 5",
