@@ -1,0 +1,20 @@
+# first thing in the weapon file should always be the weapontype
+# this causes the default_(weapontype).txt file to be loaded first
+# valid weapon types are:
+# SMG, SATCHEL, RIFLE, AUTO_PISTOL, GRENADE, REVOLVER, ITEM, KNIFE, LMG
+weaponType = GRENADE
+
+# specify the weapon & clip (clip optional) model here
+# note that data\gr2data\FPS\ is prepended to these file names
+weaponModel = mk2grenade\mk2grenade
+
+# granny attach bone names for weapon & clip
+# the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
+weaponConnectTo = weapon-control
+weaponConnect = mk2-connect
+
+grenadeDelayTime = 450
+
+hudIconType = 5
+
+grenadeVisDelay = 0.3
