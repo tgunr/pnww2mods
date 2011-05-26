@@ -1,19 +1,21 @@
 <script>
 	<!--
 	
+	var hwCallback = null;
 	var display = null;
 	var label = null;
 	
-	function initHUDObject(v)
+	function initHUDObject(v, c)
 	{
 		display = v.findview("display");
 		
-		var loc = v.id.split("-");
+		if(label == null)
+		{
+			var loc = v.id.split("-");
+			label = getlocstring("hud.waypoints." + loc[1]);
+		}
 		
-		label = getlocstring("hud.waypoints." + loc[1]);
-		
-		if(label.charAt(0) == "?")
-			label = null;
+		hwCallback = c;
 	}
 	
 	function setDisplay(loc)
@@ -23,6 +25,12 @@
 	
 	function updateHUDObject(placement, distance, alpha)
 	{
+		if(hwCallback != null)
+		{
+			hwCallback(placement, distance, alpha);
+			return;
+		}
+		
 		if(display != null)
 		{
 			if(alpha == 0)

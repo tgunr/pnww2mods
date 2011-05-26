@@ -52,10 +52,18 @@ end
 
 function CaptureReport(handler)
 	if(state.capturing and state.victory == 0) then
-		if(GetTeam() == 1) then
-				local victory1 =  Instancing:GetStateNumber("victory1");
-				ui.ChatPrint(string.format("Capture progress completed: %d%%", (victory1 / tonumber(state.config.victory) * 100)));
-		end
+			local victory1 =  Instancing:GetStateNumber("victory1");
+			local percent =  (victory1 / tonumber(state.config.victory) * 100);
+			local message = string.format("Capture progress: %d%%", percent);
+			ui.ChatPrint(message);
+			local hud = ui.FindView("hud");
+			if(hud ~= nil) then
+				if(GetTeam() == 1) then
+					hud:CallJS("OnMessage", string.format("Allies are capturing the bridge! (%d%%)", percent), "#00FF00");
+				else
+					hud:CallJS("OnMessage", string.format("Allies are capturing the bridge! (%d%%)", percent), "#FF0000");
+				end
+			end
 	end
 	return 1;
 end
@@ -66,7 +74,16 @@ function OnRoundTimer(name, value)
 	
 	if(timeLeft > 0) then
 		local minutes = timeLeft / 60;
-		ui.ChatPrint(string.format("There are %d minutes left in this round!", minutes));
+		local message = string.format("%d minutes left in this round!", minutes); 
+		ui.ChatPrint(message);
+		local hud = ui.FindView("hud");
+		if(hud ~= nil) then
+			if(GetTeam() == 1) then
+				hud:CallJS("OnMessage", message, "#FF0000");
+			else
+				hud:CallJS("OnMessage", message, "#00FF00");
+			end
+		end
 	elseif(timeLeft == 0) then
 		-- team 2 axis wins if its the round ends
 		Instancing:SendStateValue("victory2", state.config.victory);

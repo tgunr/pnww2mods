@@ -6,6 +6,7 @@
 	<include file="classes/GameAlert.uixml"/>
 	<include file="classes/BuildingInfo.uixml"/>
 	<include file="classes/CPInfo.uixml"/>
+	<include file="classes/FadeView.uixml"/>
 	
 	<!-- GAME INFO -->
 	<view id="gameinfo" class="gameinfo" y="200" width="100" height="40" rright="5" aspectlimit='width'
@@ -28,6 +29,11 @@
 	</view>
 	
 	<view id="game-alert-icons" x="5" y="170" width="32" height="365" moveondrag="yes" aspectlimit="width"/>
+	
+	<text id="game-message" x="0" y="0" width="0" height="0"
+		maxwidth="500" fontshadowx=".08" fontshadowy="-.08"
+		style="color: #FFFFFF; font-size: +3;"
+		moveondrag="no" acceptmouseclick="false"/>
 	
 	<!-- GAMEALERT -->
 	<text id="game-alert" x="0" width="100" height="20" rtop="150" aspectlimit="width"
@@ -254,7 +260,8 @@
 			miniMap.addlayer('<layer type="players"/>');
 		
 		var gameEventView			= null;
-		var gameAlertIconView		= findview("game-alert-icons");
+		var gameAlertIconView	= findview("game-alert-icons");
+		var hudMessage				= new FadeView("game-message", 5000);
 		
 		var overSupplyState			= 6;
 		
@@ -466,6 +473,8 @@
 				
 			if(infoTimer.run())
 				updateInfo();
+			
+			hudMessage.update();
 		}
 		
 		function updateAmmo(weapon)
@@ -1382,6 +1391,16 @@
 		{
 			//game.chatprint("Setting capture callback!!!");
 			binfoView.mgr.callback = c;
+		}
+		
+		function OnMessage(loc, color)
+		{
+			var message = getlocstring(loc);
+			
+			if(message.charAt(0) == "?")
+				message = loc;
+			
+			hudMessage.init(message, color);
 		}
 		
 		-->

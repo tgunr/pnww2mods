@@ -7,11 +7,12 @@
 	function FadeView(name, duration)
 	{
 		// members
-		this.view			= window.findview(name);
+		this.color				= "#FFFFFF";
+		this.view				= window.findview(name);
 		this.view.visible 	= false;
 		this.duration		= duration;
-		this.start			= 0;
-		this.timer			= new CycleTimer(50);
+		this.start				= 0;
+		this.timer				= new CycleTimer(50);
 		
 		// methods
 		this.update = function()
@@ -27,7 +28,7 @@
 					var color = game.getrgbcolor(255 * opacity, 0, 0);
 					
 					if(color != null)
-						this.view.setstyleproperty("color", "#FFFFFF" + color.rhex);
+						this.view.setstyleproperty("color", this.color + color.rhex);
 				}
 				else
 				{
@@ -37,15 +38,16 @@
 			}
 		}
 		
-		this.init = function(message)
+		this.init = function(message, color)
 		{
+			this.color	= (color != null) ? color : "#FFFFFF";
 			this.view.text = message;
 			this.view.resizetotext();
 			this.view.x = (game.screenwidth / 4) - this.view.width/2;
 			this.view.y = (game.screenheight/2) - this.view.height/2;
 			this.view.visible = true;
-			this.view.setstyleproperty("color", "#FFFFFF");
 			this.start = (new Date()).getTime();
+			this.view.setstyleproperty("color", this.color);
 		}
 	}
 	

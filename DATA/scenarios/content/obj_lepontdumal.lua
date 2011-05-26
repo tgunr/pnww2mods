@@ -324,6 +324,10 @@ if(true) then
 		"alert allieswrongway allieswrongway 30" ,
 		"alert playarea playarea 10",
 		
+		"waypoint onspawn minefield 91.04 38.93 5.97 enemy",
+		"waypoint onspawn minefield 195.11 24.16 7.35 enemy",
+		"waypoint onspawn bridgewp 123.05 23.42 8.61 enemy",
+		
 --  #### END DOC LOOK AT THIS ####
 
 		

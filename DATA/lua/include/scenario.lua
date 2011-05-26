@@ -335,7 +335,7 @@ function OnVictory(name, value)
 	return 1;
 end
 
-function OnRoundTimer(name, value)
+scenario.OnRoundTimer = function(name, value)
 	local timeLeft = tonumber(value);
 	
 	if(timeLeft > 0) then
@@ -351,6 +351,10 @@ function OnRoundTimer(name, value)
 		-- this timer was just inited
 	end
 	return 1;
+end
+
+function OnRoundTimer(name, value)
+	return scenario.OnRoundTimer(name, value);
 end
 
 function SetUpMap()

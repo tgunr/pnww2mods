@@ -193,7 +193,9 @@ if(true) then
 		"clone oplbltz 192.79 -31.45 8.5 5 -4.25 205",
 		"clone oplbltz 176.32 -20.12 8.55 0 0 180",
 		
-		--"waypoint churchentry -10.0 -10.0 10.0",
+		"waypoint onspawn wp2 210.55 -15.95 8.11 enemy",
+		"waypoint onspawn wp1 -36.00 -153.15 7.88 friendly",
+		"waypoint onspawn wp3 60.61 -91.40 27.17 friendly",
 
 		-- ALERTS AND CHATS
 		-- ADD A CHAT TO THE CHAT WINDOW
