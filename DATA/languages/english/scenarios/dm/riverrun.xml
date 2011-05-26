@@ -8,7 +8,10 @@ toalliedspawn = American forces have crossed the southwest bridge!
 victory1 = Allies victorious!
 victory2 = Axis victorious!
 roundstop = This round is over!
-playarea = Turn around</body>
+playarea = Turn around
+wp1 = allied foothold
+wp2 = german camp
+wp3 = high ground</body>
   <bodyloc>true</bodyloc>
   <brief>The Americans advanced via the south bridge before it was blown. Now the Germans must defend the town from their camp.<br><br>
 Kill as many enemy soliders as possible in 10 minutes<br>
@@ -16,6 +19,7 @@ The first team to reach 50 kills wins.</brief>
   <draw>35</draw>
   <duration>10</duration>
   <enemydeaths>true</enemydeaths>
+  <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>3</fog>
   <hour>16</hour>

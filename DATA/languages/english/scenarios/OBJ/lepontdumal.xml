@@ -9,7 +9,9 @@ allieswrongway = The objective is south. Turn around and follow the road.
 victory1 = Americans have secured the bridge! Re-enforcements have arrived.
 victory2 = The Germans have defended the bridge!
 playarea = Turn around
-roundstop = This round is over!</body>
+roundstop = This round is over!
+bridgewp = bridge
+minefield = minefield</body>
   <bodyloc>true</bodyloc>
   <brief>An American convoy is headed south towards the bridge and have orders to capture and hold it until reinforcements arrive. A small German unit is camped in town and are desperate to defend the bridge from capture.
 <br><br>
@@ -19,10 +21,8 @@ Germans- keep the enemy from reaching their objective for 15 minutes</brief>
   <duration>15</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
-  <fastenemyicons>true</fastenemyicons>
   <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
-  <hideproneenemyicons>true</hideproneenemyicons>
   <hour>16</hour>
   <ingamemap>107.8 38.9 .041</ingamemap>
   <rules>dday</rules>
@@ -32,6 +32,6 @@ Germans- keep the enemy from reaching their objective for 15 minutes</brief>
   <team2min>2</team2min>
   <terrain>lepontdumal</terrain>
   <title>Le pont du mal</title>
-  <victory>30</victory>
+  <victory>90</victory>
   <weather>1</weather>
 </content>
