@@ -8,6 +8,7 @@ Include("scenario");
 state.name 					= "scenario.dday";
 state.enablemap			= true;
 state.capturing			= false;
+state.lastcapture			= 0;
 
 -- set our initial tutorial state
 tutorial.SetState(state);
@@ -51,9 +52,10 @@ function DoCapture(handler)
 end
 
 function CaptureReport(handler)
-	if(state.capturing and state.victory == 0) then
-			local victory1 =  Instancing:GetStateNumber("victory1");
-			local percent =  (victory1 / tonumber(state.config.victory) * 100);
+	local victory1 =  Instancing:GetStateNumber("victory1");
+	local percent =  (victory1 / tonumber(state.config.victory) * 100);
+	
+	if(state.lastcapture ~= victory1 and state.victory == 0) then
 			local message = string.format("Capture progress: %d%%", percent);
 			ui.ChatPrint(message);
 			local hud = ui.FindView("hud");
@@ -64,6 +66,7 @@ function CaptureReport(handler)
 					hud:CallJS("OnMessage", string.format("Allies are capturing the bridge! (%d%%)", percent), "#FF0000");
 				end
 			end
+			state.lastcapture = victory1;
 	end
 	return 1;
 end
