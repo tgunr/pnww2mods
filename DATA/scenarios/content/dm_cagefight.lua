@@ -12,7 +12,7 @@ if(true) then
 
 	-- boundary name x y z
 
-        	"boundary playarea 190995.13 3016049.28 142.00",
+        "boundary playarea 190995.13 3016049.28 142.00",
 		"boundary playarea 190889.14 3016049.59 142.00",
 		"boundary playarea 190889.23 3015922.34 142.00",
 		"boundary playarea 190984.46 3015916.46 142.00",
@@ -82,18 +82,18 @@ if(true) then
 		"sound planes sounds/scenarios/ambient_aircraft_squadron2.wav .4 0",
 		"sound bombs sounds/scenarios/ambient_bombs_distantshells1.wav .5 0",
 		"sound bombs sounds/scenarios/ambient_bombs_distantshells2.wav .5 0",
-		"sound explosions sounds/scenarios/ambient_explosions_fourinarow.wav .7 0",
+		"sound explosions sounds/scenarios/ambient_explosions_fourinarow.wav .4 0",
 		"sound explosions sounds/troop/grenade.wav .5 0",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav .30 0",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun2.wav .35 0",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun3.wav .40 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav .2 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun2.wav .2 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun3.wav .2 0",
 		"sound guns1 sounds/airraidsiren.wav .06 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun4.wav .35 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav .35 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav .25 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav .5 0",
-		"sound wind sounds/ambience/gust1.wav .9 0",
-		"sound wind sounds/ambience/gust2.wav .9 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun4.wav .2 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav .2 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav .2 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav .2 0",
+		"sound wind sounds/ambience/gust1.wav .5 0",
+		"sound wind sounds/ambience/gust2.wav .5 0",
 
 
 	-- POSITIONAL SOUNDS
@@ -116,9 +116,9 @@ if(true) then
 	-- the distance is the radius of a circle around the center to randomly fire off the ammo in
 	-- command name ammo x y z distance
 
-		"barrage barrage1 gp40 190956.63 3015992.07 142.00 40",
-		"barrage barrage1 gp40 190956.63 3015992.07 142.00 20",
-		"barrage barrage1 gp40 190956.63 3015992.07 142.00 30",
+		"barrage barrage1 gp40 191032.58 3016111.40 142.00 40",
+		"barrage barrage1 gp40 190924.72 3015856.39 142.00 20",
+		"barrage barrage1 gp40 190872.91 3016115.73 142.00 30",
 
 
 		
@@ -144,28 +144,6 @@ if(true) then
 	-- command name triggertype worldx worldy worldz
 	-- directions near axis spawn 1
 				
-	-- directions near allied spawn 1
-
-		--"area toalliedspawn OnTrigger 273072.68 3017105.01 481.04",
-		--"area toalliedspawn OnTrigger 273083.87 3017104.83 481.04",
-		--"area toalliedspawn OnTrigger 273084.30 3017091.38 481.04",
-		--"area toalliedspawn OnTrigger 273064.71 3017091.61 481.04",
-		--"area toalliedspawn OnTrigger 273065.58 3017086.03 481.00",
-		--"area toalliedspawn OnTrigger 273091.97 3017086.82 481.00",
-		--"area toalliedspawn OnTrigger 273101.01 3017097.40 481.00",
-		--"area toalliedspawn OnTrigger 273089.52 3017110.12 481.004",
-		--"area toalliedspawn OnTrigger 273073.21 3017110.48 481.00",
-		
-	-- directions near axis spawn 1
-
-		--"area toaxisspawn OnTrigger 272896.87 3016931.75 481.02",
-		--"area toaxisspawn OnTrigger 272892.58 3016929.13 481.00",
-		--"area toaxisspawn OnTrigger 272872.11 3016943.18 481.00",
-		--"area toaxisspawn OnTrigger 272890.21 3016961.04 481.00",
-		--"area toaxisspawn OnTrigger 272907.17 3016945.80 481.00",
-		--"area toaxisspawn OnTrigger 272903.36 3016940.54 481.00",
-		--"area toaxisspawn OnTrigger 272890.03 3016954.54 481.04",		
-		--"area toaxisspawn OnTrigger 272881.98 3016946.62 481.19",
 
 -- CLONES --
 
@@ -183,19 +161,17 @@ if(true) then
 		-- "clone bedford -35.21 -147.32 8.85 6 2 285",
 
 -- ADD A HUD ALERT
-		
+
 		-- these are always named
 		-- the lockey is a lockey looked up from the scenario content in the web translation tool
 		-- command name lockey
 
-		--"alert onspawn onspawn.moveout 60",
-		--"alert roundstop roundstop",
-		--"alert victory1 victory1",
-		--"alert victory2 victory2",
-		--"alert playarea playarea 10",
-		--"alert churchentry churchentry 20000",
-		--"alert toaxisspawn toaxisspawn -1",
-		--"alert toalliedspawn toalliedspawn -1",
+		"alert onspawn.moveout onspawn.moveout",
+		"alert playarea playarea 10",
+		"alert victory1 victory1",
+		"alert victory2 victory2",
+		"alert roundstop roundstop",
+		
 
 		
 		
@@ -241,18 +217,15 @@ if(true) then
 
 		-- ALIIED SPAWN list
 
-		"vehicle alliedtroops fr-lmg",
-		"vehicle alliedtroops fr-smg",
-		"vehicle alliedtroops fr-rifle",
-		"vehicle alliedtroops uk-lmg",
-		"vehicle alliedtroops uk-smg",
-		"vehicle alliedtroops uk-rifle",
+		"vehicle alliedtroops us-assault",
+		"vehicle alliedtroops us-smg",
+		"vehicle alliedtroops us-bar",
 
 		-- AXIS SPAWN list
 
 		"vehicle axistroops de-smg",
 		"vehicle axistroops de-lmg",
-		"vehicle axistroops de-sniper",
+		"vehicle axistroops de-assault",
 	};
 
 	for i,v in ipairs(content) do 
