@@ -24,7 +24,7 @@ if(true) then
 		"place bel6 95.18 -101.24 8.37 0 0 293 0 0 0 1",
 		"place citybild2 138.39 -105.39 8.09 3 0 115 0 0 0 1",
 		"place bel4 96.99 -64.35 7.96 0 0 19 0 0 0 1",
-		"place crate 117.13 -48.03 7.98 0 0 120 0 0 0 0",
+		"place crate 110.06 -45.52 9.05 0 0 120 0 0 0 0",
 		"place crate 110.25 -45.38 8.05 0 0 115 0 0 0 0",
 		"place bel3 137.70 -76.21 7.80 0 0 20 0 0 0 0",
 		"place boarding1 154.20 -92.90 8.00 0 0 18 0 0 0 0",
@@ -45,7 +45,7 @@ if(true) then
 		"place boarding1 110.65 -42.00 7.96 0 0 110 0 0 0 0",
 		"place boarding1 124.80 -32.00 8.02 0 0 110 0 0 0 0",
 		"place boarding1 112.70 -36.50 8.25 0 0 109 0 0 0 0",
-		"place cratepile_outside 126.50 -31.60 7.83 0 0 200 0 0 0 0",
+		--"place cratepile_outside 126.50 -31.60 7.83 0 0 200 0 0 0 0",
 		"place bel1 120.39 -16.04 7.89 0 0 20 0 0 0 1",
 		-- "place sandbagwall_outside 136.25 -21.00 7.59 -5 0 93 0 0 0 0",
 		-- "place sandbagwall_outside 139.50 -22.25 7.58 0 0 -50 0 0 0 0",
@@ -124,11 +124,11 @@ if(true) then
 		"place haystack_outside 122.64 71.44 5.4 0 0 25 0 0 0 0",
 		"place haystack_outside 168.33 85.51 4.0 0 0 0 0 0 0 0",
 		"place crate 138.20 -86.09 8.1 0 0 20 0 0 0 0",
-		"place crate 126.6 -28.5 9.5 0 0 0 0 0 0 0",
-		"place crate 127.48 -27.06 9.5 0 0 45 0 0 0 0",
 		"place instance_hulk1_dam 148.05 -63.81 8.0 -1 2 115 0 0 0 0",
 		"place cratepile_outside 158.58 -51.01 8.0 0 0 -70 0 0 0 0",
-		-- "place dg_wire_barbed_apron	113.59 -78.90 8.59 0 0 0 0 0 0",
+		"place crate 116.85 -46.78 8.0 0 0 20 0 0 0 0",
+		
+		
 
 		
 		-- ALLIED HULKS NEAR THE BRIDGE
