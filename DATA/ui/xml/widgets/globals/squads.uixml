@@ -146,6 +146,8 @@
 									<caption id="squaddie-persona" x="0" rtop="15" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
 									<caption label="${common.squads.member.rank}" x="0" rtop="30" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"/>
 									<caption id="squaddie-rank" x="0" rtop="30" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
+									<caption label="LAST LOGIN" x="0" rtop="45" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"/>
+									<caption id="squaddie-lastlogin" x="0" rtop="45" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
 								</view>
 
 						 		<!-- brigade -->
@@ -184,11 +186,11 @@
 									<caption id="squaddie-leader" x="0" rtop="100" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
 								</view>
 
-								<!-- flags -->
+								<!-- status -->
 								<view x="10" rtop="245" width="380" height="60" followtop="true">
 									<caption label="${common.squads.member.flags}" x="0" rtop="0" rright="0" height="20" style="color: #BFE2CE; font-size: +2;"/>
 									<image src="ui/textures/test/horiz_underline.bmp" x="0" rtop="12" rright="0" height="12"/>
-									<caption id="squaddie-flags" x="0" rtop="25" rright="0" height="15" style="color: #e9e3d9; font-size: +1;"/>
+									<caption id="squaddie-status" x="0" rtop="25" rright="0" height="15" style="color: #e9e3d9; font-size: +1;"/>
 								</view>
 							</view>
 						</view>

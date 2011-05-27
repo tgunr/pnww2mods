@@ -28,6 +28,7 @@
 					<caption x="0" rtop="15" rright="0" height="15" style="color: #FFFFFF; font-size: +1;"
 						onshow="this.label = 'RANK'"/>
 					<caption id="squaddie-rank" x="0" rtop="15" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
+					<caption id="squaddie-lastlogin" x="0" rtop="15" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
 				</view>
 
 		 		<!-- brigade -->
@@ -62,11 +63,11 @@
 					<caption id="squaddie-leader" x="0" rtop="70" rright="0" height="15" style="color: #e9e3d9; font-size: +1;" align="right"/>
 				</view>
 
-				<!-- flags -->
+				<!-- status -->
 				<view x="10" rtop="225" width="380" height="60" followtop="true">
-					<caption x="0" rtop="0" rright="0" height="20" style="color: #BFE2CE; font-size: +2;" onshow="this.label = 'FLAGS'"/>
+					<caption x="0" rtop="0" rright="0" height="20" style="color: #BFE2CE; font-size: +2;" onshow="this.label = 'status'"/>
 					<image src="ui/textures/test/horiz_underline.bmp" x="0" rtop="12" rright="0" height="12"/>
-					<caption id="squaddie-flags" x="0" rtop="25" rright="0" height="15" style="color: #e9e3d9; font-size: +1;"/>
+					<caption id="squaddie-status" x="0" rtop="25" rright="0" height="15" style="color: #e9e3d9; font-size: +1;"/>
 				</view>
 
 			</tab>
@@ -93,12 +94,14 @@
 		 	var targetView 		= findview("squaddie-target");
 		 	var typeView 		= findview("squaddie-type");
 		 	var leaderView 		= findview("squaddie-leader");
-		 	var flagsView 		= findview("squaddie-flags");
+		 	var statusView 		= findview("squaddie-status");
+			var lastloginView	= findview("squaddie-lastlogin");
 
 		 	if(squaddie != null)
 		 	{
 			 	handleView.label = squaddie.handle.toUpperCase() + ", " + getlocstring('common.squads.ranks.rank' + squaddie.squadrank).toUpperCase();
-
+				lastloginView.label = "";
+				
 				if(squaddie.online)
 				{
 				 	detailsView.value = 1;
@@ -142,24 +145,24 @@
 					 	leaderView.label 	= "-";
 					}
 					
-					var flags = "";
+					var status = "";
 					
 					if(squaddie.hc)
-						flags += "High Commander, ";
+						status += "High Commander, ";
 
 					if(squaddie.afk)
-						flags += "AFK, ";
+						status += "AFK, ";
 					
 					if(squaddie.spawned)
-						flags += "Spawned, ";
+						status += "Spawned, ";
 
 					if(squaddie.leader)
-						flags += "Mission Leader, ";
+						status += "Mission Leader, ";
 
-					if(flags.length > 0)
-					 	flagsView.label = flags.substr(0, flags.length - 2);
+					if(status.length > 0)
+					 	statusView.label = status.substr(0, status.length - 2);
 					else
-					 	flagsView.label = "No flags apply";
+					 	statusView.label = "No status apply";
 				}
 				else
 				{
