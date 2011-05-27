@@ -63,14 +63,16 @@ if(true) then
 	
 	-- blockname x1 y1 z1 x2 y2 z2 thickness height
 
-        "block 138.89 -87.04 9.0 137.01 -86.26 9.0 1 5",
-		"block 112.42 -69.95 9.00 119.31 -46.78 8.68 1 10",
-		"block 123.98 -34.23 8.53 127.56 -26.02 8.70 1 10",
-		"block 193.16 -93.40 7.36 160.99 -84.63 7.88 1 10",
-		"block 113.12 -36.77 8.49 71.74 -19.79 7.67 1 10",
+        "block 138.89 -87.04 9 137.01 -86.26 9 1 5",
+		"block 112.42 -69.95 9 118.12 -49.43 9 1 10",
+		"block 193.16 -93.40 9 160.99 -84.63 9 1 10",
+		"block 113.12 -36.77 9 71.74 -19.79 9 1 10",
+		"block 108.88 -46.99 9 110.19 -44.63 9 1 10",
+		
+		
 		
 		"block 113.77 1.50 8.50 119.53 10.13 8.37 .5 5",
-		
+		"block 126.87 11.04 7.70 131.18 20.28 7.53 .5 5",
 		
 		
 		
@@ -219,11 +221,10 @@ if(true) then
 		"area allieswrongway OnTrigger 273.78 201.61 6.78",
 		
 	-- telling the allies they are in the bridge capture area
-		--"area bridgecapture1 OnTrigger 120.60 25.17 8.0",
-		--"area bridgecapture1 OnTrigger 122.42 18.39 8.0",
-		--"area bridgecapture1 OnTrigger 126.41 19.46 8.0",
-		--"area bridgecapture1 OnTrigger 124.58 26.28 8.0",		
-
+		"area bridgecapture1 OnTrigger 136.36 40.60 8",
+		"area bridgecapture1 OnTrigger 133.56 33.05 8",
+		"area bridgecapture1 OnTrigger 129.00 35.14 8",
+		"area bridgecapture1 OnTrigger 131.56 42.40 8",		
 
 
 	
@@ -273,10 +274,10 @@ if(true) then
 		
 	-- bridge capture objective
 
-		--"area bridgecapture OnCapture 120.60 25.17 8.0",
-		--"area bridgecapture OnCapture 122.42 18.39 8.0",
-		--"area bridgecapture OnCapture 126.41 19.46 8.0",
-		--"area bridgecapture OnCapture 124.58 26.28 8.0",
+		"area bridgecapture OnCapture 136.36 40.60 8",
+		"area bridgecapture OnCapture 133.56 33.05 8",
+		"area bridgecapture OnCapture 129.00 35.14 8",
+		"area bridgecapture OnCapture 131.56 42.40 8",
 		
 	
 		
@@ -324,10 +325,9 @@ if(true) then
 		"alert allieswrongway allieswrongway 30" ,
 		"alert playarea playarea 10",
 		
-		"waypoint onspawn minefield 91.04 38.93 5.97 #FF6600",
-		"waypoint onspawn minefield 195.11 24.16 7.35 #FF6600",
-		"waypoint.1 onspawn bridgewp 132.57 37.60 7.38 enemy",
-		"waypoint.2 onspawn bridgewp 132.57 37.60 7.38 friendly",
+		"waypoint onspawn minefield 91.04 38.93 5.97 enemy",
+		"waypoint onspawn minefield 195.11 24.16 7.35 enemy",
+		"waypoint onspawn bridgewp 123.05 23.42 8.61 enemy",
 		
 --  #### END DOC LOOK AT THIS ####
 
