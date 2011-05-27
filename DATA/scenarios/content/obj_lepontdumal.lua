@@ -69,10 +69,10 @@ if(true) then
 		"block 193.16 -93.40 7.36 160.99 -84.63 7.88 1 10",
 		"block 113.12 -36.77 8.49 71.74 -19.79 7.67 1 10",
 		
-		-- temporary blocking below placeholder north bridge
-
-		"block 124.91 28.42 2.0 127.25 20.06 2.0 1 5.0",
-		"block 119.20 26.63 4.79 121.67 17.95 2.0 1 5.0",
+		"block 113.77 1.50 8.50 119.53 10.13 8.37 .5 5",
+		
+		
+		
 		
 
 		
@@ -108,7 +108,7 @@ if(true) then
 		-- SMOKING VEHICLES
 		
 		"emitter hulksmoke 63.47 42.70 6.56",
-		"emitter hulksmoke 124.96 17.35 8.40",
+		"emitter hulksmoke 136.61 47.66 8.20",
 		
 		
 		
@@ -219,10 +219,10 @@ if(true) then
 		"area allieswrongway OnTrigger 273.78 201.61 6.78",
 		
 	-- telling the allies they are in the bridge capture area
-		"area bridgecapture1 OnTrigger 120.60 25.17 8.0",
-		"area bridgecapture1 OnTrigger 122.42 18.39 8.0",
-		"area bridgecapture1 OnTrigger 126.41 19.46 8.0",
-		"area bridgecapture1 OnTrigger 124.58 26.28 8.0",		
+		--"area bridgecapture1 OnTrigger 120.60 25.17 8.0",
+		--"area bridgecapture1 OnTrigger 122.42 18.39 8.0",
+		--"area bridgecapture1 OnTrigger 126.41 19.46 8.0",
+		--"area bridgecapture1 OnTrigger 124.58 26.28 8.0",		
 
 
 
@@ -243,14 +243,14 @@ if(true) then
 	-- minefield east side of path
 
 		-- "area pathfield1 OnMineArea 103.89 63.99 6",
-		"area pathfield1 OnMineArea 119.59 55.22 6",
+		"area pathfield1 OnMineArea 134 50 6",
 		"area pathfield1 OnMineArea 80.32 73.44 6",		
 		"area pathfield1 OnMineArea 67.66 66.27 6",	
 		"area pathfield1 OnMineArea 59.56 19.08 6",
 		"area pathfield1 OnMineArea 70.01 7.38 6",	
 		"area pathfield1 OnMineArea 69.91 -0.19 6",
 		"area pathfield1 OnMineArea 102.39 14.90 6",
-		"area pathfield1 OnMineArea 117.02 28.02 6",
+		"area pathfield1 OnMineArea 123 28 6",
 		
 		
 		
@@ -273,10 +273,10 @@ if(true) then
 		
 	-- bridge capture objective
 
-		"area bridgecapture OnCapture 120.60 25.17 8.0",
-		"area bridgecapture OnCapture 122.42 18.39 8.0",
-		"area bridgecapture OnCapture 126.41 19.46 8.0",
-		"area bridgecapture OnCapture 124.58 26.28 8.0",
+		--"area bridgecapture OnCapture 120.60 25.17 8.0",
+		--"area bridgecapture OnCapture 122.42 18.39 8.0",
+		--"area bridgecapture OnCapture 126.41 19.46 8.0",
+		--"area bridgecapture OnCapture 124.58 26.28 8.0",
 		
 	
 		
