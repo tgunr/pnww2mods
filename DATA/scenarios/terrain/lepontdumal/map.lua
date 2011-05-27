@@ -78,7 +78,7 @@ if(true) then
 		"place instance_hulk1_dam 104.5 -36.35 7.4 0 5 -120 0 0 0 0",
 		
 		
-		"place stonebridgeshort 123.25 23.25 6.55 0 0 -16 0 0 0 0",
+		"place kr_bridge_n 131.03 32.78 0.65 0 0 20 0 0 0 0",
 		
 		
 		"place instance_hulk1_dam 92.00 -78.00 7.76 -3 5 125 0 0 0 0",
@@ -133,17 +133,20 @@ if(true) then
 		
 		-- ALLIED HULKS NEAR THE BRIDGE
 
-		"place m4a2hulk 144.60 72.28 6.95 0 0 185 0 0 0 0",
+		"place m4a2hulk 136.3 47.62 7.1 0 0 215 0 0 0 0",
 		"place m4a2hulk 159.67 70.33 1.5 10 -14 150 0 0 0 0",
 		"place m4a2hulk 152.80 -82.57 -95.59 8.5 -14 -35 0 0 0 0",
 		"place m4a2hulk 62.97 41.79 6.0 -8 0 -160 0 0 0",
-		"place m4a2hulk 125.36 16.61 7.55 5 0 -200 0 0 0",
+		-- "place m4a2hulk 125.36 16.61 7.55 5 0 -200 0 0 0",
 		
 		
 		
 		
 		"place dg_wire_barbed_box 164.17 66.20 5.8 -30 -15 60 0 0 0",
 		"place dg_wire_barbed_box 167.34 62.24 7.1 0 0 60 0 0 0",
+		
+		
+		
 		
 		--"place sandbagwall_outside 161.70 61.90 6.95 0 0 45 0 0 0 0",
 		
@@ -154,20 +157,20 @@ if(true) then
 		
 		-- NEAR BRIDGE
 
-		"place tanktrap 140.01 62.25 7.57 60 60 0 0 0 0 0",
-		"place tanktrap 138.36 63.89 6.8 0 0 -15 0 0 0 0",
-		"place tanktrap 136.25 64.72 6.5 10 0 0 0 0 0",
+		"place tanktrap 134.65 48.46 7.0 0 0 50 0 0 0 0",
+		"place tanktrap 133.88 45.82 7.3 -30 0 0 0 0 0 0",
+		--"place tanktrap 136.25 64.72 6.5 10 0 0 0 0 0",
 		"place sandbagwall_curved_outside 132.08 18.19 7.7 0 0 80 0 0 0 0",
 		"place ammocrate 135.38 16.71 8.1 0 0 80 0 0 0 0",
 		"place crate 135.39 18.43 7.85 -3 -2 -30 0 0 0 0",
-		"place dg_wire_barbed_apron	120.0 9.94 6.65 -10 -10 -55 0 0 0",
-		"place dg_wire_barbed_apron	132.25 24.75 6.75 -10 -10 -45 0 0 0",
+		"place dg_wire_barbed_apron	116.5 5.58 7.9 -10 -10 -55 0 0 0",
+		"place dg_wire_barbed_apron 128.0 15.03 7.36 0 -10 110 0 0 0",
 
+		"place sandbagwall_outside 130.9 34.08 7.0 0 0 110 0 0 0 0",
+		"place dg_wire_barbed_box 131.15 34.8 7.05 0 0 20 0 0 0",
 		
-		
-		
-
-		
+		"place sandbagwall_outside 129.45 26.43 7.0 0 0 110 0 0 0 0",
+		"place dg_wire_barbed_box 129.45 27.3 7.0 0 0 20 0 0 0",	
 		
 		
 		
@@ -186,16 +189,21 @@ if(true) then
 		"place dangersign 146.77 22.51 8.07 0 0 105 0 0 0",
 		"place dangersign 149.63 33.88 7.49 0 0 105 0 0 0",
 		
-		"place dangersign 117.55 30.02 7.38 0 0 -80 0 0 0",
-		"place dangersign 119.22 54.20 6.27 0 0 -80 0 0 0",
-		"place dangersign 118.71 43.71 7.25 0 0 -80 0 0 0",
-		"place dangersign 117.08 56.56 5.8 0 0 -150 0 0 0",
+		-- "place dangersign 117.55 30.02 7.38 0 0 -80 0 0 0",
+		"place dangersign 131.46 51.28 6.57 0 0 -180 0 0 0",
+		-- "place dangersign 118.71 43.71 7.25 0 0 -80 0 0 0",
+		"place dangersign 123.24 55.00 4.96 0 0 -180 0 0 0",
+		"place dangersign 111.53 59.80 6.01 0 0 -180 0 0 0",
+		
+		
+		
+		
 		"place dangersign 98.70 64.93 6.4 0 0 -150 0 0 0",
 		"place dangersign 80.89 73.83 5.1 0 0 -150 0 0 0",
 		"place dangersign 65.92 81.19 4.8 0 0 -150 0 0 0",
 		"place dangersign 73.63 1.45 5.6 0 0 -25 0 0 0",
-		"place dangersign 60.02 -3.73 4.98 0 0 -25 0 0 0",
-		"place dangersign 115.59 26.46 6.47 0 0 -25 0 0 0",
+		"place dangersign 65.51 -1.57 5.25 0 0 -25 0 0 0",
+		"place dangersign 122.16 28.50 3.45 0 0 -25 0 0 0",
 		"place dangersign 102.25 14.77 5.01 0 0 -25 0 0 0",
 		"place dangersign 88.77 8.53 5.35 0 0 -25 0 0 0",
 		--"place dangersign 149.63 33.88 7.49 0 0 105 0 0 0",
