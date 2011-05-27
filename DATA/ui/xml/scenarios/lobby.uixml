@@ -30,7 +30,7 @@
 			<view id="left-pane" x="18" y="23" width="444" height="411">
 				<!-- weapon selection -->
 				<view x="10" width="425" height="400" rtop="12">
-					<caption id="forces-header" label="${online.scenarios.list}" x="0" height="20" width="425" rtop="0"
+					<caption id="forces-header" label="ACTIVE SCENARIOS" x="0" height="20" width="425" rtop="0"
 						style="font-size: +2; color: #BFE2CE; tooltip: widgets/tooltips/supplytip.uixml;"/>
 					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
 					<view x="0" width="425" height="15" rtop="22">
@@ -48,40 +48,9 @@
 				onclick="doCreate(this); soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
 			<include file="widgets/divider.uixml"/>
 			<view id="right-pane" x="468" y="23" width="444" height="411">
-				<view id="scenario-map" class="mapview" acceptsfocus="no" minscale=".03" maxscale="1.5" scale=".75"
-					x="10" y="10" rright="10" rtop="30" sx="18" sy="235"
-					onload="if(!this.mgr) new MapManager(this, true)" onshow="this.mgr.onShow()" 
-					onupdate="this.mgr.onUpdate()" onclick="this.mgr.onClick()" ondblclick="this.mgr.onDblClick()"
-					ondrag="this.mgr.onDrag()" onmouseenter="this.mgr.onMouseEnter()" onmouseexit="this.mgr.onMouseExit()"
-					onrightclick="this.mgr.onRightClick()"
-					style="tooltip: widgets/tooltips/maptip.uixml;">
-					<layer type="texture" id="default-64-tex" minscale="0" maxscale="64" enabled="true" orign="-26x210" rowcolsize="1x1" cellsize="64x64"/>
-					<layer type="icon" id="icons" minscale="1" maxscale="8" enabled="true"/>
-					<layer type="icon" id="rendered" minscale="0" maxscale="1" enabled="true"/>
-					<layer type="terrainobj" id="terrainobj" minscale="0" maxscale=".5" enabled="true"/>
-					<layer type="hclinks" id="hclinks" minscale="0" maxscale="20" enabled="true"/>
-					<layer type="strat" id="strat" minscale="0" maxscale="20" enabled="true">
-						<filter name="showcivilian" value="no"/>
-						<filter name="showbrigdes" value="no"/>
-						<filter name="showarmy" value="yes"/>
-						<filter name="showairforce" value="yes"/>
-						<filter name="shownavy" value="yes"/>
-						<filter name="showdepots" value="yes"/>
-						<filter name="showcpnames" value="yes"/>
-						<filter name="showfacnames" value="no"/>
-						<filter name="showflags" value="yes"/>
-						<filter name="showicons" value="yes"/>
-						<filter name="fadeupdate" value="no"/>
-						<filter name="fadefrontline" value="yes"/>
-						<filter name="cptextcolor" value="#FFFF00"/>
-						<filter name="factextcolor" value="#FFFFFF"/>
-						<filter name="seltextcolor" value="#00FF00"/>
-						<filter name="factextsize" value="12"/>
-						<filter name="cptextsize" value="12"/>
-						<filter name="showclutter" value="no"/>
-						<filter name="cluttercutoff" value=".2"/>
-					</layer>
-				</view>
+					<caption label="DESCRIPTION" x="0" height="20" width="425" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
+					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
+					<text id="scenario-description" x="10" y="10" rright="10" rtop="30" style="font-size: +1; color: #FFFFFFBB;"/>
 			</view>
 		</tab>
 		<include file="widgets/globals/settings.uixml"/>
@@ -93,7 +62,7 @@
 		cprint(">>> STARTING LOBBY PAGE\n");
 		
 		var client 				= game.player.client;
-		var mapView		= findview("scenario-map");
+		var descView		= findview("scenario-description");
 		var updateTimer	= new CycleTimer(3000);
 		var scenarios		= loadRoot();
 		var instanceList	= new ListControl(findview("instanceList"), selectInstance);
@@ -122,8 +91,8 @@
 			
 			if(!campaignPlay)
 			{
-				var body = findview("body");
-				if(body) body.showtab(0, false);
+				if(body)
+					body.showtab(0, false);
 			}
 			else if(!scenarioPlay)
 			{
@@ -240,28 +209,30 @@
 			
 			scenario.content.instance = scenario.instance;
 			
-			/*
-			if(!canJoinScenario(scenario.content))
+			// update our description
+			descView.text = scenario.content.brief;
+			
+			if(action)
 			{
-				showOk('Scenario full!');
-				return;
-			}
-			*/
-			
-			if(!selectTeam(scenario.content))
-			{
-				showOk(lastScenarioError);	
-				return;
-			}
-			
-			setForwardEnabled(true);
-			
-			var instance = scenario.instance;
-			
-			if(action && !joinInstance(instance.description, false))
-			{
-				showOk("Failed to join instance!");
-				joinLobby();
+				if(!canJoinScenario(scenario.content))
+				{
+					showOk('Scenario full!');
+					return;
+				}
+				
+				if(!selectTeam(scenario.content))
+				{
+					showOk(lastScenarioError);	
+					return;
+				}
+				
+				var instance = scenario.instance;
+				
+				if(!joinInstance(instance.description, false))
+				{
+					showOk("Failed to join instance!");
+					joinLobby();
+				}
 			}
 		}
 		

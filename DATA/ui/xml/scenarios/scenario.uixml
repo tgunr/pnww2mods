@@ -77,8 +77,13 @@
 			</view>
 			<include file="widgets/divider.uixml"/>
 			<view id="right-pane" x="468" y="23" width="444" height="411">
-				<view id="scenario-map" class="scenimage" src="map.bmp" acceptsfocus="no" x="10" y="10" rright="10" rtop="30"
-					style="tooltip: widgets/tooltips/maptip.uixml;"/>
+				<view x="10" width="425" height="400" rtop="12">
+					<caption label="OBJECTIVE" x="0" height="20" width="425" rtop="0" style="font-size: +2; color: #BFE2CE; tooltip: widgets/tooltips/supplytip.uixml;"/>
+					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
+					<text id="scenario-description" x="10" height="150" rright="10" rtop="30" style="color: #FFFFFFBB;"/>
+					<view id="scenario-map" class="scenimage" src="map.bmp" acceptsfocus="no" x="15" y="20" width="400" height="192"
+						style="tooltip: widgets/tooltips/maptip.uixml;"/>
+				</view>
 			</view>
 		</tab>
 		<include file="widgets/globals/settings.uixml"/>
@@ -96,6 +101,7 @@
 		var scenario			= game.globals.scenario;
 		var selections		= findview("selection-tab");
 		var showButton	= findview("show-button");
+		var descView		= findview("scenario-description");;
 		
 		var spawnTree 	= new TreeControl("spawnTree", selectSpawnable, formatSpawnable, isSelectable);
 		var memberList 	= new ListControl(findview("memberList"));
@@ -185,8 +191,14 @@
 			
 			// get our scenario state
 			scenario.instance = getScenarioState();
+			scenario.objectives = loadObjectives(scenario);
+			
+			if(scenario.objectives)
+				descView.text = scenario.objectives.brief;
+			else
+				cprint("----------- Objectives not found!");
 		}
-				
+		
 		function initSpawnableTree(spawnables)
 		{
 			if(spawnables.length == 0)

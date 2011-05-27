@@ -4,6 +4,7 @@
 	var hwCallback = null;
 	var display = null;
 	var label = null;
+	var wpColor = "#FF0000";
 	
 	function initHUDObject(v, c)
 	{
@@ -18,9 +19,19 @@
 		hwCallback = c;
 	}
 	
-	function setDisplay(loc)
+	function setDisplay(loc, c)
 	{
 		label = getlocstring(loc);
+		
+		if(c != null)
+		{
+			if(c == "enemy")
+				wpColor = game.settings['enemycolor'];
+			else if(c == "friendly")
+				wpColor = game.settings['friendlycolor'];
+			else if(c.charAt(0) == "#")
+				wpColor = c;
+		}
 	}
 	
 	function updateHUDObject(placement, distance, alpha)

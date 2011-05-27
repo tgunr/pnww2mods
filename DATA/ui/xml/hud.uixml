@@ -30,9 +30,13 @@
 	
 	<view id="game-alert-icons" x="5" y="170" width="32" height="365" moveondrag="yes" aspectlimit="width"/>
 	
-	<text id="game-message" x="0" y="0" width="0" height="0"
+	<text id="game-message1" x="0" y="0" width="0" height="0"
 		maxwidth="500" fontshadowx=".08" fontshadowy="-.08"
 		style="color: #FFFFFF; font-size: +3;"
+		moveondrag="no" acceptmouseclick="false"/>
+	<text id="game-message2" x="0" y="0" width="0" height="0"
+		maxwidth="500" fontshadowx=".08" fontshadowy="-.08"
+		style="color: #FFFFFF; font-size: +1;"
 		moveondrag="no" acceptmouseclick="false"/>
 	
 	<!-- GAMEALERT -->
@@ -261,7 +265,7 @@
 		
 		var gameEventView			= null;
 		var gameAlertIconView	= findview("game-alert-icons");
-		var hudMessage				= new FadeView("game-message", 5000);
+		var hudMessages				= new Array(2);
 		
 		var overSupplyState			= 6;
 		
@@ -280,6 +284,9 @@
 			cprint("Initing HUD !!!\n");
 			initGlobals();
 			musicKill();
+			
+			hudMessages[0] = new FadeView("game-message1", 8000);
+			hudMessages[1] = new FadeView("game-message2", 8000);
 			
 			gameAlertView.visible = false;
 			
@@ -474,7 +481,8 @@
 			if(infoTimer.run())
 				updateInfo();
 			
-			hudMessage.update();
+			hudMessages[0].update();
+			hudMessages[1].update();
 		}
 		
 		function updateAmmo(weapon)
@@ -1399,8 +1407,31 @@
 			
 			if(message.charAt(0) == "?")
 				message = loc;
+				
+			if(hudMessages[0].start > 0)
+			{
+				var hm0	= hudMessages[0];
+				var hm1 	= hudMessages[1];
+				
+				// move it down
+				hm1.color				= hm0.color;
+				hm1.view.text 		= hm0.view.text;
+				
+				hm1.view.resizetotext();
+				hm1.view.setstyleproperty("color", hm1.color);
+				
+				hm1.view.x 			= (game.screenwidth/2) - hm1.view.width/2;
+				hm1.view.y			= (game.screenheight/4) - hm1.view.height - 10;  
+				hm1.view.visible 	= true;
+				hm1.start				= hm0.start;
+			}
 			
-			hudMessage.init(message, color);
+			hudMessages[0].init(message, color);
+			
+			// centered x, 1/3 y
+			hudMessages[0].view.x = (game.screenwidth/2) - hudMessages[0].view.width/2;
+			hudMessages[0].view.y = (game.screenheight/4);
+ 
 		}
 		
 		-->

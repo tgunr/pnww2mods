@@ -3,13 +3,9 @@
 	
 	var bulletView = null;
 	var distView = null;
-	var wpColor = "#FFFFFF";
 	
-	function hudWPInit(win, c)
+	function hudWPInit(win)
 	{
-		if(c != null)
-			wpColor = game.settings[c];
-		
 		bulletView = win.findview("bullet");
 		distView = win.findview("distance");
 		

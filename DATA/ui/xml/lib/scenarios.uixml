@@ -66,6 +66,31 @@
 			return null;
 		}
 		
+		function loadObjectives(scenario, team)
+		{
+			if(scenario == null || !game.online || game.player.client.persona == null)
+			{
+				cprint("Objectives fail 1");
+				return null;
+			}
+			
+			if(team == null)
+				team = game.player.client.persona.country.side;
+				
+			if(team < 1 || team > 2)
+			{
+				cprint("Objectives fail 2");
+				return null;
+			}
+			
+			if(scenario.links.length >= 2)
+				return game.getcontent(scenario.links[team - 1].path);
+			
+			cprint("Objectives fail 3");
+				
+			return null;
+		}
+		
 		function joinLobby()
 		{
 			var hud = game.findview("scenhud");
