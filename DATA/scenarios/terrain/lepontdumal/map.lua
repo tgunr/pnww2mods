@@ -139,11 +139,11 @@ if(true) then
 		"place m4a2hulk 62.97 41.79 6.0 -8 0 -160 0 0 0",
 		-- "place m4a2hulk 125.36 16.61 7.55 5 0 -200 0 0 0",
 		
-		
-		
-		
 		"place dg_wire_barbed_box 164.17 66.20 5.8 -30 -15 60 0 0 0",
 		"place dg_wire_barbed_box 167.34 62.24 7.1 0 0 60 0 0 0",
+		
+		
+	
 		
 		
 		
@@ -163,14 +163,20 @@ if(true) then
 		"place sandbagwall_curved_outside 132.08 18.19 7.7 0 0 80 0 0 0 0",
 		"place ammocrate 135.38 16.71 8.1 0 0 80 0 0 0 0",
 		"place crate 135.39 18.43 7.85 -3 -2 -30 0 0 0 0",
-		"place dg_wire_barbed_apron	116.5 5.58 7.9 -10 -10 -55 0 0 0",
-		"place dg_wire_barbed_apron 128.0 15.03 7.36 0 -10 110 0 0 0",
+		
+		
+		
+		"place dg_wire_barbed_apron	116.5 5.58 7.4 -10 -10 -55 0 0 0",
+		"place dg_wire_barbed_apron 129.0 16 7.36 0 10 -65 0 0 0",
 
 		"place sandbagwall_outside 130.9 34.08 7.0 0 0 110 0 0 0 0",
 		"place dg_wire_barbed_box 131.15 34.8 7.05 0 0 20 0 0 0",
 		
 		"place sandbagwall_outside 129.45 26.43 7.0 0 0 110 0 0 0 0",
-		"place dg_wire_barbed_box 129.45 27.3 7.0 0 0 20 0 0 0",	
+		"place dg_wire_barbed_box 129.45 27.3 7.0 0 0 20 0 0 0",
+
+
+			
 		
 		
 		
