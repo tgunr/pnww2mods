@@ -9,8 +9,8 @@ if(true) then
 	-- Hulked Armoured Vehicles
 		
 
-		"place instance_hulk2_dam 345498.39 3006190.72 110.11 0 0 39 0 0 0 0",
-		"place instance_hulk2_dam 345725.97 3006311.75 109.19 0 0 51 0 0 0 0",
+		"place instance_hulk2_dam 345498.39 3006190.72 109.11 0 0 39 0 0 0 0",
+		"place instance_hulk2_dam 345725.97 3006311.75 108.19 0 0 51 0 0 0 0",
 				
 		
 	-- Tank Traps
