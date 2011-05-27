@@ -14,10 +14,10 @@ if(true) then
 	
 	-- boundary name x y z
 
-		--"boundary playarea 344163.09 3004802.81 114.07",
-		--"boundary playarea 343982.09 3007292.61 346.30",
-		--"boundary playarea 346410.65 3007303.96 109.62",
-		--"boundary playarea 346418.34 3004801.49 113.72",
+		"boundary playarea 344163.09 3004802.81 108",
+		"boundary playarea 343982.09 3007292.61 108",
+		"boundary playarea 346410.65 3007303.96 108",
+		"boundary playarea 346418.34 3004801.49 108",
 
 -- DEFINE WHERE PLAYERS SPAWN		
 		
@@ -28,25 +28,25 @@ if(true) then
 
 		-- Allied tank spawns
 		
-		"spawn alliedtanks 345264.33 3007126.18 108.37 180",
-		"spawn alliedtanks 345259.19 3007119.92 108.37 180",
-		"spawn alliedtanks 345784.60 3007190.67 109.62 180",
-		"spawn alliedtanks 345789.31 3007163.51 110.86 180",
-		"spawn alliedtanks 345813.59 3007163.61 110.61 180",
-		"spawn alliedtanks 345810.34 3007191.77 110.60 180",
-		"spawn alliedtanks 346012.83 3007192.17 109.52 180",
-		"spawn alliedtanks 346030.32 3007165.92 109.28 180",
+		"spawn alliedtanks 345740.42 3007190.71 108.36 0",
+		"spawn alliedtanks 345767.30 3007190.32 108.37 0",
+		"spawn alliedtanks 345786.57 3007190.81 108.35 0",
+		"spawn alliedtanks 345808.20 3007192.01 108.31 0",
+		"spawn alliedtanks 345826.37 3007190.63 108.36 0",
+		"spawn alliedtanks 345845.13 3007182.47 108.67 0",
+		"spawn alliedtanks 345823.83 3007142.30 110.20 0",
+		"spawn alliedtanks 345777.27 3007143.57 110.16 0",
 
 		-- German tank spawns
 
-		"spawn axistanks 345558.25 3004805.14 115.29 0",
-		"spawn axistanks 345557.69 3004826.74 114.55 0",
-		"spawn axistanks 345414.29 3004814.32 115.09 0",
-		"spawn axistanks 345415.11 3004804.36 113.34 0",
-		"spawn axistanks 345391.41 3004802.32 115.78 0",
-		"spawn axistanks 345388.59 3004834.00 113.29 0",
-		"spawn axistanks 345052.65 3004806.76 114.50 0",
-		"spawn axistanks 345053.99 3004847.33 113.22 0",
+		"spawn axistanks 345272.87 3004811.18 112.43 180",
+		"spawn axistanks 345299.36 3004812.11 112.46 180",
+		"spawn axistanks 345353.14 3004810.81 112.41 180",
+		"spawn axistanks 345415.72 3004809.26 112.35 180",
+		"spawn axistanks 345461.97 3004808.57 112.33 180",
+		"spawn axistanks 345495.07 3004811.05 112.42 180",
+		"spawn axistanks 345439.85 3004854.87 114.10 180",
+		"spawn axistanks 345385.92 3004853.01 114.02 180",
 
 -- DEFINE BLOCKED AREAS OF NO ACCESS BY PLAYERS
 
@@ -85,6 +85,7 @@ if(true) then
 		"emitter smokescreen 345294.49 3005621.75 112.95",
 		"emitter smokescreen 345361.33 3005647.16 112.82",
 		"emitter smokescreen 345439.39 3005638.33 112.85",
+		"emitter smokescreen 345405.31 3005666.84 111.67",
 						
 		-- SMOKING VEHICLES
 		
@@ -137,10 +138,10 @@ if(true) then
 	-- A LINE OF BOMBS (as if dropped from a plane)
 	-- command name ammo worldx1 worldy1 worldz1 worldx2 worldy2 worldz2
 
-		"bombingrun bombing1 gp500 293234.92 2977542.19 274.00 293151.93 2977489.60 274.00",
-		"bombingrun bombing2 gp500 293182.37 2977460.60 274.00 293261.72 2977531.88 274.00",
-		"bombingrun bombing1 gp500 292832.21 2976804.38 274.00 292806.56 2976934.30 274.00",
-		"bombingrun bombing2 gp500 292891.65 2976804.29 274.00 292868.18 2976952.18 274.00",
+		"bombingrun bombing1 gp500 345341.24 3006908.91 110.79 346181.83 3006916.23 111.08",
+		"bombingrun bombing2 gp500 346104.64 3006889.33 113.52 345643.43 3006890.27 113.00",
+		"bombingrun bombing1 gp500 345780.50 3005088.91 115.25 345021.67 3005085.88 114.49",
+		"bombingrun bombing2 gp500 345118.53 3005109.86 117.00 345580.75 3005108.87 117.00",
 				
 
 	-- AREA EFFECT BOMBING OR BARRAGE (simulating artillery barrage)
@@ -148,8 +149,8 @@ if(true) then
 	-- the distance is the radius of a circle around the center to randomly fire off the ammo in
 	-- command name ammo x y z distance
 
-		"barrage barrage1 gp40 293200.18 2977199.12 274.18 150",
-		"barrage barrage1 gp40 293591.65 2977199.76 274.00 150",
+		"barrage barrage1 gp40 345600.82 3006201.71 108.99 150",
+		-- "barrage barrage1 gp40 293591.65 2977199.76 274.00 150",
 		-- "barrage barrage1 gp40 -266.85 -36.03 5.26 50",
 
 		
@@ -165,9 +166,9 @@ if(true) then
 		"event guns2 .25 40000",
 		--"event siren1 .33 50000",
 		-- "event wind .5 5000",
-		"event bombing1 .25 40000 600 12",
-		"event bombing2 .35 50000 650 12",
-		"event barrage1 .45 60000 550 18",
+		"event bombing1 .90 25000 600 24",
+		"event bombing2 .90 25000 650 12",
+		"event barrage1 .45 30000 550 18",
 
 		
 
@@ -176,18 +177,18 @@ if(true) then
 
 		-- directions at axis spawn 1
 
-		--"area toaxisspawn OnTrigger 293624.50 2976351.22 274.00",		
-		--"area toaxisspawn OnTrigger 293623.44 2976319.32 274.00",
-		--"area toaxisspawn OnTrigger 293830.51 2976317.97 274.00",
-		--"area toaxisspawn OnTrigger 293830.95 2976351.00 274.00",
+		"area ataxisspawn OnTrigger 345260.32 3004804.76 112.00",		
+		"area ataxisspawn OnTrigger 345504.78 3004805.95 112.00",
+		"area ataxisspawn OnTrigger 345509.18 3004867.41 112.00",
+		"area ataxisspawn OnTrigger 345262.57 3004863.17 112.00",
 				
 
 		-- directions at allied spawn 1
 
-		--"area toalliedspawn OnTrigger 293783.85 2978058.41 274.00",	
-		--"area toalliedspawn OnTrigger 293695.87 2978060.53 274.00",	
-		--"area toalliedspawn OnTrigger 293695.54 2978014.89 274.00",	
-		--"area toalliedspawn OnTrigger 293779.78 2978014.31 274.00",		
+		"area atalliedspawn OnTrigger 345712.82 3007130.00 108.00",	
+		"area atalliedspawn OnTrigger 345712.57 3007198.25 108.00",	
+		"area atalliedspawn OnTrigger 345861.24 3007197.78 108.00",	
+		"area atalliedspawn OnTrigger 345860.36 3007129.62 108.00",		
 
 	-- minefield near axis spawn
 
@@ -268,14 +269,27 @@ if(true) then
 		
 -- ADD A HUD ALERT
 		
-	-- these are always named
-	-- the lockey is a lockey looked up from the scenario content in the web translation tool
-	-- command name lockey
+	-- ADD A HUD ALERT
+		
+		-- these are always named
+		-- look them up from the scenario content in the web translation tool
+		-- command categorynamealert namealert numberofsecondsbetweenrepeatalerts
+		-- numberofsecondsbetweenrepeatalerts 0= no limit, 1= onetime per scenario, unit measure is seconds 
+		
+		-- HUD WAYPOINTERS
 
-		--"alert onspawn onspawn.moveout",
-		--"alert toaxisspawn toaxisspawn",
-		--"alert toalliedspawn toalliedspawn",
-		--"alert bridgecapture bridgecapture",
+		--"waypoint onspawn wp1 345402.03 3005111.85 117.00 enemy",
+		--"waypoint onspawn wp2 345794.84 3006856.06 111.33 friendly",
+		--"waypoint onspawn wp3 345621.56 3006249.94 108.70 friendly",
+
+		"alert onspawn onspawn.moveout 60",
+		--"alert roundstop roundstop",
+		--"alert victory1 victory1",
+		--"alert victory2 victory2",
+		--"alert playarea playarea 10",
+		--"alert churchentry churchentry 20000",
+		--"alert toaxisspawn toaxisspawn -1",
+		--"alert toalliedspawn toalliedspawn -1",
 
 				
 -- MAKE A VEHICLE AVAILABLE FOR SPAWNING
