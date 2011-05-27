@@ -4,12 +4,14 @@ if(true) then
 	-- content we're going to add
 	local content = 
 	{
+    	-- special handling
+		-- type object shader x y z yaw
+		"river water1 riverrun_river 0 0 2 0",
 
 -- TERRAIN OBJECTS PLACEMENTS
 
 	-- command,filename,worldx,worldy,worldz,roll,pitch,yaw,scalex,scaley,scalez,damage
 
-		"place water1 0 0 2 0 0 0 0 0 0 0",
 		"place bel4 -75.06 -117.81 7.80 0 0 16 0 0 0 1",
 		"place bel6 -18.38 -147.54 8.28 0 0 200 0 0 0 1",
 		"place bel6 -10.87 -118.52 8.36 0 0 112 0 0 0 1",
