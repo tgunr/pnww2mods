@@ -255,8 +255,8 @@ if(true) then
 		-- TRIGGERS
 		
 		-- commandname,pctg chance each second,wait in seconds, ms between bombs, number of bombs
-		"event barrage1 1 5000 700 10",
-		"event barrage2 1 5000 700 10",
+		--"event barrage1 1 5000 700 10",
+		--"event barrage2 1 5000 700 10",
 		
 	
 
