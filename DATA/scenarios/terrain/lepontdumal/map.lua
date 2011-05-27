@@ -28,9 +28,9 @@ if(true) then
 		"place crate 110.25 -45.38 8.05 0 0 115 0 0 0 0",
 		"place bel3 137.70 -76.21 7.80 0 0 20 0 0 0 0",
 		"place boarding1 154.20 -92.90 8.00 0 0 18 0 0 0 0",
-		"place sandbagwall_outside 163.00 -85.20 7.46 0 1 -70 0 0 0 0",
-		"place sandbagwall_outside 166.00 -86.25 7.37 0 3 -70 0 0 0 0",
-		"place sandbagwall_outside 171.50 -86.00 7.51 0 -4 -70 0 0 0 0",
+		--"place sandbagwall_outside 163.00 -85.20 7.46 0 1 -70 0 0 0 0",
+		--"place sandbagwall_outside 166.00 -86.25 7.37 0 3 -70 0 0 0 0",
+		--"place sandbagwall_outside 171.50 -86.00 7.51 0 -4 -70 0 0 0 0",
 		"place citybild1 187.64 -75.77 6.88 0 0 110 0 0 0 1",
 		"place cratepile_outside 183.50 -92.50 6.66 3 7 110 0 0 0 0",
 		"place truck_dam_outside 186.30 -89.93 6.56 0 6 180 0 0 0 0",
@@ -101,7 +101,7 @@ if(true) then
 		"place dd_telegraph_07 12.00 -53.50 7.22 0 0 110 0 0 0 0",
 		"place dd_telegraph_07 -4.00 -96.00 7.34 0 0 110 0 0 0 0",
 		"place dd_telegraph_07 42.00 -138.00 8.77 84 60 20 0 0 0 0",
-		"place dd_telegraph_07 165.00 -85.00 8 61 70 0 0 0 0 0",
+		--"place dd_telegraph_07 165.00 -85.00 8 61 70 0 0 0 0 0",
 		-- "place instance_rockwallberm1 138.00 13.50 7.0 -3 0 105 0 0 0 0",
 		"place instance_rockwallberm1 156.00 8.75 7.10 0 0 105 0 0 0 0",
 		-- "place instance_rockwallberm1 174.00 4.00 6.95 0 0 105 0 0 0 0",
@@ -119,7 +119,7 @@ if(true) then
 		"place cratepile_outside 109.5 -6.27 7.5 -2 0 65 0 0 0 0",
 		"place vinbarn1 153.5 81.5 6.5 0 0 -67 0 0 0 1",
 		"place vinbarn1 137.0 79.0 5.85 0 0 -250 0 0 0 0",
-		"place cratepile_outside 178.78 -66.67 7.3 0 0 -60 0 0 0 0",
+		"place cratepile_outside 147 -21.78 7.9 0 0 -60 0 0 0 0",
 		"place haystack_outside 124.81 79.15 5.5 0 0 0 0 0 0 0",
 		"place haystack_outside 122.64 71.44 5.4 0 0 25 0 0 0 0",
 		"place haystack_outside 168.33 85.51 4.0 0 0 0 0 0 0 0",
@@ -127,6 +127,8 @@ if(true) then
 		"place instance_hulk1_dam 148.05 -63.81 8.0 -1 2 115 0 0 0 0",
 		"place cratepile_outside 158.58 -51.01 8.0 0 0 -70 0 0 0 0",
 		"place crate 116.85 -46.78 8.0 0 0 20 0 0 0 0",
+		
+		"place dg_wire_barbed_apron	167 -86.0 8.5 0 0 0 0 0 0",
 		
 		
 
