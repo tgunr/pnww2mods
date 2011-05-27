@@ -163,15 +163,33 @@ if(true) then
 -- ADD A HUD ALERT
 
 		-- these are always named
-		-- the lockey is a lockey looked up from the scenario content in the web translation tool
-		-- command name lockey
+		-- look them up from the scenario content in the web translation tool
+		-- command categorynamealert namealert numberofsecondsbetweenrepeatalerts
+		-- numberofsecondsbetweenrepeatalerts 0= no limit, 1= onetime per scenario, unit measure is seconds 
+		
+		-- HUD WAYPOINTERS
 
+<<<<<<< .mine
+		--"waypoint onspawn wp1 345402.03 3005111.85 117.00 enemy",
+		--"waypoint onspawn wp2 -36.00 -153.15 7.88 friendly",
+		--"waypoint onspawn wp3 60.61 -91.40 27.17 friendly",
+
+		"alert onspawn onspawn.moveout 60",
+		--"alert roundstop roundstop",
+		--"alert victory1 victory1",
+		--"alert victory2 victory2",
+		--"alert playarea playarea 10",
+		--"alert churchentry churchentry 20000",
+		--"alert toaxisspawn toaxisspawn -1",
+		--"alert toalliedspawn toalliedspawn -1",
+=======
 		"alert onspawn.moveout onspawn.moveout",
 		"alert playarea playarea 10",
 		"alert victory1 victory1",
 		"alert victory2 victory2",
 		"alert roundstop roundstop",
 		
+>>>>>>> .r1434
 
 		
 		
@@ -215,17 +233,34 @@ if(true) then
 		-- command,spawngroup,country,category,class,type
 		-- a 0 is considered a wildcard
 
-		-- ALIIED SPAWN list
+		-- ALLIED SPAWN list
 
+<<<<<<< .mine
+		"vehicle alliedtroops fr-lmg",
+		"vehicle alliedtroops fr-smg",
+		"vehicle alliedtroops fr-rifle",
+		"vehicle alliedtroops fr-sniper",
+		"vehicle alliedtroops uk-lmg",
+		"vehicle alliedtroops uk-smg",
+		"vehicle alliedtroops uk-rifle",
+=======
 		"vehicle alliedtroops us-assault",
 		"vehicle alliedtroops us-smg",
 		"vehicle alliedtroops us-bar",
+>>>>>>> .r1434
+		"vehicle alliedtroops uk-sniper",
 
 		-- AXIS SPAWN list
 
 		"vehicle axistroops de-smg",
 		"vehicle axistroops de-lmg",
+<<<<<<< .mine
+		"vehicle axistroops de-rifle",
+		"vehicle axistroops de-sniper",
+=======
 		"vehicle axistroops de-assault",
+>>>>>>> .r1434
+
 	};
 
 	for i,v in ipairs(content) do 
