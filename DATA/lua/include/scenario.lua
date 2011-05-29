@@ -91,6 +91,7 @@ function OnStart(handler)
 	tutorial.AddHandler(tutorial.TUT_EVENT_SET, "OnSet");
 	tutorial.AddHandler(tutorial.TUT_EVENT_DAMAGE, "OnDamage");
 	tutorial.AddHandler(tutorial.TUT_EVENT_UPDATE, "OnScenario");
+	tutorial.AddHandler(tutorial.TUT_EVENT_COLLISION, "OnCollide", nil);
 	
 	-- setup some default handlers
 	-- scenario.manager:AddContent("alert victory1 victory1");
@@ -264,6 +265,16 @@ function OnDead()
 	--end
 end
 
+scenario.AddMessage = function(message, color, arg1, arg2)
+	local hud = ui.FindView("hud");
+	if(hud ~= nil) then
+		if(color == nil) then color = "#00FF00"; end
+		if(arg1 == nil) then arg1 = ""; end
+		if(arg2 == nil) then arg2 = ""; end
+		hud:CallJS("OnMessage", message, color, arg1, arg2);
+	end
+end
+
 function OnBoundary(handler)
 	if(handler.state == tutorial.THS_EVENT_OUT and state.inbounds) then
 		-- try to run any scenario events associated with despawning
@@ -335,6 +346,10 @@ function OnVictory(name, value)
 	return 1;
 end
 
+scenario.InArea = function(handler)
+	return (handler ~= nil and handler.state == tutorial.THS_EVENT_IN)
+end
+
 scenario.OnRoundTimer = function(name, value)
 	local timeLeft = tonumber(value);
 	
@@ -367,6 +382,22 @@ function SetUpMap()
 		-- owner, cp, fac (fac is optional)
 	--	strat.PwnStrat(ms[1], ms[2], ms[3]);
 	--end
+end
+
+function OnCollide(handler, ob)
+	if(ob ~= nil) then
+		local name = ob:ObjName();
+		local damage = false;
+		if(name == "dg_wire_barbed_apron") then
+			damage = true;
+		elseif(name == "dg_wire_barbed_box") then
+			damage = true;
+		end
+		if(damage) then
+			player.persApplyDamage(.5, 0, 1, 1);
+		end
+	end
+	return 1;
 end
 
 function GetLocation(name, side)
