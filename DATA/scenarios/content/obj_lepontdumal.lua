@@ -51,8 +51,8 @@ if(true) then
 
 		-- Allied Infantry Spawn Points
 
-		"spawn alliedtroops 211.01 158.77 5.71 200",
-		"spawn alliedtroops 203.01 148.59 5.67 265",
+		"spawn alliedtroops 212.02 172.11 6.18 215",
+		"spawn alliedtroops 183.81 165.44 7.02 180",
 
 		-- Axis Infantry spawn Points
 
@@ -239,7 +239,7 @@ if(true) then
 	
 	-- minefield near axis spawn
 
-		"area axisminefield1 OnMineArea 145.71 19.25 6",
+		"area axisminefield1 OnMineArea 140.05 21.01 6",
 		"area axisminefield1 OnMineArea 283.44 -15.31 6",
 		
 		
