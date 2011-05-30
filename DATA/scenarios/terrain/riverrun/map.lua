@@ -21,7 +21,7 @@ if(true) then
 		"place boarding1 1.08 -141.00 8.55 0 0 105 0 0 0 0",
 		"place crate -5.00 -134.70 8.33 0 0 0 0 0 0 0",
 		-- "place crate -5.10 -135.00 9.25 0 0 10 0 0 0 0",
-		"place kr_brg_s_dam 0.00 0.00 0.62 0 0 0 0 0 0 0",
+		"place kr_bridge_s_dam -25.8 -172.5 .6 0 0 20 0 0 0 0",
 		"place bel4 -4.03 -123.47 8.44 0 0 21 0 0 0 0",
 		"place vinbarn1 14.39 -131.72 8.42 0 0 20 0 0 0 0",
 		"place brokencart 11.5 -136.5 8.39 0 0 -90 0 0 0 0",
@@ -135,7 +135,11 @@ if(true) then
 		"place sandbagwall_outside -36.80 -116.50 7.71 0 0 113 0 0 0 0",
 		"place sandbagwall_outside -32.50 -120.50 7.76 2 0 160 0 0 0 0",
 		"place sandbagwall_outside -31.00 -125.00 7.76 0 0 160 0 0 0 0",
-		"place kr_brg_n_dam 0.00 0.00 0.62 0 0 0 0 0 0 0",
+		
+		
+		"place kr_bridge_n 131.03 32.78 0.65 0 0 20 0 0 0 0",
+		
+		
 		"place instance_hulk2_dam 92.00 -78.00 7.76 -3 5 125 0 0 0 0",
 		"place truck_dam_outside 63.93 -53.93 8.15 0 0 0 0 0 0 0",
 		"place sandbagwall_outside -16.60 -157.00 7.59 5 0 25 0 0 0 0",
