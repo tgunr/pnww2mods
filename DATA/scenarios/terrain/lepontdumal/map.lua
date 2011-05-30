@@ -168,7 +168,7 @@ if(true) then
 		
 		
 		
-		"place dg_wire_barbed_apron	116.5 5.58 7.4 -10 -10 -55 0 0 0",
+		"place dg_wire_barbed_apron	116.5 5.58 7.2 -10 -10 -55 0 0 0",
 		"place dg_wire_barbed_apron 129.0 16 7.36 0 10 -65 0 0 0",
 
 		"place sandbagwall_outside 130.9 34.08 7.0 0 0 110 0 0 0 0",
@@ -184,7 +184,7 @@ if(true) then
 		
 
 		-- MINEFIELD WARNING SIGNS
-		"place dangersign 147.07 19.0 8 0 0 10 0 0 0",
+		"place dangersign 142.93 20.43 8 0 0 10 0 0 0",
 		"place dangersign 214.53 1.53 7.32 0 0 10 0 0 0",
 		"place dangersign 234.01 -3.37 7.18 0 0 10 0 0 0",
 		"place dangersign 257.93 -8.97 6 0 0 10 0 0 0",
@@ -194,7 +194,7 @@ if(true) then
 		"place dangersign 156.11 57.98 6.4 0 0 105 0 0 0",
 		"place dangersign 161.22 59.48 7.02 0 0 -180 0 0 0",
 		"place dangersign 170.31 57.02 7.40 0 0 -180 0 0 0",
-		"place dangersign 146.77 22.51 8.07 0 0 105 0 0 0",
+		"place dangersign 141.67 25.73 8.07 0 0 105 0 0 0",
 		"place dangersign 149.63 33.88 7.49 0 0 105 0 0 0",
 		
 		-- "place dangersign 117.55 30.02 7.38 0 0 -80 0 0 0",
