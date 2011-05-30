@@ -1,0 +1,17 @@
+#created for scenario use, May 2011 - Doc
+
+mass = 18.16
+firetype = singleshot
+rateoffire = 1
+dispersion = 0.00
+ammotype1 = smallbarragebomb
+ghostrof = 1
+ghostammotype = smallbarragebomb
+hideonlastdrop = 1
+# there are no clips for bombs
+#cliprounds = 1
+reloadtime = .3
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = na
