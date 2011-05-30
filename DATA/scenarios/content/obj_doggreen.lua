@@ -101,7 +101,7 @@ if(true) then
 		-- blocking volume x
 		-- block name x1 y1 z1 x2 y2 z2 thickness height
 
-        "block -138.05 -28.20 35.57 -132.87 -24.58 36.25 .5 5",
+        "block -143.36 -23.85 34.41 -132.87 -24.58 36.25 .5 5",
 		"block -132.87 -24.58 36.25 -126.31 -23.86 35.69 .5 5",
 		"block -126.31 -23.86 35.69 -111.48 -31.42 37.17 .5 5",
 		"block -103.98 -33.89 38.41 -92.23 -32.63 36.87 .5 5",
@@ -112,7 +112,7 @@ if(true) then
 		"block -66.98 -65.28 41.11 -63.05 -70.97 41.34 .5 5",
 		"block -63.05 -70.97 41.34 -56.44 -74.28 41.15 .5 5",
 		"block -45.57 -80.27 41.25 -35.24 -83.76 41.56 .5 5",
-		"block -35.24 -83.76 41.56 -19.86 -83.40 39.85 .5 5",
+		"block -35.24 -83.76 41.56 -19.86 -83.40 41.5 .5 1",
 		"block -19.86 -83.40 39.85 -4.74 -88.94 39.09 .5 5",
 		"block -4.74 -88.94 39.09 10.68 -97.96 38.12 .5 5",
 		"block 19.78 -99.91 37.61 29.41 -112.02 38.49 .5 5",
@@ -146,8 +146,13 @@ if(true) then
 		"block -161.65 -95.47 41 -155.19 -67.47 41 .5 2.5",
 		"block -155.19 -67.47 39.18 -149.68 -57.18 38.71 .5 5",
 		"block -149.68 -57.18 38.71 -141.49 -34.65 36.83 .5 5",
-		--"block -155.19 -67.47 39.18 -149.68 -57.18 38.71 .5 5",
-		--"block -155.19 -67.47 39.18 -149.68 -57.18 38.71 .5 5",
+		
+		
+		"block -147.66 -29.12 35.79 -147.01 -32.24 36.02 .5 2",
+		"block -146.29 -33.66 36.95 -143.25 -34.98 36.95 .5 2",
+		
+		
+		
 		--"block -155.19 -67.47 39.18 -149.68 -57.18 38.71 .5 5",
 		--"block -155.19 -67.47 39.18 -149.68 -57.18 38.71 .5 5",
 		--"block -155.19 -67.47 39.18 -149.68 -57.18 38.71 .5 5",
@@ -195,24 +200,42 @@ if(true) then
 
 		-- SMOKING CRATERS
 
-		-- "emitter hulksmoke 173.40 -38.89 6.9",
+		"emitter cratersmoke -100.77 167.75 3.72",
+		"emitter cratersmoke -94.12 107.80 5.35",
+		"emitter cratersmoke -13.15 63.35 5.15",
+		"emitter cratersmoke 134.57 -4.02 5.16",
+		"emitter cratersmoke 59.42 25.24 6.21",
+		
+		
+		
+		
+		
 		-- "emitter hulksmoke 129.71 -55.96 7.0",
 
 		-- SMOKESCREEN
 
+		-- cliffs
 		"emitter smokescreen -97.32 -2.10 21",
 		"emitter smokescreen -121.65 6.49 23",
 		"emitter smokescreen -30.43 -51.98 23.78",		
-		"emitter smokescreen -64.53 80.62 8",	
 		"emitter smokescreen 27.01 -92.92 30.51",
 		"emitter smokescreen -37.89 -59.64 31.44",
 		"emitter smokescreen -79.64 -24.46 30.00",
-		"emitter smokescreen -129.96 99.52 9.5",
+		-- beach
+		"emitter smokescreen 13.54 29.78 6.03",
+		"emitter smokescreen -45.14 73.00 6.06",
+	
+		
 		
 		-- VEHICLES
 		
 		-- hulk smoke
 		"emitter hulksmoke -39.93 247.32 3.35",
+		"emitter cratersmoke -28.21 140.03 4.5",
+		"emitter cratersmoke -95.29 199.18 4.25",
+		
+		
+		
 		
 		-- fire
 		"emitter smallfire -49.57 163.99 5.5",
@@ -223,6 +246,12 @@ if(true) then
 		-- POSITIONAL SOUNDS
 	-- command name filename volume loop x y z mindist maxdist	
 	"sound sounds/ambience/ocean.wav 10 1 -63 212 3 100 1000",	
+	
+	"sound sounds/fairmileb/idle.wav 1 1 45 151 4 5 25",
+	"sound sounds/fairmileb/idle.wav 1 1 -10 182 6 5 25",
+	"sound sounds/fairmileb/idle.wav 1 1 -82 203 3 5 25",
+
+	
 		
 		
 -- CLONES --
@@ -245,18 +274,44 @@ if(true) then
 		-- the x,y,z is the center of the barrage
 		-- the distance is the radius of a circle around the center to randomly fire off the ammo in
 		-- command name ammo x y z distance
-		"barrage barrage1 gp40 5.53 38.02 7.26 25",
-		"barrage barrage1 gp40 22.29 93.76 7.14 25",
-		"barrage barrage2 gp40 56.59 26.72 9.28 25",
-		"barrage barrage2 gp40 -88.00 138.96 6.50 25",
+		--water barrage
+		"barrage barrage1 gp40 116.65 116.02 3.71 10",
+		"barrage barrage1 gp40 31.96 209.20 3.65 10",
+		"barrage barrage1 gp40 -31.68 216.85 3.43 10",
+		"barrage barrage1 gp40 -132.15 260.19 3.76 10",
+		"barrage barrage1 gp40 -21.96 257.21 3.29 10",
+		"barrage barrage1 gp40 116.84 221.86 3.50 10",
+		"barrage barrage1 gp40 95.87 239.86 3.40 10",
+		--beach barrage
+		"barrage barrage2 smallbarragebomb 56.59 26.72 9.28 25",
+		"barrage barrage2 smallbarragebomb -186.00 218.52 5.85 25",
+		"barrage barrage2 smallbarragebomb -112.80 90.21 7.10 25",
+		"barrage barrage2 smallbarragebomb -24.70 36.06 7.82 25",
+		"barrage barrage3 smallbarragebomb -152.16 92.97 9.03 15",
+		"barrage barrage3 smallbarragebomb -40.36 84.07 6.04 30",
+		"barrage barrage3 smallbarragebomb -42.67 103.15 6.71 15",
+		-- cliff barrage
+		"barrage barrage4 gp40 -25.76 -59.66 30.32 25",
+		"barrage barrage4 gp40 30.72 -102.28 33.67 25",
+		"barrage barrage4 gp40 -81.77 -22.06 31.72 25",
+		"barrage barrage4 gp40 -106.13 50.48 14.47 25",
 
 		
 
 		-- TRIGGERS
 		
 		-- commandname,pctg chance each second,wait in seconds, ms between bombs, number of bombs
-		--"event barrage1 1 5000 700 10",
-		--"event barrage2 1 5000 700 10",
+		"event barrage1 .50 10000 700 1",
+		"event barrage2 1 15000 2000 3",
+		"event barrage3 .9 30000 1000 3",
+		"event barrage4 .9 15000 1000 1",
+		
+		
+		
+		"area germanbunker OnCapture -27.87 -80.51 38.32",
+		"area germanbunker OnCapture -31.62 -79.72 38.32",
+		"area germanbunker OnCapture -30.69 -76.96 38.32",
+		"area germanbunker OnCapture -27.70 -77.38 38.32",
 		
 	
 
@@ -278,10 +333,47 @@ if(true) then
 	-- the lockey is a lockey looked up from the scenario content in the web translation tool
 	-- command name lockey
 
-		"alert onspawn onspawn.moveout",
-		"alert toaxisspawn toaxisspawn",
-		"alert toalliedspawn toalliedspawn",
-		"alert germanhq germanhq",
+		"alert onspawn onspawn.moveout",		
+		"alert americanspawn spawn1 60",
+		"alert americanspawn spawn2 60",
+		"alert americanspawn spawn3 60",
+		
+		
+		-- American spawn 3
+
+		"area americanspawn spawn3 OnTrigger -84.33 200.76 8.18",	
+		"area americanspawn spawn3 OnTrigger -76.20 196.89 8.18",	
+		"area americanspawn spawn3 OnTrigger -77.17 193.43 8.18",	
+		"area americanspawn spawn3 OnTrigger -84.26 195.42 16.08",
+		
+
+		
+		
+-- WAYPOINTS ON SCREEN		
+		
+		"waypoint.2 onspawn mgnest1 -85.64 -45.67 40.0 #FF6600",
+		"waypoint.2 onspawn mgnest2 -144.90 -25.28 40.0 #FF6600",
+		"waypoint.2 onspawn mgnest3 20.26 -110.94 40.0 #FF6600",
+		"waypoint.2 onspawn tobruk1 52.41 -156.96 40.00 #FF6600",
+		"waypoint.2 onspawn tobruk2 -122.74 -148.97 40.0 #FF6600",
+		"waypoint.2 onspawn bunker1 -155.14 -80.44 40.0 #FF6600",
+		"waypoint.2 onspawn bunker2 -30.91 -86.66 40.0 #FF6600",
+		"waypoint.2 onspawn gunemplacement1 -124.31 46.28 14.46 #FF6600",
+		"waypoint.2 onspawn gunemplacement2 -172.91 92.68 13.15 #FF6600",
+		
+		
+		"waypoint.1 onspawn germanbunker -29.52 -78.26 39.57 enemy",
+		"waypoint.1 onspawn seawall -37.38 22.87 9.42 #FF6600",
+		"waypoint.1 onspawn shale -96.17 61.07 6.54 #FF6600",
+		"waypoint.1 onspawn shale -161.42 108.76 8.78 #FF6600",
+		"waypoint.1 onspawn vierville_draw -171.81 6.42 20.34 #FF6600",
+		
+		
+		
+	
+		
+		
+		
 		
 		
 -- MAKE A VEHICLE AVAILABLE FOR SPAWNING
@@ -331,7 +423,7 @@ if(true) then
 		"vehicle alliedtroops us-sniper",
 
 		-- axis spawn list
-		"vehicle axistroops de_assaul",
+		"vehicle axistroops de_assault",
 		"vehicle axistroops de-smg",
 		"vehicle axistroops de-lmg",
 		"vehicle axistroops de-sniper",
@@ -341,9 +433,13 @@ if(true) then
 
 	-- command spawngroup worldx worldy,worldz yaw
 
-		"spawn alliedtroops -9.45 169.72 4.21",
-		"spawn axistroops -135.49 -116.56 42.35",
-		"spawn axistroops -131.18 -94.50 42.86",
+		"spawn alliedtroops -13.71 179.28 3.39 225",
+		"spawn alliedtroops 44.93 151.35 3.68 215",
+		"spawn alliedtroops -77.71 206.52 3.59 230",
+		
+		
+		"spawn axistroops -31.85 -142.49 44.61 355",
+		"spawn axistroops -130.83 -120.49 42.42 345",
 
 		
 				
