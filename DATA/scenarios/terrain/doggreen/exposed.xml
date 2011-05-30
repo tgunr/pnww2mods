@@ -50,12 +50,12 @@
   <objectclutter>
   <!-- weight the higher the number the less dense -->
     <redweight>1</redweight>
-    <greenweight>3</greenweight>
+    <greenweight>1</greenweight>
     <blueweight>1</blueweight>
     <!-- Color clamped between 0 - 255 -->
-    <redclamp>240</redclamp>
-    <grnclamp>240</grnclamp>
-    <bluclamp>240</bluclamp>
+    <redclamp>100</redclamp>
+    <grnclamp>100</grnclamp>
+    <bluclamp>100</bluclamp>
     <!-- clutter FLT object for specific color -->
     <redtypestring>dg_obs_stake</redtypestring>
     <greentypestring>tanktrap</greentypestring>

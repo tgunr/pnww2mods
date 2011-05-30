@@ -6,26 +6,46 @@ if(true) then
 	{
 		-- special handling
 		-- type shader x y z yaw
-		"coast water1 doggreen_coast 0 0 3.5 0.0",
+		"coast water1 doggreen_coast 0 0 3.65 0.0",
 
 		-- placed objects
 		-- command,filename,worldx,worldy,worldz,roll,pitch,yaw,scalex,scaley,scalez,damage
-		"place water1 800 0 3.5 0 0 0 0 0 0 0",
-		"place water1 0 800 3.5 0 0 0 0 0 0 0",
-		"place water1 800 800 3.5 0 0 0 0 0 0 0",
-		"place water1 800 1600 3.5 0 0 0 0 0 0 0",
+		"place water1 800 0 3.65 0 0 0 0 0 0 0",
+		"place water1 0 800 3.65 0 0 0 0 0 0 0",
+		"place water1 800 800 3.65 0 0 0 0 0 0 0",
+		"place water1 800 1600 3.65 0 0 0 0 0 0 0",
 			
 		"place doggreen_ob3 0 0 0 0 0 0 0 0 0 0",
+		--"place doggreen_region_NE 400 400 0 0 0 0 0 0 0 0",
 		
 		-- higgins boats
-		"place dg_veh_lcvp -45.56 200.06 3.2 0 0 120 0 0 0 0",
-		"place dg_veh_lcvp -38.89 174.78 3.50 0 0 105 0 0 0 0",
-		"place dg_veh_lcvp -8.51 170.86 3.2 0 0 135 0 0 0 0",
+		--damaged
+		"place dg_veh_lcvp_lx -42.57 244.33 2.9 -15 -10 125 0 0 0 0",
+		"place dg_veh_lcvp_lx -31.38 165.17 4.0 20 40 125 0 0 0 0",
+		"place dg_veh_lcvp_lx -48.15 211.30 4.5 180 0 115 0 0 0 0",
+		"place dg_veh_lcvp_lx -90.62 197.56 5.0 180 -5 -20 0 0 0 0",
+		
+	
+		--empty
+		"place dg_veh_lcvp_lx -1.38 234.70 3.6 -3 0 125 0 0 0 0",
+		"place dg_veh_lcvp_lx 14.18 227.54 3.5 -3 0 135 0 0 0 0",
 		"place dg_veh_lcvp -35.66 189.92 3.2 0 0 130 0 0 0 0",
 		"place dg_veh_lcvp 1.72 157.33 3.4 0 0 125 0 0 0 0",
-		"place dg_veh_lcvp -42.57 244.33 2.7 -15 -10 125 0 0 0 0",
+		"place dg_veh_lcvp -77.0 195.28 3.3 -3 10 100 0 0 0 0",
+		"place dg_veh_lcvp 35.77 138.37 3.7 -3 0 115 0 0 0 0",
+		"place dg_veh_lcvp 59.38 125.15 3.91 -3 0 100 0 0 0 0",
+		"place dg_veh_lcvp_lx 84.96 141.06 3.72 -3 0 120 0 0 0 0",
+		"place dg_veh_lcvp_lx 104.23 127.04 3.68 -3 0 130 0 0 0 0",
+		"place dg_veh_lcvp -113.65 226.54 3.54 0 0 100 0 0 0 0",
+		"place dg_veh_lcvp -134.64 235.54 3.62 0 0 115 0 0 0 0",
+		"place dg_veh_lcvp_lx -106.32 264.14 3.5 0 0 115 0 0 0 0",
 		
+
 		
+		--spawn boats
+		"place dg_veh_lcvp 44.88 151.53 3.4 0 0 110 0 0 0 0",
+		"place dg_veh_lcvp -14.0 178.89 3.2 0 0 135 0 0 0 0",
+		"place dg_veh_lcvp -78.0 206.0 3.35 0 0 120 0 0 0 0",
 		
 
 		-- belgium gates filenamemissing low poly
@@ -48,17 +68,13 @@ if(true) then
 		-- sherman hulks
 		"place m4a2hulk -49.85 162.93 3.95 0 5 205 0 0 0 0",
 		"place m4a2hulk -18.65 165.73 2.7 0 -5 200 0 0 0 0",
-		"place m4a2hulk -12.08 136.99 4.0 5 15 180 0 0 0 0",
-		
-		
+		"place m4a2hulk -28.60 139.50 4.65 4 10 180 0 0 0 0",
+		"place m4a2hulk -43.35 118.51 6.1 -2 -10 170 0 0 0 0",
+		"place m4a2hulk -94.26 160.41 5.0 0 -5 215 0 0 0 0",
+		"place m4a2hulk -122.22 138.22 6.0 0 0 180 0 0 0 0",
+		"place m4a2hulk 40.0 126.0 3.75 0 0 225 0 0 0 0",
 		
 
-		
-		
-		
-		
-		
-		
 		
 		 -- belgium gates dg_obs_elementc high poly
 		"place dg_obs_elementc -197.40 -72.03 24.60 -2 -3 190 0 0 0 0",
@@ -66,6 +82,36 @@ if(true) then
 		
 		-- German FB
 		"place cratepile_outside -18.86 -148.38 44.8 0 0 0 0 0 0 0",
+		
+		-- German MG nests
+		"place sandbagwall_curved_outside -144.90 -25.28 34.3 0 0 85 0 0 0 0",
+		"place sandbagwall_curved_outside -146.5 -28.0 34.3 0 0 -25 0 0 0 0",
+		"place dg_wire_barbed_apron	-138.48 -24.17 34.25 -4 0 0 0 0 0",
+		"place dg_wire_barbed_box	-147.26 -30.81 34.85 -9 -10 75 0 0 0",
+		"place dg_wire_barbed_box	-144.76 -34.30 35.7 -5 -5 25 0 0 0",
+	
+		
+		
+		
+		"place ammocrate -81.76 -44.05 36.74 0 -10 -45 0 0 0 0",
+		"place crate -81.1 -43.3 36.44 0 -10 -45 0 0 0 0",
+		"place sandbagwall_curved_outside -80.25 -42.5 37.5 0 -12 135 0 0 0 0",
+		"place ammocrate -87.2 -42.30 36.75 0 15 75 0 0 0 0",
+		"place crate -87.33 -41.30 36.4 0 10 75 0 0 0 0",
+		"place sandbagwall_curved_outside -87.3 -40.1 37.5 0 10 90 0 0 0 0",	
+		
+		"place ammocrate 17.8 -108.88 38.35 -3 -2 -50 0 0 0 0",
+		"place crate 18.0 -108 37.89 0 0 -50 0 0 0 0",
+		"place sandbagwall_curved_outside 19.0 -107.0 38.9 0 -5 125 0 0 0 0",	
+		"place ammocrate 22.02 -113.26 38.65 -5 -5 -15 0 0 0 0",
+		"place crate 22.82 -112.70 38.25 0 0 -25 0 0 0 0",
+		"place sandbagwall_curved_outside 23.8 -111.99 39.4 0 -5 140 0 0 0 0",	
+		
+
+		-- german spawn
+		"place infantryfb1c -50.5 -148.73 44.4 -1 0 0 0 0 0 0",
+		
+		
 		
 		
 		-- landmine signs
