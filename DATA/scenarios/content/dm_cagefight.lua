@@ -37,10 +37,9 @@ if(true) then
 
 -- DEFINE BLOCKED AREAS OF NO ACCESS BY PLAYERS
 
-	-- blocking volume x
-	-- block name x1 y1 z1 x2 y2 z2 thickness height
-
-        	--"block 139.59 -86.67 8.69 104.30 -72.64 8.68 1 10",
+		-- blocking volume x
+		-- block name x1 y1 z1 x2 y2 z2 thickness height
+	       	--"block 139.59 -86.67 8.69 104.30 -72.64 8.68 1 10",
 		
 				
 -- FX EMITTERS
@@ -169,7 +168,6 @@ if(true) then
 		
 		-- HUD WAYPOINTERS
 
-<<<<<<< .mine
 		--"waypoint onspawn wp1 345402.03 3005111.85 117.00 enemy",
 		--"waypoint onspawn wp2 -36.00 -153.15 7.88 friendly",
 		--"waypoint onspawn wp3 60.61 -91.40 27.17 friendly",
@@ -182,15 +180,12 @@ if(true) then
 		--"alert churchentry churchentry 20000",
 		--"alert toaxisspawn toaxisspawn -1",
 		--"alert toalliedspawn toalliedspawn -1",
-=======
 		"alert onspawn.moveout onspawn.moveout",
 		"alert playarea playarea 10",
 		"alert victory1 victory1",
 		"alert victory2 victory2",
 		"alert roundstop roundstop",
 		
->>>>>>> .r1434
-
 		
 		
 -- MAKE A VEHICLE AVAILABLE FOR SPAWNING
@@ -235,7 +230,6 @@ if(true) then
 
 		-- ALLIED SPAWN list
 
-<<<<<<< .mine
 		"vehicle alliedtroops fr-lmg",
 		"vehicle alliedtroops fr-smg",
 		"vehicle alliedtroops fr-rifle",
@@ -243,24 +237,18 @@ if(true) then
 		"vehicle alliedtroops uk-lmg",
 		"vehicle alliedtroops uk-smg",
 		"vehicle alliedtroops uk-rifle",
-=======
 		"vehicle alliedtroops us-assault",
 		"vehicle alliedtroops us-smg",
 		"vehicle alliedtroops us-bar",
->>>>>>> .r1434
 		"vehicle alliedtroops uk-sniper",
 
 		-- AXIS SPAWN list
 
 		"vehicle axistroops de-smg",
 		"vehicle axistroops de-lmg",
-<<<<<<< .mine
 		"vehicle axistroops de-rifle",
 		"vehicle axistroops de-sniper",
-=======
 		"vehicle axistroops de-assault",
->>>>>>> .r1434
-
 	};
 
 	for i,v in ipairs(content) do 
