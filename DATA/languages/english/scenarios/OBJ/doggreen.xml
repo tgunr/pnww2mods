@@ -6,9 +6,9 @@ victory1 = Allies victorious!
 victory2 = Axis victorious!
 roundstop = This round is over!
 playarea = Turn around
-spawn1 = Get to the seawall and stage an attack on the German Bunker
-spawn2 = Get to the shale and stage an attack on the German Bunker
-spawn3 = Get to the shale and stage an attack on the German Bunker
+usspawn1 = Get to the seawall and stage an attack on the German Bunker
+usspawn2 = Get to the shale and stage an attack on the German Bunker
+usspawn3 = Move through the draw and attack the German Bunker
 mgnest1 = MG Nest A
 mgnest2 = MG Nest B
 mgnest3 = MG Nest C
@@ -22,17 +22,20 @@ seawall = Sea wall
 shale = Shale
 germanbunker = Capture Bunker
 vierville_draw = Vierville Draw
-minefield = minefield</body>
+minefield = minefield
+youcapon = You are capturing the bunker!
+alliedcapon = American forces are capturing the bunker!
+alliedcapoff = Axis forces have re-taken the bunker!</body>
   <bodyloc>true</bodyloc>
   <brief>The D-Day attack is several hours old and the allies are gaining ground. The German defenses are holding so far but they must defend the bunker from capture.</brief>
   <duration>30</duration>
   <fog>1</fog>
-  <hour>14</hour>
+  <hour>7</hour>
   <rules>dday</rules>
   <team1>2</team1>
   <team2>4</team2>
   <terrain>doggreen</terrain>
   <title>Dog Green</title>
-  <victory>120</victory>
-  <weather>1</weather>
+  <victory>30</victory>
+  <weather>3</weather>
 </content>
