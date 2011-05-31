@@ -245,7 +245,7 @@ if(true) then
 		
 		-- POSITIONAL SOUNDS
 	-- command name filename volume loop x y z mindist maxdist	
-	--"sound sounds/ambience/ocean.wav 10 1 -63 212 3 100 1000",	
+	"sound sounds/ambience/ocean.wav 10 1 -63 212 3 100 1000",	
 	
 	"sound sounds/fairmileb/idle.wav 2.0 1 45 151 4 5 25",
 	"sound sounds/fairmileb/idle.wav 2.0 1 -10 182 6 5 25",
@@ -301,10 +301,10 @@ if(true) then
 		-- TRIGGERS
 		
 		-- commandname,pctg chance each second,wait in seconds, ms between bombs, number of bombs
-		--"event barrage1 .50 10000 700 1",
-		--"event barrage2 1 15000 2000 3",
-		--"event barrage3 .9 30000 1000 3",
-		--"event barrage4 .9 15000 1000 1",
+		"event barrage1 .50 10000 700 1",
+		"event barrage2 1 15000 2000 3",
+		"event barrage3 .9 30000 1000 3",
+		"event barrage4 .9 15000 1000 1",
 
 		
 		
