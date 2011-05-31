@@ -8,7 +8,14 @@ toalliedspawn = 美军已经通过西南桥梁！
 victory1 = 盟国胜利！
 victory2 = 红国胜利！
 roundstop = 本回合结束！
-playarea = 转身调头！</body>
+playarea = 这里是战区边界，请掉头回转
+wp1 = 盟国据点
+wp2 = 红国营地
+wp3 = 制高点
+intelenemyon = 你方在敌方内有特工！
+intelenemyoff = 你方在敌方内不再有特工。
+intelfriendlyon = 敌人在你方有特工！
+intelfriendlyoff = 敌人在你方不再有特工。</body>
   <bodyloc>true</bodyloc>
   <brief>在南面桥梁炸毁前，美军已通过该桥梁，向前开进。现在，红军必须由营地出发防守他们的城镇。<br><br>
 在10分钟内尽可能多地杀死敌方士兵。<br>
@@ -21,6 +28,10 @@ playarea = 转身调头！</body>
   <fog>3</fog>
   <hour>16</hour>
   <ingamemap>76 -69 .038</ingamemap>
+  <links>
+    <link path="scenarios/dm/objectives/riverrun1.xml" title="team1" />
+    <link path="scenarios/dm/objectives/riverrun2.xml" title="team2" />
+  </links>
   <rules>deathmatch</rules>
   <team1>2</team1>
   <team1max>16</team1max>

@@ -11,7 +11,11 @@ victory2 = The Germans have defended the bridge!
 playarea = Turn around
 roundstop = This round is over!
 bridgewp = bridge
-minefield = minefield</body>
+minefield = minefield
+
+youcapon = You are capturing the bridge!
+alliedcapon = Allied forces are capturing the bridge!
+alliedcapoff = Axis forces have re-taken the bridge!</body>
   <bodyloc>true</bodyloc>
   <brief>An American convoy is headed south towards the bridge and have orders to capture and hold it until reinforcements arrive. A small German unit is camped in town and are desperate to defend the bridge from capture.
 <br><br>
@@ -25,6 +29,10 @@ Germans- keep the enemy from reaching their objective for 15 minutes</brief>
   <fog>1</fog>
   <hour>16</hour>
   <ingamemap>107.8 38.9 .041</ingamemap>
+  <links>
+    <link path="scenarios/dm/objectives/lepontdumal1.xml" title="team1" />
+    <link path="scenarios/dm/objectives/lepontdumal2.xml" title="team2" />
+  </links>
   <rules>dday</rules>
   <team1>2</team1>
   <team1min>2</team1min>

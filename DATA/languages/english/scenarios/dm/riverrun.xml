@@ -8,10 +8,14 @@ toalliedspawn = American forces have crossed the southwest bridge!
 victory1 = Allies victorious!
 victory2 = Axis victorious!
 roundstop = This round is over!
-playarea = Turn around
+playarea = Edge of combat zone ... turn around
 wp1 = allied foothold
 wp2 = german camp
-wp3 = high ground</body>
+wp3 = high ground
+intelenemyon = Your side has intel on the enemy!
+intelenemyoff = Your side no longer has intel on the enemy.
+intelfriendlyon = The enemy has intel on your side!
+intelfriendlyoff = The enmy no longer has intel on your side.</body>
   <bodyloc>true</bodyloc>
   <brief>The Americans advanced via the south bridge before it was blown. Now the Germans must defend the town from their camp.<br><br>
 Kill as many enemy soliders as possible in 10 minutes<br>
@@ -24,6 +28,10 @@ The first team to reach 50 kills wins.</brief>
   <fog>3</fog>
   <hour>16</hour>
   <ingamemap>76 -69 .038</ingamemap>
+  <links>
+    <link path="scenarios/dm/objectives/riverrun1.xml" title="team1" />
+    <link path="scenarios/dm/objectives/riverrun2.xml" title="team2" />
+  </links>
   <rules>deathmatch</rules>
   <team1>2</team1>
   <team1max>16</team1max>
