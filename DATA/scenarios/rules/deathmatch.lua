@@ -7,12 +7,22 @@ Include("scenario");
 -- set tutorial state here
 state.name 					= "scenario.deathmatch";
 state.enablemap			= true;
+state.intel					= false;
 
 state.config['duration'] 	= 10;
 state.config['kills'] 			= 30;
 
+state.nextintelcheck			= 0;
+state.intel1						= 0;
+state.intel2						= 0;
+
 -- set our initial tutorial state
 tutorial.SetState(state);
+
+-- register our rule's update function
+scenario.RegisterUpdate("OnRuleUpdate");
+scenario.RegisterState("intel1", "OnIntel");
+scenario.RegisterState("intel2", "OnIntel");
 
 function CheckVictory(name, value)
 	local team 		= GetTeam();
@@ -36,60 +46,66 @@ function CheckVictory(name, value)
 	end
 	
 	local v = Instancing:GetStateNumber(name);
-	local hud = ui.FindView("hud");
 	
-	if(hud ~= nil) then
-		if(name == "victory1") then
-			hud:CallJS("OnMessage", string.format("Allied Gains: %d of %d points", v, state.config.victory), color);
-		else
-			hud:CallJS("OnMessage", string.format("Axis Gains: %d of %d points", v, state.config.victory), color);
-		end
+	if(name == "victory1") then
+		scenario.AddMessage(string.format("Allied Gains: %d of %d points", v, state.config.victory), color);
+	else
+		scenario.AddMessage(string.format("Axis Gains: %d of %d points", v, state.config.victory), color);
 	end
-	
-	ui.ChatPrint("Your team needs " .. (state.config.victory - friendly) .. " more kills to win!");
-	ui.ChatPrint("The other team needs " .. (state.config.victory - enemy) .. " more kills to win!");
 	
 	return scenario.CheckVictory(name, value);
 end
 
 -- give a point to the enemy each time I die
 function OnDie(handler)
-	--ui.ChatPrint("On die called!");
 	scenario.AddEnemyScore(1);	
-	-- scenario.manager:RunEvent("ondie");
+	state.intel = false;
 	return 1;
 end
 
--- override the default round timer
-function OnRoundTimer(name, value)
-	local timeLeft = tonumber(value);
+function OnDespawn(handler)
+	state.intel = false;
+	return 1;
+end
+
+function OnRuleUpdate(deltaTime)
+	-- current frametime
+	local ft = game.Frametime();
+		
+	-- send a keepalive if needed
+	if(IsPlaying() and state.intel and ft >= state.nextintelcheck) then 
+		Instancing:KeepAlive("intel" .. GetTeam(), 1);
+		state.nextintelcheck = ft + 1000;
+	end	
 	
-	if(timeLeft > 0) then
-		local minutes = timeLeft / 60;
-		local message = string.format("%d minutes left in this round!", minutes); 
-		ui.ChatPrint(message);
+	return 1;
+end
+
+function OnIntel(name, value)
+	--ui.ChatPrint("HI! " .. name .. "/" .. value); 
+	local team 			= GetTeam();
+	local teamIntel 	= "intel" .. team;
+	local intelValue 	= tonumber(value);
+	
+	if(state[name] ~= intelValue) then
+		state[name] = intelValue;
 		
-		local hud = ui.FindView("hud");
-		if(hud ~= nil) then
-			hud:CallJS("OnMessage", message, "#FFFF00");
-		end
-	elseif(timeLeft == 0) then
-		
-		-- whoever has the most points wins! 
-		local v1 =  Instancing:GetStateNumber("victory1");
-		local v2 =  Instancing:GetStateNumber("victory2");
-		
-		if(v1 > v2) then
-			state.victory = 1;
-		elseif(v2 > v1) then
-			state.victory = 2;
+		 if(teamIntel == name) then
+			-- friendly intel
+			if(intelValue > 0) then
+				scenario.manager:SetFlag(scenario.manager.ENEMY_ICONS, true);
+				scenario.manager:RunObject("intelenemyon", 1);
+			else
+				scenario.manager:SetFlag(scenario.manager.ENEMY_ICONS, false);
+				scenario.manager:RunObject("intelenemyoff", 1);
+			end
 		else
-			state.victory = -1;
+			if(intelValue > 0) then
+				scenario.manager:RunObject("intelfriendlyon", 1);
+			else
+				scenario.manager:RunObject("intelfriendlyoff", 1);
+			end
 		end
-		
-		ui:CallJS("SetResult", state.victory, v1, v2);
-	else
-		-- this timer was just inited
 	end
 	return 1;
 end

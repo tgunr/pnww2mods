@@ -253,6 +253,24 @@ end
 Instancing.AddState = Instancing.SendAddState
 
 --------- --------- --------- --------- --------- ---------
+-- Tell the server to change a state value.
+
+function Instancing.SendKeepAlive(self, valueName, value)
+	if self.Context == nil then
+		return { Instancing.ErrorCode, "Tried to call KeepAlive with no Context." }
+	end
+	if self.InstanceNo == nil or self.InstanceNo == 0 then
+		return { Instancing.ErrorCode, "Tried to call KeepAlive with no Instance selected." }
+	end
+	if valueName == nil then
+		return { Instancing.ErrorCode, "Called KeepAlive with no valueName." }
+	end
+	return self:SendRemoteInstruction("KeepAlive", self.InstanceNo, valueName, value)
+end
+
+Instancing.KeepAlive = Instancing.SendKeepAlive
+
+--------- --------- --------- --------- --------- ---------
 -- Tell the server to do something with a timed event?
 
 function Instancing.TimedEvent(self, timerName, duration)

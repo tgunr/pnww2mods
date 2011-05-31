@@ -38,6 +38,16 @@
 		maxwidth="500" fontshadowx=".08" fontshadowy="-.08"
 		style="color: #FFFFFF; font-size: +1;"
 		moveondrag="no" acceptmouseclick="false"/>
+		
+	<text id="game-timer" x="0" width="100" height="20" rtop="10" fontshadowx=".08" fontshadowy="-.08"
+		style="color: #FFFFFF; font-size: +10;" moveondrag="no" visible="false"/>
+	<view id="game-progress" x="0" y="0" width="250" height="50" moveondrag="no" aspectlimit="width" acceptmouseclick="false" visible="false">
+		<text id="game-progress-label" x="0" height="20" rtop="0" rright="0" fontshadowx=".08" fontshadowy="-.08"
+			style="color: #FFFFFF; font-size: +1;" moveondrag="no" acceptmouseclick="false" />
+		<progressbar id="game-progress-bar" x="0" height="10" rright="0" rtop="35" minvalue="0" maxvalue="1"
+			style="color: #FFFF88; background-color: #FFFFFF88;" acceptmouseclick="false" 
+			fill="ui/textures/hud/oxy-level-fill.bmp" background="ui/textures/hud/back-level-fill.bmp" orient="leftright"/>
+	</view>
 	
 	<!-- GAMEALERT -->
 	<text id="game-alert" x="0" width="100" height="20" rtop="150" aspectlimit="width"
@@ -267,6 +277,11 @@
 		var gameAlertIconView	= findview("game-alert-icons");
 		var hudMessages				= new Array(2);
 		
+		var gameCycleTimer 		= new CycleTimer(1000);
+		var gameTime					= -1;
+		var gameTimer					= findview("game-timer");
+		var gameProgress			= findview("game-progress");
+		
 		var overSupplyState			= 6;
 		
 		var resupplyState			= 7; // na
@@ -368,6 +383,11 @@
 			// make sure this gets reset
 			setCaptureCallback(null);
 			
+			if(gameTime == -1)
+				gameTimer.visible = false;
+			
+			gameProgress.visible = false;
+		
 			var compass = hud.findview("compass");
 			
 			if(!game.customterrain)
@@ -480,6 +500,11 @@
 				
 			if(infoTimer.run())
 				updateInfo();
+				
+			if(gameTimer.visible && gameTime >= 0 && gameCycleTimer.run())
+			{
+				SetTimer(gameTime - 1);
+			}
 			
 			hudMessages[0].update();
 			hudMessages[1].update();
@@ -1432,6 +1457,76 @@
 			hudMessages[0].view.x = (game.screenwidth/2) - hudMessages[0].view.width/2;
 			hudMessages[0].view.y = (game.screenheight/4);
  
+		}
+		
+		function SetTimer(seconds)
+		{
+			gameTime = seconds;
+			
+			if(gameTime < 0)
+			{
+				if(gameTimer.visible)
+					gameTimer.visible = false;
+			}
+			else
+			{
+				if(!gameTimer.visible)
+					gameTimer.visible = true;
+				
+				var formatted = "";
+				
+				if(gameTime < 60)
+				{
+					if(gameTime < 10)
+						formatted = ":0" + gameTime;
+					else
+						formatted = ":" + gameTime;
+				}
+				else
+				{
+					var fminutes = parseInt(gameTime / 60);
+					var fseconds = parseInt(gameTime % 60);
+					
+					if(fseconds < 10)
+						formatted =  fminutes + ":0" + fseconds;
+					else
+						formatted =  fminutes + ":" + fseconds;
+				}
+				
+				gameTimer.visible = true;
+				gameTimer.text = formatted;
+				gameTimer.resizetotext();
+				gameTimer.x = (game.screenwidth/2) - gameTimer.width/2;
+			}
+		}
+		
+		function SetProgress(progress, label)
+		{
+			if(progress < 0)
+			{
+				if(gameProgress.visible)
+					gameProgress.visible = false;
+			}
+			else
+			{
+				if(!gameProgress.visible)
+					gameProgress.visible = true;
+				
+				var bar = gameProgress.findview("game-progress-bar");
+				bar.value = progress;
+				
+				var loc = getlocstring(label);
+				if(loc.charAt(0) == "?")
+					loc = label;
+				
+				var header = gameProgress.findview("game-progress-label");
+				header.text = loc;
+				header.resizetotext();
+				header.x = gameProgress.width/2 - header.width/2; 
+				
+				gameProgress.x = (game.screenwidth/2) - gameProgress.width/2;
+				gameProgress.y = (game.screenheight/6);
+			}
 		}
 		
 		-->

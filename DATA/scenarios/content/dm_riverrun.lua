@@ -167,7 +167,12 @@ if(true) then
 		"area toalliedspawn OnTrigger 137.66 -74.92 9.80",	
 		"area toalliedspawn OnTrigger 136.96 -76.61 9.80",	
 		"area toalliedspawn OnTrigger 114.20 -73.10 9.80",	
-		"area toalliedspawn OnTrigger 114.30 -70.45 9.80",	
+		"area toalliedspawn OnTrigger 114.30 -70.45 9.80",
+		
+		"area intel OnState 55.79 -92.97 26.40 1",
+		"area intel OnState 58.13 -86.76 26.40",
+		"area intel OnState 64.50 -89.14 26.40",
+		"area intel OnState 62.15 -95.43 26.40",
 		
 -- SPAWNS		
 		
@@ -224,6 +229,11 @@ if(true) then
 		"alert victory1 victory1",
 		"alert victory2 victory2",
 		"alert playarea playarea 10",
+		
+		"message intelenemyon intelenemyon #00FF00 0",
+		"message intelenemyoff intelenemyoff #FF0000 0",
+		"message intelfriendlyon intelfriendlyon #FF0000 0",
+		"message intelfriendlyoff intelfriendlyoff #00FF00 0",
 		
 		--  #### END DOC LOOK AT THIS ####
 		

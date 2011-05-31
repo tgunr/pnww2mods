@@ -73,6 +73,7 @@ Instancing =
 	,	"InstanceEvent"
 	,	"AddStateValue"
 	,	"SetTimer"
+	,	"KeepAlive"
 	}
 
 	-- Number of IO threads to tell ZeroMQ to use.
@@ -89,6 +90,7 @@ Instancing =
 ,	SuccessCode		=	'OK'	-- Returned to indicate things went well
 ,	ErrorCode		=	'ERR'	-- Returned to indicate something failed.
 
+,   InstanceKeepAlives	= {}
 ,   InstanceTimers		= {}
 , 	InstanceHandlers 	=	{}		-- Routines for handling changes to instances.
 ,	InstanceStates		=	{}
@@ -344,7 +346,7 @@ Instancing =
 			data = loadstring("return " .. msg)()
 			table.insert(parts, data)
 			--print("part #" .. #parts .. ": " .. tostring(msg))
-			-- ui.ChatPrint("part #" .. #parts .. ": " .. tostring(msg))
+			--ui.ChatPrint("part #" .. #parts .. ": " .. tostring(msg))
 
 			-- ZMQ will set the "RCVMORE" value on a socket
 			-- if the message was a non-terminal part of a

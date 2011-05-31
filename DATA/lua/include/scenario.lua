@@ -18,10 +18,13 @@ state.rounds				= {};
 state.round					= 1;
 state.spawn					= nil;
 state.config					= {};
+state.updates				= {}
 state.inbounds				= true;
 state.lastinbounds		= true;
 state.network				= false;
 state.victory					= 0;
+state.lastroundtimer	= 0;
+state.lastupdate			= game.Frametime();
 
 -- default server
 state.config['server'] 	= '66.28.224.157';
@@ -32,7 +35,7 @@ state.hoststates			=
 	{"roundtimer", "OnRoundTimer"},
 	{"victory", "OnVictory"},
 	{"victory1", "CheckVictory"},
-	{"victory2", "CheckVictory"},
+	{"victory2", "CheckVictory"}
 };
 
 scenario.AddFriendlyScore = function(points)
@@ -70,8 +73,16 @@ scenario.AddScore = function(team, points)
 	end
 end
 
+scenario.RegisterUpdate = function(callback)
+	table.insert(state.updates, callback);
+end
+
+scenario.RegisterState = function(stateName, handler)
+	table.insert(state.hoststates, {stateName, handler});
+end
+
 function RegisterState(stateName, handler)
-	Instancing.RegisterHandler(stateName, handler);
+	scenario.RegisterState(stateName, handler);
 end
 
 function OnStart(handler)
@@ -105,7 +116,7 @@ function OnStart(handler)
 	if(state.hoststates ~= nil) then
 		for i,hs in ipairs(state.hoststates) do
 			-- register our state handler
-			RegisterState(hs[1], hs[2]);
+			Instancing.RegisterHandler(hs[1], hs[2]);
 		end
 	end
 end
@@ -120,8 +131,8 @@ function StartNetwork()
 		-- if we're the creator, send our initial state up
 		if(state.config.init == "true") then
 			-- do some state init stuff
-			local ms = tonumber(state.config.duration) * 60;
-			Instancing:TimedEvent("roundtimer", ms);
+			local seconds = tonumber(state.config.duration) * 60;
+			Instancing:TimedEvent("roundtimer", seconds);
 		end
 		
 		-- get our initial state
@@ -164,6 +175,13 @@ function OnSpawn(handler)
 	-- local temp = Instancing:GetStateString(deathstate);
 	-- ui.ChatPrint("You have deaths is " .. temp);
 	-- ui.ChatPrint(string.format("You have died %d times!", Instancing:GetStateNumber(deathstate)));
+	
+	if(state.lastroundtimer > 0) then
+		local secondsLeft = Instancing:GetStateNumber("roundtimer");
+		scenario.SetUITimer(secondsLeft - ((game.Frametime() - state.lastroundtimer) / 1000));
+	else
+		scenario.SetUITimer(Instancing:GetStateNumber("roundtimer"));
+	end
 	
 	-- keep handler going
 	return 1;
@@ -248,6 +266,19 @@ scenario.OnScenario = function(handler)
 		Instancing:PollEvents();
 	end
 	
+	if(state.lastupdate > 0) then
+		local msDelta = game.Frametime() - state.lastupdate; 
+		
+		-- call any update callbacks
+		for i,callback in ipairs(state.updates) do
+			if(callback ~= nil and type(_G[callback]) == "function") then
+				_G[callback](msDelta);
+			end
+		end
+	end
+	
+	state.lastupdate = game.Frametime(); 
+	
 	return 1;
 end
 
@@ -276,15 +307,12 @@ scenario.AddMessage = function(message, color, arg1, arg2)
 end
 
 function OnBoundary(handler)
-	if(handler.state == tutorial.THS_EVENT_OUT and state.inbounds) then
-		-- try to run any scenario events associated with despawning
-		scenario.manager:RunEvent("onboundary");
-		-- save our state
-		state.inbounds = false;
+	state.inbounds = scenario.InArea(handler);
+	
+	if(state.inbounds) then
+		ui.ChatPrint("You have entered the playable area!");
+	else
 		ui.ChatPrint("You have left the playable area!");
-	elseif(handler.state == tutorial.THS_EVENT_IN and not state.inbounds) then
-		state.inbounds = true;
-		ui.ChatPrint("You have re-entered the playable area!");
 	end
 	
 	return 1;
@@ -296,8 +324,26 @@ function OnTrigger(handler)
 		return 1;
 	end
 	
-	if(handler.state == tutorial.THS_EVENT_IN) then
-		-- try to run any events associated with this area
+	-- try to run any events associated with this area
+	if(scenario.InArea(handler)) then
+		scenario.manager:RunObject(handler.name, 1);
+	else
+		scenario.manager:RunObject(handler.name, 0);
+	end
+	return 1;
+end
+
+function OnState(handler)
+	-- bail if this trigger doesn't pertain to us
+	if(not scenario.manager:PlayerRelevant(handler.name)) then
+		return 1;
+	end
+	
+	-- save this state
+	state[handler.name] = scenario.InArea(handler);
+	
+	-- try to run any events associated with this area
+	if(state[handler.name]) then
 		scenario.manager:RunObject(handler.name, 1);
 	else
 		scenario.manager:RunObject(handler.name, 0);
@@ -332,14 +378,7 @@ function OnVictory(name, value)
 		state.victory = tonumber(value);
 		
 		-- load our victory ui
-		local ui = ui.LoadView("scenarios/result");
-		
-		-- grab our victory points for each team
-		local victory1 =  Instancing:GetStateNumber("victory1");
-		local victory2 =  Instancing:GetStateNumber("victory2");
-		
-		-- tell our ui who won 
-		ui:CallJS("SetResult", state.victory, victory1, victory2);
+		scenario.SetResult();
 		
 		-- scenario.manager:RunObject("victory"..value, 1);
 	end
@@ -350,20 +389,76 @@ scenario.InArea = function(handler)
 	return (handler ~= nil and handler.state == tutorial.THS_EVENT_IN)
 end
 
+scenario.SetUITimer = function(seconds)
+		local hud = ui.FindView("hud");
+		if(hud ~= nil) then
+			hud:CallJS("SetTimer", seconds);
+		end
+		
+		local minutes = seconds / 60;
+		
+		if((minutes % 5) == 0 or minutes == 3 or minutes == 1) then
+			local message = string.format("%d minutes left in this round!", minutes);
+			
+			ui.ChatPrint(message);
+			
+			if(minutes == 1) then
+				scenario.AddMessage(message, "#FF0000");
+			else
+				scenario.AddMessage(message, "#00FF00");
+			end
+		end
+end
+
+function SetUITimer(seconds)
+	scenario.SetUITimer(seconds);
+end
+
+scenario.SetUIProgress = function(progress, label)
+		local hud = ui.FindView("hud");
+		if(hud ~= nil) then
+			hud:CallJS("SetProgress", progress, label);
+		end
+end
+
+function SetUIProgress(progress, label)
+	scenario.SetUIProgress(progress, label);
+end
+
+scenario.SetResult = function()
+		local result = ui.LoadView("scenarios/result");
+		if(result ~= nil) then
+			local v1 =  Instancing:GetStateNumber("victory1");
+			local v2 =  Instancing:GetStateNumber("victory2");
+			result:CallJS("SetResult", state.victory, v1, v2);
+		end
+end
+
+function SetResult()
+	scenario.SetResult();
+end
+
 scenario.OnRoundTimer = function(name, value)
-	local timeLeft = tonumber(value);
+	-- remember the last time we got a round timer
+	state.lastroundtimer = game.Frametime();
 	
-	if(timeLeft > 0) then
-		local minutes = timeLeft / 60;
-		ui.ChatPrint(string.format("There are %d minutes left in this round!", minutes));
-	elseif(timeLeft == 0) then
-		local ui = ui.LoadView("scenarios/result");
-		local victory1 =  Instancing:GetStateNumber("victory1");
-		local victory2 =  Instancing:GetStateNumber("victory2");
-		state.victory = -1;
-		ui:CallJS("SetResult", state.victory, victory1, victory2);
-	else
-		-- this timer was just inited
+	local secondsLeft = tonumber(value);
+	
+	if(secondsLeft > 0) then
+		scenario.SetUITimer(secondsLeft);
+	elseif(secondsLeft == 0) then
+		if(state.victory == 0) then
+			local v1 =  Instancing:GetStateNumber("victory1");
+			local v2 =  Instancing:GetStateNumber("victory2");
+			
+			if(v1 > v2) then
+				Instancing:SendStateValue("victory", 1);
+			elseif(v2 > v1) then
+				Instancing:SendStateValue("victory", 2);
+			else
+				Instancing:SendStateValue("victory", -1);
+			end
+		end
 	end
 	return 1;
 end
@@ -439,4 +534,12 @@ function GetTeam()
 		return v:GetSide();
 	end
 	return 0;
+end
+
+function IsPlaying()
+	if(game.Ingame() == true and fp.fpFPSIsDead() == 0) then
+		return true;
+	else
+		return false;
+	end
 end

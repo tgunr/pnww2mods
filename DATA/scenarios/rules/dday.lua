@@ -7,15 +7,19 @@ Include("scenario");
 -- set tutorial state here
 state.name 					= "scenario.dday";
 state.enablemap			= true;
-state.capturing			= false;
-state.lastcapture			= 0;
+state.capturing			= false; -- are we capturing
+state.capturearea		= nil; -- name of capture area we are capturing
+state.capture				= -1; -- current capture amount
+state.lastcapture			= -1;
+state.nextcapcheck		= 0;
+state.capper				= 0;
 
 -- set our initial tutorial state
 tutorial.SetState(state);
 
 -- add our capture timer
-tutorial.manager:AddTimedHandler("DoCapture", nil, 1);
-tutorial.manager:AddTimedHandler("CaptureReport", nil, 5);
+scenario.RegisterUpdate("OnCaptureUpdate");
+-- scenario.RegisterState("capper", "OnCapper");
 
 function OnDie(handler)
 	state.capturing = false;
@@ -28,69 +32,94 @@ function OnDespawn(handler)
 end
 
 function OnCapture(handler)
-	if(game.Ingame()) then
-		if(GetTeam() == 1) then
-			if(handler.state == tutorial.THS_EVENT_IN) then
-				ui.ChatPrint("You are in the capture area!");
-				state.capturing = true;
-			else
-				ui.ChatPrint("You have left the capture area!");
-				state.capturing = false;
-			end
-		end
+	state.capturing = scenario.InArea(handler);
+	if(state.capturing) then
+		state.capturearea = handler.name;
+	else
+		state.capturearea = nil;
 	end
 	return 1;
 end
 
-function DoCapture(handler)
-	if(state.capturing and state.victory == 0) then
-		if(GetTeam() == 1) then
-			scenario.AddFriendlyScore(state.config.capturerate or 1);
-		end
-	end
-	return 1;
-end
+function OnCaptureUpdate(msDelta)
 
-function CaptureReport(handler)
-	local victory1 =  Instancing:GetStateNumber("victory1");
-	local percent =  (victory1 / tonumber(state.config.victory) * 100);
+	if(state.victory ~= 0 or GetTeam() ~= 1) then
+		return 1;
+	end
 	
-	if(state.lastcapture ~= victory1 and state.victory == 0) then
-			local message = string.format("Capture progress: %d%%", percent);
-			ui.ChatPrint(message);
-			local hud = ui.FindView("hud");
-			if(hud ~= nil) then
-				if(GetTeam() == 1) then
-					hud:CallJS("OnMessage", string.format("Allies are capturing the bridge! (%d%%)", percent), "#00FF00");
-				else
-					hud:CallJS("OnMessage", string.format("Allies are capturing the bridge! (%d%%)", percent), "#FF0000");
-				end
-			end
-			state.lastcapture = victory1;
+	local capper 	= 0;
+	local me 			= player.playerGetVehicle();
+	local ft				= game.Frametime();
+	local victory		= tonumber(state.config.victory);
+	local secDelta	= msDelta / 1000;
+	local meIndex = me.VehicleHostIndex;
+	
+	if(game.Online() == false) then
+		meIndex = 1;
 	end
+	
+	if(state.capturing and state.capturearea ~= nil) then
+		capper = Instancing:GetStateNumber(state.capturearea);
+	end
+	
+	if(state.capturing and capper == 0) then
+		-- noone capping
+		Instancing:KeepAlive(state.capturearea, meIndex);
+		state.nextcapcheck = ft;
+	elseif(state.capturing and capper == meIndex) then
+		-- me
+		if(ft >= state.nextcapcheck) then
+			Instancing:KeepAlive(state.capturearea, meIndex);
+			state.nextcapcheck = ft + 1000;
+		end
+		local amount = secDelta * (state.config.capturerate or 1);
+		state.capture = state.capture + amount;
+	else
+		state.capture = -1;
+	end
+	
+	if(state.lastcapture ~= state.capture) then
+		state.lastcapture = state.capture;
+		
+		if(state.capture >= victory) then
+			SetUIProgress(1, "capturing");
+			Instancing:SendStateValue("victory", 1);
+		elseif(state.capture >= 0) then
+			SetUIProgress(state.capture / victory, "capturing");
+		else
+			SetUIProgress(-1, "capturing");
+		end
+	end
+	
+	return 1;
+end
+
+function OnCapper(name, value)
+	if(state.victory ~= 0) then
+		return 1;
+	end
+	
+	local capper		= Instancing:GetStateNumber(name);
+	local capveh 	= vehicle.vehFindVehicle(capper);
+	
+	if(capper > 0) then
+		if(game.Online() == false or capveh:IsMe() == false) then
+			scenario.manager:RunObject("alliedcapon", 1);
+		end
+	else
+		scenario.manager:RunObject("alliedcapoff", 1);
+	end
+	
 	return 1;
 end
 
 -- override the default round timer
 function OnRoundTimer(name, value)
-	local timeLeft = tonumber(value);
-	
-	if(timeLeft > 0) then
-		local minutes = timeLeft / 60;
-		local message = string.format("%d minutes left in this round!", minutes); 
-		ui.ChatPrint(message);
-		local hud = ui.FindView("hud");
-		if(hud ~= nil) then
-			if(GetTeam() == 1) then
-				hud:CallJS("OnMessage", message, "#FF0000");
-			else
-				hud:CallJS("OnMessage", message, "#00FF00");
-			end
-		end
-	elseif(timeLeft == 0) then
+	local secondsLeft = tonumber(value);
+	if(secondsLeft > 0) then
+		scenario.OnRoundTimer(name, value);
+	elseif(secondsLeft == 0) then
 		-- team 2 axis wins if its the round ends
-		Instancing:SendStateValue("victory2", state.config.victory);
-	else
-		-- this timer was just inited
+		Instancing:SendStateValue("victory", 2);
 	end
 end

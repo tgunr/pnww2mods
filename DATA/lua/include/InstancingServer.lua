@@ -53,9 +53,9 @@ function Instancing.SetTimer(self, instanceNo, name, duration)
 		-- see if we already have this timer
 		for i,t in ipairs(self.InstanceTimers) do
 				if t[1] == instanceNo and t[5] == name then
-						if(duration > 0) then
+						if duration > 0 then
 								print(string.format("Updating timer %s to %d minutes", name, duration))
-								Instancing:SetStateValue(t[1], t[5], -1)
+								Instancing:SetStateValue(t[1], t[5], duration)
 								t[2] = 0
 								t[3] = now
 								t[4] = now + duration
@@ -68,7 +68,7 @@ function Instancing.SetTimer(self, instanceNo, name, duration)
 		end
 		if duration > 0 then
 				print("Adding timer for instance " .. instanceNo .. " named " .. name .. " " .. (tonumber(duration) / 60) .. " minutes from now.")
-				Instancing:SetStateValue(instanceNo, name, -1)
+				Instancing:SetStateValue(instanceNo, name, duration)
 				table.insert(self.InstanceTimers, {instanceNo, 0, now, now + duration, name})
 		end
 end
@@ -144,6 +144,39 @@ function Instancing.InstanceEvent(self, instanceNo, stateName, value)
 end
 
 --------- --------- --------- --------- --------- ---------
+-- Keep alive - only works with numbers for now
+
+function Instancing.KeepAlive(self, instanceNo, stateName, value)
+	if instanceNo == nil or stateName == nil then
+		return { Instancing.ErrorCode, "-- invalid arguments to KeepAlive" }
+	end
+
+	-- Convert to hex format for better hashing.
+	local instanceId = self.formatInstanceNo(instanceNo)
+
+	-- grab our state
+	local instanceStates = self:GetState(instanceNo)
+	
+	if instanceStates[stateName] == nil then
+		instanceStates[stateName] = 0
+	end
+	
+	local newValue = tonumber(value)
+	local curValue = tonumber(instanceStates[stateName])
+	
+	-- 0 or same value is ok; different value is skipped 
+	if curValue == 0 or curValue == newValue then
+		-- update keepalive; this will add a keep alive as needed
+		self:UpdateKeepAlive(instanceNo, stateName)
+		
+		-- go ahead and set it, might already be the same value
+		return self:SetStateValue(instanceNo, stateName, newValue)
+	end
+	
+	return { Instancing.ErrorCode, "-- keep alive already set to another value" }
+end
+
+--------- --------- --------- --------- --------- ---------
 -- Retrieve a dump of instance state variables etc.
 -- Course, this doesn't provide timers and stuff.
 
@@ -187,8 +220,59 @@ function Instancing.GetState(self, instanceNo)
 	return self.InstanceStates[instanceId]
 end
 
+--------- --------- --------- --------- --------- ---------
+-- Retrieve the current list of keep alives for this instance
+
+function Instancing.GetKeepAlives(self, instanceNo)
+	-- format our index
+	local instanceId = self.formatInstanceNo(instanceNo)
+	
+	-- return it if we have one
+	local keepAlives = self.InstanceKeepAlives[instanceId]
+	
+	-- if we found one, return it
+	if keepAlives ~= nil and type(keepAlives) == "table" then
+		return keepAlives
+	end
+	
+	-- create a blank one
+	self.InstanceKeepAlives[instanceId] = {}
+	
+	-- return it
+	return self.InstanceKeepAlives[instanceId]
+end
+
+--------- --------- --------- --------- --------- ---------
+-- Retrieve the current list of keep alives for this instance
+
+function Instancing.UpdateKeepAlive(self, instanceNo, stateName)
+	local ka = self:GetKeepAlives(instanceNo);
+
+	for i,v in ipairs(ka) do
+		if(v[2] == stateName) then
+			v[3] = os.time() + 2
+			return;
+		end
+	end
+	
+	table.insert(ka, {instanceNo, stateName, os.time() + 2})
+end
+
+
+-- ##################################################################
+-- ### Main
+-- ##################################################################
+
+require "os"
+local serverIp = os.getenv("INST_SERVER")
+if serverIp == nil or serverIp == "" then
+  print("F No INST_SERVER variable defined.")
+  exit(1)
+end
+
 -- Start the communications stuff.
-Instancing:Start("Server")
+-- Listen on all IP addresses.
+Instancing:Start("Server", "0.0.0.0")
 
 local parts
 
@@ -250,6 +334,7 @@ do
 	local now 			= os.time()
 	local completed	= 0
 	
+	-- handle instance timers
 	for i,t in ipairs(Instancing.InstanceTimers) do
 
 			-- is this one complete?
@@ -260,15 +345,27 @@ do
 
 			-- push our time remaining for each timer every minute
 			if now >= t[2] and i ~= completed then
-					Instancing:InstanceEvent(t[1], t[5], t[4] - now)
+					Instancing:SetStateValue(t[1], t[5], t[4] - now)
 					t[2] = now + 60
 			end
 	end
 
+	-- remove the completed timer if one was found
 	if completed > 0 then
 			local t = Instancing.InstanceTimers[completed]
 			Instancing:SetStateValue(t[1], t[5], 0)
 			table.remove(Instancing.InstanceTimers, completed)
+	end
+	
+	-- now lets handle any keep alives and remove any that have expired
+	for id,ka in pairs(Instancing.InstanceKeepAlives) do
+		for i,t in ipairs(ka) do
+			if now > t[3] then
+				Instancing:SetStateValue(t[1], t[2], 0)
+				table.remove(ka, i)
+				break -- only handle one keep alive a frame
+			end
+		end
 	end
 end
 

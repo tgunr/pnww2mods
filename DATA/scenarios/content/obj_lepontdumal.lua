@@ -233,9 +233,7 @@ if(true) then
 		"area bridgecapture1 OnTrigger 136.36 40.60 8",
 		"area bridgecapture1 OnTrigger 133.56 33.05 8",
 		"area bridgecapture1 OnTrigger 129.00 35.14 8",
-		"area bridgecapture1 OnTrigger 131.56 42.40 8",		
-
-
+		"area bridgecapture1 OnTrigger 131.56 42.40 8",
 	
 	-- minefield near axis spawn
 
@@ -282,15 +280,13 @@ if(true) then
 		
 		
 	-- bridge capture objective
-
-		"area bridgecapture OnCapture 136.36 40.60 8",
-		"area bridgecapture OnCapture 133.56 33.05 8",
-		"area bridgecapture OnCapture 129.00 35.14 8",
-		"area bridgecapture OnCapture 131.56 42.40 8",
+		"handler bridgecapture OnCapper",
 		
-	
+		"area bridgecapture OnCapture 136.36 40.60 6.25 1",
+		"area bridgecapture OnCapture 133.56 33.05 6.25",
+		"area bridgecapture OnCapture 129.00 35.14 6.25",
+		"area bridgecapture OnCapture 131.56 42.40 6.25",
 		
-			
 -- CLONES --
 
 	-- NAMED VERSION
@@ -328,11 +324,18 @@ if(true) then
 		-- numberofsecondsbetweenrepeatalerts 0= no limit, 1= onetime per scenario, unit measure is seconds 
 		-- "chat spawnin spawnin.moveout 0",
 		"alert onspawn onspawn.moveout",
-		"alert toaxisspawn toaxisspawn 60",
-		"alert toalliedspawn toalliedspawn 60",
-		"alert bridgecapture1 bridgecapture 5",
-		"alert allieswrongway allieswrongway 30" ,
+		"alert.1 toaxisspawn toaxisspawn 60",
+		"alert.2 toalliedspawn toalliedspawn 60",
+		"alert.1 bridgecapture1 bridgecapture 5",
+		"alert.1 allieswrongway allieswrongway 30" ,
 		"alert playarea playarea 10",
+		
+		"message.1 youcapon youcapon friendly 0",
+		"message.1 alliedcapon alliedcapon friendly 0",
+		"message.1 alliedcapoff alliedcapoff enemy 0",
+		"message.2 alliedcapon alliedcapon enemy 0",
+		"message.2 alliedcapoff alliedcapoff friendly 0",
+		
 		
 		"waypoint onspawn minefield 91.04 38.93 5.97 #FF6600",
 		"waypoint onspawn minefield 195.11 24.16 7.35 #FF6600",
@@ -409,14 +412,14 @@ if(true) then
 	-- definethemask definethemessage vehicleid
 	-- note, by defining which team does get the alert, the other team will not get the alert
 				
-		"vehicle bridgecapture1 2 0 0 0",
-		"vehicle toaxisspawn 2 0 0 0",
-		"vehicle toalliedspawn 4 0 0 0",
-		"vehicle allieswrongway 2 0 0 0",
+		-- "vehicle bridgecapture1 2 0 0 0",
+		-- "vehicle toaxisspawn 2 0 0 0",
+		-- "vehicle toalliedspawn 4 0 0 0",
+		-- "vehicle allieswrongway 2 0 0 0",
 		
 	-- objective masks
 	-- the bridgecapture objective applies only to country 2
-		"vehicle bridgecapture 2 0 0 0",		
+	-- "vehicle bridgecapture 2 0 0 0",		
 		
 --  #### END DOC LOOK AT THIS ####
 	
