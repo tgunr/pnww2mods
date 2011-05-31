@@ -43,7 +43,7 @@ if(true) then
 		"place dg_veh_lcvp 1.72 157.33 3.4 0 0 125 0 0 0 0",
 		"place dg_veh_lcvp -77.0 195.28 3.3 -3 10 100 0 0 0 0",
 		"place dg_veh_lcvp 35.77 138.37 3.7 -3 0 115 0 0 0 0",
-		"place dg_veh_lcvp 59.38 125.15 3.91 -3 0 100 0 0 0 0",
+		"place dg_veh_lcvp 51.34 134.44 3.91 -3 0 100 0 0 0 0",
 		"place dg_veh_lcvp_lx 84.96 141.06 3.72 -3 0 120 0 0 0 0",
 		"place dg_veh_lcvp_lx 104.23 127.04 3.68 -3 0 130 0 0 0 0",
 		"place dg_veh_lcvp -113.65 226.54 3.54 0 0 100 0 0 0 0",
@@ -76,7 +76,7 @@ if(true) then
 		"place dg_obs_elementc 170.79 169.18 2.8 0 0 205 0 0 0 0",
 		
 		-- sherman hulks
-		"place m4a2hulk -49.85 162.93 3.95 0 5 205 0 0 0 0",
+		"place m4a2hulk -48.27 166.50 3.95 0 5 205 0 0 0 0",
 		"place m4a2hulk -18.65 165.73 2.7 0 -5 200 0 0 0 0",
 		"place m4a2hulk -28.60 139.50 4.65 4 10 180 0 0 0 0",
 		"place m4a2hulk -43.35 118.51 6.1 -2 -10 170 0 0 0 0",
