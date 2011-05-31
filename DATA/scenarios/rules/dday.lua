@@ -19,7 +19,7 @@ tutorial.SetState(state);
 
 -- add our capture timer
 scenario.RegisterUpdate("OnCaptureUpdate");
--- scenario.RegisterState("capper", "OnCapper");
+scenario.RegisterState("bridgecapture", "OnCapper");
 
 function OnDie(handler)
 	state.capturing = false;
@@ -98,6 +98,8 @@ function OnCapper(name, value)
 	if(state.victory ~= 0) then
 		return 1;
 	end
+	
+	-- ui.ChatPrint("OnCapper: " ..  name .. " / " .. value);
 	
 	local capper		= Instancing:GetStateNumber(name);
 	local capveh 	= vehicle.vehFindVehicle(capper);
