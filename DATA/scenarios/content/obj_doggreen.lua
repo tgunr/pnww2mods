@@ -245,11 +245,11 @@ if(true) then
 		
 		-- POSITIONAL SOUNDS
 	-- command name filename volume loop x y z mindist maxdist	
-	"sound sounds/ambience/ocean.wav 10 1 -63 212 3 100 1000",	
+	--"sound sounds/ambience/ocean.wav 10 1 -63 212 3 100 1000",	
 	
-	"sound sounds/fairmileb/idle.wav 1 1 45 151 4 5 25",
-	"sound sounds/fairmileb/idle.wav 1 1 -10 182 6 5 25",
-	"sound sounds/fairmileb/idle.wav 1 1 -82 203 3 5 25",
+	"sound sounds/fairmileb/idle.wav 2.0 1 45 151 4 5 25",
+	"sound sounds/fairmileb/idle.wav 2.0 1 -10 182 6 5 25",
+	"sound sounds/fairmileb/idle.wav 2.0 1 -82 203 3 5 25",
 
 	
 		
@@ -301,17 +301,22 @@ if(true) then
 		-- TRIGGERS
 		
 		-- commandname,pctg chance each second,wait in seconds, ms between bombs, number of bombs
-		"event barrage1 .50 10000 700 1",
-		"event barrage2 1 15000 2000 3",
-		"event barrage3 .9 30000 1000 3",
-		"event barrage4 .9 15000 1000 1",
+		--"event barrage1 .50 10000 700 1",
+		--"event barrage2 1 15000 2000 3",
+		--"event barrage3 .9 30000 1000 3",
+		--"event barrage4 .9 15000 1000 1",
+
 		
 		
+		-- bunker capture objective
+		"handler bunkercapture OnCapper",
+
+		"area bunkercapture OnCapture -27.87 -80.51 39 -1",
+		"area bunkercapture OnCapture -31.62 -79.72 39",
+		"area bunkercapture OnCapture -30.69 -76.96 39",
+		"area bunkercapture OnCapture -27.70 -77.38 39",
 		
-		"area germanbunker OnCapture -27.87 -80.51 38.32",
-		"area germanbunker OnCapture -31.62 -79.72 38.32",
-		"area germanbunker OnCapture -30.69 -76.96 38.32",
-		"area germanbunker OnCapture -27.70 -77.38 38.32",
+
 		
 	
 
@@ -333,18 +338,23 @@ if(true) then
 	-- the lockey is a lockey looked up from the scenario content in the web translation tool
 	-- command name lockey
 
-		"alert onspawn onspawn.moveout",		
-		"alert americanspawn spawn1 60",
-		"alert americanspawn spawn2 60",
-		"alert americanspawn spawn3 60",
+		"alert onspawn onspawn.moveout",
+		"alert playarea playarea 10",		
+		"alert usspawn1 usspawn1 60",
+		"alert usspawn2 usspawn2 60",
+		"alert usspawn3 usspawn3 60",
+		
+		"location usspawn1 OnTrigger 42.78 144.53 5.16",	
+		"location usspawn2 OnTrigger -17.97 174.13 4.32 5",	
+		"location usspawn3 OnTrigger -82.85 195.88 4.08 5",	
 		
 		
-		-- American spawn 3
+		"message.1 youcapon youcapon friendly 0",
+		"message.1 alliedcapon alliedcapon friendly 0",
+		"message.1 alliedcapoff alliedcapoff enemy 0",
+		"message.2 alliedcapon alliedcapon enemy 0",
+		"message.2 alliedcapoff alliedcapoff friendly 0",
 
-		"area americanspawn spawn3 OnTrigger -84.33 200.76 8.18",	
-		"area americanspawn spawn3 OnTrigger -76.20 196.89 8.18",	
-		"area americanspawn spawn3 OnTrigger -77.17 193.43 8.18",	
-		"area americanspawn spawn3 OnTrigger -84.26 195.42 16.08",
 		
 
 		
