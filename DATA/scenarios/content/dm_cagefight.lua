@@ -69,7 +69,7 @@ if(true) then
 
 	-- BURNING VEHICLES
 
-		"emitter vehiclefire 190999.77 3016031.74 142.00",
+		"emitter vehiclefire 190999.27 3016031.74 143.50",
 
 		
 -- SOUNDS
@@ -141,7 +141,22 @@ if(true) then
 
 	-- AREA TRIGGERS
 	-- command name triggertype worldx worldy worldz
-	-- directions near axis spawn 1
+	
+
+		--directions at allied spawn 1
+
+		"area toalliedspawn OnTrigger 190899.98 3016041.67 145.55",		
+		"area toalliedspawn OnTrigger 190899.95 3016023.24 145.55",
+		"area toalliedspawn OnTrigger 190908.31 3016023.25 145.55",
+		"area toalliedspawn OnTrigger 190908.37 3016041.56 145.55",
+				
+
+		-- directions at axis spawn 1
+
+		"area toaxisspawn OnTrigger 190985.52 3015941.83 145.55",	
+		"area toaxisspawn OnTrigger 190979.80 3015947.75 145.55",	
+		"area toaxisspawn OnTrigger 190966.76 3015934.84 145.55",	
+		"area toaxisspawn OnTrigger 190972.59 3015928.88 145.55",	
 				
 
 -- CLONES --
