@@ -55,9 +55,8 @@ void main()
 
 	vec4 t0 = texture2D(src2, gl_TexCoord[1].xy) * 2.0 - 1.0;
 	vec4 t1 = texture2D(src2, gl_TexCoord[1].zw) * 2.0 - 1.0;
-	vec4 t2 = texture2D(src2, gl_TexCoord[1].zw) * 2.0 - 1.0;
 	
-	vec4 mapN = t0 + t1 + t2;
+	vec4 mapN = t0 + t1;
     mapN.z = sqrt(1.0 - mapN.x * mapN.x - mapN.y * mapN.y);
 
 	vec3 m = normalize(mapN.rgb);
@@ -105,6 +104,7 @@ void main()
 	color = color * (diffuseColor + ambientColor) + specularColor;
 
     color = mix(rf + t4, color, h.r + 1.0 - facing);
+    color.rgb *= GetShadowValue();
 
 	gl_FragColor = fogThis(color);
 }
