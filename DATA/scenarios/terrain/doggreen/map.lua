@@ -14,9 +14,19 @@ if(true) then
 		"place water1 0 800 3.65 0 0 0 0 0 0 0",
 		"place water1 800 800 3.65 0 0 0 0 0 0 0",
 		"place water1 800 1600 3.65 0 0 0 0 0 0 0",
+		"place water1 -800 0 3.65 0 0 0 0 0 0 0",
+		"place water1 -800 800 3.65 0 0 0 0 0 0 0",
 			
 		"place doggreen_ob3 0 0 0 0 0 0 0 0 0 0",
-		--"place doggreen_region_NE 400 400 0 0 0 0 0 0 0 0",
+		"place doggreen_region_EE 0 0 0 0 0 0 0 0 0 0",
+		--"place doggreen_region_NE 0 0 0 0 0 0 0 0 0 0",
+		--"place doggreen_region_NN 0 0 0 0 0 0 0 0 0 0",
+		"place doggreen_region_NW 0 0 0 0 0 0 0 0 0 0",
+		"place doggreen_region_SE 0 0 0 0 0 0 0 0 0 0",
+		"place doggreen_region_SS 0 0 0 0 0 0 0 0 0 0",
+		"place doggreen_region_SW 0 0 0 0 0 0 0 0 0 0",
+		"place doggreen_region_WW 0 0 0 0 0 0 0 0 0 0",
+
 		
 		-- higgins boats
 		--damaged
