@@ -282,6 +282,13 @@ if(true) then
 		"alert toalliedspawn toalliedspawn",
 		"alert mapcenter mapcenter",
 
+-- WAYPOINTS
+-- Directional information in HUD
+
+		"waypoint onspawn wp1 293745.33 2978034.78 275.11 friendly",
+		"waypoint onspawn wp2 293725.62 2976329.59 275.12 friendly",
+		"waypoint onspawn wp3 292809.34 2977200.82 275.12 enemy",
+
 				
 -- MAKE A VEHICLE AVAILABLE FOR SPAWNING
 		
