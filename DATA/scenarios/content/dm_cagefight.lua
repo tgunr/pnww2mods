@@ -107,8 +107,8 @@ if(true) then
 		--"bombingrun bombing1 gp250 273079.40 3016700.38 493.43 273103.98 3016699.07 494.59",
 		--"bombingrun bombing1 gp250 272745.39 3017000.12 482.21 272780.73 3016999.68 482.21",
 		--"bombingrun bombing1 gp250 274041.21 3016923.54 539.90 274040.94 3016998.48 539.56",
-		--"bombingrun bombing2 gp40 33.14 -165.89 7.68 6.27 -182.85 2.72",
-		--"bombingrun bombing2 gp40 212.53 -134.06 19.33 163.59 -134.66 4.72",
+		--"bombingrun bombing2 smallbarragebomb 33.14 -165.89 7.68 6.27 -182.85 2.72",
+		--"bombingrun bombing2 smallbarragebomb 212.53 -134.06 19.33 163.59 -134.66 4.72",
 
 		
 	-- AREA EFFECT BOMBING OR BARRAGE (simulating artillery barrage)
@@ -116,9 +116,9 @@ if(true) then
 	-- the distance is the radius of a circle around the center to randomly fire off the ammo in
 	-- command name ammo x y z distance
 
-		"barrage barrage1 gp40 191032.58 3016111.40 142.00 40",
-		"barrage barrage1 gp40 190924.72 3015856.39 142.00 20",
-		"barrage barrage1 gp40 190872.91 3016115.73 142.00 30",
+		"barrage barrage1 smallbarragebomb 191032.58 3016111.40 142.00 40",
+		"barrage barrage1 smallbarragebomb 190924.72 3015856.39 142.00 20",
+		"barrage barrage1 smallbarragebomb 190872.91 3016115.73 142.00 30",
 
 
 		
