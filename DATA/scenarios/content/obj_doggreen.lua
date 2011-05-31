@@ -238,7 +238,7 @@ if(true) then
 		
 		
 		-- fire
-		"emitter smallfire -49.57 163.99 5.5",
+		"emitter smallfire -47.66 167.20 5.70",
 		
 		
 		
