@@ -13,7 +13,6 @@ void main()
     p1.w = 1.0;
     
     gl_TexCoord[1] = gl_TextureMatrix[1] * gl_ModelViewMatrix * p1;
-    gl_TexCoord[2] = gl_TextureMatrix[2] * gl_ModelViewMatrix * p1;
 
     int c = int(gl_Vertex.w);
 
