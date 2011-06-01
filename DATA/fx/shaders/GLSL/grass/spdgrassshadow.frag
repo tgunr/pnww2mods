@@ -12,6 +12,19 @@ void lightGetAmbientDiffuse(out vec4 amb, out vec4 dif);
 
 const vec4 defaultcolor = vec4(0, 0, 0, 0);
 
+float GetShadowValue()
+{
+    vec3 c1 = gl_TexCoord[1].xyz / gl_TexCoord[1].w;
+    c1.z -= 0.0005;
+    c1.z = clamp(c1.z, 0.0, 1.0);
+
+    float shadow = shadow2D(src2, c1).r;
+
+    shadow = clamp(shadow + shadowambient.r, 0.0, 1.0);
+
+    return shadow;
+}
+
 void main()
 {
 	vec4 base = texture2D(src1, gl_TexCoord[0].xy);
@@ -29,13 +42,7 @@ void main()
 
 	    vec4 color = base * (amb * gl_FrontMaterial.ambient + dif * gl_FrontMaterial.diffuse);
 
-	    vec3 c1 = gl_TexCoord[1].xyz / gl_TexCoord[1].w;
-
-	    vec4 s1 = shadow2D(src2, c1);
-
-        s1.rgb = clamp(s1.rgb + shadowambient, 0.0, 1.0);
-
-	    color.rgb *= s1.rgb;
+	    color.rgb *= GetShadowValue();
 
         gl_FragColor = fogThis(color);
     }
