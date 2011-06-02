@@ -37,14 +37,14 @@
   </grass>
   <terrainmaterials>
     <!-- Keep in ascending order (layer0, layer1, layer2...etc)-->
-    <!-- These are texture names included in grounds.csv -->
-    <!-- If there is no texture with the wanted effect, a new texture will need to be added to grounds.csv -->
+    <!-- These are texture names included in fx/xml/materialprops.xml and grounds.csv-->
+    <!-- If there is no texture with the wanted effect, a new texture will need to be added -->
     <!-- Or modify one already in use (i.e., grass1 can be modified since it's no longer in use) -->
     <!-- These materials are used for effects and walk sounds -->
-    <layer0>grass1</layer0>
-    <layer1>rubble</layer1>
-    <layer2>dirt01</layer2>
-    <layer3>tent</layer3>
+    <layer0>grass</layer0>
+    <layer1>rock</layer1>
+    <layer2>dirt</layer2>
+    <layer3>dirt</layer3>
   </terrainmaterials>
   <!-- Clutter that uses FLTs -->
   <objectclutter>

@@ -516,14 +516,34 @@
 		<minvolume>0.15</minvolume>
 		<maxvolumeenergy>100000</maxvolumeenergy>
 	</material>
-	<material name = "dunes1">
-		<sound1>sounds/hitdirt1.wav</sound1>
-		<sound2>sounds/hitdirt2.wav</sound2>
-		<sound3>sounds/hitdirt3.wav</sound3>
-		<minvolume>0.15</minvolume>
-		<maxvolumeenergy>100000</maxvolumeenergy>
-	</material>
-	<material name = "pave1">
+  <material name = "dunes1">
+    <sound1>sounds/hitdirt1.wav</sound1>
+    <sound2>sounds/hitdirt2.wav</sound2>
+    <sound3>sounds/hitdirt3.wav</sound3>
+    <minvolume>0.15</minvolume>
+    <maxvolumeenergy>100000</maxvolumeenergy>
+    <bullettype>2</bullettype>
+    <bulleteffectname>sandhit</bulleteffectname>
+  </material>
+  <material name = "grass">
+    <sound1>sounds/hitdirt1.wav</sound1>
+    <sound2>sounds/hitdirt2.wav</sound2>
+    <sound3>sounds/hitdirt3.wav</sound3>
+    <minvolume>0.15</minvolume>
+    <maxvolumeenergy>100000</maxvolumeenergy>
+    <bullettype>2</bullettype>
+    <bulleteffectname>dirtbullethit</bulleteffectname>
+  </material>
+  <material name = "dirt">
+    <sound1>sounds/hitdirt1.wav</sound1>
+    <sound2>sounds/hitdirt2.wav</sound2>
+    <sound3>sounds/hitdirt3.wav</sound3>
+    <minvolume>0.15</minvolume>
+    <maxvolumeenergy>100000</maxvolumeenergy>
+    <bullettype>2</bullettype>
+    <bulleteffectname>dirtbullethit</bulleteffectname>
+  </material>
+  <material name = "pave1">
 		<sound1>sounds/hitconcrete1.wav</sound1>
 		<sound2>sounds/hitconcrete2.wav</sound2>
 		<sound3>sounds/hitconcrete3.wav</sound3>
