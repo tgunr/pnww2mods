@@ -24,10 +24,10 @@ function Instancing.PublishCmd(self, instanceNo, cmdName, ...)
 	end
 	local cmdNum = lookup[2]
 
-	local dbug = "D Publishing cmd " .. cmdName .. "(" .. instanceId .. ","
+	local dbug = "Publishing cmd " .. cmdName .. "(" .. instanceId .. ","
 	for i, v in ipairs(arg) do dbug = dbug .. tostring(v).."," end
 	dbug = dbug .. ") -- #" .. cmdNum
-	print(dbug)
+	self:report('D', 'PublishCmd', dbug)
 
 	-- Send the instanceId as the first part of the message,
 	-- the code as the second.
@@ -54,20 +54,20 @@ function Instancing.SetTimer(self, instanceNo, name, duration)
 		for i,t in ipairs(self.InstanceTimers) do
 				if t[1] == instanceNo and t[5] == name then
 						if duration > 0 then
-								print(string.format("Updating timer %s to %d minutes", name, duration))
+								self:report('N', 'SetTimer', string.format("Updating timer %s to %u minutes", name, duration))
 								Instancing:SetStateValue(t[1], t[5], duration)
 								t[2] = 0
 								t[3] = now
 								t[4] = now + duration
 						else
-								print(string.format("Removing timer %s", name))
+								self:report('N', 'SetTimer', string.format("Removing timer %s", name))
 								table.remove(self.InstanceTimers, i)
 						end
 						return
 				end
 		end
 		if duration > 0 then
-				print("Adding timer for instance " .. instanceNo .. " named " .. name .. " " .. (tonumber(duration) / 60) .. " minutes from now.")
+				self:report('I', "Adding timer for instance " .. instanceNo .. " named " .. name .. " " .. (tonumber(duration) / 60) .. " minutes from now.")
 				Instancing:SetStateValue(instanceNo, name, duration)
 				table.insert(self.InstanceTimers, {instanceNo, 0, now, now + duration, name})
 		end
@@ -83,10 +83,10 @@ function Instancing.SetStateValue(self, instanceNo, stateName, value)
 
 	-- Convert to hex format for better hashing.
 	local instanceId = self.formatInstanceNo(instanceNo)
-	
+
 	-- grab our state
 	local instanceStates = self:GetState(instanceNo)
-	
+
 	-- this might cause new clients to miss updated data?
 	local currentValue = instanceStates[stateName]
 	if tostring(currentValue) == tostring(value) then
@@ -115,13 +115,13 @@ function Instancing.AddStateValue(self, instanceNo, stateName, value)
 	if(instanceStates[stateName] == nil) then
 		instanceStates[stateName] = 0
 	end
-	
+
 	-- increment our value
 	local newValue = instanceStates[stateName] + tonumber(value)
-	
+
 	-- save it
 	instanceStates[stateName] = newValue
-	
+
 	-- pass it along
 	return self:PublishCmd(tonumber(instanceId), "SetStateValue", stateName, newValue)
 end
@@ -137,7 +137,7 @@ function Instancing.InstanceEvent(self, instanceNo, stateName, value)
 
 	-- Convert to hex format for better hashing.
 	local instanceId = self.formatInstanceNo(instanceNo)
-	
+
 	-- instance events don't save, they just get passed along
 
 	return self:PublishCmd(tonumber(instanceId), "InstanceEvent", stateName, value)
@@ -156,23 +156,23 @@ function Instancing.KeepAlive(self, instanceNo, stateName, value)
 
 	-- grab our state
 	local instanceStates = self:GetState(instanceNo)
-	
+
 	if instanceStates[stateName] == nil then
 		instanceStates[stateName] = 0
 	end
-	
+
 	local newValue = tonumber(value)
 	local curValue = tonumber(instanceStates[stateName])
-	
-	-- 0 or same value is ok; different value is skipped 
+
+	-- 0 or same value is ok; different value is skipped
 	if curValue == 0 or curValue == newValue then
 		-- update keepalive; this will add a keep alive as needed
 		self:UpdateKeepAlive(instanceNo, stateName)
-		
+
 		-- go ahead and set it, might already be the same value
 		return self:SetStateValue(instanceNo, stateName, newValue)
 	end
-	
+
 	return { Instancing.ErrorCode, "-- keep alive already set to another value" }
 end
 
@@ -181,7 +181,7 @@ end
 -- Course, this doesn't provide timers and stuff.
 
 function Instancing.GetInstanceState(self, instanceNo)
-	
+
 	-- grab our state
 	local instanceStates = self:GetState(instanceNo)
 
@@ -204,18 +204,18 @@ end
 function Instancing.GetState(self, instanceNo)
 	-- format our index
 	local instanceId = self.formatInstanceNo(instanceNo)
-	
+
 	-- return it if we have one
 	local instanceStates = self.InstanceStates[instanceId]
-	
+
 	-- if we found one, return it
 	if instanceStates ~= nil and type(instanceStates) == "table" then
 		return instanceStates
 	end
-	
+
 	-- create a blank one
 	self.InstanceStates[instanceId] = self._BlankInstance(instanceId, instanceNo)
-	
+
 	-- return it
 	return self.InstanceStates[instanceId]
 end
@@ -226,18 +226,18 @@ end
 function Instancing.GetKeepAlives(self, instanceNo)
 	-- format our index
 	local instanceId = self.formatInstanceNo(instanceNo)
-	
+
 	-- return it if we have one
 	local keepAlives = self.InstanceKeepAlives[instanceId]
-	
+
 	-- if we found one, return it
 	if keepAlives ~= nil and type(keepAlives) == "table" then
 		return keepAlives
 	end
-	
+
 	-- create a blank one
 	self.InstanceKeepAlives[instanceId] = {}
-	
+
 	-- return it
 	return self.InstanceKeepAlives[instanceId]
 end
@@ -254,7 +254,7 @@ function Instancing.UpdateKeepAlive(self, instanceNo, stateName)
 			return;
 		end
 	end
-	
+
 	table.insert(ka, {instanceNo, stateName, os.time() + 2})
 end
 
@@ -266,8 +266,14 @@ end
 require "os"
 local serverIp = os.getenv("INST_SERVER")
 if serverIp == nil or serverIp == "" then
-  print("F No INST_SERVER variable defined.")
+  Instancing:report('F', 'Main', "No INST_SERVER variable defined.")
   exit(1)
+end
+
+local enableDebug = os.getenv("DEBUG_EVENTS")
+if enableDebug and enableDebug == 'TRUE' or tonumber(enableDebug) == 1 then
+  Instancing.EnableDebug = true
+  Instancing:report('D', 'Main', 'Debug reporting enabled.')
 end
 
 -- Start the communications stuff.
@@ -287,12 +293,12 @@ function drainConsole(zmqSocket)
 		-- Pop the command number off the end of the list,
 		-- leaving "parts" as the argument list.
 		local cmdNum = tonumber(table.remove(parts, #parts))
-		print("D --con-> cmd#"..cmdNum)
+		Instancing:report('D', 'drainConsole', "--con-> cmd#"..cmdNum)
 
 		-- Execute and get the result pair.
 		local result = Instancing:InvokeCommand(cmdNum, unpack(parts))
 
-		print("D <-con-- " .. result[1] .. ", " .. tostring(result[2]))
+		self:report('D', 'drainConsole', "<-con-- " .. result[1] .. ", " .. tostring(result[2]))
 		zmqSocket:send('"'..result[1]..'"', zmq.SNDMORE)
 		zmqSocket:send(result[2], zmq.NOBLOCK)
 	end
@@ -309,11 +315,11 @@ function drainCommand(zmqSocket)
 		-- Pop the command number off the end of the list,
 		-- leaving "parts" as the argument list.
 		local cmdNum = tonumber(table.remove(parts, #parts))
-		print("D --con-> cmd#"..cmdNum)
+		Instancing:report('D', 'drainCommand', "--con-> cmd#"..cmdNum)
 
 		-- Execute and get the result pair.
 		local result = Instancing:InvokeCommand(cmdNum, unpack(parts))
-		print("D result: " .. result[1] .. ", " .. tostring(result[2]))
+		Instancing:report('D', 'drainCommand', "result: " .. result[1] .. ", " .. tostring(result[2]))
 	end
 end
 
@@ -333,14 +339,14 @@ do
 	-- update our timers
 	local now 			= os.time()
 	local completed	= 0
-	
+
 	-- handle instance timers
 	for i,t in ipairs(Instancing.InstanceTimers) do
 
 			-- is this one complete?
 			if(completed == 0 and now >= t[4]) then
 					completed = i
-					print("Found completed timer for instance " .. t[1] .. ": " .. t[5])
+					Instancing:report('N', 'Main', "Found completed timer for instance " .. t[1] .. ": " .. t[5])
 			end
 
 			-- push our time remaining for each timer every minute
@@ -356,7 +362,7 @@ do
 			Instancing:SetStateValue(t[1], t[5], 0)
 			table.remove(Instancing.InstanceTimers, completed)
 	end
-	
+
 	-- now lets handle any keep alives and remove any that have expired
 	for id,ka in pairs(Instancing.InstanceKeepAlives) do
 		for i,t in ipairs(ka) do
@@ -369,5 +375,5 @@ do
 	end
 end
 
-print("N shutting down.")
+Instancing:report('N', 'Main', 'Shutting down.')
 

@@ -73,7 +73,6 @@ Instancing =
 	,	"InstanceEvent"
 	,	"AddStateValue"
 	,	"SetTimer"
-	,	"KeepAlive"
 	}
 
 	-- Number of IO threads to tell ZeroMQ to use.
@@ -90,7 +89,6 @@ Instancing =
 ,	SuccessCode		=	'OK'	-- Returned to indicate things went well
 ,	ErrorCode		=	'ERR'	-- Returned to indicate something failed.
 
-,   InstanceKeepAlives	= {}
 ,   InstanceTimers		= {}
 , 	InstanceHandlers 	=	{}		-- Routines for handling changes to instances.
 ,	InstanceStates		=	{}
@@ -98,6 +96,7 @@ Instancing =
 ,	InstanceNo		=	nil		-- Current instance (number)
 
 ,	Running			=	false	-- Gets set to true by Start
+,	EnableDebug		=	false	-- Set true to allow 'D' messages to log.
 
 	--------- --------- --------- --------- --------- ---------
 	-- Functions
@@ -122,6 +121,19 @@ Instancing =
 		return self.Role and self.Role == "Server"
 	end
 
+,	report = function(self, code, funcname, msg)
+		-- Don't log debug messages if debug isn't enabled.
+		if code == 'D' and self.EnableDebug == false then return end
+		local text = code .. "[" .. os.date() .. " Instancing:"..func.."] " .. msg
+		if code == 'A' or code == 'F' then
+			error(text)
+		elseif code == 'W' then
+			warn(text)
+		else
+			print(text)
+		end
+	end
+
 	--------- --------- --------- --------- --------- ---------
 	-- Turn an instance's unique ID into a hex 16-char string
 	-- public: static
@@ -137,7 +149,7 @@ Instancing =
 	-- Returns a new, blank instance entity.
 
 ,	_BlankInstance = function (instanceId, instanceNo)
-		print("Creating new blank state for "..instanceId.."/"..tostring(instanceNo))
+		Instancing:report('I', '_BlankInstance', "Creating new blank state for "..instanceId.."/"..tostring(instanceNo))
 		local self = {}
 		self['id'] = instanceId
 		self['no'] = tonumber(instanceNo)
@@ -151,23 +163,26 @@ Instancing =
 ,	_OpenInterface = function (self, ifName)
 		-- Gotta have a context to do anything.
 		if self.Context == nil then
-			return error("Tried to call OpenInterface without a Context")
+			return self:report('A', '_OpenInterface', "Tried to call OpenInterface without a Context")
 		end
 
 		local interface = self.Config.Interfaces[ifName]
 		if not interface then
-			return error("Unknown interface name: " .. ifName)
+			return self:report('A', '_OpenInterface', "Unknown interface name: " .. ifName)
 		end
 
 		local ifType = interface.Type[self.Role]
 		if not ifType then
-			return error("Interface " .. ifName .. " not supported in " .. self.Type .. " role")
+			return self:report('A', '_OpenInterface', "Interface " .. ifName .. " not supported in " .. self.Type .. " role")
 		end
 
 		local sock = self.Context:socket(ifType)
 		if not sock then
-			return error("Unable to create socket for " .. ifName .. " interface")
+			return self:report('A', '_OpenInterface', "Unable to create socket for " .. ifName .. " interface")
 		end
+
+		-- Make the socket not linger.
+		sock.setopt(znq.LINGER, 0)
 
 		-- The host always binds ports, the client always connects to them.
 		local uri = "tcp://" .. self.HostAddress .. ":" .. interface.Port
@@ -224,10 +239,10 @@ Instancing =
 			return { Instancing.ErrorCode, "Instancing."..cmdName.." does not appear to be a function." }
 		end
 
-		local dbug = "D Invoking "..cmdName.."("
+		local dbug = "Invoking "..cmdName.."("
 		for i, v in ipairs(arg) do dbug = dbug .. tostring(v).." " end
 		dbug = dbug .. ")"
-		print(dbug)
+		self:report('D', 'InvokeCommand', dbug)
 
 		-- Invoke the function, passing any remaining args to it.
 		local success, output = pcall(fn, self, unpack(arg))
@@ -270,7 +285,7 @@ Instancing =
 			if type(val) == "number" then
 				zmqSocket:send(tostring(val), zmq.SNDMORE)
 			else
-				zmqSocket:send(string.format("%q", val), zmq.SNDMORE)
+				zmqSocket:send(string.format('%q', val), zmq.SNDMORE)
 			end
 		end
 
@@ -285,25 +300,25 @@ Instancing =
 	-- public:
 
 ,	Start = function (self, role, address)
-		print(string.format("D Instancing:Start(%s, %s)", tostring(role), tostring(address)))
+		self:report('D', 'Start', string.format("Instancing:Start(%s, %s)", tostring(role), tostring(address)))
 
 		-- Validate the role argument, must be client or server.
 		if not role or (role ~= "Client" and role ~= "Server") then
-			return error("Invalid use of Instancing.Start. Usage: Instancing:Start(\"Client\"|\"Server\" [, \"host.ip.addr\" ]")
+			return self:report('A', 'Start', "Invalid use of Instancing.Start. Usage: Instancing:Start(\"Client\"|\"Server\" [, \"host.ip.addr\" ]")
 		end
 
 		-- Establish the role.
 		self.Role = role
-		print("D Role is " .. self.Role)
+		self:report('D', 'Start', "Role is " .. self.Role)
 
 		-- Use the default address if none is supplied
 		if not address then
 			address = self.Config.DefaultAddress
-			print("D Using Default Address of " .. address)
+			self:report('D', 'Start', "Using Default Address of " .. address)
 		end
 
 		self.HostAddress = address
-		print("D Using server address " .. self.HostAddress)
+		self:report('D', 'Start', "Using server address " .. self.HostAddress)
 
 		-- Start a ZMQ thread if one isn't already started.
 		if not self.Context then
@@ -324,7 +339,7 @@ Instancing =
 
 		self.Running = true
 
-		print("I " .. self.Role .. " ready.")
+		self:report('I', 'Start', self.Role .. " ready.")
 	end
 
 	--------- --------- --------- --------- --------- ---------
@@ -345,8 +360,6 @@ Instancing =
 			if msg == nil then break end
 			data = loadstring("return " .. msg)()
 			table.insert(parts, data)
-			--print("part #" .. #parts .. ": " .. tostring(msg))
-			--ui.ChatPrint("part #" .. #parts .. ": " .. tostring(msg))
 
 			-- ZMQ will set the "RCVMORE" value on a socket
 			-- if the message was a non-terminal part of a
@@ -354,11 +367,9 @@ Instancing =
 			-- If RCVMORE is not set, it's time to stop.
 			if zmqSocket:getopt(zmq.RCVMORE) == 0 then break end
 		end
-		
+
 		-- No parts, no array.
 		if #parts == 0 then return nil end
-
-		--print("#parts = " .. #parts)
 
 		return parts
 	end
@@ -369,7 +380,7 @@ Instancing =
 	-- since we're not separating handlers by instance id.
 	-- This is because some handlers get set before we have
 	-- an instance id set (ie on script load)
-	
+
 ,	RegisterHandler = function(stateName, handler)
 		Instancing.InstanceHandlers[stateName] = handler
 	end
@@ -382,7 +393,7 @@ Instancing =
 		local instanceId = self.formatInstanceNo(tonumber(instanceNo))
 		-- Client needs to make sure it only processes changes for
 		-- it's instance.
-		
+
 		if self:IsClient() and self.InstanceId ~= instanceId then
 			return { Instancing.ErrorCode, "Message does not apply to current state." }
 		end
@@ -391,7 +402,7 @@ Instancing =
 		local instanceState = Instancing.InstanceStates[instanceId]
 		local oldValue = instanceState[valueName]
 		instanceState[valueName] = value
-		
+
 		-- only execute handlers on the client
 		if self:IsClient() and self.InstanceId == instanceId then
 			local handler = Instancing.InstanceHandlers[valueName]
@@ -402,7 +413,7 @@ Instancing =
 				end
 			end
 		end
-		
+
 		return { Instancing.SuccessCode, "-- "..valueName.." value changed '"..oldValue.."' -> '"..value.."'." }
 	end
 

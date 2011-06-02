@@ -62,7 +62,7 @@ function Instancing.SetInstance(self, instanceNo)
 			-- Purge the old state information.
 			self.InstanceStates[self.InstanceId] = nil
 			-- self.InstanceHandlers = nil
-	
+
 			if self.EventSock ~= nil then
 				-- Unsubscribe from whatever instance we were previously in.
 				self.EventSock:setopt(zmq.UNSUBSCRIBE, self.InstanceId)
@@ -76,7 +76,7 @@ function Instancing.SetInstance(self, instanceNo)
 	self.InstanceNo = instanceNo
 
 	self.InstanceStates[instanceId] = {}
-	
+
 	if self.InstanceHandlers == nil then
 		self.InstanceHandlers = {}
 	end
@@ -102,7 +102,7 @@ function Instancing.Subscribe(self, instanceNo)
 		-- Also, the server doesn't do any sub/unsub stuff.
 		if self.EventSock ~= nil then
 			self.EventSock:setopt(zmq.SUBSCRIBE, instanceId)
-			print("subscribed EventSock to " .. instanceId)
+			self:report('D', 'Subscribe', "subscribed EventSock to " .. instanceId)
 		else
 			return { Instancing.ErrorCode, "EventSock not found while trying to subscribe!" }
 		end
@@ -135,7 +135,7 @@ function Instancing.GetEvents(self, zmqOptions, maxEvents)
 		local parts = self.getMessage(self.EventSock, zmqOptions)
 		if parts == nil or #parts == 0 then break end
 		if #parts < 2 then
-			print("W Event format error (short)")
+			self:report('W', 'GetEvents', "Event format error (short)")
 		else
 			-- Make sure it's for our current instance, lest we are
 			-- late in picking up a message for an instance we left.
@@ -145,7 +145,7 @@ function Instancing.GetEvents(self, zmqOptions, maxEvents)
 			local cmdNum = table.remove(parts, #parts)
 			local result = self:InvokeCommand(cmdNum, unpack(parts))
 			if result[1] ~= Instancing.SuccessCode then
-				print("W event execution error: " .. result[2])
+				self:report('W', 'GetEvents', "event execution error: " .. result[2])
 			end
 		end
 		maxEvents = maxEvents - 1
@@ -319,7 +319,6 @@ function Instancing.GetInstanceState(self)
 	if type(result) ~= "table" then
 		return { Instancing.ErrorCode, "GetInstanceState expected a table result." }
 	end
-	print( crawl(result) )
 
 	self.InstanceStates[self.InstanceId] = result
 
@@ -440,21 +439,21 @@ end
 
 function Instancing.InstanceEvent(self, instanceNo, stateName, value)
 	local instanceId = self.formatInstanceNo(instanceNo)
-	
+
 	if instanceId ~= self.InstanceId then
 		return { Instancing.ErrorCode, "Message no-longer applies." }
 	end
 
 	-- run any hooks we have
 	local handler = Instancing.InstanceHandlers[stateName]
-	
+
 	if handler ~= nil and type(_G[handler]) == "function" then
 		local status, msg = pcall(_G[handler](stateName, value))
 		if not status then
 			return { Instancing.ErrorCode, stateName.." event handler error: "..msg.."." }
 		end
 	end
-	
+
 	return { Instancing.SuccessCode, "-- event handled" }
 end
 
