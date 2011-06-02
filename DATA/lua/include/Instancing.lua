@@ -126,7 +126,7 @@ Instancing =
 ,	report = function(self, code, funcname, msg)
 		-- Don't log debug messages if debug isn't enabled.
 		if code == 'D' and self.EnableDebug == false then return end
-		local text = code .. "[" .. os.date() .. " Instancing:"..funcname.."] " .. msg
+		local text = code .. " [" .. os.date() .. " Instancing:"..funcname.."] " .. msg
 		if code == 'A' or code == 'F' then
 			error(text)
 		elseif code == 'W' then
