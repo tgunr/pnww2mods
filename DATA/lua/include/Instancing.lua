@@ -73,6 +73,7 @@ Instancing =
 	,	"InstanceEvent"
 	,	"AddStateValue"
 	,	"SetTimer"
+	,	"KeepAlive"
 	}
 
 	-- Number of IO threads to tell ZeroMQ to use.
@@ -89,6 +90,7 @@ Instancing =
 ,	SuccessCode		=	'OK'	-- Returned to indicate things went well
 ,	ErrorCode		=	'ERR'	-- Returned to indicate something failed.
 
+,   InstanceKeepAlives	= {}
 ,   InstanceTimers		= {}
 , 	InstanceHandlers 	=	{}		-- Routines for handling changes to instances.
 ,	InstanceStates		=	{}
@@ -182,7 +184,7 @@ Instancing =
 		end
 
 		-- Make the socket not linger.
-		sock.setopt(znq.LINGER, 0)
+		sock.setopt(zmq.LINGER, 0)
 
 		-- The host always binds ports, the client always connects to them.
 		local uri = "tcp://" .. self.HostAddress .. ":" .. interface.Port

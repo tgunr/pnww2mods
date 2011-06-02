@@ -102,7 +102,7 @@ function Instancing.Subscribe(self, instanceNo)
 		-- Also, the server doesn't do any sub/unsub stuff.
 		if self.EventSock ~= nil then
 			self.EventSock:setopt(zmq.SUBSCRIBE, instanceId)
-			self:report('D', 'Subscribe', "subscribed EventSock to " .. instanceId)
+			self:report('D', 'Subscribe', "Subscribed EventSock to " .. instanceId)
 		else
 			return { Instancing.ErrorCode, "EventSock not found while trying to subscribe!" }
 		end
