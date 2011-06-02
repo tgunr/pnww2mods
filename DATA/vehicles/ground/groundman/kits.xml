@@ -12,6 +12,8 @@
 		<model name="us_canteen" path="TPS\meshes\american_inf\kit_us_canteen" attach="4" />
 		<model name="us_haversack" path="TPS\meshes\american_inf\kit_us_haversack" attach="9" />
 		<model name="us_riflebelt" path="TPS\meshes\american_inf\kit_us_riflebelt" attach="4" />
+		<model name="us_smgammo" path="TPS\meshes\american_inf\kit_us_smgammo" attach="4" />
+		<model name="us_holster" path="TPS\meshes\american_inf\kit_us_holster" attach="4" />
 		
 		<!-- BRITISH MODELS -->
 		<model name="uk_helmet_01" path="TPS\meshes\british_inf\kit_uk_helmet_01_lod1" attach="18" lod="0"/>
@@ -112,6 +114,8 @@
 		<object name="us_riflebelt" model="us_riflebelt"/>
 		<object name="us_haversack" model="us_haversack"/>
 		<object name="us_canteen" model="us_canteen"/>
+		<object name="us_smgammo" model="us_smgammo"/>
+		<object name="us_holster" model="us_holster"/>
 		
 		<!-- BRITISH OBJECTS -->
 		<object name="uk_parahelm" model="uk_parahelm_01"/>
@@ -195,11 +199,14 @@
 		<kit name="us-smg">
 			<object name="us_helmet" model="us_helmet_01"/>
 			<object name="us_canteen" model="us_canteen"/>
+			<object name="us_smgammo" model="us_smgammo"/>
+			<object name="us_holster" model="us_holster"/>
 		</kit>
 
 		<kit name="us-bar">
 			<object name="us_helmet" model="us_helmet_01"/>
 			<object name="us_haversack" model="us_haversack"/>
+			<object name="us_holster" model="us_holster"/>
 		</kit>
 
 		<kit name="us-eng">
