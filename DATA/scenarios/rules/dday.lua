@@ -19,8 +19,8 @@ tutorial.SetState(state);
 
 -- add our capture timer
 scenario.RegisterUpdate("OnCaptureUpdate");
-scenario.RegisterState("bridgecapture", "OnCapper");
-scenario.RegisterState("bunkercapture", "OnCapper");
+-- scenario.RegisterState("bridgecapture", "OnCapper");
+-- scenario.RegisterState("bunkercapture", "OnCapper");
 
 function OnDie(handler)
 	state.capturing = false;

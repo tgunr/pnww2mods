@@ -296,7 +296,17 @@ if(true) then
 		"barrage barrage4 gp40 -81.77 -22.06 31.72 25",
 		"barrage barrage4 gp40 -106.13 50.48 14.47 25",
 
-		
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav .50 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun2.wav .50 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun3.wav .50 0",
+		-- "sound guns1 sounds/airraidsiren.wav .06 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun4.wav .50 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav .50 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav .50 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav .5 0",
+		"sound wind sounds/ambience/gust1.wav .5 0",
+		"sound wind sounds/ambience/gust2.wav .5 0",
+
 
 		-- TRIGGERS
 		
@@ -305,8 +315,14 @@ if(true) then
 		"event barrage2 1 15000 2000 3",
 		"event barrage3 .9 30000 1000 3",
 		"event barrage4 .9 15000 1000 1",
-
 		
+		"event guns1 .5 10000",
+		"event guns2 .5 10000",
+		"event wind .5 5000",
+		
+		"event combatfx 1 100 300 3",
+		
+		"fpsfx combatfx",
 		
 		-- bunker capture objective
 		"handler bunkercapture OnCapper",

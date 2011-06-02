@@ -1,11 +1,14 @@
 
+-- setup a shared landmine handler
+scenario.RegisterState("landmine", "DoLandmine");
+
 function OnMineArea(handler)
 	-- see if this mine area pertains to us
-	if(not scenario.manager:PlayerRelevant(handler.name)) then
+	if(scenario.manager:PlayerRelevant(handler.name) == false) then
 		return 1;
 	end
 	
-	if(handler.state == tutorial.THS_EVENT_IN) then
+	if(scenario.InArea(handler)) then
 		state.landmine = handler.name;
 		-- get our player
 		local v = player.playerGetVehicle();
@@ -13,20 +16,24 @@ function OnMineArea(handler)
 		tutorial.manager:AddLocationHandler("OnLandmine", nil, v:GetPos(1), v:GetPos(2), v:GetPos(3), 1);
 	else
 		tutorial.manager:RemoveHandler("OnLandmine");
-		state.minearea = nil;
+		state.landmine = nil;
 	end
 	return 1;
 end
 
 function OnLandmine(handler)
-	if(handler.state == tutorial.THS_EVENT_OUT) then
+	if(scenario.InArea(handler) == false) then
 		
 		local v = player.playerGetVehicle();
 		
 		-- check to see if we have stepped on a mine
 		if(math.random() < .1) then
 			-- try to run an ammo, effect or sound
-			local sharedData = string.format("%s %u %.2f %.2f %.2f", state.landmine, v.VehicleHostIndex, v:GetPos(1), v:GetPos(2), v:GetPos(3));
+			local vhid = v.VehicleHostIndex;
+			if(game.Online() == false) then
+				vhid = 1;
+			end
+			local sharedData = string.format("%s %u %.2f %.2f %.2f", state.landmine, vhid, v:GetPos(1), v:GetPos(2), v:GetPos(3));
 			
 			--ui.ChatPrint("Sending shared data: " .. sharedData);
 			
@@ -53,13 +60,11 @@ function DoLandmine(name, value)
 	-- do we need to kill ourself?
 	local veh = vehicle.vehFindVehicle(tonumber(data[2]));
 	
-	if(veh ~= nil and veh:IsMe() and not game.SuperTroop() and not game.SuperFloat()) then
+	if(veh ~= nil and veh:IsMe() and game.SuperTroop() == false and game.SuperFloat() == false) then
 		ui.ChatPrint("You have detonated a mine!");
 		fp.fpFPSKillTrooper();
 		tutorial.manager:RemoveHandler("OnLandmine");
+		state.landmine = nil;
 	end
 end
-
--- setup a shared landmine handler
-RegisterState("landmine", "DoLandmine");
 	

@@ -79,6 +79,7 @@ end
 
 scenario.RegisterState = function(stateName, handler)
 	table.insert(state.hoststates, {stateName, handler});
+	Instancing.RegisterHandler(stateName, handler);
 end
 
 function RegisterState(stateName, handler)
@@ -115,6 +116,7 @@ function OnStart(handler)
 	-- setup any host state monitoring
 	if(state.hoststates ~= nil) then
 		for i,hs in ipairs(state.hoststates) do
+			ui.ChatPrint("Adding state handler "..hs[1].."/"..hs[2]);
 			-- register our state handler
 			Instancing.RegisterHandler(hs[1], hs[2]);
 		end
