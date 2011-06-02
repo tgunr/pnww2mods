@@ -433,10 +433,11 @@ if(true) then
 		"vehicle alliedtroops us-sniper",
 
 		-- axis spawn list
-		"vehicle axistroops de_assault",
+		"vehicle axistroops de-assault",
 		"vehicle axistroops de-smg",
 		"vehicle axistroops de-lmg",
 		"vehicle axistroops de-sniper",
+		"vehicle axis troops de-ltmortar",
 		
 		
 -- DEFINE WHERE PLAYERS SPAWN
