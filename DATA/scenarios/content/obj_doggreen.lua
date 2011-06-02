@@ -364,12 +364,12 @@ if(true) then
 		"waypoint.2 onspawn mgnest1 -85.64 -45.67 40.0 #FF6600",
 		"waypoint.2 onspawn mgnest2 -144.90 -25.28 40.0 #FF6600",
 		"waypoint.2 onspawn mgnest3 20.26 -110.94 40.0 #FF6600",
-		"waypoint.2 onspawn tobruk1 52.41 -156.96 40.00 #FF6600",
-		"waypoint.2 onspawn tobruk2 -122.74 -148.97 40.0 #FF6600",
+		-- "waypoint.2 onspawn tobruk1 52.41 -156.96 40.00 #FF6600",
+		-- "waypoint.2 onspawn tobruk2 -122.74 -148.97 40.0 #FF6600",
 		"waypoint.2 onspawn bunker1 -155.14 -80.44 40.0 #FF6600",
 		"waypoint.2 onspawn bunker2 -30.91 -86.66 40.0 #FF6600",
-		"waypoint.2 onspawn gunemplacement1 -124.31 46.28 14.46 #FF6600",
-		"waypoint.2 onspawn gunemplacement2 -172.91 92.68 13.15 #FF6600",
+		-- "waypoint.2 onspawn gunemplacement1 -124.31 46.28 14.46 #FF6600",
+		-- "waypoint.2 onspawn gunemplacement2 -172.91 92.68 13.15 #FF6600",
 		
 		
 		"waypoint.1 onspawn germanbunker -29.52 -78.26 39.57 enemy",
