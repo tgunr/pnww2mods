@@ -184,7 +184,7 @@ Instancing =
 		end
 
 		-- Make the socket not linger.
-		sock.setopt(zmq.LINGER, 0)
+		sock:setopt(zmq.LINGER, 0)
 
 		-- The host always binds ports, the client always connects to them.
 		local uri = "tcp://" .. self.HostAddress .. ":" .. interface.Port
