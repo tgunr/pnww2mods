@@ -19,16 +19,6 @@
       <particleeffect>screwwatertrail</particleeffect>
     </emitter>
   </transformeffect>
-   <!-- ===================================================================== -->
-  <!--
-  <transformeffect name = "oceanfoam">
-    <emitter>
-      <fountain>0.25</fountain>
-      <flags>watersurface</flags>
-      <particleeffect>oceanfoamparticle</particleeffect>
-    </emitter>
-  </transformeffect>
-  -->
   <!-- ===================================================================== -->
   <transformeffect name = "torpedotrail">
 		<emitter>
@@ -261,13 +251,21 @@
 <!-- ===================================================================== -->
  	<transformeffect name = "dirtbullethit">
     <emitter>
-		    <flags>particleeffectonly</flags>
-	        <lifetime>1</lifetime>
-	        <particleeffect>genericbullethitparticle1</particleeffect>
-	        <particleeffect>dirtparticle1</particleeffect>
-	    </emitter>
+      <flags>particleeffectonly</flags>
+      <lifetime>1</lifetime>
+      <particleeffect>genericbullethitparticle1</particleeffect>
+      <particleeffect>dirtparticle1</particleeffect>
+	</emitter>
 	</transformeffect>
-<!-- ===================================================================== -->
+  <!-- ===================================================================== -->
+  <transformeffect name = "sandhit">
+    <emitter>
+      <flags>particleeffectonly</flags>
+      <lifetime>1</lifetime>
+      <particleeffect>sandhitparticle</particleeffect>
+    </emitter>
+  </transformeffect>
+  <!-- ===================================================================== -->
  	<transformeffect name = "metalbullethit">
 	    <emitter>
 		    <flags>particleeffectonly</flags>
@@ -1561,6 +1559,57 @@
     <material>smoke</material>
   </particleeffect>
 <!-- ===================================================================== -->
+	<particleeffect name = "genericbullethitparticle1">
+		<number>4</number>
+		<number>6</number>
+		<texture>low res smoke1</texture>
+		<texture>low res smoke2</texture>
+		<texture>low res smoke3</texture>
+		<texture>low res smoke4</texture>
+		<alpha>0.5</alpha>
+		<alpha>0.25</alpha>
+		<alpha>0.15</alpha>
+		<alpha>0.0</alpha>
+		<size>0.25</size>
+		<size>0.5</size>
+		<size>0.8</size>
+		<size>1.0</size>
+		<time>0</time>
+		<time>500</time>
+		<time>500</time>
+		<time>500</time>
+		<drag>2</drag>
+		<speed>6.0</speed>
+		<velreduction>0.7</velreduction>
+		<velvariance>-3.0 -3.0 0.0 3.0 3.0 0.0</velvariance>
+		<posvariance>-0.2 -0.2 0.0 0.2 0.2 0.0</posvariance>
+    <material>smoke</material>
+  </particleeffect>
+  <!-- ===================================================================== -->
+  <particleeffect name = "sandhitparticle">
+    <number>4</number>
+    <number>6</number>
+    <texture>tread dust</texture>
+    <alpha>0.5</alpha>
+    <alpha>0.25</alpha>
+    <alpha>0.10</alpha>
+    <alpha>0.0</alpha>
+    <size>0.25</size>
+    <size>0.5</size>
+    <size>0.8</size>
+    <size>1.0</size>
+    <time>0</time>
+    <time>500</time>
+    <time>500</time>
+    <time>500</time>
+    <drag>6</drag>
+    <speed>10.0</speed>
+    <velreduction>0.7</velreduction>
+    <velvariance>-3.0 -3.0 0.0 3.0 3.0 0.0</velvariance>
+    <posvariance>-0.15 -0.15 0.0 0.15 0.15 0.0</posvariance>
+    <material>smoke</material>
+  </particleeffect>
+  <!-- ===================================================================== -->
 	<particleeffect name = "trooperhitparticle1">
     <number>2</number>
     <texture>blood hit 1</texture>
