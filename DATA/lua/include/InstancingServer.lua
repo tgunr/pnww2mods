@@ -298,7 +298,7 @@ function drainConsole(zmqSocket)
 		-- Execute and get the result pair.
 		local result = Instancing:InvokeCommand(cmdNum, unpack(parts))
 
-		self:report('D', 'drainConsole', "<-con-- " .. result[1] .. ", " .. tostring(result[2]))
+		Instancing:report('D', 'drainConsole', "<-con-- " .. result[1] .. ", " .. tostring(result[2]))
 		zmqSocket:send('"'..result[1]..'"', zmq.SNDMORE)
 		zmqSocket:send(result[2], zmq.NOBLOCK)
 	end
