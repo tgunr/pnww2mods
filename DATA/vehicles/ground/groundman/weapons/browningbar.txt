@@ -4,6 +4,8 @@
 # SMG, SATCHEL, RIFLE, AUTO_PISTOL, GRENADE, REVOLVER, ITEM, KNIFE, LMG
 weaponType = LMG
 
+minimumDispersion = 0.01866667
+
 # per bullet muzzle rize (in degrees)
 # muzzleRise = 3.5
 muzzleRise = 2.5
@@ -42,7 +44,7 @@ weaponConnect = bar-connect
 #aimHorizontalCorrection = -0.035
 aimVerticalCorrection = -.3
 aimHorizontalCorrection = 0.35
-aimFOV = 50.0
+aimFOV = 40.0
 
 # LMGs have their own icons (8 is bren)
 hudIconType = 8
