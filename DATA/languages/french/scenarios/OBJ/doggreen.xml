@@ -1,0 +1,43 @@
+<?xml version='1.0'?>
+<content type="3">
+  <name>obj_doggreen</name>
+  <body>onspawn.moveout = Dog Green à Omaha
+victory1 = Allies victorieux!
+victory2 = Axis victorieux!
+roundstop = Cette manche est finie!
+playarea = Revenez
+usspawn1 = Prenez les fortifications et  organisez une attaque vers le bunker allemand
+usspawn2 = Prenez les fortification et les dunes et attaquez le bunker
+usspawn3 = Allez à travers les tranchées et attaquez le bunker
+mgnest1 = MG Nest A
+mgnest2 = MG Nest B
+mgnest3 = MG Nest C
+tobruk1 = Tobruk A
+tobruk2 = Tobruk B
+bunker1 = Bunker A
+bunker2 = Objectif de défense
+gunemplacement1 = Emplacement de canon A
+gunemplacement2 = Emplacement de canon B
+seawall = Point de ralliement
+shale = Point de ralliement
+germanbunker = Objectif à capturer
+vierville_draw = Fortification de Vierville 
+minefield = Champ de mine
+youcapon = Vous avez capturez le bunker!
+alliedcapon = Les forces américaines ont capturé le bunker!
+alliedcapoff = Les forces de l&#39;axe ont repris le bunker!</body>
+  <bodyloc>true</bodyloc>
+  <brief>Le jour J a commencé depuis plusieurs heures déjà et les alliés débarquent. La défense allemande est en retrait mais elle doit empêcher la capture du bunker.</brief>
+  <duration1>15</duration1>
+  <duration2>20</duration2>
+  <fog>1</fog>
+  <hour>7</hour>
+  <objective1>180</objective1>
+  <objective2>60</objective2>
+  <rules>dday</rules>
+  <team1>2</team1>
+  <team2>4</team2>
+  <terrain>doggreen</terrain>
+  <title>Dog Green</title>
+  <weather>1</weather>
+</content>

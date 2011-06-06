@@ -28,14 +28,16 @@ alliedcapon = American forces are capturing the bunker!
 alliedcapoff = Axis forces have re-taken the bunker!</body>
   <bodyloc>true</bodyloc>
   <brief>The D-Day attack is several hours old and the allies are gaining ground. The German defenses are holding so far but they must defend the bunker from capture.</brief>
-  <duration>30</duration>
+  <duration1>15</duration1>
+  <duration2>20</duration2>
   <fog>1</fog>
   <hour>7</hour>
+  <objective1>180</objective1>
+  <objective2>60</objective2>
   <rules>dday</rules>
   <team1>2</team1>
   <team2>4</team2>
   <terrain>doggreen</terrain>
   <title>Dog Green</title>
-  <victory>60</victory>
   <weather>1</weather>
 </content>

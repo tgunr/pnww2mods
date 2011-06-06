@@ -1,0 +1,27 @@
+<?xml version='1.0'?>
+<content type="3">
+  <name>obj_dog_green</name>
+  <body>onspawn.moveout =
+toaxisspawn = Les forces allemandes défendent la plage!
+toalliedspawn = Les américains doivent capturer le bunker!
+victory1 = Victoire  Alliée!
+victory2 = Victoire de l&#39;Axe!
+roundstop = Cette manche est finie!
+
+onspawn.moveout = Les alliés débarquent et se heurtent à la défense allemande!
+victory1 = Victoire  Alliée!
+victory2 = Victoire de l&#39;Axe!
+roundstop = Cette manche est finie!</body>
+  <bodyloc>true</bodyloc>
+  <brief>Le jour J a commencé depuyis plusieurs heures et les alliés débarquent. Les forces de l&#39;axe résistent et doivent défendre le bunker du QG et empêcher se capture.</brief>
+  <duration>30</duration>
+  <fog>3</fog>
+  <hour>1300</hour>
+  <kills>500</kills>
+  <rules>deathmatch</rules>
+  <team1>3</team1>
+  <team2>4</team2>
+  <terrain>doggreen</terrain>
+  <title>Dog Green</title>
+  <weather>2</weather>
+</content>
