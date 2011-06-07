@@ -18,6 +18,8 @@ if(true) then
 		"place water1 -800 800 3.65 0 0 0 0 0 0 0",
 			
 		"place doggreen_ob3 0 0 0 0 0 0 0 0 0 0",
+		"place doggreen_ob3_barbedwire 0 0 0 0 0 0 0 0 0 0",
+		"place doggreen_ob3_logbunker 0 0 0 0 0 0 0 0 0 0",
 		"place doggreen_region_EE 0 0 0 0 0 0 0 0 0 0",
 		--"place doggreen_region_NE 0 0 0 0 0 0 0 0 0 0",
 		--"place doggreen_region_NN 0 0 0 0 0 0 0 0 0 0",
