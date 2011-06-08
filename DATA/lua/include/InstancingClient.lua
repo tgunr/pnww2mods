@@ -322,6 +322,15 @@ function Instancing.GetInstanceState(self)
 
 	self.InstanceStates[self.InstanceId] = result
 
+	-- see if we have any handlers for the new data	
+	for k,v in pairs(result) do
+		local handler = Instancing.InstanceHandlers[k]
+		
+		if handler ~= nil and type(_G[handler]) == "function" then
+			pcall(_G[handler], k, v)
+		end
+	end
+	
 	return { Instancing.SuccessCode, "-- got instance state" }
 end
 
