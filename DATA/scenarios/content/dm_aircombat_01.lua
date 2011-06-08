@@ -178,18 +178,18 @@ if(true) then
 
 		-- directions at axis spawn 1
 
-		--"area toaxisspawn OnTrigger 293624.50 2976351.22 274.00",		
-		--"area toaxisspawn OnTrigger 293623.44 2976319.32 274.00",
-		--"area toaxisspawn OnTrigger 293830.51 2976317.97 274.00",
-		--"area toaxisspawn OnTrigger 293830.95 2976351.00 274.00",
+		"area toaxisspawn OnTrigger 293624.50 2976351.22 274.00",		
+		"area toaxisspawn OnTrigger 293623.44 2976319.32 274.00",
+		"area toaxisspawn OnTrigger 293830.51 2976317.97 274.00",
+		"area toaxisspawn OnTrigger 293830.95 2976351.00 274.00",
 				
 
 		-- directions at allied spawn 1
 
-		--"area toalliedspawn OnTrigger 293783.85 2978058.41 274.00",	
-		--"area toalliedspawn OnTrigger 293695.87 2978060.53 274.00",	
-		--"area toalliedspawn OnTrigger 293695.54 2978014.89 274.00",	
-		--"area toalliedspawn OnTrigger 293779.78 2978014.31 274.00",		
+		"area toalliedspawn OnTrigger 293783.85 2978058.41 274.00",	
+		"area toalliedspawn OnTrigger 293695.87 2978060.53 274.00",	
+		"area toalliedspawn OnTrigger 293695.54 2978014.89 274.00",	
+		"area toalliedspawn OnTrigger 293779.78 2978014.31 274.00",		
 
 	-- minefield near axis spawn
 
@@ -231,10 +231,10 @@ if(true) then
 
 	-- center of map area between spawns
 
-		--"area mapcenter OnTrigger 293109.64 2977080.80 274.00",
-		--"area mapcenter OnTrigger 293110.12 2977312.77 274.00",
-		--"area mapcenter OnTrigger 293281.78 2977306.03 274.00",
-		--"area mapcenter OnTrigger 293279.28 2977087.93 274.00",
+		"area mapcenter OnTrigger 293109.64 2977080.80 274.00",
+		"area mapcenter OnTrigger 293110.12 2977312.77 274.00",
+		"area mapcenter OnTrigger 293281.78 2977306.03 274.00",
+		"area mapcenter OnTrigger 293279.28 2977087.93 274.00",
 		
 			
 -- CLONES --
@@ -255,9 +255,9 @@ if(true) then
 		--"clone pzivd 79.79 108.67 5.58 3 -1 20",
 		--"clone oplbltz 121.93 6.84 8.08 -3 0 205",
 		--"clone oplbltz 176.32 -20.12 8.55 0 0 180",
-		-- "clone bedford -19.75 -153.93 9.05 2 0 0",
-		-- "clone bedford -27.34 -150.10 8.9 4 0 285",
-		-- "clone bedford -35.21 -147.32 8.85 6 2 285",
+		--"clone bedford -19.75 -153.93 9.05 2 0 0",
+		--"clone bedford -27.34 -150.10 8.9 4 0 285",
+		--"clone bedford -35.21 -147.32 8.85 6 2 285",
 
 
 -- ALERTS AND CHATS
@@ -325,6 +325,7 @@ if(true) then
 	-- Allied plane types --		
 
 		"vehicle alliedplanes spitvb",
+		"vehicle alliedplanes spit1",
 		"vehicle alliedplanes h81a2",
 		"vehicle alliedplanes d520",
 
