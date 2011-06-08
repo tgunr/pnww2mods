@@ -19,16 +19,42 @@ tutorial.SetState(state);
 
 -- add our capture timer
 scenario.RegisterUpdate("OnCaptureUpdate");
--- scenario.RegisterState("bridgecapture", "OnCapper");
--- scenario.RegisterState("bunkercapture", "OnCapper");
+
+-- some overrides
+function OnSpawn(handler)
+	
+	-- run default behavior
+	scenario.OnSpawn(handler);
+	
+	state.capture = 0;
+	state.bridgecapture = false;
+	
+	local target1 		= tonumber(state.config.objective1);
+	local objective1 	= Instancing:GetStateNumber("objective1");
+	
+	-- update the hud to the current objective amounts
+	local capper = Instancing:GetStateNumber("capper"); 
+	
+	if(capper == 0) then
+		scenario.SetObjective("objective1", 0);
+	else
+		scenario.SetObjective("objective1", objective1 / target1);
+	end
+	
+	scenario.SetObjective("objective2", -1);
+	
+	return 1 
+end
 
 function OnDie(handler)
-	state.capturing = false;
+	state.capture = 0;
+	state.bridgecapture = false;
  	return 1;
 end
 
 function OnDespawn(handler)
-	state.capturing = false;
+	state.capture = 0;
+	state.bridgecapture = false;
 	return 1;
 end
 

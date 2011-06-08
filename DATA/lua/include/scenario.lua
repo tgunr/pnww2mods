@@ -33,6 +33,8 @@ state.config['server'] 	= '66.28.224.157';
 state.hoststates			= 
 {
 	{"roundtimer", "OnRoundTimer"},
+	{"round", "OnRound"},
+	{"stage", "OnStage"},
 	{"victory", "OnVictory"},
 	{"victory1", "CheckVictory"},
 	{"victory2", "CheckVictory"}
@@ -74,6 +76,7 @@ scenario.AddScore = function(team, points)
 end
 
 scenario.RegisterUpdate = function(callback)
+	-- ui.ChatPrint("Adding update " .. callback);
 	table.insert(state.updates, callback);
 end
 
@@ -84,6 +87,15 @@ end
 
 function RegisterState(stateName, handler)
 	scenario.RegisterState(stateName, handler);
+end
+
+scenario.UnregisterState = function(stateName)
+	state.hoststates[stateName] = nil;
+	Instancing.RemoveHandler(stateName);
+end
+
+function UnregisterState(stateName)
+	scenario.UnregisterState(stateName);
 end
 
 function OnStart(handler)
@@ -133,8 +145,15 @@ function StartNetwork()
 		-- if we're the creator, send our initial state up
 		if(state.config.init == "true") then
 			-- do some state init stuff
-			local seconds = tonumber(state.config.duration) * 60;
+			local duration = state.config.duration1;
+			if(duration == nil) then
+				duration = state.config.duration;
+			end
+			local seconds = tonumber(duration or 10) * 60;
 			Instancing:TimedEvent("roundtimer", seconds);
+			Instancing:SendStateValue("victory", 0);
+			Instancing:SendStateValue("round", scenario.manager:GetRound());
+			Instancing:SendStateValue("stage", scenario.manager:GetStage());
 		end
 		
 		-- get our initial state
@@ -147,7 +166,7 @@ function StartNetwork()
 	end
 end
 
-function OnSpawn(handler)
+scenario.OnSpawn = function(handler)
 	-- do default on spawn
 	tutorial.OnSpawn(handler);
 	
@@ -187,6 +206,10 @@ function OnSpawn(handler)
 	
 	-- keep handler going
 	return 1;
+end
+
+function OnSpawn(handler)
+	return scenario.OnSpawn(handler);
 end
 
 function OnDespawn(handler)
@@ -273,6 +296,7 @@ scenario.OnScenario = function(handler)
 		
 		-- call any update callbacks
 		for i,callback in ipairs(state.updates) do
+			-- ui.ChatPrint("Trying update call back " .. callback);
 			if(callback ~= nil and type(_G[callback]) == "function") then
 				_G[callback](msDelta);
 			end
@@ -320,6 +344,29 @@ function OnBoundary(handler)
 	return 1;
 end
 
+function OnSendBroadcast(handler)
+	-- bail if this trigger doesn't pertain to us
+	if(not scenario.manager:PlayerRelevant(handler.name)) then
+		return 1;
+	end
+	
+	-- try to run any events associated with this area
+	if(scenario.InArea(handler)) then
+		Instancing:BroadcastEvent(handler.name, 1);
+	else
+		Instancing:BroadcastEvent(handler.name, 0);
+	end
+	return 1;
+end
+
+function OnReceiveBroadcast(name, value)
+	if(tonumber(value) > 0) then
+		scenario.manager:RunObject(name .. "on", 1);
+	else
+		scenario.manager:RunObject(name .. "off", 1);
+	end
+end
+
 function OnTrigger(handler)
 	-- bail if this trigger doesn't pertain to us
 	if(not scenario.manager:PlayerRelevant(handler.name)) then
@@ -343,6 +390,8 @@ function OnState(handler)
 	
 	-- save this state
 	state[handler.name] = scenario.InArea(handler);
+	
+	-- ui.ChatPrint("Setting state " .. handler.name .. " to " .. tostring(state[handler.name]));  
 	
 	-- try to run any events associated with this area
 	if(state[handler.name]) then
@@ -376,7 +425,9 @@ end
 
 function OnVictory(name, value)
 	-- save our victor
-	if(state.victory == 0) then
+	local victory = tonumber(value);
+	
+	if(victory ~= 0 and state.victory == 0) then
 		state.victory = tonumber(value);
 		
 		-- load our victory ui
@@ -427,6 +478,17 @@ function SetUIProgress(progress, label)
 	scenario.SetUIProgress(progress, label);
 end
 
+scenario.SetObjective = function(objective, progress)
+		local hud = ui.FindView("hud");
+		if(hud ~= nil) then
+			hud:CallJS("SetObjective", objective, progress);
+		end
+end
+
+function SetObjective(objective, progress)
+	scenario.SetObjective(objective, progress);
+end
+
 scenario.SetResult = function()
 		local result = ui.LoadView("scenarios/result");
 		if(result ~= nil) then
@@ -467,6 +529,30 @@ end
 
 function OnRoundTimer(name, value)
 	return scenario.OnRoundTimer(name, value);
+end
+
+scenario.OnRound = function(name, value)
+	local newRound = tonumber(value);
+	if(scenario.manager:GetRound() ~= newRound) then
+		scenario.manager:SetRound(newRound);
+	end
+	return 1;
+end
+
+function OnRound(name, value)
+	return scenario.OnRound(name, value);
+end
+
+scenario.OnStage = function(name, value)
+	local newStage = tonumber(value);
+	if(scenario.manager:GetStage() ~= newStage) then
+		scenario.manager:OnStage(newStage);
+	end
+	return 1;
+end
+
+function OnStage(name, value)
+	return scenario.OnStage(name, value);
 end
 
 function SetUpMap()

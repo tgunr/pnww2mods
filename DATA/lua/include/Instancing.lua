@@ -387,6 +387,10 @@ Instancing =
 		Instancing.InstanceHandlers[stateName] = handler
 	end
 
+,	RemoveHandler = function(stateName)
+		Instancing.InstanceHandlers[stateName] = nil
+	end
+	
 	--------- --------- --------- --------- --------- ---------
 	-- Apply a change to an instance value and, if there is a
 	-- handler (trigger) associated with the valueName, call it.

@@ -29,6 +29,7 @@ function CheckVictory(name, value)
 	local friendly 	=  0;
 	local enemy 	=  0;
 	
+	local victory = tonumber(state.config.victory);
 	local color = "#00FF00";
 	
 	if(team == 1) then
@@ -48,12 +49,32 @@ function CheckVictory(name, value)
 	local v = Instancing:GetStateNumber(name);
 	
 	if(name == "victory1") then
+		scenario.SetObjective("objective1", tonumber(value) / victory);
 		scenario.AddMessage(string.format("Allied Gains: %d of %d points", v, state.config.victory), color);
 	else
+		scenario.SetObjective("objective2", tonumber(value) / victory);
 		scenario.AddMessage(string.format("Axis Gains: %d of %d points", v, state.config.victory), color);
 	end
 	
 	return scenario.CheckVictory(name, value);
+end
+
+-- some overrides
+function OnSpawn(handler)
+	
+	-- run default behavior
+	scenario.OnSpawn(handler);
+	
+	local victory = tonumber(state.config.victory);
+	
+	local objective1 = Instancing:GetStateNumber("victory1");
+	local objective2 = Instancing:GetStateNumber("victory2");
+	
+	-- update the hud to the current objective amounts
+	scenario.SetObjective("objective1", objective1 / victory);
+	scenario.SetObjective("objective2", objective2 / victory);
+	
+	return 1 
 end
 
 -- give a point to the enemy each time I die

@@ -198,7 +198,7 @@ if(true) then
 		"event explosions .10 25000",
 		-- "event guns1 .15 10000",
 		-- "event guns2 .20 30000",
-		-- "event wind .5 5000",
+		"event wind .5 5000",
 		"event bombing1 .20 10000 30000 6",
 		"event bombing2 .10 20000 30000 3",
 		"event barrage1 .25 60000 60000 10",
@@ -280,12 +280,13 @@ if(true) then
 		
 		
 	-- bridge capture objective
-		"handler bridgecapture OnCapper",
+		"handler capper OnCapper",
+		"handler objective1 OnCapturing",
 		
-		"area bridgecapture OnCapture 136.36 40.60 6.25 1",
-		"area bridgecapture OnCapture 133.56 33.05 6.25",
-		"area bridgecapture OnCapture 129.00 35.14 6.25",
-		"area bridgecapture OnCapture 131.56 42.40 6.25",
+		"area bridgecapture OnState 136.36 40.60 6.25 1",
+		"area bridgecapture OnState 133.56 33.05 6.25",
+		"area bridgecapture OnState 129.00 35.14 6.25",
+		"area bridgecapture OnState 131.56 42.40 6.25",
 		
 -- CLONES --
 
@@ -323,24 +324,21 @@ if(true) then
 		-- command categorynamealert namealert numberofsecondsbetweenrepeatalerts
 		-- numberofsecondsbetweenrepeatalerts 0= no limit, 1= onetime per scenario, unit measure is seconds 
 		-- "chat spawnin spawnin.moveout 0",
-		"alert onspawn onspawn.moveout",
+		"alert onspawn onspawn.moveout 1",
 		"alert.1 toaxisspawn toaxisspawn 60",
 		"alert.2 toalliedspawn toalliedspawn 60",
 		"alert.1 bridgecapture1 bridgecapture 5",
 		"alert.1 allieswrongway allieswrongway 30" ,
 		"alert playarea playarea 10",
 		
-		"message.1 youcapon youcapon friendly 0",
-		"message.1 alliedcapon alliedcapon friendly 0",
-		"message.1 alliedcapoff alliedcapoff enemy 0",
-		"message.2 alliedcapon alliedcapon enemy 0",
-		"message.2 alliedcapoff alliedcapoff friendly 0",
-		
+		"message.1 alliedcapon alliedcapon friendly 1",
+		"message.1 alliedcapoff alliedcapoff enemy 1",
+		"message.2 alliedcapon alliedcapon enemy 1",
+		"message.2 alliedcapoff alliedcapoff friendly 1",
 		
 		"waypoint onspawn minefield 91.04 38.93 5.97 #FF6600",
 		"waypoint onspawn minefield 195.11 24.16 7.35 #FF6600",
-		"waypoint.1 onspawn bridgewp 132.57 37.60 7.38 enemy",
-		"waypoint.2 onspawn bridgewp 132.57 37.60 7.38 friendly",
+		"waypoint onspawn objective1 132.57 37.60 7.38 axis",
 		
 --  #### END DOC LOOK AT THIS ####
 

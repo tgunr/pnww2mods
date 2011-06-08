@@ -14,8 +14,10 @@ if(true) then
 		"place water1 0 800 3.65 0 0 0 0 0 0 0",
 		"place water1 800 800 3.65 0 0 0 0 0 0 0",
 		"place water1 800 1600 3.65 0 0 0 0 0 0 0",
+		"place water1 0 1600 3.65 0 0 0 0 0 0 0",
 		"place water1 -800 0 3.65 0 0 0 0 0 0 0",
 		"place water1 -800 800 3.65 0 0 0 0 0 0 0",
+		"place water1 -800 1600 3.65 0 0 0 0 0 0 0",
 			
 		"place doggreen_ob3 0 0 0 0 0 0 0 0 0 0",
 		"place doggreen_ob3_barbedwire 0 0 0 0 0 0 0 0 0 0",
