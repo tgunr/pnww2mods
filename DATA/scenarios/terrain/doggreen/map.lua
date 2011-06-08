@@ -126,6 +126,9 @@ if(true) then
 		"place infantryfb1c -50.5 -148.73 44.4 -1 0 0 0 0 0 0",
 		
 		
+		"place crate -137.19 -35.27 35.82 -5 0 0 0 0 0 0",
+		"place crate -137.3 -35.0 36.8 -5 0 0 0 0 0 0",
+		"place crate -138.35 -35.87 35.90 -5 0 0 0 0 0 0",
 		
 		
 		-- landmine signs
