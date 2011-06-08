@@ -464,6 +464,7 @@ if(true) then
 		"vehicle axistroops de-lmg",
 		"vehicle axistroops de-sniper",
 		"vehicle axistroops de-ltmortar",
+		"vehicle axislmg de-lmg",
 		
 		--------------------------------------------------------
 		------ STAGE 1 objects ----------------------------
@@ -477,10 +478,12 @@ if(true) then
 		"area beachcrossing OnState -69.99 51.00 5.56",
 		"area beachcrossing OnState -101.67 67.22 6.32",
 		"area beachcrossing OnState -122.91 84.31 6.16",
+		
 		"area beachcrossing OnState -138.86 101.56 6.01",
 		"area beachcrossing OnState -162.76 118.32 6.02",
 		"area beachcrossing OnState -181.66 128.69 5.99",
 		"area beachcrossing OnState -194.94 136.48 6.08",
+		
 		"area beachcrossing OnState -198.82 137.34 6.09",
 		"area beachcrossing OnState -216.76 141.15 6.03",
 		"area beachcrossing OnState -226.31 132.93 10.34",
@@ -505,6 +508,10 @@ if(true) then
 		"waypoint.1.1.0 onspawn vierville_draw -171.81 6.42 20.34 #FF6600",
 		"waypoint.0.1.1 onspawn beachhead -116.04 65.05 7.68 friendly",
 		"waypoint.0.1.1 onspawn beachhead -170.40 111.86 7.29 friendly",
+		"waypoint.0.1.1 onspawn beachhead -68.97 45.77 5.78 friendly",
+		
+		
+		
 		
 		-- DEFINE WHERE PLAYERS SPAWN
 	
@@ -521,8 +528,12 @@ if(true) then
 		-- ruins
 		"spawn.2.1.1 axistroops -176.06 36.48 16.88 90",
 		-- mg nest
-		"spawn.2.1.1 axistroops -137.83 -79.05 40.19 0",
+		--"spawn.2.1.1 axistroops -137.83 -79.05 40.19 0",
+		"spawn.2.1.1 axislmg -137.46 -37.48 36.12 325",
+		"spawn.2.1.1 axislmg -88.12 -56.20 39.50 0",
+		"spawn.2.1.1 axislmg 11.15 -121.45 41.05 60",
 		
+
 		"alert.0.1.1 onstageend beachsecure",
 		"alert.0.1.1 onstageend navalguns",
 		
@@ -543,7 +554,7 @@ if(true) then
 		"area bunkercapture OnState -30.69 -76.96 39",
 		"area bunkercapture OnState -27.70 -77.38 39",
 		
-		-- only allies trigger this area 
+		-- beachhead objective area -- only allies trigger this area 
 		"area linebreach OnSendBroadcast 66.10 -148.83 39.26",
 		"area linebreach OnSendBroadcast 19.76 -99.93 37.87",
 		"area linebreach OnSendBroadcast 9.67 -97.08 40.10",
@@ -575,27 +586,7 @@ if(true) then
 		-- only americans trigger this area
 		"vehicle linebreach 2 0 0 0",
 		
-	-- american capture objective
 
-		-- "area germanhq OnTrigger -21.98 -157.93 46.33",
-		-- "area germanhq OnTrigger -22.45 -143.22 46.33",
-		-- "area germanhq OnTrigger -16.07 -142.60 46.33",
-		-- "area germanhq OnTrigger -15.39 -156.44 46.33",	
-		
-		-- "message.1.1.2 alliedcapon alliedcapon friendly 0",
-		-- "message.1.1.2 alliedcapoff alliedcapoff enemy 0",
-		-- "message.2.1.2 alliedcapon alliedcapon enemy 0",
-		-- "message.2.1.2 alliedcapoff alliedcapoff friendly 0",
-		
-		-- "waypoint.2.1.2 onspawn mgnest1 -85.64 -45.67 40.0 #FF6600",
-		-- "waypoint.2.1.2 onspawn mgnest2 -144.90 -25.28 40.0 #FF6600",
-		-- "waypoint.2.1.2 onspawn mgnest3 20.26 -110.94 40.0 #FF6600",
-		-- "waypoint.2.1.2 onspawn bunker1 -155.14 -80.44 40.0 #FF6600",
-		-- "waypoint.2.1.2 onspawn bunker2 -30.91 -86.66 40.0 #FF6600",
-		-- "waypoint.2.1.2 onspawn tobruk1 52.41 -156.96 40.00 #FF6600",
-		-- "waypoint.2.1.2 onspawn tobruk2 -122.74 -148.97 40.0 #FF6600",
-		-- "waypoint.2.1.2 onspawn gunemplacement1 -124.31 46.28 14.46 #FF6600",
-		-- "waypoint.2.1.2 onspawn gunemplacement2 -172.91 92.68 13.15 #FF6600",
 		
 		"message alliedcapon alliedcapon allied 10",
 		"message alliedcapoff alliedcapoff axis 0",
@@ -604,16 +595,14 @@ if(true) then
 		
 		"waypoint.0.1.2 onspawn germanbunker -29.52 -78.26 39.57 axis",
 		"waypoint.0.1.2 onspawn beachhead -152.10 61.01 12.89 allied",
-		-- "waypoint.1.1.2 onspawn seawall -37.38 22.87 9.42 #FF6600",
-		-- "waypoint.1.1.2 onspawn shale -96.17 61.07 6.54 #FF6600",
-		-- "waypoint.1.1.2 onspawn shale -161.42 108.76 8.78 #FF6600",
+
 
 		-- DEFINE WHERE PLAYERS SPAWN
 		
 		-- stage 2 spawning
 		"spawn.1.1.2 alliedtroops -129.58 71.83 7.74 170",
 		"spawn.1.1.2 alliedtroops -173.37 110.01 7.79 160",
-		
+
 		"spawn.2.1.2 axistroops -31.85 -142.49 44.61 355",
 		"spawn.2.1.2 axistroops -130.83 -120.49 42.42 345",
 		
