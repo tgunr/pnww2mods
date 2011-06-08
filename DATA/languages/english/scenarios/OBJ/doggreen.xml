@@ -1,29 +1,55 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>obj_doggreen</name>
-  <body>onspawn.moveout = Dog Green at Omaha
-victory1 = Allies victorious!
-victory2 = Axis victorious!
+  <body>onspawn.moveout * Dog Green at Omaha
+victory1 * Allies victorious!
+victory2 * Axis victorious!
+roundstop * This round is over!
+playarea * Turn around
+usspawn1 * Get to the seawall and stage an attack on the German Bunker
+usspawn2 * Get to the shale and stage an attack on the German Bunker
+usspawn3 * Move through the draw and attack the German Bunker
+mgnest1 * MG Nest A
+mgnest2 * MG Nest B
+mgnest3 * MG Nest C
+tobruk1 * Tobruk A
+tobruk2 * Tobruk B
+bunker1 * Bunker A
+bunker2 * Defense Objective
+gunemplacement1 * Gun Emplacement A
+gunemplacement2 * Gun Emplacement B
+seawall * Rally Point
+shale * Rally Point
+germanbunker * Capture Objective
+vierville_draw * Vierville Draw
+minefield * minefield
+youcapon * You are capturing the bunker!
+alliedcapon * American forces are capturing the bunker!
+alliedcapoff * Axis forces have re-taken the bunker!
+
+# new 2-stage localizations (some overlap)
+onspawn.1.1.1 = Fight your way to the shore batteries and secure a beachhead!
+onspawn.2.1.1 = Push the American invasion force back into the sea!
+beachfalling = American solidiers are securing a beachhead!
+beachhead.1.1.1 = secure this area
+beachhead.2.1.1 = defend this area
+beachsecure = American forces have secured a beachhead!
+navalguns = American shore bombardment has ceased near the Vierville Draw!
+victory1 = American forces have stormed the beach and secured a beach head!
+victory2 = German forces have prevented the Allied invasion!
 roundstop = This round is over!
 playarea = Turn around
-usspawn1 = Get to the seawall and stage an attack on the German Bunker
-usspawn2 = Get to the shale and stage an attack on the German Bunker
-usspawn3 = Move through the draw and attack the German Bunker
-mgnest1 = MG Nest A
-mgnest2 = MG Nest B
-mgnest3 = MG Nest C
-tobruk1 = Tobruk A
-tobruk2 = Tobruk B
-bunker1 = Bunker A
-bunker2 = Defense Objective
-gunemplacement1 = Gun Emplacement A
-gunemplacement2 = Gun Emplacement B
-seawall = Rally Point
-shale = Rally Point
-germanbunker = Capture Objective
+onspawn.1.1.2 = Storm the hill and capture the Command Bunker overlooking the beach!
+onspawn.2.1.2 = Defend the Command Bunker from being overrun by American forces!
+bunkerfalling.1.1.2 = American solidiers are capturing the Command Bunker!
+bunkerfalling.2.1.2 = German forces have secured the Command Bunker!
+linebreach = American solidiers have breached the German line!
+germanbunker = Command Bunker
+beachhead = American Beachhead
+objective1 = American Beachhead
+objective2 = Command Bunker
 vierville_draw = Vierville Draw
 minefield = minefield
-youcapon = You are capturing the bunker!
 alliedcapon = American forces are capturing the bunker!
 alliedcapoff = Axis forces have re-taken the bunker!</body>
   <bodyloc>true</bodyloc>
@@ -34,7 +60,7 @@ alliedcapoff = Axis forces have re-taken the bunker!</body>
   <hour>7</hour>
   <objective1>180</objective1>
   <objective2>60</objective2>
-  <rules>dday</rules>
+  <rules>doggreen</rules>
   <team1>2</team1>
   <team2>4</team2>
   <terrain>doggreen</terrain>

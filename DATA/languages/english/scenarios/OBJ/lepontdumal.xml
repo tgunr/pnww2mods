@@ -15,7 +15,10 @@ minefield = minefield
 
 youcapon = You are capturing the bridge!
 alliedcapon = Allied forces are capturing the bridge!
-alliedcapoff = Axis forces have re-taken the bridge!</body>
+alliedcapoff = Axis forces have re-taken the bridge!
+
+objective1.1.1.1 = Capture the Bridge
+objective1.2.1.1 = Defend the Bridge</body>
   <bodyloc>true</bodyloc>
   <brief>An American convoy is headed south towards the bridge and have orders to capture and hold it until reinforcements arrive. A small German unit is camped in town and are desperate to defend the bridge from capture.
 <br><br>
@@ -33,13 +36,13 @@ Germans- keep the enemy from reaching their objective for 15 minutes</brief>
     <link path="scenarios/dm/objectives/lepontdumal1.xml" title="team1" />
     <link path="scenarios/dm/objectives/lepontdumal2.xml" title="team2" />
   </links>
-  <rules>dday</rules>
+  <rules>lepontdumal</rules>
   <team1>2</team1>
   <team1min>2</team1min>
   <team2>4</team2>
   <team2min>2</team2min>
   <terrain>lepontdumal</terrain>
   <title>Le pont du mal</title>
-  <victory>30</victory>
+  <victory>45</victory>
   <weather>0</weather>
 </content>
