@@ -258,9 +258,9 @@ if(true) then
 		--"clone pzivd 79.79 108.67 5.58 3 -1 20",
 		--"clone oplbltz 121.93 6.84 8.08 -3 0 205",
 		--"clone oplbltz 176.32 -20.12 8.55 0 0 180",
-		-- "clone bedford -19.75 -153.93 9.05 2 0 0",
-		-- "clone bedford -27.34 -150.10 8.9 4 0 285",
-		-- "clone bedford -35.21 -147.32 8.85 6 2 285",
+		--"clone bedford -19.75 -153.93 9.05 2 0 0",
+		--"clone bedford -27.34 -150.10 8.9 4 0 285",
+		--"clone bedford -35.21 -147.32 8.85 6 2 285",
 
 
 -- ALERTS AND CHATS
@@ -276,6 +276,8 @@ if(true) then
 	-- these are always named
 	-- the lockey is a lockey looked up from the scenario content in the web translation tool
 	-- command name lockey
+	-- command categorynamealert namealert numberofsecondsbetweenrepeatalerts
+	-- numberofsecondsbetweenrepeatalerts 0= no limit, 1= onetime per scenario, unit measure is seconds 
 
 		--"alert onspawn onspawn.moveout",
 		"alert toaxisspawn toaxisspawn",
@@ -285,9 +287,9 @@ if(true) then
 -- WAYPOINTS
 -- Directional information in HUD
 
-		"waypoint onspawn wp1 293745.33 2978034.78 275.11 friendly",
-		"waypoint onspawn wp2 293725.62 2976329.59 275.12 friendly",
-		"waypoint onspawn wp3 292809.34 2977200.82 275.12 enemy",
+		"waypoint onspawn wp1 293745.33 2978034.78 275.11 enemy",
+		"waypoint onspawn wp2 293725.62 2976329.59 275.12 enemy",
+		"waypoint onspawn wp3 292809.34 2977200.82 275.12 friendly",
 
 				
 -- MAKE A VEHICLE AVAILABLE FOR SPAWNING
