@@ -124,15 +124,21 @@ Instancing =
 	end
 
 ,	report = function(self, code, funcname, msg)
-		-- Don't log debug messages if debug isn't enabled.
 		if code == 'D' and self.EnableDebug == false then return end
-		local text = code .. " [" .. os.date() .. " Instancing:"..funcname.."] " .. msg
-		if code == 'A' or code == 'F' then
-			error(text)
-		elseif code == 'W' then
-			warn(text)
+		if game ~= nil and game.LoadLib ~= nil and type(game.LoadLib) == "function" then
+			local text = code .. " [Instancing:"..funcname.."] " .. msg
+			ui.ChatPrint(text)
 		else
-			print(text)
+			-- Don't log debug messages if debug isn't enabled.
+			
+			local text = code .. " [" .. os.date() .. " Instancing:"..funcname.."] " .. msg
+			if code == 'A' or code == 'F' then
+				error(text)
+			elseif code == 'W' then
+				warn(text)
+			else
+				print(text)
+			end
 		end
 	end
 
@@ -418,6 +424,10 @@ Instancing =
 					return { Instancing.ErrorCode, valueName.." state change handler error: "..msg.."." }
 				end
 			end
+		end
+		
+		if oldValue == nil then
+			oldValue = "nil"
 		end
 
 		return { Instancing.SuccessCode, "-- "..valueName.." value changed '"..oldValue.."' -> '"..value.."'." }

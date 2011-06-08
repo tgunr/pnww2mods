@@ -315,11 +315,11 @@ if(true) then
 		-- heavy combat fx on the beach
 		"fpsfx combatfx 0",
 		"fpsfx combatsounds 1",
-		"event.0.1.1 combatfx .6 300 300 5",
-		"event.0.1.1 combatfx .75 300 300 3",
-		"event combatfx .75 300 300 3",
-		"event combatfx 1 200 100 1",
-		"event combatsounds .5 300",
+		"event.0.1.1 combatfx .5 300 300 5",
+		"event.0.1.1 combatfx .5 300 300 3",
+		"event combatfx .5 300 300 3",
+		"event combatfx .8 200 100 1",
+		"event combatsounds .6 300",
 		
 		-------------------------------------- german shore defense guns -----------------------------------------------
 		-- far right bunker pak40

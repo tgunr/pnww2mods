@@ -448,7 +448,7 @@ function Instancing.InstanceEvent(self, instanceNo, stateName, value)
 	local handler = Instancing.InstanceHandlers[stateName]
 
 	if handler ~= nil and type(_G[handler]) == "function" then
-		local status, msg = pcall(_G[handler](stateName, value))
+		local status, msg = pcall(_G[handler], stateName, value)
 		if not status then
 			return { Instancing.ErrorCode, stateName.." event handler error: "..msg.."." }
 		end
