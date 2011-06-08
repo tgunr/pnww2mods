@@ -248,21 +248,18 @@ if(true) then
 		"vehicle alliedtroops fr-lmg",
 		"vehicle alliedtroops fr-smg",
 		"vehicle alliedtroops fr-rifle",
-		"vehicle alliedtroops fr-sniper",
 		"vehicle alliedtroops uk-lmg",
 		"vehicle alliedtroops uk-smg",
 		"vehicle alliedtroops uk-rifle",
 		"vehicle alliedtroops us-assault",
 		"vehicle alliedtroops us-smg",
 		"vehicle alliedtroops us-bar",
-		"vehicle alliedtroops uk-sniper",
-
+		
 		-- AXIS SPAWN list
 
 		"vehicle axistroops de-smg",
 		"vehicle axistroops de-lmg",
 		"vehicle axistroops de-rifle",
-		"vehicle axistroops de-sniper",
 		"vehicle axistroops de-assault",
 	};
 
