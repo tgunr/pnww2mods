@@ -25,13 +25,20 @@ if(true) then
 		"vehicle alliedtroops us-sniper",
 
 	-- axis spawn list
-		"vehicle axistroops de-assault",
-		"vehicle axistroops de-smg",
-		"vehicle axistroops de-lmg",
-		"vehicle axistroops de-sniper",
-		"vehicle axistroops de-ltmortar",
+	-- stage 1	
+		"vehicle axistroops1 de-assault",
+		"vehicle axistroops1 de-smg",
+		"vehicle axistroops1 de-sniper",
+		"vehicle axistroops1 de-ltmortar",
 		"vehicle axislmg de-lmg",
-	
+		
+	-- stage 2
+		"vehicle axistroops2 de-assault",
+		"vehicle axistroops2 de-smg",
+		"vehicle axistroops2 de-sniper",
+		"vehicle axistroops2 de-ltmortar",
+		"vehicle axistroops2 de-lmg",
+
 	
 	-----------------------------  DEFINE THE PLAY AREA ----------------------------- 
 
@@ -435,10 +442,10 @@ if(true) then
 		
 	-- stage 1 axis spawns
 	-- bunker spawns
-		"spawn.2.1.1 axistroops -128.39 44.85 12.18 180",
-		"spawn.2.1.1 axistroops -176.36 90.51 11.65 100",
+		"spawn.2.1.1 axistroops1 -128.39 44.85 12.18 180",
+		"spawn.2.1.1 axistroops1 -176.36 90.51 11.65 100",
 	-- ruins
-		"spawn.2.1.1 axistroops -176.06 36.48 16.88 90",
+		"spawn.2.1.1 axistroops1 -176.06 36.48 16.88 90",
 	-- mg nest
 	--"spawn.2.1.1 axistroops -137.83 -79.05 40.19 0",
 		"spawn.2.1.1 axislmg -137.46 -37.48 36.12 325",
@@ -449,8 +456,8 @@ if(true) then
 		"spawn.1.1.2 alliedtroops -129.58 71.83 7.74 170",
 		"spawn.1.1.2 alliedtroops -173.37 110.01 7.79 160",
 	-- stage 2 axis spawns
-		"spawn.2.1.2 axistroops -31.85 -142.49 44.61 355",
-		"spawn.2.1.2 axistroops -130.83 -120.49 42.42 345",
+		"spawn.2.1.2 axistroops2 -31.85 -142.49 44.61 355",
+		"spawn.2.1.2 axistroops2 -130.83 -120.49 42.42 345",
 		
 
 		
