@@ -3604,6 +3604,7 @@
 <!ENTITY hud.alerts.17 "您由 {1} 提供了补给">
 <!ENTITY hud.waypoints.origin "起始点">
 <!ENTITY hud.readout.vehicles "交通工具">
+<!ENTITY hud.readout.aileron "Aileron">
 <!ENTITY hud.hqintel.weight.0 "轻">
 <!ENTITY hud.alerts.24.sea "{1} 附近发现敌人海军力量">
 <!ENTITY hud.alerts.11.nocapture "只有付费用户才能占领。请上官网的&#34;快乐商城&#34;充值。">
@@ -3620,8 +3621,10 @@
 <!ENTITY hud.hqintel.dir.5 "西南">
 <!ENTITY hud.readout.riding.stowed "装填到位">
 <!ENTITY hud.readout.slip "侧滑角">
+<!ENTITY hud.readout.elev "ELEV">
 <!ENTITY hud.alerts.5 "您即将失去您的储备弹药">
 <!ENTITY hud.alerts.18.liberated "我军解放了 {1}">
+<!ENTITY hud.readout.rudder "Rudder">
 <!ENTITY hud.hqintel.dir.2 "东">
 <!ENTITY hud.readout.visible "可见">
 <!ENTITY hud.gameinfo.fps "帧数">
@@ -3632,8 +3635,11 @@
 <!ENTITY hud.readout.riding.ship "在船板上">
 <!ENTITY hud.alerts.24.air "{1} 附近发现敌空军力量">
 <!ENTITY hud.readout.range "射程设置">
+<!ENTITY hud.readout.trim "TrimSet">
 <!ENTITY hud.cliptype.1.plural "弹夹">
 <!ENTITY hud.readout.riding.hoisted "正被吊起">
+<!ENTITY hud.readout.up "up">
+<!ENTITY hud.readout.down "down">
 <!ENTITY hud.readout.infantry.lifeboat "救生船">
 <!ENTITY hud.readout.vehicles.stowed "理仓">
 <!ENTITY hud.binfo.state.nofire "该区域不能射击!">
@@ -3659,10 +3665,12 @@
 <!ENTITY hud.readout.riding.towed "拖曳">
 <!ENTITY hud.alerts.19.deliberated "敌军收复了 {1}">
 <!ENTITY hud.readout.gear.kaput "损毁">
+<!ENTITY hud.readout.ail "AIL">
 <!ENTITY hud.cliptype.2 "弹链">
 <!ENTITY hud.alerts.14 "引入的接触报告">
 <!ENTITY hud.hqintel.dir.7 "西北">
 <!ENTITY hud.gameinfo.icon.0 "正常">
+<!ENTITY hud.readout.left "left">
 <!ENTITY hud.readout.torp.control.invalid "没有有效的火控方案！">
 <!ENTITY hud.waypoints.target "目标">
 <!ENTITY hud.readout.torp.control "射击方案火力射角">
@@ -3673,10 +3681,11 @@
 <!ENTITY hud.readout.infantry.seat "座位">
 <!ENTITY hud.minimap "您周围地形的地图">
 <!ENTITY hud.gameinfo.icon.2 "没有图标">
-<!ENTITY hud.minimap.out "缩小">
 <!ENTITY hud.binfo.state.theycapture "敌军占领!">
+<!ENTITY hud.minimap.out "缩小">
 <!ENTITY hud.readout.infantry "步兵">
 <!ENTITY hud.hqintel.far "有情况: 发现敌步兵（量级：&#37;ls ; 方位：&#37;ls ）">
+<!ENTITY hud.readout.elevator "Elevator">
 <!ENTITY hud.readout.agl "离地高度">
 <!ENTITY hud.alerts.28 "敌军的出生点！无法开火-请撤离此区域！">
 <!ENTITY hud.alerts.18.captured "敌军已经占领了 {1}">
@@ -3684,8 +3693,8 @@
 <!ENTITY hud.readout.riding.seated "驾驶">
 <!ENTITY hud.health.atp "这个图标显示的是您的当前的状态。">
 <!ENTITY hud.minimap.nearest.none "附近没有城镇">
-<!ENTITY hud.alerts.19.liberated "我军解放了 {1}">
 <!ENTITY hud.binfo.state.cancapture "可以占领">
+<!ENTITY hud.alerts.19.liberated "我军解放了 {1}">
 <!ENTITY hud.hqintel.dir.0 "北">
 <!ENTITY hud.health.state.crew "乘员">
 <!ENTITY hud.alerts.21.withdrawn "攻击目标已经从 {1} 撤销了">
@@ -3698,9 +3707,9 @@
 <!ENTITY hud.alerts.13.fallback "您的战斗旅正在撤退">
 <!ENTITY hud.readout.riding.lifeboat "在救生船">
 <!ENTITY hud.readout.gear.neutral "空挡">
-<!ENTITY hud.readout.torp.range "射程">
-<!ENTITY hud.binfo.state.wedefend "友军防守">
 <!ENTITY hud.binfo.state.enemycancapture "可以被敌人占领">
+<!ENTITY hud.binfo.state.wedefend "友军防守">
+<!ENTITY hud.readout.torp.range "射程">
 <!ENTITY hud.cliptype.3 "弹夹">
 <!ENTITY hud.alerts.25 "{1} 需要弹药！">
 <!ENTITY hud.binfo.state.cantcapture "不能占领">
@@ -3723,6 +3732,8 @@
 <!ENTITY hud.readout.enemy "敌军船上">
 <!ENTITY hud.alerts.18.deliberated "敌军收复了 {1}">
 <!ENTITY hud.cliptype.0.plural "弹夹">
+<!ENTITY hud.readout.right "right">
+<!ENTITY hud.readout.rud "RUD">
 <!ENTITY hud.readout.infantry.ship "在船板上">
 <!ENTITY hud.hqintel.close "有情况：敌步兵（ 量级：&#37;ls ）在你附近出现！">
 <!ENTITY hud.readout.gear.engines "引擎">
@@ -3732,6 +3743,7 @@
 <!ENTITY hud.death "&#37;ls 死在这里">
 <!ENTITY hud.hqintel.weight.2 "多">
 <!ENTITY hud.hqintel.dir.1 "东北">
+<!ENTITY hud.readout.neutral "neutral">
 <!ENTITY hud.health.blood "这个图标显示的是您的当前状态">
 <!ENTITY hud.minimap.nearest "离您最近的城镇">
 <!ENTITY hud.readout.vehicles.onhoist "起重">

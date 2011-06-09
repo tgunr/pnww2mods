@@ -2,8 +2,8 @@
 <content type="3">
   <name>obj_doggreen</name>
   <body>onspawn.moveout * Dog Green at Omaha
-victory1 * Allies victorious!
-victory2 * Axis victorious!
+victory1 * Allied Victory! American forces have secured the Vierville Draw
+victory2 * Axis Victory! German forces have defended the Draw.
 roundstop * This round is over!
 playarea * Turn around
 usspawn1 * Get to the seawall and stage an attack on the German Bunker
@@ -28,18 +28,18 @@ alliedcapon * American forces are capturing the bunker!
 alliedcapoff * Axis forces have re-taken the bunker!
 
 # new 2-stage localizations (some overlap)
-onspawn.1.1.1 = Fight your way to the shore batteries and secure a beachhead!
+onspawn.1.1.1 = Get to one of the rally points and secure a beachhead!
 onspawn.2.1.1 = Push the American invasion force back into the sea!
-beachfalling = American solidiers are securing a beachhead!
-beachhead.1.1.1 = secure this area
-beachhead.2.1.1 = defend this area
+beachfalling = American soldiers are securing a beachhead!
+beachhead.1.1.1 = Rally Point
+beachhead.2.1.1 = Defend this area
 beachsecure = American forces have secured a beachhead!
 navalguns = American shore bombardment has ceased near the Vierville Draw!
-victory1 = American forces have stormed the beach and secured a beach head!
-victory2 = German forces have prevented the Allied invasion!
-roundstop = This round is over!
-playarea = Turn around
-onspawn.1.1.2 = Storm the hill and capture the Command Bunker overlooking the beach!
+victory1 = American forces have secured a beachhead!
+victory2 = German forces have defeated the Allied invasion force!
+roundstop = This round is over.
+playarea = Turn around.
+onspawn.1.1.2 = Storm the hill and capture the Command Bunker overlooking the beach.
 onspawn.2.1.2 = Defend the Command Bunker from being overrun by American forces!
 bunkerfalling.1.1.2 = American solidiers are capturing the Command Bunker!
 bunkerfalling.2.1.2 = German forces have secured the Command Bunker!
@@ -50,8 +50,8 @@ objective1 = American Beachhead
 objective2 = Command Bunker
 vierville_draw = Vierville Draw
 minefield = minefield
-alliedcapon = American forces are capturing the bunker!
-alliedcapoff = Axis forces have re-taken the bunker!</body>
+alliedcapon = American forces are capturing the Command Bunker!
+alliedcapoff = Axis forces have re-captured the Command Bunker!</body>
   <bodyloc>true</bodyloc>
   <brief>The D-Day attack is several hours old and the allies are gaining ground. The German defenses are holding so far but they must defend the bunker from capture.</brief>
   <duration1>15</duration1>

@@ -3604,6 +3604,7 @@
 <!ENTITY hud.alerts.17 "Stai facendo rifornimento da {1}">
 <!ENTITY hud.waypoints.origin "ORIGINE">
 <!ENTITY hud.readout.vehicles "Veicoli">
+<!ENTITY hud.readout.aileron "Aileron">
 <!ENTITY hud.hqintel.weight.0 "Leggero">
 <!ENTITY hud.alerts.24.sea "Forze navali nemiche avvistate presso {1}">
 <!ENTITY hud.alerts.11.nocapture "Solo gli abbonati Premium possono catturare! Aggiorna oggi il tuo abbonamento!">
@@ -3620,8 +3621,10 @@
 <!ENTITY hud.hqintel.dir.5 "sudovest">
 <!ENTITY hud.readout.riding.stowed "Stivato">
 <!ENTITY hud.readout.slip "Slip">
+<!ENTITY hud.readout.elev "ELEV">
 <!ENTITY hud.alerts.5 "Stai per perdere la tua riserva di munizioni">
 <!ENTITY hud.alerts.18.liberated "Le nostre forze hanno liberato {1}">
+<!ENTITY hud.readout.rudder "Rudder">
 <!ENTITY hud.hqintel.dir.2 "est">
 <!ENTITY hud.readout.visible "Visibile">
 <!ENTITY hud.gameinfo.fps "FPS">
@@ -3632,8 +3635,11 @@
 <!ENTITY hud.readout.riding.ship "Imbarcato">
 <!ENTITY hud.alerts.24.air "Aviazione nemica avvistata presso {1}">
 <!ENTITY hud.readout.range "Regolazione della distanza">
+<!ENTITY hud.readout.trim "TrimSet">
 <!ENTITY hud.cliptype.1.plural "caricatori">
 <!ENTITY hud.readout.riding.hoisted "Sollevato">
+<!ENTITY hud.readout.up "up">
+<!ENTITY hud.readout.down "down">
 <!ENTITY hud.readout.infantry.lifeboat "barca di salvataggio">
 <!ENTITY hud.readout.vehicles.stowed "stivato">
 <!ENTITY hud.binfo.state.nofire "No Fire Zone!">
@@ -3659,10 +3665,12 @@
 <!ENTITY hud.readout.riding.towed "Trainato">
 <!ENTITY hud.alerts.19.deliberated "Le forze nemiche hanno riguadagnato {1}">
 <!ENTITY hud.readout.gear.kaput "Rotto">
+<!ENTITY hud.readout.ail "AIL">
 <!ENTITY hud.cliptype.2 "cartuccera">
 <!ENTITY hud.alerts.14 "Rapporto di contatto in arrivo">
 <!ENTITY hud.hqintel.dir.7 "nordovest">
 <!ENTITY hud.gameinfo.icon.0 "Normale">
+<!ENTITY hud.readout.left "left">
 <!ENTITY hud.readout.torp.control.invalid "Nessuna soluzione di tiro valida!">
 <!ENTITY hud.waypoints.target "OBIETTIVO">
 <!ENTITY hud.readout.torp.control "Soluzione di tiro Angolo di fuoco">
@@ -3673,10 +3681,11 @@
 <!ENTITY hud.readout.infantry.seat "seduto">
 <!ENTITY hud.minimap "Una mappa delle tue immediate vicinanze">
 <!ENTITY hud.gameinfo.icon.2 "Nessuna icona">
-<!ENTITY hud.minimap.out "Riduci">
 <!ENTITY hud.binfo.state.theycapture "Cattura nemica!">
+<!ENTITY hud.minimap.out "Riduci">
 <!ENTITY hud.readout.infantry "Fanteria">
 <!ENTITY hud.hqintel.far "Informazione: &#37;ls fanteria nemica segnalata a &#37;ls della tua posizione!">
+<!ENTITY hud.readout.elevator "Elevator">
 <!ENTITY hud.readout.agl "AGL Alt">
 <!ENTITY hud.alerts.28 "Punto di ingresso nemico! Non si può sparare - per favore lascia la zona!">
 <!ENTITY hud.alerts.18.captured "Le forze nemiche hanno catturato {1}">
@@ -3684,8 +3693,8 @@
 <!ENTITY hud.readout.riding.seated "Seduto">
 <!ENTITY hud.health.atp "Questa icona rappresenta la tua condizione fisica attuale">
 <!ENTITY hud.minimap.nearest.none "Nessuna città vicina">
-<!ENTITY hud.alerts.19.liberated "Le nostre forze hanno liberato {1}">
 <!ENTITY hud.binfo.state.cancapture "Può essere catturata">
+<!ENTITY hud.alerts.19.liberated "Le nostre forze hanno liberato {1}">
 <!ENTITY hud.hqintel.dir.0 "nord">
 <!ENTITY hud.health.state.crew "EQUIPAGGIO">
 <!ENTITY hud.alerts.21.withdrawn "L&#39;obiettivo di attacco è stato rimosso da {1}">
@@ -3698,9 +3707,9 @@
 <!ENTITY hud.alerts.13.fallback "La tua brigata si sta ritirando">
 <!ENTITY hud.readout.riding.lifeboat "Sulla barca di salvataggio">
 <!ENTITY hud.readout.gear.neutral "N">
-<!ENTITY hud.readout.torp.range "Distanza">
-<!ENTITY hud.binfo.state.wedefend "Difesa amica">
 <!ENTITY hud.binfo.state.enemycancapture "Il nemico può catturare">
+<!ENTITY hud.binfo.state.wedefend "Difesa amica">
+<!ENTITY hud.readout.torp.range "Distanza">
 <!ENTITY hud.cliptype.3 "ricarica">
 <!ENTITY hud.alerts.25 "{1} ha bisogo di munizioni!">
 <!ENTITY hud.binfo.state.cantcapture "Non catturabile">
@@ -3723,6 +3732,8 @@
 <!ENTITY hud.readout.enemy "Nemico a bordo">
 <!ENTITY hud.alerts.18.deliberated "Le forze nemiche hanno riguadagnato {1}">
 <!ENTITY hud.cliptype.0.plural "nastri">
+<!ENTITY hud.readout.right "right">
+<!ENTITY hud.readout.rud "RUD">
 <!ENTITY hud.readout.infantry.ship "imbarcato">
 <!ENTITY hud.hqintel.close "Informazione: &#37;ls fanteria nemica segnalata presso la tua posizione!">
 <!ENTITY hud.readout.gear.engines "Motori">
@@ -3732,6 +3743,7 @@
 <!ENTITY hud.death "&#37;ls è morto qui">
 <!ENTITY hud.hqintel.weight.2 "Pesante">
 <!ENTITY hud.hqintel.dir.1 "nordest">
+<!ENTITY hud.readout.neutral "neutral">
 <!ENTITY hud.health.blood "Questa icona rappresenta la tua pressione arteriosa attuale">
 <!ENTITY hud.minimap.nearest "La città più vicina">
 <!ENTITY hud.readout.vehicles.onhoist "sollevato">

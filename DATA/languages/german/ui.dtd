@@ -3623,6 +3623,7 @@
 <!ENTITY hud.alerts.17 "Du hast von {1} Nachschub erhalten">
 <!ENTITY hud.waypoints.origin "URSPRUNG">
 <!ENTITY hud.readout.vehicles "Vehikel">
+<!ENTITY hud.readout.aileron "Aileron">
 <!ENTITY hud.hqintel.weight.0 "Ein kleiner Trupp">
 <!ENTITY hud.alerts.24.sea "Feindliche Schiffe bei {1} gesichtet">
 <!ENTITY hud.alerts.11.nocapture "Only Premium subscribers can capture! Upgrade your subscription today!">
@@ -3639,8 +3640,10 @@
 <!ENTITY hud.hqintel.dir.5 "südwestlich">
 <!ENTITY hud.readout.riding.stowed "Verstaut in Position">
 <!ENTITY hud.readout.slip "Slip">
+<!ENTITY hud.readout.elev "ELEV">
 <!ENTITY hud.alerts.5 "Du wirst Deine überzählige Munition verlieren">
 <!ENTITY hud.alerts.18.liberated "Eigene Streikräfte haben {1} befreit">
+<!ENTITY hud.readout.rudder "Rudder">
 <!ENTITY hud.hqintel.dir.2 "östlich">
 <!ENTITY hud.readout.visible "Sichtbar">
 <!ENTITY hud.gameinfo.fps "FPS">
@@ -3651,8 +3654,11 @@
 <!ENTITY hud.readout.riding.ship "An Bord">
 <!ENTITY hud.alerts.24.air "Feindflieger bei {1} gesichtet">
 <!ENTITY hud.readout.range "Enfernungseinstellung">
+<!ENTITY hud.readout.trim "TrimSet">
 <!ENTITY hud.cliptype.1.plural "Magazine">
 <!ENTITY hud.readout.riding.hoisted "Am Kranhaken">
+<!ENTITY hud.readout.up "up">
+<!ENTITY hud.readout.down "down">
 <!ENTITY hud.readout.infantry.lifeboat "Rettungsboot">
 <!ENTITY hud.readout.vehicles.stowed "verstaut">
 <!ENTITY hud.binfo.state.nofire "No Fire Zone!">
@@ -3678,10 +3684,12 @@
 <!ENTITY hud.readout.riding.towed "Im Schlepp">
 <!ENTITY hud.alerts.19.deliberated "Feindliche Streitkräfte haben {1} zurückerobert">
 <!ENTITY hud.readout.gear.kaput "Kaputt">
+<!ENTITY hud.readout.ail "AIL">
 <!ENTITY hud.cliptype.2 "Gurt">
 <!ENTITY hud.alerts.14 "eingehende Kontaktmeldung">
 <!ENTITY hud.hqintel.dir.7 "nordwestlich">
 <!ENTITY hud.gameinfo.icon.0 "Normal">
+<!ENTITY hud.readout.left "left">
 <!ENTITY hud.readout.torp.control.invalid "Keine gültige Feuerlösung!">
 <!ENTITY hud.waypoints.target "ZIEL">
 <!ENTITY hud.readout.torp.control "Feuerlösung Feuerwinkel">
@@ -3692,10 +3700,11 @@
 <!ENTITY hud.readout.infantry.seat "Sitz">
 <!ENTITY hud.minimap "Karte der näheren Umgebung">
 <!ENTITY hud.gameinfo.icon.2 "Keine Icons">
-<!ENTITY hud.minimap.out "Verkleinern">
 <!ENTITY hud.binfo.state.theycapture "Feind nimmt ein!">
+<!ENTITY hud.minimap.out "Verkleinern">
 <!ENTITY hud.readout.infantry "Infanterie">
 <!ENTITY hud.hqintel.far "Info: &#37;ls feindlicher Infanterie &#37;ls Deiner Position gesichtet!">
+<!ENTITY hud.readout.elevator "Elevator">
 <!ENTITY hud.readout.agl "HÖHE">
 <!ENTITY hud.alerts.28 "Feindlicher Spawnpunkt, Deine Waffe funktioniert hier nicht!">
 <!ENTITY hud.alerts.18.captured "Feindliche Streitkräfte haben {1} erobert">
@@ -3703,8 +3712,8 @@
 <!ENTITY hud.readout.riding.seated "Sitz Nummer">
 <!ENTITY hud.health.atp "Dieses Icon zeigt Deinen aktuellen Status an">
 <!ENTITY hud.minimap.nearest.none "Keine">
-<!ENTITY hud.alerts.19.liberated "Eigene Streitkräfte haben {1} befreit">
 <!ENTITY hud.binfo.state.cancapture "Einnehmbar">
+<!ENTITY hud.alerts.19.liberated "Eigene Streitkräfte haben {1} befreit">
 <!ENTITY hud.hqintel.dir.0 "nördlich">
 <!ENTITY hud.health.state.crew "BESATZUNG">
 <!ENTITY hud.alerts.21.withdrawn "Der Angriffsbefehl für {1} wurde aufgehoben">
@@ -3717,9 +3726,9 @@
 <!ENTITY hud.alerts.13.fallback "Deine Brigade ist auf dem Rückzug">
 <!ENTITY hud.readout.riding.lifeboat "Im Rettungsboot">
 <!ENTITY hud.readout.gear.neutral "N">
-<!ENTITY hud.readout.torp.range "Entfernung">
-<!ENTITY hud.binfo.state.wedefend "wird von uns verteidigt">
 <!ENTITY hud.binfo.state.enemycancapture "vom Feind einnehmbar">
+<!ENTITY hud.binfo.state.wedefend "wird von uns verteidigt">
+<!ENTITY hud.readout.torp.range "Entfernung">
 <!ENTITY hud.cliptype.3 "Ladung">
 <!ENTITY hud.alerts.25 "{1} braucht Munition">
 <!ENTITY hud.binfo.state.cantcapture "Nicht einnehmbar">
@@ -3742,6 +3751,8 @@
 <!ENTITY hud.readout.enemy "Feind an Bord">
 <!ENTITY hud.alerts.18.deliberated "Feindliche Streikräfte haben {1} zurückerobert">
 <!ENTITY hud.cliptype.0.plural "Streifen">
+<!ENTITY hud.readout.right "right">
+<!ENTITY hud.readout.rud "RUD">
 <!ENTITY hud.readout.infantry.ship "An Bord">
 <!ENTITY hud.hqintel.close "Info: &#37;ls feindlicher Infanterie wurde in Deiner Nähe gesichtet!">
 <!ENTITY hud.readout.gear.engines "Motoren">
@@ -3751,6 +3762,7 @@
 <!ENTITY hud.death "&#37;ls ist hier gestorben">
 <!ENTITY hud.hqintel.weight.2 "Eine große Anzahl">
 <!ENTITY hud.hqintel.dir.1 "nordöstlich">
+<!ENTITY hud.readout.neutral "neutral">
 <!ENTITY hud.health.blood "Dieses Icon zeigt Deinen aktuellen Status an">
 <!ENTITY hud.minimap.nearest "nächstgelegene Stadt">
 <!ENTITY hud.readout.vehicles.onhoist "am Kranhaken">

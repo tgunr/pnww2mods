@@ -3604,6 +3604,7 @@
 <!ENTITY hud.alerts.17 "You have been resupplied by {1}">
 <!ENTITY hud.waypoints.origin "ORIGIN">
 <!ENTITY hud.readout.vehicles "Vehicles">
+<!ENTITY hud.readout.aileron "Aileron">
 <!ENTITY hud.hqintel.weight.0 "Light">
 <!ENTITY hud.alerts.24.sea "Enemy sea forces spotted near {1}">
 <!ENTITY hud.alerts.11.nocapture "Only Premium subscribers can capture! Upgrade your subscription today!">
@@ -3620,8 +3621,10 @@
 <!ENTITY hud.hqintel.dir.5 "southwest">
 <!ENTITY hud.readout.riding.stowed "Stowed in position">
 <!ENTITY hud.readout.slip "Slip">
+<!ENTITY hud.readout.elev "ELEV">
 <!ENTITY hud.alerts.5 "You are about to lose your stockpiled ammo">
 <!ENTITY hud.alerts.18.liberated "Our forces have liberated {1}">
+<!ENTITY hud.readout.rudder "Rudder">
 <!ENTITY hud.hqintel.dir.2 "east">
 <!ENTITY hud.readout.visible "Visible">
 <!ENTITY hud.gameinfo.fps "FPS">
@@ -3632,8 +3635,11 @@
 <!ENTITY hud.readout.riding.ship "Aboard Ship">
 <!ENTITY hud.alerts.24.air "Enemy air forces spotted near {1}">
 <!ENTITY hud.readout.range "Range Setting">
+<!ENTITY hud.readout.trim "TrimSet">
 <!ENTITY hud.cliptype.1.plural "mags">
 <!ENTITY hud.readout.riding.hoisted "Being Hoisted">
+<!ENTITY hud.readout.up "up">
+<!ENTITY hud.readout.down "down">
 <!ENTITY hud.readout.infantry.lifeboat "lifeboat">
 <!ENTITY hud.readout.vehicles.stowed "stowed">
 <!ENTITY hud.binfo.state.nofire "No Fire Zone!">
@@ -3650,7 +3656,7 @@
 <!ENTITY hud.cliptype.4.plural "drums">
 <!ENTITY hud.primary.tip "Your current primary ammo load in the form ammo : clips">
 <!ENTITY hud.alerts.30.deadpilot "Your pilot is dead!">
-<!ENTITY hud.readout.gforce "G">
+<!ENTITY hud.readout.gforce "Gs">
 <!ENTITY hud.alerts.24.armor "Enemy armor spotted near {1}">
 <!ENTITY hud.health.state "This icon represent&#39;s your current state">
 <!ENTITY hud.hqintel.weight.1 "Moderate">
@@ -3659,10 +3665,12 @@
 <!ENTITY hud.readout.riding.towed "Being Towed">
 <!ENTITY hud.alerts.19.deliberated "Enemy forces have regained {1}">
 <!ENTITY hud.readout.gear.kaput "Dead">
+<!ENTITY hud.readout.ail "AIL">
 <!ENTITY hud.cliptype.2 "belt">
 <!ENTITY hud.alerts.14 "Incoming contact report">
 <!ENTITY hud.hqintel.dir.7 "northwest">
 <!ENTITY hud.gameinfo.icon.0 "Normal">
+<!ENTITY hud.readout.left "left">
 <!ENTITY hud.readout.torp.control.invalid "No Valid Fire Control Solution!">
 <!ENTITY hud.waypoints.target "TARGET">
 <!ENTITY hud.readout.torp.control "Fire Control Solution FireAngle">
@@ -3673,10 +3681,11 @@
 <!ENTITY hud.readout.infantry.seat "seat">
 <!ENTITY hud.minimap "A map of your near surroundings">
 <!ENTITY hud.gameinfo.icon.2 "No Icons">
-<!ENTITY hud.minimap.out "Zoom Out">
 <!ENTITY hud.binfo.state.theycapture "Enemy Capturing!">
+<!ENTITY hud.minimap.out "Zoom Out">
 <!ENTITY hud.readout.infantry "Infantry">
 <!ENTITY hud.hqintel.far "Intel: &#37;ls enemy infantry presence &#37;ls of your position!">
+<!ENTITY hud.readout.elevator "Elevator">
 <!ENTITY hud.readout.agl "AGL Alt">
 <!ENTITY hud.alerts.28 "Enemy Spawn Point! Firing disabled- please leave the area!">
 <!ENTITY hud.alerts.18.captured "Enemy forces have captured {1}">
@@ -3684,8 +3693,8 @@
 <!ENTITY hud.readout.riding.seated "Riding in seat">
 <!ENTITY hud.health.atp "This icon represent&#39;s your current state">
 <!ENTITY hud.minimap.nearest.none "No towns near">
-<!ENTITY hud.alerts.19.liberated "Our forces have liberated {1}">
 <!ENTITY hud.binfo.state.cancapture "Can Be Captured">
+<!ENTITY hud.alerts.19.liberated "Our forces have liberated {1}">
 <!ENTITY hud.hqintel.dir.0 "north">
 <!ENTITY hud.health.state.crew "CREW">
 <!ENTITY hud.alerts.21.withdrawn "Attack Objective has been withdrawn from {1}">
@@ -3698,9 +3707,9 @@
 <!ENTITY hud.alerts.13.fallback "Your brigade is falling back">
 <!ENTITY hud.readout.riding.lifeboat "In Lifeboat">
 <!ENTITY hud.readout.gear.neutral "N">
-<!ENTITY hud.readout.torp.range "Range">
-<!ENTITY hud.binfo.state.wedefend "Friendlies Defending">
 <!ENTITY hud.binfo.state.enemycancapture "Enemy Can Capture">
+<!ENTITY hud.binfo.state.wedefend "Friendlies Defending">
+<!ENTITY hud.readout.torp.range "Range">
 <!ENTITY hud.cliptype.3 "reload">
 <!ENTITY hud.alerts.25 "{1} needs ammo!">
 <!ENTITY hud.binfo.state.cantcapture "Not Capturable">
@@ -3723,6 +3732,8 @@
 <!ENTITY hud.readout.enemy "Enemy Aboard">
 <!ENTITY hud.alerts.18.deliberated "Enemy forces have regained {1}">
 <!ENTITY hud.cliptype.0.plural "clips">
+<!ENTITY hud.readout.right "right">
+<!ENTITY hud.readout.rud "RUD">
 <!ENTITY hud.readout.infantry.ship "aboard ship">
 <!ENTITY hud.hqintel.close "Intel: &#37;ls enemy infantry presence near your position!">
 <!ENTITY hud.readout.gear.engines "Engines">
@@ -3732,6 +3743,7 @@
 <!ENTITY hud.death "&#37;ls died here">
 <!ENTITY hud.hqintel.weight.2 "Heavy">
 <!ENTITY hud.hqintel.dir.1 "northeast">
+<!ENTITY hud.readout.neutral "neutral">
 <!ENTITY hud.health.blood "This icon represent&#39;s your current state">
 <!ENTITY hud.minimap.nearest "The closest town to you">
 <!ENTITY hud.readout.vehicles.onhoist "on hoist">
