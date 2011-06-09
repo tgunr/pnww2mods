@@ -111,6 +111,7 @@ if(true) then
 		"place dg_obs_elementc -200.93 -71.18 24.4 -2 -3 190 0 0 0 0",
 		
 		-- German FB
+		"place crates1c -56 -133 44.3 -0.6 0 0 0 0 0 0",
 		"place cratepile_outside -18.86 -148.38 44.8 0 0 0 0 0 0 0",
 		
 		-- German MG nests
@@ -139,8 +140,6 @@ if(true) then
 		
 
 		-- german spawn
-		--"place infantryfb1c -50.5 -148.73 44.4 -1 0 0 0 0 0 0",
-		
 		
 		"place crate -137.19 -35.27 35.82 -5 0 0 0 0 0 0",
 		"place crate -137.3 -35.0 36.8 -5 0 0 0 0 0 0",
