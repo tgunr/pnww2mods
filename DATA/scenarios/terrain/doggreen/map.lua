@@ -41,6 +41,11 @@ if(true) then
 		
 	
 		--empty
+		"place dg_veh_lcvp -123.69 218.34 3.55 -1 0 110 0 0 0 0",
+		"place dg_veh_lcvp 44.88 151.53 3.4 0 0 110 0 0 0 0",
+		
+		
+		
 		"place dg_veh_lcvp_lx -1.38 234.70 3.6 -3 0 125 0 0 0 0",
 		"place dg_veh_lcvp_lx 14.18 227.54 3.5 -3 0 135 0 0 0 0",
 		"place dg_veh_lcvp -35.66 189.92 3.2 0 0 130 0 0 0 0",
@@ -57,12 +62,19 @@ if(true) then
 
 		
 		--spawn boats
-		"place dg_veh_lcvp 44.88 151.53 3.4 0 0 110 0 0 0 0",
+		
 		"place dg_veh_lcvp -14.0 178.89 3.2 0 0 135 0 0 0 0",
 		"place dg_veh_lcvp -78.0 206.0 3.35 0 0 120 0 0 0 0",
+		"place dg_veh_lcvp -118.93 235.00 3.35 0 0 125 0 0 0 0",
+		
+		
+		
+		
+		
+		
 		
 
-		-- belgium gates filenamemissing low poly
+		-- belgium gates
 		"place dg_obs_elementc -14.31 270.78 2.75 0 0 195 0 0 0 0",
 		"place dg_obs_elementc -2.13 266.69 2.65 0 0 200 0 0 0 0",
 		"place dg_obs_elementc 9.51 258.79 2.75 0 0 205 0 0 0 0",
@@ -87,6 +99,10 @@ if(true) then
 		"place m4a2hulk -94.26 160.41 5.0 0 -5 215 0 0 0 0",
 		"place m4a2hulk -122.22 138.22 6.0 0 0 180 0 0 0 0",
 		"place m4a2hulk 40.0 126.0 3.75 0 0 225 0 0 0 0",
+		"place m4a2hulk -134.86 195.41 4.8 -2 -4 245 0 0 0 0",
+		
+		
+		
 		
 
 		
@@ -123,7 +139,7 @@ if(true) then
 		
 
 		-- german spawn
-		"place infantryfb1c -50.5 -148.73 44.4 -1 0 0 0 0 0 0",
+		--"place infantryfb1c -50.5 -148.73 44.4 -1 0 0 0 0 0 0",
 		
 		
 		"place crate -137.19 -35.27 35.82 -5 0 0 0 0 0 0",
@@ -156,8 +172,20 @@ if(true) then
 		"place dangersign -162.73 -120.95 39.7 0 0 90 0 0 0 0",
 		"place dangersign -150.62 -112.39 41.3 0 0 160 0 0 0 0",
 		"place dangersign -122.74 -156.73 44.0 0 0 175 0 0 0 0",
+		"place dg_wire_barbed_apron	-51.8 -77.26 40.0 5 0 25 0 0 0",
+		"place dg_wire_barbed_apron	-48.28 -79.48 39.8 0 0 25 0 0 0",
+		"place dg_wire_barbed_apron	15.53 -98.45 37.0 0 5 15 0 0 0",
+		
+		
+		
+		
+		
+		
 		-- "place dangersign -212.32 -246.59 40.5 0 0 -10 0 0 0 0",
-		-- "place dangersign -212.32 -246.59 40.5 0 0 -10 0 0 0 0",
+		
+		
+		
+		
 		
 	
 
