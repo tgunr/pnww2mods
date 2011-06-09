@@ -32,7 +32,7 @@
     <bluclamp>150</bluclamp>
     <!-- default is 1.0 -->
     <redscale>0.50</redscale>
-    <grnscale>2.0</grnscale>
+    <grnscale>1.0</grnscale>
     <bluscale>2.0</bluscale>
   </grass>
   <!-- Clutter that uses FLTs -->
@@ -56,7 +56,7 @@
   </objectclutter>
    <fogparams>
     <start>-25.0</start>
-    <end>1500.0</end>
+    <end>1200.0</end>
   </fogparams>
   <terrainmaterials>
     <!-- Keep in ascending order (layer0, layer1, layer2...etc)-->
