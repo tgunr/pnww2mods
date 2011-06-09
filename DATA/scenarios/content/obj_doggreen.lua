@@ -11,64 +11,31 @@ if(true) then
 		-- we're using minefields, so include that functionality
 		"include scenarios/content/minefields.lua",
 		
--- landmines
-		"ammo landmine1 landmine",
-		"ammo landmine2 landmine",
-		"ammo landmine3 landmine",
-		"ammo landmine4 landmine",
 
 		
+	----------------------------- VEHICLE MASKS ----------------------------- 
 		
-		-- minefield near sea wall
+	-- MAKE A VEHICLE AVAILABLE FOR SPAWNING
+		
+		
+	-- allied spawn list
+		"vehicle alliedtroops us-assault",
+		"vehicle alliedtroops us-smg",
+		"vehicle alliedtroops us-bar",
+		"vehicle alliedtroops us-sniper",
 
-		"area landmine1 OnMineArea -52.73 22.46 11.19",
-		"area landmine1 OnMineArea -19.20 8.37 10.11",
-		"area landmine1 OnMineArea -25.96 -9.07 11.06",
-		"area landmine1 OnMineArea -58.75 7.83 12.72",
-		
-		-- minefield in pass
+	-- axis spawn list
+		"vehicle axistroops de-assault",
+		"vehicle axistroops de-smg",
+		"vehicle axistroops de-lmg",
+		"vehicle axistroops de-sniper",
+		"vehicle axistroops de-ltmortar",
+		"vehicle axislmg de-lmg",
+	
+	
+	-----------------------------  DEFINE THE PLAY AREA ----------------------------- 
 
-		"area landmine2 OnMineArea -238.57 -157.20 29.71",
-		"area landmine2 OnMineArea -274.13 -150.23 33.62",
-		"area landmine2 OnMineArea -266.99 -132.37 32.60",
-		"area landmine2 OnMineArea -234.92 -140.04 30.30",
-		
-		-- minefield near trenches
-
-		"area landmine3 OnMineArea -150.06 -111.74 41.79",
-		"area landmine3 OnMineArea -146.66 -120.37 43.32",
-		"area landmine3 OnMineArea -136.47 -140.56 44.30",
-		"area landmine3 OnMineArea -122.84 -156.74 44.62",
-		"area landmine3 OnMineArea -110.82 -159.85 44.98",
-		"area landmine3 OnMineArea -65.32 -177.60 45.94",
-		"area landmine3 OnMineArea -29.01 -182.40 46.18",
-		"area landmine3 OnMineArea -22.36 -201.45 46.13",
-		"area landmine3 OnMineArea -72.23 -197.98 45.70",
-		"area landmine3 OnMineArea -144.88 -172.45 44.71",
-		"area landmine3 OnMineArea -163.07 -121.14 40.25",
-		
-		-- minefield on top near pass
-
-		"area landmine4 OnMineArea -205.26 -226.24 41.18",
-		"area landmine4 OnMineArea -113.98 -198.53 46.55",
-		"area landmine4 OnMineArea -90.56 -191.55 45.90",
-		
-		
-		"area landmine4 OnMineArea -57.97 -199.01 46.01",
-		"area landmine4 OnMineArea -213.05 -246.95 40.96",
-
-		
-
-		
-		
-		
-		
-		
-		
-		-------------------------------------- blocking volumes -----------------------------------------------
-		
--- DEFINE THE PLAY AREA
-
+	-- BOUNDING BOX
 	-- boundary name x y z
 
         "boundary  playarea -142.63 321.31 9.23",
@@ -98,9 +65,8 @@ if(true) then
 		"boundary  playarea 63.36 -143.17 39.46",
 		"boundary  playarea 387.36 20.70 7.75",
 		
-		
-		-- blocking volume x
-		-- block name x1 y1 z1 x2 y2 z2 thickness height
+	-- BLOCKING VOLUMES
+	-- block name x1 y1 z1 x2 y2 z2 thickness height
 
         "block -143.36 -23.85 34.41 -132.87 -24.58 36.25 .5 5",
 		"block -132.87 -24.58 36.25 -126.31 -23.86 35.69 .5 5",
@@ -118,8 +84,6 @@ if(true) then
 		"block -4.74 -88.94 39.09 20.11 -100.23 38.5 .5 5",
 		"block 19.78 -99.91 37.61 29.41 -112.02 38.49 .5 5",
 		"block 29.41 -112.02 38.49 49.41 -131.41 39.42 .5 5",
-		
-
 		"block -177.15 -94.10 32.84 -169.36 -95.42 38.71 .5 5",
 		"block -169.36 -95.42 38.71 -160.03 -101.24 40.03 .5 5",
 		"block -160.03 -101.24 40.03 -154.04 -106.05 41.39 .5 5",
@@ -131,14 +95,7 @@ if(true) then
 		"block -122.60 -156.35 45.44 -111.60 -158.92 45.33 .5 5",
 		"block -111.60 -158.92 45.33 -65.01 -176.65 46.13 .5 5",
 		"block -65.01 -176.65 46.13 -36.02 -179.75 46.18 .5 5",
-		--"block -155.19 -67.47 39.18 -149.68 -57.18 38.71 .5 5",
-		--"block -155.19 -67.47 39.18 -149.68 -57.18 38.71 .5 5",
-		--"block -155.19 -67.47 39.18 -149.68 -57.18 38.71 .5 5",
-		--"block -155.19 -67.47 39.18 -149.68 -57.18 38.71 .5 5",
-		--"block -155.19 -67.47 39.18 -149.68 -57.18 38.71 .5 5",
-		
-		
-		
+	
 		"block -205.93 -227.67 42.02 -194.26 -192.35 41.94 .5 5",
 		"block -192.81 -183.28 41.75 -185.93 -147.34 39.54 .5 5",
 		"block -182.07 -138.30 38.74 -174.57 -123.09 38.44 .5 5",
@@ -148,176 +105,126 @@ if(true) then
 		"block -155.19 -67.47 39.18 -149.68 -57.18 38.71 .5 5",
 		"block -149.68 -57.18 38.71 -141.49 -34.65 36.83 .5 5",
 		
-		
 		"block -147.66 -29.12 35.79 -147.01 -32.24 36.02 .5 2",
 		"block -146.29 -33.66 36.95 -143.25 -34.98 36.95 .5 2",
 		
 		
-		
-		--"block -155.19 -67.47 39.18 -149.68 -57.18 38.71 .5 5",
-		--"block -155.19 -67.47 39.18 -149.68 -57.18 38.71 .5 5",
-		--"block -155.19 -67.47 39.18 -149.68 -57.18 38.71 .5 5",
-		--"block -155.19 -67.47 39.18 -149.68 -57.18 38.71 .5 5",
-		
-		-------------------------------------- ambient fx -----------------------------------------------
-	-- FX EMITTERS
+	-- LANDMINES
+	
+		"ammo landmine1 landmine",
+		"ammo landmine2 landmine",
+		"ammo landmine3 landmine",
+		"ammo landmine4 landmine",
 
+	-- minefield near sea wall
+		"area landmine1 OnMineArea -52.73 22.46 11.19",
+		"area landmine1 OnMineArea -19.20 8.37 10.11",
+		"area landmine1 OnMineArea -25.96 -9.07 11.06",
+		"area landmine1 OnMineArea -58.75 7.83 12.72",
+		
+	-- minefield in pass
+		"area landmine2 OnMineArea -238.57 -157.20 29.71",
+		"area landmine2 OnMineArea -274.13 -150.23 33.62",
+		"area landmine2 OnMineArea -266.99 -132.37 32.60",
+		"area landmine2 OnMineArea -234.92 -140.04 30.30",
+		
+	-- minefield near trenches
+		"area landmine3 OnMineArea -150.06 -111.74 41.79",
+		"area landmine3 OnMineArea -146.66 -120.37 43.32",
+		"area landmine3 OnMineArea -136.47 -140.56 44.30",
+		"area landmine3 OnMineArea -122.84 -156.74 44.62",
+		"area landmine3 OnMineArea -110.82 -159.85 44.98",
+		"area landmine3 OnMineArea -65.32 -177.60 45.94",
+		"area landmine3 OnMineArea -29.01 -182.40 46.18",
+		"area landmine3 OnMineArea -22.36 -201.45 46.13",
+		"area landmine3 OnMineArea -72.23 -197.98 45.70",
+		"area landmine3 OnMineArea -144.88 -172.45 44.71",
+		"area landmine3 OnMineArea -163.07 -121.14 40.25",
+		
+	-- minefield on top near pass
+		"area landmine4 OnMineArea -205.26 -226.24 41.18",
+		"area landmine4 OnMineArea -113.98 -198.53 46.55",
+		"area landmine4 OnMineArea -90.56 -191.55 45.90",
+		"area landmine4 OnMineArea -57.97 -199.01 46.01",
+		"area landmine4 OnMineArea -213.05 -246.95 40.96",
+		
+
+		
+	----------------------------- AMBIENT EFFECTS AND SOUNDS ----------------------------- 
+	
+	-- EMITTERS
 	-- command,effectname,worldx,worldy,worldz
+	
 	-- smoke effects
-
-		-- SMOKING BARRELS
-
-		-- "emitter hulksmoke 273119.68 3016921.62 482.00",
-		-- "emitter hulksmoke -29.35 -105.79 9.06",
-
-		-- SMOKING CRATERS
-
+	-- craters
 		"emitter cratersmoke -100.77 167.75 3.72",
 		"emitter cratersmoke -94.12 107.80 5.35",
 		"emitter cratersmoke -13.15 63.35 5.15",
 		"emitter cratersmoke 134.57 -4.02 5.16",
 		"emitter cratersmoke 59.42 25.24 6.21",
-		
-		
-		
-		
-		
-		-- "emitter hulksmoke 129.71 -55.96 7.0",
 
-		-- SMOKESCREEN
-
-		-- cliffs
+	-- smokescreen
+	-- cliffs
 		"emitter smokescreen -97.32 -2.10 21",
 		"emitter smokescreen -121.65 6.49 23",
 		"emitter smokescreen -30.43 -51.98 23.78",		
 		"emitter smokescreen 27.01 -92.92 30.51",
 		"emitter smokescreen -37.89 -59.64 31.44",
 		"emitter smokescreen -79.64 -24.46 30.00",
-		-- beach
+	-- beach
 		"emitter smokescreen 13.54 29.78 6.03",
 		"emitter smokescreen -45.14 73.00 6.06",
-	
-		-- beach left 
+	-- beach left 
 		"emitter smokescreen 298.41 -143.95 4.43",
 		"emitter smokescreen 237.97 -31.84 4.72",
-		
-		-- beach right 
+	-- beach right 
 		"emitter smokescreen -157.76 165.90 6.49",
 		"emitter smokescreen -198.72 211.02 5.30",
 		"emitter smokescreen -354.37 278.58 4.35",
-		
-		
-		
-		
-				
-		-- VEHICLES
-		
-		-- hulk smoke
+	-- hulk smoke
 		"emitter hulksmoke -39.93 247.32 3.35",
 		"emitter cratersmoke -28.21 140.03 4.5",
 		"emitter cratersmoke -95.29 199.18 4.25",
-		
-		
-		
-		
-		-- fire
+	-- fire
 		"emitter smallfire -47.66 167.20 5.70",
 		
-		-------------------------------------- ambient sounds -----------------------------------------------
+
+	-- SOUNDS
 		
-		-- POSITIONAL SOUNDS
+	-- positional sounds
 	-- command name filename volume loop x y z mindist maxdist	
-	"sound sounds/ambience/ocean.wav 10 1 -63 212 3 100 1000",	
-	
-	"sound sounds/fairmileb/idle.wav 2.0 1 -117 237 5 5 25",
-	"sound sounds/fairmileb/idle.wav 2.0 1 -10 182 6 5 25",
-	"sound sounds/fairmileb/idle.wav 2.0 1 -82 203 3 5 25",
+		"sound sounds/ambience/ocean.wav 10 1 -63 212 3 100 1000",	
+		"sound sounds/fairmileb/idle.wav 2.0 1 -117 237 5 5 25",
+		"sound sounds/fairmileb/idle.wav 2.0 1 -10 182 6 5 25",
+		"sound sounds/fairmileb/idle.wav 2.0 1 -82 203 3 5 25",
 
-	
-		
-		
--- CLONES --
-
-	-- NAMED VERSION
-	-- command name typeid x y z roll pitch yaw
-
-		-- "clone bedford1 bedford -20.11 -156.51 8.77 0 0 90",
-		
-				
-	-- ANONYMOUS VERSION
-	-- command typeid x y z roll pitch yaw
-
-	
-	
--- an area effect bombing
-		-- the x,y,z is the center of the barrage
-		-- the distance is the radius of a circle around the center to randomly fire off the ammo in
-		-- command name ammo x y z distance
-		--water barrage
-		-- "barrage barrage1 gp40 116.65 116.02 3.71 10",
-		-- "barrage barrage1 gp40 31.96 209.20 3.65 10",
-		-- "barrage barrage1 gp40 -31.68 216.85 3.43 10",
-		-- "barrage barrage1 gp40 -132.15 260.19 3.76 10",
-		-- "barrage barrage1 gp40 -21.96 257.21 3.29 10",
-		-- "barrage barrage1 gp40 116.84 221.86 3.50 10",
-		-- "barrage barrage1 gp40 95.87 239.86 3.40 10",
-		--beach barrage
-		-- "barrage barrage2 smallbarragebomb 56.59 26.72 9.28 25",
-		-- "barrage barrage2 smallbarragebomb -186.00 218.52 5.85 25",
-		-- "barrage barrage2 smallbarragebomb -112.80 90.21 7.10 25",
-		-- "barrage barrage2 smallbarragebomb -24.70 36.06 7.82 25",
-		-- "barrage barrage3 smallbarragebomb -152.16 92.97 9.03 15",
-		-- "barrage barrage3 smallbarragebomb -40.36 84.07 6.04 30",
-		-- "barrage barrage3 smallbarragebomb -42.67 103.15 6.71 15",
-		-- cliff barrage
-		-- "barrage barrage4 gp40 -25.76 -59.66 30.32 25",
-		-- "barrage barrage4 gp40 30.72 -102.28 33.67 25",
-		-- "barrage barrage4 gp40 -81.77 -22.06 31.72 25",
-		-- "barrage barrage4 gp40 -106.13 50.48 14.47 25",
-		
-		-------------------------------------- ambient sounds -----------------------------------------------
-		-- ambient combat sounds
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav .7 0",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun2.wav .7 0",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun3.wav .7 0",
-		-- "sound guns1 sounds/airraidsiren.wav .06 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun4.wav .7 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav .7 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav .7 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav .7 0",
-		"sound bombs sounds/scenarios/ambient_bombs_distantshells1.wav 1 0",
-		"sound bombs sounds/scenarios/ambient_bombs_distantshells2.wav 1 0",
-		"sound wind sounds/ambience/gust1.wav .5 0",
-		"sound wind sounds/ambience/gust2.wav .5 0",
+	-- ambient combat sounds
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav .4 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun2.wav .4 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun3.wav .4 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun4.wav .4 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav .4 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav .4 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav .4 0",
+		"sound bombs sounds/scenarios/ambient_bombs_distantshells1.wav .5 0",
+		"sound bombs sounds/scenarios/ambient_bombs_distantshells2.wav .5 0",
 		-- only played during stage 1
 		"event guns1 .5 1000",
 		"event.0.1.1 guns2 .5 1000",
 		"event.0.1.1 bombs .5 1000",
 		"event wind .5 5000",
 
-		-- TRIGGERS
+	----------------------------- TRIGGERS ----------------------------- 
 		
-		-------------------------------------- previous bombs -----------------------------------------------
-		-- commandname,pctg chance each second,wait in seconds, ms between bombs, number of bombs
-		-- these fx are replaced by naval gunfire
-		-- "event barrage1 .50 10000 700 1",
-		-- "event barrage2 1 15000 2000 3",
-		-- "event barrage3 .9 30000 1000 3",
-		-- "event barrage4 .9 15000 1000 1",
-		
-		-------------------------------------- hilltop bomb ambience -----------------------------------------------
-		-- fire off bombs around the hill top
-		-- these barrages randomly fire around the top of the hill
-		-- away from play areas
+
+	-- hilltop bomb ambience 
 		"barrage barragefun sc250he -403.10 -52.91 47.33 100",
 		"barrage barragefun sc250he -202.95 -508.57 50.28 100",
 		"barrage barragefun sc250he 156.79 -446.26 57.87 100",
 		"event barragefun .50 3000 700 2",
 		"event barragefun .5 5000 1000 3",
 		
-		
-		-------------------------------------- fps combat fx -----------------------------------------------
-		-- heavy combat fx on the beach
+	-- combat fx
 		"fpsfx combatfx 0",
 		"fpsfx combatsounds 1",
 		"event.0.1.1 combatfx .5 300 300 5",
@@ -326,64 +233,62 @@ if(true) then
 		"event combatfx .8 200 100 1",
 		"event combatsounds .6 300",
 		
-		-------------------------------------- german shore defense guns -----------------------------------------------
-		-- far right bunker pak40
+	-- german shore defense guns
+	-- far right bunker pak40
 		"clone shorebattery pak40 -350.63 199.13 22.5 0 0 90 ",
 		
-		-- these are the 2 bunker shore batteries near the draw
-		-- they despawn after the Americans establish a beachhead
+	-- these are the 2 bunker shore batteries near the draw
+	-- they despawn after the Americans establish a beachhead
 		"clone.0.1.1 shorebattery pak40 -172.00 93.24 12.2 0 0 90 ",
 		"clone.0.1.1 shorebattery pak40 -124.42 46.24 12.6 0 -10 90 ",
 		
-		-- sea fx pak40 on the hill to the right
+	-- sea fx pak40 on the hill to the right
 		"clone shorebattery2 pak40 -417.93 121.83 41 0 0 50 ",
 		
-		-- firepoint hooks
+	-- firepoint hooks
 		"firepoint shoredefense shorebattery 1 0 -.15 0 .05 .15",
 		"firepoint shoredefense2 shorebattery2 1 0 -.32 0 .1 .5",
 
-		-- bunker pak40s fire durring stage 1
+	-- bunker pak40s fire durring stage 1
 		"event.0.1.1 shoredefense .75 1000 100 1",
 		
-		-- sea fx event fires off pak40
+	-- sea fx event fires off pak40
 		"event shoredefense2 .5 500 100 1",
 		
-		-------------------------------------- german air defense fx -----------------------------------------------
-		-- rear fx guns
+	-- german air defense
+	-- rear fx guns
 		"clone antiair flak36 -238.05 -321.26 35.07 0 0 0 ",
 		"clone antiair flak36 -144.85 -392.35 47.57 0 0 0 ",
 		"clone antiair flak36 33.95 -388.84 48.35 0 0 0 ",
 		
-		-- firepoint hooks
+	-- firepoint hooks
 		"firepoint airdefense antiair 1 0 -.15 0 .03 .1",
 		
-		-- fire off air defense from rear areas
+	-- fire off air defense from rear areas
 		"event airdefense .8 600 100 1",
 		
-		-------------------------------------- american destroyers -----------------------------------------------
-			-- destroyers
+	-- american destroyers
 		"clone destroyer1 uk_z34 509.16 922.13 3.3 0 0 120",
 		"clone destroyer2 uk_z34 823.10 733.41 3.3 0 0 120",
 		"clone destroyer3 uk_z34 112.23 1143.07 3.3 0 0 120",
 		
-		-- primary naval bambardment fx		
-		-- main guns stage 1
-		-- fire near draw on hill tops
+	-- primary naval bambardment fx		
+	-- main guns stage 1- fire near draw on hill tops
 		"firepoint.0.1.1 shorebarrage1 destroyer1 2 0 -.45 .665 .015 .02 1",
 		"firepoint.0.1.1 shorebarrage1 destroyer1 2 1 -.45 .665 .015 .02 1",
 		"firepoint.0.1.1 shorebarrage1 destroyer1 2 2 -.45 .665 .015 .02 1",
 		"firepoint.0.1.1 shorebarrage2 destroyer1 6 9 -.45 -.58 .017 .02 1",
 		"firepoint.0.1.1 shorebarrage2 destroyer1 6 10 -.45 -.58 .017 .02 1",
 		
-		-- main guns stage 2
-		-- these fire off farther away from play area
+	-- main guns stage 2
+	-- these fire off farther away from play area
 		"firepoint.0.1.2 shorebarrage1 destroyer1 2 0 -.45 .58 .04 .04 1",
 		"firepoint.0.1.2 shorebarrage1 destroyer1 2 1 -.45 .58 .04 .04 1",
 		"firepoint.0.1.2 shorebarrage1 destroyer1 2 2 -.45 .5 .04 .04 1",
 		"firepoint.0.1.2 shorebarrage2 destroyer1 6 9 -.45 -.5 .04 .04 1",
 		"firepoint.0.1.2 shorebarrage2 destroyer1 6 10 -.45 -.5 .04 .04 1",
 		
-		-- secondary naval bambardment fx
+	-- secondary naval bambardment fx
 		"firepoint shorebarrage3 destroyer2 2 0 -.45 .665 .02 .04 1",
 		"firepoint shorebarrage3 destroyer2 2 1 -.45 .665 .02 .04 1",
 		"firepoint shorebarrage3 destroyer2 2 2 -.45 .665 .02 .04 1",
@@ -396,99 +301,60 @@ if(true) then
 		"firepoint shorebarrage6 destroyer3 6 9 -.45 -.6 .02 .04 1",
 		"firepoint shorebarrage6 destroyer3 6 10 -.45 -.6 .02 .04 1",
 		
-		-- middle destroyer shore barrage
+	-- middle destroyer shore barrage
 		"event shorebarrage1 .7 2000 100 1",
 		"event shorebarrage2 .7 2000 100 1",
 		
-		-- left and right destroyer shore barrages down the beach
+	-- left and right destroyer shore barrages down the beach
 		"event shorebarrage3 .5 2000 100 1",
-		-- this one is close to the play area so discontinue it during stage 2 hill assault
+	-- this one is close to the play area so discontinue it during stage 2 hill assault
 		"event0.1.1 shorebarrage4 .5 2000 100 1",
 		"event shorebarrage5 .5 2000 100 1",
 		"event shorebarrage6 .5 2000 100 1",
 		
 		
-		-------------------------------------- general alerts -----------------------------------------------
+	----------------------------- ALERTS & WAYPOINTS ----------------------------- 
 		
--- ADD A HUD ALERT
-
+	-- HUD ALERTS
+	
+	-- get their attention
+		"sound onstageend sounds/Drum1.wav 1 0",
+	
 		"alert onspawn onspawn 0",
-		"alert playarea playarea 10",		
+		"alert playarea playarea 10",	
 		
-		-------------------------------------- allowed vehicles -----------------------------------------------
+	-- STAGE 1	
+		"alert.0.1.1 onstageend beachsecure",
+		"alert.0.1.1 onstageend navalguns",
 		
--- MAKE A VEHICLE AVAILABLE FOR SPAWNING
+		"message alliedcapon alliedcapon allied 10",
+		"message alliedcapoff alliedcapoff axis 0",
 		
-		-- the vehicles block controls what vehicles can be spawned
-		-- 	
-		-- vehicle masks are defined like IP addresess...as dotted quads and
-		-- are based on the following members in this order:
-		-- 
-		-- country.category.class.type
-		-- 
-		-- an asterisk (*) can be placed in any field and is the default for
-		-- any defined mask
-		-- 
-		-- countries:
-		-- 1 - england
-		-- 3 - france
-		-- 4 - germany
-		-- 
-		-- categories:
-		-- 1 - aircraft
-		-- 2 - ground vehicle
-		-- 3 - sea vehicle
-		-- 4 - infantry
-		-- 
-		-- classes:
-		-- 1 - bombers
-		-- 2 - fighters
-		-- 4 - tank
-		-- 5 - artillery
-		-- 6 - truck
-		-- 7 - gun
-		-- 9 - troop
-		-- 14 - para
-		-- 12 - riverine
-		-- 13 - sea
-		-- 
-		-- * invidiual vehicles can be specified vehicle by its id
+	-- STAGE 2
 		
-		-- command,spawngroup,country,category,class,type
-		-- a 0 is considered a wildcard
+		"message objective2 alliedcapon allied 10",
+		"message linebreachon linebreach allied 20",
 		
-		-- allied spawn list
-		"vehicle alliedtroops us-assault",
-		"vehicle alliedtroops us-smg",
-		"vehicle alliedtroops us-bar",
-		"vehicle alliedtroops us-sniper",
+		"waypoint.0.1.2 onspawn germanbunker -29.52 -78.26 39.57 axis",
+		"waypoint.0.1.2 onspawn beachhead -152.10 61.01 12.89 allied",
+		
+	
+		
+	-- STAGE 1 FUNCTIONS 
 
-		-- axis spawn list
-		"vehicle axistroops de-assault",
-		"vehicle axistroops de-smg",
-		"vehicle axistroops de-lmg",
-		"vehicle axistroops de-sniper",
-		"vehicle axistroops de-ltmortar",
-		"vehicle axislmg de-lmg",
-		
-		--------------------------------------------------------
-		------ STAGE 1 objects ----------------------------
-		--------------------------------------------------------
-		
-		-- bunker capture objective
+	
+	-- bunker capture objective, RAMP WHAT IS THIS>?
 		"handler objective1 OnReinforcements",
 		
-		-- area allies have to reach to start helping secure the beachhead
+	-- area americans have to reach to start helping secure the beachhead
 		"area beachcrossing OnState  -47.36 34.17 7.07",
 		"area beachcrossing OnState -69.99 51.00 5.56",
 		"area beachcrossing OnState -101.67 67.22 6.32",
 		"area beachcrossing OnState -122.91 84.31 6.16",
-		
 		"area beachcrossing OnState -138.86 101.56 6.01",
 		"area beachcrossing OnState -162.76 118.32 6.02",
 		"area beachcrossing OnState -181.66 128.69 5.99",
 		"area beachcrossing OnState -194.94 136.48 6.08",
-		
 		"area beachcrossing OnState -198.82 137.34 6.09",
 		"area beachcrossing OnState -216.76 141.15 6.03",
 		"area beachcrossing OnState -226.31 132.93 10.34",
@@ -499,60 +365,21 @@ if(true) then
 		"area beachcrossing OnState -115.90 59.33 10.33",
 		"area beachcrossing OnState -82.73 37.70 10.06",
 		"area beachcrossing OnState  -53.90 21.96 10.46",
-		
-		-- "location.1.1.1 usspawn1 OnTrigger 42.78 144.53 5.16",	
-		-- "location.1.1.1 usspawn2 OnTrigger -17.97 174.13 4.32 5",	
-		-- "location.1.1.1 usspawn3 OnTrigger -82.85 195.88 4.08 5",	
-
-		-- "alert.1.1.1 usspawn1 usspawn1 60",
-		-- "alert.1.1.1 usspawn2 usspawn2 60",
-		-- "alert.1.1.1 usspawn3 usspawn3 60",
-		
+	
+	-- messagae when americans are securing the beachhead	
 		"message objective1 beachfalling #FF6600 10",
-		
+	
+	-- waypoints
 		"waypoint.1.1.0 onspawn vierville_draw -171.81 6.42 20.34 #FF6600",
 		"waypoint.0.1.1 onspawn beachhead -116.04 65.05 7.68 friendly",
 		"waypoint.0.1.1 onspawn beachhead -170.40 111.86 7.29 friendly",
 		"waypoint.0.1.1 onspawn beachhead -68.97 45.77 5.78 friendly",
 		
 		
-		
-		
-		-- DEFINE WHERE PLAYERS SPAWN
-	
-		-- stage 1 allied spawns
-		"spawn.1.1.1 alliedtroops -13.71 179.28 3.39 225",
-		"spawn.1.1.1 alliedtroops -77.71 206.52 3.59 230",
-		"spawn.1.1.1 alliedtroops -118.78 235.53 3.59 200",
-		
-		
-		
-		
-		-- stage 1 axis spawns
-		
-		-- bunker spawns
-		"spawn.2.1.1 axistroops -128.39 44.85 12.18 180",
-		"spawn.2.1.1 axistroops -176.36 90.51 11.65 100",
-		-- ruins
-		"spawn.2.1.1 axistroops -176.06 36.48 16.88 90",
-		-- mg nest
-		--"spawn.2.1.1 axistroops -137.83 -79.05 40.19 0",
-		"spawn.2.1.1 axislmg -137.46 -37.48 36.12 325",
-		"spawn.2.1.1 axislmg -88.12 -56.20 39.50 0",
-		"spawn.2.1.1 axislmg 11.15 -121.45 41.05 60",
-		
+	-- STAGE 2 FUNCTIONS 
 
-		"alert.0.1.1 onstageend beachsecure",
-		"alert.0.1.1 onstageend navalguns",
 		
-		-- get their attention
-		"sound onstageend sounds/Drum1.wav 1 0",
-		
-		--------------------------------------------------------
-		------ STAGE 2 objects ----------------------------
-		--------------------------------------------------------
-		
-		-- bunker capture objective
+	-- bunker capture objective
 		"handler capper OnCapper",
 		"handler objective2 OnCapturing",
 		"handler linebreach OnReceiveBroadcast",
@@ -562,7 +389,7 @@ if(true) then
 		"area bunkercapture OnState -30.69 -76.96 39",
 		"area bunkercapture OnState -27.70 -77.38 39",
 		
-		-- beachhead objective area -- only allies trigger this area 
+	-- beachhead objective area -- only allies trigger this area 
 		"area linebreach OnSendBroadcast 66.10 -148.83 39.26",
 		"area linebreach OnSendBroadcast 19.76 -99.93 37.87",
 		"area linebreach OnSendBroadcast 9.67 -97.08 40.10",
@@ -591,28 +418,86 @@ if(true) then
 		"area linebreach OnSendBroadcast 9.98 -185.02 46.81",
 		"area linebreach OnSendBroadcast 73.22 -152.40 48.69",
 		
-		-- only americans trigger this area
+	-- only americans trigger this area
 		"vehicle linebreach 2 0 0 0",
 		
 
 		
-		"message alliedcapon alliedcapon allied 10",
-		"message alliedcapoff alliedcapoff axis 0",
-		"message objective2 alliedcapon allied 10",
-		"message linebreachon linebreach allied 20",
-		
-		"waypoint.0.1.2 onspawn germanbunker -29.52 -78.26 39.57 axis",
-		"waypoint.0.1.2 onspawn beachhead -152.10 61.01 12.89 allied",
 
 
-		-- DEFINE WHERE PLAYERS SPAWN
 		
-		-- stage 2 spawning
+	----------------------------- SPAWNS ----------------------------- 
+	
+	-- stage 1 allied spawns
+		"spawn.1.1.1 alliedtroops -13.71 179.28 3.39 225",
+		"spawn.1.1.1 alliedtroops -77.71 206.52 3.59 230",
+		"spawn.1.1.1 alliedtroops -118.78 235.53 3.59 200",
+		
+	-- stage 1 axis spawns
+	-- bunker spawns
+		"spawn.2.1.1 axistroops -128.39 44.85 12.18 180",
+		"spawn.2.1.1 axistroops -176.36 90.51 11.65 100",
+	-- ruins
+		"spawn.2.1.1 axistroops -176.06 36.48 16.88 90",
+	-- mg nest
+	--"spawn.2.1.1 axistroops -137.83 -79.05 40.19 0",
+		"spawn.2.1.1 axislmg -137.46 -37.48 36.12 325",
+		"spawn.2.1.1 axislmg -88.12 -56.20 39.50 0",
+		"spawn.2.1.1 axislmg 11.15 -121.45 41.05 60",
+		
+	-- stage 2 allied spawns
 		"spawn.1.1.2 alliedtroops -129.58 71.83 7.74 170",
 		"spawn.1.1.2 alliedtroops -173.37 110.01 7.79 160",
-
+	-- stage 2 axis spawns
 		"spawn.2.1.2 axistroops -31.85 -142.49 44.61 355",
 		"spawn.2.1.2 axistroops -130.83 -120.49 42.42 345",
+		
+
+		
+
+
+		
+		
+
+		
+		
+	------------------ IGNORE ---------------------	
+		-- STUFF LEFT OVER FROM BEFORE
+			-- an area effect bombing
+		-- the x,y,z is the center of the barrage
+		-- the distance is the radius of a circle around the center to randomly fire off the ammo in
+		-- command name ammo x y z distance
+		--water barrage
+		-- "barrage barrage1 gp40 116.65 116.02 3.71 10",
+		-- "barrage barrage1 gp40 31.96 209.20 3.65 10",
+		-- "barrage barrage1 gp40 -31.68 216.85 3.43 10",
+		-- "barrage barrage1 gp40 -132.15 260.19 3.76 10",
+		-- "barrage barrage1 gp40 -21.96 257.21 3.29 10",
+		-- "barrage barrage1 gp40 116.84 221.86 3.50 10",
+		-- "barrage barrage1 gp40 95.87 239.86 3.40 10",
+		--beach barrage
+		-- "barrage barrage2 smallbarragebomb 56.59 26.72 9.28 25",
+		-- "barrage barrage2 smallbarragebomb -186.00 218.52 5.85 25",
+		-- "barrage barrage2 smallbarragebomb -112.80 90.21 7.10 25",
+		-- "barrage barrage2 smallbarragebomb -24.70 36.06 7.82 25",
+		-- "barrage barrage3 smallbarragebomb -152.16 92.97 9.03 15",
+		-- "barrage barrage3 smallbarragebomb -40.36 84.07 6.04 30",
+		-- "barrage barrage3 smallbarragebomb -42.67 103.15 6.71 15",
+		-- cliff barrage
+		-- "barrage barrage4 gp40 -25.76 -59.66 30.32 25",
+		-- "barrage barrage4 gp40 30.72 -102.28 33.67 25",
+		-- "barrage barrage4 gp40 -81.77 -22.06 31.72 25",
+		-- "barrage barrage4 gp40 -106.13 50.48 14.47 25",
+		
+		
+		
+				-------------------------------------- previous bombs -----------------------------------------------
+		-- commandname,pctg chance each second,wait in seconds, ms between bombs, number of bombs
+		-- these fx are replaced by naval gunfire
+		-- "event barrage1 .50 10000 700 1",
+		-- "event barrage2 1 15000 2000 3",
+		-- "event barrage3 .9 30000 1000 3",
+		-- "event barrage4 .9 15000 1000 1",
 		
 	};
 
