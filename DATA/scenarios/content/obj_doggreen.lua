@@ -111,11 +111,11 @@ if(true) then
 		"block -75.88 -43.07 38.09 -70.95 -49.17 38.05 .5 5",
 		"block -70.95 -49.17 38.05 -66.98 -65.28 41.11 .5 5",
 		"block -66.98 -65.28 41.11 -63.05 -70.97 41.34 .5 5",
-		"block -63.05 -70.97 41.34 -56.44 -74.28 41.15 .5 5",
+		"block -45.07 -80.49 41.11 -63.68 -70.55 41.1 .5 5",
 		"block -45.57 -80.27 41.25 -35.24 -83.76 41.56 .5 5",
 		"block -35.24 -83.76 41.56 -19.86 -83.40 41.5 .5 1",
 		"block -19.86 -83.40 39.85 -4.74 -88.94 39.09 .5 5",
-		"block -4.74 -88.94 39.09 10.68 -97.96 38.12 .5 5",
+		"block -4.74 -88.94 39.09 20.11 -100.23 38.5 .5 5",
 		"block 19.78 -99.91 37.61 29.41 -112.02 38.49 .5 5",
 		"block 29.41 -112.02 38.49 49.41 -131.41 39.42 .5 5",
 		
@@ -202,8 +202,13 @@ if(true) then
 		"emitter smokescreen 237.97 -31.84 4.72",
 		
 		-- beach right 
+		"emitter smokescreen -157.76 165.90 6.49",
 		"emitter smokescreen -198.72 211.02 5.30",
 		"emitter smokescreen -354.37 278.58 4.35",
+		
+		
+		
+		
 				
 		-- VEHICLES
 		
@@ -224,7 +229,7 @@ if(true) then
 	-- command name filename volume loop x y z mindist maxdist	
 	"sound sounds/ambience/ocean.wav 10 1 -63 212 3 100 1000",	
 	
-	"sound sounds/fairmileb/idle.wav 2.0 1 45 151 4 5 25",
+	"sound sounds/fairmileb/idle.wav 2.0 1 -117 237 5 5 25",
 	"sound sounds/fairmileb/idle.wav 2.0 1 -10 182 6 5 25",
 	"sound sounds/fairmileb/idle.wav 2.0 1 -82 203 3 5 25",
 
@@ -517,8 +522,11 @@ if(true) then
 	
 		-- stage 1 allied spawns
 		"spawn.1.1.1 alliedtroops -13.71 179.28 3.39 225",
-		"spawn.1.1.1 alliedtroops 44.93 151.35 3.68 215",
 		"spawn.1.1.1 alliedtroops -77.71 206.52 3.59 230",
+		"spawn.1.1.1 alliedtroops -118.78 235.53 3.59 200",
+		
+		
+		
 		
 		-- stage 1 axis spawns
 		
