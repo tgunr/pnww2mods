@@ -55,9 +55,13 @@
     <blueparams>5</blueparams>
   </objectclutter>
    <fogparams>
-    <start>-25.0</start>
+    <!--<start>-25.0</start>
     <end>1200.0</end>
-  </fogparams>
+    -->
+     <start>-1000.0</start>
+     <end>4500.0</end>
+     <fogcolor>127 127 127 0</fogcolor>
+   </fogparams>
   <terrainmaterials>
     <!-- Keep in ascending order (layer0, layer1, layer2...etc)-->
     <!-- These are texture names included in fx/xml/materialprops.xml and grounds.csv-->
