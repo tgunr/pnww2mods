@@ -5,7 +5,6 @@ uniform sampler2D src2;
 uniform sampler2D refl;
 uniform sampler2D surf;
 uniform sampler2D height;
-uniform sampler2D src1;
 
 varying vec3 vertexpos;
 varying vec3 T;
@@ -23,11 +22,10 @@ void lightGetAmbientDiffuseSpecular(in vec3,
 
 vec4 fogThis(in vec4);
 
+const vec4 ocolor = vec4(0.3960784, 0.549019607, 0.7058823529, 1.0);
+
 void main()
 {
-	vec4 base = vec4(101,140,180,1) / 255.0;//texture2D(src1, gl_TexCoord[0].xy);
-	base.a = 1.0;
-
 	vec4 t0 = texture2D(src2, gl_TexCoord[1].xy) * 2.0 - 1.0;
 	vec4 t1 = texture2D(src2, gl_TexCoord[1].zw) * 2.0 - 1.0;
 	
@@ -67,13 +65,13 @@ void main()
 	ambientColor += gl_LightModel.ambient;
 	
 	specularColor *= gl_FrontMaterial.specular;
-	diffuseColor *= base;
+	diffuseColor *= ocolor;
 	ambientColor *= gl_FrontMaterial.ambient;
 
 	float facing = max(dot(n, v), 0.0);
 	
 	// Reflect less if closer to water. 	
-	vec4 color = mix(t3, base, facing);
+	vec4 color = mix(t3, ocolor, facing);
 
     vec4 h = texture2D(height, gl_TexCoord[4].xy);
 
