@@ -229,6 +229,24 @@
 			{
 				if(this.centerme && game.ingame)
 				{
+					/*
+					if(game.customterrain)
+					{
+						if(!this.scenariopos)
+						{
+							this.scenariopos = this.map.getposition(-28.4,1.2);
+							this.map.scale = .073;
+							this.map.position = this.scenariopos;
+						}
+						
+						//this.map.position = this.scenariopos;
+					}
+					else
+					{
+						this.map.position = player.position;
+					}
+					*/
+					
 					if(!game.customterrain)
 						this.map.position = player.position;
 				}
