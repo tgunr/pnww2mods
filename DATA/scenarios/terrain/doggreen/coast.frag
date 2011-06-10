@@ -25,7 +25,8 @@ vec4 fogThis(in vec4);
 
 void main()
 {
-	vec4 base = texture2D(src1, gl_TexCoord[0].xy);
+	vec4 base = vec4(101,140,180,1) / 255.0;//texture2D(src1, gl_TexCoord[0].xy);
+	base.a = 1.0;
 
 	vec4 t0 = texture2D(src2, gl_TexCoord[1].xy) * 2.0 - 1.0;
 	vec4 t1 = texture2D(src2, gl_TexCoord[1].zw) * 2.0 - 1.0;
