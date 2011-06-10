@@ -11,10 +11,10 @@ if(true) then
 		-- placed objects
 		-- command,filename,worldx,worldy,worldz,roll,pitch,yaw,scalex,scaley,scalez,damage
 		"place water1 800 0 3.65 0 0 0 0 0 0 0",
-		"place water1 0 800 3.65 0 0 0 0 0 0 0",
+		"place water1 0 790 3.8 0 0 0 0 0 0 0",
 		"place water1 800 800 3.65 0 0 0 0 0 0 0",
 		"place water1 800 1600 3.65 0 0 0 0 0 0 0",
-		"place water1 0 1600 3.65 0 0 0 0 0 0 0",
+		"place water1 0 1590 3.65 0 0 0 0 0 0 0",
 		"place water1 -800 0 3.65 0 0 0 0 0 0 0",
 		"place water1 -800 800 3.65 0 0 0 0 0 0 0",
 		"place water1 -800 1600 3.65 0 0 0 0 0 0 0",
