@@ -213,7 +213,8 @@ if(true) then
 		"place oildrums_outside -82.61 -95.68 8.2 0 0 45 0 0 0 1",
 		"place wall02 102 -31.5 6.5 0 0 205 0 0 0 0",
 		"place oildrums_outside 95.27 -27.98 8.3 0 6 0 0 0 0 1",
-
+		
+		"place cratepile_outside 170.50 -68.02 7.85 0 0 30 0 0 0 0",
 
 	};
 	

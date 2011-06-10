@@ -195,8 +195,14 @@ if(true) then
 		"clone bedford -19.75 -153.93 9.05 2 0 0",
 		"clone bedford -27.34 -150.10 8.9 4 0 285",
 		"clone bedford -35.21 -147.32 8.85 6 2 285",
-		"clone oplbltz 192.79 -31.45 8.5 5 -4.25 205",
+		"clone oplbltz 185.26 -52.26 8.5 0 0 290",
 		"clone oplbltz 176.32 -20.12 8.55 0 0 180",
+		
+		"clone sdkfz251c 136.15 -57.69 9.22 0 0 30",
+		"clone sdkfz251c 139.67 -59.58 9.22 0 0 30",
+		"clone sdkfz251c 143.12 -61.43 9.22 0 0 30",
+		
+		"clone pzivg 131.93 -42.38 9 0 0 105",
 		
 		"waypoint onspawn wp2 210.55 -15.95 8.11 enemy",
 		"waypoint onspawn wp1 -36.00 -153.15 7.88 friendly",
