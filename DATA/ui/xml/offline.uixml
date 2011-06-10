@@ -132,7 +132,7 @@
 		{
 			var hasstate	= vehicleTree.hasState(); 
 			var spawnables 	= game.spawnablevehicles;
-			var countries 	= new Array('UK','FR','DE');
+			var countries 	= new Array('US','UK','FR','DE');
 			
 			for(var c = 0; c < countries.length; c++)
 			{
@@ -168,7 +168,7 @@
 							
 							classNode.addNode(new TreeNode(vehicle.index, vehicle, 3, false, vehicle.description));
 							
-							if(vehicle.id == "ukrifle")
+							if(vehicle.id == "us-assault")
 								vehicleTree.selected = vehicle.index;
 						}
 					}
@@ -181,7 +181,7 @@
 			}
 			
 			if(!vehicleTree.loadState())
-				vehicleTree.toggleNode("UK", true);
+				vehicleTree.toggleNode("US", true);
 			
 			vehicleTree.drawTree();
 		}
