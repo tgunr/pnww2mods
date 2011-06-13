@@ -296,6 +296,7 @@ if(true) then
 		"firepoint.0.1.2 shorebarrage2 destroyer1 6 10 -.45 -.5 .04 .04 1",
 		
 	-- secondary naval bambardment fx
+	--firepoint eventname clonename turretno mountno gunelev guntrav elevdisp travdisp ?
 		"firepoint shorebarrage3 destroyer2 2 0 -.45 .665 .02 .04 1",
 		"firepoint shorebarrage3 destroyer2 2 1 -.45 .665 .02 .04 1",
 		"firepoint shorebarrage3 destroyer2 2 2 -.45 .665 .02 .04 1",
