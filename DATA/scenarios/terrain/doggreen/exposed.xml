@@ -36,6 +36,8 @@
     <bluscale>2.0</bluscale>
   </grass>
   <!-- Clutter that uses FLTs (Maximum of 8 clutter masks)-->
+  
+  <!-- clutter mask 1 -->
   <objectclutter name="cluttermask.dds">
   <!-- weight the higher the number the less dense -->
     <redweight>1</redweight>
@@ -54,15 +56,25 @@
     <greenparams>45</greenparams>
     <blueparams>5</blueparams>
   </objectclutter>
-  <objectclutter name="cluttermask.dds">
-    <!-- weight the higher the number the less dense -->
-    <greenweight>16</greenweight>
+  
+  <!-- clutter mask 2 -->
+  <objectclutter name="cluttermask2.dds">
+  <!-- weight the higher the number the less dense -->
+    <redweight>1</redweight>
+    <greenweight>1</greenweight>
+    <blueweight>1</blueweight>
     <!-- Color clamped between 0 - 255 -->
-    <greenclamp>100</greenclamp>
+    <redclamp>100</redclamp>
+    <grnclamp>100</grnclamp>
+    <bluclamp>100</bluclamp>
     <!-- clutter FLT object for specific color -->
-    <greentypestring>facgun1c</greentypestring>
+    <redtypestring>crate</redtypestring>
+    <greentypestring></greentypestring>
+    <bluetypestring></bluetypestring>
     <!--== random rotate (-# #) -->
-    <greenparams>15</greenparams>
+    <redparams>180</redparams>
+    <greenparams>45</greenparams>
+    <blueparams>5</blueparams>
   </objectclutter>
   <fogparams>
     <!--<start>-25.0</start>
