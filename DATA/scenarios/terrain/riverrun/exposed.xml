@@ -47,8 +47,8 @@
     <layer3>dirt</layer3>
   </terrainmaterials>
   <!-- Clutter that uses FLTs -->
-  <objectclutter>
-  <!-- weight the higher the number the less dense -->
+  <objectclutter name="cluttermask.dds">
+    <!-- weight the higher the number the less dense -->
     <redweight>5</redweight>
     <greenweight>60</greenweight>
     <blueweight>90</blueweight>
