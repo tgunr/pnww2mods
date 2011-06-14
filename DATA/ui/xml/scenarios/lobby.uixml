@@ -23,8 +23,6 @@
 						control-on-color: #FFFFCE;
 						border-width: 16;
 						border-height: 16;">
-		<tab label="  ${online.campaign}  " x="0" y="0" width="930" height="460"
-			onshow="tplTab(); loadWin('persona', true);" tip="${persona.selecttab.tip}"/>
 		<tab label="  ${online.scenarios}  " x="0" y="0" width="930" height="460"
 			onshow="setHelp(getlocstring('online.scenarios.help')); tplTab()" tip="${online.scenarios.tip}">
 			<view id="left-pane" x="18" y="23" width="444" height="411">
@@ -80,25 +78,13 @@
 				joinLobby();
 		}
 		
+		function doBack()
+		{
+			loadWin("online", true);
+		}
+		
 		function initLobby(win)
 		{
-			var campaignPlay 	= (game.arena("campaign_play") != "false") ? true : false;
-			var scenarioPlay 		= (game.arena("scenarios_play") != "false") ? true : false;
-			
-			// on this page always default to the second tab
-			var body = findview("body");
-			if(body) body.value = 1;
-			
-			if(!campaignPlay)
-			{
-				if(body)
-					body.showtab(0, false);
-			}
-			else if(!scenarioPlay)
-			{
-				loadWin("persona", true);
-			}
-			
 			var chat = game.findview("chat");
 			if(chat != null)
 			{
@@ -111,13 +97,10 @@
 			
 			setHelp(getlocstring('scenario.help'));
 			
-			//setBack('combat.back');
-			setForward('combat.forward');
+			setBack('online.back');
+			setForward('scenarios.forward');
 			setForwardEnabled(false);
 			
-			forwardButton.visible = false;
-			backButton.visible = false;
-						
 			quickhelp();
 			
 			game.globals.scenario = null;

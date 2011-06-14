@@ -2,7 +2,7 @@
 <view id="template" x="0" y="0" width="1024" height="768" onshow="initTemplate(this)" style="background-image: ui/textures/test/bground_01.bmp;">
 	<include file="lib/common.uixml"/>
 	<include file="widgets/idcard.uixml"/>
-	<view x="43" y="600" width="930" height="32" style="
+	<view id="quick-help-bar" x="43" y="600" width="930" height="32" style="
 					border-sides: ui/textures/test/infobox_side.bmp;
 					border-corner: ui/textures/test/infobox_corner.bmp;
 					border-width: 16;
@@ -47,6 +47,14 @@
 				if(back)
 					back.visible = false;
 			}
+			
+			if(!window.doForward)
+			{
+				var fore = template.findview("forward-button");
+				
+				if(fore)
+					fore.visible = false;
+			}
 		}
 		
 		function showVersion(version)
@@ -76,6 +84,7 @@
 		{
 			soundPlayClick();
 			loadWin("quit", false);
+			//reloadWin();
 		}
 		
 		function tplConfirmQuit(confirmed)
@@ -125,6 +134,14 @@
 			
 			if(caption)
 				caption.label = message.toUpperCase();
+		}
+		
+		function showHelp(vis)
+		{
+			var bar = findview("quick-help-bar");
+			
+			if(bar)
+				bar.visible = vis;
 		}
 		
 		function doQuickHelp()

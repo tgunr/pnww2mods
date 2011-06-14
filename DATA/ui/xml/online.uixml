@@ -1,0 +1,415 @@
+<?xml version="1.0"?>
+
+<window id="online" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
+	onshow="initWin(this)" onupdate="updateWin()">
+	<include file="widgets/template.uixml"/>
+	<include file="lib/scenarios.uixml"/>
+	<include file="lib/tutorial.uixml"/>
+	<include file="classes/ListControl.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+	<include file="classes/ViewBuilder.uixml"/>
+	<include file="classes/TextBuilder.uixml"/>
+	<include file="classes/ImageBuilder.uixml"/>
+	<view x="43" y="140" width="930" height="510">
+		<tabview id="body" x="0" y="0" rright="0" rtop="0" ontab="quickhelp()" style="color: #BFE2CE;
+							background-color: #000000BB; 
+							border-top-corner: ui/textures/test/body_ul.bmp;
+							border-bottom-corner: ui/textures/test/body_br.bmp;
+							border-sides: ui/textures/test/body_sides.bmp;
+							border-top: ui/textures/test/body_top.bmp;
+							border-bottom: ui/textures/test/body_bottom.bmp;
+							control-on-endcap:  ui/textures/test/body_tab_cap_on.bmp;
+							control-on-back:  ui/textures/test/body_tab_filler_on.bmp;
+							control-off-endcap: ui/textures/test/body_tab_cap.bmp;
+							control-off-back: ui/textures/test/body_tab_filler.bmp;
+							control-on-color: #FFFFCE;
+							border-width: 16;
+							border-height: 16;">
+			<tab  x="0" y="0" rright="0" rtop="0" showtab="false">
+				<view id="left-pane" x="18" y="18" width="444" height="411">
+					<!-- welcome -->
+					<view x="10" rtop="0" rright="10" height="70" followtop="true"> <!--  style="background-color: #000000BB;" -->
+						<caption label="${online.campaign}" x="0" rtop="0" rright="0" height="30" style="color: #BFE2CE; font-size: +5;"/>
+						<text x="10" height="135" rtop="35" rright="0" acceptsfocus="false" style="border-size-right: 10;  color: #e9e3d9;"
+							onshow="this.text = getWelcomeMessage()"/>
+					</view>
+					
+					<!-- population status -->
+					<view x="10" rtop="60" rright="10" height="130" style="background-color: #ffffff00;" followtop="true">
+						<caption label="${online.campaign.population}" x="0" rtop="5" rright="0" height="30" style="color: #BFE2CE; font-size: +1;"/>
+						<caption label="${online.campaign.allied}" x="10" rtop="30" rright="0" height="30" style="color: #ffffff;"/>
+						<caption id="online-allies" x="130" rtop="30" rright="0" height="30" style="color: #e9e3d9;"/>
+						<caption label="${online.campaign.axis}" x="10" rtop="45" rright="0" height="30" style="color: #ffffff;"/>
+						<caption id="online-axis" x="130" rtop="45" rright="0" height="30" style="color: #e9e3d9;"/>
+					</view>
+		
+					
+					<!-- message of the day -->
+					<view x="10" rtop="140" rright="10" height="100" followtop="true"> <!-- style="border-color: #3e5248; border-size: 1;"  -->
+						<caption label="${online.motd}" x="0" rtop="0" rright="5" height="30" style="color: #BFE2CE; font-size: +2;"/>
+						<image width="16" height="16" rright="0" rtop="5" src="ui/textures/test/edit_icon.bmp"
+							onshow="this.visible = (client.isplaynet) ? true: false" onclick="editCrsMotd()"
+							onmouseenter="this.src = 'ui/textures/test/edit_icon_on.bmp'"
+							onmouseexit="this.src = 'ui/textures/test/edit_icon.bmp'"/>
+						<text id="crs-motd" x="10" y="0" rtop="30" rright="0" acceptsfocus="false" style="border-size-right: 10;  color: #e9e3d9;"> <!-- background-color: #000000BB; -->
+							<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+						</text>
+					</view>
+		
+					
+					<!-- squad message of the day -->
+					<view x="10" rtop="240" rright="10" width="300" height="100" followtop="true"> <!-- style="border-color: #3e5248; border-size: 1;" -->
+						<caption label="${online.campaign.squad.motd}" x="0" rtop="0" rright="5" height="30" style="color: #BFE2CE; font-size: +2;"/>
+						<caption id="online-squad-counts" height="15" width="100" rright="0" rtop="10" style="color: #BFE2CE;" align="right" label="1 online / 100 total"/>
+						<text id="online-squad-motd" x="10" y="0" rtop="30" rright="0" acceptsfocus="false" style="border-size-right: 10;  color: #e9e3d9;"> <!--  background-color: #000000BB; -->
+							<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+						</text>
+					</view>
+					
+					<button id="campaign-button" label="${online.campaign.play}" x="130" y="10" width="150" height="30" onclick="doDecision('campaign')"
+						style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; color: #FFFFFF; font-size: -3;"
+						onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+						tip="${online.campaign.tip}"/>
+				</view>
+				<view id="right-pane" x="468" y="18" width="444" height="411">
+					<!-- welcome -->
+					<view x="10" rtop="0" rright="10" height="70" followtop="true"> <!--  style="background-color: #000000BB;" -->
+						<caption label="${online.ra}" x="0" rtop="0" rright="0" height="30" style="color: #BFE2CE; font-size: +5;"/>
+						<text x="10" height="135" rtop="35" rright="0" acceptsfocus="false" style="border-size-right: 10;  color: #e9e3d9;"
+							onshow="this.text = getRAMessage()"/>
+					</view>
+					
+					<!-- population status -->
+					<view x="10" y="60" rtop="60" rright="10"followtop="true">
+						<caption label="${online.ra.maps}" x="0" rtop="5" rright="0" height="30" style="color: #BFE2CE; font-size: +1;"/>
+						<caption label="${online.ra.mapname}" x="20" rtop="30" rright="0" height="30" style="color: #e9e3d9;"/>
+						<caption label="${online.ra.games}" x="0" rtop="30" rright="20" height="30" style="color: #e9e3d9;" align="right"/>
+						<list id="scenarioList" x="10" y="0" rright="10" rtop="60"/> <!--   style="background-color: #000000BB;"  -->
+					</view>
+					
+					<button id="scenarios-button" label="${online.ra.play}" x="170" y="10" width="150" height="30" onclick="doDecision('scenarios')"
+						style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; color: #FFFFFF; font-size: -3;"
+						onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+						tip="${online.campaign.tip}"/>
+				</view>
+			</tab>
+		</tabview>
+		<view id="tab-divider" x="457" y="2" width="16" rtop="18">
+			<image x="0" y="0" src="ui/textures/test/vert_border.bmp" width="16" rtop="0"/>
+		</view>
+	</view>
+	<script>
+		<!--
+		
+		/*************** INIT GLOBALS **************/
+		
+		var client 						= game.player.client;
+		var listTimer					= new CycleTimer(1000);
+		var motd 						= findview("crs-motd");
+		var scenarioList			= new ListControl(findview("scenarioList"));
+		var scenarioRoot			= loadRoot();
+		var pinit						= false; // personas inited
+		var sinit						= false; // scenario list inited
+		
+		/*************** OVERRIDE COMMON FUNCTIONS **************/
+		
+		function doDecision(play)
+		{
+			soundPlayClick();
+			
+			if(play == "scenarios")
+				loadWin("scenarios/lobby", true);
+			else
+				loadWin("persona", true);
+		}
+		
+		function initWin(win)
+		{
+			game.consoleclear();
+			
+			var campaignPlay 	= (game.arena("campaign_play") != "false") ? true : false;
+			var scenarioPlay 		= (game.arena("scenarios_play") != "false") ? true : false;
+			
+			if(!campaignPlay)
+			{
+				var btn = findview("campaign-button");
+				btn.enabled = false;
+			}
+			
+			if(!scenarioPlay)
+			{
+				var btn = findview("scenarios-button");
+				btn.enabled = false;
+			}
+			
+			// we'll use our own buttons on this page
+			forwardButton.visible = false;
+			backButton.visible = false;
+			
+			// hide some stuff
+			showChat(false);
+			showHelp(false);
+
+			// lets hide the id card
+			showIDCard(false);
+
+			// lets set the default message
+			//setHelp(getlocstring('online.help'));
+			
+			client.onpersonas = initPersonaList;
+			client.requestpersonalist();
+			
+			var crsmotd		= client.requestmotd(0);
+			var allies 			= findview("online-allies");
+			var axis 			= findview("online-axis");
+			var balance		= client.sidebalance;
+			var squad			= client.squad;
+			
+			if(crsmotd != null)
+				motd.text = crsmotd.message;
+				
+			if(balance < 0)
+			{
+				allies.setstyleproperty("color","#ffff00");
+				axis.setstyleproperty("color","#00ff00");
+				
+				allies.label 	= getlocstring('persona.list.overpopulated');
+				axis.label 		= getlocstring('persona.list.requesting');
+			}
+			else if(balance > 0)
+			{
+				allies.setstyleproperty("color","#00ff00");
+				axis.setstyleproperty("color","#ffff00");
+				
+				allies.label 	= getlocstring('persona.list.requesting');
+				axis.label 		= getlocstring('persona.list.overpopulated');
+			}
+			else
+			{
+				allies.setstyleproperty("color", "#00ff00");
+				axis.setstyleproperty("color", "#00ff00");
+				
+				allies.label 	= getlocstring('persona.list.balanced');
+				axis.label 		= getlocstring('persona.list.balanced');
+			}
+			
+			if(squad != null)
+			{
+			 	findview('online-squad-motd').text 	= squad.motd;
+			 	findview('online-squad-counts').label 	= getVariableLocString('common.squads.counts', squad.onlinecount, squad.totalcount);
+			}
+			else
+			{
+			 	findview('online-squad-counts').visible = false;
+			 	findview('online-squad-motd').text = getlocstring('online.campaign.squad.motd.nosquad');
+			}
+
+			/*
+			var chat = game.findview("chat");
+			if(chat != null)
+			{
+				chat.x = window.width/2 - chat.width/2;
+				chat.y = 10;
+			}
+			*/
+			
+			quickhelp();
+			
+			TutSetInstance(1);
+			
+			//game.load("welcome");
+		}
+		
+		function initPersonaList()
+		{
+			pinit = true;
+			consoleprint("Initing personas\n");
+		}
+		
+		function initScenarioList()
+		{
+			// reset our running list of instances 
+			var maps = new Array();
+			var index = new Object();
+			
+			// now for each category and map add an entry
+			for(var r = 0; r < scenarioRoot.links.length; r++)
+			{
+				var rlink = scenarioRoot.links[r];
+				
+				var category =  game.getcontent(rlink.path);
+				if(category == null) continue;
+				
+				for(var c = 0; c < category.links.length; c++)
+				{
+					var clink = category.links[c];
+					
+					var map =  game.getcontent(clink.path);
+					if(map == null) continue;
+					
+					var scenario = new Object();
+					
+					scenario.title			= clink.title;
+					scenario.category	= parseInt(category.category);
+					scenario.type			= c;	
+					scenario.content 		= map;
+					scenario.count 		= 0;
+					scenario.players 		= 0;
+					
+					index[map.name] = maps.length;
+					maps.push(scenario);
+						
+					cprint("Added new map " + map.name);
+				}
+			}
+			
+			cprint("Pulling instances!");
+			
+			// some temp vars
+			var instances = client.instances;
+			
+			// now for each category, add our instances
+			for(var i = 0; i < instances.length; i++)
+			{
+				var instance = instances[i];
+				if(instance == null) continue;
+				
+				var content = loadScenario(instance.description.category, instance.description.type);
+				if(content == null) continue;
+				
+				var mi = index[content.name];
+				
+				maps[mi].count 		+= 1;
+				maps[mi].players 	+= (instance.axis + instance.allies);
+			}
+			
+			// now sort our running instances
+			maps = maps.sort(sortScenarios);
+			
+			// now update our visible list
+			scenarioList.clearRows(false);
+			
+			cprint("Map count is " + maps.length);
+			
+			if(maps.length > 0)
+			{
+				cprint("Adding new map " + maps.length);
+				
+				for(var i = 0; i < maps.length; i++)
+				{
+					var scenario 	= maps[i];
+					var content 		= scenario.content;
+					var count 			= scenario.count;
+					var players		= scenario.players;
+					
+					var label = scenario.title; // + " (" + scenario.category + "/" + scenario.type + ")";
+					
+					var row 				= new ViewBuilder(scenarioList.list, "scenario" + i, 0, 0, 0, 16);
+					var tcaption			= row.addBuilder(new TextBuilder(row, "title", "caption", label, 10, 0, 0, 16));
+					var ccaption			= row.addBuilder(new TextBuilder(row, "count", "caption", count, 0, 0, -10, 16));
+					
+					tcaption.addStyle("color", "#FFFF00");
+					ccaption.addStyle("color", "#00FF00");
+					ccaption.addAttribute("align", "right");
+					
+					scenarioList.addRow(scenario, row.build());
+				}
+			}
+			
+			sinit = true;
+		}
+		
+		function sortScenarios(a, b)
+		{
+			if(a.count > b.count)
+			{
+				return 1;
+			}
+			else if(a.count < b.count)
+			{
+				return -1;
+			}
+			
+			if(a.category > b.category)
+			{
+				return 1;
+			}
+			else if(a.category < b.category)
+			{
+				return -1;
+			}
+			
+			if(a.type > b.type)
+			{
+				return 1;
+			}
+			else if(a.type < b.type)
+			{
+				return -1;
+			}
+			
+			return 0;
+		}
+		
+		function updateWin()
+		{
+			if(pinit && !sinit && listTimer.run())
+			{
+				// grab all instances
+				client.listinstances(0, 0, "");
+				
+				// update our visible list
+				initScenarioList();
+			}
+		}
+		
+		function getPersonaOverBalanced(persona)
+		{
+			var balance = client.sidebalance;
+			
+			if((balance > 0 && persona.country.side == 2) || (balance < 0 && persona.country.side == 1))
+				return true;
+			
+			return false;
+		}
+		
+		function editCrsMotd()
+		{
+			if(client.isplaynet)
+			{
+				soundPlayClick();
+				
+				if(motd.acceptsfocus)
+				{
+					motd.focused = false;
+					motd.acceptsfocus = false;
+					motd.setstyleproperty("background-color", "#00000000");
+					
+					client.setmotd(1, 0, motd.text);
+					var crsmotd = client.requestmotd(0);
+					
+					if(crsmotd != null)
+						motd.text = crsmotd.message;
+				}
+				else
+				{
+					motd.setstyleproperty("background-color", "#FFFFFF22");
+					motd.acceptsfocus = true;
+					motd.focused = true;
+				}
+			}
+		}
+		
+		function getWelcomeMessage()
+		{
+			return getlocstring("online.campaign" + Math.round(Math.random() * 2));
+		}
+		
+		function getRAMessage()
+		{
+			return getlocstring("online.ra" + Math.round(Math.random() * 2));
+		}
+				
+		-->
+	</script>
+</window>
