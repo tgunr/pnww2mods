@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <window id="online" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
-	onshow="initWin(this)" onupdate="updateWin()">
+	onshow="initWin(this)" onupdate="updateWin()" aspectalign="center">
 	<include file="widgets/template.uixml"/>
 	<include file="lib/scenarios.uixml"/>
 	<include file="lib/tutorial.uixml"/>
