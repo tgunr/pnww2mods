@@ -35,10 +35,10 @@ function OnSpawn(handler)
 	-- run default behavior
 	scenario.OnSpawn(handler);
 	
-	state.capture = 0;
-	state.beachcrossing = false;
-	state.reinforcing = false;
-	state.bunkercapture = false;
+	state.capture 				= 0;
+	state.beachcrossing 	= false;
+	state.reinforcing 			= false;
+	state.bunkercapture 	= false;
 	
 	local target1 = tonumber(state.config.objective1);
 	local target2 = tonumber(state.config.objective2);
@@ -104,10 +104,10 @@ function OnStage1Update(msDelta)
 	
 	local ft	= game.Frametime();
 	
-	if(state.beachcrossing) then
+	-- if(state.beachcrossing) then
 		-- ui.ChatPrint("Crossed the beach!");
-		state.reinforcing = true;
-	end
+		state.reinforcing = state.beachcrossing;
+	-- end
 	
 	if(state.reinforcing and ft >= state.nextreinforcement) then
 		local rate = tonumber(state.config.reinforcementrate or 1);

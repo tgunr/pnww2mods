@@ -376,8 +376,10 @@ function OnTrigger(handler)
 	-- try to run any events associated with this area
 	if(scenario.InArea(handler)) then
 		scenario.manager:RunObject(handler.name, 1);
+		scenario.manager:RunObject(handler.name .. "on", 1);
 	else
 		scenario.manager:RunObject(handler.name, 0);
+		scenario.manager:RunObject(handler.name .. "off", 1);
 	end
 	return 1;
 end
@@ -396,8 +398,10 @@ function OnState(handler)
 	-- try to run any events associated with this area
 	if(state[handler.name]) then
 		scenario.manager:RunObject(handler.name, 1);
+		scenario.manager:RunObject(handler.name .. "on", 1);
 	else
 		scenario.manager:RunObject(handler.name, 0);
+		scenario.manager:RunObject(handler.name .. "off", 1);
 	end
 	return 1;
 end
