@@ -215,7 +215,8 @@ if(true) then
 		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav .4 0",
 		"sound bombs sounds/scenarios/ambient_bombs_distantshells1.wav .5 0",
 		"sound bombs sounds/scenarios/ambient_bombs_distantshells2.wav .5 0",
-		-- only played during stage 1
+		
+	-- only played during stage 1
 		"event guns1 .5 1000",
 		"event.0.1.1 guns2 .5 1000",
 		"event.0.1.1 bombs .5 1000",
@@ -232,8 +233,10 @@ if(true) then
 		"event barragefun .5 5000 1000 3",
 		
 	-- combat fx
+		-- typeofeffect eventname 0=bullethitsandsound/1=soundonly(bulletflyby)
 		"fpsfx combatfx 0",
 		"fpsfx combatsounds 1",
+		-- event variables affecting above events (combat fx)
 		"event.0.1.1 combatfx .5 300 300 5",
 		"event.0.1.1 combatfx .5 300 300 3",
 		"event combatfx .5 300 300 3",
@@ -462,50 +465,7 @@ if(true) then
 		
 
 		
-
-
-		
-		
-
-		
-		
-	------------------ IGNORE ---------------------	
-		-- STUFF LEFT OVER FROM BEFORE
-			-- an area effect bombing
-		-- the x,y,z is the center of the barrage
-		-- the distance is the radius of a circle around the center to randomly fire off the ammo in
-		-- command name ammo x y z distance
-		--water barrage
-		-- "barrage barrage1 gp40 116.65 116.02 3.71 10",
-		-- "barrage barrage1 gp40 31.96 209.20 3.65 10",
-		-- "barrage barrage1 gp40 -31.68 216.85 3.43 10",
-		-- "barrage barrage1 gp40 -132.15 260.19 3.76 10",
-		-- "barrage barrage1 gp40 -21.96 257.21 3.29 10",
-		-- "barrage barrage1 gp40 116.84 221.86 3.50 10",
-		-- "barrage barrage1 gp40 95.87 239.86 3.40 10",
-		--beach barrage
-		-- "barrage barrage2 smallbarragebomb 56.59 26.72 9.28 25",
-		-- "barrage barrage2 smallbarragebomb -186.00 218.52 5.85 25",
-		-- "barrage barrage2 smallbarragebomb -112.80 90.21 7.10 25",
-		-- "barrage barrage2 smallbarragebomb -24.70 36.06 7.82 25",
-		-- "barrage barrage3 smallbarragebomb -152.16 92.97 9.03 15",
-		-- "barrage barrage3 smallbarragebomb -40.36 84.07 6.04 30",
-		-- "barrage barrage3 smallbarragebomb -42.67 103.15 6.71 15",
-		-- cliff barrage
-		-- "barrage barrage4 gp40 -25.76 -59.66 30.32 25",
-		-- "barrage barrage4 gp40 30.72 -102.28 33.67 25",
-		-- "barrage barrage4 gp40 -81.77 -22.06 31.72 25",
-		-- "barrage barrage4 gp40 -106.13 50.48 14.47 25",
-		
-		
-		
-				-------------------------------------- previous bombs -----------------------------------------------
-		-- commandname,pctg chance each second,wait in seconds, ms between bombs, number of bombs
-		-- these fx are replaced by naval gunfire
-		-- "event barrage1 .50 10000 700 1",
-		-- "event barrage2 1 15000 2000 3",
-		-- "event barrage3 .9 30000 1000 3",
-		-- "event barrage4 .9 15000 1000 1",
+	
 		
 	};
 
