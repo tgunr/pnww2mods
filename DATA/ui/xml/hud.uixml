@@ -1485,7 +1485,7 @@
 			hudMessages[0].view.y = (game.screenheight/4);
 			
 			// get their attention
-			game.playsound("ui/sounds/recv_orders.wav", 1, 1);
+			//game.playsound("ui/sounds/recv_orders.wav", 1, 1);
  		}
 		
 		function SetTimer(seconds)
