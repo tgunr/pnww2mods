@@ -6,9 +6,14 @@ ataxisspawn = 通过桥梁并沿着路向北穿过树林
 atalliedspawn = 通过桥梁并沿着路向南穿过树林
 wp1 = 红国行动路径
 wp2 = 盟国行动路径
-wp3 = 树林</body>
+wp3 = 树林
+victory1 = 盟国胜利！
+victory2 = 红国胜利！
+roundstop = 本回合结束！</body>
   <bodyloc>true</bodyloc>
-  <brief>placeholder</brief>
+  <brief>红盟两国的装甲纵队正在穿过河谷向对方前进。请通过桥梁并向中间的树林移动。<br>
+在30分钟内尽可能多的击毁敌坦克<br>
+最先达到30击杀数的一方获胜。</brief>
   <duration>30</duration>
   <fog>3</fog>
   <hour>16</hour>

@@ -1,13 +1,19 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>dm_luxembourg</name>
-  <body>mapcenter = 不要长时间停留，空袭遍布整个城市，当心！
+  <body>playarea = 这里是战区边界，请不要离开战区
+mapcenter = 不要长时间停留，空袭遍布整个城市，当心！
 toaxisspawn = 去跟北面的盟国坦克交战吧，摧毁它们！
 toalliedspawn = 去跟南面的红国坦克交战吧，摧毁它们！
 wp1 = 盟国行动路径
 wp2 = 红国行动路径
-wp3 = 中央公园区</body>
-  <brief>卢瑟伯格穿过泊车处的坦克战</brief>
+wp3 = 中央公园区
+victory1 = 盟国胜利！
+victory2 = 红国胜利！
+roundstop = 本回合结束！</body>
+  <brief>红盟两国的坦克部队被设定在卢瑟伯格遭遇。当他们前进时，隔开他们的是中央公园区与中部的城区。<br><br>
+在20分钟内尽可能多的击毁敌坦克<br>
+最先达到20击杀数的一方获胜。</brief>
   <duration>20</duration>
   <kills>20</kills>
   <rules>deathmatch</rules>
