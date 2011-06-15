@@ -60,21 +60,21 @@
   <!-- clutter mask 2 -->
   <objectclutter name="cluttermask2.dds">
   <!-- weight the higher the number the less dense -->
-    <redweight>1</redweight>
-    <greenweight>1</greenweight>
-    <blueweight>1</blueweight>
+    <redweight>5</redweight>
+    <greenweight>5</greenweight>
+    <blueweight>50</blueweight>
     <!-- Color clamped between 0 - 255 -->
-    <redclamp>100</redclamp>
-    <grnclamp>100</grnclamp>
-    <bluclamp>100</bluclamp>
+    <redclamp>150</redclamp>
+    <grnclamp>150</grnclamp>
+    <bluclamp>150</bluclamp>
     <!-- clutter FLT object for specific color -->
     <redtypestring>crate</redtypestring>
-    <greentypestring></greentypestring>
-    <bluetypestring></bluetypestring>
+    <greentypestring>ammocrate</greentypestring>
+    <bluetypestring>oildrums_outside</bluetypestring>
     <!--== random rotate (-# #) -->
     <redparams>180</redparams>
-    <greenparams>45</greenparams>
-    <blueparams>5</blueparams>
+    <greenparams>180</greenparams>
+    <blueparams>180</blueparams>
   </objectclutter>
   <fogparams>
     <!--<start>-25.0</start>
