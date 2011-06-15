@@ -22,21 +22,21 @@ if(true) then
 		"mask.1.1.0 alliedtroops us-assault",
 		"mask.1.1.0 alliedtroops us-smg",
 		"mask.1.1.0 alliedtroops us-bar",
-		"mask.1.1.0 alliedtroops us-sniper",
+		"mask.1.1.0 alliedtroops us-sniper 1",
 
 	-- axis spawn list
 	-- stage 1	
 		"mask.2.1.1 axistroops de-assault",
 		"mask.2.1.1 axistroops de-smg",
-		"mask.2.1.1 axistroops de-sniper",
-		"mask.2.1.1 axistroops de-ltmortar",
+		"mask.2.1.1 axistroops de-sniper 1",
+		"mask.2.1.1 axistroops de-ltmortar 1",
 		"mask.2.1.1 axislmg de-lmg",
 		
 	-- stage 2
 		"mask.2.1.2 axistroops de-assault",
 		"mask.2.1.2 axistroops de-smg",
-		"mask.2.1.2 axistroops de-sniper",
-		"mask.2.1.2 axistroops de-ltmortar",
+		"mask.2.1.2 axistroops de-sniper 1",
+		"mask.2.1.2 axistroops de-ltmortar 1",
 		"mask.2.1.2 axistroops de-lmg",
 
 	
