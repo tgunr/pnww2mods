@@ -2,15 +2,15 @@
  
 <window id="waypoint" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768" layer="100" aspectalign="center">
 	<include file="lib/common.uixml"/>
-	<view id="waypoint-popup" width="350" height="250" style="background-color: #00000088; 
+	<view id="waypoint-popup" width="370" height="250" style="background-color: #00000088; 
 							border-sides: ui/textures/hud/border_side.bmp;
 							border-corner: ui/textures/hud/border_corner.bmp;
 							border-width: 4;
 							border-height: 4;" moveondrag="yes">
-		<caption label="${widgets.map.waypoints.create}" x="10" width="300" height="20" rtop="8" style="font-size: +1; color: #BFE2CE;"/>
+		<caption label="${widgets.map.waypoints.create}" x="10" width="320" height="20" rtop="8" style="font-size: +1; color: #BFE2CE;"/>
 		<image x="10" width="330" height="12" rtop="20" src="ui/textures/test/horiz_underline.bmp"/>
 		
-		<caption label="${widgets.map.waypoints.name}" x="10" y="191" width="300" height="20" style="font-size: -1; color: #FFFFFF;"/>
+		<caption label="${widgets.map.waypoints.name}" x="10" y="191" width="320" height="20" style="font-size: -1; color: #FFFFFF;"/>
 		<textcontrol id="wp-name" x="10" y="175" height="15" width="200" acceptsfocus="true" maxlength="8" style="background-color: #FFFFFF22;  color: #e9e3d9;" onmousedown="this.text = ''"/>
 		
 		<caption label="${widgets.map.waypoints.notes}" x="10" y="146" width="200" height="20" maxlength="128" style="font-size: -1; color: #FFFFFF;"/>
@@ -19,24 +19,24 @@
 		<view x="220" y="40" rright="20" rtop="40">
 			<caption label="${widgets.map.context.waypoints.add.waypoint.type}" x="5" height="20" rright="5" rtop="0" maxlength="128"
 				style="font-size: -1; color: #FFFFFF;"/>
-			<image x="85" height="15" width="15" rtop="30" src="ui/textures/waypoint.bmp" style="color: #FF0000;" />
+			<image x="95" height="15" width="15" rtop="30" src="ui/textures/waypoint.bmp" style="color: #FF0000;" />
 			<radiobutton label="${widgets.map.waypoints.add.rally}" x="5" rright="5" height="15" rtop="30"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('rally')" onshow="this.value = true;"/>
-			<image x="85" height="15" width="15" rtop="50" src="ui/textures/waypoint.bmp" style="color: #0000FF;" />
+			<image x="95" height="15" width="15" rtop="50" src="ui/textures/waypoint.bmp" style="color: #0000FF;" />
 			<radiobutton label="${widgets.map.waypoints.add.attack}" x="5" rright="5" height="15" rtop="50"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('attack')"/>
-			<view class="contacticon"  x="85" height="15" width="15" rtop="70" index="7" style="color: #FF0000;"/>
+			<view class="contacticon"  x="95" height="15" width="15" rtop="70" index="7" style="color: #FF0000;"/>
 			<radiobutton label="${widgets.map.waypoints.add.mortar}" x="5" rright="5" height="15" rtop="70"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('mortar')"/>
 		</view>
 		
-		<button id="popup-no" x="20" y="10" width="150" height="25" label="${popup.cancel}" onclick="addWaypoint(false)"
+		<button id="popup-no" x="30" y="10" width="150" height="25" label="${popup.cancel}" onclick="addWaypoint(false)"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
-		<button id="popup-yes" x="180" y="10" width="150" height="25" label="${popup.ok}" onclick="addWaypoint(true)"
+		<button id="popup-yes" x="190" y="10" width="150" height="25" label="${popup.ok}" onclick="addWaypoint(true)"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
 	</view>
