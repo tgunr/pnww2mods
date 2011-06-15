@@ -26,8 +26,9 @@
 		var spawner 	= findview("spawnable-caption");
 		var flag 		= findview("capture-flag");
 		var lock 		= findview("capture-lock");
-		
+			
 		var mycountry		= game.player.client.country.code; 
+		var available		= game.player.client.isavailable();	
 		var allcountries	= new Object();
 		
 		allcountries["UK"] 	= 1;
@@ -59,6 +60,13 @@
 					flag.src 		= "";
 					country.label 	= "";
 				break;
+			}
+			
+			// If we are ArenaLocked, show this on capture bar
+			if(!available)
+			{
+				spawner.label = getlocstring('capture.arenalocked');
+				lock.visible = true;
 			}
 			
 			if(!game.player.client.state.cancapture)
