@@ -107,7 +107,7 @@ if(true) then
 		"emitter cratersmoke -45.56 -78.53 8",
 		"emitter cratersmoke 26.02 -82.75 8",
 		"emitter cratersmoke -49.62 -130.94 8",
-		--"emitter cratersmoke 109.09 27.70 4.5",
+		"emitter cratersmoke 126.01 -3.17 8.41",
 				
 		-- SMOKESCREEN
 
@@ -120,6 +120,9 @@ if(true) then
 		
 		"emitter hulksmoke 63.47 42.70 6.56",
 		"emitter hulksmoke 136.61 47.66 8.20",
+		--"emitter hulksmoke 145.61 71.81 7.30",
+		
+		
 		
 		
 		
@@ -127,7 +130,7 @@ if(true) then
 		
 		-- BURNING VEHICLES
 
-		"emitter vehiclefire 159.46 70.28 2.93",
+		"emitter cratersmoke 159.46 70.28 2.93",
 		-- "emitter vehiclefire 105.14 -36.56 9.01",
 
 		-- FIRES
@@ -160,7 +163,7 @@ if(true) then
 	-- POSITIONAL SOUNDS
 	-- command name filename volume loop x y z mindist maxdist
 
-		"sound sounds/tank_burn.wav 1 1 159 70 3 5 30",
+		--"sound sounds/tank_burn.wav 1 1 159 70 3 5 30",
 		-- "sound sounds/tank_burn.wav 1 1 108 -30 9 5 30",
 		"sound sounds/tank_burn.wav .5 1 95 -26 8 5 20",
 		"sound sounds/tank_burn.wav 1 1 261 227 4 5 30",
@@ -301,8 +304,12 @@ if(true) then
 
 		"clone bedford 195.46 151.93 7.5 5 0 -120",
 		"clone bedford 198.09 158.75 7.55 5 0 -145",
-		"clone bedford 200.15 150.18 7.15 3 -1 -130",
-
+		"clone bedford 177.19 134.72 7.35 3 -1 -145",
+		"clone bedford 145.76 72.52 7.9 -80 10 180",
+		"clone bedford 161.05 110.17 7.8 3 -1 -155",
+		
+		
+		
 
 
 -- ALERTS AND CHATS
