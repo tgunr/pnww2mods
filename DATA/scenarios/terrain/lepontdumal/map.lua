@@ -102,16 +102,16 @@ if(true) then
 		"place dd_telegraph_07 -4.00 -96.00 7.34 0 0 110 0 0 0 0",
 		"place dd_telegraph_07 42.00 -138.00 8.77 84 60 20 0 0 0 0",
 		--"place dd_telegraph_07 165.00 -85.00 8 61 70 0 0 0 0 0",
-		-- "place instance_rockwallberm1 138.00 13.50 7.0 -3 0 105 0 0 0 0",
-		"place instance_rockwallberm1 156.00 8.75 7.10 0 0 105 0 0 0 0",
-		-- "place instance_rockwallberm1 174.00 4.00 6.95 0 0 105 0 0 0 0",
-		"place instance_rockwallberm1 192.00 -0.75 6.68 0 0 105 0 0 0 0",
-		--"place instance_rockwallberm1 210.00 -5.40 6.49 0 0 105 0 0 0 0",
-		"place instance_rockwallberm1 228.00 -10.00 6.26 0 0 105 0 0 0 0",
-		"place instance_rockwallberm1 60.00 -24.00 6.82 0 -2 95 0 0 0 0",
-		"place instance_rockwallberm1 193.00 -84.00 5.41 0 0 25 0 0 0 0",
-		"place instance_rockwallberm1 210.00 -59.00 4.99 0 0 25 0 0 0 0",
-		"place instance_rockwallberm1 230.00 -26.00 5.82 2 0 25 0 0 0 0",
+		-- "place instance_rockwall1 138.00 13.50 7.0 -3 0 105 0 0 0 0",
+		"place instance_rockwall1 156.00 8.75 7.10 0 0 105 0 0 0 0",
+		-- "place instance_rockwall1 174.00 4.00 6.95 0 0 105 0 0 0 0",
+		"place instance_rockwall1 192.00 -0.75 6.68 0 0 105 0 0 0 0",
+		--"place instance_rockwall1 210.00 -5.40 6.49 0 0 105 0 0 0 0",
+		"place instance_rockwall1 228.00 -10.00 6.26 0 0 105 0 0 0 0",
+		"place instance_rockwall1 60.00 -24.00 6.82 0 -2 95 0 0 0 0",
+		"place instance_rockwall1 193.00 -84.00 5.41 0 0 25 0 0 0 0",
+		"place instance_rockwall1 210.00 -59.00 4.99 0 0 25 0 0 0 0",
+		"place instance_rockwall1 230.00 -26.00 5.82 2 0 25 0 0 0 0",
 		"place windmill1 -235.17 274.79 19.43 0 0 185 0 0 0 0",
 		"place vinbarn1 -28.71 272.04 14.50 0 0 180 0 0 0 0",
 		"place blumaine1c -6.00 8.00 6.12 0 0 210 0 0 0 0",
@@ -144,11 +144,11 @@ if(true) then
 		"place dg_wire_barbed_box 164.17 66.20 5.8 -30 -15 60 0 0 0",
 		"place dg_wire_barbed_box 167.34 62.24 7.1 0 0 60 0 0 0",
 		
-		
-	
-		
-		
-		
+		"place crate 143.6 73.36 7.6 90 0 -5 0 0 0 0",
+		"place crate 143.4 74.94 7.55 80 0 -5 0 0 0 0",
+		"place ammocrate 145.2 71.4 7.33  90 -5 -10 0 0 0",
+		"place crate 144.1 71.08 7.4 90 35 0 0 0 0 0",
+		"place crate 140.23 74.53 6.6 0 -15 0 0 0 0 0",
 		
 		--"place sandbagwall_outside 161.70 61.90 6.95 0 0 45 0 0 0 0",
 		
@@ -241,37 +241,43 @@ if(true) then
 		
 		-- NEAR ALLIED SPAWN
 		
-		"place cratepile_outside 207.10 141.04 5.3 2 0 30 0 0 0",
+		"place cratepile_outside 190.60 142.89 6.2 2 1 45 0 0 0",
+		"place cratepile_outside 167.93 111.67 6.35 2 1 35 0 0 0",
+		
+		
+		
+		
+		
 		
 		-- ROCK WALLS ALONG ROAD
+
+		"place instance_rockwall2 196.67 191.00 6.3 0 0 55 0 0 0 0",
+		"place instance_rockwall2 179.35 177.93 6.3 0 0 53 0 0 0 0",
+		"place instance_rockwall2 161.75 163.45 6.3 0 0 52 0 0 0 0",
+		"place instance_rockwall2 145.51 150.69 6.3 0 0 52 0 0 0 0",
+		"place instance_rockwall1 123.31 133.95 4.6 0 0 52 0 0 0 0",
+		"place instance_rockwall2 98.23 113.15 4.3 0 4 52 0 0 0 0",
+		"place instance_rockwall2 66.78 89.91 4.2 0 0 52 0 0 0 0",
+		"place instance_rockwall2 57.4 72.97 4.0 0 4 8 0 0 0 0",
+		"place instance_rockwall2 54.29 50.72 4.5 -3 4 8 0 0 0 0",
+		"place instance_rockwall2 51.55 27.61 5.3 0 4 8 0 0 0 0",
+		"place instance_rockwall2 48.52 8.72 4.6 0 -2 8 0 0 0 0",
+		"place instance_rockwall2 172.1 133.7 5.8 4 5 36.5 0 0 0",
+		--"place instance_rockwall2 57.4 72.97 4.0 0 4 8 0 0 0 0",
+		--"place instance_rockwall2 57.4 72.97 4.0 0 4 8 0 0 0 0",
 
-		"place instance_rockwallberm2 196.67 191.00 6.3 0 0 55 0 0 0 0",
-		"place instance_rockwallberm2 179.35 177.93 6.3 0 0 53 0 0 0 0",
-		"place instance_rockwallberm2 161.75 163.45 6.3 0 0 52 0 0 0 0",
-		"place instance_rockwallberm2 145.51 150.69 6.3 0 0 52 0 0 0 0",
-		"place instance_rockwallberm1 123.31 133.95 4.6 0 0 52 0 0 0 0",
-		"place instance_rockwallberm2 98.23 113.15 4.3 0 4 52 0 0 0 0",
-		"place instance_rockwallberm2 66.78 89.91 4.2 0 0 52 0 0 0 0",
-		"place instance_rockwallberm2 57.4 72.97 4.0 0 4 8 0 0 0 0",
-		"place instance_rockwallberm2 54.29 50.72 4.5 -3 4 8 0 0 0 0",
-		"place instance_rockwallberm2 51.55 27.61 5.3 0 4 8 0 0 0 0",
-		"place instance_rockwallberm2 48.52 8.72 4.6 0 -2 8 0 0 0 0",
-		--"place instance_rockwallberm2 57.4 72.97 4.0 0 4 8 0 0 0 0",
-		--"place instance_rockwallberm2 57.4 72.97 4.0 0 4 8 0 0 0 0",
-		--"place instance_rockwallberm2 57.4 72.97 4.0 0 4 8 0 0 0 0",
-
 
 		
 		
 		
 		
 		
-		"place instance_rockwallberm2 226.66 159.00 3.4 4 0 10 0 0 0 0",
-		"place instance_rockwallberm2 222.58 131.44 3.1 -2 0 10 0 0 0 0",
-		"place instance_rockwallberm2 214.31 110.05 3.5 -2 0 40 0 0 0 0",
-		--"place instance_rockwallberm2 198.73 98.92 3.5 -5 0 70 0 0 0 0",
-		"place instance_rockwallberm2 189.94 90.5 3.25 0 0 55 0 0 0 0",
-		"place instance_rockwallberm2 170.40 78.83 2.6 20 10 70 0 0 0 0",
+		"place instance_rockwall2 226.66 159.00 3.4 4 0 10 0 0 0 0",
+		"place instance_rockwall2 222.58 131.44 3.1 -2 0 10 0 0 0 0",
+		"place instance_rockwall2 214.31 110.05 3.5 -2 0 40 0 0 0 0",
+		--"place instance_rockwall2 198.73 98.92 3.5 -5 0 70 0 0 0 0",
+		"place instance_rockwall2 189.94 90.5 3.25 0 0 55 0 0 0 0",
+		"place instance_rockwall2 170.40 78.83 2.6 20 10 70 0 0 0 0",
 		
 		
 
