@@ -51,8 +51,11 @@ if(true) then
 		"place dg_veh_lcvp -35.66 189.92 3.2 0 0 130 0 0 0 0",
 		"place dg_veh_lcvp 1.72 157.33 3.4 0 0 125 0 0 0 0",
 		"place dg_veh_lcvp -77.0 195.28 3.3 -3 10 100 0 0 0 0",
-		"place dg_veh_lcvp 35.77 138.37 3.7 -3 0 115 0 0 0 0",
-		"place dg_veh_lcvp 51.34 134.44 3.91 -3 0 100 0 0 0 0",
+		"place dg_veh_lcvp 43.61 137.14 3.7 -3 0 115 0 0 0 0",
+		"place dg_veh_lcvp 58.94 135.27 3.3 -3 0 100 0 0 0 0",
+		
+
+		 
 		"place dg_veh_lcvp_lx 84.96 141.06 3.72 -3 0 120 0 0 0 0",
 		"place dg_veh_lcvp_lx 104.23 127.04 3.68 -3 0 130 0 0 0 0",
 		"place dg_veh_lcvp -113.65 226.54 3.54 0 0 100 0 0 0 0",
