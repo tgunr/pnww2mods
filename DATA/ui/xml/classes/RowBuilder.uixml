@@ -1,0 +1,107 @@
+<script>
+
+	<include file="classes/ViewBuilder.uixml"/>
+	<include file="classes/TextBuilder.uixml"/>
+	<include file="classes/ImageBuilder.uixml"/>
+
+	<!--
+	
+	function RowBuilder(par, id, x, y, w, h)
+	{
+		var self = new ViewBuilder(par, id, x, y, w, h);
+		
+		self.color 				= "#BFE2CE";
+		self.bgcolor 			= "#BFE2CE44";
+		self.hpadding		= 2;
+		self.vpadding		= 1;
+		self.columns			= new Array();
+		
+		self.addColumn	= function(loc, width, align)
+		{
+			var column = new Object();
+			
+			column["type"] 	= "caption";
+			column["loc"] 		= loc;
+			column["width"] 	= width;
+			column["align"] 	= align;
+			
+			this.columns.push(column);
+		}
+		
+		self.addChatIcon	= function(icon, width, size, pad)
+		{
+			var column = new Object();
+			
+			column["type"] 	= "chaticon";
+			column["icon"] 		= icon;
+			column["width"] 	= width;
+			column["size"] 		= size;
+			column["pad"] 		= pad;
+			
+			this.columns.push(column);
+		}
+		
+		self.buildRow = function()
+		{
+			// add our headers
+			
+			var totalWidth 			= this.nwidth;
+			var totalHeight 		= this.nheight;
+			
+			var workingWidth 	= totalWidth - (this.hpadding * (this.columns.length - 1));
+			var workingHeight 	= totalHeight - (this.vpadding * 2);
+			var currentX				= 0; 
+			
+			for(var i = 0; i < this.columns.length; i++)
+			{
+				var column 	= this.columns[i];
+				
+				var x				= currentX;
+				var y				= this.vpadding;
+				var h			= workingHeight;
+				var w			= workingWidth * column.width;
+				var cb			= null;
+				
+				if(column.type == "caption")
+				{
+					var label = getlocstring(column.loc);
+					
+					if(label.charAt(0) == "?")
+						label = column.loc;
+					
+					cb = new TextBuilder(this, "column" + i, "caption", label, x, y, w, h);
+					
+					if(column.align != null) cb.addAttribute("align", column.align);
+					if(this.color != null) 		cb.addStyle("color", this.color);
+					if(this.bgcolor != null) 	cb.addStyle("background-color", this.bgcolor);
+				}
+				else if(column.type == "chaticon")
+				{
+					var iconX = x + (w * column.pad) - (column.size * .5);   
+					var iconY	= (totalHeight * .5) - (column.size * .5);
+					var iconW = column.size;
+					var iconH = column.size;
+					
+					cb = new TextBuilder(this, "column" + i, "caption", "", iconX, iconY, iconW, iconH);
+					
+					cb.addAttribute("class", "chaticon");
+					cb.addAttribute("acceptmouseclick", "false");
+					cb.addAttribute("onshow", "this.channelname = '" + column.icon + "'");
+				}
+				
+				if(cb != null)
+					this.addBuilder(cb);
+				
+				currentX += w + this.hpadding;
+			}
+			
+			return this.buildView();
+		}
+		
+		self.build = self.buildRow;
+		
+		return self;
+	}
+	
+	-->
+</script>

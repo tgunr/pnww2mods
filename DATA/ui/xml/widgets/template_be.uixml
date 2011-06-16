@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<view id="template" x="0" y="0" width="1024" height="768" onshow="initTemplate(this)" style="background-image: ui/textures/template_be.bmp;">
+	<include file="lib/common.uixml"/>
+	<include file="lib/template.uixml"/>
+	<include file="widgets/idcard.uixml"/>
+	<view id="quick-help-bar" x="43" y="600" width="930" height="32" style="
+					border-sides: ui/textures/test/infobox_side.bmp;
+					border-corner: ui/textures/test/infobox_corner.bmp;
+					border-width: 16;
+					border-height: 16;">
+		<caption id="quick-help" x="20" y="0" height="32" width="800" style="font-size: +1; color: #FFFFCE;"/>
+		<button id="quick-help-hotspot" x="895" y="6" height="20" width="20"
+			style=" color: #FFFFFF; control-on: ui/textures/test/info_icon_on.bmp; control-off: ui/textures/test/info_icon_off.bmp;"
+			onclick="soundPlayClick(); quickhelp(null, true);"/>
+	</view>
+	<button id="quit-button" x="980" y="725" width="30" height="30" onclick="tplQuit()"
+		style="control-on: ui/textures/test/exit_on.bmp; control-off: ui/textures/test/exit_off.bmp;"
+		tip="${widgets.template.quit.tip}"/>
+	<button id="back-button" label="@widgets.template.back;" x="832" y="62" width="150" height="30" onclick="tplBack()"
+		style="control-on: ui/textures/test/back_on.bmp; control-off: ui/textures/test/back_off.bmp; control-disabled: ui/textures/test/back_disabled.bmp; color: #FFFFFF; font-size: -3;"
+		onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+		tip="${widgets.template.back.tip}"/>
+	<button id="forward-button" label="@widgets.template.next;" x="832" y="28" width="150" height="30" onclick="tplForward()"
+		style="control-on: ui/textures/test/next_on.bmp; control-off: ui/textures/test/next_off.bmp; control-disabled: ui/textures/test/next_disabled.bmp; color: #FFFFFF; font-size: -3;"
+		onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+		tip="${widgets.template.next.tip}"/>
+	<caption id="version" x="40" y="7" width="114" height="17" align="center" style="color: #000000; font-size: +1;" onshow="showVersion(this)" />
+</view>

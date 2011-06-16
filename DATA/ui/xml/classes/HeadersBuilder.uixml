@@ -1,0 +1,68 @@
+<script>
+
+	<include file="classes/ViewBuilder.uixml"/>
+	<include file="classes/TextBuilder.uixml"/>
+	<include file="classes/ImageBuilder.uixml"/>
+
+	<!--
+	
+	function HeadersBuilder(par, id, x, y, w, h)
+	{
+		var self = new ViewBuilder(par, id, x, y, w, h);
+		
+		self.color 				= "#BFE2CE";
+		self.bgcolor 			= "#BFE2CE44";
+		self.hpadding		= 2;
+		self.vpadding		= 2;
+		self.headers			= new Array();
+		
+		self.addHeader	= function(loc, width, align)
+		{
+			var header = new Object();
+			
+			header["loc"] 		= loc;
+			header["width"] 	= width;
+			header["align"] 	= align;
+			
+			headers.push(header);
+		}
+		
+		self.buildHeaders = function(pview)
+		{
+			// add our headers
+			
+			var totalWidth 			= this.par.nwidth;
+			var totalHeight 		= this.par.nheight;
+			
+			var workingWidth 	= totalWidth - (this.hpadding * 2) - (this.hpadding * (headers.length - 1));
+			var workingHeight 	= totalHeight - (this.vpadding * 2);
+			var currentX				= this.hpadding; 
+			
+			for(var i = 0; i < headers.length; i++)
+			{
+				var header 	= headers[i];
+				
+				var x				= currentX;
+				var y				= this.vpadding;
+				var h			= workingHeight;
+				var w			= workingWidth * header.width;
+				var hb			= new TextBuilder(this, "header" + i, "caption", getlocstring(header.loc), x, y, w, h);
+				
+				if(header.align != null)
+					hb.addAttribute("align", header.align);
+				
+				this.addBuilder(hb);
+				
+				currentX += w + this.hpadding;
+			}
+			
+			return this.buildView();
+		}
+		
+		self.build = self.buildHeaders;
+		
+		return self;
+	}
+	
+	-->
+</script>

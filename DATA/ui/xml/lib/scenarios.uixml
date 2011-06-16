@@ -20,7 +20,7 @@
 		
 		function loadCategory(category)
 		{
-			cprint("Loading category: " + category);
+			//cprint("Loading category: " + category);
 			
 			var root = loadRoot();
 			if(root == null) return null;
@@ -41,7 +41,7 @@
 		
 		function loadScenario(category, map)
 		{
-			cprint("Loading scenario: " + category + "/" + map);
+			//cprint("Loading scenario: " + category + "/" + map);
 			
 			var content = loadCategory(category);
 			if(content == null) return null;
@@ -69,24 +69,16 @@
 		function loadObjectives(scenario, team)
 		{
 			if(scenario == null || !game.online || game.player.client.persona == null)
-			{
-				cprint("Objectives fail 1");
 				return null;
-			}
 			
 			if(team == null)
 				team = game.player.client.persona.country.side;
 				
 			if(team < 1 || team > 2)
-			{
-				cprint("Objectives fail 2");
 				return null;
-			}
 			
-			if(scenario.links.length >= 2)
+			if(scenario.links != null && scenario.links.length >= 2)
 				return game.getcontent(scenario.links[team - 1].path);
-			
-			cprint("Objectives fail 3");
 				
 			return null;
 		}
@@ -106,7 +98,7 @@
 				client.joininstance(root.category, 0, 0, 0);
 			
 			// load our lobby windows 
-			loadWinToTab("scenarios/lobby", 1, true);
+			loadWin("scenarios/lobby", true);
 		}
 		
 		function joinInstance(instance, init)
@@ -114,7 +106,7 @@
 			if(instance == null)
 				return false;
 			
-			cprint("Joining instance " + instance.category + "/" + instance.type);
+			//cprint("Joining instance " + instance.category + "/" + instance.type);
 			
 			var scenario = loadScenario(instance.category, instance.type);
 			//var creator	= (instance.owner == ); 
@@ -139,7 +131,7 @@
 		
 		function createInstance(category, map)
 		{
-			cprint("Creating new instance: " + category + "/" + map);
+			//cprint("Creating new instance: " + category + "/" + map);
 			
 			if(game.player.client.createinstance(category, map))
 				return true;

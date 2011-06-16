@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
  
-<view id="id-card" x="5" y="640" width="200" height="120" style="background-image: ui/textures/test/idcard.bmp;" onupdate="updateIDCard()"
+<view id="id-card" x="0" y="640" width="200" height="120" style="background-image: ui/textures/test/idcard.bmp;" onupdate="updateIDCard()"
 	tip="${widgets.idcard.tip}">
 	
 	<caption x="10" height="15" width="200" rtop="6" style="font-size: -2; color: #000000ff;" label="${widgets.idcard.status}:"/>

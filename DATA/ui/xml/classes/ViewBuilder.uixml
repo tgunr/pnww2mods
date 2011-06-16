@@ -135,7 +135,7 @@
 			if(this.ny < 0) // from the top
 			{
 				if(this.ny <= -1)
-					this.ny = this.par.nheight - this.ny - this.nheight;
+					this.ny = (this.par.nheight + this.ny) - this.nheight;
 				else if(this.ny > -1 && this.ny < 0) // percentage of height
 					this.ny = this.par.nheight - (this.par.nheight * (-1 * this.ny)) - this.nheight;
 			}
