@@ -18,12 +18,14 @@ alliedcapon = Allied forces are capturing the bridge!
 alliedcapoff = Axis forces have re-taken the bridge!
 
 objective1.1.1.1 = Capture the Bridge
-objective1.2.1.1 = Defend the Bridge</body>
+objective1.2.1.1 = Defend the Bridge
+
+scenario.help = LE PONT DU MAL: THE EVIL BRIDGE</body>
   <bodyloc>true</bodyloc>
   <brief>An American convoy is headed south towards the bridge and have orders to capture and hold it until reinforcements arrive. A small German unit is camped in town and are desperate to defend the bridge from capture.
-<br><br>
-Americans- capture and hold the bridge for 30 seconds
-<br>
+
+Americans- capture and hold the bridge for 45 seconds
+
 Germans- keep the enemy from reaching their objective for 15 minutes</brief>
   <duration>15</duration>
   <enemydeaths>true</enemydeaths>

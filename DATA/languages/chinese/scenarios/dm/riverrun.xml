@@ -19,8 +19,10 @@ intelenemyoff = 你方在敌方内不再有特工。
 intelfriendlyon = 敌人在你方有特工！
 intelfriendlyoff = 敌人在你方不再有特工。</body>
   <bodyloc>true</bodyloc>
-  <brief>在南面桥梁炸毁前，铁血军已通过该桥梁，向前开进。现在，红军必须由营地出发防守他们的城镇。<br><br>
-在10分钟内尽可能多地杀死敌方士兵。<br>
+  <brief>在南面桥梁炸毁前，铁血军已通过该桥梁，向前开进。现在，红军必须由营地出发防守他们的城镇。
+
+在10分钟内尽可能多地杀死敌方士兵。
+
 阵营击杀总数最先达到50的一方获胜。</brief>
   <draw>35</draw>
   <duration>15</duration>
@@ -31,8 +33,8 @@ intelfriendlyoff = 敌人在你方不再有特工。</body>
   <hour>16</hour>
   <ingamemap>76 -69 .038</ingamemap>
   <links>
-    <link path="scenarios/dm/objectives/riverrun1.xml" title="team1" />
-    <link path="scenarios/dm/objectives/riverrun2.xml" title="team2" />
+    <link path="scenarios/dm/objectives/riverrun1.xml" title="队1" />
+    <link path="scenarios/dm/objectives/riverrun2.xml" title="队2" />
   </links>
   <rules>deathmatch</rules>
   <team1>2</team1>

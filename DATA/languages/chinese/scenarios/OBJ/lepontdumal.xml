@@ -20,9 +20,9 @@ objectivel1.1.1.1 = 占领桥梁
 objectivel1.2.1.1 = 防守桥梁</body>
   <bodyloc>true</bodyloc>
   <brief>一支铁血军护卫分队朝南部的桥梁进发，军令为：占领并控制住桥梁直到增援部队抵达。一支红国小分队驻扎在镇上，需要不惜一切代价防守住桥梁，避免桥梁被占领。
-<br><br>
-美军- 占领并守住桥梁30秒
-<br>
+
+铁血军- 占领并守住桥梁45秒
+
 红国- 15分钟内阻止敌人达成目标</brief>
   <duration>15</duration>
   <enemydeaths>true</enemydeaths>
@@ -32,8 +32,8 @@ objectivel1.2.1.1 = 防守桥梁</body>
   <hour>7</hour>
   <ingamemap>107.8 38.9 .041</ingamemap>
   <links>
-    <link path="scenarios/dm/objectives/lepontdumal1.xml" title="team1" />
-    <link path="scenarios/dm/objectives/lepontdumal2.xml" title="team2" />
+    <link path="scenarios/dm/objectives/lepontdumal1.xml" title="队1" />
+    <link path="scenarios/dm/objectives/lepontdumal2.xml" title="队2" />
   </links>
   <rules>lepontdumal</rules>
   <team1>2</team1>

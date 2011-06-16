@@ -19,8 +19,10 @@ intelenemyoff = Your side no longer has intel on the enemy.
 intelfriendlyon = The enemy has intel on your side!
 intelfriendlyoff = The enmy no longer has intel on your side.</body>
   <bodyloc>true</bodyloc>
-  <brief>The Americans advanced via the south bridge before it was blown. Now the Germans must defend the town from their camp.<br><br>
-Kill as many enemy soliders as possible in 10 minutes<br>
+  <brief>The Americans advanced via the south bridge before it was blown. Now the Germans must defend the town from their camp.
+
+Kill as many enemy soliders as possible in ${duration} minutes
+
 The first team to reach 50 kills wins.</brief>
   <draw>35</draw>
   <duration>15</duration>

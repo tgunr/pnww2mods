@@ -1,5 +1,6 @@
 <?xml version='1.0'?>
 <content type="3">
+  <name>obj_dieppe</name>
   <body>onspawn.moveout * Dieppe Raid
 victory1 * Allied Victory! Allied forces have pushed the German defenders out of town.
 victory2 * Axis Victory! German forces have successfully defended the town from Allied raiders.
@@ -48,6 +49,22 @@ objective2 = Division HQ
 minefield = minefield
 alliedcapon = American forces are capturing the Division HQ!
 alliedcapoff = Axis forces have re-captured the Division HQ!</body>
+  <bodyloc>true</bodyloc>
   <brief>The Allies raid Dieppe township.</brief>
+  <duration>30</duration>
+  <enemydeaths>true</enemydeaths>
+  <enemyicontypeonly>true</enemyicontypeonly>
+  <firingenemyicons>true</firingenemyicons>
+  <fog>1</fog>
+  <hour>7</hour>
+  <ingamemap>52292.90 2996679.50 0.00</ingamemap>
+  <rules>dieppe</rules>
+  <team1>2</team1>
+  <team1min>2</team1min>
+  <team2>4</team2>
+  <team2min>2</team2min>
+  <terrain></terrain>
   <title>Dieppe Raid</title>
+  <victory></victory>
+  <weather>0</weather>
 </content>
