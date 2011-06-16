@@ -378,8 +378,8 @@ if(true) then
 
 	-- messagae when americans are securing the beachhead	
 	"message objective1 beachfalling #FF6600 10",
-	"message beachcrossingon beachcrossingon #00FF00 0",
-	"message beachcrossingoff beachcrossingoff #FF0000 0",
+	"message.1.1.1 beachcrossingon beachcrossingon #00FF00 0",
+	"message.1.1.1 beachcrossingoff beachcrossingoff #FF0000 0",
 	
 	-- waypoints
 		"waypoint.1.1.0 onspawn vierville_draw -171.81 6.42 20.34 #FF6600",
