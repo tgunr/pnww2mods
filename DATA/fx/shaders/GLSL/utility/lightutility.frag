@@ -424,22 +424,19 @@ void lightGetAmbientDiffuseSpecular(in vec3 t,
 		
 		d = max(dot(normal, Ltan), 0.0);
 				
-		if(d > 0.0)
-		{
-			diffuse += d * lightsource[0].diffuse;
-			
-			H = normalize(L + V);
+		diffuse += d * lightsource[0].diffuse;
 		
-			// Tangent
-			Htan.x = dot(H, t);
-			Htan.y = dot(H, b);
-			Htan.z = dot(H, n);
+		H = normalize(L + V);
+		
+		// Tangent
+		Htan.x = dot(H, t);
+		Htan.y = dot(H, b);
+		Htan.z = dot(H, n);
 	
-			s = max(dot(normal, Htan), 0.0);
-			s = pow(s, level);
+		s = max(dot(normal, Htan), 0.0);
+		s = pow(s, level);
 		
-			specular += s * lightsource[0].specular;
-		}
+		specular += s * lightsource[0].specular;
 
 		ambient += lightsource[0].ambient;
 	}
@@ -454,22 +451,19 @@ void lightGetAmbientDiffuseSpecular(in vec3 t,
 		
 		d = max(dot(normal, Ltan), 0.0);
 				
-		if(d > 0.0)
-		{
-			diffuse += d * lightsource[1].diffuse;
+		diffuse += d * lightsource[1].diffuse;
 			
-			H = normalize(L + V);
+		H = normalize(L + V);
 		
-			// Tangent
-			Htan.x = dot(H, t);
-			Htan.y = dot(H, b);
-			Htan.z = dot(H, n);
+		// Tangent
+		Htan.x = dot(H, t);
+		Htan.y = dot(H, b);
+		Htan.z = dot(H, n);
 	
-			s = max(dot(normal, Htan), 0.0);
-			s = pow(s, level);
+		s = max(dot(normal, Htan), 0.0);
+		s = pow(s, level);
 		
-			specular += s * lightsource[1].specular;
-		}
+		specular += s * lightsource[1].specular;
 
 		ambient += lightsource[1].ambient;
 	}
@@ -487,22 +481,19 @@ void lightGetAmbientDiffuseSpecular(in vec3 t,
 		
 		d = max(dot(normal, Ltan), 0.0);
 				
-		if(d > 0.0)
-		{
-			diffuse += a * d * lightsource[2].diffuse;
+		diffuse += a * d * lightsource[2].diffuse;
 			
-			H = normalize(L + V);
+		H = normalize(L + V);
 		
-			// Tangent
-			Htan.x = dot(H, t);
-			Htan.y = dot(H, b);
-			Htan.z = dot(H, n);
+		// Tangent
+		Htan.x = dot(H, t);
+		Htan.y = dot(H, b);
+		Htan.z = dot(H, n);
 	
-			s = max(dot(normal, Htan), 0.0);
-			s = pow(s, level);
+		s = max(dot(normal, Htan), 0.0);
+		s = pow(s, level);
 		
-			specular += a * s * lightsource[2].specular;
-		}
+		specular += a * s * lightsource[2].specular;
 
 		ambient += a * lightsource[2].ambient;
 	}
@@ -520,22 +511,19 @@ void lightGetAmbientDiffuseSpecular(in vec3 t,
 		
 		d = max(dot(normal, Ltan), 0.0);
 				
-		if(d > 0.0)
-		{
-			diffuse += a * d * lightsource[3].diffuse;
+		diffuse += a * d * lightsource[3].diffuse;
 			
-			H = normalize(L + V);
+		H = normalize(L + V);
 		
-			// Tangent
-			Htan.x = dot(H, t);
-			Htan.y = dot(H, b);
-			Htan.z = dot(H, n);
+		// Tangent
+		Htan.x = dot(H, t);
+		Htan.y = dot(H, b);
+		Htan.z = dot(H, n);
 	
-			s = max(dot(normal, Htan), 0.0);
-			s = pow(s, level);
+		s = max(dot(normal, Htan), 0.0);
+		s = pow(s, level);
 		
-			specular += a * s * lightsource[3].specular;
-        }
+		specular += a * s * lightsource[3].specular;
 
 		ambient += a * lightsource[3].ambient;
 	}
