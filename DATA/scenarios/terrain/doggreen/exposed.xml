@@ -18,22 +18,23 @@
   </trees>
   <grass>
     <!-- The higher the weight, the lest dense -->
-    <greenweight>1</greenweight>
+   <redweight>1</redweight>   
+   <greenweight>5</greenweight>
     <blueweight>0</blueweight>
-    <redweight>1</redweight>
-	<redtypeint>0 1 2 3</redtypeint>
-    <greentypeint>1 2 3 4</greentypeint>
-    <bluetypeint>13 14 16 13 14</bluetypeint>
+	
+	<redtypeint>1 2 3</redtypeint>
+    <greentypeint>4 6 7</greentypeint>
+    <bluetypeint>12 13 14 15</bluetypeint>
     <!-- Color clamped between 0 - 255 -->
     <!-- Example: redclamp 100 will clamp red mask grass to red color >= 100 -->
     <!-- The higher the clamp, the less number of blades placed-->
     <redclamp>50</redclamp>
     <grnclamp>10</grnclamp>
-    <bluclamp>150</bluclamp>
+    <bluclamp>200</bluclamp>
     <!-- default is 1.0 -->
     <redscale>0.50</redscale>
     <grnscale>1.0</grnscale>
-    <bluscale>2.0</bluscale>
+    <bluscale>0.75</bluscale>
   </grass>
   <!-- Clutter that uses FLTs (Maximum of 8 clutter masks)-->
   
