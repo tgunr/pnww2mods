@@ -128,6 +128,7 @@ if(true) then
 
 	-- west side minefield
 		"area landmine1 OnMineArea 51999.91 2996961.96 15.94",
+		"area landmine1 OnMineArea 52015.30 2996627.13 0.47",
 		"area landmine1 OnMineArea 51742.57 2996635.34 21.54",
 		"area landmine1 OnMineArea 51763.71 2996643.74 21.43",
 		"area landmine1 OnMineArea 51824.73 2996731.69 15.38",
@@ -143,12 +144,9 @@ if(true) then
 		"area landmine2 OnMineArea 51887.08 2996614.63 11.34",
 		
 	-- east side minefield
+		"area landmine3 OnMineArea 52773.13 2996606.87 0.00",
 		"area landmine3 OnMineArea 52746.84 2996607.11 0.00",
 		"area landmine3 OnMineArea 52743.08 2996699.70 0.00",
-		"area landmine3 OnMineArea 52783.10 2996658.90 0.00",
-		"area landmine3 OnMineArea 52774.42 2996607.57 0.00",
-		
-	--east side nearer beach minefield
 		"area landmine3 OnMineArea 52690.11 2996796.95 0.00",
 		"area landmine3 OnMineArea 52678.17 2996809.88 0.23",
 		"area landmine3 OnMineArea 52673.01 2997024.69 9.70",
@@ -156,10 +154,10 @@ if(true) then
 		
 
 	-- back side minefield
-		"area landmine4 OnMineArea 52000.22 2996390.68 0.00",
-		"area landmine4 OnMineArea 52399.04 2996388.77 0.00",
-		"area landmine4 OnMineArea 52399.29 2996325.18 0.37",
-		"area landmine4 OnMineArea 51999.77 2996317.72 0.42",
+		"area landmine4 OnMineArea 52011.22 2996390.68 0.00",
+		"area landmine4 OnMineArea 52388.04 2996388.77 0.00",
+		"area landmine4 OnMineArea 52388.04 2996325.18 0.37",
+		"area landmine4 OnMineArea 52010.77 2996317.72 0.42",
 				
 
 		
@@ -378,37 +376,37 @@ if(true) then
 		--"handler objective1 OnReinforcements",
 		
 	-- stage 1a area allies have to reach to open stage 2 inf spawns and open tank spawning
-	-- Only allies trigger this area (obj1)
-		"area beachcrossing OnState  52240.68 2996800.04 0.00",
-		"area beachcrossing OnState 52240.65 2996793.21 0.00",
-		"area beachcrossing OnState 52228.63 2996792.59 0.00",
-		"area beachcrossing OnState 52230.48 2996783.03 0.00",
-		"area beachcrossing OnState 52128.92 2996767.96 0.00",
-		"area beachcrossing OnState 52134.06 2996789.83 0.00",
-		"area beachcrossing OnState 52149.55 2996788.31 0.00",
-		"area beachcrossing OnState 52151.87 2996777.95 0.00",
-		"area beachcrossing OnState 52171.82 2996779.90 0.00",
-		"area beachcrossing OnState 52174.61 2996788.53 0.00",
-		"area beachcrossing OnState 52192.82 2996786.72 0.00",
-		"area beachcrossing OnState 52192.18 2996778.08 0.00",
-		"area beachcrossing OnState 52208.77 2996776.42 0.00",
-		"area beachcrossing OnState 52215.26 2996791.75 0.00",
-		"area beachcrossing OnState 52226.19 2996792.07 0.00",
-		"area beachcrossing OnState 52226.51 2996797.74 0.00",
-		"area beachcrossing OnState 52240.03 2996798.48 0.00",
+	-- Only allies trigger this area (obj1a)
+		"area beachcrossing1a OnState 52240.68 2996794.04 0.00",
+		"area beachcrossing1a OnState 52240.65 2996793.21 0.00",
+		"area beachcrossing1a OnState 52228.63 2996792.59 0.00",
+		"area beachcrossing1a OnState 52230.48 2996770.02 0.00",
+		"area beachcrossing1a OnState 52096.92 2996763.96 0.00",
+		"area beachcrossing1a OnState 52134.06 2996789.83 0.00",
+		"area beachcrossing1a OnState 52149.55 2996788.31 0.00",
+		"area beachcrossing1a OnState 52151.87 2996777.95 0.00",
+		"area beachcrossing1a OnState 52171.82 2996779.90 0.00",
+		"area beachcrossing1a OnState 52174.61 2996788.53 0.00",
+		"area beachcrossing1a OnState 52192.82 2996786.72 0.00",
+		"area beachcrossing1a OnState 52192.18 2996778.08 0.00",
+		"area beachcrossing1a OnState 52208.77 2996776.42 0.00",
+		"area beachcrossing1a OnState 52215.26 2996791.75 0.00",
+		"area beachcrossing1a OnState 52226.19 2996792.07 0.00",
+		"area beachcrossing1a OnState 52226.51 2996797.74 0.00",
+		"area beachcrossing1a OnState 52240.03 2996798.48 0.00",
 
 	-- stage 1b area allies have to reach to open stage 2 inf spawn and open tank spawning
-	-- Only allies trigger this area (obj1)
-		"area beachcrossing OnState 52402.11 2996800.07 0.00",
-		"area beachcrossing OnState 52548.98 2996799.07 0.00",
-		"area beachcrossing OnState 52549.34 2996790.21 0.00",
-		"area beachcrossing OnState 52444.17 2996789.49 0.00",
-		"area beachcrossing OnState 52430.50 2996778.88 0.00",
-		"area beachcrossing OnState 52420.00 2996787.01 0.00",
-		"area beachcrossing OnState 52424.61 2996797.22 0.00",
-		"area beachcrossing OnState 52408.64 2996796.85 0.00",
-		"area beachcrossing OnState 52408.47 2996790.73 0.00",
-		"area beachcrossing OnState 52401.38 2996791.21 0.00",
+	-- Only allies trigger this area (obj1b)
+		"area beachcrossing1b OnState 52402.11 2996800.07 0.00",
+		"area beachcrossing1b OnState 52577.98 2996816.07 0.00",
+		"area beachcrossing1b OnState 52576.34 2996790.21 0.00",
+		"area beachcrossing1b OnState 52444.17 2996789.49 0.00",
+		"area beachcrossing1b OnState 52430.50 2996778.88 0.00",
+		"area beachcrossing1b OnState 52420.00 2996787.01 0.00",
+		"area beachcrossing1b OnState 52424.61 2996797.22 0.00",
+		"area beachcrossing1b OnState 52408.64 2996796.85 0.00",
+		"area beachcrossing1b OnState 52408.47 2996790.73 0.00",
+		"area beachcrossing1b OnState 52401.38 2996791.21 0.00",
 		
 		
 	
@@ -455,110 +453,108 @@ if(true) then
 -- stage 1 ALLIED spawns 
 
 	-- Spawn 1a (switch off when Allies achieve stage 1a objective)
-		"spawn.1.1.1 alliedtroops 52177.57 2997000.60 10.09 0 0 180",
-		"spawn.1.1.1 alliedtroops 52165.19 2996997.84 10.28 0 0 180",
-		"spawn.1.1.1 alliedtroops 52156.31 2996993.36 10.73 0 0 180",
+		"spawn alliedtroops 52177.57 2997000.60 10.09 0 0 180",
+		"spawn alliedtroops 52165.19 2996997.84 10.28 0 0 180",
+		"spawn alliedtroops 52156.31 2996993.36 10.73 0 0 180",
 
 	-- Spawn 1b (switch off when Allies achieve stage 1b objective)
-		"spawn.1.1.1 alliedtroops 52534.76 2997100.17 1.01 0 0 180",
-		"spawn.1.1.1 alliedtroops 52547.56 2997092.00 1.52 0 0 180",
-		"spawn.1.1.1 alliedtroops 52568.62 2997082.65 2.00 0 0 180",
+		"spawn alliedtroops 52534.76 2997100.17 1.01 0 0 180",
+		"spawn alliedtroops 52547.56 2997092.00 1.52 0 0 180",
+		"spawn alliedtroops 52568.62 2997082.65 2.00 0 0 180",
 		
 	
 
 -- stage 1 AXIS spawns 
 
 	-- forwardinf-A spawns(switch off when allies capture objective 1a)
-		"spawn.2.1.1 axistroops1 52144.18 2996655.55 3.19 0 0 0",
-		"spawn.2.1.1 axistroops1 52133.84 2996660.96 6.16 0 0 0",
-		"spawn.2.1.1 axistroops1 52071.04 2996667.38 0.00 0 0 45",
+		"spawn axistroops1 52144.18 2996655.55 3.19 0 0 0",
+		"spawn axistroops1 52133.84 2996660.96 6.16 0 0 0",
+		"spawn axistroops1 52071.04 2996667.38 0.00 0 0 45",
 
 	-- forwardinf-B spawns (switch off when allies capture objective 1b)
-		"spawn.2.1.1 axistroops1 52432.13 2996663.19 6.16 0 0 270",
-		"spawn.2.1.1 axistroops1 52448.75 2996661.75 6.16 0 0 0",
-		"spawn.2.1.1 axistroops1 52655.90 2996672.85 -0.00 0 0 315",
+		"spawn axistroops1 52432.13 2996663.19 6.16 0 0 270",
+		"spawn axistroops1 52448.75 2996661.75 6.16 0 0 0",
+		"spawn axistroops1 52655.90 2996672.85 -0.00 0 0 315",
 	
 	-- dockfront spawns (switch off when allies capture either objective 1a or 1b)
-		"spawn.2.1.1 axistroops1 52299.90 2996662.55 9.14 0 0 270",
-		"spawn.2.1.1 axistroops1 52323.94 2996660.01 9.14 0 0 0",
-		"spawn.2.1.1 axistroops1 52285.38 2996704.51 -1.72 0 0 90",
+		"spawn axistroops1 52299.90 2996662.55 9.14 0 0 270",
+		"spawn axistroops1 52323.94 2996660.01 9.14 0 0 0",
+		"spawn axistroops1 52285.38 2996704.51 -1.72 0 0 90",
 
 
 	-- mg nest1a (this closes when allies achieve stage 1a objective)
-		"spawn.2.1.1 axistroops -137.83 -79.05 40.19 0",
+		"spawn axistroops -137.83 -79.05 40.19 0",
 
 	-- mg nest1b (this closes when allies achieve stage 1b objective)
-		"spawn.2.1.1 axislmg 52486.68 2996747.17 9.92",
+		"spawn axislmg 52486.68 2996747.17 9.92",
 		
 	-- ATG1a spawns (these close when allies achieve stage 1a objective)
-		"spawn.2.1.1 pak40 52141.67 2996772.26 0.00 0 0 0",
-		"spawn.2.1.1 pak40 52182.91 2996771.44 0.00 0 0 0",
+		"spawn pak40 52141.67 2996772.26 0.00 0 0 0",
+		"spawn pak40 52182.91 2996771.44 0.00 0 0 0",
 
 	-- ATG1b spawn (these close when allies achieve stage 1b objective)
-		"spawn.2.1.1 pak40 52401.17 2996706.47 0.00 0 0 315",
-		"spawn.2.1.1 pak40 52431.24 2996787.91 0.00 0 0 315",
+		"spawn pak40 52401.17 2996706.47 0.00 0 0 315",
+		"spawn pak40 52431.24 2996787.91 0.00 0 0 315",
 		
 -- stage 2 ALLIED spawns
 	-- Spawn 2a (switch off when Allies achieve stage 2 objective)
-		"spawn.2.1.1 alliedtroops 52241.57 2997072.03 1.81 0 0 180",
-		"spawn.2.1.1 alliedtroops 52221.14 2997056.36 3.53 0 0 180",
-		"spawn.2.1.1 alliedtroops 52200.75 2997054.05 3.55 0 0 180",
+		"spawn alliedtroops 52241.57 2997072.03 1.81 0 0 180",
+		"spawn alliedtroops 52221.14 2997056.36 3.53 0 0 180",
+		"spawn alliedtroops 52200.75 2997054.05 3.55 0 0 180",
 
 	-- Spawn 2b (switch off when Allies achieve stage 2 objective)
-		"spawn.2.1.1 alliedtroops 52534.76 2997100.17 1.01 0 0 180",
-		"spawn.2.1.1 alliedtroops 52547.56 2997092.00 1.52 0 0 180",
-		"spawn.2.1.1 alliedtroops 52568.62 2997082.65 2.00 0 0 180",
+		"spawn alliedtroops 52534.76 2997100.17 1.01 0 0 180",
+		"spawn alliedtroops 52547.56 2997092.00 1.52 0 0 180",
+		"spawn alliedtroops 52568.62 2997082.65 2.00 0 0 180",
 
 	-- Tank Spawns
-		"spawn.2.3.1 church3 52252.95 2997081.07 0.80 0 10 180",
-		"spawn.2.3.1 church3 52237.16 2997067.30 2.35 0 15 180",
-		"spawn.2.3.1 church3 52217.93 2997046.87 4.71 0 15 180",
+		"spawn church3 52252.95 2997081.07 0.80 0 10 180",
+		"spawn church3 52237.16 2997067.30 2.35 0 15 180",
+		"spawn church3 52217.93 2997046.87 4.71 0 15 180",
 	
 -- stage 2 AXIS spawns
 	-- west spawns (these close when allies achieve stage 2 objective)
-		"spawn.2.1.1 axistroops1 52035.59 2996637.50 5.01 0 0 45",
-		"spawn.2.1.1 axistroops1 52050.94 2996611.82 5.17 315",
+		"spawn axistroops1 52035.59 2996637.50 5.01 0 0 45",
+		"spawn axistroops1 52050.94 2996611.82 5.17 315",
 
 	-- east spawns (these close when allies achieve stage 2 objective)
-		"spawn.2.1.1 axistroops1 52538.34 2996638.15 3.18 0 0 180",
-		"spawn.2.1.1 axistroops1 52553.08 2996634.37 6.16 270",
+		"spawn axistroops1 52538.34 2996638.15 3.18 0 0 180",
+		"spawn axistroops1 52553.08 2996634.37 6.16 270",
 
 	-- center spawns (these close when allies achieve stage 2 objective)
-		--"spawn.2.1.1 axistroops1 -176.06 36.48 16.88 90",
+		--"spawn axistroops1 -176.06 36.48 16.88 90",
 	
 	-- ATG2 spawns (these close when allies achieve stage 2 objective)
-		"spawn.2.1.1 pak40 52029.23 2996633.96 0.00 0 0 0",
-		"spawn.2.1.1 pak40 52242.49 2996662.70 0.00 0 0 270",
+		"spawn pak40 52029.23 2996633.96 0.00 0 0 0",
+		"spawn pak40 52242.49 2996662.70 0.00 0 0 270",
 
 		
 -- stage 3 ALLIED spawns
 	-- Spawn 3
-		"spawn.1.1.1 alliedtroops 52294.92 2996639.88 9.14 0 0 180",
-		"spawn.1.1.1 alliedtroops 52318.17 2996636.06 9.14 0 0 90",
-		"spawn.1.1.1 alliedtroops 52276.58 2996653.44 6.16 0 0 270",
-		"spawn.1.1.1 alliedtroops 52249.38 2996649.40 3.18 0 0 0",
-		"spawn.1.1.1 alliedtroops 52206.80 2996650.26 6.16 0 0 0",
-		"spawn.1.1.1 alliedtroops 52231.70 2996650.37 3.18 0 0 0",
+		"spawn alliedtroops 52294.92 2996639.88 9.14 0 0 180",
+		"spawn alliedtroops 52318.17 2996636.06 9.14 0 0 90",
+		"spawn alliedtroops 52276.58 2996653.44 6.16 0 0 270",
+		"spawn alliedtroops 52249.38 2996649.40 3.18 0 0 0",
+		"spawn alliedtroops 52206.80 2996650.26 6.16 0 0 0",
+		"spawn alliedtroops 52231.70 2996650.37 3.18 0 0 0",
 	
 -- stage 3 AXIS spawns
 	-- factory spawns
-		"spawn.3.1.1 axistroops1 52352.29 2996516.77 5.01 0 0 90",
-		"spawn.3.1.1 axistroops1 52369.10 2996490.77 5.17 0 0 0",
-		"spawn.3.1.1 axistroops1 52364.48 2996474.00 3.55 0 0 0",
+		"spawn axistroops1 52352.29 2996516.77 5.01 0 0 90",
+		"spawn axistroops1 52369.10 2996490.77 5.17 0 0 0",
+		"spawn axistroops1 52364.48 2996474.00 3.55 0 0 0",
 
 	-- farm building spawns
-		"spawn.3.1.1 axistroops1 52115.82 2996456.52 0.36 0 0 0",
-		"spawn.3.1.1 axistroops1 52150.05 2996441.91 0.36 0 0 270",
-		"spawn.3.1.1 axistroops1 52135.53 2996463.53 3.18 0 0 90",
+		"spawn axistroops1 52115.82 2996456.52 0.36 0 0 0",
+		"spawn axistroops1 52150.05 2996441.91 0.36 0 0 270",
+		"spawn axistroops1 52135.53 2996463.53 3.18 0 0 90",
 		
 	-- last base spawns
-		"spawn.3.1.1 axistroops1 52110.66 2996519.36 3.18 0 0 180",
+		"spawn axistroops1 52110.66 2996519.36 3.18 0 0 180",
 	
 	-- mg nest3
-		"spawn.2.1.2 de-lmg 52104.49 2996524.21 5.63 0 0 0",
+		"spawn de-lmg 52104.49 2996524.21 5.63 0 0 0",
 
-				
-		
 	};
 
 	for i,v in ipairs(content) do 
