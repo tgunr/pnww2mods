@@ -7,18 +7,17 @@ if(true) then
 		-- special handling
 		-- type shader x y z yaw
 		"coast water1 doggreen_coast 0 0 3.65 0.0",
+		"ocean water1 doggreen_ocean 800 0 3.65 0",
+		"ocean water1 doggreen_ocean 0 790 3.8 0",
+		"ocean water1 doggreen_ocean 800 800 3.65 0",
+		"ocean water1 doggreen_ocean 800 1600 3.65 0",
+		"ocean water1 doggreen_ocean 0 1590 3.65 0",
+		"ocean water1 doggreen_ocean -800 0 3.65 0",
+		"ocean water1 doggreen_ocean -800 800 3.65 0",
+		"ocean water1 doggreen_ocean -800 1600 3.65 0",
 
 		-- placed objects
-		-- command,filename,worldx,worldy,worldz,roll,pitch,yaw,scalex,scaley,scalez,damage
-		"place water1 800 0 3.65 0 0 0 0 0 0 0",
-		"place water1 0 790 3.8 0 0 0 0 0 0 0",
-		"place water1 800 800 3.65 0 0 0 0 0 0 0",
-		"place water1 800 1600 3.65 0 0 0 0 0 0 0",
-		"place water1 0 1590 3.65 0 0 0 0 0 0 0",
-		"place water1 -800 0 3.65 0 0 0 0 0 0 0",
-		"place water1 -800 800 3.65 0 0 0 0 0 0 0",
-		"place water1 -800 1600 3.65 0 0 0 0 0 0 0",
-			
+		-- command,filename,worldx,worldy,worldz,roll,pitch,yaw,scalex,scaley,scalez,damage		
 		"place doggreen_ob3 0 0 0 0 0 0 0 0 0 0",
 		"place doggreen_ob3_barbedwire 0 0 0 0 0 0 0 0 0 0",
 		"place doggreen_ob3_logbunker 0 0 0 0 0 0 0 0 0 0",
