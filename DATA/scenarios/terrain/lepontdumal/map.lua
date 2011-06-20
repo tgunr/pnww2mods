@@ -168,7 +168,7 @@ if(true) then
 		
 		
 		
-		"place dg_wire_barbed_apron	116.5 5.58 7.2 -10 -10 -55 0 0 0",
+		"place dg_wire_barbed_apron	116.6 7.5 6.85 -10 -10 -50 0 0 0",
 		"place dg_wire_barbed_apron 129.0 16 7.36 0 10 -65 0 0 0",
 
 		"place sandbagwall_outside 130.9 34.08 7.0 0 0 110 0 0 0 0",
@@ -176,6 +176,14 @@ if(true) then
 		
 		"place sandbagwall_outside 129.45 26.43 7.0 0 0 110 0 0 0 0",
 		"place dg_wire_barbed_box 129.45 27.3 7.0 0 0 20 0 0 0",
+		
+		"place dg_wire_barbed_apron	136.4 27 6.5 15 0 -25 0 0 0",
+		"place dg_wire_barbed_apron	109.5 1 7.2 -5 -5 145 0 0 0",
+		
+		
+		
+		
+		
 
 
 			
