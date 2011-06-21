@@ -139,7 +139,24 @@ if(true) then
 		"place ammocrate 22.02 -113.26 38.65 -5 -5 -15 0 0 0 0",
 		"place crate 22.82 -112.70 38.25 0 0 -25 0 0 0 0",
 		"place sandbagwall_curved_outside 23.8 -111.99 39.4 0 -5 140 0 0 0 0",	
+		"place dg_wire_barbed_apron	38.7 -176.5 44.25 0 0 -20 0 0 0",
+		"place dg_obs_stake	-194.40 -192.18 40.75 10 0 0 0 0 0",
+		"place dg_obs_stake	-192.7 -183.32 41.16 5 0 0 0 0 0",
+		"place dg_obs_stake	-185.53 -146.3 39.0 10 0 0 0 0 0",
+		"place dg_obs_stake	-182.47 -138.3 38.0 5 5 0 0 0 0",
+		"place dg_obs_stake	-174.0 -123.11 38.17 5 0 0 0 0 0",
+		"place dg_obs_stake	-170.54 -113.45 37.8 10 5 0 0 0 0",
+		"place dg_obs_stake	-141.76 -34.46 35 0 5 0 0 0 0",
+		"place dg_obs_stake	-111.55 -31.37 36.0 0 -5 0 0 0 0",
+		"place dg_obs_stake	-104 -34 36.5 0 2 0 0 0 0",
+		"place dg_obs_stake	49.46 -131.24 38.0 10 0 0 0 0 0",
+		"place dg_obs_stake	63.53 -142.90 38.35 0 -10 0 0 0 0",
 		
+		
+
+
+
+
 
 		-- german spawn
 		
