@@ -177,7 +177,11 @@
 	
 	function onNetError(host, error, code, callback)
 	{
-		var message = getlocstring(host) + " (" + code + "):\n" + getlocstring(error);
+		if(host == null) host = "connect.host";
+		if(error == null) error = "connect.error.unknown";
+		if(code == null) code = "-1";
+		
+		var message = getlocstring(host.toLowerCase()) + " (" + code + "):\n" + getlocstring(error.toLowerCase());
 		var handler = (game[callback] != null) ? game[callback] : null; 
 		
 		if(handler != null)

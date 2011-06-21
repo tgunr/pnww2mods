@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
-<view id="loading" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
+<window id="loading" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
 	style="background-image: Splashscreen.bmp;" aspectalign="center" onshow="initWin(this)">
+	<include file="lib/common.uixml"/>
 	<progressbar id="progress" x="295" y="221" width="428" height="15" minvalue="0" maxvalue="1"
 		fill="ui/textures/hud/blood-level-fill.bmp" background="ui/textures/hud/back-level-fill.bmp"/>
 	<caption id="status" x="295" y="221" width="428" height="15" align="center" style="color: #000000;  background-color: #00000000"/>
@@ -17,6 +18,8 @@
 		{
 			game.consoleclear();
 			
+			initGlobals();
+			
 			// game callbacks
 			game.onloadevent = doLoadEvent;
 		}
@@ -29,4 +32,4 @@
 		
 		-->
 	</script>
-</view>
+</window>
