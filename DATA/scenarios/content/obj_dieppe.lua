@@ -6,20 +6,21 @@ if(true) then
 	{
 		-- include lua file
 		-- command,path
-		--"include scenarios/terrain/dieppe/map.lua",
+		"include scenarios/terrain/dieppe/map.lua",
+		"include scenarios/content/dieppephase1.lua",
+		"include scenarios/content/dieppephase2.lua",
+		"include scenarios/content/dieppephase3.lua",
 		
 		-- we're using minefields, so include that functionality
-		--"include scenarios/content/minefields.lua",
+		"include scenarios/content/minefields.lua",
 		
 
-		
-	----------------------------- VEHICLE MASKS ----------------------------- 
+----------------------------- VEHICLE MASKS ----------------------------------------- 
 		
 	-- MAKE A VEHICLE AVAILABLE FOR SPAWNING
 		
 		
-	-- allied spawn list
-	-- stage 1 infantry
+	-- allied spawn list (all phases of battle)
 		"vehicle alliedtroops uk-rifle",
 		"vehicle alliedtroops uk-smg",
 		"vehicle alliedtroops uk-lmg",
@@ -27,27 +28,8 @@ if(true) then
 		"vehicle alliedplanes spit5",
 		"vehicle alliedplanes spit9",
 
-	-- allied spawn list
-	-- stage 2 infantry and tanks
-		"vehicle alliedtroops uk-rifle",
-		"vehicle alliedtroops uk-smg",
-		"vehicle alliedtroops uk-lmg",
-		"vehicle alliedtroops uk-sniper",
-		"vehicle alliedtanks chur3",
-		"vehicle alliedplanes spit5",
-		"vehicle alliedplanes spit9",
-
-	-- allied spawn list
-	-- stage 3 infantry
-		"vehicle alliedtroops uk-rifle",
-		"vehicle alliedtroops uk-smg",
-		"vehicle alliedtroops uk-lmg",
-		"vehicle alliedtroops uk-sniper",
-		"vehicle alliedplanes spit5",
-		"vehicle alliedplanes spit9",
-
-	-- axis spawn list
-	-- stage 1	
+	
+	-- axis spawn list (all phases of the battle)
 		"vehicle axistroops1 de-rifle",
 		"vehicle axistroops1 de-smg",
 		"vehicle axistroops1 de-sniper",
@@ -56,26 +38,9 @@ if(true) then
 		"vehicle axisplanes bf109f4",
 		"vehicle axisplanes fw190",
 		
-	-- stage 2
-		"vehicle axistroops2 de-rifle",
-		"vehicle axistroops2 de-smg",
-		"vehicle axistroops2 de-sniper",
-		"vehicle axistroops2 de-ltmortar",
-		"vehicle axistroops2 de-lmg",
-		"vehicle axisplanes bf109f4",
-		"vehicle axisplanes fw190",
-
-	-- stage 3
-		"vehicle axistroops2 de-rifle",
-		"vehicle axistroops2 de-smg",
-		"vehicle axistroops2 de-sniper",
-		"vehicle axistroops2 de-ltmortar",
-		"vehicle axistroops2 de-lmg",
-		"vehicle axisplanes bf109f4",
-		"vehicle axisplanes fw190",
-
 	
-	-----------------------------  DEFINE THE PLAY AREA ----------------------------- 
+	
+-----------------------------  DEFINE THE PLAY AREA ---------------------------------- 
 
 	-- BOUNDING BOX
 	-- boundary name x y z
@@ -127,21 +92,21 @@ if(true) then
 		--"ammo landmine4 landmine",
 
 	-- west side minefield
-		"area landmine1 OnMineArea 51999.91 2996961.96 15.94",
+		"area landmine1 OnMineArea 51999.91 2996961.96 0.94",
 		"area landmine1 OnMineArea 52015.30 2996627.13 0.47",
-		"area landmine1 OnMineArea 51742.57 2996635.34 21.54",
-		"area landmine1 OnMineArea 51763.71 2996643.74 21.43",
-		"area landmine1 OnMineArea 51824.73 2996731.69 15.38",
-		"area landmine1 OnMineArea 51838.43 2996799.17 15.87",
-		"area landmine1 OnMineArea 51890.90 2996907.68 19.21",
+		"area landmine1 OnMineArea 51742.57 2996635.34 0.54",
+		"area landmine1 OnMineArea 51763.71 2996643.74 0.43",
+		"area landmine1 OnMineArea 51824.73 2996731.69 0.38",
+		"area landmine1 OnMineArea 51838.43 2996799.17 0.87",
+		"area landmine1 OnMineArea 51890.90 2996907.68 0.21",
 		
 	-- west side town minefield
 		"area landmine2 OnMineArea 51996.03 2996619.53 0.40",
 		"area landmine2 OnMineArea 51994.52 2996598.24 0.55",
 		"area landmine2 OnMineArea 51999.86 2996597.76 0.02",
 		"area landmine2 OnMineArea 51999.84 2996255.40 0.73",
-		"area landmine2 OnMineArea 51837.50 2996254.43 6.54",
-		"area landmine2 OnMineArea 51887.08 2996614.63 11.34",
+		"area landmine2 OnMineArea 51837.50 2996254.43 0.54",
+		"area landmine2 OnMineArea 51887.08 2996614.63 0.34",
 		
 	-- east side minefield
 		"area landmine3 OnMineArea 52773.13 2996606.87 0.00",
@@ -149,8 +114,8 @@ if(true) then
 		"area landmine3 OnMineArea 52743.08 2996699.70 0.00",
 		"area landmine3 OnMineArea 52690.11 2996796.95 0.00",
 		"area landmine3 OnMineArea 52678.17 2996809.88 0.23",
-		"area landmine3 OnMineArea 52673.01 2997024.69 9.70",
-		"area landmine3 OnMineArea 52798.57 2996962.72 15.94",
+		"area landmine3 OnMineArea 52673.01 2997024.69 0.70",
+		"area landmine3 OnMineArea 52798.57 2996962.72 0.94",
 		
 
 	-- back side minefield
@@ -161,7 +126,7 @@ if(true) then
 				
 
 		
-	----------------------------- AMBIENT EFFECTS AND SOUNDS ----------------------------- 
+----------------------------- AMBIENT EFFECTS AND SOUNDS -----------------------------
 	
 	-- EMITTERS
 	-- command,effectname,worldx,worldy,worldz
@@ -174,30 +139,51 @@ if(true) then
 		--"emitter cratersmoke 134.57 -4.02 5.16",
 		--"emitter cratersmoke 59.42 25.24 6.21",
 
-	-- smokescreen
-	-- cliffs
-		--"emitter smokescreen -97.32 -2.10 21",
-		--"emitter smokescreen -121.65 6.49 23",
-		--"emitter smokescreen -30.43 -51.98 23.78",		
-		--"emitter smokescreen 27.01 -92.92 30.51",
-		--"emitter smokescreen -37.89 -59.64 31.44",
-		--"emitter smokescreen -79.64 -24.46 30.00",
-	-- beach
-		--"emitter smokescreen 13.54 29.78 6.03",
-		--"emitter smokescreen -45.14 73.00 6.06",
-	-- beach left 
-		--"emitter smokescreen 298.41 -143.95 4.43",
-		--"emitter smokescreen 237.97 -31.84 4.72",
-	-- beach right 
-		--"emitter smokescreen -157.76 165.90 6.49",
-		--"emitter smokescreen -198.72 211.02 5.30",
-		--"emitter smokescreen -354.37 278.58 4.35",
-	-- hulk smoke
-		--"emitter hulksmoke -39.93 247.32 3.35",
-		--"emitter cratersmoke -28.21 140.03 4.5",
-		--"emitter cratersmoke -95.29 199.18 4.25",
-	-- fire
-		--"emitter smallfire -47.66 167.20 5.70",
+-- smokescreens
+	-- west side beach approach
+		"emitter smokescreen 52296.78 2997013.90 -0.44",
+		"emitter smokescreen 52254.52 2997000.68 3.10",
+		"emitter smokescreen 52220.33 2996978.60 7.27",		
+		"emitter smokescreen 52180.52 2996971.28 12.44",
+		"emitter smokescreen 52142.03 2996971.47 13.21",
+		"emitter smokescreen 52191.74 2996876.57 5.56",
+		"emitter smokescreen 52248.22 2996952.46 2.94",
+		"emitter smokescreen 52225.93 2996926.26 5.41",
+		"emitter smokescreen 52251.88 2996888.40 1.10",
+		"emitter smokescreen 52248.04 2996837.97 0.57",
+		"emitter smokescreen 52198.49 2996843.89 3.19",
+		"emitter smokescreen 52130.96 2996840.91 2.97",
+		"emitter smokescreen 52143.03 2996920.46 8.75",
+		"emitter smokescreen 52197.48 2996897.22 7.06",
+		"emitter smokescreen 52111.32 2996883.63 8.44",
+
+	-- east side beach approach
+		"emitter smokescreen 52513.52 2997046.32 2.27",
+		"emitter smokescreen 52523.90 2996997.58 3.15",
+		"emitter smokescreen52534.27 2996932.37 4.01",
+		"emitter smokescreen 52467.03 2996858.39 1.38",
+		"emitter smokescreen 52530.86 2996869.71 1.65",
+		"emitter smokescreen 52600.27 2996905.33 3.59",
+		"emitter smokescreen 52610.41 2996938.81 7.23",
+		"emitter smokescreen 52586.42 2996961.73 6.29",
+		"emitter smokescreen 52605.20 2997022.78 6.64",
+		"emitter smokescreen 52547.23 2996934.52 4.66",
+		"emitter smokescreen 52498.03 2996901.25 2.39",
+		"emitter smokescreen 52498.03 2996901.25 2.39",
+		"emitter smokescreen 52594.03 2996819.94 0.47",
+		"emitter smokescreen 52622.57 2996864.04 1.86",
+
+		
+
+	-- landing craft hulk smoke
+		"emitter hulksmoke 52284.27 2997092.69 1.05",
+		"emitter hulksmoke 52272.47 2997094.34 0.00",
+		"emitter hulksmoke 52540.25 2997112.35 0.85",
+		"emitter hulksmoke 52533.03 2997119.60 0.95",
+
+	-- landing craft hulk fire
+		"emitter smallfire 52284.27 2997092.69 1.05",
+		"emitter smallfire 52533.03 2997119.60 0.90",
 		
 
 	-- SOUNDS
@@ -220,34 +206,16 @@ if(true) then
 		--"sound bombs sounds/scenarios/ambient_bombs_distantshells1.wav .5 0",
 		--"sound bombs sounds/scenarios/ambient_bombs_distantshells2.wav .5 0",
 		
-	-- only played during stage 1
+	-- only played during PHASE 1
 		--"event guns1 .5 1000",
 		--"event.0.1.1 guns2 .5 1000",
 		--"event.0.1.1 bombs .5 1000",
 		--"event wind .5 5000",
 
-	----------------------------- TRIGGERS ----------------------------- 
+----------------------------- TRIGGERS -------------------------------------------------- 
 		
 
-	-- hilltop bomb ambience 
-		--"barrage barragefun sc250he -403.10 -52.91 47.33 100",
-		--"barrage barragefun sc250he -202.95 -508.57 50.28 100",
-		--"barrage barragefun sc250he 156.79 -446.26 57.87 100",
-		--"event barragefun .50 3000 700 2",
-		--"event barragefun .5 5000 1000 3",
-		
-	-- combat fx
-
-	-- typeofeffect eventname 0=bullethitsandsound/1=soundonly(bulletflyby)
-		"fpsfx combatfx 0",
-		"fpsfx combatsounds 1",
-	-- event variables affecting above events (combat fx)
-		"event.0.1.1 combatfx .5 300 300 5",
-		"event.0.1.1 combatfx .5 300 300 3",
-		"event combatfx .5 300 300 3",
-		"event combatfx .8 200 100 1",
-		"event combatsounds .6 300",
-		
+			
 	-- german shore defense guns
 	-- far right bunker pak40
 		--"clone shorebattery pak40 -350.63 199.13 22.5 0 0 90 ",
@@ -264,7 +232,7 @@ if(true) then
 		--"firepoint shoredefense shorebattery 1 0 -.15 0 .05 .15",
 		--"firepoint shoredefense2 shorebattery2 1 0 -.32 0 .1 .5",
 
-	-- bunker pak40s fire durring stage 1
+	-- bunker pak40s fire durring PHASE 1
 		--"event.0.1.1 shoredefense .75 1000 100 1",
 		
 	-- sea fx event fires off pak40
@@ -289,14 +257,14 @@ if(true) then
 		--"clone destroyer3 uk_z34 112.23 1143.07 3.3 0 0 120",
 		
 	-- primary naval bambardment fx		
-	-- main guns stage 1- fire near draw on hill tops
+	-- main guns PHASE 1- fire near draw on hill tops
 		--"firepoint.0.1.1 shorebarrage1 destroyer1 2 0 -.45 .665 .015 .02 1",
 		--"firepoint.0.1.1 shorebarrage1 destroyer1 2 1 -.45 .665 .015 .02 1",
 		--"firepoint.0.1.1 shorebarrage1 destroyer1 2 2 -.45 .665 .015 .02 1",
 		--"firepoint.0.1.1 shorebarrage2 destroyer1 6 9 -.45 -.58 .017 .02 1",
 		--"firepoint.0.1.1 shorebarrage2 destroyer1 6 10 -.45 -.58 .017 .02 1",
 		
-	-- main guns stage 2
+	-- main guns PHASE 2
 	-- these fire off farther away from play area
 		--"firepoint.0.1.2 shorebarrage1 destroyer1 2 0 -.45 .58 .04 .04 1",
 		--"firepoint.0.1.2 shorebarrage1 destroyer1 2 1 -.45 .58 .04 .04 1",
@@ -327,234 +295,111 @@ if(true) then
 		-- event eventname perchance(0->1) delaybetweenevents(ms) durationofevent 1 
 		--"event shorebarrage3 .5 2000 100 1",
 
-	-- this one is close to the play area so discontinue it during stage 2 hill assault
+	-- this one is close to the play area so discontinue it during PHASE 2 hill assault
 		-- event eventname perchance(0->1) delaybetweenevents(ms) durationofevent 1 
 		--"event0.1.1 shorebarrage4 .5 2000 100 1",
 		--"event shorebarrage5 .5 2000 100 1",
 		--"event shorebarrage6 .5 2000 100 1",
 		
 		
-	----------------------------- ALERTS & WAYPOINTS ----------------------------- 
+----------------------------- ALERTS & WAYPOINTS ------------------------------------------- 
 		
 	-- HUD ALERTS
 	
 	-- get their attention
-		"sound onstageend sounds/Drum1.wav 1 0",
+		"sound onPHASEend sounds/Drum1.wav 1 0",
 	
 		--"alert onspawn onspawn 0",
 		--"alert playarea playarea 10",	
 		
-	-- STAGE 1	
-		--"alert.0.1.1 onstageend beachsecure",
-		--"alert.0.1.1 onstageend navalguns",
+	-- PHASE 1	
+		--"alert.0.1.1 onPHASEend bunkercap1a",
+		--"alert.0.1.1 onPHASEend bunkercap1b",
 		
 		--"message alliedcapon alliedcapon allied 10",
 		--"message alliedcapoff alliedcapoff axis 0",
 		
-	-- STAGE 2
+	-- PHASE 2
 		
 		--"message objective2 alliedcapon allied 10",
-		--"message holdtownon holdtown allied 20",
+		--"message HQcaptureon HQcapture allied 20",
 		
-		--"waypoint.0.1.2 onspawn germanbunker -29.52 -78.26 39.57 axis",
+		--"waypoint.0.1.2 onspawn HQcapture -29.52 -78.26 39.57 axis",
 		--"waypoint.0.1.2 onspawn beachhead -152.10 61.01 12.89 allied",
 
-	-- STAGE 3
+	-- PHASE 3
 		
 		--"message objective3 alliedcapon allied 10",
-		--"message holdtownon holdtown allied 20",
+		--"message taketownon taketown allied 20",
 		
-		--"waypoint.0.1.2 onspawn germanbunker -29.52 -78.26 39.57 axis",
-		--"waypoint.0.1.2 onspawn beachhead -152.10 61.01 12.89 allied",
+		--"waypoint.0.1.2 onspawn CHQ -29.52 -78.26 39.57 axis",
+		--"waypoint.0.1.2 onspawn CHQ -152.10 61.01 12.89 allied",
 		
-	
-		
-	-- STAGE 1 FUNCTIONS 
+	-- phase 1 FUNCTIONS and OBJECTIVES (Allied capture objectives phase 1)
 
-	
-	-- bunker capture objective,
-		--"handler objective1 OnReinforcements",
-		
-	-- stage 1a area allies have to reach to open stage 2 inf spawns and open tank spawning
-	-- Only allies trigger this area (obj1a)
-		"area beachcrossing1a OnState 52240.68 2996794.04 0.00",
-		"area beachcrossing1a OnState 52240.65 2996793.21 0.00",
-		"area beachcrossing1a OnState 52228.63 2996792.59 0.00",
-		"area beachcrossing1a OnState 52230.48 2996770.02 0.00",
-		"area beachcrossing1a OnState 52096.92 2996763.96 0.00",
-		"area beachcrossing1a OnState 52134.06 2996789.83 0.00",
-		"area beachcrossing1a OnState 52149.55 2996788.31 0.00",
-		"area beachcrossing1a OnState 52151.87 2996777.95 0.00",
-		"area beachcrossing1a OnState 52171.82 2996779.90 0.00",
-		"area beachcrossing1a OnState 52174.61 2996788.53 0.00",
-		"area beachcrossing1a OnState 52192.82 2996786.72 0.00",
-		"area beachcrossing1a OnState 52192.18 2996778.08 0.00",
-		"area beachcrossing1a OnState 52208.77 2996776.42 0.00",
-		"area beachcrossing1a OnState 52215.26 2996791.75 0.00",
-		"area beachcrossing1a OnState 52226.19 2996792.07 0.00",
-		"area beachcrossing1a OnState 52226.51 2996797.74 0.00",
-		"area beachcrossing1a OnState 52240.03 2996798.48 0.00",
-
-	-- stage 1b area allies have to reach to open stage 2 inf spawn and open tank spawning
-	-- Only allies trigger this area (obj1b)
-		"area beachcrossing1b OnState 52402.11 2996800.07 0.00",
-		"area beachcrossing1b OnState 52577.98 2996816.07 0.00",
-		"area beachcrossing1b OnState 52576.34 2996790.21 0.00",
-		"area beachcrossing1b OnState 52444.17 2996789.49 0.00",
-		"area beachcrossing1b OnState 52430.50 2996778.88 0.00",
-		"area beachcrossing1b OnState 52420.00 2996787.01 0.00",
-		"area beachcrossing1b OnState 52424.61 2996797.22 0.00",
-		"area beachcrossing1b OnState 52408.64 2996796.85 0.00",
-		"area beachcrossing1b OnState 52408.47 2996790.73 0.00",
-		"area beachcrossing1b OnState 52401.38 2996791.21 0.00",
-		
-		
-	
-	-- message when allies are securing the beachhead	
-		--"message objective1 beachfalling #FF6600 10",
-	
-	-- waypoints
-		--"waypoint.1.1.0 onspawn vierville_draw -171.81 6.42 20.34 #FF6600",
-		--"waypoint.0.1.1 onspawn beachhead -116.04 65.05 7.68 friendly",
-		--"waypoint.0.1.1 onspawn beachhead -170.40 111.86 7.29 friendly",
-		--"waypoint.0.1.1 onspawn beachhead -68.97 45.77 5.78 friendly",
-		
-		
-	-- STAGE 2 FUNCTIONS 
-
-		
-	-- Division HQ capture objective (obj2)
+	-- Outer Bunkers capture objective (obj1-a and obj1-b)
 		--"handler capper OnCapper",
-		--"handler objective2 OnCapturing",
-		--"handler holdtown OnReceiveBroadcast",
-		
-	-- Only allies trigger this area (obj2)
-		"area HQcapture OnState 52318.79 2996659.07 0.08",
-		"area HQcapture OnState 52318.57 2996639.84 0.08",
-		"area HQcapture OnState 52299.21 2996639.88 0.08",
-		"area HQcapture OnState 52299.37 2996659.15 0.08",
-		
-	-- STAGE 3 FUNCTIONS 
+		--"handler objective1 OnCapturing",
+		--"handler capturebunkers OnReceiveBroadcast",
 
-	-- Town Capture objective (obj3)
-		--"handler capper OnCapper",
-		--"handler objective3 OnCapturing",
-		--"handler holdtown OnReceiveBroadcast",
-
-	-- Only allies trigger this area (obj3)
-		"area holdtown OnSendBroadcast 52205.44 2996525.77 5.01",
-		"area holdtown OnSendBroadcast 52211.38 2996525.78 5.01",
-		"area holdtown OnSendBroadcast 52211.37 2996532.07 5.01",
-		"area holdtown OnSendBroadcast 52205.44 2996532.08 5.01",
+		-- objective 1a
+		"area bunkercap1a OnState 52111.28 2996780.50 0.00",
+		"area bunkercap1a OnState 52131.18 2996778.44 0.00",
+		"area bunkercap1a OnState 52130.75 2996787.76 0.00",
+		"area bunkercap1a OnState 52152.00 2996789.35 0.00",
+		"area bunkercap1a OnState 52151.44 2996779.31 0.00",
+		"area bunkercap1a OnState 52173.27 2996778.93 0.00",
+		"area bunkercap1a OnState 52173.52 2996789.61 0.00",
+		"area bunkercap1a OnState 52192.88 2996789.49 0.00",
+		"area bunkercap1a OnState 52192.14 2996777.61 0.00",
+		"area bunkercap1a OnState 52210.68 2996776.99 0.00",
+		"area bunkercap1a OnState 52210.58 2996784.43 0.00",
+		"area bunkercap1a OnState 52220.03 2996793.29 0.00",
+		"area bunkercap1a OnState 52226.58 2996793.32 0.00",
+		"area bunkercap1a OnState 52232.14 2996785.59 0.00",
+		"area bunkercap1a OnState 52212.87 2996767.70 0.00",
+		"area bunkercap1a OnState 52108.73 2996767.97 0.00",
+		
+		-- objective 1b
+		"area bunkercap1b OnState 52423.94 2996799.50 0.00",
+		"area bunkercap1b OnState 52465.20 2996799.15 0.00",
+		"area bunkercap1b OnState 52466.05 2996806.46 0.15",
+		"area bunkercap1b OnState 52486.13 2996806.71 0.16",
+		"area bunkercap1b OnState 52486.01 2996802.22 0.05",
+		"area bunkercap1b OnState 52505.18 2996801.15 0.03",
+		"area bunkercap1b OnState 52506.16 2996808.73 0.21",
+		"area bunkercap1b OnState 52524.51 2996808.92 0.21",
+		"area bunkercap1b OnState 52525.23 2996799.93 0.00",
+		"area bunkercap1b OnState 52548.39 2996798.77 0.00",
+		"area bunkercap1b OnState 52550.11 2996807.47 0.18",
+		"area bunkercap1b OnState 52569.43 2996807.94 0.19",
+		"area bunkercap1b OnState 52569.22 2996793.88 0.00",
+		"area bunkercap1b OnState 52441.42 2996788.81 0.00",
+		"area bunkercap1b OnState 52429.43 2996777.60 0.00",
+		"area bunkercap1b OnState 52419.94 2996785.66 0.00",	
+		
+		
+	
 		
 				
-	----------------------------- SPAWNS ----------------------------- 
+----------------------------- SPAWNS ------------------------------------
+
+	-- Allied all phases spawning (aircraft)
+		"spawn spitvb 62309.93 2988137.17 101.78 0 0 315",
+		"spawn spitvb 62252.14 2988069.20 101.79 0 0 315",
+		"spawn spit9 62252.14 2988069.20 101.79 0 0 315",
+		"spawn spit9 62277.54 2988086.51 101.78 0 0 315",
+
+
+	-- Axis all phases spawning (aircraft)
+		"spawn bf109f4 38419.42 2993784.50 0.71 0 0 90",
+		"spawn bf109f4 38433.23 2994153.83 0.71 0 0 90",
+		"spawn fw190 38443.34 2993936.35 0.71 0 0 90",
+		"spawn fw190 38407.79 2993995.24 0.71 0 0 90",
 	
--- stage 1 ALLIED spawns 
-
-	-- Spawn 1a (switch off when Allies achieve stage 1a objective)
-		"spawn alliedtroops 52177.57 2997000.60 10.09 0 0 180",
-		"spawn alliedtroops 52165.19 2996997.84 10.28 0 0 180",
-		"spawn alliedtroops 52156.31 2996993.36 10.73 0 0 180",
-
-	-- Spawn 1b (switch off when Allies achieve stage 1b objective)
-		"spawn alliedtroops 52534.76 2997100.17 1.01 0 0 180",
-		"spawn alliedtroops 52547.56 2997092.00 1.52 0 0 180",
-		"spawn alliedtroops 52568.62 2997082.65 2.00 0 0 180",
-		
-	
-
--- stage 1 AXIS spawns 
-
-	-- forwardinf-A spawns(switch off when allies capture objective 1a)
-		"spawn axistroops1 52144.18 2996655.55 3.19 0 0 0",
-		"spawn axistroops1 52133.84 2996660.96 6.16 0 0 0",
-		"spawn axistroops1 52071.04 2996667.38 0.00 0 0 45",
-
-	-- forwardinf-B spawns (switch off when allies capture objective 1b)
-		"spawn axistroops1 52432.13 2996663.19 6.16 0 0 270",
-		"spawn axistroops1 52448.75 2996661.75 6.16 0 0 0",
-		"spawn axistroops1 52655.90 2996672.85 -0.00 0 0 315",
-	
-	-- dockfront spawns (switch off when allies capture either objective 1a or 1b)
-		"spawn axistroops1 52299.90 2996662.55 9.14 0 0 270",
-		"spawn axistroops1 52323.94 2996660.01 9.14 0 0 0",
-		"spawn axistroops1 52285.38 2996704.51 -1.72 0 0 90",
-
-
-	-- mg nest1a (this closes when allies achieve stage 1a objective)
-		"spawn axistroops -137.83 -79.05 40.19 0",
-
-	-- mg nest1b (this closes when allies achieve stage 1b objective)
-		"spawn axislmg 52486.68 2996747.17 9.92",
-		
-	-- ATG1a spawns (these close when allies achieve stage 1a objective)
-		"spawn pak40 52141.67 2996772.26 0.00 0 0 0",
-		"spawn pak40 52182.91 2996771.44 0.00 0 0 0",
-
-	-- ATG1b spawn (these close when allies achieve stage 1b objective)
-		"spawn pak40 52401.17 2996706.47 0.00 0 0 315",
-		"spawn pak40 52431.24 2996787.91 0.00 0 0 315",
-		
--- stage 2 ALLIED spawns
-	-- Spawn 2a (switch off when Allies achieve stage 2 objective)
-		"spawn alliedtroops 52241.57 2997072.03 1.81 0 0 180",
-		"spawn alliedtroops 52221.14 2997056.36 3.53 0 0 180",
-		"spawn alliedtroops 52200.75 2997054.05 3.55 0 0 180",
-
-	-- Spawn 2b (switch off when Allies achieve stage 2 objective)
-		"spawn alliedtroops 52534.76 2997100.17 1.01 0 0 180",
-		"spawn alliedtroops 52547.56 2997092.00 1.52 0 0 180",
-		"spawn alliedtroops 52568.62 2997082.65 2.00 0 0 180",
-
-	-- Tank Spawns
-		"spawn church3 52252.95 2997081.07 0.80 0 10 180",
-		"spawn church3 52237.16 2997067.30 2.35 0 15 180",
-		"spawn church3 52217.93 2997046.87 4.71 0 15 180",
-	
--- stage 2 AXIS spawns
-	-- west spawns (these close when allies achieve stage 2 objective)
-		"spawn axistroops1 52035.59 2996637.50 5.01 0 0 45",
-		"spawn axistroops1 52050.94 2996611.82 5.17 315",
-
-	-- east spawns (these close when allies achieve stage 2 objective)
-		"spawn axistroops1 52538.34 2996638.15 3.18 0 0 180",
-		"spawn axistroops1 52553.08 2996634.37 6.16 270",
-
-	-- center spawns (these close when allies achieve stage 2 objective)
-		--"spawn axistroops1 -176.06 36.48 16.88 90",
-	
-	-- ATG2 spawns (these close when allies achieve stage 2 objective)
-		"spawn pak40 52029.23 2996633.96 0.00 0 0 0",
-		"spawn pak40 52242.49 2996662.70 0.00 0 0 270",
+-- (awaiting further editing of phases 1, 2 and 3 by Troy) --
 
 		
--- stage 3 ALLIED spawns
-	-- Spawn 3
-		"spawn alliedtroops 52294.92 2996639.88 9.14 0 0 180",
-		"spawn alliedtroops 52318.17 2996636.06 9.14 0 0 90",
-		"spawn alliedtroops 52276.58 2996653.44 6.16 0 0 270",
-		"spawn alliedtroops 52249.38 2996649.40 3.18 0 0 0",
-		"spawn alliedtroops 52206.80 2996650.26 6.16 0 0 0",
-		"spawn alliedtroops 52231.70 2996650.37 3.18 0 0 0",
-	
--- stage 3 AXIS spawns
-	-- factory spawns
-		"spawn axistroops1 52352.29 2996516.77 5.01 0 0 90",
-		"spawn axistroops1 52369.10 2996490.77 5.17 0 0 0",
-		"spawn axistroops1 52364.48 2996474.00 3.55 0 0 0",
-
-	-- farm building spawns
-		"spawn axistroops1 52115.82 2996456.52 0.36 0 0 0",
-		"spawn axistroops1 52150.05 2996441.91 0.36 0 0 270",
-		"spawn axistroops1 52135.53 2996463.53 3.18 0 0 90",
-		
-	-- last base spawns
-		"spawn axistroops1 52110.66 2996519.36 3.18 0 0 180",
-	
-	-- mg nest3
-		"spawn de-lmg 52104.49 2996524.21 5.63 0 0 0",
-
 	};
 
 	for i,v in ipairs(content) do 
