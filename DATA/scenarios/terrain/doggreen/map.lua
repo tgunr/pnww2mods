@@ -151,6 +151,10 @@ if(true) then
 		"place dg_obs_stake	-104 -34 36.5 0 2 0 0 0 0",
 		"place dg_obs_stake	49.46 -131.24 38.0 10 0 0 0 0 0",
 		"place dg_obs_stake	63.53 -142.90 38.35 0 -10 0 0 0 0",
+		"place dg_wire_barbed_box -109.03 -31.99 37.0 -10 -5 80 0 0 0",
+		"place dg_wire_barbed_box -107.67 -32.5 37.4 -8 18 20 0 0 0",
+		"place sandbagwall_outside -105.5 -33.85 37.35 -10 0 105 0 0 0 0",
+		
 		
 		
 
