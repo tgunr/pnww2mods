@@ -140,6 +140,15 @@ if(true) then
 		"place crate 22.82 -112.70 38.25 0 0 -25 0 0 0 0",
 		"place sandbagwall_curved_outside 23.8 -111.99 39.4 0 -5 140 0 0 0 0",	
 		"place dg_wire_barbed_apron	38.7 -176.5 44.25 0 0 -20 0 0 0",
+		"place dg_wire_barbed_apron	72.16 -163.53 40.0 0 10 -20 0 0 0",
+		"place dg_wire_barbed_apron	78 -162 39 0 10 -28 0 0 0",
+		"place sandbagwall_outside -141.2 -25.6 34.2 -5 0 80 0 0 0 0",
+		"place sandbagwall_outside -139 -25.28 34.2 -5 0 80 0 0 0 0",
+		"place sandbagwall_outside -140.85 -25.55 34.7 -5 0 81 0 0 0 0",	
+		
+		
+		
+		
 		"place dg_obs_stake	-194.40 -192.18 40.75 10 0 0 0 0 0",
 		"place dg_obs_stake	-192.7 -183.32 41.16 5 0 0 0 0 0",
 		"place dg_obs_stake	-185.53 -146.3 39.0 10 0 0 0 0 0",
