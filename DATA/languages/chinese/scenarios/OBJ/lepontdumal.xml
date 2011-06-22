@@ -12,25 +12,28 @@ playarea = 转身调头！
 roundstop = 本回合结束！
 bridgewp = 桥
 minefield = 雷区
+
 youcapon = 你正在占领桥梁！
 alliedcapon = 盟军正在占领桥梁！
 alliedcapoff = 红军收复了桥梁！
 
 objectivel1.1.1.1 = 占领桥梁
-objectivel1.2.1.1 = 防守桥梁</body>
+objectivel1.2.1.1 = 防守桥梁
+
+scenario.help = 邪恶桥: 邪恶桥</body>
   <bodyloc>true</bodyloc>
   <brief>一支铁血军护卫分队朝南部的桥梁进发，军令为：占领并控制住桥梁直到增援部队抵达。一支红国小分队驻扎在镇上，需要不惜一切代价防守住桥梁，避免桥梁被占领。
 
 铁血军- 占领并守住桥梁45秒
 
-红国- 15分钟内阻止敌人达成目标</brief>
+红军- 15分钟内阻止敌人达成目标</brief>
   <duration>15</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
-  <hour>7</hour>
-  <ingamemap>107.8 38.9 .041</ingamemap>
+  <hour>17</hour>
+  <ingamemap>47.75 31.06 .039</ingamemap>
   <links>
     <link path="scenarios/dm/objectives/lepontdumal1.xml" title="队1" />
     <link path="scenarios/dm/objectives/lepontdumal2.xml" title="队2" />
@@ -43,5 +46,5 @@ objectivel1.2.1.1 = 防守桥梁</body>
   <terrain>lepontdumal</terrain>
   <title>邪恶桥</title>
   <victory>45</victory>
-  <weather>0</weather>
+  <weather>1</weather>
 </content>

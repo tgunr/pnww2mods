@@ -31,6 +31,8 @@ alliedcapoff * Axis forces have re-taken the bunker!
 onspawn.1.1.1 = Get to one of the rally points and secure a beachhead!
 onspawn.2.1.1 = Push the American invasion force back into the sea!
 beachfalling = American soldiers are securing a beachhead!
+beachcrossingon.1.1.1 = You are now securing the beach!
+beachcrossingoff.1.1.1 = You are no longer securing the beach!
 beachhead.1.1.1 = Rally Point
 beachhead.2.1.1 = Defend this area
 beachsecure = American forces have secured a beachhead!
@@ -60,7 +62,7 @@ scenario.help = DOG GREEN: DAY OF DAYS</body>
   <duration2>20</duration2>
   <fog>1</fog>
   <hour>7</hour>
-  <ingamemap>-28.4 1.2 .073</ingamemap>
+  <ingamemap>-30.21 .95 .07</ingamemap>
   <objective1>180</objective1>
   <objective2>60</objective2>
   <rules>doggreen</rules>

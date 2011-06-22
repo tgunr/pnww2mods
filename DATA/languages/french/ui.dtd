@@ -3525,6 +3525,7 @@
 <!ENTITY common.population.medium "effectifs corrects">
 <!ENTITY common.time.days "{1} jours">
 <!ENTITY common.time.second "{1} seconde">
+<!ENTITY common.map.wpdistance "Distance">
 <!ENTITY common.squads.ranks.rank4 "XO - Adjoint">
 <!ENTITY common.squads.members "MEMBRES DU SQUAD">
 <!ENTITY common.version "Version">
@@ -4305,29 +4306,11 @@
 <!ENTITY combat.back.tip "Retourner vers les tutoriaux.">
 <!ENTITY combat.vehicle.name "UNITE">
 <!ENTITY connect.login.handshake.lost "Perte de connexion durant le traitement">
-<!ENTITY connect.login.auth.failed "Authentication échouée">
-<!ENTITY connect.ping.notactive "Ping: ...">
-<!ENTITY connect.error.econnrefused "econnrefused">
-<!ENTITY connect.popup.title "Erreur réseau">
-<!ENTITY connect.error.enobufs "enobufs">
-<!ENTITY connect.find.nonefound "Echec de l’initialisation du réseau/réseau indisponible">
-<!ENTITY connect.error.enotconn "enotconn">
 <!ENTITY connect.ping.stats.full "Ping: &#37;ums, Avg: &#37;ums, &#37;ls: &#37;.1f&#37;&#37;.">
-<!ENTITY connect.login.timeout "Temps de connexion au serveur dépassé">
 <!ENTITY connect.find.cantopen "Impossible d’ouvrir une connexion avec le réseau du jeu">
-<!ENTITY connect.lost.game "Connexion au jeu perdu">
-<!ENTITY connect.find.timeout.data "Temps de chargement des données dépassé">
-<!ENTITY connect.error.enetdown "enetdown">
-<!ENTITY connect.login.chat.lost "Perte de la connexion au jeu Durant la liaison au Chat">
 <!ENTITY connect.ping.lossbig "*PACKET LOSS*">
-<!ENTITY connect.ping.stats.brief "Ping: &#37;u(&#37;u)ms">
-<!ENTITY connect.find.nodata "Erreur de chargement des données">
-<!ENTITY connect.ping.loss "Loss">
 <!ENTITY connect.error.eagain "eagain">
-<!ENTITY connect.fail "Connexion échouée">
 <!ENTITY connect.login.auth.timeout "Temps d’authentification dépassé">
-<!ENTITY connect.host.cell "serveur">
-<!ENTITY connect.login.chat.error "Impossible de se connecter au serveur Chat">
 <!ENTITY connect.ping.kbps "Kbps: &#37;.1f in, &#37;.1f out.">
 <!ENTITY connect.error.ehostunreach "ehostunreach">
 <!ENTITY connect.lost "&#37;ls: Error #&#37;u">
@@ -4335,30 +4318,58 @@
 <!ENTITY connect.login.noopen "Impossible d’ouvrir une connexion avec le serveur">
 <!ENTITY connect.chat.noredirect ">Erreur réseau Durant la connexion au Chat">
 <!ENTITY connect.chat.fail "Connexion au Chat échouée">
-<!ENTITY connect.lost.world "Connexion au monde perdu">
+<!ENTITY connect.error.internalerrror "internal error">
 <!ENTITY connect.login.auth.lost "Perte de la connexion">
 <!ENTITY connect.login.chat.timeout "Temps dépassé pour la connexion au Chat">
 <!ENTITY connect.error.econnaborted "econnaborted">
 <!ENTITY connect.lost.chat "Perte de la connexion au serveur Chat">
-<!ENTITY connect.error.enetreset "enetreset">
 <!ENTITY connect.login.badlogin "Erreur de login imprévue">
 <!ENTITY connect.find.timeout.network "Temps de connexion au réseau dépassé">
 <!ENTITY connect.netcode2.reverting "[netcode2 connection failed, Vérifiez votre pare feu - reverting to standard network usage]">
+<!ENTITY connect.error.ehostdown "host down">
 <!ENTITY connect.error.eaddrinuse "eaddrinuse">
-<!ENTITY connect.error.enetunreach "enetunreach">
 <!ENTITY connect.error.eaddrnotavail "eaddrnotavail">
 <!ENTITY connect.ping.na "Ping: N/A">
-<!ENTITY connect.error.etimedout "etimedout">
 <!ENTITY connect.netcode2.firewall "[netcode2 connection failed, vérifiez votre pare feu - reverting to standard network usage]">
-<!ENTITY connect.login.error "Erreur en se connectant au serveur">
+<!ENTITY connect.error.eteul_undef_callback "undefined callback">
 <!ENTITY connect.reconnect.failed "Connexion avec le serveur perdu, reconnexion échouée">
 <!ENTITY connect.host.chat "serveur chat">
 <!ENTITY connect.refused "Connexion refusée avec le serveur">
 <!ENTITY connect.host.map "Serveur carte">
 <!ENTITY connect.netcode2.disabled "[netcode2 Hors service sur le serveur]">
-<!ENTITY connect.find.nobest "Impossible de se connecter au réseau">
 <!ENTITY connect.error.econnreset "econnreset">
 <!ENTITY connect.login.nochat "Echec de la connexion au Chat">
+<!ENTITY connect.error.eteul_login_denied "login denied">
+<!ENTITY connect.error.unknown "unknown connection error">
+<!ENTITY connect.login.auth.failed "Authentication échouée">
+<!ENTITY connect.ping.notactive "Ping: ...">
+<!ENTITY connect.error.econnrefused "econnrefused">
+<!ENTITY connect.popup.title "Erreur réseau">
+<!ENTITY connect.find.nonefound "Echec de l’initialisation du réseau/réseau indisponible">
+<!ENTITY connect.error.enobufs "enobufs">
+<!ENTITY connect.error.enotconn "enotconn">
+<!ENTITY connect.login.timeout "Temps de connexion au serveur dépassé">
+<!ENTITY connect.find.timeout.data "Temps de chargement des données dépassé">
+<!ENTITY connect.lost.game "Connexion au jeu perdu">
+<!ENTITY connect.error.eteul_connection_stalled "connection stalled">
+<!ENTITY connect.login.chat.lost "Perte de la connexion au jeu Durant la liaison au Chat">
+<!ENTITY connect.error.enetdown "enetdown">
+<!ENTITY connect.find.nodata "Erreur de chargement des données">
+<!ENTITY connect.ping.stats.brief "Ping: &#37;u(&#37;u)ms">
+<!ENTITY connect.ping.loss "Loss">
+<!ENTITY connect.error.eteul_enospc_send_socket "teul socket error">
+<!ENTITY connect.fail "Connexion échouée">
+<!ENTITY connect.error.eintr "eintr">
+<!ENTITY connect.error.eshutdown "connection shutdown">
+<!ENTITY connect.host.cell "serveur">
+<!ENTITY connect.login.chat.error "Impossible de se connecter au serveur Chat">
+<!ENTITY connect.error.eteul_enospc_send_buffer "teul buffer error">
+<!ENTITY connect.lost.world "Connexion au monde perdu">
+<!ENTITY connect.error.enetreset "enetreset">
+<!ENTITY connect.error.enetunreach "enetunreach">
+<!ENTITY connect.error.etimedout "etimedout">
+<!ENTITY connect.login.error "Erreur en se connectant au serveur">
+<!ENTITY connect.find.nobest "Impossible de se connecter au réseau">
 <!ENTITY waypoints.stop "stop">
 <!ENTITY waypoints.turn4 "tournez 4">
 <!ENTITY waypoints.turn5 "tournez 5">

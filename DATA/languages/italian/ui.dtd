@@ -3514,6 +3514,7 @@
 <!ENTITY common.population.medium "medio">
 <!ENTITY common.time.days "{1} giorni">
 <!ENTITY common.time.second "{1} secondo">
+<!ENTITY common.map.wpdistance "Distance">
 <!ENTITY common.squads.ranks.rank4 "XO">
 <!ENTITY common.squads.members "MEMBRI DELLA SQUADRA">
 <!ENTITY common.version "Versione">
@@ -4292,60 +4293,69 @@
 <!ENTITY combat.back.tip "Indietro ai tutorial.">
 <!ENTITY combat.vehicle.name "UNITA&#39;">
 <!ENTITY connect.login.handshake.lost "Connessione all&#39;host persa durante la transizione (handshake)">
-<!ENTITY connect.login.auth.failed "Autentificazione fallita">
-<!ENTITY connect.ping.notactive "Ping: ...">
-<!ENTITY connect.error.econnrefused "econnrefused">
-<!ENTITY connect.popup.title "Errore di rete">
-<!ENTITY connect.error.enobufs "enobufs">
-<!ENTITY connect.find.nonefound "Inizializzazione della rete fallita/nessuna rete disponibile">
-<!ENTITY connect.error.enotconn "enotconn">
 <!ENTITY connect.ping.stats.full "Ping: &#37;ums, Avg: &#37;ums, &#37;ls: &#37;.1f&#37;&#37;.">
-<!ENTITY connect.login.timeout "Tempo di connessione all&#39;host esaurito">
 <!ENTITY connect.find.cantopen "Impossibile risolvere la selezione della rete">
-<!ENTITY connect.lost.game "Connessione al gioco persa">
-<!ENTITY connect.find.timeout.data "Esaurito il tempo di ricezione per i dati di connessione">
-<!ENTITY connect.error.enetdown "enetdown">
-<!ENTITY connect.login.chat.lost "Connessione al gioco persa durante la connessione alla chat">
 <!ENTITY connect.ping.lossbig "*PACCHETTI PERSI*">
-<!ENTITY connect.ping.stats.brief "Ping: &#37;u(&#37;u)ms">
-<!ENTITY connect.find.nodata "Errore nella ricezione dei dati di connessione">
-<!ENTITY connect.ping.loss "Persa">
 <!ENTITY connect.error.eagain "eagain">
-<!ENTITY connect.fail "Connessione fallita">
 <!ENTITY connect.login.auth.timeout "Tempo esaurito durante l&#39;autentificazione">
-<!ENTITY connect.host.cell "cellhost">
-<!ENTITY connect.login.chat.error "Impossibile connettersi all’host della chat">
 <!ENTITY connect.ping.kbps "Kbps: &#37;.1f in, &#37;.1f out.">
-<!ENTITY connect.error.ehostunreach "ehostunreach">
 <!ENTITY connect.lost "&#37;ls: Errore #&#37;u">
 <!ENTITY connect.lost.reconnect "Connessione alla chat persa, riconnessione">
 <!ENTITY connect.login.noopen "Impossibile aprire la connessione all&#39;host">
 <!ENTITY connect.chat.noredirect "Errore di rete durante l&#39;accesso alla chat">
 <!ENTITY connect.chat.fail "Connessione alla chat fallita">
-<!ENTITY connect.lost.world "Connessione al mondo persa">
+<!ENTITY connect.error.internalerrror "internal error">
 <!ENTITY connect.login.auth.lost "Connessione persa durante">
 <!ENTITY connect.login.chat.timeout "Tempo esaurito durante la connessione alla chat">
-<!ENTITY connect.error.econnaborted "econnaborted">
+<!ENTITY connect.error.econnaborted "connection aborted">
 <!ENTITY connect.lost.chat "Connessione all&#39;host della chat persa">
-<!ENTITY connect.error.enetreset "enetreset">
 <!ENTITY connect.login.badlogin "Errore di accesso imprevisto">
 <!ENTITY connect.find.timeout.network "Tempo di connessione alla rete del gioco esaurito">
 <!ENTITY connect.netcode2.reverting "[connessione netcode2 fallita, per favore controlla il tuo firewall - sto ritornando all&#39;uso standard della rete]">
-<!ENTITY connect.error.eaddrinuse "eaddrinuse">
-<!ENTITY connect.error.enetunreach "enetunreach">
-<!ENTITY connect.error.eaddrnotavail "eaddrnotavail">
+<!ENTITY connect.error.ehostdown "host down">
+<!ENTITY connect.error.eaddrinuse "net address in use">
+<!ENTITY connect.error.eaddrnotavail "net address not available">
 <!ENTITY connect.ping.na "Ping: N/A">
-<!ENTITY connect.error.etimedout "etimedout">
 <!ENTITY connect.netcode2.firewall "[connessione netcode2 fallita, per favore controlla il tuo firewall - sto ritornando all&#39;uso standard della rete]">
-<!ENTITY connect.login.error "Errore di connessione all&#39;host">
+<!ENTITY connect.error.eteul_undef_callback "undefined callback">
 <!ENTITY connect.reconnect.failed "Connessione all&#39;host persa, riconnessione fallita">
 <!ENTITY connect.host.chat "chathost">
 <!ENTITY connect.refused "Connessione rifiutata dall&#39;host">
 <!ENTITY connect.host.map "maphost">
 <!ENTITY connect.netcode2.disabled "[netcode2 disabilitato sul server]">
-<!ENTITY connect.find.nobest "Impossibile connettersi alla rete del gioco">
-<!ENTITY connect.error.econnreset "econnreset">
+<!ENTITY connect.error.econnreset "connection reset">
 <!ENTITY connect.login.nochat "Connessione alla chat fallita">
+<!ENTITY connect.error.eteul_login_denied "login denied">
+<!ENTITY connect.error.unknown "unknown connection error">
+<!ENTITY connect.login.auth.failed "Autentificazione fallita">
+<!ENTITY connect.ping.notactive "Ping: ...">
+<!ENTITY connect.error.econnrefused "connection refused">
+<!ENTITY connect.popup.title "Errore di rete">
+<!ENTITY connect.find.nonefound "Inizializzazione della rete fallita/nessuna rete disponibile">
+<!ENTITY connect.error.enobufs "no buffer space">
+<!ENTITY connect.error.enotconn "not connected">
+<!ENTITY connect.login.timeout "Tempo di connessione all&#39;host esaurito">
+<!ENTITY connect.find.timeout.data "Esaurito il tempo di ricezione per i dati di connessione">
+<!ENTITY connect.lost.game "Connessione al gioco persa">
+<!ENTITY connect.error.eteul_connection_stalled "connection stalled">
+<!ENTITY connect.login.chat.lost "Connessione al gioco persa durante la connessione alla chat">
+<!ENTITY connect.error.enetdown "network down">
+<!ENTITY connect.find.nodata "Errore nella ricezione dei dati di connessione">
+<!ENTITY connect.ping.stats.brief "Ping: &#37;u(&#37;u)ms">
+<!ENTITY connect.ping.loss "Persa">
+<!ENTITY connect.error.eteul_enospc_send_socket "teul socket error">
+<!ENTITY connect.fail "Connessione fallita">
+<!ENTITY connect.error.eintr "eintr">
+<!ENTITY connect.error.eshutdown "connection shutdown">
+<!ENTITY connect.host.cell "cellhost">
+<!ENTITY connect.login.chat.error "Impossibile connettersi all’host della chat">
+<!ENTITY connect.error.eteul_enospc_send_buffer "teul buffer error">
+<!ENTITY connect.lost.world "Connessione al mondo persa">
+<!ENTITY connect.error.enetreset "network reset">
+<!ENTITY connect.error.enetunreach "network unreachable">
+<!ENTITY connect.error.etimedout "connection timed out">
+<!ENTITY connect.login.error "Errore di connessione all&#39;host">
+<!ENTITY connect.find.nobest "Impossibile connettersi alla rete del gioco">
 <!ENTITY waypoints.stop "stop">
 <!ENTITY waypoints.turn4 "svolta 4">
 <!ENTITY waypoints.turn5 "svolta 5">
@@ -4374,6 +4384,7 @@
 <!ENTITY waypoints.target "obiettivo">
 <!ENTITY waypoints.turn2 "svolta 2">
 <!ENTITY ppos.badlocation "Non puoi posizione questo tipo di oggetto in questa zona del terreno!">
+<!ENTITY ppos.swimming "You cannot use this tool while swimming!">
 <!ENTITY ppos.fru.built "Un altro giocatore ha costruito un FRU per questa missione!">
 <!ENTITY ppos.badtrees "C&#39;è un albero che blocca il tuo oggetto!">
 <!ENTITY ppos.badavoidance "Sei troppo vicino ad un altro oggetto!">
