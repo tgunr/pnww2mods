@@ -45,9 +45,9 @@ if(true) then
 	-- BOUNDING BOX
 	-- boundary name x y z
 
-        "boundary  playarea -142.63 321.31 9.23",
-		"boundary  playarea -214.73 138.02 9.23",
-		"boundary  playarea -309.78 98.42 39.80",
+        "boundary  playarea -168.98 272.02 7.08",
+		--"boundary  playarea -214.73 138.02 9.23",
+		"boundary  playarea -299.19 90.98 39.28",
 		"boundary  playarea -279.94 77.27 38.73",
 		"boundary  playarea -270.80 64.76 39.02",
 		"boundary  playarea -275.90 54.57 40.72",
@@ -70,7 +70,11 @@ if(true) then
 		"boundary  playarea 42.59 -174.86 44.43",
 		"boundary  playarea 81.10 -160.29 38.69",
 		"boundary  playarea 63.36 -143.17 39.46",
-		"boundary  playarea 387.36 20.70 7.75",
+		"boundary  playarea 285.24 -177.71 12.79",
+		
+		
+		
+		"boundary  playarea 366.45 -25.43 7.51",
 		
 	-- BLOCKING VOLUMES
 	-- block name x1 y1 z1 x2 y2 z2 thickness height
