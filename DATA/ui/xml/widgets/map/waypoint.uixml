@@ -2,7 +2,7 @@
  
 <window id="waypoint" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768" layer="100" aspectalign="center">
 	<include file="lib/common.uixml"/>
-	<view id="waypoint-popup" width="370" height="250" style="background-color: #00000088; 
+	<view id="waypoint-popup" width="390" height="250" style="background-color: #00000088; 
 							border-sides: ui/textures/hud/border_side.bmp;
 							border-corner: ui/textures/hud/border_corner.bmp;
 							border-width: 4;
@@ -19,15 +19,15 @@
 		<view x="220" y="40" rright="20" rtop="40">
 			<caption label="${widgets.map.context.waypoints.add.waypoint.type}" x="5" height="20" rright="5" rtop="0" maxlength="128"
 				style="font-size: -1; color: #FFFFFF;"/>
-			<image x="95" height="15" width="15" rtop="30" src="ui/textures/waypoint.bmp" style="color: #FF0000;" />
+			<image x="115" height="15" width="15" rtop="30" src="ui/textures/waypoint.bmp" style="color: #FF0000;" />
 			<radiobutton label="${widgets.map.waypoints.add.rally}" x="5" rright="5" height="15" rtop="30"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('rally')" onshow="this.value = true;"/>
-			<image x="95" height="15" width="15" rtop="50" src="ui/textures/waypoint.bmp" style="color: #0000FF;" />
+			<image x="115" height="15" width="15" rtop="50" src="ui/textures/waypoint.bmp" style="color: #0000FF;" />
 			<radiobutton label="${widgets.map.waypoints.add.attack}" x="5" rright="5" height="15" rtop="50"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('attack')"/>
-			<view class="contacticon"  x="95" height="15" width="15" rtop="70" index="7" style="color: #FF0000;"/>
+			<view class="contacticon"  x="115" height="15" width="15" rtop="70" index="7" style="color: #FF0000;"/>
 			<radiobutton label="${widgets.map.waypoints.add.mortar}" x="5" rright="5" height="15" rtop="70"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('mortar')"/>
