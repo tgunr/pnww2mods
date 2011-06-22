@@ -118,10 +118,13 @@
 						result = game.spawn(weapon, stratSelection);
 					else
 						result = game.spawn(weapon);
+						
+					game.globals.selectedindex = weapon.index;
 				}
 				
 				if(result)
 				{
+					game.globals.selectedindex = weapon.index;
 					showChat(false);
 					window.close();
 				}
@@ -168,7 +171,9 @@
 							
 							classNode.addNode(new TreeNode(vehicle.index, vehicle, 3, false, vehicle.description));
 							
-							if(vehicle.id == "us-assault")
+							if(vehicle.index == game.globals.selectedindex)
+								vehicleTree.selected = vehicle.index;
+							else if(vehicle.id == "us-assault")
 								vehicleTree.selected = vehicle.index;
 						}
 					}
@@ -182,8 +187,12 @@
 			
 			if(!vehicleTree.loadState())
 				vehicleTree.toggleNode("US", true);
+				
+			//vehicleTree.clickTree(false, game.globals.selectedindex);
 			
 			vehicleTree.drawTree();
+			
+			
 		}
 		
 		function selectVehicle(action)
