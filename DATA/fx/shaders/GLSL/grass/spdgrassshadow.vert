@@ -20,6 +20,7 @@ void main()
     vertexpos = p1.xyz;
 
     gl_TexCoord[0].xy = uv[c];
+    gl_TexCoord[0].z = gl_MultiTexCoord0.x;
 
 	gl_Position = gl_ProjectionMatrix * p1;
 }
