@@ -62,34 +62,15 @@ if(true) then
 		--"block -92.23 -32.63 36.87 -84.42 -34.53 36.28 .5 5",
 		--"block -84.42 -34.53 36.28 -75.88 -43.07 38.09 .5 5",
 		--"block -75.88 -43.07 38.09 -70.95 -49.17 38.05 .5 5",
-		--"block -70.95 -49.17 38.05 -66.98 -65.28 41.11 .5 5",
-		--"block -66.98 -65.28 41.11 -63.05 -70.97 41.34 .5 5",
-		--"block -45.07 -80.49 41.11 -63.68 -70.55 41.1 .5 5",
-		--"block -45.57 -80.27 41.25 -35.24 -83.76 41.56 .5 5",
-		--"block -35.24 -83.76 41.56 -19.86 -83.40 41.5 .5 1",
-		--"block -19.86 -83.40 39.85 -4.74 -88.94 39.09 .5 5",
-		--"block -4.74 -88.94 39.09 20.11 -100.23 38.5 .5 5",
-		--"block 19.78 -99.91 37.61 29.41 -112.02 38.49 .5 5",
-		--"block 29.41 -112.02 38.49 49.41 -131.41 39.42 .5 5",
-		--"block -177.15 -94.10 32.84 -169.36 -95.42 38.71 .5 5",
-		--"block -169.36 -95.42 38.71 -160.03 -101.24 40.03 .5 5",
-		--"block -160.03 -101.24 40.03 -154.04 -106.05 41.39 .5 5",
-		--"block -154.04 -106.05 41.39 -143.90 -122.60 43.89 .5 5",
-		--"block -139.45 -132.42 44.13 -135.78 -140.09 44.80 .5 5",
-		--"block -135.78 -140.09 44.80 -133.70 -146.67 45.03 .5 5",
-		--"block -133.70 -146.67 45.03 -129.05 -152.25 44.84 .5 5",
-		--"block -129.05 -152.25 44.84 -122.60 -156.35 45.44 .5 5",
-		--"block -122.60 -156.35 45.44 -111.60 -158.92 45.33 .5 5",
-		--"block -111.60 -158.92 45.33 -65.01 -176.65 46.13 .5 5",
-		--"block -65.01 -176.65 46.13 -36.02 -179.75 46.18 .5 5",
+
 	
 				
 	-- LANDMINES
 	
-		--"ammo landmine1 landmine",
-		--"ammo landmine2 landmine",
-		--"ammo landmine3 landmine",
-		--"ammo landmine4 landmine",
+		"ammo landmine1 landmine",
+		"ammo landmine2 landmine",
+		"ammo landmine3 landmine",
+		"ammo landmine4 landmine",
 
 	-- west side minefield
 		"area landmine1 OnMineArea 51999.91 2996961.96 0.94",
@@ -128,130 +109,31 @@ if(true) then
 		
 ----------------------------- AMBIENT EFFECTS AND SOUNDS -----------------------------
 	
-	-- EMITTERS
-	-- command,effectname,worldx,worldy,worldz
-	
-	-- smoke effects
-	-- craters
-		--"emitter cratersmoke -100.77 167.75 3.72",
-		--"emitter cratersmoke -94.12 107.80 5.35",
-		--"emitter cratersmoke -13.15 63.35 5.15",
-		--"emitter cratersmoke 134.57 -4.02 5.16",
-		--"emitter cratersmoke 59.42 25.24 6.21",
-
--- smokescreens
-	-- west side beach approach
-		"emitter smokescreen 52296.78 2997013.90 -0.44",
-		"emitter smokescreen 52254.52 2997000.68 3.10",
-		"emitter smokescreen 52220.33 2996978.60 7.27",		
-		"emitter smokescreen 52180.52 2996971.28 12.44",
-		"emitter smokescreen 52142.03 2996971.47 13.21",
-		"emitter smokescreen 52191.74 2996876.57 5.56",
-		"emitter smokescreen 52248.22 2996952.46 2.94",
-		"emitter smokescreen 52225.93 2996926.26 5.41",
-		"emitter smokescreen 52251.88 2996888.40 1.10",
-		"emitter smokescreen 52248.04 2996837.97 0.57",
-		"emitter smokescreen 52198.49 2996843.89 3.19",
-		"emitter smokescreen 52130.96 2996840.91 2.97",
-		"emitter smokescreen 52143.03 2996920.46 8.75",
-		"emitter smokescreen 52197.48 2996897.22 7.06",
-		"emitter smokescreen 52111.32 2996883.63 8.44",
-
-	-- east side beach approach
-		"emitter smokescreen 52513.52 2997046.32 2.27",
-		"emitter smokescreen 52523.90 2996997.58 3.15",
-		"emitter smokescreen52534.27 2996932.37 4.01",
-		"emitter smokescreen 52467.03 2996858.39 1.38",
-		"emitter smokescreen 52530.86 2996869.71 1.65",
-		"emitter smokescreen 52600.27 2996905.33 3.59",
-		"emitter smokescreen 52610.41 2996938.81 7.23",
-		"emitter smokescreen 52586.42 2996961.73 6.29",
-		"emitter smokescreen 52605.20 2997022.78 6.64",
-		"emitter smokescreen 52547.23 2996934.52 4.66",
-		"emitter smokescreen 52498.03 2996901.25 2.39",
-		"emitter smokescreen 52498.03 2996901.25 2.39",
-		"emitter smokescreen 52594.03 2996819.94 0.47",
-		"emitter smokescreen 52622.57 2996864.04 1.86",
-
-		
-
-	-- landing craft hulk smoke
-		"emitter hulksmoke 52284.27 2997092.69 1.05",
-		"emitter hulksmoke 52272.47 2997094.34 0.00",
-		"emitter hulksmoke 52540.25 2997112.35 0.85",
-		"emitter hulksmoke 52533.03 2997119.60 0.95",
-
-	-- landing craft hulk fire
-		"emitter smallfire 52284.27 2997092.69 1.05",
-		"emitter smallfire 52533.03 2997119.60 0.90",
-		
-
-	-- SOUNDS
+		-- SOUNDS
 		
 	-- positional sounds
 	-- command name filename volume loop x y z mindist maxdist	
 		"sound sounds/ambience/ocean.wav 10 1 -63 212 3 100 1000",	
-		--"sound sounds/fairmileb/idle.wav 2.0 1 -117 237 5 5 25",
-		--"sound sounds/fairmileb/idle.wav 2.0 1 -10 182 6 5 25",
-		--"sound sounds/fairmileb/idle.wav 2.0 1 -82 203 3 5 25",
-
+		"sound sounds/fairmileb/idle.wav 2.0 1 52277.74 2997094.15 0.22 5 25",
+		"sound sounds/fairmileb/idle.wav 2.0 1 52511.59 2997116.92 0.14 5 25",
+		
 	-- ambient combat sounds
-		--"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav .4 0",
-		--"sound guns1 sounds/scenarios/ambient_guns_machine_gun2.wav .4 0",
-		--"sound guns1 sounds/scenarios/ambient_guns_machine_gun3.wav .4 0",
-		--"sound guns2 sounds/scenarios/ambient_guns_machine_gun4.wav .4 0",
-		--"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav .4 0",
-		--"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav .4 0",
-		--"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav .4 0",
-		--"sound bombs sounds/scenarios/ambient_bombs_distantshells1.wav .5 0",
-		--"sound bombs sounds/scenarios/ambient_bombs_distantshells2.wav .5 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav .4 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun2.wav .4 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun3.wav .4 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun4.wav .4 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav .4 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav .4 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav .4 0",
+		"sound bombs sounds/scenarios/ambient_bombs_distantshells1.wav .5 0",
+		"sound bombs sounds/scenarios/ambient_bombs_distantshells2.wav .5 0",
 		
-	-- only played during PHASE 1
-		--"event guns1 .5 1000",
-		--"event.0.1.1 guns2 .5 1000",
-		--"event.0.1.1 bombs .5 1000",
-		--"event wind .5 5000",
+	
 
------------------------------ TRIGGERS -------------------------------------------------- 
+----------------------------- TRIGGERS ----------------------------------------------------
+	-- NOTE: THESE WERE CUTnPASTED FROM DOG_GREEN AND MAY NOT BE REQUIRED FOR DIEPPE --
 		
-
-			
-	-- german shore defense guns
-	-- far right bunker pak40
-		--"clone shorebattery pak40 -350.63 199.13 22.5 0 0 90 ",
-		
-	-- these are the 2 bunker shore batteries near the draw
-	-- they despawn after the Americans establish a beachhead
-		--"clone.0.1.1 shorebattery pak40 -172.00 93.24 12.2 0 0 90 ",
-		--"clone.0.1.1 shorebattery pak40 -124.42 46.24 12.6 0 -10 90 ",
-		
-	-- sea fx pak40 on the hill to the right
-		--"clone shorebattery2 pak40 -417.93 121.83 41 0 0 50 ",
-		
-	-- firepoint hooks
-		--"firepoint shoredefense shorebattery 1 0 -.15 0 .05 .15",
-		--"firepoint shoredefense2 shorebattery2 1 0 -.32 0 .1 .5",
-
-	-- bunker pak40s fire durring PHASE 1
-		--"event.0.1.1 shoredefense .75 1000 100 1",
-		
-	-- sea fx event fires off pak40
-		--"event shoredefense2 .5 500 100 1",
-		
-	-- german air defense
-
-	-- rear fx guns
-		--"clone antiair flak36 -238.05 -321.26 35.07 0 0 0 ",
-		--"clone antiair flak36 -144.85 -392.35 47.57 0 0 0 ",
-		--"clone antiair flak36 33.95 -388.84 48.35 0 0 0 ",
-		
-	-- firepoint hooks
-		--"firepoint airdefense antiair 1 0 -.15 0 .03 .1",
-		
-	-- fire off air defense from rear areas
-		--"event airdefense .8 600 100 1",
-		
-	-- american destroyers
+	-- british destroyers
 		--"clone destroyer1 uk_z34 509.16 922.13 3.3 0 0 120",
 		--"clone destroyer2 uk_z34 823.10 733.41 3.3 0 0 120",
 		--"clone destroyer3 uk_z34 112.23 1143.07 3.3 0 0 120",
