@@ -32,49 +32,46 @@ if(true) then
 
 		
 		-- higgins boats
-		--damaged
-		"place dg_veh_lcvp_lx -42.57 244.33 2.9 -15 -10 125 0 0 0 0",
-		"place dg_veh_lcvp_lx -31.38 165.17 4.0 20 40 125 0 0 0 0",
-		"place dg_veh_lcvp_lx -48.15 211.30 4.5 180 0 115 0 0 0 0",
-		"place dg_veh_lcvp_lx -90.62 197.56 5.0 180 -5 -20 0 0 0 0",
-		
-	
-		--empty
-		"place dg_veh_lcvp -123.69 218.34 3.55 -1 0 110 0 0 0 0",
-		"place dg_veh_lcvp 44.88 151.53 3.4 0 0 110 0 0 0 0",
-		
-		
-		
-		"place dg_veh_lcvp_lx -1.38 234.70 3.6 -3 0 125 0 0 0 0",
-		"place dg_veh_lcvp_lx 14.18 227.54 3.5 -3 0 135 0 0 0 0",
-		"place dg_veh_lcvp -35.66 189.92 3.2 0 0 130 0 0 0 0",
-		"place dg_veh_lcvp 1.72 157.33 3.4 0 0 125 0 0 0 0",
-		"place dg_veh_lcvp -77.0 195.28 3.3 -3 10 100 0 0 0 0",
-		"place dg_veh_lcvp 43.61 137.14 3.7 -3 0 115 0 0 0 0",
-		"place dg_veh_lcvp 58.94 135.27 3.3 -3 0 100 0 0 0 0",
-		
-
-		 
-		"place dg_veh_lcvp_lx 84.96 141.06 3.72 -3 0 120 0 0 0 0",
-		"place dg_veh_lcvp_lx 104.23 127.04 3.68 -3 0 130 0 0 0 0",
-		"place dg_veh_lcvp -113.65 226.54 3.54 0 0 100 0 0 0 0",
-		"place dg_veh_lcvp -134.64 235.54 3.62 0 0 115 0 0 0 0",
-		"place dg_veh_lcvp_lx -106.32 264.14 3.5 0 0 115 0 0 0 0",
-		
-
 		
 		--spawn boats
+		"place normalbobber dg_veh_lcvp -14.0 178.89 3.2 0 0 135 0 0 0 0",
+		"place normalbobber dg_veh_lcvp -78.0 206.0 3.35 0 0 120 0 0 0 0",
+		"place normalbobber dg_veh_lcvp -118.93 235.00 3.35 0 0 125 0 0 0 0",
+
 		
-		"place dg_veh_lcvp -14.0 178.89 3.2 0 0 135 0 0 0 0",
-		"place dg_veh_lcvp -78.0 206.0 3.35 0 0 120 0 0 0 0",
-		"place dg_veh_lcvp -118.93 235.00 3.35 0 0 125 0 0 0 0",
+		-- damaged
+		"place heavybobber dg_veh_lcvp_lx -42.57 244.33 2.9 -15 -10 125 0 0 0 0",
+		"place heavybobber dg_veh_lcvp_lx -48.15 211.30 4.5 180 0 115 0 0 0 0",
+		"place beachedbobber dg_veh_lcvp_lx -31.38 165.17 4.0 20 40 125 0 0 0 0",
+		"place beachedbobber dg_veh_lcvp_lx -90.62 197.56 5.0 180 -5 -20 0 0 0 0",
 		
+		--empty
+		"place beachedbobber dg_veh_lcvp -123.69 218.34 3.55 -1 0 110 0 0 0 0",
+		"place normalbobber dg_veh_lcvp 44.88 151.53 3.4 0 0 110 0 0 0 0",
 		
+		"place normalbobber dg_veh_lcvp_lx -1.38 234.70 3.6 -3 0 125 0 0 0 0",
+		"place beachedbobber dg_veh_lcvp_lx 14.18 227.54 3.5 -3 0 135 0 0 0 0",
+		"place normalbobber dg_veh_lcvp -35.66 189.92 3.2 0 0 130 0 0 0 0",
+		"place normalbobber dg_veh_lcvp 1.72 157.33 3.4 0 0 125 0 0 0 0",
+		"place normalbobber dg_veh_lcvp -77.0 195.28 3.3 -3 10 100 0 0 0 0",
+		"place beachedbobber dg_veh_lcvp 43.61 137.14 3.7 -3 0 115 0 0 0 0",
+		"place normalbobber dg_veh_lcvp 58.94 135.27 3.3 -3 0 100 0 0 0 0",
+		 
+		"place normalbobber dg_veh_lcvp_lx 84.96 141.06 3.72 -3 0 120 0 0 0 0",
+		"place normalbobber dg_veh_lcvp_lx 104.23 127.04 3.68 -3 0 130 0 0 0 0",
+		"place normalbobbers dg_veh_lcvp -113.65 226.54 3.54 0 0 100 0 0 0 0",
+		"place beachedbobber dg_veh_lcvp -134.64 235.54 3.62 0 0 115 0 0 0 0",
+		"place normalbobber dg_veh_lcvp_lx -106.32 264.14 3.5 0 0 115 0 0 0 0",
 		
-		
-		
-		
-		
+		-- content name x1 y1 x2 y2 pitch roll bob pitchrate rollrate bobrate
+		-- the x1,y1 to x2,y2 line segments defines the direction of the wave
+		-- pitch and roll are in degrees to and fro
+		-- bob is in meters up or down
+		-- rates are arbitrary scalers, just choose something that looks right
+		"wave normalbobber -93.45 285.45 -124.37 246.10 2.5 1.5 .05 .0005 .001 .001",
+		"wave beachedbobber -93.45 285.45 -124.37 246.10 .5 1 .01 .001 .001 .001",
+		"wave heavybobber -93.45 285.45 -124.37 246.10 3 3 .05 .001 .001 .001",
+	
 
 		-- belgium gates
 		"place dg_obs_elementc -14.31 270.78 2.75 0 0 195 0 0 0 0",
