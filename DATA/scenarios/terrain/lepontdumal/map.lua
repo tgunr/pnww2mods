@@ -130,6 +130,10 @@ if(true) then
 		
 		"place dg_wire_barbed_apron	167 -86.0 8.5 0 0 0 0 0 0",
 		
+		"place haystack_outside 177.75 117.73 6.02 0 0 0 0 0 0 0",
+		
+		
+		
 		
 
 		
