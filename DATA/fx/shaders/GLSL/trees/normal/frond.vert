@@ -14,9 +14,11 @@ void main()
 		
 	vec3 normal;
 	vec2 diffusecoords = gl_MultiTexCoord0.xy;
+
+    vec4 rot = vec4(rotation.xyz, 0.0f);
 			
-	position.xy = vec2(dot(rotation.yxw, position.xyz), dot(rotation.zyw, position.xyz));
-	normal.xy = vec2(dot(rotation.yxw, gl_Normal), dot(rotation.zyw, gl_Normal));
+	position.xy = vec2(dot(rot.yxw, position.xyz), dot(rot.zyw, position.xyz));
+	normal.xy = vec2(dot(rot.yxw, gl_Normal), dot(rot.zyw, gl_Normal));
 	normal.z = gl_Normal.z;
 	
 	N = normalize(gl_NormalMatrix * normal);

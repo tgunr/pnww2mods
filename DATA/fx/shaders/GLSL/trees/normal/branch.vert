@@ -14,12 +14,14 @@ void main()
 		
 	vec3 tangent = gl_MultiTexCoord2.xyz;
 
+    vec4 rot = vec4(rotation.xyz, 0.0f);
+
 	/* Rotate Tree */
-	position.xy = vec2(dot(rotation.yxw, position.xyz), dot(rotation.zyw, position.xyz));
+	position.xy = vec2(dot(rot.yxw, position.xyz), dot(rot.zyw, position.xyz));
 	
 	/* Rotate Normal */
 	vec3 normal;
-	normal.xy = vec2(dot(rotation.yxw, gl_Normal), dot(rotation.zyw, gl_Normal));
+	normal.xy = vec2(dot(rot.yxw, gl_Normal), dot(rot.zyw, gl_Normal));
 	normal.z = gl_Normal.z;
 	
 	/* Set tree to world position */
@@ -27,7 +29,7 @@ void main()
 	position.w = 1.0;
 
 	/* Apply normal mapping */
-	tangent.xy = vec2(dot(rotation.yxw, tangent.xyz), dot(rotation.zyw, tangent.xyz));
+	tangent.xy = vec2(dot(rot.yxw, tangent.xyz), dot(rot.zyw, tangent.xyz));
 	vec3 binormal = cross(normal, tangent);
 	
 	// All in eye space

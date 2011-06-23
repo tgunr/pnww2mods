@@ -9,7 +9,10 @@ void main()
 	int corner = int(gl_Vertex.w);
 	
 	vec4 position = gl_MultiTexCoord1;
-	position.xy = vec2(dot(rotation.yxw, position.xyz), dot(rotation.zyw, position.xyz));
+
+    vec4 leafrot = vec4(rotation.xyz, 0.0f);
+
+	position.xy = vec2(dot(leafrot.yxw, position.xyz), dot(leafrot.zyw, position.xyz));
 		
 	float c1 = cos(cameraangle.x + gl_MultiTexCoord2.x);
 	float s1 = sin(cameraangle.x + gl_MultiTexCoord2.x);

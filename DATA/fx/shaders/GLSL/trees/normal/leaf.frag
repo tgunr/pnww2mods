@@ -35,6 +35,7 @@ void main()
     diffuseColor *= (gl_FrontMaterial.diffuse * gl_TexCoord[1].x);
     
 	vec4 color = base * (diffuseColor + ambientColor);
+    color.rgb *= gl_TexCoord[1].y;
 
 	gl_FragColor = fogThis(color);
 	gl_FragColor.a = base.a;

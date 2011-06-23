@@ -13,11 +13,13 @@ void main()
 	
 	int corner = int(gl_Vertex.w);
 	
+    vec4 leafrot = vec4(rotation.xyz, 0.0f);
+
 	vec4 position = gl_MultiTexCoord1;
-	position.xy = vec2(dot(rotation.yxw, position.xyz), dot(rotation.zyw, position.xyz));
+	position.xy = vec2(dot(leafrot.yxw, position.xyz), dot(leafrot.zyw, position.xyz));
 	
 	vec3 normal = gl_Normal;
-	normal.xy = vec2(dot(rotation.yxw, gl_Normal), dot(rotation.zyw, gl_Normal));
+	normal.xy = vec2(dot(leafrot.yxw, gl_Normal), dot(leafrot.zyw, gl_Normal));
 	
 	N = gl_NormalMatrix * normal;
 		
@@ -45,5 +47,6 @@ void main()
 
 	gl_Position = gl_ProjectionMatrix * position;
 	gl_TexCoord[0] = gl_MultiTexCoord0;
-	gl_TexCoord[1].x = dimming;	
+	gl_TexCoord[0].z = dimming;	
+    gl_TexCoord[0].w = rotation.w;
 }

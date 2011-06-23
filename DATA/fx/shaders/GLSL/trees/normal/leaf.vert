@@ -19,9 +19,12 @@ void main()
 	vec3 tangent = gl_MultiTexCoord3.xyz;
 	
 	vec4 position = gl_MultiTexCoord1;
-	position.xy = vec2(dot(rotation.yxw, position.xyz), dot(rotation.zyw, position.xyz));
+	vec4 leafrot = vec4(rotation.xyz, 0.0f);
+
+    position.xy = vec2(dot(leafrot.yxw, position.xyz), dot(leafrot.zyw, position.xyz));
 			
     gl_TexCoord[1].x = dimming * diffuseScale;
+    gl_TexCoord[1].y = rotation.w;
 
 	vec3 cornerpt = gl_Vertex.xyz;
 
@@ -37,10 +40,10 @@ void main()
                
 	cornerpt = rot * cornerpt;
 	    
- 	normal.xy = vec2(dot(rotation.yxw, normal), dot(rotation.zyw, normal));
+ 	normal.xy = vec2(dot(leafrot.yxw, normal), dot(leafrot.zyw, normal));
 	N = gl_NormalMatrix * normal;
 	
-    tangent.xy = vec2(dot(rotation.yxw, tangent), dot(rotation.zyw, tangent));
+    tangent.xy = vec2(dot(leafrot.yxw, tangent), dot(leafrot.zyw, tangent));
 	T = gl_NormalMatrix * tangent;
   
     B = cross(normal, tangent);

@@ -20,11 +20,12 @@ void main()
 	
 	ambientColor += gl_LightModel.ambient;
 	ambientColor *= gl_FrontMaterial.ambient;
-	diffuseColor *= (gl_FrontMaterial.diffuse * gl_TexCoord[1].x);
+	diffuseColor *= (gl_FrontMaterial.diffuse * gl_TexCoord[0].z);
     diffuseColor *= diffuseScale;
 
 	vec4 color = base * (diffuseColor + ambientColor);
-	
+	color.rgb *= gl_TexCoord[0].w;
+
 	gl_FragColor = fogThis(color);
 	gl_FragColor.a = base.a;
 }

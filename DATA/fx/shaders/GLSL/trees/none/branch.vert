@@ -10,11 +10,13 @@ void main()
 {
 	vec4 position = vec4(gl_Vertex.x, gl_Vertex.y, gl_Vertex.z, 1.0);
 			
+    vec4 rot = vec4(rotation.xyz, 0.0f);
+
 	/* Rotate Tree */
-	position.xy = vec2(dot(rotation.yxw, position.xyz), dot(rotation.zyw, position.xyz));
+	position.xy = vec2(dot(rot.yxw, position.xyz), dot(rot.zyw, position.xyz));
 	
 	/* Rotate Normal */
-	N.xy = vec2(dot(rotation.yxw, gl_Normal), dot(rotation.zyw, gl_Normal));
+	N.xy = vec2(dot(rot.yxw, gl_Normal), dot(rot.zyw, gl_Normal));
 	N.z = gl_Normal.z;
 	
 	N = normalize(gl_NormalMatrix * N);
