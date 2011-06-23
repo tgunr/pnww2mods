@@ -292,6 +292,12 @@
 		<weapon>ammo</weapon>
 		<weapon index="8">buildtool</weapon>
 	</visloadout>
+	<visloadout id="de-pzschreck" arms="dearmy">
+		<weapon>pzschreck54</weapon>
+		<weapon>luger</weapon>		
+		<weapon lastresort="true">axisknife</weapon>		
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
 	
 	<!-- German Airborne Troops -->
 	<visloadout id="de-para-rfl" arms="depara" atp="2" para="true">	
@@ -343,7 +349,8 @@
 		<weapon index="8">buildtool</weapon>
 	</visloadout>
 	
-	<!--  USA (Grenades commented out pending final file name) -->
+	
+	<!--  USA  -->
 	
 	<visloadout id="us-assault" arms="usarmy">
 		<weapon>m1garand</weapon>
@@ -379,6 +386,12 @@
 	<visloadout id="us-sniper" arms="usarmy">
 		<weapon>springfld1903</weapon>
 		<weapon>m18</weapon>
+		<weapon lastresort="true">alliedknife</weapon>
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
+	<visloadout id="us-bazooka" arms="usarmy">
+		<weapon>m9bazooka</weapon>
+		<weapon>colt1911</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
 		<weapon index="8">buildtool</weapon>
 	</visloadout>

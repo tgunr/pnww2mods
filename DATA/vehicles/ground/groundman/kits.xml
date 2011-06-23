@@ -220,6 +220,12 @@
 			<object name="us_canteen" model="us_canteen"/>
 			<object name="us_riflebelt" model="us_riflebelt"/>
 		</kit>
+		<kit name="us-bazooka">
+			<object name="us_helmet" model="us_helmet_01"/>		
+			<object name="us_holster" model="us_holster"/>
+			<object name="us_haversack" model="us_haversack"/>
+			<object name="us_canteen" model="us_canteen"/>
+		</kit>
 		
 		<!-- BRITISH KITS -->
 		<kit name="ukrifle">
@@ -555,6 +561,12 @@
 			<object name="de_gas"/>
 			<object name="de_rifle_ammo_lf"/>
 			<object name="de_rifle_ammo_rt"/>
+		</kit>
+		<kit name="de-pzschreck">
+			<object name="de_helmet"/>
+			<object name="de_canteen_rt"/>
+			<object name="de_ruck"/>
+			<object name="de_pholster_lf_web"/>			
 		</kit>
 		
 		
