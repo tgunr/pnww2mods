@@ -1,54 +1,88 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>obj_dieppe</name>
+  <# team 1>German</# team 1>
+  <# team 2>British</# team 2>
   <body>onspawn.moveout * Dieppe Raid
-victory1 * Allied Victory! Allied forces have pushed the German defenders out of town.
+
+# new 3-stage localizations (some overlap)
+
+# victory1 requires completion of all 3 objectives
+victory1 * Allied Victory! Allied raiders have pushed the German defenders out of town.
+
+# victory2 requires the Allies fail to achieve objective phase 3 before round timer runs out
 victory2 * Axis Victory! German forces have successfully defended the town from Allied raiders.
+
 roundstop * This round is over!
 playarea * This is the edge of the play area, you cannot leave the play area
-usspawn1 * Get to the outer bunkers and stage an attack on the town
-usspawn2 * Get to the outer bunkers and stage an attack on the town
-usspawn3 * Move through the town and eliminate the German defenders
-mgnest1 * MG Nest A
-mgnest2 * MG Nest B
-mgnest3 * MG Nest C
-bunker1 * Bunker A
-bunker2 * Defense Objective
-gunemplacement1 * Gun Emplacement A
-gunemplacement2 * Gun Emplacement B
-seawall * Rally Point
-shale * Rally Point
-germanbunker * Capture Objective
-vierville_draw * Vierville Draw
-minefield * minefield
-youcapon * You are capturing the bunker!
-alliedcapon * Allied forces are capturing the Division HQ!
-alliedcapoff * Axis forces have re-taken the Division HQ!
 
-# new 2-stage localizations (some overlap)
-onspawn.1.1.1 = Get to one of the rally points and secure the beachhead!
+#Phase 1 functions and messages
+
+ukspawn1 * Get to the outer bunker lines and open the attack into the town!
+
+# bunkerlines 1a and 1b are Allied capture objectives for phase 1 only
+bunkerline1a * Bunker A
+bunkerline1b * Bunker B
+
+# minefields are always active
+minefield * minefield
+youcapon * You are capturing the beach bunkerline!
+alliedcapon * Allied forces are capturing the beach bunkers!
+alliedcapoff * Axis forces have re-taken their beach bunkers!
+onspawn.1.1.1 = Get to one of the bunker lines and secure the beachhead!
 onspawn.2.1.1 = Push the Allied raiders into the sea!
-beachfalling = Allied soldiers are securing the beachhead!
-beachhead.1.1.1 = Rally Point
-beachhead.2.1.1 = Defend this area
-beachsecure = Allied forces have secured the beachhead!
-navalguns = American shore bombardment has ceased near the Vierville Draw!
-victory1 = Allied forces have secured the beachhead!
-victory2 = German forces have defeated the Allied raiders!
-roundstop = This round is over.
-playarea = This is the edge of the play area, you cannot leave the play area.
-onspawn.1.1.2 = Work through the town and capture the Division HQ overlooking the beaches.
-onspawn.2.1.2 = Defend the Division HQ from being overrun by Allied forces!
-bunkerfalling.1.1.2 = American solidiers are capturing the Division HQ!
-bunkerfalling.2.1.2 = German forces have secured the Division HQ!
-linebreach = Allied solidiers have infiltrated the town!
-germanbunker = Division HQ
-beachhead = Allied Beachhead
-objective1 = Allied Beachhead
-objective2 = Division HQ 
-minefield = minefield
-alliedcapon = American forces are capturing the Division HQ!
-alliedcapoff = Axis forces have re-captured the Division HQ!</body>
+bunkerline1afalling = Allied soldiers are securing the western beach bunkers!
+bunkerline1bfalling = Allied soldiers are securing the eastern beach bunkers!
+bunkerline1a.1.1.1 = Capture this line of bunkers
+bunkerline1a.2.1.1 = Defend this area
+bunkerline1b.1.1.1 = Capture this line of bunkers
+bunkerline1b.2.1.1 = Defend this area
+bunkerline1asecure = Allied forces have captured the western beach bunker lines!
+bunkerline1bsecure = Allied forces have captured the eastern beach bunker lines!
+
+# Phase 2 functions and messages
+
+ukspawn2 * Get to the enemy HQ and move the Germans back to the rear of town!
+onspawn.1.1.2 = Work through the town and capture the Enemy HQ overlooking the beaches.
+onspawn.2.1.2 = Defend the HQ position from being overrun by Allied forces!
+# HQ is the &#34;bunker&#34; or allied phase 2 capture objective
+GHQ * Capture Objective
+youcapon * You are capturing the enemy HQ!
+alliedcapon * Allied forces are capturing the German HQ!
+alliedcapoff * Axis forces have defended their HQ position!
+
+# the following 2 messages are broadcast to Axis but not Allies
+HQfalling.2.1.2 = Allied forces are capturing the HQ position!
+HQsecure.2.1.2 = Allied solidiers have captured the enemy HQ and infiltrated the town!
+
+# the following 2 messages are broadcast to Allies but not Axis
+HQfalling.1.1.2 = Allied soldiers have infiltrated the German HQ position
+HQsecure.1.1.2 = Allied solidiers have captured the enemy HQ and are moving through the town
+
+# Phase 3 functions and messages
+
+ukspawn3 * Move through the town and eliminate the German defenders!
+
+Town Cap * Capture Objective
+
+# victory1 requires completion of all 3 objectives
+victory1 * Allied Victory! Allied raiders have pushed the German defenders out of town.
+
+# victory2 requires the Allies fail to achieve objective phase 3 before round timer runs out
+victory2 * Axis Victory! German forces have successfully defended the town from Allied raiders.
+
+ukspawn3 * Get to the town capture objective and complete capture of the town!
+onspawn.1.1.2 = Capture the last objective at the back of town.
+onspawn.2.1.2 = Defend the last objective from being overrun by Allied forces!
+# Town Cap is the &#34;bunker&#34; or allied phase 3 capture objective
+Town Cap * Capture Objective
+youcapon * You are capturing the last objective!
+alliedcapon * Allied forces are capturing the town!
+alliedcapoff * Axis forces have defended the town!
+
+# the following 2 messages are broadcast to both sides
+townfalling.2.1.2 = Allied forces are capturing the last objective!
+townsecure.2.1.2 = Allied solidiers have captured the last objective and won the round!</body>
   <bodyloc>true</bodyloc>
   <brief>The Allies raid Dieppe township.</brief>
   <duration>30</duration>
@@ -61,10 +95,10 @@ alliedcapoff = Axis forces have re-captured the Division HQ!</body>
   <rules>dieppe</rules>
   <team1>2</team1>
   <team1min>2</team1min>
-  <team2>4</team2>
+  <team2>?</team2>
   <team2min>2</team2min>
   <terrain></terrain>
-  <title>Dieppe Raid</title>
+  <title>Dieppe Raid WIP</title>
   <victory></victory>
   <weather>0</weather>
 </content>

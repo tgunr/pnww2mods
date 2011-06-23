@@ -1,6 +1,8 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>obj_dieppe</name>
+  <# team 1>German</# team 1>
+  <# team 2>British</# team 2>
   <body>onspawn.moveout * 突袭迪耶普
 victory1 * 盟国胜利！盟军击溃了守卫小镇的红军.
 victory2 * 红国胜利！红军成功的防御住盟军对此小镇的突袭.
@@ -61,7 +63,7 @@ alliedcapoff = 红军收复了师总部!</body>
   <rules>dieppe</rules>
   <team1>2</team1>
   <team1min>2</team1min>
-  <team2>4</team2>
+  <team2>?</team2>
   <team2min>2</team2min>
   <terrain></terrain>
   <title>突袭迪耶普</title>

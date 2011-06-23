@@ -1,17 +1,18 @@
 <?xml version='1.0'?>
-<!DOCTYPE content SYSTEM "content.dtd">
 <content type="3">
   <body>Paratroopers were elite troops well armed for the assault role they were frequently dropped into, and their tough training gave them extra stamina over their regular infantry counterparts.</body>
-  <brief>UNIT: Elite Airborne Infantry
-
-WEAPONS: 
-1 x MAS Mle.38 Sub Machine Gun
-1 x 1935S Automatic Pistol
-4 x No36M HE grenades
-4 x M18 smoke grenades
-1 x Combat Knife
-1 x 5kg Satchel Charge</brief>
+  <brief>WEAPON: MAS mle 38 Submachine Gun
+AMMO: Cartouche de 7.65 mm longue
+MAGAZINE: 32 rounds
+MUZZLE VELOCITY: 350 m/s
+RATE OF FIRE: 600 rpm
+OTHER EQUIPMENT:
+  Pistolet Automatique mle 1935S 7.55 mm
+  Grenade OF (HE) (4)
+  Grenade Fumigène (Smoke Grenades) (4)
+  Satchel Charge (1)
+  Combat Knife</brief>
   <handler>handlers/infantry</handler>
   <image>ui/textures/test/french_army.bmp</image>
-  <title>PARATROOPER</title>
+  <title>Parachutiste (Paratrooper)</title>
 </content>
