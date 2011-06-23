@@ -60,7 +60,7 @@ if(true) then
 		"place normalbobber dg_veh_lcvp_lx 84.96 141.06 3.72 -3 0 120 0 0 0 0",
 		"place normalbobber dg_veh_lcvp_lx 104.23 127.04 3.68 -3 0 130 0 0 0 0",
 		"place normalbobber dg_veh_lcvp -113.65 226.54 3.54 0 0 100 0 0 0 0",
-		"place beachedbobber dg_veh_lcvp -134.64 235.54 3.62 0 0 115 0 0 0 0",
+		"place normalbobber dg_veh_lcvp -134.64 235.54 3.62 0 0 115 0 0 0 0",
 		"place normalbobber dg_veh_lcvp_lx -106.32 264.14 3.5 0 0 115 0 0 0 0",
 		
 		-- content name x1 y1 x2 y2 pitch roll bob pitchrate rollrate bobrate
@@ -69,8 +69,8 @@ if(true) then
 		-- bob is in meters up or down
 		-- rates are arbitrary scalers, just choose something that looks right
 		"wave normalbobber -93.45 285.45 -124.37 246.10 2.5 1.5 .05 .0005 .001 .001",
-		"wave beachedbobber -93.45 285.45 -124.37 246.10 .5 1 .01 .001 .001 .001",
-		"wave heavybobber -93.45 285.45 -124.37 246.10 3 3 .05 .001 .001 .001",
+		"wave beachedbobber -93.45 285.45 -124.37 246.10 0 0 0 0 0 0",
+		"wave heavybobber -93.45 285.45 -124.37 246.10 3.5 3.5 .05 .001 .001 .001",
 	
 
 		-- belgium gates
