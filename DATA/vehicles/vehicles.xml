@@ -21,7 +21,8 @@
 <vehicle id="de-lmg"               file="ground/groundman/groundman.xml"/>
 <vehicle id="de-sniper"            file="ground/groundman/groundman.xml"/>
 <vehicle id="de-ltmortar"          file="ground/groundman/groundman.xml"/>
-<vehicle id="de-assault"	file="ground/groundman/groundman.xml" onlineonly="true"/>
+<vehicle id="de-assault"		file="ground/groundman/groundman.xml" onlineonly="true"/>
+<vehicle id="de-pzschreck"		file="ground/groundman/groundman.xml" onlineonly="true"/>
 <vehicle id="de-para-rfl"          file="ground/groundman/groundman.xml"/>
 <vehicle id="de-para-smg"          file="ground/groundman/groundman.xml"/>
 <vehicle id="de-para-lmg"          file="ground/groundman/groundman.xml"/>
@@ -54,12 +55,12 @@
 <vehicle id="bf110fb"              file="aircraft/bf110fb/bf110fb.xml"/>
 <vehicle id="bf109e1"              file="aircraft/bf109e1/bf109e1.xml"/>
 <vehicle id="bf109e"               file="aircraft/bf109e3/bf109e3.xml"/>
-<!vehicle id="bf109f1"              file="aircraft/bf109f1/bf109f1.xml" onlineonly="true"/!>
+<!-- vehicle id="bf109f1"              file="aircraft/bf109f1/bf109f1.xml" onlineonly="true" -->
 <vehicle id="bf109f2"              file="aircraft/bf109f2/bf109f2.xml"/>
 <vehicle id="bf109f4"              file="aircraft/bf109f4/bf109f4.xml"/>
 <vehicle id="me109g6"              file="aircraft/bf109g6/bf109g6.xml"/>
 <vehicle id="fw190a4"              file="aircraft/fw190a4/fw190a4.xml"/>
-<!vehicle id="bf110c4"              file="aircraft/bf110c4/bf110c4.xml" onlineonly="true"/!>
+<!-- vehicle id="bf110c4"              file="aircraft/bf110c4/bf110c4.xml" onlineonly="true" -->
 <vehicle id="ju87b"                file="aircraft/ju87b/ju87b.xml"/>
 <vehicle id="de_blent"             file="aircraft/blent/blent.xml" onlineonly="true"/>
 <vehicle id="he111"                file="aircraft/he111/he111.xml"/>
@@ -105,7 +106,7 @@
 <vehicle id="hurri2b"              file="aircraft/hurri2b/hurri2b.xml"/>
 <vehicle id="hurri2c"              file="aircraft/hurri2c/hurri2c.xml"/>
 <vehicle id="spit1"                file="aircraft/spit1/spit1.xml"/>
-<!vehicle id="spit1b"               file="aircraft/spit1b/spit1b.xml" onlineonly="true"/!>
+<!-- vehicle id="spit1b"               file="aircraft/spit1b/spit1b.xml" onlineonly="true" -->
 <vehicle id="spit2b"               file="aircraft/spit2b/spit2b.xml"/>
 <vehicle id="spitvb"               file="aircraft/spitvb/spitvb.xml"/>
 <vehicle id="spit9c"               file="aircraft/spit9c/spit9c.xml"/>
@@ -173,7 +174,8 @@
 <vehicle id="us-bar" 		file="ground/groundman/groundman.xml"/>
 <vehicle id="us-eng" 		file="ground/groundman/groundman.xml"/>
 <vehicle id="us-sniper" 	file="ground/groundman/groundman.xml"/>
-<!-- vehicle id="de-assault" 	file="ground/groundman/groundman.xml"/-->
+<vehicle id="us-bazooka" 	file="ground/groundman/groundman.xml"/>
+
 
 
 <vehicle id="cn_oplbltz"           file="ground/oplbltz/oplbltz.xml" onlineonly="true"/>
