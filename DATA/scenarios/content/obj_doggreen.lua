@@ -210,13 +210,13 @@ if(true) then
 		"sound sounds/fairmileb/idle.wav 2.0 1 -82 203 3 5 25",
 
 	-- ambient combat sounds
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav .4 0",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun2.wav .4 0",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun3.wav .4 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun4.wav .4 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav .4 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav .4 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav .4 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav .5 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun2.wav .5 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun3.wav .5 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun4.wav .5 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav .5 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav .5 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav .3 0",
 		"sound bombs sounds/scenarios/ambient_bombs_distantshells1.wav .5 0",
 		"sound bombs sounds/scenarios/ambient_bombs_distantshells2.wav .5 0",
 		
