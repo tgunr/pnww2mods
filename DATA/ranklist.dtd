@@ -6,13 +6,15 @@
 <!ELEMENT ranklist (rank+)>
 <!ATTLIST ranklist version CDATA #FIXED "1.1">
 
-<!ELEMENT rank	(british,french,german)>
+<!ELEMENT rank	(british,american,french,german)>
 <!ATTLIST rank	level	CDATA					#REQUIRED
 		type	(enlisted | officer | command | staff)	#REQUIRED
 		>
 
 <!ELEMENT british (ground,air,navy)>
 <!ATTLIST british country CDATA "1">
+<!ELEMENT american (ground,air,navy)>
+<!ATTLIST american country CDATA "2">
 <!ELEMENT french (ground,air,navy)>
 <!ATTLIST french country CDATA "3">
 <!ELEMENT german (ground,air,navy)>
