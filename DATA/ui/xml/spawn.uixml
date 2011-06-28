@@ -18,13 +18,13 @@
 			
 			if(aspectRatio >= 1.6)
 			{
-				view.setstyleproperty("background-image", "ui/textures/spawnscreen69.bmp");
+				view.setstyleproperty("background-image", "screens/spawnscreen69.bmp");
 				descriptionText.x = view.scalev("x", 120);
 				descriptionText.width = view.scalev("width", 405);
 			}
 			else
 			{
-				view.setstyleproperty("background-image", "ui/textures/spawnscreen43.bmp");
+				view.setstyleproperty("background-image", "screens/spawnscreen43.bmp");
 				descriptionText.x = view.scalev("x", 25);
 				descriptionText.width = view.scalev("width", 500);
 			}

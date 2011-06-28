@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <window id="loading" x="0" y="0" width="1280" height="800" viewportwidth="1280" viewportheight="800"
-	style="background-image: Splashscreen69.bmp;" aspectalign="center" onshow="initWin(this)">
+	style="background-image: screens/splashscreen69.bmp;" aspectalign="center" onshow="initWin(this)">
 	<include file="lib/common.uixml"/>
 	<progressbar id="progress" x="427" y="237" width="428" height="15" minvalue="0" maxvalue="1"
 		fill="ui/textures/hud/blood-level-fill.bmp" background="ui/textures/hud/back-level-fill.bmp"/>
