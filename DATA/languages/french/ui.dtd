@@ -2898,7 +2898,7 @@
 <!ENTITY mission.brieftab.help "BRIEFING DE MISSION: VERIFIEZ LES DETAILS DE VOS ORDRES">
 <!ENTITY mission.readytab.supply.status.closed "Ce bâtiment est fermé. Impossible d&#39;entrer en jeu ici.">
 <!ENTITY mission.readytab.crew.commander "COMMANDANT/PILOTE">
-<!ENTITY mission.aartab.aars.aar.ai "Enemy Forces">
+<!ENTITY mission.aartab.aars.aar.ai "Forces ennemies">
 <!ENTITY mission.spawn.denied11 "Le temps dispo sur votre compte est fini.">
 <!ENTITY brigades.list.key.reserve "EN RESERVE">
 <!ENTITY brigades.details.objective "Objectif actuel">
@@ -3611,6 +3611,8 @@
 <!ENTITY chat.f1.tip "Cliquez pour régler le canal 1. Utilisez F1 sur votre clavier pour émettre vers ce canal.">
 <!ENTITY hud.secondary.tip "Vos munitions pour votre arme secondaire">
 <!ENTITY hud.gameinfo.icon "Mode Icône">
+<!ENTITY hud.readout.closed "Fermé">
+<!ENTITY hud.readout.flaps "Volets">
 <!ENTITY hud.primary "PRINCIPALE">
 <!ENTITY hud.alerts.18.acquired "Nos forces ont pris {1}">
 <!ENTITY hud.alerts.17 "Vous avez été ravitaillé par {1}">
@@ -3649,6 +3651,8 @@
 <!ENTITY hud.readout.range "Réglage de la distance">
 <!ENTITY hud.readout.trim "Réglage Trim">
 <!ENTITY hud.cliptype.1.plural "mags">
+<!ENTITY hud.readout.jammed "CASSE">
+<!ENTITY hud.readout.open "Ouvert">
 <!ENTITY hud.readout.riding.hoisted "en train d&#39;être levé">
 <!ENTITY hud.readout.up "Haut">
 <!ENTITY hud.readout.down "Bas">
@@ -3676,7 +3680,6 @@
 <!ENTITY hud.health.state.pilot "PILOTE">
 <!ENTITY hud.readout.riding.towed "En train d&#39;être tracté">
 <!ENTITY hud.alerts.19.deliberated "Les forces ennemies on repris  {1}">
-<!ENTITY hud.dead "&#37;ls mort ici">
 <!ENTITY hud.readout.gear.kaput "Mort">
 <!ENTITY hud.readout.ail "AIL">
 <!ENTITY hud.cliptype.2 "Bande">
@@ -3711,8 +3714,8 @@
 <!ENTITY hud.hqintel.dir.0 "Nord">
 <!ENTITY hud.health.state.crew "EQUIPAGE">
 <!ENTITY hud.alerts.21.withdrawn "L&#39;objective d&#39;attaque à été retiré par {1}">
-<!ENTITY hud.hqintel.dir.6 "Ouest">
 <!ENTITY hud.readout.torp.control.angle "Angle directeur">
+<!ENTITY hud.hqintel.dir.6 "Ouest">
 <!ENTITY hud.minimap.in "Zoomer">
 <!ENTITY hud.bailout.bailedpilot "Equipage">
 <!ENTITY hud.binfo.state.alliesown "Tenue par les alliés">
@@ -3720,7 +3723,7 @@
 <!ENTITY hud.alerts.13.fallback "Votre brigade fait retraite">
 <!ENTITY hud.readout.riding.lifeboat "Dans le bateau">
 <!ENTITY hud.readout.gear.neutral "N">
-<!ENTITY hud.binfo.state.enemycancapture "Enemy Can Capture">
+<!ENTITY hud.binfo.state.enemycancapture "Ennemi peut capturer">
 <!ENTITY hud.binfo.state.wedefend "Défense amie">
 <!ENTITY hud.readout.torp.range "Distance">
 <!ENTITY hud.cliptype.3 "recharge">
@@ -3753,7 +3756,7 @@
 <!ENTITY hud.alerts.15 "Vous avez de nouveaux ordres">
 <!ENTITY hud.alerts.24.ground "Unité ennemie repérée près de {1}">
 <!ENTITY hud.binfo.state.wecapture "Capturé par les amis">
-<!ENTITY hud.death "&#37;ls died here">
+<!ENTITY hud.death "&#37;ls est mort ici">
 <!ENTITY hud.hqintel.weight.2 "Lourd">
 <!ENTITY hud.hqintel.dir.1 "Nord Est">
 <!ENTITY hud.readout.neutral "neutre">

@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+<content type="3">
+  <name>obj_dog_green</name>
+  <body>onspawn.moveout =
+toaxisspawn = Die Deutschen verteidigen den Strand verbissen!
+toalliedspawn = Die Amerikaner müssen den HQ Bunker einnehmen!
+victory1 = Sieg der Alliierten!
+victory2 = Sieg der Achsenmächte!
+roundstop = Diese Runde ist vorbei!
+
+onspawn.moveout = Die amerikanischen Landungstruppen sind bereits auf den Strand vorgerückt!
+victory1 = Sieg der Alliierten!
+victory2 = Sieg der Achsenmächte!
+roundstop = Diese Runde ist vorbei!</body>
+  <bodyloc>true</bodyloc>
+  <brief>Der D-Day Angriff hat vor einigen STunden begonnen und die Alliierten erzielen Geländegewinne. Die deutsche Verteidigung hält bis jetzt, aber die Einnahme des rückwärtigen HQ Bunkers muß unbedingt verhindert werden.</brief>
+  <duration>30</duration>
+  <fog>3</fog>
+  <hour>1300</hour>
+  <ingamemap>-27.75 -23.03 .041</ingamemap>
+  <kills>500</kills>
+  <rules>deathmatch</rules>
+  <team1>3</team1>
+  <team2>4</team2>
+  <terrain>doggreen</terrain>
+  <title>Dog Green</title>
+  <weather>2</weather>
+</content>

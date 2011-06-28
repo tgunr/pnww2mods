@@ -1,0 +1,35 @@
+<?xml version='1.0'?>
+<content type="3">
+  <name>obj_fueldump</name>
+  <body>onspawn.moveout = The Germans are trying to move through town and recapture the fuel depot.
+playarea = Turn around
+roundstop = This round is over!
+
+youcapon = You are capturing the bridge!
+alliedcapon = Allied forces are capturing the bridge!
+alliedcapoff = Axis forces have re-taken the bridge!
+
+objective1.1.1.1 = Capture the Bridge
+objective1.2.1.1 = Defend the Bridge
+
+
+scenario.help = text</body>
+  <bodyloc>true</bodyloc>
+  <brief>German forces try to move back through town and re-capture the valuable fuel depot from the American invasion forces.</brief>
+  <duration>5</duration>
+  <enemydeaths>true</enemydeaths>
+  <enemyicontypeonly>true</enemyicontypeonly>
+  <firingenemyicons>false</firingenemyicons>
+  <fog>1</fog>
+  <hour>19</hour>
+  <ingamemap>107.8 38.9 .041</ingamemap>
+  <rules>fueldump</rules>
+  <team1>2</team1>
+  <team1min>2</team1min>
+  <team2>4</team2>
+  <team2min>2</team2min>
+  <terrain>fueldump</terrain>
+  <title>Fuel Dump WIP</title>
+  <victory>5</victory>
+  <weather>1</weather>
+</content>
