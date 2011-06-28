@@ -144,20 +144,34 @@
 			</tab>
 			<tab label="ANIM" x="0" y="0" rright="0" rtop="0">
 				<caption label="POSITION:" x="20" height="15" rright="10" rtop="25" style="color: #BFE2CE; font-size: -1;"/>
-				<button id="animUp" width="50" height="25" rright="20" rtop="25" label="MOVE UP" onclick="blendMgr.moveAnimation(-1);"
+				<button id="animUp" width="50" height="25" rright="20" rtop="25" label="UP" onclick="blendMgr.moveAnimation(-1);"
 					onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
 					style="control-on: ui/textures/test/gen_button_on.bmp;
 						   control-off: ui/textures/test/gen_button_off.bmp;
 						   control-disabled: ui/textures/test/gen_button_disabled.bmp;
 						   font-size: -3;
 						   color: #FFFFFF;"/>
-				<button id="animDown" width="50" height="25" rright="20" rtop="55" label="MOVE DOWN" onclick="blendMgr.moveAnimation(1)"
+				<button id="animDown" width="50" height="25" rright="20" rtop="55" label="DOWN" onclick="blendMgr.moveAnimation(1)"
 					onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
 					style="control-on: ui/textures/test/gen_button_on.bmp;
 						   control-off: ui/textures/test/gen_button_off.bmp;
 						   control-disabled: ui/textures/test/gen_button_disabled.bmp;
 						   font-size: -3;
 						   color: #FFFFFF;"/>
+			</tab>
+			<tab label="BONE" x="0" y="0" rright="0" rtop="0">
+				<caption label="X ROTATION:" x="5" height="15" rright="10" rtop="25" style="color: #BFE2CE; font-size: -1;"/>
+				<slider id="xRotation" x="70" height="15" rtop="25" rright="20" minvalue="0" maxvalue="1"
+					style="thumb-off-color: #3e5248; thumb-width: 7; thumb-height: 12;"
+					onclick="rotControl = false" onmousedown="rotControl = true" onshow="this.value = .5"/>
+				<caption label="Y ROTATION:" x="5" height="15" rright="10" rtop="50" style="color: #BFE2CE; font-size: -1;"/>
+				<slider id="yRotation" x="70" height="15" rtop="50" rright="20" minvalue="0" maxvalue="1"
+					style="thumb-off-color: #3e5248; thumb-width: 7; thumb-height: 12;"
+					onclick="rotControl = false" onmousedown="rotControl = true" onshow="this.value = .5"/>
+				<caption label="Z ROTATION:" x="5" height="15" rright="10" rtop="75" style="color: #BFE2CE; font-size: -1;"/>
+				<slider id="zRotation" x="70" height="15" rtop="75" rright="20" minvalue="0" maxvalue="1"
+					style="thumb-off-color: #3e5248; thumb-width: 7; thumb-height: 12;"
+					onclick="rotControl = false" onmousedown="rotControl = true" onshow="this.value = .5"/>
 			</tab>
 			<tab label="TRANS" x="0" y="0" rright="0" rtop="0">
 				<view id="animscale" class="animscale" x="5" y="5" rtop="20" rright="5" style="background-color: #FFFFFF"/>
@@ -239,6 +253,7 @@
 		var animControl			= false;
 		var oscillation				= false;
 		var oscControl				= false;
+		var rotControl				= false;
 		var currentBlend			= null;
 		
 		var animListGroups		= false;
@@ -510,7 +525,7 @@
 			
 			var states = new Array();
 			
-			states.push(0);
+			states.push(types.mgr.data);
 			states.push(parseInt(state1.mgr.data));
 			states.push(parseInt(state2.mgr.data));
 			states.push(parseInt(state3.mgr.data));
@@ -662,6 +677,10 @@
 		
 		function selectType()
 		{
+			if(types.mgr.data)
+				editor.type = types.mgr.data;
+			
+			//updateStates();
 			updateLoadButton();
 		}
 		

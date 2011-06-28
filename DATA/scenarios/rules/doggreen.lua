@@ -148,7 +148,7 @@ function OnReinforcements(name, value)
 	end
 end
 
-function OnStage(name, value)
+function OnStage(name, value, init)
 	local nextStage = tonumber(value);
 	local stage = scenario.manager:GetStage();
 	
@@ -160,8 +160,10 @@ function OnStage(name, value)
 		scenario.manager:SetStage(nextStage);
 		
 		-- sync our round timer to the next stage
-		local seconds = tonumber(state.config.duration2) * 60;
-		Instancing:TimedEvent("roundtimer", seconds);
+		if(init ~= nil) then
+			local seconds = tonumber(state.config.duration2) * 60;
+			Instancing:TimedEvent("roundtimer", seconds);
+		end
 	end
 	return 1;
 end

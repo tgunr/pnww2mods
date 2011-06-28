@@ -1,0 +1,35 @@
+# first thing in the weapon file should always be the weapontype
+# this causes the default_(weapontype).txt file to be loaded first
+# valid weapon types are:
+# SMG, SATCHEL, RIFLE, AUTO_PISTOL, GRENADE, REVOLVER, ITEM, KNIFE, LMG
+weaponType = ROCKET
+
+# sound to play when reloading
+reloadSound = sounds\enfieldreload.wav
+
+# specify the weapon & clip (clip optional) model here
+# note that data\gr2data\FPS\ is prepended to these file names
+weaponModel = m9bazooka\bazooka
+#clipModel = enfield\enfield-gunmesh-5roundstripperclip
+
+#hiddenMeshes = shells,stripperclip
+
+# granny attach bone names for weapon & clip
+# the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
+weaponConnectTo = weapon-control
+weaponConnect = bazooka_attach
+
+# the clipConnect bone in the clip attaches to the clipConnectTo bone in the gun
+#clipConnectTo = enfield-stripperclip-control
+#clipConnect = enfield-stripperclip-control
+
+# boresighting values .. how much off of "straight" does this gun need to fire
+aimVerticalCorrection = 0.0
+aimHorizontalCorrection = 0.0
+
+# how far back along the barrel to start the bullet (firepoints are at the tip)
+firepointDisplacement = 0.0
+
+sniperGunSight = vehicles\ground\groundman\4x_riflescope.gs
+sniperScopeDelay = 0.3
+sniperScopeEndDelay = 0.0001

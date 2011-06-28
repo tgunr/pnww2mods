@@ -27,12 +27,8 @@
 			v.y = (v.parent.height / 2) - (v.height / 2) + 100;
 		}
 		
-		function initWin(c)
+		function initWin()
 		{
-			callback = c;
-			
-			//consoleclear();
-			
 			cprint("Init win");
 			
 			if(!game.cursor.visible)
