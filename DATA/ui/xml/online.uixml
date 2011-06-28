@@ -324,7 +324,7 @@
 		-->
 	</script>
 	<view x="43" y="140" width="930" height="510">
-		<tabview id="body" x="0" y="0" rright="0" rtop="0" ontab="quickhelp()" style="color: #BFE2CE;
+		<tabview id="body" x="0" y="0" rright="0" rtop="0" ontab="doBodyTab()" style="color: #BFE2CE;
 							background-color: #000000BB; 
 							border-top-corner: ui/textures/test/body_ul.bmp;
 							border-bottom-corner: ui/textures/test/body_br.bmp;

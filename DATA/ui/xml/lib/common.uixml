@@ -524,6 +524,21 @@
 		return null;
 	}
 	
+	function doBodyTab()
+	{
+		var tab = getBodyTab();
+		
+		if(tab != null && tab.id == "settings-tab")
+		{
+			game.globals.referrer = window.name;
+			loadWin('settings', true);
+		}
+		else
+		{
+			quickhelp();
+		}
+	}
+	
 	function quickhelp(id, force)
 	{
 		var tag = "quickhelp";

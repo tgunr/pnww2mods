@@ -6,7 +6,7 @@
 	<include file="classes/TreeControl2.uixml"/>
 	<include file="classes/Division.uixml"/>
 	<include file="classes/CycleTimer.uixml"/>
-	<tabview id="body" x="43" y="140" width="930" height="450" ontab="quickhelp()" style="color: #BFE2CE;
+	<tabview id="body" x="43" y="140" width="930" height="450" ontab="doBodyTab()" style="color: #BFE2CE;
 						background-color: #000000BB; 
 						border-top-corner: ui/textures/test/body_ul.bmp;
 						border-bottom-corner: ui/textures/test/body_br.bmp;

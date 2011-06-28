@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
  
 <tab id="settings-tab" label="  ${widgets.globals.options}  " x="20" y="3" width="930" height="460" align="right"
-	onshow="showSettings(this)" tip="${widgets.globals.options.tip}">
+	tip="${widgets.globals.options.tip}">
 	<script>
 		<!--
 		
 		function showSettings(tab)
 		{
+			//cprint("Loading prefs from show!");
 			game.globals.referrer = window.name;
 			loadWin('settings', true);
 		}

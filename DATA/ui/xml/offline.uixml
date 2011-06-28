@@ -4,7 +4,7 @@
 	onunload="game.savesettings(findview('left-pane'))" onshow="initWin(this)" onupdate="updateLaunch()">
 	<include file="widgets/template.uixml"/>
 	<include file="classes/TreeControl2.uixml"/>
-	<tabview id="body" x="43" y="140" width="930" height="450" ontab="quickhelp()" style=" 
+	<tabview id="body" x="43" y="140" width="930" height="450" ontab="doBodyTab()" style=" 
 						color: #BFE2CE;
 						background-color: #000000BB; 
 						border-top-corner: ui/textures/test/body_ul.bmp;
