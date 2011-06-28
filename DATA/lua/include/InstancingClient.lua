@@ -327,7 +327,7 @@ function Instancing.GetInstanceState(self)
 		local handler = Instancing.InstanceHandlers[k]
 		
 		if handler ~= nil and type(_G[handler]) == "function" then
-			pcall(_G[handler], k, v)
+			pcall(_G[handler], k, v, true)
 		end
 	end
 	
