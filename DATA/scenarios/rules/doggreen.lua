@@ -160,7 +160,7 @@ function OnStage(name, value, init)
 		scenario.manager:SetStage(nextStage);
 		
 		-- sync our round timer to the next stage
-		if(init ~= nil) then
+		if(init == nil) then
 			local seconds = tonumber(state.config.duration2) * 60;
 			Instancing:TimedEvent("roundtimer", seconds);
 		end
