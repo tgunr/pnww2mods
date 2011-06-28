@@ -397,6 +397,7 @@ if(true) then
 		"vehicle alliedtroops us-assault",
 		"vehicle alliedtroops us-smg",
 		"vehicle alliedtroops us-bar",
+		"vehicle alliedtroops us-bazooka",
 		"vehicle alliedvehicles stuartm3a3",
 		"vehicle alliedvehicles m10",
 		
@@ -405,6 +406,7 @@ if(true) then
 		"vehicle axistroops de-assault",
 		"vehicle axistroops de-smg",
 		"vehicle axistroops de-lmg",
+		"vehicle axistroops de-pzschreck",
 		"vehicle axisvehicles pivg",
 	
 	
