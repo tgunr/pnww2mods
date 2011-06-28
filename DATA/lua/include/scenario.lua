@@ -25,6 +25,7 @@ state.network				= false;
 state.victory					= 0;
 state.lastroundtimer	= 0;
 state.lastupdate			= game.Frametime();
+state.starttime				= game.Frametime();
 
 -- default server
 state.config['server'] 	= '66.28.224.157';

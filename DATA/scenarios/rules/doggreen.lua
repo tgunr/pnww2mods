@@ -148,7 +148,7 @@ function OnReinforcements(name, value)
 	end
 end
 
-function OnStage(name, value, init)
+function OnStage(name, value)
 	local nextStage = tonumber(value);
 	local stage = scenario.manager:GetStage();
 	
@@ -160,7 +160,9 @@ function OnStage(name, value, init)
 		scenario.manager:SetStage(nextStage);
 		
 		-- sync our round timer to the next stage
-		if(init == nil) then
+		-- but only if we've been in the game for a bit
+		-- prevents resets on new player arrivals (hack)
+		if(game.Frametime() - state.starttime >= 60) then	
 			local seconds = tonumber(state.config.duration2) * 60;
 			Instancing:TimedEvent("roundtimer", seconds);
 		end
