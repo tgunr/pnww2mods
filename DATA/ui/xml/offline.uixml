@@ -148,6 +148,8 @@
 				{
 					var vehicle = spawnables[v];
 					
+					consoleprint("Trying offline vehicle: " + vehicle.id + "\n");
+					
 					if(vehicle.country != null && vehicle.country.code == country)
 					{
 						consoleprint("Adding offline vehicle: " + vehicle.id + "\n");
