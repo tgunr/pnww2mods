@@ -27,21 +27,21 @@ if(true) then
 
 		-- Allied tank spawns
 		
-		"spawn alliedtanks 293771.56 2978035.74 274.00 275",
-		"spawn alliedtanks 293772.42 2978050.57 274.00 275",
-		"spawn alliedtanks 293703.56 2978054.89 274.00 90",
-		"spawn alliedtanks 293727.11 2978022.63 274.00 90",
-		"spawn alliedtanks 293753.62 2978036.77 274.00 180",
-		"spawn alliedtanks 293754.72 2978051.16 274.00 180",
+		"spawn alliedtanks 292826.65 2977020.38 275.06 270",
+		"spawn alliedtanks 292829.62 2976965.15 275.13 180",
+		"spawn alliedtanks 292919.35 2976934.18 275.14 270",
+		"spawn alliedtanks 293002.40 2976942.37 275.14 45",
+		"spawn alliedtanks 293121.23 2976827.09 275.12 45",
+		"spawn alliedtanks 293047.02 2976915.99 275.28 45",
 
 		-- German tank spawns
 
-		"spawn axistanks 293640.49 2976346.94 274.00 90",
-		"spawn axistanks 293639.40 2976334.24 274.00 90",
-		"spawn axistanks 293820.24 2976329.96 274.00 275",
-		"spawn axistanks 293821.55 2976345.00 274.00 275",
-		"spawn axistanks 293743.47 2976330.79 274.00 0",
-		"spawn axistanks 293743.52 2976345.67 274.00 0",
+		"spawn axistanks 293704.57 2977499.52 275.12 225",
+		"spawn axistanks 293646.30 2977577.35 275.12 180",
+		"spawn axistanks 293600.56 2977521.19 275.28 180",
+		"spawn axistanks 293543.74 2977511.99 275.12 180",
+		"spawn axistanks 293520.53 2977512.15 275.14 180",
+		"spawn axistanks 293488.26 2977512.28 275.12 180",
 
 -- DEFINE BLOCKED AREAS OF NO ACCESS BY PLAYERS
 
