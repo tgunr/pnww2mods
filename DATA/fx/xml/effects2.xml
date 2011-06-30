@@ -363,13 +363,42 @@
   </transformeffect>
   <!-- ===================================================================== -->
   <transformeffect name = "boforsmuzzleflash">
-      <emitter>
-        <flags>particleeffectonly</flags>
-        <lifetime>1</lifetime>
-        <particleeffect>machinegunflashparticle</particleeffect>
-        <particleeffect>boforsflashparticle1</particleeffect>
-        <particleeffect>boforsflashparticle2</particleeffect>
-      </emitter>
+    <emitter>
+      <flags>particleeffectonly</flags>
+      <lifetime>1</lifetime>
+      <particleeffect>machinegunflashparticle</particleeffect>
+      <particleeffect>boforsflashparticle1</particleeffect>
+      <particleeffect>boforsflashparticle2</particleeffect>
+    </emitter>
+  </transformeffect>
+  <!-- ===================================================================== -->
+  <transformeffect name = "bazookabackflash">
+    <emitter>
+      <flags>particleeffectonly</flags>
+      <lifetime>1</lifetime>
+      <particleeffect>smallrocketexhaust</particleeffect>
+      <particleeffect>smallrocketexhaustsmoke</particleeffect>
+    </emitter>
+    <emitter>
+      <lifetime>1</lifetime>
+      <particleeffect>rocketexhausesparks</particleeffect>
+      <flags>particleeffectonly</flags>
+    </emitter>
+  </transformeffect>
+  <!-- ===================================================================== -->
+  <transformeffect name = "bazookafrontflash">
+    <emitter>
+      <flags>particleeffectonly</flags>
+      <lifetime>1</lifetime>
+      <particleeffect>bazookaflashparticle</particleeffect>
+    </emitter>
+  </transformeffect>
+  <!-- ===================================================================== -->
+  <transformeffect name = "bazookaammotrail">
+    <emitter>
+      <flags>particleeffectonly</flags>
+      <particleeffect>bazookaammotrailparticle</particleeffect>
+    </emitter>
   </transformeffect>
   <!-- ===================================================================== -->
  	<transformeffect name = "smalltankgunflash">
@@ -2260,7 +2289,56 @@
 		<fixstretch>8.0</fixstretch>
     <material>fire</material>
   </particleeffect>
-<!-- ===================================================================== -->
+  <!-- ===================================================================== -->
+  <particleeffect name = "bazookaflashparticle">
+    <number>5</number>
+    <texture>white smoke 1</texture>
+    <texture>white smoke 2</texture>
+    <alpha>0.0</alpha>
+    <alpha>0.2</alpha>
+    <alpha>0.2</alpha>
+    <alpha>0.0</alpha>
+    <size>0.1</size>
+    <size>0.3</size>
+    <size>0.5</size>
+    <size>1.5</size>
+    <time>0</time>
+    <time>100</time>
+    <time>200</time>
+    <time>2000</time>
+    <speed>1.0</speed>
+    <drag>3.0</drag>
+    <glow>200</glow>
+    <velvariance>-4.0 -4.0 -4.0 4.0 4.0 4.0</velvariance>
+    <velreduction>0.75</velreduction>
+    <material>smoke</material>
+    <outdofdirection></outdofdirection>
+  </particleeffect>
+  <!-- ===================================================================== -->
+  <particleeffect name = "bazookaammotrailparticle">
+    <number>1</number>
+    <texture>white smoke 1</texture>
+    <texture>white smoke 2</texture>
+    <alpha>0.05</alpha>
+    <alpha>0.05</alpha>
+    <alpha>0.05</alpha>
+    <alpha>0.0</alpha>
+    <size>0.05</size>
+    <size>0.5</size>
+    <size>0.75</size>
+    <size>1.0</size>
+    <time>10</time>
+    <time>100</time>
+    <time>500</time>
+    <time>1000</time>
+    <speed>0.15</speed>
+    <glow>50</glow>
+    <separation>2.0</separation>
+    <legacystretch>1.0</legacystretch>
+    <velvariance>-2.0 -2.0 -2.0 2.0 2.0 2.0</velvariance>
+    <material>smoke</material>
+  </particleeffect>
+  <!-- ===================================================================== -->
 	<particleeffect name = "mortarflashparticle">
     <number>5</number>
     <texture>white smoke 1</texture>
@@ -3579,23 +3657,127 @@
 		<posvariance>-8.0 -8.0 2.0 8.0 8.0 8.0</posvariance>
     <material>smoke</material>
 	</particleeffect>
-<!-- ===================================================================== -->
-	<particleeffect name = "smokegrenadeparticle1">
-		<number>3</number>
-		<texture>low res smoke1</texture>
-		<texture>low res smoke2</texture>
-		<texture>low res smoke3</texture>
-		<texture>low res smoke4</texture>
-		<alphastart>1.0</alphastart>
-		<alphaend>0.0</alphaend>
-		<sizestart>0.02</sizestart>
-		<sizeend>0.02></sizeend>
-		<lifetime>200</lifetime>
-		<glow>50</glow>
-		<speed>1</speed>
-		<fixstretch>4</fixstretch>
+  <!-- ===================================================================== -->
+  <particleeffect name = "rocketexhausesparks">
+    <number>10</number>
+    <texture>spark</texture>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>0.0</alpha>
+    <size>0.0050</size>
+    <size>0.0050</size>
+    <size>0.0050</size>
+    <size>0.0050</size>
+    <time>0</time>
+    <time>200</time>
+    <time>200</time>
+    <time>200</time>
+    <speed>12</speed>
+    <drag></drag>
+    <delayeachparticle>15</delayeachparticle>
+    <glow></glow>
+    <velreduction>0.5</velreduction>
+    <gravity>3.0</gravity>
+    <fixstretch>0.25</fixstretch>
+    <randomdirection>270</randomdirection>
+    <drag>16.0</drag>
     <material>fire</material>
-	</particleeffect>
+    <outdofdirection></outdofdirection>
+  </particleeffect>
+  <!-- ===================================================================== -->
+  <particleeffect name = "smallrocketexhaust">
+    <number>3</number>
+    <texture>low res smoke1</texture>
+    <texture>low res smoke2</texture>
+    <texture>low res smoke3</texture>
+    <texture>low res smoke4</texture>
+    <alphastart>1.0</alphastart>
+    <alphaend>0.0</alphaend>
+    <sizestart>0.05></sizestart>
+    <sizeend>0.0</sizeend>
+    <lifetime>200</lifetime>
+    <glow>100</glow>
+    <speed>1</speed>
+    <fixstretch>6</fixstretch>
+    <posvariance>-0.005 -0.005 0.0 0.005 0.005 0.0</posvariance>
+    <material>fire</material>
+    <outdofdirection></outdofdirection>
+    <dontupdateposition></dontupdateposition>
+  </particleeffect>
+  <!-- ===================================================================== -->
+  <particleeffect name = "smallrocketexhaustsmoke">
+    <number>8</number>
+    <texture>low res smoke1</texture>
+    <texture>low res smoke2</texture>
+    <texture>low res smoke3</texture>
+    <texture>low res smoke4</texture>
+    <texture>white smoke 1</texture>
+    <texture>white smoke 2</texture>
+    <alpha>0.0</alpha>
+    <alpha>0.2</alpha>
+    <alpha>0.2</alpha>
+    <alpha>0.0</alpha>
+    <size>0.1</size>
+    <size>0.3</size>
+    <size>0.5</size>
+    <size>1.5</size>
+    <time>0</time>
+    <time>100</time>
+    <time>200</time>
+    <time>2000</time>
+    <speed>2.0</speed>
+    <drag>4</drag>
+    <delayeachparticle>15</delayeachparticle>
+    <velvariance>-1 -1 -1 1 1 1</velvariance>
+    <velreduction>0.7</velreduction>
+    <posvariance>-0.05 -0.05 0.0 0.05 0.05 0.0</posvariance>
+    <material>smoke</material>
+    <outdofdirection></outdofdirection>
+  </particleeffect>
+  <!-- ===================================================================== -->
+  <particleeffect name = "smokegrenadeparticle2">
+    <number>1</number>
+    <texture>low res smoke1</texture>
+    <texture>low res smoke2</texture>
+    <texture>low res smoke3</texture>
+    <texture>low res smoke4</texture>
+    <texture>white smoke 1</texture>
+    <texture>white smoke 2</texture>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>0.0</alpha>
+    <size>0.1</size>
+    <size>0.5</size>
+    <size>2.5</size>
+    <size>4.0</size>
+    <time>100</time>
+    <time>800</time>
+    <time>5000</time>
+    <time>8000</time>
+    <rotate>10</rotate>
+    <speed>0.25</speed>
+    <velvariance>-0.1 -0.1 0 0.1 0.1 0.1</velvariance>
+    <material>smoke</material>
+  </particleeffect>
+  <!-- ===================================================================== -->
+  <particleeffect name = "smokegrenadeparticle1">
+    <number>3</number>
+    <texture>low res smoke1</texture>
+    <texture>low res smoke2</texture>
+    <texture>low res smoke3</texture>
+    <texture>low res smoke4</texture>
+    <alphastart>1.0</alphastart>
+    <alphaend>0.0</alphaend>
+    <sizestart>0.02</sizestart>
+    <sizeend>0.02></sizeend>
+    <lifetime>200</lifetime>
+    <glow>50</glow>
+    <speed>1</speed>
+    <fixstretch>4</fixstretch>
+    <material>fire</material>
+  </particleeffect>
 <!-- ===================================================================== -->
 	<particleeffect name = "smokegrenadeparticle2">
 		<number>1</number>
