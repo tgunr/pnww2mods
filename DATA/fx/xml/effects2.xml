@@ -2293,7 +2293,9 @@
   <particleeffect name = "bazookaflashparticle">
     <number>5</number>
     <texture>white smoke 1</texture>
+    <texture>day1blacksmoke</texture>
     <texture>white smoke 2</texture>
+    <texture>day1blacksmoke</texture>
     <alpha>0.0</alpha>
     <alpha>0.2</alpha>
     <alpha>0.2</alpha>
@@ -3683,6 +3685,8 @@
     <randomdirection>270</randomdirection>
     <drag>16.0</drag>
     <material>fire</material>
+    <colorstart>1 1 0</colorstart>
+    <colorend>1 1 0</colorend>
     <outdofdirection></outdofdirection>
   </particleeffect>
   <!-- ===================================================================== -->
@@ -3708,9 +3712,12 @@
   <!-- ===================================================================== -->
   <particleeffect name = "smallrocketexhaustsmoke">
     <number>8</number>
+    <texture>day1blacksmoke</texture>
     <texture>low res smoke1</texture>
     <texture>low res smoke2</texture>
+    <texture>day1blacksmoke</texture>
     <texture>low res smoke3</texture>
+    <texture>day1blacksmoke</texture>
     <texture>low res smoke4</texture>
     <texture>white smoke 1</texture>
     <texture>white smoke 2</texture>
