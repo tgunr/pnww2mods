@@ -4,19 +4,32 @@
   <body>onspawn.moveout = The Germans are trying to move through town and recapture the fuel depot.
 playarea = Turn around
 roundstop = This round is over!
+alliedinfantryinfo = German forces may be moving through town towards the fuel depot.
+alliedvehicleinfo = German armor may be moving through town or cross country towards the depot.
+axisinfantryinfo = Support your armor to achieve the objective.
+axisvehicleinfo = Advancing through the town is the fastest, not safest, route to your objective.
 
-youcapon = You are capturing the bridge!
-alliedcapon = Allied forces are capturing the bridge!
-alliedcapoff = Axis forces have re-taken the bridge!
 
-objective1.1.1.1 = Capture the Bridge
-objective1.2.1.1 = Defend the Bridge
+objective1.1.1.1 = Defend the fuel depot!
+objective1.2.1.1 = Capture the fuel depot!
+
+youcapon = You are capturing the depot!
+axiscapon = Axis forces are capturing the depot!
+axiscapoff = Allied forces have re-taken the depot!
+
+
+depotcapturem = You are capturing the depot!
+
+southbridge = south bridge
+northbridge = north bridge
+petiteferme = petite ferme
+objective = objective
 
 
 scenario.help = text</body>
   <bodyloc>true</bodyloc>
   <brief>German forces try to move back through town and re-capture the valuable fuel depot from the American invasion forces.</brief>
-  <duration>5</duration>
+  <duration>20</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>false</firingenemyicons>
@@ -30,6 +43,6 @@ scenario.help = text</body>
   <team2min>2</team2min>
   <terrain>fueldump</terrain>
   <title>Fuel Dump WIP</title>
-  <victory>5</victory>
+  <victory>60</victory>
   <weather>1</weather>
 </content>
