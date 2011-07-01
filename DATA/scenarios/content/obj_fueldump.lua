@@ -40,7 +40,8 @@ if(true) then
 
 		-- Axis Spawn Points
 		"spawn axistroops -16.74 -253.28 17.17 340",
-		"spawn axisvehicles -182.93 -357.81 25.45 35",
+		"spawn axisvehicles -42.79 -256.49 17.57 340",
+		-- "spawn axisvehicles -182.93 -357.81 25.45 35",
 
 -- DEFINE BLOCKED AREAS OF NO ACCESS TO PLAYERS
 	
@@ -213,7 +214,7 @@ if(true) then
 		"area depotcapturem OnTrigger 134.21 355.84 21",
 		"area depotcapturem OnTrigger 190.66 354.68 21",
 		"area depotcapturem OnTrigger 192.09 369.58 21",
-		"area depotcapture1m OnTrigger 134.74 370.56 21",
+		"area depotcapturem OnTrigger 134.74 370.56 21",
 		
 		-- telling the allies infantry whats going on
 		"area alliedinfantryinfo OnTrigger 133.50 66.02 8.28 1",
@@ -282,16 +283,22 @@ if(true) then
 		
 		
 		
-	-- bridge capture objective
+	-- depot capture objective
+	
+		-- when the capper changes
 		"handler capper OnCapper",
+		
+		-- when the captured amount changes
 		"handler objective1 OnCapturing",
 		
-		"area depotcapture OnState 134.21 355.84 21.83 1",
-		"area depotcapture OnState 190.66 354.68 21.83",
-		"area depotcapture OnState 192.09 369.58 21.83",
-		"area depotcapture OnState 134.74 370.56 21.83",
+		-- the area to be in to capture
+		"area depotcapture OnState 129.42 378.55 21.43",
+		"area depotcapture OnState 134.14 294.86 15.12",
+		"area depotcapture OnState 202.01 305.15 12.46",
+		"area depotcapture OnState 204.24 378.47 20.69",
 		
-
+		-- mask the capture area with tanks only
+		"mask depotcapture 4.2.4.0",
 
 		
 -- CLONES --
@@ -407,7 +414,7 @@ if(true) then
 		"vehicle axistroops de-smg",
 		"vehicle axistroops de-lmg",
 		"vehicle axistroops de-pzschreck",
-		"vehicle axisvehicles pivg",
+		"vehicle axisvehicles pzivg",
 	
 	
 		
