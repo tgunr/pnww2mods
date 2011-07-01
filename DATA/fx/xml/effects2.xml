@@ -397,8 +397,18 @@
   <transformeffect name = "bazookaammotrail">
     <emitter>
       <flags>particleeffectonly</flags>
+      <lifetime>500</lifetime>
       <particleeffect>bazookaammotrailparticle</particleeffect>
     </emitter>
+  </transformeffect>
+  <!-- ===================================================================== -->
+  <transformeffect name = "bazookablast">
+    <emitter>      
+      <flags>particleeffectonly</flags>
+      <lifetime>1</lifetime>
+      <particleeffect>bazookablastparticle</particleeffect>
+      <particleeffect>bazookablastfire</particleeffect>
+    </emitter> 
   </transformeffect>
   <!-- ===================================================================== -->
  	<transformeffect name = "smalltankgunflash">
@@ -2317,6 +2327,39 @@
     <outdofdirection></outdofdirection>
   </particleeffect>
   <!-- ===================================================================== -->
+  <particleeffect name = "bazookablastparticle">
+    <number>16</number>
+    <texture>explosion dirt trails</texture>
+    <texture>black smoke 2</texture>
+    <texture>low res smoke1</texture>
+    <texture>explosion dirt trails</texture>
+    <texture>black volume smoke 2</texture>
+    <texture>low res smoke2</texture>
+    <texture>day1blacksmoke</texture>
+    <texture>explosion dirt trails</texture>
+    <texture>black smoke 1</texture>
+    <texture>white smoke 1</texture>
+    <texture>white smoke 2</texture>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>0.0</alpha>
+    <delayeachparticle>10</delayeachparticle>
+    <velreduction>0.7</velreduction>
+    <size>1</size>
+    <size>4</size>
+    <size>8</size>
+    <size>16</size>
+    <time>100</time>
+    <time>50</time>
+    <time>100</time>
+    <time>4000</time>
+    <speed>100</speed>
+    <drag>6</drag>
+    <posvariance>-5.0 -5.0 0 5.0 5.0 0</posvariance>
+    <material>smoke</material>
+  </particleeffect>
+  <!-- ===================================================================== -->
   <particleeffect name = "bazookaammotrailparticle">
     <number>1</number>
     <texture>white smoke 1</texture>
@@ -3449,6 +3492,31 @@
 		<posvariance>-5.0 -5.0 2.0 5.0 5.0 4.0</posvariance>
     <material>fire</material>
 	</particleeffect>
+  <!-- ===================================================================== -->
+  <particleeffect name = "bazookablastfire">
+    <number>15</number>
+    <texture>fire ball 2</texture>
+    <texture>fire ball 3</texture>
+    <texture>fire ball 4</texture>
+    <texture>fire ball 5</texture>
+    <texture>fire ball 6</texture>
+    <texture>fire ball 7</texture>
+    <texture>fire ball 8</texture>
+    <delaystart>10</delaystart>
+    <delayeachparticle>25</delayeachparticle>
+    <delaystart>10</delaystart>
+    <alphastart>1.0</alphastart>
+    <alphaend>0.0</alphaend>
+    <sizestart>0.2</sizestart>
+    <sizeend>8.0</sizeend>
+    <lifetime>500</lifetime>
+    <drag>3.0</drag>
+    <rotate>20</rotate>
+    <glow></glow>
+    <velvariance>-10.0 -10.0 0.1 10.0 10.0 0.5</velvariance>
+    <posvariance>-3.0 -3.0 1.0 3.0 3.0 3.0</posvariance>
+    <material>fire</material>
+  </particleeffect>
   <!-- ===================================================================== -->
   <particleeffect name = "gp500bombfire">
     <number>32</number>
