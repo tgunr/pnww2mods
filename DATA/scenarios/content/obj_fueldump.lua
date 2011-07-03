@@ -36,12 +36,12 @@ if(true) then
 
 		-- Allied Spawn Points
 		"spawn alliedtroops 128.13 72.84 6.54 100",
-		"spawn alliedvehicles -345.97 354.01 24.03 160",
+		"spawn alliedvehicles -362.76 358.49 22.56 90",
 
 		-- Axis Spawn Points
 		"spawn axistroops -16.74 -253.28 17.17 340",
-		"spawn axisvehicles -42.79 -256.49 17.57 340",
-		-- "spawn axisvehicles -182.93 -357.81 25.45 35",
+		"spawn axisvehicles -218.12 -349.13 21.29 45",
+
 
 -- DEFINE BLOCKED AREAS OF NO ACCESS TO PLAYERS
 	
