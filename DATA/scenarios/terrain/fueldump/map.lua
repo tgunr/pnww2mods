@@ -50,9 +50,18 @@ if(true) then
 		"place farmruin -48.4429 -267.906 15.7 0 0 115 0 0 0 0",
 		"place farmruin -227.433 -227.81 18.7 0 0 8 0 0 0 0",
 		
+		
+		
+		
+		
+	-- fuel depot facility	
+		
 		"place ftank1c 165 350.17 19.39 0 0 -90 0 0 0 0",
 		"place ftank1c 137 350 20.99 0 1.5 -90 0 0 0 0",
+		"place station1c 142.83 373.12 20.5 0 0 180 0 0 0 0",
+		"place munitions1 187.71 374.5 17.95 0 0 0 0 0 0 0",
 		
+
 		
 		
 		"place bel4 -75.06 -117.81 7.80 0 0 16 0 0 0 1",
@@ -242,9 +251,13 @@ if(true) then
 		"place instance_rockwall1 -80.00 -150.00 6.47 0 0 107 0 0 0 0",
 		"place instance_rockwall1 -89.00 -105.00 7.58 0 0 20 0 0 0 0",
 		"place instance_rockwall1 -69.00 -74.00 6.97 0 0 36 0 0 0 0",
-		"place windmill1 -235.17 274.79 19.43 0 0 185 0 0 0 0",
-		"place vinbarn1 -28.71 272.04 14.50 0 0 180 0 0 0 0",
-		-- "place blumaine1c -6.00 8.00 6.12 0 0 210 0 0 0 0",
+		"place windmill1 -235.17 274.79 19.0 0 0 185 0 0 0 0",
+		"place vinbarn1 -28.71 272.04 14.95 0 0 180 0 0 0 0",
+		"place vinbarn1 -28.71 272.04 14.95 0 0 180 0 0 0 0",
+		
+
+		
+
 		"place ammocrate 60.55 -88.75 27.15 0 0 0 0 0 0 0",
 		"place crate 61.54 -89.90 27.15 0 0 30 0 0 0 0",
 
