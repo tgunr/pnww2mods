@@ -18,8 +18,7 @@ if(true) then
 	
 	"place stonebridgeshort -238.0 -42.77 4.5 0 0 25 0 0 0",
 	"place stonebridge -261.7 -72.5 4.7 0 0 52 0 0 0",
-	"place vinbarn1 -215.19 -83.62 7.1 0 0 0 0 0 0 0",
-	"place haystack_outside -218.94 -83.69 6.5 0 0 0 0 0 0 0",
+
 	
 	
 		"place vinbarn1 153.5 81.5 6.5 0 0 -67 0 0 0 1",
@@ -30,17 +29,7 @@ if(true) then
 	
 	
 	
-	-- temp block
-	"place dangersign 14.25 -106.04 8 0 0 0 0 0 0",
-	"place dangersign 52.58 -120.15 8 0 0 95 0 0 0",
-	"place dangersign 22.74 -124.69 8 0 0 0 0 0 0",
-	"place dangersign -11.88 -94.03 8 0 0 95 0 0 0",
-		"place dangersign 39.53 -131.54 8 0 0 0 0 0 0",
-		
-		
-		
-		"place tanktrap -1.43 -94.09 8.0 0 0 0 0 0 0 0",
-		"place tanktrap 1.02 -96.16 8.25 0 0 0 0 0 0 0",
+
 		
 		
 		
@@ -50,6 +39,13 @@ if(true) then
 		"place farmruin -48.4429 -267.906 15.7 0 0 115 0 0 0 0",
 		"place farmruin -227.433 -227.81 18.7 0 0 8 0 0 0 0",
 		
+		
+	-- german armor spawn
+
+		"place armoredfb1c -131.75 -358.13 22.5 -1 1.1 0 0 0 0",
+		"place cratepile_outside -109.22 -351.92 22 0 0 0 0 0 0",
+		"place cratepile_outside -130 -335.17 22 0 0 -140 0 0 0",
+		"place vinbarn1 -167 -342 23.4 0 0 -50 0 0 0 1",
 		
 		
 		
@@ -61,6 +57,24 @@ if(true) then
 		"place station1c 142.83 373.12 20.5 0 0 180 0 0 0 0",
 		"place munitions1 187.71 374.5 17.95 0 0 0 0 0 0 0",
 		
+	-- farm house
+		"place bel1 -200 -95 7 0 0 -60 0 0 0 1",
+		"place vinbarn1 -215.19 -83.62 7.1 0 0 30 0 0 0 1",
+		"place haystack_outside -232.92 -84.24 6.45 0 0 0 0 0 0 0",
+		"place haystack_outside -241.63 -76.33 6.5 0 0 20 0 0 0 0",
+		"place haystack_outside -234.70 -57.90 6.1 0 0 -20 0 0 0 0",
+		
+		"place barrelstack1_inside -217.60 -88.8 6.4 0 0 30 0 0 0 1",
+		
+		
+		
+		"place wall02 -184.67 -87.12 6.25 0 0 210 0 0 0 0",
+		"place wall02 -179.02 -90.35 6.25 0 0 210 0 0 0 0",
+		"place wall02 -177.6 -94.5 6.25 0 0 -60 0 0 0 0",
+		"place truck_dam_outside -202.39 -99.99 6.8 2 -3 -60 0 0 0 0",
+		"place brokencart -200.71 -81.87 6.95 0 0 0 0 0 0 0",
+	
+
 
 		
 		
@@ -81,11 +95,11 @@ if(true) then
 		"place brokencart 118.00 -58.00 8.05 0 0 110 0 0 0 0",
 		"place oildrums_outside 55.5 -144.41 8.5 0 0 -45 0 0 0 0",
 		"place citybild1 40.19 -138.39 7.93 0 -3 110 0 0 0 1",
-		"place truck_dam_outside 24.95 -145.90 8.63 5 0 20 0 0 0 0",
+		--"place truck_dam_outside 24.95 -145.90 8.63 5 0 20 0 0 0 0",
 		"place boarding1 36.25 -149.20 9.04 10 0 -67 0 0 0 0",
 		"place bel6 40.11 -139.90 8.31 0 3 21 0 0 0 1",
-		"place sandbagwall_outside 66.50 -147.60 7.91 0 0 110 0 0 0 0",
-		"place sandbagwall_outside 69.40 -148.61 7.97 0 0 110 0 0 0 0",
+		--"place sandbagwall_outside 66.50 -147.60 7.91 0 0 110 0 0 0 0",
+		--"place sandbagwall_outside 69.40 -148.61 7.97 0 0 110 0 0 0 0",
 		"place wall03 61.50 -145.00 7.34 0 0 200 0 0 0 0",
 		"place wall03 59.00 -144.10 7.33 0 0 20 0 0 0 0",
 		"place wall03 75.00 -150.00 7.27 0 0 20 0 0 0 0",
@@ -130,7 +144,7 @@ if(true) then
 		"place boarding1 124.80 -32.00 8.02 0 0 110 0 0 0 0",
 		"place boarding1 112.70 -36.50 8.25 0 0 109 0 0 0 0",
 		"place boarding1 2.29 -126.075 8.75 0 0 18 0 0 0 0",
-		"place cratepile_outside 126.50 -31.60 7.83 0 0 200 0 0 0 0",
+		--"place cratepile_outside 126.50 -31.60 7.83 0 0 200 0 0 0 0",
 		"place bel1 120.39 -16.04 7.89 0 0 20 0 0 0 1",
 		"place sandbagwall_outside 136.25 -21.00 7.59 -5 0 93 0 0 0 0",
 		"place sandbagwall_outside 139.50 -22.25 7.58 0 0 -50 0 0 0 0",
@@ -144,13 +158,13 @@ if(true) then
 		"place boarding1 88.60 -31.00 7.66 0 0 -67 0 0 0 0",
 		"place boarding1 89.25 -29.00 8.45 15 0 -67 0 0 0 0",
 		"place boarding1 90.30 -27.00 8.14 0 0 -67 0 0 0 0",
-		"place crate 88.00 -34.30 8.19 0 0 25 0 0 0 0",
-		"place crate 90.00 -36.00 8.07 0 0 0 0 0 0 0",
-		"place crate 88.00 -42.00 8.07 0 0 0 0 0 0 0",
-		"place crate 86.60 -43.20 8.07 0 0 25 0 0 0 0",
+		--"place crate 88.00 -34.30 8.19 0 0 25 0 0 0 0",
+		--"place crate 90.00 -36.00 8.07 0 0 0 0 0 0 0",
+		--"place crate 88.00 -42.00 8.07 0 0 0 0 0 0 0",
+		--"place crate 86.60 -43.20 8.07 0 0 25 0 0 0 0",
 		"place bel6 94.01 -44.26 8.15 0 -4 111 0 0 0 1",
-		"place crate 78.80 -54.30 8.24 0 0 18 0 0 0 0",
-		"place crate 78.60 -58.40 8.03 0 3 25 0 0 0 0",
+		--"place crate 78.80 -54.30 8.24 0 0 18 0 0 0 0",
+		--"place crate 78.60 -58.40 8.03 0 3 25 0 0 0 0",
 		"place bel3 89.02 -73.61 8.12 0 0 200 0 0 0 0",
 		"place vinbarn1 53.55 -53.11 8.24 0 0 20 0 0 0 0",
 		"place bel1 37.09 -53.88 8.03 0 0 200 0 0 0 0",
@@ -162,15 +176,15 @@ if(true) then
 		"place bel4 -11.69 -94.65 8.46 0 0 106 0 0 0 1",
 		"place instance_hulk1_dam -14 -108.13 8.25 0 0 30 0 0 0 0",
 		"place wall01 -19.00 -115.10 7.52 0 0 108 0 0 0 0",
-		"place crate -26.35 -128.50 8.28 0 0 20 0 0 0 0",
-		"place crate -26.35 -128.50 9.30 0 0 15 0 0 0 0",
-		"place ammocrate -26.35 -126.00 8.36 0 0 -5 0 0 0 0",
-		"place crate -24.5 -133.50 8.35 0 0 20 0 0 0 0",
-		"place crate -26.55 -132.00 8.40 0 0 15 0 0 0 0",
+		--"place crate -26.35 -128.50 8.28 0 0 20 0 0 0 0",
+		--"place crate -26.35 -128.50 9.30 0 0 15 0 0 0 0",
+		--"place ammocrate -26.35 -126.00 8.36 0 0 -5 0 0 0 0",
+		--"place crate -24.5 -133.50 8.35 0 0 20 0 0 0 0",
+		--"place crate -26.55 -132.00 8.40 0 0 15 0 0 0 0",
 		"place bel6 -26.16 -89.87 7.96 0 0 111 0 0 0 1",
 		"place oildrums_outside -25.00 -97.00 8.15 0 0 0 0 0 0 1",
 		"place oildrums_outside -30.00 -106.00 8.22 0 0 30 0 0 0 1",
-		"place cratepile_outside -22.70 -88.50 8.26 0 0 -70 0 0 0 0",
+		--"place cratepile_outside -22.70 -88.50 8.26 0 0 -70 0 0 0 0",
 		"place bel3 -25.56 -46.58 8.36 0 0 125 0 0 0 0",
 		
 		
@@ -197,12 +211,12 @@ if(true) then
 		"place haystack_outside 112.48 -66.75 8.00 0 0 110 0 0 0 0",
 		"place haystack_outside 107.93 -115.93 8.43 0 0 110 0 0 0 0",
 		"place haystack_outside 109.93 -109.93 8.52 0 0 110 0 0 0 0",
-		"place cratepile_outside 50.93 -40.93 8.21 0 0 0 0 0 0 0",
-		"place cratepile_outside 46.93 -54.93 7.82 0 0 110 0 0 0 0",
-		"place cratepile_outside 97.93 -85.93 8.22 0 0 25 0 0 0 0",
-		"place crates1c 204.50 -15.50 7.36 0 0 25 0 0 0 0",
-		"place cratepile_outside 171.00 -12.00 7.86 0 0 0 0 0 0 0",
-		"place cratepile_outside 161.00 -3.00 7.92 0 0 0 0 0 0 0",
+		--"place cratepile_outside 50.93 -40.93 8.21 0 0 0 0 0 0 0",
+		--"place cratepile_outside 46.93 -54.93 7.82 0 0 110 0 0 0 0",
+		--"place cratepile_outside 97.93 -85.93 8.22 0 0 25 0 0 0 0",
+		--"place crates1c 204.50 -15.50 7.36 0 0 25 0 0 0 0",
+		--"place cratepile_outside 171.00 -12.00 7.86 0 0 0 0 0 0 0",
+		--"place cratepile_outside 161.00 -3.00 7.92 0 0 0 0 0 0 0",
 		"place sandbagwall_outside 189.00 -24.50 7.43 0 1 -70 0 0 0 0",
 		"place sandbagwall_outside 185.00 -22.50 7.47 0 1 -58 0 0 0 0",
 		"place sandbagwall_outside 182.40 -19.00 7.52 0 1 -11 0 0 0 0",
@@ -223,34 +237,34 @@ if(true) then
 		"place tanktrap -75.01 -98.40 8.0 0 -10 0 0 0 0 0",
 		"place dd_telegraph_07 42.00 -138.00 8.77 84 60 20 0 0 0 0",
 		"place dd_telegraph_07 165.00 -85.00 8 61 70 0 0 0 0 0",
-		"place instance_rockwall1 86.10 -14.35 6.5 -10 -5 60 0 0 0 0",
-		"place instance_rockwall1 105.46 -3.96 6.7 -10 -5 60 0 0 0 0",
-		"place instance_rockwall1 138.00 13.50 7.0 -3 0 105 0 0 0 0",
-		"place instance_rockwall1 156.00 8.75 7.10 0 0 105 0 0 0 0",
-		"place instance_rockwall1 174.00 4.00 6.95 0 0 105 0 0 0 0",
-		"place instance_rockwall1 192.00 -0.75 6.68 0 0 105 0 0 0 0",
-		"place instance_rockwall1 210.00 -5.40 6.49 0 0 105 0 0 0 0",
-		"place instance_rockwall1 228.00 -10.00 6.26 0 0 105 0 0 0 0",
+		--"place instance_rockwall1 86.10 -14.35 6.5 -10 -5 60 0 0 0 0",
+		--"place instance_rockwall1 105.46 -3.96 6.7 -10 -5 60 0 0 0 0",
+		--"place instance_rockwall1 138.00 13.50 7.0 -3 0 105 0 0 0 0",
+		--"place instance_rockwall1 156.00 8.75 7.10 0 0 105 0 0 0 0",
+		--"place instance_rockwall1 174.00 4.00 6.95 0 0 105 0 0 0 0",
+		--"place instance_rockwall1 192.00 -0.75 6.68 0 0 105 0 0 0 0",
+		--"place instance_rockwall1 210.00 -5.40 6.49 0 0 105 0 0 0 0",
+		--"place instance_rockwall1 228.00 -10.00 6.26 0 0 105 0 0 0 0",
 		"place wall02 -38.00 -34.00 6.54 0 0 160 0 0 0 0",
 		"place wall02 -42.80 -37.80 6.59 0 0 132 0 0 0 0",
 		"place wall02 -47.00 -42.80 6.58 0 0 132 0 0 0 0",
 		"place wall02 -51.25 -48.00 6.58 0 0 125 0 0 0 0",
 		"place wall02 -54.75 -53.30 6.62 0 0 125 0 0 0 0",
 		"place wall02 -57.90 -57.80 6.64 0 0 -55 0 0 0 0",
-		"place instance_rockwall1 -18.00 -28.00 6.68 0 2 75 0 0 0 0",
-		"place instance_rockwall1 1.00 -26.25 6.60 0 0 80 0 0 0 0",
-		"place instance_rockwall1 36.00 -20.00 6.43 0 2 260 0 0 0 0",
-		"place instance_rockwall1 60.00 -24.00 6.82 0 -2 95 0 0 0 0",
-		"place instance_rockwall1 102.50 -153.00 6.11 0 0 60 0 0 0 0",
-		"place instance_rockwall1 131.00 -136.00 6.20 0 0 60 0 0 0 0",
-		"place instance_rockwall1 153.00 -122.00 5.80 0 0 59 0 0 0 0",
-		"place instance_rockwall1 193.00 -84.00 5.41 0 0 25 0 0 0 0",
-		"place instance_rockwall1 210.00 -59.00 4.99 0 0 25 0 0 0 0",
-		"place instance_rockwall1 230.00 -26.00 5.82 2 0 25 0 0 0 0",
-		"place instance_rockwall1 -57.00 -157.00 6.40 0 0 107 0 0 0 0",
-		"place instance_rockwall1 -80.00 -150.00 6.47 0 0 107 0 0 0 0",
-		"place instance_rockwall1 -89.00 -105.00 7.58 0 0 20 0 0 0 0",
-		"place instance_rockwall1 -69.00 -74.00 6.97 0 0 36 0 0 0 0",
+		--"place instance_rockwall1 -18.00 -28.00 6.68 0 2 75 0 0 0 0",
+		--"place instance_rockwall1 1.00 -26.25 6.60 0 0 80 0 0 0 0",
+		--"place instance_rockwall1 36.00 -20.00 6.43 0 2 260 0 0 0 0",
+		--"place instance_rockwall1 60.00 -24.00 6.82 0 -2 95 0 0 0 0",
+		--"place instance_rockwall1 102.50 -153.00 6.11 0 0 60 0 0 0 0",
+		--"place instance_rockwall1 131.00 -136.00 6.20 0 0 60 0 0 0 0",
+		--"place instance_rockwall1 153.00 -122.00 5.80 0 0 59 0 0 0 0",
+		--"place instance_rockwall1 193.00 -84.00 5.41 0 0 25 0 0 0 0",
+		--"place instance_rockwall1 210.00 -59.00 4.99 0 0 25 0 0 0 0",
+		--"place instance_rockwall1 230.00 -26.00 5.82 2 0 25 0 0 0 0",
+		--"place instance_rockwall1 -57.00 -157.00 6.40 0 0 107 0 0 0 0",
+		--"place instance_rockwall1 -80.00 -150.00 6.47 0 0 107 0 0 0 0",
+		--"place instance_rockwall1 -89.00 -105.00 7.58 0 0 20 0 0 0 0",
+		--"place instance_rockwall1 -69.00 -74.00 6.97 0 0 36 0 0 0 0",
 		"place windmill1 -235.17 274.79 19.0 0 0 185 0 0 0 0",
 		"place vinbarn1 -28.71 272.04 14.95 0 0 180 0 0 0 0",
 		"place vinbarn1 -28.71 272.04 14.95 0 0 180 0 0 0 0",
@@ -258,11 +272,11 @@ if(true) then
 
 		
 
-		"place ammocrate 60.55 -88.75 27.15 0 0 0 0 0 0 0",
-		"place crate 61.54 -89.90 27.15 0 0 30 0 0 0 0",
+		--"place ammocrate 60.55 -88.75 27.15 0 0 0 0 0 0 0",
+		--"place crate 61.54 -89.90 27.15 0 0 30 0 0 0 0",
 
 		
-		"place cratepile_outside 170.50 -68.02 7.85 0 0 30 0 0 0 0",
+		--"place cratepile_outside 170.50 -68.02 7.85 0 0 30 0 0 0 0",
 
 		
 		
