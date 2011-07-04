@@ -35,12 +35,21 @@ if(true) then
 	-- command spawngroup worldx worldy worldz yaw
 
 		-- Allied Spawn Points
-		"spawn alliedtroops 128.13 72.84 6.54 100",
+		"spawn alliedtroops 129.92 77.73 5.95 150",
+		"spawn alliedtroops 160.71 89.05 6.60 255",
+		"spawn alliedtroops 145.34 74.75 6.93 200",
+		
+		
 		"spawn alliedvehicles -362.76 358.49 22.56 90",
 
 		-- Axis Spawn Points
 		"spawn axistroops -16.74 -253.28 17.17 340",
-		"spawn axisvehicles -218.12 -349.13 21.29 45",
+		"spawn axistroops -12.06 -258.64 16.51 340",
+		"spawn axistroops -15.70 -285.71 16.56 340",
+	
+		"spawn axisvehicles -127.52 -363.62 22.74 45",
+		"spawn axisvehicles -132.14 -357.16 22.73 45",
+		"spawn axisvehicles -136.84 -350.65 22.70 45",
 
 
 -- DEFINE BLOCKED AREAS OF NO ACCESS TO PLAYERS
@@ -238,10 +247,10 @@ if(true) then
 		
 		
 		-- telling the axis vehicles whats going on
-		"area axisvehicleinfo OnTrigger -198.96 -344.20 23.75 1",
-		"area axisvehicleinfo OnTrigger-163.68 -353.50 23.75",
-		"area axisvehicleinfo OnTrigger -160.58 -348.23 23.75",
-		"area axisvehicleinfo OnTrigger -195.16 -308.10 23.75",
+		"area axisvehicleinfo OnTrigger -112.15 -362.24 24.29 1",
+		"area axisvehicleinfo OnTrigger -133.42 -338.99 24.29",
+		"area axisvehicleinfo OnTrigger -132.13 -335.59 24.29",
+		"area axisvehicleinfo OnTrigger -108.79 -352.01 24.29",
 		
 		
 		
@@ -306,7 +315,15 @@ if(true) then
 	-- NAMED VERSION
 	-- command name typeid x y z roll pitch yaw
 
-		-- "clone bedford1 bedford -20.11 -156.51 8.77 0 0 90",
+		"clone bedford1 bedford 143.33 68.70 8.1 0 0 200",
+		"clone bedford1 bedford 146.38 77.07 8.0 0 0 200",
+		
+		"clone oplbltz -44.31 -241.60 17.25 0 4 10",
+		
+		"clone sdkfz251c -43.22 -235.06 16.90 0 5 8",
+		
+		
+		
 		
 				
 	-- ANONYMOUS VERSION
