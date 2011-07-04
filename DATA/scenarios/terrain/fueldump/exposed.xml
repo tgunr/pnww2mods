@@ -3,7 +3,7 @@
 <exposed>
   <trees>
     <!-- weight the higher the number the less dense -->
-    <redweight>25</redweight>
+    <redweight>35</redweight>
     <greenweight>10</greenweight>
     <blueweight>40</blueweight>
     <redtypeint>3 4 5 6 7 8 3 4</redtypeint>
@@ -19,21 +19,21 @@
   <grass>
     <!-- The higher the weight, the lest dense -->
     <greenweight>5</greenweight>
-    <blueweight>20</blueweight>
+    <blueweight>5</blueweight>
     <redweight>5</redweight>
-    <redtypeint>0 1 2 3 0</redtypeint>
+    <redtypeint>0 1 2 3 2</redtypeint>
     <greentypeint>12 13 14 15</greentypeint>
-    <bluetypeint>10 5 5 4 10</bluetypeint>
+    <bluetypeint>4 5 6 7 10 4 5</bluetypeint>
     <!-- Color clamped between 0 - 255 -->
     <!-- Example: redclamp 100 will clamp red mask grass to red color >= 100 -->
     <!-- The higher the clamp, the less number of blades placed-->
     <redclamp>100</redclamp>
     <grnclamp>100</grnclamp>
-    <bluclamp>200</bluclamp>
+    <bluclamp>100</bluclamp>
     <!-- default is 1.0 -->
     <redscale>0.5</redscale>
-    <grnscale>.6</grnscale>
-    <bluscale>.75</bluscale>
+    <grnscale>1.0</grnscale>
+    <bluscale>.8</bluscale>
   </grass>
   <terrainmaterials>
     <!-- Keep in ascending order (layer0, layer1, layer2...etc)-->
