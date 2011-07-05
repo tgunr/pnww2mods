@@ -6,7 +6,7 @@
       <vertexshader>fx/shaders/GLSL/grass/spdgrass.vert</vertexshader>
       <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
       <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
-      <fragmentshader>scenarios/terrain/lepontdumal/spdgrass.frag</fragmentshader>
+      <fragmentshader>scenarios/terrain/fueldump/spdgrass.frag</fragmentshader>
     </shaders>
     <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
     <uniform name="origin" type="float_vec3"></uniform>
@@ -19,7 +19,7 @@
       <vertexshader>fx/shaders/GLSL/grass/spdgrassshadow.vert</vertexshader>
       <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
       <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
-      <fragmentshader>scenarios/terrain/lepontdumal/spdgrassshadow.frag</fragmentshader>
+      <fragmentshader>scenarios/terrain/fueldump/spdgrassshadow.frag</fragmentshader>
     </shaders>
     <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
     <uniform name="src2" type="sampler2dshadow" unit="1" onetimeapply="true"></uniform>
