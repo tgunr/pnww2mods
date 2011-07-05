@@ -144,25 +144,6 @@
     <uniform name="shadowambient" type="float_vec3"></uniform>
   </program>
   <!--=================================================================-->
-  <program name ="riverrun_river">
-    <shaders>
-      <vertexshader>scenarios/terrain/riverrun/river.vert</vertexshader>
-      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
-      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
-      <fragmentshader>scenarios/terrain/riverrun/river.frag</fragmentshader>
-    </shaders>
-    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
-    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
-    <uniform name="refl" type="sampler2d" unit="2" onetimeapply="true"></uniform>
-    <uniform name="surf" type="sampler2d" unit="3" onetimeapply="true"></uniform>
-    <uniform name="src3" type="sampler2d" unit="4" onetimeapply="true"></uniform>
-    <uniform name="scene" type="sampler2d" unit="5" onetimeapply="true"></uniform>
-    <uniform name="shadow" type="sampler2dshadow" unit="6" onetimeapply="true"></uniform>
-    <uniform name="time" type="float"></uniform>
-    <uniform name="scale" type="float"></uniform>
-    <uniform name="shadowambient" type="float_vec3"></uniform>
-  </program>
-  <!--=================================================================-->
   <program name ="flagprogram">
     <shaders>
       <vertexshader>fx/shaders/GLSL/flag/flag.vert</vertexshader>
