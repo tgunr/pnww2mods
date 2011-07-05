@@ -44,6 +44,7 @@ void main()
 
 	    vec4 color = base * (amb * Ka + dif * Kd);
 
+        color.rgb *= gl_TexCoord[0].z;
 	    color.rgb *= GetShadowValue();
 
         gl_FragColor = fogThis(color);
