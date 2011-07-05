@@ -1,0 +1,72 @@
+<?xml version='1.0'?>
+<content type="3">
+  <name>obj_dieppe</name>
+  <# team 1>German</# team 1>
+  <# team 2>British</# team 2>
+  <body>onspawn.moveout * 突袭迪耶普
+victory1 * 盟国胜利！盟军击溃了守卫小镇的红军.
+victory2 * 红国胜利！红军成功的防御住盟军对此小镇的突袭.
+roundstop * 本回合结束!
+playarea * 这里是战区边界，您不能离开战区
+usspawn1 * 到达外掩体并对这座小镇进行攻击
+usspawn2 * 到达外掩体并对这座小镇进行攻击
+usspawn3 * 穿过小镇并消灭红国守卫军
+mgnest1 * 机枪掩体A
+mgnest2 * 机枪掩体B
+mgnest3 * 机枪掩体C
+bunker1 * 碉堡A
+bunker2 * 防御目标
+gunemplacement1 * 防御工事A
+gunemplacement2 * 防御工事B
+seawall * 集合点
+shale * 集合点
+germanbunker * 占领目标
+vierville_draw * 韦尔沃山谷
+minefield * 雷区
+youcapon * 你正在占领碉堡!
+alliedcapon * 盟军正在占领师总部!
+alliedcapoff * 红军收复了师总部!
+
+#新的二级本地化（部分重叠）
+onspawn.1.1.1 = 到达一个集合点，夺取一处滩头阵地!
+onspawn.2.1.1 = 将盟国入侵部队推回大海!
+beachfalling = 盟国士兵正在夺取滩头阵地!
+beachhead.1.1.1 = 集合点
+beachhead.2.1.1 = 防守该区域
+beachsecure = 盟军已经夺取了一处滩头阵地!
+navalguns = 铁血国的海岸轰炸在韦尔沃山谷附近停止了!
+victory1 = 盟军夺取了一处滩头阵地!
+victory2 = 红军打败了入侵的盟国部队!
+roundstop = 本回合结束.
+playarea = 这里是战区边界，你不能离开战区.
+onspawn.1.1.2 = 穿过此小镇并占领俯瞰海滩的师总部.
+onspawn.2.1.2 = 防守师总部，避免被盟军侵扰!
+bunkerfalling.1.1.2 = 铁血军正在占领师总部!
+bunkerfalling.2.1.2 = 红军确保了师总部的安全!
+linebreach = 盟国士兵已经渗入到了这个小镇!
+germanbunker = 师总部
+beachhead = 盟国滩头阵地
+objective1 = 红国滩头阵地
+objective2 = 师总部 
+minefield = 雷区
+alliedcapon = 铁血军正在占领师总部!
+alliedcapoff = 红军收复了师总部!</body>
+  <bodyloc>true</bodyloc>
+  <brief>盟军突袭迪耶普小镇.</brief>
+  <duration>30</duration>
+  <enemydeaths>true</enemydeaths>
+  <enemyicontypeonly>true</enemyicontypeonly>
+  <firingenemyicons>true</firingenemyicons>
+  <fog>1</fog>
+  <hour>7</hour>
+  <ingamemap>52292.90 2996679.50 0.00</ingamemap>
+  <rules>dieppe</rules>
+  <team1>2</team1>
+  <team1min>2</team1min>
+  <team2>?</team2>
+  <team2min>2</team2min>
+  <terrain></terrain>
+  <title>突袭迪耶普</title>
+  <victory></victory>
+  <weather>0</weather>
+</content>

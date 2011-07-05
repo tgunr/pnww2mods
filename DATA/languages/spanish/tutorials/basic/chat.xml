@@ -1,0 +1,73 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>4</key>
+  <body>title = Comunicaciones Básicas por Chat
+1.0.label = Diseño Básico
+
+# Clear or detune Radio 3 to be blank.
+	
+	1.1.alert.modal = La ventana de chat es el modo básico de comunicarte con otros jugadores en el juego.[NL][NL]Tiene 6 &#34;radios&#34; por las que puedes transmitir y recibir mensajes. Cada radio puede ser sintonizada en uno de los canales disponibles.
+	
+		1.1.alert.hilite = chatview,target
+	
+		1.1.alert1.modal = Cada radio numerada (1-6) puede ser accedida a través de la tecla de función con su mismo número (F1-F6).[NL][NL]La etiqueta de la radio muestra el canal que está sintonizado en dicha radio.
+
+		1.1.alert1.hilite = channels,target
+		
+		1.1.alert5 = El funcionamiento básico es simple: pulse la tecla Enter para abrir la línea de escritura, escriba un mensaje, como por ejemplo &#34;Hola&#34;, y pulse la tecla Enter de nuevo para enviar el mensaje.[NL][NL]Envíe &#34;hola&#34; a los jugadores de la zona.
+		
+		1.1.label = Entrada en Chat
+		
+		1.1.complete.hilite = chatinput
+
+		1.1.complete = Bien.  Otros jugadores que sintonicen el canal, o cercanos a ti en el terreno de juego deben haber recibido el mensaje.
+
+	1.2.alert.modal = Cuando estés en el terreno de juego, el canal de chat por defecto (cuando pulses Enter para charlar, en vez de pulsar una de las radios), es el conocido como chat de Área.[NL][NL]Los jugadores amigos que estén entorno a 100 metros recibirán tu mensaje.  Este es un método excelente para coordinarse con jugadores del mismo área.[NL][NL]Pero tenga cuidado.  Ya que los enemigos que estén cercanos pueden ver el texto ilegible que viene de ti de manera que revelarás tu posición. (Aunque no recibirán tu mensaje de texto).
+
+		1.2.alert1 = El canal de tu Misión te permitirá comunicarte con cualquiera que esté en tu misma misión, sin importar la distancia.[NL][NL]Selecciona el canal de Misión presionando F1.
+		
+		1.2.alert1.hilite = F1,target
+
+		1.2.label = Canal de Misión
+		
+		1.2.complete = Nótese que la cabecera del canal F1 se resaltó y que se abrió la barra de chat.
+		
+	1.3.alert = Introduzca algún texto y pulse Enter para enviar en el canal de Misión (radio F1).
+
+		1.3.label = Enviar Chat a Misión
+
+		1.3.complete = Bien.
+
+	1.4.alert.modal = Tus radios se sintonizan automáticamente en varios canales pero puedes configurarlos a tu gusto.
+
+		1.4.alert1 = Para sintonizar una radio, haga click sobre la cabecera de la radio que desee sintonizar. Utilice {guicursor} para hacer visible el puntero de ratón si estás en el terreno de juego.[NL][NL]Se mostrará una lista de los canales disponibles y podrás hacer click sobre el canal que deseas sintonizar en esa radio.[NL][NL]Haz click en la cabecera de la radio F3 y seleccione el canal de Bando.
+
+		1.4.alert1.hilite = F3,target
+
+		1.4.label = Sintonizar la radio F3
+
+		1.4.complete = Bien.  La radio F3 está ahora sintonizada en el canal de Bando.
+
+	1.5.alert.modal = Las charlas en la radio F3 se enviarán a cualquiera que sintonice el canal de &#34;bando&#34;.[NL][NL]Si eres aliado, eso incluye a los jugadores Franceses y Británicos. Si eres del eje, eso incluirá a todos los jugadores Alemanes. 
+
+		1.5.alert1.modal = Un canal muy útil para los nuevos jugadores es el canal Ayuda, radio F6.[NL][NL]Si tienes alguna pregunta o necesitas ayuda, pregunta en este canal y otros jugadores o administradores del juego intentarán ayudarte.
+
+		1.5.alert2.modal =  La interfaz de chat se utiliza también para introducir varios comandos tales como el introducir a alguien en tu lista de amigos, aceptar una invitación de una unidad de jugadores, o enviar un mensaje privado.[NL][NL]Esos comandos se introducen añadiendo un punto (.) o una barra (/) delante del comando.
+
+		1.5.alert3 = Un ejemplo de comando es la instrucción &#34;time&#34;.[NL][NL]Abra cualquier radio, escriba &#34;/time&#34; y presione Enter.
+
+		1.5.label = Introduciendo Comandos de Chat
+
+		1.5.complete.modal = Bien. Debes ver la hora de tu localidad y hora del servidor en la ventana de chat.[NL][NL]Una lista completa de comandos disponibles puede encontrarse en la solapa de Manuales bajo el apartado Comandos de Chat.
+	
+	1.6.alert.modal = Esto concluye el tutorial básico de chat.
+	
+		1.6.label = Fin de Tutorial</body>
+  <branch>1</branch>
+  <brief>Conozca los aspectos básicos del sistema de chat. Cambio de canales, enviar mensajes privados y charla con los amigos.</brief>
+  <handler>basic.chat</handler>
+  <instance>2</instance>
+  <next>basic.hud</next>
+  <requires>basic.map</requires>
+  <title>Sistema de Chat Básico</title>
+</content>

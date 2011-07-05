@@ -1,0 +1,44 @@
+<?xml version='1.0'?>
+<content type="3">
+  <body>HIGH COMMAND
+
+These commands are most useful to members of the High Commands, and some commands are further restricted to higher levels of command.  Many of the brigade commands take the brigade &#34;shortname&#34; when used.
+
+/ALLIED (TEXT): Broadcasts text to all Allied players (restricted to Div CO and above).
+/AXIS (TEXT): Broadcasts text to all Axis players (restricted to Div CO and above).
+/HOLD: Removes the infantry spawn limits on friendly depots.  Also known as &#34;Hold At All Costs&#34; or &#34;HAAC&#34;.
+/HOLD (CODE): Votes for a HOLD on the given overrun code.
+/FALLBACK: Proposes a &#34;Fallback&#34; response to the overrun at your current town. If approved, this will sacrifice the Armybases in the town in order to open up incoming Firebases. Intended to allow you to break a camp situation.  (Divisions cannot fallback.  All brigades present must have valid fallback destinations).
+/FALLBACK (CODE): Votes for a FALLBACK on the given overrun code.
+/HCCP: Brings up the High Command Control Panel.
+/LASTMOVES: Lists the last movements of brigades.
+/OICVOLUNTEER (BRIGADE): Informs your High Command that you volunteer to take charge of your current (or the specified) brigade. (Note: this is restricted to HC players)
+/OICNOMINATE (BRIGADE) (PLAYER): Notifies your High Command that you nominate the named player to be in charge of the named brigade. (Note: this is restricted to HC players)
+/OICVETO (BRIGADE) (PLAYER): Vetoes the nomination of the named player to become OIC of the named brigade.
+/OICRESIGN (BRIGADE): The OIC resigns leadership of the named brigade.
+/OICREPLACE (BRIGADE): You replace the current OIC of the named brigade.
+/OICREMOVE (BRIGADE) (PLAYER): Remove the named player from the OIC position in the named brigade.
+/HC: Displays online HC members and OICs, as well as their brigade assignments.
+/HCLIST: Displays the names of all HC members online, including OICs.
+/HOME: Reports the prestige &#34;home&#34; of your brigade - not its actual location.
+/HOME (with town selected on map): (Brigade Owners only) Allows the official Officer in Charge of a brigade to update its prestige &#34;home&#34; location.
+/LISTOICS: Displays a list of current OIC assignments.
+
+STRATEGIC COMMANDS
+
+/HQOFF: Turns off &#34;HQ&#34; capture messages. 
+/HQON: Turns on &#34;HQ&#34; capture messages. 
+/FBS (CITY): Shows the status of firebases for a particular town. If you do not have a town selected in the map, it defaults to the nearest town. 
+/OBJECTIVES CITY (also /OBJ C): Lists attacks and defense objectives on cities. 
+/OBJECTIVES INFO (also /OBJ I): Reports general information about the the objective at your current town or at the town selected on the map. 
+/OBJECTIVES LIST (also /OBJ L): Lists attack and defensive objectives. 
+/OBJECTIVES NUM (also /OBJ N): Reports numeric information on current objectives including numbers available and placed. 
+/OVERRUN: Indicates that you think your armybase is overrun. When several players have reported /overrun within a few minutes of each other, a warning goes out to all friendly players in the town and the High Commanders are given the option of issuing a Hold at All Costs or Fallback order. 
+/OWN: Shows ownership information about the closest town. 
+/OWN (CITY): Shows ownership information about the specified town. 
+/OWN (with firebase selected on map): Shows the health of the selected firebase. Most firebases have an infantry spawn and vehicle spawn that must be destroyed, but some firebases have additional objects (usually supply crates) that will be listed as &#34;Other&#34;. 
+/OWN (with bridge selected on map): Shows the health/repair status of the selected bridge, and indicates whether or not it can be damaged or repaired by your side. 
+/OWN (with factory selected on map): Shows the current status and RDP contribution of the selected factory. 
+/OWN (with facility or town selected on map): Shows ownership information about the selected town.</body>
+  <title>High Command</title>
+</content>

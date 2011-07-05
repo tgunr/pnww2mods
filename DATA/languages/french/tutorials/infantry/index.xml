@@ -1,0 +1,13 @@
+<?xml version='1.0'?>
+<content type="3">
+  <key>0</key>
+  <brief>Faites un entraînement au combat pour le fantassin</brief>
+  <handler>infantry</handler>
+  <links>
+    <link path="tutorials/infantry/smg.xml" title="Infanterie I: Mitraillette" />
+    <link path="tutorials/infantry/lmg.xml" title="Infanterie II: Fusil-mitrailleur" />
+    <link path="tutorials/infantry/combat.xml" title="Combat d&#39;Infanterie" />
+  </links>
+  <next>infantry.smg</next>
+  <title>Entraînement pour le fantassin</title>
+</content>

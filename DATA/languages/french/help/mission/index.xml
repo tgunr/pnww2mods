@@ -1,0 +1,21 @@
+<?xml version='1.0'?>
+<content type="3">
+  <body>L&#39;écran de mission, connu sous le nom de &#34;ready room&#34;, montre les informations vitales sur la zone de combat où vous allez entrer. Ici vous allez choisir avec quelle unité vous allez combattre, lisez les ordres de mission et préparez vous au combat. 
+Pour evenir au QG  de brigade et à la liste des missions disponibles, pressez le bouton QG de brigade.
+Une fois une unité choisie, validé le bouton entrer pour aller sur le champ de bataille.
+En cas de déséquilibre entre les forces alliées et axes, une minuterie retardant votre entrée en jeu apparaîtra ici.</body>
+  <links>
+    <link path="help/mission/ready.xml" title="Ready Room" />
+    <link path="help/mission/briefing.xml" title="Briefing" />
+    <link path="help/mission/aar.xml" title="AAR" />
+    <link path="help/mission/forces.xml" title="Forces disponibles" />
+    <link path="help/mission/intel.xml" title="Intel" />
+    <link path="help/mission/reserve.xml" title="Arme Réservée" />
+    <link path="help/mission/joinveh.xml" title="Rejoindre véhicule" />
+    <link path="help/mission/mission_map.xml" title="Carte Mission" />
+    <link path="help/mission/msp_check.xml" title="Option Mobile Spawn" />
+  </links>
+  <position>centerxcenter</position>
+  <target>centerxcenter</target>
+  <title>Ecran de mission</title>
+</content>

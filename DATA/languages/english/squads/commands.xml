@@ -1,0 +1,31 @@
+<?xml version='1.0'?>
+<content type="3">
+  <body>An asterisk (*) next to a rank in the Position column indicates the individual player has enabled his Squad Recruiting flag (from Squad Options tab).
+
+Recruit a player to your squad (must be Recruiter rank in Squad or above)
+/RECRUIT <player>
+
+Accept an invitation to join a squad.
+/ACCEPT
+
+Decline an invitation to join a squad (Invitations also eventually time out.)
+/DECLINE
+
+Leave your current squad.
+/LEAVE
+
+Disband your squad (CO rank only).
+/DISBAND
+
+Remove a player from the squad (X0 rank and above).
+/REMOVE <PLAYER>
+
+Promote a player up one rank - Maximum 1 rank below (X0 rank and above).
+/PROMOTE <PLAYER>
+
+Demote a player one rank - limited to players below your level (X0 rank and above).
+/demote <PLAYER>
+
+Resign your command (CO only). Demotes you to XO and makes <player> the CO. 
+/RESIGN <PLAYER></body>
+</content>

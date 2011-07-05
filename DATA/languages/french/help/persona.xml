@@ -1,0 +1,13 @@
+<?xml version='1.0'?>
+<content type="3">
+  <body>L&#39;écran de Sélection du Personnage vous permet d&#39;avoir une vue détaillée des informations sur chacun de vos personnages et d&#39;en sélectionner un pour jouer.
+
+Les Personnages sont listés par pays et par branche. Quand vous sélectionnez un personnage vous avez ses informations sur la gauche, comme son grade, les points nécessaires pour le prochain grade et la brigade à la quelle il appartient qui est en fait la dernière brigade où vous avez joué.
+
+Pour jouer avec un Personnage, sélectionnez le avec la souris en cliquant et validez le bouton brigade en bas à droite. Vous pouvez aussi double cliquer pour le sélectionner et avancer directement vers l&#39;écran suivant. Si vous avez choisi un personnage qui n&#39;est attaché à aucune brigade vous irez au roster des brigades, sinon directement au QG.
+
+Le jeu bloque tous changement de camp trop rapide entre alliés et Axe. Les Personnages qui seront indisponibles car vous avez joué pour l&#39;autre camp récemment seront marqués &#34;indisponible&#34;. Ces personnages redeviendront disponibles après quelques heures passées hors du jeu. Les personnages disponibles sont listés comme étant en &#34;Service Actif&#34;.</body>
+  <position>centerxcenter</position>
+  <target>body:0:-10</target>
+  <title>Choix du personnage</title>
+</content>

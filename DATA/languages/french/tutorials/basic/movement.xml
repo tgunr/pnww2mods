@@ -1,0 +1,120 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>1</key>
+  <body>title = Mouvement de base de l&#39;infanterie
+1.0.label = Apprenez à vous DEPLACER
+
+        1.1.alert.modal = Bienvenue sur le terrain d&#39;entrainement. Ici vous allez apprendre comment vous déplacer et changer de position. [NL][NL]NOTE: Vous pouvez utiliser la touche{exitgameworld} pour quitter la session d&#39;entrainement à tous moment et revenir au  menu.
+        1.1.alert1 = La souris contrôle votre direction.
+        
+       1.1.label = Regardez dans les environs avec la souris
+
+1.2.alert = L&#39;autre façon de regarder autour de vous et d&#39;utiliser les touches {fplookleft} pour la gauche et {fplookright} pour la droite. Vous pouvez les utiliser tout en bougeant sans pour autant changer de direction. Ceci est très utile pour surveiller les alentours tout en se déplaçant.[NL][NL]Regardez à gauche {fplookleft} regardez à droite {fplookright}.
+
+	1.2.label = Regarder à gauche et à droite
+
+	1.2.complete = C&#39;est très important de toujours surveiller autour de soi en combat.
+
+1.3.alert = Utilisez avancer {fpforward}, reculer {fpbackward}, pas de coté à gauche {fpstrafeleft} et pas de coté à droite {fpstraferight} pour vous déplacer.[NL][NL] Bougez bien dans les 4 directions pour finir cette étape.
+
+	1.3.label = Utilisez le clavier pour bouger
+
+	1.3.complete = Bien.
+
+1.4.alert.modal = Par défaut vous vous déplacer en trottinant, mais vous pouvez courir en maintenant appuyer la touche sprint {fpfast} en même temps que vous avancez {fpforward}.[NL][NL]Quand vous courrez, votre barre d&#39;énergie baissera. C&#39;est la barre verte horizontale dans le coin gauche tout en bas de votre écran.
+
+	1.4.alert.hilite = atp-bar
+
+	1.4.alert1.modal = Quand cette barre est trop basse, vous ne pourrez plus courir. Elle  remontera plus ou moins vite selon votre activité. La façon la plus rapide est de rester couché.
+
+	1.4.alert1.hilite = atp-bar
+
+	1.4.label = Gérer son énergie
+	
+1.5.alert = Une balise vers des remorques a été rajoutée sur la mini-carte.  Utiliser {fpforward} et courir {fpfast} pour courir vers ce point.[NL][NL]Courez vers la balise pour continuer.
+	1.5.alert.hilite = minimap
+	
+	1.5.label = Courir vers la balise
+
+        1.5.complete = Bien. Comme vous vous reposez vous récupérez de l&#39;énergie.
+
+1.6.alert.modal = Notez que votre barre d&#39;énergie a baissé suite à votre course. Trottiner  vous permet de retrouver vos forces doucement mais tous les autres mouvements vous fatigueront plus ou moins, comme courir, ramper et avancer accroupi.
+
+	1.6.alert.hilite = atp-bar
+
+	1.6.alert1.modal = Pour retrouver vos forces il suffit de vous arrêter et de vous reposer. La vitesse de votre récupération dépend de votre position, on verra ça après.
+
+	1.6.alert1.hilite = atp-bar
+
+	1.6.label = Reprendre ses forces
+
+
+
+2.0.label = Apprenez les diverses positions
+
+2.1.alert.modal = En tant que fantassin vous pouvez vous tenir debout, accroupi ou couché. Chaque position a ses avantages et ses limites.[NL][NL]Votre position actuelle est visible sur le HUD en bas à gauche.
+
+	2.1.alert.hilite = state-icon
+
+	2.1.alert1 = Accroupi vous bougerez plus lentement et plus silencieusement, vous serez donc  moins visible pour l&#39;ennemi.[NL][NL]Utilisez la touche {fpcrouch} pour s&#39;accroupir.
+		
+	2.1.alert1.hilite = state-icon
+
+	2.1.label = S&#39;accroupir
+
+	2.1.complete = Vous êtes maintenant accroupi.
+
+2.2.alert.modal = Accroupi vous bougerez plus lentement que si vous marchez ou courrez , Mais vous ferez moins de bruit et vous serez moins visible pour l&#39;ennemi, surtout si vous marchez à couvert. Ceci demande un peu plus d&#39;énergie que de trottiner.
+
+	2.2.alert1 = Vous pouvez courir accroupi, cela va moins vite que courir debout et demandera plus d&#39;énergie mais vous serez moins visible.[NL][NL]Accroupi, bougez en avant en utilisant la touche {fpforward}.
+
+	2.2.label = Bougez en étant accroupi.
+
+	2.2.complete = bien! Vous pouvez aussi courir accroupi en utilisant ensemble les touches {fpforward} et {fpfast}.
+
+2.3.alert = Vous pouvez aller encore plus bas en vous mettant sur le ventre. Utilisez la touche {fpprone} pour cela.
+
+	2.3.alert.hilite = state-icon
+
+	2.3.label = A plat ventre
+
+	2.3.complete = Bien. Vous êtes à plat ventre.
+
+2.4.alert.modal = A plat ventre vous bougez très lentement et cela demandera plus d&#39;énergie. L&#39;avantage c&#39;est qu&#39;à l&#39;arrêt vos forces reviendront plus vite et que vous êtes une petite cible pour l&#39;ennemi. Cela augmente aussi vos chances de vous en sortir face à une explosion.[NL][NL]Rampez en utilisant la touche{fpforward}.
+
+	2.4.label = Ramper
+
+	2.4.complete = Bien.
+
+2.5.alert = A plat ventre vous pouvez courir avec les touches {fpforward} et {fpfast} vous vous lèverez pour courir tant que vous maintiendrez la touche avancer et courir.[NL][NL]De la position couchée, essayez de courir sur quelques mètres avec les touches  {fpforward} et {fpfast}.
+
+	2.5.label = Courir depuis la position à plat ventre.
+
+	2.5.complete = Remarquez  qu&#39;une fois que vous avez arrêté de courir vous revenez à la position à plat ventre. Cela est utile pour courir d&#39;une zone couverte à une autre durant le combat.
+	
+3.0.label = Point mobile de renfort
+
+	3.1.label = Allez au point de Spawn 
+    3.1.alert.modal = La plus part du temps le fantassin entre sur le champ de bataille, ou &#39;spawn&#39;, dans la base militaire ou un dépôt.  Mais les joueurs peuvent créer des point mobiles de renfort en amenant un camion proche des lignes ennemies et en le laissant là.[NL][NL]Ceci permet aux joueurs de rentrer sur le champ de bataille à cette place là, ce qui réduit de beaucoup la distance à parcourir pour aller au combat.
+	3.1.alert1 = Vous &#34;spawnez&#34; là, point mobile.[NL][NL]Allez maintenant vers ce point mobile d&#39;où vous venez d&#39;arriver.
+    
+	3.2.label = Missions de point mobile
+    3.2.alert1.modal = Les missions avec un point mobile sont indiquées par une icône camion en bout de ligne sur l&#39;écran des missions .
+    
+    #can you fake the map icon in the text here?
+    
+    3.2.alert2.modal = L&#39;icône camion indique qu&#39;il y a un point mobile &#34;MSP&#34; (&#34;Mobile Spawn Point&#34;) ou &#34;UMS&#34; (&#34;Unmanned Spawn Point&#34;).  La différence est qu&#39;un joueur est encore au commande du camion pour le MSP - Il peut déplacer le camion de nouveau si besoin. Mais un UMS ne peut plus être déplacé.
+    
+    3.2.alert3.modal = Les deux MSP et UMS, soit les camions, sont aussi des points de ravitaillements qui vous donneront des munitions des que vous serez à coté d&#39;eux.
+    
+    3.2.alert3.hilite = persona-resupply
+
+	3.3.label = Terminé
+	3.3.alert.modal = Ceci termine ce tutoriel.</body>
+  <branch>1</branch>
+  <brief>Vous apprend les différentes façons de déplacer votre fantassin sur le champ de bataille.</brief>
+  <handler>basic.movement</handler>
+  <instance>2</instance>
+  <next>basic.rifleman</next>
+  <title>Les mouvements du fantassin</title>
+</content>

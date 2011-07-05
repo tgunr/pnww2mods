@@ -1,0 +1,121 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>1</key>
+  <body>title = Movimento di base di fanteria
+
+1.0.label = Impara a muoverti
+
+	1.1.alert.modal = Benvenuto nel tutorial sul movimento di base della fanteria. In questo tutorial imparerai a muoverti e a cambiare postura.[NL][NL]NOTA: dovrai premere {exitvehicle} per uscire dall&#39;addestramento e ritornare al menu&#39;.
+
+	1.1.alert1 = Il mouse controlla la tua direzione. Usa il mouse per guardarti attorno nel campo di addestramento.
+
+	1.1.label = Uso per mouse per guardare
+		
+1.2.alert = Un altro sistema per guardarsi attorno e&#39; usare i tasti per guardare a sinistra {fplookleft} e destra {fplookright}. Puoi usarli mentre ti muovi per guardare senza cambiare direzione. Questo e&#39; molto utile per cercare eventuali nemici mentre di muovi in avanti.[NL][NL]Guarda a sinistra {fplookleft} e destra {fplookright} per continuare.
+	
+	1.2.label = Guarda a sinistra e destra
+
+	1.2.complete = E&#39; importantissimo essere sempre conscio di cio&#39; che ti circonda in combattimento. 
+
+1.3.alert = Muoviti in avanti {fpforward}, indietro {fpbackward}, a sinistra {fpstrafeleft} e destra {fpstraferight} per un po&#39;.[NL][NL]Muoviti in tutte e 4 le direzioni per completare questo passaggio.
+
+	1.3.label = Usare la tastiera per muoversi
+
+	1.3.complete = Ottimo.
+
+1.4.alert.modal = La tua normale velocita&#39; di avanzamento e&#39; un piccolo trotto, ma puoi scattare tenendo premuto il tasto di scatto {fpfast} mentre ti muovi in avanti {fpforward}.[NL][NL]Mentre scatti, la tua barra dell&#39;energia diminuira&#39;. Questa e&#39; la barra verde orizzontale nell&#39;angolo in basso a sinistra dello schermo.
+
+	1.4.alert.hilite = atp-bar
+
+	1.4.alert1.modal = Quando la barra arriva a meta&#39;, non puoi piu&#39; scattare. La barra recuperera&#39; in modi differenti a secondo della tua postura e movimento. Il sistema pie&#39; rapido e&#39; quello di sdraiarsi.
+
+	1.4.alert1.hilite = atp-bar
+	
+	1.4.label = Gestione dell&#39;energia
+
+1.5.alert = Un punto di passaggio per un mezzo di rifornimento e&#39; stato aggiunto sulla tua minimapp. Muoviti in avanti {fpforward} e scatta {fpfast} per raggiungere il punto.[NL][NL]Scatta verso il punto di passaggio per continuare.
+
+	1.5.alert.hilite = minimap
+
+	1.5.label = Scatta verso il punto di passaggio
+
+	1.5.complete = Bel lavoro. Mentre ti riposi, riguadagnerai energia.
+
+1.6.alert.modal = Nota come la tua energia sia stata esaurita da alcuni scatti. L&#39;andare al trotto ti permettera&#39; di riguadagnare energia molto lentamente, ma tutti gli altri tipi di movimento quali scattare, stisciare e.accovacciare usano energia.
+
+	1.6.alert.hilite = atp-bar
+
+	1.6.alert1.modal = Per recuperare la tua energia devi semplicemente fermarti e riposare. La tua energia ritornera&#39; piu&#39; rapidamente a seconda della posizone, come vedremo piu&#39; avanti.
+
+	1.6.alert1.hilite = atp-bar
+
+	1.6.label = Recuperare l&#39;energia
+
+2.0.label = Conosce le posture
+
+2.1.alert.modal = Come fante tu puoi stare diritto, accovacciarti o stenderti. Ogni postura ha la sua utilita&#39;.[NL][NL]La tua postura attuale e&#39; visualizzata nell&#39;angolo in basso a sinistra del tuo Heads-Up-Display (HUD).
+
+	2.1.alert.hilite = state-icon
+
+	2.1.alert1 = Accovacciarsi permette di muoversi piu&#39; lentamente e silenziosamente e puo&#39; aiutarti ad evitare l&#39;avvistamento da parte del nemico.[NL][NL]Usa il tasto {fpcrouch} per accovacciarti.
+		
+	2.1.alert1.hilite = state-icon
+
+	2.1.label = Accovacciarsi
+
+	2.1.complete = Ora sei accovaggiato.
+
+2.2.alert.modal = Mentre sei accovacciato, puoi muoverti molto piu&#39; lentamente che mentre cammini o scatti, ma farai molto meno rumore e sarai meno visibile dal nemico specialmente mentre di nascondi. Richiede leggermente piu&#39; energia del trottare.
+
+	2.2.alert1 = Puoi scattare dalla posizione di accovacciamento. Sai piu&#39; lento rispetto alla posizione eretta e richiede anche piu&#39; energia ma sarai piu&#39; basso.[NL][NL]Mentre sei accovacciato, muoviti in avanti usando il tasto {fpforward}.
+
+	2.2.label = Muoversi da accovacciato.
+
+	2.2.complete = Ottimo! Puoi anche correre accovacciato usando {fpforward} e {fpfast} insieme.
+
+2.3.alert = Puoi essere anche piu&#39; basso distendentoti.[NL][NL]Usa il tasto {fpprone} per distenderti.
+
+	2.3.alert.hilite = state-icon
+
+	2.3.label = Distendersi
+
+	2.3.complete = Eccellente, ora sei disteso al suolo.
+
+2.4.alert = Mentre sei prono, il tuo movimento e&#39; molto lento e consuma molta energia. Comunque riguadagnerai energia molto rapidamente fermandoti e sei un bersaglio molto piccolo per il nemico. Distendersi prono puo&#39; aumentare enormemente le tue possibilita&#39; di sopravvivere a un&#39;esplosione e alle scheggie.[NL][NL]Striscia in avanti usando il tasto {fpforward}.
+
+	2.4.label = Strisciare
+
+	2.4.complete = Ben fatto.
+
+2.5.alert = Dalla posizione prona, puoi usare i tasti {fpforward} e {fpfast} per scattare in avanti. Questo ti fara&#39; alzare in piedi e correre finche&#39; non rilascerai entrambi tasti.[NL][NL]Dalla posizione prona, scatta per un breve tratto usando {fpforward} e {fpfast}.
+
+	2.5.label = Scattare da distesi.
+
+	2.5.complete = Nota che dopo aver rilasciato entrambi i tasti, ritornerai prono. Questo e&#39; molto utile per scattare tra due posizione coperte in zona di combattimento.
+	
+3.0.label = Mobile Spawn
+
+	3.1.label = Ritorno al punto di ingresso
+    3.1.alert.modal = La maggior parte delle volte, la fanteria entrera&#39; in gioco all&#39;interno di basi esercito o depositi. Ma i giocatori possono creare dei punti di mobile spawn guidando automezzi vicino a citta&#39; nemiche e schierando il loro veicolo.[NL][NL]Questo permette agli altri giocatori di entrare in gioco dalla posizione del mezzo, riducendo così enormemente la distanza dal combattimento.
+	3.1.alert1 = Sei appena entrato da un simile mobile spawn.[NL][NL]Dirigiti verso il mobile spawn senza equipaggio dal quale sei entrato.
+    
+	3.2.label = Missioni con mobile spawn
+    3.2.alert1.modal = Le missioni con mobile spawn sono indicate dall&#39;icona del autocarro nella lista delle missioni.
+    
+    #can you fake the map icon in the text here?
+    
+    3.2.alert2.modal = L&#39;icona dell&#39;autocarro spiega che e&#39; un mobile spawn o con &#34;MSP&#34; (&#34;Mobile Spawn Point&#34;) or &#34;UMS&#34; (&#34;Unmanned Spawn Point&#34; - mobile spawn senza equipaggio). La differenza e&#39; che nel primo caso un&#39;altro giocatore e&#39; ancora al comando dell&#39;MSP - può muovere il mezzo. Mentr eun UMS non puo&#39; essere mosso.
+    
+    3.2.alert3.modal = Sia i MSP che gli UMS, come pure tutti gli autocarri e i trattori, sono anche punti di rifornimento che automaticamente ti ricaricheranno quando sei loro vicino.
+    
+    3.2.alert3.hilite = persona-resupply
+
+	3.3.label = Completo
+	3.3.alert.modal = Questo completa il tutorial sul movimento di base della fanteria.</body>
+  <branch>1</branch>
+  <brief>Apprendi come muovere il tuo fante nel gioco.</brief>
+  <handler>basic.movement</handler>
+  <instance>2</instance>
+  <next>basic.rifleman</next>
+  <title>Movimento di fanteria</title>
+</content>

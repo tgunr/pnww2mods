@@ -1,0 +1,22 @@
+<?xml version='1.0'?>
+<content type="3">
+  <body>La pantalla de misión, conocida como Sala de Preparación, muestra información vital a cerca del combate en el que vas a participar.  Aquí puedes elegir el equipamiento con el que deseas combatir, leer las órdenes de la misión, y prepararse para la batalla.
+
+Para regresar al Cuartel General de Brigada y la lista de otras misiones, presione el botón HQ Brigada.
+
+Una vez que hayas seleccionado el equipamiento, pulse en Entrar al Campo para salir al terreno de juego.  En ocasiones si las fuerzas del Eje y Aliadas no están equilibradas, verás una cuenta atrás de Retardo en la salida antes de poder entrar al terreno de juego.</body>
+  <links>
+    <link path="help/mission/ready.xml" title="Sala de Preparación" />
+    <link path="help/mission/briefing.xml" title="Informe de Misión" />
+    <link path="help/mission/aar.xml" title="Informe Tras Acción (AAR)" />
+    <link path="help/mission/forces.xml" title="Fuerzas Disponibles" />
+    <link path="help/mission/intel.xml" title="Información" />
+    <link path="help/mission/reserve.xml" title="Reservar Arma" />
+    <link path="help/mission/joinveh.xml" title="Unirse a Vehículo" />
+    <link path="help/mission/mission_map.xml" title="Mapa de Misión" />
+    <link path="help/mission/msp_check.xml" title="Opción Salida Móvil" />
+  </links>
+  <position>centerxcenter</position>
+  <target>centerxcenter</target>
+  <title>Pantalla de Misión</title>
+</content>

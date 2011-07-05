@@ -1,0 +1,37 @@
+<?xml version='1.0'?>
+<content type="3">
+  <body>Puoi accedere attraverso l&#39;interfaccia a molti comandi di chat che ti permettono funzionalità aggiuntive e accesso ad informazioni.
+
+CONVENZIONI:
+Puoi inserire i comandi o con &#34;/(comando)&#34; o con &#34;.(comando)&#34;, è indifferente. I comandi sono elencati in MAIUSCOLO per chiarezza ma puoi inserire /HELP, /Help o :Help. Alcuni comandi possono ricevere o richiedono parametri addizionali. Questi sono elencati in ordine e con le seguenti regole:
+    &#34;(GIOCATORE)&#34; indica che è richiesto un nome in gioco
+    &#34;parola1|parola2&#34; indica, letteralmente, o la parola1 o la parola2 (di solito è usato 
+per la commutazione On|Off&#34;)
+
+RESET ALLE RADIO DI DEFAULT:
+I cambiamenti che fai all tue radio sono mantenuti sull&#39;host cosicchè tali impostazioni sono le stesse da qualunque computer tu puoi usare per accedere al gioco.
+
+  /RESETRADIOS: ripristina le assegnazioni delle radio a quelle di default del gioco.
+
+ABBREVIAZIONI:
+Possono essere usate delle abbreviazioni nel buffer della chat per semplificare la inserimento di nomi lunghi per diverse cose. L&#39;informazione corretta è inserite nel testo quando viene inviato agli altri giocatori.
+
+$orig: Inserisce la tua città di origine.
+$targ: Inserisce la tua città obiettivo.
+$lead: Inserisce il nome del tuo leader di missione.
+$unit: Inserisce il nome della tua brigata attuale.
+$miss: Inserisce il nome della tua missione.
+$town: Inserisce la città nella quale sei attualmente.
+$here: Inserisce il nome della struttura e cattura &#37;.
+$hcid: Inserisce l&#39;identificativo breve della brigata attuale
+
+Per usarli, inserisci l&#39;abbreviazione quando scrivi. Per esempio, se sei in una missione di attacco ad Antwerp e invii &#34;Copertura aerea necessaria $targ&#34; (&#34;Air cover needed at $targ&#34;), sarà inviato come &#34;Copertura aerea necessaria a Antwerp&#34; (&#34;Air cover needed at Antwerp&#34;).</body>
+  <links>
+    <link path="manuals/commands/basic_chat.xml" title="Comandi di base" />
+    <link path="manuals/commands/action_chat.xml" title="Comandi di comunicazione e di azione" />
+    <link path="manuals/commands/mission_chat.xml" title="Comandi di missione" />
+    <link path="manuals/commands/squad_chat.xml" title="Comandi di squadra" />
+    <link path="manuals/commands/hc_chat.xml" title="Alto Comando" />
+  </links>
+  <title>Comandi di chat</title>
+</content>

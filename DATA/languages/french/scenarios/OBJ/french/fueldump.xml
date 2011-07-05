@@ -1,0 +1,48 @@
+<?xml version='1.0'?>
+<content type="3">
+  <name>obj_fueldump</name>
+  <body>onspawn.moveout = Les allemands essayent de traverser la ville et de capturez le dépôt.
+playarea = Revenez
+roundstop = Cette manche est finie!
+alliedinfantryinfo = Les forces allemandes pourraient être en train de bouger à travers la ville pour aller au dépôt d&#39;essence.
+alliedvehicleinfo = Des blindés allemands pourraient être en train de traverser la ville pour aller au dépôt.
+axisinfantryinfo = Soutenez vos blindés pour atteindre l&#39;objectif.
+axisvehicleinfo = Avancez à travers la ville est le chemin le plus rapide , mais le moins sûr, pour atteindre l&#39;objectif.
+
+
+objective1.1.1.1 = Défendez le dépôt d&#39;essence!
+objective1.2.1.1 = Capturez le dépôt d&#39;essence!
+
+youcapon = Vous capturez le dépôt!
+axiscapon = Les forces de l&#39;axe capture le dépôt!
+axiscapoff = Les forces Alliées ont repris le dépôt!
+
+
+depotcapturem = Vous avez capturez le dépôt!
+
+southbridge = Pont Sud
+northbridge = Pont Nord
+petiteferme = petite ferme
+objective = objectif
+
+
+scenario.help = text</body>
+  <bodyloc>true</bodyloc>
+  <brief>Les forces allemandes essayent de revenir en ville et de reprendre les réserves d&#39;essence aux forces américaines</brief>
+  <duration>30</duration>
+  <enemydeaths>true</enemydeaths>
+  <enemyicontypeonly>true</enemyicontypeonly>
+  <firingenemyicons>true</firingenemyicons>
+  <fog>1</fog>
+  <hour>8</hour>
+  <ingamemap>107.8 38.9 .041</ingamemap>
+  <rules>fueldump</rules>
+  <team1>2</team1>
+  <team1min>2</team1min>
+  <team2>4</team2>
+  <team2min>2</team2min>
+  <terrain>fueldump</terrain>
+  <title>Réserve d&#39;essence  WIP</title>
+  <victory>60</victory>
+  <weather>2</weather>
+</content>

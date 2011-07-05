@@ -1,0 +1,37 @@
+<?xml version='1.0'?>
+<content type="3">
+  <body>You can access many commands through the chat interface that allow additional funtionality and access to information.
+
+CONVENTIONS:
+You can enter commands as either &#34;/(command)&#34; or &#34;.(command)&#34;, there is no difference.  Commands are listed in UPPERCASE for clarity but you can enter /HELP, /HeLp or .hELp. Some commands can take, or require, additional paramters. These are listed in order and denoted as follows: 
+    &#34;(PLAYER)&#34; indicates a callsign is required
+    &#34;word1|word2&#34; indicates, literally, either word1 or word2 (this is usually
+an On|Off toggle).
+
+RESET DEFAULT RADIOS:
+Changes you make to your radios are preserved on the host so that the settings are the same for you on any computer you access the game with.
+
+  /RESETRADIOS: restores your radio assignments to the game defaults.
+
+SHORTCUT SUBSTITUTIONS:
+Shortcuts can be entered into the chat buffer to simplify the typing of long names for various things.  The correct information is inserted into the text when it is sent to other players.
+
+$orig: Inserts your Origin city.
+$targ: Inserts your Mission Target city.
+$lead: Inserts the name of your Mission Leader.
+$unit: Inserts the name of your current Brigade
+$miss: Inserts the name of your Mission.
+$town: Inserts the city you are currently in.
+$here: Inserts the name of the Facility and capture &#37;.
+$hcid: Inserts short ID of current Brigade
+
+To use these, enter the shortcut as you type.  For example, if you are on a mission attacking Antwerp and you send &#34;Air cover needed at $targ&#34;, will be seen as &#34;Air cover needed at Antwerp.&#34;</body>
+  <links>
+    <link path="manuals/commands/basic_chat.xml" title="Basic Commands" />
+    <link path="manuals/commands/action_chat.xml" title="Communication and Action Commands" />
+    <link path="manuals/commands/mission_chat.xml" title="Mission Commands" />
+    <link path="manuals/commands/squad_chat.xml" title="Squad Commands" />
+    <link path="manuals/commands/hc_chat.xml" title="High Command" />
+  </links>
+  <title>Chat Commands</title>
+</content>
