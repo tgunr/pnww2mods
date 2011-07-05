@@ -2,7 +2,7 @@
 <content type="3">
   <name>obj_fueldump</name>
   <body>onspawn.moveout = The Germans are trying to move through town and recapture the fuel depot.
-playarea = Turn around
+playarea = You are leaving the combat area
 roundstop = This round is over!
 alliedinfantryinfo = German forces may be moving through town towards the fuel depot.
 alliedvehicleinfo = German armor may be moving through town or cross country towards the depot.
@@ -29,12 +29,12 @@ objective = objective
 scenario.help = text</body>
   <bodyloc>true</bodyloc>
   <brief>German forces try to move back through town and re-capture the valuable fuel depot from the American invasion forces.</brief>
-  <duration>20</duration>
+  <duration>30</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
-  <firingenemyicons>false</firingenemyicons>
+  <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
-  <hour>19</hour>
+  <hour>8</hour>
   <ingamemap>107.8 38.9 .041</ingamemap>
   <rules>fueldump</rules>
   <team1>2</team1>
@@ -44,5 +44,5 @@ scenario.help = text</body>
   <terrain>fueldump</terrain>
   <title>Fuel Dump WIP</title>
   <victory>60</victory>
-  <weather>1</weather>
+  <weather>2</weather>
 </content>

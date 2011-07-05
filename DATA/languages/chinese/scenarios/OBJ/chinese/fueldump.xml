@@ -9,6 +9,7 @@ alliedvehicleinfo = 红军装甲可能穿过城镇直奔燃料库.
 axisinfantryinfo = 支援你方装甲完成任务.
 axisvehicleinfo = 通过城镇到达目标的路线是最快速的，但不是安全的.
 
+
 objective1.1.1.1 = 防御燃料库！
 objective1.2.1.1 = 占领燃料库！
 
@@ -27,12 +28,12 @@ objective = 目标
 scenario.help = 文本信息</body>
   <bodyloc>true</bodyloc>
   <brief>红军试图返回城镇并从铁血军夺回宝贵的燃料库.</brief>
-  <duration>20</duration>
+  <duration>30</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
-  <firingenemyicons>false</firingenemyicons>
+  <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
-  <hour>19</hour>
+  <hour>8</hour>
   <ingamemap>107.8 38.9 .041</ingamemap>
   <rules>fueldump</rules>
   <team1>2</team1>
@@ -42,5 +43,5 @@ scenario.help = 文本信息</body>
   <terrain>fueldump</terrain>
   <title>燃料库</title>
   <victory>60</victory>
-  <weather>1</weather>
+  <weather>2</weather>
 </content>

@@ -29,12 +29,12 @@ objective = objectif
 scenario.help = text</body>
   <bodyloc>true</bodyloc>
   <brief>Les forces allemandes essayent de revenir en ville et de reprendre les réserves d&#39;essence aux forces américaines</brief>
-  <duration>20</duration>
+  <duration>30</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
-  <firingenemyicons>false</firingenemyicons>
+  <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
-  <hour>19</hour>
+  <hour>8</hour>
   <ingamemap>107.8 38.9 .041</ingamemap>
   <rules>fueldump</rules>
   <team1>2</team1>
@@ -44,5 +44,5 @@ scenario.help = text</body>
   <terrain>fueldump</terrain>
   <title>Réserve d&#39;essence  WIP</title>
   <victory>60</victory>
-  <weather>1</weather>
+  <weather>2</weather>
 </content>

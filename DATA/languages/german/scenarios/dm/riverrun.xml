@@ -1,7 +1,9 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>dm_riverrun</name>
-  <body>onspawn.moveout = Vernichte so viel Feinde wie möglich bevor die Zeit abgelaufen ist!
+  <body>objective1 = Alliierte
+objective2 = Achsenmächte
+onspawn.moveout = Vernichte so viel Feinde wie möglich bevor die Zeit abgelaufen ist!
 churchentry = Vorsicht, im Kirchturm verstecken sich gerne Scharfschützen!
 toaxisspawn = Die deutschen Streitkräfte werden im Nordosten belagert.
 toalliedspawn = Die Amerikaner haben die südwestliche Brücke überquert!
@@ -15,10 +17,13 @@ wp3 = Aussichtspunkt
 intelenemyon = Deine Seite hat neue Informationen über den Gegner erhalten!
 intelenemyoff = Deine Seite hat keine Informationen über den Gegner.
 intelfriendlyon = Der Feind hat neue Informationen über Deine Seite!
-intelfriendlyoff = Der feindliche Aufklärer wurde unschädlich gemacht.</body>
+intelfriendlyoff = Der feindliche Aufklärer wurde unschädlich gemacht.
+scenario.help = RIVER RUN: VERNICHTE DEN FEIND!!!</body>
   <bodyloc>true</bodyloc>
-  <brief>Die Amerikaner sind noch vor der Sprengung über die Südbrücke vorgerückt. Die deutschen Truppen müssen die Stadt gegen die Belagerer verteidigen.<br><br>
-Töte so viele Feinde wie möglich innerhalb von 10 Minuten.<br>
+  <brief>Die Amerikaner sind noch vor der Sprengung über die Südbrücke vorgerückt. Die deutschen Truppen müssen die Stadt gegen die Belagerer verteidigen.
+
+Töte so viele Feinde wie möglich innerhalb von ${duration} Minuten.
+
 Das Team, das zuerst 50 Kills erreicht, gewinnt.</brief>
   <draw>35</draw>
   <duration>15</duration>
