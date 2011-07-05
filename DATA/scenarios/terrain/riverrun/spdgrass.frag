@@ -28,6 +28,7 @@ void main()
         amb += gl_LightModel.ambient;
 
 	    vec4 color = base * (amb * Ka + dif * Kd);
+        color.rgb *= gl_TexCoord[0].z;
 
 	    gl_FragColor = fogThis(color);
     }
