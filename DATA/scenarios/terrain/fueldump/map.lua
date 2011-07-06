@@ -18,7 +18,12 @@ if(true) then
 	
 	"place stonebridgeshort -238.0 -42.77 4.5 0 0 25 0 0 0",
 	"place stonebridge -261.7 -72.5 4.7 0 0 52 0 0 0",
-
+	--"place kr_bridge_n_dam 351.61 249.99 -3.7 0 10 0 0 0 0",
+	
+	"place station1c 357 263 1.9 0 0 140 0 0 0 1",
+	
+	
+	
 	
 	
 		"place vinbarn1 153.5 81.5 6.5 0 0 -67 0 0 0 1",
@@ -45,7 +50,25 @@ if(true) then
 		"place armoredfb1c -131.75 -358.13 22.5 -1 1.1 0 0 0 0",
 		"place cratepile_outside -109.22 -351.92 22 0 0 0 0 0 0",
 		"place cratepile_outside -130 -335.17 22 0 0 -140 0 0 0",
+
+		
+		
 		"place vinbarn1 -167 -342 23.4 0 0 -50 0 0 0 1",
+		
+	-- american armor spawn
+
+		"place armoredfb1c -351.18 355.85 22.4 0.7 -0.7 60 0 0 0",
+		"place cratepile_outside -333.05 338.59 22.2 0 0 90 0 0 0",
+		"place ammocrate -332.99 338.90 23.41 0 0 90 0 0 0",
+		"place ammocrate -332.99 338.90 23.0 0 0 90 0 0 0",
+		
+		"place cratepile_outside -333.05 338.59 23.8 0 0 95 0 0 0",
+		"place cratepile_outside -343.82 337.50 22.2 0 0 80 0 0 0",
+
+		
+		
+		
+		
 		
 		
 		
@@ -83,7 +106,7 @@ if(true) then
 		"place bel6 -10.87 -118.52 8.36 0 0 112 0 0 0 1",
 		"place bel6 -13.21 -151.75 8.18 0 0 290 0 0 0 1",
 		"place tanktrap -13.00 -153.00 7.78 0 0 -30 0 0 0 0",
-		"place tanktrap -14.50 -154.50 7.74 0 0 15 0 0 0 0",
+		"place trap -14.50 -154.50 7.74 0 0 15 0 0 0 0",
 		"place boarding1 1.08 -141.00 8.55 0 0 105 0 0 0 0",
 		"place crate -5.00 -134.70 8.33 0 0 0 0 0 0 0",
 
@@ -182,10 +205,11 @@ if(true) then
 		--"place crate -24.5 -133.50 8.35 0 0 20 0 0 0 0",
 		--"place crate -26.55 -132.00 8.40 0 0 15 0 0 0 0",
 		"place bel6 -26.16 -89.87 7.96 0 0 111 0 0 0 1",
-		"place oildrums_outside -25.00 -97.00 8.15 0 0 0 0 0 0 1",
+		"place drums_outside -25.00 -97.00 8.15 0 0 0 0 0 0 1",
 		"place oildrums_outside -30.00 -106.00 8.22 0 0 30 0 0 0 1",
 		--"place cratepile_outside -22.70 -88.50 8.26 0 0 -70 0 0 0 0",
 		"place bel3 -25.56 -46.58 8.36 0 0 125 0 0 0 0",
+		"place oildrums_outside 95.27 -27.98 8.3 0 6 0 0 0 0 1",
 		
 		
 		"place bel6 -30.13 -68.99 7.84 0 -2 19 0 0 0 1",
@@ -230,11 +254,11 @@ if(true) then
 		"place dd_telegraph_07 12.00 -53.50 7.22 0 0 110 0 0 0 0",
 		"place dd_telegraph_07 -4.00 -96.00 7.34 0 0 110 0 0 0 0",
 		-- "place dd_telegraph_07 -3.00 -123.00 7.46 0 0 20 0 0 0 0",
-		"place dd_telegraph_07 -81.0 -97.15 8.67 20 77 -25 0 0 0 0",
+		--"place dd_telegraph_07 -81.0 -97.15 8.67 20 77 -25 0 0 0 0",
 		"place wall03 -67.93 -100.7 8.05 0 0 20 0 0 0 0",
-		"place tanktrap -80.02 -96.88 7.85 0 5 0 0 0 0 0",
-		"place tanktrap -78.01 -97.99 7.8 0 0 45 0 0 0 0",
-		"place tanktrap -75.01 -98.40 8.0 0 -10 0 0 0 0 0",
+		--"place tanktrap -80.02 -96.88 7.85 0 5 0 0 0 0 0",
+		--"place tanktrap -78.01 -97.99 7.8 0 0 45 0 0 0 0",
+		--"place tanktrap -75.01 -98.40 8.0 0 -10 0 0 0 0 0",
 		"place dd_telegraph_07 42.00 -138.00 8.77 84 60 20 0 0 0 0",
 		"place dd_telegraph_07 165.00 -85.00 8 61 70 0 0 0 0 0",
 		--"place instance_rockwall1 86.10 -14.35 6.5 -10 -5 60 0 0 0 0",
