@@ -397,7 +397,7 @@
   <transformeffect name = "bazookaammotrail">
     <emitter>
       <flags>particleeffectonly</flags>
-      <lifetime>500</lifetime>
+      <lifetime>5000</lifetime>
       <particleeffect>bazookaammotrailparticle</particleeffect>
     </emitter>
   </transformeffect>
@@ -2302,13 +2302,14 @@
   <!-- ===================================================================== -->
   <particleeffect name = "bazookaflashparticle">
     <number>5</number>
+    <number>10</number>
     <texture>white smoke 1</texture>
     <texture>day1blacksmoke</texture>
     <texture>white smoke 2</texture>
     <texture>day1blacksmoke</texture>
     <alpha>0.0</alpha>
-    <alpha>0.2</alpha>
-    <alpha>0.2</alpha>
+    <alpha>0.4</alpha>
+    <alpha>0.4</alpha>
     <alpha>0.0</alpha>
     <size>0.1</size>
     <size>0.3</size>
@@ -3779,7 +3780,8 @@
   </particleeffect>
   <!-- ===================================================================== -->
   <particleeffect name = "smallrocketexhaustsmoke">
-    <number>8</number>
+    <number>5</number>
+    <number>10</number>
     <texture>day1blacksmoke</texture>
     <texture>low res smoke1</texture>
     <texture>low res smoke2</texture>
@@ -3790,8 +3792,8 @@
     <texture>white smoke 1</texture>
     <texture>white smoke 2</texture>
     <alpha>0.0</alpha>
-    <alpha>0.2</alpha>
-    <alpha>0.2</alpha>
+    <alpha>0.4</alpha>
+    <alpha>0.4</alpha>
     <alpha>0.0</alpha>
     <size>0.1</size>
     <size>0.3</size>
