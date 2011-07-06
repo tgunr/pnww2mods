@@ -53,12 +53,12 @@
   <!-- clutter mask 1 -->
   <objectclutter name="cluttermask.dds">
   <!-- weight the higher the number the less dense -->
-    <redweight>75</redweight>
-    <greenweight>230</greenweight>
+    <redweight>35</redweight>
+    <greenweight>100</greenweight>
     <blueweight>1</blueweight>
     <!-- Color clamped between 0 - 255 -->
-    <redclamp>100</redclamp>
-    <grnclamp>200</grnclamp>
+    <redclamp>200</redclamp>
+    <grnclamp>150</grnclamp>
     <bluclamp>100</bluclamp>
     <!-- clutter FLT object for specific color -->
     <redtypestring>blumaine1c</redtypestring>
@@ -69,6 +69,16 @@
     <greenparams>300</greenparams>
     <blueparams>5</blueparams>
   </objectclutter>
+  
+    <fogparams>
+    <!--<start>-25.0</start>
+    <end>1200.0</end>
+    -->
+     <start>25.0</start>
+     <end>1100.0</end>
+	 <fogcolor>64 71 78 0</fogcolor>
+     <!-- <fogcolor>127 127 127 0</fogcolor> -->
+   </fogparams>
   
   
   
