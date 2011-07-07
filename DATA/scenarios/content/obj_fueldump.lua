@@ -60,7 +60,8 @@ if(true) then
 		-- Allied Spawn Points
 		"spawn alliedtroops 129.92 77.73 5.95 150",
 		"spawn alliedtroops 160.71 89.05 6.60 255",
-		"spawn alliedtroops 145.34 74.75 6.93 200",
+		"spawn alliedtroops 163.07 94.82 5.95 270",
+		
 		
 		
 		"spawn alliedvehicles -353.45 349.14 22.53 93",
