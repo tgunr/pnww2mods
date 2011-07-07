@@ -1,0 +1,29 @@
+<?xml version='1.0'?>
+<content type="3">
+  <name>ca2/dm_aircombat_01</name>
+  <body>playarea = 这里是战区边界，你不能离开战区
+ataxisspawn = 敌机在你西面，飞自蒙福肯
+atalliedspawn = 敌机在你东面，飞自艾坦
+mapcenter =注意查看四周，密切留意敌人！
+wp1 = 红国行动路径
+wp2 = 盟国行动路径
+wp3 = 中点
+victory1 = 盟国胜利！
+victory2 = 红国胜利！
+roundstop = 本回合结束！</body>
+  <bodyloc>true</bodyloc>
+  <brief>红盟两国的空军正在寻求空中激战来建立对蒙福肯与艾坦之间的天空所有权。<br><br>
+在30分钟内尽可能多的击毁敌机<br>
+最先达到30击杀数的一方获胜。</brief>
+  <duration>30</duration>
+  <fog>3</fog>
+  <hour>16</hour>
+  <kills>30</kills>
+  <rules>deathmatch</rules>
+  <target></target>
+  <team1>1,3</team1>
+  <team2>4</team2>
+  <terrain></terrain>
+  <title>空中激战</title>
+  <weather>2</weather>
+</content>

@@ -1,0 +1,74 @@
+<?xml version='1.0'?>
+<content type="3">
+  <name>dday/obj_doggreen</name>
+  <body>onspawn.moveout * 奥玛哈海滩突击
+victory1 * 铁血军夺取了韦尔沃山谷，盟国胜利！
+victory2 * 红军守住了韦尔沃山谷，红国胜利！
+roundstop * 本回合结束！
+playarea * 转身调头
+usspawn1 * 请到达海堤并对红国碉堡发动攻击
+usspawn2 * 请到大岩石处并对红国碉堡发动攻击
+usspawn3 * 越过沟坎，攻击红国碉堡
+mgnest1 * 机枪掩体A
+mgnest2 * 机枪掩体B
+mgnest3 * 机枪掩体C
+tobruk1 * 托伯鲁克A区
+tobruk2 * 托伯鲁克B区
+bunker1 * 碉堡A
+bunker2 * 防御目标
+gunenplacement1 * 防御工事A
+gunenplacement1 * 防御工事B
+seawall * 集合点
+shale * 集合点
+germanbunker * 占领碉堡
+vierville_draw * 韦尔沃山谷
+minefield * 雷区
+youcapon * 你正在占领碉堡！
+alliedcapon * 铁血军正在占领碉堡！
+alliedcapoff * 红军收复了碉堡！
+
+#新的二级本地化（部分重叠)
+onspawn.1.1.1 = 到达一个集合点，夺取一处滩头阵地！
+onspawn.2.1.1 = 将铁血国入侵部队推回大海！
+beachfalling = 铁血国士兵正在夺取滩头阵地!
+beachcrossingon.1.1.1 = 你现在正在夺取滩头阵地!
+beachcrossingoff.1.1.1 = 你不再夺取滩头阵地!
+beachhead.1.1.1 = 集合点
+beachhead.2.1.1 = 防守该区域
+beachsecure = 铁血军已经夺取了一处滩头阵地！
+navalguns = 铁血国的海岸轰炸在韦尔沃山谷附近停止了！
+victory1 = 铁血军夺取了一处滩头阵地!
+victory2 = 红军打败了入侵的盟国部队!
+roundstop = 本回合结束.
+playarea = 转身调头.
+onspawn.1.1.2 = 猛攻丘陵并占领俯瞰海滩的指挥部碉堡。
+onspawn.2.1.2 = 防守指挥部碉堡，避免被铁血军侵扰！
+bunkerfalling.1.1.2 = 铁血国士兵正在占领指挥部碉堡！
+bunkerfalling.2.1.2 = 红军确保了指挥部碉堡的安全！
+linebreach = 铁血国士兵冲破了红国战线
+germanbunker = 指挥部碉堡
+beachhead = 铁血国滩头阵地
+objective1 = 铁血国滩头阵地
+objective2 = 指挥部碉堡
+vierville_draw = 韦尔沃山谷
+minefield = 雷区
+alliedcapon = 铁血军正在占领指挥部碉堡！
+alliedcapoff = 红军收复了指挥部碉堡！
+
+scenario.help = 海滩突击: 诺曼底登陆日</body>
+  <bodyloc>true</bodyloc>
+  <brief>D-Day进攻持续了数小时，盟军正在夺取地面阵地。到目前为止，红国的防御一直奏效，但是他们必须守住后方的指挥部碉堡，避免被占领。</brief>
+  <duration1>15</duration1>
+  <duration2>20</duration2>
+  <fog>1</fog>
+  <hour>7</hour>
+  <ingamemap>-30.21 .95 .07</ingamemap>
+  <objective1>200</objective1>
+  <objective2>90</objective2>
+  <rules>doggreen</rules>
+  <team1>2</team1>
+  <team2>4</team2>
+  <terrain>doggreen</terrain>
+  <title>海滩突击</title>
+  <weather>1</weather>
+</content>

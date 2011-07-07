@@ -1,0 +1,50 @@
+<?xml version='1.0'?>
+<content type="3">
+  <name>dday/obj_fueldump</name>
+  <body>onspawn.moveout = The Germans are trying to move through town and recapture the fuel depot.
+playarea = You are leaving the combat area
+roundstop = This round is over!
+alliedinfantryinfo = German forces may be moving through town towards the fuel depot.
+alliedvehicleinfo = German armor may be moving through town or cross country towards the depot.
+axisinfantryinfo = Support your armor to achieve the objective.
+axisvehicleinfo = Advancing through the town is the fastest, not safest, route to your objective.
+
+
+objective1.1.1.1 = Defend the fuel depot!
+objective1.2.1.1 = Capture the fuel depot!
+
+youcapon = You are capturing the depot!
+axiscapon = Axis forces are capturing the depot!
+axiscapoff = Allied forces have re-taken the depot!
+
+
+depotcapturem = You are capturing the depot!
+
+southbridge = south bridge
+northbridge = north bridge
+petiteferme = petite ferme
+objective = objective
+deresupply = ammo resupply
+usresupply = ammo resupply
+dock = dock
+
+scenario.help = text</body>
+  <bodyloc>true</bodyloc>
+  <brief>German forces try to move back through town and re-capture the valuable fuel depot from the American invasion forces.</brief>
+  <duration>30</duration>
+  <enemydeaths>true</enemydeaths>
+  <enemyicontypeonly>true</enemyicontypeonly>
+  <firingenemyicons>true</firingenemyicons>
+  <fog>1</fog>
+  <hour>8</hour>
+  <ingamemap>107.8 38.9 .041</ingamemap>
+  <rules>fueldump</rules>
+  <team1>2</team1>
+  <team1min>2</team1min>
+  <team2>4</team2>
+  <team2min>2</team2min>
+  <terrain>fueldump</terrain>
+  <title>Fuel Dump WIP</title>
+  <victory>60</victory>
+  <weather>2</weather>
+</content>
