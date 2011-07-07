@@ -19,10 +19,38 @@ if(true) then
 -- DEFINE THE PLAY AREA
 	-- boundary name x y z
 
-		"boundary playarea 357.03 -354.74 22",
-		"boundary playarea 366.63 378.53 22",
-		"boundary playarea -384.35 379.40 22",
-		"boundary playarea -391.56 -392.58 22",
+"boundary playarea 123.96 388.84 20.72",
+"boundary playarea 167.07 390.31 18.86",
+"boundary playarea 165.37 395.30 26.56",
+"boundary playarea 200.72 396.37 29.85",
+"boundary playarea 200.69 395.05 29.85",
+"boundary playarea 237.80 379.25 11.68",
+"boundary playarea 381.28 383.15 18.46",
+"boundary playarea 386.23 286.96 2.72",
+"boundary playarea 384.38 227.47 5.48",
+"boundary playarea 387.61 73.95 12.82",
+"boundary playarea 386.85 -57.45 13.90",
+"boundary playarea 384.71 -142.19 18.24",
+"boundary playarea 335.97 -191.16 20.38",
+"boundary playarea 292.76 -284.36 16.61",
+"boundary playarea 242.53 -354.96 17.94",
+"boundary playarea 215.70 -385.35 20.11",
+"boundary playarea 143.43 -384.72 21.90",
+"boundary playarea -14.48 -383.97 28.07",
+"boundary playarea -90.08 -384.30 23.28",
+"boundary playarea -341.85 -386.75 23.15",
+"boundary playarea -379.35 -315.09 22.49",
+"boundary playarea -386.39 -234.44 28.17",
+"boundary playarea -375.17 -59.19 5.07",
+"boundary playarea -360.95 -9.87 5.92",
+"boundary playarea -379.99 27.13 7.10",
+"boundary playarea -385.56 357.10 21.43",
+"boundary playarea -362.48 385.63 23.39",
+"boundary playarea -128.06 381.61 21.27",
+
+		
+		
+		
 
 	
 
@@ -37,7 +65,7 @@ if(true) then
 		-- Allied Spawn Points
 		"spawn alliedtroops 129.92 77.73 5.95 150",
 		"spawn alliedtroops 160.71 89.05 6.60 255",
-		"spawn alliedtroops 145.34 74.75 6.93 200",
+		"spawn alliedtroops 132.46 83.34 6.03 90",
 		
 		
 		"spawn alliedvehicles -362.76 358.49 22.56 90",
@@ -129,7 +157,9 @@ if(true) then
 				
 		-- SMOKESCREEN
 
-		--"emitter smokescreen 140.63 209.79 8.70",
+		"emitter smokescreen 386.92 278.62 2.50",
+		"emitter smokescreen 393.46 270.38 2.50",
+		"emitter smokescreen 396.04 255.16 2.50",
 
 				
 		-- SMOKING VEHICLES
@@ -157,20 +187,20 @@ if(true) then
 	-- ABSOLUTE SOUNDS
 	-- command name filename minvol, maxvol
 
-		"sound planes sounds/scenarios/ambient_aircraft_squadron1.wav .1 0",
-		"sound planes sounds/scenarios/ambient_aircraft_squadron2.wav .2 0",
+		"sound planes sounds/scenarios/ambient_aircraft_squadron1.wav .5 0",
+		"sound planes sounds/scenarios/ambient_aircraft_squadron2.wav .5 0",
 		"sound bombs sounds/scenarios/ambient_bombs_distantshells1.wav .4 0",
 		"sound bombs sounds/scenarios/ambient_bombs_distantshells2.wav .4 0",
 		"sound explosions sounds/scenarios/ambient_explosions_fourinarow.wav .4 0",
 		"sound explosions sounds/troop/grenade.wav .40 0",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav .10 0",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun2.wav .10 0",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun3.wav .10 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav 3 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun2.wav 3 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun3.wav 2 0",
 		"sound guns1 sounds/airraidsiren.wav .06 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun4.wav .10 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav .10 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav .10 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav .1 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun4.wav 2 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav 3 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav 3 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav 2 0",
 		"sound wind sounds/ambience/gust1.wav .3 0",
 		"sound wind sounds/ambience/gust2.wav .3 0",
 
@@ -200,12 +230,12 @@ if(true) then
 	-- EVENT TRIGGERS	
 	-- command name pctgchance-each-second wait-in-seconds
 
-		-- "event planes .40 120000",
+		"event planes .40 120000",
 		-- "event bombs .10 20000",
 		--"event explosions .10 25000",
-		-- "event guns1 .15 10000",
-		-- "event guns2 .20 30000",
-		--"event wind .5 5000",
+		"event guns1 .15 10000",
+		"event guns2 .20 30000",
+		"event wind .5 5000",
 		--"event bombing1 .20 10000 30000 6",
 		--"event bombing2 .10 20000 30000 3",
 		--"event barrage1 .25 60000 60000 10",
@@ -219,11 +249,12 @@ if(true) then
 
 
 		
-	-- telling the axis they are in the bridge capture area
-		"area depotcapturem OnTrigger 134.21 355.84 21",
-		"area depotcapturem OnTrigger 190.66 354.68 21",
-		"area depotcapturem OnTrigger 192.09 369.58 21",
-		"area depotcapturem OnTrigger 134.74 370.56 21",
+	-- telling the axis they are in the depot capture area
+		"area depotcapturem OnTrigger 129.42 378.55 20",
+		"area depotcapturem OnTrigger 134.14 294.86 20",
+		"area depotcapturem OnTrigger 202.01 305.15 20",
+		"area depotcapturem OnTrigger 204.24 378.47 20",
+
 		
 		-- telling the allies infantry whats going on
 		"area alliedinfantryinfo OnTrigger 133.50 66.02 8.28 1",
@@ -309,18 +340,25 @@ if(true) then
 		-- mask the capture area with tanks only
 		"mask depotcapture 4.2.4.0",
 		
-		
-		-- the area to be in to capture
-		"area depotcapture OnState 125.48 338.87 20",
-		"area depotcapture OnState 208.48 346.13 20",
-		"area depotcapture OnState 206.82 373.58 20",
-		"area depotcapture OnState 124.00 371.93 20",
+	
 		
 		-- the area for us supply
-		"area ussupply onresupply -186.25 -91.61 7",
-		"area ussupply onresupply -185.57 -88.37 7",
-		"area ussupply onresupply -181.88 -90.33 7",
-		"area ussupply onresupply -184.69 -94.98 7",
+		"area ussupply onresupply -187.78 -92.46 8.27",
+		"area ussupply onresupply -186.23 -87.06 8.27",
+		"area ussupply onresupply -182.06 -89.69 8.27",
+		"area ussupply onresupply -185.10 -96.28 8.27",
+		
+		-- the area for de supply
+		"area desupply onresupply 56.96 -147.99 9.75",
+		"area desupply onresupply 56.54 -153.59 9.75",
+		"area desupply onresupply 60.02 -155.79 9.75",
+		"area desupply onresupply 60.36 -148.91 9.75",
+
+		
+		
+
+
+
 
 		
 -- CLONES --
@@ -328,8 +366,8 @@ if(true) then
 	-- NAMED VERSION
 	-- command name typeid x y z roll pitch yaw
 
-		"clone bedford1 bedford 143.33 68.70 8.1 0 0 200",
-		"clone bedford1 bedford 146.38 77.07 8.0 0 0 200",
+		"clone bedford1 bedford 134.51 81 7.2 0 0 100",
+		"clone bedford1 bedford 135.82 84.95 7.1 0 0 100",
 		
 		"clone oplbltz -44.31 -241.60 17.25 0 4 10",
 		
@@ -383,7 +421,11 @@ if(true) then
 		"waypoint onspawn southbridge -26.22 -175.19 11.39 #FF6600",
 		"waypoint onspawn northbridge 131.01 31.62 10.01 #FF6600",
 		"waypoint onspawn petiteferme -225.24 -73.96 10.58 #FF6600",
+		"waypoint onspawn dock 350.82 255.78 5.53 #FF6600",
 		"waypoint onspawn objective 162.66 357.82 24.78 axis",
+		"waypoint onspawn deresupply 59.26 -151.21 10.38 axis",
+		"waypoint onspawn usresupply -185.64 -90.68 10.22 allied",
+		
 		
 --  #### END DOC LOOK AT THIS ####
 
