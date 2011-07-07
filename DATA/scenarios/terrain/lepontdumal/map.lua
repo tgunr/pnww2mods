@@ -8,6 +8,8 @@ if(true) then
     	-- special handling
 		-- type object shader x y z yaw
 		"river water1 riverrun_river 0 0 2 0",
+        -- command flt link x y z yaw
+		"terrain riverrun maintile 0 0 0 0",
 
 -- PLACE OBJECTS IN THE TERRAIN
 

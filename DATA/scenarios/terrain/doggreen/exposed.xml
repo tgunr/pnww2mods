@@ -86,23 +86,44 @@
 	 <fogcolor>64 71 78 0</fogcolor>
      <!-- <fogcolor>127 127 127 0</fogcolor> -->
    </fogparams>
-  <terrainmaterials>
-    <!-- Keep in ascending order (layer0, layer1, layer2...etc)-->
-    <!-- These are texture names included in fx/xml/materialprops.xml and grounds.csv-->
-    <!-- If there is no texture with the wanted effect, a new texture will need to be added -->
-    <!-- Or modify one already in use (i.e., grass1 can be modified since it's no longer in use) -->
-    <!-- These materials are used for effects and walk sounds -->
-    <layer0>grass</layer0>
-    <layer1>rock</layer1>
-    <layer2>dunes1</layer2>
-    <layer3>dunes1</layer3>
-  </terrainmaterials>
-  <!-- Scale multitexture...the higher the number, the more the tile effect -->
-  <!-- Keep in ascending order (layer0, layer1, layer2...etc)-->
-  <multitexture>
-    <layer0>128</layer0>
-    <layer1>128</layer1>
-    <layer2>100</layer2>
-    <layer3>512</layer3>
-  </multitexture>
+  <terraintile name ="maintile">
+    <shader>multimaskshadow</shader>
+    <layer0 name="layer0.dds">
+      <multitexture>128</multitexture>
+      <material>grass</material>
+    </layer0>
+    <layer1 name="layer1.dds">
+      <multitexture>128</multitexture>
+      <material>rock</material>
+    </layer1>
+    <layer2 name="layer2.dds">
+      <multitexture>100</multitexture>
+      <material>dunes1</material>
+    </layer2>
+    <layer3 name="layer3.dds">
+      <multitexture>512</multitexture>
+      <material>dunes1</material>
+    </layer3>
+    <blendmask>masks.dds</blendmask>
+  </terraintile>
+  <terraintile name ="edgetile">
+    <shader>multimaskshadow</shader>
+    <layer0 name="layer0.dds">
+      <multitexture>256</multitexture>
+      <material>grass</material>
+    </layer0>
+    <layer1 name="layer1.dds">
+      <multitexture>128</multitexture>
+      <material>rock</material>
+    </layer1>
+    <layer2 name="layer2.dds">
+      <multitexture>100</multitexture>
+      <material>dunes1</material>
+    </layer2>
+    <layer3 name="layer3.dds">
+      <multitexture>512</multitexture>
+      <material>dunes1</material>
+    </layer3>
+    <blendmask>masks.dds</blendmask>
+  </terraintile>
 </exposed>

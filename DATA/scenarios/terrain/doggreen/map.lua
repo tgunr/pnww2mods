@@ -16,20 +16,21 @@ if(true) then
 		"ocean water1 doggreen_ocean -800 800 3.65 0",
 		"ocean water1 doggreen_ocean -800 1600 3.65 0",
 
+        -- special handling for terrain tiles
+        -- command flt link x y z yaw
+		"terrain doggreen maintile 0 0 0 0",
+		"terrain doggreen_region_EE edgetile 0 0 0 0",
+		"terrain doggreen_region_NW edgetile 0 0 0 0",
+		"terrain doggreen_region_SE edgetile 0 0 0 0",
+		"terrain doggreen_region_SS edgetile 0 0 0 0",
+		"terrain doggreen_region_SW edgetile 0 0 0 0",
+		"terrain doggreen_region_WW edgetile 0 0 0 0",
+
 		-- placed objects
 		-- command,filename,worldx,worldy,worldz,roll,pitch,yaw,scalex,scaley,scalez,damage		
 		"place doggreen_ob3 0 0 0 0 0 0 0 0 0 0",
 		"place doggreen_ob3_barbedwire 0 0 0 0 0 0 0 0 0 0",
 		"place doggreen_ob3_logbunker 0 0 0 0 0 0 0 0 0 0",
-		"place doggreen_region_EE 0 0 0 0 0 0 0 0 0 0",
-		--"place doggreen_region_NE 0 0 0 0 0 0 0 0 0 0",
-		--"place doggreen_region_NN 0 0 0 0 0 0 0 0 0 0",
-		"place doggreen_region_NW 0 0 0 0 0 0 0 0 0 0",
-		"place doggreen_region_SE 0 0 0 0 0 0 0 0 0 0",
-		"place doggreen_region_SS 0 0 0 0 0 0 0 0 0 0",
-		"place doggreen_region_SW 0 0 0 0 0 0 0 0 0 0",
-		"place doggreen_region_WW 0 0 0 0 0 0 0 0 0 0",
-
 		
 		-- higgins boats
 		
