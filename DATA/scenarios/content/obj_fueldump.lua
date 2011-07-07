@@ -232,12 +232,12 @@ if(true) then
 	-- EVENT TRIGGERS	
 	-- command name pctgchance-each-second wait-in-seconds
 
-		-- "event planes .40 120000",
+		"event planes .40 120000",
 		-- "event bombs .10 20000",
 		--"event explosions .10 25000",
-		-- "event guns1 .15 10000",
-		-- "event guns2 .20 30000",
-		--"event wind .5 5000",
+		"event guns1 .15 10000",
+		"event guns2 .20 30000",
+		"event wind .5 5000",
 		--"event bombing1 .20 10000 30000 6",
 		--"event bombing2 .10 20000 30000 3",
 		--"event barrage1 .25 60000 60000 10",
@@ -412,12 +412,12 @@ if(true) then
 		"message.2 axiscapon axiscapon enemy 1",
 		"message.2 axiscapoff axiscapoff friendly 1",
 		
-		--"waypoint onspawn southbridge -26.22 -175.19 11.39 #FF6600",
-		--"waypoint onspawn northbridge 131.01 31.62 10.01 #FF6600",
-		--"waypoint onspawn petiteferme -225.24 -73.96 10.58 #FF6600",
-		--"waypoint onspawn objective 162.66 357.82 24.78 axis",
-		--"waypoint onspawn deresupply 58.60 -152.77 11.29 axis",
-		--"waypoint onspawn usresupply -187.11 -93.72 9.80 allied",
+		"waypoint onspawn southbridge -26.22 -175.19 11.39 #FF6600",
+		"waypoint onspawn northbridge 131.01 31.62 10.01 #FF6600",
+		"waypoint onspawn petiteferme -225.24 -73.96 10.58 #FF6600",
+		"waypoint onspawn objective 162.66 357.82 24.78 axis",
+		"waypoint onspawn deresupply 58.60 -152.77 11.29 axis",
+		"waypoint onspawn usresupply -187.11 -93.72 9.80 allied",
 		
 		
 		
