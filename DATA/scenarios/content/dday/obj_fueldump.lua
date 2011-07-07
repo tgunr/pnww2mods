@@ -308,6 +308,19 @@ if(true) then
 		
 		-- mask the capture area with tanks only
 		"mask depotcapture 4.2.4.0",
+		
+		
+		-- the area to be in to capture
+		"area depotcapture OnState 125.48 338.87 20",
+		"area depotcapture OnState 208.48 346.13 20",
+		"area depotcapture OnState 206.82 373.58 20",
+		"area depotcapture OnState 124.00 371.93 20",
+		
+		-- the area for us supply
+		"area ussupply onresupply -186.25 -91.61 7",
+		"area ussupply onresupply -185.57 -88.37 7",
+		"area ussupply onresupply -181.88 -90.33 7",
+		"area ussupply onresupply -184.69 -94.98 7",
 
 		
 -- CLONES --
