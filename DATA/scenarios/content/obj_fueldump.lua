@@ -188,22 +188,15 @@ if(true) then
 	-- ABSOLUTE SOUNDS
 	-- command name filename minvol, maxvol
 
-		"sound planes sounds/scenarios/ambient_aircraft_squadron1.wav .1 0",
-		"sound planes sounds/scenarios/ambient_aircraft_squadron2.wav .2 0",
-		"sound bombs sounds/scenarios/ambient_bombs_distantshells1.wav .4 0",
-		"sound bombs sounds/scenarios/ambient_bombs_distantshells2.wav .4 0",
-		"sound explosions sounds/scenarios/ambient_explosions_fourinarow.wav .4 0",
-		"sound explosions sounds/troop/grenade.wav .40 0",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav .10 0",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun2.wav .10 0",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun3.wav .10 0",
-		"sound guns1 sounds/airraidsiren.wav .06 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun4.wav .10 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav .10 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav .10 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav .1 0",
-		"sound wind sounds/ambience/gust1.wav .3 0",
-		"sound wind sounds/ambience/gust2.wav .3 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav 3 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun2.wav 3 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun3.wav 2 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun4.wav 3 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav 3 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav 2 0",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav 3 0",
+		"sound bombs sounds/scenarios/ambient_bombs_distantshells1.wav .5 0",
+		"sound bombs sounds/scenarios/ambient_bombs_distantshells2.wav .5 0",
 
 	-- POSITIONAL SOUNDS
 	-- command name filename volume loop x y z mindist maxdist
@@ -415,9 +408,13 @@ if(true) then
 		"waypoint onspawn southbridge -26.22 -175.19 11.39 #FF6600",
 		"waypoint onspawn northbridge 131.01 31.62 10.01 #FF6600",
 		"waypoint onspawn petiteferme -225.24 -73.96 10.58 #FF6600",
+		"waypoint onspawn dock 353.88 253.59 7.03 #FF6600",
 		"waypoint onspawn objective 162.66 357.82 24.78 axis",
 		"waypoint onspawn deresupply 58.60 -152.77 11.29 axis",
 		"waypoint onspawn usresupply -187.11 -93.72 9.80 allied",
+		
+		
+		
 		
 		
 		
