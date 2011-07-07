@@ -375,13 +375,8 @@ function OnTrigger(handler)
 	end
 	
 	-- try to run any events associated with this area
-	if(scenario.InArea(handler)) then
-		scenario.manager:RunObject(handler.name, 1);
-		scenario.manager:RunObject(handler.name .. "on", 1);
-	else
-		scenario.manager:RunObject(handler.name, 0);
-		scenario.manager:RunObject(handler.name .. "off", 1);
-	end
+	scenario.RunObject(handler.name, scenario.InArea(handler));
+	
 	return 1;
 end
 
@@ -397,14 +392,35 @@ function OnState(handler)
 	-- ui.ChatPrint("Setting state " .. handler.name .. " to " .. tostring(state[handler.name]));  
 	
 	-- try to run any events associated with this area
-	if(state[handler.name]) then
-		scenario.manager:RunObject(handler.name, 1);
-		scenario.manager:RunObject(handler.name .. "on", 1);
-	else
-		scenario.manager:RunObject(handler.name, 0);
-		scenario.manager:RunObject(handler.name .. "off", 1);
-	end
+	scenario.RunObject(handler.name, state[handler.name]);
+	
 	return 1;
+end
+
+function OnResupply(handler)
+	
+	-- bail if this trigger doesn't pertain to us
+	if(not scenario.manager:PlayerRelevant(handler.name)) then
+		return 1;
+	end
+	
+	local resupplying = scenario.InArea(handler);
+	
+	scenario.RunObject(handler.name, resupplying);
+	scenario.manager:SetFlag(scenario.manager.RESUPPLY_ME, resupplying);
+	
+	return 1;
+end
+
+scenario.RunObject = function(name, on)
+	if(on) then
+		scenario.manager:RunObject(name, 1);
+		scenario.manager:RunObject(name .. "on", 1);
+	else
+		scenario.manager:RunObject(name, 0);
+		scenario.manager:RunObject(name .. "off", 1);
+	end
+	return on;
 end
 
 scenario.CheckVictory = function(name, value)
