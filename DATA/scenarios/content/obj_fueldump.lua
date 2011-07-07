@@ -251,11 +251,18 @@ if(true) then
 
 
 		
-	-- telling the axis they are in the bridge capture area
-		"area depotcapturem OnTrigger 134.21 355.84 21",
-		"area depotcapturem OnTrigger 190.66 354.68 21",
-		"area depotcapturem OnTrigger 192.09 369.58 21",
-		"area depotcapturem OnTrigger 134.74 370.56 21",
+	-- telling the axis they are in the depot capture area
+		"area depotcapturem OnTrigger 125.48 338.87 21",
+		"area depotcapturem OnTrigger 208.48 346.13 21",
+		"area depotcapturem OnTrigger 206.82 373.58 21",
+		"area depotcapturem OnTrigger 124.00 371.93 21",
+		
+		
+
+
+		
+		
+
 		
 		-- telling the allies infantry whats going on
 		"area alliedinfantryinfo OnTrigger 133.50 66.02 8.28 1",
@@ -333,10 +340,11 @@ if(true) then
 		"handler objective1 OnCapturing",
 		
 		-- the area to be in to capture
-		"area depotcapture OnState 129.42 378.55 21.43",
-		"area depotcapture OnState 134.14 294.86 15.12",
-		"area depotcapture OnState 202.01 305.15 12.46",
-		"area depotcapture OnState 204.24 378.47 20.69",
+		"area depotcapture OnState 125.48 338.87 20",
+		"area depotcapture OnState 208.48 346.13 20",
+		"area depotcapture OnState 206.82 373.58 20",
+		"area depotcapture OnState 124.00 371.93 20",
+
 		
 		-- mask the capture area with tanks only
 		"mask depotcapture 4.2.4.0",
@@ -404,10 +412,15 @@ if(true) then
 		"message.2 axiscapon axiscapon enemy 1",
 		"message.2 axiscapoff axiscapoff friendly 1",
 		
-		"waypoint onspawn southbridge -26.22 -175.19 11.39 #FF6600",
-		"waypoint onspawn northbridge 131.01 31.62 10.01 #FF6600",
-		"waypoint onspawn petiteferme -225.24 -73.96 10.58 #FF6600",
-		"waypoint onspawn objective 162.66 357.82 24.78 axis",
+		--"waypoint onspawn southbridge -26.22 -175.19 11.39 #FF6600",
+		--"waypoint onspawn northbridge 131.01 31.62 10.01 #FF6600",
+		--"waypoint onspawn petiteferme -225.24 -73.96 10.58 #FF6600",
+		--"waypoint onspawn objective 162.66 357.82 24.78 axis",
+		--"waypoint onspawn deresupply 58.60 -152.77 11.29 axis",
+		--"waypoint onspawn usresupply -187.11 -93.72 9.80 allied",
+		
+		
+		
 		
 --  #### END DOC LOOK AT THIS ####
 
