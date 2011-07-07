@@ -66,12 +66,7 @@ if(true) then
 		"place cratepile_outside -343.82 337.50 22.2 0 0 80 0 0 0",
 
 		
-		
-		
-		
-		
-		
-		
+
 		
 	-- fuel depot facility	
 		
@@ -89,7 +84,7 @@ if(true) then
 		
 		"place barrelstack1_inside -217.60 -88.8 6.4 0 0 30 0 0 0 1",
 		
-		
+
 		
 		"place wall02 -184.67 -87.12 6.25 0 0 210 0 0 0 0",
 		"place wall02 -179.02 -90.35 6.25 0 0 210 0 0 0 0",
@@ -97,8 +92,24 @@ if(true) then
 		"place truck_dam_outside -202.39 -99.99 6.8 2 -3 -60 0 0 0 0",
 		"place brokencart -200.71 -81.87 6.95 0 0 0 0 0 0 0",
 	
+	-- supply in town
+		"place msp 58.67 -152.23 8.1 0 0 0 0 0 0 0",
+		
+	-- supply at petite ferme
+		"place msp -185.22 -91.64 6.95 0 0 0 0 0 0 0",
+	
+	
+	
+	
+	
 
-
+	
+	
+	
+	
+	
+	
+	
 		
 		
 		"place bel4 -75.06 -117.81 7.80 0 0 16 0 0 0 1",
