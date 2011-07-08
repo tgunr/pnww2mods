@@ -175,6 +175,16 @@ if(true) then
 		"place crate -137.3 -35.0 36.8 -5 0 0 0 0 0 0",
 		"place crate -138.35 -35.87 35.90 -5 0 0 0 0 0 0",
 		
+		-- trench decoration
+		"place crate -30.8 -79.3 37.5 0 0 110 0 0 0 0",
+		"place crate -49.27 -104.43 42.8 0 0 0 0 0 0 0",
+		"place cratepile_outside -82.33 -101.48 43.9 0 2 0 0 0 0 0",
+		"place cratepile_outside -47.74 -117.93 43.5 -3 1 25 0 0 0 0",
+		"place cratepile_outside -142 -112.75 42.25 -1 -5 0 0 0 0 0",
+		"place cratepile_outside -145.17 -69 40.2 -3.2 -5.5 0 0 0 0 0",
+		
+		
+		
 		
 		-- landmine signs
 		"place dangersign -19.73 7.38 9.65 0 0 200 0 0 0 0",
@@ -209,8 +219,7 @@ if(true) then
 		
 		
 		
-		
-		-- "place dangersign -212.32 -246.59 40.5 0 0 -10 0 0 0 0",
+	
 		
 		
 		
