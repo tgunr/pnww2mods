@@ -198,8 +198,8 @@ if(true) then
 		"clone oplbltz 185.26 -52.26 8.5 0 0 290",
 		"clone oplbltz 176.32 -20.12 8.55 0 0 180",
 		
-		"clone sdkfz251c 136.15 -57.69 9.22 0 0 30",
-		"clone sdkfz251c 139.67 -59.58 9.22 0 0 30",
+		"clone sdkfz251c 136.15 -57.69 9.22 0 0 25",
+		--"clone sdkfz251c 139.67 -59.58 9.22 0 0 30",
 		"clone sdkfz251c 143.12 -61.43 9.22 0 0 30",
 		
 		"clone pzivg 131.93 -42.38 9 0 0 105",
