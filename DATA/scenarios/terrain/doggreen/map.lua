@@ -143,7 +143,7 @@ if(true) then
 		"place sandbagwall_outside -141.2 -25.6 34.2 -5 0 80 0 0 0 0",
 		"place sandbagwall_outside -139 -25.28 34.2 -5 0 80 0 0 0 0",
 		"place sandbagwall_outside -140.85 -25.55 34.7 -5 0 81 0 0 0 0",	
-		
+		"place sandbagwall_curved_outside -144.88 -388.10 46.75 0 0 85 0 0 0 0",	
 		
 		
 		
@@ -161,6 +161,9 @@ if(true) then
 		"place dg_wire_barbed_box -109.03 -31.99 37.0 -10 -5 80 0 0 0",
 		"place dg_wire_barbed_box -107.67 -32.5 37.4 -8 18 20 0 0 0",
 		"place sandbagwall_outside -105.5 -33.85 37.35 -10 0 105 0 0 0 0",
+		
+		
+		
 		
 		
 		
