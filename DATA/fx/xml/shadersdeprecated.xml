@@ -35,10 +35,10 @@
     <uniform name="decal" type="sampler2d" unit="6" onetimeapply="true"></uniform>
     <uniform name="scale" type="float" onetimeapply="true"></uniform>
     <uniform name="shadowambient" type="float_vec3"></uniform>
-    <uniform name="scale1" type="float" onetimeapply ="true"></uniform>
-    <uniform name="scale2" type="float" onetimeapply="true"></uniform>
-    <uniform name="scale3" type="float" onetimeapply="true"></uniform>
-    <uniform name="scale4" type="float" onetimeapply="true"></uniform>
+    <uniform name="scale1" type="float"></uniform>
+    <uniform name="scale2" type="float"></uniform>
+    <uniform name="scale3" type="float"></uniform>
+    <uniform name="scale4" type="float"></uniform>
   </program>
   <!--=================================================================-->
   <program name ="normalmap">
