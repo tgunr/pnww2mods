@@ -29,8 +29,9 @@ if(true) then
 		"mask.2.1.1 axistroops de-assault",
 		"mask.2.1.1 axistroops de-smg",
 		"mask.2.1.1 axistroops de-sniper 1",
-		"mask.2.1.1 axistroops de-ltmortar 1",
 		"mask.2.1.1 axislmg de-lmg",
+		"mask.2.1.1 axismortar de-ltmortar 1",
+		
 		
 	-- stage 2
 		"mask.2.1.2 axistroops de-assault",
@@ -460,6 +461,7 @@ if(true) then
 		"spawn.2.1.1 axislmg -137.46 -37.48 36.12 325",
 		"spawn.2.1.1 axislmg -88.12 -56.20 39.50 0",
 		"spawn.2.1.1 axislmg 11.15 -121.45 41.05 60",
+		"spawn.2.1.1 axismortar -47.87 -132.09 44.31 300",
 		
 	-- stage 2 allied spawns
 		"spawn.1.1.2 alliedtroops -129.58 71.83 7.74 170",
@@ -467,8 +469,24 @@ if(true) then
 	-- stage 2 axis spawns
 		"spawn.2.1.2 axistroops -31.85 -142.49 44.61 355",
 		"spawn.2.1.2 axistroops -130.83 -120.49 42.42 345",
+		"spawn.2.1.2 axistroops -156.97 -77.34 36.35 225",
 		
+		
+		
+		
+		
+		-- CLONES --
 
+	-- NAMED VERSION
+	-- command name typeid x y z roll pitch yaw
+
+		-- "clone bedford1 bedford -20.11 -156.51 8.77 0 0 90",
+		
+				
+	-- ANONYMOUS VERSION
+	-- command typeid x y z roll pitch yaw
+		"clone oplbltz -17 -177.5 46.25 0 0 180",
+		"clone sdkfz251c -21.88 -177.24 46.5 0 0 180",
 		
 	
 		
