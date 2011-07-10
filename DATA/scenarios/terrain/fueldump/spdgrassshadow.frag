@@ -12,7 +12,7 @@ void lightGetAmbientDiffuse(out vec4 amb, out vec4 dif);
 
 const vec4 defaultcolor = vec4(0, 0, 0, 0);
 const vec4 Ka = vec4(0.6, 0.6, 0.7, 1.0);
-const vec4 Kd = vec4(0.7, 0.45, 0.7, 1.0);
+const vec4 Kd = vec4(0.7, 0.55, 0.7, 1.0);
 
 float GetShadowValue()
 {
