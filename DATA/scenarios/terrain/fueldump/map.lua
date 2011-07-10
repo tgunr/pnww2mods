@@ -18,7 +18,7 @@ if(true) then
 		
 	
 	
-	"place stonebridgeshort -238.0 -42.77 4.5 0 0 25 0 0 0",
+	"place stonebridgeshort -238.0 -42.77 4.4 -2 0 25 0 0 0",
 	"place stonebridge -261.7 -72.5 4.7 0 0 52 0 0 0",
 	--"place kr_bridge_n_dam 351.61 249.99 -3.7 0 10 0 0 0 0",
 	
@@ -66,6 +66,13 @@ if(true) then
 		
 		"place cratepile_outside -333.05 338.59 23.8 0 0 95 0 0 0",
 		"place cratepile_outside -343.82 337.50 22.2 0 0 80 0 0 0",
+		
+		
+	-- american infantry spawn
+		"place crate -14.56 -251.09 16.4 0 0 25 0 0 0",
+		"place crate -14.56 -251.6 17.4 0 0 0 0 0 0",
+		"place cratepile_outside -17.86 -246.06 16.3 0 0 30 0 0 0",
+	
 
 		
 
@@ -76,6 +83,10 @@ if(true) then
 		"place ftank1c 137 350 20.99 0 1.5 -90 0 0 0 0",
 		"place station1c 142.83 373.12 20.5 0 0 180 0 0 0 0",
 		"place munitions1 187.71 374.5 17.95 0 0 0 0 0 0 0",
+		"place crate 171.45 393.28 19.02 0 0 0 0 0 0 0",
+		"place crate 171.45 393.28 20.06 0 0 90 0 0 0 0",
+		
+		
 		
 	-- farm house
 		"place bel1 -200 -95 7 0 0 -60 0 0 0 1",
