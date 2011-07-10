@@ -3,8 +3,8 @@
 <exposed>
   <trees>
     <!-- weight the higher the number the less dense -->
-    <redweight>35</redweight>
-    <greenweight>10</greenweight>
+    <redweight>50</redweight>
+    <greenweight>25</greenweight>
     <blueweight>40</blueweight>
     <redtypeint>3 4 5 6 7 8 3 4</redtypeint>
     <greentypeint>15 15 17 18</greentypeint>
@@ -12,28 +12,28 @@
     <!-- Color clamped between 0 - 255 -->
     <!-- Example: redclamp 240 will clamp red mask trees to red color >= 240 -->
     <!-- The higher the clamp, the less number of trees placed-->
-    <redclamp>100</redclamp>
-    <grnclamp>150</grnclamp>
+    <redclamp>200</redclamp>
+    <grnclamp>200</grnclamp>
     <bluclamp>200</bluclamp>
   </trees>
   <grass>
     <!-- The higher the weight, the lest dense -->
-    <greenweight>5</greenweight>
-    <blueweight>5</blueweight>
-    <redweight>5</redweight>
-    <redtypeint>0 1 2 3 2</redtypeint>
-    <greentypeint>12 13 14 15</greentypeint>
-    <bluetypeint>4 5 6 7 10 4 5</bluetypeint>
+    <greenweight>50</greenweight>
+    <blueweight>20</blueweight>
+    <redweight>25</redweight>
+    <redtypeint>0 1 2 3</redtypeint>
+    <greentypeint>0 1 2 3 4</greentypeint>
+    <bluetypeint>1 2 3</bluetypeint>
     <!-- Color clamped between 0 - 255 -->
     <!-- Example: redclamp 100 will clamp red mask grass to red color >= 100 -->
     <!-- The higher the clamp, the less number of blades placed-->
-    <redclamp>100</redclamp>
+    <redclamp>10</redclamp>
     <grnclamp>100</grnclamp>
-    <bluclamp>100</bluclamp>
+    <bluclamp>10</bluclamp>
     <!-- default is 1.0 -->
-    <redscale>0.5</redscale>
-    <grnscale>1.0</grnscale>
-    <bluscale>.8</bluscale>
+    <redscale>0.6</redscale>
+    <grnscale>0.1</grnscale>
+    <bluscale>2.5</bluscale>
   </grass>
   <terraintile name ="maintile">
     <shader>multimaskshadow</shader>
@@ -42,7 +42,7 @@
       <material>grass1</material>
     </layer0>
     <layer1 name="layer1.dds">
-      <multitexture>128</multitexture>
+      <multitexture>512</multitexture>
       <material>rubble</material>
     </layer1>
     <layer2 name="layer2.dds">
@@ -66,11 +66,11 @@
     <!-- Color clamped between 0 - 255 -->
     <redclamp>200</redclamp>
     <grnclamp>150</grnclamp>
-    <bluclamp>100</bluclamp>
+    <bluclamp>200</bluclamp>
     <!-- clutter FLT object for specific color -->
     <redtypestring>blumaine1c</redtypestring>
     <greentypestring>haystack_outside</greentypestring>
-    <bluetypestring>null</bluetypestring>
+    <bluetypestring>tanktrap</bluetypestring>
     <!--== random rotate (-# #) -->
     <redparams>300</redparams>
     <greenparams>300</greenparams>
