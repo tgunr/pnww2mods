@@ -68,16 +68,20 @@ if(true) then
 		"spawn alliedtroops 132.46 83.34 6.03 90",
 		
 		
-		"spawn alliedvehicles -362.76 358.49 22.56 90",
+		"spawn alliedvehicles -346.39 363.23 23.95 280",
+		"spawn alliedvehicles -349.00 355.14 24.57 280",
+		"spawn alliedvehicles -350.65 348.94 24.09 280",
+		
+		
 
 		-- Axis Spawn Points
 		"spawn axistroops -16.74 -253.28 17.17 340",
 		"spawn axistroops -12.06 -258.64 16.51 340",
 		"spawn axistroops -15.70 -285.71 16.56 340",
 	
-		"spawn axisvehicles -127.52 -363.62 22.74 45",
-		"spawn axisvehicles -132.14 -357.16 22.73 45",
-		"spawn axisvehicles -136.84 -350.65 22.70 45",
+		"spawn axisvehicles -138.52 -355.05 24.00 270",
+		"spawn axisvehicles -132.40 -360.03 24.12 270",
+		"spawn axisvehicles -127.80 -364.65 24.21 270",
 
 
 -- DEFINE BLOCKED AREAS OF NO ACCESS TO PLAYERS
@@ -271,10 +275,17 @@ if(true) then
 		
 		
 		-- telling the axis infantry whats going on
-		"area axisinfantryinfo OnTrigger -22.01 -259.40 17.15 1",
-		"area axisinfantryinfo OnTrigger -12.66 -234.28 17.15",
-		"area axisinfantryinfo OnTrigger -16.85 -231.34 17.15",
-		"area axisinfantryinfo OnTrigger -29.31 -256.89 17.15",
+		"area axisinfantryinfo OnTrigger -13.01 -288.90 17.07",
+		"area axisinfantryinfo OnTrigger 7.00 -239.21 15.83",
+		"area axisinfantryinfo OnTrigger -19.08 -226.35 16.03",
+		"area axisinfantryinfo OnTrigger -41.96 -283.03 18.70",
+		"area axisinfantryinfo OnTrigger -37.41 -283.57 18.80",
+		"area axisinfantryinfo OnTrigger -16.78 -232.10 15.95",
+		"area axisinfantryinfo OnTrigger 2.40 -241.11 16.11",
+		"area axisinfantryinfo OnTrigger -12.03 -275.11 17.19",
+		"area axisinfantryinfo OnTrigger -17.00 -274.38 16.82",
+		"area axisinfantryinfo OnTrigger -23.43 -286.96 18.69",
+
 		
 		
 		-- telling the axis vehicles whats going on
