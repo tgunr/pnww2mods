@@ -17,10 +17,11 @@ wp3 = high ground
 intelenemyon = Votre camp une vue sur l&#39;ennemi!
 intelenemyoff = Votre camp n&#39;a plus d evue sur l&#39;ennemi.
 intelfriendlyon = L&#39;ennemi a des renseignements sur votre camp!
-intelfriendlyoff = L&#39;ennemi n&#39;a plus de renseignement sur votre camp.</body>
+intelfriendlyoff = L&#39;ennemi n&#39;a plus de renseignement sur votre camp.
+scenario.help = RIVER RUN: KILL THE ENEMY</body>
   <bodyloc>true</bodyloc>
   <brief>Les américains ont réussi à progresser par le pont sud avant sa destruction. Maintenant les allemands doivent défendre la ville.<br><br>
-Éliminez le plus de soldats ennemis en 10  minutes<br>
+Éliminez le plus de soldats ennemis en ${duration} minutes<br>
 Le premier qui atteint 50 Kill a gagné.</brief>
   <draw>35</draw>
   <duration>15</duration>
