@@ -27,13 +27,14 @@
     <!-- Color clamped between 0 - 255 -->
     <!-- Example: redclamp 100 will clamp red mask grass to red color >= 100 -->
     <!-- The higher the clamp, the less number of blades placed-->
-    <redclamp>10</redclamp>
-    <grnclamp>100</grnclamp>
-    <bluclamp>10</bluclamp>
-    <!-- default is 1.0 -->
-    <redscale>0.6</redscale>
-    <grnscale>0.1</grnscale>
-    <bluscale>2.5</bluscale>
+    <redclamp>100</redclamp>
+    <grnclamp>150</grnclamp>
+    <bluclamp>150</bluclamp>
+    <!-- the value below is a multiplier against the default height for each grass -->
+	<!-- default is 1.0 -->
+    <redscale>1.0</redscale>
+    <grnscale>1.0</grnscale>
+    <bluscale>1.0</bluscale>
   </grass>
   <terraintile name ="maintile">
     <shader>multimaskshadow</shader>
@@ -62,7 +63,7 @@
   <!-- weight the higher the number the less dense -->
     <redweight>35</redweight>
     <greenweight>100</greenweight>
-    <blueweight>1</blueweight>
+    <blueweight>100</blueweight>
     <!-- Color clamped between 0 - 255 -->
     <redclamp>200</redclamp>
     <grnclamp>150</grnclamp>
