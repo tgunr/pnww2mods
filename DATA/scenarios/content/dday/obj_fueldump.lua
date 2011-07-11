@@ -68,9 +68,9 @@ if(true) then
 		"spawn alliedtroops 132.46 83.34 6.03 90",
 		
 		
-		"spawn alliedvehicles -346.39 363.23 23.95 280",
-		"spawn alliedvehicles -349.00 355.14 24.57 280",
-		"spawn alliedvehicles -350.65 348.94 24.09 280",
+		"spawn alliedvehicles -342.47 383.86 23.25 270",
+		--"spawn alliedvehicles -349.00 355.14 24.57 280",
+		--"spawn alliedvehicles -350.65 348.94 24.09 280",
 		
 		
 
@@ -79,9 +79,9 @@ if(true) then
 		"spawn axistroops -12.06 -258.64 16.51 340",
 		"spawn axistroops -15.70 -285.71 16.56 340",
 	
-		"spawn axisvehicles -138.52 -355.05 24.00 270",
-		"spawn axisvehicles -132.40 -360.03 24.12 270",
-		"spawn axisvehicles -127.80 -364.65 24.21 270",
+		"spawn axisvehicles -112.81 -332.78 21.80 270",
+		--"spawn axisvehicles -132.40 -360.03 24.12 270",
+		--"spawn axisvehicles -127.80 -364.65 24.21 270",
 
 
 -- DEFINE BLOCKED AREAS OF NO ACCESS TO PLAYERS
