@@ -9,33 +9,14 @@ if(true) then
 	-- Hulked Armoured Vehicles
 		
 
-		"place instance_hulk2_dam 82487.52 3011457.65 4.00 0 0 39 0 0 0 0",
-		"place instance_hulk2_dam 81366.19 3011906.12 3.42 0 0 51 0 0 0 0",
+		"place instance_hulk2_dam 345498.39 3006190.72 109.11 0 0 39 0 0 0 0",
+		"place instance_hulk2_dam 345725.97 3006311.75 108.19 0 0 51 0 0 0 0",
 				
 		
 	-- Tank Traps
 
-		"place tanktrap 81060.86 3012204.08 8.00 0 0 0 0 0 0 0",
-		"place tanktrap 81062.61 3012204.21 7.99 0 0 0 0 0 0 0",
-		"place tanktrap 81064.44 3012204.38 7.97 0 0 0 0 0 0 0",
-		"place tanktrap 80936.17 3012197.02 8.01 0 0 90 0 0 0 0",
-		"place tanktrap 80936.32 3012199.50 8.02 0 0 90 0 0 0 0",
-		"place tanktrap 80936.52 3012202.29 8.04 0 0 90 0 0 0 0",
-		"place tanktrap 82799.18 3012205.23 11.27 0 0 90 0 0 0 0",
-		"place tanktrap 82799.42 3012202.52 11.39 0 0 90 0 0 0 0",
-		"place tanktrap 82799.58 3012199.40 11.51 0 0 90 0 0 0 0",
-		"place tanktrap 82667.49 3011204.14 4.00 0 0 0 0 0 0 0",
-		"place tanktrap 82669.41 3011204.14 4.00 0 0 0 0 0 0 0",
-		"place tanktrap 82671.73 3011204.16 4.00 0 0 0 0 0 0 0",
-		"place tanktrap 82708.22 3011206.43 9.00 0 0 0 0 0 0 0",
-		"place tanktrap 82712.62 3011206.29 9.00 0 0 0 0 0 0 0",
-		"place tanktrap 82703.18 3011206.45 9.00 0 0 0 0 0 0 0",
-		"place tanktrap 81792.90 3011267.73 4.00 0 0 0 0 0 0 0",
-		"place tanktrap 81790.83 3011267.52 4.00 0 0 0 0 0 0 0",
-		"place tanktrap 81795.21 3011267.97 4.00 0 0 0 0 0 0 0",
-		"place tanktrap 82532.60 3011275.95 4.00 0 0 0 0 0 0 0",
-		"place tanktrap 82535.40 3011275.79 4.00 0 0 0 0 0 0 0",
-		"place tanktrap 82537.39 3011275.59 4.00 0 0 0 0 0 0 0",
+		--"place tanktrap 293652.89 2978116.89 274.00 0 0 0 0 0 0 0",
+		--"place tanktrap 293650.58 2978117.01 274.00 0 0 0 0 0 0 0",
 		
 
 
@@ -75,8 +56,51 @@ if(true) then
 		--"place wall03 75.00 -150.00 7.27 0 0 20 0 0 0 0",
 		--"place wall03 80.55 -152.00 7.23 0 0 20 0 0 0 0",
 
-	
-	
+	-- MINEFIELD WARNING SIGNS
+
+		--"place dangersign 156.67 60.02 5.7 0 0 110 0 0 0",
+		--"place dangersign 152.83 49.54 5.8 0 0 112 0 0 0",
+		--"place dangersign 150.37 39.46 6.9 0 0 110 0 0 0",
+		--"place dangersign 146.41 22.67 7.8 0 0 110 0 0 0",
+		--"place dangersign 154.02 20.63 7.7 0 0 0 0 0 0",
+		--"place dangersign 173.21 18.03 7.6 0 0 5 0 0 0",
+		--"place dangersign 202.39 17.01 7.2 0 0 5 0 0 0",
+		--"place dangersign 230.86 17.78 7.2 0 0 5 0 0 0",
+		--"place dangersign 256.56 18.20 6.8 0 0 5 0 0 0",
+		--"place dangersign 289.66 19.51 3.7 15 0 5 0 0 0",
+		--"place dangersign 125.43 40.20 5.7 0 0 170 0 0 0",
+		--"place dangersign 96.23 83.09 6.5 0 10 240 0 0 0",
+		--"place dangersign 100.66 74.60 6.2 0 0 235 0 0 0",
+		--"place dangersign 107.61 61.40 6.0 0 0 240 0 0 0",
+		--"place dangersign 117.95 42.16 5 0 0 240 0 0 0",
+		--"place dangersign 109.42 4.50 5.9 0 0 -50 0 0 0",
+		--"place dangersign 82.02 -12.05 6 0 0 -40 0 0 0",
+		
+	-- ROCK WALLS ALONG ROAD
+
+		--"place instance_rockwallberm2 196.22 179.71 6.3 0 0 44 0 0 0 0",
+		--"place instance_rockwallberm2 177.66 162.34 6.3 0 0 44 0 0 0 0",
+		--"place instance_rockwallberm2 161.36 147.27 6.3 0 0 44 0 0 0 0",
+		--"place instance_rockwallberm2 148.24 134.07 6.3 0 0 44 0 0 0 0",
+		--"place instance_rockwallberm1 127.84 115.2 4.6 0 0 44 0 0 0 0",
+		--"place instance_rockwallberm2 106.26 93.17 4.3 0 4 44 0 0 0 0",
+		--"place instance_rockwallberm2 226.66 159.00 3.4 4 0 10 0 0 0 0",
+		--"place instance_rockwallberm2 222.58 131.44 3.1 -2 0 10 0 0 0 0",
+		--"place instance_rockwallberm2 214.31 110.05 3.5 -2 0 40 0 0 0 0",
+		--"place instance_rockwallberm2 198.73 98.92 3.5 -5 0 70 0 0 0 0",
+		--"place instance_rockwallberm2 181.18 89.42 3.5 -5 0 70 0 0 0 0",
+		--"place instance_rockwallberm1 158.71 79.64 4.2 5 10 70 0 0 0 0",
+		
+	-- WALL BLOCKING TOWN
+
+		--"place wall03 132 -83.89 6.8 0 0 21 0 0 0 0",
+		--"place wall03 126.2 -81.7 6.8 0 0 21 0 0 0 0",
+		--"place wall03 120.5 -79.55 6.8 0 0 21 0 0 0 0",
+		--"place sandbagwall_outside 115.09 -77.91 8.0 0 0 -68 0 0 0 0",
+		--"place sandbagwall_outside 113.4 -77.16 8.0 0 0 -68 0 0 0 0",
+		--"place oildrums_outside 95.27 -27.98 8.3 0 6 0 0 0 0 1",
+		--"place wall02 102 -31.5 6.5 0 0 205 0 0 0 0",
+		
 			
 	};
 	
