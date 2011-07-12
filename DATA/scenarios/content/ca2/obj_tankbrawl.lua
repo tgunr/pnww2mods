@@ -89,8 +89,8 @@ if(true) then
 		
 		-- BURNING VEHICLES
 
-		"emitter vehiclefire 345498.39 3006190.72 110.11",
-		"emitter vehiclefire 345725.97 3006311.75 109.19",
+		--"emitter vehiclefire 345498.39 3006190.72 110.11",
+		--"emitter vehiclefire 345725.97 3006311.75 109.19",
 
 
 		-- FIRES
@@ -110,14 +110,14 @@ if(true) then
 		"sound bombs sounds/scenarios/ambient_bombs_distantshells2.wav .4 1",
 		"sound explosions sounds/scenarios/ambient_explosions_fourinarow.wav .60 1",
 		--"sound explosions sounds/troop/grenade.wav .40 0",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav .20 1",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun2.wav .15 1",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun3.wav .25 1",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav 1 1",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun2.wav 1 1",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun3.wav 1 1",
 		--"sound siren1 sounds/airraidsiren.wav .2 1",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun4.wav .10 1",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav .30 1",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav .35 1",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav .4 1",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun4.wav 1 1",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav 1 1",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav 1 1",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav 1 1",
 		--"sound wind sounds/ambience/gust1.wav .9 0",
 		--"sound wind sounds/ambience/gust2.wav .9 0",
 
@@ -152,13 +152,13 @@ if(true) then
 	-- EVENT TRIGGERS	
 	-- command name pctgchance-each-second wait-in-milliseconds milliseconds-between-bomb-drops number-of-bombs
 
-		--"event planes .40 80000",
+		"event planes .40 80000",
 		--"event bombs .45 80000",
 		--"event explosions .20 45000",
-		--"event guns1 .25 20000",
-		--"event guns2 .25 40000",
-		--"event siren1 .33 50000",
-		--"event wind .5 5000",
+		"event guns1 .25 20000",
+		"event guns2 .25 40000",
+		"event siren1 .33 50000",
+		"event wind .5 5000",
 		--"event bombing1 .90 25000 600 24",
 		--"event bombing2 .90 25000 650 12",
 		"event barrage1 .45 30000 550 18",
@@ -187,10 +187,21 @@ if(true) then
 		"handler capper OnCapper",
 		"handler objective1 OnCapturing",
 		
-		"area bridgecapture OnState 81802.52 3011801.97 11.97 1",
-		"area bridgecapture OnState 81802.52 3011796.79 11.96",
-		"area bridgecapture OnState 81796.52 3011796.79 11.96",
-		"area bridgecapture OnState 81796.52 3011801.97 11.97",	
+"area bridgecapture OnState 81802.47 3011808.50 11.94 1",
+"area bridgecapture OnState 81796.75 3011808.50 11.94",
+"area bridgecapture OnState 81796.81 3011786.75 11.86",
+"area bridgecapture OnState 81802.57 3011786.25 11.84",
+
+
+
+	-- telling players they are in the bridge capture area
+		-- telling the allies they are in the bridge capture area
+		"area bridgecapture1 OnTrigger 81802.47 3011808.50 14",
+		"area bridgecapture1 OnTrigger 81796.75 3011808.50 14",
+		"area bridgecapture1 OnTrigger 81796.81 3011786.75 14",
+		"area bridgecapture1 OnTrigger 81802.57 3011786.25 14",
+
+
 
 	-- minefield near axis spawn
 
@@ -312,20 +323,25 @@ if(true) then
 		
 		-- HUD WAYPOINTERS
 
-		"waypoint onspawn wp1 81624.87 3011364.45 8.56", 
-# above WP visible to allies as blue, axis as red
-		"waypoint onspawn wp2 82237.67 3012068.52 8.99", 
-# above WP visible to allies as red, axis as blue
-		"waypoint onspawn wp3 81799.29 3011799.06 12.87", 
-# visible WP to both sides as red
- 
-		"alert onspawn onspawn.moveout 60",
+		"waypoint.2.1.1 onspawn wp1 81624.87 3011364.45 8.56", 
+		"waypoint.1.1.1 onspawn wp2 82237.67 3012068.52 8.99", 
+		"waypoint.0.1.1 onspawn wp3 81799.70 3011794.20 17.52", 
+		"waypoint.0.1.1 onspawn wp4 82534.27 3011726.17 24.45", 
+		"waypoint.0.1.1 onspawn wp5 81074.97 3011869.38 31.82", 
+		
+		
+		"alert onspawn onspawn.moveout -1",
 		--"alert roundstop roundstop",
-		--"alert victory1 victory1",
-		--"alert victory2 victory2",
+		"alert victory1 victory1",
+		"alert victory2 victory2",
 		--"alert playarea playarea 10",
 		--"alert toaxisspawn toaxisspawn -1",
 		--"alert toalliedspawn toalliedspawn -1",
+		
+		
+		
+		
+		
 
 				
 -- MAKE A VEHICLE AVAILABLE FOR SPAWNING
@@ -376,10 +392,12 @@ if(true) then
 		"vehicle alliedtanks m4a2",
 		"vehicle alliedtanks m10",
 
+
 	-- German tank types --
 
 		"vehicle axistanks pzivg",
 		"vehicle axistanks stug3g",
+		"vehicle axistanks de_buzzard",
 		
 
 	-- alternatively you can use a vehicle's string id 
