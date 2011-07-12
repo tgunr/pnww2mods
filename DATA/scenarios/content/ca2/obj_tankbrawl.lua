@@ -31,6 +31,8 @@ if(true) then
 		"spawn alliedtanks 81631.12 3011360.78 5.13 47",
 		"spawn alliedtanks 81626.32 3011366.03 5.13 47",
 		"spawn alliedtanks 81621.31 3011371.49 5.13 47",
+		"spawn alliedtanks 81856.85 3012206.87 4.00 15",
+		"spawn alliedtanks 81838.95 3012198.25 4.00 0",
 		
 
 		-- German tank spawns
@@ -38,6 +40,8 @@ if(true) then
 		"spawn axistanks 82230.30 3012064.76 5.40 180",
 		"spawn axistanks 82237.91 3012064.11 5.12 180",
 		"spawn axistanks 82245.59 3012063.48 5.13 180",
+		"spawn axistanks 81705.33 3011467.50 4.00 180",
+		"spawn axistanks 81692.03 3011467.74 4.00 180",
 		
 
 -- DEFINE BLOCKED AREAS OF NO ACCESS BY PLAYERS
@@ -89,8 +93,8 @@ if(true) then
 		
 		-- BURNING VEHICLES
 
-		--"emitter vehiclefire 345498.39 3006190.72 110.11",
-		--"emitter vehiclefire 345725.97 3006311.75 109.19",
+		"emitter vehiclefire 82487.52 3011457.65 5.00",
+		"emitter vehiclefire 81366.19 3011906.12 4.42",
 
 
 		-- FIRES
@@ -168,7 +172,7 @@ if(true) then
 	-- AREA TRIGGERS
 	-- command name triggertype worldx worldy worldz
 
-		-- directions at axis spawn 1
+	-- directions at axis spawn 1
 
 		--"area ataxisspawn OnTrigger 345260.32 3004804.76 112.00",		
 		--"area ataxisspawn OnTrigger 345504.78 3004805.95 112.00",
@@ -176,7 +180,7 @@ if(true) then
 		--"area ataxisspawn OnTrigger 345262.57 3004863.17 112.00",
 				
 
-		-- directions at allied spawn 1
+	-- directions at allied spawn 1
 
 		--"area atalliedspawn OnTrigger 345712.82 3007130.00 108.00",	
 		--"area atalliedspawn OnTrigger 345712.57 3007198.25 108.00",	
@@ -184,54 +188,22 @@ if(true) then
 		--"area atalliedspawn OnTrigger 345860.36 3007129.62 108.00",	
 
 	-- bridge capture objective
+
 		"handler capper OnCapper",
 		"handler objective1 OnCapturing",
 		
-"area bridgecapture OnState 81802.47 3011808.50 11.94 1",
-"area bridgecapture OnState 81796.75 3011808.50 11.94",
-"area bridgecapture OnState 81796.81 3011786.75 11.86",
-"area bridgecapture OnState 81802.57 3011786.25 11.84",
+		"area bridgecapture OnState 81802.47 3011808.50 11.94 1",
+		"area bridgecapture OnState 81796.75 3011808.50 11.94",
+		"area bridgecapture OnState 81796.81 3011786.75 11.86",
+		"area bridgecapture OnState 81802.57 3011786.25 11.84",
 
 
 
 	-- telling players they are in the bridge capture area
-		-- telling the allies they are in the bridge capture area
 		"area bridgecapture1 OnTrigger 81802.47 3011808.50 14",
 		"area bridgecapture1 OnTrigger 81796.75 3011808.50 14",
 		"area bridgecapture1 OnTrigger 81796.81 3011786.75 14",
 		"area bridgecapture1 OnTrigger 81802.57 3011786.25 14",
-
-
-
-	-- minefield near axis spawn
-
-		--"area axisminefield1 OnMineArea 146.43 21.67 8.48",
-		--"area axisminefield1 OnMineArea 293.38 18.17 4.19",
-		--"area axisminefield1 OnMineArea 297.08 32.59 4.69",
-		--"area axisminefield1 OnMineArea 156.79 60.77 7.16",
-		
-	-- minefield east side of path
-
-		--"area pathfield1 OnMineArea 100.42 0.63 5.37",
-		--"area pathfield1 OnMineArea 95.03 24.23 5.85",
-		--"area pathfield1 OnMineArea 98.29 30.91 5.85",
-		--"area pathfield1 OnMineArea 110.15 31.92 5.69",
-		--"area pathfield1 OnMineArea 128.99 36.36 5.87",
-		--"area pathfield1 OnMineArea 123.00 27.80 2.72",
-		--"area pathfield1 OnMineArea 121.50 16.70 5.37",
-		
-	-- minefield west side of path
-
-		--"area pathfield2 OnMineArea 117.64 42.08 6.42",
-		--"area pathfield2 OnMineArea 112.25 41.53 5.79",
-		--"area pathfield2 OnMineArea 106.57 37.60 5.96",
-		--"area pathfield2 OnMineArea 94.90 34.81 5.97",
-		--"area pathfield2 OnMineArea 92.26 26.99 5.97",
-		--"area pathfield2 OnMineArea 90.99 23.24 5.80",
-		--"area pathfield2 OnMineArea 91.77 -4.09 3.30",
-		--"area pathfield2 OnMineArea 65.86 -8.48 3.85",
-		--"area pathfield2 OnMineArea 51.85 41.89 7.02",
-		--"area pathfield2 OnMineArea 94.70 84.00 7.55",
 
 		
 	-- bridge capture objective
@@ -248,38 +220,6 @@ if(true) then
 		--"area mapcenter OnTrigger 293281.78 2977306.03 274.00",
 		--"area mapcenter OnTrigger 293279.28 2977087.93 274.00",
 
-			
-	-- minefield near axis spawn
-
-		--"area axisminefield1 OnMineArea 140.05 21.01 6",
-		--"area axisminefield1 OnMineArea 283.44 -15.31 6",
-		
-		--"area axisminefield1 OnMineArea 294.98 21.29 6",
-		--"area axisminefield1 OnMineArea 156.79 60.77 6",
-		
-	-- minefield east side of path
-
-		-- "area pathfield1 OnMineArea 103.89 63.99 6",
-		--"area pathfield1 OnMineArea 134 50 6",
-		--"area pathfield1 OnMineArea 80.32 73.44 6",		
-		--"area pathfield1 OnMineArea 67.66 66.27 6",	
-		--"area pathfield1 OnMineArea 59.56 19.08 6",
-		--"area pathfield1 OnMineArea 70.01 7.38 6",	
-		--"area pathfield1 OnMineArea 69.91 -0.19 6",
-		--"area pathfield1 OnMineArea 102.39 14.90 6",
-		--"area pathfield1 OnMineArea 123 28 6",
-		
-	-- minefield west side of path
-
-		-- "area pathfield2 OnMineArea 101.78 66.28 6",
-		-- "area pathfield2 OnMineArea 83.85 73.54 6",
-		-- "area pathfield2 OnMineArea 50.53 41.57 6",
-		-- "area pathfield2 OnMineArea 70.93 -16.95 6",
-		-- "area pathfield2 OnMineArea 91.91 -6.34 6",
-		-- "area pathfield2 OnMineArea 91.15 6.56 6",
-		-- "area pathfield2 OnMineArea 89.22 24.69 6",
-		-- "area pathfield2 OnMineArea 85.92 50.46 6",
-		-- "area pathfield2 OnMineArea 88.88 56.80 6",
 
 -- CLONES --
 
@@ -299,9 +239,9 @@ if(true) then
 		--"clone pzivd 79.79 108.67 5.58 3 -1 20",
 		--"clone oplbltz 121.93 6.84 8.08 -3 0 205",
 		--"clone oplbltz 176.32 -20.12 8.55 0 0 180",
-		-- "clone bedford -19.75 -153.93 9.05 2 0 0",
-		-- "clone bedford -27.34 -150.10 8.9 4 0 285",
-		-- "clone bedford -35.21 -147.32 8.85 6 2 285",
+		--"clone bedford -19.75 -153.93 9.05 2 0 0",
+		--"clone bedford -27.34 -150.10 8.9 4 0 285",
+		--"clone bedford -35.21 -147.32 8.85 6 2 285",
 
 
 -- ALERTS AND CHATS
