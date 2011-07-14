@@ -1,0 +1,360 @@
+<script>
+	<!--
+	
+	function Objective(mgr, id, loc, icon)
+	{
+		this.mgr 			= mgr;
+		this.id 				= id;
+		this.loc 			= loc;
+		this.icon			= icon;
+		this.enabled		= true;
+		this.view			= null;
+		this.title 			= null;
+		this.image		= null;
+		this.bars			= null;
+		this.topbar		= null;
+		this.botbar		= null;
+		this.topcolor		= "#00FF00";
+		this.botcolor		= "#FFFFFF";
+		
+		if(this.icon == null)
+			this.icon = "";
+		
+		this.CreateUI = function(template)
+		{
+			if(template == null)
+				template = Objective.DEFAULT_UI;
+			
+			this.view = game.load(template, this.mgr.view);
+			
+			// lookup our child views
+			// this type may or may not have these
+			this.title 			= this.view.findview("objective-title");
+			this.image		= this.view.findview("objective-icon");
+			this.bars			= this.view.findview("objective-progress");
+			this.topbar		= this.view.findview("top");
+			this.botbar		= this.view.findview("bottom");
+			
+			this.SetColors(this.topcolor, this.botcolor);
+			this.SetIcon(this.icon);
+		}
+		
+		this.Update = function()
+		{
+			// do nothing by default
+		}
+		
+		this.UpdateUI = function(arg1, arg2)
+		{
+			this.SetTitle(getlocstring(this.loc));
+			this.SetIcon(this.icon);
+			
+			if(this.topbar != null)
+			{
+				var progress = 0;
+				
+				if(arg1 != null && arg2 != null)
+					progress = parseFloat(arg1) / parseFloat(arg2);
+				else if(arg1 != null)
+					progress = parseFloat(arg1);
+				
+				cprint("Calculated progress is " + progress);
+				
+				this.SetProgress(progress); 
+			}
+			
+			cprint("Updating objective UI " + this.id + "/" + arg1 + "/" + arg2); 
+		}
+		
+		this.SetIcon = function(name)
+		{
+			if(this.image)
+			{
+				var icons = new Object();
+				
+				icons["skull"] 		= "ui/textures/hud/state_dead.bmp";
+				icons["flag"] 		= "ui/textures/StratCP.dds";
+				icons["building"] 	= "ui/textures/StratFac.dds";
+				
+				var src = icons[name];
+				
+				cprint("Setting icon to " + src);
+				
+				if(src != null)
+					this.image.src = src;
+				else
+					this.image.src = "";
+			}
+		}
+		
+		this.SetTitle = function(title)
+		{
+			if(this.title)
+			{
+				cprint("Setting title to " + title);
+				this.title.label = title;
+			}
+		}
+		
+		this.SetColors = function(top, bottom)
+		{
+			this.topcolor = top;
+			this.botcolor = bottom;
+			
+			if(this.topbar)
+			{
+				cprint("Setting colors to " + top + "/" + bottom);
+				this.topbar.setstyleproperty('color', top);
+			}
+			
+			if(this.botbar)
+				this.botbar.setstyleproperty('color', bottom);
+		}
+		
+		this.SetColorsByPersona = function(side)
+		{
+			var defaultFGColor = "#00FF00";
+			var defaultBGColor = "#FFFFFF";
+			var myCountry = game.player.country;
+			
+			if(isNaN(side) || myCountry == null)
+			{
+				this.SetColors(defaultFGColor, defaultBGColor);
+				return;
+			}
+			
+			var iside = parseInt(side);
+			
+			if(iside == 0)
+			{
+				this.SetColors(defaultFGColor, defaultBGColor);
+				return;
+			}
+			
+			if(iside == myCountry.side)
+				this.SetColors(game.settings.friendlycolor, game.settings.enemycolor);
+			else
+				this.SetColors(game.settings.enemycolor, game.settings.friendlycolor);
+		}
+		
+		this.SetProgress = function(progress)
+		{
+			cprint("Setting Top Bar width to " + progress);
+			
+			if(this.topbar != null)
+			{
+				if(progress < 0)
+					progress = 0;
+				else if(progress > 1)
+					progress = 1;
+				
+				this.topbar.width = this.bars.width * progress;
+				cprint("Top Bar width is now " + this.topbar.width);
+			}
+		}
+		
+		this.GetSideColor = function(side)
+		{
+			var myCountry = game.player.country;
+			var defaultColor = "#FFFFFF";
+			
+			if(isNaN(side) || myCountry == null)
+				return defaultColor;
+			
+			var iside = parseInt(side);
+			
+			if(iside == 0)
+				return defaultColor;
+			else if(iside == myCountry.side)
+				return game.settings.friendlycolor;
+			else
+				return game.settings.enemycolor;
+		}
+		
+		this.SetColors("#00FF00", "#FFFFFF");
+		
+		return this;
+	}
+	
+	function SideObjective(mgr, id, loc, icon, side)
+	{
+		var self = new Objective(mgr, id, loc, icon);
+		self.SetColorsByPersona(side);
+		cprint("Side Objective");
+		return self;
+	}
+	
+	function AlliedObjective(mgr, id, loc, icon)
+	{
+		var self = new SideObjective(mgr, id, loc, icon, 1);
+		cprint("Allied Objective");
+		return self;
+	}
+	
+	function AxisObjective(mgr, id, loc, icon)
+	{
+		var self = new SideObjective(mgr, id, loc, icon, 2);
+		cprint("Axis Objective");
+		return self;
+	}
+	
+	function SideCountObjective(mgr, id, loc, icon, side)
+	{
+		var self = new Objective(mgr, id, loc, icon);
+		
+		// save our base class function
+		self.UpdateUIBase = self.UpdateUI;
+		self.SetColors(self.GetSideColor(side), "#FFFFFF");
+		
+		cprint("Side Count Objective: " + side);
+		
+		self.UpdateUI = function(arg1, arg2)
+		{
+			this.UpdateUIBase(arg1, arg2);
+			this.SetTitle(getVariableLocString(this.loc, arg1, arg2));
+		}
+		
+		return self;
+	}
+	
+	function AlliedCountObjective(mgr, id, loc, icon)
+	{
+		return new SideCountObjective(mgr, id, loc, icon, 1);
+	}
+	
+	function AxisCountObjective(mgr, id, loc, icon)
+	{
+		return new SideCountObjective(mgr, id, loc, icon, 2);
+	}
+	
+	function OwnerObjective(mgr, id, loc, icon)
+	{
+		var self = new Objective(mgr, id, loc, icon);
+		
+		self.SetColors("#FFFFFF", "#FFFFFF");
+		
+		// we don't use the base class call but save it anyway for now
+		self.UpdateUIBase = self.UpdateUI;
+		
+		self.UpdateUI = function(arg1, arg2)
+		{
+			cprint("arg1 = " + arg1 + " arg2 = " + arg2);
+			
+			this.SetTitle(getlocstring(this.loc));
+			this.SetIcon(this.icon);
+			this.SetColors(this.GetSideColor(arg1), this.GetSideColor(arg2));
+			
+			if(!isNaN(arg1) && parseInt(arg1) > 0)
+				this.SetProgress(1);
+			else
+				this.SetProgress(0);
+		}
+		
+		return self;
+	}
+	
+	Objective.DEFAULT_UI 		= "widgets/hud/objective";
+	Objective.DEFAULT_ICON 	= 0;
+	
+	Objective.ICONS 			= new Array();
+	Objective.ICONS[0] 		= "ui/textures/hud/state_dead.bmp";
+	Objective.ICONS[1] 		= "ui/textures/StratFac.dds";
+	
+	function ObjectivesManager(view)
+	{
+		// members
+		this.view			= view;
+		this.objectives	= new Array();
+		this.objmap 		= new Object();
+		
+		this.Update = function()
+		{
+			for(var i = 0; i < this.objectives.length; i++)
+			{
+				var objective = this.objectives[i];
+				objective.Update();
+			}
+		}
+		
+		this.AddObjective = function(type, name, loc, icon)
+		{
+			var newObj = null;
+			
+			cprint("Creating Objective from type: " + type);
+			
+			if(type == "allied")
+				newObj = new AlliedObjective(this, name, loc, icon);
+			else if(type == "axis")
+				newObj = new AxisObjective(this, name, loc, icon);
+			else if(type == "alliedcount")
+				newObj = new AlliedCountObjective(this, name, loc, icon);
+			else if(type == "axiscount")
+				newObj = new AxisCountObjective(this, name, loc, icon);
+			else if(type == "owner")
+				newObj = new OwnerObjective(this, name, loc, icon);
+			else
+				newObj = new Objective(this, name, loc, icon);
+			
+			if(newObj != null)
+			{
+				// save some references
+				this.objectives.push(newObj);
+				this.objmap[name] = newObj;
+				
+				// create our UI
+				newObj.CreateUI(Objective.DEFAULT_UI);
+				
+				// now we need to arrange our objectives
+				var width 			= this.view.width;
+				var spacing		= 5;
+				var totalWidth 	= 0;
+				
+				for(var i = 0; i < this.objectives.length; i++)
+				{
+					var objective = this.objectives[i];
+					
+					if(objective.view != null)
+						totalWidth += objective.view.width;
+				}
+				
+				totalWidth += (spacing * (this.objectives.length - 1));
+				
+				var x = (this.view.width * .5) - (totalWidth * .5);
+				
+				for(var i = 0; i < this.objectives.length; i++)
+				{
+					var objective = this.objectives[i];
+					
+					if(objective.view != null)
+					{
+						objective.view.x = x;
+						x += objective.view.width + spacing;
+					}
+				}
+			}
+			
+			return newObj;
+		}
+		
+		this.UpdateObjective = function(name, arg1, arg2)
+		{
+			if(this.objmap[name] != null)
+			{
+				cprint("Attempting to update objective " + name);
+				this.objmap[name].UpdateUI(arg1, arg2);
+			}
+		}
+		
+		/*
+		this.SetObjective = function(id, enabled)
+		{
+			if(this.objmap[id] != null)
+				this.objmap[id].enabled = enabled;
+		}
+		*/
+		
+		return this;
+	}
+	
+	-->
+</script>

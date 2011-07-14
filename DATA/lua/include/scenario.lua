@@ -13,7 +13,7 @@ game.LoadLib("scenario");
 -- set tutorial state here
 scenario.manager		=  scenario.ScenarioManager:GetInstance();
 state.name					= "scenario.generic";
-state.ui 						= "scenhud";
+state.ui 						= nil;
 state.rounds				= {};
 state.round					= 1;
 state.spawn					= nil;
@@ -169,7 +169,7 @@ end
 
 scenario.OnSpawn = function(handler)
 	-- do default on spawn
-	tutorial.OnSpawn(handler);
+	-- tutorial.OnSpawn(handler);
 	
 	-- reset some default tutorial behaviors
 	map.uiMapLock(false);
@@ -489,25 +489,36 @@ function SetUITimer(seconds)
 end
 
 scenario.SetUIProgress = function(progress, label)
-		local hud = ui.FindView("hud");
-		if(hud ~= nil) then
-			hud:CallJS("SetProgress", progress, label);
-		end
+		-- local hud = ui.FindView("hud");
+		-- if(hud ~= nil) then
+		-- 	hud:CallJS("SetProgress", progress, label);
+		-- end
 end
 
 function SetUIProgress(progress, label)
 	scenario.SetUIProgress(progress, label);
 end
 
-scenario.SetObjective = function(objective, progress)
+scenario.AddObjective = function(typeid, name, loc, icon)
 		local hud = ui.FindView("hud");
 		if(hud ~= nil) then
-			hud:CallJS("SetObjective", objective, progress);
+			hud:CallJS("AddObjective", typeid, name, loc, icon);
 		end
 end
 
-function SetObjective(objective, progress)
-	scenario.SetObjective(objective, progress);
+function AddObjective(typeid, name, loc, icon)
+	scenario.AddObjective(typeid, name, loc, icon);
+end
+
+scenario.SetObjective = function(objective, progress, target)
+		local hud = ui.FindView("hud");
+		if(hud ~= nil) then
+			hud:CallJS("UpdateObjective", objective, progress, target);
+		end
+end
+
+function SetObjective(objective, progress, target)
+	scenario.SetObjective(objective, progress, target);
 end
 
 scenario.SetResult = function()

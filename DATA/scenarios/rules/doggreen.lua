@@ -46,6 +46,9 @@ function OnSpawn(handler)
 	local objective1 = Instancing:GetStateNumber("objective1");
 	local objective2 = Instancing:GetStateNumber("objective2");
 	
+	scenario.AddObjective("allied", "objective1", "objective1", "flag");
+	scenario.AddObjective("allied", "objective2", "objective2", "building");
+	
 	-- update the hud to the current objective amounts
 	if(scenario.manager:GetStage() == 2) then
 		scenario.SetObjective("objective1", 1);
@@ -55,10 +58,10 @@ function OnSpawn(handler)
 		if(capper == 0) then
 			scenario.SetObjective("objective2", 0);
 		else
-			scenario.SetObjective("objective2", objective2 / target2);
+			scenario.SetObjective("objective2", objective2, target2);
 		end
 	else
-		scenario.SetObjective("objective1", objective1 / target1);
+		scenario.SetObjective("objective1", objective1, target1);
 		scenario.SetObjective("objective2", 0);
 	end
 	
@@ -139,7 +142,7 @@ function OnReinforcements(name, value)
 				scenario.SetObjective("objective1", 1);
 				Instancing:SendStateValue("stage", 2);
 			else
-				scenario.SetObjective("objective1", state.reinforcements / needed);
+				scenario.SetObjective("objective1", state.reinforcements, needed);
 			end
 			scenario.manager:RunObject("objective1", 1);
 		end
@@ -218,12 +221,7 @@ function OnStage2Update(msDelta)
 		state.lastcapture = state.capture;
 		
 		if(state.capture >= victory) then
-			SetUIProgress(1, "capturing");
 			Instancing:SendStateValue("victory", 1);
-		elseif(state.capture >= 0) then
-			SetUIProgress(state.capture / victory, "capturing");
-		else
-			SetUIProgress(-1, "capturing");
 		end
 	end
 	
@@ -275,7 +273,7 @@ function OnCapturing(name, value)
 	local victory	= tonumber(state.config.objective2 or 30);
 	
 	-- update the ui
-	scenario.SetObjective("objective2", cap / victory);
+	scenario.SetObjective("objective2", cap, victory);
 	
 	return 1;
 end

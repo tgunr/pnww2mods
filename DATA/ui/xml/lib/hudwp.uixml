@@ -1,0 +1,84 @@
+<script>
+	<!--
+	
+	var hwCallback = null;
+	var display = null;
+	var label = null;
+	var wpColor = "#FF0000";
+	
+	function initHUDObject(v, c)
+	{
+		display = v.findview("display");
+		
+		if(label == null)
+		{
+			var loc = v.id.split("-");
+			label = getlocstring("hud.waypoints." + loc[1]);
+		}
+		
+		hwCallback = c;
+	}
+	
+	function setDisplay(loc, c)
+	{
+		label = getlocstring(loc);
+		
+		if(c != null)
+		{
+			if(c == "enemy")
+				wpColor = game.settings['enemycolor'];
+			else if(c == "friendly")
+				wpColor = game.settings['friendlycolor'];
+			else if(c.charAt(0) == "#")
+				wpColor = c;
+		}
+	}
+	
+	function updateHUDObject(placement, distance, alpha)
+	{
+		if(hwCallback != null)
+		{
+			hwCallback(placement, distance, alpha);
+			return;
+		}
+		
+		if(display != null)
+		{
+			if(alpha == 0)
+			{
+				if(display.visible)
+					display.visible = false;
+			}
+			else
+			{
+				if(!display.visible)
+					display.visible = true;
+					
+				var color = 255 * alpha;
+				var bg = 128 * alpha;
+				
+				display.setstyleproperty("color", "#FFFFFF" + color.toString(16));
+				display.setstyleproperty("shadow-color", "#000000" + bg.toString(16));
+				
+				var newLabel = "";
+				
+				if(label != null)
+					newLabel = (placement == 0) ? label : label.charAt(0);
+				
+				if(distance >= 0 && placement == 0)
+				{
+					if(label != null)
+						newLabel += ": ";
+					
+					newLabel += distance + "m";
+				}
+				
+				display.text = newLabel;
+				display.resizetotext();
+			}
+		}
+	}
+	
+	-->
+</script>
+

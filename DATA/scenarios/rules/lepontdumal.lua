@@ -35,13 +35,13 @@ function OnSpawn(handler)
 	-- update the hud to the current objective amounts
 	local capper = Instancing:GetStateNumber("capper"); 
 	
+	scenario.AddObjective("allied", "objective1", "objective1", "flag");
+	
 	if(capper == 0) then
 		scenario.SetObjective("objective1", 0);
 	else
-		scenario.SetObjective("objective1", objective / victory);
+		scenario.SetObjective("objective1", objective, victory);
 	end
-	
-	scenario.SetObjective("objective2", -1);
 	
 	return 1 
 end
@@ -59,9 +59,7 @@ function OnDespawn(handler)
 end
 
 function OnCaptureUpdate(msDelta)
-
-	scenario.SetObjective("objective2", -1);
-
+	
 	if(state.victory ~= 0 or GetTeam() ~= 1) then
 		return 1;
 	end
@@ -101,14 +99,8 @@ function OnCaptureUpdate(msDelta)
 	
 	if(state.lastcapture ~= state.capture) then
 		state.lastcapture = state.capture;
-		
 		if(state.capture >= victory) then
-			SetUIProgress(1, "capturing");
 			Instancing:SendStateValue("victory", 1);
-		elseif(state.capture >= 0) then
-			SetUIProgress(state.capture / victory, "capturing");
-		else
-			SetUIProgress(-1, "capturing");
 		end
 	end
 	
@@ -160,7 +152,7 @@ function OnCapturing(name, value)
 	local victory	= tonumber(state.config.victory or 30);
 	
 	-- update the ui
-	scenario.SetObjective("objective1", cap / victory);
+	scenario.SetObjective("objective1", cap, victory);
 	
 	return 1;
 end

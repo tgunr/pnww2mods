@@ -645,6 +645,18 @@
 		}
 	}
 	
+	function centerView(v, xoffset, yoffset)
+	{
+		v.x = (window.width * .5) - (v.width * .5);
+		v.y = (window.height * .5) - (v.height * .5);
+		
+		if(!isNaN(xoffset))
+			v.x += scaleX(xoffset);
+		
+		if(!isNaN(yoffset))
+			v.y += scaleY(yoffset);
+	}
+	
 	function cstack(start)
 	{
 		var out = "";
