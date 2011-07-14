@@ -5,6 +5,9 @@ uniform sampler2D src2;
 uniform sampler2D refl;
 uniform sampler2D surf;
 uniform sampler2D height;
+uniform sampler2DShadow shadow;
+
+uniform float scale;
 
 varying vec3 vertexpos;
 varying vec3 T;
@@ -23,6 +26,28 @@ void lightGetAmbientDiffuseSpecular(in vec3,
 vec4 fogThis(in vec4);
 
 const vec4 ocolor = vec4(0.3960784, 0.549019607, 0.7058823529, 1.0);
+
+float GetShadowValue()
+{
+    vec3 c1 = gl_TexCoord[5].xyz / gl_TexCoord[5].w;
+    c1.z -= 0.0005;
+    c1.z = clamp(c1.z, 0.0, 1.0);
+
+    float s = 0.0;
+
+	for(float y = -1.5 ; y <= 1.5 ; y += 1.0)
+    {
+		for(float x = -1.5 ; x <= 1.5 ; x += 1.0)
+        {
+            s += shadow2D(shadow, c1.xyz + vec3(x * scale, y * scale, 0.0)).r;
+        }
+    }
+
+	s *= 0.0625;
+    s = clamp(s, 0.0, 1.0);
+
+    return s;
+}
 
 void main()
 {
@@ -76,9 +101,10 @@ void main()
     vec4 h = texture2D(height, gl_TexCoord[4].xy);
 
 	color = color * (diffuseColor + ambientColor) + specularColor;
+    color.rgb *= GetShadowValue();
 
     color = mix(color, rf, h.r);
     color += t4;
 
-	gl_FragColor = fogThis(color);
+    gl_FragColor = fogThis(color);
 }

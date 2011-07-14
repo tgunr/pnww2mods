@@ -38,6 +38,8 @@ void main()
     pos.z += sin(time) * 0.015;
     pos = gl_ModelViewMatrix * pos;
 
+    gl_TexCoord[5] = gl_TextureMatrix[5] * pos;
+
     vertexpos = pos.xyz;
 	
 	gl_Position = gl_ProjectionMatrix * pos;
