@@ -1,8 +1,9 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>dday/dm_riverrun</name>
-  <body>objective1 = Allies
-objective2 = Axis
+  <body>objective1 = Allies {1}/{2}
+objective2 = Axis {1}/{2}
+intel = Intel
 onspawn.moveout = Eliminate as many enemy as possible before time runs out!
 churchentry = The church tower is a perfect spot for snipers. Watch Out!
 toaxisspawn = German forces are camped northeast.
