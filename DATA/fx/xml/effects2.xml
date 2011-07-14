@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="iso-8859-1" ?> 
 <FXEFFECTS>
 <!-- ===================================================================== -->
+  <transformeffect name = "landmine">
+    <emitter>
+      <lifetime>1</lifetime>
+      <flags>particleeffectonly</flags>
+      <particleeffect>landminedust1</particleeffect>
+      <particleeffect>landminedust2</particleeffect>
+      <particleeffect>landminedebris1</particleeffect>
+    </emitter>
+  </transformeffect>
+<!-- ===================================================================== -->
 	<transformeffect name = "shellcasing">
 		<emitter>
       <lifetime>1</lifetime>
@@ -860,7 +870,77 @@
 <!-- ===================================================================== -->
 <!-- ===================================================================== -->
 <!-- ===================================================================== -->
-<!-- ===================================================================== -->
+  <particleeffect name = "landminedust1">
+    <number>10</number>
+    <texture>tread dust</texture>
+    <alpha>1</alpha>
+    <alpha>1</alpha>
+    <alpha>0.25</alpha>
+    <alpha>0.0</alpha>
+    <size>1.0</size>
+    <size>2.0</size>
+    <size>3.0</size>
+    <size>4.0</size>
+    <time>0</time>
+    <time>200</time>
+    <time>1500</time>
+    <time>3000</time>
+    <speed>50</speed>
+    <gravity>9.8</gravity>
+    <velreduction>0.85</velreduction>
+    <randomdirection>45</randomdirection>
+    <drag>6</drag>
+    <rotate>45</rotate>
+    <material>smoke</material>
+  </particleeffect>
+  <!-- ===================================================================== -->
+  <particleeffect name = "landminedust2">
+    <number>10</number>
+    <texture>tread dust</texture>
+    <alpha>0.5</alpha>
+    <alpha>0.5</alpha>
+    <alpha>0.25</alpha>
+    <alpha>0.0</alpha>
+    <size>1.0</size>
+    <size>3.0</size>
+    <size>5.0</size>
+    <size>6.0</size>
+    <time>0</time>
+    <time>200</time>
+    <time>1500</time>
+    <time>3000</time>
+    <speed>1</speed>
+    <rotate>45</rotate>
+    <gravity>1.0</gravity>
+    <posvariance>-2.5 -2.5 0.0 2.5 2.5 0.0</posvariance>
+    <randomdirection>45</randomdirection>
+    <drag>7</drag>
+    <material>smoke</material>
+  </particleeffect>
+  <!-- ===================================================================== -->
+  <particleeffect name = "landminedebris1">
+    <number>64</number>
+    <texture>stone chip1</texture>
+    <texture>dirt clod</texture>
+    <texture>stone chip2</texture>
+    <texture>dirt clod</texture>
+    <texture>stone chip3</texture>
+    <texture>dirt clod</texture>
+    <alphastart>1.0</alphastart>
+    <alphaend>1.0</alphaend>
+    <!-- used for size start and size end-->
+    <randomsize>0.05 0.2</randomsize>
+    <lifetime>3000</lifetime>
+    <speed>10</speed>
+    <gravity>9.8</gravity>
+    <colorstart>1 0.25 0.25</colorstart>
+    <colorend>1 0.25 0.25</colorend>
+    <velreduction>0.99</velreduction>
+    <randomdirection>25</randomdirection>
+    <rotate>360</rotate>
+    <material>smoke</material>
+  </particleeffect>
+  <!-- ===================================================================== -->
   <particleeffect name ="shellcasingparticle">
     <number>1</number>
     <texture>bullet shell casing</texture>
