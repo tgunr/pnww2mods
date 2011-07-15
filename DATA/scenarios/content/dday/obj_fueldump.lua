@@ -65,12 +65,12 @@ if(true) then
 		-- Allied Spawn Points
 		"spawn alliedtroops 129.92 77.73 5.95 150",
 		"spawn alliedtroops 160.71 89.05 6.60 255",
-		"spawn alliedtroops 132.46 83.34 6.03 90",
+		"spawn alliedtroops 132.46 83.34 6.03 0",
 		
 		
-		"spawn alliedvehicles -342.47 383.86 23.25 270",
-		--"spawn alliedvehicles -349.00 355.14 24.57 280",
-		--"spawn alliedvehicles -350.65 348.94 24.09 280",
+		"spawn alliedvehicles -342.47 383.86 23.25 90",
+		"spawn alliedvehicles -349.00 355.14 24.57 90",
+		"spawn alliedvehicles -350.65 348.94 24.09 90",
 		
 		
 
@@ -79,9 +79,9 @@ if(true) then
 		"spawn axistroops -12.06 -258.64 16.51 340",
 		"spawn axistroops -15.70 -285.71 16.56 340",
 	
-		"spawn axisvehicles -112.81 -332.78 21.80 270",
-		--"spawn axisvehicles -132.40 -360.03 24.12 270",
-		--"spawn axisvehicles -127.80 -364.65 24.21 270",
+		"spawn axisvehicles -112.81 -332.78 21.80 45",
+		"spawn axisvehicles -132.40 -360.03 24.12 45",
+		"spawn axisvehicles -127.80 -364.65 24.21 45",
 
 
 -- DEFINE BLOCKED AREAS OF NO ACCESS TO PLAYERS
@@ -354,16 +354,16 @@ if(true) then
 	
 		
 		-- the area for us supply
-		"area ussupply onresupply -187.78 -92.46 8.27",
-		"area ussupply onresupply -186.23 -87.06 8.27",
-		"area ussupply onresupply -182.06 -89.69 8.27",
-		"area ussupply onresupply -185.10 -96.28 8.27",
+		"area ussupply OnResupply -187.78 -92.46 8.27",
+		"area ussupply OnResupply -186.23 -87.06 8.27",
+		"area ussupply OnResupply -182.06 -89.69 8.27",
+		"area ussupply OnResupply -185.10 -96.28 8.27",
 		
 		-- the area for de supply
-		"area desupply onresupply 56.96 -147.99 9.75",
-		"area desupply onresupply 56.54 -153.59 9.75",
-		"area desupply onresupply 60.02 -155.79 9.75",
-		"area desupply onresupply 60.36 -148.91 9.75",
+		"area desupply OnResupply 56.96 -147.99 9.75",
+		"area desupply OnResupply 56.54 -153.59 9.75",
+		"area desupply OnResupply 60.02 -155.79 9.75",
+		"area desupply OnResupply 60.36 -148.91 9.75",
 
 		
 		
