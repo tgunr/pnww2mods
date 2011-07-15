@@ -416,8 +416,10 @@
     <emitter>      
       <flags>particleeffectonly</flags>
       <lifetime>1</lifetime>
-      <particleeffect>bazookablastparticle</particleeffect>
-      <particleeffect>bazookablastfire</particleeffect>
+      <particleeffect>bazookadetonation</particleeffect>
+      <particleeffect>bazookablastparticle1</particleeffect>
+      <particleeffect>bazookablastparticle2</particleeffect>
+      <particleeffect>bazookadebris1</particleeffect>
     </emitter> 
   </transformeffect>
   <!-- ===================================================================== -->
@@ -2408,39 +2410,6 @@
     <outdofdirection></outdofdirection>
   </particleeffect>
   <!-- ===================================================================== -->
-  <particleeffect name = "bazookablastparticle">
-    <number>16</number>
-    <texture>explosion dirt trails</texture>
-    <texture>black smoke 2</texture>
-    <texture>low res smoke1</texture>
-    <texture>explosion dirt trails</texture>
-    <texture>black volume smoke 2</texture>
-    <texture>low res smoke2</texture>
-    <texture>day1blacksmoke</texture>
-    <texture>explosion dirt trails</texture>
-    <texture>black smoke 1</texture>
-    <texture>white smoke 1</texture>
-    <texture>white smoke 2</texture>
-    <alpha>1.0</alpha>
-    <alpha>1.0</alpha>
-    <alpha>1.0</alpha>
-    <alpha>0.0</alpha>
-    <delayeachparticle>10</delayeachparticle>
-    <velreduction>0.7</velreduction>
-    <size>1</size>
-    <size>4</size>
-    <size>8</size>
-    <size>16</size>
-    <time>100</time>
-    <time>50</time>
-    <time>100</time>
-    <time>4000</time>
-    <speed>100</speed>
-    <drag>6</drag>
-    <posvariance>-5.0 -5.0 0 5.0 5.0 0</posvariance>
-    <material>smoke</material>
-  </particleeffect>
-  <!-- ===================================================================== -->
   <particleeffect name = "bazookaammotrailparticle">
     <number>1</number>
     <texture>white smoke 1</texture>
@@ -3436,23 +3405,23 @@
   </particleeffect>
   <!-- ===================================================================== -->
   <particleeffect name = "bombdetonation">
-		<number>1</number>
-		<texture>spark</texture>
-		<alpha>1.0</alpha>
-		<alpha>1.0</alpha>
-		<alpha>1.0</alpha>
-		<alpha>0.0</alpha>
-		<size>0.1</size>
-		<size>10.0</size>
-		<size>15.0</size>
-		<size>15.0</size>
-		<time>0</time>
-		<time>50</time>
-		<time>50</time>
-		<time>500</time>
-		<glow></glow>
+    <number>1</number>
+    <texture>spark</texture>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>0.0</alpha>
+    <size>0.1</size>
+    <size>10.0</size>
+    <size>15.0</size>
+    <size>15.0</size>
+    <time>0</time>
+    <time>50</time>
+    <time>50</time>
+    <time>500</time>
+    <glow></glow>
     <material>fire</material>
-	</particleeffect>
+  </particleeffect>
   <!-- ===================================================================== -->
   <particleeffect name = "bombdetonation2">
     <number>3</number>
@@ -3574,29 +3543,108 @@
     <material>fire</material>
 	</particleeffect>
   <!-- ===================================================================== -->
-  <particleeffect name = "bazookablastfire">
-    <number>15</number>
-    <texture>fire ball 2</texture>
-    <texture>fire ball 3</texture>
-    <texture>fire ball 4</texture>
-    <texture>fire ball 5</texture>
-    <texture>fire ball 6</texture>
-    <texture>fire ball 7</texture>
-    <texture>fire ball 8</texture>
-    <delaystart>10</delaystart>
-    <delayeachparticle>25</delayeachparticle>
-    <delaystart>10</delaystart>
-    <alphastart>1.0</alphastart>
-    <alphaend>0.0</alphaend>
-    <sizestart>0.2</sizestart>
-    <sizeend>8.0</sizeend>
-    <lifetime>500</lifetime>
-    <drag>3.0</drag>
-    <rotate>20</rotate>
+  <particleeffect name = "bazookadetonation">
+    <number>1</number>
+    <texture>newspark</texture>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>0.0</alpha>
+    <size>0.1</size>
+    <size>1.0</size>
+    <size>2.0</size>
+    <size>3.0</size>
+    <time>0</time>
+    <time>25</time>
+    <time>25</time>
+    <time>25</time>
     <glow></glow>
-    <velvariance>-10.0 -10.0 0.1 10.0 10.0 0.5</velvariance>
-    <posvariance>-3.0 -3.0 1.0 3.0 3.0 3.0</posvariance>
+    <posvariance>0 0 1 0 0 1</posvariance>
     <material>fire</material>
+  </particleeffect>
+  <!-- ===================================================================== -->
+  <particleeffect name = "bazookablastparticle1">
+    <number>20</number>
+    <texture>osgsmoke</texture>
+    <texture>tread dust</texture>
+    <texture>white volume smoke 1</texture>
+    <texture>tread dust</texture>
+    <texture>white volume smoke 2</texture>
+    <texture>tread dust</texture>
+    <texture>white smoke 1</texture>
+    <texture>white smoke 2</texture>
+    <alpha>1</alpha>
+    <alpha>0.5</alpha>
+    <alpha>0.25</alpha>
+    <alpha>0.0</alpha>
+    <size>0.2</size>
+    <size>2</size>
+    <size>2</size>
+    <size>2</size>
+    <time>0</time>
+    <time>50</time>
+    <time>50</time>
+    <time>4000</time>
+    <delaystart>100</delaystart>
+    <drag>0.5</drag>
+    <delayeachparticle>5</delayeachparticle>
+    <velvariance>-0.25 -0.25 0 0.25 0.25 0</velvariance>
+    <posvariance>-3 -3 0 3 3 0</posvariance>
+    <rotate>32</rotate>
+    <material>smoke</material>
+  </particleeffect>
+  <!-- ===================================================================== -->
+  <particleeffect name = "bazookablastparticle2">
+    <number>20</number>
+    <texture>tread dust</texture>
+    <texture>black smoke 4</texture>
+    <texture>tread dust</texture>
+    <texture>black smoke 4</texture>
+    <texture>tread dust</texture>
+    <texture>black smoke 4</texture>
+    <texture>tread dust</texture>
+    <texture>black smoke 4</texture>
+    <alpha>1</alpha>
+    <alpha>1</alpha>
+    <alpha>1</alpha>
+    <alpha>0.0</alpha>
+    <size>0.2</size>
+    <size>2</size>
+    <size>3</size>
+    <size>4</size>
+    <time>0</time>
+    <time>50</time>
+    <time>50</time>
+    <time>4000</time>
+    <delaystart>100</delaystart>
+    <speed>62</speed>
+    <drag>5.0</drag>
+    <velreduction>0.9</velreduction>
+    <delayeachparticle>5</delayeachparticle>
+    <velvariance>-0.25 -0.25 0 0.25 0.25 0</velvariance>
+    <posvariance>-2 -2 1 2 2 1</posvariance>
+    <rotate>32</rotate>
+    <material>smoke</material>
+  </particleeffect>
+  <!-- ===================================================================== -->
+  <particleeffect name = "bazookadebris1">
+    <number>32</number>
+    <texture>stone chip1</texture>
+    <texture>stone chip2</texture>
+    <texture>stone chip3</texture>
+    <alphastart>1.0</alphastart>
+    <alphaend>1.0</alphaend>
+    <!-- used for size start and size end-->
+    <randomsize>0.05 0.2</randomsize>
+    <lifetime>3000</lifetime>
+    <speed>10</speed>
+    <gravity>9.8</gravity>
+    <colorstart>1 0.25 0.25</colorstart>
+    <colorend>1 0.25 0.25</colorend>
+    <velreduction>0.99</velreduction>
+    <randomdirection>135</randomdirection>
+    <rotate>360</rotate>
+    <material>smoke</material>
   </particleeffect>
   <!-- ===================================================================== -->
   <particleeffect name = "gp500bombfire">
