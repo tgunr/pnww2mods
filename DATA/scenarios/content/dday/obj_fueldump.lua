@@ -254,51 +254,63 @@ if(true) then
 
 		
 	-- telling the axis they are in the depot capture area
-		"area depotcapturem OnTrigger 129.42 378.55 20",
-		"area depotcapturem OnTrigger 134.14 294.86 20",
-		"area depotcapturem OnTrigger 202.01 305.15 20",
-		"area depotcapturem OnTrigger 204.24 378.47 20",
+	"area depotcapturem OnTrigger 124.53 355.65 25",
+	"area depotcapturem OnTrigger 208.59 358.58 25",
+	"area depotcapturem OnTrigger 207.98 343.68 25",
+	"area depotcapturem OnTrigger 126.41 335.95 25",
+
 
 		
 		-- telling the allies infantry whats going on
-		"area alliedinfantryinfo OnTrigger 133.50 66.02 8.28 1",
-		"area alliedinfantryinfo OnTrigger 136.87 77.77 8.28",
-		"area alliedinfantryinfo OnTrigger 139.47 77.31 8.28",
-		"area alliedinfantryinfo OnTrigger 136.76 63.37 8.28",
+		--"area alliedinfantryinfo OnTrigger 133.50 66.02 8.28 1",
+		--"area alliedinfantryinfo OnTrigger 136.87 77.77 8.28",
+		--"area alliedinfantryinfo OnTrigger 139.47 77.31 8.28",
+		--"area alliedinfantryinfo OnTrigger 136.76 63.37 8.28",
 		
 		
 		-- telling the allies vehicles whats going on
-		"area alliedvehicleinfo OnTrigger -388.69 315.98 24.01 1",
-		"area alliedvehicleinfo OnTrigger -283.81 399.25 24.01",
-		"area alliedvehicleinfo OnTrigger -264.94 377.38 24.01",
-		"area alliedvehicleinfo OnTrigger -393.05 308.02 24.01",
+		--"area alliedvehicleinfo OnTrigger -388.69 315.98 24.01 1",
+		--"area alliedvehicleinfo OnTrigger -283.81 399.25 24.01",
+		--"area alliedvehicleinfo OnTrigger -264.94 377.38 24.01",
+		--"area alliedvehicleinfo OnTrigger -393.05 308.02 24.01",
 		
 		
 		-- telling the axis infantry whats going on
-		"area axisinfantryinfo OnTrigger -13.01 -288.90 17.07",
-		"area axisinfantryinfo OnTrigger 7.00 -239.21 15.83",
-		"area axisinfantryinfo OnTrigger -19.08 -226.35 16.03",
-		"area axisinfantryinfo OnTrigger -41.96 -283.03 18.70",
-		"area axisinfantryinfo OnTrigger -37.41 -283.57 18.80",
-		"area axisinfantryinfo OnTrigger -16.78 -232.10 15.95",
-		"area axisinfantryinfo OnTrigger 2.40 -241.11 16.11",
-		"area axisinfantryinfo OnTrigger -12.03 -275.11 17.19",
-		"area axisinfantryinfo OnTrigger -17.00 -274.38 16.82",
-		"area axisinfantryinfo OnTrigger -23.43 -286.96 18.69",
+		--"area axisinfantryinfo OnTrigger -13.01 -288.90 17.07",
+		--"area axisinfantryinfo OnTrigger 7.00 -239.21 15.83",
+		--"area axisinfantryinfo OnTrigger -19.08 -226.35 16.03",
+		--"area axisinfantryinfo OnTrigger -41.96 -283.03 18.70",
+		--"area axisinfantryinfo OnTrigger -37.41 -283.57 18.80",
+		--"area axisinfantryinfo OnTrigger -16.78 -232.10 15.95",
+		--"area axisinfantryinfo OnTrigger 2.40 -241.11 16.11",
+		--"area axisinfantryinfo OnTrigger -12.03 -275.11 17.19",
+		--"area axisinfantryinfo OnTrigger -17.00 -274.38 16.82",
+		--"area axisinfantryinfo OnTrigger -23.43 -286.96 18.69",
 
 		
 		
 		-- telling the axis vehicles whats going on
-		"area axisvehicleinfo OnTrigger -112.15 -362.24 24.29 1",
-		"area axisvehicleinfo OnTrigger -133.42 -338.99 24.29",
-		"area axisvehicleinfo OnTrigger -132.13 -335.59 24.29",
-		"area axisvehicleinfo OnTrigger -108.79 -352.01 24.29",
+		--"area axisvehicleinfo OnTrigger -112.15 -362.24 24.29 1",
+		--"area axisvehicleinfo OnTrigger -133.42 -338.99 24.29",
+		--"area axisvehicleinfo OnTrigger -132.13 -335.59 24.29",
+		--"area axisvehicleinfo OnTrigger -108.79 -352.01 24.29",
 		
 		
+		-- telling the allies they are in the resupply area
+		"area alliesresupplyinfo OnTrigger -187.78 -92.46 7",
+		"area alliesresupplyinfo OnTrigger -186.23 -87.06 7",
+		"area alliesresupplyinfo OnTrigger -182.06 -89.69 7",
+		"area alliesresupplyinfo OnTrigger -185.10 -96.28 7",
 		
+		-- telling the axis they are in the resupply area
+		"area axisresupplyinfo OnTrigger 56.96 -147.99 9.75",
+		"area axisresupplyinfo OnTrigger 56.54 -153.59 9.75",
+		"area axisresupplyinfo OnTrigger 60.02 -155.79 9.75",
+		"area axisresupplyinfo OnTrigger 60.36 -148.91 9.75",
 		
+
 		
-		
+	
 		
 		
 
@@ -343,10 +355,13 @@ if(true) then
 		"handler objective1 OnCapturing",
 		
 		-- the area to be in to capture
-		"area depotcapture OnState 129.42 378.55 21.43",
-		"area depotcapture OnState 134.14 294.86 15.12",
-		"area depotcapture OnState 202.01 305.15 12.46",
-		"area depotcapture OnState 204.24 378.47 20.69",
+		"area depotcapture OnState 124.53 355.65 23",
+		"area depotcapture OnState 208.59 358.58 23",
+		"area depotcapture OnState 207.98 343.68 23",
+		"area depotcapture OnState 126.41 335.95 23",
+		
+		
+
 		
 		-- mask the capture area with tanks only
 		"mask depotcapture 4.2.4.0",
@@ -420,10 +435,9 @@ if(true) then
 		"alert onspawn onspawn.moveout 1",
 		--"alert.1 toaxisspawn toaxisspawn 60",
 		--"alert.2 toalliedspawn toalliedspawn 60",
-		"alert.1 depotcapturem depotcapturem 5",
+		"alert.2 depotcapturem depotcapturem 5",
 
 		"alert playarea playarea 10",
-		
 		"message.1 axiscapon axiscapon friendly 1",
 		"message.1 axiscapoff axiscapoff enemy 1",
 		"message.2 axiscapon axiscapon enemy 1",
@@ -432,10 +446,11 @@ if(true) then
 		"waypoint onspawn southbridge -26.22 -175.19 11.39 #FF6600",
 		"waypoint onspawn northbridge 131.01 31.62 10.01 #FF6600",
 		"waypoint onspawn petiteferme -225.24 -73.96 10.58 #FF6600",
-		"waypoint onspawn dock 350.82 255.78 5.53 #FF6600",
-		"waypoint onspawn objective 162.66 357.82 24.78 axis",
-		"waypoint onspawn deresupply 59.26 -151.21 10.38 axis",
-		"waypoint onspawn usresupply -185.64 -90.68 10.22 allied",
+		"waypoint.2 onspawn dock 350.82 255.78 5.53 #FF6600",
+		"waypoint.2 onspawn deobjective 162.66 357.82 24.78 enemy",
+		"waypoint.1 onspawn usobjective 162.66 357.82 24.78 friendly",		
+		"waypoint.2 onspawn deresupply 59.26 -151.21 10.38 axis",
+		"waypoint.1 onspawn usresupply -185.64 -90.68 10.22 allied",
 		
 		
 --  #### END DOC LOOK AT THIS ####
@@ -488,8 +503,8 @@ if(true) then
 		"mask.1.1.0 alliedtroops us-smg",
 		"mask.1.1.0 alliedtroops us-bar",
 		"mask.1.1.0 alliedtroops us-bazooka 2",
-		"mask.1.1.0 alliedvehicles stuartm3a3 2",
-		"mask.1.1.0 alliedvehicles m10 2",
+		"mask.1.1.0 alliedvehicles m4a2_us 2",
+		"mask.1.1.0 alliedvehicles m10_us 2",
 		
 		
 
@@ -499,6 +514,7 @@ if(true) then
 		"mask.2.1.1 axistroops de-lmg",
 		"mask.2.1.1 axistroops de-pzschreck 2",
 		"mask.2.1.1 axisvehicles pzivg 4",
+		"mask.2.1.1 axisvehicles stug3b 4",
 	
 	
 		
