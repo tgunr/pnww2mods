@@ -489,10 +489,10 @@ function SetUITimer(seconds)
 end
 
 scenario.SetUIProgress = function(progress, label)
-		-- local hud = ui.FindView("hud");
-		-- if(hud ~= nil) then
-		-- 	hud:CallJS("SetProgress", progress, label);
-		-- end
+		local hud = ui.FindView("hud");
+		if(hud ~= nil) then
+		 	hud:CallJS("SetProgress", progress, label);
+		end
 end
 
 function SetUIProgress(progress, label)

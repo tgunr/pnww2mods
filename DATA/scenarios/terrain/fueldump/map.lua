@@ -106,23 +106,12 @@ if(true) then
 		"place brokencart -200.71 -81.87 6.95 0 0 0 0 0 0 0",
 	
 	-- supply in town
-		"place msp 58.67 -152.23 8.1 0 0 0 0 0 0 0",
+		"place usammodump msp 58.67 -152.23 8.1 0 0 0 0 0 0 0",
+		"strat usammodump us",
 		
 	-- supply at petite ferme
-		"place msp -185.22 -91.64 6.95 0 0 0 0 0 0 0",
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
+		"place deammodump msp -185.22 -91.64 6.95 0 0 0 0 0 0 0",
+		"strat deammodump de",
 		
 		
 		"place bel4 -75.06 -117.81 7.80 0 0 16 0 0 0 1",

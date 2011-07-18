@@ -31,6 +31,15 @@
 			style="color: #FFFFFF88; font-size: -2;" moveondrag="no"/>
 	</view>
 	
+	<view id="game-progress" x="0" y="0" width="250" height="40" moveondrag="no" aspectlimit="width" acceptmouseclick="false">
+		<text id="game-progress-label" x="0" height="20" rtop="0" rright="0" fontshadowx=".08" fontshadowy="-.08"
+			style="color: #FFFFFF; font-size: +1;" moveondrag="no" acceptmouseclick="false" />
+		<image x="0" height="8" rright="0" rtop="22" src="ui/textures/capture-fill.bmp" acceptmouseclick="false">
+			<image id="game-progress-bar" x="0" bottom="0" rtop="0" rright="0" src="ui/textures/capture-fill.bmp" acceptmouseclick="false"
+				onshow="this.setstyleproperty('color', game.settings.friendlycolor)"/>
+		</view>
+	</view>
+	
 	<!-- PERSONA HEALTH -->
 	<view id="persona" x="6" y="6" width="175" height="47" aspectlimit="width"
 		style="background-color: #00000088; 
@@ -190,8 +199,8 @@
 			setVisibility("primary-name", false);
 			setVisibility("primary-icon", false);
 			setVisibility("primary-progress", false);
-			
 			setVisibility("secondary", false);
+			setVisibility("game-progress", false);
 			
 			if(meType == "person")
 			{
@@ -215,6 +224,8 @@
 				
 			if(game.lastentered != null)
 				game.onenterbuilding();
+			
+			SetProgress(-1);
 			
 			hudInited = true;
 		}
@@ -1010,6 +1021,40 @@
 		{
 			//binfoView.mgr.onLeave();
 			cprint("onLeaveBuilding\n");
+		}
+		
+		function SetProgress(progress, label)
+		{
+			if(!views["game-progress"])
+				return;
+			
+			if(progress < 0)
+			{
+				setVisibility("game-progress", false);
+			}
+			else
+			{
+				setVisibility("game-progress", true);
+				
+				views["game-progress-bar"].width = views["game-progress-bar"].parent.width * progress;
+				//setValue("game-progress-bar", progress);
+				
+				var loc = getlocstring(label);
+				if(loc.charAt(0) == "?")
+					loc = label;
+				
+				var header = views["game-progress-label"];
+				
+				if(header)
+				{
+					header.text = loc;
+					header.resizetotext();
+					header.x = views["game-progress"].width/2 - header.width/2;
+				}
+				
+				views["game-progress"].x = (game.screenwidth/2) - views["game-progress"].width/2;
+				views["game-progress"].y = (game.screenheight/6);
+			}
 		}
 		
 		// view helpers

@@ -99,8 +99,14 @@ function OnCaptureUpdate(msDelta)
 	
 	if(state.lastcapture ~= state.capture) then
 		state.lastcapture = state.capture;
+
 		if(state.capture >= victory) then
+			SetUIProgress(1, "capturing");
 			Instancing:SendStateValue("victory", 2);
+		elseif(state.capture >= 0) then
+			SetUIProgress(state.capture / victory, "capturing");
+		else
+			SetUIProgress(-1, "capturing");
 		end
 	end
 	

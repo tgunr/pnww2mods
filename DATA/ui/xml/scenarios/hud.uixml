@@ -29,8 +29,7 @@
 	</view>
 	
 	<!-- COMPASS -->
-	<!--
-	<view id="compass" width="110" height="110" rright="6" rtop="6" aspectlimit="width"
+	<!-- view id="compass" width="110" height="110" rright="6" rtop="200" aspectlimit="width"
 			moveondrag="yes" acceptmouseclick="true" followall="true">
 		<view class="compass" src="ui/textures/compass_bg.bmp" x="5" y="5" width="100" height="100" frame="no" aspectlimit="width"/>
 		<caption label="N" x="0" height="10" rright="0" rtop="0" style="font-size: -1; color: #BFE2CE;"
@@ -41,8 +40,7 @@
 			acceptmouseclick="false" align="right"/>
 		<caption label="W" x="0" height="10" width="10" rtop="52" style="font-size: -1; color: #BFE2CE;"
 			acceptmouseclick="false" align="left"/>
-	</view>
-	-->
+	</view -->
 		
 	<!-- HUD SETUP -->
 	<script>
@@ -52,6 +50,7 @@
 		var objectives					= new Object();
 		var gameCycleTimer 		= new CycleTimer(1000);
 		var gameTime					= -1;
+		var gameTimeState			= 0;
 		
 		var killList							= new ListControl(findview("killList"));
 		var objectives					= findview("objectives");
@@ -162,6 +161,8 @@
 						formatted = ":0" + gameTime;
 					else
 						formatted = ":" + gameTime;
+						
+						gameTimeState = (gameTimeState == 0) ? 1 : 0;
 				}
 				else
 				{
@@ -172,6 +173,8 @@
 						formatted =  fminutes + ":0" + fseconds;
 					else
 						formatted =  fminutes + ":" + fseconds;
+					
+					gameTimeState = 0;
 				}
 				
 				setVisibility("game-timer", true);
@@ -185,6 +188,12 @@
 				views["game-timer"].x = cx - views["game-timer"].width/2;
 				views["game-timer"].y = cy - views["game-timer"].height/2;
 				*/
+				
+				// make it 
+				if(gameTimeState == 0)
+					views["game-timer"].setstyleproperty("color", "#FFFFFF");
+				else
+					views["game-timer"].setstyleproperty("color", "#FF0000");
 			}
 		}
 		
