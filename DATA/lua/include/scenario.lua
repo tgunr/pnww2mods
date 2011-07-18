@@ -264,7 +264,7 @@ end
 
 function LoadContent()
 	-- unload any previously loaded data
-	scenario.manager:UnloadContent();
+	-- scenario.manager:UnloadContent();
 	
 	-- now let's reload our content
 	if(state.config.content ~= nil) then
