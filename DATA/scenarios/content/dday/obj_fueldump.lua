@@ -149,6 +149,14 @@ if(true) then
 	-- command,effectname,worldx,worldy,worldz
 	-- smoke effects
 		
+		-- BUILDING FIRES
+		"emitter cratersmoke -193.02 -86.47 12",
+		"emitter cratersmoke 101.39 -70.24 8.41",
+		
+		
+		
+		
+		
 		-- SMOKING BARRELS
 
 		--"emitter hulksmoke -25.16 -97.95 8.75",
@@ -185,6 +193,16 @@ if(true) then
 		-- FIRES
 
 		"emitter smallfire 95.18 -27.96 8.85",
+		"emitter smallfire 349.78 264.83 5.94",
+		"emitter smallfire 67.26 -144.94 8.35",
+		"emitter smallfire -5.52 -111.84 8.5",
+		"emitter smallfire 96.85 -75.87 8.49",
+		
+		
+		
+		
+		
+		
 
 -- SOUNDS
 		
@@ -212,7 +230,21 @@ if(true) then
 	-- command name filename volume loop x y z mindist maxdist
 
 
-		-- "sound sounds/tank_burn.wav 1 1 29 -57 9 5 30",
+		"sound sounds/tank_burn.wav 1 1 350 265 6 5 30",
+		"sound sounds/tank_burn.wav 1 1 95 -28 9 5 30",
+		"sound sounds/tank_burn.wav 1 1 66 -148 9 5 30",
+		"sound sounds/tank_burn.wav 1 1 -5 -111 8 5 30",
+		"sound sounds/tank_burn.wav 1 1 97 -76 10 5 30",
+		
+		
+		
+
+		
+		"sound sounds/ambience/stream.wav 4 1 123 11 2 10 50",
+		"sound sounds/ambience/stream.wav 4 1 127 21 8 10 50",
+		"sound sounds/ambience/stream.wav 4 1 -26 -173 10 10 50",
+		"sound sounds/ambience/stream.wav 4 1 -245 -55 8 10 50",
+		
 
 	-- A LINE OF BOMBS (as if dropped from a plane)
 	-- command name ammo worldx1 worldy1 worldz1 worldx2 worldy2 worldz2
@@ -499,22 +531,24 @@ if(true) then
 
 	-- spawn masks
 		-- allied spawn list
-		"mask.1.1.0 alliedtroops us-assault",
-		"mask.1.1.0 alliedtroops us-smg",
-		"mask.1.1.0 alliedtroops us-bar",
-		"mask.1.1.0 alliedtroops us-bazooka 2",
-		"mask.1.1.0 alliedvehicles m4a2_us 2",
-		"mask.1.1.0 alliedvehicles m10_us 2",
+		"alliedtroops us-assault",
+		"alliedtroops us-smg",
+		"alliedtroops us-bar",
+		"alliedtroops us-bazooka 2",
+		"alliedvehicles m10 2",
+		"alliedvehicles m4a2  2",
+		--"alliedvehicles m4a2_us 2",
+		--"alliedvehicles m10_us 2",
 		
 		
 
 		-- axis spawn list
-		"mask.2.1.1 axistroops de-assault",
-		"mask.2.1.1 axistroops de-smg",
-		"mask.2.1.1 axistroops de-lmg",
-		"mask.2.1.1 axistroops de-pzschreck 2",
-		"mask.2.1.1 axisvehicles pzivg 4",
-		"mask.2.1.1 axisvehicles stug3b 4",
+		"axistroops de-assault",
+		"axistroops de-smg",
+		"axistroops de-lmg",
+		"axistroops de-pzschreck 2",
+		"axisvehicles pzivg 4",
+		"axisvehicles stug3b 4",
 	
 	
 		
