@@ -531,24 +531,24 @@ if(true) then
 
 	-- spawn masks
 		-- allied spawn list
-		"alliedtroops us-assault",
-		"alliedtroops us-smg",
-		"alliedtroops us-bar",
-		"alliedtroops us-bazooka 2",
-		"alliedvehicles m10 2",
-		"alliedvehicles m4a2  2",
-		--"alliedvehicles m4a2_us 2",
-		--"alliedvehicles m10_us 2",
+		"mask alliedtroops us-assault",
+		"mask alliedtroops us-smg",
+		"mask alliedtroops us-bar",
+		"mask alliedtroops us-bazooka 2",
+		"mask alliedvehicles m10 2",
+		"mask alliedvehicles m4a2  2",
+		--"mask alliedvehicles m4a2_us 2",
+		--"mask alliedvehicles m10_us 2",
 		
 		
 
 		-- axis spawn list
-		"axistroops de-assault",
-		"axistroops de-smg",
-		"axistroops de-lmg",
-		"axistroops de-pzschreck 2",
-		"axisvehicles pzivg 4",
-		"axisvehicles stug3b 4",
+		"mask axistroops de-assault",
+		"mask axistroops de-smg",
+		"mask axistroops de-lmg",
+		"mask axistroops de-pzschreck 2",
+		"mask axisvehicles pzivg 4",
+		"mask axisvehicles stug3b 4",
 	
 	
 		
