@@ -7,7 +7,7 @@ if(true) then
 		
     	-- special handling
 		-- type object shader x y z yaw
-		"river water1 riverrun_river 0 0 2 0",
+		"river water1 riverrun_river 0 0 2.5 0",
         -- command flt link x y z yaw
 		"terrain riverrun maintile 0 0 0 0",
         
@@ -85,6 +85,24 @@ if(true) then
 		"place munitions1 187.71 374.5 17.95 0 0 0 0 0 0 0",
 		"place crate 171.45 393.28 19.02 0 0 0 0 0 0 0",
 		"place crate 171.45 393.28 20.06 0 0 90 0 0 0 0",
+		"place guardtw1c 127.36 301.75 16.2 0 0 180 0 0 0 0",
+		"place dg_wire_barbed_apron	127.59 296.5 15.25 0 0 0 0 0 0",
+		"place dg_wire_barbed_apron	109.0 295.60 16.25 0 0 0 0 0 0",
+		"place dg_wire_barbed_apron	145.80 299 16.0 0 0 0 0 0 0",
+		"place sandbagwall_outside	129 297.89 15.4 0 0 -90 0 0 0",
+		"place sandbagwall_outside	132.5 297.89 15.4 0 0 -90 0 0 0",
+		"place sandbagwall_outside	125.3 297.89 15.4 0 0 -90 0 0 0",
+		"place sandbagwall_outside	115 297.89 15.8 0 5 -90 0 0 0",
+		"place ppo_ifp_001	152.79 307.51 17.1 10 0 180 0 0 0",
+		"place cratepile_outside 198 359.78 17.8 0 5 90 0 0 0",
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -93,7 +111,7 @@ if(true) then
 		"place vinbarn1 -215.19 -83.62 7.1 0 0 30 0 0 0 1",
 		"place haystack_outside -232.92 -84.24 6.45 0 0 0 0 0 0 0",
 		"place haystack_outside -241.63 -76.33 6.5 0 0 20 0 0 0 0",
-		"place haystack_outside -234.70 -57.90 6.1 0 0 -20 0 0 0 0",
+		--"place haystack_outside -234.70 -57.90 6.1 0 0 -20 0 0 0 0",
 		
 		"place barrelstack1_inside -217.60 -88.8 6.4 0 0 30 0 0 0 1",
 		
@@ -108,18 +126,23 @@ if(true) then
 	-- supply in town
 		"place usammodump msp 58.67 -152.23 8.1 0 0 0 0 0 0 0",
 		"strat usammodump us",
+		"place m4a2hulk 59.62 -147.5 8.35 0 0 100 0 0 0 0",
+		
+		
+		
 		
 	-- supply at petite ferme
 		"place deammodump msp -185.22 -91.64 6.95 0 0 0 0 0 0 0",
 		"strat deammodump de",
-		
+
+		"place instance_hulk1_dam -188.64 -99 6.9 0 0 0 0 0 0 0",		
 		
 		"place bel4 -75.06 -117.81 7.80 0 0 16 0 0 0 1",
 		"place bel6 -18.38 -147.54 8.28 0 0 200 0 0 0 1",
 		"place bel6 -10.87 -118.52 8.36 0 0 112 0 0 0 1",
 		"place bel6 -13.21 -151.75 8.18 0 0 290 0 0 0 1",
-		"place tanktrap -13.00 -153.00 7.78 0 0 -30 0 0 0 0",
-		"place trap -14.50 -154.50 7.74 0 0 15 0 0 0 0",
+		--"place tanktrap -13.00 -153.00 7.78 0 0 -30 0 0 0 0",
+		--"place tanktrap -14.50 -154.50 7.74 0 0 15 0 0 0 0",
 		"place boarding1 1.08 -141.00 8.55 0 0 105 0 0 0 0",
 		"place crate -5.00 -134.70 8.33 0 0 0 0 0 0 0",
 
@@ -160,16 +183,16 @@ if(true) then
 		"place crate 117.13 -48.03 7.98 0 0 120 0 0 0 0",
 		"place crate 110.25 -45.38 8.05 0 0 115 0 0 0 0",
 		"place bel3 137.70 -76.21 7.80 0 0 20 0 0 0 0",
-		"place boarding1 154.20 -92.90 8.00 0 0 18 0 0 0 0",
-		"place sandbagwall_outside 163.00 -85.20 7.46 0 1 -70 0 0 0 0",
-		"place sandbagwall_outside 166.00 -86.25 7.37 0 3 -70 0 0 0 0",
-		"place sandbagwall_outside 171.50 -86.00 7.51 0 -4 -70 0 0 0 0",
+		--"place boarding1 154.20 -92.90 8.00 0 0 18 0 0 0 0",
+		"place wall_outside 163.00 -85.20 7.46 0 1 -70 0 0 0 0",
+		--"place sandbagwall_outside 166.00 -86.25 7.37 0 3 -70 0 0 0 0",
+		--"place sandbagwall_outside 171.50 -86.00 7.51 0 -4 -70 0 0 0 0",
 		"place citybild1 187.64 -75.77 6.88 0 0 110 0 0 0 1",
 		"place cratepile_outside 183.50 -92.50 6.66 3 7 110 0 0 0 0",
 		"place oildrums_outside 125.78 -22.59 8.1 0 6 0 0 0 0 1",
 		"place truck_dam_outside 186.30 -89.93 6.56 0 6 180 0 0 0 0",
-		"place tanktrap 167.00 -85.00 7.55 0 0 0 0 0 0 0",
-		"place tanktrap 170.00 -86.93 7.61 0 -9 25 0 0 0 0",
+		--"place tanktrap 167.00 -85.00 7.55 0 0 0 0 0 0 0",
+		--"place tanktrap 170.00 -86.93 7.61 0 -9 25 0 0 0 0",
 		"place vinbarn1 103.34 -52.47 7.93 0 0 20 0 0 0 0",
 		"place wall03 116.40 -54.6 7.15 0 0 -75 0 0 0 0",
 		"place bel3 108.03 -48.65 8.01 0 0 290 0 0 0 0",
@@ -223,14 +246,19 @@ if(true) then
 		--"place cratepile_outside -22.70 -88.50 8.26 0 0 -70 0 0 0 0",
 		"place bel3 -25.56 -46.58 8.36 0 0 125 0 0 0 0",
 		"place oildrums_outside 95.27 -27.98 8.3 0 6 0 0 0 0 1",
+		"place oildrums_outside 67.16 -145.22 7.98 0 0 0 0 0 0 1",
+		"place oildrums_outside -5.84 -112.15 8.1 0 0 0 0 0 0 1",
+		"place oildrums_outside 96.88 -76.05 8.1 0 0 0 0 0 0 1",
+		
+		
 		
 		
 		"place bel6 -30.13 -68.99 7.84 0 -2 19 0 0 0 1",
 		"place bel6 -57.89 -84.67 8.35 0 0 22 0 0 0 1",
 		"place bel3 -65.45 -101.13 8.26 0 0 20 0 0 0 0",
-		"place sandbagwall_outside -46.00 -108.00 8.19 0 -1 -70 0 0 0 0",
-		"place sandbagwall_outside -53.50 -105.30 8.11 0 -1 -70 0 0 0 0",
-		"place sandbagwall_outside -62.00 -102.00 8.14 7 -1 -70 0 0 0 0",
+		--"place sandbagwall_outside -46.00 -108.00 8.19 0 -1 -70 0 0 0 0",
+		--"place sandbagwall_outside -53.50 -105.30 8.11 0 -1 -70 0 0 0 0",
+		--"place sandbagwall_outside -62.00 -102.00 8.14 7 -1 -70 0 0 0 0",
 		"place sandbagwall_outside -49.00 -118.00 8.13 0 -1 110 0 0 0 0",
 		"place sandbagwall_outside -36.80 -116.50 7.71 0 0 113 0 0 0 0",
 		"place sandbagwall_outside -32.50 -120.50 7.76 2 0 160 0 0 0 0",
@@ -242,8 +270,8 @@ if(true) then
 		
 		
 		"place truck_dam_outside 63.93 -53.93 8.15 0 0 0 0 0 0 0",
-		"place sandbagwall_outside -16.60 -157.00 7.59 5 0 25 0 0 0 0",
-		"place sandbagwall_outside -12.80 -150.00 7.95 0 -10 20 0 0 0 0",
+		--"place sandbagwall_outside -16.60 -157.00 7.59 5 0 25 0 0 0 0",
+		--"place sandbagwall_outside -12.80 -150.00 7.95 0 -10 20 0 0 0 0",
 		"place oildrums_outside -59.93 -92.93 8.45 0 0 75 0 0 0 1",
 		"place haystack_outside 112.48 -66.75 8.00 0 0 110 0 0 0 0",
 		"place haystack_outside 107.93 -115.93 8.43 0 0 110 0 0 0 0",
@@ -273,7 +301,7 @@ if(true) then
 		--"place tanktrap -78.01 -97.99 7.8 0 0 45 0 0 0 0",
 		--"place tanktrap -75.01 -98.40 8.0 0 -10 0 0 0 0 0",
 		"place dd_telegraph_07 42.00 -138.00 8.77 84 60 20 0 0 0 0",
-		"place dd_telegraph_07 165.00 -85.00 8 61 70 0 0 0 0 0",
+		--"place dd_telegraph_07 165.00 -85.00 8 61 70 0 0 0 0 0",
 		--"place instance_rockwall1 86.10 -14.35 6.5 -10 -5 60 0 0 0 0",
 		--"place instance_rockwall1 105.46 -3.96 6.7 -10 -5 60 0 0 0 0",
 		--"place instance_rockwall1 138.00 13.50 7.0 -3 0 105 0 0 0 0",
