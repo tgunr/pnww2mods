@@ -12,11 +12,11 @@ if(true) then
 
 	-- boundary name x y z
 
-        "boundary playarea 190995.13 3016049.28 142.00",
-		"boundary playarea 190889.14 3016049.59 142.00",
-		"boundary playarea 190889.23 3015922.34 142.00",
-		"boundary playarea 190984.46 3015916.46 142.00",
-		"boundary playarea 190994.97 3015927.81 142.00",
+        	"boundary playarea 190993.49 3016047.94 142.00",
+		"boundary playarea 190993.44 3015929.07 142.00",
+		"boundary playarea 190983.18 3015917.96 142.00",
+		"boundary playarea 190890.88 3015923.63 142.00",
+		"boundary playarea 190890.70 3016048.18 142.00",
 		
 
 -- DEFINE WHERE PLAYERS SPAWN
