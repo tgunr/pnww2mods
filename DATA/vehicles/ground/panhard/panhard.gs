@@ -14,8 +14,8 @@ setrangeanglemax 0.0
 ammotype sa34l72 3500
 
 ##Targeting "V"
-thinline -200 200 0 0
-thinline 200 200 0 0
+thinline -150 150 0 0
+thinline 150 150 0 0
 
 ##Range markers
 thinline 10 1 10 -5

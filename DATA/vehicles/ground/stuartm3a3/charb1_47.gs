@@ -21,8 +21,8 @@ range 0
 setrangeanglemin 0.0
 setrangeanglemax 4.0
 
-thinline -200 200 0 0
-thinline 200 200 0 0
+thinline -150 150 0 0
+thinline 150 150 0 0
 
 trianglefill -20 -1 -20 1 -28 0
 trianglefill 20 1 20 -1 28 0
