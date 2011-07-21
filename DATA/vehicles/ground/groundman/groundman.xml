@@ -206,6 +206,10 @@
 	<include file="us-assault.loadout.xml"/>
 </variant>
 
+<variant id="us-rifle" shape="us-assault" description="Rifleman" icon="Rifleman">
+	<include file="us-rifle.loadout.xml"/>
+</variant>
+
 <variant id="us-smg" shape="us-smg" description="Submachine Gunner" icon="SMG">
 	<include file="us-smg.loadout.xml"/>
 </variant>
