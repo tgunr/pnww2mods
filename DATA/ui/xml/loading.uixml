@@ -13,6 +13,7 @@
 		
 		var loadLog = findview("loadlog");
 		game.onloadevent = doLoadEvent;
+		game.neterror = onNetError;
 		
 		function initWin(win)
 		{
