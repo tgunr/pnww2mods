@@ -1,0 +1,17 @@
+# Copied from springfield1903 file (which is the 1903A4)
+# Springfield 1903A3 .30 cal (non sniper) 
+
+mass = 3.9
+firetype = singleshot
+rateoffire = 60
+dispersion = 0.1
+ammotype1 = 30-06m1ball
+#ammotype2 = 
+ghostrof = 60
+ghostammotype = 30-06m1ball
+cliprounds = 5
+reloadtime = 6
+
+# type of clip; used in the ui for clip name display 
+# possible values: na, clip, magazine, belt, reload 
+cliptype = clip
