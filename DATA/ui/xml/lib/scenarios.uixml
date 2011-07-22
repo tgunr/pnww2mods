@@ -133,10 +133,15 @@
 		{
 			//cprint("Creating new instance: " + category + "/" + map);
 			
+			var mapPack = loadCategory(category);
+			
+			if(mapPack != null && !scenarioPermission(mapPack.permission))
+				return scenarioError("notpermitted");
+			
 			if(game.player.client.createinstance(category, map))
 				return true;
 			
-			return false;
+			return scenarioError("creationfailed");
 		}
 		
 		function selectTeam(scenario, team)
@@ -287,6 +292,11 @@
 			
 			if(scenario == null || scenario.instance == null)// || !scenario.instance.running)
 				return scenarioError("badscenario");
+				
+			var category = loadCategory(scenario.instance.category);
+			
+			if(category != null && !scenarioPermission(category.permission))
+				return scenarioError("notpermitted");
 			
 			var maxplayers	= scenario.population.maxPlayers();
 			var team1count	= scenario.instance.allies;
@@ -319,6 +329,16 @@
 				return scenarioError("moreplayers");
 			
 			return true;
+		}
+		
+		function scenarioPermission(p)
+		{
+			// if no permission passed, allow access
+			if(p == null || p == "")
+				return true;
+			
+			// otherwise check access 
+			return game.haspermission(p);
 		}
 		
 		function scenarioError(code)

@@ -265,7 +265,7 @@
 			{
 				if(!canJoinScenario(scenario.content))
 				{
-					showOk('Scenario full!');
+					showOk(lastScenarioError);
 					return;
 				}
 				
@@ -411,7 +411,7 @@
 					var content			= loadScenario(id[1], id[2]);
 					
 					scenName.label 	= content.title.toUpperCase();
-					scenDesc.text 	= content.brief;
+					scenDesc.text 		= content.brief;
 					scenMap.src 		= "scenarios/terrain/" + content.terrain + "/map.bmp";
 				}
 				
@@ -458,6 +458,10 @@
 								break;
 							}
 						}
+					}
+					else
+					{
+						showOk(lastScenarioError);
 					}
 				}
 			}
