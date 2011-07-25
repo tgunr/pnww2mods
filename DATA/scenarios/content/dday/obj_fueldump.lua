@@ -68,9 +68,9 @@ if(true) then
 		"spawn alliedtroops 132.46 83.34 6.03 0",
 		
 		
-		"spawn alliedvehicles -342.47 383.86 23.25 90",
-		"spawn alliedvehicles -349.00 355.14 24.57 90",
-		"spawn alliedvehicles -350.65 348.94 24.09 90",
+		"spawn alliedvehicles -342.47 383.86 23.25 105",
+		"spawn alliedvehicles -349.00 355.14 24.57 105",
+		"spawn alliedvehicles -350.65 348.94 24.09 105",
 		
 		
 
@@ -164,7 +164,7 @@ if(true) then
 				
 		-- SMOKING CRATERS
 
-		--"emitter cratersmoke 173.40 -38.89 8",
+		"emitter cratersmoke 125.80 300.0 19.25",
 
 				
 		-- SMOKESCREEN
@@ -197,7 +197,7 @@ if(true) then
 		"emitter smallfire 67.26 -144.94 8.35",
 		"emitter smallfire -5.52 -111.84 8.5",
 		"emitter smallfire 96.85 -75.87 8.49",
-		
+		"emitter smallfire 125.80 300.0 19.25",
 		
 		
 		
@@ -235,6 +235,10 @@ if(true) then
 		"sound sounds/tank_burn.wav 1 1 66 -148 9 5 30",
 		"sound sounds/tank_burn.wav 1 1 -5 -111 8 5 30",
 		"sound sounds/tank_burn.wav 1 1 97 -76 10 5 30",
+		"sound sounds/tank_burn.wav 1 1 125 300 19 5 30",
+		
+		
+		
 		
 		
 		
@@ -535,10 +539,10 @@ if(true) then
 		"mask alliedtroops us-smg",
 		"mask alliedtroops us-bar",
 		"mask alliedtroops us-bazooka 2",
-		"mask alliedvehicles m10 2",
-		"mask alliedvehicles m4a2  2",
-		--"mask alliedvehicles m4a2_us 2",
-		--"mask alliedvehicles m10_us 2",
+		--"mask alliedvehicles m10 2",
+		--"mask alliedvehicles m4a2  2",
+		"mask alliedvehicles m4a2_us 2",
+		"mask alliedvehicles m10_us 2",
 		
 		
 
