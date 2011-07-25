@@ -122,6 +122,7 @@ if(true) then
 		"emitter smokescreen 55.05 174.74 7.84",
 		"emitter smokescreen 15.26 118.73 6.35",
 		"emitter smokescreen 278.33 248.17 2.96",
+		"emitter smokescreen 261.35 227.52 4.0",
 				
 		-- SMOKING VEHICLES
 		
@@ -143,7 +144,7 @@ if(true) then
 		-- FIRES
 
 		"emitter smallfire 95.18 -27.96 8.85",
-		"emitter smallfire 261.35 227.52 4.0",
+		
 		
 -- SOUNDS
 		
