@@ -111,7 +111,11 @@
 	
 	<!-- MINIMAP -->
 	<view id="kenny" width="175" height="165" rright="6" rtop="6" frame="no" aspectlimit="width"
-		moveondrag="yes" acceptmouseclick="true" ondrag="saveCustomPosition(this); this.moving = true;" followall="true">
+		moveondrag="yes" acceptmouseclick="true" ondrag="saveCustomPosition(this); this.moving = true;" followall="true"
+		style="background-color: #00000000; 
+				border-width: 4;
+				border-size-top: 14;
+				border-size-bottom: 4;">
 		<!-- order of these child views is important: map, frame, labels -->
 		<view class="mapview" id="minimap" x="0" y="0" height="152" rright="0" acceptsfocus="no" style="background-color: #00000000;"
 			scale=".1" minscale=".005" maxscale="1.6" scalebar="off" acceptmouseclick="true" followall="true" alpha=".8" navscale=".5">
@@ -122,7 +126,7 @@
 			<layer type="players"/>
 			<object type="player" size=".6" navring="on" arrowscale=".07" arrowradius=".37"/>
 		</view>
-		<view id="kennyframe" x="0" y="0" rright="0" rtop="0" frame="no" moveondrag="no" acceptmouseclick="false"
+		<view id="kennyframe" x="0" y="0" rright="0" rtop="0" frame="yes" moveondrag="no" acceptmouseclick="false"
 			style="background-color: #00000000; 
 				border-top: ui/textures/hud/header.bmp;
 				border-sides: ui/textures/hud/border_side.bmp;
@@ -179,7 +183,6 @@
 		
 		// minimap vars
 		var scaleTimer 					= new CycleTimer(250);
-		//var mapScale					= kenny.findview("minimapscale");
 		var kennyOn					= game.getpref("view.kenny.visible", 0, true);
 		
 		function initDefaultHud(hud)
@@ -290,7 +293,7 @@
 					setVisibility("primary", true);
 					
 					// set name
-					setLabel("primary-name", me.primaryammoname);
+					views["primary-name"].label = me.primaryammoname;
 					
 					// update ammo
 					updateVehicleAmmo(views["primary"]);
@@ -307,7 +310,7 @@
 					setVisibility("secondary", true);
 					
 					// set name
-					setLabel("secondary-name", me.secondaryammoname);
+					views["secondary-name"].label = me.secondaryammoname;
 					
 					// update ammo
 					updateVehicleAmmo(views["secondary"]);
@@ -330,8 +333,8 @@
 		{
 			views["minimap"].position = me.position;
 			
-			//if(scaleTimer.run())
-			//	mapScale.label = views["minimap"].mapscale;
+			if(scaleTimer.run())
+				views["minimapscale"].label = views["minimap"].mapscale;
 		}
 		
 		// widgets are top level views
@@ -382,7 +385,7 @@
 			var ammoView 	= weapon.findview(weapon.id + "-ammo");
 			var clipView 			= weapon.findview(weapon.id + "-clips");
 			
-			//setLabel("primary-label", primaryLabel.label = getlocstring('hud.primary.weapon') + ((range > 0) ? ' - ' + range + 'm': '');
+			views["primary-label"].label = getlocstring('hud.primary.weapon') + ((range > 0) ? ' - ' + range + 'm': '');
 			
 			var progress = false;
 			

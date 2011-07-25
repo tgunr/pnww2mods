@@ -8,9 +8,11 @@
 	
 	function initHUDObject(v, c)
 	{
+		//game.consoleprint("INITING HUD WAYPOINT: " + label);
 		display = v.findview("display");
 		
-		if(label == null)
+		//game.consoleprint("Adding loc string for waypoint!");
+		if(!game.scenario)
 		{
 			var loc = v.id.split("-");
 			label = getlocstring("hud.waypoints." + loc[1]);

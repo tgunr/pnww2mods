@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
-<view id="hud-origin" class="target" x="0" y="0" width="1024" height="768" layer="-10" acceptsmouse='false' onshow="initHUDObject(this)" acceptsmouseclick='false'>
+<view id="hud-origin" class="target" x="0" y="0" width="1024" height="768" layer="-10" acceptsmouse='false' onshow="initHUDObject(this, null)" acceptsmouseclick='false'>
 	<include file="lib/hudwp.uixml"/>
 	<text  id="display" x="0" y="0" height="15" width="21" acceptsmouseclick='false'
 		style="color: #FFFFFF; shadow-type: point; shadow-color: #00000088; border-width: 2;"/>
