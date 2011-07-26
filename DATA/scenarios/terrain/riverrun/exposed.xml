@@ -18,21 +18,21 @@
   </trees>
   <grass>
     <!-- The higher the weight, the lest dense -->
-    <greenweight>10</greenweight>
+    <greenweight>5</greenweight>
     <blueweight>20</blueweight>
-    <redweight>1</redweight>
+    <redweight>0</redweight>
     <redtypeint>0 1 2 3</redtypeint>
     <greentypeint>4 5 6 7</greentypeint>
     <bluetypeint>8 9 10 11</bluetypeint>
     <!-- Color clamped between 0 - 255 -->
     <!-- Example: redclamp 100 will clamp red mask grass to red color >= 100 -->
     <!-- The higher the clamp, the less number of blades placed-->
-    <redclamp>200</redclamp>
-    <grnclamp>200</grnclamp>
+    <redclamp>175</redclamp>
+    <grnclamp>175</grnclamp>
     <bluclamp>200</bluclamp>
     <!-- default is 1.0 -->
-    <redscale>0.55</redscale>
-    <grnscale>1.05</grnscale>
+    <redscale>0.3</redscale>
+    <grnscale>0.85</grnscale>
     <bluscale>1.3</bluscale>
   </grass>
   <!-- Clutter that uses FLTs -->
@@ -40,19 +40,19 @@
     <!-- weight the higher the number the less dense -->
     <redweight>5</redweight>
     <greenweight>60</greenweight>
-    <blueweight>90</blueweight>
+    <blueweight>1</blueweight>
     <!-- Color clamped between 0 - 255 -->
     <redclamp>90</redclamp>
     <grnclamp>240</grnclamp>
-    <bluclamp>240</bluclamp>
+    <bluclamp>10</bluclamp>
     <!-- clutter FLT object for specific color -->
     <redtypestring>blumaine1c</redtypestring>
     <greentypestring>haystack_outside</greentypestring>
     <bluetypestring>null</bluetypestring>
     <!--== random rotate (-# #) -->
-    <redparams>45</redparams>
-    <greenparams>0</greenparams>
-    <blueparams>0</blueparams>
+    <redparams>300</redparams>
+    <greenparams>300</greenparams>
+    <blueparams>300</blueparams>
   </objectclutter>
   <fogparams>
     <start>-50.0</start>
@@ -61,11 +61,11 @@
   <terraintile name ="maintile">
     <shader>multimaskshadow</shader>
     <layer0 name="layer0.dds">
-      <multitexture>128</multitexture>
+      <multitexture>512</multitexture>
       <material>grass</material>
     </layer0>
     <layer1 name="layer1.dds">
-      <multitexture>215</multitexture>
+      <multitexture>200</multitexture>
       <material>rock</material>
     </layer1>
     <layer2 name="layer2.dds">
@@ -73,7 +73,7 @@
       <material>dirt</material>
     </layer2>
     <layer3 name="layer3.dds">
-      <multitexture>512</multitexture>
+      <multitexture>1000</multitexture>
       <material>dirt</material>
     </layer3>
     <blendmask>masks.dds</blendmask>

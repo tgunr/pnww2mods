@@ -13,6 +13,34 @@ if(true) then
 
 	-- command,filename,worldx,worldy,worldz,roll,pitch,yaw,scalex,scaley,scalez,damage
 
+		
+		"place rubblepile01 176.59 -72.88 7.7 0 0 0 0 0 0 0",
+		"place rubblepile01 97.68 -25.76 8.0 0 0 0 0 0 0 0",
+		"place rubblepile01 98.60 -32.80 8.65 0 4 0 0 0 0 0",
+		"place rubblepile01 99.78 -76.39 8.0 0 0 0 0 0 0 0",
+		"place rubblepile01 97.45 -68.91 8.6 0 0 0 0 0 0 0",
+		"place rubblepile01 95.78 -72.38 8.20 0 -1 0 0 0 0 0",
+		"place rubblepile01 72.96 -76.27 8.5 -6 -7 0 0 0 0 0",
+		"place rubblepile01 69.64 -86.99 8.30 0 0 0 0 0 0 0",
+		"place rubblepile01 23.83 -63.83 9.1 -1 -4 0 0 0 0 0",
+		"place rubblepile01 -14.23 -41.20 7.85 0 0 0 0 0 0 0",
+		"place rubblepile01 -15.16 -39.19 7.85 0 0 0 0 0 0 0",
+		"place rubblepile01 32.67 -38.42 7.95 0 0 0 0 0 0 0",
+		"place rubblepile01 -16.06 -71.55 8.30 0 0 0 0 0 0 0",
+		"place rubblepile01 -54.59 -81.73 8.4 0 0 0 0 0 0 0",
+		"place rubblepile01 -7.61 -120.33 8.2 0 0 0 0 0 0 0",
+		"place rubblepile01 -10.74 -121.23 8.90 0 0 0 0 0 0 0",
+		"place rubblepile01 -8.03 -118.67 8.15 0 0 0 0 0 0 0",
+		"place rubblepile01 -14.5 -147.19 8.25 0 0 0 0 0 0 0",
+		"place rubblepile01 -14.92 -149.40 8.21s 0 0 0 0 0 0 0",
+		
+		
+		
+		
+		
+		
+		
+		
 		"place bel4 -75.06 -117.81 7.80 0 0 16 0 0 0 1",
 		"place bel6 -18.38 -147.54 8.28 0 0 200 0 0 0 1",
 		"place bel6 -10.87 -118.52 8.36 0 0 112 0 0 0 1",
