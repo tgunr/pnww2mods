@@ -16,6 +16,13 @@ if(true) then
 	-- placed objects
 	-- command,filename,worldx,worldy,worldz,roll,pitch,yaw,scalex,scaley,scalez,damage
 
+		
+		"place rubblepile01 176.59 -72.88 7.7 0 0 0 0 0 0 0",
+		"place rubblepile01 97.68 -25.76 8.0 0 0 0 0 0 0 0",
+		
+		
+		
+		
 		"place newcloister 73.94 -92.81 8.36 0 0 22 0 0 0 1",
 		"place bel1 18.75 -91.94 8.38 0 0 115 0 0 0 0",
 		"place citybild2 27.72 -64.72 8.29 0 0 113 0 0 0 1",
