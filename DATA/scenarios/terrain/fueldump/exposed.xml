@@ -36,23 +36,23 @@
     <grnscale>1.2</grnscale>
     <bluscale>1.8</bluscale>
   </grass>
-  <terraintile name ="maintile">
+ <terraintile name ="maintile">
     <shader>multimaskshadow</shader>
     <layer0 name="layer0.dds">
-      <multitexture>128</multitexture>
-      <material>grass1</material>
+      <multitexture>512</multitexture>
+      <material>grass</material>
     </layer0>
     <layer1 name="layer1.dds">
-      <multitexture>400</multitexture>
-      <material>rubble</material>
+      <multitexture>200</multitexture>
+      <material>rock</material>
     </layer1>
     <layer2 name="layer2.dds">
       <multitexture>512</multitexture>
-      <material>dirt01</material>
+      <material>dirt</material>
     </layer2>
     <layer3 name="layer3.dds">
-      <multitexture>512</multitexture>
-      <material>tent</material>
+      <multitexture>1000</multitexture>
+      <material>dirt</material>
     </layer3>
     <blendmask>masks.dds</blendmask>
   </terraintile>

@@ -15,6 +15,26 @@ if(true) then
 
 	-- command,filename,worldx,worldy,worldz,roll,pitch,yaw,scalex,scaley,scalez,damage
 
+	
+		"place rubblepile01 176.59 -72.88 7.7 0 0 0 0 0 0 0",
+		"place rubblepile01 97.68 -25.76 8.0 0 0 0 0 0 0 0",
+		"place rubblepile01 98.60 -32.80 8.65 0 4 0 0 0 0 0",
+		"place rubblepile01 99.78 -76.39 8.0 0 0 0 0 0 0 0",
+		"place rubblepile01 97.45 -68.91 8.6 0 0 0 0 0 0 0",
+		"place rubblepile01 95.78 -72.38 8.20 0 -1 0 0 0 0 0",
+		"place rubblepile01 72.96 -76.27 8.5 -6 -7 0 0 0 0 0",
+		"place rubblepile01 69.64 -86.99 8.30 0 0 0 0 0 0 0",
+		"place rubblepile01 23.83 -63.83 9.1 -1 -4 0 0 0 0 0",
+		"place rubblepile01 -14.23 -41.20 7.85 0 0 0 0 0 0 0",
+		"place rubblepile01 -15.16 -39.19 7.85 0 0 0 0 0 0 0",
+		"place rubblepile01 32.67 -38.42 7.95 0 0 0 0 0 0 0",
+		"place rubblepile01 -16.06 -71.55 8.30 0 0 0 0 0 0 0",
+		"place rubblepile01 -54.59 -81.73 8.4 0 0 0 0 0 0 0",
+		"place rubblepile01 -7.61 -120.33 8.2 0 0 0 0 0 0 0",
+		"place rubblepile01 -10.74 -121.23 8.90 0 0 0 0 0 0 0",
+		"place rubblepile01 -8.03 -118.67 8.15 0 0 0 0 0 0 0",
+		"place rubblepile01 -14.5 -147.19 8.25 0 0 0 0 0 0 0",
+		"place rubblepile01 -14.92 -149.40 8.21s 0 0 0 0 0 0 0",
 		
 	
 	
@@ -85,7 +105,7 @@ if(true) then
 		"place munitions1 187.71 374.5 17.95 0 0 0 0 0 0 0",
 		"place crate 171.45 393.28 19.02 0 0 0 0 0 0 0",
 		"place crate 171.45 393.28 20.06 0 0 90 0 0 0 0",
-		"place guardtw1c 127.36 301.75 16.2 0 0 180 0 0 0 0",
+		"place guardtw1c 127.36 301.75 16.2 0 0 180 0 0 0 1",
 		"place dg_wire_barbed_apron	127.59 296.5 15.25 0 0 0 0 0 0",
 		"place dg_wire_barbed_apron	109.0 295.60 16.25 0 0 0 0 0 0",
 		"place dg_wire_barbed_apron	145.80 299 16.0 0 0 0 0 0 0",
@@ -205,9 +225,9 @@ if(true) then
 		"place boarding1 2.29 -126.075 8.75 0 0 18 0 0 0 0",
 		--"place cratepile_outside 126.50 -31.60 7.83 0 0 200 0 0 0 0",
 		"place bel1 120.39 -16.04 7.89 0 0 20 0 0 0 1",
-		"place sandbagwall_outside 136.25 -21.00 7.59 -5 0 93 0 0 0 0",
-		"place sandbagwall_outside 139.50 -22.25 7.58 0 0 -50 0 0 0 0",
-		"place sandbagwall_outside 141.00 -26.00 7.50 0 0 0 0 0 0 0",
+		--"place sandbagwall_outside 136.25 -21.00 7.59 -5 0 93 0 0 0 0",
+		--"place sandbagwall_outside 139.50 -22.25 7.58 0 0 -50 0 0 0 0",
+		--"place sandbagwall_outside 141.00 -26.00 7.50 0 0 0 0 0 0 0",
 		-- "place oildrums_outside 135.50 -23.00 8.08 0 0 30 0 0 0 1",
 		"place citybild2 99.74 -29.71 7.68 0 2 113 0 0 0 1",
 		"place wall02 87.70 -25.50 6.58 0 0 19 0 0 0 0",
@@ -276,9 +296,9 @@ if(true) then
 		"place haystack_outside 112.48 -66.75 8.00 0 0 110 0 0 0 0",
 		"place haystack_outside 107.93 -115.93 8.43 0 0 110 0 0 0 0",
 		"place haystack_outside 109.93 -109.93 8.52 0 0 110 0 0 0 0",
-		--"place cratepile_outside 50.93 -40.93 8.21 0 0 0 0 0 0 0",
-		--"place cratepile_outside 46.93 -54.93 7.82 0 0 110 0 0 0 0",
-		--"place cratepile_outside 97.93 -85.93 8.22 0 0 25 0 0 0 0",
+		"place cratepile_outside 50.93 -40.93 8.21 0 0 0 0 0 0 0",
+		"place cratepile_outside 46.93 -54.93 7.82 0 0 110 0 0 0 0",
+		"place cratepile_outside 97.93 -85.93 8.22 0 0 25 0 0 0 0",
 		--"place crates1c 204.50 -15.50 7.36 0 0 25 0 0 0 0",
 		--"place cratepile_outside 171.00 -12.00 7.86 0 0 0 0 0 0 0",
 		--"place cratepile_outside 161.00 -3.00 7.92 0 0 0 0 0 0 0",
@@ -341,7 +361,7 @@ if(true) then
 		--"place crate 61.54 -89.90 27.15 0 0 30 0 0 0 0",
 
 		
-		--"place cratepile_outside 170.50 -68.02 7.85 0 0 30 0 0 0 0",
+		"place cratepile_outside 8.05 -108.83 8.16 0 0 30 0 0 0 0",
 
 		
 		
