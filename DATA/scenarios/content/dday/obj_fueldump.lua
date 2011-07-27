@@ -430,6 +430,10 @@ if(true) then
 
 		"clone bedford1 bedford 134.51 81 7.2 0 0 100",
 		"clone bedford1 bedford 135.82 84.95 7.1 0 0 100",
+		"clone bedford1 bedford 148.79 76.60 7.9 5 0 -150",
+		
+		
+		
 		
 		"clone oplbltz -44.31 -241.60 17.25 0 4 10",
 		
@@ -471,7 +475,7 @@ if(true) then
 		"alert onspawn onspawn.moveout 1",
 		--"alert.1 toaxisspawn toaxisspawn 60",
 		--"alert.2 toalliedspawn toalliedspawn 60",
-		"alert.2 depotcapturem depotcapturem 5",
+		"alert depotcapturem depotcapturem 5",
 
 		"alert playarea playarea 10",
 		"message.1 axiscapon axiscapon friendly 1",
@@ -538,7 +542,7 @@ if(true) then
 		"mask alliedtroops us-assault",
 		"mask alliedtroops us-smg",
 		"mask alliedtroops us-bar",
-		"mask alliedtroops us-bazooka 2",
+		"mask alliedtroops us-bazooka 3",
 		--"mask alliedvehicles m10 2",
 		--"mask alliedvehicles m4a2  2",
 		"mask alliedvehicles m4a2_us 2",
@@ -550,9 +554,9 @@ if(true) then
 		"mask axistroops de-assault",
 		"mask axistroops de-smg",
 		"mask axistroops de-lmg",
-		"mask axistroops de-pzschreck 2",
-		"mask axisvehicles pzivg 4",
-		"mask axisvehicles stug3b 4",
+		"mask axistroops de-pzschreck 3",
+		"mask axisvehicles pzivg 3",
+		"mask axisvehicles stug3g 5",
 	
 	
 		
@@ -567,7 +571,7 @@ if(true) then
 				
 		-- "vehicle bridgecapture1 2 0 0 0",
 		-- "vehicle toaxisspawn 2 0 0 0",
-		-- "vehicle toalliedspawn 4 0 0 0",
+	"mask depotcapturem 4 2 0 0",
 		-- "vehicle allieswrongway 2 0 0 0",
 		
 	-- objective masks
