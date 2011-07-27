@@ -24,7 +24,7 @@
 			onshow="setHelp(getlocstring('persona.selecttab.help')); tplTab()" tip="${persona.selecttab.tip}">
 			<view id="left-pane" x="18" y="18" width="444" height="411" onupdate="updateStatus(false)">
 				
-				<view x="10" rtop="20" rright="10" height="50">
+				<view x="10" rtop="10" rright="10" height="50">
 					<caption label="${persona.selecttab.header}" x="0" rtop="0" rright="0" height="20" style="color: #BFE2CE; font-size: +2;"/>
 					<image src="ui/textures/test/horiz_underline.bmp" x="0" rtop="15" rright="0" height="12"/>
 				</view>
@@ -32,58 +32,78 @@
 					persona blocks are not translated because they
 					get updated below with real translations
 				-->
-				<view id="country0" x="10" rtop="50" rright="10" height="100">
-					<image id="flag" src="ui/textures/test/british_flag.bmp" x="0" rtop="30" width="50" height="50"/>
-					<caption id="header" label="BRITISH PERSONAS" x="70" rtop="10" rright="10" height="20" style="color: #BFE2CE; font-size: +2;"/>
-					<caption id="branch0" label="ARMY" x="90" rtop="30" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
+				<view id="country3" x="10" rtop="40" rright="10" height="100">
+					<image id="flag" src="ui/textures/test/american_flag.bmp" x="0" rtop="10" width="60" height="60"/>
+					<caption id="header" label="AMERICAN PERSONAS" x="70" rtop="10" rright="10" height="20" style="color: #BFE2CE; font-size: +0;"/>
+					<caption id="branch0" label="ARMY" x="90" rtop="30" rright="10" height="20" style="color: #FFFFFF; font-size: -1;"/>
 					<image id="lock0" x="75" rtop="32" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
-					<caption id="status0" label="Active Duty" x="90" rtop="30" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
+					<caption id="status0" label="Active Duty" x="90" rtop="30" rright="10" height="20" style="color: #00FF00; font-size: -1;" align="right"
 						onclick="selectPersona(0, false)" ondblclick="selectPersona(0, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 0)"/>
 					
-					<caption id="branch1" label="AIR FORCE" x="90" rtop="50" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
+					<caption id="branch1" label="AIR FORCE" x="90" rtop="50" rright="10" height="20" style="color: #FFFFFF; font-size: -1;"/>
 					<image id="lock1" x="75" rtop="52" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
-					<caption id="status1" label="Active Duty" x="90" rtop="50" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
+					<caption id="status1" label="Active Duty" x="90" rtop="50" rright="10" height="20" style="color: #00FF00; font-size: -1;" align="right"
 						onclick="selectPersona(1, false)" ondblclick="selectPersona(1, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 1)"/>
 					
-					<caption id="branch2" label="NAVY" x="90" rtop="70" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
+					<caption id="branch2" label="NAVY" x="90" rtop="70" rright="10" height="20" style="color: #FFFFFF; font-size: -1;"/>
 					<image id="lock2" x="75" rtop="72" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
-					<caption id="status2" label="Active Duty" x="90" rtop="70" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
+					<caption id="status2" label="Active Duty" x="90" rtop="70" rright="10" height="20" style="color: #00FF00; font-size: -1;" align="right"
 						onclick="selectPersona(2, false)" ondblclick="selectPersona(2, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 2)"/>
 				</view>
 				
-				<view id="country1" x="10" rtop="150" rright="10" height="100">
-					<image id="flag" src="ui/textures/test/french_flag.bmp" x="0" rtop="30" width="50" height="50"/>
-					<caption id="header" label="FRENCH PERSONAS" x="70" rtop="10" rright="10" height="20" style="color: #BFE2CE; font-size: +2;"/>
-					<caption id="branch0" label="ARMY" x="90" rtop="30" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
+				<view id="country0" x="10" rtop="130" rright="10" height="100">
+					<image id="flag" src="ui/textures/test/british_flag.bmp" x="0" rtop="10" width="60" height="60"/>
+					<caption id="header" label="BRITISH PERSONAS" x="70" rtop="10" rright="10" height="20" style="color: #BFE2CE; font-size: +0;"/>
+					<caption id="branch0" label="ARMY" x="90" rtop="30" rright="10" height="20" style="color: #FFFFFF; font-size: -1;"/>
 					<image id="lock0" x="75" rtop="32" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
-					<caption id="status0" label="Active Duty" x="90" rtop="30" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
-						onclick="selectPersona(3, false)" ondblclick="selectPersona(3, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 3)"/>
-					<caption id="branch1" label="AIR FORCE" x="90" rtop="50" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
+					<caption id="status0" label="Active Duty" x="90" rtop="30" rright="10" height="20" style="color: #00FF00; font-size: -1;" align="right"
+						onclick="selectPersona(0, false)" ondblclick="selectPersona(0, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 0)"/>
+					
+					<caption id="branch1" label="AIR FORCE" x="90" rtop="50" rright="10" height="20" style="color: #FFFFFF; font-size: -1;"/>
 					<image id="lock1" x="75" rtop="52" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
-					<caption id="status1" label="Active Duty" x="90" rtop="50" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
-						onclick="selectPersona(4, false)" ondblclick="selectPersona(4, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 4)"/>
-					<caption id="branch2" label="NAVY" x="90" rtop="70" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
+					<caption id="status1" label="Active Duty" x="90" rtop="50" rright="10" height="20" style="color: #00FF00; font-size: -1;" align="right"
+						onclick="selectPersona(1, false)" ondblclick="selectPersona(1, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 1)"/>
+					
+					<caption id="branch2" label="NAVY" x="90" rtop="70" rright="10" height="20" style="color: #FFFFFF; font-size: -1;"/>
 					<image id="lock2" x="75" rtop="72" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
-					<caption id="status2" label="Active Duty" x="90" rtop="70" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
+					<caption id="status2" label="Active Duty" x="90" rtop="70" rright="10" height="20" style="color: #00FF00; font-size: -1;" align="right"
+						onclick="selectPersona(2, false)" ondblclick="selectPersona(2, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 2)"/>
+				</view>
+				
+				<view id="country1" x="10" rtop="220" rright="10" height="100">
+					<image id="flag" src="ui/textures/test/french_flag.bmp" x="0" rtop="10" width="60" height="60"/>
+					<caption id="header" label="FRENCH PERSONAS" x="70" rtop="10" rright="10" height="20" style="color: #BFE2CE; font-size: +0;"/>
+					<caption id="branch0" label="ARMY" x="90" rtop="30" rright="10" height="20" style="color: #FFFFFF; font-size: -1;"/>
+					<image id="lock0" x="75" rtop="32" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
+					<caption id="status0" label="Active Duty" x="90" rtop="30" rright="10" height="20" style="color: #00FF00; font-size: -1;" align="right"
+						onclick="selectPersona(3, false)" ondblclick="selectPersona(3, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 3)"/>
+					<caption id="branch1" label="AIR FORCE" x="90" rtop="50" rright="10" height="20" style="color: #FFFFFF; font-size: -1;"/>
+					<image id="lock1" x="75" rtop="52" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
+					<caption id="status1" label="Active Duty" x="90" rtop="50" rright="10" height="20" style="color: #00FF00; font-size: -1;" align="right"
+						onclick="selectPersona(4, false)" ondblclick="selectPersona(4, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 4)"/>
+					<caption id="branch2" label="NAVY" x="90" rtop="70" rright="10" height="20" style="color: #FFFFFF; font-size: -1;"/>
+					<image id="lock2" x="75" rtop="72" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
+					<caption id="status2" label="Active Duty" x="90" rtop="70" rright="10" height="20" style="color: #00FF00; font-size: -1;" align="right"
 						onclick="selectPersona(5, false)" ondblclick="selectPersona(5, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 5)"/>
 				</view>
 
-				<view id="country2" x="10" rtop="250" rright="10" height="100">
-					<image id="flag" src="ui/textures/test/german_flag.bmp" x="0" rtop="30" width="50" height="50"/>
-					<caption id="header" label="GERMAN PERSONAS" x="70" rtop="10" rright="10" height="20" style="color: #BFE2CE; font-size: +2;"/>
-					<caption id="branch0" label="ARMY" x="90" rtop="30" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
+				<view id="country2" x="10" rtop="310" rright="10" height="100">
+					<image id="flag" src="ui/textures/test/german_flag.bmp" x="0" rtop="10" width="60" height="60"/>
+					<caption id="header" label="GERMAN PERSONAS" x="70" rtop="10" rright="10" height="20" style="color: #BFE2CE; font-size: +0;"/>
+					<caption id="branch0" label="ARMY" x="90" rtop="30" rright="10" height="20" style="color: #FFFFFF; font-size: -1;"/>
 					<image id="lock0" x="75" rtop="32" width="16" height="16" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
-					<caption id="status0" label="Active Duty" x="90" rtop="30" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
+					<caption id="status0" label="Active Duty" x="90" rtop="30" rright="10" height="20" style="color: #00FF00; font-size: -1;" align="right"
 						onclick="selectPersona(6, false)" ondblclick="selectPersona(6, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 6)"/>
-					<caption id="branch1" label="AIR FORCE" x="90" rtop="50" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
+					<caption id="branch1" label="AIR FORCE" x="90" rtop="50" rright="10" height="20" style="color: #FFFFFF; font-size: -1;"/>
 					<image id="lock1" x="75" rtop="52" width="16" height="16" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
-					<caption id="status1" label="Active Duty" x="90" rtop="50" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
+					<caption id="status1" label="Active Duty" x="90" rtop="50" rright="10" height="20" style="color: #00FF00; font-size: -1;" align="right"
 						onclick="selectPersona(7, false)" ondblclick="selectPersona(7, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 7)"/>
-					<caption id="branch2" label="NAVY" x="90" rtop="70" rright="10" height="20" style="color: #FFFFFF; font-size: +1;"/>
+					<caption id="branch2" label="NAVY" x="90" rtop="70" rright="10" height="20" style="color: #FFFFFF; font-size: -1;"/>
 					<image id="lock2" x="75" rtop="72" width="16" height="16" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
-					<caption id="status2" label="Active Duty" x="90" rtop="70" rright="10" height="20" style="color: #00FF00; font-size: +1;" align="right"
+					<caption id="status2" label="Active Duty" x="90" rtop="70" rright="10" height="20" style="color: #00FF00; font-size: -1;" align="right"
 						onclick="selectPersona(8, false)" ondblclick="selectPersona(8, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 8)"/>
 				</view>
+				
 			</view>
 			<include file="widgets/divider.uixml"/>
 			<view id="right-pane" x="468" y="18" width="444" height="411">
@@ -279,7 +299,7 @@
 
 			setWelcomed();
 
-			for(var c = 0; c < 3; c++)
+			for(var c = 0; c < 4; c++)
 			{
 				var country = findview("country" + c);
 
@@ -445,7 +465,7 @@
 		{
 			//consoleprint("Initing personas\n");
 			
-			personas = new Array(9);
+			personas = new Array(12);
 
 			var updateInterval 	= 30;
 			var activeMission	= client.activemission;
@@ -455,10 +475,6 @@
 			{
 				var index	= 0;
 				var persona = sortedPersonas[p];
-				
-				// no US persona selection for now
-				if(persona.country.id == 2)
-					continue;
 				
 				//consoleprint("Doing " + persona.country.name + "/" + persona.branch + ": " + persona.lastused + "\n");
 				
