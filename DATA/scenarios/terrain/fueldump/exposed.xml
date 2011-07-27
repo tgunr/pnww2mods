@@ -13,7 +13,7 @@
     <!-- Example: redclamp 240 will clamp red mask trees to red color >= 240 -->
     <!-- The higher the clamp, the less number of trees placed-->
     <redclamp>200</redclamp>
-    <grnclamp>200</grnclamp>
+    <grnclamp>150</grnclamp>
     <bluclamp>200</bluclamp>
   </trees>
   <grass>
@@ -51,7 +51,7 @@
       <material>dirt</material>
     </layer2>
     <layer3 name="layer3.dds">
-      <multitexture>1000</multitexture>
+      <multitexture>512</multitexture>
       <material>dirt</material>
     </layer3>
     <blendmask>masks.dds</blendmask>
@@ -66,7 +66,7 @@
     <blueweight>10</blueweight>
     <!-- Color clamped between 0 - 255 -->
     <redclamp>200</redclamp>
-    <grnclamp>150</grnclamp>
+    <grnclamp>180</grnclamp>
     <bluclamp>200</bluclamp>
     <!-- clutter FLT object for specific color -->
     <redtypestring>blumaine1c</redtypestring>

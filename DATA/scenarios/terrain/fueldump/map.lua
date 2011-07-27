@@ -91,9 +91,18 @@ if(true) then
 	-- american infantry spawn
 		"place crate -14.56 -251.09 16.4 0 0 25 0 0 0",
 		"place crate -14.56 -251.6 17.4 0 0 0 0 0 0",
-		"place cratepile_outside -17.86 -246.06 16.3 0 0 30 0 0 0",
+		
+		"place cratepile_outside 127.91 85 6.0 0 0 90 0 0 0",
+		"place cratepile_outside 137.74 69.07 6.2 -5 -15 30 0 0 0",
+		
+	-- german infantry spawn
 	
+	"place cratepile_outside -17.86 -246.06 16.3 0 0 30 0 0 0",
+	"place cratepile_outside -17.86 -246.06 17.95 0 0 32 0 0 0",
+	"place ammocrate -17.86 -246.06 17.65 0 0 30 0 0 0",
+	"place ammocrate -17.86 -246.06 17.0 0 0 30 0 0 0",
 
+	"place cratepile_outside -12.28 -240.0 16.2 0 0 -65 0 0 0",
 		
 
 		
