@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- values are 0 based -->
 <exposed>
-  <trees>
+  <trees name="treemask.dds">
     <!-- weight the higher the number the less dense -->
     <redweight>77</redweight>
     <greenweight>25</greenweight>
@@ -16,7 +16,7 @@
     <grnclamp>240</grnclamp>
     <bluclamp>240</bluclamp>
   </trees>
-  <grass>
+  <grass name="grassmask.dds">
     <!-- The higher the weight, the lest dense -->
    <redweight>1</redweight>   
    <greenweight>5</greenweight>
@@ -88,6 +88,10 @@
    </fogparams>
   <terraintile name ="maintile">
     <shader>multimaskshadow</shader>
+    <treemask>treemask.dds</treemask>
+    <cluttermask>cluttermask.dds</cluttermask>
+    <cluttermask>cluttermask2.dds</cluttermask>
+    <grassmask>grassmask.dds</grassmask>
     <layer0 name="layer0.dds">
       <multitexture>128</multitexture>
       <material>grass</material>
@@ -106,6 +110,7 @@
     </layer3>
     <blendmask>masks.dds</blendmask>
   </terraintile>
+  
   <terraintile name ="edgetile">
     <shader>multimaskshadow</shader>
     <layer0 name="layer0.dds">
@@ -125,5 +130,26 @@
       <material>dunes1</material>
     </layer3>
     <blendmask>masks.dds</blendmask>
+  </terraintile>
+
+  <terraintile name ="edgetile_ss">
+    <shader>multimaskshadow</shader>
+    <layer0 name="layer0.dds">
+      <multitexture>256</multitexture>
+      <material>grass</material>
+    </layer0>
+    <layer1 name="layer1.dds">
+      <multitexture>128</multitexture>
+      <material>rock</material>
+    </layer1>
+    <layer2 name="layer2.dds">
+      <multitexture>100</multitexture>
+      <material>dunes1</material>
+    </layer2>
+    <layer3 name="layer3.dds">
+      <multitexture>512</multitexture>
+      <material>dunes1</material>
+    </layer3>
+    <blendmask>masksss.dds</blendmask>
   </terraintile>
 </exposed>

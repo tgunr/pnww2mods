@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- values are 0 based -->
 <exposed>
-  <trees>
+  <trees name="treemask.dds">
     <!-- weight the higher the number the less dense -->
     <redweight>25</redweight>
     <greenweight>10</greenweight>
@@ -16,7 +16,7 @@
     <grnclamp>150</grnclamp>
     <bluclamp>200</bluclamp>
   </trees>
-  <grass>
+  <grass name="grassmask.dds">
     <!-- The higher the weight, the lest dense -->
     <greenweight>5</greenweight>
     <blueweight>20</blueweight>
@@ -60,6 +60,9 @@
   </fogparams>
   <terraintile name ="maintile">
     <shader>multimaskshadow</shader>
+    <treemask>treemask.dds</treemask>
+    <grassmask>grassmask.dds</grassmask>
+    <cluttermask>cluttermask.dds</cluttermask>
     <layer0 name="layer0.dds">
       <multitexture>512</multitexture>
       <material>grass</material>
