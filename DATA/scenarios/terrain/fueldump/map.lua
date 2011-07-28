@@ -138,8 +138,8 @@ if(true) then
 	-- farm house
 		"place bel1 -200 -95 7 0 0 -60 0 0 0 1",
 		"place vinbarn1 -215.19 -83.62 7.1 0 0 30 0 0 0 1",
-		"place haystack_outside -232.92 -84.24 6.45 0 0 0 0 0 0 0",
-		"place haystack_outside -241.63 -76.33 6.5 0 0 20 0 0 0 0",
+		"place haystack_outside -220.91 -84.79 6.45 0 0 0 0 0 0 0",
+		"place haystack_outside -192.88 -76.52 6.45 0 0 20 0 0 0 0",
 		--"place haystack_outside -234.70 -57.90 6.1 0 0 -20 0 0 0 0",
 		
 		"place barrelstack1_inside -217.60 -88.8 6.4 0 0 30 0 0 0 1",
