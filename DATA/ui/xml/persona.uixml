@@ -38,17 +38,17 @@
 					<caption id="branch0" label="ARMY" x="90" rtop="30" rright="10" height="20" style="color: #FFFFFF; font-size: -1;"/>
 					<image id="lock0" x="75" rtop="32" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
 					<caption id="status0" label="Active Duty" x="90" rtop="30" rright="10" height="20" style="color: #00FF00; font-size: -1;" align="right"
-						onclick="selectPersona(0, false)" ondblclick="selectPersona(0, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 0)"/>
+						onclick="selectPersona(9, false)" ondblclick="selectPersona(9, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 9)"/>
 					
 					<caption id="branch1" label="AIR FORCE" x="90" rtop="50" rright="10" height="20" style="color: #FFFFFF; font-size: -1;"/>
 					<image id="lock1" x="75" rtop="52" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
 					<caption id="status1" label="Active Duty" x="90" rtop="50" rright="10" height="20" style="color: #00FF00; font-size: -1;" align="right"
-						onclick="selectPersona(1, false)" ondblclick="selectPersona(1, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 1)"/>
+						onclick="selectPersona(10, false)" ondblclick="selectPersona(10, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 10)"/>
 					
 					<caption id="branch2" label="NAVY" x="90" rtop="70" rright="10" height="20" style="color: #FFFFFF; font-size: -1;"/>
 					<image id="lock2" x="75" rtop="72" width="15" height="15" src="ui/textures/lock.dds" style="color: #FF0000;" tip="${persona.details.career.status.slocked}"/>
 					<caption id="status2" label="Active Duty" x="90" rtop="70" rright="10" height="20" style="color: #00FF00; font-size: -1;" align="right"
-						onclick="selectPersona(2, false)" ondblclick="selectPersona(2, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 2)"/>
+						onclick="selectPersona(11, false)" ondblclick="selectPersona(11, true)" onmouseenter="mouseEnter(this)" onmouseexit="mouseExit(this, 11)"/>
 				</view>
 				
 				<view id="country0" x="10" rtop="130" rright="10" height="100">
@@ -503,7 +503,7 @@
 					updateInterval = persona.lockedthru;
 			}
 			
-			for(var c = 0; c < 3; c++)
+			for(var c = 0; c < 4; c++)
 				formatPersonas('country' + c, c * 3);
 
 			updateStatus(true);
