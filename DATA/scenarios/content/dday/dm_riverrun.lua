@@ -225,7 +225,7 @@ if(true) then
 		-- the lockey is a lockey looked up from the scenario content in the web translation tool
 		-- command name lockey
 		
-		--  #### DOC LOOK AT THIS!! ####
+
 		
 		-- command categorynamealert namealert numberofsecondsbetweenrepeatalerts
 		-- numberofsecondsbetweenrepeatalerts 0= no limit, 1= onetime per scenario, unit measure is seconds 
@@ -244,7 +244,7 @@ if(true) then
 		"message intelfriendlyon intelfriendlyon #FF0000 0",
 		"message intelfriendlyoff intelfriendlyoff #00FF00 0",
 		
-		--  #### END DOC LOOK AT THIS ####
+
 		
 		-- vehicle masks
 		
@@ -286,39 +286,20 @@ if(true) then
 		-- command,spawngroup,country,category,class,type
 		-- a 0 is considered a wildcard
 		
-		-- allied spawn list
-		"vehicle alliedtroops us-smg",
-		"vehicle alliedtroops us-bar",
-		"vehicle alliedtroops us-assault",
-		"vehicle alliedtroops us-sniper 1",
+	-- allied spawn list
+		"mask alliedtroops us-rifle",
+		"mask alliedtroops us-assault",
+		"mask alliedtroops us-bar 5",
+		"mask alliedtroops us-sniper 1",
 
-		-- axis spawn list
-		"vehicle axistroops de-smg",
-		"vehicle axistroops de-lmg",
-		"vehicle axistroops de-assault",
-		"vehicle axistroops de-sniper 1",
+	-- axis spawn list
+	
+		"mask axistroops derifle",
+		"mask axistroops de-assault",
+		"mask axistroops de-smg 5",
+		"mask axistroops de-sniper 1",
 
 
-		
-		
-		--  #### DOC LOOK AT THIS!! ####
-		
-	-- alert masks
-	-- define a mask to block who gets a named alert
-	-- masktype maskname country category class
-	-- or
-	-- definethemask definethemessage vehicleid
-	-- note, by defining which team does get the alert, the other team will not get the alert
-		-- only country 2 gets toaxisspawn alert
-		"vehicle toaxisspawn 2 0 0 0",
-		-- only country 4 gets toalliedspawn alert
-		"vehicle toalliedspawn 4 0 0 0",	
-		
-	-- objective masks
-	-- none
-				
-		
---  #### END DOC LOOK AT THIS ####
 
 	};
 

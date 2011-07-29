@@ -334,7 +334,7 @@ if(true) then
 	-- the lockey is a lockey looked up from the scenario content in the web translation tool
 	-- command name lockey		
 		
---  #### DOC LOOK AT THIS!! ####
+
 		
 		-- command categorynamealert namealert numberofsecondsbetweenrepeatalerts
 		-- numberofsecondsbetweenrepeatalerts 0= no limit, 1= onetime per scenario, unit measure is seconds 
@@ -355,7 +355,7 @@ if(true) then
 		"waypoint onspawn minefield 195.11 24.16 7.35 #FF6600",
 		"waypoint onspawn objective1 132.57 37.60 7.38 axis",
 		
---  #### END DOC LOOK AT THIS ####
+
 
 		
 -- DEFINE AVAILABLE VEHICLES FOR THE SCENARIO
@@ -400,41 +400,22 @@ if(true) then
 	-- a 0 is considered a wildcard
 
 	-- spawn masks
-		-- allied spawn list
-		"vehicle alliedtroops us-assault",
-		"vehicle alliedtroops us-smg",
-		"vehicle alliedtroops us-bar",
+		"mask alliedtroops us-rifle",
+		"mask alliedtroops us-assault",
+		"mask alliedtroops us-bar 3",
+		"mask alliedtroops us-sniper 1",
+
+	
 		-- axis spawn list
-		"vehicle axistroops de-assault",
-		"vehicle axistroops de-smg",
-		"vehicle axistroops de-lmg",
+		"mask axistroops derifle",
+		"mask axistroops de-assault",
+		"mask axistroops de-smg 3",
+		"mask alliedtroops de-sniper 1",
+
+
 	
 	
-		-- "vehicle alliedtroops us-assault",
-		-- "vehicle alliedtroops us-smg",
-		-- "vehicle alliedtroops us-bar",
-		-- "vehicle alliedtroops us-sniper ",
-		-- "vehicle axistroops de-sniper",
-		
---  #### DOC LOOK AT THIS!! ####
-		
-	-- alert masks
-	-- define a mask to block who gets a named alert
-	-- masktype maskname country category class
-	-- or
-	-- definethemask definethemessage vehicleid
-	-- note, by defining which team does get the alert, the other team will not get the alert
-				
-		-- "vehicle bridgecapture1 2 0 0 0",
-		-- "vehicle toaxisspawn 2 0 0 0",
-		-- "vehicle toalliedspawn 4 0 0 0",
-		-- "vehicle allieswrongway 2 0 0 0",
-		
-	-- objective masks
-	-- the bridgecapture objective applies only to country 2
-	-- "vehicle bridgecapture 2 0 0 0",		
-		
---  #### END DOC LOOK AT THIS ####
+
 	
 	};
 

@@ -5,7 +5,7 @@ if(true) then
 	local content = 
 	{
 		-- weapon pack 03
-		"include scenarios/content/product03.lua",
+		"include scenarios/content/product02.lua",
 	};
 
 	for i,v in ipairs(content) do 

@@ -19,26 +19,27 @@ if(true) then
 		
 		
 	-- allied spawn list
+		"mask.1.1.0 alliedtroops us-rifle",
 		"mask.1.1.0 alliedtroops us-assault",
-		"mask.1.1.0 alliedtroops us-smg",
-		"mask.1.1.0 alliedtroops us-bar",
+		"mask.1.1.0 alliedtroops us-bar 8",
 		"mask.1.1.0 alliedtroops us-sniper 1",
 
 	-- axis spawn list
 	-- stage 1	
+		"mask.2.1.1 axistroops derifle",
 		"mask.2.1.1 axistroops de-assault",
-		"mask.2.1.1 axistroops de-smg",
+		"mask.2.1.1 axistroops de-smg 5",
 		"mask.2.1.1 axistroops de-sniper 1",
-		"mask.2.1.1 axislmg de-lmg",
+		"mask.2.1.1 axislmg de-lmg 3",
 		"mask.2.1.1 axismortar de-ltmortar 1",
 		
 		
 	-- stage 2
-		"mask.2.1.2 axistroops de-assault",
-		"mask.2.1.2 axistroops de-smg",
-		"mask.2.1.2 axistroops de-sniper 1",
-		"mask.2.1.2 axistroops de-ltmortar 1",
-		"mask.2.1.2 axistroops de-lmg",
+		"mask.2.1.1 axistroops derifle",
+		"mask.2.1.1 axistroops de-assault",
+		"mask.2.1.1 axistroops de-smg 5",
+		"mask.2.1.1 axistroops de-sniper 1",
+		"mask.2.1.1 axislmg de-lmg 1",
 
 	
 	-----------------------------  DEFINE THE PLAY AREA ----------------------------- 

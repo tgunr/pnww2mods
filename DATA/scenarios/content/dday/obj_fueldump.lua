@@ -165,6 +165,12 @@ if(true) then
 		-- SMOKING CRATERS
 
 		"emitter cratersmoke 125.80 300.0 19.25",
+		"emitter cratersmoke 8.49 -243.42 15.38",
+		"emitter cratersmoke -26.15 -204.03 10.60",
+		"emitter cratersmoke 105.98 43.51 4.52",
+		"emitter cratersmoke 120.69 -13.37 7.67",
+		"emitter cratersmoke 63.86 187.91 6.64",
+		
 
 				
 		-- SMOKESCREEN
@@ -493,7 +499,7 @@ if(true) then
 		"waypoint.1 onspawn usresupply -185.64 -90.68 10.22 allied",
 		
 		
---  #### END DOC LOOK AT THIS ####
+
 
 		
 -- DEFINE AVAILABLE VEHICLES FOR THE SCENARIO
@@ -539,46 +545,27 @@ if(true) then
 
 	-- spawn masks
 		-- allied spawn list
+		"mask alliedtroops us-rifle",
 		"mask alliedtroops us-assault",
-		"mask alliedtroops us-smg",
-		"mask alliedtroops us-bar",
+		"mask alliedtroops us-bar 7",
+		"mask alliedtroops us-sniper 1",
 		"mask alliedtroops us-bazooka 3",
-		--"mask alliedvehicles m10 2",
-		--"mask alliedvehicles m4a2  2",
-		"mask alliedvehicles m4a2_us 2",
-		"mask alliedvehicles m10_us 2",
 		
+		"mask alliedvehicles m10_us 4",
+		"mask alliedvehicles m4a2_us 2",
+	
+		-- axis spawn list
+		"mask axistroops derifle",
+		"mask axistroops de-assault",
+		"mask axistroops de-smg 4",
+		"mask axistroops de-lmg 3",
+		"mask axistroops de-sniper 1",
+		"mask axistroops de-pzschreck 3",
+		
+		"mask axisvehicles stug3g 4",
+		"mask axisvehicles pzivg 2",
 		
 
-		-- axis spawn list
-		"mask axistroops de-assault",
-		"mask axistroops de-smg",
-		"mask axistroops de-lmg",
-		"mask axistroops de-pzschreck 3",
-		"mask axisvehicles pzivg 3",
-		"mask axisvehicles stug3g 5",
-	
-	
-		
---  #### DOC LOOK AT THIS!! ####
-		
-	-- alert masks
-	-- define a mask to block who gets a named alert
-	-- masktype maskname country category class
-	-- or
-	-- definethemask definethemessage vehicleid
-	-- note, by defining which team does get the alert, the other team will not get the alert
-				
-		-- "vehicle bridgecapture1 2 0 0 0",
-		-- "vehicle toaxisspawn 2 0 0 0",
-	"mask depotcapturem 4 2 0 0",
-		-- "vehicle allieswrongway 2 0 0 0",
-		
-	-- objective masks
-	-- the bridgecapture objective applies only to country 2
-	-- "vehicle bridgecapture 2 0 0 0",		
-		
---  #### END DOC LOOK AT THIS ####
 	
 	};
 
