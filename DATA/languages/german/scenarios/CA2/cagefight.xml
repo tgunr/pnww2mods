@@ -14,20 +14,22 @@ toaxisspawn = Die Alliierten sind auf der anderen Seite des Hofes!</body>
 Vernichte so viele Gegner wie möglich in den nächsten ${duration} Minuten.
 
 Das erste Team, das 50 Kills erreicht, gewinnt.</brief>
-  <duration>10</duration>
+  <draw>35</draw>
+  <duration>15</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
-  <fog>3</fog>
+  <fog>1</fog>
   <hour>16</hour>
   <rules>deathmatch</rules>
-  <team1>2</team1>
-  <team1max>16</team1max>
+  <target>190944.95 3015994.90 142.28</target>
+  <team1>1</team1>
+  <team1max>12</team1max>
   <team1min>2</team1min>
   <team2>4</team2>
-  <team2max>16</team2max>
+  <team2max>12</team2max>
   <team2min>2</team2min>
   <title>Infanterienahkampf</title>
-  <victory>25</victory>
-  <weather>1</weather>
+  <victory>50</victory>
+  <weather>0</weather>
 </content>
