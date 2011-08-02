@@ -1,0 +1,18 @@
+<?xml version='1.0'?>
+<vehicle reticle="reticles/camera" turret="2" manager="eztank">
+	<config>
+		<param name="shiftdownrpms" value=".65"/>
+		<param name="shiftuprpms" value=".97"/>
+		<param name="acceltime" value="3000"/>
+		<param name="shifttime" value="1000"/>
+		<param name="startgear" value="2"/>
+	</config>
+	<position name="command" position="2" view="0" zoom="0" reticle="reticles/crosshairs">
+		<camera offset="0,-7.5,2.5" focus="200" travrate="200" elevrate="150"/>
+		<blocks input="turretraverse"/>
+		<blocks input="turretelevate"/>
+	</position>
+	<position name="maingun" position="2" view="3" zoom="0"/>
+	<position name="gunner" position="3" view="3" zoom="0"/>
+	<position name="instruments" position="0" view="2" zoom="0"/>
+</vehicle>
