@@ -22,7 +22,7 @@ if(true) then
 		"terrain doggreen_region_EE edgetile 0 0 0 0",
 		"terrain doggreen_region_NW edgetile 0 0 0 0",
 		"terrain doggreen_region_SE edgetile 0 0 0 0",
-		"terrain doggreen_region_SS edgetile 0 0 0 0",
+		"terrain doggreen_region_SS edgetile_ss 0 0 0 0",
 		"terrain doggreen_region_SW edgetile 0 0 0 0",
 		"terrain doggreen_region_WW edgetile 0 0 0 0",
 
@@ -100,8 +100,8 @@ if(true) then
 		"place m4a2hulk -122.22 138.22 6.0 0 0 180 0 0 0 0",
 		"place m4a2hulk 40.0 126.0 3.75 0 0 225 0 0 0 0",
 		"place m4a2hulk -134.86 195.41 4.8 -2 -4 245 0 0 0 0",
-		
-		
+		"place m4a2hulk 4.14 92.50 6.41 0 0 210 0 0 0 0",
+		"place m4a2hulk -168.88 189.35 6.4 0 0 210 0 0 0 0",
 		
 		
 
