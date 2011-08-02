@@ -134,6 +134,9 @@
 
   <terraintile name ="edgetile_ss">
     <shader>multimaskshadow</shader>
+	<treemask>treemask.dds</treemask>
+	<grassmask>grassmask.dds</grassmask>
+	<cluttermask>cluttermask.dds</cluttermask>
     <layer0 name="layer0.dds">
       <multitexture>256</multitexture>
       <material>grass</material>
