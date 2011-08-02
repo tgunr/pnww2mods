@@ -276,7 +276,7 @@ if(true) then
 		"place instance_rockwall2 179.35 177.93 6.6 0 0 53 0 0 0 0",
 		"place instance_rockwall2 161.75 163.45 6.65 0 0 52 0 0 0 0",
 		"place instance_rockwall2 145.51 150.69 6.6 0 0 52 0 0 0 0",
-		"place instance_rockwall1 123.31 133.95 4.6 0 0 52 0 0 0 0",
+		"place instance_rockwall1 123.31 133.95 0 0 0 52 0 0 0 0",
 		"place instance_rockwall2 98.23 113.15 4.0 0 4 52 0 0 0 0",
 		"place instance_rockwall2 66.78 89.91 4.0 0 0 52 0 0 0 0",
 		"place instance_rockwall2 57.4 72.97 4.0 0 4 8 0 0 0 0",
