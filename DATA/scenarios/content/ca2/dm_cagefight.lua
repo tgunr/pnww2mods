@@ -12,7 +12,7 @@ if(true) then
 
 	-- boundary name x y z
 
-        	"boundary playarea 190993.49 3016047.94 142.00",
+        "boundary playarea 190993.49 3016047.94 142.00",
 		"boundary playarea 190993.44 3015929.07 142.00",
 		"boundary playarea 190983.18 3015917.96 142.00",
 		"boundary playarea 190890.88 3015923.63 142.00",
@@ -145,18 +145,18 @@ if(true) then
 
 		--directions at allied spawn 1
 
-		"area toalliedspawn OnTrigger 190899.98 3016041.67 145.55",		
-		"area toalliedspawn OnTrigger 190899.95 3016023.24 145.55",
-		"area toalliedspawn OnTrigger 190908.31 3016023.25 145.55",
-		"area toalliedspawn OnTrigger 190908.37 3016041.56 145.55",
+		--"area toalliedspawn OnTrigger 190899.98 3016041.67 145.55",		
+		--"area toalliedspawn OnTrigger 190899.95 3016023.24 145.55",
+		--"area toalliedspawn OnTrigger 190908.31 3016023.25 145.55",
+		--"area toalliedspawn OnTrigger 190908.37 3016041.56 145.55",
 				
 
 		-- directions at axis spawn 1
 
-		"area toaxisspawn OnTrigger 190985.52 3015941.83 145.55",	
-		"area toaxisspawn OnTrigger 190979.80 3015947.75 145.55",	
-		"area toaxisspawn OnTrigger 190966.76 3015934.84 145.55",	
-		"area toaxisspawn OnTrigger 190972.59 3015928.88 145.55",	
+		--"area toaxisspawn OnTrigger 190985.52 3015941.83 145.55",	
+		--"area toaxisspawn OnTrigger 190979.80 3015947.75 145.55",	
+		--"area toaxisspawn OnTrigger 190966.76 3015934.84 145.55",	
+		--"area toaxisspawn OnTrigger 190972.59 3015928.88 145.55",	
 				
 
 -- CLONES --
@@ -183,9 +183,9 @@ if(true) then
 		
 		-- HUD WAYPOINTERS
 
-		--"waypoint onspawn wp1 345402.03 3005111.85 117.00 enemy",
-		--"waypoint onspawn wp2 -36.00 -153.15 7.88 friendly",
-		--"waypoint onspawn wp3 60.61 -91.40 27.17 friendly",
+		"waypoint.2 onspawn ukspawn 190904.07 3016031.83 149.67 enemy",
+		"waypoint.1 onspawn gerspawn 190977.45 3015940.51 149.39 enemy",
+
 
 		"alert onspawn onspawn.moveout 60",
 		--"alert roundstop roundstop",
@@ -195,7 +195,7 @@ if(true) then
 		--"alert churchentry churchentry 20000",
 		--"alert toaxisspawn toaxisspawn -1",
 		--"alert toalliedspawn toalliedspawn -1",
-		"alert onspawn.moveout onspawn.moveout",
+
 		"alert playarea playarea 10",
 		"alert victory1 victory1",
 		"alert victory2 victory2",
@@ -245,18 +245,16 @@ if(true) then
 
 		-- ALLIED SPAWN list
 
-		"vehicle alliedtroops fr-smg",
-		"vehicle alliedtroops fr-rifle",
-		"vehicle alliedtroops uk-smg",
-		"vehicle alliedtroops uk-rifle",
-		"vehicle alliedtroops us-assault",
-		"vehicle alliedtroops us-smg",
+		"mask alliedtroops uk-rifle",
+		"mask alliedtroops uk-smg",
+		"mask alliedtroops uk-lmg 1",
+
 				
 		-- AXIS SPAWN list
 
-		"vehicle axistroops de-smg",
-		"vehicle axistroops de-rifle",
-		"vehicle axistroops de-assault",
+		"mask axistroops derifle",
+		"mask axistroops de-smg",
+		"mask axistroops de-lmg 1",
 	};
 
 	for i,v in ipairs(content) do 
