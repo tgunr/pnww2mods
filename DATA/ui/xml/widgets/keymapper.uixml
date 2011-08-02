@@ -97,6 +97,7 @@
 		{
 			categoryTree.addNode(new TreeNode(getlocstring('widgets.keymapper.cats.general'), "0,0", 1, false));
 			categoryTree.addNode(new TreeNode(getlocstring('widgets.keymapper.cats.views'), "1,0", 1, false));
+			categoryTree.addNode(new TreeNode(getlocstring('widgets.keymapper.cats.ez'), "8,0", 1, true));
 			categoryTree.addNode(new TreeNode(getlocstring('widgets.keymapper.cats.infantry'), "6,0", 1, true));
 			categoryTree.addNode(new TreeNode(getlocstring('widgets.keymapper.cats.armor'), "3,0", 1, true));
 			categoryTree.addNode(new TreeNode(getlocstring('widgets.keymapper.cats.trucks'), "4,0", 1, true));

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<view id="camera_reticle" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" moveondrag="no" acceptmouseclick="false">
+	<include file="lib/common.uixml"/>
+	<view x="0" y="0" width="2" height="2" style="background-color: #FF0000AA;" onshow="centerView(this)" aspectlimit="width"/>
+</view>
+
