@@ -292,12 +292,13 @@
 		ondblclick="this.mgr.onDblClick()" onrightclick="this.mgr.onRightClick()"
 		onmouseenter="this.mgr.onMouseEnter()" onmouseexit="this.mgr.onMouseExit()"
 		style="tooltip: widgets/tooltips/maptip.uixml; background-color: #00000000;">
-		<layer type="texture" id="default-64-tex" minscale="0" maxscale="64" enabled="true" orign="-26x210" rowcolsize="1x1" cellsize="64x64"/>
+		<!-- layer type="texture" id="default-64-tex" minscale="0" maxscale="64" enabled="true" orign="-26x210" rowcolsize="1x1" cellsize="64x64"/ -->
 		<layer type="icon" id="icons" minscale="0" maxscale="8" enabled="true"/>
 		<layer type="icon" id="rendered" minscale="0" maxscale="1" enabled="true"/>
-		<layer type="terrainobj" id="terrainobj" minscale="0" maxscale=".5" enabled="true"/>
-		<layer type="hclinks" id="hclinks" minscale="0" maxscale="20" enabled="true"/>
-		<layer type="front" id="front" minscale="0" maxscale="20" enabled="true"/>
+		<!-- layer type="scenario" id="scenmap" minscale="0" maxscale="10" enabled="true"/ -->
+		<!-- layer type="terrainobj" id="terrainobj" minscale="0" maxscale=".5" enabled="true"/ -->
+		<!-- layer type="hclinks" id="hclinks" minscale="0" maxscale="20" enabled="true"/ -->
+		<!-- layer type="front" id="front" minscale="0" maxscale="20" enabled="true"/ -->
 		<layer type="strat" id="strat" minscale="0" maxscale="20" enabled="true">
 			<filter name="showorders" value="yes"/>
 			<filter name="showdeployments" value="yes"/>
@@ -329,6 +330,6 @@
 			<filter name="showclutter" value="no"/>
 			<filter name="cluttercutoff" value=".2"/>
 		</layer>
-		<layer type="aws" id="aws" minscale="0" maxscale="8" enabled="false"/>
+		<!-- layer type="aws" id="aws" minscale="0" maxscale="8" enabled="false"/ -->
 	</view>
 </view>
