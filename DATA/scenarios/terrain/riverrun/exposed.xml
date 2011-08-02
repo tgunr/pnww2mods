@@ -59,12 +59,15 @@
     <end>1400.0</end>
   </fogparams>
   <terraintile name ="maintile">
+      <treemask>treemask.dds</treemask>
+    <cluttermask>cluttermask.dds</cluttermask>
+    <grassmask>grassmask.dds</grassmask>
     <shader>multimaskshadow</shader>
     <treemask>treemask.dds</treemask>
     <grassmask>grassmask.dds</grassmask>
     <cluttermask>cluttermask.dds</cluttermask>
     <layer0 name="layer0.dds">
-      <multitexture>512</multitexture>
+      <multitexture>300</multitexture>
       <material>grass</material>
     </layer0>
     <layer1 name="layer1.dds">
@@ -72,11 +75,11 @@
       <material>rock</material>
     </layer1>
     <layer2 name="layer2.dds">
-      <multitexture>512</multitexture>
+      <multitexture>300</multitexture>
       <material>dirt</material>
     </layer2>
     <layer3 name="layer3.dds">
-      <multitexture>1000</multitexture>
+      <multitexture>300</multitexture>
       <material>dirt</material>
     </layer3>
     <blendmask>masks.dds</blendmask>
