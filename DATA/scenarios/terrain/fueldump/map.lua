@@ -15,7 +15,20 @@ if(true) then
 
 	-- command,filename,worldx,worldy,worldz,roll,pitch,yaw,scalex,scaley,scalez,damage
 
-	
+		"place instance_rockwall1 -227 -268 18.7 0 5 -69 0 0 0 0",
+		"place instance_rockwall1 -231 -248 18.65 0 0 18 0 0 0 0",
+		
+		"place instance_rockwall1 -125.55 119.24 7.3 0 0 90 0 0 0 0",
+		"place instance_rockwall1 -96.90 119.24 6.9 0 0 90 0 0 0 0",
+		"place instance_rockwall2 -78 119.24 6.6 0 0 90 0 0 0 0",
+		"place instance_rockwall1 -56.15 119.24 5.35 0 0 90 0 0 0 0",
+		
+		
+		
+		
+		
+		
+		
 		"place rubblepile01 176.59 -72.88 7.7 0 0 0 0 0 0 0",
 		"place rubblepile01 97.68 -25.76 8.0 0 0 0 0 0 0 0",
 		"place rubblepile01 98.60 -32.80 8.65 0 4 0 0 0 0 0",
