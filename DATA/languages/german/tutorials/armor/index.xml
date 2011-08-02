@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<content type="3">
+  <key>0</key>
+  <body>Gratulation, Du kannst jetzt in den Krieg ziehen. Du kannst Deine kriegerischen Fähigkeiten auch im Kampftrainingsgebiet für Fortgeschrittene erproben.</body>
+  <handler>armor</handler>
+  <links>
+    <link path="tutorials/armor/basic.xml" title="Panzer I: Grundlagen" />
+    <link path="tutorials/armor/combat.xml" title="Training Panzerkampf" />
+  </links>
+  <next>armor.basic</next>
+  <title>Fortgeschrittener Kampf</title>
+</content>

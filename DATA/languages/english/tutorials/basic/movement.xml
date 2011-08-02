@@ -1,0 +1,121 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>1</key>
+  <body>title = Basic Infantry Movement
+
+1.0.label = Learn how to move
+
+	1.1.alert.modal = Welcome to the basic infantry movement tutorial. In this tutorial you will learn how to move around and change stances.[NL][NL]NOTE: You may press {exitvehicle} to despawn from the training and return to the menu.
+
+	1.1.alert1 = The mouse controls your facing. Use your mouse to look around the training grounds.
+
+	1.1.label = Using the Mouse to Look
+		
+1.2.alert = Another way to look around is to use the look left {fplookleft} and look right {fplookright} keys. You can use these while  moving without changing your direction. This is very helpful in scanning the environment for enemies while moving forward.[NL][NL]Look left {fplookleft} and right {fplookright} to continue.
+	
+	1.2.label = Look Left and Right
+
+	1.2.complete = It is very important to always be aware of your surroundings in combat. 
+
+1.3.alert = Use forward {fpforward}, backward {fpbackward}, strafe left {fpstrafeleft} and strafe right {fpstraferight} to move around the area some.[NL][NL]Move in all 4 directions to complete this step.
+
+	1.3.label = Using the Keyboard to Move
+
+	1.3.complete = Good.
+
+1.4.alert.modal = Your normal forward movement speed is a jog, but you can sprint by holding down the sprint key {fpfast} while moving forward {fpforward}.[NL][NL]As you sprint, your energy bar will decrease. This is the green horizontal bar in the lower left of your screen.
+
+	1.4.alert.hilite = atp-bar
+
+	1.4.alert1.modal = When half of that bar is gone, you cannot sprint. The bar will refill at different rates depending on your stance and movement. The fastest way to refill it is to lay prone.
+
+	1.4.alert1.hilite = atp-bar
+	
+	1.4.label = Energy Management
+
+1.5.alert = A waypoint to a resupply truck has been added to your minimap. Use forward {fpforward} and sprint {fpfast} to sprint over to the waypoint.[NL][NL]Sprint to the waypoint to continue.
+
+	1.5.alert.hilite = minimap
+
+	1.5.label = Sprint to the Waypoint
+
+	1.5.complete = Good work. As you rest, you will regain energy.
+
+1.6.alert.modal = Notice that your energy bar has been depleted some by the sprint. Jogging allows you to regain energy very slowly, but all other movements types including sprinting, crawling and crouching take energy.
+
+	1.6.alert.hilite = atp-bar
+
+	1.6.alert1.modal = To build up your energy simply stop and rest. Your energy refills faster depending on your stance, which we&#39;ll learn about next.
+
+	1.6.alert1.hilite = atp-bar
+
+	1.6.label = Energy Recovery
+
+2.0.label = Learn about stances
+
+2.1.alert.modal = As an infantryman, you can stand, crouch or crawl. Each stance has its usefulness.[NL][NL]Your current stance is shown in the lower left hand corner of your Heads-Up-Display (HUD).
+
+	2.1.alert.hilite = state-icon
+
+	2.1.alert1 = Crouching allows you to move more slowly and quietly, and can help you avoid the enemy&#39;s notice.[NL][NL]Use the {fpcrouch} key to crouch down.
+		
+	2.1.alert1.hilite = state-icon
+
+	2.1.label = Crouch Down
+
+	2.1.complete = You are now crouching.
+
+2.2.alert.modal = While crouching, you move much slower than walking or sprinting, but you make less noise and are less visible to the enemy, especially when you are behind cover. It requires slightly more energy than jogging.
+
+	2.2.alert1 = You can sprint while crouched. This is slower than the standing sprint and requires even more energy, but you are lower.[NL][NL]While crouched, move forward using the {fpforward} key.
+
+	2.2.label = Moving While Crouched.
+
+	2.2.complete = Good! You can also crouch run using {fpforward} and {fpfast} together.
+
+2.3.alert = You can get even lower by lying prone.[NL][NL]Use the {fpprone} key to lie down.
+
+	2.3.alert.hilite = state-icon
+
+	2.3.label = Lie Prone
+
+	2.3.complete = Excellent, you are now lying down on the ground.
+
+2.4.alert = When prone, your movement is very slow and consumes more energy.  However, you regain energy very quickly when stationary and are a very small target for the enemy. Dropping prone can greatly improve your chances of surviving a nearby explosion and shrapnel.[NL][NL]Crawl forward using the {fpforward} key.
+
+	2.4.label = Crawling
+
+	2.4.complete = Well done.
+
+2.5.alert = From a prone stance, you can use the {fpforward} and {fpfast} key to sprint forward. This causes you to get up and run until you release either key.[NL][NL]From a prone stance, sprint for a short ways using {fpforward} and {fpfast}.
+
+	2.5.label = Sprinting From Prone.
+
+	2.5.complete = Notice that after you released either key, you dropped back to prone. This is very useful for sprinting between covered areas in a combat zone.
+	
+3.0.label = Mobile Spawning
+
+	3.1.label = Return to Spawn point
+    3.1.alert.modal = Most of the time, infantry enter the game world, or &#39;spawn&#39;, inside armybases or depots.  But players can create Mobile Spawn Points by driving trucks closer to the enemy cities and deploy their vehicle.[NL][NL]This allows players to enter the game world at that truck&#39;s location, which greatly shortens the distance to combat.
+	3.1.alert1 = You spawned at just such a mobile spawn point.[NL][NL]Head over to the unmanned mobile spawn where you spawned from.
+    
+	3.2.label = Mobile Spawn Missions
+    3.2.alert1.modal = Missions with mobile spawns are indicated by the truck icon in the list of missions.
+    
+    #can you fake the map icon in the text here?
+    
+    3.2.alert2.modal = The truck&#39;s icon explains that it is a mobile spawn with either &#34;MSP&#34; (&#34;Mobile Spawn Point&#34;) or &#34;UMS&#34; (&#34;Unmanned Spawn Point&#34;).  The difference is that another player is still in command of an MSP - he can move the truck.  But a UMS cannot be moved.
+    
+    3.2.alert3.modal = Both MSPs and UMSs, as well as all trucks and haulers, are also resupply points that will automatically replace your ammunition when you are near to them.
+    
+    3.2.alert3.hilite = persona-resupply
+
+	3.3.label = Complete
+	3.3.alert.modal = This completes the basic infantry movement tutorial.</body>
+  <branch>1</branch>
+  <brief>Learn how to move your trooper in the game world.</brief>
+  <handler>basic.movement</handler>
+  <instance>2</instance>
+  <next>basic.rifleman</next>
+  <title>Infantry Movement</title>
+</content>

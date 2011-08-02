@@ -1,0 +1,76 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>2</key>
+  <body>title = Infantería II: Ametralladora Ligera
+
+20mhit = ¡impacto en blanco! a 20 m
+50mhit = ¡impacto en blanco! a 50 m
+100mhit = ¡impacto en blanco! a 100 m Buen disparo.
+200mhit = ¡impacto en blanco! a 200 m ¡Bien hecho!
+500mhit = ¡impacto en blanco! a 500 m ¡Excelente!
+gunrange = Línea de Fuego
+bunker = Foso de Sacos
+vehiclerange = Campo de Tiro de Vehículos
+
+1.0.label = La Ametralladora Ligera
+
+1.1.label = Introducción
+	1.1.alert.modal = La ametralladora ligera (&#34;LMG&#34;) es un arma muy poderosa cuando se utiliza correctamente.  Se utiliza mejor como fuego de apoyo a distancias medias y largas y se convierte en mucho más útil cuando está acompañada por tiradores de rifle que pueden proporcionarle munición adicional y protección del enemigo en los flancos.
+	
+1.2.label = Posición de Fuego
+	1.2.alert = Muévase hacia la línea de fuego.
+        #waypoint label: &#34;Línea de Fuego&#34;
+        #waypoint: -314046.54,3603720.08,101.73
+
+1.3.label = Fuego sin Despliegue
+	1.3.alert = La ametralladora ligera puede dispararse desde la cadera (o &#34;sin desplegar&#34;), pero es imposible apuntarla bien debido a su retroceso y peso.[NL][NL]Pulse {fpfire} para disparar el arma.
+	1.3.complete.modal = Obviamente, la LMG sólo debe utilizarse como un último recurso contra enemigos cercanos.
+	
+1.4.label = Tumbarse
+	1.4.alert = La LMG debe dispararse desplegada desde una posición.  Puede desplegar el arma cuando esté tumbado o cuando esté agachado junto a objetos como muros, cajas, y ventanas.[NL][NL]Pulse {fpprone} para tumbarse.
+
+1.5.label = Despliegue
+	1.5.alert = Pulse {fpdeploy} para desplegar el bípode de la LMG.[NL][NL]También puede utilizar el botón derecho del ratón para desplegar.
+
+1.6.label = Fuego en Despliegue
+	1.6.alert = Ahora apunte y dispare el arma al blanco mediante {fpfire}.[NL][NL]Recargue el arma con {fpreload} si está bajo de munición.[NL][NL]Impacte en cualquier blanco para continuar.
+	1.6.complete.modal = ¡Bien! Disparar desde una posición de despliegue es mucho mas preciso que disparar sin desplegar.
+
+1.7.label = Alza de Puntería
+	1.7.alert.modal = Al igual que los rifles, la LMG tiene mirilla ajustable (alza) para disparar a diferentes distancias. La configuración por defecto es de 200 metros.
+	1.7.alert.hilite = primary,target
+	1.7.alert1.modal = Tómese un tiempo para disparar a los diferentes blancos con diferentes configuraciones de distancia para observar como afecta a su precisión.[NL][NL]Utilice {gunsightrangeinc} y {gunsightrangedec} para aumentar y disminuir su configuración de distancia.
+	1.7.alert1.hilite = primary,target
+
+1.8.label = Replegar Bípode
+	1.8.alert = Cuando termine de disparar, pulse {fpdeploy} para replegar el bípode de su ametralladora. 
+	1.8.complete.modal = Bien. Levántese pulsando {fpprone}.
+	
+2.0.label = Blancos de Vehículos
+
+2.1.label = Dañando un Vehículo
+	2.1.alert = Aunque la ametralladora ligera es un arma devastadora contra infantería enemiga, también puede ser efectiva contra vehículos con poco o ningún blindaje, tales como los camiones y remolcadores.[NL][NL]Muévase al Campo de Tiro de Vehículos.
+	#waypoint label &#34;Campo de Tiro de Vehículos&#34;
+	#waypoint: -313992.15,3603761.89,100.82
+	
+2.2.label = Posición de Fuego
+	2.2.alert = Este es el Campo de Tiro de Vehículos.[NL][NL]Entre en el foso de sacos.
+	#waypoint label: &#34;Foso de Sacos&#34;
+	#waypoint: -313969.40,3603763.17,100.32
+
+2.3.label = Despliegue en Sacos
+	2.3.alert = Pulse {fpdeploy} para desplegar el bípode de la LMG sobre el muro de sacos terreros.[NL][NL] Acérquese más al muro si no es capaz de desplegar.
+	2.3.complete = ¡Excelente!
+	
+2.4.label = Arco de Fuego
+	2.4.alert.modal = Mueva el arma a izquierda y derecha para ver el arco de fuego, que es diferente al que posee cuando está desplegado en el suelo.[NL]Desplegar la LMG sobre un objeto suele mejorar significativamente su arco de fuego.
+	2.4.alert.modal = Ahora dispare al vehículo abandonado mas cercano.
+	2.4.complete.modal = Excelente.  Esto completa su introducción a la ametralladora ligera.</body>
+  <branch>1</branch>
+  <brief>Aprenda como operar una Ametralladora ligera.</brief>
+  <handler>infantry.lmg</handler>
+  <instance>2</instance>
+  <requires>infantry.smg</requires>
+  <spawners>314051.47,3603774.41,101.00</spawners>
+  <title>Infantería II: Ametralladora Ligera</title>
+</content>

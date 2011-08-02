@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<content type="3">
+  <body>La pantalla de Selección de Personaje permite ver información detallada de cada uno de sus personajes del juego y seleccionar uno para jugar.
+
+Los Personajes están listados por país y por rama militar. Cuando selecciones un personaje, verás información acerca de dicho personaje a la derecha, incluyendo el rango, progreso a la siguiente promoción, la Brigada actual en la que está inscrito, cual es la última brigada con la que jugaste con este personaje.
+
+Para jugar con un Personaje, selecciónalo con el ratón y haz click en el botón de Elegir Brigada en la parte inferior derecha de la pantalla. También puedes hacer doble click sobre el personaje para avanzar automáticamente a la siguiente pantalla. Si seleccionas un personaje que no esté inscrito a una brigada, entrarás en la Lista de Brigadas, de otro modo llegarás directamente a su Cuartel General de Brigada (HQ Brigada).
+
+El juego tiene un temporizador por bando que impide cambiar entre los personajes del Eje y los Aliados durante una sesión de juego. Los personajes que no estén disponibles debido a que recientemente estuvo jugando con el bando contrario del conflicto serán listados como &#34;De Licencia&#34;. Estos personajes estarán disponibles una vez permanezcas fuera del juego durante el tiempo suficiente. Los personajes que estén disponibles para ser jugados se listarán como &#34;Servicio Activo&#34;.
+
+Si en cualquier momento quiers cambiar el personaje con el que estás jugando o transferirlo a otra brigada, puedes hacerlo desde el &#34;HQ de Brigada&#34; seleccionando el botón de &#34;Traslado&#34;.</body>
+  <position>centerxcenter</position>
+  <target>body:0:-10</target>
+  <title>Selección de Personaje</title>
+</content>

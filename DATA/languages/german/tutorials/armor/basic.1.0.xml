@@ -1,0 +1,219 @@
+<?xml version='1.0'?>
+<content type="5">
+  <body>title = Fortgeschrittenes Training: Panzer A-13 Mark II
+  
+bulleyes = Mitten ins Ziel!
+start = Start
+move = Hierher bewegen
+turn1 = Rechts abbiegen
+turn2 = Rechts abbiegen
+setup = Hier anhalten
+fire = Feuerposition
+turn3 = Rechts abbiegen
+turn4 = Links abbiegen
+turn5 = Rechts abbiegen
+stop = Ziel
+berm1 = Böschung auf 200m
+berm2 = Böschung auf 500m
+berm3 = Weit entfernte Böschung
+offroad = Gelände
+gunrange = Schießplatz
+
+# Spawn tanks at  60.3.39 N, 6.32..38 W  facing 270 (West)
+# -314230.38  3603625.27  101.34
+# facing front: -1.57    back: 1.58
+
+1.0.label = Einführung
+
+1.1.label = Der A-13 Mark II
+
+	1.1.alert.modal = Dies ist der A-13 MkII, einer der am meisten verwendeten englische Panzer. Er hat drei bemannbare Positionen: Fahrer, Kommandant und Schütze.
+        1.1.alert.camera = 0,5,45,360,0,0,10
+	// pan around
+	
+2.0.label = Fahrer
+
+2.1.label = Die Fahrersicht
+	2.1.alert = Dies ist Position 1: der Fahrer.  Von hier aus steuerst Du den Panzer. Die Sicht nach vorne ist durch den Sichtschlitz eingeschränkt.[NL][NL]Benutze {gunsightview}, um mehr sehen zu können.
+        2.1.alert.camera = internal
+	2.1.complete.modal = Mit {gunsightview} schaltest Du zwischen der vergrößerten Ansicht und der Cockpitansicht um. 
+	
+2.2.label = Sichtschlitz schliessen
+	2.2.alert = Durch die offene Sichtluke des H-39 kann der Fahrer beschossen werden.[NL][NL]Drücke {canopycontrol} zum Schließen des Sichschlitzes.
+	2.2.complete.modal = Der Fahrer ist jetzt besser geschützt, kann aber nicht sehen was um den Panzer herum passiert.
+
+2.3.label = Motorenzustand
+	2.3.alert = Drücke {instrumentview} für die Instrumentenansicht.
+	2.3.complete.modal = Hier siehst Du die Drehzahl und Temperatur des Motors. Einige Panzertypen haben zusätzliche Anzeigen für die Stellung des Turmes oder andere wichtige Informationen.
+2.4.label = Welcher Gang ist eingelegt?
+	2.4.alert.modal = In neu gespawnten Fahrzeugen ist der Motor aus und es ist kein Gang eingelegt.[NL][NL]Jedes Bodenfahrzeug hat einen mindestens einen Vorwärts- und einen Rückwärtsgang.
+	2.4.alert1 =  Wenn Du das Fahrzeug bewegen möchtest, musst Du einen Gang einlegen und Gas geben.[NL][NL]Die Ganganzeige befindet sich in der Vehikelstatusanzeige. Drücke {showstats}.
+	2.4.complete = Gut, dies zeigt den gerade eingelegten Gang an.
+	2.4.complete.hilite = readout,target
+
+2.5.label = Motor starten
+	2.5.alert = Drücke {gunsightview}, um wieder durch den Sichtschlitz auf der Fahrerposition zu schauen.[NL][NL]Öffne den Sichtschlitz mit {canopycontrol}.[NL][NL]Der Motor wird mit {engstart} gestartet.
+	2.5.complete = Ok, dann kann es losgehen!
+
+2.6.label = Ersten Gang einlegen
+	2.6.alert = Niedrige Gänge bringen viel Kraft auf die Strasse. Sie werden zum Anfahren und beim Überwinden von Anhöhen benötigt. Höher übersetzte Gänge hingegen ermögliche größere Geschwindigkeiten.[NL][NL]Mit {shiftdown} und {shiftup} werden die Gänge gewechselt.[NL][NL]Drücke {shiftup} zum Einlegen des ersten Gangs.
+	2.6.alert.hilite = readout,target
+
+3.0.label = Fahrt zum Schießplatz
+
+3.1.label = Fahren des Panzers
+	3.1.alert.modal = Wenn ein Gang eingelegt ist, benutze {gas.10.4} um den Panzer in Bewegung zu setzen.
+	3.1.alert1.modal = Mit {leftbrake.10.4} steuerst Du nach links, {rightbrake.10.4} lenkt den Panzer nach rechts. {bothbrake.10.4} verlangsamt den Panzer.
+	3.1.alert2 = Eine Reihe von Wegpunkten führt Dich zum Schießplatz. Folge den Wegpunkten um diesen Teil des Trainings abzuschließen. [NL][NL]Benutze {gas.10.4} zum Beschleunigen und  {bothbrake.10.4} zum Bremsen.[NL]{leftbrake.10.4} und {rightbrake.10.4} steuern den Panzer nach links und rechts. 
+
+3.2.label = Die erste Kurve
+	3.2.alert = Da vorne wartet die erste Kurve. Wenn Du beim Heranfahren merkst, dass Du zu schnell bist, benutze {bothbrake.10.4} zum Bremsen.[NL][NL]Mit {leftbrake.10.4} und {rightbrake.10.4} steuerst Du den Panzer durch die Rechtskurve.
+
+3.3.label = Geländefahrt	
+	3.3.alert = Auf der linken Seite der Straße befinden sich zwei kleine Hügel. Probier einmal, die Hügel zu überqueren oder um sie herumzufahren.[NL][NL]Der nächste Wegpunkt führt ins Gelände.
+
+3.4.label = Auswahl der Position
+	3.4.alert = Halte am nächsten Wegpunkt an. Benutze {bothbrake.10.4}, um den Panzer abzubremsen.
+
+3.5.label = Hull Down 
+	3.5.alert.modal = Der Schießplatz befindet sich hinter der Böschung vor Dir.
+	3.5.alert1.modal = Der Panzer ist vorne am stärksten gepanzert, die wenigste Panzerung befindet sich auf der Rückseite.[NL][NL]Bei der Auswahl einer Feuerposition gilt es, diesen Fakt zu berücksichtigen.
+	3.5.alert2.modal = Du kannst Böschungen, Hügel oder Gebäude als zusätzlichen Schutz vor Entdeckung und feindlichem Feuer benutzen. Das wird &#34;hull-down&#34; genannt und bedeutet ganz einfach, das der Panzer teilweise durch das umgebende Gelände geschützt wird.  
+	3.5.alert3.modal = Gute Ausnutzung des Geländes erhöht Deine Chancen im Panzerkampf.
+
+3.6.label = Feuerposition
+	3.6.alert = Bezieh Deine Feuerpostion hinter der Böschung, neben dem anderen Panzer.[NL][NL]Stelle sicher, das der Panzer nach Norden ausgerichtet ist.[NL][NL]Sei vorsichtig und fahre nicht auf die Böschung, denn so setzt Du mehr Fläche des Panzers dem gegnerischen Beschuß aus.
+	3.6.complete.modal = Exzellent, Du stehst jetzt hull down in Feuerposition. 
+        3.6.complete.camera = -90,10,20,-90,-8,0,5
+	
+	# Follow the Waypoints
+	# SW corner of track:  &#34;Southwest Corner&#34;
+	# -314333.57  3603628.25  101.98
+	# facing front: -0.77  back: 2.38
+	
+	# W track bumps: &#34;Road Bumps&#34;
+	# -314344.58  3603665.72  101.99
+	# facing front: -0.02   back:  3.12
+	
+	# NW corner of track:  &#34;Northwest Corner&#34;
+	# -314339.64  3603769.53  101.98
+	# facing frpmt&#34; -0.04  back: 3.11
+	
+	# Center of gun firing berm line: &#34;Armor Firing Range.&#34;
+	# -314306.27  3603792.69  102.06
+	# facing front: 0.07  back: -3.07
+	
+4.0.label = Der Panzerkommandant
+
+4.1.label = Motor aus! 
+	4.1.alert = Es eine gute Idee den Motor abzustellen wenn er nicht benötigt wird. So hörst Du besser, wie sich gegnerische Panzer nähern und der Gegner kann Dich nicht hören.[NL][NL]Stelle den Motor mit {engstart} ab.
+        4.1.alert.camera = internal
+
+4.2.label = Kommandant bewegen
+	4.2.alert = Die zweite Position in diesem Panzer ist die des Kommandanten. Panzerkommandanten haben gewöhnlich eine bessere Sicht als die anderen Besatzungsmitglieder.[NL][NL]Drücke {positiontwo} zum Wechseln auf die Kommandantenposition.
+	4.2.complete.modal = Beim Positionswechsel von der Fahrerpostion behält der Panzer die Steuerungseinstellung bei. Wenn Du beim Umschalten Gas gegeben hast, wird sich der Panzer auch nach dem Positionswechsel weiter nach vorne bewegen.  Das kann in einigen Situation gefährlich werden, so zum Beispiel im Gelände, wo es nicht immer geradeaus geht.
+
+4.3.label = Die Sicht des Kommandanten
+	4.3.alert = Im A-13 kann der Kommandant durch zwei Sichtluken schauen. Eine Luke zeigt nach vorne, die andere nach links hinten. Zur besseren Übersicht des Geländes kann der Kommandant die Turmluke öffnen.[NL][NL]Drücke {canopycontrol} zum Öffnen der Turmluke.
+	4.3.complete.modal = Der Kommandant wird mit {turretraverse} und {turretelevate} bewegt.
+	
+4.4.label = Benutze Dein Fernglas
+	4.4.alert = Mit dem Fernglas siehst Du noch mehr.[NL][NL]Drücke {gunsightview} zum Benutzen des Fernglases. 
+	
+4.5.label = Umschauen
+	4.5.alert = Die Kuppel wird mit {turretraverse} und {turretelevate} bewegt.[NL][NL]Schaue kurz nach NORDEN entlang der Schießbahn zu den Erdhügeln. Dort befinden sich die Übungsziele.
+	4.5.complete.modal = Die Kuppel kann um 360° gedreht werden. Die Ausrichtung der Kuppel ist abhängig von der Ausrichtung des Turmes. 
+	
+5.0.label = Der Schütze
+
+5.1.label = Die Schützenposition
+	5.1.alert = Von der Schützenposition aus werden die Kanone und das Koaxial MG bedient.[NL][NL]Drücke {positionthree}, um auf die dritte Position zu wechseln.
+5.2.label = Die Sichtluke des Kanoniers
+	5.2.alert = Der Kanonier hat zwei Möglichkeiten, das Gelände ausserhalb des Panzers einzusehen.[NL][NL]Drücke {canopycontrol} zum Öffnen der Sichtluke.
+	5.2.complete.modal = Du kannst {instrumentview} benutzen, um die Ansicht zu vergrößern und so einen besseren Ausblick zu haben.
+
+5.3.label = Das Visier
+5.3.alert = Der Kanonier kann die Umgebung auch durch das Geschützvisier betrachten.[NL][NL]{gunsightview} wechselt durch die verschiedenen Visieransichten.
+	
+5.4.label = Turm bewegen
+	5.4.alert = Der Turm wird, genau wie die Kuppel des Kommandanten, mit {turretraverse} und {turretelevate} bewegt.[NL][NL]Versuch einmal, den Turm zu bewegen.
+	5.4.complete.modal = Der Turm kann um 360° bewegt werden!
+
+5.5.label = Kanone 
+	5.5.alert = Schieß mit der Kanone auf die Ziele am Ende der Schießbahn.[NL][NL] {primarytrigger.1} feuert die Kanone ab.
+	5.5.complete.modal = Benutze die Kanone, um andere Fahrzeuge und Gebäude unter Feuer zu nehmen.
+	
+5.6.label = Koaxial MG 
+	5.6.alert = Jetzt probiere einmal das Maschinengewehr aus.[NL][NL]Drücke {secondarytrigger.1} zum Abfeuern des Turm MGs.
+	5.6.complete.modal = Benutze das MG gegen Infanterie, LKWs oder andere weiche Ziele.
+	
+6.0.label = Gunnery
+
+6.1.label = Schieß auf das linke Ziel
+	6.1.alert.modal = Das Visier des A-13 ist ein einfaches Fadenkreuz mit einer Anzeige der eingestellten Visierentfernung für die Kanone und das MG. Die Entfernung wird in 100m Abständen angezeigt. Benutze die linke Anzeige für die Kanone und die rechte Anzeige für das MG.
+	6.1.alert1 = Schieß mit der Kanone {primarytrigger.1} auf das Ziel links vor Dir. Es ist ungefähr 200 Meter entfernt. 
+	6.1.complete = Gut gemacht, Du hast das Ziel getroffen!
+
+6.2.label = Das Visier
+	6.2.alert.modal = Das erste Ziel war einfach zu treffen, da esrelativ nah ist. Das Schießen auf weiter entfernte Ziele ist wegen der Erdanziehung etwas schwieriger.  
+	6.2.alert2 =Versuch jetzt einmal, das nächste Ziel rechts von Dir zu treffen. Es ist ungefähr 500m entfernt.[NL][NL]Benutze die linke Anzeige im Visier, um die Entfernung von 500m abzuschätzen.[NL][NL]Schieß auf das 500m Ziel.
+	6.2.complete.modal = Gut. Wenn die Entfernung bekannt ist, kann das Visier auf die benötigte Distanz eingestellt werden.
+	
+6.3.label = Visierentfernung ändern
+	6.3.alert.modal = Jetz versuch einmal, ein etwas schwierigeres Ziel zu treffen. Die beiden letzten Ziele sind ziemlich weit entfernt.
+	6.3.alert1 = Zuerst feuere die Kanone und schau genau, wo das Geschoß einschlägt[NL][NL]Wenn der Schuß zu kurz geht, erhöhe die Visierentfernung. Geht der Schuß zu weit, verkürze die Visierentfernung.[NL][NL]iVersuche eines der der beiden weiter entfernten Ziele zu treffen.    
+	6.3.complete.modal = Guter Schuß. Wie Du jetzt weisst, ist es ungefähr 1000m entfernt. Panzerkampf findet meist auf Entfernungen zwischen 500 und 2000 Metern statt.[NL][NL]Mit Maschinengewehren wird genauso gezielt, die Visierentfernungsanzeige befindet sich jedoch rechts.
+	
+6.4.label = Munitionsarten
+	6.4.alert = Viele Panzertypen haben verschiedene Arten von Munition an Bord. Der A-13 ist jedoch nur mit panzerbrechender Munition ausgerüstet
+	6.4.complete.hilite = primary,target
+
+6.5.label = Schießtraining
+	6.5.alert = Gib noch ein paar Schuss ab.[NL][NL]Wenn Du weiter machen möchtest, wechsle auf die Fahrerposition {positionone}.
+
+7.0.label = Kursabschluß
+
+7.1.label = Motor starten
+	7.1.alert = Starte den Motor mit {engstart} und drücke {gunsightview} zum Vergrößern der Fahreransicht.
+
+7.2.label = Rückwärts fahren
+	7.2.alert = Panzer können auch rückwärts fahren, was sich oft als sehr hilfreich erweist.  Benutze {reverse} zum Umschalten zwischen Vor- und Rückwärtsgängen.[NL][NL]Wenn Du {reverse} drückst, wird das Getriebe automatisch in den Leerlauf geschaltet.[NL][NL]Leg den Rückwärtsgang ein.
+	7.2.alert.hilite = readout,target
+	
+7.3.label = Gang einlegen
+	7.3.alert = Jetzt muss noch ein Gang {shiftup} eingelegt werden.
+	7.3.alert.hilite = readout,target
+
+7.4.label = Rückwärts fahren
+	7.4.alert = Fahr rückwärts zur Strasse. Beschleunige den Panzer mit {gas.10.4} etwas und drehe nach links mit {leftbrake.10.4} bis Du die Strasse sehen kannst.[NL][NL]Wenn Du die Strasse siehst, bring den Panzer durch Drücken von {bothbrake.10.4} zum Stehen. {reverse} schaltet die Vorwärtsgänge wieder ein.
+	7.4.alert.hilite = readout,target
+	
+7.5.label = Heimfahrt
+	7.5.alert = Leg den ersten Gang ein {shiftup}.[NL][NL]Folge den Wegpunkten zurück zum Ausgangspunkt.[NL][NL]Benutze {gas.10.4} zum Beschleunigen.[NL]{bothbrake.10.4} bremst den Panzer ab.[NL]Mit {leftbrake.10.4} und {rightbrake.10.4} lenkst Du nach links und rechts.
+	7.5.alert.hilite = readout,target
+
+8.0.label = Geschafft
+
+8.1.label = Lehrgang beendet
+	8.1.alert.modal = Glückwunsch! Du hast den Grundlagenlehrgang Panzer abgeschlossen.
+
+# NE corner &#34;Northeast Corner&#34; 
+# -314252.88  3603785.75  101.98
+# facing front: 1.84  back: -1.30
+
+
+# &#34;Bend Left&#34;
+# -314234.48  3603724.61  101.98
+# facing front: 2.21  back: -0.93
+
+# &#34;Bend Right&#34;
+# -314192.29  3603695.49  101.05
+# facing front: 2.19  back: -0.95
+
+# Final way point
+# -314230.38  3603625.27  101.34
+# facing front: -1.57    back: 1.58
+
+#	1.6.complete = Congratulations!  You have completed Armor Training.</body>
+  <title>Grundlagen Panzer I: Panzer A-13 Mark II</title>
+</content>

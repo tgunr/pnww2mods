@@ -1,0 +1,109 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>6</key>
+  <body>// Movimento verso Remagen e Unkel
+
+
+// Aggiungere le direttive qui
+graduated = Sei stato promosso dal tutorial di base al combattimento.
+tom = Tempo in missione
+captures = Catture installazioni
+damages = Giocatori colpiti
+targetin = Sei ora nell&#39;area del bersaglio!
+targetout = Stai lasciando l&#39;area del bersaglio!
+damaged = Sei stato colpito da un altro giocatore!
+dead = Sfortunatamente il nemico ti ha battuto. Rientra e prova di nuovo..
+bunker = Bunker
+
+1.0.label = Combattimento di base di fanteria
+
+	1.1.label = Ingresso nella baracca
+	1.1.alert.modal = Benvenuto al tuo primo addestramento di combattimento.[NL][NL]Attenzione! Potrebbero essere presenti soldati nemici! Sei in una baracca di una base esercito. Le baracche sono relativamente sicure, il nemico non può accedere ai livelli superiori di questi edifici, ma può sparare attraverso le finestre e le aperture, così fai attenzione.[NL][NL]Prima di avventurarti fuori, ci sono alcune cose che devi conoscere.
+	
+	1.2.label = Controllo e cattura
+	1.2.alert = Il territorio viene controllato prendendo possesso delle città. Le città sono costituite di strutture.[NL][NL]Per catturare una struttura, devi catturare il suo edifico con la bandiera. Questo è solitamente un ufficio o un piccolo bunker con una bandiera al di fuori che ne rappresenta l&#39;attuale possesso.[NL][NL]Premi {showingamemap} per aprire la tua mappa.
+	1.2.complete = Ottimo.
+	1.2.complete.position = 348213,3034640
+	1.2.complete.scale = .20
+//	1.2.complete.selection = Remagen e Unkel
+	
+	1.3.label = La mappa
+	1.3.alert.modal = Questi sono i dintorni di Remagen e Unkel.[NL][NL]Ogni città ha diverse strutture e una base esercito.
+	1.3.alert.position = 348213,3034640
+	1.3.alert.scale = .20
+//	1.3.alert.selection = Remagen e Unkel
+
+        1.3.alert1.modal = La città a sud è Remagen ed è posseduta dagli Alleati.
+	1.3.alert1.scale = .1
+	1.3.alert1.position = 347787,3034409
+	1.3.alert1.selection = Remagen
+
+        1.3.alert2.modal = La città a nord è Unkel ed è posseduta dall&#39;Asse.
+	1.3.alert2.scale = .1
+	1.3.alert2.position = 347975,3034884
+	1.3.alert2.selection = Unkel
+
+	1.3.alert3.modal = Tu sei rappresentato da una freccia in un cerchio e sei vicino al punto di origine.[NL][NL]Il punto di origine indica dove sei entrato.
+	1.3.alert3.position = 348213,3034640
+	1.3.alert3.scale = .20
+//	1.3.alert3.selection = Remagen e Unkel
+
+	1.3.alert4.modal = Ogni struttura è marcata sulla mappa con una bandiera e un icona di tipo. La bandiera indica chi possiede la struttura.[NL][NL]Ogni struttura nel gioco è costituita da un gruppo di edifici incluso il suo edifico di cattura.
+
+	1.3.alert5.modal = I punti di passaggio blu indicano posizioni sulla mappa. I punti di passaggio rossi indicano gli obiettivi della missione.[NL][NL]I punti di passaggio possono essere inseriti solo dal leader della missione.[NL][NL]Uno è marcato &#34;bunker&#34;. Questo è l&#39;&#34;edificio con la bandiera&#34; della tua base esercito.
+        1.3.alert6 = Clicca con il pulsante di destra sul bersaglio e seleziona Attiva, poi Obiettivo.
+	1.3.complete = Ottimo. L&#39;obiettivo attivato è ora evidenziato sulla tua mini-mappa con una freccia verde che ti indica la sua direzione.
+	
+	1.4.label = Rapporti di contatto
+	1.4.alert.modal = Un rapporto di contatto nemico lampeggiante è stato posizionato vicino al punto di passaggio triangolare rosso.[NL][NL]Il punto di passaggio triangolare rosso indica la posizione dell&#39;edificio con la bandiera della base esercito del nemico.
+//	1.4.alert.selection = Remagen e Unkel
+
+//1.4.alert.selection = 
+
+	1.4.alert1.modal = I rapporti di contatto sono posizionati dai giocatori ma non rimangono attivi se non vengono approvati dal leader della missione.
+	1.4.alert2 = Crea un tuo rapporto di contatto cliccando con il tasto di destra vicino al rapporto attuale e selezionando Aggiungi rapporto.[NL][NL]Seleziona il tipo di rapporto appropriato (fanteria nemica in questo caso) e poi premi OK.
+	1.4.complete = Ottimo. Puoi anche aggiungere specifiche note nella finestra di testo del rapporto di contatto quando è il caso.
+	
+	1.5.label = Chiudi la mappa
+	1.5.alert = Premi {showingamemap} per chiudere la mappa.
+//	1.5.alert.selection = Remagen e Unkel
+
+//1.5.alert.selection = 
+	
+	1.6.label = Esaminare la chat
+	1.6.alert = E&#39; molto importante comunicare con i tuoi alleati.[NL][NL]Premi F1 per aprire la barra di chat e inserisci un saluto ai tuoi alleati così che sappiano che sei qui.
+	1.6.complete.modal = Ottimo.  Puoi anche premere (enter) per inviare un messaggio nella zona, ma i nemici vicini potrebbero sentirti.
+	
+	1.7.label = Corri al bunker
+	1.7.alert = Quando sei pronto, esci dalla baracca e scatta verso il punto di passaggio del bunker! Sii pronto ad incontrare il nemico! Ricordati di usare le coperture per proteggerti dal fuoco nemico.
+	1.7.complete = Eccellente!
+
+	1.8.label = Edifici con la bandiera
+	1.8.alert.modal = Per catturare una struttura, devi entrare nel suo edificio con la bandiera e rimanere lì finchè la cattura non è completa.[NL][NL]Un messaggio dell&#39;HUD ti notificherà quando sei nella posizione corretta e ti mostrerà l&#39;avanzamento. Più compagni avrai con te nell&#39;edificio con la bandiera, più veloce sarà la cattura
+	1.8.alert.hilite = binfo,target
+	1.8.complete.modal = Ottimo. [NL][NL] La cattura inizia automaticamente. Nota il messaggio dell&#39;HUD [NL][NL](Per gli scopi di questo esercizio di addestramento, la base esercito non può essere catturata).
+	
+// Highlight box around HUD capture progress meter.  Here, not capturable because you&#39;re in your own bunker.
+
+	1.9.label = Iniza il combattimento
+	1.9.alert.modal = Per completare questo esercizio, devi lasciare il bunker e :[NL][NL] - devi sopravvivere per 30 minuti. o[NL] - Colpire 3 volte i soldati nemici, o[NL] - Catturare catturare il bunker nemico per un minuto.[NL][NL]E ora muoviti!
+
+// Ideally, fake 1 minute capture bar.</body>
+  <branch>1</branch>
+  <brief>Esperienza di combattimento in un ambiente controllato.</brief>
+  <captures>1</captures>
+  <damages>3</damages>
+  <despawners>347849.40,3034925.79,70.85,-2.56 347876.98,3034925.38,70.85.2.38</despawners>
+  <devehicles>derifle</devehicles>
+  <frspawners>347417.68,3034440.53,70.85,2.35 347417.30,3034467.50,70.85,0.83</frspawners>
+  <frvehicles>frrifle</frvehicles>
+  <handler>basic.combat</handler>
+  <instance>3</instance>
+  <limited>true</limited>
+  <requires>basic.hud</requires>
+  <title>Addestramento di base al combattimento</title>
+  <tom>30</tom>
+  <ui>combat</ui>
+  <ukspawners>347417.68,3034440.53,70.85,2.35 347417.30,3034467.50,70.85,0.83</ukspawners>
+  <ukvehicles>ukrifle</ukvehicles>
+</content>

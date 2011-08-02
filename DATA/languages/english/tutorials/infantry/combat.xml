@@ -1,0 +1,27 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>31</key>
+  <body>title = Infantry Combat Training
+dead = You have been defeated by the enemy. Respawn and try again!
+
+1.0.label = Infantry Combat Training
+
+     1.1.label = intro
+     1.1.alert.modal = This area is now open for live-fire training.  Work together with your teammates to defeat the enemy.[NL][NL]The target is a group of destroyed farm houses half way between the spawn points of you and your enemy.[NL][NL]Good hunting!</body>
+  <branch>1</branch>
+  <brief>Practice infantry combat in a arena with other infantry.</brief>
+  <checkstate>true</checkstate>
+  <despawners>214219.91,3101223.25,8.70,-3.12 214214.49,3101223.11,8.70, -2.36</despawners>
+  <devehicles>derifle,de-smg,degrenadier,de-eng,de-atr,de-lmg,de-sniper,de-ltmortar</devehicles>
+  <frspawners>212970.94,3101368.01,2.95,2.36</frspawners>
+  <frvehicles>frrifle,fr-smg,frgrenadier,fr-eng,fr-atr,fr-lmg,fr-sniper,fr-ltmortar</frvehicles>
+  <graduate>false</graduate>
+  <handler>infantry.combat</handler>
+  <instance>4</instance>
+  <instype>1</instype>
+  <requires>infantry.lmg</requires>
+  <title>Infantry Combat Training</title>
+  <ui>combat</ui>
+  <ukspawners>212943.46,3101367.74,2.95,-2.16</ukspawners>
+  <ukvehicles>ukrifle,uk-smg,ukgrenadier,uk-eng,uk-atr,uk-lmg,uk-sniper,uk-ltmortar</ukvehicles>
+</content>

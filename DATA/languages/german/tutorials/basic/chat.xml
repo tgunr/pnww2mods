@@ -1,0 +1,70 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>4</key>
+  <body>title = Grundlagen der Chatkommunikation
+1.0.label = Fensteraufteilung
+	
+	1.1.alert.modal = Das Chatfenster ist der grundlegende Weg mit anderen Spielern in Battleground Europe zu kommunizieren.[NL][NL] Es enthält 6 &#34;Radios&#34;, mit denen Du Nachrichten empfangen und senden kannst. Jedes dieser Radios kann einzeln auf die verfügbaren Kanäle eingestellt werden.
+	
+		1.1.alert.hilite = chatview,target
+	
+		1.1.alert1.modal = In der Bezeichnung des Radios erscheint der Kanal, auf den es eingestellt ist. Über jedes der Radios 1-6 kann nach Drücken einer oder mehrerer der Funktionstasten F1 bis F6 eine Nachricht gesendet werden. 
+
+		1.1.alert1.hilite = channels,target
+		
+		1.1.alert5 = Die grundlegende Bedienung ist einfach: Drücke die Enter Taste, gib eine Nachricht ein, z.B. &#34;Hallo!&#34; und drücke nochmals Enter um die Nachricht abzuschicken.
+		
+		1.1.label = Chatten.
+		
+		1.1.complete.hilite = chatinput
+
+		1.1.complete = Gut gemacht.  Wären andere Spieler in Deiner Nähe, hätten sie diese Nachricht empfangen.
+
+	1.2.alert.modal = In der Spielwelt ist der voreingestellte Kanal (wenn Du Enter drückst, um zu chatten anstatt einen Radiokanal zu benutzen) der Area Chat.[NL][NL]Eigene Mitspieler mit bis zu 100 Meter Abstand werden Deine Nachricht empfangen. Dies ist eine gute Koordinationsmöglichkeit für alle Spieler innerhalb eines Gebietes.[NL][NL]Aber Vorsicht wenn feindliche Einheiten in der Nähe sind! Obwohl sie Dich nicht verstehen werden, könnte Dich der Lärm verraten.
+
+		1.2.alert1 = Im Missionskanal kannst Du Dich mit jedem in Deiner Mission unterhalten, egal wie weit weg dieser Spieler ist.[NL][NL]Wähle den Missionskanal mit F1.
+		
+		1.2.alert1.hilite = F1,target
+
+		1.2.label = Missionskanal
+		
+		1.2.complete = Beachte, dass das Radio F1 markiert wurde und sich die Chatzeile geöffnet hat.
+		
+	1.3.alert = Gib einen Text ein und drücke Enter, um die Nachricht im Missionskanal abzuschicken (Radio F1).
+
+		1.3.label = Nachricht an die Mission schicken
+
+		1.3.complete = Gut.
+
+	1.4.alert.modal = Deine Radios sind automatisch auf verschiedene Kanäle eingestellt, aber das kannst Du ändern.
+
+		1.4.alert1.modal = Willst Du ein Radio einstellen, klicke auf die Kanalbezeichnung des Radios. Drücke {guicursor} um den Mauszeiger zu sehen.[NL][NL]Klicke auf Radio F3 und wähle den Seiten Kanal.
+[NL][NL]Eine Liste verfügbarer Kanäle erscheint und Du kannst einen Kanal auswählen.
+		1.4.alert2.hilite = F3,target
+
+		1.4.label = Radio F3 einstellen
+
+		1.4.complete = Gut. Radio F3 ist jetzt auf den Seitenkanal eingestellt.
+
+	1.5.alert.modal = Deine Nachrichten auf Radio F3 werden jetzt von jedem im Seitenkanal empfangen. Wenn Du auf alliierter Seite spielst, sind das die Franzosen und Engländer. Spielst Du auf Seite der Achsen, dann können alle Achsenspieler Deine Nachrichten lesen. 
+
+		1.5.alert1.modal = Ein nützlicher Kanal für neue Spieler ist der Hilfekanal, Radio F6.[NL][NL]Wenn Du Fragen hast oder Hilfe brauchst, frag auf diesem Kanal nach und andere Spieler oder GMs (Gamemaster) werden versuchen, Dir zu helfen.
+
+		1.5.alert2.modal =  Das Chatfenster wird auch verwendet um verschiedene Kommandos einzugeben - zum Beispiel das Hinzufügen eines Spielers zu Deiner Freundesliste, eine Squadeinladung akzeptieren oder eine private Nachricht schicken. Diese Kommandos werden DOT-Kommandos (Punktkommandos) genannt, weil an erster Stelle immer ein Punkt (.) oder ein Slash (/) steht.
+
+		1.5.alert3 = Du kannst die Uhrzeit mit dem .TIME kommando überprüfen.[NL][NL]Öffne irgendein Radio, gib .time ein und drücke Enter.
+
+		1.5.label = Chatkommandos eingeben
+
+		1.5.complete = Gut. Du solltest jetzt Deine lokale Zeit und die Serverzeit sehen. Eine komplette Liste aller Kommandos befindet sich im Handbücher Tab unter Chatkommandos.
+                1.6.alert.modal = Damit ist der Lehrgang abgeschlossen.
+	
+		1.6.label = Ende des Lehrgangs</body>
+  <branch>1</branch>
+  <brief>Erlerne die Grundlagen des Chatsystems. Ändere Kanäle, sende private Nachrichten und chatte mit Freunden.</brief>
+  <handler>basic.chat</handler>
+  <instance>2</instance>
+  <next>basic.hud</next>
+  <requires>basic.map</requires>
+  <title>Grundlagen des Chatsystems</title>
+</content>

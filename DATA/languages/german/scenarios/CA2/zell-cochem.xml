@@ -1,0 +1,30 @@
+<?xml version='1.0'?>
+<content type="3">
+  <name>ca2/dm_Zell-Cochem</name>
+  <body>playarea = GRENZE DES KAMPFGEBIETES - HIER GEHT ES NICHT WEITER
+ataxisspawn = Überquere die Brücke und folge der Straße nach Norden
+atalliedspawn = Überquere die Brücke und folge der Straße nach Süden
+wp1 = Deutscher Anfahrtsweg
+wp2 = Alliierter Anfahrtsweg
+wp3 = Wald
+victory1 = Sieg der Alliierten!
+victory2 = Sieg der Achsenmächte!
+roundstop = Diese Runde ist vorbei!</body>
+  <bodyloc>true</bodyloc>
+  <brief>Panzerkolonnen der Alliierten und der Deutschen bewegen sich durch ein Flußtal aufeinander zu. Überquere die Brücke und beziehe Stellung im Wald.
+
+Vernichte so viele Gegner wie möglich in den nächsten ${duration} Minuten.
+
+Das erste Team, das 30 Kills erreicht, gewinnt.</brief>
+  <duration>30</duration>
+  <fog>3</fog>
+  <hour>16</hour>
+  <kills>30</kills>
+  <rules>deathmatch</rules>
+  <target>345440,3005998,110</target>
+  <team1>3</team1>
+  <team2>4</team2>
+  <terrain></terrain>
+  <title>Panzergefecht im Flusstal</title>
+  <weather>2</weather>
+</content>

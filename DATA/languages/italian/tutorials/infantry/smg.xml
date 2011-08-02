@@ -1,0 +1,50 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>1</key>
+  <body>title = Fanteria I: Assaltatore
+
+20mhit = bersaglio a 20m colpito!
+50mhit = bersaglio a 50m colpito!
+100mhit = bersaglio a 100m colpito! Ottimo colpo.
+200mhit = bersaglio a 200m colpito! Ben fatto!
+500mhit = bersaglio a 500m colpito! Eccellente!
+gunrange = Linea di fuoco
+bunker = Sacchetti di sabbia
+vehiclerange = Poligono di tiro per veicoli
+
+1.0.label = Il mitra
+
+1.1.label = Introduzione
+	1.1.alert.modal = Il mitra (&#34;SMG&#34;) e&#39; un&#39;arma potente quando usata correttamente. E&#39; meglio usata a corta distanza.
+	
+1.2.label = Posizione di fuoco
+	1.2.alert = Avanza fino alla linea di fuoco.
+        #waypoint label: &#34;Firing Line&#34;
+        #waypoint: -314046.54,3603720.08,101.73
+
+1.3.label = Fuoco
+	1.3.alert = L&#39;SMG puo&#39; sparare dal fianco, ma cosi&#39; si colpisce un&#39;ampia area con poco controllo.[NL][NL]Premi {fpfire} per sparare.
+	1.3.complete.modal = Questo puo&#39; essere ancora efficace contro un nemico vicono, ma e&#39; non e&#39; affidabile.
+	
+1.4.label = Puntare
+	1.4.alert = Quando punti l&#39;SMG, e&#39; possibile ottenere un alto grado di precisione usando raffiche brevi e controllare.[NL][NL]Tieni premuto {fpgunsight} per puntare l&#39;SMG.
+
+1.5.label = Fuoco
+	1.5.alert = Ora punta e spara al bersaglio a 20 m premento {fpfire}.[NL][NL]Ricarica l&#39;arma con {fpreload} se sei a corto di munizioni.[NL][NL]Colpisci un bersaglio per continuare.
+	1.5.complete.modal = Ottimo! 
+
+1.6.label = Rinculo
+	1.6.alert.modal = Il rinculo rende difficile il puntamento mentre spari con l&#39;SMG.
+	1.6.alert1.modal = Premi e tieni premuto {fpfire} per sparare un caricatore completo. Usa {fpreload} per ricaricare.
+	1.6.alert2.modal = Nota come l&#39;arma si alzi sempre di piu&#39; mentre continui a sparare. Puoi ridurre questo effetto mirando mentre spari.[NL][NL]Premi e tieni premuto {fpfire} e {fpgunsight} per sparare un caricatore completo.
+	1.6.alert3.modal = Puoi minimizzare il rinculo anche di piu&#39; spingendo verso il basso mentre spari mirando.[NL][NL]Spara un altro caricatore mentre spingi verso il basso il mirino.
+	1.6.complete = Ottimo. Con l&#39;esercizio sarai in grado di spara con precisione un intero caricatore su un bersaglio.
+1.7.label = Fatto
+        1.7.alert.modal = Ora conosci le basi dell&#39;uso del mitra.</body>
+  <branch>1</branch>
+  <brief>Apprendi come usare un mitra.</brief>
+  <handler>infantry.smg</handler>
+  <instance>2</instance>
+  <requires>basic</requires>
+  <title>Fanteria I: Assaltatore</title>
+</content>
