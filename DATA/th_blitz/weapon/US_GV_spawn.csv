@@ -2,46 +2,19 @@ section, CATEGORY, weapClass
 default,,GV_tank.0
 spawn,m4a2_us,
 spawn,m10_us,
-#spawn,cn_p38t,
-#spawn,cn_s35,
-#spawn,cn_pziiif,
-#spawn,cn_oplbltz,GV_truck.0
-#spawn,cn_pak36,GV_gun.0
-#spawn,cn_flak36,GV_gun.0
-#spawn,cn_sdkfz7 ,GV_truck.0
-#spawn,cn_pziic,
-#spawn,cn_charb1,
-#spawn,cn_r35,
-#spawn,cn_a13,
 #spawn,cn_bedford,GV_truck.0
-#spawn,cn_mle25,GV_gun.0
 #spawn,cn_qf2pdr,GV_gun.0
-#spawn,cn_mle47,GV_gun.0
-#spawn,cn_flak30,GV_gun.0
 
 section, tank, weapClass
 default,,GV_tank.0
 spawn,m4a2_us,
 spawn,m10_us,
-#spawn,cn_p38t,
-#spawn,cn_pziiif,
-#spawn,cn_pziic,
-#spawn,cn_charb1,
-#spawn,cn_r35,
-#spawn,cn_a13,
-#spawn,cn_s35,
 
 section, truck, weapClass
 default,,GV_truck.0
-#spawn,cn_oplbltz,
-#spawn,cn_sdkfz7 ,
 #spawn,cn_bedford,
 
 section,gun,weapClass
 default,,GV_gun.0
-#spawn,cn_pak36,
-#spawn,cn_flak36,
 #spawn,cn_qf2pdr,
-#spawn,cn_mle25,
-#spawn,cn_mle47,
-#spawn,cn_flak30,
+
