@@ -1,0 +1,74 @@
+<?xml version='1.0'?>
+<content type="3">
+  <name>dday/obj_doggreen</name>
+  <body>onspawn.moveout * Dog Green at Omaha
+victory1 * Allied Victory! American forces have secured the Vierville Draw
+victory2 * Axis Victory! German forces have defended the Draw.
+roundstop * This round is over!
+playarea * Turn around
+usspawn1 * Get to the seawall and stage an attack on the German Bunker
+usspawn2 * Get to the shale and stage an attack on the German Bunker
+usspawn3 * Move through the draw and attack the German Bunker
+mgnest1 * MG Nest A
+mgnest2 * MG Nest B
+mgnest3 * MG Nest C
+tobruk1 * Tobruk A
+tobruk2 * Tobruk B
+bunker1 * Bunker A
+bunker2 * Defense Objective
+gunemplacement1 * Gun Emplacement A
+gunemplacement2 * Gun Emplacement B
+seawall * Rally Point
+shale * Rally Point
+germanbunker * Capture Objective
+vierville_draw * Vierville Draw
+minefield * minefield
+youcapon * You are capturing the bunker!
+alliedcapon * American forces are capturing the bunker!
+alliedcapoff * Axis forces have re-taken the bunker!
+
+# new 2-stage localizations (some overlap)
+onspawn.1.1.1 = Get to one of the rally points and secure a beachhead!
+onspawn.2.1.1 = Push the American invasion force back into the sea!
+beachfalling = American soldiers are securing a beachhead!
+beachcrossingon.1.1.1 = You are now securing the beach!
+beachcrossingoff.1.1.1 = You are no longer securing the beach!
+beachhead.1.1.1 = Rally Point
+beachhead.2.1.1 = Defend this area
+beachsecure = American forces have secured a beachhead!
+navalguns = American shore bombardment has ceased near the Vierville Draw!
+victory1 = American forces have secured a beachhead!
+victory2 = German forces have defeated the Allied invasion force!
+roundstop = This round is over.
+playarea = Turn around.
+onspawn.1.1.2 = Storm the hill and capture the Command Bunker overlooking the beach.
+onspawn.2.1.2 = Defend the Command Bunker from being overrun by American forces!
+bunkerfalling.1.1.2 = American solidiers are capturing the Command Bunker!
+bunkerfalling.2.1.2 = German forces have secured the Command Bunker!
+linebreach = American solidiers have breached the German line!
+germanbunker = Command Bunker
+beachhead = American Beachhead
+objective1 = Beachhead
+objective2 = Bunker
+vierville_draw = Vierville Draw
+minefield = minefield
+alliedcapon = American forces are capturing the Command Bunker!
+alliedcapoff = Axis forces have re-captured the Command Bunker!
+
+scenario.help = DOG GREEN: DAY OF DAYS</body>
+  <bodyloc>true</bodyloc>
+  <brief>The D-Day attack is several hours old and the allies are gaining ground. The German defenses are holding so far but they must defend the bunker from capture.</brief>
+  <duration1>15</duration1>
+  <duration2>20</duration2>
+  <fog>1</fog>
+  <hour>7</hour>
+  <ingamemap>-30.21 .95 .07</ingamemap>
+  <objective1>200</objective1>
+  <objective2>90</objective2>
+  <rules>doggreen</rules>
+  <team1>2</team1>
+  <team2>4</team2>
+  <terrain>doggreen</terrain>
+  <title>Dog Green RFT</title>
+  <weather>1</weather>
+</content>

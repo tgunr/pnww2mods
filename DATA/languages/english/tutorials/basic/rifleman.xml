@@ -1,0 +1,113 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>2</key>
+  <body>title = Basic Rifleman Training
+ 
+20mhit = 20 m target hit!
+50mhit = 50 m target hit!
+100mhit = 100 m target hit! Good shooting.
+200mhit = 200 m target hit! Well done!
+500mhit = 500 m target hit! Excellent!
+ 
+1.0.label = The Rifle
+
+1.1.alert.modal = Welcome to the basic rifleman tutorial. You will learn about your equipment and how to fire your rifle. 
+1.1.alert1 = Move to the nearby infantry firing range, which is indicated by a waypoint on your minimap.[NL][NL]Or just follow the arrow in the center of your screen.
+1.1.alert1.hilite = minimap
+1.1.label = Move to the firing position
+
+1.2.alert = Your primary weapon is the bolt-action rifle. While slow firing, rifles are very accurate and do significant damage. By default, your rifle is at rest.[NL][NL]Try firing at a target down range with {fpfire}.
+1.2.label = Your First Shot
+1.2.complete.modal = As you can see, it is difficult to hit anything precisely when shooting from the hip.
+
+1.3.alert.modal = You will automatically cycle the next round if your weapon is not empty. When you run out of ammo, you will hear a click when you try to fire and see &#34;0&#34; displayed in your ammo counter.
+1.3.alert1 = As you fire off rounds in this tutorial, keep an eye on your ammo and clip counter. Fire off a few more rounds at the targets down range with {fpfire}.[NL][NL]Reload your rifle with {fpreload} when you are ready to continue.
+1.3.alert1.hilite = primary
+1.3.label = Fire and Reload
+1.3.complete.modal = Your rifle now has ammo again. You can reload your weapon at any time, even if there are rounds remaining in the clip.
+
+1.4.alert.modal = To be successful with a rifle, you must learn to aim. As you aim, you will take a breath to keep your weapon steady. The longer you hold the aim, the harder it will be to keep the weapon still.[NL][NL]To watch the impact of your rounds, continue to hold down {fpfire} when you fire.  This will help you correct your aim.
+1.4.alert1 = Shoot any target by aiming {fpgunsight} and firing {fpfire}. Score 3 aimed hits to continue.
+1.4.label = Aimed Fire
+1.4.complete = Excellent, using your gunsights in combat is very important.
+
+1.5.label = Gunsight Range
+1.5.alert.modal = Rifles have adjustable sights for firing at different distances. The default range setting for rifles is 200 meters, but infantry combat can take place inside and outside of this range. 
+1.5.alert.hilite = primary-label
+1.5.alert1.modal = Take a moment to fire different targets with different range settings to see how it affects your accuracy. Use {gunsightrangeinc} and {gunsightrangedec} to increase and decrease your range setting.
+1.5.alert1.hilite = primary-label
+1.5.complete = Adjusting your gunsight range will give you the best chance of hitting your target.
+
+2.0.label = Switching Weapons
+
+2.1.alert.modal = As a Rifleman you carry 5 items into combat. Switching items is usually done with the number keys or the mouse wheel. The weapon indicator shows your currently equipped weapon or item.
+2.1.alert.hilite = primary
+2.1.alert1 =  You have already used your rifle, now examine your other equipment.[NL][NL]Select your HE grenade with the {fpweapon1} key. 
+2.1.label = Select HE Grenade
+
+2.2.alert = Select your smoke grenade with the {fpweapon2} key.
+2.2.label = Select Smoke Grenade
+
+2.3.alert = Select your combat knife with the {fpweapon3} key.
+2.3.label = Select Combat Knife
+
+2.4.alert = Select your ammo pack with the {fpweapon4} key.
+2.4.label = Select Ammo Pack
+2.4.complete = Well done! Quickly changing weapons can save your life!
+
+3.0.label = Grenades
+
+3.1.alert = Grenades are an important infantry weapon you must understand to use well. Most infantry classes carry both high explosive and smoke grenades.[NL][NL]Select your smoke grenade with the {fpweapon2} key.
+3.1.label = Select Smoke Grenade
+
+3.2.alert.modal = Smoke grenades help conceal your movements from enemy fire, especially when other concealment is not available.  But they also draw the enemy&#39;s attention, so use them wisely.
+3.2.alert1.modal = To throw a grenade, press and hold down {fpfire}. The longer you hold {fpfire}, the farther you will throw the grenade. After a few seconds, you will automatically throw the grenade at full power.
+3.2.alert2 = To aim your throw, simply look in that direction. For greater distance, aim your throw at an upward angle so that it will arc through the air.[NL][NL]Throw your smoke grenade by pressing and holding {fpfire}.
+3.2.label = Throw Smoke Grenade
+3.2.complete = Good. Watch the smoke released from the grenade to understand how much concealment each grenade will provide and the duration it will burn.
+
+3.3.alert = Warning! You can be killed by your own high explosive (&#34;HE&#34;) grenades so be careful when throwing them! Always throw HE grenades from behind cover or far enough that it won&#39;t hurt you.[NL][NL]Select an explosive grenade with the {fpweapon1} key. 
+3.3.label = Select HE Grenade
+
+3.4.alert = Throwing HE grenades is the same as throwing smoke grenades - except that they can kill you![NL][NL]Aim slightly high then press and hold {fpfire} to throw your HE grenade.
+3.4.label = Throw HE Grenade
+3.4.complete = Good. Remember, if you release your grenade too soon, run and drop prone for safety!
+
+4.0.label = Combat Knife
+
+4.1.alert = To kill enemies with stealth or when you run out of other ammo, you can use your combat knife. Simply get close and thrust using {fpfire}.[NL][NL]Select your combat knife with the {fpweapon3} key.
+4.1.label = Select Combat Knife
+
+4.2.alert = Press {fpfire} to thrust your knife.
+4.2.label = Use Your Knife
+4.2.complete = Remember, you must be very close to an opponent to strike him with this weapon.
+
+5.0.label = Ammo Resupply Pack
+
+5.1.alert = Riflemen and most paratrooper units carry an Ammo Pack. Using this item on a friendly player will resupply their ammunition.[NL][NL]Select your ammo resupply pack with the {fpweapon4} key.
+5.1.label = Select Ammo Pack
+
+5.2.alert = For mortarmen and machine gunners, ammo is very precious. A good idea might be to wait until one of these infantry types near you needs ammo before expending your pack.[NL][NL]Press {fpfire} to see your ammo pack in action.
+5.2.label = Use Ammo Pack
+5.2.complete = Good. If a teammate were present, they would have received it. 
+
+5.3.alert.modal = You can request ammunition from other players by entering the command &#34;/ammo&#34; into the chat interface.  If you have an ammo pack, you will see the icon of other players who request ammo flash in the game and on the game map.
+
+5.3.alert1.modal = You can also gain ammunition from trucks and halftracks.  Any ground vehicle or infantry unit close to a stationary truck will regain ammunition, a small truck icon is shown when you are in range.  The resupply takes a few moments.  Stand near the truck to see the this.
+
+# Script-fu: Waypoint at resupply truck with radius same as resupply icon range
+
+5.3.alert2.modal = Good. Notice the resupply icon is flashing and that your ammunition is being replaced.  You cannot have more ammunition than you started it - only spent ammunition can be replaced.
+
+# Script-fu:HUD highlight box on flashing resupply icon
+
+5.3.label = End Tutorial
+5.3.complete.modal = Congratulations!  That completes your Basic Weapon Training!</body>
+  <branch>1</branch>
+  <brief>An introduction to the weapons and equipment of the infantry rifleman.</brief>
+  <handler>basic.rifleman</handler>
+  <instance>2</instance>
+  <next>basic.map</next>
+  <requires>basic.movement</requires>
+  <title>Basic Rifle Training</title>
+</content>

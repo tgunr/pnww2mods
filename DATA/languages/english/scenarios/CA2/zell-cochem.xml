@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+<content type="3">
+  <name>ca2/dm_Zell-Cochem</name>
+  <body>playarea = BORDER OF COMBAT AREA ... YOU CANNOT LEAVE THE COMBAT AREA
+ataxisspawn = Cross the bridge and follow the road north through woods
+atalliedspawn = Cross the bridge and follow the road sth through woods
+wp1 = german approach
+wp2 = allied approach
+wp3 = woods
+victory1 = Allies victorious!
+victory2 = Axis victorious!
+roundstop = This round is over!</body>
+  <bodyloc>true</bodyloc>
+  <brief>The armoured columns of both the Allies and the Germans are advancing towards each other through the river valley. Cross the bridge and move towards the woods in the middle.<br><br>
+Kill as many enemy tanks as possible in 30 minutes<br>
+The first team to reach 30 kills wins.</brief>
+  <duration>30</duration>
+  <fog>3</fog>
+  <hour>16</hour>
+  <kills>30</kills>
+  <rules>deathmatch</rules>
+  <target>345440,3005998,110</target>
+  <team1>3</team1>
+  <team2>4</team2>
+  <terrain></terrain>
+  <title>Tank Meeting  WIP</title>
+  <weather>2</weather>
+</content>

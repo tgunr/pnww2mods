@@ -1,0 +1,42 @@
+<?xml version='1.0'?>
+<content type="3">
+  <name>ca2/dm_tankbrawl2</name>
+  <body>objective1 = Allies {1}/{2}
+objective2 = Axis {1}/{2}
+playarea = Edge of combat zone ... turn around
+onspawn.moveout = Destroy enemy tanks before time runs out!
+wp1 = Allied HQ
+wp2 = Axis HQ
+wp3 = East Bridge
+wp4 = West Bridge
+wp5 = Le Crotoy Bridge
+victory1 = Allies victorious!
+victory2 = Axis victorious!
+roundstop = This round is over!
+scenario.help = TANK BRAWL 2: KILL THE ENEMY</body>
+  <bodyloc>true</bodyloc>
+  <brief>Enemy tanks meet at a critical bridge for a fight to the death!</brief>
+  <draw>10</draw>
+  <duration>15</duration>
+  <enemydeaths>true</enemydeaths>
+  <enemyicontypeonly>true</enemyicontypeonly>
+  <firingenemyicons>true</firingenemyicons>
+  <fog>3</fog>
+  <hour>16</hour>
+  <links>
+    <link path="scenarios/dm/objectives/tankbrawl2_1.xml" title="team1" />
+    <link path="scenarios/dm/objectives/tankbrawl2_2.xml" title="team2" />
+  </links>
+  <rules>dmnointel</rules>
+  <target>81799.25,3011797.69,25</target>
+  <team1>3</team1>
+  <team1max>8</team1max>
+  <team1min>2</team1min>
+  <team2>4</team2>
+  <team2max>8</team2max>
+  <team2min>2</team2min>
+  <terrain></terrain>
+  <title>Tank Brawl 2 WIP</title>
+  <victory>25</victory>
+  <weather>1</weather>
+</content>

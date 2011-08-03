@@ -1,0 +1,132 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>1</key>
+  <body># Spawn them off the field.
+# -314294.03    3602494.26   102.15
+# facing front: 2.33  back:  -0.81 (needs a tad tweaking to be perpendicular to runway)
+
+#title = Aircraft I: Preflight: Hurricane Mk I
+# vehicles.1.1.2.2 = Hurricane Mk I
+
+#title = Aircraft I: Preflight: Curtiss Hawk H75A-3 
+# vehicles.3.1.2.1 = Curtiss Hawk H75A-3 (P-36A)
+
+#title = Aircraft I: Preflight: Messerschmitt Bf 109E-1 
+# vehicles.4.1.2.6 = Messerschmitt Bf 109E-1
+
+
+1.0.label = Checklist pre-volo
+
+	1.1.label = Introduzione
+	1.1.alert.modal = Far decollare un aereo è pericoloso! E&#39; molto facile uscire dalla pista, girare il veicolo, schiantarsi contro qualcosa o fallire il decollo. Questa checklist di pre-volo ti aiuterà a preparti per il decollo nel modo più sicuro possibile.
+
+2.0.label = Vista esterna
+
+	2.1.label = Controllo tettuccio
+	2.1.alert = La visuale del pilota è limitata dalla fusoliera e dalle ali dell&#39;aereo.[NL][NL]Premi {canopycontrol} per aprire il tettuccio.
+
+	2.2.label = Viste principali
+	2.2.alert = Usa i controlli della visuale per guardarti attorno. Di default, puoi farlo con il cursore POV sul tuo joystick o con i tasti numerici sul tuo tastierino.
+	2.2.complete.modal = La consapevolezza della situazione (Situation awareness) è vitale nel combattimento aereo. Quando voli, devi in ogni momento controllare il cielo alla ricerva di aerei nemici.
+	
+	2.3.label = Vista libera
+	2.3.alert = La vista libera è a volte utile per un pilota, ma pericolosa da usare in combattimento.[NL][NL]Premi {togglemouselook} per muovere la vista liberamente.
+	2.3.complete.modal = Ben fatto! Puoi usare il mouse per girare la testa e guardare il pannello strumenti.
+	
+	2.4.label = Vista normale
+	2.4.alert = Premi {togglemouselook} nuovamente  per ritornare al vista normale.
+
+3.0.label = Verifica dei controlli
+
+	3.1.label = Superficia di controllo
+	3.1.alert.modal = La verifica che i tuoi controlli funzionino è importante per evitare incidenti al decollo. I controlli primari sono [NL][NL]Alettoni: controllo del rollio[NL]Timone verticale: controllo dell&#39;imbardata[NL]Timone di quota: controllo del beccheggio
+	
+	3.2.label = Alettone destro
+	3.2.alert = GLi alettoni controllano il rollio del tuo velivolo, la rotazione oraria o antioraria ti permtte di virare o volare capovolto.[NL][NL]Tenendo premuto {lookviewseven} usa {aileron.3.4.7.4} per confermare che il tuo alettone destro funzioni.
+	
+	3.3.label = Alettone sinistro
+	3.3.alert = Ora tieni premuto {lookvieweight} e usa {aileron.3.4.7.4} per confermare che il tuo alettone sinistro funzioni.
+	3.3.complete = Ben fatto, sembra che entrambi gli alettoni siano funzionanti.
+	
+	3.4.label = Timone verticale
+	3.4.alert = Il timone verticale controlla l&#39;imbardata, che ti fa virare leggermente mentre voli livellato, o ti permette di bilanciare gli altri movimenti.[NL][NL]Nella maggior parte degli aerei non puoi vedere le superfici di coda, così te le mostreremo per questo tutorial.[NL][NL]Usa {rudder.0.3.1.3} per verificare che i pedali del timone rispondano (potresti aver bisogno di premere i tasti o muovere l&#39;asse del joystick molto per vedere qualche movimento).
+	3.4.alert.camera = 60,10,60
+	3.4.complete = Ottimo.
+	
+	3.5.label = Timone di quota
+	3.5.alert = Il timone di quota è formato dagli stabilizzatori orizzontali sul retro della fusoliere dell&#39;aereo. Muovendoli il tuo aereo punterà in alto o in basso a seconda della direzione in qui si muoveranno.[NL][NL]Usa {elevator.0.3.1.3} per muovere il timone di quota.
+	3.5.complete = Grande.
+	
+	3.6.label = Flap
+	3.6.alert.modal = I flap cambiano la forma delle ali, creando più portanza, il che rende più semplice il decollo, ma aggiunge molta resistenza aerodinamica rallentandoti.[NL][NL]Dalla posizione del pilota, non è possibile vedere i flap nella maggior parte degli aerei, ma puoi sentirli estrarre.
+	3.6.alert.camera = -7,-5,-7,2
+	3.6.alert1 = Premi {flapcontrol.10.4.0.4} per estrarre i flap e ascoltane il suono.
+	3.6.complete = Ben fatto.
+
+4.0.label = Vista mirino
+
+	4.1.label = Chinati in avanti
+	4.1.alert = La vista mirino ha uno zoom che rispecchia la capacità dei piloti di chinarsi in avanti per migliorare la visuale.[NL][NL]Premi {gunsightview} per commutare sulla vista mirino.
+	4.1.alert.camera = internal
+	4.1.complete = Ottimo.
+
+5.0.label = Vista strumentazione
+
+	5.1.label = Altimetro
+	5.1.alert = Quando voli è importante essere sempre consci della tua situazione; specialmente della velocità aerodinamica e dell&#39;altitudine.[NL][NL]Premi {instrumentview} per vedere il tuo pannello strumenti.
+	
+	5.2.label = Velocità aerodinamica
+	5.2.alert.modal = Localizza l&#39;indicatore della velocità aerodinamica del tuo aereo. A secondo dal paese per cui stai volando, questo strumento utilizzerà mph (britannici), km/h (francesi e tedeschi).
+	
+	5.3.label = Altimetro
+	5.3.alert.modal = Ottimo. Ora localizza l&#39;altimetro. Questo indica la tua altitudine. E&#39; indicato Alt (britannici), Altimetre (francesi) o Höhe (tedeschi)
+	
+	5.4.label = Vista normale
+	5.4.alert = Premi {instrumentview} per ritornare alla vista normale.
+	
+6.0.label = Pannello dello stato del velivolo
+
+	6.1.label = Mostra lo stato
+	6.1.alert = Utili informazioni addizionali sono disponibili nel pannello di stato del velivolo.[NL][NL]Premi {showstats} per abilitare questo pannello.
+	
+	6.2.label = Forze G
+	6.2.alert.modal = Il primo valore elencato e il numero di forze G attualmente applicate al pilota. La forze G sono multipli della forza di gravità. Alti valori di G ti provocheranno un &#34;black out&#34;, e valori negativi di G ti provocheranno un &#34;red out&#34; a seconda del flusso di sangue che arriva al cervello.
+	
+	6.3.label = Angolo di attacco
+	6.3.alert.modal = Il valore successivo è l&#39;angolo di attacco (AoA). Questo è la differenza tra la direzione delle ali e il vettore del tuo velivolo. Un alto angolo di attacco provocherà molta portanza (fino ad un certo punto), e un basso angolo di attacco significa meno portanza.
+	
+	6.4.label = Indicatore di scivolata
+	6.4.alert.modal = L&#39;ultimo valore è la scivolata, che è la differenza tra la tua direzione di avanzamento e il timone verticale. Scivolata positiva è verso destra, negativa è verso sinistra. Un alto valore di scivolata, positivo o negativo, indica che stai creando molta resistenza aerodinamica e sarai rallentato.
+
+7.0.label = Rulla al punto di partenza
+
+	# waypoint needs to be forward and to the left so that it is easily visible from the pilot&#39;s seat.
+
+	7.1.label = Azionare i freni
+	7.1.alert.modal = Ora stiamo per rullare sulla pista e prepararci per il decollo. La pista è sulla sinistra così dobbiamo accendere il motore e rullare verso essa.
+	7.1.alert.camera = 65,5,40
+	7.1.alert1 = I freni agiscono sul carrello sinistro e destro.[NL][NL]Premi e tieni premuto {leftbrake.10.4} e {rightbrake.10.4} per azionare i freni.[NL][NL]Mantieni frenato l&#39;aereo mentre accendi il motore.
+	7.1.alert1.camera = internal
+
+	7.2.label = Accendi il motore
+	7.2.alert = Imposta la manetta al minimo usando {throttle.2.3.3.3}, poi premi e tieni premuto {engstart} finchè il motore non girerà normalmente.[NL][NL]Ricordati di mantere i freni azionati altrimenti l&#39;aereo inizierà a rullare.
+
+	7.3.label = Sblocca il ruotino di coda
+	7.3.alert = Il ruotino di coda bloccato mantiene l&#39;aereo diritto a basse velocità, ma per rullare devi sbloccarlo.[NL][NL]Sblocca il ruotino di coda premento {toggletaillock}.
+	
+	7.4.label = Rulla sulla pista
+	7.4.alert.modal = Rilasci i freni e l&#39;aereo dovrebbe iniziare a muoversi in avanti. Se non capita, aumenta la manetta {throttle.2.3.3.3} leggermente, ma non troppo.
+	7.4.alert1 = Non appena l&#39;aereo si avvicina al centro della pista, usa il freno sinistro {leftbrake.10.4} e destro {rightbrake.10.4} per girare l&#39;aereo così da essere allineato con la pista a sinistra.[NL][NL]Una volta allineato, aziona entrami i freni e blocca il ruotino con {toggletaillock}.
+	
+	7.5.label = Ferma il motore
+	7.5.alert.modal = Ben fatto![NL][NL]Ferma il motore premendo {engstart}. Mantieni i freni azionati finchè il motore non si fermerà completamente.
+	7.5.complete.modal = Eccellente! Sei ora pronto per il decollo.[NL][NL]Puoi tentare di decollare se vuoi. Assicurati di impostare i giri motore (RPM) al massimo premendo {adjustpropup} due volte per avere tutta la potenza disponibile. Poi aumenta la manetta gentilmente fino al massimo.[NL][NL]Ricordati di chiudere il tettuccio con {canopycontrol}![NL][NL]E una volta in aria, ritirare i flap e i carrello con {gearhandle}.</body>
+  <branch>2</branch>
+  <brief>Apprendi le basi dei controlli degli aerei da caccia.
+
+Note: alcuni strumenti degli aerei sono difficili da leggere a basse risoluzioni dello schermo. Se non puoi leggerli, per favore aumenta la tua risoluzione.</brief>
+  <handler>fighter.basic</handler>
+  <instance>2</instance>
+  <requires>basic</requires>
+  <title>Caccia I: Checklist pre-volo</title>
+</content>

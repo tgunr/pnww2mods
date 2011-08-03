@@ -1,0 +1,76 @@
+<?xml version='1.0'?>
+<content type="5">
+  <key>2</key>
+  <body>title = 步兵II：轻机枪兵
+
+20mhit = 击中20米处的靶子！
+50mhit = 击中50米处的靶子！
+100mhit = 击中100米处的靶子！射得好。
+200mhit = 击中200米处的靶子！干的漂亮！
+500mhit = 击中500米处的靶子！棒极了！ 
+gunrange = 射击靶场
+bunker = 沙袋坑
+vehiclerange = 战车靶场
+
+1.0.label = 轻机枪
+
+1.1.label = 介绍
+	1.1.alert.modal = 轻机枪（LMG），如果使用恰当，将是一款威力非常强大的武器。它是最好的中远程火力压制武器。如果轻机枪兵能跟步枪兵一起行动的话，更是会如虎添翼，发挥出更大的威力，因为步枪兵不光可以为轻机枪兵额外的弹药补给，还可以保护轻机枪兵的侧翼安全。
+	
+1.2.label = 射击位置
+	1.2.alert = 现在，请按照导航点的指引，移动到射击靶场的位置。
+        #waypoint label: &#34;Firing Line&#34;
+        #waypoint: -314046.54,3603720.08,101.73
+
+1.3.label = 在未部署状态下射击
+	1.3.alert = 轻机枪可以在未部署的情况下直接射击，但是因为它的后坐力和重量，这样射击很难精确命中目标。[NL][NL]现在，请按 {fpfire} 即鼠标左键使用轻机枪射击。
+	1.3.complete.modal = 显然，轻机枪在对付近距离敌人时，只能作为最后的手段来使用。
+	
+1.4.label = 卧姿
+	1.4.alert = 在使用轻机枪之前，应该首先把它部署好。你既可以在卧姿的状态下部署轻机枪，也可以在靠近矮墙，箱子和窗台一类目标时，在跪姿的状态下部署。[NL][NL]现在，请按 {fpprone}键进入卧姿。
+
+1.5.label = 部署轻机枪
+	1.5.alert = 请按 {fpdeploy}放下轻机枪的双脚架，部署轻机枪。[NL][NL]在本次训练中，你必须使用 {fpdeploy} 来部署轻机枪。[NL]在其他环境下，你还可以使用鼠标右键完成双脚架的部署。
+
+1.6.label = 在部署状态下射击
+	1.6.alert = 现在，瞄准任何的靶子，按 {fpfire}即鼠标左键攻击目标。[NL][NL]如果当前弹药的数量太低的话，你可以使用 {fpreload}重新装填弹药。[NL][NL]请准确命中任意目标，以便继续任务。
+	1.6.complete.modal = 很好！在部署状态下射击要比在未部署状态下射击精准的多。 
+
+1.7.label = 瞄准器范围
+	1.7.alert.modal = 跟步枪一样，轻机枪的瞄准器也可以通过调整来射击不同距离的目标。轻机枪瞄准器的默认范围设定是200米。
+	1.7.alert.hilite = primary,target
+	1.7.alert1.modal = 现在，你可以尝试一下在不同的范围设定上，射击不同的靶子，看看它对命中率的影响。[NL][NL]你可以使用 {gunsightrangeinc} 和 {gunsightrangedec}来增加和降低你的范围设定。
+	1.7.alert1.hilite = primary,target
+
+1.8.label = 撤销部署
+	1.8.alert = 当你完成射击之后，按 {fpdeploy}可以撤销轻机枪的部署。 
+	1.8.complete.modal = 很好。现在你可以按 {fpprone}站起来了。
+	
+2.0.label = 战车目标
+
+2.1.label = 摧毁战车
+	2.1.alert = 轻机枪对敌军的步兵来说是一款毁灭性的武器，此外，轻机枪还可以被用来对付拥有稀薄装甲或干脆没有装甲的战车，像卡车和牵引车等。[NL][NL]现在，请按照导航点的指示移动到战车靶场。
+	#waypoint label &#34;Vehicle Target Range&#34;
+	#waypoint: -313992.15,3603761.89,100.82
+	
+2.2.label = 射击位置
+	2.2.alert = 这里就是战车靶场。[NL][NL]请按照导航点的指示，进入由沙包组成的地堡战壕里。
+	#waypoint label: &#34;Sandbag Pit&#34;
+	#waypoint: -313969.40,3603763.17,100.32
+
+2.3.label = 在沙带上部署轻机枪
+	2.3.alert = 现在，请靠近沙袋，按 {fpdeploy}把轻机枪的双脚架部署在沙袋墙上。[NL][NL] 一定要足够靠近沙袋墙，不然你很可能不能成功部署。
+	2.3.complete = 棒极了！
+	
+2.4.label = 射击角度
+	2.4.alert.modal = 现在左右摆动你的轻机枪，可以感觉到它当前的射击角度与在地面上部署时是明显不同的。[NL]通常，在某个物体上部署轻机枪将大大提升轻机枪的射击角度。
+	2.4.alert.modal = 现在，请射击最近的废弃战车。
+	2.4.complete.modal = 棒极了！恭喜，你已经完成了轻机枪兵的训练任务。</body>
+  <branch>1</branch>
+  <brief>此任务将训练你使用轻机枪的能力。</brief>
+  <handler>infantry.lmg</handler>
+  <instance>2</instance>
+  <requires>infantry.smg</requires>
+  <spawners>314051.47,3603774.41,101.00</spawners>
+  <title>步兵II：轻机枪兵</title>
+</content>

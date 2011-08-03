@@ -1,0 +1,16 @@
+<?xml version='1.0'?>
+<content type="3">
+  <body>MISSIONI
+
+/AUTOLEADER ON|OFF: Abilitato di default ogni volta che fai partire il gioco. Quando abilitato, sarai considerato per la promozione automatica a leader di missione se il tuo attuale leader dovesse uscire.
+/MLIST: Mosta la lista di tutti i giocatori nella stessa missione.  Un asterisco (*) indica che un giocatore e&#39; entrato nel mondo del gioco.
+/TAKELEAD: Se il tuo leader di missione e&#39; inattivo per 6 minuti o piu&#39;, questo comando ti permette di acquisire la leadership della missione.
+
+LEADER DI MISSIONE
+
+/BACKUPLEADER (GIOCATORE): Nomina un giocatore come leader nel caso tu lasciassi la missione. Se non nomini un leader di riserva, il sistema scegliera&#39; un giocatore che ha l&#39;abilitazione alla promozione (vedi /autoleader). Usata come contromisura al comando &#34;/takelead&#34;. Nota: i leader di riserva possono assumere il comando in ogni momento..
+/MAKELEADER (GIOCATORE): Passa la leadership della missione al giocatore indicato (che deve essere nella missione).
+/ORDERS (TESTO): Imposta gli ordini correnti per la tua missione, tale comando fara&#39; emettere un suono al computer di ogni giocatore e li mostrera&#39; nella parte superiore dello schermo. Usata come contromisura al comando &#34;/takelead&#34;.
+/ORDERS CLEAR: Rimuove gli ordini attuali.</body>
+  <title>Comandi di missione</title>
+</content>

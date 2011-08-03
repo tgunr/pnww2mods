@@ -1,0 +1,17 @@
+<?xml version='1.0'?>
+<content type="3">
+  <key>0</key>
+  <body>作为一名新兵，你只有通过最严酷的训练，才能成为一名合格的士兵。你必须完成5个基础训练任务，才有资格进入战场！每完成一个任务，你都将获得10点积分。当你积累了50点积分之后，你将被提升一级。这样你将从新兵营毕业，从而进入现役！</body>
+  <brief>作为一名新兵，你只有通过最严酷的训练，才能成为一名合格的士兵。你必须完成5个基础训练任务，才有资格进入战场！每完成一个任务，你都将获得10点积分。当你积累了50点积分之后，你将被提升一级。这样你将从新兵营毕业，从而进入现役！</brief>
+  <handler>basic</handler>
+  <links>
+    <link path="tutorials/basic/movement.xml" title="行进训练任务" />
+    <link path="tutorials/basic/rifleman.xml" title="武器训练任务" />
+    <link path="tutorials/basic/map.xml" title="地图训练任务" />
+    <link path="tutorials/basic/chat.xml" title="通信训练任务" />
+    <link path="tutorials/basic/hud.xml" title="HUD训练任务" />
+    <link path="tutorials/basic/combat.xml" title="基本战斗训练任务" />
+  </links>
+  <next>basic.movement</next>
+  <title>基础训练营</title>
+</content>

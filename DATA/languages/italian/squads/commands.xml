@@ -1,0 +1,31 @@
+<?xml version='1.0'?>
+<content type="3">
+  <body>Un asterisco (*) vicino al grado nella colonna Posizione indica che il giocatore ha abilitato l&#39;indicatore di reclutamento (dalle Opzioni di Squadra).
+
+Arruolare un giocatore nella vostra squadra (devi essere al livello reclutatore o superiore).
+/RECRUIT <giocatore>
+
+Accetare l&#39;invito ad unirsi ad una squadra.
+/ACCEPT
+
+Rifiutare l&#39;invito ad unirsi ad una squadra (l&#39;invito può anche scadere).
+/DECLINE
+
+Lasciare la vostra squadra attuale.
+/LEAVE
+
+Sciogliere una squadra (solo i CO).
+/DISBAND
+
+Rimuovere un giocatore dalla squadra (livello XO o superiore).
+/REMOVE <giocatore>
+
+Promuovere un giocatore di un livello fino ad un livello sotto il vostro (livello XO o superiore).
+/PROMOTE <giocatore>
+
+Retrocedere un giocatore; limitato ai giocatori sotto il vostro livello (livello XO o superiore).
+/demote <giocatore>
+
+Lasciare il comando (solo CO). Retrocedi a XO e rendere il <giocatore> il nuovo CO.
+/RESIGN <giocatore></body>
+</content>

@@ -1,0 +1,52 @@
+<?xml version='1.0'?>
+<content type="3">
+  <name>dday/dm_riverrun</name>
+  <body>objective1 = Allies {1}/{2}
+objective2 = Axis {1}/{2}
+intel = Intel
+onspawn.moveout = Eliminate as many enemy as possible before time runs out!
+churchentry = The church tower is a perfect spot for snipers. Watch Out!
+toaxisspawn = German forces are camped northeast.
+toalliedspawn = American forces have crossed the southwest bridge!
+victory1 = Allies victorious!
+victory2 = Axis victorious!
+roundstop = This round is over!
+playarea = Edge of combat zone ... turn around
+wp1 = allied foothold
+wp2 = german camp
+wp3 = high ground
+intelenemyon = Your side has intel on the enemy!
+intelenemyoff = Your side no longer has intel on the enemy.
+intelfriendlyon = The enemy has intel on your side!
+intelfriendlyoff = The enmy no longer has intel on your side.
+scenario.help = RIVER RUN: KILL THE ENEMY</body>
+  <bodyloc>true</bodyloc>
+  <brief>The Americans advanced via the south bridge before it was blown. Now the Germans must defend the town from their camp.
+
+Kill as many enemy soliders as possible in 15 minutes
+
+The first team to reach 50 kills wins.</brief>
+  <draw>35</draw>
+  <duration>15</duration>
+  <enemydeaths>true</enemydeaths>
+  <enemyicontypeonly>true</enemyicontypeonly>
+  <firingenemyicons>true</firingenemyicons>
+  <fog>3</fog>
+  <hour>16</hour>
+  <ingamemap>55.08 -75.16 .043</ingamemap>
+  <links>
+    <link path="scenarios/dm/objectives/riverrun1.xml" title="team1" />
+    <link path="scenarios/dm/objectives/riverrun2.xml" title="team2" />
+  </links>
+  <rules>deathmatch</rules>
+  <team1>2</team1>
+  <team1max>16</team1max>
+  <team1min>2</team1min>
+  <team2>4</team2>
+  <team2max>16</team2max>
+  <team2min>2</team2min>
+  <terrain>riverrun</terrain>
+  <title>River Run RFT</title>
+  <victory>50</victory>
+  <weather>1</weather>
+</content>

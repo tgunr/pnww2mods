@@ -1,0 +1,51 @@
+<?xml version='1.0'?>
+<content type="3">
+  <name>dday/dm_riverrun</name>
+  <body>objective1 = Alliierte
+objective2 = Achsenmächte
+onspawn.moveout = Vernichte so viel Feinde wie möglich bevor die Zeit abgelaufen ist!
+churchentry = Vorsicht, im Kirchturm verstecken sich gerne Scharfschützen!
+toaxisspawn = Die deutschen Streitkräfte werden im Nordosten belagert.
+toalliedspawn = Die Amerikaner haben die südwestliche Brücke überquert!
+victory1 = Sieg für Allierten!
+victory2 = Sieg für die Achsenmächte!
+roundstop = Diese Runde ist beendet.
+playarea = Grenze der Kampfzone ... versuch es in der Gegenrichtung
+wp1 = Alliierte Stellung
+wp2 = Deutsches Feldlager
+wp3 = Aussichtspunkt
+intelenemyon = Deine Seite hat neue Informationen über den Gegner erhalten!
+intelenemyoff = Deine Seite hat keine Informationen über den Gegner.
+intelfriendlyon = Der Feind hat neue Informationen über Deine Seite!
+intelfriendlyoff = Der feindliche Aufklärer wurde unschädlich gemacht.
+scenario.help = RIVER RUN: VERNICHTE DEN FEIND!!!</body>
+  <bodyloc>true</bodyloc>
+  <brief>Die Amerikaner sind noch vor der Sprengung über die Südbrücke vorgerückt. Die deutschen Truppen müssen die Stadt gegen die Belagerer verteidigen.
+
+Töte so viele Feinde wie möglich innerhalb von ${duration} Minuten.
+
+Das Team, das zuerst 50 Kills erreicht, gewinnt.</brief>
+  <draw>35</draw>
+  <duration>15</duration>
+  <enemydeaths>true</enemydeaths>
+  <enemyicontypeonly>true</enemyicontypeonly>
+  <firingenemyicons>true</firingenemyicons>
+  <fog>3</fog>
+  <hour>16</hour>
+  <ingamemap>55.08 -75.16 .043</ingamemap>
+  <links>
+    <link path="scenarios/dm/objectives/riverrun1.xml" title="team1" />
+    <link path="scenarios/dm/objectives/riverrun2.xml" title="team2" />
+  </links>
+  <rules>deathmatch</rules>
+  <team1>2</team1>
+  <team1max>16</team1max>
+  <team1min>2</team1min>
+  <team2>4</team2>
+  <team2max>16</team2max>
+  <team2min>2</team2min>
+  <terrain>riverrun</terrain>
+  <title>Gefecht am Fluß</title>
+  <victory>50</victory>
+  <weather>1</weather>
+</content>
