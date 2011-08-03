@@ -7,7 +7,11 @@ Include("terrain");
 Include("player");
 Include("state"); -- includes default state
 Include("strat");
-Include("zmq");
+
+if(game.OS() ~= 1) then
+	Include("zmq");
+end
+
 game.LoadLib("scenario");
 
 -- set tutorial state here
@@ -31,15 +35,17 @@ state.starttime				= game.Frametime();
 state.config['server'] 	= '66.28.224.157';
 
 -- states we'll monitor
-state.hoststates			= 
-{
-	{"roundtimer", "OnRoundTimer"},
-	{"round", "OnRound"},
-	{"stage", "OnStage"},
-	{"victory", "OnVictory"},
-	{"victory1", "CheckVictory"},
-	{"victory2", "CheckVictory"}
-};
+if(game.OS() ~= 1) then 
+	state.hoststates			= 
+	{
+		{"roundtimer", "OnRoundTimer"},
+		{"round", "OnRound"},
+		{"stage", "OnStage"},
+		{"victory", "OnVictory"},
+		{"victory1", "CheckVictory"},
+		{"victory2", "CheckVictory"}
+	};
+end
 
 scenario.AddFriendlyScore = function(points)
 	if(not game.Ingame()) then
@@ -66,7 +72,7 @@ scenario.AddEnemyScore = function(points)
 end
 
 scenario.AddScore = function(team, points)
-	if(not state.network or not game.Ingame()) then
+	if(not state.network or not game.Ingame() or game.OS() == 1) then
 		return;
 	end
 	team = tonumber(team);
@@ -82,6 +88,7 @@ scenario.RegisterUpdate = function(callback)
 end
 
 scenario.RegisterState = function(stateName, handler)
+	if(game.OS() == 1) then return end
 	table.insert(state.hoststates, {stateName, handler});
 	Instancing.RegisterHandler(stateName, handler);
 end
@@ -91,6 +98,7 @@ function RegisterState(stateName, handler)
 end
 
 scenario.UnregisterState = function(stateName)
+	if(game.OS() == 1) then return end
 	state.hoststates[stateName] = nil;
 	Instancing.RemoveHandler(stateName);
 end
@@ -131,13 +139,15 @@ function OnStart(handler)
 		for i,hs in ipairs(state.hoststates) do
 			ui.ChatPrint("Adding state handler "..hs[1].."/"..hs[2]);
 			-- register our state handler
-			Instancing.RegisterHandler(hs[1], hs[2]);
+			if(game.OS() ~= 1) then
+				Instancing.RegisterHandler(hs[1], hs[2]);
+			end
 		end
 	end
 end
 
 function StartNetwork()
-	if(Instancing.InstanceId ~= nil) then
+	if(game.OS() ~= 1 and Instancing.InstanceId ~= nil) then
 		-- start the instancing framework
 		Instancing:Start("Client", state.config.server)
 		
@@ -198,11 +208,13 @@ scenario.OnSpawn = function(handler)
 	-- ui.ChatPrint("You have deaths is " .. temp);
 	-- ui.ChatPrint(string.format("You have died %d times!", Instancing:GetStateNumber(deathstate)));
 	
-	if(state.lastroundtimer > 0) then
-		local secondsLeft = Instancing:GetStateNumber("roundtimer");
-		scenario.SetUITimer(secondsLeft - ((game.Frametime() - state.lastroundtimer) / 1000));
-	else
-		scenario.SetUITimer(Instancing:GetStateNumber("roundtimer"));
+	if(game.OS() ~= 1) then
+		if(state.lastroundtimer > 0) then
+			local secondsLeft = Instancing:GetStateNumber("roundtimer");
+			scenario.SetUITimer(secondsLeft - ((game.Frametime() - state.lastroundtimer) / 1000));
+		else
+			scenario.SetUITimer(Instancing:GetStateNumber("roundtimer"));
+		end
 	end
 	
 	-- keep handler going
@@ -250,7 +262,7 @@ function OnSet(handler, name, value)
 	-- for known config vars, do something
 	if(name == "load" and value == "content") then
 		LoadContent();
-	elseif(name == "instance") then
+	elseif(name == "instance" and game.OS() ~= 1) then
 		local result = Instancing:SetInstance(tonumber(state.config.instance));
 		if(result[1] ~= Instancing.SuccessCode) then
 			ui.ChatPrint(result[2]);
@@ -321,6 +333,7 @@ function OnDead()
 	--if(game.Ingame()) then
 	--	ui.LoadView("exitvehicle");
 	--end
+	return 1;
 end
 
 scenario.AddMessage = function(message, color, arg1, arg2)
@@ -347,7 +360,7 @@ end
 
 function OnSendBroadcast(handler)
 	-- bail if this trigger doesn't pertain to us
-	if(not scenario.manager:PlayerRelevant(handler.name)) then
+	if(not scenario.manager:PlayerRelevant(handler.name) or game.OS() == 1) then
 		return 1;
 	end
 	
@@ -424,6 +437,7 @@ scenario.RunObject = function(name, on)
 end
 
 scenario.CheckVictory = function(name, value)
+	if(game.OS() == 1) then return end
 	local score 	=  Instancing:GetStateNumber(name);
 	local victory 	= tonumber(state.config.victory);
 
@@ -522,12 +536,13 @@ function SetObjective(objective, progress, target)
 end
 
 scenario.SetResult = function()
-		local result = ui.LoadView("scenarios/result");
-		if(result ~= nil) then
-			local v1 =  Instancing:GetStateNumber("victory1");
-			local v2 =  Instancing:GetStateNumber("victory2");
-			result:CallJS("SetResult", state.victory, v1, v2);
-		end
+	if(game.OS() == 1) then return end
+	local result = ui.LoadView("scenarios/result");
+	if(result ~= nil) then
+		local v1 =  Instancing:GetStateNumber("victory1");
+		local v2 =  Instancing:GetStateNumber("victory2");
+		result:CallJS("SetResult", state.victory, v1, v2);
+	end
 end
 
 function SetResult()
@@ -535,6 +550,8 @@ function SetResult()
 end
 
 scenario.OnRoundTimer = function(name, value)
+	if(game.OS() == 1) then return end
+	
 	-- remember the last time we got a round timer
 	state.lastroundtimer = game.Frametime();
 	
