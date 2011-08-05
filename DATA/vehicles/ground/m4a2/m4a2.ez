@@ -8,7 +8,7 @@
 		<param name="startgear" value="2"/>
 	</config>
 	<position name="command" position="2" view="0" zoom="0" reticle="reticles/crosshairs">
-		<camera offset="0,-7.5,2.5" focus="200" travrate="200" elevrate="150"/>
+		<camera offset="0,-7.5,2.5" focus="200" travrate="200" elevrate="150" minangle="-30" maxangle="20"/>
 		<blocks input="turretraverse"/>
 		<blocks input="turretelevate"/>
 	</position>
