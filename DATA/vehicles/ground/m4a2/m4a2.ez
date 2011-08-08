@@ -4,8 +4,11 @@
 		<param name="shiftdownrpms" value=".65"/>
 		<param name="shiftuprpms" value=".97"/>
 		<param name="acceltime" value="3000"/>
-		<param name="shifttime" value="1000"/>
-		<param name="startgear" value="2"/>
+		<param name="shifttime" value="500"/>
+		<param name="higear" value="2"/>
+		<param name="loacceltime" value="1000"/>
+		<param name="loshifttime" value="200"/>
+		<param name="category" value="tank"/>
 	</config>
 	<position name="command" position="2" view="0" zoom="0" reticle="reticles/crosshairs">
 		<camera offset="0,-7.5,2.5" focus="200" travrate="200" elevrate="150" minangle="-30" maxangle="20"/>

@@ -21,20 +21,20 @@ control = rightbrake
 control = bothbrake
 control = lefttrackclutch
 control = righttrackclutch
-control = hoist
-control = ridetransport
-control = mobilespawn
+ezcontrol = hoist
+ezcontrol = ridetransport
+ezcontrol = mobilespawn
 
 #gunner
 position = 2
 control = radio
 control = map
-control = primarytrigger
-control = turretraverse
-control = turretelevate
+ezcontrol = primarytrigger
+ezcontrol = turretraverse
+ezcontrol = turretelevate
 #control = gunsightrangedec
 #control = gunsightrangeinc
-control = cycleammo
+ezcontrol = cycleammo
 control = canopycontrol
 
 
