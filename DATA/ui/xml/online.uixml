@@ -53,6 +53,12 @@
 				btn.enabled = false;
 			}
 			
+			if(game.ostype == "mac")
+			{
+				var btn = findview("scenarios-button");
+				btn.enabled = false;
+			}			
+			
 			// we'll use our own buttons on this page
 			forwardButton.visible = false;
 			backButton.visible = false;
