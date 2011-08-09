@@ -1,0 +1,13 @@
+<?xml version='1.0'?>
+<vehicle reticle="reticles/camera" turret="2" manager="ezboat">
+	<config>
+		<param name="category" value="sea"/>
+	</config>
+	<position name="command" position="2" view="0" zoom="0" reticle="reticles/crosshairs">
+		<camera offset="0,-15,7" focus="300" travrate="200" elevrate="150" minangle="-30" maxangle="20"/>
+		<blocks input="turretraverse"/>
+		<blocks input="turretelevate"/>
+	</position>
+	<position name="gunner" position="2" view="3" zoom="0"/>
+	<position name="instruments" position="0" view="2" zoom="0"/>
+</vehicle>
