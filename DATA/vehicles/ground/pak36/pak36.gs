@@ -39,4 +39,6 @@ text 4 -12 1 0 1200m
 #usetilt
 
 # fov should be last as it draws the main border circle cutout
-fov 1.8
+#fov 1.8
+fov 3
+
