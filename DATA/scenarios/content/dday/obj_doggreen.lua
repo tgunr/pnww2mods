@@ -35,11 +35,11 @@ if(true) then
 		
 		
 	-- stage 2
-		"mask.2.1.1 axistroops derifle",
-		"mask.2.1.1 axistroops de-assault",
-		"mask.2.1.1 axistroops de-smg 5",
-		"mask.2.1.1 axistroops de-sniper 1",
-		"mask.2.1.1 axislmg de-lmg 1",
+		"mask.2.1.2 axistroops derifle",
+		"mask.2.1.2 axistroops de-assault",
+		"mask.2.1.2 axistroops de-smg 5",
+		"mask.2.1.2 axistroops de-sniper 1",
+		"mask.2.1.2 axislmg de-lmg 1",
 
 	
 	-----------------------------  DEFINE THE PLAY AREA ----------------------------- 
