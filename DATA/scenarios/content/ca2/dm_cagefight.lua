@@ -38,9 +38,16 @@ if(true) then
 
 -- DEFINE BLOCKED AREAS OF NO ACCESS BY PLAYERS
 
-		-- blocking volume x
-		-- block name x1 y1 z1 x2 y2 z2 thickness height
-	       	--"block 139.59 -86.67 8.69 104.30 -72.64 8.68 1 10",
+		-- blocking volume gate1
+		-- block gate1 x1 y1 z1 x2 y2 z2 thickness height
+
+	       	"block gate1 190993.34 3016026.51 142.00 190993.73 3016036.22 142.00 2 3",
+
+		-- blocking volume gate2
+		-- block gate2 x1 y1 z1 x2 y2 z2 thickness height
+
+	       	"block gate2 190890.93 3015979.93 142.00 190891.51 3015970.24 142.00 2 3",
+		
 		
 				
 -- FX EMITTERS
