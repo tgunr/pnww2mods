@@ -8,15 +8,15 @@ ammoweight = 2.6
 velocity = 131
 tracertime = 11.0
 object = fr_lmortar_he
-explosive = 3125590
+explosive = 6665590
 # .650 kg RDX/TNT
 
 fuzetime = 0.000
 #selfdestructtime = 11.0
 bc = 6.66
 lifetime = 11.0
-ricochetangle = 60
-# modelspall = 1
+ricochetangle = 50
+modelspall = 1
 penetrationconstant = 0.0000000011
 
 
@@ -25,7 +25,7 @@ shapedchargepenmm = 160
 
 dontdisplayfirstframe = 1
 
-numshrapnelpieces = 1
+numshrapnelpieces = 50
 # totalshrapnelmass = .0001
 totalshrapnelmass = 2.0
 
