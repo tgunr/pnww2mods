@@ -228,28 +228,7 @@
 			if(!onUpdate || onUpdate(this))
 			{
 				if(this.centerme && game.ingame)
-				{
-					/*
-					if(game.customterrain)
-					{
-						if(!this.scenariopos)
-						{
-							this.scenariopos = this.map.getposition(-28.4,1.2);
-							this.map.scale = .073;
-							this.map.position = this.scenariopos;
-						}
-						
-						//this.map.position = this.scenariopos;
-					}
-					else
-					{
-						this.map.position = player.position;
-					}
-					*/
-					
-					if(!game.customterrain)
-						this.map.position = player.position;
-				}
+					this.map.position = player.position;
 				
 				this.updatePending();
 				this.runExtHooks('onUpdate');
@@ -388,7 +367,7 @@
 				//consoleprint("Root menu created...\n");
 
 				// do we have selection options?
-				if(stratList.length > 0 && !game.customterrain)
+				if(stratList.length > 0)
 				{
 				 	//consoleprint("Adding strat menu items...\n");
 
@@ -399,7 +378,7 @@
 				}
 
 				// do we have brigade options?
-				if(game.online == 1 && !game.ingame && brigadesList.length > 0 && !this.isHCMap && !game.customterrain)
+				if(game.online == 1 && !game.ingame && brigadesList.length > 0 && !this.isHCMap)
 				{
 				 	//consoleprint("Adding brigade menu items...\n");
 
@@ -516,167 +495,164 @@
 			 		}
 				}
 				
-				if(!game.customterrain)
+				// Map Positioning
+				var positionMenu = new MenuItem(getlocstring("widgets.map.context.position") + " >");
+				
+				// center on me
+				if(game.ingame)
+					positionMenu.addItem(new MenuItem(getlocstring("widgets.map.context.position.me"), null, this, this.createPositionMEMenu));
+				
+				if(brigade != null)
 				{
-					// Map Positioning
-					var positionMenu = new MenuItem(getlocstring("widgets.map.context.position") + " >");
+					if(brigade.home != null)
+						positionMenu.addItem(new MenuItem(getlocstring("widgets.map.context.position.brigade"), brigade.home, this, this.createPositionCPMenu));
 					
-					// center on me
-					if(game.ingame)
-						positionMenu.addItem(new MenuItem(getlocstring("widgets.map.context.position.me"), null, this, this.createPositionMEMenu));
-					
-					if(brigade != null)
-					{
-						if(brigade.home != null)
-							positionMenu.addItem(new MenuItem(getlocstring("widgets.map.context.position.brigade"), brigade.home, this, this.createPositionCPMenu));
-						
-						if(brigade.parent != null && brigade.parent.home != null)
-							positionMenu.addItem(new MenuItem(getlocstring("widgets.map.context.position.division"), brigade.parent.home, this, this.createPositionCPMenu));
-					}
-					
-					if(mission != null)
-					{
-						positionMenu.addItem(new MenuItem(getlocstring("widgets.map.context.position.origin"), mission.origin, this, this.createPositionCPMenu));
-						positionMenu.addItem(new MenuItem(getlocstring("widgets.map.context.position.target"), mission.target, this, this.createPositionCPMenu));
-					}
-					
-					if(positionMenu.items != null)
-						root.addItem(positionMenu);
-					
-					// do we have hc options?
-					if(game.online == 1 && (isHC || isOIC))
-					{
-						//consoleprint("Adding hc options items...\n");
-						
-						var hcMenu 		= root.addItem(new MenuItem(getlocstring("widgets.map.context.hc") + " >"));
-						var oicBrigade 	= player.client.oicof;
-						
-						// can we nominate, volunteerreplace or remove from any of these brigades?
-						//consoleprint("Adding hc menu items...\n");
-						
-						var hcBrigadesMenu 		= new MenuItem(getlocstring("widgets.map.context.hc.brigades") + " >");
-						var hcObjectivesMenu 	= new MenuItem(getlocstring("widgets.map.context.hc.objectives") + " >");
-						var hcMoveMenu 			= new MenuItem(getlocstring("widgets.map.context.hc.move") + " >");
-						
-						for(var s = 0; s < brigadesList.length; s++)
-						{
-							var currentBrigade = brigadesList[s];
-							
-							if(currentBrigade.country.side == persona.country.side)
-							{
-								//consoleprint("Found " + currentBrigade.name + " ...\n");
-								
-								var hcBrigadeMenu = null;
-								
-								if(isHC)
-								{
-									hcBrigadeMenu = new MenuItem(this.unitName(currentBrigade) + " >");
-									
-									if(!currentBrigade.activeoic && currentBrigade.isbrigade)
-									{
-										//consoleprint("Adding no oic options menu items...\n");
-										hcBrigadeMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.nominate") + " ...", currentBrigade, this, this.createNominateMenu));
-									}
-									else if(currentBrigade.activeoic && (oicBrigade == null || oicBrigade.id != currentBrigade.id))
-									{
-										//consoleprint("Adding oic options menu items...\n");
-										hcBrigadeMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.remove"), currentBrigade, this, this.createRemoveMenu));
-									}
-									
-									if(oicBrigade != null && oicBrigade.id == currentBrigade.id)
-										hcBrigadeMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.resign"), currentBrigade, this, this.createResignMenu));
-									else if(brigade != null && currentBrigade.id == brigade.id)
-										hcBrigadeMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.takecharge"), currentBrigade, this, this.createTakeChargeMenu));
-								}
-								else if(isOIC && oicBrigade != null && oicBrigade.id == currentBrigade.id)
-								{
-									hcBrigadeMenu = new MenuItem(this.unitName(currentBrigade) + " >");
-									hcBrigadeMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.resign"), currentBrigade, this, this.createResignMenu));
-								}
-								
-								if(hcBrigadeMenu != null)
-									hcBrigadesMenu.addItem(hcBrigadeMenu);
-							}
-						}
-						
-						if(targetCP != null)
-						{
-							var hcObjMenu 	= new MenuItem(targetCP.stratobject.name + " >");	
-							var originCP	= this.map.selectedobject;
-							
-							if(targetCP.stratobject.canattack)
-								hcObjMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.attack"), targetCP.stratobject, this, this.createAttackMenu));
-							if(targetCP.stratobject.candefend)
-								hcObjMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.defend"), targetCP.stratobject, this, this.createDefendMenu));
-							if(targetCP.stratobject.canclear)
-								hcObjMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.clear"), targetCP.stratobject, this, this.createClearMenu));
-							
-							if(hcObjMenu.items != null)
-								hcObjectivesMenu.addItem(hcObjMenu);
-							
-							if(originCP != null &&
-							   originCP.stratobject != null &&
-							   originCP.stratobject.stratclass == "cp" &&
-							   originCP.stratobject.strattype != "bridge" &&
-							   originCP.stratobject.name != targetCP.stratobject.name &&
-							   targetCP.stratobject.country.side == originCP.stratobject.country.side)
-							{
-								var originBrigades = originCP.stratobject.brigades;
-								
-								for(var s = 0; s < originBrigades.length; s++)
-								{	
-									var originBrigade = originBrigades[s];
-									
-									if(originBrigade.country.side != persona.country.side)
-										continue;
-									
-									// why did I put this true in here? testing?
-									if(true || (!originBrigade.activeoic && isHC) || (oicBrigade != null && oicBrigade.id == originBrigade.id))
-									{
-										//consoleprint("Adding move options menu items...\n");
-										
-										var move = new Object();
-										
-										move["brigade"] = originBrigade;
-										move["origin"] = originCP.stratobject;
-										move["target"] = targetCP.stratobject;
-										
-										hcMoveMenu.addItem(new MenuItem(this.unitName(originBrigade), move, this, this.createMoveMenu));
-									}
-								}
-							}
-						}
-						
-						for(var i = 0; i < bridgeList.length; i++)
-						{
-							var bridge 		= bridgeList[i];
-							var hcObjMenu 	= new MenuItem(bridge.stratobject.name + " >");	
-							
-							if(bridge.stratobject.canattack)
-								hcObjMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.attack"), bridge.stratobject, this, this.createAttackMenu));
-							if(bridge.stratobject.candefend)
-								hcObjMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.defend"), bridge.stratobject, this, this.createDefendMenu));
-							if(bridge.stratobject.canclear)
-								hcObjMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.clear"), bridge.stratobject, this, this.createClearMenu));
-							
-							if(hcObjMenu.items != null)
-								hcObjectivesMenu.addItem(hcObjMenu);
-						}
-						
-						if(hcMoveMenu.items != null)
-							hcBrigadesMenu.addItem(hcMoveMenu);
-						
-						if(hcBrigadesMenu.items != null)
-							hcMenu.addItem(hcBrigadesMenu);
-						
-						if(hcObjectivesMenu.items != null)
-							hcMenu.addItem(hcObjectivesMenu);
-						
-						if(hcMenu.items == null)
-							hcMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.na")));
-					}
+					if(brigade.parent != null && brigade.parent.home != null)
+						positionMenu.addItem(new MenuItem(getlocstring("widgets.map.context.position.division"), brigade.parent.home, this, this.createPositionCPMenu));
 				}
-
+				
+				if(mission != null)
+				{
+					positionMenu.addItem(new MenuItem(getlocstring("widgets.map.context.position.origin"), mission.origin, this, this.createPositionCPMenu));
+					positionMenu.addItem(new MenuItem(getlocstring("widgets.map.context.position.target"), mission.target, this, this.createPositionCPMenu));
+				}
+				
+				if(positionMenu.items != null)
+					root.addItem(positionMenu);
+				
+				// do we have hc options?
+				if(game.online == 1 && (isHC || isOIC))
+				{
+					//consoleprint("Adding hc options items...\n");
+					
+					var hcMenu 		= root.addItem(new MenuItem(getlocstring("widgets.map.context.hc") + " >"));
+					var oicBrigade 	= player.client.oicof;
+					
+					// can we nominate, volunteerreplace or remove from any of these brigades?
+					//consoleprint("Adding hc menu items...\n");
+					
+					var hcBrigadesMenu 		= new MenuItem(getlocstring("widgets.map.context.hc.brigades") + " >");
+					var hcObjectivesMenu 	= new MenuItem(getlocstring("widgets.map.context.hc.objectives") + " >");
+					var hcMoveMenu 			= new MenuItem(getlocstring("widgets.map.context.hc.move") + " >");
+					
+					for(var s = 0; s < brigadesList.length; s++)
+					{
+						var currentBrigade = brigadesList[s];
+						
+						if(currentBrigade.country.side == persona.country.side)
+						{
+							//consoleprint("Found " + currentBrigade.name + " ...\n");
+							
+							var hcBrigadeMenu = null;
+							
+							if(isHC)
+							{
+								hcBrigadeMenu = new MenuItem(this.unitName(currentBrigade) + " >");
+								
+								if(!currentBrigade.activeoic && currentBrigade.isbrigade)
+								{
+									//consoleprint("Adding no oic options menu items...\n");
+									hcBrigadeMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.nominate") + " ...", currentBrigade, this, this.createNominateMenu));
+								}
+								else if(currentBrigade.activeoic && (oicBrigade == null || oicBrigade.id != currentBrigade.id))
+								{
+									//consoleprint("Adding oic options menu items...\n");
+									hcBrigadeMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.remove"), currentBrigade, this, this.createRemoveMenu));
+								}
+								
+								if(oicBrigade != null && oicBrigade.id == currentBrigade.id)
+									hcBrigadeMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.resign"), currentBrigade, this, this.createResignMenu));
+								else if(brigade != null && currentBrigade.id == brigade.id)
+									hcBrigadeMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.takecharge"), currentBrigade, this, this.createTakeChargeMenu));
+							}
+							else if(isOIC && oicBrigade != null && oicBrigade.id == currentBrigade.id)
+							{
+								hcBrigadeMenu = new MenuItem(this.unitName(currentBrigade) + " >");
+								hcBrigadeMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.resign"), currentBrigade, this, this.createResignMenu));
+							}
+							
+							if(hcBrigadeMenu != null)
+								hcBrigadesMenu.addItem(hcBrigadeMenu);
+						}
+					}
+					
+					if(targetCP != null)
+					{
+						var hcObjMenu 	= new MenuItem(targetCP.stratobject.name + " >");	
+						var originCP	= this.map.selectedobject;
+						
+						if(targetCP.stratobject.canattack)
+							hcObjMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.attack"), targetCP.stratobject, this, this.createAttackMenu));
+						if(targetCP.stratobject.candefend)
+							hcObjMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.defend"), targetCP.stratobject, this, this.createDefendMenu));
+						if(targetCP.stratobject.canclear)
+							hcObjMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.clear"), targetCP.stratobject, this, this.createClearMenu));
+						
+						if(hcObjMenu.items != null)
+							hcObjectivesMenu.addItem(hcObjMenu);
+						
+						if(originCP != null &&
+						   originCP.stratobject != null &&
+						   originCP.stratobject.stratclass == "cp" &&
+						   originCP.stratobject.strattype != "bridge" &&
+						   originCP.stratobject.name != targetCP.stratobject.name &&
+						   targetCP.stratobject.country.side == originCP.stratobject.country.side)
+						{
+							var originBrigades = originCP.stratobject.brigades;
+							
+							for(var s = 0; s < originBrigades.length; s++)
+							{	
+								var originBrigade = originBrigades[s];
+								
+								if(originBrigade.country.side != persona.country.side)
+									continue;
+								
+								// why did I put this true in here? testing?
+								if(true || (!originBrigade.activeoic && isHC) || (oicBrigade != null && oicBrigade.id == originBrigade.id))
+								{
+									//consoleprint("Adding move options menu items...\n");
+									
+									var move = new Object();
+									
+									move["brigade"] = originBrigade;
+									move["origin"] = originCP.stratobject;
+									move["target"] = targetCP.stratobject;
+									
+									hcMoveMenu.addItem(new MenuItem(this.unitName(originBrigade), move, this, this.createMoveMenu));
+								}
+							}
+						}
+					}
+					
+					for(var i = 0; i < bridgeList.length; i++)
+					{
+						var bridge 		= bridgeList[i];
+						var hcObjMenu 	= new MenuItem(bridge.stratobject.name + " >");	
+						
+						if(bridge.stratobject.canattack)
+							hcObjMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.attack"), bridge.stratobject, this, this.createAttackMenu));
+						if(bridge.stratobject.candefend)
+							hcObjMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.defend"), bridge.stratobject, this, this.createDefendMenu));
+						if(bridge.stratobject.canclear)
+							hcObjMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.clear"), bridge.stratobject, this, this.createClearMenu));
+						
+						if(hcObjMenu.items != null)
+							hcObjectivesMenu.addItem(hcObjMenu);
+					}
+					
+					if(hcMoveMenu.items != null)
+						hcBrigadesMenu.addItem(hcMoveMenu);
+					
+					if(hcBrigadesMenu.items != null)
+						hcMenu.addItem(hcBrigadesMenu);
+					
+					if(hcObjectivesMenu.items != null)
+						hcMenu.addItem(hcObjectivesMenu);
+					
+					if(hcMenu.items == null)
+						hcMenu.addItem(new MenuItem(getlocstring("widgets.map.context.hc.na")));
+				}
+				
 				new MenuControl("map_rcmenu", cursor.x, window.height - cursor.y, 160, 15, 90, -10, root.items, this.clickMenu);
 
 				this.runExtHooks('onRightClick');
@@ -694,21 +670,17 @@
 			
 			if(!onDblClick || onDblClick(this))
 			{
-				if(!game.customterrain)
+				if(this.autopan)
 				{
-					if(this.autopan)
-					{
-						var pos = (this.clickposition) ? this.clickposition: this.map.mouseposition;
-						this.map.panto(pos.x, pos.y, this.map.scale);
-					}
-					else
-					{
-						this.map.position = (this.clickposition) ? this.clickposition: this.map.mouseposition;
-					}
-					
-					this.setCenterMe(false);
+					var pos = (this.clickposition) ? this.clickposition: this.map.mouseposition;
+					this.map.panto(pos.x, pos.y, this.map.scale);
+				}
+				else
+				{
+					this.map.position = (this.clickposition) ? this.clickposition: this.map.mouseposition;
 				}
 				
+				this.setCenterMe(false);
 				this.runExtHooks('onDblClick');
 			}
 		}
@@ -788,16 +760,13 @@
 
 			if(!onCenter || onCenter(this))
 			{
-				if(!game.customterrain)
-				{
-					if(flag && this.centerme != flag)
-						game.tutorialevent(4194304, 1);
-					
-					this.centerme = flag;
-	
-					if(this.centerMeCallback)
-						this.centerMeCallback(flag);
-				}
+				if(flag && this.centerme != flag)
+					game.tutorialevent(4194304, 1);
+				
+				this.centerme = flag;
+
+				if(this.centerMeCallback)
+					this.centerMeCallback(flag);
 
 				this.runExtHooks('onCenter');
 			}
@@ -805,9 +774,6 @@
 		
 		this.openFullMap = function()
 		{
-			if(game.customterrain)
-				return;
-			
 			var fullMap = game.load("fullmap");
 
 			if(fullMap)

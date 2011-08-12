@@ -283,7 +283,7 @@
 				tip="${map.size}"/>
 		</view>
 		<view id="mapview" class="mapview" x="45" y="0" rright="0" rtop="0" sx="18" sy="235"
-			acceptsfocus="no" minscale=".0625" maxscale="7.5" scale="1" scalebar="on"
+			acceptsfocus="no" minscale=".05" maxscale="7.5" scale="1" scalebar="on"
 			onshow="this.mgr.onShow()" onupdate="this.mgr.onUpdate()" onclick="this.mgr.onClick()"
 			ondblclick="this.mgr.onDblClick()" onrightclick="this.mgr.onRightClick()"
 			ondrag="this.mgr.onDrag()" onmouseenter="this.mgr.onMouseEnter()"
@@ -292,6 +292,7 @@
 			<layer type="texture" id="default-64-tex" minscale="0" maxscale="64" enabled="true" orign="-26x210" rowcolsize="1x1" cellsize="64x64"/>
 			<layer type="icon" id="icons" minscale="1" maxscale="8" enabled="true"/>
 			<layer type="icon" id="rendered" minscale="0" maxscale="1" enabled="true"/>
+			<layer type="scenario" id="scenmap" minscale="0" maxscale="2" enabled="true"/>
 			<layer type="terrainobj" id="terrainobj" minscale="0" maxscale=".5" enabled="true"/>
 			<layer type="hclinks" id="hclinks" minscale="0" maxscale="20" enabled="true"/>
 			<layer type="strat" id="strat" minscale="0" maxscale="20" enabled="true">

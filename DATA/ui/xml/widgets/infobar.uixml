@@ -8,9 +8,13 @@
 		<!--
 		
 		var infoBarTimer = new CycleTimer(300);
+		var isScenario = game.scenario;
 		
 		function updateInfoBar()
 		{
+			if(isScenario)
+				return;
+			
 			var day			= 0;
 			var now			= new Date();
 			var campaign 	= findview("info-campaign-caption");
@@ -31,6 +35,9 @@
 		
 		function getGameTime(caption)
 		{
+			if(isScenario)
+				return "";
+			
 			if(infoBarTimer.run())
 			{
 				var stamp 	= game.time;

@@ -122,6 +122,7 @@
 			<layer type="icon" id="icons" minscale=".3" maxscale="1.7" enabled="true"/>
 			<layer type="icon" id="rendered" minscale="0" maxscale=".3" enabled="true"/>
 			<layer type="terrainobj" id="terrainobj" minscale=".005" maxscale=".3" enabled="true"/>
+			<layer type="scenario" id="scenmap" minscale="0" maxscale="2" enabled="true"/>
 			<layer type="waypoints" id="waypoints" minscale="0" maxscale="1.5" enabled="true"/>
 			<layer type="players"/>
 			<object type="player" size=".6" navring="on" arrowscale=".07" arrowradius=".37"/>
@@ -740,6 +741,7 @@
 					break;
 			}
 			
+			SetProgress(-1);
 			setVisibility("game-alert", false);
 		}
 		
