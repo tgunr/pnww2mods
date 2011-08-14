@@ -10,7 +10,9 @@
 		<param name="loshifttime" value="100"/>
 	</config>
 	<position name="command" position="2" view="0" zoom="0" reticle="reticles/crosshairs">
-		<camera offset="0,-7.5,2.5" focus="200" travrate="200" elevrate="150" minangle="-30" maxangle="20"/>
+		<camera offset="0,-7.5,2.5" focus="200">
+			<elevation down="-30" up="20"/>
+		</camera>
 		<blocks input="turretraverse"/>
 		<blocks input="turretelevate"/>
 	</position>

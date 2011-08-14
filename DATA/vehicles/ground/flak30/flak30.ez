@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <vehicle reticle="reticles/camera" turret="1" manager="ezgun">
 	<position name="command" position="1" view="0" zoom="0" reticle="reticles/crosshairs">
-		<camera offset="0,-5.5,1.5" focus="100" travrate="200" elevrate="100"/>
+		<camera offset="0,-5.5,2" focus="100"/>
 		<blocks input="turretraverse"/>
 	</position>
 	<position name="maingun" position="1" view="3" zoom="0"/>

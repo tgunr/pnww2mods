@@ -1,0 +1,19 @@
+<?xml version='1.0'?>
+<vehicle reticle="reticles/camera" manager="ezplane">
+	<config>
+		<param name="category" value="plane"/>
+	</config>
+	<position name="cockpit" position="0" view="0" zoom="0" reticle="reticles/crosshairs">
+		<camera offset="0,-15,4" focus="500">
+			<elevation down="-70" up="70"/>
+		</camera>
+	</position>
+	<position name="guns" position="0" view="3" zoom="0" reticle="reticles/crosshairs"/>
+	<position name="bombsight" position="1" view="3" zoom="0" reticle="reticles/crosshairs"/>
+	<position name="turret" position="2" view="0" zoom="0" reticle="reticles/crosshairs">
+		<camera offset="0,-1,2" focus="500" pov="true">
+			<elevation down="-10" up="60"/>
+		</camera>
+	</position>
+	<position name="instruments" position="0" view="2" zoom="0" reticle="reticles/crosshairs"/>
+</vehicle>

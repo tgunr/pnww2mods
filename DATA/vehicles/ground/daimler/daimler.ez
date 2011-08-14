@@ -7,11 +7,32 @@
 		<param name="shifttime" value="500"/>
 		<param name="category" value="tank"/>
 	</config>
-	<position name="command" position="2" view="0" zoom="0" reticle="reticles/crosshairs">
-		<camera offset="0,-6.5,3" focus="200" travrate="200" elevrate="150" minangle="-30" maxangle="20"/>
-		<blocks input="turretraverse"/>
-		<blocks input="turretelevate"/>
-	</position>
-	<position name="gunner" position="2" view="3" zoom="0"/>
-	<position name="instruments" position="0" view="2" zoom="0"/>
+	<ez level="1">
+		<position name="driver" position="0" view="0" zoom="0">
+			<camera focus="200" offset="0,.9,.9" pov="true">
+				<traverse left="-20" right="20"/>
+				<elevation down="-10" up="20"/>
+			</camera>
+		</position>
+		<position name="command" position="2" view="0" zoom="0" reticle="reticles/crosshairs">
+			<camera offset="0,-.25,1.6" focus="200" pov="true">
+				<elevation down="-20" up="30"/>
+			</camera>
+			<blocks input="turretraverse"/>
+			<blocks input="turretelevate"/>
+		</position>
+		<position name="gunner" position="2" view="3" zoom="0"/>
+		<position name="instruments" position="0" view="2" zoom="0"/>
+	</ez>
+	<ez level="2">
+		<position name="command" position="2" view="0" zoom="0" reticle="reticles/crosshairs">
+			<camera offset="0,-6.5,3" focus="200">
+				<elevation down="-30" up="20"/>
+			</camera>
+			<blocks input="turretraverse"/>
+			<blocks input="turretelevate"/>
+		</position>
+		<position name="gunner" position="2" view="3" zoom="0"/>
+		<position name="instruments" position="0" view="2" zoom="0"/>
+	</ez>
 </vehicle>
