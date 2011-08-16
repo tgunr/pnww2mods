@@ -20,11 +20,11 @@
 	</position>
 	<position name="mgs" position="7" view="0" zoom="0" reticle="reticles/crosshairs">
 		<camera offset="0,3.5,5.5" focus="200" pov="true">
-			<elevation down="-30" up="80"/>
+			<elevation rate="0" down="-30" up="80"/>
 		</camera>
 		<blocks input="turretraverse"/>
 		<blocks input="turretelevate"/>
-		<turret position="6"/>
+		<!-- turret position="6"/ -->
 	</position>
 	<position name="instruments" position="0" view="2" zoom="0"/>
 </vehicle>

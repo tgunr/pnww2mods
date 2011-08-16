@@ -99,7 +99,7 @@
 					client.undeployms();
 				
 				game.globals.despawning = true;
-				game.despawn();
+				game.despawn(game.scenario);
 				popup.setPopupCursorState(true);
 			}
 						
