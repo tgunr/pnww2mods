@@ -943,6 +943,8 @@
 				game.settings.hudvisible = 2;
 			}
 			
+			centerView(views["game-alerts"], 0, 300);
+			
 			cprint("Finished setting up HUD!\n");
 		}
 		
