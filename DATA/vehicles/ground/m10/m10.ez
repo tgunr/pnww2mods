@@ -8,7 +8,7 @@
 		<param name="startgear" value="2"/>
 	</config>
 	<position name="command" position="2" view="0" zoom="0" reticle="reticles/crosshairs">
-		<camera offset="0,-7.5,2.5" focus="200">
+		<camera offset="0,-10,4" focus="300">
 			<elevation down="-30" up="20"/>
 		</camera>
 		<blocks input="turretraverse"/>
@@ -16,5 +16,5 @@
 	</position>
 	<position name="maingun" position="2" view="3" zoom="0"/>
 	<position name="gunner" position="3" view="1" zoom="0" covered="true"/>
-	<position name="instruments" position="0" view="2" zoom="0"/>
+	<!-- <position name="instruments" position="0" view="2" zoom="0"/> -->
 </vehicle>
