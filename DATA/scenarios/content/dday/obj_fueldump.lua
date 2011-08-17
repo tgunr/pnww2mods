@@ -298,10 +298,10 @@ if(true) then
 
 		
 	-- telling the axis they are in the depot capture area
-	"area depotcapturem OnTrigger 124.53 355.65 25",
-	"area depotcapturem OnTrigger 208.59 358.58 25",
-	"area depotcapturem OnTrigger 207.98 343.68 25",
-	"area depotcapturem OnTrigger 126.41 335.95 25",
+	-- "area depotcapturem OnTrigger 124.53 355.65 25",
+	-- "area depotcapturem OnTrigger 208.59 358.58 25",
+	-- "area depotcapturem OnTrigger 207.98 343.68 25",
+	-- "area depotcapturem OnTrigger 126.41 335.95 25",
 
 
 		
@@ -408,7 +408,7 @@ if(true) then
 
 		
 		-- mask the capture area with tanks only
-		"mask depotcapture 4.2.4.0",
+		"mask depotcapture 4 2 4 0",
 		
 	
 		
@@ -483,7 +483,7 @@ if(true) then
 		"alert onspawn onspawn.moveout 1",
 		--"alert.1 toaxisspawn toaxisspawn 60",
 		--"alert.2 toalliedspawn toalliedspawn 60",
-		"alert depotcapturem depotcapturem 5",
+		"alert depotcapture depotcapturem 5",
 
 		"alert playarea playarea 10",
 		"message.1 axiscapon axiscapon friendly 1",
