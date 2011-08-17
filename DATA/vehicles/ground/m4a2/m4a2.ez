@@ -45,10 +45,24 @@
 		<position name="gunner" position="3" view="3" zoom="0"/>
 		<position name="instruments" position="0" view="2" zoom="0"/>
 	</ez>
+	===============================MAKE THIS 2
+	POSITION META TAG - ORDER SETS MOUSE ORDER
+	POSITION IS GAME POS 0 BASED 0=DRIVER, 1=COMMANDER
+	VIEW (INS) = 0 COMMAND VIEW, 1 NORM, 2 INST, 3 GUNSIGHT
+	ZOOM (DEL) = ZOOM LEVEL AKA GUNNER
+	covered = deploy or not
+	RETICULE = DEFINE LOC REALTIVE TO UI/XML/... (NEED DEFINE CONTENTS)
+	FOR VIEW 0 DEF CAMera (only zero), XYZ OFFSET FROM VEHORIGIN Z=UP
+	FOCUS RAY X METERS TO LOOK AT POINT - SHOULD BE ABOUT RANGED FOR WEAPON YOU'RE USING
+	ELEVATION CAMERA ELEVATION CONSTRAINTS (RA
+	TRAVERSE WOULD BE L/R
+	rate is camera spped (0 to 2+)
+	BLOCKS - IMAP turret controls (need list) this blocks control file controlsd marked ezcontrol
+	
 	<ez level="3">
 		<position name="command" position="2" view="0" zoom="0" reticle="reticles/crosshairs">
 			<camera offset="0,-10,4" focus="300">
-				<elevation down="-30" up="20"/>
+				<elevation down="-30" up="20" rate="1"/>
 			</camera>
 			<blocks input="turretraverse"/>
 			<blocks input="turretelevate"/>
