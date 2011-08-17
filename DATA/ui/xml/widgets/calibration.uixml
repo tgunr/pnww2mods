@@ -31,8 +31,19 @@
 					onshow="this.label = getlocstring('widgets.calibration.mouse.less')" align="right"/>
 				<caption x="350" y="250" height="20" width="50" style=" color: #FFFFFFFF;"
 					onshow="this.label = getlocstring('widgets.calibration.mouse.more')"/>
-				<slider id="mousecalib" x="125" y="250" width="200" height="20" minvalue="1" maxvalue="2"
+				<caption x="150" height="20" width="425" y="275" style="font-size: +1; color: #BFE2CE;"
+					onshow="this.label = getlocstring('widgets.calibration.mouse.subtitle')"/>
+				<slider id="mousecalib" x="125" y="250" width="200" height="20" minvalue="0.125" maxvalue="2"
 					onclick="game.setkeymapcalibration('mouse', this.value)"/>
+					
+				<caption x="50" y="150" height="20" width="50" style=" color: #FFFFFFFF;"
+					onshow="this.label = getlocstring('widgets.calibration.mouse.less')" align="right"/>
+				<caption x="350" y="150" height="20" width="50" style=" color: #FFFFFFFF;"
+					onshow="this.label = getlocstring('widgets.calibration.mouse.more')"/>
+				<caption x="150" height="20" width="425" y="175" style="font-size: +1; color: #BFE2CE;"
+					onshow="this.label = getlocstring('widgets.calibration.mouse.aimtitle')"/>
+				<slider id="mouseaimcalib" x="125" y="150" width="200" height="20" minvalue="0.125" maxvalue="2"
+					onclick="game.setkeymapcalibration('aim', this.value)"/>
 			</tab>
 			<tab x="0" y="0" rright="0" rtop="0" showtab='false' acceptmouseclick='false'>
 				<caption x="10" height="20" width="425" rtop="10" style="font-size: +2; color: #BFE2CE;"
@@ -59,6 +70,7 @@
 		var calibrator		= findview("calibrator");
 		var joycalib 		= findview("joycalib");
 		var mousecalib 		= findview("mousecalib");
+		var mouseaimcalib	= findview("mouseaimcalib");
 		
 		function initCalibrator()
 		{
@@ -79,6 +91,7 @@
 			}
 			
 			mousecalib.value = game.getkeymapcalibration('mouse');
+			mouseaimcalib.value = game.getkeymapcalibration('aim');
 		}
 		
 		function saveCalibrations()
