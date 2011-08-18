@@ -289,6 +289,12 @@
 			}
 			else
 			{
+				// Update primaryammoname and secondaryammoname to replace underscores
+				/*
+				var primaryammoname = me.primaryarmmoname.replace("_", " ");
+				var secondaryammoname = me.secondaryammoname.replace("_", " ");
+				*/				
+				
 				// do primary
 				if(me.primaryammoname != "" && (hudVisible == 1 || (hudVisible == 2 && primaryOn)))
 				{
@@ -296,7 +302,7 @@
 					setVisibility("primary", true);
 					
 					// set name
-					views["primary-name"].label = me.primaryammoname;
+					views["primary-name"].label = me.primaryammoname.replace("_", " ");
 					
 					// update ammo
 					updateVehicleAmmo(views["primary"]);
@@ -313,7 +319,7 @@
 					setVisibility("secondary", true);
 					
 					// set name
-					views["secondary-name"].label = me.secondaryammoname;
+					views["secondary-name"].label = me.secondaryammoname.replace("_", " ");
 					
 					// update ammo
 					updateVehicleAmmo(views["secondary"]);
