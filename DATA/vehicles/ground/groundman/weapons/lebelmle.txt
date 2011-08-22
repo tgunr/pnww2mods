@@ -48,4 +48,5 @@ sniperGunSight = vehicles\ground\groundman\4x_riflescope.gs
 sniperScopeDelay = 0.1
 sniperScopeEndDelay = 0.05
 
-minimumDispersion = 0.001666667
+#overides default rifle FoV (snipers have scope to determine mag at wider FoV than default rifle)
+aimFOV = 45.0
