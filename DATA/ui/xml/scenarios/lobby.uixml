@@ -36,6 +36,15 @@
 					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
 					<list id="instanceList" x="0" width="425" height="300" rtop="40" onselect="instanceList.clickList(false)" ondblselect="instanceList.clickList(true)"/>
 				</view>
+				<button id="create-button" x="10" y="0" width="120" height="25" label="${online.ra.create}" onclick="loadWin('scenarios/create',true)"
+					style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+					onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+				<button id="quick-button" x="100" y="0" width="120" height="25" label="${online.ra.quick}" onclick="selectInstance(true)"
+					style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+					onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)" onshow="centerViewX(this)"/>
+				<button id="join-button" y="0" width="120" height="25" rright="10" label="${online.ra.join}" onclick="selectInstance(true)"
+					style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+					onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
 			</view>
 			<include file="widgets/divider.uixml"/>
 			<view id="right-pane" x="468" y="23" width="444" height="411">
@@ -45,31 +54,6 @@
 				<view id="instance-map" class="scenimage" src="map.bmp" acceptsfocus="no" x="20" width="400" height="192" rtop="50"
 					style="border-color: #BFE2CE; border-size: 1;"/>
 				<text id="instance-description" x="20" y="10" rright="20" rtop="260" style="font-size: +1; color: #FFFFFFBB;" value="${online.ra.create}"/>
-			</view>
-		</tab>
-		<tab label="  ${online.ra.create}  " x="0" y="0" width="930" height="460"
-			onshow="showCreate()" tip="${scenarios.create.help}">
-			<view id="left-pane" x="18" y="23" width="444" height="411">
-				<!-- left pane -->
-				<caption label="${scenarios.create.header}" x="10" rtop="12" height="20" width="400" style="font-size: +2; color: #BFE2CE;"/>
-				<image x="10" rtop="22" src="ui/textures/test/horiz_underline.bmp" width="425" height="12"/>
-				<view x="10" rtop="34" width="425" height="15">
-					<caption x="0" y="0" rright="0" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="${scenarios.create.map}"/>
-				</view>
-				<list id="createTree" x="10" rtop="53" width="425" height="340"
-					onselect="createTree.clickTree(false)" ondblselect="createTree.clickTree(true)">
-					<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
-				</list>
-			</view>
-			<include file="widgets/divider.uixml"/>
-			<view id="right-pane" x="468" y="23" width="444" height="411">
-				<!-- right pane -->
-				<caption id="scenario-name" label="DOG GREEN" x="10" height="20" rright="10" rtop="12"
-						style="font-size: +2; color: #BFE2CE; tooltip: widgets/tooltips/supplytip.uixml;"/>
-				<image src="ui/textures/test/horiz_underline.bmp" x="10" rright="10" height="12" rtop="22"/>
-				<view id="scenario-map" class="scenimage" src="map.bmp" acceptsfocus="no" x="20" width="400" height="192" rtop="50"
-					style="border-color: #BFE2CE; border-size: 1;" aspectalign="width"/>
-				<text id="scenario-description" x="20" y="10" rright="20" rtop="260" style="font-size: +1; color: #FFFFFFBB;"/>
 			</view>
 		</tab>
 		<include file="widgets/globals/settings.uixml"/>
@@ -84,28 +68,20 @@
 		var instName		= findview("instance-name");
 		var instMap			= findview("instance-map");
 		var instDesc			= findview("instance-description");
-		var scenName		= findview("scenario-name");
-		var scenMap			= findview("scenario-map");
-		var scenDesc		= findview("scenario-description");
+		var createBtn		= findview("create-button");
+		var quickBtn			= findview("quick-button");
+		var joinBtn			= findview("join-button");
 		var updateTimer	= new CycleTimer(3000);
 		var scenarios		= loadRoot();
 		var instanceList	= new ListControl(findview("instanceList"), selectInstance);
-		var createTree 	= new TreeControl("createTree", selectScenario, formatScenario);
 		var running			= new Array();
 		var initialized		= false;
-		var body				= findview("body");
-		var categories		= new Object();
-		var rootNodes		= new Array();
-
 		
 		/***************** COMMON FUNCTIONS *******************/
 		
 		function doForward()
 		{
-			if(body.value == 0)
-				selectInstance(true);
-			else
-				selectScenario(true);
+			selectInstance(true);
 		}
 		
 		function doBack()
@@ -130,6 +106,7 @@
 			setBack('online.back');
 			setForward('scenarios.forward');
 			setForwardEnabled(false);
+			forwardButton.visible = false;
 			
 			initHeaders(findview("instance-block"));
 			
@@ -159,6 +136,9 @@
 		{
 			// reset our running list of instances 
 			running = new Array();
+			
+			quickBtn.enabled = false;
+			joinBtn.enabled = false;
 			
 			// some temp vars
 			var instances = client.instances;
@@ -236,6 +216,9 @@
 					
 					instanceList.addRow(scenario, rb.build());
 				}
+				
+				quickBtn.enabled = true;
+				joinBtn.enabled = true;
 			}
 			
 			instanceList.postInit();
@@ -285,270 +268,16 @@
 			}
 		}
 		
-		function initCreateTree()
-		{
-			if(rootNodes.length > 0)
-				return;
-			
-			var preopen	= null;
-			
-			// add our categories
-			for(var i = 0; i < scenarios.links.length; i++)
-			{
-				var content 	= game.getcontent(scenarios.links[i].path);
-				if(content == null) continue;
-				
-				cprint("Adding category " + content.title);
-				
-				var id = "category." + content.category;
-				var node = new TreeNode(id, id, 1, true, content.title.toUpperCase());
-				
-				//if(preopen == null)
-				//	preopen = node; // open the first node
-				node.expand();
-				
-				// add it to our tree
-				createTree.addNode(node, toggleNode);
-				
-				// save a reference by category
-				categories[node.data] = node;
-				
-				// save a reference
-				rootNodes.push(node);
-				
-				// add our new scenario links
-				addScenarioNodes(node);
-			}
-			
-			cprint("done adding categories");
-			
-			//if(preopen)
-			//	preopen.expand();
-			
-			createTree.setColorText(false);
-			createTree.drawTree();
-		}
-		
-		function isSelectable(node)
-		{
-			return true;
-		}
-		
-		function addScenarioNodes(catNode)
-		{
-			cprint("Adding category scenarios");
-			
-			if(catNode == null)
-				return;
-			
-			var cid					= catNode.data.split(".");
-			var catID				= cid[1];
-			var category 		= loadCategory(catID);
-			
-			if(category == null)
-				return;
-			
-			for(var i = 0; i < category.links.length; i++)
-			{
-				cprint("Trying new scenario " + catID + "/" + i);
-				
-				var scenario = loadScenario(catID, i);
-				if(scenario == null) continue;
-				
-				var sid = "scenario." + catID + "." + i;
-				
-				cprint("Adding new scenario " + sid);
-				
-				catNode.addNode(new TreeNode(sid, sid, 2, false, scenario.title));
-			}
-		}
-		
-		function getOpenCategory()
-		{
-			for(var c in categories)
-			{
-				if(categories[c].open)
-					return categories[c];
-			}
-			
-			return null;
-		}
-		
-		function toggleNode(node)
-		{
-			return;
-			
-			if(!node.open)
-			{
-				for(var i = 0; i < rootNodes.length; i++)
-				{
-					if(rootNodes[i].open && rootNodes[i].id != node.id)
-						rootNodes[i].open = false;
-				}
-			}
-		}
-		
-		function selectScenario(action)
-		{
-			var node = createTree.selectedNode();
-			
-			if(node != null)
-			{
-				setForwardEnabled(!node.branch);
-				
-				if(node.branch)
-				{
-					var id = node.data.split(".");
-					var content = loadCategory(id[1]);
-					
-					scenName.label = content.title.toUpperCase();
-					scenDesc.text = content.brief;
-					scenMap.src = "";
-				}
-				else
-				{
-					var id					= node.data.split(".");
-					var content			= loadScenario(id[1], id[2]);
-					
-					scenName.label 	= content.title.toUpperCase();
-					scenDesc.text 		= content.brief;
-					scenMap.src 		= "scenarios/terrain/" + content.terrain + "/map.bmp";
-				}
-				
-				if(action && !node.branch)
-				{
-					var category 	= id[1];
-					var map 			= id[2];
-					
-					// create a new instance
-					if(createInstance(category, map))
-					{
-						cprint("Instance created!");
-						
-						if(client.listinstances(category, map))
-						{
-							var instances = client.instances;
-							
-							cprint("Looking for created instance: " + instances.length);
-							
-							for(var i = 0; i < instances.length; i++)
-							{
-								// join an existing instance
-								var instance = instances[i];
-								
-								cprint("Mine is: " + instance.description.mine);
-								
-								if(!instance.description.mine)
-									continue;
-									
-								cprint("Found created instance!");
-								
-								var scenario = loadScenario(category, map);
-								
-								scenario.instance = instance;
-								
-								cprint("Joining created instance!");
-								
-								if(!selectTeam(scenario) || !joinInstance(instance.description, true))
-								{
-									showOk(lastScenarioError);
-									joinLobby();
-								}
-								
-								break;
-							}
-						}
-					}
-					else
-					{
-						showOk(lastScenarioError);
-					}
-				}
-			}
-			else
-			{
-				setForwardEnabled(false);
-			}
-		}
-		
-		function formatScenario(tree, node)
-		{
-			var name				= tree.list.id;
-			var indent 			= tree.indent * node.level;
-			var mouseenter	= name + ".mouseEnter(this)";
-			var mouseexit		= name + ".mouseExit(this)";
-			var id					= node.id.split("."); 
-			
-			if(node.branch)
-			{
-				var icon 			= (node.open) ? tree.collapseIcon: tree.expandIcon;
-				var label			= node.description;
-				
-				cprint("Formatting tree node " + label);
-				
-				var row = new ViewBuilder(tree.list, node.id, 0, 0, 0, 16);
-				
-				var expander = row.addBuilder(new ImageBuilder(row, "image", icon, indent, 3, 10, 10));
-				
-				expander.addAttribute("onclick", name + ".clickTree(true, " + tree.count + ")");
-				
-				var caption = row.addBuilder(new TextBuilder(row, "title", "caption", label, (indent + tree.indent), 0, 0, 16));
-				
-				row.addAttribute("aspectalign", "left");
-				row.addAttribute("onmouseenter", mouseenter);
-				row.addAttribute("onmouseexit", mouseexit);
-				
-				caption.addStyle("color", "#e9e3d9ff");
-				
-				return row.build();			
-			}
-			else
-			{
-				var label 		= "[unknown]";
-				var color 		= "#00FF00";
-				
-				if(node.data != null)
-				{
-					var id					= node.data.split(".");
-					var content			= loadScenario(id[1], id[2]);
-					label						= content.title;
-				}
-				
-				indent += tree.indent;
-				
-				//cprint("Formatting tree instance " + label);
-				
-				var row 				= new ViewBuilder(tree.list, node.id, 0, 0, 0, 16);
-				var caption			= row.addBuilder(new TextBuilder(row, "title", "caption", label, indent, 0, -indent, 16));
-				
-				row.addAttribute("aspectalign", "left");
-				row.addAttribute("onmouseenter", mouseenter);
-				row.addAttribute("onmouseexit", mouseexit);
-				
-				caption.addStyle("color", color);
-				
-				return row.build();
-			}
-		}
-		
 		function updateLobby()
 		{
-			if(body.value == 0)
+			// list
+			if(initialized && updateTimer.run())
 			{
-				// list
-				if(initialized && updateTimer.run())
-				{
-					// grab all instances
-					client.listinstances(0, 0, "");
-					
-					// update our visible list
-					initInstances();
-				}
-			}
-			else
-			{
-				// create
+				// grab all instances
+				client.listinstances(0, 0, "");
 				
+				// update our visible list
+				initInstances();
 			}
 		}
 		
@@ -570,15 +299,6 @@
 			tplTab();
 			setForward('scenarios.forward');
 			selectInstance(false);
-		}
-		
-		function showCreate()
-		{
-			setHelp(getlocstring('scenarios.create.help'));
-			tplTab();
-			setForward('scenarios.create');
-			selectScenario(false);
-			initCreateTree();
 		}
 		
 		-->

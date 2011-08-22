@@ -16,7 +16,7 @@
 			<blocks input="turretelevate"/>
 		</position>
 		<position name="maingun" position="2" view="3" zoom="0"/>
-		<position name="gunner" position="3" view="2" zoom="1" covered="true"/>
+		<position name="gunner" position="3" view="2" zoom="1" hatch="onspawn"/>
 		<!-- <position name="instruments" position="0" view="2" zoom="0"/> -->
 	</ez>
 </vehicle>

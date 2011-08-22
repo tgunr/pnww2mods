@@ -14,6 +14,7 @@
 	<include file="classes/ViewBuilder.uixml"/>
 	<include file="classes/TextBuilder.uixml"/>
 	<include file="classes/ImageBuilder.uixml"/>
+	<image id="team-flag" x="50" width="100" height="100" rtop="10" style="color: #FFFFFF"/>
 	<tabview id="body" x="43" y="140" width="930" height="450" ontab="doBodyTab()" style="color: #BFE2CE;
 						background-color: #000000BB; 
 						border-top-corner: ui/textures/test/body_ul.bmp;
@@ -34,18 +35,8 @@
 			<view id="left-pane" x="18" y="23" width="444" height="411">
 				<tabview id="selection-tab" x="0" y="0" rright="0" rtop="0">
 					<tab x="0" y="0" rright="0" rtop="0" showtab='false'>
-						<view x="10" width="425" height="400" rtop="12">
-							<caption id="forces-header" x="0" height="20" width="425" rtop="0" style="font-size: +2; color: #BFE2CE; tooltip: widgets/tooltips/supplytip.uixml;"/>
-							<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
-							<view x="0" width="425" height="15" rtop="22">
-								<caption x="0" y="0" height="15" rright="0" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="UNITS"/>
-							</view>
-							<list id="spawnTree" x="0" width="425" height="300" rtop="40" onselect="spawnTree.clickTree(false)" ondblselect="spawnTree.clickTree(true)"/>
-						</view>
-					</tab>
-					<tab x="0" y="0" rright="0" rtop="0" showtab='false'>
 						<view x="10" width="425" height="380" rtop="12">
-							<caption label="&mission.brieftab.members;" x="0" height="20" width="400" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
+							<caption id="players-header" x="0" height="20" width="400" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
 							<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="12"/>
 							<view x="0" width="425" height="15" rtop="23">
 								<caption x="0" y="0" width="152" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
@@ -55,26 +46,62 @@
 								<caption x="390" y="0" width="58" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
 									label=" IN" tip="&mission.brieftab.brief.sstatus;"/>
 							</view>
-							<list id="memberList" x="0" y="5" width="425" height="336">
+							<list id="memberList" x="0" y="20" width="425" height="316">
 								<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
 							</list>
 						</view>
+						<view x="0" y="0" height="35" rright="0">
+							<button id="team-button" label="CHANGE TEAM" x="20" y="5" height="25" width="100"
+								style="control-on: ui/textures/test/gen_button_on.bmp;
+									control-off: ui/textures/test/gen_button_off.bmp;
+									control-disabled: ui/textures/test/gen_button_disabled.bmp;
+									font-size: -3;
+									color: #FFFFFF;"
+								onclick="switchSides(); soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+							<button id="show-button" label="CHANGE WEAPON" y="5" height="25" width="100" rright="20"
+								onshow="centerViewX(this)"
+								style="control-on: ui/textures/test/gen_button_on.bmp;
+									control-off: ui/textures/test/gen_button_off.bmp;
+									control-disabled: ui/textures/test/gen_button_disabled.bmp;
+									font-size: -3;
+									color: #FFFFFF;"
+								onclick="selections.value = 1; soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+							<button id="fight-button" label="FIGHT" y="5" height="25" width="100" rright="20"
+								style="control-on: ui/textures/test/gen_button_on.bmp;
+									control-off: ui/textures/test/gen_button_off.bmp;
+									control-disabled: ui/textures/test/gen_button_disabled.bmp;
+									font-size: -3;
+									color: #FFFFFF;"
+								onclick="doForward(); soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+						</view>
+					</tab>
+					<tab x="0" y="0" rright="0" rtop="0" showtab='false'>
+						<view x="10" width="425" height="400" rtop="12">
+							<caption id="forces-header" x="0" height="20" width="425" rtop="0" style="font-size: +2; color: #BFE2CE; tooltip: widgets/tooltips/supplytip.uixml;"/>
+							<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
+							<view x="0" width="425" height="15" rtop="22">
+								<caption x="0" y="0" height="15" rright="0" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="UNITS"/>
+							</view>
+							<list id="spawnTree" x="0" width="425" height="300" rtop="40" onselect="spawnTree.clickTree(false)" ondblselect="spawnTree.clickTree(true)"/>
+						</view>
+						<view x="0" y="0" height="35" rright="0">
+							<button id="team-button" label="CHANGE TEAM" x="30" y="5" height="25" width="100"
+								style="control-on: ui/textures/test/gen_button_on.bmp;
+									control-off: ui/textures/test/gen_button_off.bmp;
+									control-disabled: ui/textures/test/gen_button_disabled.bmp;
+									font-size: -3;
+									color: #FFFFFF;"
+								onclick="switchSides(); soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+							<button id="select-button" label="SELECT WEAPON" y="5" height="25" width="100" rright="30"
+								style="control-on: ui/textures/test/gen_button_on.bmp;
+									control-off: ui/textures/test/gen_button_off.bmp;
+									control-disabled: ui/textures/test/gen_button_disabled.bmp;
+									font-size: -3;
+									color: #FFFFFF;"
+								onclick="selectSpawnable(true); soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+						</view>
 					</tab>
 				</tabview>
-				<button id="team-button" label="CHANGE TEAM" x="20" y="10" height="25" width="160"
-					style="control-on: ui/textures/test/gen_button_on.bmp;
-						control-off: ui/textures/test/gen_button_off.bmp;
-						control-disabled: ui/textures/test/gen_button_disabled.bmp;
-						font-size: -3;
-						color: #FFFFFF;"
-					onclick="switchSides(); soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
-				<button id="show-button" label="SHOW PLAYERS" y="10" height="25" width="160" rright="20"
-					style="control-on: ui/textures/test/gen_button_on.bmp;
-						control-off: ui/textures/test/gen_button_off.bmp;
-						control-disabled: ui/textures/test/gen_button_disabled.bmp;
-						font-size: -3;
-						color: #FFFFFF;"
-					onclick="toggleSelection(this); soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
 			</view>
 			<include file="widgets/divider.uixml"/>
 			<view id="right-pane" x="468" y="23" width="444" height="411">
@@ -82,19 +109,20 @@
 				<caption id="scenario-name" label="UNKNOWN" x="10" height="20" rright="10" rtop="12"
 						style="font-size: +2; color: #BFE2CE; tooltip: widgets/tooltips/supplytip.uixml;"/>
 				<image src="ui/textures/test/horiz_underline.bmp" x="10" rright="10" height="12" rtop="22"/>
-				<view id="scenario-map" class="scenimage" src="map.bmp" acceptsfocus="no" x="20" width="400" height="192" rtop="50"
-					style="border-color: #BFE2CE; border-size: 1;"/>
-				<text id="scenario-description" x="20" y="10" rright="20" rtop="260" style="font-size: +1; color: #FFFFFFBB;"/>
-				
-				<!--
-				<view x="10" width="425" height="400" rtop="12">
-					<caption label="OBJECTIVE" x="0" height="20" width="425" rtop="0" style="font-size: +2; color: #BFE2CE; tooltip: widgets/tooltips/supplytip.uixml;"/>
-					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
-					<text id="scenario-description" x="10" height="150" rright="10" rtop="30" style="color: #FFFFFFBB;"/>
-					<view id="scenario-map" class="scenimage" src="map.bmp" acceptsfocus="no" x="15" y="20" width="400" height="192"
-						style="tooltip: widgets/tooltips/maptip.uixml;"/>
-				</view>
-				-->
+				<view id="mission-map" class="mapview" acceptsfocus="no" minscale=".01" maxscale=".1" scale=".05"
+					x="5" y="5" rright="5" rtop="40" sx="0" sy="0"
+					onload="if(!this.mgr) new MapManager(this, true)" onshow="this.mgr.onShow()" 
+					onupdate="this.mgr.onUpdate()" onclick="this.mgr.onClick()" ondblclick="this.mgr.onDblClick()"
+					ondrag="this.mgr.onDrag()" onmouseenter="this.mgr.onMouseEnter()" onmouseexit="this.mgr.onMouseExit()"
+					onrightclick="this.mgr.onRightClick()"
+					style="tooltip: widgets/tooltips/maptip.uixml;">
+					<layer type="texture" id="default-64-tex" minscale="0" maxscale="64" enabled="true" orign="-26x210" rowcolsize="1x1" cellsize="64x64"/>
+					<layer type="icon" id="icons" minscale="1" maxscale="8" enabled="true"/>
+					<layer type="icon" id="rendered" minscale="0" maxscale="1" enabled="true"/>
+					<layer type="scenario" id="scenmap" minscale="0" maxscale="2" enabled="true"/>
+					<!-- layer type="terrainobj" id="terrainobj" minscale="0" maxscale=".5" enabled="true"/ -->
+					<layer type="players" minscale="0" maxscale="20" />
+				</view>				
 			</view>
 		</tab>
 		<include file="widgets/globals/settings.uixml"/>
@@ -115,10 +143,16 @@
 		var descView		= findview("scenario-description");
 		var nameView		= findview("scenario-name");
 		
-		var spawnTree 	= new TreeControl("spawnTree", selectSpawnable, formatSpawnable, isSelectable);
-		var memberList 	= new ListControl(findview("memberList"));
+		var flagView			= findview("team-flag");
+		var flagPath			= "";
+		
+		var fightBtn			= findview("fight-button");
+		var selectBtn		= findview("select-button");
+				
+		var spawnTree 			= new TreeControl("spawnTree", selectSpawnable, formatSpawnable, isSelectable);
+		var memberList 			= new ListControl(findview("memberList"));
 		var membersSpawned	= 0;
-		var membersCount = 0;
+		var membersCount 		= 0;
 		
 		var vehicles			= new Object();
 		var classes			= new Object();
@@ -145,14 +179,13 @@
 				return;
 			}
 			
-			var index = spawnTree.selectedData();
-			
+			var index = game.globals.scenariovehicle;
+				
 			if(index != null)
 			{
 				var vehicle = vehicles[index];
 				
 				// this call
-				setForwardEnabled(false);
 				forwardTimer.reset();
 				forwardTimer.enabled = true;
 				
@@ -181,12 +214,15 @@
 				chat.y = 10;
 			}
 			
+			flagPath = "ui/textures/test/" + client.persona.country.adjective.toLowerCase() + "_flag.bmp";
+			
 			showIDCard(false);
 			showChat(true);
 			
 			setHelp(getlocstring('scenario.help'));
 			setBack('scenario.back');
 			setForward('scenario.forward');
+			forwardButton.visible = false;
 			
 			// setup our scenario
 			initSpawnables();
@@ -196,6 +232,7 @@
 			
 			quickhelp();
 			
+			setPlayersHeader();
 			setForcesHeader();
 			
 			forwardTimer.enabled = false;
@@ -207,12 +244,19 @@
 			scenario.instance = getScenarioState();
 			scenario.objectives = loadObjectives(scenario);
 			
+			/*
 			if(scenario.objectives)
 				descView.text = scenario.objectives.brief;
 			else
 				descView.text = scenario.brief;
+			*/
 				
 			nameView.text = scenario.title.toUpperCase();
+			
+			if(game.globals.scenariovehicle == null)
+				selections.value = 1;
+			
+			flagView.src = flagPath;
 		}
 		
 		function initSpawnableTree(spawnables)
@@ -396,9 +440,13 @@
 					color	 = "#FF0000";
 				}
 				
+				var iconSize 		= 12;
+				var textIndent = indent + iconSize + 5;
+				
 				var row 				= new ViewBuilder(tree.list, node.id, 0, 0, 0, 16);
-				var vcaption			= row.addBuilder(new TextBuilder(row, "title", "caption", label, indent, 0, -indent, 16));
-				var acaption			= row.addBuilder(new TextBuilder(row, "avail", "caption", availability, indent, 0, -(indent + 5), 16));
+				var flagImage		= row.addBuilder(new ImageBuilder(row, "image", flagPath, indent, 2, iconSize, iconSize));
+				var vcaption			= row.addBuilder(new TextBuilder(row, "title", "caption", label, textIndent, 0, -textIndent, 16));
+				var acaption			= row.addBuilder(new TextBuilder(row, "avail", "caption", availability, textIndent, 0, -5, 16));
 				
 				row.addAttribute("aspectalign", "left");
 				row.addAttribute("onmouseenter", mouseenter);
@@ -407,17 +455,46 @@
 				vcaption.addStyle("color", color);
 				acaption.addStyle("color", color);
 				acaption.addAttribute("align", "right");
+				//flagImage.addStyle("color", "#FFFFFF00");
 				
 				return row.build();
 			}
 		}
 		
-		function selectSpawnable(spawn)
+		function selectSpawnable(action)
 		{
-			//cprint("Vehicle selected!");
+			var node = spawnTree.selectedNode();
 			
-			if(spawn)
-				doForward();
+			if(node != null && !node.branch)
+			{
+				selectBtn.enabled = true;
+				
+				if(action)
+				{
+					var index = spawnTree.selectedData();
+					
+					if(index != null)
+					{
+						var vehicle = vehicles[index];
+						
+						// this call
+						if(vehicle.spawnable == "spawnable")
+						{
+							game.globals.scenariovehicle = index;
+							selections.value = 0;
+						}
+						else
+						{
+							showOk(vehicle.spawnable);
+							selectBtn.enabled = false;
+						}
+					}
+				}
+			}
+			else
+			{
+				selectBtn.enabled = false;
+			}
 		}
 		
 		function setCombatStatus(tom, captures, damages)
@@ -500,10 +577,20 @@
 			header.label +=  " - #" + client.instance.id ;
 		}
 		
+		function setPlayersHeader()
+		{
+			var header 	= findview("players-header");
+			header.label = "PLAYERS" ;
+			header.label +=  " - #" + client.instance.id ;
+		}
+		
 		function switchSides()
 		{
 			if(switchTeams(scenario))
+			{
+				game.globals.scenariovehicle = null;
 				loadWin("scenarios/scenario", true);
+			}
 		}
 		
 		function initMissionMembers()
@@ -585,15 +672,9 @@
 		function toggleSelection()
 		{
 			if(selections.value == 0)
-			{
 				selections.value = 1;
-				showButton.label = "CHANGE WEAPON";
-			}
 			else
-			{
 				selections.value = 0;
-				showButton.label = "SHOW PLAYERS";
-			}
 			
 			 setForcesHeader();
 		}

@@ -1,4 +1,44 @@
 <controlset version = "1.0.0" keyboard = "us" language = "english" >
+	<control function="Forward/Backward">
+		<keyabsolute value="0.00" onrelease="50.00">
+			<key>s</key>
+		</keyabsolute>
+		<keyabsolute value="100.00" onrelease="50.00" index="10">
+			<key>w</key>
+		</keyabsolute>
+	</control>
+	<control function="Left/Right">
+		<keyabsolute value="0.00" onrelease="50.00">
+			<key>a</key>
+		</keyabsolute>
+		<keyabsolute value="100.00" onrelease="50.00" index="10">
+			<key>d</key>
+		</keyabsolute>
+	</control>
+	<control function="Primary Action">
+		<mousebutton>1</mousebutton>
+	</control>
+	<control function="Secondary Action">
+		<mousebutton>2</mousebutton>
+	</control>
+	<control function="Free Look ON">
+		<mousebutton>3</mousebutton>
+	</control>
+	<control function="Camera Look X">
+		<mouseaxis>x</mouseaxis>
+	</control>
+	<control function="Camera Look Y">
+		<mouseaxis>y</mouseaxis>
+	</control>
+	<control function="Next Position">
+		<mousebutton>wheelup</mousebutton>
+	</control>
+	<control function="Previous Position">
+		<mousebutton>wheeldown</mousebutton>
+	</control>
+	<control function="Engine">
+		<key>e</key>
+	</control>
 	<control function="toggle internal/external views">
 		<combo>
 			<key>left control</key>
@@ -150,42 +190,5 @@
 	<control>
 		<function>clone vehicle</function>
 		<key>space</key>
-	</control>
-	<control function="Forward/Backward">
-		<keyabsolute value="0.00" onrelease="50.00">
-			<key>s</key>
-		</keyabsolute>
-		<keyabsolute value="100.00" onrelease="50.00" index="10">
-			<key>w</key>
-		</keyabsolute>
-	</control>
-	<control function="Left/Right">
-		<keyabsolute value="0.00" onrelease="50.00">
-			<key>a</key>
-		</keyabsolute>
-		<keyabsolute value="100.00" onrelease="50.00" index="10">
-			<key>d</key>
-		</keyabsolute>
-	</control>
-	<control function="Primary Action">
-		<mousebutton>1</mousebutton>
-	</control>
-	<control function="Secondary Action">
-		<mousebutton>2</mousebutton>
-	</control>
-	<control function="Free Look ON">
-		<mousebutton>3</mousebutton>
-	</control>
-	<control function="Free Look X">
-		<mouseaxis>x</mouseaxis>
-	</control>
-	<control function="Free Look Y">
-		<mouseaxis>y</mouseaxis>
-	</control>
-	<control function="Next Position">
-		<mousebutton>wheelup</mousebutton>
-	</control>
-	<control function="Previous Position">
-		<mousebutton>wheeldown</mousebutton>
 	</control>
 </controlset>

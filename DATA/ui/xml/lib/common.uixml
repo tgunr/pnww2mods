@@ -647,11 +647,25 @@
 	
 	function centerView(v, xoffset, yoffset)
 	{
-		v.x = (window.width * .5) - (v.width * .5);
-		v.y = (window.height * .5) - (v.height * .5);
+		centerViewX(v, xoffset);
+		centerViewY(v, yoffset);
+	}
+	
+	function centerViewX(v, xoffset)
+	{
+		var p = v.parent;
+		
+		v.x = (p.width * .5) - (v.width * .5);
 		
 		if(!isNaN(xoffset))
 			v.x += scaleX(xoffset);
+	}
+
+	function centerViewY(v, yoffset)
+	{
+		var p = v.parent;
+		
+		v.y = (p.height * .5) - (v.height * .5);
 		
 		if(!isNaN(yoffset))
 			v.y += scaleY(yoffset);
