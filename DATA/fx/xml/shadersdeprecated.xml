@@ -394,35 +394,6 @@
     <uniform name="scale" type="float"></uniform>
   </program>
   <!--=================================================================-->
-  <program name ="common_spdgrass">
-    <shaders>
-      <vertexshader>fx/shaders/GLSL/grass/spdgrass.vert</vertexshader>
-      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
-      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
-      <fragmentshader>scenarios/terrain/common/spdgrass.frag</fragmentshader>
-    </shaders>
-    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
-    <uniform name="origin" type="float_vec3"></uniform>
-    <uniform name="alphatest" type="float"></uniform>
-    <uniform name="uv" type="float_vec2" numelements="64" onetimeapply="true"></uniform>
-  </program>
-  <!--=================================================================-->
-  <program name ="common_spdgrassshadow">
-    <shaders>
-      <vertexshader>fx/shaders/GLSL/grass/spdgrassshadow.vert</vertexshader>
-      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
-      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
-      <fragmentshader>scenarios/terrain/common/spdgrassshadow.frag</fragmentshader>
-    </shaders>
-    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
-    <uniform name="src2" type="sampler2dshadow" unit="1" onetimeapply="true"></uniform>
-    <uniform name="origin" type="float_vec3"></uniform>
-    <uniform name="scale" type="float"></uniform>
-    <uniform name="shadowambient" type="float_vec3"></uniform>
-    <uniform name="alphatest" type="float"></uniform>
-    <uniform name="uv" type="float_vec2" numelements="64" onetimeapply="true"></uniform>
-  </program>
-  <!--=================================================================-->
   <program name ="doggreen_ocean">
     <shaders>
       <vertexshader>fx/shaders/GLSL/water/ocean/ocean.vert</vertexshader>
