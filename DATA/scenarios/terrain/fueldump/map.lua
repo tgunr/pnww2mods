@@ -51,7 +51,7 @@ if(true) then
 		
 	
 	
-	"place stonebridgeshort -238.0 -42.77 4.4 -2 0 25 0 0 0",
+	"place stonebridgeshort -237.0 -43.77 4.1 -2 0 25 0 0 0",
 	"place stonebridge -261.7 -72.5 4.7 0 0 52 0 0 0",
 	--"place kr_bridge_n_dam 351.61 249.99 -3.7 0 10 0 0 0 0",
 	
