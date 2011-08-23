@@ -14,7 +14,7 @@
 	<include file="classes/ViewBuilder.uixml"/>
 	<include file="classes/TextBuilder.uixml"/>
 	<include file="classes/ImageBuilder.uixml"/>
-	<image id="team-flag" x="50" width="100" height="100" rtop="10" style="color: #FFFFFF"/>
+	<!-- image id="team-flag" x="50" width="100" height="100" rtop="10" style="color: #FFFFFF"/ -->
 	<tabview id="body" x="43" y="140" width="930" height="450" ontab="doBodyTab()" style="color: #BFE2CE;
 						background-color: #000000BB; 
 						border-top-corner: ui/textures/test/body_ul.bmp;
@@ -115,7 +115,7 @@
 					onupdate="this.mgr.onUpdate()" onclick="this.mgr.onClick()" ondblclick="this.mgr.onDblClick()"
 					ondrag="this.mgr.onDrag()" onmouseenter="this.mgr.onMouseEnter()" onmouseexit="this.mgr.onMouseExit()"
 					onrightclick="this.mgr.onRightClick()"
-					style="tooltip: widgets/tooltips/maptip.uixml;">
+					style="tooltip: widgets/tooltips/maptip.uixml; background-color: #00000088;">
 					<layer type="texture" id="default-64-tex" minscale="0" maxscale="64" enabled="true" orign="-26x210" rowcolsize="1x1" cellsize="64x64"/>
 					<layer type="icon" id="icons" minscale="1" maxscale="8" enabled="true"/>
 					<layer type="icon" id="rendered" minscale="0" maxscale="1" enabled="true"/>
@@ -145,7 +145,7 @@
 		var descView		= findview("scenario-description");
 		var nameView		= findview("scenario-name");
 		
-		var flagView			= findview("team-flag");
+		//var flagView			= findview("team-flag");
 		var flagPath			= "";
 		
 		var fightBtn			= findview("fight-button");
@@ -258,7 +258,7 @@
 			if(game.globals.scenariovehicle == null)
 				selections.value = 1;
 			
-			flagView.src = flagPath;
+			//flagView.src = flagPath;
 		}
 		
 		function initSpawnableTree(spawnables)
