@@ -13,6 +13,7 @@
     <uniform name="src3" type="sampler2d" unit="2" onetimeapply="true"></uniform>
     <uniform name="src4" type="sampler2d" unit="3" onetimeapply="true"></uniform>
     <uniform name="src5" type="sampler2d" unit="4" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="5" onetimeapply="true"></uniform>
     <uniform name="scale1" type="float" onetimeapply="true"></uniform>
     <uniform name="scale2" type="float" onetimeapply="true"></uniform>
     <uniform name="scale3" type="float" onetimeapply="true"></uniform>
@@ -31,8 +32,8 @@
     <uniform name="src3" type="sampler2d" unit="2" onetimeapply="true"></uniform>
     <uniform name="src4" type="sampler2d" unit="3" onetimeapply="true"></uniform>
     <uniform name="src5" type="sampler2d" unit="4" onetimeapply="true"></uniform>
-    <uniform name="src6" type="sampler2dshadow" unit="5" onetimeapply="true"></uniform>
-    <uniform name="decal" type="sampler2d" unit="6" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="5" onetimeapply="true"></uniform>
+    <uniform name="src6" type="sampler2dshadow" unit="6" onetimeapply="true"></uniform>
     <uniform name="scale" type="float" onetimeapply="true"></uniform>
     <uniform name="shadowambient" type="float_vec3"></uniform>
     <uniform name="scale1" type="float"></uniform>
@@ -424,5 +425,18 @@
     <uniform name="time" type="float"></uniform>
     <uniform name="scale" type="float"></uniform>
     <uniform name="shadowambient" type="float_vec3"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name="multitexture">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multi.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multi.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="src3" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="3" onetimeapply="true"></uniform>
   </program>
 </glslprograms>

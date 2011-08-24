@@ -780,6 +780,13 @@
     </emitter>
   </transformeffect>
   <!-- ===================================================================== -->
+  <transformeffect name = "tanktrack">
+    <emitter>
+      <flags>watersurface</flags>
+      <particleeffect>tanktrackparticle</particleeffect>
+    </emitter>
+  </transformeffect>
+  <!-- ===================================================================== -->
 	<transformeffect name = "planecrashfire">
 		<emitter>
 			<fountain>5</fountain>
@@ -4429,31 +4436,26 @@
     <material>waterwake</material>
   </particleeffect>
   <!-- ===================================================================== -->
-  <!--
-  <particleeffect name = "oceanfoamparticle">
+  <particleeffect name = "tanktrackparticle">
     <number>1</number>
-    <texture>water spray1</texture>
-    <texture>water spray2</texture>
-    <texture>water spray3</texture>
-    <texture>tread dust</texture>
-    <texture>water spray4</texture>
-    <alpha>0.0</alpha>
+    <texture>tanktrack</texture>
+    <alpha>1.0</alpha>
     <alpha>1.0</alpha>
     <alpha>1.0</alpha>
     <alpha>0.0</alpha>
-    <size>4.0</size>
-    <size>4.0</size>
-    <size>4.0</size>
-    <size>6.0</size>
+    <size>1.0</size>
+    <size>1.0</size>
+    <size>1.0</size>
+    <size>1.0</size>
     <time>0</time>
-    <time>4000</time>
-    <time>4000</time>
-    <time>4000</time>
+    <time>1000</time>
+    <time>1000</time>
+    <time>5000</time>
+    <separation>1.0</separation>
     <dontupdateposition></dontupdateposition>
-    <posvariance>-10 -1 0 10 1 0</posvariance>
-    <material>waterwake</material>
+    <rotate_to_dir></rotate_to_dir>
+    <material>forest1</material>
   </particleeffect>
-  -->
   <!-- ===================================================================== -->
   <particleeffect name = "bowwatertrail">
     <number>1</number>

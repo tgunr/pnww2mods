@@ -5,6 +5,7 @@ uniform sampler2D src2;
 uniform sampler2D src3;
 uniform sampler2D src4;
 uniform sampler2D src5;
+uniform sampler2D surf;
 uniform sampler2DShadow src6;
 
 uniform float scale;
@@ -55,6 +56,8 @@ void main()
     c = (1.0 - mask.g) * c + mask.g * c3;
     c = (1.0 - mask.b) * c + mask.b * c4;
     c = (1.0 - mask.a) * c + mask.a * vec4(0.0, 0.0, 0.0, 0.9);
+ 
+    c +=  texture2DProj(surf, gl_TexCoord[4]);
 
     vec4 diffuse;
     vec4 ambient;

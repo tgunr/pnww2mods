@@ -3,6 +3,7 @@
 uniform sampler2D src1;
 uniform sampler2D src2;
 uniform sampler2D src3;
+uniform sampler2D surf;
 
 varying vec3 N;
 
@@ -17,7 +18,10 @@ void main()
     vec4 c2 = texture2D(src2, gl_TexCoord[0].zw);
     vec4 c3 = texture2D(src3, gl_TexCoord[1].xy);
 
+	vec4 c4 = texture2DProj(surf, gl_TexCoord[2]);
+
     vec4 c = c1 * c2 * c3;
+    c += c4;
 
     vec4 diffuse;
     vec4 ambient;

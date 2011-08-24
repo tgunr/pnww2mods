@@ -8,6 +8,11 @@ uniform float scale4; // 512.0
 varying vec3 N;
 varying vec3 vertexpos;
 
+const mat4 Mr = mat4(0.5, 0.0, 0.0, 0.0,
+    	             0.0, 0.5, 0.0, 0.0,
+		             0.0, 0.0, 0.5, 0.0,
+		             0.5, 0.5, 0.5, 1.0);
+
 void main()
 {
     gl_TexCoord[0].xy = gl_MultiTexCoord0.xy * scale1;
@@ -18,7 +23,7 @@ void main()
 
     vec4 pos = gl_ModelViewMatrix * gl_Vertex;
 
-    gl_TexCoord[3] = gl_TextureMatrix[5] * pos;
+    gl_TexCoord[3] = gl_TextureMatrix[6] * pos;
 
     vertexpos = pos.xyz;
 
@@ -26,5 +31,6 @@ void main()
 
     gl_FogFragCoord = abs(vertexpos.z);
 
-    gl_Position = gl_ProjectionMatrix * pos;
+    gl_Position = ftransform();
+    gl_TexCoord[4] = Mr * gl_Position;
 }

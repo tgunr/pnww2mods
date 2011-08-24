@@ -3,6 +3,11 @@
 varying vec3 N;
 varying vec3 eyepos;
 
+const mat4 Mr = mat4(0.5, 0.0, 0.0, 0.0,
+    	             0.0, 0.5, 0.0, 0.0,
+		             0.0, 0.0, 0.5, 0.0,
+		             0.5, 0.5, 0.5, 1.0);
+
 void main()
 {
     gl_TexCoord[0].xy = (gl_TextureMatrix[0] * vec4(gl_MultiTexCoord0.xy, 1.0, 1.0)).xy;
@@ -16,5 +21,6 @@ void main()
 
     gl_FogFragCoord = abs(eyepos.z);
 
-    gl_Position = gl_ProjectionMatrix * pos;
+    gl_Position = ftransform();
+    gl_TexCoord[2] = Mr * gl_Position;
 }
