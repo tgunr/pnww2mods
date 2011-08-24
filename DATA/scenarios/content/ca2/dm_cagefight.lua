@@ -41,12 +41,12 @@ if(true) then
 		-- blocking volume gate1
 		-- block gate1 x1 y1 z1 x2 y2 z2 thickness height
 
-	       	"block gate1 190993.34 3016026.51 142.00 190993.73 3016036.22 142.00 2 3",
+	       	"block gate1 190993.61 3016040.28 142.00 190993.72 3016021.85 142.00 2 3",
 
 		-- blocking volume gate2
 		-- block gate2 x1 y1 z1 x2 y2 z2 thickness height
 
-	       	"block gate2 190890.93 3015979.93 142.00 190891.51 3015970.24 142.00 2 3",
+	       	"block gate2 190890.56 3015966.28 142.00 190890.71 3015983.57 142.00 2 3",
 		
 		
 				
