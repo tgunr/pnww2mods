@@ -787,6 +787,13 @@
     </emitter>
   </transformeffect>
   <!-- ===================================================================== -->
+  <transformeffect name = "tiretrack">
+    <emitter>
+      <flags>watersurface</flags>
+      <particleeffect>tiretrackparticle</particleeffect>
+    </emitter>
+  </transformeffect>
+  <!-- ===================================================================== -->
 	<transformeffect name = "planecrashfire">
 		<emitter>
 			<fountain>5</fountain>
@@ -4439,6 +4446,27 @@
   <particleeffect name = "tanktrackparticle">
     <number>1</number>
     <texture>tanktrack</texture>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>0.0</alpha>
+    <size>1.0</size>
+    <size>1.0</size>
+    <size>1.0</size>
+    <size>1.0</size>
+    <time>0</time>
+    <time>1000</time>
+    <time>1000</time>
+    <time>5000</time>
+    <separation>1.0</separation>
+    <dontupdateposition></dontupdateposition>
+    <rotate_to_dir></rotate_to_dir>
+    <material>forest1</material>
+  </particleeffect>
+  <!-- ===================================================================== -->
+  <particleeffect name = "tiretrackparticle">
+    <number>1</number>
+    <texture>tiretrack</texture>
     <alpha>1.0</alpha>
     <alpha>1.0</alpha>
     <alpha>1.0</alpha>
