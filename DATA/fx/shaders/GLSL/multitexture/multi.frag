@@ -21,8 +21,11 @@ void main()
 	vec4 c4 = texture2DProj(surf, gl_TexCoord[2]);
 
     vec4 c = c1 * c2 * c3;
-    c += c4;
+    
+    c4.rgb = 1.0 - c4.rgb * 2.0;
 
+    c *= c4;
+    
     vec4 diffuse;
     vec4 ambient;
 

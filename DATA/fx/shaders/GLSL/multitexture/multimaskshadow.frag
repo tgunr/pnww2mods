@@ -57,7 +57,10 @@ void main()
     c = (1.0 - mask.b) * c + mask.b * c4;
     c = (1.0 - mask.a) * c + mask.a * vec4(0.0, 0.0, 0.0, 0.9);
  
-    c +=  texture2DProj(surf, gl_TexCoord[4]);
+    vec4 c5 = texture2DProj(surf, gl_TexCoord[4]);
+    c5.rgb = 1.0 - c5.rgb * 2.0;
+
+    c *= c5;
 
     vec4 diffuse;
     vec4 ambient;
