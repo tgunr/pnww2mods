@@ -1,0 +1,31 @@
+<?xml version='1.0'?>
+<content type="3">
+  <name>dday/obj_draw</name>
+  <body>onspawn.moveout * 韦沃尔山谷
+victory1 * 盟国胜利! 蓝星国军队已经占领了这座城镇!
+victory2 * 红国胜利! 红国部队成功守住了这座城镇!
+roundstop * 本回合结束!
+playarea * 不能离开战区... 请转身调头!
+vierville_draw * 韦沃尔山谷
+
+youcapon * 你正在占领城镇!
+alliedcapon * 蓝星国军队正在占领城镇!
+alliedcapoff * 红国军队重新夺回城镇!
+
+
+scenario.help = 挺进韦沃尔</body>
+  <bodyloc>true</bodyloc>
+  <brief>蓝星国军队已经获得“海滩突击”的胜利，现在必须向韦沃尔山谷挺近占领附近的一个小镇。为了保住领土，红国正在全力阻止蓝星国。</brief>
+  <duration>30</duration>
+  <fog>1</fog>
+  <hour>7</hour>
+  <rules>lepontdumal</rules>
+  <team1>25</team1>
+  <team1min>2</team1min>
+  <team2>25</team2>
+  <team2min>2</team2min>
+  <terrain>draw</terrain>
+  <title>挺进韦沃尔</title>
+  <victory>120</victory>
+  <weather>1</weather>
+</content>

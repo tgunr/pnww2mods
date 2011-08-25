@@ -1,0 +1,36 @@
+<?xml version='1.0'?>
+<content type="3">
+  <name>ca2/dm_factory1</name>
+  <body>objective1 = 盟军 {1}/{2}
+objective2 = 红军 {1}/{2}
+victory1 = 盟军胜利!
+victory2 = 红军胜利!
+roundstop = 本回合结束!
+playarea = 战区边界 ... 请转身调头
+onspawn.moveout = 在时间耗尽前尽可能多的击杀敌人!
+gerspawn = 红军出生点
+ukspawn = 盟军出生点
+scenario.help = 工厂1: 击杀敌人</body>
+  <bodyloc>true</bodyloc>
+  <draw>35</draw>
+  <duration>15</duration>
+  <enemydeaths>true</enemydeaths>
+  <enemyicontypeonly>true</enemyicontypeonly>
+  <firingenemyicons>true</firingenemyicons>
+  <fog>1</fog>
+  <hour>16</hour>
+  <links>
+    <link path="scenarios/dm/objectives/factory1_1.xml" title="队1" />
+    <link path="scenarios/dm/objectives/factory1_2.xml" title="队2" />
+  </links>
+  <rules>dmnointel</rules>
+  <target>119216.20 2843675.23 296.13</target>
+  <team1>1</team1>
+  <team1max>12</team1max>
+  <team1min>2</team1min>
+  <team2>4</team2>
+  <team2max>12</team2max>
+  <team2min>2</team2min>
+  <victory>50</victory>
+  <weather>0</weather>
+</content>

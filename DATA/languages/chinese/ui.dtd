@@ -1902,7 +1902,7 @@
 <!ENTITY loc.mspawn.16 "战车必须停稳，才能部署移动兵站。">
 <!ENTITY loc.function.182 "襟翼收放">
 <!ENTITY loc.function.179 "俯冲减速板">
-<!ENTITY loc.function.2001 "视野">
+<!ENTITY loc.function.2001 "移动">
 <!ENTITY loc.function.186 "开/关炸弹舱口">
 <!ENTITY loc.function.278 "选择武器2">
 <!ENTITY loc.function.259 "卧姿">
@@ -1919,11 +1919,11 @@
 <!ENTITY loc.function.238 "瞄准器视图">
 <!ENTITY loc.function.532 "火炮移动">
 <!ENTITY loc.function.270 "左移">
-<!ENTITY loc.function.2004 "驾驶室控制">
+<!ENTITY loc.function.2004 "武器控制">
 <!ENTITY loc.function.202 "开/关聊天窗口">
 <!ENTITY loc.function.192 "轰炸警报">
 <!ENTITY loc.function.2 "摇杆设置 2">
-<!ENTITY loc.function.2009 "线下版外部">
+<!ENTITY loc.function.2009 "游戏内部">
 <!ENTITY loc.function.1100 "选择下一个武器">
 <!ENTITY loc.function.303 "左刹车">
 <!ENTITY loc.function.240 "切换弹药">
@@ -1938,7 +1938,7 @@
 <!ENTITY loc.function.923 "Head Translate X">
 <!ENTITY loc.function.181 "地图">
 <!ENTITY loc.function.919 "鼠标查看 Y">
-<!ENTITY loc.function.2005 "水雷发射器">
+<!ENTITY loc.function.2005 "驾驶室控制">
 <!ENTITY loc.function.196 "外部锁定">
 <!ENTITY loc.function.255 "位置7">
 <!ENTITY loc.function.5 "显示游戏信息">
@@ -1984,19 +1984,17 @@
 <!ENTITY loc.function.900 "增加目标航速">
 <!ENTITY loc.function.731 "显示游戏地图">
 <!ENTITY loc.function.242 "使用辅助武器">
-<!ENTITY loc.function.2010 "放大 PTZ">
+<!ENTITY loc.function.2010 "线下版外部">
 <!ENTITY loc.function.214 "向前部上方看">
 <!ENTITY loc.function.250 "位置2">
 <!ENTITY loc.function.223 "向前部左下方看">
 <!ENTITY loc.function.190 "降档">
 <!ENTITY loc.function.222 "向前部右下方看">
-<!ENTITY loc.function.2013 "重新设定PTZ">
 <!ENTITY loc.function.4008 "前一页">
 <!ENTITY loc.function.901 "降低目标航速">
 <!ENTITY loc.function.300 "向右倾斜">
 <!ENTITY loc.function.180 "自动俯冲">
-<!ENTITY loc.function.2012 "默认大小PTZ">
-<!ENTITY loc.function.2000 "移动">
+<!ENTITY loc.function.2000 "简易操作模式">
 <!ENTITY loc.function.210 "向右看">
 <!ENTITY loc.function.171 "整流罩">
 <!ENTITY loc.function.709 "改变聊天窗口高度">
@@ -2016,7 +2014,7 @@
 <!ENTITY loc.function.732 "放大地图">
 <!ENTITY loc.function.316 "向内旋转视角">
 <!ENTITY loc.function.252 "位置4">
-<!ENTITY loc.function.2007 "聊天">
+<!ENTITY loc.function.2007 "投弹瞄准器">
 <!ENTITY loc.function.293 "油门">
 <!ENTITY loc.function.286 "选择武器10">
 <!ENTITY loc.function.10 "复制武器">
@@ -2048,7 +2046,7 @@
 <!ENTITY loc.function.913 "引信间隔降低">
 <!ENTITY loc.function.302 "襟翼控制">
 <!ENTITY loc.function.1101 "选择前一个武器">
-<!ENTITY loc.function.2006 "投弹瞄准器">
+<!ENTITY loc.function.2006 "水雷发射器">
 <!ENTITY loc.function.905 "增加鱼雷运行深度">
 <!ENTITY loc.function.294 "离合器">
 <!ENTITY loc.function.183 "切换内部/外部视图">
@@ -2061,19 +2059,19 @@
 <!ENTITY loc.function.201 "显示鼠标光标">
 <!ENTITY loc.function.165 "油气混合比增大">
 <!ENTITY loc.function.258 "位置10">
-<!ENTITY loc.function.2008 "游戏内部">
+<!ENTITY loc.function.2008 "聊天">
 <!ENTITY loc.function.710 "重新设定 HUD">
 <!ENTITY loc.function.189 "升档">
 <!ENTITY loc.function.191 "倒车档">
 <!ENTITY loc.function.228 "视野二十五">
 <!ENTITY loc.function.229 "视野二十六">
 <!ENTITY loc.function.260 "部署武器">
-<!ENTITY loc.function.2002 "表情">
+<!ENTITY loc.function.2002 "视野">
 <!ENTITY loc.function.8 "循环图标模式">
 <!ENTITY loc.function.1005 "突变信号表情">
 <!ENTITY loc.function.282 "选择武器6">
 <!ENTITY loc.function.193 "向上调整推进器">
-<!ENTITY loc.function.2003 "武器控制">
+<!ENTITY loc.function.2003 "表情">
 <!ENTITY loc.function.274 "左看">
 <!ENTITY loc.function.289 "副翼">
 <!ENTITY loc.function.168 "增压器空挡">
@@ -2125,8 +2123,8 @@
 <!ENTITY loc.function.170 "靠近燃油箱的阀门">
 <!ENTITY loc.function.217 "向右上方看">
 <!ENTITY loc.function.235 "视野三十二">
-<!ENTITY loc.function.2011 "缩小 PTZ">
 <!ENTITY loc.function.225 "向左下方看">
+<!ENTITY loc.function.4009 "引擎">
 <!ENTITY loc.function.704 "屏幕拍照">
 <!ENTITY loc.function.203 "开/关无线电缓冲器">
 <!ENTITY loc.function.232 "视野二十九">
@@ -2575,7 +2573,7 @@
 <!ENTITY widgets.prefs.groups.game.presets.performance "最佳表现">
 <!ENTITY widgets.prefs.slowest "最慢">
 <!ENTITY widgets.prefs.min "最小">
-<!ENTITY widgets.map.tooltip.town.american "这座城镇由铁血（D）国国占领。">
+<!ENTITY widgets.map.tooltip.town.american "这座城镇由蓝星（D）国国占领。">
 <!ENTITY widgets.prefs.groups.visual.specular.tip "打开该功能以提升光影效果。关闭该功能可以提高游戏的流畅度。">
 <!ENTITY widgets.prefs.groups.hud.missionwaypoints.tip "在游戏里标示重要的与任务相关的导航点，如任务目标或最近的补给点。">
 <!ENTITY widgets.prefs.groups.hud.custom.primary "主武器弹药">
@@ -3046,6 +3044,7 @@
 <!ENTITY loading.network.host "打开主机连接">
 <!ENTITY loading.weapons "初始化武器系统">
 <!ENTITY loading.fx "初始化 FX">
+<!ENTITY loading.netperf "查找最佳连接">
 <!ENTITY loading.vehicles.init "初始化交通工具系统">
 <!ENTITY loading.multitextures "多重纹理">
 <!ENTITY loading.objects "初始化物体">
@@ -3380,8 +3379,8 @@
 <!ENTITY common.squads.details.options.co.resign.button "辞职">
 <!ENTITY common.mission.pd "点防御">
 <!ENTITY common.squads.member.join.locked "因为阵营限制，您现在不能加入。">
-<!ENTITY common.countries.us.adjective "铁血（D）国">
-<!ENTITY common.countries.us.airforce "铁血（D）空军">
+<!ENTITY common.countries.us.adjective "蓝星（D）国">
+<!ENTITY common.countries.us.airforce "蓝星（D）空军">
 <!ENTITY common.squads.details.options.co.resign "放弃您的指挥官（CO）职位">
 <!ENTITY common.countries.fr "A">
 <!ENTITY common.countries.uk.side "联盟国">
@@ -3483,7 +3482,7 @@
 <!ENTITY common.population.light "较少">
 <!ENTITY common.vehicles.classes.13 "船舶">
 <!ENTITY common.countries.fr.navy "绿（A）国海军">
-<!ENTITY common.countries.us.name "铁血（D）国">
+<!ENTITY common.countries.us.name "蓝星（D）国">
 <!ENTITY common.mission.1 "点防御">
 <!ENTITY common.basedoutof "位于">
 <!ENTITY common.squads.member.mission "任务">
@@ -3514,7 +3513,7 @@
 <!ENTITY common.squads.members.tips.online "这个玩家在线">
 <!ENTITY common.squads.tab.help "战队: 管理战队信息和成员">
 <!ENTITY common.squads.invite.inviter "招募者">
-<!ENTITY common.countries.us.navy "铁血（D）国海军">
+<!ENTITY common.countries.us.navy "蓝星（D）国海军">
 <!ENTITY common.squads.details.options.prefs.invites "接受战队邀请？">
 <!ENTITY common.countries.none.army "未知陆军">
 <!ENTITY common.countries.it.adjective "意大利">
@@ -3554,7 +3553,7 @@
 <!ENTITY common.branches.airforce "空军">
 <!ENTITY common.squads.details.options.recruiter.recruit.button "招募">
 <!ENTITY common.countries.none "NA">
-<!ENTITY common.countries.us.army "铁血（D）国陆军">
+<!ENTITY common.countries.us.army "蓝星（D）国陆军">
 <!ENTITY common.squads.member.flags "旗帜">
 <!ENTITY common.mission.2 "区域攻击">
 <!ENTITY common.squads.members.tips.spawned "出生">
@@ -4132,9 +4131,9 @@
 <!ENTITY vehicles.1.4.9.12 "蓝国狙击手">
 <!ENTITY vehicles.3.2.7.1 "绿国25毫米轻型反坦克炮">
 <!ENTITY vehicles.3.2.4.9 "绿国76.2毫米中型近战坦克">
-<!ENTITY vehicles.2.2.4.1 "铁血国75毫米中型坦克">
+<!ENTITY vehicles.2.2.4.1 "蓝星国75毫米中型坦克">
 <!ENTITY vehicles.1.2.4.10 "蓝国57毫米重型坦克">
-<!ENTITY vehicles.2.4.9.12 "铁血国狙击手">
+<!ENTITY vehicles.2.4.9.12 "蓝星国狙击手">
 <!ENTITY vehicles.1.2.4.9 "蓝国75毫米重型坦克">
 <!ENTITY vehicles.1.1.2.7 "HMK IIb 战斗截击机">
 <!ENTITY vehicles.4.1.1.2 "H111H-2水平轰炸机">
@@ -4173,7 +4172,7 @@
 <!ENTITY vehicles.4.4.9.5 "秃鹰">
 <!ENTITY vehicles.3.2.7.4 "绿国40毫米中型高射炮">
 <!ENTITY vehicles.4.1.1.4 "红国BMK IV T鱼雷轰炸机">
-<!ENTITY vehicles.2.4.9.2 "铁血国冲锋枪兵">
+<!ENTITY vehicles.2.4.9.2 "蓝星国冲锋枪兵">
 <!ENTITY vehicles.1.2.7.2 "蓝国25毫米轻型反坦克炮">
 <!ENTITY vehicles.3.4.9.2 "绿国冲锋枪兵">
 <!ENTITY vehicles.3.2.4.2 "绿国37毫米轻型慢速坦克">
@@ -4198,7 +4197,7 @@
 <!ENTITY vehicles.4.4.14.13 "红国空降轻型迫击炮兵">
 <!ENTITY vehicles.3.4.9.9 "绿国反坦克步枪兵">
 <!ENTITY vehicles.4.2.4.7 "红国232轮式装甲车">
-<!ENTITY vehicles.2.2.4.2 "铁血国76.2毫米坦克歼击车">
+<!ENTITY vehicles.2.2.4.2 "蓝星国76.2毫米坦克歼击车">
 <!ENTITY vehicles.1.2.7.4 "蓝国40毫米中型高射炮">
 <!ENTITY vehicles.1.1.2.6 "SMK IXc 战斗截击机">
 <!ENTITY vehicles.3.2.6.3 "LW 15 牵引车">
@@ -4220,7 +4219,7 @@
 <!ENTITY vehicles.1.2.6.2 "MCDSW牵引车">
 <!ENTITY vehicles.3.2.7.5 "绿国57毫米中型反坦克炮">
 <!ENTITY vehicles.1.4.14.9 "蓝国空降反坦克步枪兵">
-<!ENTITY vehicles.2.4.9.6 "铁血国自动步枪兵">
+<!ENTITY vehicles.2.4.9.6 "蓝星国轻机枪兵">
 <!ENTITY vehicles.4.4.9.15 "红国反坦克兵">
 <!ENTITY vehicles.1.4.9.3 "蓝国工兵">
 <!ENTITY vehicles.4.1.2.2 "M110C-4重型战斗机">
@@ -4233,7 +4232,7 @@
 <!ENTITY vehicles.1.4.9.1 "蓝国步枪兵">
 <!ENTITY vehicles.3.3.12.1 "绿国费尔麦尔B级摩托艇">
 <!ENTITY vehicles.4.4.9.7 "红国枪榴弹兵">
-<!ENTITY vehicles.2.4.9.14 "铁血国突击步兵">
+<!ENTITY vehicles.2.4.9.14 "蓝星国突击步兵">
 <!ENTITY vehicles.3.4.9.12 "绿国狙击手">
 <!ENTITY vehicles.1.2.7.3 "蓝国25毫米轻型高射炮">
 <!ENTITY vehicles.3.2.7.2 "绿国47毫米中型反坦克炮">
@@ -4243,7 +4242,7 @@
 <!ENTITY vehicles.1.1.2.9 "SMK IIb 战斗截击机">
 <!ENTITY vehicles.reload "正在装填 &#37;ls ，以供下次发射使用">
 <!ENTITY vehicles.4.2.7.1 "红国37毫米轻型反坦克炮">
-<!ENTITY vehicles.2.4.9.1 "铁血国步兵">
+<!ENTITY vehicles.2.4.9.1 "蓝星国步兵">
 <!ENTITY vehicles.4.2.4.5 "红国75毫米中型坦克">
 <!ENTITY vehicles.1.1.2.5 "HMK IIc 战斗轰炸机">
 <!ENTITY vehicles.4.2.6.2 "红国8吨牵引车">
@@ -4271,7 +4270,7 @@
 <!ENTITY vehicles.4.2.4.6 "红国50毫米中型坦克">
 <!ENTITY vehicles.1.2.7.1 "蓝国40毫米轻型反坦克炮">
 <!ENTITY vehicles.3.2.6.1 "BOYD卡车">
-<!ENTITY vehicles.2.4.9.3 "铁血国工兵">
+<!ENTITY vehicles.2.4.9.3 "蓝星国工兵">
 <!ENTITY vehicles.1.2.4.6 "蓝国DMK I装甲侦察车">
 <!ENTITY vehicles.4.4.9.14 "红国突击步兵">
 <!ENTITY vehicles.4.1.2.1 "M109E-4战斗截击机">
@@ -4281,7 +4280,7 @@
 <!ENTITY vehicles.4.2.4.3 "红国20毫米轻型坦克">
 <!ENTITY vehicles.4.4.9.6 "红国轻机枪兵">
 <!ENTITY vehicles.1.1.1.3 "HMK I 中型歼击轰炸机">
-<!ENTITY vehicles.2.4.9.15 "铁血国火箭筒反坦克兵">
+<!ENTITY vehicles.2.4.9.15 "蓝星国火箭筒反坦克兵">
 <!ENTITY vehicles.4.1.1.3 "M110C-4/B重型战斗机">
 <!ENTITY vehicles.3.1.2.5 "C81A-2 战斗截击机">
 <!ENTITY vehicles.1.2.4.3 "蓝国75毫米重型坦克">
