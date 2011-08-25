@@ -6,31 +6,32 @@ objective2 = Axis {1}/{2}
 victory1 = Allies victorious!
 victory2 = Axis victorious!
 roundstop = This round is over!
-playarea = Edge of combat zone ... turn around
 onspawn.moveout = Eliminate as many enemy as possible before time runs out!
 gerspawn = Enemy Spawn
 ukspawn = Enemy Spawn
-scenario.help = FACTORY1: KILL THE ENEMY</body>
+scenario.help = CITY FIGHT 1: KILL THE ENEMY</body>
   <bodyloc>true</bodyloc>
-  <draw>35</draw>
-  <duration>15</duration>
+  <brief>text here</brief>
+  <draw>10</draw>
+  <duration>5</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
-  <hour>16</hour>
+  <hour>17</hour>
   <links>
     <link path="scenarios/dm/objectives/factory1_1.xml" title="team1" />
     <link path="scenarios/dm/objectives/factory1_2.xml" title="team2" />
   </links>
   <rules>dmnointel</rules>
-  <target>119216.20 2843675.23 296.13</target>
+  <target>119219.80 2843847.98 345.97</target>
   <team1>1</team1>
   <team1max>12</team1max>
   <team1min>2</team1min>
   <team2>4</team2>
   <team2max>12</team2max>
   <team2min>2</team2min>
-  <victory>50</victory>
+  <title>City Fight 1</title>
+  <victory>25</victory>
   <weather>0</weather>
 </content>

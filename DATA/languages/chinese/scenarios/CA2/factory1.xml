@@ -12,25 +12,25 @@ gerspawn = 红军出生点
 ukspawn = 盟军出生点
 scenario.help = 工厂1: 击杀敌人</body>
   <bodyloc>true</bodyloc>
-  <draw>35</draw>
-  <duration>15</duration>
+  <draw>10</draw>
+  <duration>5</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
-  <hour>16</hour>
+  <hour>17</hour>
   <links>
     <link path="scenarios/dm/objectives/factory1_1.xml" title="队1" />
     <link path="scenarios/dm/objectives/factory1_2.xml" title="队2" />
   </links>
   <rules>dmnointel</rules>
-  <target>119216.20 2843675.23 296.13</target>
+  <target>119219.80 2843847.98 345.97</target>
   <team1>1</team1>
   <team1max>12</team1max>
   <team1min>2</team1min>
   <team2>4</team2>
   <team2max>12</team2max>
   <team2min>2</team2min>
-  <victory>50</victory>
+  <victory>25</victory>
   <weather>0</weather>
 </content>
