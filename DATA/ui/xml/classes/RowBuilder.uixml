@@ -74,6 +74,7 @@
 					if(column.align != null) cb.addAttribute("align", column.align);
 					if(this.color != null) 		cb.addStyle("color", this.color);
 					if(this.bgcolor != null) 	cb.addStyle("background-color", this.bgcolor);
+					if(this.fontsize != null) 	cb.addStyle("font-size", this.fontsize);
 				}
 				else if(column.type == "chaticon")
 				{
