@@ -119,17 +119,20 @@
 			{
 				var keymap = keymaps[i];
 				
-				if(keymap.header != header)
+				if(keymap.ezlevel == -1 || keymap.ezlevel >= game.ezmode)
 				{
-					header = keymap.header;
-					keymapList.addRow(header.toUpperCase());
+					if(keymap.header != header)
+					{
+						header = keymap.header;
+						keymapList.addRow(header.toUpperCase());
+					}
+					
+					keymap.category = category;
+					keymap.vehicle 	= vehicle;
+					keymap.index 	= i;
+					
+					keymapList.addRow(keymap);
 				}
-				
-				keymap.category = category;
-				keymap.vehicle 	= vehicle;
-				keymap.index 	= i;
-				
-				keymapList.addRow(keymap);
 			}
 		}
 		

@@ -12,23 +12,23 @@
 	</category>
 	<category name="tank">
 		<preset path="tank.cfml" requires="joystick"/>
-		<preset name="nojoy" path="tank.nojoy.cfml" ez="true"/>
+		<preset name="nojoy" path="tank.nojoy.cfml" ez="2"/>
 	</category>
 	<category name="atgun">
 		<preset path="atgun.cfml" requires="joystick"/>
-		<preset name="nojoy" path="atgun.nojoy.cfml" ez="true"/>
+		<preset name="nojoy" path="atgun.nojoy.cfml" ez="2"/>
 	</category>
 	<category name="truck">
 		<preset path="truck.cfml" requires="joystick"/>
-		<preset name="nojoy" path="truck.nojoy.cfml" ez="true"/>
+		<preset name="nojoy" path="truck.nojoy.cfml" ez="2"/>
 	</category>
 	<category name="air">
 		<preset path="air.cfml" requires="joystick"/>
-		<preset name="nojoy" path="air.nojoy.cfml" ez="true"/>
+		<preset name="nojoy" path="air.nojoy.cfml" ez="2"/>
 	</category>
 	<category name="sea">
 		<preset path="sea.cfml" requires="joystick"/>
-		<preset name="nojoy" path="sea.nojoy.cfml"/>
+		<preset name="nojoy" path="sea.nojoy.cfml" ez="2"/>
 	</category>
 	<category name="ez">
 		<preset path="ez.cfml"/>
