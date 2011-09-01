@@ -19,7 +19,7 @@
     <uniform name="scale3" type="float" onetimeapply="true"></uniform>
     <uniform name="scale4" type="float" onetimeapply="true"></uniform>
   </program>
-  <!--=================================================================-->
+  <!--=================================================================
   <program name ="multimaskshadow">
     <shaders>
       <vertexshader>fx/shaders/GLSL/multitexture/multimaskshadow.vert</vertexshader>
@@ -27,19 +27,99 @@
       <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
       <fragmentshader>fx/shaders/GLSL/multitexture/multimaskshadow.frag</fragmentshader>
     </shaders>
-    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
-    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
-    <uniform name="src3" type="sampler2d" unit="2" onetimeapply="true"></uniform>
-    <uniform name="src4" type="sampler2d" unit="3" onetimeapply="true"></uniform>
-    <uniform name="src5" type="sampler2d" unit="4" onetimeapply="true"></uniform>
-    <uniform name="surf" type="sampler2d" unit="5" onetimeapply="true"></uniform>
-    <uniform name="src6" type="sampler2dshadow" unit="6" onetimeapply="true"></uniform>
-    <uniform name="scale" type="float" onetimeapply="true"></uniform>
+    <uniform name="src" type="sampler2darray" unit="0" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="shad" type="sampler2dshadow" unit="2" onetimeapply="true"></uniform>
+    <uniform name="mask1" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="mask2" type="sampler2d" unit="4" onetimeapply="true"></uniform>
+    <uniform name="scale" type="float" numelements="8" onetimeapply="true"></uniform>
     <uniform name="shadowambient" type="float_vec3"></uniform>
-    <uniform name="scale1" type="float"></uniform>
-    <uniform name="scale2" type="float"></uniform>
-    <uniform name="scale3" type="float"></uniform>
-    <uniform name="scale4" type="float"></uniform>
+    <uniform name="num" type="int"></uniform>
+  </program> 
+  -->
+  <!--=================================================================-->
+  <program name ="multimaskshadow4">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multimaskshadow4.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multimaskshadow4.frag</fragmentshader>
+    </shaders>
+    <uniform name="src" type="sampler2darray" unit="0" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="shad" type="sampler2dshadow" unit="2" onetimeapply="true"></uniform>
+    <uniform name="mask1" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="scale" type="float" numelements="4" onetimeapply="true"></uniform>
+    <uniform name="shadowambient" type="float_vec3"></uniform>
+    <uniform name="num" type="int"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="multimaskshadow5">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multimaskshadow5.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multimaskshadow5.frag</fragmentshader>
+    </shaders>
+    <uniform name="src" type="sampler2darray" unit="0" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="shad" type="sampler2dshadow" unit="2" onetimeapply="true"></uniform>
+    <uniform name="mask1" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="mask2" type="sampler2d" unit="4" onetimeapply="true"></uniform>
+    <uniform name="scale" type="float" numelements="5" onetimeapply="true"></uniform>
+    <uniform name="shadowambient" type="float_vec3"></uniform>
+    <uniform name="num" type="int"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="multimaskshadow6">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multimaskshadow6.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multimaskshadow6.frag</fragmentshader>
+    </shaders>
+    <uniform name="src" type="sampler2darray" unit="0" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="shad" type="sampler2dshadow" unit="2" onetimeapply="true"></uniform>
+    <uniform name="mask1" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="mask2" type="sampler2d" unit="4" onetimeapply="true"></uniform>
+    <uniform name="scale" type="float" numelements="6" onetimeapply="true"></uniform>
+    <uniform name="shadowambient" type="float_vec3"></uniform>
+    <uniform name="num" type="int"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="multimaskshadow7">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multimaskshadow7.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multimaskshadow7.frag</fragmentshader>
+    </shaders>
+    <uniform name="src" type="sampler2darray" unit="0" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="shad" type="sampler2dshadow" unit="2" onetimeapply="true"></uniform>
+    <uniform name="mask1" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="mask2" type="sampler2d" unit="4" onetimeapply="true"></uniform>
+    <uniform name="scale" type="float" numelements="7" onetimeapply="true"></uniform>
+    <uniform name="shadowambient" type="float_vec3"></uniform>
+    <uniform name="num" type="int"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="multimaskshadow8">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multimaskshadow8.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multimaskshadow8.frag</fragmentshader>
+    </shaders>
+    <uniform name="src" type="sampler2darray" unit="0" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="shad" type="sampler2dshadow" unit="2" onetimeapply="true"></uniform>
+    <uniform name="mask1" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="mask2" type="sampler2d" unit="4" onetimeapply="true"></uniform>
+    <uniform name="scale" type="float" numelements="8" onetimeapply="true"></uniform>
+    <uniform name="shadowambient" type="float_vec3"></uniform>
+    <uniform name="num" type="int"></uniform>
   </program>
   <!--=================================================================-->
   <program name ="normalmap">
