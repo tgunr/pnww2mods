@@ -63,23 +63,24 @@
     <treemask>treemask.dds</treemask>
     <grassmask>grassmask.dds</grassmask>
     <cluttermask>cluttermask.dds</cluttermask>
-   <layer0 name="layer0.dds">
-      <multitexture>300</multitexture>
-      <material>grass</material>
-    </layer0>
-    <layer1 name="layer1.dds">
-      <multitexture>200</multitexture>
-      <material>rock</material>
-    </layer1>
-    <layer2 name="layer2.dds">
-      <multitexture>300</multitexture>
-      <material>dirt</material>
-    </layer2>
-    <layer3 name="layer3.dds">
-      <multitexture>300</multitexture>
-      <material>dirt</material>
-    </layer3>
-    <blendmask>masks.dds</blendmask>
-  </terraintile>
+   <blendmask name="masks.dds">
+     <layer0 name="layer0.dds">
+        <multitexture>300</multitexture>
+        <material>grass</material>
+      </layer0>
+      <layer1 name="layer1.dds">
+        <multitexture>200</multitexture>
+        <material>rock</material>
+      </layer1>
+      <layer2 name="layer2.dds">
+        <multitexture>300</multitexture>
+        <material>dirt</material>
+      </layer2>
+      <layer3 name="layer3.dds">
+        <multitexture>300</multitexture>
+        <material>dirt</material>
+      </layer3>
+   </blendmask>
+ </terraintile>
 </exposed>
 

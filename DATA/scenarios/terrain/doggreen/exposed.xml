@@ -92,67 +92,70 @@
     <cluttermask>cluttermask.dds</cluttermask>
     <cluttermask>cluttermask2.dds</cluttermask>
     <grassmask>grassmask.dds</grassmask>
-    <layer0 name="layer0.dds">
-      <multitexture>128</multitexture>
-      <material>grass</material>
-    </layer0>
-    <layer1 name="layer1.dds">
-      <multitexture>512</multitexture>
-      <material>rock</material>
-    </layer1>
-    <layer2 name="layer2.dds">
-      <multitexture>512</multitexture>
-      <material>dunes1</material>
-    </layer2>
-    <layer3 name="layer3.dds">
-      <multitexture>512</multitexture>
-      <material>dunes1</material>
-    </layer3>
-    <blendmask>masks.dds</blendmask>
+    <blendmask name="masks.dds">     
+      <layer0 name="layer0.dds">
+        <multitexture>128</multitexture>
+        <material>grass</material>
+      </layer0>
+      <layer1 name="layer1.dds">
+        <multitexture>512</multitexture>
+        <material>rock</material>
+      </layer1>
+      <layer2 name="layer2.dds">
+        <multitexture>512</multitexture>
+        <material>dunes1</material>
+      </layer2>
+      <layer3 name="layer3.dds">
+        <multitexture>512</multitexture>
+        <material>dunes1</material>
+      </layer3>
+    </blendmask>
   </terraintile>
   
   <terraintile name ="edgetile">
     <shader>multimaskshadow</shader>
-    <layer0 name="layer0.dds">
-      <multitexture>256</multitexture>
-      <material>grass</material>
-    </layer0>
-    <layer1 name="layer1.dds">
-      <multitexture>128</multitexture>
-      <material>rock</material>
-    </layer1>
-    <layer2 name="layer2.dds">
-      <multitexture>100</multitexture>
-      <material>dunes1</material>
-    </layer2>
-    <layer3 name="layer3.dds">
-      <multitexture>512</multitexture>
-      <material>dunes1</material>
-    </layer3>
-    <blendmask>masks.dds</blendmask>
+    <blendmask name="masks.dds">
+      <layer0 name="layer0.dds">
+        <multitexture>256</multitexture>
+        <material>grass</material>
+      </layer0>
+      <layer1 name="layer1.dds">
+        <multitexture>128</multitexture>
+        <material>rock</material>
+      </layer1>
+      <layer2 name="layer2.dds">
+        <multitexture>100</multitexture>
+        <material>dunes1</material>
+      </layer2>
+      <layer3 name="layer3.dds">
+        <multitexture>512</multitexture>
+        <material>dunes1</material>
+      </layer3>
+    </blendmask>
   </terraintile>
 
   <terraintile name ="edgetile_ss">
     <shader>multimaskshadow</shader>
-	<treemask>treemask.dds</treemask>
-	<grassmask>grassmask.dds</grassmask>
-	<cluttermask>cluttermask.dds</cluttermask>
-    <layer0 name="layer0.dds">
-      <multitexture>256</multitexture>
-      <material>grass</material>
-    </layer0>
-    <layer1 name="layer1.dds">
-      <multitexture>128</multitexture>
-      <material>rock</material>
-    </layer1>
-    <layer2 name="layer2.dds">
-      <multitexture>100</multitexture>
-      <material>dunes1</material>
-    </layer2>
-    <layer3 name="layer3.dds">
-      <multitexture>512</multitexture>
-      <material>dunes1</material>
-    </layer3>
-    <blendmask>masksss.dds</blendmask>
+    <treemask>treemask.dds</treemask>
+    <grassmask>grassmask.dds</grassmask>
+    <cluttermask>cluttermask.dds</cluttermask>
+    <blendmask name="masksss.dds">
+      <layer0 name="layer0.dds">
+        <multitexture>256</multitexture>
+        <material>grass</material>
+      </layer0>
+      <layer1 name="layer1.dds">
+        <multitexture>128</multitexture>
+        <material>rock</material>
+      </layer1>
+      <layer2 name="layer2.dds">
+        <multitexture>100</multitexture>
+        <material>dunes1</material>
+      </layer2>
+      <layer3 name="layer3.dds">
+        <multitexture>512</multitexture>
+        <material>dunes1</material>
+      </layer3>
+    </blendmask>
   </terraintile>
 </exposed>
