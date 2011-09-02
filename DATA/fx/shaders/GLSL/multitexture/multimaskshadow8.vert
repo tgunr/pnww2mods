@@ -1,4 +1,4 @@
-#version 130
+#version 120
 
 uniform float scale[8];
 
@@ -32,7 +32,7 @@ void main()
     N = gl_NormalMatrix * gl_Normal;
 
     gl_FogFragCoord = abs(vertexpos.z);
+    gl_TexCoord[5] = Mr * gl_Position;
 
     gl_Position = ftransform();
-    gl_TexCoord[5] = Mr * gl_Position;
 }

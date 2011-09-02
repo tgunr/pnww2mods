@@ -1,5 +1,5 @@
-#version 130
-#extension GL_EXT_gpu_shader4 : enable                             
+#version 120
+#extension GL_EXT_texture_array : enable                             
 
 uniform sampler2DArray src;
 uniform sampler2D surf;
