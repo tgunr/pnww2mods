@@ -158,8 +158,13 @@
 			var chat = game.findview("chat");
 			if(chat != null)
 			{
+				chatWin.x = window.x + window.width/2 - chatWin.width/2;
+				chatWin.y = window.y + 10;
+				
+				/* Did not work well on super-widescreen setup:
 				chat.x = window.width/2 - chat.width/2;
 				chat.y = 10;
+				*/
 			}
 			
 			showIDCard(false);
