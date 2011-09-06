@@ -12,11 +12,19 @@ if(true) then
 
 	-- boundary name x y z
 
-		"boundary playarea 190993.49 3016047.94 142.00",
-		"boundary playarea 190993.44 3015929.07 142.00",
-		"boundary playarea 190983.18 3015917.96 142.00",
-		"boundary playarea 190890.88 3015923.63 142.00",
-		"boundary playarea 190890.70 3016048.18 142.00",
+		"boundary playarea 190890.87 3015923.68 143.00",
+		"boundary playarea 190890.87 3015968.95 143.00",
+		"boundary playarea 190895.84 3015971.24 143.00",
+		"boundary playarea 190896.15 3015979.12 143.00",
+		"boundary playarea 190891.06 3015981.02 143.00",
+		"boundary playarea 190890.62 3016048.07 143.00",
+		"boundary playarea 190993.13 3016048.06 143.00",
+		"boundary playarea 190993.20 3016037.21 143.00",
+		"boundary playarea 190987.79 3016034.99 143.00",
+		"boundary playarea 190987.44 3016027.67 143.00",
+		"boundary playarea 190993.32 3016025.47 143.00",
+		"boundary playarea 190993.22 3015928.65 143.00",
+		"boundary playarea 190983.47 3015918.12 143.00",
 
 		
 
@@ -41,12 +49,12 @@ if(true) then
 		-- blocking volume gate1
 		-- block gate1 x1 y1 z1 x2 y2 z2 thickness height
 
-	       	"block gate1 190993.61 3016040.28 142.00 190993.72 3016021.85 142.00 2 3",
+	       	-- "block gate1 190992.16 3016037.96 143.00 190992.03 3016024.58 143.00 3 5",
 
 		-- blocking volume gate2
 		-- block gate2 x1 y1 z1 x2 y2 z2 thickness height
 
-	       	"block gate2 190890.56 3015966.28 142.00 190890.71 3015983.57 142.00 2 3",
+	       	-- "block gate2 190892.33 3015983.32 143.00 190892.08 3015967.47 143.00 3 5",
 		
 		
 				
