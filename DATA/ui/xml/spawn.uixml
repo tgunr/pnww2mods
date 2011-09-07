@@ -28,6 +28,8 @@
 				descriptionText.x = view.scalev("x", 25);
 				descriptionText.width = view.scalev("width", 500);
 			}
+			
+			descriptionText.y = view.scalev("y", 250);
 		}
 		
 		function doFeedback()
