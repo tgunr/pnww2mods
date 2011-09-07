@@ -3,7 +3,7 @@
 
 # Driver
 position = 1
-ezcontrol = canopycontrol
+control = canopycontrol
 control = map
 control = auxsight
 control = leftbrake
@@ -18,7 +18,7 @@ control = righttrackclutch
 control = gas
 control = engstart
 control = clutch
-ezcontrol = hoist
+control = hoist
 control = ridetransport
 
 # Commander
@@ -27,27 +27,27 @@ control = radio
 #control = hatchcontrol
 control = canopycontrol
 control = map
-ezcontrol = turretraverse
-ezcontrol = turretelevate
+control = turretraverse
+control = turretelevate
 
 # Gunner
 position = 3
 #control = canopycontrol
-ezcontrol = primarytrigger
-ezcontrol = secondarytrigger
-ezcontrol = turretraverse
-ezcontrol = turretelevate
-ezcontrol = gunsightrangedec
-ezcontrol = gunsightrangeinc
-ezcontrol = cycleammo
+control = primarytrigger
+control = secondarytrigger
+control = turretraverse
+control = turretelevate
+control = gunsightrangedec
+control = gunsightrangeinc
+control = cycleammo
 
 
 # Bow Gunner
 position = 4
 control = map
-ezcontrol = primarytrigger
-ezcontrol = turretraverse
-ezcontrol = turretelevate
+control = primarytrigger
+control = turretraverse
+control = turretelevate
 #control = hatchcontrol
 control = canopycontrol
 

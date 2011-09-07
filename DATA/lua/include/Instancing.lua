@@ -43,6 +43,21 @@ end
 require 'string'	-- For the string format function
 require 'table'		-- For table.insert
 
+function string:split( inSplitPattern, outResults )
+	if not outResults then
+		outResults = { }
+	end
+	local theStart = 1
+	local theSplitStart, theSplitEnd = string.find( self, inSplitPattern, theStart )
+	while theSplitStart do
+		table.insert( outResults, string.sub( self, theStart, theSplitStart-1 ) )
+		theStart = theSplitEnd + 1
+		theSplitStart, theSplitEnd = string.find( self, inSplitPattern, theStart )
+	end
+	table.insert( outResults, string.sub( self, theStart ) )
+	return outResults
+end
+
 Instancing =
 {
 	--------- --------- --------- --------- --------- ---------
@@ -58,7 +73,7 @@ Instancing =
 	  {
 		['Console']	=	{ ['Port'] = '27020', ['Type'] = { ['Client'] = zmq.REQ, ['Server'] = zmq.REP } }
 	  , ['Command']	=	{ ['Port'] = '27021', ['Type'] = { ['Client'] = zmq.PUSH, ['Server'] = zmq.PULL } }
-	  , ['Events']	=	{ ['Port'] = '27022', ['Type'] = { ['Client'] = zmq.SUB, ['Server'] = zmq.PUB } }
+	  , ['Events']		=	{ ['Port'] = '27022', ['Type'] = { ['Client'] = zmq.SUB, ['Server'] = zmq.PUB } }
 	  }
 	}
 
@@ -74,8 +89,11 @@ Instancing =
 	,	"AddStateValue"
 	,	"SetTimer"
 	,	"KeepAlive"
+	,	"SetPlayer"
+	,	"AddPlayer"
+	,	"GetInstancePlayers"
 	}
-
+	
 	-- Number of IO threads to tell ZeroMQ to use.
 ,	IOThreads		=	{ ['Client'] = 1, ['Server'] = 2 }
 
@@ -90,15 +108,17 @@ Instancing =
 ,	SuccessCode		=	'OK'	-- Returned to indicate things went well
 ,	ErrorCode		=	'ERR'	-- Returned to indicate something failed.
 
-,   InstanceKeepAlives	= {}
-,   InstanceTimers		= {}
-, 	InstanceHandlers 	=	{}		-- Routines for handling changes to instances.
-,	InstanceStates		=	{}
+,   InstanceKeepAlives				= {}
+,   InstanceTimers					= {}
+,	InstancePlayers					= {}		-- our current list of players
+,	InstancePlayerUpdates		= {}		-- our current list of players
+, 	InstanceHandlers 				=	{}		-- Routines for handling changes to instances.
+,	InstanceStates					=	{}
 ,	InstanceId		=	nil		-- Current instance (formatted)
 ,	InstanceNo		=	nil		-- Current instance (number)
 
 ,	Running			=	false	-- Gets set to true by Start
-,	EnableDebug		=	false	-- Set true to allow 'D' messages to log.
+,	EnableDebug		=	true	-- Set true to allow 'D' messages to log.
 
 	--------- --------- --------- --------- --------- ---------
 	-- Functions
@@ -131,6 +151,10 @@ Instancing =
 		else
 			-- Don't log debug messages if debug isn't enabled.
 			
+			if msg == nil then
+				msg = "na"
+			end
+			
 			local text = code .. " [" .. os.date() .. " Instancing:"..funcname.."] " .. msg
 			if code == 'A' or code == 'F' then
 				error(text)
@@ -161,6 +185,7 @@ Instancing =
 		local self = {}
 		self['id'] = instanceId
 		self['no'] = tonumber(instanceNo)
+		self['_players_'] = {} -- list of players by handle
 		return self
 	end
 
@@ -273,7 +298,7 @@ Instancing =
 
 ,	SendCommand = function (self, zmqSocket, cmdName, ...)
 		if zmqSocket == nil or type(zmqSocket) ~= "userdata" then
-			return { Instancing.ErrorCode, "Invalid zms argument - expected socket." }
+			return { Instancing.ErrorCode, "Invalid zmq argument - expected socket." }
 		end
 
 		-- First argument must be a string.
@@ -392,6 +417,9 @@ Instancing =
 ,	RegisterHandler = function(stateName, handler)
 		Instancing.InstanceHandlers[stateName] = handler
 	end
+
+	--------- --------- --------- --------- --------- ---------
+	-- Remove a previously registered handler
 
 ,	RemoveHandler = function(stateName)
 		Instancing.InstanceHandlers[stateName] = nil

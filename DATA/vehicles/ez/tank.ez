@@ -1,0 +1,71 @@
+<?xml version='1.0'?>
+<vehicle reticle="reticles/camera" turret="2" manager="eztank">
+	<config>
+		<param name="shiftdownrpms" value=".65"/>
+		<param name="shiftuprpms" value=".97"/>
+		<param name="acceltime" value="3000"/>
+		<param name="shifttime" value="500"/>
+		<param name="higear" value="2"/>
+		<param name="loacceltime" value="500"/>
+		<param name="loshifttime" value="200"/>
+		<param name="category" value="tank"/>
+		<param name="hatchtime" value="750"/>
+	</config>
+	<ez level="1">
+		<position name="driver" position="0" view="1" zoom="0"/>
+		<position name="commander" position="1" view="1" zoom="0"/>
+		<position name="maingun" position="2" view="3" zoom="0"/>
+		<position name="gunner" position="3" view="3" zoom="0"/>
+		<position name="instruments" position="0" view="2" zoom="0"/>
+	</ez>
+	<ez level="2">
+		<control position="1" name="canopycontrol"/>
+		<control position="1" name="hoist"/>
+		<control position="2" name="turretraverse"/>
+		<control position="2" name="turretelevate"/>
+		<control position="3" name="primarytrigger"/>
+		<control position="3" name="secondarytrigger"/>
+		<control position="3" name="turretraverse"/>
+		<control position="3" name="turretelevate"/>
+		<control position="3" name="gunsightrangedec"/>
+		<control position="3" name="gunsightrangeinc"/>
+		<control position="3" name="cycleammo"/>
+		<control position="4" name="primarytrigger"/>
+		<control position="4" name="turretraverse"/>
+		<control position="4" name="turretelevate"/>
+		<position name="command" position="2" view="0" zoom="0" reticle="reticles/crosshairs">
+			<camera offset="0,-10,4" focus="300">
+				<elevation down="-30" up="20" rate="1"/>
+			</camera>
+		</position>
+		<position name="maingun" position="2" view="3" zoom="1"/>
+		<position name="gunner" position="3" view="3" zoom="0"/>
+	</ez>
+	<ez level="3">
+		<position name="driver" position="0" view="0" zoom="0">
+			<camera focus="200" offset="-.5,1.1,1.1" pov="true">
+				<traverse left="-20" right="20"/>
+				<elevation down="-10" up="20"/>
+			</camera>
+		</position>
+		<position name="commander" position="1" view="0" zoom="0" hatch="onload">
+			<camera offset="0,-7.5,2.5" focus="200">
+				<elevation down="-30" up="20"/>
+			</camera>
+			<blocks input="turretraverse"/>
+			<blocks input="turretelevate"/>
+		</position>
+		<position name="maingun" position="2" view="3" zoom="0"/>
+		<position name="gunner" position="3" view="3" zoom="0"/>
+		<position name="instruments" position="0" view="2" zoom="0"/>
+	</ez>
+	<ez level="4">
+		<position name="command" position="2" view="0" zoom="0" reticle="reticles/crosshairs">
+			<camera offset="0,-7.5,2.5" focus="200">
+				<elevation down="-30" up="20"/>
+			</camera>
+			<blocks input="turretraverse"/>
+			<blocks input="turretelevate"/>
+		</position>
+	</ez>
+</vehicle>

@@ -55,7 +55,7 @@ function Instancing.SetTimer(self, instanceNo, name, duration)
 				if t[1] == instanceNo and t[5] == name then
 						if duration > 0 then
 								self:report('N', 'SetTimer', string.format("Updating timer %s to %u minutes", name, duration))
-								Instancing:SetStateValue(t[1], t[5], duration)
+								self:SetStateValue(t[1], t[5], duration)
 								t[2] = 0
 								t[3] = now
 								t[4] = now + duration
@@ -68,9 +68,75 @@ function Instancing.SetTimer(self, instanceNo, name, duration)
 		end
 		if duration > 0 then
 				self:report('I', "Adding timer for instance " .. instanceNo .. " named " .. name .. " " .. (tonumber(duration) / 60) .. " minutes from now.")
-				Instancing:SetStateValue(instanceNo, name, duration)
+				self:SetStateValue(instanceNo, name, duration)
 				table.insert(self.InstanceTimers, {instanceNo, 0, now, now + duration, name})
 		end
+end
+
+--------- --------- --------- --------- --------- ---------
+-- Set player data
+
+function Instancing.SetPlayer(self, instanceNo, callsign, stateName, value)
+	if instanceNo == nil or callsign == nil or stateName == nil then
+		return { Instancing.ErrorCode, "-- invalid arguments to SetPlayer" }
+	end
+	
+	-- Convert to hex format for better hashing.
+	-- local instanceId = self.formatInstanceNo(instanceNo)
+
+	-- get our player
+	local player = self:GetPlayer(instanceNo, callsign)
+	
+	if stateName == "team" and tonumber(value) == 0 then
+		-- we need to remove this player
+		self:RemovePlayer(instanceNo, callsign)
+	else
+		local currentValue = player[stateName]
+		
+		if tostring(currentValue) == tostring(value) then
+			return { Instancing.SuccessCode, "-- No change made" }
+		end
+		
+		player[stateName] = value
+	end
+	
+	-- return self:PublishCmd(tonumber(instanceId), "SetPlayer", callsign, stateName, value)
+	return self:PublishCmd(instanceNo, "SetPlayer", callsign, stateName, value)
+end
+
+--------- --------- --------- --------- --------- ---------
+-- Set player data
+
+function Instancing.AddPlayer(self, instanceNo, callsign, stateName, value)
+	if instanceNo == nil or callsign == nil or stateName == nil then
+		return { Instancing.ErrorCode, "-- invalid arguments to SetPlayer" }
+	end
+	
+	-- Convert to hex format for better hashing.
+	-- local instanceId = self.formatInstanceNo(instanceNo)
+	
+	-- get our player
+	local player = self:GetPlayer(instanceNo, callsign)
+	
+	local currentValue = player[stateName]
+	
+	if currentValue == nil then
+		currentValue = 0
+	end
+	
+	local newValue = currentValue + tonumber(value)
+	
+	if currentValue == newValue then
+		return { Instancing.SuccessCode, "-- No change made" }
+	end
+	
+	player[stateName] = newValue
+	
+	-- Convert to hex format for better hashing.
+	-- local instanceId = self.formatInstanceNo(instanceNo)
+	
+	-- return self:PublishCmd(tonumber(instanceId), "SetPlayer", callsign, stateName, newValue)
+	return self:PublishCmd(instanceNo, "SetPlayer", callsign, stateName, newValue)
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -82,20 +148,22 @@ function Instancing.SetStateValue(self, instanceNo, stateName, value)
 	end
 
 	-- Convert to hex format for better hashing.
-	local instanceId = self.formatInstanceNo(instanceNo)
+	-- local instanceId = self.formatInstanceNo(instanceNo)
 
 	-- grab our state
 	local instanceStates = self:GetState(instanceNo)
 
 	-- this might cause new clients to miss updated data?
 	local currentValue = instanceStates[stateName]
+	
 	if tostring(currentValue) == tostring(value) then
 		return { Instancing.SuccessCode, "-- No change made" }
 	end
 
 	instanceStates[stateName] = value
 
-	return self:PublishCmd(tonumber(instanceId), "SetStateValue", stateName, value)
+	-- return self:PublishCmd(tonumber(instanceId), "SetStateValue", stateName, value)
+	return self:PublishCmd(instanceNo, "SetStateValue", stateName, value)
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -107,7 +175,7 @@ function Instancing.AddStateValue(self, instanceNo, stateName, value)
 	end
 
 	-- Convert to hex format for better hashing.
-	local instanceId = self.formatInstanceNo(instanceNo)
+	-- local instanceId = self.formatInstanceNo(instanceNo)
 
 	-- grab our state
 	local instanceStates = self:GetState(instanceNo)
@@ -123,7 +191,8 @@ function Instancing.AddStateValue(self, instanceNo, stateName, value)
 	instanceStates[stateName] = newValue
 
 	-- pass it along
-	return self:PublishCmd(tonumber(instanceId), "SetStateValue", stateName, newValue)
+	-- return self:PublishCmd(tonumber(instanceId), "SetStateValue", stateName, newValue)
+	return self:PublishCmd(instanceNo, "SetStateValue", stateName, newValue)
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -136,11 +205,12 @@ function Instancing.InstanceEvent(self, instanceNo, stateName, value)
 	end
 
 	-- Convert to hex format for better hashing.
-	local instanceId = self.formatInstanceNo(instanceNo)
+	-- local instanceId = self.formatInstanceNo(instanceNo)
 
 	-- instance events don't save, they just get passed along
 
-	return self:PublishCmd(tonumber(instanceId), "InstanceEvent", stateName, value)
+	-- return self:PublishCmd(tonumber(instanceId), "InstanceEvent", stateName, value)
+	return self:PublishCmd(instanceNo, "InstanceEvent", stateName, value)
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -152,7 +222,7 @@ function Instancing.KeepAlive(self, instanceNo, stateName, value)
 	end
 
 	-- Convert to hex format for better hashing.
-	local instanceId = self.formatInstanceNo(instanceNo)
+	-- local instanceId = self.formatInstanceNo(instanceNo)
 
 	-- grab our state
 	local instanceStates = self:GetState(instanceNo)
@@ -188,14 +258,45 @@ function Instancing.GetInstanceState(self, instanceNo)
 	local keyvalues = ""
 	for k, v in pairs(instanceStates)
 	do
-		if type(v) ~= "number" then
-			keyvalues = keyvalues .. string.format("[%q]=%q,", k, v)
-		else
-			keyvalues = keyvalues .. string.format("[%q]=", k) .. tostring(v) .. ","
+		-- build a list of states except for any state beginning with the _ character
+		if string.find(k, "^_") == nil then
+			if type(v) ~= "number" then
+				keyvalues = keyvalues .. string.format("[%q]=%q,", k, v)
+			else
+				keyvalues = keyvalues .. string.format("[%q]=", k) .. tostring(v) .. ","
+			end
 		end
 	end
 	return { Instancing.SuccessCode, "{"..keyvalues.."}" }
 end
+
+-------- --------- --------- --------- --------- ---------
+-- Retrieve a dump of instance player states
+
+function Instancing.GetInstancePlayers(self, instanceNo)
+	-- grab our player list
+	local players = self:GetStatePlayers(instanceNo)
+	
+	-- build out player list in here
+	local keyvalues = ""
+	
+	for player, states in pairs(players)
+	do
+		for k, v in pairs(states)
+		do
+			local playerKey = string.format("%s_%s", player, k)
+			
+			if type(v) ~= "number" then
+				keyvalues = keyvalues .. string.format("[%q]=%q,", playerKey, v)
+			else
+				keyvalues = keyvalues .. string.format("[%q]=", playerKey) .. tostring(v) .. ","
+			end
+		end
+	end
+	
+	return { Instancing.SuccessCode, "{"..keyvalues.."}" }
+end
+
 
 --------- --------- --------- --------- --------- ---------
 -- Retrieve a dump of instance state variables etc.
@@ -215,9 +316,61 @@ function Instancing.GetState(self, instanceNo)
 
 	-- create a blank one
 	self.InstanceStates[instanceId] = self._BlankInstance(instanceId, instanceNo)
-
+	
 	-- return it
 	return self.InstanceStates[instanceId]
+end
+
+--------- --------- --------- --------- --------- ---------
+-- Retrieve a dump of instance state variables etc.
+-- Course, this doesn't provide timers and stuff.
+
+function Instancing.GetStatePlayers(self, instanceNo)
+	-- grab our state
+	local states = self:GetState(instanceNo)
+	
+	-- grab our player list
+	if states['_players_'] == nil then
+		states['_players_'] = {}
+	end
+	
+	-- return it
+	return states['_players_']
+end
+
+--------- --------- --------- --------- --------- ---------
+-- Retrieve a player from the instance's player list
+-- Adds an entry for the player if he's not there
+
+function Instancing.GetPlayer(self, instanceNo, callsign)
+	-- grab our player list
+	local players = self:GetStatePlayers(instanceNo)
+	
+	-- add an entry for the player if he wasn't there
+	if players[callsign] == nil then
+		players[callsign] = {}
+	end
+	
+	-- return it
+	return players[callsign]
+end
+
+--------- --------- --------- --------- --------- ---------
+-- Retrieve a player from the instance's player list
+-- Adds an entry for the player if he's not there
+
+function Instancing.RemovePlayer(self, instanceNo, callsign)
+	-- grab our player list
+	local players = self:GetStatePlayers(instanceNo)
+	
+	-- remove it and return true if he was there
+	if players[callsign] ~= nil then
+		players[callsign] = nil
+		return true
+	end
+	
+	-- he wasn't in our list
+	return false
 end
 
 --------- --------- --------- --------- --------- ---------

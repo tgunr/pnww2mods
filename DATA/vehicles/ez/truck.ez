@@ -1,0 +1,14 @@
+<?xml version='1.0'?>
+<vehicle reticle="reticles/camera" manager="eztruck">
+	<config>
+		<param name="shiftdownrpms" value=".65"/>
+		<param name="shiftuprpms" value=".97"/>
+		<param name="acceltime" value="3000"/>
+		<param name="shifttime" value="1000"/>
+	</config>
+	<position name="command" position="0" view="0" zoom="0">
+		<camera offset="0,-6.5,3" focus="200">
+			<elevation down="-30" up="20"/>
+		</camera>
+	</position>
+</vehicle>

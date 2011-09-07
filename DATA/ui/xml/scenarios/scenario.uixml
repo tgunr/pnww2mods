@@ -14,6 +14,7 @@
 	<include file="classes/ViewBuilder.uixml"/>
 	<include file="classes/TextBuilder.uixml"/>
 	<include file="classes/ImageBuilder.uixml"/>
+	<include file="classes/RowBuilder.uixml"/>
 	<!-- image id="team-flag" x="50" width="100" height="100" rtop="10" style="color: #FFFFFF"/ -->
 	<tabview id="body" x="43" y="140" width="930" height="450" ontab="doBodyTab()" style="color: #BFE2CE;
 						background-color: #000000BB; 
@@ -35,30 +36,30 @@
 			<view id="left-pane" x="18" y="23" width="444" height="411">
 				<tabview id="selection-tab" x="0" y="0" rright="0" rtop="0">
 					<tab x="0" y="0" rright="0" rtop="0" showtab='false'>
-						<view x="10" width="425" height="380" rtop="12">
+						<view id="members-block" x="10" width="425" height="380" rtop="12">
 							<caption id="players-header" x="0" height="20" width="400" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
 							<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="12"/>
-							<view x="0" width="425" height="15" rtop="23">
+							<!-- view x="0" width="425" height="15" rtop="23">
 								<caption x="0" y="0" width="152" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
 									label="  &mission.brieftab.members.handle;"/>
 								<caption x="154" y="0" width="234" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
 									label="&mission.brieftab.members.equipment;"/>
 								<caption x="390" y="0" width="58" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
 									label=" IN" tip="&mission.brieftab.brief.sstatus;"/>
-							</view>
-							<list id="memberList" x="0" y="20" width="425" height="316">
+							</view -->
+							<list id="memberList" x="0" y="20" rtop="40" rright="0">
 								<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
 							</list>
 						</view>
 						<view x="0" y="0" height="35" rright="0">
-							<button id="team-button" label="CHANGE TEAM" x="20" y="5" height="25" width="100"
+							<button id="team-button" label="CHANGE TEAM" x="20" y="0" height="30" width="100"
 								style="control-on: ui/textures/test/gen_button_on.bmp;
 									control-off: ui/textures/test/gen_button_off.bmp;
 									control-disabled: ui/textures/test/gen_button_disabled.bmp;
 									font-size: -3;
 									color: #FFFFFF;"
 								onclick="switchSides(); soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
-							<button id="show-button" label="CHANGE WEAPON" y="5" height="25" width="100" rright="20"
+							<button id="show-button" label="CHANGE WEAPON" y="0" height="30" width="100" rright="20"
 								onshow="centerViewX(this)"
 								style="control-on: ui/textures/test/gen_button_on.bmp;
 									control-off: ui/textures/test/gen_button_off.bmp;
@@ -66,7 +67,7 @@
 									font-size: -3;
 									color: #FFFFFF;"
 								onclick="selections.value = 1; soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
-							<button id="fight-button" label="FIGHT" y="5" height="25" width="100" rright="20"
+							<button id="fight-button" label="FIGHT" y="0" height="30" width="100" rright="20"
 								style="control-on: ui/textures/test/gen_button_on.bmp;
 									control-off: ui/textures/test/gen_button_off.bmp;
 									control-disabled: ui/textures/test/gen_button_disabled.bmp;
@@ -85,14 +86,14 @@
 							<list id="spawnTree" x="0" width="425" height="300" rtop="40" onselect="spawnTree.clickTree(false)" ondblselect="spawnTree.clickTree(true)"/>
 						</view>
 						<view x="0" y="0" height="35" rright="0">
-							<button id="team-button" label="CHANGE TEAM" x="30" y="5" height="25" width="100"
+							<button id="team-button" label="CHANGE TEAM" x="30" y="0" height="30" width="100"
 								style="control-on: ui/textures/test/gen_button_on.bmp;
 									control-off: ui/textures/test/gen_button_off.bmp;
 									control-disabled: ui/textures/test/gen_button_disabled.bmp;
 									font-size: -3;
 									color: #FFFFFF;"
 								onclick="switchSides(); soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
-							<button id="select-button" label="SELECT WEAPON" y="5" height="25" width="100" rright="30"
+							<button id="select-button" label="SELECT WEAPON" y="0" height="30" width="100" rright="30"
 								style="control-on: ui/textures/test/gen_button_on.bmp;
 									control-off: ui/textures/test/gen_button_off.bmp;
 									control-disabled: ui/textures/test/gen_button_disabled.bmp;
@@ -135,9 +136,11 @@
 		
 		game.consoleprint(">>> STARTING COMBAT PAGE\n");
 		
+		game.onscenarioplayers = membersUpdated;
+		
 		var client 				= game.player.client;
 		var theatreMap	= findview("mapview");
-		var forwardTimer	= new CycleTimer(5000);
+		var forwardTimer	= new CycleTimer(2000);
 		var listTimer			= new CycleTimer(1000);
 		var scenario			= game.globals.scenario;
 		var selections		= findview("selection-tab");
@@ -155,6 +158,7 @@
 		var memberList 			= new ListControl(findview("memberList"));
 		var membersSpawned	= 0;
 		var membersCount 		= 0;
+		var doMemberUpdate	= false;
 		
 		var vehicles			= new Object();
 		var classes			= new Object();
@@ -188,8 +192,8 @@
 				var vehicle = vehicles[index];
 				
 				// this call
-				forwardTimer.reset();
-				forwardTimer.enabled = true;
+				//forwardTimer.reset();
+				//forwardTimer.enabled = true;
 				
 				if(vehicle.spawnable == "spawnable")
 					game.spawn(vehicle.type);
@@ -198,7 +202,7 @@
 			}
 			else
 			{
-				cprint("Spawn vehicle not found!");
+				showOk("Vehicle not selected!");
 			}
 		}
 		
@@ -216,7 +220,7 @@
 				chat.y = 10;
 			}
 			
-			flagPath = "ui/textures/test/" + client.persona.country.adjective.toLowerCase() + "_flag.bmp";
+			flagPath = scenarioFlag(client.persona.country.id);
 			
 			showIDCard(false);
 			showChat(true);
@@ -227,8 +231,8 @@
 			forwardButton.visible = false;
 			
 			// setup our scenario
-			initSpawnables();
 			initMissionMembers();
+			initSpawnables();
 			
 			game.player.client.onspawnerror = onSpawnDenied;
 			
@@ -236,11 +240,12 @@
 			
 			setPlayersHeader();
 			setForcesHeader();
+			initMemberHeaders(findview("members-block"));
 			
-			forwardTimer.enabled = false;
+			//forwardTimer.enabled = false;
 			
 			// mission members coming and going
-			client.onmissionroomchange = initMissionMembers;
+			//client.onmissionroomchange = initMissionMembers;
 			
 			// get our scenario state
 			scenario.instance = getScenarioState();
@@ -483,6 +488,8 @@
 						if(vehicle.spawnable == "spawnable")
 						{
 							game.globals.scenariovehicle = index;
+							game.setplayerdata("weapon", vehicle.type.weapkey);
+							game.setplayerdata("ready", "true");
 							selections.value = 0;
 						}
 						else
@@ -530,7 +537,7 @@
 					OnTutorialCompleted();
 				
 				if(isComplete)
-					setForwardEnabled(false);
+					fightBtn.enabled = false;
 			}
 			*/
 		}
@@ -549,24 +556,31 @@
 		{
 			if(game.scenariocomplete)
 			{
-				setForwardEnabled(false);
+				fightBtn.enabled = false;
+				//setForwardEnabled(false);
 				joinLobby();
 				return;
 			}
 			
 			// rebuild our spawn list
-			if(listTimer.run())
+			if(listTimer.run() && doMemberUpdate)
 			{
+				initMissionMembers();
 				initSpawnables();
 				
 				// update our scenario state
 				scenario.instance = getScenarioState();
+				
+				doMemberUpdate = false;
 			}
 			
 			if(forwardTimer.run())
 			{
-				setForwardEnabled(true);
-				forwardTimer.enabled = false;
+				var ready = canScenarioSpawn(scenario);
+				cprint("Checking for ready status: " + ready);
+				//setForwardEnabled(ready);
+				//forwardTimer.enabled = false;
+				fightBtn.enabled = ready;
 			}
 		}
 		
@@ -586,8 +600,34 @@
 			header.label +=  " - #" + client.instance.id ;
 		}
 		
+		function initMemberHeaders(p)
+		{
+		 	var rb = new RowBuilder(p, "members-header", 0, -22, 0, 15);
+		 	
+		 	/*
+		 	cprint("Headers width is: " + rb.width);
+		 	cprint("Headers nwidth is: " + rb.nwidth);
+		 	cprint("P Headers width is: " + p.width);
+		 	cprint("P Headers nwidth is: " + p.nwidth);
+		 	*/
+		 	
+		 	rb.addColumn("TEAM", .07);
+		 	rb.addColumn("PLAYER", .17);
+		 	rb.addColumn("RANK", .07);
+		 	rb.addColumn("WEAPON", .365);
+		 	rb.addColumn("K", .05, "center");
+		 	rb.addColumn("D", .05, "center");
+		 	rb.addColumn("S", .06, "center");
+		 	rb.addColumn("READY", .162, "center");
+		 	
+		 	p.addview(rb.build());
+		}
+		
 		function switchSides()
 		{
+			// make sure we have an instance assigned
+			scenario.instance = game.player.client.instance;
+			
 			if(switchTeams(scenario))
 			{
 				game.globals.scenariovehicle = null;
@@ -599,13 +639,12 @@
 		{
 			var started 				= new Date();
 			var members			= client.missionroomlist;
-			var vehicleMgr			= new VehicleManager();
 			
 			if(members == null)
 				return;
 			
-			membersSpawned	= 0;
-			membersCount		= members.length;
+			members = members.sort(sortMembers);
+			membersCount = members.length;
 			
 			memberList.clearRows(false);
 			
@@ -615,7 +654,8 @@
 				
 				var member 			= members[i];
 				var vehicle			= "-";
-				var spawned		= "ui/textures/test/notspawned_icon.bmp";
+				//var spawned		= "ui/textures/map-checkbox-off.bmp";
+				var ready				= "";
 				
 				if(member.weapon != null)
 				{
@@ -627,19 +667,37 @@
 					vehicle = memberWeapon.description;
 				}
 				
-				var rank		= member.rank;
-				var callsign 	= member.callsign;
+				var rank			= member.rank;
+				var callsign 		= member.callsign;
+				var kills				= parseInt(member.kills);
+				var deaths		= parseInt(member.deaths);
+				var score			= parseInt(member.score);
+				var teamIcon 	= scenarioFlag(parseInt(scenario["team" + member.team]));
 				
-				if(member.spawned)
-					spawned = "ui/textures/test/spawned_icon.bmp";
-					
-				var row 						= new ViewBuilder(memberList.list, "member_" + i, 0, 0, 0, 16);
-				var rankBuilder				= row.addBuilder(new TextBuilder(row, "member-rank-caption", "caption", "", 5, 1, 14, 14));
-				var nameBuilder			= row.addBuilder(new TextBuilder(row, "member-name-caption", "caption", callsign, 24, 0, 115, 16));
-				var vehicleBuilder			= row.addBuilder(new TextBuilder(row, "member-vehicle-caption", "caption", vehicle, 154, 0, 210, 16));
-				var spawnedBuilder	 	= row.addBuilder(new ImageBuilder(row, "image", spawned, 400, 3, 10, 10));
+				//if(member.spawned) spawned 	= "ui/textures/map-checkbox-on.bmp";
+				if(member.ready) ready 				= "ready";
 				
+				var row 						= new ViewBuilder(memberList.list, "member_" + i, 0, 0, -15, 16);
+				var teamBuilder			= row.addBuilder(new ImageBuilder(row, "member-team-image", teamIcon, 102, 1, 14, 14));
+				var nameBuilder			= row.addBuilder(new TextBuilder(row, "member-name-caption", "caption", callsign, 15, 0, 72, 16));
+				var rankBuilder				= row.addBuilder(new TextBuilder(row, "member-rank-caption", "caption", "", 0, 1, 14, 14));
+				var vehicleBuilder			= row.addBuilder(new TextBuilder(row, "member-vehicle-caption", "caption", vehicle, 102, 0, 152, 16));
+				var killsBuilder				= row.addBuilder(new TextBuilder(row, "member-kills-caption", "caption", kills, 257, 0, 20, 16));
+				var deathsBuilder			= row.addBuilder(new TextBuilder(row, "member-deaths-caption", "caption", deaths, 279, 0, 20, 16));
+				var scoreBuilder			= row.addBuilder(new TextBuilder(row, "member-score-caption", "caption", score, 301, 0, 25, 16));
+				var readyBuilder	 		= row.addBuilder(new TextBuilder(row, "member-ready-caption", "caption", ready, 328, 0, 60, 16));
+				
+				teamBuilder.hbuffer		= 7;
+				rankBuilder.hbuffer		= 6;
+				
+				// space out our children builders
+				row.hspace(2);
+				
+				// fix up our main row
 				row.addAttribute("aspectalign", "left");
+				row.addStyle("background-color", ((member.friendly) ? game.settings.friendlycolor : game.settings.enemycolor) + "22");
+				if(member.me) row.addStyle("border-color", game.settings.friendlycolor);
+				
 				//row.addAttribute("onmouseenter", mouseenter);
 				//row.addAttribute("onmouseexit", mouseexit);
 				
@@ -647,21 +705,30 @@
 				rankBuilder.addAttribute("class", "rankicon");
 				rankBuilder.addAttribute("rank", member.rank.level - 1);
 				
-				// name attributes
+				// font colors
 				nameBuilder.addStyle("color", "#e9e3d9ff");
-
-				// name attributes
 				vehicleBuilder.addStyle("color", "#e9e3d9ff");
+				killsBuilder.addStyle("color", "#e9e3d9ff");
+				deathsBuilder.addStyle("color", "#e9e3d9ff");
+				scoreBuilder.addStyle("color", "#e9e3d9ff");
+				readyBuilder.addStyle("color", "#e9e3d9ff");
+				
+				if(false)
+				{
+					nameBuilder.addStyle("border-color", "#e9e3d9ff");
+					vehicleBuilder.addStyle("border-color", "#e9e3d9ff");
+					killsBuilder.addStyle("border-color", "#e9e3d9ff");
+					deathsBuilder.addStyle("border-color", "#e9e3d9ff");
+					scoreBuilder.addStyle("border-color", "#e9e3d9ff");
+					readyBuilder.addStyle("border-color", "#e9e3d9ff");
+				}
+				
+				killsBuilder.addAttribute("align", "center");
+				deathsBuilder.addAttribute("align", "center");
+				scoreBuilder.addAttribute("align", "center");
+				readyBuilder.addAttribute("align", "center");
 				
 				memberList.addRow(member, row.build());
-				
-				/************ Update Deployed List **************/
-				
-				if(vehicle != "-")
-					vehicleMgr.addVehicle(vehicle);
-				
-				if(member.spawned)
-					membersSpawned++;
 			}
 			
 			memberList.setScrollY();
@@ -679,6 +746,31 @@
 				selections.value = 0;
 			
 			 setForcesHeader();
+		}
+		
+		function membersUpdated()
+		{
+			doMemberUpdate = true;
+		}
+		
+		function sortMembers(a,b)
+		{
+			if(a.team == b.team)
+			{
+				if(a.score > b.score)
+					return 1;
+				else if(a.score < b.score)
+					return -1;
+			}
+			else  
+			{
+				if(a.team == game.scenario.team)
+					return 1;
+				else
+					return -1; 
+			}
+			
+			return 0;
 		}
 		
 		-->

@@ -36,13 +36,13 @@
 					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
 					<list id="instanceList" x="0" width="425" height="300" rtop="40" onselect="instanceList.clickList(false)" ondblselect="instanceList.clickList(true)"/>
 				</view>
-				<button id="create-button" x="10" y="0" width="120" height="25" label="${online.ra.create}" onclick="loadWin('scenarios/create',true)"
+				<button id="create-button" x="10" y="0" width="120" height="30" label="${online.ra.create}" onclick="loadWin('scenarios/create',true)"
 					style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 					onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
-				<button id="quick-button" x="100" y="0" width="120" height="25" label="${online.ra.quick}" onclick="selectInstance(true)"
+				<button id="quick-button" x="100" y="0" width="120" height="30" label="${online.ra.quick}" onclick="selectInstance(true)"
 					style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 					onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)" onshow="centerViewX(this)"/>
-				<button id="join-button" y="0" width="120" height="25" rright="10" label="${online.ra.join}" onclick="selectInstance(true)"
+				<button id="join-button" y="0" width="120" height="30" rright="10" label="${online.ra.join}" onclick="selectInstance(true)"
 					style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 					onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
 			</view>

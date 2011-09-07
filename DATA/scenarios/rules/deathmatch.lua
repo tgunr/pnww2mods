@@ -64,6 +64,7 @@ end
 -- give a point to the enemy each time I die
 function OnDie(handler)
 	scenario.AddEnemyScore(1);	
+	Instancing:AddPlayerState(state.config.callsign, "deaths", 1);
 	state.intel = false;
 	return 1;
 end
@@ -83,6 +84,7 @@ function OnRuleUpdate(deltaTime)
 	if(IsPlaying() and state.intel and ft >= state.nextintelcheck and (intelTeam == team or intelTeam == 0)) then 
 		Instancing:KeepAlive("intelteam", GetTeam());
 		state.nextintelcheck = ft + 1000;
+		scenario.AddPlayerScore(.5);
 	end	
 	
 	return 1;

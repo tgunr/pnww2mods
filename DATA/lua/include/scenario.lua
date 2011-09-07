@@ -22,7 +22,8 @@ state.rounds				= {};
 state.round					= 1;
 state.spawn					= nil;
 state.config					= {};
-state.updates				= {}
+state.updates				= {};
+state.handle				= nil;
 state.inbounds				= true;
 state.lastinbounds		= true;
 state.network				= false;
@@ -30,6 +31,11 @@ state.victory					= 0;
 state.lastroundtimer	= 0;
 state.lastupdate			= game.Frametime();
 state.starttime				= game.Frametime();
+
+-- player updates
+state.playeradds			= {}; -- updates that are incremental changes
+state.player					= {}; -- player state
+state.lastplayer			= {}; -- last player state
 
 -- default server
 state.config['server'] 	= '66.28.224.157';
@@ -80,6 +86,13 @@ scenario.AddScore = function(team, points)
 		--ui.ChatPrint("Adding " .. points .. " points to team " .. team);
 		Instancing:SendAddState("victory" .. team, points);
 	end
+end
+
+scenario.AddPlayerScore = function(points)
+	if(not state.network or game.OS() == 1) then
+		return;
+	end
+	Instancing:AddPlayerState(state.config.callsign, "score", points);
 end
 
 scenario.RegisterUpdate = function(callback)
@@ -144,6 +157,9 @@ function OnStart(handler)
 			end
 		end
 	end
+	
+	-- set our player changed handler
+	Instancing.RegisterHandler('OnPlayer', 'OnPlayer');
 end
 
 function StartNetwork()
@@ -160,16 +176,20 @@ function StartNetwork()
 			if(duration == nil) then
 				duration = state.config.duration;
 			end
-			local seconds = tonumber(duration or 10) * 60;
+			local seconds = tonumber(duration or 10) * 5;
 			Instancing:TimedEvent("roundtimer", seconds);
 			Instancing:SendStateValue("victory", 0);
 			Instancing:SendStateValue("round", scenario.manager:GetRound());
 			Instancing:SendStateValue("stage", scenario.manager:GetStage());
 		end
 		
+		-- set us to not ready
+		Instancing:SetPlayerState(state.config.callsign, "ready", "false")
+		
 		-- get our initial state
 		Instancing:GetInstanceState();
-		
+		Instancing:GetInstancePlayers();
+				
 		-- we have a proper network
 		state.network = true;
 	else
@@ -294,18 +314,38 @@ function OnDamage(handler, energy, obj)
 	return 1;
 end
 
--- main update functio for any scenario
+-- main update function for any scenario
 -- might be overriden by a rules handler 
 -- that includes this file
 scenario.OnScenario = function(handler)
-
 	-- get any new network events
 	if(state.network) then
+		-- handle any specific player state changes
+		for k,v in pairs(state.player) do
+			if(v ~= state.lastplayer[k]) then
+				-- remember the change
+				state.lastplayer[k] = v;
+				-- send up our updated player state value
+				Instancing:SetPlayerState(state.config.callsign, k, v);
+			end
+		end
+		
+		-- handle any incremental number updates
+		for k,v in pairs(state.playeradds) do
+			-- send up our incremental player state value
+			Instancing:AddPlayerState(state.config.callsign, k, v);
+		end
+		
 		Instancing:PollEvents();
 	end
 	
+	-- clear this table each run
+	state.playeradds = {};
+	
+	local ft = game.Frametime();
+	
 	if(state.lastupdate > 0) then
-		local msDelta = game.Frametime() - state.lastupdate; 
+		local msDelta = ft - state.lastupdate; 
 		
 		-- call any update callbacks
 		for i,callback in ipairs(state.updates) do
@@ -316,7 +356,7 @@ scenario.OnScenario = function(handler)
 		end
 	end
 	
-	state.lastupdate = game.Frametime(); 
+	state.lastupdate = ft; 
 	
 	return 1;
 end
@@ -471,6 +511,19 @@ function OnVictory(name, value)
 		-- scenario.manager:RunObject("victory"..value, 1);
 	end
 	return 1;
+end
+
+function OnPlayer(callsign, name, value)
+	scenario.manager:UpdatePlayer(callsign, name, value);
+	return 1;
+end
+
+scenario.SetPlayerState = function(name, value)
+	state.player[name] = value;
+end
+
+scenario.AddPlayerState = function(name, value)
+	state.playeradds[name] = value;
 end
 
 scenario.InArea = function(handler)

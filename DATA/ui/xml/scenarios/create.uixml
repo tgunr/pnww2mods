@@ -42,10 +42,10 @@
 				</list>
 				<view x="10" y="0" height="50" rright="10">
 					<image src="ui/textures/test/horiz_underline.bmp" x="5" height="12" rtop="0" rright="5"/>
-					<caption id="password" label="${online.ra.password}" x="10" y="0" height="20" rright="10" style="color: #e9e3d9ff;"/>
-					<textcontrol id="passwordText" x="150" y="0" width="80" height="20" maxlength="15"
+					<caption id="password" label="${online.ra.password}" x="10" y="5" height="20" rright="10" style="color: #e9e3d9ff;"/>
+					<textcontrol id="passwordText" x="150" y="5" width="80" height="20" maxlength="15"
 						style="color: #e9e3d9ff; start-color: #e9e3d9ff; border-color: #3e5248;"/>
-					<button id="create-button" y="0" width="120" height="25" rright="5" label="${online.ra.create}" onclick="selectScenario(true)"
+					<button id="create-button" y="0" width="120" height="30" rright="5" label="${online.ra.create}" onclick="selectScenario(true)"
 						style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 						onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
 				</view>

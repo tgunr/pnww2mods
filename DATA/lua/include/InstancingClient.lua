@@ -217,18 +217,29 @@ function Instancing.GetRemoteResults(self, ...)
 end
 
 --------- --------- --------- --------- --------- ---------
+-- Validate our instance
+
+function Instancing.ValidateState(self, func, state)
+	if self.Context == nil then
+		return { Instancing.ErrorCode, "Tried to call " .. func .. " with no Context." }
+	end
+	if self.InstanceNo == nil or self.InstanceNo == 0 then
+		return { Instancing.ErrorCode, "Tried to call " .. func .. " with no Instance selected." }
+	end
+	if state == nil then
+		return { Instancing.ErrorCode, "Called " .. func .. " with no valueName." }
+	end
+	
+	return { Instancing.SuccessCode, "OK" }
+end
+
+
+--------- --------- --------- --------- --------- ---------
 -- Tell the server to change a state value.
 
 function Instancing.SendStateValue(self, valueName, value)
-	if self.Context == nil then
-		return { Instancing.ErrorCode, "Tried to call SetState with no Context." }
-	end
-	if self.InstanceNo == nil or self.InstanceNo == 0 then
-		return { Instancing.ErrorCode, "Tried to call SetState with no Instance selected." }
-	end
-	if valueName == nil then
-		return { Instancing.ErrorCode, "Called SetState with no valueName." }
-	end
+	local result = self:ValidateState("SetState", valueName)
+	if(result[1] ~= Instancing.SuccessCode) then return result end
 	return self:SendRemoteInstruction("SetStateValue", self.InstanceNo, valueName, value)
 end
 
@@ -238,15 +249,8 @@ Instancing.SetState = Instancing.SendStateValue
 -- Tell thes erver to add a new state value.
 
 function Instancing.SendAddState(self, valueName, value)
-	if self.Context == nil then
-		return { Instancing.ErrorCode, "Tried to call SendAddState with no Context." }
-	end
-	if self.InstanceNo == nil or self.InstanceNo == 0 then
-		return { Instancing.ErrorCode, "Tried to call SendAddState with no Instance selected." }
-	end
-	if valueName == nil then
-		return { Instancing.ErrorCode, "Called SendAddState with no valueName." }
-	end
+	local result = self:ValidateState("AddState", valueName)
+	if(result[1] ~= Instancing.SuccessCode) then return result end
 	return self:SendRemoteInstruction("AddStateValue", self.InstanceNo, valueName, value)
 end
 
@@ -256,15 +260,8 @@ Instancing.AddState = Instancing.SendAddState
 -- Tell the server to change a state value.
 
 function Instancing.SendKeepAlive(self, valueName, value)
-	if self.Context == nil then
-		return { Instancing.ErrorCode, "Tried to call KeepAlive with no Context." }
-	end
-	if self.InstanceNo == nil or self.InstanceNo == 0 then
-		return { Instancing.ErrorCode, "Tried to call KeepAlive with no Instance selected." }
-	end
-	if valueName == nil then
-		return { Instancing.ErrorCode, "Called KeepAlive with no valueName." }
-	end
+	local result = self:ValidateState("KeepAlive", valueName)
+	if(result[1] ~= Instancing.SuccessCode) then return result end
 	return self:SendRemoteInstruction("KeepAlive", self.InstanceNo, valueName, value)
 end
 
@@ -274,15 +271,8 @@ Instancing.KeepAlive = Instancing.SendKeepAlive
 -- Tell the server to do something with a timed event?
 
 function Instancing.TimedEvent(self, timerName, duration)
-	if self.Context == nil then
-		return { Instancing.ErrorCode, "Tried to call TimedEvent with no Context." }
-	end
-	if self.InstanceNo == nil or self.InstanceNo == 0 then
-		return { Instancing.ErrorCode, "Tried to call TimedEvent with no Instance selected." }
-	end
-	if timerName == nil then
-		return { Instancing.ErrorCode, "Called TimedEvent with no valueName." }
-	end
+	local result = self:ValidateState("TimedEvent", valueName)
+	if(result[1] ~= Instancing.SuccessCode) then return result end
 	return self:SendRemoteInstruction("SetTimer", self.InstanceNo, timerName, duration)
 end
 
@@ -290,16 +280,27 @@ end
 -- Some kind of general broadcast???
 
 function Instancing.BroadcastEvent(self, valueName, value)
-	if self.Context == nil then
-		return { Instancing.ErrorCode, "Tried to call BroadcastEvent with no Context." }
-	end
-	if self.InstanceNo == nil or self.InstanceNo == 0 then
-		return { Instancing.ErrorCode, "Tried to call BroadcastEvent with no Instance selected." }
-	end
-	if valueName == nil then
-		return { Instancing.ErrorCode, "Called BroadcastEvent with no valueName." }
-	end
+	local result = self:ValidateState("BroadcastEvent", valueName)
+	if(result[1] ~= Instancing.SuccessCode) then return result end
 	return self:SendRemoteInstruction("InstanceEvent", self.InstanceNo, valueName, value)
+end
+
+--------- --------- --------- --------- --------- ---------
+-- Send updated info about myself
+
+function Instancing.SetPlayerState(self, callsign, valueName, value)
+	local result = self:ValidateState("SetPlayerState", valueName)
+	if(result[1] ~= Instancing.SuccessCode) then return result end
+	return self:SendRemoteInstruction("SetPlayer", self.InstanceNo, callsign, valueName, value)
+end
+
+--------- --------- --------- --------- --------- ---------
+-- Send incremental info about myself
+
+function Instancing.AddPlayerState(self, callsign, valueName, value)
+	local result = self:ValidateState("AddPlayerState", valueName)
+	if(result[1] ~= Instancing.SuccessCode) then return result end
+	return self:SendRemoteInstruction("AddPlayer", self.InstanceNo, callsign, valueName, value)
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -332,6 +333,45 @@ function Instancing.GetInstanceState(self)
 	end
 	
 	return { Instancing.SuccessCode, "-- got instance state" }
+end
+
+--------- --------- --------- --------- --------- ---------
+-- Get current instance player states from server
+
+function Instancing.GetInstancePlayers(self)
+	if self.InstanceId == nil then
+		return { Instancing.ErrorCode, "GetInstancePlayers called with no instance selected" }
+	end
+	
+	self:report('D', 'GetInstancePlayers', "Getting players for " .. self.InstanceId)
+
+	local parts = self:GetRemoteResults("GetInstancePlayers", self.InstanceId)
+	if parts[1] ~= Instancing.SuccessCode then
+		return parts
+	end
+	
+	self:report('D', 'GetInstancePlayers', "Got players for " .. self.InstanceId)
+
+	local result = parts[2]
+	if type(result) ~= "table" then
+		return { Instancing.ErrorCode, "GetInstancePlayers expected a table result." }
+	end
+	
+	for k, value in pairs(result)
+	do
+		-- k is a callsign statename pair seperated by an underscore 
+		local keyData = k:split("_")
+		
+		local callsign = keyData[1]
+		local stateName = keyData[2]
+		
+		self:report('D', 'GetInstancePlayers', "Updating player state " .. callsign .. "/"..stateName)
+		
+		-- set the player data
+		Instancing:SetPlayer(self.InstanceNo, callsign, stateName, value)
+	end
+	
+	return { Instancing.SuccessCode, "-- got instance players" }
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -440,6 +480,59 @@ function Instancing.SetStateValue(self, instanceNo, stateName, value)
 	-- is a handler registered, execute it.
 	self:ChangeValue(self.InstanceNo, stateName, value)
 
+	return { Instancing.SuccessCode, "-- value applied" }
+end
+
+--------- --------- --------- --------- --------- ---------
+-- Instruction to change a player state value from the server.
+
+function Instancing.SetPlayer(self, instanceNo, callsign, stateName, value)
+	local instanceId = self.formatInstanceNo(instanceNo)
+	
+	if instanceId ~= self.InstanceId then
+		return { Instancing.ErrorCode, "Message no-longer applies." }
+	end
+
+	self:report('D', 'SetPlayer', "Making sure we have state!")
+	
+	-- Make sure that states for this instance exist.
+	local states = self.InstanceStates[self.InstanceId]
+	if states == nil then
+		local result = self:GetInstanceState()
+		if result[1] ~= Instancing.SuccessCode then
+			return result
+		end
+		states = self.InstanceStates[self.InstanceId]
+		if states == nil then
+			return { Instancing.ErrorCode, "No data available for instance." }
+		end
+	end
+	
+	if states['_players_'] == nil  then
+		states['_players_'] = {}
+	end
+	
+	local players = states['_players_']
+		
+	if players[callsign] == nil then
+		players[callsign] = {}
+	end
+	
+	local player = players[callsign]
+	
+	self:report('D', 'SetPlayer', "Setting player " .. callsign .. " state to " .. stateName .. "/" .. value)
+	
+	player[stateName] = value
+	
+	-- see if we have a player callback function and call it if so
+	if self.InstanceId == instanceId then
+		local handler = Instancing.InstanceHandlers['OnPlayer']
+		if handler ~= nil and type(_G[handler]) == "function" then
+			self:report('D', 'SetPlayer', "Found OnPlayer handler!")
+			pcall(_G[handler], callsign, stateName, value)
+		end
+	end
+	
 	return { Instancing.SuccessCode, "-- value applied" }
 end
 

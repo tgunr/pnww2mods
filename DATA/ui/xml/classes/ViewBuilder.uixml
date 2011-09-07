@@ -57,6 +57,31 @@
 			
 			return xml;
 		}
+		
+		this.hspace = function(spacer)
+		{
+			var x = 0;
+			
+			for(var b = 0; b < this.builders.length; b++)
+			{
+				var builder 	= this.builders[b];
+				var buffer		= builder.hbuffer;
+				
+				if(b == 0)
+				{
+					builder.nx = 0 + builder.hbuffer;
+				}
+				else
+				{
+					var lastBuilder = this.builders[b - 1];
+					var lastBuffer = lastBuilder.hbuffer;
+					
+					builder.nx = builder.hbuffer + lastBuilder.nx + lastBuilder.nwidth + spacer + lastBuffer;
+				}
+				
+				this.builders[b].addAttribute("x", this.builders[b].nx);
+			}
+		}
 
 		
 		// pview = parent view
@@ -86,9 +111,10 @@
 		
 		this.par						= par;
 		this.type						= "view";
-		this.styles						= new Object();
-		this.attributes					= new Object();
+		this.styles					= new Object();
+		this.attributes				= new Object();
 		this.builders					= new Array();
+		this.hbuffer					= 0;
 		
 		// normalized size and position
 		this.nx							= (!isNaN(x)) ? x : 0;

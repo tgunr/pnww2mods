@@ -156,8 +156,8 @@
 			//var maxplayers	= population.maxPlayers();
 			var team1ratio 	= population.teamRatio(1);
 			var team2ratio 	= population.teamRatio(2);
-			var team1count 	= instance.allies;
-			var team2count 	= instance.axis;
+			var team1count 	= instance.team1;
+			var team2count 	= instance.team2;
 			var totalplayers	= team1count + team2count; 
 			
 			if(team == 0)
@@ -314,19 +314,19 @@
 				return true;
 			
 			if(scenario == null || scenario.instance == null)// || !scenario.instance.running)
-				return scenarioError("badscenario");
+				return false; //scenarioError("badscenario");
 			
 			var team1min = scenario.population.team1min;
 			var team2min = scenario.population.team2min;
 			
-			var team1count = scenario.instance.allies;
-			var team2count = scenario.instance.axis;
+			var team1ready = game.scenario.ready1;
+			var team2ready = game.scenario.ready2;
 			
 			//cprint("Found " + team1count + " of " + team1min + " allied players!");
 			//cprint("Found " + team2count + " of " + team2min + " axis players!");
 			
-			if(team1count < team1min || team2count < team2min)
-				return scenarioError("moreplayers");
+			if(team1ready < team1min || team2ready < team2min)
+				return false; //scenarioError("moreplayers");
 			
 			return true;
 		}
@@ -345,6 +345,19 @@
 		{
 				lastScenarioError = "scenarios." + code;
 				return false;
+		}
+		
+		function scenarioFlag(country)
+		{
+			switch(country)
+			{
+				case 1: return "ui/textures/test/england_flag.bmp"; break;
+				case 2: return "ui/textures/test/american_flag.bmp"; break;
+				case 3: return "ui/textures/test/french_flag.bmp"; break;
+				case 4: return "ui/textures/test/german_flag.bmp"; break;
+			}
+			
+			return "";
 		}
 		
 	-->
