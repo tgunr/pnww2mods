@@ -5,13 +5,21 @@ uniform vec2 uv[64];
 uniform vec3 origin;
 varying vec3 vertexpos;
 
+const float ss = 1.0 / 800.0;
+
+const vec4 sPlane = vec4(ss, 0.0, 0.0, 0.0);
+const vec4 tPlane = vec4(0.0, -ss, 0.0, 0.0);
+
 void main()
 {   
     vec4 p1;
 	
     p1.xyz = gl_Vertex.xyz - origin;
     p1.w = 1.0;
-    
+   
+    gl_TexCoord[2].x = dot(p1, sPlane) + 0.5;
+    gl_TexCoord[2].y = dot(p1, tPlane) + 0.5;
+
     gl_TexCoord[1] = gl_TextureMatrix[1] * gl_ModelViewMatrix * p1;
 
     int c = int(gl_Vertex.w);
