@@ -44,7 +44,7 @@ void main()
     	
         amb += gl_LightModel.ambient;
 
-        base = mix(base, tcolor, 0.6);
+        base = mix(base, tcolor, tcolor.a);
 
 	    vec4 color = base * (amb * Ka + dif * Kd);
 
