@@ -2,6 +2,7 @@
 
 uniform sampler2D src1;
 uniform sampler2DShadow src2;
+uniform sampler2D splat;
 
 uniform float alphatest;
 uniform vec3 shadowambient;
@@ -30,7 +31,8 @@ float GetShadowValue()
 void main()
 {
 	vec4 base = texture2D(src1, gl_TexCoord[0].xy);
-
+    vec4 tcolor = texture2D(splat, gl_TexCoord[2].xy);
+     
     gl_FragColor = defaultcolor;
 
     if(base.a > alphatest)
@@ -41,6 +43,8 @@ void main()
 	    lightGetAmbientDiffuse(amb, dif);
     	
         amb += gl_LightModel.ambient;
+
+        base = mix(base, tcolor, 0.6);
 
 	    vec4 color = base * (amb * Ka + dif * Kd);
 

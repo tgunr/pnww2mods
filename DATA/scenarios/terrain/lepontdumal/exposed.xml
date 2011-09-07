@@ -17,7 +17,7 @@
     <bluclamp>200</bluclamp>
   </trees>
   <grass name="grassmask.dds">
-    <!-- The higher the weight, the lest dense -->
+    <!-- The higher the weight, the less dense -->
     <greenweight>10</greenweight>
     <blueweight>20</blueweight>
     <redweight>1</redweight>
@@ -58,29 +58,40 @@
     <start>-50.0</start>
     <end>1400.0</end>
   </fogparams>
- <terraintile name ="maintile">
+  <terraintile name ="maintile">
     <shader>multimaskshadow</shader>
     <treemask>treemask.dds</treemask>
     <grassmask>grassmask.dds</grassmask>
     <cluttermask>cluttermask.dds</cluttermask>
-   <blendmask name="masks.dds">
-     <layer0 name="layer0.dds">
-        <multitexture>300</multitexture>
+    <splatmask>splat1.dds</splatmask>
+    <blendmask name="mask1.dds">
+      <layer0 name="layer0.dds">
+        <multitexture>400</multitexture>
         <material>grass</material>
       </layer0>
       <layer1 name="layer1.dds">
-        <multitexture>200</multitexture>
-        <material>rock</material>
+        <multitexture>400</multitexture>
+        <material>grass</material>
       </layer1>
       <layer2 name="layer2.dds">
         <multitexture>300</multitexture>
-        <material>dirt</material>
+        <material>rock</material>
       </layer2>
       <layer3 name="layer3.dds">
         <multitexture>300</multitexture>
-        <material>dirt</material>
+        <material>sand</material>
       </layer3>
-   </blendmask>
- </terraintile>
+      <layer4 name="layer4.dds">
+        <multitexture>300</multitexture>
+        <material>sand</material>
+      </layer4>
+    </blendmask>
+    <blendmask name="mask2.dds">
+      <layer0 name="layer5.dds">
+        <multitexture>300</multitexture>
+        <material>rock</material>
+      </layer0>
+    </blendmask>
+</terraintile>
 </exposed>
 
