@@ -41,28 +41,28 @@ float GetShadowValue()
 
 void main()
 {
-    vec4 c1 = texture2DArray(src, vec3(gl_TexCoord[0].xy, 0));
-    vec4 c2 = texture2DArray(src, vec3(gl_TexCoord[0].zw, 1));
-    vec4 c3 = texture2DArray(src, vec3(gl_TexCoord[1].xy, 2));
-    vec4 c4 = texture2DArray(src, vec3(gl_TexCoord[1].zw, 3));
-    vec4 c5 = texture2DArray(src, vec3(gl_TexCoord[2].xy, 4));
-    vec4 c6 = texture2DArray(src, vec3(gl_TexCoord[2].zw, 5));
-    vec4 c7 = texture2DArray(src, vec3(gl_TexCoord[3].xy, 6));
-    vec4 c8 = texture2DArray(src, vec3(gl_TexCoord[3].zw, 7));
+    vec4 layer0 = texture2DArray(src, vec3(gl_TexCoord[0].xy, 0));
+    vec4 layer1 = texture2DArray(src, vec3(gl_TexCoord[0].zw, 1));
+    vec4 layer2 = texture2DArray(src, vec3(gl_TexCoord[1].xy, 2));
+    vec4 layer3 = texture2DArray(src, vec3(gl_TexCoord[1].zw, 3));
+    vec4 layer4 = texture2DArray(src, vec3(gl_TexCoord[2].xy, 4));
+    vec4 layer5 = texture2DArray(src, vec3(gl_TexCoord[2].zw, 5));
+    vec4 layer6 = texture2DArray(src, vec3(gl_TexCoord[3].xy, 6));
+    vec4 layer7 = texture2DArray(src, vec3(gl_TexCoord[3].zw, 7));
 
     vec4 m1 = texture2D(mask1, gl_TexCoord[6].xy);
     vec4 m2 = texture2D(mask2, gl_TexCoord[6].xy);
 
     vec4 c;
     
-    c = (1.0 - m1.r) * c1 + m1.r * c2;
-    c = (1.0 - m1.g) * c + m1.g * c3;
-    c = (1.0 - m1.b) * c + m1.b * c4;
-    c = (1.0 - m1.a) * c + m1.a * c5;
-    c = (1.0 - m2.r) * c + m1.r * c6;
-    c = (1.0 - m2.g) * c + m1.g * c7;
-    c = (1.0 - m2.b) * c + m1.b * c8;
-
+    c = (1.0 - m1.r) * layer0 + m1.r * layer1;
+    c = (1.0 - m1.g) * c + m1.g * layer2;
+    c = (1.0 - m1.b) * c + m1.b * layer3;
+    c = (1.0 - m1.a) * c + m1.a * layer4;
+    c = (1.0 - m2.r) * c + m2.r * layer5;
+    c = (1.0 - m2.g) * c + m2.g * layer6;
+    c = (1.0 - m2.b) * c + m2.b * layer7;
+ 
     c = (1.0 - m2.a) * c + m2.a * vec4(0.0, 0.0, 0.0, 0.9);
  
     vec4 c9 = texture2DProj(surf, gl_TexCoord[5]);
