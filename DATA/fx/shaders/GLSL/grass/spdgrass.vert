@@ -18,8 +18,8 @@ void main()
     p1.xyz = gl_Vertex.xyz - origin;
     p1.w = 1.0;
 
-    gl_TexCoord[1].x = dot(p1, sPlane) + 0.5;
-    gl_TexCoord[1].y = dot(p1, tPlane) + 0.5;
+    gl_TexCoord[2].x = p1.x * sPlane.x + 0.5;
+    gl_TexCoord[2].y = p1.y * tPlane.y + 0.5;
 
     int c = int(gl_Vertex.w);
 
