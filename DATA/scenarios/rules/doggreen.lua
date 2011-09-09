@@ -107,6 +107,11 @@ function OnStage1Update(msDelta)
 	
 	local ft	= game.Frametime();
 	
+	-- make sure we're not considered dead
+	if(game.Dead()) then
+		state.beachcrossing = false;
+	end
+	
 	-- if(state.beachcrossing) then
 		-- ui.ChatPrint("Crossed the beach!");
 		state.reinforcing = state.beachcrossing;
@@ -193,6 +198,11 @@ function OnStage2Update(msDelta)
 	
 	if(game.Online() == false) then
 		meIndex = 1;
+	end
+	
+	-- make sure we're not considered dead
+	if(state.bunkercapture and game.Dead()) then
+		state.bunkercapture = false;
 	end
 	
 	if(state.bunkercapture) then

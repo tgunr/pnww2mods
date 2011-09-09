@@ -75,6 +75,11 @@ function OnCaptureUpdate(msDelta)
 		meIndex = 1;
 	end
 	
+	-- make sure we're not considered dead
+	if(state.depotcapture and game.Dead()) then
+		state.depotcapture = false;
+	end
+	
 	if(state.depotcapture) then
 		capper = Instancing:GetStateNumber("capper");
 	end

@@ -4,6 +4,7 @@
 	onshow="initWin()" onupdate="scenarioUpdate()" aspectalign="center">
 	<include file="lib/tutorial.uixml"/>
 	<include file="lib/scenarios.uixml"/>
+	<include file="lib/scenariodata.uixml"/>
 	<include file="widgets/template_ra.uixml"/>
 	<include file="classes/ListControl.uixml"/>
 	<include file="classes/TreeControl2.uixml"/>
@@ -39,14 +40,6 @@
 						<view id="members-block" x="10" width="425" height="380" rtop="12">
 							<caption id="players-header" x="0" height="20" width="400" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
 							<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="12"/>
-							<!-- view x="0" width="425" height="15" rtop="23">
-								<caption x="0" y="0" width="152" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-									label="  &mission.brieftab.members.handle;"/>
-								<caption x="154" y="0" width="234" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-									label="&mission.brieftab.members.equipment;"/>
-								<caption x="390" y="0" width="58" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
-									label=" IN" tip="&mission.brieftab.brief.sstatus;"/>
-							</view -->
 							<list id="memberList" x="0" y="20" rtop="40" rright="0">
 								<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
 							</list>
@@ -136,33 +129,22 @@
 		
 		game.consoleprint(">>> STARTING COMBAT PAGE\n");
 		
-		game.onscenarioplayers = membersUpdated;
-		
 		var client 				= game.player.client;
 		var theatreMap	= findview("mapview");
-		var forwardTimer	= new CycleTimer(2000);
+		var buttonTimer	= new CycleTimer(1000);
 		var listTimer			= new CycleTimer(1000);
-		var scenario			= game.globals.scenario;
 		var selections		= findview("selection-tab");
 		var showButton	= findview("show-button");
 		var descView		= findview("scenario-description");
 		var nameView		= findview("scenario-name");
+		var scenario			= game.globals.scenario;
 		
-		//var flagView			= findview("team-flag");
-		var flagPath			= "";
-		
-		var fightBtn			= findview("fight-button");
-		var selectBtn		= findview("select-button");
-				
 		var spawnTree 			= new TreeControl("spawnTree", selectSpawnable, formatSpawnable, isSelectable);
 		var memberList 			= new ListControl(findview("memberList"));
-		var membersSpawned	= 0;
-		var membersCount 		= 0;
-		var doMemberUpdate	= false;
 		
-		var vehicles			= new Object();
-		var classes			= new Object();
-		var rootNodes		= new Array();
+		var flagPath			= "";
+		var fightBtn			= findview("fight-button");
+		var selectBtn		= findview("select-button");
 		
 		/***************** COMMON FUNCTIONS *******************/
 		
@@ -242,11 +224,6 @@
 			setForcesHeader();
 			initMemberHeaders(findview("members-block"));
 			
-			//forwardTimer.enabled = false;
-			
-			// mission members coming and going
-			//client.onmissionroomchange = initMissionMembers;
-			
 			// get our scenario state
 			scenario.instance = getScenarioState();
 			scenario.objectives = loadObjectives(scenario);
@@ -266,282 +243,6 @@
 			//flagView.src = flagPath;
 		}
 		
-		function initSpawnableTree(spawnables)
-		{
-			if(spawnables.length == 0)
-				return;
-				
-			for(var i = 0; i < spawnables.length; i++)
-			{
-				var vehicle = spawnables[i];
-				if(vehicle == null) continue;
-				
-				if(classes[vehicle.vclassid] == null)
-					classes[vehicle.vclassid] = new TreeNode(vehicle.vclassid, null, 1, true, vehicle.vclass);
-			}
-			
-			var cids 	= new Array(9, 8, 4, 7, 5, 6, 2, 1, 12, 13, 14);
-			var preopen	= null;
-			
-			for(var c = 0; c < cids.length; c++)
-			{
-				var node = classes[cids[c]];
-				
-				if(node != null)
-				{
-					if(preopen == null)
-						preopen = node; // open the first node
-					
-					spawnTree.addNode(node, toggleNode);
-					rootNodes[rootNodes.length] = node;
-				}
-			}
-			
-			if(preopen)
-				preopen.expand();
-			
-			spawnTree.setColorText(false);
-		}
-		
-		function initSpawnables()
-		{
-			var spawnables 	= game.spawnablevehicles;
-			var counters			= game.scenariospawns;
-			
-			if(!spawnTree.initTree())
-				initSpawnableTree(spawnables);
-				
-			// clear out previous data
-			for(var i in classes)
-				classes[i].reset();
-			
-			vehicles = new Object();
-			
-			// rebuild data
-			for(var i = 0; i < spawnables.length; i++)
-			{
-				var vehicle = spawnables[i];
-				
-				if(vehicle == null || classes[vehicle.vclassid] == null)
-					continue;
-				
-				classes[vehicle.vclassid].addNode(new TreeNode(vehicle.id, vehicle.index, 2, false));
-				
-				var vc = new VehicleClass(vehicle);
-				
-				vc.capacity 			= counters[i].capacity;
-				vc.current 			= counters[i].current;
-				vc.minimumrank 	= counters[i].minimumrank;
-				vc.spawnable 		= counters[i].spawnable;
-				
-				if(vc.capacity == -1)
-				{
-					vc.available = -1;
-				}
-				else
-				{
-					vc.available = vc.capacity - vc.current;
-					
-					if(vc.available < 0)
-						vc.available = 0;
-				}
-				
-				vehicles[vehicle.index] = vc;
-			}
-			
-			for(var i in classes)
-				classes[i].children = classes[i].children.sort(sortNodes);
-			
-			//cprint("Drawing tree!");
-			
-			spawnTree.drawTree();
-		}
-		
-		function sortNodes(a, b)
-		{
-			if(vehicles[b.data].current < vehicles[a.data].current)
-				return -1;
-			else if(vehicles[b.data].current > vehicles[a.data].current)
-				return 1;
-			
-			if(vehicles[b.data].type.index < vehicles[a.data].type.index)
-				return -1;
-			else if(vehicles[b.data].type.index > vehicles[a.data].type.index)
-				return 1;
-			
-			return 0;
-		}
-								
-		function isSelectable(node)
-		{
-			return true;
-		}
-		
-		function toggleNode(node)
-		{
-			if(!node.open)
-			{
-				for(var i = 0; i < rootNodes.length; i++)
-				{
-					if(rootNodes[i].open && rootNodes[i].id != node.id)
-						rootNodes[i].open = false;
-				}
-			}
-		}
-		
-		function formatSpawnable(tree, node)
-		{
-			var name				= tree.list.id;
-			var indent 			= tree.indent * node.level;
-			var mouseenter	= name + ".mouseEnter(this)";
-			var mouseexit		= name + ".mouseExit(this)";
-			
-			//cprint("Formatting " + node.description);
-			
-			if(node.branch)
-			{
-				var icon 			= (node.open) ? tree.collapseIcon: tree.expandIcon;
-				var label			= node.description.toUpperCase();
-				
-				var row 			= new ViewBuilder(tree.list, node.id, 0, 0, 0, 16);
-				var expander 	= row.addBuilder(new ImageBuilder(row, "image", icon, indent, 3, 10, 10));
-				var caption		= row.addBuilder(new TextBuilder(row, "title", "caption", label, (indent + tree.indent), 0, 0, 16));
-				
-				row.addAttribute("aspectalign", "left");
-				row.addAttribute("onmouseenter", mouseenter);
-				row.addAttribute("onmouseexit", mouseexit);
-				
-				expander.addAttribute("onclick", name + ".clickTree(true, " + tree.count + ")");
-				caption.addStyle("color", "#e9e3d9ff");
-				
-				return row.build(); 				
-			}
-			else
-			{
-				var vehicle			= vehicles[node.data];
-				var label				= vehicle.type.description;
-				var availability		= "n/a";
-				var color				= "#00FF00";
-				
-				if(vehicle.spawnable == "spawnable")
-				{
-					if(vehicle.capacity == -1)
-						availability = vehicle.current + " / unlimited";
-					else
-						availability = vehicle.current + " / " + vehicle.capacity;
-					
-					color	 = "#00FF00";
-				}
-				else if(vehicle.spawnable == "notpresent")
-				{
-					if(vehicle.capacity == -1)
-						availability = "none available";
-					else
-						availability = vehicle.current + " / " + vehicle.capacity;
-					
-					color	 = "#FF0000";
-				}
-				else if(vehicle.spawnable == "notpermitted")
-				{
-					availability = "not permitted";
-					color	 = "#FF0000";
-				}
-				
-				var iconSize 		= 12;
-				var textIndent = indent + iconSize + 5;
-				
-				var row 				= new ViewBuilder(tree.list, node.id, 0, 0, 0, 16);
-				var flagImage		= row.addBuilder(new ImageBuilder(row, "image", flagPath, indent, 2, iconSize, iconSize));
-				var vcaption			= row.addBuilder(new TextBuilder(row, "title", "caption", label, textIndent, 0, -textIndent, 16));
-				var acaption			= row.addBuilder(new TextBuilder(row, "avail", "caption", availability, textIndent, 0, -5, 16));
-				
-				row.addAttribute("aspectalign", "left");
-				row.addAttribute("onmouseenter", mouseenter);
-				row.addAttribute("onmouseexit", mouseexit);
-				
-				vcaption.addStyle("color", color);
-				acaption.addStyle("color", color);
-				acaption.addAttribute("align", "right");
-				//flagImage.addStyle("color", "#FFFFFF00");
-				
-				return row.build();
-			}
-		}
-		
-		function selectSpawnable(action)
-		{
-			var node = spawnTree.selectedNode();
-			
-			if(node != null && !node.branch)
-			{
-				selectBtn.enabled = true;
-				
-				if(action)
-				{
-					var index = spawnTree.selectedData();
-					
-					if(index != null)
-					{
-						var vehicle = vehicles[index];
-						
-						// this call
-						if(vehicle.spawnable == "spawnable")
-						{
-							game.globals.scenariovehicle = index;
-							game.setplayerdata("weapon", vehicle.type.weapkey);
-							game.setplayerdata("ready", "true");
-							selections.value = 0;
-						}
-						else
-						{
-							showOk(vehicle.spawnable);
-							selectBtn.enabled = false;
-						}
-					}
-				}
-			}
-			else
-			{
-				selectBtn.enabled = false;
-			}
-		}
-		
-		function setCombatStatus(tom, captures, damages)
-		{
-			/*
-			game.consoleprint("Setting combat status!\n");
-			
-			if(tutContent)
-			{
-				var tomComplete = false;
-				var capComplete = false;
-				var damComplete = false;
-				
-				// convert to ints
-				tom	= parseInt(tom);
-				cap	= parseInt(captures);
-				dam = parseInt(damages);
-				
-				targetTom = parseInt(tutContent.tom) * 60;
-				targetCap = parseInt(tutContent.captures);
-				targetDam = parseInt(tutContent.damages);
-				
-				if(tom >= targetTom)	tomComplete = true;
-				if(cap >= targetCap)	capComplete = true;
-				if(dam >= targetDam)	damComplete = true;
-				
-				var isComplete = TutIsComplete(tutContent);
-				
-				// complete the tutorial if one of these hit
-				if(!isComplete && (tomComplete || capComplete || damComplete))
-					OnTutorialCompleted();
-				
-				if(isComplete)
-					fightBtn.enabled = false;
-			}
-			*/
-		}
-		
 		function onSpawnDenied(code)
 		{
 			consoleprint("Processing Spawn Denied Code: " + code + "\n");
@@ -557,7 +258,6 @@
 			if(game.scenariocomplete)
 			{
 				fightBtn.enabled = false;
-				//setForwardEnabled(false);
 				joinLobby();
 				return;
 			}
@@ -574,13 +274,16 @@
 				doMemberUpdate = false;
 			}
 			
-			if(forwardTimer.run())
+			if(buttonTimer.run())
 			{
-				var ready = canScenarioSpawn(scenario);
-				cprint("Checking for ready status: " + ready);
-				//setForwardEnabled(ready);
-				//forwardTimer.enabled = false;
-				fightBtn.enabled = ready;
+				fightBtn.enabled = canScenarioSpawn(scenario);
+				
+				var node = spawnTree.selectedNode();
+				
+				if(node != null && !node.branch)
+					selectBtn.enabled = true;
+				else
+					selectBtn.enabled = false;
 			}
 		}
 		
@@ -599,30 +302,7 @@
 			header.label = "PLAYERS" ;
 			header.label +=  " - #" + client.instance.id ;
 		}
-		
-		function initMemberHeaders(p)
-		{
-		 	var rb = new RowBuilder(p, "members-header", 0, -22, 0, 15);
-		 	
-		 	/*
-		 	cprint("Headers width is: " + rb.width);
-		 	cprint("Headers nwidth is: " + rb.nwidth);
-		 	cprint("P Headers width is: " + p.width);
-		 	cprint("P Headers nwidth is: " + p.nwidth);
-		 	*/
-		 	
-		 	rb.addColumn("TEAM", .07);
-		 	rb.addColumn("PLAYER", .17);
-		 	rb.addColumn("RANK", .07);
-		 	rb.addColumn("WEAPON", .365);
-		 	rb.addColumn("K", .05, "center");
-		 	rb.addColumn("D", .05, "center");
-		 	rb.addColumn("S", .06, "center");
-		 	rb.addColumn("READY", .162, "center");
-		 	
-		 	p.addview(rb.build());
-		}
-		
+				
 		function switchSides()
 		{
 			// make sure we have an instance assigned
@@ -635,109 +315,6 @@
 			}
 		}
 		
-		function initMissionMembers()
-		{
-			var started 				= new Date();
-			var members			= client.missionroomlist;
-			
-			if(members == null)
-				return;
-			
-			members = members.sort(sortMembers);
-			membersCount = members.length;
-			
-			memberList.clearRows(false);
-			
-			for(var i = 0; i < membersCount; i++)
-			{
-				/************ Update Member List **************/
-				
-				var member 			= members[i];
-				var vehicle			= "-";
-				//var spawned		= "ui/textures/map-checkbox-off.bmp";
-				var ready				= "";
-				
-				if(member.weapon != null)
-				{
-					var memberWeapon = member.weapon;
-					
-					if(memberWeapon.description.toLowerCase() == "buzzard")
-						continue;
-					
-					vehicle = memberWeapon.description;
-				}
-				
-				var rank			= member.rank;
-				var callsign 		= member.callsign;
-				var kills				= parseInt(member.kills);
-				var deaths		= parseInt(member.deaths);
-				var score			= parseInt(member.score);
-				var teamIcon 	= scenarioFlag(parseInt(scenario["team" + member.team]));
-				
-				//if(member.spawned) spawned 	= "ui/textures/map-checkbox-on.bmp";
-				if(member.ready) ready 				= "ready";
-				
-				var row 						= new ViewBuilder(memberList.list, "member_" + i, 0, 0, -15, 16);
-				var teamBuilder			= row.addBuilder(new ImageBuilder(row, "member-team-image", teamIcon, 102, 1, 14, 14));
-				var nameBuilder			= row.addBuilder(new TextBuilder(row, "member-name-caption", "caption", callsign, 15, 0, 72, 16));
-				var rankBuilder				= row.addBuilder(new TextBuilder(row, "member-rank-caption", "caption", "", 0, 1, 14, 14));
-				var vehicleBuilder			= row.addBuilder(new TextBuilder(row, "member-vehicle-caption", "caption", vehicle, 102, 0, 152, 16));
-				var killsBuilder				= row.addBuilder(new TextBuilder(row, "member-kills-caption", "caption", kills, 257, 0, 20, 16));
-				var deathsBuilder			= row.addBuilder(new TextBuilder(row, "member-deaths-caption", "caption", deaths, 279, 0, 20, 16));
-				var scoreBuilder			= row.addBuilder(new TextBuilder(row, "member-score-caption", "caption", score, 301, 0, 25, 16));
-				var readyBuilder	 		= row.addBuilder(new TextBuilder(row, "member-ready-caption", "caption", ready, 328, 0, 60, 16));
-				
-				teamBuilder.hbuffer		= 7;
-				rankBuilder.hbuffer		= 6;
-				
-				// space out our children builders
-				row.hspace(2);
-				
-				// fix up our main row
-				row.addAttribute("aspectalign", "left");
-				row.addStyle("background-color", ((member.friendly) ? game.settings.friendlycolor : game.settings.enemycolor) + "22");
-				if(member.me) row.addStyle("border-color", game.settings.friendlycolor);
-				
-				//row.addAttribute("onmouseenter", mouseenter);
-				//row.addAttribute("onmouseexit", mouseexit);
-				
-				// rank attributes
-				rankBuilder.addAttribute("class", "rankicon");
-				rankBuilder.addAttribute("rank", member.rank.level - 1);
-				
-				// font colors
-				nameBuilder.addStyle("color", "#e9e3d9ff");
-				vehicleBuilder.addStyle("color", "#e9e3d9ff");
-				killsBuilder.addStyle("color", "#e9e3d9ff");
-				deathsBuilder.addStyle("color", "#e9e3d9ff");
-				scoreBuilder.addStyle("color", "#e9e3d9ff");
-				readyBuilder.addStyle("color", "#e9e3d9ff");
-				
-				if(false)
-				{
-					nameBuilder.addStyle("border-color", "#e9e3d9ff");
-					vehicleBuilder.addStyle("border-color", "#e9e3d9ff");
-					killsBuilder.addStyle("border-color", "#e9e3d9ff");
-					deathsBuilder.addStyle("border-color", "#e9e3d9ff");
-					scoreBuilder.addStyle("border-color", "#e9e3d9ff");
-					readyBuilder.addStyle("border-color", "#e9e3d9ff");
-				}
-				
-				killsBuilder.addAttribute("align", "center");
-				deathsBuilder.addAttribute("align", "center");
-				scoreBuilder.addAttribute("align", "center");
-				readyBuilder.addAttribute("align", "center");
-				
-				memberList.addRow(member, row.build());
-			}
-			
-			memberList.setScrollY();
-			
-			var stopped = new Date();
-			
-			//game.consoleprint("Member List Update took " + (stopped.getTime() - started.getTime()) + "ms with " + membersCount + " members\n");
-		}
-		
 		function toggleSelection()
 		{
 			if(selections.value == 0)
@@ -748,29 +325,35 @@
 			 setForcesHeader();
 		}
 		
-		function membersUpdated()
+		function selectSpawnable(action)
 		{
-			doMemberUpdate = true;
-		}
-		
-		function sortMembers(a,b)
-		{
-			if(a.team == b.team)
-			{
-				if(a.score > b.score)
-					return -1;
-				else if(a.score < b.score)
-					return 1;
-			}
-			else  
-			{
-				if(a.team == game.scenario.team)
-					return -1;
-				else
-					return 1; 
-			}
+			var node = spawnTree.selectedNode();
 			
-			return 0;
+			if(node != null && !node.branch)
+			{
+				if(action)
+				{
+					var index = spawnTree.selectedData();
+					
+					if(index != null)
+					{
+						var vehicle = vehicles[index];
+						
+						// this call
+						if(vehicle.spawnable == "spawnable")
+						{
+							selections.value = 0;
+							game.globals.scenariovehicle = index;
+							game.setplayerdata("weapon", vehicle.type.weapkey);
+							game.setplayerdata("ready", "true");
+						}
+						else
+						{
+							showOk(vehicle.spawnable);
+						}
+					}
+				}
+			}
 		}
 		
 		-->

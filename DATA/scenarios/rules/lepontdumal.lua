@@ -75,6 +75,11 @@ function OnCaptureUpdate(msDelta)
 		meIndex = 1;
 	end
 	
+	-- make sure we're not considered dead
+	if(state.bridgecapture and game.Dead()) then
+		state.bridgecapture = false;
+	end
+	
 	if(state.bridgecapture) then
 		capper = Instancing:GetStateNumber("capper");
 	end

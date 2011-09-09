@@ -319,8 +319,8 @@
 			var team1min = scenario.population.team1min;
 			var team2min = scenario.population.team2min;
 			
-			var team1ready = game.scenario.ready1;
-			var team2ready = game.scenario.ready2;
+			var team1ready = game.scenariostate.ready1;
+			var team2ready = game.scenariostate.ready2;
 			
 			//cprint("Found " + team1count + " of " + team1min + " allied players!");
 			//cprint("Found " + team2count + " of " + team2min + " axis players!");
