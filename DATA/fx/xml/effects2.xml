@@ -4103,7 +4103,7 @@
 	</particleeffect>
 <!-- ===================================================================== -->
 	<particleeffect name = "treaddustparticle">
-		<number>1</number>
+		<number>3</number>
 		<texture>tread dust</texture>
     <alpha>0.5</alpha>
     <alpha>0.25</alpha>
@@ -4120,6 +4120,7 @@
 		<drag>1.0</drag>
     <separation>1.0</separation>
 		<rotate>45</rotate>
+    <delayeachparticle>15</delayeachparticle>
     <outdofdirection></outdofdirection>
 		<velvariance>-5.0 -5.0 -5.0 5.0 5.0 5.0</velvariance>
     <material>smoke</material>
