@@ -1,13 +1,16 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>ca2/dm_cagefight</name>
-  <body>onspawn.moveout = Eliminez autant d&#39;ennemis que possible avant la fin de la partie!
+  <body>objective1 = Alliés {1}/{2}
+objective2 = Axe {1}/{2}
 victory1 = Alliés victorieux!
 victory2 = Axe victorieux!
 roundstop = Cette manche est finie!
 playarea = Vous ne pouvez quitter la zone de combat.
-toalliedspawn = Les allemands sont de l&#39;autre côté de la zone !
-toaxisspawn = Les Alliés sont de l&#39;autre côté de la zone !</body>
+onspawn.moveout = Éliminez autant d&#39;ennemis que possible!
+gerspawn = Ennemis Spawn
+ukspawn = Ennemis Spawn
+scenario.help = CAGE FIGHT: ELIMINEZ L ENNEMI</body>
   <bodyloc>true</bodyloc>
   <brief>Des combats rapprochés très intenses se déroulent  à Maubeuge, les ennelis sont si proche qu&#39;ile peuvent sentir la marque de leur déodorant respectifs.<br><br>
 Tuer autant d&#39;infanterie ennemie que possible en 15 mn.<br>

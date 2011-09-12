@@ -3,7 +3,7 @@
   <name>dday/obj_lepontdumal</name>
   <body>onspawn.moveout = Les Américains essayent de capturer le pont§ les allemands doivent le défendre.
 toaxisspawn = Capturer le pont avant la fin du temps alloué!
-toalliedspawn = Defendre le pont de l&#39;avance des troupes ennemies!
+toalliedspawn = Défendre le pont de l&#39;avance des troupes ennemies!
 bridgecapture = Vous avez pris le pont, tenez le jusqu&#39;à l&#39;arrivée des renforts.
 allieswrongway = L&#39;objectif est au sud. Tournez et suivez la route.
 victory1 = Américains ont sécurisé le pont! Les renforts sont là.
@@ -17,8 +17,8 @@ youcapon = Vous capturez le pont!
 alliedcapon =  Les Alliés ont pris le pont!
 alliedcapoff = Les forces de l&#39;Axe ont repris le pont!
 
-objective1.1.1.1 = Capturez le pont
-objective1.2.1.1 = Défendez le pont
+objective1 = Capturez le pont
+
 
 scenario.help = LE PONT DU MAL: THE EVIL BRIDGE</body>
   <bodyloc>true</bodyloc>
@@ -34,6 +34,10 @@ Axe- Empêcher l&#39;ennemi d&#39;atteindre son objectif pendant 15 minutes</bri
   <fog>1</fog>
   <hour>17</hour>
   <ingamemap>47.75 31.06 .039</ingamemap>
+  <links>
+    <link path="scenarios/dm/objectives/lepontdumal1.xml" title="team1" />
+    <link path="scenarios/dm/objectives/lepontdumal2.xml" title="team2" />
+  </links>
   <rules>lepontdumal</rules>
   <team1>2</team1>
   <team1min>2</team1min>

@@ -3,6 +3,7 @@
   <name>dday/dm_riverrun</name>
   <body>objective1 = Allies
 objective2 = Axis
+intel = Intel
 onspawn.moveout = Eliminez le plus de soldat ennemis avant la fin du temps limite!
 churchentry = L&#39;église est un un emplacement parfait pour les sniper, surveillez bien!
 toaxisspawn = Les forces allemandes sont stationnées au Nord Est.
@@ -21,7 +22,7 @@ intelfriendlyoff = L&#39;ennemi n&#39;a plus de renseignement sur votre camp.
 scenario.help = RIVER RUN: KILL THE ENEMY</body>
   <bodyloc>true</bodyloc>
   <brief>Les américains ont réussi à progresser par le pont sud avant sa destruction. Maintenant les allemands doivent défendre la ville.<br><br>
-Éliminez le plus de soldats ennemis en ${duration} minutes<br>
+Éliminez le plus de soldats ennemis en 15 mn
 Le premier qui atteint 50 Kill a gagné.</brief>
   <draw>35</draw>
   <duration>15</duration>
