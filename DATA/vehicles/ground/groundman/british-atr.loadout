@@ -5,7 +5,7 @@
 sound1 = sounds\troop\boys55atr.wav
 sound2 = sounds\troop\enfieldmk2no1.wav
 sound3 = sounds\troop\grenade-throw.wav
-sound4 = sounds\troop\xxxxxxxxxxxxxxxxx
+sound4 = sounds\troop\satchel-place.wav
 
 loadout = 1
 
@@ -25,14 +25,14 @@ mountnum = 3
 mountsound = sound2
 weapon = uk_smokegrenade
 
-# Knife
-mountnum = 4
-weapon = knifegeneric
-
 # AT Satchel
-mountnum = 5
-mountsound = xxxxxxxxxx
+mountnum = 4
+mountsound = sound4
 weapon = satchelgeneric
+
+# Knife
+mountnum = 5
+weapon = knifegeneric
 
 # build tool
 mountnum = 8
