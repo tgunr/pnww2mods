@@ -4,21 +4,6 @@
 # SMG, SATCHEL, RIFLE, AUTO_PISTOL, GRENADE, REVOLVER, ITEM, KNIFE, LMG
 weaponType = AUTO_RIFLE
 
-#hiddenMeshes = k98kClip,stripperclip,g30,gewcup,singleshell
-
-# per bullet muzzle rize (in degrees)
-muzzleRise = 5.0
-
-# degrees per second of "push back to zero" per second
-muzzleReturn = 25.0
-
-# degrees of climb per second
-muzzleClimbRate = 75.0
-
-# per bullet "jump" .. this is the vertical component
-# the total formula is weapon.muzzleRize * weapon.bulletJitter * trooper.aimControl
-bulletJitter = 1.0
-
 # sound to play when reloading
 reloadSound = sounds\G43reload.wav
 
@@ -37,8 +22,6 @@ weaponConnect = gewehr-connect
 #clipConnect = stripperclip-control
 
 # boresighting values .. how much off of "straight" does this gun need to fire
-#aimVerticalCorrection = 0.04
-#aimHorizontalCorrection = -0.000
 aimVerticalCorrection = .004
 aimHorizontalCorrection = .004
 
