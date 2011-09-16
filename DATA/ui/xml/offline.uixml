@@ -175,8 +175,10 @@
 							
 							if(vehicle.index == game.globals.selectedindex)
 								vehicleTree.selected = vehicle.index;
+							/*
 							else if(vehicle.id == "us-assault")
-								vehicleTree.selected = vehicle.index;
+								vehicleTree.selected = vehicle.index;\
+							*/
 						}
 					}
 				}
@@ -190,7 +192,7 @@
 			if(!vehicleTree.loadState())
 				vehicleTree.toggleNode("US", true);
 				
-			//vehicleTree.clickTree(false, game.globals.selectedindex);
+			vehicleTree.clickTree(false, game.globals.selectedindex);
 			
 			vehicleTree.drawTree();
 			
