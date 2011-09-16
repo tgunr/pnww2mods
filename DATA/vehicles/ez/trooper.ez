@@ -1,0 +1,18 @@
+<?xml version='1.0'?>
+<vehicle reticle="reticles/trooper" manager="eztrooper">
+	<ez level="2" position="0" view="1" zoom="0">
+		<config>
+			<param name="category" value="troop"/>
+			<param name="dispersion" value=".5"/>
+			<!-- name is the weapon class names as defined in code -->
+			<!-- value is the ui reticle file to use for this weapon class -->
+			<param name="SMG" value="reticles/smg"/>
+			<param name="RIFLE" value="reticles/rifle"/>
+			<param name="AUTO_PISTOL" value="reticles/pistol"/>
+			<param name="REVOLVER" value="reticles/pistol"/>
+			<param name="LMG" value="reticles/lmg"/>
+			<param name="RIFLE_GRENADE" value="reticles/rifle"/>
+			<param name="AUTO_RIFLE" value="reticles/rifle"/>
+		</config>
+	</ez>
+</vehicle>
