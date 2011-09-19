@@ -163,19 +163,19 @@ criticalsecondary = 1
 #changed for CC audit v1.13
 crewposition = 1
 hitmapcomponent1 = d_comhead
-hitmapcomponent2 = d_comlegs
-hitmapcomponent3 = d_comtorso
-hitmapcomponent4 = d_comarms
+hitmapcomponent2 = d_comtorso
+hitmapcomponent3 = d_comarms
+hitmapcomponent4 = d_comlegs
 
 [crew_gunner]
 type = crew
 criticalsecondary = 1
 #changed for CC audit v1.13
 crewposition = 2
-hitmapcomponent1 = d_gunarms
+hitmapcomponent1 = d_gunhead
 hitmapcomponent2 = d_guntorso
-hitmapcomponent3 = d_gunlegs
-hitmapcomponent4 = d_gunhead
+hitmapcomponent3 = d_gunarms
+hitmapcomponent4 = d_gunlegs
 
 # Target weights:
 # 432 Mobile
