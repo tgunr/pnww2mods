@@ -1,5 +1,5 @@
 
-# FlaK 36 Hit file
+# Bofors Hit file
 
 # correlates parts with equivelant armor thickness
 # when hit, a part will act like a homogeneous plate of specified
@@ -30,13 +30,14 @@
 -hitenergymaxvolume = 10000
 
 # Inside collider objects: Single sided
+# order fixed in 1.34
 d_gunhead,0.4,0,0
-d_gunarms,1,0,0
 d_gunrtrso,1.2,0,0
+d_gunarms,1,0,0
 d_gunlegs,1,0,0
-d_comarms,1,0,0
 d_comhead,0.4,0,0
 d_comrtrso,1.2,0,0
+d_comarms,1,0,0
 d_comlegs,1,0,0
 
 # Outside collider objects: Double sided

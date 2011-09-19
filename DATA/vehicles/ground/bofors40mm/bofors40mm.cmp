@@ -1,4 +1,4 @@
-# Flak 36 88mm
+# Bofors
 
 [tow-point]
 type = towpoint
@@ -198,16 +198,18 @@ damagelevel4 = 0
 type = crew
 criticalsecondary = 1
 #changed for CC audit v1.13
+#fixed in 1.34
 crewposition = 2
 hitmapcomponent1 = d_gunhead
-hitmapcomponent2 = d_gunarms
-hitmapcomponent3 = d_gunrtrso
+hitmapcomponent2 = d_gunrtrso
+hitmapcomponent3 = d_gunarms
 hitmapcomponent4 = d_gunlegs
 
 [crew_commander]
 type = crew
 criticalsecondary = 1
 #changed for CC audit v1.13
+#fixed in 1.34
 crewposition = 1
 hitmapcomponent1 = d_comhead
 hitmapcomponent2 = d_comrtrso
