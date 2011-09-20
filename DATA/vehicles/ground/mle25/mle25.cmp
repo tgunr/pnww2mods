@@ -153,11 +153,12 @@ damagelevel4 = 0
 type = crew
 criticalsecondary = 1
 #changed for CC audit v1.13
+#fixed for 1.34, apparently the spotter and gunner are reversed
 crewposition = 2
 hitmapcomponent1 = d_spothead
 hitmapcomponent2 = d_spottorso
 hitmapcomponent3 = d_spotarms
-hitmapcomponent4 = d_spotarms
+hitmapcomponent4 = d_spotlegs
 
 [crew_commander]
 type = crew
