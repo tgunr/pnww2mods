@@ -20,8 +20,8 @@ if(true) then
         -- command flt link x y z yaw
 		"terrain draw_doggreen 0 0 0 0",
 		"terrain draw_ee 0 0 0 0",
-		"terrain draw_nw edgetile 0 0 0 0",
-		"terrain draw_ww edgetile 0 0 0 0",
+		"terrain draw_nw 0 0 0 0",
+		"terrain draw_ww  0 0 0 0",
 		"terrain draw_ne 0 0 0 0",
 		"terrain draw_nn 0 0 0 0",
 
