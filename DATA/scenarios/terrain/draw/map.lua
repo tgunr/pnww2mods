@@ -18,19 +18,19 @@ if(true) then
 
         -- special handling for terrain tiles
         -- command flt link x y z yaw
-		"terrain doggreen maintile 0 0 0 0",
-		"terrain doggreen_region_EE edgetile 0 0 0 0",
-		"terrain doggreen_region_NW edgetile 0 0 0 0",
-		"terrain doggreen_region_SE edgetile 0 0 0 0",
-		"terrain doggreen_region_SS edgetile_ss 0 0 0 0",
-		"terrain doggreen_region_SW edgetile 0 0 0 0",
-		"terrain doggreen_region_WW edgetile 0 0 0 0",
+		"terrain draw_doggreen 0 0 0 0",
+		"terrain draw_ee 0 0 0 0",
+		"terrain draw_nw edgetile 0 0 0 0",
+		"terrain draw_ww edgetile 0 0 0 0",
+		"terrain draw_ne 0 0 0 0",
+		"terrain draw_nn 0 0 0 0",
+
 
 		-- placed objects
 		-- command,filename,worldx,worldy,worldz,roll,pitch,yaw,scalex,scaley,scalez,damage		
-		"place doggreen_ob3 0 0 0 0 0 0 0 0 0 0",
-		"place doggreen_ob3_barbedwire 0 0 0 0 0 0 0 0 0 0",
-		"place doggreen_ob3_logbunker 0 0 0 0 0 0 0 0 0 0",
+		--"place doggreen_ob3 0 0 0 0 0 0 0 0 0 0",
+		--"place doggreen_ob3_barbedwire 0 0 0 0 0 0 0 0 0 0",
+		--"place doggreen_ob3_logbunker 0 0 0 0 0 0 0 0 0 0",
 		
 		-- higgins boats
 		
@@ -111,42 +111,22 @@ if(true) then
 		"place dg_obs_elementc -200.93 -71.18 24.4 -2 -3 190 0 0 0 0",
 		
 		-- German FB
-		"place crates1c -56 -133 44.3 -0.6 0 0 0 0 0 0",
-		"place cratepile_outside -18.86 -148.38 44.8 0 0 0 0 0 0 0",
+		--"place crates1c -56 -133 44.3 -0.6 0 0 0 0 0 0",
+		--"place cratepile_outside -18.86 -148.38 44.8 0 0 0 0 0 0 0",
 		
 		-- German MG nests
-		"place sandbagwall_curved_outside -144.90 -25.28 34.3 0 0 85 0 0 0 0",
-		"place sandbagwall_curved_outside -146.5 -28.0 34.3 0 0 -25 0 0 0 0",
-		"place dg_wire_barbed_apron	-138.48 -24.17 34.25 -4 0 0 0 0 0",
-		"place dg_wire_barbed_box	-147.26 -30.81 34.85 -9 -10 75 0 0 0",
-		"place dg_wire_barbed_box	-144.76 -34.30 35.7 -5 -5 25 0 0 0",
+		--"place sandbagwall_curved_outside -144.90 -25.28 34.3 0 0 85 0 0 0 0",
+		--"place sandbagwall_curved_outside -146.5 -28.0 34.3 0 0 -25 0 0 0 0",
+		--"place dg_wire_barbed_apron	-138.48 -24.17 34.25 -4 0 0 0 0 0",
+		--"place dg_wire_barbed_box	-147.26 -30.81 34.85 -9 -10 75 0 0 0",
+		--"place dg_wire_barbed_box	-144.76 -34.30 35.7 -5 -5 25 0 0 0",
 	
 		
 		
 		
 		
 		
-		
-		"place ammocrate -81.76 -44.05 36.74 0 -10 -45 0 0 0 0",
-		"place crate -81.1 -43.3 36.44 0 -10 -45 0 0 0 0",
-		"place sandbagwall_curved_outside -80.25 -42.5 37.5 0 -12 135 0 0 0 0",
-		"place ammocrate -87.2 -42.30 36.75 0 15 75 0 0 0 0",
-		"place crate -87.33 -41.30 36.4 0 10 75 0 0 0 0",
-		"place sandbagwall_curved_outside -87.3 -40.1 37.5 0 10 90 0 0 0 0",	
-		
-		"place ammocrate 17.8 -108.88 38.35 -3 -2 -50 0 0 0 0",
-		"place crate 18.0 -108 37.89 0 0 -50 0 0 0 0",
-		"place sandbagwall_curved_outside 19.0 -107.0 38.9 0 -5 125 0 0 0 0",	
-		"place ammocrate 22.02 -113.26 38.65 -5 -5 -15 0 0 0 0",
-		"place crate 22.82 -112.70 38.25 0 0 -25 0 0 0 0",
-		"place sandbagwall_curved_outside 23.8 -111.99 39.4 0 -5 140 0 0 0 0",	
-		"place dg_wire_barbed_apron	38.7 -176.5 44.25 0 0 -20 0 0 0",
-		"place dg_wire_barbed_apron	72.16 -163.53 40.0 0 10 -20 0 0 0",
-		"place dg_wire_barbed_apron	78 -162 39 0 10 -28 0 0 0",
-		"place sandbagwall_outside -141.2 -25.6 34.2 -5 0 80 0 0 0 0",
-		"place sandbagwall_outside -139 -25.28 34.2 -5 0 80 0 0 0 0",
-		"place sandbagwall_outside -140.85 -25.55 34.7 -5 0 81 0 0 0 0",	
-		"place sandbagwall_curved_outside -144.88 -388.10 46.75 0 0 85 0 0 0 0",	
+
 		
 		
 		
@@ -175,19 +155,7 @@ if(true) then
 
 
 
-		-- german spawn
-		
-		"place crate -137.19 -35.27 35.82 -5 0 0 0 0 0 0",
-		"place crate -137.3 -35.0 36.8 -5 0 0 0 0 0 0",
-		"place crate -138.35 -35.87 35.90 -5 0 0 0 0 0 0",
-		
-		-- trench decoration
-		"place crate -30.8 -79.3 37.5 0 0 110 0 0 0 0",
-		"place crate -49.27 -104.43 42.8 0 0 0 0 0 0 0",
-		"place cratepile_outside -82.33 -101.48 43.9 0 2 0 0 0 0 0",
-		"place cratepile_outside -47.74 -117.93 43.5 -3 1 25 0 0 0 0",
-		"place cratepile_outside -142 -112.75 42.25 -1 -5 0 0 0 0 0",
-		"place cratepile_outside -145.17 -69 40.2 -3.2 -5.5 0 0 0 0 0",
+
 		
 		
 		
@@ -222,18 +190,7 @@ if(true) then
 		"place dg_wire_barbed_apron	15.53 -98.45 37.0 0 5 15 0 0 0",
 		
 		
-		
-		-- town
-		"place newcloister -290 -613 48.1 0 0 22 0 0 0 1",
-		
-		
-	
-		-- 88s
-		"place sandbagwall_curved_outside -168.23 -621.51 49.8 0 0 0 0 0 0 0",
-		"place sandbagwall_curved_outside -168.23 -621.51 50.6 0 0 0 0 0 0 0",
-		
-		"place sandbagwall_curved_outside -165.75 -619.45 49.8 0 0 100 0 0 0 0",
-		"place sandbagwall_curved_outside -165.75 -619.45 50.6 0 0 100 0 0 0 0",
+
 		
 		
 		

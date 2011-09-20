@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- values are 0 based -->
 <exposed>
+	<!-- this defines the type and weight for the doggreen trees -->
   <trees name="treemask.dds">
     <!-- weight the higher the number the less dense -->
     <redweight>77</redweight>
@@ -17,6 +18,7 @@
     <bluclamp>240</bluclamp>
   </trees>
   
+  <!-- this defines the type and weight for the ss tile trees -->
   <trees name="treemask_ss.dds">
     <!-- weight the higher the number the less dense -->
     <redweight>77</redweight>
@@ -33,7 +35,7 @@
     <bluclamp>240</bluclamp>
   </trees>
   
-  
+  <!-- this defines the type and weight for the maintile grass -->
   <grass name="grassmask.dds">
     <!-- The higher the weight, the lest dense -->
    <redweight>1</redweight>   
@@ -54,8 +56,33 @@
     <grnscale>1.0</grnscale>
     <bluscale>0.75</bluscale>
   </grass>
-  <!-- Clutter that uses FLTs (Maximum of 8 clutter masks)-->
   
+    <!-- this defines the type and weight for the ss tile grass -->
+    <grass name="grassmask_ss.dds">
+    <!-- The higher the weight, the lest dense -->
+   <redweight>1</redweight>   
+   <greenweight>5</greenweight>
+    <blueweight>0</blueweight>
+	
+	<redtypeint>1 2 3</redtypeint>
+    <greentypeint>4 6 7</greentypeint>
+    <bluetypeint>12 13 14 15</bluetypeint>
+    <!-- Color clamped between 0 - 255 -->
+    <!-- Example: redclamp 100 will clamp red mask grass to red color >= 100 -->
+    <!-- The higher the clamp, the less number of blades placed-->
+    <redclamp>50</redclamp>
+    <grnclamp>10</grnclamp>
+    <bluclamp>200</bluclamp>
+    <!-- default is 1.0 -->
+    <redscale>0.50</redscale>
+    <grnscale>1.0</grnscale>
+    <bluscale>0.75</bluscale>
+  </grass>
+  
+  
+  
+   <!-- this defines the type and weight for the first clutter mask for the main tile -->
+  <!-- Clutter that uses FLTs (Maximum of 8 clutter masks)-->
   <!-- clutter mask 1 -->
   <objectclutter name="cluttermask.dds">
   <!-- weight the higher the number the less dense -->
@@ -76,6 +103,7 @@
     <blueparams>5</blueparams>
   </objectclutter>
   
+   <!-- this defines the type and weight for the second clutter mask for the main tile -->
   <!-- clutter mask 2 -->
   <objectclutter name="cluttermask2.dds">
   <!-- weight the higher the number the less dense -->
@@ -95,6 +123,11 @@
     <greenparams>180</greenparams>
     <blueparams>180</blueparams>
   </objectclutter>
+  
+  
+  
+  
+  <!-- fog -->
   <fogparams>
     <!--<start>-25.0</start>
     <end>1200.0</end>
@@ -104,6 +137,9 @@
 	 <fogcolor>64 71 78 0</fogcolor>
      <!-- <fogcolor>127 127 127 0</fogcolor> -->
    </fogparams>
+   
+   
+   
   <terraintile name ="maintile">
     <shader>multimaskshadow</shader>
     <treemask>treemask.dds</treemask>
@@ -114,20 +150,11 @@
       <multitexture>128</multitexture>
       <material>grass</material>
     </layer0>
-    <layer1 name="layer1.dds">
-      <multitexture>512</multitexture>
-      <material>rock</material>
-    </layer1>
-    <layer2 name="layer2.dds">
-      <multitexture>512</multitexture>
-      <material>dunes1</material>
-    </layer2>
-    <layer3 name="layer3.dds">
-      <multitexture>512</multitexture>
-      <material>dunes1</material>
-    </layer3>
     <blendmask>masks.dds</blendmask>
   </terraintile>
+  
+ 
+  
   
   <terraintile name ="edgetile">
     <shader>multimaskshadow</shader>
