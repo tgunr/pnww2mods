@@ -192,26 +192,34 @@ damagelevel4 = 0
 [crew_commander]
 type = crew
 criticalsecondary = 1
-#changed for CC audit v1.13
 crewposition = 1
-hitmapcomponent1 = d_comarms
+hitmapcomponent1 = d_comhead
 hitmapcomponent2 = d_comtorso
-hitmapcomponent3 = d_comhead
-hitmapcomponent4 = d_comleg1
-hitmapcomponent5 = d_comleg2
-
-# NOTE ON CREW DAMAGE: The damage objects in the art file for the crew are reversed, this file is adjusted for that
+hitmapcomponent3 = d_comarm1
+hitmapcomponent4 = d_comarm2
+# these special _# ones are only for the tier 1 atg hackery
+hitmapcomponent_5 = d_comarm3
+hitmapcomponent_6 = d_comarm4
+hitmapcomponent_7 = d_comleg1
+hitmapcomponent_8 = d_comleg2
+hitmapcomponent_9 = d_comleg3
+hitmapcomponent_10 = d_comleg4
 
 [crew_gunner]
 type = crew
 criticalsecondary = 1
-#changed for CC audit v1.13
 crewposition = 2
-hitmapcomponent1 = d_gunarms
+hitmapcomponent1 = d_gunhead
 hitmapcomponent2 = d_guntorso
-hitmapcomponent3 = d_gunhead
-hitmapcomponent4 = d_gunleg1
-hitmapcomponent5 = d_gunleg2
+hitmapcomponent3 = d_gunarm1
+hitmapcomponent4 = d_gunarm2
+# these special _# ones are only for the tier 1 atg hackery
+hitmapcomponent_5 = d_gunarm3
+hitmapcomponent_6 = d_gunarm4
+hitmapcomponent_7 = d_gunleg1
+hitmapcomponent_8 = d_gunleg2
+hitmapcomponent_9 = d_gunleg3
+hitmapcomponent_10 = d_gunleg4
 
 
 # Target weights:

@@ -30,6 +30,8 @@
 -hitenergymaxvolume = 10000
 
 # Inside collider objects: Single sided
+# stored in CurrentVehicle->DamageObjects
+# 1.34 heads are now 1.4!
 
 d_gunarm1,1,0,0
 d_gunarm2,1,0,0
@@ -40,7 +42,7 @@ d_gunleg1,1,0,0
 d_gunleg2,1,0,0
 d_gunleg3,1,0,0
 d_gunleg4,1,0,0
-d_gunhead,0.4,0,0
+d_gunhead,1.4,0,0
 d_comarm1,1,0,0
 d_comarm2,1,0,0
 d_comarm3,1,0,0
@@ -50,7 +52,7 @@ d_comleg1,1,0,0
 d_comleg2,1,0,0
 d_comleg3,1,0,0
 d_comleg4,1,0,0
-d_comhead,0.4,0,0
+d_comhead,1.4,0,0
 
 # Outside collider objects: Double sided
 
