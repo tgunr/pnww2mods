@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="iso-8859-1" ?> 
 <FXEFFECTS>
-<!-- ===================================================================== -->
+  <!-- ===================================================================== -->
+  <transformeffect name = "tankAPhit">
+    <emitter>
+      <lifetime>1</lifetime>
+      <flags>particleeffectonly</flags>
+      <particleeffect>manysparks</particleeffect>
+      <particleeffect>ballisticsmokeimpact</particleeffect>
+      <particleeffect>ballisticdebrisimpact</particleeffect>
+    </emitter>
+  </transformeffect>
+  <!-- ===================================================================== -->
+  <transformeffect name = "tankHEhit">
+    <emitter>
+      <lifetime>1</lifetime>
+      <flags>particleeffectonly</flags>
+      <particleeffect>manysparks</particleeffect>
+      <particleeffect>ballisticsmokeimpact</particleeffect>
+      <particleeffect>ballisticdebrisimpact</particleeffect>
+      <particleeffect>incendiary</particleeffect>
+    </emitter>
+  </transformeffect>
+  <!-- ===================================================================== -->
+  <transformeffect name ="debrissmoketrail">
+    <emitter>
+      <lifetime>400</lifetime>
+      <particleeffect>debrissmoketrailparticle</particleeffect>
+    </emitter>
+  </transformeffect>
+  <!-- ===================================================================== -->
   <transformeffect name = "landmine">
     <emitter>
       <lifetime>1</lifetime>
@@ -10,7 +38,7 @@
       <particleeffect>landminedebris1</particleeffect>
     </emitter>
   </transformeffect>
-<!-- ===================================================================== -->
+  <!-- ===================================================================== -->
 	<transformeffect name = "shellcasing">
 		<emitter>
       <lifetime>1</lifetime>
@@ -1790,7 +1818,27 @@
 		<glow></glow>
     <material>fire</material>
   </particleeffect>
-<!-- ===================================================================== -->
+  <!-- ===================================================================== -->
+  <particleeffect name = "incendiary">
+    <number>4</number>
+    <texture>old10</texture>
+    <alpha>1.0</alpha>
+    <alpha>0.75</alpha>
+    <alpha>0.5</alpha>
+    <alpha>0.0</alpha>
+    <size>0.2</size>
+    <size>0.8</size>
+    <size>2.0</size>
+    <size>3.0</size>
+    <time>0</time>
+    <time>50</time>
+    <time>50</time>
+    <time>150</time>
+    <rotate>20</rotate>
+    <glow></glow>
+    <material>fire</material>
+  </particleeffect>
+  <!-- ===================================================================== -->
 	<particleeffect name = "incendiarymgparticle2">
 		<number>1</number>
 		<texture>white volume smoke 1</texture>
@@ -2990,6 +3038,34 @@
     <velvariance>-5.0 -5.0 -5.0 5.0 5.0 5.0</velvariance>
 	</particleeffect>
   <!-- ===================================================================== -->
+  <particleeffect name = "debrissmoketrailparticle">
+    <number>1</number>
+    <texture>osgsmoke</texture>
+    <color>0.2 0.2 0.2</color>
+    <color>0.3 0.3 0.3</color>
+    <color>0.4 0.4 0.4</color>
+    <color>0.5 0.5 0.5</color>
+    <alpha>0.15</alpha>
+    <alpha>0.15</alpha>
+    <alpha>0.15</alpha>
+    <alpha>0.0</alpha>
+    <size>0.1</size>
+    <size>0.2</size>
+    <size>0.3</size>
+    <size>0.3</size>
+    <time>50</time>
+    <time>500</time>
+    <time>1000</time>
+    <time>2000</time>
+    <rotate>45</rotate>
+    <material>smoke</material>
+    <!--
+    <separation>1.0</separation>
+    <legacystretch>1.0</legacystretch>
+    -->
+    <velvariance>-0.2 -0.2 -0.1 0.2 0.2 0.1</velvariance>
+  </particleeffect>
+  <!-- ===================================================================== -->
   <particleeffect name = "smoketrailparticle">
     <number>1</number>
     <texture>low res smoke1</texture>
@@ -3019,6 +3095,32 @@
     <velvariance>-5.0 -5.0 -5.0 5.0 5.0 5.0</velvariance>
   </particleeffect>
 <!-- ===================================================================== -->
+  <particleeffect name = "ballisticsmoketrailparticle">
+    <number>1</number>
+    <texture>osgsmoke</texture>
+    <alpha>0.15</alpha>
+    <alpha>0.125</alpha>
+    <alpha>0.1</alpha>
+    <alpha>0.0</alpha>
+    <color>0.5 0.5 0.5</color>
+    <color>0.4 0.4 0.4</color>
+    <color>0.3 0.3 0.3</color>
+    <color>0.2 0.2 0.2</color>
+    <size>1.5</size>
+    <size>1.0</size>
+    <size>0.5</size>
+    <size>0.1</size>
+    <time>50</time>
+    <time>500</time>
+    <time>1000</time>
+    <time>2000</time>
+    <rotate>45</rotate>
+    <material>smoke</material>
+    <stretch>1.0</stretch>
+    <posvariance>-0.3 -0.3 0.0 0.3 0.3 0.0</posvariance>
+    <velvariance>-0.1 -0.1 -0.1 0.1 0.1 0.1</velvariance>
+  </particleeffect>
+  <!-- ===================================================================== -->
 	<particleeffect name = "enginefireparticle">
 		<number>1</number>
     <texture>old11</texture>
@@ -3507,6 +3609,7 @@
 	</particleeffect>
   <!-- ===================================================================== -->
   <particleeffect name = "manysparks">
+    <number>32</number>
     <number>64</number>
     <texture>spark</texture>
     <alpha>1.0</alpha>
@@ -3518,17 +3621,19 @@
     <size>0.015</size>
     <size>0.015</size>
     <time>0</time>
-    <time>100</time>
-    <time>100</time>
-    <time>1500</time>
+    <time>300</time>
+    <time>300</time>
+    <time>200</time>
     <speed>32</speed>
     <glow></glow>
     <drag>8.0</drag>
     <material>fire</material>
     <gravity>3.0</gravity>
+    <delayeachparticle>1</delayeachparticle>
     <fixstretch>4.0</fixstretch>
     <randomdirection>180</randomdirection>
     <velvariance>-4.0 -4.0 0.1 4.0 4.0 1.0</velvariance>
+    <velreduction>0.95</velreduction>
     <material>fire</material>
   </particleeffect>
   <!-- ===================================================================== -->
@@ -3842,6 +3947,61 @@
     <velvariance>-9.0 -9.0 0.0 9.0 9.0 2.0</velvariance>
     <posvariance>-8.0 -8.0 0.0 8.0 8.0 0.0</posvariance>
     <material>smoke</material>
+  </particleeffect>
+  <!-- ===================================================================== -->
+  <particleeffect name = "ballisticdebrisimpact">
+    <transformeffect>debrissmoketrail</transformeffect>
+    <number>2</number>
+    <number>4</number>
+    <texture>stone chip1</texture>
+    <texture>stone chip2</texture>
+    <texture>stone chip3</texture>
+    <alpha>1</alpha>
+    <alpha>1</alpha>
+    <alpha>1</alpha>
+    <alpha>0</alpha>
+    <size>0.15</size>
+    <size>0.15</size>
+    <size>0.15</size>
+    <size>0.15</size>
+    <speed>16.0</speed>
+    <drag>1</drag>
+    <rotate>360</rotate>
+    <gravity>9.8</gravity>
+    <time>0</time>
+    <time>800</time>
+    <time>800</time>
+    <time>800</time>
+    <velreduction>0.9</velreduction>
+    <delayeachparticle>10</delayeachparticle>
+    <randomdirection>180</randomdirection>
+    <material>stone</material>
+  </particleeffect>
+  <!-- ===================================================================== -->
+  <particleeffect name = "ballisticsmokeimpact">
+    <number>3</number>
+    <texture>osgsmoke</texture>
+    <alpha>0.7</alpha>
+    <alpha>0.6</alpha>
+    <alpha>0.5</alpha>
+    <alpha>0.0</alpha>
+    <size>1</size>
+    <size>1.5</size>
+    <size>2</size>
+    <size>2</size>
+    <color>0.2 0.2 0.2</color>
+    <color>0.1 0.1 0.1</color>
+    <color>0.0 0.0 0.0</color>
+    <color>1 1 1</color>
+    <rotate>16</rotate>
+    <time>0</time>
+    <time>50</time>
+    <time>100</time>
+    <time>2000</time>
+    <speed>10</speed>
+    <drag>6</drag>
+    <randomdirection>180</randomdirection>
+    <posvariance>-0.1 -0.1 -0.1 0.1 0.1 0.1</posvariance>
   </particleeffect>
   <!-- ===================================================================== -->
   <particleeffect name = "bombsmoke">
