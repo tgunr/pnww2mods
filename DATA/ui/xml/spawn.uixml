@@ -4,12 +4,13 @@
 	onshow="setBackground(this)" onupdate="doFeedback()" aspectalign="center">
 	<include file="lib/common.uixml"/>
 	<text id="description-text" x="120" y="260" height="275" width="405" acceptfocus="no" style="color: #000000; font-size: +2;" onshow="this.text = getTip()"/>
-	<caption id="feedback-caption" x="20" y="10" width="900" height="50" style="color: #00000044; font-size: 20;" onshow="this.label = getlocstring('spawn.loading')"/>
+	<caption id="feedback-caption" x="20" y="10" width="900" height="50" style="color: #00000044; font-size: 20;" onshow="this.label = getlocstring('spawn.loading')" aspectalign="center"/>
 	<script>
 		<!--
 		
 		var descriptionText		= findview("description-text");
 		var feedbackCaption 	= findview("feedback-caption");
+		var debugInfo			= findview("debug-info");
 		var updateTimer			= new CycleTimer(1000);
 		
 		function setBackground(view)
@@ -19,17 +20,17 @@
 			if(aspectRatio >= 1.6)
 			{
 				view.setstyleproperty("background-image", "screens/spawnscreen69.bmp");
-				descriptionText.x = view.scalev("x", 120);
-				descriptionText.width = view.scalev("width", 405);
+				//descriptionText.x = view.scalev("x", 120);
+				//descriptionText.width = view.scalev("width", 405);
 			}
 			else
 			{
 				view.setstyleproperty("background-image", "screens/spawnscreen43.bmp");
-				descriptionText.x = view.scalev("x", 25);
-				descriptionText.width = view.scalev("width", 500);
+				//descriptionText.x = view.scalev("x", 25);
+				//descriptionText.width = view.scalev("width", 500);
 			}
 			
-			descriptionText.y = view.scalev("y", 250);
+			//descriptionText.y = view.scalev("y", 250);
 		}
 		
 		function doFeedback()
