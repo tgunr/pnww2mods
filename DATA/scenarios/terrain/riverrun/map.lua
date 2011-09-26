@@ -251,6 +251,42 @@ if(true) then
 		"place oildrums_outside 95.27 -27.98 8.3 0 6 0 0 0 0 1",
 		
 		"place cratepile_outside 170.50 -68.02 7.85 0 0 30 0 0 0 0",
+		
+		-- ROCK WALLS ALONG ROAD
+
+		"place instance_rockwall2 196.67 191.00 6.3 0 0 55 0 0 0 0",
+		"place instance_rockwall2 179.35 177.93 6.6 0 0 53 0 0 0 0",
+		"place instance_rockwall2 161.75 163.45 6.65 0 0 52 0 0 0 0",
+		"place instance_rockwall2 145.51 150.69 6.6 0 0 52 0 0 0 0",
+		"place instance_rockwall1 123.31 133.95 0 0 0 52 0 0 0 0",
+		"place instance_rockwall2 98.23 113.15 4.0 0 4 52 0 0 0 0",
+		"place instance_rockwall2 66.78 89.91 4.0 0 0 52 0 0 0 0",
+		"place instance_rockwall2 57.4 72.97 4.0 0 4 8 0 0 0 0",
+		"place instance_rockwall2 54.29 50.72 4.5 -3 4 8 0 0 0 0",
+		"place instance_rockwall2 51.55 27.61 5.25 0 4 8 0 0 0 0",
+		"place instance_rockwall2 48.52 8.72 4.6 3 -4 5 0 0 0 0",
+		"place instance_rockwall2 172.1 133.7 5.8 4 5 36.5 0 0 0",
+		--"place instance_rockwall2 57.4 72.97 4.0 0 4 8 0 0 0 0",
+		--"place instance_rockwall2 57.4 72.97 4.0 0 4 8 0 0 0 0",
+
+
+		
+		
+		
+		
+		
+		"place instance_rockwall2 226.66 159.00 3.2 4 0 10 0 0 0 0",
+		"place instance_rockwall2 222.58 131.44 2.9 -2 0 10 0 0 0 0",
+		"place instance_rockwall2 214.31 110.05 3.5 -2 0 40 0 0 0 0",
+		--"place instance_rockwall2 198.73 98.92 3.5 -5 0 70 0 0 0 0",
+		"place instance_rockwall2 189.94 90.5 2.6 0 0 55 0 0 0 0",
+		"place instance_rockwall2 170.40 78.83 2.0 0 0 70 0 0 0 0",
+		
+		
+		
+		
+		
+		
 
 	};
 	

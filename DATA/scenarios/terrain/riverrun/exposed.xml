@@ -36,9 +36,9 @@
   
   <grass name="grassmask.dds">
 
-    <greenweight>10</greenweight>
-    <blueweight>25</blueweight>
-    <redweight>1</redweight>
+    <redweight>5</redweight>
+	<greenweight>20</greenweight>
+    <blueweight>35</blueweight>
 	
     <redtypeint>13</redtypeint>
     <greentypeint>0 1 12</greentypeint>
@@ -62,15 +62,15 @@
 <!-- each channel in the mask can be specified R,G,B -->
 <!-- TYPESTRING value is the filename (no extension) of an .flt found in data/terrain directory -->
 <!-- CLAMP value 0-255, a value of 255 means grass will only draw where the mask color value is 100% white -->
-<!-- PARAMS value 0-360 (+/-), a random rotation of each clutter object -->
+<!-- PARAMS value 0-360 (+/-), a random X rotation of each clutter object -->
 
   <objectclutter name="cluttermask.dds">
 
-    <redweight>150</redweight>
+    <redweight>40</redweight>
     <greenweight>75</greenweight>
-    <blueweight>15</blueweight>
+    <blueweight>25</blueweight>
 
-    <redclamp>200</redclamp>
+    <redclamp>100</redclamp>
     <grnclamp>200</grnclamp>
     <bluclamp>200</bluclamp>
 
@@ -78,7 +78,27 @@
     <greentypestring>haystack_outside</greentypestring>
     <bluetypestring>tanktrap</bluetypestring>
 	
-    <redparams>45</redparams>
+    <redparams>65</redparams>
+    <greenparams>180</greenparams>
+    <blueparams>180</blueparams>
+  </objectclutter>
+  
+  
+    <objectclutter name="cluttermask2.dds">
+
+    <redweight>20</redweight>
+    <greenweight>75</greenweight>
+    <blueweight>25</blueweight>
+
+    <redclamp>150</redclamp>
+    <grnclamp>200</grnclamp>
+    <bluclamp>200</bluclamp>
+
+    <redtypestring>rocks01 rocks02</redtypestring>
+    <greentypestring>null</greentypestring>
+    <bluetypestring>null</bluetypestring>
+	
+    <redparams>180</redparams>
     <greenparams>180</greenparams>
     <blueparams>180</blueparams>
   </objectclutter>
@@ -109,6 +129,8 @@
     <grassmask>grassmask.dds</grassmask>
 <!-- CLUTTERMASK value is the file name of the .dds file found in scenario/terrain/scenarioname directory -->	
     <cluttermask>cluttermask.dds</cluttermask>
+	<cluttermask>cluttermask2.dds</cluttermask>
+	
 <!-- SPLATMASK is a .dds texture used by 2D grass to pickup color blend values -->
 <!-- SPLATMASK value is the file name of the .dds file found in scenario/terrain/scenarioname directory -->	
     <splatmask>splat1.dds</splatmask>	
