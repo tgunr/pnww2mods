@@ -62,16 +62,54 @@
 		 		this.root.close();
 		}
 
-		this.createMenu = function(label)
+		this.createMenu = function(label, iconL1, iconL2, iconR1, iconR2)
 		{
 		 	var desc = "";
-
-			desc += '<ctxmenu label="' + htmlencode(label) + '" x="0" y="0"';
-			desc += ' width="' + this.width + '" height="' + this.height + '"';
-			desc += ' hindent="' + this.hindent + '" vindent="' + this.vindent + '"';
-			desc += ' style="color: #FFFFFF; background-color: #000000; border-color: #FFFFFF;"';
-			desc += ' onmouseenter="this.setstyleproperty(\'color\',\'#FFFF00\')"'
-			desc += ' onmouseexit="this.setstyleproperty(\'color\',\'#FFFFFF\')"/>';
+			
+			if(iconL1 == null && iconL2 == null && iconR1 == null && iconR2 == null)		// No icons
+			{
+				desc += '<ctxmenu label="' + htmlencode(label) + '" x="0" y="0"';
+				desc += ' width="' + this.width + '" height="' + this.height + '"';
+				desc += ' hindent="' + this.hindent + '" vindent="' + this.vindent + '"';
+				desc += ' style="color: #FFFFFF; background-color: #000000; border-color: #FFFFFF;"';
+				desc += ' onmouseenter="this.setstyleproperty(\'color\',\'#FFFF00\')"'
+				desc += ' onmouseexit="this.setstyleproperty(\'color\',\'#FFFFFF\')"/>';
+			}
+			else if(iconL1 != null && iconL2 != null && iconR1 == null && iconR2 == null)	// 2 left icons
+			{
+				var info = '(' + iconL1 + ' ' + iconL2.toUpperCase() + ') ';
+				
+				desc += '<ctxmenu label="' + info + htmlencode(label) + '" x="0" y="0"';
+				desc += ' width="' + this.width + '" height="' + this.height + '"';
+				desc += ' hindent="' + this.hindent + '" vindent="' + this.vindent + '"';
+				desc += ' style="color: #FFFFFF; background-color: #000000; border-color: #FFFFFF;"';
+				desc += ' onmouseenter="this.setstyleproperty(\'color\',\'#FFFF00\')"'
+				desc += ' onmouseexit="this.setstyleproperty(\'color\',\'#FFFFFF\')"/>';
+				
+				/* BORKED
+				desc += '<ctxmenu x="0" y="0"';
+				desc += ' width="' + this.width + '" height="' + this.height + '"';
+				desc += ' hindent="' + this.hindent + '" vindent="' + this.vindent + '"';
+				desc += ' style="color: #FFFFFF; background-color: #000000; border-color: #FFFFFF;"';
+				desc += ' onmouseenter="this.setstyleproperty(\'color\',\'#FFFF00\')"'
+				desc += ' onmouseexit="this.setstyleproperty(\'color\',\'#FFFFFF\')"> \n';
+				
+					desc += iconL1 + ' \n';
+					desc += iconL2 + ' \n';
+					desc += '<label="' + htmlencode(label) + '" x="30" /> \n'
+				
+				desc += ' <ctxmenu />';
+				*/
+			}
+			else																			// Default to no icons
+			{
+				desc += '<ctxmenu label="' + htmlencode(label) + '" x="0" y="0"';
+				desc += ' width="' + this.width + '" height="' + this.height + '"';
+				desc += ' hindent="' + this.hindent + '" vindent="' + this.vindent + '"';
+				desc += ' style="color: #FFFFFF; background-color: #000000; border-color: #FFFFFF;"';
+				desc += ' onmouseenter="this.setstyleproperty(\'color\',\'#FFFF00\')"'
+				desc += ' onmouseexit="this.setstyleproperty(\'color\',\'#FFFFFF\')"/>';
+			}
 
 			return desc;
 		}
