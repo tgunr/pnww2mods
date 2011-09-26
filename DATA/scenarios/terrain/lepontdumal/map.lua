@@ -15,6 +15,30 @@ if(true) then
 
 	-- placed objects
 	-- command,filename,worldx,worldy,worldz,roll,pitch,yaw,scalex,scaley,scalez,damage
+	
+	
+		-- fuel depot facility	
+		
+		"place ftank1c 165 350.17 19.39 0 0 -90 0 0 0 0",
+		"place ftank1c 137 350 20.99 0 1.5 -90 0 0 0 0",
+		"place station1c 142.83 373.12 20.5 0 0 180 0 0 0 0",
+		"place munitions1 187.71 374.5 17.95 0 0 0 0 0 0 0",
+		"place crate 171.45 393.28 19.02 0 0 0 0 0 0 0",
+		"place crate 171.45 393.28 20.06 0 0 90 0 0 0 0",
+		"place guardtw1c 127.36 301.75 16.2 0 0 180 0 0 0 1",
+		"place dg_wire_barbed_apron	127.59 296.5 15.25 0 0 0 0 0 0",
+		"place dg_wire_barbed_apron	109.0 295.60 16.25 0 0 0 0 0 0",
+		"place dg_wire_barbed_apron	145.80 299 16.0 0 0 0 0 0 0",
+		"place sandbagwall_outside	129 297.89 15.4 0 0 -90 0 0 0",
+		"place sandbagwall_outside	132.5 297.89 15.4 0 0 -90 0 0 0",
+		"place sandbagwall_outside	125.3 297.89 15.4 0 0 -90 0 0 0",
+		"place sandbagwall_outside	115 297.89 15.8 0 5 -90 0 0 0",
+		"place ppo_ifp_001	152.79 307.51 17.1 10 0 180 0 0 0",
+		"place cratepile_outside 198 359.78 17.8 0 5 90 0 0 0",
+	
+	
+	
+	
 
 		
 		"place rubblepile01 176.59 -72.88 7.7 0 0 0 0 0 0 0",
