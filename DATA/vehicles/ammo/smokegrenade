@@ -11,7 +11,7 @@ object = ussmoke
 explosive = 409
 
 
-fuzetime = 0.000
+fuzetime = 5.000
 selfdestructtime = 5.0
 bc = 1.5
 lifetime = 7.0
@@ -28,5 +28,8 @@ explosionsoundnear = sounds\troop\grenade.wav
 explosionsoundfar = sounds\smlfarexp.wav
 nearfardistance = 150
 grenaderotaterate = 2
+
+grenadeorient = 45
+grenaderestitution = .25
 
 ghostroundsto = 1
