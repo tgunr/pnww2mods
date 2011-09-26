@@ -734,6 +734,32 @@
 		game.uicallback(confirm);
 	}
 	
+	function campaignPlay()
+	{
+		if(game.arena("play_mode") == "2")
+			return false;
+		
+		return true;
+	}
+	
+	function scenarioPlay()
+	{
+		if(game.arena("play_mode") == "1")
+			return false;
+		
+		return true;
+	}
+	
+	function allPlay()
+	{
+		var playMode = game.arena("play_mode");
+		
+		if(playMode == "1" || playMode == "2")
+			return false;
+		
+		return true;
+	}
+	
 	-->
 </script>
 

@@ -21,6 +21,8 @@
 		var scenarioRoot			= loadRoot();
 		var pinit						= false; // personas inited
 		var sinit						= false; // scenario list inited
+		var campaignPlay			= true;
+		var scenarioPlay 			= true;
 		
 		/*************** OVERRIDE COMMON FUNCTIONS **************/
 		
@@ -38,20 +40,44 @@
 		{
 			game.consoleclear();
 			
-			var campaignPlay 	= (game.arena("campaign_play") != "false") ? true : false;
-			var scenarioPlay 		= (game.arena("scenarios_play") != "false") ? true : false;
+			/*
+			if(game.arena("campaign_play") != "false")
+				campaignPlay = true;
+				
+			//campaignPlay = false;
+				
+			if(game.arena("scenarios_play") != "false")
+				scenarioPlay = true;
+				
+			//scenarioPlay = false;
+				
+			var caPane = findview("left-pane");
+			var raPane = findview("right-pane");
 			
 			if(!campaignPlay)
 			{
-				var btn = findview("campaign-button");
-				btn.enabled = false;
+				//var btn = findview("campaign-button");
+				//btn.enabled = false;
+				caPane.visible = false;
+				centerViewX(raPane);
 			}
 			
 			if(!scenarioPlay)
 			{
-				var btn = findview("scenarios-button");
-				btn.enabled = false;
+				//var btn = findview("scenarios-button");
+				//btn.enabled = false;
+				raPane.visible = false;
+				centerViewX(caPane);
 			}
+			
+			if(caPane.visible != raPane.visible)
+			{
+				//if(raPane.visible)
+				//	raPane.x = caPane.x;
+				
+				findview("tab-divider").visible = false;
+			}
+			*/
 			
 			if(game.ostype == "mac")
 			{

@@ -18,17 +18,17 @@
 
 		<!-- population status -->
 		<view rright="10" rtop="10" width="270" height="130" style="background-color: #ffffff00;" followtop="true">
-			<caption label="${persona.welcome.population}" x="0" rtop="5" rright="0" height="30" style="color: #BFE2CE; font-size: +1;"/>
+			<caption label="${online.campaign.population}" x="0" rtop="5" rright="0" height="30" style="color: #BFE2CE; font-size: +1;"/>
 			<image src="ui/textures/test/horiz_underline.bmp" x="0" rtop="20" rright="20" height="12"/>
-			<caption label="${persona.welcome.allied}" x="0" rtop="30" rright="0" height="30" style="color: #ffffff;"/>
+			<caption label="${online.campaign.allied}" x="0" rtop="30" rright="0" height="30" style="color: #ffffff;"/>
 			<caption id="welcome-allies" x="0" rtop="30" rright="20" height="30" style="color: #e9e3d9;" align="right"/>
-			<caption label="${persona.welcome.axis}" x="0" rtop="45" rright="0" height="30" style="color: #ffffff;"/>
+			<caption label="${online.campaign.axis}" x="0" rtop="45" rright="0" height="30" style="color: #ffffff;"/>
 			<caption id="welcome-axis" x="0" rtop="45" rright="20" height="30" style="color: #e9e3d9;" align="right"/>
 		</view>
 
 		<!-- message of the day -->
 		<view x="10" rtop="100" rright="10" height="150" style="background-color: #000000BB;" followtop="true"> <!--  border-color: #3e5248; border-size: 1; -->
-			<caption label="${persona.motd}" x="5" rtop="0" rright="5" height="30" style="color: #BFE2CE; font-size: +2;"/>
+			<caption label="${online.motd}" x="5" rtop="0" rright="5" height="30" style="color: #BFE2CE; font-size: +2;"/>
 			<image width="16" height="16" rright="5" rtop="5" src="ui/textures/test/edit_icon.bmp"
 				onshow="this.visible = (client.isplaynet) ? true: false" onclick="editCrsMotd()"
 				onmouseenter="this.src = 'ui/textures/test/edit_icon_on.bmp'"
@@ -40,8 +40,8 @@
 		</view>
 		
 		<!-- squad message of the day -->
-		<view rtop="270" rright="10" width="300" height="200" style="background-color: #000000BB;" followtop="true"> <!--  border-color: #3e5248; border-size: 1; -->
-			<caption label="${persona.welcome.squad.motd}" x="5" rtop="0" rright="5" height="30" style="color: #BFE2CE; font-size: +2;"/>
+		<view x="10" rtop="270" rright="10" height="200" style="background-color: #000000BB;" followtop="true"> <!--  border-color: #3e5248; border-size: 1; -->
+			<caption label="${online.campaign.squad.motd}" x="5" rtop="0" rright="5" height="30" style="color: #BFE2CE; font-size: +2;"/>
 			<caption id="persona-squad-counts" height="15" width="100" rright="5" rtop="10" style="color: #BFE2CE;" align="right" label="1 online / 100 total"/>
 			<image src="ui/textures/test/horiz_underline.bmp" x="5" rtop="20" rright="5" height="12"/>
 			<text id="persona-squad-motd" x="10" y="10" rtop="40" rright="10" acceptsfocus="false" style="border-size-right: 10;  color: #e9e3d9;">
@@ -50,14 +50,16 @@
 		</view>
 
 		<!-- poll of the day -->
+		<!--
 		<view id="potd" x="10" rtop="270" width="300" height="200" style="background-color: #000000BB;" followbottom="true">
-			<caption id="header" label="${persona.potd}" x="5" rtop="0" rright="5" height="30" style="color: #BFE2CE; font-size: +2;"/>
+			<caption id="header" label="${online.potd}" x="5" rtop="0" rright="5" height="30" style="color: #BFE2CE; font-size: +2;"/>
 			<image src="ui/textures/test/horiz_underline.bmp" x="5" rtop="20" rright="5" height="12"/>
 			<text id="potd-question" x="10" height="15" rtop="35" rright="10" acceptsfocus="false" style="color: #e9e3d9;"/>
 			<list id="pollList" x="10" y="10" rtop="55" rright="10" onselect="pollList.clickList(false)" followbottom="true">
 				<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
 			</list>
 		</view>
+		-->
 
 		<!-- caption id="poll_results" label="${persona.welcome.pollresults}"
 			x="5" y="45" height="20" rright="5"  style="color: #FFFFFF;"
@@ -76,29 +78,29 @@
 		var welcome		= findview("welcome-popup");
 		var header 		= findview("welcome-header");
 		var client 		= game.player.client;
-		var poll 		= client.poll;
-		var pollList	= new ListControl(findview("pollList")); 
+		//var poll 		= client.poll;
+		//var pollList	= new ListControl(findview("pollList")); 
 		
 		function initWelcome()
 		{
 			var crsmotd		= client.requestmotd(0);
 			var allies 		= findview("welcome-allies");
 			var axis 		= findview("welcome-axis");
-			var potd		= findview("potd");
-			var question 	= potd.findview("potd-question");
+			//var potd		= findview("potd");
+			//var question 	= potd.findview("potd-question");
 			var balance		= client.sidebalance;
 			var squad		= client.squad;
 			
 			if(game.globals.voted == null)
 				game.globals.voted = false;
 			
-			if(game.globals.voted)
-				poll = null;
+			//if(game.globals.voted)
+			//	poll = null;
 
 			if(crsmotd != null)
 				motd.text = crsmotd.message;
 				
-			header.label = getlocstring("persona.welcome");
+			header.label = getlocstring("online.campaign");
 				
 			if(balance < 0)
 			{
@@ -125,6 +127,7 @@
 				axis.label 		= getlocstring('persona.list.balanced');
 			}
 			
+			/*
 			if(poll != null && !poll.empty)
 			{
 				question.text = poll.title;
@@ -176,6 +179,7 @@
 
 				pollList.list.visible = false;
 			}
+			*/
 			
 			if(squad != null)
 			{
@@ -226,13 +230,14 @@
 		
 		function getWelcomeMessage()
 		{
-			return getlocstring("persona.welcome" + Math.round(Math.random() * 2));
+			return getlocstring("online.campaign" + Math.round(Math.random() * 2));
 		}
 		
 		function closeWelcome()
 		{
 		 	soundPlayClick();
 
+		 	/*
 			var vote = pollList.data;
 
 			if(poll != null && !poll.empty)
@@ -247,6 +252,7 @@
 					poll.vote(vote);
 				}
 			}
+			*/
 
 			var personaWin = game.findview("persona");
 

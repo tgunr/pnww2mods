@@ -154,6 +154,8 @@
 		var statusTimer			= new CycleTimer(1000);
 		var rankLock				= findview("rank-lock");
 		
+		var welcomed				= false;
+		var doWelcome			= !scenarioPlay();
 		var requireTraining 		= false;
 		var graduated				= TutIsComplete("basic");
 		var shortcut					= false;
@@ -188,7 +190,8 @@
 		
 		function doBack()
 		{
-			loadWin("online", true);
+			if(scenarioPlay())
+				loadWin("online", true);
 		}
 		
 		function doSquadCheck()
@@ -292,13 +295,24 @@
 			
 			setBack('online.back');
 			
+			if(!scenarioPlay())
+				backButton.visible = false;
+			
 			client.onpersonas = initPersonaList;
 			client.requestpersonalist();
 
 			updateInfoBar();
-
-			setWelcomed();
-
+			
+			if(doWelcome) //doWelcome && !game.globals.welcomed)
+			{
+				load("welcome");
+				game.globals.welcomed = true;
+			}
+			else
+			{
+				setWelcomed();
+			}
+			
 			for(var c = 0; c < 4; c++)
 			{
 				var country = findview("country" + c);
@@ -652,7 +666,7 @@
 		
 		function updateList()
 		{
-			if(requestpersonas && listTimer.run())
+			if(requestpersonas && welcomed && listTimer.run())
 				client.requestpersonalist();
 		}
 
@@ -771,6 +785,8 @@
 		
 		function setWelcomed()
 		{
+			welcomed = true;
+			
 			if(shortcut && !game.globals.shortcut)
 			{
 				game.globals.shortcut = true;

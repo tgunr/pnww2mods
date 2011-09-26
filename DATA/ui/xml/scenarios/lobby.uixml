@@ -86,7 +86,8 @@
 		
 		function doBack()
 		{
-			loadWin("online", true);
+			if(campaignPlay())
+				loadWin("online", true);
 		}
 		
 		function initLobby(win)
@@ -107,6 +108,9 @@
 			setForward('scenarios.forward');
 			setForwardEnabled(false);
 			forwardButton.visible = false;
+			
+			if(!campaignPlay())
+				backButton.visible = false;
 			
 			initHeaders(findview("instance-block"));
 			
