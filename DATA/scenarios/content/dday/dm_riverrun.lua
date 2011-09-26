@@ -4,6 +4,21 @@ if(true) then
 	-- content we're going to add
 	local content = 
 	{
+		
+		
+		-- we're using minefields, so include that functionality
+		"include scenarios/content/minefields.lua",
+		
+		
+		-- landmines 
+		"ammo axisminefield1 landmine",
+		"ammo pathfield1 landmine",
+		"ammo pathfield2 landmine",
+		"ammo pathfield3 landmine",
+		"ammo pathfield4 landmine",
+		"ammo pathfield5 landmine",
+		
+		
 		-- include lua file
 		-- command,path
 		"include scenarios/terrain/riverrun/map.lua",
@@ -177,6 +192,319 @@ if(true) then
 		"area intel OnState 64.50 -89.14 26.40",
 		"area intel OnState 62.15 -95.43 26.40",
 		
+		-- landmine area warnings
+		
+		-- minefield 1
+		"area minefield1 OnTrigger 139.41 22.73 7.80",
+		"area minefield1 OnTrigger 162.95 61.29 7.25",
+		"area minefield1 OnTrigger 270.75 30.65 6.26",
+		"area minefield1 OnTrigger 283.02 63.14 5.13",
+		"area minefield1 OnTrigger 281.27 81.97 5.10",
+		"area minefield1 OnTrigger 281.02 102.23 4.20",
+		"area minefield1 OnTrigger 285.92 114.10 4.08",
+		"area minefield1 OnTrigger 286.95 126.08 3.73",
+		"area minefield1 OnTrigger 283.79 134.26 3.28",
+		"area minefield1 OnTrigger 293.59 138.33 2.16",
+		"area minefield1 OnTrigger 299.29 129.05 2.31",
+		"area minefield1 OnTrigger 299.00 115.22 2.69",
+		"area minefield1 OnTrigger 294.50 101.10 3.28",
+		"area minefield1 OnTrigger 292.36 92.33 3.68",
+		"area minefield1 OnTrigger 296.27 82.41 3.85",
+		"area minefield1 OnTrigger 297.31 68.90 3.37",
+		"area minefield1 OnTrigger 291.98 47.08 3.59",
+		"area minefield1 OnTrigger 286.60 33.80 4.57",
+		"area minefield1 OnTrigger 283.96 21.41 4.72",
+		"area minefield1 OnTrigger 277.86 11.41 5.06",
+		"area minefield1 OnTrigger 269.77 2.45 5.23",
+		"area minefield1 OnTrigger 255.90 -8.29 6.41",
+		"area minefield1 OnTrigger 246.33 -11.21 6.69",
+		"area minefield1 OnTrigger 240.39 -11.44 6.91",
+		"area minefield1 OnTrigger 227.58 -8.53 10.50",
+		"area minefield1 OnTrigger 205.31 -2.51 10.48",
+		"area minefield1 OnTrigger 160.84 10.06 7.90",
+		"area minefield1 OnTrigger 142.39 16.93 8.04",
+		"area minefield1 OnTrigger 139.94 19.71 8.04",
+		
+		-- minefield 2
+		
+		"area minefield2 OnTrigger 134 50 6",
+		"area minefield2 OnTrigger 80.32 73.44 6",		
+		"area minefield2 OnTrigger 67.66 66.27 6",	
+		"area minefield2 OnTrigger 59.56 19.08 6",
+		"area minefield2 OnTrigger 70.01 7.38 6",	
+		"area minefield2 OnTrigger 69.91 -0.19 6",
+		"area minefield2 OnTrigger 102.39 14.90 6",
+		"area minefield2 OnTrigger 123 28 6",
+		
+		-- minefield 3
+		
+		"area minefield3 OnTrigger 61.23 67.62 6",
+		"area minefield3 OnTrigger 53.58 26.84 6",
+		"area minefield3 OnTrigger 59.54 14.37 6",
+		"area minefield3 OnTrigger 66.02 7.65 6",
+		"area minefield3 OnTrigger 68.22 -4.71 6",
+		"area minefield3 OnTrigger 54.44 -6.78 6",
+		"area minefield3 OnTrigger 58.96 7.49 6",
+		"area minefield3 OnTrigger 50.48 24.47 6", 
+		"area minefield3 OnTrigger 57.82 66.03 6",
+		
+		-- minefield 4
+		
+			"area minefield4 OnTrigger -33.64 -0.46 10",
+			"area minefield4 OnTrigger -20.99 0.41 10",
+			"area minefield4 OnTrigger -0.01 5.67 10",
+			"area minefield4 OnTrigger 5.05 3.29 10",
+			"area minefield4 OnTrigger 7.13 -4.01 10",
+			"area minefield4 OnTrigger 3.86 -8.68 10",
+			"area minefield4 OnTrigger -10.23 -12.71 10",
+			"area minefield4 OnTrigger -24.82 -13.98 10",
+			"area minefield4 OnTrigger -41.13 -16.33 10",
+			"area minefield4 OnTrigger -52.22 -21.66 10",
+			"area minefield4 OnTrigger -61.58 -31.57 10",
+			"area minefield4 OnTrigger -68.55 -46.05 10",
+			"area minefield4 OnTrigger -76.09 -58.64 10",
+			"area minefield4 OnTrigger -81.75 -70.49 10",
+			"area minefield4 OnTrigger -103.77 -79.55 10",
+			"area minefield4 OnTrigger -113.47 -95.87 10",
+			"area minefield4 OnTrigger -120.96 -96.61 10",
+			"area minefield4 OnTrigger -126.43 -91.57 10",
+			"area minefield4 OnTrigger -124.16 -84.43 10",
+			"area minefield4 OnTrigger -115.05 -69.13 10",
+			"area minefield4 OnTrigger -106.27 -64.58 10",
+			"area minefield4 OnTrigger -97.57 -63.59 10",
+			"area minefield4 OnTrigger -91.33 -59.24 10",
+			"area minefield4 OnTrigger -89.37 -51.44 10",
+			"area minefield4 OnTrigger -82.79 -44.64 10",
+			"area minefield4 OnTrigger -79.07 -36.70 10",
+			"area minefield4 OnTrigger -75.98 -29.15 10",
+			"area minefield4 OnTrigger -70.81 -19.22 10",
+			"area minefield4 OnTrigger -63.35 -11.99 10",
+			"area minefield4 OnTrigger -54.13 -6.67 10",
+			"area minefield4 OnTrigger -41.01 -2.00 10",
+			"area minefield4 OnTrigger -41.01 -2.00 10",
+			"area minefield4 OnTrigger -34.83 -0.76 10",
+
+		
+		-- minefield 5
+		"area minefield5 OnTrigger -206.53 -126.46 10",
+		"area minefield5 OnTrigger -199.55 -127.06 10",
+		"area minefield5 OnTrigger -194.12 -130.72 10",
+		"area minefield5 OnTrigger -177.20 -137.2010",
+		"area minefield5 OnTrigger -168.11 -138.70 10",
+		"area minefield5 OnTrigger -159.39 -143.54 10",
+		"area minefield5 OnTrigger -142.13 -151.58 10",
+		"area minefield5 OnTrigger -112.74 -165.46 10",
+		"area minefield5 OnTrigger -87.79 -173.87 10",
+		"area minefield5 OnTrigger -74.19 -179.80 10",
+		"area minefield5 OnTrigger -62.09 -184.21 10",
+		"area minefield5 OnTrigger -53.30 -187.93 10",
+		"area minefield5 OnTrigger -45.67 -190.12 10",
+		"area minefield5 OnTrigger -41.69 -195.88 10",
+		"area minefield5 OnTrigger -53.54 -195.78 10",
+		"area minefield5 OnTrigger -49.88 -202.75 10",
+		"area minefield5 OnTrigger -56.17 -201.09 10",
+		"area minefield5 OnTrigger -72.33 -194.40 10",
+		"area minefield5 OnTrigger -119.21 -175.84 10",
+		"area minefield5 OnTrigger -158.78 -158.54 10",
+		"area minefield5 OnTrigger -173.52 -151.78 10",
+		"area minefield5 OnTrigger -189.62 -146.51 10",
+		"area minefield5 OnTrigger -201.03 -142.31 10",
+		"area minefield5 OnTrigger -207.89 -138.49 10",
+		"area minefield5 OnTrigger -210.82 -133.80 10",
+		"area minefield5 OnTrigger -209.40 -129.28 10",
+		
+		-- minefield 6
+		"area minefield6 OnTrigger 252.52 192.95 10",
+		"area minefield6 OnTrigger 257.72 192.03 10",
+		"area minefield6 OnTrigger 268.12 196.69 10",
+		"area minefield6 OnTrigger 276.07 202.74 10",
+		"area minefield6 OnTrigger 281.15 207.34 10",
+		"area minefield6 OnTrigger 288.07 212.34 10",
+		"area minefield6 OnTrigger 292.83 217.43 10",
+		"area minefield6 OnTrigger 298.51 223.83 10",
+		"area minefield6 OnTrigger 302.78 230.83 10",
+		"area minefield6 OnTrigger 303.50 237.08 10",
+		"area minefield6 OnTrigger 300.02 240.97 10",
+		"area minefield6 OnTrigger 295.18 241.39 10",
+		"area minefield6 OnTrigger 291.78 239.63 10",
+		"area minefield6 OnTrigger 289.30 235.83 10",
+		"area minefield6 OnTrigger 286.23 230.67 10",
+		"area minefield6 OnTrigger 282.26 227.17 10",
+		"area minefield6 OnTrigger 278.38 223.60 10",
+		"area minefield6 OnTrigger 276.07 220.51 10",
+		"area minefield6 OnTrigger 268.89 215.94 10",
+		"area minefield6 OnTrigger 261.70 209.39 10",
+		"area minefield6 OnTrigger 255.76 207.24 10",
+		"area minefield6 OnTrigger 251.03 205.06 10",
+		"area minefield6 OnTrigger 248.58 201.13 10",
+		"area minefield6 OnTrigger 249.47 197.03 10",
+		
+		
+		
+		
+		
+ --	LANDMINE AREAS
+
+	-- minefield east of north bridge AKA minefield1
+
+		"area axisminefield1 OnMineArea 139.41 22.73 7.80",
+		"area axisminefield1 OnMineArea 162.95 61.29 7.25",
+		"area axisminefield1 OnMineArea 270.75 30.65 6.26",
+		"area axisminefield1 OnMineArea 283.02 63.14 5.13",
+		"area axisminefield1 OnMineArea 281.27 81.97 5.10",
+		"area axisminefield1 OnMineArea 281.02 102.23 4.20",
+		"area axisminefield1 OnMineArea 285.92 114.10 4.08",
+		"area axisminefield1 OnMineArea 286.95 126.08 3.73",
+		"area axisminefield1 OnMineArea 283.79 134.26 3.28",
+		"area axisminefield1 OnMineArea 293.59 138.33 2.16",
+		"area axisminefield1 OnMineArea 299.29 129.05 2.31",
+		"area axisminefield1 OnMineArea 299.00 115.22 2.69",
+		"area axisminefield1 OnMineArea 294.50 101.10 3.28",
+		"area axisminefield1 OnMineArea 292.36 92.33 3.68",
+		"area axisminefield1 OnMineArea 296.27 82.41 3.85",
+		"area axisminefield1 OnMineArea 297.31 68.90 3.37",
+		"area axisminefield1 OnMineArea 291.98 47.08 3.59",
+		"area axisminefield1 OnMineArea 286.60 33.80 4.57",
+		"area axisminefield1 OnMineArea 283.96 21.41 4.72",
+		"area axisminefield1 OnMineArea 277.86 11.41 5.06",
+		"area axisminefield1 OnMineArea 269.77 2.45 5.23",
+		"area axisminefield1 OnMineArea 255.90 -8.29 6.41",
+		"area axisminefield1 OnMineArea 246.33 -11.21 6.69",
+		"area axisminefield1 OnMineArea 240.39 -11.44 6.91",
+		"area axisminefield1 OnMineArea 227.58 -8.53 10.50",
+		"area axisminefield1 OnMineArea 205.31 -2.51 10.48",
+		"area axisminefield1 OnMineArea 160.84 10.06 7.90",
+		"area axisminefield1 OnMineArea 142.39 16.93 8.04",
+		"area axisminefield1 OnMineArea 139.94 19.71 8.04",
+
+
+	-- minefield east side of path AKA minefield 2
+
+		-- "area pathfield1 OnMineArea 103.89 63.99 6",
+		"area pathfield1 OnMineArea 134 50 6",
+		"area pathfield1 OnMineArea 80.32 73.44 6",		
+		"area pathfield1 OnMineArea 67.66 66.27 6",	
+		"area pathfield1 OnMineArea 59.56 19.08 6",
+		"area pathfield1 OnMineArea 70.01 7.38 6",	
+		"area pathfield1 OnMineArea 69.91 -0.19 6",
+		"area pathfield1 OnMineArea 102.39 14.90 6",
+		"area pathfield1 OnMineArea 123 28 6",
+		
+		
+	-- minefield west side of path AKA minefield 3
+
+		"area pathfield2 OnMineArea 61.23 67.62 6",
+		"area pathfield2 OnMineArea 53.58 26.84 6",
+		"area pathfield2 OnMineArea 59.54 14.37 6",
+		"area pathfield2 OnMineArea 66.02 7.65 6",
+		"area pathfield2 OnMineArea 68.22 -4.71 6",
+		"area pathfield2 OnMineArea 54.44 -6.78 6",
+		"area pathfield2 OnMineArea 58.96 7.49 6",
+		"area pathfield2 OnMineArea 50.48 24.47 6", 
+		"area pathfield2 OnMineArea 57.82 66.03 6",
+
+		
+	-- minefield northwest AKA minefield 4
+	
+	"area pathfield3 OnMineArea -33.64 -0.46 10",
+	"area pathfield3 OnMineArea -20.99 0.41 10",
+	"area pathfield3 OnMineArea -0.01 5.67 10",
+	"area pathfield3 OnMineArea 5.05 3.29 10",
+	"area pathfield3 OnMineArea 7.13 -4.01 10",
+	"area pathfield3 OnMineArea 3.86 -8.68 10",
+	"area pathfield3 OnMineArea -10.23 -12.71 10",
+	"area pathfield3 OnMineArea -24.82 -13.98 10",
+	"area pathfield3 OnMineArea -41.13 -16.33 10",
+	"area pathfield3 OnMineArea -52.22 -21.66 10",
+	"area pathfield3 OnMineArea -61.58 -31.57 10",
+	"area pathfield3 OnMineArea -68.55 -46.05 10",
+	"area pathfield3 OnMineArea -76.09 -58.64 10",
+	"area pathfield3 OnMineArea -81.75 -70.49 10",
+	"area pathfield3 OnMineArea -103.77 -79.55 10",
+	"area pathfield3 OnMineArea -113.47 -95.87 10",
+	"area pathfield3 OnMineArea -120.96 -96.61 10",
+	"area pathfield3 OnMineArea -126.43 -91.57 10",
+	"area pathfield3 OnMineArea -124.16 -84.43 10",
+	"area pathfield3 OnMineArea -115.05 -69.13 10",
+	"area pathfield3 OnMineArea -106.27 -64.58 10",
+	"area pathfield3 OnMineArea -97.57 -63.59 10",
+	"area pathfield3 OnMineArea -91.33 -59.24 10",
+	"area pathfield3 OnMineArea -89.37 -51.44 10",
+	"area pathfield3 OnMineArea -82.79 -44.64 10",
+	"area pathfield3 OnMineArea -79.07 -36.70 10",
+	"area pathfield3 OnMineArea -75.98 -29.15 10",
+	"area pathfield3 OnMineArea -70.81 -19.22 10",
+	"area pathfield3 OnMineArea -63.35 -11.99 10",
+	"area pathfield3 OnMineArea -54.13 -6.67 10",
+	"area pathfield3 OnMineArea -41.01 -2.00 10",
+	"area pathfield3 OnMineArea -41.01 -2.00 10",
+	"area pathfield3 OnMineArea -34.83 -0.76 10",
+
+
+	-- minefield south AKA minefield 5
+	"area pathfield4 OnMineArea -206.53 -126.46 10",
+	"area pathfield4 OnMineArea -199.55 -127.06 10",
+	"area pathfield4 OnMineArea -194.12 -130.72 10",
+	"area pathfield4 OnMineArea -177.20 -137.2010",
+	"area pathfield4 OnMineArea -168.11 -138.70 10",
+	"area pathfield4 OnMineArea -159.39 -143.54 10",
+	"area pathfield4 OnMineArea -142.13 -151.58 10",
+	"area pathfield4 OnMineArea -112.74 -165.46 10",
+	"area pathfield4 OnMineArea -87.79 -173.87 10",
+	"area pathfield4 OnMineArea -74.19 -179.80 10",
+	"area pathfield4 OnMineArea -62.09 -184.21 10",
+	"area pathfield4 OnMineArea -53.30 -187.93 10",
+	"area pathfield4 OnMineArea -45.67 -190.12 10",
+	"area pathfield4 OnMineArea -41.69 -195.88 10",
+	"area pathfield4 OnMineArea -53.54 -195.78 10",
+	"area pathfield4 OnMineArea -49.88 -202.75 10",
+	"area pathfield4 OnMineArea -56.17 -201.09 10",
+	"area pathfield4 OnMineArea -72.33 -194.40 10",
+	"area pathfield4 OnMineArea -119.21 -175.84 10",
+	"area pathfield4 OnMineArea -158.78 -158.54 10",
+	"area pathfield4 OnMineArea -173.52 -151.78 10",
+	"area pathfield4 OnMineArea -189.62 -146.51 10",
+	"area pathfield4 OnMineArea -201.03 -142.31 10",
+	"area pathfield4 OnMineArea -207.89 -138.49 10",
+	"area pathfield4 OnMineArea -210.82 -133.80 10",
+	"area pathfield4 OnMineArea -209.40 -129.28 10",
+	
+	-- minefield north along river AKA minefield 6
+	"area pathfield5 OnMineArea 252.52 192.95 10",
+	"area pathfield5 OnMineArea 257.72 192.03 10",
+	"area pathfield5 OnMineArea 268.12 196.69 10",
+	"area pathfield5 OnMineArea 276.07 202.74 10",
+	"area pathfield5 OnMineArea 281.15 207.34 10",
+	"area pathfield5 OnMineArea 288.07 212.34 10",
+	"area pathfield5 OnMineArea 292.83 217.43 10",
+	"area pathfield5 OnMineArea 298.51 223.83 10",
+	"area pathfield5 OnMineArea 302.78 230.83 10",
+	"area pathfield5 OnMineArea 303.50 237.08 10",
+	"area pathfield5 OnMineArea 300.02 240.97 10",
+	"area pathfield5 OnMineArea 295.18 241.39 10",
+	"area pathfield5 OnMineArea 291.78 239.63 10",
+	"area pathfield5 OnMineArea 289.30 235.83 10",
+	"area pathfield5 OnMineArea 286.23 230.67 10",
+	"area pathfield5 OnMineArea 282.26 227.17 10",
+	"area pathfield5 OnMineArea 278.38 223.60 10",
+	"area pathfield5 OnMineArea 276.07 220.51 10",
+	"area pathfield5 OnMineArea 268.89 215.94 10",
+	"area pathfield5 OnMineArea 261.70 209.39 10",
+	"area pathfield5 OnMineArea 255.76 207.24 10",
+	"area pathfield5 OnMineArea 251.03 205.06 10",
+	"area pathfield5 OnMineArea 248.58 201.13 10",
+	"area pathfield5 OnMineArea 249.47 197.03 10",
+
+	
+	
+	
+
+		
+		
+		
+		
+		
+		
 -- SPAWNS		
 		
 		-- spawn points
@@ -238,6 +566,12 @@ if(true) then
 		"alert victory1 victory1",
 		"alert victory2 victory2",
 		"alert playarea playarea 10",
+		"alert minefield1 minefieldalert 5",
+		"alert minefield2 minefieldalert 5",
+		"alert minefield3 minefieldalert 5",
+		"alert minefield4 minefieldalert 5",
+		"alert minefield5 minefieldalert 5",
+		"alert minefield6 minefieldalert 5",
 		
 		"message intelenemyon intelenemyon #00FF00 0",
 		"message intelenemyoff intelenemyoff #FF0000 0",

@@ -390,7 +390,9 @@ if(true) then
 	
 	-- stage 1 allied spawns
 		"spawn.1.1.1 alliedtroops -13.71 179.28 3.39 225",
-		"spawn.1.1.1 alliedvehicles -13.71 179.28 3.39 225",
+		--"spawn.1.1.1 alliedvehicles -179.96 14.95 21.19 190",
+		"spawn.1.1.1 alliedvehicles -212.03 -17.62 24.43 180",
+		
 
 		
 	-- stage 1 axis spawns
