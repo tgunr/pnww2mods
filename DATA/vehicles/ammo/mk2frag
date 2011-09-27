@@ -1,5 +1,6 @@
 # USA Mk.II fragmentation grenade
 # created 27-04-11 - Doc.
+# Making shrapnel and nhe pieces values same as Mill 36 Mk I (British grenade) per discussion with Gophur.
 
 type = grenade
 diameter = .077
@@ -7,7 +8,7 @@ weight = 0.635
 ammoweight = 0.635
 velocity = 25
 tracertime = 0.0
-object = usfrag
+object = mills36mk1
 explosive = 281300
 # .061 kg TNT
 
@@ -21,8 +22,11 @@ penetrationconstant = 0.0000000001
 
 dontdisplayfirstframe = 1
 
-numshrapnelpieces = 50
-totalshrapnelmass = .42
+# Making shrapnel same as Mill 36 Mk I (British grenade) per discussion with Gophur.
+# numshrapnelpieces = 50
+numshrapnelpieces = 75
+# totalshrapnelmass = .42
+totalshrapnelmass = .7
 
 explosionsoundnear = sounds\troop\grenade.wav
 explosionsoundfar = sounds\smlfarexp.wav
@@ -53,8 +57,8 @@ nhe_weight = 0.005
 nhe_min_pen_const = 0.0000001
 nhe_ric_angle = 79.9999
 nhe_energy_mult = 1
-nhe_min_pieces = 300
-nhe_max_pieces = 300
+nhe_min_pieces = 600
+nhe_max_pieces = 600
 nhe_max_per_veh = 75
 nhe_add_speed = 100.0
 nhe_timeout = 0.15
