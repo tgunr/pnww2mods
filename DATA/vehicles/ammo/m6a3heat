@@ -8,7 +8,9 @@ ammoweight = 1.86
 velocity = 99
 tracertime = 7.0
 object = fr_lmortar_he
-explosive = 1154295
+# explosive = 1154295
+# divided by number of jets (13) = 88792
+explosive = 88792
 # .1135 kg pentolite (50% PETN + 50% TNT)
 
 fuzetime = 0.000

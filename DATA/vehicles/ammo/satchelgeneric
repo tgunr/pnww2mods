@@ -7,7 +7,9 @@ weight = 5
 velocity = 0
 tracertime = 0.0
 object = satchelcharge
-explosive = 22500000
+# explosive = 22500000
+# divided by number of jets (13) = 1730769
+explosive = 1730769
 # 5.0 kg (TNT)
 
 fuzetime = 10.000

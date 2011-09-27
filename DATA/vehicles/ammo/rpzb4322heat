@@ -9,7 +9,9 @@ ammoweight = 2.6
 velocity = 131
 tracertime = 11.0
 object = fr_lmortar_he
-explosive = 6665590
+# explosive = 6665590
+# divided by number of jets (13) = 512738
+explosive = 512738
 # .650 kg RDX/TNT
 
 fuzetime = 0.000
