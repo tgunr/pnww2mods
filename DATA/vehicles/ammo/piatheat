@@ -1,0 +1,65 @@
+# PIAT HEAT round
+# created Sept/27/11 - Doc.
+
+type = rocket
+diameter = .05
+weight = 1.4
+ammoweight = 1.4
+velocity = 86
+tracertime = 11.0
+object = fr_lmortar_he
+explosive = 6665590
+# .650 kg RDX/TNT
+
+fuzetime = 0.000
+#selfdestructtime = 11.0
+bc = 6.66
+lifetime = 11.0
+ricochetangle = 50
+modelspall = 1
+penetrationconstant = 0.0000000011
+
+
+# 110mm of armor penetrated at 0, because no scaling exists value used is 30 degrees off perpendicular
+shapedchargepenmm = 90
+
+dontdisplayfirstframe = 1
+
+numshrapnelpieces = 1
+# totalshrapnelmass = .0001
+totalshrapnelmass = 1.0
+
+explosionsoundnear = sounds\troop\grenade.wav
+explosionsoundfar = sounds\smlfarexp.wav
+nearfardistance = 150
+hiteffect=bazookablast
+
+#grenaderotaterate = 2
+
+# new HE model variables
+#
+#  use_new_he .. set to 1 to enable (and set defaults for) the new HE model
+#  nhe_diameter ..  sets the diameter of the shrapnel bits
+#  nhe_weight .. sets the minimum weight for the shrapnel bits 
+#  nhe_min_pen_const .. the PC of the shrapnel bit will never be less than this (formula is very complex though)
+#  nhe_ric_angle .. sets the ricochet angle of the shrapnel bits
+#  nhe_energy_mult .. how much of the explosive energy is transferred to the shrapnel
+#  nhe_min_pieces .. see nhe_max_pieces
+#  nhe_max_pieces .. total number of shrapnel is linearly interpolated between min and max pieces
+#  nhe_max_per_veh .. caps the number of shrapnel bits fired at each vehicle (performance tuning)
+#      note that "removed" shrapnel is accumulated, so if 300 could hit, and you had this at 100, the average mass would be multiplied by 3
+#  nhe_add_speed .. kicker speed for the shrapnel bits .. formula is (kicker + (rand(0,1) * energy speed))
+#  nhe_timeout .. how long to project the shrapnel bits in the world (seconds)
+
+use_new_he = 0
+nhe_diameter = 0.008
+nhe_weight = 0.005
+nhe_min_pen_const = 0.0000001
+nhe_ric_angle = 60
+nhe_energy_mult = 1
+nhe_min_pieces = 522
+nhe_max_pieces = 522
+nhe_max_per_veh = 100
+nhe_add_speed = 100.0
+nhe_timeout = 0.15
+nhe_max_mass_mult = 1
