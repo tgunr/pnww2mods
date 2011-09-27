@@ -1,7 +1,7 @@
 # Mills No.36 British RIFLE Grenade
 # Created 19th July - Doc.
 
-type = grenade
+type = mortar
 diameter = .078
 weight = .773
 ammoweight = .773
@@ -15,7 +15,7 @@ explosive = 294210
 
 fuzetime = 4.5
 selfdestructtime = 5.0
-bc = 1.5
+bc = 0.08
 lifetime = 7.0
 ricochetangle = 89
 # modelspall = 1
@@ -29,7 +29,7 @@ totalshrapnelmass = .7
 explosionsoundnear = sounds\troop\grenade.wav
 explosionsoundfar = sounds\smlfarexp.wav
 nearfardistance = 150
-grenaderotaterate = 2
+#grenaderotaterate = 2
 
 ghostroundsto = 1
 
