@@ -4,6 +4,21 @@
 
 <!-- name, branch and country used for readability -->
 <brigades>
+
+
+<!-- US Army -->
+<!-- US Army: 1st Division -->
+    <brigade id="us11ib" name="11th Infantry Brigade" branch="ground" country="us">
+	    <decal category="ground" texture="de_fr_uk_unit2.dds" row="5" col="4"/>
+    </brigade>
+	<brigade id="us12ib" name="12th Infantry Brigade" branch="ground" country="us">
+	    <decal category="ground" texture="de_fr_uk_unit2.dds" row="6" col="1"/>
+    </brigade>
+	<brigade id="us13ib" name="13th Armored Brigade" branch="ground" country="us">
+	    <decal category="ground" texture="us_armor_individual.dds" row="0" col="0"/>
+    </brigade>
+
+
 <!-- British Army -->
 <!-- British Army: 1st Infantry Division -->
     <brigade id="sas" name="Special Air Service" branch="ground" country="uk">
