@@ -3609,31 +3609,31 @@
 	</particleeffect>
   <!-- ===================================================================== -->
   <particleeffect name = "manysparks">
-    <number>32</number>
     <number>64</number>
+    <number>128</number>
     <texture>newspark</texture>
     <alpha>1.0</alpha>
     <alpha>1.0</alpha>
     <alpha>1.0</alpha>
     <alpha>0.0</alpha>
-    <size>0.015</size>
-    <size>0.015</size>
-    <size>0.015</size>
-    <size>0.015</size>
+    <size>0.025</size>
+    <size>0.025</size>
+    <size>0.025</size>
+    <size>0.025</size>
     <time>0</time>
     <time>300</time>
     <time>300</time>
     <time>200</time>
-    <speed>32</speed>
+    <speed>64</speed>
     <glow></glow>
     <drag>8.0</drag>
     <material>fire</material>
     <gravity>3.0</gravity>
     <delayeachparticle>1</delayeachparticle>
-    <fixstretch>4.0</fixstretch>
+    <fixstretch>16.0</fixstretch>
     <randomdirection>180</randomdirection>
     <velvariance>-4.0 -4.0 0.1 4.0 4.0 1.0</velvariance>
-    <velreduction>0.95</velreduction>
+    <velreduction>0.98</velreduction>
     <material>fire</material>
   </particleeffect>
   <!-- ===================================================================== -->
@@ -3954,8 +3954,14 @@
     <number>2</number>
     <number>4</number>
     <texture>stone chip1</texture>
+    <texture>wood chip1</texture>
+    <texture>dirt clod</texture>
     <texture>stone chip2</texture>
+    <texture>wood chip2</texture>
+    <texture>dirt clod</texture>
     <texture>stone chip3</texture>
+    <texture>wood chip3</texture>
+    <texture>dirt clod</texture>
     <alpha>1</alpha>
     <alpha>1</alpha>
     <alpha>1</alpha>
@@ -3972,6 +3978,10 @@
     <time>800</time>
     <time>800</time>
     <time>800</time>
+    <color>0.2 0.2 0.2</color>
+    <color>0.2 0.2 0.2</color>
+    <color>0.2 0.2 0.2</color>
+    <color>0.2 0.2 0.2</color>
     <velreduction>0.9</velreduction>
     <delayeachparticle>10</delayeachparticle>
     <randomdirection>180</randomdirection>
