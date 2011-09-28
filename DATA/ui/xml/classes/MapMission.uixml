@@ -313,8 +313,12 @@
 
 		self.drawTypes();
 
-		if(game.player.client.brigade && game.player.client.brigade.home)
-			self.map.mgr.setSelection(game.player.client.brigade.home);
+		if(!game.ingame)
+		{
+			if(game.player.client.brigade && game.player.client.brigade.home)
+				self.map.mgr.setSelection(game.player.client.brigade.home);
+		}
+		
 		
 		return self;
 	}
