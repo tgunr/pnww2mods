@@ -27,8 +27,10 @@ penetrationconstant = 0.0000000001
 dontdisplayfirstframe = 1
 
 # Gryf changed the shrapnel amount. This Grenade was more concussive!
-numshrapnelpieces = 75
-totalshrapnelmass = .4
+# increased to 1000 from 75
+numshrapnelpieces = 500
+# totalshrapnelmass = .4
+totalshrapnelmass = 4
 
 explosionsoundnear = sounds\troop\grenade.wav
 explosionsoundfar = sounds\smlfarexp.wav
@@ -55,18 +57,21 @@ ghostroundsto = 1
 #  nhe_max_mass_mult .. what is the maximum accumulation (multiplier) for the shrapnel mass when shrapnel is being culled due to nhe_max_per_veh
 #     set this to 1.0 to remove mass accumulation, anything below 1.0 will be raised to 1.0
 
-use_new_he = 1
-nhe_diameter = 0.008
-nhe_weight = 0.005
-nhe_min_pen_const = 0.0000001
-nhe_ric_angle = 79.9999
-nhe_energy_mult = 1
-nhe_min_pieces = 343
-nhe_max_pieces = 343
-nhe_max_per_veh = 75
-nhe_add_speed = 100.0
-nhe_timeout = 0.15
-nhe_max_mass_mult = 10
+# use_new_he = 0
+# nhe_diameter = 0.008
+# # reduced to 1 gram (0.001)
+# nhe_weight = 0.001
+# nhe_min_pen_const = 0.0000001
+# nhe_ric_angle = 79.9999
+# nhe_energy_mult = 1
+# # increased to 500 from 343
+# nhe_min_pieces = 500
+# # increased to 1000 from 343
+# nhe_max_pieces = 1000
+# nhe_max_per_veh = 75
+# nhe_add_speed = 100.0
+# nhe_timeout = 0.15
+# nhe_max_mass_mult = 10
 
 modelcmx = -0.000982
 modelcmy = 0.001008
