@@ -5,7 +5,7 @@ type = rocket
 diameter = .05
 weight = 1.86
 ammoweight = 1.86
-velocity = 99
+velocity = 90
 tracertime = 7.0
 object = fr_lmortar_he
 # explosive = 1154295
@@ -17,13 +17,13 @@ fuzetime = 0.000
 #selfdestructtime = 0.0
 bc = 6.66
 lifetime = 11.0
-ricochetangle = 60
+ricochetangle = 50
 # modelspall = 1
 penetrationconstant = 0.0000000011
 
 
 # 125mm of armor penetrated at 0, because scaling is not used, value is 30 degrees off perpendicular
-shapedchargepenmm = 95
+shapedchargepenmm = 90
 
 dontdisplayfirstframe = 1
 
