@@ -189,7 +189,7 @@
 			else
 			{
 			 	findview('persona-squad-counts').visible = false;
-			 	findview('persona-squad-motd').text = getlocstring('persona.welcome.squad.motd.nosquad');
+			 	findview('persona-squad-motd').text = getlocstring('online.campaign.squad.motd.nosquad');
 			}
 
 			consoleprint("Final Done\n");

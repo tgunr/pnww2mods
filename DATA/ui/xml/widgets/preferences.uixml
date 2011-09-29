@@ -718,6 +718,9 @@
 						var options 	= new Array("loc.ui.24", "loc.ui.23", "loc.ui.22");
 						var current 	= getPreference("app.shadows", Preference.UINT, 2, false);
 						
+						if(game.region == 5)
+							options.push("none");
+						
 						for(var i = 0; i < options.length; i++)
 						{
 							if(i == current)
@@ -744,7 +747,7 @@
 							addPreference("app.shadows", Preference.UINT, newValue, false);
 						}
 						
-						addPreference("shadowsizeselect", Preference.SINT, ((newValue == 0) ? 0 : 6), true);
+						addPreference("shadowsizeselect", Preference.SINT, ((newValue == 0 || newValue == 3) ? 0 : 6), true);
 						
 						if(shadowInit)
 						{
@@ -766,6 +769,9 @@
 								case 2:
 									for(var t in bits)
 										setShadow(t, true, true);
+									break;
+								case 3:
+									setShadow("terrain", false); // all off
 									break;
 								default:
 									consoleprint("New shadow value is " + newValue + "\n");
