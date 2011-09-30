@@ -55,8 +55,10 @@ nhe_weight = 0.005
 nhe_min_pen_const = 0.0000001
 nhe_ric_angle = 79.9999
 nhe_energy_mult = 1
-nhe_min_pieces = 600
-nhe_max_pieces = 600
+# decreased to 500 from 600
+nhe_min_pieces = 500
+# increased to 1000 from 600
+nhe_max_pieces = 1000
 nhe_max_per_veh = 75
 nhe_add_speed = 100.0
 nhe_timeout = 0.15
