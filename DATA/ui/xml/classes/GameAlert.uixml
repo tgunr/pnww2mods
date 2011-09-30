@@ -168,6 +168,7 @@
 			
 			//cprint("Visible alert count is now " + this.visAlerts.length);
 			
+			// save our y pixel for the current top of the alert
 			var top 		= this.view.y + this.view.height;
 			var height 	= 0;
 			var width		= 0;
