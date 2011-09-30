@@ -1,0 +1,86 @@
+DISPERSION
+
+Easy Mode: Bloo has a spreadsheet to calculate.
+
+Dispersion is calculated from the tan of 1.6. We don't know why.
+The value in the weapons files act as a multiplier of the 1.6 value.
+It is the RADIUS of the dispersion cone, NOT THE DIAMETER.
+
+
+CALCULATE DISPERSION FROM MILS
+
+A mil is 1 unit of width at 1000 units of range, regardless of unit size.
+
+Dispersion = (Mils/2) * 0.035804
+
+(Mils/2 because it is a radius)
+
+
+CALCULATE DISPERSION FROM MINUTES OF ANGLE (MOA)
+
+Some weapons report dispersion in Minutes of Angle (MOA)
+
+Convert MOA to Mils: Mils = MOA * 3.4377
+Then use formula for Mils above.
+
+!Be careful not to correct for radius twice!
+
+
+CALCULATE DISPERSION FROM A WIDTH AT A DISTANCE
+
+For instance, your research might report: 1.50 m @ 100 m.
+Make it simple and convert that to 1000 m.
+
+	In this case: multiply both by 10: 15 m @ 1000 m.
+	That gives us Mils (1 Mil = 1 m @ 1000 m)
+	15 m @ 1000 m = 15 Mils
+
+Then use the Mils formula above.
+
+	WHAT IF THE DATA SAYS X INCHES @ Y YARDS?
+
+	Convert all measurements to the same units!
+	IDEALLY, METERS!
+
+	Thus, convert inches to yards or vice versa so that you have:
+	X Inches (width) @ Y Inches (distance), or
+	X Yards (width) @ Y Yards (distance)
+
+	Then multiple distance by whatever value gets you to 1000.
+	1000/Y (disance) = Multipler
+	X (width) * Multiplier
+	Y (distance) * Multiplier
+
+	And now you have Mils again! Use the Mils formula above.
+
+------------------------------------------------------
+Some reference tables and info:
+
+PLAYNET ENGINE DISPERSION VALUE TABLE
+
+Dispersion (measurements in meters)
+Value	@1000 m	@500 m	@400 m	@300 m	@200 m	@100 m
+1.00	27.93	13.97	11.17	8.38	5.59	2.79
+0.10	2.79	1.40	1.12	0.84	0.56	0.28
+0.01	0.28	0.14	0.11	0.08	0.06	0.03
+
+
+MILS DISPERSION TABLE
+
+A mil is 1 unit of width at 1000 units of range
+
+Mils
+Value	@1000 m	@500 m	@400 m	@300 m	@200 m	@100 m
+1.00	1.00	0.50	0.40	0.30	0.20	0.10
+0.10	0.10	0.05	0.04	0.03	0.02	0.01
+0.01	0.01	0.01	0.00	0.00	0.00	0.00
+6.00	6.00	3.00	2.40	1.80	1.20	0.60
+3.00	3.00	1.50	1.20	0.90	0.60	0.30
+
+
+MINUTES OF ANGLE (MOA)?
+
+1 MOA = 1/60 degree
+	@ 100 yards = 1.0472 inches
+1 MIL = 3.4377 MOA
+1 MOA = 0.2909 MILS
