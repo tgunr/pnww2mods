@@ -2415,6 +2415,7 @@
 <!ENTITY widgets.keymapper.cats.ships "船舶">
 <!ENTITY widgets.prefs.groups.titles.infantry "步兵">
 <!ENTITY widgets.map.waypoints.notes "导航点说明（最多60个汉字）">
+<!ENTITY widgets.keymapper.convergence "Convergence">
 <!ENTITY widgets.prefs.groups.shadows.grass "草地">
 <!ENTITY widgets.map.info.me.title "你的纬度/经度">
 <!ENTITY widgets.prefs.groups.visual.limitfov.tip "在计算LOD时，把视场跟账号绑定。启用该项可以提升游戏的性能。">
@@ -2546,6 +2547,7 @@
 <!ENTITY widgets.prefs.groups.ui.colors.aws.tip "选择你的地图上空袭警报系统不同程度的颜色区间。">
 <!ENTITY widgets.prefs.groups.sound.ambient.infrequent "偶尔">
 <!ENTITY widgets.prefs.groups.infantry.lod "细节层次">
+<!ENTITY widgets.keymapper.convergence.tip "Enter the gun convergence for the selected aircraft here. (Can be changed later with the &#34;/conv&#34; command.)">
 <!ENTITY widgets.map.info.target.tip "显示你当前任务的目标城市">
 <!ENTITY widgets.prefs.groups.hud.ppos.ok "正确放置">
 <!ENTITY widgets.map.waypoints.title "导航点">
@@ -3028,29 +3030,40 @@
 <!ENTITY tutorials.info "训练任务信息">
 <!ENTITY tutorials.none "无">
 <!ENTITY tutorials.tab "新兵营">
-<!ENTITY loading.sounds.init "初始化声音">
-<!ENTITY loading.network.chat "连接聊天系统">
-<!ENTITY loading.copyright "版权 © 1999 - 2011 Playnet, Inc.">
-<!ENTITY loading.sounds "装载声音">
 <!ENTITY loading.network.loggingin "登录">
-<!ENTITY loading.network.auth "验证密码">
+<!ENTITY loading.eyepatches "Gun Sights">
+<!ENTITY loading.beefjerky "Libraries">
 <!ENTITY loading.network "连接网络">
 <!ENTITY loading.gameloop "初始化游戏循环">
 <!ENTITY loading.trees "装载树木。">
 <!ENTITY loading.network.complete "登录完成">
 <!ENTITY loading.sdms "预加载SDMs">
 <!ENTITY loading.extresource "初始化外部资源">
-<!ENTITY loading.fps "初始化 FPS 系统">
-<!ENTITY loading.network.host "打开主机连接">
-<!ENTITY loading.weapons "初始化武器系统">
 <!ENTITY loading.fx "初始化 FX">
-<!ENTITY loading.netperf "查找最佳连接">
 <!ENTITY loading.vehicles.init "初始化交通工具系统">
-<!ENTITY loading.multitextures "多重纹理">
 <!ENTITY loading.objects "初始化物体">
 <!ENTITY loading.infantry "步兵模型">
-<!ENTITY loading.vehicles "交通工具模型">
+<!ENTITY loading.animations "Animations">
+<!ENTITY loading.stuff.off.the.ground "Clutter">
+<!ENTITY loading.blingmeters "Gauges">
+<!ENTITY loading.copyright "版权 © 1999 - 2011 Playnet, Inc.">
+<!ENTITY loading.network.chat "连接聊天系统">
+<!ENTITY loading.sounds.init "初始化声音">
+<!ENTITY loading.weather "Initializing Weather System">
+<!ENTITY loading.sounds "装载声音">
+<!ENTITY loading.nukes "Initializing Physics Engine">
+<!ENTITY loading.network.auth "验证密码">
+<!ENTITY loading.bsdms "Re-Building Terrain SDMs">
+<!ENTITY loading.grass "Loading Speed Grass">
+<!ENTITY loading.fps "初始化 FPS 系统">
+<!ENTITY loading.network.host "打开主机连接">
+<!ENTITY loading.uglies "Bomb Sights">
+<!ENTITY loading.weapons "初始化武器系统">
+<!ENTITY loading.netperf "查找最佳连接">
+<!ENTITY loading.multitextures "多重纹理">
+<!ENTITY loading.mspaint "Initializing Render Engine">
 <!ENTITY loading.compress "初始化纹理压缩">
+<!ENTITY loading.vehicles "交通工具模型">
 <!ENTITY loading.ui "UI 模型">
 <!ENTITY brigade.control.appointed "{1}现在是{2}的指挥官。">
 <!ENTITY brigade.hqtab.brief.target "任务目标">

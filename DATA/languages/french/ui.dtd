@@ -2418,6 +2418,7 @@
 <!ENTITY widgets.keymapper.cats.ships "Navires">
 <!ENTITY widgets.prefs.groups.titles.infantry "Infanterie">
 <!ENTITY widgets.map.waypoints.notes "NOTES SUR CE POINT (jusqu&#39;à 128 caractères)">
+<!ENTITY widgets.keymapper.convergence "Convergence">
 <!ENTITY widgets.prefs.groups.shadows.grass "HERBES">
 <!ENTITY widgets.map.info.me.title "VOTRE LAT/LON">
 <!ENTITY widgets.prefs.groups.visual.limitfov.tip "Prend le champ de vision en compte pour le calcul du LOD. Améliore les performances.">
@@ -2549,6 +2550,7 @@
 <!ENTITY widgets.prefs.groups.ui.colors.aws.tip "Selectionnez les couleurs pour le Air Warning System (Radar) indiquant la population avion par zone.">
 <!ENTITY widgets.prefs.groups.sound.ambient.infrequent "rares">
 <!ENTITY widgets.prefs.groups.infantry.lod "NINVEAU DE DETAILS">
+<!ENTITY widgets.keymapper.convergence.tip "Enter the gun convergence for the selected aircraft here. (Can be changed later with the &#34;/conv&#34; command.)">
 <!ENTITY widgets.map.info.target.tip "Indique l&#39;objectif de votre mission actuelle">
 <!ENTITY widgets.prefs.groups.hud.ppos.ok "EMPLACEMENT CORRECT">
 <!ENTITY widgets.map.waypoints.title "POINTS DE PASSAGE">
@@ -3031,29 +3033,40 @@
 <!ENTITY tutorials.info "TUTORIEL INFORMATIONS">
 <!ENTITY tutorials.none "aucun">
 <!ENTITY tutorials.tab "TUTORIELS">
-<!ENTITY loading.sounds.init "Initialisation des sons">
-<!ENTITY loading.network.chat "Connexion au chat">
-<!ENTITY loading.copyright "Copyright © 1999 - 2011 Playnet, Inc.">
-<!ENTITY loading.sounds "Chargement des sons">
 <!ENTITY loading.network.loggingin "Connexion au compte">
-<!ENTITY loading.network.auth "Authentification">
+<!ENTITY loading.eyepatches "Gun Sights">
+<!ENTITY loading.beefjerky "Libraries">
 <!ENTITY loading.network "Connexion au réseau">
 <!ENTITY loading.gameloop "Initialisation du Game Loop">
 <!ENTITY loading.trees "Chargement des arbres">
 <!ENTITY loading.network.complete "Connexion terminée">
 <!ENTITY loading.sdms "Préchargement des SDMs">
 <!ENTITY loading.extresource "Initialisation des ressources externes">
-<!ENTITY loading.fps "Initialisation du système FPS">
-<!ENTITY loading.network.host "Ouverture de la connexion au serveur">
-<!ENTITY loading.weapons "Initialisation du système des armes">
 <!ENTITY loading.fx "Initialisation des effets">
-<!ENTITY loading.netperf "Trouver une meilleure connexion">
 <!ENTITY loading.vehicles.init "Initialisation du système des véhicules">
-<!ENTITY loading.multitextures "MultiTextures">
 <!ENTITY loading.objects "Initialisation des objets">
 <!ENTITY loading.infantry "Modèles d&#39;infanterie">
-<!ENTITY loading.vehicles "Modèles des véhicules">
+<!ENTITY loading.animations "Animations">
+<!ENTITY loading.stuff.off.the.ground "Clutter">
+<!ENTITY loading.blingmeters "Gauges">
+<!ENTITY loading.copyright "Copyright © 1999 - 2011 Playnet, Inc.">
+<!ENTITY loading.network.chat "Connexion au chat">
+<!ENTITY loading.sounds.init "Initialisation des sons">
+<!ENTITY loading.weather "Initializing Weather System">
+<!ENTITY loading.sounds "Chargement des sons">
+<!ENTITY loading.nukes "Initializing Physics Engine">
+<!ENTITY loading.network.auth "Authentification">
+<!ENTITY loading.bsdms "Re-Building Terrain SDMs">
+<!ENTITY loading.grass "Loading Speed Grass">
+<!ENTITY loading.fps "Initialisation du système FPS">
+<!ENTITY loading.network.host "Ouverture de la connexion au serveur">
+<!ENTITY loading.uglies "Bomb Sights">
+<!ENTITY loading.weapons "Initialisation du système des armes">
+<!ENTITY loading.netperf "Trouver une meilleure connexion">
+<!ENTITY loading.multitextures "MultiTextures">
+<!ENTITY loading.mspaint "Initializing Render Engine">
 <!ENTITY loading.compress "Initialisation de la compression des textures">
+<!ENTITY loading.vehicles "Modèles des véhicules">
 <!ENTITY loading.ui "Modèles UI">
 <!ENTITY brigade.control.appointed "{1} est désormais l&#39;officier-commandant de {2}.">
 <!ENTITY brigade.hqtab.brief.target "Objectif de la mission">
