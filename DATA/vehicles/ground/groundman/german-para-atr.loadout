@@ -1,6 +1,11 @@
 #German infantry ATR loadout file
 #added pistol to loadout 8th.Oct/05 -Doc.
 
+# The ORDER of weapons MUST MATCH the VIZLOADOUT.XML order!
+# Note the comments in that file. The "weapons" listed in Vizloadout 
+# refer to the ANIMATION file names, which are often different.
+
+
 # sounds available for the mounts
 sound1 = sounds\troop\pzb39atr.wav
 sound2 = sounds\troop\luger.wav

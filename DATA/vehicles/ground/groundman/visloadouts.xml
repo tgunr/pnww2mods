@@ -5,6 +5,7 @@
 <!-- Comments that explain things for producers are nice. -->
 <!-- The Weapons listed refer to the ANIMATION to be used, NOT the actual weapon. -->
 <!-- ....to find the actual weapon, refer to the unit .LOADOUT file -->
+<!-- The ORDER of weapons MUST MATCH the .LOADOUT order! -->
 
 <visloadouts>
 	<!-- British Army Troops -->
@@ -95,7 +96,6 @@
 	<visloadout id="uk-para-atr" arms="ukpara" atp="2" para="true">	
 		<weapon>boysmk1</weapon>
 		<weapon>webley</weapon>
-		<weapon>mills36mk1</weapon>
 		<weapon>m18</weapon>
 		<weapon>alliedsatchel</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
@@ -188,7 +188,9 @@
 		<weapon lastresort="true">alliedknife</weapon>
 		<weapon index="8">buildtool</weapon>
 	</visloadout>
+
 	<!-- French Airborne Troops -->
+
 	<visloadout id="fr-para-rfl" arms="frpara" atp="2" para="true">	
 		<weapon>mas36</weapon>
 		<weapon>frbang</weapon>
@@ -278,6 +280,7 @@
 	<visloadout id="de-atr" arms="dearmy" atp="2">
 		<weapon>pzb39</weapon>
 		<weapon>luger</weapon>
+		<weapon>hgr39</weapon>
 		<weapon>axissatchel</weapon>
 		<weapon lastresort="true">axisknife</weapon>
 		<weapon index="8">buildtool</weapon>
@@ -341,7 +344,6 @@
 	<visloadout id="de-para-atr" arms="depara" atp="2" para="true">	
 		<weapon>pzb39</weapon>
 		<weapon>luger</weapon>
-		<weapon>stigr</weapon>
 		<weapon>hgr39</weapon>
 		<weapon>axissatchel</weapon>
 		<weapon lastresort="true">axisknife</weapon>
