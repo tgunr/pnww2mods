@@ -260,4 +260,10 @@
 		</capsule>
 		-->
 	</model>
+	<model type="13" name="rocket">
+		<capsule mass="20" length="1.4" diameter=".7" name="tube">
+			<rotate x="1" y="0" z="0" w="90"/>
+			<offset x=".08" y=".7" z=".2"/>
+		</capsule>
+	</model>
 </colliders>

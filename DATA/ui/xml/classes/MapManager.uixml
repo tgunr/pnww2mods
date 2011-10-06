@@ -46,6 +46,7 @@
 		this.clickposition	= null;
 		this.isfullmap		= isfullmap;
 		this.isHCMap		= false;
+		this.now				= (new Date()).getTime();
 		
 		this.hooks			= new Object();
 		this.extHooks		= new Object();
@@ -240,6 +241,12 @@
 		
 		this.onClick = function()
 		{
+			var now = (new Date()).getTime();
+			
+			// don't allow any clicks within 1 second of the creation of this object
+			if(now < this.now + 1000)
+				return;
+			
 		 	var rcmenu		= findview("map_rcmenu");
 			var onClick 	= this.hooks.onClick;
 			

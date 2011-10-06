@@ -950,6 +950,7 @@
 			}
 			
 			centerView(views["game-alerts"], 0, window.scalev("y", 140));
+			game.savesettings(views["game-alerts"], flags);
 			
 			cprint("Finished setting up HUD!\n");
 		}
