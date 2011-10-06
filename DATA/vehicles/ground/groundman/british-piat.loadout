@@ -1,0 +1,33 @@
+ #British.loadout file
+
+#options
+#maxoversupply = 2 gives the weapon stockpile ability
+#infresupply = .5 gives the weapon the ability to be resupplied with the ammo can
+
+#maxoversupply = 2
+# sounds available for the mounts
+sound1 = sounds\troop\mk4no1.wav
+sound2 = sounds\troop\grenade-throw.wav
+sound3 = sounds\troop\grenade-throw.wav
+
+loadout = 1
+
+# Rifle
+mountnum = 1
+
+# FIX: SOUND NEEDED. MAKE A TICKET!
+mountsound = sound1
+weapon = piat
+
+# Pistol
+#mountnum = 2
+#mounsound = sound2
+#weapon = enfieldno2mk1
+
+# Knife
+mountnum = 4
+weapon = knifegeneric
+
+# build tool
+mountnum = 8
+weapon = satchelgeneric
