@@ -1,12 +1,10 @@
-#version 150
+#version 120
 
-uniform sampler2D src;
+uniform sampler2D src1;
 
-in vec2 tex0;
-in vec4 color;
-out vec4 out_color;
+varying vec4 color;
 
-void main()
+void main(void)
 {
-	out_color = texture2D(src, tex0) * color;
-}
+    gl_FragColor = clamp(texture2D(src1, gl_TexCoord[0].xy) * color, 0.0, 1.0);
+} 
