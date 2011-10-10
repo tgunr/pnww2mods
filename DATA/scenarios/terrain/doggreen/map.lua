@@ -64,6 +64,28 @@ if(true) then
 		"place normalbobber dg_veh_lcvp -134.64 235.54 3.62 0 0 115 0 0 0 0",
 		"place normalbobber dg_veh_lcvp_lx -106.32 264.14 3.5 0 0 115 0 0 0 0",
 		
+		
+		--crates
+		"place normalbobber crate -64.26 187.11 3.25 -3 0 125 0 0 0 0",
+		"place normalbobber crate -60.60 184.94 3.26 -3 0 100 0 0 0 0",
+		"place normalbobber crate -83.60 198.24 3.25 -3 0 90 0 0 0 0",
+		"place normalbobber crate -81.00 194.80 3.32 -3 0 60 0 0 0 0",
+		"place heavybobber crate -86.78 203.43 3.15 -3 0 0 0 0 0 0",
+		"place normalbobber crate -21.94 174.06 3 -3 0 25 0 0 0 0",
+		"place normalbobber crate -20.73 171.19 3 -3 0 40 0 0 0 0",
+		"place normalbobber crate -15.67 169.40 3.2 -3 0 75 0 0 0 0",
+		"place heavybobber crate -11.89 166.66 3.25 -3 0 90 0 0 0 0",
+		"place heavybobber crate -7.20 161.59 3.5 -3 0 40 100 0 0 0",
+		"place heavybobber crate -7.20 161.59 3.5 -3 0 40 100 0 0 0",
+		"place normalbobber ammocrate -6.00 157.39 3.5 -3 0 40 0 0 0 0",
+		"place normalbobber crate -26.54 174.65 3.3 -3 0 100 0 0 0 0",
+		"place heavybobber crate -124.45 226.40 3.19 -3 0 0 100 0 0 0",
+		"place normalbobber crate -127.81 227.76 3.2 -3 0 25 0 0 0 0",
+		"place normalbobber crate -124.81 232.39 3.2 -3 0 150 0 0 0 0",
+		"place normalbobber ammocrate -131.37 230.08 3.6 -3 0 0 0 0 0 0",
+		
+		
+		
 		-- content name x1 y1 x2 y2 pitch roll bob pitchrate rollrate bobrate
 		-- the x1,y1 to x2,y2 line segments defines the direction of the wave
 		-- pitch and roll are in degrees to and fro
@@ -120,6 +142,13 @@ if(true) then
 		"place dg_wire_barbed_apron	-138.48 -24.17 34.25 -4 0 0 0 0 0",
 		"place dg_wire_barbed_box	-147.26 -30.81 34.85 -9 -10 75 0 0 0",
 		"place dg_wire_barbed_box	-144.76 -34.30 35.7 -5 -5 25 0 0 0",
+		
+		-- German Beach Bunker Crates
+		"place crate -177.17 90.84 11.66 0 0 30 0 0 0 0",
+		"place crate -171.62 90.34 11.67 0 0 30 0 0 0 0",
+		"place crate -171.05 95.74 11.67 0 0 0 0 0 0 0",
+		
+		
 	
 		
 		

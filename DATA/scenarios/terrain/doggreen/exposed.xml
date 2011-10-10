@@ -62,8 +62,8 @@
     <greenweight>5</greenweight>
     <blueweight>5</blueweight>
     <!-- Color clamped between 0 - 255 -->
-    <redclamp>150</redclamp>
-    <grnclamp>150</grnclamp>
+    <redclamp>100</redclamp>
+    <grnclamp>100</grnclamp>
     <bluclamp>150</bluclamp>
     <!-- clutter FLT object for specific color -->
     <redtypestring>crate</redtypestring>
@@ -127,7 +127,7 @@
         <material>dunes1</material>
 		</layer1>
 		<layer2 name="layer7.dds"> <!-- ROCK 2 SHALE -->
-		<multitexture>128</multitexture>
+		<multitexture>100</multitexture>
         <material>rock</material>
 		</layer2>
     </blendmask>
