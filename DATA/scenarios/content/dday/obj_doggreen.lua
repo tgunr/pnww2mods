@@ -207,9 +207,9 @@ if(true) then
 	-- positional sounds
 	-- command name filename volume loop x y z mindist maxdist	
 		"sound sounds/ambience/ocean.wav 10 1 -63 212 3 100 1000",	
-		"sound sounds/fairmileb/idle.wav 2.0 1 -117 237 5 5 25",
-		"sound sounds/fairmileb/idle.wav 2.0 1 -10 182 6 5 25",
-		"sound sounds/fairmileb/idle.wav 2.0 1 -82 203 3 5 25",
+		"sound sounds/fairmileb/idle.wav 2.5 1 -117 237 5 5 25",
+		"sound sounds/fairmileb/idle.wav 2.5 1 -10 182 6 5 25",
+		"sound sounds/fairmileb/idle.wav 2.5 1 -82 203 3 5 25",
 
 	-- ambient combat sounds
 		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav .5 0",
@@ -287,6 +287,17 @@ if(true) then
 		"clone destroyer1 uk_z34 509.16 922.13 3.3 0 0 120",
 		"clone destroyer2 uk_z34 823.10 733.41 3.3 0 0 120",
 		"clone destroyer3 uk_z34 112.23 1143.07 3.3 0 0 120",
+		"clone uk_freighter 650.48 882.72 3.3 0 0 -110",
+		"clone uk_freighter 443.25 1063.09 3.3 0 0 -90",
+		"clone uk_freighter 343.29 1192.13 3.3 0 0 -85",
+		"clone uk_freighter 984.73 703.75 3.3 0 0 -95",
+		"clone uk_freighter 34.79 1236.81 3.3 0 0 -110",
+		
+		
+		
+		
+		
+		
 		
 	-- primary naval bambardment fx		
 	-- main guns stage 1- fire near draw on hill tops
@@ -487,6 +498,14 @@ if(true) then
 	-- ANONYMOUS VERSION
 	-- command typeid x y z roll pitch yaw
 		"clone oplbltz -17 -177.5 46.25 0 0 180",
+		"clone oplbltz -11.69 -178.29 46.25 0 0 200",
+		"clone oplbltz -3.08 -176.20 46.2 0 0 250",
+		
+		
+		
+		
+		
+		
 		"clone sdkfz251c -21.88 -177.24 46.5 0 0 180",
 		
 	
