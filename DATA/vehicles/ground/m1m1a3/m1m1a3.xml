@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <!DOCTYPE vehicle SYSTEM "vehicle.dtd">
-<vehicle id="m1m1a3" type="ground" shape="m157" description="M1 (57 mm) AT Gun" icon="M1 Gun">
+<vehicle id="m1m1a3" type="ground" shape="m157" description="M1A3 (57 mm) AT Gun" icon="M1 Gun">
 <include file="m1m1a3.veh.xml"/>
 <include file="m1m1a3.state.xml"/>
 <include file="m1m1a3.hit.xml"/>
@@ -8,4 +8,6 @@
 <include file="m1m1a3.loadout.xml"/>
 <include file="m1m1a3.xsound.xml"/>
 <include file="m1m1a3.control.xml"/>
+<variant id="m1m1a3" shape="m157" description="M1A3 (57 mm) AT Gun"/>
+<variant id="us_m1m1a3" shape="m157" description="M1A3 (57 mm) AT Gun"/>
 </vehicle>

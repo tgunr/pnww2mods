@@ -3,8 +3,10 @@ default,,GV_tank.0
 spawn,m4a2_us,
 spawn,m10_us,
 spawn,m4a3_us,
-#spawn,cn_bedford,GV_truck.0
-#spawn,cn_qf2pdr,GV_gun.0
+spawn,us_laffly,US_GV_truck.0
+spawn,us_bofors,US_GV_gun.0
+spawn,us_m1m1a3,US_GV_gun.0
+spawn,us_m1a2m5,US_GV_gun.0
 
 section, tank, weapClass
 default,,GV_tank.0
@@ -15,10 +17,11 @@ spawn,us_pzvie,
 
 section, truck, weapClass
 default,,GV_truck.0
-#spawn,cn_bedford,
 spawn,us_laffly,US_GV_truck.0
 
 section,gun,weapClass
 default,,GV_gun.0
-#spawn,cn_qf2pdr,
+spawn,us_bofors,
+spawn,us_m1m1a3,
+spawn,us_m1a2m5,
 

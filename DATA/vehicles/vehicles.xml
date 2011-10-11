@@ -182,11 +182,17 @@
 <!-- Assault units appear as "Semi-Auto Rifleman" -->
 <vehicle id="us-assault" 	file="ground/groundman/groundman.xml"/>
 <vehicle id="us-bazooka" 	file="ground/groundman/groundman.xml"/>
+<!-- These weapons have the wrong naming convention even though it is better and should have been done this way -->
 <vehicle id="m4a2_us"		file="ground/m4a2/m4a2.xml"/>
 <vehicle id="m10_us"        file="ground/m10/m10.xml"/>
 <vehicle id="m4a3_us"		file="ground/m4a3/m4a3.xml"/>
+<!-- tiger is a temporary test for China remove me before release -->
 <vehicle id="us_pzvie"      file="ground/pzvie/pzvie.xml"/>
 <vehicle id="us_laffly"     file="ground/laffly/laffly.xml"/>
+<vehicle id="us_bofors"     file="ground/bofors40mm/bofors40mm.xml" />
+<vehicle id="us_m1m1a3"     file="ground/m1m1a3/m1m1a3.xml"/>
+<vehicle id="us_m1a2m5"     file="ground/m1a2m5/m1a2m5.xml"/>
+<vehicle id="us_p38f"       file="aircraft/p38f/p38f.xml"/>
 
 
 <vehicle id="cn_oplbltz"           file="ground/oplbltz/oplbltz.xml" onlineonly="true"/>
