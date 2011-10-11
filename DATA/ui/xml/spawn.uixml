@@ -31,6 +31,9 @@
 			}
 			
 			//descriptionText.y = view.scalev("y", 250);
+			
+			if(game.online)
+				game.load("gameinfo", window);
 		}
 		
 		function doFeedback()

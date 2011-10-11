@@ -29,6 +29,9 @@
 				if(fore)
 					fore.visible = false;
 			}
+			
+			if(game.online)
+				game.load("gameinfo", window);
 		}
 		
 		function showVersion(version)

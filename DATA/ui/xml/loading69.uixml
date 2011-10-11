@@ -22,6 +22,9 @@
 			
 			// game callbacks
 			game.onloadevent = doLoadEvent;
+			
+			if(game.online)
+				game.load("gameinfo", window);
 		}
 		
 		function doLoadEvent(message)
