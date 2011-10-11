@@ -104,7 +104,7 @@
 					</view>
 				</view>
 			</tab>
-			<tab id="map-options" x="0" y="0" rright="0" rtop="0" showtab='false' onhide="game.savesettings(this)">
+			<tab id="map-options" x="0" y="0" rright="0" rtop="0" showtab='false' onhide="game.savesettings(this)" onunload="game.savesettings(this)">
 				<view x="10" rtop="2" width="165" rbottom="0">
 					<caption label="${widgets.map.options.options}" x="0" width="165" height="20" rtop="5" style="font-size: -1; color: #BFE2CE;"/>
 					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="165" height="12" rtop="15"/>
