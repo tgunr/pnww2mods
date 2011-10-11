@@ -2415,7 +2415,7 @@
 <!ENTITY widgets.keymapper.cats.ships "船舶">
 <!ENTITY widgets.prefs.groups.titles.infantry "步兵">
 <!ENTITY widgets.map.waypoints.notes "导航点说明（最多60个汉字）">
-<!ENTITY widgets.keymapper.convergence "Convergence">
+<!ENTITY widgets.keymapper.convergence "交汇点">
 <!ENTITY widgets.prefs.groups.shadows.grass "草地">
 <!ENTITY widgets.map.info.me.title "你的纬度/经度">
 <!ENTITY widgets.prefs.groups.visual.limitfov.tip "在计算LOD时，把视场跟账号绑定。启用该项可以提升游戏的性能。">
@@ -2547,7 +2547,7 @@
 <!ENTITY widgets.prefs.groups.ui.colors.aws.tip "选择你的地图上空袭警报系统不同程度的颜色区间。">
 <!ENTITY widgets.prefs.groups.sound.ambient.infrequent "偶尔">
 <!ENTITY widgets.prefs.groups.infantry.lod "细节层次">
-<!ENTITY widgets.keymapper.convergence.tip "Enter the gun convergence for the selected aircraft here. (Can be changed later with the &#34;/conv&#34; command.)">
+<!ENTITY widgets.keymapper.convergence.tip "为选定的飞机设置火力交汇点(通过使用“/conv”命令)。">
 <!ENTITY widgets.map.info.target.tip "显示你当前任务的目标城市">
 <!ENTITY widgets.prefs.groups.hud.ppos.ok "正确放置">
 <!ENTITY widgets.map.waypoints.title "导航点">
@@ -3031,42 +3031,42 @@
 <!ENTITY tutorials.none "无">
 <!ENTITY tutorials.tab "新兵营">
 <!ENTITY loading.network.loggingin "登录">
-<!ENTITY loading.eyepatches "Loading Gun Sights">
-<!ENTITY loading.beefjerky "Initializing Libraries">
+<!ENTITY loading.eyepatches "装载枪炮瞄准器">
+<!ENTITY loading.beefjerky "初始化库">
 <!ENTITY loading.network "连接网络">
 <!ENTITY loading.gameloop "初始化游戏循环">
 <!ENTITY loading.trees "装载树木。">
 <!ENTITY loading.network.complete "登录完成">
-<!ENTITY loading.animations.fps "Loading FPS Animations">
+<!ENTITY loading.animations.fps "装载FPS动画">
 <!ENTITY loading.sdms "预加载SDMs">
 <!ENTITY loading.extresource "初始化外部资源">
 <!ENTITY loading.fx "初始化 FX">
 <!ENTITY loading.vehicles.init "初始化交通工具系统">
-<!ENTITY loading.animations.fx "Loading Infantry Effects">
+<!ENTITY loading.animations.fx "装载步兵效果">
 <!ENTITY loading.objects "初始化物体">
 <!ENTITY loading.infantry "步兵模型">
-<!ENTITY loading.animations "Loading Animations">
-<!ENTITY loading.stuff.off.the.ground "Loading Clutter">
-<!ENTITY loading.blingmeters "Loading Gauges">
+<!ENTITY loading.animations "装载动画">
+<!ENTITY loading.stuff.off.the.ground "装载杂物">
+<!ENTITY loading.blingmeters "装载压力表">
 <!ENTITY loading.copyright "版权 © 1999 - 2011 Playnet, Inc.">
 <!ENTITY loading.network.chat "连接聊天系统">
 <!ENTITY loading.sounds.init "初始化声音">
-<!ENTITY loading.weather "Initializing Weather System">
+<!ENTITY loading.weather "初始化天气系统">
 <!ENTITY loading.sounds "装载声音">
-<!ENTITY loading.animations.grandma "Loading Granny Files">
-<!ENTITY loading.nukes "Initializing Physics Engine">
+<!ENTITY loading.animations.grandma "装载文件">
+<!ENTITY loading.nukes "初始化物理引擎">
 <!ENTITY loading.network.auth "验证密码">
-<!ENTITY loading.bsdms "Re-Building Terrain SDMs">
-<!ENTITY loading.animations.kits "Loading Infantry Sub-Systems">
-<!ENTITY loading.animations.tps "Loading TPS Animations">
-<!ENTITY loading.grass "Loading Speed Grass">
+<!ENTITY loading.bsdms "重新构建地形SDMs">
+<!ENTITY loading.animations.kits "装载步兵子系统">
+<!ENTITY loading.animations.tps "装载TPS动画">
+<!ENTITY loading.grass "装载植物">
 <!ENTITY loading.fps "初始化 FPS 系统">
 <!ENTITY loading.network.host "打开主机连接">
-<!ENTITY loading.uglies "Loading Bomb Sights">
+<!ENTITY loading.uglies "装载轰炸瞄准器">
 <!ENTITY loading.weapons "初始化武器系统">
 <!ENTITY loading.netperf "查找最佳连接">
 <!ENTITY loading.multitextures "多重纹理">
-<!ENTITY loading.mspaint "Initializing Render Engine">
+<!ENTITY loading.mspaint "初始化渲染引擎">
 <!ENTITY loading.compress "初始化纹理压缩">
 <!ENTITY loading.vehicles "交通工具模型">
 <!ENTITY loading.ui "UI 模型">
@@ -3851,7 +3851,7 @@
 <!ENTITY hccp.tabs.map "高级军官地图">
 <!ENTITY presets.infantry "默认">
 <!ENTITY exitvehicle.status.4 "获救">
-<!ENTITY none "none">
+<!ENTITY none "无">
 <!ENTITY hccp.tabs.notices.title "战斗旅通告">
 <!ENTITY exitvehicle.status "离开状态：{1}">
 <!ENTITY globals.time.months "月">
@@ -4216,7 +4216,7 @@
 <!ENTITY vehicles.4.4.14.13 "红国空降轻型迫击炮兵">
 <!ENTITY vehicles.3.4.9.9 "绿国反坦克步枪兵">
 <!ENTITY vehicles.4.2.4.7 "红国232轮式装甲车">
-<!ENTITY vehicles.2.2.4.2 "蓝星国76.2毫米坦克歼击车">
+<!ENTITY vehicles.2.2.4.2 "蓝星国76.2毫米中型远战坦克">
 <!ENTITY vehicles.1.2.7.4 "蓝国40毫米中型高射炮">
 <!ENTITY vehicles.1.1.2.6 "SMK IXc 战斗截击机">
 <!ENTITY vehicles.3.2.6.3 "LW 15 牵引车">
@@ -4291,7 +4291,7 @@
 <!ENTITY vehicles.3.2.6.1 "BOYD卡车">
 <!ENTITY vehicles.2.4.9.3 "蓝星国工兵">
 <!ENTITY vehicles.1.2.4.6 "蓝国DMK I装甲侦察车">
-<!ENTITY vehicles.2.2.4.3 "M4A3 Sherman">
+<!ENTITY vehicles.2.2.4.3 "蓝星国76.2毫米中型近战坦克">
 <!ENTITY vehicles.4.4.9.14 "红国突击步兵">
 <!ENTITY vehicles.4.1.2.1 "M109E-4战斗截击机">
 <!ENTITY vehicles.4.2.4.9 "红国75毫米坦克歼击车">
@@ -4402,7 +4402,7 @@
 <!ENTITY connect.login.handshake.lost "在网络初始化阶段与服务器失去连接">
 <!ENTITY connect.ping.stats.full "网速延迟: &#37;ums, 平均: &#37;ums, &#37;ls: &#37;.1f&#37;&#37;.">
 <!ENTITY connect.find.cantopen "无法打开游戏的网络连接">
-<!ENTITY connect.error.connectionerror "connection error">
+<!ENTITY connect.error.connectionerror "连接错误">
 <!ENTITY connect.ping.lossbig "*数据包丢失*">
 <!ENTITY connect.error.eagain "错误：还是错误">
 <!ENTITY connect.login.auth.timeout "验证超时">

@@ -1222,7 +1222,7 @@
 <!ENTITY loc.host.605 "Einheiten in {1} ziehen sich in vorbereitete Verteidigungsstellungen zur&#252;ck.">
 <!ENTITY loc.host.96 ".roster">
 <!ENTITY loc.host.331 "{1} befindet sich an der Frontlinie, Einheiten k&#246;nnen dort nicht direkt plaziert werden.">
-<!ENTITY loc.host.124 ".fbs [<Stadt>]">
+<!ENTITY loc.host.124 ".fbs []">
 <!ENTITY loc.host.561 "Closing and clearing the spam can. :wq">
 <!ENTITY loc.host.228 "Seiten-Kanal nicht verf&#252;gbar: Keine Persona ausgew&#228;hlt.">
 <!ENTITY loc.host.10 "Du hast Spieler {1} gestellt - Die Unterhaltung wird protokolliert.">
@@ -1234,13 +1234,13 @@
 <!ENTITY loc.host.374 "&#34;/ignore&#34; zeigt allle Spieler auf Deiner ignore-Liste an. &#34;/ignore player&#34; schalten ignore f&#252;r den angegebenen Spieler an/aus. Du kannst 42 Spieler auf Deiner ignore-Liste eintragen.">
 <!ENTITY loc.host.44 "ALLIIERTE Offiziere/Spielmanager:">
 <!ENTITY loc.host.300 "Mobiler Spawnpunkt ist nicht mehr verf&#252;gbar.">
-<!ENTITY loc.host.444 "Trennt die Verbindung und verweigert den Zugriff auf das Spiel f&#252;r einen Zeitraum. Der Spieler kommt nicht &#252;ber die Persona Auswahl hinaus. <Dauer> steht f&#252;r Tage, kann aber auch als &#34;1d&#34;, &#34;2h&#34; oder &#34;15m&#34; angegeben werden. **NOTIZ** Zum Bannen ohne Verbindungstrennung siehe /ban.">
+<!ENTITY loc.host.444 "Trennt die Verbindung und verweigert den Zugriff auf das Spiel f&#252;r einen Zeitraum. Der Spieler kommt nicht &#252;ber die Persona Auswahl hinaus.  steht f&#252;r Tage, kann aber auch als &#34;1d&#34;, &#34;2h&#34; oder &#34;15m&#34; angegeben werden. **NOTIZ** Zum Bannen ohne Verbindungstrennung siehe /ban.">
 <!ENTITY loc.host.551 "List all current Server Tracked Objects (STOs). WARNING: List can be quite long.">
 <!ENTITY loc.host.271 "*{1} hat {2} zum Mitglied degradiert.">
-<!ENTITY loc.host.594 "/lastkillers <Spieler>">
+<!ENTITY loc.host.594 "/lastkillers">
 <!ENTITY loc.host.616 "{1} nur einmal pro Minute.">
 <!ENTITY loc.host.298 "MISSION">
-<!ENTITY loc.host.430 "/ban <Spieler> <Dauer> <Grund>">
+<!ENTITY loc.host.430 "/ban">
 <!ENTITY loc.host.419 "&#39;{1}&#39; is not a valid /um setting.">
 <!ENTITY loc.host.132 "Gibt den Befehl &#34;Um jeden Preis halten&#34; als Antwort auf einen ausgew&#228;hlten OVERRUN-Code.">
 <!ENTITY loc.host.527 "MOTD: {1}">
@@ -1266,7 +1266,7 @@
 <!ENTITY loc.host.603 "Auto-Reparatur an {1}.">
 <!ENTITY loc.host.329 "Keine Hafenanlagen in {1} von denen gestartet werden kann.">
 <!ENTITY loc.host.252 "Im Moment gibt es keine Befehle f&#252;r diese Mission.">
-<!ENTITY loc.host.521 "/gridsnapshot <on | off | full>">
+<!ENTITY loc.host.521 "/gridsnapshot">
 <!ENTITY loc.host.337 "Du bist ab jetzt der Anf&#252;hrer dieser Mission! Tipp: Benutze das &#34;/autoleader off&#34;-Kommando, um nicht automatisch die F&#252;hrung von Missionen zu erhalten.">
 <!ENTITY loc.host.447 "Keine Einnahmen gefunden">
 <!ENTITY loc.host.604 "R&#252;ckzug von {1} fehlgeschlagen.">
@@ -1276,10 +1276,10 @@
 <!ENTITY loc.host.575 "Unable to spawn: {1}.">
 <!ENTITY loc.host.159 "{1} berichtet keinen Angriff.">
 <!ENTITY loc.host.404 "Innerhalb der n&#228;chsten {1} kann kein weiterer Stellung halten/R&#252;ckzugsbefehl gegeben werden.">
-<!ENTITY loc.host.88 ".m <Spieler> <Nachricht>">
+<!ENTITY loc.host.88 ".m">
 <!ENTITY loc.host.320 "Du kannst dich nicht selbst &#39;{1}&#39; .">
 <!ENTITY loc.host.166 "Deine vorherige Anforderung f&#252;r {1} ist noch nicht abgelaufen.">
-<!ENTITY loc.host.100 ".sysmotd [<Nachricht>]">
+<!ENTITY loc.host.100 ".sysmotd []">
 <!ENTITY loc.host.235 "{1}: Angriff/Einnehmen">
 <!ENTITY loc.host.12 "Du wurdest von Spielmanager {1}: ({2}) gestellt: Direkte Kommunikation. Die Unterhaltung wird protokolliert.">
 <!ENTITY loc.host.143 "{1} in {2} angefordert.">
@@ -1294,19 +1294,19 @@
 <!ENTITY loc.host.0 "HQ">
 <!ENTITY loc.host.569 "You have entered unknown buildings {1}.">
 <!ENTITY loc.host.327 "{1} ist au&#223;erhalb der Reichweite anderer Divisionsmitglieder.">
-<!ENTITY loc.host.424 "/um <mode number>">
+<!ENTITY loc.host.424 "/um">
 <!ENTITY loc.host.332 "Du bist ab jetzt der Anf&#252;hrer dieser Mission! Tipp: Benutze das &#34;/backupleader&#34;-Kommando (Kurzform /back) um zu kontrollieren, wer das Kommando &#252;ber diese Mission &#252;bernimmt, falls/sobald Du die Mission verl&#228;sst.">
 <!ENTITY loc.host.545 "Hulk destroyed.">
 <!ENTITY loc.host.384 "Einige Einheiten in {1} k&#246;nnen nicht /{2}.">
 <!ENTITY loc.host.233 "{1}: Verteidigen/Reparieren">
-<!ENTITY loc.host.127 ".delay <Code>">
+<!ENTITY loc.host.127 ".delay">
 <!ENTITY loc.host.171 "Einheiten in {1} zur Verteidigung angewiesen">
 <!ENTITY loc.host.146 "Wir halten keine Armeebasen in {1}.">
 <!ENTITY loc.host.39 "Der Report wurde an CRS &#252;bermittelt, vielen Dank. Ein Spielmanager wird den Inhalt pr&#252;fen, es gibt jedoch keine individuelle Best&#228;tigungsnachricht f&#252;r .report Meldungen.">
 <!ENTITY loc.host.407 "/nukepersonas">
 <!ENTITY loc.host.178 "Du bist nun f&#252;r &#34;.who&#34; sichtbar.">
 <!ENTITY loc.host.148 "{1} ist nicht umk&#132;mpft.">
-<!ENTITY loc.host.439 "/despawnall <Grund>">
+<!ENTITY loc.host.439 "/despawnall">
 <!ENTITY loc.host.221 "Mission-Kanal nicht verf&#252;gbar: Keine Mission gew&#228;hlt.">
 <!ENTITY loc.host.570 "Elvis ist rausgegangen. Imitatoren aller Laender, vereinigt Euch!">
 <!ENTITY loc.host.576 "Kill credit an {1} bekommen!">
@@ -1318,29 +1318,29 @@
 <!ENTITY loc.host.269 "*{1} hat {2} zum XO bef&#246;rdert.">
 <!ENTITY loc.host.109 "Sendet eine WARNUNG an ALLE eingeloggten Spieler. Wird protokolliert.">
 <!ENTITY loc.host.277 "{1} ist bereits in einem Squad.">
-<!ENTITY loc.host.465 "/shutdown in <Zeit Intervall> <Nachricht>">
+<!ENTITY loc.host.465 "/shutdown in">
 <!ENTITY loc.host.41 "CRS-Mitarbeiter pr&#252;fen die Benutzung der Spielmanager-Kommandos t&#228;glich. Unangemessene Verwendung wird zum Verlust der Privilegien oder zum Ausschluss f&#252;hren.">
 <!ENTITY loc.host.517 "Bitte SYSTEM nicht ignorieren, das würde ihr nicht gefallen.">
 <!ENTITY loc.host.229 "Willkommen auf dem Hilfe-Kanal. Nutze diesen Kanal um Hilfe, Unterst&#252;tzung und Ratschl&#228;ge von anderen Spielern zu bekommen. Bei technischen Schwierigkeiten besuche das Community Support Forum unter http://discussions.playnet.com/">
 <!ENTITY loc.host.6 "{1} ist gerade A.F.K (Away From Keyboard)">
 <!ENTITY loc.host.359 "{1} wurde f&#252;r Dein Squad von {2} rekrutiert!">
 <!ENTITY loc.host.163 "Kampfziel Verteidigung kann bei Br&#252;cken nur manuell plaziert oder entfernt werden.">
-<!ENTITY loc.host.135 ".find <Spieler>">
+<!ENTITY loc.host.135 ".find">
 <!ENTITY loc.host.336 "Ernennt einen bestimmten Spieler, an den der Status des Anf&#252;hrers der Mission &#252;bergeben werden soll, falls/sobald Du die Mission verl&#228;sst.">
 <!ENTITY loc.host.297 "*Erwartete Auszeit: {1}.">
-<!ENTITY loc.host.214 "/hcmotd  oder  /hcmotd <Neue motd>">
+<!ENTITY loc.host.214 "/hcmotd  oder  /hcmotd">
 <!ENTITY loc.host.528 "/listoics">
 <!ENTITY loc.host.358 "Dein Rekrutiere (&#39;{1}&#39;) hat sich ausgeloggt oder ist nicht verf&#252;gbar.">
 <!ENTITY loc.host.13 "Du hast Spieler {1} freigelassen.">
 <!ENTITY loc.host.388 "Deine Onlinezeit hat vier Stunden &#252;berschritten, Du bist in der Erm&#252;dungsphase. Du erh&#228;ltst nur noch 50&#37; der normalen Punktzahl. Aus gesundheitlichen Gr&#252;nden solltest Du Dich ausloggen, Dich ausruhen oder etwas Sport treiben.">
-<!ENTITY loc.host.64 ".gm [<Nachricht>]">
+<!ENTITY loc.host.64 ".gm []">
 <!ENTITY loc.host.653 "Ursprungsanlage befindet sich nicht unter unserer Kontrolle.">
 <!ENTITY loc.host.433 "Verschiebt den Spieler von seiner aktuellen Position, hiflreich bei Clippern. Mehr als +/-4m horizontal oder +/-6m vertikal sind nicht m&#246;glich. Vorsicht, Spieler nicht unter die Oberfl&#228;che bewegen. &#34;-up&#34; verschiebt den Spieler 5m nach oben, unabh&#228;ngig von Deiner relativen Position. &#34;-down&#34; zieht Spieler nach unten, wenn Du Dich unter ihnen befindest.">
-<!ENTITY loc.host.494 "/listsquad [-all] <squadname>">
-<!ENTITY loc.host.116 ".own [<Stadt>]">
+<!ENTITY loc.host.494 "/listsquad [-all]">
+<!ENTITY loc.host.116 ".own []">
 <!ENTITY loc.host.196 "Keine aktiven Angriffsbasen.">
 <!ENTITY loc.host.134 "Bewirkt ein Neuladen der globalen (oder Einzelspieler-) Chat-Freigaben.">
-<!ENTITY loc.host.656 "{1} has surrendered to the enemy.">
+<!ENTITY loc.host.656 "{1} hat sich dem Feind kampflos ergeben.">
 <!ENTITY loc.host.50 "Du musst zuerst eine Seite ausw&#228;hlen.">
 <!ENTITY loc.host.375 "/status">
 <!ENTITY loc.host.559 "Interval must be at least 30 seconds.">
@@ -1354,14 +1354,14 @@
 <!ENTITY loc.host.9 "Spieler &#34;{1}&#34; ist nicht verf&#252;gbar.">
 <!ENTITY loc.host.546 "/checkstos">
 <!ENTITY loc.host.421 "F&#252;r diese Kommando gibt es zur Zeit noch keine Hilfe.">
-<!ENTITY loc.host.637 "/oicremove <unit> <player>">
-<!ENTITY loc.host.443 "/kickban <Spieler> <period> <message>">
+<!ENTITY loc.host.637 "/oicremove">
+<!ENTITY loc.host.443 "/kickban">
 <!ENTITY loc.host.345 "Der Rufname deines Squads wurde von {1} auf {2} ver&#228;ndert.">
 <!ENTITY loc.host.270 "*{1} hat {2} zum CO bef&#246;rdert.">
 <!ENTITY loc.host.65 "Ohne Parameter: listet alle eingeloggten GMs. Mit Parameter: sendet eine Nachricht an den GM-Kanal.">
 <!ENTITY loc.host.522 "Enables or disables chat-grid snapshot recording (for debugging purposes only). Only to be used when instructed to by CRS staff members.">
 <!ENTITY loc.host.182 "Listet aktuelle Kampfziele f&#252;r Deine Seite auf.">
-<!ENTITY loc.host.449 "/lastdeath <Spieler>">
+<!ENTITY loc.host.449 "/lastdeath">
 <!ENTITY loc.host.85 "Wenn der Spieler in die Spielwelt eingestiegen ist, wird er gezwungen das Spiel zu beenden. Nachricht ist optional. Wird protokolliert.">
 <!ENTITY loc.host.33 "Du hast {1} unehrenhaft entlassen.">
 <!ENTITY loc.host.306 "Wahlen wurden vom Kommandierenden Offizier ausgeschaltet.">
@@ -1372,7 +1372,7 @@
 <!ENTITY loc.host.22 "Rausgeworfen von Spiel Manager: {1}">
 <!ENTITY loc.host.365 "Du kannst /takelead nicht im AFK Modus &#252;bernehmen.">
 <!ENTITY loc.host.199 "Befehl zum Angriff von {1} gegeben">
-<!ENTITY loc.host.84 ".kick <Spieler> [<Nachricht>]">
+<!ENTITY loc.host.84 ".kick  []">
 <!ENTITY loc.host.170 "Befehle zur Einnahme von {1} gegeben">
 <!ENTITY loc.host.181 ".objectives">
 <!ENTITY loc.host.295 "Ung&#252;ltiger Rufname: &#34;{1}&#34;.">
@@ -1387,7 +1387,7 @@
 <!ENTITY loc.host.574 "Gl&#252;ckwunsch zur BEFOERDERUNG!">
 <!ENTITY loc.host.211 "Bereichs-Chat auf gro&#223;e Entfernung.">
 <!ENTITY loc.host.475 "Game server shutdown scheduled for {1}.">
-<!ENTITY loc.host.58 ".allied <Nachricht>">
+<!ENTITY loc.host.58 ".allied">
 <!ENTITY loc.host.197 "ALLIIERTE">
 <!ENTITY loc.host.416 "{1} has approved strat server restart.">
 <!ENTITY loc.host.51 "Im Moment hast Du niemanden gestellt.">
@@ -1407,9 +1407,9 @@
 <!ENTITY loc.host.488 "{1}: Unassigned.">
 <!ENTITY loc.host.532 "{1}: not found on cell hosts.">
 <!ENTITY loc.host.518 "Sorry, &#39;SYSTEM&#39; ist das Spiel selbst und kein Spieler.">
-<!ENTITY loc.host.248 "&#34;.orders&#34; oder &#34;.orders <neue Befehle>&#34;">
+<!ENTITY loc.host.248 "&#34;.orders&#34; oder &#34;.orders &#34;">
 <!ENTITY loc.host.398 "Es gab ein Problem beim &#39;{1}&#39; von Spieler &#39;{2}&#39;:">
-<!ENTITY loc.host.89 "Sendet eine private Nachricht an <Spieler>">
+<!ENTITY loc.host.89 "Sendet eine private Nachricht an">
 <!ENTITY loc.host.592 "Grid snapshots DISABLED.">
 <!ENTITY loc.host.406 "&#39;{1}&#39; konnte nicht ausgef&#252;hrt werden.">
 <!ENTITY loc.host.139 ".overrun">
@@ -1428,7 +1428,7 @@
 <!ENTITY loc.host.218 "Offline: {1}">
 <!ENTITY loc.host.216 "Deine Freundeliste ist leer.">
 <!ENTITY loc.host.519 "RDP (Forschung, Entwicklung und Produktion) werden generiert, /{1} zwecklos.">
-<!ENTITY loc.host.417 "/buzzardspawn <Spieler><Grund>">
+<!ENTITY loc.host.417 "/buzzardspawn">
 <!ENTITY loc.host.168 "{1} wird nicht vom Feind gehalten.">
 <!ENTITY loc.host.538 "To use /{1} from the map screen you must have spawned into the game during this login session first.">
 <!ENTITY loc.host.8 "Verwirrt? Tippe .booton zum Ausw&#228;hlen des Grundausbildungskanals f&#252;r Instruktionen!">
@@ -1436,7 +1436,7 @@
 <!ENTITY loc.host.179 "Du bist nun f&#252;r &#34;.who&#34; unsichtbar.">
 <!ENTITY loc.host.456 "Squad &#39;{1}&#39; existiert nicht oder ist im Moment nicht geladen. Dies kann ein Fehler sein oder es sind keine Mitglieder online. Versuch es sp&#228;ter noch einmal.">
 <!ENTITY loc.host.157 "&#39;{1}&#39; existiert nicht oder ist abgelaufen.">
-<!ENTITY loc.host.94 ".report <Problem>">
+<!ENTITY loc.host.94 ".report">
 <!ENTITY loc.host.66 ".gmmode">
 <!ENTITY loc.host.608 "Changed ownership of {1} to {2}.">
 <!ENTITY loc.host.193 "Entfernung der Kampfziele f&#252;r den/die momentan auf der Karte ausgew&#228;hlte(n) CP oder Br&#252;cke.">
@@ -1464,7 +1464,7 @@
 <!ENTITY loc.host.79 "Listet Serverbefehle oder zeigt Hilfe f&#252;r einen ausgew&#228;hlten Befehl an">
 <!ENTITY loc.host.651 "In dieser Waffengattung ist Dein Rang daf&#252;r zu niedrig.">
 <!ENTITY loc.host.194 "F&#252;r ALLE Spieler .kick ausf&#252;hren.">
-<!ENTITY loc.host.110 ".who [<Spieler1> ... <Spieler4>]">
+<!ENTITY loc.host.110 ".who [ ... ]">
 <!ENTITY loc.host.316 "&#39;{1}&#39; f&#252;hrt jetzt die Mission an.">
 <!ENTITY loc.host.370 "Zeigt die Missionsmitglieder und ihren Status an.">
 <!ENTITY loc.host.296 "{1} wird bereits ignoriert.">
@@ -1475,18 +1475,18 @@
 <!ENTITY loc.host.72 ".hc">
 <!ENTITY loc.host.40 "REPORT">
 <!ENTITY loc.host.632 "ermoeglicht HC Offiziere, sich freiwillig als OIC f&#252;r die Einheit zu melden">
-<!ENTITY loc.host.615 "All CP statuses have been re-transmitted to chat, map and cell hosts.">
-<!ENTITY loc.host.628 "Kill-A-Rat: Office Rivalry! {1} just wasted {2}.">
+<!ENTITY loc.host.615 "All CP status have been re-transmitted to chat, map and cell hosts.">
+<!ENTITY loc.host.628 "Kill-a-Rat: B&#252;rokrach! {1} hat {2} erlegt.">
 <!ENTITY loc.host.378 "Bei eingeschalteter CO Wahl k&#246;nnen Deine Squad Mitglieder einen neuen CO mit dem /voteco Kommando w&#228;hlen. CO Wahl ist standardm&#228;ssig angeschaltet, benutze /voting off um die CO Wahl auszuschalten.">
-<!ENTITY loc.host.133 ".resync [<Spieler>]">
+<!ENTITY loc.host.133 ".resync []">
 <!ENTITY loc.host.152 "Du hast bereits zu diesem Befehl abgestimmt.">
 <!ENTITY loc.host.440 "Gewaltsames Despawnen aller Spieler. Zuerst Arena sperren.">
 <!ENTITY loc.host.144 "{1} befindet sich im Besitz des Feindes.">
-<!ENTITY loc.host.617 "{1} <cp name | &#34;all&#34;>">
+<!ENTITY loc.host.617 "{1}">
 <!ENTITY loc.host.125 "Mit Stadt: Zeigt den Angriffsbasis-Status f&#252;r eine bestimmte Stadt an. Ohne Stadt: Zeigt den Angriffsbasis-Status f&#252;r die n&#228;chstgelegene Stadt an.">
 <!ENTITY loc.host.397 "DIe Bewegung wird von einer feindlichen FB blockiert.">
 <!ENTITY loc.host.347 "&#39;{1}&#39; wurde zu Deiner Freundesliste hinzugef&#252;gt.">
-<!ENTITY loc.host.499 "/dumpresupply [<brigade>]">
+<!ENTITY loc.host.499 "/dumpresupply []">
 <!ENTITY loc.host.593 "Grid snapshots enabled on FULL.">
 <!ENTITY loc.host.176 ".nowho">
 <!ENTITY loc.host.414 "{1} hat eine Strat Neustart angefordert. Ein zweiter Spieler muss dies best&#228;tigen.">
@@ -1504,7 +1504,7 @@
 <!ENTITY loc.host.646 "Applying {2} joules of repairs to {1}.">
 <!ENTITY loc.host.253 "BEFEHLE">
 <!ENTITY loc.host.153 "Alarm geben: Basis wird &#252;berrannt!">
-<!ENTITY loc.host.557 "/spam start <number of repetitions> <interval between repetitions>">
+<!ENTITY loc.host.557 "/spam start">
 <!ENTITY loc.host.543 "Ignoring damage to hulk: hulk is invulnerable (0 capacity)">
 <!ENTITY loc.host.156 "Befehle f&#252;r {1} m&#252;ssen von {2} ausgegeben werden.">
 <!ENTITY loc.host.638 "Stellt eine Anfrage, den Spieler als OIC einer Einheit abzusetzen">
@@ -1530,21 +1530,21 @@
 <!ENTITY loc.host.428 "Kicke &#39;{1}&#39; vom Spieleserver.">
 <!ENTITY loc.host.169 "VORSICHT">
 <!ENTITY loc.host.508 "Sets the current game time to the specified hour or time. Prefix the time with &#39;@&#39; (e.g. @12:30) to lock the clock to a specific time.">
-<!ENTITY loc.host.114 ".cpinfo [<Stadt>]">
+<!ENTITY loc.host.114 ".cpinfo []">
 <!ENTITY loc.host.250 "Eine Mission muss ausgew&#228;hlt sein um diesen Befehl zu benutzen.">
-<!ENTITY loc.host.431 "Verweigert den Zugriff auf das Spiel f&#252;r einen Zeitraum. Der Spieler kommt nicht &#252;ber die Persona Auswahl hinaus. <Dauer> steht f&#252;r Tage, kann aber auch als &#34;1d&#34;, &#34;2h&#34; oder &#34;15m&#34; angegeben werden. **NOTIZ** Trennt NICHT die Verbindung -- siehe /kickban.">
+<!ENTITY loc.host.431 "Verweigert den Zugriff auf das Spiel f&#252;r einen Zeitraum. Der Spieler kommt nicht &#252;ber die Persona Auswahl hinaus.  steht f&#252;r Tage, kann aber auch als &#34;1d&#34;, &#34;2h&#34; oder &#34;15m&#34; angegeben werden. **NOTIZ** Trennt NICHT die Verbindung -- siehe /kickban.">
 <!ENTITY loc.host.348 "&#39;{1}&#39; wurde von Deiner Freundesliste entfernt.">
 <!ENTITY loc.host.474 "/shutdown time must be between {1} minutes and {2} hours.">
 <!ENTITY loc.host.550 "/liststos">
 <!ENTITY loc.host.457 "Der jetzige CO von &#39;{1}&#39; ist online: {2}. Squad CO kann nicht abgesetzt werden.">
 <!ENTITY loc.host.101 "Definiert oder zeigt die System-M.O.T.D (&#34;Nachricht des Tages&#34;) an. wird protokolliert.">
-<!ENTITY loc.host.38 "Benutze .report <Nachricht> um einen Cheat/Exploit/Bug Report an CRS zu senden.">
+<!ENTITY loc.host.38 "Benutze .report  um einen Cheat/Exploit/Bug Report an CRS zu senden.">
 <!ENTITY loc.host.225 "Squad-Kanal nicht verf&#252;gbar: Kein Mitglied eines Squadrons.">
 <!ENTITY loc.host.487 "ALL PLAYERS: {1}">
 <!ENTITY loc.host.578 "Spieler {1} has Killed-A-Rat: {2}!">
 <!ENTITY loc.host.262 "Liste der Mitglieder des Oberkommandos im Dienst.">
 <!ENTITY loc.host.531 "{1}: loggt ein oder aus.">
-<!ENTITY loc.host.501 "/pwncp <country> [<town name>]">
+<!ENTITY loc.host.501 "/pwncp  []">
 <!ENTITY loc.host.120 "Du kannst einen anderen Spieler nicht .grab&#39;en w&#228;hrend Du selbst gestellt bist.">
 <!ENTITY loc.host.313 "Einheitsverlegung fehlgeschlagen.">
 <!ENTITY loc.host.588 "[CRS:{1}] {2}">
@@ -1553,13 +1553,13 @@
 <!ENTITY loc.host.136 "Exakte Lokalisierung eines Spielers im Spiel.">
 <!ENTITY loc.host.579 "*** Too many objectives: One will be automatically removed in {1} minutes unless you have manually removed one by that time.">
 <!ENTITY loc.host.599 "Stellung in {1} unter allen Umst&#228;nden halten!">
-<!ENTITY loc.host.498 "Sets or queries the current arena lock state. Arena locks are a series of binary flags that can be combined to form various combination locks. 0=Unlock, 1=NoCapture, 2=NoSpawn, 4=NoKill, 8=NoSideSelect. So arenalock 5loc.host.499 = /dumpresupply [<brigade>]">
+<!ENTITY loc.host.498 "Sets or queries the current arena lock state. Arena locks are a series of binary flags that can be combined to form various combination locks. 0=Unlock, 1=NoCapture, 2=NoSpawn, 4=NoKill, 8=NoSideSelect. So arenalock 5loc.host.499">
 <!ENTITY loc.host.334 "Die F&#252;hrung der Mission wird an {1} &#252;bertragen.">
 <!ENTITY loc.host.240 "Neu ausgegebenes Ziel.">
 <!ENTITY loc.host.458 "Squad &#39;{1}&#39; hat schon einen CO &#39;{2}&#39;. Nutze &#34;/makeco -force&#34; um den jetzigen CO abzul&#246;sen.">
-<!ENTITY loc.host.659 "{1} will surrender to the enemy in {2} minutes.">
+<!ENTITY loc.host.659 "{1} wird sich dem Feind in {2} Minuten ergeben.">
 <!ENTITY loc.host.172 "{1} Kampfziel wurde zur&#252;ckgezogen">
-<!ENTITY loc.host.71 "Ohne Nachricht: listet alle im HC-Kanal eingeloggten HC-Offiziere. Sonst wird eine <Nachricht> an den HC-Kanal gesendet.">
+<!ENTITY loc.host.71 "Ohne Nachricht: listet alle im HC-Kanal eingeloggten HC-Offiziere. Sonst wird eine  an den HC-Kanal gesendet.">
 <!ENTITY loc.host.565 "*Squad-CO Wahl wegen Stimmenr&#252;cknahme abgebrochen.">
 <!ENTITY loc.host.16 "Du wurdest vom diensthabenden Offizier {1} gestellt">
 <!ENTITY loc.host.371 "/time">
@@ -1571,8 +1571,8 @@
 <!ENTITY loc.host.267 "*{1} hat {2} zum Mitglied bef&#246;rdert.">
 <!ENTITY loc.host.436 "Sorry, Buzzard kann nicht ge/bumpt werden">
 <!ENTITY loc.host.379 "&#39;{1}&#39; kann keinen R&#252;ckzug antreten: ist keine Brigade.">
-<!ENTITY loc.host.92 ".pinfo <Spieler>">
-<!ENTITY loc.host.106 ".warn <Spieler> <Nachricht>">
+<!ENTITY loc.host.92 ".pinfo">
+<!ENTITY loc.host.106 ".warn">
 <!ENTITY loc.host.113 "Zeigt detailierte Informationen f&#252;r den Ausgangspunkt oder die ausgew&#228;hlte Stadt an. W&#228;hle &#34;detail&#34; f&#252;r ausf&#252;hrliche Informationen.">
 <!ENTITY loc.host.451 "Die letzten 5 Spielertode von {1} in dieser Kampagne:">
 <!ENTITY loc.host.434 "Sorry, das kannst Du nur als Buzzard.">
@@ -1584,7 +1584,7 @@
 <!ENTITY loc.host.350 "Deine Freundesliste ist voll, Du musst jemanden von der Liste entfernen.">
 <!ENTITY loc.host.67 "Schaltet den GM-&#39;Lauer&#39;-Modus an/aus">
 <!ENTITY loc.host.155 "&#39;{1}&#39; in {2} angefordert.">
-<!ENTITY loc.host.511 "/renamesquad <old squad name> <new squad name>">
+<!ENTITY loc.host.511 "/renamesquad">
 <!ENTITY loc.host.209 "Bereichs-Chat auf sehr kurze Entfernung.">
 <!ENTITY loc.host.288 "Erm&#246;glicht es dir, einen neuen Commanding Officer f&#252;r dein Squad zu nominieren oder f&#252;r ihn zu stimmen.">
 <!ENTITY loc.host.299 "{1} hat einen mobilen Spawn f&#252;r diese Mission aufgestellt.">
@@ -1618,8 +1618,8 @@
 <!ENTITY loc.host.274 "*SPIELSERVER WIRD JETZT HERUNTERGEFAHREN.">
 <!ENTITY loc.host.534 "Recruit &#39;{1}&#39; has joined your mission and is now under your supervision.">
 <!ENTITY loc.host.2 "SYSTEM">
-<!ENTITY loc.host.98 ".sys <Nachricht>">
-<!ENTITY loc.host.112 ".cpdump [Detail] [<Stadt>]">
+<!ENTITY loc.host.98 ".sys">
+<!ENTITY loc.host.112 ".cpdump [Detail] []">
 <!ENTITY loc.host.319 "Der Spieler &#39;{1}&#39; nimmt im Moment nicht an der Mission teil.">
 <!ENTITY loc.host.184 "Schaltet den Empfang von feindlichem Bereichs-Chat an/aus">
 <!ENTITY loc.host.567 "Killed by building {1} desctruction [by sortie {2}].">
@@ -1629,14 +1629,14 @@
 <!ENTITY loc.host.26 "HQ Kanal abgeschaltet. Tippe .hqon , um diesen Kanal wieder anzuschalten.">
 <!ENTITY loc.host.640 "Dieses Kommando stellt die Radios auf die voreingestellten Kanäle dieses Servers ein.">
 <!ENTITY loc.host.462 "Chatberechtigungen f&#252;r Spieler &#39;{1}&#39; neu geladen.">
-<!ENTITY loc.host.507 "/settime [@]<HH|HHMM|HH:MM>">
+<!ENTITY loc.host.507 "/settime [@]">
 <!ENTITY loc.host.213 "Sie k&#246;nnen {1} nur alle {2} Sekunden.">
 <!ENTITY loc.host.49 "BETA">
 <!ENTITY loc.host.634 "Veto gegen die Ernennung/Absetzung eines Spieler einlegen">
 <!ENTITY loc.host.514 "&#39;{1}&#39; ist kein g&#252;ltiger Name f&#252;r ein Squad">
 <!ENTITY loc.host.201 "{1} Kampfziel kann f&#252;r weitere {2} nicht zur&#252;ckgezogen werden.">
 <!ENTITY loc.host.649 "Du hast wahrscheinlich keine Brigade ausgewählt.">
-<!ENTITY loc.host.131 ".hold <Code>">
+<!ENTITY loc.host.131 ".hold">
 <!ENTITY loc.host.619 "&#39;{1}&#39; status has been re-transmitted to chat, map and cell hosts.">
 <!ENTITY loc.host.80 ".hqoff">
 <!ENTITY loc.host.340 "Du akzeptierst automatische Bef&#246;rderung zum Missionsanf&#252;hrer.">
@@ -1645,32 +1645,32 @@
 <!ENTITY loc.host.607 "*FORCED* ownership of {1} to {2}.">
 <!ENTITY loc.host.318 "Nur f&#252;r den Missionsanf&#252;hrer: &#220;bergibt die F&#252;hrung der Mission an den Spieler &#34;Rufname&#34;. Beide Spieler m&#252;ssen an der Mission teilnehmen.">
 <!ENTITY loc.host.37 "{1}> {2}">
-<!ENTITY loc.host.641 "Radio channels for &#39;{1}&#39; have been retuned to the server defaults. Channels are saved on the game server.">
+<!ENTITY loc.host.641 "Die Radiokan&#228;le für &#39;{1}&#39; wurden auf die Voreinstellung des Servers zur&#252;ckgesetzt. Die Einstellungen werden auf dem Server gespeichert.">
 <!ENTITY loc.host.555 "Manage/view/run the &#34;spam can&#34;. The spam can is a list of text messages to be periodically broadcast to the playerbase as SYSTEM messages. Use &#34;/spam&#34; on its own to view the current spam can and settings; use &#34;/spam +my message&#34; to add &#34;my message&#34; to the end of the can; use &#34;/spam start 5 3m&#34; to repeat the spam can 5 times with 3 minutes between each repeat&#34;; use &#34;/spam stop&#34; to stop (and clear) the current can.">
 <!ENTITY loc.host.357 "Rekrut &#39;{1}&#39; hat sich Deiner Aufsicht durch Seitenwechsel entzogen.">
 <!ENTITY loc.host.582 "Allierte FBs: {1}">
 <!ENTITY loc.host.548 "No server tracked objects were found in an unusual state.">
 <!ENTITY loc.host.478 "Records to the GM log and the snooping GMs chat buffer all private messages to/from a player and all text typed by them into the chat buffer. Use &#39;/snoop off&#39; to end a snoop, or &#39;/snoop&#39; for current snoop status. Only one GM may snoop on a given player at a time and each GM may only snoop one player at a time.">
-<!ENTITY loc.host.554 "/spam  or  /spam +<message>  or /spam start <repetitions> <interval>  or  /spam stop">
-<!ENTITY loc.host.70 ".hc [<Nachricht>]">
+<!ENTITY loc.host.554 "/spam  or  /spam +  or /spam start    or  /spam stop">
+<!ENTITY loc.host.70 ".hc []">
 <!ENTITY loc.host.335 "/backupleader Rufname">
 <!ENTITY loc.host.450 "Zeigt die Informationen zu den letzten 5 Spielertoden. Bitte nicht zu oft benutzen.">
 <!ENTITY loc.host.591 "Grid snapshots ENABLED.">
 <!ENTITY loc.host.57 "Sendet eine Nachricht an ALLE Spieler. Wird protokolliert.">
 <!ENTITY loc.host.230 "Lokale Zeit: {1}">
 <!ENTITY loc.host.587 "Ausr&#252;stung manuell an {1} geliefert.">
-<!ENTITY loc.host.629 "/oicnominate <unit> <player>">
+<!ENTITY loc.host.629 "/oicnominate">
 <!ENTITY loc.host.512 "Aendert den Kurznamen des Souads. Es gelten die selben Regeln wie bei Spielernamen.">
 <!ENTITY loc.host.188 ".attack">
 <!ENTITY loc.host.103 "Zeigt die System-M.O.T.D (&#34;Nachricht des Tages&#34;) an.">
-<!ENTITY loc.host.54 ".afk [<Nachricht>]">
+<!ENTITY loc.host.54 ".afk []">
 <!ENTITY loc.host.249 "&#34;.orders&#34; zeigt die aktuellen Missionsbefehle. Mission Leader k&#246;nnen auch &#34;.orders&#34; benutzen, um die Befehle zu &#228;ndern/erneuern.">
-<!ENTITY loc.host.91 "Sendet eine <Nachricht> nur an den ausgew&#228;hlten Funkkanal (1-4)">
+<!ENTITY loc.host.91 "Sendet eine Nachricht nur an den ausgew&#228;hlten Funkkanal (1-4)">
 <!ENTITY loc.host.323 "Du bist ab jetzt der Anf&#252;hrer dieser Mission! Tip: Mit dem &#34;/makeleader&#34;-Kommando kannst Du die F&#252;hrung an einen anderen Spieler &#252;bertragen.">
 <!ENTITY loc.host.523 "[*] Game server shutdown has been cancelled! [*]">
 <!ENTITY loc.host.123 "Zur Zeit bist Du in keinem Squad.">
 <!ENTITY loc.host.490 "Zeigt die letzten Brigadebewegungen an">
-<!ENTITY loc.host.631 "/oicvolunteer <unit>">
+<!ENTITY loc.host.631 "/oicvolunteer">
 <!ENTITY loc.host.293 "Du ignorierst im Moment niemanden.">
 <!ENTITY loc.host.282 "Du hast noch nicht abgestimmt. Mit &#34;/voteco playername&#34; kannst Du Deine Stimme abgeben. Ende der Abstimmung in {1}.">
 <!ENTITY loc.host.479 "You are not {1} anyone at this time.">
@@ -1680,14 +1680,14 @@
 <!ENTITY loc.host.361 "Rekrut &#39;{1}&#39; wurde nach {2} Tagen aus dem Squad entfernt.">
 <!ENTITY loc.host.598 "Um mit einer Armeedivision anzugreifen, muss eine der Truppen eine direkte Verbindung zum Ziel haben.">
 <!ENTITY loc.host.175 "Befehle f&#252;r {1} wurden zur&#252;ckgezogen">
-<!ENTITY loc.host.472 "/shutdown sub-commands: /shutdown in, /shutdown downtime, /shutdown stop. Type /shutdown <command> for more details on a specific sub-command.">
+<!ENTITY loc.host.472 "/shutdown sub-commands: /shutdown in, /shutdown downtime, /shutdown stop. Type /shutdown  for more details on a specific sub-command.">
 <!ENTITY loc.host.381 "Anlagen in {1} wurden von feindlichen Einheiten &#252;berrannt!">
-<!ENTITY loc.host.69 "Startet eine direkte Unterhaltung mit <Spieler>, die nur von den beiden Teilnehmern verfolgt werden kann. Diese Gespr&#228;che werden vollst&#228;ndig aufgezeichnet. Verwende .ungrab, um den Spieler zu entlassen. Wird protokolliert.">
+<!ENTITY loc.host.69 "Startet eine direkte Unterhaltung mit , die nur von den beiden Teilnehmern verfolgt werden kann. Diese Gespr&#228;che werden vollst&#228;ndig aufgezeichnet. Verwende .ungrab, um den Spieler zu entlassen. Wird protokolliert.">
 <!ENTITY loc.host.614 "Spielzeit auf {1}:{2} gesetzt.">
 <!ENTITY loc.host.223 "Origin-Kanal nicht verf&#252;gbar: Keine Mission gew&#228;hlt.">
 <!ENTITY loc.host.480 "Current {1}: {2}.">
 <!ENTITY loc.host.192 ".clear">
-<!ENTITY loc.host.68 ".grab <Spieler> [<Begr&#252;ndung>]">
+<!ENTITY loc.host.68 ".grab  []">
 <!ENTITY loc.host.302 "Abstimmung ist bereits aktiv.">
 <!ENTITY loc.host.130 "Gibt den Befehl &#34;Zur&#252;ckfallen&#34; als Antwort auf einen ausgew&#228;hlten OVERRUN-Code.">
 <!ENTITY loc.host.459 "*** &#39;{1}&#39; wurde von einem Spielmanager zum Kommandierenden Offizier (CO) von {2} ernannt!">
@@ -1696,9 +1696,9 @@
 <!ENTITY loc.host.128 "Gibt den Befehl &#34;Verz&#246;gerungstaktik&#34; als Antwort auf einen ausgew&#228;hlten OVERRUN-Code.">
 <!ENTITY loc.host.568 "You have entered {1}.">
 <!ENTITY loc.host.154 "Befehl HALTEN f&#252;r {1} gew&#228;hrt.">
-<!ENTITY loc.host.210 "/yell <Nachricht>">
-<!ENTITY loc.host.452 "/makeco [-force] <Spieler>">
-<!ENTITY loc.host.633 "/oicveto <unit> <player>">
+<!ENTITY loc.host.210 "/yell">
+<!ENTITY loc.host.452 "/makeco [-force]">
+<!ENTITY loc.host.633 "/oicveto">
 <!ENTITY loc.host.111 "Ohne Parameter: Listet die eingeloggten Squadmitglieder. Mit Parameter: Zeigt ob der betreffende Spieler on- oder offline ist. F&#252;r Squadmitglieder wird auch angezeigt wo sie sich im Spiel gerade befinden.">
 <!ENTITY loc.host.461 "Alle Cahtberechtigungen neu geladen.">
 <!ENTITY loc.host.626 "Der OPS Kanal ist f&#252;r die Kommunikation zu Operationen und Organisation bestimmt. Benutze den Seiten Kanal f&#252;r generelle Unterhaltungen oder Diskussionen bzw den &#34;Hilfe&#34; Kanal, wenn Du Fragen hast oder Hilfe brauchst.">
@@ -1709,17 +1709,17 @@
 <!ENTITY loc.host.164 "{1} befindet sich nicht an der Frontlinie.">
 <!ENTITY loc.host.273 "*{1} hat {2} zum XO degradiert.">
 <!ENTITY loc.host.601 "{1} hat Alt-F4&#39;ed.">
-<!ENTITY loc.host.505 "/redelpoy [-xfer] [-move] [<unit> [<destination town>]]">
+<!ENTITY loc.host.505 "/redelpoy [-xfer] [-move] [ []]">
 <!ENTITY loc.host.611 "[X] Strat Server EXIT: Einige Funktionen sind nicht verf&#252;gbar. [X]">
 <!ENTITY loc.host.564 "Spam Can Containers {1} lines. Repetitions: {2} apart.">
 <!ENTITY loc.host.385 "Deine Spielzeit hat eine Stunde erreicht.">
 <!ENTITY loc.host.260 "Unbekanntes Kommando: &#34;{1}&#34;">
-<!ENTITY loc.host.477 "/snoop <Spieler> <Grund>  or  /snoop off">
+<!ENTITY loc.host.477 "/snoop    or  /snoop off">
 <!ENTITY loc.host.276 "*{1} hat Deine Squad-Einladung akzeptiert.">
 <!ENTITY loc.host.547 "Checks all the current Server Tracked Objects being tracked by the server to see if any have entered an invalid state and should be cancelled. Any found this way are immediately canceled.">
 <!ENTITY loc.host.215 "Zeigt oder &#228;ndert die High Command Message Of The Day (MOTD)">
 <!ENTITY loc.host.5 "Du bist nun nicht mehr A.F.K">
-<!ENTITY loc.host.78 ".help [<Befehl>]">
+<!ENTITY loc.host.78 ".help []">
 <!ENTITY loc.host.83 "Schaltet den Empfang von HQ-Nachrichten an.">
 <!ENTITY loc.host.162 "Bei dem Ziel muss es sich um eine Stadt oder Br&#252;cke handeln.">
 <!ENTITY loc.host.239 "{1} ist in eine Auseinandersetzung mit dem Feind verwickelt.">
@@ -1729,7 +1729,7 @@
 <!ENTITY loc.host.510 "Reports the movement time and current fallback location for your current brigade or the specified brigade(s).">
 <!ENTITY loc.host.149 "{1} berichtet bereits {2}.">
 <!ENTITY loc.host.97 "Zeigt die Spieleranzahl an.">
-<!ENTITY loc.host.657 "{1} has surrendered to us!">
+<!ENTITY loc.host.657 "{1} hat sich uns kampflos ergeben!">
 <!ENTITY loc.host.322 "Du bist ab jetzt der Anf&#252;hrer dieser Mission!">
 <!ENTITY loc.host.141 "OVERRUN-Bericht ist ung&#252;ltig oder wurde bereits entgegen genommen.">
 <!ENTITY loc.host.382 "Die Verteidigungspositionen in {1} wurden kompromittiert. Alle Einheiten ziehen sich zur&#252;ck!">
@@ -1739,9 +1739,9 @@
 <!ENTITY loc.host.596 "Das geht nur, wenn Du Dich in der Spielwelt befindest.">
 <!ENTITY loc.host.524 "[!] Game server shutdown has been delayed! [!]">
 <!ENTITY loc.host.126 "Bitte w&#228;hle eine Stadt.">
-<!ENTITY loc.host.60 ".axis <Nachricht>">
+<!ENTITY loc.host.60 ".axis">
 <!ENTITY loc.host.105 "Gibt einen zuvor gestellten Spieler frei. Wird protokolliert.">
-<!ENTITY loc.host.56 ".all <Nachricht>">
+<!ENTITY loc.host.56 ".all">
 <!ENTITY loc.host.35 "Kanal nicht verf&#252;gbar.">
 <!ENTITY loc.host.342 "{1} akzeptiert keine Bef&#246;rderungen zum Anf&#252;hrer.">
 <!ENTITY loc.host.202 "{1} hat sich eingeloggt.">
@@ -1750,19 +1750,19 @@
 <!ENTITY loc.host.237 "{1}: Verteidigen von R&#252;ckzugspositionen.">
 <!ENTITY loc.host.471 "*** CAUTION --- ENTERING DANGER ZONE --- CAUTION ***">
 <!ENTITY loc.host.391 "âˆšÃ‡âˆšÃ–â€šÃ„Â¢âˆšÃ‡â€šÃ Â´â€šÃ Ã«âˆšÃ£âˆšÃ‘âˆšÃ¢âˆšÃ£âˆšÂ¥âˆšÂ´">
-<!ENTITY loc.host.108 ".warnall <Nachricht>">
+<!ENTITY loc.host.108 ".warnall">
 <!ENTITY loc.host.43 "ACHSEN Offiziere/Spielmanager:">
 <!ENTITY loc.host.286 "Squad-CO Wahl fehlgeschlagen: f&#252;hrender Kandidat hat das Squad verlassen.">
 <!ENTITY loc.host.294 "Ignorierte Spieler:">
-<!ENTITY loc.host.432 "/bump [-up | -down] <Spieler> <Grund>">
+<!ENTITY loc.host.432 "/bump [-up | -down]">
 <!ENTITY loc.host.636 "Als OIC f&#252;r die Einheit zur&#252;cktreten">
 <!ENTITY loc.host.75 "Deaktiviert den HC-Kanal">
 <!ENTITY loc.host.17 "Du wurdest vom diensthabenden Offizier {1}: ({2}) gestellt: Direkte Kommunikation. Die Unterhaltung wird protokolliert.">
 <!ENTITY loc.host.595 "Zeigt Informationen zu den letzen 5 Kills des Spielers in dieser Kampagne. Bitte nicht zu oft benutzen.">
 <!ENTITY loc.host.238 "{1}: Verteidigen gegen Einnahme.">
 <!ENTITY loc.host.530 "Keine im Moment aktiven OICs gefunden.">
-<!ENTITY loc.host.377 "/voting <on|off>">
-<!ENTITY loc.host.468 "/shutdown downtime <time interval>">
+<!ENTITY loc.host.377 "/voting">
+<!ENTITY loc.host.468 "/shutdown downtime">
 <!ENTITY loc.host.257 "&#34;/trainers&#34;">
 <!ENTITY loc.host.606 "Feindliche Einheiten in {1} ziehen sich zur&#252;ck.">
 <!ENTITY loc.host.309 "/movedivision">
@@ -1776,7 +1776,7 @@
 <!ENTITY loc.host.243 "&#34;.home&#34; oder &#34;.home move&#34;">
 <!ENTITY loc.host.655 "Missionserstellung best&#228;tigt!">
 <!ENTITY loc.host.412 "Strat wurde innerhalb der letzten 5 Minuten neu gestartet. Bitte warten und noch einmal versuchen.">
-<!ENTITY loc.host.90 ".N <Nachricht>">
+<!ENTITY loc.host.90 ".N">
 <!ENTITY loc.host.476 "[*] Game server will be coming down in {1}: {2}. [*]">
 <!ENTITY loc.host.59 "Sendet eine Nachricht an alle ALLIIERTEN-Spieler. Wird protokolliert.">
 <!ENTITY loc.host.386 "Deine Spielzeit hat zwei Stunden erreicht.">
@@ -1794,35 +1794,35 @@
 <!ENTITY loc.host.566 "*Alle Squad-CO Wahlstimmen f&#252;r {1} wurden zur&#252;ckgezogen, die Wahl geht weiter.">
 <!ENTITY loc.host.165 "Im Moment sind alle verf&#252;gbaren Kampfbefehle ausgegeben.">
 <!ENTITY loc.host.173 "Feindeinheiten ziehen sich aus {1} zur&#252;ck">
-<!ENTITY loc.host.86 ".kickall <Begr&#252;ndung>">
+<!ENTITY loc.host.86 ".kickall">
 <!ENTITY loc.host.291 "Du hast bereits Deine Stimme in dieser Wahl abgegeben.">
 <!ENTITY loc.host.158 "{1}: &#39;{2}&#39; Befehl wurde gegeben.">
 <!ENTITY loc.host.140 "Alarmiert die Offiziere des Hoheitskommandos, dass die Basis Deines Ausgangspunktes &#252;berrannt wird. Die Stadt muss &#34;contested&#34; sein und mehrere Feindeinheiten m&#252;ssen sich in der N&#228;he der Basis befinden, bevor ein overrun-Bericht akzeptiert werden kann.">
 <!ENTITY loc.host.21 "Der Spielmanager hat dich rausgeworfen.">
-<!ENTITY loc.host.203 ".setrank <Rang Nummer>">
+<!ENTITY loc.host.203 ".setrank">
 <!ENTITY loc.host.48 "{1}: {2}">
 <!ENTITY loc.host.420 "Spieler &#39;{1}&#39; hasn&#39;t spawned yet during this game session.">
 <!ENTITY loc.host.4 "Du bist nun A.F.K (Away From Keyboard)">
-<!ENTITY loc.host.129 ".fallback <Code>">
+<!ENTITY loc.host.129 ".fallback">
 <!ENTITY loc.host.117 "Mit Parameter: Zeigt den Besitzstatus der ausgew&#228;hlten Stadt an. Ohne Parameter: Zeigt den Besitzstatus der n&#228;chstgelegenen Stadt an.">
 <!ENTITY loc.host.647 "Missionserstellung verweigert.">
 <!ENTITY loc.host.307 "/movebrigade">
 <!ENTITY loc.host.410 "/resetstrat">
-<!ENTITY loc.host.107 "Sendet eine WARNUNG an <Spieler>. Wird protokolliert.">
+<!ENTITY loc.host.107 "Sendet eine WARNUNG an . Wird protokolliert.">
 <!ENTITY loc.host.402 "[GM:MOTD] {1}">
-<!ENTITY loc.host.627 "Kill-A-Rat: Kunde wurde bedient! {2} von {1} zur Strecke gebracht.">
+<!ENTITY loc.host.627 "Kill-a-Rat: Ein Kunde wurde abgefertigt! {2} von {1} zur Strecke gebracht.">
 <!ENTITY loc.host.118 "HC-Kanal aus.">
 <!ENTITY loc.host.212 "Sie sind kein aktiver High Commander.">
 <!ENTITY loc.host.207 "Im Moment sind keine aktiven Missionen f&#252;r diese Brigade vorhanden.">
-<!ENTITY loc.host.62 ".crs [<Nachricht>]">
+<!ENTITY loc.host.62 ".crs []">
 <!ENTITY loc.host.624 "Dein Freund {1} loggt ein.">
 <!ENTITY loc.host.266 "*{1} hat von seiner Position als XO abgedankt zu {2}.">
 <!ENTITY loc.host.373 "/ignore  oder  /ignore player  oder  /ignore player1 player2 ... player10">
-<!ENTITY loc.host.445 "/lastcap [<Spieler> | global | all | allied | axis | uk | de | fr]">
+<!ENTITY loc.host.445 "/lastcap [ | global | all | allied | axis | uk | de | fr]">
 <!ENTITY loc.host.261 "&#34;/hclist&#34;">
 <!ENTITY loc.host.310 "Anfrage zum Verlegen des Divisionshauptquartiers der aktuellen Brigade zu der auf der Karte ausgew&#228;hlten Stadt.">
 <!ENTITY loc.host.610 "Keine Geb&#228;ude in {1} betroffen.">
-<!ENTITY loc.host.137 ".friends +<Spieler> oder .friends -<Spieler> oder .friends">
+<!ENTITY loc.host.137 ".friends + oder .friends - oder .friends">
 <!ENTITY loc.host.280 "SQUAD">
 <!ENTITY loc.host.650 "In dieser Waffengattung nicht verf&#252;gbar für diesen Account. Auf www.battlegroundeurope.com kannst Du Deinen Account upgraden!">
 <!ENTITY loc.host.7 "{1} ist AFK: {2}">
@@ -1841,12 +1841,12 @@
 <!ENTITY loc.host.463 "/shutdown stop">
 <!ENTITY loc.host.467 "When the countdown reaches zero arenalock 15 is applied and players are given a final 30 seconds to despawn and exit if they wish to save their current sorties.">
 <!ENTITY loc.host.351 "Deine Ignore Liste ist voll. Du muss erst jemanden von der Liste entfernen.">
-<!ENTITY loc.host.658 "{1} will surrender to the enemy in {2} hours.">
+<!ENTITY loc.host.658 "{1} wird sich dem Feind in {2} Stunden ergeben.">
 <!ENTITY loc.host.390 "Deine Onlinezeit ist jetzt in der Strafperiode. Der Gesundheit zuliebe, logge Dich bitte aus. Du erh&#228;ltst keine Punkte mehr, solange Du nicht mindestens 5 Stunden offline warst.">
 <!ENTITY loc.host.15 "Du hast als diensthabender Offizier {1} gestellt - Die Unterhaltung wird protokolliert.">
 <!ENTITY loc.host.356 "Rekrut &#39;{1}&#39; hat Deine sich Deiner Aufsicht durch Verlassen des Spieles entzogen.">
 <!ENTITY loc.host.241 "Ziel wurde vor {1}h {2}m ausgegeben.">
-<!ENTITY loc.host.208 "/whisper <Nachricht>">
+<!ENTITY loc.host.208 "/whisper">
 <!ENTITY loc.host.589 "[GM:{1}] {2}">
 <!ENTITY loc.host.401 "[CRS:MOTD] {1}">
 <!ENTITY loc.host.367 "Du hast {1} als Missionsf&#252;hrer abgesetzt - der Spieler kann innerhalb von 8 Minuten wieder die Kontrolle &#252;bernehmen.">
@@ -1856,11 +1856,11 @@
 <!ENTITY loc.host.446 "Zeigt die letzten Einnahmen. W&#228;hle einen CP auf der Karte, um die Ergebnisse einzuschr&#228;nken.">
 <!ENTITY loc.host.515 "Hmm, um ein Squad umzubenennen, m&#252;ssen die beiden Namen verschieden sein.">
 <!ENTITY loc.host.27 "Spieler {1} wurde von deiner Ignorieren-Liste entfernt.">
-<!ENTITY loc.host.483 "/pnote <Spieler> <message>  or  /pnote <Spieler>">
+<!ENTITY loc.host.483 "/pnote    or  /pnote">
 <!ENTITY loc.host.540 "Kann im Moment keinen MSP zur Mission hinzuf&#252;gen.">
 <!ENTITY loc.host.242 "MOTD">
 <!ENTITY loc.host.453 "Bef&#246;rdert den Spieler zum CO seines Squads. Hat keinen Effekt bei Spielern, die nicht in einem Squad sind.">
-<!ENTITY loc.host.635 "/oicresign <unit>">
+<!ENTITY loc.host.635 "/oicresign">
 <!ENTITY loc.host.529 "zeigt Kommandierende Offiziere (OIC) von Brigaden/Divisionen.">
 <!ENTITY loc.host.321 "Du bist ab jetzt der Anf&#252;hrer dieser Mission! Tip: Benutze das &#34;/orders&#34;-Kommando, um Deine Truppen zu f&#252;hren und platziere Wegpunkte auf der Karte um ihnen den Weg zu zeigen.">
 <!ENTITY loc.host.503 "/rdp">
@@ -1914,7 +1914,7 @@
 <!ENTITY loc.function.188 "Deichsel an-/abkuppeln">
 <!ENTITY loc.function.206 "nach oben schauen">
 <!ENTITY loc.function.914 "Fahrzeug anh&#228;ngen">
-<!ENTITY loc.function.4004 "Free Look ON">
+<!ENTITY loc.function.4004 "Freies Umschauen EIN">
 <!ENTITY loc.function.172 "Instrumentenbeleuchtung">
 <!ENTITY loc.function.238 "Visieransicht">
 <!ENTITY loc.function.532 "PAK-Neigung">
@@ -1962,16 +1962,16 @@
 <!ENTITY loc.function.315 "Horizontale Achse">
 <!ENTITY loc.function.281 "Waffe 5">
 <!ENTITY loc.function.9 "Tutorial fortsetzen">
-<!ENTITY loc.function.4006 "Camera Look Y">
+<!ENTITY loc.function.4006 "Kameraposition Y">
 <!ENTITY loc.function.261 "Vorwärts">
 <!ENTITY loc.function.835 "Entfernungsbestimmung">
 <!ENTITY loc.function.904 "Ziel-Peilung markieren">
 <!ENTITY loc.function.211 "nach links schauen">
 <!ENTITY loc.function.4 "Mausachse zentrieren">
 <!ENTITY loc.function.226 "nach hinten rechts unten schauen">
-<!ENTITY loc.function.733 "Map Zoom Out">
+<!ENTITY loc.function.733 "Karte verkleinern">
 <!ENTITY loc.function.263 "Hocken">
-<!ENTITY loc.function.4007 "Next Position">
+<!ENTITY loc.function.4007 "N&#228;chste Position">
 <!ENTITY loc.function.247 "Blick nach links rollen">
 <!ENTITY loc.function.908 "Sperrfeuer erh&#246;hen">
 <!ENTITY loc.function.213 "nach links hinten schauen">
@@ -1990,12 +1990,10 @@
 <!ENTITY loc.function.223 "nach vorne links unten schauen">
 <!ENTITY loc.function.190 "Runterschalten">
 <!ENTITY loc.function.222 "nach vorn rechts unten schauen">
-<!ENTITY loc.function.2013 "PTZ Reset">
-<!ENTITY loc.function.4008 "Previous Position">
+<!ENTITY loc.function.4008 "Vorige Position">
 <!ENTITY loc.function.901 "Ziel-Geschwindigkeit verringern">
 <!ENTITY loc.function.300 "Nach rechts lehnen">
 <!ENTITY loc.function.180 "Autom. Sturzflug">
-<!ENTITY loc.function.2012 "PTZ Default Zoom">
 <!ENTITY loc.function.2000 "Bewegung">
 <!ENTITY loc.function.210 "nach rechts schauen">
 <!ENTITY loc.function.171 "K&#252;hlklappen">
@@ -2013,7 +2011,7 @@
 <!ENTITY loc.function.291 "Gieren">
 <!ENTITY loc.function.1002 "Halt!">
 <!ENTITY loc.function.280 "Waffe 4">
-<!ENTITY loc.function.732 "Map Zoom In">
+<!ENTITY loc.function.732 "Karte verg&#246;ß&#223;ern">
 <!ENTITY loc.function.316 "Ansicht schwenken">
 <!ENTITY loc.function.252 "Position 4">
 <!ENTITY loc.function.2007 "Chat">
@@ -2035,9 +2033,9 @@
 <!ENTITY loc.function.178 "Bombenlast Auswahl &#228;ndern">
 <!ENTITY loc.function.903 "Ziel-Peilungswinkel verringern">
 <!ENTITY loc.function.187 "Waffe aufbauen">
-<!ENTITY loc.function.922 "Mobile Spawn">
+<!ENTITY loc.function.922 "Mobiler Spawn">
 <!ENTITY loc.function.212 "nach rechts hinten schauen">
-<!ENTITY loc.function.4005 "Camera Look X">
+<!ENTITY loc.function.4005 "Kameraposition X">
 <!ENTITY loc.function.198 "Externe Sicht - fester Standpunkt">
 <!ENTITY loc.function.224 "nach rechts unten schauen">
 <!ENTITY loc.function.317 "Ansicht schenken">
@@ -2056,13 +2054,13 @@
 <!ENTITY loc.function.216 "nach vorn links oben schauen">
 <!ENTITY loc.function.269 "Nach rechts bewegen">
 <!ENTITY loc.function.276 "Visieransicht">
-<!ENTITY loc.function.4001 "Left/Right">
+<!ENTITY loc.function.4001 "Links/Rechts">
 <!ENTITY loc.function.310 "Querruder-Trimmung">
 <!ENTITY loc.function.201 "Mauszeiger einblenden">
 <!ENTITY loc.function.165 "Gemisch fett">
 <!ENTITY loc.function.258 "Position 10">
 <!ENTITY loc.function.2008 "Ingame">
-<!ENTITY loc.function.710 "Reset HUD">
+<!ENTITY loc.function.710 "HUD zurücksetzen">
 <!ENTITY loc.function.189 "Hochschalten">
 <!ENTITY loc.function.191 "R&#252;ckw&#228;rtsgang">
 <!ENTITY loc.function.228 "Blickrichtung F&#252;nfundzwanzig">
@@ -2085,7 +2083,7 @@
 <!ENTITY loc.function.262 "R&#252;ckw&#228;rts">
 <!ENTITY loc.function.237 "Instrumentenansicht">
 <!ENTITY loc.function.911 "Visier-Konvergenz verringern">
-<!ENTITY loc.function.4003 "Secondary Action">
+<!ENTITY loc.function.4003 "Sekund&#228;re Aktion">
 <!ENTITY loc.function.1003 "Vorr&#252;cken!">
 <!ENTITY loc.function.231 "Blickrichtung Achtundzwanzig">
 <!ENTITY loc.function.177 "Schalter Bombenlast">
@@ -2117,17 +2115,16 @@
 <!ENTITY loc.function.195 "Gefechtsnotreserve aktivieren/deaktivieren">
 <!ENTITY loc.function.241 "Prim&#228;rwaffe verwenden">
 <!ENTITY loc.function.296 "Kupplung rechte Kette">
-<!ENTITY loc.function.4000 "Forward/Backward">
+<!ENTITY loc.function.4000 "Vorw&#228;rts/R&#252;ckw&#228;rts">
 <!ENTITY loc.function.207 "nach unten schauen">
 <!ENTITY loc.function.902 "Ziel-Peilungswinkel erh&#246;hen">
 <!ENTITY loc.function.163 "Gemisch aus">
-<!ENTITY loc.function.4002 "Primary Action">
+<!ENTITY loc.function.4002 "Prim&#228;re Aktion">
 <!ENTITY loc.function.170 "N&#228;chsten Treibstofftank ausw&#228;hlen">
 <!ENTITY loc.function.217 "nach rechts oben schauen">
 <!ENTITY loc.function.235 "Blickrichtung Zweiunddreissig">
-<!ENTITY loc.function.2011 "PTZ Verkleinern">
 <!ENTITY loc.function.225 "nach links unten schauen">
-<!ENTITY loc.function.4009 "Engine">
+<!ENTITY loc.function.4009 "Motor">
 <!ENTITY loc.function.704 "Screenshot">
 <!ENTITY loc.function.203 "Puffer f&#252;r Funkger&#228;t ein/aus">
 <!ENTITY loc.function.232 "Blickrichtung Neunundzwanzig">
@@ -2262,7 +2259,6 @@
 <!ENTITY widgets.manuals.mantab "HANDBÜCHER">
 <!ENTITY widgets.prefs.groups.game.presets.description "Wähle eine der drei Voreinstellungen aus. Danach kannst Du einzelne Einstellungen verändern, um das Spiel Deinem Rechner anzupassen.">
 <!ENTITY widgets.calibration.device.reread.ok "Die Spielsteuerungen wurden neu eingelesen.">
-<!ENTITY widgets.prefs.groups.shaders.reflections.update "UPDATERATE">
 <!ENTITY widgets.prefs.groups.connection.network.primary "primär">
 <!ENTITY widgets.prefs.groups.visual.grass.tip "Schaltet Grasanimationen ein. Bei Performanceproblemen abschalten.">
 <!ENTITY widgets.prefs.groups.ui.colors.aws "LUFTWARNSYSTEM (AWS)">
@@ -2273,7 +2269,6 @@
 <!ENTITY widgets.prefs.groups.infantry.weapons.tip "Anzeige der Waffen bei Ragdolleffekten. Bei Performanceproblemen abschalten.">
 <!ENTITY widgets.map.context.waypoints.add.waypoint.type "TYP DES WEGPUNKTS">
 <!ENTITY widgets.prefs.groups.hud.ppos.ok.tip "Diese Farbe wird benutzt, um anzuzeigen, das hier ein PPO aufgestellt werden kann.">
-<!ENTITY widgets.prefs.groups.game.vislimit.medium "mittel">
 <!ENTITY widgets.prefs.groups.titles.shadow "Schatten">
 <!ENTITY widgets.keymapper.keys.function "FUNKTIONSNAME">
 <!ENTITY widgets.prefs.groups.titles.visual "visuelle Effekte">
@@ -2291,7 +2286,7 @@
 <!ENTITY widgets.map.waypoints.approve "BESTÄTIGEN">
 <!ENTITY widgets.prefs.groups.shadows.vehicles "SPIELEREINHEITEN">
 <!ENTITY widgets.map.options.fullscreen "VOLLBILD">
-<!ENTITY widgets.calibration.mouse.subtitle "Standard Mouse Sensitivity">
+<!ENTITY widgets.calibration.mouse.subtitle "Standard Mausempfindlichkeit">
 <!ENTITY widgets.keymapper.cats.guns "Geschütze">
 <!ENTITY widgets.prefs.groups.video.card.tip "Auswahl des Videotreibers">
 <!ENTITY widgets.prefs.groups.ui.colors.leader "MISSIONSFÜHRER">
@@ -2318,7 +2313,7 @@
 <!ENTITY widgets.prefs.groups.hud.custom.orders "BEFEHLE">
 <!ENTITY widgets.globals.manuals "HANDBÜCHER">
 <!ENTITY widgets.prefs.groups.alerts.textmode.automatic "Automatisch">
-<!ENTITY widgets.map.tooltip.town.french "Diese Stadt ist französisch kontrolliert.">
+<!ENTITY widgets.map.tooltip.town.french "Diese Stadt ist unter französischer Kontrolle.">
 <!ENTITY widgets.prefs.far "weit">
 <!ENTITY widgets.map.options.zoom.facilities "ANLAGEN">
 <!ENTITY widgets.prefs.groups.hud.missionwaypoints "WEGPUNKTE">
@@ -2340,7 +2335,6 @@
 <!ENTITY widgets.prefs.na "nicht verfügbar">
 <!ENTITY widgets.prefs.groups.infantry.corpse.time "ANZEIGEDAUER LEICHEN">
 <!ENTITY widgets.map.waypoints.add.attack "HIER ANGREIFEN">
-<!ENTITY widgets.prefs.groups.game.network.secondary "sekundäre">
 <!ENTITY widgets.prefs.groups.ui.colors.squad "SQUAD">
 <!ENTITY widgets.map.context.hc.objectives "Zielvorgaben">
 <!ENTITY widgets.prefs.groups.hud.ppos.tip "Auswahl der Farben zur Kennzeichnung guter und schlechter Stellen für PPOs.">
@@ -2356,7 +2350,6 @@
 <!ENTITY widgets.prefs.groups.alerts.show.tip "Alarmmeldungen im HUD anzeigen. Beispiele: Einnahme einer Anlage oder ein Spieler hat Dir Munition gegeben">
 <!ENTITY widgets.prefs.groups.sound.card "SOUNDKARTE">
 <!ENTITY widgets.prefs.groups.shadows.corpses "LEICHEN">
-<!ENTITY widgets.prefs.groups.game.netcode2 "NETCODE2 BENUTZEN (beta)">
 <!ENTITY widgets.map.options.showports "HAFENANLAGEN">
 <!ENTITY widgets.keymapper.keys.primary "PRIMÄRE TASTE">
 <!ENTITY widgets.map.context.waypoints.add.waypoint.attack "Angreifen">
@@ -2374,7 +2367,6 @@
 <!ENTITY widgets.map.options.zoom.regional "REGIONAL">
 <!ENTITY widgets.map.waypoints.contact "KONTAKT MELDEN">
 <!ENTITY widgets.map.tooltip.divhq "Divisions HQ">
-<!ENTITY widgets.prefs.groups.game.vislimit "ANZAHL SICHTBARER SPIELER">
 <!ENTITY widgets.calibration.device.reread "JOYSTICKS EINLESEN">
 <!ENTITY widgets.calibration.device.label "NAME">
 <!ENTITY widgets.globals.options "EINSTELLUNGEN">
@@ -2405,7 +2397,6 @@
 <!ENTITY widgets.map.options.showbrigades "BRIGADEN">
 <!ENTITY widgets.map.context.waypoints.delete "Löschen">
 <!ENTITY widgets.map.context.brigade.join "Brigade beitreten">
-<!ENTITY widgets.prefs.groups.shaders.water "WASSERSHADER">
 <!ENTITY widgets.prefs.disabled "aus">
 <!ENTITY widgets.map.waypoints.contact.unknown "FEINDPRÄSENZ">
 <!ENTITY widgets.prefs.groups.visual.clutter.radius "RADIUS">
@@ -2424,7 +2415,7 @@
 <!ENTITY widgets.keymapper.cats.ships "Schiffe und Boote">
 <!ENTITY widgets.prefs.groups.titles.infantry "Infanterie">
 <!ENTITY widgets.map.waypoints.notes "WEGPUNKT NOTIZEN (bis zu 128 Zeichen)">
-<!ENTITY widgets.keymapper.convergence "Convergence">
+<!ENTITY widgets.keymapper.convergence "Konvergenz">
 <!ENTITY widgets.prefs.groups.shadows.grass "GRAS">
 <!ENTITY widgets.map.info.me.title "DEINE LAT/LON">
 <!ENTITY widgets.prefs.groups.visual.limitfov.tip "Berücksichtigt das Sichtfeld bei der Berechung des Detaillevels (LOD). Bei Performanceproblemen abschalten.">
@@ -2437,12 +2428,11 @@
 <!ENTITY widgets.map.context.selection "Kartenauswahl">
 <!ENTITY widgets.prefs.groups.sound.ambient.frequent "oft">
 <!ENTITY widgets.prefs.groups.connection.network.tip "Auswahl der Netzwerkroute">
-<!ENTITY widgets.prefs.groups.shaders.shadows "SCHATTEN">
 <!ENTITY widgets.idcard.nextrank "zum nächsten Rang">
 <!ENTITY widgets.prefs.groups.infantry.lod.tip "Wähle aus, wie detailliert die Soldaten dargestellt werden.">
 <!ENTITY widgets.prefs.groups.shadows.flying "SCHATTEN BEIM FLIEGEN">
 <!ENTITY widgets.calibration.mouse.more "hoch">
-<!ENTITY widgets.prefs.groups.chat.reset.tip "Dieser Button stellt die voreingestellten Radiokanäle wieder her. Dies funktioniert im Online Modus.">
+<!ENTITY widgets.prefs.groups.chat.reset.tip "Click this button to reset your radio channels to the host defaults. Only applicable during online play.">
 <!ENTITY widgets.prefs.groups.titles.sound "Soundsystem">
 <!ENTITY widgets.map.options.showairfields "FLUGFELDER">
 <!ENTITY widgets.prefs.groups.alerts.display.panel "INTERVALL ALARMANZEIGE">
@@ -2476,7 +2466,6 @@
 <!ENTITY widgets.map.options.zoom.tactical "TAKTISCH">
 <!ENTITY widgets.map.waypoints.add.rally "HIER SAMMELN">
 <!ENTITY widgets.calibration.mouse.title "MAUS-EMPFINDLICHKEIT">
-<!ENTITY widgets.prefs.groups.shaders.postrender "POST RENDER FILTER">
 <!ENTITY widgets.prefs.groups.visual.nomuzzlelight "MÜNDUNGSFEUER UNTERDRÜCKEN">
 <!ENTITY widgets.prefs.groups.connection.vislimit.tip "Auswahl der Anzahl gleichzeitig sichtbarer Spieler. Bei Performanceproblemen heruntersetzen.">
 <!ENTITY widgets.prefs.groups.game.presets.quality "BESTE QUALITÄT">
@@ -2497,12 +2486,11 @@
 <!ENTITY widgets.prefs.groups.hud.mode.tip "Anzeigemodus des Heads Up Display (HUD) einstellen">
 <!ENTITY widgets.prefs.changed "Einige Änderungen erfordern einen Neustart des Spieles.">
 <!ENTITY widgets.prefs.groups.game.languagefilter "SCHIMPFWORTFILTER">
-<!ENTITY widgets.prefs.groups.shaders.grass "GRAS SHADER">
 <!ENTITY widgets.prefs.groups.infantry.corpse.detail.tip "Höher aufgelöstes Leichenmodell verwenden. Bei Performanceproblemen abschalten.">
 <!ENTITY widgets.prefs.groups.connection.vislimit "ANZAHL SICHTBARER SPIELER">
 <!ENTITY widgets.prefs.groups.alerts.textmode.onclick "nach Klick anzeigen">
 <!ENTITY widgets.prefs.groups.sound.system.disabled "aus">
-<!ENTITY widgets.calibration.mouse.aimtitle "Aiming Mouse Sensitivity">
+<!ENTITY widgets.calibration.mouse.aimtitle "Mausempfindlichkeit beim Zielen">
 <!ENTITY widgets.prefs.groups.game.languagefilter.tip "Schimpfwortfilter für Chat aktivieren">
 <!ENTITY widgets.prefs.groups.game.language.chinese "chinesisch">
 <!ENTITY widgets.prefs.groups.chat.reset.button "RESET">
@@ -2527,7 +2515,6 @@
 <!ENTITY widgets.prefs.groups.titles.windows "HUD Fenster">
 <!ENTITY widgets.manuals.mantab.select "WÄHLE EIN HANDBUCH">
 <!ENTITY widgets.map.options.filters "KARTENFILTER">
-<!ENTITY widgets.prefs.groups.game.vislimit.low "wenig">
 <!ENTITY widgets.prefs.groups.visual.shaders "SHADER EINSTELLUNGEN">
 <!ENTITY widgets.calibration.none.title "WÄHLE EINE JOYSTICK-ACHSE">
 <!ENTITY widgets.keymapper.pending.sec "Drücke eine Taste oder eine Tastenkombination, um die sekundäre Taste für diese Funktion einzustellen.">
@@ -2540,15 +2527,12 @@
 <!ENTITY widgets.prefs.groups.hud.custom.secondary "SEKUNDÄRMUNITION">
 <!ENTITY widgets.map.info.mouse.tip "Zeigt die Position der Maus in Breiten- und Längengrad.">
 <!ENTITY widgets.map.options.defaults "STANDARDS">
-<!ENTITY widgets.prefs.groups.game.vislimit.high "viele">
 <!ENTITY widgets.map.tooltip.units "EINHEITEN">
 <!ENTITY widgets.calibration.device.axisy "Y-Achse">
-<!ENTITY widgets.prefs.groups.game.network.primary "primäre">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.settings.tip "Einstellungen zur Minikarte">
 <!ENTITY widgets.keymapper.button.discard.tip "Verwirft alle Änderungen">
 <!ENTITY widgets.map.tooltip.objective.attack "Hier wurde ein Angriff befohlen">
 <!ENTITY widgets.prefs.groups.game "SPIELEINSTELLUNGEN">
-<!ENTITY widgets.prefs.groups.shaders "SHADER">
 <!ENTITY widgets.prefs.groups.alerts.textmode.tip "Auswahl ob automatische Anzeige oder nach Klick auf das Icon">
 <!ENTITY widgets.prefs.groups.video.vertsync "VERTIKALE SYNCHRONISATION">
 <!ENTITY widgets.prefs.groups.ui.colors.mission "MISSIONSMITGLIEDER">
@@ -2563,7 +2547,7 @@
 <!ENTITY widgets.prefs.groups.ui.colors.aws.tip "Auswahl der Farben für wenig und viele Feinde">
 <!ENTITY widgets.prefs.groups.sound.ambient.infrequent "selten">
 <!ENTITY widgets.prefs.groups.infantry.lod "Detaillevel">
-<!ENTITY widgets.keymapper.convergence.tip "Enter the gun convergence for the selected aircraft here. (Can be changed later with the &#34;/conv&#34; command.)">
+<!ENTITY widgets.keymapper.convergence.tip "Gib die Waffenkonvergenz für das ausgewählte Flugzeug ein (kann später mit dem .conv Kommando geändert werden)">
 <!ENTITY widgets.map.info.target.tip "Zielstadt Deiner Mission">
 <!ENTITY widgets.prefs.groups.hud.ppos.ok "AUFBAUEN MÖGLICH">
 <!ENTITY widgets.map.waypoints.title "WEGPUNKTE">
@@ -2581,7 +2565,7 @@
 <!ENTITY widgets.map.tooltip.contested "In dieser Stadt wurde ein Anlage vom Feind erobert.">
 <!ENTITY widgets.manuals.back "ZURÜCK">
 <!ENTITY widgets.map.context.hc.resign "Zurücktreten">
-<!ENTITY widgets.map.tooltip.town.british "Diese Stadt ist britisch kontrolliert.">
+<!ENTITY widgets.map.tooltip.town.british "Diese Stadt ist unter britischer Kontrolle.">
 <!ENTITY widgets.prefs.groups.visual.postrender.tip "Schaltet Post Render Filter ein (Bild erscheint weicher). Bei Performanceproblemen abschalten.">
 <!ENTITY widgets.idcard.status "STATUS">
 <!ENTITY widgets.prefs.groups.sound.volume.music "MUSIK">
@@ -2590,14 +2574,12 @@
 <!ENTITY widgets.prefs.groups.ui.colors.enemy "FEINDE">
 <!ENTITY widgets.prefs.groups.game.presets.performance "BESTE LEISTUNG">
 <!ENTITY widgets.prefs.slowest "am langsamsten">
-<!ENTITY widgets.prefs.groups.shaders.reflections.short "REFLEKTIONEN">
 <!ENTITY widgets.prefs.min "min">
-<!ENTITY widgets.map.tooltip.town.american "This town is American owned.">
+<!ENTITY widgets.map.tooltip.town.american "Diese Stadt ist unter amerikanischer Kontrolle.">
 <!ENTITY widgets.prefs.groups.visual.specular.tip "Schaltet bessere Ausleuchtung ein. Bei Performanceproblemen abschalten.">
 <!ENTITY widgets.prefs.groups.hud.missionwaypoints.tip "Zeigt wichtige Wegpunkte (Ziel, Nachschub etc.) auf dem Bildschirm an, wenn Du Dich in der Spielwelt befindest.">
 <!ENTITY widgets.prefs.groups.hud.custom.primary "PRIMÄRMUNITION">
 <!ENTITY widgets.map.info.me.tip "Zeigt Deine Position in der Spielwelt in Breiten- und Längengraden.">
-<!ENTITY widgets.prefs.groups.shaders.reflections "WASSERREFLEKTIONEN">
 <!ENTITY widgets.calibration.none.desc "Klappe die Achsenliste des Joysticks auf und wähle eine Achse zum Konfigurieren.">
 <!ENTITY widgets.prefs.groups.game.language "SPRACHE">
 <!ENTITY widgets.prefs.groups.connection "VERBINDUNGEN">
@@ -2622,7 +2604,6 @@
 <!ENTITY widgets.map.waypoints.player "MIT SPIELER CHATTEN">
 <!ENTITY widgets.prefs.groups.hud.custom.minimap.mode.compass "Kompass">
 <!ENTITY widgets.prefs.groups.sound.volume.fx "SOUNDEFFEKTE">
-<!ENTITY widgets.prefs.groups.game.network "NETZWERK ROUTE">
 <!ENTITY widgets.prefs.groups.visual.combatsmoke "RAUCH">
 <!ENTITY widgets.idcard.name "NAME">
 <!ENTITY widgets.prefs.groups.game.presets "VOREINSTELLUNGEN">
@@ -2680,7 +2661,6 @@
 <!ENTITY widgets.prefs.groups.visual.limitfov "FOV ÄNDERUNGEN BEGRENZEN">
 <!ENTITY widgets.prefs.groups.connection.netcode2 "NETCODE2">
 <!ENTITY widgets.prefs.groups.shadows.flying.tip "Schatten beim Fliegen anzeigen. Bei Performanceproblemen abschalten.">
-<!ENTITY widgets.prefs.groups.game.network.best "beste verwenden">
 <!ENTITY widgets.prefs.groups.visual.water.tip "Lässt Wasser realistischer erscheinen. Bei Performanceproblemen abschalten.">
 <!ENTITY widgets.prefs.groups.visual.texreduce.tip "Reduziert die Qualität der Texturen. Verbessert die Leistung.">
 <!ENTITY widgets.prefs.groups.video.card "VIDEOKARTE">
@@ -2703,7 +2683,6 @@
 <!ENTITY widgets.prefs.groups.hud.ppos "SPIELERPLATZIERTE OBJEKTE (PPO)">
 <!ENTITY widgets.prefs.groups.hud.custom.gameinfo "SPIEL INFO">
 <!ENTITY widgets.prefs.groups.connection.netcode2.tip "Schaltet Netcode2 ein. Verbessert die Verbindung zum Spieleserver und schaltet die Pinganzeige ein.">
-<!ENTITY widgets.prefs.groups.shaders.normalmaps "NORMAL MAPS">
 <!ENTITY widgets.prefs.groups.visual.grass "GRAS SHADER">
 <!ENTITY widgets.prefs.groups.visual.muzzlelight.tip "Schaltet Mündungsfeuer ein. Bei Performanceproblemen abschalten.">
 <!ENTITY widgets.keymapper.cats.general "Allgemeines">
@@ -3053,45 +3032,45 @@
 <!ENTITY tutorials.none "nicht verfügbar">
 <!ENTITY tutorials.tab "TRAINING">
 <!ENTITY loading.network.loggingin "Einloggen">
-<!ENTITY loading.eyepatches "Loading Gun Sights">
-<!ENTITY loading.beefjerky "Initializing Libraries">
+<!ENTITY loading.eyepatches "Lade Visiere">
+<!ENTITY loading.beefjerky "Initialisiere Bibliotheken">
 <!ENTITY loading.network "Verbinde mit Netzwerk">
 <!ENTITY loading.gameloop "Initialisiere Loop">
 <!ENTITY loading.trees "Lade Bäume">
 <!ENTITY loading.network.complete "Login erfolgreich">
-<!ENTITY loading.animations.fps "Loading FPS Animations">
+<!ENTITY loading.animations.fps "Lade FPS Animationen">
 <!ENTITY loading.sdms "Initialisiere Schadensmodelle">
-<!ENTITY loading.extresource "Initialisiere Externe Ressourcen">
+<!ENTITY loading.extresource "Initialisiere externe Resourcen">
 <!ENTITY loading.fx "Initialisiere Effekte">
-<!ENTITY loading.vehicles.init "Initialisiere Vehikel-System">
-<!ENTITY loading.animations.fx "Loading Infantry Effects">
+<!ENTITY loading.vehicles.init "Initialisiere Vehikelsystem">
+<!ENTITY loading.animations.fx "Lade Infanterie Effekte">
 <!ENTITY loading.objects "Initialisiere Objekte">
-<!ENTITY loading.infantry "Infanterie-Modelle">
-<!ENTITY loading.animations "Loading Animations">
-<!ENTITY loading.stuff.off.the.ground "Loading Clutter">
-<!ENTITY loading.blingmeters "Loading Gauges">
-<!ENTITY loading.copyright "copyright © 1999 - 2011 Playnet, Inc.">
+<!ENTITY loading.infantry "Lade Infanterie-Modelle">
+<!ENTITY loading.animations "Lade Animationen">
+<!ENTITY loading.stuff.off.the.ground "Lade Bodenvegetation">
+<!ENTITY loading.blingmeters "Lade Anzeigen">
+<!ENTITY loading.copyright "Copyright © 1999 - 2011 Playnet, Inc.">
 <!ENTITY loading.network.chat "Stelle Verbindung zum Chat her">
 <!ENTITY loading.sounds.init "Initialisiere Sounds">
-<!ENTITY loading.weather "Initializing Weather System">
+<!ENTITY loading.weather "Initialisiere Wettersystem">
 <!ENTITY loading.sounds "Lade Sounds">
-<!ENTITY loading.animations.grandma "Loading Granny Files">
-<!ENTITY loading.nukes "Initializing Physics Engine">
+<!ENTITY loading.animations.grandma "Lade Granny Dateien">
+<!ENTITY loading.nukes "Initialisiere Physikengine">
 <!ENTITY loading.network.auth "Authentifizieren">
-<!ENTITY loading.bsdms "Re-Building Terrain SDMs">
-<!ENTITY loading.animations.kits "Loading Infantry Sub-Systems">
-<!ENTITY loading.animations.tps "Loading TPS Animations">
-<!ENTITY loading.grass "Loading Speed Grass">
-<!ENTITY loading.fps "Initialisiere FPS-System">
+<!ENTITY loading.bsdms "Baue Terrain Schadensmodelle neu auf">
+<!ENTITY loading.animations.kits "Lade Infanterie Subsysteme">
+<!ENTITY loading.animations.tps "Lade TPS Animationen">
+<!ENTITY loading.grass "Lade Gras Subsystem">
+<!ENTITY loading.fps "Initialisiere FPS System">
 <!ENTITY loading.network.host "Stelle Verbindung zum Host her">
-<!ENTITY loading.uglies "Loading Bomb Sights">
-<!ENTITY loading.weapons "Initialisiere Waffen-System">
-<!ENTITY loading.netperf "Finding Best Connection">
-<!ENTITY loading.multitextures "MultiTexturen">
-<!ENTITY loading.mspaint "Initializing Render Engine">
+<!ENTITY loading.uglies "Lade Bombenvisiere">
+<!ENTITY loading.weapons "Initialisiere Waffensubsystem">
+<!ENTITY loading.netperf "Ermittle beste Verbindung">
+<!ENTITY loading.multitextures "Lade MultiTexturen">
+<!ENTITY loading.mspaint "Initialisiere Renderengine">
 <!ENTITY loading.compress "Initialisiere Texturenkompression">
-<!ENTITY loading.vehicles "Vehikel-Modelle">
-<!ENTITY loading.ui "UI-Modelle">
+<!ENTITY loading.vehicles "Lade Vehikel-Modelle">
+<!ENTITY loading.ui "Lade UI-Modelle">
 <!ENTITY brigade.control.appointed "{1} is now acting OIC of {2}.">
 <!ENTITY brigade.hqtab.brief.target "MISSIONSZIEL">
 <!ENTITY brigade.back.decision.persona "PERSONA">
@@ -3804,87 +3783,66 @@
 <!ENTITY hud.minimap.nearest "nächstgelegene Stadt">
 <!ENTITY hud.readout.vehicles.onhoist "am Kranhaken">
 <!ENTITY hud.readout.torp.aob "Winkel zum Bug">
-<!ENTITY persona.welcome.axis "ACHSEN MÄCHTE">
 <!ENTITY persona.list.arenalock "Server gesperrt">
 <!ENTITY persona.details.career.status.arenalock "Die Spielserver sind geschlossen und nicht verfügbar zum Spielen. Diese Seite wird aktualisiert, sobald die Server verfügbar sind.">
 <!ENTITY persona.list.overpopulated.1 "leicht">
+<!ENTITY persona.details.career.status.available "Einsatzbereit. Diese Persona ist sofort zum Spielen verfügbar.">
+<!ENTITY persona.list.available "Einsatzbereit">
 <!ENTITY persona.details.career "KARRIEREDETAILS">
 <!ENTITY persona.details.career.status.banned "Account ist für {1} Sekunden gesperrt. Das Spielen ist wieder möglich, sobald die Sperre abgelaufen ist oder ein Spielmanager sie manuell aufhebt. http://support.playnet.com/">
 <!ENTITY persona.list.balanced "ausgeglichen">
+<!ENTITY persona.selecttab.tip "Wähle eine Persona zum Spielen.">
+<!ENTITY persona.details.persona.recruit "Rekrut">
 <!ENTITY persona.list.imbalanced "Die Population der {1} ist {2} überbevölkert. Aus diesem Grund haben alle {3} Personas einen verzögerten Einstieg und alle {4} Personas sind ohne Einschränkung verfügbar.">
+<!ENTITY persona.details.career.status.training "Diese Persona befindet sich noch im Trainingslager. Das Trainingslager muss absolviert werden, um mit dem aktiven Dienst beginnen zu können.">
+<!ENTITY persona.forward.brigades "Brigade wählen">
 <!ENTITY persona.details.career.status.tip "EINSATZBEREIT zeigt an, dass die Persona zum Spielen bereit ist, während NICHT VERFÜGBAR bedeuted, dass die Persona auf begrenzte Zeit gesperrt ist wegen den Seitenversperrungsbeschränkungen.">
+<!ENTITY persona.selecttab.help "PERSONA-AUSWAHL:  WÄHLE EINE PERSONA">
+<!ENTITY persona.selecttab "PERSONA-AUSWAHL">
+<!ENTITY persona.forward.training "Start Training">
+<!ENTITY persona.details.brigade.na "keine Zugehörigkeit">
 <!ENTITY persona.list.onleave "nicht verfügbar für {1}">
 <!ENTITY persona.details.career.status.onleave "Wegen Seitensperre nicht verfügbar für {1} Sekunden.">
 <!ENTITY persona.redirect "Du bist Mitglied einer laufenden Mission, wechsle zum Bereitschaftsraum der Mission...">
-<!ENTITY persona.motd.tip "Hier findest Du wichtige Informationen über Updates und Events.">
 <!ENTITY persona.details.career.status.noswap "Diese Persona ist aufgrund Deiner vorherigen Seitenwahl jetzt nicht verfügbar.">
 <!ENTITY persona.list.requesting "benötigt Verstärkung">
-<!ENTITY persona.welcome.pollresults "Für die letzten Umfrageergebnisse hier klicken -- powered by WWII Online Polls">
+<!ENTITY persona.list "PERSONAS">
 <!ENTITY persona.forward.brigade "Brigade-HQ">
-<!ENTITY persona.welcome1 "Der Kampf um Westeuropa ist in vollem Gange. Wähle eine Seite und hilf, die feindlichen Streitkräfte zu bezwingen.">
+<!ENTITY persona.details.persona "AUSGEWÄHLTE PERSONA">
+<!ENTITY persona.details.persona.handle "Name">
+<!ENTITY persona.list.tip "Wähle eine Persona zum Spielen aus">
+<!ENTITY persona.details.career.rank "zum nächsten Rang erreicht">
+<!ENTITY persona.notgraduated "Du bist im Moment Rekrut und hast das Training noch nicht absolviert. Möchtest Du jetzt mit dem Training beginnen?">
+<!ENTITY persona.list.overpopulated "überbevölkert">
 <!ENTITY persona.list.noswap "nicht verfügbar">
 <!ENTITY persona.subscription.inactive "Es konnte kein aktives Abonnement für Deinen Account gefunden werden. Einige Spielfunktionen sind deshalb nicht verfügbar.">
+<!ENTITY persona.list.overpopulated.3 "viele">
+<!ENTITY persona.list.banned "gesperrt für {1}">
 <!ENTITY persona.details.career.status.slocked "Nur für Abonnenten - Die Art Deines Abonnements erlaubt keinen Zugriff auf diese Persona.">
+<!ENTITY persona.list.delayed "verzögerter Zugriff">
+<!ENTITY persona.details.career.status.leave.help "Nicht verfügbar -  nicht verfügbar zum Spielen, Seitensperre.">
+<!ENTITY persona.details.career.status.delayed "Verzögert für {1} Sekunden. Zugriff auf diese Persona wurde verzögert wegen Unausgeglichenheit der Seiten.">
+<!ENTITY persona.forward.brigade.tip "Wechsle zum Hauptquartier der ausgewählten Brigade.">
 <!ENTITY persona.details.spawndelayed "Einstiegsverzögerungen sind in Kraft getreten.">
-<!ENTITY persona.welcome0 "Du bist im Begriff, eine unerbittlichen Schlacht um Westeuropa zu erleben. Die Armeen treten zum Kampf Mann gegen Mann an.">
+<!ENTITY persona.forward.training.tip "Absolviere die Traningslehrgänge um mit dem aktiven Dienst zu beginnen.">
+<!ENTITY persona.forward "Auswählen">
 <!ENTITY persona.details.ranklock "Dein maximaler Rang ist von der Art des Abonnements abhängig.">
 <!ENTITY persona.list.overpopulated.2 "mittel">
 <!ENTITY persona.list.slocked "Nur für Abonnenten">
+<!ENTITY persona.selecttab.header "WÄHLE EINE PERSONA">
 <!ENTITY persona.details.brigade "BRIGADEZUGEHÖRIGKEIT">
 <!ENTITY persona.details.career.rank.tip "Fortschritt zum nächsten Rang.">
-<!ENTITY persona.details.career.status.available "Einsatzbereit. Diese Persona ist sofort zum Spielen verfügbar.">
-<!ENTITY persona.welcome.squad.motd.nosquad "Willst Du schnell Action finden oder mit Freunden zusammen spielen? Tritt einem Squad bei und erlebe Battleground Europe wie nie zuvor!">
-<!ENTITY persona.list.available "Einsatzbereit">
-<!ENTITY persona.details.persona.recruit "Rekrut">
-<!ENTITY persona.selecttab.tip "Wähle eine Persona zum Spielen.">
-<!ENTITY persona.details.career.status.training "Diese Persona befindet sich noch im Trainingslager. Das Trainingslager muss absolviert werden, um mit dem aktiven Dienst beginnen zu können.">
-<!ENTITY persona.forward.brigades "Brigade wählen">
-<!ENTITY persona.selecttab.help "PERSONA-AUSWAHL:  WÄHLE EINE PERSONA">
-<!ENTITY persona.forward.training "Start Training">
-<!ENTITY persona.selecttab "PERSONA-AUSWAHL">
-<!ENTITY persona.details.brigade.na "keine Zugehörigkeit">
-<!ENTITY persona.welcome2 "Dies ist die ultimative PvP Welt. Hier erreicht man mit Teamwork alles! Schließ Dich einer Gruppe an und hilf neuen Spielern.">
-<!ENTITY persona.list "PERSONAS">
-<!ENTITY persona.details.persona.handle "Name">
-<!ENTITY persona.details.persona "AUSGEWÄHLTE PERSONA">
-<!ENTITY persona.details.career.rank "zum nächsten Rang erreicht">
-<!ENTITY persona.list.tip "Wähle eine Persona zum Spielen aus">
-<!ENTITY persona.list.overpopulated "überbevölkert">
-<!ENTITY persona.notgraduated "Du bist im Moment Rekrut und hast das Training noch nicht absolviert. Möchtest Du jetzt mit dem Training beginnen?">
-<!ENTITY persona.welcome.pollresults.url "http://www.polls.wwiionline.com/crspolls.htm">
-<!ENTITY persona.welcome.population "SPIELERPOPULATION">
-<!ENTITY persona.welcome.squad.motd "SQUAD NACHRICHT">
-<!ENTITY persona.list.banned "gesperrt für {1}">
-<!ENTITY persona.list.overpopulated.3 "viele">
-<!ENTITY persona.list.delayed "verzögerter Zugriff">
-<!ENTITY persona.details.career.status.leave.help "Nicht verfügbar -  nicht verfügbar zum Spielen, Seitensperre.">
-<!ENTITY persona.welcome "WILLKOMMEN BEI BATTLEGROUND EUROPE">
-<!ENTITY persona.details.career.status.delayed "Verzögert für {1} Sekunden. Zugriff auf diese Persona wurde verzögert wegen Unausgeglichenheit der Seiten.">
-<!ENTITY persona.forward.brigade.tip "Wechsle zum Hauptquartier der ausgewählten Brigade.">
-<!ENTITY persona.forward.training.tip "Absolviere die Traningslehrgänge um mit dem aktiven Dienst zu beginnen.">
-<!ENTITY persona.forward "Auswählen">
-<!ENTITY persona.welcome.allied "ALLIIERTE MÄCHTE">
-<!ENTITY persona.potd "UMFRAGE DES TAGES">
-<!ENTITY persona.potd.empty "Es gibt keine aktuellen Umfragen. Schau später noch einmal vorbei.">
-<!ENTITY persona.motd "TAGESBEFEHL">
-<!ENTITY persona.forward.brigades.tip "Wähle eine Brigade, um beizutreten.">
 <!ENTITY persona.details.career.status.active.help "Einsatzbereit - verfügbar zum Spielen, keine Seitensperre.">
-<!ENTITY persona.selecttab.header "WÄHLE EINE PERSONA">
+<!ENTITY persona.forward.brigades.tip "Wähle eine Brigade, um beizutreten.">
 <!ENTITY exitvehicle.ok "Klicke OK zum Aussteigen">
 <!ENTITY classes.missionresults.mia "Vermisst (MIA)">
-<!ENTITY waypoints.denied "Wegpunkt abgewiesen">
 <!ENTITY chatchan.mission "Mission">
-<!ENTITY conn.init.error1 "Verbindung mit Spielnetzwerk konnte nicht geöffnet werden">
 <!ENTITY presets.tank.nojoy "ohne Joystick">
 <!ENTITY spec.bad.openglversion "OpenGL version 2.0 oder höher wird benötigt!">
-<!ENTITY conn.init.timeout2 "Verbindung abgelaufen beim Erhalten der Verbindungsdaten">
 <!ENTITY popup.quit "Schließe dieses Fenster">
-<!ENTITY waypoints.origin "Missionsursprung">
 <!ENTITY exitvehicle.status.3 "MIA">
-<!ENTITY conn.init.timeout1 "Verbindung mit Spielnetzwerk ist abgelaufen">
 <!ENTITY request.ammo.ok "Du hast Munition angefordert!">
 <!ENTITY presets.air.nojoy "ohne Joystick">
-<!ENTITY conn.init.error3 "Verbindung zu Spielnetzwerk nicht möglich">
 <!ENTITY request.ammo.onlyground "Nur Bodeneinheiten können Munition anfordern!">
 <!ENTITY classes.missionresults.kia "Im Kampf gefallen (KIA)">
 <!ENTITY chatchan.custom "Individuell">
@@ -3894,7 +3852,7 @@
 <!ENTITY hccp.tabs.map "HC KARTE">
 <!ENTITY presets.infantry "Voreinstellung">
 <!ENTITY exitvehicle.status.4 "RES">
-<!ENTITY none "none">
+<!ENTITY none "keine">
 <!ENTITY hccp.tabs.notices.title "BRIGADE NOTIZEN">
 <!ENTITY exitvehicle.status "Despawn Status: {1}">
 <!ENTITY globals.time.months "Monate">
@@ -3903,10 +3861,8 @@
 <!ENTITY presets.atgun.nojoy "ohne Joystick">
 <!ENTITY capture.spawn "Von dieser Anlage kann gestartet werden.">
 <!ENTITY hccp.tabs.notices.none "Keine">
-<!ENTITY exitvehicle.rtbstatus "Ausstiegsstatus:">
 <!ENTITY request.ammo.na "Dein Vehikel hat keine Waffen!">
 <!ENTITY exitvehicle.status.1 "RTB">
-<!ENTITY waypoints.limited "Du hast die maximal erlaubte Anzahl von Wegpunkten erreicht. Bitte lösche einen Wegpunkt oder eine Kontaktmeldung bevor Du einen neuen hinzufügst.">
 <!ENTITY classes.missionresults.rtb "Zur Basis zurückgekehrt (RTB)">
 <!ENTITY capture.oncapture "Nach Eroberung möglicher Startpunkt">
 <!ENTITY popup.ok "OK">
@@ -3918,20 +3874,15 @@
 <!ENTITY presets.views "Voreinstellung">
 <!ENTITY hccp.tabs.notices "NOTIZEN">
 <!ENTITY hccp.tabs.notices.veto "KANN VETO EINLEGEN">
-<!ENTITY waypoints.approved "Wegpunkt bestätigt">
 <!ENTITY globals.missions "MISSION">
 <!ENTITY presets.sea "mit Joystick">
 <!ENTITY capture.nospawn "Von dieser Anlage kann nicht gestartet werden.">
 <!ENTITY resupply.received "Munition von &#37;ls erhalten">
-<!ENTITY waypoints.invalid "Wegpunkt ungültig">
 <!ENTITY presets.truck.nojoy "ohne Joystick">
 <!ENTITY hccp.tabs.notices.veto.button "VETO AUSWAHL">
 <!ENTITY spec.bad.systemmemory "Es werden mindestens 2GB Hauptspeicher benötigt!">
-<!ENTITY conn.init.fail1 "Initialisierung des Netzwerkes fehlgeschlagen/Kein Netzwerk verfügbar">
 <!ENTITY capture.arenalocked "Arena gesperrt - Eroberungen sind deaktiviert.">
 <!ENTITY capture.slocked "Mit diesem Abonnement kannst Du keine Anlagen einnehmen">
-<!ENTITY waypoints.restricted "Du kannst nur Kontakte melden, wenn Du in der Spielwelt bist.">
-<!ENTITY waypoints.reportedby "Von">
 <!ENTITY chatchan.numbered "Nummeriert">
 <!ENTITY popup.cancel "ABBRUCH">
 <!ENTITY presets.sea.nojoy "ohne Joystick">
@@ -3941,19 +3892,15 @@
 <!ENTITY globals.time.seconds "Sekunden">
 <!ENTITY exitvehicle.timer "Du kannst in {1} Sekunden aussteigen">
 <!ENTITY capture.french "In französischem Besitz">
-<!ENTITY conn.init.help "Verbindung mit Spielnetzwerk nicht möglich: Entweder sind die Spielserver nicht verfügbar, Du hast keine Verbindung mit dem Internet oder Deine Firewall erlaubt keine TCP Verbindungen mit den Ports 27015-27020. Für weitere Unterstützung besuche bitte http://support.playnet.com/">
 <!ENTITY spec.bad.continue "Dein System erfüllt nicht die Minimalanforderungen für dieses Spiel. Es kann zu verminderter Leistung und Abstürzen kommen. Fortsetzen?">
 <!ENTITY globals.time.days "Tage">
 <!ENTITY exitvehicle.status.to "{1} nach {2}">
 <!ENTITY spawn.loading "LADE...">
-<!ENTITY waypoints.secondsago "Sekunden zuvor gemeldet">
-<!ENTITY waypoints.minutesago "Minuten zuvor gemeldet">
 <!ENTITY chatchan.objective "Ziel">
 <!ENTITY chatchan.brigade "Brigade">
 <!ENTITY globals.time.years "Jahre">
 <!ENTITY spec.bad.shadermodel "Shader Modell 1.2 oder höher wird benötigt!">
 <!ENTITY hccp.title "OBERKOMMANDO FUNKTIONEN">
-<!ENTITY conn.init.error2 "Fehler beim Erhalten der Verbindungsdaten">
 <!ENTITY exitvehicle.status.2 "KIA">
 <!ENTITY exitvehicle.ms.leave "Unbemannten Mobile Spawn hier aufstellen?">
 <!ENTITY globals.time.hours "Stunden">
@@ -3977,22 +3924,22 @@
 <!ENTITY dotcom.benchvehicles.help "">
 <!ENTITY dotcom.grass.help "">
 <!ENTITY dotcom.die.help "Kill Self">
-<!ENTITY dotcom.damage.help "Usage: .damage <hitmapcomponentname> <Joules of damage> (Applies damage to specified component)">
+<!ENTITY dotcom.damage.help "Usage: .damage   (Applies damage to specified component)">
 <!ENTITY dotcom.report.help "Submit a bug/problem/feedback report">
 <!ENTITY dotcom.spam.help "Add to or clear the spam can">
 <!ENTITY dotcom.shrap.help "Usage: .shrap (Toggles shrapnel damage on/off)">
-<!ENTITY dotcom.buzzardspawn.help ".buzzardspawn <player>: Spawns the issuer as a buzzard in the area of a named player">
-<!ENTITY dotcom.weather.help "weather <number>">
-<!ENTITY dotcom.log.help "Usage: .log query, .log <system> on/off, .log level <warn/info/fatal>">
+<!ENTITY dotcom.buzzardspawn.help ".buzzardspawn : Spawns the issuer as a buzzard in the area of a named player">
+<!ENTITY dotcom.weather.help "weather">
+<!ENTITY dotcom.log.help "Usage: .log query, .log  on/off, .log level">
 <!ENTITY dotcom.mass.help "For new hydro model testing">
 <!ENTITY dotcom.m.help "Send a direct private message to a player">
 <!ENTITY dotcom.shutdown.help "Notify players of imminent shutdown">
-<!ENTITY dotcom.set.help "Usage: .set <vel/spd> (Sets various vehicle physics values)">
+<!ENTITY dotcom.set.help "Usage: .set  (Sets various vehicle physics values)">
 <!ENTITY dotcom.movebrigade.help "Change brigade home">
 <!ENTITY dotcom.aion.help "Toggle AI on or off">
-<!ENTITY dotcom.recruit.help ".recruit <Spielername>">
+<!ENTITY dotcom.recruit.help ".recruit">
 <!ENTITY dotcom.nukepersonas.help "Ask the host to delete all your personas">
-<!ENTITY dotcom.help.help ".help [<command name>] (With no arguments, prints list of all commands available to you)">
+<!ENTITY dotcom.help.help ".help [] (With no arguments, prints list of all commands available to you)">
 <!ENTITY dotcom.who.help "Display list of squad mates online">
 <!ENTITY dotcom.undeploy.help "">
 <!ENTITY dotcom.reloadammo.help "">
@@ -4000,12 +3947,12 @@
 <!ENTITY dotcom.fogon.help "">
 <!ENTITY dotcom.2.help "Send a message to radio 2">
 <!ENTITY dotcom.fbs.help "Shows FB information for closest or named town">
-<!ENTITY dotcom.moreammo.help "Usage: .moreammo <numrounds, 999 default> (Gives you more ammo. Not implemented yet)">
+<!ENTITY dotcom.moreammo.help "Usage: .moreammo  (Gives you more ammo. Not implemented yet)">
 <!ENTITY dotcom.vol.help "For new hydro model testing">
 <!ENTITY dotcom.mvcmp.help "Usage: .mvcmp x y z (Moves physics components by amount specified)">
 <!ENTITY dotcom.hcon.help "Retune the HC channel">
 <!ENTITY dotcom.betavis.help "Toggle beta visibility mode on/off">
-<!ENTITY dotcom.oicreplace.help ".oicreplace <brigade> OIC einer Brigade ersetzen">
+<!ENTITY dotcom.oicreplace.help ".oicreplace  OIC einer Brigade ersetzen">
 <!ENTITY dotcom.infstatetest.help "Usage: .infstatetest (Shows transmitted infantry states)">
 <!ENTITY dotcom.treaddust.help "">
 <!ENTITY dotcom.hclist.help "Short text-list of HC officers">
@@ -4017,7 +3964,7 @@
 <!ENTITY dotcom.lastdeaths.help "List the last killers of a given player">
 <!ENTITY dotcom.discohost.help "Usage: .discohost (Interrupts the host connection)">
 <!ENTITY dotcom.clouddraw.help "">
-<!ENTITY dotcom.fog.help "fog <number>">
+<!ENTITY dotcom.fog.help "fog">
 <!ENTITY dotcom.cloudtool.help "">
 <!ENTITY dotcom.lastmoves.help "List the last movements of brigades">
 <!ENTITY dotcom.rebuildcp.help "Force rebuild of objects within a CP (town)">
@@ -4026,13 +3973,13 @@
 <!ENTITY dotcom.benchremagen.help "">
 <!ENTITY dotcom.trainers.help "List any trainers currently available">
 <!ENTITY dotcom.hqon.help "Retune the HQ channel">
-<!ENTITY dotcom.ban.help ".ban <player>: suspend a player&#39;s access to the game server">
+<!ENTITY dotcom.ban.help ".ban : suspend a player&#39;s access to the game server">
 <!ENTITY dotcom.autoleader.help ".autoleader [on|off]">
-<!ENTITY dotcom.clouds.help "clouds <number>">
+<!ENTITY dotcom.clouds.help "clouds">
 <!ENTITY dotcom.hqoff.help "Detune the HQ channel">
-<!ENTITY dotcom.fire.help "Usage: .fire <ammotype/again/last> <x> <y> <z> <traverse> <elevate>]">
+<!ENTITY dotcom.fire.help "Usage: .fire      ]">
 <!ENTITY dotcom.texture.help "">
-<!ENTITY dotcom.bspawn.help ".bspawn <building>: spawn a particular building">
+<!ENTITY dotcom.bspawn.help ".bspawn : spawn a particular building">
 <!ENTITY dotcom.ads.help "Enable/Disable ad posters">
 <!ENTITY dotcom.watertool.help "">
 <!ENTITY dotcom.concuss.help "Usage: .concuss (Toggles concussion damage on/off)">
@@ -4040,33 +3987,32 @@
 <!ENTITY dotcom.resetstrat.help "Forces a reset of the strat server">
 <!ENTITY dotcom.makeco.help "Promote a player to the status of CO in their squad">
 <!ENTITY dotcom.warn.help "Send anonymous WARNING message to a player">
-<!ENTITY dotcom.oicremove.help ".oicremove <brigade> <Spielername> OIC einer Brigade löschen">
+<!ENTITY dotcom.oicremove.help ".oicremove   OIC einer Brigade löschen">
 <!ENTITY dotcom.normal.help "togglenormalmap">
 <!ENTITY dotcom.reset.help "Usage: .reset (Reset trncd fx flags)">
 <!ENTITY dotcom.ttraverseconv.help "">
-<!ENTITY dotcom.who "wer">
 <!ENTITY dotcom.voting.help "Enable or disable voting for the squad">
 <!ENTITY dotcom.speed.help "">
 <!ENTITY dotcom.friends.help "View/manipulate &#39;friends&#39; list">
-<!ENTITY dotcom.hitmap.help "Usage: .hitmap <vehiclename/all> [<validhit/validcmp>] (Prints out or validates hitmap component names)">
+<!ENTITY dotcom.hitmap.help "Usage: .hitmap  [] (Prints out or validates hitmap component names)">
 <!ENTITY dotcom.hc.help "Roster or message the High Command channel(s)">
 <!ENTITY dotcom.turrettest.help "">
-<!ENTITY dotcom.lu.help "simulates low update rate .lu <update every ms/no argument to go back to normal>">
+<!ENTITY dotcom.lu.help "simulates low update rate .lu">
 <!ENTITY dotcom.lastcap.help "List the last few captures">
 <!ENTITY dotcom.tps.help "">
 <!ENTITY dotcom.makeleader.help "Appoint a new mission leader">
 <!ENTITY dotcom.liststos.help "List current STOs">
 <!ENTITY dotcom.status.help "Display damage status of targeted FB">
 <!ENTITY dotcom.setrank.help "Set your current persona&#39;s rank">
-<!ENTITY dotcom.tree.help "Usage: .tree <0 - 5> <on/off> (Turn on/off specific tree parts)">
+<!ENTITY dotcom.tree.help "Usage: .tree <0 - 5>  (Turn on/off specific tree parts)">
 <!ENTITY dotcom.orders.help "Set/view current mission orders">
 <!ENTITY dotcom.5.help "Send a message to radio 5">
 <!ENTITY dotcom.infanimtest.help "Usage: .infanimtest (Toggles log output of blends)">
-<!ENTITY dotcom.demote.help ".demote <Spielername> Spieler degradieren">
-<!ENTITY dotcom.rank.help "Usage: .rank <name> <1-13> (Changes the rank of the specified player)">
+<!ENTITY dotcom.demote.help ".demote  Spieler degradieren">
+<!ENTITY dotcom.rank.help "Usage: .rank  <1-13> (Changes the rank of the specified player)">
 <!ENTITY dotcom.reloadclutter.help "">
 <!ENTITY dotcom.fpsresupply.help "Usage: .fpsresupply">
-<!ENTITY dotcom.fuze.help "Usage: .fuze <sec/meters (depends on fuze type, 0 resets to default)> (Sets fuze interval for rounds that have this ability. With no arguments, prints current setting)">
+<!ENTITY dotcom.fuze.help "Usage: .fuze  (Sets fuze interval for rounds that have this ability. With no arguments, prints current setting)">
 <!ENTITY dotcom.1.help "Send a message to radio 1">
 <!ENTITY dotcom.clutter.help "">
 <!ENTITY dotcom.defend.help "Issue a defense objective on targeted CP">
@@ -4074,21 +4020,21 @@
 <!ENTITY dotcom.fbo.help "">
 <!ENTITY dotcom.trntex.help "Usage: .trntex (Identifies texture at position)">
 <!ENTITY dotcom.um.help "Set current update mode (0 thru 12 inclusive)">
-<!ENTITY dotcom.renamesquad.help "Usage: .renamesquad <old name> <newname>: Change the callsign (short name) of a player squad">
+<!ENTITY dotcom.renamesquad.help "Usage: .renamesquad  : Change the callsign (short name) of a player squad">
 <!ENTITY dotcom.testpacket.help "Sends a high/medium/low test packet sequence">
 <!ENTITY dotcom.addweap.help "Add or remove vehicles to suitable spawn lists within a town">
 <!ENTITY dotcom.setmotd.help "Set the system message of the day">
 <!ENTITY dotcom.recruiting.help ".recruiting [on|off] Rekrutierung">
 <!ENTITY dotcom.kickban.help "Kick a player and temporarily suspend them">
 <!ENTITY dotcom.gridsnapshot.help "Enable/disable grid snapshot recording">
-<!ENTITY dotcom.invite.help ".invite <Spielername> Spieler als Squadmitglied einladen">
-<!ENTITY dotcom.follow.help "Usage: .follow <vehname> <distance> (For floaters, follows specified vehicle)">
+<!ENTITY dotcom.invite.help ".invite  Spieler als Squadmitglied einladen">
+<!ENTITY dotcom.follow.help "Usage: .follow   (For floaters, follows specified vehicle)">
 <!ENTITY dotcom.hcoff.help "Detune the HC channel">
 <!ENTITY dotcom.grab.help "Direct comms with specified player">
-<!ENTITY dotcom.backupleader.help ".backupleader <player>: Set backup leader">
+<!ENTITY dotcom.backupleader.help ".backupleader : Set backup leader">
 <!ENTITY dotcom.accept.help ".accept Einladung akzeptieren">
 <!ENTITY dotcom.sendads.help "">
-<!ENTITY dotcom.promote.help ".promote <Spielername> Spieler befördern">
+<!ENTITY dotcom.promote.help ".promote  Spieler befördern">
 <!ENTITY dotcom.force.help "Usage: .force (Toggles force on/off)">
 <!ENTITY dotcom.6.help "Send a message to radio 6">
 <!ENTITY dotcom.warnall.help "Send anonymous WARNING message to ALL players">
@@ -4101,35 +4047,35 @@
 <!ENTITY dotcom.wingvortex.help "">
 <!ENTITY dotcom.cull.help "">
 <!ENTITY dotcom.grassquery.help "">
-<!ENTITY dotcom.oicveto.help ".oicveto <brigade> <Spielername> Veto gegen OIC einlegen">
-<!ENTITY dotcom.obj.help "List current objectives for your side. Usage: .obj <L, I ,C or N>: List, Info, Cities, Number">
+<!ENTITY dotcom.oicveto.help ".oicveto   Veto gegen OIC einlegen">
+<!ENTITY dotcom.obj.help "List current objectives for your side. Usage: .obj : List, Info, Cities, Number">
 <!ENTITY dotcom.octettriangles.help "">
-<!ENTITY dotcom.em.help "Usage: .em <emote>: performs selected emote (attention, salute, cheer, double(time), gyrus(surrender), laugh, jump(to tell players to jump from plane))">
-<!ENTITY dotcom.oicresign.help ".oicresign <Spielername> Als OIC zurücktreten">
+<!ENTITY dotcom.em.help "Usage: .em : performs selected emote (attention, salute, cheer, double(time), gyrus(surrender), laugh, jump(to tell players to jump from plane))">
+<!ENTITY dotcom.oicresign.help ".oicresign  Als OIC zurücktreten">
 <!ENTITY dotcom.vehlod.help "Usage: .vehlod (Disables/Enables vehicle LODs : default Enabled)">
 <!ENTITY dotcom.overrun.help "Notify HC that base is overrun">
 <!ENTITY dotcom.leave.help ".leave Squad verlassen">
-<!ENTITY dotcom.inflod.help "Usage: .inflod <LOD # range 1-4> (Forces all infantry to render in that lod.  0 reverts to normal.)">
-<!ENTITY dotcom.exhaust.help "Usage: .exhaust <on/off> (Set vehicle exhaust on/off)">
+<!ENTITY dotcom.inflod.help "Usage: .inflod  (Forces all infantry to render in that lod.  0 reverts to normal.)">
+<!ENTITY dotcom.exhaust.help "Usage: .exhaust  (Set vehicle exhaust on/off)">
 <!ENTITY dotcom.mlist.help "List mission membership stats">
-<!ENTITY dotcom.vspawn.help "&#39;vspawn name x y z&#39; or &#39;vspawn -r [<remove id>/<all>]&#39;">
-<!ENTITY dotcom.inertia.help "Usage: .ineria <vehname> (Creates mass distribution file for vehicle)">
+<!ENTITY dotcom.vspawn.help "&#39;vspawn name x y z&#39; or &#39;vspawn -r [/]&#39;">
+<!ENTITY dotcom.inertia.help "Usage: .ineria  (Creates mass distribution file for vehicle)">
 <!ENTITY dotcom.afk.help "Toggle Away From Keyboard Flag">
-<!ENTITY dotcom.frameprof.help "Usage: .frameprof <fps> (Single frame profiling)">
-<!ENTITY dotcom.conv.help ".conv [<range meters>] (Setzt die Konvergenz der Waffen und wird erst beim nächsten Spawnen aktiv. Eingabe ohne Wert zeigt die aktuelle Einstellung)">
-<!ENTITY dotcom.fpsanimspeed.help "Usage: .animspeed <speed> (Sets the FPS animation speed)">
-<!ENTITY dotcom.objectives.help "List current objectives for your side.">
+<!ENTITY dotcom.frameprof.help "Usage: .frameprof  (Single frame profiling)">
+<!ENTITY dotcom.conv.help ".conv [] (Setzt die Konvergenz der Waffen und wird erst beim nächsten Spawnen aktiv. Eingabe ohne Wert zeigt die aktuelle Einstellung)">
+<!ENTITY dotcom.fpsanimspeed.help "Usage: .animspeed  (Sets the FPS animation speed)">
+<!ENTITY dotcom.objectives.help "Aktuelle Befehle anzeigen.">
 <!ENTITY dotcom.doover.help "Usage: .doover [number of times] (Executes last dot command one or more times)">
 <!ENTITY dotcom.tobbox.help "">
 <!ENTITY dotcom.disband.help ".disband Squad auflösen">
 <!ENTITY dotcom.listsquad.help "List the members of an [active] squad">
 <!ENTITY dotcom.ride.help "">
-<!ENTITY dotcom.c.help "Usage: .c <comment> (Adds a comment to the log)">
+<!ENTITY dotcom.c.help "Usage: .c  (Adds a comment to the log)">
 <!ENTITY dotcom.hcmotd.help "Show/set the HC Message of the Day">
 <!ENTITY dotcom.reloadvehicles.help "">
-<!ENTITY dotcom.oicvolunteer.help ".oicvolunteer <Brigade> freiwillig als OIC  melden">
-<!ENTITY dotcom.hulk.help "Usage: hulk <vehicleid>">
-<!ENTITY dotcom.oicnominate.help ".oicnominate <brigade> <Spielername> OIC ernennen">
+<!ENTITY dotcom.oicvolunteer.help ".oicvolunteer  freiwillig als OIC  melden">
+<!ENTITY dotcom.hulk.help "Usage: hulk">
+<!ENTITY dotcom.oicnominate.help ".oicnominate   OIC ernennen">
 <!ENTITY dotcom.time.help "Shows real-world local time">
 <!ENTITY dotcom.takelead.help "Take over the mission">
 <!ENTITY dotcom.deploy.help "">
@@ -4140,24 +4086,24 @@
 <!ENTITY dotcom.invites.help ".invites [on|off] Einladungen">
 <!ENTITY dotcom.msp.help "Deploy MSP at last known location">
 <!ENTITY dotcom.cpdump.help "Dumps CP and facility details for a town">
-<!ENTITY dotcom.resign.help ".resign <Spielername> Zurücktreten">
+<!ENTITY dotcom.resign.help ".resign  Zurücktreten">
 <!ENTITY dotcom.np.help "toggle between old and new infantry predictor">
 <!ENTITY dotcom.changesquadname.help "Request a change of the squad&#39;s short name">
-<!ENTITY dotcom.gizmo.help "Usage: .gizmo [foils/forces/inertia/clearlines] <on/off> (Toggles vehicle object analysis on/off)">
+<!ENTITY dotcom.gizmo.help "Usage: .gizmo [foils/forces/inertia/clearlines]  (Toggles vehicle object analysis on/off)">
 <!ENTITY dotcom.resync.help "Force reload of chat permissions">
 <!ENTITY dotcom.bdamage.help "">
 <!ENTITY dotcom.noechat.help "Toggle receipt of enemy area chat on/off">
 <!ENTITY dotcom.say.help "Short radius area chat message">
 <!ENTITY dotcom.clear.help "Withdraw an objective on targetted CP">
-<!ENTITY dotcom.create.help ".create <Kurzname> Squad erstellen">
+<!ENTITY dotcom.create.help ".create  Squad erstellen">
 <!ENTITY dotcom.infcoltest.help "Usage: .infcoltest (Toggles chat display of infantry hits)">
 <!ENTITY dotcom.discochat.help "Usage: .dscochat (Interrupts the chat connection)">
 <!ENTITY dotcom.decline.help ".decline Einladung ablehnen">
 <!ENTITY dotcom.countads.help "">
 <!ENTITY dotcom.hccp.help ".hccp HC Control Panel">
-<!ENTITY dotcom.wttest.help "Usage: .windtunnel [<stats/hp/stall/top/climb/roll/clcd/thrust>] (Runs Wind tunnel)">
+<!ENTITY dotcom.wttest.help "Usage: .windtunnel [] (Runs Wind tunnel)">
 <!ENTITY dotcom.printweather.help "printweather">
-<!ENTITY dotcom.move.help "Usage: .move <N/S><latdeg.latmin.latsec> <E/W><londeg.lonmin.lonsec> <height> if no arguments uses position of CP selected in map">
+<!ENTITY dotcom.move.help "Usage: .move    if no arguments uses position of CP selected in map">
 <!ENTITY dotcom.nospawn.help "">
 <!ENTITY dotcom.listoics.help "List current brigade/OIC assignments">
 <!ENTITY dotcom.gmmode.help "Toggle GM Mode">
@@ -4174,10 +4120,10 @@
 <!ENTITY dotcom.gm.help "Roster or message the GM channel">
 <!ENTITY dotcom.ignore.help "Manage/view ignore list">
 <!ENTITY dotcom.sys.help "Anonymous SYSTEM message to all players">
-<!ENTITY dotcom.remove.help ".remove <Spielername> Spieler aus Squad entfernen">
+<!ENTITY dotcom.remove.help ".remove  Spieler aus Squad entfernen">
 <!ENTITY dotcom.obdraw.help "">
 <!ENTITY dotcom.lighttool.help "">
-<!ENTITY dotcom.nowho.help "Allows you to hide from .who">
+<!ENTITY dotcom.nowho.help "Diese Kommando erlaubt es, für das .who Kommando unsichtbar zu werden">
 <!ENTITY dotcom.3.help "Send a message to radio 3">
 <!ENTITY dotcom.vehstats.help "">
 <!ENTITY dotcom.find.help "Describe where a player is in the game">
@@ -4193,9 +4139,9 @@
 <!ENTITY dotcom.listcos.help "List all SquadCOs currently online">
 <!ENTITY dotcom.whisper.help "Small-area chat message">
 <!ENTITY dotcom.snoop.help "Records and displays all messages to/from a particular player">
-<!ENTITY dotcom.altspd.help ".altspd <altitude> [speed] (Sets altitude and speed)">
+<!ENTITY dotcom.altspd.help ".altspd  [speed] (Sets altitude and speed)">
 <!ENTITY dotcom.pinfo.help "Display player info">
-<!ENTITY dotcom.emote.help "Usage: .em <emote>: performs selected emote (cheer, double, gyrus (surrender), laugh, salute, stop, jump)">
+<!ENTITY dotcom.emote.help "Usage: .em : performs selected emote (cheer, double, gyrus (surrender), laugh, salute, stop, jump)">
 <!ENTITY dotcom.all.help "Send named message to all players">
 <!ENTITY vehicles.1.2.4.1 "A13 Cruiser Mk II">
 <!ENTITY vehicles.4.1.2.8 "Messerschmitt Bf 110F-B">
@@ -4207,20 +4153,20 @@
 <!ENTITY vehicles.3.2.4.9 "M4A3 Sherman 76">
 <!ENTITY vehicles.2.2.4.1 "M4A2 Sherman">
 <!ENTITY vehicles.1.2.4.10 "A22 Churchill Mk III">
-<!ENTITY vehicles.2.4.9.12 "Sniper">
+<!ENTITY vehicles.2.4.9.12 "Scharfschütze">
 <!ENTITY vehicles.1.2.4.9 "A22 Churchill Mk VII">
 <!ENTITY vehicles.1.1.2.7 "Hurricane Mk IIb">
 <!ENTITY vehicles.4.1.1.2 "Heinkel He 111H-2">
 <!ENTITY vehicles.1.4.9.8 "Kommandeur">
 <!ENTITY vehicles.1.2.7.6 "ROQF 17 Pfünder PAK">
 <!ENTITY vehicles.1.1.2.8 "Spitfire Mk Ib">
-<!ENTITY vehicles.bailedcrew "Bailed Air Crew">
+<!ENTITY vehicles.bailedcrew "Besatzung am Fallschirm">
 <!ENTITY vehicles.3.1.1.2 "Douglas DB-7">
 <!ENTITY vehicles.3.3.13.2 "Franz. Frachter">
 <!ENTITY vehicles.4.4.9.2 "Maschinenpistole">
 <!ENTITY vehicles.1.3.13.2 "Brit. Frachter">
 <!ENTITY vehicles.4.2.7.2 "Flak 36 (88 mm) FLAK/PAK">
-<!ENTITY vehicles.3.4.9.3 "Sturmpionier">
+<!ENTITY vehicles.3.4.9.3 "Pionier">
 <!ENTITY vehicles.4.2.4.1 "Panzer III F">
 <!ENTITY vehicles.1.4.9.7 "Grenadier">
 <!ENTITY vehicles.1.4.14.13 "Luftlande Mörser">
@@ -4235,7 +4181,7 @@
 <!ENTITY vehicles.3.2.6.2 "Laffly S-20 LKW">
 <!ENTITY vehicles.4.4.14.1 "Luftlandeschütze">
 <!ENTITY vehicles.4.2.4.2 "Panzer 38(t)">
-<!ENTITY vehicles.4.4.9.1 "Gewehrschütze">
+<!ENTITY vehicles.4.4.9.1 "Gewehrschütze K98">
 <!ENTITY vehicles.3.2.4.4 "Panhard AMD 178">
 <!ENTITY vehicles.3.1.2.1 "Curtiss Hawk H75A-3 (P-36A)">
 <!ENTITY vehicles.4.2.6.1 "Opel Blitz LKW">
@@ -4246,7 +4192,7 @@
 <!ENTITY vehicles.4.4.9.5 "BUZZARD">
 <!ENTITY vehicles.3.2.7.4 "Bofors 40mm FLAK">
 <!ENTITY vehicles.4.1.1.4 "Blenheim Mk IV T">
-<!ENTITY vehicles.2.4.9.2 "Submachine Gunner">
+<!ENTITY vehicles.2.4.9.2 "Maschinenpistole">
 <!ENTITY vehicles.1.2.7.2 "25 mm SA mle 1934 PAK">
 <!ENTITY vehicles.3.4.9.2 "Maschinenpistole">
 <!ENTITY vehicles.3.2.4.2 "Renault R-35">
@@ -4293,9 +4239,9 @@
 <!ENTITY vehicles.1.2.6.2 "Morris CDSW Schlepper">
 <!ENTITY vehicles.3.2.7.5 "M1 (57 mm) Boden/Luft Kanone">
 <!ENTITY vehicles.1.4.14.9 "Luftlande Panzerbüchse">
-<!ENTITY vehicles.2.4.9.6 "Automatic Rifleman">
-<!ENTITY vehicles.4.4.9.15 "Anti-Tank Soldier">
-<!ENTITY vehicles.1.4.9.3 "Sturmpionier">
+<!ENTITY vehicles.2.4.9.6 "MG Schütze BAR">
+<!ENTITY vehicles.4.4.9.15 "Panzerschreck">
+<!ENTITY vehicles.1.4.9.3 "Pionier">
 <!ENTITY vehicles.4.1.2.2 "Messerschmitt Bf 110C-4">
 <!ENTITY vehicles.3.2.4.7 "M4A2 Sherman">
 <!ENTITY vehicles.1.1.2.4 "Spitfire Mk Vb">
@@ -4306,7 +4252,7 @@
 <!ENTITY vehicles.1.4.9.1 "Gewehrschütze">
 <!ENTITY vehicles.3.3.12.1 "Franz. Patrouillenboot B">
 <!ENTITY vehicles.4.4.9.7 "Grenadier">
-<!ENTITY vehicles.2.4.9.14 "Semi-Auto Rifleman">
+<!ENTITY vehicles.2.4.9.14 "Gewehrschütze M1 Garand">
 <!ENTITY vehicles.3.4.9.12 "Scharfschütze">
 <!ENTITY vehicles.1.2.7.3 "Hotchkiss 25 mm FLAK">
 <!ENTITY vehicles.3.2.7.2 "47 mm SA mle 1937 PAK">
@@ -4314,9 +4260,9 @@
 <!ENTITY vehicles.4.3.13.1 "Dt. Zerstörer Typ 1934">
 <!ENTITY vehicles.1.4.14.6 "Luftlande LMG">
 <!ENTITY vehicles.1.1.2.9 "Spitfire Mk IIb">
-<!ENTITY vehicles.reload "Loading &#37;ls for main gun next">
+<!ENTITY vehicles.reload "Lade &#37;ls für Hauptgeschütz">
 <!ENTITY vehicles.4.2.7.1 "Pak 36 (37 mm)">
-<!ENTITY vehicles.2.4.9.1 "Rifleman">
+<!ENTITY vehicles.2.4.9.1 "Gewehrschüze">
 <!ENTITY vehicles.4.2.4.5 "Panzer IV D">
 <!ENTITY vehicles.1.1.2.5 "Hurricane Mk IIc">
 <!ENTITY vehicles.4.2.6.2 "SdKfz 7 Halbkettenfahrzeug">
@@ -4340,14 +4286,14 @@
 <!ENTITY vehicles.1.2.7.5 "ROQF 6 Pfünder PAK">
 <!ENTITY vehicles.4.4.14.2 "Luftlande MP">
 <!ENTITY vehicles.3.2.4.5 "Hotchkiss H-39">
-<!ENTITY vehicles.4.4.9.3 "Sturmpionier">
+<!ENTITY vehicles.4.4.9.3 "Pionier">
 <!ENTITY vehicles.4.2.4.6 "Panzer III H">
 <!ENTITY vehicles.1.2.7.1 "ROQF 2 Pfünder PAK">
 <!ENTITY vehicles.3.2.6.1 "Bedford OY LKW">
-<!ENTITY vehicles.2.4.9.3 "Engineer">
+<!ENTITY vehicles.2.4.9.3 "Pionier">
 <!ENTITY vehicles.1.2.4.6 "Daimler Mk I">
 <!ENTITY vehicles.2.2.4.3 "M4A3 Sherman">
-<!ENTITY vehicles.4.4.9.14 "Semi-Auto Rifleman">
+<!ENTITY vehicles.4.4.9.14 "Gewehrschütze G43">
 <!ENTITY vehicles.4.1.2.1 "Messerschmitt Bf 109E-4">
 <!ENTITY vehicles.4.2.4.9 "StuG III G">
 <!ENTITY vehicles.1.1.2.2 "Hurricane Mk I">
@@ -4355,7 +4301,7 @@
 <!ENTITY vehicles.4.2.4.3 "Panzer II C">
 <!ENTITY vehicles.4.4.9.6 "Leichtes MG">
 <!ENTITY vehicles.1.1.1.3 "Havoc Mk I">
-<!ENTITY vehicles.2.4.9.15 "Anti-Tank Soldier">
+<!ENTITY vehicles.2.4.9.15 "Bazooka">
 <!ENTITY vehicles.4.1.1.3 "Messerschmitt Bf 110C-4/B">
 <!ENTITY vehicles.3.1.2.5 "Curtiss Hawk H81A-2 (P-40C)">
 <!ENTITY vehicles.1.2.4.3 "Renault B1 bis">
@@ -4382,7 +4328,7 @@
 <!ENTITY connect.login.handshake.lost "Verbindungsabbruch beim Handshake">
 <!ENTITY connect.ping.stats.full "Ping: &#37;ums, Avg: &#37;ums, &#37;ls: &#37;.1f&#37;&#37;.">
 <!ENTITY connect.find.cantopen "Verbindung zum Spielenetzwerk fehlgeschlagen">
-<!ENTITY connect.error.connectionerror "connection error">
+<!ENTITY connect.error.connectionerror "Verbindungsfehler">
 <!ENTITY connect.ping.lossbig "*PAKETVERLUST*">
 <!ENTITY connect.error.eagain "eagain">
 <!ENTITY connect.login.auth.timeout "Zeitüberschreitung bei Authentifizierng">
