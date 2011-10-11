@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <!DOCTYPE vehicle SYSTEM "vehicle.dtd">
-<vehicle id="pzivg" type="ground" shape="tiger1e" description="Panzer VI E Tiger" icon="Tiger">
+<vehicle id="pzvie" type="ground" shape="tiger1e" description="Panzer VI E Tiger" icon="Tiger">
 <include file="pzvie.veh.xml"/>
 <include file="pzvie.state.xml"/>
 <include file="pzvie.hit.xml"/>
@@ -9,6 +9,6 @@
 <include file="pzvie.xsound.xml"/>
 <include file="pzvie.control.xml"/>
 <include file="pzvie.mass.xml"/>
-<variant id="pzivg" shape="tiger1e" description="Panzer VI E Tiger"/>
-<variant id="us_pzivg" shape="tiger1e" description="US Tiger - Test"/>
+<variant id="pzvie" shape="tiger1e" description="Panzer VI E Tiger"/>
+<variant id="us_pzvie" shape="tiger1e" description="US Tiger - Test"/>
 </vehicle>
