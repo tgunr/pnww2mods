@@ -509,17 +509,40 @@
     <uniform name="shadowambient" type="float_vec3"></uniform>
   </program>
   <!--=================================================================-->
-  <program name="multitexture">
+  <program name="multitextureterrain">
     <shaders>
-      <vertexshader>fx/shaders/GLSL/multitexture/multi.vert</vertexshader>
+      <vertexshader>fx/shaders/GLSL/multitexture/multiterrain.vert</vertexshader>
       <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
       <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
-      <fragmentshader>fx/shaders/GLSL/multitexture/multi.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multiterrain.frag</fragmentshader>
     </shaders>
     <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
     <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
     <uniform name="src3" type="sampler2d" unit="2" onetimeapply="true"></uniform>
     <uniform name="surf" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name="multitexture3">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multitexture3.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multitexture3.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="src3" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name="multitexture2">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multitexture2.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multitexture2.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
   </program>
   <!--=================================================================-->
   <program name ="glare">
