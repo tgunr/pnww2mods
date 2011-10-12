@@ -21,9 +21,15 @@
 			<caption x="177" y="0" width="192" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="${widgets.keymapper.keys.primary}" align="right"/>
 			<caption x="371" y="0" width="192" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="${widgets.keymapper.keys.secondary}     " align="right"/>
 		</view>
-		<list id="keymaps" x="10" y="35" width="560" height="327" style="color: #FFFFFF" onselect="selectKeymap()">
+		<list id="keymaps" x="10" y="84" width="560" height="278" style="color: #FFFFFF" onselect="selectKeymap()">
 			<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
 		</list>
+		<image x="10" src="ui/textures/test/horiz_underline.bmp" width="570" height="12" rtop="325"/>
+		<view id="conv-pane" rtop="330" x="10" width="560" height="105">
+			<caption x="5" rtop="15" width="175" height="20" style="color: #CFF2DE; font-size: +1" label="${widgets.keymapper.convergence}" tip="${widgets.keymapper.convergence.tip}"/>
+			<textcontrol id="conv-input" rleft="180" rtop="15" width="50" height="20" onshow="setConvergence()" style="background-color: #00000044; color: #FFFFFF; border-color: #BFE2CE44"/>
+		</view>
+		<image x="10" src="ui/textures/test/horiz_underline.bmp" width="570" height="12" rtop="365"/>
 	</view>
 	<view id="button-pane" x="20" y="10" width="890" height="30">
 		<button id="defaultcategory" x="10" y="0" height="25" width="140" label="${widgets.keymapper.button.def.cat}"
@@ -44,7 +50,7 @@
 			tip="${widgets.keymapper.button.clear.tip}"/>
 		<button id="savekeymaps" x="600" y="0" height="25" width="140" label="${widgets.keymapper.button.save}"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -3; color: #FFFFFF;"
-			onclick="soundPlayClick(); game.savekeymaps()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
+			onclick="soundPlayClick(); game.savekeymaps(); saveConvergence()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
 			tip="${widgets.keymapper.button.save.tip}"/>
 		<caption id="presetsList" height="20" width="140" rtop="5" rright="10"
 			onshow="if(!this.mgr) new DDListControl(this, selectPreset, 50, true); initPresets(keymapCategory);"
@@ -149,15 +155,15 @@
 				
 				if(node.branch && !node.initNode())
 				{
-					var vehicles = game.getkeymapvehicles(keymapCategory);
+					var vehicles = game.getkeymapvehicles(keymapCategory); // Array of vehicle types, now have access to weapkey and description
 					
 					for(var i = 0; i < vehicles.length; i++)
 					{
 						var vehicle	= vehicles[i];
 						var index	= i + 1;
 						
-						if(vehicle != "")
-							node.addNode(new TreeNode(index, keymapCategory + "," + index, 1, false, vehicle));
+						if(vehicle != null)
+							node.addNode(new TreeNode(index, keymapCategory + "," + index, 1, false, vehicle.description));
 					}
 				}
 				
@@ -168,6 +174,7 @@
 				
 				initPresets(keymapCategory);
 				updateHeaders();
+				setConvergence();
 			}
 		}
 		
@@ -311,6 +318,44 @@
 			
 			if(node != null)
 				headerKeymaps.label = getlocstring('widgets.keymapper.keys.modify') + ' ' + node.description.toUpperCase();
+		}
+		
+		function setConvergence()
+		{
+			var convinput = game.findview("conv-input");
+			var node = categoryTree.selectedNode();
+			
+			if(!node.data)
+				return;
+				
+			var parts = node.data.split(',');
+			
+			if(parseInt(parts[1]) == 0)
+				return;
+			
+			var vehicles = game.getkeymapvehicles(keymapCategory);
+			var vtype = vehicles[parseInt(parts[1])-1];
+			
+			convinput.text = game.getconvergence(vtype);
+			
+			return;
+		}
+		
+		function saveConvergence()
+		{
+			var convinput = findview("conv-input");
+			var value = parseInt(convinput.text);
+			var node = categoryTree.selectedNode();
+			var parts = node.data.split(',')
+			var vehicles = game.getkeymapvehicles(keymapCategory);
+			var vtype = vehicles[parts[1]-1];
+			
+			if(value != null)
+				game.saveconvergence(vtype, value, 1); // Convergence is changing, value is dirty.
+			else
+				game.saveconvergence(vtype, value, 0); // Convergence hasn't changed, let's pull the saved (or default) setting
+			
+			return;
 		}
 		
 		-->
