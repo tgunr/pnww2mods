@@ -2852,80 +2852,82 @@
   </particleeffect>
 <!-- ===================================================================== -->
 	<particleeffect name = "genericbuildingexplosionparticle1">
-		<number>15</number>
-		<texture>fire ball 4</texture>
-		<texture>fire ball 5</texture>
-		<texture>fire ball 6</texture>
-		<texture>fire ball 7</texture>
-		<texture>fire ball 8</texture>
-		<delayeachparticle>15</delayeachparticle>
-		<alpha>1.0</alpha>
-		<alpha>1.0</alpha>
-		<alpha>1.0</alpha>
-		<alpha>0.0</alpha>
-		<size>0.2</size>
-		<size>5.0</size>
-		<size>10.0</size>
-		<size>15.0</size>
-		<time>0</time>
-		<time>50</time>
-		<time>50</time>
-		<time>400</time>
-		<drag></drag>
-		<rotate>40</rotate>
-		<glow></glow>
-		<velvariance>-1.0 -1.0 0.1 1.0 1.0 0.5</velvariance>
-		<posvariance>-1.0 -1.0 -1.0 1.0 1.0 1.0</posvariance>
+    <number>1</number>
+    <texture>osgsmoke</texture>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>0.0</alpha>
+    <color>1 1 0</color>
+    <color>1 1 0</color>
+    <color>1 1 0</color>
+    <color>1 1 0</color>
+    <size>1</size>
+    <size>8</size>
+    <size>12</size>
+    <size>16</size>
+    <time>0</time>
+    <time>50</time>
+    <time>100</time>
+    <time>100</time>
+    <glow></glow>
+    <dontupdateposition></dontupdateposition>
     <material>fire</material>
   </particleeffect>
 <!-- ===================================================================== -->
 	<particleeffect name = "genericbuildingexplosionparticle2">
-		<number>10</number>
-		<number>20</number>
-		<texture>white volume smoke 1</texture>
-		<texture>white volume smoke 2</texture>
-		<texture>white smoke 1</texture>
-		<texture>white smoke 2</texture>
-		<texture>black volume smoke 1</texture>
-		<texture>black volume smoke 2</texture>
-		<texture>black volume smoke 3</texture>
-		<texture>black volume smoke 4</texture>
-		<alpha>0.0</alpha>
-		<alpha>0.1</alpha>
-		<alpha>0.5</alpha>
-		<alpha>0.0</alpha>
-		<size>0.1</size>
-		<size>15.0</size>
-		<size>15.0</size>
-		<size>20.0</size>
-		<time>0</time>
-		<time>150</time>
-		<time>400</time>
-		<time>4000</time>
-		<glow>200</glow>
-		<drag>3.0</drag>
-		<rotate>20</rotate>
-		<velvariance>-10.0 -10.0 0.1 10.0 10.0 1.0</velvariance>
-		<posvariance>-8.0 -8.0 -0.1 8.0 8.0 5.0</posvariance>
+    <number>6</number>
+    <texture>osgsmoke</texture>
+    <color>0.25 0.25 0.25</color>
+    <color>0.2 0.2 0.2</color>
+    <color>0.15 0.15 0.15</color>
+    <color>0.05 0.05 0.05</color>
+    <alpha>0.0</alpha>
+    <alpha>0.25</alpha>
+    <alpha>0.25</alpha>
+    <alpha>0.0</alpha>
+    <velreduction>0.7</velreduction>
+    <size>1</size>
+    <size>6</size>
+    <size>8</size>
+    <size>8</size>
+    <time>0</time>
+    <time>150</time>
+    <time>100</time>
+    <time>4000</time>
+    <rotate>10</rotate>
+    <speed>100</speed>
+    <drag>6.0</drag>
+    <posvariance>-6.0 -6.0 0.0 6.0 6.0 2.0</posvariance>
     <material>smoke</material>
   </particleeffect>
 <!-- ===================================================================== -->
 	<particleeffect name = "genericbuildingexplosionparticle3">
-		<number>10</number>
-		<texture>stone chip1</texture>
-		<texture>stone chip2</texture>
-		<texture>stone chip3</texture>
-		<texture>dirt clod</texture>
-		<alphastart>1.0</alphastart>
-		<alphaend>1.0</alphaend>
-		<sizestart>0.3</sizestart>
-		<sizestart>0.3</sizestart>
-		<lifetime>3000</lifetime>
-		<speed>20</speed>
-		<delayeachparticle>15</delayeachparticle>
-		<gravity>9.8</gravity>
-		<randomdirection>75</randomdirection>
-    <material>smoke</material>
+    <number>16</number>
+    <number>32</number>
+    <texture>newspark</texture>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>0.0</alpha>
+    <size>0.1</size>
+    <size>0.1</size>
+    <size>0.1</size>
+    <size>0.1</size>
+    <time>0</time>
+    <time>300</time>
+    <time>300</time>
+    <time>200</time>
+    <speed>200</speed>
+    <glow></glow>
+    <drag>8.0</drag>
+    <material>fire</material>
+    <delayeachparticle>1</delayeachparticle>
+    <fixstretch>16.0</fixstretch>
+    <randomdirection>180</randomdirection>
+    <velvariance>-4.0 -4.0 0.1 4.0 4.0 1.0</velvariance>
+    <velreduction>0.98</velreduction>
+    <material>fire</material>
   </particleeffect>
 <!-- ===================================================================== -->
 	<particleeffect name = "genericlargeexplosionparticle1">
