@@ -334,8 +334,9 @@
 	    <emitter>
 		    <flags>particleeffectonly</flags>
 	        <lifetime>1</lifetime>
-	        <particleeffect>trooperhitparticle1</particleeffect>
-	    </emitter>
+        <particleeffect>trooperhitparticle1</particleeffect>
+        <particleeffect>trooperhitparticle2</particleeffect>
+      </emitter>
 	</transformeffect>
 <!-- ===================================================================== -->
  	<transformeffect name = "incendiarymg">
@@ -1798,7 +1799,25 @@
     <rotate>90</rotate>
     <delayeachparticle>30</delayeachparticle>
   </particleeffect>
-<!-- ===================================================================== -->
+  <!-- ===================================================================== -->
+  <particleeffect name = "trooperhitparticle2">
+    <number>1</number>
+    <texture>osgsmoke</texture>
+    <alpha>0.25</alpha>
+    <alpha>0.25</alpha>
+    <alpha>0.15</alpha>
+    <alpha>0.0</alpha>
+    <size>0.05</size>
+    <size>0.25</size>
+    <size>0.35</size>
+    <size>0.5</size>
+    <time>0</time>
+    <time>50</time>
+    <time>100</time>
+    <time>600</time>
+    <material>smoke</material>
+  </particleeffect>
+  <!-- ===================================================================== -->
 	<particleeffect name = "incendiarymgparticle1">
 		<number>2</number>
 		<texture>old23</texture>
