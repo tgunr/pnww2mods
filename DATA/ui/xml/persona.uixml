@@ -400,6 +400,11 @@
 				
 				var availability = getPersonaAvailability(persona);
 				
+				if(availability == "inactive")
+				{
+					setForward('persona.list.inactive');
+				}
+				
 				briefPercent.label 	= persona.rankpercent + "% " + getlocstring('persona.details.career.rank');
 				briefLocked.text = getVariableLocString('persona.details.career.status.' + availability, formatLockedThru(persona.lockedthru));
 				
@@ -414,8 +419,11 @@
 				if(briefImage != null)
 					briefImage.src = "ui/textures/test/" + persona.country.adjective + "_" + persona.branch + ".bmp";
 				
-				if(persona.lockedthru == 0 && availability != "slocked")
-					setForwardEnabled(true);					
+				if(persona.lockedthru == 0 && availability != ("slocked"))
+					setForwardEnabled(true);			
+				
+				if(availability == "inactive")
+					setForwardEnabled(false);
 			}
 		}
 		
@@ -638,6 +646,16 @@
 								//l.x = header.x + header.stringlength + 5;
 							}
 						}
+						else if(availability == "inactive")
+						{
+							var header = s.parent.findview("header");
+							
+							if(header.label.length > 0)
+							{
+								l.visible = true;
+								//l.x = header.x + header.stringlength + 5;
+							}
+						}
 						
 						if(!requireTraining || graduated)
 						{
@@ -721,6 +739,8 @@
 		{
 			if(!game.player.client.state.paccess(persona))
 				return "slocked";
+			else if(persona.availability == "inactive")
+				return "inactive";
 			else if(persona.lockedthru == 0)
 				return (!requireTraining || graduated) ? "available": "training";
 			
@@ -739,6 +759,8 @@
 				color = "#ff8800";
 			else if(getPersonaOverBalanced(p))
 				color = "#ffff00";
+			else if(availability == "inactive")
+				color = "#AAAAAA";
 			
 			return color;
 		}
@@ -755,7 +777,22 @@
 		
 		function selectPersona(index, dblclick)
 		{
-			if(!requireTraining || graduated || personas[index].branchid == 1)
+			if(personas[index].availability == "inactive")
+			{
+				soundPlayClick();
+				
+				selected = index;
+				
+				setForward('persona.list.inactive');
+				setForwardEnabled(false);
+								
+				updatePersonaDetails();
+				
+				for(var r = 0; r < status.length; r++)
+					mouseExit(status[r], r);
+			}	
+			
+			else if(!requireTraining || graduated || personas[index].branchid == 1)
 			{
 				soundPlayClick();
 				
@@ -763,6 +800,9 @@
 				
 				updatePersonaDetails();
 				
+				setForward('persona.forward.brigades');
+				setForwardEnabled(true);
+								
 				if(dblclick)
 					tplForward();
 				
