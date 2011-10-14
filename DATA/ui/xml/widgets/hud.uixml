@@ -22,7 +22,7 @@
 	
 	<!-- GAMEALERT -->
 	<view id="game-alerts" x="0" width="300" height="200" rtop="150" moveondrag="yes"
-		onshow="if(!this.mgr) this.mgr = new GameAlertManager(this, 3); centerView(this, 0, 300)">
+		onshow="if(!this.mgr) this.mgr = new GameAlertManager(this, 3);">
 		<text id="game-alert1" x="0" height="50" rright="0" rtop="0" maxwidth="800" fontshadowx=".08" fontshadowy="-.08"
 			style="color: #FFFFFF; font-size: +8;" moveondrag="no"/>
 		<text id="game-alert2" x="0" height="30" rright="0" rtop="60" maxwidth="800" fontshadowx=".08" fontshadowy="-.08"
