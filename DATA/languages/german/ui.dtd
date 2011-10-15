@@ -3792,6 +3792,7 @@
 <!ENTITY persona.details.career.status.banned "Account ist für {1} Sekunden gesperrt. Das Spielen ist wieder möglich, sobald die Sperre abgelaufen ist oder ein Spielmanager sie manuell aufhebt. http://support.playnet.com/">
 <!ENTITY persona.list.balanced "ausgeglichen">
 <!ENTITY persona.selecttab.tip "Wähle eine Persona zum Spielen.">
+<!ENTITY persona.list.inactive.tip "This persona is not available to you right now because it is inactive or has no active brigades.">
 <!ENTITY persona.details.persona.recruit "Rekrut">
 <!ENTITY persona.list.imbalanced "Die Population der {1} ist {2} überbevölkert. Aus diesem Grund haben alle {3} Personas einen verzögerten Einstieg und alle {4} Personas sind ohne Einschränkung verfügbar.">
 <!ENTITY persona.details.career.status.training "Diese Persona befindet sich noch im Trainingslager. Das Trainingslager muss absolviert werden, um mit dem aktiven Dienst beginnen zu können.">
@@ -3802,11 +3803,13 @@
 <!ENTITY persona.forward.training "Start Training">
 <!ENTITY persona.details.brigade.na "keine Zugehörigkeit">
 <!ENTITY persona.list.onleave "nicht verfügbar für {1}">
+<!ENTITY persona.details.career.status.inactive "This persona is not available to you right now because it is inactive or has no active brigades.">
 <!ENTITY persona.details.career.status.onleave "Wegen Seitensperre nicht verfügbar für {1} Sekunden.">
 <!ENTITY persona.redirect "Du bist Mitglied einer laufenden Mission, wechsle zum Bereitschaftsraum der Mission...">
 <!ENTITY persona.details.career.status.noswap "Diese Persona ist aufgrund Deiner vorherigen Seitenwahl jetzt nicht verfügbar.">
 <!ENTITY persona.list.requesting "benötigt Verstärkung">
 <!ENTITY persona.list "PERSONAS">
+<!ENTITY persona.forward.inactive "You must select an active persona.">
 <!ENTITY persona.forward.brigade "Brigade-HQ">
 <!ENTITY persona.details.persona "AUSGEWÄHLTE PERSONA">
 <!ENTITY persona.details.persona.handle "Name">
@@ -3826,6 +3829,7 @@
 <!ENTITY persona.details.spawndelayed "Einstiegsverzögerungen sind in Kraft getreten.">
 <!ENTITY persona.forward.training.tip "Absolviere die Traningslehrgänge um mit dem aktiven Dienst zu beginnen.">
 <!ENTITY persona.forward "Auswählen">
+<!ENTITY persona.list.inactive "Inactive">
 <!ENTITY persona.details.ranklock "Dein maximaler Rang ist von der Art des Abonnements abhängig.">
 <!ENTITY persona.list.overpopulated.2 "mittel">
 <!ENTITY persona.list.slocked "Nur für Abonnenten">

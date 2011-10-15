@@ -3811,6 +3811,7 @@
 <!ENTITY persona.details.career "NOTAS DE CARRERA">
 <!ENTITY persona.details.career.status.banned "Ha sido expulsado durante {1} segundos. Si necesita asistencia puede dirigirse a la web http://support.playnet.com/ o escribir un email a bable@playnet.com">
 <!ENTITY persona.list.balanced "equilibrado">
+<!ENTITY persona.list.inactive.tip "This persona is not available to you right now because it is inactive or has no active brigades.">
 <!ENTITY persona.list.imbalanced "La población en el ejército {1} es superada por el ejército {2}. Como consecuencia, todos los personajes {3} tienen acceso retrasado y todos los personajes {4} están disponibles sin restricción.">
 <!ENTITY persona.details.career.status.tip "SERVICIO ACTIVO indica que este personaje está disponible para jugar mientras que EN LICENCIA indica que este personaje no está disponible para jugar debido a las restricciones del bloqueo por bando">
 <!ENTITY persona.list.onleave "En Licencia por {1}s">
@@ -3843,16 +3844,18 @@
 <!ENTITY persona.forward.training "Comenzar Entrenamiento">
 <!ENTITY persona.selecttab "PERSONAJE">
 <!ENTITY persona.details.brigade.na "no inscrito">
+<!ENTITY persona.details.career.status.inactive "This persona is not available to you right now because it is inactive or has no active brigades.">
 <!ENTITY persona.welcome2 "Este es el último entorno de lucha Jugador contra Jugador pero el trabajo en equipo gana el día. Únase a un grupo y ayude a los jugadores nuevos.">
 <!ENTITY persona.list "PERSONAJES">
+<!ENTITY persona.forward.inactive "You must select an active persona.">
 <!ENTITY persona.details.persona.handle "Jugador">
 <!ENTITY persona.details.persona "PERSONAJE SELECCIONADO">
 <!ENTITY persona.details.career.rank "hasta el próximo ascenso">
 <!ENTITY persona.list.tip "Elija un personaje para jugar">
+<!ENTITY persona.welcome.population "POBLACIÓN DE JUGADORES">
 <!ENTITY persona.list.overpopulated "superpoblado">
 <!ENTITY persona.notgraduated "You are currently a recruit and have not graduated from basic training. Would you like to enter training now?">
 <!ENTITY persona.welcome.pollresults.url "http://www.polls.wwiionline.com/crspolls.htm">
-<!ENTITY persona.welcome.population "POBLACIÓN DE JUGADORES">
 <!ENTITY persona.welcome.squad.motd "MENSAJE DE UNIDAD">
 <!ENTITY persona.list.banned "Expulsado por {1}s">
 <!ENTITY persona.list.overpopulated.3 "fuertemente">
@@ -3864,6 +3867,7 @@
 <!ENTITY persona.forward.training.tip "Hacer tutoriales de entrenamiento. Graduate en el entrenamiento para comenzar su Servicio Activo.">
 <!ENTITY persona.forward "Elegir Personaje">
 <!ENTITY persona.welcome.allied "FUERZAS ALIADAS">
+<!ENTITY persona.list.inactive "Inactive">
 <!ENTITY persona.potd "ENCUESTA DEL DÍA">
 <!ENTITY persona.potd.empty "No hay encuestas en este momento. Por favor, pruebe mas tarde.">
 <!ENTITY persona.motd "MENSAJE DEL DÍA">

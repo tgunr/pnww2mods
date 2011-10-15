@@ -3792,6 +3792,7 @@
 <!ENTITY persona.details.career "NOTE DI CARRIERA">
 <!ENTITY persona.details.career.status.banned "Il tuo conto è stato espulso e non è diponibile per {1}. Per assistenza visita http://support.playnet.com/ e invia una mail a Latham@playnet.com">
 <!ENTITY persona.list.balanced "bilanciato">
+<!ENTITY persona.list.inactive.tip "This persona is not available to you right now because it is inactive or has no active brigades.">
 <!ENTITY persona.list.imbalanced "La popolazione di {1} è sovrappopolato di {2}. Quindi, tutti i profili di {3} hanno accesso ritardato e tutti i profili di {4} sono disponibili senza restrizioni.">
 <!ENTITY persona.details.career.status.tip "SERVIZIO ATTIVO indica che questo profilo è disponibile per giocare mentre IN LICENZA indica che questo profilo non è disponibile per giocare per restrizioni nel cambio di fazione">
 <!ENTITY persona.list.onleave "In licenza per {1}">
@@ -3824,16 +3825,18 @@
 <!ENTITY persona.forward.training "Inizia Addestramento">
 <!ENTITY persona.selecttab "SELEZIONE PROFILO">
 <!ENTITY persona.details.brigade.na "non assegnato">
+<!ENTITY persona.details.career.status.inactive "This persona is not available to you right now because it is inactive or has no active brigades.">
 <!ENTITY persona.welcome2 "Questo è il posto definitivo per il combattimento tra giocatori (PvP), ma è il lavoro di squadra che permette di emergere. Unisciti ad un gruppo ed aiuta i nuovi giocatori.">
 <!ENTITY persona.list "PROFILI">
+<!ENTITY persona.forward.inactive "You must select an active persona.">
 <!ENTITY persona.details.persona.handle "Nome">
 <!ENTITY persona.details.persona "SELEZIONA PROFILO">
 <!ENTITY persona.details.career.rank "Avanzamento per il prossimo grado">
 <!ENTITY persona.list.tip "Scegli un profilo con cui giocare">
+<!ENTITY persona.welcome.population "POPOLAZIONE DEI GIOCATORI">
 <!ENTITY persona.list.overpopulated "sovrappopolato">
 <!ENTITY persona.notgraduated "Sei al momento una recluta e non hai passato l&#39;addestramento di base. Vuoi iniziare l&#39;addestramento ora?">
 <!ENTITY persona.welcome.pollresults.url "http://www.polls.wwiionline.com/crspolls.htm">
-<!ENTITY persona.welcome.population "POPOLAZIONE DEI GIOCATORI">
 <!ENTITY persona.welcome.squad.motd "MESSAGGIO DI SQUADRA">
 <!ENTITY persona.list.banned "Espulso per {1}">
 <!ENTITY persona.list.overpopulated.3 "pesantemente">
@@ -3845,6 +3848,7 @@
 <!ENTITY persona.forward.training.tip "Fai i tutorial di addestramento. Passa di grado con l&#39;addestramento per iniziare il Servizio Attivo.">
 <!ENTITY persona.forward "Seleziona Profilo">
 <!ENTITY persona.welcome.allied "FORZE ALLEATE">
+<!ENTITY persona.list.inactive "Inactive">
 <!ENTITY persona.potd "SONDAGGIO DEL GIORNO">
 <!ENTITY persona.potd.empty "Non ci sono sondaggi in questo momento. Per favore controlla più tardi.">
 <!ENTITY persona.motd "MESSAGGIO DEL GIORNO">

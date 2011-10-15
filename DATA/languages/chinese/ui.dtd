@@ -3791,6 +3791,7 @@
 <!ENTITY persona.details.career.status.banned "您的帐户暂时被禁止，{1} 内不能进入游戏。寻求帮助可以登录官网http://www.pkhlk.com或联系客服 kf@pkhlk.com。">
 <!ENTITY persona.list.balanced "已平衡">
 <!ENTITY persona.selecttab.tip "在这个标签选择一个阵营军种。">
+<!ENTITY persona.list.inactive.tip "This persona is not available to you right now because it is inactive or has no active brigades.">
 <!ENTITY persona.details.persona.recruit "征募">
 <!ENTITY persona.list.imbalanced "{1} 人数是 {2} 过多. 因此所有的 {3} 角色进入游戏将会延迟，而 {4} 的角色则不会受到影响。">
 <!ENTITY persona.details.career.status.training "该角色还在基础训练中。完成该训练可以进入到现役。">
@@ -3801,11 +3802,13 @@
 <!ENTITY persona.forward.training "开始训练">
 <!ENTITY persona.details.brigade.na "没有附录">
 <!ENTITY persona.list.onleave "休假时间将持续 {1}">
+<!ENTITY persona.details.career.status.inactive "This persona is not available to you right now because it is inactive or has no active brigades.">
 <!ENTITY persona.details.career.status.onleave "休假将持续 {1} 。由于阵营限制，当前军种不可用。">
 <!ENTITY persona.redirect "您是某个正在进行的任务中的一员，转到待命室………">
 <!ENTITY persona.details.career.status.noswap "由于先前的阵营选择，您现在不能使用这个军种。">
 <!ENTITY persona.list.requesting "要求增援">
 <!ENTITY persona.list "角色">
+<!ENTITY persona.forward.inactive "You must select an active persona.">
 <!ENTITY persona.forward.brigade "加入">
 <!ENTITY persona.details.persona "已选择的阵营和军种">
 <!ENTITY persona.details.persona.handle "操作">
@@ -3825,6 +3828,7 @@
 <!ENTITY persona.details.spawndelayed "实行出生延迟">
 <!ENTITY persona.forward.training.tip "学习训练教程。训练毕业后可开始进入现役。">
 <!ENTITY persona.forward "选择角色">
+<!ENTITY persona.list.inactive "Inactive">
 <!ENTITY persona.details.ranklock "由于账户类别限制，您的最高军衔等级已经被锁定，请更改账户类别。">
 <!ENTITY persona.list.overpopulated.2 "中度">
 <!ENTITY persona.list.slocked "付费锁定">
