@@ -118,7 +118,7 @@
 				border-size-bottom: 4;">
 		<!-- order of these child views is important: map, frame, labels -->
 		<view class="mapview" id="minimap" x="0" y="0" height="152" rright="0" acceptsfocus="no" style="background-color: #00000000;"
-			scale=".1" minscale=".005" maxscale="1.6" scalebar="off" acceptmouseclick="true" followall="true" alpha=".8" navscale=".5">
+			scale=".1" minscale=".005" maxscale="1.6" scalebar="off" acceptmouseclick="true" followall="true" alpha=".8">
 			<layer type="icon" id="icons" minscale=".3" maxscale="1.7" enabled="true"/>
 			<layer type="icon" id="rendered" minscale="0" maxscale=".3" enabled="true"/>
 			<layer type="terrainobj" id="terrainobj" minscale=".005" maxscale=".3" enabled="true"/>

@@ -3,49 +3,61 @@
 <window id="credits" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768"  modal="true" acceptsmouseclick="true"
 	style="background-color: #000000E5;" layer="500" aspectalign="center" onshow="initCredits(this)" onupdate="updateCredits()" onmousedown="quitNow()">
 	<include file="classes/CycleTimer.uixml"/>
+	<include file="classes/ListControl.uixml"/>
+	<include file="classes/ListBuilder.uixml"/>
+	<include file="classes/TextBuilder.uixml"/>
 	<include file="lib/common.uixml"/>
-	<view x="100" y="120" rtop="110" rright="50" aspectlimit="width" acceptmouseclick="false">
-		<text id="credits-info" x="200" rtop="0" y="0" rright="0" acceptfocus="false" acceptmouseclick="false"
-			style="color: #FFFFFF; font-size: +2;"/>
-	</view>
+	<list id="creditsList" x="100" y="120" rtop="110" rright="50" aspectlimit="width"
+		onselect="quitNow()" ondblselect="quitNow()"/>
 	<caption label="${common.exitclick}" x="0" height="25" y="15" rright="0" acceptfocus="false" acceptmouseclick="false"
 			style="color: #BFE2CE; font-size: +1;" align="center"/>
 		<script>
 		<!--
 		
-		var creditsInfo 	= window.findview("credits-info");
+		var creditsList 		= new ListControl(findview("creditsList"));
 		var creditsTimer 	= new CycleTimer(100);
-		var stageTimer 		= null;
-		var row 			= 0;
+		var stageTimer 	= null;
 		var lastUpdate		= (new Date()).getTime();
-		var pps				= 50; // pixels per second
-		var pause			= true;
+		var pps					= 50; // pixels per second
+		var pause				= true;
 		var doQuit			= 0;
+		var lastRow			= null;
 		
 		function initCredits(w)
 		{
 			musicPlayIntro();
 			
-			if(creditsInfo != null)
+			if(creditsList != null)
 			{
 				var content = game.getcontent("manuals/credits.xml");
 				
 				if(content != null)
 				{
-					creditsInfo.text = content.body;
-					creditsInfo.resizetotext();
+					var lines = content.body.split("\n");
 					
-					creditsInfo.y -= (creditsInfo.height - creditsInfo.parent.height);
-					
-					cprint("Credits Info height is " + creditsInfo.height + "\n");
-					cprint("Credits Info y is " + creditsInfo.y + "\n");
+					for(var i = 0; i < lines.length; i++)
+					{
+							var lrb 		= new ListRowBuilder(creditsList.list, "credit" + i, 0, 16);
+							var credit = new TextBuilder(lrb, "label", "caption", lines[i]);
+							
+							credit.addStyle("color", "#e9e3d9ff");
+							credit.addAttribute("acceptsmouseclick", "false");
+							
+							lrb.addAttribute("aspectalign", null);
+							lrb.addAttribute("onmouseenter", null);
+							lrb.addAttribute("onmouseexit", null);
+			
+							lrb.addBuilder(credit);
+							
+							lastRow = creditsList.addRow(lines[i], lrb.build());
+					}
 				}
 			}
 		}
 		
 		function updateCredits()
 		{
-			if(creditsInfo == null)
+			if(creditsList == null)
 				return;
 				
 			var now = (new Date()).getTime();
@@ -64,8 +76,8 @@
 			{
 				if(stageTimer == null)
 				{
-					stageTimer = new CycleTimer(2000);
-					stageTimer.add(2000);
+					stageTimer = new CycleTimer(1000);
+					stageTimer.add(1000);
 				}
 				
 				if(stageTimer.run())
@@ -74,7 +86,7 @@
 					stageTimer = null;
 				}
 			}
-			else if(creditsInfo.y < 0)
+			else if(lastRow.y <= creditsList.list.height)
 			{
 				var diff 	= (now - lastUpdate);
 				var tics 	= Math.floor(diff / 50);
@@ -87,16 +99,14 @@
 				var rise 		= pps * ticDelta; 
 				
 				for(var t = 0; t < tics; t++)
-				{
-					creditsInfo.y += rise;
-				}
+					creditsList.list.scrolly += rise;
 			}
 			else if(doQuit == 0)
 			{
 				if(stageTimer == null)
 				{
-					stageTimer = new CycleTimer(5000);
-					stageTimer.add(5000);
+					stageTimer = new CycleTimer(2000);
+					stageTimer.add(2000);
 				}
 				
 				if(stageTimer.run())
