@@ -146,12 +146,16 @@
 		{
 			var node = categoryTree.selectedNode();
 			
+			
 			if(node != null)
 			{
 				var keymap = node.data.split(",");
 				
 				keymapCategory 	= keymap[0];
 				keymapVehicle 	= keymap[1] - 1;
+				
+				cprint("Node: " + node + " Category: " + keymapCategory + " Vehicle: " + keymapVehicle);
+				cprint("Branch: " + node.branch);
 				
 				if(node.branch && !node.initNode())
 				{
@@ -174,6 +178,12 @@
 				
 				initPresets(keymapCategory);
 				updateHeaders();
+				
+				if((keymapCategory == 2) && (keymapVehicle > -1))
+					setConvergenceSettingsVisible(true)
+				else
+					setConvergenceSettingsVisible(false)
+				
 				setConvergence();
 			}
 		}
@@ -356,6 +366,20 @@
 				game.saveconvergence(vtype, value, 0); // Convergence hasn't changed, let's pull the saved (or default) setting
 			
 			return;
+		}
+		
+		function setConvergenceSettingsVisible(bool)
+		{
+			var convpane = findview("conv-pane");
+			
+			if(bool == true)
+			{
+				convpane.visible = true;
+			}
+			else if(bool == false)
+			{
+				convpane.visible = false;
+			}
 		}
 		
 		-->
