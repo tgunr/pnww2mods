@@ -25,7 +25,8 @@ void lightGetAmbientDiffuseSpecular(in vec3,
 
 vec4 fogThis(in vec4);
 
-const vec4 ocolor = vec4(0.3960784, 0.549019607, 0.7058823529, 1.0);
+const vec4 ocolor = vec4(0.7000, 0.7000, 0.6500, 1.0);
+const vec4 ka = vec4(0.5500, 0.6000, 0.5000, 1.0);
 
 float GetShadowValue()
 {
@@ -91,7 +92,7 @@ void main()
 	
 	specularColor *= gl_FrontMaterial.specular;
 	diffuseColor *= ocolor;
-	ambientColor *= gl_FrontMaterial.ambient;
+	ambientColor *= ka;
 
 	float facing = max(dot(n, v), 0.0);
 	
