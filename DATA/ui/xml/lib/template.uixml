@@ -41,6 +41,18 @@
 			version.label = versionCaption;
 		}
 		
+		function showRevision(view)
+		{
+			if(game.betarelease == 1)
+			{
+				var revisionCaption = getlocstring("common.revision");
+				revisionCaption += ": " + game.revision;
+				view.label = revisionCaption;
+			}
+			else
+				view.label = "";
+		}
+		
 		function tplForward()
 		{
 			soundPlayClick();

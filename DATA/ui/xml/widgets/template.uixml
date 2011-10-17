@@ -24,5 +24,6 @@
 		style="control-on: ui/textures/test/next_on.bmp; control-off: ui/textures/test/next_off.bmp; control-disabled: ui/textures/test/next_disabled.bmp; color: #FFFFFF; font-size: -3;"
 		onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
 		tip="${widgets.template.next.tip}"/>
-	<caption id="version" x="40" y="7" width="114" height="17" align="center" style="color: #000000; font-size: +1;" onshow="showVersion(this)" />
+	<caption id="version" x="40" y="20" width="114" height="17" align="center" style="color: #000000; font-size: +1;" onshow="showVersion(this)" />
+	<caption id="revision" x="40" y="5" width="114" height="17" align="center" style="color: #000000; font-size: -1;" onshow="showRevision(this)" />
 </view>
