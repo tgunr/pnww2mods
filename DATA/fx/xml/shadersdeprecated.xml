@@ -552,4 +552,26 @@
     </shaders>
     <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
   </program>
+  <!--=================================================================-->
+  <program name ="softparticle" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/particle/softparticle.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/particle/softparticle.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="camera" type="float_vec4" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="particle" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/particle/particle.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/particle/particle.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+  </program>
 </glslprograms>

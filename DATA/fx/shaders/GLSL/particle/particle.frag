@@ -9,9 +9,9 @@ void lightGetAmbientDiffuse(out vec4 ambient, out vec4 diffuse);
 
 void main()
 {
-	vec4 map = texture2D(src1, gl_TexCoord[0].xy);
-	
-	vec4 ambient;
+    vec4 map = texture2D(src1, gl_TexCoord[0].xy);
+    
+    vec4 ambient;
 	vec4 diffuse;
 	vec4 emissive;
 	
@@ -24,7 +24,7 @@ void main()
 	emissive = gl_FrontMaterial.emission;
 	
 	vec4 c = map * (diffuse + ambient + emissive);
-	 
+
 	gl_FragColor = fogThis(c);
 	gl_FragColor.a = map.a * color.a;
 }
