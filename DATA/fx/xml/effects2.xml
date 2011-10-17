@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="iso-8859-1" ?> 
 <FXEFFECTS>
   <!-- ===================================================================== -->
+  <transformeffect name = "test">
+    <emitter>
+      <lifetime>1</lifetime>
+      <flags>particleeffectonly</flags>
+      <particleeffect>test</particleeffect>
+    </emitter>
+  </transformeffect>
+  <!-- ===================================================================== -->
   <transformeffect name = "tankAPhit">
     <emitter>
       <lifetime>1</lifetime>
@@ -553,9 +561,7 @@
     <emitter>
       <flags>particleeffectonly</flags>
       <lifetime>1</lifetime>
-      <particleeffect>genericbuildingexplosionparticle1</particleeffect>
       <particleeffect>genericbuildingexplosionparticle2</particleeffect>
-      <particleeffect>genericbuildingexplosionparticle3</particleeffect>
     </emitter>
   </transformeffect>
 <!-- ===================================================================== -->
@@ -907,14 +913,26 @@
 			<particleeffect>cratersmokeparticle</particleeffect>
 		</emitter>
 	</transformeffect>
+<!-- ===================================================================== -->
+<!-- ===================================================================== -->
+<!-- ===================================================================== -->
+<!-- ===================================================================== -->
+<!-- ===================================================================== -->
+<!-- ===================================================================== -->
+<!-- ===================================================================== -->
+<!-- ===================================================================== -->
+  <particleeffect name = "test">
+    <number>1</number>
+    <texture>osgsmoke</texture>
+    <alphastart>1</alphastart>
+    <alphaend>1</alphaend>
+    <sizestart>4</sizestart>
+    <sizeend>4</sizeend>
+    <lifetime>-1</lifetime>
+    <material>smoke</material>
+    <dontupdateposition></dontupdateposition>
+  </particleeffect>
   <!-- ===================================================================== -->
-<!-- ===================================================================== -->
-<!-- ===================================================================== -->
-<!-- ===================================================================== -->
-<!-- ===================================================================== -->
-<!-- ===================================================================== -->
-<!-- ===================================================================== -->
-<!-- ===================================================================== -->
   <particleeffect name = "landminedust1">
     <number>10</number>
     <texture>tread dust</texture>
@@ -2870,39 +2888,16 @@
     <material>smoke</material>
   </particleeffect>
 <!-- ===================================================================== -->
-	<particleeffect name = "genericbuildingexplosionparticle1">
-    <number>1</number>
-    <texture>osgsmoke</texture>
-    <alpha>1.0</alpha>
-    <alpha>1.0</alpha>
-    <alpha>1.0</alpha>
-    <alpha>0.0</alpha>
-    <color>1 1 0</color>
-    <color>1 1 0</color>
-    <color>1 1 0</color>
-    <color>1 1 0</color>
-    <size>1</size>
-    <size>8</size>
-    <size>12</size>
-    <size>16</size>
-    <time>0</time>
-    <time>50</time>
-    <time>100</time>
-    <time>100</time>
-    <glow></glow>
-    <dontupdateposition></dontupdateposition>
-    <material>fire</material>
-  </particleeffect>
-<!-- ===================================================================== -->
 	<particleeffect name = "genericbuildingexplosionparticle2">
     <number>6</number>
     <texture>osgsmoke</texture>
+    <texture>day1blacksmoke</texture>
     <color>0.25 0.25 0.25</color>
     <color>0.2 0.2 0.2</color>
     <color>0.15 0.15 0.15</color>
     <color>0.05 0.05 0.05</color>
-    <alpha>0.0</alpha>
-    <alpha>0.25</alpha>
+    <alpha>0.75</alpha>
+    <alpha>0.5</alpha>
     <alpha>0.25</alpha>
     <alpha>0.0</alpha>
     <velreduction>0.7</velreduction>
@@ -2919,34 +2914,6 @@
     <drag>6.0</drag>
     <posvariance>-6.0 -6.0 0.0 6.0 6.0 2.0</posvariance>
     <material>smoke</material>
-  </particleeffect>
-<!-- ===================================================================== -->
-	<particleeffect name = "genericbuildingexplosionparticle3">
-    <number>16</number>
-    <number>32</number>
-    <texture>newspark</texture>
-    <alpha>1.0</alpha>
-    <alpha>1.0</alpha>
-    <alpha>1.0</alpha>
-    <alpha>0.0</alpha>
-    <size>0.1</size>
-    <size>0.1</size>
-    <size>0.1</size>
-    <size>0.1</size>
-    <time>0</time>
-    <time>300</time>
-    <time>300</time>
-    <time>200</time>
-    <speed>200</speed>
-    <glow></glow>
-    <drag>8.0</drag>
-    <material>fire</material>
-    <delayeachparticle>1</delayeachparticle>
-    <fixstretch>16.0</fixstretch>
-    <randomdirection>180</randomdirection>
-    <velvariance>-4.0 -4.0 0.1 4.0 4.0 1.0</velvariance>
-    <velreduction>0.98</velreduction>
-    <material>fire</material>
   </particleeffect>
 <!-- ===================================================================== -->
 	<particleeffect name = "genericlargeexplosionparticle1">
