@@ -26,7 +26,7 @@ void lightGetAmbientDiffuseSpecular(in vec3,
 vec4 fogThis(in vec4);
 
 const vec4 ocolor = vec4(0.7000, 0.7000, 0.6500, 1.0);
-const vec4 ka = vec4(0.5500, 0.6000, 0.5000, 1.0);
+const vec4 ka = vec4(0.5500, 0.6000, 0.55000, 1.0);
 
 float GetShadowValue()
 {
