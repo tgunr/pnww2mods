@@ -14,13 +14,13 @@ void lightGetAmbientDiffuse(in vec3 normal,
 
 void main()
 {
-    vec4 c1 = texture2D(src1, gl_TexCoord[0].xy);
-    vec4 c2 = texture2D(src2, gl_TexCoord[0].zw);
-    vec4 c3 = texture2D(src3, gl_TexCoord[1].xy);
+    vec4 layer0 = texture2D(src1, gl_TexCoord[0].xy);
+    vec4 layer1 = texture2D(src2, gl_TexCoord[0].zw);
+    vec4 layer2 = texture2D(src3, gl_TexCoord[1].xy);
 
 	vec4 c4 = texture2DProj(surf, gl_TexCoord[2]);
 
-    vec4 c = c1 * c2 * c3;
+    vec4 c = layer0 * layer1 * layer2;
     
     c4.rgb = 1.0 - c4.rgb * 2.0;
 
