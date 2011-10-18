@@ -3328,6 +3328,7 @@
 <!ENTITY common.mission.rs "Resupply">
 <!ENTITY common.squads.details.options.xo.promote.button "PROMOTE">
 <!ENTITY common.squads.members.tips.hc "High Commander">
+<!ENTITY common.revision "Revision">
 <!ENTITY common.squads.tab "SQUADS">
 <!ENTITY common.squads.create.msg.shortname.invalid "The shortname can only contain letters and/or numbers!">
 <!ENTITY common.squads.create.msg.required "All fields must be filled out fully!">
@@ -4335,6 +4336,7 @@
 <!ENTITY connect.ping.lossbig "*PACKET LOSS*">
 <!ENTITY connect.error.eagain "eagain">
 <!ENTITY connect.login.auth.timeout "Timed out during authentication">
+<!ENTITY connect.error.loginfail_activatefailed "Login Failed (loginfail_activatefailed)">
 <!ENTITY connect.ping.kbps "Kbps: &#37;.1f in, &#37;.1f out.">
 <!ENTITY connect.lost "&#37;ls: Error #&#37;u">
 <!ENTITY connect.lost.reconnect "Chat connection lost, reconnecting">
@@ -4346,6 +4348,7 @@
 <!ENTITY connect.login.chat.timeout "Timed out during chat connection">
 <!ENTITY connect.error.econnaborted "connection aborted">
 <!ENTITY connect.lost.chat "Lost connection to chat host">
+<!ENTITY connect.error.loginfail_despawnnoplayer "Login Failed (loginfail_despawnnoplayer)">
 <!ENTITY connect.login.badlogin "Unexpected login failure">
 <!ENTITY connect.find.timeout.network "Timed out connecting to game network">
 <!ENTITY connect.netcode2.reverting "[netcode2 connection failed, please check your firewall - reverting to standard network usage]">
@@ -4362,16 +4365,19 @@
 <!ENTITY connect.netcode2.disabled "[netcode2 disabled on server]">
 <!ENTITY connect.error.econnreset "connection reset">
 <!ENTITY connect.login.nochat "Failed to connect to chat">
+<!ENTITY connect.error.loginfail_despawnerror "Login Failed (loginfail_despawnerror)">
 <!ENTITY connect.error.eteul_login_denied "login denied">
 <!ENTITY connect.error.unknown "unknown connection error">
 <!ENTITY connect.login.auth.failed "Authentication failed">
 <!ENTITY connect.ping.notactive "Ping: ...">
+<!ENTITY connect.error.loginfail_sessionvalidation "Login Failed - Possible Connection Issue">
 <!ENTITY connect.error.econnrefused "connection refused">
 <!ENTITY connect.popup.title "Network Error">
 <!ENTITY connect.find.nonefound "Network initialization failed/no network available">
 <!ENTITY connect.error.enobufs "no buffer space">
 <!ENTITY connect.error.enotconn "not connected">
 <!ENTITY connect.login.timeout "Timed out connecting to host">
+<!ENTITY connect.error.loginfail_activatenolocalinfo "Login Failed (loginfail_activatenolocalinfo)">
 <!ENTITY connect.find.timeout.data "Timed out getting connection data">
 <!ENTITY connect.lost.game "Game connection lost">
 <!ENTITY connect.error.eteul_connection_stalled "connection stalled">
@@ -4387,10 +4393,13 @@
 <!ENTITY connect.host.cell "cellhost">
 <!ENTITY connect.login.chat.error "Unable to connect to chat host">
 <!ENTITY connect.error.eteul_enospc_send_buffer "teul buffer error">
+<!ENTITY connect.error.loginfail_acceptbadteul "Login Failed - Your client is not supported by the server.">
+<!ENTITY connect.error.loginfail_acceptbadindex "Login Failed (loginfail_acceptbadindex)">
 <!ENTITY connect.lost.world "World connection lost">
 <!ENTITY connect.error.enetreset "network reset">
 <!ENTITY connect.error.enetunreach "network unreachable">
 <!ENTITY connect.error.eteul_login_denied_ver "login denied (ver)">
+<!ENTITY connect.error.loginfail_activatenoplayerinfo "Login Failed (loginfail_activatenoplayerinfo)">
 <!ENTITY connect.error.etimedout "connection timed out">
 <!ENTITY connect.login.error "Error connecting to host">
 <!ENTITY connect.find.nobest "Unable to connect to game network">

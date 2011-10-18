@@ -3331,6 +3331,7 @@
 <!ENTITY common.mission.rs "Rifornimento">
 <!ENTITY common.squads.details.options.xo.promote.button "PROMUOVI">
 <!ENTITY common.squads.members.tips.hc "Membro dell&#39;Alto Comando">
+<!ENTITY common.revision "Revision">
 <!ENTITY common.squads.tab "SQUADRE">
 <!ENTITY common.squads.create.msg.shortname.invalid "Il nome abbreviato può contenere solo lettere e/o numeri!">
 <!ENTITY common.squads.create.msg.required "Tutti i campi devono essere inseriti completamente!">
@@ -4353,6 +4354,7 @@
 <!ENTITY connect.ping.lossbig "*PACCHETTI PERSI*">
 <!ENTITY connect.error.eagain "eagain">
 <!ENTITY connect.login.auth.timeout "Tempo esaurito durante l&#39;autentificazione">
+<!ENTITY connect.error.loginfail_activatefailed "Login Failed (loginfail_activatefailed)">
 <!ENTITY connect.ping.kbps "Kbps: &#37;.1f in, &#37;.1f out.">
 <!ENTITY connect.lost "&#37;ls: Errore #&#37;u">
 <!ENTITY connect.lost.reconnect "Connessione alla chat persa, riconnessione">
@@ -4364,6 +4366,7 @@
 <!ENTITY connect.login.chat.timeout "Tempo esaurito durante la connessione alla chat">
 <!ENTITY connect.error.econnaborted "connection aborted">
 <!ENTITY connect.lost.chat "Connessione all&#39;host della chat persa">
+<!ENTITY connect.error.loginfail_despawnnoplayer "Login Failed (loginfail_despawnnoplayer)">
 <!ENTITY connect.login.badlogin "Errore di accesso imprevisto">
 <!ENTITY connect.find.timeout.network "Tempo di connessione alla rete del gioco esaurito">
 <!ENTITY connect.netcode2.reverting "[connessione netcode2 fallita, per favore controlla il tuo firewall - sto ritornando all&#39;uso standard della rete]">
@@ -4380,16 +4383,19 @@
 <!ENTITY connect.netcode2.disabled "[netcode2 disabilitato sul server]">
 <!ENTITY connect.error.econnreset "connection reset">
 <!ENTITY connect.login.nochat "Connessione alla chat fallita">
+<!ENTITY connect.error.loginfail_despawnerror "Login Failed (loginfail_despawnerror)">
 <!ENTITY connect.error.eteul_login_denied "login denied">
 <!ENTITY connect.error.unknown "unknown connection error">
 <!ENTITY connect.login.auth.failed "Autentificazione fallita">
 <!ENTITY connect.ping.notactive "Ping: ...">
+<!ENTITY connect.error.loginfail_sessionvalidation "Login Failed - Possible Connection Issue">
 <!ENTITY connect.error.econnrefused "connection refused">
 <!ENTITY connect.popup.title "Errore di rete">
 <!ENTITY connect.find.nonefound "Inizializzazione della rete fallita/nessuna rete disponibile">
 <!ENTITY connect.error.enobufs "no buffer space">
 <!ENTITY connect.error.enotconn "not connected">
 <!ENTITY connect.login.timeout "Tempo di connessione all&#39;host esaurito">
+<!ENTITY connect.error.loginfail_activatenolocalinfo "Login Failed (loginfail_activatenolocalinfo)">
 <!ENTITY connect.find.timeout.data "Esaurito il tempo di ricezione per i dati di connessione">
 <!ENTITY connect.lost.game "Connessione al gioco persa">
 <!ENTITY connect.error.eteul_connection_stalled "connection stalled">
@@ -4405,10 +4411,13 @@
 <!ENTITY connect.host.cell "cellhost">
 <!ENTITY connect.login.chat.error "Impossibile connettersi all’host della chat">
 <!ENTITY connect.error.eteul_enospc_send_buffer "teul buffer error">
+<!ENTITY connect.error.loginfail_acceptbadteul "Login Failed - Your client is not supported by the server.">
+<!ENTITY connect.error.loginfail_acceptbadindex "Login Failed (loginfail_acceptbadindex)">
 <!ENTITY connect.lost.world "Connessione al mondo persa">
 <!ENTITY connect.error.enetreset "network reset">
 <!ENTITY connect.error.enetunreach "network unreachable">
 <!ENTITY connect.error.eteul_login_denied_ver "login denied (ver)">
+<!ENTITY connect.error.loginfail_activatenoplayerinfo "Login Failed (loginfail_activatenoplayerinfo)">
 <!ENTITY connect.error.etimedout "connection timed out">
 <!ENTITY connect.login.error "Errore di connessione all&#39;host">
 <!ENTITY connect.find.nobest "Impossibile connettersi alla rete del gioco">
@@ -4468,3 +4477,31 @@
 <!ENTITY ppos.built "&#37;ls costruito!">
 <!ENTITY ppos.invalidnow "La posizione dell&#39;oggetto non è più valida!">
 <!ENTITY ppos.badangle "La pendenza del terreno è eccessiva!">
+<!ENTITY online.ra1 "Create or join maps with custom objectives, events and scoring.">
+<!ENTITY online.motd "MESSAGE OF THE DAY">
+<!ENTITY online.campaign "BATTLEGROUND EUROPE">
+<!ENTITY online.ra.join "JOIN">
+<!ENTITY online.ra2 "Team and squad play with accurately modeled WWII vehicles and weapons.">
+<!ENTITY online.ra "RAPID ASSAULT">
+<!ENTITY online.campaign.allied "ALLIED FORCES">
+<!ENTITY online.campaign.squad.motd "SQUAD MESSAGE">
+<!ENTITY online.ra.play "PLAY RAPID ASSAULT">
+<!ENTITY online.ra.victory "VICTORY CONDITIONS">
+<!ENTITY online.campaign.population "PLAYER POPULATION">
+<!ENTITY online.ra.mapname "MAP NAME">
+<!ENTITY online.ra.timelimit "TIME LIMIT">
+<!ENTITY online.campaign0 "Play the brutally realistic MMO featuring a huge, zone-less map of Western Europe.">
+<!ENTITY online.ra.quick "QUICK START">
+<!ENTITY online.campaign1 "Select from more than 100 accurately modeled axis and allied weapons and vehicles.">
+<!ENTITY online.ra.maps "RAPID ASSAULT MAPS">
+<!ENTITY online.ra.games "ACTIVE GAMES">
+<!ENTITY online.motd.tip "Look here for important information about game updates or events">
+<!ENTITY online.campaign2 "Join persistent-world campaigns that last for weeks.">
+<!ENTITY online.campaign.squad.motd.nosquad "Want to have fun? Want to find action fast? Want to play with your friends? Join a squad and experience Battleground Europe like you never have before.">
+<!ENTITY online.campaign.axis "AXIS FORCES">
+<!ENTITY online.ra.create "CREATE">
+<!ENTITY online.back "BACK">
+<!ENTITY online.ra0 "Jump into fast action maps in this brutally realistic PvP game.">
+<!ENTITY online.ra.password "PASSWORD">
+<!ENTITY online.campaign.play "PLAY CAMPAIGN">
+<!ENTITY online.ra.maxplayers "MAX PLAYERS">

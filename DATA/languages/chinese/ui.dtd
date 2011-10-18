@@ -3328,6 +3328,7 @@
 <!ENTITY common.mission.rs "再次补给">
 <!ENTITY common.squads.details.options.xo.promote.button "升职">
 <!ENTITY common.squads.members.tips.hc "高级军官">
+<!ENTITY common.revision "Revision">
 <!ENTITY common.squads.tab "战队">
 <!ENTITY common.squads.create.msg.shortname.invalid "战队简称只能包含字母和数字！">
 <!ENTITY common.squads.create.msg.required "所有的字段都必须填满！">
@@ -3782,6 +3783,7 @@
 <!ENTITY hud.minimap.nearest "离您最近的城镇">
 <!ENTITY hud.readout.vehicles.onhoist "起重">
 <!ENTITY hud.readout.torp.aob "船首角">
+<!ENTITY persona.forward.inactive.tip "您必须选择一个激活了的军种.">
 <!ENTITY persona.list.arenalock "服务器已锁住">
 <!ENTITY persona.details.career.status.arenalock "游戏服务器目前已经关闭，不能进行游戏。一旦服务器开通，这个页面将会更新。">
 <!ENTITY persona.list.overpopulated.1 "轻微">
@@ -3791,7 +3793,7 @@
 <!ENTITY persona.details.career.status.banned "您的帐户暂时被禁止，{1} 内不能进入游戏。寻求帮助可以登录官网http://www.pkhlk.com或联系客服 kf@pkhlk.com。">
 <!ENTITY persona.list.balanced "已平衡">
 <!ENTITY persona.selecttab.tip "在这个标签选择一个阵营军种。">
-<!ENTITY persona.list.inactive.tip "This persona is not available to you right now because it is inactive or has no active brigades.">
+<!ENTITY persona.list.inactive.tip "您现在不能使用这个军种，它没有激活或它的战斗旅没有激活。">
 <!ENTITY persona.details.persona.recruit "征募">
 <!ENTITY persona.list.imbalanced "{1} 人数是 {2} 过多. 因此所有的 {3} 角色进入游戏将会延迟，而 {4} 的角色则不会受到影响。">
 <!ENTITY persona.details.career.status.training "该角色还在基础训练中。完成该训练可以进入到现役。">
@@ -3802,13 +3804,13 @@
 <!ENTITY persona.forward.training "开始训练">
 <!ENTITY persona.details.brigade.na "没有附录">
 <!ENTITY persona.list.onleave "休假时间将持续 {1}">
-<!ENTITY persona.details.career.status.inactive "This persona is not available to you right now because it is inactive or has no active brigades.">
+<!ENTITY persona.details.career.status.inactive "您现在不能使用这个军种，它没有激活或它的战斗旅没有激活。">
 <!ENTITY persona.details.career.status.onleave "休假将持续 {1} 。由于阵营限制，当前军种不可用。">
 <!ENTITY persona.redirect "您是某个正在进行的任务中的一员，转到待命室………">
 <!ENTITY persona.details.career.status.noswap "由于先前的阵营选择，您现在不能使用这个军种。">
 <!ENTITY persona.list.requesting "要求增援">
 <!ENTITY persona.list "角色">
-<!ENTITY persona.forward.inactive "You must select an active persona.">
+<!ENTITY persona.forward.inactive "非激活">
 <!ENTITY persona.forward.brigade "加入">
 <!ENTITY persona.details.persona "已选择的阵营和军种">
 <!ENTITY persona.details.persona.handle "操作">
@@ -3828,7 +3830,7 @@
 <!ENTITY persona.details.spawndelayed "实行出生延迟">
 <!ENTITY persona.forward.training.tip "学习训练教程。训练毕业后可开始进入现役。">
 <!ENTITY persona.forward "选择角色">
-<!ENTITY persona.list.inactive "Inactive">
+<!ENTITY persona.list.inactive "非激活">
 <!ENTITY persona.details.ranklock "由于账户类别限制，您的最高军衔等级已经被锁定，请更改账户类别。">
 <!ENTITY persona.list.overpopulated.2 "中度">
 <!ENTITY persona.list.slocked "付费锁定">
@@ -4410,6 +4412,7 @@
 <!ENTITY connect.ping.lossbig "*数据包丢失*">
 <!ENTITY connect.error.eagain "错误：还是错误">
 <!ENTITY connect.login.auth.timeout "验证超时">
+<!ENTITY connect.error.loginfail_activatefailed "Login Failed (loginfail_activatefailed)">
 <!ENTITY connect.ping.kbps "网速: &#37;.1f 进, &#37;.1f 出(kbps).">
 <!ENTITY connect.lost "&#37;ls: 错误 #&#37;u">
 <!ENTITY connect.lost.reconnect "与聊天服务器失去联系，正在尝试重新连接">
@@ -4421,6 +4424,7 @@
 <!ENTITY connect.login.chat.timeout "连接聊天服务器超时">
 <!ENTITY connect.error.econnaborted "错误：连接被中止了">
 <!ENTITY connect.lost.chat "与聊天服务器失去联系">
+<!ENTITY connect.error.loginfail_despawnnoplayer "Login Failed (loginfail_despawnnoplayer)">
 <!ENTITY connect.login.badlogin "未预料的登录失败">
 <!ENTITY connect.find.timeout.network "与游戏网络连接超时">
 <!ENTITY connect.netcode2.reverting "[netcode2 第二连接方案（UDP)失败，请检查你的防火墙或其它设置 - 正换成标准网络连接（TCP）]">
@@ -4437,16 +4441,19 @@
 <!ENTITY connect.netcode2.disabled "[服务器已关闭netcode2第二连接方案（UDP)]">
 <!ENTITY connect.error.econnreset "错误：连接已重设了">
 <!ENTITY connect.login.nochat "聊天服务器连接失败">
+<!ENTITY connect.error.loginfail_despawnerror "Login Failed (loginfail_despawnerror)">
 <!ENTITY connect.error.eteul_login_denied "错误：登录被拒绝">
 <!ENTITY connect.error.unknown "错误：不明的连接错误">
 <!ENTITY connect.login.auth.failed "验证失败">
 <!ENTITY connect.ping.notactive "网速延迟: ...">
+<!ENTITY connect.error.loginfail_sessionvalidation "Login Failed - Possible Connection Issue">
 <!ENTITY connect.error.econnrefused "错误：连接被拒绝">
 <!ENTITY connect.popup.title "网络错误">
 <!ENTITY connect.find.nonefound "网络初始化失败或者没有可用网络">
 <!ENTITY connect.error.enobufs "错误：系统没有缓冲内存">
 <!ENTITY connect.error.enotconn "错误：没有连接">
 <!ENTITY connect.login.timeout "连接游戏服务器超时">
+<!ENTITY connect.error.loginfail_activatenolocalinfo "Login Failed (loginfail_activatenolocalinfo)">
 <!ENTITY connect.find.timeout.data "获取连接数据超时">
 <!ENTITY connect.lost.game "游戏连接丢失">
 <!ENTITY connect.error.eteul_connection_stalled "错误：连接失败">
@@ -4462,10 +4469,13 @@
 <!ENTITY connect.host.cell "cell服务器">
 <!ENTITY connect.login.chat.error "无法连接聊天服务器">
 <!ENTITY connect.error.eteul_enospc_send_buffer "错误：teul协议缓冲错误">
+<!ENTITY connect.error.loginfail_acceptbadteul "Login Failed - Your client is not supported by the server.">
+<!ENTITY connect.error.loginfail_acceptbadindex "Login Failed (loginfail_acceptbadindex)">
 <!ENTITY connect.lost.world "与战场服务器失去联系">
 <!ENTITY connect.error.enetreset "错误：网络已重设了">
 <!ENTITY connect.error.enetunreach "错误：无法连接至指定网络">
-<!ENTITY connect.error.eteul_login_denied_ver "login denied (ver)">
+<!ENTITY connect.error.eteul_login_denied_ver "错误：登录被拒绝(ver)">
+<!ENTITY connect.error.loginfail_activatenoplayerinfo "Login Failed (loginfail_activatenoplayerinfo)">
 <!ENTITY connect.error.etimedout "错误：超时">
 <!ENTITY connect.login.error "连接游戏服务器出错">
 <!ENTITY connect.find.nobest "无法连接游戏网络">

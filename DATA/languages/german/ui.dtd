@@ -3329,6 +3329,7 @@
 <!ENTITY common.mission.rs "Versorgen">
 <!ENTITY common.squads.details.options.xo.promote.button "BEFÖRDERN">
 <!ENTITY common.squads.members.tips.hc "High Commander">
+<!ENTITY common.revision "Revision">
 <!ENTITY common.squads.tab "SQUAD">
 <!ENTITY common.squads.create.msg.shortname.invalid "Der Kurzname kann nur Buchstaben und/oder Nummern beinhalten!">
 <!ENTITY common.squads.create.msg.required "Alle Felder müssen vollständig ausgefüllt werden!">
@@ -4336,6 +4337,7 @@
 <!ENTITY connect.ping.lossbig "*PAKETVERLUST*">
 <!ENTITY connect.error.eagain "eagain">
 <!ENTITY connect.login.auth.timeout "Zeitüberschreitung bei Authentifizierng">
+<!ENTITY connect.error.loginfail_activatefailed "Login Failed (loginfail_activatefailed)">
 <!ENTITY connect.ping.kbps "Kbps: &#37;.1f in, &#37;.1f out.">
 <!ENTITY connect.lost "&#37;ls: Fehler #&#37;u">
 <!ENTITY connect.lost.reconnect "Chatverbindung verloren, versuche neue Verbindung aufzubauen">
@@ -4347,6 +4349,7 @@
 <!ENTITY connect.login.chat.timeout "Zeitüberschreitung der Chatverbindung">
 <!ENTITY connect.error.econnaborted "Verbindung unterbrochen">
 <!ENTITY connect.lost.chat "Verbindung zum Chathost verloren">
+<!ENTITY connect.error.loginfail_despawnnoplayer "Login Failed (loginfail_despawnnoplayer)">
 <!ENTITY connect.login.badlogin "Unerwarteter Loginfehler">
 <!ENTITY connect.find.timeout.network "Zeitüberschreitung beim Verbindungsaufbau">
 <!ENTITY connect.netcode2.reverting "[Netcode2-Verbindung verloren, bitte überprüfe Deine Firewall - verwende Standard Netzwerkverbindung]">
@@ -4363,16 +4366,19 @@
 <!ENTITY connect.netcode2.disabled "[Netcode2 auf dem Server abgeschaltet]">
 <!ENTITY connect.error.econnreset "Verbindung wurde zurückgesetzt">
 <!ENTITY connect.login.nochat "Keine Verbindung zum Chat">
+<!ENTITY connect.error.loginfail_despawnerror "Login Failed (loginfail_despawnerror)">
 <!ENTITY connect.error.eteul_login_denied "Login abgelehnt">
 <!ENTITY connect.error.unknown "Unbekannter Verbindungsfehler">
 <!ENTITY connect.login.auth.failed "Authentifizierung fehlgeschlagen">
 <!ENTITY connect.ping.notactive "Ping: ...">
+<!ENTITY connect.error.loginfail_sessionvalidation "Login Failed - Possible Connection Issue">
 <!ENTITY connect.error.econnrefused "Verbindung wurde abgelehnt">
 <!ENTITY connect.popup.title "Netzwerkfehler">
 <!ENTITY connect.find.nonefound "Netzwerkinitialisierung fehlgeschlagen/kein Netzwerk gefunden">
 <!ENTITY connect.error.enobufs "Pufferspeicher voll">
 <!ENTITY connect.error.enotconn "Nicht verbunden">
 <!ENTITY connect.login.timeout "Zeitüberschreitung beim Verbinden zum Host">
+<!ENTITY connect.error.loginfail_activatenolocalinfo "Login Failed (loginfail_activatenolocalinfo)">
 <!ENTITY connect.find.timeout.data "Zeitüberschreitung bei Übermittlung Verbindungsdaten">
 <!ENTITY connect.lost.game "Verbindung zum Spiel verloren">
 <!ENTITY connect.error.eteul_connection_stalled "Verbindung stockt">
@@ -4388,10 +4394,13 @@
 <!ENTITY connect.host.cell "Cellhost">
 <!ENTITY connect.login.chat.error "Konnte nicht zum Chathost verbinden">
 <!ENTITY connect.error.eteul_enospc_send_buffer "Teul Pufferfehler">
+<!ENTITY connect.error.loginfail_acceptbadteul "Login Failed - Your client is not supported by the server.">
+<!ENTITY connect.error.loginfail_acceptbadindex "Login Failed (loginfail_acceptbadindex)">
 <!ENTITY connect.lost.world "Verbindung zum Welt Server verloren">
 <!ENTITY connect.error.enetreset "Netzwerk wurde zurückgesetzt">
 <!ENTITY connect.error.enetunreach "Netzwerk nicht erreichbar">
 <!ENTITY connect.error.eteul_login_denied_ver "login denied (ver)">
+<!ENTITY connect.error.loginfail_activatenoplayerinfo "Login Failed (loginfail_activatenoplayerinfo)">
 <!ENTITY connect.error.etimedout "Zeitüberschreitung der Verbindung">
 <!ENTITY connect.login.error "Fehler beim Verbinden zum Host">
 <!ENTITY connect.find.nobest "Konnte nicht zum Spielenetzwerk verbinden">

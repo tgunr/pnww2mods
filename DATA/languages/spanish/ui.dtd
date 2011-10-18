@@ -3350,6 +3350,7 @@
 <!ENTITY common.mission.rs "Resuministro">
 <!ENTITY common.squads.details.options.xo.promote.button "PROMOCIONAR">
 <!ENTITY common.squads.members.tips.hc "Alto Mando">
+<!ENTITY common.revision "Revision">
 <!ENTITY common.squads.tab "MI UNIDAD">
 <!ENTITY common.squads.create.msg.shortname.invalid "¡El nombre corto solo puede contener letras y/o números!">
 <!ENTITY common.squads.create.msg.required "¡Todos los campos deben ser rellenados completamente!">
@@ -4372,6 +4373,7 @@
 <!ENTITY connect.ping.lossbig "*PACKET LOSS*">
 <!ENTITY connect.error.eagain "eagain">
 <!ENTITY connect.login.auth.timeout "Tiempo expirado durante la autentificación">
+<!ENTITY connect.error.loginfail_activatefailed "Login Failed (loginfail_activatefailed)">
 <!ENTITY connect.ping.kbps "Kbps: &#37;.1f in, &#37;.1f out.">
 <!ENTITY connect.lost "&#37;ls: Error #&#37;u">
 <!ENTITY connect.lost.reconnect "Conexión al chat perdida, reconectando">
@@ -4383,6 +4385,7 @@
 <!ENTITY connect.login.chat.timeout "Ha expirado la conexión al chat">
 <!ENTITY connect.error.econnaborted "connection aborted">
 <!ENTITY connect.lost.chat "Perdida la conexión al servidor de chat">
+<!ENTITY connect.error.loginfail_despawnnoplayer "Login Failed (loginfail_despawnnoplayer)">
 <!ENTITY connect.login.badlogin "Fallo inesperado al autentificarse con su cuenta">
 <!ENTITY connect.find.timeout.network "Ha expirado la conexión a la red del juego">
 <!ENTITY connect.netcode2.reverting "[netcode2 connection failed, please check your firewall - reverting to standard network usage]">
@@ -4399,16 +4402,19 @@
 <!ENTITY connect.netcode2.disabled "[netcode2 disabled on server]">
 <!ENTITY connect.error.econnreset "connection reset">
 <!ENTITY connect.login.nochat "Fallo al conectar al chat">
+<!ENTITY connect.error.loginfail_despawnerror "Login Failed (loginfail_despawnerror)">
 <!ENTITY connect.error.eteul_login_denied "login denied">
 <!ENTITY connect.error.unknown "unknown connection error">
 <!ENTITY connect.login.auth.failed "Autentificación fallida">
 <!ENTITY connect.ping.notactive "Ping: ...">
+<!ENTITY connect.error.loginfail_sessionvalidation "Login Failed - Possible Connection Issue">
 <!ENTITY connect.error.econnrefused "connection refused">
 <!ENTITY connect.popup.title "Error de Red">
 <!ENTITY connect.find.nonefound "Inicialización de la red fallida/no hay red disponible">
 <!ENTITY connect.error.enobufs "no buffer space">
 <!ENTITY connect.error.enotconn "not connected">
 <!ENTITY connect.login.timeout "Ha expirado la conexión al servidor">
+<!ENTITY connect.error.loginfail_activatenolocalinfo "Login Failed (loginfail_activatenolocalinfo)">
 <!ENTITY connect.find.timeout.data "Ha expirado al obtener datos de conexión">
 <!ENTITY connect.lost.game "Conexión al juego perdida">
 <!ENTITY connect.error.eteul_connection_stalled "connection stalled">
@@ -4424,10 +4430,13 @@
 <!ENTITY connect.host.cell "cellhost">
 <!ENTITY connect.login.chat.error "Imposible conectar al servidor de chat">
 <!ENTITY connect.error.eteul_enospc_send_buffer "teul buffer error">
+<!ENTITY connect.error.loginfail_acceptbadteul "Login Failed - Your client is not supported by the server.">
+<!ENTITY connect.error.loginfail_acceptbadindex "Login Failed (loginfail_acceptbadindex)">
 <!ENTITY connect.lost.world "Conexión al terreno de juego perdida">
 <!ENTITY connect.error.enetreset "network reset">
 <!ENTITY connect.error.enetunreach "network unreachable">
 <!ENTITY connect.error.eteul_login_denied_ver "login denied (ver)">
+<!ENTITY connect.error.loginfail_activatenoplayerinfo "Login Failed (loginfail_activatenoplayerinfo)">
 <!ENTITY connect.error.etimedout "connection timed out">
 <!ENTITY connect.login.error "Error al conectar al servidor">
 <!ENTITY connect.find.nobest "Imposible conectar a la red del juego">
@@ -4458,3 +4467,31 @@
 <!ENTITY waypoints.origin.tip "Origen de Misión: Aquí es donde comienza su misión; compruebe el objetivo de la misión para más detalles.">
 <!ENTITY waypoints.target "objetivo">
 <!ENTITY waypoints.turn2 "giro 2">
+<!ENTITY online.ra1 "Create or join maps with custom objectives, events and scoring.">
+<!ENTITY online.motd "MESSAGE OF THE DAY">
+<!ENTITY online.campaign "BATTLEGROUND EUROPE">
+<!ENTITY online.ra.join "JOIN">
+<!ENTITY online.ra2 "Team and squad play with accurately modeled WWII vehicles and weapons.">
+<!ENTITY online.ra "RAPID ASSAULT">
+<!ENTITY online.campaign.allied "ALLIED FORCES">
+<!ENTITY online.campaign.squad.motd "SQUAD MESSAGE">
+<!ENTITY online.ra.play "PLAY RAPID ASSAULT">
+<!ENTITY online.ra.victory "VICTORY CONDITIONS">
+<!ENTITY online.campaign.population "PLAYER POPULATION">
+<!ENTITY online.ra.mapname "MAP NAME">
+<!ENTITY online.ra.timelimit "TIME LIMIT">
+<!ENTITY online.campaign0 "Play the brutally realistic MMO featuring a huge, zone-less map of Western Europe.">
+<!ENTITY online.ra.quick "QUICK START">
+<!ENTITY online.campaign1 "Select from more than 100 accurately modeled axis and allied weapons and vehicles.">
+<!ENTITY online.ra.maps "RAPID ASSAULT MAPS">
+<!ENTITY online.ra.games "ACTIVE GAMES">
+<!ENTITY online.motd.tip "Look here for important information about game updates or events">
+<!ENTITY online.campaign2 "Join persistent-world campaigns that last for weeks.">
+<!ENTITY online.campaign.squad.motd.nosquad "Want to have fun? Want to find action fast? Want to play with your friends? Join a squad and experience Battleground Europe like you never have before.">
+<!ENTITY online.campaign.axis "AXIS FORCES">
+<!ENTITY online.ra.create "CREATE">
+<!ENTITY online.back "BACK">
+<!ENTITY online.ra0 "Jump into fast action maps in this brutally realistic PvP game.">
+<!ENTITY online.ra.password "PASSWORD">
+<!ENTITY online.campaign.play "PLAY CAMPAIGN">
+<!ENTITY online.ra.maxplayers "MAX PLAYERS">
