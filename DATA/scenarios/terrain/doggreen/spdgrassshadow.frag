@@ -12,8 +12,8 @@ vec4 fogThis(in vec4);
 void lightGetAmbientDiffuse(out vec4 amb, out vec4 dif);
 
 const vec4 defaultcolor = vec4(0, 0, 0, 0);
-const vec4 Ka = vec4(.4, .4, .3, 1.0);
-const vec4 Kd = vec4(.2, .2, .2, 1.0);
+const vec4 Ka = vec4(0.4, 0.4, 0.3, 1.0);
+const vec4 Kd = vec4(0.2, 0.2, 0.2, 1.0);
 
 float GetShadowValue()
 {
