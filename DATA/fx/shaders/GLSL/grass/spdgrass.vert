@@ -5,11 +5,6 @@ uniform vec2 uv[64];
 uniform vec3 origin;
 uniform vec4 rot;
 
-const float ss = 1.0 / 800.0;
-
-const vec4 sPlane = vec4(ss, 0.0, 0.0, 0.0);
-const vec4 tPlane = vec4(0.0, -ss, 0.0, 0.0);
-
 varying vec3 vertexpos;
 
 void main()
@@ -22,9 +17,6 @@ void main()
     
     p1.z = gl_MultiTexCoord1.x + gl_Vertex.z;
     p1.w = 1.0;
-
-    gl_TexCoord[1].x = p1.x * sPlane.x + 0.5;
-    gl_TexCoord[1].y = p1.y * tPlane.y + 0.5;
 
     int c = int(gl_Vertex.w);
 
