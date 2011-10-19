@@ -564,6 +564,7 @@
 									
 									if(weapon != null)
 									{
+										cprint("Reserved Weapon is " + weapon.type.id);
 										reservedHeader.label 	= weapon.type.description.toUpperCase() + " " + getlocstring('mission.readytab.forces.reserved');; 
 										reservedViewer.value	= (weapon.type.vclassid == 9 || weapon.type.vclassid == 14) ? 1: 2;
 										
@@ -604,6 +605,7 @@
 									}
 									else
 									{
+										cprint("Reserved Weapon is null");
 										showWeaponSelect();
 									}
 								}
@@ -1575,6 +1577,7 @@
 			client.onbasecaptured 			= onBaseCaptured;
 			client.onweaponlist				= onWeaponUpdate;
 			client.onspawnerror				= onSpawnDenied;
+			client.onreserveweapon		= onReserveWeapon;
 			
 			theatreMap.mgr.jumpTo(mission.target);
 			missionMap.mgr.jumpTo(mission.target);
@@ -1794,6 +1797,22 @@
 			
 			initSpawnables();
 			weaponPoll.reset();
+		}
+		
+		function onReserveWeapon()
+		{
+			var rw = client.reservedweapon;
+			
+			if(rw)
+			{
+				var weapon = new Object();
+	
+				weapon["description"] 	= rw.type.description;
+				weapon["index"] 				= rw.type.index;
+				weapon["serial"] 				= rw.serial;
+				
+				game.globals.spawnedweapon = weapon;
+			}
 		}
 		
 		function updateSpawnDelay()

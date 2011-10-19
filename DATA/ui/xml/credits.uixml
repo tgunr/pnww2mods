@@ -22,6 +22,7 @@
 		var pause				= true;
 		var doQuit			= 0;
 		var lastRow			= null;
+		var done				= false;
 		
 		function initCredits(w)
 		{
@@ -57,7 +58,7 @@
 		
 		function updateCredits()
 		{
-			if(creditsList == null)
+			if(creditsList == null || done)
 				return;
 				
 			var now = (new Date()).getTime();
@@ -76,8 +77,8 @@
 			{
 				if(stageTimer == null)
 				{
-					stageTimer = new CycleTimer(1000);
-					stageTimer.add(1000);
+					stageTimer = new CycleTimer(2000);
+					stageTimer.add(2000);
 				}
 				
 				if(stageTimer.run())
@@ -105,8 +106,8 @@
 			{
 				if(stageTimer == null)
 				{
-					stageTimer = new CycleTimer(2000);
-					stageTimer.add(2000);
+					stageTimer = new CycleTimer(5000);
+					stageTimer.add(5000);
 				}
 				
 				if(stageTimer.run())
