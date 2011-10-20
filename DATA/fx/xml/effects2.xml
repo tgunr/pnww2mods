@@ -561,7 +561,7 @@
     <emitter>
       <flags>particleeffectonly</flags>
       <lifetime>1</lifetime>
-      <particleeffect>genericbuildingexplosionparticle2</particleeffect>
+      <particleeffect>genericbuildingexplosionparticle1</particleeffect>
     </emitter>
   </transformeffect>
 <!-- ===================================================================== -->
@@ -2888,7 +2888,7 @@
     <material>smoke</material>
   </particleeffect>
 <!-- ===================================================================== -->
-	<particleeffect name = "genericbuildingexplosionparticle2">
+	<particleeffect name = "genericbuildingexplosionparticle1">
     <number>6</number>
     <texture>osgsmoke</texture>
     <texture>day1blacksmoke</texture>
@@ -2902,9 +2902,9 @@
     <alpha>0.0</alpha>
     <velreduction>0.7</velreduction>
     <size>1</size>
-    <size>6</size>
     <size>8</size>
-    <size>8</size>
+    <size>12</size>
+    <size>12</size>
     <time>0</time>
     <time>150</time>
     <time>100</time>
