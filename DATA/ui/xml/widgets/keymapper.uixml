@@ -360,10 +360,13 @@
 			var vehicles = game.getkeymapvehicles(keymapCategory);
 			var vtype = vehicles[parts[1]-1];
 			
-			if(value != null)
-				game.saveconvergence(vtype, value, 1); // Convergence is changing, value is dirty.
-			else
-				game.saveconvergence(vtype, value, 0); // Convergence hasn't changed, let's pull the saved (or default) setting
+			if(vtype != null)
+			{
+				if(value != null)
+					game.saveconvergence(vtype, value, 1); // Convergence is changing, value is dirty.
+				else
+					game.saveconvergence(vtype, value, 0); // Convergence hasn't changed, let's pull the saved (or default) setting
+			}
 			
 			return;
 		}

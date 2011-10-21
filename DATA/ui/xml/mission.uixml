@@ -1325,7 +1325,7 @@
 					
 					musicPlayLoop();
 					pendingResults = true;
-					showTab(2);
+					//showTab(2);
 					
 					var timeleft = game.player.client.state.timeleft;
 					
@@ -1401,6 +1401,9 @@
 					
 					if(results.promoted)
 						game.load("promoted");
+					
+					if(findview("body").value != 2)
+						showTab(2);
 				}
 				
 				function initMissionSummary()
