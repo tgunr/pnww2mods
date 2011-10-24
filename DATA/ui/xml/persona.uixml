@@ -571,6 +571,7 @@
 			{
 				var persona = personas[start + p];
 				var branch	= view.findview("branch" + p);
+				var availability = getPersonaAvailability(persona);
 				
 				if(!requireTraining || graduated)
 				{
@@ -583,6 +584,9 @@
 					else
 						branch.label = "";
 				}
+				
+				if(availability == "inactive")
+					branch.setstyleproperty("color", "#555555");
 			}
 			
 			//consoleprint("Done\n");
@@ -652,7 +656,7 @@
 							
 							if(header.label.length > 0)
 							{
-								l.visible = true;
+								l.visible = false;
 								//l.x = header.x + header.stringlength + 5;
 							}
 						}
@@ -760,7 +764,7 @@
 			else if(getPersonaOverBalanced(p))
 				color = "#ffff00";
 			else if(availability == "inactive")
-				color = "#AAAAAA";
+				color = "#666666";
 			
 			return color;
 		}
