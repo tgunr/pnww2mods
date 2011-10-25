@@ -209,7 +209,7 @@
 	{
 		cprint("Got a squad create...\n");
 		
-		showOk(getlocstring(reason));
+		showOk(reason);
 		game.globals.creatingsquad = false;
 	}
 	
