@@ -5,15 +5,13 @@ varying vec3 vertexpos;
 
 void main()
 {
-    vec4 p = vec4(gl_Vertex.xyz, 1.0);
-
-	gl_Position = gl_ProjectionMatrix * (gl_ModelViewMatrix * p);
+ 	gl_Position = ftransform();
 
 	gl_TexCoord[0] = gl_MultiTexCoord0;
 	
-	vertexpos = (gl_ModelViewMatrix * p).xyz;
+	vertexpos = (gl_ModelViewMatrix * gl_Vertex).xyz;
 
-    p = gl_Position / gl_Position.w;
+    vec4 p = gl_Position / gl_Position.w;
 
     gl_TexCoord[1].x = p.x * 0.5 + 0.5;
     gl_TexCoord[1].y = p.y * 0.5 + 0.5;
