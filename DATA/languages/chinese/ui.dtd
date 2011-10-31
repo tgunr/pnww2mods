@@ -3030,6 +3030,7 @@
 <!ENTITY tutorials.info "训练任务信息">
 <!ENTITY tutorials.none "无">
 <!ENTITY tutorials.tab "新兵营">
+<!ENTITY loading.ninetynine.ninenine.percent "Finishing">
 <!ENTITY loading.network.loggingin "登录">
 <!ENTITY loading.eyepatches "装载枪炮瞄准器">
 <!ENTITY loading.beefjerky "初始化库">
@@ -3328,7 +3329,7 @@
 <!ENTITY common.mission.rs "再次补给">
 <!ENTITY common.squads.details.options.xo.promote.button "升职">
 <!ENTITY common.squads.members.tips.hc "高级军官">
-<!ENTITY common.revision "Revision">
+<!ENTITY common.revision "修正版">
 <!ENTITY common.squads.tab "战队">
 <!ENTITY common.squads.create.msg.shortname.invalid "战队简称只能包含字母和数字！">
 <!ENTITY common.squads.create.msg.required "所有的字段都必须填满！">
@@ -4412,7 +4413,7 @@
 <!ENTITY connect.ping.lossbig "*数据包丢失*">
 <!ENTITY connect.error.eagain "错误：还是错误">
 <!ENTITY connect.login.auth.timeout "验证超时">
-<!ENTITY connect.error.loginfail_activatefailed "Login Failed (loginfail_activatefailed)">
+<!ENTITY connect.error.loginfail_activatefailed "Login Failed (loginfail_activatefailed登录错误_启动失败)">
 <!ENTITY connect.ping.kbps "网速: &#37;.1f 进, &#37;.1f 出(kbps).">
 <!ENTITY connect.lost "&#37;ls: 错误 #&#37;u">
 <!ENTITY connect.lost.reconnect "与聊天服务器失去联系，正在尝试重新连接">
@@ -4424,7 +4425,7 @@
 <!ENTITY connect.login.chat.timeout "连接聊天服务器超时">
 <!ENTITY connect.error.econnaborted "错误：连接被中止了">
 <!ENTITY connect.lost.chat "与聊天服务器失去联系">
-<!ENTITY connect.error.loginfail_despawnnoplayer "Login Failed (loginfail_despawnnoplayer)">
+<!ENTITY connect.error.loginfail_despawnnoplayer "Login Failed (loginfail_despawnnoplayer登录错误_没有玩家所以退出战场)">
 <!ENTITY connect.login.badlogin "未预料的登录失败">
 <!ENTITY connect.find.timeout.network "与游戏网络连接超时">
 <!ENTITY connect.netcode2.reverting "[netcode2 第二连接方案（UDP)失败，请检查你的防火墙或其它设置 - 正换成标准网络连接（TCP）]">
@@ -4439,21 +4440,22 @@
 <!ENTITY connect.refused "战场服务器拒绝连接">
 <!ENTITY connect.host.map "map服务器">
 <!ENTITY connect.netcode2.disabled "[服务器已关闭netcode2第二连接方案（UDP)]">
+<!ENTITY connect.error.loginfail_addplayer "Session rejected by host (loginfail_addplayer)">
 <!ENTITY connect.error.econnreset "错误：连接已重设了">
 <!ENTITY connect.login.nochat "聊天服务器连接失败">
-<!ENTITY connect.error.loginfail_despawnerror "Login Failed (loginfail_despawnerror)">
+<!ENTITY connect.error.loginfail_despawnerror "Login Failed (loginfail_despawnerror登录错误_退出战场出错)">
 <!ENTITY connect.error.eteul_login_denied "错误：登录被拒绝">
 <!ENTITY connect.error.unknown "错误：不明的连接错误">
 <!ENTITY connect.login.auth.failed "验证失败">
 <!ENTITY connect.ping.notactive "网速延迟: ...">
-<!ENTITY connect.error.loginfail_sessionvalidation "Login Failed - Possible Connection Issue">
+<!ENTITY connect.error.loginfail_sessionvalidation "登录错误 - 可能是连接问题">
 <!ENTITY connect.error.econnrefused "错误：连接被拒绝">
 <!ENTITY connect.popup.title "网络错误">
 <!ENTITY connect.find.nonefound "网络初始化失败或者没有可用网络">
 <!ENTITY connect.error.enobufs "错误：系统没有缓冲内存">
 <!ENTITY connect.error.enotconn "错误：没有连接">
 <!ENTITY connect.login.timeout "连接游戏服务器超时">
-<!ENTITY connect.error.loginfail_activatenolocalinfo "Login Failed (loginfail_activatenolocalinfo)">
+<!ENTITY connect.error.loginfail_activatenolocalinfo "Login Failed (loginfail_activatenolocalinfo登录错误_启动时没有客户端信息)">
 <!ENTITY connect.find.timeout.data "获取连接数据超时">
 <!ENTITY connect.lost.game "游戏连接丢失">
 <!ENTITY connect.error.eteul_connection_stalled "错误：连接失败">
@@ -4469,13 +4471,13 @@
 <!ENTITY connect.host.cell "cell服务器">
 <!ENTITY connect.login.chat.error "无法连接聊天服务器">
 <!ENTITY connect.error.eteul_enospc_send_buffer "错误：teul协议缓冲错误">
-<!ENTITY connect.error.loginfail_acceptbadteul "Login Failed - Your client is not supported by the server.">
-<!ENTITY connect.error.loginfail_acceptbadindex "Login Failed (loginfail_acceptbadindex)">
+<!ENTITY connect.error.loginfail_acceptbadteul "登录错误 - 你的客户端与服务器不符.">
+<!ENTITY connect.error.loginfail_acceptbadindex "Login Failed (loginfail_acceptbadindex登录错误_接受了错误目录)">
 <!ENTITY connect.lost.world "与战场服务器失去联系">
 <!ENTITY connect.error.enetreset "错误：网络已重设了">
 <!ENTITY connect.error.enetunreach "错误：无法连接至指定网络">
 <!ENTITY connect.error.eteul_login_denied_ver "错误：登录被拒绝(ver)">
-<!ENTITY connect.error.loginfail_activatenoplayerinfo "Login Failed (loginfail_activatenoplayerinfo)">
+<!ENTITY connect.error.loginfail_activatenoplayerinfo "Login Failed (loginfail_activatenoplayerinfo登录错误_启动时没有玩家信息)">
 <!ENTITY connect.error.etimedout "错误：超时">
 <!ENTITY connect.login.error "连接游戏服务器出错">
 <!ENTITY connect.find.nobest "无法连接游戏网络">

@@ -3033,6 +3033,7 @@
 <!ENTITY tutorials.info "TUTORIEL INFORMATIONS">
 <!ENTITY tutorials.none "aucun">
 <!ENTITY tutorials.tab "TUTORIELS">
+<!ENTITY loading.ninetynine.ninenine.percent "Finishing">
 <!ENTITY loading.network.loggingin "Connexion au compte">
 <!ENTITY loading.eyepatches "Loading Gun Sights">
 <!ENTITY loading.beefjerky "Initializing Libraries">
@@ -4336,11 +4337,11 @@
 <!ENTITY connect.login.handshake.lost "Perte de connexion durant le traitement">
 <!ENTITY connect.ping.stats.full "Ping: &#37;ums, Avg: &#37;ums, &#37;ls: &#37;.1f&#37;&#37;.">
 <!ENTITY connect.find.cantopen "Impossible d’ouvrir une connexion avec le réseau du jeu">
-<!ENTITY connect.error.connectionerror "connection error">
+<!ENTITY connect.error.connectionerror "Connection error">
 <!ENTITY connect.ping.lossbig "*PACKET LOSS*">
 <!ENTITY connect.error.eagain "eagain">
 <!ENTITY connect.login.auth.timeout "Temps d’authentification dépassé">
-<!ENTITY connect.error.loginfail_activatefailed "Login Failed (loginfail_activatefailed)">
+<!ENTITY connect.error.loginfail_activatefailed "Session rejected by host (loginfail_activatefailed)">
 <!ENTITY connect.ping.kbps "Kbps: &#37;.1f in, &#37;.1f out.">
 <!ENTITY connect.lost "&#37;ls: Error #&#37;u">
 <!ENTITY connect.lost.reconnect "Connexion au Chat perdu, reconnexion">
@@ -4352,7 +4353,7 @@
 <!ENTITY connect.login.chat.timeout "Temps dépassé pour la connexion au Chat">
 <!ENTITY connect.error.econnaborted "connection aborted">
 <!ENTITY connect.lost.chat "Perte de la connexion au serveur Chat">
-<!ENTITY connect.error.loginfail_despawnnoplayer "Login Failed (loginfail_despawnnoplayer)">
+<!ENTITY connect.error.loginfail_despawnnoplayer "Session rejected by host (loginfail_despawnnoplayer)">
 <!ENTITY connect.login.badlogin "Erreur de login imprévue">
 <!ENTITY connect.find.timeout.network "Temps de connexion au réseau dépassé">
 <!ENTITY connect.netcode2.reverting "[netcode2 connection failed, Vérifiez votre pare feu - reverting to standard network usage]">
@@ -4367,21 +4368,22 @@
 <!ENTITY connect.refused "Connexion refusée avec le serveur">
 <!ENTITY connect.host.map "Serveur carte">
 <!ENTITY connect.netcode2.disabled "[netcode2 Hors service sur le serveur]">
+<!ENTITY connect.error.loginfail_addplayer "Session rejected by host (loginfail_addplayer)">
 <!ENTITY connect.error.econnreset "connection reset">
 <!ENTITY connect.login.nochat "Echec de la connexion au Chat">
-<!ENTITY connect.error.loginfail_despawnerror "Login Failed (loginfail_despawnerror)">
+<!ENTITY connect.error.loginfail_despawnerror "Session rejected by host (loginfail_despawnerror)">
 <!ENTITY connect.error.eteul_login_denied "login denied">
 <!ENTITY connect.error.unknown "Erreur de connexion inconnue">
 <!ENTITY connect.login.auth.failed "Authentication échouée">
 <!ENTITY connect.ping.notactive "Ping: ...">
-<!ENTITY connect.error.loginfail_sessionvalidation "Login Failed - Possible Connection Issue">
+<!ENTITY connect.error.loginfail_sessionvalidation "Session rejected by host: this can be caused by the server restarting or someone logging-in another instance of your account. You will need to restart your game client to continue playing.">
 <!ENTITY connect.error.econnrefused "connexion refusée">
 <!ENTITY connect.popup.title "Erreur réseau">
 <!ENTITY connect.find.nonefound "Echec de l’initialisation du réseau/réseau indisponible">
 <!ENTITY connect.error.enobufs "no buffer space">
 <!ENTITY connect.error.enotconn "non connecté">
 <!ENTITY connect.login.timeout "Temps de connexion au serveur dépassé">
-<!ENTITY connect.error.loginfail_activatenolocalinfo "Login Failed (loginfail_activatenolocalinfo)">
+<!ENTITY connect.error.loginfail_activatenolocalinfo "Session rejected by host (loginfail_activatenolocalinfo)">
 <!ENTITY connect.find.timeout.data "Temps de chargement des données dépassé">
 <!ENTITY connect.lost.game "Connexion au jeu perdu">
 <!ENTITY connect.error.eteul_connection_stalled "connection stalled">
@@ -4397,13 +4399,13 @@
 <!ENTITY connect.host.cell "serveur">
 <!ENTITY connect.login.chat.error "Impossible de se connecter au serveur Chat">
 <!ENTITY connect.error.eteul_enospc_send_buffer "teul buffer error">
-<!ENTITY connect.error.loginfail_acceptbadteul "Login Failed - Your client is not supported by the server.">
-<!ENTITY connect.error.loginfail_acceptbadindex "Login Failed (loginfail_acceptbadindex)">
+<!ENTITY connect.error.loginfail_acceptbadteul "Session rejected by host: This client version is not supported by the server, please check for a patch/update.">
+<!ENTITY connect.error.loginfail_acceptbadindex "Session rejected by host (loginfail_acceptbadindex)">
 <!ENTITY connect.lost.world "Connexion au monde perdu">
 <!ENTITY connect.error.enetreset "network reset">
 <!ENTITY connect.error.enetunreach "network unreachable">
-<!ENTITY connect.error.eteul_login_denied_ver "login denied (ver)">
-<!ENTITY connect.error.loginfail_activatenoplayerinfo "Login Failed (loginfail_activatenoplayerinfo)">
+<!ENTITY connect.error.eteul_login_denied_ver "Login Denied (ver)">
+<!ENTITY connect.error.loginfail_activatenoplayerinfo "Session rejected by host (loginfail_activatenoplayerinfo)">
 <!ENTITY connect.error.etimedout "connection timed out">
 <!ENTITY connect.login.error "Erreur en se connectant au serveur">
 <!ENTITY connect.find.nobest "Impossible de se connecter au réseau">
