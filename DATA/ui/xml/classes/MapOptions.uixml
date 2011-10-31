@@ -11,7 +11,8 @@
 		
 		self.centerMeWidget = self.widget.findview("centerMe.centerme");
 		self.lastScaler 	= null;
-		self.lastScale		= 0;
+		self.lastScale	= 0;
+		self.initialized	= false;
 
   		self.setManager('mapDefaults.setDefaults')
 
@@ -49,7 +50,7 @@
 						{
 							var initScript = "this." + parts[0] + "(control.checked, '" + parts[1] + "', true)";
 
-							//game.consoleprint("Init map with " + initScript + "\n");
+							game.consoleprint("Init map with " + initScript + "\n");
 							
 							eval(initScript);
 						}
@@ -62,12 +63,17 @@
 			this.map.mgr.addExtHook("onShow", this);
 			
 			this.onCenter();
+			
+			this.initialized = true;
 		}
 		
 		self.stratFilter = function(flag, filter, nosound)
 		{
 			if(this.map)
 				this.map.stratfilter(filter, flag);
+				
+			if(this.initialized)
+				game.savesettings(this.widget);
 			
 			if(!nosound)
 				soundPlayClick();
