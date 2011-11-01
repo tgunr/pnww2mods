@@ -4331,14 +4331,18 @@
 <!ENTITY combat.back.tip "Back to tutorials.">
 <!ENTITY combat.vehicle.name "UNIT">
 <!ENTITY connect.login.handshake.lost "Lost host connection during handshake">
+<!ENTITY connect.error.loginfail.client "Session rejected by host: This game client is not compatible with the host, please check for a patch and re-log.">
 <!ENTITY connect.ping.stats.full "Ping: &#37;ums, Avg: &#37;ums, &#37;ls: &#37;.1f&#37;&#37;.">
 <!ENTITY connect.find.cantopen "Unable to resolve network selection">
 <!ENTITY connect.error.connectionerror "Connection error">
 <!ENTITY connect.ping.lossbig "*PACKET LOSS*">
+<!ENTITY connect.error.ecorrupt "Invalid data-packet received, please check your network connection / firewall.">
 <!ENTITY connect.error.eagain "eagain">
 <!ENTITY connect.login.auth.timeout "Timed out during authentication">
-<!ENTITY connect.error.loginfail_activatefailed "Session rejected by host (loginfail_activatefailed)">
+<!ENTITY connect.error.loginfail_activatefailed "Session rejected by host: Internal error (loginfail_activatefailed). Please restart your game client.">
+<!ENTITY connect.error.loginfail.nosession "Session rejected by host: This can happen if your account has been logged in from another computer/instance of the game, if your connection to the host has been reset too many times, or if the server has been rsetarted.">
 <!ENTITY connect.ping.kbps "Kbps: &#37;.1f in, &#37;.1f out.">
+<!ENTITY connect.error.loginfail.sessionown "Session rejected by host (error 40112): Please restart your game client - if this problem persists, please contact support.">
 <!ENTITY connect.lost "&#37;ls: Error #&#37;u">
 <!ENTITY connect.lost.reconnect "Chat connection lost, reconnecting">
 <!ENTITY connect.login.noopen "Unable to open connection to host">
@@ -4349,10 +4353,11 @@
 <!ENTITY connect.login.chat.timeout "Timed out during chat connection">
 <!ENTITY connect.error.econnaborted "Connection was aborted">
 <!ENTITY connect.lost.chat "Lost connection to the chat host">
-<!ENTITY connect.error.loginfail_despawnnoplayer "Session rejected by host (loginfail_despawnnoplayer)">
+<!ENTITY connect.error.loginfail_despawnnoplayer "Session rejected by host: Internal error (loginfail_despawnnoplayer). Please restart your game client.">
 <!ENTITY connect.login.badlogin "Unexpected login failure">
 <!ENTITY connect.find.timeout.network "Timed out performing network selection">
 <!ENTITY connect.netcode2.reverting "[netcode2 connection failed, please check your firewall - reverting to standard network usage]">
+<!ENTITY connect.error.loginfail.validation "Session rejected by host (error 40113): Please restart your game client - if this problem persists, please contact support.">
 <!ENTITY connect.error.ehostdown "Remote host is down or unavailable">
 <!ENTITY connect.error.eaddrinuse "Network address is already in use">
 <!ENTITY connect.error.eaddrnotavail "Network address was unavailable">
@@ -4364,22 +4369,22 @@
 <!ENTITY connect.refused "Connection refused by host">
 <!ENTITY connect.host.map "Map host">
 <!ENTITY connect.netcode2.disabled "[netcode2 disabled on server]">
-<!ENTITY connect.error.loginfail_addplayer "Session rejected by host (loginfail_addplayer)">
+<!ENTITY connect.error.loginfail_addplayer "Session rejected by host: Internal error (loginfail_addplayer). Please restart your game client.">
 <!ENTITY connect.error.econnreset "Connection was reset">
 <!ENTITY connect.login.nochat "Failed to connect to chat">
-<!ENTITY connect.error.loginfail_despawnerror "Session rejected by host (loginfail_despawnerror)">
+<!ENTITY connect.error.loginfail_despawnerror "Session rejected by host: Internal error (loginfail_despawnerror). Please restart your game client.">
 <!ENTITY connect.error.eteul_login_denied "Login Denied">
 <!ENTITY connect.error.unknown "Unknown network error">
 <!ENTITY connect.login.auth.failed "Authentication failed">
 <!ENTITY connect.ping.notactive "Ping: ...">
-<!ENTITY connect.error.loginfail_sessionvalidation "Session rejected by host: this can be caused by the server restarting or someone logging-in another instance of your account. You will need to restart your game client to continue playing.">
+<!ENTITY connect.error.loginfail_sessionvalidation "Session rejected by host: This can be caused by the server restarting or someone logging-in another instance of your account. You will need to restart your game client to continue playing.">
 <!ENTITY connect.error.econnrefused "Connection was refused">
 <!ENTITY connect.popup.title "Network Error">
 <!ENTITY connect.find.nonefound "Network initialization failed/no network available">
-<!ENTITY connect.error.enobufs "No space left to send data">
+<!ENTITY connect.error.enobufs "No buffer-memory left to send data">
 <!ENTITY connect.error.enotconn "Not connected">
 <!ENTITY connect.login.timeout "Timed out connecting to host">
-<!ENTITY connect.error.loginfail_activatenolocalinfo "Session rejected by host (loginfail_activatenolocalinfo)">
+<!ENTITY connect.error.loginfail_activatenolocalinfo "Session rejected by host: Internal error (loginfail_activatenolocalinfo). Please restart your game client.">
 <!ENTITY connect.find.timeout.data "Timed out getting network data">
 <!ENTITY connect.lost.game "Game connection lost">
 <!ENTITY connect.error.eteul_connection_stalled "Connection timed out due to packet loss: network may be unavailable or the server you were connected to might no-longer be available. Please check your network connection and try again.">
@@ -4396,12 +4401,12 @@
 <!ENTITY connect.login.chat.error "Unable to connect to chat host">
 <!ENTITY connect.error.eteul_enospc_send_buffer "network buffer error">
 <!ENTITY connect.error.loginfail_acceptbadteul "Session rejected by host: This client version is not supported by the server, please check for a patch/update.">
-<!ENTITY connect.error.loginfail_acceptbadindex "Session rejected by host (loginfail_acceptbadindex)">
+<!ENTITY connect.error.loginfail_acceptbadindex "Session rejected by host: Internal error (loginfail_acceptbadindex). Please restart your game client.">
 <!ENTITY connect.lost.world "World connection lost">
 <!ENTITY connect.error.enetreset "Network connection was reset">
 <!ENTITY connect.error.enetunreach "Network is unreachable">
 <!ENTITY connect.error.eteul_login_denied_ver "Login Denied (ver)">
-<!ENTITY connect.error.loginfail_activatenoplayerinfo "Session rejected by host (loginfail_activatenoplayerinfo)">
+<!ENTITY connect.error.loginfail_activatenoplayerinfo "Session rejected by host: Internal error (loginfail_activatenoplayerinfo). Please restart your game client.">
 <!ENTITY connect.error.etimedout "Timed out waiting for connection">
 <!ENTITY connect.login.error "Error connecting to host">
 <!ENTITY connect.find.nobest "Unable to complete network selection">
