@@ -124,28 +124,28 @@
 					<caption label="${widgets.map.options.filters}" x="0" width="165" height="20" rtop="65" style="font-size: -1; color: #BFE2CE;"/>
 					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="165" height="12" rtop="75" />
 					<view x="0" width="165" y="5" rtop="70">
-						<checkbox id="stratFilter.showcps" label="${widgets.map.options.showcps}" x="0" width="120" height="15" rtop="20" checked="true"
+						<checkbox id="mapFilter.showcps" label="${widgets.map.options.showcps}" x="0" width="120" height="15" rtop="20" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.stratFilter(this.checked, 'showcps')"/>
-						<checkbox id="stratFilter.showairfields" label="${widgets.map.options.showairfields}" x="0" width="120" height="15" rtop="35" checked="true"
+						<checkbox id="mapFilter.showairfields" label="${widgets.map.options.showairfields}" x="0" width="120" height="15" rtop="35" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.stratFilter(this.checked, 'showairfields')"/>
-						<checkbox id="stratFilter.showports" label="${widgets.map.options.showports}" x="0" width="120" height="15" rtop="50" checked="true"
+						<checkbox id="mapFilter.showports" label="${widgets.map.options.showports}" x="0" width="120" height="15" rtop="50" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.stratFilter(this.checked, 'showports')"/>
-						<checkbox id="stratFilter.showbridges"	label="${widgets.map.options.showbridges}" x="0" width="120" height="15" rtop="65" checked="true"
+						<checkbox id="mapFilter.showbridges"	label="${widgets.map.options.showbridges}" x="0" width="120" height="15" rtop="65" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.stratFilter(this.checked, 'showbridges')"/>
-						<checkbox id="stratFilter.showews" label="${widgets.map.options.showews}" x="0" width="120" height="15" rtop="80" checked="true"
+						<checkbox id="mapFilter.showews" label="${widgets.map.options.showews}" x="0" width="120" height="15" rtop="80" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.stratFilter(this.checked, 'showews')"/>
-						<checkbox id="stratFilter.showobjectives" label="${widgets.map.options.showobjectives}" x="0" width="120" height="15" rtop="95"
+						<checkbox id="mapFilter.showobjectives" label="${widgets.map.options.showobjectives}" x="0" width="120" height="15" rtop="95"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.stratFilter(this.checked, 'showobjectives')"/>
-						<checkbox id="stratFilter.showbrigades" label="${widgets.map.options.showbrigades}" x="0" width="120" height="15" rtop="110" checked="true"
+						<checkbox id="mapFilter.showbrigades" label="${widgets.map.options.showbrigades}" x="0" width="120" height="15" rtop="110" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.stratFilter(this.checked, 'showbrigades')"/>
-						<checkbox id="stratFilter.showmydivision" label="${widgets.map.options.showmydivision}" x="0" width="120" height="15" rtop="125" checked="true"
+						<checkbox id="mapFilter.showmydivision" label="${widgets.map.options.showmydivision}" x="0" width="120" height="15" rtop="125" checked="true"
 							style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 							onclick="this.mgr.stratFilter(this.checked, 'showmydivision')"/>
 						<!--

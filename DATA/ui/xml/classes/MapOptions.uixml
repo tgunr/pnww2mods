@@ -20,7 +20,7 @@
 		self.init = function()
 		{
 			game.consoleprint("FILTERS INIT\n");
-			game.restoresettings(this.widget);
+			//game.restoresettings(this.widget);
 			
 			var options = MapOptions.OPTIONS;
 			
@@ -46,13 +46,16 @@
 						
 						var parts = options[i].split(".");
 						
-						if(parts[0] == "stratFilter")
+						if(parts[0] == "mapFilter")
 						{
-							var initScript = "this." + parts[0] + "(control.checked, '" + parts[1] + "', true)";
-
-							game.consoleprint("Init map with " + initScript + "\n");
+							control.checked = game.getpref(control.id, 0, true);
+							this.stratFilter(control.checked, parts[1], true);
 							
+							/*
+							var initScript = "this." + parts[0] + "(control.checked, '" + parts[1] + "', true)";
+							game.consoleprint("Init map with " + initScript + "\n");
 							eval(initScript);
+							*/
 						}
 					}
 				}
@@ -73,7 +76,10 @@
 				this.map.stratfilter(filter, flag);
 				
 			if(this.initialized)
-				game.savesettings(this.widget);
+			{
+				game.setpref("mapFilter." + filter, 0, flag);
+				game.savesettings();
+			}
 			
 			if(!nosound)
 				soundPlayClick();
@@ -173,16 +179,16 @@
 				{
 					widget.findview("centerMe.centerme").checked 			= this.centerMe(true);
 					widget.findview("autoPan.autopan").checked 				= this.autoPan(true);
-					//widget.findview("stratFilter.showclutter").checked 	= !this.stratFilter(false, 'showclutter', true);
-					widget.findview("stratFilter.showcps").checked 			= this.stratFilter(false, 'showcps', true);
-					widget.findview("stratFilter.showairfields").checked 	= this.stratFilter(false, 'showairfields', true);
-					widget.findview("stratFilter.showports").checked 		= this.stratFilter(false, 'showports', true);
-					widget.findview("stratFilter.showbridges").checked 		= this.stratFilter(false, 'showbridges', true);
-					widget.findview("stratFilter.showews").checked 			= this.stratFilter(true, 'showews', true);
-					widget.findview("stratFilter.showobjectives").checked 	= this.stratFilter(true, 'showobjectives', true);
-					widget.findview("stratFilter.showbrigades").checked 	= this.stratFilter(true, 'showbrigades', true);
-					widget.findview("stratFilter.showmydivision").checked 	= this.stratFilter(true, 'showmydivision', true);
-					widget.findview("stratFilter.showdeployments").checked 	= this.stratFilter(false, 'showdeployments', true);
+					//widget.findview("mapFilter.showclutter").checked 	= !this.stratFilter(false, 'showclutter', true);
+					widget.findview("mapFilter.showcps").checked 			= this.stratFilter(false, 'showcps', true);
+					widget.findview("mapFilter.showairfields").checked 	= this.stratFilter(false, 'showairfields', true);
+					widget.findview("mapFilter.showports").checked 		= this.stratFilter(false, 'showports', true);
+					widget.findview("mapFilter.showbridges").checked 		= this.stratFilter(false, 'showbridges', true);
+					widget.findview("mapFilter.showews").checked 			= this.stratFilter(true, 'showews', true);
+					widget.findview("mapFilter.showobjectives").checked 	= this.stratFilter(true, 'showobjectives', true);
+					widget.findview("mapFilter.showbrigades").checked 	= this.stratFilter(true, 'showbrigades', true);
+					widget.findview("mapFilter.showmydivision").checked 	= this.stratFilter(true, 'showmydivision', true);
+					widget.findview("mapFilter.showdeployments").checked 	= this.stratFilter(false, 'showdeployments', true);
 				}
 			}
 		}
@@ -223,16 +229,16 @@
 	}
 
 	MapOptions.OPTIONS 			= new Array();
-	MapOptions.OPTIONS[0] 		= "stratFilter.showcps";
-	MapOptions.OPTIONS[1] 		= "stratFilter.showbridges";
-	MapOptions.OPTIONS[2] 		= "stratFilter.showews";
-	MapOptions.OPTIONS[3] 		= "stratFilter.showairfields";
-	MapOptions.OPTIONS[4] 		= "stratFilter.showports";
-	MapOptions.OPTIONS[5] 		= "stratFilter.showobjectives";
-	MapOptions.OPTIONS[6] 		= "stratFilter.showbrigades";
-	MapOptions.OPTIONS[7] 		= "stratFilter.showdeployments";
-	MapOptions.OPTIONS[8] 		= "stratFilter.showclutter";
-	MapOptions.OPTIONS[9] 		= "stratFilter.showmydivision";
+	MapOptions.OPTIONS[0] 		= "mapFilter.showcps";
+	MapOptions.OPTIONS[1] 		= "mapFilter.showbridges";
+	MapOptions.OPTIONS[2] 		= "mapFilter.showews";
+	MapOptions.OPTIONS[3] 		= "mapFilter.showairfields";
+	MapOptions.OPTIONS[4] 		= "mapFilter.showports";
+	MapOptions.OPTIONS[5] 		= "mapFilter.showobjectives";
+	MapOptions.OPTIONS[6] 		= "mapFilter.showbrigades";
+	MapOptions.OPTIONS[7] 		= "mapFilter.showdeployments";
+	MapOptions.OPTIONS[8] 		= "mapFilter.showclutter";
+	MapOptions.OPTIONS[9] 		= "mapFilter.showmydivision";
 	MapOptions.OPTIONS[10]		= "centerMe.centerme";
 	MapOptions.OPTIONS[11]		= "scaleMap.4";
 	MapOptions.OPTIONS[12]		= "scaleMap.3";
