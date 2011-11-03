@@ -4338,19 +4338,18 @@
 <!ENTITY combat.back.tip "Retourner vers les tutoriaux.">
 <!ENTITY combat.vehicle.name "UNITE">
 <!ENTITY connect.login.handshake.lost "Perte de connexion durant le traitement">
-<!ENTITY connect.error.loginfail.client "Session rejected by host: This game client is not compatible with the host, please check for a patch and re-log.">
 <!ENTITY connect.ping.stats.full "Ping: &#37;ums, Avg: &#37;ums, &#37;ls: &#37;.1f&#37;&#37;.">
 <!ENTITY connect.find.cantopen "Impossible d’ouvrir une connexion avec le réseau du jeu">
 <!ENTITY connect.error.connectionerror "Connection error">
 <!ENTITY connect.ping.lossbig "*PACKET LOSS*">
 <!ENTITY connect.error.ecorrupt "Invalid data-packet received, please check your network connection / firewall.">
 <!ENTITY connect.error.eagain "eagain">
+<!ENTITY connect.error.loginfail_client "Session rejected by host: This game client is not compatible with the host, please check for a patch and re-log.">
 <!ENTITY connect.login.auth.timeout "Temps d’authentification dépassé">
 <!ENTITY connect.error.loginfail_activatefailed "Session rejected by host: Internal error (loginfail_activatefailed). Please restart your game client.">
-<!ENTITY connect.error.loginfail.nosession "Session rejected by host: This can happen if your account has been logged in from another computer/instance of the game, if your connection to the host has been reset too many times, or if the server has been rsetarted.">
 <!ENTITY connect.ping.kbps "Kbps: &#37;.1f in, &#37;.1f out.">
-<!ENTITY connect.error.loginfail.sessionown "Session rejected by host (error 40112): Please restart your game client - if this problem persists, please contact support.">
 <!ENTITY connect.lost "&#37;ls: Error #&#37;u">
+<!ENTITY connect.error.loginfail_validation "Session rejected by host (error 40113): Please restart your game client - if this problem persists, please contact support.">
 <!ENTITY connect.lost.reconnect "Connexion au Chat perdu, reconnexion">
 <!ENTITY connect.login.noopen "Impossible d’ouvrir une connexion avec le serveur">
 <!ENTITY connect.chat.noredirect ">Erreur réseau Durant la connexion au Chat">
@@ -4364,7 +4363,6 @@
 <!ENTITY connect.login.badlogin "Erreur de login imprévue">
 <!ENTITY connect.find.timeout.network "Temps de connexion au réseau dépassé">
 <!ENTITY connect.netcode2.reverting "[netcode2 connection failed, Vérifiez votre pare feu - reverting to standard network usage]">
-<!ENTITY connect.error.loginfail.validation "Session rejected by host (error 40113): Please restart your game client - if this problem persists, please contact support.">
 <!ENTITY connect.error.ehostdown "host down">
 <!ENTITY connect.error.eaddrinuse "net address in use">
 <!ENTITY connect.error.eaddrnotavail "net address not available">
@@ -4399,6 +4397,7 @@
 <!ENTITY connect.error.enetdown "network down">
 <!ENTITY connect.find.nodata "Erreur de chargement des données">
 <!ENTITY connect.ping.stats.brief "Ping: &#37;u(&#37;u)ms">
+<!ENTITY connect.error.loginfail_sessionown "Session rejected by host (error 40112): Please restart your game client - if this problem persists, please contact support.">
 <!ENTITY connect.ping.loss "Loss">
 <!ENTITY connect.error.eteul_enospc_send_socket "teul socket error">
 <!ENTITY connect.fail "Connexion échouée">
@@ -4411,6 +4410,7 @@
 <!ENTITY connect.error.loginfail_acceptbadindex "Session rejected by host: Internal error (loginfail_acceptbadindex). Please restart your game client.">
 <!ENTITY connect.lost.world "Connexion au monde perdu">
 <!ENTITY connect.error.enetreset "network reset">
+<!ENTITY connect.error.loginfail_nosession "Session rejected by host: This can happen if your account has been logged in from another computer/instance of the game, if your connection to the host has been reset too many times, or if the server has been rsetarted.">
 <!ENTITY connect.error.enetunreach "network unreachable">
 <!ENTITY connect.error.eteul_login_denied_ver "Login Denied (ver)">
 <!ENTITY connect.error.loginfail_activatenoplayerinfo "Session rejected by host: Internal error (loginfail_activatenoplayerinfo). Please restart your game client.">

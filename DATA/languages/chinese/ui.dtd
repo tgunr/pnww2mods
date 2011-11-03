@@ -1560,7 +1560,7 @@
 <!ENTITY loc.host.659 "{1} 将于 {2} 分钟后向敌人投降。">
 <!ENTITY loc.host.172 "{1}的目标被取消了">
 <!ENTITY loc.host.71 "没有参数: 列出收听HC（高级军官）频道的玩家。有参数: 向HC（高级军官）频道发消息。">
-<!ENTITY loc.host.660 "INTEL: Soldiers needed at {1}.">
+<!ENTITY loc.host.660 "情报:  {1} 需要士兵支援。">
 <!ENTITY loc.host.565 "*因为投票撤销，战队的指挥官（CO）选举被取消。">
 <!ENTITY loc.host.16 "值日官（D.O.）{1} 联系上了您:您将直接与其交流。这次交谈将被纪录。">
 <!ENTITY loc.host.371 "/time">
@@ -1758,7 +1758,7 @@
 <!ENTITY loc.host.432 "/bump [-up | -down] <玩家名字> <原因>">
 <!ENTITY loc.host.636 "主动交出你对特定单位的指挥官职位，申请辞职。">
 <!ENTITY loc.host.75 "关闭HC（高级军官）频道">
-<!ENTITY loc.host.661 "INTEL: Soldiers needed at {1} and {2}.">
+<!ENTITY loc.host.661 "情报:  {1} 和 {2} 需要士兵支援。">
 <!ENTITY loc.host.17 "值日官（D.O.） {1} 联系上了您({2}):您将直接与其交流。这次交谈将被纪录。">
 <!ENTITY loc.host.595 "显示玩家在这次战役中最后5 次击杀的摘要信息。这个功能消耗资源太多，请谨慎使用。">
 <!ENTITY loc.host.238 "{1}: 防御并抗敌夺取。">
@@ -1841,7 +1841,7 @@
 <!ENTITY loc.host.369 "/mlist">
 <!ENTITY loc.host.383 "{1} 被预留在{2} 。">
 <!ENTITY loc.host.463 "/shutdown stop">
-<!ENTITY loc.host.662 "Threat Report: {1}">
+<!ENTITY loc.host.662 "威胁报告: {1}">
 <!ENTITY loc.host.467 "When the countdown reaches zero arenalock 15 is applied and players are given a final 30 seconds to despawn and exit if they wish to save their current sorties.">
 <!ENTITY loc.host.351 "您的黑名单已满，请先删除某人。">
 <!ENTITY loc.host.658 "{1} 将于 {2} 小时后向敌人投降。">
@@ -4261,7 +4261,7 @@
 <!ENTITY vehicles.1.4.9.1 "蓝国步枪兵">
 <!ENTITY vehicles.3.3.12.1 "绿国费尔麦尔B级摩托艇">
 <!ENTITY vehicles.4.4.9.7 "红国枪榴弹兵">
-<!ENTITY vehicles.2.4.9.14 "蓝星国突击步兵">
+<!ENTITY vehicles.2.4.9.14 "蓝星国半自动步枪兵">
 <!ENTITY vehicles.3.4.9.12 "绿国狙击手">
 <!ENTITY vehicles.1.2.7.3 "蓝国25毫米轻型高射炮">
 <!ENTITY vehicles.3.2.7.2 "绿国47毫米中型反坦克炮">
@@ -4271,7 +4271,7 @@
 <!ENTITY vehicles.1.1.2.9 "SMK IIb 战斗截击机">
 <!ENTITY vehicles.reload "正在装填 &#37;ls ，以供下次发射使用">
 <!ENTITY vehicles.4.2.7.1 "红国37毫米轻型反坦克炮">
-<!ENTITY vehicles.2.4.9.1 "蓝星国步兵">
+<!ENTITY vehicles.2.4.9.1 "蓝星国步枪兵">
 <!ENTITY vehicles.4.2.4.5 "红国75毫米中型坦克">
 <!ENTITY vehicles.1.1.2.5 "HMK IIc 战斗轰炸机">
 <!ENTITY vehicles.4.2.6.2 "红国8吨牵引车">
@@ -4302,7 +4302,7 @@
 <!ENTITY vehicles.2.4.9.3 "蓝星国工兵">
 <!ENTITY vehicles.1.2.4.6 "蓝国DMK I装甲侦察车">
 <!ENTITY vehicles.2.2.4.3 "蓝星国76.2毫米中型近战坦克">
-<!ENTITY vehicles.4.4.9.14 "红国突击步兵">
+<!ENTITY vehicles.4.4.9.14 "红国半自动步枪兵">
 <!ENTITY vehicles.4.1.2.1 "M109E-4战斗截击机">
 <!ENTITY vehicles.4.2.4.9 "红国75毫米坦克歼击车">
 <!ENTITY vehicles.1.1.2.2 "HMK I 战斗截击机">
@@ -4410,19 +4410,18 @@
 <!ENTITY combat.back.tip "返回训练任务选择界面。">
 <!ENTITY combat.vehicle.name "单位">
 <!ENTITY connect.login.handshake.lost "在网络初始化阶段与服务器失去连接">
-<!ENTITY connect.error.loginfail.client "Session rejected by host: This game client is not compatible with the host, please check for a patch and re-log.">
 <!ENTITY connect.ping.stats.full "网速延迟: &#37;ums, 平均: &#37;ums, &#37;ls: &#37;.1f&#37;&#37;.">
 <!ENTITY connect.find.cantopen "无法打开游戏的网络连接">
 <!ENTITY connect.error.connectionerror "连接错误">
 <!ENTITY connect.ping.lossbig "*数据包丢失*">
 <!ENTITY connect.error.ecorrupt "Invalid data-packet received, please check your network connection / firewall.">
 <!ENTITY connect.error.eagain "错误：还是错误">
+<!ENTITY connect.error.loginfail_client "你当前使用的客户端与服务器不兼容，请检查是否有补丁，重新安装后再登录。">
 <!ENTITY connect.login.auth.timeout "验证超时">
 <!ENTITY connect.error.loginfail_activatefailed "Login Failed (loginfail_activatefailed登录错误_启动失败)">
-<!ENTITY connect.error.loginfail.nosession "Session rejected by host: This can happen if your account has been logged in from another computer/instance of the game, if your connection to the host has been reset too many times, or if the server has been rsetarted.">
 <!ENTITY connect.ping.kbps "网速: &#37;.1f 进, &#37;.1f 出(kbps).">
-<!ENTITY connect.error.loginfail.sessionown "Session rejected by host (error 40112): Please restart your game client - if this problem persists, please contact support.">
 <!ENTITY connect.lost "&#37;ls: 错误 #&#37;u">
+<!ENTITY connect.error.loginfail_validation "错误 40113: 请重新启动客户端 - 如果问题持续发生，请联系客服人员。">
 <!ENTITY connect.lost.reconnect "与聊天服务器失去联系，正在尝试重新连接">
 <!ENTITY connect.login.noopen "无法打开战场服务器的连接">
 <!ENTITY connect.chat.noredirect "登录聊天服务器时，发生网络错误">
@@ -4436,7 +4435,6 @@
 <!ENTITY connect.login.badlogin "未预料的登录失败">
 <!ENTITY connect.find.timeout.network "与游戏网络连接超时">
 <!ENTITY connect.netcode2.reverting "[netcode2 第二连接方案（UDP)失败，请检查你的防火墙或其它设置 - 正换成标准网络连接（TCP）]">
-<!ENTITY connect.error.loginfail.validation "Session rejected by host (error 40113): Please restart your game client - if this problem persists, please contact support.">
 <!ENTITY connect.error.ehostdown "错误：服务器宕了">
 <!ENTITY connect.error.eaddrinuse "错误：地址已使用">
 <!ENTITY connect.error.eaddrnotavail "错误：没有这个地址">
@@ -4471,6 +4469,7 @@
 <!ENTITY connect.error.enetdown "错误：当前网络宕了">
 <!ENTITY connect.find.nodata "请求连接数据出错">
 <!ENTITY connect.ping.stats.brief "延迟: &#37;u(&#37;u)ms">
+<!ENTITY connect.error.loginfail_sessionown "错误 40112: 请重新启动客户端 - 如果问题持续发生，请联系客服人员。">
 <!ENTITY connect.ping.loss "丢失">
 <!ENTITY connect.error.eteul_enospc_send_socket "错误：teul协议套接错误">
 <!ENTITY connect.fail "连接失败">
@@ -4483,6 +4482,7 @@
 <!ENTITY connect.error.loginfail_acceptbadindex "Login Failed (loginfail_acceptbadindex登录错误_接受了错误目录)">
 <!ENTITY connect.lost.world "与战场服务器失去联系">
 <!ENTITY connect.error.enetreset "错误：网络已重设了">
+<!ENTITY connect.error.loginfail_nosession "如果你的帐号在其他电脑上登录，而你到服务器的连接被重置多次或者服务器重新启动都会发生这种情况。">
 <!ENTITY connect.error.enetunreach "错误：无法连接至指定网络">
 <!ENTITY connect.error.eteul_login_denied_ver "错误：登录被拒绝(ver)">
 <!ENTITY connect.error.loginfail_activatenoplayerinfo "Login Failed (loginfail_activatenoplayerinfo登录错误_启动时没有玩家信息)">
