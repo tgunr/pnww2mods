@@ -1300,7 +1300,7 @@
 <!ENTITY loc.host.384 "一些单位在 {1} 不能/{2}。">
 <!ENTITY loc.host.233 "{1}: 防御/修复">
 <!ENTITY loc.host.127 "/delay <代码>">
-<!ENTITY loc.host.171 "告知在 &#37;的单位进行防御">
+<!ENTITY loc.host.171 "在{1} 的作战单位，请进行防御">
 <!ENTITY loc.host.146 "在 {1}我们没有占领任何基地。">
 <!ENTITY loc.host.39 "报告已递给官方营运商，谢谢。如果GM正在调查您的问题，他们可能会使用您所递交的信息。但我们不会给/report命令单独回应。">
 <!ENTITY loc.host.407 "/nukepersonas">
@@ -1404,7 +1404,7 @@
 <!ENTITY loc.host.189 "请求在地图选定的据点或桥梁上部署攻击目标。">
 <!ENTITY loc.host.590 "{1}在这次战役中最新的5次击杀：">
 <!ENTITY loc.host.409 "*** 按照您的请求，所有角色已被删除***">
-<!ENTITY loc.host.488 "{1}: Unassigned.">
+<!ENTITY loc.host.488 "{1}:未分配的。">
 <!ENTITY loc.host.532 "{1}: 不能找到场景服务器。">
 <!ENTITY loc.host.518 "对不起, &#39;系统&#39; 是游戏本身而不是现实的玩家。">
 <!ENTITY loc.host.248 "“/orders” 或 “/orders <new orders>”">
@@ -1553,7 +1553,7 @@
 <!ENTITY loc.host.136 "准确地找出一个在游戏中的玩家位置。">
 <!ENTITY loc.host.579 "*** 目标太多：如果您不在规定时间之前删除其中一个，那么系统将会在{1}分钟之后自动删除。">
 <!ENTITY loc.host.599 "不惜一切代价坚守 {1}!">
-<!ENTITY loc.host.498 "Sets or queries the current arena lock state. Arena locks are a series of binary flags that can be combined to form various combination locks. 0=Unlock, 1=NoCapture, 2=NoSpawn, 4=NoKill, 8=NoSideSelect. So arenalock 5 = 1+4 = NoCapture + NoKill. Common Arenalocks are 7 (NoCapture/NoSpawn/NoKill) and 15 (Arena closed)">
+<!ENTITY loc.host.498 "设置或查询当前的竞技场锁定状态. 竞技场锁由一系列可以组合的二进制数值形成，这些二进制数值可组成各种锁。 0=开启, 1=没有夺取, 2=没有出生, 4=没有击杀, 8=没有选择阵营. 所以 竞技场锁 5 = 1+4 = 没有夺取 + 没有击杀. 常用的竞技场锁是竞技场锁 7 (没有夺取/没有出生/没有击杀) 和竞技场锁 15 (竞技场关闭)">
 <!ENTITY loc.host.334 "任务领导权将移交给 {1} 。">
 <!ENTITY loc.host.240 "最新发布的目标。">
 <!ENTITY loc.host.458 "战队 &#39;{1}&#39; 已经拥有指挥官（CO）&#39;{2}&#39;了。 使用&#34;/makeco -force&#34; 命令夺取现任指挥官的权限。">
@@ -1584,7 +1584,7 @@
 <!ENTITY loc.host.36 "每 {2}分钟才可以使用一次/{1}命令。">
 <!ENTITY loc.host.350 "您的好友列表已满，请先删除某人。">
 <!ENTITY loc.host.67 "开关GM “隐蔽”模式">
-<!ENTITY loc.host.155 "在 {1} 申请了“ {2} ”。">
+<!ENTITY loc.host.155 "{2} 请求 &#39;{1}&#39;。">
 <!ENTITY loc.host.511 "/renamesquad <旧的战队名称> <新的战队名称>">
 <!ENTITY loc.host.209 "短程区域交谈。">
 <!ENTITY loc.host.288 "允许您为您的战队提名或投票支持一位新指挥官。">
@@ -1765,7 +1765,7 @@
 <!ENTITY loc.host.530 "当前没有战斗旅/师的OIC在线。">
 <!ENTITY loc.host.377 "/voting <on|off>">
 <!ENTITY loc.host.468 "/shutdown downtime <时间间隔>">
-<!ENTITY loc.host.257 "“/trainer”">
+<!ENTITY loc.host.257 "“/trainers”">
 <!ENTITY loc.host.606 "敌军在{1}的单位撤退到了新的防御位置。">
 <!ENTITY loc.host.309 "/movedivision">
 <!ENTITY loc.host.150 "{1} 已经有其它命令了。">
@@ -1842,7 +1842,7 @@
 <!ENTITY loc.host.383 "{1} 被预留在{2} 。">
 <!ENTITY loc.host.463 "/shutdown stop">
 <!ENTITY loc.host.662 "威胁报告: {1}">
-<!ENTITY loc.host.467 "When the countdown reaches zero arenalock 15 is applied and players are given a final 30 seconds to despawn and exit if they wish to save their current sorties.">
+<!ENTITY loc.host.467 "当倒计时到达零时，竞技场锁15将发生作用。玩家有最后30秒退出时间以保存当前的出击记录。">
 <!ENTITY loc.host.351 "您的黑名单已满，请先删除某人。">
 <!ENTITY loc.host.658 "{1} 将于 {2} 小时后向敌人投降。">
 <!ENTITY loc.host.390 "您已进入不健康游戏时间，为了您的健康，请您立即下线休息。如不下线，您的身体将受到损害，您的收益已降为零，直到您的累计下线时间满5小时后，才能恢复正常。">
