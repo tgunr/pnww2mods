@@ -191,7 +191,7 @@
 								<view x="10" rtop="245" width="380" height="60" followtop="true">
 									<caption label="${common.squads.member.flags}" x="0" rtop="0" rright="0" height="20" style="color: #BFE2CE; font-size: +2;"/>
 									<image src="ui/textures/test/horiz_underline.bmp" x="0" rtop="12" rright="0" height="12"/>
-									<caption id="squaddie-status" x="0" rtop="25" rright="0" height="15" style="color: #e9e3d9; font-size: +1;"/>
+									<caption id="squaddie-flags" x="0" rtop="25" rright="0" height="15" style="color: #e9e3d9; font-size: +1;"/>
 								</view>
 							</view>
 						</view>
@@ -1199,11 +1199,13 @@
 					if(squaddie.recruiting)
 						flags += getlocstring('common.squads.member.flags.recruiting') + ", ";
 					
-					flagsView.label = getlocstring('common.squads.member.flags.none');
-					
-					if(flags.length > 0)
-					 	flagsView.label = flags.substr(0, flags.length - 2);
-
+					if(flagsView != null)
+					{
+						flagsView.label = getlocstring('common.squads.member.flags.none');
+						
+						if(flags.length > 0)
+							flagsView.label = flags.substr(0, flags.length - 2);
+					}
 				}
 				else
 				{
@@ -1217,7 +1219,9 @@
 				 	targetView.label 	= "-";
 				 	typeView.label 		= "-";
 				 	leaderView.label 	= "-";
-				 	flagsView.label 	= getlocstring('common.squads.member.flags.none');
+				 	
+				 	if(flagsView != null)
+				 		flagsView.label 	= getlocstring('common.squads.member.flags.none');
 				}
 				
 				switch(squaddie.joinedtf)
