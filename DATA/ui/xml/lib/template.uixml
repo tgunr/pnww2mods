@@ -30,7 +30,7 @@
 					fore.visible = false;
 			}
 			
-			if(game.online)
+			if(game.online && game.betarelease)
 				game.load("gameinfo", window);
 		}
 		
