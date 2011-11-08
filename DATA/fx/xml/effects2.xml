@@ -860,6 +860,10 @@
       <fountain>5</fountain>
       <particleeffect>smallfireparticle2</particleeffect>
     </emitter>
+    <emitter>
+      <fountain>1</fountain>
+      <particleeffect>randomembers</particleeffect>
+    </emitter>
   </transformeffect>
 <!-- ===================================================================== -->
 	<transformeffect name = "shipsmokestacklarge">
@@ -2073,6 +2077,33 @@
 		<speed>32.0</speed>
 		<lifetime>1000</lifetime>
 		<randomdirection></randomdirection>
+    <material>fire</material>
+  </particleeffect>
+  <!-- ===================================================================== -->
+  <particleeffect name = "randomembers">
+    <number>1</number>
+    <number>2</number>
+    <texture>newspark</texture>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>0.0</alpha>
+    <size>0.025</size>
+    <size>0.025</size>
+    <size>0.025</size>
+    <size>0.025</size>
+    <time>0</time>
+    <time>300</time>
+    <time>300</time>
+    <time>300</time>
+    <speed>3</speed>
+    <drag>2</drag>
+    <glow></glow>
+    <material>fire</material>
+    <delayeachparticle>1</delayeachparticle>
+    <randomdirection>135</randomdirection>
+    <velreduction>0.98</velreduction>
+    <posvariance>-0.2 -0.2 0 0.2 0.2 1.0</posvariance>
     <material>fire</material>
   </particleeffect>
   <!-- ===================================================================== -->
@@ -4394,6 +4425,8 @@
   <particleeffect name = "smallfireparticle1">
     <number>1</number>
     <texture>old30</texture>
+    <texture>fire ball 9</texture>
+    <texture>fire ball 10</texture>
     <alpha>1.0</alpha>
     <alpha>1.0</alpha>
     <alpha>0.5</alpha>
