@@ -1560,7 +1560,7 @@
 <!ENTITY loc.host.659 "{1} Se rendra à l&#39;ennemi dans {2} minutes.">
 <!ENTITY loc.host.172 "L’objectif à {1} est annulé">
 <!ENTITY loc.host.71 "Sans extension: liste des commandants en ligne. Avec extension: envoie un message sur le canal du Haut-Commandement.">
-<!ENTITY loc.host.660 "INTEL: Soldiers needed at {1}.">
+<!ENTITY loc.host.660 "INTEL: Besoin de soldats à {1}.">
 <!ENTITY loc.host.565 "Election du *Squad-CO annulé du a l&#39;abandon des votes.">
 <!ENTITY loc.host.16 "L&#39;officier en faction {1} vous a attrapé. Vous communiquez désormais directement.">
 <!ENTITY loc.host.371 "/time">
@@ -1758,7 +1758,7 @@
 <!ENTITY loc.host.432 "/bump [-up | -down] <player> <reason>">
 <!ENTITY loc.host.636 "Abandonne votre position d&#39;OIC pour l&#39;unité spécifié.">
 <!ENTITY loc.host.75 "Coupe le canal du haut-commandement.">
-<!ENTITY loc.host.661 "INTEL: Soldiers needed at {1} and {2}.">
+<!ENTITY loc.host.661 "INTEL: Besoin de soldats à {1} et {2}.">
 <!ENTITY loc.host.17 "L&#39;officier en faction {1} vous a attrapé {2}: Vous communiquez désormais directement.">
 <!ENTITY loc.host.595 "Montre un résumé sur les 5 derniers &#34;kill&#34; enregistrés pour ce joueur durand la campagne. Requête couteuse, merci de ne pas trop l&#39;utiliser.">
 <!ENTITY loc.host.238 "{1}: Défendre contre une capture.">
@@ -1841,7 +1841,7 @@
 <!ENTITY loc.host.369 "/mlist">
 <!ENTITY loc.host.383 "{1} reservé à {2}.">
 <!ENTITY loc.host.463 "/shutdown stop">
-<!ENTITY loc.host.662 "Threat Report: {1}">
+<!ENTITY loc.host.662 "Rapport: {1}">
 <!ENTITY loc.host.467 "Quand le compteur atteint 0 fermeture de l&#39;arenne 15 est appliqué et le joueur ont 30 s pour quitter s&#39;ils veulent enregistrer leur dernière sortie.">
 <!ENTITY loc.host.351 "Votre liste d’amis est pleine, enlevez quelqu’un d’abord.">
 <!ENTITY loc.host.658 "{1} Se rendra à l&#39;ennemi dans {2} H.">
@@ -2810,6 +2810,7 @@
 <!ENTITY mission.brieftab.brief.target "CIBLE">
 <!ENTITY mission.readytab.crew "SELECTIONNEZ UN PILOTE">
 <!ENTITY mission.host.accept "Equipage accepté">
+<!ENTITY mission.readytab.supply.status.bdedisabled "There is no T.O.E for this unit; spawning is unavailable.">
 <!ENTITY mission.readytab.supply.status.wrongowner "Un bâtiment allié est connecté à ce bâtiment, mais les pays diffèrent. Impossible d&#39;entrer en jeu ici.">
 <!ENTITY mission.aartab.aars.aar.killedby "TUE PAR">
 <!ENTITY mission.aartab.aars.kills "KILLS">
@@ -3799,7 +3800,7 @@
 <!ENTITY persona.details.career.status.banned "Ce compte est banni pour {1} secondes. Visitez http://support.playnet.com ou contactez Bable (bable@playnet.com) pour de l&#39;aide.">
 <!ENTITY persona.list.balanced "Equilibré">
 <!ENTITY persona.selecttab.tip "Sélectionnez un personnage pour jouer depuis cet onglet.">
-<!ENTITY persona.list.inactive.tip "This persona is not available to you right now because it is inactive or has no active brigades.">
+<!ENTITY persona.list.inactive.tip "Ce personnage n&#39;est pas valable pour vous pour l&#39;instant car il n &#39;est pas actif ou n&#39;a pas de brigade active.">
 <!ENTITY persona.details.persona.recruit "Recrue">
 <!ENTITY persona.list.imbalanced "La population des joueurs {1} est {2} déséquilibrée. Donc, tous les personnages {3} doivent attendre et tous les personnages {4} peuvent immédiatement être utilisés.">
 <!ENTITY persona.details.career.status.training "Ce personnage est à l&#39;entrainement. Il doit finir son entrainement avant d&#39;aller au combat.">
@@ -3836,7 +3837,7 @@
 <!ENTITY persona.details.spawndelayed "Le délai pour entrer est activé.">
 <!ENTITY persona.forward.training.tip "Faire les tutoriels. Réussissez les entrainements pour être apte au combat.">
 <!ENTITY persona.forward "Sélectionner votre personnage">
-<!ENTITY persona.list.inactive "Inactive">
+<!ENTITY persona.list.inactive "Inactif">
 <!ENTITY persona.details.ranklock "Votre grade maximum est atteint est atteint pour votre niveau de souscription.">
 <!ENTITY persona.list.overpopulated.2 "Moderément">
 <!ENTITY persona.list.slocked "Souscription bloquée">
@@ -3863,7 +3864,7 @@
 <!ENTITY hccp.tabs.map "MAP HC">
 <!ENTITY presets.infantry "défaut">
 <!ENTITY exitvehicle.status.4 "RES">
-<!ENTITY none "none">
+<!ENTITY none "rien">
 <!ENTITY hccp.tabs.notices.title "NOTICES DE BRIGADES">
 <!ENTITY exitvehicle.status "Status: {1}">
 <!ENTITY globals.time.months "mois">
