@@ -18,7 +18,7 @@ spawn,m4a3_us,
 
 section, truck, weapClass
 default,,GV_truck.0
-spawn,us_laffly,US_GV_truck.0
+spawn,us_laffly,
 
 section,gun,weapClass
 default,,GV_gun.0
@@ -26,3 +26,8 @@ spawn,us_bofors,
 spawn,us_m1m1a3,
 spawn,us_m1a2m5,
 
+section,depot,weapClass
+default,,GV_depot.0
+spawn,us_m1m1a3,
+spawn,us_m1a2m5,
+spawn,us_laffly,
