@@ -24,7 +24,6 @@ vec4 RadialBlur(in vec2 uv)
     float dist = 0.0;
 
     float ss = strength * 2.2;
-    ss = 3.0;
 
     if(ss > 0.0)
     {
