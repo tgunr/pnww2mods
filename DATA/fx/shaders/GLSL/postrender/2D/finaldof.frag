@@ -3,7 +3,6 @@
 uniform sampler2D src1;
 uniform sampler2D src2;
 
-uniform vec4 color;
 uniform float lum;
 uniform vec2 filter[12];
 
@@ -13,7 +12,7 @@ vec4 filterdof()
 {
     vec4 c = texture2D(src1, gl_TexCoord[0].xy);
 
-    float centerDepth = cOut.a;
+    float centerDepth = c.a;
     float discRadius = abs(c.a * MaxCoC.y - MaxCoC.x);
     float discRadiusLow = discRadius * 0.4;
 
@@ -26,7 +25,7 @@ vec4 filterdof()
     for(int t = 0; t < 12; t++)
     {
         uvLow = gl_TexCoord[0].xy + filter[t] * discRadiusLow;
-        coordHigh = gl_TexCoord[0].xy + filter[t] * discRadius;
+        uvHigh = gl_TexCoord[0].xy + filter[t] * discRadius;
 
         tapLow = texture2D(src1, uvLow);
         tapHigh = texture2D(src1, uvHigh);
@@ -47,13 +46,10 @@ vec4 filterdof()
 void main()
 {	
     vec4 c = filterdof();
-	vec4 c2 = texture2D(src2, gl_TexCoord[0].xy);
-  
-	c += c2;
+
+    vec4 c3 = texture2D(src2, gl_TexCoord[0].xy);
+
 	c += lum;
-	
-	c = mix(c, color, min(color.a, 0.75));
-	c.a = 1.0;
-    
-    gl_FragColor = c;
+ 
+    gl_FragColor = c * c3;
 }
