@@ -97,6 +97,7 @@
 			initVehicleList();
 			setHelp(getlocstring('offline.spawntab.help'));
 			setForward('offline.forward');
+			forwardButton.enabled = false;
 			musicPlayIntro();
 			quickhelp();
 		}
@@ -201,12 +202,14 @@
 		
 		function selectVehicle(action)
 		{
+			var launch	= false;
 			infoView.value = 0;
 			
 			var weapon = vehicleTree.selectedData(); 
 			
 			if(weapon != null)
 			{
+				launch = true;
 				if(action)
 				{
 					updateLaunch();
@@ -215,6 +218,12 @@
 				
 				infoView.value = (weapon.vclassid == 9 || weapon.vclassid == 14) ? 1: 2;
 			}
+			else
+			{
+				launch = false;
+			}
+			
+			setForwardEnabled(launch)
 		}
 		
 		function updateLaunch()
@@ -254,7 +263,7 @@
 				}
 				else
 				{
-					launch = true;
+					launch = false;
 				}
 			}
 			
@@ -264,7 +273,7 @@
 				launch = true;
 			}
 			
-			setForwardEnabled(launch);
+			//setForwardEnabled(launch);
 		}
 		
 		function showInfo(viewer)
