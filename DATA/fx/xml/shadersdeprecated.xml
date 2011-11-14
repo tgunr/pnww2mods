@@ -440,14 +440,6 @@
     <uniform name="src2" type="sampler2dshadow" unit="1" onetimeapply="true"></uniform>
   </program>
   <!--=================================================================-->
-  <program name ="decal">
-    <shaders>
-      <vertexshader>fx/shaders/GLSL/draw/decal.vert</vertexshader>
-      <fragmentshader>fx/shaders/GLSL/draw/decal.frag</fragmentshader>
-    </shaders>
-    <uniform name="src2" type="sampler2d" unit="0" onetimeapply="true"></uniform>
-  </program>
-  <!--=================================================================-->
   <program name ="coasteffect">
     <shaders>
       <vertexshader>scenarios/terrain/doggreen/coasteffect.vert</vertexshader>
@@ -573,5 +565,12 @@
       <fragmentshader>fx/shaders/GLSL/particle/particle.frag</fragmentshader>
     </shaders>
     <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="opaquedepth" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/draw/opaquedepth.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/draw/opaquedepth.frag</fragmentshader>
+    </shaders>
   </program>
 </glslprograms>
