@@ -1208,6 +1208,7 @@
 <!ENTITY loc.english.502 "Joystick 1 Coolie Hat 2 W">
 <!ENTITY loc.english.127 "BLITZKRIEG SCHAUPLATZ">
 <!ENTITY loc.english.431 "Numpad Enter">
+<!ENTITY loc.host.663 "Kill on you awarded to {1}.">
 <!ENTITY loc.host.558 "Number of loops is how many times to repeat the entire can; interval between repetitions is a time interval (e.g. 30s, 5m, 2h or 1d) to pause between each repetition. The time between each line of the can is calculated based on the number of characters in the message.">
 <!ENTITY loc.host.147 "Keine Versorgungsverbindungen zu Armeebasen in {1}.">
 <!ENTITY loc.host.484 "Adds a note to- or views recent notes/warns/bans on- the player&#39;s permanent record.">
@@ -1366,6 +1367,7 @@
 <!ENTITY loc.host.33 "Du hast {1} unehrenhaft entlassen.">
 <!ENTITY loc.host.306 "Wahlen wurden vom Kommandierenden Offizier ausgeschaltet.">
 <!ENTITY loc.host.45 "Keine &#252;bereinstimmungen.">
+<!ENTITY loc.host.664 "Assist for killing {1} (killed by {2}).">
 <!ENTITY loc.host.236 "{1}: Verteidigen - Halten um jeden Preis!">
 <!ENTITY loc.host.455 "Spieler &#39;{1}&#39; ist schon CO von &#39;{2}&#39;.">
 <!ENTITY loc.host.167 "Kein Kampfziel f&#252;r {1} designiert.">
@@ -1905,7 +1907,7 @@
 <!ENTITY loc.mspawn.16 "Fahrzeug muss stehen.">
 <!ENTITY loc.function.182 "Klappen aktivieren">
 <!ENTITY loc.function.179 "Sturzflugbremsen ausfahren">
-<!ENTITY loc.function.2001 "Ansichten">
+<!ENTITY loc.function.2001 "Bewegungen">
 <!ENTITY loc.function.186 "Bombenschachtbedienung">
 <!ENTITY loc.function.278 "Waffe 2">
 <!ENTITY loc.function.259 "Hinlegen">
@@ -1922,11 +1924,11 @@
 <!ENTITY loc.function.238 "Visieransicht">
 <!ENTITY loc.function.532 "PAK-Neigung">
 <!ENTITY loc.function.270 "Nach links bewegen">
-<!ENTITY loc.function.2004 "Cockpitsteuerung">
+<!ENTITY loc.function.2004 "Waffen">
 <!ENTITY loc.function.202 "Chatfenster &#246;ffnen/schliessen">
 <!ENTITY loc.function.192 "Stukasirene">
 <!ENTITY loc.function.2 "Joystick-Konfiguration 2">
-<!ENTITY loc.function.2009 "Offline Extern">
+<!ENTITY loc.function.2009 "Spiel">
 <!ENTITY loc.function.1100 "N&#228;chste Waffe ausw&#228;hlen">
 <!ENTITY loc.function.303 "Linke Bremse">
 <!ENTITY loc.function.240 "Munition wechseln">
@@ -1941,7 +1943,7 @@
 <!ENTITY loc.function.923 "Head-Translate X">
 <!ENTITY loc.function.181 "Karte">
 <!ENTITY loc.function.919 "Mouse-Look Y">
-<!ENTITY loc.function.2005 "Torpedowerfer">
+<!ENTITY loc.function.2005 "Cockpitsteuerung">
 <!ENTITY loc.function.196 "Externe Sicht - fester Abstand">
 <!ENTITY loc.function.255 "Position 7">
 <!ENTITY loc.function.5 "Informationsanzeige">
@@ -1987,7 +1989,7 @@
 <!ENTITY loc.function.900 "Ziel-Geschwindigkeit erh&#246;hen">
 <!ENTITY loc.function.731 "Zeige Karte">
 <!ENTITY loc.function.242 "Sekund&#228;rwaffe verwenden">
-<!ENTITY loc.function.2010 "PTZ Vergr&#246;&#223;ern">
+<!ENTITY loc.function.2010 "Offline Extern">
 <!ENTITY loc.function.214 "nach vorn oben schauen">
 <!ENTITY loc.function.250 "Position 2">
 <!ENTITY loc.function.223 "nach vorne links unten schauen">
@@ -1997,7 +1999,7 @@
 <!ENTITY loc.function.901 "Ziel-Geschwindigkeit verringern">
 <!ENTITY loc.function.300 "Nach rechts lehnen">
 <!ENTITY loc.function.180 "Autom. Sturzflug">
-<!ENTITY loc.function.2000 "Bewegung">
+<!ENTITY loc.function.2000 "Easy Modus">
 <!ENTITY loc.function.210 "nach rechts schauen">
 <!ENTITY loc.function.171 "K&#252;hlklappen">
 <!ENTITY loc.function.709 "Chat-H&#246;he verändern">
@@ -2017,7 +2019,7 @@
 <!ENTITY loc.function.732 "Karte verg&#246;ß&#223;ern">
 <!ENTITY loc.function.316 "Ansicht schwenken">
 <!ENTITY loc.function.252 "Position 4">
-<!ENTITY loc.function.2007 "Chat">
+<!ENTITY loc.function.2007 "Bombenvisier">
 <!ENTITY loc.function.293 "Gas">
 <!ENTITY loc.function.286 "Waffe 10">
 <!ENTITY loc.function.10 "Vehikel duplizieren">
@@ -2049,7 +2051,7 @@
 <!ENTITY loc.function.913 "Z&#252;ndungsintervall verringern">
 <!ENTITY loc.function.302 "Klappenkontrolle">
 <!ENTITY loc.function.1101 "Vorherige Waffe ausw&#228;hlen">
-<!ENTITY loc.function.2006 "Bombenzieloptik">
+<!ENTITY loc.function.2006 "Torpedowerfer">
 <!ENTITY loc.function.905 "Torpedo-Lauftiefe erh&#246;hen">
 <!ENTITY loc.function.294 "Kupplung">
 <!ENTITY loc.function.183 "Interne/externe Ansicht wechseln">
@@ -2062,19 +2064,20 @@
 <!ENTITY loc.function.201 "Mauszeiger einblenden">
 <!ENTITY loc.function.165 "Gemisch fett">
 <!ENTITY loc.function.258 "Position 10">
-<!ENTITY loc.function.2008 "Ingame">
+<!ENTITY loc.function.2008 "Chat">
 <!ENTITY loc.function.710 "HUD zurücksetzen">
 <!ENTITY loc.function.189 "Hochschalten">
 <!ENTITY loc.function.191 "R&#252;ckw&#228;rtsgang">
 <!ENTITY loc.function.228 "Blickrichtung F&#252;nfundzwanzig">
 <!ENTITY loc.function.229 "Blickrichtung Sechsundzwanzig">
+<!ENTITY #loc.function.2010 "PTZ Vergr&#246;&#223;ern">
 <!ENTITY loc.function.260 "Waffe aufstellen">
-<!ENTITY loc.function.2002 "Gesten">
+<!ENTITY loc.function.2002 "Ansichten">
 <!ENTITY loc.function.8 "Iconmodus wechseln">
 <!ENTITY loc.function.1005 "Abspringen!">
 <!ENTITY loc.function.282 "Waffe 6">
 <!ENTITY loc.function.193 "Umdrehungszahl erh&#246;hen">
-<!ENTITY loc.function.2003 "Waffensteuerung">
+<!ENTITY loc.function.2003 "Gesten">
 <!ENTITY loc.function.274 "Schulterblick links">
 <!ENTITY loc.function.289 "Rollen">
 <!ENTITY loc.function.168 "Kompressor neutral">
@@ -3667,7 +3670,7 @@
 <!ENTITY hud.hqintel.dir.2 "östlich">
 <!ENTITY hud.readout.visible "Sichtbar">
 <!ENTITY hud.gameinfo.fps "FPS">
-<!ENTITY hud.readout.gear "Gang">
+<!ENTITY hud.readout.gear "Fahrw.">
 <!ENTITY hud.readout.position "Position">
 <!ENTITY hud.readout.torp.bearing "Relativer Kurs">
 <!ENTITY hud.alerts.13.hold "Deine Brigade soll die Stellung unter allen Umständen halten">
@@ -3721,7 +3724,7 @@
 <!ENTITY hud.minimap.latlon "Deine Position in Längen- und Breitengraden">
 <!ENTITY hud.readout.infantry.seat "Sitz">
 <!ENTITY hud.minimap "Karte der näheren Umgebung">
-<!ENTITY hud.gameinfo.icon.2 "Keine Icons">
+<!ENTITY hud.gameinfo.icon.2 "Keine">
 <!ENTITY hud.binfo.state.theycapture "Feind nimmt ein!">
 <!ENTITY hud.minimap.out "Verkleinern">
 <!ENTITY hud.readout.infantry "Infanterie">
@@ -3755,7 +3758,7 @@
 <!ENTITY hud.alerts.25 "{1} braucht Munition">
 <!ENTITY hud.binfo.state.cantcapture "Nicht einnehmbar">
 <!ENTITY hud.binfo.state.notcontested "Stadt ist nicht contested!">
-<!ENTITY hud.gameinfo.icon.1 "Vehikeltyp">
+<!ENTITY hud.gameinfo.icon.1 "Typ">
 <!ENTITY hud.binfo.state.contested "Teilweise Erobert!">
 <!ENTITY hud.alerts.12.gained "Wir haben {1} eingenommen">
 <!ENTITY hud.binfo.state.noao "Kein Angriffsbefehl!">
@@ -3943,6 +3946,7 @@
 <!ENTITY dotcom.log.help "Usage: .log query, .log  on/off, .log level">
 <!ENTITY dotcom.mass.help "For new hydro model testing">
 <!ENTITY dotcom.m.help "Send a direct private message to a player">
+<!ENTITY dotcom.conv.setto "Convergence set to">
 <!ENTITY dotcom.shutdown.help "Notify players of imminent shutdown">
 <!ENTITY dotcom.set.help "Usage: .set  (Sets various vehicle physics values)">
 <!ENTITY dotcom.movebrigade.help "Change brigade home">
@@ -4002,6 +4006,7 @@
 <!ENTITY dotcom.reset.help "Usage: .reset (Reset trncd fx flags)">
 <!ENTITY dotcom.ttraverseconv.help "">
 <!ENTITY dotcom.voting.help "Enable or disable voting for the squad">
+<!ENTITY dotcom.conv.newconvergence "New convergence will take effect next time you spawn this vehicle">
 <!ENTITY dotcom.speed.help "">
 <!ENTITY dotcom.friends.help "View/manipulate &#39;friends&#39; list">
 <!ENTITY dotcom.hitmap.help "Usage: .hitmap  [] (Prints out or validates hitmap component names)">
@@ -4024,10 +4029,10 @@
 <!ENTITY dotcom.fpsresupply.help "Usage: .fpsresupply">
 <!ENTITY dotcom.fuze.help "Usage: .fuze  (Sets fuze interval for rounds that have this ability. With no arguments, prints current setting)">
 <!ENTITY dotcom.1.help "Send a message to radio 1">
+<!ENTITY dotcom.fbo.help "">
 <!ENTITY dotcom.clutter.help "">
 <!ENTITY dotcom.defend.help "Issue a defense objective on targeted CP">
 <!ENTITY dotcom.dev.help "Usage: .dev (Stub for executing current dev command)">
-<!ENTITY dotcom.fbo.help "">
 <!ENTITY dotcom.trntex.help "Usage: .trntex (Identifies texture at position)">
 <!ENTITY dotcom.um.help "Set current update mode (0 thru 12 inclusive)">
 <!ENTITY dotcom.renamesquad.help "Usage: .renamesquad  : Change the callsign (short name) of a player squad">
@@ -4066,8 +4071,8 @@
 <!ENTITY dotcom.overrun.help "Notify HC that base is overrun">
 <!ENTITY dotcom.leave.help ".leave Squad verlassen">
 <!ENTITY dotcom.inflod.help "Usage: .inflod  (Forces all infantry to render in that lod.  0 reverts to normal.)">
-<!ENTITY dotcom.exhaust.help "Usage: .exhaust  (Set vehicle exhaust on/off)">
 <!ENTITY dotcom.mlist.help "List mission membership stats">
+<!ENTITY dotcom.exhaust.help "Usage: .exhaust  (Set vehicle exhaust on/off)">
 <!ENTITY dotcom.vspawn.help "&#39;vspawn name x y z&#39; or &#39;vspawn -r [/]&#39;">
 <!ENTITY dotcom.inertia.help "Usage: .ineria  (Creates mass distribution file for vehicle)">
 <!ENTITY dotcom.afk.help "Toggle Away From Keyboard Flag">
@@ -4103,9 +4108,11 @@
 <!ENTITY dotcom.resync.help "Force reload of chat permissions">
 <!ENTITY dotcom.bdamage.help "">
 <!ENTITY dotcom.noechat.help "Toggle receipt of enemy area chat on/off">
+<!ENTITY dotcom.conv.currentlyset "Convergence is currently set to">
 <!ENTITY dotcom.say.help "Short radius area chat message">
 <!ENTITY dotcom.clear.help "Withdraw an objective on targetted CP">
 <!ENTITY dotcom.create.help ".create  Squad erstellen">
+<!ENTITY dotcom.conv.defaultcurrentlyset "Default convergence is currently set to">
 <!ENTITY dotcom.infcoltest.help "Usage: .infcoltest (Toggles chat display of infantry hits)">
 <!ENTITY dotcom.discochat.help "Usage: .dscochat (Interrupts the chat connection)">
 <!ENTITY dotcom.decline.help ".decline Einladung ablehnen">
@@ -4136,9 +4143,9 @@
 <!ENTITY dotcom.nowho.help "Diese Kommando erlaubt es, für das .who Kommando unsichtbar zu werden">
 <!ENTITY dotcom.3.help "Send a message to radio 3">
 <!ENTITY dotcom.vehstats.help "">
-<!ENTITY dotcom.find.help "Describe where a player is in the game">
 <!ENTITY dotcom.drawnormals.help "">
 <!ENTITY dotcom.cpinfo.help "Dumps CP details for a town">
+<!ENTITY dotcom.find.help "Describe where a player is in the game">
 <!ENTITY dotcom.kickall.help "Eject ALL players from the game">
 <!ENTITY dotcom.attack.help "Issue an attack objective on targetted CP">
 <!ENTITY dotcom.ammo.help ".ammo Muntion anfordern">
@@ -4342,7 +4349,7 @@
 <!ENTITY connect.ping.lossbig "*PAKETVERLUST*">
 <!ENTITY connect.error.ecorrupt "Invalid data-packet received, please check your network connection / firewall.">
 <!ENTITY connect.error.eagain "eagain">
-<!ENTITY connect.error.loginfail_client "Session rejected by host: This game client is not compatible with the host, please check for a patch and re-log.">
+<!ENTITY connect.error.loginfail_client "Session rejected by host (error 40111): This game client is not compatible with the host, please check for a patch and re-log.">
 <!ENTITY connect.login.auth.timeout "Zeitüberschreitung bei Authentifizierng">
 <!ENTITY connect.error.loginfail_activatefailed "Session rejected by host: Internal error (loginfail_activatefailed). Please restart your game client.">
 <!ENTITY connect.ping.kbps "Kbps: &#37;.1f in, &#37;.1f out.">
@@ -4380,7 +4387,7 @@
 <!ENTITY connect.error.unknown "Unbekannter Verbindungsfehler">
 <!ENTITY connect.login.auth.failed "Authentifizierung fehlgeschlagen">
 <!ENTITY connect.ping.notactive "Ping: ...">
-<!ENTITY connect.error.loginfail_sessionvalidation "Session rejected by host: This can be caused by the server restarting or someone logging-in another instance of your account. You will need to restart your game client to continue playing.">
+<!ENTITY connect.error.loginfail_sessionvalidation "Session closed by host (validation): This can happen if your connection to the host has been reset too many times or if the server has been restarted. You will need to restart your game client to continue playing.">
 <!ENTITY connect.error.econnrefused "Verbindung wurde abgelehnt">
 <!ENTITY connect.popup.title "Netzwerkfehler">
 <!ENTITY connect.find.nonefound "Netzwerkinitialisierung fehlgeschlagen/kein Netzwerk gefunden">
@@ -4408,13 +4415,14 @@
 <!ENTITY connect.error.loginfail_acceptbadindex "Session rejected by host: Internal error (loginfail_acceptbadindex). Please restart your game client.">
 <!ENTITY connect.lost.world "Verbindung zum Welt Server verloren">
 <!ENTITY connect.error.enetreset "Netzwerk wurde zurückgesetzt">
-<!ENTITY connect.error.loginfail_nosession "Session rejected by host: This can happen if your account has been logged in from another computer/instance of the game, if your connection to the host has been reset too many times, or if the server has been rsetarted.">
+<!ENTITY connect.error.loginfail_nosession "Session closed by host (nosession): This can happen if your connection to the host has been reset too many times or if the server has been restarted. You will need to restart your game client to continue playing.">
 <!ENTITY connect.error.enetunreach "Netzwerk nicht erreichbar">
 <!ENTITY connect.error.eteul_login_denied_ver "Login Denied (ver)">
 <!ENTITY connect.error.loginfail_activatenoplayerinfo "Session rejected by host: Internal error (loginfail_activatenoplayerinfo). Please restart your game client.">
 <!ENTITY connect.error.etimedout "Zeitüberschreitung der Verbindung">
 <!ENTITY connect.login.error "Fehler beim Verbinden zum Host">
 <!ENTITY connect.find.nobest "Konnte nicht zum Spielenetzwerk verbinden">
+<!ENTITY connect.error.loginfail_collision "Session Terminated (error 40114): Your account has been logged in from another instance of the game client.">
 <!ENTITY waypoints.stop "Halt">
 <!ENTITY waypoints.turn4 "4. Kurve">
 <!ENTITY waypoints.turn5 "5. Kurve">

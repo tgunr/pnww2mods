@@ -1208,6 +1208,7 @@
 <!ENTITY loc.english.502 "joystick 1 pov hat 2 w">
 <!ENTITY loc.english.127 "TEATRO BLITZKRIEG">
 <!ENTITY loc.english.431 "Invio (Tast.numerico)">
+<!ENTITY loc.host.663 "Kill on you awarded to {1}.">
 <!ENTITY loc.host.558 "Il numero di ripetizione è il numero di volte da ripetere l&#39;intero cestino; l&#39;intervallo tra le ripetizione è il tempo (per esempio 30s, 5m, 2h o 1d) di pausa tra ogni ripetizione. Il tempo tra ogni linea del cestino è calcolata in base al numero di caratteri nel messaggio.">
 <!ENTITY loc.host.147 "Non ci sono linee di rifornimento in {1}.">
 <!ENTITY loc.host.484 "Aggiunge una nota o visualizza le recenti note/avvisi/esclusioni sul registro permanente di un giocatore.">
@@ -1366,6 +1367,7 @@
 <!ENTITY loc.host.33 "Hai espulso {1} senza cerimonie.">
 <!ENTITY loc.host.306 "Le votazioni sono state disabilitate dal Comandante.">
 <!ENTITY loc.host.45 "Nessun riscontro.">
+<!ENTITY loc.host.664 "Assist for killing {1} (killed by {2}).">
 <!ENTITY loc.host.236 "{1}: Difedi - Resisti a tutti i costi!">
 <!ENTITY loc.host.455 "Il giocatore &#39;{1}&#39; è già il comandante della squadra &#39;{2}&#39;.">
 <!ENTITY loc.host.167 "Nessun obiettivo assegnato a {1}.">
@@ -3960,6 +3962,7 @@
 <!ENTITY dotcom.log.help "Usage: .log query, .log <system> on/off, .log level <warn/info/fatal>">
 <!ENTITY dotcom.mass.help "Per il test di una nuovo modello idraulico">
 <!ENTITY dotcom.m.help "Invia un messaggio privato diretto ad un giocatore">
+<!ENTITY dotcom.conv.setto "Convergence set to">
 <!ENTITY dotcom.shutdown.help "Notifica ai giocatori l&#39;immenente interruzione">
 <!ENTITY dotcom.set.help "Uso: .set <vel/spd> (Imposta vari valori fisici di un veicolo)">
 <!ENTITY dotcom.movebrigade.help "Cambia la sede della brigata">
@@ -4019,6 +4022,7 @@
 <!ENTITY dotcom.reset.help "Uso: .reset (Resetta gli indicatori di trncd fx)">
 <!ENTITY dotcom.ttraverseconv.help "">
 <!ENTITY dotcom.voting.help "Abilita o disabilita le votazione per la squadra">
+<!ENTITY dotcom.conv.newconvergence "New convergence will take effect next time you spawn this vehicle">
 <!ENTITY dotcom.speed.help "">
 <!ENTITY dotcom.friends.help "Vedi/manipola la lista degli &#39;amici&#39;">
 <!ENTITY dotcom.hitmap.help "Uso: .hitmap <vehiclename/all> [<validhit/validcmp>] (Stampa o valida i nomi dei componenti hitmap)">
@@ -4041,10 +4045,10 @@
 <!ENTITY dotcom.fpsresupply.help "Uso: .fpsresupply">
 <!ENTITY dotcom.fuze.help "Uso: .fuze <sec/metri> (dipende dal tipo di spoletta, 0 resetta al valore di default)> (Imposto l&#39;intervallo della spoletta per le munizioni che hanno questa possibilità. Senza valori, mostra l&#39;impostazione corrente)">
 <!ENTITY dotcom.1.help "Invia un messaggio sulla radio 1">
+<!ENTITY dotcom.fbo.help "">
 <!ENTITY dotcom.clutter.help "">
 <!ENTITY dotcom.defend.help "Attiva un obiettivo di difesa sul CP selezionato">
 <!ENTITY dotcom.dev.help "Uso: .dev (Routine per l&#39;esecuzione dell&#39;attuale comando dev)">
-<!ENTITY dotcom.fbo.help "">
 <!ENTITY dotcom.trntex.help "Uso: .trntex (Identifica la texture della posizione)">
 <!ENTITY dotcom.um.help "Imposto l&#39;attuale modo di aggiornamento (da 0 a 12 inclusi)">
 <!ENTITY dotcom.renamesquad.help "Uso: .renamesquad <vecchio nome> <nuovo nome>: Cambia l&#39;identificativo (nome breve) di una squadra">
@@ -4083,8 +4087,8 @@
 <!ENTITY dotcom.overrun.help "Notifica all&#39;Alto Comando che la base è invasa">
 <!ENTITY dotcom.leave.help ".leave">
 <!ENTITY dotcom.inflod.help "Uso: .inflod <LOD # range 1-4> (Forza tutta la fanteria a rendere in quel LOD. 0 ritorna alla normalità.)">
-<!ENTITY dotcom.exhaust.help "Uso: .exhaust <on/off> (Imposta gli scarichi del veicolo on/off)">
 <!ENTITY dotcom.mlist.help "Elenca lo stato dei membri di una missione">
+<!ENTITY dotcom.exhaust.help "Uso: .exhaust <on/off> (Imposta gli scarichi del veicolo on/off)">
 <!ENTITY dotcom.vspawn.help "Uso: .vspawn <vehicle> <x> <y> <z> or .vspawn -r [<remove id>/<all>]">
 <!ENTITY dotcom.inertia.help "Uso: .ineria <vehname> (Crea un file di distribuzione della massa per il veicolo)">
 <!ENTITY dotcom.afk.help "Commuta l&#39;indicatore di Away From Keyboard">
@@ -4120,9 +4124,11 @@
 <!ENTITY dotcom.resync.help "Forza il ricaricare dei permessi di chat">
 <!ENTITY dotcom.bdamage.help "">
 <!ENTITY dotcom.noechat.help "Commuta on/off la ricezione della chat di area nemica">
+<!ENTITY dotcom.conv.currentlyset "Convergence is currently set to">
 <!ENTITY dotcom.say.help "Messaggio di chat di area a corto raggio">
 <!ENTITY dotcom.clear.help "Ritir un obiettivo dal CP selezionato">
 <!ENTITY dotcom.create.help ".create <nome breve>">
+<!ENTITY dotcom.conv.defaultcurrentlyset "Default convergence is currently set to">
 <!ENTITY dotcom.infcoltest.help "Uso: .infcoltest (Commuta l&#39;avviso in chat dei colpi della fanteria)">
 <!ENTITY dotcom.discochat.help "Uso: .discochat (Interrompe la connesione alla chat)">
 <!ENTITY dotcom.decline.help "Uso: .decline: Declina un invito di squadra">
@@ -4153,9 +4159,9 @@
 <!ENTITY dotcom.nowho.help "Permette di nascondersi dal .who">
 <!ENTITY dotcom.3.help "Invia un messaggio sulla radio 3">
 <!ENTITY dotcom.vehstats.help "">
-<!ENTITY dotcom.find.help "Descrive dov&#39;è un giocatore in gioco">
 <!ENTITY dotcom.drawnormals.help "">
 <!ENTITY dotcom.cpinfo.help "Scarica i dettagli di CP per una città">
+<!ENTITY dotcom.find.help "Descrive dov&#39;è un giocatore in gioco">
 <!ENTITY dotcom.kickall.help "Espelle tutti i giocatori dal gioco">
 <!ENTITY dotcom.attack.help "Attiva un obiettivo di attacco sul CP selezionato">
 <!ENTITY dotcom.ammo.help "Richiesta di munizioni da oltri giocatori">
@@ -4359,7 +4365,7 @@
 <!ENTITY connect.ping.lossbig "*PACCHETTI PERSI*">
 <!ENTITY connect.error.ecorrupt "Invalid data-packet received, please check your network connection / firewall.">
 <!ENTITY connect.error.eagain "eagain">
-<!ENTITY connect.error.loginfail_client "Session rejected by host: This game client is not compatible with the host, please check for a patch and re-log.">
+<!ENTITY connect.error.loginfail_client "Session rejected by host (error 40111): This game client is not compatible with the host, please check for a patch and re-log.">
 <!ENTITY connect.login.auth.timeout "Tempo esaurito durante l&#39;autentificazione">
 <!ENTITY connect.error.loginfail_activatefailed "Session rejected by host: Internal error (loginfail_activatefailed). Please restart your game client.">
 <!ENTITY connect.ping.kbps "Kbps: &#37;.1f in, &#37;.1f out.">
@@ -4397,8 +4403,8 @@
 <!ENTITY connect.error.unknown "Unknown network error">
 <!ENTITY connect.login.auth.failed "Autentificazione fallita">
 <!ENTITY connect.ping.notactive "Ping: ...">
-<!ENTITY connect.error.loginfail_sessionvalidation "Session rejected by host: This can be caused by the server restarting or someone logging-in another instance of your account. You will need to restart your game client to continue playing.">
-<!ENTITY connect.error.econnrefused "Connection was refused">
+<!ENTITY connect.error.loginfail_sessionvalidation "Session closed by host (validation): This can happen if your connection to the host has been reset too many times or if the server has been restarted. You will need to restart your game client to continue playing.">
+<!ENTITY connect.error.econnrefused "Connection was refused: Server may be offline">
 <!ENTITY connect.popup.title "Errore di rete">
 <!ENTITY connect.find.nonefound "Inizializzazione della rete fallita/nessuna rete disponibile">
 <!ENTITY connect.error.enobufs "No buffer-memory left to send data">
@@ -4425,13 +4431,14 @@
 <!ENTITY connect.error.loginfail_acceptbadindex "Session rejected by host: Internal error (loginfail_acceptbadindex). Please restart your game client.">
 <!ENTITY connect.lost.world "Connessione al mondo persa">
 <!ENTITY connect.error.enetreset "Network connection was reset">
-<!ENTITY connect.error.loginfail_nosession "Session rejected by host: This can happen if your account has been logged in from another computer/instance of the game, if your connection to the host has been reset too many times, or if the server has been rsetarted.">
+<!ENTITY connect.error.loginfail_nosession "Session closed by host (nosession): This can happen if your connection to the host has been reset too many times or if the server has been restarted. You will need to restart your game client to continue playing.">
 <!ENTITY connect.error.enetunreach "Network is unreachable">
 <!ENTITY connect.error.eteul_login_denied_ver "Login Denied (ver)">
 <!ENTITY connect.error.loginfail_activatenoplayerinfo "Session rejected by host: Internal error (loginfail_activatenoplayerinfo). Please restart your game client.">
 <!ENTITY connect.error.etimedout "Timed out waiting for connection">
 <!ENTITY connect.login.error "Errore di connessione all&#39;host">
 <!ENTITY connect.find.nobest "Impossibile connettersi alla rete del gioco">
+<!ENTITY connect.error.loginfail_collision "Session Terminated (error 40114): Your account has been logged in from another instance of the game client.">
 <!ENTITY waypoints.stop "stop">
 <!ENTITY waypoints.turn4 "svolta 4">
 <!ENTITY waypoints.turn5 "svolta 5">

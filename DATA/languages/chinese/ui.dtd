@@ -1208,6 +1208,7 @@
 <!ENTITY loc.english.502 "摇杆1 pov hat 2 w">
 <!ENTITY loc.english.127 "C军战区">
 <!ENTITY loc.english.431 "小键盘中心">
+<!ENTITY loc.host.663 "{1}通过击杀你获得了积分。">
 <!ENTITY loc.host.558 "重复次数指的的是整个消息可以重复的次数；间隔时间指的是每次重复之间的时间（例如30s, 5m, 2h or 1d）。消息每行的时间是按照消息的字数来计算的。">
 <!ENTITY loc.host.147 "{1} 的基地没有任何补给链接。">
 <!ENTITY loc.host.484 "向玩家的永久记录中添加一个注释 - 或者查看近期的注释/警告/禁令。">
@@ -1366,6 +1367,7 @@
 <!ENTITY loc.host.33 "您很唐突无礼地踢出了 {1}。">
 <!ENTITY loc.host.306 "指挥官关闭了竞选。">
 <!ENTITY loc.host.45 "没有匹配。">
+<!ENTITY loc.host.664 "你帮助击杀了 {1} ({2}完成了击杀了)。">
 <!ENTITY loc.host.236 "{1}: 防御 - 不惜一切代价持有!">
 <!ENTITY loc.host.455 "玩家 &#39;{1}&#39; 已经是战队&#39;{2}&#39;的指挥官了。">
 <!ENTITY loc.host.167 "{1}没被分配目标 。">
@@ -3943,6 +3945,7 @@
 <!ENTITY dotcom.log.help "用法：.log query, .log <system> on/off, .log level <warn/info/fatal>">
 <!ENTITY dotcom.mass.help "测试新的水文模型">
 <!ENTITY dotcom.m.help "向某个玩家直接发送私聊信息">
+<!ENTITY dotcom.conv.setto "射击交叉点的设置为">
 <!ENTITY dotcom.shutdown.help "通知玩家即将关闭服务器">
 <!ENTITY dotcom.set.help "用法：.set <vel/spd>（为交通工具设定不同的物理数值）">
 <!ENTITY dotcom.movebrigade.help "更改战斗旅的驻地">
@@ -4002,6 +4005,7 @@
 <!ENTITY dotcom.reset.help "用法：.reset（重置trncd fx旗帜）">
 <!ENTITY dotcom.ttraverseconv.help "">
 <!ENTITY dotcom.voting.help "启动或关闭战队投票系统">
+<!ENTITY dotcom.conv.newconvergence "新射击交叉点的设置将在你下次出生时生效">
 <!ENTITY dotcom.speed.help "">
 <!ENTITY dotcom.friends.help "查看/整理好友列表">
 <!ENTITY dotcom.hitmap.help "用法：.hitmap <vehiclename/all> [<validhit/validcmp>]（显示或确证hitmap命令所影响的地图组成的名称）">
@@ -4024,10 +4028,10 @@
 <!ENTITY dotcom.fpsresupply.help "用法：.fpsresupply">
 <!ENTITY dotcom.fuze.help "用法：.fuze <sec/meters>（取决于导火线的类型，按0返回默认设置）>（设定导火线的间隔时间。如果不修改，将默认采用当前的设置）">
 <!ENTITY dotcom.1.help "向电台1发送一条信息">
+<!ENTITY dotcom.fbo.help "">
 <!ENTITY dotcom.clutter.help "">
 <!ENTITY dotcom.defend.help "向目标据点部署防御目标">
 <!ENTITY dotcom.dev.help "用法：.dev（存根执行当前的dev命令）">
-<!ENTITY dotcom.fbo.help "">
 <!ENTITY dotcom.trntex.help "用法：.trntex（识别特定位置的材质）">
 <!ENTITY dotcom.um.help "设置当前的更新模式（0 thru 12 inclusive）">
 <!ENTITY dotcom.renamesquad.help "用法：.renamesquad <旧的名称> <新的名称>：更改战队的简称">
@@ -4066,13 +4070,13 @@
 <!ENTITY dotcom.overrun.help "通知高级军官这个基地敌军超量">
 <!ENTITY dotcom.leave.help ".leave">
 <!ENTITY dotcom.inflod.help "用法：.inflod <LOD # range 1-4>（强制所有的步兵使用特定lod的渲染。按0将返回标准设置）">
-<!ENTITY dotcom.exhaust.help "用法：.exhaust <on/off> （设定战车排气管的开关）">
 <!ENTITY dotcom.mlist.help "列举任务成员的状态信息">
+<!ENTITY dotcom.exhaust.help "用法：.exhaust <on/off> （设定战车排气管的开关）">
 <!ENTITY dotcom.vspawn.help "用法：.vspawn <vehicle> <x> <y> <z> or .vspawn -r [<remove id>/<all>]">
 <!ENTITY dotcom.inertia.help "用法：.ineria <交通工具名称> （为指定的交通工具创建大量分发文件）">
 <!ENTITY dotcom.afk.help "启动/关闭“离开键盘状态（AFK）”状态">
 <!ENTITY dotcom.frameprof.help "用法：.frameprof <fps>（单帧画面压型）">
-<!ENTITY dotcom.conv.help "用法：.conv [<射程距离>]（设置武器的射击交叉点的位置，此设置只有在重新进入游戏世界时才能生效。如果不进行更改，将直接采用默认设置）。">
+<!ENTITY dotcom.conv.help "用法：.conv [<射程距离>]（设置武器的射击交叉点，此设置只有在重新进入游戏时才能生效。如果不进行更改，将直接采用默认设置）。">
 <!ENTITY dotcom.fpsanimspeed.help "用法：.animspeed <速率>（设定FPS动态模拟速度）">
 <!ENTITY dotcom.objectives.help "列举当前你方阵营的所有目标">
 <!ENTITY dotcom.doover.help "用法：.doover [次数]（执行最后输入的命令，可以通过输入数字来决定执行的次数）">
@@ -4103,9 +4107,11 @@
 <!ENTITY dotcom.resync.help "强制重新载入聊天许可">
 <!ENTITY dotcom.bdamage.help "">
 <!ENTITY dotcom.noechat.help "开关接受敌军区域聊天信息的能力">
+<!ENTITY dotcom.conv.currentlyset "射击交叉点的当前设置为">
 <!ENTITY dotcom.say.help "短半径区域聊天">
 <!ENTITY dotcom.clear.help "撤销目标据点上的所部属的目标">
 <!ENTITY dotcom.create.help ".create <简称>">
+<!ENTITY dotcom.conv.defaultcurrentlyset "目前默认的射击交叉点为">
 <!ENTITY dotcom.infcoltest.help "用法：.infcoltest（开关在聊天窗口显示步兵击中信息的功能）">
 <!ENTITY dotcom.discochat.help "用法：.discochat（切断聊天服务器的连接）">
 <!ENTITY dotcom.decline.help "用法：.decline：谢绝战队的邀请">
@@ -4136,9 +4142,9 @@
 <!ENTITY dotcom.nowho.help "允许你无视.who 命令所产生的效力">
 <!ENTITY dotcom.3.help "向电台3发送一条信息">
 <!ENTITY dotcom.vehstats.help "">
-<!ENTITY dotcom.find.help "描述玩家的当前位置信息">
 <!ENTITY dotcom.drawnormals.help "">
 <!ENTITY dotcom.cpinfo.help "集中显示城镇据点的详细信息">
+<!ENTITY dotcom.find.help "描述玩家的当前位置信息">
 <!ENTITY dotcom.kickall.help "把所有玩家踢出游戏">
 <!ENTITY dotcom.attack.help "向目标据点部署攻击目标">
 <!ENTITY dotcom.ammo.help "向其他玩家请求弹药补给">
@@ -4249,8 +4255,8 @@
 <!ENTITY vehicles.1.2.6.2 "MCDSW牵引车">
 <!ENTITY vehicles.3.2.7.5 "绿国57毫米中型反坦克炮">
 <!ENTITY vehicles.1.4.14.9 "蓝国空降反坦克步枪兵">
-<!ENTITY vehicles.2.4.9.6 "蓝星国轻机枪兵">
-<!ENTITY vehicles.4.4.9.15 "红国反坦克兵">
+<!ENTITY vehicles.2.4.9.6 "蓝星国自动步枪兵">
+<!ENTITY vehicles.4.4.9.15 "红国火箭筒反坦克兵">
 <!ENTITY vehicles.1.4.9.3 "蓝国工兵">
 <!ENTITY vehicles.4.1.2.2 "M110C-4重型战斗机">
 <!ENTITY vehicles.3.2.4.7 "绿国75毫米中型坦克">
@@ -4415,7 +4421,7 @@
 <!ENTITY connect.find.cantopen "无法打开游戏的网络连接">
 <!ENTITY connect.error.connectionerror "连接错误">
 <!ENTITY connect.ping.lossbig "*数据包丢失*">
-<!ENTITY connect.error.ecorrupt "Invalid data-packet received, please check your network connection / firewall.">
+<!ENTITY connect.error.ecorrupt "接收到不正确的数据包。请检查您的网络连接或者防火墙设置。">
 <!ENTITY connect.error.eagain "错误：还是错误">
 <!ENTITY connect.error.loginfail_client "你当前使用的客户端与服务器不兼容，请检查是否有补丁，重新安装后再登录。">
 <!ENTITY connect.login.auth.timeout "验证超时">
@@ -4490,6 +4496,7 @@
 <!ENTITY connect.error.etimedout "错误：超时">
 <!ENTITY connect.login.error "连接游戏服务器出错">
 <!ENTITY connect.find.nobest "无法连接游戏网络">
+<!ENTITY connect.error.loginfail_collision "会话终止 (错误 40114):您的帐号已经在其他客户端登录了。">
 <!ENTITY waypoints.stop "停止">
 <!ENTITY waypoints.turn4 "转弯 4">
 <!ENTITY waypoints.turn5 "转弯 5">
