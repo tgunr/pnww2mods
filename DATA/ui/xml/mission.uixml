@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <window id="mission" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
-	onshow="initWin(this)" onupdate="updateSpawnDelay()" aspectalign="center">
+	onshow="initWin(this)" onupdate="missionUpdate()" aspectalign="center">
 	<include file="lib/tutorial.uixml"/>
 	<include file="widgets/template.uixml"/>
 	<include file="classes/TreeControl2.uixml"/>
@@ -1140,7 +1140,7 @@
 				</tab>
 				<tab x="17" y="17" width="896" height="414" style="background-color: #00000066;" showtab='false' acceptmouseclick='false'>
 					<caption x="10" y="210" rright="10" height="20" style="font-size: +2; color: #ffffff;" align="center"
-						onshow="this.label = (pendingResults) ? getlocstring('mission.aartab.pending'): getlocstring('mission.aartab.pending.none')"/>
+						onshow="this.label = getlocstring('mission.aartab.pending.none')"/>
 				</tab>
 			</tabview>
 			<script>
@@ -1148,12 +1148,12 @@
 				
 				// aar specific scripts
 				
-				var pendingResults	= false;
 				var resultsView		= findview("mission-results");
 				var resultsDetails	= findview("mission-results-details");
 				var sortieList		= new ListControl(findview("sorties"), sortieSelect);
 				var killList		= new ListControl(findview("kills"));
 				
+				// called to init the aar tab
 				function showAARTab()
 				{
 					consoleprint("Show AAR\n");
@@ -1161,7 +1161,7 @@
 					setHelp(getlocstring('mission.aartab.help'));
 					initSortieResults();
 					
-					if(!pendingResults && game.globals.sorties.length > 0)
+					if(game.globals.sorties.length > 0)
 					{
 					 	resultsView.value = 0;
 					 	initMissionSummary();
@@ -1173,6 +1173,7 @@
 					}
 				}
 				
+				// this function inits the list of sorties if we have any
 				function initSortieResults()
 				{
 					consoleprint("Init sorties\n");
@@ -1209,6 +1210,7 @@
 					}
 				}
 				
+				// this function inits the list of sortie kills if you select a sortie
 				function initSortieKills()
 				{
 					consoleprint("Init kills\n");
@@ -1252,6 +1254,7 @@
 					}
 				}
 				
+				// this is called when you select a sortie
 				function sortieSelect(dblclick)
 				{
 					consoleprint("Select sortie\n");
@@ -1319,31 +1322,12 @@
 					}
 				}
 				
-				function showMissionResults()
-				{
-					consoleprint("Show Mission Results\n");
-					
-					musicPlayLoop();
-					pendingResults = true;
-					//showTab(2);
-					
-					var timeleft = game.player.client.state.timeleft;
-					
-					if(timeleft != 0 && game.player.client.state.upsells)
-					{
-						game.load("upsell");
-					}
-					else if(timeleft >= 0)
-					{
-						checkTimeLeft(timeleft, true);
-					}
-				}
-				
-				function initMissionResults()
+				// handles the case when we have new mission results incoming
+				function initMissionResults(r)
 				{
 					consoleprint("Init Mission Results\n");
 					
-					var results = new MissionResults(client.missionresults);
+					var results = new MissionResults(r);
 					
 					if(client.reservedweapon != null)
 					{
@@ -1393,7 +1377,6 @@
 					initMissionSummary();
 
 					resultsView.value = 0;
-					pendingResults = false;
 					sortieSelect(true);
 					
 					if(mission.state != null && mission.state != 1)
@@ -1406,6 +1389,7 @@
 						showTab(2);
 				}
 				
+				// this function calculates our total mission summary
 				function initMissionSummary()
 				{
 				 	consoleprint("Init mission summary!\n");
@@ -1477,11 +1461,12 @@
 		var mission 			= client.currentmission;
 		var missionType			= getlocstring('common.mission.' + mission.typeid); //getMissionType(mission.origin, mission.target);
 
-		var mobileSpawn			= true;					
-		var theatreMap			= findview("mapview");
-		var weaponPoll			= new CycleTimer(10000);
+		var mobileSpawn		= true;					
+		var theatreMap		= findview("mapview");
+		var weaponPoll		= new CycleTimer(10000);
 		var msPoll				= new CycleTimer(5000);
-		var spawnDelay			= new CycleTimer(50);
+		var spawnDelay		= new CycleTimer(50);
+		var aarCheck			= new CycleTimer(200);
 		
 		var membersCount		= 0; // total number of mission members
 		var membersSpawned		= 0; // total number of spawned members
@@ -1565,14 +1550,10 @@
 			if(game.globals.despawning != true)
 				showWeaponSelect();
 			
-			// reset it
-			game.globals.despawning = false;
-			
 			updateMissionMembers();
 			
 			// game callbacks
 			client.onmissionroomchange		= updateMissionMembers;
-			client.onmissionresults 		= initMissionResults;
 			client.oncrewjoinaccept			= onCrewAccept;
 			client.oncrewjoindeny			= onCrewDeny;
 			client.oncrewbailed				= onCrewBailed;
@@ -1603,6 +1584,25 @@
 			
 			initMissionSummary();
 			quickhelp();
+			
+			if(game.globals.despawning == true)
+			{
+				musicPlayLoop();
+				
+				// reset it
+				var timeleft = game.player.client.state.timeleft;
+				
+				if(timeleft != 0 && game.player.client.state.upsells)
+				{
+					game.load("upsell");
+				}
+				else if(timeleft >= 0)
+				{
+					checkTimeLeft(timeleft, true);
+				}
+				
+				game.globals.despawning = false;
+			}
 		}
 		
 		/***************** PAGE FUNCTIONS *****************/
@@ -1818,7 +1818,7 @@
 			}
 		}
 		
-		function updateSpawnDelay()
+		function missionUpdate()
 		{
 			if(spawnDelay.run())
 			{
@@ -1844,6 +1844,14 @@
 					setForward('mission.forward');
 					setForwardEnabled(true);
 				}
+			}
+			
+			if(aarCheck.run())
+			{
+				var results = client.missionresults;
+				
+				if(results != null)
+					initMissionResults(results);
 			}
 		}
 		
