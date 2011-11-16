@@ -77,32 +77,24 @@
 			}
 			else if(iconL1 != null && iconL2 != null && iconR1 == null && iconR2 == null)	// 2 left icons
 			{
-				var info = '(' + iconL1 + ' ' + iconL2.toUpperCase() + ') ';
-				
-				desc += '<ctxmenu label="' + info + htmlencode(label) + '" x="0" y="0"';
-				desc += ' width="' + this.width + '" height="' + this.height + '"';
+				var adjustedWidth = this.width + 32;
+				desc += '<ctxmenu label="' + htmlencode(label) + '" x="0" y="0" ';
+				desc += ' width="' + adjustedWidth + '" height="' + this.height + '"';
 				desc += ' hindent="' + this.hindent + '" vindent="' + this.vindent + '"';
-				desc += ' style="color: #FFFFFF; background-color: #000000; border-color: #FFFFFF;"';
+				desc += ' style="color: #FFFFFF; background-color: #000000; border-color: #FFFFFF; border-size-left: 32;"';
 				desc += ' onmouseenter="this.setstyleproperty(\'color\',\'#FFFF00\')"'
-				desc += ' onmouseexit="this.setstyleproperty(\'color\',\'#FFFFFF\')"/>';
-				
-				/* BORKED
-				desc += '<ctxmenu x="0" y="0"';
-				desc += ' width="' + this.width + '" height="' + this.height + '"';
-				desc += ' hindent="' + this.hindent + '" vindent="' + this.vindent + '"';
-				desc += ' style="color: #FFFFFF; background-color: #000000; border-color: #FFFFFF;"';
-				desc += ' onmouseenter="this.setstyleproperty(\'color\',\'#FFFF00\')"'
-				desc += ' onmouseexit="this.setstyleproperty(\'color\',\'#FFFFFF\')"> \n';
-				
-					desc += iconL1 + ' \n';
-					desc += iconL2 + ' \n';
-					desc += '<label="' + htmlencode(label) + '" x="30" /> \n'
-				
+				desc += ' onmouseexit="this.setstyleproperty(\'color\',\'#FFFFFF\')"> \n';				
+					desc += iconL1;
+					desc += iconL2;
+				//desc += '<caption label="' + htmlencode(label) + '" x="30" y="0" rright="0" height="' + this.height + '" style="color: #FFFFFF" acceptmouseclick="false"';
+				//desc += ' onmouseenter="this.setstyleproperty(\'color\',\'#FFFF00\')"';
+				//desc += ' onmouseexit="this.setstyleproperty(\'color\',\'#FFFFFF\')" /> \n';
 				desc += ' <ctxmenu />';
-				*/
+
 			}
 			else																			// Default to no icons
 			{
+				cprint("CreateMenu default to no icons");
 				desc += '<ctxmenu label="' + htmlencode(label) + '" x="0" y="0"';
 				desc += ' width="' + this.width + '" height="' + this.height + '"';
 				desc += ' hindent="' + this.hindent + '" vindent="' + this.vindent + '"';

@@ -403,10 +403,18 @@
 								var toPersona = game.player.client.getpersona(brigadesList[s].country.id, brigadesList[s].branchid);
 								
 								if(toPersona != null && game.player.client.state.paccess(toPersona))
-									brigadesMenu.addItem(new MenuItem(this.unitName(brigadesList[s]), brigadesList[s], this, this.createBrigadeMenu, getCountryFlagIcon(brigadesList[s]), getBrigTypeIcon(brigadesList[s])));
+								{	
+
+									var countryFlagIcon = getCountryFlagIcon(brigadesList[s]);
+									var brigadeTypeIcon = getBrigTypeIcon(brigadesList[s]);
+									var mItem = new MenuItem(this.unitName(brigadesList[s]), brigadesList[s], this, this.createBrigadeMenu, countryFlagIcon, brigadeTypeIcon);
+									cprint("MenuItem: " + mItem);
+									brigadesMenu.addItem(mItem);
+								}
 							}
 						}
 					}
+					if(brigadesMenu != null) cprint("brigadesMenu size is " + brigadesMenu.items.length);
 				}
 				
 				if(game.online == 1)
@@ -971,18 +979,26 @@
 		{
 			//consoleprint("Joining brigade " + brigade + "\n");
 			if(game.ingame)
+			{
 				return;
+			}
 			
 			if(brigade == null)
+			{
 				return;
+			}
 			
 			var persona = game.player.client.persona;
 			
 			if(brigade.country.side != persona.country.side)
+			{
 				return;
+			}
 			
 			if(persona.brigade != null && brigade.id == persona.brigade.id)
+			{
 				return;
+			}
 			
 			//consoleprint("Passed checks\n");
 			
@@ -1002,13 +1018,19 @@
 			}
 			
 			if(newPersona == null)
+			{
 				return;
+			}
 			
 			if(game.player.client.reservedweapon != null)
+			{
 				game.player.client.cancelweaponreservation();
+			}
 			
 			if(game.player.client.currentmission != null)
+			{
 				game.player.client.exitmission();
+			}
 			
 			// always at least go back to the brigades screen
 			var loadUI = "brigades";
@@ -1017,7 +1039,9 @@
 			{
 				//consoleprint("Persona needs selecting!\n");
 				if(game.player.client.selectpersona(newPersona))
+				{
 					persona = game.player.client.persona;
+				}
 			}
 			
 			if(persona.country.code == brigade.country.code && brigade.branch.toUpperCase() == persona.branch.toUpperCase())
@@ -1104,41 +1128,56 @@
 		 	return menu;
 		}
 		
-		function getCountryFlagIcon(brigade)
+		function getCountryFlagIconRound(brigade)
 		{
-			var flagsrc = "ui/uidata/chat/commicons3.bmp";
 			var country = brigade.country.code;
 			var icon = null;
-			var index = null;			// Used by uiCreateFlagIcon
+			var index = null;			// Used by uiFlagIconCreate
 			
 			if(country == "US")			index = 1;
 			else if(country == "UK")	index = 0;
 			else if(country == "FR")	index = 2;
 			else if(country == "DE")	index = 3;
-			else						index = 42;
+			else						index = 9;
 			
-			icon = '<view class="flagicon"  x="0" height="15" width="15" index="' + index + '" style="color: #FF0000;"/>';
+			icon = '<view class="flagicon"  x="0" height="15" width="15" index="' + index + '" style="color: #FF0000;" acceptmouseclick="false"/>';
 			
-			// return icon; // Not working yet
-			return country;
+			return icon;
+		}
+		
+		function getCountryFlagIcon(brigade)
+		{
+			var country = brigade.country.code;
+			var icon = null;
+			var index = null;			// Used by uiFlagIconCreate
+			
+			if(country == "US")			index = 34;
+			else if(country == "UK")	index = 33;
+			else if(country == "FR")	index = 35;
+			else if(country == "DE")	index = 36;
+			else						index = 9;
+			
+			icon = '<view class="flagicon"  x="0" height="15" width="15" index="' + index + '" style="color: #FF0000;" acceptmouseclick="false"/>';
+			
+			return icon;
 		}
 		
 		function getBrigTypeIcon(brigade)
 		{
-			var typesrc = "ui/textures/mapvehicles.bmp";
 			var type = brigade.branch;
 			var icon = null;	
 			var index = null;			// Used by uiCreateContactIcon
+			
+			cprint("Type: " + type);
 			
 			if(type == "army")			index = 8;
 			else if(type == "airforce")	index = 0;
 			else if(type == "navy")		index = 1;
 			else						index = 6;
 			
-			icon = '<view class="contacticon"  x="15" height="15" width="15" index="' + index + '" style="color: #FF0000;"/>';
+			icon = '<view class="contacticon"  x="15" height="15" width="15" index="' + index + '" style="color: #FF0000;" acceptmouseclick="false"/>';
 			
-			// return icon; // Not working yet
-			return type;
+			return icon;
 		}
 	}
 	
