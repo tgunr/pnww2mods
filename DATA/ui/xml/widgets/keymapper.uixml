@@ -165,9 +165,13 @@
 					{
 						var vehicle	= vehicles[i];
 						var index	= i + 1;
+						var country = vehicle.country.id;
+						var flag = getCountryFlagIcon(country);
 						
-						if(vehicle != null)
-							node.addNode(new TreeNode(index, keymapCategory + "," + index, 1, false, vehicle.description));
+						if((vehicle != null) && (country > 0))
+						{
+							node.addNode(new TreeNode(index, keymapCategory + "," + index, 1, false, vehicle.description, flag));
+						}
 					}
 				}
 				
@@ -383,6 +387,32 @@
 			{
 				convpane.visible = false;
 			}
+		}
+		
+		function getCountryFlagIcon(country)
+		{
+			var UK = 1, US = 2, FR = 3, DE = 4;
+			var icon = null;
+			var index = null;			// Used by uiFlagIconCreate
+			
+			if(country == US)			index = 33;
+			else if(country == UK)		index = 32;
+			else if(country == FR)		index = 34;
+			else if(country == DE)		index = 35;
+			else						index = 9;
+			
+			//icon = '<view class="flagicon"  x="0" height="15" width="15" index="' + index + '" style="color: #FF0000;" acceptmouseclick="false"/>';
+			
+			return index;
+			
+			/*
+			if(country == US)			return "US";
+			else if(country == UK)		return "UK";
+			else if(country == FR)		return "FR";
+			else if(country == DE)		return "DE";
+			else						return "";
+			*/
+			
 		}
 		
 		-->

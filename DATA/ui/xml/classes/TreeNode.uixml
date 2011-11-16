@@ -1,7 +1,7 @@
 <script>
 	<!--
 	
-	function TreeNode(id, data, level, branch, description)
+	function TreeNode(id, data, level, branch, description, flag)
 	{
 		// members
 		this.id			= id;
@@ -9,6 +9,7 @@
 		this.level		= level;
 		this.branch		= branch;
 		this.description	= (description != null) ? description: this.id;
+		this.flag		= flag;
 		
 		this.row		= -1;
 		this.init		= false;

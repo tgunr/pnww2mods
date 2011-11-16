@@ -1151,10 +1151,10 @@
 			var icon = null;
 			var index = null;			// Used by uiFlagIconCreate
 			
-			if(country == "US")			index = 34;
-			else if(country == "UK")	index = 33;
-			else if(country == "FR")	index = 35;
-			else if(country == "DE")	index = 36;
+			if(country == "US")			index = 33;
+			else if(country == "UK")	index = 32;
+			else if(country == "FR")	index = 34;
+			else if(country == "DE")	index = 35;
 			else						index = 9;
 			
 			icon = '<view class="flagicon"  x="0" height="15" width="15" index="' + index + '" style="color: #FF0000;" acceptmouseclick="false"/>';

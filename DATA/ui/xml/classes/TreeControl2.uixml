@@ -26,6 +26,7 @@
 		// icons
 		this.expandIcon			= TreeControl.EXPAND_ICON;
 		this.collapseIcon		= TreeControl.COLLAPSE_ICON;
+		this.flagIcon			= null;
 		
 		this.color				= null;
 		this.bgcolor			= null;
@@ -350,6 +351,14 @@
 			
 			vb = rb.addBuilder(new TextBuilder(rb, null, "caption", node.description, indent + tree.indent, 0, width - (indent + tree.indent), 16));
 			vb.addStyle("color", "#e9e3d9ff");
+		}
+		else if(node.flag != null)
+		{
+			vb = rb.addBuilder(new TextBuilder(rb, null, "caption", node.description, indent + 17, 0, width - indent + 17, 16));
+			vb.addStyle("color", "#e9e3d9ff");
+			var icon = rb.addBuilder(new ViewBuilder(vb, null, indent, 0, 15, 15));
+			icon.addAttribute("class", "flagicon");
+			icon.addAttribute("index", node.flag);
 		}
 		else
 		{
