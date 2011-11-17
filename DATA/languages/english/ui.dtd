@@ -4395,7 +4395,7 @@
 <!ENTITY connect.error.loginfail_activatenolocalinfo "Session rejected by host: Internal error (loginfail_activatenolocalinfo). Please restart your game client.">
 <!ENTITY connect.find.timeout.data "Timed out getting network data">
 <!ENTITY connect.lost.game "Game connection lost">
-<!ENTITY connect.error.eteul_connection_stalled "Connection timed out due to packet loss: network may be unavailable or the server you were connected to might no-longer be available. Please check your network connection and try again.">
+<!ENTITY connect.error.eteul_connection_stalled "Connection timed out: network may be unavailable or your connection may be overloaded. If this problem persists try a lower player visible limit, select a different network in settings and reduce the number of background network applications you are running.">
 <!ENTITY connect.login.chat.lost "Lost game connection during chat connect">
 <!ENTITY connect.error.enetdown "Network is down">
 <!ENTITY connect.find.nodata "Error getting connection data">
