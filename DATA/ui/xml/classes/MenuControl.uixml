@@ -77,11 +77,11 @@
 			}
 			else if(iconL1 != null && iconL2 != null && iconR1 == null && iconR2 == null)	// 2 left icons
 			{
-				var adjustedWidth = this.width + 32;
+				var adjustedWidth = this.width + 37;
 				desc += '<ctxmenu label="' + htmlencode(label) + '" x="0" y="0" ';
 				desc += ' width="' + adjustedWidth + '" height="' + this.height + '"';
 				desc += ' hindent="' + this.hindent + '" vindent="' + this.vindent + '"';
-				desc += ' style="color: #FFFFFF; background-color: #000000; border-color: #FFFFFF; border-size-left: 32;"';
+				desc += ' style="color: #FFFFFF; background-color: #000000; border-color: #FFFFFF; border-size-left: 37;"';
 				desc += ' onmouseenter="this.setstyleproperty(\'color\',\'#FFFF00\')"'
 				desc += ' onmouseexit="this.setstyleproperty(\'color\',\'#FFFFFF\')"> \n';				
 					desc += iconL1;

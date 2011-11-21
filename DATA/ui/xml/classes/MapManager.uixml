@@ -1157,7 +1157,7 @@
 			else if(country == "DE")	index = 35;
 			else						index = 9;
 			
-			icon = '<view class="flagicon"  x="0" height="15" width="15" index="' + index + '" style="color: #FF0000;" acceptmouseclick="false"/>';
+			icon = '<view class="flagicon"  x="0" height="15" width="20" index="' + index + '" style="color: #FF0000;" acceptmouseclick="false"/>';
 			
 			return icon;
 		}
@@ -1175,7 +1175,7 @@
 			else if(type == "navy")		index = 1;
 			else						index = 6;
 			
-			icon = '<view class="contacticon"  x="15" height="15" width="15" index="' + index + '" style="color: #FF0000;" acceptmouseclick="false"/>';
+			icon = '<view class="contacticon"  x="20" height="15" width="15" index="' + index + '" style="color: #FF0000;" acceptmouseclick="false"/>';
 			
 			return icon;
 		}
