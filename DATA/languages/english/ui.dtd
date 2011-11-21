@@ -4374,7 +4374,7 @@
 <!ENTITY connect.netcode2.firewall "[netcode2 connection failed, please check your firewall - reverting to standard network usage]">
 <!ENTITY connect.error.eteul_undef_callback "undefined callback">
 <!ENTITY connect.reconnect.failed "Host connection lost, reconnect failed">
-<!ENTITY connect.host.chat "Chat host">
+<!ENTITY connect.host.chat "Lost connection to chat host">
 <!ENTITY connect.refused "Connection refused by host">
 <!ENTITY connect.host.map "Map host">
 <!ENTITY connect.netcode2.disabled "[netcode2 disabled on server]">
@@ -4407,7 +4407,7 @@
 <!ENTITY connect.fail "Connection failed">
 <!ENTITY connect.error.eintr "eintr">
 <!ENTITY connect.error.eshutdown "Connection has shutdown">
-<!ENTITY connect.host.cell "Cell host">
+<!ENTITY connect.host.cell "Lost connection to cell host">
 <!ENTITY connect.login.chat.error "Unable to connect to chat host">
 <!ENTITY connect.error.eteul_enospc_send_buffer "network buffer error">
 <!ENTITY connect.error.loginfail_acceptbadteul "Session rejected by host: This client version is not supported by the server, please check for a patch/update.">
