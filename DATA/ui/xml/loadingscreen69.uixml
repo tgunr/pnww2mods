@@ -24,7 +24,7 @@
 			// game callbacks
 			game.onloadevent = doLoadEvent;
 			
-			if(game.online)
+			if(game.online && game.betarelease)
 				game.load("gameinfo", window);
 		}
 		
