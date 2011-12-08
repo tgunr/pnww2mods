@@ -4,10 +4,6 @@ uniform sampler2DShadow shadowTexture0;
 uniform sampler2DShadow shadowTexture1;
 uniform sampler2DShadow shadowTexture2;
 
-uniform sampler2D s1;
-uniform sampler2D s2;
-uniform sampler2D s3;
-
 uniform float ambientBias;
 
 uniform float enableBaseTexture;
@@ -35,10 +31,7 @@ void main(void)
 
     vec3 uv = gl_TexCoord[0].xyz / gl_TexCoord[0].w;
 
-    float dt0 = texture2D(s1, uv.xy).r;
-
     float shadow0 = shadow2D(shadowTexture0, uv + e).r;
-    
     shadow0 += shadow2D(shadowTexture0, uv + a).r;
     shadow0 += shadow2D(shadowTexture0, uv + b).r;
     shadow0 += shadow2D(shadowTexture0, uv + c).r;
