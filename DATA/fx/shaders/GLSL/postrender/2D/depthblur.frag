@@ -12,11 +12,12 @@ const vec3 shockParams = vec3(10.0, 0.1, 0.1);
 
 uniform float time; 
 
-const float focalplanedepth = 10.0;
-const float nearblurdepth = -200.0;
-const float farplanedepth = 500.0;
+const float focalplanedepth = 1.0;
+const float nearblurdepth = 0.0;//-200.0;
+const float farplanedepth = 3500.0;
 
 const float sampleDist = 1.0f;
+const float samples[6] = float[](-0.03, -0.02, -0.01, 0.01, 0.02, 0.03);
 
 vec4 RadialBlur(in vec2 uv)
 {
@@ -27,9 +28,6 @@ vec4 RadialBlur(in vec2 uv)
 
     if(ss > 0.0)
     {
-        // some sample positions
-        float samples[6] = float[](-0.03, -0.02, -0.01, 0.01, 0.02, 0.03);
-
         // 0.5,0.5 is the center of the screen
         // so substracting uv from it will result in
         // a vector pointing to the middle of the screen
