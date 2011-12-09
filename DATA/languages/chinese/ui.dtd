@@ -4168,7 +4168,7 @@
 <!ENTITY vehicles.1.4.9.12 "蓝国狙击手">
 <!ENTITY vehicles.3.2.7.1 "绿国25毫米轻型反坦克炮">
 <!ENTITY vehicles.3.2.4.9 "绿国76.2毫米中型近战坦克">
-<!ENTITY vehicles.2.2.4.1 "蓝星国75毫米中型坦克">
+<!ENTITY vehicles.2.2.4.1 "拉弗莱 S-20 轻型卡车">
 <!ENTITY vehicles.1.2.4.10 "蓝国57毫米重型坦克">
 <!ENTITY vehicles.2.4.9.12 "蓝星国狙击手">
 <!ENTITY vehicles.1.2.4.9 "蓝国75毫米重型坦克">
@@ -4258,6 +4258,7 @@
 <!ENTITY vehicles.1.4.14.9 "蓝国空降反坦克步枪兵">
 <!ENTITY vehicles.2.4.9.6 "蓝星国自动步枪兵">
 <!ENTITY vehicles.4.4.9.15 "红国火箭筒反坦克兵">
+<!ENTITY vehicles.2.2.7.1 "蓝星国40毫米中型高射炮">
 <!ENTITY vehicles.1.4.9.3 "蓝国工兵">
 <!ENTITY vehicles.4.1.2.2 "M110C-4重型战斗机">
 <!ENTITY vehicles.3.2.4.7 "绿国75毫米中型坦克">
@@ -4314,7 +4315,9 @@
 <!ENTITY vehicles.4.1.2.1 "M109E-4战斗截击机">
 <!ENTITY vehicles.4.2.4.9 "红国75毫米坦克歼击车">
 <!ENTITY vehicles.1.1.2.2 "HMK I 战斗截击机">
+<!ENTITY vehicles.2.2.7.3 "蓝星国76.2毫米重型反坦克炮">
 <!ENTITY vehicles.1.2.4.8 "蓝国57毫米中型坦克">
+<!ENTITY vehicles.2.2.7.2 "蓝星国57毫米中型反坦克炮">
 <!ENTITY vehicles.4.2.4.3 "红国20毫米轻型坦克">
 <!ENTITY vehicles.4.4.9.6 "红国轻机枪兵">
 <!ENTITY vehicles.1.1.1.3 "HMK I 中型歼击轰炸机">
@@ -4323,9 +4326,10 @@
 <!ENTITY vehicles.3.1.2.5 "C81A-2 战斗截击机">
 <!ENTITY vehicles.1.2.4.3 "蓝国75毫米重型坦克">
 <!ENTITY vehicles.4.4.9.10 "红国伞兵">
-<!ENTITY vehicles.3.2.4.3 "绿国47毫米中型坦克">
 <!ENTITY vehicles.4.1.2.3 "M109F-4战斗截击机">
+<!ENTITY vehicles.3.2.4.3 "绿国47毫米中型坦克">
 <!ENTITY vehicles.1.4.9.11 "蓝国指挥官">
+<!ENTITY vehicles.2.1.2.1 "蓝星国P-38F战斗截击机">
 <!ENTITY vehicles.3.4.9.7 "绿国枪榴弹兵">
 <!ENTITY vehicles.3.4.14.13 "绿国空降轻型迫击炮兵">
 <!ENTITY vehicles.1.2.4.2 "蓝国37毫米轻型坦克">
@@ -4424,12 +4428,12 @@
 <!ENTITY connect.ping.lossbig "*数据包丢失*">
 <!ENTITY connect.error.ecorrupt "接收到不正确的数据包。请检查您的网络连接或者防火墙设置。">
 <!ENTITY connect.error.eagain "错误：还是错误">
-<!ENTITY connect.error.loginfail_client "你当前使用的客户端与服务器不兼容，请检查是否有补丁，重新安装后再登录。">
+<!ENTITY connect.error.loginfail_client "登录失败（错误 40111）:你当前使用的客户端与服务器不兼容，请检查是否有补丁，重新安装后再登录。">
 <!ENTITY connect.login.auth.timeout "验证超时">
-<!ENTITY connect.error.loginfail_activatefailed "Login Failed (loginfail_activatefailed登录错误_启动失败)">
+<!ENTITY connect.error.loginfail_activatefailed "登录失败：内部错误（loginfail_activatefailed）。请重启您的游戏客户端。">
 <!ENTITY connect.ping.kbps "网速: &#37;.1f 进, &#37;.1f 出(kbps).">
 <!ENTITY connect.lost "&#37;ls: 错误 #&#37;u">
-<!ENTITY connect.error.loginfail_validation "错误 40113: 请重新启动客户端 - 如果问题持续发生，请联系客服人员。">
+<!ENTITY connect.error.loginfail_validation "登录失败（错误 40113）: 请重新启动客户端 - 如果问题持续发生，请联系客服人员。">
 <!ENTITY connect.lost.reconnect "与聊天服务器失去联系，正在尝试重新连接">
 <!ENTITY connect.login.noopen "无法打开战场服务器的连接">
 <!ENTITY connect.chat.noredirect "登录聊天服务器时，发生网络错误">
@@ -4439,7 +4443,7 @@
 <!ENTITY connect.login.chat.timeout "连接聊天服务器超时">
 <!ENTITY connect.error.econnaborted "错误：连接被中止了">
 <!ENTITY connect.lost.chat "与聊天服务器失去联系">
-<!ENTITY connect.error.loginfail_despawnnoplayer "Login Failed (loginfail_despawnnoplayer登录错误_没有玩家所以退出战场)">
+<!ENTITY connect.error.loginfail_despawnnoplayer "登录失败：内部错误（loginfail_despawnnoplayer）。请重启您的游戏客户端。">
 <!ENTITY connect.login.badlogin "未预料的登录失败">
 <!ENTITY connect.find.timeout.network "与游戏网络连接超时">
 <!ENTITY connect.netcode2.reverting "[netcode2 第二连接方案（UDP)失败，请检查你的防火墙或其它设置 - 正换成标准网络连接（TCP）]">
@@ -4454,22 +4458,22 @@
 <!ENTITY connect.refused "战场服务器拒绝连接">
 <!ENTITY connect.host.map "map服务器">
 <!ENTITY connect.netcode2.disabled "[服务器已关闭netcode2第二连接方案（UDP)]">
-<!ENTITY connect.error.loginfail_addplayer "Session rejected by host: Internal error (loginfail_addplayer). Please restart your game client.">
+<!ENTITY connect.error.loginfail_addplayer "登录失败：内部错误（loginfail_addplayer).）。请重启您的游戏客户端。">
 <!ENTITY connect.error.econnreset "错误：连接已重设了">
 <!ENTITY connect.login.nochat "聊天服务器连接失败">
-<!ENTITY connect.error.loginfail_despawnerror "Login Failed (loginfail_despawnerror登录错误_退出战场出错)">
+<!ENTITY connect.error.loginfail_despawnerror "登录失败：内部错误（loginfail_despawnerror）。请重启您的游戏客户端。">
 <!ENTITY connect.error.eteul_login_denied "错误：登录被拒绝">
 <!ENTITY connect.error.unknown "错误：不明的连接错误">
 <!ENTITY connect.login.auth.failed "验证失败">
 <!ENTITY connect.ping.notactive "网速延迟: ...">
-<!ENTITY connect.error.loginfail_sessionvalidation "登录错误 - 可能是连接问题">
+<!ENTITY connect.error.loginfail_sessionvalidation "登录失败（验证错误）：这可能是由于连接到主机被重置次数太多或者服务器重启所引起的。您需要重启游戏客户端。">
 <!ENTITY connect.error.econnrefused "错误：连接被拒绝">
 <!ENTITY connect.popup.title "网络错误">
 <!ENTITY connect.find.nonefound "网络初始化失败或者没有可用网络">
 <!ENTITY connect.error.enobufs "错误：系统没有缓冲内存">
 <!ENTITY connect.error.enotconn "错误：没有连接">
 <!ENTITY connect.login.timeout "连接游戏服务器超时">
-<!ENTITY connect.error.loginfail_activatenolocalinfo "Login Failed (loginfail_activatenolocalinfo登录错误_启动时没有客户端信息)">
+<!ENTITY connect.error.loginfail_activatenolocalinfo "登录失败：内部错误（loginfail_activatenolocalinfo）。请重启您的游戏客户端。">
 <!ENTITY connect.find.timeout.data "获取连接数据超时">
 <!ENTITY connect.lost.game "游戏连接丢失">
 <!ENTITY connect.error.eteul_connection_stalled "错误：连接失败">
@@ -4477,7 +4481,7 @@
 <!ENTITY connect.error.enetdown "错误：当前网络宕了">
 <!ENTITY connect.find.nodata "请求连接数据出错">
 <!ENTITY connect.ping.stats.brief "延迟: &#37;u(&#37;u)ms">
-<!ENTITY connect.error.loginfail_sessionown "错误 40112: 请重新启动客户端 - 如果问题持续发生，请联系客服人员。">
+<!ENTITY connect.error.loginfail_sessionown "登录失败（错误 40112）: 请重新启动客户端 - 如果问题持续发生，请联系客服人员。">
 <!ENTITY connect.ping.loss "丢失">
 <!ENTITY connect.error.eteul_enospc_send_socket "错误：teul协议套接错误">
 <!ENTITY connect.fail "连接失败">
@@ -4486,18 +4490,18 @@
 <!ENTITY connect.host.cell "cell服务器">
 <!ENTITY connect.login.chat.error "无法连接聊天服务器">
 <!ENTITY connect.error.eteul_enospc_send_buffer "错误：teul协议缓冲错误">
-<!ENTITY connect.error.loginfail_acceptbadteul "登录错误 - 你的客户端与服务器不符.">
-<!ENTITY connect.error.loginfail_acceptbadindex "Login Failed (loginfail_acceptbadindex登录错误_接受了错误目录)">
+<!ENTITY connect.error.loginfail_acceptbadteul "登录失败：你的客户端版本与服务器不符，请检查是否有补丁，重新安装后再登录">
+<!ENTITY connect.error.loginfail_acceptbadindex "登录失败：内部错误（loginfail_acceptbadindex）。请重启您的游戏客户端。">
 <!ENTITY connect.lost.world "与战场服务器失去联系">
 <!ENTITY connect.error.enetreset "错误：网络已重设了">
-<!ENTITY connect.error.loginfail_nosession "如果你的帐号在其他电脑上登录，而你到服务器的连接被重置多次或者服务器重新启动都会发生这种情况。">
+<!ENTITY connect.error.loginfail_nosession "登录失败（没有会话）：这可能是由于连接到主机被重置次数太多或者服务器重启所引起的。您需要重启游戏客户端。">
 <!ENTITY connect.error.enetunreach "错误：无法连接至指定网络">
 <!ENTITY connect.error.eteul_login_denied_ver "错误：登录被拒绝(ver)">
-<!ENTITY connect.error.loginfail_activatenoplayerinfo "Login Failed (loginfail_activatenoplayerinfo登录错误_启动时没有玩家信息)">
+<!ENTITY connect.error.loginfail_activatenoplayerinfo "登录失败：内部错误（loginfail_activatenoplayerinfo）。请重启您的游戏客户端。">
 <!ENTITY connect.error.etimedout "错误：超时">
 <!ENTITY connect.login.error "连接游戏服务器出错">
 <!ENTITY connect.find.nobest "无法连接游戏网络">
-<!ENTITY connect.error.loginfail_collision "会话终止 (错误 40114):您的帐号已经在其他客户端登录了。">
+<!ENTITY connect.error.loginfail_collision "登录失败 (错误 40114):您的帐号已经在其他客户端登录了。">
 <!ENTITY waypoints.stop "停止">
 <!ENTITY waypoints.turn4 "转弯 4">
 <!ENTITY waypoints.turn5 "转弯 5">

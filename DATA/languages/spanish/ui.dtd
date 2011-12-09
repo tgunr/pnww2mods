@@ -4204,7 +4204,7 @@
 <!ENTITY vehicles.1.4.9.12 "Francotirador Británico">
 <!ENTITY vehicles.3.2.7.1 "Cañón AT 25 mm SA mle 1934">
 <!ENTITY vehicles.3.2.4.9 "M4A3 Sherman 76">
-<!ENTITY vehicles.2.2.4.1 "M4A2 Sherman">
+<!ENTITY vehicles.2.2.4.1 "Laffly">
 <!ENTITY vehicles.1.2.4.10 "A22 Churchill Mk III">
 <!ENTITY vehicles.2.4.9.12 "Sniper">
 <!ENTITY vehicles.1.2.4.9 "A22 Churchill Mk VII">
@@ -4294,6 +4294,7 @@
 <!ENTITY vehicles.1.4.14.9 "Rifle Anti-Tanque Paracaidista Británico">
 <!ENTITY vehicles.2.4.9.6 "Automatic Rifleman">
 <!ENTITY vehicles.4.4.9.15 "Anti-Tank Soldier">
+<!ENTITY vehicles.2.2.7.1 "Bofors 40 mm AA Gun">
 <!ENTITY vehicles.1.4.9.3 "Zapador Británico">
 <!ENTITY vehicles.4.1.2.2 "Messerschmitt Bf 110C-4">
 <!ENTITY vehicles.3.2.4.7 "M4A2 Sherman">
@@ -4350,7 +4351,9 @@
 <!ENTITY vehicles.4.1.2.1 "Messerschmitt Bf 109E-4">
 <!ENTITY vehicles.4.2.4.9 "StuG III G">
 <!ENTITY vehicles.1.1.2.2 "Hurricane Mk I">
+<!ENTITY vehicles.2.2.7.3 "M5A2 3&#34; (76.2 mm) AT Gun">
 <!ENTITY vehicles.1.2.4.8 "A15 Crusader Mk III">
+<!ENTITY vehicles.2.2.7.2 "M1 (57 mm) AT Gun">
 <!ENTITY vehicles.4.2.4.3 "Panzer II C">
 <!ENTITY vehicles.4.4.9.6 "Ametralladora Ligera Alemana">
 <!ENTITY vehicles.1.1.1.3 "Havoc Mk I">
@@ -4359,9 +4362,10 @@
 <!ENTITY vehicles.3.1.2.5 "Curtiss Hawk H81A-2 (P-40C)">
 <!ENTITY vehicles.1.2.4.3 "Renault B1 bis">
 <!ENTITY vehicles.4.4.9.10 "Paracaidista Alemán">
-<!ENTITY vehicles.3.2.4.3 "Somua S-35">
 <!ENTITY vehicles.4.1.2.3 "Messerschmitt Bf 109F-4">
+<!ENTITY vehicles.3.2.4.3 "Somua S-35">
 <!ENTITY vehicles.1.4.9.11 "Suboficial Británico">
+<!ENTITY vehicles.2.1.2.1 "P-38F">
 <!ENTITY vehicles.3.4.9.7 "Granadero Francés">
 <!ENTITY vehicles.3.4.14.13 "Mortero Ligero Paracaidista Francés">
 <!ENTITY vehicles.1.2.4.2 "Renault R-35">
@@ -4411,9 +4415,9 @@
 <!ENTITY connect.netcode2.firewall "[netcode2 connection failed, please check your firewall - reverting to standard network usage]">
 <!ENTITY connect.error.eteul_undef_callback "undefined callback">
 <!ENTITY connect.reconnect.failed "perdida la conexión al servidor, reconexión fallida">
-<!ENTITY connect.host.chat "Lost connection to chat host">
+<!ENTITY connect.host.chat "Chat Host">
 <!ENTITY connect.refused "Conexión rechazada por el servidor">
-<!ENTITY connect.host.map "Map host">
+<!ENTITY connect.host.map "Map Host">
 <!ENTITY connect.netcode2.disabled "[netcode2 disabled on server]">
 <!ENTITY connect.error.loginfail_addplayer "Session rejected by host: Internal error (loginfail_addplayer). Please restart your game client.">
 <!ENTITY connect.error.econnreset "Connection was reset">
@@ -4444,7 +4448,7 @@
 <!ENTITY connect.fail "Conexión fallida">
 <!ENTITY connect.error.eintr "eintr">
 <!ENTITY connect.error.eshutdown "Connection has shutdown">
-<!ENTITY connect.host.cell "Lost connection to cell host">
+<!ENTITY connect.host.cell "Cell Host">
 <!ENTITY connect.login.chat.error "Imposible conectar al servidor de chat">
 <!ENTITY connect.error.eteul_enospc_send_buffer "network buffer error">
 <!ENTITY connect.error.loginfail_acceptbadteul "Session rejected by host: This client version is not supported by the server, please check for a patch/update.">
