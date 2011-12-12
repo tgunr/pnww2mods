@@ -1175,7 +1175,7 @@
 			else if(type == "navy")		index = 1;
 			else						index = 6;
 			
-			icon = '<view class="contacticon"  x="20" height="15" width="15" index="' + index + '" style="color: #FF0000;" acceptmouseclick="false"/>';
+			icon = '<view class="contacticon"  x="20" height="15" width="13" index="' + index + '" style="color: #FF0000;" acceptmouseclick="false"/>';
 			
 			return icon;
 		}
