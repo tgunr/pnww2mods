@@ -16,19 +16,24 @@
 		<caption label="${widgets.map.waypoints.notes}" x="10" y="146" width="200" height="20" maxlength="128" style="font-size: -1; color: #FFFFFF;"/>
 		<text id="wp-notes" x="10" y="45" height="100" width="200" acceptsfocus="true" style="background-color: #FFFFFF22;  color: #e9e3d9;"/>
 			
+		// If you're not a mission leader, the only waypoint you can add is the mortar barrage.
 		<view x="220" y="40" rright="20" rtop="40">
 			<caption label="${widgets.map.context.waypoints.add.waypoint.type}" x="5" height="20" rright="5" rtop="0" maxlength="128"
 				style="font-size: -1; color: #FFFFFF;"/>
-			<image x="115" height="15" width="15" rtop="30" src="ui/textures/waypoint.bmp" style="color: #0000FF;" />
-			<radiobutton label="${widgets.map.waypoints.add.rally}" x="5" rright="5" height="15" rtop="30"
+			<image id="rally-img" x="115" height="15" width="15" rtop="30" src="ui/textures/waypoint.bmp" style="color: #0000FF;" 
+			onshow="this.visible = isMissionLeader();"/>
+			<radiobutton id="rally-button" label="${widgets.map.waypoints.add.rally}" x="5" rright="5" height="15" rtop="30"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+				onshow="this.visible = isMissionLeader();"
 				onclick="setWaypointType('rally')" onshow="this.value = true;"/>
-			<image x="115" height="15" width="15" rtop="50" src="ui/textures/waypoint.bmp" style="color: #FF0000;" />
-			<radiobutton label="${widgets.map.waypoints.add.attack}" x="5" rright="5" height="15" rtop="50"
+			<image id="attack-img" x="115" height="15" width="15" rtop="50" src="ui/textures/waypoint.bmp" style="color: #FF0000;" 
+			onshow="this.visible = isMissionLeader();"/>
+			<radiobutton id="attack-button" label="${widgets.map.waypoints.add.attack}" x="5" rright="5" height="15" rtop="50"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
+				onshow="this.visible = isMissionLeader();"
 				onclick="setWaypointType('attack')"/>
-			<view class="contacticon"  x="115" height="15" width="15" rtop="70" index="7" style="color: #FF0000;"/>
-			<radiobutton label="${widgets.map.waypoints.add.mortar}" x="5" rright="5" height="15" rtop="70"
+			<view class="contacticon" id="mortar-img"  x="115" height="15" width="15" rtop="70" index="7" style="color: #FF0000;"/>
+			<radiobutton id="mortar-button" label="${widgets.map.waypoints.add.mortar}" x="5" rright="5" height="15" rtop="70"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('mortar')"/>
 		</view>
@@ -56,6 +61,22 @@
 			wpY 	= y;
 			
 			findview("wp-name").text = map.getnexthandle(type);
+			
+		}
+		
+		function isMissionLeader()
+		{		
+			cprint("In isMissionLeader()...");
+			
+			if(game.online)
+			{
+				var client = game.player.client;
+								
+				if(client.ismissionleader())
+					return true;	
+			}
+			
+			return false;
 		}
 		
 		function setWaypointType(type)

@@ -434,7 +434,7 @@
 							activeMenu.addItem(new MenuItem(contactsList[s].name, contactsList[s], this, this.createActivateMenu));
 					}
 					
-				 	if(isleader)
+				 	if(true)
 				 	{
 				 	 	var wpAddMenu = root.addItem(new MenuItem(getlocstring("widgets.map.context.waypoints.add.waypoint"), "rally", this, this.createWaypointMenu));
 
@@ -882,7 +882,7 @@
 		{
 			var mx = this.mgr.map.mx;
 			var my = this.mgr.map.my;
-			
+			cprint("!!!!!!");
 			return MapManager.createActionMenu(control, parent, item, 'if(this.mgr.canAddWaypoint()) load("widgets/map/waypoint").initWaypointPopup(this.mgr.map, this.selecteddata, ' + mx + ', ' + my + ')');
 		}
 
@@ -890,7 +890,7 @@
 		{
 			var mx = this.mgr.map.mx;
 			var my = this.mgr.map.my;
-
+			
 			return MapManager.createActionMenu(control, parent, item, 'if(this.mgr.canAddReport()) load("widgets/map/report").initReportPopup(this.mgr.map, this.selecteddata, ' + mx + ', ' + my + ')');
 		}
 
