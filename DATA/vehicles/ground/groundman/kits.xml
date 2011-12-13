@@ -8,7 +8,9 @@
 	
 		<!-- AMERICAN MODELS -->
 
-		<model name="us_helmet_01" path="TPS\meshes\american_inf\kit_us_helmet" attach="18" lod="0" />
+		<model name="us_helmet_m1" path="TPS\meshes\american_inf\kit_us_helmet_01_lod1" attach="18" lod="0" />
+		<model name="us_helmet_m1_mesh_camo" path="TPS\meshes\american_inf\kit_us_helmet_02_lod1" attach="18" lod="0" />
+		<model name="us_helmet_m1_mesh" path="TPS\meshes\american_inf\kit_us_helmet_03_lod1" attach="18" lod="0" />
 		<model name="us_canteen" path="TPS\meshes\american_inf\kit_us_canteen" attach="4" />
 		<model name="us_haversack" path="TPS\meshes\american_inf\kit_us_haversack" attach="9" />
 		<model name="us_riflebelt" path="TPS\meshes\american_inf\kit_us_riflebelt" attach="4" />
@@ -17,7 +19,9 @@
 		<model name="us_barammo" path="TPS\meshes\american_inf\kit_us_barammo" attach="4" />
 		
 		<!-- BRITISH MODELS -->
-		<model name="uk_helmet_01" path="TPS\meshes\british_inf\kit_uk_helmet_01_lod1" attach="18" lod="0"/>
+		<model name="uk_helmet_mkii" path="TPS\meshes\british_inf\kit_uk_helmet_01_lod1" attach="18" lod="0"/>
+		<model name="uk_helmet_mkii_mesh_camo" path="TPS\meshes\british_inf\kit_uk_helmet_02_lod1" attach="18" lod="0"/>
+		<model name="uk_helmet_mkii_mesh" path="TPS\meshes\british_inf\kit_uk_helmet_03_lod1" attach="18" lod="0"/>
 		<model name="uk_canteen" path="TPS\meshes\british_inf\kit_uk_canteen_lf_hip_lod1" attach="3"/>
 		<!-- Entrenching tool-->
 		<model name="uk_etool" path="TPS\meshes\british_inf\kit_uk_etool_lf_bk_lod1" attach="4"/>
@@ -39,7 +43,9 @@
 		<model name="uk_parahelm_01" path="TPS\meshes\para_brit\kit_uk_parahelm_lod1" attach="18" lod="0"/>
 		
 		<!-- FRENCH MODELS -->
-		<model name="fr_helmet_01" path="TPS\meshes\french_inf\kit_fr_helmet_01_lod1" attach="18" lod="0"/>
+		<model name="fr_helmet_adrian" path="TPS\meshes\french_inf\kit_fr_helmet_01_lod1" attach="18" lod="0"/>
+		<model name="fr_helmet_adrian_khaki_cover" path="TPS\meshes\french_inf\kit_fr_helmet_02_lod1" attach="18" lod="0"/>
+		<model name="fr_helmet_adrian_green_cover" path="TPS\meshes\french_inf\kit_fr_helmet_03_lod1" attach="18" lod="0"/>
 		<model name="fr_ammobag_lf" path="TPS\meshes\french_inf\kit_fr_ammobag_lf_bk_lod1" attach="4"/>
 		<model name="fr_canteen" path="TPS\meshes\french_inf\kit_fr_canteen_lf_hip_lod1" attach="4"/>
 		<model name="fr_gas_rt" path="TPS\meshes\french_inf\kit_fr_gas_rt_bk_lod1" attach="4"/>
@@ -73,7 +79,9 @@
 
 	
 		<!-- GERMAN MODELS -->
-		<model name="de_helmet_01" path="TPS\meshes\german_inf\kit_de_helmet_lod1" attach="18" lod="0"/>
+		<model name="de_helmet_m40" path="TPS\meshes\german_inf\kit_de_helmet_01_lod1" attach="18" lod="0"/>
+		<model name="de_helmet_m40_mesh" path="TPS\meshes\german_inf\kit_de_helmet_02_lod1" attach="18" lod="0"/>
+		<model name="de_helmet_m40_cover" path="TPS\meshes\german_inf\kit_de_helmet_03_lod1" attach="18" lod="0"/>
 		<model name="de_bread" path="TPS\meshes\german_inf\kit_de_bread_bk_lod1" attach="4"/>
 		<model name="de_canteen_rt" path="TPS\meshes\german_inf\kit_de_canteen_rt_hip_lod1" attach="4"/>
 		<model name="de_ruck" path="TPS\meshes\german_inf\kit_de_rucksack_lod1" attach="10"/>
@@ -108,7 +116,11 @@
 	
 	<objects>
 		<!-- AMERICAN OBJECTS -->
-		<object name="us_helmet" model="us_helmet_01"/>
+		<object name="us_helmet">
+			<model name="us_helmet_m1"/>
+			<model name="us_helmet_m1_mesh"/>
+			<model name="us_helmet_m1_mesh_camo"/>
+		</object>
 		<object name="us_riflebelt" model="us_riflebelt"/>
 		<object name="us_haversack" model="us_haversack"/>
 		<object name="us_canteen" model="us_canteen"/>
@@ -118,7 +130,11 @@
 		
 		<!-- BRITISH OBJECTS -->
 		<object name="uk_parahelm" model="uk_parahelm_01"/>
-		<object name="uk_helmet" model="uk_helmet_01"/>
+		<object name="uk_helmet">
+			<model name="uk_helmet_mkii"/>
+			<model name="uk_helmet_mkii_mesh"/>
+			<model name="uk_helmet_mkii_mesh_camo"/>
+		</object>		
 		<object name="uk_canteen" model="uk_canteen"/>
 		<object name="uk_etool" model="uk_etool"/>
 		<object name="uk_brenp_lf" model="uk_brenp_lf"/>
@@ -131,7 +147,11 @@
 		
 		<!-- FRENCH OBJECTS -->
 		<object name="fr_parahelm" model="fr_parahelm_01"/>
-		<object name="fr_helmet" model="fr_helmet_01"/>
+		<object name="fr_helmet">
+			<model name="fr_helmet_adrian"/>
+			<model name="fr_helmet_adrian_khaki_cover"/>
+			<model name="fr_helmet_adrian_green_cover"/>
+		</object>	
 		<object name="fr_ammobag_lf" model="fr_ammobag_lf"/>
 		<object name="fr_canteen" model="fr_canteen"/>
 		<object name="fr_gas_rt" model="fr_gas_rt"/>
@@ -153,8 +173,12 @@
 		<object name="fr_p_pholster_rt_hip" model="fr_p_pholster_rt_hip"/>
 		
 		<!-- GERMAN OBJECTS -->
-		<object name="de_parahelm" model="de_parahelm_01"/>
-		<object name="de_helmet" model="de_helmet_01"/>
+		<object name="de_parahelm" model="de_parahelm_01"/>		
+		<object name="de_helmet">
+			<model name="de_helmet_m40"/>
+			<model name="de_helmet_m40_mesh"/>
+			<model name="de_helmet_m40_cover"/>
+		</object>
 		<object name="de_bread" model="de_bread"/>
 		<object name="de_canteen_rt" model="de_canteen_rt"/>
 		<object name="de_etool" model="de_etool"/>
@@ -165,22 +189,24 @@
 		<object name="de_smg_ammo_rt" model="de_smg_ammo_rt"/>
 		<object name="de_pholster_rt_hip" model="de_pholster_rt_hip"/>
 		<object name="de_pholster_lf_web" model="de_pholster_lf_web"/>
-		<object name="de_ruck" model="de_ruck"/>
-		
-		<object name="us_helmet" model="us_helmet_01"/>
+		<object name="de_ruck" model="de_ruck"/>				
 		
 	<!-- System will randomly select from the group of sub object.
-		<object name="uk_helmet">
-			<model name="uk_helmet_1"/>
-			<model name="uk_helmet_2"/>
-			<model name="uk_helmet_3"/>
-		</object>
-	-->
+		
 		<object name="example">
 			<model name="uk_example1"/>
 			<model name="uk_example2"/>
 			<model name="uk_example3"/>
 		</object>
+		
+		<object name="uk_helmet">
+			<model name="uk_helmet_mkii"/>
+			<model name="uk_helmet_mkii_mesh"/>
+			<model name="uk_helmet_mkii_mesh_camo"/>
+		</object>
+	
+	-->
+		
 	</objects>
 	
 	<!-- objects represent an attached game object and have at least one model representing it visually -->
@@ -189,46 +215,46 @@
 	<kits>
 		<!-- AMERICAN KITS-->
 		<kit name="us-assault">
-			<object name="us_helmet" model="us_helmet_01"/>
+			<object name="us_helmet"/>
 			<object name="us_riflebelt" model="us_riflebelt"/>
 			<object name="us_haversack" model="us_haversack"/>
 			<object name="us_canteen" model="us_canteen"/>
 		</kit>
 		
 		<kit name="us-rifle">
-			<object name="us_helmet" model="us_helmet_01"/>
+			<object name="us_helmet"/>
 			<object name="us_riflebelt" model="us_riflebelt"/>
 			<object name="us_haversack" model="us_haversack"/>
 			<object name="us_canteen" model="us_canteen"/>
 		</kit>
 
 		<kit name="us-smg">
-			<object name="us_helmet" model="us_helmet_01"/>
+			<object name="us_helmet"/>
 			<object name="us_canteen" model="us_canteen"/>
 			<object name="us_smgammo" model="us_smgammo"/>
 			<object name="us_holster" model="us_holster"/>
 		</kit>
 
 		<kit name="us-bar">
-			<object name="us_helmet" model="us_helmet_01"/>
+			<object name="us_helmet"/>
 			<object name="us_haversack" model="us_haversack"/>
 			<object name="us_holster" model="us_holster"/>
 			<object name="us_barammo" model="us_barammo"/>
 		</kit>
 
 		<kit name="us-eng">
-			<object name="us_helmet" model="us_helmet_01"/>
+			<object name="us_helmet"/>
 			<object name="us_riflebelt" model="us_riflebelt"/>
 			<object name="us_haversack" model="us_haversack"/>
 		</kit>
 
 		<kit name="us-sniper">
-			<object name="us_helmet" model="us_helmet_01"/>
+			<object name="us_helmet"/>
 			<object name="us_canteen" model="us_canteen"/>
 			<object name="us_riflebelt" model="us_riflebelt"/>
 		</kit>
 		<kit name="us-bazooka">
-			<object name="us_helmet" model="us_helmet_01"/>		
+			<object name="us_helmet""/>		
 			<object name="us_holster" model="us_holster"/>
 			<object name="us_haversack" model="us_haversack"/>
 			<object name="us_canteen" model="us_canteen"/>
