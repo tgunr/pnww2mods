@@ -60,9 +60,9 @@
 			// add in perks
 			y = addPerk(perks, 0, y, content.getloc("rank"), rank.level, rank.name);
 			
-			if(rank.level == 6)	y = addPerk(perks, 0, y, content.getloc("missions"));
-			if(rank.level == 6)	y = addPerk(perks, 0, y, content.getloc("binocs"));
-			if(rank.level == 9)	y = addPerk(perks, 0, y, content.getloc("officer"));
+			if(rank.level == 3)	y = addPerk(perks, 0, y, content.getloc("missions"));
+			if(rank.level == 1)	y = addPerk(perks, 0, y, content.getloc("binocs"));
+			if(rank.level == 6)	y = addPerk(perks, 0, y, content.getloc("officer"));
 			
 			var results = game.player.client.missionresults;
 			
