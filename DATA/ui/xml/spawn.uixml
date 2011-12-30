@@ -32,7 +32,7 @@
 			
 			//descriptionText.y = view.scalev("y", 250);
 			
-			if(game.online)
+			if(game.online && game.betarelease)
 				game.load("gameinfo", window);
 		}
 		
