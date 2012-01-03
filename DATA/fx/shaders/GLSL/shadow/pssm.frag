@@ -6,7 +6,6 @@ uniform sampler2DShadow shadowTexture2;
 
 uniform float ambientBias;
 
-uniform float enableBaseTexture;
 uniform float zShadow0;
 uniform float zShadow1;
 uniform float zShadow2;
@@ -29,8 +28,31 @@ void main(void)
     float map2 = step(zShadow1, testZ) * step(testZ, zShadow2);
     float map3 = step(zShadow2, testZ);
 
-    vec3 uv = gl_TexCoord[0].xyz / gl_TexCoord[0].w;
+#if WANT_PCF
+    vec3 uv0 = gl_TexCoord[0].xyz / gl_TexCoord[0].w;
+    vec3 uv1 = gl_TexCoord[1].xyz / gl_TexCoord[1].w;
+    vec3 uv2 = gl_TexCoord[2].xyz / gl_TexCoord[2].w;
 
+	float scale = 0.0004;//88;
+    float shadow0 = 0.0;
+    float shadow1 = 0.0;
+    float shadow2 = 0.0;
+
+	for(float y = -1.5 ; y <= 1.5 ; y += 1.0)
+    {
+		for(float x = -1.5 ; x <= 1.5 ; x += 1.0)
+        {
+            shadow0 += shadow2D(shadowTexture0, uv0.xyz + vec3(x * scale, y * scale, 0.0)).r;
+            shadow1 += shadow2D(shadowTexture1, uv1.xyz + vec3(x * scale, y * scale, 0.0)).r;
+            shadow2 += shadow2D(shadowTexture2, uv2.xyz + vec3(x * scale, y * scale, 0.0)).r;
+        }
+    }
+
+	shadow0 *= 0.0625;
+	shadow1 *= 0.0625;
+	shadow2 *= 0.0625;
+#else
+    vec3 uv = gl_TexCoord[0].xyz / gl_TexCoord[0].w;
     float shadow0 = shadow2D(shadowTexture0, uv + e).r;
     shadow0 += shadow2D(shadowTexture0, uv + a).r;
     shadow0 += shadow2D(shadowTexture0, uv + b).r;
@@ -39,14 +61,13 @@ void main(void)
     shadow0 /= 5.0;
     
     uv = gl_TexCoord[1].xyz / gl_TexCoord[1].w;
-
     float shadow1 = shadow2D(shadowTexture1, uv + e).r;
     shadow1 += shadow2D(shadowTexture1, uv + a).r;
     shadow1 += shadow2D(shadowTexture1, uv + b).r;
     shadow1 += shadow2D(shadowTexture1, uv + c).r;
     shadow1 += shadow2D(shadowTexture1, uv + d).r;
     shadow1 /= 5.0;
-    
+  
     uv = gl_TexCoord[2].xyz / gl_TexCoord[2].w;
 
     float shadow2 = shadow2D(shadowTexture2, uv + e).r;
@@ -55,6 +76,7 @@ void main(void)
     shadow2 += shadow2D(shadowTexture2, uv + c).r;
     shadow2 += shadow2D(shadowTexture2, uv + d).r;
 	shadow2 /= 5.0;
+#endif
 
     float term0 = shadow0 * map0;
     float term1 = shadow1 * map1;
