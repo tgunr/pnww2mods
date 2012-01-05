@@ -8,10 +8,10 @@
 		this.items			= null;
 		this.mgr			= mgr;
 		this.creator		= creator;
-		this.iconL1			= iconL1;	// First icon slot to left of label
-		this.iconL2			= iconL2;	// Second icon slot to left of label
-		this.iconR1			= iconR1;	// First icon slot to right of label
-		this.iconR2			= iconR2;	// Second icon slot to right of label
+		this.iconL1			= iconL1;		// First icon slot to left of label
+		this.iconL2			= iconL2;		// Second icon slot to left of label
+		this.iconR1			= iconR1;		// First icon slot to right of label
+		this.iconR2			= iconR2;		// Second icon slot to right of label
 
 		this.addItem = function(item)
 		{

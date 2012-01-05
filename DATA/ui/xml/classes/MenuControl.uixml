@@ -62,8 +62,12 @@
 		 		this.root.close();
 		}
 
+		// We're not currently using the actual icon capability.
+		// This is a hack to fix a Mac CTD in 1.34.6+
+		// Originating programmer: Brian "Shef" Shef
 		this.createMenu = function(label, iconL1, iconL2, iconR1, iconR2)
 		{
+			cprint("In MenuControl.createMenu(...)");
 		 	var desc = "";
 			
 			if(iconL1 == null && iconL2 == null && iconR1 == null && iconR2 == null)		// No icons
@@ -74,7 +78,7 @@
 				desc += ' style="color: #FFFFFF; background-color: #000000; border-color: #FFFFFF;"';
 				desc += ' onmouseenter="this.setstyleproperty(\'color\',\'#FFFF00\')"'
 				desc += ' onmouseexit="this.setstyleproperty(\'color\',\'#FFFFFF\')"/>';
-			}
+			}		
 			else if(iconL1 != null && iconL2 != null && iconR1 == null && iconR2 == null)	// 2 left icons
 			{
 				var adjustedWidth = this.width + 37;

@@ -407,7 +407,12 @@
 
 									var countryFlagIcon = getCountryFlagIcon(brigadesList[s]);
 									var brigadeTypeIcon = getBrigTypeIcon(brigadesList[s]);
-									var mItem = new MenuItem(this.unitName(brigadesList[s]), brigadesList[s], this, this.createBrigadeMenu, countryFlagIcon, brigadeTypeIcon);
+									var brigInfo = getBrigadeInfo(brigade);
+									
+									var label = '[' + brigInfo + '] ' + this.unitName(brigadesList[s]);
+									cprint(" &&& label: " + label);
+									
+									var mItem = new MenuItem(label, brigadesList[s], this, this.createBrigadeMenu);
 									cprint("MenuItem: " + mItem);
 									brigadesMenu.addItem(mItem);
 								}
@@ -1157,9 +1162,14 @@
 			else if(country == "DE")	index = 35;
 			else						index = 9;
 			
-			icon = '<view class="flagicon"  x="0" height="15" width="20" index="' + index + '" style="color: #FF0000;" acceptmouseclick="false"/>';
+			icon = '<view class="flagicon"  x="0" height="13" width="20" index="' + index + '" style="color: #FF0000;" acceptmouseclick="false"/>';
 			
 			return icon;
+		}
+		
+		function getCountryName(brigade)
+		{
+			return brigade.country.code;
 		}
 		
 		function getBrigTypeIcon(brigade)
@@ -1178,6 +1188,23 @@
 			icon = '<view class="contacticon"  x="20" height="15" width="13" index="' + index + '" style="color: #FF0000;" acceptmouseclick="false"/>';
 			
 			return icon;
+		}
+		
+		function getBrigTypeName(brigade)
+		{
+			return brigade.branch;
+		}
+		
+		function getBrigadeInfo(brigade)
+		{
+			// Get necessary info...
+			var country = getCountryName(brigade).toLowerCase();
+			var branch = getBrigTypeName(brigade);
+			
+			// Build localization string
+			var loc = "common.countries." + country + '.' + branch;
+			
+			return getlocstring(loc);
 		}
 	}
 	
