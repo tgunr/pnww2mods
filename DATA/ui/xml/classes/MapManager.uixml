@@ -439,7 +439,7 @@
 							activeMenu.addItem(new MenuItem(contactsList[s].name, contactsList[s], this, this.createActivateMenu));
 					}
 					
-				 	if(true)
+				 	if(isleader)
 				 	{
 				 	 	var wpAddMenu = root.addItem(new MenuItem(getlocstring("widgets.map.context.waypoints.add.waypoint"), "rally", this, this.createWaypointMenu));
 
