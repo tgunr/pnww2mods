@@ -357,12 +357,18 @@
 		
 		function saveConvergence()
 		{
-			var convinput = findview("conv-input");
-			var value = parseInt(convinput.text);
+			var convinput = findview("conv-input");			
 			var node = categoryTree.selectedNode();
 			var parts = node.data.split(',')
 			var vehicles = game.getkeymapvehicles(keymapCategory);
-			var vtype = vehicles[parts[1]-1];
+			var vtype = vehicles[parts[1]-1];			
+			if(convinput.text == null || convinput.text == '')	// An empty value will cause CTD
+			{
+				if(vtype != null)
+					convinput.text = game.getconvergence(vtype)	// User cleared the value, so let's reset it to the saved (or default) setting
+				return;
+			}
+			var value = parseInt(convinput.text);
 			
 			if(vtype != null)
 			{
@@ -371,6 +377,8 @@
 				else
 					game.saveconvergence(vtype, value, 0); // Convergence hasn't changed, let's pull the saved (or default) setting
 			}
+			
+			
 			
 			return;
 		}
