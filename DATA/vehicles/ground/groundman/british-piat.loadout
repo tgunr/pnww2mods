@@ -7,25 +7,23 @@
 #maxoversupply = 2
 # sounds available for the mounts
 sound1 = sounds\troop\mk4no1.wav
-sound2 = sounds\troop\grenade-throw.wav
+sound2 = sounds\troop\enfieldmk2no1.wav
 sound3 = sounds\troop\grenade-throw.wav
 
 loadout = 1
 
 # Rifle
 mountnum = 1
-
-# FIX: SOUND NEEDED. MAKE A TICKET!
 mountsound = sound1
 weapon = piat
 
 # Pistol
-#mountnum = 2
-#mounsound = sound2
-#weapon = enfieldno2mk1
+mountnum = 2
+mounsound = sound2
+weapon = enfieldno2mk1
 
 # Knife
-mountnum = 4
+mountnum = 3
 weapon = knifegeneric
 
 # build tool

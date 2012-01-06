@@ -68,7 +68,6 @@
 		<weapon lastresort="true">alliedknife</weapon>
 		<weapon index="8">buildtool</weapon>
 	</visloadout>
-	<!-- FIX - NOT FINISHED -->
     <visloadout id="uk-piat" arms="ukarmy">
 		<weapon>piat</weapon>		
 		<weapon>webley</weapon>
@@ -204,6 +203,13 @@
 		<weapon index="8">buildtool</weapon>
 	</visloadout>
 
+	<visloadout id="fr-bazooka" arms="frarmy" atp="2">
+		<weapon>bazooka</weapon>
+		<weapon>m1935a</weapon>
+		<weapon lastresort="true">alliedknife</weapon>
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
+	
 	<!-- French Airborne Troops -->
 
 	<visloadout id="fr-para-rfl" arms="frpara" atp="2" para="true">	
@@ -433,7 +439,6 @@
 		<weapon>colt1911</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
 		<weapon index="8">buildtool</weapon>
-		-->
 	</visloadout>
 	
 

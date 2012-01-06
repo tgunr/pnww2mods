@@ -46,11 +46,9 @@
 	<include file="british-smg.loadout.xml"/>
 </variant>
 
-<!--  UK PIAT ROUND - Commented out until ready
 <variant id="uk-piat" shape="british-piat" description="Anti-Tank Soldier" icon="PIAT">
 	<include file="british-piat.loadout.xml"/>
 </variant>
--->
 
 <variant id="uk-para-rfl" shape="british-para-rfl" description="Airborne Rifleman" icon="Rifleman">	
 	<include file="british-para-rfl.loadout.xml"/>
@@ -109,6 +107,10 @@
 
 <variant id="fr-smg" shape="french-smg" description="Submachine Gunner" icon="SMG">
 	<include file="french-smg.loadout.xml"/>
+</variant>
+
+<variant id="fr-bazooka" shape="fr-bazooka" description="Anti-Tank Infantry" icon="Bazooka">
+	<include file="fr-bazooka.loadout.xml"/>
 </variant>
 
 <!-- French Paratroop Units -->

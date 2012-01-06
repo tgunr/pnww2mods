@@ -67,6 +67,8 @@
 		<param name="targetdist" value="0"/>
 		<!-- texture list we cannot build on  -->
 		<param name="badtextures" value="rails1,rails2,road1,asphault1,airbase1,airfield1,provinggroundairfield1"/>
+		<!-- texture list we can build on -->
+		<param name="oktextures" value="clear1"/>
 		<!-- lifetime on the host [default: don't] -->
 		<param name="timeout-minutes" value="0"/>
 	</defaults>
