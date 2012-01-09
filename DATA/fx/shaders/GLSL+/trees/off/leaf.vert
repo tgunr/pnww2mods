@@ -1,38 +1,40 @@
 #version 150
 #extension GL_ARB_uniform_buffer_object : enable
+#extension GL_EXT_gpu_shader4 : enable                             
 
 uniform vec2 cameraangle;
 
 uniform float diffuseScale;
 
-uniform TreeParamsBlock
-{
-    vec4 rotation;
-    vec3 treepos;
-};
-
 uniform MatrixBlock
 {
-    mat4 MVMatrix;
-    mat4 ProjectionMatrix;
-    mat4 NormalMatrix;
+    mat4 b_MVMatrix;  
+    mat4 b_NormalMatrix;
+    mat4 b_ProjectionMatrix;
+};
+
+uniform TreeInstanceBlock
+{
+    vec4 b_rotation[250];
+    vec4 b_position[250];
 };
 
 in vec3 in_pos;
 in vec3 in_center;
 in vec3 in_normal;
 in vec4 in_params;
-in vec2 in_uv;
+in vec2 in_tex0;
 
-out vec3 N;
-out vec3 vertexpos;
+out vec3 eyepos;
 out float diffcoef;
 out float fogdist;
-out vec2 uv;
+out float alphatest;
+out vec2 tex0;
+out vec3 N;
 
 void main()
 {
-	float azimuth = cameraangle.x;
+    float azimuth = cameraangle.x;
 	float pitch = cameraangle.y;
 
 	float rotatex = in_params.x;
@@ -41,10 +43,18 @@ void main()
 	
 	vec3 normal = in_normal;
 	
-	vec4 position = vec4(in_center, 1.0);
-	position.xy = vec2(dot(rotation.yxw, position.xyz), dot(rotation.zyw, position.xyz));
+    vec4 rot = b_rotation[gl_InstanceID];
+    vec4 pos = b_position[gl_InstanceID];
+
+    rot.w = 0.0;
+
+    alphatest = pos.w;
+    pos.w = 1.0;
+
+	vec4 center = vec4(in_center, 1.0);
+	center.xy = vec2(dot(rot.yxw, center.xyz), dot(rot.zyw, center.xyz));
 			
-    diffcoef = dimming * diffuseScale;
+	diffcoef = dimming * diffuseScale;
 
 	vec3 cornerpt = in_pos.xyz;
 
@@ -57,7 +67,7 @@ void main()
 	z22 = z11;
 	z12 = -z12;
 	
-        // rotation y
+	// rotation y
 	float y11, y13, y31, y33;
 	
 	y11 = cos(pitch + rotatey);
@@ -67,24 +77,26 @@ void main()
 	y13 = -y13;
 	
 	// rotz * roty
-	mat3 rot = mat3(z11 * y11, z21 * y11, y31,
-                    z12, z22, 0,
-	                z11 * y13, z21 * y13, y33);
+	mat3 rotmat = mat3(z11 * y11, z21 * y11, y31,
+                       z12, z22, 0,
+	                   z11 * y13, z21 * y13, y33);
                
-	cornerpt = rot * cornerpt;
+	cornerpt = rotmat * cornerpt;
 	    
- 	normal.xy = vec2(dot(rotation.yxw, normal), dot(rotation.zyw, normal));
-	N = normalize(mat3(NormalMatrix) * normal);
+    mat3 normalmatrix = mat3(b_NormalMatrix);
+
+ 	normal.xy = vec2(dot(rot.yxw, normal), dot(rot.zyw, normal));
+	N = normalize(normalmatrix * normal);
 	
-	position.xyz += cornerpt + treepos.xyz;
-	position.w = 1.0;
+	center.xyz += cornerpt + pos.xyz;
+	center.w = 1.0;
 	
-	position = MVMatrix * position;
-	fogdist = abs(position.z);
+	center = b_MVMatrix * center;
+	fogdist = abs(center.z);
 
-	gl_Position = ProjectionMatrix * position;
+	gl_Position = b_ProjectionMatrix * center;
+    
+	tex0 = in_tex0;
 
-	uv = in_uv.xy;
-
-	vertexpos = position.xyz;
+	eyepos = center.xyz;
 }

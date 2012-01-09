@@ -2,8 +2,6 @@
 #extension GL_ARB_uniform_buffer_object : enable
 #extension GL_EXT_gpu_shader4 : enable                             
 
-uniform samplerBuffer data;
-
 uniform vec2 cameraangle;
 
 uniform float diffuseScale;
@@ -13,6 +11,12 @@ uniform MatrixBlock
     mat4 b_MVMatrix;  
     mat4 b_NormalMatrix;
     mat4 b_ProjectionMatrix;
+};
+
+uniform TreeInstanceBlock
+{
+    vec4 b_rotation[250];
+    vec4 b_position[250];
 };
 
 in vec3 in_pos;
@@ -33,8 +37,6 @@ out vec2 tex0;
 
 void main()
 {
-    int idx = gl_InstanceID * 2;
-
     float azimuth = cameraangle.x;
 	float pitch = cameraangle.y;
 
@@ -45,8 +47,10 @@ void main()
 	vec3 normal = in_normal;
 	vec3 tangent = in_tangent;
 	
-    vec4 rot = texelFetchBuffer(data, idx);
-    vec4 pos = texelFetchBuffer(data, idx + 1);
+    vec4 rot = b_rotation[gl_InstanceID];
+    vec4 pos = b_position[gl_InstanceID];
+
+    rot.w = 0.0;
 
     alphatest = pos.w;
     pos.w = 1.0;
@@ -100,7 +104,7 @@ void main()
 	fogdist = abs(center.z);
 
 	gl_Position = b_ProjectionMatrix * center;
-
+    
 	tex0 = in_tex0;
 
 	eyepos = center.xyz;

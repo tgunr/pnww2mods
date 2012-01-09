@@ -1,39 +1,49 @@
 #version 150
+#extension GL_ARB_uniform_buffer_object : enable
 
-uniform sampler2D src1;
+uniform MaterialBlock
+{
+	vec4 b_Kd;
+	vec4 b_Ka;
+	vec4 b_Ks;
+	vec4 b_Ke;
+	float b_shininess;
+};
 
-uniform vec4 Ka;
-uniform vec4 Kd;
+uniform sampler2D diffuse;
 
-in vec2 uv;
 in vec3 N;
+in vec2 tex0;
 in vec3 vertexpos;
 in float diffcoef;
+in float alphatest;
 
 out vec4 out_color;
 
+const vec4 defaultcolor = vec4(0);
+
 vec4 fogThis(in vec4);
-void lightGetAmbientDiffuse(in vec3, 
-                            out vec4, 
-                            out vec4);
+void lightGetAmbientDiffuse(in vec3, out vec4, out vec4);
 
 void main()
 {
-   vec4 base = texture2D(src1, uv);
-      
-   vec4 diffuse;
-   vec4 ambient;
+    vec4 base = texture2D(diffuse, tex0);
+
+    out_color = defaultcolor;
+
+    if(base.a > alphatest)
+    {     
+        vec4 dif;
+        vec4 amb;
+
+        // Interpolated values need to be normalized
+        vec3 n = normalize(N);
+
+        lightGetAmbientDiffuse(n, amb, dif);
+
+        vec4 color = base * (dif * b_Kd * diffcoef + amb * b_Ka);
    
-   // Interpolated values need to be normalized
-   vec3 n = normalize(N);
-
-   lightGetAmbientDiffuse(n, ambient, diffuse);
-
-   ambient *= Ka;
-   diffuse *= (Kd * diffcoef);
-    
-   vec4 color = base * (diffuse + ambient);
-
-   out_color = fogThis(color);
-   out_color.a = base.a;
+        out_color = fogThis(color);
+        out_color.a = base.a;
+    }
 }

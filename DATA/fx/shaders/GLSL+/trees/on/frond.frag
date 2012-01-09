@@ -20,6 +20,8 @@ in float alphatest;
 
 out vec4 out_color;
 
+const vec4 defaultcolor = vec4(0, 0, 0, 0);
+
 vec4 fogThis(in vec4);
 void lightGetAmbientDiffuse(in vec3, out vec4, out vec4);
 
@@ -27,18 +29,20 @@ void main()
 {
     vec4 base = texture2D(src1, tex0);
 
-    if(base.a < alphatest)
-        discard;
+    out_color = defaultcolor;
 
-    vec4 diffuse;
-    vec4 ambient;
+    if(base.a > alphatest)
+    {
+        vec4 diffuse;
+        vec4 ambient;
 
-    // Normalize interpolated values
-    vec3 n = normalize(N);
+        // Normalize interpolated values
+        vec3 n = normalize(N);
 
-    lightGetAmbientDiffuse(n, ambient, diffuse);
+        lightGetAmbientDiffuse(n, ambient, diffuse);
 
-    vec4 color = base * (diffuse * diffuseScale + ambient * b_Ka);
+        vec4 color = base * (diffuse * diffuseScale + ambient * b_Ka);
 
-    out_color = fogThis(color);
+        out_color = fogThis(color);
+    }
 }

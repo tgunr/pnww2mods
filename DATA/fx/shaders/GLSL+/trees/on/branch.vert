@@ -2,13 +2,17 @@
 #extension GL_ARB_uniform_buffer_object : enable
 #extension GL_EXT_gpu_shader4 : enable                             
 
-uniform samplerBuffer data;
-
 uniform MatrixBlock
 {
     mat4 b_MVMatrix;  
     mat4 b_NormalMatrix;
     mat4 b_ProjectionMatrix;
+};
+
+uniform TreeInstanceBlock
+{
+    vec4 b_rotation[250];
+    vec4 b_position[250];
 };
 
 in vec3 in_pos;
@@ -28,14 +32,14 @@ out float alphatest;
 
 void main() 
 {   
-    int idx = gl_InstanceID * 2;
-
     vec4 inpos = vec4(in_pos, 1.0);
 
     vec3 tangent = in_tangent;
 
-    vec4 rot = texelFetchBuffer(data, idx);
-    vec4 pos = texelFetchBuffer(data, idx + 1);
+    vec4 rot = b_rotation[gl_InstanceID];
+    vec4 pos = b_position[gl_InstanceID];
+
+    rot.w = 0.0f;
 
     alphatest = pos.w;
     pos.w = 1.0;
@@ -63,6 +67,7 @@ void main()
     N = normalize(normalmatrix * normal);
 
     inpos = b_MVMatrix * inpos;
+
     fogdist = abs(inpos.z);
       
     tex0 = in_tex0;
