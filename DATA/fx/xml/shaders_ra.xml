@@ -1,0 +1,812 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<glslprograms>
+  <!--=================================================================-->
+  <program name ="multimask">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multimask.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multimask.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="src3" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="src4" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="src5" type="sampler2d" unit="4" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="5" onetimeapply="true"></uniform>
+    <uniform name="scale1" type="float" onetimeapply="true"></uniform>
+    <uniform name="scale2" type="float" onetimeapply="true"></uniform>
+    <uniform name="scale3" type="float" onetimeapply="true"></uniform>
+    <uniform name="scale4" type="float" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="multimaskshadow4">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multimaskshadow4.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multimaskshadow4.frag</fragmentshader>
+    </shaders>
+    <uniform name="src" type="sampler2darray" unit="0" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <!--<uniform name="shad" type="sampler2dshadow" unit="2" onetimeapply="true"></uniform>-->
+    <uniform name="mask1" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="scale" type="float" numelements="4" onetimeapply="true"></uniform>
+    <!--<uniform name="shadowambient" type="float_vec3"></uniform>-->
+    <uniform name="num" type="int"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="multimaskshadow5">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multimaskshadow5.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multimaskshadow5.frag</fragmentshader>
+    </shaders>
+    <uniform name="src" type="sampler2darray" unit="0" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <!--<uniform name="shad" type="sampler2dshadow" unit="2" onetimeapply="true"></uniform>-->
+    <uniform name="mask1" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="mask2" type="sampler2d" unit="4" onetimeapply="true"></uniform>
+    <uniform name="scale" type="float" numelements="5" onetimeapply="true"></uniform>
+    <!--<uniform name="shadowambient" type="float_vec3"></uniform>-->
+    <uniform name="num" type="int"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="multimaskshadow6">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multimaskshadow6.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multimaskshadow6.frag</fragmentshader>
+    </shaders>
+    <uniform name="src" type="sampler2darray" unit="0" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <!--<uniform name="shad" type="sampler2dshadow" unit="2" onetimeapply="true"></uniform>-->
+    <uniform name="mask1" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="mask2" type="sampler2d" unit="4" onetimeapply="true"></uniform>
+    <uniform name="scale" type="float" numelements="6" onetimeapply="true"></uniform>
+    <!--<uniform name="shadowambient" type="float_vec3"></uniform>-->
+    <uniform name="num" type="int"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="multimaskshadow7">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multimaskshadow7.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multimaskshadow7.frag</fragmentshader>
+    </shaders>
+    <uniform name="src" type="sampler2darray" unit="0" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <!--<uniform name="shad" type="sampler2dshadow" unit="2" onetimeapply="true"></uniform>-->
+    <uniform name="mask1" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="mask2" type="sampler2d" unit="4" onetimeapply="true"></uniform>
+    <uniform name="scale" type="float" numelements="7" onetimeapply="true"></uniform>
+    <!--<uniform name="shadowambient" type="float_vec3"></uniform>-->
+    <uniform name="num" type="int"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="multimaskshadow8">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multimaskshadow8.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multimaskshadow8.frag</fragmentshader>
+    </shaders>
+    <uniform name="src" type="sampler2darray" unit="0" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <!--<uniform name="shad" type="sampler2dshadow" unit="2" onetimeapply="true"></uniform>-->
+    <uniform name="mask1" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="mask2" type="sampler2d" unit="4" onetimeapply="true"></uniform>
+    <uniform name="scale" type="float" numelements="8" onetimeapply="true"></uniform>
+    <!--<uniform name="shadowambient" type="float_vec3"></uniform>-->
+    <uniform name="num" type="int"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="normalmap">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/normal/normal.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/normal/normal.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="src3" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <attribute name="tangent" type="attribute_tangent"></attribute>
+    <attribute name="binormal" type="attribute_binormal"></attribute>
+    <attribute name="normal" type="attribute_tangentnormal"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="fpsnormal">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/fpsnormal/fpsnormal.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/fpsnormal/fpsnormal.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="src3" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="specularmap">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/specular/specular.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/specular/specular.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="ocean">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/water/ocean/ocean.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/water/ocean/ocean.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="refl" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="time" type="float"></uniform>
+    <uniform name="alpha" type="float" onetimeappy="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="oceanshadow">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/water/ocean/oceanshadow.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/water/ocean/oceanshadow.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="refl" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="src3" type="sampler2dshadow" unit="4" onetimeapply="true"></uniform>
+    <uniform name="time" type="float"></uniform>
+    <uniform name="alpha" type="float" onetimeappy="true"></uniform>
+    <uniform name="scale" type="float"></uniform>
+    <uniform name="shadowambient" type="float_vec3"></uniform>
+  </program>
+  <!--=================================================================-->  
+  <program name ="oceanshadow">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/water/ocean/oceanshadow.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/water/ocean/oceanshadow.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="refl" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="shadow0" type="sampler2dshadow" unit="4" onetimeapply="true"></uniform>
+    <uniform name="shadow1" type="sampler2dshadow" unit="5" onetimeapply="true"></uniform>
+    <uniform name="shadow2" type="sampler2dshadow" unit="6" onetimeapply="true"></uniform>
+    <uniform name="shadowambient" type="float"></uniform>
+    <uniform name="zShadow0" type="float"></uniform>
+    <uniform name="zShadow1" type="float"></uniform>
+    <uniform name="zShadow2" type="float"></uniform>
+    <uniform name="time" type="float"></uniform>
+    <uniform name="alpha" type="float" onetimeappy="true"></uniform>
+    <uniform name="scale" type="float"></uniform>
+  </program>
+  =================================================================-->
+  <program name ="flagprogram">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/flag/flag.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/flag/flag.frag</fragmentshader>
+    </shaders>
+    <uniform name="pos1" type="float_vec3"></uniform>
+    <uniform name="pos2" type="float_vec3"></uniform>
+    <uniform name="right" type="float_vec3"></uniform>
+    <uniform name="currentAngle" type="float"></uniform>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="spdgrassshadow_ra+" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/grass/spdgrassshadow_ra.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightAD.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/grass/spdgrassshadow_ra.frag</fragmentshader>
+    </shaders>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="splat" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="shadow0" type="sampler2dshadow" unit="3" onetimeapply="true"></uniform>
+    <uniform name="shadow1" type="sampler2dshadow" unit="4" onetimeapply="true"></uniform>
+    <uniform name="shadow2" type="sampler2dshadow" unit="5" onetimeapply="true"></uniform>
+    <uniform name="origin" type="float_vec3"></uniform>
+    <uniform name="alphatest" type="float"></uniform>
+    <uniform name="zShadow0" type="float"></uniform>
+    <uniform name="zShadow1" type="float"></uniform>
+    <uniform name="zShadow2" type="float"></uniform>
+    <uniform name="shadowambient" type="float" onetimeapply="true"></uniform>
+    <uniform name="uv" type="float_vec2" numelements="64" onetimeappply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="spdgrassshadow_ra" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/grass/spdgrassshadow_ra.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/grass/spdgrassshadow_ra.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="splat" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="shadow0" type="sampler2dshadow" unit="3" onetimeapply="true"></uniform>
+    <uniform name="shadow1" type="sampler2dshadow" unit="4" onetimeapply="true"></uniform>
+    <uniform name="shadow2" type="sampler2dshadow" unit="5" onetimeapply="true"></uniform>
+    <uniform name="origin" type="float_vec3"></uniform>
+    <uniform name="alphatest" type="float"></uniform>
+    <uniform name="zShadow0" type="float"></uniform>
+    <uniform name="zShadow1" type="float"></uniform>
+    <uniform name="zShadow2" type="float"></uniform>
+    <uniform name="shadowambient" type="float" onetimeapply="true"></uniform>
+    <uniform name="uv" type="float_vec2" numelements="64" onetimeappply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="spdgrass_ra" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/grass/spdgrass_ra.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/grass/spdgrass_ra.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="splat" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="origin" type="float_vec3"></uniform>
+    <uniform name="alphatest" type="float"></uniform>
+    <uniform name="uv" type="float_vec2" numelements="64" onetimeappply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="spdgrass_ra+" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/grass/spdgrass_ra.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightAD.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/grass/spdgrass_ra.frag</fragmentshader>
+    </shaders>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="splat" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="origin" type="float_vec3"></uniform>
+    <uniform name="alphatest" type="float"></uniform>
+    <uniform name="uv" type="float_vec2" numelements="64" onetimeappply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="BranchShader">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/none/branch.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/trees/none/branch.frag</fragmentshader>
+    </shaders>
+    <uniform name="diffuse" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="detailmap" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="diffuseScale" type="float"></uniform>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="treepos" type="float_vec3"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="BranchShader+">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/trees/off/branch.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightADnormal.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/trees/off/branch.frag</fragmentshader>
+    </shaders>
+    <uniform name="diffuse" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="detailmap" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="diffuseScale" type="float"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name ="in_normal" type="attribute_normal"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_tex1" type="attribute_texcoord1"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="BranchDepth">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/none/branchdepth.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/trees/none/branchdepth.frag</fragmentshader>
+    </shaders>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="treepos" type="float_vec3"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="BranchDepth+" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/trees/off/branchdepth.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/trees/off/branchdepth.frag</fragmentshader>
+    </shaders>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="BranchShaderNormal">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/normal/branch.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/trees/normal/branch.frag</fragmentshader>
+    </shaders>
+    <uniform name="diffuse" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="detailmap" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="normalmap" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="diffuseScale" type="float"></uniform>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="treepos" type="float_vec3"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="BranchShaderNormal+" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/trees/on/branch.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightTangentAD.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/trees/on/branch.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka kd"></materialconstants>
+    <uniform name="diffuse" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="normalmap" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="detailmap" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="diffuseScale" type="float"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+    <attribute name="in_tangent" type="attribute_tangent"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_tex1" type="attribute_texcoord1"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="FrondShader">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/none/frond.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/trees/none/frond.frag</fragmentshader>
+    </shaders>
+    <uniform name="diffuse" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="treepos" type="float_vec3"></uniform>
+    <uniform name="diffuseScale" type="float"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="FrondShader+" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/trees/on/frond.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightADnormal.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/trees/on/frond.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="diffuseScale" type="float"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="FrondDepth">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/none/fronddepth.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/trees/none/fronddepth.frag</fragmentshader>
+    </shaders>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="treepos" type="float_vec3"></uniform>
+    <uniform name="diffuse" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="LeafShader">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/none/leaf.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/trees/none/leaf.frag</fragmentshader>
+    </shaders>
+    <uniform name="diffuse" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="treepos" type="float_vec3"></uniform>
+    <uniform name="cameraangle" type="float_vec2"></uniform>
+    <uniform name="diffuseScale" type="float"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="LeafShader+">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/trees/off/leaf.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightADnormal.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/trees/off/leaf.frag</fragmentshader>
+    </shaders>
+    <uniform name="diffuse" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="cameraangle" type="float_vec2"></uniform>
+    <uniform name="diffuseScale" type="float"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_center" type="attribute_texcoord1"></attribute>
+    <attribute name="in_params" type="attribute_texcoord2"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="LeafDepth">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/none/leafdepth.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/trees/none/leafdepth.frag</fragmentshader>
+    </shaders>
+    <uniform name="diffuse" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="treepos" type="float_vec3"></uniform>
+    <uniform name="cameraangle" type="float_vec2"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="LeafDepth+" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/trees/off/leafdepth.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/trees/off/leafdepth.frag</fragmentshader>
+    </shaders>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_center" type="attribute_texcoord1"></attribute>
+    <attribute name="in_params" type="attribute_texcoord2"></attribute>
+    <uniform name="diffuse" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="cameraangle" type="float_vec2"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="LeafShaderNormal">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/normal/leaf.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/trees/normal/leaf.frag</fragmentshader>
+    </shaders>
+    <uniform name="diffuse" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="normalmap" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="treepos" type="float_vec3"></uniform>
+    <uniform name="cameraangle" type="float_vec2"></uniform>
+    <uniform name="diffuseScale" type="float"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="LeafShaderNormal+" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/trees/on/leaf.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightTangentAD.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/trees/on/leaf.frag</fragmentshader>
+    </shaders>
+    <materialconstants name="ka kd"></materialconstants>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="cameraangle" type="float_vec2"></uniform>
+    <uniform name="diffuseScale" type="float"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+    <attribute name="in_tangent" type="attribute_tangent"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_center" type="attribute_texcoord1"></attribute>
+    <attribute name="in_params" type="attribute_texcoord2"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="BillboardShader">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/none/billboard.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/trees/none/billboard.frag</fragmentshader>
+    </shaders>
+    <uniform name="lightadjust" type="float"></uniform>
+    <uniform name="billboardAzimuth" type="float"></uniform>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="table1" type="float_vec4" numelements="84"></uniform>
+    <uniform name="scales" type="float_vec4" numelements="4" onetimeapply="true"></uniform>
+    <uniform name="unitSquare" type="float_vec4" numelements="4" onetimeapply="true"></uniform>
+    <uniform name="billboardMap" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="BillboardShaderNormal">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/normal/billboard.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/trees/normal/billboard.frag</fragmentshader>
+    </shaders>
+    <uniform name="lightadjust" type="float"></uniform>
+    <uniform name="billboardAzimuth" type="float"></uniform>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="table1" type="float_vec4" numelements="84"></uniform>
+    <uniform name="scales" type="float_vec4" numelements="4" onetimeapply="true"></uniform>
+    <uniform name="unitSquare" type="float_vec4" numelements="4" onetimeapply="true"></uniform>
+    <uniform name="normal" type="float_vec3"></uniform>
+    <uniform name="tangent" type="float_vec3"></uniform>
+    <uniform name="binormal" type="float_vec3"></uniform>
+    <uniform name="billboardMap" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="billboardNormal" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="HorizShader">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/none/horizbillboard.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/trees/none/billboard.frag</fragmentshader>
+    </shaders>
+    <uniform name="lightadjust" type="float"></uniform>
+    <uniform name="billboardMap" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="HorizShaderNormal">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/trees/normal/horizbillboard.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/trees/normal/billboard.frag</fragmentshader>
+    </shaders>
+    <uniform name="lightadjust" type="float"></uniform>
+    <uniform name="billboardMap" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="billboardNormal" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="shadow">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/shadow/shadow.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/shadow/shadow.frag</fragmentshader>
+    </shaders>
+    <uniform name="ambient" type="float_vec3"></uniform>
+    <uniform name="src1" type="sampler2dshadow" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2dshadow" unit="1" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="coasteffect">
+    <shaders>
+      <vertexshader>scenarios/terrain/doggreen/coasteffect.vert</vertexshader>
+      <fragmentshader>scenarios/terrain/doggreen/coasteffect.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="src3" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="alpha" type="float"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="doggreen_coast">
+    <shaders>
+      <vertexshader>scenarios/terrain/doggreen/coast.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>scenarios/terrain/doggreen/coast.frag</fragmentshader>
+    </shaders>
+    <uniform name="refr" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="refl" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="height" type="sampler2d" unit="4" onetimeapply="true"></uniform>
+    <uniform name="shadow" type="sampler2dshadow" unit="5" onetimeapply="true"></uniform>
+    <uniform name="time" type="float"></uniform>
+    <uniform name="alpha" type="float" onetimeappy="true"></uniform>
+    <uniform name="scale" type="float"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="doggreen_ocean">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/water/ocean/ocean.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>scenarios/terrain/doggreen/ocean.frag</fragmentshader>
+    </shaders>
+    <uniform name="src2" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="refl" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="time" type="float"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="riverrun_river">
+    <shaders>
+      <vertexshader>scenarios/terrain/riverrun/river.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>scenarios/terrain/riverrun/river.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="refl" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="src3" type="sampler2d" unit="4" onetimeapply="true"></uniform>
+    <uniform name="scene" type="sampler2d" unit="5" onetimeapply="true"></uniform>
+    <uniform name="shadow" type="sampler2dshadow" unit="6" onetimeapply="true"></uniform>
+    <uniform name="time" type="float"></uniform>
+    <uniform name="scale" type="float"></uniform>
+    <uniform name="shadowambient" type="float_vec3"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name="multitextureterrain">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multiterrain.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multiterrain.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="src3" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name="multitextureterrain_ra" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multiterrain_ra.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multiterrain.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="src3" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name="multitexture3">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multitexture3.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multitexture3.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="src3" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name="multitexture2">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multitexture2.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multitexture2.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name="multitexture2_ra" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multitexture2_ra.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multitexture2.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="glare">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/glare/glare.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/glare/glare.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="softparticle" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/particle/softparticle.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/particle/softparticle.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="camera" type="float_vec4" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="particle" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/particle/particle.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/particle/particle.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="opaquedepth" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/draw/opaquedepth.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/draw/opaquedepth.frag</fragmentshader>
+    </shaders>
+  </program>
+  <!--=================================================================-->
+  <program name ="pssm" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/shadow/pssm.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/shadow/pssm.frag</fragmentshader>
+    </shaders>
+    <uniform name="shadowTexture0" type="sampler2dshadow" unit="0" onetimeapply="true"></uniform>
+    <uniform name="shadowTexture1" type="sampler2dshadow" unit="1" onetimeapply="true"></uniform>
+    <uniform name="shadowTexture2" type="sampler2dshadow" unit="2" onetimeapply="true"></uniform>
+    <uniform name="ambientBias" type="float"></uniform>
+    <uniform name="zShadow0" type="float"></uniform>
+    <uniform name="zShadow1" type="float"></uniform>
+    <uniform name="zShadow2" type="float"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="multimaskshadow4_ra" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multimaskshadow4_ra.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multimaskshadow4_ra.frag</fragmentshader>
+    </shaders>
+    <uniform name="src" type="sampler2darray" unit="0" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="mask1" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="scale" type="float" numelements="4" onetimeapply="true"></uniform>
+    <uniform name="num" type="int"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="multimaskshadow5_ra" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multimaskshadow5_ra.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multimaskshadow5_ra.frag</fragmentshader>
+    </shaders>
+    <uniform name="src" type="sampler2darray" unit="0" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="mask1" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="mask2" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="scale" type="float" numelements="5" onetimeapply="true"></uniform>
+    <uniform name="num" type="int"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="multimaskshadow6_ra" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multimaskshadow6_ra.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multimaskshadow6_ra.frag</fragmentshader>
+    </shaders>
+    <uniform name="src" type="sampler2darray" unit="0" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="mask1" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="mask2" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="scale" type="float" numelements="6" onetimeapply="true"></uniform>
+    <uniform name="num" type="int"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="multimaskshadow7_ra" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multimaskshadow7_ra.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multimaskshadow7_ra.frag</fragmentshader>
+    </shaders>
+    <uniform name="src" type="sampler2darray" unit="0" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="mask1" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="mask2" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="scale" type="float" numelements="7" onetimeapply="true"></uniform>
+    <uniform name="num" type="int"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="multimaskshadow8_ra" statesetonly="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/multitexture/multimaskshadow8_ra.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multimaskshadow8_ra.frag</fragmentshader>
+    </shaders>
+    <uniform name="src" type="sampler2darray" unit="0" onetimeapply="true"></uniform>
+    <uniform name="surf" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="mask1" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="mask2" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="scale" type="float" numelements="8" onetimeapply="true"></uniform>
+    <uniform name="num" type="int"></uniform>
+  </program>
+</glslprograms>
