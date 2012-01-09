@@ -26,6 +26,7 @@ vec4 RadialBlur(in vec2 uv)
 
     float ss = strength * 2.2;
 
+#if WANT_RADIAL_BLUR
     if(ss > 0.0)
     {
         // 0.5,0.5 is the center of the screen
@@ -63,6 +64,7 @@ vec4 RadialBlur(in vec2 uv)
         //Blend the original color with the averaged pixels
         color = mix(color, sum, t);
     }
+#endif
 
     float dd = 2.0 * distance(uv, center);
 
@@ -76,6 +78,7 @@ void Shock(out vec2 outuv)
     vec2 uv = gl_TexCoord[0].xy;
     outuv = uv;
 
+#if WANT_SHOCK
     float t = time * 1.5;
 
     if(t > 0)
@@ -92,6 +95,7 @@ void Shock(out vec2 outuv)
             outuv = uv + (diffUV * diffTime);
         }
     }
+#endif
 }
 
 void main()
