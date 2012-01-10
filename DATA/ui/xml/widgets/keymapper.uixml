@@ -368,7 +368,9 @@
 					convinput.text = game.getconvergence(vtype)	// User cleared the value, so let's reset it to the saved (or default) setting
 				return;
 			}
-			var value = parseInt(convinput.text);
+			
+			var input = stripLeadingZeroes(convinput.text);		// Leading zeroes will throw off the conversion to integer
+			var value = parseInt(input);
 			
 			if(vtype != null)
 			{
@@ -395,6 +397,14 @@
 			{
 				convpane.visible = false;
 			}
+		}
+		
+		function stripLeadingZeroes(input)
+		{
+			while(input[0] == '0')
+				input = input.substr(1);
+				
+			return input;
 		}
 		
 		function getCountryFlagIcon(country)
