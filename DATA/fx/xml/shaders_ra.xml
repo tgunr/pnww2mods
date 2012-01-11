@@ -511,6 +511,27 @@
     <uniform name="billboardMap" type="sampler2d" unit="0" onetimeapply="true"></uniform>
   </program>
   <!--=================================================================-->
+  <program name ="BillboardShader+">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/trees/off/billboard.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightADnormal.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/trees/off/billboard.frag</fragmentshader>
+    </shaders>
+    <uniform name="lightadjust" type="float"></uniform>
+    <uniform name="billboardAzimuth" type="float"></uniform>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="normal" type="float_vec3"></uniform>
+    <uniform name="table1" type="float_vec4" numelements="84" onetimeapply="true"></uniform>
+    <uniform name="scales" type="float_vec4" numelements="4" onetimeapply="true"></uniform>
+    <uniform name="unitSquare" type="float_vec4" numelements="4" onetimeapply="true"></uniform>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_tex1" type="attribute_texcoord1"></attribute>
+    <attribute name="in_tex2" type="attribute_texcoord2"></attribute>
+  </program>
+  <!--=================================================================-->
   <program name ="BillboardShaderNormal">
     <shaders>
       <vertexshader>fx/shaders/GLSL/trees/normal/billboard.vert</vertexshader>
@@ -529,6 +550,30 @@
     <uniform name="binormal" type="float_vec3"></uniform>
     <uniform name="billboardMap" type="sampler2d" unit="0" onetimeapply="true"></uniform>
     <uniform name="billboardNormal" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+  </program>
+  <!--=================================================================-->
+  <program name ="BillboardShaderNormal+">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/trees/on/billboard.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/lightTangentAD.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/trees/on/billboard.frag</fragmentshader>
+    </shaders>
+    <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="src2" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="billboardAzimuth" type="float"></uniform>
+    <uniform name="lightadjust" type="float"></uniform>
+    <uniform name="rotation" type="float_vec4"></uniform>
+    <uniform name="normal" type="float_vec3"></uniform>
+    <uniform name="binormal" type="float_vec3"></uniform>
+    <uniform name="tangent" type="float_vec3"></uniform>
+    <uniform name="table1" type="float_vec4" numelements="84" onetimeapply="true"></uniform>
+    <uniform name="scales" type="float_vec4" numelements="4" onetimeapply="true"></uniform>
+    <uniform name="unitSquare" type="float_vec4" numelements="4" onetimeapply="true"></uniform>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_tex1" type="attribute_texcoord1"></attribute>
+    <attribute name="in_tex2" type="attribute_texcoord2"></attribute>
   </program>
   <!--=================================================================-->
   <program name ="HorizShader">
@@ -608,10 +653,10 @@
   <!--=================================================================-->
   <program name ="riverrun_river">
     <shaders>
-      <vertexshader>scenarios/terrain/riverrun/river.vert</vertexshader>
+      <vertexshader>fx/shaders/GLSL/water/river/river_ra.vert</vertexshader>
       <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
       <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
-      <fragmentshader>scenarios/terrain/riverrun/river.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/water/river/river_ra.frag</fragmentshader>
     </shaders>
     <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
     <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
@@ -619,10 +664,7 @@
     <uniform name="surf" type="sampler2d" unit="3" onetimeapply="true"></uniform>
     <uniform name="src3" type="sampler2d" unit="4" onetimeapply="true"></uniform>
     <uniform name="scene" type="sampler2d" unit="5" onetimeapply="true"></uniform>
-    <uniform name="shadow" type="sampler2dshadow" unit="6" onetimeapply="true"></uniform>
     <uniform name="time" type="float"></uniform>
-    <uniform name="scale" type="float"></uniform>
-    <uniform name="shadowambient" type="float_vec3"></uniform>
   </program>
   <!--=================================================================-->
   <program name="multitextureterrain">
