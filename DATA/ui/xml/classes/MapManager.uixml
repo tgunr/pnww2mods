@@ -407,7 +407,7 @@
 
 									var countryFlagIcon = getCountryFlagIcon(brigadesList[s]);
 									var brigadeTypeIcon = getBrigTypeIcon(brigadesList[s]);
-									var brigInfo = getBrigadeInfo(brigade);
+									var brigInfo = getBrigadeInfo(brigadesList[s]);
 									
 									var label = '[' + brigInfo + '] ' + this.unitName(brigadesList[s]);
 									cprint(" &&& label: " + label);
@@ -1200,6 +1200,12 @@
 			// Get necessary info...
 			var country = getCountryName(brigade).toLowerCase();
 			var branch = getBrigTypeName(brigade);
+			
+			cprint("<><><><><><><><><><><><><><><><><><><>");
+			cprint("Brigade: " + brigade);
+			cprint("Country: " + country);
+			cprint("Branch: " + branch);
+			cprint("<><><><><><><><><><><><><><><><><><><>");
 			
 			// Build localization string
 			var loc = "common.countries." + country + '.' + branch;
