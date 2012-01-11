@@ -163,7 +163,7 @@
 			if(team == 0)
 			{
 				if(totalplayers == 0)
-					return selectTeam(scenario, game.player.client.persona.country.side);
+					return selectTeam(scenario, 1); // game.player.client.persona.country.side
 				
 				// find the team with the smallest imbalance
 				var pop1Ratio = team1count / totalplayers;
