@@ -9,7 +9,10 @@
 	</control>
 	<control>
 		<function>sprint</function>
-		<key>left shift</key>
+		<combo>
+			<key>left shift</key>
+			<key>w</key>
+		</combo>
 	</control>
 	<control>
 		<function>autorun</function>
