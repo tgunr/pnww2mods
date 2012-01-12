@@ -2,13 +2,17 @@
 #extension GL_ARB_uniform_buffer_object : enable
 #extension GL_EXT_gpu_shader4 : enable                             
 
-uniform samplerBuffer data;
-
 uniform MatrixBlock
 {
     mat4 b_MVMatrix;  
     mat4 b_NormalMatrix;
     mat4 b_ProjectionMatrix;
+};
+
+uniform InstanceBlock
+{
+    vec4 b_rotation[250];
+    vec4 b_position[250];
 };
 
 in vec3 in_tangent;
@@ -28,10 +32,8 @@ mat4 quaternionToMatrix(in vec4 q);
 
 void main()
 {
-    int idx = gl_InstanceID * 2;
-
-    vec4 rotation = texelFetchBuffer(data, idx);
-    vec4 position = texelFetchBuffer(data, idx + 1);
+    vec4 rotation = b_rotation[gl_InstanceID];
+    vec4 position = b_position[gl_InstanceID];
 
     mat4 world = quaternionToMatrix(rotation);
 
