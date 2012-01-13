@@ -42,13 +42,13 @@ float GetShadowValue()
     float map3 = step(zShadow2, testZ);
 
     vec3 uv = tex3.xyz / tex3.w;
-    float s0 = shadow2D(shadow0, uv + e).r;
+    float s0 = texture(shadow0, uv + e);
     
     uv = tex4.xyz / tex4.w;
-    float s1 = shadow2D(shadow1, uv + e).r;
+    float s1 = texture(shadow1, uv + e);
   
     uv = tex5.xyz / tex5.w;
-    float s2 = shadow2D(shadow2, uv + e).r;
+    float s2 = texture(shadow2, uv + e);
 
     float term0 = s0 * map0;
     float term1 = s1 * map1;
@@ -62,8 +62,8 @@ float GetShadowValue()
 
 void main()
 {
-	vec4 base = texture2D(src1, tex0.xy);
-    vec4 tcolor = texture2D(splat, tex2);
+	vec4 base = texture(src1, tex0.xy);
+    vec4 tcolor = texture(splat, tex2);
      
     out_color = defaultcolor;
 
