@@ -10,8 +10,6 @@ vec4 fogThis(in vec4);
 void lightGetAmbientDiffuse(out vec4 amb, out vec4 dif);
 
 const vec4 defaultcolor = vec4(0, 0, 0, 0);
-const vec4 Ka = vec4(0.50, 0.50, 0.43, 1.0);
-const vec4 Kd = vec4(0.1, 0.15, 0.09, 1.0);
 
 void main()
 {
@@ -31,7 +29,7 @@ void main()
 
         base = mix(base, tcolor, tcolor.a);
 
-        vec4 color = base * (amb * Ka + dif * Kd);
+        vec4 color = base * (amb * gl_FrontMaterial.ambient + dif * gl_FrontMaterial.diffuse);
         color.rgb *= gl_TexCoord[0].z;
 
 	    gl_FragColor = fogThis(color);

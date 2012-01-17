@@ -1,4 +1,14 @@
 #version 150
+#extension GL_ARB_uniform_buffer_object : enable
+
+uniform MaterialBlock
+{
+	vec4 b_Kd;
+	vec4 b_Ka;
+	vec4 b_Ks;
+	vec4 b_Ke;
+	float b_shininess;
+};
 
 uniform sampler2D src1;
 uniform sampler2D splat;
@@ -32,7 +42,7 @@ void main()
     	
         base = mix(base, tcolor, tcolor.a);
 
-        vec4 color = base * (amb * Ka + dif * Kd);
+        vec4 color = base * (amb * b_Ka + dif * b_Kd);
         color.rgb *= tex0.z;
 
 	    out_color = fogThis(color);

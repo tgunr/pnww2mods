@@ -1,4 +1,14 @@
 #version 150
+#extension GL_ARB_uniform_buffer_object : enable
+
+uniform MaterialBlock
+{
+	vec4 b_Kd;
+	vec4 b_Ka;
+	vec4 b_Ks;
+	vec4 b_Ke;
+	float b_shininess;
+};
 
 uniform sampler2D src1;
 uniform sampler2DShadow shadow0;
@@ -19,8 +29,6 @@ vec4 fogThis(in vec4);
 void lightGetAmbientDiffuse(out vec4 amb, out vec4 dif);
 
 const vec4 defaultcolor = vec4(0, 0, 0, 0);
-const vec4 Ka = vec4(0.50, 0.50, 0.43, 1.0);
-const vec4 Kd = vec4(0.4, 0.45, 0.39, 1.0);
 
 const vec3 e = vec3(0, 0, zoffset);
 
@@ -76,7 +84,7 @@ void main()
     	
         base = mix(base, tcolor, tcolor.a);
 
-	    vec4 color = base * (amb * Ka + dif * Kd);
+	    vec4 color = base * (amb * b_Ka + dif * b_Kd);
 
         color.rgb *= tex0.z;
 	    color.rgb *= GetShadowValue();
