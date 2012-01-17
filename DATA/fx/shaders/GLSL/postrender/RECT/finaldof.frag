@@ -7,7 +7,7 @@ uniform sampler2DRect src2;
 uniform float lum;
 uniform vec2 filter[12];
 
-const vec2 MaxCoC = vec2(5.0, 10.0);
+const vec2 MaxCoC = vec2(10.0, 20.0);
 
 vec4 filterdof()
 {
