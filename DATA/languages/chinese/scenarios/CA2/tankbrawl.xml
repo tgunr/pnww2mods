@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <content type="3">
-  <name>ca2/obj_tankbrawl</name>
+  <name>ca2/dm_tankbrawl</name>
   <body>playarea = 战区边界...你不能离开战区
 onspawn.moveout = 在时间耗尽之前占领桥梁!
 wp1 = 盟国出生点
@@ -14,15 +14,15 @@ roundstop = 本回合结束!
 bridgecapture1 = 你在占领区域里!</body>
   <bodyloc>true</bodyloc>
   <brief>红国和蓝星国的坦克为了占领这座桥梁而决一雌雄！</brief>
-  <duration>30</duration>
+  <duration>15</duration>
   <fog>2</fog>
   <hour>16</hour>
-  <kills>30</kills>
-  <rules>capture</rules>
-  <target>81799.25,3011797.69,25</target>
-  <team1>3</team1>
+  <kills>25</kills>
+  <rules>deathmatch</rules>
+  <target></target>
+  <team1>2</team1>
   <team2>4</team2>
-  <terrain></terrain>
+  <terrain>tankmap</terrain>
   <title>坦克竞技</title>
   <weather>1</weather>
 </content>
