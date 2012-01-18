@@ -15,7 +15,7 @@ if(true) then
 	
 	-- BRIDGES
 		"place stonebridge -185.83 -75.77 5.45 0 0 0 0 0 0",
-		"place stonebridge -9.77 -63.25 7.5 0 0 0 0 0 0",	
+		"place stonebridge -9 -63 7.2 0 0 -5 0 0 0",	
 		
 		
 

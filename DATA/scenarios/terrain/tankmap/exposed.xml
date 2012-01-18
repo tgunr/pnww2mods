@@ -130,12 +130,12 @@
 <!-- GRASSMASK value is the file name of the .dds file found in scenario/terrain/scenarioname directory -->	
     <grassmask>grassmask.dds</grassmask>
 <!-- CLUTTERMASK value is the file name of the .dds file found in scenario/terrain/scenarioname directory -->	
-    <cluttermask>cluttermask.dds</cluttermask>
-	<cluttermask>cluttermask2.dds</cluttermask>
+    <!-- <cluttermask>cluttermask.dds</cluttermask>
+	<cluttermask>cluttermask2.dds</cluttermask> -->
 	
 <!-- SPLATMASK is a .dds texture used by 2D grass to pickup color blend values -->
 <!-- SPLATMASK value is the file name of the .dds file found in scenario/terrain/scenarioname directory -->	
-    <splatmask>splat1.dds</splatmask>	
+    <!-- <splatmask>splat1.dds</splatmask>	-->
 <!-- BLENDMASK value is the file name of the .dds file found in scenario/terrain/scenarioname directory -->
 <!-- Each blendmask can have up to 4 channels (R,G,B,A) each with a unique, corresponding texture -->
     <blendmask name="mask1.dds">
@@ -150,7 +150,7 @@
 	  
       <layer1 name="layer1.dds">
         <multitexture>200</multitexture>
-        <material>grass</material>
+        <material>dirt</material>
       </layer1>
 	  
       <layer2 name="layer2.dds">
