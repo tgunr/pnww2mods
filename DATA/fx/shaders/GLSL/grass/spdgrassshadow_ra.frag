@@ -13,14 +13,10 @@ uniform float zShadow0;
 uniform float zShadow1;
 uniform float zShadow2;
 
-const float zoffset = 0.001954;
-
 vec4 fogThis(in vec4);
 void lightGetAmbientDiffuse(out vec4 amb, out vec4 dif);
 
 const vec4 defaultcolor = vec4(0, 0, 0, 0);
-
-const vec3 e = vec3(0, 0, zoffset);
 
 float GetShadowValue()
 {
@@ -32,13 +28,13 @@ float GetShadowValue()
     float map3 = step(zShadow2, testZ);
 
     vec3 uv = gl_TexCoord[3].xyz / gl_TexCoord[3].w;
-    float s0 = shadow2D(shadow0, uv + e).r;
+    float s0 = shadow2D(shadow0, uv).r;
     
     uv = gl_TexCoord[4].xyz / gl_TexCoord[4].w;
-    float s1 = shadow2D(shadow1, uv + e).r;
+    float s1 = shadow2D(shadow1, uv).r;
   
     uv = gl_TexCoord[5].xyz / gl_TexCoord[5].w;
-    float s2 = shadow2D(shadow2, uv + e).r;
+    float s2 = shadow2D(shadow2, uv).r;
 
     float term0 = s0 * map0;
     float term1 = s1 * map1;
