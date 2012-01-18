@@ -10,14 +10,15 @@ uniform float zShadow0;
 uniform float zShadow1;
 uniform float zShadow2;
 
-const float texelsize = 0.001377 * 0.25;
-const float zoffset = 0.001954;
+const float texelsize = 0.00048828125;
+const float zoffset = 0.0;
 
 const vec3 a = vec3(-texelsize, -texelsize, zoffset);
 const vec3 b = vec3(texelsize, -texelsize, zoffset);
 const vec3 c = vec3(texelsize, texelsize, zoffset);
 const vec3 d = vec3(-texelsize, texelsize, zoffset);
-const vec3 e = vec3(0, 0, zoffset);
+
+varying float t;
 
 void main(void)
 {
@@ -53,29 +54,28 @@ void main(void)
 	shadow2 *= 0.0625;
 #else
     vec3 uv = gl_TexCoord[0].xyz / gl_TexCoord[0].w;
-    float shadow0 = shadow2D(shadowTexture0, uv + e).r;
+    float shadow0 = shadow2D(shadowTexture0, uv).r;
     shadow0 += shadow2D(shadowTexture0, uv + a).r;
     shadow0 += shadow2D(shadowTexture0, uv + b).r;
     shadow0 += shadow2D(shadowTexture0, uv + c).r;
     shadow0 += shadow2D(shadowTexture0, uv + d).r;
-    shadow0 /= 5.0;
+    shadow0 *= 0.2;
     
     uv = gl_TexCoord[1].xyz / gl_TexCoord[1].w;
-    float shadow1 = shadow2D(shadowTexture1, uv + e).r;
+    float shadow1 = shadow2D(shadowTexture1, uv).r;
     shadow1 += shadow2D(shadowTexture1, uv + a).r;
     shadow1 += shadow2D(shadowTexture1, uv + b).r;
     shadow1 += shadow2D(shadowTexture1, uv + c).r;
     shadow1 += shadow2D(shadowTexture1, uv + d).r;
-    shadow1 /= 5.0;
+    shadow1 *= 0.2;
   
     uv = gl_TexCoord[2].xyz / gl_TexCoord[2].w;
-
-    float shadow2 = shadow2D(shadowTexture2, uv + e).r;
+    float shadow2 = shadow2D(shadowTexture2, uv).r;
     shadow2 += shadow2D(shadowTexture2, uv + a).r;
     shadow2 += shadow2D(shadowTexture2, uv + b).r;
     shadow2 += shadow2D(shadowTexture2, uv + c).r;
     shadow2 += shadow2D(shadowTexture2, uv + d).r;
-	shadow2 /= 5.0;
+    shadow2 *= 0.2;
 #endif
 
     float term0 = shadow0 * map0;
@@ -85,6 +85,6 @@ void main(void)
 
     float v = clamp(term0 + term1 + term2 + term3 + ambientBias, 0.0, 1.0);
       
-    gl_FragColor.rgb = vec3(v);
+    gl_FragColor.rgb = vec3(v + t);
     gl_FragColor.a = 1.0;
 }
