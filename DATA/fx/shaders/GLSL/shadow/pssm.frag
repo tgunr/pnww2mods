@@ -29,30 +29,6 @@ void main(void)
     float map2 = step(zShadow1, testZ) * step(testZ, zShadow2);
     float map3 = step(zShadow2, testZ);
 
-#if WANT_PCF
-    vec3 uv0 = gl_TexCoord[0].xyz / gl_TexCoord[0].w;
-    vec3 uv1 = gl_TexCoord[1].xyz / gl_TexCoord[1].w;
-    vec3 uv2 = gl_TexCoord[2].xyz / gl_TexCoord[2].w;
-
-	float scale = 0.0004;//88;
-    float shadow0 = 0.0;
-    float shadow1 = 0.0;
-    float shadow2 = 0.0;
-
-	for(float y = -1.5 ; y <= 1.5 ; y += 1.0)
-    {
-		for(float x = -1.5 ; x <= 1.5 ; x += 1.0)
-        {
-            shadow0 += shadow2D(shadowTexture0, uv0.xyz + vec3(x * scale, y * scale, 0.0)).r;
-            shadow1 += shadow2D(shadowTexture1, uv1.xyz + vec3(x * scale, y * scale, 0.0)).r;
-            shadow2 += shadow2D(shadowTexture2, uv2.xyz + vec3(x * scale, y * scale, 0.0)).r;
-        }
-    }
-
-	shadow0 *= 0.0625;
-	shadow1 *= 0.0625;
-	shadow2 *= 0.0625;
-#else
     vec3 uv = gl_TexCoord[0].xyz / gl_TexCoord[0].w;
     float shadow0 = shadow2D(shadowTexture0, uv).r;
     shadow0 += shadow2D(shadowTexture0, uv + a).r;
@@ -76,7 +52,6 @@ void main(void)
     shadow2 += shadow2D(shadowTexture2, uv + c).r;
     shadow2 += shadow2D(shadowTexture2, uv + d).r;
     shadow2 *= 0.2;
-#endif
 
     float term0 = shadow0 * map0;
     float term1 = shadow1 * map1;
