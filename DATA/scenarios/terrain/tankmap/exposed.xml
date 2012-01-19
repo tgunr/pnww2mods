@@ -135,7 +135,7 @@
 	
 <!-- SPLATMASK is a .dds texture used by 2D grass to pickup color blend values -->
 <!-- SPLATMASK value is the file name of the .dds file found in scenario/terrain/scenarioname directory -->	
-    <!-- <splatmask>splat1.dds</splatmask>	-->
+    <splatmask>splat1.dds</splatmask>
 <!-- BLENDMASK value is the file name of the .dds file found in scenario/terrain/scenarioname directory -->
 <!-- Each blendmask can have up to 4 channels (R,G,B,A) each with a unique, corresponding texture -->
     <blendmask name="mask1.dds">
