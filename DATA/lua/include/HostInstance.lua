@@ -1,8 +1,23 @@
+----------------------------------------------------------------------
+-- PlayNet Instancing Management Interface.
+-- Copyright (C) 2012, PlayNet Inc, All Rights Reserved.
+-- Not for redistribution.
+--
+-- Originating Programmer: Oliver "kfsone" Smith
+-- Supporting Programmer: Troy "Ramp" Lowe
+-- Created: 2012/01/19 16:00:00 CDT
+--
+--[[
+	HostInstance class definition
+]]--
+
+-- base class
 Include("Instance")
 
 HostInstance = Instance:create()
 HostInstanceInterface = { __index = HostInstance }
 
+-- constructor with no arguments
 function HostInstance:create()
 	
 	local instance = Instance:create()
@@ -21,7 +36,10 @@ function HostInstance:create()
 	return instance
 end
 
--- id, send callback and server
+-- constructor with arguments
+-- i = string id of instance
+-- s = sendcallback to use for sending out data
+-- svr = InstanceServer managing this instance
 function HostInstance:new(i, s, svr)
 	
 	local instance = Instance:new(i, s)
@@ -40,15 +58,27 @@ function HostInstance:new(i, s, svr)
 	return instance
 end
 
+-- shortcut function for setting an instance's status
+-- relays the status to each client via a call to RecvSetState
+-- returns a result object
+-- statuses are defined in Instancing.lua
 function HostInstance:SetStatus(status)
 	return self:RecvSetState("status", status)
 end
 
+-- called by InstanceServer in response to this
+-- instance register itself as an updater
+-- allows an instance to process timers and keep alives
+-- and possibly other data later
+-- returns true to tell the server to keep updating it
+-- returns false to tell the server not to update it anymore
 function HostInstance:Update(frametime)
 	
 	local removes = {}
 	local now = os.time()
 	
+	-- update any states we are currently tracking
+	-- keepalives and timers for now
 	for k,t in pairs(self.track) do
 		if t.handler(self, t, now) == false then
 			-- false means its done tracking
@@ -64,7 +94,7 @@ function HostInstance:Update(frametime)
 		self:RemoveTracker(v)
 	end
 	
-	-- continue to track if we still have some to track
+	-- continue to get updated if we still have some to states to track
 	if getn(self.track) > 0 then
 		return true
 	end
@@ -73,6 +103,9 @@ function HostInstance:Update(frametime)
 	return false
 end
 
+-- function for adding/updating a state tracker
+-- tells the InstanceServer that manages this instance that 
+-- it wants to be updated
 function HostInstance:AddTracker(valueName, handler, userdata)
 	-- register ourself as an updater
 	self.server:RegisterUpdate(self)
@@ -95,11 +128,12 @@ function HostInstance:AddTracker(valueName, handler, userdata)
 		-- remember it
 		self.track[valueName] = tracker
 	else
-		-- our value has been modified
+		-- our value has been modified, remember when
 		self.track[valueName].modified = now
 	end
 end
 
+-- remove a tracker
 function HostInstance:RemoveTracker(valueName)
 	if self.track[valueName] then
 		self.track[valueName] = nil
@@ -109,9 +143,13 @@ end
 --------- --------- --------- --------- --------- ---------
 -- SetState
 
+-- override Instance:RecvSetState
+-- returns a result object
+-- behavior is to update the state and then relay the changes to the clients
 function HostInstance:RecvSetState(valueName, value)
 	local result = self:ChangeState(valueName, value)
 	
+	-- if the value didn't change, no need to send it
 	if result:IsFailure() then
 		return result
 	end
@@ -123,12 +161,16 @@ end
 --------- --------- --------- --------- --------- ---------
 -- Tell thes erver to add a new state value.
 
+-- override Instance:RecvAddState
+-- returns a result object
+-- behavior is to update the state and then relay the changes to the clients
 function HostInstance:RecvAddState(valueName, value)
 	local oldValue = self:GetStateNumber(valueName)
 	local newValue = oldValue + tonumber(value)
 	
 	local result = self:ChangeState(valueName, value)
 	
+	-- if the value didn't change, no need to send it
 	if result:IsFailure() then
 		return result
 	end
@@ -140,6 +182,9 @@ end
 --------- --------- --------- --------- --------- ---------
 -- Tell the server to change a state value.
 
+-- override Instance:RecvKeepAlive
+-- returns a result object
+-- start tracking the keepalive
 function HostInstance:RecvKeepAlive(valueName, value)
 
 	local newValue = tonumber(value)
@@ -166,6 +211,10 @@ end
 --------- --------- --------- --------- --------- ---------
 -- Tell the server to do something with a timed event?
 
+
+-- override Instance:RecvSetTimer
+-- returns a result object
+-- start tracking the timer
 function HostInstance:RecvSetTimer(timerName, duration)
 	local result = self:ChangeState(valueName, value)
 	
@@ -183,6 +232,10 @@ end
 --------- --------- --------- --------- --------- ---------
 -- General broadcast - nothing is saved, just relayed
 
+-- override Instance:RecvBroadcastEvent
+-- returns a result object
+-- try to see if any handlers need to be called
+-- relay the broadcast to all clients 
 function HostInstance:RecvBroadcastEvent(valueName, value)
 	-- simply see if we need to handle the event
 	self:HandleState(valueName, value)
@@ -192,16 +245,16 @@ function HostInstance:RecvBroadcastEvent(valueName, value)
 end
 
 --------- --------- --------- --------- --------- ---------
--- Send updated info about myself
+-- Player State
 
-function HostInstance:SendSetPlayerState(callsign, valueName, value)
-	return self:SendCommand("SetPlayerState", callsign, valueName, value)
-end
-
+-- override Instance:RecvSetPlayerState
+-- returns a result object
+-- update the player, then relay the change to all clients
 function HostInstance:RecvSetPlayerState(callsign, valueName, value)
 	local player = self:GetPlayer(callsign)
 	local result = player:SetState(valueName, value)
 	
+	-- no need to send if there was no change
 	if result:IsFailure() then
 		return result
 	end
@@ -212,12 +265,16 @@ end
 
 
 --------- --------- --------- --------- --------- ---------
--- Send incremental info about myself
+-- Player State
 
+-- override Instance:RecvAddPlayerState
+-- returns a result object
+-- update the player, then relay the change to all clients
 function HostInstance:RecvAddPlayerState(callsign, valueName, value)
 	local player = self:GetPlayer(callsign)
 	local result = player:AddState(valueName, value)
 	
+	-- no need to send if there was no change
 	if result:IsFailure() then
 		return result
 	end
@@ -227,13 +284,19 @@ function HostInstance:RecvAddPlayerState(callsign, valueName, value)
 end
 
 --------- --------- --------- --------- --------- ---------
--- Let the instance know about us
+-- Send the full state down to the client
 
+-- override Instance:SendRegisterClient
+-- returns a result object
+-- sends the current state and player list down to the client
 function HostInstance:SendRegisterClient(state, players)
 	return self:SendCommand("RegisterClient", state, players)
 end
 
--- client doesn't implement this
+-- override Instance:RecvRegisterClient
+-- returns a result object
+-- recvs a callsign and creates a new player with it
+-- causes a full state and players list to be sent down to the client
 function HostInstance:RecvRegisterClient(callsign)
 	local result = self:CreatePlayer(callsign)
 	
@@ -244,7 +307,15 @@ function HostInstance:RecvRegisterClient(callsign)
 	return self:RegisterClient(self.state, self.players)
 end
 
+------------------------------------------------------------------------------------
+---------- trackers are short functions that track state information
+---------- in some way. Trackers return true to indicate they want
+---------- to continue being tracked or false to indicate they have
+---------- completed.
+------------------------------------------------------------------------------------
+
 -- timer tracker
+-- this might be ported to using Oli's eventd queue system
 function _trackTimer(instance, tracker, now)
 	
 	-- see if we need to init
@@ -258,8 +329,10 @@ function _trackTimer(instance, tracker, now)
 	local timeleft = tracker.data - now
 	
 	if timeleft <= 0 then
-		-- we are done
+		-- we are done, let everyone know
 		instance:SetTimer(tracker.name, 0)
+		
+		-- don't track anymore!
 		return false
 	end
 	
@@ -269,23 +342,30 @@ function _trackTimer(instance, tracker, now)
 		tracker.lastsend = now
 	end
 	
+	-- keep tracking!
 	return true
 end
 
 -- keep alive tracker
+-- basically this handles being in an area
 function _trackKeepAlive(instance, tracker, now)
 	
+	-- make sure someone is actually in the area
+	-- it will be non-zero in that case
 	if instance:GetStateNumber(tracker.name) == 0 then
 		-- instance:KeepAlive(tracker.name, 0)
 		return false
 	end
 	
+	-- see if we've gotten an update within the last 2 seconds
 	if (now - tracker.modified) < 3 then
 		-- keep tracking
 		return true
 	else
 		-- send a 0 indicating the keep alive is no longer occupied
 		instance:KeepAlive(tracker.name, 0)
+		
+		-- stop tracking
 		return false
 	end
 	

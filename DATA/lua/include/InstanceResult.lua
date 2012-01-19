@@ -1,7 +1,22 @@
+----------------------------------------------------------------------
+-- PlayNet Instancing Management Interface.
+-- Copyright (C) 2012, PlayNet Inc, All Rights Reserved.
+-- Not for redistribution.
+--
+-- Originating Programmer: Oliver "kfsone" Smith
+-- Supporting Programmer: Troy "Ramp" Lowe
+-- Created: 2012/01/19 16:00:00 CDT
+--
+--[[
+	InstanceResult class definition
+]]--
+
 InstanceResult = {}
 InstanceResultInterface = { __index = InstanceResult }
  
 -- generic constructor
+-- c = result code, see Instancing success and error codes
+-- d = userdata associated with error code
 function InstanceResult:new(c, d)
 	local result = 
 	{
@@ -35,15 +50,18 @@ function InstanceResult:new(c, d)
 end
 
 -- convenience constructor for successes
+-- d = optional user data
 function InstanceResult:success(d)
 	return InstanceResult:new(Instancing.SuccessCode, d);
 end
 
 -- convenience constructor for failures
+-- d is a string indicating the failure
 function InstanceResult:failure(d)
 	return InstanceResult:new(Instancing.ErrorCode, d);
 end
 
+-- returns true on success, false on failure
 function InstanceResult:IsSuccess()
 		if self.code == Instancing.SuccessCode then
 			return true
@@ -52,6 +70,7 @@ function InstanceResult:IsSuccess()
 		end
 end
 
+-- returns true on failure, false on success
 function InstanceResult:IsFailure()
 		if self.code == Instancing.ErrorCode then
 			return true
@@ -60,6 +79,8 @@ function InstanceResult:IsFailure()
 		end
 end
 
+-- returns a string representation of the result
+-- used for logging
 function InstanceResult:ToString()
 	local out = ""
 	

@@ -56,7 +56,7 @@ Instancing =
 	,	"SetState"				-- set a state value
 	,	"AddState"				-- add to a state value (only numbers are supported)
 	,	"SetTimer"				-- set a timer that fires off a state value
-	,	"KeepAlive"				-- non-zero values keeps it alive
+	,	"KeepAlive"				-- non-zero values keep it alive
 	,	"BroadcastEvent"		-- one off events that aren't saved, but are sent 
 	,	"SetPlayerState"		-- sets some player data
 	,	"AddPlayerState"		-- adds to player data (only numbers are supported)
@@ -74,7 +74,7 @@ Instancing =
 ,	SuccessCode		=	'OK'	-- Returned to indicate things went well
 ,	ErrorCode			=	'NOK'	-- Returned to indicate something failed.
 ,	EnableDebug		=	true	-- Set true to allow 'D' messages to log.
-,	LoggingCallback	= nil -- what to call when trying to output debug
+,	LoggingCallback	= nil -- what to call when trying to output loggin
 
 -- reporting function
 ,	report = function(code, funcname, msg)
@@ -135,6 +135,8 @@ function crawl(tbl, indent)
 	return str
 end
 
+-- takes a result object and returns true is the result was a success and false if not
+-- optionally debugs the result if debugging in on
 function getResult(r)
 	if r == nil then
 		return false

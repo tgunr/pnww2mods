@@ -1,8 +1,25 @@
+----------------------------------------------------------------------
+-- PlayNet Instancing Management Interface.
+-- Copyright (C) 2012, PlayNet Inc, All Rights Reserved.
+-- Not for redistribution.
+--
+-- Originating Programmer: Oliver "kfsone" Smith
+-- Supporting Programmer: Troy "Ramp" Lowe
+-- Created: 2012/01/19 16:00:00 CDT
+--
+--[[
+	InstanceState class definition
+]]--
+
+-- used for responses
+-- all subclasses of InstanceState use this too so we
+-- might as well include it here
 Include("InstanceResult")
 
 InstanceState = {}
 InstanceStateInterface = { __index = InstanceState }
  
+-- constructor no arguments
 function InstanceState:create()
 	local data = 
 	{
@@ -16,16 +33,21 @@ function InstanceState:create()
 	return setmetatable(data, InstanceStateInterface)
 end
 
--- handler support
+-- handlers are state hooks that fire off functions on state change
+
+-- register a handler with this instance by state name
 function InstanceState:RegisterHandler(stateName, handler)
 	self.handlers[stateName] = handler
 end
 
+-- unregister a handler by state name
 function InstanceState:UnregisterHandler(stateName)
 	self.handlers[stateName] = nil
 end
 
 -- state change handling
+-- returns a result object
+-- fires off a handler if one is found for the state name
 function InstanceState:HandleState(valueName, value, oldValue)
 	local handler = self.handlers[valueName]
 	
@@ -41,7 +63,9 @@ function InstanceState:HandleState(valueName, value, oldValue)
 	return InstanceResult:success("--  Handler success -- no handler.")
 end
 
--- main function for change our state
+-- main function for changing our state
+-- causes any handlers to fire
+-- returns a result object
 function InstanceState:ChangeState(valueName, value)
 	-- Grab the old value and swap in the new.
 	local oldValue = self.state[valueName]
@@ -66,6 +90,9 @@ end
 --------- --------- --------- --------- --------- ---------
 -- Get the current value of a state or nil.
 
+-- get a value
+-- returns a result object
+-- on success, result objects' data member holds the value
 function InstanceState:GetStateValue(stateName)
 	local state = self.state[stateName]
 	if state == nil then
@@ -74,6 +101,9 @@ function InstanceState:GetStateValue(stateName)
 	return InstanceResult:success(state)
 end
 
+-- get a value as a string
+-- takes optional default value
+-- empty string "" is the value of last resort
 function InstanceState:GetStateString(stateName, defValue)
 	local state = self:GetStateValue(stateName)
 	
@@ -88,6 +118,9 @@ function InstanceState:GetStateString(stateName, defValue)
 	return tostring(state.data)
 end
 
+-- get a value as a number
+-- takes optional default value
+-- 0 is the value of last resort
 function InstanceState:GetStateNumber(stateName, defValue)
 	local state = self:GetStateValue(stateName)
 
@@ -102,6 +135,9 @@ function InstanceState:GetStateNumber(stateName, defValue)
 	return tonumber(state.data)
 end
 
+-- get a value as a boolean
+-- takes optional default value
+-- false is the value of last resort
 function InstanceState:GetStateBool(stateName, defValue)
 	local state = self:GetStateValue(stateName)
 
@@ -120,68 +156,3 @@ function InstanceState:GetStateBool(stateName, defValue)
 	end
 end
 
---------- --------- --------- --------- --------- ---------
--- Helper function that will unpack results from the instancing routines.
-
-function InstanceState.write(x)
-	if type(x) == "table" then
-		print(unpack(x))
-	else
-		print(tostring(x))
-	end
-end
-
---------- --------- --------- --------- --------- ---------
--- Display a textual representation of the structure of a
--- Lua table.
---	e.g.
---	crawl(myTable)
-
-function InstanceState.crawl(tbl, indent)
-	local str = ""
-	if indent == nil then indent = "" end
-
-	for k, v in pairs(tbl)
-	do
-		str = str .. string.format("%s%s %s %s\n", indent, k, type(v), tostring(v))
-		if type(v) == "table" then
-			str = str .. crawl(v, indent .. "  ")
-		end
-	end
-	return str
-end
-
--- Create a new class that inherits from a base class
---
-function BaseClass(baseClass, ...)
-	return baseClass:new({...})
-end
-
-function BaseClass2( baseClass )
-
-    -- Create the table and metatable representing the class.
-    local new_class = {}
-    local class_mt = { __index = new_class }
-
-    -- Note that this function uses class_mt as an upvalue, so every instance
-    -- of the class will share the same metatable.
-    --
-    function new_class:new()
-        local newinst = {}
-        setmetatable( newinst, class_mt )
-        return newinst
-    end
-
-    -- The following is the key to implementing inheritance:
-
-    -- The __index member of the new class's metatable references the
-    -- base class.  This implies that all methods of the base class will
-    -- be exposed to the sub-class, and that the sub-class can override
-    -- any of these methods.
-    --
-    if baseClass then
-        setmetatable( new_class, { __index = baseClass } )
-    end
-
-    return new_class
-end

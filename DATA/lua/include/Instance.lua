@@ -1,8 +1,23 @@
+----------------------------------------------------------------------
+-- PlayNet Instancing Management Interface.
+-- Copyright (C) 2012, PlayNet Inc, All Rights Reserved.
+-- Not for redistribution.
+--
+-- Originating Programmer: Oliver "kfsone" Smith
+-- Supporting Programmer: Troy "Ramp" Lowe
+-- Created: 2012/01/19 16:00:00 CDT
+--
+--[[
+	Instance class definition
+]]--
+
+-- base class
 Include("Instancing")
 
 Instance = InstanceState:create()
 InstanceInterface = { __index = Instance }
  
+-- constructor with no arguments
 function Instance:create()
 	local data = InstanceState:create()
 	
@@ -18,6 +33,9 @@ function Instance:create()
 	return setmetatable(data, InstanceInterface)
 end
 
+-- constructor with arguments
+-- i = string id of instance
+-- s = send data callback
 function Instance:new(i, s)
 	local instance = Instance:create()
 	
@@ -41,7 +59,10 @@ function Instance:No = function()
 end
 
 -- look up a command by number
+-- returns a InstanceResult object
 function Instance:CommandNumber(cmdName)
+	-- these are shared between the host and the client
+	-- defined in Instance.lua
 	for cNum, cName in ipairs(Instancing.Commands)
 	do
 		if cName == cmdName then
@@ -52,7 +73,10 @@ function Instance:CommandNumber(cmdName)
 end
 
 -- look up a command by name
+-- returns a InstanceResult object
 function Instance:CommandName(cmdNum)
+	-- these are shared between the host and the client
+	-- defined in Instance.lua
 	for cNum, cName in ipairs(Instancing.Commands)
 	do
 		if cNum == cmdNum then
@@ -64,6 +88,8 @@ end
 
 
 -- sends off a json argument
+-- cmdName must be a valid shared command
+-- returns a InstanceResult object
 function Instance:SendCommand(cmdName, ...)
 	-- First argument must be a string.
 	if type(cmdName) ~= "string" then
@@ -73,11 +99,13 @@ function Instance:SendCommand(cmdName, ...)
 	-- Look for the command.
 	local lookup = self:CommandNumber(cmdName)
 	
+	-- bad command, bail
 	if lookup:IsFailure() then
 		return lookup
 	end
 	
 	-- setup our arguments
+	-- lookup.data as the command number in it
 	local args = {self.id, lookup.data};
 	
 	-- add all of the arguments as parts.
@@ -90,7 +118,7 @@ function Instance:SendCommand(cmdName, ...)
 		end
 	end
 	
-	-- send it!
+	-- send it as a json string using the send callback
 	if self.sendCallback ~= nil then
 		self.sendCallback(self.id, json.encode(args))
 		return InstanceResult:success("-- data sent, may not actually have been sent yet.")
@@ -99,27 +127,37 @@ function Instance:SendCommand(cmdName, ...)
 	end
 end
 
--- takes a json argument
+-- takes a json argument from some external source (host or client)
+-- returns a InstanceResult object
 function Instance:RecvCommand(data)
-	-- Command number argument must be numeric.
+
 	if type(data) ~= "string" then
 		return InstanceResult:failure("Invalid ReceiveCommand - expected string")
 	end
 	
+	-- get our arguments
 	local args = json.decode(data);
 	
+	-- must be atable
 	if type(args) ~= "table" then
 		return InstanceResult:failure("Invalid ReceiveCommand - unable to parse table")
 	end
 	
+	-- make sure this was for our instance
 	if args[1] ~= self.id then
 		return InstanceResult:failure("Invalid ReceiveCommand - incorrect id")
 	end
 	
+	-- instance id
 	local id = table.remove(args, 1)
+	
+	-- command number
 	local cmdNum = tonumber(table.remove(args, 1))
+	
+	-- lookup our command
 	local lookup = self:CommandName(cmdNum)
 	
+	-- bad command, bail
 	if lookup:IsFailure() then
 		return InstanceResult:failure("Invalid command number #" .. cmdNum)
 	end
@@ -127,9 +165,10 @@ function Instance:RecvCommand(data)
 	-- Name of the command.
 	local cmdName = lookup.data
 	
-	-- get our function
+	-- get our recv function
 	local fn = self["Recv" .. cmdName]
 	
+	-- bad function bail
 	if not fn then
 		return InstanceResult:failure("Could not find registered function Instance."..cmdName..".")
 	end
@@ -158,18 +197,21 @@ function Instance:RecvCommand(data)
 	end
 end
 
+-- create a player if we didn't already have him
 function Instance:CreatePlayer(callsign)
 	if self.players[callsign] == nil then
 		self.players[callsign] = InstancePlayer:new(self, callsign)
 	end
 end
 
+-- remove a player if we had him
 function Instance:DeletePlayer(callsign)
 	if self.players[callsign] ~= nil then
 		self.players[callsign] = nil
 	end
 end
 
+-- get a player, creating him on the fly as needed
 function Instance:GetPlayer(callsign)
 	-- ensure the player is created
 	self.CreatePlayer(callsign)
@@ -182,32 +224,44 @@ end
 -- functions that can be overriden
 --------------------------------------------------------------
 
+-- all of these return a InstanceResult object
+-- there is a ClientInstance class but the default
+-- behavior defined here is the client behavior
+
 --------- --------- --------- --------- --------- ---------
 -- SetState
 
+-- shortcut to SendSetState
 function Instance:SetState(valueName, value)
 	return self:SendSetState(valueName, value)
 end
 
+-- sends a shared state off to the other side
 function Instance:SendSetState(valueName, value)
 	return self:SendCommand("SetState", valueName, value)
 end
 
+-- recvs a shared state from to the other side
 function Instance:RecvSetState(valueName, value)
 	return self:ChangeState(valueName, value)
 end
 
 --------- --------- --------- --------- --------- ---------
--- Tell thes erver to add a new state value.
+-- Tell the server to add a new state value.
 
+-- shortcut for SendAddState
 function Instance:AddState(valueName, value)
 	return self:SendAddState(valueName, value)
 end
 
+-- sends a shared add state off to the other side
 function Instance:SendAddState(valueName, value)
 	return self:SendCommand("AddState", valueName, value)
 end
 
+-- recvs a shared add state from to the other side
+-- add simply adds to the state (could be positive or negative)
+-- only numbers are supported
 function Instance:RecvAddState(valueName, value)
 	local oldValue = self:GetStateNumber(valueName)
 	local newValue = oldValue + tonumber(value)
@@ -217,14 +271,17 @@ end
 --------- --------- --------- --------- --------- ---------
 -- Tell the server to change a state value.
 
+-- shortcut to SendKeepAlive
 function Instance:KeepAlive(valueName, value)
 	return self:SendKeepAlive(valueName, value)
 end
 
+-- send a keep alive to the other side
 function Instance:SendKeepAlive(valueName, value)
 	return self:SendCommand("KeepAlive", valueName, value)
 end
 
+-- recv a keep alive from the other side
 function Instance:RecvKeepAlive(valueName, value)
 	return self:ChangeState(valueName, newVale)
 end
@@ -232,14 +289,17 @@ end
 --------- --------- --------- --------- --------- ---------
 -- Tell the server to do something with a timed event?
 
+-- shortcut for SendSetTimer
 function Instance:SetTimer(timerName, duration)
 	return self:SendSetTimer(timerName, duration)
 end
 
+-- sends a timer off to the other side
 function Instance:SendSetTimer(timerName, duration)
 	return self:SendCommand("SetTimer", timerName, duration)
 end
 
+-- recvs a timer from the other side
 function Instance:RecvSetTimer(timerName, duration)
 	return self:ChangeState(timerName, duration)
 end
@@ -247,15 +307,17 @@ end
 --------- --------- --------- --------- --------- ---------
 -- General broadcast - nothing is saved, just relayed
 
+-- shotcur for SendBroadcastEvent
 function Instance:BroadcastEvent(valueName, value)
 	return self:SendBroadcastEvent(valueName, value)
 end
 
+-- sends a broadcast to the other side
 function Instance:SendBroadcastEvent(valueName, value)
 	return self:SendCommand("BroadcastEvent", valueName, value)
 end
 
--- no saving, just handle it
+-- broadcasts aren't saved, just handled if a handler was defined for the state
 function Instance:RecvBroadcastEvent(valueName, value)
 	return self:HandleState(valueName, value)
 end
@@ -263,14 +325,17 @@ end
 --------- --------- --------- --------- --------- ---------
 -- Send updated info about myself
 
+-- shortcut for SendSetPlayerState
 function Instance:SetPlayerState(callsign, valueName, value)
 	return self:SendSetPlayerState(callsign, valueName, value)
 end
 
+-- send a player state change to the other side
 function Instance:SendSetPlayerState(callsign, valueName, value)
 	return self:SendCommand("SetPlayerState", callsign, valueName, value)
 end
 
+-- recv a player state change from the other side
 function Instance:RecvSetPlayerState(callsign, valueName, value)
 	local player = self:GetPlayer(callsign)
 	player:SetState(valueName, value)
@@ -279,14 +344,17 @@ end
 --------- --------- --------- --------- --------- ---------
 -- Send incremental info about myself
 
+-- shortcut for SendAddPlayerState
 function Instance:AddPlayerState(callsign, valueName, value)
 	return self:SendAddPlayerState(callsign, valueName, value)
 end
 
+-- send a player add state to the other side
 function Instance:SendAddPlayerState(callsign, valueName, value)
 	return self:SendCommand("AddPlayerState", callsign, valueName, value)
 end
 
+-- recv a player add state from the other side
 function Instance:RecvAddPlayerState(callsign, valueName, value)
 	local player = self:GetPlayer(callsign)
 	player:AddState(valueName, value)
@@ -295,14 +363,19 @@ end
 --------- --------- --------- --------- --------- ---------
 -- Let the instance know about us
 
+-- shortcut for SendRegisterClient
 function Instance:RegisterClient(callsign)
 	return self:SendRegisterClient(callsign)
 end
 
+-- tells the other side about our client
+-- passes our callsign
 function Instance:SendRegisterClient(callsign)
 	return self:SendCommand("RegisterClient", callsign)
 end
 
+-- the default response is to get back the full state
+-- and players of the instance
 function Instance:RecvRegisterClient(state, players)
 	for k,v in pairs(state)
 	do
