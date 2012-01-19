@@ -35,9 +35,9 @@ function OnSpawn(handler)
 	scenario.OnSpawn(handler);
 	
 	local victory 		= tonumber(state.config.victory);
-	local kills1 			= Instancing:GetStateNumber("victory1");
-	local kills2 			= Instancing:GetStateNumber("victory2");
-	local intelTeam 	= Instancing:GetStateNumber("intelteam");
+	local kills1 			= 0; --Instancing:GetStateNumber("victory1");
+	local kills2 			= 0; --Instancing:GetStateNumber("victory2");
+	local intelTeam 	= 0; --Instancing:GetStateNumber("intelteam");
 	
 	-- update the hud to the current objective amounts
 	-- scenario.AddObjective("alliedcount", "kills3", "objective1", "skull");
@@ -64,7 +64,7 @@ end
 -- give a point to the enemy each time I die
 function OnDie(handler)
 	scenario.AddEnemyScore(1);	
-	Instancing:AddPlayerState(state.config.callsign, "deaths", 1);
+	--Instancing:AddPlayerState(state.config.callsign, "deaths", 1);
 	state.intel = false;
 	return 1;
 end
@@ -78,11 +78,11 @@ function OnRuleUpdate(deltaTime)
 	-- current frametime
 	local ft 				= game.Frametime();
 	local team			= GetTeam();
-	local intelTeam 	= Instancing:GetStateNumber("intelteam");
+	local intelTeam 	= 0; --Instancing:GetStateNumber("intelteam");
 		
 	-- send a keepalive if needed
 	if(IsPlaying() and state.intel and ft >= state.nextintelcheck and (intelTeam == team or intelTeam == 0)) then 
-		Instancing:KeepAlive("intelteam", GetTeam());
+		-- Instancing:KeepAlive("intelteam", GetTeam());
 		state.nextintelcheck = ft + 1000;
 		scenario.AddPlayerScore(.5);
 	end	

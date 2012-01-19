@@ -8,10 +8,6 @@ Include("player");
 Include("state"); -- includes default state
 Include("strat");
 
-if(game.OS() ~= 1) then
-	Include("zmq");
-end
-
 game.LoadLib("scenario");
 
 -- set tutorial state here
@@ -84,7 +80,7 @@ scenario.AddScore = function(team, points)
 	team = tonumber(team);
 	if(team >= 1 and team <= 2 and state.victory == 0) then
 		--ui.ChatPrint("Adding " .. points .. " points to team " .. team);
-		Instancing:SendAddState("victory" .. team, points);
+		--Instancing:SendAddState("victory" .. team, points);
 	end
 end
 
@@ -92,7 +88,7 @@ scenario.AddPlayerScore = function(points)
 	if(not state.network or game.OS() == 1) then
 		return;
 	end
-	Instancing:AddPlayerState(state.config.callsign, "score", points);
+	--Instancing:AddPlayerState(state.config.callsign, "score", points);
 end
 
 scenario.RegisterUpdate = function(callback)
@@ -103,7 +99,7 @@ end
 scenario.RegisterState = function(stateName, handler)
 	if(game.OS() == 1) then return end
 	table.insert(state.hoststates, {stateName, handler});
-	Instancing.RegisterHandler(stateName, handler);
+	--Instancing.RegisterHandler(stateName, handler);
 end
 
 function RegisterState(stateName, handler)
@@ -113,7 +109,7 @@ end
 scenario.UnregisterState = function(stateName)
 	if(game.OS() == 1) then return end
 	state.hoststates[stateName] = nil;
-	Instancing.RemoveHandler(stateName);
+	--Instancing.RemoveHandler(stateName);
 end
 
 function UnregisterState(stateName)
@@ -153,19 +149,20 @@ function OnStart(handler)
 			ui.ChatPrint("Adding state handler "..hs[1].."/"..hs[2]);
 			-- register our state handler
 			if(game.OS() ~= 1) then
-				Instancing.RegisterHandler(hs[1], hs[2]);
+				--Instancing.RegisterHandler(hs[1], hs[2]);
 			end
 		end
 	end
 	
 	-- set our player changed handler
-	Instancing.RegisterHandler('OnPlayer', 'OnPlayer');
+	--Instancing.RegisterHandler('OnPlayer', 'OnPlayer');
 end
 
 function StartNetwork()
-	if(game.OS() ~= 1 and Instancing.InstanceId ~= nil) then
+	--if(game.OS() ~= 1 and Instancing.InstanceId ~= nil) then
+	if(false) then
 		-- start the instancing framework
-		Instancing:Start("Client", state.config.server)
+		--Instancing:Start("Client", state.config.server)
 		
 		ui.ChatPrint("Initing scenario network state!");
 		
@@ -177,18 +174,18 @@ function StartNetwork()
 				duration = state.config.duration;
 			end
 			local seconds = tonumber(duration or 10) * 5;
-			Instancing:TimedEvent("roundtimer", seconds);
-			Instancing:SendStateValue("victory", 0);
-			Instancing:SendStateValue("round", scenario.manager:GetRound());
-			Instancing:SendStateValue("stage", scenario.manager:GetStage());
+			--Instancing:TimedEvent("roundtimer", seconds);
+			--Instancing:SendStateValue("victory", 0);
+			--Instancing:SendStateValue("round", scenario.manager:GetRound());
+			--Instancing:SendStateValue("stage", scenario.manager:GetStage());
 		end
 		
 		-- set us to not ready
-		Instancing:SetPlayerState(state.config.callsign, "ready", "false")
+		--Instancing:SetPlayerState(state.config.callsign, "ready", "false")
 		
 		-- get our initial state
-		Instancing:GetInstanceState();
-		Instancing:GetInstancePlayers();
+		--Instancing:GetInstanceState();
+		--Instancing:GetInstancePlayers();
 				
 		-- we have a proper network
 		state.network = true;
@@ -228,12 +225,12 @@ scenario.OnSpawn = function(handler)
 	-- ui.ChatPrint("You have deaths is " .. temp);
 	-- ui.ChatPrint(string.format("You have died %d times!", Instancing:GetStateNumber(deathstate)));
 	
-	if(game.OS() ~= 1) then
+	if(false) then --game.OS() ~= 1) then
 		if(state.lastroundtimer > 0) then
-			local secondsLeft = Instancing:GetStateNumber("roundtimer");
-			scenario.SetUITimer(secondsLeft - ((game.Frametime() - state.lastroundtimer) / 1000));
+			--local secondsLeft = Instancing:GetStateNumber("roundtimer");
+			--scenario.SetUITimer(secondsLeft - ((game.Frametime() - state.lastroundtimer) / 1000));
 		else
-			scenario.SetUITimer(Instancing:GetStateNumber("roundtimer"));
+			--scenario.SetUITimer(Instancing:GetStateNumber("roundtimer"));
 		end
 	end
 	
@@ -282,11 +279,11 @@ function OnSet(handler, name, value)
 	-- for known config vars, do something
 	if(name == "load" and value == "content") then
 		LoadContent();
-	elseif(name == "instance" and game.OS() ~= 1) then
-		local result = Instancing:SetInstance(tonumber(state.config.instance));
-		if(result[1] ~= Instancing.SuccessCode) then
-			ui.ChatPrint(result[2]);
-		end
+	--elseif(name == "instance" and game.OS() ~= 1) then
+	--	local result = Instancing:SetInstance(tonumber(state.config.instance));
+	--	if(result[1] ~= Instancing.SuccessCode) then
+	--		ui.ChatPrint(result[2]);
+	--	end
 	elseif(name == "network" and value == "start") then
 		StartNetwork();
 	end
@@ -326,17 +323,17 @@ scenario.OnScenario = function(handler)
 				-- remember the change
 				state.lastplayer[k] = v;
 				-- send up our updated player state value
-				Instancing:SetPlayerState(state.config.callsign, k, v);
+				--Instancing:SetPlayerState(state.config.callsign, k, v);
 			end
 		end
 		
 		-- handle any incremental number updates
 		for k,v in pairs(state.playeradds) do
 			-- send up our incremental player state value
-			Instancing:AddPlayerState(state.config.callsign, k, v);
+			--Instancing:AddPlayerState(state.config.callsign, k, v);
 		end
 		
-		Instancing:PollEvents();
+		--Instancing:PollEvents();
 	end
 	
 	-- clear this table each run
@@ -406,9 +403,9 @@ function OnSendBroadcast(handler)
 	
 	-- try to run any events associated with this area
 	if(scenario.InArea(handler)) then
-		Instancing:BroadcastEvent(handler.name, 1);
+		--Instancing:BroadcastEvent(handler.name, 1);
 	else
-		Instancing:BroadcastEvent(handler.name, 0);
+		--Instancing:BroadcastEvent(handler.name, 0);
 	end
 	return 1;
 end
@@ -478,18 +475,18 @@ end
 
 scenario.CheckVictory = function(name, value)
 	if(game.OS() == 1) then return end
-	local score 	=  Instancing:GetStateNumber(name);
-	local victory 	= tonumber(state.config.victory);
+	--local score 	=  Instancing:GetStateNumber(name);
+	--local victory 	= tonumber(state.config.victory);
 
 	-- ui.ChatPrint("Checking " .. score .. " against " .. victory .. " for " .. name);	
 	
-	if(score >= victory) then
-		if(name == "victory1") then
-			Instancing:SendStateValue("victory", 1);
-		elseif(name == "victory2") then
-			Instancing:SendStateValue("victory", 2);
-		end
-	end
+	--if(score >= victory) then
+	--	if(name == "victory1") then
+			--Instancing:SendStateValue("victory", 1);
+	--	elseif(name == "victory2") then
+			--Instancing:SendStateValue("victory", 2);
+	--	end
+	--end
 	
 	return 1;
 end
@@ -592,8 +589,8 @@ scenario.SetResult = function()
 	if(game.OS() == 1) then return end
 	local result = ui.LoadView("scenarios/result");
 	if(result ~= nil) then
-		local v1 =  Instancing:GetStateNumber("victory1");
-		local v2 =  Instancing:GetStateNumber("victory2");
+		local v1 =  0; --Instancing:GetStateNumber("victory1");
+		local v2 =  0; --Instancing:GetStateNumber("victory2");
 		result:CallJS("SetResult", state.victory, v1, v2);
 	end
 end
@@ -614,15 +611,15 @@ scenario.OnRoundTimer = function(name, value)
 		scenario.SetUITimer(secondsLeft);
 	elseif(secondsLeft == 0) then
 		if(state.victory == 0) then
-			local v1 =  Instancing:GetStateNumber("victory1");
-			local v2 =  Instancing:GetStateNumber("victory2");
+			local v1 = 0; -- Instancing:GetStateNumber("victory1");
+			local v2 =  0; --Instancing:GetStateNumber("victory2");
 			
 			if(v1 > v2) then
-				Instancing:SendStateValue("victory", 1);
+				--Instancing:SendStateValue("victory", 1);
 			elseif(v2 > v1) then
-				Instancing:SendStateValue("victory", 2);
+				--Instancing:SendStateValue("victory", 2);
 			else
-				Instancing:SendStateValue("victory", -1);
+				--Instancing:SendStateValue("victory", -1);
 			end
 		end
 	end
