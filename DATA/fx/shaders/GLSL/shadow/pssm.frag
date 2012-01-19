@@ -18,8 +18,6 @@ const vec3 b = vec3(texelsize, -texelsize, zoffset);
 const vec3 c = vec3(texelsize, texelsize, zoffset);
 const vec3 d = vec3(-texelsize, texelsize, zoffset);
 
-varying float t;
-
 void main(void)
 {
     float testZ = (1.0 - gl_FragCoord.z) * 2.0 - 1.0;
@@ -60,6 +58,6 @@ void main(void)
 
     float v = clamp(term0 + term1 + term2 + term3 + ambientBias, 0.0, 1.0);
       
-    gl_FragColor.rgb = vec3(v + t);
+    gl_FragColor.rgb = vec3(v);
     gl_FragColor.a = 1.0;
 }
