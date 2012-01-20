@@ -4,4 +4,4 @@ cp -fa blitzWor.csv ${DEST}/
 cp -fa Terrain/xml ${DEST}/
 cp -fa th_blitz ${DEST}/
 cp -fa vehicles/ground/groundman/ppo.xml ${DEST}/
-cp -fa lua/include/Instancing*.lua ${DEST}/
+cp -fa lua/include/*.lua ${DEST}/
