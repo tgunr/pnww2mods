@@ -11,6 +11,7 @@
 	ClientInstance class definition
 ]]--
 
+Include("Instancing")
 Include("Instance")
 
 ClientInstance = Instance:create()

@@ -51,6 +51,7 @@ Instancing =
 	-- Ordered list of commands.
 	-- This must be shared between client/host to keep them in
 	-- synchronization.
+	Commands = 
 	{
 		"RegisterClient" 		-- used by client to let the host know its there
 	,	"SetState"				-- set a state value
@@ -78,8 +79,8 @@ Instancing =
 
 -- reporting function
 ,	report = function(code, funcname, msg)
-		if (code ~= 'D' or Instancing.EnableDebug) and self.LoggingCallback ~= nil then
-			self.LoggingCallback(text)
+		if (code ~= 'D' or Instancing.EnableDebug) and Instancing.LoggingCallback ~= nil then
+			Instancing.LoggingCallback("[" .. funcname .. "] " .. msg)
 		end
 	end
 
@@ -124,6 +125,10 @@ end
 function crawl(tbl, indent)
 	local str = ""
 	if indent == nil then indent = "" end
+	
+	if type(tbl) ~= "table" then
+		return tostring(tbl)
+	end
 
 	for k, v in pairs(tbl)
 	do
@@ -143,7 +148,7 @@ function getResult(r)
 	end
 	
 	-- log it
-	Instancing:report('D', 'getResult', r:ToString())
+	--Instancing.report('D', 'getResult', r:toString())
 	
 	return r:IsSuccess()
 end

@@ -74,7 +74,11 @@ function InstanceState:ChangeState(valueName, value)
 	self.state[valueName] = value
 	
 	if oldValue == newValue then
-		return InstanceResult:failure("-- "..valueName.." did not change '"..oldValue.."' -> '"..value.."'.")
+		if oldValue ~= nil then
+			return InstanceResult:failure("-- "..valueName.." did not change '"..oldValue.."' -> '"..value.."'.")
+		else
+			return InstanceResult:failure("-- "..valueName.." did not change 'nil' -> '"..value.."'.")
+		end
 	end
 	
 	-- execute any associated handlers

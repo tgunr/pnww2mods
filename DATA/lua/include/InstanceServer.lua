@@ -45,7 +45,7 @@ function InstanceServer:Update(frametime)
 	-- instances that need removing from the update list
 	local removes = {}
 
-	for id,instance in pairs(self.updaters) do
+	for id,instance in pairs(self.updates) do
 		-- a host instance's update function will return
 		-- false when it no longer wants to be updated
 		if not instance:Update(frametime) then
@@ -72,8 +72,8 @@ function InstanceServer:RegisterUpdate(instance)
 	local id = instance:Id()
 	
 	-- add it if we're not already updating it
-	if self.updaters[id] == nil then
-		self.updaters[id] = instance
+	if self.updates[id] == nil then
+		self.updates[id] = instance
 	end
 	
 	return InstanceResult:success(" - updating " .. id)
@@ -87,8 +87,8 @@ function InstanceServer:UnregisterUpdate(instance)
 	local id = instance:Id()
 	
 	-- remove it if we were updating it
-	if self.updaters[id] ~= nil then
-		self.updaters[id] = nil
+	if self.updates[id] ~= nil then
+		self.updates[id] = nil
 	end
 	
 	return InstanceResult:success(" - removed " .. id)
@@ -102,12 +102,12 @@ function InstanceServer:AddInstance(id)
 	local result = self:GetInstance(id)
 	
 	-- if so, bail early
-	if result.IsSuccess() then
+	if result:IsSuccess() then
 		return InstanceResult:failure(" - instance " .. id .. " already exists!")
 	end
 	
 	-- create it
-	self.instances[id] = HostInstance:new(id, _G["sendData"], self)
+	self.instances[id] = HostInstance:new(id, _G["sendServerData"], self)
 	
 	-- return the lookup result
 	-- result.data will contain the instance
@@ -186,13 +186,16 @@ function updateServer(frametime)
 end
 
 -- host send data callback
-function sendData(id, data)
-	-- need some sort of host c-layer callback here?
+function sendServerData(id, data)
+	if(game.Online() == false) then
+		-- need some sort of host c-layer callback here?
+		recvClientData(data)
+	end
 end
 
 -- host recv data callback
 -- returns true on success, false on failure
-function recvData(id, data)
+function recvServerData(id, data)
 	-- lookup instance
 	local result = server:GetInstance(id)
 	

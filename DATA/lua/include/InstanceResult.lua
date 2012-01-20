@@ -46,7 +46,12 @@ function InstanceResult:new(c, d)
 		end
 	end
 	
-	return setmetatable(result, InstanceResultInterface)
+	setmetatable(result, InstanceResultInterface)
+	
+	-- debug it
+	Instancing.report('N', 'InstanceResult:new', result:toString())
+	
+	return result
 end
 
 -- convenience constructor for successes
@@ -81,7 +86,7 @@ end
 
 -- returns a string representation of the result
 -- used for logging
-function InstanceResult:ToString()
+function InstanceResult:toString()
 	local out = ""
 	
 	if Instancing.EnableDebug and self.source ~= nil then
@@ -91,7 +96,11 @@ function InstanceResult:ToString()
 	if self:IsSuccess() then
 		out = Instancing.SuccessCode
 	else
-		out = Instancing.ErrorCode .. " " .. self.data
+		if self.data ~= nil then
+			out = Instancing.ErrorCode .. " " .. self.data
+		else
+			out = Instancing.ErrorCode
+		end
 	end
 	
 	return out

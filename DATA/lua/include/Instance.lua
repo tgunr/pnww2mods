@@ -138,6 +138,8 @@ function Instance:RecvCommand(data)
 	-- get our arguments
 	local args = json.decode(data);
 	
+	Instancing.report('D', 'RecvCommand', crawl(args))
+	
 	-- must be atable
 	if type(args) ~= "table" then
 		return InstanceResult:failure("Invalid ReceiveCommand - unable to parse table")
