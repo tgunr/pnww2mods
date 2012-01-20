@@ -9,7 +9,7 @@
     To schedule a one-time event:
   		LuaEvent.Schedule( triggerTime, handlerFn, myData )
   			triggerTime :- An absolute time in seconds since epoch,
-  							(tested against teulClockTime)
+  							(tested against teul.time_s)
   			handlerFn :- A function (not name) that will be called with 'myData'
   			myData :- Data to be passed to the handlerFn
   			eventId :- Optional, lets you assign a name to an event so that
@@ -61,7 +61,7 @@ function LuaEvent.AddRecurring(withInterval, handler, withData, eventId)
 		['interval'] = intervalTime
 		-- The first call is always delayed by 'interval'
 		-- so that it doesn't get called immediately
-	,	['due'] = teulClockTime + intervalTime
+	,	['due'] = teul.time_s + intervalTime
 		-- Function to be called (will be passed the event)
 	,	['handler'] = handler
 	,	['data'] = withData
@@ -117,10 +117,10 @@ function LuaEvent.Schedule(atTime, handler, withData)
 		return nil
 	end
 	if eventTime > 0 and eventTime < timeInSeconds({ days = 365 }) then
-		eventTime = teulClockTime + eventTime
+		eventTime = teul.time_s + eventTime
 	end
 
-	if eventTime < teulClockTime then
+	if eventTime < teul.time_s then
 		return error("LuaEvent.Schedule: Invalid time for event (in past): "..eventTime)
 	end
 
@@ -140,7 +140,7 @@ function LuaEvent.Schedule(atTime, handler, withData)
 	,	['interval'] = 0
     }
 
-    if event.due < teulClockTime then
+    if event.due < teul.time_s then
 		pcall(handler, withData, event)
 		return nil
     end
@@ -168,7 +168,7 @@ end
 
 function LuaEvent.QueueReady()
 	if #eventQueue == 0 then return false end
-	if eventQueue[1].due > teulClockTime then return false end
+	if eventQueue[1].due > teul.time_s then return false end
 	return true
 end
 
@@ -182,10 +182,10 @@ function LuaEvent.ProcessQueue()
 	for i in pairs(recurring)
 	do
 		if recurring[i] then
-			if recurring[i].cancel == false and recurring[i].due <= teulClockTime then
+			if recurring[i].cancel == false and recurring[i].due <= teul.time_s then
 				local status, msg = pcall(recurring[i].handler, recurring[i].data, recurring[i])
 				if status ~= true then log('A', 'eventq', msg) end
-				recurring[i].due = teulClockTime + recurring[i].interval
+				recurring[i].due = teul.time_s + recurring[i].interval
 			end
 			if recurring[i].cancel == false then
 				table.insert(newRecurring, recurring[i])
@@ -212,7 +212,7 @@ end
 --[[
 -- To test the functionality...
 
-teulClockTime = 0
+teul.time_s = 0
 
 function PrintQueue()
 	local str, idx = "", 0
@@ -251,9 +251,9 @@ PrintQueue()
 
 while #eventQueue > 0
 do
-	print("Tick: " .. teulClockTime)
+	print("Tick: " .. teul.time_s)
 	LuaEvent.ProcessQueue()
-	teulClockTime = teulClockTime + 4
+	teul.time_s = teul.time_s + 4
 end
 
 

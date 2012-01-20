@@ -154,9 +154,9 @@ end
 gluehelp['currentTime'] = "() Returns the teulKit 'clockTime' value, which is the number of seconds since Jan 1st 1970"
 function currentTime()
  if game.adjustTime then
-  return teulClockTime + math.floor(game.adjustTime)
+  return teul.time_s + math.floor(game.adjustTime)
  else
-  return teulClockTime
+  return teul.time_s
  end
 end
 

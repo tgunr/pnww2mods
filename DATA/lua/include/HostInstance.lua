@@ -75,7 +75,7 @@ end
 function HostInstance:Update(frametime)
 	
 	local removes = {}
-	local now = os.time()
+	local now = teul.time_s
 	
 	-- update any states we are currently tracking
 	-- keepalives and timers for now
