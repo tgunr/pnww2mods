@@ -25,7 +25,7 @@ function InstancePlayer:new(i, c)
 	local player = InstanceState:create()
 	
 	player.instance = i
-	player.callsign = c
+	player.callsign = string.lower(c)
 	
 	return setmetatable(player, InstancePlayerInterface)
 end

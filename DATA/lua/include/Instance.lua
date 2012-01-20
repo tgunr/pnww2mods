@@ -62,7 +62,7 @@ end
 -- returns a InstanceResult object
 function Instance:CommandNumber(cmdName)
 	-- these are shared between the host and the client
-	-- defined in Instance.lua
+	-- defined in Instancing.lua
 	for cNum, cName in ipairs(Instancing.Commands)
 	do
 		if cName == cmdName then
@@ -199,6 +199,9 @@ end
 
 -- create a player if we didn't already have him
 function Instance:CreatePlayer(callsign)
+	-- make sure callsign is lower case
+	callsign = string.lower(callsign)	
+	
 	if self.players[callsign] == nil then
 		self.players[callsign] = InstancePlayer:new(self, callsign)
 	end
@@ -206,6 +209,9 @@ end
 
 -- remove a player if we had him
 function Instance:DeletePlayer(callsign)
+	-- make sure callsign is lower case
+	callsign = string.lower(callsign)
+	
 	if self.players[callsign] ~= nil then
 		self.players[callsign] = nil
 	end
@@ -213,6 +219,9 @@ end
 
 -- get a player, creating him on the fly as needed
 function Instance:GetPlayer(callsign)
+	-- make sure callsign is lower case
+	callsign = string.lower(callsign)
+	
 	-- ensure the player is created
 	self.CreatePlayer(callsign)
 	
@@ -332,12 +341,12 @@ end
 
 -- send a player state change to the other side
 function Instance:SendSetPlayerState(callsign, valueName, value)
-	return self:SendCommand("SetPlayerState", callsign, valueName, value)
+	return self:SendCommand("SetPlayerState", string.lower(callsign), valueName, value)
 end
 
 -- recv a player state change from the other side
 function Instance:RecvSetPlayerState(callsign, valueName, value)
-	local player = self:GetPlayer(callsign)
+	local player = self:GetPlayer(string.lower(callsign))
 	player:SetState(valueName, value)
 end
 
@@ -351,12 +360,12 @@ end
 
 -- send a player add state to the other side
 function Instance:SendAddPlayerState(callsign, valueName, value)
-	return self:SendCommand("AddPlayerState", callsign, valueName, value)
+	return self:SendCommand("AddPlayerState", string.lower(callsign), valueName, value)
 end
 
 -- recv a player add state from the other side
 function Instance:RecvAddPlayerState(callsign, valueName, value)
-	local player = self:GetPlayer(callsign)
+	local player = self:GetPlayer(string.lower(callsign))
 	player:AddState(valueName, value)
 end
 
@@ -371,7 +380,7 @@ end
 -- tells the other side about our client
 -- passes our callsign
 function Instance:SendRegisterClient(callsign)
-	return self:SendCommand("RegisterClient", callsign)
+	return self:SendCommand("RegisterClient", string.lower(callsign))
 end
 
 -- the default response is to get back the full state

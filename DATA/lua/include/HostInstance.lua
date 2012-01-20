@@ -251,6 +251,9 @@ end
 -- returns a result object
 -- update the player, then relay the change to all clients
 function HostInstance:RecvSetPlayerState(callsign, valueName, value)
+	-- make sure callsign is lower case
+	callsign = string.lower(callsign)
+	
 	local player = self:GetPlayer(callsign)
 	local result = player:SetState(valueName, value)
 	
@@ -271,6 +274,9 @@ end
 -- returns a result object
 -- update the player, then relay the change to all clients
 function HostInstance:RecvAddPlayerState(callsign, valueName, value)
+	-- make sure callsign is lower case
+	callsign = string.lower(callsign)
+	
 	local player = self:GetPlayer(callsign)
 	local result = player:AddState(valueName, value)
 	
@@ -298,6 +304,9 @@ end
 -- recvs a callsign and creates a new player with it
 -- causes a full state and players list to be sent down to the client
 function HostInstance:RecvRegisterClient(callsign)
+	-- make sure callsign is lower case
+	callsign = string.lower(callsign)
+	
 	local result = self:CreatePlayer(callsign)
 	
 	if result:IsFailure() then
