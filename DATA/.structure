@@ -1,7 +1,11 @@
 #!/bin/dash
 # Set DEST to where you want the files copied.
+LUADEST=${DEST}/../../lua
+rm -f ${DEST}/* 2>/dev/null
+rm -rf ${DEST}/th_blitz ${LUADEST}
+mkdir -p ${LUADEST}
 cp -fa blitzWor.csv ${DEST}/
 cp -fa Terrain/xml ${DEST}/
 cp -fa th_blitz ${DEST}/
 cp -fa vehicles/ground/groundman/ppo.xml ${DEST}/
-cp -fa lua/include/*.lua ${DEST}/
+cp -fa -t ${LUADEST} lua/include/*.lua
