@@ -32,7 +32,7 @@
 -- how does the host handle loading of files?
 if _G["Include"] == nil then
 	_G["Include"] = function(file)
-		require file
+		require(file)
 	end
 end
 
@@ -60,7 +60,7 @@ Instancing =
 	,	"BroadcastEvent"		-- one off events that aren't saved, but are sent 
 	,	"SetPlayerState"		-- sets some player data
 	,	"AddPlayerState"		-- adds to player data (only numbers are supported)
-	},
+	}
 	
 	-- our instance statuses
 ,	{

@@ -22,13 +22,13 @@ function Instance:create()
 	local data = InstanceState:create()
 	
 	-- string instance id
-	data.id = "",
+	data.id = ""
 	
 	-- our send data callback
-	data.sendCallback = nil,
+	data.sendCallback = nil
 	
 	-- our list of players
-	data.players = {},
+	data.players = {}
 	
 	return setmetatable(data, InstanceInterface)
 end
@@ -40,21 +40,21 @@ function Instance:new(i, s)
 	local instance = Instance:create()
 	
 	-- string instance id
-	instance.id = i,
+	instance.id = i
 	
 	-- our send data callback
-	instance.sendCallback = s,
+	instance.sendCallback = s
 	
 	return instance
 end
 
 -- string id of instance
-function Instance:Id = function()
+function Instance:Id()
 	return self.id
 end
 
 -- number id of instance
-function Instance:No = function()
+function Instance:No()
 	return tonumber(self.id)
 end
 

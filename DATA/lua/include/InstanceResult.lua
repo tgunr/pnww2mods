@@ -21,7 +21,7 @@ function InstanceResult:new(c, d)
 	local result = 
 	{
 		-- our result code
-		code = c
+		code = c,
 		
 		-- data associated with the result
 		data = d,

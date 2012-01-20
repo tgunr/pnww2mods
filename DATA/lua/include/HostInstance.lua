@@ -119,7 +119,7 @@ function HostInstance:AddTracker(valueName, handler, userdata)
 		{
 			name = valueName,
 			handler = handler,
-			data	= userdata
+			data	= userdata,
 			created = now,
 			modified = now,
 			updated = now
