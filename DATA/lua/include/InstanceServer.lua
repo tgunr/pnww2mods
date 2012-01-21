@@ -190,6 +190,8 @@ function sendServerData(id, data)
 	if(game.Online() == false) then
 		-- need some sort of host c-layer callback here?
 		recvClientData(data)
+	else
+		inst.SendData(tostring(id), tostring(data))
 	end
 end
 
