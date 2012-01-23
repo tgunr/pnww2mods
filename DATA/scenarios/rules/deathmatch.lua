@@ -64,7 +64,7 @@ end
 -- give a point to the enemy each time I die
 function OnDie(handler)
 	scenario.AddEnemyScore(1);	
-	scenario.instance:AddPlayerState(state.config.callsign, "deaths", 1);
+	scenario.AddPlayerState(state.config.callsign, "deaths", 1);
 	state.intel = false;
 	return 1;
 end
@@ -78,7 +78,7 @@ function OnRuleUpdate(deltaTime)
 	-- current frametime
 	local ft 				= game.Frametime();
 	local team			= GetTeam();
-	local intelTeam 	= 0; --scenario.instance:GetStateNumber("intelteam");
+	local intelTeam 	= scenario.instance:GetStateNumber("intelteam");
 		
 	-- send a keepalive if needed
 	if(IsPlaying() and state.intel and ft >= state.nextintelcheck and (intelTeam == team or intelTeam == 0)) then 

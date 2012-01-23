@@ -108,6 +108,7 @@ function crawl(tbl, indent, recursionCheck)
 	if indent == nil then indent = "" end
 	
 	if recursionCheck == nil then
+		str = "\n"
 		crawl_recursions = 0
 	else
 		crawl_recursions = crawl_recursions + 1

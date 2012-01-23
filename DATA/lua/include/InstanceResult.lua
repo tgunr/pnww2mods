@@ -16,8 +16,11 @@ InstanceResultInterface = { __index = InstanceResult }
  
 -- generic constructor
 -- c = result code, see Instancing success and error codes
+-- s = source
+-- m = message
 -- d = userdata associated with error code
-function InstanceResult:new(c, s, m, d)
+-- r = report it
+function InstanceResult:new(c, s, m, d, r)
 	local result = 
 	{
 		-- our result code
@@ -32,34 +35,44 @@ function InstanceResult:new(c, s, m, d)
 		-- what created this result object
 		source = s,
 		
+		-- report the result?
+		report = Instancing.EnableDebug,
+		
 		-- identify this as a result table
 		_result = true
 	}
 	
+	-- do we report ourself?
+	if r ~= nil then
+		result.report = r
+	end
+	
 	setmetatable(result, InstanceResultInterface)
 	
 	-- debug it
-	Instancing.report('N', result:GetSource(), result:GetMessage())
+	if result.report then
+		Instancing.report('N', result:GetSource(), result:GetMessage())
+	end
 	
 	return result
 end
 
 -- convenience constructor for successes
 -- d = optional user data
-function InstanceResult:success(s, m, d)
-	return InstanceResult:new(Instancing.SuccessCode, s, m, d);
+function InstanceResult:success(s, m, d, r)
+	return InstanceResult:new(Instancing.SuccessCode, s, m, d, r);
 end
 
 -- convenience constructor for failures
 -- d is a string indicating the failure
-function InstanceResult:failure(s, m)
-	return InstanceResult:new(Instancing.FailureCode, s, m, nil);
+function InstanceResult:failure(s, m, r)
+	return InstanceResult:new(Instancing.FailureCode, s, m, nil, r);
 end
 
 -- convenience constructor for errors
 -- d is a string indicating the error condition
-function InstanceResult:error(s, m)
-	return InstanceResult:new(Instancing.ErrorCode, s, m, nil);
+function InstanceResult:error(s, m, r)
+	return InstanceResult:new(Instancing.ErrorCode, s, m, nil, r);
 end
 
 -- returns true on success, false on other

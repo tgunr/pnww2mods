@@ -12,6 +12,7 @@
 ]]--
 
 -- base class
+require 'math'
 require 'string'
 require 'table'
 require 'Instance'
@@ -80,25 +81,25 @@ end
 -- and possibly other data later
 -- returns true to tell the server to keep updating it
 -- returns false to tell the server not to update it anymore
-function HostInstance:Update(frametime)
+function HostInstance:Update(ft)
 	
 	local removes = {}
 	
 	-- update any states we are currently tracking
 	-- keepalives and timers for now
 	for k,t in pairs(self.track) do
-		if t.handler(self, t, frametime) == false then
+		if t.handler(self, k, ft) == false then
 			-- false means its done tracking
 			table.insert(removes, k)
 		end
 		
 		-- remember when we were last updated
-		t.updated = frametime 
+		t.updated = ft 
 	end
 	
 	-- handle any trackers that need removing
-	for i,v in pairs(removes) do
-		self:RemoveTracker(v)
+	for i,k in ipairs(removes) do
+		self:RemoveTracker(k)
 	end
 	
 	-- continue to get updated if we still have some to states to track
@@ -124,6 +125,7 @@ function HostInstance:AddTracker(valueName, handler, userdata)
 		-- our new tracker
 		local tracker =
 		{
+			init = true,
 			name = valueName,
 			handler = handler,
 			data	= userdata,
@@ -134,6 +136,9 @@ function HostInstance:AddTracker(valueName, handler, userdata)
 		
 		-- remember it
 		self.track[valueName] = tracker
+		
+		-- call it once to init it
+		self.track[valueName].handler(self, valueName, now) 
 	else
 		-- our value has been modified, remember when
 		self.track[valueName].modified = now
@@ -202,7 +207,7 @@ function HostInstance:RecvKeepAlive(valueName, value)
 		local result = self:ChangeState(valueName, value)
 		
 		-- track this state
-		self:AddTracker(valueName, _G["_trackKeepAlive"])
+		self:AddTracker(valueName, _trackKeepAlive)
 		
 		if result:IsNOK() then
 			return result
@@ -212,7 +217,7 @@ function HostInstance:RecvKeepAlive(valueName, value)
 		return self:KeepAlive(valueName, value)
 	end
 	
-	return InstanceResult:failure(self:GetType() .. " HostInstance:RecvKeepAlive", "keepAlive occupied or unchanged")
+	return InstanceResult:failure(self:GetType() .. " HostInstance:RecvKeepAlive", "keepAlive occupied or unchanged", false)
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -226,7 +231,7 @@ function HostInstance:RecvSetTimer(timerName, duration)
 	local result = self:ChangeState(timerName, duration)
 	
 	-- start tracking this state
-	self:AddTracker(timerName, _G["_trackTimer"], 0)
+	self:AddTracker(timerName, _trackTimer, 0)
 	
 	if result:IsNOK() then
 		return result
@@ -333,7 +338,7 @@ function HostInstance:RecvRegisterClient(callsign)
 		return InstanceResult:failure(self:GetType() .. " HostInstance:RecvRegisterClient", "unable to create player "  .. callsign)
 	end
 	
-	return self:RegisterClient(self.state, self.players)
+	return self:SendRegisterClient(self.state, self.players)
 end
 
 ------------------------------------------------------------------------------------
@@ -345,30 +350,47 @@ end
 
 -- timer tracker
 -- this might be ported to using Oli's eventd queue system
-function _trackTimer(instance, tracker, now)
+function _trackTimer(instance, name, now)
 	
-	-- see if we need to init
-	if tracker.data == 0 then
-		-- make data be the time we're looking for
-		tracker.data = now + instance:GetStateNumber(tracker.name)
-		tracker.lastsend = now - 1
+	if instance.track[name] == nil then
+		return false
 	end
 	
-	-- how much time is left
-	local timeleft = tracker.data - now
+	-- perform inits
+	if instance.track[name].init then
+		instance.track[name].init = false
+		instance.track[name].data = now + (instance:GetStateNumber(name) * 1000)
+		instance.track[name].lastsend = 0
+		return true
+	end
 	
-	if timeleft <= 0 then
+	-- Instancing.report('D', 'TrackTimer', crawl(instance))
+	
+	-- how much time is left
+	local msLeft = instance.track[name].data - now
+	local secondsLeft = math.floor(msLeft / 1000)
+	
+	if secondsLeft <= 0 then
+		-- update our host state
+		instance:ChangeState(name, 0)
+		
 		-- we are done, let everyone know
-		instance:SetTimer(tracker.name, 0)
+		instance:SetTimer(name, 0)
 		
 		-- don't track anymore!
 		return false
 	end
 	
 	-- send it at most once ever second
-	if now - tracker.lastsend >= 1 then
-		instance:SetTimer(tracker.name, timeleft)
-		tracker.lastsend = now
+	if (secondsLeft - instance.track[name].lastsend) >= 1 then
+		-- update our host state
+		instance:ChangeState(name, secondsLeft)
+		
+		-- send it
+		instance:SetTimer(name, secondsLeft)
+		
+		-- save it
+		instance.track[name].lastsend = secondsLeft
 	end
 	
 	-- keep tracking!
@@ -377,25 +399,33 @@ end
 
 -- keep alive tracker
 -- basically this handles being in an area
-function _trackKeepAlive(instance, tracker, now)
+function _trackKeepAlive(instance, name, now)
 	
-	-- make sure someone is actually in the area
-	-- it will be non-zero in that case
-	if instance:GetStateNumber(tracker.name) == 0 then
-		-- instance:KeepAlive(tracker.name, 0)
+	if instance.track[name] == nil then
 		return false
 	end
 	
-	-- see if we've gotten an update within the last 2 seconds
-	if (now - tracker.modified) < 3 then
-		-- keep tracking
+	-- perform inits
+	if instance.track[name].init then
+		instance.track[name].init = false
 		return true
-	else
-		-- send a 0 indicating the keep alive is no longer occupied
-		instance:KeepAlive(tracker.name, 0)
-		
-		-- stop tracking
-		return false
 	end
 	
+	-- Instancing.report('D', 'TrackKeepAlive', crawl(instance))
+	
+	-- make sure someone is actually in the area, it will be non-zero in that case
+	-- and see if we've gotten an update within the last 2 seconds
+	if instance:GetStateNumber(name) > 0 and (now - instance.track[name].modified) < 2000 then
+		-- ok, keep tracking
+		return true
+	end
+	
+	-- update our host state
+	instance:ChangeState(name, 0)
+	
+	-- send a 0 indicating the keep alive is no longer occupied
+	instance:KeepAlive(name, 0)
+	
+	-- stop tracking
+	return false
 end

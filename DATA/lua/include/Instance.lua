@@ -73,7 +73,7 @@ function Instance:CommandNumber(cmdName)
 	for cNum, cName in ipairs(Instancing.Commands)
 	do
 		if cName == cmdName then
-			return InstanceResult:success(self:GetType() .. " Instance:CommandNumber", "found "  .. printState(cmdName, cNum), cNum)
+			return InstanceResult:success(self:GetType() .. " Instance:CommandNumber", "found "  .. printState(cmdName, cNum), cNum, false)
 		end
 	end
 	return InstanceResult:failure(self:GetType() .. " Instance:CommandNumber", "could not find "  .. cmdName)
@@ -87,7 +87,7 @@ function Instance:CommandName(cmdNum)
 	for cNum, cName in ipairs(Instancing.Commands)
 	do
 		if cNum == cmdNum then
-			return InstanceResult:success(self:GetType() .. " Instance:CommandName", "found "  .. printState(cName, cmdNum), cName)
+			return InstanceResult:success(self:GetType() .. " Instance:CommandName", "found "  .. printState(cName, cmdNum), cName, false)
 		end
 	end
 	return InstanceResult:failure(self:GetType() .. " Instance:CommandName", "could not find "  .. tostring(cmdNum))
@@ -117,14 +117,18 @@ function Instance:SendCommand(cmdName, ...)
 	-- add all of the arguments as parts.
 	for _, val in ipairs({...})
 	do
-		if type(val) == "number" then
-			table.insert(args, val);
-		elseif type(val) == "table" then
-			Instancing:report('D', 'Format Error!', crawl(val))
-		else
-			table.insert(args, string.format('%q', val));
-		end
+		table.insert(args, val)
+		-- if type(val) == "number" then
+		-- 	table.insert(args, val);
+		-- elseif type(val) == "table" then
+		-- 	Instancing.report('D', self:GetType() .. ' Instance:SendCommand', "Format Error - \n" .. crawl(val))
+		-- else
+			-- table.insert(args, string.format('%q', val));
+		-- 	table.insert(args, val);
+		-- end
 	end
+	
+	-- Instancing.report('D', self:GetType() .. ' Instance:SendCommand', crawl(args))
 	
 	local out = json.encode(args)
 	
@@ -133,9 +137,9 @@ function Instance:SendCommand(cmdName, ...)
 	-- send it as a json string using the send callback
 	if self.sendCallback ~= nil then
 		self.sendCallback(self.id, out)
-		return InstanceResult:success(self:GetType() .. " Instance:SendCommand", "data sent")
+		return InstanceResult:success(self:GetType() .. " Instance:SendCommand", out .. " (sent)")
 	else
-		return InstanceResult:failure(self:GetType() .. " Instance:SendCommand", "send callback not defined")
+		return InstanceResult:failure(self:GetType() .. " Instance:SendCommand", out .. " (failed)")
 	end
 end
 
@@ -144,7 +148,7 @@ end
 function Instance:RecvCommand(data)
 
 	if type(data) ~= "string" then
-		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand", "expected an input string, got something else")
+		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand", "expected an input string, got something else: " .. data)
 	end
 	
 	-- Instancing.report('D', 'RecvCommand', data)
@@ -155,8 +159,10 @@ function Instance:RecvCommand(data)
 	-- must be atable
 	if type(args) ~= "table" then
 		-- Instancing.report('D', 'RecvCommand', tostring(args))
-		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand", "json didn't return a table, bad data")
+		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand", "json didn't return a table, bad data: " .. data)
 	end
+	
+	-- Instancing.report('D', self:GetType() .. ' Instance:RecvCommand', crawl(args))
 	
 	-- make sure this was for our instance
 	if args[1] ~= self.id then
@@ -192,19 +198,15 @@ function Instance:RecvCommand(data)
 	-- local dbug = "Invoking "..cmdName.."("
 	-- for i, v in ipairs(args) do dbug = dbug .. tostring(v).." " end
 	-- dbug = dbug .. ")"
-	-- Instancing:report('D', 'ReceiveCommand', dbug)
+	-- Instancing.report('D', 'ReceiveCommand', dbug)
 
 	-- Invoke the function, passing any remaining args to it.
 	local success, output = pcall(fn, self, unpack(args))
-	if success == false then
-		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand", output)
-	end
 	
-	-- Handle case where we return {code, result}
-	if type(output) == "table" and output["_result"] == true then
-		return output
+	if success == false then
+		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand", data .. " (failed)")
 	else
-		return InstanceResult:success(self:GetType() .. " Instance:RecvCommand", output)
+		return InstanceResult:success(self:GetType() .. " Instance:RecvCommand", data .. " (received)")
 	end
 end
 

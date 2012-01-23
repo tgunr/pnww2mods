@@ -40,7 +40,7 @@ end
 -- this call updates all instances that have registered themself
 -- as wanting to be updated, probably because they are monitoring
 -- a state variable in some way
-function InstanceServer:Update(frametime)
+function InstanceServer:Update(ft)
 	
 	-- instances that need removing from the update list
 	local removes = {}
@@ -48,20 +48,20 @@ function InstanceServer:Update(frametime)
 	for id,instance in pairs(self.updates) do
 		-- a host instance's update function will return
 		-- false when it no longer wants to be updated
-		if not instance:Update(frametime) then
+		if not instance:Update(ft) then
 			table.insert(removes, instance)
 		end
 	end
 	
 	-- remove any instances that no longer
 	-- want to be updated
-	for index,instance in ipairs(removes) 	do
+	for index,instance in ipairs(removes) do
 		self:UnregisterUpdate(instance)
 	end
 	
 	-- remember last time we were updated
 	-- might be useful
-	self.lastUpdate = frametime 
+	self.lastUpdate = ft 
 end
 
 -- called by an instance this server manages
@@ -103,7 +103,7 @@ function InstanceServer:AddInstance(id)
 	
 	-- if so, bail early
 	if result:IsSuccess() then
-		return InstanceResult:failure("S InstanceServer:AddInstance", "instance " .. id .. " exists, nothing to do!")
+		return InstanceResult:failure("S InstanceServer:AddInstance", "instance " .. id .. " exists, nothing to do!", false)
 	end
 	
 	-- create it
@@ -126,7 +126,7 @@ function InstanceServer:RemoveInstance(id)
 	
 	-- instance didn't exit, bail
 	if result.IsNOK() then
-		return InstanceResult:failure("S InstanceServer:RemoveInstance", "instance " .. id .. " does not exist, nothing to do!")
+		return InstanceResult:failure("S InstanceServer:RemoveInstance", "instance " .. id .. " does not exist, nothing to do!", false)
 	end
 	
 	-- kill it
@@ -140,7 +140,7 @@ end
 -- returns a result object
 function InstanceServer:GetInstance(id)
 	if self.instances[id] ~= nil then
-		return InstanceResult:success("S InstanceServer:GetInstance", "instance " .. id .. " returned!", self.instances[id])
+		return InstanceResult:success("S InstanceServer:GetInstance", "instance " .. id .. " returned!", self.instances[id], false)
 	else
 		return InstanceResult:failure("S InstanceServer:GetInstance", "instance " .. id .. " does not exist!")
 	end
@@ -150,7 +150,7 @@ end
 -- ### Main
 -- ##################################################################
 
---Instancing:report('D', 'Main', 'Debug reporting enabled.')
+--Instancing.report('D', 'Main', 'Debug reporting enabled.')
 
 -- our server instance
 server = InstanceServer:create()
@@ -212,5 +212,5 @@ function recvServerData(id, data)
 	return getResult(result.data:RecvCommand(data))
 end
 
--- Instancing:report('N', 'Main', 'Shutting down.')
+-- Instancing.report('N', 'Main', 'Shutting down.')
 

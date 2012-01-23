@@ -38,6 +38,12 @@ state.playeradds			= {}; -- updates that are incremental changes
 state.player					= {}; -- player state
 state.lastplayer			= {}; -- last player state
 
+if(not game.Online()) then
+	-- message queues
+	scenario.toserver = {};
+	scenario.fromserver = {};
+end
+
 Instancing.EnableDebug = true;
 Instancing.LoggingCallback = ui.ChatPrint;
 
@@ -161,7 +167,7 @@ function StartNetwork()
 			if(duration == nil) then
 				duration = state.config.duration;
 			end
-			local seconds = tonumber(duration or 10) * 5;
+			local seconds = tonumber(duration or 10) * 1000 * 60;
 			scenario.instance:SetTimer("roundtimer", seconds);
 			scenario.instance:SetState("victory", 0);
 			scenario.instance:SetState("round", scenario.manager:GetRound());
@@ -264,23 +270,24 @@ function OnSet(handler, name, value)
 	if(name == "load" and value == "content") then
 		LoadContent();
 	elseif(name == "instance") then
+		-- handle local instance server
+		if(not game.Online()) then
+			-- create our local instance on the local server
+			createInstance(state.config.instance);
+			
+			-- set its status
+			setInstanceStatus(state.config.instance, "Staging");
+			
+			-- report it
+			-- Instancing.report('N', 'OnSet', "Server running: " .. crawl(server));
+		end
+		-- setup client instance
 		if(scenario.instance == nil) then
 			scenario.instance = ClientInstance:new(state.config.instance, sendClientData);
 			
 			-- debug it
 			Instancing.report('N', 'OnSet', "New instance created with id: " .. scenario.instance.id);
-			Instancing.report('N', 'Scenario:ClientInstance', crawl(scenario.instance));
-			
-			if(not game.Online()) then
-				-- create our local instance on the local server
-				createInstance(scenario.instance.id);
-				
-				-- set its status
-				setInstanceStatus(scenario.instance.id, "Staging");
-				
-				-- report it
-				-- Instancing:report('N', 'OnSet', "Server running: " .. crawl(server));
-			end
+			-- Instancing.report('N', 'Scenario:ClientInstance', crawl(scenario.instance));
 			
 			-- setup any host state monitoring
 			if(state.hoststates ~= nil) then
@@ -322,6 +329,25 @@ end
 -- might be overriden by a rules handler 
 -- that includes this file
 scenario.OnScenario = function(handler)
+	
+	local online = game.Online();
+	
+	local ft = FrameTime();
+	local reportFT = false;
+	
+	-- simulate network traffic
+	if(not online) then
+		-- handle in incoming data from the server for the last frame
+		for k,v in pairs(scenario.fromserver) do
+			if(scenario.instance ~= nil and scenario.instance.id == v[1]) then
+				-- Instancing.report('D', "scenario.OnScenario", "Receiving data: " v[2]);
+				scenario.instance:RecvCommand(v[2]);
+				reportFT = true;
+			end
+		end
+		scenario.fromserver = {}
+	end
+
 	-- get any new network events
 	if(scenario.instance ~= nil) then
 		-- handle any specific player state changes
@@ -331,6 +357,7 @@ scenario.OnScenario = function(handler)
 				state.lastplayer[k] = v;
 				-- send up our updated player state value
 				scenario.instance:SetPlayerState(state.config.callsign, k, v);
+				reportFT = true;
 			end
 		end
 		
@@ -338,20 +365,12 @@ scenario.OnScenario = function(handler)
 		for k,v in pairs(state.playeradds) do
 			-- send up our incremental player state value
 			scenario.instance:AddPlayerState(state.config.callsign, k, v);
+			reportFT = true;
 		end
-		
-		--Instancing:PollEvents();
 	end
 	
 	-- clear this table each run
 	state.playeradds = {};
-	
-	local ft = FrameTime();
-	
-	if(game.Online() == false) then
-		-- update our local server
-		updateServer(ft);
-	end
 	
 	if(state.lastupdate > 0) then
 		local msDelta = ft - state.lastupdate; 
@@ -363,6 +382,22 @@ scenario.OnScenario = function(handler)
 				_G[callback](msDelta);
 			end
 		end
+	end
+	
+	-- simulate network traffic
+	if(not online) then
+		-- handle any outgoing data from us for the last frame
+		for k,v in pairs(scenario.toserver) do
+			recvServerData(v[1], v[2]);
+			reportFT = true;
+		end
+		scenario.toserver = {}
+		
+		updateServer(ft);
+	end
+	
+	if(reportFT) then
+		ui.ChatPrint("============= frame " .. tostring(ft) .. " =============");
 	end
 	
 	state.lastupdate = ft; 
@@ -747,12 +782,12 @@ function sendClientData(id, data)
 	if(game.Online()) then
 		scenario.manager:SendData(data, 0);
 	else
-		recvServerData(scenario.instance:Id(), data);
+		table.insert(scenario.toserver, {scenario.instance:Id(), data});
 	end
 end
 
 function recvClientData(id, data)
 	if(scenario.instance ~= nil and scenario.instance.id == id) then
-		scenario.instance:RecvCommand(data);
+		table.insert(scenario.fromserver, {id, data});
 	end
 end
