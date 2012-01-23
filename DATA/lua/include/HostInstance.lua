@@ -12,7 +12,9 @@
 ]]--
 
 -- base class
-Include("Instance")
+require 'string'
+require 'table'
+require 'Instance'
 
 HostInstance = Instance:create()
 HostInstanceInterface = { __index = HostInstance }
@@ -75,18 +77,17 @@ end
 function HostInstance:Update(frametime)
 	
 	local removes = {}
-	local now = teul.time_s
 	
 	-- update any states we are currently tracking
 	-- keepalives and timers for now
 	for k,t in pairs(self.track) do
-		if t.handler(self, t, now) == false then
+		if t.handler(self, t, frametime) == false then
 			-- false means its done tracking
 			table.insert(removes, k)
 		end
 		
 		-- remember when we were last updated
-		t.updated = now 
+		t.updated = frametime 
 	end
 	
 	-- handle any trackers that need removing
@@ -95,7 +96,7 @@ function HostInstance:Update(frametime)
 	end
 	
 	-- continue to get updated if we still have some to states to track
-	if getn(self.track) > 0 then
+	if table.getn(self.track) > 0 then
 		return true
 	end
 	
@@ -110,7 +111,7 @@ function HostInstance:AddTracker(valueName, handler, userdata)
 	-- register ourself as an updater
 	self.server:RegisterUpdate(self)
 	
-	local now = os.time()
+	local now = FrameTime()
 	
 	-- create a tracker if needed
 	if self.track[valueName] == nil then
@@ -150,7 +151,7 @@ function HostInstance:RecvSetState(valueName, value)
 	local result = self:ChangeState(valueName, value)
 	
 	-- if the value didn't change, no need to send it
-	if result:IsFailure() then
+	if result:IsNOK() then
 		return result
 	end
 	
@@ -171,7 +172,7 @@ function HostInstance:RecvAddState(valueName, value)
 	local result = self:ChangeState(valueName, value)
 	
 	-- if the value didn't change, no need to send it
-	if result:IsFailure() then
+	if result:IsNOK() then
 		return result
 	end
 	
@@ -197,7 +198,7 @@ function HostInstance:RecvKeepAlive(valueName, value)
 		-- track this state
 		self:AddTracker(valueName, _G["_trackKeepAlive"])
 		
-		if result:IsFailure() then
+		if result:IsNOK() then
 			return result
 		end
 		
@@ -205,7 +206,7 @@ function HostInstance:RecvKeepAlive(valueName, value)
 		return self:KeepAlive(valueName, value)
 	end
 	
-	return InstanceResult:failure("KeepAlive occupied or unchanged")
+	return InstanceResult:failure("keepAlive occupied or unchanged")
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -216,17 +217,17 @@ end
 -- returns a result object
 -- start tracking the timer
 function HostInstance:RecvSetTimer(timerName, duration)
-	local result = self:ChangeState(valueName, value)
+	local result = self:ChangeState(timerName, duration)
 	
 	-- start tracking this state
-	self:AddTracker(valueName, _G["_trackTimer"], 0)
+	self:AddTracker(timerName, _G["_trackTimer"], 0)
 	
-	if result:IsFailure() then
+	if result:IsNOK() then
 		return result
 	end
 	
 	-- relay the change to other clients
-	return self:SetTimer(valueName, value)
+	return self:SetTimer(timerName, duration)
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -251,14 +252,19 @@ end
 -- returns a result object
 -- update the player, then relay the change to all clients
 function HostInstance:RecvSetPlayerState(callsign, valueName, value)
+	
+	Instancing.report('D', 'HostInstance:RecvSetPlayerState', "callsign is " .. tostring(callsign))
+	Instancing.report('D', 'HostInstance:RecvSetPlayerState', "valueName is " .. tostring(valueName))
+	Instancing.report('D', 'HostInstance:RecvSetPlayerState', "value is " .. tostring(value))
+	
 	-- make sure callsign is lower case
-	callsign = string.lower(callsign)
+	-- callsign = string.lower(callsign)
 	
 	local player = self:GetPlayer(callsign)
 	local result = player:SetState(valueName, value)
 	
 	-- no need to send if there was no change
-	if result:IsFailure() then
+	if result:IsNOK() then
 		return result
 	end
 	
@@ -274,14 +280,19 @@ end
 -- returns a result object
 -- update the player, then relay the change to all clients
 function HostInstance:RecvAddPlayerState(callsign, valueName, value)
+
+	Instancing.report('D', 'HostInstance:RecvAddPlayerState', "callsign is " .. tostring(callsign))
+	Instancing.report('D', 'HostInstance:RecvAddPlayerState', "valueName is " .. tostring(valueName))
+	Instancing.report('D', 'HostInstance:RecvAddPlayerState', "value is " .. tostring(value))
+
 	-- make sure callsign is lower case
-	callsign = string.lower(callsign)
+	-- callsign = string.lower(callsign)
 	
 	local player = self:GetPlayer(callsign)
 	local result = player:AddState(valueName, value)
 	
 	-- no need to send if there was no change
-	if result:IsFailure() then
+	if result:IsNOK() then
 		return result
 	end
 	
@@ -304,13 +315,16 @@ end
 -- recvs a callsign and creates a new player with it
 -- causes a full state and players list to be sent down to the client
 function HostInstance:RecvRegisterClient(callsign)
+
+	Instancing.report('D', 'HostInstance:RecvRegisterClient', "callsign is " .. tostring(callsign))
+	
 	-- make sure callsign is lower case
-	callsign = string.lower(callsign)
+	-- callsign = string.lower(callsign)
 	
-	local result = self:CreatePlayer(callsign)
+	local player = self:GetPlayer(callsign)
 	
-	if result:IsFailure() then
-		return result
+	if player == nil then
+		return InstanceResult:failure("HostInstance:RecvRegisterClient", "unable to create player "  .. callsign)
 	end
 	
 	return self:RegisterClient(self.state, self.players)

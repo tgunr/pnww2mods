@@ -12,7 +12,7 @@
 ]]--
 
 -- base class
-Include("InstanceState")
+require 'InstanceState'
 
 -- class container
 InstancePlayer = InstanceState:create()
@@ -25,7 +25,7 @@ function InstancePlayer:new(i, c)
 	local player = InstanceState:create()
 	
 	player.instance = i
-	player.callsign = string.lower(c)
+	player.callsign = c --string.lower(c)
 	
 	return setmetatable(player, InstancePlayerInterface)
 end
@@ -37,7 +37,7 @@ end
 function InstancePlayer:SetState(valueName, value)
 	self:ChangeState(valueName, value)
 	self.instance:HandleState("OnPlayer", self.callsign, valueName, value)
-	return InstanceResult:success("SetPlayerState success")
+	return InstanceResult:success("InstancePlayer:SetState", printState(valueName, value))
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -47,6 +47,11 @@ end
 function InstancePlayer:AddState(valueName, value)
 	local oldValue = self:GetStateNumber(valueName)
 	local newValue = oldValue + tonumber(value)
+	
+	if Instancing.EnableDebug then
+		InstanceResult:success("InstancePlayer:AddState", printChange(valueName, oldValue, NewValue))
+	end
+	
 	return self:SetState(valueName, newValue)
 end
 

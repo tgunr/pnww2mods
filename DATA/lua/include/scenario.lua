@@ -9,7 +9,7 @@ Include("state"); -- includes default state
 Include("strat");
 Include("ClientInstance");
 
-if(game.Online() == false) then
+if(not game.Online()) then
 	Include("InstanceServer");
 end
 
@@ -264,12 +264,13 @@ function OnSet(handler, name, value)
 	if(name == "load" and value == "content") then
 		LoadContent();
 	elseif(name == "instance") then
-		scenario.instance = ClientInstance:new(state.config.instance, _G["sendClientData"]);
+		scenario.instance = ClientInstance:new(state.config.instance, sendClientData);
 		
 		-- debug it
 		Instancing.report('N', 'OnSet', "New instance created with id: " .. scenario.instance.id);
+		Instancing.report('N', 'Scenario:ClientInstance', crawl(scenario.instance));
 		
-		if(game.Online() == false) then
+		if(not game.Online()) then
 			-- create our local instance on the local server
 			createInstance(scenario.instance.id);
 			
@@ -740,7 +741,7 @@ function IsPlaying()
 	end
 end
 
-function sendClientData(data)
+function sendClientData(id, data)
 	if(game.Online()) then
 		scenario.manager:SendData(data, 0);
 	else
@@ -748,8 +749,8 @@ function sendClientData(data)
 	end
 end
 
-function recvClientData(data)
-	if(scenario.instance ~= nil) then
+function recvClientData(id, data)
+	if(scenario.instance ~= nil and scenario.instance.id == id) then
 		scenario.instance:RecvCommand(data);
 	end
 end

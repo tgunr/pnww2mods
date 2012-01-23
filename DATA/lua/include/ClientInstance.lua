@@ -11,8 +11,8 @@
 	ClientInstance class definition
 ]]--
 
-Include("Instancing")
-Include("Instance")
+require 'Instancing'
+require 'Instance'
 
 ClientInstance = Instance:create()
 ClientInstanceInterface = { __index = ClientInstance }

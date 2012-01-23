@@ -12,7 +12,8 @@
 ]]--
 
 -- base class
-Include("Instancing")
+require 'Instancing'
+require 'InstancePlayer'
 
 Instance = InstanceState:create()
 InstanceInterface = { __index = Instance }
@@ -66,10 +67,10 @@ function Instance:CommandNumber(cmdName)
 	for cNum, cName in ipairs(Instancing.Commands)
 	do
 		if cName == cmdName then
-			return InstanceResult:success(cNum)
+			return InstanceResult:success("Instance:CommandNumber", "found "  .. printState(cmdName, cNum), cNum)
 		end
 	end
-	return InstanceResult:failure("No such command "..cmdName..".")
+	return InstanceResult:failure("Instance:CommandNumber", "could not find "  .. cmdName)
 end
 
 -- look up a command by name
@@ -80,12 +81,11 @@ function Instance:CommandName(cmdNum)
 	for cNum, cName in ipairs(Instancing.Commands)
 	do
 		if cNum == cmdNum then
-			return InstanceResult:success(cName)
+			return InstanceResult:success("Instance:CommandName", "found "  .. printState(cName, cmdNum), cName)
 		end
 	end
-	return InstanceResult:failure("No such command "..cmdNum..".")
+	return InstanceResult:failure("Instance:CommandName", "could not find "  .. tostring(cmdNum))
 end
-
 
 -- sends off a json argument
 -- cmdName must be a valid shared command
@@ -93,14 +93,14 @@ end
 function Instance:SendCommand(cmdName, ...)
 	-- First argument must be a string.
 	if type(cmdName) ~= "string" then
-		return InstanceResult:failure("Invalid cmd argument - expected string.")
+		return InstanceResult:failure("Instance:SendCommand", "invalid command "  .. cmdName)
 	end
 	
 	-- Look for the command.
 	local lookup = self:CommandNumber(cmdName)
 	
 	-- bad command, bail
-	if lookup:IsFailure() then
+	if lookup:IsNOK() then
 		return lookup
 	end
 	
@@ -109,7 +109,7 @@ function Instance:SendCommand(cmdName, ...)
 	local args = {self.id, lookup.data};
 	
 	-- add all of the arguments as parts.
-	for _, val in ipairs(arg)
+	for _, val in ipairs({...})
 	do
 		if type(val) == "number" then
 			table.insert(args, val);
@@ -118,12 +118,16 @@ function Instance:SendCommand(cmdName, ...)
 		end
 	end
 	
+	local out = json.encode(args)
+	
+	Instancing.report('D', 'SendCommand', out)
+	
 	-- send it as a json string using the send callback
 	if self.sendCallback ~= nil then
-		self.sendCallback(self.id, json.encode(args))
-		return InstanceResult:success("-- data sent, may not actually have been sent yet.")
+		self.sendCallback(self.id, out)
+		return InstanceResult:success("Instance:SendCommand", "data sent")
 	else
-		return InstanceResult:failure("-- send callback not defined.")
+		return InstanceResult:failure("Instance:SendCommand", "send callback not defined")
 	end
 end
 
@@ -132,22 +136,23 @@ end
 function Instance:RecvCommand(data)
 
 	if type(data) ~= "string" then
-		return InstanceResult:failure("Invalid ReceiveCommand - expected string")
+		return InstanceResult:failure("Instance:RecvCommand", "expected an input string, got something else")
 	end
+	
+	Instancing.report('D', 'RecvCommand', data)
 	
 	-- get our arguments
 	local args = json.decode(data);
 	
-	Instancing.report('D', 'RecvCommand', crawl(args))
-	
 	-- must be atable
 	if type(args) ~= "table" then
-		return InstanceResult:failure("Invalid ReceiveCommand - unable to parse table")
+		-- Instancing.report('D', 'RecvCommand', tostring(args))
+		return InstanceResult:failure("Instance:RecvCommand", "json didn't return a table, bad data")
 	end
 	
 	-- make sure this was for our instance
 	if args[1] ~= self.id then
-		return InstanceResult:failure("Invalid ReceiveCommand - incorrect id")
+		return InstanceResult:failure("Instance:RecvCommand", "incorrect instance id: " .. args[1] .. " != " .. self.id)
 	end
 	
 	-- instance id
@@ -160,8 +165,8 @@ function Instance:RecvCommand(data)
 	local lookup = self:CommandName(cmdNum)
 	
 	-- bad command, bail
-	if lookup:IsFailure() then
-		return InstanceResult:failure("Invalid command number #" .. cmdNum)
+	if lookup:IsNOK() then
+		return lookup
 	end
 	
 	-- Name of the command.
@@ -171,38 +176,34 @@ function Instance:RecvCommand(data)
 	local fn = self["Recv" .. cmdName]
 	
 	-- bad function bail
-	if not fn then
-		return InstanceResult:failure("Could not find registered function Instance."..cmdName..".")
-	end
-	
-	if type(fn) ~= "function" then
-		return InstanceResult:failure("Instance."..cmdName.." does not appear to be a function.")
+	if not fn or type(fn) ~= "function" then
+		return InstanceResult:failure("Instance:RecvCommand", "invalid function Instance." .. cmdName)
 	end
 	
 	-- debug it
-	local dbug = "Invoking "..cmdName.."("
-	for i, v in ipairs(args) do dbug = dbug .. tostring(v).." " end
-	dbug = dbug .. ")"
-	Instancing:report('D', 'ReceiveCommand', dbug)
+	-- local dbug = "Invoking "..cmdName.."("
+	-- for i, v in ipairs(args) do dbug = dbug .. tostring(v).." " end
+	-- dbug = dbug .. ")"
+	-- Instancing:report('D', 'ReceiveCommand', dbug)
 
 	-- Invoke the function, passing any remaining args to it.
 	local success, output = pcall(fn, self, unpack(args))
 	if success == false then
-		return InstanceResult:failure(output)
+		return InstanceResult:failure("Instance:RecvCommand", output)
 	end
 	
 	-- Handle case where we return {code, result}
 	if type(output) == "table" and output["_result"] == true then
 		return output
 	else
-		return InstanceResult:success(output)
+		return InstanceResult:success("Instance:RecvCommand", output)
 	end
 end
 
 -- create a player if we didn't already have him
 function Instance:CreatePlayer(callsign)
 	-- make sure callsign is lower case
-	callsign = string.lower(callsign)	
+	--callsign = string.lower(callsign)	
 	
 	if self.players[callsign] == nil then
 		self.players[callsign] = InstancePlayer:new(self, callsign)
@@ -212,7 +213,7 @@ end
 -- remove a player if we had him
 function Instance:DeletePlayer(callsign)
 	-- make sure callsign is lower case
-	callsign = string.lower(callsign)
+	--callsign = string.lower(callsign)
 	
 	if self.players[callsign] ~= nil then
 		self.players[callsign] = nil
@@ -222,7 +223,7 @@ end
 -- get a player, creating him on the fly as needed
 function Instance:GetPlayer(callsign)
 	-- make sure callsign is lower case
-	callsign = string.lower(callsign)
+	--callsign = string.lower(callsign)
 	
 	-- ensure the player is created
 	self.CreatePlayer(callsign)
@@ -343,12 +344,12 @@ end
 
 -- send a player state change to the other side
 function Instance:SendSetPlayerState(callsign, valueName, value)
-	return self:SendCommand("SetPlayerState", string.lower(callsign), valueName, value)
+	return self:SendCommand("SetPlayerState", callsign, valueName, value)
 end
 
 -- recv a player state change from the other side
 function Instance:RecvSetPlayerState(callsign, valueName, value)
-	local player = self:GetPlayer(string.lower(callsign))
+	local player = self:GetPlayer(callsign)
 	player:SetState(valueName, value)
 end
 
@@ -362,12 +363,12 @@ end
 
 -- send a player add state to the other side
 function Instance:SendAddPlayerState(callsign, valueName, value)
-	return self:SendCommand("AddPlayerState", string.lower(callsign), valueName, value)
+	return self:SendCommand("AddPlayerState", callsign, valueName, value)
 end
 
 -- recv a player add state from the other side
 function Instance:RecvAddPlayerState(callsign, valueName, value)
-	local player = self:GetPlayer(string.lower(callsign))
+	local player = self:GetPlayer(callsign)
 	player:AddState(valueName, value)
 end
 
@@ -382,7 +383,7 @@ end
 -- tells the other side about our client
 -- passes our callsign
 function Instance:SendRegisterClient(callsign)
-	return self:SendCommand("RegisterClient", string.lower(callsign))
+	return self:SendCommand("RegisterClient", callsign)
 end
 
 -- the default response is to get back the full state

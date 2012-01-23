@@ -14,7 +14,7 @@
 -- used for responses
 -- all subclasses of InstanceState use this too so we
 -- might as well include it here
-Include("InstanceResult")
+require 'InstanceResult'
 
 InstanceState = {}
 InstanceStateInterface = { __index = InstanceState }
@@ -54,13 +54,13 @@ function InstanceState:HandleState(valueName, value, oldValue)
 	if handler ~= nil and type(_G[handler]) == "function" then
 		local status, msg = pcall(_G[handler], valueName, value, oldValue)
 		if not status then
-			return InstanceResult:failure("--  Handler failure -- "..msg..".")
+			return InstanceResult:failure("InstanceState:HandleState", printState(valueName, value) .. " not handled")
 		else
-			return InstanceResult:success("--  Handler success -- "..msg..".")
+			return InstanceResult:success("InstanceState:HandleState", printState(valueName, value) .. " handled")
 		end
 	end
 	
-	return InstanceResult:success("--  Handler success -- no handler.")
+	return InstanceResult:success("InstanceState:HandleState",  printState(valueName, value) .. " no handler")
 end
 
 -- main function for changing our state
@@ -73,22 +73,14 @@ function InstanceState:ChangeState(valueName, value)
 	-- set our state
 	self.state[valueName] = value
 	
-	if oldValue == newValue then
-		if oldValue ~= nil then
-			return InstanceResult:failure("-- "..valueName.." did not change '"..oldValue.."' -> '"..value.."'.")
-		else
-			return InstanceResult:failure("-- "..valueName.." did not change 'nil' -> '"..value.."'.")
-		end
+	if oldValue == value then
+		return InstanceResult:failure("InstanceState:ChangeState", printChange(valueName, oldValue, value) .. " (unchanged)")
 	end
 	
 	-- execute any associated handlers
 	self:HandleState(valueName, value, oldValue)
 	
-	if oldValue == nil then
-		oldValue = "nil"
-	end
-	
-	return InstanceResult:success("-- "..valueName.." value changed '"..oldValue.."' -> '"..value.."'.")
+	return InstanceResult:success("InstanceState:ChangeState", printChange(valueName, oldValue, value) .. " (changed)")
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -100,9 +92,9 @@ end
 function InstanceState:GetStateValue(stateName)
 	local state = self.state[stateName]
 	if state == nil then
-		return InstanceResult:failure("not set")
+		return InstanceResult:failure("InstanceState:GetStateValue", printState(stateName, state) .. " not set")
 	end
-	return InstanceResult:success(state)
+	return InstanceResult:success("InstanceState:GetStateValue", printState(stateName, state) .. " returned", state)
 end
 
 -- get a value as a string
@@ -111,7 +103,7 @@ end
 function InstanceState:GetStateString(stateName, defValue)
 	local state = self:GetStateValue(stateName)
 	
-	if(state:IsFailure()) then
+	if(state:IsNOK()) then
 		if(defValue ~= nil) then
 			return tostring(defValue)
 		else
@@ -128,7 +120,7 @@ end
 function InstanceState:GetStateNumber(stateName, defValue)
 	local state = self:GetStateValue(stateName)
 
-	if(state:IsFailure()) then
+	if(state:IsNOK()) then
 		if(defValue ~= nil) then
 			return tonumber(defValue)
 		else
@@ -145,7 +137,7 @@ end
 function InstanceState:GetStateBool(stateName, defValue)
 	local state = self:GetStateValue(stateName)
 
-	if(state:IsFailure()) then
+	if(state:IsNOK()) then
 		if(defValue ~= nil and defValue ~= 0 and defValue ~= "false" and defValue ~= false) then
 			return true
 		else

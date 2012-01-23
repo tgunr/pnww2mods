@@ -11,8 +11,8 @@
 	InstanceServer class definition
 ]]--
 
-Include("Instancing")
-Include("HostInstance")
+require 'Instancing'
+require 'HostInstance'
 
 InstanceServer = {}
 InstanceServerInterface = { __index = InstanceServer }
@@ -76,7 +76,7 @@ function InstanceServer:RegisterUpdate(instance)
 		self.updates[id] = instance
 	end
 	
-	return InstanceResult:success(" - updating " .. id)
+	return InstanceResult:success("InstanceServer:RegisterUpdate", "instance " .. id .. " registered")
 end
 
 -- called by an instance this server manages
@@ -91,7 +91,7 @@ function InstanceServer:UnregisterUpdate(instance)
 		self.updates[id] = nil
 	end
 	
-	return InstanceResult:success(" - removed " .. id)
+	return InstanceResult:success("InstanceServer:UnregisterUpdate", "instance " .. id .. " unregistered")
 end
 
 -- add a new instance
@@ -103,11 +103,13 @@ function InstanceServer:AddInstance(id)
 	
 	-- if so, bail early
 	if result:IsSuccess() then
-		return InstanceResult:failure(" - instance " .. id .. " already exists!")
+		return InstanceResult:failure("InstanceServer:AddInstance", "instance " .. id .. " exists, nothing to do!")
 	end
 	
 	-- create it
-	self.instances[id] = HostInstance:new(id, _G["sendServerData"], self)
+	self.instances[id] = HostInstance:new(id, sendServerData, self)
+	
+	Instancing.report('N', 'InstanceServer:AddInstance', crawl(self.instances[id]));
 	
 	-- return the lookup result
 	-- result.data will contain the instance
@@ -122,14 +124,14 @@ function InstanceServer:RemoveInstance(id)
 	local result = self:GetInstance(id)
 	
 	-- instance didn't exit, bail
-	if result.IsFailure() then
-		return InstanceResult:failure(" - instance " .. id .. " does not exist!")
+	if result.IsNOK() then
+		return InstanceResult:failure("InstanceServer:RemoveInstance", "instance " .. id .. " does not exist, nothing to do!")
 	end
 	
 	-- kill it
 	self.instances[id] = nil
 	
-	return InstanceResult:success(" - instance " .. id .. " removed!")
+	return InstanceResult:success("InstanceServer:RemoveInstance", "instance " .. id .. " removed!")
 end
 
 -- lookup an instance
@@ -137,9 +139,9 @@ end
 -- returns a result object
 function InstanceServer:GetInstance(id)
 	if self.instances[id] ~= nil then
-		return InstanceResult:success(self.instances[id])
+		return InstanceResult:success("InstanceServer:GetInstance", "instance " .. id .. " returned!", self.instances[id])
 	else
-		return InstanceResult:failure(" - no such instance " .. id)
+		return InstanceResult:failure("InstanceServer:GetInstance", "instance " .. id .. " does not exist!")
 	end
 end
 
@@ -181,17 +183,16 @@ end
 
 -- host update callback
 -- returns true on success, false on failure
-function updateServer(frametime)
-	return getResult(server:Update(frametime))
+function updateServer()
+	return getResult(server:Update(FrameTime()))
 end
 
 -- host send data callback
 function sendServerData(id, data)
-	if(game.Online() == false) then
-		-- need some sort of host c-layer callback here?
-		recvClientData(data)
-	else
+	if IsOnline() then
 		inst.SendData(tostring(id), tostring(data))
+	elseif IsClient() then
+		recvClientData(id, data)
 	end
 end
 

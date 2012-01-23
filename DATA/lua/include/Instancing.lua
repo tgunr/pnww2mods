@@ -11,35 +11,12 @@
 	a Lua-based Instance client or server.
 ]]--
 
--- remove unsued features from the core libs
-
---io 		= nil;
---file 	= nil;
---os 		= nil;
-
--- add some common functions
-
---function Include(lib, force)
---	if(_G[lib] == nil or force == true) then
---		game.RunScript("include/"..lib..".lua");
---	end
---end
-
--- add it to the game lib for consistency sake
--- game.Include = Include; 
-
--- compatibility with client
--- how does the host handle loading of files?
-if _G["Include"] == nil then
-	_G["Include"] = function(file)
-		require(file)
-	end
-end
-
-Include("string")
-Include("json")
-Include("InstanceResult")
-Include("InstanceState")
+require 'debug'
+require 'string'
+require 'json'
+require 'shared'
+require 'InstanceResult'
+require 'InstanceState'
 
 Instancing =
 {
@@ -72,8 +49,9 @@ Instancing =
 	,	"Dead"
 	}
 	
-,	SuccessCode		=	'OK'	-- Returned to indicate things went well
-,	ErrorCode			=	'NOK'	-- Returned to indicate something failed.
+,	SuccessCode		=	'OK'		-- Returned to indicate things went well
+,	FailureCode			=	'NOK'	-- Returned to indicate something failed.
+,	ErrorCode			=	'ERR'		-- Returned to indicate an error.
 ,	EnableDebug		=	true	-- Set true to allow 'D' messages to log.
 ,	LoggingCallback	= nil -- what to call when trying to output loggin
 
@@ -138,6 +116,14 @@ function crawl(tbl, indent)
 		end
 	end
 	return str
+end
+
+function printState(vName, vFrom)
+	return string.format("%s : %s", tostring(vName), tostring(vFrom))
+end
+
+function printChange(vName, vFrom, vTo)
+	return string.format("%s : %s -> %s", tostring(vName), tostring(vFrom), tostring(vTo))
 end
 
 -- takes a result object and returns true is the result was a success and false if not
