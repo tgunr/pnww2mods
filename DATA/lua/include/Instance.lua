@@ -20,18 +20,21 @@ InstanceInterface = { __index = Instance }
  
 -- constructor with no arguments
 function Instance:create()
-	local data = InstanceState:create()
+	local instance = InstanceState:create()
 	
 	-- string instance id
-	data.id = ""
+	instance.id = ""
 	
 	-- our send data callback
-	data.sendCallback = nil
+	instance.sendCallback = nil
 	
 	-- our list of players
-	data.players = {}
+	instance.players = {}
 	
-	return setmetatable(data, InstanceInterface)
+	-- what type of instance are we
+	instance.type = 'I'
+	
+	return setmetatable(instance, InstanceInterface)
 end
 
 -- constructor with arguments
@@ -46,7 +49,10 @@ function Instance:new(i, s)
 	-- our send data callback
 	instance.sendCallback = s
 	
-	return instance
+	-- what type of instance are we
+	instance.type = 'I'
+	
+	return setmetatable(instance, InstanceInterface)
 end
 
 -- string id of instance
@@ -67,10 +73,10 @@ function Instance:CommandNumber(cmdName)
 	for cNum, cName in ipairs(Instancing.Commands)
 	do
 		if cName == cmdName then
-			return InstanceResult:success("Instance:CommandNumber", "found "  .. printState(cmdName, cNum), cNum)
+			return InstanceResult:success(self:GetType() .. " Instance:CommandNumber", "found "  .. printState(cmdName, cNum), cNum)
 		end
 	end
-	return InstanceResult:failure("Instance:CommandNumber", "could not find "  .. cmdName)
+	return InstanceResult:failure(self:GetType() .. " Instance:CommandNumber", "could not find "  .. cmdName)
 end
 
 -- look up a command by name
@@ -81,10 +87,10 @@ function Instance:CommandName(cmdNum)
 	for cNum, cName in ipairs(Instancing.Commands)
 	do
 		if cNum == cmdNum then
-			return InstanceResult:success("Instance:CommandName", "found "  .. printState(cName, cmdNum), cName)
+			return InstanceResult:success(self:GetType() .. " Instance:CommandName", "found "  .. printState(cName, cmdNum), cName)
 		end
 	end
-	return InstanceResult:failure("Instance:CommandName", "could not find "  .. tostring(cmdNum))
+	return InstanceResult:failure(self:GetType() .. " Instance:CommandName", "could not find "  .. tostring(cmdNum))
 end
 
 -- sends off a json argument
@@ -93,7 +99,7 @@ end
 function Instance:SendCommand(cmdName, ...)
 	-- First argument must be a string.
 	if type(cmdName) ~= "string" then
-		return InstanceResult:failure("Instance:SendCommand", "invalid command "  .. cmdName)
+		return InstanceResult:failure(self:GetType() .. " Instance:SendCommand", "invalid command "  .. cmdName)
 	end
 	
 	-- Look for the command.
@@ -113,6 +119,8 @@ function Instance:SendCommand(cmdName, ...)
 	do
 		if type(val) == "number" then
 			table.insert(args, val);
+		elseif type(val) == "table" then
+			Instancing:report('D', 'Format Error!', crawl(val))
 		else
 			table.insert(args, string.format('%q', val));
 		end
@@ -120,14 +128,14 @@ function Instance:SendCommand(cmdName, ...)
 	
 	local out = json.encode(args)
 	
-	Instancing.report('D', 'SendCommand', out)
+	-- Instancing.report('D', 'SendCommand', out)
 	
 	-- send it as a json string using the send callback
 	if self.sendCallback ~= nil then
 		self.sendCallback(self.id, out)
-		return InstanceResult:success("Instance:SendCommand", "data sent")
+		return InstanceResult:success(self:GetType() .. " Instance:SendCommand", "data sent")
 	else
-		return InstanceResult:failure("Instance:SendCommand", "send callback not defined")
+		return InstanceResult:failure(self:GetType() .. " Instance:SendCommand", "send callback not defined")
 	end
 end
 
@@ -136,10 +144,10 @@ end
 function Instance:RecvCommand(data)
 
 	if type(data) ~= "string" then
-		return InstanceResult:failure("Instance:RecvCommand", "expected an input string, got something else")
+		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand", "expected an input string, got something else")
 	end
 	
-	Instancing.report('D', 'RecvCommand', data)
+	-- Instancing.report('D', 'RecvCommand', data)
 	
 	-- get our arguments
 	local args = json.decode(data);
@@ -147,12 +155,12 @@ function Instance:RecvCommand(data)
 	-- must be atable
 	if type(args) ~= "table" then
 		-- Instancing.report('D', 'RecvCommand', tostring(args))
-		return InstanceResult:failure("Instance:RecvCommand", "json didn't return a table, bad data")
+		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand", "json didn't return a table, bad data")
 	end
 	
 	-- make sure this was for our instance
 	if args[1] ~= self.id then
-		return InstanceResult:failure("Instance:RecvCommand", "incorrect instance id: " .. args[1] .. " != " .. self.id)
+		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand", "incorrect instance id: " .. args[1] .. " != " .. self.id)
 	end
 	
 	-- instance id
@@ -177,7 +185,7 @@ function Instance:RecvCommand(data)
 	
 	-- bad function bail
 	if not fn or type(fn) ~= "function" then
-		return InstanceResult:failure("Instance:RecvCommand", "invalid function Instance." .. cmdName)
+		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand", "invalid function Instance." .. cmdName)
 	end
 	
 	-- debug it
@@ -189,14 +197,14 @@ function Instance:RecvCommand(data)
 	-- Invoke the function, passing any remaining args to it.
 	local success, output = pcall(fn, self, unpack(args))
 	if success == false then
-		return InstanceResult:failure("Instance:RecvCommand", output)
+		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand", output)
 	end
 	
 	-- Handle case where we return {code, result}
 	if type(output) == "table" and output["_result"] == true then
 		return output
 	else
-		return InstanceResult:success("Instance:RecvCommand", output)
+		return InstanceResult:success(self:GetType() .. " Instance:RecvCommand", output)
 	end
 end
 
@@ -226,7 +234,7 @@ function Instance:GetPlayer(callsign)
 	--callsign = string.lower(callsign)
 	
 	-- ensure the player is created
-	self.CreatePlayer(callsign)
+	self:CreatePlayer(callsign)
 	
 	-- return it
 	return self.players[callsign]
@@ -389,8 +397,7 @@ end
 -- the default response is to get back the full state
 -- and players of the instance
 function Instance:RecvRegisterClient(state, players)
-	for k,v in pairs(state)
-	do
+	for k,v in pairs(state) do
 		-- this will cause handlers to be called, desired?
 		self:ChangeState(k, v)
 	end

@@ -26,6 +26,7 @@ function InstancePlayer:new(i, c)
 	
 	player.instance = i
 	player.callsign = c --string.lower(c)
+	player.type = 'P'
 	
 	return setmetatable(player, InstancePlayerInterface)
 end
@@ -37,7 +38,7 @@ end
 function InstancePlayer:SetState(valueName, value)
 	self:ChangeState(valueName, value)
 	self.instance:HandleState("OnPlayer", self.callsign, valueName, value)
-	return InstanceResult:success("InstancePlayer:SetState", printState(valueName, value))
+	return InstanceResult:success(self:GetType() .. " InstancePlayer:SetState", printState(valueName, value))
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -49,7 +50,7 @@ function InstancePlayer:AddState(valueName, value)
 	local newValue = oldValue + tonumber(value)
 	
 	if Instancing.EnableDebug then
-		InstanceResult:success("InstancePlayer:AddState", printChange(valueName, oldValue, NewValue))
+		InstanceResult:success(self:GetType() .. " InstancePlayer:AddState", printChange(valueName, oldValue, NewValue))
 	end
 	
 	return self:SetState(valueName, newValue)

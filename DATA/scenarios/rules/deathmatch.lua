@@ -78,7 +78,7 @@ function OnRuleUpdate(deltaTime)
 	-- current frametime
 	local ft 				= game.Frametime();
 	local team			= GetTeam();
-	local intelTeam 	= 0; --Instancing:GetStateNumber("intelteam");
+	local intelTeam 	= 0; --scenario.instance:GetStateNumber("intelteam");
 		
 	-- send a keepalive if needed
 	if(IsPlaying() and state.intel and ft >= state.nextintelcheck and (intelTeam == team or intelTeam == 0)) then 

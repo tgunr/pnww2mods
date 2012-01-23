@@ -22,13 +22,25 @@ ClientInstanceInterface = { __index = ClientInstance }
 
 -- blank constructor
 function ClientInstance:create()
-	return setmetatable(Instance:create(), ClientInstanceInterface)
+
+	local instance = Instance:create()
+	
+	-- we're a Client instance
+	instance.type = 'C'
+	
+	return setmetatable(instance, ClientInstanceInterface)
 end
 
 -- constructor with arguments
 -- i = string id of instance
 -- s = sendcallback to use for sending out data
 function ClientInstance:new(i, s)
-	return setmetatable(Instance:new(i, s), ClientInstanceInterface)
+	
+	local instance = Instance:new(i, s)
+	
+	-- we're a Client instance
+	instance.type = 'C'
+	
+	return setmetatable(instance, ClientInstanceInterface)
 end
 

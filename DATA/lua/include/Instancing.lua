@@ -100,21 +100,35 @@ end
 --	e.g.
 --	crawl(myTable)
 
-function crawl(tbl, indent)
+crawl_recursions = 0
+
+function crawl(tbl, indent, recursionCheck)
+
 	local str = ""
 	if indent == nil then indent = "" end
 	
-	if type(tbl) ~= "table" then
-		return tostring(tbl)
+	if recursionCheck == nil then
+		crawl_recursions = 0
+	else
+		crawl_recursions = crawl_recursions + 1
 	end
-
-	for k, v in pairs(tbl)
-	do
-		str = str .. string.format("%s%s %s %s\n", indent, k, type(v), tostring(v))
-		if type(v) == "table" then
-			str = str .. crawl(v, indent .. "  ")
+	
+	if crawl_recursions >= 100 then
+		str = str .. "max recurssions\n"
+		return str
+	end
+	
+	if type(tbl) ~= "table" then
+		str = str .. tostring(tbl)
+	else
+		for k, v in pairs(tbl) do
+			str = str .. string.format("%s%s %s %s\n", indent, k, type(v), tostring(v))
+			if type(v) == "table" then
+				str = str .. crawl(v, indent .. "  ", true)
+			end
 		end
 	end
+
 	return str
 end
 

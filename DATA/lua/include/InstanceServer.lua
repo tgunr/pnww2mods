@@ -76,7 +76,7 @@ function InstanceServer:RegisterUpdate(instance)
 		self.updates[id] = instance
 	end
 	
-	return InstanceResult:success("InstanceServer:RegisterUpdate", "instance " .. id .. " registered")
+	return InstanceResult:success("S InstanceServer:RegisterUpdate", "instance " .. id .. " registered")
 end
 
 -- called by an instance this server manages
@@ -91,7 +91,7 @@ function InstanceServer:UnregisterUpdate(instance)
 		self.updates[id] = nil
 	end
 	
-	return InstanceResult:success("InstanceServer:UnregisterUpdate", "instance " .. id .. " unregistered")
+	return InstanceResult:success("S InstanceServer:UnregisterUpdate", "instance " .. id .. " unregistered")
 end
 
 -- add a new instance
@@ -103,13 +103,14 @@ function InstanceServer:AddInstance(id)
 	
 	-- if so, bail early
 	if result:IsSuccess() then
-		return InstanceResult:failure("InstanceServer:AddInstance", "instance " .. id .. " exists, nothing to do!")
+		return InstanceResult:failure("S InstanceServer:AddInstance", "instance " .. id .. " exists, nothing to do!")
 	end
 	
 	-- create it
 	self.instances[id] = HostInstance:new(id, sendServerData, self)
 	
-	Instancing.report('N', 'InstanceServer:AddInstance', crawl(self.instances[id]));
+	-- don't call this, it results in a recursive loop
+	-- Instancing.report('N', 'InstanceServer:AddInstance', crawl(self.instances[id]));
 	
 	-- return the lookup result
 	-- result.data will contain the instance
@@ -125,13 +126,13 @@ function InstanceServer:RemoveInstance(id)
 	
 	-- instance didn't exit, bail
 	if result.IsNOK() then
-		return InstanceResult:failure("InstanceServer:RemoveInstance", "instance " .. id .. " does not exist, nothing to do!")
+		return InstanceResult:failure("S InstanceServer:RemoveInstance", "instance " .. id .. " does not exist, nothing to do!")
 	end
 	
 	-- kill it
 	self.instances[id] = nil
 	
-	return InstanceResult:success("InstanceServer:RemoveInstance", "instance " .. id .. " removed!")
+	return InstanceResult:success("S InstanceServer:RemoveInstance", "instance " .. id .. " removed!")
 end
 
 -- lookup an instance
@@ -139,9 +140,9 @@ end
 -- returns a result object
 function InstanceServer:GetInstance(id)
 	if self.instances[id] ~= nil then
-		return InstanceResult:success("InstanceServer:GetInstance", "instance " .. id .. " returned!", self.instances[id])
+		return InstanceResult:success("S InstanceServer:GetInstance", "instance " .. id .. " returned!", self.instances[id])
 	else
-		return InstanceResult:failure("InstanceServer:GetInstance", "instance " .. id .. " does not exist!")
+		return InstanceResult:failure("S InstanceServer:GetInstance", "instance " .. id .. " does not exist!")
 	end
 end
 

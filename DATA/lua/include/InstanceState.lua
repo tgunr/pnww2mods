@@ -30,6 +30,8 @@ function InstanceState:create()
 		handlers = {},
 	}
 	
+	data.type = 'S'
+	
 	return setmetatable(data, InstanceStateInterface)
 end
 
@@ -54,33 +56,42 @@ function InstanceState:HandleState(valueName, value, oldValue)
 	if handler ~= nil and type(_G[handler]) == "function" then
 		local status, msg = pcall(_G[handler], valueName, value, oldValue)
 		if not status then
-			return InstanceResult:failure("InstanceState:HandleState", printState(valueName, value) .. " not handled")
+			return InstanceResult:failure(self:GetType() .. " InstanceState:HandleState", printState(valueName, value) .. " not handled")
 		else
-			return InstanceResult:success("InstanceState:HandleState", printState(valueName, value) .. " handled")
+			return InstanceResult:success(self:GetType() .. " InstanceState:HandleState", printState(valueName, value) .. " handled")
 		end
 	end
 	
-	return InstanceResult:success("InstanceState:HandleState",  printState(valueName, value) .. " no handler")
+	return InstanceResult:success(self:GetType() .. " InstanceState:HandleState",  printState(valueName, value) .. " no handler")
 end
 
 -- main function for changing our state
 -- causes any handlers to fire
 -- returns a result object
 function InstanceState:ChangeState(valueName, value)
+	
 	-- Grab the old value and swap in the new.
 	local oldValue = self.state[valueName]
 	
 	-- set our state
 	self.state[valueName] = value
 	
+	if self:GetType() == 'C' then
+		Instancing:report('D', 'Client Change State', crawl(self))
+	end
+	
 	if oldValue == value then
-		return InstanceResult:failure("InstanceState:ChangeState", printChange(valueName, oldValue, value) .. " (unchanged)")
+		return InstanceResult:failure(self:GetType() .. " InstanceState:ChangeState", printChange(valueName, oldValue, value) .. " (unchanged)")
 	end
 	
 	-- execute any associated handlers
 	self:HandleState(valueName, value, oldValue)
 	
-	return InstanceResult:success("InstanceState:ChangeState", printChange(valueName, oldValue, value) .. " (changed)")
+	return InstanceResult:success(self:GetType() .. " InstanceState:ChangeState", printChange(valueName, oldValue, value) .. " (changed)")
+end
+
+function InstanceState:GetType()
+	return self.type
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -92,9 +103,9 @@ end
 function InstanceState:GetStateValue(stateName)
 	local state = self.state[stateName]
 	if state == nil then
-		return InstanceResult:failure("InstanceState:GetStateValue", printState(stateName, state) .. " not set")
+		return InstanceResult:failure(self:GetType() .. " InstanceState:GetStateValue", printState(stateName, state) .. " not set")
 	end
-	return InstanceResult:success("InstanceState:GetStateValue", printState(stateName, state) .. " returned", state)
+	return InstanceResult:success(self:GetType() .. " InstanceState:GetStateValue", printState(stateName, state) .. " returned", state)
 end
 
 -- get a value as a string

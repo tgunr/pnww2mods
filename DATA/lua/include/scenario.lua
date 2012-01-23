@@ -264,29 +264,31 @@ function OnSet(handler, name, value)
 	if(name == "load" and value == "content") then
 		LoadContent();
 	elseif(name == "instance") then
-		scenario.instance = ClientInstance:new(state.config.instance, sendClientData);
-		
-		-- debug it
-		Instancing.report('N', 'OnSet', "New instance created with id: " .. scenario.instance.id);
-		Instancing.report('N', 'Scenario:ClientInstance', crawl(scenario.instance));
-		
-		if(not game.Online()) then
-			-- create our local instance on the local server
-			createInstance(scenario.instance.id);
+		if(scenario.instance == nil) then
+			scenario.instance = ClientInstance:new(state.config.instance, sendClientData);
 			
-			-- set its status
-			setInstanceStatus(scenario.instance.id, "Staging");
+			-- debug it
+			Instancing.report('N', 'OnSet', "New instance created with id: " .. scenario.instance.id);
+			Instancing.report('N', 'Scenario:ClientInstance', crawl(scenario.instance));
 			
-			-- report it
-			-- Instancing:report('N', 'OnSet', "Server running: " .. crawl(server));
-		end
-		
-		-- setup any host state monitoring
-		if(state.hoststates ~= nil) then
-			for i,hs in ipairs(state.hoststates) do
-				ui.ChatPrint("Adding state handler "..hs[1].."/"..hs[2]);
-				-- register our state handler
-				scenario.instance:RegisterHandler(hs[1], hs[2]);
+			if(not game.Online()) then
+				-- create our local instance on the local server
+				createInstance(scenario.instance.id);
+				
+				-- set its status
+				setInstanceStatus(scenario.instance.id, "Staging");
+				
+				-- report it
+				-- Instancing:report('N', 'OnSet', "Server running: " .. crawl(server));
+			end
+			
+			-- setup any host state monitoring
+			if(state.hoststates ~= nil) then
+				for i,hs in ipairs(state.hoststates) do
+					ui.ChatPrint("Adding state handler "..hs[1].."/"..hs[2]);
+					-- register our state handler
+					scenario.instance:RegisterHandler(hs[1], hs[2]);
+				end
 			end
 		end
 	elseif(name == "network" and value == "start") then
@@ -344,7 +346,7 @@ scenario.OnScenario = function(handler)
 	-- clear this table each run
 	state.playeradds = {};
 	
-	local ft = game.Frametime();
+	local ft = FrameTime();
 	
 	if(game.Online() == false) then
 		-- update our local server

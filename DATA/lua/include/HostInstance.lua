@@ -30,6 +30,9 @@ function HostInstance:create()
 	-- states we are tracking
 	instance.track = {}
 	
+	-- we're a Host instance
+	instance.type = 'H'
+	
 	setmetatable(instance, HostInstanceInterface)
 	
 	-- set our initial status
@@ -51,6 +54,9 @@ function HostInstance:new(i, s, svr)
 	
 	-- states we are tracking
 	instance.track = {}
+	
+	-- we're a Host instance
+	instance.type = 'H'
 	
 	setmetatable(instance, HostInstanceInterface)
 	
@@ -206,7 +212,7 @@ function HostInstance:RecvKeepAlive(valueName, value)
 		return self:KeepAlive(valueName, value)
 	end
 	
-	return InstanceResult:failure("keepAlive occupied or unchanged")
+	return InstanceResult:failure(self:GetType() .. " HostInstance:RecvKeepAlive", "keepAlive occupied or unchanged")
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -253,9 +259,9 @@ end
 -- update the player, then relay the change to all clients
 function HostInstance:RecvSetPlayerState(callsign, valueName, value)
 	
-	Instancing.report('D', 'HostInstance:RecvSetPlayerState', "callsign is " .. tostring(callsign))
-	Instancing.report('D', 'HostInstance:RecvSetPlayerState', "valueName is " .. tostring(valueName))
-	Instancing.report('D', 'HostInstance:RecvSetPlayerState', "value is " .. tostring(value))
+	-- Instancing.report('D', 'HostInstance:RecvSetPlayerState', "callsign is " .. tostring(callsign))
+	-- Instancing.report('D', 'HostInstance:RecvSetPlayerState', "valueName is " .. tostring(valueName))
+	-- Instancing.report('D', 'HostInstance:RecvSetPlayerState', "value is " .. tostring(value))
 	
 	-- make sure callsign is lower case
 	-- callsign = string.lower(callsign)
@@ -281,9 +287,9 @@ end
 -- update the player, then relay the change to all clients
 function HostInstance:RecvAddPlayerState(callsign, valueName, value)
 
-	Instancing.report('D', 'HostInstance:RecvAddPlayerState', "callsign is " .. tostring(callsign))
-	Instancing.report('D', 'HostInstance:RecvAddPlayerState', "valueName is " .. tostring(valueName))
-	Instancing.report('D', 'HostInstance:RecvAddPlayerState', "value is " .. tostring(value))
+	-- Instancing.report('D', 'HostInstance:RecvAddPlayerState', "callsign is " .. tostring(callsign))
+	-- Instancing.report('D', 'HostInstance:RecvAddPlayerState', "valueName is " .. tostring(valueName))
+	-- Instancing.report('D', 'HostInstance:RecvAddPlayerState', "value is " .. tostring(value))
 
 	-- make sure callsign is lower case
 	-- callsign = string.lower(callsign)
@@ -316,7 +322,7 @@ end
 -- causes a full state and players list to be sent down to the client
 function HostInstance:RecvRegisterClient(callsign)
 
-	Instancing.report('D', 'HostInstance:RecvRegisterClient', "callsign is " .. tostring(callsign))
+	-- Instancing.report('D', 'HostInstance:RecvRegisterClient', "callsign is " .. tostring(callsign))
 	
 	-- make sure callsign is lower case
 	-- callsign = string.lower(callsign)
@@ -324,7 +330,7 @@ function HostInstance:RecvRegisterClient(callsign)
 	local player = self:GetPlayer(callsign)
 	
 	if player == nil then
-		return InstanceResult:failure("HostInstance:RecvRegisterClient", "unable to create player "  .. callsign)
+		return InstanceResult:failure(self:GetType() .. " HostInstance:RecvRegisterClient", "unable to create player "  .. callsign)
 	end
 	
 	return self:RegisterClient(self.state, self.players)
