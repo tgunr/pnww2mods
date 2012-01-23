@@ -817,14 +817,14 @@
   <!-- ===================================================================== -->
   <transformeffect name = "tanktrack">
     <emitter>
-      <flags>watersurface</flags>
+      <flags>landsurface</flags>
       <particleeffect>tanktrackparticle</particleeffect>
     </emitter>
   </transformeffect>
   <!-- ===================================================================== -->
   <transformeffect name = "tiretrack">
     <emitter>
-      <flags>watersurface</flags>
+      <flags>landsurface</flags>
       <particleeffect>tiretrackparticle</particleeffect>
     </emitter>
   </transformeffect>

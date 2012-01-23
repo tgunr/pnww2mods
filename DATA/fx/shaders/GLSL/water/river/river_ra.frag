@@ -78,7 +78,8 @@ void main()
 
 	color = color * (diffuseColor + ambientColor) + specularColor;
 
-    color = mix(rf + t4, color, h.r + 1.0 - facing);
+    color = mix(rf, color, h.r + 1.0 - facing);
+    color.rgb += t4.rgb * 0.5;
 
 	gl_FragColor = fogThis(color);
 }
