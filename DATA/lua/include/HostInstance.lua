@@ -217,7 +217,7 @@ function HostInstance:RecvKeepAlive(valueName, value)
 		return self:KeepAlive(valueName, value)
 	end
 	
-	return InstanceResult:failure(self:GetType() .. " HostInstance:RecvKeepAlive", "keepAlive occupied or unchanged", false)
+	return InstanceResult:failure(self:GetType() .. " HostInstance:RecvKeepAlive", "keepAlive occupied or unchanged", 'D')
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -269,7 +269,7 @@ function HostInstance:RecvSetPlayerState(callsign, valueName, value)
 	-- Instancing.report('D', 'HostInstance:RecvSetPlayerState', "value is " .. tostring(value))
 	
 	-- make sure callsign is lower case
-	-- callsign = string.lower(callsign)
+	callsign = string.lower(callsign)
 	
 	local player = self:GetPlayer(callsign)
 	local result = player:SetState(valueName, value)
@@ -297,7 +297,7 @@ function HostInstance:RecvAddPlayerState(callsign, valueName, value)
 	-- Instancing.report('D', 'HostInstance:RecvAddPlayerState', "value is " .. tostring(value))
 
 	-- make sure callsign is lower case
-	-- callsign = string.lower(callsign)
+	callsign = string.lower(callsign)
 	
 	local player = self:GetPlayer(callsign)
 	local result = player:AddState(valueName, value)
@@ -308,7 +308,9 @@ function HostInstance:RecvAddPlayerState(callsign, valueName, value)
 	end
 	
 	-- we send a set so the client doesn't also increment the value
-	return self:SetPlayerState(callsign, valueName, value) 
+	-- we there was a change, the results data will contain the updated
+	-- state value
+	return self:SetPlayerState(callsign, valueName, result.data) 
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -330,12 +332,12 @@ function HostInstance:RecvRegisterClient(callsign)
 	-- Instancing.report('D', 'HostInstance:RecvRegisterClient', "callsign is " .. tostring(callsign))
 	
 	-- make sure callsign is lower case
-	-- callsign = string.lower(callsign)
+	callsign = string.lower(callsign)
 	
 	local player = self:GetPlayer(callsign)
 	
 	if player == nil then
-		return InstanceResult:failure(self:GetType() .. " HostInstance:RecvRegisterClient", "unable to create player "  .. callsign)
+		return InstanceResult:failure(self:GetType() .. " HostInstance:RecvRegisterClient", "unable to create player "  .. callsign, 'E')
 	end
 	
 	return self:SendRegisterClient(self.state, self.players)

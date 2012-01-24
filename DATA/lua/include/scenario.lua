@@ -44,7 +44,6 @@ if(not game.Online()) then
 	scenario.fromserver = {};
 end
 
-Instancing.EnableDebug = true;
 Instancing.LoggingCallback = ui.ChatPrint;
 
 -- states we'll monitor

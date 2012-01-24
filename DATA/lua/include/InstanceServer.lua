@@ -76,7 +76,7 @@ function InstanceServer:RegisterUpdate(instance)
 		self.updates[id] = instance
 	end
 	
-	return InstanceResult:success("S InstanceServer:RegisterUpdate", "instance " .. id .. " registered")
+	return InstanceResult:success("S InstanceServer:RegisterUpdate", "instance " .. id .. " registered", nil, 'I')
 end
 
 -- called by an instance this server manages
@@ -91,7 +91,7 @@ function InstanceServer:UnregisterUpdate(instance)
 		self.updates[id] = nil
 	end
 	
-	return InstanceResult:success("S InstanceServer:UnregisterUpdate", "instance " .. id .. " unregistered")
+	return InstanceResult:success("S InstanceServer:UnregisterUpdate", "instance " .. id .. " unregistered", nil, 'I')
 end
 
 -- add a new instance
@@ -103,7 +103,7 @@ function InstanceServer:AddInstance(id)
 	
 	-- if so, bail early
 	if result:IsSuccess() then
-		return InstanceResult:failure("S InstanceServer:AddInstance", "instance " .. id .. " exists, nothing to do!", false)
+		return InstanceResult:failure("S InstanceServer:AddInstance", "instance " .. id .. " exists, nothing to do!", 'D')
 	end
 	
 	-- create it
@@ -126,7 +126,7 @@ function InstanceServer:RemoveInstance(id)
 	
 	-- instance didn't exit, bail
 	if result.IsNOK() then
-		return InstanceResult:failure("S InstanceServer:RemoveInstance", "instance " .. id .. " does not exist, nothing to do!", false)
+		return InstanceResult:failure("S InstanceServer:RemoveInstance", "instance " .. id .. " does not exist, nothing to do!", 'D')
 	end
 	
 	-- kill it
@@ -140,9 +140,9 @@ end
 -- returns a result object
 function InstanceServer:GetInstance(id)
 	if self.instances[id] ~= nil then
-		return InstanceResult:success("S InstanceServer:GetInstance", "instance " .. id .. " returned!", self.instances[id], false)
+		return InstanceResult:success("S InstanceServer:GetInstance", "instance " .. id .. " returned!", self.instances[id], 'D')
 	else
-		return InstanceResult:failure("S InstanceServer:GetInstance", "instance " .. id .. " does not exist!")
+		return InstanceResult:failure("S InstanceServer:GetInstance", "instance " .. id .. " does not exist!", 'D')
 	end
 end
 

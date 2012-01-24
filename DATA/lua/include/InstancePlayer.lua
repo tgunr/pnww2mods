@@ -25,7 +25,7 @@ function InstancePlayer:new(i, c)
 	local player = InstanceState:create()
 	
 	player.instance = i
-	player.callsign = c --string.lower(c)
+	player.callsign = string.lower(c)
 	player.type = 'P'
 	
 	return setmetatable(player, InstancePlayerInterface)
@@ -36,9 +36,16 @@ end
 -- returns a result object
 
 function InstancePlayer:SetState(valueName, value)
-	self:ChangeState(valueName, value)
+	local result = self:ChangeState(valueName, value)
+	
+	-- return early is the value wasn't changed
+	if result:IsNOK() then
+		return result
+	end
+	
 	self.instance:HandleState("OnPlayer", self.callsign, valueName, value)
-	return InstanceResult:success(self:GetType() .. " InstancePlayer:SetState", printState(valueName, value))
+	
+	return InstanceResult:success(self:GetType() .. " InstancePlayer:SetState", printState(valueName, value), value, 'D')
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -49,9 +56,8 @@ function InstancePlayer:AddState(valueName, value)
 	local oldValue = self:GetStateNumber(valueName)
 	local newValue = oldValue + tonumber(value)
 	
-	if Instancing.EnableDebug then
-		InstanceResult:success(self:GetType() .. " InstancePlayer:AddState", printChange(valueName, oldValue, NewValue))
-	end
+	-- log it
+	InstanceResult:success(self:GetType() .. " InstancePlayer:AddState", printChange(valueName, oldValue, NewValue), nil, 'D')
 	
 	return self:SetState(valueName, newValue)
 end

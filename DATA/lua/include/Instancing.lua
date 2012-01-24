@@ -41,7 +41,8 @@ Instancing =
 	}
 	
 	-- our instance statuses
-,	{
+,	Status = 
+	{
 		"New"
 	,	"Staging"
 	,	"Active"
@@ -49,19 +50,40 @@ Instancing =
 	,	"Dead"
 	}
 	
+	-- logging level
+,	LoggingLevels = 
+	{
+		D 		= 1		-- debug
+	,	I 		= 2		-- info
+	,	W 	= 3		-- warning
+	,	E		= 4		-- error
+	, 	F		= 5		-- fatal
+	}
+	
 ,	SuccessCode		=	'OK'		-- Returned to indicate things went well
 ,	FailureCode			=	'NOK'	-- Returned to indicate something failed.
 ,	ErrorCode			=	'ERR'		-- Returned to indicate an error.
-,	EnableDebug		=	true	-- Set true to allow 'D' messages to log.
+,	LoggingLevel		=	'I'	-- Set true to allow 'D' messages to log.
 ,	LoggingCallback	= nil -- what to call when trying to output loggin
 
 -- reporting function
-,	report = function(code, funcname, msg)
-		if (code ~= 'D' or Instancing.EnableDebug) and Instancing.LoggingCallback ~= nil then
-			Instancing.LoggingCallback("[" .. funcname .. "] " .. msg)
+,	report = function(code, source, msg)
+		if Instancing.logit(code) then
+			Instancing.LoggingCallback(code .. " [" .. source .. "] " .. msg)
 		end
 	end
-
+	
+,	logit = function(level)
+		if Instancing.LoggingCallback == nil then
+			return false
+		end
+		if level ~= nil and Instancing.LoggingLevels[level] ~= nil then
+			if Instancing.LoggingLevels[level] >= Instancing.LoggingLevels[Instancing.LoggingLevel] then
+				return true
+			end
+		end
+		return false
+	end
 }
 
 --------- --------- --------- --------- --------- ---------
