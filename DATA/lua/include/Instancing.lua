@@ -63,7 +63,7 @@ Instancing =
 ,	SuccessCode		=	'OK'		-- Returned to indicate things went well
 ,	FailureCode			=	'NOK'	-- Returned to indicate something failed.
 ,	ErrorCode			=	'ERR'		-- Returned to indicate an error.
-,	LoggingLevel		=	'D'			-- Current log level.
+,	LoggingLevel		=	'I'			-- Current log level.
 ,	LoggingCallback	= nil 		-- what to call when trying to output logging
 
 -- reporting function

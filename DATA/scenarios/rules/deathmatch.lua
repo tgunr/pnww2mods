@@ -64,7 +64,7 @@ end
 -- give a point to the enemy each time I die
 function OnDie(handler)
 	scenario.AddEnemyScore(1);	
-	scenario.AddPlayerState(state.config.callsign, "deaths", 1);
+	scenario.AddPlayerState("deaths", 1);
 	state.intel = false;
 	return 1;
 end
@@ -134,6 +134,8 @@ function OnIntel(name, value)
 		else
 			scenario.manager:SetFlag(scenario.manager.ENEMY_ICONS, false);
 		end
+		
+		Instancing.report('F', ' =========== DeathMatch:OnIntel', "Intel is - " .. tostring(intelTeam))
 		
 		-- update our UI
 		scenario.SetObjective("intel", intelTeam, 0);

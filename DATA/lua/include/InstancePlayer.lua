@@ -27,7 +27,7 @@ function InstancePlayer:new(i, c)
 	player.instance = i
 	player.callsign = string.lower(c)
 	player.type = 'P'
-	player.level = 'D'
+	--player.level = 'D'
 	
 	return setmetatable(player, InstancePlayerInterface)
 end

@@ -94,10 +94,7 @@ scenario.AddScore = function(team, points)
 end
 
 scenario.AddPlayerScore = function(points)
-	if(scenario.instance == nil) then
-		return;
-	end
-	scenario.instance:AddPlayerState(state.config.callsign, "score", points);
+	scenario.AddPlayerState("score", points);
 end
 
 scenario.RegisterUpdate = function(callback)
@@ -568,7 +565,11 @@ scenario.SetPlayerState = function(name, value)
 end
 
 scenario.AddPlayerState = function(name, value)
-	state.playeradds[name] = value;
+	if(state.playeradds[name] ~= nil) then
+		state.playeradds[name] = state.playeradds[name] + tonumber(value);
+	else
+		state.playeradds[name] = tonumber(value);
+	end
 end
 
 scenario.InArea = function(handler)

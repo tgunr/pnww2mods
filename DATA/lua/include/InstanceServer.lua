@@ -76,10 +76,10 @@ function InstanceServer:RegisterUpdate(inst)
 	-- add it if we're not already updating it
 	if self.updates[id] == nil then
 		self.updates[id] = inst
-		Instancing.report('F', ' =========== InstanceServer:RegisterUpdate', "Trackers - " .. #inst.track)
+		--Instancing.report('F', ' =========== InstanceServer:RegisterUpdate', "Trackers - " .. #inst.track)
 	end
 	
-	return InstanceResult:success("S InstanceServer:RegisterUpdate", "instance " .. id .. " registered", id, 'I')
+	return InstanceResult:success("S InstanceServer:RegisterUpdate", "instance " .. id .. " registered", id, 'D')
 end
 
 -- called by an instance this server manages
@@ -94,7 +94,7 @@ function InstanceServer:UnregisterUpdate(instance)
 		self.updates[id] = nil
 	end
 	
-	return InstanceResult:success("S InstanceServer:UnregisterUpdate", "instance " .. id .. " unregistered", id, 'I')
+	return InstanceResult:success("S InstanceServer:UnregisterUpdate", "instance " .. id .. " unregistered", id, 'D')
 end
 
 -- add a new instance
@@ -115,9 +115,8 @@ function InstanceServer:AddInstance(id)
 	-- tell everyone our status is new
 	self.instances[id]:SetStatus("New");
 	
-	self.instances[id]:RecvSetTimer("testtimer", 60);
-	
-	-- don't call this, it results in a recursive loop
+	-- don't call this, it results in a recursive loop because each instance has a reference to the server
+	-- actually you can call it but know that it does this; crawl now allows at most 100 recursions
 	-- Instancing.report('N', 'InstanceServer:AddInstance', crawl(self.instances[id]));
 	
 	-- return the lookup result
@@ -194,7 +193,7 @@ end
 -- returns true on success, false on failure
 function updateServer()
 	if IsHost() then
-		Instancing.report('I', 'inst', 'Processing updateServer. I should remove this line.')
+		Instancing.report('D', 'inst', 'Processing updateServer. I should remove this line.')
 	end
 	return getResult(server:Update(FrameTime()))
 end

@@ -27,7 +27,7 @@ function ClientInstance:create()
 	
 	-- we're a Client instance
 	instance.type = 'C'
-	instance.level = 'D'
+	-- instance.level = 'D'
 	
 	return setmetatable(instance, ClientInstanceInterface)
 end
@@ -41,7 +41,7 @@ function ClientInstance:new(i, s)
 	
 	-- we're a Client instance
 	instance.type = 'C'
-	instance.level = 'D'
+	-- instance.level = 'D'
 	
 	return setmetatable(instance, ClientInstanceInterface)
 end
