@@ -165,19 +165,19 @@ server = InstanceServer:create()
 
 -- host create instance callback
 -- returns true on success, false on failure
-function createInstance(id)
-	return getResult(server:AddInstance(id))
+function createInstance(id, ...)
+	return getResult(server:AddInstance(id, ...))
 end
 
 -- host remove instance callback
 -- returns true on success, false on failure
-function removeInstance(id)
-	return getResult(server:RemoveInstance(id))
+function removeInstance(id, ...)
+	return getResult(server:RemoveInstance(id, ...))
 end
 
 -- host status callback
 -- returns true on success, false on failure
-function setInstanceStatus(id, status)
+function setInstanceStatus(id, status, ...)
 	-- lookup our instance
 	local result = server:GetInstance(id)
 	
@@ -187,7 +187,7 @@ function setInstanceStatus(id, status)
 	end
 	
 	-- set it
-	return getResult(result.data:SetStatus(status))
+	return getResult(result.data:SetStatus(status, ...))
 end
 
 -- host update callback
@@ -200,7 +200,7 @@ function updateServer()
 end
 
 -- host send data callback
-function sendServerData(id, data)
+function sendServerData(id, data, ...)
 	if IsOnline() then
 		inst.SendData(tostring(id), tostring(data))
 	elseif IsClient() then
@@ -210,7 +210,7 @@ end
 
 -- host recv data callback
 -- returns true on success, false on failure
-function recvServerData(id, data)
+function recvServerData(id, data, ...)
 	-- lookup instance
 	local result = server:GetInstance(id)
 	
