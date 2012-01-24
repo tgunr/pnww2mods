@@ -33,11 +33,9 @@ function HostInstance:create()
 	
 	-- we're a Host instance
 	instance.type = 'H'
+	instance.level = 'F'
 	
 	setmetatable(instance, HostInstanceInterface)
-	
-	-- set our initial status
-	instance:SetStatus("New")
 	
 	return instance
 end
@@ -61,9 +59,6 @@ function HostInstance:new(i, s, svr)
 	
 	setmetatable(instance, HostInstanceInterface)
 	
-	-- set our initial status
-	instance:SetStatus("New")
-	
 	return instance
 end
 
@@ -82,13 +77,21 @@ end
 -- returns true to tell the server to keep updating it
 -- returns false to tell the server not to update it anymore
 function HostInstance:Update(ft)
-	
+
+	-- Instancing.report('F', ' =========== HostInstance:Update', "Updating at " .. tostring(ft))
+
 	local removes = {}
+	local tracking = 0
 	
 	-- update any states we are currently tracking
 	-- keepalives and timers for now
 	for k,t in pairs(self.track) do
-		if t.handler(self, k, ft) == false then
+		-- Instancing.report('F', ' =========== HostInstance:Update', "Calling Tracker - " .. k)
+		if t.handler(self, k, ft) == true then
+			-- Instancing.report('F', ' =========== HostInstance:Update', "Tracker - " .. k .. " returned true!")
+			tracking = tracking + 1
+		else
+			-- Instancing.report('F', ' =========== HostInstance:Update', "Tracker - " .. k .. " returned false!")
 			-- false means its done tracking
 			table.insert(removes, k)
 		end
@@ -99,11 +102,15 @@ function HostInstance:Update(ft)
 	
 	-- handle any trackers that need removing
 	for i,k in ipairs(removes) do
+		-- Instancing.report('F', ' =========== HostInstance:Update', "Removing Tracker - " .. k)
 		self:RemoveTracker(k)
 	end
 	
+	-- Instancing.report('F', ' =========== HostInstance:Update', "Tracking " .. tostring(tracking))
+	
 	-- continue to get updated if we still have some to states to track
-	if table.getn(self.track) > 0 then
+	if tracking > 0 then
+		-- Instancing.report('F', ' =========== HostInstance:Update', "Tracking " .. tostring(tracking))
 		return true
 	end
 	
@@ -114,19 +121,22 @@ end
 -- function for adding/updating a state tracker
 -- tells the InstanceServer that manages this instance that 
 -- it wants to be updated
-function HostInstance:AddTracker(valueName, handler, userdata)
+function HostInstance:AddTracker(valueName, handler, data)
 	-- time
 	local now = FrameTime()
 	
 	-- create a tracker if needed
 	if self.track[valueName] == nil then
+		
+		-- Instancing.report('F', ' =========== HostInstance:AddTracker', "Adding tracker - " .. valueName)
+		
 		-- our new tracker
 		local tracker =
 		{
 			init = true,
 			name = valueName,
 			handler = handler,
-			data	= userdata,
+			data	= data,
 			created = now, -- when the tracker was created
 			modified = now, -- when the tracked state was last modified
 			updated = now -- when this tracker was last updated
@@ -135,6 +145,7 @@ function HostInstance:AddTracker(valueName, handler, userdata)
 		-- remember it
 		self.track[valueName] = tracker
 	else
+		--Instancing.report('F', ' =========== HostInstance:AddTracker', "Updating tracker - " .. valueName)
 		-- our value has been modified, remember when
 		self.track[valueName].modified = now
 	end
@@ -146,6 +157,7 @@ end
 -- remove a tracker
 function HostInstance:RemoveTracker(valueName)
 	if self.track[valueName] then
+		-- Instancing.report('F', ' =========== HostInstance:AddTracker', "Removing tracker - " .. valueName)
 		self.track[valueName] = nil
 	end
 end
@@ -200,7 +212,7 @@ function HostInstance:RecvKeepAlive(valueName, value)
 	local newValue = tonumber(value)
 	local curValue = self:GetStateNumber(valueName)
 	
-	Instancing.raadeport('I', ' =========== HostInstance:RecvKeepAlive', printState(curValue, newValue))
+	-- Instancing.report('F', ' =========== HostInstance:RecvKeepAlive', printState(curValue, newValue))
 
 	-- 0 or same value is ok; different value is skipped
 	if curValue == 0 or curValue == newValue then
@@ -209,19 +221,19 @@ function HostInstance:RecvKeepAlive(valueName, value)
 		-- track this state
 		self:AddTracker(valueName, _trackKeepAlive)
 		
-		Instancing.report('I', ' =========== _trackKeepAlive', "Adding - state " .. name)
+		-- Instancing.report('F', ' =========== _trackKeepAlive', "Adding - state " .. name)
 		
 		if result:IsNOK() then
 			return result
 		end
 		
-		Instancing.report('I', ' =========== _trackKeepAlive', "Sending - state " .. name)
+		-- Instancing.report('F', ' =========== _trackKeepAlive', "Sending - state " .. name)
 		
 		-- relay the change to other clients
 		return self:KeepAlive(valueName, value)
 	end
 	
-	return InstanceResult:failure(self:GetType() .. " HostInstance:RecvKeepAlive", "keepAlive occupied or unchanged", self.level or 'D')
+	return InstanceResult:failure(self:GetType() .. " HostInstance:RecvKeepAlive", "keepAlive occupied or unchanged", self:GetLevel('D'))
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -233,6 +245,8 @@ end
 -- start tracking the timer
 function HostInstance:RecvSetTimer(timerName, duration)
 	local result = self:ChangeState(timerName, duration)
+	
+	-- Instancing.report('F', ' =========== HostInstance:RecvSetTimer', "Setting timer - " .. timerName)
 	
 	-- start tracking this state
 	self:AddTracker(timerName, _trackTimer, 0)
@@ -341,7 +355,7 @@ function HostInstance:RecvRegisterClient(callsign)
 	local player = self:GetPlayer(callsign)
 	
 	if player == nil then
-		return InstanceResult:failure(self:GetType() .. " HostInstance:RecvRegisterClient", "unable to create player "  .. callsign, self.level or 'E')
+		return InstanceResult:failure(self:GetType() .. " HostInstance:RecvRegisterClient", "unable to create player "  .. callsign, self:GetLevel('E'))
 	end
 	
 	return self:SendRegisterClient(self.state, self.players)
@@ -359,11 +373,13 @@ end
 function _trackTimer(instance, name, now)
 	
 	if instance.track[name] == nil then
+		-- Instancing.report('F', ' =========== _trackTimer', "Bailing - state " .. name .. " is not being tracked!")
 		return false
 	end
 	
 	-- perform inits
 	if instance.track[name].init then
+		-- Instancing.report('F', ' =========== _trackTimer', "Initing - state " .. name)
 		instance.track[name].init = false
 		instance.track[name].data = now + (instance:GetStateNumber(name) * 1000)
 		instance.track[name].lastsend = 0
@@ -383,6 +399,8 @@ function _trackTimer(instance, name, now)
 		-- we are done, let everyone know
 		instance:SetTimer(name, 0)
 		
+		-- Instancing.report('F', ' =========== _trackTimer', "Finished Tracking - state " .. name .. " at " .. tostring(now))
+		
 		-- don't track anymore!
 		return false
 	end
@@ -395,9 +413,13 @@ function _trackTimer(instance, name, now)
 		-- send it
 		instance:SetTimer(name, secondsLeft)
 		
+		-- Instancing.report('F', ' =========== _trackTimer', "Updating - state " .. name .. " at " .. tostring(now))
+		
 		-- save it
 		instance.track[name].lastsend = secondsLeft
 	end
+	
+	-- Instancing.report('F', ' =========== _trackTimer', "Sending - state " .. name .. " at " .. tostring(now))
 	
 	-- keep tracking!
 	return true
@@ -408,13 +430,13 @@ end
 function _trackKeepAlive(instance, name, now)
 	
 	if instance.track[name] == nil then
-		Instancing.report('I', '_trackKeepAlive', "Bailing - state " .. name .. " is not being tracked!")
+		-- Instancing.report('F', ' =========== _trackKeepAlive', "Bailing - state " .. name .. " is not being tracked!")
 		return false
 	end
 	
 	-- perform inits
 	if instance.track[name].init then
-		Instance.report('I', '_trackKeepAlive', "Initing - state " .. name)
+		-- Instancing.report('F', ' =========== _trackKeepAlive', "Initing - state " .. name)
 		instance.track[name].init = false
 		return true
 	end
@@ -425,11 +447,11 @@ function _trackKeepAlive(instance, name, now)
 	-- and see if we've gotten an update within the last 2 seconds
 	if instance:GetStateNumber(name) > 0 and (now - instance.track[name].modified) < 2000 then
 		-- ok, keep tracking
-		Instancing.report('I', '_trackKeepAlive', "Tracking - state " .. name .. " at " .. tostring(now))
+		-- Instancing.report('F', ' =========== _trackKeepAlive', "Tracking - state " .. name .. " at " .. tostring(now))
 		return true
 	end
 	
-	Instancing.report('I', '_trackKeepAlive', "Finished Tracking - state " .. name .. " at " .. tostring(now))
+	-- Instancing.report('F', ' =========== _trackKeepAlive', "Finished Tracking - state " .. name .. " at " .. tostring(now))
 	
 	-- update our host state
 	instance:ChangeState(name, 0)

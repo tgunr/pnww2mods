@@ -59,13 +59,13 @@ function InstanceState:HandleState(valueName, value, oldValue)
 	if handler ~= nil and type(_G[handler]) == "function" then
 		local status, msg = pcall(_G[handler], valueName, value, oldValue)
 		if not status then
-			return InstanceResult:failure(self:GetType() .. " InstanceState:HandleState", printState(valueName, value) .. " not handled", self.level or 'D')
+			return InstanceResult:failure(self:GetType() .. " InstanceState:HandleState", printState(valueName, value) .. " not handled", self:GetLevel('D'))
 		else
-			return InstanceResult:success(self:GetType() .. " InstanceState:HandleState", printState(valueName, value) .. " handled", nil, self.level or 'D')
+			return InstanceResult:success(self:GetType() .. " InstanceState:HandleState", printState(valueName, value) .. " handled", nil, self:GetLevel('D'))
 		end
 	end
 	
-	return InstanceResult:success(self:GetType() .. " InstanceState:HandleState",  printState(valueName, value) .. " no handler", nil, self.level or 'D')
+	return InstanceResult:success(self:GetType() .. " InstanceState:HandleState",  printState(valueName, value) .. " no handler", nil, self:GetLevel('D'))
 end
 
 -- main function for changing our state
@@ -84,17 +84,24 @@ function InstanceState:ChangeState(valueName, value)
 	-- end
 	
 	if oldValue == value then
-		return InstanceResult:failure(self:GetType() .. " InstanceState:ChangeState", printChange(valueName, oldValue, value) .. " (unchanged)", self.level or 'D')
+		return InstanceResult:failure(self:GetType() .. " InstanceState:ChangeState", printChange(valueName, oldValue, value) .. " (unchanged)", self:GetLevel('D'))
 	end
 	
 	-- execute any associated handlers
 	self:HandleState(valueName, value, oldValue)
 	
-	return InstanceResult:success(self:GetType() .. " InstanceState:ChangeState", printChange(valueName, oldValue, value) .. " (changed)", value, self.level or 'I')
+	return InstanceResult:success(self:GetType() .. " InstanceState:ChangeState", printChange(valueName, oldValue, value) .. " (changed)", value, self:GetLevel('I'))
 end
 
 function InstanceState:GetType()
 	return self.type
+end
+
+function InstanceState:GetLevel(l)
+	if self.level ~= nil and Instancing.LoggingLevels[self.level] ~= nil then
+		return self.level
+	end
+	return l
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -106,9 +113,9 @@ end
 function InstanceState:GetStateValue(stateName)
 	local state = self.state[stateName]
 	if state == nil then
-		return InstanceResult:failure(self:GetType() .. " InstanceState:GetStateValue", printState(stateName, state) .. " not set", self.level or 'D')
+		return InstanceResult:failure(self:GetType() .. " InstanceState:GetStateValue", printState(stateName, state) .. " not set", self:GetLevel('D'))
 	end
-	return InstanceResult:success(self:GetType() .. " InstanceState:GetStateValue", printState(stateName, state) .. " returned", state, self.level or 'D')
+	return InstanceResult:success(self:GetType() .. " InstanceState:GetStateValue", printState(stateName, state) .. " returned", state, self:GetLevel('D'))
 end
 
 -- get a value as a string

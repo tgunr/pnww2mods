@@ -334,6 +334,8 @@ scenario.OnScenario = function(handler)
 	local ft = FrameTime();
 	local reportFT = false;
 	
+	--Instancing.report('F', ' =========== scenario.OnScenario', "Updating at " .. tostring(ft))
+	
 	-- simulate network traffic
 	if(not online) then
 		-- handle in incoming data from the server for the last frame
@@ -395,9 +397,9 @@ scenario.OnScenario = function(handler)
 		updateServer(ft);
 	end
 	
-	if(reportFT) then
-		ui.ChatPrint("============= frame " .. tostring(ft) .. " =============");
-	end
+	--if(reportFT) then
+	--	ui.ChatPrint("============= frame " .. tostring(ft) .. " =============");
+	--end
 	
 	state.lastupdate = ft; 
 	

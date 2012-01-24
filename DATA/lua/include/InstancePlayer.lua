@@ -46,7 +46,7 @@ function InstancePlayer:SetState(valueName, value)
 	
 	self.instance:HandleState("OnPlayer", self.callsign, valueName, value)
 	
-	return InstanceResult:success(self:GetType() .. " InstancePlayer:SetState", printState(valueName, value), value, self.level or 'D')
+	return InstanceResult:success(self:GetType() .. " InstancePlayer:SetState", printState(valueName, value), value, self:GetLevel('D'))
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -58,7 +58,7 @@ function InstancePlayer:AddState(valueName, value)
 	local newValue = oldValue + tonumber(value)
 	
 	-- log it
-	InstanceResult:success(self:GetType() .. " InstancePlayer:AddState", printChange(valueName, oldValue, NewValue), nil, self.level or 'D')
+	InstanceResult:success(self:GetType() .. " InstancePlayer:AddState", printChange(valueName, oldValue, NewValue), nil, self:GetLevel('D'))
 	
 	return self:SetState(valueName, newValue)
 end

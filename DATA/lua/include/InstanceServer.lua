@@ -44,11 +44,13 @@ function InstanceServer:Update(ft)
 	
 	-- instances that need removing from the update list
 	local removes = {}
+	
+	-- Instancing.report('F', ' =========== InstanceServer:Update', "Updating Server at " .. tostring(ft))
 
 	for id,instance in pairs(self.updates) do
 		-- a host instance's update function will return
 		-- false when it no longer wants to be updated
-		if not instance:Update(ft) then
+		if instance:Update(ft) == false then
 			table.insert(removes, instance)
 		end
 	end
@@ -67,16 +69,17 @@ end
 -- called by an instance this server manages
 -- to indicate the server should start the update it
 -- returns a result object
-function InstanceServer:RegisterUpdate(instance)
+function InstanceServer:RegisterUpdate(inst)
 	-- instance string id
-	local id = instance:Id()
+	local id = inst:Id()
 	
 	-- add it if we're not already updating it
 	if self.updates[id] == nil then
-		self.updates[id] = instance
+		self.updates[id] = inst
+		Instancing.report('F', ' =========== InstanceServer:RegisterUpdate', "Trackers - " .. #inst.track)
 	end
 	
-	return InstanceResult:success("S InstanceServer:RegisterUpdate", "instance " .. id .. " registered", nil, 'I')
+	return InstanceResult:success("S InstanceServer:RegisterUpdate", "instance " .. id .. " registered", id, 'I')
 end
 
 -- called by an instance this server manages
@@ -91,7 +94,7 @@ function InstanceServer:UnregisterUpdate(instance)
 		self.updates[id] = nil
 	end
 	
-	return InstanceResult:success("S InstanceServer:UnregisterUpdate", "instance " .. id .. " unregistered", nil, 'I')
+	return InstanceResult:success("S InstanceServer:UnregisterUpdate", "instance " .. id .. " unregistered", id, 'I')
 end
 
 -- add a new instance
@@ -109,12 +112,17 @@ function InstanceServer:AddInstance(id)
 	-- create it
 	self.instances[id] = HostInstance:new(id, sendServerData, self)
 	
+	-- tell everyone our status is new
+	self.instances[id]:SetStatus("New");
+	
+	self.instances[id]:RecvSetTimer("testtimer", 60);
+	
 	-- don't call this, it results in a recursive loop
 	-- Instancing.report('N', 'InstanceServer:AddInstance', crawl(self.instances[id]));
 	
 	-- return the lookup result
 	-- result.data will contain the instance
-	return self:GetInstance(id)
+	return InstanceResult:success("S InstanceServer:AddInstance", "instance " .. id .. " created!", self.instances[id], 'I')
 end
 
 -- remove an instance
@@ -132,7 +140,7 @@ function InstanceServer:RemoveInstance(id)
 	-- kill it
 	self.instances[id] = nil
 	
-	return InstanceResult:success("S InstanceServer:RemoveInstance", "instance " .. id .. " removed!")
+	return InstanceResult:success("S InstanceServer:RemoveInstance", "instance " .. id .. " removed!", nil, 'I')
 end
 
 -- lookup an instance
