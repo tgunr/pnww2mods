@@ -19,10 +19,6 @@ end
 -- are we online or not
 -- always true for host
 function IsOnline()
-	if IsHost() then
-		return true
-	else
-		return game.Online()
-	end
+	return game.Online()
 end
 

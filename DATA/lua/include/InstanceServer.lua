@@ -193,6 +193,9 @@ end
 -- host update callback
 -- returns true on success, false on failure
 function updateServer()
+	if IsServer() then
+		Instancing.report('I', 'inst', 'Processing updateServer. I should remove this line.')
+	end
 	return getResult(server:Update(FrameTime()))
 end
 
@@ -221,4 +224,8 @@ function recvServerData(id, data)
 end
 
 -- Instancing.report('N', 'Main', 'Shutting down.')
+if IsServer() then
+  require 'event-queue'
+  EventQueue.AddRecurring(1, updateServer, nil, 'updateServer')
+end
 

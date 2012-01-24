@@ -13,4 +13,7 @@ if not events then events = {} end
 require 'glue'				-- Glue functions.
 require 'localization'		-- For string localization routines
 require 'event-queue'		-- Event handling system
+require 'Instancing'		-- For Instancing stuff
+
+Instancing.LoggingCallback = print
 
