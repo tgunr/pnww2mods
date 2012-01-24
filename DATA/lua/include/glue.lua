@@ -364,3 +364,13 @@ function toString(value)
 	return value
 end
 
+
+-- client and host implement these
+function IsClient()
+	return false;
+end
+
+-- client and host implement these
+function IsHost()
+	return true;
+end

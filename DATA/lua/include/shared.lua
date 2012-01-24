@@ -1,10 +1,9 @@
 
 -- common interface between the host and client
 
--- first we include some stuff 
+-- include some stuff? 
 
 if IsHost() then
-	require 'glue'
 	require 'teul'
 end
 
