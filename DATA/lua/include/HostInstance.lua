@@ -115,9 +115,7 @@ end
 -- tells the InstanceServer that manages this instance that 
 -- it wants to be updated
 function HostInstance:AddTracker(valueName, handler, userdata)
-	-- register ourself as an updater
-	self.server:RegisterUpdate(self)
-	
+	-- time
 	local now = FrameTime()
 	
 	-- create a tracker if needed
@@ -129,20 +127,20 @@ function HostInstance:AddTracker(valueName, handler, userdata)
 			name = valueName,
 			handler = handler,
 			data	= userdata,
-			created = now,
-			modified = now,
-			updated = now
+			created = now, -- when the tracker was created
+			modified = now, -- when the tracked state was last modified
+			updated = now -- when this tracker was last updated
 		}
 		
 		-- remember it
 		self.track[valueName] = tracker
-		
-		-- call it once to init it
-		self.track[valueName].handler(self, valueName, now) 
 	else
 		-- our value has been modified, remember when
 		self.track[valueName].modified = now
 	end
+	
+	-- register ourself as an updater
+	self.server:RegisterUpdate(self)
 end
 
 -- remove a tracker
@@ -201,6 +199,8 @@ function HostInstance:RecvKeepAlive(valueName, value)
 
 	local newValue = tonumber(value)
 	local curValue = self:GetStateNumber(valueName)
+	
+	Instancing.raadeport('I', ' =========== HostInstance:RecvKeepAlive', printState(curValue, newValue))
 
 	-- 0 or same value is ok; different value is skipped
 	if curValue == 0 or curValue == newValue then
@@ -209,15 +209,19 @@ function HostInstance:RecvKeepAlive(valueName, value)
 		-- track this state
 		self:AddTracker(valueName, _trackKeepAlive)
 		
+		Instancing.report('I', ' =========== _trackKeepAlive', "Adding - state " .. name)
+		
 		if result:IsNOK() then
 			return result
 		end
+		
+		Instancing.report('I', ' =========== _trackKeepAlive', "Sending - state " .. name)
 		
 		-- relay the change to other clients
 		return self:KeepAlive(valueName, value)
 	end
 	
-	return InstanceResult:failure(self:GetType() .. " HostInstance:RecvKeepAlive", "keepAlive occupied or unchanged", 'D')
+	return InstanceResult:failure(self:GetType() .. " HostInstance:RecvKeepAlive", "keepAlive occupied or unchanged", self.level or 'D')
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -337,7 +341,7 @@ function HostInstance:RecvRegisterClient(callsign)
 	local player = self:GetPlayer(callsign)
 	
 	if player == nil then
-		return InstanceResult:failure(self:GetType() .. " HostInstance:RecvRegisterClient", "unable to create player "  .. callsign, 'E')
+		return InstanceResult:failure(self:GetType() .. " HostInstance:RecvRegisterClient", "unable to create player "  .. callsign, self.level or 'E')
 	end
 	
 	return self:SendRegisterClient(self.state, self.players)
@@ -404,11 +408,13 @@ end
 function _trackKeepAlive(instance, name, now)
 	
 	if instance.track[name] == nil then
+		Instancing.report('I', '_trackKeepAlive', "Bailing - state " .. name .. " is not being tracked!")
 		return false
 	end
 	
 	-- perform inits
 	if instance.track[name].init then
+		Instance.report('I', '_trackKeepAlive', "Initing - state " .. name)
 		instance.track[name].init = false
 		return true
 	end
@@ -419,8 +425,11 @@ function _trackKeepAlive(instance, name, now)
 	-- and see if we've gotten an update within the last 2 seconds
 	if instance:GetStateNumber(name) > 0 and (now - instance.track[name].modified) < 2000 then
 		-- ok, keep tracking
+		Instancing.report('I', '_trackKeepAlive', "Tracking - state " .. name .. " at " .. tostring(now))
 		return true
 	end
+	
+	Instancing.report('I', '_trackKeepAlive', "Finished Tracking - state " .. name .. " at " .. tostring(now))
 	
 	-- update our host state
 	instance:ChangeState(name, 0)

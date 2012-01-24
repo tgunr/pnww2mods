@@ -73,10 +73,10 @@ function Instance:CommandNumber(cmdName)
 	for cNum, cName in ipairs(Instancing.Commands)
 	do
 		if cName == cmdName then
-			return InstanceResult:success(self:GetType() .. " Instance:CommandNumber", "found "  .. printState(cmdName, cNum), cNum, 'D')
+			return InstanceResult:success(self:GetType() .. " Instance:CommandNumber", "found "  .. printState(cmdName, cNum), cNum, self.level or 'D')
 		end
 	end
-	return InstanceResult:failure(self:GetType() .. " Instance:CommandNumber", "could not find "  .. cmdName, 'W')
+	return InstanceResult:failure(self:GetType() .. " Instance:CommandNumber", "could not find "  .. cmdName, self.level or 'W')
 end
 
 -- look up a command by name
@@ -87,10 +87,10 @@ function Instance:CommandName(cmdNum)
 	for cNum, cName in ipairs(Instancing.Commands)
 	do
 		if cNum == cmdNum then
-			return InstanceResult:success(self:GetType() .. " Instance:CommandName", "found "  .. printState(cName, cmdNum), cName, 'D')
+			return InstanceResult:success(self:GetType() .. " Instance:CommandName", "found "  .. printState(cName, cmdNum), cName, self.level or 'D')
 		end
 	end
-	return InstanceResult:failure(self:GetType() .. " Instance:CommandName", "could not find "  .. tostring(cmdNum), 'E')
+	return InstanceResult:failure(self:GetType() .. " Instance:CommandName", "could not find "  .. tostring(cmdNum), self.level or 'E')
 end
 
 -- sends off a json argument
@@ -99,7 +99,7 @@ end
 function Instance:SendCommand(cmdName, ...)
 	-- First argument must be a string.
 	if type(cmdName) ~= "string" then
-		return InstanceResult:failure(self:GetType() .. " Instance:SendCommand", "invalid command "  .. cmdName, 'E')
+		return InstanceResult:failure(self:GetType() .. " Instance:SendCommand", "invalid command "  .. cmdName, self.level or 'E')
 	end
 	
 	-- Look for the command.
@@ -137,9 +137,9 @@ function Instance:SendCommand(cmdName, ...)
 	-- send it as a json string using the send callback
 	if self.sendCallback ~= nil then
 		self.sendCallback(self.id, out)
-		return InstanceResult:success(self:GetType() .. " Instance:SendCommand:" .. cmdName, out .. " (sent)", nil, 'I')
+		return InstanceResult:success(self:GetType() .. " Instance:SendCommand:" .. cmdName, out .. " (sent)", nil, self.level or 'I')
 	else
-		return InstanceResult:failure(self:GetType() .. " Instance:SendCommand:" .. cmdName, out .. " (failed)", 'E')
+		return InstanceResult:failure(self:GetType() .. " Instance:SendCommand:" .. cmdName, out .. " (failed)", self.level or 'E')
 	end
 end
 
@@ -148,7 +148,7 @@ end
 function Instance:RecvCommand(data)
 
 	if type(data) ~= "string" then
-		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand", "expected an input string, got something else: " .. data, 'E')
+		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand", "expected an input string, got something else: " .. data, self.level or 'E')
 	end
 	
 	-- Instancing.report('D', 'RecvCommand', data)
@@ -159,14 +159,14 @@ function Instance:RecvCommand(data)
 	-- must be atable
 	if type(args) ~= "table" then
 		-- Instancing.report('D', 'RecvCommand', tostring(args))
-		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand", "json didn't return a table, bad data: " .. data, 'E')
+		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand", "json didn't return a table, bad data: " .. data, self.level or 'E')
 	end
 	
 	-- Instancing.report('D', self:GetType() .. ' Instance:RecvCommand', crawl(args))
 	
 	-- make sure this was for our instance
 	if args[1] ~= self.id then
-		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand", "incorrect instance id: " .. args[1] .. " != " .. self.id, 'E')
+		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand", "incorrect instance id: " .. args[1] .. " != " .. self.id, self.level or 'E')
 	end
 	
 	-- instance id
@@ -191,7 +191,7 @@ function Instance:RecvCommand(data)
 	
 	-- bad function bail
 	if not fn or type(fn) ~= "function" then
-		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand", "invalid function Instance." .. cmdName, 'E')
+		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand", "invalid function Instance." .. cmdName, self.level or 'E')
 	end
 	
 	-- debug it
@@ -204,9 +204,9 @@ function Instance:RecvCommand(data)
 	local success, output = pcall(fn, self, unpack(args))
 	
 	if success == false then
-		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand:" .. cmdName, data .. " (failed)", 'E')
+		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand:" .. cmdName, data .. " (failed)", self.level or 'E')
 	else
-		return InstanceResult:success(self:GetType() .. " Instance:RecvCommand:" .. cmdName, data .. " (received)", nil, 'D')
+		return InstanceResult:success(self:GetType() .. " Instance:RecvCommand:" .. cmdName, data .. " (received)", nil, self.level or 'I')
 	end
 end
 
@@ -306,6 +306,7 @@ end
 
 -- recv a keep alive from the other side
 function Instance:RecvKeepAlive(valueName, value)
+	Instancing.resssport('I', ' =========== Instance:RecvKeepAlive', "oops")
 	return self:ChangeState(valueName, newVale)
 end
 
