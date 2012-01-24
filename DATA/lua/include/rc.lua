@@ -13,7 +13,11 @@ if not events then events = {} end
 require 'glue'				-- Glue functions.
 require 'localization'		-- For string localization routines
 require 'event-queue'		-- Event handling system
-require 'Instancing'		-- For Instancing stuff
+require 'InstanceServer'	-- For server stuff
 
-Instancing.LoggingCallback = print
+Instancing.LoggingCallback = function (str, ...) log('I', 'lua', str, ...) end
 
+function mapSetup(...)
+	log('I', 'rc.lua', 'We have lift-off')
+	Instancing.report('I', 'lua', 'REPORTING IN FOR DUTY')
+end

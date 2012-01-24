@@ -193,7 +193,7 @@ end
 -- host update callback
 -- returns true on success, false on failure
 function updateServer()
-	if IsServer() then
+	if IsHost() then
 		Instancing.report('I', 'inst', 'Processing updateServer. I should remove this line.')
 	end
 	return getResult(server:Update(FrameTime()))
@@ -224,8 +224,7 @@ function recvServerData(id, data, ...)
 end
 
 -- Instancing.report('N', 'Main', 'Shutting down.')
-if IsServer() then
-  require 'event-queue'
-  EventQueue.AddRecurring(1, updateServer, nil, 'updateServer')
+if IsHost() then
+  LuaEvent.AddRecurring(1, updateServer, nil, 'updateServer')
 end
 
