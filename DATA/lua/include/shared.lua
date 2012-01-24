@@ -3,10 +3,6 @@
 
 -- include some stuff? 
 
-if IsHost() then
-	require 'teul'
-end
-
 -- should return the current frametime in ms
 function FrameTime()
 	if IsHost() then
