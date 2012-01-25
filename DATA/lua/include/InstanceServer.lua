@@ -132,7 +132,7 @@ function InstanceServer:RemoveInstance(id)
 	local result = self:GetInstance(id)
 	
 	-- instance didn't exit, bail
-	if result.IsNOK() then
+	if result:IsNOK() then
 		return InstanceResult:failure("S InstanceServer:RemoveInstance", "instance " .. id .. " does not exist, nothing to do!", 'D')
 	end
 	
