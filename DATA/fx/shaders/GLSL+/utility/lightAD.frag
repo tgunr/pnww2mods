@@ -73,6 +73,7 @@ void lightGetAmbientDiffuse(out vec4 ambient, out vec4 diffuse)
     ambient = ambientzero;
 
     diffuse = b_diffuse0 * b_enabled0 + b_diffuse1 * b_enabled1;
+    ambient = b_ambient0 * b_enabled0 + b_ambient1 * b_enabled2;
 
     if(b_enabled2 > 0.0)
     {
