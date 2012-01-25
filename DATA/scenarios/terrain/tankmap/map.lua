@@ -18,8 +18,8 @@ if(true) then
 		"place stonebridge -9 -63 7.2 0 0 -5 0 0 0",	
 		
 	-- HULKS
-		"place instance_hulk1_dam -85.73 -15.95 8.1 0 0 10 0 0 0",
-		"place m4a2hulk -70.94 -121.06 7.2 0 0 10 0 0 0",
+		"place instance_hulk1_dam -85.96 -13.91 10.4 5 3 10 0 0 0",
+		"place m4a2hulk -70.94 -121.06 8.2 -4 0 10 0 0 0",
 	
 	
 	
