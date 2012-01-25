@@ -199,10 +199,10 @@
     <attribute name="in_pos" type="attribute_position"></attribute>
     <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
     <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
-    <uniform name="splat" type="sampler2d" unit="2" onetimeapply="true"></uniform>
-    <uniform name="shadow0" type="sampler2dshadow" unit="3" onetimeapply="true"></uniform>
-    <uniform name="shadow1" type="sampler2dshadow" unit="4" onetimeapply="true"></uniform>
-    <uniform name="shadow2" type="sampler2dshadow" unit="5" onetimeapply="true"></uniform>
+    <uniform name="splat" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="shadow0" type="sampler2dshadow" unit="2" onetimeapply="true"></uniform>
+    <uniform name="shadow1" type="sampler2dshadow" unit="3" onetimeapply="true"></uniform>
+    <uniform name="shadow2" type="sampler2dshadow" unit="4" onetimeapply="true"></uniform>
     <uniform name="origin" type="float_vec3"></uniform>
     <uniform name="alphatest" type="float"></uniform>
     <uniform name="zShadow0" type="float"></uniform>
@@ -220,10 +220,10 @@
       <fragmentshader>fx/shaders/GLSL/grass/spdgrassshadow_ra.frag</fragmentshader>
     </shaders>
     <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
-    <uniform name="splat" type="sampler2d" unit="2" onetimeapply="true"></uniform>
-    <uniform name="shadow0" type="sampler2dshadow" unit="3" onetimeapply="true"></uniform>
-    <uniform name="shadow1" type="sampler2dshadow" unit="4" onetimeapply="true"></uniform>
-    <uniform name="shadow2" type="sampler2dshadow" unit="5" onetimeapply="true"></uniform>
+    <uniform name="splat" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="shadow0" type="sampler2dshadow" unit="2" onetimeapply="true"></uniform>
+    <uniform name="shadow1" type="sampler2dshadow" unit="3" onetimeapply="true"></uniform>
+    <uniform name="shadow2" type="sampler2dshadow" unit="4" onetimeapply="true"></uniform>
     <uniform name="origin" type="float_vec3"></uniform>
     <uniform name="alphatest" type="float"></uniform>
     <uniform name="zShadow0" type="float"></uniform>

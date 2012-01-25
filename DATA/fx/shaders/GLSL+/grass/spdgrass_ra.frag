@@ -33,18 +33,18 @@ void main()
 
     out_color = defaultcolor;
 
-    if(base.a > alphatest)
-    {
-	    vec4 amb;
-	    vec4 dif;
-    	
-	    lightGetAmbientDiffuse(amb, dif);
-    	
-        base = mix(base, tcolor, tcolor.a);
+    if(base.a < alphatest)
+        discard;
 
-        vec4 color = base * (amb * b_Ka + dif * b_Kd);
-        color.rgb *= tex0.z;
+    vec4 amb;
+    vec4 dif;
+    	
+    lightGetAmbientDiffuse(amb, dif);
+    	
+    base = mix(base, tcolor, tcolor.a);
 
-	    out_color = fogThis(color);
-    }
+    vec4 color = base * (amb * b_Ka + dif * b_Kd);
+    color.rgb *= tex0.z;
+
+    out_color = fogThis(color);
 }

@@ -56,9 +56,9 @@ void main()
 
     p1 = b_MVMatrix * p1;
 
-    tex3 = b_TextureMatrix3 * p1;
-    tex4 = b_TextureMatrix4 * p1;
-    tex5 = b_TextureMatrix5 * p1;
+    tex3 = b_TextureMatrix2 * p1;
+    tex4 = b_TextureMatrix3 * p1;
+    tex5 = b_TextureMatrix4 * p1;
 
     tex3.z = 1.0 - tex3.z;
     tex4.z = 1.0 - tex4.z;

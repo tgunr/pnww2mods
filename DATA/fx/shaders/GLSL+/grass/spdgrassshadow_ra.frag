@@ -75,20 +75,20 @@ void main()
      
     out_color = defaultcolor;
 
-    if(base.a > alphatest)
-    {
-	    vec4 amb;
-	    vec4 dif;
+    if(base.a < alphatest)
+        discard;
+
+	vec4 amb;
+	vec4 dif;
     	
-	    lightGetAmbientDiffuse(amb, dif);
+	lightGetAmbientDiffuse(amb, dif);
     	
-        base = mix(base, tcolor, tcolor.a);
+    base = mix(base, tcolor, tcolor.a);
 
-	    vec4 color = base * (amb * b_Ka + dif * b_Kd);
+	vec4 color = base * (amb * b_Ka + dif * b_Kd);
 
-        color.rgb *= tex0.z;
-	    color.rgb *= GetShadowValue();
+    color.rgb *= tex0.z;
+	color.rgb *= GetShadowValue();
 
-        out_color = fogThis(color);
-    }
+    out_color = fogThis(color);
 }
