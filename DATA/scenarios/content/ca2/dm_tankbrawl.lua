@@ -107,12 +107,14 @@ if(true) then
 	-- command spawngroup worldx worldy worldz yaw
 
 		-- Allied tank spawns
-		"spawn alliedvehicles 58.04 -234.91 3.3 300",
+		"spawn alliedvehicles 37.63 -230.57 6.19 270",
+		"spawn alliedvehicles 51.83 -229.92 6.19 90",
 
 
 
 		-- German tank spawns
-		"spawn axisvehicles -196.82 77.51 8.05 170",
+		"spawn axisvehicles -183.62 67.73 7.33 120",
+		"spawn axisvehicles -182.26 67.56 7.71 250",
 
 -- DEFINE BLOCKED AREAS OF NO ACCESS BY PLAYERS
 
@@ -146,15 +148,17 @@ if(true) then
 	-- SMOKESCREEN
 
 		-- allied spawn smokescreen
-		"emitter smokescreen 29.65 -177.09 7.24",
+		"emitter smokescreen 20.02 -199.85 6.98",
 		
 		-- axis spawn smokescreen
-		"emitter smokescreen -160.26 46.93 9.40",
+		"emitter smokescreen -150.29 31.90 8.03",
+		
+		
 						
 		-- SMOKING VEHICLES
 		
-		--"emitter hulksmoke 293505.66 2977718.00 275.89",
-		--"emitter hulksmoke 293839.62 2977869.99 276.05",
+		"emitter hulksmoke -85.71 -14.05 9.39",
+		"emitter hulksmoke -71.59 -123.08 8.46",
 		--"emitter hulksmoke 293198.83 2976555.30 274.40",
 		--"emitter hulksmoke 292914.19 2976638.96 274.49",
 		
@@ -292,6 +296,14 @@ if(true) then
 
 	-- NAMED VERSION
 	-- command name typeid x y z roll pitch yaw
+	
+	
+	
+	
+	
+	
+	
+	-- end section for cagefight
 
 		-- "clone bedford1 bedford -20.11 -156.51 8.77 0 0 90",
 		
@@ -365,6 +377,7 @@ if(true) then
 	-- 
 	-- countries:
 		-- 1 - england
+		-- 2 - usa
 		-- 3 - france
 		-- 4 - germany
 		-- 
@@ -396,15 +409,14 @@ if(true) then
 
 	-- Allied tank types --		
 
-		"mask alliedvehicles m4a2",
-		"mask alliedvehicles us_buzzard",
+		"mask alliedvehicles m10_us 3",
+		"mask alliedvehicles m4a2_us 3",
 
 
 	-- German tank types --
 
-		"mask axisvehicles  pzivg",
-		"mask axisvehicles de_buzzard",
-		
+		"mask axisvehicles  pzivg 3",
+		"mask axisvehicles stug3g 3",	
 
 	-- alternatively you can use a vehicle's string id 
 	-- command spawngroup id

@@ -2,183 +2,230 @@
 
 if(true) then
 	-- content we're going to add
-	local content =
+	local content = 
 	{
-		-- include lua file
-		-- command,path
+		-- INCLUDE A LUA FILE --
+		-- command path
 		"include scenarios/terrain/cagefight/map.lua",
 
 -- DEFINE THE PLAY AREA
 
+	-- Playarea Boundary
+	
 	-- boundary name x y z
 
-		"boundary playarea 190890.87 3015923.68 143.00",
-		"boundary playarea 190890.87 3015968.95 143.00",
-		"boundary playarea 190895.84 3015971.24 143.00",
-		"boundary playarea 190896.15 3015979.12 143.00",
-		"boundary playarea 190891.06 3015981.02 143.00",
-		"boundary playarea 190890.62 3016048.07 143.00",
-		"boundary playarea 190993.13 3016048.06 143.00",
-		"boundary playarea 190993.20 3016037.21 143.00",
-		"boundary playarea 190987.79 3016034.99 143.00",
-		"boundary playarea 190987.44 3016027.67 143.00",
-		"boundary playarea 190993.32 3016025.47 143.00",
-		"boundary playarea 190993.22 3015928.65 143.00",
-		"boundary playarea 190983.47 3015918.12 143.00",
+--"boundary playarea -254.55 -74.98 6.62",
 
+
+-- DEFINE WHERE PLAYERS SPAWN		
 		
+	-- yaw is the vehicle facing on spawn and is given in degrees
+	-- spawn points are always named
+		
+	-- command spawngroup worldx worldy worldz yaw
 
--- DEFINE WHERE PLAYERS SPAWN
+		-- Allied tank spawns
+		"spawn alliedvehicles 37.63 -230.57 6.19 270",
+		"spawn alliedvehicles 51.83 -229.92 6.19 90",
 
-	-- Allied Infantry Spawns
-	-- command spawngroup worldx worldy,worldz yaw
-	
-		"spawn alliedtroops 190900.52 3016040.81 145.55 180",
-		"spawn alliedtroops 190907.37 3016040.87 145.55 180",
-		"spawn alliedtroops 190904.22 3016023.94 145.55 0",
 
-	-- Axis Infantry Spawns
-	-- command spawngroup worldx worldy,worldz yaw
 
-		"spawn axistroops 190979.58 3015947.05 145.55 204",
-		"spawn axistroops 190984.56 3015941.84 145.55 245",
-		"spawn axistroops 190970.10 3015932.28 145.55 44",
+		-- German tank spawns
+		"spawn axisvehicles -183.62 67.73 7.33 120",
+		"spawn axisvehicles -182.26 67.56 7.71 250",
 
 -- DEFINE BLOCKED AREAS OF NO ACCESS BY PLAYERS
 
-		-- blocking volume gate1
-		-- block gate1 x1 y1 z1 x2 y2 z2 thickness height
+	-- blocking volume x
+	-- block name x1 y1 z1 x2 y2 z2 thickness height
 
-	       	-- "block gate1 190992.16 3016037.96 143.00 190992.03 3016024.58 143.00 3 5",
-
-		-- blocking volume gate2
-		-- block gate2 x1 y1 z1 x2 y2 z2 thickness height
-
-	       	-- "block gate2 190892.33 3015983.32 143.00 190892.08 3015967.47 143.00 3 5",
+        	--"block 139.59 -86.67 8.69 104.30 -72.64 8.68 1 10",
+			
 		
-		
-				
 -- FX EMITTERS
-
+		
 	-- command,effectname,worldx,worldy,worldz
 	-- smoke effects
+		
+		-- SMOKING BARRELS
 
-	-- SMOKING BARRELS
+		--"emitter hulksmoke -25.16 -97.95 8.75",
+		--"emitter hulksmoke -29.35 -105.79 8.75",
+		--"emitter hulksmoke -82.57 -95.59 8.5",
+				
 
-		--"emitter hulksmoke 273119.68 3016921.62 482.00",
-		--"emitter hulksmoke -29.35 -105.79 9.06",
+		-- SMOKING CRATERS
 
-	-- SMOKING CRATERS
-
-		--"emitter hulksmoke 173.40 -38.89 6.9",
-		--"emitter hulksmoke 129.71 -55.96 7.0",
-
+		--"emitter cratersmoke 173.40 -38.89 8",
+		--"emitter cratersmoke 129.71 -55.96 8",
+		--"emitter cratersmoke -45.56 -78.53 8",
+		--"emitter cratersmoke 26.02 -82.75 8",
+		--"emitter cratersmoke -49.62 -130.94 8",
+		--"emitter cratersmoke 109.09 27.70 4.5",
+				
 	-- SMOKESCREEN
 
-		--"emitter smokescreen -46.03 -224.78 15.92",
-		--"emitter smokescreen -1.73 -226.20 16.42",
+		-- allied spawn smokescreen
+		--"emitter smokescreen 20.02 -199.85 6.98",
 		
-	-- SMOKING VEHICLES
+		-- axis spawn smokescreen
+		--"emitter smokescreen -150.29 31.90 8.03",
+		
+		
+						
+		-- SMOKING VEHICLES
+		
+		--"emitter hulksmoke -85.71 -14.05 9.39",
+		--"emitter hulksmoke -71.59 -123.08 8.46",
+		--"emitter hulksmoke 293198.83 2976555.30 274.40",
+		--"emitter hulksmoke 292914.19 2976638.96 274.49",
+		
+		-- BURNING VEHICLES
 
-		--"emitter hulksmoke 272998.02 3016996.20 481.5",
-		--"emitter hulksmoke 272922.72 3016995.51 481.5",
+		-- "emitter vehiclefire 82487.52 3011457.65 5.00",
+		-- "emitter vehiclefire 81366.19 3011906.12 4.42",
 
-	-- BURNING VEHICLES
 
-		"emitter vehiclefire 190999.27 3016031.74 143.50",
+		-- FIRES
 
+		--"emitter smallfire 95.18 -27.96 8.85",
+		--"emitter smallfire 261.35 227.52 4.0",
+		
 		
 -- SOUNDS
 		
 	-- ABSOLUTE SOUNDS
 	-- command name filename minvol, maxvol
-		
-		"sound planes sounds/scenarios/ambient_aircraft_squadron1.wav .3 0",
-		"sound planes sounds/scenarios/ambient_aircraft_squadron2.wav .4 0",
-		"sound bombs sounds/scenarios/ambient_bombs_distantshells1.wav .5 0",
-		"sound bombs sounds/scenarios/ambient_bombs_distantshells2.wav .5 0",
-		"sound explosions sounds/scenarios/ambient_explosions_fourinarow.wav .4 0",
-		"sound explosions sounds/troop/grenade.wav .5 0",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav .2 0",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun2.wav .2 0",
-		"sound guns1 sounds/scenarios/ambient_guns_machine_gun3.wav .2 0",
-		"sound guns1 sounds/airraidsiren.wav .06 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun4.wav .2 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav .2 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav .2 0",
-		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav .2 0",
-		"sound wind sounds/ambience/gust1.wav .5 0",
-		"sound wind sounds/ambience/gust2.wav .5 0",
 
+		"sound planes sounds/scenarios/ambient_aircraft_squadron1.wav .4 1",
+		"sound planes sounds/scenarios/ambient_aircraft_squadron2.wav .4 1",
+		"sound bombs sounds/scenarios/ambient_bombs_distantshells1.wav .4 1",
+		"sound bombs sounds/scenarios/ambient_bombs_distantshells2.wav .4 1",
+		"sound explosions sounds/scenarios/ambient_explosions_fourinarow.wav .60 1",
+		--"sound explosions sounds/troop/grenade.wav .40 0",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav 1 1",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun2.wav 1 1",
+		"sound guns1 sounds/scenarios/ambient_guns_machine_gun3.wav 1 1",
+		--"sound siren1 sounds/airraidsiren.wav .2 1",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun4.wav 1 1",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav 1 1",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav 1 1",
+		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav 1 1",
+		--"sound wind sounds/ambience/gust1.wav .9 0",
+		--"sound wind sounds/ambience/gust2.wav .9 0",
 
 	-- POSITIONAL SOUNDS
 	-- command name filename volume loop x y z mindist maxdist
 
+		-- "sound sounds/tank_burn.wav 1 1 345498.39 3006190.72 110.11 5 30",
+		-- "sound sounds/tank_burn.wav 1 1 345725.97 3006311.75 109.19 5 30",
+				
 
 	-- A LINE OF BOMBS (as if dropped from a plane)
 	-- command name ammo worldx1 worldy1 worldz1 worldx2 worldy2 worldz2
 
-		--"bombingrun bombing1 gp500 272970.33 3016753.34 487.99 273011.34 3016751.15 487.99",
-		--"bombingrun bombing1 gp250 273079.40 3016700.38 493.43 273103.98 3016699.07 494.59",
-		--"bombingrun bombing1 gp250 272745.39 3017000.12 482.21 272780.73 3016999.68 482.21",
-		--"bombingrun bombing1 gp250 274041.21 3016923.54 539.90 274040.94 3016998.48 539.56",
-		--"bombingrun bombing2 smallbarragebomb 33.14 -165.89 7.68 6.27 -182.85 2.72",
-		--"bombingrun bombing2 smallbarragebomb 212.53 -134.06 19.33 163.59 -134.66 4.72",
+		--"bombingrun bombing1 gp500 345341.24 3006908.91 110.79 346181.83 3006916.23 111.08",
+		--"bombingrun bombing2 gp500 346104.64 3006889.33 113.52 345643.43 3006890.27 113.00",
+		--"bombingrun bombing1 gp500 345780.50 3005088.91 115.25 345021.67 3005085.88 114.49",
+		--"bombingrun bombing2 gp500 345118.53 3005109.86 117.00 345580.75 3005108.87 117.00",
+				
 
-		
 	-- AREA EFFECT BOMBING OR BARRAGE (simulating artillery barrage)
 	-- the x,y,z is the center of the barrage
 	-- the distance is the radius of a circle around the center to randomly fire off the ammo in
 	-- command name ammo x y z distance
 
-		"barrage barrage1 smallbarragebomb 191032.58 3016111.40 142.00 40",
-		"barrage barrage1 smallbarragebomb 190924.72 3015856.39 142.00 20",
-		"barrage barrage1 smallbarragebomb 190872.91 3016115.73 142.00 30",
-
+		-- "barrage barrage1 smallbarragebomb 81231.19 3011960.61 3.08 150",
+		-- "barrage barrage1 smallbarragebomb 82358.13 3011558.99 4.00 150",
+		-- "barrage barrage1 smallbarragebomb -266.85 -36.03 5.26 50",
 
 		
 -- TRIGGERS
 	
 	-- EVENT TRIGGERS	
-	-- command name pctgchance-each-second wait-in-milliseconds
+	-- command name pctgchance-each-second wait-in-milliseconds milliseconds-between-bomb-drops number-of-bombs
 
-		"event planes .40 120000",
-		"event bombs .10 20000",
-		"event explosions .20 25000",
-		"event guns1 .15 10000",
-		"event guns2 .20 30000",
-		"event wind .5 5000",
-		-- "event bombing1 .15 30000 500 6",
-		-- "event bombing2 .18 20000 750 3",
-		"event barrage1 .10 30000 650 12",
-		"event barrage1 .10 30000 550 12",
-		"event barrage1 .10 30000 750 12",
+		-- "event planes .40 80000",
+		--"event bombs .45 80000",
+		--"event explosions .20 45000",
+		-- "event guns1 .25 20000",
+		-- "event guns2 .25 40000",
+		-- "event siren1 .33 50000",
+		-- "event wind .5 5000",
+		--"event bombing1 .90 25000 600 24",
+		--"event bombing2 .90 25000 650 12",
+		-- "event barrage1 .45 30000 550 18",
+
 		
 
 	-- AREA TRIGGERS
 	-- command name triggertype worldx worldy worldz
-	
 
-		--directions at allied spawn 1
+	-- directions at axis spawn 1
 
-		--"area toalliedspawn OnTrigger 190899.98 3016041.67 145.55",		
-		--"area toalliedspawn OnTrigger 190899.95 3016023.24 145.55",
-		--"area toalliedspawn OnTrigger 190908.31 3016023.25 145.55",
-		--"area toalliedspawn OnTrigger 190908.37 3016041.56 145.55",
+		--"area ataxisspawn OnTrigger 345260.32 3004804.76 112.00",		
+		--"area ataxisspawn OnTrigger 345504.78 3004805.95 112.00",
+		--"area ataxisspawn OnTrigger 345509.18 3004867.41 112.00",
+		--"area ataxisspawn OnTrigger 345262.57 3004863.17 112.00",
 				
 
-		-- directions at axis spawn 1
+	-- directions at allied spawn 1
 
-		--"area toaxisspawn OnTrigger 190985.52 3015941.83 145.55",	
-		--"area toaxisspawn OnTrigger 190979.80 3015947.75 145.55",	
-		--"area toaxisspawn OnTrigger 190966.76 3015934.84 145.55",	
-		--"area toaxisspawn OnTrigger 190972.59 3015928.88 145.55",	
-				
+		--"area atalliedspawn OnTrigger 345712.82 3007130.00 108.00",	
+		--"area atalliedspawn OnTrigger 345712.57 3007198.25 108.00",	
+		--"area atalliedspawn OnTrigger 345861.24 3007197.78 108.00",	
+		--"area atalliedspawn OnTrigger 345860.36 3007129.62 108.00",	
+
+	-- bridge capture objective
+
+		"handler capper OnCapper",
+		"handler objective1 OnCapturing",
+		
+		-- "area bridgecapture OnState 81802.47 3011808.50 11.94 1",
+		-- "area bridgecapture OnState 81796.75 3011808.50 11.94",
+		-- "area bridgecapture OnState 81796.81 3011786.75 11.86",
+		-- "area bridgecapture OnState 81802.57 3011786.25 11.84",
+
+
+
+	-- telling players they are in the bridge capture area
+		-- "area bridgecapture1 OnTrigger 81802.47 3011808.50 14",
+		-- "area bridgecapture1 OnTrigger 81796.75 3011808.50 14",
+		-- "area bridgecapture1 OnTrigger 81796.81 3011786.75 14",
+		-- "area bridgecapture1 OnTrigger 81802.57 3011786.25 14",
+
+		
+	-- bridge capture objective
+
+		--"area bridgecapture OnTrigger 128.28 19.45 7.13",
+		--"area bridgecapture OnTrigger 133.82 35.82 7.13",
+		--"area bridgecapture OnTrigger 130.04 37.17 7.13",
+		--"area bridgecapture OnTrigger 123.71 19.42 7.13",
+
+	-- center of map area between spawns
+
+		--"area mapcenter OnTrigger 293109.64 2977080.80 274.00",
+		--"area mapcenter OnTrigger 293110.12 2977312.77 274.00",
+		--"area mapcenter OnTrigger 293281.78 2977306.03 274.00",
+		--"area mapcenter OnTrigger 293279.28 2977087.93 274.00",
+
 
 -- CLONES --
 
 	-- NAMED VERSION
 	-- command name typeid x y z roll pitch yaw
+	
+	-- this section is for cagefight
+	"clone bedford1 bedford 312.0 312.02 51.1 0 0 180",
+	"clone bedford1 bedford 304.5 336.0 51.1 0 0 90",
+	"clone bedford1 bedford 312.50 346.57 51.1 0 0 -90",	
+	"clone sherman1 m4a2_us 312.18 326.5 50.80 0 0 -45",		
+	
+	
+	
+	
+	
+	-- end section for cagefight
 
 		-- "clone bedford1 bedford -20.11 -156.51 8.77 0 0 90",
 		
@@ -186,12 +233,30 @@ if(true) then
 	-- ANONYMOUS VERSION
 	-- command name typeid x y z roll pitch yaw
 
-		-- "clone bedford -19.75 -153.93 9.05 2 0 0",
-		-- "clone bedford -27.34 -150.10 8.9 4 0 285",
-		-- "clone bedford -35.21 -147.32 8.85 6 2 285",
+		--"clone bedford 199.68 144.04 6.9 5 0 -90",
+		--"clone bedford 200.34 148.35 6.9 5 0 -110",
+		--"clone bedford 192.31 147.46 7.33 3 -1 -130",
+		--"clone pzivd 95.72 156.42 8.3 3 -1 0",
+		--"clone pzivd 79.79 108.67 5.58 3 -1 20",
+		--"clone oplbltz 121.93 6.84 8.08 -3 0 205",
+		--"clone oplbltz 176.32 -20.12 8.55 0 0 180",
+		--"clone bedford -19.75 -153.93 9.05 2 0 0",
+		--"clone bedford -27.34 -150.10 8.9 4 0 285",
+		--"clone bedford -35.21 -147.32 8.85 6 2 285",
 
+
+-- ALERTS AND CHATS
+-- ADD AN INFORMATION MESSAGE TO THE CHAT WINDOW
+		
+	-- these are always named
+	-- the lockey is a lockey looked up from the scenario content in the web translation tool
+	-- command name lockey
+	--"chat spawnin spawnin.moveout",
+		
 -- ADD A HUD ALERT
-
+		
+	-- ADD A HUD ALERT
+		
 		-- these are always named
 		-- look them up from the scenario content in the web translation tool
 		-- command categorynamealert namealert numberofsecondsbetweenrepeatalerts
@@ -199,50 +264,52 @@ if(true) then
 		
 		-- HUD WAYPOINTERS
 
-		"waypoint.2 onspawn ukspawn 190904.07 3016031.83 149.67 enemy",
-		"waypoint.1 onspawn gerspawn 190977.45 3015940.51 149.39 enemy",
-
-
-		"alert onspawn onspawn.moveout 60",
+		-- "waypoint.2.1.1 onspawn wp1 81624.87 3011364.45 8.56", 
+		-- "waypoint.1.1.1 onspawn wp2 82237.67 3012068.52 8.99", 
+		-- "waypoint.0.1.1 onspawn wp3 81799.70 3011794.20 17.52", 
+		-- "waypoint.0.1.1 onspawn wp4 82534.27 3011726.17 24.45", 
+		-- "waypoint.0.1.1 onspawn wp5 81074.97 3011869.38 31.82", 
+		
+		
+		-- "alert onspawn onspawn.moveout -1",
 		--"alert roundstop roundstop",
-		--"alert victory1 victory1",
-		--"alert victory2 victory2",
+		-- "alert victory1 victory1",
+		-- "alert victory2 victory2",
 		--"alert playarea playarea 10",
-		--"alert churchentry churchentry 20000",
 		--"alert toaxisspawn toaxisspawn -1",
 		--"alert toalliedspawn toalliedspawn -1",
+		
+		
+		
+		
+		
 
-		"alert playarea playarea 10",
-		"alert victory1 victory1",
-		"alert victory2 victory2",
-		"alert roundstop roundstop",
-		
-		
-		
+				
 -- MAKE A VEHICLE AVAILABLE FOR SPAWNING
 		
-		-- the vehicles block controls what vehicles can be spawned
-		-- 	
-		-- vehicle masks are defined like IP addresess...as dotted quads and
-		-- are based on the following members in this order:
-		-- 
-		-- country.category.class.type
-		-- 
-		-- an asterisk (*) can be placed in any field and is the default for
-		-- any defined mask
-		-- 
-		-- countries:
+	-- the vehicles block controls what vehicles can be spawned
+	-- 	
+	-- vehicle masks are defined like IP addresess...as dotted quads and
+	-- are based on the following members in this order:
+	-- 
+	-- country.category.class.type
+	-- 
+	-- an asterisk (*) can be placed in any field and is the default for
+	-- any defined mask
+	-- 
+	-- countries:
 		-- 1 - england
+		-- 2 - usa
 		-- 3 - france
 		-- 4 - germany
 		-- 
-		-- categories:
+	-- categories:
 		-- 1 - aircraft
 		-- 2 - ground vehicle
 		-- 3 - sea vehicle
 		-- 4 - infantry
 		-- 
-		-- classes:
+	-- classes:
 		-- 1 - bombers
 		-- 2 - fighters
 		-- 4 - tank
@@ -253,24 +320,30 @@ if(true) then
 		-- 14 - para
 		-- 12 - riverine
 		-- 13 - sea
-		-- 
-		-- * invidiual vehicles can be specified vehicle by its id
+		--
+
+	-- types:
+	-- type ids can be found the in the DATA\th_blitz\weap files
 		
-		-- command,spawngroup,country,category,class,type
-		-- a 0 is considered a wildcard
+	-- a 0 is considered a wildcard (any)
+		
+	-- command spawngroup country category class type
 
-		-- ALLIED SPAWN list
+	-- Allied tank types --		
 
-		"mask alliedtroops uk-rifle",
-		"mask alliedtroops uk-smg",
-		"mask alliedtroops uk-lmg 1",
+		"mask alliedvehicles m10_us 3",
+		"mask alliedvehicles m4a2_us 3",
 
-				
-		-- AXIS SPAWN list
 
-		"mask axistroops derifle",
-		"mask axistroops de-smg",
-		"mask axistroops de-lmg 1",
+	-- German tank types --
+
+		"mask axisvehicles  pzivg 3",
+		"mask axisvehicles stug3g 3",	
+
+	-- alternatively you can use a vehicle's string id 
+	-- command spawngroup id
+	-- "vehicle <spawn object filename>",
+
 	};
 
 	for i,v in ipairs(content) do 
