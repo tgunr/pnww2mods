@@ -157,8 +157,8 @@ if(true) then
 						
 		-- SMOKING VEHICLES
 		
-		"emitter hulksmoke -85.71 -14.05 9.39",
-		"emitter hulksmoke -71.59 -123.08 8.46",
+		"emitter hulksmoke -85.71 -14.05 10.5",
+		"emitter hulksmoke -71.59 -123.08 9.5",
 		--"emitter hulksmoke 293198.83 2976555.30 274.40",
 		--"emitter hulksmoke 292914.19 2976638.96 274.49",
 		
