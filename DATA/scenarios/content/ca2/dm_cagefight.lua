@@ -24,15 +24,16 @@ if(true) then
 		
 	-- command spawngroup worldx worldy worldz yaw
 
-		-- Allied tank spawns
-		"spawn alliedvehicles 37.63 -230.57 6.19 270",
-		"spawn alliedvehicles 51.83 -229.92 6.19 90",
+		-- Allied spawns
+		"spawn alliedtroops 300.63 299.04 50.15 45",
+		"spawn alliedalliedtroops 307.32 297.32 50.15 25",
 
 
 
-		-- German tank spawns
-		"spawn axisvehicles -183.62 67.73 7.33 120",
-		"spawn axisvehicles -182.26 67.56 7.71 250",
+		-- German spawns
+		"spawn axistroops 310.64 362.98 50.02 240",
+		"spawn axistroops 320.60 362.20 50.02 260",
+
 
 -- DEFINE BLOCKED AREAS OF NO ACCESS BY PLAYERS
 
@@ -329,16 +330,18 @@ if(true) then
 		
 	-- command spawngroup country category class type
 
-	-- Allied tank types --		
+	-- allied spawn list
+		"mask alliedtroops us-rifle",
+		"mask alliedtroops us-assault 2",
+		"mask alliedtroops us-bar 2",
+		"mask alliedtroops us-sniper 1",
 
-		"mask alliedvehicles m10_us 3",
-		"mask alliedvehicles m4a2_us 3",
-
-
-	-- German tank types --
-
-		"mask axisvehicles  pzivg 3",
-		"mask axisvehicles stug3g 3",	
+	-- axis spawn list
+	
+		"mask axistroops derifle",
+		"mask axistroops de-assault 2",
+		"mask axistroops de-smg 2",
+		"mask axistroops de-sniper 1",
 
 	-- alternatively you can use a vehicle's string id 
 	-- command spawngroup id
