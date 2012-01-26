@@ -2,7 +2,7 @@
 
 uniform float time;
 
-const float texscale = 25.0;
+const float texscale = 200.0;
 
 const vec2 speed = vec2(0.002, 0.002);
 
