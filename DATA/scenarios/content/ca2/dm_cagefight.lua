@@ -32,7 +32,7 @@ if(true) then
 
 		-- German spawns
 		"spawn axistroops 310.64 362.98 50.02 240",
-		"spawn axistroops 320.60 362.20 50.02 260",
+		"spawn axistroops 320.30 362.47 50.04 260",
 
 
 -- DEFINE BLOCKED AREAS OF NO ACCESS BY PLAYERS
@@ -40,7 +40,13 @@ if(true) then
 	-- blocking volume x
 	-- block name x1 y1 z1 x2 y2 z2 thickness height
 
-        	--"block 139.59 -86.67 8.69 104.30 -72.64 8.68 1 10",
+        	"block 315.10 364.95 49.0 323 365.01 49.0 1 10",
+			"block 321.25 360.6 49.0 321.27 366.0 49.0 1 10",
+			"block 299.36 362.27 49.0 302.20 362.38 49.0 1 10",
+			
+			
+			
+			
 			
 		
 -- FX EMITTERS
