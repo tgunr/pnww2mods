@@ -15,10 +15,8 @@ void main()
 {   
     vec4 p1;
 
-    p1.xy = gl_Vertex.xy;
-    p1.xy += origin.xy;
+    p1.xyz = gl_Vertex.xyz - origin;
 
-    p1.z = gl_MultiTexCoord1.x + gl_Vertex.z;
     p1.w = 1.0;
     
     gl_TexCoord[1].x = p1.x * sPlane.x + 0.5;

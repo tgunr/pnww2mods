@@ -30,6 +30,7 @@ const vec4 sPlane = vec4(ss, 0.0, 0.0, 0.0);
 const vec4 tPlane = vec4(0.0, -ss, 0.0, 0.0);
 
 in vec4 in_pos;
+in float in_tex0;
 
 out vec3 tex0;
 out vec2 tex2;
@@ -38,8 +39,6 @@ out vec4 tex4;
 out vec4 tex5;
 out vec3 eyepos;
 out float fogdist;
-
-in float in_tex0;
 
 void main()
 {   
