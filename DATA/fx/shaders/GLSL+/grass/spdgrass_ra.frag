@@ -17,7 +17,6 @@ uniform float alphatest;
 vec4 fogThis(in vec4);
 void lightGetAmbientDiffuse(out vec4 amb, out vec4 dif);
 
-const vec4 defaultcolor = vec4(0, 0, 0, 0);
 const vec4 Ka = vec4(0.50, 0.50, 0.43, 1.0);
 const vec4 Kd = vec4(0.4, 0.45, 0.39, 1.0);
 
@@ -30,8 +29,6 @@ void main()
 {
 	vec4 base = texture2D(src1, tex0.xy);
     vec4 tcolor = texture2D(splat, tex1);
-
-    out_color = defaultcolor;
 
     if(base.a < alphatest)
         discard;

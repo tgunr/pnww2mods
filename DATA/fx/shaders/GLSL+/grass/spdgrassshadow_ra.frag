@@ -28,8 +28,6 @@ const float zoffset = 0.001954;
 vec4 fogThis(in vec4);
 void lightGetAmbientDiffuse(out vec4 amb, out vec4 dif);
 
-const vec4 defaultcolor = vec4(0, 0, 0, 0);
-
 const vec3 e = vec3(0, 0, zoffset);
 
 in vec3 tex0;
@@ -73,8 +71,6 @@ void main()
 	vec4 base = texture(src1, tex0.xy);
     vec4 tcolor = texture(splat, tex2);
      
-    out_color = defaultcolor;
-
     if(base.a < alphatest)
         discard;
 
