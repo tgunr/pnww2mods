@@ -40,6 +40,7 @@ if(true) then
 	
 	"place urbldg03 295.81 400.94 50.0 0 0 0 0 0 0 0",
 	"place urbldg03 400.0 326.29 50.0 0 0 90 0 0 0 0",
+	"place urbldg03 270.0 512.50 50.0 0 0 0 0 0 0 0",
 	
 	"place bel4 330.0 337.29 49.85 0 0 -90 0 0 0 0",
 	
@@ -62,12 +63,15 @@ if(true) then
 	"place wall02 320.0 343.25 49.0 0 0 90 0 0 0 0",
 	"place wall02 323.0 308.5 48.55 0 0 90 0 0 0 0",
 	
+	"place wall01 316.75 300.34 48.5 0 0 -180 0 0 0 0",
+	
+	
 	
 	-- crates
 	"place cratepile_outside 313.0 355.27 50.0 0 0 90 0 0 0 0",
 	"place cratepile_outside 305.0 305.0 50.0 0 0 90 0 0 0 0",
 	"place cratepile_outside 306.0 330.0 50.0 0 0 45 0 0 0 0",	
-	
+	"place cratepile_outside 322.76 366.0 50.0 0 0 0 0 0 0 0",	
 	
 	
 	
@@ -87,6 +91,33 @@ if(true) then
 	"place crate 317.0 337.08 50.0 0 0 0 0 0 0 0",
 	"place crate 315.5 337.08 50.0 0 0 0 0 0 0 0",
 	"place crate 316.25 337.08 51.0 0 0 0 0 0 0 0",
+	"place crate 318.78 302.04 50.0 0 0 90 0 0 0 0",
+	"place crate 318.78 302.2 51.0 0 0 110 0 0 0 0",
+	"place crate 320.71 365.65 50.00 0 0 0 0 0 0 0",
+	"place crate 319.4 365.65 50.00 0 0 0 0 0 0 0",
+	"place crate 318.0 365.65 50.00 0 0 0 0 0 0 0",
+	"place crate 319.0 365.65 51.00 0 0 9 0 0 0 0",
+	"place crate 300.85 362.18 50.03 0 0 0 0 0  0",
+	"place crate 301.2 362.18 51.03 0 0 0 0 0  0",
+	"place crate 301.2 359.5 50.03 0 0 90 0 0  0",
+	"place crate 307.84 291.9 50.03 0 0 90 0 0  0",
+	"place crate 310.13 298.65 50.1 0 0 25 0 0  0",
+	
+	--boards
+	"place boarding1 299.85 320.44 50.0 0 0 90 0 0 0 0",
+	"place boarding1 299.85 329.25 50.0 0 0 90 0 0 0 0",
+	"place boarding1 299.9 349.25 50.0 0 0 90 0 0 0 0",
+	
+	"place boarding1 302.63 291.1 50 0 0 0 0 0 0 0",
+	
+	"place boarding1 319.25 355.35 50.0 0 0 90 0 0 0 0",
+	
+	
+	
+	-- telephone poles
+	"place dd_telegraph_07 317.2 291 48.5 5 0 -1 0 0 0 0",
+	"place dd_telegraph_07 317.2 310.14 48.5 3 -2 0 0 0 0 0",
+	"place dd_telegraph_07 317.2 343.0 48.5 1 0 0 0 0 0 0",
 	
 	
 	
