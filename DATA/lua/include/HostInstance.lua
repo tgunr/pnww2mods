@@ -33,7 +33,7 @@ function HostInstance:create()
 	
 	-- we're a Host instance
 	instance.type = 'H'
-	instance.level = 'F'
+	-- instance.level = 'F'
 	
 	setmetatable(instance, HostInstanceInterface)
 	
