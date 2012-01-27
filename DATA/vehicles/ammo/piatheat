@@ -1,15 +1,29 @@
-# PIAT HEAT round
+# PIAT HEAT round: Mk IA
 # created Sept/27/11 - Doc.
 
+
 type = rocket
-diameter = .05
-weight = 1.4
-ammoweight = 1.4
+diameter = .089
+weight = 1.35
+ammoweight = 1.35
 velocity = 86
+# Source? Other research shows 137 m/s for rocket leaving tube.
+# various non-authoritative sources range from 250 m/s to 450 m/s
+# 76 m/s (Wikipedia citing Mark Khan article April 2009)
+# 80 m/s
+# 106 m/s
+# 137 m/s
 tracertime = 0.05
 object = uk_piat_he
-explosive = 6665590
+# explosive = 6665590
 # .650 kg RDX/TNT
+# Source for this?
+explosive = 20293
+# 0.05669 kg (2 oz.) of Pentolite  = 263809 j
+# (Mk I, Mk II rounds: Pentolite)
+# (Mk III rounds: RDX/TNT mix)
+# Divided by number of shaped charge jets (13) = 20293 j
+
 
 fuzetime = 0.000
 #selfdestructtime = 11.0
@@ -19,14 +33,12 @@ ricochetangle = 50
 modelspall = 1
 penetrationconstant = 0.0000000011
 
-
-# 110mm of armor penetrated at 0, because no scaling exists value used is 30 degrees off perpendicular
+# 100 mm of armor penetrated at 0 - best possible cricumstances
+# lower end penetration value (to scale it by angle) unknown.
 shapedchargepenmm = 90
-
 dontdisplayfirstframe = 1
 
-numshrapnelpieces = 1
-# totalshrapnelmass = .0001
+numshrapnelpieces = 400
 totalshrapnelmass = 1.0
 
 explosionsoundnear = sounds\troop\grenade.wav
