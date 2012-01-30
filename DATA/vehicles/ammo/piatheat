@@ -3,16 +3,15 @@
 
 
 type = rocket
+# round is actually ballistic after firing. might need to be type = mortar
 diameter = .089
 weight = 1.35
 ammoweight = 1.35
-velocity = 86
-# Source? Other research shows 137 m/s for rocket leaving tube.
-# various non-authoritative sources range from 250 m/s to 450 m/s
-# 76 m/s (Wikipedia citing Mark Khan article April 2009)
-# 80 m/s
-# 106 m/s
-# 137 m/s
+velocity = 76
+# 86 m/s was used previously. Source unknown.
+# 76 m/s comes from 
+# Innenministerium Nordrhein Westfalen, Ausgabe Oktober 1994, 
+# "Bomb HE, Projector Infantry, Anti Tank" (German EOD)
 tracertime = 0.05
 object = uk_piat_he
 # explosive = 6665590
