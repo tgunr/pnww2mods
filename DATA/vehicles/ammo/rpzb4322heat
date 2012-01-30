@@ -9,10 +9,15 @@ ammoweight = 2.6
 velocity = 131
 tracertime = 11.0
 object = de_pzschreck_he
-# explosive = 6665590
-# divided by number of jets (13) = 512738
-explosive = 512738
+explosive = 236275
 # .650 kg RDX/TNT
+# .325 kg RDX = 1670825 j
+# .325 kg TNT = 1400750 j
+# total explosive = 3071575 j
+# 236275 j / shaped charge
+# previous explosive value: explosive = 6665590
+# divided by number of jets (13) = 512738
+# can't explain this figure, it's twice as powerful as any explosive I have data for
 
 fuzetime = 0.000
 #selfdestructtime = 11.0

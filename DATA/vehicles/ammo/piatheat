@@ -14,10 +14,9 @@ velocity = 76
 # "Bomb HE, Projector Infantry, Anti Tank" (German EOD)
 tracertime = 0.05
 object = uk_piat_he
-# explosive = 6665590
-# .650 kg RDX/TNT
-# Source for this?
 explosive = 20293
+# 0.335 kg (11.82 oz) of Pentolite = 11558340 j
+# = 889103 j/shaped charge
 # 0.05669 kg (2 oz.) of Pentolite  = 263809 j
 # (Mk I, Mk II rounds: Pentolite)
 # (Mk III rounds: RDX/TNT mix)
@@ -32,7 +31,10 @@ ricochetangle = 50
 modelspall = 1
 penetrationconstant = 0.0000000011
 
-# 100 mm of armor penetrated at 0 - best possible cricumstances
+# 115 mm penetration *average* for head-on hit.
+# UK MoD Royal Armament Research & Development Establishment
+# Report 2/84: Some Historical Aspects of the Development of Shaped Charges
+
 # lower end penetration value (to scale it by angle) unknown.
 shapedchargepenmm = 90
 dontdisplayfirstframe = 1
