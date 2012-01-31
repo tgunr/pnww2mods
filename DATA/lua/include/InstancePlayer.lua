@@ -58,13 +58,13 @@ function InstancePlayer:HandleState(valueName, value)
 	if handler ~= nil and type(_G[handler]) == "function" then
 		local status, msg = pcall(_G[handler], self.callsign, valueName, value)
 		if status then
-			return InstanceResult:success(self:GetType() .. " InstancePlayer:HandleState", self.callsign .. ": " .. printChange(valueName, oldValue, value) .. " handled", nil, self:GetLevel('I'))
+			return InstanceResult:success(self:GetType() .. " InstancePlayer:HandleState", self.callsign .. ": " .. printChange(valueName, oldValue, value) .. " handled", nil, self:GetLevel('II'))
 		else
 			return InstanceResult:failure(self:GetType() .. " InstancePlayer:HandleState", self.callsign .. ": " .. printChange(valueName, oldValue, value) .. " not handled", self:GetLevel('E'))
 		end
 	end
 	
-	return InstanceResult:success(self:GetType() .. " InstancePlayer:HandleState",  self.callsign .. ": " .. printChange(valueName, oldValue, value) .. " no handler", nil, self:GetLevel('X'))
+	return InstanceResult:success(self:GetType() .. " InstancePlayer:HandleState",  self.callsign .. ": " .. printChange(valueName, oldValue, value) .. " no handler", nil, self:GetLevel('DD'))
 end
 
 --------- --------- --------- --------- --------- ---------

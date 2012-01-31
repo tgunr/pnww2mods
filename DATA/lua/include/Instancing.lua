@@ -53,18 +53,19 @@ Instancing =
 	-- logging level
 ,	LoggingLevels = 
 	{
-		X		= 0		-- extreme debug
+		DD	= 0		-- extra debug
 	,	D 		= 1		-- debug
-	,	I 		= 2		-- info
-	,	W 	= 3		-- warning
-	,	E		= 4		-- error
-	, 	F		= 5		-- fatal
+	,	II		= 2		-- extra info
+	,	I 		= 3		-- info
+	,	W 	= 4		-- warning
+	,	E		= 5		-- error
+	, 	F		= 6		-- fatal
 	}
 	
 ,	SuccessCode		=	'OK'		-- Returned to indicate things went well
 ,	FailureCode			=	'NOK'	-- Returned to indicate something failed.
 ,	ErrorCode			=	'ERR'		-- Returned to indicate an error.
-,	LoggingLevel		=	'D'			-- Current log level.
+,	LoggingLevel		=	'I'			-- Current log level.
 ,	LoggingCallback	= nil 		-- what to call when trying to output logging
 
 -- reporting function

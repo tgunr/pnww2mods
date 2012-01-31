@@ -233,7 +233,7 @@ function HostInstance:RecvKeepAlive(valueName, value)
 		return self:KeepAlive(valueName, newValue)
 	end
 	
-	return InstanceResult:failure(self:GetType() .. " HostInstance:RecvKeepAlive", "keepAlive occupied or unchanged", self:GetLevel('D'))
+	return InstanceResult:failure(self:GetType() .. " HostInstance:RecvKeepAlive", "keepAlive occupied or unchanged", self:GetLevel('DD'))
 end
 
 --------- --------- --------- --------- --------- ---------

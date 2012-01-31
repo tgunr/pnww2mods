@@ -73,7 +73,7 @@ function Instance:CommandNumber(cmdName)
 	for cNum, cName in ipairs(Instancing.Commands)
 	do
 		if cName == cmdName then
-			return InstanceResult:success(self:GetType() .. " Instance:CommandNumber", "found "  .. printState(cmdName, cNum), cNum, self:GetLevel('X'))
+			return InstanceResult:success(self:GetType() .. " Instance:CommandNumber", "found "  .. printState(cmdName, cNum), cNum, self:GetLevel('DD'))
 		end
 	end
 	return InstanceResult:failure(self:GetType() .. " Instance:CommandNumber", "could not find "  .. cmdName, self.level or 'E')
@@ -87,7 +87,7 @@ function Instance:CommandName(cmdNum)
 	for cNum, cName in ipairs(Instancing.Commands)
 	do
 		if cNum == cmdNum then
-			return InstanceResult:success(self:GetType() .. " Instance:CommandName", "found "  .. printState(cName, cmdNum), cName, self:GetLevel('X'))
+			return InstanceResult:success(self:GetType() .. " Instance:CommandName", "found "  .. printState(cName, cmdNum), cName, self:GetLevel('DD'))
 		end
 	end
 	return InstanceResult:failure(self:GetType() .. " Instance:CommandName", "could not find "  .. tostring(cmdNum), self:GetLevel('E'))
@@ -137,7 +137,7 @@ function Instance:SendCommand(cmdName, ...)
 	-- send it as a json string using the send callback
 	if self.sendCallback ~= nil then
 		self.sendCallback(self.id, out)
-		return InstanceResult:success(self:GetType() .. " Instance:SendCommand:" .. cmdName, out .. " (sent)", nil, self:GetLevel('I'))
+		return InstanceResult:success(self:GetType() .. " Instance:SendCommand:" .. cmdName, out .. " (sent)", nil, self:GetLevel('II'))
 	else
 		return InstanceResult:failure(self:GetType() .. " Instance:SendCommand:" .. cmdName, out .. " (failed)", self:GetLevel('E'))
 	end
@@ -206,7 +206,7 @@ function Instance:RecvCommand(data)
 	if success == false then
 		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand:" .. cmdName, data .. " (failed)", self:GetLevel('E'))
 	else
-		return InstanceResult:success(self:GetType() .. " Instance:RecvCommand:" .. cmdName, data .. " (received)", nil, self:GetLevel('I'))
+		return InstanceResult:success(self:GetType() .. " Instance:RecvCommand:" .. cmdName, data .. " (received)", nil, self:GetLevel('II'))
 	end
 end
 

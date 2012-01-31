@@ -147,9 +147,9 @@ end
 -- returns a result object
 function InstanceServer:GetInstance(id)
 	if self.instances[id] ~= nil then
-		return InstanceResult:success("S InstanceServer:GetInstance", "instance " .. id .. " returned!", self.instances[id], 'X')
+		return InstanceResult:success("S InstanceServer:GetInstance", "instance " .. id .. " returned!", self.instances[id], 'DD')
 	else
-		return InstanceResult:failure("S InstanceServer:GetInstance", "instance " .. id .. " does not exist!", 'X')
+		return InstanceResult:failure("S InstanceServer:GetInstance", "instance " .. id .. " does not exist!", 'DD')
 	end
 end
 

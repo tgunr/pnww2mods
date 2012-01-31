@@ -352,7 +352,7 @@ scenario.OnSet = function(handler, name, value)
 			scenario.instance = ClientInstance:new(state.config.instance, sendClientData);
 			
 			-- debug it
-			Instancing.report('N', 'OnSet', "New instance created with id: " .. scenario.instance.id);
+			Instancing.report('I', 'OnSet', "New instance created with id: " .. scenario.instance.id);
 			-- Instancing.report('N', 'Scenario:ClientInstance', crawl(scenario.instance));
 			
 			-- setup any host state monitoring
@@ -387,7 +387,7 @@ end
 
 -- ok
 scenario.OnDamage = function(handler, energy, obj)
-	scenario.game.AddUIMessage("damaged");
+	scenario.game.AddMessage("damaged");
 	return 1;
 end
 
@@ -415,7 +415,9 @@ scenario.OnUpdate = function(handler)
 		for k,v in pairs(scenario.fromserver) do
 			if(scenario.instance ~= nil and scenario.instance.id == v[1]) then
 				-- Instancing.report('D', "scenario.OnUpdate", "Receiving data: " v[2]);
-				ui.ChatPrint("to client <-----------------");
+				if(Instancing.logit('D')) then
+					ui.ChatPrint("to client <-----------------");
+				end
 				scenario.instance:RecvCommand(v[2]);
 				reportFT = true;
 			end
@@ -463,7 +465,9 @@ scenario.OnUpdate = function(handler)
 	if(not online) then
 		-- handle any outgoing data from us for the last frame
 		for k,v in pairs(scenario.toserver) do
-			ui.ChatPrint("to server ----------------->");
+			if(Instancing.logit('D')) then
+				ui.ChatPrint("to server ----------------->");
+			end
 			recvServerData(v[1], v[2]);
 			reportFT = true;
 		end
@@ -932,6 +936,14 @@ end
 
 function OnPlayer(callsign, name, value)
 	return scenario.game.OnPlayer(callsign, name, value);
+end
+
+function RegisterState(name, value)
+	return scenario.game.RegisterState(name, value);
+end
+
+function UnregisterState(name, value)
+	return scenario.game.UnregisterState(name, value);
 end
 
 ----------------- low level data comms -------------

@@ -61,11 +61,11 @@ function InstanceState:HandleState(valueName, value, oldValue)
 		if not status then
 			return InstanceResult:failure(self:GetType() .. " InstanceState:HandleState", printState(valueName, value) .. " not handled", self:GetLevel('D'))
 		else
-			return InstanceResult:success(self:GetType() .. " InstanceState:HandleState", printState(valueName, value) .. " handled", nil, self:GetLevel('D'))
+			return InstanceResult:success(self:GetType() .. " InstanceState:HandleState", printState(valueName, value) .. " handled", nil, self:GetLevel('II'))
 		end
 	end
 	
-	return InstanceResult:success(self:GetType() .. " InstanceState:HandleState",  printState(valueName, value) .. " no handler", nil, self:GetLevel('X'))
+	return InstanceResult:success(self:GetType() .. " InstanceState:HandleState",  printState(valueName, value) .. " no handler", nil, self:GetLevel('DD'))
 end
 
 -- main function for changing our state
@@ -84,7 +84,7 @@ function InstanceState:ChangeState(valueName, value)
 	-- end
 	
 	if oldValue == value then
-		return InstanceResult:failure(self:GetType() .. " InstanceState:ChangeState", printChange(valueName, oldValue, value) .. " (unchanged)", self:GetLevel('X'))
+		return InstanceResult:failure(self:GetType() .. " InstanceState:ChangeState", printChange(valueName, oldValue, value) .. " (unchanged)", self:GetLevel('DD'))
 	end
 	
 	-- execute any associated handlers
@@ -113,9 +113,9 @@ end
 function InstanceState:GetStateValue(stateName)
 	local state = self.state[stateName]
 	if state == nil then
-		return InstanceResult:failure(self:GetType() .. " InstanceState:GetStateValue", printState(stateName, state) .. " not set", self:GetLevel('X'))
+		return InstanceResult:failure(self:GetType() .. " InstanceState:GetStateValue", printState(stateName, state) .. " not set", self:GetLevel('DD'))
 	end
-	return InstanceResult:success(self:GetType() .. " InstanceState:GetStateValue", printState(stateName, state) .. " returned", state, self:GetLevel('X'))
+	return InstanceResult:success(self:GetType() .. " InstanceState:GetStateValue", printState(stateName, state) .. " returned", state, self:GetLevel('DD'))
 end
 
 -- get a value as a string
