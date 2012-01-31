@@ -1,10 +1,10 @@
 
 -- setup a shared landmine handler
-scenario.RegisterState("landmine", "DoLandmine");
+scenario.game.RegisterState("landmine", "DoLandmine");
 
 function OnMineArea(handler)
 	-- see if this mine area pertains to us
-	if(scenario.manager:PlayerRelevant(handler.name) == false) then
+	if(scenario.game.PlayerRelevant(handler.name) == false) then
 		return 1;
 	end
 	
@@ -38,7 +38,7 @@ function OnLandmine(handler)
 			--ui.ChatPrint("Sending shared data: " .. sharedData);
 			
 			-- send out our landmine
-			Instancing:BroadcastEvent("landmine", sharedData);
+			scenario.game.BroadcastEvent("landmine", sharedData);
 		end
 		
 		-- add a new one if needed
@@ -51,11 +51,11 @@ end
 
 function DoLandmine(name, value)
 
-	local data 	= GetStringData("[%-%w%.]+", value);
+	local data 	= scenario.game.GetStringData("[%-%w%.]+", value);
 	local pos		= data[3] .. " " .. data[4] .. " " .. data[5];
 	
 	-- run our scenario object
-	scenario.manager:RunObject(data[1], 1, pos);
+	scenario.game.RunObject(data[1], 1, pos);
 	
 	-- do we need to kill ourself?
 	local veh = vehicle.vehFindVehicle(tonumber(data[2]));
@@ -67,4 +67,4 @@ function DoLandmine(name, value)
 		state.landmine = nil;
 	end
 end
-	
+

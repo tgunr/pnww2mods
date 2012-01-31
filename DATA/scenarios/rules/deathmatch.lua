@@ -2,7 +2,7 @@
 -- ui and tutorial libs already loaded by tutorial manager
 -- imported additional game libs as needed
 Include("wwii");
-Include("scenario");
+Include("ra");
 
 -- set tutorial state here
 state.name 					= "scenario.deathmatch";
@@ -17,86 +17,93 @@ state.nextintelcheck			= 0;
 state.intelteam				= 0;
 
 -- set our initial tutorial state
-tutorial.SetState(state);
+ra.InitState(state);
 
 -- register our rule's update function
-scenario.RegisterUpdate("OnRuleUpdate");
-scenario.RegisterState("intelteam", "OnIntel");
+-- ra.RegisterUpdate("OnRuleUpdate");
+ra.RegisterState("intelteam", "OnIntel");
 
-function CheckVictory(name, value)
-	scenario.SetObjective(name, value, state.config.victory);
+-- override CheckVictory
+ra.CheckVictory = function(name, value)
+	ra.SetObjective(name, value, state.config.victory);
+	
+	-- now call the default functionality
 	return scenario.CheckVictory(name, value);
 end
 
--- some overrides
-function OnSpawn(handler)
+-- override OnSpawn
+function ra.OnSpawn(handler)
 	
 	-- run default behavior
 	scenario.OnSpawn(handler);
 	
 	local victory 		= tonumber(state.config.victory);
-	local kills1 			= scenario.instance:GetStateNumber("victory1");
-	local kills2 			= scenario.instance:GetStateNumber("victory2");
-	local intelTeam 	= scenario.instance:GetStateNumber("intelteam");
+	local kills1 			= ra.GetStateNumber("victory1");
+	local kills2 			= ra.GetStateNumber("victory2");
+	local intelTeam 	= ra.GetStateNumber("intelteam");
 	
 	-- update the hud to the current objective amounts
 	-- scenario.AddObjective("alliedcount", "kills3", "objective1", "skull");
-	scenario.AddObjective("alliedcount", "kills1", "objective1", "skull");
+	ra.AddObjective("alliedcount", "victory1", "objective1", "skull");
 	
 	if(state.dointel) then
-		scenario.AddObjective("owner", "intel", "intel", "flag");
+		ra.AddObjective("owner", "intel", "intel", "flag");
 	end
 	
-	scenario.AddObjective("axiscount", "kills2", "objective2", "skull");
-	-- scenario.AddObjective("alliedcount", "kills4", "objective1", "skull");
+	ra.AddObjective("axiscount", "victory2", "objective2", "skull");
+	-- ra.AddObjective("alliedcount", "kills4", "objective1", "skull");
 	
-	scenario.SetObjective("kills1", kills1, victory);
+	-- 
+	ra.SetObjective("victory1", kills1, victory);
 	
 	if(state.dointel) then
-		scenario.SetObjective("intel", intelTeam, 0);
+		ra.SetObjective("intel", intelTeam, 0);
 	end
 	
-	scenario.SetObjective("kills2", kills2, victory);
+	ra.SetObjective("victory2", kills2, victory);
 	
-	return 1 
+	return 1;
 end
 
 -- give a point to the enemy each time I die
-function OnDie(handler)
-	scenario.AddEnemyScore(1);	
-	scenario.AddPlayerState("deaths", 1);
+function ra.OnDie(handler)
+	ra.AddEnemyScore(1);	
+	ra.AddPlayerState("deaths", 1);
 	state.intel = false;
-	return 1;
+	return scenario.OnDie(handler);
 end
 
-function OnDespawn(handler)
+function ra.OnDespawn(handler)
 	state.intel = false;
-	return 1;
+	return scenario.OnDespawn(handler);
 end
 
-function OnRuleUpdate(deltaTime)
+-- override update functionality and hook in
+function ra.OnUpdate(handler)
 	-- current frametime
-	local ft 				= game.Frametime();
-	local team			= GetTeam();
-	local intelTeam 	= scenario.instance:GetStateNumber("intelteam");
-		
+	local ft 				= ra.FrameTime();
+	local team			= ra.GetTeam();
+	local intelTeam 	= ra.GetStateNumber("intelteam");
+	
 	-- send a keepalive if needed
-	if(IsPlaying() and state.intel and ft >= state.nextintelcheck and (intelTeam == team or intelTeam == 0)) then 
-		scenario.instance:KeepAlive("intelteam", GetTeam());
+	if(ra.IsPlaying() and state.intel and ft >= state.nextintelcheck and (intelTeam == team or intelTeam == 0)) then 
+		ra.KeepAlive("intelteam", ra.GetTeam());
 		state.nextintelcheck = ft + 1000;
-		scenario.AddPlayerScore(.5);
+		ra.AddPlayerScore(.5);
 	end	
 	
-	return 1;
+	-- run default behavior
+	return scenario.OnUpdate(handler);
 end
 
+-- local handler
 function OnIntel(name, value)
 
 	if(not state.dointel) then
 		return 1;
 	end
 	 
-	local team 			= GetTeam();
+	local team 			= ra.GetTeam();
 	local intelTeam 	= tonumber(value);
 	
 	if(state[name] ~= intelTeam) then
@@ -106,39 +113,39 @@ function OnIntel(name, value)
 		if(lastTeam == 0) then
 			-- we're turning intel on
 			if(intelTeam == team) then
-				scenario.manager:RunObject("intelenemyon", 1);
+				ra.RunObject("intelenemyon", 1);
 			else
-				scenario.manager:RunObject("intelfriendlyon", 1);
+				ra.RunObject("intelfriendlyon", 1);
 			end
 		elseif(intelTeam == 0) then
 			-- we're turning intel off
 			if(lastTeam == team) then
-				scenario.manager:RunObject("intelenemyoff", 1);
+				ra.RunObject("intelenemyoff", 1);
 			else
-				scenario.manager:RunObject("intelfriendlyoff", 1);
+				ra.RunObject("intelfriendlyoff", 1);
 			end
 		else
 			-- intel switched sides
 			if(intelTeam == team) then
-				scenario.manager:RunObject("intelfriendlyoff", 1);
-				scenario.manager:RunObject("intelenemyon", 1);
+				ra.RunObject("intelfriendlyoff", 1);
+				ra.RunObject("intelenemyon", 1);
 			else
-				scenario.manager:RunObject("intelenemyoff", 1);
-				scenario.manager:RunObject("intelfriendlyon", 1);
+				ra.RunObject("intelenemyoff", 1);
+				ra.RunObject("intelfriendlyon", 1);
 			end
 		end
 		
 		-- update our manager flags
 		if(intelTeam == team) then
-			scenario.manager:SetFlag(scenario.manager.ENEMY_ICONS, true);
+			ra.SetFlag(scenario.manager.ENEMY_ICONS, true);
 		else
-			scenario.manager:SetFlag(scenario.manager.ENEMY_ICONS, false);
+			ra.SetFlag(scenario.manager.ENEMY_ICONS, false);
 		end
 		
-		Instancing.report('F', ' =========== DeathMatch:OnIntel', "Intel is - " .. tostring(intelTeam))
+		ra.Log('F', ' =========== DeathMatch:OnIntel', "Intel is - " .. tostring(intelTeam));
 		
 		-- update our UI
-		scenario.SetObjective("intel", intelTeam, 0);
+		ra.SetObjective("intel", intelTeam, 0);
 	end
 	return 1;
 end

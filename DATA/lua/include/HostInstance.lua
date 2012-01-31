@@ -190,7 +190,7 @@ function HostInstance:RecvAddState(valueName, value)
 	local oldValue = self:GetStateNumber(valueName)
 	local newValue = oldValue + tonumber(value)
 	
-	local result = self:ChangeState(valueName, value)
+	local result = self:ChangeState(valueName, newValue)
 	
 	-- if the value didn't change, no need to send it
 	if result:IsNOK() then
@@ -198,7 +198,7 @@ function HostInstance:RecvAddState(valueName, value)
 	end
 	
 	-- relay the change to other clients
-	return self:SetState(valueName, value)
+	return self:SetState(valueName, newValue)
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -216,7 +216,7 @@ function HostInstance:RecvKeepAlive(valueName, value)
 
 	-- 0 or same value is ok; different value is skipped
 	if curValue == 0 or curValue == newValue then
-		local result = self:ChangeState(valueName, value)
+		local result = self:ChangeState(valueName, newValue)
 		
 		-- track this state
 		self:AddTracker(valueName, _trackKeepAlive)
@@ -230,7 +230,7 @@ function HostInstance:RecvKeepAlive(valueName, value)
 		-- Instancing.report('F', ' =========== _trackKeepAlive', "Sending - state " .. name)
 		
 		-- relay the change to other clients
-		return self:KeepAlive(valueName, value)
+		return self:KeepAlive(valueName, newValue)
 	end
 	
 	return InstanceResult:failure(self:GetType() .. " HostInstance:RecvKeepAlive", "keepAlive occupied or unchanged", self:GetLevel('D'))

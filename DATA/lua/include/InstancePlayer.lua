@@ -44,9 +44,27 @@ function InstancePlayer:SetState(valueName, value)
 		return result
 	end
 	
-	self.instance:HandleState("OnPlayer", self.callsign, valueName, value)
-	
 	return InstanceResult:success(self:GetType() .. " InstancePlayer:SetState", printState(valueName, value), value, self:GetLevel('D'))
+end
+
+-- state change handling
+-- returns a result object
+-- fires off a handler if one is found for the state name
+function InstancePlayer:HandleState(valueName, value)
+	-- players always simply look for an onplayer handler in the parent instance
+	-- this might be changed to something more flexible later
+	local handler = self.instance.handlers["OnPlayer"]
+	
+	if handler ~= nil and type(_G[handler]) == "function" then
+		local status, msg = pcall(_G[handler], self.callsign, valueName, value)
+		if status then
+			return InstanceResult:success(self:GetType() .. " InstancePlayer:HandleState", self.callsign .. ": " .. printChange(valueName, oldValue, value) .. " handled", nil, self:GetLevel('I'))
+		else
+			return InstanceResult:failure(self:GetType() .. " InstancePlayer:HandleState", self.callsign .. ": " .. printChange(valueName, oldValue, value) .. " not handled", self:GetLevel('E'))
+		end
+	end
+	
+	return InstanceResult:success(self:GetType() .. " InstancePlayer:HandleState",  self.callsign .. ": " .. printChange(valueName, oldValue, value) .. " no handler", nil, self:GetLevel('X'))
 end
 
 --------- --------- --------- --------- --------- ---------
@@ -58,7 +76,7 @@ function InstancePlayer:AddState(valueName, value)
 	local newValue = oldValue + tonumber(value)
 	
 	-- log it
-	InstanceResult:success(self:GetType() .. " InstancePlayer:AddState", printChange(valueName, oldValue, NewValue), nil, self:GetLevel('D'))
+	InstanceResult:success(self:GetType() .. " InstancePlayer:AddState", printChange(valueName, oldValue, newValue), nil, self:GetLevel('D'))
 	
 	return self:SetState(valueName, newValue)
 end

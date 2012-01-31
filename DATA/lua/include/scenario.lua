@@ -9,7 +9,7 @@ Include("state"); -- includes default state
 Include("strat");
 Include("ClientInstance");
 
-if(not game.Online()) then
+if(not IsOnline()) then
 	Include("InstanceServer");
 end
 
@@ -30,19 +30,23 @@ state.inbounds				= true;
 state.lastinbounds		= true;
 state.victory					= 0;
 state.lastroundtimer	= 0;
-state.lastupdate			= game.Frametime();
-state.starttime				= game.Frametime();
+state.lastupdate			= FrameTime();
+state.starttime				= FrameTime();
 
 -- player updates
 state.playeradds			= {}; -- updates that are incremental changes
 state.player					= {}; -- player state
 state.lastplayer			= {}; -- last player state
 
-if(not game.Online()) then
+if(not IsOnline()) then
 	-- message queues
 	scenario.toserver = {};
 	scenario.fromserver = {};
 end
+
+-- circular reference; games that override the public interface will override this member as well
+-- must be careful not to get into an infinite loop
+scenario.game	= scenario;
 
 Instancing.LoggingCallback = ui.ChatPrint;
 
@@ -58,6 +62,12 @@ state.hoststates			=
 	{"OnPlayer", "OnPlayer"}
 };
 
+-- ok
+scenario.InitState = function(s)
+	tutorial.SetState(s);
+end
+
+-- ok
 scenario.AddFriendlyScore = function(points)
 	if(not game.Ingame()) then
 		return;
@@ -67,9 +77,10 @@ scenario.AddFriendlyScore = function(points)
 	if(v ~= nil) then
 		team = v:GetSide();
 	end
-	scenario.AddScore(team, points);
+	scenario.game.AddScore(team, points);
 end
 
+-- ok
 scenario.AddEnemyScore = function(points)
 	if(not game.Ingame()) then
 		return;
@@ -79,9 +90,10 @@ scenario.AddEnemyScore = function(points)
 	if(v ~= nil) then
 		team = wwii.wwiiOtherSide(v:GetSide());
 	end
-	scenario.AddScore(team, points);
+	scenario.game.AddScore(team, points);
 end
 
+-- ok
 scenario.AddScore = function(team, points)
 	if(scenario.instance == nil or not game.Ingame()) then
 		return;
@@ -93,38 +105,97 @@ scenario.AddScore = function(team, points)
 	end
 end
 
+-- ok
 scenario.AddPlayerScore = function(points)
 	scenario.AddPlayerState("score", points);
 end
 
+-- ok
+scenario.SetTimer = function(name, seconds)
+	if(scenario.instance ~= nil) then
+		scenario.instance:SetTimer(name, seconds);
+	end
+end
+
+-- ok
+scenario.BroadcastEvent = function(name, value)
+	if(scenario.instance ~= nil) then
+		scenario.instance:BroadcastEvent(name, value);
+	end
+end
+
+-- ok
+scenario.KeepAlive = function(name, value)
+	if(scenario.instance ~= nil) then
+		scenario.instance:KeepAlive(name, value);
+	end
+end
+
+-- ok
+scenario.SetState = function(name, value)
+	if(scenario.instance ~= nil) then
+		scenario.instance:SetState(name, value);
+	end
+end
+
+-- ok
+scenario.GetState = function(name)
+	if(scenario.instance ~= nil) then
+		return scenario.instance:GetStateValue(name);
+	end
+	return nil;
+end
+
+-- ok
+scenario.GetStateBool = function(name, defValue)
+	if(scenario.instance ~= nil) then
+		return scenario.instance:GetStateBool(name, defValue);
+	end
+	return defValue or false;
+end
+
+-- ok
+scenario.GetStateNumber = function(name, defValue)
+	if(scenario.instance ~= nil) then
+		return scenario.instance:GetStateNumber(name, defValue);
+	end
+	return defValue or 0;
+end
+
+-- ok
+scenario.GetStateString = function(name, defValue)
+	if(scenario.instance ~= nil) then
+		return scenario.instance:GetStateString(name, defValue);
+	end
+	return defValue or "";
+end
+
+-- ok
 scenario.RegisterUpdate = function(callback)
 	-- ui.ChatPrint("Adding update " .. callback);
 	table.insert(state.updates, callback);
 end
 
+-- ok
 scenario.RegisterState = function(stateName, handler)
-	table.insert(state.hoststates, {stateName, handler});
 	if(scenario.instance ~= nil) then
+		ui.ChatPrint("Adding state handler "..stateName.."/"..handler);
 		scenario.instance:RegisterHandler(stateName, handler);
+	else
+		table.insert(state.hoststates, {stateName, handler});
 	end
 end
 
-function RegisterState(stateName, handler)
-	scenario.RegisterState(stateName, handler);
-end
-
+-- ok
 scenario.UnregisterState = function(stateName)
 	state.hoststates[stateName] = nil;
 	if(scenario.instance ~= nil) then
-		scenario.instance:RemoveHandler(stateName);
+		scenario.instance:UnregisterHandler(stateName);
 	end
 end
 
-function UnregisterState(stateName)
-	scenario.UnregisterState(stateName);
-end
-
-function OnStart(handler)
+-- ok
+scenario.OnStart = function(handler)
 	-- make sure strat doesn't run while in combat 
 	tutorial.AllowStrat(false);
 	
@@ -139,7 +210,6 @@ function OnStart(handler)
 	-- some game types might override these
 	tutorial.AddHandler(tutorial.TUT_EVENT_SET, "OnSet");
 	tutorial.AddHandler(tutorial.TUT_EVENT_DAMAGE, "OnDamage");
-	tutorial.AddHandler(tutorial.TUT_EVENT_UPDATE, "OnScenario");
 	tutorial.AddHandler(tutorial.TUT_EVENT_COLLISION, "OnCollide", nil);
 	
 	-- setup some default handlers
@@ -151,7 +221,8 @@ function OnStart(handler)
 	-- SetUpMap();
 end
 
-function StartNetwork()
+-- ok
+scenario.StartNetwork = function()
 	if(scenario.instance ~= nil) then
 		-- start the instancing framework
 		ui.ChatPrint("Initing scenario instance!");
@@ -164,22 +235,23 @@ function StartNetwork()
 				duration = state.config.duration;
 			end
 			local seconds = tonumber(duration or 10) * 1000 * 60;
-			scenario.instance:SetTimer("roundtimer", seconds);
-			scenario.instance:SetState("victory", 0);
-			scenario.instance:SetState("round", scenario.manager:GetRound());
-			scenario.instance:SetState("stage", scenario.manager:GetStage());
+			scenario.game.SetTimer("roundtimer", seconds);
+			scenario.game.SetState("victory", 0);
+			scenario.game.SetState("round", scenario.game.GetRound());
+			scenario.game.SetState("stage", scenario.game.GetStage());
 		end
 		
 		-- get our initial state
 		scenario.instance:RegisterClient(state.config.callsign);
 		
 		-- set us to not ready
-		scenario.instance:SetPlayerState(state.config.callsign, "ready", "false")
+		scenario.game.SetPlayerState("ready", "false")
 	else
 		ui.ChatPrint("Unable to init scenario network state: no instance set");
 	end
 end
 
+-- ok
 scenario.OnSpawn = function(handler)
 	-- do default on spawn
 	-- tutorial.OnSpawn(handler);
@@ -191,7 +263,7 @@ scenario.OnSpawn = function(handler)
 	player.persHUDLock(false);
 	
 	-- record mission start time
-	state.spawned 	= game.Frametime();
+	state.spawned 	= scenario.game.FrameTime();
 	state.spawns		= state.spawns + 1;
 	
 	-- make the map is right
@@ -201,7 +273,7 @@ scenario.OnSpawn = function(handler)
 	-- AddWP("target", 9, 0);
 	
 	-- try to run any scenario events associated with despawning
-	scenario.manager:RunObject("onspawn", 1);
+	scenario.game.RunObject("onspawn", 1);
 	
 	-- testing
 	-- local v = player.playerGetVehicle();
@@ -213,10 +285,10 @@ scenario.OnSpawn = function(handler)
 	
 	if(scenario.instance ~= nil) then
 		if(state.lastroundtimer > 0) then
-			local secondsLeft = scenario.instance:GetStateNumber("roundtimer");
-			scenario.SetUITimer(secondsLeft - ((game.Frametime() - state.lastroundtimer) / 1000));
+			local secondsLeft = scenario.game.GetStateNumber("roundtimer");
+			scenario.game.SetUITimer(secondsLeft - ((scenario.game.FrameTime() - state.lastroundtimer) / 1000));
 		else
-			scenario.SetUITimer(scenario.instance:GetStateNumber("roundtimer"));
+			scenario.game.SetUITimer(scenario.game.GetStateNumber("roundtimer"));
 		end
 	end
 	
@@ -224,21 +296,18 @@ scenario.OnSpawn = function(handler)
 	return 1;
 end
 
-function OnSpawn(handler)
-	return scenario.OnSpawn(handler);
-end
-
-function OnDespawn(handler)
+-- ok
+scenario.OnDespawn = function(handler)
 	
 	-- record how much time on mission we did
-	state.tom 			= state.tom + game.Frametime() - state.spawned;
+	state.tom 			= state.tom + scenario.game.FrameTime() - state.spawned;
 	state.spawned 	= 0;
 	
 	-- tutorial.RemoveWaypoint("origin");
 	-- tutorial.RemoveWaypoint("target");
 	
 	-- let the ui know our status
-	OnScenario();
+	scenario.game.OnUpdate();
 	
 	-- kill the ui that was hanging around
 	tutorial.HideUI(true);
@@ -254,8 +323,9 @@ function OnDespawn(handler)
 	return 1;
 end
 
+-- ok
 -- handler for script variable changes
-function OnSet(handler, name, value)
+scenario.OnSet = function(handler, name, value)
 	-- spit out to chat the new var name and value
 	ui.ChatPrint("Setting config var "..name.." to "..value);
 	
@@ -264,10 +334,10 @@ function OnSet(handler, name, value)
 	
 	-- for known config vars, do something
 	if(name == "load" and value == "content") then
-		LoadContent();
+		scenario.game.LoadContent();
 	elseif(name == "instance") then
 		-- handle local instance server
-		if(not game.Online()) then
+		if(not scenario.game.IsOnline()) then
 			-- create our local instance on the local server
 			createInstance(state.config.instance);
 			
@@ -275,7 +345,7 @@ function OnSet(handler, name, value)
 			setInstanceStatus(state.config.instance, "Staging");
 			
 			-- report it
-			-- Instancing.report('N', 'OnSet', "Server running: " .. crawl(server));
+			--Instancing.report('N', 'OnSet', "Server running: " .. crawl(server));
 		end
 		-- setup client instance
 		if(scenario.instance == nil) then
@@ -286,22 +356,21 @@ function OnSet(handler, name, value)
 			-- Instancing.report('N', 'Scenario:ClientInstance', crawl(scenario.instance));
 			
 			-- setup any host state monitoring
-			if(state.hoststates ~= nil) then
-				for i,hs in ipairs(state.hoststates) do
-					ui.ChatPrint("Adding state handler "..hs[1].."/"..hs[2]);
-					-- register our state handler
-					scenario.instance:RegisterHandler(hs[1], hs[2]);
-				end
+			for i,hs in ipairs(state.hoststates) do
+				ui.ChatPrint("Adding state handler "..hs[1].."/"..hs[2]);
+				-- register our state handler
+				scenario.game.RegisterState(hs[1], hs[2]);
 			end
 		end
 	elseif(name == "network" and value == "start") then
-		StartNetwork();
+		scenario.game.StartNetwork();
 	end
 	
 	return 1;  -- this handle will continue to handle events
 end
 
-function LoadContent()
+-- ok
+scenario.LoadContent = function()
 	-- unload any previously loaded data
 	-- scenario.manager:UnloadContent();
 	
@@ -316,29 +385,37 @@ function LoadContent()
 	-- scenario.manager:LoadObjects();
 end
 
-function OnDamage(handler, energy, obj)
-	tutorial.AddUIMessage("damaged");
+-- ok
+scenario.OnDamage = function(handler, energy, obj)
+	scenario.game.AddUIMessage("damaged");
 	return 1;
 end
 
+-- ok
+scenario.OnDie = function(handler)
+	return 1;
+end
+
+-- ok
 -- main update function for any scenario
 -- might be overriden by a rules handler 
 -- that includes this file
-scenario.OnScenario = function(handler)
+scenario.OnUpdate = function(handler)
 	
-	local online = game.Online();
+	local online = scenario.game.IsOnline();
 	
-	local ft = FrameTime();
+	local ft = scenario.game.FrameTime();
 	local reportFT = false;
 	
-	--Instancing.report('F', ' =========== scenario.OnScenario', "Updating at " .. tostring(ft))
+	--Instancing.report('F', ' =========== scenario.OnUpdate', "Updating at " .. tostring(ft))
 	
 	-- simulate network traffic
 	if(not online) then
 		-- handle in incoming data from the server for the last frame
 		for k,v in pairs(scenario.fromserver) do
 			if(scenario.instance ~= nil and scenario.instance.id == v[1]) then
-				-- Instancing.report('D', "scenario.OnScenario", "Receiving data: " v[2]);
+				-- Instancing.report('D', "scenario.OnUpdate", "Receiving data: " v[2]);
+				ui.ChatPrint("to client <-----------------");
 				scenario.instance:RecvCommand(v[2]);
 				reportFT = true;
 			end
@@ -386,6 +463,7 @@ scenario.OnScenario = function(handler)
 	if(not online) then
 		-- handle any outgoing data from us for the last frame
 		for k,v in pairs(scenario.toserver) do
+			ui.ChatPrint("to server ----------------->");
 			recvServerData(v[1], v[2]);
 			reportFT = true;
 		end
@@ -403,21 +481,7 @@ scenario.OnScenario = function(handler)
 	return 1;
 end
 
-function OnScenario(handler)
-	return scenario.OnScenario(handler);
-end
-
-function OnDie(handler)
- 	return 1;
-end
-
-function OnDead()
-	--if(game.Ingame()) then
-	--	ui.LoadView("exitvehicle");
-	--end
-	return 1;
-end
-
+-- ok
 scenario.AddMessage = function(message, color, arg1, arg2)
 	local hud = ui.FindView("hud");
 	if(hud ~= nil) then
@@ -428,7 +492,8 @@ scenario.AddMessage = function(message, color, arg1, arg2)
 	end
 end
 
-function OnBoundary(handler)
+-- ok
+scenario.OnBoundary = function(handler)
 	state.inbounds = scenario.InArea(handler);
 	
 	if(state.inbounds) then
@@ -440,44 +505,48 @@ function OnBoundary(handler)
 	return 1;
 end
 
-function OnSendBroadcast(handler)
+-- ok
+scenario.OnSendBroadcast = function(handler)
 	-- bail if this trigger doesn't pertain to us
-	if(scenario.instance == nil or not scenario.manager:PlayerRelevant(handler.name)) then
+	if(scenario.instance == nil or not scenario.game.PlayerRelevant(handler.name)) then
 		return 1;
 	end
 	
 	-- try to run any events associated with this area
 	if(scenario.InArea(handler)) then
-		scenario.instance:BroadcastEvent(handler.name, 1);
+		scenario.game.BroadcastEvent(handler.name, 1);
 	else
-		scenario.instance:BroadcastEvent(handler.name, 0);
+		scenario.game.BroadcastEvent(handler.name, 0);
 	end
 	return 1;
 end
 
-function OnReceiveBroadcast(name, value)
+-- ok
+scenario.OnReceiveBroadcast = function(name, value)
 	if(tonumber(value) > 0) then
-		scenario.manager:RunObject(name .. "on", 1);
+		scenario.game.RunObject(name .. "on", 1);
 	else
-		scenario.manager:RunObject(name .. "off", 1);
+		scenario.game.RunObject(name .. "off", 1);
 	end
 end
 
-function OnTrigger(handler)
+-- ok
+scenario.OnTrigger = function(handler)
 	-- bail if this trigger doesn't pertain to us
-	if(not scenario.manager:PlayerRelevant(handler.name)) then
+	if(not scenario.game.PlayerRelevant(handler.name)) then
 		return 1;
 	end
 	
 	-- try to run any events associated with this area
-	scenario.RunObject(handler.name, scenario.InArea(handler));
+	scenario.game.RunObject(handler.name, scenario.InArea(handler));
 	
 	return 1;
 end
 
-function OnState(handler)
+-- ok
+scenario.OnState = function(handler)
 	-- bail if this trigger doesn't pertain to us
-	if(not scenario.manager:PlayerRelevant(handler.name)) then
+	if(not scenario.game.PlayerRelevant(handler.name)) then
 		return 1;
 	end
 	
@@ -487,26 +556,32 @@ function OnState(handler)
 	-- ui.ChatPrint("Setting state " .. handler.name .. " to " .. tostring(state[handler.name]));  
 	
 	-- try to run any events associated with this area
-	scenario.RunObject(handler.name, state[handler.name]);
+	scenario.game.RunObject(handler.name, state[handler.name]);
 	
 	return 1;
 end
 
-function OnResupply(handler)
-	
+-- ok
+scenario.OnResupply = function(handler)
 	-- bail if this trigger doesn't pertain to us
-	if(not scenario.manager:PlayerRelevant(handler.name)) then
+	if(not scenario.game.PlayerRelevant(handler.name)) then
 		return 1;
 	end
 	
 	local resupplying = scenario.InArea(handler);
 	
-	scenario.RunObject(handler.name, resupplying);
-	scenario.manager:SetFlag(scenario.manager.RESUPPLY_ME, resupplying);
+	scenario.game.RunObject(handler.name, resupplying);
+	scenario.game.SetFlag(scenario.manager.RESUPPLY_ME, resupplying);
 	
 	return 1;
 end
 
+-- ok
+scenario.SetFlag = function(flag, value)
+	scenario.manager:SetFlag(flag, value);
+end
+
+-- ok
 scenario.RunObject = function(name, on)
 	if(on) then
 		scenario.manager:RunObject(name, 1);
@@ -518,29 +593,36 @@ scenario.RunObject = function(name, on)
 	return on;
 end
 
+-- ok
+scenario.PlayerRelevant = function(name)
+	return scenario.manager:PlayerRelevant(name);
+end
+
+-- ok
+scenario.Log = function(level, source, message)
+	Instancing.report(level, source, message);
+end
+
+-- ok
 scenario.CheckVictory = function(name, value)
-	if(scenario.instance == nil) then return end
-	local score 		=  scenario.instance:GetStateNumber(name);
+	local score 		=  scenario.game.GetStateNumber(name);
 	local victory 	= tonumber(state.config.victory);
 
 	 ui.ChatPrint("Checking " .. score .. " against " .. victory .. " for " .. name);	
 	
 	if(score >= victory) then
 		if(name == "victory1") then
-			scenario.instance:SetState("victory", 1);
+			scenario.game.SetState("victory", 1);
 		elseif(name == "victory2") then
-			scenario.instance:SetState("victory", 2);
+			scenario.game.SetState("victory", 2);
 		end
 	end
 	
 	return 1;
 end
 
-function CheckVictory(name, value)
-	return scenario.CheckVictory(name, value);
-end
-
-function OnVictory(name, value)
+-- ok
+scenario.OnVictory = function(name, value)
 	-- save our victor
 	local victory = tonumber(value);
 	
@@ -548,22 +630,25 @@ function OnVictory(name, value)
 		state.victory = tonumber(value);
 		
 		-- load our victory ui
-		scenario.SetResult();
+		scenario.game.SetResult();
 		
-		-- scenario.manager:RunObject("victory"..value, 1);
+		-- RunObject("victory"..value, 1);
 	end
 	return 1;
 end
 
-function OnPlayer(callsign, name, value)
+-- ok
+scenario.OnPlayer = function(callsign, name, value)
 	scenario.manager:UpdatePlayer(callsign, name, value);
 	return 1;
 end
 
+-- ok
 scenario.SetPlayerState = function(name, value)
 	state.player[name] = value;
 end
 
+-- ok
 scenario.AddPlayerState = function(name, value)
 	if(state.playeradds[name] ~= nil) then
 		state.playeradds[name] = state.playeradds[name] + tonumber(value);
@@ -572,10 +657,12 @@ scenario.AddPlayerState = function(name, value)
 	end
 end
 
+-- ok
 scenario.InArea = function(handler)
 	return (handler ~= nil and handler.state == tutorial.THS_EVENT_IN)
 end
 
+-- ok
 scenario.SetUITimer = function(seconds)
 		local hud = ui.FindView("hud");
 		if(hud ~= nil) then
@@ -590,17 +677,14 @@ scenario.SetUITimer = function(seconds)
 			ui.ChatPrint(message);
 			
 			if(minutes == 1) then
-				scenario.AddMessage(message, "#FF0000");
+				scenario.game.AddMessage(message, "#FF0000");
 			else
-				scenario.AddMessage(message, "#00FF00");
+				scenario.game.AddMessage(message, "#00FF00");
 			end
 		end
 end
 
-function SetUITimer(seconds)
-	scenario.SetUITimer(seconds);
-end
-
+-- ok
 scenario.SetUIProgress = function(progress, label)
 		local hud = ui.FindView("hud");
 		if(hud ~= nil) then
@@ -608,10 +692,7 @@ scenario.SetUIProgress = function(progress, label)
 		end
 end
 
-function SetUIProgress(progress, label)
-	scenario.SetUIProgress(progress, label);
-end
-
+-- ok
 scenario.AddObjective = function(typeid, name, loc, icon)
 		local hud = ui.FindView("hud");
 		if(hud ~= nil) then
@@ -619,10 +700,7 @@ scenario.AddObjective = function(typeid, name, loc, icon)
 		end
 end
 
-function AddObjective(typeid, name, loc, icon)
-	scenario.AddObjective(typeid, name, loc, icon);
-end
-
+-- ok
 scenario.SetObjective = function(objective, progress, target)
 		local hud = ui.FindView("hud");
 		if(hud ~= nil) then
@@ -630,92 +708,85 @@ scenario.SetObjective = function(objective, progress, target)
 		end
 end
 
-function SetObjective(objective, progress, target)
-	scenario.SetObjective(objective, progress, target);
-end
-
+-- ok
 scenario.SetResult = function()
 	if(scenario.instance == nil) then return end
 	local result = ui.LoadView("scenarios/result");
 	if(result ~= nil) then
-		local v1 =  scenario.instance:GetStateNumber("victory1");
-		local v2 =  scenario.instance:GetStateNumber("victory2");
+		local v1 =  scenario.game.GetStateNumber("victory1");
+		local v2 =  scenario.game.GetStateNumber("victory2");
 		result:CallJS("SetResult", state.victory, v1, v2);
 	end
 end
 
-function SetResult()
-	scenario.SetResult();
-end
-
+-- ok
 scenario.OnRoundTimer = function(name, value)
 	if(scenario.instance == nil) then return end
 	
 	-- remember the last time we got a round timer
-	state.lastroundtimer = game.Frametime();
+	state.lastroundtimer = scenario.game.FrameTime();
 	
 	local secondsLeft = tonumber(value);
 	
 	if(secondsLeft > 0) then
-		scenario.SetUITimer(secondsLeft);
+		scenario.game.SetUITimer(secondsLeft);
 	elseif(secondsLeft == 0) then
 		if(state.victory == 0) then
-			local v1 = scenario.instance:GetStateNumber("victory1");
-			local v2 =  scenario.instance:GetStateNumber("victory2");
+			local v1 = scenario.game.GetStateNumber("victory1");
+			local v2 = scenario.game.GetStateNumber("victory2");
 			
 			if(v1 > v2) then
-				scenario.instance:SetState("victory", 1);
+				scenario.game.SetState("victory", 1);
 			elseif(v2 > v1) then
-				scenario.instance:SetState("victory", 2);
+				scenario.game.SetState("victory", 2);
 			else
-				scenario.instance:SetState("victory", -1);
+				scenario.game.SetState("victory", -1);
 			end
 		end
 	end
 	return 1;
 end
 
-function OnRoundTimer(name, value)
-	return scenario.OnRoundTimer(name, value);
-end
-
+-- ok
 scenario.OnRound = function(name, value)
 	local newRound = tonumber(value);
-	if(scenario.manager:GetRound() ~= newRound) then
-		scenario.manager:SetRound(newRound);
+	if(scenario.game.GetRound() ~= newRound) then
+		scenario.game.SetRound(newRound);
 	end
 	return 1;
 end
 
-function OnRound(name, value)
-	return scenario.OnRound(name, value);
+-- ok
+scenario.GetRound = function()
+	return scenario.manager:GetRound();
 end
 
+-- ok
+scenario.SetRound = function(nextRound)
+	scenario.manager:SetRound(nextRound);
+end
+
+-- ok
+scenario.GetStage = function()
+	return scenario.manager:GetStage();
+end
+
+-- ok
+scenario.SetStage = function(nextStage)
+	scenario.manager:SetStage(nextStage);
+end
+
+-- ok
 scenario.OnStage = function(name, value)
 	local newStage = tonumber(value);
-	if(scenario.manager:GetStage() ~= newStage) then
-		scenario.manager:OnStage(newStage);
+	if(scenario.game.GetStage() ~= newStage) then
+		scenario.game.SetStage(newStage);
 	end
 	return 1;
 end
 
-function OnStage(name, value)
-	return scenario.OnStage(name, value);
-end
-
-function SetUpMap()
-	
-	--if(state.mapstate == nil) then
-	--	return;
-	--end
-	
-	--for i,ms in ipairs(state.mapstate) do
-		-- owner, cp, fac (fac is optional)
-	--	strat.PwnStrat(ms[1], ms[2], ms[3]);
-	--end
-end
-
-function OnCollide(handler, ob)
+-- ok
+scenario.OnCollide = function(handler, ob)
 	if(ob ~= nil) then
 		local name = ob:ObjName();
 		local damage = false;
@@ -731,7 +802,8 @@ function OnCollide(handler, ob)
 	return 1;
 end
 
-function GetLocation(name, side)
+-- ok
+scenario.GetLocation = function(name, side)
 	if(not game.Ingame()) then
 		return nil;
 	end
@@ -745,15 +817,35 @@ function GetLocation(name, side)
 	return state.locations[index][name];
 end
 
-function AddWP(name, t, s, add)
-	local pos = GetLocation(name);
+-- ok
+scenario.AddWP = function(name, t, s, add)
+	local pos = scenario.game.GetLocation(name);
 	
 	if(pos ~= nil) then
 		tutorial.AddWaypoint(name, t, s, pos[1], pos[2], pos[3], add);
 	end
 end
 
-function GetStringData(delimiter, value)
+-- ok
+scenario.GetTeam = function()
+	local v = player.playerGetVehicle();
+	if(v ~= nil) then
+		return v:GetSide();
+	end
+	return 0;
+end
+
+-- ok
+scenario.IsPlaying = function()
+	if(game.Ingame() == true and fp.fpFPSIsDead() == 0) then
+		return true;
+	else
+		return false;
+	end
+end
+
+-- ok
+scenario.GetStringData = function(delimiter, value)
 		local sd = {};
 		
 		-- collect our data parts
@@ -764,24 +856,88 @@ function GetStringData(delimiter, value)
 		return sd;
 end
 
-function GetTeam()
-	local v = player.playerGetVehicle();
-	if(v ~= nil) then
-		return v:GetSide();
-	end
-	return 0;
+-- add these globals functions for consistency
+scenario.FrameTime = FrameTime;
+scenario.IsOnline = IsOnline;
+
+---------------- global handler functions -------------------
+
+function OnStart(handler)
+	return scenario.game.OnStart(handler);
 end
 
-function IsPlaying()
-	if(game.Ingame() == true and fp.fpFPSIsDead() == 0) then
-		return true;
-	else
-		return false;
-	end
+function OnSpawn(handler)
+	return scenario.game.OnSpawn(handler);
 end
+
+function OnSet(handler, name, value)
+	return scenario.game.OnSet(handler, name, value);
+end
+
+function OnDespawn(handler)
+	return scenario.game.OnDespawn(handler);
+end
+
+function OnDamage(handler, energy, ob)
+	return scenario.game.OnDamage(handler, energy, ob);
+end
+
+function OnDie(handler)
+	return scenario.game.OnDie(handler);
+end
+
+function OnDead(handler)
+	return scenario.game.OnDie(handler);
+end
+
+function OnUpdate(handler)
+	return scenario.game.OnUpdate(handler);
+end
+
+function OnBoundary(handler)
+	return scenario.game.OnBoundary(handler);
+end
+
+function OnTrigger(handler)
+	return scenario.game.OnTrigger(handler);
+end
+
+function OnState(handler)
+	return scenario.game.OnState(handler);
+end
+
+function OnResupply(handler)
+	return scenario.game.OnResupply(handler);
+end
+
+function OnRoundTimer(name, value)
+	return scenario.game.OnRoundTimer(name, value);
+end
+
+function OnRound(name, value)
+	return scenario.game.OnRound(name, value);
+end
+
+function OnStage(name, value)
+	return scenario.game.OnStage(name, value);
+end
+
+function OnVictory(name, value)
+	return scenario.game.OnVictory(name, value);
+end
+
+function CheckVictory(name, value)
+	return scenario.game.CheckVictory(name, value);
+end
+
+function OnPlayer(callsign, name, value)
+	return scenario.game.OnPlayer(callsign, name, value);
+end
+
+----------------- low level data comms -------------
 
 function sendClientData(id, data)
-	if(game.Online()) then
+	if(scenario.game.IsOnline()) then
 		scenario.manager:SendData(data, 0);
 	else
 		table.insert(scenario.toserver, {scenario.instance:Id(), data});
@@ -789,6 +945,7 @@ function sendClientData(id, data)
 end
 
 function recvClientData(id, data)
+	-- Instancing.report('I','','');
 	if(scenario.instance ~= nil and scenario.instance.id == id) then
 		table.insert(scenario.fromserver, {id, data});
 	end

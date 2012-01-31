@@ -73,7 +73,7 @@ function Instance:CommandNumber(cmdName)
 	for cNum, cName in ipairs(Instancing.Commands)
 	do
 		if cName == cmdName then
-			return InstanceResult:success(self:GetType() .. " Instance:CommandNumber", "found "  .. printState(cmdName, cNum), cNum, self:GetLevel('D'))
+			return InstanceResult:success(self:GetType() .. " Instance:CommandNumber", "found "  .. printState(cmdName, cNum), cNum, self:GetLevel('X'))
 		end
 	end
 	return InstanceResult:failure(self:GetType() .. " Instance:CommandNumber", "could not find "  .. cmdName, self.level or 'E')
@@ -87,7 +87,7 @@ function Instance:CommandName(cmdNum)
 	for cNum, cName in ipairs(Instancing.Commands)
 	do
 		if cNum == cmdNum then
-			return InstanceResult:success(self:GetType() .. " Instance:CommandName", "found "  .. printState(cName, cmdNum), cName, self:GetLevel('D'))
+			return InstanceResult:success(self:GetType() .. " Instance:CommandName", "found "  .. printState(cName, cmdNum), cName, self:GetLevel('X'))
 		end
 	end
 	return InstanceResult:failure(self:GetType() .. " Instance:CommandName", "could not find "  .. tostring(cmdNum), self:GetLevel('E'))
@@ -151,7 +151,7 @@ function Instance:RecvCommand(data)
 		return InstanceResult:failure(self:GetType() .. " Instance:RecvCommand", "expected an input string, got something else: " .. data, self:GetLevel('E'))
 	end
 	
-	-- Instancing.report('D', 'RecvCommand', data)
+	Instancing.report('X', 'RecvCommand', data)
 	
 	-- get our arguments
 	local args = json.decode(data);
@@ -307,7 +307,7 @@ end
 -- recv a keep alive from the other side
 function Instance:RecvKeepAlive(valueName, value)
 	--Instancing.resssport('I', ' =========== Instance:RecvKeepAlive', "oops")
-	return self:ChangeState(valueName, newVale)
+	return self:ChangeState(valueName, value)
 end
 
 --------- --------- --------- --------- --------- ---------

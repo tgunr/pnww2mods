@@ -2,7 +2,7 @@
 -- ui and tutorial libs already loaded by tutorial manager
 -- imported additional game libs as needed
 Include("wwii");
-Include("scenario");
+Include("ra");
 
 -- set tutorial state here
 state.name 					= "scenario.dday";
@@ -15,13 +15,13 @@ state.nextcapcheck		= 0;
 state.capper				= 0;
 
 -- set our initial tutorial state
-tutorial.SetState(state);
+ra.InitState(state);
 
 -- add our capture timer
-scenario.RegisterUpdate("OnCaptureUpdate");
+-- scenario.RegisterUpdate("OnCaptureUpdate");
 
 -- some overrides
-function OnSpawn(handler)
+function ra.OnSpawn(handler)
 	
 	-- run default behavior
 	scenario.OnSpawn(handler);
@@ -30,48 +30,47 @@ function OnSpawn(handler)
 	state.bridgecapture = false;
 	
 	local victory 		= tonumber(state.config.victory);
-	local objective 	= Instancing:GetStateNumber("objective1");
+	local objective 	= ra.GetStateNumber("objective1");
 	
 	-- update the hud to the current objective amounts
-	local capper = Instancing:GetStateNumber("capper"); 
+	local capper = ra.GetStateNumber("capper"); 
 	
-	scenario.AddObjective("allied", "objective1", "objective1", "flag");
+	ra.AddObjective("allied", "objective1", "objective1", "flag");
 	
 	if(capper == 0) then
-		scenario.SetObjective("objective1", 0);
+		ra.SetObjective("objective1", 0);
 	else
-		scenario.SetObjective("objective1", objective, victory);
+		ra.SetObjective("objective1", objective, victory);
 	end
 	
 	return 1 
 end
 
-function OnDie(handler)
+function ra.OnDie(handler)
 	state.capture = 0;
 	state.bridgecapture = false;
- 	return 1;
+ 	return scenario.OnDie(handler);
 end
 
-function OnDespawn(handler)
+function ra.OnDespawn(handler)
 	state.capture = 0;
 	state.bridgecapture = false;
-	return 1;
+	return scenario.OnDespawn(handler);
 end
 
-function OnCaptureUpdate(msDelta)
-	
-	if(state.victory ~= 0 or GetTeam() ~= 1) then
+function ra.OnUpdate(handler)
+	if(state.victory ~= 0 or ra.GetTeam() ~= 1) then
 		return 1;
 	end
 		
 	local capper 	= 0;
 	local me 			= player.playerGetVehicle();
-	local ft				= game.Frametime();
+	local ft				= ra.FrameTime();
 	local victory		= tonumber(state.config.victory or 30);
 	local secDelta	= msDelta / 1000;
 	local meIndex = me.VehicleHostIndex;
 	
-	if(game.Online() == false) then
+	if(ra.IsOnline() == false) then
 		meIndex = 1;
 	end
 	
@@ -81,23 +80,23 @@ function OnCaptureUpdate(msDelta)
 	end
 	
 	if(state.bridgecapture) then
-		capper = Instancing:GetStateNumber("capper");
+		capper = ra.GetStateNumber("capper");
 	end
 	
 	if(state.bridgecapture and capper == 0) then
 		-- noone capping
-		Instancing:KeepAlive("capper", meIndex);
+		ra.KeepAlive("capper", meIndex);
 		state.nextcapcheck = ft;
 	elseif(state.bridgecapture and capper == meIndex) then
 		-- me
 		if(ft >= state.nextcapcheck) then
-			Instancing:KeepAlive("capper", meIndex);
+			ra.KeepAlive("capper", meIndex);
 			state.nextcapcheck = ft + 1000;
 		end
 		local amount = secDelta * tonumber(state.config.capturerate or 1);
 		state.capture = state.capture + amount;
 		-- let everyone know what the capture percentage is 
-		Instancing:SendStateValue("objective1", state.capture);
+		ra.SetState("objective1", state.capture);
 	else
 		state.capture = -1;
 	end
@@ -106,12 +105,12 @@ function OnCaptureUpdate(msDelta)
 		state.lastcapture = state.capture;
 		
 		if(state.capture >= victory) then
-			SetUIProgress(1, "capturing");
-			Instancing:SendStateValue("victory", 1);
+			ra.SetUIProgress(1, "capturing");
+			ra.SendStateValue("victory", 1);
 		elseif(state.capture >= 0) then
-			SetUIProgress(state.capture / victory, "capturing");
+			ra.SetUIProgress(state.capture / victory, "capturing");
 		else
-			SetUIProgress(-1, "capturing");
+			ra.SetUIProgress(-1, "capturing");
 		end
 	end
 	
@@ -126,17 +125,17 @@ function OnCapper(name, value)
 	
 	-- ui.ChatPrint("OnCapper: " ..  name .. " / " .. value);
 	
-	local capper		= Instancing:GetStateNumber(name);
+	local capper		= ra.GetStateNumber(name);
 	local capveh 	= vehicle.vehFindVehicle(capper);
 	
 	if(capper > 0) then
-		if(game.Online() == false or capveh:IsMe() == false) then
+		if(ra.IsOnline() == false or capveh:IsMe() == false) then
 			-- scenario.manager:RunObject(name, 1);
-			scenario.manager:RunObject("alliedcapon", 1);
+			ra.RunObject("alliedcapon", 1);
 		end
 	else
-		scenario.SetObjective("objective1", 0);
-		scenario.manager:RunObject("alliedcapoff", 1);
+		ra.SetObjective("objective1", 0);
+		ra.RunObject("alliedcapoff", 1);
 	end
 	
 	return 1;
@@ -149,33 +148,33 @@ function OnCapturing(name, value)
 	end
 	
 	-- only counts if we actually have a capper
-	local capper = Instancing:GetStateNumber("capper"); 
+	local capper = ra.GetStateNumber("capper"); 
 	
 	if(capper == 0) then
-		scenario.SetObjective("objective1", 0);
+		ra.SetObjective("objective1", 0);
 		return 1;
 	end
 	
 	-- amount the allies have captured
-	local cap = Instancing:GetStateNumber("objective1");
+	local cap = ra.GetStateNumber("objective1");
 	
 	-- this is the amount needed
 	local victory	= tonumber(state.config.victory or 30);
 	
 	-- update the ui
-	scenario.SetObjective("objective1", cap, victory);
+	ra.SetObjective("objective1", cap, victory);
 	
 	return 1;
 end
 
 
 -- override the default round timer
-function OnRoundTimer(name, value)
+function ra.OnRoundTimer(name, value)
 	local secondsLeft = tonumber(value);
 	if(secondsLeft > 0) then
 		scenario.OnRoundTimer(name, value);
 	elseif(secondsLeft == 0) then
 		-- team 2 axis wins if its the round ends
-		Instancing:SendStateValue("victory", 2);
+		ra.SetState("victory", 2);
 	end
 end
