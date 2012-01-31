@@ -2,22 +2,33 @@
 # created June/22/11 - Doc.
 
 type = rocket
-diameter = .05
+# diameter = .088
+# It's the 8.8 cm RPzBGr4322, right there in the name
+# previous: diameter = .05
+# makes no sense at all.
 # sources cite 110ms and 3.3kg
-weight = 2.6
-ammoweight = 2.6
-velocity = 131
+weight = 3.3
+# Oberkommando das Heeres, 1944 document
+#previous: weight = 2.6
+ammoweight = 3.3
+#previous: ammoweight = 2.6
+velocity = 105
+# Deutsche Nahkampfmittel, Geheime Kommandosache document
+# previous: velocity = 131
 tracertime = 11.0
 object = de_pzschreck_he
-explosive = 236275
-# .650 kg RDX/TNT
-# .325 kg RDX = 1670825 j
-# .325 kg TNT = 1400750 j
-# total explosive = 3071575 j
-# 236275 j / shaped charge
+explosive = 240430
+# .650 kg RDX/TNT 60/40
+# Deutsche Nahkampfmittel
+# .390 kg RDX = 2,004,990 j
+# .260 kg TNT = 1,120,600 j
+# Rheinmetall Detonation Velocities
+# total explosive = 3,125,590 j
+# 240430 j / shaped charge
 # previous explosive value: explosive = 6665590
 # divided by number of jets (13) = 512738
 # can't explain this figure, it's twice as powerful as any explosive I have data for
+
 
 fuzetime = 0.000
 #selfdestructtime = 11.0
