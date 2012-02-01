@@ -11,16 +11,16 @@
 
  <trees name="treemask.dds">
  
-    <redweight>30</redweight>
-    <greenweight>30</greenweight>
-    <blueweight>30</blueweight>
+    <redweight>225</redweight>
+    <greenweight>25</greenweight>
+    <blueweight>100</blueweight>
    
-	<redtypeint>0 1 2</redtypeint>
-    <greentypeint>0 1 2</greentypeint>
-    <bluetypeint>0 1 2</bluetypeint>
+	<redtypeint>14 16 16</redtypeint>
+    <greentypeint>9 18</greentypeint>
+    <bluetypeint>14 16</bluetypeint>
 
-    <redclamp>100</redclamp>
-    <grnclamp>200</grnclamp>
+    <redclamp>200</redclamp>
+    <grnclamp>50</grnclamp>
     <bluclamp>200</bluclamp>
 	
   </trees>
@@ -64,27 +64,27 @@
 <!-- CLAMP value 0-255, a value of 255 means grass will only draw where the mask color value is 100% white -->
 <!-- PARAMS value 0-360 (+/-), a random X rotation of each clutter object -->
 
-  <!-- <objectclutter name="cluttermask.dds">
+  <objectclutter name="cluttermask.dds">
 
-    <redweight>15</redweight>
-    <greenweight>75</greenweight>
-    <blueweight>25</blueweight>
+    <redweight>5</redweight>
+    <greenweight>5</greenweight>
+    <blueweight>5</blueweight>
 
-    <redclamp>150</redclamp>
-    <grnclamp>200</grnclamp>
-    <bluclamp>200</bluclamp>
+    <redclamp>100</redclamp>
+    <grnclamp>100</grnclamp>
+    <bluclamp>100</bluclamp>
 
-    <redtypestring>dangersign</redtypestring>
-    <greentypestring>haystack_outside</greentypestring>
+    <redtypestring>rocks01 rocks02</redtypestring>
+    <greentypestring>rocks03 rocks04</greentypestring>
     <bluetypestring>tanktrap</bluetypestring>
 	
-    <redparams>65</redparams>
+    <redparams>180</redparams>
     <greenparams>180</greenparams>
     <blueparams>180</blueparams>
   </objectclutter>
   
   
-    <objectclutter name="cluttermask2.dds">
+    <!-- <objectclutter name="cluttermask2.dds">
 
     <redweight>20</redweight>
     <greenweight>75</greenweight>
@@ -101,9 +101,8 @@
     <redparams>180</redparams>
     <greenparams>180</greenparams>
     <blueparams>180</blueparams>
-  </objectclutter>
+  </objectclutter> -->
   
-  -->
   
   
 <!-- THIS SECTION DEFINES THE FOG USED IN THE SCENARIO -->
@@ -113,7 +112,7 @@
   
   <fogparams>
     <start>-50.0</start>
-    <end>1000.0</end>
+    <end>2000.0</end>
   </fogparams>
   
 <!-- THIS SECTION DEFINES THE MASKS USED FOR EACH TERRAIN TILE IN THE SCENARIO -->
