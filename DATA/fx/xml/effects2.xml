@@ -817,14 +817,14 @@
   <!-- ===================================================================== -->
   <transformeffect name = "tanktrack">
     <emitter>
-      <flags>landsurface</flags>
+      <flags>watersurface</flags>
       <particleeffect>tanktrackparticle</particleeffect>
     </emitter>
   </transformeffect>
   <!-- ===================================================================== -->
   <transformeffect name = "tiretrack">
     <emitter>
-      <flags>landsurface</flags>
+      <flags>watersurface</flags>
       <particleeffect>tiretrackparticle</particleeffect>
     </emitter>
   </transformeffect>
@@ -4758,19 +4758,20 @@
     <texture>water spray4</texture>
     <alpha>1.0</alpha>
     <alpha>1.0</alpha>
-    <alpha>0.5</alpha>
+    <alpha>1.0</alpha>
     <alpha>0.0</alpha>
-    <size>0.0</size>
     <size>0.25</size>
     <size>1.0</size>
-    <size>1.0</size>
+    <size>2.0</size>
+    <size>3.0</size>
     <time>0</time>
-    <time>200</time>
-    <time>200</time>
     <time>500</time>
+    <time>500</time>
+    <time>2500</time>
     <colorstart>1 1 1</colorstart>
     <colorend>1 1 1</colorend>
     <dontupdateposition></dontupdateposition>
+    <posvariance>-0.25 -0.25 0.0 0.25 0.25 0.0</posvariance>
     <material>waterwake</material>
 	</particleeffect>
 <!-- ===================================================================== -->
