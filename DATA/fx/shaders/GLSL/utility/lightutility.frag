@@ -92,6 +92,15 @@ void lightGetAmbient(out vec4 ambient)
 /*----------------------------------------------------------
 Non-tangent space lighting for ambient and diffuse
 -----------------------------------------------------------*/
+void lightGetSunAmbientDiffuse(out vec4 ambient, out vec4 diffuse)
+{
+    diffuse = lightsource[0].diffuse;	
+    ambient = lightsource[0].ambient;
+}
+
+/*----------------------------------------------------------
+Non-tangent space lighting for ambient and diffuse
+-----------------------------------------------------------*/
 void lightGetAmbientDiffuse(out vec4 ambient, out vec4 diffuse)
 {	
 	ambient = zerovector;
@@ -128,6 +137,19 @@ void lightGetAmbientDiffuse(out vec4 ambient, out vec4 diffuse)
 		diffuse += a * lightsource[3].diffuse;	
 		ambient += a * lightsource[3].ambient;
 	}
+}
+
+/*----------------------------------------------------------
+Non-tangent space lighting for ambient and diffuse with normal
+for sun only.
+-----------------------------------------------------------*/
+void lightGetSunAmbientDiffuse(in vec3 normal, out vec4 ambient, out vec4 diffuse)
+{
+    vec3 L = lightsource[0].dir;
+	float d = max(dot(normal, L), 0.0);
+			
+	diffuse = d * lightsource[0].diffuse;	   
+    ambient = lightsource[0].ambient;
 }
 
 /*----------------------------------------------------------
@@ -304,6 +326,37 @@ void lightGetAmbientDiffuseSpecular(in vec3 normal,
 }
 
 /*----------------------------------------------------------
+Non-tangent space lighting for ambient, diffuse, specular with normal
+-----------------------------------------------------------*/
+void lightGetSunAmbientDiffuseSpecular(in vec3 normal,
+                                       in vec3 V,
+                                       out vec4 ambient,
+                                       out vec4 diffuse,
+                                       out vec4 specular)
+{
+	vec3 L;
+	vec3 H;
+	float d;
+	float s;
+	
+	float level = gl_FrontMaterial.shininess;
+
+	L = lightsource[0].dir;	
+			
+	d = max(dot(normal, L), 0.0);
+	
+	diffuse += d * lightsource[0].diffuse;
+		
+	H = normalize(L + V);
+	s = max(dot(normal, H), 0.0);
+	s = pow(s, level);
+		
+	specular = s * lightsource[0].specular;
+	
+	ambient = lightsource[0].ambient;
+}
+
+/*----------------------------------------------------------
 Tangent space lighting for ambient and diffuse
 -----------------------------------------------------------*/
 void lightGetAmbientDiffuse(in vec3 t,
@@ -386,6 +439,53 @@ void lightGetAmbientDiffuse(in vec3 t,
 
 		ambient += a * lightsource[3].ambient;
 	}
+}
+
+/*----------------------------------------------------------
+Tangent space lighting for ambient, diffuse and specular
+-----------------------------------------------------------*/
+void lightGetSunAmbientDiffuseSpecular(in vec3 t,
+                                       in vec3 b,
+                                       in vec3 n,
+                                       in vec3 V,
+                                       in vec3 normal,
+                                       out vec4 ambient, 
+                                       out vec4 diffuse,
+                                       out vec4 specular)
+{
+	vec3 L;
+	vec3 H;
+	vec3 Ltan;
+	vec3 Htan;
+	float d;
+	float s;
+	
+	float level = gl_FrontMaterial.shininess;
+	
+	L = lightsource[0].dir;
+		
+	Ltan.x = dot(L, t);
+	Ltan.y = dot(L, b);
+	Ltan.z = dot(L, n);
+		
+	d = max(dot(normal, Ltan), 0.0);
+
+	diffuse = d * lightsource[0].diffuse;
+			
+	H = normalize(L + V);
+		
+	// Tangent
+	Htan.x = dot(H, t);
+	Htan.y = dot(H, b);
+	Htan.z = dot(H, n);
+	
+	s = max(dot(normal, Htan), 0.0);
+			
+    if(level > 0.0)
+        s = pow(s, level);
+
+    specular = s * lightsource[0].specular;
+    ambient = lightsource[0].ambient;
 }
 
 /*----------------------------------------------------------
