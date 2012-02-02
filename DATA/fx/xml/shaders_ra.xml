@@ -327,6 +327,7 @@
     <shaders>
       <vertexshader>fx/shaders/GLSL+/trees/on/branch_ra.vert</vertexshader>
       <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/sun_tad.frag</fragmentshader>
       <fragmentshader>fx/shaders/GLSL+/trees/on/branch_ra.frag</fragmentshader>
     </shaders>
     <materialconstants name="ka kd"></materialconstants>

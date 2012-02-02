@@ -48,5 +48,5 @@ void sun_abs(in vec3 normal,
 
     specular = s * b_specular0 * b_Ks;
 
-    ambient = b_ambient0 + b_globalambient * b_Ka;
+    ambient = (b_ambient0 + b_globalambient) * b_Ka;
 }
