@@ -44,7 +44,7 @@ void main()
     vec4 dif;
     vec4 amb;
     
-    sun_tad(t, b, n, normal, amb, dif);
+    sun_tad(t, b, n, normal.xyz, amb, dif);
 
     vec4 color = base * (dif * diffuseScale + amb);
 
