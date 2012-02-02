@@ -63,7 +63,7 @@ if(true) then
 
 		-- SMOKING CRATERS
 
-		--"emitter cratersmoke 173.40 -38.89 8",
+		"emitter cratersmoke 336.86 343.62 50.76",
 		--"emitter cratersmoke 129.71 -55.96 8",
 		--"emitter cratersmoke -45.56 -78.53 8",
 		--"emitter cratersmoke 26.02 -82.75 8",
@@ -104,10 +104,10 @@ if(true) then
 	-- ABSOLUTE SOUNDS
 	-- command name filename minvol, maxvol
 
-		"sound planes sounds/scenarios/ambient_aircraft_squadron1.wav .4 1",
-		"sound planes sounds/scenarios/ambient_aircraft_squadron2.wav .4 1",
-		"sound bombs sounds/scenarios/ambient_bombs_distantshells1.wav .4 1",
-		"sound bombs sounds/scenarios/ambient_bombs_distantshells2.wav .4 1",
+		"sound planes sounds/scenarios/ambient_aircraft_squadron1.wav 1 1",
+		"sound planes sounds/scenarios/ambient_aircraft_squadron2.wav 1 1",
+		"sound bombs sounds/scenarios/ambient_bombs_distantshells1.wav 1 1",
+		"sound bombs sounds/scenarios/ambient_bombs_distantshells2.wav 1 1",
 		"sound explosions sounds/scenarios/ambient_explosions_fourinarow.wav .60 1",
 		--"sound explosions sounds/troop/grenade.wav .40 0",
 		"sound guns1 sounds/scenarios/ambient_guns_machine_gun1.wav 1 1",
@@ -142,9 +142,9 @@ if(true) then
 	-- the distance is the radius of a circle around the center to randomly fire off the ammo in
 	-- command name ammo x y z distance
 
-		-- "barrage barrage1 smallbarragebomb 81231.19 3011960.61 3.08 150",
-		-- "barrage barrage1 smallbarragebomb 82358.13 3011558.99 4.00 150",
-		-- "barrage barrage1 smallbarragebomb -266.85 -36.03 5.26 50",
+		"barrage barrage1 smallbarragebomb 364.27 342.87 51.88 25",
+		"barrage barrage1 smallbarragebomb 359.35 294.70 50.98 25",
+		"barrage barrage1 smallbarragebomb 278.71 350.52 52.01 25",
 
 		
 -- TRIGGERS
@@ -152,16 +152,16 @@ if(true) then
 	-- EVENT TRIGGERS	
 	-- command name pctgchance-each-second wait-in-milliseconds milliseconds-between-bomb-drops number-of-bombs
 
-		-- "event planes .40 80000",
+		"event planes .25 80000",
 		--"event bombs .45 80000",
 		--"event explosions .20 45000",
-		-- "event guns1 .25 20000",
-		-- "event guns2 .25 40000",
+		"event guns1 .25 20000",
+		"event guns2 .25 40000",
 		-- "event siren1 .33 50000",
 		-- "event wind .5 5000",
 		--"event bombing1 .90 25000 600 24",
 		--"event bombing2 .90 25000 650 12",
-		-- "event barrage1 .45 30000 550 18",
+		"event barrage1 .45 30000 550 18",
 
 		
 
@@ -185,8 +185,8 @@ if(true) then
 
 	-- bridge capture objective
 
-		"handler capper OnCapper",
-		"handler objective1 OnCapturing",
+		--"handler capper OnCapper",
+		--"handler objective1 OnCapturing",
 		
 		-- "area bridgecapture OnState 81802.47 3011808.50 11.94 1",
 		-- "area bridgecapture OnState 81796.75 3011808.50 11.94",

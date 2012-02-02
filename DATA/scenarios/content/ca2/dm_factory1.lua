@@ -44,7 +44,7 @@ if(true) then
 		-- blocking volume gate1
 		-- block gate1 x1 y1 z1 x2 y2 z2 thickness height
 
-	   -- "block side1 119089.05 2843945.82 294.00 119091.67 2843909.69 294.00 2 3",
+	   "block 119268.38 2843883.93 294.89 119263.56 2843883.23 294.89 2 10",
 
 		-- blocking volume gate2
 		-- block gate2 x1 y1 z1 x2 y2 z2 thickness height

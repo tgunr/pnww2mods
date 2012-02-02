@@ -13,11 +13,11 @@
  
     <redweight>225</redweight>
     <greenweight>25</greenweight>
-    <blueweight>100</blueweight>
+    <blueweight>50</blueweight>
    
 	<redtypeint>14 16 16</redtypeint>
     <greentypeint>9 18</greentypeint>
-    <bluetypeint>14 16</bluetypeint>
+    <bluetypeint>14 16 16</bluetypeint>
 
     <redclamp>200</redclamp>
     <grnclamp>50</grnclamp>
@@ -36,21 +36,21 @@
   
   <grass name="grassmask.dds">
 
-    <redweight>1</redweight>
-	<greenweight>1</greenweight>
-    <blueweight>1</blueweight>
+    <redweight>15</redweight>
+	<greenweight>25</greenweight>
+    <blueweight>100</blueweight>
 	
-    <redtypeint>13</redtypeint>
-    <greentypeint>0 1 12</greentypeint>
-    <bluetypeint>4 5 5</bluetypeint>
+    <redtypeint>0 1 12 13</redtypeint>
+    <greentypeint>12 13 0</greentypeint>
+    <bluetypeint>0</bluetypeint>
 
     <redclamp>100</redclamp>
     <grnclamp>100</grnclamp>
     <bluclamp>100</bluclamp>
 
-    <redscale>0.8</redscale>
-    <grnscale>1.8</grnscale>
-    <bluscale>0.8</bluscale>
+    <redscale>2.0</redscale>
+    <grnscale>3.0</grnscale>
+    <bluscale>2.0</bluscale>
 	
   </grass>
   
@@ -66,9 +66,9 @@
 
   <objectclutter name="cluttermask.dds">
 
-    <redweight>5</redweight>
-    <greenweight>5</greenweight>
-    <blueweight>5</blueweight>
+    <redweight>40</redweight>
+    <greenweight>40</greenweight>
+    <blueweight>100</blueweight>
 
     <redclamp>100</redclamp>
     <grnclamp>100</grnclamp>
@@ -76,7 +76,7 @@
 
     <redtypestring>rocks01 rocks02</redtypestring>
     <greentypestring>rocks03 rocks04</greentypestring>
-    <bluetypestring>tanktrap</bluetypestring>
+    <bluetypestring>rocks01</bluetypestring>
 	
     <redparams>180</redparams>
     <greenparams>180</greenparams>
@@ -132,7 +132,7 @@
     <cluttermask>cluttermask.dds</cluttermask>
 
 <!-- SPLATMASK is a .dds texture used by 2D grass to pickup color blend values -->
-<!-- SPLATMASK value is the file name of the .dds file found in scenario/terrain/scenarioname directory -->	
+<!-- SPLATMASK value is the file name of the .dds file found in scenario/terrain/scenarioname directory NOTE- IF THE ALPHA CHANNEL IN THE SPLATMAP DDS IS SET TO 100% BLACK THEN THE GRASS PICKS UP NONE OF THE SPLATMAP COLOR -->	
     <splatmask>splat1.dds</splatmask>
 <!-- BLENDMASK value is the file name of the .dds file found in scenario/terrain/scenarioname directory -->
 <!-- Each blendmask can have up to 4 channels (R,G,B,A) each with a unique, corresponding texture -->
@@ -141,23 +141,23 @@
 <!-- LAYER0 is the base texture applied to every terrain .flt and is not specified in the .dds blendmask -->	
       <layer0 name="layer0.dds">
 <!-- MULTITEXTURE value effects the scale of the .dds texture for the layer. The higher the value, the more times the textures will tile across the terrain -->	  
-        <multitexture>300</multitexture>
+        <multitexture>150</multitexture>
 <!-- MATERIAL value is used by the game engine for special effects and sounds -->		
         <material>grass</material>
       </layer0>
 	  
       <layer1 name="layer1.dds">
-        <multitexture>300</multitexture>
+        <multitexture>100</multitexture>
         <material>dirt</material>
       </layer1>
 	  
       <layer2 name="layer2.dds">
-        <multitexture>300</multitexture>
+        <multitexture>100</multitexture>
         <material>dirt</material>
       </layer2>
 	  
       <layer3 name="layer3.dds">
-        <multitexture>300</multitexture>
+        <multitexture>100</multitexture>
         <material>dirt</material>
       </layer3>
 	  

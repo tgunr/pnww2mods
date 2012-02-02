@@ -1,5 +1,5 @@
 <?xml version='1.0'?>
-<vehicle reticle="reticles/camera" turret="2" manager="eztruck">
+<vehicle  turret="2" manager="eztruck">
 	<config>
 		<param name="shiftdownrpms" value=".65"/>
 		<param name="shiftuprpms" value=".97"/>
@@ -7,23 +7,18 @@
 		<param name="shifttime" value="500"/>
 		<param name="category" value="tank"/>
 	</config>
-	<ez level="1">
-		<position name="driver" position="0" view="0" zoom="0">
-			<camera focus="200" offset="0,.9,.9" pov="true">
-				<traverse left="-20" right="20"/>
-				<elevation down="-10" up="20"/>
-			</camera>
-		</position>
-		<position name="command" position="2" view="0" zoom="0" reticle="reticles/crosshairs">
-			<camera offset="0,-.25,1.6" focus="200" pov="true">
-				<elevation down="-20" up="30"/>
-			</camera>
-			<blocks input="turretraverse"/>
-			<blocks input="turretelevate"/>
-		</position>
-		<position name="gunner" position="2" view="3" zoom="0"/>
-		<position name="instruments" position="0" view="2" zoom="0"/>
-	</ez>
+	<!-- RAFTER'S CAMPAIGN TEST -->
+	<!-- CANT GET THIS ONE WORKING -->
+	<ez level="1"> 
+			<!-- COMMANDER -- UNBUTTONED -->
+		<position name="commander" position="1" view="2" zoom="0" hatch="onload"/>
+		<!-- COMMANDER MAX ZOOM -- UNBUTTONED -->
+		<position name="commander binos" position=1" view="3" zoom="0" hatch="onload"/>
+		<!-- INTERIOR DRIVER -- BUTTONED WITH PERISCOPE VIEW -->
+		<position name="driver" position="2" view="1" zoom="0" hatch="onload"/>
+		<!-- GUNNER -- GUNSIGHT ZOOM -->
+		<position name="gunner" position=1" view="4" zoom="0" hatch="onload"/>
+		</ez>
 	<ez level="2">
 		<position name="command" position="2" view="0" zoom="0" reticle="reticles/crosshairs">
 			<camera offset="0,-6.5,3" focus="200">

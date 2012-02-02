@@ -267,11 +267,67 @@ if(true) then
 		"sound sounds/ambience/stream.wav 4 1 -26 -173 10 10 50",
 		"sound sounds/ambience/stream.wav 4 1 -245 -55 8 10 50",
 		
+		
+		
+		
+				-- a line of bombs (as from a plane)
+		-- command,name,ammo,worldx1,worldy1,worldz1,worldx2,worldy2,worldz2
+		"bombingrun bombing1 gp250 -184.65 -279.50 22.84 46.61 -297.32 22.54",
+		"bombingrun bombing1 gp250 210.96 -227.13 19.97 274.58 -85.40 19.97",
+		"bombingrun bombing1 gp500 268.23 77.65 6.21 152.83 123.03 6.21",
+		"bombingrun bombing1 gp250 -69.51 80.01 6.21 -177.68 11.25 6.21",
+		"bombingrun bombing2 gp40 33.14 -165.89 7.68 6.27 -182.85 2.72",
+		"bombingrun bombing2 gp40 212.53 -134.06 19.33 163.59 -134.66 4.72",
+		-- an area effect bombing
+		-- the x,y,z is the center of the barrage
+		-- the distance is the radius of a circle around the center to randomly fire off the ammo in
+		-- command name ammo x y z distance
+		"barrage barrage1 gp40 -154.25 -107.17 8.77 25",
+		"barrage barrage1 gp40 84.84 306.73 21.79 50",
+		"barrage barrage1 gp40 -266.85 -36.03 5.26 50",
+
+		
+		-- TRIGGERS
+		
+		-- commandname,pctg chance each second,wait in seconds
+		"event planes .40 120000",
+		"event bombs .10 20000",
+		"event explosions .20 25000",
+		"event guns1 .15 10000",
+		"event guns2 .20 30000",
+		"event wind .5 5000",
+		"event bombing1 .10 15000 500 6",
+		"event bombing2 .10 20000 750 3",
+		"event barrage1 .20 60000 700 10",
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 	-- A LINE OF BOMBS (as if dropped from a plane)
 	-- command name ammo worldx1 worldy1 worldz1 worldx2 worldy2 worldz2
-
-		--"bombingrun bombing1 gp250 90.62 211.47 18.81 12.92 91.85 18.81",
+-- delet this later
+		-- command,name,ammo,worldx1,worldy1,worldz1,worldx2,worldy2,worldz2
+		"bombingrun bombing1 gp250 -184.65 -279.50 22.84 46.61 -297.32 22.54",
+		"bombingrun bombing1 gp250 210.96 -227.13 19.97 274.58 -85.40 19.97",
+		"bombingrun bombing1 gp500 268.23 77.65 6.21 152.83 123.03 6.21",
+		"bombingrun bombing1 gp250 -69.51 80.01 6.21 -177.68 11.25 6.21",
+		"bombingrun bombing2 gp40 33.14 -165.89 7.68 6.27 -182.85 2.72",
+		"bombingrun bombing2 gp40 212.53 -134.06 19.33 163.59 -134.66 4.72",
+		-- an area effect bombing
+		-- the x,y,z is the center of the barrage
+		-- the distance is the radius of a circle around the center to randomly fire off the ammo in
+		-- command name ammo x y z distance
+		"barrage barrage1 gp40 -154.25 -107.17 8.77 25",
+		"barrage barrage1 gp40 84.84 306.73 21.79 50",
+		"barrage barrage1 gp40 -266.85 -36.03 5.26 50",
 
 
 	-- AREA EFFECT BOMBING OR BARRAGE (simulating artillery barrage)
@@ -290,19 +346,34 @@ if(true) then
 	
 	-- EVENT TRIGGERS	
 	-- command name pctgchance-each-second wait-in-seconds
-
-		"event planes .40 120000",
-		-- "event bombs .10 20000",
-		--"event explosions .10 25000",
+	
+-- delet this later			
+		-- commandname,pctg chance each second,wait in seconds
+		"event planes .60 120000",
+		"event bombs .10 20000",
+		"event explosions .20 25000",
 		"event guns1 .15 10000",
 		"event guns2 .20 30000",
 		"event wind .5 5000",
+		"event bombing1 .90 15000 500 6",
+		"event bombing2 .90 20000 750 3",
+		"event barrage1 .85 60000 700 10",
+		
+	
+	
+-- this is the right stuff
+		--"event planes .40 120000",
+		-- "event bombs .10 20000",
+		--"event explosions .10 25000",
+		--"event guns1 .15 10000",
+		--"event guns2 .20 30000",
+		--"event wind .5 5000",
 		--"event bombing1 .20 10000 30000 6",
 		--"event bombing2 .10 20000 30000 3",
-		"event barrage1 .95 10000 500 10",
-		"event barrage1 .75 10000 500 10",
-		"event barrage2 .95 12000 500 6",
-		"event barrage2 .85 12000 500 6",
+		--"event barrage1 .95 10000 500 10",
+		--"event barrage1 .75 10000 500 10",
+		--"event barrage2 .95 12000 500 6",
+		--"event barrage2 .85 12000 500 6",
 
 
 

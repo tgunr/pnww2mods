@@ -1,13 +1,28 @@
-# Format is 17 Chars max across and 8 lines deep
-# Keep seperators within brackets to format file
-# Valid seperators are [description] and [notes] only 
-[description]
-MODEL: Crusader MkII (A15) 
-TYPE: Medium AFV
-ARMAMENT: 4.0 cm Main gun
-                 1 X 7.7 mm MG
-WEIGHT: 19272 kg 
-CREW: 4
-SPEED(off road): 48 km/h
-[notes]
-The A15 Crusader was fast, nimble, and carried a 40mm main gun. More than a match for any German AFV of the time, its main weakness was thin armor. It's "Christy" suspension design literally revolutionized AFV technology.
+<?xml version='1.0'?>
+<vehicle turret="2" manager="eztank">
+	<config>
+		<param name="shiftdownrpms" value=".65"/>
+		<param name="shiftuprpms" value=".97"/>
+		<param name="acceltime" value="3000"/>
+		<param name="shifttime" value="500"/>
+		<param name="higear" value="2"/>
+		<param name="loacceltime" value="500"/>
+		<param name="loshifttime" value="200"/>
+		<param name="category" value="tank"/>
+		<param name="hatchtime" value="750"/>
+	</config>
+	
+	<!-- RAFTER'S CAMPAIGN TEST -->
+	<ez level="1"> 
+			<!-- COMMANDER -- UNBUTTONED -->
+		<position name="commander" position="1" view="1" zoom="0" hatch="onload"/>
+		<!-- COMMANDER MAX ZOOM -- UNBUTTONED -->
+		<position name="commander binos" position="1" view="3" zoom="1" hatch="onload"/>
+		<!-- INTERIOR DRIVER -- BUTTONED WITH PERISCOPE VIEW -->
+		<position name="driver" position="2" view="2" zoom="0" hatch="onload"/>
+		<!-- GUNNER -- GUNSIGHT ZOOM -->
+		<position name="gunner" position="2" view="3" zoom="1"/>
+		</ez>
+		
+	
+</vehicle>

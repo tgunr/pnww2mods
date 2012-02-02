@@ -11,7 +11,7 @@
 		<blocks input="turretelevate"/>
 	</position>
 	<position name="aaguns" position="5" view="0" zoom="0" reticle="reticles/crosshairs">
-		<camera offset="0,-6,5" focus="500" pov="true">
+		<camera offset="0,-12,5" focus="500" pov="true">
 			<elevation down="-30" up="89"/>
 		</camera>
 		<blocks input="turretraverse"/>
@@ -19,12 +19,12 @@
 		<turret position="3"/>
 	</position>
 	<position name="mgs" position="7" view="0" zoom="0" reticle="reticles/crosshairs">
-		<camera offset="0,3.5,5.5" focus="200" pov="true">
-			<elevation rate="0" down="-30" up="80"/>
+		<camera offset="0,0.5,6" focus="200" pov="true">
+			<elevation rate="5" down="-15" up="40"/>
 		</camera>
 		<blocks input="turretraverse"/>
 		<blocks input="turretelevate"/>
-		<!-- turret position="6"/ -->
+		<turret position="6"/>
 	</position>
 	<position name="instruments" position="0" view="2" zoom="0"/>
 </vehicle>

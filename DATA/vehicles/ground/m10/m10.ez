@@ -7,6 +7,30 @@
 		<param name="shifttime" value="1000"/>
 		<param name="startgear" value="2"/>
 	</config>
+	
+	<!-- RAFTER'S CAMPAIGN TEST -->
+	<ez level="1"> 
+			<!-- COMMANDER -- UNBUTTONED -->
+		<position name="commander" position="1" view="1" zoom="0" hatch="onload"/>
+		<!-- COMMANDER MAX ZOOM -- UNBUTTONED -->
+		<position name="commander binos" position="1" view="3" zoom="1" hatch="onload"/>
+		<!-- INTERIOR DRIVER -- UNBUTTONED -->
+		<position name="driver" position="0" view="1" zoom="1" hatch="onload"/>
+		<!-- GUNNER -- GUNSIGHT ZOOM -->
+		<position name="gunner" position="2" view="3" zoom="1"/>
+		<!-- MG GUNNER -- GUNSIGHT -->
+		<position name="machine gunner" position="3" view="2" zoom="0" hatch="onspawn"/>
+		<!-- MG GUNNER -- GUNSIGHT ZOOM --> <!-- THIS DOESNT WORK -->
+		<position name="machine gunner" position="3" view="3" zoom="0"/>
+		</ez>
+	
+	
+	
+	
+	
+	
+	
+	
 	<ez level="2">
 		<position name="command" position="2" view="0" zoom="0" reticle="reticles/crosshairs">
 			<camera offset="0,-10,4" focus="300">
