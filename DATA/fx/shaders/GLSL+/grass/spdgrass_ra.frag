@@ -10,12 +10,29 @@ uniform MaterialBlock
 	float b_shininess;
 };
 
+uniform LightBlock0
+{
+    float b_enabled0;
+    float b_kc0;
+    float b_kl0;
+    float b_kq0;
+    vec3 b_dir0;
+    vec3 b_pos0;
+    vec4 b_diffuse0;
+    vec4 b_ambient0;
+    vec4 b_specular0;
+};
+
+uniform AmbientBlock
+{
+    vec4 b_globalambient;
+};
+
 uniform sampler2D src1;
 uniform sampler2D splat;
 uniform float alphatest;
 
 vec4 fogThis(in vec4);
-void lightGetAmbientDiffuse(out vec4 amb, out vec4 dif);
 
 const vec4 Ka = vec4(0.50, 0.50, 0.43, 1.0);
 const vec4 Kd = vec4(0.4, 0.45, 0.39, 1.0);
@@ -33,10 +50,8 @@ void main()
     if(base.a < alphatest)
         discard;
 
-    vec4 amb;
-    vec4 dif;
-    	
-    lightGetAmbientDiffuse(amb, dif);
+	vec4 amb = b_ambient0 + b_globalambient;
+	vec4 dif = b_diffuse0;
     	
     base = mix(base, tcolor, tcolor.a);
 

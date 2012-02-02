@@ -10,9 +10,7 @@ uniform vec3 shadowambient;
 varying vec3 N;
 
 vec4 fogThis(in vec4);
-void lightGetAmbientDiffuse(in vec3 normal,
-                            out vec4 ambient,
-                            out vec4 diffuse);
+void lightGetSunAmbientDiffuse(in vec3 normal, out vec4 ambient, out vec4 diffuse);
 
 void main()
 {
@@ -21,7 +19,7 @@ void main()
     vec4 layer2 = texture2DArray(src, vec3(gl_TexCoord[1].xy, 2));
     vec4 layer3 = texture2DArray(src, vec3(gl_TexCoord[1].zw, 3));
 
-    vec4 mask = texture2D(mask1, gl_TexCoord[6].xy);
+    vec4 mask = texture2D(mask1, gl_TexCoord[2].xy);
 
     vec4 c;
     
@@ -34,13 +32,13 @@ void main()
     c5.rgb = 1.0 - c5.rgb * 2.0;
 
     c *= c5;
-
+    
     vec4 diffuse;
     vec4 ambient;
 
     vec3 n = normalize(N);
 
-    lightGetAmbientDiffuse(n, ambient, diffuse); 
+    lightGetSunAmbientDiffuse(n, ambient, diffuse); 
 
 	ambient += gl_LightModel.ambient;
 

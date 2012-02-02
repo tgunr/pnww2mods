@@ -17,7 +17,7 @@ void main()
     gl_TexCoord[1].xy = gl_MultiTexCoord0.xy * scale[2];
     gl_TexCoord[1].zw = gl_MultiTexCoord0.xy * scale[3];
 
-    gl_TexCoord[6].xy = gl_MultiTexCoord0.xy;
+    gl_TexCoord[2].xy = gl_MultiTexCoord0.xy;
 
     vec4 pos = gl_ModelViewMatrix * gl_Vertex;
 

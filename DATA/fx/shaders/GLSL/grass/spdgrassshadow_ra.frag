@@ -14,7 +14,7 @@ uniform float zShadow1;
 uniform float zShadow2;
 
 vec4 fogThis(in vec4);
-void lightGetAmbientDiffuse(out vec4 amb, out vec4 dif);
+void lightGetSunAmbientDiffuse(out vec4 amb, out vec4 dif);
 
 float GetShadowValue()
 {
@@ -55,7 +55,7 @@ void main()
     vec4 amb;
     vec4 dif;
     	
-    lightGetAmbientDiffuse(amb, dif);
+    lightGetSunAmbientDiffuse(amb, dif);
     	
     amb += gl_LightModel.ambient;
 

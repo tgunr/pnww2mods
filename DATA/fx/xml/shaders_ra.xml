@@ -106,10 +106,10 @@
   <!--=================================================================-->
   <program name ="normalmap">
     <shaders>
-      <vertexshader>fx/shaders/GLSL/normal/normal.vert</vertexshader>
+      <vertexshader>fx/shaders/GLSL/normal/normal_ra.vert</vertexshader>
       <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
       <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
-      <fragmentshader>fx/shaders/GLSL/normal/normal.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/normal/normal_ra.frag</fragmentshader>
     </shaders>
     <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
     <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
@@ -121,10 +121,10 @@
   <!--=================================================================-->
   <program name ="fpsnormal">
     <shaders>
-      <vertexshader>fx/shaders/GLSL/fpsnormal/fpsnormal.vert</vertexshader>
+      <vertexshader>fx/shaders/GLSL/fpsnormal/fpsnormal_ra.vert</vertexshader>
       <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
       <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
-      <fragmentshader>fx/shaders/GLSL/fpsnormal/fpsnormal.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/fpsnormal/fpsnormal_ra.frag</fragmentshader>
     </shaders>
     <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
     <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
@@ -133,10 +133,10 @@
   <!--=================================================================-->
   <program name ="specularmap">
     <shaders>
-      <vertexshader>fx/shaders/GLSL/specular/specular.vert</vertexshader>
+      <vertexshader>fx/shaders/GLSL/specular/specular_ra.vert</vertexshader>
       <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
       <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
-      <fragmentshader>fx/shaders/GLSL/specular/specular.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/specular/specular_ra.frag</fragmentshader>
     </shaders>
     <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
     <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
@@ -193,7 +193,6 @@
     <shaders>
       <vertexshader>fx/shaders/GLSL+/grass/spdgrassshadow_ra.vert</vertexshader>
       <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
-      <fragmentshader>fx/shaders/GLSL+/utility/lightAD.frag</fragmentshader>
       <fragmentshader>fx/shaders/GLSL+/grass/spdgrassshadow_ra.frag</fragmentshader>
     </shaders>
     <attribute name="in_pos" type="attribute_position"></attribute>
@@ -209,7 +208,7 @@
     <uniform name="zShadow1" type="float"></uniform>
     <uniform name="zShadow2" type="float"></uniform>
     <uniform name="shadowambient" type="float" onetimeapply="true"></uniform>
-    <uniform name="uv" type="float_vec2" numelements="64" onetimeappply="true"></uniform>
+    <uniform name="uv" type="float_vec2" numelements="64" onetimeapply="true"></uniform>
   </program>
   <!--=================================================================-->
   <program name ="spdgrassshadow_ra" statesetonly="true">
@@ -230,7 +229,7 @@
     <uniform name="zShadow1" type="float"></uniform>
     <uniform name="zShadow2" type="float"></uniform>
     <uniform name="shadowambient" type="float" onetimeapply="true"></uniform>
-    <uniform name="uv" type="float_vec2" numelements="64" onetimeappply="true"></uniform>
+    <uniform name="uv" type="float_vec2" numelements="64" onetimeapply="true"></uniform>
   </program>
   <!--=================================================================-->
   <program name ="spdgrass_ra" statesetonly="true">
@@ -244,14 +243,13 @@
     <uniform name="splat" type="sampler2d" unit="1" onetimeapply="true"></uniform>
     <uniform name="origin" type="float_vec3"></uniform>
     <uniform name="alphatest" type="float"></uniform>
-    <uniform name="uv" type="float_vec2" numelements="64" onetimeappply="true"></uniform>
+    <uniform name="uv" type="float_vec2" numelements="64" onetimeapply="true"></uniform>
   </program>
   <!--=================================================================-->
   <program name ="spdgrass_ra+" statesetonly="true">
     <shaders>
       <vertexshader>fx/shaders/GLSL+/grass/spdgrass_ra.vert</vertexshader>
       <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
-      <fragmentshader>fx/shaders/GLSL+/utility/lightAD.frag</fragmentshader>
       <fragmentshader>fx/shaders/GLSL+/grass/spdgrass_ra.frag</fragmentshader>
     </shaders>
     <attribute name="in_pos" type="attribute_position"></attribute>
@@ -260,7 +258,7 @@
     <uniform name="splat" type="sampler2d" unit="1" onetimeapply="true"></uniform>
     <uniform name="origin" type="float_vec3"></uniform>
     <uniform name="alphatest" type="float"></uniform>
-    <uniform name="uv" type="float_vec2" numelements="64" onetimeappply="true"></uniform>
+    <uniform name="uv" type="float_vec2" numelements="64" onetimeapply="true"></uniform>
   </program>
   <!--=================================================================-->
   <program name ="BranchShader">
@@ -327,10 +325,9 @@
   <!--=================================================================-->
   <program name ="BranchShaderNormal+" statesetonly="true">
     <shaders>
-      <vertexshader>fx/shaders/GLSL+/trees/on/branch.vert</vertexshader>
-      <fragmentshader>fx/shaders/GLSL+/utility/lightTangentAD.frag</fragmentshader>
+      <vertexshader>fx/shaders/GLSL+/trees/on/branch_ra.vert</vertexshader>
       <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
-      <fragmentshader>fx/shaders/GLSL+/trees/on/branch.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/trees/on/branch_ra.frag</fragmentshader>
     </shaders>
     <materialconstants name="ka kd"></materialconstants>
     <uniform name="diffuse" type="sampler2d" unit="0" onetimeapply="true"></uniform>
@@ -359,10 +356,9 @@
   <!--=================================================================-->
   <program name ="FrondShader+" statesetonly="true">
     <shaders>
-      <vertexshader>fx/shaders/GLSL+/trees/on/frond.vert</vertexshader>
-      <fragmentshader>fx/shaders/GLSL+/utility/lightADnormal.frag</fragmentshader>
+      <vertexshader>fx/shaders/GLSL+/trees/on/frond_ra.vert</vertexshader>
       <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
-      <fragmentshader>fx/shaders/GLSL+/trees/on/frond.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/trees/on/frond_ra.frag</fragmentshader>
     </shaders>
     <materialconstants name="ka"></materialconstants>
     <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
@@ -454,10 +450,9 @@
   <!--=================================================================-->
   <program name ="LeafShaderNormal+" statesetonly="true">
     <shaders>
-      <vertexshader>fx/shaders/GLSL+/trees/on/leaf.vert</vertexshader>
-      <fragmentshader>fx/shaders/GLSL+/utility/lightTangentAD.frag</fragmentshader>
+      <vertexshader>fx/shaders/GLSL+/trees/on/leaf_ra.vert</vertexshader>
       <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
-      <fragmentshader>fx/shaders/GLSL+/trees/on/leaf.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/trees/on/leaf_ra.frag</fragmentshader>
     </shaders>
     <materialconstants name="ka kd"></materialconstants>
     <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
@@ -698,7 +693,7 @@
       <vertexshader>fx/shaders/GLSL/multitexture/multitexture2_ra.vert</vertexshader>
       <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
       <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
-      <fragmentshader>fx/shaders/GLSL/multitexture/multitexture2.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/multitexture/multitexture2_ra.frag</fragmentshader>
     </shaders>
     <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
     <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
@@ -714,10 +709,10 @@
   <!--=================================================================-->
   <program name ="softparticle" statesetonly="true">
     <shaders>
-      <vertexshader>fx/shaders/GLSL/particle/softparticle.vert</vertexshader>
+      <vertexshader>fx/shaders/GLSL/particle/softparticle_ra.vert</vertexshader>
       <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
       <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
-      <fragmentshader>fx/shaders/GLSL/particle/softparticle.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/particle/softparticle_ra.frag</fragmentshader>
     </shaders>
     <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
     <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
@@ -726,10 +721,10 @@
   <!--=================================================================-->
   <program name ="particle" statesetonly="true">
     <shaders>
-      <vertexshader>fx/shaders/GLSL/particle/particle.vert</vertexshader>
+      <vertexshader>fx/shaders/GLSL/particle/particle_ra.vert</vertexshader>
       <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
       <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
-      <fragmentshader>fx/shaders/GLSL/particle/particle.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/particle/particle_ra.frag</fragmentshader>
     </shaders>
     <uniform name="src1" type="sampler2d" unit="0" onetimeapply="true"></uniform>
   </program>

@@ -12,14 +12,14 @@ varying vec3 T;
 varying vec3 B;
 varying vec3 N;
 
-void lightGetAmbientDiffuseSpecular(in vec3,
-                                    in vec3,
-                                    in vec3,
-                                    in vec3,
-                                    in vec3,
-                                    out vec4, 
-                                    out vec4,
-                                    out vec4);
+void lightGetSunAmbientDiffuseSpecular(in vec3,
+                                       in vec3,
+                                       in vec3,
+                                       in vec3,
+                                       in vec3,
+                                       out vec4, 
+                                       out vec4,
+                                       out vec4);
 
 vec4 fogThis(in vec4);
 
@@ -54,14 +54,14 @@ void main()
 	vec3 b = normalize(B);
 	vec3 n = normalize(N);
 		
-	lightGetAmbientDiffuseSpecular(t, 
-	                               b, 
-	                               n, 
-	                               v, 
-	                               m, 
-	                               ambientColor, 
-	                               diffuseColor, 
-	                               specularColor);
+	lightGetSunAmbientDiffuseSpecular(t, 
+	                                  b, 
+	                                  n, 
+	                                  v, 
+	                                  m, 
+	                                  ambientColor, 
+	                                  diffuseColor, 
+	                                  specularColor);
 
 	ambientColor += gl_LightModel.ambient;
 	
