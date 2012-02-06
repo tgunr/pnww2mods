@@ -6,7 +6,7 @@ if(true) then
 	{
     	-- special handling
 		-- type object shader x y z yaw
-		"river water1 riverrun_river 0 0 2.5 0",
+		"river water1 riverrun_river 0 0 2.25 0",
         -- command flt link x y z yaw
 		"terrain tankmap maintile 0 0 0 0",
 -- TERRAIN OBJECTS PLACEMENTS
