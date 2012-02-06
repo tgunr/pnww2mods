@@ -760,11 +760,10 @@
     <uniform name="num" type="int"></uniform>
   </program>
   <!--=================================================================-->
-  <program name ="skybox" newglrequired ="true">
+  <program name ="skyboxnofog" newglrequired ="true">
     <shaders>
       <vertexshader>fx/shaders/GLSL+/sky/skybox.vert</vertexshader>
-      <fragmentshader>fx/shaders/GLSL+/sky/skybox.frag</fragmentshader>
-      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/sky/skyboxnofog.frag</fragmentshader>
     </shaders>
     <uniform name="src1" type="sampler2darray" unit="0" onetimeapply="true"></uniform>
     <uniform name="campos" type="float_vec3"></uniform>
