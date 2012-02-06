@@ -230,10 +230,10 @@ if(true) then
 		-- "event planes .40 80000",
 		--"event bombs .45 80000",
 		--"event explosions .20 45000",
-		-- "event guns1 .25 20000",
-		-- "event guns2 .25 40000",
+		"event guns1 .25 20000",
+		"event guns2 .25 40000",
 		-- "event siren1 .33 50000",
-		-- "event wind .5 5000",
+		"event wind .5 5000",
 		--"event bombing1 .90 25000 600 24",
 		--"event bombing2 .90 25000 650 12",
 		-- "event barrage1 .45 30000 550 18",
@@ -260,8 +260,8 @@ if(true) then
 
 	-- bridge capture objective
 
-		"handler capper OnCapper",
-		"handler objective1 OnCapturing",
+		--"handler capper OnCapper",
+		--"handler objective1 OnCapturing",
 		
 		-- "area bridgecapture OnState 81802.47 3011808.50 11.94 1",
 		-- "area bridgecapture OnState 81796.75 3011808.50 11.94",
@@ -340,25 +340,30 @@ if(true) then
 		-- command categorynamealert namealert numberofsecondsbetweenrepeatalerts
 		-- numberofsecondsbetweenrepeatalerts 0= no limit, 1= onetime per scenario, unit measure is seconds 
 		
+		"alert onspawn onspawn.moveout -1",
+		"alert roundstop roundstop",
+		"alert victory1 victory1",
+		"alert victory2 victory2",
+		"alert playarea playarea 10",
+		
+		
+		
+		
+		
+		
 		-- HUD WAYPOINTERS
 
-		-- "waypoint.2.1.1 onspawn wp1 81624.87 3011364.45 8.56", 
-		-- "waypoint.1.1.1 onspawn wp2 82237.67 3012068.52 8.99", 
-		-- "waypoint.0.1.1 onspawn wp3 81799.70 3011794.20 17.52", 
-		-- "waypoint.0.1.1 onspawn wp4 82534.27 3011726.17 24.45", 
-		-- "waypoint.0.1.1 onspawn wp5 81074.97 3011869.38 31.82", 
+		"waypoint.2.1.1 onspawn gerspawn 43.99 -230.30 13", 
+		"waypoint.1.1.1 onspawn ukspawn -178.12 63.01 13", 
+		"waypoint.0.1.1 onspawn west -186.44 -75.58 13", 
+		"waypoint.0.1.1 onspawn east -6.77 -62.47 13", 
+ 
 		
 		
-		-- "alert onspawn onspawn.moveout -1",
-		--"alert roundstop roundstop",
-		-- "alert victory1 victory1",
-		-- "alert victory2 victory2",
-		--"alert playarea playarea 10",
-		--"alert toaxisspawn toaxisspawn -1",
-		--"alert toalliedspawn toalliedspawn -1",
+
+
 		
-		
-		
+
 		
 		
 
