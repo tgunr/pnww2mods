@@ -35,7 +35,10 @@ vec4 filterdof()
         
         tap = mix(tapHigh, tapLow, tapBlur);
 
-        tap.a = tap.a >= centerDepth ? 1.0 : tapBlur;
+		tap.a = tapBlur;
+
+		if(tap.a >= centerDepth)
+			tap.a = 1.0;
 
         c.rgb += tap.rgb * tap.a;
         c.a += tap.a;
