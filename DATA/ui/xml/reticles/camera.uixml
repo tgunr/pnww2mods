@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <view id="camera_reticle" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" moveondrag="no" acceptmouseclick="false">
 	<include file="lib/common.uixml"/>
-	<image src="ui/textures/hud/ret02.bmp" x="0" y="0" width="150" height="150" style="color: #00000099;" onshow="centerView(this)" aspectlimit="width"/>
+	<image src="ui/textures/hud/ret02.bmp" x="0" y="0" width="100" height="100" style="color: #00000050;" onshow="centerView(this)" aspectlimit="width"/>
 </view>
 
