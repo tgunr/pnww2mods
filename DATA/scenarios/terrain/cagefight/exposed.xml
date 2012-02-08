@@ -112,8 +112,9 @@
 <!-- END value is relative distance from the player where fog ends -->
   
   <fogparams>
-    <start>-50.0</start>
-    <end>2000.0</end>
+    <start>100.0</start>
+    <end>400.0</end>
+	<fogcolor>160 160 160 0</fogcolor>
   </fogparams>
   
 <!-- THIS SECTION DEFINES THE MASKS USED FOR EACH TERRAIN TILE IN THE SCENARIO -->
