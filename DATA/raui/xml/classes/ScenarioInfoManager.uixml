@@ -1,0 +1,38 @@
+<script>
+
+	<include file="classes/ViewManager.uixml"/>
+	
+	<!--
+	
+	function ScenarioInfoManager(s)
+	{
+		var self = new ViewManager(s);
+				
+		self.SetScenario = function(content, instance)
+		{
+			if(content != null)
+			{
+				var v = this.view.findview("scenario-name");
+				if(v != null) v.label = content.name;
+				
+				v = this.view.findview("scenario-type");
+				if(v != null) v.label = "Deathmatch";
+				
+				v = this.view.findview("scenario-description");
+				if(v != null) v.text = content.brief;
+				
+				v = this.view.findview("scenario-image");
+				if(v != null) v.src = "scenarios/terrain/riverrun/map.bmp";
+			}
+			else
+			{
+				v = this.view.findview("scenario-image");
+				if(v != null) v.src = "scenarios/terrain/riverrun/map.bmp";
+			}
+		}
+		
+		return self;
+	}
+	
+	-->
+</script>

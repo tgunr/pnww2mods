@@ -1,0 +1,361 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd">
+<window id="scenarios/scenario" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
+	onshow="initWin()" onupdate="scenarioUpdate()" aspectalign="center">
+	<include file="lib/tutorial.uixml"/>
+	<include file="lib/scenarios.uixml"/>
+	<include file="lib/scenariodata.uixml"/>
+	<include file="widgets/template_ra.uixml"/>
+	<include file="classes/ListControl.uixml"/>
+	<include file="classes/TreeControl2.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+	<include file="classes/IntelFile.uixml"/>
+	<include file="classes/VehicleManager.uixml"/>
+	<include file="classes/VehicleClass.uixml"/>
+	<include file="classes/ViewBuilder.uixml"/>
+	<include file="classes/TextBuilder.uixml"/>
+	<include file="classes/ImageBuilder.uixml"/>
+	<include file="classes/RowBuilder.uixml"/>
+	<!-- image id="team-flag" x="50" width="100" height="100" rtop="10" style="color: #FFFFFF"/ -->
+	<tabview id="body" x="43" y="140" width="930" height="450" ontab="doBodyTab()" style="color: #BFE2CE;
+						background-color: #000000BB; 
+						border-top-corner: ui/textures/test/body_ul.bmp;
+						border-bottom-corner: ui/textures/test/body_br.bmp;
+						border-sides: ui/textures/test/body_sides.bmp;
+						border-top: ui/textures/test/body_top.bmp;
+						border-bottom: ui/textures/test/body_bottom.bmp;
+						control-on-endcap:  ui/textures/test/body_tab_cap_on.bmp;
+						control-on-back:  ui/textures/test/body_tab_filler_on.bmp;
+						control-off-endcap: ui/textures/test/body_tab_cap.bmp;
+						control-off-back: ui/textures/test/body_tab_filler.bmp;
+						control-on-color: #FFFFCE;
+						border-width: 16;
+						border-height: 16;">
+		<tab label="  &combat.ready;  " x="0" y="0" width="930" height="460"
+			onshow='setHelp(getlocstring("combat.help")); tplTab()'>
+			
+			<view id="left-pane" x="18" y="23" width="444" height="411">
+				<tabview id="selection-tab" x="0" y="0" rright="0" rtop="0">
+					<tab x="0" y="0" rright="0" rtop="0" showtab='false'>
+						<view id="members-block" x="10" width="425" height="380" rtop="12">
+							<caption id="players-header" x="0" height="20" width="400" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
+							<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="12"/>
+							<list id="memberList" x="0" y="20" rtop="40" rright="0">
+								<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+							</list>
+						</view>
+						<view x="0" y="0" height="35" rright="0">
+							<button id="team-button" label="CHANGE TEAM" x="20" y="0" height="30" width="100"
+								style="control-on: ui/textures/test/gen_button_on.bmp;
+									control-off: ui/textures/test/gen_button_off.bmp;
+									control-disabled: ui/textures/test/gen_button_disabled.bmp;
+									font-size: -3;
+									color: #FFFFFF;"
+								onclick="switchSides(); soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+							<button id="show-button" label="CHANGE WEAPON" y="0" height="30" width="100" rright="20"
+								onshow="centerViewX(this)"
+								style="control-on: ui/textures/test/gen_button_on.bmp;
+									control-off: ui/textures/test/gen_button_off.bmp;
+									control-disabled: ui/textures/test/gen_button_disabled.bmp;
+									font-size: -3;
+									color: #FFFFFF;"
+								onclick="selections.value = 1; soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+							<button id="fight-button" label="FIGHT" y="0" height="30" width="100" rright="20"
+								style="control-on: ui/textures/test/gen_button_on.bmp;
+									control-off: ui/textures/test/gen_button_off.bmp;
+									control-disabled: ui/textures/test/gen_button_disabled.bmp;
+									font-size: -3;
+									color: #FFFFFF;"
+								onclick="doForward(); soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+						</view>
+					</tab>
+					<tab x="0" y="0" rright="0" rtop="0" showtab='false'>
+						<view x="10" width="425" height="400" rtop="12">
+							<caption id="forces-header" x="0" height="20" width="425" rtop="0" style="font-size: +2; color: #BFE2CE; tooltip: widgets/tooltips/supplytip.uixml;"/>
+							<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
+							<view x="0" width="425" height="15" rtop="22">
+								<caption x="0" y="0" height="15" rright="0" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="UNITS"/>
+							</view>
+							<list id="spawnTree" x="0" width="425" height="300" rtop="40" onselect="spawnTree.clickTree(false)" ondblselect="spawnTree.clickTree(true)"/>
+						</view>
+						<view x="0" y="0" height="35" rright="0">
+							<button id="team-button" label="CHANGE TEAM" x="30" y="0" height="30" width="100"
+								style="control-on: ui/textures/test/gen_button_on.bmp;
+									control-off: ui/textures/test/gen_button_off.bmp;
+									control-disabled: ui/textures/test/gen_button_disabled.bmp;
+									font-size: -3;
+									color: #FFFFFF;"
+								onclick="switchSides(); soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+							<button id="select-button" label="SELECT WEAPON" y="0" height="30" width="100" rright="30"
+								style="control-on: ui/textures/test/gen_button_on.bmp;
+									control-off: ui/textures/test/gen_button_off.bmp;
+									control-disabled: ui/textures/test/gen_button_disabled.bmp;
+									font-size: -3;
+									color: #FFFFFF;"
+								onclick="selectSpawnable(true); soundPlayClick()" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+						</view>
+					</tab>
+				</tabview>
+			</view>
+			<include file="widgets/divider.uixml"/>
+			<view id="right-pane" x="468" y="23" width="444" height="411">
+				<!-- right pane -->
+				<caption id="scenario-name" label="UNKNOWN" x="10" height="20" rright="10" rtop="12"
+						style="font-size: +2; color: #BFE2CE; tooltip: widgets/tooltips/supplytip.uixml;"/>
+				<image src="ui/textures/test/horiz_underline.bmp" x="10" rright="10" height="12" rtop="22"/>
+				<view id="mission-map" class="mapview" acceptsfocus="no" minscale=".01" maxscale=".1" scale=".05"
+					x="5" y="5" rright="5" rtop="40" sx="0" sy="0"
+					onload="if(!this.mgr) new MapManager(this, true)" onshow="this.mgr.onShow()" 
+					onupdate="this.mgr.onUpdate()" onclick="this.mgr.onClick()" ondblclick="this.mgr.onDblClick()"
+					ondrag="this.mgr.onDrag()" onmouseenter="this.mgr.onMouseEnter()" onmouseexit="this.mgr.onMouseExit()"
+					onrightclick="this.mgr.onRightClick()"
+					style="tooltip: widgets/tooltips/maptip.uixml; background-color: #00000088;">
+					<layer type="texture" id="default-64-tex" minscale="0" maxscale="64" enabled="true" orign="-26x210" rowcolsize="1x1" cellsize="64x64"/>
+					<layer type="icon" id="icons" minscale="1" maxscale="8" enabled="true"/>
+					<layer type="icon" id="rendered" minscale="0" maxscale="1" enabled="true"/>
+					<layer type="scenario" id="scenmap" minscale="0" maxscale="2" enabled="true"/>
+					<!-- layer type="terrainobj" id="terrainobj" minscale="0" maxscale=".5" enabled="true"/ -->
+					<layer type="players" minscale="0" maxscale="20" />
+				</view>				
+			</view>
+		</tab>
+		<include file="widgets/globals/settings.uixml"/>
+	</tabview>
+	<!--
+	<include file="widgets/infobar.uixml"/>
+	-->
+	<script>
+		<!--
+		
+		game.consoleprint(">>> STARTING COMBAT PAGE\n");
+		
+		var client 				= game.player.client;
+		var theatreMap	= findview("mapview");
+		var buttonTimer	= new CycleTimer(1000);
+		var listTimer			= new CycleTimer(1000);
+		var selections		= findview("selection-tab");
+		var showButton	= findview("show-button");
+		var descView		= findview("scenario-description");
+		var nameView		= findview("scenario-name");
+		var scenario			= game.globals.scenario;
+		
+		var spawnTree 			= new TreeControl("spawnTree", selectSpawnable, formatSpawnable, isSelectable);
+		var memberList 			= new ListControl(findview("memberList"));
+		
+		var flagPath			= "";
+		var fightBtn			= findview("fight-button");
+		var selectBtn		= findview("select-button");
+		
+		/***************** COMMON FUNCTIONS *******************/
+		
+		function doBack()
+		{
+			joinLobby();
+		}
+		
+		function doForward()
+		{
+			if(game.scenariocomplete || scenario.instance == null)// || !scenario.instance.running)
+			{
+				showOk("Bad scenario state!");
+				return;
+			}
+			
+			if(!canScenarioSpawn(scenario))
+			{
+				showOk("Waiting for more players to join!");
+				return;
+			}
+			
+			var index = game.globals.scenariovehicle;
+				
+			if(index != null)
+			{
+				var vehicle = vehicles[index];
+				
+				// this call
+				//forwardTimer.reset();
+				//forwardTimer.enabled = true;
+				
+				if(vehicle.spawnable == "spawnable")
+					game.spawn(vehicle.type);
+				else
+					showOk(vehicle.spawnable);
+			}
+			else
+			{
+				showOk("Vehicle not selected!");
+			}
+		}
+		
+		function initWin()
+		{
+			//game.consoleclear();
+			
+			var ok = game.findview("ok");
+			if(ok != null) ok.close();
+			
+			var chat = game.findview("chat");
+			if(chat != null)
+			{
+				chat.x = window.width/2 - chat.width/2;
+				chat.y = 10;
+			}
+			
+			flagPath = scenarioFlag(client.persona.country.id);
+			
+			showIDCard(false);
+			showChat(true);
+			
+			setHelp(getlocstring('scenario.help'));
+			setBack('scenario.back');
+			setForward('scenario.forward');
+			forwardButton.visible = false;
+			
+			// setup our scenario
+			initMissionMembers();
+			initSpawnables();
+			
+			game.player.client.onspawnerror = onSpawnDenied;
+			
+			quickhelp();
+			
+			setPlayersHeader();
+			setForcesHeader();
+			initMemberHeaders(findview("members-block"));
+			
+			// get our scenario state
+			scenario.instance = getScenarioState();
+			scenario.objectives = loadObjectives(scenario);
+			
+			/*
+			if(scenario.objectives)
+				descView.text = scenario.objectives.brief;
+			else
+				descView.text = scenario.brief;
+			*/
+				
+			nameView.text = scenario.title.toUpperCase();
+			
+			if(game.globals.scenariovehicle == null)
+				selections.value = 1;
+			
+			//flagView.src = flagPath;
+		}
+		
+		function onSpawnDenied(code)
+		{
+			consoleprint("Processing Spawn Denied Code: " + code + "\n");
+			
+			if(code == null)
+				code = "";
+			
+			showOk(getlocstring('mission.spawn.denied' + code));
+		}
+		
+		function scenarioUpdate()
+		{
+			if(game.scenariocomplete)
+			{
+				fightBtn.enabled = false;
+				joinLobby();
+				return;
+			}
+			
+			// rebuild our spawn list
+			if(listTimer.run() && doMemberUpdate)
+			{
+				initMissionMembers();
+				initSpawnables();
+				
+				// update our scenario state
+				scenario.instance = getScenarioState();
+				
+				doMemberUpdate = false;
+			}
+			
+			if(buttonTimer.run())
+			{
+				fightBtn.enabled = canScenarioSpawn(scenario);
+				
+				var node = spawnTree.selectedNode();
+				
+				if(node != null && !node.branch)
+					selectBtn.enabled = true;
+				else
+					selectBtn.enabled = false;
+			}
+		}
+		
+		function setForcesHeader()
+		{
+			var header 	= findview("forces-header");
+			var side 		= client.persona.country.side;  
+			
+			header.label = (side == 1) ? "ALLIED FORCES" : "AXIS FORCES" ;
+			header.label +=  " - #" + client.instance.id ;
+		}
+		
+		function setPlayersHeader()
+		{
+			var header 	= findview("players-header");
+			header.label = "PLAYERS" ;
+			header.label +=  " - #" + client.instance.id ;
+		}
+				
+		function switchSides()
+		{
+			// make sure we have an instance assigned
+			scenario.instance = game.player.client.instance;
+			
+			if(switchTeams(scenario))
+			{
+				game.globals.scenariovehicle = null;
+				loadWin("scenarios/scenario", true);
+			}
+		}
+		
+		function toggleSelection()
+		{
+			if(selections.value == 0)
+				selections.value = 1;
+			else
+				selections.value = 0;
+			
+			 setForcesHeader();
+		}
+		
+		function selectSpawnable(action)
+		{
+			var node = spawnTree.selectedNode();
+			
+			if(node != null && !node.branch)
+			{
+				if(action)
+				{
+					var index = spawnTree.selectedData();
+					
+					if(index != null)
+					{
+						var vehicle = vehicles[index];
+						
+						// this call
+						if(vehicle.spawnable == "spawnable")
+						{
+							selections.value = 0;
+							game.globals.scenariovehicle = index;
+							game.setplayerdata("weapon", vehicle.type.weapkey);
+							game.setplayerdata("ready", "true");
+						}
+						else
+						{
+							showOk(vehicle.spawnable);
+						}
+					}
+				}
+			}
+		}
+		
+		-->
+	</script>
+</window>

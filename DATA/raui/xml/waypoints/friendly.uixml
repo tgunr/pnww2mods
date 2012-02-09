@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE uixml SYSTEM "loc://ui.dtd"> 
+<view id="hud-scenario" class="target" x="0" y="0" width="1024" height="768" layer="-10" acceptsmouse='false'
+	onshow="hudWPInit(this, 'friendlycolor')" acceptsmouseclick='false'>
+	<include file="lib/hudwp.uixml"/>
+	<include file="lib/scenariowp.uixml"/>
+	<view x="0" y="0" height="20" width="200" acceptsmouseclick='false'>
+		<view id="bullet" x="97" y="12" height="5" width="5" acceptsmouseclick='false' style="background-color: #FF0000;"/>
+		<text id="display" x="105" y="10" height="10" rright="0" acceptsmouseclick='false' style="color: #FFFFFF88;"/>
+		<text id="distance" x="105" y="0" height="10" rright="0" acceptsmouseclick='false' style="color: #FFFFFF88;"/>
+	</view>
+</view>
+

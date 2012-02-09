@@ -1,0 +1,232 @@
+<script>
+	<!--
+	
+	function BuildingInfo(v)
+	{
+		// base class
+		this.view 		= v;
+		this.title		= v.findview("title");
+		this.vcr 		= v.findview("vcr");
+		this.vcrIcon	= this.vcr.findview("vcr-icon");
+		this.details	= v.findview("details");
+		this.friendly 	= v.findview("friendly");
+		this.enemy 		= v.findview("enemy");
+		this.bars		= v.findview("bars");
+		this.callback	= null;
+		
+		// methods
+		this.update = function()
+		{
+			var title		= "";
+			var details		= "";
+			var state		= null;
+			var le 			= game.lastentered;
+			var fac			= (le != null) ? le.parent : null;
+			var cp 			= game.player.nearestcp;
+			var buffer 		= 2000;
+			
+			this.view.visible = false;
+			
+			//cprint("BInfo Update...cp is " + game.player.capturezone + "\n");
+			
+			if(game.player.capturezone && fac != null)
+			{
+				//cprint("Capture zone\n");
+				
+				state = this.facState(fac);
+				
+				this.view.visible 		= true;
+				this.title.text 		= fac.name;
+				this.friendly.visible 	= false;
+				this.enemy.visible 		= false;
+				this.vcr.visible		= false;
+				
+				var ally				= this.isFriendly(fac);
+				var vcrX				= 0;
+				
+				if(state != null && state.valid && state.capturable && state.progress > 0 && state.progress < 100)
+				{
+					//cprint("Capping");
+					var progress = (state.progress / 100) * this.bars.width;
+					var oprogress = this.bars.width - progress;
+					
+					this.friendly.visible 	= true;
+					this.enemy.visible 		= true;
+					
+					if(!ally) // we're capping
+					{
+						this.friendly.width = progress;
+						this.enemy.x = progress;
+						this.enemy.width = oprogress;
+						vcrX = progress;
+					}
+					else
+					{
+						this.friendly.width = oprogress;
+						this.enemy.x = oprogress;
+						this.enemy.width = progress;
+						vcrX = oprogress;
+					}
+				}
+				else
+				{
+					//cprint("Showing");
+					
+					if(ally)
+					{
+						this.friendly.visible 	= true;
+						this.enemy.visible 		= false;
+						this.friendly.width 	= this.bars.width;
+					}
+					else
+					{
+						this.friendly.visible 	= false;
+						this.enemy.visible 		= true;
+						this.enemy.x			= 0;
+						this.enemy.width 		= this.bars.width;
+					}
+				}
+				
+				this.details.text = this.facDetails(fac, state);
+				
+				if(state.rate != 0)
+				{
+					this.vcr.visible = true;
+					//this.vcr.text = (state.rate < 0) ? "<" : ">";
+					
+					if(state.rate < 0)
+					{
+						this.vcr.src = "ui/textures/BArrowCapIcon.dds";
+						this.vcr.setstyleproperty("color", settings.enemycolor);
+					}
+					else if(state.rate > 0)
+					{
+						this.vcr.src = "ui/textures/FArrowCapIcon.dds";
+						this.vcr.setstyleproperty("color", settings.friendlycolor);
+					}
+					
+					this.vcr.x = this.bars.x + vcrX - (this.vcr.width/2);
+					this.vcr.y = this.bars.y + (this.bars.height/2) - (this.vcr.height/2);
+				}
+			}
+		}
+		
+		this.isFriendly = function(strat)
+		{
+			var client = game.player.client;
+			
+			if(game.online && client && strat && strat.side == client.persona.side)
+				return true;
+			
+			return false;
+		}
+		
+		this.facState = function(fac)
+		{
+			if(!game.online)
+				return null;
+			
+			if(this.callback != null)
+				return this.callback(fac);
+			
+			return game.player.client.capturestate;
+		}
+		
+		this.facDetails = function(fac, state)
+		{
+			var friendly = this.isFriendly(fac);
+			
+			if(game.player.nofirezone)
+			{
+				return getlocstring('hud.binfo.state.nofire');
+			}
+			else if(!game.player.capturezone || state == null || !state.valid)
+			{
+				return getlocstring('hud.binfo.state.cantcapture');
+			}
+			else if(state.pending && state.pendingseconds > 0)
+			{
+				// format time better
+				if(state.pendingseconds < 60)
+				{
+					return getVariableLocString('hud.binfo.state.capturein.s', state.pendingseconds);
+				}
+				else
+				{
+					var mins = Math.floor(state.pendingseconds/60);
+					var secs = (state.pendingseconds % 60);
+					
+					return getVariableLocString('hud.binfo.state.capturein.m.s', mins, secs);
+				}
+			}
+			else if(state.capturable || (state.pending && state.pendingseconds == 0))
+			{
+				if(state.progress > 0 && state.progress < 100)
+				{
+					if(state.rate < 0 && friendly)
+						return getlocstring('hud.binfo.state.wedefend');
+					else if(state.rate > 0 && friendly)
+						return getlocstring('hud.binfo.state.theycapture');
+					else if(state.rate < 0 && !friendly)
+						return getlocstring('hud.binfo.state.theycapture');
+					else if(state.rate > 0 && !friendly)
+						return getlocstring('hud.binfo.state.wecapture');
+					else if(state.rate == 0)
+						return getlocstring('hud.binfo.state.contested');
+				}
+				
+				// Clarifying: If friendly-owned, enemy can capture. If enemy-owned, YOU can capture
+				if(friendly)
+					return getlocstring('hud.binfo.state.enemycancapture');
+				else
+					return getlocstring('hud.binfo.state.cancapture');
+			}
+			
+			// either AO not placed or mil fac and not contested
+			if(!friendly)
+			{
+				if(!fac.hasao)
+				{
+					return getlocstring('hud.binfo.state.noao');
+				}
+				else if(!fac.contested)
+				{
+					return getlocstring('hud.binfo.state.notcontested');
+				}
+			}
+			
+			return (client.persona.side == 1) ? getlocstring('hud.binfo.state.alliesown'): getlocstring('hud.binfo.state.axisown');
+		}
+		
+		this.latlon = function()
+		{
+			var pos		= game.player.position;
+			var lat 	= Math.abs(pos.lat);
+			var latdeg 	= Math.floor(lat);
+			var latmin 	= Math.floor((lat - latdeg) * 60);
+			var latsec 	= Math.floor((lat - (latdeg + latmin / 60.0)) * 3600);
+			
+			var lon 	= Math.abs(pos.lon);
+			var londeg 	= Math.floor(lon);
+			var lonmin 	= Math.floor((lon - londeg) * 60);
+			var lonsec 	= Math.floor((lon - (londeg + lonmin / 60.0)) * 3600);
+			
+			return latdeg + "." + latmin + "." + latsec + ((pos.lat > 0) ? "N":"S") + " " +
+				   londeg + "." + lonmin + "." + lonsec + ((pos.lon > 0) ? "E":"W");
+		}
+		
+		this.onEnter = function()
+		{
+		
+		}
+		
+		this.onLeave = function()
+		{
+		
+		}
+		
+		return this;
+	}
+	
+	-->
+</script>

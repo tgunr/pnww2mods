@@ -1,0 +1,181 @@
+<ra id="offline" manager="OfflineScreen">
+	<include file="classes/ListControl.uixml"/>
+	<include file="classes/DDListControl.uixml"/>
+	<include file="classes/TreeControl2.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+	<include file="classes/ViewBuilder.uixml"/>
+	<include file="classes/TextBuilder.uixml"/>
+	<include file="classes/ImageBuilder.uixml"/>
+	<include file="classes/RowBuilder.uixml"/>
+	<view id="mainpanel" x="10" height=".8" width=".48" rtop="30" style="class: bordered;">
+		<caption label="WEAPON LIST:" height="20" rtop="0" style="color: #FF0000;"/>
+		<treecontrol id="weapon-tree" pad="5" rtop="40" style="class: bordered;"/>
+	</view>
+	<view width=".48" height=".8" rright="10" rtop="30" style="class: bordered;">
+		<stackview id="info-view" pad="10" acceptmouseclick='false'>
+			<view acceptmouseclick='false'>
+				<text x="30" height="100" rtop=".2" onshow="this.text = getlocstring('offline.spawntab.selection.info')"/>
+			</view>
+			<view acceptmouseclick='false' onshow="showInfo(this)">
+				<view x="10" width="425" height="25" rtop="12">
+					<caption id="info-title" x="0" height="20" width="425" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
+					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
+				</view>
+				<text id="info-brief" x="30" rtop="80" width="260" height="200" acceptsfocus="no" style="color: #e9e3d9; font-size: +1;"/>
+				<image id="info-image" width="175" height="350" rright="10" rtop="50" style="border-color: #BFE2CE;" aspectlimit="width"/>
+			</view>
+			<view acceptmouseclick='false' onshow="showInfo(this)">
+				<view x="10" width="425" height="25" rtop="12">
+					<caption id="info-title" x="0" height="20" width="425" rtop="0" style="font-size: +2; color: #BFE2CE;"/>
+					<image x="0" src="ui/textures/test/horiz_underline.bmp" width="425" height="12" rtop="10"/>
+				</view>
+				<text id="info-brief" x="10" rtop="50" width="220" height="200" acceptsfocus="no" style="color: #e9e3d9; font-size: +1;"/>
+				<image id="info-image" width="200" height="150" rright="10" rtop="50" style="border-color: #BFE2CE;"/>
+			</view>
+		</stackview>
+	</view>
+	<navbar style="class: bordered; layout: vertical; vpad: 10;">
+		<button id="fight-button" label="    SPAWN" rright="0" onclick="this.mgr.Click(DoSpawn)" align="left"/>
+	</navbar>
+	<script>
+		<!--
+		
+		var weaponTree 	= findview("weapon-tree");
+		var infoView			= findview("info-view");
+		
+		function DoSpawn()
+		{
+			var weapon = weaponTree.control.selectedData();
+			
+			if(weapon != null)
+			{
+				weaponTree.control.saveState();
+				
+				if(game.spawn(weapon))
+				{
+					game.globals.selectedindex = weapon.index;
+					showChat(false);
+				}
+			}
+		}
+		
+		function OnShow(mgr)
+		{
+			game.consoleclear();
+			
+			cprint("Init win was called!");
+			
+			// set some callbacks
+			weaponTree.mgr.selectCallback = selectWeapon;
+			
+			initWeapons();
+		}
+		
+		function initWeapons()
+		{
+			var hasstate		= weaponTree.control.hasState(); 
+			var spawnables 	= game.spawnablevehicles;
+			var countries 		= new Array('US','UK','FR','DE');
+			
+			for(var c = 0; c < countries.length; c++)
+			{
+				var country = countries[c];
+				
+				var classNode		= null;
+				var countryNode 	= new TreeNode(country, null, 1, true, getlocstring("common.countries." + country.toLowerCase() + ".name"));
+				
+				for(var v = 0; v < spawnables.length; v++)
+				{
+					var vehicle = spawnables[v];
+					
+					consoleprint("Trying offline vehicle: " + vehicle.id + "\n");
+					
+					if(vehicle.country != null && vehicle.country.code == country)
+					{
+						consoleprint("Adding offline vehicle: " + vehicle.id + "\n");
+						
+						var badIDs = new RegExp("(skull|w154)", "gi");
+						
+						if(!vehicle.id.match(badIDs))
+						{
+							var classID = country + vehicle.vclassid;
+							
+							if(classNode == null || classNode.id != classID)
+							{
+								if(classNode != null)
+									countryNode.addNode(classNode);
+								
+								classNode = new TreeNode(classID, null, 2, true, vehicle.vclass);
+								
+								if(!hasstate && vehicle.vclassid == 9)
+									classNode.expand();
+							}
+							
+							classNode.addNode(new TreeNode(vehicle.index, vehicle, 3, false, vehicle.description));
+							
+							if(vehicle.index == game.globals.selectedindex)
+								weaponTree.control.selected = vehicle.index;
+							/*
+							else if(vehicle.id == "us-assault")
+								vehicleTree.selected = vehicle.index;\
+							*/
+						}
+					}
+				}
+				
+				if(classNode != null)
+					countryNode.addNode(classNode);
+				
+				weaponTree.control.addNode(countryNode);
+			}
+			
+			if(!weaponTree.control.loadState())
+				weaponTree.control.toggleNode("US", true);
+				
+			weaponTree.control.clickTree(false, game.globals.selectedindex);
+			weaponTree.control.drawTree();
+		}
+		
+		function selectWeapon(action)
+		{
+			infoView.value = 0;
+			
+			var weapon = weaponTree.control.selectedData(); 
+			
+			if(weapon != null)
+			{
+				infoView.value = (weapon.vclassid == 9 || weapon.vclassid == 14) ? 1: 2;
+				
+				if(action)
+					OnSpawn();
+			}
+		}
+		
+		function showInfo(viewer)
+		{
+			var weapon = weaponTree.control.selectedData();
+			
+			if(weapon != null)
+			{
+				var content = game.getcontent(getVehicleManual(weapon));
+				
+				if(content)
+				{
+					var infoTitle	= viewer.findview("info-title");
+					var infoBrief	= viewer.findview("info-brief");
+					var infoImage	= viewer.findview("info-image");
+					
+					infoTitle.label = content.title.toUpperCase();
+					infoBrief.text 	= content.brief;
+					infoImage.src 	= (weapon.vclassid == 9 || weapon.vclassid == 14) ? content.image: "ui/textures/vehicles/" + content.image + ".bmp";
+				}
+				else
+				{
+					infoView.value = 0;
+				}
+			}
+		}
+		
+		-->
+	</script>
+</ra>

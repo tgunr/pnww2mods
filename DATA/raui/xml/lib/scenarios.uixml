@@ -1,0 +1,366 @@
+<?xml version="1.0"?>
+<script>
+
+	<include file="classes/ScenarioPopulation.uixml"/>
+	
+	<!--
+	
+		var scenariosRoot = null;
+		var lastScenarioError = null;
+		var MAX_SIDE_PLAYERS = 64;
+		var balanceChecking = false;
+		
+		function loadRoot()
+		{
+			if(scenariosRoot == null)
+				scenariosRoot = game.getcontent("scenarios");
+			
+			return scenariosRoot; 
+		}
+		
+		function loadCategory(category)
+		{
+			//cprint("Loading category: " + category);
+			
+			var root = loadRoot();
+			if(root == null) return null;
+			
+			for(var i = 0; i < root.links.length; i++)
+			{
+				var link = root.links[i];
+				if(link == null) continue;
+				
+				var content = game.getcontent(link.path);
+				
+				if(content.category == category)
+					return content;
+			}
+			
+			return null;
+		}
+		
+		function loadScenario(category, map)
+		{
+			//cprint("Loading scenario: " + category + "/" + map);
+			
+			var content = loadCategory(category);
+			if(content == null) return null;
+			
+			if(map >= 0 && map < content.links.length)
+			{
+				var sc = game.getcontent(content.links[map].path);
+				
+				if(sc)
+				{
+					sc.type = map;
+					sc.population = new ScenarioPopulation(sc);
+				}
+				else
+				{
+					cprint("Couldnt load scenario!");
+				}
+				
+				return sc;
+			}
+			
+			return null;
+		}
+		
+		function loadObjectives(scenario, team)
+		{
+			if(scenario == null)
+				return null;
+			
+			if(team == null)
+				team = game.player.team;
+				
+			if(team < 1 || team > 2)
+				return null;
+			
+			if(scenario.links != null && scenario.links.length >= 2)
+				return game.getcontent(scenario.links[team - 1].path);
+				
+			return null;
+		}
+		
+		function joinLobby()
+		{
+			var hud = game.findview("hud");
+			if(hud != null) hud.close();
+			
+			// make sure no scenario is running
+			game.stopscenario();
+			
+			var root = loadRoot();
+			var client = game.player.client;
+			
+			if(game.online && client.instance.category != root.category)
+				client.joininstance(root.category, 0, 0, 0);
+			
+			// load our lobby windows 
+			loadWin("lobby", true);
+		}
+		
+		function joinInstance(instance, created, password)
+		{
+			if(instance == null)
+				return false;
+				
+			if(password == null)
+				password = "";
+			
+			var scenario = loadScenario(instance.category, instance.type);
+			
+			// start the scenario
+			if(!game.online || client.joininstance(instance.category, instance.type, instance.owner, instance.id, password))
+				return startScenario(scenario, created);
+			
+			return false;
+		}
+		
+		function createInstance(category, map, password)
+		{
+			//cprint("Creating new instance: " + category + "/" + map);
+			
+			var mapPack = loadCategory(category);
+			
+			if(mapPack != null && !scenarioPermission(mapPack.permission))
+				return scenarioError("notpermitted");
+			
+			if(!game.online || game.player.client.createinstance(category, map, password))
+				return true;
+			
+			return scenarioError("creationfailed");
+		}
+		
+		function startScenario(scenario, created)
+		{
+			if(scenario == null)
+				return false;
+			
+			// start the scenario
+			if(game.startscenario(scenario.path, created) && selectTeam())
+			{
+				// move to the scenario screen
+				loadWin("weapon", true);
+				
+				return true;
+			}
+			
+			return false;
+		}
+		
+		function selectTeam(team)
+		{
+			var client			= game.player.client;
+			var scenario		= client.scenario;
+			var instance		= client.instance;
+			var population 	= new ScenarioPopulation(scenario);
+			
+			if(scenario == null || instance == null)
+			{
+				if(scenario == null)
+					consoleprint("Cant select a team with a null scenario!");
+				
+				if(instance == null)
+					consoleprint("Cant select a team with a null instance!");
+					
+				return false;
+			}
+			
+			// find the best team
+			if(team == null)
+				team = 0;
+			
+			//var maxplayers	= population.maxPlayers();
+			var team1ratio 	= population.teamRatio(1);
+			var team2ratio 	= population.teamRatio(2);
+			var team1count 	= instance.team1;
+			var team2count 	= instance.team2;
+			var totalplayers	= team1count + team2count; 
+			
+			if(team == 0)
+			{
+				if(totalplayers == 0)
+					return selectTeam(1); // game.player.client.persona.country.side
+				
+				// find the team with the smallest imbalance
+				var pop1Ratio = team1count / totalplayers;
+				var pop2Ratio = team2count / totalplayers;
+				
+				var team1diff = (team1ratio - pop1Ratio);
+				var team2diff = (team2ratio - pop2Ratio);
+				
+				if(team1diff > team2diff)
+					return selectTeam(1);
+				else if(team2diff > team1diff)
+					return selectTeam(2);
+				else
+					return selectTeam((team1count < team2count) ? 1 : 2);
+			}
+			else if(team == 1)
+			{
+				if(balanceChecking && totalplayers > 0)
+				{
+					cprint("totalplayers is " + totalplayers);
+					cprint("team1ratio is " + team1ratio);
+					cprint("team1count is " + team1count);
+					cprint("team1max is " + population.team1max);
+					
+					if(team1count >= population.team1max)
+						return scenarioError("sidefull");
+					
+					var teamratio = team1count / totalplayers;
+					
+					if(teamratio == 0)
+						teamratio = team1ratio;
+					
+					//cprint("team1diff is " + team1diff);
+					cprint("teamratio is " + teamratio);
+					cprint("allowance is " + population.allowance);
+					
+					if(team1ratio < teamratio - population.allowance || team1ratio > teamratio + population.allowance)
+						return scenarioError("sideimbalance");
+				}
+			}
+			else
+			{
+				if(balanceChecking && totalplayers > 0)
+				{
+					cprint("totalplayers is " + totalplayers);
+					cprint("team2ratio is " + team2ratio);
+					cprint("team2count is " + team2count);
+					cprint("team2max is " + population.team2max);
+					
+					if(team2count >= this.team2max)
+						return scenarioError("sidefull");
+					
+					var teamRatio = team2count / totalplayers;
+					
+					if(teamratio == 0)
+						teamratio = team2ratio;
+					
+					cprint("teamratio is " + teamRatio);
+					cprint("allowance is " + population.allowance);
+					
+					if(team2ratio < teamratio - population.allowance || team2ratio > teamratio + population.allowance)
+						return scenarioError("sideimbalance");
+				}
+			}
+			
+			// my new team
+			if(team != game.player.team)
+				game.player.team = team;
+			
+			return true;
+		}
+		
+		function switchTeams()
+		{
+			return selectTeam((game.player.team == 1) ? 2 : 1);
+		}
+		
+		// potentially expensive call, don't use it to often (calls across network and blocks)
+		function getScenarioState(instance)
+		{
+			if(!game.online)
+				return null;
+				
+			if(instance == null)
+				instance = game.player.client.instance;
+			
+			if(game.player.client.listinstances(instance.category, instance.type, instance.owner))
+			{
+				var instances = client.instances;
+				
+				for(var i = 0; i < instances.length; i++)
+				{
+					var state = instances[i];
+					
+					if(state.description.id == instance.id)
+						return state;
+				}
+			}
+			
+			return null;
+		}
+		
+		function canJoinInstance(scenario, instance)
+		{
+			if(!balanceChecking)
+				return true;
+			
+			if(scenario == null || instance == null)
+				return scenarioError("badscenario");
+			
+			var category = loadCategory(instance.category);
+			
+			if(category != null && !scenarioPermission(category.permission))
+				return scenarioError("notpermitted");
+				
+			if(scenario.population == null)
+				scenario.population = new ScenarioPopulation(scenario);
+			
+			var maxplayers	= scenario.population.maxPlayers();
+			var team1count	= instance.team1;
+			var team2count	= instance.team2;
+			
+			if(team1count + team2count >= maxplayers)
+				return scenarioError("fullscenario");
+			
+			return true;
+		}
+		
+		function canScenarioSpawn(scenario)
+		{
+			if(!balanceChecking)
+				return true;
+			
+			if(scenario == null || scenario.instance == null)// || !scenario.instance.running)
+				return false; //scenarioError("badscenario");
+			
+			var team1min = scenario.population.team1min;
+			var team2min = scenario.population.team2min;
+			
+			var team1ready = game.scenariostate.ready1;
+			var team2ready = game.scenariostate.ready2;
+			
+			//cprint("Found " + team1count + " of " + team1min + " allied players!");
+			//cprint("Found " + team2count + " of " + team2min + " axis players!");
+			
+			if(team1ready < team1min || team2ready < team2min)
+				return false; //scenarioError("moreplayers");
+			
+			return true;
+		}
+		
+		function scenarioPermission(p)
+		{
+			// if no permission passed, allow access
+			if(p == null || p == "")
+				return true;
+			
+			// otherwise check access 
+			return game.haspermission(p);
+		}
+		
+		function scenarioError(code)
+		{
+				lastScenarioError = "scenarios." + code;
+				return false;
+		}
+		
+		function scenarioFlag(team)
+		{
+			switch(team)
+			{
+				case 1: return "ui/textures/test/american_flag.bmp"; break;
+				case 2: return "ui/textures/test/german_flag.bmp"; break;
+			}
+			
+			return "ui/textures/test/french_flag.bmp";
+		}
+		
+	-->
+</script>
+

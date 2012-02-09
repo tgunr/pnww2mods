@@ -1,0 +1,1106 @@
+<?xml version="1.0"?>
+<script>
+	
+	<include file="lib/common.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+	<include file="classes/Tutorial.uixml"/>
+		
+	<!--
+		
+		var tutLanguage		= game.settings.language;
+		var tutName			= "";	// tutorial name
+		var tutGoal			= 0; 	// current goal
+		var tutStep			= 0; 	// current step
+		var tutContent		= null;
+		var tutGoals		= new Array();
+		var tutAlerts		= new Array();
+		var tutCallbacks	= new Object();
+		var tutTimer		= new CycleTimer(100);
+		var tutPopup		= null;
+		var tutHilite		= "";
+		var tutWaypoints	= new Object();
+		var tutDelay		= 250;
+		var tutLastReady	= false;
+		var tutCache		= new Object();
+		var tutCamEvent		= null;
+		var tutAlertCursor	= -1;
+		
+		// ok
+		function TutSetName(n, g, s)
+		{
+			tutName = n;
+			TutSetContent();
+			TutAddGoal(g, s);
+		}
+		
+		// ok
+		function TutGroup(content)
+		{
+			cassert((content != null), "NULL content");
+			
+			if(content != null && content.handler != null)
+			{
+				var parts = content.handler.split(".");
+				return parts[0];
+			}
+			
+			return "";
+		}
+		
+		// ok
+		function TutIsGroup(content)
+		{
+			cassert((content != null), "NULL content");
+			return (content != null && parseInt(content.key) == 0) ? true: false;
+		}
+		
+		// ok
+		function TutSetCompleted(t, complete)
+		{
+			var content = (t != null && typeof(t) == "string") ? TutGetContent(t, true): t;
+			
+			cassert((content != null), "NULL content");
+			
+			if(content != null)
+			{
+				cprint("Set Complete " + content.title + " to " + complete +"\n");
+				
+				var group = TutGroup(content);
+				
+				if(group != "" && !isNaN(content.key))
+				{
+					var state = (complete == null || complete == true);
+					game.settutorialcompleted(group, content.key, state);
+				}
+			}
+		}
+		
+		// ok
+		function TutIsComplete(t)
+		{
+			var content = (t != null && typeof(t) == "string") ? TutGetContent(t, true): t;
+			
+			cassert((content != null), "NULL content");
+			
+			if(content != null)
+			{
+				if(content.graduate == null || content.graduate != "false")
+				{
+					//cprint("Is Complete " + content.title + "\n");
+					
+					var group = TutGroup(content);
+					
+					if(group != "" && !isNaN(content.key))
+					{
+						return game.tutorialcompleted(group, content.key);
+					}
+					else
+					{
+						cprint("Bad completion info: group = " + group + ", key = " + content.key); 
+					}
+				}
+			}
+			
+			return false;
+		}
+		
+		// ok
+		function TutContinue()
+		{
+			var alert = TutGetAlert();
+			
+			if(alert != null && alert.modal)
+			{
+				cprint("Expiring modal alert\n");
+				alert.SetExpired(500);
+			}
+			
+			cprint("Contining!!!\n");
+			TutCallback("oncontinue");
+		}
+		
+		// ok
+		function TutRunUpdate(force)
+		{
+			return (tutTimer.run() || force != null) ? true: false;
+		}
+		
+		// ok
+		function TutGetAlert()
+		{
+			return (tutAlertCursor >= 0 && tutAlertCursor < tutAlerts.length) ? tutAlerts[tutAlertCursor] : null;
+		}
+		
+		// ok
+		function TutUpdate(force)
+		{
+			if(TutRunUpdate(force))
+			{
+				TutCallback("onupdate");
+				
+				var alert = TutGetAlert();
+				
+				if(alert != null && alert.IsExpired())
+				{
+					cprint("Current alert has expired!\n");
+					alert.Expire();
+					alert = TutNextAlert();
+				}
+				
+				if(alert == null)
+				{
+					TutSetReady(true, "TutUpdate");
+				}
+				else if(tutCamEvent != null && tutCamEvent != "")
+				{
+					var parts = tutCamEvent.split(",");
+					
+					cprint("Found cam event: " + tutCamEvent + "\n");
+					
+					if(parts.length == 7)
+					{
+						cprint("Set cam and move\n");
+						// move the cam position
+						game.setcamera(parts[0], parts[1], parts[2]);
+						game.setcamera(parts[3], parts[4], parts[5], parts[6]);
+					}
+					else if(parts.length == 3)
+					{
+						cprint("Set cam\n");
+						// set the cam position
+						game.setcamera(parts[0], parts[1], parts[2]);
+					}
+					else if(tutCamEvent == "external")
+					{
+						cprint("External cam\n");
+						// make the camera go external
+						game.setcamera(1);
+					}
+					else if(tutCamEvent == "internal")
+					{
+						cprint("Internal cam\n");
+						// make the camera go internal
+						game.setcamera(0);
+					}
+					
+					tutCamEvent = null;
+				}
+				
+				return true;
+			}
+			
+			return false;
+		}
+		
+		// ok
+		function TutNextAlert()
+		{
+			tutAlertCursor++;
+			
+			cprint("Getting next alert " + tutAlertCursor + "\n");
+			
+			var alert = TutGetAlert();
+			
+			if(alert == null)
+			{
+				cprint("Next alert not found, checking for completion alert!\n");
+				alert = TutStepAddAlert(curStep.GetCompletionAlert());
+			}
+			
+			if(alert != null) 
+			{
+				cprint("Next alert found!\n");
+				
+				var curStep = TutFindStep(tutStep);
+				
+				if(!alert.modal && (curStep == null && curStep.IsComplete()))
+				{
+					cprint("Expiring non-modal alert because step is complete!\n");
+					alert.SetExpired(alert.GetDuration());
+				}
+				
+				TutCallback("addalert", alert);
+				
+				// save our came events
+				tutCamEvent = alert.camEvent;
+			}
+			
+			return alert;
+		}
+		
+		// ok
+		function TutComplete()
+		{
+			if(!TutCallback("tutcomplete"))
+			{
+				TutCallback("tutcompleted");
+				
+				if(tutContent != null)
+				{
+					TutSetCompleted(tutContent, true);
+					TutShowBrief(tutContent, TutDone, false);
+				}
+				else
+				{
+					showOk(getlocstring("tutorials.done"), TutDone);
+				}
+			}
+		}
+		
+		// ok
+		function TutCompleteGoal()
+		{
+			var curGoal = TutFindGoal(tutGoal);
+			
+			if(curGoal != null)
+			{
+				curGoal.Complete();
+				TutCallback("goalcomplete", curGoal);
+			}
+			
+			TutAddGoal();
+		}
+		
+		// maybe
+		function TutCompleteStep(g, s)
+		{
+			var curStep = TutFindStep(tutStep);
+			
+			if(curStep != null)
+			{
+				cprint("Start Completing Step " + tutStep  + "\n");
+				
+				curStep.Complete();
+				TutCallback("stepcomplete", curStep);
+				
+				cprint("End Completing Step " + tutStep  + "\n");
+			}
+			
+			var alert = TutGetAlert();
+			
+			// if we're waiting for the action to be completed
+			// move on to the next alert if there is one
+			if(alert != null && !alert.modal)
+			{
+				cprint("Expiring non-modal alert!\n");
+				alert.SetExpired(1000); // expire in 1 second
+			}
+			
+			//TutAddStep();
+		}
+		
+		function TutAddGoal(g, s)
+		{
+			if(g != null && !isNaN(g))
+			{
+				tutGoal = parseInt(g);
+				
+				if(tutGoal < 1)
+					tutGoal = 1;
+			}
+			else
+			{
+				tutGoal += 1;
+			}
+			
+			tutStep = 0;
+			
+			cprint("Adding New Goal " + tutGoal  + "\n");
+			
+			var newGoal = new TutorialGoal(tutName, tutGoal, TutGetLoc, TutSetHilite);
+			
+			cassert(newGoal.IsValid(), "Invalid Goal");
+			
+			if(newGoal.IsValid())
+			{
+				cprint("New Goal is valid");
+				
+				tutGoals.push(newGoal);
+				cprint("Total goals is now " + tutGoals.length);
+				
+				TutStepAddAlerts(newGoal.GetAlerts());
+				cprint("Add goal alerts");
+				
+				TutCallback("addgoal", newGoal);
+				cprint("Add goal callback called!");
+				
+				TutAddStep(s);
+				cprint("Added next step");
+			}
+		}
+		
+		function TutAddStep(s)
+		{
+			cprint("Adding step with " + s);
+			
+			if(s != null && !isNaN(s))
+			{
+				tutStep = parseInt(s);
+				
+				if(tutStep < 1)
+					tutStep = 1;
+			}
+			else
+			{
+				tutStep += 1;
+			}
+			
+			// reset alerts
+			tutAlerts 		= new Array();
+			tutAlertCursor 	= -1;
+			tutCamEvent 	= null;
+			
+			cprint("Start Adding New Step " + tutStep  + "\n");
+			
+			var newStep = new TutorialStep(tutName, tutGoal, tutStep, TutGetLoc, TutSetHilite);
+			
+			cassert(newStep.IsValid(), "Invalid Step");
+			
+			if(newStep.IsValid()) 
+			{
+				var curGoal = TutFindGoal(tutGoal);
+				
+				cassert((curGoal != null), "NULL Step Goal");
+				
+				if(curGoal != null)
+				{
+					curGoal.steps.push(newStep);
+					
+					// add any alerts
+					TutStepAddAlerts(newStep.GetAlerts());
+					
+					// start the next alert
+					TutNextAlert();
+					
+					// callback
+					TutCallback("addstep", newStep);
+				}
+			}
+			
+			cprint("End Adding New Step " + tutStep  + "\n");
+		}
+		
+		// ok
+		function TutFindGoal(g)
+		{
+			for(var i = 0; i < tutGoals.length; i++)
+			{
+				if(tutGoals[i].goal == g)
+					return tutGoals[i];
+			}
+			
+			return null;
+		}
+		
+		// ok
+		function TutFindStep(s)
+		{
+			var g = TutFindGoal(tutGoal);
+			
+			cassert((g != null), "NULL Goal");
+			
+			if(g != null)
+			{
+				for(var i = 0; i < g.steps.length; i++)
+				{
+					if(g.steps[i].step == s)
+						return g.steps[i];
+				}
+			}
+			
+			return null;
+		}
+		
+		// ok
+		function TutAddLocAlert(locKey, immediate)
+		{
+			var message = TutGetLoc(locKey, false);
+			if(message)
+			{
+				TutStepAddAlert(new TutorialAlert(locKey, message, TutSetHilite));
+				if(immediate == "true") TutUpdate(true);
+			}
+		}
+		
+		// ok
+		function TutAddLocMessage(locKey)
+		{
+			var message = TutGetLoc(locKey, true);
+			
+			if(message != null && message != "")
+				TutCallback("addmessage", message);
+		}
+		
+		// ok
+		function TutAddAlert(text, modal, hilite)
+		{
+			var message = new Object();
+			
+			message['text'] 	= text;
+			message['modal'] 	= (modal != null && modal == true) ? true: false;
+			message['hilite'] 	= hilite;
+			message['pause'] 	= false;
+			
+			TutStepAddAlert(new TutorialAlert("base", message, TutSetHilite));
+		}
+		
+		// needs work
+		function TutStepAddAlert(alert)
+		{
+			cassert((alert != null), "NULL alert");
+			
+			if(alert != null)
+			{
+				cprint("Adding alert " + alert.id);
+				tutAlerts.push(alert);
+			}
+			
+			return alert;
+		}
+
+		// ok
+		function TutStepAddAlerts(alerts)
+		{
+			cassert((alerts != null), "NULL alerts");
+			
+			for(var i = 0; i < alerts.length; i++)
+				TutStepAddAlert(alerts[i]);
+		}
+		
+		// ok
+		function TutAddCallback(name, callback)
+		{
+			cprint("Adding callback " + name + "\n");
+			tutCallbacks[name] = callback;
+		}
+		
+		// ok
+		function TutCallback(name, arg)
+		{
+			if(name != "onupdate")
+				cprint("Calling callback " + name + "\n");
+			
+			var callback = tutCallbacks[name];
+			
+			if(callback != null)
+			{
+				if(name != "onupdate")
+					cprint("Found callback " + cfunc(callback) + "\n");
+				
+				callback(arg);
+				return true;
+			}
+			
+			return false;
+		}
+		
+		// ok
+		function TutSetReady(ready, from)
+		{
+			if(ready && (tutAlertCursor >= 0 && tutAlertCursor < tutAlerts.length || tutPopup != null))
+			{
+				cprint("Tried to set UI ready to " + ready + " from  " + from + " but conditions failed!\n");
+				ready = false;
+			}
+			
+			game.tutorialevent(TUT_UI_READY, ready);
+			
+			if(tutLastReady != ready)
+			{
+				cprint("Setting UI ready to " + ready + " from  " + from + "\n");
+				tutLastReady = ready;
+			}
+		}
+		
+		// ok
+		function TutShowOK(message)
+		{
+			if(tutPopup != null)
+			{
+				tutPopup.close();
+				tutPopup = null;
+			}
+			
+			if(message != null && message != "")
+				tutPopup = showOk(getlocstring(message), TutShowPopupAction);
+		}
+		
+		// ok
+		function TutShowConfirm(message)
+		{
+			if(tutPopup != null)
+			{
+				tutPopup.close();
+				tutPopup = null;
+			}
+			
+			if(message != null && message != "")
+				tutPopup = showConfirm(getlocstring(message), TutShowPopupAction);
+		}
+		
+		// ok
+		function TutShowPopupAction(ok)
+		{
+			tutPopup = null; 
+		}
+		
+		// ok
+		function TutGetContentPath(name)
+		{
+			if(name == null || name == "")
+			{
+				cassert(false, "Bad content name");
+				return "";
+			}
+			
+			var path = name;
+			
+			if(path.indexOf('.') > 0)
+			{
+				path = path.replace(".", "/");
+				path = "tutorials/" + path + ".xml";
+			}
+			else
+			{
+				path = "tutorials/" + path;
+			}
+			
+			//cprint("Content Path Lookup: " + path); 
+			
+			return path;
+		}
+		
+		// ok
+		function TutSetContent()
+		{
+			tutContent = TutGetContent(tutName, true);
+			cassert((tutContent != null), "NULL content for " + tutName);
+		}
+		
+		// ok
+		function TutGetNextTutorial(id)
+		{
+			var content = TutGetContent(id, true);
+			
+			if(content != null)
+			{
+				if(TutIsComplete(content))
+				{
+					return TutGetNextTutorial(content.next);
+				}
+				else
+				{
+					var requires = TutGetNextRequirement(content.requires);
+					if(requires != null) return requires;
+				}
+			}
+			
+			return content;
+		}
+		
+		// ok
+		function TutGetNextRequirement(id)
+		{
+			var content = TutGetContent(id, true);
+			
+			if(content != null && !TutIsComplete(content))
+			{
+				var requires = TutGetNextRequirement(content.requires);
+				
+				if(requires != null)
+				{
+					return requires;
+				}
+				else if(TutIsGroup(content))
+				{
+					return TutGetNextTutorial(content.next);
+				}
+				else
+				{
+					return content;
+				}
+			}
+			
+			return null;
+		}
+		
+		// ok
+		function TutGetNextGroupRequirement(id)
+		{
+			var content = TutGetContent(id, true);
+			
+			if(content != null && !TutIsComplete(content))
+			{
+				var id 			= (content.key == 0) ? content.next: content.requires;
+				var requires 	= TutGetNextRequirement(id);
+				
+				return (requires != null) ? requires: content;
+			}
+			
+			return null;
+		}
+		
+		// ok
+		function TutDoNext(ok)
+		{
+			if(ok)
+			{
+				var content = TutGetNextTutorial(tutContent.next);
+				
+				if(content != null)
+					TutShowBrief(content, TutStart, true);
+				else
+					showOk(getlocstring("tutorials.badtutorial"), TutDespawn);
+			}
+			else
+			{
+				TutDespawn(true);
+			}
+		}
+		
+		// ok
+		function TutStart(content)
+		{
+			game.consoleclear();
+			game.globals.tutorial = null;
+			
+			if(content != null)
+			{
+				cprint("Starting tutorial " + content.title + "\n");
+
+				if(game.ingame || TutSetInstance(content.instance, content.instype, content.country, content.branch))
+				{
+					if(!game.ingame)
+					{
+						var trainWin 	= window.name;
+						var trainTab 	= 0;
+						var body 		= window.findview("body");
+						
+						if(body != null)
+							trainTab = body.value;
+						
+						var ui 		= (content.ui != null) ? game.load(content.ui): null;
+						var uiWin	= (ui != null) ? ui.name: trainWin;
+						var uiTab	= (ui != null) ? 0: trainTab;
+						
+						cprint("Tutorial custom UI is: " + content.ui + "\n");
+						
+						// start our tutorial
+						if(content.ui == null || ui != null)
+						{
+							cprint("Starting tutorial from lib!\n");
+							
+							var reset = (ui != null) ? false: true;
+							
+							if(game.starttutorial(content.handler, uiWin, uiTab, reset))
+							{
+								cprint("Tutorial started!\n");
+								
+								game.globals.tutorial = content;
+								game.globals.trainWin = trainWin;
+								game.globals.trainTab = trainTab;
+								
+								// let the custom ui take over from here
+								if(ui != null)
+								{
+									cprint("Starting custom tutorial UI: " + content.ui + "\n");
+									window.close();
+								}
+							}
+							else if(ui != null)
+							{
+								cprint("Tutorial start failed, closing custom UI\n");
+								ui.close();
+							}
+						}
+						else
+						{
+							cprint("Tutorial ui failed!\n");
+						}
+					}
+					else
+					{
+						if(game.starttutorial(content.handler))
+							game.globals.tutorial = content;
+					}
+				}
+				else
+				{
+					showOk(getlocstring("tutorials.start.failed.instance"));
+				}
+			}
+			else
+			{
+				cprint("Cant start a null tutorial!!!\n");
+			}
+		}	
+		
+		// ok
+		function TutDone(ok)
+		{
+			if(tutContent != null)
+			{
+				var content = TutGetNextTutorial(tutContent.next);
+				
+				if(content != null)
+					showConfirm(getVariableLocString("tutorials.donext", content.title), TutDoNext);
+				else
+					TutDespawn(true);
+			}
+			else
+			{
+				TutDespawn(true);
+			}
+		}
+		
+		// ok
+		function TutDespawn(ok)
+		{
+			if(ok && game.ingame)
+				game.load("exitvehicle");
+		}
+		
+		// ok
+		function TutShowBrief(content, callback, init)
+		{
+			// save the tutorial content on init
+			tutContent = content;
+			
+			// save the passed in callback
+			TutAddCallback("onbrief", callback);
+			
+			// show the popup
+			var popup = showPopup("tutbrief", tutContent.title, TutBriefCallback);
+			if(popup != null) popup.initContent(tutContent, init);
+		}
+		
+		// ok
+		function TutBriefCallback(ok)
+		{
+			if(ok) TutCallback("onbrief", tutContent);
+		}
+		
+		// ok
+		function TutGetLoc(locKey, stringOnly)
+		{
+			var input	= false;
+			var message	= new Object();
+			
+			message.text 	= tutContent.getloc(locKey);
+			message.hilite	= tutContent.getloc(locKey + ".hilite");
+			message.modal	= false;
+			message.pause	= false;
+			
+			if(message.text == null)
+			{
+				message.text = tutContent.getloc(locKey + ".modal");
+				
+				if(message.text != null)
+					message.modal = true;
+				
+				if(message.text == null)
+				{
+					message.text = tutContent.getloc(locKey + ".pause");
+					
+					if(message.text != null)
+						message.pause = true;
+				}
+			}
+			
+			if(message.text != null)
+			{
+				var regex 		= /\{([^\}]+)\}/;
+				var match 		= regex.exec(message.text);
+				var maxloops	= 5;
+				
+				while(match != null && match.length > 0)
+				{
+					if(!input)
+					{
+						game.initkeymaps();
+						input = true;
+					}
+					
+					var parts 	= match[1].split(".");
+					var control	= parts[0];
+					var keyname	= game.getkeymapkey(control);
+					
+					if(keyname == control)
+					{
+						if(parts.length == 2)
+						{
+							keyname = game.getkeymapkey(control, parseInt(parts[1]), -1);
+						}
+						else if(parts.length >= 3)
+						{
+							keyname = game.getkeymapkey(control, parseInt(parts[1]), parseInt(parts[2]));
+							
+							if(parts.length == 5) // used by axis
+							{
+								var keyname2 = game.getkeymapkey(control, parseInt(parts[3]), parseInt(parts[4]));
+								
+								if(keyname2 != control)
+									keyname += "/" + keyname2;
+							}
+
+						}
+					}
+					
+					var replace = "(" + keyname + ")";
+					
+					//cprint("Found input match: " + match.join('/') + '/' + replace + "\n");
+					
+					message.text 	= message.text.replace(match[0], replace);
+					match 			= regex.exec(message.text);
+					
+					maxloops -= 1;
+					
+					if(maxloops <= 0)
+						break;
+				}
+			}
+			else
+			{
+				message.text = "";
+			}
+			
+			if(input)
+				game.killkeymaps();
+			
+			if(stringOnly == true)
+				return message.text;
+			else
+				return (message.text != "") ? message: null;
+		}
+		
+		// ok
+		function TutSetHilite(description, view, callback)
+		{
+			var force = false;
+			
+			if(description != tutHilite || force == true)
+			{
+				var hiliter = window.findview("hilite");
+				
+				if(description != null && description != "")
+				{
+					cprint("New hilite: " + description + "\n");
+					if(hiliter == null)
+						hiliter = game.load("hilite", window);
+					
+					hiliter.hilite(description, view, callback);
+				}
+				else
+				{
+					cprint("Clearing hilite\n");
+					
+					if(hiliter != null)
+						hiliter.unhilite();
+				}
+			}
+			
+			tutHilite = description;
+		}
+		
+		// ok
+		function TutAddWaypoint(name, x, y, z)
+		{
+			cprint("Adding waypoint " + name + " 1\n");
+			
+			var waypoint = new Object();
+			
+			waypoint['name'] 	= name;
+			waypoint['x'] 		= x;
+			waypoint['y'] 		= y;
+			waypoint['z'] 		= z;
+			
+			tutWaypoints[name] = waypoint;
+			
+			cprint("Adding waypoint " + name + " 1.1\n");
+			
+			TutCallback("addwaypoint", name);
+		}
+		
+		// ok
+		function TutRemoveWaypoint(name)
+		{
+			TutCallback("removewaypoint", name);
+			tutWaypoints[name] = null;
+		}
+		
+		// ok
+		function TutCheckGraduation()
+		{
+			var graduation = true;
+			
+			var basic = TutGetContent("tutorials/basic");
+			if(basic == null) return false;
+			
+			var basics = basic.links;
+			
+			for(var i = 0; i < basics.length; i++)
+			{
+				var link = basics[i];
+				
+				if(link == null || link.type == "directory")
+					continue;
+				
+				var check = TutGetContent(link.path);
+				if(check == null) continue;
+				
+				// don't count the basic combat tutorial in the graduation check for china
+				if(game.region == 5 && check.handler == "basic.combat")
+					continue;
+				
+				if(!TutIsComplete(check))
+					graduation = false;
+			}
+			
+			cprint("Checking graduation\n");
+			if(graduation && !TutIsComplete(basic))
+			{
+				cprint("Graduated!!!\n");
+				showOk(getVariableLocString('tutorials.graduation', basic.title));
+				game.settings.setdecal = 8; // tell the host
+				game.settings.setdecal = 0; // reset it to 0 (doesn't go out to host if 0)
+				
+				// force a persona reload which should cause the decal to start showing to other players
+				game.player.client.requestpersonalist();
+			}
+			
+			TutSetCompleted(basic, graduation);
+			
+			return graduation;
+		}
+		
+		// ok
+		function TutSetInstance(instance, type, country, branch)
+		{
+			if(!game.online)
+				return false;
+			
+			if(isNaN(instance)) instance 	= 2;
+			if(isNaN(type)) 	type 		= 0;
+			if(isNaN(country))	country 	= -1;
+			if(isNaN(branch))	branch 		= -1;
+			
+			if(game.player.client.selectinstance(instance, type, country, branch))
+				return true;
+			
+			return false;
+		}
+		
+		// ok
+		function TutGetContent(path, isID)
+		{
+			if(path == "" || path == null)
+				return null;
+			
+			if(tutCache == null)
+				tutCache = new Object();
+			
+			if(isID == true)
+			{
+				//cprint("Content path is an id: " + path + "\n");
+				path = TutGetContentPath(path);
+				//cprint("Content path modified: " + path + "\n");
+			}
+			
+			if(tutLanguage != game.settings.language)
+			{
+				tutCache = new Object();
+				tutLanguage = game.settings.language;
+			}
+			
+			// convert path to valid property name
+			var key = path;//.replace(/(\\|\/)/, "_");
+			
+			//cprint("Checking content cache for key: " + key + "\n");
+			
+			if(tutCache[key] == null)
+			{
+				//cprint("Could not find key!\n");
+				var content = game.getcontent(path);
+				
+				cassert((content != null), "NULL content");
+				
+				if(content != null)
+				{
+					cprint("Content added to the cache!\n");
+					tutCache[key] = content;
+				}
+			}
+			
+			//cprint("Returning cached content!\n");
+			
+			return tutCache[key];
+			
+		}
+		
+		// ok
+		function TutGetStatus(t)
+		{
+			if(t != null && !isNaN(t.key))
+			{
+				if(t.checkstate == "true" && !game.player.client.state.cantrain)
+				{
+					return "slocked";
+				}
+				else if(TutIsComplete(t))
+				{
+					if(t.graduate == "false")
+						return "open";
+					else if(t.key == 0)
+						return "graduated";
+					else
+						return "complete";
+				}
+				else
+				{
+					var requires = TutGetContent(t.requires, true);
+					
+					if((requires == null || TutIsComplete(requires)) && (t.checkstate != "true" || game.player.client.state.cantrain))
+					{
+						return "open";
+					}
+					else
+					{
+						return "locked";
+					}
+				}
+			}	
+			
+			return "";
+		}
+		
+		// ok
+		function TutGetStatusColor(s)
+		{
+			if(s == "locked") 		return "#FF0000";
+			if(s == "slocked") 		return "#FF0000";
+			if(s == "open") 		return "#FFFF00";
+			if(s == "complete") 	return "#00FF00";
+			if(s == "graduated")	return "#00FF00";
+			return "#FFFFFF";
+		}
+		
+		// ok
+		function TutSetStatusView(tut, title, status)
+		{
+			var sname 	= TutGetStatus(tut);
+			var scolor	= TutGetStatusColor(sname);
+			var sloc	= (sname != "") ? getlocstring("tutorials." + sname): "";
+			
+			if(title)
+				title.label = (tut) ? tut.title: getlocstring("tutorials.none");
+			
+			if(status)
+			{
+				status.label = (sloc != "") ? sloc: getlocstring("tutorials.none");
+				status.setstyleproperty("color", scolor);
+			}
+		}
+		
+	-->
+</script>
+

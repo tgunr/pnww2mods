@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+ 
+<window id="bailout" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768" aspectalign="center"
+	style="background-color: #00000077;" layer="100" onshow="initBailoutPopup(this)" modal="true" onupdate="checkBailout()">
+	<include file="lib/popup.uixml"/>
+	<view x="350" y="400" width="350" height="100" style="background-color: #00000088; 
+							border-sides: ui/textures/hud/border_side.bmp;
+							border-corner: ui/textures/hud/border_corner.bmp;
+							border-width: 4;
+							border-height: 4;" moveondrag="yes">
+		<text id="popup-caption" x="10" y="40" height="50" width="330" acceptfocus="no" style=" color: #FFFFFF;"/>
+		<button id="popup-close" width="15" height="15" rtop="10" rright="10" onclick="doPopupClose()"
+			style="control-on: ui/textures/test/exit_on.bmp; control-off: ui/textures/test/exit_off.bmp;"
+			tip="${popup.quit}"/>
+		<button id="popup-no" x="20" y="10" width="150" height="25" label="${popup.cancel}" onclick="doBailoutAction(false)"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+		<button id="popup-yes" x="180" y="10" width="150" height="25" label="${popup.ok}" onclick="doBailoutAction(true)"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+	</view>
+	<script>
+		<!--
+		
+		var bailoutBtn		= window.findview("popup-yes");
+		var bailoutTimer 	= new CycleTimer(500);
+		var checkCount		= 0;
+		
+		function initBailoutPopup(win)
+		{
+			setPopupClose(false);
+			setPopupMessage(getlocstring("hud.bailout.confirm"));
+			//setPopupCursorState(true);
+			
+			game.cursor.visible = true;
+			game.cursor.x = window.width / 2;
+			game.cursor.y = window.height / 2;
+		}
+		
+		function doBailoutAction(confirm)
+		{
+			if(confirm)
+			{
+				soundPlayClick();
+				game.bailout();
+			}
+			
+			game.cursor.update(window.name);
+			doPopupFree();
+		}
+		
+		function checkBailout()
+		{
+			if(bailoutTimer.run())
+			{
+				bailoutBtn.enabled = game.canbail;
+				checkCount++;
+				
+				if(checkCount > 12) // about 6 seconds
+					doBailoutAction(false);
+			}
+		}
+		
+		// -->
+	</script>
+</window>

@@ -1,0 +1,144 @@
+<script>
+	<!--
+	
+	function CPInfo(v)
+	{
+		// base class
+		this.view 		= v;
+		this.title		= v.findview("title");
+		this.icon		= v.findview("icon");
+		this.details	= v.findview("details");
+		//this.vcr 		= v.findview("vcr");
+		//this.vcrIcon	= this.vcr.findview("vcr-icon");
+		this.friendly 	= v.findview("friendly");
+		this.enemy 		= v.findview("enemy");
+		this.none 		= v.findview("none");
+		//this.inside		= false;
+		
+		// methods
+		this.update = function()
+		{
+			var title		= "";
+			var details		= this.latlon();
+			var icon		= "ui/textures/StratCP.dds";
+			var state		= null;
+			var cp 			= game.player.nearestcp;
+			var buffer 		= 2000;
+			
+			this.friendly.visible 	= false;
+			this.enemy.visible 		= false;
+			this.none.visible 		= false;
+			
+			if(cp != null && cp.bbox.contains(game.player.position, buffer))
+			{
+				var ally 	= this.isFriendly(cp);
+				
+				title 		= cp.name;
+				icon 		= "ui/textures/StratCP.dds";
+				state		= this.cpState(cp);
+			}
+			else
+			{
+				title 				= getlocstring('hud.minimap.nearest.none');
+				icon 				= "ui/textures/NoCapIcon.dds";
+				this.none.visible 	= true;
+			}
+			
+			this.title.text 		= title;
+			this.details.text		= details;
+			this.icon.src			= icon;
+			
+			if(state != null)
+			{
+				var progress = this.friendly.parent;
+				
+				if(state.ally)
+				{
+					this.friendly.visible 	= true;
+					this.friendly.width 	= progress.width;
+					
+					if(state.progress > 0)
+					{
+						this.enemy.visible 	= true;
+						this.enemy.width 	= progress.width * state.progress;
+						this.enemy.x 		= progress.width - this.enemy.width;
+					}
+				}
+				else
+				{
+					this.enemy.visible 	= true;
+					this.enemy.width 	= progress.width;
+					this.enemy.x		= 0;
+					
+					if(state.progress > 0)
+					{
+						this.friendly.visible 	= true;
+						this.friendly.width 	= progress.width * state.progress;
+					}
+				}
+			}
+		}
+		
+		this.isFriendly = function(strat)
+		{
+			var client = game.player.client;
+			
+			if(game.online && client && strat && strat.side == client.persona.side)
+				return true;
+			
+			return false;
+		}
+		
+		this.cpState = function(cp)
+		{
+			if(!game.online)
+				return null;
+			
+			var state	= new Object();
+			var facs 	= cp.children;
+			var total 	= 0;
+			var enemy 	= 0;
+			
+			for(var i = 0; i < facs.length; i++)
+			{
+				var fac = facs[i];
+				
+				if(fac.stratclass == "facility" && fac.strattype != "firebase")
+				{
+					total++;
+					
+					if(fac.side != cp.side)
+						enemy++;
+				}
+			}
+			
+			state.valid				= true;
+			state.capturable		= (cp.canattack || cp.candefend);
+			state.ally				= this.isFriendly(cp);
+			state.progress 			= ((total > 0) ? enemy / total : 0);
+			
+			return state;
+		}
+		
+		this.latlon = function()
+		{
+			var pos		= game.player.position;
+			var lat 	= Math.abs(pos.lat);
+			var latdeg 	= Math.floor(lat);
+			var latmin 	= Math.floor((lat - latdeg) * 60);
+			var latsec 	= Math.floor((lat - (latdeg + latmin / 60.0)) * 3600);
+			
+			var lon 	= Math.abs(pos.lon);
+			var londeg 	= Math.floor(lon);
+			var lonmin 	= Math.floor((lon - londeg) * 60);
+			var lonsec 	= Math.floor((lon - (londeg + lonmin / 60.0)) * 3600);
+			
+			return latdeg + "." + latmin + "." + latsec + ((pos.lat > 0) ? "N":"S") + " " +
+				   londeg + "." + lonmin + "." + lonsec + ((pos.lon > 0) ? "E":"W");
+		}
+		
+		return this;
+	}
+	
+	-->
+</script>

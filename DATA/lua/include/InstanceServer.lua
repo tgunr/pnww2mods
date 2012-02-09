@@ -203,7 +203,9 @@ function sendServerData(id, data, ...)
 	if IsOnline() then
 		inst.SendData(tostring(id), tostring(data))
 	elseif IsClient() then
-		recvClientData(id, data)
+		-- client doesn't currently use the id, might in the future
+		-- recvClientData(id, data)
+		recvClientData(data)
 	end
 end
 

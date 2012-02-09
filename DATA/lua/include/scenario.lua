@@ -38,11 +38,8 @@ state.playeradds			= {}; -- updates that are incremental changes
 state.player					= {}; -- player state
 state.lastplayer			= {}; -- last player state
 
-if(not IsOnline()) then
-	-- message queues
-	scenario.toserver = {};
-	scenario.fromserver = {};
-end
+scenario.toserver 		= {};
+scenario.fromserver 	= {};
 
 -- circular reference; games that override the public interface will override this member as well
 -- must be careful not to get into an infinite loop
@@ -410,10 +407,10 @@ scenario.OnUpdate = function(handler)
 	--Instancing.report('F', ' =========== scenario.OnUpdate', "Updating at " .. tostring(ft))
 	
 	-- simulate network traffic
-	if(not online) then
+	-- if(not online) then
 		-- handle in incoming data from the server for the last frame
 		for k,v in pairs(scenario.fromserver) do
-			if(scenario.instance ~= nil and scenario.instance.id == v[1]) then
+			if(scenario.instance ~= nil) then --  and scenario.instance.id == v[1]
 				-- Instancing.report('D', "scenario.OnUpdate", "Receiving data: " v[2]);
 				if(Instancing.logit('D')) then
 					ui.ChatPrint("to client <-----------------");
@@ -423,13 +420,14 @@ scenario.OnUpdate = function(handler)
 			end
 		end
 		scenario.fromserver = {}
-	end
+	--end
 
 	-- get any new network events
 	if(scenario.instance ~= nil) then
 		-- handle any specific player state changes
 		for k,v in pairs(state.player) do
 			if(v ~= state.lastplayer[k]) then
+				-- ui.ChatPrint("Sending player state: " .. k .. "/" .. v);
 				-- remember the change
 				state.lastplayer[k] = v;
 				-- send up our updated player state value
@@ -649,6 +647,7 @@ end
 
 -- ok
 scenario.SetPlayerState = function(name, value)
+	-- ui.ChatPrint("Queuing player state: " .. name .. "/" .. value);
 	state.player[name] = value;
 end
 
@@ -956,9 +955,7 @@ function sendClientData(id, data)
 	end
 end
 
-function recvClientData(id, data)
-	-- Instancing.report('I','','');
-	if(scenario.instance ~= nil and scenario.instance.id == id) then
-		table.insert(scenario.fromserver, {id, data});
-	end
+function recvClientData(data)
+	-- Instancing.report('I', 'recvClientData', data);
+	table.insert(scenario.fromserver, {scenario.instance.id, data});
 end

@@ -1,0 +1,107 @@
+﻿<?xml version="1.0"?>
+
+<imecontrol id="ime" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" layer="999" modal="true" acceptsmouseclick="false"
+	onupdate="checkUI()">
+	<include file="lib/common.uixml"/>
+	<include file="classes/ListControl.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+	<caption id="description" x="5" height="15" rright="5" rtop="5" 
+		style="color: #BFE2CE; border-color: #3e5248; background-color: #000000DD;"/>
+	<view id="candidates" x="10" y="10" width="150" height="170" acceptsfocus="no"
+		style="color: #FFFFFF; background-color: #000000DD; border-color: #3e5248;">
+		<list id="clist" x="5" y="5" rright="5" rtop="5"/>
+	</view>
+	<text id="reading" x="5" height="15" width="130" rtop="5"
+		style="color: #BFE2CE; background-color: #000000DD; border-color: #3e5248;"/>
+	<script>
+	<!--
+	
+	var clist 		= new ListControl(findview("clist"));
+	var candidates 	= window.findview("candidates");
+	var description	= window.findview("description");
+	var reading		= window.findview("reading");
+	var check 		= new CycleTimer(100);
+	
+	function Update(type)
+	{
+		//consoleprint("New Update: " + type + "\n");
+		
+		if(type == "candidates")
+		{
+			initCandidates();
+		}
+		else if(type == "reading")
+		{
+			var text = window.getimeproperty("reading");
+			
+			//consoleprint("New Reading String is: " + text + "\n");
+			
+			if(text != null && text != "")
+			{
+				text = text.replace(/\s+/g, " ");
+				reading.text = text;
+				reading.resizetotext();
+				
+				if(reading.width < candidates.width)
+					reading.width = candidates.width;
+			}
+			else
+			{
+				reading.text = "";
+			}
+		}
+		else if(type == "description")
+		{
+			description.label = window.getimeproperty("description");
+			description.width = candidates.width;
+			reading.visible = false;
+		}
+	}
+	
+	function initCandidates()
+	{
+		var count 		= window.getimeproperty("candidates");
+		var selected 	= window.getimeproperty("selection");
+		var width 	 	= normalizeX(clist.getWidth());
+		
+		consoleprint("CList selection is " + selected + "\n");
+		consoleprint("CList count is " + count + "\n");
+		
+		clist.clearRows(false);
+		
+		if(count == 0)
+			return;
+		
+		for(var i = 0; i < count; i++)
+		{
+			//var bgcolor 	= (i == selected) ? "#3e5248BB": "#BFE2CE";
+			var position	= i + 1;
+			var label		= position + ". " + window.getimeproperty("candidate", i);
+			
+			var row 	= "\
+<view id='row" + i + "' width='" + (width - 12) + "' height='16'>\
+	<caption x='5' y='0' style='color: #FFFFFF;' label='" + label + "'/>\
+</view>";
+			
+			clist.addRow(i, row);
+		}
+		
+		clist.clickList(false, selected);
+		clist.postInit();
+	}
+	
+	function checkUI()
+	{
+		if(check.run())
+		{
+			if(reading.text != "" && !reading.visible)
+				reading.visible = true;
+			else if(reading.text == "" && reading.visible)
+				reading.visible = false;
+		}
+	}
+	
+	-->
+	</script>
+</imecontrol>
+

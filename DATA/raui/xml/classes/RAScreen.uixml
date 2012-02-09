@@ -1,0 +1,59 @@
+<script>
+
+	<include file="classes/ScreenManager.uixml"/>
+	<include file="lib/scenarios.uixml"/>
+	
+	<!--
+	
+	function RAScreen(s)
+	{
+		var self = new ScreenManager(s);
+		
+		game.consoleprint("Creating RAScreen for " + self.view.id);
+		
+		self.DoLobby = function(click)
+		{
+			if(click != false)
+				this.PlayClick();
+			
+			joinLobby();
+		}
+		
+		self.DoCreate = function(click)
+		{
+			if(click != false)
+				this.PlayClick();
+			
+			loadWin("create", true);
+		}
+		
+		self.DoWeapon = function(click)
+		{
+			if(click != false)
+				this.PlayClick();
+			
+			loadWin("weapon", true);
+		}
+		
+		self.DoTeam = function(click)
+		{
+			if(click != false)
+				this.PlayClick();
+			
+			if(switchTeams(game.globals.scenario))
+				loadWin("weapon", true);
+		}
+		
+		self.DoReadyRoom = function(click)
+		{
+			if(click != false)
+				this.PlayClick();
+			
+			loadWin("readyroom");
+		}
+		
+		return self;
+	}
+	
+	-->
+</script>

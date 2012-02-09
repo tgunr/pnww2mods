@@ -1,0 +1,52 @@
+<script>
+	<!--
+	
+	function MapLegend(widget)
+	{
+		// base class
+		var self = new MapControl(widget);
+		
+		// members
+		var list = widget.findview(widget.id + "-list");
+		
+		if(list)
+		{
+			list.clearrows();
+			
+			var index 		= game.getcontent("map/legend.xml");
+			var categories 	= index.links;
+			
+			for(var l = 0; l < categories.length; l++)
+			{
+				var category = categories[l];
+				/*
+				var header = "\
+<view width='128' height='10'>\
+	<caption x='0' y='0' width='128' height='9' style='color: #BFE2CE; font-size: -1;' label='" + category.title.toUpperCase() + "'/>\
+</view>";
+				
+				list.addrow(header, null);
+				*/
+				
+				var legend 	= game.getcontent(category.path);
+				var icons 	= legend.links; 
+				
+				for(var i = 0; i < icons.length; i++)
+				{
+					var icon 	= icons[i];
+					var row 	= "\
+<view width='128' height='20' aspectalign='left'>\
+	<caption x='5' y='2' width='100' height='15' style='color: #e9e3d9ff; font-size: -1;' label='" + icon.title + "'/>\
+	<caption class='mapkeyicon' x='100' y='0' width='20' height='20' icon='" + icon.path + "'/>\
+</view>";
+					
+					list.addrow(row, null);
+				}
+			}
+		}
+		
+		return self;
+	}
+	
+	-->
+</script>

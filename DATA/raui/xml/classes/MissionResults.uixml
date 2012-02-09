@@ -1,0 +1,137 @@
+<script>
+	<!--
+	
+	function MissionResults(results)
+	{
+		// members
+		var spawnedweapon 		= game.globals.spawnedweapon;
+		
+		if(spawnedweapon)
+		{
+			this.id 			= spawnedweapon.serial;
+			this.weapon			= spawnedweapon.description;
+			this.weaponindex	= spawnedweapon.index;
+		}
+		else
+		{
+			this.id 			= "n/a";
+			this.weapon			= "n/a";
+			this.weaponindex	= -1;
+		}
+
+		this.despawned			= new Date();
+		this.spawned			= new Date(this.despawned.getTime() - (results.elapsedtime * 1000));
+		this.tom				= Math.floor(results.elapsedtime / 60);
+		
+		this.elapsedtime 		= results.elapsedtime;
+		this.rtbcode 			= results.rtbcode;
+		this.rtbfac				= (results.rtbfac != null) ? results.rtbfac.name: "n/a";
+		this.reserved 			= (results.reservedweapon != null && results.reservedweapon.type != null) ? results.reservedweapon.type.description: "n/a";
+		this.rank 				= results.rank;
+		this.missionid			= results.missionid;
+		this.numkills 			= results.numkills;
+		this.numcaptures		= results.numcapevents;
+		this.numcapassists		= results.numcapassists;
+		this.promoted			= results.promoted;
+		this.mobilespawnees 	= results.mobilespawnees;
+
+		// new scoring attributes
+		this.unitshit			= 0;
+		this.aishit 			= results.aishit;
+		this.bridgeshit 		= results.bridgeshit;
+		this.bridgesrepaired 	= results.bridgesrepaired;
+		this.factorieshit 		= results.factorieshit;
+		this.firebaseshit 		= results.firebaseshit;
+		this.pointsscored 		= results.pointsscored;
+		this.pointsaccumulated 	= results.pointsaccumulated;
+		this.pointsnextrank 	= results.pointsnextrank;
+		this.nextrank			= (results.nextrank != null && results.nextrank != "") ? results.nextrank.name: null;
+		
+		this.killedby			= results.killedby;
+		this.capperkills		= results.capperkills;
+		this.guardingkills		= results.guardingkills;
+		this.guardingpoints		= results.guardingpoints;
+		
+		this.resupplies			= results.resupplies;
+		this.scoredresupplies	= results.scoredresupplies;
+		
+		consoleprint("Results Next rank is " + this.nextrank + "\n");
+
+		// is the mission stil valid, need to check
+		this.invalid			= results.missioninvalid;
+		
+		// this.success			= results.missionsuccess;
+		// this.originside		= results.originside;
+		// this.facilityside	= results.facilityside;
+		
+		var kills				= new Array();
+		var types				= results.typehit;
+		var hitcounts			= results.numhit;
+		var killcounts			= results.numkilled;
+		
+		for(var i = 0; i < types.length; i++)
+		{
+			var kill = new Object();
+			
+			kill["description"] 	= types[i].description;
+			kill["hits"] 			= hitcounts[i];
+			kill["kills"] 			= killcounts[i];
+
+			kills[kills.length] = kill;
+			
+			this.unitshit			+= hitcounts[i];
+		}
+		
+		this.kills = kills;
+		
+		// methods
+		this.rtb = 	function(full)
+		{
+			var rtb = "";
+			
+			switch(this.rtbcode)
+			{
+				case 0:
+					rtb = (full) ? getlocstring('classes.missionresults.rtb'): "RTB";
+					break;
+				case 1:
+					rtb = (full) ? getlocstring('classes.missionresults.res'): "RES";
+					break;
+				case 2:
+					rtb = (full) ? getlocstring('classes.missionresults.mia'): "MIA";
+					break;
+				case 3:
+					rtb = (full) ? getlocstring('classes.missionresults.kia'): "KIA";
+					break;
+			}
+			
+			return rtb;
+		}
+		
+		// constructor logic 
+		game.globals.spawnedweapon = null;
+	}
+	
+	MissionResults.formatTime = function(when)
+	{
+		var formatted = "";
+		
+		if(when)
+		{
+			var hours 	= when.getHours();
+			var minutes = when.getMinutes();
+			
+			if(hours < 10)
+				hours = "0" + hours;
+			
+			if(minutes < 10)
+				minutes = "0" + minutes;
+			
+			formatted = hours + ":" + minutes; 
+		}
+		
+		return formatted;
+	}
+	
+	-->
+</script>

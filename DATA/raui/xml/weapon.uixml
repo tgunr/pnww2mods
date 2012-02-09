@@ -1,0 +1,118 @@
+<ra id="weapon" manager="RAScreen">
+	<include file="lib/scenarios.uixml"/>
+	<include file="lib/scenariodata.uixml"/>
+	<include file="classes/ListControl.uixml"/>
+	<include file="classes/DDListControl.uixml"/>
+	<include file="classes/TreeControl2.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+	<include file="classes/ViewBuilder.uixml"/>
+	<include file="classes/TextBuilder.uixml"/>
+	<include file="classes/ImageBuilder.uixml"/>
+	<include file="classes/RowBuilder.uixml"/>
+	<view id="mainpanel" x="10" height=".8" width=".65" rtop="20" style="class: bordered;">
+		<caption label="Make a select and click, Select Weapon." height="20" rtop="0"/>
+		<view id="weaponselect" x="10" height=".6" rright="10" rtop="30">
+			<caption label="RED TEAM WEAPON LIST:" height="20" rtop="0" style="color: #FF0000;"/>
+			<view rtop="30">
+				<treecontrol id="weapon-tree" pad="5" style="class: bordered;"/>
+			</view>
+		</view>
+		<button id="select-button" label="SELECT" rright="20" rtop=".75" onclick="this.mgr.Click(DoWeapon)"/>
+	</view>
+	<view id="infopanel" width=".3" height=".75" rright="10" rtop="50">
+		<sceninfov id="scenario-info">
+			<image id="scenario-image" pad="5"/>
+		</sceninfov>
+	</view>
+	<navbar id="navbar">
+		<button id="back" label="LOBBY   " x="10" y="10" onclick="this.mgr.Click(DoLobby)" align="right"/>
+		<button id="back" label="TEAM   " rright="10" y="10" onclick="this.mgr.Click(DoTeam)" align="right"/>
+	</navbar>
+	<script>
+		<!--
+		 //
+		 
+		var client 				= game.player.client;
+		var scenarios		= loadRoot();
+		var weaponTree 	= findview("weapon-tree");
+		var scenarioInfo	= findview("scenario-info");
+		var selectBtn		= findview("select-button");
+		var team				= 0;
+		
+		function DoLobby()
+		{
+			loadWin("lobby", true);
+		}
+		
+		function DoTeam()
+		{
+			switchTeams();
+			reloadWin();
+		}
+		
+		function DoWeapon()
+		{
+			selectWeapon(true);
+		}
+		
+		function OnShow(win)
+		{
+			// set our scenario info
+			scenarioInfo.mgr.SetScenario(client.scenario);
+			
+			// set some callbacks
+			weaponTree.mgr.selectCallback = selectWeapon;
+			weaponTree.control.ondraw = formatSpawnable;
+			weaponTree.control.isselectable = isSelectable;
+		}
+		
+		function OnUpdate()
+		{
+			var t = game.player.team;
+			
+			//cprint("Player team is " + t);
+			
+			if(t != team)
+			{
+				initSpawnables(weaponTree.control);
+				team = t;
+			}
+		}
+		
+		function selectWeapon(action)
+		{
+			var node = weaponTree.control.selectedNode();
+			
+			if(node != null && !node.branch)
+			{
+				if(action)
+				{
+					var index = weaponTree.control.selectedData();
+					
+					if(index != null)
+					{
+						var vehicle = vehicles[index];
+						
+						// this call
+						if(vehicle.spawnable == "spawnable")
+						{
+							if(game.globals != null)
+								game.globals.scenariovehicle = index;
+							
+							game.setplayerdata("weapon", vehicle.type.weapkey);
+							game.setplayerdata("ready", "true");
+							
+							loadWin("readyroom", true);
+						}
+						else
+						{
+							showOk(vehicle.spawnable);
+						}
+					}
+				}
+			}
+		}
+		
+		-->
+	</script>
+</ra>

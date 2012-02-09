@@ -1,0 +1,59 @@
+<script>
+	<!--
+	
+	function ScenarioPopulation(content)
+	{
+		this.maxPlayersPerSide = 64;
+		this.content = content;
+		
+		// methods
+		this.checkValue = function(value, minValue, maxValue, defValue)
+		{
+			if(isNaN(value))
+				return defValue;
+			
+			if(value < minValue || value > maxValue)
+				return defValue;
+				
+			return value;
+		}
+		
+		this.maxPlayers = function()
+		{
+			return this.team1max + this.team2max; 
+		}
+		
+		this.teamRatio = function(team)
+		{
+			var maxplayers = this.maxPlayers();
+			
+			if(maxplayers == 0)
+				return .5;
+			
+			return ((team == 1) ? this.team1max : this.team2max) / this.maxPlayers();
+		}
+		
+		// members
+		if(this.content != null)
+		{
+			this.team1min 	= this.checkValue(parseInt(this.content.team1min), 0, this.maxPlayersPerSide, 0);
+			this.team1max = this.checkValue(parseInt(this.content.team1max), 1, this.maxPlayersPerSide, this.maxPlayersPerSide);
+			this.team2min 	= this.checkValue(parseInt(this.content.team2min), 0, this.maxPlayersPerSide, 0);
+			this.team2max = this.checkValue(parseInt(this.content.team2max), 1, this.maxPlayersPerSide, this.maxPlayersPerSide);
+			this.allowance 	= this.checkValue(parseInt(this.content.allowance), 10, 100, 100);
+			
+			this.allowance = this.allowance / 100;
+		}
+		else
+		{
+			this.team1min 	= 0;
+			this.team1max = this.maxPlayersPerSide;
+			this.team2min 	= 0;
+			this.team2max = this.maxPlayersPerSide;
+			this.allowance 	= 100;
+		}
+	}
+	
+	-->
+</script>
+

@@ -1,0 +1,324 @@
+<script>
+	<!--
+	
+	var gameAlertIndex = 0;
+	var gameAlertManager = null;
+	var gameAlerts = new Array();
+	
+	function GameAlert(type, text, color)
+	{
+		// members
+		this.type			= type;
+		this.id				= 0; //gameAlertsIndex++;
+		this.text			= text;
+		this.expires		= 3000 + Math.floor(7000 * game.getpref("hud.alerts.display", 4, .5));
+		this.expired		= false;
+		this.reset			= true;
+		this.start			= 0;
+		this.minAlpha	= 50;
+		this.maxAlpha	= 255;
+		this.alpha			= this.maxAlpha;
+		this.color			= color;
+		this.view			= null;
+		
+		this.isExpired = function(now)
+		{
+			return ((now > this.start + this.expires) || this.expired) ? true: false;
+		}
+		
+		this.getColor = function(now)
+		{
+			var elapsed 	= now - this.start;
+			var scaler 	= (this.expires - elapsed) / this.expires;
+			
+			this.alpha = this.minAlpha + ((this.maxAlpha - this.minAlpha) * scaler);
+			
+			if(this.alpha < this.minAlpha)
+				this.alpha = this.minAlpha;
+			else if(this.alpha > this.maxAlpha)
+				this.alpha = this.maxAlpha;
+			
+			if(this.color != null)
+				return this.color + this.alpha.toString(16);
+			else
+				return "#FFFF00" + this.alpha.toString(16);
+		}
+		
+		this.getIcon = function()
+		{
+			var icon = "";
+			
+			switch(this.type)
+			{
+				case 4: // oversupply received
+				case 17: // infantry resupply alert
+				case 25: // player needs ammo
+					icon = "ui/uidata/icons/alerts/oversupply_on.dds";
+				break;
+				case 6: // oversupply lost
+					icon = "ui/uidata/icons/alerts/oversupply_off.dds";
+				break;
+				case 14: // contact alert
+					icon = "ui/uidata/icons/alerts/contact.dds";
+				break;
+				case 15: // orders alert
+				case 16: // leader alert
+				case 18: // cp update
+				case 19: // facility update
+					icon = "ui/uidata/icons/alerts/order.dds";
+				break;
+				case 12: // strat alert
+				case 13: // hc alert
+				case 20: // strat alert
+				case 21: // hc alert
+				case 23: // cp under attack
+				case 24: // enemy spotted
+					icon = "ui/uidata/icons/alerts/command.dds";
+				break;
+				default:
+					icon = "ui/uidata/icons/alerts/info.dds";
+				break;
+			}
+			
+			return icon;
+		}
+		
+		this.getSound = function()
+		{
+			var sound = "ui/sounds/tab.wav";
+			
+			switch(this.type)
+			{
+				case 4: // oversupply received
+				case 17: // infantry resupply alert
+				case 5: // oversupply warning
+				case 25: // player needs ammo
+					sound = "ui/sounds/tab.wav";
+				break;
+				case 6: // oversupply lost
+				case 27: // hourly timeleft alert
+				case 30: // no bailout
+					sound = "ui/sounds/error.wav";
+				break;
+				case 26: // tutorial event
+					sound = "ui/sounds/recv_orders.wav";
+				break;
+				default:
+					sound = "ui/sounds/tab.wav";
+				break;
+			}
+			
+			return sound;
+		}
+		
+		this.isUnique = function()
+		{
+			var unique = false;
+			
+			switch(this.type)
+			{
+				case 14: // contact alert
+				case 15: // orders alert
+				case 16: // leader alert
+				case 28: // no fire zone
+				case 29: // ppo message
+				case 30: // no bailout
+					unique = true;
+				break;
+			}
+			
+			return unique;
+		}
+		
+		return this;
+	}
+	
+	function GameAlertManager(view, count)
+	{
+		this.uniqueID	= 0;
+		this.view 			= view;
+		this.ready			= 0;
+		this.maxVis		= count; // number of visible alerts, determined by the number of child views of view
+		this.visAlerts 	= new Array();
+		this.modified 	= false;
+		
+		// save an external reference so we can do easy updates
+		gameAlertManager = this;
+		
+		this.ActivateAlert = function(newAlert)
+		{
+			//cprint("Activating alert " + newAlert.id + "!");
+			
+			// starting a new alert	
+			newAlert.start = (new Date()).getTime();
+			newAlert.reset = false;
+			
+			if(game.settings.wantmessagealert)
+				game.playsound(newAlert.getSound(), 1, 1);
+			
+			// remove last element
+			if(this.visAlerts.length >= this.maxVis)
+			{
+				//cprint("Removing last visible alert!");
+				this.visAlerts.pop();
+			}
+			
+			// add new alert to the beginning
+			this.visAlerts.unshift(newAlert);
+			
+			//cprint("Visible alert count is now " + this.visAlerts.length);
+			
+			// save our y pixel for the current top of the alert
+			var top 		= this.view.y + this.view.height;
+			var height 	= 0;
+			var width		= 0;
+			var actives 	= 0;
+			
+			for(var i = 0; i < this.maxVis; i++)
+			{
+				//cprint("Trying position " + i);
+				
+				var alert = this.visAlerts[i];
+				var child = this.view.getchild(i);
+				
+				if(alert != null)
+				{
+					//cprint("Activating alert " + alert.id + " on position " + i);
+					child.visible = true;
+					child.text = alert.text;
+					child.setstyleproperty("color", alert.getColor(alert.start));
+					child.resizetotext();
+					
+					if(child.width > width)
+						width = child.width;
+					
+					height += child.height;
+					actives++;
+				}
+				else if(child)
+				{
+					//cprint("Alert on position " + i + " must have been null!");
+					child.visible = false;
+				}
+			}
+			
+			var pview = this.view.parent;
+			var spacing = 8;
+			
+			this.view.width = width;
+			this.view.height = height + (spacing * (actives - 1));
+			this.view.y = top - this.view.height;
+			this.view.x = (pview.width * .5) - (this.view.width * .5);
+			
+			var y = this.view.height;
+			
+			for(var i = 0; i < this.maxVis; i++)
+			{
+				var child = this.view.getchild(i);
+				
+				if(child && child.visible)
+				{
+					y -= child.height;
+					child.y = y;
+					child.x =  (this.view.width * .5) - (child.width * .5);
+					y -= spacing;
+				}
+			}
+		}
+		
+		this.Update = function()
+		{
+			var now = (new Date()).getTime();
+			
+			// update our alerts
+			for(var i = this.maxVis - 1; i >= 0; i--)
+			{
+				var child = this.view.getchild(i);
+				
+				if(i < this.visAlerts.length)
+				{
+					var alert = this.visAlerts[i];
+					
+					//cprint("Checking alert " + alert.id + " with " + (alert.start + alert.expires) + " against " + now);
+					
+					if(alert.isExpired(now))
+					{
+						//cprint("Expiring alert " + alert.id);
+						this.visAlerts.pop();
+						child.visible = false;
+					}
+					else
+					{
+						child.setstyleproperty("color", alert.getColor(now));
+					}
+				}
+				else
+				{
+					child.visible = false;
+				}
+			}
+			
+			// add a new alert if the last one is expired
+			if(this.visAlerts.length < this.maxVis && gameAlerts.length > 0 && now >= this.ready)
+			{
+				this.ActivateAlert(gameAlerts.pop());
+				this.ready = now + 1000;
+			}
+		}
+		
+		// run one update
+		this.Update();
+		
+		return this;
+	}
+	
+	function addGameAlert(type, text, color)
+	{
+		//cprint("Trying to queue alert!");
+		
+		if(!game.getpref("hud.alerts.show", 0, true))
+			return;
+			
+		//cprint("Creating alert!");
+		
+		var newAlert 	= new GameAlert(type, text.toUpperCase(), color);
+		var okToAdd		= true;
+		
+		//cprint("Checking uniqueness!");
+		
+		if(newAlert.isUnique())
+		{
+			for(var i = 0; i < gameAlerts.length; i++)
+			{
+				if(gameAlerts[i].type == newAlert.type)
+				{
+					okToAdd = false;
+					break;
+				}	
+			}
+		}
+		
+		if(okToAdd)
+		{
+			//cprint("Queue alert!");
+			
+			// set our id
+			newAlert.id = gameAlertIndex++;
+			
+			//cprint("Queued alert " + newAlert.id + "!");
+			
+			// save it
+			gameAlerts.unshift(newAlert);
+		}
+	}
+
+	function updateGameAlerts()
+	{
+		if(gameAlertManager == null)
+			return;
+			
+		gameAlertManager.Update();
+	}
+	
+	-->
+</script>

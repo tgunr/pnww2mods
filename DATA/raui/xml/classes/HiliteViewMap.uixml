@@ -1,0 +1,251 @@
+<script>
+	
+	<include file="lib/common.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+
+	<!--
+	
+	function HiliteView(description, pause, space, runs)
+	{
+		// members
+		this.desc		= description;
+		this.valid		= false;
+		this.targetx	= 0;
+		this.targety	= 0;
+		this.targetw	= 0;
+		this.targeth	= 0;
+		this.startx		= 0;
+		this.starty		= 0;
+		this.timer		= new CycleTimer(50);
+		this.pause		= pause;
+		this.space		= space;
+		this.runs		= runs;
+		this.run		= 0; //this.runs;
+		this.dir		= 1;
+		this.start		= 0;
+		this.stage		= 0;
+		this.cycles		= 0;
+		this.view		= null;
+		
+		// methods
+		this.update = function()
+		{
+			if(this.valid && this.view)
+			{
+				if(this.delay())
+					return true;
+				
+				if(this.mirror())
+					return true;
+				
+				if(this.hilite())
+					return true;
+			}
+			
+			return false;
+		}
+		
+		this.init = function()
+		{
+			if(this.desc)
+			{
+				var numberRE = /^-?\d/;
+				var stringRE = /^\w/;
+				
+				var parts = this.desc.split(",");
+				
+				if(numberRE.test(parts[0]))
+				{
+					// must be a specific position
+					if(parts.length >= 4)
+					{
+						this.targetx = scaleX(parseInt(parts[0]));
+						this.targety = scaleY(parseInt(parts[1]));
+						this.targetw = scaleX(parseInt(parts[2]));
+						this.targeth = scaleY(parseInt(parts[3]));
+						
+						consoleprint("Found hilite coords " + this.targetx + "," + this.targety + "\n");
+						
+						if(parts.length >= 5 && parts[4] != null && parts[4] != "")
+						{
+							var origin = game.findview(parts[4]);
+							
+							if(origin)
+							{
+								this.targetx += origin.screenx;
+								this.targety += origin.screeny;
+								
+								consoleprint("      Modified to " + this.targetx + "," + this.targety + "\n");
+							}
+						}
+						
+						this.targetx 	+= this.targetw/2;
+						this.targety 	+= this.targeth/2;
+						this.valid 		= true;
+					}
+				}
+				else if(stringRE.test(parts[0]))
+				{
+					// must be a view to look up
+					var target = game.findview(parts[0]);
+					
+					if(target)
+					{
+						this.targetx 	= target.screenx + (target.width/2);
+						this.targety 	= target.screeny + (target.height/2);
+						this.targetw 	= target.width;
+						this.targeth 	= target.height;
+						this.valid 		= true;
+					}
+				}
+			}
+			
+			if(this.valid)
+			{
+				this.originx = this.targetx - (this.targetw/2);
+				this.originy = this.targety - (this.targeth/2);
+				
+				var mx = normalizeX(this.originx);
+				var my = normalizeY(this.originy);
+				var mw = normalizeX(this.targetw);
+				var mh = normalizeY(this.targeth);
+				
+				this.start 	= (new Date()).getTime();
+				this.stage	= (true || this.startx != this.targetx || this.starty != this.targety) ? 1: 2;
+				this.body 	= 'x="' + mx + '" y="' + my + '" width="' + mw + '" height="' + mh + '" layer="100"';
+				
+				if(this.stage == 1)
+				{
+					this.createMirror(this.body);
+					
+					if(this.view != null)
+						this.view.snapshot(this.originx, this.originy, this.targetw, this.targeth);
+					
+					this.pause = 0; // start pulsing right away
+				}
+				else
+				{
+					this.createHilite(this.body);
+					this.pause = 0; // start pulsing right away
+				}
+			}
+		}
+		
+		this.delay = function()
+		{
+			var now = new Date();
+			return (now.getTime() < (this.start + this.pause));
+		}
+		
+		this.mirror = function()
+		{
+			if(this.stage != 1 || this.view == null)
+				return false;
+			
+			if(this.timer.run())
+			{
+				this.view.setstyleproperty("border-size", "2");
+				this.cycle();
+				
+				var buffer = this.run * this.space * 2;
+				
+				this.view.width 	= this.targetw + buffer;
+				this.view.height 	= this.targeth + buffer;
+				this.view.x 		= this.targetx - (this.view.width / 2);
+				this.view.y 		= this.targety - (this.view.height / 2);
+				
+				if(this.cycles >= 1)
+				{
+					this.createHilite(this.body);
+					this.stage = 2;
+					return false;
+				}
+			}
+			
+			return true;
+		}
+		
+		this.hilite = function()
+		{
+			if(this.stage != 2 || this.view == null)
+				return false;
+			
+			if(this.timer.run())
+			{
+				this.cycle();
+				
+				var buffer = this.run * this.space * 2;
+				
+				this.view.width 	= this.targetw + buffer;
+				this.view.height 	= this.targeth + buffer;
+				this.view.x 		= this.targetx - (this.view.width / 2);
+				this.view.y 		= this.targety - (this.view.height / 2);
+			}
+			
+			return true;
+		}
+		
+		this.createMirror = function(body)
+		{
+			if(this.view != null)
+				this.view.close();
+			
+			var xml = '<mirror ' + body + ' style="border-color: #FF0000;"/>';
+			
+			consoleprint("Creating mirror for " + window.id + ": " + xml + "\n");
+			
+			this.view 				= window.addview(xml);
+			this.view.modal			= false;
+			this.view.acceptsmouse	= false;
+		}
+		
+		this.createHilite = function(body)
+		{
+			if(this.view != null)
+				this.view.close();
+			
+			var xml = '<view ' + body + ' style="border-color: #FF0000; border-size: 2;"/>';
+			
+			consoleprint("Creating hilite for " + window.id + ": " + xml + "\n");
+			
+			this.view 				= window.addview(xml);
+			this.view.modal			= false;
+			this.view.acceptsmouse	= false;
+		}
+		
+		this.cycle = function()
+		{
+			this.run += this.dir;
+			
+			if(this.dir > 0)
+			{
+				if(this.run >= this.runs)
+				{
+					this.run = this.runs - 1;
+					this.dir = -1;
+				}
+			}
+			else if(this.dir < 0)
+			{
+				if(this.run < 0)
+				{
+					this.run 	= 1;
+					this.dir 	= 1;
+					this.cycles	+= 1;
+				}
+			}
+		}
+		
+		this.kill = function()
+		{
+			if(this.view != null)
+				this.view.close();
+			
+			this.view = null;
+		}
+		
+		this.init();
+	}
+	
+	-->
+</script>

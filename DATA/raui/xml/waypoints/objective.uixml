@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<view id="objective" x="0" y="0" width="100" height="24" aspectlimit="width"
+	style="background-color: #00000088; 
+		border-sides: ui/textures/hud/border_side.bmp;
+		border-corner: ui/textures/hud/border_corner.bmp;
+		border-width: 2;
+		border-size-top: 2;
+		border-size-bottom: 2;" moveondrag="no" acceptmouseclick="false">
+	<image id="objective-icon" x="5" y="2" width="20" height="20" acceptmouseclick="false"/>
+	<caption id="objective-title" x="30" y="10" height="15" rright="10" style="font-size: -2; color: #FFFFFF;" acceptmouseclick="false" align="center"/>
+	<view id="objective-progress" x="30" y="5" height="5" rright="10">
+		<image id="bottom" x="0" bottom="0" rtop="0" rright="0" src="ui/textures/capture-fill.bmp" acceptmouseclick="false"/>
+		<image id="top" x="0" bottom="0" rtop="0" rright="0" src="ui/textures/capture-fill.bmp" acceptmouseclick="false" layer="100"/>
+	</view>
+</view>
+

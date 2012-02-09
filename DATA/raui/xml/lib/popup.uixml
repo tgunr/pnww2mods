@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<script>
+	
+	<include file="lib/common.uixml"/>
+	
+	<!--
+
+	var popupCallback = null;
+	var popupCloseCallback = null;
+	
+	function initPopup(message, action, yes, no)
+	{
+		popupCallback 			= (action != null) ? action: null;
+		game.cursor.visible 	= true;
+		
+		setPopupMessage(message);
+		setPopupClose(false);
+		
+		if(yes != null)
+		{
+			var button = findview("popup-yes");
+			
+			if(button)
+				button.label = yes;
+		}
+		
+		if(no != null)
+		{
+			var button = findview("popup-no");
+			
+			if(button)
+				button.label = no;
+		}
+	}
+	
+	function setPopupMessage(message)
+	{
+		if(message)
+		{
+			var caption = findview("popup-caption");
+			
+			if(caption)
+				caption.text = message;
+		}
+	}
+	
+	function setPopupCursorState(state)
+	{
+		// don't use this anymore
+	}
+	
+	function setPopupClose(flag)
+	{
+		var closer = findview("popup-close");
+		
+		if(closer != null)
+			closer.visible = flag;
+	}
+	
+	function setPopupCloseAction(action)
+	{
+		popupCloseCallback = (action != null) ? action: null;
+	}
+	
+	function setButtonEnabled(button, flag)
+	{
+		findview(button).enabled = flag;
+	}
+	
+	function doPopupClose()
+	{
+		if(popupCloseCallback != null)
+			popupCloseCallback();
+		
+		doPopupFree();
+	}
+	
+	function doPopupAction(response)
+	{
+		if(game.tutorialevent != null)
+			game.tutorialevent(262144, response);
+		
+		if(popupCallback != null)
+			popupCallback(response);
+		
+		doPopupFree();
+	}
+	
+	function doPopupFree()
+	{
+		soundPlayClick();
+		game.cursor.update(window.name);
+		window.close();
+	}
+	
+	-->
+</script>
+

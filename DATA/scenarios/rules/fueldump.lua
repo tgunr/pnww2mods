@@ -60,6 +60,8 @@ end
 
 function ra.OnUpdate(handler)
 
+	scenario.OnUpdate(handler);
+
 	if(state.victory ~= 0 or ra.GetTeam() ~= 2) then
 		return 1;
 	end

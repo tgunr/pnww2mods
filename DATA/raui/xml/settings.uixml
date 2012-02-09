@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+ 
+<window id="settings" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" onshow="initWin(this)"
+	aspectalign="center">
+	<include file="widgets/template.uixml"/>
+	<include file="classes/TreeControl2.uixml"/>
+	<tabview id="body" x="43" y="140" width="930" height="450" ontab="quickhelp()" style="color: #BFE2CE;
+						background-color: #000000BB;
+						border-top-corner: ui/textures/test/body_ul.bmp;
+						border-bottom-corner: ui/textures/test/body_br.bmp;
+						border-sides: ui/textures/test/body_sides.bmp;
+						border-top: ui/textures/test/body_top.bmp;
+						border-bottom: ui/textures/test/body_bottom.bmp;
+						control-on-endcap:  ui/textures/test/body_tab_cap_on.bmp;
+						control-on-back:  ui/textures/test/body_tab_filler_on.bmp;
+						control-off-endcap: ui/textures/test/body_tab_cap.bmp;
+						control-off-back: ui/textures/test/body_tab_filler.bmp;
+						control-on-color: #FFFFCE;
+						border-width: 16;
+						border-height: 16;">
+		<tab id="preferences" label="  ${widgets.prefs}  " x="0" y="0" width="930" height="460" onshow="tplTab()">
+			<include file="widgets/preferences.uixml"/>
+		</tab>
+		<tab id="keymapper" label="  ${common.keymapper.tab}  " x="0" y="0" width="930" height="460" onshow="tplTab()">
+			<include file="widgets/keymapper.uixml"/>
+		</tab>
+		<tab id="calibration" label="  ${common.controllers.tab}  " x="0" y="0" width="930" height="460" onshow="tplTab()">
+			<include file="widgets/calibration.uixml"/>
+		</tab>
+	</tabview>
+	<script>
+		<!--
+		
+		function doBack()
+		{
+			var havePrefs = false;
+			
+			for(var i in PENDING_PREFS)
+			{
+				havePrefs = true;
+				break;
+			}
+			
+			if(havePrefs)
+			{
+				var popup = showConfirm(getlocstring('widgets.prefs.pending'), savePrefsAndClose, getlocstring('common.yes'), getlocstring('common.no'));
+				popup.setPopupClose(false);
+			}
+			else
+			{
+				closeSettings();
+			}
+		}
+		
+		function savePrefsAndClose(confirm)
+		{
+			if(confirm)
+				savePreferences();
+			
+			closeSettings();
+		}
+		
+		function closeSettings()
+		{
+			if(game.globals.referrer != null)
+				loadWin(game.globals.referrer, false);
+			
+			window.close();
+		}
+		
+		function initWin(win)
+		{
+			consoleclear();
+			showIDCard(false);
+			
+			// lets set the default message
+			setHelp(getlocstring('common.settings.help'));
+			setBack('widgets.template.back');
+			
+			quickhelp();
+			
+			forwardButton.visible = false;
+		}
+		
+		-->
+	</script>
+</window>

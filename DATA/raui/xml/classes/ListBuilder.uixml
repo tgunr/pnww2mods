@@ -1,0 +1,36 @@
+<script>
+
+	<include file="classes/ViewBuilder.uixml"/>
+	<include file="classes/ScrollbarBuilder.uixml"/>
+	
+	<!--
+	
+	function ListBuilder(par, id, x, y, w, h, scrollbar, selector)
+	{
+		var self = new ViewBuilder(par, id, x, y, w, h);
+		
+		self.type = "list";
+		
+		self.addAttribute("onshow", "if(!this.mgr) this.mgr = new ListControl(this, " + selector + ")");
+		self.addAttribute("onselect", "this.mgr.clickList(false)");
+		self.addAttribute("ondblselect", "this.mgr.clickList(true)");
+		
+		if(scrollbar)
+			self.addBuilder(new ScrollbarBuilder(10));
+			
+		return self;
+	}
+	
+	function ListRowBuilder(lv, id, w, h)
+	{
+		var self = new ViewBuilder(lv, id, 0, 0, w, h);
+		
+		self.addAttribute("aspectalign", "left");
+		self.addAttribute("onmouseenter", lv.id + ".mouseEnter(this)");
+		self.addAttribute("onmouseexit", lv.id + ".mouseExit(this)");
+		
+		return self;
+	}
+	
+	-->
+</script>

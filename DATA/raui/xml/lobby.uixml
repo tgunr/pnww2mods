@@ -1,0 +1,221 @@
+<ra id="lobby">
+	<include file="lib/scenarios.uixml"/>
+	<include file="classes/ListControl.uixml"/>
+	<include file="classes/TreeControl2.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+	<include file="classes/ViewBuilder.uixml"/>
+	<include file="classes/TextBuilder.uixml"/>
+	<include file="classes/ImageBuilder.uixml"/>
+	<include file="classes/RowBuilder.uixml"/>
+	<view id="info-panel" x="10" y="80" width="210" rtop="20" style="class: bordered;">
+		<view style="class: bordered; layout: vertical; vpad: 15;">
+			
+		<area width=".8" style="class: bordered; layout: vertical; center: x; vpad: 10;">
+				<caption label="Most Popular Games In Play" height="20"/>
+				<list id="popular" height="100" style="class: showme;"/>
+			</area>
+			
+			<area width=".8" style="class: bordered; layout: vertical; center: x;">
+				<caption label="Message of the Day" height="20"/>
+				<text id="motd" height="75" style="class: showme;"/>
+			</area>
+			
+			<area width=".8" style="class: bordered; layout: vertical; center: x; grow: y;">
+				<caption label="Latest Achievments" height="20"/>
+				<list id="achievements" height="60" style="class: showme; class: bordered;"/>
+			</area>
+		</view>
+	</view>
+	<view id="main-panel" x="240" y="80" rright="10" rtop="20"  style="class: bordered;">
+		<view x="10" height=".47" rright="10" rtop="0">
+			<listcontrol id="instance-list" pad="5" rtop="5" style="class: bordered;"/>
+		</view>
+		<view x="10" y="0" height=".47" rright="10" style="class: bordered;">
+			<sceninfoh id="scenario-info">
+				<image id="scenario-image" pad="5"/>
+			</sceninfoh>
+		</view>
+	</view>
+	<navbar style="class: bordered; layout: vertical; vpad: 10;">
+		<button id="join-button" label="    JOIN" rright="0" onclick="this.mgr.Click(DoJoin)" align="left" enabled="false"/>
+		<button id="create-button" label="    CREATE" rright="0" onclick="this.mgr.Click(DoCreate)" align="left"/>
+	</navbar>
+	<script>
+		<!--
+		 //
+		 
+		var client 				= game.player.client;
+		var createBtn		= findview("create-button");
+		var joinBtn			= findview("join-button");
+		var updateTimer	= new CycleTimer(3000);
+		var scenarios		= loadRoot();
+		var running			= new Array();
+		var instanceList 	= findview("instance-list");
+		var scenarioInfo	= findview("scenario-info");
+		
+		// when our instance list is updated
+		game.oninstancelist = initInstances;
+			
+		function DoCreate()
+		{
+			loadWin("create", true);
+		}
+		
+		function DoJoin()
+		{
+			selectInstance(true);
+		}
+		
+		function OnShow(win)
+		{
+			// make sure
+			game.stopscenario();
+			
+			initHeaders(instanceList);
+			
+			scenarioInfo.mgr.SetScenario();
+			
+			// init our local list variable
+			instanceList.mgr.selectCallback = selectInstance;
+			
+			// call out to the host to get our list of instances
+			// join our lobby instance
+			client.selectinstance(scenarios.category, 0);
+		}
+		
+		function initHeaders(p)
+		{
+			//p.mgr.SetTitle("INSTANCES");
+			
+			// create our headers
+			p.mgr.StartHeaders("scenarios-header", 0, -1, 0, 15);
+		 	p.mgr.AddHeader("scenarios.list.id", .15);
+		 	p.mgr.AddHeader("scenarios.list.map", .4);
+		 	p.mgr.AddHeader("scenarios.list.type", .1, "center");
+		 	p.mgr.AddHeader("scenarios.list.status", .15, "center");
+		 	p.mgr.AddHeader("scenarios.list.players", .1, "center");
+		 	p.mgr.AddHeader("scenarios.list.squad", .1, "center");
+			p.mgr.EndHeaders();
+		}
+		
+		function initInstances()
+		{
+			// reset our running list of instances 
+			running = new Array();
+			
+			joinBtn.enabled = false;
+			
+			// some temp vars
+			var instances = client.instances;
+			
+			// now for each category, add our instances
+			for(var i = 0; i < instances.length; i++)
+			{
+				var instance = instances[i];
+				if(instance == null) continue;
+				
+				var content = loadScenario(instance.description.category, instance.description.type);
+				if(content == null) continue;
+				
+				var scenario = new Object();
+				
+				scenario.id				= instance.description.id;
+				scenario.content 		= content;
+				scenario.instance 	= instance;
+				
+				running.push(scenario);
+			}
+			
+			// now sort our running instances
+			// running = running.sort(sortScenarios);
+			
+			// now update our visible list
+			instanceList.mgr.control.clearRows(false);
+			
+			if(running.length > 0)
+			{
+				for(var i = 0; i < running.length; i++)
+				{
+					var scenario 	= running[i];
+					var content 		= scenario.content;
+					var instance 	= scenario.instance;
+					var id				= instance.description.id;
+					var players		= instance.axis + instance.allies;
+					
+					var team1max	= parseInt(content.team1max);
+					if(isNaN(team1max)) team1max = MAX_SIDE_PLAYERS;
+					
+					var team2max	= parseInt(content.team2max);
+					if(isNaN(team2max)) team2max = MAX_SIDE_PLAYERS;
+					
+					instanceList.mgr.StartRow("row" + i, 0, 0, 0, 16);
+					
+					instanceList.mgr.AddRowColumn("#" + id, .15);
+					instanceList.mgr.AddRowColumn(content.title, .4);
+					
+					var type = "DM";
+					
+					if(instance.description.category == 502)
+						type = "CTF";
+					else if(instance.description.category == 503)
+						type = "OBJ";
+					
+					instanceList.mgr.AddRowColumn(type, .1, "center");
+					
+					if(players < team1max + team2max)
+						instanceList.mgr.AddRowColumn("scenarios.list.status.running", .15, "center");
+					else
+						instanceList.mgr.AddRowColumn("scenarios.list.status.full", .15, "center");
+					
+					instanceList.mgr.AddRowColumn(players, .1, "center");
+					instanceList.mgr.AddRowIcon("chaticon", "squad", .1, 12, .5);
+					
+					instanceList.mgr.EndRow(scenario);
+				}
+				
+				joinBtn.enabled = true;
+			}
+			
+			instanceList.mgr.control.postInit();
+		}
+		
+		function selectInstance(action)
+		{
+			cprint("Select instance called: " + instanceList.control.data);
+			
+			joinBtn.enabled = false;
+			
+			var scenario = instanceList.mgr.control.data;
+			if(scenario == null) return;
+			
+			joinBtn.enabled = true;
+			
+			// update our info
+			scenarioInfo.mgr.SetScenario(scenario.content);
+			
+			if(action)
+			{
+				if(!canJoinInstance(scenario.content, scenario.instance))
+				{
+					showOk(lastScenarioError);
+					return;
+				}
+				
+				if(!joinInstance(scenario.instance.description, false))
+				{
+					showOk("Failed to join instance!");
+					joinLobby();
+				}
+			}
+		}
+		
+		function OnUpdate()
+		{
+			// grab our list of instances
+			if(updateTimer.run())
+				client.listinstances(0, 0, "");
+		}
+		
+		-->
+	</script>
+</ra>

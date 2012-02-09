@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+ 
+<window id="credits" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768"  modal="true" acceptsmouseclick="true"
+	style="background-color: #000000E5;" layer="500" aspectalign="center" onshow="initCredits(this)" onupdate="updateCredits()" onmousedown="quitNow()">
+	<include file="classes/CycleTimer.uixml"/>
+	<include file="classes/ListControl.uixml"/>
+	<include file="classes/ListBuilder.uixml"/>
+	<include file="classes/TextBuilder.uixml"/>
+	<include file="lib/common.uixml"/>
+	<view x="100" y="120" rtop="110" rright="50" aspectlimit="width" acceptmouseclick="false">
+		<text id="credits-info" x="200" rtop="0" y="0" rright="0" acceptfocus="false" acceptmouseclick="false"
+			style="color: #FFFFFF; font-size: +2;"/>
+		<list id="creditsList" x="200" y="0" rtop="0" rright="0" aspectlimit="width" acceptmouseclick="false"
+			onselect="quitNow()" ondblselect="quitNow()"/>
+	</view>
+	<caption label="${common.exitclick}" x="0" height="25" y="15" rright="0" acceptfocus="false" acceptmouseclick="false"
+			style="color: #BFE2CE; font-size: +1;" align="center"/>
+		<script>
+		<!--
+		
+		var creditsInfo 		= window.findview("credits-info");
+		var creditsList	= new ListControl(findview("creditsList"));
+		var stageTimer 	= null;
+		var lastUpdate		= (new Date()).getTime();
+		var pps					= 50; // pixels per second
+		var pause				= true;
+		var doQuit			= 0;
+		var lastRow			= null;
+		var done				= false;
+		
+		// this variables controls which method is used
+		// I tested this as a text block and by breaking the text
+		// into lines with a listview to try to get rid of any
+		// shimmying but both methods have visual anomalies
+		// the text block looks better, so leaving it at that for now
+		var asText			= true;
+		
+		function initCredits(w)
+		{
+			musicPlayIntro();
+			
+			if(asText && creditsInfo != null)
+			{
+				creditsList.visible = false;
+				
+				var content = game.getcontent("manuals/credits.xml");
+				
+				if(content != null)
+				{
+					creditsInfo.text = content.body;
+					creditsInfo.resizetotext();
+					
+					creditsInfo.y -= (creditsInfo.height - creditsInfo.parent.height);
+					
+					cprint("Credits Info height is " + creditsInfo.height + "\n");
+					cprint("Credits Info y is " + creditsInfo.y + "\n");
+				}
+			}
+			else if(!asText && creditsList != null)
+			{
+				creditsInfo.visible = false;
+				
+				var content = game.getcontent("manuals/credits.xml");
+				
+				if(content != null)
+				{
+					var lines = content.body.split("\n");
+					
+					for(var i = 0; i < lines.length; i++)
+					{
+							var lrb 		= new ListRowBuilder(creditsList.list, "credit" + i, 0, 16);
+							var credit = new TextBuilder(lrb, "label", "caption", lines[i]);
+							
+							credit.addStyle("color", "#FFFFFF");
+							credit.addStyle("font-size", "+2");
+							credit.addAttribute("acceptsmouseclick", "false");
+							
+							lrb.addAttribute("aspectalign", null);
+							lrb.addAttribute("onmouseenter", null);
+							lrb.addAttribute("onmouseexit", null);
+			
+							lrb.addBuilder(credit);
+							
+							lastRow = creditsList.addRow(lines[i], lrb.build());
+					}
+				}
+			}
+		}
+		
+		function updateCredits()
+		{
+			if(asText && (creditsInfo == null || done))
+				return;
+				
+			if(!asText && (creditsList == null || done))
+				return;
+				
+			var now = (new Date()).getTime();
+			
+			if(doQuit > 0)
+			{
+				cprint("Quitting!");
+				
+				if(now >= doQuit)
+					game.quit();
+				
+				return;
+			}
+			
+			if(pause)
+			{
+				if(stageTimer == null)
+				{
+					stageTimer = new CycleTimer(2000);
+					stageTimer.add(2000);
+				}
+				
+				if(stageTimer.run())
+				{
+					pause = false;
+					stageTimer = null;
+				}
+			}
+			else if(asText && creditsInfo.y < 0)
+			{
+				var diff 	= (now - lastUpdate);
+				
+				if(diff > 0)
+				{
+					var updateRate = 5; // ms
+					var tics 	= Math.floor(diff / updateRate);
+					var delta	= diff / 1000;
+					
+					cprint("Update Interval is " + diff);
+					
+					(tics < 1)
+						tics = 1;
+					
+					var ticDelta 	= delta / tics;
+					var rise 		= pps * ticDelta; 
+					
+					for(var t = 0; t < tics; t++)
+						creditsInfo.y += rise;
+				}
+			}
+			else if(!asText && lastRow.y <= creditsList.list.height)
+			{
+				var diff = (now - lastUpdate);
+				
+				if(diff > 0)
+				{
+					var updateRate = 5; // ms
+					var tics 	= Math.floor(diff / updateRate);
+					var delta	= diff / 1000;
+					
+					cprint("Update Interval is " + diff);
+					
+					(tics < 1)
+						tics = 1;
+					
+					var ticDelta 	= delta / tics;
+					var rise 		= pps * ticDelta; 
+					
+					for(var t = 0; t < tics; t++)
+						creditsList.list.scrolly += rise;
+				}
+			}
+			else if(doQuit == 0)
+			{
+				if(stageTimer == null)
+				{
+					stageTimer = new CycleTimer(3000);
+					stageTimer.add(3000);
+				}
+				
+				if(stageTimer.run())
+				{
+					musicKill();
+					doQuit = now + 1000;
+				}
+			}
+			
+			lastUpdate = now;
+		}
+		
+		function quitNow()
+		{
+			cprint("Quit Now!");
+			musicKill();
+			doQuit = (new Date()).getTime() + 1000;
+		}
+		
+		// -->
+	</script>
+</window>
+

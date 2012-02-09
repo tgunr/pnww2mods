@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<script>
+	
+	<include file="lib/common.uixml"/>
+	
+	<!--
+	
+	var type	= "handlers/default";
+	var content = null;
+	var base	= null;
+	
+	function setContent(c, b)
+	{
+		content = c;
+		base	= b;
+	}
+	
+	function showViewer(viewer)
+	{
+		if(base != null)
+		{
+			//consoleprint("Base is not null at " + base.screenx + "/" + base.screeny + "\n");
+			viewer.screenx 	= base.screenx;
+			viewer.screeny 	= base.screeny;
+			viewer.width 	= base.width;
+			viewer.height 	= base.height;
+		}
+	}
+	
+	function getType()
+	{
+		return type;
+	}
+	
+	-->
+</script>
+

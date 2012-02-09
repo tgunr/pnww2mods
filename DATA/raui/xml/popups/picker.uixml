@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+ 
+<window id="picker" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768"
+	style="background-color: #00000077;" layer="100">
+	<view x="350" y="250" width="350" height="300" style="background-color: #00000088; 
+							border-sides: ui/textures/hud/border_side.bmp;
+							border-corner: ui/textures/hud/border_corner.bmp;
+							border-width: 4;
+							border-height: 4;" moveondrag="yes">
+		<text id="popup-caption" x="10" y="40" height="50" width="330" acceptfocus="no" style=" color: #FFFFFF;"/>
+		<view id="swatches" x="10" y="70" rright="10" rtop="10"/>
+		<caption label="${widgets.prefs.groups.ui.colors.picker}:" x="10" y="45" width="125" height="25" style="color: #ffffff;" align="right"/>
+		<view id="color" x="145" y="45" width="20" height="20" style="border-color: #ffffff; border-size: 1;"/>
+		<button id="popup-no" x="20" y="10" width="150" height="25" label="${popup.cancel}" onclick="doPickColor(false)"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+		<button id="popup-yes" x="180" y="10" width="150" height="25" label="${popup.ok}" onclick="doPickColor(true)"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+	</view>
+	<script>
+			<!--
+			
+			var win 			= null;
+			var pref			= null;
+			var current			= null;
+			var swatches		= window.findview("swatches");
+			var colorView		= window.findview("color");
+			
+			var size			= 20;
+			var buffer			= 2;
+			var swatchSize 		= size + (buffer * 2);
+			
+			function initPicker(w, n, c)
+			{
+				consoleprint("Initing picker with window " + w.id + " and pref " + n + "\n");
+				
+				win 	= w;
+				pref	= n;
+				
+				consoleprint("Name is now " + pref + "\n");
+				
+				setColor(c);
+				
+				colorView.setstyleproperty("background-color", current.colorhexcss);
+				
+				var wsize 	= Math.floor(swatches.width / swatchSize);
+				var hsize 	= Math.floor(swatches.height / swatchSize);
+				var cells	= wsize * hsize;
+				var inc		= Math.floor((255 * 9) / cells);
+				var color	= game.getrgbcolor(0,0,0);
+				
+				var x		= (swatches.width - (wsize * swatchSize)) / 2;
+				var y		= (swatches.height - (hsize * swatchSize)) / 2;
+				
+				var stage 		= 0;
+				var stageColor 	= 'r';
+				var stageUp		= true;
+				
+				var xScale 		= window.width / 1024;
+				var yScale 		= window.height / 768;
+				
+				x += 2;
+				y += 2;
+				
+				for(var w = 0; w < wsize; w++)
+				{
+					for(var h = 0; h < hsize; h++)
+					{
+						var cx 	= x + (w * swatchSize);
+						var cy 	= y + (h * swatchSize);
+						
+						var format='<view id="swatches" x="' + (cx/xScale) + '" y="' + (cy/yScale) + '" width="' + (size/xScale) + '" height="' + (size/yScale) + '" style="background-color: ' + color.colorhexcss + '; border-color: #ffffff88; border-size: 1;" onclick="setColor(\'' + color.colorhexcss + '\')"/>';
+						
+						swatches.addview(format);
+						
+						color[stageColor] += (stageUp) ? inc: -inc;
+						
+						if(color[stageColor] >= 255)
+						{
+							stage++;
+							
+							switch(stage)
+							{
+								case 1: // red
+									color.r 	= 255;
+									color.g 	= 0;
+									color.b 	= 0;
+									stageColor 	= 'g';
+									break;
+								case 2: // red
+									color.r 	= 255;
+									color.g 	= 255;
+									color.b 	= 0;
+									stageColor 	= 'b';
+									break;
+								case 3: // green
+									stageUp		= false;
+									color.r 	= 255;
+									color.g 	= 255;
+									color.b 	= 255;
+									stageColor 	= 'r';
+									break;
+								case 4: // green
+									color.r 	= 0;
+									color.g 	= 255;
+									color.b 	= 255;
+									stageColor 	= 'b';
+									break;
+								case 5: // green
+									color.r 	= 0;
+									color.g 	= 255;
+									color.b 	= 0;
+									stageColor 	= 'g';
+									break;
+								case 6: // blue
+									stageUp		= true;
+									color.r 	= 0;
+									color.g 	= 0;
+									color.b 	= 0;
+									stageColor 	= 'b';
+									break;
+								case 7: // blue
+									color.r 	= 0;
+									color.g 	= 0;
+									color.b 	= 255;
+									stageColor 	= 'r';
+									break;
+								case 8: // blue
+									color.r 	= 255;
+									color.g 	= 0;
+									color.b 	= 255;
+									stageColor 	= 'g';
+									break;
+							}
+						}
+					}
+				}
+			}
+			
+			function setColor(c)
+			{
+					consoleprint("Setting current " + pref + " with " + c + "\n");
+					current = game.gethexcolor(c);
+					colorView.setstyleproperty("background-color", current.colorhexcss);
+			}
+			
+			function doPickColor(save)
+			{
+					consoleprint("Saving pref " + pref + " with " + current.colorhexcss + "\n");
+					
+					if(save)
+							win.setColor(pref, current.colorhexcss);
+					
+					window.close();
+			}
+			
+			-->
+	</script>
+</window>

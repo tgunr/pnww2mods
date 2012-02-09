@@ -1,0 +1,1111 @@
+<?xml version="1.0"?>
+ <view id="default-hud" x="0" y="0" width="1024" height="768">
+ 	<include file="classes/GameAlert.uixml"/>
+	<include file="classes/FadeView.uixml"/> 	
+	<!-- GAME INFO -->
+	<view id="gameinfo" class="gameinfo" y="200" width="100" height="40" rright="5" aspectlimit='width'
+		style="background-color: #00000088; 
+			border-sides: ui/textures/hud/border_side.bmp;
+			border-corner: ui/textures/hud/border_corner.bmp;
+			border-width: 4;
+			border-height: 4;"
+		ondrag="saveCustomPosition(this, 4)" moveondrag="yes"/>
+	
+	<!-- READOUT -->
+	<view id="readout" class="readout" x="5" y="700" width="75" height="20"  aspectlimit='width'
+		style="background-color: #00000088; color: #00FFFF; 
+			border-sides: ui/textures/hud/border_side.bmp;
+			border-corner: ui/textures/hud/border_corner.bmp;
+			border-width: 4;
+			border-height: 4;"
+		ondrag="saveCustomPosition(this, 4)" moveondrag="yes"/>
+	
+	<!-- GAMEALERT -->
+	<view id="game-alerts" x="0" width="300" height="200" rtop="150" moveondrag="yes"
+		onshow="if(!this.mgr) this.mgr = new GameAlertManager(this, 3);">
+		<text id="game-alert1" x="0" height="50" rright="0" rtop="0" maxwidth="800" fontshadowx=".08" fontshadowy="-.08"
+			style="color: #FFFFFF; font-size: +8;" moveondrag="no"/>
+		<text id="game-alert2" x="0" height="30" rright="0" rtop="60" maxwidth="800" fontshadowx=".08" fontshadowy="-.08"
+			style="color: #FFFFFFAA;" moveondrag="no"/>
+		<text id="game-alert3" x="0" height="20" rright="0" rtop="100" maxwidth="800" fontshadowx=".08" fontshadowy="-.08"
+			style="color: #FFFFFF88; font-size: -2;" moveondrag="no"/>
+	</view>
+	
+	<view id="game-progress" x="0" y="0" width="250" height="40" moveondrag="no" aspectlimit="width" acceptmouseclick="false">
+		<text id="game-progress-label" x="0" height="20" rtop="0" rright="0" fontshadowx=".08" fontshadowy="-.08"
+			style="color: #FFFFFF; font-size: +1;" moveondrag="no" acceptmouseclick="false" />
+		<image x="0" height="8" rright="0" rtop="22" src="ui/textures/capture-fill.bmp" acceptmouseclick="false">
+			<image id="game-progress-bar" x="0" bottom="0" rtop="0" rright="0" src="ui/textures/capture-fill.bmp" acceptmouseclick="false"
+				onshow="this.setstyleproperty('color', game.settings.friendlycolor)"/>
+		</view>
+	</view>
+	
+	<!-- PERSONA HEALTH -->
+	<view id="persona" x="6" y="6" width="175" height="47" aspectlimit="width"
+		style="background-color: #00000088; 
+			border-top: ui/textures/hud/header.bmp;
+			border-sides: ui/textures/hud/border_side.bmp;
+			border-corner: ui/textures/hud/border_corner.bmp;
+			border-top-corner: ui/textures/hud/header_corner.bmp; 
+			border-width: 4;
+			border-size-top: 14;
+			border-size-bottom: 4;" moveondrag="yes"
+		ondrag="saveCustomPosition(this)">
+		<image id="persona-resupply" src='ui/textures/test/mobilespawn_icon.bmp' rright="10" rtop="-3" width='16' height='16'/>
+		<caption id="state" label="Other" x="5" y="33" height="13" width="100" style="font-size: -1; color: #BFE2CE;"
+			acceptmouseclick="false"/>
+		<image id="state-icon" x="5" y="5" width="25" height="25" tip="${hud.health.state}" acceptmouseclick="false"/>
+		<progressbar id="health-bar" left="36" right="167" bottom="21" top="28" minvalue="0" maxvalue="1"
+			fill="ui/textures/hud/blood-level-fill.bmp" background="ui/textures/hud/back-level-fill.bmp" orient="leftright"
+			acceptmouseclick="false"/>
+		<progressbar id="atp-bar" left="36" right="167" bottom="7" top="14" minvalue="0" maxvalue="1" style="color: #FFFF88; background-color: #FFFFFF88;" 
+			fill="ui/textures/hud/oxy-level-fill.bmp" background="ui/textures/hud/back-level-fill.bmp" orient="leftright"
+			acceptmouseclick="false"/>
+	</view>
+	
+	<!-- PRIMARY WEAPON -->
+	<view id="primary" x="6" y="58" width="175" height="47" aspectlimit="width"
+		style="background-color: #00000088; 
+			border-top: ui/textures/hud/header.bmp;
+			border-sides: ui/textures/hud/border_side.bmp;
+			border-corner: ui/textures/hud/border_corner.bmp;
+			border-top-corner: ui/textures/hud/header_corner.bmp; 
+			border-width: 4;
+			border-size-top: 14;
+			border-size-bottom: 4;" moveondrag="yes"
+		ondrag="saveCustomPosition(this)">
+		<caption id="primary-label" x="5" y="33" height="13" width="100" style="font-size: -1; color: #BFE2CE;"
+			acceptmouseclick="false"/>
+		<image id="primary-icon" left="5" y="5" right="169" height="23" acceptmouseclick="false"/>
+		<caption id="primary-name" x="5" y="5" height="23" width="100" style="font-size: +4; color: #FFFFFF;"
+			acceptmouseclick="false"/>
+		<caption id="primary-ammo" x="10" rright="8" rtop="22" height='15' align="right"
+			style="color: #FFFFFF;" tip="${hud.primary.tip}" acceptmouseclick="false"/>
+		<caption id="primary-clips" x="10" rright="8" rtop="0" height='15' align="right"
+			style="font-size: -1; color: #BFE2CE;" tip="${hud.primary.tip}" acceptmouseclick="false"/>
+		<progressbar id="primary-progress" width="75" height="10" y="12" rright="8" minvalue="0" maxvalue="1"
+			fill="ui/textures/hud/oxy-level-fill.bmp" background="ui/textures/hud/back-level-fill.bmp" orient="leftright"
+			style="color: #FFFF88; background-color: #FFFFFF88;" acceptmouseclick="false"/>
+	</view>
+	
+	<!-- SECONDARY WEAPON -->
+	<view id="secondary" x="6" y="110" width="175" height="47" aspectlimit="width"
+		style="background-color: #00000088; 
+			border-top: ui/textures/hud/header.bmp;
+			border-sides: ui/textures/hud/border_side.bmp;
+			border-corner: ui/textures/hud/border_corner.bmp;
+			border-top-corner: ui/textures/hud/header_corner.bmp; 
+			border-width: 4;
+			border-size-top: 14;
+			border-size-bottom: 4;" moveondrag="yes"
+		ondrag="saveCustomPosition(this)">
+		<caption label="${hud.secondary}" x="5" y="33" height="13" width="100" style="font-size: -1; color: #BFE2CE;"
+			acceptmouseclick="false"/>
+		<caption id="secondary-name" x="5" y="5" height="23" width="100" style="font-size: +4; color: #FFFFFF;"
+			acceptmouseclick="false"/>
+		<caption id="secondary-ammo" x="10" rright="8" rtop="22" height='15' align="right" style=" color: #FFFFFF;"
+			tip="${hud.secondary.tip}" acceptmouseclick="false"/>
+		<caption id="secondary-clips" x="10" rright="8" rtop="0" height='15' align="right" style="font-size: -1; color: #BFE2CE;"
+			tip="${hud.secondary.tip}" acceptmouseclick="false"/>
+	</view>
+	
+	<!-- MINIMAP -->
+	<view id="kenny" width="175" height="165" rright="6" rtop="6" frame="no" aspectlimit="width"
+		moveondrag="yes" acceptmouseclick="true" ondrag="saveCustomPosition(this); this.moving = true;" followall="true"
+		style="background-color: #00000000; 
+				border-width: 4;
+				border-size-top: 14;
+				border-size-bottom: 4;">
+		<!-- order of these child views is important: map, frame, labels -->
+		<view class="mapview" id="minimap" x="0" y="0" height="152" rright="0" acceptsfocus="no" style="background-color: #00000000;"
+			scale=".1" minscale=".005" maxscale="1.6" scalebar="off" acceptmouseclick="true" followall="true" alpha=".8">
+			<layer type="icon" id="icons" minscale=".3" maxscale="1.7" enabled="true"/>
+			<layer type="icon" id="rendered" minscale="0" maxscale=".3" enabled="true"/>
+			<layer type="terrainobj" id="terrainobj" minscale=".005" maxscale=".3" enabled="true"/>
+			<layer type="scenario" id="scenmap" minscale="0" maxscale="2" enabled="true"/>
+			<layer type="waypoints" id="waypoints" minscale="0" maxscale="1.5" enabled="true"/>
+			<layer type="players"/>
+			<object type="player" size=".6" navring="on" arrowscale=".07" arrowradius=".37"/>
+		</view>
+		<view id="kennyframe" x="0" y="0" rright="0" rtop="0" frame="yes" moveondrag="no" acceptmouseclick="false"
+			style="background-color: #00000000; 
+				border-top: ui/textures/hud/header.bmp;
+				border-sides: ui/textures/hud/border_side.bmp;
+				border-corner: ui/textures/hud/border_corner.bmp;
+				border-top-corner: ui/textures/hud/header_corner.bmp; 
+				border-width: 4;
+				border-size-top: 14;
+				border-size-bottom: 4;"/>
+		<caption id="minimaplabel" label="${widgets.prefs.groups.hud.custom.minimap}" x="5" height="13" rright="5" rtop="1"
+			style="font-size: -1; color: #BFE2CE;" acceptmouseclick="false" onshow="this.y = this.parent.height - this.height - 2;"/>
+		<caption id="minimapscale" x="5" height="13" rright="5" rtop="1" style="font-size: -1; color: #BFE2CE;"
+			 onshow="this.y = this.parent.height - this.height - 2;" acceptmouseclick="false" align="right"/>
+	</view>
+	
+	<!-- supporting script -->
+	<script>
+		<!--
+		
+		// game callbacks
+		game.onbuilder				= doGameEvent;
+		game.oncontact	 			= onContact;
+		
+		game.oncyclehud				= onCycleHud;
+		game.oncyclegameinfo		= onCycleGameInfo;
+		game.oncyclereadout		= onCycleReadout;
+		
+		game.onenterbuilding		= onEnterBuilding;
+		game.onleavebuilding		= onLeaveBuilding;
+		
+		game.onmapactivate		= onMapActivate;
+		game.onmapdeactivate 	= onMapDeactivate;
+		game.onchatdeactivate 	= onChatDeactivate;
+		game.oncooldown			= onCoolDown;
+		game.ongameevent			= doGameEvent;
+		
+		var views							= new Object();
+		var widgets						= new Object();
+		
+		// helpers
+		var hudInited					= false;
+		var me								= game.player;
+		var meType						= game.player.vehicletype;
+
+		var primaryOn					= game.getpref("view.primary.visible", 0, true);
+		var secondaryOn				= game.getpref("view.secondary.visible", 0, true);
+		
+		var overSupplyState		= 6;
+		var resupplyState			= 7; // na
+		var resupplyTimer			= new CycleTimer(500);
+		var overSupplyTimer		= new CycleTimer(500);
+		
+		var gameEventView			= null;
+		var gameAlertTimer 			= new CycleTimer(25);
+		
+		// minimap vars
+		var scaleTimer 					= new CycleTimer(250);
+		var kennyOn					= game.getpref("view.kenny.visible", 0, true);
+		
+		function initDefaultHud(hud)
+		{
+			//consoleclear();
+			
+			cprint("Initing HUD !!!\n");
+			
+			initGlobals();
+			musicKill();
+			
+			initViews(hud, false);
+			
+			setVisibility("game-alert", false);
+			
+			setVisibility("primary", false);
+			setVisibility("primary-name", false);
+			setVisibility("primary-icon", false);
+			setVisibility("primary-progress", false);
+			setVisibility("secondary", false);
+			setVisibility("game-progress", false);
+			
+			if(meType == "person")
+			{
+				setLabel("state", "hud.health.state.infantry");
+				setLabel("primary-label", "hud.primary.weapon");
+				setVisibility("primary-icon", true);
+			}
+			else
+			{
+				if(meType == "air")
+					setLabel("state", "hud.health.state.pilot");
+				else
+					setLabel("state", "hud.health.state.crew");
+				
+				setVisibility("primary-name", true);
+				setLabel("primary-label", "hud.primary");
+			}
+			
+			// run default callbacks at least once
+			onCycleHud(game.training);
+				
+			if(game.lastentered != null)
+				game.onenterbuilding();
+			
+			SetProgress(-1);
+			
+			//game.load("respawn");
+			
+			hudInited = true;
+		}
+		
+		function updateDefaultHud(hud)
+		{
+			var hudVisible = game.settings.hudvisible;
+			
+			if(views["persona"].visible)
+			{
+				// update player state icon
+				if(me.state == "stand" && me.walkrun != null)
+					setImage("state-icon", "ui/textures/hud/" + "state_" + me.walkrun + ".bmp");
+				else
+					setImage("state-icon", "ui/textures/hud/" + "state_" + me.state + ".bmp");
+				
+				// update health
+				setValue("atp-bar", me.atp);
+				setValue("health-bar", me.blood);
+				
+				views["atp-bar"].settip(getVariableLocString('hud.health.atp.tip', Math.round(me.atp * 100) + "%"));
+				views["health-bar"].settip(getVariableLocString('hud.health.blood.tip', Math.round(me.blood * 100) + "%"));
+				
+				updateResupplyIcon(views["persona-resupply"]);
+			}
+			
+			setVisibility("primary-progress", false);
+			
+			// update weapon boxes
+			if(meType == "person")
+			{
+				if(me.primaryammoname != "" && (hudVisible == 1 || (hudVisible == 2 && primaryOn)))
+				{
+					// primary is visible
+					setVisibility("primary", true);
+					
+					var iconName = me.primaryammoname;
+					
+					if(iconName == "buildtool")
+						iconName = "shovel";
+					
+					// set icon
+					setImage("primary-icon", "ui/textures/hud/weapon_" + iconName + ".bmp");
+					
+					// update ammo
+					updateAmmo(views["primary"]);
+				}
+				else
+				{
+					setVisibility("primary", false);
+				}
+				
+				// troops never have a secondary
+				setVisibility("secondary", false);
+			}
+			else
+			{
+				// Update primaryammoname and secondaryammoname to replace underscores
+				/*
+				var primaryammoname = me.primaryarmmoname.replace("_", " ");
+				var secondaryammoname = me.secondaryammoname.replace("_", " ");
+				*/				
+				
+				// do primary
+				if(me.primaryammoname != "" && (hudVisible == 1 || (hudVisible == 2 && primaryOn)))
+				{
+					// primary is visible
+					setVisibility("primary", true);
+					
+					// set name
+					views["primary-name"].label = me.primaryammoname.replace("_", " ");
+					
+					// update ammo
+					updateVehicleAmmo(views["primary"]);
+				}
+				else
+				{
+					setVisibility("primary", false);
+				}
+				
+				// do secondary
+				if(me.secondaryammoname != "" && (hudVisible == 1 || (hudVisible == 2 && secondaryOn)))
+				{
+					// primary is visible
+					setVisibility("secondary", true);
+					
+					// set name
+					views["secondary-name"].label = me.secondaryammoname.replace("_", " ");
+					
+					// update ammo
+					updateVehicleAmmo(views["secondary"]);
+				}
+				else
+				{
+					setVisibility("secondary", false);
+				}
+			}
+			
+			if(gameAlertTimer.run())
+				updateGameAlerts();
+			
+			// lets update the minimap
+			if(views["kenny"].visible)
+				updateMiniMap();
+		}
+		
+		function updateMiniMap()
+		{
+			views["minimap"].position = me.position;
+			
+			if(scaleTimer.run())
+				views["minimapscale"].label = views["minimap"].mapscale;
+		}
+		
+		// widgets are top level views
+		function initViews(v, widget)
+		{
+			if(v == null)
+				return;
+			
+			if(v.id != null && v.id != "")
+			{
+				views[v.id] = v;
+				
+				//cprint("Adding view " + v.id + "\n");
+				
+				if(widget)
+				{
+					widgets[v.id] = v;
+					//cprint("		Adding widget " + v.id + "\n");
+				}
+			}
+			
+			var i = 0;
+			var child = v.getchild(i);
+			
+			if(child == null)
+				return;
+			
+			var isWidget = (v.id == "hud" || v.id == "default-hud");
+			
+			while(child != null)
+			{
+				initViews(child, isWidget);
+				child = v.getchild(i++);
+			}
+		}
+		
+		function updateAmmo(weapon)
+		{
+			var clipAmmo 		= me[weapon.id + "ammocount"]; 	// ammo in clip
+			var clipCount		= me[weapon.id + "clipcount"]; 	// number of clips or rounds if clipsize is 1
+			var clipSize 			= me[weapon.id + "clipsize"]; 	// number of rounds in clip
+			var clipType 			= me[weapon.id + "cliptype"]; 	// clip type: clip, magazine, belt
+			var overSupply 	= me[weapon.id + "oversupply"]; // number of oversupply rounds or clips
+			var range 			= me[weapon.id + "range"]; 		// primary's range setting
+			var rgAmmo	 		= me["rgammo"]; 				// number of rg rounds left
+			var rgLoaded		= me["rgloaded"]; 				// do we have an rg round loaded
+			
+			var ammoView 	= weapon.findview(weapon.id + "-ammo");
+			var clipView 			= weapon.findview(weapon.id + "-clips");
+			
+			views["primary-label"].label = getlocstring('hud.primary.weapon') + ((range > 0) ? ' - ' + range + 'm': '');
+			
+			var progress = false;
+			
+			if(me.primaryammoname == "buildtool")
+			{
+				ammoView.visible = false;
+				clipView.visible = false;
+				
+				progress = true;					
+			}
+			else if(clipSize > 1) // we're dealing with a clipped weapon
+			{
+				ammoView.label = clipAmmo;
+				
+				if(rgLoaded > 0)
+					ammoView.label += " +1";
+				
+				if(clipCount >= 0)
+				{
+					clipView.label = clipCount;
+					
+					if(overSupply > 0)
+						clipView.label += " +" + overSupply;
+					
+					if(clipType >= 0)
+					{
+						var clipTypeLoc = "hud.cliptype." + clipType;
+						
+						if(clipCount + overSupply != 1)
+							clipTypeLoc += ".plural";
+						
+						clipView.label  += " " + game.getlocstring(clipTypeLoc);
+					}
+					
+					if(rgAmmo > 0)
+						clipView.label  += ", " + rgAmmo + " rg";
+					
+					if(overSupply > 0)
+					{
+						//cprint("We have clipped oversupply\n");
+						
+						switch(overSupplyState)
+						{
+							/*
+							case 4:
+							case 22:
+								clipView.setstyleproperty("color", "#FFFF00");
+							break;
+							*/
+							case 5:
+								clipView.setstyleproperty("color", "#FF0000");
+							break;
+							default:
+								clipView.setstyleproperty("color", "#BFE2CE");
+							break;
+						}
+						
+						if(overSupplyState == 5)
+						{
+							if(overSupplyTimer.run())
+								clipView.visible = (clipView.visible) ? false: true;
+						}
+						else
+						{
+							clipView.visible = true;
+						}
+					}
+					else
+					{
+						//cprint("We dont have clipped oversupply\n");
+						
+						clipView.setstyleproperty("color", "#BFE2CE");
+						
+						if(!clipView.visible)
+							clipView.visible = true;
+					}
+					
+					ammoView.setstyleproperty("color", "#BFE2CE");
+				}
+				else
+				{
+					clipView.visible = false;	
+				}
+				
+				if(!ammoView.visible)
+					ammoView.visible = true;
+			}
+			else // we're dealing with a single round weapon
+			{
+				clipView.visible = false;
+				
+				if(clipCount >= 0)
+				{
+					ammoView.label = clipCount;
+					
+					if(overSupply > 0)
+					{
+						//cprint("We have non-clipped oversupply\n");
+						
+						ammoView.label += " +" + overSupply;
+						
+						switch(overSupplyState)
+						{
+							/*
+							case 4:
+							case 22:
+								ammoView.setstyleproperty("color", "#FFFF00");
+							break;
+							*/
+							case 5:
+								ammoView.setstyleproperty("color", "#FF0000");
+							break;
+							default:
+								ammoView.setstyleproperty("color", "#BFE2CE");
+							break;
+						}
+						
+						if(overSupplyState == 5)
+						{
+							if(overSupplyTimer.run())
+								ammoView.visible = (ammoView.visible) ? false: true;
+						}
+						else
+						{
+							ammoView.visible = true;
+						}
+					}
+					else
+					{
+						//cprint("We dont have non-clipped oversupply\n");
+						
+						ammoView.setstyleproperty("color", "#BFE2CE");
+						
+						if(!ammoView.visible)
+							ammoView.visible = true;
+					}
+				}
+				else
+				{
+					ammoView.visible = false;
+				}
+			}
+			
+			setVisibility("primary-progress", progress);
+		}
+		
+		function updateVehicleAmmo(weapon)
+		{
+			var ammo 				= me[weapon.id + "ammocount"];
+			var clips 					= me[weapon.id + "clipcount"];
+			var clipType				= me[weapon.id + "cliptype"];
+			var ammoView 		= weapon.findview(weapon.id + "-ammo");
+			var clipView 				= weapon.findview(weapon.id + "-clips");
+			var clipTypeName		= "";
+			
+			if(ammo == null)
+				ammo = -1;
+	
+			if(clips == null)
+				clips = -1;
+			
+			if(clipType >= 0 && clips > 0)
+			{
+				var clipTypeLoc = "hud.cliptype." + clipType;
+				
+				if(clips > 1)
+					clipTypeLoc += ".plural";
+				
+				clipTypeName = game.getlocstring(clipTypeLoc);
+			}
+			
+			ammoView.label = (ammo > -1) ? ammo: '';
+			clipView.label = (clips > 0) ? clips + " " + clipTypeName: '';
+		}
+		
+		function getLatLon(pos)
+		{
+			var lat 	= Math.abs(pos.lat);
+			var latdeg 	= Math.floor(lat);
+			var latmin 	= Math.floor((lat - latdeg) * 60);
+			var latsec 	= Math.floor((lat - (latdeg + latmin / 60.0)) * 3600);
+			
+			var lon 	= Math.abs(pos.lon);
+			var londeg 	= Math.floor(lon);
+			var lonmin 	= Math.floor((lon - londeg) * 60);
+			var lonsec 	= Math.floor((lon - (londeg + lonmin / 60.0)) * 3600);
+			
+			return latdeg + "." + latmin + "." + latsec + ((pos.lat > 0) ? "N":"S") + " " +
+				   londeg + "." + lonmin + "." + lonsec + ((pos.lon > 0) ? "E":"W");
+		}
+		
+		/*
+		function zoomMiniMap(up)
+		{
+			var mapScaleMin	= .005;
+			var mapScaleMax	= 1;
+			var mapScale	= miniMap.scale;
+			
+			jump = mapScale * .4;
+			
+			if(!up)
+				jump *= -1;
+			
+			mapScale += jump;
+			
+			if(mapScale < mapScaleMin)
+				mapScale = mapScaleMin;
+			
+			if(mapScale > mapScaleMax)
+				mapScale = mapScaleMax;
+			
+			miniMap.scale = mapScale;
+			game.setpref('hud.minimap.scale', 4, mapScale);
+		}
+		*/
+		
+		/************ CALLBACKS ************/
+		
+		function doGameEvent(type, data, data2)
+		{
+			cprint(">>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
+			cprint("Doing Game Event: " + type + "/" + data + "\n");
+			
+			if(gameEventView != null)
+				gameEventView.close();
+			
+			gameEventView = null;
+			
+			switch(type)
+			{
+				case 2: // builders
+				{
+					if(data != null)
+					{
+						var content = game.getcontent("builders/" + data + ".xml");
+						if(content != null)
+						{
+							gameEventView = game.load("widgets/builder", findview("hud"));
+							gameEventView.setBuilder(gameEventView, content);
+						}
+					}
+				}
+				break;
+				case 3: // content
+				{
+					if(data != null)
+					{
+						var content = game.getcontent("gamevents/memorial.xml");
+						if(content != null)
+						{
+							gameEventView = game.load("widgets/memorial", findview("hud"));
+							gameEventView.setMemorial(gameEventView, content);
+						}
+					}
+				}
+				break;
+				case 7: // resupply
+				case 8: // resupply
+				case 9: // resupply
+					setResupplyState(type);
+				break;
+				case 10: // resupply
+					// received
+					soundPlayBump();
+				break;
+				case 11: // game alert
+				case 26: // game alert
+				case 29: // ppo
+				case 30: // no bailout
+					addGameAlert(type, data);
+				break;
+				case 12: // strat
+				case 13: // hc
+				case 18: // cp update
+				case 19: // facility
+				case 21: // objective update
+				case 24: // enemy spotted
+					addGameAlert(type, getVariableLocString("hud.alerts." + type + "." + data, data2));
+				break;
+				case 5: // oversupply warning
+				case 4: // oversupply gained
+				case 6: // oversupply lost
+				case 22: // oversupply inrange
+					if(type != overSupplyState)
+					{
+						setOverSupplyState(type);
+						
+						if(game.player.isoversupplied)
+						{
+							if(!game.getpref("hud.alerts.show", 0, true) || game.getpref("hud.alerts.textmode", 2, 0) != 0)
+							{
+								if(type == 5 || type == 6)
+									soundPlayError();
+								else
+									soundPlayBump();
+							}
+							
+							if(type == 4) // received
+								addGameAlert(type, getVariableLocString("hud.alerts." + type, data));
+							else if(type == 6) // lost
+								addGameAlert(type, getlocstring("hud.alerts." + type));
+						}
+					}
+				break;
+				case 14: // contact
+				case 15: // orders
+				case 16: // leader
+					addGameAlert(type, getlocstring("hud.alerts." + type));
+				break;
+				case 17: // infresupply
+				case 23: // cp under attack
+				case 25: // cp under attack
+				case 27: // hourly timeleft
+				case 28: // can't fire here
+					addGameAlert(type, getVariableLocString("hud.alerts." + type, data));
+				break;
+				default:
+					// dont do anything
+				break;
+			}
+		}
+		
+		function onContact()
+		{
+			cprint("New contact report!\n");
+			doGameEvent(14);
+		}
+		
+		function onCycleHud(def)
+		{
+			// set window settings
+			cprint("Cycing HUD to " + game.settings.hudvisible + " !\n");
+			
+			var chat 	= game.findview("chat");
+			var vis		= (def) ? 1: game.settings.hudvisible;
+			
+			cprint("HUD vis is " + vis + " !\n");
+			
+			switch(vis)
+			{
+				case 0: // no hud
+					chat.visible 	= false;
+					window.visible = false;
+					break;
+				case 1: // reset hud
+					chat.visible = true;
+					setupHUD(0);
+					break;
+				default: // show hud
+					chat.visible = true;
+					setupHUD(1);
+					break;
+			}
+			
+			SetProgress(-1);
+			setVisibility("game-alert", false);
+		}
+		
+		function onCycleGameInfo()
+		{
+			// set window settings
+			cprint("Cycing Game Info!\n");
+			var gameinfo = views["gameinfo"];
+			
+			if(gameinfo != null)
+			{
+				gameinfo.visible = !gameinfo.visible;
+				game.setpref("view.gameinfo.visible", 0, gameinfo.visible);
+			}
+		}
+		
+		function onCycleReadout()
+		{
+			// set window settings
+			cprint("Cycing Readout!\n");
+			var readout = views["readout"];
+			
+			if(readout != null)
+			{
+				readout.visible = !readout.visible;
+				game.setpref("view.readout.visible", 0, readout.visible);
+			}
+		}
+	
+		function onMapActivate()
+		{
+			setVisibility("kenny", false);
+		}
+		
+		function onMapDeactivate()
+		{
+			cprint("Map deactivation called!\n");
+			
+			var hudVisible 	= game.settings.hudvisible;
+			
+			if(hudVisible > 0 && kennyOn && !game.customterrain)
+			{
+				setVisibility("kenny", true);
+			}
+			else
+			{
+				setVisibility("kenny", false);
+			}
+		}
+		
+		function onChatDeactivate()
+		{
+			cprint("Handling chat deactivate: " + game.settings.hudvisible + "!\n");
+			
+			var chat 	= game.findview("chat");
+			var vis		= chat.visible;
+			
+			switch(game.settings.hudvisible)
+			{
+				case 0:
+					vis = false;
+					break;
+				case 2:
+					vis = game.getpref('view.chat.visible', 0, true);
+					break;
+				default:
+					vis = true;
+					break;
+			}
+			
+			if(!game.ingame)
+				vis = true;
+			
+			if(vis != chat.visible)
+			{
+				chat.visible = vis;
+				
+				if(vis)
+					chat.initChatter();
+			}
+		}
+		
+		function onCoolDown(progress)
+		{
+			setValue("primary-progress", progress);
+		}
+		
+		function saveCustomPosition(view, flags)
+		{
+			if(flags == null)
+				flags = 0;
+			
+			// save position
+			game.savesettings(view, 2 | flags);
+		}
+		
+		function setupDefaultHUD(mode)
+		{
+			cprint("Setting up HUD: " + mode+ "\n");
+			
+			window.visible = true;
+			
+			if(mode == 1)
+			{
+				// restore position and visibility
+				var flags = 2 | 8;
+				
+				var chat 			= game.findview("chat");
+				var readout 		= setDefaultReadoutPosition(views["readout"], true);
+				var gameinfo 	= setDefaultGameinfoPosition(views["gameinfo"], true);
+				
+				if(readout != null)
+				{
+					game.restoresettings(readout, 2 | 4);
+					readout.visible = game.getpref("view.readout.visible", 0, false);
+				}
+				
+				if(gameinfo != null)
+				{
+					game.restoresettings(gameinfo, 2 | 4);
+					gameinfo.visible = game.getpref("view.gameinfo.visible", 0, false);
+				}
+				
+				game.restoresettings(views["persona"], flags);
+				game.restoresettings(views["primary"], flags);
+				game.restoresettings(views["secondary"], flags);
+				game.restoresettings(views["kenny"], flags);
+				
+				views["minimap"].scale = game.getpref('hud.minimap.scale', 4, .04);
+				
+				if(chat != null)
+				{
+					game.restoresettings(chat, 0 | 2);
+					chat.visible = game.getpref("view.chat.visible", 0, true);
+					
+					if(chat.visible)
+						chat.initChatter();
+				}
+			}
+			else
+			{
+				// position and visibility
+				var flags = 2 | 8;
+				
+				// readout, gameinfo off, the rest on
+				var gameinfo 	= setDefaultGameinfoPosition(views["gameinfo"], true);
+				var readout 	= setDefaultReadoutPosition(views["readout"], true);
+				
+				if(readout != null)
+				{
+					setVisibility("readout", false);
+					game.savesettings(readout, flags | 4);
+				}
+				
+				if(gameinfo != null)
+				{
+					setVisibility("gameinfo", false);
+					game.savesettings(gameinfo, flags | 4);
+				}
+				
+				// persona - bottom left
+				setViewMetrics(views["persona"], true, 6, 6);
+				game.savesettings(views["persona"], flags);
+				
+				// primary ammo - bottom left above persona
+				setViewMetrics(views["primary"], true, 6, views["persona"].y + views["persona"].height + 6);
+				game.savesettings(views["primary"], flags);
+				
+				// secondary - bottom left above primary
+				setViewMetrics(views["secondary"], true, 6, views["primary"].y + views["primary"].height + 6);
+				game.savesettings(views["secondary"], flags);
+				
+				// chat - center bottom
+				var chat = game.findview("chat");
+				setViewMetrics(chat, true, window.width/2 - chat.width/2, 10);
+				game.savesettings(chat, flags);
+				
+				// kenny - bottom right above building info
+				setViewMetrics(views["kenny"], true, window.width - 6 - views["kenny"].width, window.height - 6 - views["kenny"].height);
+				game.savesettings(views["kenny"], flags);
+				game.setpref("hud.minimap.mode", 1, 0);
+				
+				// reset our mapscale
+				views["minimap"].scale = game.getpref('hud.minimap.scale', 4, .04);
+				
+				game.setpref('hud.alerts.show', 0, true);
+				game.setpref("hud.alerts.textmode", 2, 0);
+				game.settings.iconmode = 0;
+				
+				primaryOn = true;
+				secondaryOn = true;
+				kennyOn = true;
+				
+				chat.initChatter();
+				
+				// set the hud back to on (1 = reset, 2 = on)
+				game.settings.hudvisible = 2;
+			}
+			
+			centerView(views["game-alerts"], 0, window.scalev("y", 140));
+			game.savesettings(views["game-alerts"], flags);
+			
+			cprint("Finished setting up HUD!\n");
+		}
+		
+		function setDefaultGameinfoPosition(gameinfo, force)
+		{
+			if(!game.getpref("view.gameinfo.custom", 0, false) || force)
+			{
+				if(gameinfo != null)
+				{
+					gameinfo.x = window.width - gameinfo.width - 6;
+					gameinfo.y = window.height/2 - gameinfo.height/2;
+				}
+			}
+	
+			return gameinfo;
+		}
+	
+		function setDefaultReadoutPosition(readout, force)
+		{
+			if(!game.getpref("view.readout.custom", 0, false) || force)
+			{
+				if(readout != null)
+				{
+					readout.x = 5;
+					readout.y = window.height - readout.height - 5;
+				}
+			}
+	
+			return readout;
+		}
+		
+		function setViewMetrics(view, v, x, y)
+		{
+			if(view != null)
+			{
+				cprint("Setting view metrics for " + view.id + " to " + v + "," + x + "," + y + "\n");
+				setVisibility(view.id, v);
+				//view.visible = v;
+				view.x = x;
+				view.y = y;
+			}
+			
+			return view;
+		}
+		
+		function setResupplyState(newState)
+		{
+			resupplyState = newState;
+		}
+		
+		function setOverSupplyState(newState)
+		{
+			overSupplyState = newState;
+		}
+		
+		function updateResupplyIcon(icon)
+		{
+			if(resupplyState == 7)
+				icon.visible = false;
+			else if(resupplyState == 8)
+				icon.visible = true;
+			else if(resupplyState == 9 && resupplyTimer.run())
+				icon.visible = (icon.visible) ? false: true;
+		}
+		
+		function onEnterBuilding()
+		{
+			//binfoView.mgr.onEnter();
+			
+			var capCheck = game.player.client.state.cancapturecheck;
+			
+			if(game.online && capCheck > 0 && capCheckTimer.run())
+			{
+				var le 			= game.lastentered;
+				var fac			= (le != null) ? le.parent : null;
+				
+				if(game.player.capturezone && fac != null && !game.player.client.state.cancapture)
+					doGameEvent(11, getlocstring("hud.alerts.11.nocapture"));
+			}
+		}
+		
+		function onLeaveBuilding()
+		{
+			//binfoView.mgr.onLeave();
+			cprint("onLeaveBuilding\n");
+		}
+		
+		function SetProgress(progress, label)
+		{
+			if(!views["game-progress"])
+				return;
+			
+			if(progress < 0)
+			{
+				setVisibility("game-progress", false);
+			}
+			else
+			{
+				setVisibility("game-progress", true);
+				
+				views["game-progress-bar"].width = views["game-progress-bar"].parent.width * progress;
+				//setValue("game-progress-bar", progress);
+				
+				var loc = getlocstring(label);
+				if(loc.charAt(0) == "?")
+					loc = label;
+				
+				var header = views["game-progress-label"];
+				
+				if(header)
+				{
+					header.text = loc;
+					header.resizetotext();
+					header.x = views["game-progress"].width/2 - header.width/2;
+				}
+				
+				views["game-progress"].x = (game.screenwidth/2) - views["game-progress"].width/2;
+				views["game-progress"].y = (game.screenheight/6);
+			}
+		}
+		
+		// view helpers
+		function setProperty(id, prop, value)
+		{
+			var view = views[id];
+			
+			if(view != null && view[prop] != value)
+			{
+				view[prop] = value;
+				//cprint("Setting " + prop + " for " + id + " to " + value);
+			}
+		}
+		
+		function setLabel(id, value)
+		{
+			setProperty(id, "label", getlocstring(value));
+		}
+		
+		function setVisibility(id, value)
+		{
+			setProperty(id, "visible", value);
+		}
+		
+		function setImage(id, value)
+		{
+			setProperty(id, "src", value);
+		}
+		
+		function setValue(id, value)
+		{
+			setProperty(id, "value", value);
+		}
+		
+		-->
+	</script>
+</view>
+

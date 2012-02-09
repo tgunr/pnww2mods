@@ -1,0 +1,60 @@
+<window id="quit" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768" aspectalign="center"
+	layer="100" onshow="initQuitPopup(this)" onupdate="checkQuit()">
+	<include file="lib/popup.uixml"/>
+	<view x="350" y="400" width="350" height="100" style="background-color: #00000088; 
+							border-sides: ui/textures/hud/border_side.bmp;
+							border-corner: ui/textures/hud/border_corner.bmp;
+							border-width: 4;
+							border-height: 4;" moveondrag="yes">
+		<text id="popup-caption" x="10" y="40" height="50" width="330" acceptfocus="no" style=" color: #FFFFFF;"/>
+		<button id="popup-close" width="15" height="15" rtop="10" rright="10" onclick="doPopupClose()"
+			style="control-on: ui/textures/test/exit_on.bmp; control-off: ui/textures/test/exit_off.bmp;"
+			tip="${popup.quit}"/>
+		<button id="popup-no" x="20" y="10" width="150" height="25" label="${popup.cancel}" onclick="doQuitAction(false)"
+			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+		<button id="popup-yes" x="180" y="10" width="150" height="25" label="${popup.ok}" onclick="doQuitAction(true)"
+			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+	</view>
+	<script>
+		<!--
+		
+		var quitTimer = new CycleTimer(200);
+		var doQuit = false;
+		
+		function initQuitPopup(win)
+		{
+			setPopupClose(false);
+			setPopupMessage(getlocstring('common.quit'));
+			setPopupCursorState(game.cursor.visible);
+		}
+		
+		function doQuitAction(confirm)
+		{
+			if(confirm)
+			{
+				if(game.getpref("app.showcredits", 0, true))
+				{
+					soundPlayClick();
+					game.load("misc/credits");
+					window.close();
+				}
+				else
+				{
+					doQuit = true;
+				}
+			}
+			else
+			{
+				doPopupFree();
+			}
+		}
+		
+		function checkQuit()
+		{
+			if(quitTimer.run() && doQuit)
+				game.quit();
+		}
+		
+		// -->
+	</script>
+</window>

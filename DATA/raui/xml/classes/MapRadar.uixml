@@ -1,0 +1,24 @@
+<script>
+	<!--
+	
+	function MapRadar(widget)
+	{
+		// base class
+		var self = new MapControl(widget);
+		
+		// methods
+		self.clickRadar = function()
+		{
+		 	soundPlayClick();
+		 	var radar = !game.getpref(MapRadar.PREF_NAME, 0, false);
+		 	game.setpref(MapRadar.PREF_NAME, 0, radar);
+			this.map.enablelayer("aws", radar);
+		}
+		
+		return self;
+	}
+	
+	MapRadar.PREF_NAME = "ui.map.radar";
+	
+	-->
+</script>

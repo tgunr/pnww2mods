@@ -1,0 +1,190 @@
+<script>
+
+	<!--
+
+	function GrannyBone(skeleton, id, name, pid)
+	{
+		this.findChildren = function()
+		{
+			return this.skeleton.findChildren(this.id);
+		}
+		
+		this.findBonesByGroup = function(name, bones)
+		{
+			for(var i = 0; i < this.children.length; i++)
+			{
+				var child = this.children[i];
+				
+				if(child.group != null)
+					continue;
+				
+				bones.push(child);
+				
+				child.findBonesByGroup(name, bones);
+			}
+		}
+		
+		this.reset = function()
+		{
+			this.weights = new Object();
+			
+			for(var c = 0; c < this.children.length; c++)
+				this.children[c].reset();
+		}
+		
+		this.setWeight = function(weight)
+		{
+			if(this.view && this.view.mgr)
+				this.view.mgr.setWeight(weight);
+		}
+		
+		this.getWeight = function()
+		{
+			if(this.view && this.view.mgr)
+				return this.view.mgr.getWeight();
+			
+			return 0;
+		}
+		
+		//cprint("GrannyBone functions defined!\n");
+		
+		this.skeleton 	= skeleton;
+		this.id			= id;
+		this.name		= name;
+		this.pid		= pid;
+		this.parent		= null;
+		this.children	= new Array();
+		
+		this.view		= null; // our weight slider
+		this.group		= null;
+		this.weights	= new Object();
+		
+		//cprint("GrannyBone members defined!\n");
+		
+		return this;
+	}
+	
+	GrannyBone.SCOPE_BONE		= 0;
+	GrannyBone.SCOPE_GROUP		= 1;
+	GrannyBone.SCOPE_CHILDREN	= 2;
+	
+	function GrannySkeleton()
+	{
+		this.addBone = function(id, name, pid)
+		{
+			cprint("Adding bone " + name + " to skeleton!\n");
+			
+			this.bones[id] = new GrannyBone(this, id, name, pid);
+			
+			if(id == 0)
+				this.rootBone = this.bones[0];
+			
+		}
+		
+		this.addGroup = function(boneName, groupName)
+		{
+			var bone = this.findBoneByName(boneName);
+			
+			if(bone != null)
+			{
+				cprint("Adding group " + groupName + " with bone " + boneName + "!\n");
+				bone.group = groupName;
+			}
+		}
+		
+		this.findBone = function(id)
+		{
+			for(var b in this.bones)
+			{
+				if(this.bones[b].id == id)
+					return this.bones[b]; 
+			}
+			
+			return null;
+		}
+		
+		this.findBoneByName = function(name)
+		{
+			for(var b in this.bones)
+			{
+				if(this.bones[b].name == name)
+					return this.bones[b]; 
+			}
+			
+			return null;
+		}
+		
+		this.findBonesByGroup = function(name)
+		{
+			var group 	= this.findGroup(name);
+			var bones 	= new Array();
+			
+			bones.push(group);
+			group.findBonesByGroup(name, bones);
+			
+			return bones;
+		}
+		
+		this.findChildren = function(pid)
+		{
+			var children = new Array();
+			
+			for(var b in this.bones)
+			{
+				if(this.bones[b].pid == pid)
+					children.push(this.bones[b]); 
+			}
+			
+			return children;
+		}
+		
+		this.findGroup = function(name)
+		{
+			for(var b in this.bones)
+			{
+				if(this.bones[b].group == name)
+					return this.bones[b]; 
+			}
+			
+			return null;
+		}
+		
+		this.findGroups = function()
+		{
+			var groups = new Array();
+			
+			for(var b in this.bones)
+			{
+				if(this.bones[b].group != null)
+					groups.push(this.bones[b]); 
+			}
+			
+			return groups;
+		}
+		
+		this.processBones = function()
+		{
+			for(var b in this.bones)
+			{
+				var bone = this.bones[b];
+				
+				bone.parent 	= this.bones[bone.pid];
+				bone.children 	= this.findChildren(bone.id);
+				
+				cprint("Bone " + bone.name + ": parent is " + ((bone.parent) ? bone.parent.name : "na") + " with " + bone.children.length + " children!");
+			}
+		}
+		
+		this.reset = function()
+		{
+			if(this.rootBone != null)
+				this.rootBone.reset();
+		}
+		
+		this.bones = new Object();
+		
+		return this;
+	}
+	
+	-->
+</script>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+ 
+<window id="confirm" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768"  modal="true"
+	style="background-color: #00000077;" layer="100" aspectalign="center">
+	<include file="lib/popup.uixml"/>
+	<view width="350" height="150" style="background-color: #00000088; 
+							border-sides: ui/textures/hud/border_side.bmp;
+							border-corner: ui/textures/hud/border_corner.bmp;
+							border-width: 4;
+							border-height: 4;" moveondrag="yes" aspectlimit="width" aspectalign="center">
+		<text id="popup-caption" x="10" rtop="10" y="50" rright="10" acceptfocus="no" style=" color: #FFFFFF;"/>
+		<button id="popup-close" width="15" height="15" rtop="10" rright="10" onclick="doPopupClose()"
+			style="control-on: ui/textures/test/exit_on.bmp; control-off: ui/textures/test/exit_off.bmp;"
+			tip="${popup.quit}"/>
+		<button id="popup-no" x="20" y="10" width="150" height="25" label="${popup.cancel}" onclick="doPopupAction(false)"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+		<button id="popup-yes" x="180" y="10" width="150" height="25" label="${popup.ok}" onclick="doPopupAction(true)"
+			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+			onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+	</view>
+</window>

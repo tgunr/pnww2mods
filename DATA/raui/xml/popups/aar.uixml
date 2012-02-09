@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<window id="result" x="0" y="0" width="1024" height="768"  viewportwidth="1024" viewportheight="768" layer="90" modal="true" aspectalign="center"
+	onshow="initWin(this)">
+	<include file="lib/common.uixml"/>
+	<include file="lib/scenarios.uixml"/>
+	<include file="classes/ViewBuilder.uixml"/>
+	<include file="classes/TextBuilder.uixml"/>
+	<include file="classes/ImageBuilder.uixml"/>
+	<view id="victory-popup" x="300" width="400" height="200" rtop="120" moveondrag="no" aspectlimit='width'
+		style="background-color: #000000; border-width: 4; border-height: 4;" onshow="centerme(this)">
+		<text id="feedback" x="10" rtop="10" y="50" rright="10" acceptfocus="no" style=" color: #FFFFFF;"/>
+		<view x="5" y="5" rright="5" height="30">
+			<button id="popup-yes"  y="2" width="150" height="20" rright="20" label="OK" onclick="doAction()"
+				style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+				onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+		</view>
+	</view>
+	<script>
+		<!--
+		
+		var client				= game.player.client;
+		var feedback		= findview("feedback");
+		
+		function centerme(v)
+		{
+			v.x = (v.parent.width / 2) - (v.width / 2);
+			v.y = (v.parent.height / 2) - (v.height / 2) + 100;
+		}
+		
+		function initWin()
+		{
+			cprint("Init win");
+			
+			if(!game.cursor.visible)
+					game.cursor.visible = true;
+					
+			cprint("cursor on");
+		}
+		
+		function SetResult(victory, victory1, victory2)
+		{
+			if(victory == 1)
+			{
+				feedback.text = "Allies are victorious!";
+			}
+			else if(victory == 2)
+			{
+				feedback.text = "Axis are victorious!";
+			}
+			else
+			{
+				feedback.text = "We have a draw!";
+			}
+		}
+		
+		function doAction()
+		{
+			soundPlayClick();
+			game.setscenariocomplete();
+			game.cursor.update(window.name);
+			
+			// trigger a despawn
+			if(game.ingame)
+				game.despawn();
+			
+			window.close();
+		}
+		
+		-->
+	</script>
+</window>
+

@@ -1,0 +1,71 @@
+<script>
+
+	<include file="classes/ViewManager.uixml"/>
+	<include file="classes/RowBuilder.uixml"/>
+	
+	<!--
+	
+	function HeaderManager(s)
+	{
+		var self = new ViewManager(s);
+		
+		self.rb = null;
+		
+		self.SetTitle = function(t)
+		{
+			var v = this.view.findview("header-title");
+			
+			if(v != null)
+				v.label = getlocstring(t);
+		}
+		
+		self.StartHeaders = function(id, x, y, w, h)
+		{
+			this.rb = new RowBuilder(this.view, id, x, y, w, h);
+		}
+		
+		self.AddHeader = function(loc, width, align, style)
+		{
+			if(!this.rb)
+				return;
+				
+			if(style == null)
+				style = "header-column";
+			
+			this.rb.addColumn(loc, width, align, style);
+		}
+		
+		self.EndHeaders = function()
+		{
+			this.view.addview(this.rb.build());
+			this.rb = null;
+		}
+		
+		/*
+		self.Attach = function(id)
+		{
+			if(id == null)
+				id = this.view.getstyleproperty("attach");
+			
+			if(id != null)
+			{
+				var v = this.view.parent.findview(id);
+				
+				if(v != null)
+				{
+					this.view.y = v.y + v.height;
+					this.view.width = v.width;
+					this.view.x = v.x;
+				}
+			}
+		}
+		
+		// try to attach ourself
+		self.Attach();
+		*/
+		
+		return self;
+	}
+	
+	-->
+</script>

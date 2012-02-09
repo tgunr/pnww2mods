@@ -1,0 +1,118 @@
+<script>
+
+	<include file="classes/ViewManager.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+	
+	<!--
+	
+	function ScreenManager(s)
+	{
+		var self 				= new ViewManager(s);
+		
+		self.timer				= new CycleTimer(50);
+		self.handlers 		= new Object();
+		self.back				= null;
+		
+		// screen managers manage the entire window
+		self.view.mgr 	= null;
+		self.view			= self.view.window;
+		self.view.mgr 	= self;
+		
+		game.consoleprint("Creating ScreenManager for " + self.view.id);
+		
+		// methods
+		self.OnUpdate = function()
+		{
+			if(this.timer.run())
+				this.RunHandler("onupdate");
+		}
+		
+		self.OnShow = function()
+		{
+			this.RunHandler("onshow");
+		}
+		
+		self.OnForward = function()
+		{
+			if(this.view.OnForward != null)
+				this.view.OnForward(this);
+		}
+		
+		self.OnBack = function()
+		{
+			if(this.view.OnBack != null)
+				this.view.OnBack(this);
+		}
+		
+		self.AddHandler = function(name, handler)
+		{
+			if(name != null && handler != null)
+				this.handlers[name] = handler;
+		}
+		
+		self.GetHandler = function(name)
+		{
+			return this.handlers[name];
+		}
+		
+		self.RunHandler = function(name)
+		{
+			var handler = this.GetHandler(name);
+			
+			if(handler != null)
+				handler(this);
+		}
+		
+		self.DoQuit = function()
+		{
+			soundPlayClick();
+			loadWin("popups/quit", false);
+		}
+		
+		self.DoPrefs = function()
+		{
+			soundPlayClick();
+			var id = this.view.id;
+			var prefsWin = loadWin("prefs", true);
+			prefsWin.mgr.SetBack(id);
+		}
+		
+		self.SetBack = function(b)
+		{
+			this.back = b;
+		}
+		
+		self.PlayClick = function()
+		{
+			game.playsound("ui/sounds/click.wav", 1, 1);
+		}
+		
+		self.report = function()
+		{
+			game.consoleprint("ScreenManager/" + this.view.id + " reporting in!");
+		}
+		
+		if(self.view.OnUpdate != null)
+		{
+			self.AddHandler("onupdate", self.view.OnUpdate);
+			self.view.addevent("onupdate", "if(this.mgr) this.mgr.OnUpdate()");
+		}
+		
+		if(self.view.OnShow != null)
+		{
+			self.AddHandler("onshow", self.view.OnShow);
+			self.view.addevent("onshow", "if(this.mgr) this.mgr.OnShow()");
+		}
+		
+		// defined in lib/common
+		if(self.view.initGlobals != null)
+			self.view.initGlobals();
+		
+		if(self.view.OnLoad != null)
+			self.view.OnLoad(this);
+		
+		return self;
+	}
+	
+	-->
+</script>

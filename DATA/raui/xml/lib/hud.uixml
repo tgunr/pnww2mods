@@ -1,0 +1,1359 @@
+<?xml version="1.0"?>
+<script>
+	
+	<include file="classes/GameAlert.uixml"/>
+	<include file="classes/FadeView.uixml"/>
+	
+	<!--
+	
+	// game callbacks
+	game.onbuilder			= doGameEvent;
+	game.oncontact	 		= onContact;
+	game.onorders 			= onOrders;
+	
+	game.oncyclehud				= onCycleHud;
+	game.oncyclegameinfo		= onCycleGameInfo;
+	game.oncyclereadout		= onCycleReadout;
+	
+	game.onenterbuilding		= onEnterBuilding;
+	game.onleavebuilding		= onLeaveBuilding;
+	
+	game.onmapactivate		= onMapActivate;
+	game.onmapdeactivate 	= onMapDeactivate;
+	game.onchatdeactivate 	= onChatDeactivate;
+	game.oncooldown			= onCoolDown;
+	game.ongameevent			= doGameEvent;
+	
+	// helpers
+	var hudInited				= false;
+	var me							= game.player;
+	var meType					= game.player.vehicletype;
+	
+	// persona view
+	var personaView				= findview("persona");
+	var state						= findview("state");
+	var stateIcon				= findview("state-icon");
+	var atpBar					= findview("atp-bar");
+	var healthBar				= findview("health-bar");
+	var resupply				= findview("persona-resupply");
+	
+	// primary weapon
+	var primary		 			= findview("primary");
+	var primaryLabel 			= findview("primary-label");
+	var primaryName				= findview("primary-name");
+	var primaryAmmo				= findview("primary-ammo");
+	var primaryClips			= findview("primary-clips");
+	var primaryIcon				= findview("primary-icon");
+	var primaryProgress			= findview("primary-progress");
+	var primaryOn				= game.getpref("view.primary.visible", 0, true);
+	
+	// secondary weapon
+	var secondary				= findview("secondary");
+	var secondaryName			= findview("secondary-name");
+	var secondaryAmmo			= findview("secondary-ammo");
+	var secondaryClips			= findview("secondary-clips");
+	var secondaryOn				= game.getpref("view.secondary.visible", 0, true);
+	
+	// minimap vars
+	var scaleTimer 				= new CycleTimer(250);
+	var kenny						= findview("kenny");
+	var miniMap 					= kenny.findview("minimap");
+	var mapScale				= kenny.findview("minimapscale");
+	var kennyOn				= game.getpref("view.kenny.visible", 0, true);
+	
+	if(game.online)
+		miniMap.addlayer('<layer type="players"/>');
+	
+	var gameEventView			= null;
+	var gameAlertView			= findview("game-alert");
+	var gameAlertIconView	= findview("game-alert-icons");
+	var gameAlert				= null; // current text display
+	var gameAlerts				= new Array(); // icons list 0 is current
+	var gameAlertTimer 		= new CycleTimer(25);
+
+	var overSupplyState		= 6;
+	var resupplyState			= 7; // na
+	var resupplyTimer			= new CycleTimer(500);
+	var overSupplyTimer		= new CycleTimer(500);
+	
+	// campaign specific
+	var binfoView				= findview("binfo");
+	var cinfoView				= findview("cinfo");
+	var infoTimer				= new CycleTimer(200);
+	var capCheckTimer		= new CycleTimer(game.player.client.state.cancapturecheck);
+	var currentOrders				= findview("current-orders");
+	var currentOrdersTimeout	= 0;
+
+	// scenario specific
+	var objectives					= new Object();
+	var gameCycleTimer 		= new CycleTimer(1000);
+	var gameTime					= -1;
+	var gameTimer					= findview("game-timer");
+	var gameProgress			= findview("game-progress");
+	var obj1Progress				= findview("objective1-progress");
+	var obj2Progress				= findview("objective2-progress");
+	var hudMessages				= new Array(2);
+	
+	function initDefaultHud(hud)
+	{
+		//consoleclear();
+		cprint("Initing HUD !!!\n");
+		initGlobals();
+		musicKill();
+		
+		hudMessages[0] = new FadeView("game-message1", 8000);
+		hudMessages[1] = new FadeView("game-message2", 8000);
+		
+		gameAlertView.visible = false;
+		
+		primary.visible		= false;
+		secondary.visible 	= false;
+		
+		primaryName.visible		= false;
+		primaryIcon.visible		= false;
+		primaryProgress.visible	= false;
+		
+		var state = hud.findview("state");
+		
+		if(meType == "person")
+		{
+			state.label	= getlocstring('hud.health.state.infantry');
+			
+			primaryIcon.visible	= true;
+			primaryLabel.label	= getlocstring('hud.primary.weapon');
+		}
+		else
+		{
+			if(meType == "air")
+			{
+				state.label	= getlocstring('hud.health.state.pilot');
+			}
+			else
+			{
+				state.label	= getlocstring('hud.health.state.crew');
+			}
+			
+			primaryName.visible	= true;
+			primaryLabel.label	= getlocstring('hud.primary');
+		}
+		
+		if(game.online)
+		{
+			//miniMap.addlayer('<layer type="waypoints"/>');
+			//miniMap.addlayer('<layer type="players"/>');
+		}
+		
+		//miniMap.scale = game.getpref('hud.minimap.scale', 4, .04);
+		binfoView.mgr = new BuildingInfo(binfoView);
+		cinfoView.mgr = new CPInfo(cinfoView);
+		
+		// go ahead and set the position of the 
+		if(!game.training && player.client.currentorders.length > 0)
+		{
+			currentOrders.text = player.client.currentorders;
+			currentOrders.resizetotext();
+			restoreCustomOrders(currentOrders);
+		}
+		
+		// run default callbacks at least once
+		onCycleHud(game.training);
+		onOrders(false);
+		updateHud(hud);
+			
+		if(game.lastentered != null)
+			game.onenterbuilding();
+		
+		// make sure this gets reset
+		setCaptureCallback(null);
+		
+		if(gameTime == -1)
+			gameTimer.visible = false;
+		
+		gameProgress.visible = false;
+		
+		if(!game.scenario)
+		{
+			obj1Progress.visible = false;
+			obj2Progress.visible = false;
+		}
+	
+		var compass = hud.findview("compass");
+		
+		if(!game.customterrain)
+			compass.visible = false;
+		
+		hudInited = true;
+	}
+	
+	function updateDefaultHud(hud)
+	{
+		var hudVisible = game.settings.hudvisible;
+		
+		if(personaView.visible)
+		{
+			// update player state icon
+			//stateIcon.src = "ui/textures/hud/" + "state_" + me.state + ".bmp";
+			if(me.state == "stand" && me.walkrun != null)
+				stateIcon.src = "ui/textures/hud/" + "state_" + me.walkrun + ".bmp";
+			else
+				stateIcon.src = "ui/textures/hud/" + "state_" + me.state + ".bmp";
+			
+			
+			// update health
+			atpBar.value 	= me.atp;
+			healthBar.value = me.blood;
+			
+			atpBar.settip(getVariableLocString('hud.health.atp.tip', Math.round(me.atp * 100) + "%"));
+			healthBar.settip(getVariableLocString('hud.health.blood.tip', Math.round(me.blood * 100) + "%"));
+			
+			updateResupplyIcon(resupply);
+		}
+		
+		primaryProgress.visible = false;
+		
+		// update weapon boxes
+		if(meType == "person")
+		{
+			if(me.primaryammoname != "" && (hudVisible == 1 || (hudVisible == 2 && primaryOn)))
+			{
+				// primary is visible
+				if(!primary.visible)
+					primary.visible	= true;
+					
+				var iconName = me.primaryammoname;
+				
+				if(iconName == "buildtool")
+					iconName = "shovel";
+					
+				//cprint("Weapon is " + iconName + "\n");
+				
+				// set icon
+				primaryIcon.src = "ui/textures/hud/weapon_" + iconName + ".bmp";
+				
+				// update ammo
+				updateAmmo(primary);
+			}
+			else
+			{
+				primary.visible	= false;
+			}
+			
+			// troops never have a secondary
+			secondary.visible = false;
+		}
+		else
+		{
+			// do primary
+			if(me.primaryammoname != "" && (hudVisible == 1 || (hudVisible == 2 && primaryOn)))
+			{
+				// primary is visible
+				if(!primary.visible)
+					primary.visible	= true;
+				
+				// set name
+				primaryName.label = me.primaryammoname;
+				
+				// update ammo
+				updateVehicleAmmo(primary);
+			}
+			else
+			{
+				primary.visible	= false;
+			}
+			
+			// do secondary
+			if(me.secondaryammoname != "" && (hudVisible == 1 || (hudVisible == 2 && secondaryOn)))
+			{
+				// primary is visible
+				if(!secondary.visible)
+					secondary.visible = true;
+				
+				// set name
+				secondaryName.label = me.secondaryammoname;
+				
+				// update ammo
+				updateVehicleAmmo(secondary);
+			}
+			else
+			{
+				secondary.visible = false;
+			}
+		}
+		
+		// lets update the minimap
+		if(kenny.visible)
+			updateMiniMap();
+		
+		if(gameAlertTimer.run())
+			updateGameAlerts();
+			
+		if(infoTimer.run())
+			updateInfo();
+			
+		if(gameTimer.visible && gameTime >= 0 && gameCycleTimer.run())
+		{
+			SetTimer(gameTime - 1);
+		}
+		
+		hudMessages[0].update();
+		hudMessages[1].update();
+	}
+	
+	function updateAmmo(weapon)
+	{
+		var clipAmmo 	= me[weapon.id + "ammocount"]; 	// ammo in clip
+		var clipCount	= me[weapon.id + "clipcount"]; 	// number of clips or rounds if clipsize is 1
+		var clipSize 	= me[weapon.id + "clipsize"]; 	// number of rounds in clip
+		var clipType 	= me[weapon.id + "cliptype"]; 	// clip type: clip, magazine, belt
+		var overSupply 	= me[weapon.id + "oversupply"]; // number of oversupply rounds or clips
+		var range 		= me[weapon.id + "range"]; 		// primary's range setting
+		var rgAmmo	 	= me["rgammo"]; 				// number of rg rounds left
+		var rgLoaded	= me["rgloaded"]; 				// do we have an rg round loaded
+			
+		var ammoView 	= weapon.findview(weapon.id + "-ammo");
+		var clipView 	= weapon.findview(weapon.id + "-clips");
+		
+		primaryLabel.label = getlocstring('hud.primary.weapon') + ((range > 0) ? ' - ' + range + 'm': '');
+		
+		var progress = false;
+		
+		if(me.primaryammoname == "buildtool")
+		{
+			ammoView.visible = false;
+			clipView.visible = false;
+			
+			progress = true;					
+		}
+		else if(clipSize > 1) // we're dealing with a clipped weapon
+		{
+			ammoView.label = clipAmmo;
+			
+			if(rgLoaded > 0)
+				ammoView.label += " +1";
+			
+			if(clipCount >= 0)
+			{
+				clipView.label = clipCount;
+				
+				if(overSupply > 0)
+					clipView.label += " +" + overSupply;
+				
+				if(clipType >= 0)
+				{
+					var clipTypeLoc = "hud.cliptype." + clipType;
+					
+					if(clipCount + overSupply != 1)
+						clipTypeLoc += ".plural";
+					
+					clipView.label  += " " + game.getlocstring(clipTypeLoc);
+				}
+				
+				if(rgAmmo > 0)
+					clipView.label  += ", " + rgAmmo + " rg";
+				
+				if(overSupply > 0)
+				{
+					//cprint("We have clipped oversupply\n");
+					
+					switch(overSupplyState)
+					{
+						/*
+						case 4:
+						case 22:
+							clipView.setstyleproperty("color", "#FFFF00");
+						break;
+						*/
+						case 5:
+							clipView.setstyleproperty("color", "#FF0000");
+						break;
+						default:
+							clipView.setstyleproperty("color", "#BFE2CE");
+						break;
+					}
+					
+					if(overSupplyState == 5)
+					{
+						if(overSupplyTimer.run())
+							clipView.visible = (clipView.visible) ? false: true;
+					}
+					else
+					{
+						clipView.visible = true;
+					}
+				}
+				else
+				{
+					//cprint("We dont have clipped oversupply\n");
+					
+					clipView.setstyleproperty("color", "#BFE2CE");
+					
+					if(!clipView.visible)
+						clipView.visible = true;
+				}
+				
+				ammoView.setstyleproperty("color", "#BFE2CE");
+			}
+			else
+			{
+				clipView.visible = false;	
+			}
+			
+			if(!ammoView.visible)
+				ammoView.visible = true;
+		}
+		else // we're dealing with a single round weapon
+		{
+			clipView.visible = false;
+			
+			if(clipCount >= 0)
+			{
+				ammoView.label = clipCount;
+				
+				if(overSupply > 0)
+				{
+					//cprint("We have non-clipped oversupply\n");
+					
+					ammoView.label += " +" + overSupply;
+					
+					switch(overSupplyState)
+					{
+						/*
+						case 4:
+						case 22:
+							ammoView.setstyleproperty("color", "#FFFF00");
+						break;
+						*/
+						case 5:
+							ammoView.setstyleproperty("color", "#FF0000");
+						break;
+						default:
+							ammoView.setstyleproperty("color", "#BFE2CE");
+						break;
+					}
+					
+					if(overSupplyState == 5)
+					{
+						if(overSupplyTimer.run())
+							ammoView.visible = (ammoView.visible) ? false: true;
+					}
+					else
+					{
+						ammoView.visible = true;
+					}
+				}
+				else
+				{
+					//cprint("We dont have non-clipped oversupply\n");
+					
+					ammoView.setstyleproperty("color", "#BFE2CE");
+					
+					if(!ammoView.visible)
+						ammoView.visible = true;
+				}
+			}
+			else
+			{
+				ammoView.visible = false;
+			}
+		}
+		
+		if(primaryProgress.visible != progress)
+			primaryProgress.visible = progress;
+	}
+	
+	function updateVehicleAmmo(weapon)
+	{
+		var ammo 			= me[weapon.id + "ammocount"];
+		var clips 			= me[weapon.id + "clipcount"];
+		var clipType		= me[weapon.id + "cliptype"];
+		var ammoView 		= weapon.findview(weapon.id + "-ammo");
+		var clipView 		= weapon.findview(weapon.id + "-clips");
+		var clipTypeName	= "";
+		
+		if(ammo == null)
+			ammo = -1;
+
+		if(clips == null)
+			clips = -1;
+		
+		if(clipType >= 0 && clips > 0)
+		{
+			var clipTypeLoc = "hud.cliptype." + clipType;
+			
+			if(clips > 1)
+				clipTypeLoc += ".plural";
+			
+			clipTypeName = game.getlocstring(clipTypeLoc);
+		}
+		
+		ammoView.label = (ammo > -1) ? ammo: '';
+		clipView.label = (clips > 0) ? clips + " " + clipTypeName: '';
+	}
+	
+	function updateMiniMap()
+	{
+		miniMap.position = me.position;
+		
+		if(scaleTimer.run())
+			mapScale.label = miniMap.mapscale;
+	}
+	
+	/*
+	received inf resupply
+	lost oversupply
+	new orders
+	new mission leader
+	facility/cp lost (in my town)
+	facility/cp gained (in my town)
+	infantry emotes (ammo, get down, etc..
+	you hear enemy voices
+	msp deployable now
+	msp not deployabled
+	*/
+	
+	function updateGameAlerts()
+	{
+		var now 		= (new Date()).getTime();
+		var vertBuffer 	= gameAlertIconView.width + 5;
+		var vertInc		= gameAlertIconView.width/2;
+		
+		for(var i = 0; i < gameAlerts.length; i++)
+		{
+			var currentAlert = gameAlerts[i];
+			
+			if(currentAlert.view != null)
+			{
+				var minY = i * vertBuffer;
+				
+				currentAlert.view.y -= vertInc;
+				
+				if(currentAlert.view.y <= minY)
+					currentAlert.view.y = minY;
+				
+				if(currentAlert.view.y <= 0)
+				{
+					if(currentAlert.start == 0)
+					{
+						if(game.getpref("hud.alerts.textmode", 2, 0) == 0)
+						{
+							gameAlert = currentAlert;
+							gameAlertView.visible = false;
+						}
+						else
+						{
+							// start the expire timer
+							currentAlert.start = now;
+						}
+					}
+					else if(currentAlert.isExpired(now))
+					{
+						// its expired
+						if(currentAlert.view != null)
+						{
+							currentAlert.view.visible = false;
+							currentAlert.view.close();
+						}
+						
+						gameAlerts.shift();
+					}
+				}
+			}
+			else
+			{
+				// new icon alert
+				var add = "<image src='" + currentAlert.getIcon() + "' x='0' y='" + (365 - 32) + "' width='32' height='32' onclick='gameAlertClicked(this.mgr)' aspectlimit='width'/>";
+				currentAlert.view = gameAlertIconView.addview(add);
+				currentAlert.view.mgr = currentAlert;
+			}
+		}
+		
+		if(gameAlert != null)
+		{
+			if(gameAlert.start > 0 && !gameAlert.reset)
+			{
+				// continuing a current alert
+				if(gameAlert.isExpired(now))
+				{
+					gameAlertView.visible = false; // its expired
+					gameAlert = null;
+				}
+				else
+				{
+					if(!gameAlertView.visible)
+						gameAlertView.visible = true;
+					
+					gameAlertView.setstyleproperty("color", gameAlert.getColor());
+				}
+			}
+			else
+			{
+				// starting a new alert	
+				gameAlert.start = now;
+				gameAlert.reset = false;
+				
+				if(game.settings.wantmessagealert)
+					game.playsound(gameAlert.getSound(), 1, 1);
+				
+				// set the text
+				gameAlertView.text = gameAlert.text;
+				gameAlertView.setstyleproperty("color", gameAlert.getColor());
+				gameAlertView.resizetotext();
+				
+				gameAlertView.x = window.width/2 - gameAlertView.width/2;
+			}
+		}
+	}
+	
+	function gameAlertClicked(newAlert)
+	{
+		gameAlert = newAlert;
+		
+		if(gameAlert != null)
+		{
+			var index 	= -1;
+			var now 	= (new Date()).getTime();
+			
+			gameAlertView.visible = false;
+			
+			for(var i = 1; i < gameAlerts.length; i++)
+			{
+				if(gameAlerts[i].id == gameAlert.id)
+				{
+					index = i;
+					break;
+				}
+			}
+			
+			if(index == 0)
+			{
+				gameAlert.reset = true;
+			}
+			else if(index > 0)
+			{
+				if(gameAlert.view != null)
+				{
+					gameAlert.view.close();
+					gameAlert.view = null;
+				}
+				
+				gameAlerts.splice(index, 1);
+			}
+		}
+	}
+	
+	function getLatLon(pos)
+	{
+		var lat 	= Math.abs(pos.lat);
+		var latdeg 	= Math.floor(lat);
+		var latmin 	= Math.floor((lat - latdeg) * 60);
+		var latsec 	= Math.floor((lat - (latdeg + latmin / 60.0)) * 3600);
+		
+		var lon 	= Math.abs(pos.lon);
+		var londeg 	= Math.floor(lon);
+		var lonmin 	= Math.floor((lon - londeg) * 60);
+		var lonsec 	= Math.floor((lon - (londeg + lonmin / 60.0)) * 3600);
+		
+		return latdeg + "." + latmin + "." + latsec + ((pos.lat > 0) ? "N":"S") + " " +
+			   londeg + "." + lonmin + "." + lonsec + ((pos.lon > 0) ? "E":"W");
+	}
+	
+	/*
+	function zoomMiniMap(up)
+	{
+		var mapScaleMin	= .005;
+		var mapScaleMax	= 1;
+		var mapScale	= miniMap.scale;
+		
+		jump = mapScale * .4;
+		
+		if(!up)
+			jump *= -1;
+		
+		mapScale += jump;
+		
+		if(mapScale < mapScaleMin)
+			mapScale = mapScaleMin;
+		
+		if(mapScale > mapScaleMax)
+			mapScale = mapScaleMax;
+		
+		miniMap.scale = mapScale;
+		game.setpref('hud.minimap.scale', 4, mapScale);
+	}
+	*/
+	
+	/************ CALLBACKS ************/
+	
+	function doGameEvent(type, data, data2)
+	{
+		cprint(">>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
+		cprint("Doing Game Event: " + type + "/" + data + "\n");
+		
+		if(gameEventView != null)
+			gameEventView.close();
+		
+		gameEventView = null;
+		
+		switch(type)
+		{
+			case 2: // builders
+			{
+				if(data != null)
+				{
+					var content = game.getcontent("builders/" + data + ".xml");
+					if(content != null)
+					{
+						gameEventView = game.load("widgets/builder", findview("hud"));
+						gameEventView.setBuilder(gameEventView, content);
+					}
+				}
+			}
+			break;
+			case 3: // content
+			{
+				if(data != null)
+				{
+					var content = game.getcontent("gamevents/memorial.xml");
+					if(content != null)
+					{
+						gameEventView = game.load("widgets/memorial", findview("hud"));
+						gameEventView.setMemorial(gameEventView, content);
+					}
+				}
+			}
+			break;
+			case 7: // resupply
+			case 8: // resupply
+			case 9: // resupply
+				setResupplyState(type);
+			break;
+			case 10: // resupply
+				// received
+				soundPlayBump();
+			break;
+			case 11: // game alert
+			case 26: // game alert
+			case 29: // ppo
+			case 30: // no bailout
+				addGameAlert(type, data);
+			break;
+			case 12: // strat
+			case 13: // hc
+			case 18: // cp update
+			case 19: // facility
+			case 21: // objective update
+			case 24: // enemy spotted
+				addGameAlert(type, getVariableLocString("hud.alerts." + type + "." + data, data2));
+			break;
+			case 5: // oversupply warning
+			case 4: // oversupply gained
+			case 6: // oversupply lost
+			case 22: // oversupply inrange
+				if(type != overSupplyState)
+				{
+					setOverSupplyState(type);
+					
+					if(game.player.isoversupplied)
+					{
+						if(!game.getpref("hud.alerts.show", 0, true) || game.getpref("hud.alerts.textmode", 2, 0) != 0)
+						{
+							if(type == 5 || type == 6)
+								soundPlayError();
+							else
+								soundPlayBump();
+						}
+						
+						if(type == 4) // received
+							addGameAlert(type, getVariableLocString("hud.alerts." + type, data));
+						else if(type == 6) // lost
+							addGameAlert(type, getlocstring("hud.alerts." + type));
+					}
+				}
+			break;
+			case 14: // contact
+			case 15: // orders
+			case 16: // leader
+				addGameAlert(type, getlocstring("hud.alerts." + type));
+			break;
+			case 17: // infresupply
+			case 23: // cp under attack
+			case 25: // cp under attack
+			case 27: // hourly timeleft
+			case 28: // can't fire here
+				addGameAlert(type, getVariableLocString("hud.alerts." + type, data));
+			break;
+			default:
+				// dont do anything
+			break;
+		}
+	}
+	
+	function onContact()
+	{
+		cprint("New contact report!\n");
+		//soundPlayPMSound();
+		doGameEvent(14);
+	}
+	
+	function onCycleHud(def)
+	{
+		// set window settings
+		cprint("Cycing HUD to " + game.settings.hudvisible + "!\n");
+		
+		var chat 	= game.findview("chat");
+		var vis		= (def) ? 1: game.settings.hudvisible;
+		
+		switch(vis)
+		{
+			case 0: // no hud
+				chat.visible 	= false;
+				window.visible 	= false;
+				break;
+			case 1: // reset hud
+				window.visible 	= true;
+				setDefaultHUD();
+				break;
+			default: // show hud
+				window.visible 	= true;
+				setCustomHUD();
+				break;
+		}
+		
+		gameAlertView.visible = false;
+	}
+	
+	function onCycleGameInfo()
+	{
+		// set window settings
+		cprint("Cycing Game Info!\n");
+		var gameinfo = findview("gameinfo");
+		gameinfo.visible = !gameinfo.visible;
+		game.setpref("view.gameinfo.visible", 0, gameinfo.visible);
+	}
+
+	function onCycleReadout()
+	{
+		// set window settings
+		cprint("Cycing Readout!\n");
+		var readout = findview("readout");
+		readout.visible = !readout.visible;
+		game.setpref("view.readout.visible", 0, readout.visible);
+	}
+
+	function onMapActivate()
+	{
+		cprint("Map activation called!\n");
+		kenny.visible = false;
+	}
+	
+	function onMapDeactivate()
+	{
+		cprint("Map deactivation called!\n");
+		
+		var hudVisible 	= game.settings.hudvisible;
+		
+		if(hudVisible > 0 && kennyOn && !game.customterrain)
+		{
+			cprint("setting kenny visible!\n");
+			kenny.visible = true;
+			//initCompass();
+		}
+		else
+		{
+			cprint("setting kenny invisible!\n");
+			kenny.visible = false;
+		}
+	}
+	
+	function onChatDeactivate()
+	{
+		cprint("Handling chat deactivate: " + game.settings.hudvisible + "!\n");
+		
+		var chat 	= game.findview("chat");
+		var vis		= chat.visible;
+		
+		switch(game.settings.hudvisible)
+		{
+			case 0:
+				vis = false;
+				break;
+			case 2:
+				vis = game.getpref('view.chat.visible', 0, true);
+				break;
+			default:
+				vis = true;
+				break;
+		}
+		
+		if(!game.ingame)
+			vis = true;
+		
+		if(vis != chat.visible)
+		{
+			chat.visible = vis;
+			
+			if(vis)
+				chat.initChatter();
+		}
+	}
+	
+	function onCoolDown(progress)
+	{
+		primaryProgress.value = progress;			
+	}
+	
+	function onOrders(sendAlert)
+	{
+		cprint("New orders: " + player.client.currentorders + "\n");
+		
+		currentOrders.visible = false;
+		
+		if(game.training)
+			return; // no orders while training
+		
+		var hudSetting = game.settings.hudvisible;
+		
+		if(player.client.currentorders.length > 0 && hudSetting > 0)
+		{
+			if(game.getpref("view.current-orders.visible", 0, true))
+			{
+				cprint("Setting custom orders position\n");
+				
+				var cx		= currentOrders.x + currentOrders.width/2;
+				var cy		= currentOrders.y + currentOrders.height/2;
+				
+				currentOrders.text 		= player.client.currentorders;
+				currentOrders.visible	= true;
+				currentOrdersTimeout	= (new Date()).getTime() + 600000;
+				
+				currentOrders.resizetotext();
+				
+				currentOrders.x = cx - currentOrders.width/2;
+				currentOrders.y = cy - currentOrders.height/2;
+				
+				if(currentOrders.x < 5)
+					currentOrders.x = 5;					
+				if(currentOrders.x + currentOrders.width > window.width - 5)
+					currentOrders.x = window.width - currentOrders.width - 5;
+				
+				if(currentOrders.y < 5)
+					currentOrders.y = 5;					
+				if(currentOrders.y + currentOrders.height > window.height - 5)
+					currentOrders.y = window.height - currentOrders.height - 5;
+				
+				if(game.settings.wantalerts)
+					soundPlayOrders();
+				
+				// update the config
+				saveCustomOrders(currentOrders);
+				
+				cprint("Done setting custom orders position\n");
+			}
+			
+			if(sendAlert == null || sendAlert == true)
+				doGameEvent(15);
+		}
+	}
+	
+	function saveCustomPosition(view, extra)
+	{
+		if(extra == null)
+			extra = 0;
+		// save position
+		game.savesettings(view, 2 | extra);
+	}
+	
+	function saveCustomOrders(view, what)
+	{
+		cprint("Saving custom orders position\n");
+		
+		game.setpref("view." + view.id + ".x", 4, normalizeX(view.x + view.width/2));
+		game.setpref("view." + view.id + ".y", 4, normalizeY(view.y + view.height/2));
+	}
+	
+	function restoreCustomOrders(view)
+	{
+		cprint("Restoring custom orders position\n");
+		
+		var newX = game.getpref("view." + view.id + ".x", 4, normalizeX(view.x + view.width/2));
+		var newY = game.getpref("view." + view.id + ".y", 4, normalizeY(view.y + view.height/2));
+		
+		view.x = scaleX(newX) - view.width/2;
+		view.y = scaleY(newY) - view.height/2;
+	}
+	
+	function setCustomHUD()
+	{
+		cprint("Setting custom HUD!\n");
+		
+		var what = 2 | 8; // restore position and visibility
+		var chat = game.findview("chat");
+		
+		var readout 	= setDefaultReadoutPosition(findview("readout"), true);
+		var gameinfo 	= setDefaultGameinfoPosition(findview("gameinfo"), true);
+		
+		game.restoresettings(readout, 2 | 4);
+		game.restoresettings(gameinfo, 2 | 4);
+		game.restoresettings(currentOrders, 0 | 8);
+		game.restoresettings(personaView, what);
+		game.restoresettings(primary, what);
+		game.restoresettings(secondary, what);
+		game.restoresettings(kenny, what);
+		game.restoresettings(binfoView, what);
+		game.restoresettings(cinfoView, what);
+		game.restoresettings(chat, 0 | 2);
+		
+		readout.visible = game.getpref("view.readout.visible", 0, false);
+		gameinfo.visible = game.getpref("view.gameinfo.visible", 0, false);
+		chat.visible = game.getpref("view.chat.visible", 0, true);
+		miniMap.scale = game.getpref('hud.minimap.scale', 4, .04);
+		
+		// do the real position
+		restoreCustomOrders(currentOrders);
+		
+		if(chat.visible)
+			chat.initChatter();
+			
+		if(game.customterrain)
+		{
+			kennyOn = false;
+			kenny.visible = false;
+		}
+		
+		onOrders(false);
+	}
+	
+	function setDefaultHUD()
+	{
+		cprint("Setting default HUD!\n");
+		
+		var what = 2 | 8; // position and visibility
+		
+		// readout, gameinfo off, the rest on
+		var gameinfo 	= setDefaultGameinfoPosition(findview("gameinfo"), true);
+		var readout 	= setDefaultReadoutPosition(findview("readout"), true);
+		
+		gameinfo.visible 	= false;
+		readout.visible 	= false;
+		
+		game.savesettings(gameinfo, what | 4);
+		game.savesettings(readout, what | 4);
+		
+		// orders - center top
+		currentOrders.x = window.width/2 - currentOrders.width/2;
+		currentOrders.y = window.height - currentOrders.height - 6;
+		saveCustomOrders(currentOrders);
+		game.setpref("view.current-orders.visible", 0, true);
+		
+		// persona - bottom left
+		setViewMetrics(personaView, true, 6, 6);
+		game.savesettings(personaView, what);
+		
+		// primary ammo - bottom left above persona
+		setViewMetrics(primary, true, 6, personaView.y + personaView.height + 6);
+		game.savesettings(primary, what);
+		
+		// secondary - bottom left above primary
+		setViewMetrics(secondary, true, 6, primary.y + primary.height + 6);
+		game.savesettings(secondary, what);
+		
+		// city info - bottom right below kenny
+		setViewMetrics(cinfoView, true, window.width - 6 - cinfoView.width, 6);
+		game.savesettings(cinfoView, what);
+
+		// building info - bottom right above city info
+		setViewMetrics(binfoView, true, window.width - 6 - binfoView.width, cinfoView.y + cinfoView.height + 6);
+		game.savesettings(binfoView, what);
+		
+		// kenny - bottom right above building info
+		setViewMetrics(kenny, true, window.width - 6 - kenny.width, window.height - 6 - kenny.height);
+		game.savesettings(kenny, what);
+		game.setpref("hud.minimap.mode", 1, 0);
+		
+		// chat - center bottom
+		var chat = game.findview("chat");
+		setViewMetrics(chat, true, window.width/2 - chat.width/2, 10);
+		game.savesettings(chat, what);
+		
+		game.setpref('hud.alerts.show', 0, true);
+		game.setpref("hud.alerts.textmode", 2, 0);
+		game.settings.iconmode = 0;
+		
+		primaryOn = true;
+		secondaryOn = true;
+		kennyOn = true;
+		
+		if(game.customterrain)
+		{
+			kennyOn = false;
+			kenny.visible = false;
+		}
+
+		
+		chat.initChatter();
+		onOrders(false);
+		
+		// set the hud back to on (1 = reset, 2 = on)
+		game.settings.hudvisible = 2;
+		
+		// reset our mapscale
+		miniMap.scale = game.getpref('hud.minimap.scale', 4, .04);
+		
+		cprint("Finished setting default HUD!\n");
+	}
+	
+	function setDefaultGameinfoPosition(gameinfo, force)
+	{
+		if(!game.getpref("view.gameinfo.custom", 0, false) || force)
+		{
+			gameinfo.x = window.width - gameinfo.width - 6;
+			gameinfo.y = window.height/2 - gameinfo.height/2;
+		}
+
+		return gameinfo;
+	}
+
+	function setDefaultReadoutPosition(readout, force)
+	{
+		if(!game.getpref("view.readout.custom", 0, false) || force)
+		{
+			readout.x = 5;
+			readout.y = window.height - readout.height - 5;
+		}
+
+		return readout;
+	}
+	
+	function setViewMetrics(view, v, x, y)
+	{
+		if(view != null)
+		{
+			cprint("1Setting view metrics for " + view.id + " to " + v + "," + x + "," + y + "\n");
+			view.visible = v;
+			view.x = x;
+			view.y = y;
+		}
+		
+		return view;
+	}
+	
+	function setResupplyState(newState)
+	{
+		resupplyState = newState;
+	}
+	
+	function setOverSupplyState(newState)
+	{
+		overSupplyState = newState;
+	}
+	
+	function updateResupplyIcon(icon)
+	{
+		if(resupplyState == 7)
+			icon.visible = false;
+		else if(resupplyState == 8)
+			icon.visible = true;
+		else if(resupplyState == 9 && resupplyTimer.run())
+			icon.visible = (icon.visible) ? false: true;
+	}
+	
+	function addGameAlert(type, text)
+	{
+		if(!game.getpref("hud.alerts.show", 0, true))
+			return;
+		
+		var newAlert 	= new GameAlert(type, text.toUpperCase());
+		var okToAdd		= true;
+		
+		if(newAlert.isUnique())
+		{
+			for(var i = 0; i < gameAlerts.length; i++)
+			{
+				if(gameAlerts[i].type == newAlert.type)
+				{
+					okToAdd = false;
+					break;
+				}	
+			}
+		}
+		
+		if(okToAdd)
+			gameAlerts.push(newAlert);	
+	}
+	
+	function onEnterBuilding()
+	{
+		//binfoView.mgr.onEnter();
+		
+		var capCheck = game.player.client.state.cancapturecheck;
+		
+		if(game.online && capCheck > 0 && capCheckTimer.run())
+		{
+			var le 			= game.lastentered;
+			var fac			= (le != null) ? le.parent : null;
+			
+			if(game.player.capturezone && fac != null && !game.player.client.state.cancapture)
+				doGameEvent(11, getlocstring("hud.alerts.11.nocapture"));
+		}
+	}
+	
+	function onLeaveBuilding()
+	{
+		//binfoView.mgr.onLeave();
+		cprint("onLeaveBuilding\n");
+	}
+	
+	function updateInfo()
+	{
+		binfoView.mgr.update();
+		cinfoView.mgr.update();
+	}
+	
+	// hook for combat tutorials
+	function setCaptureCallback(c)
+	{
+		//game.chatprint("Setting capture callback!!!");
+		binfoView.mgr.callback = c;
+	}
+	
+	function OnMessage(loc, color)
+	{
+		var message = getlocstring(loc);
+		
+		if(message.charAt(0) == "?")
+			message = loc;
+			
+		if(hudMessages[0].start > 0)
+		{
+			var hm0	= hudMessages[0];
+			var hm1 	= hudMessages[1];
+			
+			// move it down
+			hm1.color				= hm0.color;
+			hm1.view.text 		= hm0.view.text;
+			
+			hm1.view.resizetotext();
+			hm1.view.setstyleproperty("color", hm1.color);
+			
+			hm1.view.x 			= (game.screenwidth/2) - hm1.view.width/2;
+			hm1.view.y			= (game.screenheight/4) - hm1.view.height - 10;  
+			hm1.view.visible 	= true;
+			hm1.start				= hm0.start;
+		}
+		
+		hudMessages[0].init(message, color);
+		
+		// centered x, 1/3 y
+		hudMessages[0].view.x = (game.screenwidth/2) - hudMessages[0].view.width/2;
+		hudMessages[0].view.y = (game.screenheight/4);
+		
+		// get their attention
+		//game.playsound("ui/sounds/recv_orders.wav", 1, 1);
+	}
+	
+	function SetTimer(seconds)
+	{
+		gameTime = seconds;
+		
+		if(gameTime < 0)
+		{
+			if(gameTimer.visible)
+				gameTimer.visible = false;
+		}
+		else
+		{
+			if(!gameTimer.visible)
+				gameTimer.visible = true;
+			
+			var formatted = "";
+			
+			if(gameTime < 60)
+			{
+				if(gameTime < 10)
+					formatted = ":0" + gameTime;
+				else
+					formatted = ":" + gameTime;
+			}
+			else
+			{
+				var fminutes = parseInt(gameTime / 60);
+				var fseconds = parseInt(gameTime % 60);
+				
+				if(fseconds < 10)
+					formatted =  fminutes + ":0" + fseconds;
+				else
+					formatted =  fminutes + ":" + fseconds;
+			}
+			
+			gameTimer.visible = true;
+			gameTimer.text = formatted;
+			gameTimer.resizetotext();
+			gameTimer.x = (game.screenwidth/2) - gameTimer.width/2;
+		}
+	}
+	
+	function SetProgress(progress, label)
+	{
+		if(progress < 0)
+		{
+			if(gameProgress.visible)
+				gameProgress.visible = false;
+		}
+		else
+		{
+			if(!gameProgress.visible)
+				gameProgress.visible = true;
+			
+			var bar = gameProgress.findview("game-progress-bar");
+			bar.value = progress;
+			
+			var loc = getlocstring(label);
+			if(loc.charAt(0) == "?")
+				loc = label;
+			
+			var header = gameProgress.findview("game-progress-label");
+			header.text = loc;
+			header.resizetotext();
+			header.x = gameProgress.width/2 - header.width/2; 
+			
+			gameProgress.x = (game.screenwidth/2) - gameProgress.width/2;
+			gameProgress.y = (game.screenheight/6);
+		}
+	}
+	
+	function SetObjective(objective, progress)
+	{
+		cprint("Set objective called!");
+		
+		var view = (objective == "objective1") ? obj1Progress : obj2Progress;
+		
+		if(progress < 0)
+		{
+			view.visible = false;
+			return;
+		}
+		
+		if(progress > 1)
+			progress = 1;
+		
+		view.visible = true;
+		
+		var bar = view.findview(objective + "-progress-bar");
+		bar.value = progress;
+		
+		var loc = getlocstring(objective);
+		if(loc.charAt(0) == "?")
+			loc = objective;
+		
+		var header = view.findview(objective + "-progress-label");
+		header.label = loc;
+		//header.resizetotext();
+		//header.x = view.width/2 - header.width/2; 
+		
+		//view.x = (game.screenwidth/2) - gameProgress.width/2;
+		//view.y = (game.screenheight/6);
+	}
+	
+	-->
+</script>
+

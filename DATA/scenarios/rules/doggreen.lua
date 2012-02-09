@@ -84,6 +84,8 @@ end
 
 function ra.OnUpdate(handler)
 
+	scenario.OnUpdate(handler);
+
 	-- ui.ChatPrint("Doggreen update");
 
 	if(ra.GetStage() == 1) then

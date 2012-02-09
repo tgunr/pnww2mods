@@ -1,0 +1,147 @@
+	<script>
+		<!--
+		
+		// #BFE2CE <- tab pale green
+		// #3e5248 <- structure green
+		// #e9e3d9 <- offwhite regular text
+		// # FFFFFF header text
+		
+		var forwardButton 	= findview("forward-button");
+		var backButton 		= findview("back-button");
+		var helpWin 		= null;
+		
+		function initTemplate(template)
+		{
+			initGlobals();
+			
+			if(!window.doBack)
+			{
+				var back = template.findview("back-button");
+				
+				if(back)
+					back.visible = false;
+			}
+			
+			if(!window.doForward)
+			{
+				var fore = template.findview("forward-button");
+				
+				if(fore)
+					fore.visible = false;
+			}
+			
+			if(game.online && game.betarelease)
+				game.load("gameinfo", window);
+		}
+		
+		function showVersion(version)
+		{
+			var versionCaption	= getlocstring("common.version");
+			versionCaption += ": " + game.version;
+			version.label = versionCaption;
+		}
+		
+		function showRevision(view)
+		{
+			if(game.betarelease == 1)
+			{
+				var revisionCaption = getlocstring("common.revision");
+				revisionCaption += ": " + game.revision;
+				view.label = revisionCaption;
+			}
+			else
+				view.label = "";
+		}
+		
+		function tplForward()
+		{
+			soundPlayClick();
+			
+			if((!game.online || checkTimeLeft(game.player.client.state.timeleft)) && window.doForward != null)
+				window.doForward();
+		}
+		
+		function tplBack()
+		{
+			soundPlayClick();
+			
+			if((!game.online || checkTimeLeft(game.player.client.state.timeleft)) && window.doBack != null)
+				window.doBack();
+		}
+		
+		function tplQuit()
+		{
+			soundPlayClick();
+			loadWin("quit", false);
+			//reloadWin();
+		}
+		
+		function tplConfirmQuit(confirmed)
+		{
+			// this function is not used anymore
+		}
+		
+		function tplTab()
+		{
+			soundPlayShuffle();
+		}
+		
+		function showTab(index)
+		{
+			findview("body").value = index;
+		}
+		
+		function setBack(title, tip)
+		{
+			var titleText = getlocstring(title);
+			
+			backButton.label = titleText.toUpperCase();
+			backButton.settip(getlocstring(title + ".tip"));
+		}
+		
+		function setForward(title)
+		{
+			var titleText = getlocstring(title);
+			
+			forwardButton.label = titleText.toUpperCase();
+			forwardButton.settip(getlocstring(title + ".tip"));
+		}
+		
+		function setBackEnabled(flag)
+		{
+			backButton.enabled = flag;
+		}
+		
+		function setForwardEnabled(flag)
+		{
+			forwardButton.enabled = flag;
+		}
+	
+		function setHelp(message)
+		{
+			var caption = findview("quick-help");
+			
+			if(caption)
+				caption.label = message.toUpperCase();
+		}
+		
+		function showHelp(vis)
+		{
+			var bar = findview("quick-help-bar");
+			
+			if(bar)
+				bar.visible = vis;
+		}
+		
+		function doQuickHelp()
+		{
+			var body = game.findview("body");
+			
+			if(body != null && body.value > 0)
+				quickhelp(body.getchild(body.value).id, true);
+			else
+				quickhelp(window.name, true);
+		}
+		
+		-->
+	</script>

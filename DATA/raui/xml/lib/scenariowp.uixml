@@ -1,0 +1,67 @@
+<script>
+	<!--
+	
+	var bulletView = null;
+	var distView = null;
+	
+	function hudWPInit(win)
+	{
+		bulletView = win.findview("bullet");
+		distView = win.findview("distance");
+		
+		initHUDObject(win, updateHUDCallback)
+	}
+	
+	function updateHUDCallback(placement, distance, alpha)
+	{
+		if(display == null || bulletView == null)
+			return;
+	
+		if(alpha == 0 || placement != 0)
+		{
+			if(display.visible)
+				display.visible = false;
+			
+			if(bulletView.visible)
+				bulletView.visible = false;
+				
+			if(distView.visible)
+				distView.visible = false;
+		}
+		else
+		{
+			if(!display.visible)
+				display.visible = true;
+				
+			if(!bulletView.visible)
+				bulletView.visible = true;
+			
+			if(!distView.visible)
+				distView.visible = true;
+			
+			var acolor = 255 * alpha;
+			var bg 		= 255 * alpha;
+			
+			if(alpha > 0 && acolor < 32)
+				acolor = 32;
+			
+			if(alpha > 0 && bg < 128)
+				bg = 128;
+			
+			display.setstyleproperty("color", "#FFFFFF" + acolor.toString(16));
+			distView.setstyleproperty("color", "#FFFFFF" + acolor.toString(16));
+			
+			bulletView.setstyleproperty("background-color", wpColor + bg.toString(16));
+			
+			if(label != null && placement == 0)
+				display.text = label;
+			
+			if(distance >= 0 && placement == 0)
+				distView.text = distance + "m";
+			else
+				distView.text = "";
+		}
+	}
+	
+	-->
+</script>

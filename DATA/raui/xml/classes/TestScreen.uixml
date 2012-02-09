@@ -1,0 +1,24 @@
+<script>
+
+	<include file="classes/ScreenManager.uixml"/>
+	
+	<!--
+	
+	function TestScreen(s)
+	{
+		var self = new ScreenManager(s);
+		
+		game.consoleprint("Creating testScreen for " + self.view.id);
+		
+		self.DoQuit = function()
+		{
+			this.view.close();
+		}
+		
+		self.view.layer = 10;
+		
+		return self;
+	}
+	
+	-->
+</script>

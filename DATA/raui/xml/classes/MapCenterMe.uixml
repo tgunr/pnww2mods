@@ -1,0 +1,23 @@
+<script>
+	<!--
+	
+	function MapCenterMe(widget)
+	{
+		// base class
+		var self = new MapControl(widget);
+		
+		// methods
+		self.clickCenterMe = function()
+		{
+		 	soundPlayClick();
+		 	game.setpref(MapCenterMe.PREF_NAME, 0, true);
+			this.map.mgr.setCenterMe(true);
+		}
+		
+		return self;
+	}
+	
+	MapCenterMe.PREF_NAME		= "ui.map.centerme";
+	
+	-->
+</script>

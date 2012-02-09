@@ -19,8 +19,8 @@ ra.InitState(state);
 
 -- add our capture timer
 -- scenario.RegisterUpdate("OnCaptureUpdate");
-
 -- some overrides
+
 function ra.OnSpawn(handler)
 	
 	-- run default behavior
@@ -58,7 +58,11 @@ function ra.OnDespawn(handler)
 	return scenario.OnDespawn(handler);
 end
 
+
 function ra.OnUpdate(handler)
+	
+	scenario.OnUpdate(handler);
+	
 	if(state.victory ~= 0 or ra.GetTeam() ~= 1) then
 		return 1;
 	end
@@ -166,7 +170,6 @@ function OnCapturing(name, value)
 	
 	return 1;
 end
-
 
 -- override the default round timer
 function ra.OnRoundTimer(name, value)
