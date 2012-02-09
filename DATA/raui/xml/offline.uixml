@@ -35,7 +35,7 @@
 		</stackview>
 	</view>
 	<navbar style="class: bordered; layout: vertical; vpad: 10;">
-		<button id="fight-button" label="    SPAWN" rright="0" onclick="this.mgr.Click(DoSpawn)" align="left"/>
+		<button id="forward" label="    SPAWN" rright="0" onclick="this.mgr.Click(DoSpawn)" align="left"/>
 	</navbar>
 	<script>
 		<!--

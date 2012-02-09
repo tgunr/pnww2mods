@@ -37,8 +37,8 @@
 		</view>
 	</view>
 	<navbar style="class: bordered; layout: vertical; vpad: 10;">
-		<button id="join-button" label="    JOIN" rright="0" onclick="this.mgr.Click(DoJoin)" align="left" enabled="false"/>
-		<button id="create-button" label="    CREATE" rright="0" onclick="this.mgr.Click(DoCreate)" align="left"/>
+		<button id="join-button" label="    JOIN" rright="0" onclick="this.mgr.Click(DoJoin)" align="left" enabled="false" style="class: button.forward;"/>
+		<button id="create-button" label="    CREATE" rright="0" onclick="this.mgr.Click(DoCreate)" align="left" style="class: button.forward;"/>
 	</navbar>
 	<script>
 		<!--

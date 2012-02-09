@@ -1,15 +1,21 @@
+
+// remarking starts when a '//' is found at the beginning of the line
+// remarking carries to the end of the line
+
+// this class is applied to everything
+
 *
 {
 	class: debug;
 }
 
-// this is my remark
+// full screen handling 
+
 background
 {
 	background-image: raui/textures/template_ra43.bmp;
 }
 
-   // another remark!
 background.loading
 {
 	background-image: raui/textures/loadingra43.bmp;
@@ -34,6 +40,8 @@ ra
 {
 	class: background;
 }
+
+// text handling
 
 normaltext
 {
@@ -74,6 +82,8 @@ text
 	color: #BFE2CE;
 }
 
+// misc css calls
+
 info
 {
 	background-color: #000000AA;
@@ -96,6 +106,8 @@ header-column
 {
 	class: bordered;
 }
+
+// helper classes
 
 bordered
 {
@@ -133,9 +145,39 @@ borderhilight
 	class: borderhilight;
 }
 
+scrollbar
+{
+	width: 10;
+	background-image: ui/textures/test/scrolltunnel_bg.bmp;
+	control-on: ui/textures/test/scrollhandle.bmp;
+}
+
+// buttons
+
+button
+{
+	control-on: raui/textures/rabutton_blankon.bmp;
+	control-off: raui/textures/rabutton_blankoff.bmp;
+	color: #FFFFFF;
+	font-size: -1;
+	width: 180;
+	height: 40;
+	size-scaler: .5;
+}
+
+smallbutton
+{
+	class: button;
+	font-size: -3;
+	size-scaler: .3;
+}
+
 button.forward
 {
 	class: button;
+	control-on: raui/textures/rabutton_forwardon.bmp;
+	control-off: raui/textures/rabutton_forwardoff.bmp;
+	control-disabled: raui/textures/rabutton_forwarddisable.bmp;
 }
 
 button.back
@@ -156,31 +198,7 @@ button.quit
 button.prefs
 {
 	class: smallbutton;
-}
-
-smallbutton
-{
-	class: button;
-	font-size: -3;
-	size-scaler: .3;
-}
-
-button
-{
 	control-on: raui/textures/rabutton_forwardon.bmp;
 	control-off: raui/textures/rabutton_forwardoff.bmp;
-	control-disabled: raui/textures/rabutton_forwarddisable.bmp;
-	color: #FFFFFF;
-	font-size: -1;
-	width: 180;
-	height: 40;
-	size-scaler: .5;
-}
-
-scrollbar
-{
-	width: 10;
-	background-image: ui/textures/test/scrolltunnel_bg.bmp;
-	control-on: ui/textures/test/scrollhandle.bmp;
 }
 
