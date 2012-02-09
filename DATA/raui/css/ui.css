@@ -1,15 +1,8 @@
 
-// remarking starts when a '//' is found at the beginning of the line
-// remarking carries to the end of the line
-
-// this class is applied to everything
-
 *
 {
 	class: debug;
 }
-
-// full screen handling 
 
 background
 {
@@ -40,8 +33,6 @@ ra
 {
 	class: background;
 }
-
-// text handling
 
 normaltext
 {
@@ -82,8 +73,6 @@ text
 	color: #BFE2CE;
 }
 
-// misc css calls
-
 info
 {
 	background-color: #000000AA;
@@ -106,8 +95,6 @@ header-column
 {
 	class: bordered;
 }
-
-// helper classes
 
 bordered
 {
@@ -151,8 +138,6 @@ scrollbar
 	background-image: ui/textures/test/scrolltunnel_bg.bmp;
 	control-on: ui/textures/test/scrollhandle.bmp;
 }
-
-// buttons
 
 button
 {
