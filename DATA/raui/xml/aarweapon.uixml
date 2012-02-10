@@ -31,7 +31,7 @@
 		var weaponTree 	= findview("weapon-tree");
 		var scenarioInfo = findview("scenario-info");
 		var client = game.player.client;
-		var updatePlayers = true;
+		var updateWeapons = true;
 		
 		game.onscenarioplayers = playersUpdated;
 		
@@ -47,8 +47,11 @@
 		
 		function OnUpdate()
 		{
-			if(updatePlayers)
+			if(updateWeapons)
+			{
 				initSpawnables(weaponTree.control);
+				updateWeapons = false;
+			}
 		}
 		
 		function playersUpdated()
@@ -58,6 +61,8 @@
 		
 		function selectWeapon(action)
 		{
+			cprint("Got weapon select action of " + action);
+			
 			var node = weaponTree.control.selectedNode();
 			
 			if(node != null && !node.branch)

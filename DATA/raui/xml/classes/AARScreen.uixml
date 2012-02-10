@@ -21,9 +21,10 @@
 			game.cursor.visible 	= true;
 		}
 		
-		self.Close = function(exit, respawn)
+		self.Close = function(exit, respawn, click)
 		{
-			this.PlayClick();
+			if(click != false)
+				this.PlayClick();
 			
 			game.enableimapinput(true);
 			game.cursor.update(window.id);

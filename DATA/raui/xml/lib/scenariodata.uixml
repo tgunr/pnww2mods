@@ -169,8 +169,10 @@
 				//row.addAttribute("onmouseenter", mouseenter);
 				//row.addAttribute("onmouseexit", mouseexit);
 				
-				//expander.addAttribute("onclick", name + ".clickTree(true, " + tree.count + ")");
-				//caption.addStyle("color", "#e9e3d9ff");
+				//row.addAttribute("acceptmouseclick", "false");
+				expander.addAttribute("onclick", name + ".clickTree(true, " + tree.count + ")");
+				caption.addStyle("color", "#e9e3d9ff");
+				caption.addAttribute("acceptmouseclick", "false");
 				
 				return row.build(); 				
 			}
@@ -222,6 +224,11 @@
 				//acaption.addStyle("color", color);
 				acaption.addAttribute("align", "right");
 				//flagImage.addStyle("color", "#FFFFFF00");
+				
+				//row.addAttribute("acceptmouseclick", "false");
+				vcaption.addAttribute("acceptmouseclick", "false");
+				acaption.addAttribute("acceptmouseclick", "false");
+				flagImage.addAttribute("acceptmouseclick", "false");
 				
 				return row.build();
 			}
