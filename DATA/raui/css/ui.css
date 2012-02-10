@@ -157,11 +157,15 @@ button
 	size-scaler: .7;
 }
 
-smallbutton
+button.smallbutton
 {
-	class: button;
+	control-on: raui/textures/rabutton_blankon.bmp;
+	control-off: raui/textures/rabutton_blankoff.bmp;
+	color: #FFFFFF;
 	font-size: -3;
-	size-scaler: .3;
+	width: 250;
+	height: 50;
+	size-scaler: .4;
 }
 
 button.forward
@@ -180,17 +184,4 @@ button.back
 	control-disabled: raui/textures/rabutton_backdisable.bmp;
 }
 
-button.quit
-{
-	class: smallbutton;
-	control-on: raui/textures/rabutton_closeon.bmp;
-	control-off: raui/textures/rabutton_closeoff.bmp;
-}
-
-button.prefs
-{
-	class: smallbutton;
-	control-on: raui/textures/rabutton_forwardon.bmp;
-	control-off: raui/textures/rabutton_forwardoff.bmp;
-}
 

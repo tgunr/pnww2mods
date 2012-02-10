@@ -8,7 +8,7 @@
 	<include file="classes/ImageBuilder.uixml"/>
 	<include file="classes/RowBuilder.uixml"/>
 	<view id="info-panel" x="10" y="80" width="210" rtop="20" style="class: bordered;">
-		<view style="class: bordered; layout: vertical; vpad: 5; hpad: 5;">
+		<scrollview style="class: bordered; layout: flow; vpad: 5; hpad: 5;">
 			<area width=".8" style="class: bordered; layout: vertical; center: x; vpad: 10;">
 				<caption label="Most Popular Games In Play" height="20"/>
 				<list id="popular" height="100" style="class: showme;"/>
@@ -36,7 +36,7 @@
 			<view width=".35" height="20" style="class: showme;"/>
 			<view width=".35" height="80" style="class: showme;"/>
 			<view width=".3" height="20" style="class: showme;"/>
-		</view>
+		</scrollview>
 	</view>
 	<view id="main-panel" x="240" y="80" rright="10" rtop="20"  style="class: bordered;">
 		<view x="10" height=".49" rright="10" rtop="0">
