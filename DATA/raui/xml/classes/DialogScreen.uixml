@@ -1,0 +1,83 @@
+<script>
+
+	<include file="classes/ScreenManager.uixml"/>
+	
+	<!--
+	
+	function DialogScreen(s)
+	{
+		var self = new ScreenManager(s);
+		
+		game.consoleprint("Creating DialogScreen for " + self.view.id);
+		
+		self.actionCallback 	= null;
+		self.BaseOnShow 	= self.OnShow;
+		
+		self.OnShow = function()
+		{
+			this.BaseOnShow();
+			
+			if(game.ingame)
+			{
+				game.cancelppo();
+				game.enableimapinput(false);
+			}
+			
+			game.cursor.visible 	= true;
+		}
+		
+		self.SetDisplay = function(label, description)
+		{
+			var txt = null;
+			
+			if(label != null)
+			{
+				txt = this.view.findview("dialog-label");
+				if(txt != null) txt.text = game.getlocstring(label);
+			}
+			
+			if(description != null)
+			{
+				txt = this.view.findview("dialog-description");
+				if(txt != null) txt.text = game.getlocstring(description);
+			}
+		}
+		
+		self.SetButton = function(yes, no)
+		{
+			var btn = null;
+			
+			if(yes != null)
+			{
+				btn = this.view.findview("dialog-yes");
+				if(btn != null) btn.label = game.getlocstring(yes);
+			}
+			
+			if(no != null)
+			{
+				btn = this.view.findview("dialog-no");
+				if(btn != null) btn.label = game.getlocstring(no);
+			}
+		}
+		
+		self.SetAction = function(callback)
+		{
+			this.actionCallback = callback;
+		}
+		
+		self.Close = function(action)
+		{
+			if(game.ingame)
+				game.enableimapinput(true);
+			
+			game.cursor.update(window.id);
+			
+			if(this.actionCallback == null || this.actionCallback(action))
+				window.close();
+		}
+		
+		return self;
+	}
+	
+	-->
+</script>

@@ -165,12 +165,12 @@
 				var expander 	= row.addBuilder(new ImageBuilder(row, "image", icon, indent, 3, 10, 10));
 				var caption		= row.addBuilder(new TextBuilder(row, "title", "caption", label, (indent + tree.indent), 0, 0, 16));
 				
-				row.addAttribute("aspectalign", "left");
+				//row.addAttribute("aspectalign", "left");
 				//row.addAttribute("onmouseenter", mouseenter);
 				//row.addAttribute("onmouseexit", mouseexit);
 				
-				expander.addAttribute("onclick", name + ".clickTree(true, " + tree.count + ")");
-				caption.addStyle("color", "#e9e3d9ff");
+				//expander.addAttribute("onclick", name + ".clickTree(true, " + tree.count + ")");
+				//caption.addStyle("color", "#e9e3d9ff");
 				
 				return row.build(); 				
 			}
@@ -214,12 +214,12 @@
 				var vcaption			= row.addBuilder(new TextBuilder(row, "title", "caption", label, textIndent, 0, -textIndent, 16));
 				var acaption			= row.addBuilder(new TextBuilder(row, "avail", "caption", availability, textIndent, 0, -5, 16));
 				
-				row.addAttribute("aspectalign", "left");
+				//row.addAttribute("aspectalign", "left");
 				//row.addAttribute("onmouseenter", mouseenter);
 				//row.addAttribute("onmouseexit", mouseexit);
 				
-				vcaption.addStyle("color", color);
-				acaption.addStyle("color", color);
+				//vcaption.addStyle("color", color);
+				//acaption.addStyle("color", color);
 				acaption.addAttribute("align", "right");
 				//flagImage.addStyle("color", "#FFFFFF00");
 				

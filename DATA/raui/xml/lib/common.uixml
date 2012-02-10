@@ -11,12 +11,13 @@
 		if(game.globals == null)
 			game.globals = new Object();
 		
-		game.cthlerror 				= handleConnectionLost;
-		game.confirmdotcommand		= showDotCommandConfirmation;
+		game.onspawnerror			= onSpawnError;
+		game.cthlerror 					= handleConnectionLost;
+		game.confirmdotcommand	= showDotCommandConfirmation;
 		game.onsquadaccept			= onSquadAccept;
 		game.onsquadcreate			= onSquadCreate;
-		game.buildirp				= onBuildIRP;
-		game.neterror				= onNetError;
+		game.buildirp						= onBuildIRP;
+		game.neterror						= onNetError;
 	}
 	
 	function loadWin(name, close)
@@ -75,7 +76,13 @@
 		if(popupWin == null)
 		{
 			popupWin = game.load("popups/" + name);
-			popupWin.initPopup(message, action, yes, no);
+			
+			if(popupWin != null)
+			{
+				popupWin.mgr.SetDisplay(message);
+				popupWin.mgr.SetButton(yes, no);
+				popupWin.mgr.SetAction(action);
+			}
 		}
 		
 		return popupWin;
@@ -171,6 +178,12 @@
 	function handleConnectionLost()
 	{
 		showOk(getlocstring('common.cthl'), game.quit);
+	}
+	
+	function onSpawnError(code)
+	{
+		consoleprint("Processing Spawn Denied Code: " + code + "\n");
+		showOk('mission.spawn.denied' + code);
 	}
 	
 	function onNetError(host, error, code, callback)

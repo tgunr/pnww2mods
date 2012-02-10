@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <background id="loading">
 	<progressbar id="progress" x="295" y="121" width="428" height="15" minvalue="0" maxvalue="1"
-		fill="ui/textures/hud/blood-level-fill.bmp" background="ui/textures/hud/back-level-fill.bmp"/>
+		fill="ui/textures/hud/blood-level-fill.bmp" background="ui/textures/hud/back-level-fill.bmp" style="class: bordered;"/>
 	<caption id="status" x="295" y="121" width="428" height="15" align="center" style="color: #000000;  background-color: #00000000"/>
 	<caption id="version" x="2" y="2" width="200" height="17" style="color: #FFFFFF;"/>
 	<caption id="buildinfo" x="172" y="3" width="200" height="17" style="color: #999999;" label="Getting host data..."/>

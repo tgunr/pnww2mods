@@ -98,7 +98,7 @@
 				client.joininstance(root.category, 0, 0, 0);
 			
 			// load our lobby windows 
-			loadWin("lobby", true);
+			window.mgr.DoLobby();
 		}
 		
 		function joinInstance(instance, created, password)
@@ -142,7 +142,7 @@
 			if(game.startscenario(scenario.path, created) && selectTeam())
 			{
 				// move to the scenario screen
-				loadWin("weapon", true);
+				window.mgr.DoWeapon();
 				
 				return true;
 			}

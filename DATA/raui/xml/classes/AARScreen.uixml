@@ -1,0 +1,65 @@
+<script>
+
+	<include file="classes/RAScreen.uixml"/>
+	
+	<!--
+	
+	function AARScreen(s)
+	{
+		var self = new RAScreen(s);
+		
+		game.consoleprint("Creating AARScreen for " + self.view.id);
+		
+		self.BaseOnShow = self.OnShow;
+		
+		self.OnShow = function()
+		{
+			this.BaseOnShow();
+			
+			game.cancelppo();
+			game.enableimapinput(false);
+			game.cursor.visible 	= true;
+		}
+		
+		self.Close = function(exit, respawn)
+		{
+			this.PlayClick();
+			
+			game.enableimapinput(true);
+			game.cursor.update(window.id);
+			
+			if(exit)
+				this.DoDespawn(respawn);
+			
+			window.close();
+		}
+		
+		self.DoDespawn = function(respawn)
+		{
+			if(respawn == null)
+				respawn = false;
+			
+			game.despawn(respawn);
+		}
+		
+		self.DoWeapon = function(click)
+		{
+			if(click != false)
+				this.PlayClick();
+			
+			this.Navigate("aarweapon");
+		}
+		
+		self.DoAAR = function(click)
+		{
+			if(click != false)
+				this.PlayClick();
+			
+			this.Navigate("aar");
+		}
+		
+		return self;
+	}
+	
+	-->
+</script>

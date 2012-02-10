@@ -103,6 +103,7 @@
 		
 		function OnShow(win)
 		{
+			initGlobals();
 			initHeaders(playerList);
 			scenarioInfo.mgr.SetScenario(client.scenario);
 		}

@@ -18,6 +18,8 @@
 		self.view			= self.view.window;
 		self.view.mgr 	= self;
 		
+		self.opener		= null;
+		
 		game.consoleprint("Creating ScreenManager for " + self.view.id);
 		
 		// methods
@@ -29,6 +31,10 @@
 		
 		self.OnShow = function()
 		{
+			if(this.opener != null)
+				this.opener.close();
+				
+			this.opener = null;
 			this.RunHandler("onshow");
 		}
 		
@@ -72,9 +78,21 @@
 		self.DoPrefs = function()
 		{
 			soundPlayClick();
-			var id = this.view.id;
-			var prefsWin = loadWin("prefs", true);
-			prefsWin.mgr.SetBack(id);
+			this.Navigate("prefs");
+		}
+		
+		self.SetOpener = function(callerWin)
+		{
+			this.SetBack(callerWin.id);
+			this.opener = callerWin;
+		}
+		
+		self.Navigate = function(path)
+		{
+			var newWin = game.load(path);
+			
+			if(newWin != null)
+				newWin.mgr.SetOpener(this.view);
 		}
 		
 		self.SetBack = function(b)
@@ -99,10 +117,10 @@
 		}
 		
 		if(self.view.OnShow != null)
-		{
 			self.AddHandler("onshow", self.view.OnShow);
-			self.view.addevent("onshow", "if(this.mgr) this.mgr.OnShow()");
-		}
+		
+		// always add this because it handles navigation stuff
+		self.view.addevent("onshow", "this.mgr.OnShow()");
 		
 		// defined in lib/common
 		if(self.view.initGlobals != null)

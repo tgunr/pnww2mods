@@ -1,0 +1,95 @@
+<window id="aar" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" layer="52" manager="AARScreen">
+	<include file="lib/common.uixml"/>
+	<include file="lib/scenariodata.uixml"/>
+	<include file="classes/Preference.uixml"/>
+	<view id="aarbody" width=".9" height=".7" aspectlimit="width" style="class: showme;" center="true">
+		<view id="infopanel" x="10" width=".3" height=".8" rtop="20">
+			<sceninfov id="scenario-info">
+				<view id="map" class="mapview" acceptsfocus="no" minscale=".01" maxscale=".1" scale=".05"
+					pad="10" sx="0" sy="0">
+					<layer type="texture" id="default-64-tex" minscale="0" maxscale="64" enabled="true" orign="-26x210" rowcolsize="1x1" cellsize="64x64"/>
+					<layer type="icon" id="icons" minscale="1" maxscale="8" enabled="true"/>
+					<layer type="icon" id="rendered" minscale="0" maxscale="1" enabled="true"/>
+					<layer type="scenario" id="scenmap" minscale="0" maxscale="2" enabled="true"/>
+					<layer type="players" minscale="0" maxscale="20" />
+				</view>
+			</sceninfov>
+		</view>
+		<view id="mainpanel" height=".8" width=".65" rright="10" rtop="20" style="class: bordered;">
+			<caption label="SELECT WEAPON" height="20" rtop="0"/>
+			<treecontrol id="weapon-tree" rtop="30" pad="5" style="class: bordered;"/>
+		</view>
+		<navbar id="navbar">
+			<button id="back" label="AAR   " x="10" y="10" onclick="window.mgr.DoAAR()" align="right"/>
+			<button label="CLOSE" y="10" onclick="window.mgr.Close(false)" center="x"/>
+			<button id="forward" label="   FIGHT" rright="10" y="10" onclick="this.mgr.Click(selectWeapon, true)" align="left"/>
+		</navbar>
+	</view>
+	<script>
+		<!--
+		
+		var weaponTree 	= findview("weapon-tree");
+		var scenarioInfo = findview("scenario-info");
+		var client = game.player.client;
+		var updatePlayers = true;
+		
+		game.onscenarioplayers = playersUpdated;
+		
+		function OnShow(win)
+		{
+			scenarioInfo.mgr.SetScenario(client.scenario);
+			
+			// set some callbacks
+			weaponTree.mgr.selectCallback = selectWeapon;
+			weaponTree.control.ondraw = formatSpawnable;
+			weaponTree.control.isselectable = isSelectable;
+		}
+		
+		function OnUpdate()
+		{
+			if(updatePlayers)
+				initSpawnables(weaponTree.control);
+		}
+		
+		function playersUpdated()
+		{
+			updatePlayers = true;
+		}
+		
+		function selectWeapon(action)
+		{
+			var node = weaponTree.control.selectedNode();
+			
+			if(node != null && !node.branch)
+			{
+				if(action)
+				{
+					var index = weaponTree.control.selectedData();
+					
+					if(index != null)
+					{
+						var vehicle = vehicles[index];
+						
+						// this call
+						if(vehicle.spawnable == "spawnable")
+						{
+							if(game.globals != null)
+								game.globals.scenariovehicle = index;
+							
+							game.setplayerdata("weapon", vehicle.type.weapkey);
+							game.setplayerdata("ready", "true");
+							window.mgr.Close(true, true);
+						}
+						else
+						{
+							showOk(vehicle.spawnable);
+						}
+					}
+				}
+			}
+		}
+		
+		
+		-->
+	</script>
+</view>

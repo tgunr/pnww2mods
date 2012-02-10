@@ -23,8 +23,8 @@
 		{
 			if(click != false)
 				this.PlayClick();
-			
-			loadWin("create", true);
+				
+			this.Navigate("create");
 		}
 		
 		self.DoWeapon = function(click)
@@ -32,7 +32,7 @@
 			if(click != false)
 				this.PlayClick();
 			
-			loadWin("weapon", true);
+			this.Navigate("weapon");
 		}
 		
 		self.DoTeam = function(click)
@@ -41,7 +41,7 @@
 				this.PlayClick();
 			
 			if(switchTeams(game.globals.scenario))
-				loadWin("weapon", true);
+				this.Navigate("weapon");
 		}
 		
 		self.DoReadyRoom = function(click)
@@ -49,7 +49,7 @@
 			if(click != false)
 				this.PlayClick();
 			
-			loadWin("readyroom");
+			this.Navigate("readyroom");
 		}
 		
 		return self;
