@@ -328,7 +328,7 @@
 	TreeControl.ondraw = function(tree, node)
 	{
 		var name	= tree.list.id;
-		var width	= tree.getWidth() - 12;
+		var width	= tree.getWidth() - 50;
 		var indent 	= tree.indent * node.level; 
 		var isize	= 10;
 		

@@ -8,9 +8,8 @@
 	<include file="classes/ImageBuilder.uixml"/>
 	<include file="classes/RowBuilder.uixml"/>
 	<view id="info-panel" x="10" y="80" width="210" rtop="20" style="class: bordered;">
-		<view style="class: bordered; layout: vertical; vpad: 15;">
-			
-		<area width=".8" style="class: bordered; layout: vertical; center: x; vpad: 10;">
+		<view style="class: bordered; layout: vertical; vpad: 5; hpad: 5;">
+			<area width=".8" style="class: bordered; layout: vertical; center: x; vpad: 10;">
 				<caption label="Most Popular Games In Play" height="20"/>
 				<list id="popular" height="100" style="class: showme;"/>
 			</area>
@@ -24,10 +23,23 @@
 				<caption label="Latest Achievments" height="20"/>
 				<list id="achievements" height="60" style="class: showme; class: bordered;"/>
 			</area>
+			<view width=".3" height="20" style="class: showme;"/>
+			<view width=".3" height="20" style="class: showme;"/>
+			<view width=".25" height="40" style="class: showme;"/>
+			<view width=".4" height="20" style="class: showme;"/>
+			<view width=".4" height="50" style="class: showme;"/>
+			<view width=".3" height="50" style="class: showme;"/>
+			<view width=".6" height="10" style="class: showme;"/>
+			<view width=".3" height="10" style="class: showme;"/>
+			<view width=".55" height="20" style="class: showme;"/>
+			<view width=".2" height="30" style="class: showme;"/>
+			<view width=".35" height="20" style="class: showme;"/>
+			<view width=".35" height="80" style="class: showme;"/>
+			<view width=".3" height="20" style="class: showme;"/>
 		</view>
 	</view>
 	<view id="main-panel" x="240" y="80" rright="10" rtop="20"  style="class: bordered;">
-		<view x="10" height=".47" rright="10" rtop="0">
+		<view x="10" height=".49" rright="10" rtop="0">
 			<listcontrol id="instance-list" pad="5" rtop="5" style="class: bordered;"/>
 		</view>
 		<view x="10" y="0" height=".47" rright="10" style="class: bordered;">
@@ -36,9 +48,9 @@
 			</sceninfoh>
 		</view>
 	</view>
-	<navbar style="class: bordered; layout: vertical; vpad: 10;">
-		<button id="join-button" label="    JOIN" rright="0" onclick="this.mgr.Click(DoJoin)" align="left" enabled="false" style="class: button.forward;"/>
-		<button id="create-button" label="    CREATE" rright="0" onclick="this.mgr.Click(DoCreate)" align="left" style="class: button.forward;"/>
+	<navbar style="class: bordered;">
+		<button id="create-button" label="    CREATE" rright="175" onclick="window.mgr.DoCreate()" align="left" style="class: button.forward;" center="y"/>
+		<button id="join-button" label="    JOIN" rright="20" onclick="this.mgr.Click(selectInstance, true)" align="left" enabled="false" style="class: button.forward;" center="y"/>
 	</navbar>
 	<script>
 		<!--
@@ -55,16 +67,6 @@
 		
 		// when our instance list is updated
 		game.oninstancelist = initInstances;
-			
-		function DoCreate()
-		{
-			loadWin("create", true);
-		}
-		
-		function DoJoin()
-		{
-			selectInstance(true);
-		}
 		
 		function OnShow(win)
 		{

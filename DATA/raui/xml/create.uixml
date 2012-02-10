@@ -20,9 +20,8 @@
 			</sceninfoh>
 		</view>
 	</stackview>
-	<navbar id="navbar">
-		<button id="create-button" label="    CREATE" x="10" y="10" onclick="this.mgr.Click(DoCreate)" align="left" enabled="false" style="class: button.forward;"/>
-		<button id="back" label="LOBBY    " rright="10" y="10" onclick="this.mgr.Click(DoLobby)" align="right"/>
+	<navbar id="navbar" style="class: bordered;">
+		<button id="create-button" label="    CREATE" rright="20" onclick="this.mgr.Click(selectScenario, true)" align="left" style="class: button.forward;" center="y"/>
 	</navbar>
 	<script>
 		<!--
@@ -37,16 +36,6 @@
 		
 		// handles what happens when we create
 		game.oninstanceresult = OnInstanceResult;
-		
-		function DoLobby()
-		{
-			loadWin("lobby", true);
-		}
-		
-		function DoCreate()
-		{
-			selectScenario(true);
-		}
 		
 		function OnShow(win)
 		{

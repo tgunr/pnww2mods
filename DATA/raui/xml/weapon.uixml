@@ -11,22 +11,21 @@
 	<include file="classes/RowBuilder.uixml"/>
 	<view id="mainpanel" x="10" height=".8" width=".65" rtop="20" style="class: bordered;">
 		<caption label="Make a select and click, Select Weapon." height="20" rtop="0"/>
-		<view id="weaponselect" x="10" height=".6" rright="10" rtop="30">
+		<view id="weaponselect" x="10" y="10" rright="10" rtop="30">
 			<caption label="RED TEAM WEAPON LIST:" height="20" rtop="0" style="color: #FF0000;"/>
 			<view rtop="30">
 				<treecontrol id="weapon-tree" pad="5" style="class: bordered;"/>
 			</view>
 		</view>
-		<button id="select-button" label="SELECT" rright="20" rtop=".75" onclick="this.mgr.Click(DoWeapon)"/>
 	</view>
 	<view id="infopanel" width=".3" height=".75" rright="10" rtop="50">
 		<sceninfov id="scenario-info">
 			<image id="scenario-image" pad="5"/>
 		</sceninfov>
 	</view>
-	<navbar id="navbar">
-		<button id="back" label="LOBBY   " x="10" y="10" onclick="this.mgr.Click(DoLobby)" align="right"/>
-		<button id="back" label="TEAM   " rright="10" y="10" onclick="this.mgr.Click(DoTeam)" align="right"/>
+	<navbar id="navbar" style="class: bordered;">
+		<button id="back" label="TEAM   " x="20" onclick="window.mgr.DoTeam()" align="right" center="y"/>
+		<button id="forward" label="   WEAPON" rright="20" onclick="this.mgr.Click(selectWeapon, true)" align="left" center="y"/>
 	</navbar>
 	<script>
 		<!--
@@ -38,22 +37,6 @@
 		var scenarioInfo	= findview("scenario-info");
 		var selectBtn		= findview("select-button");
 		var team				= 0;
-		
-		function DoLobby()
-		{
-			loadWin("lobby", true);
-		}
-		
-		function DoTeam()
-		{
-			switchTeams();
-			reloadWin();
-		}
-		
-		function DoWeapon()
-		{
-			selectWeapon(true);
-		}
 		
 		function OnShow(win)
 		{

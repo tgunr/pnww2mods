@@ -7,7 +7,7 @@
 		<caption height="15" width=".5" label="Map Type:" style="class: bordered;"/>
 		<caption height="15" width=".5" id="scenario-type" label="Deathmatch" style="class: bordered;"/>
 		<caption height="15" label="Map Description:" style="class: bordered;"/>
-		<text height=".6" id="scenario-description"  style="class: bordered; vpad: 5;"/>
+		<text id="scenario-description"/>
 	</view>
 	<!--
 	<view id="map" class="mapview" acceptsfocus="no" minscale=".01" maxscale=".1" scale=".05"

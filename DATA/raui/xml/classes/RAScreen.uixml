@@ -40,7 +40,7 @@
 			if(click != false)
 				this.PlayClick();
 			
-			if(switchTeams(game.globals.scenario))
+			if(switchTeams())
 				this.Navigate("weapon");
 		}
 		

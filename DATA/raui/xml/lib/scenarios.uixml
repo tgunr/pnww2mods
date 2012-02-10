@@ -98,7 +98,7 @@
 				client.joininstance(root.category, 0, 0, 0);
 			
 			// load our lobby windows 
-			window.mgr.DoLobby();
+			window.mgr.Navigate("lobby");
 		}
 		
 		function joinInstance(instance, created, password)

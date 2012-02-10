@@ -122,6 +122,12 @@
 		this.nwidth						= (!isNaN(w)) ? w : 0;
 		this.nheight					= (!isNaN(h)) ? h : 0;
 		
+		// margin compatibility
+		this.lmargin					= 0;
+		this.rmargin					= 0;
+		this.bmargin					= 0;
+		this.tmargin					= 0;
+		
 		// calculate based on parent if need be
 		if(this.par)
 		{

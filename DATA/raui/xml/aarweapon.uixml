@@ -19,10 +19,10 @@
 			<caption label="SELECT WEAPON" height="20" rtop="0"/>
 			<treecontrol id="weapon-tree" rtop="30" pad="5" style="class: bordered;"/>
 		</view>
-		<navbar id="navbar">
-			<button id="back" label="AAR   " x="10" y="10" onclick="window.mgr.DoAAR()" align="right"/>
-			<button label="CLOSE" y="10" onclick="window.mgr.Close(false)" center="x"/>
-			<button id="forward" label="   FIGHT" rright="10" y="10" onclick="this.mgr.Click(selectWeapon, true)" align="left"/>
+		<navbar id="navbar" style="class: bordered;">
+			<button id="back" label="AAR   " x="20" onclick="window.mgr.DoAAR()" align="right" center="y"/>
+			<button label="CLOSE" onclick="window.mgr.Close(false)" center="true"/>
+			<button id="forward" label="   FIGHT" rright="20" onclick="this.mgr.Click(selectWeapon, true)" align="left" center="y"/>
 		</navbar>
 	</view>
 	<script>

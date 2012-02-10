@@ -18,10 +18,10 @@
 			<caption label="TOP PLAYERS" height="20" rtop="0"/>
 			<listcontrol id="players" rtop="30" style="class: bordered;"/>
 		</view>
-		<navbar id="navbar">
-			<button id="back" label="LOBBY   " x="10" y="10" onclick="window.mgr.Close(true)" align="right"/>
-			<button label="CLOSE" y="10" onclick="window.mgr.Close(false)" center="x"/>
-			<button id="forward" label="   WEAPON" rright="10" y="10" onclick="window.mgr.DoWeapon()" align="left"/>
+		<navbar id="navbar" style="class: bordered;">
+			<button id="back" label="DESPAWN   " x="20" onclick="window.mgr.Close(true)" align="right" center="y"/>
+			<button label="CLOSE" onclick="window.mgr.Close(false)" center="true"/>
+			<button id="forward" label="   WEAPON" rright="20" onclick="window.mgr.DoWeapon()" align="left" center="y"/>
 		</navbar>
 	</view>
 	<script>
