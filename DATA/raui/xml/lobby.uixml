@@ -7,7 +7,12 @@
 	<include file="classes/TextBuilder.uixml"/>
 	<include file="classes/ImageBuilder.uixml"/>
 	<include file="classes/RowBuilder.uixml"/>
-	<view id="info-panel" x="10" y="80" width="210" rtop="20" style="class: litebg;">
+	
+	
+	<!-- start editing -->
+	
+	
+	<view id="info-panel" x="10" y="80" width="210" rtop="20">
 		<view style="layout: vertical; vpad: 10;">
 			<panel label="POPULAR MAPS" align="center" height="150" style="class: litebg;">
 				<list id="popular" pad="15" rtop="35" style="class: litebg;"/>
@@ -17,12 +22,12 @@
 				<text id="motd" pad="15" rtop="35" style="class: litebg;"/>
 			</panel>
 			
-			<panel label="RECENT ACHIEVMENTS" align="center" height="100" style="class: litebg;">
+			<panel label="RECENT ACHIEVEMENTS" align="center" height="100" style="class: litebg;">
 				<list id="achievements" pad="15" rtop="35" style="class: litebg;"/>
 			</panel>
 		</view>
 	</view>
-	<view id="main-panel" x="240" y="80" rright="10" rtop="20"  style="class: litebg;">
+	<view id="main-panel" x="240" y="80" rright="10" rtop="20">
 		<panel label="ACTIVE MAPS" x="10" height=".49" rright="10" rtop="0" align="center">
 			<listcontrol id="instance-list" pad="15" rtop="35"/>
 		</panel>
@@ -33,9 +38,12 @@
 		</view>
 	</view>
 	<navbar>
-		<button id="join-button" label="    JOIN" x="20" onclick="this.mgr.Click(selectInstance, true)" align="left" enabled="false" style="class: button.back;" center="y"/>
-		<button id="create-button" label="    CREATE" rright="20" onclick="window.mgr.DoCreate()" align="left" style="class: button.forward;" center="y"/>
+		<button id="join-button" label="    JOIN GAME" x="20" onclick="this.mgr.Click(selectInstance, true)" align="left" enabled="false" style="class: button.back;" center="y"/>
+		<button id="create-button" label="    NEW GAME" rright="20" onclick="window.mgr.DoCreate()" align="left" style="class: button.forward;" center="y"/>
 	</navbar>
+	
+		<!-- stop editing -->
+	
 	<script>
 		<!--
 		 //

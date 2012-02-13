@@ -7,7 +7,7 @@
 		<image id="scenario-image" height=".7" rtop="5"/>
 	</sceninfoh>
 	<navbar id="navbar">
-		<button id="create-button" label="    CREATE" rright="20" onclick="this.mgr.Click(selectScenario, true)" align="left" style="class: button.forward;" center="y"/>
+		<button id="create-button" label="    CREATE NEW GAME" rright="20" onclick="this.mgr.Click(selectScenario, true)" align="left" style="class: button.forward;" center="y"/>
 	</navbar>
 	<script>
 		<!--

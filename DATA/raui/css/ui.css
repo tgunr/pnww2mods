@@ -11,8 +11,10 @@ $hilitealphalo = #FFFFFF88
 //$hilitealphalo = #8f6a1488
 
 
-$litebg = #00000033
-$medbg = #00000055
+
+$whitebg = #FFFFFF55
+$litebg = #00000055
+$medbg = #00000077
 $darkbg = #00000099
 
 $tinyfont = -2
@@ -53,11 +55,8 @@ bigtext
 	font-size: $bigfont;
 }
 
-border
-{
-	border-size: $border;
-	border-color: $darkbg;
-}
+
+
 
 thickborder
 {
@@ -65,6 +64,11 @@ thickborder
 	border-color: $darkbg;
 }
 
+
+whitebg
+{
+	background-color: $whitebg;
+}
 
 litebg
 {
@@ -122,8 +126,6 @@ debug
 navbar
 {
 	class: litebg;
-	class: border;
-	border-color: $hilitealphahi;
 }
 
 .aarbody

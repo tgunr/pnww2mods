@@ -2,13 +2,14 @@
 	<include file="lib/scenarios.uixml"/>
 	<include file="lib/scenariodata.uixml"/>
 	<panel label="SELECT A WEAPON" x="10" height=".8" width=".5" rtop="20" align="center">
-		<caption id="team-header" x="15" height="20" rtop="15" rright="15" style="class: litebg;"/>
+		<caption id="team-header" x="15" height="20" rtop="15" rright="15" style="class: whitebg;"/>
 		<treecontrol id="weapon-tree" x="15" y="15" rright="15" rtop="40" style="class: litebg;"/>
 	</panel>
-	<weapinfov id="weapon-info" width=".45" height=".8" rright="10" rtop="20"/>
+	<weapinfov id="weapon-info" width=".45" height=".8" rright="20" rtop="20"/>
+	
 	<navbar id="navbar">
-		<button id="back" label="TEAM   " x="20" onclick="window.mgr.DoTeam()" align="right" center="y"/>
-		<button id="forward" label="   WEAPON" rright="20" onclick="this.mgr.Click(selectWeapon, true)" align="left" center="y"/>
+		<button id="back" label="CHANGE TEAM   " x="20" onclick="window.mgr.DoTeam()" align="right" center="y"/>
+		<button id="forward" label="   CONFIRM WEAPON" rright="20" onclick="this.mgr.Click(selectWeapon, true)" align="left" center="y"/>
 	</navbar>
 	<script>
 		<!--
