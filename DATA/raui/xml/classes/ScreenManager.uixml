@@ -81,6 +81,15 @@
 			this.Navigate("prefs");
 		}
 		
+		self.DoBack = function()
+		{
+			if(this.back != null)
+			{
+				this.PlayClick();
+				this.Navigate(this.back);
+			}
+		}
+		
 		self.SetOpener = function(callerWin)
 		{
 			this.SetBack(callerWin.id);

@@ -26,36 +26,32 @@
 			var current			= null;
 			var swatches		= window.findview("swatches");
 			var colorView		= window.findview("color");
+			var viewMgr		= null;
 			
 			var size			= 20;
 			var buffer			= 2;
 			var swatchSize 		= size + (buffer * 2);
 			
-			function initPicker(w, n, c)
+			function initPicker(vm)
 			{
-				consoleprint("Initing picker with window " + w.id + " and pref " + n + "\n");
+				viewMgr = vm;
 				
-				win 	= w;
-				pref	= n;
-				
-				consoleprint("Name is now " + pref + "\n");
-				
-				setColor(c);
+				setColor(viewMgr.pref.Value());
 				
 				colorView.setstyleproperty("background-color", current.colorhexcss);
 				
 				var wsize 	= Math.floor(swatches.width / swatchSize);
-				var hsize 	= Math.floor(swatches.height / swatchSize);
-				var cells	= wsize * hsize;
-				var inc		= Math.floor((255 * 9) / cells);
-				var color	= game.getrgbcolor(0,0,0);
+				var hsize 		= Math.floor(swatches.height / swatchSize);
+				var cells		= wsize * hsize;
+				var inc			= Math.floor((255 * 9) / cells);
+				var color		= game.getrgbcolor(0,0,0);
 				
 				var x		= (swatches.width - (wsize * swatchSize)) / 2;
 				var y		= (swatches.height - (hsize * swatchSize)) / 2;
 				
-				var stage 		= 0;
+				var stage 			= 0;
 				var stageColor 	= 'r';
-				var stageUp		= true;
+				var stageUp			= true;
 				
 				var xScale 		= window.width / 1024;
 				var yScale 		= window.height / 768;
@@ -147,10 +143,11 @@
 			
 			function doPickColor(save)
 			{
-					consoleprint("Saving pref " + pref + " with " + current.colorhexcss + "\n");
-					
 					if(save)
-							win.setColor(pref, current.colorhexcss);
+					{
+						viewMgr.OnClick(current.colorhexcss);
+						viewMgr.Update();
+					}
 					
 					window.close();
 			}

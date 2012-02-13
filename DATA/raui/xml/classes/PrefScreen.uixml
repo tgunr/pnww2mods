@@ -1,0 +1,392 @@
+<script>
+
+	<include file="classes/ScreenManager.uixml"/>
+	<include file="classes/Pref.uixml"/>
+	<!-- include file="classes/PrefGroup.uixml"/ -->
+	
+	<!--
+	
+	function PrefScreen(s)
+	{
+		var self = new ScreenManager(s);
+		
+		game.consoleprint("Creating PrefScreen for " + self.view.id);
+		
+		self.prefs					= new Object();
+		self.pending				= new Object();
+		self.groups				= new Array();
+		self.group					= null;
+		self.prefsView 			= self.view.findview("prefs-view");
+		self.saveButton		= self.view.findview("save-button");
+		self.BaseOnShow 	= self.OnShow;
+		
+		self.OnShow = function()
+		{
+			this.SetVisible("lobby-button", false);
+			this.SetVisible("prefs-button", false);
+			this.saveButton.enabled 	= false;
+			this.BaseOnShow();
+		}
+		
+		self.AddPref = function(pref)
+		{
+			this.prefs[pref.name] = pref;
+		}
+		
+		self.AddPendingPref = function(pref)
+		{
+			if(pref.Pending())
+			{
+				this.pending[pref.name] = pref;
+				this.SetGroupModified(pref.group);
+			}
+		}
+		
+		self.AddGroup = function(g)
+		{
+			this.groups.push(g);
+		}
+		
+		self.SelectGroup = function(g)
+		{
+			if(this.group != null)
+				this.group.Deselect(this.prefsView);
+			
+			this.group = g;
+			
+			if(this.group != null)
+				this.group.Select(this.prefsView);
+		}
+		
+		self.SetGroupModified = function(index)
+		{
+			if(this.groups.length >= 0 && index < this.groups.length) 
+				this.groups[index].SetModified(true);
+			
+			// enable the save button
+			this.saveButton.enabled = true;
+		}
+		
+		self.SavePrefs = function()
+		{
+			for(var p in this.pending)
+					this.pending[p].Update();
+			
+			if(game.settings.restartneeded)
+				showOk('widgets.prefs.changed');
+			
+			this.ResetPrefs();
+		}
+		
+		self.ResetPrefs = function()
+		{
+			for(var p in this.pending)
+				this.pending[p].Reset();
+			
+			this.pending = new Object();
+			
+			for(var i = 0; i < this.groups.length; i++)
+				this.groups[i].SetModified(false);
+				
+			// disable the save button
+			this.saveButton.enabled = false;
+		}
+		
+		self.UpdateUI = function()
+		{
+			for(var p in this.prefs)
+			{
+				if(this.prefs[p].vmgr != null)
+					this.prefs[p].vmgr.Update();
+			}
+		}
+		
+		self.SetPref = function(name, value)
+		{
+			var pref = this.GetPref(name);
+			
+			if(pref != null)
+				pref.Set(value);
+		}
+		
+		self.GetPref = function(name)
+		{
+			return this.prefs[name];
+		}
+		
+		self.CreatePref = function(name, type, defValue)
+		{
+			consoleprint("PrefScreen: new pref requested: " + name);
+			this.prefs[name] = new Pref(name, type, defValue);
+			consoleprint("PrefScreen: new pref created: " + this.prefs[name].name);
+			return this.prefs[name];
+		} 
+		
+		self.DefaultPrefs = function()
+		{
+			//this.SetPref('wantsse2', false);
+			this.SetPref("language", 0);
+			this.SetPref("usenetworkroute", 0);
+			this.SetPref("fontsize", 11);
+			//this.SetPref('shademode', 1);
+			//this.SetPref('bnoframerunahead', true);
+			this.SetPref('enablevsync', false);
+			//this.SetPref('gammared', 1);
+			//this.SetPref('gammagreen', 1);
+			//this.SetPref('gammablue', 1);
+			//this.SetPref("video", null);
+			//this.SetPref("resolution", "1024x768x32");
+			//this.SetPref('bdithering', true);
+			//this.SetPref('bspecular', true);
+			//this.SetPref('texturereduction', false);
+			//this.SetPref('suppresstracersmoke', false);
+			//this.SetPref('suppressmuzzlesmoke', false);
+			this.SetPref('suppressmuzzlelight', false);
+			//this.SetPref('lodfieldofview', false);
+			//this.SetPref('lodlimitperframe', false);
+			this.SetPref('radialdensity', .5);
+			this.SetPref('radialradius', .5);
+			this.SetPref("visplayerlimit", 2);
+			//this.SetPref("shadowsizeselect", 6);
+			this.SetPref('enableh2oshaders', true);
+			this.SetPref('grassshader', true);
+			this.SetPref('postrenderfilter', true);
+			this.SetPref('normalmaps', true);
+			this.SetPref('waterreflections', true);
+			this.SetPref('reflectionupdate', 5);
+			this.SetPref('wantmessagealert', true);
+			this.SetPref('ui.playmusic', true);
+			this.SetPref('volumemultiplier', 1);
+			this.SetPref('musicmultiplier', 1);
+			//this.SetPref("sound", null);
+			this.SetPref("bsoundenable", true);
+			//this.SetPref("b3dsoundenable", false);
+			//this.SetPref("maxnumbersounds", 128);
+			this.SetPref("ambientlevel", 0);
+			this.SetPref('ui.tooltips', true);
+			this.SetPref('squadinvites', true);
+			//this.SetPref("friendlycolor", color);
+			//this.SetPref("enemycolor", ?);
+			//this.SetPref("squadcolor", ?);
+			//this.SetPref("missioncolor", ?);
+			//this.SetPref("missionleadercolor", ?);
+			this.SetPref('view.info.visible', true);
+			this.SetPref('view.readout.visible', false);
+			this.SetPref('view.orders.visible', true);
+			this.SetPref('view.health.visible', true);
+			this.SetPref('view.primaryammo.visible', true);
+			this.SetPref('view.secondaryammo.visible', true);
+			this.SetPref('view.chat.visible', true);
+			this.SetPref('view.kenny.visible', true);
+			this.SetPref('hud.minimap.mode', 0);
+			this.SetPref('hud.minimap.scale', .8);
+			this.SetPref("hud.iconmode", 0);
+			this.SetPref("hud.mode", 0);
+			//this.SetPref("ragdolls", true);
+			this.SetPref("wantbloodeffects", true);
+			this.SetPref("shadowreceivers", (1 | 4 | 16 | 32));
+			this.SetPref("corpses", true);
+			//this.SetPref("ragdollweapons", true);
+			this.SetPref("combatsmoke", true);
+			
+			// set any balanced options
+			this.SetPreset(1);
+		}
+		
+		self.SetPreset = function(which)
+		{
+			switch(which)
+			{
+				case 0: // quality
+					//this.SetPref('shademode', 1);
+					//this.SetPref('bnoframerunahead', false);
+					this.SetPref('enablevsync', true);
+					//this.SetPref('bdithering', true);
+					this.SetPref('bspecular', true);
+					//this.SetPref('texturereduction', false);
+					//this.SetPref('suppresstracersmoke', false);
+					//this.SetPref('suppressmuzzlesmoke', false);
+					this.SetPref('suppressmuzzlelight', false);
+					//this.SetPref('lodfieldofview', false);
+					//this.SetPref('lodlimitperframe', false);
+					this.SetPref('radialdensity', 1);
+					this.SetPref('radialradius', 1);
+					this.SetPref('visplayerlimit', 3);
+					this.SetPref('shadowsizeselect', 6);
+					this.SetPref('enableh2oshaders', true);
+					this.SetPref('grassshader', true);
+					this.SetPref('postrenderfilter', true);
+					this.SetPref('normalmaps', true);
+					this.SetPref('waterreflections', true);
+					this.SetPref('reflectionupdate', 1);
+					//this.SetPref('bsoundenable', true);
+					//this.SetPref('b3dsoundenable', true);
+					//this.SetPref('maxnumbersounds', 64);
+					this.SetPref('ambientlevel', 0);
+					//this.SetPref('ragdolls', true);
+					this.SetPref('wantbloodeffects', true);
+					this.SetPref('shadowreceivers', (1 | 2 | 4 | 8 | 16 | 32));
+					this.SetPref('app.shadows', 2);
+					this.SetPref('corpses', true);
+					//this.SetPref('ragdollweapons', true);
+					this.SetPref('combatsmoke', true);
+					this.SetPref('corpsetime', 1);
+					this.SetPref('corpsecount', 1);
+					this.SetPref('corpsedetail', true);
+					this.SetPref('inflodmod', 1);
+
+					break;
+				case 1: // balanced
+					//this.SetPref('shademode', 1);
+					//this.SetPref('bnoframerunahead', true);
+					this.SetPref('enablevsync', false);
+					//this.SetPref('bdithering', true);
+					this.SetPref('bspecular', true);
+					//this.SetPref('texturereduction', false);
+					//this.SetPref('suppresstracersmoke', false);
+					//this.SetPref('suppressmuzzlesmoke', false);
+					this.SetPref('suppressmuzzlelight', false);
+					//this.SetPref('lodfieldofview', true);
+					//this.SetPref('lodlimitperframe', true);
+					this.SetPref('radialdensity', .5);
+					this.SetPref('radialradius', .5);
+					this.SetPref('visplayerlimit', 2);
+					this.SetPref('shadowsizeselect', 6);
+					this.SetPref('enableh2oshaders', true);
+					this.SetPref('grassshader', true);
+					this.SetPref('postrenderfilter', true);
+					this.SetPref('normalmaps', false);
+					this.SetPref('waterreflections', false);
+					this.SetPref('reflectionupdate', 5);
+					//this.SetPref('bsoundenable', true);
+					//this.SetPref('b3dsoundenable', false);
+					//this.SetPref('maxnumbersounds', 32);
+					this.SetPref('ambientlevel', 1);
+					//this.SetPref('ragdolls', true);
+					this.SetPref('wantbloodeffects', true);
+					this.SetPref('shadowreceivers', (1 | 4 | 16 | 32));
+					this.SetPref('app.shadows', 1);
+					this.SetPref('corpses', true);
+					//this.SetPref('ragdollweapons', false);
+					this.SetPref('combatsmoke', false);
+					this.SetPref('corpsetime', .2);
+					this.SetPref('corpsecount', .2);
+					this.SetPref('corpsedetail', false);
+					this.SetPref('inflodmod', 2);
+					break;
+				case 2: // performance
+					//this.SetPref('shademode', 0);
+					//this.SetPref('bnoframerunahead', true);
+					this.SetPref('enablevsync', false);
+					//this.SetPref('bdithering', false);
+					this.SetPref('bspecular', false);
+					//this.SetPref('texturereduction', true);
+					//this.SetPref('suppresstracersmoke', true);
+					//this.SetPref('suppressmuzzlesmoke', true);
+					this.SetPref('suppressmuzzlelight', true);
+					//this.SetPref('lodfieldofview', true);
+					//this.SetPref('lodlimitperframe', true);
+					this.SetPref('radialdensity', 0);
+					this.SetPref('radialradius', 0);
+					this.SetPref('visplayerlimit', 1);
+					this.SetPref('shadowsizeselect', 0);
+					this.SetPref('enableh2oshaders', false);
+					this.SetPref('grassshader', false);
+					this.SetPref('postrenderfilter', false);
+					this.SetPref('normalmaps', false);
+					this.SetPref('waterreflections', false);
+					this.SetPref('reflectionupdate', 5);
+					//this.SetPref('bsoundenable', true);
+					//this.SetPref('b3dsoundenable', false);
+					//this.SetPref('maxnumbersounds', 16);
+					this.SetPref('ambientlevel', 2);
+					//this.SetPref('ragdolls', false);
+					this.SetPref('wantbloodeffects', false);
+					this.SetPref('shadowreceivers', (1 | 4 | 32));
+					this.SetPref('app.shadows', 0);
+					this.SetPref('corpses', false);
+					//this.SetPref('ragdollweapons', false);
+					this.SetPref('combatsmoke', false);
+					this.SetPref('corpsetime', .2);
+					this.SetPref('corpsecount', .2);
+					this.SetPref('corpsedetail', false);
+					this.SetPref('inflodmod', 4);
+					break;
+			}
+			
+			this.UpdateUI();
+		}
+		
+		self.DiscardPending = function()
+		{
+			showOk('widgets.prefs.discarded');
+			this.ResetPrefs();
+		}
+		
+		self.DropDown = function(prefMgr)
+		{
+			var dropDown = game.load("misc/dropdown", window);
+			
+			this.dropDownTarget = prefMgr;
+			
+			dropDown.mgr.control.clearRows(true);
+			
+			var label = prefMgr.view.findview("list");
+			
+			dropDown.width = label.width;
+			dropDown.mgr.list.width = label.width;
+			
+			var height = prefMgr.options.length * label.height;
+			
+			dropDown.height = height;
+			dropDown.mgr.list.height = height;
+			dropDown.mgr.list.x = 0;
+			dropDown.mgr.list.y = 0;
+			
+			var sx 		= label.screenx;
+			var stop 	= label.screeny + label.height;
+						
+			dropDown.screenx = sx;
+			dropDown.screeny = stop - height;
+			
+			var current		= prefMgr.pref.Value();
+			var selected 	= 0;
+			
+			for(var o = 0; o < prefMgr.options.length; o++)
+			{
+				var option = prefMgr.options[o];
+				
+				dropDown.mgr.StartRow("row" + o, 0, 0, 0, 16);
+				dropDown.mgr.AddRowColumn(option.label, 1);
+				dropDown.mgr.EndRow(option.value);
+				
+				if(option.value == current)
+					selected = o;
+			}
+			
+			dropDown.mgr.control.postInit(selected);
+			dropDown.mgr.selectCallback =  OnDropDownSelection;
+			
+			var row = dropDown.mgr.list.findview("row" + selected);
+			
+			if(row != null)
+				dropDown.y += (selected * label.height);
+		}
+		
+		self.DropDownSelection = function(dd)
+		{
+			this.dropDownTarget.SelectOption(dd.list.value);
+			this.dropDownTarget = null;
+			dd.view.close();
+		}
+		
+		return self;
+	}
+	
+	function OnDropDownSelection(action, dd)
+	{
+		window.mgr.DropDownSelection(dd);
+	}
+	
+	-->
+</script>

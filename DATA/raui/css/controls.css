@@ -1,0 +1,57 @@
+
+scrollbar
+{
+	width: 10;
+	control-on: ui/textures/test/scrollhandle.bmp;
+}
+
+button
+{
+	control-on: raui/textures/rabutton_blankon.bmp;
+	control-off: raui/textures/rabutton_blankoff.bmp;
+	color: $color;
+	font-size: $smallfont;
+	width: 200;
+	height: 100;
+	size-scaler: .7;
+}
+
+button.small
+{
+	control-on: raui/textures/rabutton_blankon.bmp;
+	control-off: raui/textures/rabutton_blankoff.bmp;
+	color: $color;
+	font-size: $tinyfont;
+	width: 250;
+	height: 50;
+	size-scaler: .4;
+}
+
+button.forward
+{
+	class: button;
+	control-on: raui/textures/rabutton_forwardon.bmp;
+	control-off: raui/textures/rabutton_forwardoff.bmp;
+	control-disabled: raui/textures/rabutton_forwarddisable.bmp;
+}
+
+button.back
+{
+	class: button;
+	control-on: raui/textures/rabutton_backon.bmp;
+	control-off: raui/textures/rabutton_backoff.bmp;
+	control-disabled: raui/textures/rabutton_backdisable.bmp;
+}
+
+radiobutton
+{
+	color: $color;
+	font-size: $smallfont;
+	control-on: ui/textures/map-checkbox-on.bmp;
+	control-off: ui/textures/map-checkbox-off.bmp;
+}
+
+slider
+{
+	thumb-off-color: #3e5248;
+}

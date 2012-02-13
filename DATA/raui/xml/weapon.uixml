@@ -1,29 +1,12 @@
 <ra id="weapon" manager="RAScreen">
 	<include file="lib/scenarios.uixml"/>
 	<include file="lib/scenariodata.uixml"/>
-	<include file="classes/ListControl.uixml"/>
-	<include file="classes/DDListControl.uixml"/>
-	<include file="classes/TreeControl2.uixml"/>
-	<include file="classes/CycleTimer.uixml"/>
-	<include file="classes/ViewBuilder.uixml"/>
-	<include file="classes/TextBuilder.uixml"/>
-	<include file="classes/ImageBuilder.uixml"/>
-	<include file="classes/RowBuilder.uixml"/>
-	<view id="mainpanel" x="10" height=".8" width=".65" rtop="20" style="class: bordered;">
-		<caption label="Make a select and click, Select Weapon." height="20" rtop="0"/>
-		<view id="weaponselect" x="10" y="10" rright="10" rtop="30">
-			<caption label="RED TEAM WEAPON LIST:" height="20" rtop="0" style="color: #FF0000;"/>
-			<view rtop="30">
-				<treecontrol id="weapon-tree" pad="5" style="class: bordered;"/>
-			</view>
-		</view>
-	</view>
-	<view id="infopanel" width=".3" height=".75" rright="10" rtop="50">
-		<sceninfov id="scenario-info">
-			<image id="scenario-image" pad="5"/>
-		</sceninfov>
-	</view>
-	<navbar id="navbar" style="class: bordered;">
+	<panel label="SELECT A WEAPON" x="10" height=".8" width=".5" rtop="20" align="center">
+		<caption id="team-header" x="15" height="20" rtop="15" rright="15" style="class: litebg;"/>
+		<treecontrol id="weapon-tree" x="15" y="15" rright="15" rtop="40" style="class: litebg;"/>
+	</panel>
+	<weapinfov id="weapon-info" width=".45" height=".8" rright="10" rtop="20"/>
+	<navbar id="navbar">
 		<button id="back" label="TEAM   " x="20" onclick="window.mgr.DoTeam()" align="right" center="y"/>
 		<button id="forward" label="   WEAPON" rright="20" onclick="this.mgr.Click(selectWeapon, true)" align="left" center="y"/>
 	</navbar>
@@ -34,19 +17,20 @@
 		var client 				= game.player.client;
 		var scenarios		= loadRoot();
 		var weaponTree 	= findview("weapon-tree");
-		var scenarioInfo	= findview("scenario-info");
+		var weaponInfo	= findview("weapon-info");
 		var selectBtn		= findview("select-button");
+		var teamHeader	= findview("team-header");
 		var team				= 0;
 		
 		function OnShow(win)
 		{
-			// set our scenario info
-			scenarioInfo.mgr.SetScenario(client.scenario);
-			
 			// set some callbacks
 			weaponTree.mgr.selectCallback = selectWeapon;
 			weaponTree.control.ondraw = formatSpawnable;
 			weaponTree.control.isselectable = isSelectable;
+			
+			// set our scenario info
+			weaponInfo.mgr.SetWeapon(game.player.vehicle);
 		}
 		
 		function OnUpdate()
@@ -57,6 +41,17 @@
 			
 			if(t != team)
 			{
+				if(t == 1)
+				{
+					teamHeader.label = "BLUE TEAM WEAPON LIST:";
+					teamHeader.setstyleproperty("color", "#0000FFBB");
+				}
+				else
+				{
+					teamHeader.label = "READ TEAM WEAPON LIST:";
+					teamHeader.setstyleproperty("color", "#FF0000BB");
+				}
+				
 				initSpawnables(weaponTree.control);
 				team = t;
 			}
@@ -66,17 +61,22 @@
 		{
 			var node = weaponTree.control.selectedNode();
 			
+			weaponInfo.mgr.SetWeapon();
+			
 			if(node != null && !node.branch)
 			{
-				if(action)
+				var index = weaponTree.control.selectedData();
+				
+				if(index != null)
 				{
-					var index = weaponTree.control.selectedData();
+					var vehicle = vehicles[index];
 					
-					if(index != null)
+					// update our weapon info
+					weaponInfo.mgr.SetWeapon(vehicle.type);
+					
+					// this call
+					if(action)
 					{
-						var vehicle = vehicles[index];
-						
-						// this call
 						if(vehicle.spawnable == "spawnable")
 						{
 							if(game.globals != null)

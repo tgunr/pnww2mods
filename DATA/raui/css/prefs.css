@@ -1,0 +1,37 @@
+
+pref
+{
+	 width: .8;
+	 height: 20;
+	 center: x;
+}
+
+panel.prefs
+{
+	class: pref;
+	color: $hilitealphalo;
+	border-color: $hilitealphahi;
+	border-size: 1;
+	font-size: -1;
+	center: x;
+}
+
+boolpref
+{
+	class: pref;
+}
+
+listpref
+{
+	class: pref;
+}
+
+sliderpref
+{
+	class: pref;
+}
+
+colorpref
+{
+	class: pref;
+}

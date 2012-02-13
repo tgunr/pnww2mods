@@ -1,0 +1,288 @@
+<script>
+	
+	<include file="classes/ViewManager.uixml"/>
+	
+	<!--
+	
+	function Pref(name, type, value)
+	{
+		consoleprint("1 new Pref: " + name);
+		
+		this.vmgr			= null; // our view manager
+		this.group		= 0; // our pref group
+		this.name 		= name;
+		this.type 			= type;
+		this.value 		= value;
+		this.pending 	= this.value;
+		
+		consoleprint("2 new Pref: " + name);
+		
+		this.global		= game.globalpref(this.name);
+		
+		consoleprint("3 new Pref: " + name);
+		
+		this.Pending = function()
+		{
+			return (this.value != this.pending) ? true : false;
+		}
+		
+		this.Set = function(value)
+		{
+			this.pending = value;
+			
+			if(this.Pending())
+				window.mgr.AddPendingPref(this);
+		}
+		
+		this.Update = function()
+		{
+			if(this.pending == this.value)
+				return false;
+			
+			if(this.global)
+			{
+				game.settings[this.name] = this.pending;
+			}
+			else
+			{
+				game.setpref(this.name, this.type, this.pending);
+			}
+			
+			this.value = this.pending;
+			
+			if(this.vmgr != null)
+				this.vmgr.Update();
+			
+			return true;
+		}
+		
+		this.Init = function()
+		{
+			if(this.global)
+			{
+				this.value = game.settings[name];
+			}
+			else
+			{
+				this.value = game.getpref(name, type);
+			}
+			
+			this.pending = this.value;
+			
+			return this.value;
+		}
+		
+		this.Reset = function()
+		{
+			this.pending = this.value;
+			
+			if(this.vmgr != null)
+				this.vmgr.Update();
+		}
+		
+		this.Value = function()
+		{
+			// pending is always the latest value
+			return this.pending;
+		}
+		
+		this.Init();
+		
+		return this;
+	}
+	
+	Pref.BOOL 		= 0;
+	Pref.UINT 			= 1;
+	Pref.SINT 			= 2;
+	Pref.LONG 		= 3;
+	Pref.FLOAT 		= 4;
+	Pref.DOUBLE 	= 5;
+	Pref.STRING 		= 6;
+	
+	function PrefView(v, group, type, defValue)
+	{
+		var self = new ViewManager(v);
+		
+		consoleprint("Creating new pref from window manager: " + v.id);
+		
+		self.pref 			= window.mgr.CreatePref(v.id, type, defValue);
+		self.pref.vmgr	= self;
+		self.pref.group = group;
+		
+		self.SetLabel = function(id, label)
+		{
+			var child = this.view.findview(id);
+			
+			if(child != null)
+				child.label = game.getlocstring(label);
+		}
+		
+		self.SetTip = function(id, tip)
+		{
+			var child = this.view.findview(id);
+			
+			if(child != null)
+			{
+				var tip = game.getlocstring(tip);
+				
+				if(tip.charAt(0) != "?")
+					child.settip(tip);
+			}
+		}
+		
+		self.Update = function()
+		{
+			// should be overridden
+		}
+		
+		self.OnClick = function(value)
+		{
+			this.pref.Set(value);
+			consoleprint("Setting pref " + this.pref.name + " to " + value);
+		}
+		
+		self.SetLabel("label", "widgets.prefs.groups.game." + self.pref.name);
+		self.SetTip("label", "widgets.prefs.groups.game." + self.pref.name + ".tip");
+		
+		return self;
+	}
+	
+	function BoolPref(v, group)
+	{
+		var self = new PrefView(v, group, Pref.BOOL, false);
+		
+		self.SetMgr("option-on");
+		self.SetMgr("option-off");
+		
+		self.Update = function()
+		{
+			consoleprint("Updating bool pref for " + this.pref.name);
+			
+			var on = this.view.findview("option-on");
+			var off = this.view.findview("option-off");
+			
+			on.value = this.pref.Value();
+			off.value = !this.pref.Value();
+		}
+		
+		// init our ui
+		self.Update();
+		
+		return self;
+	}
+	
+	function ColorPref(v, group)
+	{
+		var self = new PrefView(v, group, Pref.STRING, "#FFFFFF");
+		
+		self.SetMgr("color");
+		
+		self.Update = function()
+		{
+			var color = this.view.findview("color");
+			color.setstyleproperty("background-color", this.pref.Value());
+		}
+		
+		self.ShowPicker = function()
+		{
+				var picker = game.load("popups/picker");
+				if(picker != null) picker.initPicker(this);
+		}
+		
+		// init our ui
+		self.Update();
+		
+		return self;
+	}
+	
+	function SliderPref(v, group, minVal, maxVal)
+	{
+		var self = new PrefView(v, group, Pref.FLOAT, .5);
+		
+		self.minVal = (minVal != null) ? parseFloat(minVal) : 0;
+		self.maxVal = (maxVal != null) ? parseFloat(maxVal) : 1;
+		
+		self.SetMgr("slider");
+		self.BaseOnClick = self.OnClick;
+		
+		self.OnClick = function(value)
+		{
+			this.BaseOnClick(this.minVal + ((this.maxVal - this.minVal) * parseFloat(value)));
+		}
+		
+		self.Update = function()
+		{
+			consoleprint("Updating slider pref for " + this.pref.name);
+			
+			var slider 		= this.view.findview("slider");
+			var range 	= this.maxVal - this.minVal;
+			
+			if(range > 0)
+			{
+				var value	= (this.pref.Value() - this.minVal) / range;
+				
+				if(value >= 0 && value <= 1)
+					slider.value = value;
+			}
+		}
+		
+		// init our ui
+		self.Update();
+		
+		return self;
+	}
+	
+	function ListPref(v, group)
+	{
+		var self = new PrefView(v, group, Pref.STRING, false);
+		
+		self.SetMgr("list");
+		self.options = new Array();
+		
+		self.AddOption = function(label, value)
+		{
+			consoleprint("Adding list item " + label + "/" + value);
+			
+			var option = new Object();
+			
+			option["label"] = label;
+			option["value"] = value;
+			
+			this.options.push(option);
+		}
+		
+		self.Update = function()
+		{
+			var list = this.view.findview("list");
+			var current = this.pref.Value();
+			
+			for(var o = 0; o < this.options.length; o++)
+			{
+				if(this.options[o].value == current)
+				{
+					list.label = this.options[o].label;
+					break;
+				}
+			}
+		}
+		
+		self.ShowList = function()
+		{
+			// show our popup list
+			window.mgr.DropDown(this);
+		}
+		
+		self.SelectOption = function(index)
+		{
+			this.OnClick(this.options[index].value);
+			this.Update();
+		}
+		
+		// init our ui
+		// self.Update();
+		
+		return self;
+	}
+
+	-->
+</script>

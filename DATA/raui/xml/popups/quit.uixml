@@ -1,9 +1,9 @@
 <dialog id="quit">
 	<include file="classes/CycleTimer.uixml"/>
 	<text id="dialog-label" value="${common.quit}" x="10" rtop="10" y="40" rright="10"
-	acceptmouseclick="no" acceptfocus="no" style="class: bordered; class: dialog;"/>
-	<button id="dialog-no" x="20" y="10" label="${popup.cancel}" onclick="window.mgr.Close(false)" style="class: button.smallbutton;"/>
-	<button id="dialog-yes" y="10" rright="20" label="${popup.ok}" onclick="window.mgr.Close(true)" style="class: button.smallbutton;"/>
+	acceptmouseclick="no" acceptfocus="no" style="class: border; class: dialog;"/>
+	<button id="dialog-no" x="20" y="10" label="${popup.cancel}" onclick="window.mgr.Close(false)" style="class: button.small;"/>
+	<button id="dialog-yes" y="10" rright="20" label="${popup.ok}" onclick="window.mgr.Close(true)" style="class: button.small;"/>
 	<script>
 		<!--
 		

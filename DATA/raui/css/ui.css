@@ -1,91 +1,99 @@
 
-*
+// create some tokens
+// tokens can be used in css assignments
+
+$color = #e9e3d9ff
+$hilite = #8f6a14
+
+$hilitealphahi = #FFFFFF33
+$hilitealphalo = #FFFFFF88
+//$hilitealphahi = #8f6a1433
+//$hilitealphalo = #8f6a1488
+
+
+$litebg = #00000033
+$medbg = #00000055
+$darkbg = #00000099
+
+$tinyfont = -2
+$smallfont = -1 
+$bigfont = +1
+$hugefont = +2
+
+$border = 1
+$thickborder = 2
+
+-*
 {
 	class: debug;
 }
 
-background
-{
-	background-image: raui/textures/template_ra43.bmp;
-}
-
-background.loading
-{
-	background-image: raui/textures/loadingra43.bmp;
-}
-
-background.splash
-{
-	background-image: raui/textures/splashra43.bmp;
-}
-
-.spawn
-{
-	background-image: raui/textures/loadingra43.bmp;
-}
-
-.respawn
-{
-	background-image: raui/textures/loadingra43.bmp;
-}
-
-ra
-{
-	class: background;
-}
-
-normaltext
-{
-	font-size: -1;
-	color: #e9e3d9ff;
-}
-
-smalltext
-{
-	class: normaltext;
-	font-size: -3;
-}
-
-tinytext
-{
-	class: normaltext;
-	font-size: -5;
-}
-
-namevalue
-{
-	class: smalltext;
-}
-
-caption
-{
-	class: normaltext;
-}
-
 text
 {
-	class: normaltext;
+	font-size: $smallfont;
+	color: $color;
 	border-width: 3;
 	border-height: 3;
 }
 
-.header-title
+caption
 {
-	class: normaltext;
+	class: text;
+}
+
+smalltext
+{
+	class: text;
+	font-size: $smallfont;
+}
+
+bigtext
+{
+	class: text;
+	font-size: $bigfont;
+}
+
+border
+{
+	border-size: $border;
+	border-color: $darkbg;
+}
+
+thickborder
+{
+	border-size: $thickborder;
+	border-color: $darkbg;
+}
+
+
+litebg
+{
+	background-color: $litebg;
+}
+
+medbg
+{
+	background-color: $medbg;
+}
+
+darkbg
+{
+	background-color: $darkbg;
+}
+
+panel
+{
+	class: litebg;
+	color: $hilitealphalo;
+	border-color: $hilitealphahi;
+	border-size: 1;
+	font-size: $smallfont;
+}
+
+.header
+{
+	class: bigtext;
 	color: #BFE2CE;
-}
-
-info
-{
-	background-color: #00000066;
-}
-
-header-column
-{
-	class: normaltext;
-	class: info;
-	color: #FFFFFF;
-	background-color: #000000AA;
 }
 
 .title
@@ -93,95 +101,41 @@ header-column
 	class: header;
 }
 
-.body
+header-column
 {
-	class: bordered;
-}
-
-bordered
-{
-	border-color: #000000AA;
-}
-
-showme
-{
-	class: info;
+	class: text;
+	class: darkbg;
 }
 
 dialog
 {
-	background-color: #00000055;
-}
-
-image.header-image
-{
-	src: ui/textures/test/horiz_underline.bmp;
-}
-
-bghilight
-{
-	background-color: #8f6a14;
+	class: medbg;
+	border-color: #FFFFFF33;
 }
 
 debug
 {
-	background-color: #00000011;
+	class: litebg;
+	class: border;
 }
 
-borderhilight
+navbar
 {
-	border-size: 4;
-	border-color: #8f6a14;
+	class: litebg;
+	class: border;
+	border-color: $hilitealphahi;
 }
 
-.map
+.aarbody
 {
-	class: borderhilight;
+	class: darkbg;
+	class: border;
 }
 
-scrollbar
+includes
 {
-	width: 10;
-	background-image: ui/textures/test/scrolltunnel_bg.bmp;
-	control-on: ui/textures/test/scrollhandle.bmp;
+	include: backgrounds.css;
+	include: controls.css;
+	include: prefs.css;
 }
-
-button
-{
-	control-on: raui/textures/rabutton_blankon.bmp;
-	control-off: raui/textures/rabutton_blankoff.bmp;
-	color: #FFFFFF;
-	font-size: -1;
-	width: 200;
-	height: 100;
-	size-scaler: .7;
-}
-
-button.smallbutton
-{
-	control-on: raui/textures/rabutton_blankon.bmp;
-	control-off: raui/textures/rabutton_blankoff.bmp;
-	color: #FFFFFF;
-	font-size: -3;
-	width: 250;
-	height: 50;
-	size-scaler: .4;
-}
-
-button.forward
-{
-	class: button;
-	control-on: raui/textures/rabutton_forwardon.bmp;
-	control-off: raui/textures/rabutton_forwardoff.bmp;
-	control-disabled: raui/textures/rabutton_forwarddisable.bmp;
-}
-
-button.back
-{
-	class: button;
-	control-on: raui/textures/rabutton_backon.bmp;
-	control-off: raui/textures/rabutton_backoff.bmp;
-	control-disabled: raui/textures/rabutton_backdisable.bmp;
-}
-
 

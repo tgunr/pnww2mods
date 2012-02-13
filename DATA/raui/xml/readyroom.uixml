@@ -1,33 +1,18 @@
 <ra id="readyroom">
 	<include file="lib/scenarios.uixml"/>
-	<include file="classes/ListControl.uixml"/>
-	<include file="classes/DDListControl.uixml"/>
-	<include file="classes/TreeControl2.uixml"/>
-	<include file="classes/CycleTimer.uixml"/>
-	<include file="classes/ViewBuilder.uixml"/>
-	<include file="classes/TextBuilder.uixml"/>
-	<include file="classes/ImageBuilder.uixml"/>
-	<include file="classes/RowBuilder.uixml"/>
-	<view id="mainpanel" x="10" height=".8" width=".65" rtop="20" style="class: bordered;">
-		<caption label="Click the Fight button to join the game." height="20" rtop="0"/>
-		<view x="10" y="10" rright="10" rtop="30">
-			<caption label="PLAYER LIST:" height="20" rtop="0"/>
-			<listcontrol id="players" rtop="30" style="class: bordered;"/>
+	<panel label="PLAYER LIST" id="mainpanel" x="10" height=".8" width=".65" rtop="20" align="center">
+		<listcontrol id="players" x="15" y="15" rtop="20" rright="15" style="class: litebg;"/>
+	</panel>
+	<sceninfov id="scenario-info" width=".3" height=".8" rright="10" rtop="20">
+		<view id="map" class="mapview" acceptsfocus="no" minscale=".01" maxscale=".1" scale=".05" sx="0" sy="0">
+			<layer type="texture" id="default-64-tex" minscale="0" maxscale="64" enabled="true" orign="-26x210" rowcolsize="1x1" cellsize="64x64"/>
+			<layer type="icon" id="icons" minscale="1" maxscale="8" enabled="true"/>
+			<layer type="icon" id="rendered" minscale="0" maxscale="1" enabled="true"/>
+			<layer type="scenario" id="scenmap" minscale="0" maxscale="2" enabled="true"/>
+			<layer type="players" minscale="0" maxscale="20" />
 		</view>
-	</view>
-	<view id="infopanel" width=".3" height=".75" rright="10" rtop="50">
-		<sceninfov id="scenario-info">
-			<view id="map" class="mapview" acceptsfocus="no" minscale=".01" maxscale=".1" scale=".05"
-				pad="10" sx="0" sy="0">
-				<layer type="texture" id="default-64-tex" minscale="0" maxscale="64" enabled="true" orign="-26x210" rowcolsize="1x1" cellsize="64x64"/>
-				<layer type="icon" id="icons" minscale="1" maxscale="8" enabled="true"/>
-				<layer type="icon" id="rendered" minscale="0" maxscale="1" enabled="true"/>
-				<layer type="scenario" id="scenmap" minscale="0" maxscale="2" enabled="true"/>
-				<layer type="players" minscale="0" maxscale="20" />
-			</view>
-		</sceninfov>
-	</view>
-	<navbar id="navbar" style="class: bordered;">
+	</sceninfov>
+	<navbar id="navbar">
 		<button id="back" label="WEAPON   " x="20" onclick="window.mgr.DoWeapon()" align="right" center="y"/>
 		<button id="forward" label="   FIGHT" rright="20" onclick="this.mgr.Click(DoFight)" center="y" align="left"/>
 	</navbar>

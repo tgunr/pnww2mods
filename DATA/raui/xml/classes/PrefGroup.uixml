@@ -1,0 +1,43 @@
+<script>
+	<!--
+
+	function PrefGroup(v, index)
+	{
+		var self = new ViewManager(v);
+		
+		self.index = index;
+		self.modified = false;
+		
+		self.OnClick = function()
+		{
+			window.mgr.SelectGroup(this);
+		}
+		
+		self.Select = function(pv)
+		{
+			// color our view
+			pv.value = this.index;
+		}
+		
+		self.Deselect = function(pv)
+		{
+			// color our view
+		}
+		
+		self.SetModified = function(m)
+		{
+			this.modified = true;
+			// update our label or something?
+		}
+		
+		// always add this because it handles navigation stuff
+		self.view.addevent("onclick", "this.mgr.OnClick()");
+		
+		// register us with the pref screen
+		window.mgr.AddGroup(self);
+		
+		return self;
+	}	
+	
+	-->
+</script>

@@ -3,14 +3,13 @@
 	
 		function Preference(name, type, value, isglobal)
 		{
-			this.name 		= name;
+			this.name 	= name;
 			this.type 		= type;
-			this.value 		= value;
-			this.isglobal	= (isglobal != null) ? isglobal: false;
+			this.value 	= value;
 			
-			this.update = function()
+			this.Update = function()
 			{
-				if(this.isglobal)
+				if(this.IsGlobal())
 				{
 					if(this.value != game.settings[this.name])
 						game.settings[this.name] = this.value;
@@ -20,6 +19,14 @@
 					if(this.value != game.getpref(this.name, this.type))
 						game.setpref(this.name, this.type, this.value);
 				}
+			}
+			
+			this.IsGlobal = function(prefName)
+			{
+				if(prefName == null)
+					prefName = this.name;
+				
+				return game.isprefglobal(prefName);
 			}
 			
 			return this;

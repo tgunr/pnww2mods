@@ -1,26 +1,12 @@
 <ra id="create" manager="RAScreen">
 	<include file="lib/scenarios.uixml"/>
-	<include file="classes/ListControl.uixml"/>
-	<include file="classes/DDListControl.uixml"/>
-	<include file="classes/TreeControl2.uixml"/>
-	<include file="classes/CycleTimer.uixml"/>
-	<include file="classes/ViewBuilder.uixml"/>
-	<include file="classes/TextBuilder.uixml"/>
-	<include file="classes/ImageBuilder.uixml"/>
-	<include file="classes/RowBuilder.uixml"/>
-	<view id="select-panel" x="10" y="80" width="270" rtop="20">
-		<caption label="Choose a game and click, create." height="20" rtop="0"/>
-		<listcontrol id="create-list" rtop="30" style="class: bordered;"/>
-	</view>
-	<stackview id="main-panel" x="300" y="80" rright="10" rtop="40">
-		<view/>
-		<view x="10" y="1" rright="10" rtop="10" style="class: bordered;">
-			<sceninfoh id="scenario-info">
-				<image id="scenario-image" height=".45" rtop="5"/>
-			</sceninfoh>
-		</view>
-	</stackview>
-	<navbar id="navbar" style="class: bordered;">
+	<panel label="SELECT MAP" id="select-panel" x="10" y="80" width="270" rtop="20" align="center">
+		<listcontrol id="create-list" pad="15" rtop="35" style="class: litebg;"/>
+	</panel>
+	<sceninfoh id="scenario-info" x="300" height=".5" rright="10" rtop="20">
+		<image id="scenario-image" height=".7" rtop="5"/>
+	</sceninfoh>
+	<navbar id="navbar">
 		<button id="create-button" label="    CREATE" rright="20" onclick="this.mgr.Click(selectScenario, true)" align="left" style="class: button.forward;" center="y"/>
 	</navbar>
 	<script>
@@ -39,8 +25,6 @@
 		
 		function OnShow(win)
 		{
-			mainPanel.value = 0;
-			
 			createList.mgr.selectCallback = selectScenario;
 			
 			initCreateList();
@@ -101,7 +85,6 @@
 			if(data == null)
 			{
 				cprint("Select Scenario had null data!");
-				mainPanel.value = 0;
 				createBtn.enabled = false;
 				return;
 			}
@@ -110,7 +93,6 @@
 			
 			scenarioInfo.mgr.SetScenario(data.scenario);
 			
-			mainPanel.value = 1;
 			createBtn.enabled = true;
 			
 			if(action)

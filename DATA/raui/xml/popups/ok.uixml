@@ -1,6 +1,6 @@
 <dialog id="ok">
 	<text id="dialog-label" value="DIALOG" x="10" rtop="10" y="40" rright="10"
-		acceptmouseclick="no" acceptfocus="no" style="class: bordered;"/>
-	<button id="dialog-yes" y="10"  center="x" label="${popup.ok}" onclick="window.mgr.Close(true)" style="class: button.smallbutton;"/>
+		acceptmouseclick="no" acceptfocus="no" style="class: border;"/>
+	<button id="dialog-yes" y="10"  center="x" label="${popup.ok}" onclick="window.mgr.Close(true)" style="class: button.small;"/>
 </dialog>
 

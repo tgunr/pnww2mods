@@ -1,8 +1,8 @@
 <dialog id="confirm">
 	<text id="dialog-label" value="DIALOG" x="10" rtop="10" height="20" rright="10"
-		acceptmouseclick="no" acceptfocus="no" style="class: bordered;"/>
+		acceptmouseclick="no" acceptfocus="no" style="class: border;"/>
 	<text id="dialog-description" x="10" rtop="40" y="40" rright="10"
-		acceptmouseclick="no"acceptfocus="no" style="class: bordered;"/>
-	<button id="dialog-no" x="10" y="10" label="${popup.cancel}" onclick="window.mgr.Close(false)"/>
-	<button id="dialog-yes" y="10" rright="10" label="${popup.ok}" onclick="window.mgr.Close(true)"/>
+		acceptmouseclick="no"acceptfocus="no" style="class: border;"/>
+	<button id="dialog-no" x="10" y="10" label="${popup.cancel}" onclick="window.mgr.Close(false)" style="class: button.small;"/>
+	<button id="dialog-yes" y="10" rright="10" label="${popup.ok}" onclick="window.mgr.Close(true)" style="class: button.small;"/>
 </dialog>
