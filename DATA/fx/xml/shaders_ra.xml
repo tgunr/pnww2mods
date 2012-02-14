@@ -20,7 +20,7 @@
     <uniform name="scale4" type="float" onetimeapply="true"></uniform>
   </program>
   <!--=================================================================-->
-  <program name ="normalmap">
+  <program name ="normalmap_ra">
     <shaders>
       <vertexshader>fx/shaders/GLSL/normal/normal_ra.vert</vertexshader>
       <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
