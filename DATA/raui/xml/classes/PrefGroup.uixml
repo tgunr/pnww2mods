@@ -17,13 +17,13 @@
 		{
 			// color our view
 			pv.value = this.index;
-			this.view.setstyle("class: prefgroup.selected;");
+			this.view.setstyle("class: list.select;");
 		}
 		
 		self.Deselect = function(pv)
 		{
 			// color our view
-			this.view.setstyle("class: prefgroup.deselected;");
+			this.view.setstyle("class: list.deselect;");
 		}
 		
 		self.SetModified = function(m)
@@ -42,6 +42,21 @@
 		
 		// register us with the pref screen
 		window.mgr.AddGroup(self);
+		
+		return self;
+	}	
+	
+	function KeymapPrefGroup(v, index)
+	{
+		var self = new PrefGroup(v, index);
+		
+		self.BaseSelect = self.Select;
+		
+		self.Select = function(pv)
+		{
+			window.mgr.InitKeymaps();
+			this.BaseSelect(pv);
+		}
 		
 		return self;
 	}	

@@ -13,14 +13,12 @@
 		self.hpadding		= 2;
 		self.vpadding		= 1;
 		self.columns			= new Array();
-		/*
 		self.colStyle			= null; // default column style to use
 		
 		self.setColumnStyle = function(s)
 		{
 			this.colStyle = s;
 		}
-		*/
 		
 		self.addColumn	= function(loc, width, align, style)
 		{
@@ -146,12 +144,11 @@
 					if(column.style != null) cb.addStyle("class", column.style);
 				}
 				
-				//if(column.style == null && this.colStyle != null)
-				//	cb.addStyle("class", this.colStyle);
-				
 				if(cb != null)
 				{
-					/*
+					if(column.style == null && this.colStyle != null)
+						cb.addStyle("class", this.colStyle);
+
 					if(column.attributes != null)
 					{
 						for(var n in column.attributes)
@@ -163,7 +160,6 @@
 						for(var n in column.styles)
 							cb.addStyle(n, column.styles[n]);
 					}
-					*/
 					
 					this.addBuilder(cb);
 				}

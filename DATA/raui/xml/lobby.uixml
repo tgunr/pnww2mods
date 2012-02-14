@@ -87,19 +87,19 @@
 			initInstances();
 		}
 		
-		function initHeaders(p)
+		function initHeaders(pp)
 		{
 			//p.mgr.SetTitle("INSTANCES");
 			
 			// create our headers
-			p.mgr.StartHeaders("scenarios-header", 0, -1, 0, 15);
-		 	p.mgr.AddHeader("scenarios.list.id", .15);
-		 	p.mgr.AddHeader("scenarios.list.map", .4);
-		 	p.mgr.AddHeader("scenarios.list.type", .1, "center");
-		 	p.mgr.AddHeader("scenarios.list.status", .15, "center");
-		 	p.mgr.AddHeader("scenarios.list.players", .1, "center");
-		 	p.mgr.AddHeader("scenarios.list.squad", .1, "center");
-			p.mgr.EndHeaders();
+			pp.mgr.StartHeaders("scenarios-header", 0, -1, 0, 15);
+		 	pp.mgr.AddHeader("scenarios.list.id", .15);
+		 	pp.mgr.AddHeader("scenarios.list.map", .4);
+		 	pp.mgr.AddHeader("scenarios.list.type", .1, "center");
+		 	pp.mgr.AddHeader("scenarios.list.status", .15, "center");
+		 	pp.mgr.AddHeader("scenarios.list.players", .1, "center");
+		 	pp.mgr.AddHeader("scenarios.list.squad", .1, "center");
+			pp.mgr.EndHeaders();
 		}
 		
 		function initInstances()

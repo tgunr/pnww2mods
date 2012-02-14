@@ -198,7 +198,7 @@
 			
 			if(callback != null)
 			{
-				consoleprint("Calling " + name + "  with " + data);
+				//consoleprint("Calling " + name + "  with " + data);
 				callback(data);
 			}
 		}
@@ -212,7 +212,7 @@
 			if(index >= 0 && index < this.rows.length)
 			{
 				id = rows[index].id;
-				consoleprint("Using selected index: " + id);
+				//consoleprint("Using selected index: " + id);
 			}
 			
 			return this.select(id);
@@ -276,7 +276,7 @@
 			var list = this.list;
 			var index = this.rowIndex(id);
 			
-			consoleprint("Selected list index is " + index);
+			//consoleprint("Selected list index is " + index);
 			
 			if(index >= 0 && index <  list.length)
 			{
@@ -299,7 +299,7 @@
 		
 		self.clickList = function(dbl)
 		{
-			consoleprint("List Click is " + this.list.value);
+			//consoleprint("List Click is " + this.list.value);
 			
 			this.selectByIndex(this.list.value);
 			this.call("onclick", dbl);
@@ -321,7 +321,7 @@
 			{
 				if(id == rows[i].id)
 				{
-					consoleprint("Returning row index: " + i);
+					//consoleprint("Returning row index: " + i);
 					return i;
 				}
 			}

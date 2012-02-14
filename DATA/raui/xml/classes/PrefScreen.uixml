@@ -20,6 +20,20 @@
 		self.saveButton		= self.view.findview("save-button");
 		self.BaseOnShow 	= self.OnShow;
 		
+		self.mouseCalib		= self.view.findview("mouse-calibration");
+		self.mouseAimCalib	= self.view.findview("mouse-aim-calibration");
+		self.joystickCalib		= self.view.findview("joystick-calibration");
+		self.calibrator			= self.view.findview("calibrator");
+		
+		self.mouseAimCalib.mgr 	= self;
+		self.joystickCalib.mgr 		= self;
+		self.calibrator.mgr			= self;
+		
+		self.keymapsInit				= false;
+		self.keymapCat				= 0;
+		self.keymapIndex				= 0;
+		self.keymap						= null;
+		
 		self.OnShow = function()
 		{
 			this.SetVisible("lobby-button", false);
@@ -75,6 +89,7 @@
 			if(game.settings.restartneeded)
 				showOk('widgets.prefs.changed');
 			
+			this.SaveKeymaps();
 			this.ResetPrefs();
 		}
 		
@@ -88,6 +103,8 @@
 			for(var i = 0; i < this.groups.length; i++)
 				this.groups[i].SetModified(false);
 				
+			this.KillKeymaps();
+			
 			// disable the save button
 			this.saveButton.enabled = false;
 		}
@@ -378,6 +395,112 @@
 			this.dropDownTarget.SelectOption(dd.list.value);
 			this.dropDownTarget = null;
 			dd.view.close();
+		}
+		
+		self.SetCalibration = function(type, value)
+		{
+			game.setkeymapcalibration(type, value);
+		}
+		
+		self.SetCalibrator = function(data)
+		{
+			if(data == null)
+				return;
+				
+			var label = "CALIBRATE";
+			
+			if(data.name != "mouse1")
+			{
+				this.calibrator.value = 1;
+				this.joystickCalib.label = data.name;
+				
+				label = label + " " + getlocstring('ra.prefs.calibration.device.joystick1');
+				label = label + " " + getlocstring('ra.prefs.calibration.device.' + data.axis);
+			}
+			else
+			{
+				this.calibrator.value = 0;
+				label = label + " " + getlocstring('ra.prefs.calibration.device.mouse1');
+			}
+			
+			var panel = this.view.findview("calibration-panel");
+			if(panel != null) panel.label = label.toUpperCase();
+			
+			this.InitKeymaps();
+		}
+		
+		self.InitKeymaps = function()
+		{
+			if(!this.keymapsInit)
+			{
+				game.initkeymaps();
+				this.keymapsInit = true;
+			}
+		}
+		
+		self.KillKeymaps = function()
+		{
+			if(this.keymapsInit)
+			{
+				game.killkeymaps();
+				this.keymapsInit = false;
+			}
+		}
+		
+		self.SaveKeymaps = function(kill)
+		{
+			if(this.keymapsInit)
+			{
+				game.savekeymaps();
+				
+				if(kill)
+					this.KillKeymaps();
+			}
+		}
+		
+		// category defaults
+		self.DefaultCategory = function(callback)
+		{
+			game.keymapremoveall(this.keymapCat, -1);
+			
+			if(callback != null)
+				callback();
+		}
+		
+		// undo changes
+		self.ResetCategory = function(callback)
+		{
+			game.keymaprestore(this.keymapCat, -1)
+			
+			if(callback != null)
+				callback();
+		}
+		
+		// clear it
+		self.ClearKeymap = function()
+		{
+			game.clearkeymap(this.keymap, this.keymapIndex);
+		}
+		
+		// set default keymap
+		self.DefaultKeymap = function()
+		{
+			game.resetkeymap(this.keymap, this.keymapIndex);
+		}
+		
+		self.SetKeymapCat = function(cat)
+		{
+			this.keymapCat = cat;
+		}
+		
+		self.SetKeymap = function(k)
+		{
+			this.keymap = k;
+		}
+		
+		self.SetKeymapIndex = function(i)
+		{
+			this.keymapIndex = i;
 		}
 		
 		return self;

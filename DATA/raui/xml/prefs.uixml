@@ -9,8 +9,8 @@
 			<caption label="VISUAL PREFERENCES" width=".9" height="20" center="x" manager="PrefGroup:1"/>
 			<caption label="SOUND PREFERENCES" width=".9" height="20" center="x" manager="PrefGroup:2"/>
 			<caption label="USER INTERFACE" width=".9" height="20" center="x" manager="PrefGroup:3"/>
-			<caption label="KEYMAPPER" width=".9" height="20" center="x" manager="PrefGroup:4"/>
-			<caption label="DEVICE CALIBRATION" width=".9" height="20" center="x" manager="PrefGroup:5"/>
+			<caption label="KEYMAPPER" width=".9" height="20" center="x" manager="KeymapPrefGroup:4"/>
+			<caption label="DEVICE CALIBRATION" width=".9" height="20" center="x" manager="KeymapPrefGroup:5"/>
 		</view>
 	</panel>
 	<view id="main-panel" x="240" y="80" rright="10" rtop="20">
@@ -253,18 +253,60 @@
 				</view>
 				<scrollbar/>
 			</scrollview>
-			<scrollview id="keymapper-prefs">
-				<view style="layout: flow; vpad: 5; hpad: 5;">
-					<caption label="keymapper prefs" pad="10" height="20" style="class: medbg;"/>
-				</view>
-				<scrollbar/>
-			</scrollview>
-			<scrollview id="calib-prefs">
-				<view style="layout: flow; vpad: 5; hpad: 5;">
-					<caption label="calib prefs" pad="10" height="20" style="class: medbg;"/>
-				</view>
-				<scrollbar/>
-			</scrollview>
+			<view id="keymapper-prefs">
+				<panel id="keymapper-panel" label="SET KEYMAPS" width=".6">
+					<listcontrol id="keymap-list" pad="15" y="50" rtop="20" style="class: litebg;"/>
+					<view id="keymap-buttons" pad="15" height="30" style="class: litebg;">
+						<button id="clearkeymap" x="30" center="y" label="DEFAULT" style="class: button.small; class: tinytext;"
+							onclick="window.mgr.DefaultKeymap()" tip="${ra.prefs..keymapper.button.def.key.tip}"/>
+						<button id="defaultkeymap" rright="30" center="y" label="CLEAR" style="class: button.small; class: tinytext;"
+							onclick="window.mgr.ClearKeymap()" tip="${ra.prefs.keymapper.button.clear.tip}"/>
+					</view>
+				</panel>
+				<panel id="vclass-panel" label="SELECT CATEGORY"width=".35" rright="0">
+					<listcontrol id="keymap-cat-list" pad="15" y="50" rtop="20" style="class: litebg;"/>
+					<view id="keymap-buttons" pad="15" height="30" style="class: litebg;">
+						<button id="defaultcategory" x="10" center="y" label="DEFAULT" style="class: button.small; class: tinytext;"
+							onclick="window.mgr.DefaultCategory(initKeymapList)"	tip="${ra.prefs.keymapper.button.def.cat.tip}"/>
+						<button id="revertcategory" rright="10" center="y" label="RESET" style="class: button.small; class: tinytext;"
+							onclick="window.mgr.ResetCategory(initKeymapList)" tip="${ra.prefs..keymapper.button.discard.tip}"/>
+					</view>
+				</panel>
+			</view>
+			<view id="calib-prefs">
+				<panel id="calibration-panel" label="CALIBRATE" width=".6">
+					<stackview id="calibrator" pad="15" rtop="20" style="class: litebg;">
+						<view>
+							<text x="10" height="100" width="425" rtop="50" style="font-size: +2; color: #FFFFFFFF;"
+								onshow="this.text = getlocstring('widgets.calibration.mouse.desc')"/>
+							<caption x="50" y="250" height="20" width="50" style=" color: #FFFFFFFF;"
+								onshow="this.label = getlocstring('widgets.calibration.mouse.less')" align="right"/>
+							<caption x="350" y="250" height="20" width="50" style=" color: #FFFFFFFF;"
+								onshow="this.label = getlocstring('widgets.calibration.mouse.more')"/>
+							<caption x="150" height="20" width="425" y="275" style="font-size: +1; color: #BFE2CE;"
+								onshow="this.label = getlocstring('widgets.calibration.mouse.subtitle')"/>
+							<slider id="mouse-calibration" x="125" y="250" width="200" height="20" minvalue="0.125" maxvalue="2"
+								onclick="window.mgr.SetCalibration('mouse', this.value)"/>
+								
+							<caption x="50" y="150" height="20" width="50" style=" color: #FFFFFFFF;"
+								onshow="this.label = getlocstring('widgets.calibration.mouse.less')" align="right"/>
+							<caption x="350" y="150" height="20" width="50" style=" color: #FFFFFFFF;"
+								onshow="this.label = getlocstring('widgets.calibration.mouse.more')"/>
+							<caption x="150" height="20" width="425" y="175" style="font-size: +1; color: #BFE2CE;"
+								onshow="this.label = getlocstring('widgets.calibration.mouse.aimtitle')"/>
+							<slider id="mouse-aim-calibration" x="125" y="150" width="200" height="20" minvalue="0.125" maxvalue="2"
+								onclick="window.mgr.SetCalibration('aim', this.value)"/>
+						</view>
+						<view>
+							<text height="100" width=".75" rtop="30" onshow="this.text = getlocstring('widgets.calibration.joystick.desc')" center="x"/>
+							<view id="joystick-calibration" class="joycalib" width=".6" height="200" center="true" style="class: litebg; class: border;"/>
+						</view>
+					</stackview>
+				</panel>
+				<panel id="device-panel" label="SELECT DEVICE"width=".35" rright="0">
+					<listcontrol id="device-list" pad="15" rtop="20" style="class: litebg;"/>
+				</panel>
+			</view>
 		</stackview>
 	</view>
 	<navbar>
@@ -274,14 +316,239 @@
 	<script>
 		<!--
 		
+		var deviceList 			= findview("device-list");
+		var keymapCatList 	= findview("keymap-cat-list");
+		var keymapList 		= findview("keymap-list");
+		
+		game.onkeymapchange = hidePendingPopup;
+		game.onkeymapenter  = showPendingPopup;
+		
 		function OnShow()
 		{
-			var pref = findview("pref-credits");
+			deviceList.mgr.selectCallback = selectDevice;
+			keymapCatList.mgr.selectCallback = selectKeymapCat;
+			keymapList.mgr.selectCallback = selectKeymap;
 			
-			if(pref.mgr == null)
-				cprint("Pref manager not found!");
+			initDevices();
+			initKeymapCats();
 		}
+		
+		function initDevices()
+		{
+			deviceList.mgr.control.clearRows(false);
+			
+			var mouseData = new Object();
+			mouseData["name"] = "mouse1";
+			
+			deviceList.mgr.StartRow("mousedevice", 10, 0, 0, 14);
+			deviceList.mgr.AddRowColumn(getlocstring('ra.prefs.calibration.device.mouse1'), 1);
+			deviceList.mgr.EndRow(mouseData);
 
+			var axis = new Array("axisx","axisy","axisz","axisrx","axisry","axisrz","axisslider1","axisslider2");
+			
+			for(var a = 0; a < axis.length; a++)
+			{
+				var jloc = getlocstring('ra.prefs.calibration.device.joystick1');
+				var aloc = getlocstring('ra.prefs.calibration.device.' + axis[a]);
+				var data = new Object();
+				
+				data["name"] = "joystick1" + axis[a];
+				data["axis"] = axis[a];
+				
+				deviceList.mgr.StartRow("joyaxis" + a, 10, 0, 0, 14);
+				deviceList.mgr.AddRowColumn(jloc + " " + aloc , 1);
+				deviceList.mgr.EndRow(data);
+			}
+			
+			deviceList.mgr.control.postInit();
+		}
+		
+		function selectDevice(action)
+		{
+			window.mgr.SetCalibrator(deviceList.mgr.control.selectedData());
+		}
+		
+		function initKeymapCats()
+		{
+			keymapList.mgr.StartHeaders("keymap-header", 0, -1, 0, 15);
+		 	keymapList.mgr.AddHeader("ra.prefs.keymapper.keys.function", .5);
+		 	keymapList.mgr.AddHeader("ra.prefs.keymapper.keys.primary", .25);
+		 	keymapList.mgr.AddHeader("ra.prefs.keymapper.keys.secondary", .25);
+			keymapList.mgr.EndHeaders();
+			
+			var cats 	= new Array("general","views","infantry","armor","trucks","guns");
+			var data 	= new Array(0,1,6,3,4,5);
+			
+			keymapCatList.mgr.control.clearRows(false);
+			
+			for(var c = 0; c < cats.length; c++)
+			{
+				var loc = getlocstring('ra.prefs.keymapper.cats.' + cats[c]);
+				
+				keymapCatList.mgr.StartRow("category" + c, 10, 0, 0, 14);
+				keymapCatList.mgr.AddRowColumn("   " + loc.toUpperCase() , 1);
+				keymapCatList.mgr.EndRow(data[c]);
+			}
+			
+			keymapCatList.mgr.control.postInit(window.mgr.keymapCat);
+			initKeymapList();
+		}
+		
+		function selectKeymapCat(action)
+		{
+			window.mgr.SetKeymapCat(keymapCatList.mgr.control.selectedData());
+			window.mgr.SetKeymap(null);
+			initKeymapList();
+		}
+		
+		function initKeymapList()
+		{
+			keymapList.mgr.control.clearRows(true);
+			
+			var keymaps = game.getkeymaps(window.mgr.keymapCat);
+			var header	= null;
+			
+			for(var i = 0; i < keymaps.length; i++)
+			{
+				var keymap = keymaps[i];
+				
+				if(keymap.ezlevel == -1 || keymap.ezlevel >= game.ezmode)
+				{
+					if(keymap.header != header)
+					{
+						header = keymap.header;
+						
+						keymapList.mgr.StartRow("header" + i, 10, 0, 0, 14);
+						keymapList.mgr.AddRowColumn(header.toUpperCase() , 1, "left", "litebg");
+						keymapList.mgr.EndRow();
+					}
+					
+					keymap.category = window.mgr.keymapCat;
+					keymap.vehicle 	= -1;
+					keymap.index 	= i;
+					
+					// need to format
+					keymapList.mgr.StartRow("keymap." + i, 10, 0, 0, 16);
+					keymapList.mgr.AddRowColumn("   " + htmlencode(keymap.functionname) , .5, "left", "smalltext");
+					
+					var km = keymapList.mgr.AddRowColumn("" , .25, "left", "smalltext");
+					
+					km.attributes 								= new Object();
+					km.attributes["class"] 					= "keymap";
+					km.attributes["category"] 			= keymap.category;
+					km.attributes["vehidx"] 				= keymap.vehicle;
+					km.attributes["funcidx"] 				= keymap.index;
+					km.attributes["keyidx"] 				= 0;
+					km.attributes["onmousedown"] 	= 'setKeymapIndex(0)';
+					
+					if(keymap.isaxis)
+					{
+						var km1 = keymapList.mgr.AddRowColumn("" , .25 * .5, "left", "smalltext");
+						
+						km1.attributes 								= new Object();
+						km1.attributes["class"] 					= "keymap";
+						km1.attributes["category"] 				= keymap.category;
+						km1.attributes["vehidx"] 				= keymap.vehicle;
+						km1.attributes["funcidx"] 				= keymap.index;
+						km1.attributes["keyidx"] 				= 1;
+						km1.attributes["onmousedown"] 	= 'setKeymapIndex(1)';
+						
+						var km2 = keymapList.mgr.AddRowColumn("" , .25 * .5, "left", "smalltext");
+						
+						km2.attributes 								= new Object();
+						km2.attributes["class"] 					= "keymap";
+						km2.attributes["category"] 				= keymap.category;
+						km2.attributes["vehidx"] 				= keymap.vehicle;
+						km2.attributes["funcidx"] 				= keymap.index;
+						km2.attributes["keyidx"] 				= 2;
+						km2.attributes["onmousedown"] 	= 'setKeymapIndex(2)';
+					}
+					else
+					{
+						var km1 = keymapList.mgr.AddRowColumn("" , .25, "left", "smalltext");
+						
+						km1.attributes 								= new Object();
+						km1.attributes["class"] 					= "keymap";
+						km1.attributes["category"] 				= keymap.category;
+						km1.attributes["vehidx"] 				= keymap.vehicle;
+						km1.attributes["funcidx"] 				= keymap.index;
+						km1.attributes["keyidx"] 				= 1;
+						km1.attributes["onmousedown"] 	= 'setKeymapIndex(1)';
+					}
+					
+					keymapList.mgr.EndRow(keymap);
+				}
+			}
+			
+			keymapList.mgr.control.postInit();
+		}
+		
+		function selectKeymap()
+		{
+			consoleprint("Setting keymap!");
+			window.mgr.SetKeymap(keymapList.mgr.control.selectedData());
+		}
+		
+		function setKeymapIndex(i)
+		{
+			window.mgr.SetKeymapIndex(i);
+		}
+		
+		function showPendingPopup(keymap)
+		{
+			hidePendingPopup();
+			
+			var data 			= keymapList.mgr.control.selectedData();
+			var message 	= getlocstring('ra.prefs.keymapper.pending.keymap') + ": " + htmlencode(keymap.functionname) + "\n\n";
+			
+			if(keymap.isaxis)
+			{
+				if(keymap.keyidx == 0) // axis
+				{
+					message += getlocstring('ra.prefs.keymapper.pending.move') + "\n";
+					message += getlocstring('ra.prefs.keymapper.pending.invert')  + "\n";
+				}
+				else if(keymap.keyidx == 1) // negative
+				{
+					message += getlocstring('ra.prefs.keymapper.pending.dec') + "\n";
+				}
+				else // positive
+				{
+					message += getlocstring('ra.prefs.keymapper.pending.inc') + "\n";
+				}
+			}
+			else
+			{
+				if(keymap.keyidx == 0) // primary
+					message += getlocstring('ra.prefs.keymapper.pending.pri') + "\n";
+				else // secondary
+					message += getlocstring('ra.prefs.keymapper.pending.sec') + "\n";
+			}
+			
+			var pending = game.load("popups/pending");
+			pending.setPopupMessage(message);
+		}
+		
+		function hidePendingPopup()
+		{
+			consoleprint("Trying to hide our pending popup!");
+			
+			var pending = game.findview("pending");
+			
+			if(pending != null)
+				pending.close();
+		}
+		
+		function updatekeymapper()
+		{
+			var userkeymap 	= game.hasuserkeymap(window.mgr.keymapCat);
+			var dirty 				= game.keymapisdirty(window.mgr.keymapCat);
+			
+			// update buttons
+			//defaultcategory.enabled = userkeymap || dirty;
+			//revertcategory.enabled  = userkeymap && dirty;
+		}
+		
 		-->
 	</script>
 </ra>
