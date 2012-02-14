@@ -43,7 +43,7 @@
 			{
 				creditsList.visible = false;
 				
-				var content = game.getcontent("manuals/credits.xml");
+				var content = game.getcontent("manuals/racredits.xml");
 				
 				if(content != null)
 				{
