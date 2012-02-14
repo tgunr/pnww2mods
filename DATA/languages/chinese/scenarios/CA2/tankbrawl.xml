@@ -14,15 +14,22 @@ roundstop = 本回合结束!
 bridgecapture1 = 你在占领区域里!</body>
   <bodyloc>true</bodyloc>
   <brief>红国和蓝星国的坦克为了占领这座桥梁而决一雌雄！</brief>
+  <draw>15</draw>
   <duration>15</duration>
-  <fog>2</fog>
+  <enemydeaths>true</enemydeaths>
+  <enemyicontypeonly>true</enemyicontypeonly>
+  <firingenemyicons>true</firingenemyicons>
+  <fog>1</fog>
   <hour>16</hour>
-  <kills>25</kills>
   <rules>dmnointel</rules>
-  <target></target>
-  <team1>2</team1>
+  <team1>1</team1>
+  <team1max>8</team1max>
+  <team1min>2</team1min>
   <team2>4</team2>
+  <team2max>8</team2max>
+  <team2min>2</team2min>
   <terrain>tankmap</terrain>
   <title>坦克竞技</title>
+  <victory>25</victory>
   <weather>1</weather>
 </content>

@@ -1,0 +1,29 @@
+<?xml version='1.0'?>
+<content type="3">
+  <name>benchmark/benchmark_tank</name>
+  <body>objective1 = Allies {1}/{2}
+objective2 = Axis {1}/{2}
+victory1 = Team 1 victorious!
+victory2 = Team 2 victorious!
+roundstop = This round is over!
+playarea = Edge of combat zone ... turn around
+onspawn.moveout = Eliminate as many enemy tanks as possible before time runs out!
+scenario.help = benchmark
+west = West Bridge
+east = East Bridge
+gerspawn = Enemy Spawn
+ukspawn = Enemy Spawn</body>
+  <bodyloc>true</bodyloc>
+  <brief>benchmark test with 10 vs 10 tanks</brief>
+  <duration>15</duration>
+  <fog>2</fog>
+  <hour>16</hour>
+  <kills>25</kills>
+  <rules>dmnointel</rules>
+  <target></target>
+  <team1>2</team1>
+  <team2>4</team2>
+  <terrain>tankmap</terrain>
+  <title>BENCHMARK: TANK</title>
+  <weather>1</weather>
+</content>
