@@ -957,5 +957,7 @@ end
 
 function recvClientData(data)
 	-- Instancing.report('I', 'recvClientData', data);
-	table.insert(scenario.fromserver, {scenario.instance.id, data});
+	if(scenario.instance ~= nil) then
+		table.insert(scenario.fromserver, {scenario.instance.id, data});
+	end
 end
