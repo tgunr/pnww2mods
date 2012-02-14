@@ -6,20 +6,13 @@
 	
 	function Pref(name, type, value)
 	{
-		consoleprint("1 new Pref: " + name);
-		
 		this.vmgr			= null; // our view manager
 		this.group		= 0; // our pref group
 		this.name 		= name;
 		this.type 			= type;
 		this.value 		= value;
 		this.pending 	= this.value;
-		
-		consoleprint("2 new Pref: " + name);
-		
 		this.global		= game.globalpref(this.name);
-		
-		consoleprint("3 new Pref: " + name);
 		
 		this.Pending = function()
 		{
@@ -103,14 +96,15 @@
 	{
 		var self = new ViewManager(v);
 		
-		consoleprint("Creating new pref from window manager: " + v.id);
-		
 		self.pref 			= window.mgr.CreatePref(v.id, type, defValue);
 		self.pref.vmgr	= self;
 		self.pref.group = group;
 		
 		self.SetLabel = function(id, label)
 		{
+			if(label == null && this.pref != null)
+				label = "ra.prefs." + this.pref.name;
+			
 			var child = this.view.findview(id);
 			
 			if(child != null)
@@ -123,6 +117,9 @@
 			
 			if(child != null)
 			{
+				if(tip == null && this.pref != null)
+					tip = "ra.prefs." + this.pref.name + ".tip";
+				
 				var tip = game.getlocstring(tip);
 				
 				if(tip.charAt(0) != "?")
@@ -132,9 +129,6 @@
 		
 		self.Update = function()
 		{
-			consoleprint("Updating prefview: " + this.view.id);
-			consoleprint("Updating pref is: " + this.pref.name);
-			
 			if(this.pref == null)
 				return;
 			
@@ -152,11 +146,10 @@
 		{
 			this.pref.Set(value);
 			this.Update();
-			consoleprint("Setting pref " + this.pref.name + " to " + value);
 		}
 		
-		self.SetLabel("label", "widgets.prefs.groups.game." + self.pref.name);
-		self.SetTip("label", "widgets.prefs.groups.game." + self.pref.name + ".tip");
+		self.SetLabel("label");
+		self.SetTip("label");
 		
 		return self;
 	}
@@ -234,8 +227,6 @@
 		
 		self.Update = function()
 		{
-			consoleprint("Updating slider pref for " + this.pref.name);
-			
 			var slider 		= this.view.findview("slider");
 			var range 	= this.maxVal - this.minVal;
 			
@@ -266,8 +257,6 @@
 		
 		self.AddOption = function(label, value)
 		{
-			consoleprint("Adding list item " + label + "/" + value);
-			
 			var option = new Object();
 			
 			option["label"] = label;
