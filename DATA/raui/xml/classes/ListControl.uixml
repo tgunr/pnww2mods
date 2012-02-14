@@ -210,7 +210,10 @@
 			var rows 	= this.rows;
 
 			if(index >= 0 && index < this.rows.length)
+			{
 				id = rows[index].id;
+				consoleprint("Using selected index: " + id);
+			}
 			
 			return this.select(id);
 		}
@@ -317,7 +320,10 @@
 			for(var i = 0; i < rows.length; i++)
 			{
 				if(id == rows[i].id)
+				{
+					consoleprint("Returning row index: " + i);
 					return i;
+				}
 			}
 			
 			return -1;
@@ -340,10 +346,13 @@
 			this.rows.push(row);
 			this.call("onadd", row);
 			
-			row.view.addevent("onmouseenter", "this.mgr.onMouseEnter(this.id)");
-			row.view.addevent("onmouseexit", "this.mgr.onMouseExit(this.id)");
+			if(row.data != null)
+			{
+				row.view.addevent("onmouseenter", "this.mgr.onMouseEnter(this.id)");
+				row.view.addevent("onmouseexit", "this.mgr.onMouseExit(this.id)");
+			}
 			
-			if(row.id == this.selected)
+			if(row.id == this.selected && row.data != null)
 				this.select(row.id);	
 			
 			return row;

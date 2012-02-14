@@ -46,24 +46,22 @@
 			if(category == null)
 				return;
 				
-			var rb = new RowBuilder(createList.mgr.list, "cat." + category.category, 0, 0, 0, 16);
+			var catID = category.category;
+			var rb = new RowBuilder(createList.mgr.list, "cat." + catID, 0, 0, 0, 16);
 			
 			rb.addColumn(category.title.toUpperCase(), 1);
 			
 			createList.mgr.control.addRow(null, rb.build());
 			
-			for(var map = 0; map < category.links.length; map++)
-				addScenario(category, map);
+			for(var mapID = 0; mapID < category.links.length; mapID++)
+				addScenario(catID, mapID);
 		}
 		
-		function addScenario(category, map)
+		function addScenario(catID, mapID)
 		{
-			if(category == null)
-				return;
-				
-			var scenario = loadScenario(category.category, map);
+			var scenario = loadScenario(catID, mapID);
 			
-			var rb = new RowBuilder(createList.mgr.list, "map." + map, 0, 0, 0, 16);
+			var rb = new RowBuilder(createList.mgr.list, "map." + catID + "." + mapID, 0, 0, 0, 16);
 			
 			rb.addColumn(" ", .15);
 			rb.addColumn(scenario.title, .85);
@@ -71,8 +69,8 @@
 			var data = new Object();
 			
 			data["scenario"] = scenario;
-			data["category"] = category.category;
-			data["map"] = map;
+			data["category"] = catID;
+			data["map"] = mapID;
 			
 			createList.mgr.control.addRow(data, rb.build());
 		}
