@@ -2,14 +2,14 @@
 	<include file="classes/Pref.uixml"/>
 	<include file="classes/PrefGroup.uixml"/>
 	<panel id="nav-panel" label="SELECT UNIT" x="10" height=".8" width="210" rtop="30">
-	<view rtop="30" style="pad: 20; class: litebg; layout: vertical; vpad: 10;" center="x">
+		<view pad="20" rtop="20" style="class: litebg; layout: vertical; vpad: 10;" center="x">
 			<!-- PREF GROUPS -->
-			<caption label="Game Settings" width=".9" height="20" center="x" style="vpad: 10;" manager="PrefGroup:0"/>
-			<caption label="Visual Preferences" width=".9" height="20" center="x" manager="PrefGroup:1"/>
-			<caption label="Sound Preferences" width=".9" height="20" center="x" manager="PrefGroup:2"/>
-			<caption label="User Interface" width=".9" height="20" center="x" manager="PrefGroup:3"/>
-			<caption label="Keymapper" width=".9" height="20" center="x" manager="PrefGroup:4"/>
-			<caption label="Device Calibration" width=".9" height="20" center="x" manager="PrefGroup:5"/>
+			<caption label="GAME SETTINGS" width=".9" height="20" center="x" manager="PrefGroup:0"/>
+			<caption label="VISUAL PREFERENCES" width=".9" height="20" center="x" manager="PrefGroup:1"/>
+			<caption label="SOUND PREFERENCES" width=".9" height="20" center="x" manager="PrefGroup:2"/>
+			<caption label="USER INTERFACE" width=".9" height="20" center="x" manager="PrefGroup:3"/>
+			<caption label="KEYMAPPER" width=".9" height="20" center="x" manager="PrefGroup:4"/>
+			<caption label="DEVICE CALIBRATION" width=".9" height="20" center="x" manager="PrefGroup:5"/>
 		</view>
 	</panel>
 	<view id="main-panel" x="240" y="80" rright="10" rtop="20">
@@ -18,11 +18,11 @@
 				<view style="layout: vertical; vpad: 10; hpad: 5;">
 					<panel id="prefs" label="${widgets.prefs.groups.game.presets}" align="center" height="160" style="class: medbg;">
 							<text x="25" width="200" rtop="30" y="25" style="color: #e9e3d9ff;" onshow="this.text = getlocstring('widgets.prefs.groups.game.presets.description')"/>
-							<button id="forward" rright="25" rtop="30" label="  BEST QUALITY" align="left"
+							<button id="forward" rright="25" rtop="20" label="  BEST QUALITY" align="left"
 								onclick="window.mgr.SetPreset(0)" style="size-scaler: .4; font-size: -3;"/>
-							<button id="forward" rright="25" rtop="70" label="  BALANCED" align="left"
+							<button id="forward" rright="25" rtop="60" label="  BALANCED" align="left"
 								onclick="window.mgr.SetPreset(1)" style="size-scaler: .4; font-size: -3;"/>
-							<button id="forward" rright="25" rtop="110"  label="  PERFORMANCE" align="left"
+							<button id="forward" rright="25" rtop="100"  label="  PERFORMANCE" align="left"
 								onclick="window.mgr.SetPreset(2)" style="size-scaler: .4; font-size: -3;"/>
 					</panel>
 					<panel id="prefs" label="MISC" align="center" height="120" style="vpad: 10; layout: vertical; class: medbg;">
@@ -267,8 +267,8 @@
 		</stackview>
 	</view>
 	<navbar>
-		<button id="back" label="BACK   " x="20" onclick="window.mgr.DoBack()" align="right" center="y"/>
-		<button id="save-button" label="    SAVE" rright="20" onclick="window.mgr.SavePrefs()" align="left" enabled="false" style="class: button.forward;" center="y"/>
+		<button id="forward" label="   BACK" x="20" onclick="window.mgr.DoBack()" center="y"/>
+		<button id="save-button" label="SAVE   " rright="20" onclick="window.mgr.SavePrefs()" enabled="false" style="class: button.back;" center="y"/>
 	</navbar>
 	<script>
 		<!--

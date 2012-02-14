@@ -142,13 +142,14 @@
 		
 		this.mouseEnter = function(row)
 		{
-			row.setstyleproperty("background-color", TreeControl.BGCOLOR_ON);
+			if(row.id != this.selected)
+				this.setRowStyle(id, TreeControl.STYLE_MOUSEENTER);
 		}
 		
 		this.mouseExit = function(row)
 		{
-			if(this.row == null || row.id != this.selected)
-				row.setstyleproperty("background-color", TreeControl.BGCOLOR_OFF);
+			if(row.id != this.selected)
+				this.setRowStyle(id, TreeControl.STYLE_MOUSEENTER);
 		}
 		
 		this.selectedNode = function()
@@ -201,6 +202,17 @@
 			return (game.globals != null && game.globals.tree_state != null) ? true: false;
 		}
 		
+		this.setRowStyle = function(id, style)
+		{
+			if(id == null)
+				return;
+			
+			var view = this.list.findview(id);
+			
+			if(view != null)
+				view.setstyle(style);
+		}
+		
 		// private methods
 		
 		this.select = function(index)
@@ -217,36 +229,14 @@
 					var row = list.selectedrow;
 					
 					if(this.row != null)
-					{
-						/*
-						this.row.setstyleproperty("background-color", this.bgcolor);
-						this.row.setstyleproperty("color", this.color, true);
-						*/
-						this.row.setstyleproperty("background-color", TreeControl.BGCOLOR_OFF);
-						
-						if(this.colorText)
-							this.row.setstyleproperty("color", TreeControl.CAPTION_OFF, true);
-					}
+						this.row.setstyle(TreeControl.STYLE_DESELECT);
 					
-					if(row != null && row.id != this.selected)
-						game.playsound("ui/sounds/select.wav", 1, .05);
+					//if(row != null && row.id != this.selected)
+					//	game.playsound("ui/sounds/select.wav", 1, .05);
 					
-					this.row		= row;
+					this.row			= row;
 					this.selected	= row.id;
-					/*
-					this.color		= row.getstyleproperty("color");
-					this.bgcolor	= row.getstyleproperty("background-color");
-
-					if(this.color == null || this.color == "")
-						this.color = TreeControl.CAPTION_OFF;
-
-					if(this.bgcolor == null || this.bgcolor == "")
-						this.bgcolor = TreeControl.BGCOLOR_OFF;
-					*/
-					row.setstyleproperty("background-color", TreeControl.BGCOLOR_ON);
-					
-					if(this.colorText)
-						row.setstyleproperty("color", TreeControl.CAPTION_ON, true);
+					this.row.setstyle(TreeControl.STYLE_SELECT);
 				}
 			}
 		}
@@ -276,12 +266,16 @@
 				if(format != null)
 				{
 					var selectable 	= (this.isselectable != null) ? this.isselectable(node): true;
-					var row 		= this.list.addrow(format, node, selectable);
+					var row 			= this.list.addrow(format, node, selectable);
 					
 					if(row != null)
 					{
 						if((this.isselected != null && this.isselected(node)) || row.id == this.selected)
 							this.clickTree(false, this.count);
+						
+						row.mgr = this;
+						row.addevent("onmouseenter", "this.mgr.onMouseEnter(this.id)");
+						row.addevent("onmouseexit", "this.mgr.onMouseExit(this.id)");
 						
 						node.setRow(this.count);
 						this.count++;
@@ -306,6 +300,18 @@
 		 	this.colorText = c;
 		}
 		
+		this.onMouseEnter = function(id)
+		{
+			if(id != this.selected)
+				this.setRowStyle(id, ListControl.STYLE_MOUSEENTER);
+		}
+		
+		this.onMouseExit = function(id)
+		{
+			if(id != this.selected)
+				this.setRowStyle(id, ListControl.STYLE_MOUSEEXIT);
+		}
+		
 		// logic
 		this.root.expand();
 		
@@ -319,10 +325,10 @@
 	TreeControl.COLLAPSE_ICON	= "ui/textures/test/treeview_colapse.bmp";
 	
 	// default formatters
-	TreeControl.BGCOLOR_OFF 	= "#00000000";
-	TreeControl.BGCOLOR_ON 		= "#FFFFFF33";
-	TreeControl.CAPTION_OFF 	= "#e9e3d9ff";
-	TreeControl.CAPTION_ON 		= "#BFE2CEFF";
+	TreeControl.STYLE_SELECT 				= "class: list.select;";
+	TreeControl.STYLE_DESELECT 			= "class: list.deselect;";
+	TreeControl.STYLE_MOUSEENTER 	= "class: list.mouseenter;";
+	TreeControl.STYLE_MOUSEEXIT 		= "class: list.mouseexit;";
 	
 	// default format function
 	TreeControl.ondraw = function(tree, node)
@@ -337,8 +343,8 @@
 		var rb = new ViewBuilder(tree.list, node.id, 0, 0, width, 16);
 		var vb = null;
 		
-		rb.addAttribute("onmouseenter", name + ".mouseEnter(this)");
-		rb.addAttribute("onmouseexit", name + ".mouseExit(this)");
+		//rb.addAttribute("onmouseenter", name + ".mouseEnter(this)");
+		//rb.addAttribute("onmouseexit", name + ".mouseExit(this)");
 		
 		if(node.branch)
 		{

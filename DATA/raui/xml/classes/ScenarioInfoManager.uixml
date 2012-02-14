@@ -22,7 +22,7 @@
 				if(v != null) v.text = content.brief;
 				
 				v = this.view.findview("scenario-image");
-				if(v != null) v.src = "scenarios/terrain/riverrun/map.bmp";
+				if(v != null) v.src = game.getscenarioimage(content.terrain);
 			}
 			else
 			{

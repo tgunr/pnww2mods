@@ -10,6 +10,14 @@
 		
 		game.consoleprint("Creating OfflineScreen for " + self.view.id);
 		
+		self.BaseOnShow = self.OnShow;
+		
+		self.OnShow = function()
+		{
+			this.SetVisible("lobby-button", false);
+			this.BaseOnShow();
+		}
+				
 		return self;
 	}
 	

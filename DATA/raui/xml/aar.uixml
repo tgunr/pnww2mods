@@ -15,16 +15,16 @@
 			<listcontrol id="players" x="15" y="15" rright="15" rtop="20" style="class: medbg;"/>
 		</panel>
 		<navbar id="navbar">
-			<button id="back" label="DESPAWN   " x="20" onclick="window.mgr.Close(true)" align="right" center="y"/>
-			<button id="forward" label="   WEAPON" rright="20" onclick="window.mgr.DoWeapon()" align="left" center="y"/>
+			<button id="forward" label="   DESPAWN" x="20" onclick="window.mgr.Close(true)" center="y"/>
+			<button id="back" label="WEAPON   " rright="20" onclick="window.mgr.DoWeapon()" center="y"/>
 		</navbar>
 	</view>
 	<script>
 		<!--
 		
+		var client = game.player.client;
 		var playerList = findview("players");
 		var scenarioInfo = findview("scenario-info");
-		var client = game.player.client;
 		var updatePlayers = true;
 		
 		game.onscenarioplayers = playersUpdated;
@@ -41,18 +41,18 @@
 				updatePlayerList();
 		}
 		
-		function initHeaders(p)
+		function initHeaders(ph)
 		{
-		 	p.mgr.StartHeaders("players-header", 0, -1, 0, 15);
-		 	p.mgr.AddHeader("TEAM", .07);
-		 	p.mgr.AddHeader("PLAYER", .17);
-		 	p.mgr.AddHeader("RANK", .07);
-		 	p.mgr.AddHeader("WEAPON", .365);
-		 	p.mgr.AddHeader("K", .05, "center");
-		 	p.mgr.AddHeader("D", .05, "center");
-		 	p.mgr.AddHeader("S", .06, "center");
-		 	p.mgr.AddHeader("READY", .162, "center");
-		 	p.mgr.EndHeaders();
+		 	ph.mgr.StartHeaders("players-header", 0, -1, 0, 15);
+		 	ph.mgr.AddHeader("TEAM", .07);
+		 	ph.mgr.AddHeader("PLAYER", .17);
+		 	ph.mgr.AddHeader("RANK", .07);
+		 	ph.mgr.AddHeader("WEAPON", .365);
+		 	ph.mgr.AddHeader("K", .05, "center");
+		 	ph.mgr.AddHeader("D", .05, "center");
+		 	ph.mgr.AddHeader("S", .06, "center");
+		 	ph.mgr.AddHeader("READY", .162, "center");
+		 	ph.mgr.EndHeaders();
 		}
 		
 		function updatePlayerList()
@@ -125,6 +125,7 @@
 		
 		function playersUpdated()
 		{
+			consoleprint("Players have new data!!!");
 			updatePlayers = true;
 		}
 		

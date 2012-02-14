@@ -5,10 +5,6 @@
 	<include file="classes/VehicleClass.uixml"/>
 	
 	<!--
-	
-		game.onscenarioplayers = membersUpdated;
-		
-		var doMemberUpdate	= false;
 		
 		var vehicles			= new Object();
 		var classes			= new Object();
@@ -47,8 +43,6 @@
 			
 			if(preopen)
 				preopen.expand();
-			
-			treeCtl.setColorText(false);
 		}
 		
 		function initSpawnables(treeCtl)
@@ -151,8 +145,6 @@
 		{
 			var name				= tree.list.id;
 			var indent 			= tree.indent * node.level;
-			var mouseenter	= name + ".mouseEnter(this)";
-			var mouseexit		= name + ".mouseExit(this)";
 			
 			//cprint("Formatting " + node.description);
 			
@@ -165,13 +157,9 @@
 				var expander 	= row.addBuilder(new ImageBuilder(row, "image", icon, indent, 3, 10, 10));
 				var caption		= row.addBuilder(new TextBuilder(row, "title", "caption", label, (indent + tree.indent), 0, 0, 16));
 				
-				//row.addAttribute("aspectalign", "left");
-				//row.addAttribute("onmouseenter", mouseenter);
-				//row.addAttribute("onmouseexit", mouseexit);
-				
 				//row.addAttribute("acceptmouseclick", "false");
 				expander.addAttribute("onclick", name + ".clickTree(true, " + tree.count + ")");
-				caption.addStyle("color", "#e9e3d9ff");
+				//caption.addStyle("color", "#e9e3d9ff");
 				caption.addAttribute("acceptmouseclick", "false");
 				
 				return row.build(); 				
@@ -216,10 +204,6 @@
 				var vcaption			= row.addBuilder(new TextBuilder(row, "title", "caption", label, textIndent, 0, -textIndent, 16));
 				var acaption			= row.addBuilder(new TextBuilder(row, "avail", "caption", availability, textIndent, 0, -5, 16));
 				
-				//row.addAttribute("aspectalign", "left");
-				//row.addAttribute("onmouseenter", mouseenter);
-				//row.addAttribute("onmouseexit", mouseexit);
-				
 				//vcaption.addStyle("color", color);
 				//acaption.addStyle("color", color);
 				acaption.addAttribute("align", "right");
@@ -234,6 +218,7 @@
 			}
 		}
 		
+		/*
 		function initMemberHeaders(p)
 		{
 		 	var rb = new RowBuilder(p, "members-header", 0, -22, 0, 15);
@@ -379,6 +364,7 @@
 			
 			return 0;
 		}
+		*/
 		
 	-->
 </script>

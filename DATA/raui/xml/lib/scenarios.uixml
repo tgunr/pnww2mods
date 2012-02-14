@@ -32,7 +32,7 @@
 				
 				var content = game.getcontent(link.path);
 				
-				if(content.category == category)
+				if(content != null && content.category == category)
 					return content;
 			}
 			

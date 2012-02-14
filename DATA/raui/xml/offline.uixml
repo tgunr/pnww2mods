@@ -38,7 +38,9 @@
 			// set some callbacks
 			weaponTree.mgr.selectCallback = selectWeapon;
 			
+			initGlobals();
 			initWeapons();
+			selectWeapon(false);
 		}
 		
 		function initWeapons()
@@ -85,10 +87,9 @@
 							
 							if(vehicle.index == game.globals.selectedindex)
 								weaponTree.control.selected = vehicle.index;
-							/*
-							else if(vehicle.id == "us-assault")
-								vehicleTree.selected = vehicle.index;\
-							*/
+							else if(vehicle.id == "us-assault" && game.globals.selectedindex == null)
+								game.globals.selectedindex = vehicle.index;
+								//weaponTree.control.selected = vehicle.index;
 						}
 					}
 				}
@@ -117,6 +118,7 @@
 			{
 				weaponInfo.mgr.SetWeapon(weapon);
 				//infoView.value = (weapon.vclassid == 9 || weapon.vclassid == 14) ? 1: 2;
+				game.globals.selectedindex = weapon.index;
 				spawnButton.enabled = true;
 				
 				if(action)

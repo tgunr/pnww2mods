@@ -17,17 +17,24 @@
 		{
 			// color our view
 			pv.value = this.index;
+			this.view.setstyle("class: prefgroup.selected;");
 		}
 		
 		self.Deselect = function(pv)
 		{
 			// color our view
+			this.view.setstyle("class: prefgroup.deselected;");
 		}
 		
 		self.SetModified = function(m)
 		{
-			this.modified = true;
+			this.modified = m;
 			// update our label or something?
+			
+			if(this.modified)
+				this.view.setstyle("class: pref.modified;");
+			else
+				this.view.setstyle("class: pref.unmodified;");
 		}
 		
 		// always add this because it handles navigation stuff

@@ -7,7 +7,7 @@
 		<image id="scenario-image" height=".7" rtop="5"/>
 	</sceninfoh>
 	<navbar id="navbar">
-		<button id="create-button" label="    CREATE NEW GAME" rright="20" onclick="this.mgr.Click(selectScenario, true)" align="left" style="class: button.forward;" center="y"/>
+		<button id="create-button" label="CREATE NEW GAME   " rright="20" onclick="this.mgr.Click(selectScenario, true)" style="class: button.back;" center="y"/>
 	</navbar>
 	<script>
 		<!--
@@ -26,7 +26,6 @@
 		function OnShow(win)
 		{
 			createList.mgr.selectCallback = selectScenario;
-			
 			initCreateList();
 		}
 		
@@ -47,7 +46,7 @@
 			if(category == null)
 				return;
 				
-			var rb = new RowBuilder(createList.mgr.list, "row" + category.category, 0, 0, 0, 16);
+			var rb = new RowBuilder(createList.mgr.list, "cat." + category.category, 0, 0, 0, 16);
 			
 			rb.addColumn(category.title.toUpperCase(), 1);
 			
@@ -64,7 +63,7 @@
 				
 			var scenario = loadScenario(category.category, map);
 			
-			var rb = new RowBuilder(createList.mgr.list, "row" + map, 0, 0, 0, 16);
+			var rb = new RowBuilder(createList.mgr.list, "map." + map, 0, 0, 0, 16);
 			
 			rb.addColumn(" ", .15);
 			rb.addColumn(scenario.title, .85);
@@ -80,7 +79,7 @@
 		
 		function selectScenario(action)
 		{
-			var data = createList.mgr.control.data;
+			var data = createList.mgr.control.selectedData();
 			
 			if(data == null)
 			{
@@ -108,7 +107,7 @@
 		
 		function OnInstanceResult()
 		{
-			var data = createList.mgr.control.data;
+			var data = createList.mgr.control.selectedData();
 			
 			// something happened
 			if(client.instance == null)

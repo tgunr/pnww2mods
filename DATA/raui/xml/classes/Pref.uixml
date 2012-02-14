@@ -132,12 +132,26 @@
 		
 		self.Update = function()
 		{
+			consoleprint("Updating prefview: " + this.view.id);
+			consoleprint("Updating pref is: " + this.pref.name);
+			
+			if(this.pref == null)
+				return;
+			
 			// should be overridden
+			var label = this.view.findview("label");
+			if(label == null) return;
+			
+			if(this.pref.Pending())
+				label.setstyle("class: pref.modified;");
+			else
+				label.setstyle("class: pref.unmodified;");
 		}
 		
 		self.OnClick = function(value)
 		{
 			this.pref.Set(value);
+			this.Update();
 			consoleprint("Setting pref " + this.pref.name + " to " + value);
 		}
 		
@@ -154,6 +168,8 @@
 		self.SetMgr("option-on");
 		self.SetMgr("option-off");
 		
+		self.BaseUpdate = self.Update;
+		
 		self.Update = function()
 		{
 			consoleprint("Updating bool pref for " + this.pref.name);
@@ -163,6 +179,8 @@
 			
 			on.value = this.pref.Value();
 			off.value = !this.pref.Value();
+			
+			this.BaseUpdate();
 		}
 		
 		// init our ui
@@ -176,11 +194,14 @@
 		var self = new PrefView(v, group, Pref.STRING, "#FFFFFF");
 		
 		self.SetMgr("color");
+		self.BaseUpdate = self.Update;
 		
 		self.Update = function()
 		{
 			var color = this.view.findview("color");
 			color.setstyleproperty("background-color", this.pref.Value());
+			
+			this.BaseUpdate();
 		}
 		
 		self.ShowPicker = function()
@@ -204,6 +225,7 @@
 		
 		self.SetMgr("slider");
 		self.BaseOnClick = self.OnClick;
+		self.BaseUpdate = self.Update;
 		
 		self.OnClick = function(value)
 		{
@@ -224,6 +246,8 @@
 				if(value >= 0 && value <= 1)
 					slider.value = value;
 			}
+			
+			this.BaseUpdate();
 		}
 		
 		// init our ui
@@ -238,6 +262,7 @@
 		
 		self.SetMgr("list");
 		self.options = new Array();
+		self.BaseUpdate = self.Update;
 		
 		self.AddOption = function(label, value)
 		{
@@ -264,6 +289,8 @@
 					break;
 				}
 			}
+			
+			this.BaseUpdate();
 		}
 		
 		self.ShowList = function()

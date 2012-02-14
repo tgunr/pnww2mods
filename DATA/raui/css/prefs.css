@@ -1,4 +1,6 @@
 
+$modified = #FFFF00
+
 pref
 {
 	 width: .8;
@@ -34,4 +36,24 @@ sliderpref
 colorpref
 {
 	class: pref;
+}
+
+pref.modified
+{
+	color: $modified;
+}
+
+pref.unmodified
+{
+	color: $color;
+}
+
+prefgroup.selected
+{
+	background-color: #FFFFFF22;
+}
+
+prefgroup.deselected
+{
+	background-color: #00000000;
 }

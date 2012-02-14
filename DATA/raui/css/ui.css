@@ -43,6 +43,12 @@ caption
 	class: text;
 }
 
+tinytext
+{
+	class: text;
+	font-size: $tinyfont;
+}
+
 smalltext
 {
 	class: text;
@@ -55,8 +61,11 @@ bigtext
 	font-size: $bigfont;
 }
 
-
-
+border
+{
+	border-size: $thickborder;
+	border-color: $darkbg;
+}
 
 thickborder
 {
@@ -92,6 +101,7 @@ panel
 	border-color: $hilitealphahi;
 	border-size: 1;
 	font-size: $smallfont;
+	align: center;
 }
 
 .header

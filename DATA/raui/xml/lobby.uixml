@@ -1,35 +1,27 @@
 <ra id="lobby">
+	<include file="lib/common.uixml"/>
 	<include file="lib/scenarios.uixml"/>
-	<include file="classes/ListControl.uixml"/>
-	<include file="classes/TreeControl2.uixml"/>
-	<include file="classes/CycleTimer.uixml"/>
-	<include file="classes/ViewBuilder.uixml"/>
-	<include file="classes/TextBuilder.uixml"/>
-	<include file="classes/ImageBuilder.uixml"/>
-	<include file="classes/RowBuilder.uixml"/>
-	
 	
 	<!-- start editing -->
 	
-	
 	<view id="info-panel" x="10" y="80" width="210" rtop="20">
 		<view style="layout: vertical; vpad: 10;">
-			<panel label="POPULAR MAPS" align="center" height="150" style="class: litebg;">
-				<list id="popular" pad="15" rtop="35" style="class: litebg;"/>
+			<panel label="POPULAR MAPS" align="center" height="130" style="class: litebg;">
+				<listcontrol id="popular" pad="15" rtop="20" style="class: litebg;"/>
 			</panel>
 			
 			<panel label="MESSAGE OF THE DAY" align="center" height="100" style="class: litebg;">
-				<text id="motd" pad="15" rtop="35" style="class: litebg;"/>
+				<text id="motd" pad="15" rtop="20" style="class: litebg;"/>
 			</panel>
 			
 			<panel label="RECENT ACHIEVEMENTS" align="center" height="100" style="class: litebg;">
-				<list id="achievements" pad="15" rtop="35" style="class: litebg;"/>
+				<list id="achievements" pad="15" rtop="20" style="class: litebg;"/>
 			</panel>
 		</view>
 	</view>
 	<view id="main-panel" x="240" y="80" rright="10" rtop="20">
 		<panel label="ACTIVE MAPS" x="10" height=".49" rright="10" rtop="0" align="center">
-			<listcontrol id="instance-list" pad="15" rtop="35"/>
+			<listcontrol id="instance-list" pad="15" rtop="20"/>
 		</panel>
 		<view x="10" y="0" height=".47" rright="10">
 			<sceninfoh id="scenario-info">
@@ -38,8 +30,8 @@
 		</view>
 	</view>
 	<navbar>
-		<button id="join-button" label="    JOIN GAME" x="20" onclick="this.mgr.Click(selectInstance, true)" align="left" enabled="false" style="class: button.back;" center="y"/>
-		<button id="create-button" label="    NEW GAME" rright="20" onclick="window.mgr.DoCreate()" align="left" style="class: button.forward;" center="y"/>
+		<button id="create-button" label="    NEW GAME" x="20" onclick="window.mgr.DoCreate()" style="class: button.forward;" center="y"/>
+		<button id="join-button" label="JOIN GAME   " rright="20" onclick="this.mgr.Click(selectInstance, true)" enabled="false" style="class: button.back;" center="y"/>
 	</navbar>
 	
 		<!-- stop editing -->
@@ -51,19 +43,33 @@
 		var client 				= game.player.client;
 		var createBtn		= findview("create-button");
 		var joinBtn			= findview("join-button");
-		var updateTimer	= new CycleTimer(3000);
-		var scenarios		= loadRoot();
+		var updateTimer	= new CycleTimer(5000);
+		var root				= loadRoot();
 		var running			= new Array();
 		var instanceList 	= findview("instance-list");
+		var popularList 	= findview("popular");
 		var scenarioInfo	= findview("scenario-info");
+		var testRows		= new Array();
+		var mapCount		= new Object();
 		
 		// when our instance list is updated
 		game.oninstancelist = initInstances;
 		
 		function OnShow(win)
 		{
+			if(game.online)
+			{
+				var motd = client.requestmotd(0);
+			
+				if(motd != null)
+					findview("motd").text = motd.message;
+			}
+			
 			// make sure
 			game.stopscenario();
+			
+			// we're on the lobby, we don't need this
+			window.mgr.SetVisible("lobby-button", false);
 			
 			initHeaders(instanceList);
 			
@@ -74,7 +80,11 @@
 			
 			// call out to the host to get our list of instances
 			// join our lobby instance
-			client.selectinstance(scenarios.category, 0);
+			if(game.online)
+				client.selectinstance(root.category, 0);
+			
+			//createTestRows();
+			initInstances();
 		}
 		
 		function initHeaders(p)
@@ -96,6 +106,7 @@
 		{
 			// reset our running list of instances 
 			running = new Array();
+			mapCount = new Object();
 			
 			joinBtn.enabled = false;
 			
@@ -126,60 +137,133 @@
 			// now update our visible list
 			instanceList.mgr.control.clearRows(false);
 			
-			if(running.length > 0)
+			for(var i = 0; i < running.length; i++)
 			{
-				for(var i = 0; i < running.length; i++)
-				{
-					var scenario 	= running[i];
-					var content 		= scenario.content;
-					var instance 	= scenario.instance;
-					var id				= instance.description.id;
-					var players		= instance.axis + instance.allies;
-					
-					var team1max	= parseInt(content.team1max);
-					if(isNaN(team1max)) team1max = MAX_SIDE_PLAYERS;
-					
-					var team2max	= parseInt(content.team2max);
-					if(isNaN(team2max)) team2max = MAX_SIDE_PLAYERS;
-					
-					instanceList.mgr.StartRow("row" + i, 0, 0, 0, 16);
-					
-					instanceList.mgr.AddRowColumn("#" + id, .15);
-					instanceList.mgr.AddRowColumn(content.title, .4);
-					
-					var type = "DM";
-					
-					if(instance.description.category == 502)
-						type = "CTF";
-					else if(instance.description.category == 503)
-						type = "OBJ";
-					
-					instanceList.mgr.AddRowColumn(type, .1, "center");
-					
-					if(players < team1max + team2max)
-						instanceList.mgr.AddRowColumn("scenarios.list.status.running", .15, "center");
-					else
-						instanceList.mgr.AddRowColumn("scenarios.list.status.full", .15, "center");
-					
-					instanceList.mgr.AddRowColumn(players, .1, "center");
-					instanceList.mgr.AddRowIcon("chaticon", "squad", .1, 12, .5);
-					
-					instanceList.mgr.EndRow(scenario);
-				}
+				var scenario 	= running[i];
+				var content 		= scenario.content;
+				var instance 	= scenario.instance;
+				var id				= instance.description.id;
+				var players		= instance.axis + instance.allies;
 				
-				joinBtn.enabled = true;
+				var team1max	= parseInt(content.team1max);
+				if(isNaN(team1max)) team1max = MAX_SIDE_PLAYERS;
+				
+				var team2max	= parseInt(content.team2max);
+				if(isNaN(team2max)) team2max = MAX_SIDE_PLAYERS;
+				
+				instanceList.mgr.StartRow("row" + i, 0, 0, 0, 16);
+				
+				instanceList.mgr.AddRowColumn("#" + id, .15);
+				instanceList.mgr.AddRowColumn(content.title, .4);
+				
+				if(content.maptype != null)
+					instanceList.mgr.AddRowColumn(content.maptype, .1, "center");
+				else
+					instanceList.mgr.AddRowColumn("DM", .1, "center");
+				
+				if(players < team1max + team2max)
+					instanceList.mgr.AddRowColumn("scenarios.list.status.running", .15, "center");
+				else
+					instanceList.mgr.AddRowColumn("scenarios.list.status.full", .15, "center");
+				
+				instanceList.mgr.AddRowColumn(players, .1, "center");
+				instanceList.mgr.AddRowIcon("chaticon", "squad", .1, 12, .5);
+				
+				addToMapCount(instance.description.category, instance.description.type, content.title);
+				
+				instanceList.mgr.EndRow(scenario);
 			}
+				
+			//addTestRows();
 			
-			instanceList.mgr.control.postInit();
+			if(running.length > 0)
+				joinBtn.enabled = true;
+			
+			instanceList.mgr.control.postInit(0);
+			
+			updatePopulars();
+		}
+		
+		function createTestRows()
+		{
+			var catCount = root.links.length;
+			
+			for(var t = 0; t < 100; t++)
+			{
+				var newTest 	= new Object();
+				var catID			= 500 + Math.floor(Math.random() * 4) + 1;
+				var category	= loadCategory(catID);
+				
+				if(category == null)
+					continue;
+				
+				var mapCount	= category.links.length;
+				var mapID		= Math.floor(Math.random() * mapCount);
+				var scenario		= loadScenario(catID, mapID);
+				
+				if(scenario == null)
+					continue;
+				
+				cprint("New test " + catID + "/" + mapID);
+				
+				newTest["content"]	= scenario;
+				newTest["id"] 			= Math.floor(Math.random() * 10000);
+				newTest["title"]		= scenario.title;
+				newTest["full"]		= Math.random() > .5;
+				newTest["players"] = Math.floor(Math.random() * 65);
+				newTest["squad"]	= Math.random() > .5;
+				newTest["cid"]			= catID;
+				newTest["mid"]		= mapID;
+				
+				//cprint("Adding test scenario " + scenario.title);
+				
+				if(scenario.maptype != null)
+					newTest["type"]	= scenario.maptype;
+				else
+					newTest["type"]	= "DM";
+				
+				testRows.push(newTest);
+			}
+		}
+		
+		function addTestRows()
+		{
+			if(testRows.length == 0)
+				return;
+			
+			for(var i = 0; i < testRows.length; i++)
+			{
+				var t 		= testRows[i];
+				var index = running.length + i;
+				
+				instanceList.mgr.StartRow("row" + index, 0, 0, 0, 16);
+				instanceList.mgr.AddRowColumn("#" + t.id, .15);
+				instanceList.mgr.AddRowColumn(t.title, .4);
+				instanceList.mgr.AddRowColumn(t.type, .1, "center");
+				
+				if(t.full)
+					instanceList.mgr.AddRowColumn("scenarios.list.status.full", .15, "center");
+				else
+					instanceList.mgr.AddRowColumn("scenarios.list.status.running", .15, "center");
+				
+				instanceList.mgr.AddRowColumn(t.players, .1, "center");
+				
+				if(t.squad)
+					instanceList.mgr.AddRowIcon("chaticon", "squad", .1, 12, .5);
+				
+				addToMapCount(t.cid, t.mid, t.title);
+				
+				instanceList.mgr.EndRow(t);
+			}
 		}
 		
 		function selectInstance(action)
 		{
-			cprint("Select instance called: " + instanceList.control.data);
+			cprint("Select instance called: " + instanceList.control.selectedID());
 			
 			joinBtn.enabled = false;
 			
-			var scenario = instanceList.mgr.control.data;
+			var scenario = instanceList.mgr.control.selectedData();
 			if(scenario == null) return;
 			
 			joinBtn.enabled = true;
@@ -208,6 +292,63 @@
 			// grab our list of instances
 			if(updateTimer.run())
 				client.listinstances(0, 0, "");
+		}
+		
+		function scoreSort(a, b)
+		{
+			if(a.score > b.score)
+				return -1;
+			else if(a.score < b.score)
+				return 1;
+			
+			return 0;
+		}
+		
+		function updatePopulars()
+		{
+			var pops = new Array();
+			
+			for(var mc in mapCount)
+				pops.push(mapCount[mc]);
+			
+			cprint("Populars: " + pops.length);
+			
+			pops = pops.sort(scoreSort);
+			
+			popularList.mgr.control.clearRows(false);
+			
+			var plen = pops.length;
+			
+			if(plen > 6)
+				plen = 6;
+			
+			for(var p = 0; p < plen; p++)
+			{
+				popularList.mgr.StartRow("row" + p, 0, 0, 0, 14);
+				popularList.mgr.AddRowColumn(pops[p].title, .8, "left", "tinytext");
+				popularList.mgr.AddRowColumn(pops[p].score, .2, "right", "tinytext");
+				popularList.mgr.EndRow();
+			}
+			
+			popularList.mgr.control.postInit();
+		}
+		
+		function addToMapCount(cid, mid, title)
+		{
+			var id = cid + "." + mid;
+			
+			if(mapCount[id] == null)
+			{
+				var newCount = new Object();
+				
+				newCount["cid"] = cid;
+				newCount["mid"] = mid;
+				newCount["score"] = 0;
+				newCount["title"] = title;
+				mapCount[id] = newCount;
+			}
+			
+			mapCount[id].score ++;
 		}
 		
 		-->

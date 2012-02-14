@@ -13,7 +13,7 @@
 		self.hrb 					= null;
 		self.rrb 					= null;
 		self.list 					= self.view.findview("list");
-		self.control 				= new ListControl(self.list);
+		self.control 				= new SimpleListControl(self.list);
 		self.list.mgr				= self;
 		self.list.control			= self.control;
 		self.view.control		= self.control;
@@ -114,7 +114,7 @@
 		{
 			if(!this.rrb)
 				return;
-			
+				
 			this.control.addRow(data, this.rrb.build());
 			this.rrb = null;
 		}

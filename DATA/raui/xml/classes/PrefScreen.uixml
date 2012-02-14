@@ -35,7 +35,7 @@
 		
 		self.AddPendingPref = function(pref)
 		{
-			if(pref.Pending())
+			if(pref != null && pref.Pending())
 			{
 				this.pending[pref.name] = pref;
 				this.SetGroupModified(pref.group);

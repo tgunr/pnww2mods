@@ -41,13 +41,13 @@
 
 		this.mouseEnter = function(row)
 		{
-			row.setstyleproperty("background-color", ListControl.LISTROW_BGCOLOR_ON);
+			row.setstyle(ListControl.STYLE_MOUSEENTER);
 		}
 		
 		this.mouseExit = function(row)
 		{
 			if(this.row == null || row.id != this.selected)
-				row.setstyleproperty("background-color", ListControl.LISTROW_BGCOLOR_OFF);
+				row.setstyle(ListControl.STYLE_MOUSEEXIT);
 		}
 	}
 	
@@ -139,6 +139,7 @@
 			}
 			else
 			{
+				/*
 				if(this.row != null)
 				{
 					this.row.setstyleproperty("background-color", ListControl.LISTROW_BGCOLOR_OFF);
@@ -151,6 +152,7 @@
 				
 				if(this.colorText)
 					row.setstyleproperty("color", ListControl.LISTROW_CAPTION_ON, true);
+				*/
 			}
 						
 			this.data 		= data;
@@ -275,9 +277,9 @@
 			
 			if(index >= 0 && index <  list.length)
 			{
-				game.playsound("ui/sounds/select.wav", 1, .05);
-				
-				list.value = index;
+				//game.playsound("ui/sounds/select.wav", 1, .05);
+				if(list.value != index)
+					list.value = index;
 				
 				this.setData(this.rows[index]);
 			}
@@ -330,12 +332,16 @@
 			
 			var row = new Object();
 			
-			row["data"] 		= d;
-			row["view"] 		= view;
-			row["id"]			= row.view.id;
+			row.data 			= d;
+			row.view 			= view;
+			row.id				= row.view.id;
+			row.view.mgr	= this;
 			
 			this.rows.push(row);
 			this.call("onadd", row);
+			
+			row.view.addevent("onmouseenter", "this.mgr.onMouseEnter(this.id)");
+			row.view.addevent("onmouseexit", "this.mgr.onMouseExit(this.id)");
 			
 			if(row.id == this.selected)
 				this.select(row.id);	
@@ -381,27 +387,13 @@
 		
 		self.setData = function(row)
 		{
-			if(this.row != null && this.row.view != null)
-			{
-				this.row.view.setstyleproperty("background-color", ListControl.LISTROW_BGCOLOR_OFF);
-				
-				if(this.colorText)
-					this.row.view.setstyleproperty("color", ListControl.LISTROW_CAPTION_OFF, true);
-			}
+			this.setRowStyle(this.selected, ListControl.STYLE_DESELECT);
 			
 			if(row != null)
 			{
-				if(row.view != null)
-				{
-					row.view.setstyleproperty("background-color", ListControl.LISTROW_BGCOLOR_ON);
-					
-					if(this.colorText)
-						row.view.setstyleproperty("color", ListControl.LISTROW_CAPTION_ON, true);
-				}
-				
 				this.row			= row;
 				this.selected	= row.view.id;
-				
+				this.setRowStyle(this.selected, ListControl.STYLE_SELECT);
 				this.call("onselect", row);
 			}
 			else
@@ -433,13 +425,38 @@
 			this.setScrollY();
 		}
 		
+		self.onMouseEnter = function(id)
+		{
+			if(id != this.selected)
+				this.setRowStyle(id, ListControl.STYLE_MOUSEENTER);
+		}
+		
+		self.onMouseExit = function(id)
+		{
+			if(id != this.selected)
+				this.setRowStyle(id, ListControl.STYLE_MOUSEEXIT);
+		}
+		
+		self.setRowStyle = function(id, style)
+		{
+			if(id == null)
+				return;
+				
+			var index = this.rowIndex(id);
+			if(index == -1) return;
+			
+			var row = this.rows[index];
+			row.view.setstyle(style);
+		}
+		
 		return self;
 	}
 	
-	ListControl.LISTROW_BGCOLOR_OFF 	= "#00000000";
-	ListControl.LISTROW_BGCOLOR_ON 		= "#FFFFFF33";
-	ListControl.LISTROW_CAPTION_OFF 	= "#e9e3d9ff";
-	ListControl.LISTROW_CAPTION_ON 		= "#BFE2CEFF";
+	
+	ListControl.STYLE_SELECT 			= "class: list.select;";
+	ListControl.STYLE_DESELECT 		= "class: list.deselect;";
+	ListControl.STYLE_MOUSEENTER 	= "class: list.mouseenter;";
+	ListControl.STYLE_MOUSEEXIT 	= "class: list.mouseexit;";
 	
 	-->
 </script>
