@@ -16,8 +16,8 @@
 			<treecontrol id="weapon-tree" x="15" y="15" rright="15" rtop="20" style="class: medbg;"/>
 		</view>
 		<navbar id="navbar">
-			<button id="forward" label="   AAR" x="20" onclick="window.mgr.DoAAR()" center="y"/>
-			<button id="back" label="FIGHT   " rright="20" onclick="this.mgr.Click(selectWeapon, true)" center="y"/>
+			<button id="forward" label="   SCORING" x="20" onclick="window.mgr.DoAAR()" center="y"/>
+			<button id="back" label="FIGHT!   " rright="20" onclick="this.mgr.Click(selectWeapon, true)" center="y"/>
 		</navbar>
 	</view>
 	<script>

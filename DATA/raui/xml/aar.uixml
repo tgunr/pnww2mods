@@ -16,7 +16,7 @@
 		</panel>
 		<navbar id="navbar">
 			<button id="forward" label="   DESPAWN" x="20" onclick="window.mgr.Close(true)" center="y"/>
-			<button id="back" label="WEAPON   " rright="20" onclick="window.mgr.DoWeapon()" center="y"/>
+			<button id="back" label="CHANGE WEAPON   " rright="20" onclick="window.mgr.DoWeapon()" center="y"/>
 		</navbar>
 	</view>
 	<script>
