@@ -5,7 +5,7 @@
 <lightdata>
 <TerrainSky>
 <!-- global scaling to tune for weather days -->
-		<scale>1.0</scale>
+		<scale>0.9</scale>
 <!-- the sky color -->
 		<sky_color>
 			<red>25.000000</red>
@@ -117,6 +117,8 @@
 <!-- SETTING 2  PARTLY CLOUDY              -->
 <!-- ===================================== -->
 	<TerrainSky>
+	<!-- global scaling to tune for weather days -->
+		<scale>0.75</scale>
 		<sky_color>
 			<red>0.000000</red>
 			<green>70.833336</green>
@@ -180,7 +182,7 @@
 <!-- ===================================== -->
 	<TerrainSky>
 <!-- global scaling to tune for weather days -->
-		<scale>0.5</scale>
+		<scale>0.6</scale>
 <!-- the sky color -->
 		<sky_color>
 			<red>25.000000</red>
