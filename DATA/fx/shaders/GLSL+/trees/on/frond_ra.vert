@@ -9,11 +9,7 @@ uniform MatrixBlock
     mat4 b_ProjectionMatrix;
 };
 
-uniform TreeInstanceBlock
-{
-    vec4 b_rotation[250];
-    vec4 b_position[250];
-};
+uniform samplerBuffer data;
 
 in vec3 in_pos;
 in vec3 in_normal;
@@ -26,8 +22,10 @@ out float alphatest;
 
 void main()
 {
-    vec4 rot = b_rotation[gl_InstanceID];
-    vec4 pos = b_position[gl_InstanceID];
+    int idx = gl_InstanceID * 2;
+
+    vec4 rot = texelFetchBuffer(data, idx + 0);
+    vec4 pos = texelFetchBuffer(data, idx + 1);
 
     rot.w = 0.0;
     vec4 inpos = vec4(in_pos, 1.0);
