@@ -142,9 +142,9 @@ if(true) then
 	-- the distance is the radius of a circle around the center to randomly fire off the ammo in
 	-- command name ammo x y z distance
 
-		"barrage barrage1 smallbarragebomb 364.27 342.87 51.88 25",
-		"barrage barrage1 smallbarragebomb 359.35 294.70 50.98 25",
-		"barrage barrage1 smallbarragebomb 278.71 350.52 52.01 25",
+		"barrage barrage1 smallbarragebomb 364.27 342.87 51.88 10",
+		"barrage barrage1 smallbarragebomb 359.35 294.70 50.98 10",
+		"barrage barrage1 smallbarragebomb 278.71 350.52 52.01 10",
 
 		
 -- TRIGGERS
