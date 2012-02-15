@@ -19,7 +19,16 @@ if(true) then
 		
 	-- HULKS
 		"place instance_hulk1_dam -85.96 -13.91 10.4 5 3 10 0 0 0",
+		"place instance_hulk1_dam -169.32 29.50 7.73 0 0 25 0 0 0",		
+		
+		
+		
+		
 		"place m4a2hulk -70.94 -121.06 8.2 -4 0 10 0 0 0",
+		"place m4a2hulk 26.92 -203.32 5.55 0 9.5 0 0 0",
+		
+		
+
 		
 		
 	-- ROCKS
