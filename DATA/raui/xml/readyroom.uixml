@@ -92,7 +92,7 @@
 			}
 			
 		 	ph.mgr.StartHeaders("players-header", 0, -1, 0, 15);
-		 	ph.mgr.AddHeader("TEAM", .07);
+		 	ph.mgr.AddHeader("TEAM", .07, "center");
 		 	ph.mgr.AddHeader("PLAYER", .17);
 		 	ph.mgr.AddHeader("RANK", .07);
 		 	ph.mgr.AddHeader("WEAPON", .365);
@@ -144,17 +144,21 @@
 				var kills				= parseInt(member.kills);
 				var deaths		= parseInt(member.deaths);
 				var score			= parseInt(member.score);
-				var teamIcon 	= scenarioFlag(parseInt(scenario["team" + member.team]));
+				var teamIcon 	= "blueteam"; //scenarioFlag(parseInt(scenario["team" + member.team]));
+				
+				if(member.team == 2)
+					teamIcon = "redteam";
 				
 				if(member.ready)
 					ready = "ready";
 				
-				var row = playerList.mgr.StartRow("member" + i, 0, 0, 0, 16);
+				var id = "member." + member.callsign;
+				var row = playerList.mgr.StartRow(id, 0, 0, 0, 16);
 				
 				// space out our children builders
 				row.hspace(2);
 				
-				playerList.mgr.AddRowIcon("image", teamIcon, .07, 12, .5);
+				playerList.mgr.AddRowView(.07, 10, .5, teamIcon);
 				playerList.mgr.AddRowColumn(callsign, .17);
 				playerList.mgr.AddRowIcon("rankicon",  member.rank.level - 1, .07, 12, .5);
 				playerList.mgr.AddRowColumn(vehicle, .365);
@@ -164,9 +168,13 @@
 				playerList.mgr.AddRowColumn(ready, .162, "center");
 				
 				playerList.mgr.EndRow(member);
+				
+				if(member.me)
+					playerList.control.selectByID(id);
 			}
 			
 			playerList.control.setScrollY();
+			playerList.control.postInit();
 			
 			var stopped = new Date();
 		}

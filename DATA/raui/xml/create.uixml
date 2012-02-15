@@ -1,11 +1,17 @@
 <ra id="create" manager="RAScreen">
 	<include file="lib/scenarios.uixml"/>
-	<panel label="SELECT MAP" id="select-panel" x="10" y="80" width="270" rtop="20" align="center">
-		<listcontrol id="create-list" pad="15" rtop="35" style="class: litebg;"/>
+	<panel label="SELECT MAP" id="select-panel" x="10" y="80" width="270" rtop="20">
+		<listcontrol id="create-list" pad="15" rtop="20" style="class: litebg;"/>
 	</panel>
 	<sceninfoh id="scenario-info" x="300" height=".5" rright="10" rtop="20">
 		<image id="scenario-image" height=".7" rtop="5"/>
 	</sceninfoh>
+	<panel label="OPTIONAL PASSWORD" x="300" y="90" height=".25" rright="10">
+		<view pad="15" rtop="20" style="class: litebg;">
+			<text pad="30" width=".45" center="y">You may specify an optional password. Only players that know your password can enter this game. Passwords can be up to 15 characters long and can contain letters and numbers only.</text>
+			<textcontrol id="password-input" width="200" height="20" rright="100" center="y"/>
+		</view>
+	</panel>
 	<navbar id="navbar">
 		<button id="create-button" label="CREATE NEW GAME   " rright="20" onclick="this.mgr.Click(selectScenario, true)" style="class: button.back;" center="y"/>
 	</navbar>
@@ -19,6 +25,7 @@
 		var createBtn		= findview("create-button");
 		var createList 		= findview("create-list");
 		var scenarioInfo	= findview("scenario-info");
+		var password		= findview("password-input");
 		
 		// handles what happens when we create
 		game.oninstanceresult = OnInstanceResult;
@@ -60,8 +67,9 @@
 		function addScenario(catID, mapID)
 		{
 			var scenario = loadScenario(catID, mapID);
+			var id = "map." + catID + "." + mapID;
 			
-			var rb = new RowBuilder(createList.mgr.list, "map." + catID + "." + mapID, 0, 0, 0, 16);
+			var rb = new RowBuilder(createList.mgr.list, id, 0, 0, 0, 16);
 			
 			rb.addColumn(" ", .15);
 			rb.addColumn(scenario.title, .85);
@@ -73,6 +81,12 @@
 			data["map"] = mapID;
 			
 			createList.mgr.control.addRow(data, rb.build());
+			
+			if(catID == 504 && mapID == 2)
+			{
+				createList.mgr.control.selectByID(id);
+				selectScenario(false);
+			}
 		}
 		
 		function selectScenario(action)
@@ -98,7 +112,7 @@
 				var map 			= data.map;
 				
 				// create a new instance
-				if(!createInstance(category, map, ""))
+				if(!createInstance(category, map, password.text))
 					showOk(lastScenarioError);
 			}
 		}

@@ -88,6 +88,25 @@
 			return this.rrb;
 		}
 		
+		self.AddRowSpace = function(width)
+		{
+			if(!this.rrb)
+				return null;
+			
+			return this.rrb.addSpace(width);
+		}
+		
+		self.AddRowView = function(width, size, pad, style)
+		{
+			if(!this.rrb)
+				return null;
+				
+			if(style == null)
+				style = "row-column";
+			
+			return this.rrb.addView(width, size, pad, style);
+		}
+		
 		self.AddRowColumn = function(loc, width, align, style)
 		{
 			if(!this.rrb)

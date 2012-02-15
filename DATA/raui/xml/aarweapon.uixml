@@ -1,8 +1,9 @@
 <window id="aar" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" layer="52" manager="AARScreen">
 	<include file="lib/common.uixml"/>
-	<include file="lib/scenariodata.uixml"/>
-	<include file="classes/Preference.uixml"/>
+	<include file="classes/VehicleClass.uixml"/>
 	<view id="aarbody" width=".9" height=".7" aspectlimit="width" center="true">
+		<weapinfov id="weapon-info" x="10" width=".3" height=".8" rtop="20" style="class: medbg;"/>
+		<!--
 		<sceninfov id="scenario-info" x="10" width=".3" height=".8" rtop="20" style="class: medbg;">
 			<view id="map" class="mapview" acceptsfocus="no" minscale=".01" maxscale=".1" scale=".05" sx="0" sy="0">
 				<layer type="texture" id="default-64-tex" minscale="0" maxscale="64" enabled="true" orign="-26x210" rowcolsize="1x1" cellsize="64x64"/>
@@ -12,8 +13,13 @@
 				<layer type="players" minscale="0" maxscale="20" />
 			</view>
 		</sceninfov>
+		-->
 		<panel label="SELECT WEAPON" height=".8" width=".65" rright="10" rtop="20" align="center">
-			<treecontrol id="weapon-tree" x="15" y="15" rright="15" rtop="20" style="class: medbg;"/>
+			<view x="15" height="20" rtop="20" rright="15" style="class: whitebg;">
+				<text id="team-header"/>
+				<view id="team-color" width="10" height="10" style="class: border;"/>
+			</view>
+			<listcontrol id="weapon-list" x="15" y="15" rright="15" rtop="40" style="class: litebg;"/>
 		</view>
 		<navbar id="navbar">
 			<button id="forward" label="   SCORING" x="20" onclick="window.mgr.DoAAR()" center="y"/>
@@ -23,72 +29,159 @@
 	<script>
 		<!--
 		
-		var weaponTree 	= findview("weapon-tree");
-		var scenarioInfo = findview("scenario-info");
-		var client = game.player.client;
-		var updateWeapons = true;
+		var client 						= game.player.client;
+		
+		var weaponList 			= findview("weapon-list");
+		var weaponInfo			= findview("weapon-info");
+		var scenarioInfo 			= findview("scenario-info");
+		var teamHeader			= findview("team-header");
+		var teamColor				= findview("team-color");
+
+		var updateWeapons 	= true;
+		var team						= 0;
 		
 		game.onscenarioplayers = playersUpdated;
 		
 		function OnShow(win)
 		{
-			scenarioInfo.mgr.SetScenario(client.scenario);
+			weaponInfo.mgr.SetWeapon(game.player.vehicle);
 			
 			// set some callbacks
-			weaponTree.mgr.selectCallback = selectWeapon;
-			weaponTree.control.ondraw = formatSpawnable;
-			weaponTree.control.isselectable = isSelectable;
+			weaponList.mgr.selectCallback = selectWeapon;
+			
+			initHeaders(weaponList);
+		}
+		
+		function initHeaders(p)
+		{
+			// create our headers
+			p.mgr.StartHeaders("weapons-header", 0, -1, 0, 15);
+		 	p.mgr.AddHeader("WEAPON", .4);
+		 	p.mgr.AddHeader("TYPE", .3);
+		 	p.mgr.AddHeader("CURRENT", .15, "center");
+		 	p.mgr.AddHeader("CAPACITY", .15, "center");
+			p.mgr.EndHeaders();
+		}
+		
+		function initWeapons()
+		{
+			var spawnables 	= game.spawnablevehicles;
+			var counters			= game.scenariospawns;
+			
+			// now update our visible list
+			weaponList.mgr.control.clearRows(false);
+			
+			for(var i = 0; i < spawnables.length; i++)
+			{
+				var weapon = new VehicleClass(spawnables[i]);
+				
+				if(counters.length == 0)
+				{
+					weapon.capacity 			= 100;
+					weapon.current 			= 0;
+					weapon.minimumrank 	= 1;
+					weapon.spawnable 	= "spawnable";
+				}
+				else
+				{
+					weapon.capacity 			= counters[i].capacity;
+					weapon.current 			= counters[i].current;
+					weapon.minimumrank 	= counters[i].minimumrank;
+					weapon.spawnable 	= counters[i].spawnable;
+				}
+				
+				var id = "row." + weapon.type.weapkey;
+				weaponList.mgr.StartRow(id, 0, 0, 0, 16);
+				
+				// determine country icon
+				var image = scenarioFlag(weapon.type.country.id);
+				
+				weaponList.mgr.AddRowIcon("image", image, .03, 12, 2);
+				weaponList.mgr.AddRowColumn(weapon.type.description, .37);
+				weaponList.mgr.AddRowColumn("common.vehicles.classes." +  weapon.type.vclassid, .3);
+				weaponList.mgr.AddRowColumn(weapon.current, .15, "center");
+				weaponList.mgr.AddRowColumn(weapon.capacity, .15, "center");
+				
+				weaponList.mgr.EndRow(weapon);
+				
+				if(game.player.vehicle.weapkey == weapon.type.weapkey)
+					weaponList.control.selectByID(id);
+			}
+			
+			weaponList.mgr.control.postInit();
+			selectWeapon(false);
 		}
 		
 		function OnUpdate()
 		{
-			if(updateWeapons)
+			var t = game.player.team;
+			
+			//cprint("Player team is " + t);
+			
+			if(t != team || updateWeapons)
 			{
-				initSpawnables(weaponTree.control);
+				var x = teamHeader.x;
+				var color = "#00000000";
+				
+				if(t == 1)
+				{
+					teamHeader.label = "BLUE TEAM WEAPON LIST";
+					color = "#0000FFBB";
+				}
+				else
+				{
+					teamHeader.label = "RED TEAM WEAPON LIST";
+					color = "#FF0000BB";
+				}
+				
+				teamHeader.resizetotext();
+				teamHeader.x = x;
+				teamColor.x = teamHeader.right + 10;
+				teamColor.y = (teamHeader.height) * .5 - (teamColor.height * .5); 
+				teamColor.setstyleproperty("background-color", color);
+				
+				initWeapons();
+				team = t;
 				updateWeapons = false;
 			}
 		}
 		
-		function playersUpdated()
-		{
-			updatePlayers = true;
-		}
-		
 		function selectWeapon(action)
 		{
-			cprint("Got weapon select action of " + action);
+			var weapon = weaponList.mgr.control.selectedData();
 			
-			var node = weaponTree.control.selectedNode();
+			weaponInfo.mgr.SetWeapon();
 			
-			if(node != null && !node.branch)
+			if(weapon != null)
 			{
+				// update our weapon info
+				weaponInfo.mgr.SetWeapon(weapon.type);
+				
+				// this call
 				if(action)
 				{
-					var index = weaponTree.control.selectedData();
-					
-					if(index != null)
+					// this call
+					if(weapon.spawnable == "spawnable")
 					{
-						var vehicle = vehicles[index];
+						if(game.globals != null)
+							game.globals.scenariovehicle = weapon.type.index;
 						
-						// this call
-						if(vehicle.spawnable == "spawnable")
-						{
-							if(game.globals != null)
-								game.globals.scenariovehicle = index;
-							
-							game.setplayerdata("weapon", vehicle.type.weapkey);
-							game.setplayerdata("ready", "true");
-							window.mgr.Close(true, true);
-						}
-						else
-						{
-							showOk(vehicle.spawnable);
-						}
+						game.setplayerdata("weapon", weapon.type.weapkey);
+						game.setplayerdata("ready", "true");
+						window.mgr.Close(true, true);
+					}
+					else
+					{
+						showOk(weapon.spawnable);
 					}
 				}
 			}
 		}
 		
+		function playersUpdated()
+		{
+			updateWeapons = true;
+		}
 		
 		-->
 	</script>

@@ -20,6 +20,33 @@
 			this.colStyle = s;
 		}
 		
+		self.addSpace	= function(width)
+		{
+			var column = new Object();
+			
+			column["type"] 	= "space";
+			column["width"] 	= width;
+			
+			this.columns.push(column);
+			
+			return column;
+		}
+		
+		self.addView = function(width, size, pad, style)
+		{
+			var column = new Object();
+			
+			column["type"] 	= "view";
+			column["width"] 	= width;
+			column["size"] 		= size;
+			column["pad"] 		= pad;
+			column["style"] 	= style;
+			
+			this.columns.push(column);
+			
+			return column;
+		}
+		
 		self.addColumn	= function(loc, width, align, style)
 		{
 			var column = new Object();
@@ -87,7 +114,27 @@
 				var w			= workingWidth * column.width;
 				var cb			= null;
 				
-				if(column.type == "caption")
+				if(column.type == "view")
+				{
+					var viewX = x;
+					
+					if(column.pad >= 1)
+						viewX = x + column.pad;
+					else if(column.pad > 0)
+						viewX = x + (w * column.pad) - (column.size * .5);
+					
+					var viewY	= (totalHeight * .5) - (column.size * .5);
+					var viewW = column.size;
+					var viewH = column.size;
+					
+					consoleprint("Adding column with: " + viewX + "," + viewY + " " + viewW + "," + viewH);
+					
+					cb = new ViewBuilder(this, "column" + i, viewX, viewY, viewW, viewH);
+					cb.addAttribute("acceptmouseclick", "false");
+					
+					if(column.style != null) cb.addStyle("class", column.style);
+				}
+				else if(column.type == "caption")
 				{
 					var label = getlocstring(column.loc);
 					
@@ -102,7 +149,13 @@
 				}
 				else if(column.type == "chaticon")
 				{
-					var iconX = x + (w * column.pad) - (column.size * .5);   
+					var iconX = x;
+					
+					if(column.pad >= 1)
+						iconX = x + column.pad;
+					else if(column.pad > 0)
+						iconX = x + (w * column.pad) - (column.size * .5);
+					
 					var iconY	= (totalHeight * .5) - (column.size * .5);
 					var iconW = column.size;
 					var iconH = column.size;
@@ -117,7 +170,13 @@
 				}
 				else if(column.type == "rankicon")
 				{
-					var iconX = x + (w * column.pad) - (column.size * .5);   
+					var iconX = x;
+					
+					if(column.pad >= 1)
+						iconX = x + column.pad;
+					else if(column.pad > 0)
+						iconX = x + (w * column.pad) - (column.size * .5);
+					
 					var iconY	= (totalHeight * .5) - (column.size * .5);
 					var iconW = column.size;
 					var iconH = column.size;
@@ -132,7 +191,13 @@
 				}
 				else if(column.type == "image")
 				{
-					var iconX = x + (w * column.pad) - (column.size * .5);   
+					var iconX = x;
+					
+					if(column.pad >= 1)
+						iconX = x + column.pad;
+					else if(column.pad > 0)
+						iconX = x + (w * column.pad) - (column.size * .5);
+					
 					var iconY	= (totalHeight * .5) - (column.size * .5);
 					var iconW = column.size;
 					var iconH = column.size;

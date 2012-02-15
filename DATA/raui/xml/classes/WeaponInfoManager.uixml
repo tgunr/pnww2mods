@@ -19,8 +19,6 @@
 				return;
 			}
 			
-			consoleprint("Weapon is " + weapon.id);
-			
 			var index 		= this.GetViewer(weapon); 
 			sv.value 		= index
 			var viewer 	= sv.getchild(index);
@@ -31,12 +29,6 @@
 			var descView = viewer.findview("weapon-description");
 			var imageView = viewer.findview("weapon-image");
 			
-			if(descView != null)
-				consoleprint("Description is " + descView.id);
-
-			if(imageView != null)
-				consoleprint("Image is " + imageView.id);
-				
 			if(weapon != null)
 			{
 				var content = game.getcontent(this.VehicleManual(weapon));
@@ -47,7 +39,16 @@
 					this.view.label = content.title.toUpperCase();
 					
 					if(descView != null)
+					{
 						descView.text = content.brief;
+						
+						if(this.IsTrooper(weapon) && game.ingame)
+						{
+							descView.resizetotext();
+							descView.y = 5;
+							descView.x = (descView.parent.width * .5) - (descView.width * .5);
+						}
+					}
 					
 					if(imageView != null)
 					{
@@ -71,20 +72,20 @@
 			{
 				return 0;
 			}
-			//else if(!game.online)
-			//{
+			else if(!game.ingame)
+			{
 				if(this.IsTrooper(weapon))
 					return 1;
 				else
 					return 2;
-			//}
-			//else
-			//{
-			//	if(this.IsTrooper(weapon))
-			//		return 3;
-			//	else
-			//		return 4;
-			//}
+			}
+			else
+			{
+				if(this.IsTrooper(weapon))
+					return 3;
+				else
+					return 4;
+			}
 		}
 		
 		self.VehicleManual = function(weapon)

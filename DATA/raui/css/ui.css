@@ -3,6 +3,7 @@
 // tokens can be used in css assignments
 
 $color = #e9e3d9ff
+//$color = #b7ffff
 $hilite = #8f6a14
 
 $hilitealphahi = #FFFFFF33
@@ -12,7 +13,7 @@ $hilitealphalo = #FFFFFF88
 
 
 
-$whitebg = #FFFFFF55
+$whitebg = #FFFFFF33
 $litebg = #00000055
 $medbg = #00000077
 $darkbg = #00000099
@@ -41,6 +42,14 @@ text
 caption
 {
 	class: text;
+}
+
+textcontrol
+{
+	class: text;
+	border-size: $border;
+	border-color: $darkbg;
+	background-color: #FFFFFF22;
 }
 
 tinytext
@@ -123,8 +132,9 @@ header-column
 
 dialog
 {
-	class: medbg;
-	border-color: #FFFFFF33;
+	class: darkbg;
+	border-color: $hilitealphahi;
+	border-size: 1;
 }
 
 debug
@@ -141,6 +151,18 @@ navbar
 .aarbody
 {
 	class: darkbg;
+	class: border;
+}
+
+redteam
+{
+	background-color: #FF0000BB;
+	class: border;
+}
+
+blueteam
+{
+	background-color: #0000FFBB;
 	class: border;
 }
 

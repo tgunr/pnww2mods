@@ -93,7 +93,8 @@
 			
 			// create our headers
 			pp.mgr.StartHeaders("scenarios-header", 0, -1, 0, 15);
-		 	pp.mgr.AddHeader("scenarios.list.id", .15);
+			pp.mgr.AddHeader("PW", .03);
+		 	pp.mgr.AddHeader("scenarios.list.id", .12);
 		 	pp.mgr.AddHeader("scenarios.list.map", .4);
 		 	pp.mgr.AddHeader("scenarios.list.type", .1, "center");
 		 	pp.mgr.AddHeader("scenarios.list.status", .15, "center");
@@ -153,7 +154,12 @@
 				
 				instanceList.mgr.StartRow("row" + i, 0, 0, 0, 16);
 				
-				instanceList.mgr.AddRowColumn("#" + id, .15);
+				if(instance.haspassword)
+					instanceList.mgr.AddRowIcon("image", "ui/textures/lock.dds", .03, 12, 2);
+				else
+					instanceList.mgr.AddRowSpace(.03);
+				
+				instanceList.mgr.AddRowColumn("#" + id, .12);
 				instanceList.mgr.AddRowColumn(content.title, .4);
 				
 				if(content.maptype != null)
@@ -174,7 +180,7 @@
 				instanceList.mgr.EndRow(scenario);
 			}
 				
-			//addTestRows();
+			addTestRows();
 			
 			if(running.length > 0)
 				joinBtn.enabled = true;
@@ -206,14 +212,15 @@
 				
 				cprint("New test " + catID + "/" + mapID);
 				
-				newTest["content"]	= scenario;
-				newTest["id"] 			= Math.floor(Math.random() * 10000);
-				newTest["title"]		= scenario.title;
-				newTest["full"]		= Math.random() > .5;
-				newTest["players"] = Math.floor(Math.random() * 65);
-				newTest["squad"]	= Math.random() > .5;
-				newTest["cid"]			= catID;
-				newTest["mid"]		= mapID;
+				newTest["haspassword"]	= Math.random() < .2; 
+				newTest["content"]				= scenario;
+				newTest["id"] 						= Math.floor(Math.random() * 10000);
+				newTest["title"]					= scenario.title;
+				newTest["full"]					= Math.random() > .5;
+				newTest["players"] 			= Math.floor(Math.random() * 65);
+				newTest["squad"]				= Math.random() > .5;
+				newTest["cid"]						= catID;
+				newTest["mid"]					= mapID;
 				
 				//cprint("Adding test scenario " + scenario.title);
 				
@@ -237,7 +244,13 @@
 				var index = running.length + i;
 				
 				instanceList.mgr.StartRow("row" + index, 0, 0, 0, 16);
-				instanceList.mgr.AddRowColumn("#" + t.id, .15);
+				
+				if(t.haspassword)
+					instanceList.mgr.AddRowIcon("image", "ui/textures/lock.dds", .03, 12, 2);
+				else
+					instanceList.mgr.AddRowSpace(.03);
+				
+				instanceList.mgr.AddRowColumn("#" + t.id, .12);
 				instanceList.mgr.AddRowColumn(t.title, .4);
 				instanceList.mgr.AddRowColumn(t.type, .1, "center");
 				
@@ -279,12 +292,35 @@
 					return;
 				}
 				
-				if(!joinInstance(scenario.instance.description, false))
+				if((scenario.instance != null && scenario.instance.haspassword) || scenario.haspassword)
+				{
+					showPopup("password", "ENTER PASSWORD TO JOIN:", checkPassword);
+				}
+				else if(!joinInstance(scenario.instance.description, false))
 				{
 					showOk("Failed to join instance!");
 					joinLobby();
 				}
 			}
+		}
+		
+		function checkPassword(action, pwMgr)
+		{
+			if(action)
+			{
+				var input = pwMgr.view.findview("password-input");
+				var password = input.text;
+				
+				consoleprint("Entered password is " + password);
+				
+				if(!joinInstance(scenario.instance.description, false, password))
+				{
+					showOk("Failed to join instance!");
+					joinLobby();
+				}
+			}
+			
+			return true;
 		}
 		
 		function OnUpdate()

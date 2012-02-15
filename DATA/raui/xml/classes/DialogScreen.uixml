@@ -72,7 +72,7 @@
 			
 			game.cursor.update(window.id);
 			
-			if(this.actionCallback == null || this.actionCallback(action))
+			if(this.actionCallback == null || this.actionCallback(action, this))
 				window.close();
 		}
 		

@@ -2,7 +2,10 @@
 	<include file="lib/scenarios.uixml"/>
 	<include file="classes/VehicleClass.uixml"/>
 	<panel label="SELECT A WEAPON" x="10" height=".8" width=".5" rtop="20" align="center">
-		<caption id="team-header" x="15" height="20" rtop="15" rright="15" style="class: whitebg;"/>
+		<view x="15" height="20" rtop="20" rright="15" style="class: whitebg;">
+			<text id="team-header"/>
+			<view id="team-color" width="10" height="10" style="class: border;"/>
+		</view>
 		<listcontrol id="weapon-list" x="15" y="15" rright="15" rtop="40" style="class: litebg;"/>
 	</panel>
 	<weapinfov id="weapon-info" width=".45" height=".8" rright="20" rtop="20"/>
@@ -15,13 +18,17 @@
 		<!--
 		 //
 		 
-		var client 				= game.player.client;
-		var scenarios		= loadRoot();
-		var weaponList 	= findview("weapon-list");
-		var weaponInfo	= findview("weapon-info");
-		var selectBtn		= findview("select-button");
-		var teamHeader	= findview("team-header");
-		var team				= 0;
+		var client 					= game.player.client;
+		var scenarios			= loadRoot();
+		var weaponList 		= findview("weapon-list");
+		var weaponInfo		= findview("weapon-info");
+		var selectBtn			= findview("select-button");
+		var teamHeader		= findview("team-header");
+		var teamColor			= findview("team-color");
+		var team					= 0;
+		var updateWeaps	= false
+		
+		game.onscenarioplayers = playersUpdated; 
 		
 		function OnShow(win)
 		{
@@ -40,21 +47,31 @@
 			
 			//cprint("Player team is " + t);
 			
-			if(t != team)
+			if(t != team || updateWeaps)
 			{
+				var x = teamHeader.x;
+				var color = "#00000000";
+				
 				if(t == 1)
 				{
-					teamHeader.label = "BLUE TEAM WEAPON LIST:";
-					teamHeader.setstyleproperty("color", "#0000FFBB");
+					teamHeader.label = "BLUE TEAM WEAPON LIST";
+					color = "#0000FFBB";
 				}
 				else
 				{
-					teamHeader.label = "READ TEAM WEAPON LIST:";
-					teamHeader.setstyleproperty("color", "#FF0000BB");
+					teamHeader.label = "RED TEAM WEAPON LIST";
+					color = "#FF0000BB";
 				}
+				
+				teamHeader.resizetotext();
+				teamHeader.x = x;
+				teamColor.x = teamHeader.right + 10;
+				teamColor.y = (teamHeader.height) * .5 - (teamColor.height * .5); 
+				teamColor.setstyleproperty("background-color", color);
 				
 				initWeapons();
 				team = t;
+				updateWeaps = false;
 			}
 		}
 		
@@ -62,8 +79,8 @@
 		{
 			// create our headers
 			p.mgr.StartHeaders("weapons-header", 0, -1, 0, 15);
-		 	p.mgr.AddHeader("COUNTRY", .15);
-		 	p.mgr.AddHeader("WEAPON", .55);
+		 	p.mgr.AddHeader("WEAPON", .4);
+		 	p.mgr.AddHeader("TYPE", .3);
 		 	p.mgr.AddHeader("CURRENT", .15, "center");
 		 	p.mgr.AddHeader("CAPACITY", .15, "center");
 			p.mgr.EndHeaders();
@@ -96,17 +113,27 @@
 					weapon.spawnable 	= counters[i].spawnable;
 				}
 				
-				weaponList.mgr.StartRow("row" + i, 0, 0, 0, 16);
+				var id = "row." + weapon.type.weapkey;
 				
-				weaponList.mgr.AddRowColumn("#" + id, .15);
-				weaponList.mgr.AddRowColumn(weapon.type.description, .55);
+				weaponList.mgr.StartRow(id, 0, 0, 0, 16);
+				
+				// determine country icon
+				var image = scenarioFlag(weapon.type.country.id);
+				
+				weaponList.mgr.AddRowIcon("image", image, .03, 12, 2);
+				weaponList.mgr.AddRowColumn(weapon.type.description, .37);
+				weaponList.mgr.AddRowColumn("common.vehicles.classes." +  weapon.type.vclassid, .3);
 				weaponList.mgr.AddRowColumn(weapon.current, .15, "center");
 				weaponList.mgr.AddRowColumn(weapon.capacity, .15, "center");
 				
 				weaponList.mgr.EndRow(weapon);
+				
+				if((game.player.vehicle != null && game.player.vehicle.weapkey == weapon.type.weapkey) || weaponList.control.row == null)
+					weaponList.control.selectByID(id);
 			}
 			
-			weaponList.mgr.control.postInit(0);
+			weaponList.mgr.control.postInit();
+			selectWeapon(false);
 		}
 		
 		function selectWeapon(action)
@@ -139,6 +166,11 @@
 					}
 				}
 			}
+		}
+		
+		function playersUpdated()
+		{
+			updateWeaps = true;
 		}
 		
 		-->
