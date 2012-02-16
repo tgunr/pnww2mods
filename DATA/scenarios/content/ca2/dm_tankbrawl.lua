@@ -193,8 +193,8 @@ if(true) then
 		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav 1 1",
 		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav 1 1",
 		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav 1 1",
-		--"sound wind sounds/ambience/gust1.wav .9 0",
-		--"sound wind sounds/ambience/gust2.wav .9 0",
+		"sound wind sounds/ambience/gust1.wav 1 0",
+		"sound wind sounds/ambience/gust2.wav 1 0",
 
 	-- POSITIONAL SOUNDS
 	-- command name filename volume loop x y z mindist maxdist
@@ -233,7 +233,7 @@ if(true) then
 		"event guns1 .25 20000",
 		"event guns2 .25 40000",
 		-- "event siren1 .33 50000",
-		"event wind .5 5000",
+		"event wind .5 3000",
 		--"event bombing1 .90 25000 600 24",
 		--"event bombing2 .90 25000 650 12",
 		-- "event barrage1 .45 30000 550 18",
