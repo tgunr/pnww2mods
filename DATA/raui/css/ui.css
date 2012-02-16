@@ -3,8 +3,8 @@
 // tokens can be used in css assignments
 
 $color = #e9e3d9ff
-//$color = #b7ffff
-$hilite = #8f6a14
+//$color = #b7ffff 
+$hilite = #424e3a
 
 $hilitealphahi = #FFFFFF33
 $hilitealphalo = #FFFFFF88
@@ -16,7 +16,7 @@ $hilitealphalo = #FFFFFF88
 $whitebg = #FFFFFF33
 $litebg = #00000055
 $medbg = #00000077
-$darkbg = #00000099
+$darkbg = #424e3a99
 
 $tinyfont = -2
 $smallfont = -1 
@@ -117,6 +117,7 @@ panel
 {
 	class: bigtext;
 	color: #BFE2CE;
+	
 }
 
 .title
