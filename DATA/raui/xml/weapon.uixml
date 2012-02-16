@@ -13,6 +13,7 @@
 	<navbar id="navbar">
 		<button id="forward" label="   CHANGE TEAM" x="20" onclick="window.mgr.DoTeam()" center="y"/>
 		<button id="back" label="CONFIRM WEAPON   " rright="20" onclick="this.mgr.Click(selectWeapon, true)" center="y"/>
+				<caption label="RAPID ASSAULT- WEAPON SELECT" width="250" height="20" center="true" style="class:bigtext;"/>
 	</navbar>
 	<script>
 		<!--

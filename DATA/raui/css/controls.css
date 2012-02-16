@@ -10,10 +10,10 @@ button
 	control-on: raui/textures/rabutton_blankon.bmp;
 	control-off: raui/textures/rabutton_blankoff.bmp;
 	color: $color;
-	font-size: $smallfont;
+	font-size: $bigfont;
 	width: 200;
 	height: 100;
-	size-scaler: .7;
+	size-scaler: .8;
 	align: center;
 }
 
@@ -22,7 +22,7 @@ button.small
 	font-size: $tinyfont;
 	width: 250;
 	height: 50;
-	size-scaler: .4;
+	size-scaler: .55;
 }
 
 button.forward

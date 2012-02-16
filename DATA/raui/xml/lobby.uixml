@@ -32,6 +32,7 @@
 	<navbar>
 		<button id="create-button" label="    NEW GAME" x="20" onclick="window.mgr.DoCreate()" style="class: button.forward;" center="y"/>
 		<button id="join-button" label="JOIN GAME   " rright="20" onclick="this.mgr.Click(selectInstance, true)" enabled="false" style="class: button.back;" center="y"/>
+				<caption label="RAPID ASSAULT- MAIN LOBBY" width="250" height="20" center="true" style="class:bigtext;"/>
 	</navbar>
 	
 		<!-- stop editing -->

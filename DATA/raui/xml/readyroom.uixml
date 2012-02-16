@@ -16,6 +16,7 @@
 	<navbar id="navbar">
 		<button id="forward" label="   CHANGE WEAPON" x="20" onclick="window.mgr.DoWeapon()" center="y"/>
 		<button id="back" label="FIGHT!   " rright="20" onclick="this.mgr.Click(DoFight)" center="y"/>
+				<caption label="RAPID ASSAULT- READY ROOM" width="250" height="20" center="true" style="class:bigtext;"/>
 	</navbar>
 	<script>
 		<!--

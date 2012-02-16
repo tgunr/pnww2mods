@@ -3,8 +3,9 @@
 // tokens can be used in css assignments
 
 $color = #e9e3d9ff
+$color2 = #6e9e4f
 //$color = #b7ffff
-$hilite = #8f6a14
+$hilite = #6cb65d
 
 $hilitealphahi = #FFFFFF33
 $hilitealphalo = #FFFFFF88
@@ -13,15 +14,15 @@ $hilitealphalo = #FFFFFF88
 
 
 
-$whitebg = #FFFFFF33
-$litebg = #00000055
-$medbg = #00000077
+$whitebg = #FFFFFF55
+$litebg = #00000090
+$medbg = #00000095
 $darkbg = #00000099
 
-$tinyfont = -2
-$smallfont = -1 
-$bigfont = +1
-$hugefont = +2
+$tinyfont = -1
+$smallfont = 0 
+$bigfont = +2
+$hugefont = +3
 
 $border = 1
 $thickborder = 2
@@ -35,8 +36,8 @@ text
 {
 	font-size: $smallfont;
 	color: $color;
-	border-width: 3;
-	border-height: 3;
+	border-width: 4;
+	border-height: 1;
 }
 
 caption
@@ -73,13 +74,13 @@ bigtext
 border
 {
 	border-size: $thickborder;
-	border-color: $darkbg;
+	border-color: $whitebg;
 }
 
 thickborder
 {
 	border-size: $thickborder;
-	border-color: $darkbg;
+	border-color: $whitebg;
 }
 
 
@@ -106,10 +107,11 @@ darkbg
 panel
 {
 	class: litebg;
-	color: $hilitealphalo;
+	color: #c8c14f;
+	//$hilitealphalo
 	border-color: $hilitealphahi;
 	border-size: 1;
-	font-size: $smallfont;
+	font-size: $bigfont;
 	align: center;
 }
 

@@ -8,12 +8,21 @@
 	</sceninfoh>
 	<panel label="OPTIONAL PASSWORD" x="300" y="90" height=".25" rright="10">
 		<view pad="15" rtop="20" style="class: litebg;">
-			<text pad="30" width=".45" center="y">You may specify an optional password. Only players that know your password can enter this game. Passwords can be up to 15 characters long and can contain letters and numbers only.</text>
+			<text pad="10" width=".45" center="y">Enter a password for this map to share with others (optional). Only players that know the password can join.
+			
+			Passwords can be up to 15 characters long and must be letters and numbers only.</text>
 			<textcontrol id="password-input" width="200" height="20" rright="100" center="y"/>
 		</view>
 	</panel>
+	
+
 	<navbar id="navbar">
 		<button id="create-button" label="CREATE NEW GAME   " rright="20" onclick="this.mgr.Click(selectScenario, true)" style="class: button.back;" center="y"/>
+		
+		
+		<caption label="RAPID ASSAULT- MAP CREATION" width="250" height="20" center="true" style="class:bigtext;"/>
+		
+		
 	</navbar>
 	<script>
 		<!--
