@@ -141,7 +141,7 @@
 				
 				weaponList.mgr.EndRow(weapon);
 				
-				if((game.player.vehicle != null && game.player.vehicle.weapkey == weapon.type.weapkey) || weaponList.control.row == null)
+				if(game.player.vehicle != null && game.player.vehicle.weapkey == weapon.type.weapkey)
 					weaponList.control.selectByID(id);
 			}
 			

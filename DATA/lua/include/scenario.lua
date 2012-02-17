@@ -965,6 +965,10 @@ function OnDead(handler)
 	return scenario.game.OnDie(handler);
 end
 
+function OnDeath(handler)
+	return scenario.game.OnDie(handler);
+end
+
 function OnKill(handler)
 	return scenario.game.OnKill(handler);
 end
