@@ -187,20 +187,10 @@
 		
 		function sortMembers(a,b)
 		{
-			if(a.team == b.team)
-			{
-				if(a.score > b.score)
-					return -1;
-				else if(a.score < b.score)
-					return 1;
-			}
-			else  
-			{
-				if(game.player.scenario != null && a.team == game.player.scenario.team)
-					return -1;
-				else
-					return 1; 
-			}
+			if(parseInt(a.score) > parseInt(b.score))
+				return -1;
+			else if(parseInt(a.score) < parseInt(b.score))
+				return 1;
 			
 			return 0;
 		}
