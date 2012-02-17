@@ -35,6 +35,39 @@
     <attribute name="normal" type="attribute_tangentnormal"></attribute>
   </program>
   <!--=================================================================-->
+  <program name ="normalmapOBJ_ra+" newglrequired ="true">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL+/utility/math.vert</vertexshader>
+      <vertexshader>fx/shaders/GLSL+/normal/normalOBJ_ra.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/utility/sun_tads.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL+/normal/normalOBJ_ra.frag</fragmentshader>
+    </shaders>
+    <uniform name="map_kd" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="map_ka" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="map_ks" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="map_bump" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <uniform name="data" type="samplerbuffer" unit="4" onetimeapply="true"></uniform>
+    <attribute name="tangent" type="attribute_tangent"></attribute>
+    <attribute name="in_pos" type="attribute_position"></attribute>
+    <attribute name="in_tex0" type="attribute_texcoord0"></attribute>
+    <attribute name="in_normal" type="attribute_normal"></attribute>
+  </program>
+  <!--=================================================================-->
+  <program name ="normalmapOBJ_ra">
+    <shaders>
+      <vertexshader>fx/shaders/GLSL/normal/normalOBJ_ra.vert</vertexshader>
+      <fragmentshader>fx/shaders/GLSL/utility/fogutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/utility/lightutility.frag</fragmentshader>
+      <fragmentshader>fx/shaders/GLSL/normal/normalOBJ_ra.frag</fragmentshader>
+    </shaders>
+    <uniform name="map_kd" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="map_ka" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="map_ks" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="map_bump" type="sampler2d" unit="3" onetimeapply="true"></uniform>
+    <attribute name="tangent" type="attribute_tangent"></attribute>
+  </program>
+  <!--=================================================================-->
   <program name ="fpsnormal">
     <shaders>
       <vertexshader>fx/shaders/GLSL/fpsnormal/fpsnormal_ra.vert</vertexshader>
