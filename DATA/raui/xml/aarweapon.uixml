@@ -1,6 +1,7 @@
 <window id="aar" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" layer="52" manager="AARScreen">
 	<include file="lib/common.uixml"/>
 	<include file="classes/VehicleClass.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
 	<view id="aarbody" width=".9" height=".7" aspectlimit="width" center="true">
 		<weapinfov id="weapon-info" x="10" width=".3" height=".8" rtop="20" style="class: medbg;"/>
 		<!--
@@ -36,6 +37,7 @@
 		var scenarioInfo 			= findview("scenario-info");
 		var teamHeader			= findview("team-header");
 		var teamColor				= findview("team-color");
+		var weapTimer				= new CycleTimer(500);
 		var updateWeapons 	= true;
 		
 		game.onscenarioplayers = playersUpdated;
@@ -124,7 +126,7 @@
 		{
 			var team = game.player.team;
 			
-			if(team > 0 && updateWeapons)
+			if(team > 0 && updateWeapons && weapTimer.run())
 			{
 				var x = teamHeader.x;
 				var color = "#00000000";

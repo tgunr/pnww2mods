@@ -383,7 +383,7 @@ end
 
 -- ok
 scenario.OnDamage = function(handler, energy, obj)
-	scenario.game.AddMessage("damaged");
+	-- scenario.game.AddMessage("damaged");
 	return 1;
 end
 

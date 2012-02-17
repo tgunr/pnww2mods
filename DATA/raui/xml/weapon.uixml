@@ -1,6 +1,7 @@
 <ra id="weapon" manager="RAScreen">
 	<include file="lib/scenarios.uixml"/>
 	<include file="classes/VehicleClass.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
 	<panel label="SELECT A WEAPON" x="10" height=".8" width=".5" rtop="20" align="center">
 		<view x="15" height="20" rtop="20" rright="15" style="class: whitebg;">
 			<text id="team-header"/>
@@ -26,6 +27,7 @@
 		var selectBtn			= findview("select-button");
 		var teamHeader		= findview("team-header");
 		var teamColor			= findview("team-color");
+		var weapTimer			= new CycleTimer(500);
 		var updateWeaps	= true;
 		
 		game.onscenarioplayers = playersUpdated; 
@@ -47,7 +49,7 @@
 		{
 			var team = game.player.team;
 			
-			if(team > 0 && updateWeaps)
+			if(team > 0 && updateWeaps && weapTimer.run())
 			{
 				cprint("Player team is " + team);
 				cprint("Updating weapons!");
