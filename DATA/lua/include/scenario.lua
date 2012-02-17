@@ -33,6 +33,12 @@ state.lastroundtimer	= 0;
 state.lastupdate			= FrameTime();
 state.starttime				= FrameTime();
 
+-- scoring mods
+state.winnerbonus		= 25;
+state.killstreakbonus	= 2;
+state.killbonus				= 1;
+state.objpoints			= 1;
+
 -- player updates
 state.playeradds			= {}; -- updates that are incremental changes
 state.player					= {}; -- player state
@@ -50,6 +56,7 @@ Instancing.LoggingCallback = ui.ChatPrint;
 -- states we'll monitor
 state.hoststates			= 
 {
+	{"_*_", "OnStateChange"},
 	{"roundtimer", "OnRoundTimer"},
 	{"round", "OnRound"},
 	{"stage", "OnStage"},
@@ -66,33 +73,17 @@ end
 
 -- ok
 scenario.AddFriendlyScore = function(points)
-	if(not game.Ingame()) then
-		return;
-	end
-	local team = 0;
-	local v = player.playerGetVehicle();
-	if(v ~= nil) then
-		team = v:GetSide();
-	end
-	scenario.game.AddScore(team, points);
+	scenario.game.AddScore(scenario.GetTeam(), points);
 end
 
 -- ok
 scenario.AddEnemyScore = function(points)
-	if(not game.Ingame()) then
-		return;
-	end
-	local team = 0;
-	local v = player.playerGetVehicle();
-	if(v ~= nil) then
-		team = wwii.wwiiOtherSide(v:GetSide());
-	end
-	scenario.game.AddScore(team, points);
+	scenario.game.AddScore(scenario.GetOtherTeam(), points);
 end
 
 -- ok
 scenario.AddScore = function(team, points)
-	if(scenario.instance == nil or not game.Ingame()) then
+	if(scenario.instance == nil) then
 		return;
 	end
 	team = tonumber(team);
@@ -103,8 +94,16 @@ scenario.AddScore = function(team, points)
 end
 
 -- ok
-scenario.AddPlayerScore = function(points)
-	scenario.AddPlayerState("score", points);
+scenario.AddPlayerBonus = function(points)
+	scenario.game.AddPlayerState("bonpoints", points);
+end
+
+scenario.AddPlayerPoints = function(points)
+	scenario.game.AddPlayerState("objpoints", points);
+end
+
+scenario.SetPlayerScore = function(points)
+	scenario.game.SetPlayerState("score", points);
 end
 
 -- ok
@@ -390,6 +389,35 @@ end
 
 -- ok
 scenario.OnDie = function(handler)
+	scenario.game.AddPlayerState("deaths", 1);
+	
+	if(state.killstreakbonus > 0) then
+		local player = scenario.GetPlayer();
+		if(player ~= nil) then
+			local killstreak =  player:GetStateNumber("killstreak");
+			local score = (killstreak * state.killstreakbonus);
+			if(score > 0) then
+				scenario.game.AddPlayerBonus(score);
+			end
+		end
+	end
+	
+	scenario.game.SetPlayerState("killstreak", 0);
+	
+	return 1;
+end
+
+scenario.OnKill = function(handler, callsign)
+	scenario.game.AddPlayerState("kills", 1);
+	scenario.game.AddPlayerState("killstreak", 1);
+	
+	if(state.killbonus > 0) then
+		local player = scenario.GetPlayer();
+		if(player ~= nil) then
+			scenario.game.AddPlayerBonus(state.killbonus);
+		end
+	end
+	
 	return 1;
 end
 
@@ -610,14 +638,23 @@ scenario.CheckVictory = function(name, value)
 	local score 		=  scenario.game.GetStateNumber(name);
 	local victory 	= tonumber(state.config.victory);
 
-	 ui.ChatPrint("Checking " .. score .. " against " .. victory .. " for " .. name);	
+	 ui.ChatPrint("Checking " .. score .. " against " .. victory .. " for " .. name);
+	 
+	 local winner = 0;
 	
 	if(score >= victory) then
 		if(name == "victory1") then
-			scenario.game.SetState("victory", 1);
+			winner = 1;
 		elseif(name == "victory2") then
-			scenario.game.SetState("victory", 2);
+			winner = 2;
 		end
+	end
+	
+	if(winner > 0) then
+		if(winner == scenario.GetTeam()) then
+			scenario.game.AddPlayerBonus(state.winnerbonus);
+		end
+		scenario.game.SetState("victory", winner);
 	end
 	
 	return 1;
@@ -641,6 +678,16 @@ end
 
 -- ok
 scenario.OnPlayer = function(callsign, name, value)
+	if(callsign == state.config.callsign) then
+		if(name == "bonpoints" or name == "objpoints") then
+			local player = scenario.GetPlayer();
+			if(player ~= nil) then
+				local bonus 		= player:GetStateNumber("bonpoints");
+				local objective = player:GetStateNumber("objpoints");
+				scenario.game.SetPlayerScore(bonus + objective);
+			end
+		end
+	end
 	scenario.manager:UpdatePlayer(callsign, name, value);
 	return 1;
 end
@@ -658,6 +705,13 @@ scenario.AddPlayerState = function(name, value)
 	else
 		state.playeradds[name] = tonumber(value);
 	end
+end
+
+scenario.GetPlayer = function()
+	if(scenario.instance ~= nil) then
+		return scenario.instance:GetPlayer(state.config.callsign);
+	end
+	return nil;
 end
 
 -- ok
@@ -760,6 +814,12 @@ scenario.OnRound = function(name, value)
 end
 
 -- ok
+scenario.OnStateChange = function(name, value)
+	scenario.manager:UpdateState(name, value);
+	return 1;
+end
+
+-- ok
 scenario.GetRound = function()
 	return scenario.manager:GetRound();
 end
@@ -811,7 +871,7 @@ scenario.GetLocation = function(name, side)
 		return nil;
 	end
 	
-	local index = player.playerGetVehicle():GetSide();
+	local index = scenario.GetTeam();
 	
 	if(side ~= nil) then
 		index = side
@@ -831,10 +891,22 @@ end
 
 -- ok
 scenario.GetTeam = function()
-	local v = player.playerGetVehicle();
-	if(v ~= nil) then
-		return v:GetSide();
+	local player = scenario.GetPlayer();
+	if(player ~= nil) then
+		return player:GetStateNumber("team");
 	end
+	return 0;
+end
+
+scenario.GetOtherTeam = function()
+	local team = scenario.GetTeam();
+	
+	if(team == 1) then
+		return 2;
+	elseif(team == 2) then
+		return 1;
+	end
+	
 	return 0;
 end
 
@@ -893,6 +965,10 @@ function OnDead(handler)
 	return scenario.game.OnDie(handler);
 end
 
+function OnKill(handler)
+	return scenario.game.OnKill(handler);
+end
+
 function OnUpdate(handler)
 	return scenario.game.OnUpdate(handler);
 end
@@ -937,6 +1013,10 @@ function OnPlayer(callsign, name, value)
 	return scenario.game.OnPlayer(callsign, name, value);
 end
 
+function OnStateChange(name, value)
+	return scenario.game.OnStateChange(name, value);
+end
+
 function RegisterState(name, value)
 	return scenario.game.RegisterState(name, value);
 end
@@ -949,7 +1029,7 @@ end
 
 function sendClientData(id, data)
 	if(scenario.game.IsOnline()) then
-		scenario.manager:SendData(data, 0);
+		scenario.manager:SendData(data);
 	else
 		table.insert(scenario.toserver, {scenario.instance:Id(), data});
 	end

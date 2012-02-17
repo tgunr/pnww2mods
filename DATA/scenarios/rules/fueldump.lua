@@ -60,15 +60,21 @@ end
 
 function ra.OnUpdate(handler)
 
+	local ft				= ra.FrameTime();
+	local msDelta	= ft - state.lastupdate;
+	
 	scenario.OnUpdate(handler);
 
 	if(state.victory ~= 0 or ra.GetTeam() ~= 2) then
 		return 1;
 	end
 	
+	if(game.Ingame() == false) then
+		return 1;
+	end
+	
 	local capper 	= 0;
 	local me 			= player.playerGetVehicle();
-	local ft				= ra.FrameTime();
 	local victory		= tonumber(state.config.victory or 30);
 	local secDelta	= msDelta / 1000;
 	local meIndex = me.VehicleHostIndex;
@@ -94,6 +100,7 @@ function ra.OnUpdate(handler)
 		-- me
 		if(ft >= state.nextcapcheck) then
 			ra.KeepAlive("capper", meIndex);
+			ra.AddPlayerPoints(state.objpoints);
 			state.nextcapcheck = ft + 1000;
 		end
 		local amount = secDelta * tonumber(state.config.capturerate or 1);

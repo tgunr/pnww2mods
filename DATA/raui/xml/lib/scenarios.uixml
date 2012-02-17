@@ -354,8 +354,10 @@
 		{
 			switch(team)
 			{
-				case 1: return "ui/textures/test/american_flag.bmp"; break;
-				case 2: return "ui/textures/test/german_flag.bmp"; break;
+				case 1: return "ui/textures/test/british_flag.bmp"; break;
+				case 2: return "ui/textures/test/american_flag.bmp"; break;
+				case 3: return "ui/textures/test/french_flag.bmp"; break;
+				case 4: return "ui/textures/test/german_flag.bmp"; break;
 			}
 			
 			return "ui/textures/test/french_flag.bmp";

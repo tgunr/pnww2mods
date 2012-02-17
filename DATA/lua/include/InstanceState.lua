@@ -54,6 +54,14 @@ end
 -- returns a result object
 -- fires off a handler if one is found for the state name
 function InstanceState:HandleState(valueName, value, oldValue)
+	
+	local wildCardhandler = self.handlers["_*_"]
+	
+	if wildCardhandler ~= nil and type(_G[wildCardhandler]) == "function" then
+		pcall(_G[wildCardhandler], valueName, value, oldValue) -- might want to put some logging on this...?
+	end
+	
+	-- try a state specific handler
 	local handler = self.handlers[valueName]
 	
 	if handler ~= nil and type(_G[handler]) == "function" then

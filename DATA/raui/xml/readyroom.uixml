@@ -165,7 +165,7 @@
 				playerList.mgr.AddRowColumn(vehicle, .365);
 				playerList.mgr.AddRowColumn(kills, .05, "center");
 				playerList.mgr.AddRowColumn(deaths, .05, "center");
-				playerList.mgr.AddRowColumn(score, .05, "center");
+				playerList.mgr.AddRowColumn(score, .06, "center");
 				playerList.mgr.AddRowColumn(ready, .162, "center");
 				
 				playerList.mgr.EndRow(member);

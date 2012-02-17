@@ -127,6 +127,7 @@ function OnStage1Update(handler)
 		end
 		local contribution = rate / players;
 		ra.AddState("objective1", contribution);
+		ra.AddPlayerPoints(state.objpoints);
 		-- ui.ChatPrint("Sending reinforcements!");
 		state.nextreinforcement = ft + 1000;
 	end
@@ -219,6 +220,7 @@ function OnStage2Update(msDelta)
 		-- me
 		if(ft >= state.nextcapcheck) then
 			ra.KeepAlive("capper", meIndex);
+			ra.AddPlayerPoints(state.objpoints);
 			state.nextcapcheck = ft + 1000;
 		end
 		local amount = secDelta * tonumber(state.config.capturerate or 1);

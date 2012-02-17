@@ -15,6 +15,10 @@ state.config['kills'] 			= 30;
 
 state.nextintelcheck			= 0;
 state.intelteam				= 0;
+state.intelbonus				= .1; -- per second
+
+-- killing is the objective, no bonuses for it
+state.killbonus					= 0;
 
 -- set our initial tutorial state
 ra.InitState(state);
@@ -67,10 +71,14 @@ end
 
 -- give a point to the enemy each time I die
 function ra.OnDie(handler)
-	ra.AddEnemyScore(1);	
-	ra.AddPlayerState("deaths", 1);
+	ra.AddEnemyScore(state.objpoints);	
 	state.intel = false;
 	return scenario.OnDie(handler);
+end
+
+function ra.OnKill(handler, callsign)
+	ra.AddPlayerPoints(state.objpoints);
+	return scenario.OnKill(handler, callsign);
 end
 
 function ra.OnDespawn(handler)
@@ -89,7 +97,7 @@ function ra.OnUpdate(handler)
 	if(ra.IsPlaying() and state.intel and ft >= state.nextintelcheck and (intelTeam == team or intelTeam == 0)) then 
 		ra.KeepAlive("intelteam", ra.GetTeam());
 		state.nextintelcheck = ft + 1000;
-		ra.AddPlayerScore(.5);
+		ra.AddPlayerBonus(state.intelbonus);
 	end	
 	
 	-- run default behavior

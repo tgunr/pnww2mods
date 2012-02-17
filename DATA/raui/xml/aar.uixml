@@ -2,7 +2,7 @@
 	<include file="lib/common.uixml"/>
 	<include file="classes/Preference.uixml"/>
 	<view id="aarbody" width=".9" height=".7" aspectlimit="width" center="true">
-		<sceninfov id="scenario-info" x="10" width=".3" height=".8" rtop="20" style="class: medbg;">
+		<playerinfov id="player-info" x="10" width=".3" height=".8" rtop="20" style="class: medbg;">
 			<view id="map" class="mapview" acceptsfocus="no" minscale=".01" maxscale=".1" scale=".05" sx="0" sy="0">
 				<layer type="texture" id="default-64-tex" minscale="0" maxscale="64" enabled="true" orign="-26x210" rowcolsize="1x1" cellsize="64x64"/>
 				<layer type="icon" id="icons" minscale="1" maxscale="8" enabled="true"/>
@@ -10,7 +10,7 @@
 				<layer type="scenario" id="scenmap" minscale="0" maxscale="2" enabled="true"/>
 				<layer type="players" minscale="0" maxscale="20" />
 			</view>
-		</sceninfov>
+		</playerinfov>
 		<panel label="PLAYER LIST" height=".8" width=".65" rright="10" rtop="20" align="center">
 			<listcontrol id="players" x="15" y="15" rright="15" rtop="20" style="class: medbg;"/>
 		</panel>
@@ -24,7 +24,7 @@
 		
 		var client = game.player.client;
 		var playerList = findview("players");
-		var scenarioInfo = findview("scenario-info");
+		var playerInfo = findview("player-info");
 		var updatePlayers = true;
 		
 		game.onscenarioplayers = playersUpdated;
@@ -32,7 +32,8 @@
 		function OnShow(win)
 		{
 			initHeaders(playerList);
-			scenarioInfo.mgr.SetScenario(client.scenario);
+			playerList.mgr.selectCallback = selectPlayer;
+			//playerInfo.mgr.SetInfo(game.player.score);
 		}
 		
 		function OnUpdate()
@@ -116,19 +117,32 @@
 				playerList.mgr.AddRowColumn(vehicle, .365);
 				playerList.mgr.AddRowColumn(kills, .05, "center");
 				playerList.mgr.AddRowColumn(deaths, .05, "center");
-				playerList.mgr.AddRowColumn(score, .05, "center");
+				playerList.mgr.AddRowColumn(score, .06, "center");
 				playerList.mgr.AddRowColumn(ready, .162, "center");
 				
 				playerList.mgr.EndRow(member);
 				
 				if(member.me)
+				{
 					playerList.control.selectByID(id);
+					selectPlayer(false);
+				}
 			}
 			
 			playerList.control.setScrollY();
 			playerList.control.postInit();
 			
 			var stopped = new Date();
+		}
+		
+		function selectPlayer(action)
+		{
+			playerInfo.mgr.SetPlayer();
+			
+			var p = playerList.mgr.control.selectedData();
+			
+			if(p != null)
+				playerInfo.mgr.SetInfo(p);
 		}
 		
 		function playersUpdated()
