@@ -121,10 +121,12 @@ if(true) then
 	-- blocking volume x
 	-- block name x1 y1 z1 x2 y2 z2 thickness height
 
-        	--"block 139.59 -86.67 8.69 104.30 -72.64 8.68 1 10",
-			
+
+		--"block -205.93 -227.67 42.02 -194.26 -192.35 41.94 .5 1",
+		
 		
 -- FX EMITTERS
+
 		
 	-- command,effectname,worldx,worldy,worldz
 	-- smoke effects
@@ -138,7 +140,7 @@ if(true) then
 
 		-- SMOKING CRATERS
 
-		--"emitter cratersmoke 173.40 -38.89 8",
+		"emitter cratersmoke 113.86 -2.22 6.75",
 		--"emitter cratersmoke 129.71 -55.96 8",
 		--"emitter cratersmoke -45.56 -78.53 8",
 		--"emitter cratersmoke 26.02 -82.75 8",
@@ -193,8 +195,8 @@ if(true) then
 		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav 1 1",
 		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav 1 1",
 		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav 1 1",
-		"sound wind sounds/ambience/gust1.wav 1 0",
-		"sound wind sounds/ambience/gust2.wav 1 0",
+		"sound wind sounds/ambience/gust2.wav 2 0",
+		"sound wind sounds/ambience/gust3.wav 2 0",
 
 	-- POSITIONAL SOUNDS
 	-- command name filename volume loop x y z mindist maxdist
@@ -233,7 +235,7 @@ if(true) then
 		"event guns1 .25 20000",
 		"event guns2 .25 40000",
 		-- "event siren1 .33 50000",
-		"event wind .5 3000",
+		"event wind .7 500",
 		--"event bombing1 .90 25000 600 24",
 		--"event bombing2 .90 25000 650 12",
 		-- "event barrage1 .45 30000 550 18",
