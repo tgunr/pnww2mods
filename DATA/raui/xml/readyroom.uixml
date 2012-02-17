@@ -75,7 +75,7 @@
 			initGlobals();
 			initHeaders(playerList);
 			scenarioInfo.mgr.SetScenario(client.scenario);
-			showChat();
+			showChat(true);
 		}
 		
 		function OnUpdate()

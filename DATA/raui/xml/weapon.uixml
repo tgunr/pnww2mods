@@ -26,13 +26,14 @@
 		var selectBtn			= findview("select-button");
 		var teamHeader		= findview("team-header");
 		var teamColor			= findview("team-color");
-		var team					= 0;
-		var updateWeaps	= false
+		var updateWeaps	= true;
 		
 		game.onscenarioplayers = playersUpdated; 
 		
 		function OnShow(win)
 		{
+			teamHeader.visible = false;
+			
 			// set some callbacks
 			weaponList.mgr.selectCallback = selectWeapon;
 			
@@ -44,16 +45,17 @@
 		
 		function OnUpdate()
 		{
-			var t = game.player.team;
+			var team = game.player.team;
 			
-			//cprint("Player team is " + t);
-			
-			if(t != team || updateWeaps)
+			if(team > 0 && updateWeaps)
 			{
+				cprint("Player team is " + team);
+				cprint("Updating weapons!");
+				
 				var x = teamHeader.x;
 				var color = "#00000000";
 				
-				if(t == 1)
+				if(team == 1)
 				{
 					teamHeader.label = "BLUE TEAM WEAPON LIST";
 					color = "#0000FFBB";
@@ -66,12 +68,12 @@
 				
 				teamHeader.resizetotext();
 				teamHeader.x = x;
+				teamHeader.visible = true;
 				teamColor.x = teamHeader.right + 10;
 				teamColor.y = (teamHeader.height) * .5 - (teamColor.height * .5); 
 				teamColor.setstyleproperty("background-color", color);
 				
 				initWeapons();
-				team = t;
 				updateWeaps = false;
 			}
 		}
@@ -124,8 +126,18 @@
 				weaponList.mgr.AddRowIcon("image", image, .03, 12, 2);
 				weaponList.mgr.AddRowColumn(weapon.type.description, .37);
 				weaponList.mgr.AddRowColumn("common.vehicles.classes." +  weapon.type.vclassid, .3);
-				weaponList.mgr.AddRowColumn(weapon.current, .15, "center");
-				weaponList.mgr.AddRowColumn(weapon.capacity, .15, "center");
+				
+				if(weapon.capacity == -1)
+					weaponList.mgr.AddRowColumn(weapon.current, .15, "center");
+				else if(weapon.current < weapon.capacity)
+					weaponList.mgr.AddRowColumn(weapon.current, .15, "center");
+				else
+					weaponList.mgr.AddRowColumn("max", .15, "center");
+				
+				if(weapon.capacity == -1)
+					weaponList.mgr.AddRowColumn("unlimited", .15, "center");
+				else
+					weaponList.mgr.AddRowColumn(weapon.capacity, .15, "center");
 				
 				weaponList.mgr.EndRow(weapon);
 				

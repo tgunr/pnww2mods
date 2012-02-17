@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <background id="loading">
 	<progressbar id="progress" x="295" y="121" width="428" height="15" minvalue="0" maxvalue="1"
-		fill="ui/textures/hud/blood-level-fill.bmp" background="ui/textures/hud/back-level-fill.bmp" style="class: border;"/>
-	<caption id="status" x="295" y="121" width="428" height="15" align="center" style="class: border;"/>
+		fill="ui/textures/hud/blood-level-fill.bmp" background="ui/textures/hud/back-level-fill.bmp" style="class: darkborder;"/>
+	<caption id="status" x="295" y="121" width="428" height="15" align="center" style="class: darkborder;"/>
 	<view height="20" style="class: medbg;">
 		<caption id="version" x="5" width="100" height="15" center="y"/>
 		<caption id="buildinfo" width="100" height="15" label="Getting host data..." center="true"/>
