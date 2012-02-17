@@ -282,9 +282,9 @@ end
 -- update the player, then relay the change to all clients
 function HostInstance:RecvSetPlayerState(callsign, valueName, value)
 	
-	-- Instancing.report('D', 'HostInstance:RecvSetPlayerState', "callsign is " .. tostring(callsign))
-	-- Instancing.report('D', 'HostInstance:RecvSetPlayerState', "valueName is " .. tostring(valueName))
-	-- Instancing.report('D', 'HostInstance:RecvSetPlayerState', "value is " .. tostring(value))
+	Instancing.report('D', 'HostInstance:RecvSetPlayerState', "callsign is " .. tostring(callsign))
+	Instancing.report('D', 'HostInstance:RecvSetPlayerState', "valueName is " .. tostring(valueName))
+	Instancing.report('D', 'HostInstance:RecvSetPlayerState', "value is " .. tostring(value))
 	
 	-- make sure callsign is lower case
 	callsign = string.lower(callsign)
