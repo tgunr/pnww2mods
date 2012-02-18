@@ -7,15 +7,15 @@
 	<view id="info-panel" x="10" y="80" width="210" rtop="20">
 		<view style="layout: vertical; vpad: 10;">
 			<panel label="POPULAR MAPS" align="center" height="130" style="class: litebg;">
-				<listcontrol id="popular" pad="15" rtop="20" style="class: litebg;"/>
+				<listcontrol id="popular" pad="15" rtop="25" style="class: litebg;"/>
 			</panel>
 			
 			<panel label="MESSAGE OF THE DAY" align="center" height="100" style="class: litebg;">
-				<text id="motd" pad="15" rtop="20" style="class: litebg;"/>
+				<text id="motd" pad="15" rtop="25" style="class: litebg;"/>
 			</panel>
 			
 			<panel label="RECENT ACHIEVEMENTS" align="center" height="100" style="class: litebg;">
-				<list id="achievements" pad="15" rtop="20" style="class: litebg;"/>
+				<list id="achievements" pad="15" rtop="25" style="class: litebg;"/>
 			</panel>
 		</view>
 	</view>
@@ -52,6 +52,8 @@
 		var scenarioInfo	= findview("scenario-info");
 		var testRows		= new Array();
 		var mapCount		= new Object();
+		
+		var wantedScenario = null;
 		
 		// when our instance list is updated
 		game.oninstancelist = initInstances;
@@ -278,30 +280,30 @@
 			
 			joinBtn.enabled = false;
 			
-			var scenario = instanceList.mgr.control.selectedData();
+			wantedScenario = instanceList.mgr.control.selectedData();
 			if(scenario == null) return;
 			
 			joinBtn.enabled = true;
 			
 			// update our info
-			scenarioInfo.mgr.SetScenario(scenario.content);
+			scenarioInfo.mgr.SetScenario(wantedScenario.content);
 			
 			if(action)
 			{
-				if(!canJoinInstance(scenario.content, scenario.instance))
+				if(!canJoinInstance(wantedScenario.content, wantedScenario.instance))
 				{
 					showOk(lastScenarioError);
 					return;
 				}
 				
-				if((scenario.instance != null && scenario.instance.haspassword) || scenario.haspassword)
+				if((wantedScenario.instance != null && wantedScenario.instance.haspassword) || wantedScenario.haspassword)
 				{
 					showPopup("password", "ENTER PASSWORD TO JOIN:", checkPassword);
 				}
-				else if(!joinInstance(scenario.instance.description, false))
+				else if(!joinInstance(wantedScenario.instance.description, false))
 				{
 					showOk("Failed to join instance!");
-					joinLobby();
+					//joinLobby();
 				}
 			}
 		}
@@ -315,10 +317,10 @@
 				
 				consoleprint("Entered password is " + password);
 				
-				if(!joinInstance(scenario.instance.description, false, password))
+				if(!joinInstance(wantedScenario.instance.description, false, password))
 				{
 					showOk("Failed to join instance!");
-					joinLobby();
+					//joinLobby();
 				}
 			}
 			
