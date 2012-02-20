@@ -282,23 +282,32 @@ end
 -- update the player, then relay the change to all clients
 function HostInstance:RecvSetPlayerState(callsign, valueName, value)
 	
-	Instancing.report('D', 'HostInstance:RecvSetPlayerState', "callsign is " .. tostring(callsign))
-	Instancing.report('D', 'HostInstance:RecvSetPlayerState', "valueName is " .. tostring(valueName))
-	Instancing.report('D', 'HostInstance:RecvSetPlayerState', "value is " .. tostring(value))
+	-- Instancing.report('D', 'HostInstance:RecvSetPlayerState', callsign .. "/" .. valueName .. "/" .. value)
 	
-	-- make sure callsign is lower case
-	callsign = string.lower(callsign)
+	local player = inst.Lookup(self.id, callsign)
 	
-	local player = self:GetPlayer(callsign)
-	local result = player:SetState(valueName, value)
-	
-	-- no need to send if there was no change
-	if result:IsNOK() then
-		return result
+	-- add better logging on success
+	if player ~= nil then
+		if valueName == "weapon" then player:weaponSpec(tonumber(value)) end
+		elseif valueName == "team" then player:team(tonumber(value)) end
+		elseif valueName == "state" then player:state(tonumber(value)) end
+		elseif valueName == "rank" then player:state(tonumber(value)) end
 	end
 	
+	return InstanceResult:success(self:GetType() .. " Instance:RecvSetPlayerState", callsign .. "/" .. valueName .. "/" .. value, self:GetLevel('I'))
+	-- make sure callsign is lower case
+	-- callsign = string.lower(callsign)
+	
+	-- local player = self:GetPlayer(callsign)
+	-- local result = player:SetState(valueName, value)
+	
+	-- no need to send if there was no change
+	-- if result:IsNOK() then
+	-- 	return result
+	-- end
+	
 	-- let the clients kknow
-	return self:SetPlayerState(callsign, valueName, value) 
+	-- return self:SetPlayerState(callsign, valueName, value) 
 end
 
 
@@ -309,26 +318,37 @@ end
 -- returns a result object
 -- update the player, then relay the change to all clients
 function HostInstance:RecvAddPlayerState(callsign, valueName, value)
+	
+	-- Instancing.report('D', 'HostInstance:RecvAddPlayerState', callsign .. "/" .. valueName .. "/" .. value)
+	
+	local player = inst.Lookup(self.id, callsign)
+	
+	-- add better logging on success
+	if player ~= nil then
+		elseif valueName == "objpoints" then player:addPoints(tonumber(value), 0) end
+		elseif valueName == "bonpoints" then player:addPoints(0, tonumber(value)) end
+		elseif valueName == "death" then player:addDeath(tonumber(value)) end
+		elseif valueName == "kill" then player:addKill(tonumber(value)) end
+	end
+	
+	return InstanceResult:success(self:GetType() .. " Instance:RecvAddPlayerState", callsign .. "/" .. valueName .. "/" .. value, self:GetLevel('I'))
 
-	-- Instancing.report('D', 'HostInstance:RecvAddPlayerState', "callsign is " .. tostring(callsign))
-	-- Instancing.report('D', 'HostInstance:RecvAddPlayerState', "valueName is " .. tostring(valueName))
-	-- Instancing.report('D', 'HostInstance:RecvAddPlayerState', "value is " .. tostring(value))
 
 	-- make sure callsign is lower case
-	callsign = string.lower(callsign)
+	--callsign = string.lower(callsign)
 	
-	local player = self:GetPlayer(callsign)
-	local result = player:AddState(valueName, value)
+	--local player = self:GetPlayer(callsign)
+	--local result = player:AddState(valueName, value)
 	
 	-- no need to send if there was no change
-	if result:IsNOK() then
-		return result
-	end
+	--if result:IsNOK() then
+	--	return result
+	--end
 	
 	-- we send a set so the client doesn't also increment the value
 	-- we there was a change, the results data will contain the updated
 	-- state value
-	return self:SetPlayerState(callsign, valueName, result.data) 
+	--return self:SetPlayerState(callsign, valueName, result.data) 
 end
 
 --------- --------- --------- --------- --------- ---------
