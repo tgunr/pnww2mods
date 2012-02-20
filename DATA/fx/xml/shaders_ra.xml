@@ -222,6 +222,7 @@
     <uniform name="diffuseScale" type="float"></uniform>
     <uniform name="rotation" type="float_vec4"></uniform>
     <uniform name="treepos" type="float_vec3"></uniform>
+    <uniform name="alphatest" type="float"></uniform>
   </program>
   <!--=================================================================-->
   <program name ="BranchShader+" newglrequired ="true">
@@ -272,6 +273,7 @@
     <uniform name="diffuseScale" type="float"></uniform>
     <uniform name="rotation" type="float_vec4"></uniform>
     <uniform name="treepos" type="float_vec3"></uniform>
+    <uniform name="alphatest" type="float"></uniform>
   </program>
   <!--=================================================================-->
   <program name ="BranchShaderNormal+" newglrequired ="true">
@@ -305,6 +307,7 @@
     <uniform name="rotation" type="float_vec4"></uniform>
     <uniform name="treepos" type="float_vec3"></uniform>
     <uniform name="diffuseScale" type="float"></uniform>
+    <uniform name="alphatest" type="float"></uniform>
   </program>
   <!--=================================================================-->
   <program name ="FrondShader+" newglrequired ="true">
@@ -331,6 +334,7 @@
     <uniform name="rotation" type="float_vec4"></uniform>
     <uniform name="treepos" type="float_vec3"></uniform>
     <uniform name="diffuse" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="alphatest" type="float"></uniform>
   </program>
   <!--=================================================================-->
   <program name ="LeafShader">
@@ -345,6 +349,7 @@
     <uniform name="treepos" type="float_vec3"></uniform>
     <uniform name="cameraangle" type="float_vec2"></uniform>
     <uniform name="diffuseScale" type="float"></uniform>
+    <uniform name="alphatest" type="float"></uniform>
   </program>
   <!--=================================================================-->
   <program name ="LeafShader+" newglrequired ="true">
@@ -374,6 +379,7 @@
     <uniform name="rotation" type="float_vec4"></uniform>
     <uniform name="treepos" type="float_vec3"></uniform>
     <uniform name="cameraangle" type="float_vec2"></uniform>
+    <uniform name="alphatest" type="float"></uniform>
   </program>
   <!--=================================================================-->
   <program name ="LeafDepth+" newglrequired ="true">
@@ -403,6 +409,7 @@
     <uniform name="treepos" type="float_vec3"></uniform>
     <uniform name="cameraangle" type="float_vec2"></uniform>
     <uniform name="diffuseScale" type="float"></uniform>
+    <uniform name="alphatest" type="float"></uniform>
   </program>
   <!--=================================================================-->
   <program name ="LeafShaderNormal+" newglrequired ="true">
@@ -440,6 +447,7 @@
     <uniform name="scales" type="float_vec4" numelements="4" onetimeapply="true"></uniform>
     <uniform name="unitSquare" type="float_vec4" numelements="4" onetimeapply="true"></uniform>
     <uniform name="billboardMap" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="alphatest" type="float"></uniform>
   </program>
   <!--=================================================================-->
   <program name ="BillboardShader+" newglrequired ="true">
@@ -481,6 +489,7 @@
     <uniform name="binormal" type="float_vec3"></uniform>
     <uniform name="billboardMap" type="sampler2d" unit="0" onetimeapply="true"></uniform>
     <uniform name="billboardNormal" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="alphatest" type="float"></uniform>
   </program>
   <!--=================================================================-->
   <program name ="BillboardShaderNormal+" newglrequired ="true">
@@ -516,6 +525,7 @@
     </shaders>
     <uniform name="lightadjust" type="float"></uniform>
     <uniform name="billboardMap" type="sampler2d" unit="0" onetimeapply="true"></uniform>
+    <uniform name="alphatest" type="float"></uniform>
   </program>
   <!--=================================================================-->
   <program name ="HorizShaderNormal">
@@ -528,6 +538,7 @@
     <uniform name="lightadjust" type="float"></uniform>
     <uniform name="billboardMap" type="sampler2d" unit="0" onetimeapply="true"></uniform>
     <uniform name="billboardNormal" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="alphatest" type="float"></uniform>
   </program>
   <!--=================================================================-->
   <program name ="shadow">
