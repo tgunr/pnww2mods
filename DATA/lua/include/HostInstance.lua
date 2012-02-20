@@ -288,10 +288,10 @@ function HostInstance:RecvSetPlayerState(callsign, valueName, value)
 	
 	-- add better logging on success
 	if player ~= nil then
-		if valueName == "weapon" then player:weaponSpec(tonumber(value)) end
+		if valueName == "weapon" then player:weaponSpec(tonumber(value))
 		elseif valueName == "team" then player:team(tonumber(value))
 		elseif valueName == "state" then player:state(tonumber(value))
-		elseif valueName == "rank" then player:state(tonumber(value))
+		elseif valueName == "rank" then player:state(tonumber(value)) end
 	end
 	
 	return InstanceResult:success(self:GetType() .. " Instance:RecvSetPlayerState", callsign .. "/" .. valueName .. "/" .. value, self:GetLevel('I'))
@@ -325,10 +325,10 @@ function HostInstance:RecvAddPlayerState(callsign, valueName, value)
 	
 	-- add better logging on success
 	if player ~= nil then
-		elseif valueName == "objpoints" then player:addPoints(tonumber(value), 0)
+		if valueName == "objpoints" then player:addPoints(tonumber(value), 0)
 		elseif valueName == "bonpoints" then player:addPoints(0, tonumber(value))
 		elseif valueName == "death" then player:addDeath(tonumber(value))
-		elseif valueName == "kill" then player:addKill(tonumber(value))
+		elseif valueName == "kill" then player:addKill(tonumber(value)) end
 	end
 	
 	return InstanceResult:success(self:GetType() .. " Instance:RecvAddPlayerState", callsign .. "/" .. valueName .. "/" .. value, self:GetLevel('I'))
