@@ -327,8 +327,8 @@ function HostInstance:RecvAddPlayerState(callsign, valueName, value)
 	if player ~= nil then
 		if valueName == "objpoints" then player:addPoints(tonumber(value), 0)
 		elseif valueName == "bonpoints" then player:addPoints(0, tonumber(value))
-		elseif valueName == "death" then player:addDeath(tonumber(value))
-		elseif valueName == "kill" then player:addKill(tonumber(value)) end
+		elseif valueName == "death" then player:addDeath()
+		elseif valueName == "kill" then player:addKill() end
 	end
 	
 	return InstanceResult:success(self:GetType() .. " Instance:RecvAddPlayerState", callsign .. "/" .. valueName .. "/" .. value, self:GetLevel('I'))
