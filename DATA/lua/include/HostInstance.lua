@@ -284,7 +284,7 @@ function HostInstance:RecvSetPlayerState(callsign, valueName, value)
 	
 	-- Instancing.report('D', 'HostInstance:RecvSetPlayerState', callsign .. "/" .. valueName .. "/" .. value)
 	
-	local player = inst.Lookup(self.id, callsign)
+	local player = inst.PlayerState:Lookup(self.id, callsign)
 	
 	-- add better logging on success
 	if player ~= nil then
@@ -321,7 +321,7 @@ function HostInstance:RecvAddPlayerState(callsign, valueName, value)
 	
 	-- Instancing.report('D', 'HostInstance:RecvAddPlayerState', callsign .. "/" .. valueName .. "/" .. value)
 	
-	local player = inst.Lookup(self.id, callsign)
+	local player = inst.PlayerState:Lookup(self.id, callsign)
 	
 	-- add better logging on success
 	if player ~= nil then
