@@ -15,7 +15,7 @@ state.config['kills'] 			= 30;
 
 state.nextintelcheck			= 0;
 state.intelteam				= 0;
-state.intelbonus				= .1; -- per second
+state.intelbonus				= 1; -- per second
 
 -- killing is the objective, no bonuses for it
 state.killbonus					= 0;

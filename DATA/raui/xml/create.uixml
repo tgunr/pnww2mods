@@ -28,7 +28,7 @@
 		<!--
 		 //
 		 
-		var client 				= game.player.client;
+		var client 				= game.client;
 		var scenarios		= loadRoot();
 		var mainPanel		= findview("main-panel");
 		var createBtn		= findview("create-button");
@@ -85,9 +85,9 @@
 			
 			var data = new Object();
 			
-			data["scenario"] = scenario;
-			data["category"] = catID;
-			data["map"] = mapID;
+			data["content"] 		= scenario;
+			data["category"] 	= catID;
+			data["map"] 			= mapID;
 			
 			createList.mgr.control.addRow(data, rb.build());
 			
@@ -111,7 +111,7 @@
 			
 			cprint("Select Scenario had good data!");
 			
-			scenarioInfo.mgr.SetScenario(data.scenario);
+			scenarioInfo.mgr.SetScenario(data.content);
 			
 			createBtn.enabled = true;
 			
@@ -137,14 +137,14 @@
 				return;
 			}
 			
-			if(client.instance.result != 1)
+			if(client.instance.category == data.category && client.instance.type == data.map)
 			{
-				showOk("Instance join failed: " + client.instance.result);
-				return;
+				cprint("Starting scenario!" + data.content.title);
+				startScenario(data, true);
 			}
-			else if(client.instance.category == data.category || client.instance.type == data.map)
+			else
 			{
-				startScenario(data.scenario, true);
+				cprint("Failed to start scenario!");
 			}
 		}
 		

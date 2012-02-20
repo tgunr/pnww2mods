@@ -338,7 +338,7 @@
 		var indent 	= tree.indent * node.level; 
 		var isize	= 10;
 		
-		consoleprint("Tree Control width is " + width + "\n");
+		//consoleprint("Tree Control width is " + width + "\n");
 		
 		var rb = new ViewBuilder(tree.list, node.id, 0, 0, width, 16);
 		var vb = null;
@@ -373,7 +373,7 @@
 		
 		var out = rb.build();
 		
-		consoleprint("View Builder output is:\n\n" + out);
+		//consoleprint("View Builder output is:\n\n" + out);
 		
 		return out;
 	}

@@ -92,10 +92,10 @@
 			game.stopscenario();
 			
 			var root = loadRoot();
-			var client = game.player.client;
+			var client = game.client;
 			
-			if(game.online && client.instance.category != root.category)
-				client.joininstance(root.category, 0, 0, 0);
+			if(game.online && !client.instance.lobby)
+				game.joininstance(root.category, 0, 0, 0);
 			
 			// load our lobby windows 
 			window.mgr.Navigate("lobby");
@@ -109,11 +109,11 @@
 			if(password == null)
 				password = "";
 			
-			var scenario = loadScenario(instance.category, instance.type);
+			var description = instance.description;
 			
 			// start the scenario
-			if(!game.online || client.joininstance(instance.category, instance.type, instance.owner, instance.id, password))
-				return startScenario(scenario, created);
+			if(!game.online || game.joininstance(description.category, description.type, description.owner, description.id, password))
+				return startScenario(instance.scenario, created);
 			
 			return false;
 		}
@@ -127,7 +127,7 @@
 			if(mapPack != null && !scenarioPermission(mapPack.permission))
 				return scenarioError("notpermitted");
 			
-			if(!game.online || game.player.client.createinstance(category, map, password))
+			if(!game.online || game.createinstance(category, map, password))
 				return true;
 			
 			return scenarioError("creationfailed");
@@ -139,11 +139,10 @@
 				return false;
 			
 			// start the scenario
-			if(game.startscenario(scenario.path, created) && selectTeam())
+			if(game.startscenario(scenario.content.path, created) && selectTeam())
 			{
 				// move to the scenario screen
 				window.mgr.DoWeapon();
-				
 				return true;
 			}
 			
@@ -152,21 +151,14 @@
 		
 		function selectTeam(team)
 		{
-			var client			= game.player.client;
-			var scenario		= client.scenario;
-			var instance		= client.instance;
-			var population 	= new ScenarioPopulation(scenario);
-			
-			if(scenario == null || instance == null)
+			if(game.scenario == null)
 			{
-				if(scenario == null)
-					consoleprint("Cant select a team with a null scenario!");
-				
-				if(instance == null)
-					consoleprint("Cant select a team with a null instance!");
-					
+				consoleprint("Cant select a team with a null scenario!");
 				return false;
 			}
+			
+			var scenario		= game.scenario;
+			var population 	= new ScenarioPopulation(scenario.content);
 			
 			// find the best team
 			if(team == null)
@@ -175,14 +167,14 @@
 			//var maxplayers	= population.maxPlayers();
 			var team1ratio 	= population.teamRatio(1);
 			var team2ratio 	= population.teamRatio(2);
-			var team1count 	= instance.team1;
-			var team2count 	= instance.team2;
+			var team1count 	= 0; //scenario.instance.team1;
+			var team2count 	= 0; //scenario.instance.team2;
 			var totalplayers	= team1count + team2count; 
 			
 			if(team == 0)
 			{
 				if(totalplayers == 0)
-					return selectTeam(1); // game.player.client.persona.country.side
+					return selectTeam(2);
 				
 				// find the team with the smallest imbalance
 				var pop1Ratio = team1count / totalplayers;
@@ -249,15 +241,15 @@
 			}
 			
 			// my new team
-			if(team != game.player.team)
-				game.player.team = team;
+			if(team != scenario.player.team)
+				game.setplayerdata("team", team);
 			
 			return true;
 		}
 		
 		function switchTeams()
 		{
-			return selectTeam((game.player.team == 1) ? 2 : 1);
+			return selectTeam((game.scenario.player.team == 1) ? 2 : 1);
 		}
 		
 		// potentially expensive call, don't use it to often (calls across network and blocks)
@@ -267,11 +259,11 @@
 				return null;
 				
 			if(instance == null)
-				instance = game.player.client.instance;
+				instance = game.scenario.instance;
 			
-			if(game.player.client.listinstances(instance.category, instance.type, instance.owner))
+			if(game.listinstances(instance.category, instance.type, instance.owner))
 			{
-				var instances = client.instances;
+				var instances = game.client.instances;
 				
 				for(var i = 0; i < instances.length; i++)
 				{
@@ -285,23 +277,22 @@
 			return null;
 		}
 		
-		function canJoinInstance(scenario, instance)
+		function canJoinInstance(instance)
 		{
 			if(!balanceChecking)
 				return true;
 			
-			if(scenario == null || instance == null)
+			if(instance == null)
 				return scenarioError("badscenario");
 			
 			var category = loadCategory(instance.category);
 			
 			if(category != null && !scenarioPermission(category.permission))
 				return scenarioError("notpermitted");
-				
-			if(scenario.population == null)
-				scenario.population = new ScenarioPopulation(scenario);
 			
-			var maxplayers	= scenario.population.maxPlayers();
+			var population = new ScenarioPopulation(instance.scenario.content);
+			
+			var maxplayers	= population.maxPlayers();
 			var team1count	= instance.team1;
 			var team2count	= instance.team2;
 			
@@ -313,6 +304,7 @@
 		
 		function canScenarioSpawn(scenario)
 		{
+			/*
 			if(!balanceChecking)
 				return true;
 			
@@ -330,6 +322,7 @@
 			
 			if(team1ready < team1min || team2ready < team2min)
 				return false; //scenarioError("moreplayers");
+			*/
 			
 			return true;
 		}

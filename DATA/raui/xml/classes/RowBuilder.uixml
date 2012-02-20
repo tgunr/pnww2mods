@@ -127,7 +127,7 @@
 					var viewW = column.size;
 					var viewH = column.size;
 					
-					consoleprint("Adding column with: " + viewX + "," + viewY + " " + viewW + "," + viewH);
+					//consoleprint("Adding column with: " + viewX + "," + viewY + " " + viewW + "," + viewH);
 					
 					cb = new ViewBuilder(this, "column" + i, viewX, viewY, viewW, viewH);
 					cb.addAttribute("acceptmouseclick", "false");

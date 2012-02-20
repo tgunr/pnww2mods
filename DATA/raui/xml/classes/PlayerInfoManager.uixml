@@ -19,8 +19,8 @@
 		
 		self.SetHeader = function()
 		{
-			var instance = game.player.client.instance;
-			var scenario = game.player.client.scenario;
+			var instance = game.client.instance;
+			var scenario = game.scenario;
 			
 			if(instance != null)
 			{			
@@ -50,7 +50,7 @@
 			if(this.player != null)
 			{
 				this.SetPlayerInfo("player-callsign", "callsign");
-				this.SetPlayerInfo("player-rank", "rank " + this.player.rank);
+				this.SetViewInfo("player-rank", "rank " + this.player.rank);
 				this.SetPlayerInfo("player-kills", "kills");
 				this.SetPlayerInfo("player-killstreak", "killstreak");
 				this.SetPlayerInfo("player-deaths", "deaths");
@@ -91,11 +91,6 @@
 		self.SetPlayerInfo = function(vid, state)
 		{
 			this.SetViewInfo(vid, this.player[state]);
-		}
-		
-		self.SetStateInfo = function(vid, sid)
-		{
-			this.SetViewInfo(vid, game.getplayerdata(sid));
 		}
 		
 		self.OnUpdate = function()

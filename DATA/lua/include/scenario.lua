@@ -103,7 +103,7 @@ scenario.AddPlayerPoints = function(points)
 end
 
 scenario.SetPlayerScore = function(points)
-	scenario.game.SetPlayerState("score", points);
+	--scenario.game.SetPlayerState("score", points);
 end
 
 -- ok
@@ -238,10 +238,10 @@ scenario.StartNetwork = function()
 		end
 		
 		-- get our initial state
-		scenario.instance:RegisterClient(state.config.callsign);
+		-- scenario.instance:RegisterClient(state.config.callsign);
 		
 		-- set us to not ready
-		scenario.game.SetPlayerState("ready", "false")
+		-- scenario.game.SetPlayerState("ready", "false")
 	else
 		ui.ChatPrint("Unable to init scenario network state: no instance set");
 	end
@@ -389,33 +389,27 @@ end
 
 -- ok
 scenario.OnDie = function(handler)
-	scenario.game.AddPlayerState("deaths", 1);
-	
 	if(state.killstreakbonus > 0) then
 		local player = scenario.GetPlayer();
-		if(player ~= nil) then
-			local killstreak =  player:GetStateNumber("killstreak");
-			local score = (killstreak * state.killstreakbonus);
-			if(score > 0) then
-				scenario.game.AddPlayerBonus(score);
+		if(player ~= nil and player:streak() >= 2) then
+			local streak =  player:streak();
+			local points = (streak * state.killstreakbonus);
+			if(points > 0) then
+				scenario.game.AddPlayerBonus(points);
 			end
 		end
 	end
-	
-	scenario.game.SetPlayerState("killstreak", 0);
+
+	scenario.game.AddPlayerState("death", 1);
 	
 	return 1;
 end
 
 scenario.OnKill = function(handler, callsign)
-	scenario.game.AddPlayerState("kills", 1);
-	scenario.game.AddPlayerState("killstreak", 1);
+	scenario.game.AddPlayerState("kill", 1);
 	
 	if(state.killbonus > 0) then
-		local player = scenario.GetPlayer();
-		if(player ~= nil) then
-			scenario.game.AddPlayerBonus(state.killbonus);
-		end
+		scenario.game.AddPlayerBonus(state.killbonus);
 	end
 	
 	return 1;
@@ -678,16 +672,6 @@ end
 
 -- ok
 scenario.OnPlayer = function(callsign, name, value)
-	if(callsign == state.config.callsign) then
-		if(name == "bonpoints" or name == "objpoints") then
-			local player = scenario.GetPlayer();
-			if(player ~= nil) then
-				local bonus 		= player:GetStateNumber("bonpoints");
-				local objective = player:GetStateNumber("objpoints");
-				scenario.game.SetPlayerScore(bonus + objective);
-			end
-		end
-	end
 	scenario.manager:UpdatePlayer(callsign, name, value);
 	return 1;
 end
@@ -708,10 +692,7 @@ scenario.AddPlayerState = function(name, value)
 end
 
 scenario.GetPlayer = function()
-	if(scenario.instance ~= nil) then
-		return scenario.instance:GetPlayer(state.config.callsign);
-	end
-	return nil;
+	return scenario.manager:GetPlayer();
 end
 
 -- ok
@@ -893,7 +874,7 @@ end
 scenario.GetTeam = function()
 	local player = scenario.GetPlayer();
 	if(player ~= nil) then
-		return player:GetStateNumber("team");
+		return player:team();
 	end
 	return 0;
 end

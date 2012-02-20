@@ -8,10 +8,11 @@
 	{
 		var self = new ViewManager(s);
 				
-		self.SetScenario = function(content, instance)
+		self.SetScenario = function(content)
 		{
 			if(content != null)
 			{
+				consoleprint("Setting scenario info to " + content.title);
 				var v = this.view.findview("scenario-name");
 				if(v != null) v.label = content.name;
 				
@@ -26,6 +27,7 @@
 			}
 			else
 			{
+				consoleprint("Setting scenario info is null");
 				v = this.view.findview("scenario-image");
 				if(v != null) v.src = "scenarios/terrain/riverrun/map.bmp";
 			}

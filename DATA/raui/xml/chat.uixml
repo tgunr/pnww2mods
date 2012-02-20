@@ -38,7 +38,7 @@
 		var lastClick			= 0;
 		
 		var target				= "";
-		var client 				= game.player.client;
+		var client 				= game.client;
 		
 		var tunervis 			= 0;
 		var msgtext 			= findview("chatmsg");
@@ -107,7 +107,7 @@
 		function sendchatmessage()
 		{
 			//consoleprint("Sending chat message!!!\n");
-			client.sendchatmessage(msgtext.text);
+			game.sendchatmessage(msgtext.text);
 			saymode();
 		}
 		

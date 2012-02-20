@@ -33,20 +33,26 @@
 		{
 			game.consoleclear();
 			
-			cprint("Init win was called!");
+			cprint("Init win was called for offline!");
 			
+			//cprint("sendmessage is " + game.sendchatmessage);
+
+			game.sendchatmessage("What the heck!");
+				
 			// set some callbacks
 			weaponTree.mgr.selectCallback = selectWeapon;
 			
 			initGlobals();
 			initWeapons();
 			selectWeapon(false);
+			
+			cprint("OnShow Done!");
 		}
 		
 		function initWeapons()
 		{
 			var hasstate		= weaponTree.control.hasState(); 
-			var spawnables 	= game.spawnablevehicles;
+			var spawnables 	= game.spawnlist;
 			var countries 		= new Array('US','UK','FR','DE');
 			
 			for(var c = 0; c < countries.length; c++)

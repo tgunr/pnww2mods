@@ -133,9 +133,9 @@
 		
 		self.CreatePref = function(name, type, defValue)
 		{
-			consoleprint("PrefScreen: new pref requested: " + name);
+			//consoleprint("PrefScreen: new pref requested: " + name);
 			this.prefs[name] = new Pref(name, type, defValue);
-			consoleprint("PrefScreen: new pref created: " + this.prefs[name].name);
+			//consoleprint("PrefScreen: new pref created: " + this.prefs[name].name);
 			return this.prefs[name];
 		} 
 		

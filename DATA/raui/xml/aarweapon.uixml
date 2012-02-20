@@ -30,7 +30,8 @@
 	<script>
 		<!--
 		
-		var client 						= game.player.client;
+		var client 						= game.client;
+		var scenario					= game.scenario;
 		
 		var weaponList 			= findview("weapon-list");
 		var weaponInfo			= findview("weapon-info");
@@ -38,13 +39,13 @@
 		var teamHeader			= findview("team-header");
 		var teamColor				= findview("team-color");
 		var weapTimer				= new CycleTimer(500);
-		var updateWeapons 	= true;
+		var updateList 			= true;
 		
-		game.onscenarioplayers = playersUpdated;
+		game.onplayerupdate = OnPlayersUpdated;
 		
 		function OnShow(win)
 		{
-			weaponInfo.mgr.SetWeapon(game.player.vehicle);
+			weaponInfo.mgr.SetWeapon(scenario.player.weapon);
 			
 			// set some callbacks
 			weaponList.mgr.selectCallback = selectWeapon;
@@ -65,56 +66,41 @@
 		
 		function initWeapons()
 		{
-			var spawnables 	= game.spawnablevehicles;
-			var counters			= game.scenariospawns;
+			var spawnables = scenario.spawnables;
 			
 			// now update our visible list
 			weaponList.mgr.control.clearRows(false);
 			
 			for(var i = 0; i < spawnables.length; i++)
 			{
-				var weapon = new VehicleClass(spawnables[i]);
+				var spawnable = spawnables[i];
+				var weapon = spawnable.weapon;
 				
-				if(counters.length == 0)
-				{
-					weapon.capacity 			= 100;
-					weapon.current 			= 0;
-					weapon.minimumrank 	= 1;
-					weapon.spawnable 	= "spawnable";
-				}
-				else
-				{
-					weapon.capacity 			= counters[i].capacity;
-					weapon.current 			= counters[i].current;
-					weapon.minimumrank 	= counters[i].minimumrank;
-					weapon.spawnable 	= counters[i].spawnable;
-				}
-				
-				var id = "row." + weapon.type.weapkey;
+				var id = "row." + weapon.weapkey;
 				weaponList.mgr.StartRow(id, 0, 0, 0, 16);
 				
 				// determine country icon
-				var image = scenarioFlag(weapon.type.country.id);
+				var image = scenarioFlag(weapon.country.id);
 				
 				weaponList.mgr.AddRowIcon("image", image, .03, 12, 2);
-				weaponList.mgr.AddRowColumn(weapon.type.description, .37);
-				weaponList.mgr.AddRowColumn("common.vehicles.classes." +  weapon.type.vclassid, .3);
+				weaponList.mgr.AddRowColumn(weapon.description, .37);
+				weaponList.mgr.AddRowColumn("common.vehicles.classes." +  weapon.vclassid, .3);
 
-				if(weapon.capacity == -1)
-					weaponList.mgr.AddRowColumn(weapon.current, .15, "center");
-				else if(weapon.current < weapon.capacity)
-					weaponList.mgr.AddRowColumn(weapon.current, .15, "center");
+				if(spawnable.capacity == -1)
+					weaponList.mgr.AddRowColumn(spawnable.current, .15, "center");
+				else if(spawnable.current < spawnable.capacity)
+					weaponList.mgr.AddRowColumn(spawnable.current, .15, "center");
 				else
 					weaponList.mgr.AddRowColumn("max", .15, "center");
 				
-				if(weapon.capacity == -1)
+				if(spawnable.capacity == -1)
 					weaponList.mgr.AddRowColumn("unlimited", .15, "center");
 				else
-					weaponList.mgr.AddRowColumn(weapon.capacity, .15, "center");				
+					weaponList.mgr.AddRowColumn(spawnable.capacity, .15, "center");				
 				
-				weaponList.mgr.EndRow(weapon);
+				weaponList.mgr.EndRow(spawnable);
 				
-				if(game.player.vehicle.weapkey == weapon.type.weapkey)
+				if(scenario.player.weapon.weapkey == weapon.weapkey)
 					weaponList.control.selectByID(id);
 			}
 			
@@ -124,9 +110,9 @@
 		
 		function OnUpdate()
 		{
-			var team = game.player.team;
+			var team = scenario.player.team;
 			
-			if(team > 0 && updateWeapons && weapTimer.run())
+			if(team > 0 && updateList && weapTimer.run())
 			{
 				var x = teamHeader.x;
 				var color = "#00000000";
@@ -149,45 +135,42 @@
 				teamColor.setstyleproperty("background-color", color);
 				
 				initWeapons();
-				updateWeapons = false;
+				updateList = false;
 			}
 		}
 		
 		function selectWeapon(action)
 		{
-			var weapon = weaponList.mgr.control.selectedData();
+			var spawnable = weaponList.mgr.control.selectedData();
 			
 			weaponInfo.mgr.SetWeapon();
 			
-			if(weapon != null)
+			if(spawnable != null)
 			{
 				// update our weapon info
-				weaponInfo.mgr.SetWeapon(weapon.type);
+				weaponInfo.mgr.SetWeapon(spawnable.weapon);
 				
 				// this call
 				if(action)
 				{
 					// this call
-					if(weapon.spawnable == "spawnable")
+					if(spawnable.status == "spawnable")
 					{
-						if(game.globals != null)
-							game.globals.scenariovehicle = weapon.type.index;
-						
-						game.setplayerdata("weapon", weapon.type.weapkey);
+						game.setplayerdata("weapon", spawnable.weapon.weapkey);
 						game.setplayerdata("ready", "true");
 						window.mgr.Close(true, true);
 					}
 					else
 					{
-						showOk(weapon.spawnable);
+						showOk(spawnable.status);
 					}
 				}
 			}
 		}
 		
-		function playersUpdated()
+		function OnPlayersUpdated()
 		{
-			updateWeapons = true;
+			updateList = true;
 		}
 		
 		-->

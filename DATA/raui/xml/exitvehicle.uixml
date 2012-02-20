@@ -5,7 +5,7 @@
 		<!--
 		
 		var request	= (new Date()).getTime(); 
-		var client 	= game.player.client;
+		var client 	= game.client;
 		var popup 	= showPopup("despawn", "QUICK WEAPON SELECT", doDespawn);
 		
 		game.enableimapinput(false);

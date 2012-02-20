@@ -41,7 +41,7 @@
 		<!--
 		 //
 		 
-		var client 				= game.player.client;
+		var client 				= game.client;
 		var createBtn		= findview("create-button");
 		var joinBtn			= findview("join-button");
 		var updateTimer	= new CycleTimer(5000);
@@ -53,20 +53,22 @@
 		var testRows		= new Array();
 		var mapCount		= new Object();
 		
-		var wantedScenario = null;
+		var wantedInstance = null;
 		
 		// when our instance list is updated
 		game.oninstancelist = initInstances;
 		
 		function OnShow(win)
 		{
+			/*
 			if(game.online)
 			{
-				var motd = client.requestmotd(0);
+				var motd = game.requestmotd(0);
 			
 				if(motd != null)
 					findview("motd").text = motd.message;
 			}
+			*/
 			
 			// make sure
 			game.stopscenario();
@@ -84,7 +86,7 @@
 			// call out to the host to get our list of instances
 			// join our lobby instance
 			if(game.online)
-				client.selectinstance(root.category, 0);
+				game.selectinstance(root.category, 0);
 			
 			//createTestRows();
 			initInstances();
@@ -120,21 +122,7 @@
 			
 			// now for each category, add our instances
 			for(var i = 0; i < instances.length; i++)
-			{
-				var instance = instances[i];
-				if(instance == null) continue;
-				
-				var content = loadScenario(instance.description.category, instance.description.type);
-				if(content == null) continue;
-				
-				var scenario = new Object();
-				
-				scenario.id				= instance.description.id;
-				scenario.content 		= content;
-				scenario.instance 	= instance;
-				
-				running.push(scenario);
-			}
+				running.push(instances[i]);
 			
 			// now sort our running instances
 			// running = running.sort(sortScenarios);
@@ -144,9 +132,8 @@
 			
 			for(var i = 0; i < running.length; i++)
 			{
-				var scenario 	= running[i];
-				var content 		= scenario.content;
-				var instance 	= scenario.instance;
+				var instance 	= running[i];
+				var content		= instance.scenario.content;
 				var id				= instance.description.id;
 				var players		= instance.axis + instance.allies;
 				
@@ -179,9 +166,9 @@
 				instanceList.mgr.AddRowColumn(players, .1, "center");
 				instanceList.mgr.AddRowIcon("chaticon", "squad", .1, 12, .5);
 				
-				addToMapCount(instance.description.category, instance.description.type, content.title);
+				addToMapCount(instance);
 				
-				instanceList.mgr.EndRow(scenario);
+				instanceList.mgr.EndRow(instance);
 			}
 				
 			addTestRows();
@@ -196,6 +183,7 @@
 		
 		function createTestRows()
 		{
+			/*
 			var catCount = root.links.length;
 			
 			for(var t = 0; t < 100; t++)
@@ -235,6 +223,7 @@
 				
 				testRows.push(newTest);
 			}
+			*/
 		}
 		
 		function addTestRows()
@@ -280,30 +269,30 @@
 			
 			joinBtn.enabled = false;
 			
-			wantedScenario = instanceList.mgr.control.selectedData();
-			if(scenario == null) return;
+			wantedInstance = instanceList.mgr.control.selectedData();
+			if(wantedInstance == null) return;
 			
 			joinBtn.enabled = true;
 			
 			// update our info
-			scenarioInfo.mgr.SetScenario(wantedScenario.content);
+			scenarioInfo.mgr.SetScenario(wantedInstance.scenario);
 			
 			if(action)
 			{
-				if(!canJoinInstance(wantedScenario.content, wantedScenario.instance))
+				if(!canJoinInstance(wantedInstance))
 				{
 					showOk(lastScenarioError);
 					return;
 				}
 				
-				if((wantedScenario.instance != null && wantedScenario.instance.haspassword) || wantedScenario.haspassword)
+				if(wantedInstance.haspassword)
 				{
 					showPopup("password", "ENTER PASSWORD TO JOIN:", checkPassword);
 				}
-				else if(!joinInstance(wantedScenario.instance.description, false))
+				else if(!joinInstance(wantedInstance.description, false))
 				{
 					showOk("Failed to join instance!");
-					//joinLobby();
+					joinLobby();
 				}
 			}
 		}
@@ -317,10 +306,10 @@
 				
 				consoleprint("Entered password is " + password);
 				
-				if(!joinInstance(wantedScenario.instance.description, false, password))
+				if(!joinInstance(wantedInstance.description, false, password))
 				{
 					showOk("Failed to join instance!");
-					//joinLobby();
+					joinLobby();
 				}
 			}
 			
@@ -331,7 +320,7 @@
 		{
 			// grab our list of instances
 			if(updateTimer.run())
-				client.listinstances(0, 0, "");
+				game.listinstances(0, 0, "");
 		}
 		
 		function scoreSort(a, b)
@@ -373,18 +362,18 @@
 			popularList.mgr.control.postInit();
 		}
 		
-		function addToMapCount(cid, mid, title)
+		function addToMapCount(instance)
 		{
-			var id = cid + "." + mid;
+			var id = instance.description.category + "." + instance.description.type;
 			
 			if(mapCount[id] == null)
 			{
 				var newCount = new Object();
 				
-				newCount["cid"] = cid;
-				newCount["mid"] = mid;
+				newCount["cid"] = instance.description.category;
+				newCount["mid"] = instance.description.type;
 				newCount["score"] = 0;
-				newCount["title"] = title;
+				newCount["title"] = instance.scenario.content.title;
 				mapCount[id] = newCount;
 			}
 			
