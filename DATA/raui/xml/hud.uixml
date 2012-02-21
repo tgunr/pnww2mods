@@ -62,6 +62,8 @@
 		var neutralcolor		= game.settings.missioncolor;
 		var currentcolor		= neutralcolor;
 		
+		game.onding			= OnDing;
+		
 		function initHud(hud)
 		{
 			if(hudInited)
@@ -250,6 +252,15 @@
 			}
 			
 			killList.postInit();
+		}
+		
+		function OnDing()
+		{
+			// we have a new ding
+			var ui 		= game.load("misc/ding");
+			var ding 	= game.dings[game.dings.length - 1];
+			
+			ui.mgr.SetDing(ding);
 		}
 		
 		-->

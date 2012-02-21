@@ -1,0 +1,37 @@
+<script>
+
+	<include file="classes/ViewManager.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+	
+	<!--
+	
+	function DingManager(s)
+	{
+		var self = new ViewManager(s);
+		
+		self.timer = new CycleTimer(15000); 
+		
+		self.SetDing = function(ding)
+		{
+			if(ding == null)
+				return;
+			
+			this.view.findview("ding-title").text = ding.title;
+			this.view.findview("ding-description").text = ding.description;
+			
+			game.playsound("sounds/buzzer.wav", 1, 1);
+		}
+		
+		self.OnUpdate = function()
+		{
+			//if(this.timer.run())
+			//	this.view.close();
+		}
+		
+		self.view.addevent("onupdate", "this.mgr.OnUpdate()");
+		
+		return self;
+	}
+	
+	-->
+</script>
