@@ -176,6 +176,11 @@ function HostInstance:RecvSetState(valueName, value)
 		return result
 	end
 	
+	if valueName == "victory" and tonumber(value) > 0 then
+		--inst.CASState(self.id, inst.GetState(self.id), inst.State.Closed)
+		self:SetState("nextmap", inst.SpawnClone(self.id))
+	end
+	
 	-- relay the change to other clients
 	return self:SetState(valueName, value)
 end

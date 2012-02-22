@@ -62,6 +62,9 @@
 		var neutralcolor		= game.settings.missioncolor;
 		var currentcolor		= neutralcolor;
 		
+		var dingTimer 			= new CycleTimer(1000);
+		var newDings			= new Array();
+		
 		game.onding			= OnDing;
 		
 		function initHud(hud)
@@ -78,7 +81,8 @@
 			
 			SetTimer(gameTime);
 			
-			initKillList();
+			//initKillList();
+			views["kills"].visible = false;
 		}
 		
 		function setupHUD(mode)
@@ -122,6 +126,18 @@
 			
 			if(views["game-timer"].visible && gameTime >= 0 && gameCycleTimer.run())
 				SetTimer(gameTime - 1);
+				
+			if(dingTimer.run() && newDings.length > 0)
+			{
+				// we have a new ding
+				var ui = window.findview("ding");
+				
+				if(ui == null)
+				{
+					ui = game.load("misc/ding", window);
+					ui.mgr.SetDing(newDings.shift());
+				}
+			}
 		}
 		
 		function OnMessage(loc, color)
@@ -256,11 +272,8 @@
 		
 		function OnDing()
 		{
-			// we have a new ding
-			var ui 		= game.load("misc/ding");
-			var ding 	= game.dings[game.dings.length - 1];
-			
-			ui.mgr.SetDing(ding);
+			// queue our new ding
+			newDings.push(game.dings[game.dings.length - 1]);
 		}
 		
 		-->

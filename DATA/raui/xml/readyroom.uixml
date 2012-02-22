@@ -14,9 +14,9 @@
 		</view>
 	</sceninfov>
 	<navbar id="navbar">
-		<button id="forward" label="   CHANGE WEAPON" x="20" onclick="window.mgr.DoWeapon()" center="y"/>
-		<button id="back" label="FIGHT!   " rright="20" onclick="this.mgr.Click(DoFight)" center="y"/>
-				<caption label="RAPID ASSAULT- READY ROOM" width="250" height="20" center="true" style="class:bigtext;"/>
+		<button id="weapon-button" label="   CHANGE WEAPON" x="20" onclick="window.mgr.DoWeapon()" center="y" style="class: button.forward;"/>
+		<button id="fight-button" label="FIGHT!   " rright="20" onclick="this.mgr.Click(DoFight)" center="y" style="class: button.back;"/>
+		<caption label="RAPID ASSAULT- READY ROOM" width="250" height="20" center="true" style="class:bigtext;"/>
 	</navbar>
 	<script>
 		<!--
@@ -29,47 +29,57 @@
 		var fightBtn				= findview("fight-button");
 		var playerList 			= findview("players");
 		var scenarioInfo		= findview("scenario-info");
-		var updateList 		= true;
+		var updateList 			= true;
+		var winner 				= parseInt(game.getstate("victory", "0"));
 		
 		// player update callback
 		game.onplayerupdate = OnPlayersUpdated;
 		
 		function DoFight()
 		{
-			/*
-			if(game.scenariocomplete || scenario.instance == null)
+			if(winner != 0)
 			{
-				showOk("Bad scenario state!");
-				return;
-			}
-			*/
-			
-			/*
-			if(!canScenarioSpawn(scenario))
-			{
-				showOk("Waiting for more players to join!");
-				return;
-			}
-			*/
-			
-			var weapon = scenario.player.weapon;
-			
-			if(weapon != null)
-				game.spawn(weapon);
-			
-			/*
-			if(vehicle != null && vehicle.spawnable)
-			{
-				if(vehicle.spawnable == "spawnable")
-					game.spawn(vehicle.type);
-				else
-					showOk(vehicle.spawnable);
+				// this map is complete
+				if(!playNextMap())
+					joinLobby();
 			}
 			else
 			{
-				showOk("Vehicle not selected!");
+				/*
+				if(game.scenariocomplete || scenario.instance == null)
+				{
+					showOk("Bad scenario state!");
+					return;
+				}
+				*/
+				
+				/*
+				if(!canScenarioSpawn(scenario))
+				{
+					showOk("Waiting for more players to join!");
+					return;
+				}
+				*/
+				
+				var weapon = scenario.player.weapon;
+				
+				if(weapon != null)
+					game.spawn(weapon);
+				
+				/*
+				if(vehicle != null && vehicle.spawnable)
+				{
+					if(vehicle.spawnable == "spawnable")
+						game.spawn(vehicle.type);
+					else
+						showOk(vehicle.spawnable);
+				}
+				else
+				{
+					showOk("Vehicle not selected!");
+				}
+				*/
 			}
-			*/
 		}
 		
 		function OnShow(win)
@@ -79,6 +89,14 @@
 			
 			playerList.mgr.InitHeaders();
 			scenarioInfo.mgr.SetScenario(scenario.content);
+			
+			if(winner != 0)
+			{
+				window.mgr.SetEnabled("weapon-button", false);
+				
+				var button = window.findview("fight-button");
+				button.label = "NEXT MAP   ";
+			}
 		}
 		
 		function OnUpdate()

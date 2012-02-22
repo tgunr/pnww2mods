@@ -43,5 +43,10 @@
 			<caption id="player-score" width=".25" label="0"/>
 		</view>
 		
+		<view height="15" style="layout: h; class: litebg; vpad: 10;">
+			<caption width=".5" label="last achievement:"/>
+			<caption id="player-ding" width=".5" label="0" align="right"/>
+		</view>
+		
 	</view>
 </panel>

@@ -16,7 +16,7 @@
 		</panel>
 		<navbar id="navbar">
 			<button id="forward" label="   DESPAWN" x="20" onclick="window.mgr.Close(true)" center="y"/>
-			<button id="back" label="CHANGE WEAPON   " rright="20" onclick="window.mgr.DoWeapon()" center="y"/>
+			<button id="weapon-button" label="CHANGE WEAPON   " rright="20" onclick="window.mgr.DoWeapon()" center="y" style="class: button.back;"/>
 		</navbar>
 	</view>
 	<script>
@@ -35,6 +35,7 @@
 		{
 			playerList.mgr.InitHeaders();
 			playerList.mgr.selectCallback = selectPlayer;
+			OnResult();
 		}
 		
 		function OnUpdate()
@@ -60,6 +61,12 @@
 		function OnPlayersUpdated()
 		{
 			updateList = true;
+		}
+		
+		function OnResult()
+		{
+			// our scenario is complete
+			window.mgr.OnResult();
 		}
 		
 		-->

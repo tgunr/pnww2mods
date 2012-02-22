@@ -660,12 +660,9 @@ scenario.OnVictory = function(name, value)
 	local victory = tonumber(value);
 	
 	if(victory ~= 0 and state.victory == 0) then
-		state.victory = tonumber(value);
-		
+		state.victory = victory;
 		-- load our victory ui
 		scenario.game.SetResult();
-		
-		-- RunObject("victory"..value, 1);
 	end
 	return 1;
 end
@@ -748,12 +745,24 @@ end
 
 -- ok
 scenario.SetResult = function()
-	if(scenario.instance == nil) then return end
-	local result = ui.LoadView("scenarios/result");
-	if(result ~= nil) then
-		local v1 =  scenario.game.GetStateNumber("victory1");
-		local v2 =  scenario.game.GetStateNumber("victory2");
-		result:CallJS("SetResult", state.victory, v1, v2);
+	if(scenario.instance == nil) then
+		return;
+	end
+	
+	local aar = ui.FindView("aarweapon");
+	
+	if(aar ~= nil) then
+		aar:CallJS("OnResult");
+	else
+		aar = ui.FindView("aar");
+		
+		if(aar == nil) then
+			aar = ui.LoadView("aar");
+		end
+		
+		if(aar ~= nil) then
+			aar:CallJS("OnResult");
+		end
 	end
 end
 

@@ -78,7 +78,7 @@
 		self.DoPrefs = function()
 		{
 			soundPlayClick();
-			this.Navigate("prefs");
+			return this.Navigate("prefs");
 		}
 		
 		self.DoBack = function()
@@ -86,8 +86,10 @@
 			if(this.back != null)
 			{
 				this.PlayClick();
-				this.Navigate(this.back);
+				return this.Navigate(this.back);
 			}
+			
+			return null;
 		}
 		
 		self.SetOpener = function(callerWin)
@@ -102,6 +104,8 @@
 			
 			if(newWin != null)
 				newWin.mgr.SetOpener(this.view);
+			
+			return newWin;
 		}
 		
 		self.SetBack = function(b)

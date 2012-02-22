@@ -15,7 +15,7 @@
 			</panel>
 			
 			<panel label="RECENT ACHIEVEMENTS" align="center" height="100" style="class: litebg;">
-				<list id="achievements" pad="15" rtop="25" style="class: litebg;"/>
+				<listcontrol id="ding-list" pad="15" rtop="25" style="class: litebg;"/>
 			</panel>
 		</view>
 	</view>
@@ -48,6 +48,7 @@
 		var root				= loadRoot();
 		var running			= new Array();
 		var instanceList 	= findview("instance-list");
+		var dingList 			= findview("ding-list");
 		var popularList 	= findview("popular");
 		var scenarioInfo	= findview("scenario-info");
 		var testRows		= new Array();
@@ -77,6 +78,7 @@
 			window.mgr.SetVisible("lobby-button", false);
 			
 			initHeaders(instanceList);
+			initDings();
 			
 			scenarioInfo.mgr.SetScenario();
 			
@@ -179,6 +181,35 @@
 			instanceList.mgr.control.postInit(0);
 			
 			updatePopulars();
+		}
+		
+		function initDings()
+		{
+			// some temp vars
+			var dings = game.dings;
+			
+			// now update our visible list
+			dingList.mgr.control.clearRows(false);
+			
+			if(dings.length == 0)
+				return;
+			
+			// last to first
+			dings.reverse();
+			
+			var run = 3;
+			
+			if(dings.length < run)
+				run = dings.length;
+			
+			for(var i = 0; i < run; i++)
+			{
+				var ding = dings[i];
+				
+				dingList.mgr.StartRow("ding" + i, 0, 0, 0, 16);
+				dingList.mgr.AddRowColumn(ding.title, 1);
+				dingList.mgr.EndRow(ding);
+			}
 		}
 		
 		function createTestRows()

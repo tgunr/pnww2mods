@@ -9,6 +9,7 @@
 		var lastScenarioError = null;
 		var MAX_SIDE_PLAYERS = 64;
 		var balanceChecking = false;
+		var lastPassword = "";
 		
 		function loadRoot()
 		{
@@ -109,11 +110,13 @@
 			if(password == null)
 				password = "";
 			
+			lastPassword = password;
+			
 			var description = instance.description;
 			
 			// start the scenario
 			if(!game.online || game.joininstance(description.category, description.type, description.owner, description.id, password))
-				return startScenario(instance.scenario, created);
+				return startScenario(instance.scenario, created, 0);
 			
 			return false;
 		}
@@ -128,18 +131,21 @@
 				return scenarioError("notpermitted");
 			
 			if(!game.online || game.createinstance(category, map, password))
+			{
+				lastPassword = password;
 				return true;
+			}
 			
 			return scenarioError("creationfailed");
 		}
 		
-		function startScenario(scenario, created)
+		function startScenario(scenario, created, team)
 		{
 			if(scenario == null)
 				return false;
 			
 			// start the scenario
-			if(game.startscenario(scenario.content.path, created) && selectTeam())
+			if(game.startscenario(scenario.content.path, created) && selectTeam(team))
 			{
 				// move to the scenario screen
 				window.mgr.DoWeapon();
@@ -174,7 +180,12 @@
 			if(team == 0)
 			{
 				if(totalplayers == 0)
-					return selectTeam(2);
+				{
+					if(Math.random() < .5)
+						return selectTeam(1);
+					else
+						return selectTeam(2);
+				}
 				
 				// find the team with the smallest imbalance
 				var pop1Ratio = team1count / totalplayers;
@@ -354,6 +365,36 @@
 			}
 			
 			return "ui/textures/test/french_flag.bmp";
+		}
+		
+		function playNextMap()
+		{
+			var instance = game.client.instance;
+			
+			if(instance == null)
+				return false;
+			
+			var category 	= instance.category;
+			var type			= instance.type;
+			var owner		= 0;
+			var id 				= game.getstate("nextmap");
+			
+			if(id == null)
+				return false;
+			
+			var nextTeam = game.scenario.player.team;
+			
+			if(nextTeam == 1)
+				nextTeam = 2;
+			else
+				nextTeam = 1;
+			
+			game.stopscenario();
+			
+			if(game.joininstance(category, type, owner, id, lastPassword))
+				return startScenario(instance.scenario, false, nextTeam);
+			
+			return false;
 		}
 		
 	-->

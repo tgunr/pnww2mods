@@ -11,6 +11,7 @@
 		game.consoleprint("Creating AARScreen for " + self.view.id);
 		
 		self.BaseOnShow = self.OnShow;
+		self.ScenarioComplete = false;
 		
 		self.OnShow = function()
 		{
@@ -40,7 +41,10 @@
 			if(respawn == null)
 				respawn = false;
 			
-			game.despawn(respawn);
+			if(this.ScenarioComplete)
+				game.despawn(false);
+			else
+				game.despawn(respawn);
 		}
 		
 		self.DoWeapon = function(click)
@@ -48,7 +52,7 @@
 			if(click != false)
 				this.PlayClick();
 			
-			this.Navigate("aarweapon");
+			return this.Navigate("aarweapon");
 		}
 		
 		self.DoAAR = function(click)
@@ -56,7 +60,20 @@
 			if(click != false)
 				this.PlayClick();
 			
-			this.Navigate("aar");
+			return this.Navigate("aar");
+		}
+		
+		self.OnResult = function()
+		{
+			if(!this.ScenarioComplete)
+			{
+				// no changing weapons
+				this.SetEnabled("weapon-button", false);
+				this.ScenarioComplete = true;
+				
+				// let the players know who won!
+				game.load("misc/victory", this.view);
+			}
 		}
 		
 		return self;

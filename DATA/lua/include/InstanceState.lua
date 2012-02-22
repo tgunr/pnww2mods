@@ -67,9 +67,9 @@ function InstanceState:HandleState(valueName, value, oldValue)
 	if handler ~= nil and type(_G[handler]) == "function" then
 		local status, msg = pcall(_G[handler], valueName, value, oldValue)
 		if not status then
-			return InstanceResult:failure(self:GetType() .. " InstanceState:HandleState", printState(valueName, value) .. " not handled", self:GetLevel('D'))
+			return InstanceResult:failure(self:GetType() .. " InstanceState:HandleState", handler .. "(" .. printState(valueName, value) .. ") not handled", self:GetLevel('D'))
 		else
-			return InstanceResult:success(self:GetType() .. " InstanceState:HandleState", printState(valueName, value) .. " handled", nil, self:GetLevel('II'))
+			return InstanceResult:success(self:GetType() .. " InstanceState:HandleState", handler .. "(" .. printState(valueName, value) .. ") handled", nil, self:GetLevel('II'))
 		end
 	end
 	

@@ -173,6 +173,12 @@
 			updateList = true;
 		}
 		
+		function OnResult()
+		{
+			var aar = window.mgr.DoAAR();
+			if(aar != null) aar.OnResult();
+		}
+		
 		-->
 	</script>
 </view>

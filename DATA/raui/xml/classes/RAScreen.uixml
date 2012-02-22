@@ -24,7 +24,7 @@
 			if(click != false)
 				this.PlayClick();
 				
-			this.Navigate("create");
+			return this.Navigate("create");
 		}
 		
 		self.DoWeapon = function(click)
@@ -32,7 +32,7 @@
 			if(click != false)
 				this.PlayClick();
 			
-			this.Navigate("weapon");
+			return this.Navigate("weapon");
 		}
 		
 		self.DoTeam = function(click)
@@ -41,7 +41,9 @@
 				this.PlayClick();
 			
 			if(switchTeams())
-				this.Navigate("weapon");
+				return this.Navigate("weapon");
+			
+			return null;
 		}
 		
 		self.DoReadyRoom = function(click)
@@ -49,7 +51,7 @@
 			if(click != false)
 				this.PlayClick();
 			
-			this.Navigate("readyroom");
+			return this.Navigate("readyroom");
 		}
 		
 		return self;

@@ -30,7 +30,7 @@
 				header += " ";
 				
 				if(scenario != null)
-					header += scenario.title;
+					header += scenario.content.title;
 				
 				this.SetViewInfo("player-header", header);
 			}
@@ -42,7 +42,7 @@
 				
 		self.SetInfo = function(p)
 		{
-			consoleprint("Updating pinfo!");
+			//consoleprint("Updating pinfo!");
 			
 			if(p != null)
 				this.SetPlayer(p);
@@ -57,6 +57,11 @@
 				this.SetPlayerInfo("player-obj-points", "objectivepoints");
 				this.SetPlayerInfo("player-bon-points", "bonuspoints");
 				this.SetPlayerInfo("player-score", "score");
+				
+				if(game.dings.length > 0)
+					this.SetViewInfo("player-ding", game.dings[game.dings.length - 1].title);
+				else
+					this.SetViewInfo("player-ding", "na");
 			}
 			else
 			{
@@ -68,23 +73,24 @@
 				this.SetViewInfo("player-obj-points", "na");
 				this.SetViewInfo("player-bon-points", "na");
 				this.SetViewInfo("player-score", "na");
+				this.SetViewInfo("player-ding", "na");
 			}
 		}
 		
 		self.SetViewInfo = function(vid, value)
 		{
-			consoleprint("Setting pinfo data " + vid + " to " + value);
+			//consoleprint("Setting pinfo data " + vid + " to " + value);
 			
 			var caption = this.view.findview(vid);
 			
 			if(caption != null)
 			{
 				caption.label = value;
-				consoleprint("Value set!");
+				//consoleprint("Value set!");
 			}
 			else
 			{
-				consoleprint("Value not set!");
+				//consoleprint("Value not set!");
 			}
 		}
 		

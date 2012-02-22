@@ -1,6 +1,5 @@
-<view id="ding" y="200" width="300" height="100" layer="500" center="x"
-	style="background-color: #000000BB; class: bordered;" manager="DingManager">
-	<image id="ding-image" src="raui/textures/ra_ding.bmp" x="30" center="y" style="size-scaler: .7;"/>
-	<text id="ding-title" height=".45" width=".5" rtop="10" rright="10"/>
-	<text id="ding-description" y="10" height=".45" width=".5" rright="10" style="font-size: -2;"/>
+<view id="ding" y="200" width="300" height="75" layer="500" center="x" style="class: ding;" manager="DingManager">
+	<image id="ding-image" src="raui/textures/ra_ding.bmp" width="64" height="64" x="10" center="y" style="size-scaler: .7;"/>
+	<text id="ding-title" height="25" width=".75" rtop="10" rright="10" style="class: ding.title;"/>
+	<text id="ding-description" y="10" height="30" width=".75" rright="10" style="class: ding.description;"/>
 </view>
