@@ -68,7 +68,8 @@ end
 -- statuses are defined in Instancing.lua
 function HostInstance:SetStatus(status)
 	
-	local currentStatus = inst.GetState(self.id)
+	local currentStatus = tonumber(inst.GetState(self.id))
+	status = tonumber(status)
 	
 	if status <= currentStatus then
 		InstanceResult:failure(self:GetType() .. " HostInstance:SetStatus", "status " .. value .. " <= " .. currentStatus, self:GetLevel('I'))
@@ -181,12 +182,12 @@ end
 -- returns a result object
 -- behavior is to update the state and then relay the changes to the clients
 function HostInstance:RecvSetState(valueName, value)
-		
-	if valueName == "victory" and tonumber(value) ~= 0 then
+	value = tonumber(value)
+	if valueName == "victory" and value ~= 0 then
 		self:SetState("nextmap", inst.SpawnClone(self.id))
 		self:SetStatus(inst.Instance.Completed)
 	elseif valueName == "status" then
-		return self:SetStatus(tonumber(value))
+		return self:SetStatus(value)
 	end
 	
 	local result = self:ChangeState(valueName, value)
