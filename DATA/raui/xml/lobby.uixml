@@ -135,6 +135,10 @@
 			for(var i = 0; i < running.length; i++)
 			{
 				var instance 	= running[i];
+				
+				if(instance.scenario.content == null)
+					continue;
+				
 				var content		= instance.scenario.content;
 				var id				= instance.description.id;
 				var players		= instance.axis + instance.allies;

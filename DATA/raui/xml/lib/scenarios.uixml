@@ -102,9 +102,9 @@
 			window.mgr.Navigate("lobby");
 		}
 		
-		function joinInstance(instance, created, password)
+		function joinInstance(description, created, password)
 		{
-			if(instance == null)
+			if(description == null)
 				return false;
 				
 			if(password == null)
@@ -112,11 +112,9 @@
 			
 			lastPassword = password;
 			
-			var description = instance.description;
-			
 			// start the scenario
 			if(!game.online || game.joininstance(description.category, description.type, description.owner, description.id, password))
-				return startScenario(instance.scenario, created, 0);
+				return startScenario(description.scenario, created, 0);
 			
 			return false;
 		}
@@ -288,7 +286,7 @@
 			return null;
 		}
 		
-		function canJoinInstance(instance)
+		function canJoinInstance(description)
 		{
 			if(!balanceChecking)
 				return true;
@@ -296,12 +294,12 @@
 			if(instance == null)
 				return scenarioError("badscenario");
 			
-			var category = loadCategory(instance.category);
+			var category = loadCategory(description.category);
 			
 			if(category != null && !scenarioPermission(category.permission))
 				return scenarioError("notpermitted");
 			
-			var population = new ScenarioPopulation(instance.scenario.content);
+			var population = new ScenarioPopulation(description.scenario.content);
 			
 			var maxplayers	= population.maxPlayers();
 			var team1count	= instance.team1;
