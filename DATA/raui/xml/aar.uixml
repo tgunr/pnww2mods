@@ -35,7 +35,6 @@
 		{
 			playerList.mgr.InitHeaders();
 			playerList.mgr.selectCallback = selectPlayer;
-			OnResult();
 		}
 		
 		function OnUpdate()
