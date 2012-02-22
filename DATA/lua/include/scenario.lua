@@ -223,8 +223,8 @@ scenario.StartNetwork = function()
 		-- start the instancing framework
 		ui.ChatPrint("Initing scenario instance!");
 		
-		-- if we're the creator, send our initial state up
-		if(state.config.init == "true") then
+		-- if this instance needs initing, send it
+		if(scenario.manager:GetStatus() == scenario.HostCtored) then
 			-- do some state init stuff
 			local duration = state.config.duration1;
 			if(duration == nil) then
@@ -235,6 +235,7 @@ scenario.StartNetwork = function()
 			scenario.game.SetState("victory", 0);
 			scenario.game.SetState("round", scenario.game.GetRound());
 			scenario.game.SetState("stage", scenario.game.GetStage());
+			scenario.game.SetState("status", scenario.LuaCtored);
 		end
 		
 		-- get our initial state
@@ -286,6 +287,10 @@ scenario.OnSpawn = function(handler)
 		else
 			scenario.game.SetUITimer(scenario.game.GetStateNumber("roundtimer"));
 		end
+	end
+	
+	if(scenario.manager:GetStatus() < scenario.Active) then
+		scenario.game.SetState("status", scenario.Active);
 	end
 	
 	-- keep handler going

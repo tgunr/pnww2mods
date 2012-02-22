@@ -67,7 +67,19 @@ end
 -- returns a result object
 -- statuses are defined in Instancing.lua
 function HostInstance:SetStatus(status)
-	return self:RecvSetState("status", status)
+	
+	local currentStatus = inst.GetState(self.id)
+	
+	if status <= currentStatus then
+		InstanceResult:failure(self:GetType() .. " HostInstance:SetStatus", "status " .. value .. " <= " .. currentStatus, self:GetLevel('I'))
+	end
+	
+	-- lets set it to the new status
+	inst.CASState(self.id, currentStatus, status)
+	self:ChangeState("status", inst.GetState(self.id))
+	
+	-- new status set
+	return InstanceResult:success(self:GetType() .. " HostInstance:SetStatus", "status set " .. currentStatus .. " -> " .. value, self:GetLevel('I'))
 end
 
 -- called by InstanceServer in response to this
@@ -169,16 +181,19 @@ end
 -- returns a result object
 -- behavior is to update the state and then relay the changes to the clients
 function HostInstance:RecvSetState(valueName, value)
+		
+	if valueName == "victory" and tonumber(value) ~= 0 then
+		self:SetState("nextmap", inst.SpawnClone(self.id))
+		self:SetStatus(inst.Instance.Completed)
+	elseif valueName == "status" then
+		return self:SetStatus(tonumber(value))
+	end
+	
 	local result = self:ChangeState(valueName, value)
 	
 	-- if the value didn't change, no need to send it
 	if result:IsNOK() then
 		return result
-	end
-	
-	if valueName == "victory" and tonumber(value) ~= 0 then
-		inst.CASState(self.id, inst.GetState(self.id), inst.Instance.Completed)
-		self:SetState("nextmap", inst.SpawnClone(self.id))
 	end
 	
 	-- relay the change to other clients
