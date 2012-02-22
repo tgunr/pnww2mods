@@ -310,7 +310,7 @@
 			joinBtn.enabled = true;
 			
 			// update our info
-			scenarioInfo.mgr.SetScenario(wantedInstance.scenario);
+			scenarioInfo.mgr.SetScenario(wantedInstance.scenario.content);
 			
 			if(action)
 			{
