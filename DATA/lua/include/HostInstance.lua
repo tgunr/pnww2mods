@@ -69,18 +69,21 @@ end
 function HostInstance:SetStatus(status)
 	
 	local currentStatus = tonumber(inst.GetState(self.id))
-	status = tonumber(status)
+	local newStatus = tonumber(status)
 	
-	if status <= currentStatus then
-		InstanceResult:failure(self:GetType() .. " HostInstance:SetStatus", "status " .. value .. " <= " .. currentStatus, self:GetLevel('I'))
+	if newStatus <= currentStatus then
+		InstanceResult:failure(self:GetType() .. " HostInstance:SetStatus", "status " .. newStatus .. " <= " .. currentStatus, self:GetLevel('I'))
 	end
 	
 	-- lets set it to the new status
-	inst.CASState(self.id, currentStatus, status)
-	self:ChangeState("status", inst.GetState(self.id))
+	local instStatus = inst.CASState(self.id, currentStatus, status)
 	
-	-- new status set
-	return InstanceResult:success(self:GetType() .. " HostInstance:SetStatus", "status set " .. currentStatus .. " -> " .. value, self:GetLevel('I'))
+	self:ChangeState("status", instStatus)
+	
+	if instStatus == newStatus then
+		return InstanceResult:success(self:GetType() .. " HostInstance:SetStatus", "new status " .. currentStatus .. " -> " .. newStatus, newStatus, self:GetLevel('I'))
+	else
+		return InstanceResult:failure(self:GetType() .. " HostInstance:SetStatus", "status not set " .. currentStatus .. " -> " .. newStatus, self:GetLevel('D'))
 end
 
 -- called by InstanceServer in response to this
@@ -182,12 +185,10 @@ end
 -- returns a result object
 -- behavior is to update the state and then relay the changes to the clients
 function HostInstance:RecvSetState(valueName, value)
-	value = tonumber(value)
-	if valueName == "victory" and value ~= 0 then
+	if valueName == "victory" and tonumber(value) ~= 0 then
 		local newInstID = inst.SpawnClone(self.id)
-		Instancing.report('W', 'HostInstance:RecvSetState', "Victory - sending new instance as " .. tostring(newInstID))
 		self:SetState("nextmap", newInstID)
-		self:SetStatus(inst.Instance.Completed)
+		-- self:SetStatus(inst.Instance.Completed)
 	elseif valueName == "status" then
 		return self:SetStatus(value)
 	end
@@ -317,7 +318,7 @@ function HostInstance:RecvSetPlayerState(callsign, valueName, value)
 		elseif valueName == "rank" then player:state(tonumber(value)) end
 	end
 	
-	return InstanceResult:success(self:GetType() .. " Instance:RecvSetPlayerState", callsign .. "/" .. valueName .. "/" .. value, self:GetLevel('I'))
+	return InstanceResult:success(self:GetType() .. " Instance:RecvSetPlayerState", callsign .. "/" .. valueName .. "/" .. value, nil, self:GetLevel('I'))
 	-- make sure callsign is lower case
 	-- callsign = string.lower(callsign)
 	
@@ -354,7 +355,7 @@ function HostInstance:RecvAddPlayerState(callsign, valueName, value)
 		elseif valueName == "kill" then player:addKill() end
 	end
 	
-	return InstanceResult:success(self:GetType() .. " Instance:RecvAddPlayerState", callsign .. "/" .. valueName .. "/" .. value, self:GetLevel('I'))
+	return InstanceResult:success(self:GetType() .. " Instance:RecvAddPlayerState", callsign .. "/" .. valueName .. "/" .. value, nil, self:GetLevel('I'))
 
 
 	-- make sure callsign is lower case
