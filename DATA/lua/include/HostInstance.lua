@@ -184,7 +184,9 @@ end
 function HostInstance:RecvSetState(valueName, value)
 	value = tonumber(value)
 	if valueName == "victory" and value ~= 0 then
-		self:SetState("nextmap", inst.SpawnClone(self.id))
+		local newInstID = inst.SpawnClone(self.id)
+		Instancing.report('W', 'HostInstance:RecvSetState', "Victory - sending new instance as " .. tostring(newInstID))
+		self:SetState("nextmap", newInstID)
 		self:SetStatus(inst.Instance.Completed)
 	elseif valueName == "status" then
 		return self:SetStatus(value)

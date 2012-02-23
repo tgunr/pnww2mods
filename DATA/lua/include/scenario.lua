@@ -224,7 +224,7 @@ scenario.StartNetwork = function()
 		ui.ChatPrint("Initing scenario instance!");
 		
 		-- if this instance needs initing, send it
-		if(scenario.manager:GetStatus() == scenario.HostCtored) then
+		if(state.config.init == "true" or scenario.manager:GetStatus() == scenario.HostCtored) then
 			-- do some state init stuff
 			local duration = state.config.duration1;
 			if(duration == nil) then
