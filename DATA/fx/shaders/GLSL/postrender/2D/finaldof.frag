@@ -1,12 +1,11 @@
 #version 120
 
 uniform sampler2D src1;
-uniform sampler2D src2;
+uniform sampler2D scene;
 
-uniform float lum;
 uniform vec2 filter[12];
 
-const vec2 MaxCoC = vec2(10.0, 20.0);
+const vec2 MaxCoC = vec2(5.0, 20.0);
 
 vec4 filterdof()
 {
@@ -48,11 +47,5 @@ vec4 filterdof()
 
 void main()
 {	
-    vec4 c = filterdof();
-
-    vec4 c3 = texture2D(src2, gl_TexCoord[0].xy);
-
-	c += lum;
- 
-    gl_FragColor = c * c3;
+    gl_FragColor = mix(texture2D(scene, gl_TexCoord[0].xy), filterdof(), 0.5);
 }
