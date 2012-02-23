@@ -84,6 +84,7 @@ function HostInstance:SetStatus(status)
 		return InstanceResult:success(self:GetType() .. " HostInstance:SetStatus", "new status " .. currentStatus .. " -> " .. newStatus, newStatus, self:GetLevel('I'))
 	else
 		return InstanceResult:failure(self:GetType() .. " HostInstance:SetStatus", "status not set " .. currentStatus .. " -> " .. newStatus, self:GetLevel('D'))
+	end
 end
 
 -- called by InstanceServer in response to this
@@ -188,7 +189,7 @@ function HostInstance:RecvSetState(valueName, value)
 	if valueName == "victory" and tonumber(value) ~= 0 then
 		local newInstID = inst.SpawnClone(self.id)
 		self:SetState("nextmap", newInstID)
-		-- self:SetStatus(inst.Instance.Completed)
+		self:SetStatus(inst.Instance.Completed)
 	elseif valueName == "status" then
 		return self:SetStatus(value)
 	end
