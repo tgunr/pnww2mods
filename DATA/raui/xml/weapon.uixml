@@ -131,6 +131,8 @@
 				
 				if(scenario.player.weapon != null && scenario.player.weapon.weapkey == weapon.weapkey)
 					weaponList.control.selectByID(id);
+				else if(scenario.player.weapon == null && i == 0)
+					weaponList.control.selectByID(id);
 			}
 			
 			weaponList.mgr.control.postInit();

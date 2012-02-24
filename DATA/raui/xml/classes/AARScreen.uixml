@@ -12,6 +12,7 @@
 		
 		self.BaseOnShow = self.OnShow;
 		self.ScenarioComplete = false;
+		self.created = game.frametime;
 		
 		self.OnShow = function()
 		{
@@ -24,6 +25,9 @@
 		
 		self.Close = function(exit, respawn, click)
 		{
+			if((game.frametime - this.created) < 300)
+				return;
+			
 			if(click != false)
 				this.PlayClick();
 			

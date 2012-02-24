@@ -88,7 +88,7 @@
 			// call out to the host to get our list of instances
 			// join our lobby instance
 			if(game.online)
-				game.selectinstance(root.category, 0);
+				game.selectinstance(root.category, 0, 0, 0);
 			
 			//createTestRows();
 			initInstances();
@@ -134,20 +134,15 @@
 			
 			for(var i = 0; i < running.length; i++)
 			{
-				var instance 	= running[i];
+				var instance = running[i];
 				
 				if(instance.scenario.content == null)
 					continue;
 				
 				var content		= instance.scenario.content;
 				var id				= instance.description.id;
-				var players		= instance.axis + instance.allies;
-				
-				var team1max	= parseInt(content.team1max);
-				if(isNaN(team1max)) team1max = MAX_SIDE_PLAYERS;
-				
-				var team2max	= parseInt(content.team2max);
-				if(isNaN(team2max)) team2max = MAX_SIDE_PLAYERS;
+				var players		= instance.team1 + instance.team2;
+				var pop			= new ScenarioPopulation(content);
 				
 				instanceList.mgr.StartRow("row" + i, 0, 0, 0, 16);
 				
@@ -164,10 +159,10 @@
 				else
 					instanceList.mgr.AddRowColumn("DM", .1, "center");
 				
-				if(players < team1max + team2max)
-					instanceList.mgr.AddRowColumn("scenarios.list.status.running", .15, "center");
-				else
-					instanceList.mgr.AddRowColumn("scenarios.list.status.full", .15, "center");
+				instanceList.mgr.AddRowColumn("ra.status." + instance.status, .15, "center");
+				
+				if(players >= pop.team1max + pop.team2max)
+					players = players + " (" + getlocstring("scenarios.list.status.full") + ")";
 				
 				instanceList.mgr.AddRowColumn(players, .1, "center");
 				instanceList.mgr.AddRowIcon("chaticon", "squad", .1, 12, .5);
@@ -310,7 +305,7 @@
 			joinBtn.enabled = true;
 			
 			// update our info
-			scenarioInfo.mgr.SetScenario(wantedInstance.scenario.content);
+			scenarioInfo.mgr.SetScenario(wantedInstance.scenario);
 			
 			if(action)
 			{
@@ -324,7 +319,7 @@
 				{
 					showPopup("password", "ENTER PASSWORD TO JOIN:", checkPassword);
 				}
-				else if(!joinInstance(wantedInstance.description, false))
+				else if(!joinInstance(wantedInstance, false))
 				{
 					showOk("Failed to join instance!");
 					joinLobby();

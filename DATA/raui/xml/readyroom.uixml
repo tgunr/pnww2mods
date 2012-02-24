@@ -30,14 +30,13 @@
 		var playerList 			= findview("players");
 		var scenarioInfo		= findview("scenario-info");
 		var updateList 			= true;
-		var winner 				= parseInt(game.getstate("victory", "0"));
 		
 		// player update callback
 		game.onplayerupdate = OnPlayersUpdated;
 		
 		function DoFight()
 		{
-			if(winner != 0)
+			if(game.scenario.winner != 0)
 			{
 				// this map is complete
 				if(!playNextMap())
@@ -88,9 +87,9 @@
 			//showChat(true);
 			
 			playerList.mgr.InitHeaders();
-			scenarioInfo.mgr.SetScenario(scenario.content);
+			scenarioInfo.mgr.SetScenario(scenario);
 			
-			if(winner != 0)
+			if(game.scenario.winner != 0)
 			{
 				window.mgr.SetEnabled("weapon-button", false);
 				

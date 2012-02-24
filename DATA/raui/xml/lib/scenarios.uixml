@@ -102,9 +102,31 @@
 			window.mgr.Navigate("lobby");
 		}
 		
-		function joinInstance(description, created, password)
+		function joinInstance(state, created, password)
 		{
-			if(description == null)
+			return joinInstanceState(state, created, password);
+		}
+		
+		function joinInstanceState(state, created, password)
+		{
+			if(state == null)
+				return false;
+				
+			if(password == null)
+				password = "";
+			
+			lastPassword = password;
+			
+			// start the scenario
+			if(!game.online || game.joininstance(state, password))
+				return startScenario(state.description.scenario, created, 0);
+			
+			return false;
+		}
+		
+		function joinInstanceDesc(description, created, password)
+		{
+			if(state == null)
 				return false;
 				
 			if(password == null)
@@ -374,21 +396,19 @@
 			
 			var category 	= instance.category;
 			var type			= instance.type;
-			var owner		= 0;
+			var owner		= 1;
 			var id 				= game.getstate("nextmap");
 			
 			if(id == null)
 				return false;
 			
-			var nextTeam = game.scenario.player.team;
+			// switch sides
+			var nextTeam = game.scenario.player.otherteam;
 			
-			if(nextTeam == 1)
-				nextTeam = 2;
-			else
-				nextTeam = 1;
-			
+			// stop our current scenario
 			game.stopscenario();
 			
+			// join the next one
 			if(game.joininstance(category, type, owner, id, lastPassword))
 				return startScenario(instance.scenario, false, nextTeam);
 			

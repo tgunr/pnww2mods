@@ -8,22 +8,33 @@
 	{
 		var self = new ViewManager(s);
 				
-		self.SetScenario = function(content)
+		self.SetScenario = function(s)
 		{
-			if(content != null)
+			if(s != null && s.content != null)
 			{
-				consoleprint("Setting scenario info to " + content.title);
+				consoleprint("Scenario info is " + s.name);
+				
+				var content = s.content;
+				
 				var v = this.view.findview("scenario-name");
 				if(v != null) v.label = content.name;
 				
 				v = this.view.findview("scenario-type");
-				if(v != null) v.label = "Deathmatch";
+				if(v != null)
+				{
+					var parts = s.shortname.split("_");
+					
+					if(parts.length > 1) 
+						v.label = parts[0].toUpperCase();
+					else
+						v.label = "DM";
+				}
 				
 				v = this.view.findview("scenario-description");
 				if(v != null) v.text = content.brief;
 				
 				v = this.view.findview("scenario-image");
-				if(v != null) v.src = game.getscenarioimage(content.terrain);
+				if(v != null) v.src = s.image;
 			}
 			else
 			{

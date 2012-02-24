@@ -75,18 +75,19 @@
 		
 		function addScenario(catID, mapID)
 		{
-			var scenario = loadScenario(catID, mapID);
-			var id = "map." + catID + "." + mapID;
+			var scenario = game.getscenario(catID, mapID);
+			if(scenario == null) return;
 			
+			var id = "map." + catID + "." + mapID;
 			var rb = new RowBuilder(createList.mgr.list, id, 0, 0, 0, 16);
 			
 			rb.addColumn(" ", .15);
-			rb.addColumn(scenario.title, .85);
+			rb.addColumn(scenario.content.title, .85);
 			
 			var data = new Object();
 			
-			data["content"] 		= scenario;
-			data["category"] 	= catID;
+			data["scenario"] 		= scenario;
+			data["category"] 		= catID;
 			data["map"] 			= mapID;
 			
 			createList.mgr.control.addRow(data, rb.build());
@@ -111,7 +112,7 @@
 			
 			cprint("Select Scenario had good data!");
 			
-			scenarioInfo.mgr.SetScenario(data.content);
+			scenarioInfo.mgr.SetScenario(data.scenario);
 			
 			createBtn.enabled = true;
 			
@@ -130,17 +131,20 @@
 		{
 			var data = createList.mgr.control.selectedData();
 			
+			cprint("Instance result!");
+			
 			// something happened
 			if(client.instance == null)
 			{
-				showOk("Failed: null instance!");
+				cprint("No instance!");
+				//showOk("Failed: null instance!");
 				return;
 			}
 			
 			if(client.instance.category == data.category && client.instance.type == data.map)
 			{
-				cprint("Starting scenario!" + data.content.title);
-				startScenario(data, true);
+				cprint("Starting scenario: " + data.scenario.content.title);
+				startScenario(data.scenario, true);
 			}
 			else
 			{
