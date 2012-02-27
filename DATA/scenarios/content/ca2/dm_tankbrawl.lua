@@ -195,8 +195,8 @@ if(true) then
 		"sound guns2 sounds/scenarios/ambient_guns_machine_gun5.wav 1 1",
 		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav 1 1",
 		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav 1 1",
-		"sound wind sounds/ambience/gust2.wav 2 0",
-		"sound wind sounds/ambience/gust3.wav 2 0",
+		"sound wind sounds/ambience/gust2.wav 1 0",
+		"sound wind sounds/ambience/gust3.wav 1 0",
 
 	-- POSITIONAL SOUNDS
 	-- command name filename volume loop x y z mindist maxdist
