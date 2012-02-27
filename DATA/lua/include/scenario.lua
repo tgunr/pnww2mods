@@ -757,18 +757,10 @@ scenario.SetResult = function()
 	local aar = ui.FindView("aarweapon");
 	
 	if(aar ~= nil) then
-		aar:CallJS("OnResult");
-	else
-		aar = ui.FindView("aar");
-		
-		if(aar == nil) then
-			aar = ui.LoadView("aar");
-		end
-		
-		if(aar ~= nil) then
-			aar:CallJS("OnResult");
-		end
+		aar:Close();
 	end
+	
+	ui.LoadView("misc/result");
 end
 
 -- ok

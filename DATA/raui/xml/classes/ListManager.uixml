@@ -46,6 +46,14 @@
 			return this.hrb;
 		}
 		
+		self.AddHeaderSpace = function(width)
+		{
+			if(!this.hrb)
+				return null;
+			
+			return this.hrb.addSpace(width);
+		}
+		
 		self.AddHeader = function(loc, width, align, style)
 		{
 			if(!this.hrb)

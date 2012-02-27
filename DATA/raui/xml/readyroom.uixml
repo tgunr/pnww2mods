@@ -5,7 +5,7 @@
 		<listcontrol id="players" x="15" y="15" rtop="20" rright="15" style="class: litebg;" manager="PlayerListManager"/>
 	</panel>
 	<sceninfov id="scenario-info" width=".3" height=".8" rright="20" rtop="20">
-		<view id="map" class="mapview" acceptsfocus="no" minscale=".01" maxscale=".1" scale=".05" sx="0" sy="0">
+		<view id="map" class="mapview" acceptsfocus="no" minscale=".01" maxscale=".1" scale=".05" sx="0" sy="0" limit="400">
 			<layer type="texture" id="default-64-tex" minscale="0" maxscale="64" enabled="true" orign="-26x210" rowcolsize="1x1" cellsize="64x64"/>
 			<layer type="icon" id="icons" minscale="1" maxscale="8" enabled="true"/>
 			<layer type="icon" id="rendered" minscale="0" maxscale="1" enabled="true"/>
