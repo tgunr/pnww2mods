@@ -90,12 +90,7 @@
 			scenarioInfo.mgr.SetScenario(scenario);
 			
 			if(game.scenario.winner != 0)
-			{
-				window.mgr.SetEnabled("weapon-button", false);
-				
-				var button = window.findview("fight-button");
-				button.label = "NEXT MAP   ";
-			}
+				OnResult();
 		}
 		
 		function OnUpdate()
@@ -110,6 +105,13 @@
 		function OnPlayersUpdated()
 		{
 			updateList = true;
+		}
+		
+		function OnResult()
+		{
+			window.mgr.SetEnabled("weapon-button", false);
+			var button = window.findview("fight-button");
+			button.label = "NEXT MAP   ";
 		}
 			
 		-->

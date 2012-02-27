@@ -43,7 +43,14 @@
 				this.PlayClick();
 			
 			if(game.ingame)
+			{
 				game.load("aar");
+			}
+			else
+			{
+				var readyRoom = game.findview("readyroom");
+				readyRoom.OnResult();
+			}
 			
 			this.view.close();
 		}
@@ -258,9 +265,9 @@
 	function sortByScore(a, b)
 	{
 		if(a.score > b.score)
-			return 1;
-		else if(a.score < b.score)
 			return -1;
+		else if(a.score < b.score)
+			return 1;
 		
 		return 0;
 	}
@@ -268,9 +275,9 @@
 	function sortByKills(a, b)
 	{
 		if(a.kills > b.kills)
-			return 1;
-		else if(a.kills < b.kills)
 			return -1;
+		else if(a.kills < b.kills)
+			return 1;
 		
 		return 0;
 	}
