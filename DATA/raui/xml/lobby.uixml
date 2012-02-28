@@ -146,6 +146,14 @@
 				
 				instanceList.mgr.StartRow("row" + i, 0, 0, 0, 16);
 				
+				consoleprint("ID is " + instance.description.id);
+				consoleprint("Team1 is " + instance.team1);
+				consoleprint("Has Password is " + instance.hasspassword);
+				consoleprint("Full is " + instance.full);
+				consoleprint("Spawnable is " + instance.spawnable);
+				consoleprint("Joinable is " + instance.joinable);
+				consoleprint("Status is " + instance.status);
+				
 				if(instance.haspassword)
 					instanceList.mgr.AddRowIcon("image", "ui/textures/lock.dds", .03, 12, 2);
 				else
@@ -336,7 +344,7 @@
 				
 				consoleprint("Entered password is " + password);
 				
-				if(!joinInstance(wantedInstance.description, false, password))
+				if(!joinInstance(wantedInstance, false, password))
 				{
 					showOk("Failed to join instance!");
 					joinLobby();
