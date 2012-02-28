@@ -9,10 +9,6 @@ Include("state"); -- includes default state
 Include("strat");
 Include("ClientInstance");
 
-if(not IsOnline()) then
-	Include("InstanceServer");
-end
-
 game.LoadLib("scenario");
 
 -- set tutorial state here
@@ -338,16 +334,6 @@ scenario.OnSet = function(handler, name, value)
 		scenario.game.LoadContent();
 	elseif(name == "instance") then
 		-- handle local instance server
-		if(not scenario.game.IsOnline()) then
-			-- create our local instance on the local server
-			createInstance(state.config.instance);
-			
-			-- set its status
-			setInstanceStatus(state.config.instance, "Staging");
-			
-			-- report it
-			--Instancing.report('N', 'OnSet', "Server running: " .. crawl(server));
-		end
 		-- setup client instance
 		if(scenario.instance == nil) then
 			scenario.instance = ClientInstance:new(state.config.instance, sendClientData);
@@ -484,21 +470,6 @@ scenario.OnUpdate = function(handler)
 				_G[callback](msDelta);
 			end
 		end
-	end
-	
-	-- simulate network traffic
-	if(not online) then
-		-- handle any outgoing data from us for the last frame
-		for k,v in pairs(scenario.toserver) do
-			if(Instancing.logit('D')) then
-				ui.ChatPrint("to server ----------------->");
-			end
-			recvServerData(v[1], v[2]);
-			reportFT = true;
-		end
-		scenario.toserver = {}
-		
-		updateServer(ft);
 	end
 	
 	--if(reportFT) then
@@ -1021,8 +992,6 @@ end
 function sendClientData(id, data)
 	if(scenario.game.IsOnline()) then
 		scenario.manager:SendData(data);
-	else
-		table.insert(scenario.toserver, {scenario.instance:Id(), data});
 	end
 end
 
