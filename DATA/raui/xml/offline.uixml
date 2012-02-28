@@ -1,4 +1,5 @@
 <ra id="offline" manager="OfflineScreen">
+	<include file="lib/scenarios.uixml"/>
 	<panel label="SELECT UNIT" x="10" height=".8" width=".48" rtop="30">
 		<treecontrol id="weapon-tree" rtop="30" style="pad: 20; class: litebg;"/>
 	</panel>
@@ -15,6 +16,15 @@
 		
 		function DoSpawn()
 		{
+			if(game.scenario == null)
+			{
+				// start the default scenario
+				var offlineScenario = game.getscenario("scenarios/offline.xml");
+				
+				if(offlineScenario != null)
+					game.startscenario(offlineScenario.content.path, true);
+			}
+			
 			var weapon = weaponTree.control.selectedData();
 			
 			if(weapon != null)
