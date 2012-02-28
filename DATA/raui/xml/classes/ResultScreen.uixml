@@ -44,7 +44,8 @@
 			
 			if(game.ingame)
 			{
-				game.load("aar");
+				//game.load("aar");
+				game.despawn(false);
 			}
 			else
 			{
