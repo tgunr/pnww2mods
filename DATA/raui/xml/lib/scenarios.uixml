@@ -9,8 +9,7 @@
 		var lastScenarioError = null;
 		var MAX_SIDE_PLAYERS = 64;
 		var balanceChecking = false;
-		var lastPassword = "";
-		
+			
 		function loadRoot()
 		{
 			if(scenariosRoot == null)
@@ -115,7 +114,7 @@
 			if(password == null)
 				password = "";
 			
-			lastPassword = password;
+			game.password = password;
 			
 			// start the scenario
 			if(!game.online || game.joininstance(state, password))
@@ -132,10 +131,10 @@
 			if(password == null)
 				password = "";
 			
-			lastPassword = password;
+			game.password = password;
 			
 			// start the scenario
-			if(!game.online || game.joininstance(description.category, description.type, description.owner, description.id, password))
+			if(!game.online || game.joininstance(description.category, description.type, description.owner, description.id, game.password))
 				return startScenario(description.scenario, created, 0);
 			
 			return false;
@@ -152,7 +151,7 @@
 			
 			if(!game.online || game.createinstance(category, map, password))
 			{
-				lastPassword = password;
+				game.password = password;
 				return true;
 			}
 			
@@ -409,7 +408,7 @@
 			game.stopscenario();
 			
 			// join the next one
-			if(game.joininstance(category, type, owner, id, lastPassword))
+			if(game.joininstance(category, type, owner, id, game.password))
 				return startScenario(instance.scenario, false, nextTeam);
 			
 			return false;
