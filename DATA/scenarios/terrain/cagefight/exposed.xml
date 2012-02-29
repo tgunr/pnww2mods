@@ -144,23 +144,23 @@
 <!-- LAYER0 is the base texture applied to every terrain .flt and is not specified in the .dds blendmask -->	
       <layer0 name="layer0.dds">
 <!-- MULTITEXTURE value effects the scale of the .dds texture for the layer. The higher the value, the more times the textures will tile across the terrain -->	  
-        <multitexture>200</multitexture>
+        <multitexture>400</multitexture>
 <!-- MATERIAL value is used by the game engine for special effects and sounds -->		
         <material>grass</material>
       </layer0>
 	  
       <layer1 name="layer1.dds">
-        <multitexture>300</multitexture>
+        <multitexture>400</multitexture>
         <material>dirt</material>
       </layer1>
 	  
       <layer2 name="layer2.dds">
-        <multitexture>300</multitexture>
+        <multitexture>400</multitexture>
         <material>dirt</material>
       </layer2>
 	  
       <layer3 name="layer3.dds">
-        <multitexture>200</multitexture>
+        <multitexture>250</multitexture>
         <material>dirt</material>
       </layer3>
 	  
