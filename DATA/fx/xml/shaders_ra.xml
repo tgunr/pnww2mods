@@ -570,14 +570,12 @@
       <fragmentshader>scenarios/terrain/doggreen/coast.frag</fragmentshader>
     </shaders>
     <uniform name="refr" type="sampler2d" unit="0" onetimeapply="true"></uniform>
-    <uniform name="src2" type="sampler2d" unit="1" onetimeapply="true"></uniform>
+    <uniform name="norm" type="sampler2d" unit="1" onetimeapply="true"></uniform>
     <uniform name="refl" type="sampler2d" unit="2" onetimeapply="true"></uniform>
     <uniform name="surf" type="sampler2d" unit="3" onetimeapply="true"></uniform>
     <uniform name="height" type="sampler2d" unit="4" onetimeapply="true"></uniform>
-    <uniform name="shadow" type="sampler2dshadow" unit="5" onetimeapply="true"></uniform>
+    <uniform name="diffusemap" type="sampler2d" unit="5" onetimeapply="true"></uniform>
     <uniform name="time" type="float"></uniform>
-    <uniform name="alpha" type="float" onetimeappy="true"></uniform>
-    <uniform name="scale" type="float"></uniform>
   </program>
   <!--=================================================================-->
   <program name ="doggreen_ocean">
