@@ -1,6 +1,7 @@
 #version 120
 
 uniform float time;
+invariant gl_Position;
 
 const float texscale = 25.0;
 
@@ -35,14 +36,13 @@ void main()
 
     vec4 pos = gl_Vertex;
 
-    pos.z += sin(time) * 0.015;
     pos = gl_ModelViewMatrix * pos;
 
     gl_TexCoord[5] = gl_TextureMatrix[5] * pos;
 
     vertexpos = pos.xyz;
 	
-	gl_Position = gl_ProjectionMatrix * pos;
+	gl_Position = ftransform();
 
 	gl_TexCoord[2] = Mr * gl_Position;
 	gl_FogFragCoord = abs(vertexpos.z);
