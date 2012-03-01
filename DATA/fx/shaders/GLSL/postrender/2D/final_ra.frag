@@ -1,7 +1,7 @@
 #version 120
 
-uniform sampler2D src1;
-uniform sampler2D src2;
+uniform sampler2D gs;
+uniform sampler2D scene;
 
 uniform float lum;
 uniform float strength;
@@ -13,7 +13,8 @@ const vec3 shockParams = vec3(10.0, 0.1, 0.1);
 
 vec4 RadialBlur(in vec2 uv)
 {
-    vec4 color = texture2D(src1, uv);
+    vec4 color = texture2D(scene, uv);
+
     float dist = 0.0;
 
     float ss = strength * 2.2;
@@ -98,7 +99,7 @@ void main()
     
     vec4 s1 = RadialBlur(uv);
 
-	vec4 s2 = texture2D(src2, gl_TexCoord[0].xy);
+	vec4 s2 = texture2D(gs, gl_TexCoord[0].xy);
 
 	vec4 c = s1 * s2;
 	c += lum;

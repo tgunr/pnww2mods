@@ -6,8 +6,8 @@ uniform sampler2DRect src2;
 
 uniform vec4 camera;
 
-const float focalplanedepth = 20.0;
-const float nearblurdepth = 10.0;//-200.0;
+const float focalplanedepth = 30.0;
+const float nearblurdepth = 20.0;
 const float farplanedepth = 500.0;
 
 void main()

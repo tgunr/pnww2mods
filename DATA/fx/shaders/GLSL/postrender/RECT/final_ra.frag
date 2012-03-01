@@ -2,8 +2,8 @@
 
 #extension GL_ARB_texture_rectangle: enable
 
-uniform sampler2DRect src1;
-uniform sampler2DRect src2;
+uniform sampler2DRect gs;
+uniform sampler2DRect scene;
 
 uniform float lum;
 uniform float strength;
@@ -15,7 +15,7 @@ const vec3 shockParams = vec3(10.0, 0.1, 0.1);
 
 vec4 RadialBlur(in vec2 uv)
 {
-    vec4 color = texture2DRect(src1, uv);
+    vec4 color = texture2DRect(scene, uv);
     float dist = 0.0;
 
     float ss = strength * 2.2;
@@ -100,7 +100,7 @@ void main()
     
     vec4 s1 = RadialBlur(uv);
 
-	vec4 s2 = texture2DRect(src2, gl_TexCoord[0].xy);
+	vec4 s2 = texture2DRect(gs, gl_TexCoord[0].xy);
 
 	vec4 c = s1 * s2;
 	c += lum;
