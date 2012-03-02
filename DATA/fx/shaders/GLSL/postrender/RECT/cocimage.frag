@@ -6,15 +6,15 @@ uniform sampler2DRect src2;
 
 uniform vec4 camera;
 
-const float focalplanedepth = 30.0;
+const float focalplanedepth = 40.0;
 const float nearblurdepth = 20.0;
-const float farplanedepth = 500.0;
+const float farplanedepth = 400.0;
 
 void main()
 {	
-    vec2 uv = gl_TexCoord[0].xy;   
-    vec3 rgb = texture2DRect(src1, uv).rgb;
+    vec2 uv = gl_TexCoord[0].xy;
 
+    vec3 rgb = texture2DRect(src1, uv * 0.5).rgb;
     float d = 1.0 - texture2DRect(src2, uv).r;
 
     // Depth to projection space
@@ -25,7 +25,6 @@ void main()
     if(sd < focalplanedepth)
     {
         f = (sd - focalplanedepth) / (focalplanedepth - nearblurdepth);
-        f = clamp(f, -1.0, 0.0);
     }
     else
     {

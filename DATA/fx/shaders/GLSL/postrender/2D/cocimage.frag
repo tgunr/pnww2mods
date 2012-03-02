@@ -5,9 +5,9 @@ uniform sampler2D src2;
 
 uniform vec4 camera;
 
-const float focalplanedepth = 30.0;
+const float focalplanedepth = 40.0;
 const float nearblurdepth = 20.0;
-const float farplanedepth = 500.0;
+const float farplanedepth = 400.0;
 
 void main()
 {	
@@ -24,7 +24,6 @@ void main()
     if(sd < focalplanedepth)
     {
         f = (sd - focalplanedepth) / (focalplanedepth - nearblurdepth);
-        f = clamp(f, -1.0, 0.0);
     }
     else
     {
