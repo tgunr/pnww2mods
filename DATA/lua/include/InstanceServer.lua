@@ -113,7 +113,7 @@ function InstanceServer:AddInstance(id)
 	self.instances[id] = HostInstance:new(id, sendServerData, self)
 	
 	-- tell everyone our status is new
-	self.instances[id]:SetStatus("New");
+	self.instances[id]:SetStatus(inst.Instance.HostCtored);
 	
 	-- don't call this, it results in a recursive loop because each instance has a reference to the server
 	-- actually you can call it but know that it does this; crawl now allows at most 100 recursions
