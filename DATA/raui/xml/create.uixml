@@ -26,7 +26,8 @@
 	</navbar>
 	<script>
 		<!--
-		 //
+		
+		consoleprint("Create win!");
 		 
 		var client 				= game.client;
 		var scenarios		= loadRoot();
@@ -41,12 +42,15 @@
 		
 		function OnShow(win)
 		{
+			consoleprint("OnShowing!");
 			createList.mgr.selectCallback = selectScenario;
 			initCreateList();
 		}
 		
 		function initCreateList()
 		{
+			consoleprint("Initing create list!");
+			
 			// now update our visible list
 			createList.mgr.control.clearRows(false);
 			
@@ -92,7 +96,7 @@
 			
 			createList.mgr.control.addRow(data, rb.build());
 			
-			if(scenario.content.default == "true")
+			if(scenario.content.preferred == "true")
 			{
 				createList.mgr.control.selectByID(id);
 				selectScenario(false);

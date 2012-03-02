@@ -88,7 +88,7 @@
 			// call out to the host to get our list of instances
 			// join our lobby instance
 			if(game.online)
-				game.selectinstance(root.category, 0, 0, 0);
+				game.joinlobby();
 			
 			//createTestRows();
 			initInstances();
