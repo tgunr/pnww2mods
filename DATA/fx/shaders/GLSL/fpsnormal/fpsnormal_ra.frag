@@ -10,9 +10,7 @@ varying vec3 N;
 varying vec3 vertexpos;
 
 vec4 fogThis(in vec4);
-void lightGetSunAmbientDiffuseSpecular(in vec3 t,
-                                       in vec3 b,
-                                       in vec3 n,
+void lightGetSunAmbientDiffuseSpecular(mat3 tbn,
                                        in vec3 V,
                                        in vec3 normal,
                                        out vec4 ambient, 
@@ -35,9 +33,9 @@ void main()
 	vec4 ambientColor;
 	vec4 specularColor;
 
-	lightGetSunAmbientDiffuseSpecular(t, 
-	                                  b, 
-	                                  n, 
+    mat3 tbn = mat3(t, b, n);
+
+	lightGetSunAmbientDiffuseSpecular(tbn,
 	                                  v, 
 	                                  normal, 
 	                                  ambientColor, 
