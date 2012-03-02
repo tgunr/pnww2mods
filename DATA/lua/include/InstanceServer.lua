@@ -192,9 +192,6 @@ end
 -- host update callback
 -- returns true on success, false on failure
 function updateServer()
-	if IsHost() then
-		Instancing.report('D', 'inst', 'Processing updateServer. I should remove this line.')
-	end
 	return getResult(server:Update(FrameTime()))
 end
 
