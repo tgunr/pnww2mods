@@ -91,11 +91,8 @@
 			// make sure no scenario is running
 			game.stopscenario();
 			
-			var root = loadRoot();
-			var client = game.client;
-			
-			if(game.online && !client.instance.lobby)
-				game.joininstance(root.category, 0, 0, 0);
+			if(game.online && !game.client.instance.lobby)
+				game.joinlobby();
 			
 			// load our lobby windows 
 			window.mgr.Navigate("lobby");

@@ -72,7 +72,7 @@
 		
 		cprint(">>> STARTING LOBBY PAGE\n");
 		
-		var client 				= game.player.client;
+		var client 				= game.client;
 		var scenarios		= loadRoot();
 		var scenName		= findview("scenario-name");
 		var scenMap			= findview("scenario-map");
@@ -120,11 +120,6 @@
 			createBtn.enabled = false;
 			
 			showCreate();
-			
-			game.globals.scenario = null;
-			
-			client.onpersonas = onPersonas;
-			//client.requestpersonalist();
 		}
 		
 		function initCreateTree()
@@ -273,7 +268,7 @@
 					{
 						cprint("Instance created!");
 						
-						if(client.listinstances(category, map))
+						if(game.listinstances(category, map))
 						{
 							var instances = client.instances;
 							

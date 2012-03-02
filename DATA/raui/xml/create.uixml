@@ -92,7 +92,7 @@
 			
 			createList.mgr.control.addRow(data, rb.build());
 			
-			if(catID == 504 && mapID == 2)
+			if(scenario.content.default == "true")
 			{
 				createList.mgr.control.selectByID(id);
 				selectScenario(false);

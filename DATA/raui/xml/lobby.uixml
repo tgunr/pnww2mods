@@ -227,8 +227,8 @@
 			for(var t = 0; t < 100; t++)
 			{
 				var newTest 	= new Object();
-				var catID			= 500 + Math.floor(Math.random() * 4) + 1;
-				var category	= loadCategory(catID);
+				var catID			= game.lobbyid + Math.floor(Math.random() * 4) + 1;
+				var category		= loadCategory(catID);
 				
 				if(category == null)
 					continue;
