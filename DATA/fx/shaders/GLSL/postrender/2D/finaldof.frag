@@ -5,7 +5,7 @@ uniform sampler2D scene;
 
 uniform vec2 filter[12];
 
-const vec2 MaxCoC = vec2(5.0, 10.0);
+const vec2 MaxCoC = vec2(5.0, 8.0);
 
 vec4 filterdof()
 {
