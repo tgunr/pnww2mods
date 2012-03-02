@@ -464,12 +464,16 @@ void lightGetSunAmbientDiffuseSpecular(mat3 tbn,
 
 	diffuse = d * lightsource[0].diffuse;
 			
-	Htan = normalize(lightsource[0].dir + V) * tbn;
+    if(d > 0.0)
+    {
+	    Htan = normalize(lightsource[0].dir + V) * tbn;
 		
-	s = max(dot(normal, Htan), 0.0);	
-    s = pow(s, level);
+	    s = max(dot(normal, Htan), 0.0);	
+        s = pow(s, level);
 
-    specular = s * lightsource[0].specular;
+        specular = s * lightsource[0].specular;
+    }
+
     ambient = lightsource[0].ambient;
 }
 
