@@ -78,7 +78,7 @@ function HostInstance:SetStatus(status)
 	end
 	
 	-- lets set it to the new status
-	local instStatus = inst.CASState(self.id, currentStatus, status)
+	local instStatus = inst.CASState(self.id, currentStatus, newStatus)
 	
 	self:ChangeState("status", instStatus)
 	
