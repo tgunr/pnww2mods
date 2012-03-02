@@ -69,6 +69,7 @@ end
 function HostInstance:SetStatus(status)
 	
 	local currentStatus = tonumber(inst.GetState(self.id))
+	if currentStatus == nil then currentStatus = 0 end
 	local newStatus = tonumber(status)
 	
 	if newStatus <= currentStatus then
