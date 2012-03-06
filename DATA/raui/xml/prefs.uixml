@@ -15,9 +15,9 @@
 	</panel>
 	<view id="main-panel" x="240" y="80" rright="10" rtop="20">
 		<stackview id="prefs-view" pad="10">
-			<scrollview id="game-prefs">
-				<view style="layout: vertical; vpad: 10; hpad: 5;">
-					<panel id="prefs" label="${widgets.prefs.groups.game.presets}" align="center" height="160" style="class: medbg;">
+			<scrollview id="game-prefs" style="class: litebg;">
+				<view style="layout: vertical; vpad: 10; hpad: 5">
+					<panel id="prefs" label="${widgets.prefs.groups.game.presets}" align="center" height="160" style="vpad: 20; class: medbg;">
 							<text x="25" width="200" rtop="30" y="25" style="color: #e9e3d9ff;" onshow="this.text = getlocstring('widgets.prefs.groups.game.presets.description')"/>
 							<button id="forward" rright="25" rtop="20" label="  BEST QUALITY" align="left"
 								onclick="window.mgr.SetPreset(0)" style="size-scaler: .4; font-size: -3;"/>
@@ -26,7 +26,7 @@
 							<button id="forward" rright="25" rtop="100"  label="  PERFORMANCE" align="left"
 								onclick="window.mgr.SetPreset(2)" style="size-scaler: .4; font-size: -3;"/>
 					</panel>
-					<panel id="prefs" label="MISC" align="center" height="120" style="vpad: 10; layout: vertical; class: medbg;">
+					<panel id="prefs" label="MISC" align="center" height="140" style="vpad: 10; layout: vertical; class: medbg;">
 						<listpref id="language" manager="Pref/ListPref:0" style="vpad: 30;">
 							<script private="true">
 								<!--
@@ -104,12 +104,13 @@
 							</script>
 						</listpref>
 					</panel>
+					<view height="50"/>
 				</view>
 				<scrollbar/>
 			</scrollview>
-			<scrollview id="visual-prefs">
+			<scrollview id="visual-prefs" style="class: litebg;">
 				<view style="layout: vertical; vpad: 10; hpad: 5;">
-					<panel id="prefs" label="VIDEO CARD" align="center" height="120" style="vpad: 10; layout: vertical; class: medbg;">
+					<panel id="prefs" label="VIDEO CARD" align="center" height="140" style="vpad: 20; layout: vertical; class: medbg;">
 						<listpref id="video" manager="Pref/ListPref:1" style="vpad: 30;">
 							<script private="true">
 								<!--
@@ -145,8 +146,18 @@
 								
 								if(options != null)
 								{
+									var lastResolution = null;
+									
+									options.reverse();
+									
 									for(var i = 0; i < options.length; i++)
-										this.mgr.AddOption(options[i], options[i]);
+									{
+										if(options[i] != lastResolution)
+										{
+											this.mgr.AddOption(options[i], options[i]);
+											lastResolution = options[i];
+										}
+									}
 								}
 								
 								this.mgr.Update();
@@ -156,12 +167,17 @@
 						</listpref>
 						<boolpref id="enablevsync" manager="Pref/BoolPref:1"/>
 					</panel>
-					<panel id="prefs" label="SHADERS" align="center" height="160" style="vpad: 10; layout: vertical; class: medbg;">
+					<panel id="prefs" label="SHADERS" align="center" height="230" style="vpad: 10; layout: vertical; class: medbg;">
 						<boolpref id="normalmaps" manager="Pref/BoolPref:1" style="vpad: 30;"/>
-						<boolpref id="postrenderfilter" manager="Pref/BoolPref:1"/>
+						<!-- boolpref id="postrenderfilter" manager="Pref/BoolPref:1"/ -->
 						<boolpref id="enableh2oshaders" manager="Pref/BoolPref:1"/>
 						<boolpref id="waterreflections" manager="Pref/BoolPref:1"/>
+						<boolpref id="wantmultisample" manager="Pref/BoolPref:1"/>
+						<boolpref id="wantdepthoffield" manager="Pref/BoolPref:1"/>
+						<boolpref id="wantsoftparticles" manager="Pref/BoolPref:1"/>
+						<boolpref id="shadowreceivers" manager="Pref/BoolPref:1"/>
 					</panel>
+					<!--
 					<panel id="prefs" label="SPECIAL EFFECTS" align="center" height="160" style="vpad: 10; layout: vertical; class: medbg;">
 						<boolpref id="suppressmuzzlelight" manager="Pref/BoolPref:1" style="vpad: 30;"/>
 						<boolpref id="combatsmoke" manager="Pref/BoolPref:1"/>
@@ -173,6 +189,7 @@
 						<sliderpref id="radialradius" manager="Pref/SliderPref:1"/>
 						<boolpref id="radialclutterwhenflying" manager="Pref/BoolPref:1"/>
 					</panel>
+					-->
 					<panel id="prefs" label="INFANTRY" align="center" height="210" style="vpad: 10; layout: vertical; class: medbg;">
 						<sliderpref id="inflodmod" manager="Pref/SliderPref:1,0,4" style="vpad: 30;"/>
 						<boolpref id="corpses" manager="Pref/BoolPref:1"/>
@@ -181,12 +198,13 @@
 						<sliderpref id="corpsetime" manager="Pref/SliderPref:1,0,4"/>
 						<boolpref id="corpsedetail" manager="Pref/BoolPref:1"/>
 					</panel>
+					<view height="50"/>
 				</view>
 				<scrollbar/>
 			</scrollview>
-			<view id="sound-prefs">
+			<view id="sound-prefs" style="class: litebg;">
 				<view style="layout: vertical; vpad: 5; hpad: 5;">
-					<panel id="prefs" label="SOUND CARD" align="center" height="120" style="vpad: 10; layout: vertical; class: medbg;">
+					<panel id="prefs" label="SOUND CARD" align="center" height="140" style="vpad: 20; layout: vertical; class: medbg;">
 						<listpref id="sound" manager="Pref/ListPref:2" style="vpad: 30;">
 							<script private="true">
 								<!--
@@ -231,9 +249,9 @@
 					</panel>
 				</view>
 			</view>
-			<scrollview id="ui-prefs">
+			<scrollview id="ui-prefs" style="class: litebg;">
 				<view style="layout: vertical; vpad: 5; hpad: 5;">
-					<panel id="prefs" label="USER INTERFACE" align="center" height="200" style="vpad: 10; layout: vertical; class: medbg;">
+					<panel id="prefs" label="USER INTERFACE" align="center" height="240" style="vpad: 20; layout: vertical; class: medbg;">
 						<boolpref id="tooltips" manager="Pref/BoolPref:3" style="vpad: 30;"/>
 						<boolpref id="app.languagefilter" manager="Pref/BoolPref:3"/>
 						<boolpref id="squadinvites" manager="Pref/BoolPref:3"/>
@@ -250,28 +268,44 @@
 						<colorpref id="ppook" manager="Pref/ColorPref:3"/>
 						<colorpref id="pponok" manager="Pref/ColorPref:3"/>
 					</panel>
+					<view height="50"/>
 				</view>
 				<scrollbar/>
 			</scrollview>
 			<view id="keymapper-prefs">
-				<panel id="keymapper-panel" label="SET KEYMAPS" width=".6">
+				<panel id="keymapper-panel" label="SET KEYMAPS" width=".7">
 					<listcontrol id="keymap-list" pad="15" y="50" rtop="20" style="class: litebg;"/>
 					<view id="keymap-buttons" pad="15" height="30" style="class: litebg;">
-						<button id="clearkeymap" x="30" center="y" label="DEFAULT" style="class: button.small; class: tinytext;"
-							onclick="window.mgr.DefaultKeymap()" tip="${ra.prefs..keymapper.button.def.key.tip}"/>
-						<button id="defaultkeymap" rright="30" center="y" label="CLEAR" style="class: button.small; class: tinytext;"
-							onclick="window.mgr.ClearKeymap()" tip="${ra.prefs.keymapper.button.clear.tip}"/>
+						<button id="clearkeymap" x="20" center="y" label="CLEAR" style="class: button.small; class: tinytext;"
+							onclick="window.mgr.ClearKeymap()" tip="Click this button to discard the currently selected keymap."/>
+						<button id="clearkeymap" center="true" label="DISCARD" style="class: button.small; class: tinytext;"
+							onclick="window.mgr.ResetKeymaps()" tip="Click this button to discard any pending changes."/>
+						<button id="defaultkeymap" rright="20" center="y" label="DEFAULTS" style="class: button.small; class: tinytext;"
+							onclick="window.mgr.DefaultKeymaps()" tip="Click this button to set default keymaps."/>
 					</view>
 				</panel>
-				<panel id="vclass-panel" label="SELECT CATEGORY"width=".35" rright="0">
-					<listcontrol id="keymap-cat-list" pad="15" y="50" rtop="20" style="class: litebg;"/>
-					<view id="keymap-buttons" pad="15" height="30" style="class: litebg;">
+				<panel id="nav-panel" label="SELECT CATEGORY" width=".25" rright="0">
+					<view pad="20" rtop="20" style="class: litebg; layout: vertical; vpad: 10;" center="x">
+						<!-- KEYMAP CATEGORIES -->
+						<caption label="GENERAL" width=".9" height="20" center="x" manager="KeymapCategory:0"/>
+						<caption label="VIEWS" width=".9" height="20" center="x" manager="KeymapCategory:1"/>
+						<caption label="INFANTRY" width=".9" height="20" center="x" manager="KeymapCategory:6"/>
+						<caption label="ARMOR" width=".9" height="20" center="x" manager="KeymapCategory:3"/>
+						<caption label="TRUCKS" width=".9" height="20" center="x" manager="KeymapCategory:4"/>
+						<caption label="GUNS" width=".9" height="20" center="x" manager="KeymapCategory:5"/>
+					</view>
+				</panel>
+				<!--
+				<panel id="vclass-panel" label="SELECT CATEGORY" width=".25" rright="0">
+					<listcontrol id="keymap-cat-list" pad="15" y="80" rtop="20" style="class: litebg;"/>
+					<view id="keymap-buttons" pad="15" height="60" style="class: litebg;">
 						<button id="defaultcategory" x="10" center="y" label="DEFAULT" style="class: button.small; class: tinytext;"
 							onclick="window.mgr.DefaultCategory(initKeymapList)"	tip="${ra.prefs.keymapper.button.def.cat.tip}"/>
 						<button id="revertcategory" rright="10" center="y" label="RESET" style="class: button.small; class: tinytext;"
 							onclick="window.mgr.ResetCategory(initKeymapList)" tip="${ra.prefs..keymapper.button.discard.tip}"/>
 					</view>
 				</panel>
+				-->
 			</view>
 			<view id="calib-prefs">
 				<panel id="calibration-panel" label="CALIBRATE" width=".6">
@@ -317,20 +351,20 @@
 		<!--
 		
 		var deviceList 			= findview("device-list");
-		var keymapCatList 	= findview("keymap-cat-list");
 		var keymapList 		= findview("keymap-list");
 		
-		game.onkeymapchange = hidePendingPopup;
-		game.onkeymapenter  = showPendingPopup;
+		game.onkeymapevent = OnKeymapEvent;
 		
 		function OnShow()
 		{
 			deviceList.mgr.selectCallback = selectDevice;
-			keymapCatList.mgr.selectCallback = selectKeymapCat;
 			keymapList.mgr.selectCallback = selectKeymap;
 			
 			initDevices();
-			initKeymapCats();
+			
+			// make sure our pref group is hilighted
+			window.mgr.SelectGroup(window.mgr.GetGroup(0));
+			window.mgr.SelectCategory(window.mgr.GetCategory(0));
 		}
 		
 		function initDevices()
@@ -368,185 +402,14 @@
 			window.mgr.SetCalibrator(deviceList.mgr.control.selectedData());
 		}
 		
-		function initKeymapCats()
-		{
-			keymapList.mgr.StartHeaders("keymap-header", 0, -1, 0, 15);
-		 	keymapList.mgr.AddHeader("ra.prefs.keymapper.keys.function", .5);
-		 	keymapList.mgr.AddHeader("ra.prefs.keymapper.keys.primary", .25);
-		 	keymapList.mgr.AddHeader("ra.prefs.keymapper.keys.secondary", .25);
-			keymapList.mgr.EndHeaders();
-			
-			var cats 	= new Array("general","views","infantry","armor","trucks","guns");
-			var data 	= new Array(0,1,6,3,4,5);
-			
-			keymapCatList.mgr.control.clearRows(false);
-			
-			for(var c = 0; c < cats.length; c++)
-			{
-				var loc = getlocstring('ra.prefs.keymapper.cats.' + cats[c]);
-				
-				keymapCatList.mgr.StartRow("category" + c, 10, 0, 0, 14);
-				keymapCatList.mgr.AddRowColumn("   " + loc.toUpperCase() , 1);
-				keymapCatList.mgr.EndRow(data[c]);
-			}
-			
-			keymapCatList.mgr.control.postInit(window.mgr.keymapCat);
-			initKeymapList();
-		}
-		
-		function selectKeymapCat(action)
-		{
-			window.mgr.SetKeymapCat(keymapCatList.mgr.control.selectedData());
-			window.mgr.SetKeymap(null);
-			initKeymapList();
-		}
-		
-		function initKeymapList()
-		{
-			keymapList.mgr.control.clearRows(true);
-			
-			var keymaps = game.getkeymaps(window.mgr.keymapCat);
-			var header	= null;
-			
-			for(var i = 0; i < keymaps.length; i++)
-			{
-				var keymap = keymaps[i];
-				
-				if(keymap.ezlevel == -1 || keymap.ezlevel >= game.ezmode)
-				{
-					if(keymap.header != header)
-					{
-						header = keymap.header;
-						
-						keymapList.mgr.StartRow("header" + i, 10, 0, 0, 14);
-						keymapList.mgr.AddRowColumn(header.toUpperCase() , 1, "left", "litebg");
-						keymapList.mgr.EndRow();
-					}
-					
-					keymap.category = window.mgr.keymapCat;
-					keymap.vehicle 	= -1;
-					keymap.index 	= i;
-					
-					// need to format
-					keymapList.mgr.StartRow("keymap." + i, 10, 0, 0, 16);
-					keymapList.mgr.AddRowColumn("   " + htmlencode(keymap.functionname) , .5, "left", "smalltext");
-					
-					var km = keymapList.mgr.AddRowColumn("" , .25, "left", "smalltext");
-					
-					km.attributes 								= new Object();
-					km.attributes["class"] 					= "keymap";
-					km.attributes["category"] 			= keymap.category;
-					km.attributes["vehidx"] 				= keymap.vehicle;
-					km.attributes["funcidx"] 				= keymap.index;
-					km.attributes["keyidx"] 				= 0;
-					km.attributes["onmousedown"] 	= 'setKeymapIndex(0)';
-					
-					if(keymap.isaxis)
-					{
-						var km1 = keymapList.mgr.AddRowColumn("" , .25 * .5, "left", "smalltext");
-						
-						km1.attributes 								= new Object();
-						km1.attributes["class"] 					= "keymap";
-						km1.attributes["category"] 				= keymap.category;
-						km1.attributes["vehidx"] 				= keymap.vehicle;
-						km1.attributes["funcidx"] 				= keymap.index;
-						km1.attributes["keyidx"] 				= 1;
-						km1.attributes["onmousedown"] 	= 'setKeymapIndex(1)';
-						
-						var km2 = keymapList.mgr.AddRowColumn("" , .25 * .5, "left", "smalltext");
-						
-						km2.attributes 								= new Object();
-						km2.attributes["class"] 					= "keymap";
-						km2.attributes["category"] 				= keymap.category;
-						km2.attributes["vehidx"] 				= keymap.vehicle;
-						km2.attributes["funcidx"] 				= keymap.index;
-						km2.attributes["keyidx"] 				= 2;
-						km2.attributes["onmousedown"] 	= 'setKeymapIndex(2)';
-					}
-					else
-					{
-						var km1 = keymapList.mgr.AddRowColumn("" , .25, "left", "smalltext");
-						
-						km1.attributes 								= new Object();
-						km1.attributes["class"] 					= "keymap";
-						km1.attributes["category"] 				= keymap.category;
-						km1.attributes["vehidx"] 				= keymap.vehicle;
-						km1.attributes["funcidx"] 				= keymap.index;
-						km1.attributes["keyidx"] 				= 1;
-						km1.attributes["onmousedown"] 	= 'setKeymapIndex(1)';
-					}
-					
-					keymapList.mgr.EndRow(keymap);
-				}
-			}
-			
-			keymapList.mgr.control.postInit();
-		}
-		
 		function selectKeymap()
 		{
-			consoleprint("Setting keymap!");
-			window.mgr.SetKeymap(keymapList.mgr.control.selectedData());
+			window.mgr.SetKeymap(window.keymapList.mgr.control.selectedData());
 		}
 		
-		function setKeymapIndex(i)
+		function OnKeymapEvent(e, keymap)
 		{
-			window.mgr.SetKeymapIndex(i);
-		}
-		
-		function showPendingPopup(keymap)
-		{
-			hidePendingPopup();
-			
-			var data 			= keymapList.mgr.control.selectedData();
-			var message 	= getlocstring('ra.prefs.keymapper.pending.keymap') + ": " + htmlencode(keymap.functionname) + "\n\n";
-			
-			if(keymap.isaxis)
-			{
-				if(keymap.keyidx == 0) // axis
-				{
-					message += getlocstring('ra.prefs.keymapper.pending.move') + "\n";
-					message += getlocstring('ra.prefs.keymapper.pending.invert')  + "\n";
-				}
-				else if(keymap.keyidx == 1) // negative
-				{
-					message += getlocstring('ra.prefs.keymapper.pending.dec') + "\n";
-				}
-				else // positive
-				{
-					message += getlocstring('ra.prefs.keymapper.pending.inc') + "\n";
-				}
-			}
-			else
-			{
-				if(keymap.keyidx == 0) // primary
-					message += getlocstring('ra.prefs.keymapper.pending.pri') + "\n";
-				else // secondary
-					message += getlocstring('ra.prefs.keymapper.pending.sec') + "\n";
-			}
-			
-			var pending = game.load("popups/pending");
-			pending.setPopupMessage(message);
-		}
-		
-		function hidePendingPopup()
-		{
-			consoleprint("Trying to hide our pending popup!");
-			
-			var pending = game.findview("pending");
-			
-			if(pending != null)
-				pending.close();
-		}
-		
-		function updatekeymapper()
-		{
-			var userkeymap 	= game.hasuserkeymap(window.mgr.keymapCat);
-			var dirty 				= game.keymapisdirty(window.mgr.keymapCat);
-			
-			// update buttons
-			//defaultcategory.enabled = userkeymap || dirty;
-			//revertcategory.enabled  = userkeymap && dirty;
+			window.mgr.HandleKeymapEvent(e, keymap);
 		}
 		
 		-->

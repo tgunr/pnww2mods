@@ -38,7 +38,7 @@
 		////////////////// columns
 		self.StartHeaders = function(id, x, y, w, h)
 		{
-			this.hrb = new RowBuilder(this.view, id, x, y, w, h);
+			this.hrb = new RowBuilder(this.view, id, x, y, w - this.list.rmargin, h);
 			
 			// move our height down to accomodate our headers
 			this.list.height = this.list.height - this.list.scalev("h", h);
@@ -92,7 +92,7 @@
 		///////////////// rows
 		self.StartRow = function(id, x, y, w, h)
 		{
-			this.rrb = new RowBuilder(this.list, id, x, y, w, h);
+			this.rrb = new RowBuilder(this.list, id, x, y, w - this.list.rmargin, h);
 			return this.rrb;
 		}
 		

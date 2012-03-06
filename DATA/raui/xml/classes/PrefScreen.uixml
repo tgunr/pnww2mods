@@ -12,33 +12,48 @@
 		
 		game.consoleprint("Creating PrefScreen for " + self.view.id);
 		
-		self.prefs					= new Object();
-		self.pending				= new Object();
-		self.groups				= new Array();
-		self.group					= null;
-		self.prefsView 			= self.view.findview("prefs-view");
-		self.saveButton		= self.view.findview("save-button");
-		self.BaseOnShow 	= self.OnShow;
+		self.prefs							= new Object();
+		self.pending						= new Object();
+		self.groups						= new Array();
+		self.group							= null;
+		self.prefsView 					= self.view.findview("prefs-view");
+		self.saveButton				= self.view.findview("save-button");
 		
-		self.mouseCalib		= self.view.findview("mouse-calibration");
-		self.mouseAimCalib	= self.view.findview("mouse-aim-calibration");
-		self.joystickCalib		= self.view.findview("joystick-calibration");
-		self.calibrator			= self.view.findview("calibrator");
+		self.mouseCalib				= self.view.findview("mouse-calibration");
+		self.mouseAimCalib			= self.view.findview("mouse-aim-calibration");
+		self.joystickCalib				= self.view.findview("joystick-calibration");
+		self.calibrator					= self.view.findview("calibrator");
 		
 		self.mouseAimCalib.mgr 	= self;
 		self.joystickCalib.mgr 		= self;
 		self.calibrator.mgr			= self;
 		
+		// keymaps
+		self.categories					= new Array();
+		self.category					= null;
+		self.keymapList				= self.view.findview("keymap-list");
 		self.keymapsInit				= false;
 		self.keymapCat				= 0;
 		self.keymapIndex				= 0;
 		self.keymap						= null;
 		
+		// has anything been modified?
+		self.modified						= false;
+		
+		self.BaseOnShow 			= self.OnShow;
+		self.BaseDoBack 				= self.DoBack;
+		
+		self.DoBack = function()
+		{
+			this.ResetPrefs(true);
+			return this.BaseDoBack();
+		}
+		
 		self.OnShow = function()
 		{
 			this.SetVisible("lobby-button", false);
 			this.SetVisible("prefs-button", false);
-			this.saveButton.enabled 	= false;
+			this.SetModified(false);
 			this.BaseOnShow();
 		}
 		
@@ -61,15 +76,38 @@
 			this.groups.push(g);
 		}
 		
+		self.GetGroup = function(index)
+		{
+			consoleprint("Looking for pref group: " + index);
+			
+			for(var g = 0; g < this.groups.length; g++)
+			{
+				consoleprint("Checking pref group: " + this.groups[g].index);
+				
+				if(this.groups[g].index == index)
+					return this.groups[g];
+			}
+				
+			return null;
+		}
+		
 		self.SelectGroup = function(g)
 		{
+			consoleprint("SelectGroup called!");
+			
 			if(this.group != null)
+			{
+				consoleprint("Deselecting old pref group: " + this.group.index);
 				this.group.Deselect(this.prefsView);
+			}
 			
 			this.group = g;
 			
 			if(this.group != null)
+			{
+				consoleprint("Selecting new pref group: " + this.group.index);
 				this.group.Select(this.prefsView);
+			}
 		}
 		
 		self.SetGroupModified = function(index)
@@ -77,8 +115,7 @@
 			if(this.groups.length >= 0 && index < this.groups.length) 
 				this.groups[index].SetModified(true);
 			
-			// enable the save button
-			this.saveButton.enabled = true;
+			this.SetModified(true);
 		}
 		
 		self.SavePrefs = function()
@@ -93,7 +130,7 @@
 			this.ResetPrefs();
 		}
 		
-		self.ResetPrefs = function()
+		self.ResetPrefs = function(kill)
 		{
 			for(var p in this.pending)
 				this.pending[p].Reset();
@@ -102,11 +139,13 @@
 			
 			for(var i = 0; i < this.groups.length; i++)
 				this.groups[i].SetModified(false);
-				
-			this.KillKeymaps();
 			
-			// disable the save button
-			this.saveButton.enabled = false;
+			this.ResetKeymaps();
+			
+			if(kill == true)
+				this.KillKeymaps();
+			
+			this.SetModified(false);
 		}
 		
 		self.UpdateUI = function()
@@ -340,6 +379,12 @@
 			this.ResetPrefs();
 		}
 		
+		self.SetModified = function(m)
+		{
+			this.modified = m;
+			this.saveButton.enabled = m;
+		}
+		
 		self.DropDown = function(prefMgr)
 		{
 			var dropDown = game.load("misc/dropdown", window);
@@ -374,7 +419,7 @@
 				var option = prefMgr.options[o];
 				
 				dropDown.mgr.StartRow("row" + o, 0, 0, 0, 16);
-				dropDown.mgr.AddRowColumn(option.label, 1);
+				dropDown.mgr.AddRowColumn(option.label, 1, "right");
 				dropDown.mgr.EndRow(option.value);
 				
 				if(option.value == current)
@@ -429,6 +474,75 @@
 			this.InitKeymaps();
 		}
 		
+		self.AddCategory = function(c)
+		{
+			this.categories.push(c);
+			c.index = this.categories.length - 1;
+		}
+		
+		self.GetCategory = function(catid)
+		{
+			consoleprint("Looking for pref keymap category: " + catid);
+			
+			for(var c = 0; c < this.categories.length; c++)
+			{
+				consoleprint("Checking pref keymap category: " + this.categories[c].catid);
+				
+				if(this.categories[c].catid == catid)
+					return this.categories[c];
+			}
+				
+			return null;
+		}
+		
+		self.SelectCategory = function(c)
+		{
+			consoleprint("SelectCategory called!");
+			
+			if(this.category != null)
+			{
+				consoleprint("Deselecting old pref keymap category: " + this.category.catid);
+				this.category.Deselect();
+			}
+			
+			this.category = c;
+			
+			if(this.category != null)
+			{
+				consoleprint("Selecting new pref keymap category: " + this.category.catid);
+				this.category.Select();
+			}
+		}
+		
+		self.SetCatModified = function(catid)
+		{
+			var category = this.GetCategory(catid);
+			if(category != null) category.SetModified(true);
+			this.SetModified(true);
+		}
+		
+		self.SetCatUnmodified = function(catid)
+		{
+			var modified = false;
+			
+			if(catid != null)
+			{
+				var category = this.GetCategory(catid);
+				
+				if(category != null)
+					category.SetModified(false);
+			}
+			else
+			{
+				for(var c = 0; c < this.categories.length; c++)
+					this.categories[c].SetModified(false);
+			}
+			
+			this.SetModified(false);
+		}
+		
+		///////////////////// keymaps
+		
 		self.InitKeymaps = function()
 		{
 			if(!this.keymapsInit)
@@ -447,50 +561,101 @@
 			}
 		}
 		
+		self.ResetKeymaps = function()
+		{
+			if(this.keymapsInit)
+				game.resetkeymaps();
+			
+			for(var c = 0; c < this.categories.length; c++)
+				this.categories[c].SetModified(false);
+		}
+		
 		self.SaveKeymaps = function(kill)
 		{
 			if(this.keymapsInit)
 			{
 				game.savekeymaps();
 				
-				if(kill)
+				if(kill == true)
 					this.KillKeymaps();
 			}
+			
+			for(var c = 0; c < this.categories.length; c++)
+				this.categories[c].SetModified(false);
 		}
+		
+		// all defaults
+		self.DefaultKeymaps = function(callback)
+		{
+			for(var c = 0; c < this.categories.length; c++)
+			{
+				var category = this.categories[c];
+				
+				game.resetkeymaps(category.catid);
+				game.defaultkeymaps(category.catid, -1);
+			}
+			
+			this.SaveKeymaps();
+			
+			if(callback != null) callback();
+		}
+		
+		////////////////// category functions
 		
 		// category defaults
 		self.DefaultCategory = function(callback)
 		{
-			game.keymapremoveall(this.keymapCat, -1);
+			var category = this.GetCategory(this.keymapCat);
+			if(category != null) category.SetModified(false);
 			
-			if(callback != null)
-				callback();
+			game.resetkeymaps(this.keymapCat);
+			game.defaultkeymaps(this.keymapCat, -1);
+			if(callback != null) callback();
 		}
 		
 		// undo changes
 		self.ResetCategory = function(callback)
 		{
-			game.keymaprestore(this.keymapCat, -1)
-			
-			if(callback != null)
-				callback();
+			var category = this.GetCategory(this.keymapCat);
+			if(category != null) category.SetModified(false);
+				
+			game.resetkeymaps(this.keymapCat, -1)
+			if(callback != null) callback();
+		}
+		
+		//////////////////// keymap functions
+		
+		// set default keymap
+		self.DefaultKeymap = function(callback)
+		{
+			game.resetkeymap(this.keymap, this.keymapIndex);
+			game.defaultkeymap(this.keymap, this.keymapIndex);
+			if(callback != null) callback();
 		}
 		
 		// clear it
-		self.ClearKeymap = function()
-		{
-			game.clearkeymap(this.keymap, this.keymapIndex);
-		}
-		
-		// set default keymap
-		self.DefaultKeymap = function()
+		self.ClearKeymap = function(callback)
 		{
 			game.resetkeymap(this.keymap, this.keymapIndex);
+			game.clearkeymap(this.keymap, this.keymapIndex);
+			if(callback != null) callback();
 		}
 		
+		// discard changes to the keymap
+		self.ResetKeymap = function(callback)
+		{
+			game.resetkeymap(this.keymap, this.keymapIndex);
+			if(callback != null) callback();
+		}
+		
+		
+		////////////// helpful setters
 		self.SetKeymapCat = function(cat)
 		{
-			this.keymapCat = cat;
+			this.keymapCat = parseInt(cat);
+			this.SetKeymap(null);
+			this.InitKeymaps();
+			this.InitKeymapList();
 		}
 		
 		self.SetKeymap = function(k)
@@ -503,7 +668,137 @@
 			this.keymapIndex = i;
 		}
 		
+		self.InitKeymapList = function()
+		{
+			this.keymapList.mgr.control.clearRows(true);
+			
+			var keymaps = game.getkeymaps(this.keymapCat);
+			var header	= null;
+			
+			for(var i = 0; i < keymaps.length; i++)
+			{
+				var keymap = keymaps[i];
+				
+				if(keymap.ezlevel == -1 || keymap.ezlevel >= game.ezmode)
+				{
+					if(keymap.header != header)
+					{
+						header = keymap.header;
+						
+						this.keymapList.mgr.StartRow("header" + i, 10, 0, 0, 14);
+						this.keymapList.mgr.AddRowColumn(header.toUpperCase() , 1, "left", "litebg");
+						this.keymapList.mgr.EndRow();
+					}
+					
+					keymap.category = this.keymapCat;
+					keymap.vehicle 	= -1;
+					keymap.index 	= i;
+					
+					// need to format
+					this.keymapList.mgr.StartRow("keymap." + i, 10, 0, 0, 16);
+					this.keymapList.mgr.AddRowColumn("   " + htmlencode(keymap.functionname) , .5, "left", "smalltext");
+					
+					var km = this.keymapList.mgr.AddRowColumn("" , .25, "left", "keymap");
+					
+					km.attributes 								= new Object();
+					km.attributes["class"] 					= "keymap";
+					km.attributes["category"] 			= keymap.category;
+					km.attributes["vehidx"] 				= keymap.vehicle;
+					km.attributes["funcidx"] 				= keymap.index;
+					km.attributes["keyidx"] 				= 0;
+					km.attributes["onmousedown"] 	= 'SetKeymapIndex(0)';
+					
+					if(keymap.isaxis)
+					{
+						var km1 = this.keymapList.mgr.AddRowColumn("" , .25 * .5, "left", "keymap");
+						
+						km1.attributes 								= new Object();
+						km1.attributes["class"] 					= "keymap";
+						km1.attributes["category"] 				= keymap.category;
+						km1.attributes["vehidx"] 				= keymap.vehicle;
+						km1.attributes["funcidx"] 				= keymap.index;
+						km1.attributes["keyidx"] 				= 1;
+						km1.attributes["onmousedown"] 	= 'SetKeymapIndex(1)';
+						
+						var km2 = this.keymapList.mgr.AddRowColumn("" , .25 * .5, "left", "keymap");
+						
+						km2.attributes 								= new Object();
+						km2.attributes["class"] 					= "keymap";
+						km2.attributes["category"] 				= keymap.category;
+						km2.attributes["vehidx"] 				= keymap.vehicle;
+						km2.attributes["funcidx"] 				= keymap.index;
+						km2.attributes["keyidx"] 				= 2;
+						km2.attributes["onmousedown"] 	= 'SetKeymapIndex(2)';
+					}
+					else
+					{
+						var km1 = this.keymapList.mgr.AddRowColumn("" , .25, "left", "keymap");
+						
+						km1.attributes 								= new Object();
+						km1.attributes["class"] 					= "keymap";
+						km1.attributes["category"] 				= keymap.category;
+						km1.attributes["vehidx"] 				= keymap.vehicle;
+						km1.attributes["funcidx"] 				= keymap.index;
+						km1.attributes["keyidx"] 				= 1;
+						km1.attributes["onmousedown"] 	= 'SetKeymapIndex(1)';
+					}
+					
+					this.keymapList.mgr.EndRow(keymap);
+				}
+			}
+			
+			this.keymapList.mgr.control.postInit();
+		}
+		
+		self.HandleKeymapEvent = function(e, keymap)
+		{
+			var pending = game.findview("pending");
+			if(pending != null) pending.close();
+			
+			if(e == 0)
+			{
+				var message 	= getlocstring('ra.prefs.keymapper.pending.keymap') + ": " + htmlencode(keymap.functionname) + "\n\n";
+				
+				if(keymap.isaxis)
+				{
+					if(keymap.keyidx == 0) // axis
+					{
+						message += getlocstring('ra.prefs.keymapper.pending.move') + "\n";
+						message += getlocstring('ra.prefs.keymapper.pending.invert')  + "\n";
+					}
+					else if(keymap.keyidx == 1) // negative
+					{
+						message += getlocstring('ra.prefs.keymapper.pending.dec') + "\n";
+					}
+					else // positive
+					{
+						message += getlocstring('ra.prefs.keymapper.pending.inc') + "\n";
+					}
+				}
+				else
+				{
+					if(keymap.keyidx == 0) // primary
+						message += getlocstring('ra.prefs.keymapper.pending.pri') + "\n";
+					else // secondary
+						message += getlocstring('ra.prefs.keymapper.pending.sec') + "\n";
+				}
+				
+				var pending = game.load("popups/pending");
+				pending.setPopupMessage(message);
+			}
+			else if(e == 1)
+			{
+				this.SetGroupModified(4);
+				this.SetCatModified(this.keymapCat);
+			}
+		}
+		
 		return self;
+	}
+	
+	function SetKeymapIndex(i)
+	{
+		window.mgr.SetKeymapIndex(i);
 	}
 	
 	function OnDropDownSelection(action, dd)

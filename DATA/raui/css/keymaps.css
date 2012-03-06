@@ -1,0 +1,31 @@
+
+$keymapborder = #FFFFFF11
+
+keymap
+{
+	class: smalltext;
+	background-color: #FFFFFF00;
+	border-size: 1;
+	border-color: $keymapborder;
+}
+
+keymap.focused
+{
+	class: keymap;
+	background-color: #FFFFFF44;
+	border-color: $keymapborder;
+}
+
+keymap.modified
+{
+	class: keymap;
+	class: pref.modified;
+	border-color: $modified;
+}
+
+keymap.focused.modified
+{
+	class: keymap.focused;
+	class: keymap.modified;
+}
+
