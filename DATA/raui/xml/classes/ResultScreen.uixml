@@ -45,6 +45,8 @@
 			if(game.ingame)
 			{
 				//game.load("aar");
+				game.enableimapinput(true);
+				game.cursor.update(window.id);
 				game.despawn(false);
 			}
 			else
