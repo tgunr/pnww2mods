@@ -454,26 +454,29 @@ void lightGetSunAmbientDiffuseSpecular(mat3 tbn,
 	vec3 Ltan;
 	vec3 Htan;
 	float d;
-	float s;
+	float s = 0.0;
 	
 	float level = gl_FrontMaterial.shininess;
 	
-	Ltan = lightsource[0].dir * tbn;
+    vec3 L = lightsource[0].dir;
+
+	Ltan = L * tbn;
 				
 	d = max(dot(normal, Ltan), 0.0);
 
 	diffuse = d * lightsource[0].diffuse;
-			
-    if(d > 0.0)
-    {
-	    Htan = normalize(lightsource[0].dir + V) * tbn;
-		
-	    s = max(dot(normal, Htan), 0.0);	
-        s = pow(s, level);
 
-        specular = s * lightsource[0].specular;
+    vec3 H = normalize(L + V);
+    Htan = H * tbn;
+
+    if(d > 0)
+    {
+	    s = max(dot(normal, Htan), 0.0);	  
+        s = pow(s, level);
     }
 
+    specular = s * lightsource[0].specular;
+   
     ambient = lightsource[0].ambient;
 }
 
