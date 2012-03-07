@@ -588,6 +588,7 @@
     <uniform name="src2" type="sampler2d" unit="0" onetimeapply="true"></uniform>
     <uniform name="refl" type="sampler2d" unit="1" onetimeapply="true"></uniform>
     <uniform name="surf" type="sampler2d" unit="2" onetimeapply="true"></uniform>
+    <uniform name="diffusemap" type="sampler2d" unit="3" onetimeapply="true"></uniform>
     <uniform name="time" type="float"></uniform>
   </program>
   <!--=================================================================-->
