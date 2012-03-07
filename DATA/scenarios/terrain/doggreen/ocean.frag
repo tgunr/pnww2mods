@@ -3,28 +3,27 @@
 uniform sampler2D src2;
 uniform sampler2D refl;
 uniform sampler2D surf;
+uniform sampler2D diffusemap;
 
 varying vec3 vertexpos;
 varying vec3 T;
 varying vec3 B;
 varying vec3 N;
 
-void lightGetAmbientDiffuseSpecular(in vec3,
-                                    in vec3,
-                                    in vec3,
-                                    in vec3,
-                                    in vec3,
-                                    out vec4, 
-                                    out vec4,
-                                    out vec4);
+void lightGetSunAmbientDiffuseSpecular(in mat3,
+                                       in vec3,
+                                       in vec3,
+                                       out vec4, 
+                                       out vec4,
+                                       out vec4);
 
 vec4 fogThis(in vec4);
 
-const vec4 ocolor = vec4(0.3960784, 0.549019607, 0.7058823529, 1.0);
-
 void main()
 {
-	vec3 t0 = texture2D(src2, gl_TexCoord[0].zw).rgb;
+    vec4 base = texture2D(diffusemap, gl_TexCoord[0].xy);
+
+    vec3 t0 = texture2D(src2, gl_TexCoord[0].zw).rgb;
 	vec3 t1 = texture2D(src2, gl_TexCoord[1].xy).rgb;
 	vec3 t2 = texture2D(src2, gl_TexCoord[1].zw).rgb;
 	
@@ -50,25 +49,25 @@ void main()
 	vec3 b = normalize(B);
 	vec3 n = normalize(N);
 		
-	lightGetAmbientDiffuseSpecular(t, 
-	                               b, 
-	                               n, 
-	                               v, 
-	                               m, 
-	                               ambientColor, 
-	                               diffuseColor, 
-	                               specularColor);
+    mat3 tbn = mat3(t, b, n);
+
+	lightGetSunAmbientDiffuseSpecular(tbn,
+	                                  v, 
+	                                  m, 
+	                                  ambientColor, 
+	                                  diffuseColor, 
+	                                  specularColor);
 
 	ambientColor += gl_LightModel.ambient;
 	
 	specularColor *= gl_FrontMaterial.specular;
-	diffuseColor *= ocolor;
+	diffuseColor *= gl_FrontMaterial.diffuse;
 	ambientColor *= gl_FrontMaterial.ambient;
 
 	float facing = max(dot(n, v), 0.0);
 	
 	// Reflect less if closer to water. 	
-	vec4 color = mix(t3, ocolor, facing);
+	vec4 color = mix(t3, base, facing);
 
 	color.rgb += t4.rgb;
 
