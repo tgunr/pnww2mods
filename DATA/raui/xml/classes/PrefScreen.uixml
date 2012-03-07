@@ -1,8 +1,8 @@
 <script>
 
 	<include file="classes/ScreenManager.uixml"/>
-	<include file="classes/Pref.uixml"/>
-	<!-- include file="classes/PrefGroup.uixml"/ -->
+	<include file="classes/PrefManager.uixml"/>
+	<include file="classes/KeymapManager.uixml"/>
 	
 	<!--
 	
@@ -12,40 +12,39 @@
 		
 		game.consoleprint("Creating PrefScreen for " + self.view.id);
 		
-		self.prefs							= new Object();
-		self.pending						= new Object();
+		// sub managers
+		self.prefMgr						= new PrefManager(self);
+		self.keymapMgr				= new KeymapManager(self);
+		
 		self.groups						= new Array();
 		self.group							= null;
+		
 		self.prefsView 					= self.view.findview("prefs-view");
 		self.saveButton				= self.view.findview("save-button");
 		
-		self.mouseCalib				= self.view.findview("mouse-calibration");
-		self.mouseAimCalib			= self.view.findview("mouse-aim-calibration");
-		self.joystickCalib				= self.view.findview("joystick-calibration");
-		self.calibrator					= self.view.findview("calibrator");
-		
-		self.mouseAimCalib.mgr 	= self;
-		self.joystickCalib.mgr 		= self;
-		self.calibrator.mgr			= self;
-		
-		// keymaps
-		self.categories					= new Array();
-		self.category					= null;
-		self.keymapList				= self.view.findview("keymap-list");
-		self.keymapsInit				= false;
-		self.keymapCat				= 0;
-		self.keymapIndex				= 0;
-		self.keymap						= null;
-		
-		// has anything been modified?
-		self.modified						= false;
-		
+		// overriden base function
 		self.BaseOnShow 			= self.OnShow;
 		self.BaseDoBack 				= self.DoBack;
 		
-		self.DoBack = function()
+		self.DoBack = function(force)
 		{
-			this.ResetPrefs(true);
+			if(force != true && this.IsModified())
+			{
+				soundPlayClick();
+				
+				var popup = loadWin("popups/confirm", false);
+				
+				popup.mgr.SetDisplay("You have modified preferences. Do you wish to save before exiting?");
+				popup.mgr.SetButton("SAVE", "DISCARD");
+				popup.mgr.SetAction(OnModifiedBack);
+				
+				return null;
+			}
+			
+			// make sure everything gets cleaned up
+			this.Reset(true);
+			
+			// go back
 			return this.BaseDoBack();
 		}
 		
@@ -57,18 +56,24 @@
 			this.BaseOnShow();
 		}
 		
-		self.AddPref = function(pref)
+		self.Save = function()
 		{
-			this.prefs[pref.name] = pref;
+			var restartRequired = false;
+			
+			if(this.prefMgr.SavePrefs())
+				restartRequired = true;
+			
+			if(this.keymapMgr.SaveKeymaps())
+				restartRequired = true;
+			
+			if(restartRequired)
+				showOk(getlocstring('widgets.prefs.changed'));
 		}
 		
-		self.AddPendingPref = function(pref)
+		self.Reset = function(kill)
 		{
-			if(pref != null && pref.Pending())
-			{
-				this.pending[pref.name] = pref;
-				this.SetGroupModified(pref.group);
-			}
+			this.prefMgr.ResetPrefs(kill);
+			this.keymapMgr.ResetKeymaps(kill);
 		}
 		
 		self.AddGroup = function(g)
@@ -110,295 +115,55 @@
 			}
 		}
 		
-		self.SetGroupModified = function(index)
+		self.SetGroupModified = function(index, m)
 		{
-			if(this.groups.length >= 0 && index < this.groups.length) 
-				this.groups[index].SetModified(true);
-			
-			this.SetModified(true);
-		}
-		
-		self.SavePrefs = function()
-		{
-			for(var p in this.pending)
-					this.pending[p].Update();
-			
-			if(game.settings.restartneeded)
-				showOk('widgets.prefs.changed');
-			
-			this.SaveKeymaps();
-			this.ResetPrefs();
-		}
-		
-		self.ResetPrefs = function(kill)
-		{
-			for(var p in this.pending)
-				this.pending[p].Reset();
-			
-			this.pending = new Object();
-			
 			for(var i = 0; i < this.groups.length; i++)
-				this.groups[i].SetModified(false);
-			
-			this.ResetKeymaps();
-			
-			if(kill == true)
-				this.KillKeymaps();
-			
-			this.SetModified(false);
-		}
-		
-		self.UpdateUI = function()
-		{
-			for(var p in this.prefs)
 			{
-				if(this.prefs[p].vmgr != null)
-					this.prefs[p].vmgr.Update();
-			}
-		}
-		
-		self.SetPref = function(name, value)
-		{
-			var pref = this.GetPref(name);
-			
-			if(pref != null)
-				pref.Set(value);
-		}
-		
-		self.GetPref = function(name)
-		{
-			return this.prefs[name];
-		}
-		
-		self.CreatePref = function(name, type, defValue)
-		{
-			//consoleprint("PrefScreen: new pref requested: " + name);
-			this.prefs[name] = new Pref(name, type, defValue);
-			//consoleprint("PrefScreen: new pref created: " + this.prefs[name].name);
-			return this.prefs[name];
-		} 
-		
-		self.DefaultPrefs = function()
-		{
-			//this.SetPref('wantsse2', false);
-			this.SetPref("language", 0);
-			this.SetPref("usenetworkroute", 0);
-			this.SetPref("fontsize", 11);
-			//this.SetPref('shademode', 1);
-			//this.SetPref('bnoframerunahead', true);
-			this.SetPref('enablevsync', false);
-			//this.SetPref('gammared', 1);
-			//this.SetPref('gammagreen', 1);
-			//this.SetPref('gammablue', 1);
-			//this.SetPref("video", null);
-			//this.SetPref("resolution", "1024x768x32");
-			//this.SetPref('bdithering', true);
-			//this.SetPref('bspecular', true);
-			//this.SetPref('texturereduction', false);
-			//this.SetPref('suppresstracersmoke', false);
-			//this.SetPref('suppressmuzzlesmoke', false);
-			this.SetPref('suppressmuzzlelight', false);
-			//this.SetPref('lodfieldofview', false);
-			//this.SetPref('lodlimitperframe', false);
-			this.SetPref('radialdensity', .5);
-			this.SetPref('radialradius', .5);
-			this.SetPref("visplayerlimit", 2);
-			//this.SetPref("shadowsizeselect", 6);
-			this.SetPref('enableh2oshaders', true);
-			this.SetPref('grassshader', true);
-			this.SetPref('postrenderfilter', true);
-			this.SetPref('normalmaps', true);
-			this.SetPref('waterreflections', true);
-			this.SetPref('reflectionupdate', 5);
-			this.SetPref('wantmessagealert', true);
-			this.SetPref('ui.playmusic', true);
-			this.SetPref('volumemultiplier', 1);
-			this.SetPref('musicmultiplier', 1);
-			//this.SetPref("sound", null);
-			this.SetPref("bsoundenable", true);
-			//this.SetPref("b3dsoundenable", false);
-			//this.SetPref("maxnumbersounds", 128);
-			this.SetPref("ambientlevel", 0);
-			this.SetPref('ui.tooltips', true);
-			this.SetPref('squadinvites', true);
-			//this.SetPref("friendlycolor", color);
-			//this.SetPref("enemycolor", ?);
-			//this.SetPref("squadcolor", ?);
-			//this.SetPref("missioncolor", ?);
-			//this.SetPref("missionleadercolor", ?);
-			this.SetPref('view.info.visible', true);
-			this.SetPref('view.readout.visible', false);
-			this.SetPref('view.orders.visible', true);
-			this.SetPref('view.health.visible', true);
-			this.SetPref('view.primaryammo.visible', true);
-			this.SetPref('view.secondaryammo.visible', true);
-			this.SetPref('view.chat.visible', true);
-			this.SetPref('view.kenny.visible', true);
-			this.SetPref('hud.minimap.mode', 0);
-			this.SetPref('hud.minimap.scale', .8);
-			this.SetPref("hud.iconmode", 0);
-			this.SetPref("hud.mode", 0);
-			//this.SetPref("ragdolls", true);
-			this.SetPref("wantbloodeffects", true);
-			this.SetPref("shadowreceivers", (1 | 4 | 16 | 32));
-			this.SetPref("corpses", true);
-			//this.SetPref("ragdollweapons", true);
-			this.SetPref("combatsmoke", true);
-			
-			// set any balanced options
-			this.SetPreset(1);
-		}
-		
-		self.SetPreset = function(which)
-		{
-			switch(which)
-			{
-				case 0: // quality
-					//this.SetPref('shademode', 1);
-					//this.SetPref('bnoframerunahead', false);
-					this.SetPref('enablevsync', true);
-					//this.SetPref('bdithering', true);
-					this.SetPref('bspecular', true);
-					//this.SetPref('texturereduction', false);
-					//this.SetPref('suppresstracersmoke', false);
-					//this.SetPref('suppressmuzzlesmoke', false);
-					this.SetPref('suppressmuzzlelight', false);
-					//this.SetPref('lodfieldofview', false);
-					//this.SetPref('lodlimitperframe', false);
-					this.SetPref('radialdensity', 1);
-					this.SetPref('radialradius', 1);
-					this.SetPref('visplayerlimit', 3);
-					this.SetPref('shadowsizeselect', 6);
-					this.SetPref('enableh2oshaders', true);
-					this.SetPref('grassshader', true);
-					this.SetPref('postrenderfilter', true);
-					this.SetPref('normalmaps', true);
-					this.SetPref('waterreflections', true);
-					this.SetPref('reflectionupdate', 1);
-					//this.SetPref('bsoundenable', true);
-					//this.SetPref('b3dsoundenable', true);
-					//this.SetPref('maxnumbersounds', 64);
-					this.SetPref('ambientlevel', 0);
-					//this.SetPref('ragdolls', true);
-					this.SetPref('wantbloodeffects', true);
-					this.SetPref('shadowreceivers', (1 | 2 | 4 | 8 | 16 | 32));
-					this.SetPref('app.shadows', 2);
-					this.SetPref('corpses', true);
-					//this.SetPref('ragdollweapons', true);
-					this.SetPref('combatsmoke', true);
-					this.SetPref('corpsetime', 1);
-					this.SetPref('corpsecount', 1);
-					this.SetPref('corpsedetail', true);
-					this.SetPref('inflodmod', 1);
-
-					break;
-				case 1: // balanced
-					//this.SetPref('shademode', 1);
-					//this.SetPref('bnoframerunahead', true);
-					this.SetPref('enablevsync', false);
-					//this.SetPref('bdithering', true);
-					this.SetPref('bspecular', true);
-					//this.SetPref('texturereduction', false);
-					//this.SetPref('suppresstracersmoke', false);
-					//this.SetPref('suppressmuzzlesmoke', false);
-					this.SetPref('suppressmuzzlelight', false);
-					//this.SetPref('lodfieldofview', true);
-					//this.SetPref('lodlimitperframe', true);
-					this.SetPref('radialdensity', .5);
-					this.SetPref('radialradius', .5);
-					this.SetPref('visplayerlimit', 2);
-					this.SetPref('shadowsizeselect', 6);
-					this.SetPref('enableh2oshaders', true);
-					this.SetPref('grassshader', true);
-					this.SetPref('postrenderfilter', true);
-					this.SetPref('normalmaps', false);
-					this.SetPref('waterreflections', false);
-					this.SetPref('reflectionupdate', 5);
-					//this.SetPref('bsoundenable', true);
-					//this.SetPref('b3dsoundenable', false);
-					//this.SetPref('maxnumbersounds', 32);
-					this.SetPref('ambientlevel', 1);
-					//this.SetPref('ragdolls', true);
-					this.SetPref('wantbloodeffects', true);
-					this.SetPref('shadowreceivers', (1 | 4 | 16 | 32));
-					this.SetPref('app.shadows', 1);
-					this.SetPref('corpses', true);
-					//this.SetPref('ragdollweapons', false);
-					this.SetPref('combatsmoke', false);
-					this.SetPref('corpsetime', .2);
-					this.SetPref('corpsecount', .2);
-					this.SetPref('corpsedetail', false);
-					this.SetPref('inflodmod', 2);
-					break;
-				case 2: // performance
-					//this.SetPref('shademode', 0);
-					//this.SetPref('bnoframerunahead', true);
-					this.SetPref('enablevsync', false);
-					//this.SetPref('bdithering', false);
-					this.SetPref('bspecular', false);
-					//this.SetPref('texturereduction', true);
-					//this.SetPref('suppresstracersmoke', true);
-					//this.SetPref('suppressmuzzlesmoke', true);
-					this.SetPref('suppressmuzzlelight', true);
-					//this.SetPref('lodfieldofview', true);
-					//this.SetPref('lodlimitperframe', true);
-					this.SetPref('radialdensity', 0);
-					this.SetPref('radialradius', 0);
-					this.SetPref('visplayerlimit', 1);
-					this.SetPref('shadowsizeselect', 0);
-					this.SetPref('enableh2oshaders', false);
-					this.SetPref('grassshader', false);
-					this.SetPref('postrenderfilter', false);
-					this.SetPref('normalmaps', false);
-					this.SetPref('waterreflections', false);
-					this.SetPref('reflectionupdate', 5);
-					//this.SetPref('bsoundenable', true);
-					//this.SetPref('b3dsoundenable', false);
-					//this.SetPref('maxnumbersounds', 16);
-					this.SetPref('ambientlevel', 2);
-					//this.SetPref('ragdolls', false);
-					this.SetPref('wantbloodeffects', false);
-					this.SetPref('shadowreceivers', (1 | 4 | 32));
-					this.SetPref('app.shadows', 0);
-					this.SetPref('corpses', false);
-					//this.SetPref('ragdollweapons', false);
-					this.SetPref('combatsmoke', false);
-					this.SetPref('corpsetime', .2);
-					this.SetPref('corpsecount', .2);
-					this.SetPref('corpsedetail', false);
-					this.SetPref('inflodmod', 4);
-					break;
+				if(index == -1 || i == index)
+					this.groups[i].SetModified(m);
 			}
 			
-			this.UpdateUI();
-		}
-		
-		self.DiscardPending = function()
-		{
-			showOk('widgets.prefs.discarded');
-			this.ResetPrefs();
+			this.UpdateModified();
 		}
 		
 		self.SetModified = function(m)
 		{
-			this.modified = m;
 			this.saveButton.enabled = m;
 		}
 		
-		self.DropDown = function(prefMgr)
+		self.IsModified = function()
+		{
+			return this.saveButton.enabled;
+		}
+		
+		self.UpdateModified = function()
+		{
+			for(var i = 0; i < this.groups.length; i++)
+			{
+				if(this.groups[i].modified)
+				{
+					this.SetModified(true);
+					return;
+				}
+			}
+			
+			this.SetModified(false);
+		}
+		
+		self.DropDown = function(pm)
 		{
 			var dropDown = game.load("misc/dropdown", window);
 			
-			this.dropDownTarget = prefMgr;
+			this.dropDownTarget = pm;
 			
 			dropDown.mgr.control.clearRows(true);
 			
-			var label = prefMgr.view.findview("list");
+			var label = pm.view.findview("list");
 			
 			dropDown.width = label.width;
 			dropDown.mgr.list.width = label.width;
 			
-			var height = prefMgr.options.length * label.height;
+			var height = pm.options.length * label.height;
 			
 			dropDown.height = height;
 			dropDown.mgr.list.height = height;
@@ -411,12 +176,12 @@
 			dropDown.screenx = sx;
 			dropDown.screeny = stop - height;
 			
-			var current		= prefMgr.pref.Value();
+			var current		= pm.pref.Value();
 			var selected 	= 0;
 			
-			for(var o = 0; o < prefMgr.options.length; o++)
+			for(var o = 0; o < pm.options.length; o++)
 			{
-				var option = prefMgr.options[o];
+				var option = pm.options[o];
 				
 				dropDown.mgr.StartRow("row" + o, 0, 0, 0, 16);
 				dropDown.mgr.AddRowColumn(option.label, 1, "right");
@@ -442,368 +207,27 @@
 			dd.view.close();
 		}
 		
-		self.SetCalibration = function(type, value)
-		{
-			game.setkeymapcalibration(type, value);
-		}
-		
-		self.SetCalibrator = function(data)
-		{
-			if(data == null)
-				return;
-				
-			var label = "CALIBRATE";
-			
-			if(data.name != "mouse1")
-			{
-				this.calibrator.value = 1;
-				this.joystickCalib.label = data.name;
-				
-				label = label + " " + getlocstring('ra.prefs.calibration.device.joystick1');
-				label = label + " " + getlocstring('ra.prefs.calibration.device.' + data.axis);
-			}
-			else
-			{
-				this.calibrator.value = 0;
-				label = label + " " + getlocstring('ra.prefs.calibration.device.mouse1');
-			}
-			
-			var panel = this.view.findview("calibration-panel");
-			if(panel != null) panel.label = label.toUpperCase();
-			
-			this.InitKeymaps();
-		}
-		
-		self.AddCategory = function(c)
-		{
-			this.categories.push(c);
-			c.index = this.categories.length - 1;
-		}
-		
-		self.GetCategory = function(catid)
-		{
-			consoleprint("Looking for pref keymap category: " + catid);
-			
-			for(var c = 0; c < this.categories.length; c++)
-			{
-				consoleprint("Checking pref keymap category: " + this.categories[c].catid);
-				
-				if(this.categories[c].catid == catid)
-					return this.categories[c];
-			}
-				
-			return null;
-		}
-		
-		self.SelectCategory = function(c)
-		{
-			consoleprint("SelectCategory called!");
-			
-			if(this.category != null)
-			{
-				consoleprint("Deselecting old pref keymap category: " + this.category.catid);
-				this.category.Deselect();
-			}
-			
-			this.category = c;
-			
-			if(this.category != null)
-			{
-				consoleprint("Selecting new pref keymap category: " + this.category.catid);
-				this.category.Select();
-			}
-		}
-		
-		self.SetCatModified = function(catid)
-		{
-			var category = this.GetCategory(catid);
-			if(category != null) category.SetModified(true);
-			this.SetModified(true);
-		}
-		
-		self.SetCatUnmodified = function(catid)
-		{
-			var modified = false;
-			
-			if(catid != null)
-			{
-				var category = this.GetCategory(catid);
-				
-				if(category != null)
-					category.SetModified(false);
-			}
-			else
-			{
-				for(var c = 0; c < this.categories.length; c++)
-					this.categories[c].SetModified(false);
-			}
-			
-			this.SetModified(false);
-		}
-		
-		///////////////////// keymaps
-		
-		self.InitKeymaps = function()
-		{
-			if(!this.keymapsInit)
-			{
-				game.initkeymaps();
-				this.keymapsInit = true;
-			}
-		}
-		
-		self.KillKeymaps = function()
-		{
-			if(this.keymapsInit)
-			{
-				game.killkeymaps();
-				this.keymapsInit = false;
-			}
-		}
-		
-		self.ResetKeymaps = function()
-		{
-			if(this.keymapsInit)
-				game.resetkeymaps();
-			
-			for(var c = 0; c < this.categories.length; c++)
-				this.categories[c].SetModified(false);
-		}
-		
-		self.SaveKeymaps = function(kill)
-		{
-			if(this.keymapsInit)
-			{
-				game.savekeymaps();
-				
-				if(kill == true)
-					this.KillKeymaps();
-			}
-			
-			for(var c = 0; c < this.categories.length; c++)
-				this.categories[c].SetModified(false);
-		}
-		
-		// all defaults
-		self.DefaultKeymaps = function(callback)
-		{
-			for(var c = 0; c < this.categories.length; c++)
-			{
-				var category = this.categories[c];
-				
-				game.resetkeymaps(category.catid);
-				game.defaultkeymaps(category.catid, -1);
-			}
-			
-			this.SaveKeymaps();
-			
-			if(callback != null) callback();
-		}
-		
-		////////////////// category functions
-		
-		// category defaults
-		self.DefaultCategory = function(callback)
-		{
-			var category = this.GetCategory(this.keymapCat);
-			if(category != null) category.SetModified(false);
-			
-			game.resetkeymaps(this.keymapCat);
-			game.defaultkeymaps(this.keymapCat, -1);
-			if(callback != null) callback();
-		}
-		
-		// undo changes
-		self.ResetCategory = function(callback)
-		{
-			var category = this.GetCategory(this.keymapCat);
-			if(category != null) category.SetModified(false);
-				
-			game.resetkeymaps(this.keymapCat, -1)
-			if(callback != null) callback();
-		}
-		
-		//////////////////// keymap functions
-		
-		// set default keymap
-		self.DefaultKeymap = function(callback)
-		{
-			game.resetkeymap(this.keymap, this.keymapIndex);
-			game.defaultkeymap(this.keymap, this.keymapIndex);
-			if(callback != null) callback();
-		}
-		
-		// clear it
-		self.ClearKeymap = function(callback)
-		{
-			game.resetkeymap(this.keymap, this.keymapIndex);
-			game.clearkeymap(this.keymap, this.keymapIndex);
-			if(callback != null) callback();
-		}
-		
-		// discard changes to the keymap
-		self.ResetKeymap = function(callback)
-		{
-			game.resetkeymap(this.keymap, this.keymapIndex);
-			if(callback != null) callback();
-		}
-		
-		
-		////////////// helpful setters
-		self.SetKeymapCat = function(cat)
-		{
-			this.keymapCat = parseInt(cat);
-			this.SetKeymap(null);
-			this.InitKeymaps();
-			this.InitKeymapList();
-		}
-		
-		self.SetKeymap = function(k)
-		{
-			this.keymap = k;
-		}
-		
-		self.SetKeymapIndex = function(i)
-		{
-			this.keymapIndex = i;
-		}
-		
-		self.InitKeymapList = function()
-		{
-			this.keymapList.mgr.control.clearRows(true);
-			
-			var keymaps = game.getkeymaps(this.keymapCat);
-			var header	= null;
-			
-			for(var i = 0; i < keymaps.length; i++)
-			{
-				var keymap = keymaps[i];
-				
-				if(keymap.ezlevel == -1 || keymap.ezlevel >= game.ezmode)
-				{
-					if(keymap.header != header)
-					{
-						header = keymap.header;
-						
-						this.keymapList.mgr.StartRow("header" + i, 10, 0, 0, 14);
-						this.keymapList.mgr.AddRowColumn(header.toUpperCase() , 1, "left", "litebg");
-						this.keymapList.mgr.EndRow();
-					}
-					
-					keymap.category = this.keymapCat;
-					keymap.vehicle 	= -1;
-					keymap.index 	= i;
-					
-					// need to format
-					this.keymapList.mgr.StartRow("keymap." + i, 10, 0, 0, 16);
-					this.keymapList.mgr.AddRowColumn("   " + htmlencode(keymap.functionname) , .5, "left", "smalltext");
-					
-					var km = this.keymapList.mgr.AddRowColumn("" , .25, "left", "keymap");
-					
-					km.attributes 								= new Object();
-					km.attributes["class"] 					= "keymap";
-					km.attributes["category"] 			= keymap.category;
-					km.attributes["vehidx"] 				= keymap.vehicle;
-					km.attributes["funcidx"] 				= keymap.index;
-					km.attributes["keyidx"] 				= 0;
-					km.attributes["onmousedown"] 	= 'SetKeymapIndex(0)';
-					
-					if(keymap.isaxis)
-					{
-						var km1 = this.keymapList.mgr.AddRowColumn("" , .25 * .5, "left", "keymap");
-						
-						km1.attributes 								= new Object();
-						km1.attributes["class"] 					= "keymap";
-						km1.attributes["category"] 				= keymap.category;
-						km1.attributes["vehidx"] 				= keymap.vehicle;
-						km1.attributes["funcidx"] 				= keymap.index;
-						km1.attributes["keyidx"] 				= 1;
-						km1.attributes["onmousedown"] 	= 'SetKeymapIndex(1)';
-						
-						var km2 = this.keymapList.mgr.AddRowColumn("" , .25 * .5, "left", "keymap");
-						
-						km2.attributes 								= new Object();
-						km2.attributes["class"] 					= "keymap";
-						km2.attributes["category"] 				= keymap.category;
-						km2.attributes["vehidx"] 				= keymap.vehicle;
-						km2.attributes["funcidx"] 				= keymap.index;
-						km2.attributes["keyidx"] 				= 2;
-						km2.attributes["onmousedown"] 	= 'SetKeymapIndex(2)';
-					}
-					else
-					{
-						var km1 = this.keymapList.mgr.AddRowColumn("" , .25, "left", "keymap");
-						
-						km1.attributes 								= new Object();
-						km1.attributes["class"] 					= "keymap";
-						km1.attributes["category"] 				= keymap.category;
-						km1.attributes["vehidx"] 				= keymap.vehicle;
-						km1.attributes["funcidx"] 				= keymap.index;
-						km1.attributes["keyidx"] 				= 1;
-						km1.attributes["onmousedown"] 	= 'SetKeymapIndex(1)';
-					}
-					
-					this.keymapList.mgr.EndRow(keymap);
-				}
-			}
-			
-			this.keymapList.mgr.control.postInit();
-		}
-		
-		self.HandleKeymapEvent = function(e, keymap)
-		{
-			var pending = game.findview("pending");
-			if(pending != null) pending.close();
-			
-			if(e == 0)
-			{
-				var message 	= getlocstring('ra.prefs.keymapper.pending.keymap') + ": " + htmlencode(keymap.functionname) + "\n\n";
-				
-				if(keymap.isaxis)
-				{
-					if(keymap.keyidx == 0) // axis
-					{
-						message += getlocstring('ra.prefs.keymapper.pending.move') + "\n";
-						message += getlocstring('ra.prefs.keymapper.pending.invert')  + "\n";
-					}
-					else if(keymap.keyidx == 1) // negative
-					{
-						message += getlocstring('ra.prefs.keymapper.pending.dec') + "\n";
-					}
-					else // positive
-					{
-						message += getlocstring('ra.prefs.keymapper.pending.inc') + "\n";
-					}
-				}
-				else
-				{
-					if(keymap.keyidx == 0) // primary
-						message += getlocstring('ra.prefs.keymapper.pending.pri') + "\n";
-					else // secondary
-						message += getlocstring('ra.prefs.keymapper.pending.sec') + "\n";
-				}
-				
-				var pending = game.load("popups/pending");
-				pending.setPopupMessage(message);
-			}
-			else if(e == 1)
-			{
-				this.SetGroupModified(4);
-				this.SetCatModified(this.keymapCat);
-			}
-		}
-		
 		return self;
 	}
 	
 	function SetKeymapIndex(i)
 	{
-		window.mgr.SetKeymapIndex(i);
+		window.mgr.keymapMgr.SetKeymapIndex(i);
 	}
 	
 	function OnDropDownSelection(action, dd)
 	{
 		window.mgr.DropDownSelection(dd);
+	}
+	
+	function OnModifiedBack(action)
+	{
+		if(action)
+			window.mgr.Save();
+		
+		window.mgr.DoBack(true);
+		
+		return true;
 	}
 	
 	-->

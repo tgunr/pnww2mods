@@ -11,13 +11,13 @@
 		
 		self.OnClick = function()
 		{
-			window.mgr.SelectCategory(this);
+			window.mgr.keymapMgr.SelectCategory(this);
 		}
 		
 		self.Select = function()
 		{
 			// color our view
-			window.mgr.SetKeymapCat(this.catid);
+			window.mgr.keymapMgr.SetKeymapCat(this.catid);
 			this.view.setstyle("class: list.select;");
 		}
 		
@@ -42,7 +42,7 @@
 		self.view.addevent("onclick", "this.mgr.OnClick()");
 		
 		// register us with the pref screen
-		window.mgr.AddCategory(self);
+		window.mgr.keymapMgr.AddCategory(self);
 		
 		return self;
 	}	

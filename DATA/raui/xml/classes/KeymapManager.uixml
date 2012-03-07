@@ -1,0 +1,394 @@
+<script>
+	
+	<!--
+	
+	function KeymapManager(sm)
+	{
+		this.screenMgr	= sm;
+
+		// keymaps
+		this.categories					= new Array();
+		this.category					= null;
+		this.keymapList				= this.screenMgr.view.findview("keymap-list");
+		this.keymapsInit				= false;
+		this.keymapCat				= 0;
+		this.keymapIndex			= 0;
+		this.keymap						= null;
+		
+		this.keymapGroup			= 4;
+		this.calibGroup					= 5;
+		
+		this.mouseCalib				= this.screenMgr.view.findview("mouse-calibration");
+		this.mouseAimCalib			= this.screenMgr.view.findview("mouse-aim-calibration");
+		this.joystickCalib				= this.screenMgr.view.findview("joystick-calibration");
+		this.calibrator					= this.screenMgr.view.findview("calibrator");
+		
+		this.mouseAimCalib.mgr 	= this;
+		this.joystickCalib.mgr 		= this;
+		this.calibrator.mgr			= this;
+		
+		this.AddCategory = function(c)
+		{
+			this.categories.push(c);
+			c.index = this.categories.length - 1;
+		}
+		
+		this.GetCategory = function(catid)
+		{
+			consoleprint("Looking for pref keymap category: " + catid);
+			
+			for(var c = 0; c < this.categories.length; c++)
+			{
+				consoleprint("Checking pref keymap category: " + this.categories[c].catid);
+				
+				if(this.categories[c].catid == catid)
+					return this.categories[c];
+			}
+				
+			return null;
+		}
+		
+		this.SelectCategory = function(c)
+		{
+			consoleprint("SelectCategory called!");
+			
+			if(this.category != null)
+			{
+				consoleprint("Deselecting old pref keymap category: " + this.category.catid);
+				this.category.Deselect();
+			}
+			
+			this.category = c;
+			
+			if(this.category != null)
+			{
+				consoleprint("Selecting new pref keymap category: " + this.category.catid);
+				this.category.Select();
+			}
+		}
+		
+		this.SetCatModified = function(catid, m)
+		{
+			consoleprint("Setting category " + catid + " modified to " + m);
+			
+			for(var c = 0; c < this.categories.length; c++)
+			{
+				var category = this.categories[c];
+				
+				if(catid == -1 || catid == category.catid)
+				{
+					category.SetModified(m);
+					consoleprint("Found category " + category.catid + " modified to " + m);
+				}
+			}
+			
+			this.UpdateModified();
+		}
+		
+		this.UpdateModified = function()
+		{
+			var mcount = 0;
+			
+			for(var c = 0; c < this.categories.length; c++)
+			{
+				var category = this.categories[c];
+				
+				// check and make sure the js layer and c++ layer are in sync
+				if(game.keymapisdirty(category.catid))
+				{
+					category.SetModified(true);
+					mcount++;
+				}
+				else
+				{
+					category.SetModified(false);
+				}
+			}
+			
+			this.screenMgr.SetGroupModified(this.keymapGroup, (mcount > 0) ? true : false);
+	}
+		
+		///////////////////// keymaps
+		
+		this.InitKeymaps = function()
+		{
+			if(!this.keymapsInit)
+			{
+				game.initkeymaps();
+				this.keymapsInit = true;
+			}
+		}
+		
+		this.KillKeymaps = function()
+		{
+			if(this.keymapsInit)
+			{
+				game.killkeymaps();
+				this.keymapsInit = false;
+			}
+		}
+		
+		this.ResetKeymaps = function()
+		{
+			if(this.keymapsInit)
+				game.resetkeymaps();
+			
+			this.UpdateModified();
+		}
+		
+		this.SaveKeymaps = function(kill)
+		{
+			if(this.keymapsInit)
+			{
+				game.savekeymaps();
+				
+				this.screenMgr.SetGroupModified(this.calibGroup, false);
+				
+				if(kill == true)
+					this.KillKeymaps();
+			}
+			
+			this.ResetKeymaps();
+		}
+		
+		// all defaults
+		this.DefaultKeymaps = function(callback)
+		{
+			game.resetkeymaps();
+			
+			for(var c = 0; c < this.categories.length; c++)
+				game.defaultkeymaps(this.categories[c].catid, -1);
+			
+			this.UpdateModified();
+			
+			if(callback != null) callback();
+		}
+		
+		////////////////// category functions
+		
+		// category defaults
+		this.DefaultCategory = function(callback)
+		{
+			game.resetkeymaps(this.keymapCat);
+			game.defaultkeymaps(this.keymapCat, -1);
+			this.UpdateModified();
+			if(callback != null) callback();
+		}
+		
+		// undo changes
+		this.ResetCategory = function(callback)
+		{
+			game.resetkeymaps(this.keymapCat, -1)
+			this.UpdateModified();
+			if(callback != null) callback();
+		}
+		
+		//////////////////// keymap functions
+		
+		// set default keymap
+		this.DefaultKeymap = function(callback)
+		{
+			game.resetkeymap(this.keymap, this.keymapIndex);
+			game.defaultkeymap(this.keymap, this.keymapIndex);
+			this.UpdateModified();
+			if(callback != null) callback();
+		}
+		
+		// clear it
+		this.ClearKeymap = function(callback)
+		{
+			game.resetkeymap(this.keymap, this.keymapIndex);
+			game.clearkeymap(this.keymap, this.keymapIndex);
+			this.UpdateModified();
+			if(callback != null) callback();
+		}
+		
+		// discard changes to the keymap
+		this.ResetKeymap = function(callback)
+		{
+			game.resetkeymap(this.keymap, this.keymapIndex);
+			this.UpdateModified();
+			if(callback != null) callback();
+		}
+		
+		////////////// helpful setters
+		this.SetKeymapCat = function(cat)
+		{
+			this.keymapCat = parseInt(cat);
+			this.SetKeymap(null);
+			this.InitKeymaps();
+			this.InitKeymapList();
+		}
+		
+		this.SetKeymap = function(k)
+		{
+			this.keymap = k;
+		}
+		
+		this.SetKeymapIndex = function(i)
+		{
+			this.keymapIndex = i;
+		}
+		
+		this.InitKeymapList = function()
+		{
+			this.keymapList.mgr.control.clearRows(true);
+			
+			var keymaps = game.getkeymaps(this.keymapCat);
+			var header	= null;
+			
+			for(var i = 0; i < keymaps.length; i++)
+			{
+				var keymap = keymaps[i];
+				
+				if(keymap.ezlevel == -1 || keymap.ezlevel >= game.ezmode)
+				{
+					if(keymap.header != header)
+					{
+						header = keymap.header;
+						
+						this.keymapList.mgr.StartRow("header" + i, 10, 0, 0, 14);
+						this.keymapList.mgr.AddRowColumn(header.toUpperCase() , 1, "left", "litebg");
+						this.keymapList.mgr.EndRow();
+					}
+					
+					keymap.category = this.keymapCat;
+					keymap.vehicle 	= -1;
+					keymap.index 	= i;
+					
+					// need to format
+					this.keymapList.mgr.StartRow("keymap." + i, 10, 0, 0, 16);
+					this.keymapList.mgr.AddRowColumn("   " + htmlencode(keymap.functionname) , .5, "left", "smalltext");
+					
+					var km = this.keymapList.mgr.AddRowColumn("" , .25, "left", "keymap");
+					
+					km.attributes 								= new Object();
+					km.attributes["class"] 					= "keymap";
+					km.attributes["category"] 			= keymap.category;
+					km.attributes["vehidx"] 				= keymap.vehicle;
+					km.attributes["funcidx"] 				= keymap.index;
+					km.attributes["keyidx"] 				= 0;
+					km.attributes["onmousedown"] 	= 'SetKeymapIndex(0)';
+					
+					if(keymap.isaxis)
+					{
+						var km1 = this.keymapList.mgr.AddRowColumn("" , .25 * .5, "left", "keymap");
+						
+						km1.attributes 								= new Object();
+						km1.attributes["class"] 					= "keymap";
+						km1.attributes["category"] 				= keymap.category;
+						km1.attributes["vehidx"] 				= keymap.vehicle;
+						km1.attributes["funcidx"] 				= keymap.index;
+						km1.attributes["keyidx"] 				= 1;
+						km1.attributes["onmousedown"] 	= 'SetKeymapIndex(1)';
+						
+						var km2 = this.keymapList.mgr.AddRowColumn("" , .25 * .5, "left", "keymap");
+						
+						km2.attributes 								= new Object();
+						km2.attributes["class"] 					= "keymap";
+						km2.attributes["category"] 				= keymap.category;
+						km2.attributes["vehidx"] 				= keymap.vehicle;
+						km2.attributes["funcidx"] 				= keymap.index;
+						km2.attributes["keyidx"] 				= 2;
+						km2.attributes["onmousedown"] 	= 'SetKeymapIndex(2)';
+					}
+					else
+					{
+						var km1 = this.keymapList.mgr.AddRowColumn("" , .25, "left", "keymap");
+						
+						km1.attributes 								= new Object();
+						km1.attributes["class"] 					= "keymap";
+						km1.attributes["category"] 				= keymap.category;
+						km1.attributes["vehidx"] 				= keymap.vehicle;
+						km1.attributes["funcidx"] 				= keymap.index;
+						km1.attributes["keyidx"] 				= 1;
+						km1.attributes["onmousedown"] 	= 'SetKeymapIndex(1)';
+					}
+					
+					this.keymapList.mgr.EndRow(keymap);
+				}
+			}
+			
+			this.keymapList.mgr.control.postInit();
+		}
+		
+		this.HandleKeymapEvent = function(e, keymap)
+		{
+			var pending = game.findview("pending");
+			if(pending != null) pending.close();
+			
+			if(e == 0)
+			{
+				var message 	= getlocstring('ra.prefs.keymapper.pending.keymap') + ": " + htmlencode(keymap.functionname) + "\n\n";
+				
+				if(keymap.isaxis)
+				{
+					if(keymap.keyidx == 0) // axis
+					{
+						message += getlocstring('ra.prefs.keymapper.pending.move') + "\n";
+						message += getlocstring('ra.prefs.keymapper.pending.invert')  + "\n";
+					}
+					else if(keymap.keyidx == 1) // negative
+					{
+						message += getlocstring('ra.prefs.keymapper.pending.dec') + "\n";
+					}
+					else // positive
+					{
+						message += getlocstring('ra.prefs.keymapper.pending.inc') + "\n";
+					}
+				}
+				else
+				{
+					if(keymap.keyidx == 0) // primary
+						message += getlocstring('ra.prefs.keymapper.pending.pri') + "\n";
+					else // secondary
+						message += getlocstring('ra.prefs.keymapper.pending.sec') + "\n";
+				}
+				
+				var pending = game.load("popups/pending");
+				pending.setPopupMessage(message);
+			}
+			else if(e == 1)
+			{
+				this.SetCatModified(this.keymapCat, true);
+			}
+		}
+		
+		this.SetCalibration = function(type, value)
+		{
+			this.screenMgr.SetGroupModified(this.calibGroup, true);
+			game.setkeymapcalibration(type, value);
+		}
+		
+		this.SetCalibrator = function(data)
+		{
+			if(data == null)
+				return;
+				
+			var label = "CALIBRATE";
+			
+			if(data.name != "mouse1")
+			{
+				this.calibrator.value = 1;
+				this.joystickCalib.label = data.name;
+				
+				label = label + " " + getlocstring('ra.prefs.calibration.device.joystick1');
+				label = label + " " + getlocstring('ra.prefs.calibration.device.' + data.axis);
+			}
+			else
+			{
+				this.calibrator.value = 0;
+				label = label + " " + getlocstring('ra.prefs.calibration.device.mouse1');
+			}
+			
+			var panel = this.view.findview("calibration-panel");
+			if(panel != null) panel.label = label.toUpperCase();
+			
+			this.InitKeymaps();
+		}
+		
+		return this;
+	}
+
+	-->
+</script>

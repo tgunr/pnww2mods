@@ -54,7 +54,7 @@
 		
 		self.Select = function(pv)
 		{
-			window.mgr.InitKeymaps();
+			window.mgr.keymapMgr.InitKeymaps();
 			this.BaseSelect(pv);
 		}
 		

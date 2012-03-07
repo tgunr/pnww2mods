@@ -20,11 +20,11 @@
 					<panel id="prefs" label="${widgets.prefs.groups.game.presets}" align="center" height="160" style="vpad: 20; class: medbg;">
 							<text x="25" width="200" rtop="30" y="25" style="color: #e9e3d9ff;" onshow="this.text = getlocstring('widgets.prefs.groups.game.presets.description')"/>
 							<button id="forward" rright="25" rtop="20" label="  BEST QUALITY" align="left"
-								onclick="window.mgr.SetPreset(0)" style="size-scaler: .4; font-size: -3;"/>
+								onclick="window.mgr.prefMgr.SetPreset(0)" style="size-scaler: .4; font-size: -3;"/>
 							<button id="forward" rright="25" rtop="60" label="  BALANCED" align="left"
-								onclick="window.mgr.SetPreset(1)" style="size-scaler: .4; font-size: -3;"/>
+								onclick="window.mgr.prefMgr.SetPreset(1)" style="size-scaler: .4; font-size: -3;"/>
 							<button id="forward" rright="25" rtop="100"  label="  PERFORMANCE" align="left"
-								onclick="window.mgr.SetPreset(2)" style="size-scaler: .4; font-size: -3;"/>
+								onclick="window.mgr.prefMgr.SetPreset(2)" style="size-scaler: .4; font-size: -3;"/>
 					</panel>
 					<panel id="prefs" label="MISC" align="center" height="140" style="vpad: 10; layout: vertical; class: medbg;">
 						<listpref id="language" manager="Pref/ListPref:0" style="vpad: 30;">
@@ -277,11 +277,11 @@
 					<listcontrol id="keymap-list" pad="15" y="50" rtop="20" style="class: litebg;"/>
 					<view id="keymap-buttons" pad="15" height="30" style="class: litebg;">
 						<button id="clearkeymap" x="20" center="y" label="CLEAR" style="class: button.small; class: tinytext;"
-							onclick="window.mgr.ClearKeymap()" tip="Click this button to discard the currently selected keymap."/>
+							onclick="window.mgr.keymapMgr.ClearKeymap()" tip="Click this button to discard the currently selected keymap."/>
 						<button id="clearkeymap" center="true" label="DISCARD" style="class: button.small; class: tinytext;"
-							onclick="window.mgr.ResetKeymaps()" tip="Click this button to discard any pending changes."/>
+							onclick="window.mgr.keymapMgr.ResetKeymaps()" tip="Click this button to discard any pending changes."/>
 						<button id="defaultkeymap" rright="20" center="y" label="DEFAULTS" style="class: button.small; class: tinytext;"
-							onclick="window.mgr.DefaultKeymaps()" tip="Click this button to set default keymaps."/>
+							onclick="window.mgr.keymapMgr.DefaultKeymaps()" tip="Click this button to set default keymaps."/>
 					</view>
 				</panel>
 				<panel id="nav-panel" label="SELECT CATEGORY" width=".25" rright="0">
@@ -300,9 +300,9 @@
 					<listcontrol id="keymap-cat-list" pad="15" y="80" rtop="20" style="class: litebg;"/>
 					<view id="keymap-buttons" pad="15" height="60" style="class: litebg;">
 						<button id="defaultcategory" x="10" center="y" label="DEFAULT" style="class: button.small; class: tinytext;"
-							onclick="window.mgr.DefaultCategory(initKeymapList)"	tip="${ra.prefs.keymapper.button.def.cat.tip}"/>
+							onclick="window.mgr.keymapMgr.DefaultCategory(initKeymapList)"	tip="${ra.prefs.keymapper.button.def.cat.tip}"/>
 						<button id="revertcategory" rright="10" center="y" label="RESET" style="class: button.small; class: tinytext;"
-							onclick="window.mgr.ResetCategory(initKeymapList)" tip="${ra.prefs..keymapper.button.discard.tip}"/>
+							onclick="window.mgr.keymapMgr.ResetCategory(initKeymapList)" tip="${ra.prefs..keymapper.button.discard.tip}"/>
 					</view>
 				</panel>
 				-->
@@ -320,7 +320,8 @@
 							<caption x="150" height="20" width="425" y="275" style="font-size: +1; color: #BFE2CE;"
 								onshow="this.label = getlocstring('widgets.calibration.mouse.subtitle')"/>
 							<slider id="mouse-calibration" x="125" y="250" width="200" height="20" minvalue="0.125" maxvalue="2"
-								onclick="window.mgr.SetCalibration('mouse', this.value)"/>
+								onclick="window.mgr.keymapMgr.SetCalibration('mouse', this.value)"
+								onshow="this.value = game.getkeymapcalibration('mouse')"/>
 								
 							<caption x="50" y="150" height="20" width="50" style=" color: #FFFFFFFF;"
 								onshow="this.label = getlocstring('widgets.calibration.mouse.less')" align="right"/>
@@ -329,11 +330,12 @@
 							<caption x="150" height="20" width="425" y="175" style="font-size: +1; color: #BFE2CE;"
 								onshow="this.label = getlocstring('widgets.calibration.mouse.aimtitle')"/>
 							<slider id="mouse-aim-calibration" x="125" y="150" width="200" height="20" minvalue="0.125" maxvalue="2"
-								onclick="window.mgr.SetCalibration('aim', this.value)"/>
+								onclick="window.mgr.keymapMgr.SetCalibration('aim', this.value)"
+								onshow="this.value = game.getkeymapcalibration('aim')"/>
 						</view>
 						<view>
 							<text height="100" width=".75" rtop="30" onshow="this.text = getlocstring('widgets.calibration.joystick.desc')" center="x"/>
-							<view id="joystick-calibration" class="joycalib" width=".6" height="200" center="true" style="class: litebg; class: border;"/>
+							<view id="joystick-calibration" class="joycalib" width=".6" height="100" center="true" style="color: #FF0000; class: litebg; class: border;"/>
 						</view>
 					</stackview>
 				</panel>
@@ -345,7 +347,7 @@
 	</view>
 	<navbar>
 		<button id="forward" label="   BACK" x="20" onclick="window.mgr.DoBack()" center="y"/>
-		<button id="save-button" label="SAVE   " rright="20" onclick="window.mgr.SavePrefs()" enabled="false" style="class: button.back;" center="y"/>
+		<button id="save-button" label="SAVE   " rright="20" onclick="window.mgr.Save()" enabled="false" style="class: button.back;" center="y"/>
 	</navbar>
 	<script>
 		<!--
@@ -364,7 +366,7 @@
 			
 			// make sure our pref group is hilighted
 			window.mgr.SelectGroup(window.mgr.GetGroup(0));
-			window.mgr.SelectCategory(window.mgr.GetCategory(0));
+			window.mgr.keymapMgr.SelectCategory(window.mgr.keymapMgr.GetCategory(0));
 		}
 		
 		function initDevices()
@@ -399,17 +401,17 @@
 		
 		function selectDevice(action)
 		{
-			window.mgr.SetCalibrator(deviceList.mgr.control.selectedData());
+			window.mgr.keymapMgr.SetCalibrator(deviceList.mgr.control.selectedData());
 		}
 		
 		function selectKeymap()
 		{
-			window.mgr.SetKeymap(window.keymapList.mgr.control.selectedData());
+			window.mgr.keymapMgr.SetKeymap(keymapList.mgr.control.selectedData());
 		}
 		
 		function OnKeymapEvent(e, keymap)
 		{
-			window.mgr.HandleKeymapEvent(e, keymap);
+			window.mgr.keymapMgr.HandleKeymapEvent(e, keymap);
 		}
 		
 		-->
