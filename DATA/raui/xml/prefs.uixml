@@ -335,7 +335,8 @@
 						</view>
 						<view>
 							<text height="100" width=".75" rtop="30" onshow="this.text = getlocstring('widgets.calibration.joystick.desc')" center="x"/>
-							<view id="joystick-calibration" class="joycalib" width=".6" height="100" center="true" style="color: #FF0000; class: litebg; class: border;"/>
+							<view id="joystick-calibration" class="joycalib" width=".6" height="100" center="true" style="color: #FF0000; class: litebg; class: border;"
+								onclick="window.mgr.SetGroupModified(5, true)"/>
 						</view>
 					</stackview>
 				</panel>
