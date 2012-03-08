@@ -196,7 +196,7 @@ if(true) then
 		"sound guns2 sounds/scenarios/ambient_guns_machine_gun6.wav 1 1",
 		"sound guns2 sounds/scenarios/ambient_guns_machine_gun7.wav 1 1",
 		"sound wind sounds/ambience/gust2.wav 1 0",
-		"sound wind sounds/ambience/gust3.wav 1 0",
+		"sound wind sounds/ambience/gust3.wav 0.5 0",
 
 	-- POSITIONAL SOUNDS
 	-- command name filename volume loop x y z mindist maxdist
@@ -299,13 +299,7 @@ if(true) then
 	-- NAMED VERSION
 	-- command name typeid x y z roll pitch yaw
 	
-	
-	
-	
-	
-	
-	
-	-- end section for cagefight
+
 
 		-- "clone bedford1 bedford -20.11 -156.51 8.77 0 0 90",
 		
