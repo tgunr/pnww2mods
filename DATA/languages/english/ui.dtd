@@ -4541,11 +4541,14 @@
 <!ENTITY ra.prefs.icons.none "none">
 <!ENTITY ra.prefs.dithering "DITHERING">
 <!ENTITY ra.prefs.objects.tip "Select whether terrain objects are shadowed. Turn off to increase performance.">
+<!ENTITY ra.component.6 "weapon">
 <!ENTITY ra.dings.playvehicle.us-eng.desc "Play as an American Engineer">
 <!ENTITY ra.dings.stayalive.2.title "Stayin&#39; Alive II">
 <!ENTITY ra.prefs.nomuzzlesmoke "SUPPRESS MUZZLE SMOKE">
 <!ENTITY ra.prefs.languagefilter.tip "Enable this to filter our bad language from incoming chats.">
 <!ENTITY ra.prefs.limitlod.tip "Limits the number of LOD changes per frame. Enable to improve performance.">
+<!ENTITY ra.component.3.10 "gearbox">
+<!ENTITY ra.component.3.1 "propeller">
 <!ENTITY ra.prefs.colors.leader "MISSION LEADER COLOR">
 <!ENTITY ra.prefs.weapons "RAGDOLL WEAPONS">
 <!ENTITY ra.dings.playvehicle.us-assault.desc "Play as an American Semi-Automatic Rifleman">
@@ -4558,6 +4561,7 @@
 <!ENTITY ra.dings.playvehicle.us-sniper.title "American Sniper">
 <!ENTITY ra.prefs.network.secondary "secondary">
 <!ENTITY ra.prefs.keymapper.convergence.tip "Enter the gun convergence for the selected aircraft here. (Can be changed later with the &#34;/conv&#34; command.)">
+<!ENTITY ra.component.3.7 "transmission">
 <!ENTITY ra.dings.suicide.1.title "Death by Misadventure I">
 <!ENTITY ra.prefs.resolution.tip "Select which resolution to run the game at. Decrease resolution to improve performance.">
 <!ENTITY ra.dings.playvehicle.de-sniper.title "German Sniper">
@@ -4575,6 +4579,7 @@
 <!ENTITY ra.dings.playvehicle.de-assault.title "German Semi-Automatic Rifleman">
 <!ENTITY ra.prefs.noframerunahead "NO FRAME RUN AHEAD">
 <!ENTITY ra.prefs.shadows.tip "Select a shadow size. Select a smaller number for improved performance.">
+<!ENTITY ra.component.2 "airframe">
 <!ENTITY ra.dings.suicide.3.title "Death by Misadventure III">
 <!ENTITY ra.prefs.colors.aws.low "LOW COLOR">
 <!ENTITY ra.dings.playvehicle.de-assault.desc "Play as a German Semi-Automatic Rifleman">
@@ -4598,10 +4603,12 @@
 <!ENTITY ra.prefs.weapons.tip "Select whether ragdolls have weapons. Turn off to increase performance.">
 <!ENTITY ra.status.8 "completed">
 <!ENTITY ra.prefs.calibration.mouse.less "less">
+<!ENTITY ra.component.2.2 "aileron">
 <!ENTITY ra.prefs.calibration.device.axisslider2 "Slider 2">
 <!ENTITY ra.prefs.postrenderfilter.tip "Turns on the post render filter or bloom. Disable to improve performance.">
 <!ENTITY ra.prefs.keymapper.button.def.cat "CATEGORY DEFAULTS">
 <!ENTITY ra.prefs.keymapper.cats.armor "Tanks and Armored Cars">
+<!ENTITY ra.component.2.7 "flap">
 <!ENTITY ra.prefs.shaders "SHADER PREFERENCES">
 <!ENTITY ra.prefs.unsupported "This preference is not supported by your configuration.">
 <!ENTITY ra.prefs.keymapper.keys.modify "MODIFY">
@@ -4620,10 +4627,12 @@
 <!ENTITY ra.dings.traveler.3.title "Long Distance Runner">
 <!ENTITY ra.prefs.windows.reset.tip "Reset your HUD window positions and visibility.">
 <!ENTITY ra.prefs.normalmaps "NORMAL MAPS">
+<!ENTITY ra.component.3.5 "radiator">
 <!ENTITY ra.dings.winmap.dm_cagefight.3.desc "Win Cage Fight 5 times">
 <!ENTITY ra.prefs.alerts.tip "Enable this to play a sound when a new alert comes in.">
 <!ENTITY ra.prefs.usenetworkroute "NETWORK ROUTE">
 <!ENTITY ra.dings.playvehicle.us-assault.title "American Semi-Automatic Rifleman">
+<!ENTITY ra.component.5.4 "track">
 <!ENTITY ra.prefs.tip "Select the level of shadows. Use a lower setting for better performance.">
 <!ENTITY ra.prefs.keymapper.button.clear.tip "Clears the currently selected keymap.">
 <!ENTITY ra.dings.winmap.dm_cagefight.1.desc "Win Cage Fight">
@@ -4631,27 +4640,34 @@
 <!ENTITY ra.prefs.enableh20shaders "WATER SHADERS">
 <!ENTITY ra.prefs.squadrecruitment "SQUAD RECRUITMENT">
 <!ENTITY ra.quit.confirm "Do you want to exit WWII Online?">
+<!ENTITY ra.damage.leaking "leaking">
 <!ENTITY ra.dings.kills.1.title "Killer I">
 <!ENTITY ra.prefs.ambient.infrequent "infrequent">
 <!ENTITY ra.status.0 "invalid">
+<!ENTITY ra.component.5.2 "skid">
 <!ENTITY ra.dings.winmap.dm_tankbrawl.1.desc "Win Tank Brawl">
 <!ENTITY ra.prefs.keymapper.button.def.cat.tip "Set all keymaps in the current category back to the game defaults.">
+<!ENTITY ra.component.3.2 "engine">
 <!ENTITY ra.prefs.cockpits.tip "Select whether cockpits are shadowed. Turn off to increase performance.">
 <!ENTITY ra.common.max "max">
 <!ENTITY ra.prefs.vislimit.low "low">
 <!ENTITY ra.prefs.cockpits "COCKPITS">
 <!ENTITY ra.prefs.groups.shadows "SHADOW PREFERENCES">
 <!ENTITY ra.prefs.keymapper.pending.pri "Hit a key or combination of keys to set this function&#39;s primary keymap.">
+<!ENTITY ra.component.5 "gear">
 <!ENTITY ra.prefs.gamma.red "RED ADJUSTMENT">
 <!ENTITY ra.prefs.keymapper.button.save.tip "Saves any changes since the last save.">
+<!ENTITY ra.component.5.5 "axle">
 <!ENTITY ra.dings.winmap.dm_cagefight.2.desc "Win Cage Fight 3 times">
 <!ENTITY ra.prefs.presets "SHADOW PRESETS">
 <!ENTITY ra.dings.winmap.dm_tankbrawl.1.title "Tank Brawler">
 <!ENTITY ra.prefs.lod "LEVEL OF DETAIL">
 <!ENTITY ra.prefs.calibration.joystick.title "JOYSTICK SENSITIVITY">
 <!ENTITY ra.prefs.system.software "software">
+<!ENTITY ra.damage.destroyed "destroyed">
 <!ENTITY ra.common.na "not applicable">
 <!ENTITY ra.prefs.groups.alerts.show.tip "Alerts show on your HUD when certain game events happen. Example alerts are when a facility is captured or when you receive ammo from a buddy.">
+<!ENTITY ra.component.2.5 "fuselage">
 <!ENTITY ra.prefs.flying.tip "Enable this to show shadows while flying planes. Turn off to increase performance.">
 <!ENTITY ra.prefs.colors.picker "The current color is">
 <!ENTITY ra.common.near "near">
@@ -4665,12 +4681,16 @@
 <!ENTITY ra.prefs.calibration.none.title "SELECT A JOYSTICK AXIS">
 <!ENTITY ra.dings.playvehicle.derifle.title "German Rifleman">
 <!ENTITY ra.prefs.flying "SHADOWS WHEN FLYING">
+<!ENTITY ra.component.7.3 "gunner">
+<!ENTITY ra.component.3.8 "torque convertor">
 <!ENTITY ra.prefs.grass.tip "Turns on swaying grass. Disable to improve performance.">
 <!ENTITY ra.prefs.calibration.device.axisx "X Axis">
 <!ENTITY ra.dings.playvehicle.de-eng.title "German Engineer">
 <!ENTITY ra.dings.playvehicle.stug3g.desc "Play as a StuG III G">
 <!ENTITY ra.prefs.ppos "PPO PLACEMENT">
 <!ENTITY ra.prefs.keymapper.keys.function "FUNCTION NAME">
+<!ENTITY ra.component.2.3 "elevator">
+<!ENTITY ra.component.1 "ballast">
 <!ENTITY ra.dings.stayalive.1.desc "You have survived battle for one 1 minute!">
 <!ENTITY ra.prefs.calibration.none.desc "Expand the joystick axis list and select an axis to configure.">
 <!ENTITY ra.prefs.calibration.mouse.desc "Move the mouse slider to suit your style of play. Left is less sensitive while right is more sensitive.">
@@ -4680,8 +4700,10 @@
 <!ENTITY ra.prefs.keymapper.cats "KEYMAP CATEGORIES">
 <!ENTITY ra.prefs.groups.alerts.show "SHOW ALERTS">
 <!ENTITY ra.dings.playvehicle.de-lmg.desc "Play as a German Light Machinegunner">
+<!ENTITY ra.component.7.2 "commander">
 <!ENTITY ra.prefs.calibration.device.joystick3 "Joystick 3">
 <!ENTITY ra.prefs.keymapper.button.discard.tip "Discard any changes that have occurred since the last save.">
+<!ENTITY ra.component.6.1 "maingun">
 <!ENTITY ra.prefs.colors.aws.alpha "OPACITY">
 <!ENTITY ra.dings.playvehicle.us-smg.title "American Submachine Gunnee">
 <!ENTITY ra.dings.playvehicle.pzivg.desc "Play as a Panzer IV G">
@@ -4689,6 +4711,7 @@
 <!ENTITY ra.prefs.visplayerlimit.tip "Select how many visible players you can see. Decrease to improve performance.">
 <!ENTITY ra.prefs.groups.ui "USER INTERFACE">
 <!ENTITY ra.prefs.clutter.radius "RADIUS">
+<!ENTITY ra.component.3.4 "oiltank">
 <!ENTITY ra.prefs.ppos.nok.tip "This color will be used to indicate a BAD spot to place a player placed object.">
 <!ENTITY ra.dings.kills.2.title "Killer II">
 <!ENTITY ra.prefs.calibration.device.reread "DETECT CONTROLLERS">
@@ -4707,6 +4730,7 @@
 <!ENTITY ra.prefs.calibration.mouse.subtitle "Standard Mouse Sensitivity">
 <!ENTITY ra.prefs.keymapper.pending.keymap "KEYMAP">
 <!ENTITY ra.dings.suicide.3.desc "Kill yourself ten times.">
+<!ENTITY ra.damage.jammed "jammed">
 <!ENTITY ra.dings.playvehicle.degrenadier.desc "Play as a German Grenadier">
 <!ENTITY ra.status.7 "closed">
 <!ENTITY ra.prefs.clutter.tip "Set the radius and density of ground clutter. These options can significantly affect performance. Decrease ground clutter to improve performance.">
@@ -4722,8 +4746,12 @@
 <!ENTITY ra.prefs.calibration.mouse.title "MOUSE SENSITIVITY">
 <!ENTITY ra.prefs.colors.friendly "FRIENDLY COLOR">
 <!ENTITY ra.dings.playvehicle.de-pzschreck.desc "Play as a German Anti-Tank Soldier">
+<!ENTITY ra.damage.killed "killed">
 <!ENTITY ra.prefs.ppos.ok "GOOD PLACEMENT">
+<!ENTITY ra.component.5.1 "wheel">
 <!ENTITY ra.prefs.disabled "disabled">
+<!ENTITY ra.damage.onfire "on fire">
+<!ENTITY ra.component.2.1 "wing">
 <!ENTITY ra.prefs.vehicles.tip "Select whether vehicles or troops are shadowed. Turn off to increase performance.">
 <!ENTITY ra.status.2 "staging">
 <!ENTITY ra.prefs.app.credits "SHOW GAME CREDITS">
@@ -4743,6 +4771,7 @@
 <!ENTITY ra.prefs.windows.reset "RESET HUD">
 <!ENTITY ra.dings.playvehicle.degrenadier.title "German Grenadier">
 <!ENTITY ra.prefs.ragdolls.tip "Select whether dying players leave a ragdoll or animated death. Turn off ragdoll deaths to increase performance.">
+<!ENTITY ra.component.6.2 "coax mg">
 <!ENTITY ra.prefs.bspecular.tip "Enables better lighting. Disable for better performance.">
 <!ENTITY ra.prefs.ppos.ok.tip "This color will be used to indicate a GOOD spot to place a player placed object.">
 <!ENTITY ra.prefs.language.italian "italian">
@@ -4755,6 +4784,7 @@
 <!ENTITY ra.team2 "Red Team">
 <!ENTITY ra.common.less "less">
 <!ENTITY ra.prefs.keymapper.cats.ships "Ships and Boats">
+<!ENTITY ra.dings.2-suicide.1.title "Death by Misadventure I">
 <!ENTITY ra.prefs.enablevsync "VERTICAL SYNCING">
 <!ENTITY ra.prefs.corpse.detail "DETAILED CORPSES">
 <!ENTITY ra.dings.playvehicle.m10_us.desc "Play as a Wolverine Tank Destroyer">
@@ -4763,13 +4793,16 @@
 <!ENTITY ra.prefs.network.best "use best">
 <!ENTITY ra.prefs.corpse.time "CORPSE DURATION">
 <!ENTITY ra.prefs.card "SOUND CARD">
+<!ENTITY ra.dings.2-suicide.3.desc "Kill yourself ten times.">
 <!ENTITY ra.prefs.colors.aws.tip "Select your map&#39;s Air Warning System low and high volume colors.">
 <!ENTITY ra.prefs.calibration.device.axisrx "Rudder X Axis">
 <!ENTITY ra.prefs.lod.highest "highest">
 <!ENTITY ra.dings.playmap.dm_tankbrawl.title "Brawling With Tanks">
 <!ENTITY ra.prefs.calibration.device.reread.ok "Your game controllers have been re-read.">
 <!ENTITY ra.dings.playvehicle.de-atr.desc "Play as a German Anti-Tank Rifleman">
+<!ENTITY ra.dings.2-suicide.3.title "Death by Misadventure III">
 <!ENTITY ra.prefs.lod.lowest "lowest">
+<!ENTITY ra.component.3.3 "fueltank">
 <!ENTITY ra.dings.kills.3.title "Killer III">
 <!ENTITY ra.prefs.video.tip "Select which video driver to use in a multi video card setup.">
 <!ENTITY ra.dings.stayalive.2.desc "You have survived battle for one 5 minutes!">
@@ -4790,6 +4823,7 @@
 <!ENTITY ra.prefs.corpses.tip "Select whether dead players leave corpses. Turn off to increase performance.">
 <!ENTITY ra.prefs.colors.aws.high "HIGH COLOR">
 <!ENTITY ra.dings.playvehicle.us-bazooka.desc "Play as an American Anti-Tank Soldier">
+<!ENTITY ra.component.4 "pitot tube">
 <!ENTITY ra.prefs.calibration.device.label "NAME">
 <!ENTITY ra.prefs.keymapper.cats.planes "Fighters and Bombers">
 <!ENTITY ra.dings.playvehicle.us-smg.desc "Play as an American Submachine Gunner">
@@ -4812,7 +4846,13 @@
 <!ENTITY ra.prefs.corpses "LEAVE CORPSES">
 <!ENTITY ra.prefs.keymapper.keys.primary "PRIMARY KEYMAP">
 <!ENTITY ra.dings.killstreak.desc "Your kill streak record is now &#37;ls kills.">
+<!ENTITY ra.dings.2-suicide.2.title "Death by Misadventure II">
+<!ENTITY ra.component.6.3 "hull mg">
+<!ENTITY ra.damage.exploded "exploded">
+<!ENTITY ra.damage.sealed "sealed">
 <!ENTITY ra.prefs.netcode2 "USE NETCODE2 (beta)">
+<!ENTITY ra.component.7 "crew">
+<!ENTITY ra.dings.2-suicide.2.desc "Kill yourself three times.">
 <!ENTITY ra.prefs.corpse.time.tip "Select how long to keep corpses around. Use a lower setting for better performance.">
 <!ENTITY ra.prefs.icons.tip "Icons are what show up above friendly and enemy troops and vehicles.">
 <!ENTITY ra.prefs.terrain.tip "Select whether shadows are turned on. Turn off to increase performance.">
@@ -4822,8 +4862,10 @@
 <!ENTITY ra.dings.winmap.dm_cagefight.3.title "Cage Champion">
 <!ENTITY ra.prefs.corpse.density.tip "Select how many corpses to allow. Use a lower setting for better performance.">
 <!ENTITY ra.prefs.keymapper.cats.guns "AT and AAA Guns">
+<!ENTITY ra.component.7.1 "driver">
 <!ENTITY ra.prefs.icons.namerank "name and rank">
 <!ENTITY ra.prefs.mode "HUD MODE">
+<!ENTITY ra.component.3 "engine">
 <!ENTITY ra.prefs.clutter "RADIAL CLUTTER">
 <!ENTITY ra.prefs.calibration.mouse.more "more">
 <!ENTITY ra.prefs.keymapper.pending.invert "Hold down CTRL key to invert an axis, + - for half axis.">
@@ -4848,6 +4890,10 @@
 <!ENTITY ra.prefs.calibration.device.joystick1 "Joystick 1">
 <!ENTITY ra.dings.playvehicle.pzivg.title "German Panzer IV G">
 <!ENTITY ra.prefs.keymapper.keys.secondary "SECONDARY KEYMAP">
+<!ENTITY ra.component.7.4 "loader">
+<!ENTITY ra.component.3.9 "clutch">
+<!ENTITY ra.damage.damaged "damaged">
+<!ENTITY ra.component.5.3 "track">
 <!ENTITY ra.dings.playvehicle.derifle.desc "Play as a German Rifleman">
 <!ENTITY ra.prefs.calibration.device.axisry "Rudder Y Axis">
 <!ENTITY ra.prefs.enableh20shaders.tip "Turns on realistic looking water. Disable to improve performance.">
@@ -4858,6 +4904,7 @@
 <!ENTITY ra.dings.playmap.dm_cagefight.title "Get In The Cage">
 <!ENTITY ra.prefs.corpse.detail.tip "Use this to use a higher quality corpse model. Disable this for performance.">
 <!ENTITY ra.dings.playvehicle.us-eng.title "American Engineer">
+<!ENTITY ra.dings.2-suicide.1.desc "Kill yourself once.">
 <!ENTITY ra.prefs.sse2 "SSE2 EXTENSIONS">
 <!ENTITY ra.prefs.keymapper.pending.inc "Hit a key to set this function&#39;s increase action.">
 <!ENTITY ra.prefs.limitlod "LIMIT LOD CHANGES">
@@ -4890,6 +4937,7 @@
 <!ENTITY ra.dings.winmap.dm_tankbrawl.3.desc "Win Tank Brawl 5 times">
 <!ENTITY ra.prefs.windows.reset.button "RESET">
 <!ENTITY ra.prefs.musicmultiplier "MUSIC VOLUME">
+<!ENTITY ra.component.2.4 "rudder">
 <!ENTITY ra.prefs.network.primary "primary">
 <!ENTITY ra.prefs.volume.tip "Control the level of volume for sound effects and music.">
 <!ENTITY ra.prefs.keymapper.cats.trucks "Trucks and Haulers">
