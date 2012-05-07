@@ -31,20 +31,28 @@ dock = 码头
 scenario.help = 文本信息</body>
   <bodyloc>true</bodyloc>
   <brief>红军试图返回城镇并从蓝星国军夺回宝贵的燃料库.</brief>
+  <conditions>cloudy</conditions>
   <duration>30</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
+  <gametype>obj</gametype>
   <hour>1400</hour>
   <ingamemap>107.8 38.9 .041</ingamemap>
+  <location>hills</location>
   <maptype>OBJ</maptype>
   <rules>fueldump</rules>
+  <season>spring</season>
+  <shortname>fuel</shortname>
+  <startweapon1>us-bazooka</startweapon1>
+  <startweapon2>pzivg</startweapon2>
   <team1>2</team1>
   <team1min>2</team1min>
   <team2>4</team2>
   <team2min>2</team2min>
   <terrain>fueldump</terrain>
+  <timeofday>afternoon</timeofday>
   <title>燃料库</title>
   <victory>60</victory>
   <weather>1</weather>

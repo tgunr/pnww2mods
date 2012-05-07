@@ -15,18 +15,25 @@ scenario.help = 笼之战: 击杀敌人</body>
   <brief>一场激烈的近距离军营冲突在莫贝格爆发了。两方是如此的接近，近得几乎可以互相嗅到对方的气息
 在15分钟内尽可能多的消灭敌步兵
 最先达到50击杀数的一方获胜。</brief>
+  <conditions>clear</conditions>
   <draw>35</draw>
   <duration>15</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
+  <gametype>tdm</gametype>
   <hour>16</hour>
   <links>
     <link path="scenarios/dm/objectives/cagefight1.xml" title="队1" />
     <link path="scenarios/dm/objectives/cagefight2.xml" title="队2" />
   </links>
+  <location>city</location>
   <rules>dmnointel</rules>
+  <season>summer</season>
+  <shortname>cage</shortname>
+  <startweapon1>us-smg</startweapon1>
+  <startweapon2>de-smg</startweapon2>
   <team1>1</team1>
   <team1max>8</team1max>
   <team1min>2</team1min>
@@ -34,6 +41,7 @@ scenario.help = 笼之战: 击杀敌人</body>
   <team2max>8</team2max>
   <team2min>2</team2min>
   <terrain>cagefight</terrain>
+  <timeofday>afternoon</timeofday>
   <title>笼之战</title>
   <victory>50</victory>
   <weather>0</weather>

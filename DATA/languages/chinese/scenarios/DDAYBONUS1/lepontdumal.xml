@@ -27,24 +27,34 @@ scenario.help = 邪恶桥: 邪恶桥</body>
 蓝星国- 占领并守住桥梁60秒
 
 红国- 15分钟内阻止敌人达成目标</brief>
-  <duration>15</duration>
+  <conditions>cloudy</conditions>
+  <duration>20</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
+  <gametype>obj</gametype>
   <hour>1500</hour>
   <ingamemap>47.75 31.06 .039</ingamemap>
   <links>
     <link path="scenarios/dm/objectives/lepontdumal1.xml" title="队1" />
     <link path="scenarios/dm/objectives/lepontdumal2.xml" title="队2" />
   </links>
+  <location>village</location>
   <maptype>OBJ</maptype>
   <rules>lepontdumal</rules>
+  <season>spring</season>
+  <shortname>lept</shortname>
+  <startweapon1>us-rifle</startweapon1>
+  <startweapon2>derifle</startweapon2>
   <team1>2</team1>
+  <team1max>10</team1max>
   <team1min>2</team1min>
   <team2>4</team2>
+  <team2max>10</team2max>
   <team2min>2</team2min>
   <terrain>lepontdumal</terrain>
+  <timeofday>afternoon</timeofday>
   <title>邪恶桥</title>
   <victory>60</victory>
   <weather>1</weather>

@@ -1,7 +1,9 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>dday/obj_fueldump</name>
-  <body>onspawn.moveout = German forces are trying to move through town and recapture the fuel depot.
+  <body>brief1 = American forces must defend the fuel depot north of town from German armor. This fuel is vital to the invasion plan!
+brief2 = German forces must occupy the fuel depot north of town with your armor. Re-taking it will blunt the Allied advance! 
+onspawn.moveout = German forces are trying to move through town and recapture the fuel depot.
 playarea = You are leaving the combat area
 roundstop = This round is over!
 alliedinfantryinfo = German forces may be moving through town towards the fuel depot.
@@ -30,21 +32,29 @@ dock = dock
 
 scenario.help = text</body>
   <bodyloc>true</bodyloc>
-  <brief>German forces try to move back through town and re-capture the valuable fuel depot from the American invasion forces.</brief>
+  <brief>German forces are moving through town to re-capture a valuable fuel depot American invasion forces captured earlier in the day.</brief>
+  <conditions>cloudy</conditions>
   <duration>30</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
+  <gametype>obj</gametype>
   <hour>1400</hour>
   <ingamemap>107.8 38.9 .041</ingamemap>
+  <location>hills</location>
   <maptype>OBJ</maptype>
   <rules>fueldump</rules>
+  <season>spring</season>
+  <shortname>fuel</shortname>
+  <startweapon1>us-bazooka</startweapon1>
+  <startweapon2>pzivg</startweapon2>
   <team1>2</team1>
   <team1min>2</team1min>
   <team2>4</team2>
   <team2min>2</team2min>
   <terrain>fueldump</terrain>
+  <timeofday>afternoon</timeofday>
   <title>Fuel Dump WIP</title>
   <victory>60</victory>
   <weather>1</weather>

@@ -58,18 +58,30 @@ alliedcapoff = Les forces de l&#39;axe ont sécurisé le bunker!
 scenario.help = DOG GREEN: DAY OF DAYS</body>
   <bodyloc>true</bodyloc>
   <brief>Le jour J a commencé depuis plusieurs heures déjà et les alliés débarquent. La défense allemande est en retrait mais elle doit empêcher la capture du bunker.</brief>
-  <duration1>15</duration1>
+  <conditions>overcast</conditions>
+  <duration1>20</duration1>
   <duration2>20</duration2>
   <fog>1</fog>
+  <gametype>obj</gametype>
   <hour>7</hour>
   <ingamemap>-30.21 .95 .07</ingamemap>
+  <location>normandy</location>
   <maptype>OBJ</maptype>
   <objective1>200</objective1>
   <objective2>90</objective2>
   <rules>doggreen</rules>
+  <season>summer</season>
+  <shortname>dogg</shortname>
+  <startweapon1>us-assault</startweapon1>
+  <startweapon2>de-assault</startweapon2>
   <team1>2</team1>
+  <team1max>35</team1max>
+  <team1min>2</team1min>
   <team2>4</team2>
+  <team2max>25</team2max>
+  <team2min>2</team2min>
   <terrain>doggreen</terrain>
+  <timeofday>tod</timeofday>
   <title>Dog Green RFT</title>
   <weather>1</weather>
 </content>

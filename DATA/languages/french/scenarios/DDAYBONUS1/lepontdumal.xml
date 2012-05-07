@@ -27,24 +27,34 @@ scenario.help = LE PONT DU MAL: THE EVIL BRIDGE</body>
 Américains- capturer et tenir le pont pendant 30 s
 <br>
 Axe- Empêcher l&#39;ennemi d&#39;atteindre son objectif pendant 15 minutes</brief>
-  <duration>15</duration>
+  <conditions>cloudy</conditions>
+  <duration>20</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
+  <gametype>obj</gametype>
   <hour>1500</hour>
   <ingamemap>47.75 31.06 .039</ingamemap>
   <links>
     <link path="scenarios/dm/objectives/lepontdumal1.xml" title="team1" />
     <link path="scenarios/dm/objectives/lepontdumal2.xml" title="team2" />
   </links>
+  <location>village</location>
   <maptype>OBJ</maptype>
   <rules>lepontdumal</rules>
+  <season>spring</season>
+  <shortname>lept</shortname>
+  <startweapon1>us-rifle</startweapon1>
+  <startweapon2>derifle</startweapon2>
   <team1>2</team1>
+  <team1max>10</team1max>
   <team1min>2</team1min>
   <team2>4</team2>
+  <team2max>10</team2max>
   <team2min>2</team2min>
   <terrain>lepontdumal</terrain>
+  <timeofday>afternoon</timeofday>
   <title>Le pont du mal</title>
   <victory>60</victory>
   <weather>1</weather>

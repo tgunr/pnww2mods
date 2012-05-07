@@ -14,14 +14,21 @@ roundstop = 本回合结束!
 bridgecapture1 = 你在占领区域里!</body>
   <bodyloc>true</bodyloc>
   <brief>红国和蓝星国的坦克为了占领这座桥梁而决一雌雄！</brief>
+  <conditions>snowing</conditions>
   <draw>15</draw>
   <duration>15</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
+  <gametype>tdm</gametype>
   <hour>16</hour>
+  <location>valley</location>
   <rules>dmnointel</rules>
+  <season>winter</season>
+  <shortname>tbraw</shortname>
+  <startweapon1>stuartm3a3_us</startweapon1>
+  <startweapon2>pziiih</startweapon2>
   <team1>1</team1>
   <team1max>8</team1max>
   <team1min>2</team1min>
@@ -29,6 +36,7 @@ bridgecapture1 = 你在占领区域里!</body>
   <team2max>8</team2max>
   <team2min>2</team2min>
   <terrain>tankmap</terrain>
+  <timeofday>afternoon</timeofday>
   <title>坦克竞技</title>
   <victory>25</victory>
   <weather>3</weather>

@@ -27,20 +27,27 @@ scenario.help = 淌河激战: 击杀敌人</body>
 在15分钟内尽可能多地杀死敌方士兵。
 
 阵营击杀总数最先达到50的一方获胜。</brief>
+  <conditions>cloudy</conditions>
   <draw>35</draw>
   <duration>15</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>3</fog>
+  <gametype>tdmi</gametype>
   <hour>1400</hour>
   <ingamemap>55.08 -75.16 .043</ingamemap>
   <links>
     <link path="scenarios/dm/objectives/riverrun1.xml" title="队1" />
     <link path="scenarios/dm/objectives/riverrun2.xml" title="队2" />
   </links>
+  <location>town</location>
   <maptype>DM</maptype>
   <rules>deathmatch</rules>
+  <season>spring</season>
+  <shortname>rrun</shortname>
+  <startweapon1>us-smg</startweapon1>
+  <startweapon2>de-smg</startweapon2>
   <team1>2</team1>
   <team1max>16</team1max>
   <team1min>2</team1min>
@@ -48,6 +55,7 @@ scenario.help = 淌河激战: 击杀敌人</body>
   <team2max>16</team2max>
   <team2min>2</team2min>
   <terrain>riverrun</terrain>
+  <timeofday>afternoon</timeofday>
   <title>淌河激战</title>
   <victory>50</victory>
   <weather>0</weather>

@@ -31,20 +31,28 @@ dock = dock
 scenario.help = text</body>
   <bodyloc>true</bodyloc>
   <brief>Les forces allemandes essayent de revenir en ville et de reprendre les réserves d&#39;essence aux forces américaines</brief>
+  <conditions>cloudy</conditions>
   <duration>30</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
+  <gametype>obj</gametype>
   <hour>1400</hour>
   <ingamemap>107.8 38.9 .041</ingamemap>
+  <location>hills</location>
   <maptype>OBJ</maptype>
   <rules>fueldump</rules>
+  <season>spring</season>
+  <shortname>fuel</shortname>
+  <startweapon1>us-bazooka</startweapon1>
+  <startweapon2>pzivg</startweapon2>
   <team1>2</team1>
   <team1min>2</team1min>
   <team2>4</team2>
   <team2min>2</team2min>
   <terrain>fueldump</terrain>
+  <timeofday>afternoon</timeofday>
   <title>Réserve d&#39;essence  WIP</title>
   <victory>60</victory>
   <weather>1</weather>
