@@ -11,8 +11,10 @@ alliedvehicleinfo = German armor may be moving through town or cross country tow
 axisinfantryinfo = Support your armor to achieve the objective.
 axisvehicleinfo = Advancing through the town is the fastest, not safest, route to the objective.
 
-
-objective1 = Fuel Depot
+objective1 = Fueldump
+objective2 = North Bridge
+objective3 = South Bridge
+objective4 = Petite Farm
 
 youcapon = You are capturing the depot!
 axiscapon = Axis forces are capturing the depot!
@@ -30,6 +32,20 @@ deresupply = ammo resupply
 usresupply = ammo resupply
 dock = dock
 
+axismoveup = Axis forces have advanced!
+axismoveback = Axis forces have been pushed back!
+alliedmoveup = Allied forces have advanced!
+alliedmoveback = Allied forces have been pushed back!
+
+objective1capon = The fueldump is being captured!
+objective1capoff = The fueldump has been secured!
+objective2capon = The northern bridge is being captured!
+objective2capoff = The northern bridge has been secured!
+objective3capon = The southern bridge is being captured!
+objective3capoff = The southern bridge has been secured!
+objective4capon = The petite farm is being captured!
+objective4capoff = The petite farm has been secured!
+
 scenario.help = text</body>
   <bodyloc>true</bodyloc>
   <brief>German forces are moving through town to re-capture a valuable fuel depot American invasion forces captured earlier in the day.</brief>
@@ -44,6 +60,30 @@ scenario.help = text</body>
   <ingamemap>107.8 38.9 .041</ingamemap>
   <location>hills</location>
   <maptype>OBJ</maptype>
+  <objective1bonus>1</objective1bonus>
+  <objective1capping>.1</objective1capping>
+  <objective1points>0</objective1points>
+  <objective1rate>1</objective1rate>
+  <objective1target>30</objective1target>
+  <objective1victory>0</objective1victory>
+  <objective2bonus>0</objective2bonus>
+  <objective2capping>1</objective2capping>
+  <objective2points>1</objective2points>
+  <objective2rate>1</objective2rate>
+  <objective2target>60</objective2target>
+  <objective2victory>.1</objective2victory>
+  <objective3bonus>0</objective3bonus>
+  <objective3capping>1</objective3capping>
+  <objective3points>1</objective3points>
+  <objective3rate>1</objective3rate>
+  <objective3target>60</objective3target>
+  <objective3victory>.1</objective3victory>
+  <objective4bonus>1</objective4bonus>
+  <objective4capping>.1</objective4capping>
+  <objective4points>0</objective4points>
+  <objective4rate>1</objective4rate>
+  <objective4target>30</objective4target>
+  <objective4victory>0</objective4victory>
   <rules>fueldump</rules>
   <season>spring</season>
   <shortname>fuel</shortname>
