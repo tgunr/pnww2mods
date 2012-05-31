@@ -1,4 +1,4 @@
-# gunsight file
+# gunsight file for 6pdr ATG, Model No.22C MK.II, created by hchris, Feb 2012
 #
 # coordinates are 0,0 at boresight, -x is left and -y is down
 #
@@ -6,30 +6,32 @@
 # 1 deg = 17.45 mils, 1 mil = 0.05730 deg
 
 # mag should be 1st line, as it sets the field of view in the game
-mag 2.8
+mag 1.9
 
 setrangereadout
 
-thickline -26 0 -250 0 1
-thickline 26 0 250 0 1
-thickline 0 -9 0 -250 1
-thickline 0 9 0 250 1
-thinline -27 0 27 0
-thinline 0 10 0 -10
-thinline 17.5 4.4 17.5 -4.4
-thinline -17.5 4.4 -17.5 -4.4
-thinline 8.75 4.4 8.75 -4.4
-thinline -8.75 4.4 -8.75 -4.4
+thickline -26.175 0 -250 0 0.833
+thickline 26.175 0 250 0 0.833
+thickline 0 -17.45 0 -250 0.833
+thickline 0 17.45 0 250 0.833
 
-text 17.5 -15 12 0 L
-text -17.5 -15 12 0 R
+thinline -26.175 0 26.175 0
+thinline 0 17.45 0 -17.45
 
-ammotype 6pdrl52ap 1400
+thinline 17.45 4.36 17.45 -4.36
+thinline -17.45 4.36 -17.45 -4.36
+thinline 8.725 4.36 8.725 -4.36
+thinline -8.725 4.36 -8.725 -4.36
+
+text 21.81 -17.45 8.725 0 L
+text -21.81 -17.45 8.725 0 R
+
+ammotype 6pdrl52ap 3000
 
 setrangeanglemin 0
-setrangeanglemax 0.575
+setrangeanglemax 2.47
 
 usetilt
 
 # fov should be last as it draws the main border circle cutout
-fov 13
+fov 21
