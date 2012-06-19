@@ -4775,4 +4775,26 @@
 		<velvariance>-0.1 -0.2 0 0.1 0.2 0.1</velvariance>
     <material>smoke</material>
 	</particleeffect>
+  <!-- ===================================================================== -->
+  <particleeffect name = "targetaimparticle">
+    <texture>targetaim</texture>
+    <lifetime>-1</lifetime>
+    <sizestart>0.1</sizestart>
+    <sizeend>0.1</sizeend>
+    <alphastart>0.25</alphastart>
+    <alphaend>0.25</alphaend>
+    <dontupdateposition></dontupdateposition>
+    <material>wood</material>
+  </particleeffect>
+  <!-- ===================================================================== -->
+  <particleeffect name = "targetaimparticleground">
+    <number>1</number>
+    <texture>arrowdown</texture>
+    <alphastart>0.25</alphastart>
+    <alphaend>0.25</alphaend>
+    <sizestart>0.5</sizestart>
+    <sizeend>0.5</sizeend>
+    <lifetime>-1</lifetime>
+    <material>wood</material>
+  </particleeffect>
 </FXEFFECTS>
