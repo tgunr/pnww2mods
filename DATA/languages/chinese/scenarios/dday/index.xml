@@ -2,11 +2,11 @@
 <content type="3">
   <brief>Needs definition.</brief>
   <category>103</category>
-  <include>scenarios/content/dday/dday.lua</include>
+  <include>scenarios/content/productinclude.lua</include>
   <links>
-    <link path="scenarios/dday/doggreen.xml" title="海滩突击" />
-    <link path="scenarios/dday/draw.xml" title="挺进韦沃尔" />
+    <link path="scenarios/dday/doggreen.xml" title="Dog Green RFT" />
   </links>
+  <permission>product01</permission>
   <product>211</product>
-  <title>免费模式</title>
+  <title>诺曼底登陆测试版</title>
 </content>

@@ -3408,6 +3408,7 @@
 <!ENTITY common.vehicles.classes.7 "FLAK/PAK">
 <!ENTITY common.squads.details.options.co.resign.button "RÜCKTRITT">
 <!ENTITY common.mission.pd "Zielverteidigung">
+<!ENTITY common.headshake.reload "Hit R to reload your weapon!">
 <!ENTITY common.squads.member.join.locked "Beitritt aufgrund der Seitensperre nicht möglich.">
 <!ENTITY common.countries.us.adjective "Amerikanisch">
 <!ENTITY common.countries.us.airforce "US Luftwaffe">
@@ -3460,6 +3461,7 @@
 <!ENTITY common.vehicles.categories.4 "Infanterie">
 <!ENTITY common.time.hour "{1} Stunde">
 <!ENTITY common.squads.member.join.brigade "Hier klicken, um der Brigade dieses Squaddies beizutreten. Eventuelle Seitensperrungen sind aktiv.">
+<!ENTITY common.headshake.reloadstill "You cannot reload your weapon while moving!">
 <!ENTITY common.vehicles.classes.4 "Gepanzertes Fahrzeug">
 <!ENTITY common.branches.1 "Army">
 <!ENTITY common.headshake "That action is not allowed!">
@@ -3518,6 +3520,7 @@
 <!ENTITY common.basedoutof "Stationiert in">
 <!ENTITY common.squads.member.mission "MISSION">
 <!ENTITY common.squads.ranks.rank1 "Rekrut">
+<!ENTITY common.headshake.nostandaim "You cannot aim this weapon while standing up! Fire from a crouched or prone position.">
 <!ENTITY common.squads.details.night.dow3 "Mittwoch">
 <!ENTITY common.countries.uk.navy "Britische Marine">
 <!ENTITY common.squads.details.options.member.leave.button "VERLASSEN">
@@ -3531,6 +3534,7 @@
 <!ENTITY common.squads.invite.noinvite "Keine Einladung">
 <!ENTITY common.mission.pd.short "Verteidigung">
 <!ENTITY common.squads.members.tips.near "bei">
+<!ENTITY common.headshake.noproneaim "You cannot aim this weapon while prone!">
 <!ENTITY common.squads.details.edited "Deine Änderungen wurden beantragt und sollten in Kürze wirksam werden.">
 <!ENTITY common.squads.members.position "POSITION">
 <!ENTITY common.squads.details.options.member "MIGLIEDSOPTIONEN">
@@ -3559,6 +3563,7 @@
 <!ENTITY common.map.wpdistance "Entfernung">
 <!ENTITY common.squads.ranks.rank4 "XO">
 <!ENTITY common.squads.members "SQUAD MITGLIEDER">
+<!ENTITY common.headshake.reloadnosprint "You cannot sprint while this weapon is loaded!">
 <!ENTITY common.version "Version">
 <!ENTITY common.squads.recruitment.info "kämpft für {1} | spricht {2} | Rekrutierer ist {3}">
 <!ENTITY common.mission.3.short "Verteidigung">
@@ -4229,7 +4234,7 @@
 <!ENTITY vehicles.3.1.1.1 "Blenheim Mk IV">
 <!ENTITY vehicles.4.3.13.2 "Dt. Frachter">
 <!ENTITY vehicles.1.2.6.1 "Bedford OY LKW">
-<!ENTITY vehicles.1.4.9.15 "Anti-Tank Soldier">
+<!ENTITY vehicles.1.4.9.15 "AT: PIAT">
 <!ENTITY vehicles.1.4.9.9 "Panzerbüchse">
 <!ENTITY vehicles.4.1.2.7 "Messerschmitt Bf 109F-1">
 <!ENTITY vehicles.3.4.14.6 "Luftlande LMG">
@@ -4238,9 +4243,9 @@
 <!ENTITY vehicles.4.4.14.13 "Luftlande Mörser">
 <!ENTITY vehicles.3.4.9.9 "Panzerbüchse">
 <!ENTITY vehicles.4.2.4.7 "SdKfz 232">
-<!ENTITY vehicles.2.2.4.2 "M10 Wolverine">
 <!ENTITY vehicles.1.2.7.4 "Bofors 40 mm FLAK">
 <!ENTITY vehicles.1.1.2.6 "Spitfire Mk IXc">
+<!ENTITY vehicles.2.2.4.2 "M10 Wolverine">
 <!ENTITY vehicles.3.2.6.3 "Laffly W15 TCC">
 <!ENTITY vehicles.3.4.14.12 "Luftlande Scharfschütze">
 <!ENTITY vehicles.1.2.4.4 "Matilda Mk II">
@@ -4251,7 +4256,7 @@
 <!ENTITY vehicles.4.1.2.5 "Messerschmitt Bf 109G-6/U4">
 <!ENTITY vehicles.2.2.4.4 "M3A3 Stuart">
 <!ENTITY vehicles.1.2.4.7 "A15 Crusader Mk II">
-<!ENTITY vehicles.3.4.9.15 "Anti-Tank Soldier">
+<!ENTITY vehicles.3.4.9.15 "AT: M9 Bazooka">
 <!ENTITY vehicles.3.3.13.1 "Franz. Zerstörer">
 <!ENTITY vehicles.3.1.2.3 "Hurricane Mk I">
 <!ENTITY vehicles.3.4.9.5 "BUZZARD">
@@ -4304,8 +4309,8 @@
 <!ENTITY vehicles.1.4.14.2 "Luftlande MP">
 <!ENTITY vehicles.3.4.9.13 "Leichter Mörser">
 <!ENTITY vehicles.3.4.14.9 "Luftlande Panzerbüchse">
-<!ENTITY vehicles.1.4.9.6 "Leichtes MG">
 <!ENTITY vehicles.2.2.6.1 "Laffly">
+<!ENTITY vehicles.1.4.9.6 "Leichtes MG">
 <!ENTITY vehicles.3.2.4.1 "Renault B1 bis">
 <!ENTITY vehicles.3.4.9.8 "Kommandeur">
 <!ENTITY vehicles.1.2.7.5 "ROQF 6 Pfünder PAK">
@@ -4314,8 +4319,8 @@
 <!ENTITY vehicles.4.4.9.3 "Pionier">
 <!ENTITY vehicles.4.2.4.6 "Panzer III H">
 <!ENTITY vehicles.1.2.7.1 "ROQF 2 Pfünder PAK">
-<!ENTITY vehicles.3.2.6.1 "Bedford OY LKW">
 <!ENTITY vehicles.2.4.9.3 "Pionier">
+<!ENTITY vehicles.3.2.6.1 "Bedford OY LKW">
 <!ENTITY vehicles.1.2.4.6 "Daimler Mk I">
 <!ENTITY vehicles.2.2.4.3 "M4A3 Sherman">
 <!ENTITY vehicles.4.4.9.14 "Gewehrschütze G43">
@@ -4323,15 +4328,15 @@
 <!ENTITY vehicles.4.2.4.9 "StuG III G">
 <!ENTITY vehicles.1.1.2.2 "Hurricane Mk I">
 <!ENTITY vehicles.2.2.7.3 "M5A2 3&#34; (76.2 mm) AT Gun">
-<!ENTITY vehicles.1.2.4.8 "A15 Crusader Mk III">
 <!ENTITY vehicles.2.2.7.2 "M1 (57 mm) AT Gun">
+<!ENTITY vehicles.1.2.4.8 "A15 Crusader Mk III">
 <!ENTITY vehicles.4.2.4.3 "Panzer II C">
 <!ENTITY vehicles.4.4.9.6 "Leichtes MG">
 <!ENTITY vehicles.1.1.1.3 "Havoc Mk I">
 <!ENTITY vehicles.2.4.9.15 "Bazooka">
 <!ENTITY vehicles.4.1.1.3 "Messerschmitt Bf 110C-4/B">
-<!ENTITY vehicles.3.1.2.5 "Curtiss Hawk H81A-2 (P-40C)">
 <!ENTITY vehicles.1.2.4.3 "Renault B1 bis">
+<!ENTITY vehicles.3.1.2.5 "Curtiss Hawk H81A-2 (P-40C)">
 <!ENTITY vehicles.4.4.9.10 "Fallschirmjäger">
 <!ENTITY vehicles.4.1.2.3 "Messerschmitt Bf 109F-4">
 <!ENTITY vehicles.3.2.4.3 "Somua S-35">

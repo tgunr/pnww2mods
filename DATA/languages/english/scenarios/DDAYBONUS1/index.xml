@@ -1,13 +1,15 @@
 <?xml version='1.0'?>
 <content type="3">
   <category>104</category>
-  <include>scenarios/content/dday/dday.lua</include>
+  <include>scenarios/content/productinclude.lua</include>
   <links>
     <link path="scenarios/ddaybonus1/riverrun.xml" title="River Run RFT" />
-    <link path="scenarios/ddaybonus1/lepontdumal.xml" title="Le pont du mal WIP" />
+    <link path="scenarios/ddaybonus1/lepontdumal.xml" title="Le pont du mal RFT" />
     <link path="scenarios/ddaybonus1/tankmap2.xml" title="Tank Trap WIP" />
+    <link path="scenarios/ddaybonus1/fueldump.xml" title="Fuel Dump WIP" />
+    <link path="scenarios/ddaybonus1/draw.xml" title="Up the Draw WIP" />
   </links>
-  <permission>product01</permission>
+  <permission>product02</permission>
   <product>212</product>
   <title>D-Day Bonus Pack</title>
 </content>

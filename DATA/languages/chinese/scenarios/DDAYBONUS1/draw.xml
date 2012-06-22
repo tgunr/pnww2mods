@@ -17,13 +17,21 @@ scenario.help = 挺进韦沃尔</body>
   <bodyloc>true</bodyloc>
   <brief>蓝星国军队已经获得“海滩突击”的胜利，现在必须向韦沃尔山谷挺近占领附近的一个小镇。为了保住领土，红国正在全力阻止蓝星国。</brief>
   <conditions>overcast</conditions>
-  <duration>30</duration>
-  <fog>1</fog>
+  <duration1>15</duration1>
+  <duration2>15</duration2>
+  <fog>3</fog>
   <gametype>obj</gametype>
-  <hour>7</hour>
+  <hour>1400</hour>
   <location>normandy</location>
   <maptype>OBJ</maptype>
-  <rules>lepontdumal</rules>
+  <objective1rate>1</objective1rate>
+  <objective1target>120</objective1target>
+  <objective2rate>1</objective2rate>
+  <objective2target>60</objective2target>
+  <objective3rate>1</objective3rate>
+  <objective3target>3</objective3target>
+  <objective3threshold>20000</objective3threshold>
+  <rules>draw</rules>
   <season>summer</season>
   <shortname>draw</shortname>
   <startweapon1>us-assault</startweapon1>

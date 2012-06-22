@@ -2,10 +2,11 @@
 <content type="3">
   <brief>Needs definition.</brief>
   <category>103</category>
-  <include>scenarios/content/dday/dday.lua</include>
+  <include>scenarios/content/productinclude.lua</include>
   <links>
     <link path="scenarios/dday/doggreen.xml" title="Dog Green RFT" />
   </links>
+  <permission>product01</permission>
   <product>211</product>
   <title>D-DAY BETA</title>
 </content>

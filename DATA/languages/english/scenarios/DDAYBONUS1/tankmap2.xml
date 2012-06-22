@@ -7,7 +7,7 @@ objective1 = Allies {1}/{2}
 objective2 = Axis {1}/{2}
 onspawn.moveout = Eliminate as many enemy as possible before time runs out!
 toaxisspawn = Enemy advancing east of this position
-toalliedspawn = Eenemy advancing west of this position
+toalliedspawn = Enemy advancing west of this position
 victory1 = Allies victorious!
 victory2 = Axis victorious!
 roundstop = This round is over!
@@ -15,7 +15,7 @@ playarea = Edge of combat zone ... turn around
 toosteep1 = This area is too steep ... turn around
 wp1 = allied spawn
 wp2 = axis spawn
-scenario.help = TANK MAP 2: KILL THE ENEMY</body>
+scenario.help = TANK TRAP: KILL THE ENEMY</body>
   <bodyloc>true</bodyloc>
   <brief>test test test</brief>
   <conditions>raining</conditions>
@@ -26,7 +26,7 @@ scenario.help = TANK MAP 2: KILL THE ENEMY</body>
   <firingenemyicons>true</firingenemyicons>
   <fog>3</fog>
   <gametype>tdmi</gametype>
-  <hour>1600</hour>
+  <hour>0800</hour>
   <ingamemap>55.08 -75.16 .043</ingamemap>
   <location>hills</location>
   <maptype>DM</maptype>

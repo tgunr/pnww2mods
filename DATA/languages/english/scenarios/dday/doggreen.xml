@@ -48,8 +48,8 @@ roundstop = This round is over.
 playarea = Turn around.
 onspawn.1.1.2 = Storm the hill and capture the Command Bunker overlooking the beach.
 onspawn.2.1.2 = Defend the Command Bunker from being overrun by American forces!
-bunkerfalling.1.1.2 = American solidiers are capturing the Command Bunker!
-bunkerfalling.2.1.2 = German forces have secured the Command Bunker!
+bunkerfalling.0.1.2 * American solidiers are capturing the Command Bunker!
+bunkerfalling.2.1.2 * German forces have secured the Command Bunker!
 linebreach = American solidiers have breached the German line!
 germanbunker = Command Bunker
 beachhead = American Beachhead
@@ -57,6 +57,7 @@ objective1 = Beachhead
 objective2 = Bunker
 vierville_draw = Vierville Draw
 minefield = minefield
+youcapon = You are capturing the command bunker!
 alliedcapon = American forces are capturing the Command Bunker!
 alliedcapoff = Axis forces have re-captured the Command Bunker!
 
@@ -69,14 +70,26 @@ ra.team2 = Axis</body>
   <conditions>overcast</conditions>
   <duration1>20</duration1>
   <duration2>20</duration2>
-  <fog>1</fog>
+  <fog>3</fog>
   <gametype>obj</gametype>
-  <hour>7</hour>
+  <hour>0800</hour>
   <ingamemap>-30.21 .95 .07</ingamemap>
   <location>normandy</location>
   <maptype>OBJ</maptype>
   <objective1>200</objective1>
+  <objective1bonus>0</objective1bonus>
+  <objective1contrib>.1</objective1contrib>
+  <objective1points>0</objective1points>
+  <objective1rate>1</objective1rate>
+  <objective1target>200</objective1target>
+  <objective1victory>0</objective1victory>
   <objective2>90</objective2>
+  <objective2bonus>0</objective2bonus>
+  <objective2contrib>1</objective2contrib>
+  <objective2points>1</objective2points>
+  <objective2rate>1</objective2rate>
+  <objective2target>90</objective2target>
+  <objective2victory>0</objective2victory>
   <rules>doggreen</rules>
   <season>summer</season>
   <shortname>dogg</shortname>

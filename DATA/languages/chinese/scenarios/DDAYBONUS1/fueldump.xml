@@ -1,76 +1,86 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>dday/obj_fueldump</name>
-  <body>onspawn.moveout = 红军试图穿过城镇并夺回燃油库.
+  <body>brief1 = 蓝星军战士们,守卫镇子北面的燃料库。红军的装甲部队正在开进。注意：桥梁只能用坦克夺取。
+brief2 = 红军战士们,夺取镇子北面的燃料库。注意：桥梁只能用坦克夺取。
+onspawn.alliedinfantry1 = 占领并守住南北两座桥并防守好燃料库。
+onspawn.moveout.2 = 占领并守住南北两座桥并防守好燃料库。
 playarea = 请不要离开战区
 roundstop = 本回合结束!
-alliedinfantryinfo = 红军可能穿过城镇直奔燃料库.
-alliedvehicleinfo = 红军装甲可能穿过城镇直奔燃料库.
-axisinfantryinfo = 支援你方装甲完成任务.
-axisvehicleinfo = 通过城镇到达目标的路线是最快速的，但不是安全的.
-
 
 objective1 = 燃料库
+objective2 = 北桥
+objective3 = 南桥
+objective4 = 小农场
 
-youcapon = 你正在占领燃料库!
-alliedcapon = 红军正在占领燃料库!
-alliedcapoff = 盟军收复了燃料库!
 minefieldalert = 雷区！危险！
 
-
-depotcapturem = 你正在占领燃料库!
-southbridge = 南部桥梁
-northbridge = 北部桥梁
-petiteferme = 小农场
-deobjective = 占领点
-usobjective = 燃料库
-deresupply = 弹药补给点
-usresupply = 弹药补给点
+southbridge = 南桥 - 首要目标
+northbridge = 北桥 - 首要目标
+petiteferme = 小农场 - 第二目标
+deobjective = 燃料库 - 第二目标
+usobjective = 燃料库 - 第二目标
 dock = 码头
+
+axismoveup = 红军向前推进了！
+axismoveback = 红军被挡回了！
+alliedmoveup = 盟军向前推进了！
+alliedmoveback = 盟军被挡回了！
+
+objective1capon = 燃料库正被占领！
+objective1capoff = 燃料库安全了！
+objective2capon = 北桥正被占领！
+objective2capoff = 北桥安全了！
+objective3capon = 南桥正被占领！
+objective3capoff = 南桥安全了！
+objective4capon = 小农场正被占领！
+objective4capoff = 小农场安全了！
+
+youcapon = 你正在占领目标!
 
 scenario.help = 文本信息</body>
   <bodyloc>true</bodyloc>
-  <brief>红军试图返回城镇并从蓝星国军夺回宝贵的燃料库.</brief>
+  <brief>红军试图返回城镇并从蓝星国军夺回宝贵的燃料库。你的首要目标是占领桥梁；其次是占领燃料库和农场。</brief>
   <conditions>cloudy</conditions>
-  <duration>30</duration>
+  <duration>45</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
   <gametype>obj</gametype>
-  <hour>1400</hour>
+  <hour>1700</hour>
   <ingamemap>107.8 38.9 .041</ingamemap>
   <location>hills</location>
   <maptype>OBJ</maptype>
   <objective1bonus>1</objective1bonus>
-  <objective1capping>.1</objective1capping>
+  <objective1contrib>.1</objective1contrib>
   <objective1points>0</objective1points>
   <objective1rate>1</objective1rate>
-  <objective1target>30</objective1target>
+  <objective1target>60</objective1target>
   <objective1victory>0</objective1victory>
   <objective2bonus>0</objective2bonus>
-  <objective2capping>1</objective2capping>
+  <objective2contrib>1</objective2contrib>
   <objective2points>1</objective2points>
   <objective2rate>1</objective2rate>
-  <objective2target>60</objective2target>
+  <objective2target>90</objective2target>
   <objective2victory>.1</objective2victory>
   <objective3bonus>0</objective3bonus>
-  <objective3capping>1</objective3capping>
+  <objective3contrib>1</objective3contrib>
   <objective3points>1</objective3points>
   <objective3rate>1</objective3rate>
-  <objective3target>60</objective3target>
+  <objective3target>90</objective3target>
   <objective3victory>.1</objective3victory>
   <objective4bonus>1</objective4bonus>
-  <objective4capping>.1</objective4capping>
+  <objective4contrib>.1</objective4contrib>
   <objective4points>0</objective4points>
   <objective4rate>1</objective4rate>
-  <objective4target>30</objective4target>
+  <objective4target>60</objective4target>
   <objective4victory>0</objective4victory>
   <rules>fueldump</rules>
   <season>spring</season>
   <shortname>fuel</shortname>
-  <startweapon1>us-bazooka</startweapon1>
-  <startweapon2>pzivg</startweapon2>
+  <startweapon1>us-smg</startweapon1>
+  <startweapon2>de-smg</startweapon2>
   <team1>2</team1>
   <team1min>2</team1min>
   <team2>4</team2>
@@ -78,6 +88,5 @@ scenario.help = 文本信息</body>
   <terrain>fueldump</terrain>
   <timeofday>afternoon</timeofday>
   <title>燃料库</title>
-  <victory>60</victory>
   <weather>1</weather>
 </content>
