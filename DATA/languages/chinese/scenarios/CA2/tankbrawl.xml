@@ -1,19 +1,24 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>ca2/dm_tankbrawl</name>
-  <body>playarea = 战区边界...你不能离开战区
-onspawn.moveout = 在时间耗尽之前占领桥梁!
-wp1 = 盟国出生点
-wp2 = 红国出生点
-wp3 = 占领点
-wp4 = 东部桥梁
-wp5 = 西部桥梁
-victory1 = 盟国胜利!
-victory2 = 红国胜利!
+  <body>brief1 = 在15分钟内击杀敌人25俩坦克！
+brief2 = 在15分钟内击杀敌人25俩坦克！
+ra.team1 = 盟国
+ra.team2 = 红国
+objective1 = 盟国 {1}/{2}
+objective2 = 红国 {1}/{2}
+victory1 = 盟国获胜!
+victory2 = 红国获胜!
 roundstop = 本回合结束!
-bridgecapture1 = 你在占领区域里!</body>
+playarea = 已到达边界。请退回。
+onspawn.moveout = 在规定时间内尽可能多地消灭敌人的坦克!
+scenario.help = 坦克河谷遭遇战：消灭敌人
+west = 西桥
+east = 东桥
+gerspawn = 敌人出生点
+ukspawn = 敌人出生点</body>
   <bodyloc>true</bodyloc>
-  <brief>红国和蓝星国的坦克为了占领这座桥梁而决一雌雄！</brief>
+  <brief>红国和蓝星国的坦克在一个河谷遭遇而一决雌雄！你的目标是在规定时间内尽可能多地击杀敌人的坦克。在15分钟内，先达到25个击杀的一方获胜！</brief>
   <conditions>snowing</conditions>
   <draw>15</draw>
   <duration>15</duration>
@@ -37,7 +42,7 @@ bridgecapture1 = 你在占领区域里!</body>
   <team2min>2</team2min>
   <terrain>tankmap</terrain>
   <timeofday>afternoon</timeofday>
-  <title>坦克竞技</title>
+  <title>坦克河谷遭遇战</title>
   <victory>25</victory>
   <weather>3</weather>
 </content>
