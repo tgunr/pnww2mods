@@ -12,13 +12,13 @@ victory2 = 红国获胜!
 roundstop = 本回合结束!
 playarea = 已到达边界。请退回。
 onspawn.moveout = 在规定时间内尽可能多地消灭敌人的坦克!
-scenario.help = 坦克河谷遭遇战：消灭敌人
+scenario.help = 双桥对战：消灭敌人
 west = 西桥
 east = 东桥
 gerspawn = 敌人出生点
 ukspawn = 敌人出生点</body>
   <bodyloc>true</bodyloc>
-  <brief>红国和蓝星国的坦克在一个河谷遭遇而一决雌雄！你的目标是在规定时间内尽可能多地击杀敌人的坦克。在15分钟内，先达到25个击杀的一方获胜！</brief>
+  <brief>红国和蓝星国的坦克在一个河谷遭遇而一决雌雄！河上有两座小桥， 双方隔河而战。你的目标是在规定时间内尽可能多地击杀敌人的坦克。在15分钟内，先达到25个击杀的一方获胜！</brief>
   <conditions>snowing</conditions>
   <draw>15</draw>
   <duration>15</duration>
@@ -42,7 +42,7 @@ ukspawn = 敌人出生点</body>
   <team2min>2</team2min>
   <terrain>tankmap</terrain>
   <timeofday>afternoon</timeofday>
-  <title>坦克河谷遭遇战</title>
+  <title>双桥对战</title>
   <victory>25</victory>
   <weather>3</weather>
 </content>
