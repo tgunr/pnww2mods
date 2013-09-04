@@ -1,0 +1,1 @@
+ww2 -window 0 -width 3840 -height 1024 -data 1 -log 1
