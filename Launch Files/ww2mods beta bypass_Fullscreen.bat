@@ -1,0 +1,1 @@
+ww2 -window 1 -width 3840 -height 1024 -data 1 -log 1 -ticket ticket_beta.tkt
