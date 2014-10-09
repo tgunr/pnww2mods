@@ -32,12 +32,13 @@ scenario.help = 邪恶桥: 邪恶桥</body>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
-  <hour>1400</hour>
+  <hour>1500</hour>
   <ingamemap>47.75 31.06 .039</ingamemap>
   <links>
     <link path="scenarios/dm/objectives/lepontdumal1.xml" title="队1" />
     <link path="scenarios/dm/objectives/lepontdumal2.xml" title="队2" />
   </links>
+  <maptype>OBJ</maptype>
   <rules>lepontdumal</rules>
   <team1>2</team1>
   <team1min>2</team1min>
@@ -46,5 +47,5 @@ scenario.help = 邪恶桥: 邪恶桥</body>
   <terrain>lepontdumal</terrain>
   <title>邪恶桥</title>
   <victory>60</victory>
-  <weather>0</weather>
+  <weather>1</weather>
 </content>

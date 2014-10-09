@@ -32,19 +32,20 @@ Germans- keep the enemy from reaching their objective for 15 minutes</brief>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
-  <hour>1400</hour>
+  <hour>1500</hour>
   <ingamemap>47.75 31.06 .039</ingamemap>
   <links>
     <link path="scenarios/dm/objectives/lepontdumal1.xml" title="team1" />
     <link path="scenarios/dm/objectives/lepontdumal2.xml" title="team2" />
   </links>
+  <maptype>OBJ</maptype>
   <rules>lepontdumal</rules>
   <team1>2</team1>
   <team1min>2</team1min>
   <team2>4</team2>
   <team2min>2</team2min>
   <terrain>lepontdumal</terrain>
-  <title>Le pont du mal RFT</title>
+  <title>Le pont du mal WIP</title>
   <victory>60</victory>
-  <weather>0</weather>
+  <weather>1</weather>
 </content>

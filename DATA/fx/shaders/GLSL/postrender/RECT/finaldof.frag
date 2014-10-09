@@ -2,12 +2,11 @@
 #extension GL_ARB_texture_rectangle: enable
 
 uniform sampler2DRect src1;
-uniform sampler2DRect src2;
+uniform sampler2DRect scene;
 
-uniform float lum;
 uniform vec2 filter[12];
 
-const vec2 MaxCoC = vec2(10.0, 20.0);
+const vec2 MaxCoC = vec2(5.0, 8.0);
 
 vec4 filterdof()
 {
@@ -35,7 +34,7 @@ vec4 filterdof()
         
         tap = mix(tapHigh, tapLow, tapBlur);
 
-        tap.a = tap.a >= centerDepth ? 1.0 : tapBlur;
+		tap.a = tap.a > centerDepth ? 1.0 : abs(tap.a * 2.0 - 1.0);
 
         c.rgb += tap.rgb * tap.a;
         c.a += tap.a;
@@ -46,11 +45,8 @@ vec4 filterdof()
 
 void main()
 {	
-    vec4 c = filterdof();
+    float a = texture2DRect(src1, gl_TexCoord[0].xy).a;
+    vec4 base = texture2DRect(scene, gl_TexCoord[1].xy);
 
-    vec4 c3 = texture2DRect(src2, gl_TexCoord[0].xy);
-
-	c += lum;
- 
-    gl_FragColor = c * c3;
+    gl_FragColor = mix(base, filterdof(), a);
 }

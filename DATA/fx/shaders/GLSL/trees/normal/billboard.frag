@@ -3,6 +3,7 @@
 uniform sampler2D billboardMap;
 uniform sampler2D billboardNormal;
 uniform float lightadjust;
+uniform float alphatest;
 
 varying vec3 T;
 varying vec3 B;
@@ -20,6 +21,10 @@ void lightGetAmbientDiffuse(in vec3,
 void main()
 {
 	vec4 base = texture2D(billboardMap, gl_TexCoord[0].xy);
+
+    if(base.a <= alphatest)
+        discard;
+
 	vec4 normal = texture2D(billboardNormal, gl_TexCoord[2].xy) * 2.0 - 1.0;
 	
 	vec4 diffuse;

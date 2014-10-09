@@ -8,5 +8,5 @@ out vec4 out_color;
 
 void main()
 {
-	out_color = texture2DRect(src1, tex0);
+	out_color = texture(src1, tex0);
 }

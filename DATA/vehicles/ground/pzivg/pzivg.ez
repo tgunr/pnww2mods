@@ -1,5 +1,5 @@
 <?xml version='1.0'?>
-<vehicle turret="2" manager="eztank">
+<vehicle turret="2" reticle="reticles/camera" manager="eztank">
 	<config>
 		<param name="shiftdownrpms" value=".65"/>
 		<param name="shiftuprpms" value=".97"/>
@@ -9,9 +9,9 @@
 	</config>
 	
 	
-		<ez level="2">
-		<position name="command" position="2" view="0" zoom="0" >
-			<camera reticle="reticles/crosshairs" offset="0,-12,4" focus="300">
+	<ez level="2">
+		<position name="command" position="2" view="0" zoom="0" reticle="reticles/crosshairs">
+			<camera offset="0,-14,5" focus="300">
 				<elevation down="-29.5" up="17.5" rate="1"/>			
 			</camera>
 			<blocks input="turretraverse"/>
@@ -20,7 +20,6 @@
 		<position name="gunner" position="2" view="3" zoom="1"/>
 		<position name="gunner" position="2" view="3" zoom="0"/>
 	</ez>
-	
 	
 	
 	

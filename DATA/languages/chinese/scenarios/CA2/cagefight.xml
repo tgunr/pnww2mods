@@ -12,8 +12,8 @@ gerspawn = 红军出生点
 ukspawn = 盟军出生点
 scenario.help = 笼之战: 击杀敌人</body>
   <bodyloc>true</bodyloc>
-  <brief>一场激烈的近距离军营冲突在莫贝格爆发了。两方是如此的接近，近得几乎可以互相嗅到对方的气息。<br><br>
-在15分钟内尽可能多的消灭敌步兵<br>
+  <brief>一场激烈的近距离军营冲突在莫贝格爆发了。两方是如此的接近，近得几乎可以互相嗅到对方的气息
+在15分钟内尽可能多的消灭敌步兵
 最先达到50击杀数的一方获胜。</brief>
   <draw>35</draw>
   <duration>15</duration>
@@ -33,7 +33,8 @@ scenario.help = 笼之战: 击杀敌人</body>
   <team2>4</team2>
   <team2max>8</team2max>
   <team2min>2</team2min>
+  <terrain>cagefight</terrain>
   <title>笼之战</title>
   <victory>50</victory>
-  <weather>1</weather>
+  <weather>0</weather>
 </content>

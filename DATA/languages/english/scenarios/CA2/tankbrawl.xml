@@ -1,27 +1,40 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>ca2/dm_tankbrawl</name>
-  <body>objective1 = Allies {1}/{2}
+  <body>ra.team1 = Allies
+ra.team2 = Axis
+objective1 = Allies {1}/{2}
 objective2 = Axis {1}/{2}
 victory1 = Allies victorious!
 victory2 = Axis victorious!
 roundstop = This round is over!
 playarea = Edge of combat zone ... turn around
-onspawn.moveout = Eliminate as many enemy as possible before time runs out!
+onspawn.moveout = Eliminate as many enemy tanks as possible before time runs out!
+scenario.help = TANK BRAWL: KILL THE ENEMY
+west = West Bridge
+east = East Bridge
 gerspawn = Enemy Spawn
-ukspawn = Enemy Spawn
-scenario.help = TANK BRAWL: KILL THE ENEMY</body>
+ukspawn = Enemy Spawn</body>
   <bodyloc>true</bodyloc>
-  <brief>German and American tanks battle in a river valley!</brief>
+  <brief>German and American tanks battle in a river valley!
+Kill as many enemy tanks as possible in 15 minutes
+The first team to reach 25 kills wins.</brief>
+  <draw>15</draw>
   <duration>15</duration>
-  <fog>2</fog>
+  <enemydeaths>true</enemydeaths>
+  <enemyicontypeonly>true</enemyicontypeonly>
+  <firingenemyicons>true</firingenemyicons>
+  <fog>1</fog>
   <hour>16</hour>
-  <kills>25</kills>
   <rules>dmnointel</rules>
-  <target></target>
-  <team1>2</team1>
+  <team1>1</team1>
+  <team1max>8</team1max>
+  <team1min>2</team1min>
   <team2>4</team2>
+  <team2max>8</team2max>
+  <team2min>2</team2min>
   <terrain>tankmap</terrain>
-  <title>Tank Brawl</title>
-  <weather>1</weather>
+  <title>Tank Brawl RFT</title>
+  <victory>25</victory>
+  <weather>3</weather>
 </content>
