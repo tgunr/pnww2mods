@@ -1,4 +1,4 @@
-# gunsight file for Stug IIIG, Model Sfl.ZF1a, created by hchris, Feb 2012
+# gunsight file
 #
 # coordinates are 0,0 at boresight, -x is left and -y is down
 #
@@ -10,54 +10,23 @@ mag 5
 
 setrangereadout
 
-thinline -86 -86 0 0
-thinline 86 -86 0 0
+thinline -86 -80 0 0
+thinline 86 -80 0 0
 thinline 0 -80 0 -18.5
 thinline 0 80 0 37
 
-thinline -4 0 -4 -2
-
-thinline -8 0 -10.31 -4
-thinline -8 0 -5.69 -4
-thinline -10.31 -4 -8.77 -4
-thinline -5.69 -4 -7.23 -4
-
-thinline -12 0 -12 -2
-
-thinline -16 0 -18.31 -4
-thinline -16 0 -13.69 -4
-thinline -18.31 -4 -16.77 -4
-thinline -13.69 -4 -15.23 -4
-
-thinline -20 0 -20 -2
-
-thinline -24 0 -26.31 -4
-thinline -24 0 -21.69 -4
-thinline -26.31 -4 -24.77 -4
-thinline -21.69 -4 -23.23 -4
-
-
-thinline 4 0 4 -2
-
-thinline 8 0 10.31 -4
-thinline 8 0 5.69 -4
-thinline 10.31 -4 8.77 -4
-thinline 5.69 -4 7.23 -4
-
-thinline 12 0 12 -2
-
-thinline 16 0 18.31 -4
-thinline 16 0 13.69 -4
-thinline 18.31 -4 16.77 -4
-thinline 13.69 -4 15.23 -4
-
-thinline 20 0 20 -2
-
-thinline 24 0 26.31 -4
-thinline 24 0 21.69 -4
-thinline 26.31 -4 24.77 -4
-thinline 21.69 -4 23.23 -4
-
+thinline -3.9 0 -3.9 -1.85
+triangle -7.8 0 -10.3 -3.7 -5.3 -3.7
+thinline -11.6 0 -11.6 -1.85
+triangle -15.4 0 -17.9 -3.7 -12.9 -3.7
+thinline -19.2 0 -19.2 -1.85
+triangle -23 0 -25.5 -3.7 -20.5 -3.7
+thinline 3.9 0 3.9 -1.85
+triangle 7.8 0 5.3 -3.7 10.3 -3.7
+thinline 11.6 0 11.6 -1.85
+triangle 15.4 0 12.9 -3.7 17.9 -3.7
+thinline 19.2 0 19.2 -1.85
+triangle 23 0 20.5 -3.7 25.5 -3.7
 
 ammotype 75mmstuk40l48ap 5000
 

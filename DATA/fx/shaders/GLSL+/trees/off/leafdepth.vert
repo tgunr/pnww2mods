@@ -9,7 +9,11 @@ uniform MatrixBlock
     mat4 b_ProjectionMatrix;
 };
 
-uniform samplerBuffer data;
+uniform TreeInstanceBlock
+{
+	vec4 b_rotation[250];
+	vec4 b_position[250];
+};
 
 uniform vec2 cameraangle;
 
@@ -22,10 +26,8 @@ out vec2 tex0;
 
 void main()
 {
-    int idx = gl_InstanceID * 2;
-
-    vec4 rot = texelFetchBuffer(data, idx + 0);
-    vec4 pos = texelFetchBuffer(data, idx + 1);
+    vec4 rot = b_rotation[gl_InstanceID];
+    vec4 pos = b_position[gl_InstanceID];
 
     float azimuth = cameraangle.x;
 	float pitch = cameraangle.y;

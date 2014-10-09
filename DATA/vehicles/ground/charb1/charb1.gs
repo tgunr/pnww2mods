@@ -1,4 +1,4 @@
-# gunsight file for B1bis Hull gun, Model L.710, created by hchris, Mar 2012
+# gunsight file
 #
 # coordinates are 0,0 at boresight, -x is left and -y is down
 #
@@ -14,102 +14,67 @@ ammotype 75mmsa32l17 2000
 pos 0
 range 0
 
-#thinline 0 0 0 -5
-
-range 0
-thinline -5.3625 0 2.18 0
-text -6.3625 0 2 0 0
-
+line -7 2
 rangeline 0 25 0 75
-
+text -9 0 4 0 0
 range 100
-thinline -3.18 0 -1 0
-
 rangeline 0 125 0 175
-
+line -3 -1
 range 200
-thinline -5.3625 0 -1 0
-text -8.3625 0 2 0 200
-
 rangeline 0 225 0 275
-
+line -7 -1
+text -11 0 4 0 200
 range 300
-thinline -3.18 0 -1 0
-
 rangeline 0 325 0 375
-
+line -3 -1
 range 400
-thinline -5.3625 0 -1 0
-text -8.3625 0 2 0 400
-
 rangeline 0 425 0 475
-
+line -7 -1
+text -11 0 4 0 400
 range 500
-thinline -3.18 0 -1 0
-
 rangeline 0 525 0 575
-
+line -3 -1
 range 600
-thinline -5.3625 0 -1 0
-text -8.3625 0 2 0 600
-
 rangeline 0 625 0 675
-
+line -7 -1
+text -11 0 4 0 600
 range 700
-thinline -3.18 0 -1 0
-
 rangeline 0 725 0 775
-
+line -3 -1
 range 800
-thinline -5.3625 0 -1 0
-text -8.3625 0 2 0 800
-
+line -7 -1
 rangeline 0 825 0 875
-
+text -11 0 4 0 800
 range 900
-thinline -3.18 0 -1 0
-
 rangeline 0 925 0 975
-
+line -3 -1
 range 1000
-thinline -5.3625 0 -1 0
-text -9.3625 0 2 0 1000
-
 rangeline 0 1025 0 1075
-
+line -7 -1
+text -12 0 4 0 1000
 range 1100
-thinline -3.18 0 -1 0
-
 rangeline 0 1125 0 1175
-
+line -3 -1
 range 1200
-thinline -5.3625 0 -1 0
-text -9.3625 0 2 0 1200
-
 rangeline 0 1225 0 1275
-
+line -7 -1
+text -12 0 4 0 1200
 range 1300
-thinline -3.18 0 -1 0
-
 rangeline 0 1325 0 1375
-
+line -3 -1
 range 1400
-thinline -5.3625 0 -1 0
-text -9.3625 0 2 0 1400
-
 rangeline 0 1425 0 1475
-
+line -7 -1
+text -12 0 4 0 1400
 range 1500
-thinline -3.18 0 -1 0
-
 rangeline 0 1525 0 1575
-
+line -3 -1
 range 1600
-thinline -5.3625 0 -1 0
-text -9.3625 0 2 0 1600
+line -7 -1
+text -12 0 4 0 1600
 
 endpitchladder
 
 
 # fov should be last as it draws the main border circle cutout
-fov 9.6
+fov 11.25

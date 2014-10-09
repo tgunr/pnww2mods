@@ -1,9 +1,7 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>dday/obj_lepontdumal</name>
-  <body>brief1 = 目标：蓝星国军队必须占领桥梁以便占领这个村子。你们的目标是夺取这座桥并保持占领60秒！
-brief2 = 目标：红军必须阻止蓝星国军队占领这座桥。你们的目标是坚守这座桥并保持占领15分钟！
-onspawn.moveout = 蓝星国军队正在试图占领桥梁！红国必须进行防守。
+  <body>onspawn.moveout = 蓝星国军队正在试图占领桥梁！红国必须进行防守。
 toaxisspawn = 在时间耗尽前占领桥梁！
 toalliedspawn = 防守桥梁，阻止蓝星国军队的推进！
 bridgecapture = 你正在占领这座桥梁，坚守此地直到新部队抵达！
@@ -24,36 +22,29 @@ objective1 = 桥
 
 scenario.help = 邪恶桥: 邪恶桥</body>
   <bodyloc>true</bodyloc>
-  <brief>一支蓝星国护卫分队朝南部的桥梁进发，军令为：占领并控制住桥梁直到增援部队抵达。一支红国小分队驻扎在镇上，需要不惜一切代价防守住桥梁，避免桥梁被占领。</brief>
-  <conditions>cloudy</conditions>
-  <duration>20</duration>
+  <brief>一支蓝星国护卫分队朝南部的桥梁进发，军令为：占领并控制住桥梁直到增援部队抵达。一支红国小分队驻扎在镇上，需要不惜一切代价防守住桥梁，避免桥梁被占领。
+
+蓝星国- 占领并守住桥梁60秒
+
+红国- 15分钟内阻止敌人达成目标</brief>
+  <duration>15</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
-  <fog>3</fog>
-  <gametype>obj</gametype>
-  <hour>1600</hour>
+  <fog>1</fog>
+  <hour>1400</hour>
   <ingamemap>47.75 31.06 .039</ingamemap>
   <links>
-    <link path="scenarios/dm/objectives/lepontdumal1.xml" title="战队1" />
-    <link path="scenarios/dm/objectives/lepontdumal2.xml" title="战队2" />
+    <link path="scenarios/dm/objectives/lepontdumal1.xml" title="队1" />
+    <link path="scenarios/dm/objectives/lepontdumal2.xml" title="队2" />
   </links>
-  <location>village</location>
-  <maptype>OBJ</maptype>
   <rules>lepontdumal</rules>
-  <season>spring</season>
-  <shortname>lept</shortname>
-  <startweapon1>us-rifle</startweapon1>
-  <startweapon2>derifle</startweapon2>
   <team1>2</team1>
-  <team1max>10</team1max>
   <team1min>2</team1min>
   <team2>4</team2>
-  <team2max>10</team2max>
   <team2min>2</team2min>
   <terrain>lepontdumal</terrain>
-  <timeofday>afternoon</timeofday>
   <title>邪恶桥</title>
   <victory>60</victory>
-  <weather>1</weather>
+  <weather>0</weather>
 </content>

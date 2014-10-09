@@ -1,13 +1,12 @@
 <?xml version='1.0'?>
 <content type="3">
   <brief>Les scénarios où l&#39;on doit capturez des objectifs demande de rester dans les zones de capture.</brief>
-  <category>103</category>
-  <include>scenarios/content/productinclude.lua</include>
+  <category>503</category>
+  <include>scenarios/content/dday/dday.lua</include>
   <links>
     <link path="scenarios/dday/doggreen.xml" title="Dog Green RFT" />
-    <link path="scenarios/ddaybonus1/riverrun.xml" title="River Run WIP" />
+    <link path="scenarios/dday/draw.xml" title="Up the Draw WIP" />
   </links>
-  <permission>product01</permission>
   <product>211</product>
   <title>Capturez des  Objectifs</title>
 </content>

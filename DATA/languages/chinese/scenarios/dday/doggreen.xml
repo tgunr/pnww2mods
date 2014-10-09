@@ -1,11 +1,7 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>dday/obj_doggreen</name>
-  <body>brief1 = 目标：清理小山下的海滩并占领山上俯视海滩的敌人碉堡！
-brief2 = 目标：防止敌人占领海滩并坚守山上的碉堡！
-ra.timeofday.tod = 0 小时
-ra.location.normandy = 法国诺曼底
-onspawn.moveout * 奥玛哈海滩突击
+  <body>onspawn.moveout * 奥玛哈海滩突击
 victory1 * 蓝星国军队夺取了韦尔沃山谷，盟国胜利！
 victory2 * 红军守住了韦尔沃山谷，红国胜利！
 roundstop * 本回合结束！
@@ -59,48 +55,20 @@ minefield = 雷区
 alliedcapon = 蓝星国军队正在占领指挥部碉堡！
 alliedcapoff = 红军收复了指挥部碉堡！
 
-scenario.help = 海滩突击: 诺曼底登陆
-
-ra.team1 = 盟军
-ra.team2 = 红国</body>
+scenario.help = 海滩突击: 诺曼底登陆</body>
   <bodyloc>true</bodyloc>
   <brief>海滩登陆进攻持续了数小时，盟军正在夺取地面阵地。到目前为止，红国的防御一直奏效，但是他们必须守住后方的指挥部碉堡，避免被占领。</brief>
-  <conditions>overcast</conditions>
-  <duration1>20</duration1>
+  <duration1>15</duration1>
   <duration2>20</duration2>
-  <fog>3</fog>
-  <gametype>obj</gametype>
-  <hour>0800</hour>
+  <fog>1</fog>
+  <hour>7</hour>
   <ingamemap>-30.21 .95 .07</ingamemap>
-  <location>normandy</location>
-  <maptype>OBJ</maptype>
   <objective1>200</objective1>
-  <objective1bonus>0</objective1bonus>
-  <objective1contrib>.1</objective1contrib>
-  <objective1points>0</objective1points>
-  <objective1rate>1</objective1rate>
-  <objective1target>200</objective1target>
-  <objective1victory>0</objective1victory>
   <objective2>90</objective2>
-  <objective2bonus>0</objective2bonus>
-  <objective2contrib>1</objective2contrib>
-  <objective2points>1</objective2points>
-  <objective2rate>1</objective2rate>
-  <objective2target>90</objective2target>
-  <objective2victory>0</objective2victory>
   <rules>doggreen</rules>
-  <season>summer</season>
-  <shortname>dogg</shortname>
-  <startweapon1>us-assault</startweapon1>
-  <startweapon2>de-assault</startweapon2>
   <team1>2</team1>
-  <team1max>35</team1max>
-  <team1min>2</team1min>
   <team2>4</team2>
-  <team2max>25</team2max>
-  <team2min>2</team2min>
   <terrain>doggreen</terrain>
-  <timeofday>tod</timeofday>
   <title>海滩突击</title>
   <weather>1</weather>
 </content>

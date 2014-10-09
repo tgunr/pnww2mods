@@ -1744,6 +1744,33 @@
 		<posvariance>-0.2 -0.2 0.0 0.2 0.2 0.0</posvariance>
     <material>smoke</material>
   </particleeffect>
+<!-- ===================================================================== -->
+	<particleeffect name = "genericbullethitparticle1">
+		<number>4</number>
+		<number>6</number>
+		<texture>low res smoke1</texture>
+		<texture>low res smoke2</texture>
+		<texture>low res smoke3</texture>
+		<texture>low res smoke4</texture>
+		<alpha>0.5</alpha>
+		<alpha>0.25</alpha>
+		<alpha>0.15</alpha>
+		<alpha>0.0</alpha>
+		<size>0.25</size>
+		<size>0.5</size>
+		<size>0.8</size>
+		<size>1.0</size>
+		<time>0</time>
+		<time>500</time>
+		<time>500</time>
+		<time>500</time>
+		<drag>2</drag>
+		<speed>6.0</speed>
+		<velreduction>0.7</velreduction>
+		<velvariance>-3.0 -3.0 0.0 3.0 3.0 0.0</velvariance>
+		<posvariance>-0.2 -0.2 0.0 0.2 0.2 0.0</posvariance>
+    <material>smoke</material>
+  </particleeffect>
   <!-- ===================================================================== -->
   <particleeffect name = "sandhitparticle">
     <number>4</number>
@@ -4117,6 +4144,32 @@
     <outdofdirection></outdofdirection>
   </particleeffect>
   <!-- ===================================================================== -->
+  <particleeffect name = "smokegrenadeparticle2">
+    <number>1</number>
+    <texture>low res smoke1</texture>
+    <texture>low res smoke2</texture>
+    <texture>low res smoke3</texture>
+    <texture>low res smoke4</texture>
+    <texture>white smoke 1</texture>
+    <texture>white smoke 2</texture>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>1.0</alpha>
+    <alpha>0.0</alpha>
+    <size>0.1</size>
+    <size>0.5</size>
+    <size>2.5</size>
+    <size>4.0</size>
+    <time>100</time>
+    <time>800</time>
+    <time>5000</time>
+    <time>8000</time>
+    <rotate>10</rotate>
+    <speed>0.25</speed>
+    <velvariance>-0.1 -0.1 0 0.1 0.1 0.1</velvariance>
+    <material>smoke</material>
+  </particleeffect>
+  <!-- ===================================================================== -->
   <particleeffect name = "smokegrenadeparticle1">
     <number>3</number>
     <texture>low res smoke1</texture>
@@ -4775,26 +4828,4 @@
 		<velvariance>-0.1 -0.2 0 0.1 0.2 0.1</velvariance>
     <material>smoke</material>
 	</particleeffect>
-  <!-- ===================================================================== -->
-  <particleeffect name = "targetaimparticle">
-    <texture>targetaim</texture>
-    <lifetime>-1</lifetime>
-    <sizestart>0.1</sizestart>
-    <sizeend>0.1</sizeend>
-    <alphastart>0.25</alphastart>
-    <alphaend>0.25</alphaend>
-    <dontupdateposition></dontupdateposition>
-    <material>wood</material>
-  </particleeffect>
-  <!-- ===================================================================== -->
-  <particleeffect name = "targetaimparticleground">
-    <number>1</number>
-    <texture>arrowdown</texture>
-    <alphastart>0.25</alphastart>
-    <alphaend>0.25</alphaend>
-    <sizestart>0.5</sizestart>
-    <sizeend>0.5</sizeend>
-    <lifetime>-1</lifetime>
-    <material>wood</material>
-  </particleeffect>
 </FXEFFECTS>

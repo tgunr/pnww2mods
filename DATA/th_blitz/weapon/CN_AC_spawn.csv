@@ -1,0 +1,27 @@
+section, CATEGORY, weapClass
+default,,AC_fighter.0
+#spawn,cn_spit1,
+#spawn,cn_hurri1,
+#spawn,cn_hawk75,
+#spawn,cn_bf109e,
+#spawn,cn_110c,
+#spawn,cn_bleni,
+#spawn,cn_Ju87b,AC_bomber.0
+#spawn,cn_blen,AC_bomber.0
+,,
+,,
+section, bomber, weapClass
+default,,AC_bomber.0
+#spawn,cn_Ju87b,
+#spawn,cn_blen,
+,,
+,,
+section, fighter, weapClass
+default,,AC_fighter.0
+#spawn,cn_bf109e,
+#spawn,cn_spit1,
+#spawn,cn_hurri1,
+#spawn,cn_hawk75,
+#spawn,cn_110c,
+#spawn,cn_bleni,
+#teststuff,,

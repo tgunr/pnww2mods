@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- values are 0 based -->
+<exposed>
+	<!-- this defines the type and weight for the doggreen trees -->
+  <trees name="treemask.dds">
+    <!-- weight the higher the number the less dense -->
+    <redweight>77</redweight>
+    <greenweight>25</greenweight>
+    <blueweight>90</blueweight>
+    <redtypeint>3 4 5 6 7 8 3 4</redtypeint>
+    <greentypeint>15 15 17 18</greentypeint>
+    <bluetypeint>0 1 2 1 1 19</bluetypeint>
+    <!-- Color clamped between 0 - 255 -->
+    <!-- Example: redclamp 240 will clamp red mask trees to red color >= 240 -->
+    <!-- The higher the clamp, the less number of trees placed-->
+    <redclamp>240</redclamp>
+    <grnclamp>240</grnclamp>
+    <bluclamp>240</bluclamp>
+  </trees>
+  
+
+  
+  <!-- this defines the type and weight for the maintile grass -->
+  <grass name="grassmask.dds">
+    <!-- The higher the weight, the lest dense -->
+   <redweight>1</redweight>   
+   <greenweight>5</greenweight>
+    <blueweight>0</blueweight>
+	
+	<redtypeint>1 2 3</redtypeint>
+    <greentypeint>4 6 7</greentypeint>
+    <bluetypeint>12 13 14 15</bluetypeint>
+    <!-- Color clamped between 0 - 255 -->
+    <!-- Example: redclamp 100 will clamp red mask grass to red color >= 100 -->
+    <!-- The higher the clamp, the less number of blades placed-->
+    <redclamp>50</redclamp>
+    <grnclamp>10</grnclamp>
+    <bluclamp>200</bluclamp>
+    <!-- default is 1.0 -->
+    <redscale>0.50</redscale>
+    <grnscale>1.0</grnscale>
+    <bluscale>0.75</bluscale>
+  </grass>
+  
+
+  
+  
+  
+   <!-- this defines the type and weight for the first clutter mask for the main tile -->
+  <!-- Clutter that uses FLTs (Maximum of 8 clutter masks)-->
+  <!-- clutter mask 1 -->
+  <objectclutter name="cluttermask.dds">
+  <!-- weight the higher the number the less dense -->
+    <redweight>1</redweight>
+    <greenweight>1</greenweight>
+    <blueweight>1</blueweight>
+    <!-- Color clamped between 0 - 255 -->
+    <redclamp>100</redclamp>
+    <grnclamp>100</grnclamp>
+    <bluclamp>100</bluclamp>
+    <!-- clutter FLT object for specific color -->
+    <redtypestring>dg_obs_stake</redtypestring>
+    <greentypestring>tanktrap</greentypestring>
+    <bluetypestring>dg_obs_ramp</bluetypestring>
+    <!--== random rotate (-# #) -->
+    <redparams>15</redparams>
+    <greenparams>45</greenparams>
+    <blueparams>5</blueparams>
+  </objectclutter>
+  
+
+  
+  
+  
+  
+  <!-- fog -->
+  <fogparams>
+    <!--<start>-25.0</start>
+    <end>1200.0</end>
+    -->
+     <start>50.0</start>
+     <end>1200.0</end>
+	 <fogcolor>64 71 78 0</fogcolor>
+     <!-- <fogcolor>127 127 127 0</fogcolor> -->
+   </fogparams>
+   
+   
+   
+  <terraintile name ="doggreen">
+    <shader>multimaskshadow</shader>
+    <treemask>treemask.dds</treemask>
+    <cluttermask>cluttermask.dds</cluttermask>
+    <cluttermask>cluttermask2.dds</cluttermask>
+    <grassmask>grassmask.dds</grassmask>
+    <layer0 name="layer0.dds">
+      <multitexture>128</multitexture>
+      <material>grass</material>
+    </layer0>
+    <blendmask>masks.dds</blendmask>
+  </terraintile>
+  
+ 
+  
+  
+  <terraintile name ="draw_ss">
+    <shader>multimaskshadow</shader>
+    <blendmask name="masks.dds">
+      <layer0 name="layer0.dds">
+        <multitexture>256</multitexture>
+        <material>grass</material>
+      </layer0>
+      <layer1 name="layer1.dds">
+        <multitexture>128</multitexture>
+        <material>rock</material>
+      </layer1>
+      <layer2 name="layer2.dds">
+        <multitexture>100</multitexture>
+        <material>dunes1</material>
+      </layer2>
+      <layer3 name="layer3.dds">
+        <multitexture>512</multitexture>
+        <material>dunes1</material>
+      </layer3>
+    </blendmask>
+  </terraintile>
+
+
+</exposed>

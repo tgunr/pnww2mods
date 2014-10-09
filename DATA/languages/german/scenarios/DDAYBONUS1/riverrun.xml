@@ -25,27 +25,19 @@ scenario.help = RIVER RUN: VERNICHTE DEN FEIND!!!</body>
 Töte so viele Feinde wie möglich innerhalb von ${duration} Minuten.
 
 Das Team, das zuerst 50 Kills erreicht, gewinnt.</brief>
-  <conditions>cloudy</conditions>
   <draw>35</draw>
   <duration>15</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>3</fog>
-  <gametype>tdmi</gametype>
   <hour>1400</hour>
   <ingamemap>55.08 -75.16 .043</ingamemap>
   <links>
     <link path="scenarios/dm/objectives/riverrun1.xml" title="team1" />
     <link path="scenarios/dm/objectives/riverrun2.xml" title="team2" />
   </links>
-  <location>town</location>
-  <maptype>DM</maptype>
-  <rules>dmnointel</rules>
-  <season>spring</season>
-  <shortname>rrun</shortname>
-  <startweapon1>us-smg</startweapon1>
-  <startweapon2>de-smg</startweapon2>
+  <rules>deathmatch</rules>
   <team1>2</team1>
   <team1max>16</team1max>
   <team1min>2</team1min>
@@ -53,7 +45,6 @@ Das Team, das zuerst 50 Kills erreicht, gewinnt.</brief>
   <team2max>16</team2max>
   <team2min>2</team2min>
   <terrain>riverrun</terrain>
-  <timeofday>afternoon</timeofday>
   <title>Gefecht am Fluß</title>
   <victory>50</victory>
   <weather>0</weather>

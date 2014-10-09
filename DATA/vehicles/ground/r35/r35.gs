@@ -1,4 +1,4 @@
-# gunsight file for R35, Model L.739, created by hchris, May 2012
+# gunsight file
 #
 # coordinates are 0,0 at boresight, -x is left and -y is down
 #
@@ -9,9 +9,8 @@
 mag 4
 
 
-text 63 -6 2 0.0 OR 35
-text 63 -17 2 0.0 OA 16
-text -63 -6 2 0.0 M
+text 35 5 3.0 0.0 37mm
+text -35 5 3.0 0.0 7.5mm
 
 pitchladder
 ammotype sa38l21apc 2000
@@ -22,124 +21,105 @@ range 0
 setrangeanglemin 0.0
 setrangeanglemax 4.0
 
-thinline 0 0 150 150
-thinline 0 0 -150 150
-thinline -32.72 0 -30.54 0
-thinline 32.72 0 30.54 0
+thinline -200 200 0 0
+thinline 200 200 0 0
 
-pos 0
-range 0
-trianglefill 30.54 0.75 30.54 -0.75 32.04 0 
-
-pos 0
-range 0
-trianglefill -30.54 -0.75 -30.54 0.75 -32.04 0
-
-pos 0
-range 0
+trianglefill -20 -1 -20 1 -28 0
+trianglefill 20 1 20 -1 28 0
 
 setrangeanglemax 0.0
 
-pos 32.04
-line 0 6.2
-text 6.5 0 1 0 o
-range 200
-line 0 14.5416
-text 16.5416 0 2 0 2
-range 300
-line 0 7.2708
-range 400
-line 0 14.5416
-text 16.5416 0 2 0 4
-range 500
-line 0 7.2708
-range 600
-line 0 14.5416
-text 16.5416 0 2 0 6
-
-pos 0
-range 600
-thinline 53 0 73 0
-
-endpitchladder
-
-
-pitchladder
-ammotype sa38l21 2000
-pos 32.04
-#range 300
-#line 0 7.2708
-#text 9.2708 0 2 0 3
-#range 400
-#line 0 14.5416
-#text 16.5416 0 2 0 4
-range 500
-line 0 7.2708
-text 9.2708 0 2 0 5
-range 600
-line 0 14.5416
-text 16.5416 0 2 0 6
-range 700
-line 0 7.2708
-text 9.2708 0 2 0 7
-range 800
-line 0 14.5416
-text 16.5416 0 2 0 8
-range 900
-line 0 7.2708
-text 9.2708 0 2 0 9
-range 1000
-line 0 14.5416
-text 16.5416 0 2 0 10
-endpitchladder
-
-pitchladder
-ammotype 7_5mmtracerf 2000
-pos -32.04
+pos 30
 range 0
-line 0 -6.2
-text -6.5 0 1 0 o
+line 0 4
+text 6 0 2.5 0 0
+range 100
+line 0 2
 range 200
-line 0 -14.5416
-text -16.5416 0 2 0 2
+line 0 8
+text 10 0 2.5 0 2
+range 300
+line 0 2
 range 400
-line 0 -7.2708
-text -9.2708 0 2 0 4
+line 0 5
+text 7 0 2.5 0 4
 range 500
-line 0 -3.6354
+line 0 2
 range 600
-line 0 -14.5416
-text -16.5416 0 2 0 6
+line 0 8
+text 10 0 2.5 0 6
 range 700
-line 0 -3.6354
+line 0 2
 range 800
-line 0 -7.2708
-text -9.2708 0 2 0 8
+line 0 5
+text 7 0 2.5 0 8
 range 900
-line 0 -3.6354
+line 0 2
 range 1000
-line 0 -14.5416
-text -16.5416 0 2 0 10
+line 0 8
+text 10.5 0 2.5 0 10
 range 1100
-line 0 -7.2708
-text -9.2708 0 2 0 11
+line 0 2
 range 1200
-line 0 -14.5416
-text -16.5416 0 2 0 12
+line 0 5
+text 7.5 0 2.5 0 12
 range 1300
-line 0 -7.2708
-text -9.2708 0 2 0 13
+line 0 2
 range 1400
-line 0 -14.5416
-text -16.5416 0 2 0 14
+line 0 8
+text 10.5 0 2.5 0 14
 range 1500
-line 0 -7.2708
-text -9.2708 0 2 0 15
+line 0 2
 range 1600
-line 0 -14.5416
-text -16.5416 0 2 0 16
+line 0 5
+text 7.5 0 2.5 0 16
+range 1700
+line 0 2
+range 1800
+line 0 8
+text 10.5 0 2.5 0 18
+range 1900
+line 0 2
+range 2000
+line 0 5
+text 7.5 0 2.5 0 20
+
 endpitchladder
 
+pitchladder
+ammotype 7_5mmtracerf 1500
+pos -30
+range 0
+line 0 -3
+text -5 0 2.5 0 0
+range 400
+line 0 -5
+text -7 0 2.5 0 4
+range 600
+line 0 -8
+text -10 0 2.5 0 6
+range 800
+line 0 -5
+text -7 0 2.5 0 8
+range 900
+line 0 -8
+text -10 0 2.5 0 9
+range 1000
+line 0 -5
+text -7 0 2.5 0 10
+range 1100
+line 0 -8
+text -10 0 2.5 0 11
+range 1200
+line 0 -5
+text -7 0 2.5 0 12
+range 1300
+line 0 -8
+text -10 0 2.5 0 13
+range 1400
+line 0 -5
+text -7 0 2.5 0 14
+endpitchladder
 
 # fov should be last as it draws the main border circle cutout
-fov 10.13
+fov 12.5

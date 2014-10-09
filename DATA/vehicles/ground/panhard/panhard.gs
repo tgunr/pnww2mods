@@ -1,4 +1,4 @@
-# gunsight file for Panhard, Model L.700, created by hchris, Feb 2012
+# gunsight file
 #
 # coordinates are 0,0 at boresight, -x is left and -y is down
 #
@@ -7,163 +7,149 @@
 
 # mag should be 1st line, as it sets the field of view in the game
 mag 4
-
-
-text 32.04 5 2 0.0 C
-text -32.04 5 2 0.0 M
-
-pitchladder
-ammotype sa34l72 3500
-
-pos 0
-range 0
-
-setrangeanglemin 0
-setrangeanglemax 3.5
-
-thickline 0 4.3625 0 150 0.5
-thickline 0 -150 0 -4.3625 0.5
-thinline 0 -4.3625 0 4.3625
-thinline -32.72 0 32.72 0
-
-pos 4.3625
-thinline 0 0 0 2.18
-
-pos 8.725
-thinline 0 0 0 4.3625
-
-pos 13.0875
-thinline 0 0 0 2.18
-
-pos 17.45
-thinline 0 0 0 4.3625
-
-pos 21.8125
-thinline 0 0 0 2.18
-
-pos 26.175
-thinline 0 0 0 4.3625
-
-pos -4.3625
-thinline 0 0 0 2.18
-
-pos -8.725
-thinline 0 0 0 4.3625
-
-pos -13.0875
-thinline 0 0 0 2.18
-
-pos -17.45
-thinline 0 0 0 4.3625
-
-pos -21.8125
-thinline 0 0 0 2.18
-
-pos -26.175
-thinline 0 0 0 4.3625
-
-pos 0
-range 0
-trianglefill -30.54 -0.75 -30.54 0.75 -32.04 0
-trianglefill 30.54 0.75 30.54 -0.75 32.04 0
+#mag 1
 
 setrangeanglemax 0.0
 
-pos 32.04
-range 0
-line 0 4
-text 4.5 0 1 0 o
-range 400
-line 0 5
-text 7 0 2 0 4
-range 600
-line 0 3
-text 5 0 2 0 6
-range 800
-line 0 5
-text 7 0 2 0 8
-range 1000
-line 0 3
-text 5 0 2 0 10
-range 1200
-line 0 5
-text 7 0 2 0 12
-range 1400
-line 0 3
-text 5 0 2 0 14
-range 1600
-line 0 5
-text 7 0 2 0 16
-range 1800
-line 0 3
-text 5 0 2 0 18
-range 2000
-line 0 5
-text 7 0 2 0 20
-range 2200
-line 0 3
-text 5 0 2 0 22
-range 2400
-line 0 5
-text 7 0 2 0 24
-range 2600
-line 0 3
-text 5 0 2 0 26
-range 2800
-line 0 5
-text 7 0 2 0 28
-range 3000
-line 0 3
-text 5 0 2 0 30
-range 3100
-line 0 5
-text 7 0 2 0 31
-range 3200
-line 0 3
-text 5 0 2 0 32
-endpitchladder
+ammotype sa34l72 3500
 
-pitchladder
-ammotype 7_5mmtracerf 2000
-pos -32.04
-range 0
-line 0 -3
-text -3.2 0 1 0 o
-range 200
-line 0 -4
-text -7 0 2 0 2
-range 400
-line 0 -3
-text -5 0 2 0 4
-range 600
-line 0 -5
-text -7 0 2 0 6
-range 800
-line 0 -8
-text -10 0 2 0 8
-range 1000
-line 0 -5
-text -7 0 2 0 10
-range 1100
-line 0 -8
-text -10 0 2 0 11
-range 1200
-line 0 -5
-text -7 0 2 0 12
-range 1300
-line 0 -8
-text -10 0 2 0 13
-range 1400
-line 0 -5
-text -7 0 2 0 14
-range 1500
-line 0 -8
-text -10 0 2 0 15
-range 1600
-line 0 -5
-text -7 0 2 0 16
-endpitchladder
+##Targeting "V"
+thinline -150 150 0 0
+thinline 150 150 0 0
+
+##Range markers
+thinline 10 1 10 -5
+thinline 25 1 25 -5
+thinline 40 1 40 -5
+thinline -10 1 -10 -5
+thinline -25 1 -25 -5
+thinline -40 1 -40 -5
+
+##Range tickers
+
+##Range 0
+thinline 50 0 60 0
+text 61 0 3 0 0
+
+##Range 200
+thinline 50 -1.1 55 -1.1
+
+##Range 400
+thinline 50 -2.2 65 -2.2
+text 68 -2.2 3 0 400
+
+##Range 700
+thinline 50 -4.2 60 -4.2
+text 63 -4.2 3 0 700
+
+##Range 1st inbetween
+thinline 50 -4.9 55 -4.9
+
+##Range 2nd inbetween
+thinline 50 -5.6 55 -5.6
+
+##Range 1000
+thinline 50 -6.5 65 -6.5
+text 68 -6.5 3 0 1000
+
+##Range 1100
+thinline 50 -7.2 55 -7.2
+
+##Range 1200
+thinline 50 -8.1 60 -8.1
+text 63 -8.1 3 0 1200
+
+##Range 1300
+thinline 50 -8.9 55 -8.9
+
+##Range 1400
+thinline 50 -9.9 65 -9.9
+text 68 -9.9 3 0 1400
+
+##Range 1500
+thinline 50 -10.8 55 -10.8
+
+##Range 1600
+thinline 50 -11.8 60 -11.8
+text 63 -11.8 3 0 1600
+
+##Range 1700
+thinline 50 -13 55 -13
+
+##Range 1800
+thinline 50 -14 65 -14
+text 68 -14 3 0 1800
+
+##Range 1900
+thinline 50 -15.3 55 -15.3
+
+##Range 2000
+thinline 50 -16.5 60 -16.5
+text 63 -16.5 3 0 2000
+
+##Range 2100
+thinline 50 -17.8 55 -17.8
+
+##Range 2200
+thinline 50 -19.1 65 -19.1
+text 68 -19.1 3 0 2200
+
+##Range 2300
+thinline 50 -20.5 55 -20.5
+
+##Range 2400
+thinline 50 -22 60 -22
+text 63 -22 3 0 2400
+
+##Range 2500
+thinline 50 -23.5 55 -23.5
+
+##Range 2600
+thinline 50 -25 65 -25
+text 68 -25 3 0 2600
+
+##Range 2700
+thinline 50 -26.8 55 -26.8
+
+##Range 2800
+thinline 50 -28.6 60 -28.6
+text 63 -28.6 3 0 2800
+
+##Range 2900
+thinline 50 -30.5 55 -30.5
+
+##Range 3000
+thinline 50 -32.4 65 -32.4
+text 68 -32.4 3 0 3000
+
+##Range 3100
+thinline 50 -34.8 55 -34.8
+
+##Range 3200
+thinline 50 -37 60 -37
+text 63 -37 3 0 3200
+
+##Range 3300
+thinline 50 -39.3 55 -39.3
+
+##Range 3400
+thinline 50 -41.5 65 -41.5
+text 68 -41.5 3 0 3400
+
+##Range 3500
+thinline 50 -44.2 55 -44.2
+#text 63 -44.2 3 0 3500
+
+setrangeanglemin 0
+setrangeanglemax 2.53
+
+setrangereadout
+
+usetilt
+##Range mark
+trianglefill 50 0 45 1 45 -1
+
 
 
 # fov should be last as it draws the main border circle cutout
-fov 11.25
+fov 10.125

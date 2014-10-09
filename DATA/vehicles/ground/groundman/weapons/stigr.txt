@@ -12,3 +12,10 @@ weaponModel = stigr\gunmesh-stigr(1)
 # the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
 weaponConnectTo = weapon-control
 weaponConnect = stigr-connect
+
+grenadeDelayTime = 450
+
+grenadeVisDelay = 0.2
+
+# how far back along the barrel to start the bullet (firepoints are at the tip)
+firepointDisplacement = .25

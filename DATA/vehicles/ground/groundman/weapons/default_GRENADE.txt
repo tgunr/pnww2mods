@@ -1,7 +1,7 @@
 aimFOV = 75.0
 
 # how long to wait after pressing the fire button to actually shoot
-# fireDelay = 1.5
+fireDelay = 1.5
 
 # these all MUST be specified in the weapon specific file
 # note that data\gr2data\FPS\ is prepended to these file names
@@ -15,7 +15,7 @@ aimFOV = 75.0
 
 # flag for the control manager whether to allow the fire button to be held down or not
 # required for autofire weapons as well as recycling weapons
-holdfire = 0
+holdfire = 1
 
 # what icon to display in the hud (4 = grenade)
 hudIconType = 4
@@ -33,16 +33,3 @@ weaponMoveMultiplier = 1.0
 weaponPoseMultiplier = 1.0
 
 leanFireOK = 1
-
-# how long to wait before firing
-fireDelay = 1.5
-
-# left/right offset from eyepoint
-fpXOffset = -.2
-
-# front/back offset from eyepoint
-fpYOffset = .5
-
-# up/down offset from eyepoint
-fpZOffset = 0
-

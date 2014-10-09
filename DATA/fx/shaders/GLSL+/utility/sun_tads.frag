@@ -50,22 +50,18 @@ void sun_tads(in vec3 t,
     d = max(dot(normal, Ltan), 0.0);
 
     diffuse = d * b_diffuse0 * b_Kd;
-    specular = vec4(0);
 
-    if(d > 0.0)
-    {
-        H = normalize(b_dir0 + V);
+    H = normalize(b_dir0 + V);
 
-        // Tangent
-        Htan.x = dot(H, t);
-        Htan.y = dot(H, b);
-        Htan.z = dot(H, n);
+    // Tangent
+    Htan.x = dot(H, t);
+    Htan.y = dot(H, b);
+    Htan.z = dot(H, n);
 
-        s = max(dot(normal, Htan), 0.0);
-        s = pow(s, b_shininess);
+    s = max(dot(normal, Htan), 0.0);
+    s = pow(s, b_shininess);
 
-        specular = s * b_specular0 * b_Ks;
-    }
+    specular = s * b_specular0 * b_Ks;
 
     ambient = (b_ambient0 + b_globalambient) * b_Ka;
 }

@@ -1,15 +1,13 @@
 <?xml version='1.0'?>
 <content type="3">
-  <category>104</category>
-  <include>scenarios/content/productinclude.lua</include>
+  <category>504</category>
+  <include>scenarios/content/dday/dday.lua</include>
   <links>
-    <link path="scenarios/ddaybonus1/riverrun.xml" title="淌河激战" />
-    <link path="scenarios/ddaybonus1/lepontdumal.xml" title="邪恶桥" />
-    <link path="scenarios/ddaybonus1/tankmap2.xml" title="坦克诱捕战" />
-    <link path="scenarios/ddaybonus1/fueldump.xml" title="燃料库" />
-    <link path="scenarios/ddaybonus1/draw.xml" title="挺进韦沃尔" />
+    <link path="scenarios/dday/lepontdumal.xml" title="邪恶桥" />
+    <link path="scenarios/dday/fueldump.xml" title="燃料库" />
+    <link path="scenarios/dday/riverrun.xml" title="淌河激战" />
   </links>
-  <permission>product02</permission>
+  <permission>product01</permission>
   <product>212</product>
-  <title>诺曼底登陆系列包</title>
+  <title>收费模式</title>
 </content>

@@ -14,7 +14,7 @@ const vec3 shockParams = vec3(10.0, 0.1, 0.1);
 
 uniform float time; 
 
-const float focalplanedepth = 5.0;
+const float focalplanedepth = 1.0;
 const float nearblurdepth = 0.0;//-200.0;
 const float farplanedepth = 3500.0;
 
@@ -118,8 +118,8 @@ void main()
 
     if(sd < focalplanedepth)
     {
-        //f = (sd - focalplanedepth) / (focalplanedepth - nearblurdepth);
-        f = 0.0;//clamp(f, -1.0, 0.0);
+        f = (sd - focalplanedepth) / (focalplanedepth - nearblurdepth);
+        f = clamp(f, -1.0, 0.0);
     }
     else
     {

@@ -1,92 +1,50 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>dday/obj_fueldump</name>
-  <body>brief1 = American forces must defend the fuel dump north of town from German armor. This fuel is vital to the invasion plan! Bridges must be captured with armor.
-brief2 = German forces capture the fuel dump north of town with armor. Re-taking it will blunt the Allied advance! Bridges must be captured with armor.
-onspawn.alliedinfantry1 = Capture and hold both bridges and defend the fuel dump.
-onspawn.moveout.2 = Capture and hold both bridges and recapture the fuel dump.
-playarea = You are leaving the combat area.
+  <body>onspawn.moveout = German forces are trying to move through town and recapture the fuel depot.
+playarea = You are leaving the combat area
 roundstop = This round is over!
+alliedinfantryinfo = German forces may be moving through town towards the fuel depot.
+alliedvehicleinfo = German armor may be moving through town or cross country towards the depot.
+axisinfantryinfo = Support your armor to achieve the objective.
+axisvehicleinfo = Advancing through the town is the fastest, not safest, route to the objective.
 
-objective1 = Fuel Dump
-objective2 = North Bridge
-objective3 = South Bridge
-objective4 = Petite Farm
 
+objective1 = Fuel Depot
+
+youcapon = You are capturing the depot!
+axiscapon = Axis forces are capturing the depot!
+axiscapoff = Allied forces have re-taken the depot!
 minefieldalert = Danger! Minefield!
 
-southbridge = south bridge- primary
-northbridge = north bridge- primary
-petiteferme = petite ferme- secondary
-deobjective = fuel dump- secondary
-usobjective = fuel dump- secondary
+
+depotcapturem = You are capturing the depot!
+southbridge = south bridge
+northbridge = north bridge
+petiteferme = petite ferme
+deobjective = capture objective
+usobjective = fuel depot
+deresupply = ammo resupply
+usresupply = ammo resupply
 dock = dock
-
-axismoveup = Axis forces have advanced!
-axismoveback = Axis forces have been pushed back!
-alliedmoveup = Allied forces have advanced!
-alliedmoveback = Allied forces have been pushed back!
-
-objective1capon = The fuel dump is being captured!
-objective1capoff = The fuel dump has been secured!
-objective2capon = The northern bridge is being captured!
-objective2capoff = The northern bridge has been secured!
-objective3capon = The southern bridge is being captured!
-objective3capoff = The southern bridge has been secured!
-objective4capon = The petite farm is being captured!
-objective4capoff = The petite farm has been secured!
-
-youcapon= You are capturing this objective!
 
 scenario.help = text</body>
   <bodyloc>true</bodyloc>
-  <brief>A battle for bridges as the Germans attempt to recapture a vital fuel dump. Primary objectives are the bridges. Secondary objectives are the fuel dump and local farm.</brief>
-  <conditions>cloudy</conditions>
-  <duration>45</duration>
+  <brief>German forces try to move back through town and re-capture the valuable fuel depot from the American invasion forces.</brief>
+  <duration>30</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
-  <gametype>obj</gametype>
-  <hour>1700</hour>
+  <hour>1400</hour>
   <ingamemap>107.8 38.9 .041</ingamemap>
-  <location>hills</location>
-  <maptype>OBJ</maptype>
-  <objective1bonus>1</objective1bonus>
-  <objective1contrib>.1</objective1contrib>
-  <objective1points>0</objective1points>
-  <objective1rate>1</objective1rate>
-  <objective1target>60</objective1target>
-  <objective1victory>0</objective1victory>
-  <objective2bonus>0</objective2bonus>
-  <objective2contrib>1</objective2contrib>
-  <objective2points>1</objective2points>
-  <objective2rate>1</objective2rate>
-  <objective2target>90</objective2target>
-  <objective2victory>.1</objective2victory>
-  <objective3bonus>0</objective3bonus>
-  <objective3contrib>1</objective3contrib>
-  <objective3points>1</objective3points>
-  <objective3rate>1</objective3rate>
-  <objective3target>90</objective3target>
-  <objective3victory>.1</objective3victory>
-  <objective4bonus>1</objective4bonus>
-  <objective4contrib>.1</objective4contrib>
-  <objective4points>0</objective4points>
-  <objective4rate>1</objective4rate>
-  <objective4target>60</objective4target>
-  <objective4victory>0</objective4victory>
   <rules>fueldump</rules>
-  <season>spring</season>
-  <shortname>fuel</shortname>
-  <startweapon1>us-smg</startweapon1>
-  <startweapon2>de-smg</startweapon2>
   <team1>2</team1>
   <team1min>2</team1min>
   <team2>4</team2>
   <team2min>2</team2min>
   <terrain>fueldump</terrain>
-  <timeofday>afternoon</timeofday>
   <title>Fuel Dump WIP</title>
+  <victory>60</victory>
   <weather>1</weather>
 </content>

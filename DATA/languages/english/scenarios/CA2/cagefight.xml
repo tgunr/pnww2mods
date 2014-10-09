@@ -1,9 +1,7 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>ca2/dm_cagefight</name>
-  <body>brief1 = Kill 50 enemies within 15 minutes before the other team does!  
-brief2 = Kill 50 enemies within 15 minutes before the other team does!  
-objective1 = Allies {1}/{2}
+  <body>objective1 = Allies {1}/{2}
 objective2 = Axis {1}/{2}
 victory1 = Allies victorious!
 victory2 = Axis victorious!
@@ -15,35 +13,28 @@ ukspawn = Enemy Spawn
 scenario.help = CAGE FIGHT: KILL THE ENEMY
 terrain = cagefight</body>
   <bodyloc>true</bodyloc>
-  <brief>TESTING SCENARIO- An intense close quarters brawl has broken out. The two enemies are so close together they can almost smell each other. Kill as many enemy infantry as possible in 15 minutes. The first team to reach 50 kills wins.</brief>
-  <conditions>clear</conditions>
+  <brief>An intense close quarters brawl has broken out. The two enemies are so close together they can almost smell each other.<br><br>
+Kill as many enemy infantry as possible in 15 minutes<br>
+The first team to reach 50 kills wins.</brief>
   <draw>35</draw>
   <duration>15</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
-  <gametype>tdm</gametype>
   <hour>16</hour>
   <links>
     <link path="scenarios/dm/objectives/cagefight1.xml" title="team1" />
     <link path="scenarios/dm/objectives/cagefight2.xml" title="team2" />
   </links>
-  <location>city</location>
   <rules>dmnointel</rules>
-  <season>summer</season>
-  <shortname>cage</shortname>
-  <startweapon1>us-smg</startweapon1>
-  <startweapon2>de-smg</startweapon2>
   <team1>1</team1>
   <team1max>8</team1max>
   <team1min>2</team1min>
   <team2>4</team2>
   <team2max>8</team2max>
   <team2min>2</team2min>
-  <terrain>cagefight</terrain>
-  <timeofday>afternoon</timeofday>
   <title>Cage Fight RFT</title>
   <victory>50</victory>
-  <weather>0</weather>
+  <weather>1</weather>
 </content>

@@ -1,4 +1,4 @@
-# gunsight file for Stug IIIB, Model Sfl.ZF1, created by hchris, Feb 2012
+# gunsight file
 #
 # coordinates are 0,0 at boresight, -x is left and -y is down
 #
@@ -10,15 +10,23 @@ mag 5
 
 setrangereadout
 
-triangle -4 0 -5.155 -2 -2.845 -2
-triangle -8 0 -9.155 -2 -6.845 -2
-triangle -12 0 -13.155 -2 -10.845 -2
+thinline -86 -80 0 0
+thinline 86 -80 0 0
+thinline 0 -80 0 -18.5
+thinline 0 80 0 37
 
-triangle 0 0 -2.31 -4 2.31 -4  
-
-triangle 4 0 5.155 -2 2.845 -2
-triangle 8 0 9.155 -2 6.845 -2
-triangle 12 0 13.155 -2 10.845 -2
+# thinline -3.9 0 -3.9 -1.85
+# triangle -7.8 0 -10.3 -3.7 -5.3 -3.7
+# thinline -11.6 0 -11.6 -1.85
+# triangle -15.4 0 -17.9 -3.7 -12.9 -3.7
+# thinline -19.2 0 -19.2 -1.85
+# triangle -23 0 -25.5 -3.7 -20.5 -3.7
+# thinline 3.9 0 3.9 -1.85
+# triangle 7.8 0 5.3 -3.7 10.3 -3.7
+# thinline 11.6 0 11.6 -1.85
+# triangle 15.4 0 12.9 -3.7 17.9 -3.7
+# thinline 19.2 0 19.2 -1.85
+# triangle 23 0 20.5 -3.7 25.5 -3.7
 
 ammotype 75mmsprgr34 3600
 

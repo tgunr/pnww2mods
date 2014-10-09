@@ -1,12 +1,12 @@
 <?xml version='1.0'?>
 <content type="3">
   <brief>Needs definition.</brief>
-  <category>103</category>
-  <include>scenarios/content/productinclude.lua</include>
+  <category>503</category>
+  <include>scenarios/content/dday/dday.lua</include>
   <links>
-    <link path="scenarios/dday/doggreen.xml" title="Dog Green RFT" />
+    <link path="scenarios/dday/doggreen.xml" title="海滩突击" />
+    <link path="scenarios/dday/draw.xml" title="挺进韦沃尔" />
   </links>
-  <permission>product01</permission>
   <product>211</product>
-  <title>诺曼底登陆测试版</title>
+  <title>免费模式</title>
 </content>

@@ -1,9 +1,7 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>dday/dm_riverrun</name>
-  <body>brief1 = Kill 50 enemy soldiers within 15 minutes before the enemy team does. 
-brief2 = Kill 50 enemy soldiers within 15 minutes before the enemy team does. 
-objective1 = Allies {1}/{2}
+  <body>objective1 = Allies {1}/{2}
 objective2 = Axis {1}/{2}
 intel = Intel
 onspawn.moveout = Eliminate as many enemy as possible before time runs out!
@@ -24,28 +22,24 @@ intelfriendlyon = The enemy has intel on your side!
 intelfriendlyoff = The enmy no longer has intel on your side.
 scenario.help = RIVER RUN: KILL THE ENEMY</body>
   <bodyloc>true</bodyloc>
-  <brief>The Americans advanced via the south bridge before it was blown. Now the Germans must defend the town from their camp. Kill as many enemy soliders as possible in 15 minutes. The first team to reach 50 kills wins. Use the high ground in the church at the center of town to help you spot the enemy!</brief>
-  <conditions>cloudy</conditions>
+  <brief>The Americans advanced via the south bridge before it was blown. Now the Germans must defend the town from their camp.
+
+Kill as many enemy soliders as possible in 15 minutes
+
+The first team to reach 50 kills wins.</brief>
   <draw>35</draw>
   <duration>15</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>3</fog>
-  <gametype>tdmi</gametype>
   <hour>1400</hour>
   <ingamemap>55.08 -75.16 .043</ingamemap>
   <links>
     <link path="scenarios/dm/objectives/riverrun1.xml" title="team1" />
     <link path="scenarios/dm/objectives/riverrun2.xml" title="team2" />
   </links>
-  <location>town</location>
-  <maptype>DM</maptype>
-  <rules>dmnointel</rules>
-  <season>spring</season>
-  <shortname>rrun</shortname>
-  <startweapon1>us-smg</startweapon1>
-  <startweapon2>de-smg</startweapon2>
+  <rules>deathmatch</rules>
   <team1>2</team1>
   <team1max>16</team1max>
   <team1min>2</team1min>
@@ -53,8 +47,7 @@ scenario.help = RIVER RUN: KILL THE ENEMY</body>
   <team2max>16</team2max>
   <team2min>2</team2min>
   <terrain>riverrun</terrain>
-  <timeofday>afternoon</timeofday>
-  <title>River Run WIP</title>
+  <title>River Run RFT</title>
   <victory>50</victory>
   <weather>0</weather>
 </content>

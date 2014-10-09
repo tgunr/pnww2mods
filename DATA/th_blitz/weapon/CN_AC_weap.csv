@@ -1,0 +1,13 @@
+section, fighter, Alloc,#L,#M,Rel,Association,LOD,AlertDistance,Speed,Value,Bias,,,,,
+default,,,,,P,IN_crew.2,,0,,10,FY_,10,SV_sea.0,AC_fighter.0,AC_bomber.0,AC_fighter.0
+#1,cn_spit1,L1,0,0,,,6000,,300,,,,,,,
+#2,cn_hurri1,L1,0,0,,,6000,,300,,,,,,,
+#3,cn_hawk75,L1,0,0,,,6000,,300,,,,,,,
+#4,cn_bf109e,L1,0,0,,,6000,,300,,,,,,,
+#5,cn_110c,L1,0,0,,,6000,,300,,,,,,,
+#6,cn_bleni,L1,0,0,,,6000,,300,,,,,,,
+
+section, bomber, Alloc,#L,#M,Rel,Association,LOD,AlertDistance,Speed,Value,Bias,,,,,
+default,,,,,P,IN_crew.2,,0,,10,FY_,10,SV_sea.0,AC_fighter.0,,
+#1,cn_Ju87b,L1,0,0,,,6000,,300,,,,,,,
+#2,cn_blen,L1,0,0,,,6000,,300,,,,,,,
