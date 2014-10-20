@@ -420,7 +420,7 @@ tutorial.AddHandler(tutorial.TUT_EVENT_START, "OnStart");
 tutorial.AddHandler(tutorial.TUT_EVENT_STOP, "OnStop");
 tutorial.AddHandler(tutorial.TUT_EVENT_SPAWN, "OnSpawn");
 tutorial.AddHandler(tutorial.TUT_EVENT_DESPAWN, "OnDespawn");
-tutorial.AddHandler(tutorial.TUT_EVENT_DIED, "OnDie");
+-- tutorial.AddHandler(tutorial.TUT_EVENT_DIED, "OnDie");
 
 -- these default handlers are defined, although they could be redefined
 -- by the tutorial writer
