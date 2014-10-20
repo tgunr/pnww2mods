@@ -1,17 +1,21 @@
-# gunsight file
+# gunsight file for M10 Tank Destroyer, Model M70G, created by hchris, Jan 2012
+
 #
+
 # coordinates are 0,0 at boresight, -x is left and -y is down
+
 #
+
 # coordinates are in mils, fov in degrees
 # 1 deg = 17.45 mils, 1 mil = 0.05730 deg
 
 # mag should be 1st line, as it sets the field of view in the game
-mag 4.6
+mag 3
 
 pos 0
 range 0
 
-text -0.3 85 9 0 3in-M70G
+text -0.3 85 2 0 3IN.-M62
 
 pitchladder
 ammotype 76mml52m7ap 4200
@@ -25,93 +29,112 @@ thinline -2.2 0 2.2 0
 thinline 0 -1.5 0 1.5
 
 range 366
-thinline -49.8 0 -41.5 0
-thinline -33.2 0 -24.9 0
-thinline -16.6 0 -8.3 0
-thinline -4.1 0 4.1 0
-thinline 16.6 0 8.3 0
-thinline 33.2 0 24.9 0
-thinline 49.8 0 41.5 0
-#text -21 0 4 0 4
-#text 21 0 4 0 4
+thinline -30 0 -25 0
 
-thinline 0 0 0 -1.6
+thinline -20 0 -15 0
+
+thinline -10 0 -5 0
+
+thinline 5 0 10 0
+
+thinline 15 0 20 0
+
+thinline 25 0 30 0
+
+rangeline 0 366 0 549
 
 range 732
-thinline -33.2 0 -24.9 0
-thinline -16.6 0 -8.3 0
-thinline 16.6 0 8.3 0
-thinline 33.2 0 24.9 0
-text -43 0 7 0 8
-text 43 0 7 0 8
+thinline -20 0 -15 0
 
-thinline 0 0 0 -1.75
+thinline -10 0 -5 0
+
+thinline 5 0 10 0
+
+thinline 15 0 20 0
+
+text -25 0 2 0 8
+
+text 25 0 2 0 8
+
+rangeline 0 732 0 914
 
 range 1097
-thinline -33.2 0 -24.9 0
-thinline -16.6 0 -8.3 0
-thinline -4.1 0 4.1 0
-thinline 16.6 0 8.3 0
-thinline 33.2 0 24.9 0
-#text -21 0 4 0 10
-#text 21 0 4 0 10
+thinline -20 0 -15 0
 
-thinline 0 0 0 -1.8
+thinline -10 0 -5 0
+
+thinline 5 0 10 0
+
+thinline 15 0 20 0
+
+rangeline 0 1097 0 1280
 
 range 1463
-thinline -33.2 0 -24.9 0
-thinline -16.6 0 -8.3 0
-thinline 16.6 0 8.3 0
-thinline 33.2 0 24.9 0
-text -44 0 7 0 16
-text 44 0 7 0 16
+thinline -20 0 -15 0
 
-thinline 0 0 0 -2
+thinline -10 0 -5 0
+
+thinline 5 0 10 0
+
+thinline 15 0 20 0
+
+text -25 0 2 0 16
+
+text 25 0 2 0 16
+
+rangeline 0 1463 0 1646
 
 range 1829
-thinline -33.2 0 -24.9 0
-thinline -16.6 0 -8.3 0
-thinline -4.1 0 4.1 0
-thinline 16.6 0 8.3 0
-thinline 33.2 0 24.9 0
-#text -21 0 4 0 20
-#text 21 0 4 0 20
+thinline -20 0 -15 0
 
-thinline 0 0 0 -2.2
+thinline -10 0 -5 0
+
+thinline 5 0 10 0
+
+thinline 15 0 20 0
+
+rangeline 0 1829 0 2012
 
 range 2195
-thinline -16.6 0 -8.3 0
-thinline 16.6 0 8.3 0
-text -28 0 7 0 24
-text 28 0 7 0 24
+thinline -10 0 -5 0
 
-thinline 0 0 0 -2.4
+thinline 5 0 10 0
+
+text -15 0 2 0 24
+
+text 15 0 2 0 24
+
+rangeline 0 2195 0 2377
 
 range 2560
-thinline -33.2 0 -24.9 0
-thinline -16.6 0 -8.3 0
-thinline 16.6 0 8.3 0
-thinline 33.2 0 24.9 0
+thinline -20 0 -15 0
 
-thinline 0 0 0 -2.7
+thinline -10 0 -5 0
+
+thinline 5 0 10 0
+
+thinline 15 0 20 0
+
+rangeline 0 2560 0 2743
 
 range 2926
-thinline -16.6 0 -8.3 0
-thinline 16.6 0 8.3 0
-text -28 0 7 0 32
-text 28 0 7 0 32
+thinline -10 0 -5 0
 
-thinline 0 0 0 -3
+thinline 5 0 10 0
 
-range 3292
-thinline 0 0 0 -3.3
+text -15 0 2 0 32
 
-range 3657
-thinline 0 0 0 -3.6
+text 15 0 2 0 32
 
-#range 3840
-#text -12 0 7 0 42
-#text 12 0 7 0 42
+rangeline 0 2926 0 3109
+
+rangeline 0 3292 0 3475
+
+rangeline 0 3658 0 3840
+
+range 3840
+text -5 0 2 0 42
+text 5 0 2 0 42
 
 setrangeanglemax 0.0
 
@@ -120,4 +143,4 @@ setrangeanglemax 0.0
 #usetilt
 
 # fov should be last as it draws the main border circle cutout
-fov 13
+fov 12.317
