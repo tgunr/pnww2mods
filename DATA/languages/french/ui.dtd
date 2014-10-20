@@ -1753,6 +1753,7 @@
 <!ENTITY loc.host.237 "{1}: Défendre à partir des positions de retraite">
 <!ENTITY loc.host.471 "*** Attention --- ZONR DANGEUREUSE --- Attention ***">
 <!ENTITY loc.host.391 "√Ç√Ö‚Ä¢√Ç‚à´‚àë√ã√Ñ√â√ã√¥√´">
+<!ENTITY loc.host.666 "Team channel unavailable: you&#39;re not on a team.">
 <!ENTITY loc.host.108 ".warnall <message>">
 <!ENTITY loc.host.43 "Officiers de l&#39;Axe/GMs:">
 <!ENTITY loc.host.286 "Echec de l’élection du Squad-CO: le nominé en tête à quitté le squad.">
@@ -1836,6 +1837,7 @@
 <!ENTITY loc.host.405 "{1} Ordre de  repli (fallback) annoncé : La base va se rendre dans  {2}.">
 <!ENTITY loc.host.256 "Il n’y a pas de formateurs actuellement disponible">
 <!ENTITY loc.host.612 "[*] Strat Server STARTING: certaines fonctionnalités ne seront plus disponibles. [*]">
+<!ENTITY loc.host.665 "Game channel unavailable: you&#39;re not in a game.">
 <!ENTITY loc.host.186 "Vous recevrez désormais discussions ennemies à proximité">
 <!ENTITY loc.host.220 "Le canal de brigade est indisponible: vous ne faites pas partie d’une brigade.">
 <!ENTITY loc.host.275 "*{1} a refusé votre invitation à rejoindre votre squad.">
@@ -1907,7 +1909,7 @@
 <!ENTITY loc.mspawn.16 "Le véhicule doit être à l&#39;arrêt.">
 <!ENTITY loc.function.182 "Action sur les volets">
 <!ENTITY loc.function.179 "Déployer freins de piqué">
-<!ENTITY loc.function.2001 "Vues">
+<!ENTITY loc.function.2001 "Mouvement">
 <!ENTITY loc.function.186 "Ouverture de la soute à bombes">
 <!ENTITY loc.function.278 "Arme 2">
 <!ENTITY loc.function.259 "Se coucher">
@@ -1924,11 +1926,11 @@
 <!ENTITY loc.function.238 "Vue viseur">
 <!ENTITY loc.function.532 "Canon AT Déplacement">
 <!ENTITY loc.function.270 "Pas latéral à gauche">
-<!ENTITY loc.function.2004 "Contrôles du cockpit">
+<!ENTITY loc.function.2004 "Contrôles des armes">
 <!ENTITY loc.function.202 "Fenêtre Chat visible/invisible">
 <!ENTITY loc.function.192 "Sirène du Stuka">
 <!ENTITY loc.function.2 "Joystick réglage 2">
-<!ENTITY loc.function.2009 "Externe, hors-ligne">
+<!ENTITY loc.function.2009 "En jeu">
 <!ENTITY loc.function.1100 "Selectionner arme suivante">
 <!ENTITY loc.function.303 "Frein gauche">
 <!ENTITY loc.function.240 "Changer de munitions">
@@ -1943,7 +1945,7 @@
 <!ENTITY loc.function.923 "Tête bouge sur axe X">
 <!ENTITY loc.function.181 "Carte">
 <!ENTITY loc.function.919 "Vue souris axe Y">
-<!ENTITY loc.function.2005 "Lanceur de torpilles">
+<!ENTITY loc.function.2005 "Contrôles du cockpit">
 <!ENTITY loc.function.196 "Vue externe verrouillée">
 <!ENTITY loc.function.255 "Position 7">
 <!ENTITY loc.function.5 "Info">
@@ -1989,19 +1991,17 @@
 <!ENTITY loc.function.900 "Augmenter la vitesse de la cible">
 <!ENTITY loc.function.731 "Carte (en jeu)">
 <!ENTITY loc.function.242 "Utiliser arme secondaire">
-<!ENTITY loc.function.2010 "PTZ Zoom +">
+<!ENTITY loc.function.2010 "Externe, hors-ligne">
 <!ENTITY loc.function.214 "Vue devant et dessus">
 <!ENTITY loc.function.250 "Position 2">
 <!ENTITY loc.function.223 "Vue devant à gauche et dessous">
 <!ENTITY loc.function.190 "Rapport de boite inférieur">
 <!ENTITY loc.function.222 "Vue devant à droite et dessous">
-<!ENTITY loc.function.2013 "PTZ Reset">
 <!ENTITY loc.function.4008 "Position précédente">
 <!ENTITY loc.function.901 "Réduire la vitesse de la cible">
 <!ENTITY loc.function.300 "Se pencher à droite">
 <!ENTITY loc.function.180 "Piqué automatique">
-<!ENTITY loc.function.2012 "PTZ  Zoom valeur défaut">
-<!ENTITY loc.function.2000 "Mouvement">
+<!ENTITY loc.function.2000 "EZ Mode">
 <!ENTITY loc.function.210 "Vue droite">
 <!ENTITY loc.function.171 "Volets de radiateur">
 <!ENTITY loc.function.709 "Changer la taille du tchat">
@@ -2021,7 +2021,7 @@
 <!ENTITY loc.function.732 "carte Zoom avant">
 <!ENTITY loc.function.316 "Bascule la vue in">
 <!ENTITY loc.function.252 "Position 4">
-<!ENTITY loc.function.2007 "Tchat">
+<!ENTITY loc.function.2007 "Viseur de bombardement">
 <!ENTITY loc.function.293 "Carburant">
 <!ENTITY loc.function.286 "Arme 10">
 <!ENTITY loc.function.10 "Cloner le  Véhicule">
@@ -2053,7 +2053,7 @@
 <!ENTITY loc.function.913 "Réduire temps d&#39;explosion">
 <!ENTITY loc.function.302 "Contrôle des Volets">
 <!ENTITY loc.function.1101 "Selectionner arme précédente">
-<!ENTITY loc.function.2006 "Viseur de bombardement">
+<!ENTITY loc.function.2006 "Lanceur de torpilles">
 <!ENTITY loc.function.905 "Aug. la profondeur torpille">
 <!ENTITY loc.function.294 "Embrayage">
 <!ENTITY loc.function.183 "Basculer Vue interne/Vue externe">
@@ -2066,19 +2066,19 @@
 <!ENTITY loc.function.201 "Curseur visible/invisible">
 <!ENTITY loc.function.165 "Mélange riche">
 <!ENTITY loc.function.258 "Position 10">
-<!ENTITY loc.function.2008 "En jeu">
+<!ENTITY loc.function.2008 "Tchat">
 <!ENTITY loc.function.710 "Reset du HUD">
 <!ENTITY loc.function.189 "Rapport de boite supérieur">
 <!ENTITY loc.function.191 "Marche arrière">
 <!ENTITY loc.function.228 "Look view twentyfive">
 <!ENTITY loc.function.229 "Look view twentysix">
 <!ENTITY loc.function.260 "Déployer l&#39;arme">
-<!ENTITY loc.function.2002 "Figures émotives">
+<!ENTITY loc.function.2002 "Vues">
 <!ENTITY loc.function.8 "Changer/masquer les tags">
 <!ENTITY loc.function.1005 "Animation Sautez !">
 <!ENTITY loc.function.282 "Arme 6">
 <!ENTITY loc.function.193 "Réglage du pas de l&#39;hélice (up)">
-<!ENTITY loc.function.2003 "Contrôles des armes">
+<!ENTITY loc.function.2003 "Figures émotives">
 <!ENTITY loc.function.274 "Coup d&#39;oeil à gauche (fantassin)">
 <!ENTITY loc.function.289 "Roulis">
 <!ENTITY loc.function.168 "Surcompresseur au neutre">
@@ -2130,7 +2130,6 @@
 <!ENTITY loc.function.170 "Ouvrir réservoir carburant">
 <!ENTITY loc.function.217 "Vue droite et dessus">
 <!ENTITY loc.function.235 "Look view thirtytwo">
-<!ENTITY loc.function.2011 "PTZ Zoom -">
 <!ENTITY loc.function.225 "Vue gauche et dessous">
 <!ENTITY loc.function.4009 "moteur">
 <!ENTITY loc.function.704 "Capture d&#39;écran">
@@ -2863,6 +2862,7 @@
 <!ENTITY mission.readytab.supply.status.supplyotw "Le ravitaillement de Cette installation est en transit. Les renforts arriveront dans {1} minute(s).">
 <!ENTITY mission.readytab.supply.status.wrongsupply "Un bâtiment allié est connecté à ce bâtiment, mais les pays diffèrent. Impossible d&#39;entrer en jeu ici.">
 <!ENTITY mission.timeleft.expired "Votre souscription d&#39;1 heure est finie! Le jeu va se terminer.">
+<!ENTITY mission.spawn.denied13 "I dunno. It&#39;s some kind of internal error. - KFSONE">
 <!ENTITY mission.readytab.supply.status.nmecontrols "L&#39;ennemi contrôle la base militaire de cette ville, impossible d&#39;entrer en jeu ici.">
 <!ENTITY mission.aartab.pending.none "Aucun résultat de mission disponible.">
 <!ENTITY mission.aartab.aars.aar.notes.none "Aucune note">
@@ -3059,7 +3059,7 @@
 <!ENTITY loading.animations "Loading Animations">
 <!ENTITY loading.stuff.off.the.ground "Loading Clutter">
 <!ENTITY loading.blingmeters "Loading Gauges">
-<!ENTITY loading.copyright "Copyright © 1999 - 2011 Playnet, Inc.">
+<!ENTITY loading.copyright "Copyright © 1999 - 2014 Playnet, Inc.">
 <!ENTITY loading.network.chat "Connexion au chat">
 <!ENTITY loading.sounds.init "Initialisation des sons">
 <!ENTITY loading.weather "Initializing Weather System">
@@ -3408,6 +3408,7 @@
 <!ENTITY common.vehicles.classes.7 "Canon AA/AT">
 <!ENTITY common.squads.details.options.co.resign.button "DEMISSIONNER">
 <!ENTITY common.mission.pd "Défense d&#39;un objectif">
+<!ENTITY common.headshake.reload "Hit R to reload your weapon!">
 <!ENTITY common.squads.member.join.locked "Impossible de le rejoindre à cause des restrictions de changement de camp.">
 <!ENTITY common.countries.us.adjective "Américain">
 <!ENTITY common.countries.us.airforce "Aviation américaine">
@@ -3460,6 +3461,7 @@
 <!ENTITY common.vehicles.categories.4 "Infanterie">
 <!ENTITY common.time.hour "{1} heure">
 <!ENTITY common.squads.member.join.brigade "Cliquez ici pour rejoindre la même brigade que celle que votre équiper. Les restrictions de changement de camp peuvent s&#39;appliquer.">
+<!ENTITY common.headshake.reloadstill "You cannot reload your weapon while moving!">
 <!ENTITY common.vehicles.classes.4 "Véhicule blindé">
 <!ENTITY common.branches.1 "Armée">
 <!ENTITY common.headshake "That action is not allowed!">
@@ -3518,6 +3520,7 @@
 <!ENTITY common.basedoutof "Basée à">
 <!ENTITY common.squads.member.mission "Mission">
 <!ENTITY common.squads.ranks.rank1 "Recrue">
+<!ENTITY common.headshake.nostandaim "You cannot aim this weapon while standing up! Fire from a crouched or prone position.">
 <!ENTITY common.squads.details.night.dow3 "Mercredi">
 <!ENTITY common.countries.uk.navy "Marine britannique">
 <!ENTITY common.squads.details.options.member.leave.button "QUITTER">
@@ -3531,6 +3534,7 @@
 <!ENTITY common.squads.invite.noinvite "Pas d&#39;Invitation">
 <!ENTITY common.mission.pd.short "Défense">
 <!ENTITY common.squads.members.tips.near "proche">
+<!ENTITY common.headshake.noproneaim "You cannot aim this weapon while prone!">
 <!ENTITY common.squads.details.edited "Vos changements ont été soumis. Ils devraient être publiés une fois validés par l&#39;hôte dans quelques minutes.">
 <!ENTITY common.squads.members.position "POSTE">
 <!ENTITY common.squads.details.options.member "OPTIONS MEMBRES">
@@ -3559,6 +3563,7 @@
 <!ENTITY common.map.wpdistance "Distance">
 <!ENTITY common.squads.ranks.rank4 "XO - Adjoint">
 <!ENTITY common.squads.members "MEMBRES DU SQUAD">
+<!ENTITY common.headshake.reloadnosprint "You cannot sprint while this weapon is loaded!">
 <!ENTITY common.version "Version">
 <!ENTITY common.squads.recruitment.info "se bat pour {1} | parle {2} | le recruteur est à {3}">
 <!ENTITY common.mission.3.short "Défense">
@@ -4230,7 +4235,7 @@
 <!ENTITY vehicles.3.1.1.1 "Blenheim Mk IV">
 <!ENTITY vehicles.4.3.13.2 "Cargo Allemand">
 <!ENTITY vehicles.1.2.6.1 "Camion Bedford OY">
-<!ENTITY vehicles.1.4.9.15 "Anti-Tank Soldier">
+<!ENTITY vehicles.1.4.9.15 "AT: PIAT">
 <!ENTITY vehicles.1.4.9.9 "ATR Britannique">
 <!ENTITY vehicles.4.1.2.7 "Messerschmitt Bf 109F-1">
 <!ENTITY vehicles.3.4.14.6 "Fusil-mitrailleur Para Français">
@@ -4239,9 +4244,9 @@
 <!ENTITY vehicles.4.4.14.13 "Mortier para Allemand">
 <!ENTITY vehicles.3.4.9.9 "ATR Français">
 <!ENTITY vehicles.4.2.4.7 "SdKfz 232">
-<!ENTITY vehicles.2.2.4.2 "M10 Wolverine">
 <!ENTITY vehicles.1.2.7.4 "Canon AA 40mm Bofors">
 <!ENTITY vehicles.1.1.2.6 "Spitfire MK IXc">
+<!ENTITY vehicles.2.2.4.2 "M10 Wolverine">
 <!ENTITY vehicles.3.2.6.3 "Laffly W15 TCC 47mm">
 <!ENTITY vehicles.3.4.14.12 "Sniper Para Prançais">
 <!ENTITY vehicles.1.2.4.4 "Matilda Mk II">
@@ -4250,8 +4255,9 @@
 <!ENTITY vehicles.1.1.1.2 "Blenheim MK IV-T">
 <!ENTITY vehicles.1.4.9.13 "Mortier léger Britannique">
 <!ENTITY vehicles.4.1.2.5 "Messerschmitt Bf109G-6/U4">
+<!ENTITY vehicles.2.2.4.4 "M3A3 Stuart">
 <!ENTITY vehicles.1.2.4.7 "A15 Crusader Mk II">
-<!ENTITY vehicles.3.4.9.15 "Anti-Tank Soldier">
+<!ENTITY vehicles.3.4.9.15 "AT: M9 Bazooka">
 <!ENTITY vehicles.3.3.13.1 "Destroyer Français">
 <!ENTITY vehicles.3.1.2.3 "Hurricane Mk I">
 <!ENTITY vehicles.3.4.9.5 "BUZZARD">
@@ -4304,8 +4310,8 @@
 <!ENTITY vehicles.1.4.14.2 "mitraillette Para Britannique">
 <!ENTITY vehicles.3.4.9.13 "Mortier léger">
 <!ENTITY vehicles.3.4.14.9 "ATR Para Français">
-<!ENTITY vehicles.1.4.9.6 "Fusil-mitrailleur Britannique">
 <!ENTITY vehicles.2.2.6.1 "Laffly">
+<!ENTITY vehicles.1.4.9.6 "Fusil-mitrailleur Britannique">
 <!ENTITY vehicles.3.2.4.1 "Renault B1 Bis">
 <!ENTITY vehicles.3.4.9.8 "Commandant français">
 <!ENTITY vehicles.1.2.7.5 "Canon AC ROQF 6pdr 57mm">
@@ -4314,8 +4320,8 @@
 <!ENTITY vehicles.4.4.9.3 "Génie Allemand">
 <!ENTITY vehicles.4.2.4.6 "PanzerIII H">
 <!ENTITY vehicles.1.2.7.1 "Canon AC QF 2 Pounder 40mm">
-<!ENTITY vehicles.3.2.6.1 "Camion Bedford OY 4x2">
 <!ENTITY vehicles.2.4.9.3 "Génie">
+<!ENTITY vehicles.3.2.6.1 "Camion Bedford OY 4x2">
 <!ENTITY vehicles.1.2.4.6 "Daimler Mk I">
 <!ENTITY vehicles.2.2.4.3 "M4A3 Sherman">
 <!ENTITY vehicles.4.4.9.14 "Fusil semi-auto">
@@ -4323,15 +4329,15 @@
 <!ENTITY vehicles.4.2.4.9 "StuG III G">
 <!ENTITY vehicles.1.1.2.2 "Hurricane Mk I">
 <!ENTITY vehicles.2.2.7.3 "M5A2 3&#34; (76.2 mm) AT Gun">
-<!ENTITY vehicles.1.2.4.8 "A15 Crusader Mk III">
 <!ENTITY vehicles.2.2.7.2 "M1 (57 mm) AT Gun">
+<!ENTITY vehicles.1.2.4.8 "A15 Crusader Mk III">
 <!ENTITY vehicles.4.2.4.3 "PanzerII C">
 <!ENTITY vehicles.4.4.9.6 "Fusil-mitrailleur Allemand">
 <!ENTITY vehicles.1.1.1.3 "Havoc MK I">
-<!ENTITY vehicles.2.4.9.15 "Anti-Tank Soldier">
+<!ENTITY vehicles.2.4.9.15 "AT: M9 Bazooka">
 <!ENTITY vehicles.4.1.1.3 "Messerschmitt Bf 110C-4/B">
-<!ENTITY vehicles.3.1.2.5 "Curtiss H81-A2 (P-40C)">
 <!ENTITY vehicles.1.2.4.3 "Renault B1 bis">
+<!ENTITY vehicles.3.1.2.5 "Curtiss H81-A2 (P-40C)">
 <!ENTITY vehicles.4.4.9.10 "Parachutiste Allemand">
 <!ENTITY vehicles.4.1.2.3 "Messerschmitt Bf 109F-4">
 <!ENTITY vehicles.3.2.4.3 "Somua S-35">
@@ -4358,14 +4364,14 @@
 <!ENTITY connect.find.cantopen "Impossible d’ouvrir une connexion avec le réseau du jeu">
 <!ENTITY connect.error.connectionerror "Connection error">
 <!ENTITY connect.ping.lossbig "*PACKET LOSS*">
-<!ENTITY connect.error.ecorrupt "Invalid data-packet received, please check your network connection / firewall.">
+<!ENTITY connect.error.ecorrupt "Données recues invalides, merci de vérifier votre connexion / firewall.">
 <!ENTITY connect.error.eagain "eagain">
-<!ENTITY connect.error.loginfail_client "Session rejected by host (error 40111): This game client is not compatible with the host, please check for a patch and re-log.">
+<!ENTITY connect.error.loginfail_client "Session rejeté par le serveur(error 40111): Votre version n&#39;est pas compatible avec le serveur , merci de vérifier les patch de mise à jour.">
 <!ENTITY connect.login.auth.timeout "Temps d’authentification dépassé">
-<!ENTITY connect.error.loginfail_activatefailed "Session rejected by host: Internal error (loginfail_activatefailed). Please restart your game client.">
+<!ENTITY connect.error.loginfail_activatefailed "Session rejeté par le serveur: Erreur interne (loginfail_activatefailed). Merci de relancer le jeu.">
 <!ENTITY connect.ping.kbps "Kbps: &#37;.1f in, &#37;.1f out.">
 <!ENTITY connect.lost "&#37;ls: Error #&#37;u">
-<!ENTITY connect.error.loginfail_validation "Session rejected by host (error 40113): Please restart your game client - if this problem persists, please contact support.">
+<!ENTITY connect.error.loginfail_validation "Session rejeté par le serveur: (error 40113): Redemarrer le jeu- Contactez le support technique si cela persiste.">
 <!ENTITY connect.lost.reconnect "Connexion au Chat perdu, reconnexion">
 <!ENTITY connect.login.noopen "Impossible d’ouvrir une connexion avec le serveur">
 <!ENTITY connect.chat.noredirect ">Erreur réseau Durant la connexion au Chat">
@@ -4375,7 +4381,7 @@
 <!ENTITY connect.login.chat.timeout "Temps dépassé pour la connexion au Chat">
 <!ENTITY connect.error.econnaborted "connection aborted">
 <!ENTITY connect.lost.chat "Perte de la connexion au serveur Chat">
-<!ENTITY connect.error.loginfail_despawnnoplayer "Session rejected by host: Internal error (loginfail_despawnnoplayer). Please restart your game client.">
+<!ENTITY connect.error.loginfail_despawnnoplayer "Session rejeté par le serveur: Erreur interne (loginfail_despawnnoplayer). Merci de relancer le jeu.">
 <!ENTITY connect.login.badlogin "Erreur de login imprévue">
 <!ENTITY connect.find.timeout.network "Temps de connexion au réseau dépassé">
 <!ENTITY connect.netcode2.reverting "[netcode2 connection failed, Vérifiez votre pare feu - reverting to standard network usage]">
@@ -4391,22 +4397,22 @@
 <!ENTITY connect.refused "Connexion refusée avec le serveur">
 <!ENTITY connect.host.map "Serveur carte">
 <!ENTITY connect.netcode2.disabled "[netcode2 Hors service sur le serveur]">
-<!ENTITY connect.error.loginfail_addplayer "Session rejected by host: Internal error (loginfail_addplayer). Please restart your game client.">
+<!ENTITY connect.error.loginfail_addplayer "Session rejeté par le serveur: Erreur interne (loginfail_addplayer). Merci de relancer le jeu.">
 <!ENTITY connect.error.econnreset "connection reset">
 <!ENTITY connect.login.nochat "Echec de la connexion au Chat">
-<!ENTITY connect.error.loginfail_despawnerror "Session rejected by host: Internal error (loginfail_despawnerror). Please restart your game client.">
+<!ENTITY connect.error.loginfail_despawnerror "Session rejeté par le serveur: Erreur interne(loginfail_despawnerror). Merci de relancer le jeu.">
 <!ENTITY connect.error.eteul_login_denied "login denied">
 <!ENTITY connect.error.unknown "Erreur de connexion inconnue">
 <!ENTITY connect.login.auth.failed "Authentication échouée">
 <!ENTITY connect.ping.notactive "Ping: ...">
-<!ENTITY connect.error.loginfail_sessionvalidation "Session closed by host (validation): This can happen if your connection to the host has been reset too many times or if the server has been restarted. You will need to restart your game client to continue playing.">
+<!ENTITY connect.error.loginfail_sessionvalidation "Session fermée par le serveur (validation): Ceci peut arriver si votre connexion au serveur à été remis à zéro ou si il y a eu trop de déconnexion ou si ler serveur à été relancé. Vous devez relancer le jeu.">
 <!ENTITY connect.error.econnrefused "connexion refusée">
 <!ENTITY connect.popup.title "Erreur réseau">
 <!ENTITY connect.find.nonefound "Echec de l’initialisation du réseau/réseau indisponible">
 <!ENTITY connect.error.enobufs "no buffer space">
 <!ENTITY connect.error.enotconn "non connecté">
 <!ENTITY connect.login.timeout "Temps de connexion au serveur dépassé">
-<!ENTITY connect.error.loginfail_activatenolocalinfo "Session rejected by host: Internal error (loginfail_activatenolocalinfo). Please restart your game client.">
+<!ENTITY connect.error.loginfail_activatenolocalinfo "Session rejeté par le serveur:  erreur interne (loginfail_activatenolocalinfo). Merci de redémarrer le jeu.">
 <!ENTITY connect.find.timeout.data "Temps de chargement des données dépassé">
 <!ENTITY connect.lost.game "Connexion au jeu perdu">
 <!ENTITY connect.error.eteul_connection_stalled "connection stalled">
@@ -4414,7 +4420,7 @@
 <!ENTITY connect.error.enetdown "network down">
 <!ENTITY connect.find.nodata "Erreur de chargement des données">
 <!ENTITY connect.ping.stats.brief "Ping: &#37;u(&#37;u)ms">
-<!ENTITY connect.error.loginfail_sessionown "Session rejected by host (error 40112): Please restart your game client - if this problem persists, please contact support.">
+<!ENTITY connect.error.loginfail_sessionown "Session rejeté par le serveur: (error 40112): Redemarrer le jeu- Contactez le support technique si cela persiste.">
 <!ENTITY connect.ping.loss "Loss">
 <!ENTITY connect.error.eteul_enospc_send_socket "teul socket error">
 <!ENTITY connect.fail "Connexion échouée">
@@ -4423,18 +4429,18 @@
 <!ENTITY connect.host.cell "serveur">
 <!ENTITY connect.login.chat.error "Impossible de se connecter au serveur Chat">
 <!ENTITY connect.error.eteul_enospc_send_buffer "teul buffer error">
-<!ENTITY connect.error.loginfail_acceptbadteul "Session rejected by host: This client version is not supported by the server, please check for a patch/update.">
-<!ENTITY connect.error.loginfail_acceptbadindex "Session rejected by host: Internal error (loginfail_acceptbadindex). Please restart your game client.">
+<!ENTITY connect.error.loginfail_acceptbadteul "Session rejeté par le serveur: Cette version n&#39;est pas supporté par le serveur, Merci de vérifier pour un  patch/update.">
+<!ENTITY connect.error.loginfail_acceptbadindex "Session rejeté par le serveur: Erreur interne (loginfail_acceptbadindex). Merci de relancer le jeu.">
 <!ENTITY connect.lost.world "Connexion au monde perdu">
 <!ENTITY connect.error.enetreset "network reset">
-<!ENTITY connect.error.loginfail_nosession "Session closed by host (nosession): This can happen if your connection to the host has been reset too many times or if the server has been restarted. You will need to restart your game client to continue playing.">
+<!ENTITY connect.error.loginfail_nosession "Session fermée par le serveur (nosession): Ceci peut arriver si votre connexion au serveur à été remis à zéro ou si il y a eu trop de déconnexion ou si ler serveur à été relancé. Vous devez relancer le jeu.">
 <!ENTITY connect.error.enetunreach "network unreachable">
 <!ENTITY connect.error.eteul_login_denied_ver "Login Denied (ver)">
-<!ENTITY connect.error.loginfail_activatenoplayerinfo "Session rejected by host: Internal error (loginfail_activatenoplayerinfo). Please restart your game client.">
+<!ENTITY connect.error.loginfail_activatenoplayerinfo "Session rejeté par le serveur: Erreur interne (loginfail_activatenoplayerinfo). Merci de relancer le jeu.">
 <!ENTITY connect.error.etimedout "connection timed out">
 <!ENTITY connect.login.error "Erreur en se connectant au serveur">
 <!ENTITY connect.find.nobest "Impossible de se connecter au réseau">
-<!ENTITY connect.error.loginfail_collision "Session Terminated (error 40114): Your account has been logged in from another instance of the game client.">
+<!ENTITY connect.error.loginfail_collision "Session Terminee (error 40114): Your account has been logged in from another instance of the game client.">
 <!ENTITY waypoints.stop "stop">
 <!ENTITY waypoints.turn4 "tournez 4">
 <!ENTITY waypoints.turn5 "tournez 5">

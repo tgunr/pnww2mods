@@ -1,7 +1,9 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>ca2/dm_tankbrawl</name>
-  <body>ra.team1 = Allies
+  <body>brief1 = Kill 25 enemy tanks within 15 minutes before the enemy team does!
+brief2 = Kill 25 enemy tanks within 15 minutes before the enemy team does!
+ra.team1 = Allies
 ra.team2 = Axis
 objective1 = Allies {1}/{2}
 objective2 = Axis {1}/{2}
@@ -16,17 +18,22 @@ east = East Bridge
 gerspawn = Enemy Spawn
 ukspawn = Enemy Spawn</body>
   <bodyloc>true</bodyloc>
-  <brief>German and American tanks battle in a river valley!
-Kill as many enemy tanks as possible in 15 minutes
-The first team to reach 25 kills wins.</brief>
+  <brief>TESTING SCENARIO- German and American tanks battle in a river valley! Kill as many enemy tanks as possible in 15 minutes. The first team to reach 25 kills wins!</brief>
+  <conditions>snowing</conditions>
   <draw>15</draw>
   <duration>15</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
+  <gametype>tdm</gametype>
   <hour>16</hour>
+  <location>valley</location>
   <rules>dmnointel</rules>
+  <season>winter</season>
+  <shortname>tbraw</shortname>
+  <startweapon1>stuartm3a3_us</startweapon1>
+  <startweapon2>pziiih</startweapon2>
   <team1>1</team1>
   <team1max>8</team1max>
   <team1min>2</team1min>
@@ -34,6 +41,7 @@ The first team to reach 25 kills wins.</brief>
   <team2max>8</team2max>
   <team2min>2</team2min>
   <terrain>tankmap</terrain>
+  <timeofday>afternoon</timeofday>
   <title>Tank Brawl RFT</title>
   <victory>25</victory>
   <weather>3</weather>

@@ -1753,6 +1753,7 @@
 <!ENTITY loc.host.237 "{1}: 从撤退位置防御。">
 <!ENTITY loc.host.471 "*** 警告 --- 进入危险区域 --- 警告 ***">
 <!ENTITY loc.host.391 "√Ç√Ö‚Ä¢√Ç‚à´‚àë√ã√Ñ√â√ã√¥√´">
+<!ENTITY loc.host.666 "不能接触团队频道，因为你不是一个班组的成员。">
 <!ENTITY loc.host.108 "/warnall <要发送的信息>">
 <!ENTITY loc.host.43 "C国军官/GMs:">
 <!ENTITY loc.host.286 "战队CO（指挥官）竞选失败: 领先提名人离开战队。">
@@ -1836,6 +1837,7 @@
 <!ENTITY loc.host.405 "{1} 撤退命令：基地大概在 {2}后投降。">
 <!ENTITY loc.host.256 "当前没有教官在线。">
 <!ENTITY loc.host.612 "[*] 数据服务器正在启动：游戏某些功能将暂时不可用。[*]">
+<!ENTITY loc.host.665 "不能接触战斗频道，因为你没有进一个战斗。">
 <!ENTITY loc.host.186 "您现在可以接收到敌方的区域聊天信息。">
 <!ENTITY loc.host.220 "战斗旅频道不可用: 因您当前没有加入任何战斗旅。">
 <!ENTITY loc.host.275 "*{1} 拒绝了您的战队邀请。">
@@ -2824,7 +2826,7 @@
 <!ENTITY mission.aartab.aars.aar "出击">
 <!ENTITY mission.orders.objectdestroyed "你的据点 &#37;ls 被摧毁了!">
 <!ENTITY mission.spawn.denied0 "您选择的出生设施不正确。">
-<!ENTITY mission.readytab.spawn.spawnable "要想保存，首先点击选择，然后点击“保存按钮”。你也可以通过双击来保存。一个被保存过的交通工具将会属于你，直到你取消保存，或离开任务，又或者不能回到基地为止。">
+<!ENTITY mission.readytab.spawn.spawnable "要想预留，首先点击选择，然后点击“预订按钮”。你也可以通过双击来预留。一个被预留的交通工具将会属于你，直到你取消预订，或离开任务，又或者不能回到基地为止。">
 <!ENTITY mission.readytab.mouseover "鼠标悬停在任何武器上，可以查看该武器能否被你使用！">
 <!ENTITY mission.readytab.panel.selectcommander "选择车长">
 <!ENTITY mission.aartab.aars.aar.kills.type "敌军单位">
@@ -2860,6 +2862,7 @@
 <!ENTITY mission.readytab.supply.status.supplyotw "这个设施的补给正在运送。增援将会在大概 {1} 分钟后到达。">
 <!ENTITY mission.readytab.supply.status.wrongsupply "友军的设施已经与这个设施进行了对接，但是因为国籍不同，所以不能在这里出生。">
 <!ENTITY mission.timeleft.expired "您的付费账户已经没有剩余时间。请到弹出页面充值。">
+<!ENTITY mission.spawn.denied13 "I dunno. It&#39;s some kind of internal error. - KFSONE">
 <!ENTITY mission.readytab.supply.status.nmecontrols "敌军控制了这个据点的基地，不能在这里出生了。">
 <!ENTITY mission.aartab.pending.none "没有战斗报告">
 <!ENTITY mission.aartab.aars.aar.notes.none "没有适用注解">
@@ -3056,7 +3059,7 @@
 <!ENTITY loading.animations "装载动画">
 <!ENTITY loading.stuff.off.the.ground "装载杂物">
 <!ENTITY loading.blingmeters "装载压力表">
-<!ENTITY loading.copyright "版权 © 1999 - 2011 Playnet, Inc.">
+<!ENTITY loading.copyright "版权 © 1999 - 2014 Playnet, Inc.">
 <!ENTITY loading.network.chat "连接聊天系统">
 <!ENTITY loading.sounds.init "初始化声音">
 <!ENTITY loading.weather "初始化天气系统">
@@ -3405,6 +3408,7 @@
 <!ENTITY common.vehicles.classes.7 "高射炮/反坦克炮">
 <!ENTITY common.squads.details.options.co.resign.button "辞职">
 <!ENTITY common.mission.pd "点防御">
+<!ENTITY common.headshake.reload "按R键重装子弹！">
 <!ENTITY common.squads.member.join.locked "因为阵营限制，您现在不能加入。">
 <!ENTITY common.countries.us.adjective "蓝星（D）国">
 <!ENTITY common.countries.us.airforce "蓝星（D）空军">
@@ -3457,6 +3461,7 @@
 <!ENTITY common.vehicles.categories.4 "步兵">
 <!ENTITY common.time.hour "{1} 小时">
 <!ENTITY common.squads.member.join.brigade "点击这里加入这个新兵战斗旅。这里将应用阵营限制。">
+<!ENTITY common.headshake.reloadstill "你不能在移动中重装子弹！">
 <!ENTITY common.vehicles.classes.4 "坦克和装甲车">
 <!ENTITY common.branches.1 "陆军">
 <!ENTITY common.headshake "该操作是被禁止的！">
@@ -3515,6 +3520,7 @@
 <!ENTITY common.basedoutof "位于">
 <!ENTITY common.squads.member.mission "任务">
 <!ENTITY common.squads.ranks.rank1 "新成员">
+<!ENTITY common.headshake.nostandaim "你不能在直立时瞄准！请在蹲下或卧倒时射击！">
 <!ENTITY common.squads.details.night.dow3 "星期三">
 <!ENTITY common.countries.uk.navy "蓝（B）国海军">
 <!ENTITY common.squads.details.options.member.leave.button "离开">
@@ -3528,6 +3534,7 @@
 <!ENTITY common.squads.invite.noinvite "没有邀请">
 <!ENTITY common.mission.pd.short "防御">
 <!ENTITY common.squads.members.tips.near "附近">
+<!ENTITY common.headshake.noproneaim "你不能在卧倒时瞄准！">
 <!ENTITY common.squads.details.edited "您的更改已经提交。如果更改被主机接受，您将很快看到更改的实际效果。">
 <!ENTITY common.squads.members.position "职务">
 <!ENTITY common.squads.details.options.member "成员选项">
@@ -3556,6 +3563,7 @@
 <!ENTITY common.map.wpdistance "距离">
 <!ENTITY common.squads.ranks.rank4 "执行官">
 <!ENTITY common.squads.members "战队成员">
+<!ENTITY common.headshake.reloadnosprint "当你选择这个武器时，你不能快跑！">
 <!ENTITY common.version "版本">
 <!ENTITY common.squads.recruitment.info "为 {1} 而战 | 使用语言 {2} |招募者是 {3}">
 <!ENTITY common.mission.3.short "防御">
@@ -4236,9 +4244,9 @@
 <!ENTITY vehicles.4.4.14.13 "红国空降轻型迫击炮兵">
 <!ENTITY vehicles.3.4.9.9 "绿国反坦克步枪兵">
 <!ENTITY vehicles.4.2.4.7 "红国232轮式装甲车">
-<!ENTITY vehicles.2.2.4.2 "蓝星国76.2毫米中型远战坦克">
 <!ENTITY vehicles.1.2.7.4 "蓝国40毫米中型高射炮">
 <!ENTITY vehicles.1.1.2.6 "SMK IXc 战斗截击机">
+<!ENTITY vehicles.2.2.4.2 "蓝星国76.2毫米中型远战坦克">
 <!ENTITY vehicles.3.2.6.3 "LW 15 牵引车">
 <!ENTITY vehicles.3.4.14.12 "绿国空降狙击手">
 <!ENTITY vehicles.1.2.4.4 "蓝国40毫米重型坦克">
@@ -4247,6 +4255,7 @@
 <!ENTITY vehicles.1.1.1.2 "BMK IV-T 鱼雷轰炸机">
 <!ENTITY vehicles.1.4.9.13 "轻型迫击炮兵">
 <!ENTITY vehicles.4.1.2.5 "M109G-6/U4战斗截击机">
+<!ENTITY vehicles.2.2.4.4 "蓝星国37毫米轻型快速坦克">
 <!ENTITY vehicles.1.2.4.7 "蓝国40毫米中型坦克">
 <!ENTITY vehicles.3.4.9.15 "绿国火箭筒反坦克兵">
 <!ENTITY vehicles.3.3.13.1 "绿国驱逐舰">
@@ -4301,8 +4310,8 @@
 <!ENTITY vehicles.1.4.14.2 "蓝国空降冲锋枪兵">
 <!ENTITY vehicles.3.4.9.13 "绿国轻型迫击炮兵">
 <!ENTITY vehicles.3.4.14.9 "绿国空降反坦克步枪兵">
-<!ENTITY vehicles.1.4.9.6 "蓝国轻机枪兵">
 <!ENTITY vehicles.2.2.6.1 "蓝星国拉弗莱 S-20 轻型卡车">
+<!ENTITY vehicles.1.4.9.6 "蓝国轻机枪兵">
 <!ENTITY vehicles.3.2.4.1 "绿国75毫米重型坦克">
 <!ENTITY vehicles.3.4.9.8 "绿国高级军官">
 <!ENTITY vehicles.1.2.7.5 "蓝国57毫米中型反坦克炮">
@@ -4311,8 +4320,8 @@
 <!ENTITY vehicles.4.4.9.3 "红国工兵">
 <!ENTITY vehicles.4.2.4.6 "红国50毫米中型坦克">
 <!ENTITY vehicles.1.2.7.1 "蓝国40毫米轻型反坦克炮">
-<!ENTITY vehicles.3.2.6.1 "BOYD卡车">
 <!ENTITY vehicles.2.4.9.3 "蓝星国工兵">
+<!ENTITY vehicles.3.2.6.1 "BOYD卡车">
 <!ENTITY vehicles.1.2.4.6 "蓝国DMK I装甲侦察车">
 <!ENTITY vehicles.2.2.4.3 "蓝星国76.2毫米中型近战坦克">
 <!ENTITY vehicles.4.4.9.14 "红国半自动步枪兵">
@@ -4320,15 +4329,15 @@
 <!ENTITY vehicles.4.2.4.9 "红国75毫米坦克歼击车">
 <!ENTITY vehicles.1.1.2.2 "HMK I 战斗截击机">
 <!ENTITY vehicles.2.2.7.3 "蓝星国76.2毫米重型反坦克炮">
-<!ENTITY vehicles.1.2.4.8 "蓝国57毫米中型坦克">
 <!ENTITY vehicles.2.2.7.2 "蓝星国57毫米中型反坦克炮">
+<!ENTITY vehicles.1.2.4.8 "蓝国57毫米中型坦克">
 <!ENTITY vehicles.4.2.4.3 "红国20毫米轻型坦克">
 <!ENTITY vehicles.4.4.9.6 "红国轻机枪兵">
 <!ENTITY vehicles.1.1.1.3 "HMK I 中型歼击轰炸机">
 <!ENTITY vehicles.2.4.9.15 "蓝星国火箭筒反坦克兵">
 <!ENTITY vehicles.4.1.1.3 "M110C-4/B重型战斗机">
-<!ENTITY vehicles.3.1.2.5 "C81A-2 战斗截击机">
 <!ENTITY vehicles.1.2.4.3 "蓝国75毫米重型坦克">
+<!ENTITY vehicles.3.1.2.5 "C81A-2 战斗截击机">
 <!ENTITY vehicles.4.4.9.10 "红国伞兵">
 <!ENTITY vehicles.4.1.2.3 "M109F-4战斗截击机">
 <!ENTITY vehicles.3.2.4.3 "绿国47毫米中型坦克">

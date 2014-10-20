@@ -31,21 +31,52 @@ dock = dock
 scenario.help = text</body>
   <bodyloc>true</bodyloc>
   <brief>Les forces allemandes essayent de revenir en ville et de reprendre les réserves d&#39;essence aux forces américaines</brief>
-  <duration>30</duration>
+  <conditions>cloudy</conditions>
+  <duration>45</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
-  <hour>1400</hour>
+  <gametype>obj</gametype>
+  <hour>1700</hour>
   <ingamemap>107.8 38.9 .041</ingamemap>
+  <location>hills</location>
   <maptype>OBJ</maptype>
+  <objective1bonus>1</objective1bonus>
+  <objective1contrib>.1</objective1contrib>
+  <objective1points>0</objective1points>
+  <objective1rate>1</objective1rate>
+  <objective1target>60</objective1target>
+  <objective1victory>0</objective1victory>
+  <objective2bonus>0</objective2bonus>
+  <objective2contrib>1</objective2contrib>
+  <objective2points>1</objective2points>
+  <objective2rate>1</objective2rate>
+  <objective2target>90</objective2target>
+  <objective2victory>.1</objective2victory>
+  <objective3bonus>0</objective3bonus>
+  <objective3contrib>1</objective3contrib>
+  <objective3points>1</objective3points>
+  <objective3rate>1</objective3rate>
+  <objective3target>90</objective3target>
+  <objective3victory>.1</objective3victory>
+  <objective4bonus>1</objective4bonus>
+  <objective4contrib>.1</objective4contrib>
+  <objective4points>0</objective4points>
+  <objective4rate>1</objective4rate>
+  <objective4target>60</objective4target>
+  <objective4victory>0</objective4victory>
   <rules>fueldump</rules>
+  <season>spring</season>
+  <shortname>fuel</shortname>
+  <startweapon1>us-smg</startweapon1>
+  <startweapon2>de-smg</startweapon2>
   <team1>2</team1>
   <team1min>2</team1min>
   <team2>4</team2>
   <team2min>2</team2min>
   <terrain>fueldump</terrain>
+  <timeofday>afternoon</timeofday>
   <title>Réserve d&#39;essence  WIP</title>
-  <victory>60</victory>
   <weather>1</weather>
 </content>

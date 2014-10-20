@@ -1,7 +1,9 @@
 <?xml version='1.0'?>
 <content type="3">
   <name>ca2/dm_cagefight</name>
-  <body>objective1 = 盟军 {1}/{2}
+  <body>brief1 = 目标：在15分钟内击杀50个敌人的一方获胜！ 
+brief2 = 目标：在15分钟内击杀50个敌人的一方获胜！   
+objective1 = 盟军 {1}/{2}
 objective2 = 红军 {1}/{2}
 victory1 = 盟国胜利！
 victory2 = 红国胜利！
@@ -10,23 +12,31 @@ playarea = 战区边界...请转身调头
 onspawn.moveout = 在时间耗尽前，尽可能多地消灭敌人！
 gerspawn = 红军出生点
 ukspawn = 盟军出生点
-scenario.help = 笼之战: 击杀敌人</body>
+scenario.help = 短促突击: 快速击杀
+terrain = cagefight</body>
   <bodyloc>true</bodyloc>
   <brief>一场激烈的近距离军营冲突在莫贝格爆发了。两方是如此的接近，近得几乎可以互相嗅到对方的气息
 在15分钟内尽可能多的消灭敌步兵
 最先达到50击杀数的一方获胜。</brief>
+  <conditions>clear</conditions>
   <draw>35</draw>
   <duration>15</duration>
   <enemydeaths>true</enemydeaths>
   <enemyicontypeonly>true</enemyicontypeonly>
   <firingenemyicons>true</firingenemyicons>
   <fog>1</fog>
+  <gametype>tdm</gametype>
   <hour>16</hour>
   <links>
-    <link path="scenarios/dm/objectives/cagefight1.xml" title="队1" />
-    <link path="scenarios/dm/objectives/cagefight2.xml" title="队2" />
+    <link path="scenarios/dm/objectives/cagefight1.xml" title="战队1" />
+    <link path="scenarios/dm/objectives/cagefight2.xml" title="战队2" />
   </links>
+  <location>city</location>
   <rules>dmnointel</rules>
+  <season>summer</season>
+  <shortname>cage</shortname>
+  <startweapon1>us-smg</startweapon1>
+  <startweapon2>de-smg</startweapon2>
   <team1>1</team1>
   <team1max>8</team1max>
   <team1min>2</team1min>
@@ -34,7 +44,8 @@ scenario.help = 笼之战: 击杀敌人</body>
   <team2max>8</team2max>
   <team2min>2</team2min>
   <terrain>cagefight</terrain>
-  <title>笼之战</title>
+  <timeofday>afternoon</timeofday>
+  <title>短促突击</title>
   <victory>50</victory>
   <weather>0</weather>
 </content>
