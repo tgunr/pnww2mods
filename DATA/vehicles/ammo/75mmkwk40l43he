@@ -17,9 +17,12 @@ ricochetangle = 87
 modelspall = 1
 penetrationconstant = 0.0000023
 dontdisplayfirstframe = 1 
-
-numshrapnelpieces = 50 (no specifics)
-totalshrapnelmass = 3.5 (no specifics)
+# (no specifics)
+# numshrapnelpieces = 50
+# 1009 number from scotsmans data
+numshrapnelpieces = 1009
+# (no specifics)
+totalshrapnelmass = 3.5
 explosionsoundnear = sounds\medcloseexp.wav
 explosionsoundfar = sounds\medfarexp.wav
 nearfardistance = 800
