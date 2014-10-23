@@ -67,26 +67,7 @@ end
 -- returns a result object
 -- statuses are defined in Instancing.lua
 function HostInstance:SetStatus(status)
-	
-	local currentStatus = tonumber(inst.GetState(self.id))
-	local newStatus = tonumber(status)
-	if currentStatus == nil then currentStatus = 0 end
-	if newStatus == nil then newStatus = 0 end
-
-	if newStatus <= currentStatus then
-		InstanceResult:failure(self:GetType() .. " HostInstance:SetStatus", "status " .. newStatus .. " <= " .. currentStatus, self:GetLevel('I'))
-	end
-	
-	-- lets set it to the new status
-	local instStatus = inst.CASState(self.id, currentStatus, newStatus)
-	
-	self:ChangeState("status", instStatus)
-	
-	if instStatus == newStatus then
-		return InstanceResult:success(self:GetType() .. " HostInstance:SetStatus", "new status " .. currentStatus .. " -> " .. newStatus, newStatus, self:GetLevel('I'))
-	else
-		return InstanceResult:failure(self:GetType() .. " HostInstance:SetStatus", "status not set " .. currentStatus .. " -> " .. newStatus, self:GetLevel('D'))
-	end
+	return self:RecvSetState("status", status)
 end
 
 -- called by InstanceServer in response to this
@@ -188,14 +169,6 @@ end
 -- returns a result object
 -- behavior is to update the state and then relay the changes to the clients
 function HostInstance:RecvSetState(valueName, value)
-	if valueName == "victory" and tonumber(value) ~= 0 then
-		local newInstID = inst.SpawnClone(self.id)
-		self:SetState("nextmap", newInstID)
-		self:SetStatus(inst.Instance.Completed)
-	elseif valueName == "status" then
-		return self:SetStatus(value)
-	end
-	
 	local result = self:ChangeState(valueName, value)
 	
 	-- if the value didn't change, no need to send it
@@ -309,32 +282,23 @@ end
 -- update the player, then relay the change to all clients
 function HostInstance:RecvSetPlayerState(callsign, valueName, value)
 	
-	-- Instancing.report('D', 'HostInstance:RecvSetPlayerState', callsign .. "/" .. valueName .. "/" .. value)
+	-- Instancing.report('D', 'HostInstance:RecvSetPlayerState', "callsign is " .. tostring(callsign))
+	-- Instancing.report('D', 'HostInstance:RecvSetPlayerState', "valueName is " .. tostring(valueName))
+	-- Instancing.report('D', 'HostInstance:RecvSetPlayerState', "value is " .. tostring(value))
 	
-	local player = inst.PlayerState:Lookup(self.id, callsign)
-	
-	-- add better logging on success
-	if player ~= nil then
-		if valueName == "weapon" then player:weaponSpec(tonumber(value))
-		elseif valueName == "team" then player:team(tonumber(value))
-		elseif valueName == "state" then player:state(tonumber(value))
-		elseif valueName == "rank" then player:state(tonumber(value)) end
-	end
-	
-	return InstanceResult:success(self:GetType() .. " Instance:RecvSetPlayerState", callsign .. "/" .. valueName .. "/" .. value, nil, self:GetLevel('I'))
 	-- make sure callsign is lower case
-	-- callsign = string.lower(callsign)
+	callsign = string.lower(callsign)
 	
-	-- local player = self:GetPlayer(callsign)
-	-- local result = player:SetState(valueName, value)
+	local player = self:GetPlayer(callsign)
+	local result = player:SetState(valueName, value)
 	
 	-- no need to send if there was no change
-	-- if result:IsNOK() then
-	-- 	return result
-	-- end
+	if result:IsNOK() then
+		return result
+	end
 	
 	-- let the clients kknow
-	-- return self:SetPlayerState(callsign, valueName, value) 
+	return self:SetPlayerState(callsign, valueName, value) 
 end
 
 
@@ -345,37 +309,26 @@ end
 -- returns a result object
 -- update the player, then relay the change to all clients
 function HostInstance:RecvAddPlayerState(callsign, valueName, value)
-	
-	-- Instancing.report('D', 'HostInstance:RecvAddPlayerState', callsign .. "/" .. valueName .. "/" .. value)
-	
-	local player = inst.PlayerState:Lookup(self.id, callsign)
-	
-	-- add better logging on success
-	if player ~= nil then
-		if valueName == "objpoints" then player:addPoints(tonumber(value), 0)
-		elseif valueName == "bonpoints" then player:addPoints(0, tonumber(value))
-		elseif valueName == "death" then player:addDeath()
-		elseif valueName == "kill" then player:addKill() end
-	end
-	
-	return InstanceResult:success(self:GetType() .. " Instance:RecvAddPlayerState", callsign .. "/" .. valueName .. "/" .. value, nil, self:GetLevel('I'))
 
+	-- Instancing.report('D', 'HostInstance:RecvAddPlayerState', "callsign is " .. tostring(callsign))
+	-- Instancing.report('D', 'HostInstance:RecvAddPlayerState', "valueName is " .. tostring(valueName))
+	-- Instancing.report('D', 'HostInstance:RecvAddPlayerState', "value is " .. tostring(value))
 
 	-- make sure callsign is lower case
-	--callsign = string.lower(callsign)
+	callsign = string.lower(callsign)
 	
-	--local player = self:GetPlayer(callsign)
-	--local result = player:AddState(valueName, value)
+	local player = self:GetPlayer(callsign)
+	local result = player:AddState(valueName, value)
 	
 	-- no need to send if there was no change
-	--if result:IsNOK() then
-	--	return result
-	--end
+	if result:IsNOK() then
+		return result
+	end
 	
 	-- we send a set so the client doesn't also increment the value
 	-- we there was a change, the results data will contain the updated
 	-- state value
-	--return self:SetPlayerState(callsign, valueName, result.data) 
+	return self:SetPlayerState(callsign, valueName, result.data) 
 end
 
 --------- --------- --------- --------- --------- ---------
