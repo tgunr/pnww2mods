@@ -4,7 +4,6 @@ uniform sampler2D diffuse;
 uniform sampler2D detailmap;
 
 uniform float diffuseScale;
-uniform float alphatest;
 
 varying vec3 N;
 
@@ -14,11 +13,7 @@ void lightGetAmbientDiffuse(in vec3, out vec4, out vec4);
 void main()
 { 
 	vec4 base = texture2D(diffuse, gl_TexCoord[0].xy);
-
-    if(base.a <= alphatest)
-        discard;
-
-    vec4 detail = texture2D(detailmap, gl_TexCoord[1].zw);
+	vec4 detail = texture2D(detailmap, gl_TexCoord[1].zw);
 	
 	// Interpolated values need to be normalized
 	vec3 n = normalize(N);

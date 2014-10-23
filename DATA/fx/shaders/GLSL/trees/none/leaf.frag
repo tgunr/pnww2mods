@@ -2,7 +2,6 @@
 
 uniform sampler2D diffuse;
 uniform float diffuseScale;
-uniform float alphatest;
 
 varying vec3 N;
 
@@ -12,10 +11,7 @@ void lightGetAmbientDiffuse(in vec3, out vec4, out vec4);
 void main()
 {
 	vec4 base = texture2D(diffuse, gl_TexCoord[0].xy);
-
-    if(base.a <= alphatest)
-        discard;
-
+	
 	vec3 n = normalize(N);
 	
 	vec4 ambientColor, diffuseColor;

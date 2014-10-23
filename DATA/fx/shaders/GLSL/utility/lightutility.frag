@@ -444,39 +444,47 @@ void lightGetAmbientDiffuse(in vec3 t,
 /*----------------------------------------------------------
 Tangent space lighting for ambient, diffuse and specular
 -----------------------------------------------------------*/
-void lightGetSunAmbientDiffuseSpecular(mat3 tbn,
+void lightGetSunAmbientDiffuseSpecular(in vec3 t,
+                                       in vec3 b,
+                                       in vec3 n,
                                        in vec3 V,
                                        in vec3 normal,
                                        out vec4 ambient, 
                                        out vec4 diffuse,
                                        out vec4 specular)
 {
+	vec3 L;
+	vec3 H;
 	vec3 Ltan;
 	vec3 Htan;
 	float d;
-	float s = 0.0;
+	float s;
 	
 	float level = gl_FrontMaterial.shininess;
 	
-    vec3 L = lightsource[0].dir;
-
-	Ltan = L * tbn;
-				
+	L = lightsource[0].dir;
+		
+	Ltan.x = dot(L, t);
+	Ltan.y = dot(L, b);
+	Ltan.z = dot(L, n);
+		
 	d = max(dot(normal, Ltan), 0.0);
 
 	diffuse = d * lightsource[0].diffuse;
-
-    vec3 H = normalize(L + V);
-    Htan = H * tbn;
-
-    if(d > 0)
-    {
-	    s = max(dot(normal, Htan), 0.0);	  
+			
+	H = normalize(L + V);
+		
+	// Tangent
+	Htan.x = dot(H, t);
+	Htan.y = dot(H, b);
+	Htan.z = dot(H, n);
+	
+	s = max(dot(normal, Htan), 0.0);
+			
+    if(level > 0.0)
         s = pow(s, level);
-    }
 
     specular = s * lightsource[0].specular;
-   
     ambient = lightsource[0].ambient;
 }
 
