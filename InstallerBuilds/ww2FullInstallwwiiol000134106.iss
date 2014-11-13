@@ -6,7 +6,7 @@
 #define MyAppPublisher "Playnet Inc."
 #define MyAppURL "http://www.battlegroundeurope.net/"
 #define MyAppExeName "Playgate.exe"
-#define MySourceDir "C:\_PLAYNET_DEV\WW2-GIT-REPO-CLONE\_patchtest"
+#define MySourceDir "C:\_PLAYNET_DEV\WW2MODS-GIT-REPO-CLONE\InstallerBuilds"
 #define MyFullInstallSourceDir "BEFullInstallSource1349255-a2"
 #define MyOutputDir "output"
 #define MyAssetsDir "assets"
@@ -26,7 +26,7 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\CRS\{#MyAppName}
 DefaultGroupName=Cornered Rat Software\{#MyAppName}     
 SourceDir={#MySourceDir}
-OutputBaseFilename=wwiiol000134106
+OutputBaseFilename=wwiiol000134106-audiotest
 Compression=lzma
 SolidCompression=yes
 PrivilegesRequired=admin
@@ -117,4 +117,4 @@ Filename: "{app}\settings.exe"; Description: "Launch Settings Program after inst
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}} when finished everything."; Flags: nowait postinstall skipifsilent runascurrentuser
 
 [ThirdParty]
-CompileLogFile=C:\_PLAYNET_DEV\_patchtest\installcompile.log
+CompileLogFile=C:\_PLAYNET_DEV\WW2MODS-GIT-REPO-CLONE\InstallerBuilds\installcompile.log
