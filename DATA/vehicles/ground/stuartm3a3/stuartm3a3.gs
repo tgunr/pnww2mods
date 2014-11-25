@@ -1,137 +1,137 @@
-# gunsight file for M3A3 Stuart, Model M70D, created by hchris, Jan 2012
-
+# gunsight file for StuartM3A3 created Oct.-03 by Doc.
 #
-
 # coordinates are 0,0 at boresight, -x is left and -y is down
-
 #
-
 # coordinates are in mils, fov in degrees
-
 # 1 deg = 17.45 mils, 1 mil = 0.05730 deg
 
-
 # mag should be 1st line, as it sets the field of view in the game
+mag 4
 
 
-mag 3
-
-
-
-pos 0
-
-range 0
-
-
-
-text -0.3 85 2 0 37-M51D
-
-
+text 35 5 3.0 0.0 37mm
+text -35 5 3.0 0.0 .30cal
 
 pitchladder
-
 ammotype 37mml54m6ap 3000
 
-
+pos 0
+range 0
 
 setrangeanglemin 0.0
+setrangeanglemax 4.0
+
+thinline -200 200 0 0
+thinline 200 200 0 0
+
+trianglefill -20 -1 -20 1 -28 0
+trianglefill 20 1 20 -1 28 0
 
 setrangeanglemax 0.0
 
-
-
-pos 0
+pos 30
 range 0
+line 0 4
+text 6 0 2.5 0 0
+range 100
+line 0 2
+range 200
+line 0 8
+text 10 0 2.5 0 2
+range 300
+line 0 2
+range 400
+line 0 5
+text 7 0 2.5 0 4
+range 500
+line 0 2
+range 600
+line 0 8
+text 10 0 2.5 0 6
+range 700
+line 0 2
+range 800
+line 0 5
+text 7 0 2.5 0 8
+range 900
+line 0 2
+range 1000
+line 0 8
+text 10.5 0 2.5 0 10
+range 1100
+line 0 2
+range 1200
+line 0 5
+text 7.5 0 2.5 0 12
+range 1300
+line 0 2
+range 1400
+line 0 8
+text 10.5 0 2.5 0 14
+range 1500
+line 0 2
+range 1600
+line 0 5
+text 7.5 0 2.5 0 16
+range 1700
+line 0 2
+range 1800
+line 0 8
+text 10.5 0 2.5 0 18
+range 1900
+line 0 2
+range 2000
+line 0 5
+text 7.5 0 2.5 0 20
+range 2100
+line 0 2
+range 2200
+text 10.5 0 2.5 0 22
+line 0 8
+range 2300
+line 0 2
+range 2400
+line 0 5
+text 7.5 0 2.5 0 24
+range 2500
+line 0 1
+endpitchladder
 
-
-thinline -2.2 0 2.2 0
-
-thinline 0 -2 0 2
-
-
-
-range 366
-
-thinline -20 0 -15 0
-
-thinline -10 0 -5 0
-
-thinline 5 0 10 0
-
-thinline 15 0 20 0
-
-text -25 0 2 0 4
-
-text 25 0 2 0 4
-
-
-
-
-rangeline 0 366 0 549
-
-
-range 732
-
-thinline -20 0 -15 0
-
-thinline -10 0 -5 0
-
-thinline 5 0 10 0
-
-thinline 15 0 20 0
-
-text -25 0 2 0 8
-
-text 25 0 2 0 8
-
-
-
-rangeline 0 732 0 914
-
-
-
-range 1097
-
-thinline -20 0 -15 0
-
-thinline -10 0 -5 0
-
-thinline 5 0 10 0
-
-thinline 15 0 20 0
-
-text -25 0 2 0 12
-
-text 25 0 2 0 12
-
-
-
-rangeline 0 1097 0 1280
-
-
-range 1463
-
-thinline -10 0 -5 0
-
-thinline 5 0 10 0
-
-
-thinline 0 0 0 -2
-
-
-
-setrangeanglemax 0
-
-
-
-#setrangereadout
-
-
-
-#usetilt
-
+pitchladder
+ammotype 7_5mmtracerf 2000
+pos -30
+range 0
+line 0 -3
+text -5 0 2.5 0 0
+range 400
+line 0 -5
+text -7 0 2.5 0 4
+range 600
+line 0 -8
+text -10 0 2.5 0 6
+range 800
+line 0 -5
+text -7 0 2.5 0 8
+range 900
+line 0 -8
+text -10 0 2.5 0 9
+range 1000
+line 0 -5
+text -7 0 2.5 0 10
+range 1100
+line 0 -8
+text -10 0 2.5 0 11
+range 1200
+line 0 -5
+text -7 0 2.5 0 12
+range 1300
+line 0 -8
+text -10 0 2.5 0 13
+range 1400
+line 0 -5
+text -7 0 2.5 0 14
+endpitchladder
 
 
 # fov should be last as it draws the main border circle cutout
-
-fov 12.317
+fov 12.5
