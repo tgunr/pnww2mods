@@ -1,7 +1,17 @@
 ==================================
 World War Two Online - Open Beta
 ==================================
-Version 1.34.10.7
+Version 1.34.10.9
+
+UNINSTALL – Please uninstall your Battleground Europe game from the Programs menu in Windows Settings. If you choose to go back to the current live version please uninstall this version before proceeding.
+
+- Fixed a bug where the Tiger gunner had bionic ears
+- Fixed UAC issues
+- Increased knife damage
+- Fixed mp40 sound timing (rollback)
+
+
+Version 1.34.10.8
 
 HE Rounds Data Audit:
 
@@ -130,4 +140,9 @@ Misc:
 - Updated in-game credits for all supported languages
 - US guns and trucks now have alert distances that match other countries (3000m)
 - FRU threshold reduced so that some weapons that were inconsistant in damaging it now cross the threshold more regularly
-- The "4Gig Fix" is now included in the release (cheers for less crashing!) 
+- The "4Gig Fix" is now included in the release (cheers for less crashing!)
+- Updated desktop icon art
+- Updated PlayGATE art
+- Updated installer art
+- added fix for ATI driver crash
+
