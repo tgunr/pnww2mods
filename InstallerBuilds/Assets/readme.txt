@@ -1,17 +1,9 @@
-==================================
-World War Two Online - Open Beta
-==================================
-Version 1.34.10.9
+==========================================
+World War Two Online - Battleground Europe
+==========================================
+Version 1.34.10.255
 
-UNINSTALL – Please uninstall your Battleground Europe game from the Programs menu in Windows Settings. If you choose to go back to the current live version please uninstall this version before proceeding.
-
-- Fixed a bug where the Tiger gunner had bionic ears
-- Fixed UAC issues
-- Increased knife damage
-- Fixed mp40 sound timing (rollback)
-
-
-Version 1.34.10.8
+UNINSTALL – Please uninstall your Battleground Europe game from the Programs menu in Windows Settings before installing this release.
 
 HE Rounds Data Audit:
 
@@ -20,6 +12,7 @@ The beta team under the direction of Scotsman has been working on improving the 
 Vehicles (Tank / Truck / Anti-Tank Gun):
 
 - Adjusted truck windscreen thickness so they all function the same
+- Fixed a bug where the Tiger gunner had bionic ears
 - New camo pattern for Panzer VI E Tiger
 - New camo pattern for Panzer IV G
 - New camo pattern for Pak40 ATG
@@ -42,14 +35,12 @@ The beta team under the direction of BLOO has been doing research on improving t
 - Churchill MK. VII Main gun
 - Matilda II Main gun
 - 6pdr ATG
--
 - Panhard 178 Main gun
 - R35 Main gun
 - H39 Main gun
 - S35 Main gun
 - B1 bis Main gun
 - B1 bis Hull gun
--
 - M4A2 Sherman Main gun
 - M4A3(76) Sherman Main gun
 - M10 Tank Destroyer Main gun
@@ -57,8 +48,6 @@ The beta team under the direction of BLOO has been doing research on improving t
 - M5A2 76mm ATG
 - Stu.G. III Ausf. B Main gun
 - Stu.G. III Ausf. G Main gun
--
--
 
 Infantry:
 
@@ -66,6 +55,7 @@ Infantry:
 - Revised Infantry Unit names in the spawn lists to emphasize the weapon name
 - Increased ATP burn rate for heavy weapon infantry units
 - PIAT has some new arts
+- Increased knife damage
 
 Infantry Uniforms:
 
@@ -144,5 +134,5 @@ Misc:
 - Updated desktop icon art
 - Updated PlayGATE art
 - Updated installer art
-- added fix for ATI driver crash
+
 

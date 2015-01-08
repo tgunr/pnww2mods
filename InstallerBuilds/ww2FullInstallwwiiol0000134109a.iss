@@ -2,12 +2,12 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Battleground Europe"
-#define MyAppVersion "1.34.10.9"
+#define MyAppVersion "1.34.10.9a"
 #define MyAppPublisher "Playnet Inc."
 #define MyAppURL "http://www.battlegroundeurope.net/"
 #define MyAppExeName "Playgate.exe"
 #define MySourceDir "C:\_PLAYNET_DEV\WW2MODS-GIT-REPO-CLONE\InstallerBuilds"
-#define MyFullInstallSourceDir "BEFullInstallSource1349255-a4"
+#define MyFullInstallSourceDir "BEFullInstallSource1349255-a5"
 #define MyOutputDir "output"
 #define MyAssetsDir "assets"
 
@@ -26,7 +26,7 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\CRS\{#MyAppName}
 DefaultGroupName=Cornered Rat Software\{#MyAppName}     
 SourceDir={#MySourceDir}
-OutputBaseFilename=wwiiol000134109
+OutputBaseFilename=wwiiol0000134109a
 Compression=lzma
 SolidCompression=yes
 PrivilegesRequired=none
