@@ -1474,33 +1474,35 @@
 		
 		/***************** COMMON FUNCTIONS *******************/
 		
+		function doBack_final() {
+			if ( client.using_quick_mission )
+				loadWin("brigades", true) ;
+			else
+				loadWin("brigade", true) ;
+		}
+		
 		function doBack()
 		{
-			if(mission.poster == client.handle)
-			{
+			if(mission.poster == client.handle) {
 				var popup = showConfirm(getlocstring('mission.back.decision'), doLeaderBack, getlocstring('common.yes'), getlocstring('common.no'));
 				popup.setPopupClose(false);
-			}
-			else
-			{
+			} else {
 				if(client.reservedweapon)
 					client.cancelweaponreservation();
 				
 				client.exitmission();
 				//TutSetInstance(1);
-				loadWin("brigade", true);
+				doBack_final() ;
 			}
 		}
 		
-		function doLeaderBack(cancel)
-		{
-			if(cancel)
-			{
+		function doLeaderBack(cancel) {
+			if ( cancel ) {
 				if(client.reservedweapon)
-					client.cancelweaponreservation();
+					client.cancelweaponreservation() ;
 				
-				client.cancelandexitmission();
-				loadWin("brigade", true);
+				client.cancelandexitmission() ;
+				doBack_final() ;
 			}
 		}
 		

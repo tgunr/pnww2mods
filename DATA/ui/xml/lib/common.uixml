@@ -294,34 +294,34 @@
 		if(!game.online || game.ingame)
 			return -1; // nothing selected
 		
- 	 	var persona		= null;
-		var client		= game.player.client;
- 	 	var personas 	= client.personas;
- 	 	
+		var persona  = null;
+		var client   = game.player.client;
+		var personas = client.personas;
+		
 		if(client.reservedweapon != null)
 			client.cancelweaponreservation();
 		
 		for(var i = 0; i < personas.length; i++)
 		{
-		 	var check = personas[i];
+			var check = personas[i];
 
-		 	if(country == check.country.id && branch == check.branchid)
-		 	{
-		 		var current = client.persona;
-		 		
-		 		if(current != null &&
-		 		   current.country.code == check.country.code &&
-		 		   current.branchid == check.branchid)
-		 		{
-		 			persona = current;
-		 		}
-		 		else if(check.lockedthru == 0 && client.selectpersona(check))
-			 	{
-			 		persona = check;
-		 		}
-	 			
-		 		break;
-		 	}
+			if(country == check.country.id && branch == check.branchid)
+			{
+				var current = client.persona;
+				
+				if(current != null &&
+						current.country.code == check.country.code &&
+						current.branchid == check.branchid)
+				{
+					persona = current;
+				}
+				else if(check.lockedthru == 0 && client.selectpersona(check))
+				{
+					persona = check;
+				}
+				
+				break;
+			}
 		}
 		
 		if(persona == null)
