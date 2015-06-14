@@ -23,11 +23,11 @@
 
 		<!-- Quick Mission Tab -->
 		<tab label="  ${brigades.activebattlestab}  " x="0" y="0" width="930" height="460"
-			onshow='client.using_quick_mission = true ; setHelp(getlocstring("brigades.activebattlestab.help")); tplTab()'
+			onshow='quickMissionSelected() ; setHelp(getlocstring("brigades.activebattlestab.help")); tplTab()'
 			onupdate="runExtSquadUpdate()" tip="${brigade.activebattlestab.tip}">
 			<view id="left-pane" x="18" y="18" width="444" height="411">
 				<view x="10" y="20" width="430" height="375">
-					<caption label="${brigades.activebattlestab.missions}" x="0" y="327" height="20" width="300" style="font-size: +1; color: #BFE2CE;"/>
+					<caption label="${brigade.hqtab.missions}" x="0" y="327" height="20" width="300" style="font-size: +1; color: #BFE2CE;"/>
 					<image x="0" y="325" src="ui/textures/test/horiz_underline.bmp" width="430" height="12"/>
 					<view x="0" y="310" width="430" height="15">
 						<caption x="0" y="0" width="33" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
@@ -284,7 +284,7 @@
 			</script>
 		</tab>
 		<tab label="  ${brigades.rostertab}  " x="0" y="0" width="930" height="460"
-			onshow="client.using_quick_mission = false ; showRoster(); tplTab()" onupdate="runExtSquadUpdate()" tip="${brigades.rostertab.tip}">
+			onshow="brigadeViewSelected() ; tplTab()" onupdate="runExtSquadUpdate()" tip="${brigades.rostertab.tip}">
 			<view id="left-pane" x="18" y="18" width="444" height="411">
 				<!--  style="background-color: #0066FF;" -->
 				<caption id="orbat-header" x="10" rtop="12" height="20" width="400" style="font-size: +2; color: #BFE2CE;"/>
@@ -442,7 +442,19 @@
 		var brigadeMap   = findview("brigade-map");
 		var brigadeTimer = new CycleTimer(15000);
 
-		/********************** COMMON FUNCTIONS ***********************/	
+		/********************** COMMON FUNCTIONS ***********************/
+		
+		function quickMissionSelected() {
+			client.using_quick_mission = true ;
+		}
+				
+		function brigadeViewSelected() {
+			client.using_quick_mission = false ;
+			setHelp(getlocstring('brigades.rostertab.help'));
+			quickhelp() ;
+		}
+		
+		//======
 		
 		function doBack() {
 			loadWin("persona", true) ;
@@ -453,23 +465,19 @@
 			
 			// Quick mission tab.
 			if ( body.value == 0 ) {
-				game.chatprint("doforward(tab = 0)\n") ;
 				if ( missionList.data != null && missionList.data.id > 0 ) {
-					game.chatprint("attempting join") ;
-					
 					var country = client.getmisscountry(missionList.data.id) ;
 					var branch  = client.persona.branchid ; // Quick mission will always be same branch.
 					var brigade = client.getmissbrigade(missionList.data.id) ;
 					
 					// Change to proper persona.
 					if ( country != client.persona.country.id ) {
-						game.chatprint("changing country/branch") ;
 						var personas = client.personas ;
 						for ( var i = 0 ; i < personas.length ; ++i ) {
 							var p = personas[i] ;
 							
-							if ( p.country.code && country && p.branchid == branch ) {
-								client.selectpersona(p) ; // TODO: Error checking.
+							if ( p.country.id == country && p.branchid == branch ) {
+								client.selectpersona(p) ;
 								break ;
 							}
 						}
@@ -485,14 +493,14 @@
 							}
 						}
 					}
-				
-					// Make sure any reserved weapons from training get killed
+					
+					//======
+					// If the country or brigade are wrong for some reason, the following will fail, so no
+					// need for further checks in that regard.
+					
 					client.cancelweaponreservation() ;
-					if ( client.acceptmission(missionList.data.id) ) {
-						game.chatprint("acceptmission() success!") ;
+					if ( client.acceptmission(missionList.data.id) )
 						doMission() ;
-					} else
-						game.chatprint("acceptmission() failed") ;
 				}
 			} else {
 				var brigade = brigadeTree.selectedData();
@@ -520,7 +528,6 @@
 
 			setBack('brigades.back') ;
 			showChat(true, true) ;
-			showRoster() ;
 			
 			// TODO: Restrict features to when appropriate tab is open.
 			client.requestmissionlist() ;
@@ -540,7 +547,6 @@
 			runExtSquadUpdate();
 
 			brigadeTree.setColorText(false);
-			quickhelp();
 			initTutorials();
 			
 			updateTabs() ;
@@ -556,6 +562,8 @@
 				setForward('brigade.forward') ;
 			} else if ( body.value < 3 ) {
 				setForward('brigades.forward') ;
+				if(brigade != null && brigade.isbrigade)
+					setForwardEnabled(true);
 			} else if ( body.value == 3 ) {
 				setForwardEnabled(updateStartTutorial()) ;
 				setForward('tutorials.start') ;
@@ -567,29 +575,8 @@
 		
 		/********************** PAGE FUNCTIONS ***********************/
 		
-		function showRoster()
-		{
-			setHelp(getlocstring('brigades.rostertab.help'));
-		}
-		
-		function updateForward()
-		{
-			setForwardEnabled(false);
-			setForward('brigades.forward');
-			
-			var body 	= window.findview("body");
-			var brigade = brigadeTree.selectedData();
-
-			if(body.value != 2)
-			{
-				if(brigade != null && brigade.isbrigade)
-					setForwardEnabled(true);
-			}
-			else
-			{
-				setForwardEnabled(updateStartTutorial());
-				setForward('tutorials.start');
-			}
+		function updateForward() {
+			updateTabs() ;
 		}
 		
 		function updateBrigadeDetails()

@@ -1544,7 +1544,10 @@
 			
 			showChat(true, true);
 			setHelp(getlocstring('mission.readytab.help'));
-			setBack('mission.back');
+			if ( client.using_quick_mission )
+				setBack('mission.backtoactivebattles') ;
+			else
+				setBack('mission.back');
 			setForward('mission.forward');
 			doWeaponPoll();
 			
