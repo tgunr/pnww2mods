@@ -553,14 +553,12 @@
 		function updateTabs() {
 			var body = findview("body");
 			
-			setForwardEnabled(true);
-			
-			if(body.value == 1 && missionList.data != null) {
+			if ( body.value == 1 ) {
 				setForward('brigade.forward') ;
+				setForwardEnabled(missionList.data != null) ;
 			} else if ( body.value < 3 ) {
 				setForward('brigades.forward') ;
-				if(brigade != null && brigade.isbrigade)
-					setForwardEnabled(true);
+				setForwardEnabled(brigade != null && brigade.isbrigade) ;
 			} else if ( body.value == 3 ) {
 				setForwardEnabled(updateStartTutorial()) ;
 				setForward('tutorials.start') ;
