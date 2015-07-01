@@ -258,7 +258,14 @@
 			<object name="us_riflebelt" model="us_riflebelt"/>
 		</kit>
 		<kit name="us-bazooka">
-			<object name="us_helmet""/>		
+			<object name="us_helmet"/>
+			<object name="us_holster" model="us_holster"/>
+			<object name="us_haversack" model="us_haversack"/>
+			<object name="us_canteen" model="us_canteen"/>
+		</kit>
+
+		<kit name="us-ltmortar">
+			<object name="us_helmet"/>
 			<object name="us_holster" model="us_holster"/>
 			<object name="us_haversack" model="us_haversack"/>
 			<object name="us_canteen" model="us_canteen"/>

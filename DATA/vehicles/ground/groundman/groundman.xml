@@ -234,6 +234,10 @@
 	<include file="us-sniper.loadout.xml"/>
 </variant>
 
+<variant id="us-ltmortar" shape="french-ltmortar" description="Mortarman: 50 mm M37" icon="Mortarman">
+	<include file="french-ltmortar.loadout.xml" />
+</variant>
+
 <variant id="us-bazooka" shape="us-bazooka" description="AT: M9 Bazooka" icon="Bazooka">
 	<include file="us-bazooka.loadout.xml"/>
 </variant>
