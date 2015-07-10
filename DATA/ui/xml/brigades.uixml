@@ -558,7 +558,10 @@
 				setForwardEnabled(missionList.data != null) ;
 			} else if ( body.value < 3 ) {
 				setForward('brigades.forward') ;
-				setForwardEnabled(brigade != null && brigade.isbrigade) ;
+				//setForwardEnabled(brigade != null && brigade.isbrigade) ;
+				// HACK: All this UI logic desperately needs to be overhauled to make things more simple.
+				//       For now, just reenable the forward button when we switch to the brigade view.
+				setForwardEnabled(true) ;
 			} else if ( body.value == 3 ) {
 				setForwardEnabled(updateStartTutorial()) ;
 				setForward('tutorials.start') ;
