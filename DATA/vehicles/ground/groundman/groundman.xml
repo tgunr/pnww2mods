@@ -142,7 +142,7 @@
 
 <!-- German Units -->
 
-<variant id="de-atr" shape="german-atr" description="AT: Panzerbüchse 39" icon="ATR">
+<variant id="de-atr" shape="german-atr" description="AT: PanzerbÃ¼chse 39" icon="ATR">
 	<include file="german-atr.loadout.xml"/>
 </variant>
 
@@ -195,7 +195,7 @@
 	<include file="german-para-lmg.loadout.xml"/>
 </variant>	
 
-<variant id="de-para-atr" shape="german-para-atr" description="AT: Panzerbüchse 39" icon="ATR">	
+<variant id="de-para-atr" shape="german-para-atr" description="AT: PanzerbÃ¼chse 39" icon="ATR">	
 	<include file="german-para-atr.loadout.xml"/>
 </variant>	
 
@@ -212,6 +212,10 @@
 
 <variant id="us-assault" shape="us-assault" description="Rifleman: M1 Garand" icon="Rifleman">
 	<include file="us-assault.loadout.xml"/>
+</variant>
+
+<variant id="us-atr" shape="french-atr" description="AT: Boys Anti-Tank Rifle" icon="ATR">
+	<include file="us-atr.loadout.xml"/>
 </variant>
 
 <variant id="us-rifle" shape="us-rifle" description="Rifleman: M1903A3 Springfield" icon="Rifleman">

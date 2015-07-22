@@ -403,7 +403,15 @@
 		<weapon>ammo</weapon>
 		<weapon index="8">buildtool</weapon>
 	</visloadout>
-		<visloadout id="us-rifle" arms="usarmy">
+	<visloadout id="us-atr" arms="usarmy">
+		<weapon>boysmk1</weapon>
+		<weapon>colt1911</weapon>
+		<weapon>ussmoke</weapon>
+		<weapon>alliedsatchel</weapon>
+		<weapon lastresort="true">alliedknife</weapon>
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
+	<visloadout id="us-rifle" arms="usarmy">
 		<weapon>m1903a3</weapon>
 		<weapon>mark2</weapon>
 		<weapon>ussmoke</weapon>
