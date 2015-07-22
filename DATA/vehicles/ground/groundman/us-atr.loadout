@@ -1,0 +1,42 @@
+#French.loadout file
+
+# The ORDER of weapons MUST MATCH the VIZLOADOUT.XML order!
+# Note the comments in that file. The "weapons" listed in Vizloadout 
+# refer to the ANIMATION file names, which are often different.
+
+# sounds available for the mounts
+sound1 = sounds\troop\boys55atr.wav
+sound2 = sounds\troop\M1911.wav
+sound3 = sounds\troop\grenade-throw.wav
+sound4 = sounds\troop\satchel-place.wav
+
+loadout = 1
+
+# Anti-tank rifle
+mountnum = 1
+mountsound = sound1
+weapon = boys55atr
+maxoversupply = 5
+
+# Pistol
+mountnum = 2
+mountsound = sound2
+weapon = colt1911
+
+# Smoke Grenade
+mountnum = 3
+mountsound = sound2
+weapon = fr_smokegrenade
+
+# AT Satchel
+mountnum = 4
+mountsound = sound4
+weapon = satchelgeneric
+
+# Knife
+mountnum = 5
+weapon = knifegeneric
+
+# build tool
+mountnum = 8
+weapon = satchelgeneric
