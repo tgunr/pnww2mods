@@ -145,7 +145,7 @@
 		<!-- Quick Mission Tab -->
 		<tab label="  ${brigades.activebattlestab}  " x="0" y="0" width="930" height="460"
 			onshow='quickMissionSelected() ; tplTab()'
-			onupdate="runExtSquadUpdate()" tip="${brigade.activebattlestab.tip}">
+			onupdate="runExtSquadUpdate()" tip="${brigades.activebattlestab.tip}">
 			<view id="left-pane" x="18" y="18" width="444" height="411">
 				<view x="10" y="20" width="430" height="375">
 					<caption label="${brigade.hqtab.missions}" x="0" y="327" height="20" width="300" style="font-size: +1; color: #BFE2CE;"/>

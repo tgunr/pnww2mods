@@ -1,0 +1,664 @@
+0,HQ
+1,NOTE
+2,SYSTEM
+3,WARNING
+4,You are now A.F.K (Away From Keyboard)
+5,You are no longer A.F.K
+6,{1} is currently A.F.K (Away From Keyboard)
+7,{1} is AFK: {2}
+8,Confused? Type /booton to subscribe to the bootcamp channel for instruction!
+9,Player "{1}" is unavailable.
+10,You have grabbed player {1} - the conversation will be logged.
+11,Game Manager {1} has grabbed you: You are now communicating directly. This conversation will be logged.
+12,Game Manager {1} has grabbed you ({2}): You are now communicating directly. This conversation will be logged.
+13,You have released player {1}.
+14,You have been released (ungrabbed) by Game Manager {1}.
+15,You have d.o. grabbed player {1} - the conversation will be logged.
+16,Duty Officer {1} has grabbed you: You are now communicating directly. This conversation will be logged.
+17,Duty Officer {1} has grabbed you ({2}): You are now communicating directly. This conversation will be logged.
+18,You have released player {1}.
+19,You have been released (ungrabbed) by Duty Officer {1}.
+20,{1}
+21,The Game Manager has killed you.
+22,Killed by Game Manager: {1}
+23,You are now subscribed to the bootcamp channel. Type /bootoff to unsubscribe from this channel.
+24,You must select a side before you can tune to bootcamp.
+25,Subscribed to HQ channel. Type /hqoff to unsubscribe.
+26,Unsubscribed from HQ channel. Type /hqon to re-subscribe.
+27,Player {1} removed from your ignore list.
+28,Player {1} added to ignore list.
+29,GM
+30,GM mode enabled.
+31,GM mode disabled.
+32,You have kicked {1} - {2}.
+33,You have uncerimoniously kicked {1}.
+34,Message not sent, party no longer available, undoing grab.
+35,Channel unavailable.
+36,You may only use /{1} once every {2} minutes.
+37,{1}> {2}
+38,Use /report <message> to inform GMs of cheats, exploits or inappropriate behavior. Bug reports should be posted to the Testing & Bug Reporting Forum.
+39,Report submitted to CRS, thank you. If a GM is currently investigating your issue they may use the information you submitted, however we do not provide individual responses to /reports.
+40,REPORT
+41,All GM command usage is logged and reviewed daily by CRS staff. Inappropriate use will result in withdrawl of priviliges or banning.
+42,You must select a facility first.
+43,AXIS Officers/GMs:
+44,ALLIED Officers/GMs:
+45,No matches.
+46,GHC
+47,AHC
+48,{1}: {2}
+49,BETA
+50,You must select a side first.
+51,You don't currently have anyone /grab'd
+52,USAGE
+53,DETAIL
+54,/afk [<message>]
+55,Toggles your AFK ("Away From Keyboard") state between on/off. If optional message is specified, sets you to AFK with a custom response. When AFK is on you will still receive messages, but anyone tuning or sending to you will receive an AFK notice.
+56,/all <message>
+57,Broadcasts a message to ALL players. Logged
+58,/allied <message>
+59,Broadcasts a message to all ALLIED players. Logged
+60,/axis <message>
+61,Broadcasts a message to all AXIS players. Logged
+62,/crs [<message>]
+63,Without arguments: lists staff online. With arguments: sends a message to the CRS channel.
+64,/gm [<message>]
+65,Without arguments: lists GMs online. With arguments: sends a message to the GM channel.
+66,/gmmode
+67,Toggles GM 'lurk' mode on/off
+68,/grab <player> [<reason>]
+69,Starts a direct conversation with <player> which limits both of you to communicating exclusively and by default with each other. Conversations are fully logged. Use /ungrab to release. Logged
+70,/hc [<message>]
+71,Without a message: lists people tuned to HC channel. Otherwise sends <message> to the HC channel.
+72,/hc
+73,Lists HC officers currently online.
+74,/hcoff
+75,Detunes the HC channel
+76,/hcon
+77,Tunes to the HC channel
+78,/help [<command>]
+79,Lists server commands or shows help for specified command
+80,/hqoff
+81,Turns off receipt of HQ messages.
+82,/hqon
+83,Enables receipt of HQ messages.
+84,/kick <player> [<message>]
+85,If player is spawned forces them to exit to desktop. Message is optional. Logged
+86,/kickall <reason>
+87,Forces all spawned players to exit to desktop. Logged
+88,/m <player> <message>
+89,Sends a private message to <player>
+90,/N <message>
+91,Sends <message> only on the radio tuned in the specified slot (1-6)
+92,/pinfo <player>
+93,Displays host information about a player
+94,/report <problem>
+95,Submits a brief, one-line, problem/bug/cheat/exploit/complaint to CRS. Reports are reviewed daily but may also be viewed by GMs online. Please note however that this is a reporting tool only; we do not respond individually to reports
+96,/roster
+97,Shows player numbers
+98,/sys <message>
+99,Broadcasts an anonymous SYSTEM message to all players. Logged
+100,/sysmotd [<message>]
+101,Sets or displays the System M.O.T.D ("Message Of The Day"). Logged
+102,/sysmotd
+103,Displays the current System M.O.T.D ("Message of The Day")
+104,/ungrab
+105,Release a previously /grab'd player. Logged
+106,/warn <player> <message>
+107,Sends a WARNING message to <player>. Logged
+108,/warnall <message>
+109,Sends a WARNING message to ALL players online. Logged
+110,/who [<player1> ... <player4>]
+111,without arguments: lists squad members online; with arguments: shows whether specified players are on- or off-line - for squad members it also shows where they are in-game.
+112,/cpdump [detail] [<town>]
+113,Shows detailed information for origin- or specified-town. Specify "detail" for full information.
+114,/cpinfo [<town>]
+115,Shows summary information for origin- or specified-town.
+116,/own [<town>]
+117,With town: Shows ownership for the specified town. Without town: Shows ownership information for the closest town.
+118,HC channel off.
+119,HC channel on.
+120,You cannot /grab another player while you are /grabd yourself.
+121,Releasing current /grab.
+122,No such /command: {1}
+123,You aren't currently in a squad.
+124,/fbs [<town>]
+125,With town: Shows Fire Base states for the specified town. Without town: Shows Fire Base states for the nearest town.
+126,Please select or specify a town.
+127,/delay <code>
+128,Requests delaying action in response to specified OVERRUN code.
+129,/fallback <code>
+130,Requests Fallback order in response to specified OVERRUN code.
+131,/hold <code>
+132,Requests Hold At All Costs order in response to specified OVERRUN code.
+133,/resync [<player>]
+134,Forces reload of global (or single player) chat permissions.
+135,/find <player>
+136,Accurately locates a player within the game.
+137,/friends  or  /friends player  or   /friends player1 player2 ... player10
+138,Adds, removes or lists players to/from your friends list. You may have up to 42 people on your friends list. See "/who" for seeing which squad members are online.
+139,/overrun
+140,Alert high command officers that an armybase in your origin town is overrun. The town must be contested and several enemy units must be in the vicinity of the armybase before an overrun can be reported.
+141,OVERRUN report has expired or already been dealt with.
+142,{1} at {2} completed.
+143,{1} at {2} requested.
+144,{1} belongs to the enemy.
+145,Must both own and control {1} to perform {2}.
+146,We don't hold any armybases in {1}.
+147,No supply links to armybases in {1}.
+148,{1} is not contested.
+149,{1} is already reporting {2}.
+150,{1} already has other orders.
+151,'{1}' failed at {2}.
+152,You have already voted on that order.
+153,Raising the alarm: Base overrun!
+154,HOLD order for {1} approved.
+155,Requested '{1}' at {2}.
+156,Orders for {1} must be issued from {2}.
+157,'{1}' does not exist or has expired.
+158,{1}: '{2}' order is being issued.
+159,{1} not reporting under attack.
+160,{1} not reporting 'overrun'.
+161,No target selected on the map.
+162,Target must be a town or bridge.
+163,Defense objectives can only be manually placed or cleared on bridges.
+164,{1} is not on the front-line.
+165,All available objectives are currently placed.
+166,Your previous request at {1} has not expired yet.
+167,No objective assigned to {1}.
+168,{1} is not enemy held.
+169,CAUTION
+170,Orders issued to take {1}
+171,Units in {1} called to defense
+172,{1} objective is being withdrawn
+173,Enemy forces withdrawing from {1}
+174,{1} objective is being withdrawn, return to base
+175,Orders for {1} have been withdrawn
+176,/nowho
+177,Toggles your visibility to "/who" on or off.
+178,You are now visible to "/who"
+179,You are now hidden from "/who"
+180,Please select a channel to chat on.
+181,/objectives
+182,List current objectives for your side.
+183,/noechat
+184,Toggles receipt of enemy area chat messages on/off
+185,You will not receive enemy area chat during this session.
+186,You will now receive enemy area chat messages.
+187,Acknowledged - awaiting confirmation from other players.
+188,/attack
+189,Requests an attack objective on the CP or bridge currently targetted on your map.
+190,/defend
+191,Requests a defense objective on the bridge currently targetted on your map.
+192,/clear
+193,Requests cancellation of objectives at the CP or bridge currently targetted on your map.
+194,Issuing /kick to ALL players.
+195,Area chat only works while you are spawned.
+196,No active firebases.
+197,ALLIED
+198,AXIS
+199,Orders issued to attack {1}
+200,Orders issued to defend {1}
+201,{1} objective cannot be withdrawn for another {2}
+202,{1} has logged in
+203,/setrank <rank number>
+204,Set the rank of the persona for the next time you select it.
+205,Rank set to {1} equivalent. Change will take effect next time persona is loaded.
+206,Invalid rank, valid ranks are numbered 1 thru {1}.
+207,There are currently no active missions for this brigade.
+208,/whisper <message>
+209,Very short-range area chat.
+210,/yell <message>
+211,Long-range area chat.
+212,You are not currently an active High Commander.
+213,You can only {1} every {2} seconds.
+214,/hcmotd  or  /hcmotd <new motd>
+215,View or set the current High Command Message Of The Day (MOTD)
+216,Your friends list is currently empty.
+217,Unknown error occured while accessing friends list. Try again shortly.
+218,Offline: {1}
+219,Online: {1}
+220,Brigade channel unavailable: Not in a brigade.
+221,Mission channel unavailable: Not on a mission.
+222,City channel unavailable: Not on a mission.
+223,Origin channel unavailable: Not on a mission.
+224,Objective channel unavailable: Not on a mission.
+225,Squad channel unavailable: Not a member of a squadron.
+226,Squad channel unavailable: No persona selected.
+227,{1} channel unavailable: Channel is receive only.
+228,Side channels unavailable: No persona selected.
+229,Welcome to the Help! channel - use this channel to get help, assistance and advice from other players. In case of technical difficulties visit the Community Support forums at http://discussions.playnet.com/
+230,Local Time: {1}
+231,Server Time: {1}
+232,{1}: Attack/Destroy
+233,{1}: Defend/Repair
+234,Bridge is currently down.
+235,{1}: Attack/Capture
+236,{1}: Defend - Hold at all costs!
+237,{1}: Defend from fallback positions.
+238,{1}: Defend against capture.
+239,{1} is under contention with the enemy.
+240,Newly issued objective.
+241,Objective issued {1}h {2}m ago.
+242,MOTD
+243,"/home"
+244,"/home" reports your Brigade's current home.
+245,Must be in a Brigade to use that command.
+246,Must be a Brigade Leader to use that command.
+247,Game server coming down in {1}
+248,"/orders" or "/orders <new orders>"
+249,"/orders" displays the current mission orders. Mission leaders can also use "/orders" to change/update the mission orders.
+250,Must be on a mission to use that command.
+251,Must be a mission leader to use that command.
+252,No current orders for this mission.
+253,ORDERS
+254,Mission orders cleared.
+255,Connection to host re-established.
+256,There are no trainers currently available.
+257,"/trainers"
+258,Lists members of the Training Program who are currently online.
+259,Your mission has been closed by the mission leader.
+260,Unrecognized command: "{1}"
+261,/hclist
+262,short text listing of on-duty High Commanders
+263,*{1} HAS DISBANDED "{2}".
+264,{1} has joined {2}.
+265,*{1} has resigned the position of CO to {2}.
+266,*{1} has resigned the position of XO to {2}.
+267,*{1} has promoted {2} to member.
+268,*{1} has promoted {2} to recruiter.
+269,*{1} has promoted {2} to XO.
+270,*{1} has promoted {2} to CO.
+271,*{1} has demoted {2} to member.
+272,*{1} has demoted {2} to recruiter.
+273,*{1} has demoted {2} to XO.
+274,*GAME SERVER COMING DOWN: NOW.
+275,*{1} has declined your squad invitation.
+276,*{1} has accepted your squad invitation.
+277,{1} is already in a squad.
+278,*{1} has been removed from the squad by {2}.
+279,*{1} has left the squad.
+280,SQUAD
+281,Squad-CO election in progress. Votes: {1}. Nominees: {2}.
+282,You have not voted yet. Use "/voteco playername" to place your vote. Voting closes in {1}.
+283,Squad-CO election failed: no winning nominee.
+284,Squad-CO election closed: {1} re-confirmed as Commanding Officer.
+285,Squad-CO election closed: {1} nominated as new Commanding Officer with {2} votes.
+286,Squad-CO election failed: leading nominee left squad.
+287,/voteco playername
+288,Allows you to nominate or vote for a new Commanding Officer for your squadron.
+289,Player {1} is not in your squad.
+290,Your squad has recently elected a new CO. Next vote may begin in {1}.
+291,You have already voted in this election.
+292,Your vote has been registered.
+293,You are not currently ignoring anyone.
+294,Players being /ignored:
+295,Invalid gamename: "{1}".
+296,Already ignoring {1}.
+297,*Expected downtime: {1}.
+298,MISSION
+299,{1} has deployed a mobile spawn for this mission.
+300,Mobile spawn is no longer available.
+301,Your squad is not currently running a Commanding Officer election.
+302,Voting is already enabled.
+303,Voting is already disabled.
+304,{1} has enabled Commanding Officer elections for the squad.
+305,{1} has disabled Commanding Officer elections for the squad.
+306,Elections have been disabled by the Commanding Officer.
+307,/movebrigade
+308,Request your current Brigade be moved to the city selected on your map.
+309,/movedivision
+310,Request your current Brigade's division HQ be moved to the city selected on your map.
+311,{1} is already deployed to {2}.
+312,*** Internal error. Try again. If the problem persists, please /report it.
+313,Unit redeployment failed.
+314,Invalid destination ({1}) for this unit.
+315,Cannot move this unit for {1}.
+316,'{1}' is now leading this mission.
+317,/makeleader <player>
+318,Current mission leader only: Transfers leadership of the current mission to specified player. Both players must be on the mission.
+319,Player '{1}' is not currently on this mission.
+320,You cannot '{1}' yourself.
+321,You are now the leader of this mission!
+322,You are now the leader of this mission! Tip: Incoming contact reports must be approved by you to be visible to other players. Once approved all friendly players on missions to the same city will see them.
+323,You are now the leader of this mission! Tip: You can assign leadership to another player with the "/makeleader" command.
+324,You are now the leader of this mission! Tip: You have the power -- to cancel a mobile spawn, delete the waypoint from your map.
+325,You are now the leader of this mission! {1}
+326,Ground units can only move one link at a time.
+327,{1} is out of range of other division members.
+328,No spawnable armybases at {1}.
+329,No spawnable navalbases at {1}.
+330,No spawnable airfields at {1}.
+331,{1} is on the front line, cannot place units there directly.
+332,You are now the leader of this mission! Tip: Use the "/backupleader" command (/back for short) to control who will be given charge of this mission if/when you leave the mission.
+333,Your designated backup leader, {1}, has left the mission.
+334,Mission leadership will be transferred to {1}.
+335,/backupleader <player>
+336,Names a specific player to be given mission leader status if/when you exit the mission.
+337,You are now the leader of this mission! Tip: Use the "/autoleader off" command to avoid automatically being given leadership of missions.
+338,"/autoleader on" or "/autoleader off"
+339,Use "/autoleader off" to prevent being automatically promoted to mission leader. Set to "on" each time you log in.
+340,You are accepting automatic promotion to mission leader.
+341,You are not accepting automatic promotion to mission leader.
+342,{1} is not accepting leadership promotions.
+343,Unmanned Mobile Spawn (UMS) destroyed!
+344,The Help channel is only for technical assistance between players. For non-combat, general chatter, please use the "Side" channel.
+345,Your squad's name has been changed from {1} to {2}.
+346,Unknown error occured while accessing friends list. Try again shortly.
+347,'{1}' added to your friends list.
+348,'{1}' removed from your friends list.
+349,'{1}' is already in your friends list.
+350,Your friends list is full, remove someone first.
+351,Your ignore list is full, remove someone first.
+352,Recruiting has been ENABLED by {1}.
+353,Recruiting has been DISABLED by {1}.
+354,CO election/voting has been ENABLED by {1}.
+355,CO election/voting has been DISABLED by {1}.
+356,Recruit '{1}' has left your supervision by exiting the game.
+357,Recruit '{1}' has left your supervision by changing sides.
+358,Your recruiter ('{1}') has logged out or is unavailable.
+359,{1} has been recruited to your squad by {2}!
+360,Attention, recruit! Your {1} day recruit tour with <{2}> has ended. You can use the SQUADS tab to locate another squad. When you find a squad you wish to stay with, ask them to promote you to Member.
+361,Recruit '{1}' has been removed from the squad after {2} days.
+362,/takelead
+363,Take over leadership of your current mission.
+364,You are already mission leader.
+365,You cannot /takelead while you are AFK.
+366,{1} has usurped you as mission leader - you have 8 minutes to to retake control without restriction.
+367,You have usurped {1} as mission leader - they may retake control freely within the next 8 minutes.
+368,You cannot usurp {1}'s lead for another {2}.
+369,/mlist
+370,Lists current mission members and their status.
+371,/time
+372,Shows the real-world time on the game servers.
+373,/ignore  or  /ignore player  or   /ignore player1 player2 ... player10
+374,"/ignore" lists players being ignored by you. "/ignore player" toggles (adds/removes) ignore of the specified player. You may have up to 42 people on your ignore list.
+375,/status
+376,DEPRECATED - Please use /own instead.
+377,/voting <on|off>
+378,With voting enabled your squad members can run an election to select a new commanding officer with the /voteco command. Voting is enabled by default. Use /voting off to disable it.
+379,'{1}' cannot fallback: not a brigade.
+380,'{1}' cannot fallback: no fallback destination.
+381,Facilities in {1} have been reported as overrun by enemy forces!
+382,Defensive positions in {1} have been compromised. All units are moving to fall back positions!
+383,{1} reserved at {2}.
+384,Some units at {1} cannot /{2}.
+385,Your accumulated online time has reached one hour.
+386,Your accumulated online time has reached two hours.
+387,Your accumulated online time has now reached three hours, please log off the game and do some sports.
+388,Your accumulated online time has now exceeded four hours, you are entering the Tired Time. Scoring reduced to 50%% of normal. For your health consideration, please log out and get some rest or do some sports.
+389,Your accumulated online time has now exceeded five hours, you are in the Tired Time. Scoring reduced to 50%% of normal. For your health consideration, log out and get some rest or do some sports.
+390,Your accumulated online time has now entered Penalty Time. For your health, please log out immediately. Your game advancement abilities have been reduced to zero. They will be back to normal after you have been offline for 5 or more hours.
+391,√Ç√Ö‚Ä¢√Ç‚à´‚àë√ã√Ñ√â√ã√¥√´
+392,Units cannot be moved into non-factory-linked pockets from outside.
+393,Only Army units can be moved off-map.
+394,Cannot move off-map from a factory-linked town.
+395,Unit cannot surrender while {1}%% or more of its infantry strength remains.
+396,You must control the depot at both ends of the link you wish to move across.
+397,Movement is blocked by an enemy firebase.
+398,There was a problem trying to '{1}' player '{2}':
+399,***YOUR ACCOUNT HAS BEEN SUSPENDED FOR {1}: {2}***
+400,[!] Limited Damage Model Enabled - All damage is limited to 1 joule [!]
+401,[CRS:MOTD] {1}
+402,[GM:MOTD] {1}
+403,There are insufficient attacks placed against occupied towns to start a maneuver (softcap) objective.
+404,Cannot issue additional hold/fallback orders for another {1}.
+405,{1} fallback order issued: Armybases surrender in approximately {2}.
+406,'{1}' order failed to execute.
+407,/nukepersonas
+408,Ask the host to delete all of your personas. There is no confirmation requested. Use with caution!!
+409,*** ALL PERSONAS DELETED AT YOUR REQUEST ***
+410,/resetstrat
+411,Request an automatic restart of the strat server for testing purposes. A second player is required to confirm by also typing /resetstrat within 30 seconds if there are 2 or more players on the server at the time.
+412,A strat restart has been performed within the last 5 minutes, please wait before issuing another.
+413,'{1}' acknowledged. A second player must submit a similar request within 30 seconds for it to be executed.
+414,{1} has requested a strat server restart - second player approval required.
+415,No, silly, someone /else/ has to approve /your/ request.
+416,{1} has approved strat server restart.
+417,/buzzardspawn <player><reason>
+418,Spawns you at the current location of the specified player. Logged.
+419,You cannot do that while spawned.
+420,Player '{1}' hasn't spawned yet during this game session.
+421,There is currently no help associated with this command.
+422,Invalid time: {1}.
+423,Trainers: {1}.
+424,/um <mode number>
+425,Sets current update mode. Type /um ? to show current mode.
+426,'{1}' is not a valid /um setting.
+427,Can't ban someone for less than 5 minutes.
+428,Kicking '{1}' from the game server.
+429,'{1}' is currently online. Use '/kick' to disconnect them if required.
+430,/ban <player> <period> <reason>
+431,Suspends a player's access to the game for a period of time during which time they cannot pass the Persona Selection screen. <period> is in days by default, but can be specified as, e.g. "1d" or "2h" or "15m". **NOTE** Does not eject the player from the server -- see /kickban.
+432,/bump [-up | -down] <player> <reason>
+433,Displaces a player from their current position by a few meters /towards you/ e.g. to displace a clipper. Players cannot be bumped more than +/-4m horizontally or +/-6m vertically. Be careful not to pull players under the world. Specifying "-up" displays players 5m straight up regardless of your relative position. "-down" allows players to be pulled downward if you are below them.
+434,Sorry, you can only do that while in a buzzard.
+435,Sorry, player '{1}' is not currently spawned.
+436,Sorry, you can't bump a buzzard.
+437,You must be within 75 meters of the player you are trying to /bump.
+438,You have been forcibly moved by a Game Manager: {1}
+439,/despawnall <reason>
+440,Forces all players to be despawned. Lock the arena first.
+441,You are being forcibly despawned by the Game Managers: {1}.
+442,Automatically despawning ALL PLAYERS: {1}.
+443,/kickban <player> <period> <message>
+444,Suspends a player's access to the game and kicks them from the servers. During the suspension they cannot pass the Persona Selection screen. <period> is in days by default, but can be specified as, e.g. "1d" or "2h" or "15m". To suspend a player without immediately ejecting them, see /ban.
+445,/lastcap [<player> | global | all | allied | axis | uk | de | fr]
+446,Lists the last few captures. Target a CP on the map to restrict results by location.
+447,No matching captures in the database.
+448,'{1}' database query failed: {2}. Please try again later.
+449,/lastdeath <player>
+450,Shows summary information of upto the last 5 times the specified player has died this campaign. Expensive query, please use sparingly.
+451,Last 5 deaths for {1} this campaign:
+452,/makeco [-force] <player>
+453,Promotes the specified player to the status of Commanding Officer (CO) within their current squad. Has no effect on a player who is not in a squad.
+454,Player '{1}' is not currently in a squad.
+455,Player '{1}' is already the Commanding Officer (CO) of '{2}' squad.
+456,Squad '{1}' does not exist or is not loaded at this time - this may be an error or possibly no players are online. Try again shortly.
+457,The existing Commanding Officer (CO) of '{1}' squad is currently online: {2}. Cannot usurp the CO while he is online.
+458,Squad '{1}' already has a Commanding Officer (CO) '{2}'. Use "/makeco -force" to usurp the existing CO.
+459,*** '{1}' has been appointed Commanding Officer (CO) of {2} by a Game Manager!
+460,You have appointed '{1}' as the Commanding Officer (CO) of '{2}' squad.
+461,All chat permissions reloaded.
+462,Player '{1}' chat permissions reloaded.
+463,/shutdown stop
+464,Aborts any current shutdown in progress.
+465,/shutdown in <time interval> <message>
+466,Begins an automated, timed, self-announcing shutdown process. Can also be used to change the time of an existing shutdown. Time interval is in minutes by default, specify one of 'm', 'h', or 'd' to specify units, e.g. "/shutdown in 2h" to shutdown in 2 hours.
+467,When the countdown reaches zero arenalock 15 is applied and players are given a final 30 seconds to despawn and exit if they wish to save their current sorties.
+468,/shutdown downtime <time interval>
+469,Appends a downtime estimate to an in-progress shutdown. Default for interval is minutes (e.g. 15m).
+470,No such /shutdown command '{1}'.
+471,*** CAUTION --- ENTERING DANGER ZONE --- CAUTION ***
+472,/shutdown sub-commands: /shutdown in, /shutdown downtime, /shutdown stop. Type /shutdown <command> for more details on a specific sub-command.
+473,"/shutdown" provides an automated, timed, self-announcing shutdown process.
+474,/shutdown time must be between {1} minutes and {2} hours.
+475,Game server shutdown scheduled for {1}.
+476,[*] Game server will be coming down in {1}: {2}. [*]
+477,/snoop <player> <reason>  or  /snoop off
+478,Records to the GM log and the snooping GMs chat buffer all private messages to/from a player and all text typed by them into the chat buffer. Use '/snoop off' to end a snoop, or '/snoop' for current snoop status. Only one GM may snoop on a given player at a time and each GM may only snoop one player at a time.
+479,You are not {1} anyone at this time.
+480,Current {1}: {2}.
+481,Use '/{1} off' first to end your current snoop on '{2}'.
+482,Sorry, no snooping on staff members allowed.
+483,/pnote <player> <message>  or  /pnote <player>
+484,Adds a note to- or views recent notes/warns/bans on- the player's permanent record.
+485,No notes found on {1}'s record.
+486,Invalid note: Cannot be more than 399 bytes long.
+487,ALL PLAYERS: {1}
+488,{1}: Unassigned.
+489,/lastmoves
+490,Lists the last few brigade movements for your current country.
+491,No recent movements found for your country.
+492,/listcos
+493,List all squad COs currently online along with their squad name.
+494,/listsquad [-all] <squadname>
+495,Lists online (or all) members of the specified squad.
+496,No such squad: {1}.
+497,/arenalock < 0 - 15 | ? >
+499,/dumpresupply [<brigade>]
+500,Provides a view of the top entries of the resupply queue of either your current or specified brigade/division.
+501,/pwncp <country> [<town name>]
+502,Changes the ownership of the specified town or the town targeted on your map to the country specified.
+503,/rdp
+504,Displays current Research Development & Production intelligence data from the Gazette, if available.
+505,/redelpoy [-xfer] [-move] [<unit> [<destination town>]]
+506,Forcibly redeploys a brigade without movement restrictions (unless -move is specified) and with instant equipment relocation rather than trickle (unless -xfer is specified). Defaults are your current brigade and the town targeted on your map.
+507,/settime [@]<HH|HHMM|HH:MM>
+508,Sets the current game time to the specified hour or time. Prefix the time with '@' (e.g. @12:30) to lock the clock to a specific time.
+509,/nextmove [brigade1 ... brigadeN]
+510,Reports the movement time and current fallback location for your current brigade or the specified brigade(s).
+511,/renamesquad <old squad name> <new squad name>
+512,Changes the gamename (short name) of a player squad. Valid names are equivalent to player gamenames.
+513,Squad '{1}' already exists, try another name.
+514,'{1}' is not a valid name for a squad.
+515,To rename a squad, the new name must be different than the old name (duh).
+516,Resistance is futile.
+517,Please don't try to ignore SYSTEM, it makes him angry.
+518,Sorry, 'SYSTEM' is the game itself and not an actual player.
+519,RDP (Research, Development and Production) messages are system generated so /{1} would have no effect.
+520,Limit of 10 names at a time maximum - please try again with less names.
+521,/gridsnapshot <on | off | full>
+522,Enables or disables chat-grid snapshot recording (for debugging purposes only). Only to be used when instructed to by CRS staff members.
+523,[*] Game server shutdown has been cancelled! [*]
+524,[!] Game server shutdown has been delayed! [!]
+525,[!] Game server shutdown has been advanced by {1}. [!]
+526,[X] GAME SERVER COMING DOWN NOW: You have {1} seconds to despawn or lose your sortie results! [X]
+527,MOTD: {1}
+528,/listoics
+529,List current Office In Charge (OIC) appointments to brigades/divisions.
+530,No Brigades/Divisions have active OICs at this time.
+531,{1}: logging in or out.
+532,{1}: not found on cell hosts.
+533,Error: Unable to change the mission's leader at this time.
+534,Recruit '{1}' has joined your mission and is now under your supervision.
+535,Recruit '{1}' has just left your mission.
+536,/msp
+537,Forces the host to simulate a mobile spawn point (msp) at either your current or previous position in the game world. Previous position is remembered even after changing sides.
+538,To use /{1} from the map screen you must have spawned into the game during this login session first.
+539,REMINDER: /{1} is not a release feature and is a testing tool only.
+540,Unable to add Mobile Spawn Point (MSP) to this mission at this time.
+541,Damage to MSP ignored, it's already dead.
+542,{1} joules to Server Tracked Object ignored due tool object's {2} joules threshold.
+543,Ignoring damage to hulk: hulk is invulnerable (0 capacity)
+544,Ignoring damage to hulk: it's already dead.
+545,Hulk destroyed.
+546,/checkstos
+547,Checks all the current Server Tracked Objects being tracked by the server to see if any have entered an invalid state and should be cancelled. Any found this way are immediately canceled.
+548,No server tracked objects were found in an unusual state.
+549,Cancelled the following STOs: {1}.
+550,/liststos
+551,List all current Server Tracked Objects (STOs). WARNING: List can be quite long.
+552,No server tracked objects at this time.
+553,Current STOs: {1}.
+554,/spam  or  /spam +<message>  or /spam start <repetitions> <interval>  or  /spam stop
+555,Manage/view/run the "spam can". The spam can is a list of text messages to be periodically broadcast to the playerbase as SYSTEM messages. Use "/spam" on its own to view the current spam can and settings; use "/spam +my message" to add "my message" to the end of the can; use "/spam start 5 3m" to repeat the spam can 5 times with 3 minutes between each repeat"; use "/spam stop" to stop (and clear) the current can.
+556,Clearing the spam can.
+557,/spam start <number of repetitions> <interval between repetitions>
+558,Number of loops is how many times to repeat the entire can; interval between repetitions is a time interval (e.g. 30s, 5m, 2h or 1d) to pause between each repetition. The time between each line of the can is calculated based on the number of characters in the message.
+559,Interval must be at least 30 seconds.
+560,Opening the spam can: {1} repetitions, {2} between repetitions.
+561,Closing and clearing the spam can.
+562,Added: {1}
+563,The spam can is currently empty.
+564,Spam Can Containers {1} lines. Repetitions: {2} apart.
+565,*Squad-CO election cancelled due to withdrawal of votes.
+566,*All Squad-CO election votes for {1} were withdrawn. Election continues.
+567,Killed by building {1} desctruction [by sortie {2}].
+568,You have entered {1}.
+569,You have entered unknown buildings {1}.
+570,Elvis has left the building.
+571,*** Brigade Selection Refused: Brigade ID was zero (0). Your client may be out of sync or there may be a new version available. Please exit and relog.
+572,*** Brigade Selection Refused: No persona selected. Your client may have gotten out of sync with the server, restarting your game will normally solve this issue.
+573,*** Brigade Selection Refused: Invalid Brigade specified. You may need to restart your client if this problem persists and you are not able to select a brigade manually.
+574,Congratulations on your FIELD PROMOTION!
+575,Unable to spawn: {1}.
+576,Kill credit awarded to you for {1}!
+577,FRIENDLY FIRE kill on {1}!
+578,Player {1} has Killed-A-Rat: {2}!
+579,*** Too many objectives: One will be automatically removed in {1} minutes unless you have manually removed one by that time.
+580,Cannot use a bridge as a target.
+581,Unrecognized town name, '{1}'.
+582,Allied FBs: {1}
+583,Axis FBs: {1}
+584,Unknown Brigade/Division '{1}'
+585,You must join or specify a brigade to use {1}.
+586,Sorry, you can only do that to a Brigade or a Division.
+587,Equipment manually supplied to {1}.
+588,[CRS:{1}] {2}
+589,[GM:{1}] {2}
+590,Last 5 kills for {1} this campaign:
+591,Grid snapshots ENABLED.
+592,Grid snapshots DISABLED.
+593,Grid snapshots enabled on FULL.
+594,/lastkillers <player>
+595,Shows summary information of upto the last 5 kills recorded for the player during this campaign. Expensive query, please use sparingly.
+596,You can only do that while spawned into the game world.
+597,To attack with an Army Brigade, there must be a direct link to the objective.
+598,To attack with an Army Division, one of the members must have a direct link to the objective.
+599,Hold {1} at all costs!
+600,Defenders in {1} begin falling back to more secure positions.
+601,{1} has Alt-F4'ed.
+602,{1} destroyed.
+603,Auto-repair contribution to {1}.
+604,Fallback from {1} failed.
+605,Units in {1} are redeploying to defensive fallback positions.
+606,Enemy units in {1} are redeploying to their fallback positions.
+607,*FORCED* ownership of {1} to {2}.
+608,Changed ownership of {1} to {2}.
+609,GM changed ownership of {1} to {2}.
+610,No facilites at {1} were affected.
+611,[X] Strat Server EXITING: Some game functionality will be unavailable. [X]
+612,[*] Strat Server STARTING: Some game functionality will be unavailable. [*]
+613,[!] Strat Server Ready: Normal game functionality should be restored. [!]
+614,Game time has been set to {1}:{2}
+615,All CP statuses have been re-transmitted to chat, map and cell hosts.
+616,{1} limited to once per minute.
+617,{1} <cp name | "all">
+618,Retransmit the status of one or all CPs to other servers.
+619,'{1}' status has been re-transmitted to chat, map and cell hosts.
+620,[!] Cease Fire in effect: Kills are DISABLED [!]
+621,Brigade out of range or no link to brigade!
+622,{1} has been captured.
+623,ERROR
+624,Your friend, {1}, is logging in.
+625,{1}: OVERRUN reported! Designated as {2}.
+626,The "Ops" channel is for high-level Operational and Organization communications only. Please use the "Side" channel for general chat or discussion, or use the "Help" channel for gameplay or technical assistance.
+627,Kill-A-Rat: Customer Serviced! {2} laid to rest by {1}.
+628,Kill-A-Rat: Office Rivalry! {1} just wasted {2}.
+629,/oicnominate <unit> <player>
+630,Propose the named player for temporary OIC of the specified unit.
+631,/oicvolunteer <unit>
+632,Allows an HC officer to volunteer for the OIC position of a unit.
+633,/oicveto <unit> <player>
+634,Vetos the nomination/removal of a particular player for a given unit.
+635,/oicresign <unit>
+636,Relinquishes your OIC status over the specified unit.
+637,/oicremove <unit> <player>
+638,Requests the removal of a player from a unit's OIC position.
+639,/resetradios
+640,This command will retune all of your radios to the game server's current default channels.
+641,Radio channels for '{1}' have been retuned to the server defaults. Channels are saved on the game server.
+642,This sortie was worth {1} point(s) but your subscription does not allow this persona to gain any additional score.
+643,Cannot damage {1}: No attack objective.
+644,Applying {2} joules of damage to {1}.
+645,Cannot repair {1}: No defense objective.
+646,Applying {2} joules of repairs to {1}.
+647,Mission Post Denied
+648,You already have an active mission.
+649,You don't appear to have a brigade selected.
+650,Not available for this account in this branch. Visit www.battlegroundeurope.com to upgrade your account!
+651,Rank requirements not met for this branch.
+652,Invalid mission origin facility: {1}.
+653,Origin facility is not under your control.
+654,Origin facility cannot be used from your brigade.
+655,Mission Post Approved!
+656,{1} has surrendered to the enemy.
+657,{1} has surrendered to us!
+658,{1} will surrender to the enemy in {2} hours.
+659,{1} will surrender to the enemy in {2} minutes.
+660,INTEL: Soldiers needed at {1}.
+661,INTEL: Soldiers needed at {1} and {2}.
+662,Threat Report: {1}
+663,Kill on you awarded to {1}.
+664,Assist for killing {1} (killed by {2}).
