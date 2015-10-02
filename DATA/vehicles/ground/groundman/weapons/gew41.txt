@@ -1,0 +1,29 @@
+# first thing in the weapon file should always be the weapontype
+# this causes the default_(weapontype).txt file to be loaded first
+# valid weapon types are:
+# SMG, SATCHEL, RIFLE, AUTO_PISTOL, GRENADE, REVOLVER, ITEM, KNIFE, LMG
+weaponType = AUTO_RIFLE
+
+# sound to play when reloading
+reloadSound = sounds\gew41reload.wav
+
+# specify the weapon & clip (clip optional) model here
+# note that data\gr2data\FPS\ is prepended to these file names
+weaponModel = gewehr41\gewehr41
+#clipModel = kar98k\gunmesh-5roundstripperclip
+
+# granny attach bone names for weapon & clip
+# the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
+weaponConnectTo = rifle-control
+weaponConnect = gewehr-connect
+
+# the clipConnect bone in the clip attaches to the clipConnectTo bone in the gun
+#clipConnectTo = stripperclip-control
+#clipConnect = stripperclip-control
+
+# boresighting values .. how much off of "straight" does this gun need to fire
+aimVerticalCorrection = -0.68
+aimHorizontalCorrection = 0.18
+
+# how far back along the barrel to start the bullet (firepoints are at the tip)
+firepointDisplacement = 0.79

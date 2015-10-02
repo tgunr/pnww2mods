@@ -1,0 +1,36 @@
+# first thing in the weapon file should always be the weapontype
+# this causes the default_(weapontype).txt file to be loaded first
+# valid weapon types are:
+# SMG, SATCHEL, RIFLE, AUTO_PISTOL, GRENADE, REVOLVER, ITEM, KNIFE, LMG
+weaponType = AUTO_RIFLE
+
+# sound to play when reloading
+reloadSound = sounds\mas40reload.wav
+
+# specify the weapon & clip (clip optional) model here
+# note that data\gr2data\FPS\ is prepended to these file names
+weaponModel = mas40\mas40
+#clipModel = mas36\gunmesh-mas36-stripperclip
+
+# granny attach bone names for weapon & clip
+# the weaponConnect bone in the weapon attaches to the weaponConnectTo bone in the skeleton
+weaponConnectTo = rifle-control
+weaponConnect = mas40-connect
+
+# the clipConnect bone in the clip attaches to the clipConnectTo bone in the gun
+#clipConnectTo = stripperclip-control
+#clipConnect = stripperclip-connect
+
+# boresighting values .. how much off of "straight" does this gun need to fire
+aimVerticalCorrection = -0.58
+aimHorizontalCorrection = 0.0
+
+# how far back along the barrel to start the bullet (firepoints are at the tip)
+firepointDisplacement = 0.90
+firepointZDistance = 0.5
+
+weaponBreathMultiplier = 0.5
+weaponHeartMultiplier = 1.0
+weaponMoveMultiplier = 1.0
+weaponPoseMultiplier = 0.5
+

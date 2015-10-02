@@ -97,6 +97,10 @@
 	<include file="french-rifle.loadout.xml"/>
 </variant>
 
+<variant id="fr-assault" shape="french-assault" description="Rifleman: MAS 40" icon="Rifleman">
+	<include file="french-assault.loadout.xml"/>
+</variant>
+
 <variant id="fr-eng" shape="french-engineer" description="Engineer: MAS 36" icon="Engineer">
 	<include file="french-engineer.loadout.xml"/>
 </variant>
@@ -174,8 +178,14 @@
 	<include file="german-smg.loadout.xml"/>
 </variant>
 
+<variant id="de-earlyassault" shape="german-assault" description="Rifleman: Gewehr 41(W)" icon="Rifleman">
+	<include file="german-earlyassault.loadout.xml"/>
+</variant>
 <variant id="de-assault" shape="german-assault" description="Rifleman: Gewehr 43" icon="Rifleman">
 	<include file="german-assault.loadout.xml"/>
+</variant>
+<variant id="de-earlyassault" shape="german-assault" description="Rifleman: Gewehr 41" icon="Rifleman">
+	<include file="german-earlyassault.loadout.xml"/>
 </variant>
 <variant id="de-pzschreck" shape="german-pzschreck" description="AT: Panzerschreck" icon="PzSchreck">
 	<include file="german-pzschreck.loadout.xml"/>
