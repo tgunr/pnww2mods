@@ -57,6 +57,7 @@
 	</visloadout>
 	<visloadout id="uk-sniper" arms="ukarmy">
 		<weapon>enfieldmk4</weapon>
+		<weapon>webley</weapon>
 		<weapon>m18</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
 		<weapon index="8">buildtool</weapon>
@@ -68,7 +69,7 @@
 		<weapon lastresort="true">alliedknife</weapon>
 		<weapon index="8">buildtool</weapon>
 	</visloadout>
-    <visloadout id="uk-piat" arms="ukarmy">
+    <visloadout id="uk-piat" arms="ukarmy"  atp="3">
 		<weapon>piat</weapon>		
 		<weapon>webley</weapon>
 		<weapon lastresort="true">alliedknife</weapon>	
@@ -192,6 +193,7 @@
 	</visloadout>
 	<visloadout id="fr-sniper" arms="frarmy">
 		<weapon>lebelmle</weapon>
+		<weapon>m1935a</weapon>
 		<weapon>frsmoke</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
 		<weapon index="8">buildtool</weapon>
@@ -311,6 +313,7 @@
 	</visloadout>
 	<visloadout id="de-sniper" arms="dearmy">
 		<weapon>kar98ks</weapon>
+		<weapon>luger</weapon>
 		<weapon>hgr39</weapon>
 		<weapon lastresort="true">axisknife</weapon>
 		<weapon index="8">buildtool</weapon>
@@ -400,7 +403,15 @@
 		<weapon>ammo</weapon>
 		<weapon index="8">buildtool</weapon>
 	</visloadout>
-		<visloadout id="us-rifle" arms="usarmy">
+	<visloadout id="us-atr" arms="usarmy">
+		<weapon>boysmk1</weapon>
+		<weapon>colt1911</weapon>
+		<weapon>ussmoke</weapon>
+		<weapon>alliedsatchel</weapon>
+		<weapon lastresort="true">alliedknife</weapon>
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
+	<visloadout id="us-rifle" arms="usarmy">
 		<weapon>m1903a3</weapon>
 		<weapon>mark2</weapon>
 		<weapon>ussmoke</weapon>
@@ -433,7 +444,15 @@
 	</visloadout>
 	<visloadout id="us-sniper" arms="usarmy">
 		<weapon>springfld1903</weapon>
+		<weapon>colt1911</weapon>
 		<weapon>ussmoke</weapon>
+		<weapon lastresort="true">alliedknife</weapon>
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
+	<visloadout id="us-ltmortar" arms="usarmy" atp="3">
+		<weapon>frltmortar</weapon>
+		<weapon>frltmortar</weapon>
+		<weapon>m1903a3</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
 		<weapon index="8">buildtool</weapon>
 	</visloadout>
