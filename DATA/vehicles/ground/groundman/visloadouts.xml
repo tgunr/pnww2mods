@@ -205,7 +205,14 @@
 		<weapon lastresort="true">alliedknife</weapon>
 		<weapon index="8">buildtool</weapon>
 	</visloadout>
-
+	<visloadout id="fr-assault" arms="frarmy">
+		<weapon>mas40</weapon>
+		<weapon>frbang</weapon>
+		<weapon>frsmoke</weapon>
+		<weapon lastresort="true">alliedknife</weapon>
+		<weapon>ammo</weapon>
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
 	<visloadout id="fr-bazooka" arms="frarmy" atp="3">
 		<weapon>bazooka</weapon>
 		<weapon>m1935a</weapon>
@@ -326,6 +333,14 @@
 		<weapon index="8">buildtool</weapon>
 	</visloadout>
 <!-- Assault units appear as "Semi-Auto Rifleman" -->
+	<visloadout id="de-earlyassault" arms="dearmy">
+		<weapon>gew41</weapon>
+		<weapon>stigr</weapon>
+		<weapon>hgr39</weapon>
+		<weapon lastresort="true">axisknife</weapon>
+		<weapon>ammo</weapon>
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
 	<visloadout id="de-assault" arms="dearmy">
 		<weapon>gew43</weapon>
 		<weapon>stigr</weapon>

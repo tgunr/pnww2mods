@@ -1,0 +1,35 @@
+#German semi-auto rifleman (formerly "assault rifleman") loadout file
+
+# sounds available for the mounts
+sound1 = sounds\troop\G43.wav
+sound2 = sounds\troop\grenade-throw.wav
+sound3 = sounds\troop\grenade-throw.wav
+
+loadout = 1
+
+# Rifle
+mountnum = 1
+mountsound = sound1
+weapon = gew41
+
+# Grenade
+mountnum = 2
+mountsound = sound2
+weapon = stig24
+
+# Smoke Grenade
+mountnum = 3
+mountsound = sound3
+weapon = desmokegrenade
+
+# Knife
+mountnum = 4
+weapon = knifegeneric
+
+# Ammo Box
+mountnum = 5
+weapon = satchelgeneric
+
+# build tool
+mountnum = 8
+weapon = satchelgeneric
