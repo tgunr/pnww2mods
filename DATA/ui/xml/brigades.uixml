@@ -262,8 +262,9 @@
 				/****************** BRIGADE TAB FUNCTIONS *********************/
 				
 				function doMissionCheck() {
-					if ( missionUpdater.run() )
-						client.requestquickmissionlist() ;
+					// TEMP: ABT code hasn't been integrated yet.
+					//if ( missionUpdater.run() )
+					//	client.requestquickmissionlist() ;
 				}
 				
 				function updateMissions() {
