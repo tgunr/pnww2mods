@@ -145,6 +145,7 @@
 					//addPreference("b3dsoundenable", Preference.BOOL, true, true);
 					//addPreference("maxnumbersounds", Preference.UINT, 64, true);
 					addPreference("ambientlevel", Preference.SINT, 0, true);
+					addPreference("radialclutter", Preference.BOOL, true, true);
 					//addPreference("ragdolls", Preference.BOOL, true, true);
 					addPreference("wantbloodeffects", Preference.BOOL, true, true);
 					addPreference("shadowreceivers", Preference.UINT, (1 | 2 | 4 | 8 | 16 | 32), true);
@@ -184,6 +185,7 @@
 					//addPreference("b3dsoundenable", Preference.BOOL, false, true);
 					//addPreference("maxnumbersounds", Preference.UINT, 32, true);
 					addPreference("ambientlevel", Preference.SINT, 1, true);
+					addPreference("radialclutter", Preference.BOOL, true, true);
 					//addPreference("ragdolls", Preference.BOOL, true, true);
 					addPreference("wantbloodeffects", Preference.BOOL, true, true);
 					addPreference("shadowreceivers", Preference.UINT, (1 | 4 | 16 | 32), true);
@@ -222,6 +224,7 @@
 					//addPreference("b3dsoundenable", Preference.BOOL, false, true);
 					//addPreference("maxnumbersounds", Preference.UINT, 16, true);
 					addPreference("ambientlevel", Preference.SINT, 2, true);
+					addPreference("radialclutter", Preference.BOOL, false, true);
 					//addPreference("ragdolls", Preference.BOOL, false, true);
 					addPreference("wantbloodeffects", Preference.BOOL, false, true);
 					addPreference("shadowreceivers", Preference.UINT, (1 | 4 | 32), true);
