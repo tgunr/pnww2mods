@@ -17,6 +17,10 @@
 	<include file="british-atr.loadout.xml"/>
 </variant>
 
+<variant id="uk-sapper" shape="british-sapper" description="Sapper" icon="Engineer">
+	<include file="british-sapper.loadout.xml"/>
+</variant>
+
 <variant id="ukgrenadier" shape="british-nade" description="Grenadier: Enfield No.4 Mk I" icon="Grenadier">
 	<include file="british-nade.loadout.xml"/>
 </variant>
@@ -79,6 +83,10 @@
 
 <variant id="fr-atr" shape="french-atr" description="AT: Boys Anti-Tank Rifle" icon="ATR">
 	<include file="french-atr.loadout.xml"/>
+</variant>
+
+<variant id="fr-sapper" shape="french-sapper" description="Sapper" icon="Engineer">
+	<include file="french-sapper.loadout.xml"/>
 </variant>
 
 <variant id="frgrenadier" shape="french-nade" description="Grenadier: MAS 36" icon="Grenadier">
@@ -148,6 +156,10 @@
 
 <variant id="de-atr" shape="german-atr" description="AT: Panzerbüchse 39" icon="ATR">
 	<include file="german-atr.loadout.xml"/>
+</variant>
+
+<variant id="de-sapper" shape="german-sapper" description="Sapper" icon="Engineer">
+	<include file="german-sapper.loadout.xml"/>
 </variant>
 
 <variant id="degrenadier" shape="german-nade" description="Grenadier: Karabiner 98k" icon="Grenadier">
@@ -226,6 +238,10 @@
 
 <variant id="us-atr" shape="french-atr" description="AT: Boys Anti-Tank Rifle" icon="ATR">
 	<include file="us-atr.loadout.xml"/>
+</variant>
+
+<variant id="us-sapper" shape="us-sapper" description="Sapper" icon="Engineer">
+	<include file="us-sapper.loadout.xml"/>
 </variant>
 
 <variant id="us-rifle" shape="us-rifle" description="Rifleman: M1903A3 Springfield" icon="Rifleman">
