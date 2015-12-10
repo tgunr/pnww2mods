@@ -1,0 +1,43 @@
+#British.loadout file
+
+# sounds available for the mounts
+sound1 = sounds\troop\m1935s.wav
+sound2 = sounds\troop\grenade-throw.wav
+sound3 = sounds\troop\grenade-throw.wav
+sound4 = sounds\troop\satchel-place.wav
+sound5 = sounds\troop\satchel-place.wav
+
+loadout = 1
+
+# Pistol
+mountnum = 1
+mountsound = sound1
+weapon = m1935s
+
+# Grenade
+mountnum = 2
+mountsound = sound2
+weapon = french_grenade
+
+# Smoke Grenade
+mountnum = 3
+mountsound = sound3
+weapon = fr_smokegrenade
+
+# HE Charge
+mountnum = 4
+mountsound = sound4
+weapon = satchelhighexplosive
+
+# AT Charge
+mountnum = 5
+mountsound = sound3
+weapon = satchelgeneric
+
+# Knife
+mountnum = 6
+weapon = knifegeneric
+
+# build tool
+mountnum = 8
+weapon = satchelgeneric
