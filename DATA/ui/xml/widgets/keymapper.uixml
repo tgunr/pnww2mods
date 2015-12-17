@@ -357,11 +357,12 @@
 		
 		function saveConvergence()
 		{
-			var convinput = findview("conv-input");			
-			var node = categoryTree.selectedNode();
-			var parts = node.data.split(',')
+      if((keymapCategory != 2) || (keymapVehicle < 0))
+        return;
+                
+			var convinput = game.findview("conv-input");			
 			var vehicles = game.getkeymapvehicles(keymapCategory);
-			var vtype = vehicles[parts[1]-1];			
+			var vtype = vehicles[keymapVehicle];			
 			if(convinput.text == null || convinput.text == '')	// An empty value will cause CTD
 			{
 				if(vtype != null)
@@ -370,6 +371,9 @@
 			}
 			
 			var input = stripLeadingZeroes(convinput.text);		// Leading zeroes will throw off the conversion to integer
+      if( input.length <= 0 )
+        return;
+        
 			var value = parseInt(input);
 			
 			if(vtype != null)
@@ -378,9 +382,7 @@
 					game.saveconvergence(vtype, value, 1); // Convergence is changing, value is dirty.
 				else
 					game.saveconvergence(vtype, value, 0); // Convergence hasn't changed, let's pull the saved (or default) setting
-			}
-			
-			
+			}		
 			
 			return;
 		}
