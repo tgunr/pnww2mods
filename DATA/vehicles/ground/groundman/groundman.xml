@@ -50,6 +50,10 @@
 	<include file="british-smg.loadout.xml"/>
 </variant>
 
+<variant id="uk-smg-stenmk2" shape="british-smg-stenmk2" description="SMG: Sten Mk. II" icon="SMG">
+	<include file="british-smg-stenmk2.loadout.xml"/>
+</variant>
+
 <variant id="uk-piat" shape="british-piat" description="AT: PIAT" icon="PIAT">
 	<include file="british-piat.loadout.xml"/>
 </variant>
@@ -121,6 +125,10 @@
 	<include file="french-smg.loadout.xml"/>
 </variant>
 
+<variant id="fr-smg-m3a1" shape="french-smg-m3a1" description="SMG: M3A1 'Grease Gun'" icon="SMG">
+	<include file="french-smg-m3a1.loadout.xml"/>
+</variant>
+
 <variant id="fr-bazooka" shape="french-bazooka" description="AT: M9 Bazooka" icon="Bazooka">
 	<include file="french-bazooka.loadout.xml"/>
 </variant>
@@ -190,6 +198,10 @@
 	<include file="german-smg.loadout.xml"/>
 </variant>
 
+<variant id="de-smg-mp34" shape="german-smg-mp34" description="SMG: MP34" icon="SMG">
+	<include file="german-smg-mp34.loadout.xml"/>
+</variant>
+
 <variant id="de-earlyassault" shape="german-assault" description="Rifleman: Gewehr 41(W)" icon="Rifleman">
 	<include file="german-earlyassault.loadout.xml"/>
 </variant>
@@ -250,6 +262,10 @@
 
 <variant id="us-smg" shape="us-smg" description="SMG: M1A1 Thompson" icon="SMG">
 	<include file="us-smg.loadout.xml"/>
+</variant>
+
+<variant id="us-smg-m3a1" shape="us-smg-m3a1" description="SMG: M3A1 'Grease Gun'" icon="SMG">
+	<include file="us-smg-m3a1.loadout.xml"/>
 </variant>
 
 <variant id="us-bar" shape="us-bar" description="AR: M1918 BAR" icon="BAR">
