@@ -21,7 +21,7 @@ muzzleClimbRate = 80.0
 bulletJitter = 3.5
 
 # sound to play when reloading
-reloadSound = sounds\BAR-reload.wav
+reloadSound = sounds\mp40-reload.wav
 
 # specify the weapon & clip (clip optional) model here
 # note that data\gr2data\FPS\ is prepended to these file names
@@ -38,10 +38,8 @@ weaponConnect = FG42-connect
 #clipConnect = clip-control
 
 # boresighting values .. how much off of "straight" does this gun need to fire
-#aimVerticalCorrection = -.3
-#aimHorizontalCorrection = 0.35
-aimVerticalCorrection = -.325
-aimHorizontalCorrection = 0.3
+aimVerticalCorrection = -2.30
+aimHorizontalCorrection = 0.25
 #aimFOV = 40.0
 
 # LMGs have their own icons (8 is bren)
