@@ -602,6 +602,9 @@
 											setMultiCrewCallback("requestcrew", showCrewSelect);
 										else
 											multicrewButton.visible	= false;
+										
+										// HACK: Multicrew is currently broken.
+										multicrewButton.enabled = "false"
 									}
 									else
 									{
@@ -808,6 +811,8 @@
 					multicrewButton.settip(getlocstring('mission.readytab.panel.' + label + '.tip'));
 					multicrewCallback = callback;
 					multicrewButton.visible	= true;
+					// HACK: Multicrew is currently broken.
+					multicrewButton.enabled = false;
 				}
 				
 				function canJoinCrew()
