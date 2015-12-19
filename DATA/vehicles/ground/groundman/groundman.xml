@@ -93,7 +93,7 @@
 	<include file="french-atr.loadout.xml"/>
 </variant>
 
-<variant id="fr-sapper" shape="french-sapper" description="Sapper: Mod�le 1935" icon="Engineer">
+<variant id="fr-sapper" shape="french-sapper" description="Sapper: Modèle 1935" icon="Engineer">
 	<include file="french-sapper.loadout.xml"/>
 </variant>
 
@@ -170,7 +170,7 @@
 
 <!-- German Units -->
 
-<variant id="de-atr" shape="german-atr" description="AT: Panzerbüchse 39" icon="ATR">
+<variant id="de-atr" shape="german-atr" description="AT: PanzerbÃ¼chse 39" icon="ATR">
 	<include file="german-atr.loadout.xml"/>
 </variant>
 
@@ -220,8 +220,8 @@
 <variant id="de-assault" shape="german-assault" description="Rifleman: Gewehr 43" icon="Rifleman">
 	<include file="german-assault.loadout.xml"/>
 </variant>
-<variant id="de-earlyassault" shape="german-assault" description="Rifleman: Gewehr 41" icon="Rifleman">
-	<include file="german-earlyassault.loadout.xml"/>
+<variant id="de-rfl-fg42g" shape="german-assault-fg42g" description="Rifleman: FG42 Ausf. G" icon="Rifleman">
+	<include file="german-assault-fg42g.loadout.xml"/>
 </variant>
 <variant id="de-pzschreck" shape="german-pzschreck" description="AT: Panzerschreck" icon="PzSchreck">
 	<include file="german-pzschreck.loadout.xml"/>
@@ -245,7 +245,7 @@
 	<include file="german-para-lmg.loadout.xml"/>
 </variant>	
 
-<variant id="de-para-atr" shape="german-para-atr" description="AT: Panzerbüchse 39" icon="ATR">	
+<variant id="de-para-atr" shape="german-para-atr" description="AT: PanzerbÃ¼chse 39" icon="ATR">	
 	<include file="german-para-atr.loadout.xml"/>
 </variant>	
 
