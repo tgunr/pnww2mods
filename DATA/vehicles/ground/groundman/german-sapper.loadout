@@ -1,0 +1,43 @@
+#British.loadout file
+
+# sounds available for the mounts
+sound1 = sounds\troop\luger.wav
+sound2 = sounds\troop\satchel-place.wav
+sound3 = sounds\troop\satchel-place.wav
+sound4 = sounds\troop\grenade-throw.wav
+sound5 = sounds\troop\grenade-throw.wav
+
+loadout = 1
+
+# Pistol
+mountnum = 1
+mountsound = sound1
+weapon = luger
+
+# HEAT Charge
+mountnum = 2
+mountsound = sound2
+weapon = germsatchel
+
+# HE Charge
+mountnum = 3
+mountsound = sound3
+weapon = germsatchelhighexplosive
+
+# Grenade
+mountnum = 4
+mountsound = sound4
+weapon = stig24
+
+# Smoke Grenade
+mountnum = 5
+mountsound = sound5
+weapon = desmokegrenade
+
+# Knife
+mountnum = 6
+weapon = knifegeneric
+
+# build tool
+mountnum = 8
+weapon = satchelgeneric

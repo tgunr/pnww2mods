@@ -25,6 +25,20 @@
 		<weapon lastresort="true">alliedknife</weapon>
 		<weapon index="8">buildtool</weapon>
 	</visloadout>
+	<visloadout id="uk-ltd-smg" arms="ukarmy">
+		<weapon>stenmk2</weapon>
+		<weapon>mills36mk1</weapon>
+		<weapon lastresort="true">alliedknife</weapon>
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
+	<visloadout id="uk-smg-stenmk2" arms="ukarmy">
+		<weapon>stenmk2</weapon>
+		<weapon>webley</weapon>
+		<weapon>mills36mk1</weapon>
+		<weapon>m18</weapon>
+		<weapon lastresort="true">alliedknife</weapon>
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
 	<visloadout id="uk-eng" arms="ukarmy" atp="2">
 		<weapon>enfield</weapon>
 		<weapon>alliedsatchel</weapon>
@@ -51,7 +65,15 @@
 		<weapon>boysmk1</weapon>
 		<weapon>webley</weapon>
 		<weapon>m18</weapon>
+		<weapon lastresort="true">alliedknife</weapon>
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
+	<visloadout id="uk-sapper" arms="ukarmy" atp="2">
+		<weapon>webley</weapon>
 		<weapon>alliedsatchel</weapon>
+		<weapon>alliedsatchel</weapon>
+		<weapon>mills36mk1</weapon>
+		<weapon>m18</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
 		<weapon index="8">buildtool</weapon>
 	</visloadout>
@@ -161,6 +183,20 @@
 		<weapon lastresort="true">alliedknife</weapon>
 		<weapon index="8">buildtool</weapon>
 	</visloadout>
+	<visloadout id="fr-ltd-smg" arms="frarmy">
+		<weapon>m3a1</weapon>
+		<weapon>frbang</weapon>
+		<weapon lastresort="true">alliedknife</weapon>
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
+	<visloadout id="fr-smg-m3a1" arms="frarmy">
+		<weapon>m3a1</weapon>
+		<weapon>m1935a</weapon>
+		<weapon>frbang</weapon>
+		<weapon>frsmoke</weapon>
+		<weapon lastresort="true">alliedknife</weapon>
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
 	<visloadout id="fr-eng" arms="frarmy" atp="3">
 		<weapon>mas36</weapon>
 		<weapon>alliedsatchel</weapon>
@@ -187,7 +223,15 @@
 		<weapon>boysmk1</weapon>
 		<weapon>m1935a</weapon>
 		<weapon>frsmoke</weapon>
+		<weapon lastresort="true">alliedknife</weapon>
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
+	<visloadout id="fr-sapper" arms="frarmy" atp="2">
+		<weapon>m1935a</weapon>
 		<weapon>alliedsatchel</weapon>
+		<weapon>alliedsatchel</weapon>
+		<weapon>frbang</weapon>
+		<weapon>frsmoke</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
 		<weapon index="8">buildtool</weapon>
 	</visloadout>
@@ -288,6 +332,20 @@
 		<weapon lastresort="true">axisknife</weapon>
 		<weapon index="8">buildtool</weapon>
 	</visloadout>
+	<visloadout id="de-ltd-smg" arms="dearmy">
+		<weapon>mp34</weapon>
+		<weapon>stigr</weapon>
+		<weapon lastresort="true">axisknife</weapon>
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
+	<visloadout id="de-smg-mp34" arms="dearmy">
+		<weapon>mp34</weapon>
+		<weapon>luger</weapon>
+		<weapon>stigr</weapon>
+		<weapon>hgr39</weapon>
+		<weapon lastresort="true">axisknife</weapon>
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
 	<visloadout id="de-eng" arms="dearmy" atp="3">
 		<weapon>kar98k</weapon>
 		<weapon>axissatchel</weapon>
@@ -314,7 +372,15 @@
 		<weapon>pzb39</weapon>
 		<weapon>luger</weapon>
 		<weapon>hgr39</weapon>
+		<weapon lastresort="true">axisknife</weapon>
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
+	<visloadout id="de-sapper" arms="dearmy" atp="2">
+		<weapon>luger</weapon>
 		<weapon>axissatchel</weapon>
+		<weapon>axissatchel</weapon>
+		<weapon>stigr</weapon>
+		<weapon>hgr39</weapon>
 		<weapon lastresort="true">axisknife</weapon>
 		<weapon index="8">buildtool</weapon>
 	</visloadout>
@@ -349,6 +415,13 @@
 		<weapon>ammo</weapon>
 		<weapon index="8">buildtool</weapon>
 	</visloadout>
+	<visloadout id="de-rfl-fg42g" arms="deparanopack" atp="3" para="false">	
+		<weapon>fg42g</weapon>
+		<weapon>stigr</weapon>
+		<weapon>hgr39</weapon>
+		<weapon lastresort="true">axisknife</weapon>
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
 	<visloadout id="de-pzschreck" arms="dearmy" atp="3">
 		<weapon>pzschreck</weapon>
 		<weapon>luger</weapon>		
@@ -357,6 +430,13 @@
 	</visloadout>
 	
 	<!-- German Airborne Troops -->
+	<visloadout id="de-para-fg42g" arms="depara" atp="3" para="true">	
+		<weapon>fg42g</weapon>
+		<weapon>stigr</weapon>
+		<weapon>hgr39</weapon>
+		<weapon lastresort="true">axisknife</weapon>
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
 	<visloadout id="de-para-rfl" arms="depara" atp="3" para="true">	
 		<weapon>kar98k</weapon>
 		<weapon>stigr</weapon>
@@ -422,7 +502,15 @@
 		<weapon>boysmk1</weapon>
 		<weapon>colt1911</weapon>
 		<weapon>ussmoke</weapon>
+		<weapon lastresort="true">alliedknife</weapon>
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
+	<visloadout id="us-sapper" arms="usarmy">
+		<weapon>colt1911</weapon>
 		<weapon>alliedsatchel</weapon>
+		<weapon>alliedsatchel</weapon>
+		<weapon>mark2</weapon>
+		<weapon>ussmoke</weapon>
 		<weapon lastresort="true">alliedknife</weapon>
 		<weapon index="8">buildtool</weapon>
 	</visloadout>
@@ -436,6 +524,20 @@
 	</visloadout>
 	<visloadout id="us-smg" arms="usarmy">
 		<weapon>m1thompson</weapon>
+		<weapon>colt1911</weapon>
+		<weapon>mark2</weapon>
+		<weapon>ussmoke</weapon>
+		<weapon lastresort="true">alliedknife</weapon>
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
+	<visloadout id="us-ltd-smg" arms="usarmy">
+		<weapon>m3a1</weapon>
+		<weapon>mark2</weapon>
+		<weapon lastresort="true">alliedknife</weapon>
+		<weapon index="8">buildtool</weapon>
+	</visloadout>
+	<visloadout id="us-smg-m3a1" arms="usarmy">
+		<weapon>m3a1</weapon>
 		<weapon>colt1911</weapon>
 		<weapon>mark2</weapon>
 		<weapon>ussmoke</weapon>
