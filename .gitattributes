@@ -1,1 +1,249 @@
-*       text=auto
+# DEFAULT
+* text=auto
+
+#common settings that generally should always be used with your language specific settings
+
+# Auto detect text files and perform LF normalization
+# http://davidlaing.com/2012/09/19/customise-your-gitattributes-to-become-a-git-ninja/
+
+
+# C
+*.c text
+*.cc text
+*.cxx text
+*.cpp text
+*.c++ text
+*.hpp text
+*.h text
+*.h++ text
+*.hh text
+
+# Objective-c
+*.m
+*.mm
+
+# Web
+*.html text
+*.css text
+*.sass text
+*.scss text
+*.less text
+*.styl text
+*.js text
+*.ts text
+*.coffee text
+*.json text
+*.htm text
+*.html text
+*.xml text
+.htaccess text
+
+# Lua
+*.lua text
+
+# Perl
+*.pl 		text
+*.pm 		text
+
+# Python files
+*.pxd		text
+*.py 		text
+*.py3 		text
+*.pyw 		text
+*.pyx  		text
+*.db		binary
+*.p 		binary
+*.pkl 		binary
+*.pyc 		binary
+*.pyd		binary
+*.pyo 		binary
+
+# PHP
+*.php text
+*.css text
+
+# Ruby
+*.rb text
+
+# Windows
+*.svg text
+*.txt text
+*.ini text
+*.inc text
+*.scm text
+*.sql text
+*.sh text
+*.bat text
+*.iss text
+
+# Compiled Object files
+*.slo binary
+*.lo binary
+*.o binary
+*.obj binary
+
+# Precompiled Headers
+*.gch binary
+*.pch binary
+
+# Compiled Dynamic libraries
+*.so binary
+*.dylib binary
+*.dll binary
+
+# Compiled Static libraries
+*.lai binary
+*.la binary
+*.a binary
+*.lib binary
+
+# Executables
+*.exe binary
+*.out binary
+*.app binary
+
+# Documents
+*.doc	 diff=astextplain
+*.DOC	 diff=astextplain
+*.docx diff=astextplain
+*.DOCX diff=astextplain
+*.dot  diff=astextplain
+*.DOT  diff=astextplain
+*.pdf  diff=astextplain
+*.PDF	 diff=astextplain
+*.rtf	 diff=astextplain
+*.RTF	 diff=astextplain
+*.md text
+*.adoc text
+*.textile text
+*.mustache text
+*.csv text
+*.tab text
+*.tsv text
+*.sql text
+
+# Graphics
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.tif binary
+*.tiff binary
+*.ico binary
+*.svg binary
+*.eps binary
+*.mdl binary
+*.flt binary
+*.dds binary
+
+# Xcode
+# compare .pbxproj files as binary and always merge as union
+*.pbxproj binary -merge=union
+
+# Visual Studio
+*.sln text eol=crlf
+*.csproj text eol=crlf
+*.vbproj text eol=crlf
+*.fsproj text eol=crlf
+*.dbproj text eol=crlf
+*.vcxproj text eol=crlf
+*.vcxitems text eol=crlf
+*.props text eol=crlf
+*.filters text eol=crlf
+
+# Git config
+.gitattributes text
+.gitignore text
+.gitconfig text
+
+# code analysis config
+.jshintrc text
+.jscsrc text
+.jshintignore text
+.csslintrc text
+
+# misc config
+*.yaml text
+*.yml text
+.editorconfig text
+
+# Documentation
+*.md text
+LICENSE text
+AUTHORS text
+
+
+#
+## These files are binary and should be left untouched
+#
+
+# (binary is a macro for -text -diff)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.mov binary
+*.mp4 binary
+*.mp3 binary
+*.flv binary
+*.fla binary
+*.swf binary
+*.gz binary
+*.zip binary
+*.7z binary
+*.ttf binary
+*.eot binary
+*.woff binary
+*.woff2 binary
+*.pyc binary
+*.pdf binary
+
+# Playnet
+*.gr2 binary
+*.wav binary
+*.cab binary
+*.dat binary
+*.odt binary
+*.pcx binary
+*.scc binary
+*.sdm binary
+*.spt binary
+*.tga binary
+
+*.aim text
+*.atlas text
+*.belt text
+*.cfml text
+*.cg text
+*.cmp text
+*.compress text
+*.control text
+*.dtd text
+*.eng text
+*.evt text
+*.ez text
+*.fnt text
+*.frag text
+*.gs text
+*.hdr text
+*.hit text
+*.jmm text
+*.js text
+*.key text
+*.loadout text
+*.loc text
+*.mass text
+*.old text
+*.pol text
+*.script text
+*.sta text
+*.stall text
+*.state text
+*.tkt text
+*.turret text
+*.uixml text
+*.URL text
+*.uv text
+*.veh text
+*.vert text
