@@ -17,6 +17,10 @@
 	<include file="british-atr.loadout.xml"/>
 </variant>
 
+<variant id="uk-sapper" shape="british-sapper" description="Sapper: Webley Revolver" icon="Engineer">
+	<include file="british-sapper.loadout.xml"/>
+</variant>
+
 <variant id="ukgrenadier" shape="british-nade" description="Grenadier: Enfield No.4 Mk I" icon="Grenadier">
 	<include file="british-nade.loadout.xml"/>
 </variant>
@@ -44,6 +48,14 @@
 
 <variant id="uk-smg" shape="british-smg" description="SMG: Thomspon M1929" icon="SMG">
 	<include file="british-smg.loadout.xml"/>
+</variant>
+
+<variant id="uk-ltd-smg" shape="british-ltd-smg" description="Reserve SMG: Sten Mk. II" icon="SMG">
+	<include file="british-ltd-smg.loadout.xml"/>
+</variant>
+
+<variant id="uk-smg-stenmk2" shape="british-smg-stenmk2" description="SMG: Sten Mk. II" icon="SMG">
+	<include file="british-smg-stenmk2.loadout.xml"/>
 </variant>
 
 <variant id="uk-piat" shape="british-piat" description="AT: PIAT" icon="PIAT">
@@ -81,6 +93,10 @@
 	<include file="french-atr.loadout.xml"/>
 </variant>
 
+<variant id="fr-sapper" shape="french-sapper" description="Sapper: Modèle 1935" icon="Engineer">
+	<include file="french-sapper.loadout.xml"/>
+</variant>
+
 <variant id="frgrenadier" shape="french-nade" description="Grenadier: MAS 36" icon="Grenadier">
 	<include file="french-nade.loadout.xml"/>
 </variant>
@@ -111,6 +127,14 @@
 
 <variant id="fr-smg" shape="french-smg" description="SMG: MAS 38" icon="SMG">
 	<include file="french-smg.loadout.xml"/>
+</variant>
+
+<variant id="fr-ltd-smg" shape="french-ltd-smg" description="Reserve SMG: M3A1 'Grease Gun'" icon="SMG">
+	<include file="french-ltd-smg.loadout.xml"/>
+</variant>
+
+<variant id="fr-smg-m3a1" shape="french-smg-m3a1" description="SMG: M3A1 'Grease Gun'" icon="SMG">
+	<include file="french-smg-m3a1.loadout.xml"/>
 </variant>
 
 <variant id="fr-bazooka" shape="french-bazooka" description="AT: M9 Bazooka" icon="Bazooka">
@@ -146,8 +170,12 @@
 
 <!-- German Units -->
 
-<variant id="de-atr" shape="german-atr" description="AT: Panzerbüchse 39" icon="ATR">
+<variant id="de-atr" shape="german-atr" description="AT: PanzerbÃ¼chse 39" icon="ATR">
 	<include file="german-atr.loadout.xml"/>
+</variant>
+
+<variant id="de-sapper" shape="german-sapper" description="Sapper: Pistole Parabellum 1908" icon="Engineer">
+	<include file="german-sapper.loadout.xml"/>
 </variant>
 
 <variant id="degrenadier" shape="german-nade" description="Grenadier: Karabiner 98k" icon="Grenadier">
@@ -178,20 +206,32 @@
 	<include file="german-smg.loadout.xml"/>
 </variant>
 
+<variant id="de-ltd-smg" shape="german-ltd-smg" description="Reserve SMG: MP34" icon="SMG">
+	<include file="german-ltd-smg.loadout.xml"/>
+</variant>
+
+<variant id="de-smg-mp34" shape="german-smg-mp34" description="SMG: MP34" icon="SMG">
+	<include file="german-smg-mp34.loadout.xml"/>
+</variant>
+
 <variant id="de-earlyassault" shape="german-assault" description="Rifleman: Gewehr 41(W)" icon="Rifleman">
 	<include file="german-earlyassault.loadout.xml"/>
 </variant>
 <variant id="de-assault" shape="german-assault" description="Rifleman: Gewehr 43" icon="Rifleman">
 	<include file="german-assault.loadout.xml"/>
 </variant>
-<variant id="de-earlyassault" shape="german-assault" description="Rifleman: Gewehr 41" icon="Rifleman">
-	<include file="german-earlyassault.loadout.xml"/>
+<variant id="de-rfl-fg42g" shape="german-assault-fg42g" description="Rifleman: FG42 Ausf. G" icon="Rifleman">
+	<include file="german-assault-fg42g.loadout.xml"/>
 </variant>
 <variant id="de-pzschreck" shape="german-pzschreck" description="AT: Panzerschreck" icon="PzSchreck">
 	<include file="german-pzschreck.loadout.xml"/>
 </variant>
 
 <!-- German Paratroop Units -->
+
+<variant id="de-para-fg42g" shape="german-para-fg42g" description="Airborne Rifleman: FG42 Ausf. G" icon="Rifleman">	
+	<include file="german-para-fg42g.loadout.xml"/>
+</variant>	
 
 <variant id="de-para-rfl" shape="german-para-rfl" description="Airborne Rifleman: Karabiner 98k" icon="Rifleman">	
 	<include file="german-para-rfl.loadout.xml"/>
@@ -205,7 +245,7 @@
 	<include file="german-para-lmg.loadout.xml"/>
 </variant>	
 
-<variant id="de-para-atr" shape="german-para-atr" description="AT: Panzerbüchse 39" icon="ATR">	
+<variant id="de-para-atr" shape="german-para-atr" description="AT: PanzerbÃ¼chse 39" icon="ATR">	
 	<include file="german-para-atr.loadout.xml"/>
 </variant>	
 
@@ -228,12 +268,24 @@
 	<include file="us-atr.loadout.xml"/>
 </variant>
 
+<variant id="us-sapper" shape="us-sapper" description="Sapper: M1911A1 Automatic Pistol" icon="Engineer">
+	<include file="us-sapper.loadout.xml"/>
+</variant>
+
 <variant id="us-rifle" shape="us-rifle" description="Rifleman: M1903A3 Springfield" icon="Rifleman">
 	<include file="us-rifle.loadout.xml"/>
 </variant>
 
 <variant id="us-smg" shape="us-smg" description="SMG: M1A1 Thompson" icon="SMG">
 	<include file="us-smg.loadout.xml"/>
+</variant>
+
+<variant id="us-ltd-smg" shape="us-ltd-smg" description="Reserve SMG: M3A1 'Grease Gun'" icon="SMG">
+	<include file="us-ltd-smg.loadout.xml"/>
+</variant>
+
+<variant id="us-smg-m3a1" shape="us-smg-m3a1" description="SMG: M3A1 'Grease Gun'" icon="SMG">
+	<include file="us-smg-m3a1.loadout.xml"/>
 </variant>
 
 <variant id="us-bar" shape="us-bar" description="AR: M1918 BAR" icon="BAR">

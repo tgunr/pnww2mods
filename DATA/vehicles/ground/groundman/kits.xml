@@ -225,6 +225,13 @@
 			<object name="us_canteen" model="us_canteen"/>
 		</kit>
 
+		<kit name="us-sapper">
+			<object name="us_helmet"/>
+			<object name="us_holster" model="us_holster"/>
+			<object name="us_haversack" model="us_haversack"/>
+			<object name="us_canteen" model="us_canteen"/>
+		</kit>
+
 		<kit name="us-assault">
 			<object name="us_helmet"/>
 			<object name="us_riflebelt" model="us_riflebelt"/>
@@ -240,6 +247,20 @@
 		</kit>
 
 		<kit name="us-smg">
+			<object name="us_helmet"/>
+			<object name="us_canteen" model="us_canteen"/>
+			<object name="us_smgammo" model="us_smgammo"/>
+			<object name="us_holster" model="us_holster"/>
+		</kit>
+
+		<kit name="us-ltd-smg">
+			<object name="us_helmet"/>
+			<object name="us_canteen" model="us_canteen"/>
+			<object name="us_smgammo" model="us_smgammo"/>
+			<object name="us_holster" model="us_holster"/>
+		</kit>
+
+		<kit name="us-smg-m3a1">
 			<object name="us_helmet"/>
 			<object name="us_canteen" model="us_canteen"/>
 			<object name="us_smgammo" model="us_smgammo"/>
@@ -314,7 +335,22 @@
 			<object name="uk_brenp_lf"/>
 			<object name="uk_pholster_rt_web"/>
 			<object name="uk_gas_lf"/>
-			
+		</kit>
+
+		<kit name="uk-ltd-smg">
+			<object name="uk_helmet"/>
+			<object name="uk_canteen"/>
+			<object name="uk_brenp_lf"/>
+			<object name="uk_pholster_rt_web"/>
+			<object name="uk_gas_lf"/>
+		</kit>
+
+		<kit name="uk-smg-stenmk2">
+			<object name="uk_helmet"/>
+			<object name="uk_canteen"/>
+			<object name="uk_brenp_lf"/>
+			<object name="uk_pholster_rt_web"/>
+			<object name="uk_gas_lf"/>
 		</kit>
 		
 		<kit name="uk-eng">
@@ -339,6 +375,15 @@
 		</kit>
 		
 		<kit name="uk-atr">
+			<object name="uk_helmet"/>
+			<object name="uk_canteen"/>
+			<object name="uk_etool"/>
+			<object name="uk_brenp_lf"/>
+			<object name="uk_pholster_rt_web"/>
+			<object name="uk_gas_lf"/>
+		</kit>
+
+		<kit name="uk-sapper">
 			<object name="uk_helmet"/>
 			<object name="uk_canteen"/>
 			<object name="uk_etool"/>
@@ -444,6 +489,16 @@
 			<object name="fr_lg_ammo_lf"/>
 			<object name="fr_sm_ammo_lf"/>
 		</kit>
+
+		<kit name="fr-sapper">
+			<object name="fr_pholster_rt_web"/>
+			<object name="fr_helmet"/>
+			<object name="fr_canteen"/>
+			<object name="fr_gas_rt"/>			
+			<object name="fr_ammobag_lf"/>
+			<object name="fr_lg_ammo_lf"/>
+			<object name="fr_sm_ammo_lf"/>
+		</kit>
 			
 		<kit name="fr-eng">
 			<object name="fr_helmet"/>
@@ -473,6 +528,22 @@
 			<object name="fr_pholster_rt_web"/>
 		</kit>
 		
+		<kit name="fr-ltd-smg">
+			<object name="fr_helmet"/>
+			<object name="fr_canteen"/>
+			<object name="fr_gas_rt"/>
+			<object name="fr_smg_ammo_lf"/>	
+			<object name="fr_pholster_rt_web"/>
+		</kit>
+
+		<kit name="fr-smg-m3a1">
+			<object name="fr_helmet"/>
+			<object name="fr_canteen"/>
+			<object name="fr_gas_rt"/>
+			<object name="fr_smg_ammo_lf"/>	
+			<object name="fr_pholster_rt_web"/>
+		</kit>
+
 		<kit name="frgrenadier">
 			<object name="fr_lg_ammo_lf"/>
 			<object name="fr_pholster_rt_web"/>
@@ -595,7 +666,27 @@
 			<object name="de_smg_ammo_rt"/>
 			<object name="de_pholster_lf_web"/>			
 		</kit>
-			
+		
+		<kit name="de-ltd-smg">
+			<object name="de_helmet"/>
+			<object name="de_bread"/>
+			<object name="de_canteen_rt"/>
+			<object name="de_etool"/>
+			<object name="de_gas"/>			
+			<object name="de_smg_ammo_rt"/>
+			<object name="de_pholster_lf_web"/>			
+		</kit>
+	
+		<kit name="de-smg-mp34">
+			<object name="de_helmet"/>
+			<object name="de_bread"/>
+			<object name="de_canteen_rt"/>
+			<object name="de_etool"/>
+			<object name="de_gas"/>			
+			<object name="de_smg_ammo_rt"/>
+			<object name="de_pholster_lf_web"/>			
+		</kit>
+
 		<kit name="degrenadier">
 			<object name="de_helmet"/>
 			<object name="de_gas"/>
@@ -621,6 +712,14 @@
 			<object name="de_etool"/>
 			<object name="de_pholster_rt_hip"/>
 		</kit>
+
+		<kit name="de-sapper">
+			<object name="de_helmet"/>
+			<object name="de_canteen_rt"/>
+			<object name="de_gas"/>
+			<object name="de_etool"/>
+			<object name="de_pholster_rt_hip"/>
+		</kit>
 		
 		<kit name="de-lmg">
 			<object name="de_helmet"/>
@@ -638,6 +737,15 @@
 		
 		<kit name="de-assault">
 			<object name="de_helmet"/>
+			<object name="de_bread"/>
+			<object name="de_canteen_rt"/>
+			<object name="de_etool"/>
+			<object name="de_gas"/>
+			<object name="de_rifle_ammo_lf"/>
+			<object name="de_rifle_ammo_rt"/>
+		</kit>
+		<kit name="de-rfl-fg42g">
+			<object name="de_parahelm"/>
 			<object name="de_bread"/>
 			<object name="de_canteen_rt"/>
 			<object name="de_etool"/>
@@ -673,6 +781,16 @@
 		</kit>
 		
 		<kit name="de-para-rfl">
+			<object name="de_parahelm"/>
+			<object name="de_bread"/>
+			<object name="de_canteen_rt"/>
+			<object name="de_etool"/>
+			<object name="de_gas"/>
+			<object name="de_rifle_ammo_lf"/>
+			<object name="de_rifle_ammo_rt"/>
+		</kit>
+
+		<kit name="de-para-fg42g">
 			<object name="de_parahelm"/>
 			<object name="de_bread"/>
 			<object name="de_canteen_rt"/>

@@ -51,7 +51,7 @@
 			<view class="contacticon"  x="115" height="15" width="15" rtop="135" index="6" style="color: #FF0000;"/>
 			<radiobutton label="${widgets.map.waypoints.add.mortar}" x="5" rright="5" height="15" rtop="150"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
-				onclick="setWaypointType('mortar')"/>
+				onclick="setWaypointType('target')"/>
 			<view class="contacticon"  x="115" height="15" width="15" rtop="150" index="7" style="color: #FF0000;"/>
 
 		</view>
@@ -107,7 +107,7 @@
 					header.label = getlocstring('widgets.map.waypoints.contact.danger');
 				else if(wpType == "unknown")
 					header.label = getlocstring('widgets.map.waypoints.contact.unknown');
-				else if(wpType == "mortar")
+				else if(wpType == "target")
 					header.lable = getlocstring('widgets.map.waypoints.add.mortar');
 			}
 		}
