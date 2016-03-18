@@ -1699,7 +1699,7 @@
 				if(member.wantscrew && !member.spawned)
 					commanders[commanders.length] = member;
 				
-				if(member.iscrew)
+				if(member.iscrew && !member.spawned)
 					crewmen[crewmen.length] = member;
 				
 				//if(member.missionleader)
