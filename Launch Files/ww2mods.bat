@@ -1,1 +1,1 @@
-ww2 -window 1 -width 1024 -height 768 -data 1 -log 1
+ww2 -window 1 -width 1024 -height 768 -data 1 -log 1 -datadir "DATA/"
