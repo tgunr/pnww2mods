@@ -378,10 +378,10 @@
 			
 			if(vtype != null)
 			{
-				if(value != null)
-					game.saveconvergence(vtype, value, 1); // Convergence is changing, value is dirty.
+				if(isNaN(value))
+					game.saveconvergence(vtype, 200, 0); // Convergence hasn't changed, let's pull the saved (or default) setting
 				else
-					game.saveconvergence(vtype, value, 0); // Convergence hasn't changed, let's pull the saved (or default) setting
+					game.saveconvergence(vtype, value, 1); // Convergence is changing, value is dirty.
 			}		
 			
 			return;
