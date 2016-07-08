@@ -11,7 +11,7 @@
 		<image x="10" width="330" height="12" rtop="20" src="ui/textures/test/horiz_underline.bmp"/>
 		
 		<caption label="${widgets.map.waypoints.name}" x="10" y="191" width="320" height="20" style="font-size: -1; color: #FFFFFF;"/>
-		<textcontrol id="wp-name" x="10" y="175" height="15" width="200" acceptsfocus="true" maxlength="8" style="background-color: #FFFFFF22;  color: #e9e3d9;" onmousedown="this.text = ''"/>
+		<textcontrol id="wp-name" x="10" y="175" height="15" width="200" acceptsfocus="true" maxlength="10" style="background-color: #FFFFFF22;  color: #e9e3d9;" onmousedown="this.text = ''"/>
 		
 		<caption label="${widgets.map.waypoints.notes}" x="10" y="146" width="200" height="20" maxlength="128" style="font-size: -1; color: #FFFFFF;"/>
 		<text id="wp-notes" x="10" y="45" height="100" width="200" acceptsfocus="true" style="background-color: #FFFFFF22;  color: #e9e3d9;"/>
