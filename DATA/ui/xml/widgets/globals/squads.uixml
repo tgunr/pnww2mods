@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
  
 <tab id="squad-tab" label="  ${common.squads.tab}  " x="0" y="0" width="930" height="460" align="right"
 	onshow="showSquads()" tip="${common.squads.tab.tip}" onupdate="runSquadUpdate()">
@@ -400,6 +400,7 @@
 		
 		var initSquad			= true;
 		var showOfflineMates	= false;
+		var members = null;
 		var squadListSize		= 0;
 		var squadListPage		= 1;
 		var squadListPageSize	= 20;		
@@ -513,6 +514,7 @@
 				{
 					if(initSquad || squad.modified)
 					{
+						members = (showOfflineMates) ? squad.members: squad.onlinemembers;
 						updateSquadMembers();
 						updateSquadInfo();
 						pageSquadList(0, true);
@@ -532,6 +534,7 @@
 				}
 				else
 				{
+					members = null;
 					// no squad left pane
 					if(creatingSquad != game.globals.creatingsquad)
 					{
@@ -668,7 +671,6 @@
 		{
 			refreshingMembers = true;
 			
-			var members = (showOfflineMates) ? squad.members: squad.onlinemembers;
 			var start	= (squadListPage * squadListPageSize) - squadListPageSize;
 			var stop	= (start + squadListPageSize > members.length) ? members.length: start + squadListPageSize;
 
@@ -759,7 +761,6 @@
 		{
 			refreshingMembers = true;
 		
-			var members = (showOfflineMates) ? squad.members: squad.onlinemembers;
 			var start	= (squadListPage * squadListPageSize) - squadListPageSize;
 			var stop	= (start + squadListPageSize > members.length) ? members.length: start + squadListPageSize;
 
@@ -927,6 +928,8 @@
 			squadListPage		= 1;
 
 			toggleOffline.label = (showOfflineMates) ? getlocstring('common.squads.members.hideoffline'): getlocstring('common.squads.members.showoffline');
+
+			members = (showOfflineMates) ? squad.members: squad.onlinemembers;
 			updateSquadMembers();
 			pageSquadList(0);
 		}
