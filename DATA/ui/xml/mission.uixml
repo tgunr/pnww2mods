@@ -47,7 +47,9 @@
 								<caption x="356" y="0" width="76" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;"
 									label="${mission.readytab.forces.intel}        " align="right"/>
 							</view>
-							<list id="spawnTree" x="0" width="425" height="300" rtop="40" onselect="spawnTree.clickTree(false)" ondblselect="spawnTree.clickTree(true)"/>
+							<list id="spawnTree" x="0" width="425" height="280" rtop="40" onselect="spawnTree.clickTree(false)" ondblselect="spawnTree.clickTree(true)">
+								<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+							</list>
 							<caption label="${mission.readytab.supply.info}" x="10" height="15" y="65" rright="10"
 								 style="color: #e9e3d9ff; font-size: -1;" acceptmouseclick="false"/>
 							<text id="noVehicles" x="10" width="405" height="280" rtop="50"
@@ -243,7 +245,7 @@
 								{
 									var row 	= "";
 									var name	= tree.list.id;
-									var width	= tree.getWidth();
+									var width	= tree.getWidth() - 12;
 									var indent 	= tree.indent * node.level;
 									
 									if(node.branch)
