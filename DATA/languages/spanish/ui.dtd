@@ -1303,7 +1303,7 @@
 <!ENTITY loc.host.127 "/delay <código>">
 <!ENTITY loc.host.171 "Las unidades en {1} han sido llamadas a su defensa">
 <!ENTITY loc.host.146 "No mantenemos ninguna &#34;AB&#34; (Base del Ejército) en {1}.">
-<!ENTITY loc.host.39 "Informe enviado a CRS, gracias. Si un Administrador &#34;GM&#34; está investigando actualmente sobre este asunto él puede utilizar la información que envió, en cualquier caso no contestará de forma individual a los /reports.">
+<!ENTITY loc.host.39 "Informe enviado a CRS, gracias. Si un Administrador &#34;GM&#34; está investigando actualmente sobre este asunto él puede utilizar la información que envió, en cualquier caso no contestará de forma individual a los /reports y /bug.">
 <!ENTITY loc.host.407 "/nukepersonas">
 <!ENTITY loc.host.178 "Ahora eres visible al comando /who">
 <!ENTITY loc.host.148 "{1} no está en (disputa) &#34;contested&#34;.">
@@ -1526,7 +1526,7 @@
 <!ENTITY loc.host.423 "Entrenadores: {1}.">
 <!ENTITY loc.host.31 "modo &#34;GM&#34; (Administrador del Juego) desactivado.">
 <!ENTITY loc.host.52 "USO">
-<!ENTITY loc.host.95 "Envía un breve informe, de una línea, a cerca que un problema/fallo/trampa/explotación/queja a CRS. Los Informes son revisados diariamente pero pueden también ser vistos por &#34;GM&#34; (Administradores del Juego) en línea. Por favor tenga en cuenta que es solo una herramienta para informar; y no respondemos individualmente a estos informes">
+<!ENTITY loc.host.95 "Envía un breve informe, de una línea, a cerca que un trampa/explotación/queja a CRS. Los Informes son revisados diariamente pero pueden también ser vistos por &#34;GM&#34; (Administradores del Juego) en línea. Por favor tenga en cuenta que es solo una herramienta para informar; y no respondemos individualmente a estos informes">
 <!ENTITY loc.host.513 "La unidad &#39;{1}&#39; ya existe, intente con otro nombre.">
 <!ENTITY loc.host.609 "Un Administrador del Juego cambió la posesión de {1} para {2}.">
 <!ENTITY loc.host.428 "Expulsando a &#39;{1}&#39; del servidor del juego.">
@@ -1876,6 +1876,11 @@
 <!ENTITY loc.host.308 "Pidiendo a tu actual Brigada que se mueva a la ciudad seleccionada en tu mapa.">
 <!ENTITY loc.host.533 "Error: Imposible cambiar el líder de misión en este momento.">
 <!ENTITY loc.host.553 "STOs actuales: {1}.">
+<!ENTITY loc.host.667 "BUG">
+<!ENTITY loc.host.668 "/bug <problema>">
+<!ENTITY loc.host.669 "Envía un breve informe, de una línea, a cerca que un problema/fallo a CRS. Los Informes son revisados diariamente pero pueden también ser vistos por &#34;GM&#34; (Administradores del Juego) en línea. Por favor tenga en cuenta que es solo una herramienta para informar; y no respondemos individualmente a estos informes">
+<!ENTITY loc.host.670 "/uptime">
+<!ENTITY loc.host.671 "Muestra la cantidad de tiempo que el servidor ha estado funcionando sin interrupción">
 <!ENTITY loc.mspawn.12 "Esta misión ya tiene actualmente una salida móvil desplegada.">
 <!ENTITY loc.mspawn.503 "No puede cancelar el despliegue hasta que pasen &#37;d segundos.">
 <!ENTITY loc.mspawn.504 "El objetivo está a la distancia adecuada para desplegar la Salida Móvil.">
