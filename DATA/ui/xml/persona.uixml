@@ -157,7 +157,8 @@
 		var welcomed				= false;
 		var doWelcome			= !scenarioPlay();
 		var requireTraining 		= false;
-		var graduated				= TutIsComplete("basic");
+		//var graduated				= TutIsComplete("basic");
+		var graduated = true; // HACK: Training is broken
 		var shortcut					= false;
 		var requestpersonas	= true;
 		var selected					= 0;

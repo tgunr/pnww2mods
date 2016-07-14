@@ -23,7 +23,8 @@
 		self.rankLock				= findview("rank-lock");
 		
 		self.requireTraining 		= false;
-		self.graduated				= TutIsComplete("basic");
+		//self.graduated				= TutIsComplete("basic");
+		self.graduated = true; // HACK: Training is broken
 		self.shortcut					= false;
 		self.welcomed				= false;
 		self.requestpersonas	= true;
