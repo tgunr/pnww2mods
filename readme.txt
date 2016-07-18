@@ -1,36 +1,22 @@
 ============================================
-WWII Online: Version 1.34.16 (January 2016)
+World War II Online
 ============================================
-
-This update includes several improvements to the new mobile spawn rules, and art updates for our newly introduced weapons.
-
-You can help us accomplish even more game development by becoming a hero builder, go to:
-
-[ www.wwiionline.com/hero ]
-
-Salute from Cornered Rat Software!
-
+1.35.4.0 (July 2016)
 ============================================
-Player Placed Objects (PPO’s)
-============================================
-- FRU’s may now be deployed by the Morris & Halftrack.
-- FRU’s now allowed on bridge missions.
-- FRU boxes are painted green and flags are worn / darker.
-- Gun emplacement lifetime is now 30 minutes (which is reset by character entering object).
+- Reenabled .overrun and .fallback commands.
 
-============================================
-Art / Weapons
-============================================
-- Better aiming / first person view for: Grease Gun, Sten Gun and Mas40.
-- Fixed an animation issue with Grease Gun reload.
-- Fixed an animation issue with MP34 while crawling.
-- Recoil reduced slightly on Grease Gun.
+- Players no longer fall through transport ship's deck when boarding them.
+- Placed prone infantry's camera where the actual third-person model's head is.
+- Fixed paratroopers getting stuck when jumping from too high an altitude (~3km).
+- Rain cloud altitude increased to 2km.
+- Destroyer EWS increased to 4km.
 
-============================================
-Other Fixes
-============================================
-- Bedford blackout bug resolved.
-- EWS range for trucks and guns lowered to 1500 meters.
-- Fixed some discrepancies with infantry stamina.
-- Increased resolution of rank icons.
-- Minor UI / text updates.
+- The entire squad member list should now sort properly, not just the members on the current page.
+- "Auto-purge" of inactive squad recruits enabled.
+- Squads can now be created using the name of a previously disbanded squad.
+
+- Fixed UI text overlapping in the unit select screen.
+- Fixed issues the Mac was having with waypoint labels.
+
+- Added .bug command for reporting bugs. This logs a little bit of extra info to help us track down the actual cause of the problem.
+- Numerous behind-the-scenes improvements and cleanup.
