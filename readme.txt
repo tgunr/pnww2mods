@@ -6,7 +6,6 @@ World War II Online
 - Reenabled .overrun and .fallback commands.
 
 - Players no longer fall through transport ship's deck when boarding them.
-- Placed prone infantry's camera where the actual third-person model's head is.
 - Fixed paratroopers getting stuck when jumping from too high an altitude (~3km).
 - Rain cloud altitude increased to 2km.
 - Destroyer EWS increased to 4km.
