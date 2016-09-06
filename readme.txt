@@ -1,21 +1,21 @@
 ============================================
 World War II Online
+Version 1.35.5 (September 2016)
 ============================================
-1.35.4.0 (July 2016)
+This update includes two new important game balancing mechanisms, some general fixes, and a new crash reporter (HockeyApp) that automatically sends crash logs to Cornered Rat Software. This means we will automatically learn of all game crashes without the user having to report it. We will also have a dashboard providing us details about where the crash happened in the code (includes a stack trace), how many other users experienced the crash; on what platform, when it happened, and on what game version. 
+This is a major victory for our development efforts and ensuring the highest quality possible of our software.
+Support our development and become a hero builder, [ wwiionline.com/hero ]
+
 ============================================
-- Reenabled .overrun and .fallback commands.
+New features
+============================================
+- AO limits are now based on the side with the lowest population, not the overall population.
+- A significantly underpopulated side will receive a bonus to their capture/recapture speed.
+- Integrated HockeyApp, which will notify us when a CTD occurs and send us information to help us diagnose it.
 
-- Players no longer fall through transport ship's deck when boarding them.
-- Fixed paratroopers getting stuck when jumping from too high an altitude (~3km).
-- Rain cloud altitude increased to 2km.
-- Destroyer EWS increased to 4km.
-
-- The entire squad member list should now sort properly, not just the members on the current page.
-- "Auto-purge" of inactive squad recruits enabled.
-- Squads can now be created using the name of a previously disbanded squad.
-
-- Fixed UI text overlapping in the unit select screen.
-- Fixed issues the Mac was having with waypoint labels.
-
-- Added .bug command for reporting bugs. This logs a little bit of extra info to help us track down the actual cause of the problem.
+============================================
+Fixes
+============================================
+- Fixed ATRs being unable to build the foxhole PPO.
+- Fixed the camera position being incorrect when parachuting.
 - Numerous behind-the-scenes improvements and cleanup.
