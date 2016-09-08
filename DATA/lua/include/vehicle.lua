@@ -83,11 +83,7 @@ vehicle.vehTypeGetByRequires = function(req)
 	spec.type 		= (req.wType > 0) and req.wType or spec.type;
 	
 	-- create a spec
-	local wspec = vehicle.weapCreateSpec("")
-	wspec.wCountry = spec.country
-	wspec.wCategory = spec.category
-	wspec.wClass = spec.class
-	wspec.wType = spec.type
+	local wspec = vehicle.weapCreateSpec(spec.country, spec.category, spec.class, spec.type);
 	
 	-- return the vehicle type
 	return vehicle.vehTypeGetBySpec(wspec);

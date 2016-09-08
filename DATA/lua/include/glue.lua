@@ -185,11 +185,7 @@ function getWeaponSpec(key)
  if tolua.type(key) == 'WEAPON_SPEC' then
   return key
  elseif type(key) == 'table' then
-  local spec = weapCreateSpec("")
-  spec.wCountry = key[1]
-  spec.wCategory = key[2]
-  spec.wClass = key[3]
-  spec.wType = key[4]
+  local spec = weapCreateSpec(key[1], key[2], key[3], key[4]);    
   return spec
  elseif type(key) == 'string' then
   return weapFindWeaponByName(key)
