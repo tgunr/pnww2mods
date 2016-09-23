@@ -33,7 +33,7 @@
 	<include file="british-ltmortar.loadout.xml" />
 </variant>
 
-<!-- British Paratroop Units -->
+<!-- British Units -->
 <variant id="ukrifle" shape="british-rifle" description="Rifleman: Enfield No.4 Mk I" icon="Rifleman">
 	<include file="british-rifle.loadout.xml"/>
 </variant>
@@ -62,6 +62,11 @@
 	<include file="british-piat.loadout.xml"/>
 </variant>
 
+<variant id="uk-assault" shape="british-assault" description="Rifleman: M1 Garand" icon="Rifleman">
+	<include file="british-assault.loadout.xml"/>
+</variant>
+
+<!-- British Paratroop Units -->
 <variant id="uk-para-rfl" shape="british-para-rfl" description="Rifleman: Enfield No.4 Mk I" icon="Rifleman">	
 	<include file="british-para-rfl.loadout.xml"/>
 </variant>	
