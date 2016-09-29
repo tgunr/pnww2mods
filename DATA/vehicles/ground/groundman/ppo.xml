@@ -88,7 +88,7 @@
 		<param name="viewoffset" value="2"/>
 		<param name="buildtime" value="15000"/>
 		<param name="avoidance" value="4"/>
-		<param name="timeout-minutes" value="5"/>
+		<param name="timeout-minutes" value="15"/>
 		<param name="allowplace" value="9"/>
 	</ppo>
 	<ppo name="ge" description="Gun Emplacement" sto-type="6">
@@ -119,6 +119,7 @@
 		<param name="allowplace" value="6"/>
 		<param name="denyplace" value="9"/> <!-- overrides default of eng built -->
 		<param name="allowspawn" value="7/1,7/2,7/3"/> <!-- allows light guns -->
+		<param name="timeout-minutes" value="25"/>
 	</ppo>
 	<!-- Delivered by art team as AmmoFru.FLT==>ammofru.flt -->
 	<ppo name="afru" description="Ammo-only Field Reinforcement Unit" sto-type="7">
@@ -134,6 +135,7 @@
 		<param name="damage-capacity" value="150000"/>
 		<param name="allowplace" value="9"/> <!-- overrides default of eng only -->
 		<param name="spawnable" value="false"/>
+		<param name="timeout-minutes" value="25"/>
 	</ppo>
 	<!-- Delivered from art as Citymsp.FLT=>citymsp.flt -->
 	<!-- Accompanied by woodcrate.dds -->
@@ -151,6 +153,7 @@
 		<param name="allowplace" value="6"/>
 		<param name="denyplace" value="9"/> <!-- overrides default of eng built -->
 		<param name="spawnable" value="true"/>
+		<param name="timeout-minutes" value="25"/>
 	</ppo>
 	<!-- Delivered from art as sandbags.FLT==>sandbags.flt -->
 	<!-- Accompanied by Sandbags_Diffuse.dds -->
@@ -164,7 +167,7 @@
 		<param name="viewoffset" value="2"/>
 		<param name="buildtime" value="15000"/>
 		<param name="avoidance" value="4"/>
-		<param name="timeout-minutes" value="5"/>
+		<param name="timeout-minutes" value="10"/>
 		<param name="allowplace" value="9"/>
 		<param name="damage-threshold" value="500"/>
 		<param name="damage-capacity" value="10000"/>
@@ -179,7 +182,7 @@
 		<param name="viewoffset" value="2"/>
 		<param name="buildtime" value="15000"/>
 		<param name="avoidance" value="4"/>
-		<param name="timeout-minutes" value="5"/>
+		<param name="timeout-minutes" value="10"/>
 		<param name="damage-threshold" value="1000"/>
 		<param name="damage-capacity" value="150000"/>
 	</ppo>
