@@ -109,7 +109,7 @@
 		<param name="surfaceflags" value="0,1,3"/>
 		<param name="rayadjust" value=".75,1.5,0"/>
 		<param name="rotation" value="90"/>
-		<param name="viewoffset" value="4"/>
+		<param name="viewoffset" value="8"/>
 		<param name="enemyfacdist" value="400"/>
 		<param name="targetdist" value="-3000"/>
 		<param name="treecheck" value="4"/>
@@ -163,10 +163,10 @@
 		<param name="rayadjust" value="1,1,-.5"/>
 		<param name="raytolerance" value="10"/>
 		<param name="tilttolerance" value="40"/>
-		<param name="rotation" value="180"/>
+		<param name="rotation" value="90"/>
 		<param name="viewoffset" value="2"/>
 		<param name="buildtime" value="15000"/>
-		<param name="avoidance" value="4"/>
+		<param name="avoidance" value="1"/>
 		<param name="timeout-minutes" value="10"/>
 		<param name="allowplace" value="9"/>
 		<param name="damage-threshold" value="500"/>
@@ -181,7 +181,7 @@
 		<param name="rotation" value="180"/>
 		<param name="viewoffset" value="2"/>
 		<param name="buildtime" value="15000"/>
-		<param name="avoidance" value="4"/>
+		<param name="avoidance" value="2"/>
 		<param name="timeout-minutes" value="10"/>
 		<param name="damage-threshold" value="1000"/>
 		<param name="damage-capacity" value="150000"/>
