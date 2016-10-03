@@ -1,6 +1,6 @@
 ============================================
 World War II Online
-Version 1.35.5 (September 2016)
+Version 1.35.5.1 (October 2016)
 ============================================
 Support our development and become a hero builder, [ wwiionline.com/hero ]
 
