@@ -114,7 +114,7 @@
 		<param name="targetdist" value="-3000"/>
 		<param name="treecheck" value="4"/>
 		<param name="damage-threshold" value="1000"/>
-		<param name="damage-capacity" value="600000"/><!-- now 4x the strength of existing MSP -->
+		<param name="damage-capacity" value="250000000"/><!-- should require 4 satchels to kill -->
 		<param name="spawnable" value="true"/>
 		<param name="allowplace" value="6"/>
 		<param name="denyplace" value="9"/> <!-- overrides default of eng built -->
@@ -122,7 +122,7 @@
 		<param name="timeout-minutes" value="25"/>
 	</ppo>
 	<!-- Delivered by art team as AmmoFru.FLT==>ammofru.flt -->
-	<ppo name="afru" description="Ammo-only Field Reinforcement Unit" sto-type="7">
+	<ppo name="afru" description="Ammo-only Field Reinforcement Unit" sto-type="6">
 		<param name="modelname" value="ammofru"/>
 		<param name="surfaceflags" value="0,1,3"/>
 		<param name="rayadjust" value=".75,1.5,0"/>
