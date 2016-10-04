@@ -133,7 +133,7 @@
 		<param name="treecheck" value="4"/>
 		<param name="damage-threshold" value="1000"/>
 		<param name="damage-capacity" value="150000"/>
-		<param name="allowplace" value="9"/> <!-- overrides default of eng only -->
+		<param name="allowplace" value="6,9"/> <!-- overrides default of eng only -->
 		<param name="spawnable" value="false"/>
 		<param name="timeout-minutes" value="25"/>
 	</ppo>
