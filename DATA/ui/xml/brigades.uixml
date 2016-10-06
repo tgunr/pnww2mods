@@ -408,7 +408,7 @@
 			onshow='setHelp(getlocstring("common.map.tab.help")); tplTab()' tip="${common.map.tab.tip}">
 			<include file="widgets/map.uixml"/>
 		</tab>
-		<!--<include file="widgets/globals/tutorials.uixml"/>-->
+		<include file="widgets/globals/tutorials.uixml"/>
 		<include file="widgets/globals/squads.uixml"/>
 		<include file="widgets/globals/manuals.uixml"/>
 		<include file="widgets/globals/settings.uixml"/>
