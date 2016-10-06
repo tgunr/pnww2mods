@@ -90,6 +90,8 @@
 		<param name="avoidance" value="4"/>
 		<param name="timeout-minutes" value="15"/>
 		<param name="allowplace" value="9"/>
+		<param name="damage-threshold" value="0"/>
+		<param name="damage-capacity" value="0"/> <!-- make indestructible -->
 	</ppo>
 	<ppo name="ge" description="Gun Emplacement" sto-type="6">
 		<param name="modelname" value="atgunpit1"/>
@@ -102,6 +104,8 @@
 		<param name="cooldown" value="300000"/>
 		<param name="buildtime" value="30000"/>
 		<param name="timeout-minutes" value="15"/>
+		<param name="damage-threshold" value="1000"/>
+		<param name="damage-capacity" value="250000000"/><!-- should require 4 satchels to kill -->
 	</ppo>
 	<!-- Delivered from art as FMT.FLT=>fms.flt -->
 	<ppo name="fmsp" description="Fortified Mobile Spawn" sto-type="7">
@@ -169,7 +173,7 @@
 		<param name="avoidance" value="1"/>
 		<param name="timeout-minutes" value="10"/>
 		<param name="allowplace" value="9"/>
-		<param name="damage-threshold" value="500"/>
+		<param name="damage-threshold" value="5000"/>
 		<param name="damage-capacity" value="10000"/>
 	</ppo>
 	<!-- Delivered from ART as TankTrap_ppo.FLT ==> tanktrap_ppo.flt -->
@@ -183,7 +187,7 @@
 		<param name="buildtime" value="15000"/>
 		<param name="avoidance" value="2"/>
 		<param name="timeout-minutes" value="10"/>
-		<param name="damage-threshold" value="1000"/>
+		<param name="damage-threshold" value="5000"/>
 		<param name="damage-capacity" value="150000"/>
 	</ppo>
 </ppos>
