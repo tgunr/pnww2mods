@@ -204,7 +204,8 @@
 			if(alert == null)
 			{
 				cprint("Next alert not found, checking for completion alert!\n");
-				alert = TutStepAddAlert(curStep.GetCompletionAlert());
+				if(curStep != null)
+  				alert = TutStepAddAlert(curStep.GetCompletionAlert());
 			}
 			
 			if(alert != null) 

@@ -150,4 +150,8 @@
 		<function>deploy mobile spawn</function>
 		<key>z</key>
 	</control>	
+        <control>
+                <function>cycle ammo</function>
+                <key>backspace</key>
+        </control>
 </controlset>

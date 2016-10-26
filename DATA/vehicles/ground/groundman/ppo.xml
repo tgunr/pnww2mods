@@ -71,6 +71,12 @@
 		<param name="oktextures" value="clear1"/>
 		<!-- lifetime on the host [default: don't] -->
 		<param name="timeout-minutes" value="0"/>
+		<!-- identify whether ppo is spawnable or not -->
+		<param name="spawnable" value="false"/>
+		<!-- allow the following vehicle types to place ppos -->
+		<param name="allowplace" value="9/3"/> <!--  Makes Engineers the default placers of PPOs -->
+		<!-- allow the following classes to spawn from PPOs allowed to spawn vehicles -->
+		<param name="allowspawn" value="9"/> <!--  Makes Troops default class allowed to spawn from PPO -->
 	</defaults>
 	<!-- ppos definitions start here; ppos get an id starting at 1 and counting up in the order listed here -->
 	<ppo name="ifp" description="Infantry Fighting Position" sto-type="6">
@@ -82,7 +88,10 @@
 		<param name="viewoffset" value="2"/>
 		<param name="buildtime" value="15000"/>
 		<param name="avoidance" value="4"/>
-		<param name="timeout-minutes" value="5"/>
+		<param name="timeout-minutes" value="15"/>
+		<param name="allowplace" value="9"/>
+		<param name="damage-threshold" value="0"/>
+		<param name="damage-capacity" value="0"/> <!-- make indestructible -->
 	</ppo>
 	<ppo name="ge" description="Gun Emplacement" sto-type="6">
 		<param name="modelname" value="atgunpit1"/>
@@ -95,9 +104,30 @@
 		<param name="cooldown" value="300000"/>
 		<param name="buildtime" value="30000"/>
 		<param name="timeout-minutes" value="15"/>
+		<param name="damage-threshold" value="1000"/>
+		<param name="damage-capacity" value="250000000"/><!-- should require 4 satchels to kill -->
 	</ppo>
-	<ppo name="fru" description="Field Reinforcement Unit" sto-type="7">
-		<param name="modelname" value="msp"/>
+	<!-- Delivered from art as FMT.FLT=>fms.flt -->
+	<ppo name="fmsp" description="Fortified Mobile Spawn" sto-type="7">
+		<param name="modelname" value="fms"/>
+		<param name="surfaceflags" value="0,1,3"/>
+		<param name="rayadjust" value=".75,1.5,0"/>
+		<param name="rotation" value="90"/>
+		<param name="viewoffset" value="8"/>
+		<param name="enemyfacdist" value="400"/>
+		<param name="targetdist" value="-3000"/>
+		<param name="treecheck" value="4"/>
+		<param name="damage-threshold" value="1000"/>
+		<param name="damage-capacity" value="250000000"/><!-- should require 4 satchels to kill -->
+		<param name="spawnable" value="true"/>
+		<param name="allowplace" value="6"/>
+		<param name="denyplace" value="9"/> <!-- overrides default of eng built -->
+		<param name="allowspawn" value="9/,7/1,7/3"/> <!-- allows infantry and light guns -->
+		<param name="timeout-minutes" value="25"/>
+	</ppo>
+	<!-- Delivered by art team as AmmoFru.FLT==>ammofru.flt -->
+	<ppo name="afru" description="Ammo-only Field Reinforcement Unit" sto-type="6">
+		<param name="modelname" value="ammofru"/>
 		<param name="surfaceflags" value="0,1,3"/>
 		<param name="rayadjust" value=".75,1.5,0"/>
 		<param name="rotation" value="90"/>
@@ -106,6 +136,58 @@
 		<param name="targetdist" value="-3000"/>
 		<param name="treecheck" value="4"/>
 		<param name="damage-threshold" value="1000"/>
+		<param name="damage-capacity" value="150000"/>
+		<param name="allowplace" value="6,9"/> <!-- overrides default of eng only -->
+		<param name="spawnable" value="false"/>
+		<param name="timeout-minutes" value="25"/>
+	</ppo>
+	<!-- Delivered from art as Citymsp.FLT=>citymsp.flt -->
+	<!-- Accompanied by woodcrate.dds -->
+	<ppo name="cfru" description="City-only Field Reinforcement Unit" sto-type="7">
+		<param name="modelname" value="citymsp"/>
+		<param name="surfaceflags" value="1"/>
+		<param name="rayadjust" value=".75,1.5,0"/>
+		<param name="rotation" value="90"/>
+		<param name="viewoffset" value="4"/>
+		<param name="enemyfacdist" value="400"/>
+		<param name="targetdist" value="-3000"/>
+		<param name="treecheck" value="4"/>
+		<param name="damage-threshold" value="1000"/>
+		<param name="damage-capacity" value="150000"/>
+		<param name="allowplace" value="6"/>
+		<param name="denyplace" value="9"/> <!-- overrides default of eng built -->
+		<param name="spawnable" value="true"/>
+		<param name="timeout-minutes" value="25"/>
+	</ppo>
+	<!-- Delivered from art as sandbags.FLT==>sandbags.flt -->
+	<!-- Accompanied by Sandbags_Diffuse.dds -->
+	<ppo name="sbag" description="Infantry Sandbags" sto-type="6">
+		<param name="modelname" value="sandbags"/>
+		<param name="allowplaceclass" value="9"/>
+		<param name="rayadjust" value="1,1,-.5"/>
+		<param name="raytolerance" value="10"/>
+		<param name="tilttolerance" value="40"/>
+		<param name="rotation" value="90"/>
+		<param name="viewoffset" value="2"/>
+		<param name="buildtime" value="15000"/>
+		<param name="avoidance" value="1"/>
+		<param name="timeout-minutes" value="10"/>
+		<param name="allowplace" value="9"/>
+		<param name="damage-threshold" value="5000"/>
+		<param name="damage-capacity" value="10000"/>
+	</ppo>
+	<!-- Delivered from ART as TankTrap_ppo.FLT ==> tanktrap_ppo.flt -->
+	<ppo name="ttrap" description="Tank Trap" sto-type="6">
+		<param name="modelname" value="tanktrap_ppo"/>
+		<param name="rayadjust" value="1,1,-.5"/>
+		<param name="raytolerance" value="10"/>
+		<param name="tilttolerance" value="40"/>
+		<param name="rotation" value="180"/>
+		<param name="viewoffset" value="2"/>
+		<param name="buildtime" value="15000"/>
+		<param name="avoidance" value="2"/>
+		<param name="timeout-minutes" value="10"/>
+		<param name="damage-threshold" value="5000"/>
 		<param name="damage-capacity" value="150000"/>
 	</ppo>
 </ppos>
