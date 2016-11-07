@@ -42,11 +42,9 @@
 		<!-- degrees of rotation we draw the object at -->
 		<param name="rotation" value="0"/>
 		<!-- cooldown in milliseconds -->
-		<!--<param name="cooldown" value="120000"/>-->
+		<param name="cooldown" value="120000"/>
 		<!-- buildtime in milliseconds -->
-		<!--<param name="buildtime" value="30000"/>-->
-		<param name="cooldown" value="0"/>
-		<param name="buildtime" value="0"/>
+		<param name="buildtime" value="30000"/>
 		<!-- what we can build on (see above) -->
 		<param name="buildflags" value="1,23"/>
 		<!-- what we must avoid (see above) -->
@@ -98,6 +96,8 @@
 		<param name="damage-capacity" value="3000000"/>
 	</ppo>
 	<ppo name="ge" description="Gun Emplacement" sto-type="6">
+	<param name="buildtime" value="0"/>
+	
 		<param name="modelname" value="atgunpit1"/>
 		<param name="avoidance" value="10"/>
 		<param name="rayadjust" value="4,4,-.5"/>
@@ -110,6 +110,8 @@
 		<param name="damage-capacity" value="50000000"/>
 	</ppo>
 	<ppo name="fmsp" description="Fortified Mobile Spawn" sto-type="7">
+	<param name="buildtime" value="0"/>
+	
 		<param name="modelname" value="fms"/>
 		<param name="rayadjust" value=".75,1.5,0"/>
 		<param name="raytolerance" value="10"/>
