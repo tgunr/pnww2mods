@@ -4,6 +4,7 @@
 sound1 = sounds\troop\k98.wav
 sound2 = sounds\troop\grenade-throw.wav
 sound3 = sounds\troop\grenade-throw.wav
+sound4 = sounds\troop\satchel-place.wav
 
 loadout = 1
 
@@ -25,6 +26,11 @@ weapon = desmokegrenade
 # Knife
 mountnum = 4
 weapon = knifegeneric
+
+# Satchel Charge HE
+mountnum = 5
+mountsound = sound4
+weapon = satchelhighexplosive
 
 # Ammo Box
 mountnum = 5
