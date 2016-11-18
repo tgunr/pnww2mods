@@ -92,8 +92,8 @@
 		<param name="avoidance" value="1.5"/>
 		<param name="timeout-minutes" value="15"/>
 		<param name="allowplace" value="9"/>
-		<param name="damage-threshold" value="100000"/>
-		<param name="damage-capacity" value="3000000"/>
+		<param name="damage-threshold" value="5000"/>
+		<param name="damage-capacity" value="5000"/> <!-- 1 Grenade -->
 	</ppo>
 	<ppo name="ge" description="Gun Emplacement" sto-type="6">
 		<param name="modelname" value="atgunpitppo"/>
@@ -106,8 +106,8 @@
 		<param name="cooldown" value="240000"/>
 		<param name="viewoffset" value="6"/>
 		<param name="treecheck" value="1"/>
-		<param name="damage-threshold" value="750000"/>
-		<param name="damage-capacity" value="50000000"/>
+		<param name="damage-threshold" value="500000"/> <!-- HE+ -->
+		<param name="damage-capacity" value="50000000"/> <!-- 1 Satch, ~50 top HE rounds -->
 	</ppo>
 	<ppo name="fmsp" description="Fortified Mobile Spawn" sto-type="7">
 		<param name="modelname" value="fms"/>
@@ -120,13 +120,13 @@
 		<param name="enemyfacdist" value="400"/>
 		<param name="targetdist" value="-3000"/>
 		<param name="treecheck" value="4"/>
-		<param name="damage-threshold" value="2500"/>
-		<param name="damage-capacity" value="250000000"/>
 		<param name="spawnable" value="true"/>
 		<param name="allowplace" value="6"/>
 		<param name="denyplace" value="9"/>
 		<param name="allowspawn" value="9/,7/1,7/3"/> <!-- allows infantry and light guns -->
 		<param name="timeout-minutes" value="0"/>
+		<param name="damage-threshold" value="500000"/> <!-- HE+ -->
+		<param name="damage-capacity" value="100000000"/> <!-- 2 Satch, ~200 top HE rounds -->
 	</ppo>
 	<ppo name="afru" description="Ammunition Cache" sto-type="6">
 		<param name="modelname" value="ammofru"/>
@@ -137,12 +137,12 @@
 		<param name="enemyfacdist" value="400"/>
 		<param name="targetdist" value="-3000"/>
 		<param name="treecheck" value="4"/>
-		<param name="damage-threshold" value="0"/>
-		<param name="damage-capacity" value="1000000"/>
 		<param name="allowplace" value="6"/>
 		<param name="denyplace" value="9"/>
 		<param name="spawnable" value="false"/>
 		<param name="timeout-minutes" value="15"/>
+		<param name="damage-threshold" value="0"/>
+		<param name="damage-capacity" value="20000"/> <!-- ~20 bullets, 2 grenades -->
 	</ppo>
 	<ppo name="cfru" description="Urban Mobile Spawn" sto-type="7">
 		<param name="modelname" value="citymsp"/>
@@ -162,7 +162,7 @@
 		<param name="spawnable" value="true"/>
 		<param name="timeout-minutes" value="0"/>
 		<param name="damage-threshold" value="0"/>
-		<param name="damage-capacity" value="1000000"/>
+		<param name="damage-capacity" value="20000"/> <!-- ~20 bullets, 2 grenades -->
 	</ppo>
 	<ppo name="sbag" description="Sandbags" sto-type="6">
 		<param name="modelname" value="sandbags"/>
@@ -174,8 +174,9 @@
 		<param name="viewoffset" value="2"/>
 		<param name="avoidance" value="0.5"/>
 		<param name="allowplace" value="9/3,9/1"/>
-		<param name="damage-threshold" value="2500"/>
-		<param name="damage-capacity" value="3000000"/>
+		<!--NOTE: Takes x3 damage from most sources.-->
+		<param name="damage-threshold" value="10000"/> <!-- Grenade+ -->
+		<param name="damage-capacity" value="300000"/> <!-- ~10 grenades, 1-2 AP rounds -->
 	</ppo>
 	<ppo name="ttrap" description="Tank Trap" sto-type="6">
 		<param name="modelname" value="tanktrap_ppo"/>
@@ -188,6 +189,6 @@
 		<param name="viewoffset" value="2"/>
 		<param name="avoidance" value="1"/>
 		<param name="damage-threshold" value="20000000"/>
-		<param name="damage-capacity" value="20000000"/>
+		<param name="damage-capacity" value="20000000"/> <!-- 1 Bomb/Satchel -->
 	</ppo>
 </ppos>
