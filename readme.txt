@@ -1,55 +1,73 @@
 ============================================
 World War II Online
-Version 1.35.6 (November 2016)
+Version 1.35.6.X (November 2016)
 ============================================
-We are ecstatic to unveil our new player placed objects that will allow players to create a more dynamic battlefield. The FMS (fortified mobile spawn) takes the place as the new mainstay spawn point as it is a heavy fortification capable of absorbing much more damage, and allowing light aa and atg's to spawn from it.
+Happy Holidays from Cornered Rat Software!
 
-We'd ask you to consider supporting our development team as a subscriber and/or become a hero builder [ wwiionline.com/hero ]. Thank you for all of your amazing support.
+We’re very excited to introduce our new player placed objects (PPO’s) to WWII Online, and we think it’s going to have a pretty big impact on how the game plays out. This Readme is a bit longer than normal, but there is a lot of detail and changes you need to know about, so please read this carefully!
 
-S! from Cornered Rat Software
-
-============================================
-Player Placed Objects (PPOs)
-============================================
-Added several new PPOs. Some units that can now place more than one PPO type by cycling through them using the "Backspace" key by default. The unit in [brackets] indicates which units can place each object.
-
-NEW: FORTIFIED MOBILE SPAWN [Trucks] 
-A player-placed spawn point for infantry and light guns. Vulnerable to heavier weapons and explosives, but impervious to small-arms fire. Is much larger and more obvious in the countryside, but looks extremely similar to the Gun Emplacement at a distance and can be easily camouflaged in a group of them. TS info and other tips posted inside of this structure.
-
-NEW: URBAN MOBILE SPAWN [Trucks] 
-A smaller version of the mobile spawn that can only be placed on paved areas in town. Extremely vulnerable to damage. Uses the old FRU model.
-
-FIELD RESUPPLY UNIT [Trucks] 
-A resupply point for vehicles and equipment. Extremely vulnerable to damage. Uses a modified version of the old FRU model. FRU is no longer a spawn point and is painted green. Multiple ammo FRU's can be placed on a single mission.
-
-FOXHOLE [Infantry] 
-A small pile of dirt and grass. Basically indestructible.
-
-NEW: SANDBAGS [Infantry] 
-A line of sandbags tall enough to aim over when crouching. Easily destroyed by explosives, but fairly resistant to most small-arms fire.
-
-GUN EMPLACEMENT [Engineer] 
-An earthen fortification made to house an anti-tank gun. Basically indestructible.
-
-NEW: TANK TRAP [Engineer] 
-A metal obstruction meant to prevent vehicles from passing. Only destructible using special equipment (an HE satchel).
+Support our development efforts and subscribe to the HERO Builder ranks at [ wwiionline.com/hero ]
 
 ============================================
-Infantry Predictor Improvements
+New Player Placed Objects (PPO’s)
 ============================================
-- Minor connection hiccups should no longer cause severe rubber-banding and warping.
-- Corrected collision bug where infantry would incorrectly render on rooftops or on the wrong side of walls.
-- Removed some less useful collision checks to improve FPS.
+- Fortified Mobile Spawn (FMS)
+- Urban Mobile Spawn (UMS)
+- Ammo Cache
+- Tank Trap
+- Sandbags
 
 ============================================
-Other Major Changes/Features
+New Features
 ============================================
-- Added the M1 Garand to the British kit.
-- Major code improvements that should help with future development.
+- PPO cycle function key (infantry & trucks)
+- Gun Emplacement & Foxhole now destroyable
+- M1 Garand added to the British kit (Tier 1)
+- Standard Bolt-Action Rifleman receive 1 HE satchel
 
 ============================================
-Tweaks/Fixes
+Fixes
 ============================================
-- Gun ranges are now made in 10m increments.
-- Fixed issue where CP capture would stall.
-- Fixed issues displaying player decals.
+- Squad and player decals now display properly again
+- Squished a CTD issue with Mac client
+- Tons of behind the scenes code fixes and corrections preparing for Steam
+
+============================================
+FORTIFIED MOBILE SPAWN (FMS)
+============================================
+The new fortified mobile spawn is now the main mobile spawn point. Infantry and both light anti-tank and light anti-aircraft guns can be spawned from these points. As the name suggests, it is fortified and capable of withstanding lots of hits. The FMS is truck deployed only, and there can only be a single spawn point per mission. It can be placed both on the frontier and in cities. There are two firing slits on the front of the object for defenders, and instructions on the wall to join Teamspeak and how to setup a zone of control (ZOC).
+
+[ HOW TO ATTACK ] Bombs from Aircraft, HE satchels and HE rounds from mortars or artillery / tank guns will have the most impact. However, small arms (including grenades) will have no effect.
+
+[ HOW TO DEFEND ] Expand your fortification by deploying multiple objects around the FMS (especially the Gun Emplacement [GE] ) and spawn light guns. The [GE] looks the same as the FMS from the air, therefore concealing it from being obvious.
+
+
+============================================
+URBAN MOBILE SPAWN (UMS)
+============================================
+The UMS is the old FRU model (boxes with radio), and may be only deployed within large cities on the "cobblestone" terrain. It is capable of fitting into tight spots the FMS cannot. Spawning only infantry (no guns), it is also very weak in terms of tolerance to damage. This object CANNOT be placed on the frontier, this is intentional.
+
+
+============================================
+AMMO CACHE
+============================================
+Two crates filled with ammunition. These ammo boxes can be deployed by a truck to leave a supply point for all ground based weapons. It has a 15 minute lifetime.
+
+
+============================================
+TANK TRAP
+============================================
+Placeable by Engineer class only, and only destroyable by HE satchels and bombs. A single HE satchel will remove this object. HE satchels are available with the Engineer (4), Sapper (2) and now Bolt-Action Rifleman (1) classes.
+
+
+============================================
+SANDBAGS
+============================================
+Placeable by Engineer and Standard Bolt-Action Rifleman classes only (not Semi-Auto). Sandbags are immune to small arms fire (grenades and anti-tank rifle can damage), and a few rounds of heavier weaponry will obliterate the object.
+
+
+============================================
+CYCLE BETWEEN PPO’S
+============================================
+[ INFANTRY ] Simply select the PPO build tool (9 key), Fire (LMB by default) to place, Aim (RMB by default) to cycle objects available to your class.
+[ TRUCKS ] Select Z to deploy, then hit the Cycle Ammo key (Backspace by default) to cycle.
