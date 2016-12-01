@@ -179,8 +179,8 @@
 		<param name="cooldown" value="75000"/>
 		<param name="buildtime" value="20000"/>
 		<!--NOTE: Takes x3 damage from most sources.-->
-		<param name="damage-threshold" value="10000"/> <!-- Grenade+ -->
-		<param name="damage-capacity" value="300000"/> <!-- ~10 grenades, 1-2 AP rounds -->
+		<param name="damage-threshold" value="251000"/> <!-- Mortar/HE+ -->
+		<param name="damage-capacity" value="8000000"/> <!-- 2-4 AP, 1-2 HE -->
 	</ppo>
 	<ppo name="ttrap" description="Tank Trap" sto-type="6">
 		<param name="modelname" value="tanktrap_ppo"/>
