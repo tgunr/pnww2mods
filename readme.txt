@@ -1,36 +1,45 @@
 ============================================
 World War II Online
-Version 1.35.6.X (November 2016)
+Version 1.35.6.3 (December 2016)
 ============================================
-Happy Holidays from Cornered Rat Software!
+This update is focused on making several modifications to the initial roll out of PPO’s. As planned, CRS absorbed player feedback through intermission testing. Thanks to you all for your thorough testing and bug reporting!
 
-We’re very excited to introduce our new player placed objects (PPO’s) to WWII Online, and we think it’s going to have a pretty big impact on how the game plays out. This Readme is a bit longer than normal, but there is a lot of detail and changes you need to know about, so please read this carefully!
+We have also attached important notes from the previous release (1.35.6.1) below, to encourage education o
 
-Support our development efforts and subscribe to the HERO Builder ranks at [ wwiionline.com/hero ]
-
-============================================
-New Player Placed Objects (PPO’s)
-============================================
-- Fortified Mobile Spawn (FMS)
-- Urban Mobile Spawn (UMS)
-- Ammo Cache
-- Tank Trap
-- Sandbags
+Support our development efforts and SUBSCRIBE to the HERO Builder ranks at [ wwiionline.com/hero ]
 
 ============================================
-New Features
+New Weapons shared for US Forces
 ============================================
-- PPO cycle function key (infantry & trucks)
-- Gun Emplacement & Foxhole now destroyable
-- M1 Garand added to the British kit (Tier 1)
-- Standard Bolt-Action Rifleman receive 1 HE satchel
+In an effort to rapidly balance this new update, we shared some French artillery weapons with the US forces. The following weapons have been added to the US kit:
+
+- 25mm light anti-tank gun.
+- 47mm medium anti-tank gun.
+- Hotchkiss 25mm anti-aircraft gun.
 
 ============================================
-Fixes
+Player Placed Object (PPO) Fixes
 ============================================
-- Squad and player decals now display properly again
-- Squished a CTD issue with Mac client
-- Tons of behind the scenes code fixes and corrections preparing for Steam
+- US FMS now correctly spawns light ATG’s and AAA.
+- Units that spawn from FMS can now RTB at FMS.
+- Ammo cache lifetime extended slightly.
+- SdKfz 251c now allows driver to cycle / place PPO’s.
+- Gun Emplacement can be placed much closer to other objects.
+- Increased cool down and build time of Gun Emplacement.
+- Reduced cool down and build time  of Sandbags.
+- Sandbags buffed to require 2-4AP or 1-2 HE rounds to destroy.
+- Mortar damage against PPOs increased.
+- Reduced Tank Trap cool down timer.
+
+============================================
+General Fixes
+============================================
+- Compass on all destroyers and troop transports corrected.
+- Morris tractor coasting bug fixed.
+- Squad recruitment fixed.
+- Credits updated.
+
+***IMPORTANT NOTES ABOUT PPO’S BELOW***
 
 ============================================
 FORTIFIED MOBILE SPAWN (FMS)
