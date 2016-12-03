@@ -97,13 +97,14 @@
 	</ppo>
 	<ppo name="ge" description="Gun Emplacement" sto-type="6">
 		<param name="modelname" value="atgunpitppo"/>
-		<param name="avoidance" value="8"/>
+		<param name="avoidance" value="0.95"/>
 		<param name="rayadjust" value="4,4,-.5"/>
 		<param name="raytolerance" value="10"/>
 		<param name="tilttolerance" value="20"/>
-		<param name="enemyfacdist" value="200"/>
+		<param name="enemyfacdist" value="175"/>
 		<param name="rotation" value="90"/>
-		<param name="cooldown" value="240000"/>
+		<param name="cooldown" value="270000"/>
+		<param name="buildtime" value="45000"/>
 		<param name="viewoffset" value="6"/>
 		<param name="treecheck" value="1"/>
 		<param name="damage-threshold" value="251000"/> <!-- Mortar/HE+ -->
@@ -113,6 +114,7 @@
 		<param name="modelname" value="fms"/>
 		<param name="rayadjust" value=".75,1.5,0"/>
 		<param name="raytolerance" value="10"/>
+		<param name="tilttolerance" value="20"/>
 		<param name="rotation" value="90"/>
 		<param name="viewoffset" value="6"/>
 		<param name="cooldown" value="0"/>
@@ -140,7 +142,7 @@
 		<param name="allowplace" value="6"/>
 		<param name="denyplace" value="9"/>
 		<param name="spawnable" value="false"/>
-		<param name="timeout-minutes" value="15"/>
+		<param name="timeout-minutes" value="20"/>
 		<param name="damage-threshold" value="0"/>
 		<param name="damage-capacity" value="20000"/> <!-- ~20 bullets, 2 grenades -->
 	</ppo>
@@ -174,9 +176,11 @@
 		<param name="viewoffset" value="2"/>
 		<param name="avoidance" value="0.5"/>
 		<param name="allowplace" value="9/3,9/1"/>
+		<param name="cooldown" value="75000"/>
+		<param name="buildtime" value="20000"/>
 		<!--NOTE: Takes x3 damage from most sources.-->
-		<param name="damage-threshold" value="10000"/> <!-- Grenade+ -->
-		<param name="damage-capacity" value="300000"/> <!-- ~10 grenades, 1-2 AP rounds -->
+		<param name="damage-threshold" value="251000"/> <!-- Mortar/HE+ -->
+		<param name="damage-capacity" value="8000000"/> <!-- 2-4 AP, 1-2 HE -->
 	</ppo>
 	<ppo name="ttrap" description="Tank Trap" sto-type="6">
 		<param name="modelname" value="tanktrap_ppo"/>
@@ -185,7 +189,7 @@
 		<param name="tilttolerance" value="40"/>
 		<param name="rotation" value="180"/>
 		<param name="enemyfacdist" value="100"/>
-		<param name="cooldown" value="420000"/>
+		<param name="cooldown" value="390000"/>
 		<param name="viewoffset" value="2"/>
 		<param name="avoidance" value="1"/>
 		<param name="damage-threshold" value="10000000"/>
