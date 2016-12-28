@@ -59,15 +59,15 @@
 			<!-- 	onclick="setWaypointType('spawn')"/> -->
 			<!-- <view class="contacticon"  x="115" height="15" width="15" rtop="120" index="5" style="color: #FF0000;"/> -->
 
-			<radiobutton label="${widgets.map.waypoints.contact.unknown}" x="5" rright="5" height="15" rtop="135"
+			<radiobutton label="${widgets.map.waypoints.contact.unknown}" x="5" rright="5" height="15" rtop="120"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('unknown')"/>
-			<view class="contacticon"  x="115" height="15" width="15" rtop="135" index="6" style="color: #FF0000;"/>
+			<view class="contacticon"  x="115" height="15" width="15" rtop="120" index="6" style="color: #FF0000;"/>
 
-			<radiobutton label="${widgets.map.waypoints.add.mortar}" x="5" rright="5" height="15" rtop="150"
+			<radiobutton label="${widgets.map.waypoints.add.mortar}" x="5" rright="5" height="15" rtop="135"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('mortar')"/>
-			<view class="contacticon"  x="115" height="15" width="15" rtop="150" index="7" style="color: #FF0000;"/>
+			<view class="contacticon"  x="115" height="15" width="15" rtop="135" index="7" style="color: #FF0000;"/>
 
 		</view>
 		<button id="popup-no" x="30" y="10" width="150" height="25" label="${popup.cancel}" onclick="addReport(false)"
@@ -124,8 +124,8 @@
 					header.label = getlocstring('widgets.map.waypoints.contact.unknown');
 				else if(wpType == "mortar")
 					header.label = getlocstring('widgets.map.waypoints.add.mortar');
-				else if(wpType == "ppo")
-					header.label = getlocstring('widgets.map.waypoints.contact.ppo');
+				else if(wpType == "spawn")
+					header.label = getlocstring('widgets.map.waypoints.contact.spawn');
 			}
 		}
 		
