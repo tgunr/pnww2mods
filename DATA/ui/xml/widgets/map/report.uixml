@@ -14,41 +14,56 @@
 		<caption id="contact-type" x="10" width="200" height="20" rtop="30" maxlength="128" style="font-size: -1; color: #FFFFFF;"/>
 		<text id="wp-notes" x="10" y="45" width="180" rtop="50" acceptsfocus="true" style="background-color: #FFFFFF22;  color: #e9e3d9;"/>
 			
-		<view x="200" y="40" rright="20" rtop="30" rright="10">
+		<view x="200" y="40" rright="20" rtop="30">
 			<caption label="${widgets.map.context.waypoints.add.report.type}" x="5" height="20" rright="5" rtop="0" maxlength="128"
 				style="font-size: -1; color: #FFFFFF;"/>				
-			<radiobutton label="${widgets.map.waypoints.contact.infantry}" x="5" rright="5" height="15" rtop="30"
+
+			<!-- <view class="contacticon"  x="115" height="15" width="15" rtop="15" index="8" style="color: #FF0000;"/> -->
+			<radiobutton label="${widgets.map.waypoints.contact.infantry}" x="5" rright="5" height="15" rtop="15"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('troop')" onshow="this.value = true;"/>
-			<view class="contacticon"  x="115" height="15" width="15" rtop="30" index="8" style="color: #FF0000;"/>
-			<radiobutton label="${widgets.map.waypoints.contact.armor}" x="5" rright="5" height="15" rtop="45"
+			<view class="contacticon"  x="115" height="15" width="15" rtop="15" index="8" style="color: #FF0000;"/>
+
+			<radiobutton label="${widgets.map.waypoints.contact.armor}" x="5" rright="5" height="15" rtop="30"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('land')"/>
-			<view class="contacticon"  x="115" height="15" width="15" rtop="45" index="2" style="color: #FF0000;"/>
-			<radiobutton label="${widgets.map.waypoints.contact.airforce}" x="5" rright="5" height="15" rtop="60"
+			<view class="contacticon"  x="115" height="15" width="15" rtop="30" index="2" style="color: #FF0000;"/>
+
+			<radiobutton label="${widgets.map.waypoints.contact.airforce}" x="5" rright="5" height="15" rtop="45"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('air')"/>
-			<view class="contacticon"  x="115" height="15" width="15" rtop="60" index="0" style="color: #FF0000;"/>
-			<radiobutton label="${widgets.map.waypoints.contact.shipping}" x="5" rright="5" height="15" rtop="75"
+			<view class="contacticon"  x="115" height="15" width="15" rtop="45" index="0" style="color: #FF0000;"/>
+
+			<radiobutton label="${widgets.map.waypoints.contact.shipping}" x="5" rright="5" height="15" rtop="60"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('sea')"/>
-			<view class="contacticon"  x="115" height="15" width="15" rtop="75" index="1" style="color: #FF0000;"/>	
-			<radiobutton label="${widgets.map.waypoints.contact.gun}" x="5" rright="5" height="15" rtop="90"
+			<view class="contacticon"  x="115" height="15" width="15" rtop="60" index="1" style="color: #FF0000;"/>	
+
+			<radiobutton label="${widgets.map.waypoints.contact.gun}" x="5" rright="5" height="15" rtop="75"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('gun')"/>
-			<view class="contacticon"  x="115" height="15" width="15" rtop="90" index="3" style="color: #FF0000;"/>
-			<radiobutton label="${widgets.map.waypoints.contact.truck}" x="5" rright="5" height="15" rtop="105"
+			<view class="contacticon"  x="115" height="15" width="15" rtop="75" index="3" style="color: #FF0000;"/>
+
+			<radiobutton label="${widgets.map.waypoints.contact.truck}" x="5" rright="5" height="15" rtop="90"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('truck')"/>
-			<view class="contacticon"  x="115" height="15" width="15" rtop="105" index="4" style="color: #FF0000;"/>
-			<radiobutton label="${widgets.map.waypoints.contact.danger}" x="5" rright="5" height="15" rtop="120"
+			<view class="contacticon"  x="115" height="15" width="15" rtop="90" index="4" style="color: #FF0000;"/>
+
+			<radiobutton label="${widgets.map.waypoints.contact.danger}" x="5" rright="5" height="15" rtop="105"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('danger')"/>
-			<view class="contacticon"  x="115" height="15" width="15" rtop="120" index="5" style="color: #FF0000;"/>
+			<view class="contacticon"  x="115" height="15" width="15" rtop="105" index="6" style="color: #FFF000;"/>
+
+			<!-- <radiobutton label="${widgets.map.waypoints.contact.spawn}" x="5" rright="5" height="15" rtop="120" -->
+			<!-- 	style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;" -->
+			<!-- 	onclick="setWaypointType('spawn')"/> -->
+			<!-- <view class="contacticon"  x="115" height="15" width="15" rtop="120" index="5" style="color: #FF0000;"/> -->
+
 			<radiobutton label="${widgets.map.waypoints.contact.unknown}" x="5" rright="5" height="15" rtop="135"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('unknown')"/>
 			<view class="contacticon"  x="115" height="15" width="15" rtop="135" index="6" style="color: #FF0000;"/>
+
 			<radiobutton label="${widgets.map.waypoints.add.mortar}" x="5" rright="5" height="15" rtop="150"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
 				onclick="setWaypointType('mortar')"/>
@@ -109,6 +124,8 @@
 					header.label = getlocstring('widgets.map.waypoints.contact.unknown');
 				else if(wpType == "mortar")
 					header.label = getlocstring('widgets.map.waypoints.add.mortar');
+				else if(wpType == "ppo")
+					header.label = getlocstring('widgets.map.waypoints.contact.ppo');
 			}
 		}
 		
