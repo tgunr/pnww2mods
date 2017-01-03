@@ -2330,7 +2330,6 @@
 <!ENTITY widgets.map.options.zoom.facilities "FACILITIES">
 <!ENTITY widgets.prefs.groups.hud.missionwaypoints "MISSION WAYPOINTS">
 <!ENTITY widgets.calibration.device.axisry "Rudder Y Axis">
-<!ENTITY widgets.map.waypoints.contact.gun "Enemy Gun">
 <!ENTITY widgets.idcard.rank "RANK">
 <!ENTITY widgets.prefs.groups.ui.colors.aws.low "LOW COLOR">
 <!ENTITY widgets.map.info.none "None">
@@ -2343,7 +2342,6 @@
 <!ENTITY widgets.prefs.groups.video.gamma "GAMMA CORRECTION">
 <!ENTITY widgets.prefs.groups.hud.mode "HUD MODE">
 <!ENTITY widgets.map.options.showobjectives "OBJECTIVES">
-<!ENTITY widgets.map.waypoints.contact.airforce "Enemy Air Force">
 <!ENTITY widgets.prefs.na "not applicable">
 <!ENTITY widgets.prefs.groups.infantry.corpse.time "CORPSE DURATION">
 <!ENTITY widgets.map.waypoints.add.attack "Attack Here!">
@@ -2368,7 +2366,6 @@
 <!ENTITY widgets.prefs.groups.sound.system.software "software">
 <!ENTITY widgets.calibration.device.axisslider2 "Slider 2">
 <!ENTITY widgets.prefs.groups.ui.tooltips "TOOLTIPS">
-<!ENTITY widgets.map.waypoints.contact.infantry "Enemy Infantry">
 <!ENTITY widgets.map.context.hc.takecharge "Take Charge">
 <!ENTITY widgets.prefs.groups.shadows.cockpits.tip "Select whether cockpits are shadowed. Turn off to increase performance.">
 <!ENTITY widgets.prefs.groups.sound.card.tip "Select which sound driver to use. One may provide better sound quality or performance depending on your hardware setup.">
@@ -2377,7 +2374,6 @@
 <!ENTITY widgets.infobar.tip "Current Campaign and the number of days this campaign has run. Time is indicated in game time.">
 <!ENTITY widgets.prefs.groups.sound.alerts "ALERTS">
 <!ENTITY widgets.map.options.zoom.regional "REGIONAL">
-<!ENTITY widgets.map.waypoints.contact "REPORT CONTACT">
 <!ENTITY widgets.map.tooltip.divhq "Division HQ">
 <!ENTITY widgets.calibration.device.reread "DETECT CONTROLLERS">
 <!ENTITY widgets.calibration.device.label "NAME">
@@ -2410,7 +2406,6 @@
 <!ENTITY widgets.map.context.waypoints.delete "Delete">
 <!ENTITY widgets.map.context.brigade.join "Join Brigade">
 <!ENTITY widgets.prefs.disabled "disabled">
-<!ENTITY widgets.map.waypoints.contact.unknown "Enemy Presence">
 <!ENTITY widgets.prefs.groups.visual.clutter.radius "RADIUS">
 <!ENTITY widgets.prefs.groups.sound.volume.tip "Control the level of volume for sound effects and music.">
 <!ENTITY widgets.map.context.activate "Make Active">
@@ -2554,7 +2549,6 @@
 <!ENTITY widgets.prefs.groups.visual.reflections "WATER REFLECTIONS">
 <!ENTITY widgets.prefs.groups.hud.ppos.nok "BAD PLACEMENT">
 <!ENTITY widgets.prefs.groups.shadows.objects "OBJECTS">
-<!ENTITY widgets.map.waypoints.contact.shipping "Enemy Shipping">
 <!ENTITY widgets.map.options.zoom.sector "SECTOR">
 <!ENTITY widgets.prefs.groups.ui.colors.aws.tip "Select your map&#39;s Air Warning System low and high volume colors.">
 <!ENTITY widgets.prefs.groups.sound.ambient.infrequent "infrequent">
@@ -2647,7 +2641,6 @@
 <!ENTITY widgets.prefs.groups.hud.icons "ICON MODE">
 <!ENTITY widgets.prefs.groups.visual.notracersmoke "SUPPRESS TRACER SMOKE">
 <!ENTITY widgets.map.options.showmydivision "MY DIVISION">
-<!ENTITY widgets.map.waypoints.contact.truck "Enemy Truck">
 <!ENTITY widgets.prefs.discard "DISCARD CHANGES">
 <!ENTITY widgets.prefs.groups.game.language.english "english">
 <!ENTITY widgets.prefs.groups.hud.custom.tip "Select which HUD windows are on by default.">
@@ -2659,7 +2652,6 @@
 <!ENTITY widgets.map.options.zoom.city "CITY">
 <!ENTITY widgets.prefs.groups.visual.reflections.tip "Turns on water reflections. Disable to improve performance.">
 <!ENTITY widgets.prefs.groups.shadows.grass.tip "Select whether grass is shadowed. Turn off to increase performance.">
-<!ENTITY widgets.map.waypoints.contact.armor "Enemy Armor">
 <!ENTITY widgets.prefs.groups.chat.reset "RESET TO DEFAULT RADIOS">
 <!ENTITY widgets.prefs.groups.sound.system "SOUND SYSTEM">
 <!ENTITY widgets.map.context.hc.nominate "Nominate OIC">
@@ -2703,11 +2695,20 @@
 <!ENTITY widgets.prefs.pending "You have changed some of your preferences. Would you like to save them now?">
 <!ENTITY widgets.prefs.groups.video.vertsync.tip "Tells the game to sync draw calls which the monitor&#39;s refresh rate. Disable to increase performance.">
 <!ENTITY widgets.prefs.groups.infantry.lod.lowest "lowest">
-<!ENTITY widgets.map.waypoints.contact.danger "Danger">
 <!ENTITY widgets.prefs.groups.sound.system.tip "Select whether 3d sounds are mixed through the sound card or software. One may provide better sound quality or performance depending on your hardware setup.">
 <!ENTITY widgets.prefs.groups.hud.mode.hide "hide hud">
 <!ENTITY widgets.infobar.day "Day">
 <!ENTITY widgets.map.context.position.target "My Mission Target">
+<!ENTITY widgets.map.waypoints.contact.gun "Enemy Gun">
+<!ENTITY widgets.map.waypoints.contact.airforce "Enemy Air Force">
+<!ENTITY widgets.map.waypoints.contact.infantry "Enemy Infantry">
+<!ENTITY widgets.map.waypoints.contact "REPORT CONTACT">
+<!ENTITY widgets.map.waypoints.contact.unknown "Enemy Presence">
+<!ENTITY widgets.map.waypoints.contact.shipping "Enemy Shipping">
+<!ENTITY widgets.map.waypoints.contact.truck "Enemy Truck">
+<!ENTITY widgets.map.waypoints.contact.armor "Enemy Armor">
+<!ENTITY widgets.map.waypoints.contact.spawn "Enemy Spawn">
+<!ENTITY widgets.map.waypoints.contact.danger "Danger">
 <!ENTITY widgets.calibration.mouse.desc "Move the mouse slider to suit your style of play. Left is less sensitive while right is more sensitive.">
 <!ENTITY widgets.map.tooltip.objective.defend "There is a defend objective here.">
 <!ENTITY widgets.prefs.groups.infantry.corpse.detail "DETAILED CORPSES">
