@@ -17,11 +17,10 @@ aileroncompressspeed = 0.77
 ruddercompressspeed = 0.84
 elevatorcompressspeed = 0.86
 # response times sec (full force)
-aileronresponsetime = 0.2
-elevatorresponsetime = 1.2
-#elevatorresponsetime = 0.2 (altered for testing v1.29 beta)
-rudderresponsetime = 2.4
 #rudderresponsetime = 0.5 (altered for testing v1.29 beta)
+aileronresponsetime = 0.16
+elevatorresponsetime = 0.15
+rudderresponsetime = 0.19
 throttleresponsetime = 1.0
 
 # tab effects, ratio of tab force at full tab deflection to total surface force
@@ -37,10 +36,11 @@ rudderspringtabratio = 0
 # static tabs, e.g. the tabs that are set on the ground
 # trim the plane for cruise flight, in an analysis FE
 # and copy the trim settings into the following fields
-ailerontabstatic = 0.077
+ailerontabstatic = 0.043
 #elevatortabstatic = -0.654 (altered below for aspect ratio fix)
-elevatortabstatic = -0.607
-ruddertabstatic = -0.23
+#elevatortabstatic = -0.514 (original)
+elevatortabstatic = -0.459
+ruddertabstatic = -0.37
 
 
 # fx speeds
