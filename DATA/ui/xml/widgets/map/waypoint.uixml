@@ -31,7 +31,7 @@
 			<!-- <view class="contacticon" id="mortar-img"  x="115" height="15" width="15" rtop="70" index="7" style="color: #FFFF00;"/> -->
 			<radiobutton id="mortar-button" label="${widgets.map.waypoints.add.mortar}" x="5" rright="5" height="15" rtop="70"
 				style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
-				onclick="setWaypointType('mortarwp')"/>
+				onclick="setWaypointType('mortar')"/>
 		</view>
 		
 		<button id="popup-no" x="30" y="10" width="150" height="25" label="${popup.cancel}" onclick="addWaypoint(false)"
