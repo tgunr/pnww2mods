@@ -2292,7 +2292,6 @@
 <!ENTITY widgets.idcard.tip "The ID Card shows important information about your current persona">
 <!ENTITY widgets.prefs.groups.chat.squadinvites "SQUAD INVITES">
 <!ENTITY widgets.prefs.groups.visual.shadows.tip "Select a shadow size. Select a smaller number for improved performance.">
-<!ENTITY widgets.prefs.groups.connection.vislimit.medium "medium">
 <!ENTITY widgets.keymapper.cats.views "Views">
 <!ENTITY widgets.map.waypoints.add.mortar "Mortar Barrage">
 <!ENTITY widgets.map.waypoints.approve "APPROVE">
@@ -5062,15 +5061,18 @@
 <!ENTITY widgets.prefs.groups.chat.reset.ok "Your request has been sent to the host. Please allow a few moments for your radios to be reset.">
 <!ENTITY widgets.prefs.groups.chat.reset.tip "Click this button to reset your radio channels to the host defaults. Only applicable during online play.">
 <!ENTITY widgets.prefs.groups.connection "CONNECTION PREFERENCES">
-<!ENTITY widgets.prefs.groups.connection.netcode2 "USE NETCODE2 (beta)">
-<!ENTITY widgets.prefs.groups.connection.netcode2.tip "Enables netcode2 which is an alternate method of communication with the game host. Might improve lag or warpy players.">
+<!ENTITY widgets.prefs.groups.connection.netcode "USE NETCODE3">
+<!ENTITY widgets.prefs.groups.connection.netcode.tip "Enables netcode3 which is an enhanced method of communication with the game host. Might improve lag or warpy players.">
 <!ENTITY widgets.prefs.groups.connection.network "NETWORK ROUTE">
 <!ENTITY widgets.prefs.groups.connection.network.best "use best">
 <!ENTITY widgets.prefs.groups.connection.network.secondary "secondary">
 <!ENTITY widgets.prefs.groups.connection.network.tip "Select which network route to use. &#34;Use best&#34; is the preferred option but you can force your connection to use a specific route to the game host if needed. Might improve lag or warpy players.">
 <!ENTITY widgets.prefs.groups.connection.vislimit "VISIBLE PLAYER LIMIT">
+<!ENTITY widgets.prefs.groups.connection.vislimit.veryhigh "very high">
 <!ENTITY widgets.prefs.groups.connection.vislimit.high "high">
+<!ENTITY widgets.prefs.groups.connection.vislimit.medium "medium">
 <!ENTITY widgets.prefs.groups.connection.vislimit.low "low">
+<!ENTITY widgets.prefs.groups.connection.vislimit.verylow "very low">
 <!ENTITY widgets.prefs.groups.connection.vislimit.tip "Select how many visible players you can see. Decrease to improve performance.">
 <!ENTITY widgets.prefs.groups.game "GAME PREFERENCES">
 <!ENTITY widgets.prefs.groups.game.credits "SHOW GAME CREDITS">
