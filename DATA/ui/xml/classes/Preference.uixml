@@ -69,6 +69,7 @@
 			addPreference('radialdensity', Preference.FLOAT, .5, true);
 			addPreference('radialradius', Preference.FLOAT, .5, true);
 			addPreference("visplayerlimit", Preference.SINT, 2, true);
+			addPreference("usenetcode", Preference.BOOL, true, true);
 			//addPreference("shadowsizeselect", Preference.SINT, 6, true);
 			addPreference('enableh2oshaders', Preference.BOOL, true, true);
 			addPreference('grassshader', Preference.BOOL, true, true);
@@ -134,6 +135,7 @@
 					addPreference('radialdensity', Preference.FLOAT, 1, true);
 					addPreference('radialradius', Preference.FLOAT, 1, true);
 					addPreference("visplayerlimit", Preference.SINT, 3, true);
+			    addPreference("usenetcode", Preference.BOOL, true, true);
 					addPreference("shadowsizeselect", Preference.SINT, 6, true);
 					addPreference('enableh2oshaders', Preference.BOOL, true, true);
 					addPreference('grassshader', Preference.BOOL, true, true);
@@ -174,6 +176,7 @@
 					addPreference('radialdensity', Preference.FLOAT, .5, true);
 					addPreference('radialradius', Preference.FLOAT, .5, true);
 					addPreference("visplayerlimit", Preference.SINT, 2, true);
+			    addPreference("usenetcode", Preference.BOOL, true, true);
 					addPreference("shadowsizeselect", Preference.SINT, 6, true);
 					addPreference('enableh2oshaders', Preference.BOOL, true, true);
 					addPreference('grassshader', Preference.BOOL, true, true);
@@ -213,6 +216,7 @@
 					addPreference('radialdensity', Preference.FLOAT, 0, true);
 					addPreference('radialradius', Preference.FLOAT, 0, true);
 					addPreference("visplayerlimit", Preference.SINT, 1, true);
+			    addPreference("usenetcode", Preference.BOOL, true, true);
 					addPreference("shadowsizeselect", Preference.SINT, 0, true);
 					addPreference('enableh2oshaders', Preference.BOOL, false, true);
 					addPreference('grassshader', Preference.BOOL, false, true);
