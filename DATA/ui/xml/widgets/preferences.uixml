@@ -168,12 +168,12 @@
 				<view width="150" height="15" rtop="100" rright="10">
 					<radiobutton label="${widgets.prefs.enabled}" x="5" y="0" width="70" height="15"
 						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
-						onclick="addPreference('usenetcode', Preference.BOOL, true, false);"
-						onshow="this.value = getPreference('usenetcode', Preference.BOOL, false, false);"/>
+						onclick="addPreference('usenetcode', Preference.BOOL, true, true);"
+						onshow="this.value = getPreference('usenetcode', Preference.BOOL, false, true);"/>
 					<radiobutton label="${widgets.prefs.disabled}" y="0" width="70" height="15" rright="5" 
 						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
-						onclick="addPreference('usenetcode', Preference.BOOL, false, false);"
-						onshow="this.value = !getPreference('usenetcode', Preference.BOOL, false, false);"/>
+						onclick="addPreference('usenetcode', Preference.BOOL, false, true);"
+						onshow="this.value = !getPreference('usenetcode', Preference.BOOL, false, true);"/>
 				</view>
 				<script>
 					<!-- 
