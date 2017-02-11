@@ -44,13 +44,12 @@
 		{
 			var now 	= (new Date()).getTime();
 			var timer	= client.despawntimer;
-			var wait	= (timer == -1) ? true: false;
 			var msg		= "";
 			
-			if(game.player.vehicletype != "floater" &&  (wait || timer > 0))
+			if (timer > 0 && game.player.vehicletype != "floater")	
 			{
-				if(timer > 0)
-					msg = getVariableLocString('exitvehicle.timer', timer);	
+				msg = getVariableLocString('exitvehicle.timer', timer);	
+				popup.setButtonEnabled("popup-yes", false);
 			}
 			else
 			{
