@@ -2993,9 +2993,11 @@
 <!ENTITY connect.lost.game "Game connection lost">
 <!ENTITY connect.lost.reconnect "Chat connection lost, reconnecting">
 <!ENTITY connect.lost.world "World connection lost">
-<!ENTITY connect.netcode2.disabled "[netcode2 disabled on server]">
-<!ENTITY connect.netcode2.firewall "[netcode2 connection failed, please check your firewall - reverting to standard network usage]">
-<!ENTITY connect.netcode2.reverting "[netcode2 connection failed, please check your firewall - reverting to standard network usage]">
+<!ENTITY connect.netcode3.disabled.server "[netcode3 disabled on server]">
+<!ENTITY connect.netcode3.enabled.server "[netcode3 available, but disabled locally]">
+<!ENTITY connect.netcode3.failed "[netcode3 connection failed, please check your firewall - reverting to standard network usage]">
+<!ENTITY connect.netcode3.enabled "[netcode3 enabled]">
+<!ENTITY connect.netcode3.disabled "[netcode3 disabled]">
 <!ENTITY connect.ping.kbps "Kbps: &#37;.1f in, &#37;.1f out.">
 <!ENTITY connect.ping.loss "Loss">
 <!ENTITY connect.ping.lossbig "*PACKET LOSS*">
