@@ -7,7 +7,8 @@
 		var request	= (new Date()).getTime(); 
 		var client 	= game.player.client;
 		var popup 	= showPopup("despawn", getlocstring('exitvehicle.init'), doDespawn);
-		
+	        var wait        = 0;
+	
 		game.enableimapinput(false);
 		client.enabledespawntimer(!game.bailedout);
 
@@ -51,7 +52,7 @@
 				msg = getVariableLocString('exitvehicle.timer', timer);	
 				popup.setButtonEnabled("popup-yes", false);
 			}
-			else
+			else if (wait++ > 3) // delay just a bit so we get the update timer first
 			{
 				msg = getlocstring('exitvehicle.ok');
 				popup.setButtonEnabled("popup-yes", true);
