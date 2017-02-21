@@ -199,12 +199,13 @@
 					
 					function initVis(list)
 					{
+                        var options		= new Array("0", "1", "2");
 						var current = getPreference("visplayerlimit", Preference.SINT, 2, true);
 						
 						list.clearRows(true);
 						
 						for(var i = 0; i < options.length; i++)
-								list.addOption(getlocstring("widgets.prefs.groups.connection.vislimit." + i), i + 1, current);
+								list.addOption(getlocstring("widgets.prefs.groups.connection.vislimit." + options[i]), i + 1, current);
 						
 						list.hideList();
 					}
