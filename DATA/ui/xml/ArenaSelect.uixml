@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<window id="persona" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
+			onshow="initWin(this)" onupdate="updateList()" aspectalign="center">
+	<include file="widgets/template.uixml"/>
+
+	<view id="arenas-pane" rleft="43" rtop="140" width="444" height="411">
+		<caption id="arena-header" rleft="10" rtop="12" height="20" width="400" style="font-size: +2; color: #BFE2CE;"/>
+		<image rleft="10" rtop="22" src="ui/textures/test/horiz_underline.bmp" width="425" height="12"/>
+		<list id="ArenaTree" rleft="10" rtop="34" width="425" height="340"
+			onselect="arena_tree.clickTree(false)" ondblselect="arena_tree.clickTree(true)">
+			<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+		</list>
+	</view>
+	
+	<script>
+		<!--
+		var client = gameplayer.client;
+		var arena_tree = new TreeControl("ArenaTree", SelectArena, FormatArena);
+		
+		//==============
+		
+		function initWin(win) {
+			showChat(false);
+			//showIDCard(false);
+		}
+		
+		function updateList() {
+			// Poll arenas
+		}
+		
+		//==============
+		
+		function DoForward() {
+			var arena = arena_tree.selectedData();
+			// ...
+		}
+		-->
+	</script>
+</window>
