@@ -2,7 +2,7 @@
  
 <window id="OnlineModeSelect" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" modal="true"
 			style="background-image: screens/loadingscreen_blank.bmp; background-color: #000000;" aspectalign="center"
-			onshow="showChat(false)">
+			onshow="InitWindow()">
 	<include file="lib/common.uixml"/>
 	<!-- HACK: From template.uixml -->
 	<button id="quit-button" x="980" y="725" width="30" height="30" onclick="tplQuit()"
@@ -21,6 +21,14 @@
 	</view>
 	<script>
 	<!--
+	function InitWindow() {
+		// HACK: Just in case we're coming from the login GUI and things weren't cleaned up properly.
+		var auth = game.player.client.createauthhandler();
+		auth.Disconnect();
+		
+		showChat(false)
+	}
+	
 	function StartGame(online) {
 		soundPlayClick();
 		if ( online )

@@ -1,0 +1,21 @@
+<script>
+	<include file="lib/common.uixml"/>
+	<!--
+	var auth = game.player.client.createauthhandler();
+	auth.OnError = OnLoginError;
+	
+	var once = true;
+	
+	function UpdateLogin() {
+		if ( ! (auth && auth.CheckMessages()) ) {
+			loadWin("OnlineModeSelect", true);
+			return false;
+		}
+		return true;
+	}
+	
+	function OnLoginError(msg) {
+		showOk(msg);
+	}
+	-->
+</script>

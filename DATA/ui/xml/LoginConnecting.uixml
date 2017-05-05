@@ -1,38 +1,25 @@
 <?xml version="1.0"?>
-<!-- Window while we're connecting to auth -->
 <window id="LoginConnecting" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
 			style="background-image: screens/loadingscreen_blank.bmp; background-color: #000000;" aspectalign="center"
-			onshow="InitWindow()" onhide="KillWindow()" onupdate="UpdateWindow()">
-	<include file="lib/common.uixml"/>
+			onshow="InitWindow()" onupdate="UpdateLogin()">
+	<include file="lib/login.uixml"/>
 	<view width="250" height="50" style="background-color: #00000088; 
 							border-sides: ui/textures/hud/border_side.bmp;
 							border-corner: ui/textures/hud/border_corner.bmp;
 							border-width: 4;
 							border-height: 4;" moveondrag="no" aspectlimit="width">
-		<caption id="username-label" rleft="10" rtop="10" height="30" width="230" label="${login.connectingtoauth}" style="font-size:+2; color:#ffffff; align=center"/>
+		<caption rleft="10" rtop="10" height="30" width="230" label="${login.connectingtoauth}" style="font-size:+2; color:#ffffff; align=center"/>
 	</view>
 	<script>
 		<!--
-		var auth = game.player.client.createauthhandler();
-		
 		function InitWindow() {
-			if ( auth.is_connected ) {
+			if ( auth.connected ) {
 				OnConnect();
 				return;
 			}
 			
 			auth.OnConnect = OnConnect;
-			auth.OnError = OnError;
-			//auth.Connect();
-		}
-		
-		function UpdateWindow() {
-			if ( ! auth.CheckMessages() ) {
-				//auth.OnError(getlocstring('authconn.error.unknown'));
-			}
-		}
-		
-		function KillWIndow() {
+			auth.Connect();
 		}
 		
 		//======
@@ -41,12 +28,8 @@
 			var steam = false;
 			if ( steam ) { // TODO
 			} else {
-				
+				loadWin("LoginCredentials");
 			}
-		}
-		
-		function OnError(msg) {
-			showOk(msg, function() { loadWin("OnlineModeSelect"); });
 		}
 		-->
 	</script>

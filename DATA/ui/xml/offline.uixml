@@ -97,9 +97,15 @@
 			initVehicleList();
 			setHelp(getlocstring('offline.spawntab.help'));
 			setForward('offline.forward');
+			setBack('offline.back');
 			forwardButton.enabled = false;
 			musicPlayIntro();
 			quickhelp();
+		}
+		
+		function doBack()
+		{
+			loadWin("OnlineModeSelect", true);
 		}
 		
 		function doForward()
