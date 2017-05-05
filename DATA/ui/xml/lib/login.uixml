@@ -1,21 +1,30 @@
-<script>
+<?xml version="1.0"?>
+<window id="LoginTemplate" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
+			style="background-image: screens/loadingscreen_blank.bmp; background-color: #000000;" aspectalign="center"
+			onupdate="UpdateLogin()">
 	<include file="lib/common.uixml"/>
+	<!-- HACK: From template.uixml -->
+	<button id="quit-button" x="980" y="725" width="30" height="30" onclick="tplQuit()"
+				style="control-on: ui/textures/test/exit_on.bmp; control-off: ui/textures/test/exit_off.bmp;"
+				tip="${widgets.template.quit.tip}"/>
+	<script>
 	<!--
+	function tplQuit() {
+		loadWin("quit", false);
+	}
+	
+	
 	var auth = game.player.client.createauthhandler();
 	auth.OnError = OnLoginError;
 	
-	var once = true;
-	
 	function UpdateLogin() {
-		if ( ! (auth && auth.CheckMessages()) ) {
+		if ( ! (auth && auth.CheckMessages()) )
 			loadWin("OnlineModeSelect", true);
-			return false;
-		}
-		return true;
 	}
 	
 	function OnLoginError(msg) {
 		showOk(msg);
 	}
 	-->
-</script>
+	</script>
+</window>

@@ -2338,10 +2338,10 @@
 <!ENTITY widgets.prefs.groups.hud.icons.namerank "name and rank">
 <!ENTITY widgets.prefs "PREFERENCES">
 <!ENTITY authconn.complete "Reply received.">
-<!ENTITY authconn.error.badcallsign.char "Callsigns are limited to 10 characters.">
-<!ENTITY authconn.error.badcallsign.length "The '{1}' character is not allowed in callsigns.">
-<!ENTITY authconn.error.badusername.char "Usernames are limited to 10 characters.">
-<!ENTITY authconn.error.badusername.length "The '{1}' character is not allowed in usernames.">
+<!ENTITY authconn.error.badcallsign.char "The '{1}' character is not allowed in callsigns.">
+<!ENTITY authconn.error.badcallsign.length "Callsigns are limited to 10 characters.">
+<!ENTITY authconn.error.badusername.char "The '{1}' character is not allowed in usernames.">
+<!ENTITY authconn.error.badusername.length "Usernames are limited to 10 characters.">
 <!ENTITY authconn.error.generic.errorcode "Encountered network error '{1}'.">
 <!ENTITY authconn.error.generic.unknown "An unknown error has occurred. Please restart the application and try again.">
 <!ENTITY authconn.error.init.callbackinitfailed "Failed to initialize network callbacks.">
@@ -3516,6 +3516,12 @@
 <!ENTITY loading.vehicles.init "Initializing Vehicle System">
 <!ENTITY loading.weapons "Initializing Weapon System">
 <!ENTITY loading.weather "Initializing Weather System">
+<!ENTITY login.connectingtoauth "Connecting to Authentication Host...">
+<!ENTITY login.offlinemode "Play Offline">
+<!ENTITY login.onlinemode "Join the Battle">
+<!ENTITY login.promptlogin "LOGIN">
+<!ENTITY login.promptpassword "Password">
+<!ENTITY login.promptusername "Username">
 <!ENTITY map.airforce "Air Force">
 <!ENTITY map.army "Army">
 <!ENTITY map.bridges "Bridges">
