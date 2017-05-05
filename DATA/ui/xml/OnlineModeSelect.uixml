@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+ 
+<window id="OnlineModeSelect" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" modal="true"
+			style="background-image: screens/loadingscreen_blank.bmp; background-color: #000000;" aspectalign="center"
+			onshow="showChat(false)">
+	<include file="lib/common.uixml"/>
+	<!-- HACK: From template.uixml -->
+	<button id="quit-button" x="980" y="725" width="30" height="30" onclick="tplQuit()"
+				style="control-on: ui/textures/test/exit_on.bmp; control-off: ui/textures/test/exit_off.bmp;"
+				tip="${widgets.template.quit.tip}"/>
+	<view width="420" height="230" style="background-color: #00000088; 
+				border-sides: ui/textures/hud/border_side.bmp; border-corner: ui/textures/hud/border_corner.bmp; border-width: 4; border-height: 4;"
+				aspectlimit="width" aspectalign="center">
+		<image rleft="10" rtop="-40" src="ui/textures/be.bmp" width="403" height="238"/>
+		<button id="oms-offline" rleft="20" rbottom="10" width="180" height="35" label="${login.offlinemode}" onclick="StartGame(false)"
+					style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+					onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+		<button id="oms-online" rright="20" rbottom="10" width="180" height="35" label="${login.onlinemode}" onclick="StartGame(true)"
+					style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+					onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+	</view>
+	<script>
+	<!--
+	function StartGame(online) {
+		soundPlayClick();
+		if ( online )
+			loadWin('LoginConnecting',true);
+		else
+			loadWin('offline',true);
+	}
+	
+	// HACK: From template.uixml
+	function tplQuit() {
+		loadWin("quit", false);
+	}
+	-->
+	</script>
+</window>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<window id="Login-Connecting" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" modal="true" aspectalign="center"
+				onshow="InitWindow()" onhide="KillWindow()">
+	<view width="50" height="50" style="background-color: #00000088; 
+							border-sides: ui/textures/hud/border_side.bmp;
+							border-corner: ui/textures/hud/border_corner.bmp;
+							border-width: 4;
+							border-height: 4;" moveondrag="no" aspectlimit="width">
+		<caption id="username-label" rleft="10" rtop="10" height="30" width="230" label="${login.connectingtoauth}" style="font-size:+2; color:#ffffff; align=center"/>
+	</view>
+
+	<script>
+		<!--
+		var parent = findview("Login");
+		
+		function InitWindow() {
+		}
+		
+		function KillWIndow() {
+		}
+		-->
+	</script>
+</window>

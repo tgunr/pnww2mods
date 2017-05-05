@@ -2337,6 +2337,27 @@
 <!ENTITY widgets.prefs.groups.ui.colors.picker "The current color is">
 <!ENTITY widgets.prefs.groups.hud.icons.namerank "name and rank">
 <!ENTITY widgets.prefs "PREFERENCES">
+<!ENTITY authconn.complete "Reply received.">
+<!ENTITY authconn.error.badcallsign.char "Callsigns are limited to 10 characters.">
+<!ENTITY authconn.error.badcallsign.length "The '{1}' character is not allowed in callsigns.">
+<!ENTITY authconn.error.badusername.char "Usernames are limited to 10 characters.">
+<!ENTITY authconn.error.badusername.length "The '{1}' character is not allowed in usernames.">
+<!ENTITY authconn.error.generic.errorcode "Encountered network error '{1}'.">
+<!ENTITY authconn.error.generic.unknown "An unknown error has occurred. Please restart the application and try again.">
+<!ENTITY authconn.error.init.callbackinitfailed "Failed to initialize network callbacks.">
+<!ENTITY authconn.error.init.couldnotresolve "Could not resolve '{1}'.">
+<!ENTITY authconn.error.init.multipleconnections "The application attempted to open more than one auth connection at a time.">
+<!ENTITY authconn.error.login.arenafull "Region is full. Please try again later.">
+<!ENTITY authconn.error.login.game "Game network is down. Try again shortly.">
+<!ENTITY authconn.error.login.locked "Servers are locked. Try again shortly.">
+<!ENTITY authconn.error.login.password "Incorrect password.">
+<!ENTITY authconn.error.login.subscription "Your subscription is not currently active.">
+<!ENTITY authconn.error.login.system "Login system error. Please try again shortly.">
+<!ENTITY authconn.error.login.unknown "There was a problem authenticating your login. Please try again shortly.">
+<!ENTITY authconn.error.login.username "No such username.">
+<!ENTITY authconn.error.login.version "This version of the game cannot connect to the Authentication Server.">
+<!ENTITY authconn.error.unknown "An unknown error occurred when trying to connect to the game. Please restart the application and try again.">
+<!ENTITY authconn.waiting "Waiting for reply.">
 <!ENTITY brigade.back "Change Brigade">
 <!ENTITY brigade.back.decision "What would you like to change?">
 <!ENTITY brigade.back.decision.brigade "BRIGADE">
