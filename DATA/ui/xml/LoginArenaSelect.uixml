@@ -1,50 +1,128 @@
 <?xml version="1.0"?>
-<window id="Login-Connecting" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" modal="true" aspectalign="center">
-	<view width="250" height="50" style="background-color: #00000088; 
-							border-sides: ui/textures/hud/border_side.bmp;
-							border-corner: ui/textures/hud/border_corner.bmp;
-							border-width: 4;
-							border-height: 4;" moveondrag="yes" aspectlimit="width">
-		<caption id="username-label" rleft="10" rtop="10" height="30" width="230" label="${login.connectingtoauth}" style="font-size:+2; color:#ffffff; align=center"/>
+<window id="Login-ArenaSelect" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" modal="true" aspectalign="center"
+			onshow="InitWindow()" onupdate="UpdateWindow()">
+	<include file="lib/common.uixml"/>
+	<include file="lib/login.uixml"/>
+	<include file="classes/CycleTimer.uixml"/>
+	<include file="classes/ListControl.uixml"/>
+	<view id="arena-pane" x="290" y="178" width="444" height="411" style="background-color: #00000088; 
+				border-sides: ui/textures/hud/border_side.bmp; border-corner: ui/textures/hud/border_corner.bmp; border-width: 4; border-height: 4;">
+		<caption id="arena-header" rleft="10" rtop="12" height="20" width="400" style="font-size: +2; color: #BFE2CE;" label="${login.arenaselect.arenaheader}" align="center"/>
+		<image rleft="10" rtop="22" src="ui/textures/test/horiz_underline.bmp" width="425" height="12"/>
+		<view x="10" rtop="34" width="425" height="15">
+			<caption x="0" y="0" width="24" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="${login.arenaselect.list.state}" align="center"/>
+			<caption x="26" y="0" width="399" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="${login.arenaselect.list.name}" align="center"/>
+		</view>
+		<list id="ArenaList" rleft="10" rtop="51" width="425" height="340"
+					onselect="arena_list.clickList(false)" ondblselect="arena_list.clickList(true)">
+			<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
+		</list>
+
+		<button id="back-button" label="${login.arenaselect.back}" rleft="10" rbottom="10" width="160" height="30" onclick="BackClicked()"
+					style="control-on: ui/textures/test/back_on.bmp; control-off: ui/textures/test/back_off.bmp; control-disabled: ui/textures/test/back_disabled.bmp; color: #FFFFFF; font-size: -2;"
+					onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+		<button id="offline-button" label="${login.arenaselect.offline}" rleft="10" rbottom="10" width="160" height="30" onclick="OfflineClicked()"
+					style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; color: #FFFFFF; font-size: -2;"
+					onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
+		<button id="forward-button" label="${login.arenaselect.forward}" rright="10" rbottom="10" width="160" height="30" onclick="ForwardClicked()"
+					style="control-on: ui/textures/test/next_on.bmp; control-off: ui/textures/test/next_off.bmp; control-disabled: ui/textures/test/next_disabled.bmp; color: #FFFFFF; font-size: -2;"
+					onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
 	</view>
+	<script>
+		<!--
+		var arena_list = new ListControl(findview("ArenaList"), ClickArena);
+		var update_timer = new CycleTimer(30000);
+		
+		var forward_button = findview("forward-button");
+		var back_button = findview("back-button");
+		var offline_button = findview("offline-button");
+		
+		function InitWindow() {
+			forward_button.enabled = false;
+			if ( true ) // TODO: Steam
+				back_button.visible = false;
+			else
+				offline_button.visible = false;
+			
+			update_timer = new CycleTimer(30000);
+			
+			auth.OnArenaUpdate = OnArenaUpdate;
+			auth.OnArenaJoin = OnArenaJoin;
+		}
+		
+		function UpdateWindow() {
+			if ( update_timer.run() )
+				auth.PollArenas();
+			
+			forward_button.enabled = (arena_list.data != null);
+		}
+		
+		//======
+		
+		function OnArenaJoin() {
+			game.player.client.connecttoarena();
+		}
+		
+		//======
+		
+		function OnArenaUpdate() {
+			arena_list.clearRows(false);
+			
+			if ( auth.arenas.length > 0 ) {
+				for ( var i = 0 ; i < auth.arenas.length ; ++i ) {
+					var arena = auth.arenas[i];
+					var name = arena.name;
+					var state = 0;//arena.state;
+					var color = GetArenaColor(state);
+					
+					var row = "<view id='" + arena.id + "' width='418' height='20' aspectalign='left' onmouseenter='arena_list.mouseEnter(this)' onmouseexit='arena_list.mouseExit(this)'>\
+					               <image x='0' y='0' src='ui/textures/arenas/" + state + ".dds' width='30' height='30' style='font-size: -1; color: " + color + ";' tip='${arenas.states." + state + ".tip}'/>\
+					               <caption id='arena-name' x='35' y='3' width='277' height='16' style='font-size: -1; color: " + color + ";' label='" + name + "'/>\
+					           </view>";
+					cprint(row);
+					arena_list.addRow(arena, row);
+				}
+			} else {
+				var row = "<view id='arenas_empty' width='418' height='16' aspectalign='left'>\
+				               <caption id='arena-name' x='0' y='0' width='250' height='16' style='color: #e9e3d9ff;'\
+				                     label='" + getlocstring("arenaselect.noarenas") + "'/>\
+				           </view>";
+				arena_list.addRow(null, row);
+			}
+			arena_list.postInit();
+		}
+		
+		function ClickArena(dblclick) {
+			if ( dblclick )
+				ForwardClicked()
+		}
+		
+		function GetArenaColor(state) {
+			// TODO: Cycle by types
+			return "#e9e3d9ff";
+		}
+		
+		//==============
+		
+		function ForwardClicked() {
+			if ( arena_list.data == null )
+				return;
+			
+			soundPlayClick();
+			auth.JoinArena(arena_list.data);
+		}
+		
+		function BackClicked() {
+			soundPlayClick();
+			auth.Disconnect(); // In order to change our login we need to disconnect.
+			loadWin("LoginConnecting", true);
+		}
+		
+		function OfflineClicked() {
+			soundPlayClick();
+			auth.Disconnect();
+			loadWin("offline", true);
+		}
+		-->
+	</script>
 </window>
-
-
-
-
-<view id="connecting-window" visible="false"
-				onshow="ConnectingInit()"/>
-
-<!-- LOGIN -->
-<view id="userlogin-window" x="350" y="400" width="350" height="100" style="background-color: #00000088; 
-				border-sides: ui/textures/hud/border_side.bmp; border-corner: ui/textures/hud/border_corner.bmp; border-width: 4; border-height: 4;"
-			visible="false" moveondrag="yes"
-			onshow="UserloginInit()" onhide="UserloginKill()" onupdate="UserloginUpdate()">
-	>
-	<caption id="username-label" rleft="10" rtop="10" height="20" width="100" label="${login.username}" style="font-size:+1; color:#ffffff; align=right"/>
-	<textcontrol id="username" rright="10" rtop="10" height="20" width="200" acceptsfocus="true" style="background-color: #FFFFFF; font-size:+1; color: #000000;"
-				maxlength="40" onenter="UsernameEntered()"/>
-	<caption id="password-label" rleft="10" rtop="35" height="20" width="100" label="${login.password}" style="font-size:+1; color:#ffffff; align=right"/>
-	<textcontrol id="password" rright="10" rtop="35" height="20" width="200" acceptsfocus="true" style="background-color: #FFFFFF; font-size:+1; color: #000000;"
-				onenter="PasswordEntered()"/>
-	<button id="connect-button" label="${login.connect}" rleft="137" rtop="70" width="150" height="30"
-				style="control-on: ui/textures/test/next_on.bmp; control-off: ui/textures/test/next_off.bmp; control-disabled: ui/textures/test/next_disabled.bmp; color: #FFFFFF; font-size: -3;"
-				onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"
-				onclick="soundPlayClick(); AttemptLogin();"/>
-</view>
-
-<!-- ARENA SELECT -->
-<view id="arenas-window" x="350" y="400" width="444" height="411"
-			visible="false"
-			onshow="ArenasInit()" onhide="ArenasKill()" onupdate="ArenasUpdate()">
-	<caption id="arena-header" rleft="10" rtop="12" height="20" width="400" style="font-size: +2; color: #BFE2CE;"/>
-	<image rleft="10" rtop="22" src="ui/textures/test/horiz_underline.bmp" width="425" height="12"/>
-	<view x="10" rtop="34" width="425" height="15">
-		<caption x="0" y="0" width="24" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="${arenaselect.list.name}"/>
-		<caption x="26" y="0" width="399" height="15" style="background-color: #BFE2CE44;  color: #BFE2CE;" label="${arenaselect.list.state}" align="center"/>
-	</view>
-	<list id="ArenaList" rleft="10" rtop="34" width="425" height="340"
-				onselect="arena_list.clickList(false)" ondblselect="arena_list.clickList(true)">
-		<scrollbar style="width: 10; background-image: ui/textures/test/scrolltunnel_bg.bmp; control-on: ui/textures/test/scrollhandle.bmp;"/>
-	</list>
-</view>

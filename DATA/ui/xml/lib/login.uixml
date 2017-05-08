@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <window id="LoginTemplate" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
-			style="background-image: screens/loadingscreen_blank.bmp; background-color: #000000;" aspectalign="center"
+			style="background-image: screens/loadingscreen_blank.bmp; background-color: #000000;"
 			onupdate="UpdateLogin()">
 	<include file="lib/common.uixml"/>
 	<!-- HACK: From template.uixml -->
