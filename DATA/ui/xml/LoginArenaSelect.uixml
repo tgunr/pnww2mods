@@ -54,7 +54,7 @@
 			if ( update_timer.run() )
 				auth.PollArenas();
 			
-			forward_button.enabled = (arena_list.data != null);
+			forward_button.enabled = (arena_list.data != null && arena_list.data.can_join == true);
 		}
 		
 		//======
@@ -72,14 +72,13 @@
 				for ( var i = 0 ; i < auth.arenas.length ; ++i ) {
 					var arena = auth.arenas[i];
 					var name = arena.name;
-					var state = 0;//arena.state;
-					var color = GetArenaColor(state);
+					var state = arena.state;
+					var color = GetArenaColor(state, arena.can_join);
 					
-					var row = "<view id='" + arena.id + "' width='418' height='20' aspectalign='left' onmouseenter='arena_list.mouseEnter(this)' onmouseexit='arena_list.mouseExit(this)'>\
-					               <image x='0' y='0' src='ui/textures/arenas/" + state + ".dds' width='30' height='30' style='font-size: -1; color: " + color + ";' tip='${arenas.states." + state + ".tip}'/>\
-					               <caption id='arena-name' x='35' y='3' width='277' height='16' style='font-size: -1; color: " + color + ";' label='" + name + "'/>\
+					var row = "<view id='" + arena.id + "' width='418' height='32' aspectalign='left' onmouseenter='arena_list.mouseEnter(this)' onmouseexit='arena_list.mouseExit(this)'>\
+					               <image x='0' y='0' src='ui/textures/arenas/" + state + ".dds' width='32' height='32' style='font-size: +1; color: " + color + ";' tip='${arenas.states." + state + ".tip}'/>\
+					               <caption id='arena-name' x='35' y='3' width='277' height='32' style='font-size: +2; color: " + color + ";' label='" + name + "'/>\
 					           </view>";
-					cprint(row);
 					arena_list.addRow(arena, row);
 				}
 			} else {
@@ -105,7 +104,7 @@
 		//==============
 		
 		function ForwardClicked() {
-			if ( arena_list.data == null )
+			if ( arena_list.data == null || ! arena_list.data.can_join )
 				return;
 			
 			soundPlayClick();
