@@ -3535,9 +3535,17 @@
 <!ENTITY login.error.offline "Offline">
 <!ENTITY login.offlinemode "Play Offline">
 <!ENTITY login.onlinemode "Join the Battle">
+<!ENTITY login.promptcallsign "ENTER CALLSIGN">
+<!ENTITY login.promptcallsignrepeat "REENTER CALLSIGN">
 <!ENTITY login.promptlogin "LOGIN">
 <!ENTITY login.promptpassword "Password">
 <!ENTITY login.promptusername "Username">
+<!ENTITY login.steambadcallsign "The callsign you requested is either already taken or invalid. Please use only standard alphanumeric characters.">
+<!ENTITY login.steamcallsignsdontmatch "The callsigns don't match.">
+<!ENTITY login.steamneedscallsign "This is your first time logging in, and you need to create a callsign.">
+<!ENTITY login.steamunknownerror "An unknown error occurred. Please try again or try offline mode.">
+<!ENTITY login.steamuserdoesnotexist "You seem not to have the game with this Steam account. Make sure you're logged in with the correct account and try again.">
+<!ENTITY login.trainingmode "Training Server">
 <!ENTITY map.airforce "Air Force">
 <!ENTITY map.army "Army">
 <!ENTITY map.bridges "Bridges">

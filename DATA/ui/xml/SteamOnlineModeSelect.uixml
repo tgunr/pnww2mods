@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<window id="SteamOnlineModeSelect" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" modal="true"
+			style="background-image: screens/loadingscreen_blank.bmp; background-color: #000000;" aspectalign="center"
+			onshow="InitWindow()">
+	<include file="lib/common.uixml"/>
+	<!-- HACK: From template.uixml -->
+	<button id="quit-button" x="980" y="725" width="30" height="30" onclick="tplQuit()"
+				style="control-on: ui/textures/test/exit_on.bmp; control-off: ui/textures/test/exit_off.bmp;"
+				tip="${widgets.template.quit.tip}"/>
+	<view width="420" height="215" style="background-color: #00000088; 
+				border-sides: ui/textures/hud/border_side.bmp; border-corner: ui/textures/hud/border_corner.bmp; border-width: 4; border-height: 4;"
+				aspectlimit="width" aspectalign="center">
+		<image rleft="10" rtop="-40" src="ui/textures/be.bmp" width="403" height="238"/>
+		<button id="oms-offline" rleft="0" rbottom="10" width="150" height="35" label="${login.offlinemode}" onclick="StartGame(false)"
+					style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+					onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+		<button id="oms-training" rbottom="10" width="150" height="35" label="${login.trainingmode}" onclick="StartGame(true, 22)"
+					style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+					onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+		<button id="oms-live" rright="0" rbottom="10" width="150" height="35" label="${login.onlinemode}" onclick="StartGame(true, 1)"
+					style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
+					onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+	</view>
+	
+	<view id="callsign-pane" y="195" width="350" height="70" style="background-color: #00000088;
+				border-sides: ui/textures/hud/border_side.bmp;
+				border-corner: ui/textures/hud/border_corner.bmp;
+				border-width: 4;
+				border-height: 4;" moveondrag="no">
+		<caption id="callsign-label" rleft="10" rtop="10" height="20" width="100" label="${login.promptcallsign}" style="font-size:-1; color:#ffffff; align=right"/>
+		<textcontrol id="callsign1" rright="10" rtop="10" height="20" width="200" acceptsfocus="true" style="background-color: #FFFFFF; font-size:-1; color: #000000;"
+					maxlength="10" ontab="callsign_1.focused = false; callsign_2.focused = true;" onenter="callsign_1.focused = false; callsign_2.focused = true;"/>
+		<caption id="callsignrepeat-label" rleft="10" rtop="35" height="20" width="100" label="${login.promptcallsignrepeat}" style="font-size:-1; color:#ffffff; align=right"/>
+		<textcontrol id="callsign2" rright="10" rtop="35" height="20" width="200" acceptsfocus="true" style="background-color: #FFFFFF; font-size:-1; color: #000000;"
+					maxlength="10"/>
+	</view>
+	<script>
+	<!--
+	var client = game.player.client;
+	
+	var callsign_pane = findview("callsign-pane");
+	var callsign_1 = findview("callsign1");
+	var callsign_2 = findview("callsign2");
+	
+	function InitWindow() {
+		callsign_pane.visible = false;
+		showChat(false);
+	}
+	
+	function StartGame(online, arena) {
+		soundPlayClick();
+		if ( ! online ) {
+			loadWin('offline', true);
+		} else {
+			if ( callsign_1.text != callsign_2.text ) {
+				showOk(getlocstring("login.steamcallsignsdontmatch"));
+				return;
+			}
+			var result = client.steamconnect(arena, callsign_1.text);
+			
+			// HACK: Currently just using the return value as-is.
+			if ( result == 0 ) {
+				// We're good. Reset the GUI based on whatever we're connected to.
+				window.close();
+				client.loadrootwindow();
+			} else if ( result == 1 ) {
+				// Running Steam copy that we didn't get through Steam?
+				showOk(getlocstring("login.steamuserdoesnotexist"));
+			} else if ( result == 2 ) {
+				// HACK: Same message for both no callsign and bad callsign
+				if ( callsign_pane.visible ) {
+					showOk(getlocstring("login.steambadcallsign"));
+				} else {
+					showOk(getlocstring("login.steamneedscallsign"));
+					callsign_pane.visible = true;
+				}
+			} else {
+				showOk(getlocstring("login.steamunknownerror"));
+			}
+		}
+	}
+	
+	// HACK: From template.uixml
+	function tplQuit() {
+		loadWin("quit", false);
+	}
+	-->
+	</script>
+</window>
