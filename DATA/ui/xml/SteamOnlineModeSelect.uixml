@@ -60,9 +60,13 @@
 			
 			// HACK: Currently just using the return value as-is.
 			if ( result == 0 ) {
-				// We're good. Reset the GUI based on whatever we're connected to.
-				window.close();
-				client.loadrootwindow();
+				if ( client.connecttoarena() ) {
+					// We're good. Reset the GUI based on whatever we're connected to.
+					window.close();
+					client.loadrootwindow();
+				} else {
+					showOk(getlocstring("login.arenaselect.failedtoconnect"));
+				}
 			} else if ( result == 1 ) {
 				// Running Steam copy that we didn't get through Steam?
 				showOk(getlocstring("login.steamuserdoesnotexist"));
