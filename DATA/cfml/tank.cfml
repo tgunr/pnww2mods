@@ -1,11 +1,11 @@
 <controlset version = "1.0.0" keyboard = "us" language = "english" >
 	<control>
 		<function>instrument view</function>
-		<key>numpad 0</key>
+    <key>;</key>
 	</control>
 	<control>
 		<function>gunsight view</function>
-		<key>numpad .</key>
+		<key>x</key>
 	</control>
 	<control>
 		<function>deploy weapon</function>
