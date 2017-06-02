@@ -96,17 +96,15 @@
 3.0.label = Mobile Spawning
 
 	3.1.label = Return to Spawn point
-    3.1.alert.modal = Most of the time, infantry enter the game world, or &#39;spawn&#39;, inside armybases or depots.  But players can create Mobile Spawn Points by driving trucks closer to the enemy cities and deploy their vehicle.[NL][NL]This allows players to enter the game world at that truck&#39;s location, which greatly shortens the distance to combat.
-	3.1.alert1 = You spawned at just such a mobile spawn point.[NL][NL]Head over to the unmanned mobile spawn where you spawned from.
+    3.1.alert.modal = Most of the time, infantry enter the game world, or &#39;spawn&#39;, inside armybases or depots.  But players can create Mobile Spawn Points by driving trucks closer to the enemy cities and deploying a Fortified Mobile Spawn(FMS) or an Urban Mobile Spawn(UMS) .[NL][NL]This allows players to enter the game world at the FMS/UMS location, which greatly shortens the distance to combat.
+	3.1.alert1 = You spawned at just such a mobile spawn point.[NL][NL]Head over to the Fortified Mobile Spawn where you spawned from.
     
 	3.2.label = Mobile Spawn Missions
-    3.2.alert1.modal = Missions with mobile spawns are indicated by the truck icon in the list of missions.
+    3.2.alert1.modal = Missions with mobile spawns are indicated by a tick in the MS column in the list of missions.
     
     #can you fake the map icon in the text here?
     
-    3.2.alert2.modal = The truck&#39;s icon explains that it is a mobile spawn with either &#34;MSP&#34; (&#34;Mobile Spawn Point&#34;) or &#34;UMS&#34; (&#34;Unmanned Spawn Point&#34;).  The difference is that another player is still in command of an MSP - he can move the truck.  But a UMS cannot be moved.
-    
-    3.2.alert3.modal = Both MSPs and UMSs, as well as all trucks and haulers, are also resupply points that will automatically replace your ammunition when you are near to them.
+    3.2.alert3.modal = Both the FMS and the UMS, as well as all trucks and haulers, are also resupply points that will automatically replace your ammunition when you are near to them.
     
     3.2.alert3.hilite = persona-resupply
 

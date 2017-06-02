@@ -203,7 +203,7 @@ end
 
 function OnGoalLearnMSP(step)
 	if(step == 1) then
-		tutorial.AddLocation("OnAtUMS", nil, -314061.23, 3603755.46, 101.34, 5, "ums");
+		tutorial.AddLocation("OnAtUMS", nil, -314061.23, 3603759.46, 101.34, 5, "FMS");
 	elseif(step == 2) then
 		SetNextStep(1);
 	elseif(step == 3) then
@@ -215,7 +215,7 @@ end
 
 function OnAtUMS(handler)
 	if(handler.state == tutorial.THS_EVENT_IN) then
-		tutorial.RemoveWaypoint("ums");
+		tutorial.RemoveWaypoint("FMS");
 		tutorial.CompleteStep(1);
 		return 0;
 	end
