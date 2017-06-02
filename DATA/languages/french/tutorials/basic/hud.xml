@@ -16,12 +16,12 @@
 
 1.4.alert.modal = La fenêtre de dialogue et le premier moyen pour communiquer avec les autres joueurs.  Bien comprendre son fonctionnement est important dans Battleground Europe.
 1.4.label = Boîte de dialogue
-1.4.alert.hilite = chatview,target
+1.4.alert.hilite = 210,5,615,115,target
 
 1.5.alert.modal = La mini-carte peut être très utile en combat. Elle montre les unités amis qui ont le même objectif que vous, l’objectif de la mission, les balises placées, les reports de contacts ennemis, et d’autres informations importantes. Elle est toujours centrée sur vous. Pour zoomer ou inversement utiliser {mapin} et {mapout}.
 1.5.alert.hilite = kenny,target
 1.5.alert1.modal = La bas de la mini-carte montre les Latitude et Longitude en jeu et le nom de la ville la plus proche.
-1.5.alert1.hilite = 894,14,91,31,target
+1.5.alert1.hilite = 870,5,151,49,target
 1.5.label = Mini-carte
 
 1.6.alert.modal = Un des élément optionnel sont les éléments d’information du jeu. Ils vous donnent vos ‘Frames Per Second’ (FPS), l’heure en jeu , le Mode icône et des données sur la connexion. Accessible par  {showinfo}.
@@ -29,7 +29,7 @@
 1.6.label = Informations de Jeu
 
 1.7.alert.modal = L’autre option est le statut du véhicule.  Il montre votre grade actuel et si vous êtes dans un véhicule terrestre le rapport de vitesse engage et si vous avez des passagers avec vous. Pour les avions les G encaissés ( forces gravité), Angle d’attaque AoA, et le dérapage. Pressez {showstats} pour les visualiser.
-1.7.alert.hilite = readout,target
+1.7.alert.hilite = 0,725,90,40,target
 1.7.label = Statut du véhicule
 
 1.8.alert = Vous pouvez cacher le HUD complètement en pressant  {changehudmode}. Basculer entre  avec et sans  HUD en utilisant la touche {changehudmode}.
