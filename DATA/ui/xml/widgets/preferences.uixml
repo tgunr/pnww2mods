@@ -163,20 +163,18 @@
 				 	style="color: #BFE2CE; border-color: #3e5248; border-size: 1;">
 				 	 <image rright="5" rtop="5" src="ui/textures/map-scaledown-off.bmp" width="10" height="10" acceptmouseclick="false"/>
 				</caption>
-				<!--
-				<caption label="${widgets.prefs.groups.connection.netcode2}" x="20" height="20" rright="0" rtop="100" style="color: #e9e3d9ff;"
-					tip="${widgets.prefs.groups.connection.netcode2.tip}"/>
+				<caption label="${widgets.prefs.groups.connection.netcode}" x="20" height="20" rright="0" rtop="100" style="color: #e9e3d9ff;"
+					tip="${widgets.prefs.groups.connection.netcode.tip}"/>
 				<view width="150" height="15" rtop="100" rright="10">
 					<radiobutton label="${widgets.prefs.enabled}" x="5" y="0" width="70" height="15"
 						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
-						onclick="addPreference('app.usenetcode2', Preference.BOOL, true, false);"
-						onshow="this.value = getPreference('app.usenetcode2', Preference.BOOL, false, false);"/>
+						onclick="addPreference('usenetcode', Preference.BOOL, true, true);"
+						onshow="this.value = getPreference('usenetcode', Preference.BOOL, false, true);"/>
 					<radiobutton label="${widgets.prefs.disabled}" y="0" width="70" height="15" rright="5" 
 						style="color: #ffffff; font-size: -1; control-on: ui/textures/map-checkbox-on.bmp; control-off: ui/textures/map-checkbox-off.bmp;"
-						onclick="addPreference('app.usenetcode2', Preference.BOOL, false, false);"
-						onshow="this.value = !getPreference('app.usenetcode2', Preference.BOOL, false, false);"/>
+						onclick="addPreference('usenetcode', Preference.BOOL, false, true);"
+						onshow="this.value = !getPreference('usenetcode', Preference.BOOL, false, true);"/>
 				</view>
-				-->
 				<script>
 					<!-- 
 							
@@ -201,7 +199,7 @@
 					
 					function initVis(list)
 					{
-						var options	= new Array("low", "medium", "high");
+                        var options		= new Array("0", "1", "2");
 						var current = getPreference("visplayerlimit", Preference.SINT, 2, true);
 						
 						list.clearRows(true);

@@ -7,7 +7,8 @@
 		var request	= (new Date()).getTime(); 
 		var client 	= game.player.client;
 		var popup 	= showPopup("despawn", getlocstring('exitvehicle.init'), doDespawn);
-		
+	        var wait        = 0;
+	
 		game.enableimapinput(false);
 		client.enabledespawntimer(!game.bailedout);
 
@@ -44,19 +45,47 @@
 		{
 			var now 	= (new Date()).getTime();
 			var timer	= client.despawntimer;
-			var wait	= (timer == -1) ? true: false;
 			var msg		= "";
-			
-			if(game.player.vehicletype != "floater" &&  (wait || timer > 0))
+			var enableBtn   = false;
+	
+                        // floaters will always be able to despawn without a timer
+			if (game.player.vehicletype == "floater")
 			{
-				if(timer > 0)
-					msg = getVariableLocString('exitvehicle.timer', timer);	
+				msg = getlocstring('exitvehicle.ok');
+				enableBtn = true;
 			}
+			// timer is either not yet initialized or counting down
+			else if (timer != 0)
+			{
+				// Is it not yet initialized (-1)?
+				if (timer < 0)
+				{
+                        		// allow a bypass if the timer never counts down while waiting (known status update bug)
+					if (wait++ <= 15)
+					{
+						// issue wait while we wait for incoming timer
+						msg = getlocstring('exitvehicle.init');
+					}
+					else
+					{
+						// no more waiting, allow immediate exit
+						msg = getlocstring('exitvehicle.ok');
+						enableBtn = true;
+					}
+				}
+				else
+				{
+					msg = getVariableLocString('exitvehicle.timer', timer);	
+				}
+			}
+                        // timer has expired, allow vehicle exit
 			else
 			{
 				msg = getlocstring('exitvehicle.ok');
-				popup.setButtonEnabled("popup-yes", true);
+				enableBtn = true;
 			}
+
+			popup.setButtonEnabled("popup-yes", enableBtn);
 			
 			if(game.online) 
 			{

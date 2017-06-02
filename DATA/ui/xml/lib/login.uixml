@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<window id="LoginTemplate" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
+			style="background-image: screens/loadingscreen_blank.bmp; background-color: #000000;"
+			onupdate="UpdateLogin()">
+	<include file="lib/common.uixml"/>
+	<!-- HACK: From template.uixml -->
+	<button id="quit-button" x="980" y="725" width="30" height="30" onclick="tplQuit()"
+				style="control-on: ui/textures/test/exit_on.bmp; control-off: ui/textures/test/exit_off.bmp;"
+				tip="${widgets.template.quit.tip}"/>
+	<script>
+	<!--
+	function tplQuit() {
+		loadWin("quit", false);
+	}
+	
+	//==============
+	
+	var auth = game.player.client.createauthhandler();
+	auth.OnError = OnLoginError;
+	
+	function UpdateLogin() {
+		// HACK: Handling the GUI behind a popup is messy, so just don't update until it's closed.
+		if ( PopupActive() )
+			return;
+		auth.CheckMessages();
+	}
+	
+	function PopupActive() {
+		return (findview("popup-caption") != null); // HACK
+	}
+	
+	//==============
+	
+	function OnLoginError(msg) {
+		if ( auth.connection_good ) {
+			showOk(msg);
+		} else {
+			var popup = showConfirm(msg, AskRetryLogin,
+			                        getlocstring('login.error.retry'), getlocstring('login.error.offline'));
+			popup.setPopupClose(false);
+		}
+	}
+	
+	function AskRetryLogin(retry) {
+		if ( retry ) {
+			loadWin("OnlineModeSelect", true);
+		} else {
+			loadWin("offline", true);
+		}
+	}
+	-->
+	</script>
+</window>

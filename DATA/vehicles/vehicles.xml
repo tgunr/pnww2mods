@@ -35,9 +35,9 @@
 <vehicle id="de-para-smg"          file="ground/groundman/groundman.xml"/>
 <vehicle id="de-para-lmg"          file="ground/groundman/groundman.xml"/>
 <vehicle id="de-para-atr"          file="ground/groundman/groundman.xml"/>
-<vehicle id="de-para-gren"         file="ground/groundman/groundman.xml"/>
+<!--<vehicle id="de-para-gren"         file="ground/groundman/groundman.xml"/>--> <!-- DEV-937 -->
 <vehicle id="de-para-snpr"         file="ground/groundman/groundman.xml"/>
-<vehicle id="de-para-eng"          file="ground/groundman/groundman.xml"/>
+<!--<vehicle id="de-para-eng"          file="ground/groundman/groundman.xml"/>--> <!-- DEV-937 -->
 <vehicle id="de-para-mrtr"         file="ground/groundman/groundman.xml"/>
 <vehicle id="oplbltz"              file="ground/oplbltz/oplbltz.xml"/>
 <vehicle id="sdkfz7"               file="ground/sdkfz7/sdkfz7.xml"/>
@@ -96,13 +96,13 @@
 <vehicle id="uk-para-smg"          file="ground/groundman/groundman.xml"/>
 <vehicle id="uk-para-lmg"          file="ground/groundman/groundman.xml"/>
 <vehicle id="uk-para-atr"          file="ground/groundman/groundman.xml"/>
-<vehicle id="uk-para-gren"         file="ground/groundman/groundman.xml"/>
+<!--<vehicle id="uk-para-gren"         file="ground/groundman/groundman.xml"/>--> <!-- DEV-937 -->
 <vehicle id="uk-para-snpr"         file="ground/groundman/groundman.xml"/>
-<vehicle id="uk-para-eng"          file="ground/groundman/groundman.xml"/>
+<!--<vehicle id="uk-para-eng"          file="ground/groundman/groundman.xml"/>--> <!-- DEV-937 -->
 <vehicle id="uk-para-mrtr"         file="ground/groundman/groundman.xml"/>
 <vehicle id="bedford"              file="ground/bedford/bedford.xml"/>
 <vehicle id="morris"               file="ground/morris/morris.xml"/>
-<vehicle id="uk_mle38"             file="ground/mle38/mle38.xml" />
+<vehicle id="uk_mle38"             file="ground/mle38/uk_mle38.xml" />
 <vehicle id="bofors40mm"           file="ground/bofors40mm/bofors40mm.xml"/>
 <vehicle id="qf2pdr"               file="ground/qf2pounder/qf2pounder.xml"/>
 <vehicle id="qf6pdr"               file="ground/qf6pdrmkiv/qf6pdrmkiv.xml"/>
@@ -151,9 +151,9 @@
 <vehicle id="fr-para-smg"          file="ground/groundman/groundman.xml"/>
 <vehicle id="fr-para-lmg"          file="ground/groundman/groundman.xml"/>
 <vehicle id="fr-para-atr"          file="ground/groundman/groundman.xml"/>
-<vehicle id="fr-para-gren"         file="ground/groundman/groundman.xml"/>
+<!--<vehicle id="fr-para-gren"         file="ground/groundman/groundman.xml"/>--> <!-- DEV-937 -->
 <vehicle id="fr-para-snpr"         file="ground/groundman/groundman.xml"/>
-<vehicle id="fr-para-eng"          file="ground/groundman/groundman.xml"/>
+<!--<vehicle id="fr-para-eng"          file="ground/groundman/groundman.xml"/>--> <!-- DEV-937 -->
 <vehicle id="fr-para-mrtr"         file="ground/groundman/groundman.xml"/>
 <vehicle id="laffly"               file="ground/laffly/laffly.xml"/>
 <vehicle id="lafflyw15"            file="ground/lafflyw15tcc/lafflyw15tcc.xml"/>
@@ -211,7 +211,7 @@
 <vehicle id="morris_us"            file="ground/morris/morris.xml"/>
 <vehicle id="us_mle25"      file="ground/mle25/mle25.xml"/>
 <vehicle id="us_mle47"      file="ground/mle47/mle47.xml"/>
-<vehicle id="us_mle38"      file="ground/mle38/mle38.xml"/>
+<vehicle id="us_mle38"      file="ground/mle38/uk_mle38.xml"/>
 <vehicle id="us_bofors"     file="ground/bofors40mm/bofors40mm.xml"/>
 <vehicle id="us_m1m1a3"     file="ground/m1m1a3/m1m1a3.xml"/>
 <vehicle id="us_m1a2m5"     file="ground/m1a2m5/m1a2m5.xml"/>

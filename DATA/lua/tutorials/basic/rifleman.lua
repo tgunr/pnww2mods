@@ -111,7 +111,7 @@ function OnGoalLearnLoadout(step)
 	elseif(step == 3) then
 		SetInput(1, input.IMAP_HOLD_FP_WEAPON_4);
 	elseif(step == 4) then
-		SetInput(1, input.IMAP_HOLD_FP_WEAPON_5);
+		SetInput(1, input.IMAP_HOLD_FP_WEAPON_6);
 	elseif(step == 5) then
 		tutorial.SetUpdate("OnGoalLearnGrenades");
 		tutorial.CompleteGoal();
@@ -159,7 +159,7 @@ end
 function OnGoalAmmoPack(step)
 	if(step == 1) then
 		fp.fpFPSControlBlockClear(fp.CB_SELECT);
-		SetInput(1, input.IMAP_HOLD_FP_WEAPON_5);
+		SetInput(1, input.IMAP_HOLD_FP_WEAPON_6);
 	elseif(step == 2) then
 		fp.fpFPSControlBlockSet(fp.CB_SELECT);
 		SetInput(2, input.IMAP_HOLD_FP_FIRE);

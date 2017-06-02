@@ -18,11 +18,10 @@ aileroncompressspeed = 0.77
 ruddercompressspeed = 0.82
 elevatorcompressspeed = 0.82
 # response times sec (full force)
-aileronresponsetime = 0.2
-#elevatorresponsetime = 0.2 (altered for testing v1.29 beta)
-elevatorresponsetime = 0.8
-rudderresponsetime = 2.3
-#rudderresponsetime = 0.5 (altered for testing v1.29 beta)
+# rudderresponsetime = 2.3 (altered for testing v1.29 beta)
+aileronresponsetime = 0.16
+elevatorresponsetime = 0.15
+rudderresponsetime = 0.19
 throttleresponsetime = 1.0
 
 # tab effects, ratio of tab force at full tab deflection to total surface force
