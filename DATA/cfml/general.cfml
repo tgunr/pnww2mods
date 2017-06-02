@@ -159,7 +159,7 @@
 	</control>
 	<control>
 		<function>show vehicle status</function>
-		<key>'</key>
+		<key>`</key>
 	</control>
 	<control>
 		<function>cycle icon mode</function>
