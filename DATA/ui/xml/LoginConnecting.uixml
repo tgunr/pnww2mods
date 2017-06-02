@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<window id="LoginConnecting" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768" aspectalign="center"
+			onshow="InitWindow()">
+	<include file="lib/login.uixml"/>
+	<view width="250" height="50" style="background-color: #00000088; 
+							border-sides: ui/textures/hud/border_side.bmp;
+							border-corner: ui/textures/hud/border_corner.bmp;
+							border-width: 4;
+							border-height: 4;" moveondrag="no" aspectlimit="width">
+		<caption rleft="10" rtop="10" height="30" width="230" label="${login.connectingtoauth}" style="font-size:+2; color:#ffffff; align=center"/>
+	</view>
+	<script>
+		<!--
+		function InitWindow() {
+			if ( auth.connected ) {
+				OnConnect();
+				return;
+			}
+			
+			auth.OnConnect = OnConnect;
+			auth.Connect();
+		}
+		
+		//======
+		
+		function OnConnect() {
+			var steam = false;
+			if ( steam ) { // TODO
+			} else {
+				loadWin("LoginCredentials", true);
+			}
+		}
+		-->
+	</script>
+</window>

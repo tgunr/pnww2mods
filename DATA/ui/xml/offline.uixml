@@ -97,9 +97,15 @@
 			initVehicleList();
 			setHelp(getlocstring('offline.spawntab.help'));
 			setForward('offline.forward');
+			//setBack('offline.back'); // TODO: Put back in when we enable in-game logins
 			forwardButton.enabled = false;
 			musicPlayIntro();
 			quickhelp();
+		}
+		
+		function doBack()
+		{
+			//loadWin("OnlineModeSelect", true); // TODO: Put back in when we enable in-game logins
 		}
 		
 		function doForward()
