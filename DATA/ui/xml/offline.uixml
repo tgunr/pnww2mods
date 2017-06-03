@@ -103,10 +103,13 @@
 			quickhelp();
 		}
 		
+		// TODO: Put back in when we enable in-game logins
+		/*
 		function doBack()
 		{
-			//loadWin("OnlineModeSelect", true); // TODO: Put back in when we enable in-game logins
+			loadWin("OnlineModeSelect", true);
 		}
+		*/
 		
 		function doForward()
 		{
