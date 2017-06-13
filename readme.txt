@@ -19,5 +19,6 @@ Client related
 - Addressed capture issues when more than 12 players capturing at once
 - Addressed issue with despawn button
 - Game credits updated
+- Offline clones are now properly oriented and killable
 
 If you are proficient in English and one of our supported languages (French, German, Spanish, Italian, and Chinese) we encourage you to contact our Marketing team to support WWIIOL!  If you know English and would like to see your Native tongue supported feel free to contact us and perhaps you can help us extend our supported localizations as well.  In upcoming releases we will be auditing all of the existing translations so your help is appreciated.
