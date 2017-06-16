@@ -48,7 +48,7 @@
 		if ( ! online ) {
 			loadWin('offline', true);
 		} else {
-			if ( callsign.text == "" ) {
+			if ( callsign_pane.visible && callsign.text == "" ) {
 				showOk(getlocstring("login.steamneedscallsign"));
 				return;
 			}
