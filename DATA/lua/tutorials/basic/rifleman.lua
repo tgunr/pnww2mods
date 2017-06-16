@@ -110,9 +110,11 @@ function OnGoalLearnLoadout(step)
 		SetInput(1, input.IMAP_HOLD_FP_WEAPON_3);
 	elseif(step == 3) then
 		SetInput(1, input.IMAP_HOLD_FP_WEAPON_4);
-	elseif(step == 4) then
-		SetInput(1, input.IMAP_HOLD_FP_WEAPON_6);
+		elseif(step == 4) then
+		SetInput(1, input.IMAP_HOLD_FP_WEAPON_5);
 	elseif(step == 5) then
+		SetInput(1, input.IMAP_HOLD_FP_WEAPON_6);
+	elseif(step == 6) then
 		tutorial.SetUpdate("OnGoalLearnGrenades");
 		tutorial.CompleteGoal();
 	end
