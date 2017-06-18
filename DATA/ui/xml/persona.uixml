@@ -188,11 +188,12 @@
 			}
 		}
 		
-		function doBack()
+		// TODO: Go to the initial screen when we enable in-game logins.
+		/*function doBack()
 		{
 			if(scenarioPlay())
 				loadWin("online", true);
-		}
+		}*/
 		
 		function doSquadCheck()
 		{
@@ -293,10 +294,11 @@
 			else
 				setForward('persona.forward.brigades');
 			
-			setBack('online.back');
+			// TODO: Reenable when we fully support in-game logins.
+			/*setBack('online.back');
 			
 			if(!scenarioPlay())
-				backButton.visible = false;
+				backButton.visible = false;*/
 			
 			client.onpersonas = initPersonaList;
 			client.requestpersonalist();
