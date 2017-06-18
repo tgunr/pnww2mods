@@ -1,28 +1,24 @@
 ============================================
 World War II Online
-Version 1.35.8 (April 2017)
+Version 1.35.9.0 (June 2017)
 ============================================
-This update includes two major items to successfully release on Steam. There are a couple of minor updates / fixes as well. Testing will be required for Netcode3 and Multiple Cell Hosts. Our QA team has approved after initial tests and we need to do a proper stress test at this stage to verify the integrity of these updates.
-
-Netcode3 is designed to improve communication between infantry, so that you may see them more accurately in better time. 
-
-Re-enabling multiple cell hosts will hand off a user from one end of the map, over to another less loaded cell host, with the intention of reducing latency and stress on servers. This will result into better rendering of all vehicles and is a core technology of WWII Online.
+This maintenance update primarily serves to enable Steam users to download and play the game on both Mac (OS X) and PC platforms.  Additionally the following issues have been resolved:
 
 ============================================
-Priority Steam Items
+Server related
 ============================================
-- Netcode3 for infantry being introduced for mass testing review.
-- Re-enabling multiple cell hosts to manager more concurrent users.
+- Addressed two previous server crash issues
 
 ============================================
-Art Improvements
+Client related
 ============================================
-- Crew members on Hotchkiss 25mm AA replaced for Allied forces.
-- Crew members on Flak30 replaced for Germans.
-- FMS poster now shows “Discord” information.
+- Game rebranding to World War II Online, updated loading and splash screens
+- Corrected numerous issues with tutorial system
+- Localization process established applying to all new updates (Italian, Spanish, German)
+- Enforce mandatory training (tutorial) for all new users
+- Addressed capture issues when more than 12 players capturing at once
+- Addressed issue with despawn button
+- Game credits updated
+- Offline clones are now properly oriented and killable
 
-============================================
-General Fixes
-============================================
-- Damaged propellers no longer disappear in external view.
-- Propeller damaged accurately reflect in 3rd person.
+If you are proficient in English and one of our supported languages (French, German, Spanish, Italian, and Chinese) we encourage you to contact us (jobs@playnet.com) and support WWIIOL!  You can also participate if are a bilingual English speaker and would like to see your Native tongue supported as well.  In upcoming releases we will be auditing all of the existing translations so your help is appreciated.
