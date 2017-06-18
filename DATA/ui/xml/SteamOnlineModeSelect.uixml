@@ -7,31 +7,28 @@
 	<button id="quit-button" x="980" y="725" width="30" height="30" onclick="tplQuit()"
 				style="control-on: ui/textures/test/exit_on.bmp; control-off: ui/textures/test/exit_off.bmp;"
 				tip="${widgets.template.quit.tip}"/>
-	<view width="420" height="215" style="background-color: #00000088; 
+	<view width="521" height="241" style="background-color: #00000088; 
 				border-sides: ui/textures/hud/border_side.bmp; border-corner: ui/textures/hud/border_corner.bmp; border-width: 4; border-height: 4;"
 				aspectlimit="width" aspectalign="center">
-		<image rleft="10" rtop="-40" src="ui/textures/be.bmp" width="403" height="238"/>
-		<button id="oms-offline" rleft="0" rbottom="10" width="150" height="35" label="${login.offlinemode}" onclick="StartGame(false)"
+		<image rtop="10" src="ui/textures/logo.bmp" width="501" height="111"/>
+		<button id="oms-live" rbottom="45" width="311" height="70" label="${login.onlinemode}" onclick="StartGame(true, 1)"
+					style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: +15; color: #ffffff;"
+					onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
+		<button id="oms-training" x="114" rbottom="10" width="150" height="35" label="${login.trainingmode}" onclick="StartGame(true, 22)"
 					style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 					onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
-		<button id="oms-training" rbottom="10" width="150" height="35" label="${login.trainingmode}" onclick="StartGame(true, 22)"
-					style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
-					onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
-		<button id="oms-live" rright="0" rbottom="10" width="150" height="35" label="${login.onlinemode}" onclick="StartGame(true, 1)"
+		<button id="oms-offline" x="254" rbottom="10" width="150" height="35" label="${login.offlinemode}" onclick="StartGame(false)"
 					style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 					onmouseenter="if(this.enabled) this.setstyleproperty('color', '#FFFF00')" onmouseexit="this.setstyleproperty('color', '#FFFFFF')"/>
 	</view>
 	
-	<view id="callsign-pane" y="195" width="350" height="70" style="background-color: #00000088;
+	<view id="callsign-pane" y="195" width="350" height="50" style="background-color: #00000088;
 				border-sides: ui/textures/hud/border_side.bmp;
 				border-corner: ui/textures/hud/border_corner.bmp;
 				border-width: 4;
 				border-height: 4;" moveondrag="no">
 		<caption id="callsign-label" rleft="10" rtop="10" height="20" width="100" label="${login.promptcallsign}" style="font-size:-1; color:#ffffff; align=right"/>
-		<textcontrol id="callsign1" rright="10" rtop="10" height="20" width="200" acceptsfocus="true" style="background-color: #FFFFFF; font-size:-1; color: #000000;"
-					maxlength="10" ontab="callsign_1.focused = false; callsign_2.focused = true;" onenter="callsign_1.focused = false; callsign_2.focused = true;"/>
-		<caption id="callsignrepeat-label" rleft="10" rtop="35" height="20" width="100" label="${login.promptcallsignrepeat}" style="font-size:-1; color:#ffffff; align=right"/>
-		<textcontrol id="callsign2" rright="10" rtop="35" height="20" width="200" acceptsfocus="true" style="background-color: #FFFFFF; font-size:-1; color: #000000;"
+		<textcontrol id="callsign" rright="10" rtop="10" height="20" width="200" acceptsfocus="true" style="background-color: #FFFFFF; font-size:-1; color: #000000;"
 					maxlength="10"/>
 	</view>
 	<script>
@@ -39,8 +36,7 @@
 	var client = game.player.client;
 	
 	var callsign_pane = findview("callsign-pane");
-	var callsign_1 = findview("callsign1");
-	var callsign_2 = findview("callsign2");
+	var callsign = findview("callsign");
 	
 	function InitWindow() {
 		callsign_pane.visible = false;
@@ -52,11 +48,11 @@
 		if ( ! online ) {
 			loadWin('offline', true);
 		} else {
-			if ( callsign_1.text != callsign_2.text ) {
-				showOk(getlocstring("login.steamcallsignsdontmatch"));
+			if ( callsign_pane.visible && callsign.text == "" ) {
+				showOk(getlocstring("login.steamneedscallsign"));
 				return;
 			}
-			var result = client.steamconnect(arena, callsign_1.text);
+			var result = client.steamconnect(arena, callsign.text);
 			
 			// HACK: Currently just using the return value as-is.
 			if ( result == 0 ) {
