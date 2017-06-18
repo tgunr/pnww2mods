@@ -106,23 +106,25 @@
 		{
 			if(despawn)
 			{
+				// HACK: Cleaning up GUI elements
 				var fullMap = game.findview("fullmap");
-				
 				if(fullMap)
 					fullMap.close();
 				
 				var gameMap = game.findview("ingamemap");
-				
 				if(gameMap)
 					gameMap.visible = false;
 				
 				var hud = game.findview("hud");
-				
-				if(hud)
-				{
+				if(hud) {
 					var minimap = hud.findview("minimap");
 					if(minimap) game.setpref('hud.minimap.scale', 4, minimap.scale);
 				}
+				
+				var tut = game.findview("tutorial");
+				if(tut)
+					tut.close();
+				
 				
 				if(undeploy && client.ismobilespawn)
 					client.undeployms();
@@ -131,7 +133,7 @@
 				game.despawn(game.scenario);
 				popup.setPopupCursorState(true);
 			}
-						
+			
 			game.enableimapinput(true);
 			client.enabledespawntimer(false);
 			game.cancelppo();
