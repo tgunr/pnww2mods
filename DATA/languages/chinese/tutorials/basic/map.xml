@@ -68,6 +68,20 @@
 2.2.alert.selection = Antwerp
 2.2.alert1.modal = 设施上的旗帜表明它被哪个国家所占领。[NL][NL]图标形状表明设施的种类。[NL][NL]当所有设施都被占领时，这个城镇就会被占领它的国家拥有，战线也会因此向前推进。
 2.2.label = “恩特维普”的设施
+2.2.alert2.modal = You can hover your mouse over some of the strategic facilities to identify them. Try hovering over the armybase for antwerp that is marked with a tank icon. This is where most missions are created from as the supply of troops and vehicles is exceptionally higher. It requires a friendly army brigade to be situated in the town or city.
+2.2.alert2.hilite = 200,225,20,20,mapview
+
+2.2.alert3.modal = Now try hovering over a depot marked with a truck icon. troops can create missions from these facilities. It requires that a friendly army brigade must be situated in the town or city to create missions or spawn from these facilities.
+2.2.alert3.hilite = 290,200,20,20,mapview 
+
+2.2.alert4.modal = Now try hovering over the city flag. This is marked with a building icon.
+2.2.alert4.hilite = 200,125,20,20,mapview
+2.2.alert5.modal = Now try hovering over a production facility with a factory icon. Controlling production facilities can be critical to the chain of supply for all branches of the armed forces.
+2.2.alert5.hilite = 245,150,20,20,mapview
+2.2.alert6.modal = Now try hovering over the docks marked by a anchor sign. It is possible for navy units such as fairmile boats can spawn in under navy missions. It requires a navy brigade to be stationed at the town or city to create missions from and spawn.
+2.2.alert6.hilite = 345,320,20,20,mapview
+2.2.alert7.modal = Now try hovering over the airfield with the airplane icon. This is where air force missions can start and end their missions at.It requires an air force brigade to be stationed at the town or city to create or spawn into missions.
+2.2.alert7.hilite = 250,55,20,20,mapview
 
 3.0.label = 战略导航点和触敌报告
 
@@ -76,7 +90,7 @@
 3.1.alert.position = 213197,3072505,target
 3.1.alert.scale = .42
 3.1.alert.selection = Antwerp
-3.1.alert.hilite = 282,96,76,58,mapview
+3.1.alert.hilite = 20,20,20,20,mapview
 //3.1.alert.mouse = true
 3.1.alert1.modal = 当你把战车驶回基地的时候，如果它并没有受到太大的伤害，那么这辆战车将为你保留。[NL][NL]如果你的战车受损严重的话，你将不得不选择另外一个战车；如果没有同一类型的战车，那你就只有选择别的战车或步兵单位了。
 3.1.alert1.hilite = 282,96,76,58,mapview
