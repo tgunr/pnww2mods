@@ -1,3 +1,24 @@
+<!ENTITY authconn.complete "Respuesta recibida.">
+<!ENTITY authconn.error.badcallsign.char "El carácter  '{1}' no está permitido como apodo.">
+<!ENTITY authconn.error.badcallsign.length "Los apodos están limitados a 10 caracteres.">
+<!ENTITY authconn.error.badusername.char "El carácter '{1}' no está permitido en el nombre de usuario.">
+<!ENTITY authconn.error.badusername.length "Los nombres de usuario están limitados a 10 caracteres.">
+<!ENTITY authconn.error.generic.errorcode "Ha ocurrido un error de red  '{1}'.">
+<!ENTITY authconn.error.generic.unknown "Ha sucedido un error desconocido. Por favor reinicie la aplicación y pruebe otra vez.">
+<!ENTITY authconn.error.init.callbackinitfailed "Ha fallado la inicialización de las callbacks de red.">
+<!ENTITY authconn.error.init.couldnotresolve "No se ha podido resolver '{1}'.">
+<!ENTITY authconn.error.init.multipleconnections "La aplicación trató de abrir más de una conexión de autenticación al mismo tiempo.">
+<!ENTITY authconn.error.login.arenafull "La región está completa. Por favor inténtelo más tarde">
+<!ENTITY authconn.error.login.game "La red del juego está caída. Inténtelo en breve.">
+<!ENTITY authconn.error.login.locked "El servidor está cerrado. Inténtelo de nuevo en breve.">
+<!ENTITY authconn.error.login.password "Contraseña incorrecta.">
+<!ENTITY authconn.error.login.subscription "Su suscripción no está actualmente activa.">
+<!ENTITY authconn.error.login.system "Error en el sistema de login. Por favor inténtelo nuevamente en breve.">
+<!ENTITY authconn.error.login.unknown "Ha ocurrido un error autenticando su login. Por favor inténtelo nuevamente en breve.">
+<!ENTITY authconn.error.login.username "No existe tal nombre de usuario.">
+<!ENTITY authconn.error.login.version "Esta versión del  juego no puede conectarse con el servidor de autenticación.">
+<!ENTITY authconn.error.unknown "Ha ocurrido un error desconocido al intentar conectarse al juego. Por favor reinicie la aplicación e inténtelo de nuevo.">
+<!ENTITY authconn.waiting "Esperando respuesta.">
 <!ENTITY brigade.back "Traslado">
 <!ENTITY brigade.back.decision "¿Qué le gustaría cambiar?">
 <!ENTITY brigade.back.decision.brigade "BRIGADA">
@@ -3420,8 +3441,34 @@
 <!ENTITY loc.ui.97 "Ya has lanzado una misión aquí.">
 <!ENTITY loc.ui.98 "Error Desconocido.">
 <!ENTITY loc.ui.99 "Seleccione un vehículo y después pulse lanzar (launch)">
-
-
+<!ENTITY login.arenaselect.arenaheader "CAMPO DE BATALLA" >
+<!ENTITY login.arenaselect.back "Atrás" >
+<!ENTITY login.arenaselect.failedtoconnect "No se ha podido conectar con el campo de batalla seleccionado:  A ocurrido un error desconocido." >
+<!ENTITY login.arenaselect.forward "Unirse al campo de batalla" >
+<!ENTITY login.arenaselect.list.name "Campo de batalla" >
+<!ENTITY login.arenaselect.offline "Jugar Fuera de Línea" >
+<!ENTITY login.arenaselect.noarenas "NO SE HAN ENCONTRADO CAMPOS DE BATALLA" >
+<!ENTITY login.arenaselect.states.loading.tip "El servidor está cargando">
+<!ENTITY login.arenaselect.states.locked.tip "El servidor está temporalmente cerrado">
+<!ENTITY login.arenaselect.states.maintenance.tip "El servido está cerrado por mantenimiento">
+<!ENTITY login.arenaselect.states.offline.tip "El servidor está fuera de línea ">
+<!ENTITY login.arenaselect.states.online.tip "El servidor está en línea ">
+<!ENTITY login.arenaselect.states.starting.tip "El servidor se está iniciando">
+<!ENTITY login.arenaselect.states.syncing.tip "Los Hosts se están sincronizando entre ellos ">
+<!ENTITY login.connectingtoauth "Conectando con el Host de Autenticación...">
+<!ENTITY login.error.retry "Reintento">
+<!ENTITY login.error.offline "Fuera de Línea">
+<!ENTITY login.offlinemode "Jugar Fuera de Línea">
+<!ENTITY login.onlinemode "Unirse a la Batalla">
+<!ENTITY login.promptcallsign "APODO DESEADO">
+<!ENTITY login.promptlogin "LOGIN">
+<!ENTITY login.promptpassword "Contraseña">
+<!ENTITY login.promptusername "Nombre de Usuario">
+<!ENTITY login.steambadcallsign "El apodo que ha solicitado ya está en uso o es inválido. Por favor use solamente caracteres alfanuméricos estándar.">
+<!ENTITY login.steamneedscallsign "Es la primera vez que entras y necesitas crear un apodo.">
+<!ENTITY login.steamunknownerror "Ha ocurrido un error desconocido. Por favor inténtalo de nuevo o prueba el modo fuera de línea.">
+<!ENTITY login.steamuserdoesnotexist "No pareces tener este juego con tu cuenta Steam. Asegúrate de haberte conectado con la cuenta adecuada y prueba otra vez.">
+<!ENTITY login.trainingmode "Servidor de Entrenamiento">
 <!ENTITY map.airforce "Aire">
 <!ENTITY map.army "Tierra">
 <!ENTITY map.bridges "Puentes">
@@ -3642,8 +3689,8 @@
 <!ENTITY mission.timeleft.url "https://secure.wwiionline.com/scripts/wwiionline/user/subscription.jsps">
 <!ENTITY none "none">
 <!ENTITY oc.host.543 "Ignorando daño al casco: casco es invulnerable (0 capacidad)">
-
-
+<!ENTITY offline.back "SELECCIÓN DE MODO">
+<!ENTITY offline.back.tip "Vuelve atrás y considera entrar en un campo de batalla en línea.">
 <!ENTITY offline.forward "ENTRAR AL CAMPO">
 <!ENTITY offline.forward.tip "Salga sin conectar al servidor para explorar el mundo.">
 <!ENTITY offline.spawntab "SELECCIÓN DE SALIDA">

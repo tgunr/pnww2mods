@@ -3,119 +3,116 @@
   <key>3</key>
   <body>title = Basic Map Usage
 1.0.label =  the map
-1.1.alert = Welcome to the Theater Map tutorial. We&#39;ll learn how to move the world map around and about common things found on it.[NL][NL]Press {showingamemap} to open the theater map.
-1.1.label = Open the Map
+    1.1.alert = Welcome to the Theater Map tutorial. We&#39;ll learn how to move the world map around and about common things found on it.[NL][NL]Press {showingamemap} to open the theater map.
+  1.1.label = Open the Map
 
-1.2.alert.modal = The map is made up of 3 distinct areas.[NL][NL]The top of the map has multiple tabs that can be used to access mission information, manuals or to change your controls.
-1.2.alert.position = 211614,3074656,false
-1.2.alert.scale = 1.17
-1.2.alert.selection = Antwerp
-1.2.alert.mouse = false
-1.2.alert.hilite = -57,409,904,28,mapview
-1.2.alert1.modal = On the left is the map&#39;s control panel.[NL][NL]It allows you to view map info, find towns, change map filters and perform actions like create missions, toggle radar and center the map.
-1.2.alert1.hilite = -49,-4,49,407,mapview
-1.2.alert2.modal = The largest portion of the map screen is devoted to the map of the world.[NL][NL]This tutorial will concentrate on this part of the map screen although we&#39;ll access a few map control functions.
-1.2.alert2.hilite = -3,-1,840,403,mapview
-1.2.alert5 = Center the map on your position by clicking the &#34;center me&#34; button on the left panel.
-1.2.alert5.hilite = map-centerme
-1.2.alert5.mouse = true
-1.2.label = center the map
-1.2.complete.modal = Clicking this button centers the map on your position no matter where you are.
-1.2.complete.mouse = false
+    1.2.alert.modal = The map is made up of 3 distinct areas.[NL][NL]The top of the map has multiple tabs that can be used to access mission information, manuals or to change your controls.
+    1.2.alert.position = 211614,3074656,false
+    1.2.alert.scale = 1.17
+    1.2.alert.selection = Antwerp
+    1.2.alert.mouse = false
+    1.2.alert.hilite = -57,409,904,28,mapview
+    1.2.alert1.modal = On the left is the map&#39;s control panel.[NL][NL]It allows you to view map info, find towns, change map filters and perform actions like create missions, toggle radar and center the map.
+    1.2.alert1.hilite = -49,-4,49,407,mapview
+    1.2.alert2.modal = The largest portion of the map screen is devoted to the map of the world.[NL][NL]This tutorial will concentrate on this part of the map screen although we&#39;ll access a few map control functions.
+    1.2.alert2.hilite = -3,-1,840,403,mapview
+    1.2.alert5 = Center the map on your position by clicking the &#34;center me&#34; button on the left panel.
+    1.2.alert5.hilite = map-centerme
+    1.2.alert5.mouse = true
+  1.2.label = center the map
+    1.2.complete.modal = Clicking this button centers the map on your position no matter where you are.
+    1.2.complete.mouse = false
 
-1.3.alert.modal = You are represented by the circle arrow in the center of the map.[NL][NL]The direction you are looking in the game world is the direction the arrow is pointing on the map.[NL][NL]Just like other maps: north is up, east is right, south is down and west is left. 
-1.3.alert.hilite = 403,178,50,43,mapview
-1.3.alert1 = Now the map is centered on the Belgian city Namur.[NL][NL]Zoom all of the way into Namur by pressing {mapin} or by rolling the mouse wheel forward if you have one.
-1.3.alert1.position = 233874.05,3027401.75
-1.3.alert1.scale = 3.34
-1.3.alert1.selection = Namur
-1.3.alert1.mouse = true
-1.3.label = zoom in
-1.3.complete.modal = Good.[NL][NL]You can see more detail at this zoom level like buildings and structures.
+    1.3.alert.modal = You are represented by the circle arrow in the center of the map.[NL][NL]The direction you are looking in the game world is the direction the arrow is pointing on the map.[NL][NL]Just like other maps: north is up, east is right, south is down and west is left. 
+    1.3.alert.hilite = 403,178,50,43,mapview
+    1.3.alert1 = Now the map is centered on the Belgian city Namur.[NL][NL]Zoom all of the way into Namur by pressing {mapin} or by rolling the mouse wheel forward if you have one.
+    1.3.alert1.position = 233874.05,3027401.75
+    1.3.alert1.scale = 3.34
+    1.3.alert1.selection = Namur
+    1.3.alert1.mouse = true
+  1.3.label = zoom in
+    1.3.complete.modal = Good.[NL][NL]You can see more detail at this zoom level like buildings and structures.
 
-1.4.alert = Now, zoom all of the way out by pressing {mapout} or by rolling the mouse wheel backwards if you have one.
-1.4.label = zoom out
-1.4.complete.modal = At this level, you can see much a larger region that includes many different elements, such as cities, roads, rivers, forests, and coasts.
+    1.4.alert = Now, zoom all of the way out by pressing {mapout} or by rolling the mouse wheel backwards if you have one.
+  1.4.label = zoom out
+    1.4.complete.modal = At this level, you can see much a larger region that includes many different elements, such as cities, roads, rivers, forests, and coasts.
 
-1.5.alert = You can move the map around by left-clicking on a region of the map and dragging your mouse or by double-clicking a point on the map.[NL][NL]Move the map around.
-1.5.alert.scale = 3.33
-1.5.label = move the map
-1.5.complete.modal = Remember, you can always re-center the map after dragging it around by clicking the &#34;center me&#34; button on the map control panel.
+    1.5.alert = You can move the map around by left-clicking on a region of the map and dragging your mouse or by double-clicking a point on the map.[NL][NL]Move the map around.
+    1.5.alert.scale = 3.33
+  1.5.label = move the map
+    1.5.complete.modal = Remember, you can always re-center the map after dragging it around by clicking the &#34;center me&#34; button on the map control panel.
 
-1.6.alert.modal = Sometimes its helpful to be able to find a specific city. Maybe your friends are there or the city is in danger of being captured by the enemy.[NL][NL]This is where the city finder is useful.
-1.6.alert.hilite = map-cp-find
-1.6.alert.scale = 3.33
-1.6.alert1 = Open the city finder and enter &#34;di&#34; into the search box (magnifying glass icon on the left). A list of cities starting with di will show.[NL][NL]The more letters you enter, the narrower the search.[NL][NL]Select &#34;Dinant&#34; to center the map on that city.
-1.6.alert1.hilite = map-cp-find
-1.6.label = find a city
-1.6.complete.modal = Well done. The map now centers on Dinant, a Belgian city on the river Meuse.
-1.6.complete.mouse = false
+    1.6.alert.modal = Sometimes its helpful to be able to find a specific city. Maybe your friends are there or the city is in danger of being captured by the enemy.[NL][NL]This is where the city finder is useful.
+    1.6.alert.hilite = map-cp-find
+    1.6.alert.scale = 3.33
+    1.6.alert1 = Open the city finder and enter &#34;di&#34; into the search box (magnifying glass icon on the left). A list of cities starting with di will show.[NL][NL]The more letters you enter, the narrower the search.[NL][NL]Select &#34;Dinant&#34; to center the map on that city.
+    1.6.alert1.hilite = map-cp-find
+  1.6.label = find a city
+    1.6.complete.modal = Well done. The map now centers on Dinant, a Belgian city on the river Meuse.
+    1.6.complete.mouse = false
 
 2.0.label = Map Elements
 
-2.1.alert.modal = Lets review some basic map elements.
-2.1.alert.position = 220238,3071580
-2.1.alert.scale = 1.89
-2.1.alert.selection = Antwerp
-2.1.alert1.modal = Here is a group of towns on the frontline.[NL][NL]Schilde is a small town owned by the Germans.[NL][NL]To the south is Lier which is owned by the French.[NL][NL]Northwest is Antwerp, which is owned by the British.
-2.1.alert1.hilite = 100,32,386,302,mapview
-2.1.alert2.modal = The icon next to each town&#39;s name indicates country ownership.[NL][NL]The color of the name indicates side ownership. Red for Axis, blue for Allied.[NL][NL]Antwerp&#39;s name is currently green because it is selected.
-2.1.label = chokepoints
+    2.1.alert.modal = Lets review some basic map elements.
+    2.1.alert.position = 220238,3071580
+    2.1.alert.scale = 1.89
+    2.1.alert.selection = Antwerp
+    2.1.alert1.modal = Here is a group of towns on the frontline.[NL][NL]Schilde is a small town owned by the Germans.[NL][NL]To the south is Lier which is owned by the French.[NL][NL]Northwest is Antwerp, which is owned by the British.
+    2.1.alert1.hilite = 100,32,386,302,mapview
+    2.1.alert2.modal = The icon next to each town&#39;s name indicates country ownership.[NL][NL]The color of the name indicates side ownership. Red for Axis, blue for Allied.[NL][NL]Antwerp&#39;s name is currently green because it is selected.
+  2.1.label = chokepoints
 
-2.2.alert.modal = Zooming in you can see Antwerp&#39;s facilities.[NL][NL]Facilities are groupings of related buildings[NL][NL]Facility types include depots, army bases, docks, airfields, factories and others.
-
-2.2.alert.position = 214214,3074256,target
-2.2.alert.scale = .91
-2.2.alert.selection = Antwerp
-2.2.alert1.modal = The flag next to each facility indicates which country owns the facility.[NL][NL]The icon shape indicates the facility type.[NL][NL]Once all facilities of a town are captured, the town is then owned by the capturing country and the frontline is moved forward. 
-2.2.label = antwerp&#39;s facilities
-2.2.alert2.modal = You can hover your mouse over some of the strategic facilities to identify them. Try hovering over the armybase for antwerp that is marked with a tank icon. This is where most missions are created from as the supply of troops and vehicles is exceptionally higher. It requires a friendly army brigade to be situated in the town or city.
-2.2.alert2.hilite = 200,225,20,20,mapview
-
-2.2.alert3.modal = Now try hovering over a depot marked with a truck icon. troops can create missions from these facilities. It requires that a friendly army brigade must be situated in the town or city to create missions or spawn from these facilities.
-2.2.alert3.hilite = 290,200,20,20,mapview 
-
-2.2.alert4.modal = Now try hovering over the city flag. This is marked with a building icon.
-2.2.alert4.hilite = 200,125,20,20,mapview
-2.2.alert5.modal = Now try hovering over a production facility with a factory icon. Controlling production facilities can be critical to the chain of supply for all branches of the armed forces.
-2.2.alert5.hilite = 245,150,20,20,mapview
-2.2.alert6.modal = Now try hovering over the docks marked by a anchor sign. It is possible for navy units such as fairmile boats can spawn in under navy missions. It requires a navy brigade to be stationed at the town or city to create missions from and spawn.
-2.2.alert6.hilite = 345,320,20,20,mapview
-2.2.alert7.modal = Now try hovering over the airfield with the airplane icon. This is where air force missions can start and end their missions at.It requires an air force brigade to be stationed at the town or city to create or spawn into missions.
-2.2.alert7.hilite = 250,55,20,20,mapview
+    2.2.alert.modal = Zooming in you can see Antwerp&#39;s facilities.[NL][NL]Facilities are groupings of related buildings[NL][NL]Facility types include depots, army bases, docks, airfields, factories and others.
+    2.2.alert.position = 214214,3074256,target
+    2.2.alert.scale = .91
+    2.2.alert.selection = Antwerp
+    2.2.alert1.modal = The flag next to each facility indicates which country owns the facility.[NL][NL]The icon shape indicates the facility type.[NL][NL]Once all facilities of a town are captured, the town is then owned by the capturing country and the frontline is moved forward. 
+  2.2.label = antwerp&#39;s facilities
+    2.2.alert2.modal = You can hover your mouse over some of the strategic facilities to identify them. Try hovering over the armybase for antwerp that is marked with a tank icon. This is where most missions are created from as the supply of troops and vehicles is exceptionally higher. It requires a friendly army brigade to be situated in the town or city.
+    2.2.alert2.hilite = 200,225,20,20,mapview
+    2.2.alert3.modal = Now try hovering over a depot marked with a truck icon. troops can create missions from these facilities. It requires that a friendly army brigade must be situated in the town or city to create missions or spawn from these facilities.
+    2.2.alert3.hilite = 290,200,20,20,mapview 
+    2.2.alert4.modal = Now try hovering over the city flag. This is marked with a building icon.
+    2.2.alert4.hilite = 200,125,20,20,mapview
+    2.2.alert5.modal = Now try hovering over a production facility with a factory icon. Controlling production facilities can be critical to the chain of supply for all branches of the armed forces.
+    2.2.alert5.hilite = 245,150,20,20,mapview
+    2.2.alert6.modal = Now try hovering over the docks marked by a anchor sign. It is possible for navy units such as fairmile boats can spawn in under navy missions. It requires a navy brigade to be stationed at the town or city to create missions from and spawn.
+    2.2.alert6.hilite = 345,320,20,20,mapview
+    2.2.alert7.modal = Now try hovering over the airfield with the airplane icon. This is where air force missions can start and end their missions at.It requires an air force brigade to be stationed at the town or city to create or spawn into missions.
+    2.2.alert7.hilite = 250,55,20,20,mapview
 
 3.0.label = Tactical Waypoints and Contact Reports
 
-3.1.label = origin
-3.1.alert.modal = The map system also displays important tactical information such as your mission origin and target.[NL][NL]A blue triangle waypoint is placed over your mission origin.[NL][NL]Once you have completed your mission or you have run out of ammo, you should attempt to make it back here, or another friendly facility, to despawn.
-3.1.alert.position = 213197,3072505,target
-3.1.alert.scale = .42
-3.1.alert.selection = Antwerp
-3.1.alert.hilite = 20,20,20,20,mapview
-//3.1.alert.mouse = true
-3.1.alert1.modal = If you make it back to base without too much damage, your vehicle is reserved for you.[NL][NL]If you are too damaged, you may have to take another vehicle or infantry type if no more of that type are available.
-3.1.alert1.hilite = 282,96,76,58,mapview
+  3.1.label = origin
+    3.1.alert.modal = The map system also displays important tactical information such as your mission origin and target.[NL][NL]A blue triangle waypoint is placed over your mission origin.[NL][NL]Once you have completed your mission or you have run out of ammo, you should attempt to make it back here, or another friendly facility, to despawn.
+    3.1.alert.position = 213197,3072505,target
+    3.1.alert.scale = .42
+    3.1.alert.selection = Antwerp
+    3.1.alert.hilite = 20,20,20,20,mapview
+    //3.1.alert.mouse = true
+    3.1.alert1.modal = If you make it back to base without too much damage, your vehicle is reserved for you.[NL][NL]If you are too damaged, you may have to take another vehicle or infantry type if no more of that type are available.
+    3.1.alert1.hilite = 282,96,76,58,mapview
 
-3.2.label = target
-3.2.alert.modal = A red triangle is placed on your current mission target.[NL][NL]You can right-click on any waypoint icon to make it active.[NL][NL]This adds a small green navigation arrow to your theater map and minimap.
-3.2.alert.position = 220780,3073893,target
-3.2.alert.hilite = 246,133,71,52,mapview
-3.2.alert.selection = Schilde
+  3.2.label = target
+    3.2.alert.modal = A red triangle is placed on your current mission target.[NL][NL]You can right-click on any waypoint icon to make it active.[NL][NL]This adds a small green navigation arrow to your theater map and minimap.
+    3.2.alert.position = 220780,3073893,target
+    3.2.alert.hilite = 246,133,71,52,mapview
+    3.2.alert.selection = Schilde
 
-3.3.alert.modal = Contact reports are points on the map where another player has reported seeing an enemy unit.[NL][NL]The report icon shape conveys the type of enemy sighted.[NL][NL]You can mouse over a report to see who reported it, when and any associated notes.
-3.3.alert.position = 213197,3072505,target
-3.3.alert.scale = .31
-3.3.alert.selection = Antwerp
-3.3.alert1 = Right-click your mouse anywhere in the map and select &#34;Add Report&#34;.[NL][NL]Choose a type of report and enter some comments if you like.[NL][NL]Then click &#34;OK&#34;.
-3.3.alert1.mouse = true
-3.3.label = add a report
-3.3.complete.modal = Contact reports are visible to all mission members.[NL][NL]Take a moment to mouse-over the report to see its specifics.
+    3.3.alert.modal = Contact reports are points on the map where another player has reported seeing an enemy unit.[NL][NL]The report icon shape conveys the type of enemy sighted.[NL][NL]You can mouse over a report to see who reported it, when and any associated notes.
+    3.3.alert.position = 213197,3072505,target
+    3.3.alert.scale = .31
+    3.3.alert.selection = Antwerp
+    3.3.alert1 = Right-click your mouse anywhere in the map and select &#34;Add Report&#34;.[NL][NL]Choose a type of report and enter some comments if you like.[NL][NL]Then click &#34;OK&#34;.
+    3.3.alert1.mouse = true
+  3.3.label = add a report
+    3.3.complete.modal = Contact reports are visible to all mission members.[NL][NL]Take a moment to mouse-over the report to see its specifics.
 
-3.4.alert = Press {showingamemap} to close the map and finish this tutorial.
-3.4.label = close map
+    3.4.alert = Press {showingamemap} to close the map and finish this tutorial.
+  3.4.label = close map
 
-3.5.alert.modal = This concludes the Theater Map tutorial.
-3.5.label = done</body>
+    3.5.alert.modal = This concludes the Theater Map tutorial.
+  3.5.label = done</body>
   <branch>1</branch>
   <brief>Understanding Map Usage</brief>
   <handler>basic.map</handler>

@@ -1,44 +1,46 @@
 <?xml version='1.0'?>
 <content type="5">
   <key>5</key>
-  <body>1.0.label = Comprendiendo la Información en Pantalla (HUD)
+  <body>
+1.0.label = Comprendiendo la Información en Pantalla (HUD)
 
-1.1.alert.modal = La Información en Pantalla proporciona información a cerca de tu unidad y el mundo a tu alrededor cuando estés en el terreno de juego.[NL][NL]Contiene varios elementos, incluyendo algunos que son opcionales.  Muchos de ellos han sido discutidos en tutoriales anteriores.
-1.1.label = Elementos del HUD
+    1.1.alert.modal = La Información en Pantalla proporciona información a cerca de tu unidad y el mundo a tu alrededor cuando estés en el terreno de juego.[NL][NL]Contiene varios elementos, incluyendo algunos que son opcionales.  Muchos de ellos han sido discutidos en tutoriales anteriores.
+  1.1.label = Elementos del HUD
 
-1.2.alert.modal = La barra de salud muestra la cantidad de vida que tienes.  Cuando te hieran, tu nivel de salud decrecerá. Si tu salud llega a cero, estarás muerto. Cuidado con las pequeñas heridas que provocan un lento desangramiento hasta la muerte.
-1.2.alert.hilite = health-bar,target
-1.2.label = Barra de Salud
+    1.2.alert.modal = La barra de salud muestra la cantidad de vida que tienes.  Cuando te hieran, tu nivel de salud decrecerá. Si tu salud llega a cero, estarás muerto. Cuidado con las pequeñas heridas que provocan un lento desangramiento hasta la muerte.
+    1.2.alert.hilite = health-bar,target
+  1.2.label = Barra de Salud
 
-1.3.alert.modal = La barra de Energía muestra la capacidad de gastar energía al esprintar, agacharse, arrastrarse, correr agachado.  Por ejemplo, cuando la barra de energía está a la mitad o menos, no puedes esprintar. La barra se rellenará a diferentes ritmos dependiendo de tu actividad.
-1.3.alert.hilite = atp-bar,target
-1.3.label = Barra de Energía
+    1.3.alert.modal = La barra de Energía muestra la capacidad de gastar energía al esprintar, agacharse, arrastrarse, correr agachado.  Por ejemplo, cuando la barra de energía está a la mitad o menos, no puedes esprintar. La barra se rellenará a diferentes ritmos dependiendo de tu actividad.
+    1.3.alert.hilite = atp-bar,target
+  1.3.label = Barra de Energía
 
-1.4.alert.modal = La ventana de Chat es tu método principal de comunicación con otros jugadores.  Comprenderlo es importante para tu éxito en el Juego.
-1.4.label = Ventana de Chat
-1.4.alert.hilite = 210,5,615,115,target
+    1.4.alert.modal = La ventana del chat es tu vía principal de comunicación con otros jugadores. Ser consciente de ello es importante para tener éxito en World War II Online.
+  1.4.label = Ventana de Chat
+    1.4.alert.hilite = 210,5,615,115,target
 
-1.5.alert.modal = El Mini-mapa puede ser muy útil en combate. Muestra el objetivo de misión, los puntos de ruta, las unidades amigas en alguna misión con el mismo objetivo, contactos enemigos confirmados, y más información importante. Siempre está centrado en ti. Para realizar zoom acercando o alejando el mini-mapa, utilice {mapin} y {mapout}.
-1.5.alert.hilite = kenny,target
-1.5.alert1.modal = La parte de abajo del mini-mapa muestra la Latitud y Longitud en el terreno de juego y la ciudad mas cercana.
-1.5.alert1.hilite = 870,5,151,49,target
-1.5.label = Mini-Mapa
+    1.5.alert.modal = El Mini-mapa puede ser muy útil en combate. Muestra el objetivo de misión, los puntos de ruta, las unidades amigas en alguna misión con el mismo objetivo, contactos enemigos confirmados, y más información importante. Siempre está centrado en ti. Para realizar zoom acercando o alejando el mini-mapa, utilice {mapin} y {mapout}.
+    1.5.alert.hilite = kenny,target
+    1.5.alert1.modal = La parte de abajo del mini-mapa muestra la Latitud y Longitud en el terreno de juego y la ciudad mas cercana.
+    1.5.alert1.hilite = 870,5,151,49,target
+  1.5.label = Mini-Mapa
 
-1.6.alert.modal = Un elemento opcional es el de Información del Juego. Este muestra tus Fotogramas Por Segundo (FPS) actuales, La Hora del Día en en terreno de juego, Tipo de Iconos, y tu flujo de paquetes de conexión en red. Puedes acceder a esto presionando {showinfo}.
-1.6.alert.hilite = gameinfo,target
-1.6.label = Información del Juego
+    1.6.alert.modal = Un elemento opcional es el de Información del Juego. Este muestra tus Fotogramas Por Segundo (FPS) actuales, La Hora del Día en en terreno de juego, Tipo de Iconos, y tu flujo de paquetes de conexión en red. Puedes acceder a esto presionando {showinfo}.
+    1.6.alert.hilite = gameinfo,target
+  1.6.label = Información del Juego
 
-1.7.alert.modal = Otro elemento opcional es el Estado del Vehículo.  Muestra la graduación actual de tu personaje, y, si estás en un vehículo terrestre, la marcha engranada y cualquier pasajero que portes. En los aviones, muestra la fuerza G (gravedad), Angulo de Ataque, y Deriva. Pulsa {showstats} para verlo. 
-1.7.alert.hilite = 0,725,90,40,target
-1.7.label = Estado del Vehículo
+    1.7.alert.modal = Otro elemento opcional es el Estado del Vehículo.  Muestra la graduación actual de tu personaje, y, si estás en un vehículo terrestre, la marcha engranada y cualquier pasajero que portes. En los aviones, muestra la fuerza G (gravedad), Angulo de Ataque, y Deriva. Pulsa {showstats} para verlo.
+    1.7.alert.hilite = 0,725,90,40,target
+  1.7.label = Estado del Vehículo
 
-1.8.alert = Puedes ocultar por completo el HUD pulsando {changehudmode}. Activa o desactiva el HUD accionando la tecla {changehudmode}.
-1.8.label = Accionar HUD
+    1.8.alert = Puedes ocultar por completo el HUD pulsando {changehudmode}. Activa o desactiva el HUD accionando la tecla {changehudmode}.
+  1.8.label = Accionar HUD
 
-1.9.alert.modal = Puedes reordenar los elementos del HUD en tu pantalla.  Mantén presionado {guicursor} para mostrar el puntero del ratón y haz clic manteniendo pulsado el botón izquierdo del ratón para arrastrar ese elemento a una nueva posición.
-1.9.alert1 = Mueve algunos elementos del HUD por la pantalla. Cuando estés listo, pulsa la tecla {resethud}. Esto hará que el HUD vuelva a su estado original. Recuerda, utiliza {guicursor} para hacer que aparezca el puntero del ratón. 
-1.9.label = Personalizar el HUD
-1.9.complete.modal = Esto completa la revisión de los elementos del HUD.</body>
+    1.9.alert.modal = Puedes reordenar los elementos del HUD en tu pantalla.  Mantén presionado {guicursor} para mostrar el puntero del ratón y haz clic manteniendo pulsado el botón izquierdo del ratón para arrastrar ese elemento a una nueva posición.
+    1.9.alert1 = Mueve algunos elementos del HUD por la pantalla. Cuando estés listo, pulsa la tecla {resethud}. Esto hará que el HUD vuelva a su estado original. Recuerda, utiliza {guicursor} para hacer que aparezca el puntero del ratón.
+  1.9.label = Personalizar el HUD
+    1.9.complete.modal = Esto completa la revisión de los elementos del HUD.</body>
+
   <branch>1</branch>
   <brief>Aprende qué es la Información en Pantalla.</brief>
   <handler>basic.hud</handler>

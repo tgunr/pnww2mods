@@ -56,16 +56,16 @@ vehiclerange = Campo de Tiro de Vehículos
 2.2.label = Posición de Fuego
 	2.2.alert = Este es el Campo de Tiro de Vehículos.[NL][NL]Entre en el foso de sacos.
 	#waypoint label: &#34;Foso de Sacos&#34;
-	#waypoint: -313969.40,3603763.17,100.32
+    #waypoint: -313969.40,3603763.17,100.32
 
-2.3.label = Despliegue en Sacos
-	2.3.alert = Pulse {fpdeploy} para desplegar el bípode de la LMG sobre el muro de sacos terreros.[NL][NL] Acérquese más al muro si no es capaz de desplegar.
-	2.3.complete = ¡Excelente!
-	
-2.4.label = Arco de Fuego
-	2.4.alert.modal = Mueva el arma a izquierda y derecha para ver el arco de fuego, que es diferente al que posee cuando está desplegado en el suelo.[NL]Desplegar la LMG sobre un objeto suele mejorar significativamente su arco de fuego.
-	2.4.alert.modal = Ahora dispare al vehículo abandonado mas cercano.
-	2.4.complete.modal = Excelente.  Esto completa su introducción a la ametralladora ligera.</body>
+    2.3.label = Despliegue en Sacos
+    2.3.alert = Presiona {fpdeploy} para desplegar el bípode de la LMG en el muro de sacos.[NL][NL] Acércate lo más posible al muro si ves que no consigues desplegarla.
+    2.3.complete = ¡Excelente!
+
+    2.4.label = Arco de Fuego
+    2.4.alert.modal = Mueva el arma a izquierda y derecha para ver el arco de fuego, que es diferente al que posee cuando está desplegado en el suelo.[NL]Desplegar la LMG sobre un objeto suele mejorar significativamente su arco de fuego.
+    2.4.alert.modal = Ahora dispare al vehículo abandonado mas cercano.
+    2.4.complete.modal = Excelente.  Esto completa su introducción a la ametralladora ligera.</body>
   <branch>1</branch>
   <brief>Aprenda como operar una Ametralladora ligera.</brief>
   <handler>infantry.lmg</handler>
