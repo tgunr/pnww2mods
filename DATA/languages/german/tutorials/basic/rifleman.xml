@@ -19,82 +19,82 @@
 1.2.complete.modal = Wie Du siehst, ist es schwer genau zu treffen, wenn Du aus der Hüfte schießt.
 
 1.3.alert.modal = Solange sich noch Patronen in der Waffe befinden, wird der nächste Schuss automatisch nachgeladen.[NL][NL]Ist die Waffe leer, hörst Du ein deutliches Klicken sobald Du schiessen willst. Der Munitionszähler zeigt dann eine &#34;0&#34;.
-1.3.alert1 = Gib noch ein paar Schüsse ab und lade dann die Waffe mit {fpreload} nach. Behalte den Munitionszähler und die Anzahl der Ladestreifen im Auge.[NL][NL]Gute Infanteristen wissen immer, wie viele Schuss gerade noch in der Waffe sind.
-1.3.alert1.hilite = primary
-1.3.label = Schiessen und Nachladen
-1.3.complete.modal = Das Gewehr ist jetzt nachgeladen und die Anzahl der Ladestreifen hat sich verringert.[NL][NL]Du kannst jederzeit nachladen, auch wenn sich noch Patronen in der Waffe befinden.
+    1.3.alert1 = Gib noch ein paar Schüsse ab und lade dann die Waffe mit {fpreload} nach. Behalte den Munitionszähler und die Anzahl der Ladestreifen im Auge.[NL][NL]Gute Infanteristen wissen immer, wie viele Schuss gerade noch in der Waffe sind.
+    1.3.alert1.hilite = primary
+    1.3.label = Schiessen und Nachladen
+    1.3.complete.modal = Das Gewehr ist jetzt nachgeladen und die Anzahl der Ladestreifen hat sich verringert.[NL][NL]Du kannst jederzeit nachladen, auch wenn sich noch Patronen in der Waffe befinden.
 
-1.4.alert.modal = Zum besseren Zielen nutze die Visieransicht des Gewehres.[NL][NL]Während des Zielens hält der Schütze ab und zu den Atem an, um die Waffe ruhiger zu halten.[NL][NL]Je länger Du zielst umso schwerer wird es, die Waffe ruhig zu halten.
-1.4.alert1 = Schieß auf irgendein Ziel in der zweiten Reihe. Ziele mit {fpgunsight} und feuere mit {fpfire}.[NL][NL]Du brauchst drei Treffer, um weiterzumachen.
-1.4.label = Gezieltes Schiessen
-1.4.complete = Exzellent! Die Visieransicht ist sehr wichtig im Gefecht.
+    1.4.alert.modal = Zum besseren Zielen nutze die Visieransicht des Gewehres.[NL][NL]Während des Zielens hält der Schütze ab und zu den Atem an, um die Waffe ruhiger zu halten.[NL][NL]Je länger Du zielst umso schwerer wird es, die Waffe ruhig zu halten.
+    1.4.alert1 = Schieß auf irgendein Ziel in der zweiten Reihe. Ziele mit {fpgunsight} und feuere mit {fpfire}.[NL][NL]Du brauchst drei Treffer, um weiterzumachen.
+    1.4.label = Gezieltes Schiessen
+    1.4.complete = Exzellent! Die Visieransicht ist sehr wichtig im Gefecht.
 
-1.5.label = Visiereinstellung
-1.5.alert.modal = Die meisten Waffen im Spiel haben verstellbare Visiere.[NL][NL]Die Standardeinstellung ist 200m. Gefechte können aber auch auf andere Entfernungen stattfinden.
-1.5.alert.hilite = primary-label
-1.5.alert1.modal = Schieß mit unterschiedlichen Visiereinstellungen auf die aufgestellten Ziele.[NL][NL]Die Visierentfernung wird mit {gunsightrangeinc} erhöht und mit {gunsightrangedec} verkürzt.
-1.5.alert1.hilite = primary-label
+    1.5.label = Visiereinstellung
+    1.5.alert.modal = Die meisten Waffen im Spiel haben verstellbare Visiere.[NL][NL]Die Standardeinstellung ist 200m. Gefechte können aber auch auf andere Entfernungen stattfinden.
+    1.5.alert.hilite = primary-label
+    1.5.alert1.modal = Schieß mit unterschiedlichen Visiereinstellungen auf die aufgestellten Ziele.[NL][NL]Die Visierentfernung wird mit {gunsightrangeinc} erhöht und mit {gunsightrangedec} verkürzt.
+    1.5.alert1.hilite = primary-label
 
-1.5.complete = Die richtige Visiereinstellung erleichtert den gezielten Schuß.
+    1.5.complete = Die richtige Visiereinstellung erleichtert den gezielten Schuß.
 
-2.0.label = Waffe wechseln
+    2.0.label = Waffe wechseln
 
-2.1.alert.modal = Als Schütze hast Du 5 Ausrüstungsgegenstände.[NL][NL]Der Waffenwechsel wird mit dem Nummernblock oder dem Mausrad vorgenommen.[NL][NL]Der Waffenindikator zeigt die gerade gewählte Waffe oder den Ausrüstungsgegenstand an.
-2.1.alert.hilite = primary
+    2.1.alert.modal = Als Gewehrsch&#252;tze tr&#228;gst Du sechs Gegenst&#228;nde bei dir. Du kannst entweder mit den numerischen Ziffern oder mit dem Mausrad zwischen den Gegenst&#228;nden w&#228;hlen. Der Waffenindikator zeigt Dir die gerade ausger&#252;stete Waffe oder Gegenstand.
+    2.1.alert.hilite = primary
 
-2.1.alert1 = Das Gewehr hast Du schon kennengelernt, lass uns einen Blick auf die übrige Ausrüstung werfen. Wähle die Handgranate mit {fpweapon1} aus.
-2.1.label = Handgranate auswählen
+    2.1.alert1 = Das Gewehr hast Du schon kennengelernt, lass uns einen Blick auf die übrige Ausrüstung werfen. Wähle die Handgranate mit {fpweapon1} aus.
+    2.1.label = Handgranate auswählen
 
-2.2.alert = Jetzt wähle die Rauchgranate aus {fpweapon2}.
-2.2.label = Rauchgranate auswählen
+    2.2.alert = Jetzt wähle die Rauchgranate aus {fpweapon2}.
+    2.2.label = Rauchgranate auswählen
 
-2.3.alert = Wähle Dein Messer mit {fpweapon3}.
-2.3.label = Messer auswählen
+    2.3.alert = Wähle Dein Messer mit {fpweapon3}.
+    2.3.label = Messer auswählen
 
-2.4.alert = Benutze {fpweapon4}  um die High Explosive Sprengladung auszuwählen.
-2.4.label = Wähle die High Explosive Sprengladung
-2.4.complete = Gut gemacht, ein schneller Waffenwechsel kann Dir das Leben retten!
-2.5.alert = Benutze {fpweapon5}  um die Munitionspackung auszuwählen.
-2.5.label = Wähle die Munitionspackung
-2.5.complete = Sehr gut! Die Waffen schnell zu wechseln, kann über Leben und Tod entscheiden!
+    2.4.alert = Benutze {fpweapon4}  um die High Explosive Sprengladung auszuwählen.
+    2.4.label = Wähle die High Explosive Sprengladung
+    2.4.complete = Gut gemacht, ein schneller Waffenwechsel kann Dir das Leben retten!
+    2.5.alert = Benutze {fpweapon5}  um die Munitionspackung auszuwählen.
+    2.5.label = Wähle die Munitionspackung
+    2.5.complete = Sehr gut! Die Waffen schnell zu wechseln, kann über Leben und Tod entscheiden!
 
-3.0.label = Granaten
+    3.0.label = Granaten
 
-3.1.alert = Granaten sind wichtige Infanteriewaffen und deshalb sollte man gut mit ihnen umgehen können. [NL][NL]Die meisten Infanterieklassen führen Spreng- und Rauchgranaten mit sich.[NL][NL]Wähle die Rauchgranate mit der {fpweapon2} Taste aus.
-3.1.label = Rauchgranate auswählen
+    3.1.alert = Granaten sind wichtige Infanteriewaffen und deshalb sollte man gut mit ihnen umgehen können. [NL][NL]Die meisten Infanterieklassen führen Spreng- und Rauchgranaten mit sich.[NL][NL]Wähle die Rauchgranate mit der {fpweapon2} Taste aus.
+    3.1.label = Rauchgranate auswählen
 
-3.2.alert.modal = Rauchgranaten geben Dir die Möglichkeit, Dich unter Feindfeuer getarnt zu bewegen.[NL][NL]Setze sie gut überlegt ein, denn sie erregen natürlich auch Aufmerksamkeit.
-3.2.alert1.modal = Drücke {fpfire} um die Granate zu werfen. Je länger Du {fpfire} gedrückt hältst, umso weiter wirfst Du.[NL][NL]Nach ein paar Sekunden wird die Granate automatisch mit voller Kraft geworfen
-3.2.alert2 = Um noch weiter zu werfen, ziele den Wurf weiter nach oben, sodass die Granate in einem Bogen fliegt. Zum Zielen schau mit Hilfe der Maus in die entsprechende Richtung.[NL][NL]Ziele und wirf die Rauchgranate mit {fpfire}.
-3.2.label = Rauchgranate werfen
-3.2.complete = Gut. Schau Dir genau an, wieviel Nebeltarnung eine einzelne Granate entwickelt und wie lange sie brennt.
+    3.2.alert.modal = Rauchgranaten geben Dir die Möglichkeit, Dich unter Feindfeuer getarnt zu bewegen.[NL][NL]Setze sie gut überlegt ein, denn sie erregen natürlich auch Aufmerksamkeit.
+    3.2.alert1.modal = Drücke {fpfire} um die Granate zu werfen. Je länger Du {fpfire} gedrückt hältst, umso weiter wirfst Du.[NL][NL]Nach ein paar Sekunden wird die Granate automatisch mit voller Kraft geworfen
+    3.2.alert2 = Um noch weiter zu werfen, ziele den Wurf weiter nach oben, sodass die Granate in einem Bogen fliegt. Zum Zielen schau mit Hilfe der Maus in die entsprechende Richtung.[NL][NL]Ziele und wirf die Rauchgranate mit {fpfire}.
+    3.2.label = Rauchgranate werfen
+    3.2.complete = Gut. Schau Dir genau an, wieviel Nebeltarnung eine einzelne Granate entwickelt und wie lange sie brennt.
 
-3.3.alert = Vorsicht bei der nächsten Übung! Du kannst Dich mit Deinen eigenen Handgranaten umbringen. Wirf sie also weit genug weg oder aus einer Deckung heraus.[NL][NL]Wähle eine Handgranate mit der {fpweapon1} Taste.
-3.3.label = Handgranate auswählen
+    3.3.alert = Vorsicht bei der nächsten Übung! Du kannst Dich mit Deinen eigenen Handgranaten umbringen. Wirf sie also weit genug weg oder aus einer Deckung heraus.[NL][NL]Wähle eine Handgranate mit der {fpweapon1} Taste.
+    3.3.label = Handgranate auswählen
 
-3.4.alert = Ziele mit der Granate, drücke und halte {fpfire} für einen weiten Wurf - genau wie bei der Rauchgranate.
-3.4.label = Handgranate werfen
-3.4.complete = Gut. Denk daran, wenn die Granate zu kurz fällt, lauf weg und wirf Dich in Deckung!
+    3.4.alert = Ziele mit der Granate, drücke und halte {fpfire} für einen weiten Wurf - genau wie bei der Rauchgranate.
+    3.4.label = Handgranate werfen
+    3.4.complete = Gut. Denk daran, wenn die Granate zu kurz fällt, lauf weg und wirf Dich in Deckung!
 
-4.0.label = Kampfmesser
+    4.0.label = Kampfmesser
 
-4.1.alert.modal = Musst Du einen Gegner leise erledigen oder ist die Munition alle? Dann benutze das Kampfmesser. Geh nah an den Feind heran und stich mit {fpfire} zu.[NL][NL]Wähle Dein Kampfmesser mit der {fpweapon3} Taste aus.
-4.1.label = Kampfmesser auswählen
+    4.1.alert.modal = Musst Du einen Gegner leise erledigen oder ist die Munition alle? Dann benutze das Kampfmesser. Geh nah an den Feind heran und stich mit {fpfire} zu.[NL][NL]Wähle Dein Kampfmesser mit der {fpweapon3} Taste aus.
+    4.1.label = Kampfmesser auswählen
 
-4.2.alert = Drücke {fpfire}, um das Messer in Aktion zu sehen.
-4.2.label = Kampfmesser benutzen
-4.2.complete = Nicht vergessen, Du musst nah ran gehen um mit dieser Waffe zu treffen!
+    4.2.alert = Drücke {fpfire}, um das Messer in Aktion zu sehen.
+    4.2.label = Kampfmesser benutzen
+    4.2.complete = Nicht vergessen, Du musst nah ran gehen um mit dieser Waffe zu treffen!
 
-5.0.label = Munitionspaket
+    5.0.label = Munitionspaket
 
-5.1.alert = Schützen und die meisten Fallschirmjäger tragen ein Munitionspaket mit sich. Damit kannst Du einmalig einen Mitspieler mit Munition versorgen.[NL][NL]Wähle das Munitionspaket mit der {fpweapon5} Taste.
-5.1.label = Munitionspaket auswählen
+    5.1.alert = Gewehrsch&#252;tzen sowie die meisten Fallschirmj&#228;gereinheiten f&#252;hren zus&#228;tzlich Munitionsboxen mit sich. Auf einen anderen Spieler angewendet, wird dies die Munition des anderen Spielers erneut auff&#252;llen. .[NL][NL] W&#228;hle die Munitionsbox mit der Taste {fpweapon5} aus.
+    5.1.label = Munitionspaket auswählen
 
-5.2.alert = Für Mörser und Machinengewehre ist Munition sehr wertvoll. Es ist also eine gute Idee, mit der Übergabe der Munition zu warten, bis eine solche Einheit Munition anfordert.[NL][NL]Drücke {fpfire}, um zu sehen, wie das Munitionspaket benutzt wird.
-5.2.label = Munitionspaket benutzen
-5.2.complete = Gut. Wäre ein Mitspieler hier, hätte er jetzt die Munition empfangen.
+    5.2.alert = Für Mörser und Machinengewehre ist Munition sehr wertvoll. Es ist also eine gute Idee, mit der Übergabe der Munition zu warten, bis eine solche Einheit Munition anfordert.[NL][NL]Drücke {fpfire}, um zu sehen, wie das Munitionspaket benutzt wird.
+    5.2.label = Munitionspaket benutzen
+    5.2.complete = Gut. Wäre ein Mitspieler hier, hätte er jetzt die Munition empfangen.
 
-5.3.alert.modal = Du kannst jederzeit Munition von anderen Mitspielern anforden, indem Du  &#34;/ammo&#34; in den Chat eingibst.[NL][NL]Wenn Du Dein Munitionspaket noch hast, blinken auf der Karte die Zeichen der Spieler die Munition angefordert haben.
+    5.3.alert.modal = Du kannst jederzeit Munition von anderen Mitspielern anforden, indem Du  &#34;/ammo&#34; in den Chat eingibst.[NL][NL]Wenn Du Dein Munitionspaket noch hast, blinken auf der Karte die Zeichen der Spieler die Munition angefordert haben.
 
 5.3.alert1.modal = Jedes Bodenfahrzeug und jede Infanterie-Einheit kann Munition an geparkten LKWs und Kettenschleppern beziehen.[NL][NL]Sobald Du Dich in Reichweite befindest, wird ein kleines LKW Symbol angezeigt.[NL][NL]Stelle Dich neben den LKW und wirf einen Blick auf den Munitionszähler.
 

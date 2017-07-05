@@ -5,31 +5,22 @@
 1.0.label = Diseño Básico
 
 # Clear or detune Radio 3 to be blank.
-	
-	1.1.alert.modal = La ventana de chat es el modo básico de comunicarte con otros jugadores en el juego.[NL][NL]Tiene 6 &#34;radios&#34; por las que puedes transmitir y recibir mensajes. Cada radio puede ser sintonizada en uno de los canales disponibles.
 
-
-    1.1.alert1.modal = Cada canal numerado (1-6) puede ser accedido a través de la tecla de función (F1-F6) con del mismo número. [NL][NL]La etiqueta del canal muestra para qué canal está sintonizado. Los usuarios Mac deben actualizar sus preferencias para usar sus teclas de función en las Preferencias del Sistema.
-
+  1.1.label = Entrada en Chat
+	  1.1.alert.modal = La ventana de chat es el modo básico de comunicarte con otros jugadores en el juego.[NL][NL]Tiene 6 &#34;radios&#34; por las que puedes transmitir y recibir mensajes. Cada radio puede ser sintonizada en uno de los canales disponibles.
+    1.1.alert1.modal = Cada canal numerado (1-6) puede ser accedido a trav&#233;s de la tecla de funci&#243;n (F1-F6) con el mismo número. [NL][NL]La etiqueta del canal muestra para qu&#233; canal est&#225; sintonizado. Los usuarios Mac deben actualizar sus preferencias para usar sus teclas de funci&#243;n en las Preferencias del Sistema.
     1.1.alert1.hilite = channels,target
-
     1.1.alert5 = El funcionamiento básico es simple: pulse la tecla Enter para abrir la línea de escritura, escriba un mensaje, como por ejemplo &#34;Hola&#34;, y pulse la tecla Enter de nuevo para enviar el mensaje.[NL][NL]Envíe &#34;hola&#34; a los jugadores de la zona.
-
-    1.1.label = Entrada en Chat
-
     1.1.complete.hilite = chatinput
-
     1.1.complete = Bien.  Otros jugadores que sintonicen el canal, o cercanos a ti en el terreno de juego deben haber recibido el mensaje.
 
+  1.2.label = Canal de Misión
     1.2.alert.modal = Cuando estés en el terreno de juego, el canal de chat por defecto (cuando pulses Enter para charlar, en vez de pulsar una de las radios), es el conocido como chat de Área.[NL][NL]Los jugadores amigos que estén entorno a 100 metros recibirán tu mensaje.  Este es un método excelente para coordinarse con jugadores del mismo área.[NL][NL]Pero tenga cuidado.  Ya que los enemigos que estén cercanos pueden ver el texto ilegible que viene de ti de manera que revelarás tu posición. (Aunque no recibirán tu mensaje de texto).
-
-    1.2.alert1 = El canal de tu Misión te permitirá comunicarte con cualquiera que esté en tu misma misión, sin importar la distancia.[NL][NL]Selecciona el canal de Misión presionando F1.
-
+    1.2.alert1 = Tu Canal de Misi&#243;n te permite comunicarte con todos los que est&#225;n en la misma misi&#243;n, no importa la distancia a la que se encuentren. [NL][NL]Selecciona el canal de Misi&#243;n presionando la tecla F1. (¡Las teclas de funci&#243;n deben estar activadas!)
     1.2.alert1.hilite = Tu Canal de Misión te permite comunicarte con todos los que están en la misma misión, no importa la distancia a la que estén. [NL][NL]Selecciona el canal de Misión presionando la tecla F1. (¡Las teclas de función deben estar activadas!)
-
-    1.2.label = Canal de Misión
-
     1.2.complete = Nótese que la cabecera del canal F1 se resaltó y que se abrió la barra de chat.
+
+
 
     1.3.alert = Introduzca algún texto y pulse Enter para enviar en el canal de Misión (radio F1).
 

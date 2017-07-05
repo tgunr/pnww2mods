@@ -1,3 +1,24 @@
+<!ENTITY authconn.complete "Antwort erhalten.">
+<!ENTITY authconn.error.badcallsign.char "Das '{1}' Zeichen ist bei Rufnamen nicht erlaubt.">
+<!ENTITY authconn.error.badcallsign.length "Rufnamen sind auf 10 Zeichen begrenzt.">
+<!ENTITY authconn.error.badusername.char "Das '{1}' Zeichen ist bei Usernamen nicht erlaubt.">
+<!ENTITY authconn.error.badusername.length "Usernamen sind auf 10 Zeichen begrenzt.">
+<!ENTITY authconn.error.generic.errorcode "Netzwerkfehler '{1}' ist aufgetreten.">
+<!ENTITY authconn.error.generic.unknown "Ein unbekannter Fehler ist aufgetreten. Bitte starte die Applikation erneut und versuch es noch einmal.">
+<!ENTITY authconn.error.init.callbackinitfailed "Netzwerk R&#252;ckrufe konnten nicht iniitiert werden.">
+<!ENTITY authconn.error.init.couldnotresolve " '{1}' konnte nicht aufgel&#246;st werden.">
+<!ENTITY authconn.error.init.multipleconnections "Die Applikation hat versucht, mehr als eine Authentifizierungsverbindung gleichzeitig herzustellen">
+<!ENTITY authconn.error.login.arenafull "Die Region ist &#252;berf&#252;llt. Bitte versuche es sp&#228;ter erneut.">
+<!ENTITY authconn.error.login.game "Das Netzwerk des Spiels ist nicht erreichbar. Versuch es in K&#252;rze noch einmal.">
+<!ENTITY authconn.error.login.locked "Die Server sind gesperrt. Versuch es in K&#252;rze noch einmal.">
+<!ENTITY authconn.error.login.password "Falsches Passwort.">
+<!ENTITY authconn.error.login.subscription "Dein Abonnement ist zur Zeit nicht aktiv.">
+<!ENTITY authconn.error.login.system "Login Fehler. Versuche es in K&#252;rze erneut.">
+<!ENTITY authconn.error.login.unknown "Es gab ein Problem dein Account zu authentifizieren. Bitte versuch es in K&#252;rze erneut">
+<!ENTITY authconn.error.login.username "Username nicht vorhanden.">
+<!ENTITY authconn.error.login.version "Die Version des Spiels kann sich nicht mit dem Authentifizierungsserver verbinden.">
+<!ENTITY authconn.error.unknown "Bei der Verbindung des Spiels kam es zu einem unbekannten Fehler. Bitte starte die Applikation neu und versuche es noch einmal">
+<!ENTITY authconn.waiting "Warte auf Antwort.">
 <!ENTITY brigade.back "Transfer">
 <!ENTITY brigade.back.decision "Persona oder Brigade wechseln?">
 <!ENTITY brigade.back.decision.brigade "BRIGADE">
@@ -2048,9 +2069,6 @@
 <!ENTITY loc.function.2009 "Spiel">
 <!ENTITY loc.function.201 "Mauszeiger einblenden">
 <!ENTITY loc.function.2010 "Offline Extern">
-
-
-
 <!ENTITY loc.function.202 "Chatfenster &#246;ffnen/schliessen">
 <!ENTITY loc.function.203 "Puffer f&#252;r Funkger&#228;t ein/aus">
 <!ENTITY loc.function.204 "Geradeaus schauen">
@@ -3421,9 +3439,34 @@
 <!ENTITY loc.ui.97 "Du hast hier bereits eine Mission erstellt.">
 <!ENTITY loc.ui.98 "Unbekannter Fehler.">
 <!ENTITY loc.ui.99 "W&#228;hle ein Fahrzeug und klicke dann auf Spielwelt betreten">
-
-
-
+<!ENTITY login.arenaselect.arenaheader "ARENEN" >
+<!ENTITY login.arenaselect.back "Zur&#252;ck" >
+<!ENTITY login.arenaselect.failedtoconnect "Die Verbindung zur ausgew&#228;hlten Arena ist fehlgeschlagen. Ein unbekannter Fehler ist aufgetreten. " >
+<!ENTITY login.arenaselect.forward "Arena beitreten" >
+<!ENTITY login.arenaselect.list.name "Arena" >
+<!ENTITY login.arenaselect.offline "Offline Spielen" >
+<!ENTITY login.arenaselect.noarenas "KEINE ARENEN GEFUNDEN" >
+<!ENTITY login.arenaselect.states.loading.tip "Der Server ist noch am Laden">
+<!ENTITY login.arenaselect.states.locked.tip "Der Server ist vor&#252;bergehend gesperrt">
+<!ENTITY login.arenaselect.states.maintenance.tip "Der Server steht auf Grund von Wartungsarbeiten nicht zur Verf&#252;gung">
+<!ENTITY login.arenaselect.states.offline.tip "Der Server ist offline">
+<!ENTITY login.arenaselect.states.online.tip "Der Server ist online">
+<!ENTITY login.arenaselect.states.starting.tip "Der Server ist am Starten">
+<!ENTITY login.arenaselect.states.syncing.tip "Die Hosts synchronisieren sich gegenseitig">
+<!ENTITY login.connectingtoauth "Die Verbindung zum Authentifizierungshost wird hergestellt...">
+<!ENTITY login.error.retry "Erneut versuchen">
+<!ENTITY login.error.offline "Offline">
+<!ENTITY login.offlinemode "Offline Spielen">
+<!ENTITY login.onlinemode "Am Kampfgeschehen teilnehmen">
+<!ENTITY login.promptcallsign "Erw&#252;nschter Rufname">
+<!ENTITY login.promptlogin "LOGIN">
+<!ENTITY login.promptpassword "Passwort">
+<!ENTITY login.promptusername "Username">
+<!ENTITY login.steambadcallsign "Der Rufname, welchen Du verwenden m&#246;chtest, ist leider bereits vergeben oder ung&#252;ltig. Bitte verwende ausschließlich alphanumerische Zeichen.">
+<!ENTITY login.steamneedscallsign "Du bist zum ersten Mal eingeloggt. Bitte vergib einen Rufnamen.">
+<!ENTITY login.steamunknownerror "Ein unbekannter Fehler ist aufgetreten. Bitte versuche es erneut oder versuche den Offline Modus.">
+<!ENTITY login.steamuserdoesnotexist "Das Spiel ist deinem Steam account nicht zugeordnet. Bitte stelle sicher, dass Du Dich mit dem korrekten Account anmeldest und versuche es erneut.">
+<!ENTITY login.trainingmode "Training Server">
 <!ENTITY map.airforce "Luftwaffe">
 <!ENTITY map.army "Heer">
 <!ENTITY map.bridges "Brücken">
@@ -3643,9 +3686,8 @@
 <!ENTITY mission.timeleft.expired "Dein Stundenabonnement ist ausgelaufen! Das Spiel leitet jetzt zu einer Bestellseite weiter.">
 <!ENTITY mission.timeleft.url "https://secure.wwiionline.com/scripts/wwiionline/user/subscription.jsps">
 <!ENTITY none "keine">
-
-
-
+<!ENTITY offline.back "MODE SELECT">
+<!ENTITY offline.back.tip "Bitte gehe zur&#252;ck und melde dich bei einer online Arena an.">
 <!ENTITY offline.forward "SPIELWELT BETRETEN">
 <!ENTITY offline.forward.tip "Steige offline ein um die Welt zu erkunden.">
 <!ENTITY offline.spawntab "EINHEITEN-AUSWAHL">
