@@ -120,10 +120,10 @@
 					var minimap = hud.findview("minimap");
 					if(minimap) game.setpref('hud.minimap.scale', 4, minimap.scale);
 				}
-				
-				var tut = game.findview("tutorial");
-				if(tut)
-					tut.close();
+
+				var hilite = game.findview("hilite");
+				if(hilite)
+				    hilite.unhilite();
 				
 				
 				if(undeploy && client.ismobilespawn)
