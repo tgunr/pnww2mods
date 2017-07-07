@@ -56,16 +56,16 @@ vehiclerange = Schießbahn für Fahrzeuge
 2.2.label = Feuerposition
 	2.2.alert = Dies ist die Schießbahn für Fahrzeuge.[NL][NL]Laufe zu den Sandsäcken.
 	#waypoint label: &#34;Sandsäcke&#34;
-	#waypoint: -313969.40,3603763.17,100.32
+    #waypoint: -313969.40,3603763.17,100.32
 
 2.3.label = Waffe auf den Sandsäcken aufstellen
-	2.3.alert = Drücke {fpdeploy} um das LMG mittels des Zweibeins auf den Sandsäcken aufzustellen.[NL][NL] Bewege Dich näher heran, wenn das Aufstellen nicht möglich sein sollte.
-	2.3.complete = Exzellent!
-	
-2.4.label = Feuerradius
-	2.4.alert.modal = Bewege die Waffe nach links und rechts. So kannst Du den Wirkungsbereich sehen den Du mit der Waffe im aufgestellten Zustand abdeckst.[NL]Wenn man das LMG an einem Objekt aufstellt, erhöht das den Feuerradius meist beträchtlich.
-	2.4.alert.modal = Feuere jetzt auf das nächste Fahrzeug.
-	2.4.complete.modal = Exzellent.  Damit ist der Lehrgang Leichtes Maschinengewehr abgeschlossen.</body>
+    2.3.alert = Dr&#252;cke die Taste {fpdeploy} um das Zweibein des LMGs aufzustellen. [NL][NL] Solltest du es nicht aufstellen k&#246;nnen, dann gehe so nah wie m&#246;glich an die Wand heran.
+    2.3.complete = Exzellent!
+
+    2.4.label = Feuerradius
+    2.4.alert.modal = Bewege die Waffe nach links und rechts. So kannst Du den Wirkungsbereich sehen den Du mit der Waffe im aufgestellten Zustand abdeckst.[NL]Wenn man das LMG an einem Objekt aufstellt, erhöht das den Feuerradius meist beträchtlich.
+    2.4.alert.modal = Feuere jetzt auf das nächste Fahrzeug.
+    2.4.complete.modal = Exzellent.  Damit ist der Lehrgang Leichtes Maschinengewehr abgeschlossen.</body>
   <branch>1</branch>
   <brief>Lerne wie man ein leichtes Maschinengewehr bedient.</brief>
   <handler>infantry.lmg</handler>

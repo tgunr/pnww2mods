@@ -45,7 +45,7 @@
 1.6.alert.modal = A volte è utile essere in grado di trovare una città specifica. Forse i tuoi amici sono lì o la città è a rischio di cattura da parte del nemico. [NL][NL]In questo caso il &#34;Cerca città&#34; è utile.
 1.6.alert.hilite = map-cp-find
 1.6.alert.scale = 3.33
-1.6.alert1 = Apri il &#34;Cerca città&#34; e inserisci &#34;di&#34; nella casella. Sarà mostrata una lista di città che inizia con di.[NL][NL]Più lettere inserisci, più stretta sarà la ricerca.[NL][NL]Seleziona &#34;Dinant&#34; per centrare la mappa su questa città.
+1.6.alert1 = Apri la ricerca della città e inserisci &#34;di&#34; nella barra di ricerca (icona con lente d’ingrandimento sulla sinistra). Apparirà una lista di città.[NL][NL]La ricerca sarà tanto più accurata tante più lettere inserirai.[NL][NL]Seleziona &#34;Dinant&#34; per centrare la mappa su quella città.
 1.6.alert1.hilite = map-cp-find
 1.6.label = Trova una città
 1.6.complete.modal = Ben fatto. La mappa è ora centrata su Dinant, una città belga sulle rive della Mosa.
@@ -57,7 +57,7 @@
 2.1.alert.position = 220238,3071580
 2.1.alert.scale = 1.89
 2.1.alert.selection = Antwerp
-2.1.alert1.modal = Qui c&#39;è un gruppo di città sul fronte.[NL][NL]Schilde è una piccola città posseduta dai tedeschi.[NL][NL]A sud c&#39;è Lier che è controllata dai francesi.[NL][NL]A nord ovest c&#39;è Antwerp, che è in mano agli inglesi.
+2.1.alert1.modal = Qui c&#39;è un gruppo di città sul fronte.[NL][NL]Schilde è una piccola città posseduta dai tedeschi.
 2.1.alert1.hilite = 100,32,386,302,mapview
 2.1.alert2.modal = L&#39;icona vicino al nome di ogni città indica il paese che la controlla.[NL][NL]Il colore del nome indica la fazione. Rosso per l&#39;Asse, blue per gli Alleati.[NL][NL]Il nome di Antwerp è al momento verde perchè è selezionata.
 2.1.label = chokepoint
@@ -68,6 +68,18 @@
 2.2.alert.selection = Antwerp
 2.2.alert1.modal = La bandiera vicino ad ogni struttura indica a quale paese appartenga.[NL][NL]La forma dell&#39;icona indica il tipo di struttura.[NL][NL]Una volta che tutte le strutture di una città sono catturate, la città sarà allora del paese che le ha conquistate e il fronte si muoverà in avanti.
 2.2.label = Strutture di Antwerp
+2.2.alert2.modal = Puoi passare con il mouse sopra alcune infrastrutture strategiche per identificarle. Prova a passare sopra l’Armybase di Antwerp identificata dall’icona di un carro armato. Qui è dove viene creato il maggior numero di missioni in quanto i rifornimenti di veicoli e fanteria è incredibilmente elevato. Questo richiede che una brigata del tuo stesso schieramento sia dislocata in città.
+2.2.alert2.hilite = 200,225,20,20,mapview
+2.2.alert3.modal = Ora prova a passare sopra un deposito identificato dall’icona di un camion. I soldati possono creare missioni da questa infrastruttura. Questo richiede che una brigata del tuo stesso schieramento sia dislocata in città.per creare missioni o spawnare
+2.2.alert3.hilite = 290,200,20,20,mapview 
+2.2.alert4.modal = Ora prova a passare sopra la bandiera del municipio. Questo viene identificato dall’icona di un edificio.
+2.2.alert4.hilite = 200,125,20,20,mapview
+2.2.alert5.modal = Ora prova a passare sopra un complesso industriale identificato dall’icona di una fabbrica. Il controllo dei complessi industriali è di fondamentale importanza per garantire un corretto flusso di rifornimento per l’intero apparato delle forza armate.
+2.2.alert5.hilite = 245,150,20,20,mapview
+2.2.alert6.modal = Ora prova a passare sopra ad un porto identificato da un’icona a forma di ancora. Potrai spawnare con unità navali come la fairmile in missioni della marina. Questo richiede la presenza in città di una brigata navale per poter creare le missioni.
+2.2.alert6.hilite = 345,320,20,20,mapview
+2.2.alert7.modal = Ora prova a passare sopra un aeroporto identificato da un’icona a forma di aereo. Questo è il luogo dove le missioni aeree hanno il loro inizio e la loro fine. Questo richiede la presenza in città di una brigata aeree per poter creare le missioni.
+2.2.alert7.hilite = 250,55,20,20,mapview
 
 3.0.label = Punti di passaggio tattici e rapporti di contatto
 
@@ -76,7 +88,7 @@
 3.1.alert.position = 213197,3072505,target
 3.1.alert.scale = .42
 3.1.alert.selection = Antwerp
-3.1.alert.hilite = 282,96,76,58,mapview
+3.1.alert.hilite = 20,20,20,20,mapview
 //3.1.alert.mouse = true
 3.1.alert1.modal = Se sei rientrato alla base senza troppi danni, il veicolo ti verrà riservato.[NL][NL]Se sei troppo danneggiato, potresti dover prendere un altro veicolo o tipologia di fante se non sono più disponibili mezzi di quel tipo.
 3.1.alert1.hilite = 282,96,76,58,mapview

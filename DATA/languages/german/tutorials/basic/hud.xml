@@ -1,46 +1,47 @@
 <?xml version='1.0'?>
 <content type="5">
   <key>5</key>
-  <body>// NOT READY FOR LOCALIZATION
+  <body>
+    // NOT READY FOR LOCALIZATION
 
-1.0.label = Das Heads Up Display (HUD)
+    1.0.label = Das Heads Up Display (HUD)
 
-1.1.alert.modal = Das Heads Up Display stellt Dir in der Spielwelt wichtige Information über Deine Einheit und Deine Umgebung zur Verfügung.[NL][NL]Es besteht aus verschiedenen Elementen. Einige davon sind optional. Die meisten Elemente wurden in vorangegangenen Lehrgängen besprochen.
-1.1.label = HUD Elemente
+    1.1.alert.modal = Das Heads Up Display stellt Dir in der Spielwelt wichtige Information über Deine Einheit und Deine Umgebung zur Verfügung.[NL][NL]Es besteht aus verschiedenen Elementen. Einige davon sind optional. Die meisten Elemente wurden in vorangegangenen Lehrgängen besprochen.
+    1.1.label = HUD Elemente
 
-1.2.alert.modal = Der Gesundheitsbalken zeigt an, wieviel Leben du hast. Wenn Du verwundet wurdest, wird er abnehmen. Ist er auf Null gesunken, stirbt Dein Spielcharakter. Auch kleine Wunden können weiterbluten und zum Tod führen.
-1.2.alert.hilite = health-bar,target
-1.2.label = Gesundheitsbalken
+    1.2.alert.modal = Der Gesundheitsbalken zeigt an, wieviel Leben du hast. Wenn Du verwundet wurdest, wird er abnehmen. Ist er auf Null gesunken, stirbt Dein Spielcharakter. Auch kleine Wunden können weiterbluten und zum Tod führen.
+    1.2.alert.hilite = health-bar,target
+    1.2.label = Gesundheitsbalken
 
-1.3.alert.modal = Der Energiebalken zeigt Deine Fähigkeit zum Rennen, Ducken oder Kriechen. Steht der Balken auf der Hälfte oder weniger, kannst Du nicht rennen. Der Balken lädt sich unterschiedlich schnell auf, je nachdem wie aktiv Du bist.
-1.3.alert.hilite = atp-bar,target
-1.3.label = Energiebalken
+    1.3.alert.modal = Der Energiebalken zeigt Deine Fähigkeit zum Rennen, Ducken oder Kriechen. Steht der Balken auf der Hälfte oder weniger, kannst Du nicht rennen. Der Balken lädt sich unterschiedlich schnell auf, je nachdem wie aktiv Du bist.
+    1.3.alert.hilite = atp-bar,target
+    1.3.label = Energiebalken
 
-1.4.alert.modal = Das Chatfenster ist der wichtigste Weg mit anderen Spielern zu kommunizieren. Ein gutes Verständnis des Chatfensters ist wichtig für Deinen Erfolg in Battleground Europe.
-1.4.label = Chatfenster
-1.4.alert.hilite = 210,5,615,115,target
+    1.4.alert.modal = Das Chatfenster ist die prim&#228;re Art und Weise, um mit anderen Spielern zu kommunizieren. Um in Word War II Online erfolgreich zu sein, ist dies unerl&#228;sslich.
+    1.4.label = Chatfenster
+    1.4.alert.hilite = 210,5,615,115,target
 
-1.5.alert.modal = Die Minikarte kann im Kampf sehr nützlich sein. Sie zeigt eigene Einheiten mit einer Mission zu Deinem Missionsziel, Wegpunkte, Kontaktmeldungen und andere wichtige Informationen. Die Minikarte ist immer auf Dich zentriert. Benutze {mapin} zum Vergrößern der Ansicht und {mapout} zum Verkleinern.
-1.5.alert.hilite = kenny,target
-1.5.alert1.modal = Am unteren Rand der Minikarte werden Längen- und Breitengrad Deiner Position in der Spielwelt und der Name der am nächsten gelegenen Stadt angezeigt.
-1.5.alert1.hilite = 870,5,151,49,target
-1.5.label = Minikarte
+    1.5.alert.modal = Die Minikarte kann im Kampf sehr nützlich sein. Sie zeigt eigene Einheiten mit einer Mission zu Deinem Missionsziel, Wegpunkte, Kontaktmeldungen und andere wichtige Informationen. Die Minikarte ist immer auf Dich zentriert. Benutze {mapin} zum Vergrößern der Ansicht und {mapout} zum Verkleinern.
+    1.5.alert.hilite = kenny,target
+    1.5.alert1.modal = Am unteren Rand der Minikarte werden Längen- und Breitengrad Deiner Position in der Spielwelt und der Name der am nächsten gelegenen Stadt angezeigt.
+    1.5.alert1.hilite = 870,5,151,49,target
+    1.5.label = Minikarte
 
-1.6.alert.modal = Ein optionales Element ist das Spielinformationsfenster. Es zeigt die momentane Framerate, die Uhrzeit in der Spielwelt, den Iconmodus und die Übertragungsrate Deiner Netzwerkverbindung zum Server. Dieses Fenster wird mit {showinfo} ein- und ausgeblendet.
-1.6.alert.hilite = gameinfo,target
-1.6.label = Spielinformationen
+    1.6.alert.modal = Ein optionales Element ist das Spielinformationsfenster. Es zeigt die momentane Framerate, die Uhrzeit in der Spielwelt, den Iconmodus und die Übertragungsrate Deiner Netzwerkverbindung zum Server. Dieses Fenster wird mit {showinfo} ein- und ausgeblendet.
+    1.6.alert.hilite = gameinfo,target
+    1.6.label = Spielinformationen
 
-1.7.alert.modal = Das Fenster für den Vehikelstatus ist ein weiteres optionales HUD Element. Es enthält den Rang Deiner momentanen Spielerperson. Wenn Du in einem Bodenfahrzeug sitzt, zeigt es den eingelegten Gang und ob Du Passagiere an Bord hast. Für Flugzeuge zeigt es die G-Kräfte (Erdbeschleunigung), Anstellwinkel und Slip. Drücke {showstats} zum Ein- und Ausblenden. 
-1.7.alert.hilite = 0,725,90,40,target
-1.7.label = Vehikelstatus
+    1.7.alert.modal = Das Fenster für den Vehikelstatus ist ein weiteres optionales HUD Element. Es enthält den Rang Deiner momentanen Spielerperson. Wenn Du in einem Bodenfahrzeug sitzt, zeigt es den eingelegten Gang und ob Du Passagiere an Bord hast. Für Flugzeuge zeigt es die G-Kräfte (Erdbeschleunigung), Anstellwinkel und Slip. Drücke {showstats} zum Ein- und Ausblenden.
+    1.7.alert.hilite = 0,725,90,40,target
+    1.7.label = Vehikelstatus
 
-1.8.alert = Das gesamte HUD kann durch Drücken von {changehudmode} ein- und ausgeblendet werden. 
-1.8.label = HUD umschalten
+    1.8.alert = Das gesamte HUD kann durch Drücken von {changehudmode} ein- und ausgeblendet werden.
+    1.8.label = HUD umschalten
 
-1.9.alert.modal = Die einzelnen Elemente des HUDs kannst Du auf dem Bildschirm verschieben. Halte {guicursor} gedrückt, um den Mauszeiger einzublenden und klicke das gewünschte Element an. Mit gedrücktem Mausknopf bewegst Du das Element auf seine neue Position.
-1.9.alert1 = Halte die Taste {guicursor} gedrückt und bewege ein paar HUD Elemente auf dem Bildschirm.[BR][BR]Wenn Du damit fertig bist drücke die {resethud} Taste, um zum nächsten Abschnitt des Lehrgangs zu gehen.
-1.9.label = HUD verstellen
-1.9.complete.modal = Damit ist der Lehrgang beendet.</body>
+    1.9.alert.modal = Die einzelnen Elemente des HUDs kannst Du auf dem Bildschirm verschieben. Halte {guicursor} gedrückt, um den Mauszeiger einzublenden und klicke das gewünschte Element an. Mit gedrücktem Mausknopf bewegst Du das Element auf seine neue Position.
+    1.9.alert1 = Halte die Taste {guicursor} gedrückt und bewege ein paar HUD Elemente auf dem Bildschirm.[BR][BR]Wenn Du damit fertig bist drücke die {resethud} Taste, um zum nächsten Abschnitt des Lehrgangs zu gehen.
+    1.9.label = HUD verstellen
+    1.9.complete.modal = Damit ist der Lehrgang beendet.</body>
   <branch>1</branch>
   <brief>Lehrgang über das Heads Up Display</brief>
   <handler>basic.hud</handler>

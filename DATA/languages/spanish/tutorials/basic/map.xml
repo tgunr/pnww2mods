@@ -1,108 +1,119 @@
 <?xml version='1.0'?>
 <content type="5">
   <key>3</key>
-  <body>title = Uso Básico del Mapa
+  <body>title = Uso B&#225;sico del Mapa
 1.0.label =  El Mapa
-1.1.alert = Bienvenido al tutorial del Mapa del Teatro de operaciones. Aprenderemos como mover el mapa del mundo y las cosas mas comunes que podemos encontrar en él.[NL][NL]Pulse {showingamemap} para abrir el mapa del teatro de operaciones.
-1.1.label = Abrir el Mapa
+    1.1.alert = Bienvenido al tutorial del Mapa del Teatro de operaciones. Aprenderemos como mover el mapa del mundo y las cosas mas comunes que podemos encontrar en &#233;l.[NL][NL]Pulse {showingamemap} para abrir el mapa del teatro de operaciones.
+  1.1.label = Abrir el Mapa
 
-1.2.alert.modal = El mapa se compone de 3 áreas distintas.[NL][NL]La parte superior tiene múltiples solapas que pueden utilizarse para acceder a la información de la misión, manuales, o para cambiar tus controles o teclas.
-1.2.alert.position = 211614,3074656,false
-1.2.alert.scale = 1.17
-1.2.alert.selection = Antwerp
-1.2.alert.mouse = false
-1.2.alert.hilite = -57,409,904,28,mapview
-1.2.alert1.modal = A la izquierda está el panel de control del mapa.[NL][NL]Que permite ver la información del mapa, buscar ciudades, cambiar los filtros del mapa, y realizar acciones como la creación de misiones, activar el radar, y centrar el mapa.
-1.2.alert1.hilite = -49,-4,49,407,mapview
-1.2.alert2.modal = La mayor parte de la ventana del mapa se dedica a representar el mapa del mundo.[NL][NL]Este tutorial se concentrará en esta parte de la ventana del mapa aunque accederemos a unas pocas de las funciones de control del mapa.
-1.2.alert2.hilite = -3,-1,840,403,mapview
-1.2.alert5 = Centre el mapa sobre su posición pulsando sobre el botón &#34;centrar en mi&#34; del panel izquierdo.
-1.2.alert5.hilite = map-centerme
-1.2.alert5.mouse = true
-1.2.label = Centrar el Mapa
-1.2.complete.modal = Pulsando este botón se centra el mapa en tu posición sin importar donde estés.
-1.2.complete.mouse = false
+    1.2.alert.modal = El mapa se compone de 3 &#225;reas distintas.[NL][NL]La parte superior tiene múltiples solapas que pueden utilizarse para acceder a la información de la misi&#243;n, manuales, o para cambiar tus controles o teclas.
+    1.2.alert.position = 211614,3074656,false
+    1.2.alert.scale = 1.17
+    1.2.alert.selection = Antwerp
+    1.2.alert.mouse = false
+    1.2.alert.hilite = -57,409,904,28,mapview
+    1.2.alert1.modal = A la izquierda est&#225; el panel de control del mapa.[NL][NL]Que permite ver la informaci&#243;n del mapa, buscar ciudades, cambiar los filtros del mapa, y realizar acciones como la creaci&#243;n de misiones, activar el radar, y centrar el mapa.
+    1.2.alert1.hilite = -49,-4,49,407,mapview
+    1.2.alert2.modal = La mayor parte de la ventana del mapa se dedica a representar el mapa del mundo.[NL][NL]Este tutorial se concentrar&#225; en esta parte de la ventana del mapa aunque accederemos a unas pocas de las funciones de control del mapa.
+    1.2.alert2.hilite = -3,-1,840,403,mapview
+    1.2.alert5 = Centre el mapa sobre su posición pulsando sobre el botón &#034;centrar en mi&#034; del panel izquierdo.
+    1.2.alert5.hilite = map-centerme
+    1.2.alert5.mouse = true
+  1.2.label = Centrar el Mapa
+    1.2.complete.modal = Pulsando este bot&#243;n se centra el mapa en tu posici&#243;n sin importar donde est&#233;s.
+    1.2.complete.mouse = false
 
-1.3.alert.modal = Tú estás representado por la flecha circular en el centro del mapa.[NL][NL]La dirección a la que estás mirando en el mundo del juego es la dirección hacia la que está apuntando dicha flecha.[NL][NL]Igual que en otros mapas: el norte está arriba, el este a la derecha, el sur abajo, y el oeste a la izquierda. 
-1.3.alert.hilite = 403,178,50,43,mapview
-1.3.alert1 = Ahora el mapa está centrado el la ciudad Belga de Namur.[NL][NL]Aumente el Zoom en Namur al máximo pulsando {mapin} o girando la rueda del ratón hacia delante (si tienes rueda en tu ratón).
-1.3.alert1.position = 233874.05,3027401.75
-1.3.alert1.scale = 3.34
-1.3.alert1.selection = Namur
-1.3.alert1.mouse = true
-1.3.label = Aumentar Zoom
-1.3.complete.modal = Bien.[NL][NL]Puedes ver mayor detalle en este nivel de zoom como edificios y estructuras.
+    1.3.alert.modal = Tú est&#225;s representado por la flecha circular en el centro del mapa.[NL][NL]La direcci&#243;n a la que est&#225;s mirando en el mundo del juego es la dirección hacia la que est&#225; apuntando dicha flecha.[NL][NL]Igual que en otros mapas: el norte est&#225; arriba, el este a la derecha, el sur abajo, y el oeste a la izquierda. 
+    1.3.alert.hilite = 403,178,50,43,mapview
+    1.3.alert1 = Ahora el mapa est&#225; centrado el la ciudad Belga de Namur.[NL][NL]Aumente el Zoom en Namur al m&#225;ximo pulsando {mapin} o girando la rueda del rat&#243;n hacia delante (si tienes rueda en tu rat&#243;n).
+    1.3.alert1.position = 233874.05,3027401.75
+    1.3.alert1.scale = 3.34
+    1.3.alert1.selection = Namur
+    1.3.alert1.mouse = true
+  1.3.label = Aumentar Zoom
+    1.3.complete.modal = Bien.[NL][NL]Puedes ver mayor detalle en este nivel de zoom como edificios y estructuras.
 
-1.4.alert = Ahora, reduce el zoom al mínimo pulsando {mapout} o girando la rueda del ratón hacia atrás (si tu ratón la tiene).
-1.4.label = Reducir Zoom
-1.4.complete.modal = A este nivel, puedes ver una región mucho mas amplia que incluye muchos elementos diferentes, tales como ciudades, caminos, ríos, bosques, y costas.
+    1.4.alert = Ahora, reduce el zoom al mínimo pulsando {mapout} o girando la rueda del ratón hacia atrás (si tu rat&#243;n la tiene).
+  1.4.label = Reducir Zoom
+    1.4.complete.modal = A este nivel, puedes ver una regi&#243;n mucho mas amplia que incluye muchos elementos diferentes, tales como ciudades, caminos, ríos, bosques, y costas.
 
-1.5.alert = Puedes mover el mapa por los alrededores haciendo click con el botón izquierdo del ratón en una región del mapa y arrastrando tu ratón, o bien haciendo un doble click sobre un punto en el mapa.[NL][NL]Mueva el mapa por los alrededores.
-1.5.alert.scale = 3.33
-1.5.label = Mover el Mapa
-1.5.complete.modal = Recuerde, que siempre puede recentrar el mapa tras arrastrarlo pulsando el botón &#34;centrar en mi&#34; del panel de control del mapa.
+    1.5.alert = Puedes mover el mapa por los alrededores haciendo click con el botón izquierdo del ratón en una región del mapa y arrastrando tu rat&#243;n, o bien haciendo un doble click sobre un punto en el mapa.[NL][NL]Mueva el mapa por los alrededores.
+    1.5.alert.scale = 3.33
+  1.5.label = Mover el Mapa
+    1.5.complete.modal = Recuerde, que siempre puede recentrar el mapa tras arrastrarlo pulsando el bot&#243;n &#034;centrar en mi&#034; del panel de control del mapa.
 
-1.6.alert.modal = En ocasiones es útil poder encontrar una ciudad concreta. Quizás tus amigos estén allí o la ciudad esté en peligro de ser capturada por el enemigo.[NL][NL]Aquí es donde el buscador de ciudad es útil.
-1.6.alert.hilite = map-cp-find
-1.6.alert.scale = 3.33
-1.6.alert1 = Abra el buscador de ciudad e introduzca &#34;di&#34; en el cuadro de búsqueda. Aparecerá una lista de ciudades que comienzan por &#34;di&#34;.[NL][NL]Cuantas más letras introduzcas, más fina será la búsqueda.[NL][NL]Seleccione &#34;Dinant&#34; para centrar el mapa en esa ciudad.
-1.6.alert1.hilite = map-cp-find
-1.6.label = Buscar una Ciudad
-1.6.complete.modal = Bien hecho. El mapa se centrará ahora en Dinant, una ciudad Francesa junto al río Mosa.
-1.6.complete.mouse = false
+    1.6.alert.modal = En ocasiones es útil poder encontrar una ciudad concreta. Quizás tus amigos estén all&#237; o la ciudad esté en peligro de ser capturada por el enemigo.[NL][NL]Aqu&#237; es donde el buscador de ciudad es útil.
+    1.6.alert.hilite = map-cp-find
+    1.6.alert.scale = 3.33
+    1.6.alert1 = Abre el buscador de ciudades e inserta &#034;di&#034; en el campo de búsqueda (el icono de lupa a la izquierda). Se mostrar&#225; la lista de ciudades que comiencen por di.[NL][NL]Cuantas m&#225;s letras insertes, más ajustada ser&#225; la búsqueda.[NL][NL]Elige &#034;Dinant&#034; para centrar el mapa en esa ciudad.
+    1.6.alert1.hilite = map-cp-find
+    1.6.label = Buscar una Ciudad
+    1.6.complete.modal = Bien hecho. El mapa se centrar&#225; ahora en Dinant, una ciudad Francesa junto al r&#237;o Mosa.
+    1.6.complete.mouse = false
 
 2.0.label = Elementos en Mapa
 
-2.1.alert.modal = Vamos a revisa algunos elementos básicos en el mapa.[NL][NL]Puedes obtener mas información sobre la mayoría de elementos estratégicos en el mapa sosteniendo el ratón sobre ellos unos instantes.
-2.1.alert.position = 220238,3071580
-2.1.alert.scale = 1.89
-2.1.alert.selection = Antwerp
-2.1.alert1.modal = Aquí hay un grupo de ciudades de la linea del frente.[NL][NL]Schilde es una pequeña ciudad en manos de los Alemanes.[NL][NL]Al sur está Lier bajo posesión Francesa.[NL][NL]Al noroeste está Antwerp, en manos Británicas.
-2.1.alert1.hilite = 100,32,386,302,mapview
-2.1.alert2.modal = El icono junto a cada nombre de ciudad indica el país poseedor.[NL][NL]El color del nombre indica el bando que la posee. Rojo para el Eje, azul para los Aliados.[NL][NL]El nombre de Antwerp está en verde actualmente porque ha sido seleccionada.
-2.1.label = zonas disputables
-
-2.2.alert.modal = Aumentando el zoom podrás ver las instalaciones en Antwerp.[NL][NL]Las instalaciones son grupos de edificios relacionados[NL][NL]Los tipos de instalaciones incluyen depósitos de suministros, bases del ejército, embarcaderos, puertos, aeródromos, fábricas, y otros.
-2.2.alert.position = 214214,3074256,target
-2.2.alert.scale = .91
-2.2.alert.selection = Antwerp
-2.2.alert1.modal = La bandera junto a cada instalación muestra que país posee la instalación.[NL][NL]La forma del icono indica el tipo de instalación.[NL][NL]Una vez que todas las instalaciones de una ciudad son capturadas, la ciudad cae bajo posesión del país que la capturó y la línea del frente se mueve hacia delante.
-2.2.label = Instalaciones de Antwerp
+  2.1.label = zonas disputables
+    2.1.alert.modal = Vamos a revisa algunos elementos básicos en el mapa.
+    2.1.alert.position = 220238,3071580
+    2.1.alert.scale = 1.89
+    2.1.alert.selection = Antwerp
+    2.1.alert1.modal = Aqu&#237; hay un grupo de ciudades de la linea del frente.[NL][NL]Schilde es una pequeña ciudad en manos de los Alemanes.[NL][NL]Al sur está Lier bajo posesión Francesa.[NL][NL]Al noroeste está Antwerp, en manos Británicas.
+    2.1.alert1.hilite = 100,32,386,302,mapview
+    2.1.alert2.modal = El icono junto a cada nombre de ciudad indica el pa&#237;s poseedor.[NL][NL]El color del nombre indica el bando que la posee. Rojo para el Eje, azul para los Aliados.[NL][NL]El nombre de Antwerp est&#225; en verde actualmente porque ha sido seleccionada.
+    
+  2.2.label = Instalaciones de Antwerp
+    2.2.alert.modal = Aumentando el zoom podr&#225;s ver las instalaciones en Antwerp.[NL][NL]Las instalaciones son grupos de edificios relacionados[NL][NL]Los tipos de instalaciones incluyen depósitos de suministros, bases del ej&#233;rcito, embarcaderos, puertos, aeródromos, f&#225;bricas, y otros.
+    2.2.alert.position = 214214,3074256,target
+    2.2.alert.scale = .91
+    2.2.alert.selection = Antwerp
+    2.2.alert1.modal = La bandera al lado de cada instalaci&#243;n indica qu&#233; pa&#237;s la controla.[NL][NL]El tipo de icono indica el tipo de instalaci&#243;n.[NL][NL]Una vez todas la instalaciones de una ciudad se han conquistado, la ciudad pasa a ser controlada por el pa&#237;s que la ha capturado y la frontera se desplaza de manera consecuente.
+    2.2.alert2.modal = Puedes arrastrar el ratón por sobre varias de las instalaciones estratégicas para identificarlas. Prueba a hacerlo con la armybase de Antwerp que está representada con un tanque. Aqu&#237; es donde se crean la mayor parte de las misiones ya que la cantidad de tropas y vehículos es excepcionalmente superior. Requiere que haya una brigada amiga en la ciudad.
+    2.2.alert2.hilite = 200,225,20,20,mapview
+    2.2.alert3.modal = Ahora trata de pasar el ratón sobre un depósito marcado con un camión. También se pueden crear misiones desde estas instalaciones. Requiere que haya una brigada amiga en la ciudad para poder crear misiones y salir de estas instalaciones.
+    2.2.alert3.hilite = 290,200,20,20,mapview
+    2.2.alert4.modal = Ahora pasa sobre la bandera de la ciudad (city flag). Est&#225; representado con un edificio.
+    2.2.alert4.hilite = 200,125,20,20,mapview
+    2.2.alert5.modal = Ahora arr&#225;stralo sobre una f&#225;brica de producción. Controlar las instalaciones de producción puede ser vital para la cadena de abastecimiento de todas las fuerzas armadas.
+    2.2.alert5.hilite = 245,150,20,20,mapview
+    2.2.alert6.modal = Ahora pasemos a los puertos mar&#237;timos representados con un ancla. Las unidades de la marina como los botes fairmile pueden desplegarse en ellas desde misiones de marina. Necesita que una brigada naval est&#233; ubicada en la ciudad para crear misiones y salir.
+    2.2.alert6.hilite = 345,320,20,20,mapview
+    2.2.alert7.modal = Ahora pasa el ratón por los aeródromos representados con un avión. Aqu&#237; es donde la fuerza aérea empieza y termina sus misiones. Necesita que una brigada aérea esté ubicada en la ciudad para crear misiones y salir en ellas.
+    2.2.alert7.hilite = 250,55,20,20,mapview
 
 3.0.label = Puntos-Ruta y Contactos Tácticos
+  3.1.label = Origen
+    3.1.alert.modal = El sistema de mapa también muestra importante información táctica tal como el origen y destino de la misión.[NL][NL]Un triángulo azul se coloca sobre el origen de tu misión como primer punto-ruta.[NL][NL]Una vez que completes la misión, o te quedes sin munición, debes intentar regresar a este punto para salir del terreno de juego.
+    3.1.alert.position = 213197,3072505,target
+    3.1.alert.scale = .42
+    3.1.alert.selection = Antwerp
+    3.1.alert.hilite = 20,20,20,20,mapview
+    //3.1.alert.mouse = true
+    3.1.alert1.modal = Si regresas sin muchos daños, el vehículo se reservará para ti.[NL][NL]Si estás demasiado dañado, tendrás que tomar otro vehículo o incluso infantería si no hay más disponibles.
+    3.1.alert1.hilite = 282,96,76,58,mapview
 
-3.1.label = Origen
-3.1.alert.modal = El sistema de mapa también muestra importante información táctica tal como el origen y destino de la misión.[NL][NL]Un triángulo azul se coloca sobre el origen de tu misión como primer punto-ruta.[NL][NL]Una vez que completes la misión, o te quedes sin munición, debes intentar regresar a este punto para salir del terreno de juego.
-3.1.alert.position = 213197,3072505,target
-3.1.alert.scale = .42
-3.1.alert.selection = Antwerp
-3.1.alert.hilite = 282,96,76,58,mapview
-//3.1.alert.mouse = true
-3.1.alert1.modal = Si regresas sin muchos daños, el vehículo se reservará para ti.[NL][NL]Si estás demasiado dañado, tendrás que tomar otro vehículo o incluso infantería si no hay más disponibles.
-3.1.alert1.hilite = 282,96,76,58,mapview
+  3.2.label = Objetivo
+    3.2.alert.modal = Un triángulo rojo se coloca sobre el objetivo de tu misión como último punto-ruta.[NL][NL]Puedes hacer click con el botón derecho del ratón sobre cualquier icono de punto-ruta para hacerlo activo.[NL][NL]Esto añade una pequeña flecha verde de navegación en tu mapa del teatro y en tu mini-mapa.
+    3.2.alert.position = 220780,3073893,target
+    3.2.alert.hilite = 246,133,71,52,mapview
+    3.2.alert.selection = Schilde
 
-3.2.label = Objetivo
-3.2.alert.modal = Un triángulo rojo se coloca sobre el objetivo de tu misión como último punto-ruta.[NL][NL]Puedes hacer click con el botón derecho del ratón sobre cualquier icono de punto-ruta para hacerlo activo.[NL][NL]Esto añade una pequeña flecha verde de navegación en tu mapa del teatro y en tu mini-mapa.
-3.2.alert.position = 220780,3073893,target
-3.2.alert.hilite = 246,133,71,52,mapview
-3.2.alert.selection = Schilde
+    3.3.alert.modal = Los informes de Contactos son puntos en el mapa en los que otro jugador ha informado de haber visto una unidad enemiga.[NL][NL]La forma del icono de informe coincide con el tipo de enemigo divisado.[NL][NL]Puedes detener el ratón sobre un contacto para ver quien lo envió, cuando, y cualquier anotación asociada.
+    3.3.alert.position = 213197,3072505,target
+    3.3.alert.scale = .31
+    3.3.alert.selection = Antwerp
+    3.3.alert1.modal = Los informes deben ser aprobados por el líder de la misión.[NL][NL]Los informes no aprobados parpadearán hasta desaparecer o hasta que el líder de la misión los apruebe.
+    3.3.alert2.modal = Cuando añada un informe, trate de obtener su orientación en el mundo y en el mapa para una mejor estimación de la distancia al contacto.[NL][NL]Otros jugadores verán el informe de contacto, por lo que es importante que la información sea precisa.
+    3.3.alert3 = Haga click con el botón derecho del ratón en cualquier lugar del mapa y seleccione &#034;Informe de Contacto&#034;.[NL][NL]Elija algún tipo de contacto e introduzca algunos comentarios si lo desea.[NL][NL]Después pulse &#034;ACEPTAR&#034;.
+    3.3.alert3.mouse = true
+  3.3.label = Añadir un Informe
+    3.3.complete.modal = El nuevo informe está parpadeando ahora en el mapa. En una misión real, el líder de misión tendrá un aviso sobre que un nuevo contacto ha sido añadido al mapa y que él debe aprobarlo. Los informes aprobados son visibles por todos los miembros de la misión.[NL][NL]Tómese un tiempo para detener el ratón sobre el informe y ver lo que especifica.
 
-3.3.alert.modal = Los informes de Contactos son puntos en el mapa en los que otro jugador ha informado de haber visto una unidad enemiga.[NL][NL]La forma del icono de informe coincide con el tipo de enemigo divisado.[NL][NL]Puedes detener el ratón sobre un contacto para ver quien lo envió, cuando, y cualquier anotación asociada.
-3.3.alert.position = 213197,3072505,target
-3.3.alert.scale = .31
-3.3.alert.selection = Antwerp
-3.3.alert1.modal = Los informes deben ser aprobados por el líder de la misión.[NL][NL]Los informes no aprobados parpadearán hasta desaparecer o hasta que el líder de la misión los apruebe.
-3.3.alert2.modal = Cuando añada un informe, trate de obtener su orientación en el mundo y en el mapa para una mejor estimación de la distancia al contacto.[NL][NL]Otros jugadores verán el informe de contacto, por lo que es importante que la información sea precisa.
-3.3.alert3 = Haga click con el botón derecho del ratón en cualquier lugar del mapa y seleccione &#34;Informe de Contacto&#34;.[NL][NL]Elija algún tipo de contacto e introduzca algunos comentarios si lo desea.[NL][NL]Después pulse &#34;ACEPTAR&#34;.
-3.3.alert3.mouse = true
-3.3.label = Añadir un Informe
-3.3.complete.modal = El nuevo informe está parpadeando ahora en el mapa. En una misión real, el líder de misión tendrá un aviso sobre que un nuevo contacto ha sido añadido al mapa y que él debe aprobarlo. Los informes aprobados son visibles por todos los miembros de la misión.[NL][NL]Tómese un tiempo para detener el ratón sobre el informe y ver lo que especifica.
+    3.4.alert = Pulse {showingamemap} para cerrar el mapa y finalizar este tutorial.
+  3.4.label = Cerrar Mapa
 
-3.4.alert = Pulse {showingamemap} para cerrar el mapa y finalizar este tutorial.
-3.4.label = Cerrar Mapa
-
-3.5.alert.modal = Con esto concluye el tutorial del Mapa.
-3.5.label = Hecho</body>
+    3.5.alert.modal = Con esto concluye el tutorial del Mapa.
+  3.5.label = Hecho</body>
   <branch>1</branch>
   <brief>Comprendiendo el Uso del Mapa</brief>
   <handler>basic.map</handler>

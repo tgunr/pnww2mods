@@ -67,6 +67,20 @@
 2.2.alert.selection = Antwerp
 2.2.alert1.modal = Le drapeau à coté de chaque installation indique quel pays en a le contrôle.[NL][NL]Le type d&#39;icône indique la nature de l&#39;installation.[NL][NL]Si elles sont toutes capturées, la ville passe sous le contrôle du pays les ayant capturées et le front est déplacé.
 2.2.label = installations de Antwerp(Anvers)
+2.2.alert2.modal = You can hover your mouse over some of the strategic facilities to identify them. Try hovering over the armybase for antwerp that is marked with a tank icon. This is where most missions are created from as the supply of troops and vehicles is exceptionally higher. It requires a friendly army brigade to be situated in the town or city.
+2.2.alert2.hilite = 200,225,20,20,mapview
+
+2.2.alert3.modal = Now try hovering over a depot marked with a truck icon. troops can create missions from these facilities. It requires that a friendly army brigade must be situated in the town or city to create missions or spawn from these facilities.
+2.2.alert3.hilite = 290,200,20,20,mapview 
+
+2.2.alert4.modal = Now try hovering over the city flag. This is marked with a building icon.
+2.2.alert4.hilite = 200,125,20,20,mapview
+2.2.alert5.modal = Now try hovering over a production facility with a factory icon. Controlling production facilities can be critical to the chain of supply for all branches of the armed forces.
+2.2.alert5.hilite = 245,150,20,20,mapview
+2.2.alert6.modal = Now try hovering over the docks marked by a anchor sign. It is possible for navy units such as fairmile boats can spawn in under navy missions. It requires a navy brigade to be stationed at the town or city to create missions from and spawn.
+2.2.alert6.hilite = 345,320,20,20,mapview
+2.2.alert7.modal = Now try hovering over the airfield with the airplane icon. This is where air force missions can start and end their missions at.It requires an air force brigade to be stationed at the town or city to create or spawn into missions.
+2.2.alert7.hilite = 250,55,20,20,mapview
 
 3.0.label = Balises tactique et reports de contact
 
@@ -75,7 +89,7 @@
 3.1.alert.position = 213197,3072505,target
 3.1.alert.scale = .42
 3.1.alert.selection = Antwerp
-3.1.alert.hilite = 282,96,76,58,mapview
+3.1.alert.hilite = 20,20,20,20,mapview
 //3.1.alert.mouse = true
 3.1.alert1.modal = Si vous arrivez là sans avoir eu trop de dommage, Votre véhicule vous sera réservé.[NL][NL]Si vous avez reçu trop de dommage, il sera perdu et vous devrez en prendre un autre ou une infanterie si il n&#39;y en a plus de disponible.
 3.1.alert1.hilite = 282,96,76,58,mapview
