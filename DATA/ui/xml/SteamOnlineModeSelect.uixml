@@ -74,6 +74,15 @@
 					showOk(getlocstring("login.steamneedscallsign"));
 					callsign_pane.visible = true;
 				}
+			} else if ( result == 3 ) {
+				// Callsign is invalid
+				showOk(getlocstring("login.steam.callsign.invalid"));
+			} else if ( result == 4 ) {
+				// Callsign is inappropriate
+				showOk(getlocstring("login.steam.callsign.bad"));
+			} else if ( result == 5 ) {
+				// Callsign is already in-use
+				showOk(getlocstring("login.steam.callsign.inuse"));
 			} else {
 				showOk(getlocstring("login.steamunknownerror"));
 			}

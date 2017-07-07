@@ -3539,10 +3539,12 @@
 <!ENTITY login.promptlogin "LOGIN">
 <!ENTITY login.promptpassword "Password">
 <!ENTITY login.promptusername "Username">
-<!ENTITY login.steambadcallsign "The callsign you requested is either already taken or invalid. Please use only standard alphanumeric characters.">
 <!ENTITY login.steamneedscallsign "This is your first time logging in, and you need to create a callsign.">
 <!ENTITY login.steamunknownerror "An unknown error occurred. Please try again or try offline mode.">
 <!ENTITY login.steamuserdoesnotexist "You seem not to have the game with this Steam account. Make sure you're logged in with the correct account and try again.">
+<!ENTITY login.steam.callsign.invalid "The callsign you requested is not valid. Please use only standard alphanumeric characters.">
+<!ENTITY login.steam.callsign.bad "The callsign you requested contains inappropriate language. Please try a different callsign.">
+<!ENTITY login.steam.callsign.inuse "The callsign you requested is already taken. Please try a different callsign.">
 <!ENTITY login.trainingmode "Training Server">
 <!ENTITY map.airforce "Air Force">
 <!ENTITY map.army "Army">
