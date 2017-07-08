@@ -1,3 +1,24 @@
+<!ENTITY authconn.complete "Réponse reçue.">
+<!ENTITY authconn.error.badcallsign.char "le caractère '{1}' n'est pas valide dans les identifiants.">
+<!ENTITY authconn.error.badcallsign.length "Les identifiants sont limités à 10 caractères.">
+<!ENTITY authconn.error.badusername.char "Le caractère '{1}' n’est pas utilizable dans les noms d’usagers.">
+<!ENTITY authconn.error.badusername.length "Les noms d’usagers sont limités à 10 caractères.">
+<!ENTITY authconn.error.generic.errorcode "Erreur de réseau '{1}' rencontrée.">
+<!ENTITY authconn.error.generic.unknown "Une erreur inconnue est survenue. Bien vouloir redémarrer l’application et réessayer de nouveau.">
+<!ENTITY authconn.error.init.callbackinitfailed "Échec de l’initialisation des rappels de réseau.">
+<!ENTITY authconn.error.init.couldnotresolve "Impossible de résoudre '{1}'.">
+<!ENTITY authconn.error.init.multipleconnections "L’application a tenté d’ouvrir plus d’une connection d’identifiant à la fois.">
+<!ENTITY authconn.error.login.arenafull "La région est pleine. Réessayez plus tard.">
+<!ENTITY authconn.error.login.game "Le réseau de jeu est inactif. Réessayez sous peu.">
+<!ENTITY authconn.error.login.locked "Les serveurs sont verrouillés. Réessayez sous peu.">
+<!ENTITY authconn.error.login.password "Mot de passe incorrect.">
+<!ENTITY authconn.error.login.subscription "Votre souscription est présentement inactive.">
+<!ENTITY authconn.error.login.system "Erreur système d’identification. Réessayez sous peu.">
+<!ENTITY authconn.error.login.unknown "Il y a un problème d’authentification de votre identifiant. . Réessayez sous peu.">
+<!ENTITY authconn.error.login.username "Nom d’utilisateur invalide.">
+<!ENTITY authconn.error.login.version "Cette version du jeu ne peut pas se connecter au serveur d’authentification.">
+<!ENTITY authconn.error.unknown " Une erreur inconnue est survenue lors de la connexion au jeu. Bien vouloir redémarrer l’application et essayer de nouveau.">
+<!ENTITY authconn.waiting "En attente de réponse.">
 <!ENTITY brigade.back "Transfert">
 <!ENTITY brigade.back.decision "Que voulez vous changer ?">
 <!ENTITY brigade.back.decision.brigade "BRIGADE">
@@ -3424,8 +3445,34 @@
 <!ENTITY loc.ui.97 "Vous avez déjà posté une mission ici.">
 <!ENTITY loc.ui.98 "Erreur inconnue.">
 <!ENTITY loc.ui.99 "Selectionnez un véhicule et appuyez sur Lancer">
-
-
+<!ENTITY login.arenaselect.arenaheader "ARÈNE DE JEU" >
+<!ENTITY login.arenaselect.back "Retour" >
+<!ENTITY login.arenaselect.failedtoconnect "Échec de la connection à l' arene de jeu sélectionnée. Une erreur inconnue est survenue." >
+<!ENTITY login.arenaselect.forward "Joindre l’arène de jeu" >
+<!ENTITY login.arenaselect.list.name "Arène de jeu" >
+<!ENTITY login.arenaselect.offline "Jouer hors ligne" >
+<!ENTITY login.arenaselect.noarenas "AUCUNE ARÈNE DE JEU DISPONIBLE" >
+<!ENTITY login.arenaselect.states.loading.tip "Le serveur télécharge toujours">
+<!ENTITY login.arenaselect.states.locked.tip "Le serveur est présentement verrouillé">
+<!ENTITY login.arenaselect.states.maintenance.tip "Le serveur est non disponible pour maintenance">
+<!ENTITY login.arenaselect.states.offline.tip "Le serveur est hors-ligne">
+<!ENTITY login.arenaselect.states.online.tip "Le serveur est en ligne">
+<!ENTITY login.arenaselect.states.starting.tip "Le serveur est présentement en démarrage">
+<!ENTITY login.arenaselect.states.syncing.tip "Les hôtes se synchronisent entre eux">
+<!ENTITY login.connectingtoauth "Connexion à l’hôte d’identification...">
+<!ENTITY login.error.retry "Réessayez">
+<!ENTITY login.error.offline "Hors ligne">
+<!ENTITY login.offlinemode "Jouer Hors Ligne">
+<!ENTITY login.onlinemode "Joindre la Bataille">
+<!ENTITY login.promptcallsign "Indentification désirée">
+<!ENTITY login.promptlogin "IDENTIFIANT">
+<!ENTITY login.promptpassword "Mot de passe">
+<!ENTITY login.promptusername "Nom d’utilisateur">
+<!ENTITY login.steambadcallsign "l’identification (callsign) demandée est soit déjà utilisée ou invalide. Utiliser les caractères alphanumériques.">
+<!ENTITY login.steamneedscallsign "C’est la première fois que vous vous connectez, et vous devez créer un identifiant (callsign).">
+<!ENTITY login.steamunknownerror "Une erreur inconnue est survenue. Essayez de nouveau, ou essayez le mode hors ligne.">
+<!ENTITY login.steamuserdoesnotexist "Il semble que vous n’ayez pas ce jeu avec votre compte Steam. Assurez-vous de vous connecter avec le bon compte et essayez de nouveau. ">
+<!ENTITY login.trainingmode "Serveur d’Entraînement">
 <!ENTITY map.airforce "Armée de l&#39;air">
 <!ENTITY map.army "Armée">
 <!ENTITY map.bridges "Ponts">
@@ -3645,9 +3692,8 @@
 <!ENTITY mission.timeleft.expired "Votre souscription d&#39;1 heure est finie! Le jeu va se terminer.">
 <!ENTITY mission.timeleft.url "https://secure.wwiionline.com/scripts/wwiionline/user/subscription.jsps">
 <!ENTITY none "rien">
-
-
-
+<!ENTITY offline.back "SÉLECTION DU MODE">
+<!ENTITY offline.back.tip "Retournez et essayez de signer dans une arène de jeu en ligne.">
 <!ENTITY offline.forward "ENTRER">
 <!ENTITY offline.forward.tip "Entrez déconnecté pour explorer le monde.">
 <!ENTITY offline.spawntab "SELECTION POUR ENTRER">

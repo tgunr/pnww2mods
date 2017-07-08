@@ -91,18 +91,18 @@
 	2.5.label = Courir depuis la position à plat ventre.
 
 	2.5.complete = Remarquez  qu&#39;une fois que vous avez arrêté de courir vous revenez à la position à plat ventre. Cela est utile pour courir d&#39;une zone couverte à une autre durant le combat.
-	
-3.0.label = Point mobile de renfort
 
-	3.1.label = Allez au point de Spawn 
-    3.1.alert.modal = La plus part du temps le fantassin entre sur le champ de bataille, ou &#39;spawn&#39;, dans la base militaire ou un dépôt.  Mais les joueurs peuvent créer des point mobiles de renfort en amenant un camion proche des lignes ennemies et en le laissant là.[NL][NL]Ceci permet aux joueurs de rentrer sur le champ de bataille à cette place là, ce qui réduit de beaucoup la distance à parcourir pour aller au combat.
-	3.1.alert1 = Vous &#34;spawnez&#34; là, point mobile.[NL][NL]Allez maintenant vers ce point mobile d&#39;où vous venez d&#39;arriver.
-    
-	3.2.label = Missions de point mobile
-    3.2.alert1.modal = Les missions avec un point mobile sont indiquées par une icône camion en bout de ligne sur l&#39;écran des missions .
-    
+    3.0.label = Point mobile de renfort
+
+    3.1.label = Allez au point de Spawn
+    3.1.alert.modal = La plupart du temps, l’infanterie entre dans le monde virtuel, ou &#039;apparaît (spawn)&#039;, à l’intérieur des bases ou des dépôts.  Les joueurs peuvent par contre créer des points mobile de renfort (Mobile Spawn Point) en conduisant un camion près des villes ennemies et en y déployant un point d’apparition mobile fortifié (Fortified Mobile Spawn, ou FMS) ou un point d’apparition mobile urbain (Urban Mobile Spawn, ou UMS) .[NL][NL] Ceci permet aux joueurs d’entrer dans le monde virtuel à l’emplacement de ce point d’apparition (Spawn Point) soit le FMS ou le UMS. Ceci diminue grandement la distance à parcourir pour rejoindre le combat.
+    3.1.alert1 = Vous êtes apparu à un de ces point de renfort mobile (Mobile Spawn Point).[NL][NL]Retournez maintenant à ce même point de renfort mobile.
+
+    3.2.label = Missions de point mobile
+    3.2.alert1.modal = Les missions ayant un point mobile de renfort  (Mobile Spawns) sont indiquées par un crochet dans la colonne MS sous l’onglet des Batailles Actives.
+
     #can you fake the map icon in the text here?
-    
+
     3.2.alert2.modal = L&#39;icône camion indique qu&#39;il y a un point mobile &#34;MSP&#34; (&#34;Mobile Spawn Point&#34;) ou &#34;UMS&#34; (&#34;Unmanned Spawn Point&#34;).  La différence est qu&#39;un joueur est encore au commande du camion pour le MSP - Il peut déplacer le camion de nouveau si besoin. Mais un UMS ne peut plus être déplacé.
     
     3.2.alert3.modal = Les deux MSP et UMS, soit les camions, sont aussi des points de ravitaillements qui vous donneront des munitions des que vous serez à coté d&#39;eux.
