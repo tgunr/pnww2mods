@@ -103,14 +103,14 @@
 
     #can you fake the map icon in the text here?
 
-    3.2.alert2.modal = L&#39;icône camion indique qu&#39;il y a un point mobile &#34;MSP&#34; (&#34;Mobile Spawn Point&#34;) ou &#34;UMS&#34; (&#34;Unmanned Spawn Point&#34;).  La différence est qu&#39;un joueur est encore au commande du camion pour le MSP - Il peut déplacer le camion de nouveau si besoin. Mais un UMS ne peut plus être déplacé.
-    
-    3.2.alert3.modal = Les deux MSP et UMS, soit les camions, sont aussi des points de ravitaillements qui vous donneront des munitions des que vous serez à coté d&#39;eux.
-    
+    3.2.alert2.modal = Ces camions deployent une varietee d&#039;objets (player placed objects ou PPO) incluant des points mobiles de renforts comme les  Fortified Mobile Spawn (FMS), Urban Mobile Spawns (UMS) et des Ammo cache (Caisses de munitions). Les deux types de points de renforts (Mobile Spawn) sont distingues par leur drapeaux d&#039;appartenance, ami ou enemi. Les caisses de munitions  (Ammo cache) ravitaillent toutes unitees terrestre.
+
+    3.2.alert3.modal = Les deux points de renfort (Mobile Spawn) et les camions/tracteurs sont aussi des points rearmement qui remplaceront automatiquement vos munition lorsque vous etes pret d&#039;eux. (Unitees de l&#039;armee seulement).
+
     3.2.alert3.hilite = persona-resupply
 
-	3.3.label = Terminé
-	3.3.alert.modal = Ceci termine ce tutoriel.</body>
+    3.3.label = Terminé
+    3.3.alert.modal = Ceci termine ce tutoriel.</body>
   <branch>1</branch>
   <brief>Vous apprend les différentes façons de déplacer votre fantassin sur le champ de bataille.</brief>
   <handler>basic.movement</handler>

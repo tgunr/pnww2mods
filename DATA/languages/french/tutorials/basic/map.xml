@@ -45,20 +45,20 @@
 1.6.alert.hilite = map-cp-find
 1.6.alert.scale = 3.33
 1.6.alert1 = Ouvrez le système de recherche de ville et entrez &#34;di&#34; dans la fenêtre. Toutes les villes commençant par di seront données.[NL][NL]Plus vous donnerez de lettres plus sera précise la liste.[NL][NL]Selectionnez &#34;Dinant&#34; pour centrer la carte dessus.
-1.6.alert1.hilite = map-cp-find
-1.6.label = Chercher un ville
-1.6.complete.modal = très bien. La carte est sur une ville Française sur la Meuse.
-1.6.complete.mouse = false
+    1.6.alert1.hilite = map-cp-find
+    1.6.label = Chercher un ville
+    1.6.complete.modal = très bien. La carte est sur une ville Française sur la Meuse.
+    1.6.complete.mouse = false
 
-2.0.label = Eléments de la carte
+    2.0.label = Eléments de la carte
 
-2.1.alert.modal = Vous obtiendrez plus d’informations  sur les éléments stratégiques en maintenant la souris par-dessus. 
-2.1.alert.position = 220238,3071580
-2.1.alert.scale = 1.89
-2.1.alert.selection = Antwerp
-2.1.alert1.modal = Ici Il y a un groupe de villes sur le front.[NL][NL] Shilde est une ville sous le contrôle de l’Allemagne.[NL][NL]Au sud Lier appartient aux français.[NL][NL]Au nord ouest Antwerp est une grande ville sous contrôle anglais.
-2.1.alert1.hilite = 100,32,386,302,mapview
-2.1.alert2.modal = L&#39;icône à coté de ville indique à quel pays elle appartient.[NL][NL]La couleur des noms indique aussi l&#39;appartenance. Rouge pour l&#39;Axe et bleu pour les Alliés.[NL][NL] Antwerp est actuellement verte car la ville est sélectionnée.
+    2.1.alert.modal = Voyons les elements de base de la carte.
+    2.1.alert.position = 220238,3071580
+    2.1.alert.scale = 1.89
+    2.1.alert.selection = Antwerp
+    2.1.alert1.modal = Ici Il y a un groupe de villes sur le front.[NL][NL] Shilde est une ville sous le contrôle de l’Allemagne.[NL][NL]Au sud Lier appartient aux français.[NL][NL]Au nord ouest Antwerp est une grande ville sous contrôle anglais.
+    2.1.alert1.hilite = 100,32,386,302,mapview
+    2.1.alert2.modal = L&#39;icône à coté de ville indique à quel pays elle appartient.[NL][NL]La couleur des noms indique aussi l&#39;appartenance. Rouge pour l&#39;Axe et bleu pour les Alliés.[NL][NL] Antwerp est actuellement verte car la ville est sélectionnée.
 2.1.label = points stratégiques
 
 2.2.alert.modal = En zoomant vous pouvez voir les installations d’ Antwerp.[NL][NL]Ceux sont des groupes de bâtiments.[NL][NL]Comme les dépôts, les bases militaires, les docks,les aérodromes, les usines et d&#39;autres.
@@ -67,19 +67,19 @@
     2.2.alert.selection = Antwerp
     2.2.alert1.modal = Le drapeau à côté de chaque  bâtiment indique le pays qui contrôle ces mêmes bâtiments.[NL][NL]La forme de l’icône indique le type de bâtiment.[NL][NL]Lorsque tous les bâtiments avec drapeau sont capturés, la ville appartient désormais au pays qui les a capturés, faisant ainsi avancer la ligne de front.
     2.2.label = installations de Antwerp(Anvers)
-    2.2.alert2.modal = You can hover your mouse over some of the strategic facilities to identify them. Try hovering over the armybase for antwerp that is marked with a tank icon. This is where most missions are created from as the supply of troops and vehicles is exceptionally higher. It requires a friendly army brigade to be situated in the town or city.
+    2.2.alert2.modal = Vous pouvez naviguer votre souris sur les batiments strategiques pour les identifier. Essayer de naviguer sur l &#039;&#034;armybase&#034; d &#039;Antwerp qui est represente par un icone de char. C&#039;est de la que la plupart des missions sont creees car les renforts de troupes et vehicules y sont plus grands. Il faut cependant qu&#039;un regiment (brigade) ami soit dans cette ville.
     2.2.alert2.hilite = 200,225,20,20,mapview
 
-    2.2.alert3.modal = Now try hovering over a depot marked with a truck icon. troops can create missions from these facilities. It requires that a friendly army brigade must be situated in the town or city to create missions or spawn from these facilities.
+    2.2.alert3.modal = Maintenant essayez de naviguer sur un depot marque par un icone camion. Les troupes peuvent creer des missions de ces batiments. Cela demande qu&#039;un regiment (brigade) soit dans cette ville pour creer des missions de ces batiments.
     2.2.alert3.hilite = 290,200,20,20,mapview
 
-    2.2.alert4.modal = Now try hovering over the city flag. This is marked with a building icon.
+    2.2.alert4.modal = Maintenant essayez de naviguer sur le drapeau &#034;city&#034;.  Il est marque d&#039;un icone batiment.
     2.2.alert4.hilite = 200,125,20,20,mapview
-    2.2.alert5.modal = Now try hovering over a production facility with a factory icon. Controlling production facilities can be critical to the chain of supply for all branches of the armed forces.
+    2.2.alert5.modal = Maintenant essayez de naviguer sur un usine de production marquee par un icone usine. Controller une usine peut etre critique pour la chaine de production de toutes les branches des forces armees.
     2.2.alert5.hilite = 245,150,20,20,mapview
-    2.2.alert6.modal = Now try hovering over the docks marked by a anchor sign. It is possible for navy units such as fairmile boats can spawn in under navy missions. It requires a navy brigade to be stationed at the town or city to create missions from and spawn.
+    2.2.alert6.modal = Maintenant essayez de naviguer sur un dock marque par un icone ancre. Il est possible pour des unites marine comme les vedettes Fairmile d&#039;apparaitre de ce spawn sous une mission &#034;Navy&#034;. Il faut cependant qu&#039;une brigade &#034;navy&#034; soit stationnee dans cette ville pour y creer une mission et y apparaitre.
     2.2.alert6.hilite = 345,320,20,20,mapview
-    2.2.alert7.modal = Now try hovering over the airfield with the airplane icon. This is where air force missions can start and end their missions at.It requires an air force brigade to be stationed at the town or city to create or spawn into missions.
+    2.2.alert7.modal = Maintenant essayez de naviguer sur un aerodrome avec l&#039;icone avion. C&#039;est de la que les missions aeriennes debutent et peuvent etre terminees. Il faut qu&#039;une brigade aerienne soit stationnee dans cette ville pour creer ou apparaitre dans une mission.
     2.2.alert7.hilite = 250,55,20,20,mapview
 
     3.0.label = Balises tactique et reports de contact
