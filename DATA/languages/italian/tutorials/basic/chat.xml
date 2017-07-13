@@ -7,12 +7,12 @@
 # Cancella o disintonizza la radio 3 affinche&#39; sia libera.
 	
 	1.1.alert.modal = La finesta di chat e&#39; il sistema di base per comunicare con altri giocatori in Battleground Europe. [NL][NL]Ha 6 &#34;radio&#34; sulle quali puoi trasmettere e ricevere messaggi. Ogni radio puo&#39; essere sintonizzata su uno dei numerosi canali disponibili.
-	
-		1.1.alert1.modal = Si puo&#39; accedere ad ognuna delle radio numerate (1-6) tramite il corrispettivo tasto funzione (F1-F6).[NL][NL]L&#39;etichetta della radio mostra il canale al quale si e&#39; sintonizzata la radio.
 
-		1.1.alert1.hilite = channels,target
-		
-		1.1.alert5 = L&#39;operazione di base e&#39; semplice: premi Enter per aprire il buffer di inserimento testo, digita un messaggio, per esempio &#34;Salve&#34;, e premi Enter nuovamente per inviarlo.[NL][NL]Invia &#34;Salve&#34; ai giocatori nell&#39;area.
+    1.1.alert1.modal = Each numbered radio (1-6) can be accessed via the same numbered function keys (F1-F6). [NL][NL]The label of the radio shows the channel that radio is tuned to. For Mac users, update your preferences to use the function keys in System Preferences.
+
+    1.1.alert1.hilite = channels,target
+
+    1.1.alert5 = L&#39;operazione di base e&#39; semplice: premi Enter per aprire il buffer di inserimento testo, digita un messaggio, per esempio &#34;Salve&#34;, e premi Enter nuovamente per inviarlo.[NL][NL]Invia &#34;Salve&#34; ai giocatori nell&#39;area.
 		
 		1.1.label = Inserimento di chat.
 		
@@ -22,13 +22,13 @@
 
 	1.2.alert.modal = Quando sei nel gioco, il canale di default della chat (quando cioe&#39; premi Enter per parlare, piuttosto che una delle radio), e&#39; la chat di area.[NL][NL]I giocatori amici entro i 100 metri riceveranno il tuo messaggio. Questo e&#39; un sistema eccellente per coordinarsi con i giocatori della stessa area.[NL][NL]Attenzione pero&#39;. Le unita&#39; nemiche piu&#39; vicine vedranno un testo confuso che potrebbe rivelare la tua posizione (sebbene non riceveranno il tuo messaggio).
 
-		1.2.alert1 = Il canale Missione ti permette di comunicare con tutti coloro che sono nella stessa missione, senza problemi di distanza.[NL][NL]Seleziona il canale Missione premendo F1.
-		
-		1.2.alert1.hilite = F1,target
+    1.2.alert1 = Your Mission channel allows you to communicate with everyone on the same mission, regardless of their distance. [NL][NL]Select the Mission channel by pressing F1. (Standard Function Keys must be enabled!)
 
-		1.2.label = Canale Missione
-		
-		1.2.complete = Nota che l&#39;intestazione del canale F1 e&#39; evidenziate e la bar di chat aperta.
+    1.2.alert1.hilite = F1,target
+
+    1.2.label = Canale Missione
+
+    1.2.complete = Nota che l&#39;intestazione del canale F1 e&#39; evidenziate e la bar di chat aperta.
 		
 	1.3.alert = Inserisci un testo e poi premi Enter per inviarlo al canale Missione (radio F1).
 

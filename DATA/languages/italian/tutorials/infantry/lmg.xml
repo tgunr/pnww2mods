@@ -56,14 +56,14 @@ vehiclerange = Poligono di tiro per veicoli
 2.2.label = Posizione di fuoco
 	2.2.alert = Questo è il poligono di tiro per veicoli.[NL][NL]Entra nella buca di addestramento.
 	#waypoint label: &#34;Sandbag Pit&#34;
-	#waypoint: -313969.40,3603763.17,100.32
+    #waypoint: -313969.40,3603763.17,100.32
 
-2.3.label = Schierati sui sacchetti
-	2.3.alert = Premi {fpdeploy} per usare il bipiede sul muro di sacchetti di sabbia.[NL][NL] Avvicinati al muro se non riesci a utilizzare il bipiede.
-	2.3.complete = Eccellente!
-	
-2.4.label = Arco di fuovo
-	2.4.alert.modal = Muovi il fucile mitragliatore a sinistra e destra per vedere l&#39;arco di fuoco, che è diverso rispetto alla posizione al suolo.[NL]Schierare l&#39;LM contro un oggetto solitamente aumenta di molto l&#39;arco di fuoco.
+    2.3.label = Schierati sui sacchetti
+    2.3.alert = Press {fpdeploy} to deploy the LMG&#39;s bipod on the sandbag wall.[NL][NL] Get as close as possible to the wall if you are unable to deploy.
+    2.3.complete = Eccellente!
+
+    2.4.label = Arco di fuovo
+    2.4.alert.modal = Muovi il fucile mitragliatore a sinistra e destra per vedere l&#39;arco di fuoco, che è diverso rispetto alla posizione al suolo.[NL]Schierare l&#39;LM contro un oggetto solitamente aumenta di molto l&#39;arco di fuoco.
 	2.4.alert.modal = Ora spara allo scafo del veicolo più vicino.
 	2.4.complete.modal = Eccellente. Questo completa l&#39;introduzione al fucile mitragliatore.</body>
   <branch>1</branch>

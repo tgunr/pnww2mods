@@ -1,117 +1,118 @@
 <?xml version='1.0'?>
 <content type="5">
   <key>1</key>
-  <body>title = 行进训练任务
+  <body>
+    title = 行进训练任务
 
-1.0.label = 移动训练
+    1.0.label = 移动训练
 
-	1.1.alert.modal = 欢迎来到新兵训练场，在这里你将受到考验。作为一名新兵，你需要完成5个最基本的任务，每完成一个任务，你都将获得10点积分，当你积累够50点积分之后，你将提升一级，这样你才拥有了进入战场的资格！此外，完成训练以后，你也可以通过“战斗旅总部”界面，选择“新兵营”，重新进行训练。现在让我们开始“行进训练任务”！[NL][NL]注意：在训练过程中，你随时可以按 {exitvehicle}键离开训练场地，返回新兵营界面。  
+    1.1.alert.modal = 欢迎来到新兵训练场，在这里你将受到考验。作为一名新兵，你需要完成5个最基本的任务，每完成一个任务，你都将获得10点积分，当你积累够50点积分之后，你将提升一级，这样你才拥有了进入战场的资格！此外，完成训练以后，你也可以通过“战斗旅总部”界面，选择“新兵营”，重新进行训练。现在让我们开始“行进训练任务”！[NL][NL]注意：在训练过程中，你随时可以按 {exitvehicle}键离开训练场地，返回新兵营界面。
 
-	1.1.alert1 = 战场上危机四伏。作为一名战士，需要时刻保持警惕，洞察周围环境！现在，请移动鼠标来四下查看四周的情况。记住：你的鼠标控制你的朝向！
+    1.1.alert1 = 战场上危机四伏。作为一名战士，需要时刻保持警惕，洞察周围环境！现在，请移动鼠标来四下查看四周的情况。记住：你的鼠标控制你的朝向！
 
-	1.1.label = 使用鼠标控制朝向
-		
-1.2.alert = 很好！下面我们来使用另一种方法来观察环境，用 {fplookleft} 键向左看和用 {fplookright} 键向右看。这两个按键，可以让你在行进中也能有效的观察环境而不必改变方向。 [NL][NL]现在，请按 {fplookleft} 键向左看，按 {fplookright} 键向右看！
-	
-	1.2.label = 向左看、向右看。
+    1.1.label = 使用鼠标控制朝向
 
-	1.2.complete = 记住：在战斗中，时刻保持对周围环境的警惕是非常重要的！ 
+    1.2.alert = 很好！下面我们来使用另一种方法来观察环境，用 {fplookleft} 键向左看和用 {fplookright} 键向右看。这两个按键，可以让你在行进中也能有效的观察环境而不必改变方向。 [NL][NL]现在，请按 {fplookleft} 键向左看，按 {fplookright} 键向右看！
 
-1.3.alert = 很好！接下来是移动。在游戏中你可以使用向前 {fpforward}，向后 {fpbackward}，左移 {fpstrafeleft} 和右移 {fpstraferight} 来在四处移动。[NL][NL]现在，请向这四个方向进行移动！
+    1.2.label = 向左看、向右看。
 
-	1.3.label = 请使用键盘来移动。
+    1.2.complete = 记住：在战斗中，时刻保持对周围环境的警惕是非常重要的！
 
-	1.3.complete = 干的不错！
+    1.3.alert = 很好！接下来是移动。在游戏中你可以使用向前 {fpforward}，向后 {fpbackward}，左移 {fpstrafeleft} 和右移 {fpstraferight} 来在四处移动。[NL][NL]现在，请向这四个方向进行移动！
 
-1.4.alert.modal = 你应该已经注意到了，你正常的移动速度是很慢的，但是你可以在使用 {fpforward} 键向前移动时，按住 {fpfast} 键，进行疾跑。[NL][NL]注意：在你进行疾跑时，你的体力将会迅速减少。体力以绿色长条的方式显示在你的屏幕的左下方。
+    1.3.label = 请使用键盘来移动。
 
-	1.4.alert.hilite = atp-bar
+    1.3.complete = 干的不错！
 
-	1.4.alert1.modal = 当体力消耗到一半的时候，你将不能进行疾跑操作。体力会根据你当前的姿势以不同的速率进行恢复。最快的恢复方式是进入卧姿状态。
+    1.4.alert.modal = 你应该已经注意到了，你正常的移动速度是很慢的，但是你可以在使用 {fpforward} 键向前移动时，按住 {fpfast} 键，进行疾跑。[NL][NL]注意：在你进行疾跑时，你的体力将会迅速减少。体力以绿色长条的方式显示在你的屏幕的左下方。
 
-	1.4.alert1.hilite = atp-bar
-	
-	1.4.label = 体力管理
+    1.4.alert.hilite = atp-bar
 
-1.5.alert = 现在，系统已经在你的迷你地图上添加了一个前往补给车的导航点。记住利用鼠标来调整你的方向，使迷你地图上的箭头对着闪动的目标。注意在屏幕上也会有一个大箭头来指示你的方向和距离。[NL][NL]现在注意：使用前进键 {fpforward} 和疾跑键 {fpfast} ，跑到导航点的位置。
-	
-         1.5.alert.hilite = minimap
+    1.4.alert1.modal = 当体力消耗到一半的时候，你将不能进行疾跑操作。体力会根据你当前的姿势以不同的速率进行恢复。最快的恢复方式是进入卧姿状态。
 
-	1.5.label = 疾跑到导航点
+    1.4.alert1.hilite = atp-bar
 
-	1.5.complete = 很好。现在你可以休息一下，恢复体力了。
+    1.4.label = 体力管理
 
-1.6.alert.modal =  你应该注意到了，在进行过一段疾跑之后，你的体力已经减少了一些。慢跑将以非常缓慢的速度恢复体力，但是其他所有类型的移动包括疾跑，爬行和蹲行都会消耗体力。
+    1.5.alert = 现在，系统已经在你的迷你地图上添加了一个前往补给车的导航点。记住利用鼠标来调整你的方向，使迷你地图上的箭头对着闪动的目标。注意在屏幕上也会有一个大箭头来指示你的方向和距离。[NL][NL]现在注意：使用前进键 {fpforward} 和疾跑键 {fpfast} ，跑到导航点的位置。
 
-	1.6.alert.hilite = atp-bar
+    1.5.alert.hilite = minimap
 
-	1.6.alert1.modal = 恢复体力，最简单的方法就是停下来休息。而你的体力恢复的快慢则依赖于你当前的姿势，这一点我们下面会继续进行训练！
-	
-         1.6.alert1.hilite = atp-bar
+    1.5.label = 疾跑到导航点
 
-	1.6.label = 体力恢复
+    1.5.complete = 很好。现在你可以休息一下，恢复体力了。
 
-2.0.label = 训练各种姿势
+    1.6.alert.modal =  你应该注意到了，在进行过一段疾跑之后，你的体力已经减少了一些。慢跑将以非常缓慢的速度恢复体力，但是其他所有类型的移动包括疾跑，爬行和蹲行都会消耗体力。
 
-2.1.alert.modal = 作为步兵，你可以使用三种姿势，分别为立姿，跪姿或者卧姿。每个姿势都有独特的作用。[NL][NL]你当前的姿势显示在抬头显示器HUD的左下角位置。
+    1.6.alert.hilite = atp-bar
 
-	2.1.alert.hilite = state-icon
+    1.6.alert1.modal = 恢复体力，最简单的方法就是停下来休息。而你的体力恢复的快慢则依赖于你当前的姿势，这一点我们下面会继续进行训练！
 
-	2.1.alert1 = 在跪姿状态下，你可以移动的更慢且更安静，可以使你避免引起敌人的注意。[NL][NL]现在，请按 {fpcrouch} 键，进入跪姿状态！
-		
-	2.1.alert1.hilite = state-icon
+    1.6.alert1.hilite = atp-bar
 
-	2.1.label = 跪姿
+    1.6.label = 体力恢复
 
-	2.1.complete = 很好，你已经进入了跪姿状态！注意你左下角的姿势图标已经发生了改变！
+    2.0.label = 训练各种姿势
 
-2.2.alert.modal = 在跪姿下行进时，你的移动速度将会比正常移动更慢，但是你移动产生的声音也会相应的变小，这个姿势也更利于隐蔽，特别是当你处于掩护物之后时。这个状态相比于慢走将会消耗更多的体力。
+    2.1.alert.modal = 作为步兵，你可以使用三种姿势，分别为立姿，跪姿或者卧姿。每个姿势都有独特的作用。[NL][NL]你当前的姿势显示在抬头显示器HUD的左下角位置。
 
-	2.2.alert1 = 在跪姿的状态下，你也可以疾跑，但是相比直立状态下的疾跑速度要慢，而且会消耗更多的体力，但是相比于直立，你的身形将会降低不少。[NL][NL]现在，在跪姿状态下，使用 {fpforward} 键向前移动。
+    2.1.alert.hilite = state-icon
 
-	2.2.label = 跪姿状态下移动。
+    2.1.alert1 = 在跪姿状态下，你可以移动的更慢且更安静，可以使你避免引起敌人的注意。[NL][NL]现在，请按 {fpcrouch} 键，进入跪姿状态！
 
-	2.2.complete = 很好!你也能同时按住 {fpforward} 键和 {fpfast} 键，在跪姿状态下疾跑。
+    2.1.alert1.hilite = state-icon
 
-2.3.alert = 你还可以进入卧姿以变得更低。[NL][NL]现在，请按 {fpprone} 键进入卧姿。
+    2.1.label = 跪姿
 
-	2.3.alert.hilite = state-icon
+    2.1.complete = 很好，你已经进入了跪姿状态！注意你左下角的姿势图标已经发生了改变！
 
-	2.3.label = 卧姿
+    2.2.alert.modal = 在跪姿下行进时，你的移动速度将会比正常移动更慢，但是你移动产生的声音也会相应的变小，这个姿势也更利于隐蔽，特别是当你处于掩护物之后时。这个状态相比于慢走将会消耗更多的体力。
 
-	2.3.complete = 很好，现在你正在卧姿状态。注意你左下角的姿势图标已经发生了改变！
+    2.2.alert1 = 在跪姿的状态下，你也可以疾跑，但是相比直立状态下的疾跑速度要慢，而且会消耗更多的体力，但是相比于直立，你的身形将会降低不少。[NL][NL]现在，在跪姿状态下，使用 {fpforward} 键向前移动。
 
-2.4.alert = 虽然在进入卧姿的时候，你的移动速度将变的非常慢，而且将要消耗更多的体力。但是当你在此状态下保持不动时，体力的恢复速率也是最高的。此外，进入卧姿的时候使你的目标变小，很难被敌人击中。此外，使用卧姿状态将大大提升你在爆炸环境中的生存几率。[NL][NL]现在，请按 {fpforward} 键在卧姿状态下前进。
+    2.2.label = 跪姿状态下移动。
 
-	2.4.label = 匍匐前进
+    2.2.complete = 很好!你也能同时按住 {fpforward} 键和 {fpfast} 键，在跪姿状态下疾跑。
 
-	2.4.complete = 做得好。
+    2.3.alert = 你还可以进入卧姿以变得更低。[NL][NL]现在，请按 {fpprone} 键进入卧姿。
 
-2.5.alert = 在卧姿状态下，你也可以使用 {fpforward} 键和 {fpfast} 键，向前疾跑，这会使你暂时进入直立状态，然后疾跑，直到你放开这两个键中的任意一个为止。[NL][NL]现在，在卧姿的状态下，按 {fpforward} 键和 {fpfast} 键，进行疾跑。
+    2.3.alert.hilite = state-icon
 
-	2.5.label = 从卧姿状态下开始疾跑。
+    2.3.label = 卧姿
 
-	2.5.complete = 你应该已经注意到，在你放开任意一键以后，你将返回到卧姿状态。这一点在你穿越战区作战地带和掩体之间的距离时非常有用。	
+    2.3.complete = 很好，现在你正在卧姿状态。注意你左下角的姿势图标已经发生了改变！
 
-3.0.label = 移动兵站
+    2.4.alert = 虽然在进入卧姿的时候，你的移动速度将变的非常慢，而且将要消耗更多的体力。但是当你在此状态下保持不动时，体力的恢复速率也是最高的。此外，进入卧姿的时候使你的目标变小，很难被敌人击中。此外，使用卧姿状态将大大提升你在爆炸环境中的生存几率。[NL][NL]现在，请按 {fpforward} 键在卧姿状态下前进。
 
-	3.1.label = 前往出生点
-    3.1.alert.modal = 大多数时候，步兵进入游戏世界时，或者说在游戏世界“出生”时，都会直接出现在“基地”或是“兵站”里面。但是玩家可以通过驾驶卡车，在敌人城镇附近部署“移动兵站”的方式来创造新的“出生点”。[NL][NL]部署“移动兵站”之后，玩家可以选择从“移动兵站”所在的位置进入游戏世界，这样你就可以更快的加入战斗了。
-	3.1.alert1 = 你刚才就是从一个“移动兵站”里“出生”的。[NL][NL]现在，请返回你出生的那个“无人控制的移动兵站（UMS）”
-    
-	3.2.label = 部署有移动兵种的任务
-    3.2.alert1.modal = 当某个任务中部署有“移动兵站”时，在任务列表中，它的最后面将会显示一个卡车模样的图标，表明这个任务拥有“移动兵站”。
-    
+    2.4.label = 匍匐前进
+
+    2.4.complete = 做得好。
+
+    2.5.alert = 在卧姿状态下，你也可以使用 {fpforward} 键和 {fpfast} 键，向前疾跑，这会使你暂时进入直立状态，然后疾跑，直到你放开这两个键中的任意一个为止。[NL][NL]现在，在卧姿的状态下，按 {fpforward} 键和 {fpfast} 键，进行疾跑。
+
+    2.5.label = 从卧姿状态下开始疾跑。
+
+    2.5.complete = 你应该已经注意到，在你放开任意一键以后，你将返回到卧姿状态。这一点在你穿越战区作战地带和掩体之间的距离时非常有用。
+
+    3.0.label = 移动兵站
+
+    3.1.label = 前往出生点
+    3.1.alert.modal = Most of the time, infantry enter the game world, or &#39;spawn&#39;, inside armybases or depots.  But players can create Mobile Spawn Points by driving trucks closer to the enemy cities and deploying a Fortified Mobile Spawn(FMS) or an Urban Mobile Spawn(UMS) .[NL][NL]This allows players to enter the game world at the FMS/UMS location, which greatly shortens the distance to combat.
+    3.1.alert1 = You spawned at just such a mobile spawn point.[NL][NL]Head over to the Fortified Mobile Spawn where you spawned from.
+
+    3.2.label = 部署有移动兵种的任务
+    3.2.alert1.modal = Missions with mobile spawns are indicated by a tick in the MS column in the list of missions.
+
     #can you fake the map icon in the text here?
-    
+
     3.2.alert2.modal = 卡车图标只能表明这个任务拥有“移动兵站”，但是并不能指明“移动兵站”的类型：到底是有人控制的“移动兵站（MSP）”，还是“无人控制的移动兵站（UMS）”。这两类移动兵站唯一的不同之处就是：有人控制的“移动兵站（MSP）”，在合适的时候可以移动位置，重新部署；而“无人控制的移动兵站（UMS）”，是不能再进行移动或重新部署的。
-    
+
     3.2.alert3.modal = 无论是MSP还是UMS，又或者是卡车和牵引车，它们都可以向步兵提供弹药补给。当你靠近它们时，将自动获得弹药的补给。
-    
+
     3.2.alert3.hilite = persona-resupply
 
-	3.3.label = 任务完成。
-	3.3.alert.modal = 很好，到现在为止，你非常完美的完成了此次任务。恭喜你。你获得了10分的积分奖励！</body>
+    3.3.label = 任务完成。
+    3.3.alert.modal = 很好，到现在为止，你非常完美的完成了此次任务。恭喜你。你获得了10分的积分奖励！</body>
   <branch>1</branch>
   <brief>作为一名战士，娴熟的战术动作是必备的能力！此任务将训练你按照命令完成战术动作的能力！</brief>
   <handler>basic.movement</handler>

@@ -1,3 +1,24 @@
+<!ENTITY authconn.complete "Reply received.">
+<!ENTITY authconn.error.badcallsign.char "The '{1}' character is not allowed in callsigns.">
+<!ENTITY authconn.error.badcallsign.length "Callsigns are limited to 10 characters.">
+<!ENTITY authconn.error.badusername.char "The '{1}' character is not allowed in usernames.">
+<!ENTITY authconn.error.badusername.length "Usernames are limited to 10 characters.">
+<!ENTITY authconn.error.generic.errorcode "Encountered network error '{1}'.">
+<!ENTITY authconn.error.generic.unknown "An unknown error has occurred. Please restart the application and try again.">
+<!ENTITY authconn.error.init.callbackinitfailed "Failed to initialize network callbacks.">
+<!ENTITY authconn.error.init.couldnotresolve "Could not resolve '{1}'.">
+<!ENTITY authconn.error.init.multipleconnections "The application attempted to open more than one auth connection at a time.">
+<!ENTITY authconn.error.login.arenafull "Region is full. Please try again later.">
+<!ENTITY authconn.error.login.game "Game network is down. Try again shortly.">
+<!ENTITY authconn.error.login.locked "Servers are locked. Try again shortly.">
+<!ENTITY authconn.error.login.password "Incorrect password.">
+<!ENTITY authconn.error.login.subscription "Your subscription is not currently active.">
+<!ENTITY authconn.error.login.system "Login system error. Please try again shortly.">
+<!ENTITY authconn.error.login.unknown "There was a problem authenticating your login. Please try again shortly.">
+<!ENTITY authconn.error.login.username "No such username.">
+<!ENTITY authconn.error.login.version "This version of the game cannot connect to the Authentication Server.">
+<!ENTITY authconn.error.unknown "An unknown error occurred when trying to connect to the game. Please restart the application and try again.">
+<!ENTITY authconn.waiting "Waiting for reply.">
 <!ENTITY brigade.back "返回">
 <!ENTITY brigade.back.decision "您想要更改什么？">
 <!ENTITY brigade.back.decision.brigade "战斗旅">
@@ -3420,8 +3441,36 @@
 <!ENTITY loc.ui.97 "您已经在这里发布了一项任务。">
 <!ENTITY loc.ui.98 "未知错误。">
 <!ENTITY loc.ui.99 "选择一辆战车然后点击登录">
-
-
+<!ENTITY login.arenaselect.arenaheader "ARENAS" >
+<!ENTITY login.arenaselect.back "Back" >
+<!ENTITY login.arenaselect.failedtoconnect "Failed to connect to the selected arena: An unknown error occurred." >
+<!ENTITY login.arenaselect.forward "Join Arena" >
+<!ENTITY login.arenaselect.list.name "Arena" >
+<!ENTITY login.arenaselect.noarenas "NO ARENAS FOUND" >
+<!ENTITY login.arenaselect.offline "Play Offline" >
+<!ENTITY login.arenaselect.states.loading.tip "The server is still loading">
+<!ENTITY login.arenaselect.states.locked.tip "The server is temporarily locked">
+<!ENTITY login.arenaselect.states.maintenance.tip "The server is closed for maintenance">
+<!ENTITY login.arenaselect.states.offline.tip "The server is offline">
+<!ENTITY login.arenaselect.states.online.tip "The server is online">
+<!ENTITY login.arenaselect.states.starting.tip "The server is still starting up">
+<!ENTITY login.arenaselect.states.syncing.tip "The hosts are syncing with each-other">
+<!ENTITY login.connectingtoauth "Connecting to Authentication Host...">
+<!ENTITY login.error.offline "Offline">
+<!ENTITY login.error.retry "Retry">
+<!ENTITY login.offlinemode "Play Offline">
+<!ENTITY login.onlinemode "Join the Battle">
+<!ENTITY login.promptcallsign "DESIRED CALLSIGN">
+<!ENTITY login.promptlogin "LOGIN">
+<!ENTITY login.promptpassword "Password">
+<!ENTITY login.promptusername "Username">
+<!ENTITY login.steamneedscallsign "This is your first time logging in, and you need to create a callsign.">
+<!ENTITY login.steamunknownerror "An unknown error occurred. Please try again or try offline mode.">
+<!ENTITY login.steamuserdoesnotexist "You seem not to have the game with this Steam account. Make sure you're logged in with the correct account and try again.">
+<!ENTITY login.steam.callsign.invalid "The callsign you requested is not valid. Please use only standard alphanumeric characters.">
+<!ENTITY login.steam.callsign.bad "The callsign you requested contains inappropriate language. Please try a different callsign.">
+<!ENTITY login.steam.callsign.inuse "The callsign you requested is already taken. Please try a different callsign.">
+<!ENTITY login.trainingmode "Training Server">
 <!ENTITY map.airforce "海军">
 <!ENTITY map.army "陆军">
 <!ENTITY map.bridges "桥梁">
@@ -3641,9 +3690,8 @@
 <!ENTITY mission.timeleft.expired "您的付费账户已经没有剩余时间。请到弹出页面充值。">
 <!ENTITY mission.timeleft.url "http://www.pkhlk.com/website/cardcharge/cardcharge.jsp">
 <!ENTITY none "无">
-
-
-
+<!ENTITY offline.back "MODE SELECT">
+<!ENTITY offline.back.tip "Go back and consider signing into an online arena.">
 <!ENTITY offline.forward "进入游戏世界">
 <!ENTITY offline.forward.tip "以离线方式来探索游戏世界。">
 <!ENTITY offline.spawntab "生成选择">

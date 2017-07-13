@@ -32,17 +32,17 @@
 1.4.complete = Eccellente, l&#39;uso del tuo mirino in combattimento è molto importante.
 
 1.5.label = Distanza di mira
-1.5.alert.modal = I fucili hanno il mirino regolabile per sparare a distanze diverse. L&#39;impostazione di default per i fucili è a 200 metri, ma il combattimento di fanteria può avvenire a distanze inferiori e superiori. 
-1.5.alert.hilite = primary-label
-1.5.alert1.modal = Prenditi un momento per sparare a diversi bersagli con impostazioni di distanza diverse per vedere come influisce sulla tua accuratezza. Usa {gunsightrangeinc} e {gunsightrangedec} per incrementare e diminuire la tua impostazione.
-1.5.alert1.hilite = primary-label
-1.5.complete = Regolare la distanza di mira ti darà le migliori possibilità di colpire il tuo bersaglio.
+1.5.alert.modal = I fucili hanno il mirino regolabile per sparare a distanze diverse. L&#39;impostazione di default per i fucili è a 200 metri, ma il combattimento di fanteria può avvenire a distanze inferiori e superiori.
+    1.5.alert.hilite = primary-label
+    1.5.alert1.modal = Prenditi un momento per sparare a diversi bersagli con impostazioni di distanza diverse per vedere come influisce sulla tua accuratezza. Usa {gunsightrangeinc} e {gunsightrangedec} per incrementare e diminuire la tua impostazione.
+    1.5.alert1.hilite = primary-label
+    1.5.complete = Regolare la distanza di mira ti darà le migliori possibilità di colpire il tuo bersaglio.
 
-2.0.label = Cambiare arma
+    2.0.label = Cambiare arma
 
-2.1.alert.modal = Come fante, hai a disposizione 5 armi in combattimento. Il cambio d&#39;arma viene solitamente fatto usando i tasti numero o la rotellina del mouse. L&#39;indicatore di arma mostra quale arma stai utilizzando.
-2.1.alert.hilite = primary
-2.1.alert1 =  Hai già usato il tuo fucile, Ora esamina il resto dell&#39;equipaggiamento.[NL][NL]Seleziona la granata HE con il tasto {fpweapon1}.
+    2.1.alert.modal = As a Rifleman you carry 6 items into combat. Switching items is usually done with the number keys or the mouse wheel. The weapon indicator shows your currently equipped weapon or item.
+    2.1.alert.hilite = primary
+    2.1.alert1 =  Hai già usato il tuo fucile, Ora esamina il resto dell&#39;equipaggiamento.[NL][NL]Seleziona la granata HE con il tasto {fpweapon1}.
 2.1.label = Seleziona la granata HE
 
 2.2.alert = Seleziona la granata fumogena con il tasto {fpweapon2}.
@@ -85,16 +85,16 @@
 4.2.label = Usa il pugnale
 4.2.complete = Ricorda, devi essere molto vicino ad un avversario per colpirlo con quest&#39;arma.
 
-5.0.label = Pacco di munizioni per il rifornimento
+    5.0.label = Pacco di munizioni per il rifornimento
 
-5.1.alert = I fanti e la maggior parte dell&#39;unità paracadustiste trasportano un pacco di munizioni. L&#39;uso di questo oggetto con giocatori amici rifornirà il loro munizionamento.[NL][NL]Seleziona il pacco di munizioni per il rifornimento con il tasto {fpweapon5}.
-5.1.label = Seleziona il pacco di munizioni
+    5.1.alert = Riflemen and most paratrooper units carry an Ammo Pack. Using this item on a friendly player will resupply their ammunition.[NL][NL]Select your ammo resupply pack with the {fpweapon5} key.
+    5.1.label = Seleziona il pacco di munizioni
 
-5.2.alert = Per i mortai e i mitraglieri, le munizioni sono molto preziose. Una buona idea è quella di aspettare finchè uno di questi fanti vicino a te abbia necessità di munizioni prima di usare il tuo pacco.[NL][NL]Premi {fpfire} per vedere in azione il tuo pacco di munizioni.
-5.2.label = Usa il pacco di munizioni
-5.2.complete = Ottimo. Se fosse presente un compagno, avrebbe ricevuo il pacco.
+    5.2.alert = Per i mortai e i mitraglieri, le munizioni sono molto preziose. Una buona idea è quella di aspettare finchè uno di questi fanti vicino a te abbia necessità di munizioni prima di usare il tuo pacco.[NL][NL]Premi {fpfire} per vedere in azione il tuo pacco di munizioni.
+    5.2.label = Usa il pacco di munizioni
+    5.2.complete = Ottimo. Se fosse presente un compagno, avrebbe ricevuo il pacco.
 
-5.3.alert.modal = Puoi richiedere munizioni ad altri giocatori inserendo il comando &#34;/ammo&#34; nell&#39;interfaccia di chat. Se hai un pacco di munizioni, vedrai l&#39;icona del giocatore che ha richiesto munizioni lampeggiare in gioco e nella mappa.
+    5.3.alert.modal = Puoi richiedere munizioni ad altri giocatori inserendo il comando &#34;/ammo&#34; nell&#39;interfaccia di chat. Se hai un pacco di munizioni, vedrai l&#39;icona del giocatore che ha richiesto munizioni lampeggiare in gioco e nella mappa.
 
 5.3.alert1.modal = Puoi ottenere munizioni anche dagli autocarri e dagli trattori. Ogni veicolo terrestre o unità di fanteria vicino ad un autocarro fermo riguadagnerà le munizioni, l&#39;icona di un piccolo autocarro viene mostrata quando sei alla distanza giusta. Il rifornimento avverrà in alcuni secondi. Stai vicino al mezzo per vederlo.
 
