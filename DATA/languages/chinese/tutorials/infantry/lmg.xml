@@ -56,16 +56,16 @@ vehiclerange = 战车靶场
 2.2.label = 射击位置
 	2.2.alert = 这里就是战车靶场。[NL][NL]请按照导航点的指示，进入由沙包组成的地堡战壕里。
 	#waypoint label: &#34;Sandbag Pit&#34;
-	#waypoint: -313969.40,3603763.17,100.32
+    #waypoint: -313969.40,3603763.17,100.32
 
-2.3.label = 在沙带上部署轻机枪
-	2.3.alert = 现在，请靠近沙袋，按 {fpdeploy}把轻机枪的双脚架部署在沙袋墙上。[NL][NL] 一定要足够靠近沙袋墙，不然你很可能不能成功部署。
-	2.3.complete = 棒极了！
-	
-2.4.label = 射击角度
-	2.4.alert.modal = 现在左右摆动你的轻机枪，可以感觉到它当前的射击角度与在地面上部署时是明显不同的。[NL]通常，在某个物体上部署轻机枪将大大提升轻机枪的射击角度。
-	2.4.alert.modal = 现在，请射击最近的废弃战车。
-	2.4.complete.modal = 棒极了！恭喜，你已经完成了轻机枪兵的训练任务。</body>
+    2.3.label = 在沙带上部署轻机枪
+    2.3.alert = Press {fpdeploy} to deploy the LMG&#39;s bipod on the sandbag wall.[NL][NL] Get as close as possible to the wall if you are unable to deploy.
+    2.3.complete = 棒极了！
+
+    2.4.label = 射击角度
+    2.4.alert.modal = 现在左右摆动你的轻机枪，可以感觉到它当前的射击角度与在地面上部署时是明显不同的。[NL]通常，在某个物体上部署轻机枪将大大提升轻机枪的射击角度。
+    2.4.alert.modal = 现在，请射击最近的废弃战车。
+    2.4.complete.modal = 棒极了！恭喜，你已经完成了轻机枪兵的训练任务。</body>
   <branch>1</branch>
   <brief>此任务将训练你使用轻机枪的能力。</brief>
   <handler>infantry.lmg</handler>

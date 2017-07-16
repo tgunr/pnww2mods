@@ -1,3 +1,24 @@
+<!ENTITY authconn.complete "Risposta ricevuta.">
+<!ENTITY authconn.error.badcallsign.char "Il carattere '{1}' non è consentito nei callsigns.">
+<!ENTITY authconn.error.badcallsign.length "I Callsigns sono limitati a 10 caratteri.">
+<!ENTITY authconn.error.badusername.char "Il carattere '{1}' non è consentito negli username.">
+<!ENTITY authconn.error.badusername.length "Gli username sono limitati a 10 caratteri.">
+<!ENTITY authconn.error.generic.errorcode "Errore di connessione al network '{1}'.">
+<!ENTITY authconn.error.generic.unknown "Errore sconosciuto. Sei pregato di far ripartire l&#039;applicazione di nuovo.">
+<!ENTITY authconn.error.init.callbackinitfailed "Inizializzazione del network errata.">
+<!ENTITY authconn.error.init.couldnotresolve "Non trovato '{1}'.">
+<!ENTITY authconn.error.init.multipleconnections "L&#039;applicazione ha tentato di aprire più di una richiesta di autorizzazione nello stesso momento.">
+<!ENTITY authconn.error.login.arenafull "La regione è piena. Sei pregato di provare ancora più tardi.">
+<!ENTITY authconn.error.login.game "Il Gioco non è disponibile. Prova di nuovo a breve.">
+<!ENTITY authconn.error.login.locked "I server sono bloccati. Prova di nuovo a breve.">
+<!ENTITY authconn.error.login.password "Password errata.">
+<!ENTITY authconn.error.login.subscription "La tua sottoscrizione non risulta attiva.">
+<!ENTITY authconn.error.login.system "Errore nel sistema di accesso. Sei pregato di provare di nuovo a breve.">
+<!ENTITY authconn.error.login.unknown "C&#039;è stato un problema nella autenticazione del tuo login. Sei pregato di provare di nuovo a breve.">
+<!ENTITY authconn.error.login.username "Questo username è inesistente.">
+<!ENTITY authconn.error.login.version "Questa versione del gioco non si può connettere al Server di Autentificazione.">
+<!ENTITY authconn.error.unknown "Un errore sconosciuto impedisce di connettersi al gioco. Sei pregato di riavviare l&#039;applicazione e provare di nuovo.">
+<!ENTITY authconn.waiting "Attendi la risposta.">
 <!ENTITY brigade.back "Cambia brigata">
 <!ENTITY brigade.back.decision "Cosa vorresti cambiare?">
 <!ENTITY brigade.back.decision.brigade "BRIGATA">
@@ -641,7 +662,7 @@
 <!ENTITY connect.login.auth.lost "Connessione persa durante">
 <!ENTITY connect.login.auth.timeout "Tempo esaurito durante l&#39;autentificazione">
 <!ENTITY connect.login.badlogin "Errore di accesso imprevisto">
-<!ENTITY connect.login.chat.error "Impossibile connettersi all’host della chat">
+<!ENTITY connect.login.chat.error "Impossibile connettersi all&#039;host della chat">
 <!ENTITY connect.login.chat.lost "Connessione al gioco persa durante la connessione alla chat">
 <!ENTITY connect.login.chat.timeout "Tempo esaurito durante la connessione alla chat">
 <!ENTITY connect.login.error "Errore di connessione all&#39;host">
@@ -3424,9 +3445,37 @@
 <!ENTITY loc.ui.97 "Qui hai gia&#39; inserito una missione.">
 <!ENTITY loc.ui.98 "Errore sconosciuto.">
 <!ENTITY loc.ui.99 "Seleziona un veicolo e poi clicca Lancio">
-
-
-
+<!ENTITY login.arenaselect.arenaheader "ARENE" >
+<!ENTITY login.arenaselect.back "Indietro" >
+<!ENTITY login.arenaselect.failedtoconnect "Errore di connessione alla arena selezionata: errore sconosciuto." >
+<!ENTITY login.arenaselect.forward "Entra in Arena" >
+<!ENTITY login.arenaselect.list.name "Arena" >
+<!ENTITY login.arenaselect.offline "Gioca Offline" >
+<!ENTITY login.arenaselect.noarenas "NESSUNA ARENA TROVATA" >
+<!ENTITY login.arenaselect.states.loading.tip "Il server sta ancora caricando">
+<!ENTITY login.arenaselect.states.locked.tip "Il server è temporaneamente chiuso">
+<!ENTITY login.arenaselect.states.maintenance.tip "Il server è chiuso per manutenzione">
+<!ENTITY login.arenaselect.states.offline.tip "Il server è offline">
+<!ENTITY login.arenaselect.states.online.tip " Il server è online ">
+<!ENTITY login.arenaselect.states.starting.tip "Il server sta ancora attivandosi">
+<!ENTITY login.arenaselect.states.syncing.tip "Gli hosts si stanno sincronizzando fra loro">
+<!ENTITY login.connectingtoauth "Connession all&#039;Host di Autenticazione in corso ...">
+<!ENTITY login.error.retry "Riprova">
+<!ENTITY login.error.offline "Offline">
+<!ENTITY login.offlinemode "Gioca Offline">
+<!ENTITY login.onlinemode "Entra in battaglia">
+<!ENTITY login.promptcallsign "CALLSIGN DESIDERATO">
+<!ENTITY login.promptlogin "LOGIN">
+<!ENTITY login.promptpassword "Password">
+<!ENTITY login.promptusername "Username">
+<!ENTITY login.steambadcallsign "Il callsign che hai richiesto potrebbe essere già stato assegnato oppure non valido. Sei pregato di utilizzare solo caratteri alfanumerici standard.">
+<!ENTITY login.steamneedscallsign "Questa è la tua prima connessione e devi creare un callsign.">
+<!ENTITY login.steamunknownerror "Si è verificato un errore sconosciuto. Sei pregato di provare nuovamente o provare la modalità offline.">
+<!ENTITY login.steamuserdoesnotexist "Sembra che tu non abbia il gioco nel tuo account Steam. Assicurati di aver provato ad accedere con l&#039;account di Steam corretto e prova nuovamente.">
+<!ENTITY login.steam.callsign.invalid "The callsign you requested is not valid. Please use only standard alphanumeric characters.">
+<!ENTITY login.steam.callsign.bad "The callsign you requested contains inappropriate language. Please try a different callsign.">
+<!ENTITY login.steam.callsign.inuse "The callsign you requested is already taken. Please try a different callsign.">
+<!ENTITY login.trainingmode "Server di Addestramento">
 <!ENTITY map.airforce "Aeronautica">
 <!ENTITY map.army "Esercito">
 <!ENTITY map.bridges "Ponti">
@@ -3646,9 +3695,8 @@
 <!ENTITY mission.timeleft.expired "Il tuo abbonamento orario è scaduto! Il gioco ora uscirà verso un indirizzo URL.">
 <!ENTITY mission.timeleft.url "https://secure.wwiionline.com/scripts/wwiionline/user/subscription.jsps">
 <!ENTITY none "none">
-
-
-
+<!ENTITY offline.back "SELEZIONA LA MODALITA&#039;">
+<!ENTITY offline.back.tip "Torna indietro e considera di entrare in un arena online.">
 <!ENTITY offline.forward "ENTRA NEL MONDO">
 <!ENTITY offline.forward.tip "Entra offline per esplorare il mondo.">
 <!ENTITY offline.spawntab "SELEZIONE DI INGRESSO">

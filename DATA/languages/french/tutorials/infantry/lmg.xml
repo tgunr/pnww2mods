@@ -56,16 +56,16 @@ vehiclerange = Distance à la cible
 2.2.label = Position de tir
 	2.2.alert = Vous êtes au stand de tir sur véhicule.[NL][NL]Entrez dans les protections en sacs de sable.
 	#waypoint label: &#34;Sandbag Pit&#34;
-	#waypoint: -313969.40,3603763.17,100.32
+    #waypoint: -313969.40,3603763.17,100.32
 
-2.3.label = Déployez vous sur les sacs
-	2.3.alert = Pressez {fpdeploy} pour déployer le trépied de votre FM sur le sac de sable.[NL][NL] Soyez près de lui ou vous ne pourrez pas le faire.
-	2.3.complete = Excellent!
-	
-2.4.label =  Arc de tir
-	2.4.alert.modal = Bougez de droite et de gauche pour juger votre arc de tir. Il est différent de quand vous êtes à plat ventre.[NL][NL]Déployer le FM sur un support permet d’améliorer son arc de tir en général.
-	2.4.alert.modal = Maintenant tirez sur le véhicule  le plus proche.
-	2.4.complete.modal = Excellent.  Ceci termine votre formation au fusil-mitrailleur</body>
+    2.3.label = Déployez vous sur les sacs
+    2.3.alert = Appuyez surs {fpdeploy} pour déployer votre trépied&#39; de fusil-mitrailleur LMG sur le muret de sac de sable.[NL][NL] Approchez-vous davantage du muret si vous êtes incapable de déployer votre arme.
+    2.3.complete = Excellent!
+
+    2.4.label =  Arc de tir
+    2.4.alert.modal = Bougez de droite et de gauche pour juger votre arc de tir. Il est différent de quand vous êtes à plat ventre.[NL][NL]Déployer le FM sur un support permet d’améliorer son arc de tir en général.
+    2.4.alert.modal = Maintenant tirez sur le véhicule  le plus proche.
+    2.4.complete.modal = Excellent.  Ceci termine votre formation au fusil-mitrailleur</body>
   <branch>1</branch>
   <brief>Apprenez à utiliser le Fusil-mitrailleur</brief>
   <handler>infantry.lmg</handler>

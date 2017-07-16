@@ -1,64 +1,65 @@
 <?xml version='1.0'?>
 <content type="5">
   <key>4</key>
-  <body>title = 通信训练任务
-1.0.label = 基本布局
-	
-	1.1.alert.modal = 聊天窗口是游戏中最基本的交流方式。[NL][NL]聊天窗口拥有6个“无线电台”来接收和发送不同的信息，而每个“无线电台”还拥有各种不同的频道。
-	
-	
-		1.1.alert1.modal = 每个“无线电台(1-6)”都可以使用对应的功能键（F1-F6）来操作。[NL][NL]而电台上的图标将会显示当前选择的频道。
+  <body>
+    title = 通信训练任务
+    1.0.label = 基本布局
 
-		1.1.alert1.hilite = channels,target
-		
-		1.1.alert5 = 基本操作很简单：按回车键打开文本输入框，输入信息，例如“hello”，然后再按回车键发送信息。[NL][NL]现在，请送出“hello”的信息给附近的战友。
-		
-		1.1.label = 聊天的输入
-		
-		1.1.complete.hilite = chatinput
+    1.1.alert.modal = 聊天窗口是游戏中最基本的交流方式。[NL][NL]聊天窗口拥有6个“无线电台”来接收和发送不同的信息，而每个“无线电台”还拥有各种不同的频道。
 
-		1.1.complete = 很好。使用同一频道的其他玩家或游戏世界里在你附近的玩家将会接收到这条信息。
 
-	1.2.alert.modal = 当你进入游戏世界时，如果你直接按回车键进行聊天，而不是按F1-F6切换到某一电台聊天，这种方式就是区域聊天。你默认的聊天频道即是区域聊天。[NL][NL]进行区域聊天时，你周围100米范围内的友军玩家都会接收到你的信息。这一方式对同一区域的玩家互相配合非常有用。[NL][NL]但是需要注意的是，当你发送信息的时候，离你很近的敌人将接收到杂乱的文本信息，这将会暴露你的位置（虽然他们并不会接收到你发送的真正的文本信息）。
+    1.1.alert1.modal = Each numbered radio (1-6) can be accessed via the same numbered function keys (F1-F6). [NL][NL]The label of the radio shows the channel that radio is tuned to. For Mac users, update your preferences to use the function keys in System Preferences.
 
-		1.2.alert1 = 任务频道允许你与当前所有参与这个任务的玩家进行交流，无视距离长短。[NL][NL]现在，请你按F1键选择任务频道。
-                  1.2.alert1.hilite = F1,target
+    1.1.alert1.hilite = channels,target
 
-		1.2.label = 任务频道
+    1.1.alert5 = 基本操作很简单：按回车键打开文本输入框，输入信息，例如“hello”，然后再按回车键发送信息。[NL][NL]现在，请送出“hello”的信息给附近的战友。
 
-		1.2.complete = 注意F1频道的顶部已被高亮显示，而聊天输入框也已打开。
+    1.1.label = 聊天的输入
 
-	1.3.alert = 请在任务频道（电台F1）输入一些文字，然后请按回车键发送。
-                  
-                  1.3.label = 发送了聊天内容给在同一任务的队友。
+    1.1.complete.hilite = chatinput
 
-		1.3.complete = 很好。
+    1.1.complete = 很好。使用同一频道的其他玩家或游戏世界里在你附近的玩家将会接收到这条信息。
 
-	1.4.alert.modal = 你的电台被自动调到了几个频道，但是你可以自己对此进行设置。
+    1.2.alert.modal = 当你进入游戏世界时，如果你直接按回车键进行聊天，而不是按F1-F6切换到某一电台聊天，这种方式就是区域聊天。你默认的聊天频道即是区域聊天。[NL][NL]进行区域聊天时，你周围100米范围内的友军玩家都会接收到你的信息。这一方式对同一区域的玩家互相配合非常有用。[NL][NL]但是需要注意的是，当你发送信息的时候，离你很近的敌人将接收到杂乱的文本信息，这将会暴露你的位置（虽然他们并不会接收到你发送的真正的文本信息）。
 
-		1.4.alert1= 在任务里，你需使用 {guicursor} 键来显示鼠标光标。点击电台的标题可以调整电台。[NL][NL]点击标题将会显示可以使用的频道的列表，点击你想要调整到的频道即可。[NL][NL]现在，请点击F3的电台标题，然后选择“阵营”频道。
+    1.2.alert1 = Your Mission channel allows you to communicate with everyone on the same mission, regardless of their distance. [NL][NL]Select the Mission channel by pressing F1. (Standard Function Keys must be enabled!)
+    1.2.alert1.hilite = F1,target
 
-                  1.4.alert1.hilite = F3,target
+    1.2.label = 任务频道
 
-		1.4.label = 调整到F3电台
+    1.2.complete = 注意F1频道的顶部已被高亮显示，而聊天输入框也已打开。
 
-		1.4.complete = 很好。F3电台已经调到了阵营频道。
+    1.3.alert = 请在任务频道（电台F1）输入一些文字，然后请按回车键发送。
 
-	1.5.alert.modal = 这样所有使用阵营频道的玩家将都能接收到你通过F3电台发送的信息。[NL][NL]如果你选择的是联盟国的话，这将包括蓝（B）国和绿（A）国玩家。如果你选择的是红（C）国的话，这将包括所有的红（C）国玩家。 
+    1.3.label = 发送了聊天内容给在同一任务的队友。
 
-		1.5.alert1.modal = 对新手玩家比较有用的频道是帮助频道，即F6电台。[NL][NL]如果你有任何的问题或需要帮助，在这个频道进行了提问，无论是其他的玩家还是GM都将会尝试帮助你。
+    1.3.complete = 很好。
 
-		1.5.alert2.modal = 聊天窗口还可以被用来使用各种命令，例如添加某人做你的好友，接受战队邀请，或发送私聊信息等。[NL][NL]这些命令使用前，须在命令前面加上一个小圆点（.）或是斜杠（/）。
+    1.4.alert.modal = 你的电台被自动调到了几个频道，但是你可以自己对此进行设置。
 
-		1.5.alert3 = 你可以使用/time命令来查看时间。[NL][NL]现在，请你用手指按F1到F6任意一键。当出现聊天框时，请输入“/time”，然后按回车键。
+    1.4.alert1= 在任务里，你需使用 {guicursor} 键来显示鼠标光标。点击电台的标题可以调整电台。[NL][NL]点击标题将会显示可以使用的频道的列表，点击你想要调整到的频道即可。[NL][NL]现在，请点击F3的电台标题，然后选择“阵营”频道。
 
-		1.5.label = 请输入聊天命令
+    1.4.alert1.hilite = F3,target
 
-		1.5.complete.modal = 很好。你应该已经在聊天窗口看到了你的电脑的本地时间和你所在服务器的时间。[NL][NL]你可以在“指南”标签里的“聊天命令”里找到所有可用命令的列表。
+    1.4.label = 调整到F3电台
 
-	1.6.alert.modal = 很好，到现在为止，你已经非常完美的完成了此次任务。恭喜你。你获得了10分的积分奖励！
+    1.4.complete = 很好。F3电台已经调到了阵营频道。
 
-                  1.6.label = 任务完成。</body>
+    1.5.alert.modal = 这样所有使用阵营频道的玩家将都能接收到你通过F3电台发送的信息。[NL][NL]如果你选择的是联盟国的话，这将包括蓝（B）国和绿（A）国玩家。如果你选择的是红（C）国的话，这将包括所有的红（C）国玩家。
+
+    1.5.alert1.modal = 对新手玩家比较有用的频道是帮助频道，即F6电台。[NL][NL]如果你有任何的问题或需要帮助，在这个频道进行了提问，无论是其他的玩家还是GM都将会尝试帮助你。
+
+    1.5.alert2.modal = 聊天窗口还可以被用来使用各种命令，例如添加某人做你的好友，接受战队邀请，或发送私聊信息等。[NL][NL]这些命令使用前，须在命令前面加上一个小圆点（.）或是斜杠（/）。
+
+    1.5.alert3 = 你可以使用/time命令来查看时间。[NL][NL]现在，请你用手指按F1到F6任意一键。当出现聊天框时，请输入“/time”，然后按回车键。
+
+    1.5.label = 请输入聊天命令
+
+    1.5.complete.modal = 很好。你应该已经在聊天窗口看到了你的电脑的本地时间和你所在服务器的时间。[NL][NL]你可以在“指南”标签里的“聊天命令”里找到所有可用命令的列表。
+
+    1.6.alert.modal = 很好，到现在为止，你已经非常完美的完成了此次任务。恭喜你。你获得了10分的积分奖励！
+
+    1.6.label = 任务完成。</body>
   <branch>1</branch>
   <brief>此任务将训练你使用聊天窗口进行通信的能力！</brief>
   <handler>basic.chat</handler>

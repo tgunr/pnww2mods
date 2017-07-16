@@ -1,44 +1,45 @@
 <?xml version='1.0'?>
 <content type="5">
   <key>5</key>
-  <body>1.0.label = Comprendre le  ‘Heads Up Display’ (HUD)
+  <body>
+    1.0.label = Comprendre le  ‘Heads Up Display’ (HUD)
 
-1.1.alert.modal = Le  ‘Heads-Up-Display’ vous donne des informations au sujet de votre unité  et votre environnement quand vous êtes sur le terrain.  Il contient divers éléments qui sont optionnels. Dont la plus part ont été présentés dans les tutoriaux précédent.
-1.1.label = HUD Elements
+    1.1.alert.modal = Le  ‘Heads-Up-Display’ vous donne des informations au sujet de votre unité  et votre environnement quand vous êtes sur le terrain.  Il contient divers éléments qui sont optionnels. Dont la plus part ont été présentés dans les tutoriaux précédent.
+    1.1.label = HUD Elements
 
-1.2.alert.modal = La barre de vie montre votre niveau de santé.  Si vous êtes blessé, votre niveau de santé baissera. Si elle est arrivée à zéro, vous êtes mort. Une blessure peut vous faire perdre du sang petit à petit et vous conduire à la mort aussi.
-1.2.alert.hilite = health-bar,target
-1.2.label = Barre de santé
+    1.2.alert.modal = La barre de vie montre votre niveau de santé.  Si vous êtes blessé, votre niveau de santé baissera. Si elle est arrivée à zéro, vous êtes mort. Une blessure peut vous faire perdre du sang petit à petit et vous conduire à la mort aussi.
+    1.2.alert.hilite = health-bar,target
+    1.2.label = Barre de santé
 
-1.3.alert.modal = La barre d’énergie donne votre potentiel d’énergie pour courir, ramper et nager.  Par exemple, si votre barre est à moitiée vous ne pouvez pas courir. La barre se remplira de nouveau selon votre activité ou position.
-1.3.alert.hilite = atp-bar,target
-1.3.label = Barre d’énergie
+    1.3.alert.modal = La barre d’énergie donne votre potentiel d’énergie pour courir, ramper et nager.  Par exemple, si votre barre est à moitiée vous ne pouvez pas courir. La barre se remplira de nouveau selon votre activité ou position.
+    1.3.alert.hilite = atp-bar,target
+    1.3.label = Barre d’énergie
 
-1.4.alert.modal = La fenêtre de dialogue et le premier moyen pour communiquer avec les autres joueurs.  Bien comprendre son fonctionnement est important dans Battleground Europe.
-1.4.label = Boîte de dialogue
-1.4.alert.hilite = 210,5,615,115,target
+    1.4.alert.modal = LA fenêtre de discussion est votre principale méthode pour communiquer avec les autres joueurs. La compréhension de celle-ci est primordiale à votre succès dans World War II Online.
+    1.4.label = Boîte de dialogue
+    1.4.alert.hilite = 210,5,615,115,target
 
-1.5.alert.modal = La mini-carte peut être très utile en combat. Elle montre les unités amis qui ont le même objectif que vous, l’objectif de la mission, les balises placées, les reports de contacts ennemis, et d’autres informations importantes. Elle est toujours centrée sur vous. Pour zoomer ou inversement utiliser {mapin} et {mapout}.
-1.5.alert.hilite = kenny,target
-1.5.alert1.modal = La bas de la mini-carte montre les Latitude et Longitude en jeu et le nom de la ville la plus proche.
-1.5.alert1.hilite = 870,5,151,49,target
-1.5.label = Mini-carte
+    1.5.alert.modal = La mini-carte peut être très utile en combat. Elle montre les unités amis qui ont le même objectif que vous, l’objectif de la mission, les balises placées, les reports de contacts ennemis, et d’autres informations importantes. Elle est toujours centrée sur vous. Pour zoomer ou inversement utiliser {mapin} et {mapout}.
+    1.5.alert.hilite = kenny,target
+    1.5.alert1.modal = La bas de la mini-carte montre les Latitude et Longitude en jeu et le nom de la ville la plus proche.
+    1.5.alert1.hilite = 870,5,151,49,target
+    1.5.label = Mini-carte
 
-1.6.alert.modal = Un des élément optionnel sont les éléments d’information du jeu. Ils vous donnent vos ‘Frames Per Second’ (FPS), l’heure en jeu , le Mode icône et des données sur la connexion. Accessible par  {showinfo}.
-1.6.alert.hilite = gameinfo,target
-1.6.label = Informations de Jeu
+    1.6.alert.modal = Un des élément optionnel sont les éléments d’information du jeu. Ils vous donnent vos ‘Frames Per Second’ (FPS), l’heure en jeu , le Mode icône et des données sur la connexion. Accessible par  {showinfo}.
+    1.6.alert.hilite = gameinfo,target
+    1.6.label = Informations de Jeu
 
-1.7.alert.modal = L’autre option est le statut du véhicule.  Il montre votre grade actuel et si vous êtes dans un véhicule terrestre le rapport de vitesse engage et si vous avez des passagers avec vous. Pour les avions les G encaissés ( forces gravité), Angle d’attaque AoA, et le dérapage. Pressez {showstats} pour les visualiser.
-1.7.alert.hilite = 0,725,90,40,target
-1.7.label = Statut du véhicule
+    1.7.alert.modal = L’autre option est le statut du véhicule.  Il montre votre grade actuel et si vous êtes dans un véhicule terrestre le rapport de vitesse engage et si vous avez des passagers avec vous. Pour les avions les G encaissés ( forces gravité), Angle d’attaque AoA, et le dérapage. Pressez {showstats} pour les visualiser.
+    1.7.alert.hilite = 0,725,90,40,target
+    1.7.label = Statut du véhicule
 
-1.8.alert = Vous pouvez cacher le HUD complètement en pressant  {changehudmode}. Basculer entre  avec et sans  HUD en utilisant la touche {changehudmode}.
-1.8.label = HUD avec ou sans
+    1.8.alert = Vous pouvez cacher le HUD complètement en pressant  {changehudmode}. Basculer entre  avec et sans  HUD en utilisant la touche {changehudmode}.
+    1.8.label = HUD avec ou sans
 
-1.9.alert.modal = Vous pouvez déplacer les éléments du HUD sur l’écran .  Maintenir {guicursor} pour avoir le curseur à l’écran. Après vous pouvez déplacer l’élément en le tirant où vous voulez avec le bouton gauche de la souris appuyé et le curseur dessus.
-1.9.alert1 = Déplacer certain élément du HUD sur l’écran. Quand vous êtes prêt,  pressez la touche {resethud}. Ceci remettra le HUD dans ses positions par défaut. Souvenez vous d’utiliser  {guicursor} pour faire apparaître le curseur de la souris. 
-1.9.label = Modifier le HUD
-1.9.complete.modal = Ceci termine l’étude du  HUD.</body>
+    1.9.alert.modal = Vous pouvez déplacer les éléments du HUD sur l’écran .  Maintenir {guicursor} pour avoir le curseur à l’écran. Après vous pouvez déplacer l’élément en le tirant où vous voulez avec le bouton gauche de la souris appuyé et le curseur dessus.
+    1.9.alert1 = Déplacer certain élément du HUD sur l’écran. Quand vous êtes prêt,  pressez la touche {resethud}. Ceci remettra le HUD dans ses positions par défaut. Souvenez vous d’utiliser  {guicursor} pour faire apparaître le curseur de la souris.
+    1.9.label = Modifier le HUD
+    1.9.complete.modal = Ceci termine l’étude du  HUD.</body>
   <branch>1</branch>
   <brief>Vous apprend tout sur le HUD.</brief>
   <handler>basic.hud</handler>
