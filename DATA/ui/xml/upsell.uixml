@@ -27,7 +27,7 @@
 		function initUpsell()
 		{
 			// do something
-			var content = (game.region == 5) ? game.getcontent("gamevents/upsellzh.xml"): game.getcontent("gamevents/upsell.xml");
+			var content = (game.player.client.issteamcopy()) ? game.getcontent("gamevents/upsell-steam.xml"): game.getcontent("gamevents/upsell.xml");
 			
 			if(content)
 			{
