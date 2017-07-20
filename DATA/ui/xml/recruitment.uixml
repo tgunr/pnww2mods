@@ -70,15 +70,15 @@
 		
 		function runRecruitmentUpdate()
 		{
-			var recruiters = client.recruiters;
-			if ( recruiters.length == 0 ) {
-				showOk(getlocstring("common.squads.recruitment.none"));
-				acceptRecruitment(false);
-				return;
-			}
-			
 			if(recruitmentTimer.run())
 			{
+				var recruiters = client.recruiters;
+				if ( recruiters.length == 0 ) {
+					showOk(getlocstring("common.squads.recruitment.none"));
+					acceptRecruitment(false);
+					return;
+				}
+				
 				consoleprint("Running recruitment update!!!\n");
 				
 				// only enable the button when we've selected something
