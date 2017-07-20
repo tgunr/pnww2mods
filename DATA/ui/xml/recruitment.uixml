@@ -35,10 +35,10 @@
 		<button id="recruiter-join-button" x="50" y="10" width="150" height="25" label="${common.squads.recruitment.join}" followbottom="true"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 			onclick="acceptRecruitment(true)" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
-		<button y="10" width="150" height="25" rright="50" label="${common.squads.recruitment.nothanks}" followbottom="true"
+		<button id="recruiter-reject-button" y="10" width="150" height="25" rright="50" label="${common.squads.recruitment.nothanks}" followbottom="true"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 			onclick="acceptRecruitment(false)" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
-			
+		
 	</view>
 	<script>
 		<!--
@@ -57,8 +57,12 @@
 			
 			callback = cb;
 			
-			if(client.persona.rank.level < 2)
+			if(client.persona.rank.level < 2) {
 				window.findview("show-recruitment").visible = false;
+				// TODO: Don't hide this if the user voluntarily
+				// clicked the recruiter button in the squads tab
+				window.findview("recruiter-reject-button").visible = false;
+			}
 			
 			// run the initial update
 			runRecruitmentUpdate();
@@ -66,6 +70,13 @@
 		
 		function runRecruitmentUpdate()
 		{
+			var recruiters = client.recruiters;
+			if ( recruiters.length == 0 ) {
+				showOk(getlocstring("common.squads.recruitment.none"));
+				acceptRecruitment(false);
+				return;
+			}
+			
 			if(recruitmentTimer.run())
 			{
 				consoleprint("Running recruitment update!!!\n");
@@ -78,7 +89,6 @@
 					return;
 				
 				var listWidth 	= recruitmentList.list.width * (window.width / 1024);
-				var recruiters	= client.recruiters;
 				
 				//consoleprint("Original width is " + recruitmentList.list.width + "\n");
 				//consoleprint("Adjusted width is " + listWidth + "\n");
