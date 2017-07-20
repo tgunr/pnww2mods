@@ -32,10 +32,10 @@
 			onshow="this.checked = game.settings.squadinvites" onclick="soundPlayClick(); game.settings.squadinvites = this.checked;"/>
 		
 		<!-- close -->
-		<button id="recruiter-join-button" x="50" y="10" width="150" height="25" label="${common.squads.recruitment.join}" followbottom="true"
+		<button id="recruiter-join-button" rright="50" y="10" width="150" height="25" label="${common.squads.recruitment.join}" followbottom="true"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 			onclick="acceptRecruitment(true)" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
-		<button id="recruiter-reject-button" y="10" width="150" height="25" rright="50" label="${common.squads.recruitment.nothanks}" followbottom="true"
+		<button id="recruiter-reject-button" x="50" y="10" width="150" height="25" label="${common.squads.recruitment.nothanks}" followbottom="true"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 			onclick="acceptRecruitment(false)" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
 		
@@ -57,12 +57,8 @@
 			
 			callback = cb;
 			
-			if(client.persona.rank.level < 2) {
+			if(client.persona.rank.level < 2)
 				window.findview("show-recruitment").visible = false;
-				// TODO: Don't hide this if the user voluntarily
-				// clicked the recruiter button in the squads tab
-				window.findview("recruiter-reject-button").visible = false;
-			}
 			
 			// run the initial update
 			runRecruitmentUpdate();
@@ -72,13 +68,6 @@
 		{
 			if(recruitmentTimer.run())
 			{
-				var recruiters = client.recruiters;
-				if ( recruiters.length == 0 ) {
-					showOk(getlocstring("common.squads.recruitment.none"));
-					acceptRecruitment(false);
-					return;
-				}
-				
 				consoleprint("Running recruitment update!!!\n");
 				
 				// only enable the button when we've selected something
@@ -89,6 +78,7 @@
 					return;
 				
 				var listWidth 	= recruitmentList.list.width * (window.width / 1024);
+				var recruiters	= client.recruiters;
 				
 				//consoleprint("Original width is " + recruitmentList.list.width + "\n");
 				//consoleprint("Adjusted width is " + listWidth + "\n");
