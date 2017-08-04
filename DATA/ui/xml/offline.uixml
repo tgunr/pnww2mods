@@ -191,7 +191,7 @@
 			}
 			
 			if(!vehicleTree.loadState())
-				vehicleTree.toggleNode("US", true);
+				vehicleTree.toggleNode("DE", true);
 				
 			vehicleTree.clickTree(false, game.globals.selectedindex);
 			

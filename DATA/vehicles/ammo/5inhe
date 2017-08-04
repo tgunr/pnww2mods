@@ -48,16 +48,17 @@ tracerscale = 2.0
 #  set this to 1.0 to remove mass accumulation, anything below 1.0 will be raised to 1.0
 
 
-use_new_he = 0
+use_new_he = 1
 nhe_diameter = 0.008
 nhe_weight = 0.01
 nhe_min_pen_const = 0.0000001
 nhe_ric_angle = 86.9999
 nhe_energy_mult = 0.3
-nhe_min_pieces = 50
-nhe_max_pieces = 100
-nhe_max_per_veh = 15
+nhe_min_pieces = 8000
+nhe_max_pieces = 10000
+nhe_max_per_veh = 25
 nhe_add_speed = 100.0
 nhe_timeout = 0.5
 nhe_max_mass_mult = 1.9
 
+#hassmoke = 2

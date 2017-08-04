@@ -1,12 +1,13 @@
 mass = 04.48
 firetype = auto
 rateoffire = 600
-ammotype1 = 9mmsmg
+#ammotype1 = 9mmsmg
+ammotype1 = patrone318
 ghostrof = 600
 ghostammotype = 9mmsmg
 dispersion = 0.208
-cliprounds = 32
-reloadtime = 4
+cliprounds = 50
+reloadtime = 2
 
 # type of clip; used in the ui for clip name display 
 # possible values: na, clip, magazine, belt, reload 

@@ -35,7 +35,7 @@ tracerscale = 1.8
 #
 #  use_new_he .. set to 1 to enable (and set defaults for) the new HE model
 #  nhe_diameter ..  sets the diameter of the shrapnel bits
-#  nhe_weight .. sets the minimum weight for the shrapnel bits 
+#  nhe_weight .. sets the minimum weight for the shrapnel bits
 #  nhe_min_pen_const .. the PC of the shrapnel bit will never be less than this (formula is very complex though)
 #  nhe_ric_angle .. sets the ricochet angle of the shrapnel bits
 #  nhe_energy_mult .. how much of the explosive energy is transferred to the shrapnel
@@ -49,7 +49,7 @@ tracerscale = 1.8
 #  set this to 1.0 to remove mass accumulation, anything below 1.0 will be raised to 1.0
 
 
-use_new_he = 0
+use_new_he = 1
 nhe_diameter = 0.008
 nhe_weight = 0.01
 nhe_min_pen_const = 0.0000001
@@ -61,4 +61,3 @@ nhe_max_per_veh = 15
 nhe_add_speed = 100.0
 nhe_timeout = 0.5
 nhe_max_mass_mult = 1.9
-

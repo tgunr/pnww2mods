@@ -5,7 +5,8 @@
 type = ballistic
 diameter = .02
 weight = .148
-velocity = 780
+#velocity = 780
+velocity = 2780
 tracertime = 4.9
 object = bullet1
 fuzetime = 0.000
@@ -13,7 +14,8 @@ bc = .725
 lifetime = 5.0
 ricochetangle = 87
 modelspall = 0
-penetrationconstant = 0.00000065
+#penetrationconstant = 0.00000065
+penetrationconstant = 0.0000065
 dontdisplayfirstframe = 1 
 #selfdestructtime = 3.0
 

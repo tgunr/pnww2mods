@@ -18,7 +18,7 @@ ricochetangle = 89.9999
 penetrationconstant = 0.00014
 # penetration constant changed to allow kills on tanks to direct hits - Oct.2009
 dontdisplayfirstframe = 0
-numshrapnelpieces = 150
+numshrapnelpieces = 10
 totalshrapnelmass = 400
 explosionsoundnear = sounds\lrgcloseexp.wav
 explosionsoundfar = sounds\lrgfarexp.wav
@@ -51,3 +51,4 @@ nhe_max_per_veh = 75
 nhe_add_speed = 100.0
 nhe_timeout = 0.10
 nhe_max_mass_mult = 15
+#hassmoke = 2
