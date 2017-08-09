@@ -82,6 +82,8 @@
 		
 		function initWin(win)
 		{
+			// TODO: Only call once (currently safe, though)
+			game.player.client.startofflinemode();
 			game.consoleclear();
 			
 			var chat = game.findview("chat");
