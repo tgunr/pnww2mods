@@ -1,6 +1,6 @@
 ============================================
 World War II Online
-Version 1.35.9.0 (August 2017)
+Version 1.35.9.1 (August 2017)
 ============================================
 This maintenance update primarily serves to enable Steam users to download and play the game on both Mac (OS X) and PC platforms.  Additionally the following issues have been resolved:
 
