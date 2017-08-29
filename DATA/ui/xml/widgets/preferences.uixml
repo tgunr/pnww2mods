@@ -92,21 +92,14 @@
 						
 						list.clearRows(true);
 						
-						if(game.ostype == "mac")
+						if(game.region == 5) // china
 						{
-							list.addOption(getlocstring("widgets.prefs.na"), -1, -1);
+							list.addOption(getlocstring("widgets.prefs.groups.game.language." + options[game.region]), game.region, game.region);
 						}
 						else
 						{
-							if(game.region == 5) // china
-							{
-								list.addOption(getlocstring("widgets.prefs.groups.game.language." + options[game.region]), game.region, game.region);
-							}
-							else
-							{
-								for(var i = 0; i < options.length - 1; i++)
-									list.addOption(getlocstring("widgets.prefs.groups.game.language." + options[i]), i, current);
-							}
+							for(var i = 0; i < options.length - 1; i++)
+								list.addOption(getlocstring("widgets.prefs.groups.game.language." + options[i]), i, current);
 						}
 						
 						list.hideList();
@@ -1630,7 +1623,6 @@
 			
 			if(game.ostype == "mac")
 			{
-				unsupported.push("langList");
 				unsupported.push("audioList");
 				unsupported.push("audioSystemList");
 			}
