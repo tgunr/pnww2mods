@@ -15,3 +15,4 @@ Server related
 Client related
 ============================================
 - Mac clients can now switch languages in-game
+- Italian language was causing a hangup on both clients
