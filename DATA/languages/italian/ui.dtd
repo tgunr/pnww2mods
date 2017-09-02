@@ -1,12 +1,12 @@
 <!ENTITY authconn.complete "Risposta ricevuta.">
-<!ENTITY authconn.error.badcallsign.char "Il carattere '{1}' non è consentito nei callsigns.">
+<!ENTITY authconn.error.badcallsign.char "Il carattere &#039;{1}&#039; non è consentito nei callsigns.">
 <!ENTITY authconn.error.badcallsign.length "I Callsigns sono limitati a 10 caratteri.">
-<!ENTITY authconn.error.badusername.char "Il carattere '{1}' non è consentito negli username.">
+<!ENTITY authconn.error.badusername.char "Il carattere &#039;{1}&#039; non è consentito negli username.">
 <!ENTITY authconn.error.badusername.length "Gli username sono limitati a 10 caratteri.">
-<!ENTITY authconn.error.generic.errorcode "Errore di connessione al network '{1}'.">
+<!ENTITY authconn.error.generic.errorcode "Errore di connessione al network &#039;{1}&#039;.">
 <!ENTITY authconn.error.generic.unknown "Errore sconosciuto. Sei pregato di far ripartire l&#039;applicazione di nuovo.">
 <!ENTITY authconn.error.init.callbackinitfailed "Inizializzazione del network errata.">
-<!ENTITY authconn.error.init.couldnotresolve "Non trovato '{1}'.">
+<!ENTITY authconn.error.init.couldnotresolve "Non trovato &#039;{1}&#039;.">
 <!ENTITY authconn.error.init.multipleconnections "L&#039;applicazione ha tentato di aprire più di una richiesta di autorizzazione nello stesso momento.">
 <!ENTITY authconn.error.login.arenafull "La regione è piena. Sei pregato di provare ancora più tardi.">
 <!ENTITY authconn.error.login.game "Il Gioco non è disponibile. Prova di nuovo a breve.">
@@ -171,7 +171,7 @@
 <!ENTITY brigade.hqtab.missions.empty "Seleziona una missione dalla lista. Se non ci sono missioni disponibili e hai un grado sufficiente, puoi creare una nuova missione dalla linguetta MAPPA TEATRO.">
 <!ENTITY brigade.hqtab.missions.key.attack "ATTACCO">
 <!ENTITY brigade.hqtab.missions.key.defend "DIFESA">
-<!ENTITY brigade.hqtab.missions.key.support "SUPPORT">
+<!ENTITY brigade.hqtab.missions.key.support "SUPPORTO">
 <!ENTITY brigade.hqtab.missions.leader "LEADER">
 <!ENTITY brigade.hqtab.missions.ms "MS">
 <!ENTITY brigade.hqtab.missions.ms.tip "Indica che questa missione ha un ingresso mobile schierato.">
@@ -356,12 +356,12 @@
 <!ENTITY common.countries.us.side "Alleato">
 <!ENTITY common.cthl "Connessione all&#39;host persa!">
 <!ENTITY common.exitclick "CLICCA DOVE VUOI PER USCIRE">
-<!ENTITY common.headshake "That action is not allowed!">
-<!ENTITY common.headshake.noproneaim "You cannot aim this weapon while prone!">
-<!ENTITY common.headshake.nostandaim "You cannot aim this weapon while standing up! Fire from a crouched or prone position.">
-<!ENTITY common.headshake.reload "Hit R to reload your weapon!">
-<!ENTITY common.headshake.reloadnosprint "You cannot sprint while this weapon is loaded!">
-<!ENTITY common.headshake.reloadstill "You cannot reload your weapon while moving!">
+<!ENTITY common.headshake "Quell&#039;azione non è consentita!">
+<!ENTITY common.headshake.noproneaim "Non puoi mirare con quest&#039;arma mentre sei sdraiato!">
+<!ENTITY common.headshake.nostandaim "Non puoi mirare con quest&#039;arma mentre sei in piedi. Apri il fuoco da una posizione piegata o inginocchiata.">
+<!ENTITY common.headshake.reload "Premi R per ricaricare la tua arma!">
+<!ENTITY common.headshake.reloadnosprint "Non puoi sprintare mentre quest&#039;arma è caricata!">
+<!ENTITY common.headshake.reloadstill "Non puoi ricaricare la tua arma mentre tis tai muovendo!">
 <!ENTITY common.keymapper.tab "CONFIGURA TASTI">
 <!ENTITY common.keymapper.tab.tip "Configura i tasti e l&#39;assegnazione degli assi del controller.">
 <!ENTITY common.languages.0 "inglese">
@@ -608,46 +608,46 @@
 <!ENTITY common.yes "SI">
 <!ENTITY connect.chat.fail "Connessione alla chat fallita">
 <!ENTITY connect.chat.noredirect "Errore di rete durante l&#39;accesso alla chat">
-<!ENTITY connect.error.connectionerror "Connection error">
-<!ENTITY connect.error.eaddrinuse "Network address is already in use">
-<!ENTITY connect.error.eaddrnotavail "Network address was unavailable">
+<!ENTITY connect.error.connectionerror "Errore di connessione">
+<!ENTITY connect.error.eaddrinuse "Questo indirizzo di rete è già in uso">
+<!ENTITY connect.error.eaddrnotavail "L&#039;indirizzo di rete non è disponibile">
 <!ENTITY connect.error.eagain "eagain">
-<!ENTITY connect.error.econnaborted "Connection was aborted">
-<!ENTITY connect.error.econnrefused "Connection was refused: Server may be offline">
-<!ENTITY connect.error.econnreset "Connection was reset">
-<!ENTITY connect.error.ecorrupt "Invalid data-packet received, please check your network connection / firewall.">
-<!ENTITY connect.error.ehostdown "Remote host is down or unavailable">
+<!ENTITY connect.error.econnaborted "La connessione è stata terminata">
+<!ENTITY connect.error.econnrefused "La connessione è stata rifiutata: il server potrebbe essere offline">
+<!ENTITY connect.error.econnreset "La connessione è stata resettata">
+<!ENTITY connect.error.ecorrupt "E&#039; stato ricevuto un pacchetto di dati non valido, sei pregato di controllare la tua connessione di rete/firewall.">
+<!ENTITY connect.error.ehostdown "L&#039;host remote è giù o non disponibile">
 <!ENTITY connect.error.eintr "eintr">
-<!ENTITY connect.error.enetdown "Network is down">
-<!ENTITY connect.error.enetreset "Network connection was reset">
-<!ENTITY connect.error.enetunreach "Network is unreachable">
-<!ENTITY connect.error.enobufs "No buffer-memory left to send data">
-<!ENTITY connect.error.enotconn "Not connected">
-<!ENTITY connect.error.eshutdown "Connection has shutdown">
-<!ENTITY connect.error.eteul_connection_stalled "Connection timed out: network may be unavailable or your connection may be overloaded. If this problem persists try a lower player visible limit, select a different network in settings and reduce the number of background network applications you are running.">
-<!ENTITY connect.error.eteul_enospc_send_buffer "network buffer error">
-<!ENTITY connect.error.eteul_enospc_send_socket "network socket error">
-<!ENTITY connect.error.eteul_login_denied "Login Denied">
-<!ENTITY connect.error.eteul_login_denied_ver "Login Denied (ver)">
-<!ENTITY connect.error.eteul_server_shutdown "Server shutdown in progress. Player disconnected.">
-<!ENTITY connect.error.eteul_undef_callback "undefined callback">
-<!ENTITY connect.error.etimedout "Timed out waiting for connection">
-<!ENTITY connect.error.internalerrror "Internal error occurred">
-<!ENTITY connect.error.loginfail_acceptbadindex "Session rejected by host: Internal error (loginfail_acceptbadindex). Please restart your game client.">
-<!ENTITY connect.error.loginfail_acceptbadteul "Session rejected by host: This client version is not supported by the server, please check for a patch/update.">
-<!ENTITY connect.error.loginfail_activatefailed "Session rejected by host: Internal error (loginfail_activatefailed). Please restart your game client.">
-<!ENTITY connect.error.loginfail_activatenolocalinfo "Session rejected by host: Internal error (loginfail_activatenolocalinfo). Please restart your game client.">
-<!ENTITY connect.error.loginfail_activatenoplayerinfo "Session rejected by host: Internal error (loginfail_activatenoplayerinfo). Please restart your game client.">
-<!ENTITY connect.error.loginfail_addplayer "Session rejected by host: Internal error (loginfail_addplayer). Please restart your game client.">
-<!ENTITY connect.error.loginfail_client "Session rejected by host (error 40111): This game client is not compatible with the host, please check for a patch and re-log.">
-<!ENTITY connect.error.loginfail_collision "Session Terminated (error 40114): Your account has been logged in from another instance of the game client.">
-<!ENTITY connect.error.loginfail_despawnerror "Session rejected by host: Internal error (loginfail_despawnerror). Please restart your game client.">
-<!ENTITY connect.error.loginfail_despawnnoplayer "Session rejected by host: Internal error (loginfail_despawnnoplayer). Please restart your game client.">
-<!ENTITY connect.error.loginfail_nosession "Session closed by host (nosession): This can happen if your connection to the host has been reset too many times or if the server has been restarted. You will need to restart your game client to continue playing.">
-<!ENTITY connect.error.loginfail_sessionown "Session rejected by host (error 40112): Please restart your game client - if this problem persists, please contact support.">
-<!ENTITY connect.error.loginfail_sessionvalidation "Session closed by host (validation): This can happen if your connection to the host has been reset too many times or if the server has been restarted. You will need to restart your game client to continue playing.">
-<!ENTITY connect.error.loginfail_validation "Session rejected by host (error 40113): Please restart your game client - if this problem persists, please contact support.">
-<!ENTITY connect.error.unknown "Unknown network error">
+<!ENTITY connect.error.enetdown "La rete è giù">
+<!ENTITY connect.error.enetreset "La connessione di rete è stata resettata">
+<!ENTITY connect.error.enetunreach "La rete non è raggiungibile">
+<!ENTITY connect.error.enobufs "La memoria non è sufficiente per inviare dati">
+<!ENTITY connect.error.enotconn "Non connesso">
+<!ENTITY connect.error.eshutdown "La connessione è stata interrotta">
+<!ENTITY connect.error.eteul_connection_stalled "La connessione ha impiegato troppo tempo: la rete potrebbe essere non disponibile oppure la tua connessione potrebbe essere sovraccarica. Se il problema persiste, prova ad impostare un livello di visibilità dei giocatori più basso, oppure seleziona una rete diversa nei settaggi e riduci il numero di applicazioni attive in background.">
+<!ENTITY connect.error.eteul_enospc_send_buffer "errore di rete">
+<!ENTITY connect.error.eteul_enospc_send_socket "errore di connessione di rete">
+<!ENTITY connect.error.eteul_login_denied "Login Rifiutato">
+<!ENTITY connect.error.eteul_login_denied_ver "Login Rifiutato (ver)">
+<!ENTITY connect.error.eteul_server_shutdown "Il server si sta riavviando. Giocatore disconnesso.">
+<!ENTITY connect.error.eteul_undef_callback "richiamo indefinito">
+<!ENTITY connect.error.etimedout "In attesa della connessione">
+<!ENTITY connect.error.internalerrror "Si è verificato un errore interno">
+<!ENTITY connect.error.loginfail_acceptbadindex "Sessione rifiutata dall&#039;host: Errore interno (loginfail_acceptbadindex). Sei pregato di far ripartire il client di gioco.">
+<!ENTITY connect.error.loginfail_acceptbadteul "Sessione rifiutata dall&#039;host: Questa versione del client non è supportata dal server, sei pregato di controllare le patch/aggiornamenti.">
+<!ENTITY connect.error.loginfail_activatefailed "Sessione rifiutata dall&#039;host: Errore interno (loginfail_activatefailed). Sei pregato di far ripartire il client di gioco.">
+<!ENTITY connect.error.loginfail_activatenolocalinfo "Sessione rifiutata dall&#039;host: Errore interno (loginfail_activatenolocalinfo). Sei pregato di far ripartire il client di gioco.">
+<!ENTITY connect.error.loginfail_activatenoplayerinfo "Sessione rifiutata dall&#039;host: Errore interno (loginfail_activatenoplayerinfo). Sei pregato di far ripartire il client di gioco.">
+<!ENTITY connect.error.loginfail_addplayer "Sessione rifiutata dall&#039;host: Errore interno (loginfail_addplayer). Sei pregato di far ripartire il tuo client di gioco.">
+<!ENTITY connect.error.loginfail_client "Sessione rifiutata dall&#039;host (error 40111): Questo client di gioco non è compatibile con l&#039;host, sei pregato di controllare le patch/aggiornamenti e riloggare.">
+<!ENTITY connect.error.loginfail_collision "Sessione terminata(error 40114):Il tuo account è stato utilizzato per loggare da un altro client di gioco.">
+<!ENTITY connect.error.loginfail_despawnerror "Sessione rifiutata dall&#039;host: Errore interno (loginfail_despawnerror). Sei pregato di far ripartire il tuo client di gioco.">
+<!ENTITY connect.error.loginfail_despawnnoplayer " Sessione rifiutata dall&#039;host: Errore interno (loginfail_despawnnoplayer). Sei pregato di far ripartire il tuo client di gioco.">
+<!ENTITY connect.error.loginfail_nosession "Sessione chiusa dall&#039;host (nosession): Questo può accadere se la tua connessione all&#039;host è stata resettata trope volte o se il server è stato riavviato. E&#039; necessario riavviare il client di gioco per continuare a giocare.">
+<!ENTITY connect.error.loginfail_sessionown "Sessione rifiutata dall&#039;host (error 40112): Sei pregato di far ripartire il tuo client di gioco – se il problema persiste, sei pregato di contattare il supporto.">
+<!ENTITY connect.error.loginfail_sessionvalidation "Sessione chiusa dall&#039;host (validation): Questo può accadere se la tua connessione all&#039;host è stata resettata trope volte o se il server è stato riavviato. E&#039; necessario riavviare il client di gioco per continuare a giocare.">
+<!ENTITY connect.error.loginfail_validation "Sessione rifiutata dall&#039;host (error 40113): Sei pregato di far ripartire il tuo client di gioco – se il problema persiste, sei pregato di contattare il supporto.">
+<!ENTITY connect.error.unknown "Errore di rete sconosciuto">
 <!ENTITY connect.fail "Connessione fallita">
 <!ENTITY connect.find.cantopen "Impossibile risolvere la selezione della rete">
 <!ENTITY connect.find.nobest "Impossibile connettersi alla rete del gioco">
@@ -3472,10 +3472,12 @@
 <!ENTITY login.steamneedscallsign "Questa è la tua prima connessione e devi creare un callsign.">
 <!ENTITY login.steamunknownerror "Si è verificato un errore sconosciuto. Sei pregato di provare nuovamente o provare la modalità offline.">
 <!ENTITY login.steamuserdoesnotexist "Sembra che tu non abbia il gioco nel tuo account Steam. Assicurati di aver provato ad accedere con l&#039;account di Steam corretto e prova nuovamente.">
-<!ENTITY login.steam.callsign.invalid "The callsign you requested is not valid. Please use only standard alphanumeric characters.">
-<!ENTITY login.steam.callsign.bad "The callsign you requested contains inappropriate language. Please try a different callsign.">
-<!ENTITY login.steam.callsign.inuse "The callsign you requested is already taken. Please try a different callsign.">
+<!ENTITY login.steam.callsign.confirm "Sei sicuro di voler essere conosciuto come '{1}'?">
+<!ENTITY login.steam.callsign.invalid "Il nominativo che hai richiesto non è valido. Sei pregato di usare solo caratteri alfanumerici standard.">
+<!ENTITY login.steam.callsign.bad "Il nominativo che hai richiesto contiene un linguaggio inappropriate. Sei pregato di usare un nominative differente.">
+<!ENTITY login.steam.callsign.inuse "Il nominative che hai richiesto è stato già assegnato. Sei pregato di provare un nominative diverso.">
 <!ENTITY login.trainingmode "Server di Addestramento">
+<!ENTITY login.tryagain "Riprova">
 <!ENTITY map.airforce "Aeronautica">
 <!ENTITY map.army "Esercito">
 <!ENTITY map.bridges "Ponti">
