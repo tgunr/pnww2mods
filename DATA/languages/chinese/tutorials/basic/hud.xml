@@ -1,46 +1,47 @@
 <?xml version='1.0'?>
 <content type="5">
   <key>5</key>
-  <body>// NOT READY FOR LOCALIZATION
+  <body>
+    // NOT READY FOR LOCALIZATION
 
-1.0.label = HUD训练任务
+    1.0.label = HUD训练任务
 
-1.1.alert.modal = 当你在游戏世界出生以后，抬头显示器（HUD）将向你提供武器的信息等很多信息。[NL][NL]HUD包含几个要素，其中一些是可选择的。这其中大多数我们已经在前面的训练中接触过了。
-1.1.label = HUD(抬头显示器)要素
+    1.1.alert.modal = 当你在游戏世界出生以后，抬头显示器（HUD）将向你提供武器的信息等很多信息。[NL][NL]HUD包含几个要素，其中一些是可选择的。这其中大多数我们已经在前面的训练中接触过了。
+    1.1.label = HUD(抬头显示器)要素
 
-1.2.alert.modal = 生命槽显示的是你拥有的生命值。当你受伤后，你的生命值将会降低。当生命值变为零的时候，你将死亡。当心那些不断损血的小伤口，它们同样可以置你于死地。
-1.2.alert.hilite = health-bar,target
-1.2.label = 生命槽
+    1.2.alert.modal = 生命槽显示的是你拥有的生命值。当你受伤后，你的生命值将会降低。当生命值变为零的时候，你将死亡。当心那些不断损血的小伤口，它们同样可以置你于死地。
+    1.2.alert.hilite = health-bar,target
+    1.2.label = 生命槽
 
-1.3.alert.modal = 体力槽显示的是你在疾跑或跪姿和卧姿状态下行进时能够消耗的体力值。例如，当体力槽只剩下一半或更少的时候，你将不能进行疾跑。体力槽将会根据你当前的活动以不同的速率进行恢复。
-1.3.alert.hilite = atp-bar,target
-1.3.label = 体力槽
+    1.3.alert.modal = 体力槽显示的是你在疾跑或跪姿和卧姿状态下行进时能够消耗的体力值。例如，当体力槽只剩下一半或更少的时候，你将不能进行疾跑。体力槽将会根据你当前的活动以不同的速率进行恢复。
+    1.3.alert.hilite = atp-bar,target
+    1.3.label = 体力槽
 
-1.4.alert.modal = 聊天窗口是你与其他玩家交流的首选方案。想要在游戏中成功，了解它非常重要。
-1.4.label = 聊天窗口
-1.4.alert.hilite = chatview,target
+    1.4.alert.modal = The Chat window is your primary method of communicating with other players.  Understanding it is important to your success in World War II Online.
+    1.4.label = 聊天窗口
+    1.4.alert.hilite = 210,5,615,115,target
 
-1.5.alert.modal = 迷你地图在战斗中非常有用。它将向你显示同一任务中具有同一目标的战友玩家，任务目标，导航点，触敌报告和其它许多非常重要的信息。它一般以你为中心进行显示。使用 {mapin} 键和 {mapout} 键 可以放大和缩小迷你地图。
-1.5.alert.hilite = kenny,target
-1.5.alert1.modal = 迷你地图的底部显示了你当前位置的坐标以及离当前位置最近的城市的名字。
-1.5.alert1.hilite = 894,14,91,31,target
-1.5.label = 迷你地图
+    1.5.alert.modal = 迷你地图在战斗中非常有用。它将向你显示同一任务中具有同一目标的战友玩家，任务目标，导航点，触敌报告和其它许多非常重要的信息。它一般以你为中心进行显示。使用 {mapin} 键和 {mapout} 键 可以放大和缩小迷你地图。
+    1.5.alert.hilite = kenny,target
+    1.5.alert1.modal = 迷你地图的底部显示了你当前位置的坐标以及离当前位置最近的城市的名字。
+    1.5.alert1.hilite = 870,5,151,49,target
+    1.5.label = 迷你地图
 
-1.6.alert.modal = HUD的一个可选要素就是游戏信息。这显示的是你当前的每秒帧数（FPS），游戏世界中的当日时间，图标模式，以及你的网络连接的封包串流。你可以按 {showinfo} 键来获取这些信息。
-1.6.alert.hilite = gameinfo,target
-1.6.label = 游戏信息
+    1.6.alert.modal = HUD的一个可选要素就是游戏信息。这显示的是你当前的每秒帧数（FPS），游戏世界中的当日时间，图标模式，以及你的网络连接的封包串流。你可以按 {showinfo} 键来获取这些信息。
+    1.6.alert.hilite = gameinfo,target
+    1.6.label = 游戏信息
 
-1.7.alert.modal = 另一个可选要素是战车状态。它会显示当前角色的军衔，如果你当前在驾驶陆地战车的话，将会显示当前的车档和你车上的其他乘员的信息。而对飞机来说，它将显示G力，迎角和滑行。你可以按 {showstats} 键来获取这些信息。
-1.7.alert.hilite = readout,target
-1.7.label = 战车状态
+    1.7.alert.modal = 另一个可选要素是战车状态。它会显示当前角色的军衔，如果你当前在驾驶陆地战车的话，将会显示当前的车档和你车上的其他乘员的信息。而对飞机来说，它将显示G力，迎角和滑行。你可以按 {showstats} 键来获取这些信息。
+    1.7.alert.hilite = 0,725,90,40,target
+    1.7.label = 战车状态
 
-1.8.alert = 按 {changehudmode} 键可以完全隐藏HUD。现在，请使用 {changehudmode} 键对HUD的状态进行切换。
-1.8.label =开关HUD 
+    1.8.alert = 按 {changehudmode} 键可以完全隐藏HUD。现在，请使用 {changehudmode} 键对HUD的状态进行切换。
+    1.8.label =开关HUD
 
-1.9.alert.modal = 你也能重新布置屏幕上的各种HUD要素的位置。按住 {guicursor} 键，记住按住不要松开，就可以显示鼠标光标，然后点击并按住鼠标左键就可以把个别要素拖曳到一个新的位置了。
-1.9.alert1 = 现在，请随意移动屏幕上的HUD要素。当你准备好以后，再按 {resethud} 键，这可以使你的HUD返回默认的布局。 
-1.9.label = 定制HUD
-1.9.complete.modal = 很好，你已经非常完美的完成了此次任务。恭喜你。你获得了10分的积分奖励！</body>
+    1.9.alert.modal = 你也能重新布置屏幕上的各种HUD要素的位置。按住 {guicursor} 键，记住按住不要松开，就可以显示鼠标光标，然后点击并按住鼠标左键就可以把个别要素拖曳到一个新的位置了。
+    1.9.alert1 = 现在，请随意移动屏幕上的HUD要素。当你准备好以后，再按 {resethud} 键，这可以使你的HUD返回默认的布局。
+    1.9.label = 定制HUD
+    1.9.complete.modal = 很好，你已经非常完美的完成了此次任务。恭喜你。你获得了10分的积分奖励！</body>
   <branch>1</branch>
   <brief>现在，我们要进行的是抬头显示器即HUD的训练任务，HUD相当于其他游戏中的游戏界面，此任务将训练你在战斗中使用HUD的能力！</brief>
   <handler>basic.hud</handler>

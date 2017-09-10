@@ -32,13 +32,13 @@
 			onshow="this.checked = game.settings.squadinvites" onclick="soundPlayClick(); game.settings.squadinvites = this.checked;"/>
 		
 		<!-- close -->
-		<button id="recruiter-join-button" x="50" y="10" width="150" height="25" label="${common.squads.recruitment.join}" followbottom="true"
+		<button id="recruiter-join-button" rright="50" y="10" width="150" height="25" label="${common.squads.recruitment.join}" followbottom="true"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 			onclick="acceptRecruitment(true)" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
-		<button y="10" width="150" height="25" rright="50" label="${common.squads.recruitment.nothanks}" followbottom="true"
+		<button id="recruiter-reject-button" x="50" y="10" width="150" height="25" label="${common.squads.recruitment.nothanks}" followbottom="true"
 			style="control-on: ui/textures/test/gen_button_on.bmp; control-off: ui/textures/test/gen_button_off.bmp; control-disabled: ui/textures/test/gen_button_disabled.bmp; font-size: -1; color: #ffffff;"
 			onclick="acceptRecruitment(false)" onmouseenter="buttonMouseEnter(this)" onmouseexit="buttonMouseExit(this)"/>
-			
+		
 	</view>
 	<script>
 		<!--

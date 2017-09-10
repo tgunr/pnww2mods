@@ -27,67 +27,71 @@
 1.3.complete.modal = Votre fusil a de nouveau des munitions  et votre compteur de chargeur  se réduit. Vous pouvez recharger à n’importe quel moment, même si il reste encore des balles dans le chargeur.
 
 1.4.alert.modal = Pour être efficace au fusil il faut utiliser sa mire pour bien viser. Quand vous viserez, vous retiendrez votre respiration pour stabiliser l&#39;arme. Plus vous resterez de temps en position de visée, plus il sera difficile de garder l&#39;arme stable.
-1.4.alert1 = Visez sur la cible  une seconde fois avec {fpgunsight} et tirez {fpfire}.  Touchez 3 fois  pour continuer.
-1.4.label = Visez et tirez
-1.4.complete = Excellent, savoir utiliser son viseur est très important.
+    1.4.alert1 = Visez sur la cible  une seconde fois avec {fpgunsight} et tirez {fpfire}.  Touchez 3 fois  pour continuer.
+    1.4.label = Visez et tirez
+    1.4.complete = Excellent, savoir utiliser son viseur est très important.
 
-1.5.label = Ajustement de la hausse
-1.5.alert.modal = Beaucoup d’armes en jeu ,comme le fusil, ont des viseurs qui peuvent être réglés pour différentes distances. Par défaut le réglage pour le fusil est de 200m, mais en combat votre cible peut être plus près ou plus loin selon les circonstances.
-1.5.alert.hilite = primary-label
-1.5.alert1.modal = Prenez un moment pour tirer sur les cibles selon différents réglages et étudiez le résultat. Vous pouvez modifier le réglage de hausse  par  la touche {gunsightrangeinc} pour monter et par {gunsightrangedec} pour abaisser.
-1.5.alert1.hilite = primary-label
-1.5.complete = Ajuster la hausse  vous donnera plus de chance de toucher l’ennemi.
+    1.5.label = Ajustement de la hausse
+    1.5.alert.modal = Beaucoup d’armes en jeu ,comme le fusil, ont des viseurs qui peuvent être réglés pour différentes distances. Par défaut le réglage pour le fusil est de 200m, mais en combat votre cible peut être plus près ou plus loin selon les circonstances.
+    1.5.alert.hilite = primary-label
+    1.5.alert1.modal = Prenez un moment pour tirer sur les cibles selon différents réglages et étudiez le résultat. Vous pouvez modifier le réglage de hausse  par  la touche {gunsightrangeinc} pour monter et par {gunsightrangedec} pour abaisser.
+    1.5.alert1.hilite = primary-label
+    1.5.complete = Ajuster la hausse  vous donnera plus de chance de toucher l’ennemi.
 
-2.0.label = Changer d’Armes
+    2.0.label = Changer d’Armes
 
-2.1.alert.modal = En tant que fusilier vous avez 5 objets sur vous.Changer d’armes se fait en général par les touches chiffres coté clavier ou avec la roulette de la souris. L’indicateur d’arme présente votre arme ou objet actuel.
-2.1.alert.hilite = primary
-2.1.alert1 =   Vous avez déjà utilisé votre fusil, regardons le reste maintenant. [NL][NL]Prenez votre grenade HE avec la touche {fpweapon1}.
-2.1.label = Prendre la Grenade HE
+    2.1.alert.modal = En tant que Fusilier, vous transportez 6 items au combat. Vous pouvez accéder à ces différentes options en utilisant les chiffres 1 à 6, ou en utilisant la molette de la souris.L’indicateur d’arme vous permet de voir quelle arme ou  équipement est actuellement utilisé.
+    2.1.alert.hilite = primary
+    2.1.alert1 =   Vous avez déjà utilisé votre fusil, regardons le reste maintenant. [NL][NL]Prenez votre grenade HE avec la touche {fpweapon1}.
+    2.1.label = Prendre la Grenade HE
 
-2.2.alert = Prenez  la grenade fumigène avec la touche {fpweapon2}.
-2.2.label = Prendre la Grenade Fumigène
+    2.2.alert = Prenez  la grenade fumigène avec la touche {fpweapon2}.
+    2.2.label = Prendre la Grenade Fumigène
 
-2.3.alert = Prenez votre couteau de combat avec la touche {fpweapon3}.
-2.3.label = Prendre le Couteau de Combat 
+    2.3.alert = Prenez votre couteau de combat avec la touche {fpweapon3}.
+    2.3.label = Prendre le Couteau de Combat
 
-2.4.alert = Prenez le pack de munitions avec la touche{fpweapon4} .
-2.4.label = Prendre le Pack de Munitions
-2.4.complete = Très bien! Changer rapidement d’arme peut vous sauver la vie!
+    2.4.alert = Selectionnez votre sac d&#039;explosif avec la touche {fpweapon4}.
+    2.4.label = Prendre le Pack de Munitions
+    2.4.complete = Très bien! Changer rapidement d’arme peut vous sauver la vie!
 
-3.0.label = Grenades
+    2.5.alert= Selectionnez votre sac de munitions avec la touche {fpweapon5}.
+    2.5.label= Selectionnez votre sac de munitions.
+    2.5.complete= Tres bien&#033; Changer votre arme rapidement peu vous sauver la vie &#033;
 
-3.1.alert = La grenade est une  arme d’infanterie que vous devez bien maîtriser. La plus part des différents types de fantassin  ont sur eux des grenades explosives ou fumigènes.[NL][NL]Maintenant prenez la grenade fumigène avec la touche {fpweapon2}.
-3.1.label = Prendre la grenade fumigène
+    3.0.label = Grenades
 
-3.2.alert.modal = Le fumigène aide à cacher vos mouvements des yeux ennemis, surtout quand aucun abri n’est là.  Mais il peut aussi attirer son attention, aussi il faut l’utiliser à bon escient.
-3.2.alert1.modal = La puissance de votre lancé est proportionnel au temps durant lequel vous maintenez la touche {fpfire}. Au bout de quelques secondes le jet se fera tout seul au maximum de puissance. 
-3.2.alert2 = Pour une plus grande distance, levez la visée pour avoir un bon angle. Pour viser avec la grenade, prenez juste la bonne direction avec la souris.[NL][NL]Visez, maintenez et relâchez  votre grenade fumigène avec {fpfire}.
-3.2.label = Lancez la Grenade Fumigène
-3.2.complete = Bien, regardez la fumée s’échapper de la grenade pour bien vous rendre compte du nuage créé et de la durée.
+    3.1.alert = La grenade est une  arme d’infanterie que vous devez bien maîtriser. La plus part des différents types de fantassin  ont sur eux des grenades explosives ou fumigènes.[NL][NL]Maintenant prenez la grenade fumigène avec la touche {fpweapon2}.
+    3.1.label = Prendre la grenade fumigène
 
-3.3.alert = Attention vous pouvez être tué par votre propre grenade HE aussi soyez prudent quand vous la jeter!  Bien la lancer depuis une protection ou assez loin de vous.[NL][NL]Choisissez la grenade explosive avec la touche {fpweapon1}.
-3.3.label = Prendre la Grenade HE
+    3.2.alert.modal = Le fumigène aide à cacher vos mouvements des yeux ennemis, surtout quand aucun abri n’est là.  Mais il peut aussi attirer son attention, aussi il faut l’utiliser à bon escient.
+    3.2.alert1.modal = La puissance de votre lancé est proportionnel au temps durant lequel vous maintenez la touche {fpfire}. Au bout de quelques secondes le jet se fera tout seul au maximum de puissance.
+    3.2.alert2 = Pour une plus grande distance, levez la visée pour avoir un bon angle. Pour viser avec la grenade, prenez juste la bonne direction avec la souris.[NL][NL]Visez, maintenez et relâchez  votre grenade fumigène avec {fpfire}.
+    3.2.label = Lancez la Grenade Fumigène
+    3.2.complete = Bien, regardez la fumée s’échapper de la grenade pour bien vous rendre compte du nuage créé et de la durée.
 
-3.4.alert = Lancer sa grenade HE fonctionne de la même façon que pour le fumigène, la seule différence est qu&#39;elle peut vous tuer..[NL][NL]Maintenez et relâchez  {fpfire} pour un jet à une distance max.
-3.4.label = Lancez la Grenade HE
-3.4.complete = Bien, souvenez vous bien que si vous relâchez trop tôt la grenade, courrez et jetez vous à plat ventre pour rester sauf. 
+    3.3.alert = Attention vous pouvez être tué par votre propre grenade HE aussi soyez prudent quand vous la jeter!  Bien la lancer depuis une protection ou assez loin de vous.[NL][NL]Choisissez la grenade explosive avec la touche {fpweapon1}.
+    3.3.label = Prendre la Grenade HE
 
-4.0.label = Couteau de Combat
+    3.4.alert = Lancer sa grenade HE fonctionne de la même façon que pour le fumigène, la seule différence est qu&#39;elle peut vous tuer..[NL][NL]Maintenez et relâchez  {fpfire} pour un jet à une distance max.
+    3.4.label = Lancez la Grenade HE
+    3.4.complete = Bien, souvenez vous bien que si vous relâchez trop tôt la grenade, courrez et jetez vous à plat ventre pour rester sauf.
 
-4.1.alert = Si vous voulez éliminer un ennemis discrètement, ou si vous n’avez plus de munitions, vous pouvez utiliser votre couteau de combat. Soyez simplement à proximité de l’ennemi  et poignardez le.[NL][NL]Prenez votre couteau de combat avec la touche {fpweapon3}.
-4.1.label = Prendre son couteau
+    4.0.label = Couteau de Combat
 
-4.2.alert = Pressez {fpfire} pour voir votre couteau en mouvement.
-4.2.label = Utiliser son couteau
-4.2.complete = Souvenez vous bien qu’il faut être très proche de son opposant pour pouvoir porter un coup avec le couteau
+    4.1.alert = Si vous voulez éliminer un ennemis discrètement, ou si vous n’avez plus de munitions, vous pouvez utiliser votre couteau de combat. Soyez simplement à proximité de l’ennemi  et poignardez le.[NL][NL]Prenez votre couteau de combat avec la touche {fpweapon3}.
+    4.1.label = Prendre son couteau
 
-5.0.label = Pack de ravitaillement
+    4.2.alert = Pressez {fpfire} pour voir votre couteau en mouvement.
+    4.2.label = Utiliser son couteau
+    4.2.complete = Souvenez vous bien qu’il faut être très proche de son opposant pour pouvoir porter un coup avec le couteau
 
-5.1.alert = Les fusiliers et la plus part des paras portent un pack de ravitaillement. Le donner à un partenaire permet de le ravitailler en munition.[NL][NL]Sélectionnez votre pack de munitions avec la touche {fpweapon4}.
-5.1.label = prendre son pack de munition
+    5.0.label = Pack de ravitaillement
 
-5.2.alert = Pour les mortiers ou les fusils mitrailleurs les munitions sont très importantes. Aussi des que vous en voyez un il ne faut pas hésiter à lui proposer des munitions.[NL][NL]Utiliser {fpfire} pour voir l&#39;animation quand on donne des munitions.
+    5.1.alert = Les fusiliers et la plupart des unités parachutistes  transportent une recharge de munitions (Ammo Pack). Vous pouvez les utiliser sur un joueur de votre armée afin de lui fournir de nouvelles munitions.[NL][NL]Sélectionnez votre recharge de munition (Resupply Pack) à l’aide de la touche{fpweapon5} .
+    5.1.label = prendre son pack de munition
+
+    5.2.alert = Pour les mortiers ou les fusils mitrailleurs les munitions sont très importantes. Aussi des que vous en voyez un il ne faut pas hésiter à lui proposer des munitions.[NL][NL]Utiliser {fpfire} pour voir l&#39;animation quand on donne des munitions.
 5.2.label = Utilisez le pack de munitions
 5.2.complete = Bien, si un coéquipier était présent il aurait reçu le pack.
 

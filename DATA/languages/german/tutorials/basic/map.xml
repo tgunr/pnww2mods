@@ -3,8 +3,10 @@
   <key>3</key>
   <body>title = Gundlagen der Kartenbenutzung
 1.0.label =  Die Karte
+
 1.1.alert = Willkommen zum Lehrgang Kartenbenutzung.[NL][NL]Drücke {showingamemap}, um die Karte zu öffnen.
 1.1.label = Karte öffnen
+
 1.2.alert.modal = Der Kartenbildschirm ist in 3 Bereiche unterteilt.[NL][NL]Am oberen Rand befinden sich mehrere Tabs für den Abruf von Informationen oder zum Ändern der Spieleinstellungen.
 1.2.alert.position = 211614,3074656,false
 1.2.alert.scale = 1.17
@@ -15,14 +17,13 @@
 1.2.alert1.hilite = -49,-4,49,407,mapview
 1.2.alert2.modal = Das größte Fenster zeigt die Karte.[NL][NL]Der Lehrgang konzentriert sich auf diesen Teil des Bildschirms. Wir werden aber auch ein paar Steuerfunktionen benutzen.
 1.2.alert2.hilite = -3,-1,840,403,mapview
-1.2.alert3.modal = Normalerweise ist die Karte auf Deine Position ausgerichtet. Im Moment befindet sich das Kartenzentrum jedoch über Antwerpen, einer Stadt in Belgien.
-1.2.alert3.hilite = 398,69,109,51,mapview
 1.2.alert5 = Zentriere die Karte über Deiner Position mit dem &#34;Auf Dich zentrieren&#34; Knopf auf der linken Seite.
 1.2.alert5.hilite = map-centerme,target
 1.2.alert5.mouse = true
 1.2.label = Karte zentrieren
 1.2.complete.modal = Ein Klick auf diesen Button zentriert die Karte über Deiner Position, uabhängig davon wo Du gerade bist.
 1.2.complete.mouse = false
+
 1.3.alert.modal = Deine Postion wird durch einen Pfeil in einem Kreis dargestellt.[NL][NL]Der Pfeil zeigt in Deine Blickrichtung.[NL][NL]Die Karte funktioniert wie eine normale Papierkarte; Norden ist oben, Süden ist unten, Westen ist links und Osten ist rechts.
 1.3.alert.hilite = 403,178,50,43,mapview
 1.3.alert1 = Die Karte ist jetzt auf Namur in Belgien zentriert.[NL][NL]Vergrößere die Karte durch Drücken von {mapin} oder drehe am Mausrad, wenn Du eines hast.
@@ -31,6 +32,7 @@
 1.3.alert1.selection = Namur
 1.3.alert1.mouse = true
 1.3.label = Vergrößern
+
 1.3.complete.modal = Gut.[NL][NL]In dieser Vergrößerungsstufe erkennst Du mehr Details.
 1.4.alert = Jetzt verkleinere die Kartenansicht wieder. Drücke dazu {mapout} oder benutze das Mausrad.
 1.4.label = Verkleinern
@@ -39,52 +41,72 @@
 1.5.alert.scale = 3.33
 1.5.label = Karte bewegen
 1.5.complete.modal = Nicht vergessen, Du kannst die Karte jederzeit auf Deine Postion zentrieren. Klicke dazu den &#34;Auf Dich zentrieren&#34; Knopf im Bedienfield der Karte.
+
 1.6.alert.modal = Manchmal ist es hilfreich, eine spezielle Stadt schnell zu finden. Vielleicht befinden sich Deine Freunde dort oder die Stadt ist in Gefahr, eingenommen zu werden.[NL][NL]Hier kommt der Städtefinder ins Spiel.
 1.6.alert.hilite = map-cp-find
 1.6.alert.scale = 3.33
-1.6.alert1 = Öffne den Städtefinder und gib &#34;Di&#34; in die Suchbox ein. Es erscheint eine Liste von Städten, die mit Di beginnen.[NL][NL]Je mehr Buchstaben Du eingibst, umso genauer ist die Suche.[NL][NL]Wähle &#34;Dinant&#34; aus, um die Karte über dieser Stadt zu zentrieren.
-1.6.alert1.hilite = map-cp-find
-1.6.label = Stadt finden
-1.6.complete.modal = Gut gemacht. Die Karte ist jetzt über Dinant, einer belgischen Stadt am Fluß Meuse, zentriert.
-1.6.complete.mouse = false
+1.6.alert1 = Öffne den Städtefinder (Vergrößerungsglas-Symbol auf der linken Seite) und gebe &#34;di&#34; in die Suchbox ein. Eine Übersicht mit Städten beginnend mit „Di“ wird erscheinen. .[NL][NL] Je mehr Buchstaben Du eingibst, desto eindeutiger wird das Suchergebnis. [NL][NL] Wähle die Stadt &#34;Dinant&#34;  aus, um die Karte auf diese Stadt zu zentrieren.
+    1.6.alert1.hilite = map-cp-find
+    1.6.label = Stadt finden
+    1.6.complete.modal = Gut gemacht. Die Karte ist jetzt über Dinant, einer belgischen Stadt am Fluß Meuse, zentriert.
+    1.6.complete.mouse = false
+    
 2.0.label = Kartenelemente
+
 2.1.alert.modal = Nehmen wir uns eine paar Momente, um die grundlegenden Elemente der Karte zu verstehen.[NL][NL]Mehr Informationen über jedes Element werden angezeigt, wenn Du den Mauszeiger darüber bewegst.
-2.1.alert.position = 220238,3071580
-2.1.alert.scale = 1.89
-2.1.alert.selection = Antwerp
-2.1.alert1.modal = Hier siehst Du ein paar Frontstädte.[NL][NL]Schilde ist eine kleine Stadt, die von den Deutschen kontrolliert wird.[NL][NL]Im Süden befindet sich das französisch kontrollierte Lier.[NL][NL]Im Nordwesten liegt Antwerpen, welches im Moment von den Briten beherrscht wird.
-2.1.alert1.hilite = 100,32,386,302,mapview
-2.1.alert2.modal = Die Flagge neben jeder Stadt zeigt an, wer dort die Kontrolle hat.[NL][NL]Dies kannst Du auch an der Farbe des Namens erkennen. Rot steht für die Achsen, Blau steht für die Alliierten.[NL][NL]Antwerpen ist zur Zeit grün, das es gerade ausgewählt wurde.
-2.1.label = Chokepoints
+    2.1.alert.position = 220238,3071580
+    2.1.alert.scale = 1.89
+    2.1.alert.selection = Antwerp
+    2.1.alert1.modal = Hier siehst Du ein paar Frontstädte.[NL][NL]Schilde ist eine kleine Stadt, die von den Deutschen kontrolliert wird.[NL][NL]Im Süden befindet sich das französisch kontrollierte Lier.[NL][NL]Im Nordwesten liegt Antwerpen, welches im Moment von den Briten beherrscht wird.
+    2.1.alert1.hilite = 100,32,386,302,mapview
+    2.1.alert2.modal = Die Flagge neben jeder Stadt zeigt an, wer dort die Kontrolle hat.[NL][NL]Dies kannst Du auch an der Farbe des Namens erkennen. Rot steht für die Achsen, Blau steht für die Alliierten.[NL][NL]Antwerpen ist zur Zeit grün, das es gerade ausgewählt wurde.
+    2.1.label = Chokepoints
+
 2.2.alert.modal = In der vergrößerten Ansicht sind einzelne Anlagen in Antwerpen zu erkennen.[NL][NL]Anlagen sind Gebäudegruppen wie zum Beispiel Depots, Armeestützpunkte, Docks, Flugplätze oder Fabriken.
-2.2.alert.position = 214214,3074256,target
-2.2.alert.scale = .91
-2.2.alert.selection = Antwerp
-2.2.alert1.modal = Die Fahne neben jeder Anlage signalisiert den Eigentümer. Der Iconumriss zeigt den Anlagentyp an.[NL][NL]Sind alle Anlagen einer Stadt eingenommen, erlangt der Sieger die Kontrolle über die Stadt und die Front bewegt sich weiter.
-2.2.label = Anlagen in Antwerpen
+    2.2.alert.position = 214214,3074256,target
+    2.2.alert.scale = .91
+    2.2.alert.selection = Antwerp
+    2.2.alert1.modal = Die Flagge neben jedem Geb&#228;ude zeigt Dir, welchem Land dieses Geb&#228;ude gerade geh&#246;rt. .[NL][NL] Die Form des Symbols verr&#228;t Dir den Geb&#228;udetypen. [NL][NL] Sind alle Geb&#228;ude einer Stadt durch eine Fraktion (Axis, Allies) eingenommen, so wechselt die Kontrolle dieser Stadt zu dieser Fraktion und die Front bewegt sich entsprechend.
+    2.2.label = Anlagen in Antwerpen
+    2.2.alert2.modal = Um strategische Ziele zu identifizieren, kann man mit der Maus über die Symbole fahren. Versuche mit der Maus über die „Armybase“ von Antwerpen zu schweben, welche mit einem Panzersymbol markiert ist. Armybases sind die Basis der meisten Missionen, da die Versorgung mit Truppen und Fahrzeugen in Armybases außergewöhnlich hoch ist. Voraussetzung ist jedoch eine Armee-Einheit, welche in der Stadt stationiert ist, von der aus neue Missionen gestartet werden können, oder man existierende Missionen beiwohnen kann.
+    2.2.alert2.hilite = 200,225,20,20,mapview
+    2.2.alert3.modal = Versuche nun mit der Maus über ein Depot mit dem LKW Symbol zu schweben. Truppen können von diesen Gebäuden aus Missionen erstellen. Voraussetzung ist jedoch eine Armee-Einheit, welche in der Stadt stationiert ist, von der aus neue Missionen gestartet werden können, oder man existierende Missionen beiwohnen kann.
+    2.2.alert3.hilite = 290,200,20,20,mapview
+    2.2.alert4.modal = Versuche nun mit der Maus über die „city flag“ zu schweben. Die „city flag“ ist mit einem Gebäudesymbol markiert.
+    2.2.alert4.hilite = 200,125,20,20,mapview
+    2.2.alert5.modal = Versuche mit der Maus über der Produktionsanlage mit dem Fabriksymbol zu schweben. Produktionsanlagen zu kontrollieren kann für die Versorgungskette aller Zweige der Streitkräfte kriegsentscheidend sein.
+    2.2.alert5.hilite = 245,150,20,20,mapview
+    2.2.alert6.modal = Nun versuche mit der Maus über den Docks mit dem Ankersymbol zu schweben. Hier können Marine Missionen gestartet und beendet werden, z.B. mit einer fairmile b. Voraussetzung ist jedoch eine Marine-Einheit, welche in der Stadt stationiert ist, von der aus neue Missionen gestartet werden können, oder man existierende Missionen beiwohnen kann.
+    2.2.alert6.hilite = 345,320,20,20,mapview
+    2.2.alert7.modal = Nun versuche mit der Maus über dem Flugfeld mit dem Flugzeugsymbol zu schweben. Hier können Luftwaffe Missionen gestartet und beendet werden. Voraussetzung ist jedoch eine Luftwaffen-Einheit, welche in der Stadt stationiert ist, von der aus neue Missionen gestartet werden können, oder man existierende Missionen beiwohnen kann.
+    2.2.alert7.hilite = 250,55,20,20,mapview
+    
 3.0.label = Taktische Wegpunkte und Kontaktmeldungen
-3.1.alert.modal = Wichtige Informationen wie Missionsursprung oder Missionsziel sind auf der Karte durch Wegpunkte markiert.[NL][NL]Ein blaues Dreieck zeigt den Missionsursprung an.[NL][NL]Wenn Du Deine Mission abgeschlossen hast oder Dir die Munition ausgegangen ist, solltest Du versuchen dorthin zurück zu gelangen. Du kannst aber auch an jeder beliebigen eigenen Anlage despawnen.
-3.1.alert.position = 213197,3072505,target
-3.1.alert.scale = .42
-3.1.alert.selection = Antwerp
-3.1.alert.hilite = 282,96,76,58,mapview
-3.1.alert1.modal = Wenn Du es ohne größere Schäden zurück zu Basis geschafft hast, wird Dein Fahrzeug für Dich reserviert.[NL][NL]Hast Du großen Schaden genommen, und es sind keine Einheiten des gewählten Typs mehr vorhanden, wirst Du Dir ein anderes Fahrzeug oder eine Infanterie-Einheit wählen müssen.
-3.1.alert1.hilite = 282,96,76,58,mapview
+    3.1.alert.modal = Wichtige Informationen wie Missionsursprung oder Missionsziel sind auf der Karte durch Wegpunkte markiert.[NL][NL]Ein blaues Dreieck zeigt den Missionsursprung an.[NL][NL]Wenn Du Deine Mission abgeschlossen hast oder Dir die Munition ausgegangen ist, solltest Du versuchen dorthin zurück zu gelangen. Du kannst aber auch an jeder beliebigen eigenen Anlage despawnen.
+    3.1.alert.position = 213197,3072505,target
+    3.1.alert.scale = .42
+    3.1.alert.selection = Antwerp
+    3.1.alert.hilite = 282,96,76,58,mapview
+    3.1.alert1.modal = Wenn Du es ohne größere Schäden zurück zu Basis geschafft hast, wird Dein Fahrzeug für Dich reserviert.[NL][NL]Hast Du großen Schaden genommen, und es sind keine Einheiten des gewählten Typs mehr vorhanden, wirst Du Dir ein anderes Fahrzeug oder eine Infanterie-Einheit wählen müssen.
+    3.1.alert.hilite = 20,20,20,20,mapview
 3.2.label = target
-3.2.alert.modal = Ein rotes Dreieck kennzeichnet das Missionsziel.[NL][NL]Jeder Wegpunkt kann mit einem Rechtsklick aktiv gesetzt werden.[NL][NL]Daraufhin erscheint ein kleiner grüner Navigationspfeil in der Karte und der Minikarte.
-3.2.alert.position = 220780,3073893,target
-3.2.alert.hilite = 246,133,71,52,mapview
-3.2.alert.selection = Schilde
+    3.2.alert.modal = Ein rotes Dreieck kennzeichnet das Missionsziel.[NL][NL]Jeder Wegpunkt kann mit einem Rechtsklick aktiv gesetzt werden.[NL][NL]Daraufhin erscheint ein kleiner grüner Navigationspfeil in der Karte und der Minikarte.
+    3.2.alert.position = 220780,3073893,target
+    3.2.alert.hilite = 246,133,71,52,mapview
+    3.2.alert.selection = Schilde
+
 3.3.alert.modal = Kontaktmeldungen sind Punkte auf der Karte, an denen ein Mitspieler eine feindliche Einheit gemeldet hat.[NL][NL]Verschiedene Symbole zeigen den Typ der gesichteten Einheit an.[NL][NL]Bewegst Du den Mauszeiger über den Kontaktreport, wird Dir angezeigt, wer den Kontakt wann gemeldet hat, und ob zusätzliche Informationen gegeben wurden.
-3.3.alert.position = 213197,3072505,target
-3.3.alert.scale = .31
-3.3.alert.selection = Antwerp
-3.3.alert1 = Klicke mit der rechten Maustaste irgendwo auf die Karte und wähle &#34;Kontaktmeldungen&#34;.[NL][NL]Selektiere den Typ der gemeldeten Einheit und gib einen Kommentar ein.[NL][NL]Danach klicke auf &#34;OK&#34;.
+    3.3.alert.position = 213197,3072505,target
+    3.3.alert.scale = .31
+    3.3.alert.selection = Antwerp
+    3.3.alert1 = Klicke mit der rechten Maustaste irgendwo auf die Karte und wähle &#34;Kontaktmeldungen&#34;.[NL][NL]Selektiere den Typ der gemeldeten Einheit und gib einen Kommentar ein.[NL][NL]Danach klicke auf &#34;OK&#34;.
 3.3.alert1.mouse = true
 3.3.label = Kontaktmeldung erstellen
 3.3.complete.modal = Gut gemacht. Deine Meldung ist jetzt für alle Spieler auf der Karte sichtbar. 
+
 3.4.alert = Drücke {showingamemap} um die Karte zu schliessen und das Tutorial zu beenden.
 3.4.label = Karte schliessen
+
 3.5.alert.modal = Der Kartenlehrgang ist abgeschlossen.
 3.5.label = Fertig</body>
   <branch>1</branch>

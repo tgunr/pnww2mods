@@ -82,6 +82,8 @@
 		
 		function initWin(win)
 		{
+			// TODO: Only call once (currently safe, though)
+			game.player.client.startofflinemode();
 			game.consoleclear();
 			
 			var chat = game.findview("chat");
@@ -97,10 +99,19 @@
 			initVehicleList();
 			setHelp(getlocstring('offline.spawntab.help'));
 			setForward('offline.forward');
+			//setBack('offline.back'); // TODO: Put back in when we enable in-game logins
 			forwardButton.enabled = false;
 			musicPlayIntro();
 			quickhelp();
 		}
+		
+		// TODO: Put back in when we enable in-game logins
+		/*
+		function doBack()
+		{
+			loadWin("OnlineModeSelect", true);
+		}
+		*/
 		
 		function doForward()
 		{

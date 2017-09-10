@@ -1,114 +1,111 @@
 <?xml version='1.0'?>
 <content type="5">
   <key>1</key>
-  <body>title = Grundlagen Infanterie
-1.0.label = Bewegungen
+  <body>
+    title = Grundlagen Infanterie
+    1.0.label = Bewegungen
 
-	1.1.alert.modal = Willkommen zum Grundlagenlehrgang Infanterie. Du wirst lernen, Dich in der Spielwelt zu bewegen.[NL][NL]Während der Lehrgänge kannst Du jederzeit mit {exitvehicle} die Spielwelt verlassen und in das Menu zurückkehren.
+    1.1.alert.modal = Willkommen zum Grundlagenlehrgang Infanterie. Du wirst lernen, Dich in der Spielwelt zu bewegen.[NL][NL]Während der Lehrgänge kannst Du jederzeit mit {exitvehicle} die Spielwelt verlassen und in das Menu zurückkehren.
 
-	1.1.alert1.modal = Die Steuerung Deines Soldaten in Battleground Europe funktioniert, wie in anderen Spielen dieser Art, mit Tastatur und Maus .
+    1.1.alert1.modal = Die Steuerung Deines Soldaten in World War II Online funktioniert, wie in anderen Spielen dieser Art, mit Tastatur und Maus .
 
-	1.1.alert1 = Schau Dich mit {mouselookx} und {mouselooky} im Trainingsgelände um.
+    1.1.alert1 = Schau Dich mit {mouselookx} und {mouselooky} im Trainingsgelände um.
 
-	1.1.label = Maus zum Umschauen benutzen
-		
-1.2.alert = Mit {fplookleft} und {fplookright} kannst Du Dich während des Laufens umschauen ohne die Richtung zu ändern. [NL][NL]Das ist hilfreich, wenn Du im Laufen das Gelände nach Feinden absuchst.[NL][NL]Schaue nach links {fplookleft} und rechts {fplookright}.
+    1.1.label = Maus zum Umschauen benutzen
 
-	1.2.label = Links und Rechts
+    1.2.alert = Mit {fplookleft} und {fplookright} kannst Du Dich während des Laufens umschauen ohne die Richtung zu ändern. [NL][NL]Das ist hilfreich, wenn Du im Laufen das Gelände nach Feinden absuchst.[NL][NL]Schaue nach links {fplookleft} und rechts {fplookright}.
 
-	1.2.complete = Während eines Gefechtes ist es sehr wichtig zu wissen, was um Dich herum vorgeht. 
+    1.2.label = Links und Rechts
 
-1.3.alert = Bewegungen nach vorn, hinten, rechts und links erfolgen mittels {fpforward}, {fpbackward}, {fpstrafeleft} und {fpstraferight}.[NL][NL]Bewege Dich in alle vier Richtungen, um diesen Schritt abzuschließen.
+    1.2.complete = Während eines Gefechtes ist es sehr wichtig zu wissen, was um Dich herum vorgeht.
 
-	1.3.label = Tastatur zum Bewegen nutzen
+    1.3.alert = Bewegungen nach vorn, hinten, rechts und links erfolgen mittels {fpforward}, {fpbackward}, {fpstrafeleft} und {fpstraferight}.[NL][NL]Bewege Dich in alle vier Richtungen, um diesen Schritt abzuschließen.
 
-	1.3.complete = Gut.
+    1.3.label = Tastatur zum Bewegen nutzen
 
-1.4.alert.modal = Normalerweise bewegst Du Dich im Laufschritt. Willst Du rennen, drücke zusätzlich {fpfast}.[NL][NL]Währends des Sprints nimmt Deine Energie ab. Dies erkennst Du am grünen Balken in der linken unteren Ecke.
+    1.3.complete = Gut.
 
-	1.4.alert.hilite = atp-bar
+    1.4.alert.modal = Normalerweise bewegst Du Dich im Laufschritt. Willst Du rennen, drücke zusätzlich {fpfast}.[NL][NL]Währends des Sprints nimmt Deine Energie ab. Dies erkennst Du am grünen Balken in der linken unteren Ecke.
 
-	1.4.alert1.modal = Ist dieser Balken auf die Hälfte abgesunken, kannst Du nicht mehr rennen. Der Energiebalken lädt sich abhängig von Deiner Aktivität wieder auf. Am schnellsten geht dies im Liegen.
+    1.4.alert.hilite = atp-bar
 
-	1.4.alert1.hilite = atp-bar
-        1.4.label = Energie Management
+    1.4.alert1.modal = Ist dieser Balken auf die Hälfte abgesunken, kannst Du nicht mehr rennen. Der Energiebalken lädt sich abhängig von Deiner Aktivität wieder auf. Am schnellsten geht dies im Liegen.
 
-        1.5.alert = Auf der Karte wurde ein Wegpunkt zum Nachschub-LKW eingezeichnet. Benutze {fpforward} und {fpfast}, um dorthin zu rennen. 
+    1.4.alert1.hilite = atp-bar
+    1.4.label = Energie Management
 
-        1.5.alert.hilite = minimap
-	
-        1.5.label = Renne zum Wegpunkt
+    1.5.alert = Auf der Karte wurde ein Wegpunkt zum Nachschub-LKW eingezeichnet. Benutze {fpforward} und {fpfast}, um dorthin zu rennen.
 
-	1.5.complete = Gut gemacht. Während Du Dich ausruhst wird sich Deine Energie wieder aufladen.
+    1.5.alert.hilite = minimap
 
-1.6.alert.modal = Der Energiebalken hat während des Sprintens etwas abgenommen. Während des normalen Laufens erholst Du Dich langsam. Andere Bewegungen wie Kriechen, Hocken oder Rennen verbrauchen viel Kraft.
+    1.5.label = Renne zum Wegpunkt
 
-	1.6.alert.hilite = atp-bar
+    1.5.complete = Gut gemacht. Während Du Dich ausruhst wird sich Deine Energie wieder aufladen.
 
-	1.6.alert1.modal = Um wieder zu Kräften zu kommen, halte einfach an und mach eine Pause. Der Energiebalken lädt sich in einigen Haltungen schneller auf, wie Du gleich sehen wirst.
+    1.6.alert.modal = Der Energiebalken hat während des Sprintens etwas abgenommen. Während des normalen Laufens erholst Du Dich langsam. Andere Bewegungen wie Kriechen, Hocken oder Rennen verbrauchen viel Kraft.
 
-	1.6.alert1.hilite = atp-bar
+    1.6.alert.hilite = atp-bar
 
-	1.6.label = Energie aufladen
+    1.6.alert1.modal = Um wieder zu Kräften zu kommen, halte einfach an und mach eine Pause. Der Energiebalken lädt sich in einigen Haltungen schneller auf, wie Du gleich sehen wirst.
 
-2.0.label = Die verschiedenen Haltungen
+    1.6.alert1.hilite = atp-bar
 
-2.1.alert.modal = Als Infanterist kannst Du stehen, Dich ducken oder kriechen. Jede Haltung hat Ihre Vor- und Nachteile.[NL][NL]Deine Haltung wird in der linken Ecke des Heads-Up-Display (HUD) angezeigt.
+    1.6.label = Energie aufladen
 
-	2.1.alert.hilite = state-icon
+    2.0.label = Die verschiedenen Haltungen
 
-	2.1.alert1 = Benutze {fpcrouch} um Dich zu ducken.
-		
-	2.1.alert1.hilite = state-icon
+    2.1.alert.modal = Als Infanterist kannst Du stehen, Dich ducken oder kriechen. Jede Haltung hat Ihre Vor- und Nachteile.[NL][NL]Deine Haltung wird in der linken Ecke des Heads-Up-Display (HUD) angezeigt.
 
-	2.1.label = Ducken
+    2.1.alert.hilite = state-icon
 
-	2.1.complete = Du hast Dich geduckt.
+    2.1.alert1 = Benutze {fpcrouch} um Dich zu ducken.
 
-2.2.alert.modal = Geduckt bewegst Du Dich langsamer als normal. Du machst weniger Krach und wirst nicht so leicht hinter Deckungen gesehen.
-	2.2.alert1 = Du kannst auch geduckt rennen. Dabei bist Du nicht so schnell wie beim Sprint und Du verbrauchst wesentlich mehr Energie.[NL][NL]Bewege Dich geduckt mit der {fpforward} Taste.
+    2.1.alert1.hilite = state-icon
 
-	2.2.label = Geduckt bewegen.
+    2.1.label = Ducken
 
-	2.2.complete = Gut! Mit {fpforward} und {fpfast} kannst Du auch geduckt rennen.
+    2.1.complete = Du hast Dich geduckt.
 
-2.3.alert = Noch weniger gesehen wird man im Liegen. Benutze die {fpprone} Taste zum Hinlegen.
+    2.2.alert.modal = Geduckt bewegst Du Dich langsamer als normal. Du machst weniger Krach und wirst nicht so leicht hinter Deckungen gesehen.
+    2.2.alert1 = Du kannst auch geduckt rennen. Dabei bist Du nicht so schnell wie beim Sprint und Du verbrauchst wesentlich mehr Energie.[NL][NL]Bewege Dich geduckt mit der {fpforward} Taste.
 
-	2.3.alert.hilite = state-icon
+    2.2.label = Geduckt bewegen.
 
-	2.3.label = Hinlegen
+    2.2.complete = Gut! Mit {fpforward} und {fpfast} kannst Du auch geduckt rennen.
 
-	2.3.complete = Gut.
+    2.3.alert = Noch weniger gesehen wird man im Liegen. Benutze die {fpprone} Taste zum Hinlegen.
 
-2.4.alert.modal = Im Liegen sieht Dich der Feind nur schwer. Deine Bewegungen sind sehr langsam und verbrauchen viel Kraft - aber Du erholst Dich in den Pausen schnell. Blitzartiges Hinlegen erhöht Deine Chancen, einen Granateinschlag in der Nähe zu überleben.[NL][NL]Krieche mit der {fpforward} Taste nach vorne.
+    2.3.alert.hilite = state-icon
 
-	2.4.label = Kriechen
+    2.3.label = Hinlegen
 
-	2.4.complete = Gut gemacht.
+    2.3.complete = Gut.
 
-2.5.alert.modal = Du kannst im Liegen die Rennen Taste {fpfast} benutzen. Dadurch springst Du kurz auf und rennst solange, bis Du die Vorwärts {fpforward} oder Sprint {fpfast} Taste loslässt.[NL][NL]Renne aus dem Liegen ein kurzes Stück und wirf Dich wieder hin. 
-	2.5.label = Sprung auf, marsch marsch!
+    2.4.alert.modal = Im Liegen sieht Dich der Feind nur schwer. Deine Bewegungen sind sehr langsam und verbrauchen viel Kraft - aber Du erholst Dich in den Pausen schnell. Blitzartiges Hinlegen erhöht Deine Chancen, einen Granateinschlag in der Nähe zu überleben.[NL][NL]Krieche mit der {fpforward} Taste nach vorne.
 
-	2.5.complete = Gut gemacht! So kann man sich im Kampfgebiet schnell zwischen Deckungen bewegen.
-3.0.label = Mobiler Spawnpunkt (MSP)
+    2.4.label = Kriechen
 
-	3.1.label = Zurück zum Spawnpunkt
-    3.1.alert.modal = Häufig startet die Infanterie in der Spielwelt (spawnen) in einer Armeebasis oder einem Depot.[NL][NL]Spieler können aber auch einen LKW näher an die feindlichen Linien fahren und dort einen mobilen Spawnpunkt errichten.[NL][NL]Das ermöglicht das Spawnen in der unmittelbaren Nähe des Kampfgeschehens.
-	3.1.alert1 = Du hast die Spielwelt an solch einem MSP betreten.[NL][NL]Lauf zurück zum MSP.
+    2.4.complete = Gut gemacht.
+
+    2.5.alert.modal = Du kannst im Liegen die Rennen Taste {fpfast} benutzen. Dadurch springst Du kurz auf und rennst solange, bis Du die Vorwärts {fpforward} oder Sprint {fpfast} Taste loslässt.[NL][NL]Renne aus dem Liegen ein kurzes Stück und wirf Dich wieder hin.
+    2.5.label = Sprung auf, marsch marsch!
+
+    2.5.complete = Gut gemacht! So kann man sich im Kampfgebiet schnell zwischen Deckungen bewegen.
+    3.0.label = Mobiler Spawnpunkt (MSP)
+
+    3.1.label = Zurück zum Spawnpunkt
+    3.1.alert.modal = Gr&#246;&#223;tenteils betreten, oder &#39;spawnen&#39;, Infanteristen die Spielwelt &#252;ber Armybases oder Depots. Spieler k&#246;nnen jedoch auch Mobile Spawns n&#228;her an gegnerische St&#228;dte heranfahren und Befestigte Mobile Spawn (FMS) oder St&#228;dtische Mobile Spawn (UMS) bereitstellen, indem diese mit einem LKW deployed werden. .[NL][NL] Spieler haben somit direkt die M&#246;glichkeit am FMS/UMS zu spawnen und damit den Weg zum Gefecht zu verk&#252;rzen.
+    3.1.alert1 = Du bist gerade an solch einem Mobile Spawn gespawnt. .[NL][NL] Begib dich zur&#252;ck zum Befestigten Mobile Spawn (FMS), von wo Du gespawnt bist.
     
-	3.2.label = Missionen mit MSP
-    3.2.alert1.modal = Missionen mit einen mobilen Spawnpunkt sind in der Missionsliste durch ein LKW Symbol gekennzeichnet.
-    
-    #can you fake the map icon in the text here?
-    
-    3.2.alert2.modal = Das Icon des LKWs ist entweder mit MSP für Mobiler Spawnpunkt oder UMS für einen Unbemannten Mobilen Spawnpunkt beschriftet.[NL][NL] Der Unterschied zwischen den beiden ist, daß ein MSP noch von einem Spieler besetzt ist. Ein UMS kann nach dem Aufstellen nicht wieder bewegt werden.
-    
-    3.2.alert3.modal = MSPs, UMS, LKWs und Zugmaschinen versorgen Dich automatisch mit Munition, wenn Du Dich in ihrer Nähe aufhältst.
-    
+3.2.label = Missionen mit MSP
+    3.2.alert1.modal = Missionen mit einem Mobile Spawn sind mit einem Haken in der MS-Spalte in der Missions&#252;bersicht gekennzeichnet.
+#can you fake the map icon in the text here?
+    3.2.alert2.modal = Mit Hilfe der LKWs können eine Reihe von Spieler platzierten Objekten (PPO) bereitgestellt werden. Dazu gehören: Befestigter Mobile Spawn (FMS), Städtischer Mobile Spawn (UMS) sowie Munitionsspeicher. Beide Arten von mobile spawn haben die jeweilige Landesflagge abgebildet, damit zwischen Freund und Feind unterschieden werden kann. Munitionsspeicher sind ammo drops für alle Bodeneinheiten.
+    3.2.alert3.modal = Beide, Mobile Spawn Point und LKWs/Schlepper, sind des Weiteren auch Versorgungspunkte, welche Deine Munition automatisch auffüllen, wenn Du in der Nähe bist. (Nur Armeeeinheiten)
     3.2.alert3.hilite = persona-resupply
 
-	3.3.label = Fertig
-	3.3.alert.modal = Damit ist das Grundlagentraining Infanterie abgeschlossen.</body>
+  3.3.label = Fertig
+    3.3.alert.modal = Damit ist das Grundlagentraining Infanterie abgeschlossen.</body>
   <branch>1</branch>
   <brief>Lehrgang über die Grundlagen des Infanteriespiels</brief>
   <handler>basic.movement</handler>

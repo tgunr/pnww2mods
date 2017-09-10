@@ -1,57 +1,57 @@
 <?xml version='1.0'?>
 <content type="5">
   <key>4</key>
-  <body>title = Communication avec la fenêtre de discussion
-1.0.label = Basique
-	
-	1.1.alert.modal = La fenêtre de discussion (souvent appelée chat) et la façon la plus basique pour communiquer avec les autres joueurs dans Battleground Europe.[NL][NL]Il y a  6 &#34;radios&#34; à partir des quelles vous pouvez transmettre ou recevoir des messages. Chacune des radios peut être réglée sur un des canaux disponibles en jeu. 
-	
-		1.1.alert.hilite = chatview,target
-	
-		1.1.alert1.modal = Chaque radio (1-6) est accessible via la touche fonction du même numéro  (F1-F6). Le nom de la radio montrera le canal réglé..
+  <body>
+    title = Communication avec la fenêtre de discussion
+    1.0.label = Basique
 
-		1.1.alert1.hilite = channels,target
-		
-		1.1.alert5 = L’utilisation de base est simple: presses  Entrée pour accéder à la saisie du texte, tapez votre message comme  &#34;Hello,&#34; et utilisez Entrée de nouveau pour envoyer votre message..[NL][NL]Envoyer le message &#39;hello&#39; à un joueur près de vous. 
-		
-		1.1.label = Entrée Chat .
-		
-		1.1.complete.hilite = chatinput
+    1.1.alert.modal = La fenêtre de discussion (souvent appelée chat) et la façon la plus basique pour communiquer avec les autres joueurs dans World War II Online.[NL][NL]Il y a  6 &#34;radios&#34; à partir des quelles vous pouvez transmettre ou recevoir des messages. Chacune des radios peut être réglée sur un des canaux disponibles en jeu.
 
-		1.1.complete = Bien, les autres joueurs sur ce canal  ou près de vous en jeu auraient reçu votre message. 
 
-	1.2.alert.modal = Quand vous êtes en jeu , votre canal par défaut  (quand vous utilisez la touche Entrée  plutôt qu’une touche fonction pour un canal radio), est le dialogue de proximité.[NL][NL]Les joueurs amis dans un rayon de 100m recevront votre message. C’est un très bon moyen pour les joueurs dans une même zone de coordonner leurs actions..[NL][NL]Soyez prudent, les ennemis à proximité entendront aussi le bruit venant de votre discussion et vous pouvez ainsi révéler votre position. (mais ils seront incapables de comprendre votre dialogue).
+    1.1.alert1.modal = Vous pouvez accéder à chacun des canaux radio (1-6) en utilisant les touches Fonction du clavier (F1-F6). [NL][NL]Le chiffre indiqué sur chacune des radios représente le canal qui y correspond. Pour les utilisateurs de Mac, vous pouvez mettre à jour vos préférences pour utiliser les touches dans les Préférences Système.
 
-		1.2.alert1 = Le canal mission vous permet de communiquer avec n’importe qui sur votre mission, peu importe la distance vous séparant.[NL][NL]Sélectionnez le canal mission en utilisant F1. 
-		
-		1.2.alert1.hilite = F1,target
+    1.1.alert1.hilite = channels,target
 
-		1.2.label = Canal Mission 
-		
-		1.2.complete = Remarquez que le canal F1 sera en surbrillance et la zone texte ouverte		
-	1.3.alert = Saisissez du texte et pressez Entrée pour envoyer sur le canal mission (radio F1).
+    1.1.alert5 = L’utilisation de base est simple: presses  Entrée pour accéder à la saisie du texte, tapez votre message comme  &#34;Hello,&#34; et utilisez Entrée de nouveau pour envoyer votre message..[NL][NL]Envoyer le message &#39;hello&#39; à un joueur près de vous.
 
-		1.3.label = Envoyer un  message sur la mission
+    1.1.label = Entrée Chat .
 
-		1.3.complete = Bien.
+    1.1.complete.hilite = chatinput
 
-	1.4.alert.modal = Vos radios sont par défaut réglées sur certain canaux, mais vous pouvez les modifier à volonté. 
+    1.1.complete = Bien, les autres joueurs sur ce canal  ou près de vous en jeu auraient reçu votre message.
 
-		1.4.alert1 = Pour régler une radio, click sur l’entête de la radio que vous souhaitez changer (utilisez {guicursor} pour faire apparaître le curseur si vous êtes en jeu).[NL][NL]Une liste des canaux disponibles sera alors visible et vous pourrez cliquer sur le canal que vous voulez régler pour cette radio.[NL][NL]Cliquez sur la radio F3 et choisissez le canal camps.
+    1.2.alert.modal = Quand vous êtes en jeu , votre canal par défaut  (quand vous utilisez la touche Entrée  plutôt qu’une touche fonction pour un canal radio), est le dialogue de proximité.[NL][NL]Les joueurs amis dans un rayon de 100m recevront votre message. C’est un très bon moyen pour les joueurs dans une même zone de coordonner leurs actions..[NL][NL]Soyez prudent, les ennemis à proximité entendront aussi le bruit venant de votre discussion et vous pouvez ainsi révéler votre position. (mais ils seront incapables de comprendre votre dialogue).
 
-		1.4.alert1.hilite = F4,target
+    1.2.alert1 = Votre canal Mission vous permet de communiquer avec tous ceux qui utilisent la même mission que vous et ce, peu importe la distance par rapport à votre position. [NL][NL]Sélectionnez le canal Mission en utilisant la touche F1 (vous devez d’abord activer les touches Fonctions Standards!)
 
-		1.4.label = Réglez la radio F4
+    1.2.alert1.hilite = F1,target
 
-		1.4.complete = Bien, la  Radio F4 est désormais réglée sur la canal de votre camps.
+    1.2.label = Canal Mission
 
-	1.5.alert.modal = Discuter sur la  radio F4 communiquera avec tous ceux qui ont le canal camps.[NL][NL]Si vous êtes allies cela inclus les joueurs jouant français et anglais. Si vous êtes Axe, Cela inclura tous les joueurs jouant allemand. 
+    1.2.complete = Remarquez que le canal F1 sera en surbrillance et la zone texte ouverte
+    1.3.alert = Saisissez du texte et pressez Entrée pour envoyer sur le canal mission (radio F1).
 
-		1.5.alert1.modal = Le canal utile pour un nouveau joueur est le canal aide (Help), radio F6. Si vous avez des questions et besoin d’aide, demandez sur ce canal et les autres joueurs ou les managers pourront essayer de vous aider. 
+    1.3.label = Envoyer un  message sur la mission
 
-		1.5.alert2.modal =  L’interface de la fenêtre de discussion est aussi utilisée pour saisir un certain nombre de commandes comme ajouter quelqu’un à votre liste d’amis, accepter une invitation à rejoindre un Squad ou  envoyer un message privé. .[NL][NL] Ce type de commande est accessible en ajoutant un point (.) ou un slash (/) avant la commande.
+    1.3.complete = Bien.
 
-		1.5.alert3 = Vous pouvez vérifier l’heure avec la commande.[NL][NL]Ouvrez n’importe quelle radio est tapez  &#34;/time&#34; et appuyez Entrée.
+    1.4.alert.modal = Vos radios sont par défaut réglées sur certain canaux, mais vous pouvez les modifier à volonté.
+
+    1.4.alert1 = Pour régler une radio, click sur l’entête de la radio que vous souhaitez changer (utilisez {guicursor} pour faire apparaître le curseur si vous êtes en jeu).[NL][NL]Une liste des canaux disponibles sera alors visible et vous pourrez cliquer sur le canal que vous voulez régler pour cette radio.[NL][NL]Cliquez sur la radio F3 et choisissez le canal camps.
+
+    1.4.alert1.hilite = F4,target
+
+    1.4.label = Réglez la radio F4
+
+    1.4.complete = Bien, la  Radio F4 est désormais réglée sur la canal de votre camps.
+
+    1.5.alert.modal = Discuter sur la  radio F4 communiquera avec tous ceux qui ont le canal camps.[NL][NL]Si vous êtes allies cela inclus les joueurs jouant français et anglais. Si vous êtes Axe, Cela inclura tous les joueurs jouant allemand.
+
+    1.5.alert1.modal = Le canal utile pour un nouveau joueur est le canal aide (Help), radio F6. Si vous avez des questions et besoin d’aide, demandez sur ce canal et les autres joueurs ou les managers pourront essayer de vous aider.
+
+    1.5.alert2.modal =  L’interface de la fenêtre de discussion est aussi utilisée pour saisir un certain nombre de commandes comme ajouter quelqu’un à votre liste d’amis, accepter une invitation à rejoindre un Squad ou  envoyer un message privé. .[NL][NL] Ce type de commande est accessible en ajoutant un point (.) ou un slash (/) avant la commande.
+
+    1.5.alert3 = Vous pouvez vérifier l’heure avec la commande.[NL][NL]Ouvrez n’importe quelle radio est tapez  &#34;/time&#34; et appuyez Entrée.
 
 		1.5.label = Entrer une commande
 

@@ -3,7 +3,7 @@
 <view id="spawn" x="0" y="0" width="1024" height="768" viewportwidth="1024" viewportheight="768"
 	onshow="setBackground(this)" onupdate="doFeedback()" aspectalign="center">
 	<include file="lib/common.uixml"/>
-	<text id="description-text" x="130" y="260" height="265" width="405" acceptfocus="no" style="color: #000000; font-size: +2;" onshow="this.text = getTip()"/>
+	<text id="description-text" x="130" y="260" height="265" width="405" acceptfocus="no" style="color: #FFFFFF; font-size: +2;" onshow="this.text = getTip()"/>
 	<caption id="feedback-caption" x="20" y="10" width="900" height="50" style="color: #00000044; font-size: 20;" onshow="this.label = getlocstring('spawn.loading')" aspectalign="center"/>
 	<script>
 		<!--
