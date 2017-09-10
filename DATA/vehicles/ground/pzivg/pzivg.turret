@@ -9,7 +9,8 @@ multicrewpos 4 1
 # Main and coax
 position = 3
 elevationrate = 4.0
-traverserate = 22.5
+#traverserate = 22.5
+traverserate = 12.0
 type = 360turret
 gunsightfile = pzivgmain.gs
 gunsightalignmentmountobject = mount1
@@ -41,4 +42,4 @@ gunsightblocked = canopyclosed
 #driver
 position = 1
 gunsightfile = pzivgdriver.gs
-gunsightblocked = canopyclosed
+#gunsightblocked = canopyclosed

@@ -37,4 +37,5 @@ text 120 -63 6 0 30
 text 160 -63 6 0 40
 
 # fov should be last as it draws the main border circle cutout
-fov 45
+#fov 45
+fov 30

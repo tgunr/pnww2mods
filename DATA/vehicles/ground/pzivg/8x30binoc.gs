@@ -9,4 +9,5 @@
 mag 8
 
 # fov should be last as it draws the main border circle cutout
-fov 5.25
+#fov 5.25
+fov 3.0

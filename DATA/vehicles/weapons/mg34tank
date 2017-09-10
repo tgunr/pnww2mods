@@ -11,8 +11,10 @@ ghostrof = 216
 ghostammotype = 7_9mm_mg34tracer
 dispersion = 0
 dispersion = 0.1
-cliprounds = 150
-reloadtime = 3
+#cliprounds = 150
+cliprounds = 400
+#reloadtime = 3
+reloadtime = 1
 
 # type of clip; used in the ui for clip name display 
 # possible values: na, clip, magazine, belt, reload 

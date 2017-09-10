@@ -1099,11 +1099,14 @@ mountnum = 1
 weapon = 88mml56tank
 weaponsound = sounds\pzvie\88mml56tgun.wav
 # You can do ammocount for up to 4 different types
-ammocount = 46
+#ammocount = 46
+ammocount = 60
 ammofile = 88mmkwk36ap.belt
-ammocount2 = 46
+#ammocount2 = 46
+ammocount2 = 60
 ammofile2 = 88mmkwk36he.belt
-ammocount3 = 20
+#ammocount3 = 20
+ammocount3 = 60
 ammofile3 = 88mmkwk36smoke.belt
 #beltname is what shows in the text buffer
 beltname = AP
@@ -1125,9 +1128,12 @@ ammoexplosioncomponent5 = d_engine
 ammoexplosioncomponent6 = d_fueltank
 ammoexplosioncomponent7 = d_loaderhead
 #damagelevel of zero or less means that level isn't used
-damagelevel1 = 350000
-damagelevel2 = 1500
-damagelevel3 = 1500
+#damagelevel1 = 350000
+damagelevel1 = 550000
+#damagelevel2 = 1500
+damagelevel2 = 150000
+#damagelevel3 = 1500
+damagelevel3 = 150000
 damagelevel4 = 0
 
 [bow_gun]
@@ -1140,7 +1146,8 @@ mountnum = 3
 weapon = mg34tank
 weaponsound = sounds\pziiif\mg34_1.wav
 reloadsound = sounds\mgreload.wav
-ammocount = 2400
+#ammocount = 2400
+ammocount = 6000
 ammofile = mg34tank.belt
 beltname = MG
 collidertype = front60deg
@@ -1163,7 +1170,8 @@ mountnum = 2
 weapon = mg34tank
 weaponsound = sounds\pziiif\mg34_1.wav
 reloadsound = sounds\mgreload.wav
-ammocount = 2400
+#ammocount = 2400
+ammocount = 6000
 ammofile = mg34tank.belt
 beltname = COAX
 collidertype = front60deg
