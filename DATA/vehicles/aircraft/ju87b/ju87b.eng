@@ -1,10 +1,12 @@
 #engine stats file for ju87b2
 [jumo211da]
 type = propeller
-basehorsepower = 1200
+#basehorsepower = 1200
+basehorsepower = 2200
 basehpalt = 0
 basehppress = 1.35
-basehprpm = 2400
+#basehprpm = 2400
+basehprpm = 2700
 basehpexhausttemp = 1100
 idlerpm = 800
 idlethrottlepos = 0.04
@@ -18,10 +20,14 @@ oilconsumptionperhour = 9.5
 #idlepressure = 1
 maxweptime = 300
 maxmiltime = 1800
-weprpm = 2400
-milrpm = 2400
-climbrpm = 2200
-econrpm = 2100
+#weprpm = 2400
+#milrpm = 2400
+#climbrpm = 2200
+#econrpm = 2100
+weprpm = 2700
+milrpm = 2700
+climbrpm = 2500
+econrpm = 2400
 
 superchargetype = twospeed
 speed1critalt = 600

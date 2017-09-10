@@ -6,7 +6,8 @@ type = ballistic
 diameter = .013
 weight = 0.038
 ammoweight = 0.072
-velocity = 755
+#velocity = 755
+velocity = 1755
 stretchobject = 1
 explosive = 17.3
 fuzetime = 0.001
@@ -28,3 +29,4 @@ shrapnelpenetration = .0000002122
 
 #last line for shrapnel model, HEI has no shrapnel modelled (0 = do not use new_HE)
 use_new_he = 0
+use_new_he = 1
