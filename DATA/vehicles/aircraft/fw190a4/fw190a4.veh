@@ -19,12 +19,15 @@ aileroncompressspeed = 0.79
 ruddercompressspeed = 0.87
 elevatorcompressspeed = 0.86
 # response times sec (full force)
-aileronresponsetime = 0.4
-elevatorresponsetime = 1.5
+#aileronresponsetime = 0.4
+#elevatorresponsetime = 1.5
+aileronresponsetime = 0.3
+elevatorresponsetime = 1.0
 #elevatorresponsetime = 2.0 (altered for testing v1.29 beta testing)
-rudderresponsetime = 1.5
-#rudderresponsetime = 0.5 (altered for testing v1.29 beta testing)
-throttleresponsetime = 1.0
+#rudderresponsetime = 1.5
+rudderresponsetime = 0.5 
+#throttleresponsetime = 1.0
+throttleresponsetime = 0.5
 
 # static tabs, e.g. the tabs that are set on the ground
 # trim the plane for cruise flight, in an analysis FE
