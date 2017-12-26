@@ -3,10 +3,10 @@
 
 [bmw801d2]
 type = propeller
-basehorsepower = 1730
+basehorsepower = 2250
 basehpalt = 800
 basehppress = 1.42
-basehprpm = 2700
+basehprpm = 3000
 basehpexhausttemp = 1100
 idlerpm = 800
 idlethrottlepos = 0.037
@@ -28,10 +28,10 @@ neg_g_time_limit = 35
 # in seconds
 maxweptime = 300
 maxmiltime = 1800
-weprpm = 2700
-milrpm = 2700
-climbrpm = 2400
-econrpm = 2300
+weprpm = 3000
+milrpm = 3000
+climbrpm = 2700
+econrpm = 2400
 
 superchargetype = twospeed
 speed1critalt = 1700
@@ -69,4 +69,4 @@ propspindirection = 1
 
 criticalrpm = 200
 starterrpm = 125
-starterhp = 10
+starterhp = 15
