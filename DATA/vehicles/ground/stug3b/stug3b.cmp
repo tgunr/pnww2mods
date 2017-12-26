@@ -33,7 +33,7 @@ damagelevel3 = 450000
 damagelevel4 = 600000
 visdamage = lefttread
 visdamage = drivewheelleft
-damagelevelfail = 600000
+damagelevelfail = 1000000
 
 [drivewheelright]
 criticalsecondary = 2
@@ -64,7 +64,7 @@ damagelevel3 = 450000
 damagelevel4 = 600000
 visdamage = righttread
 visdamage = drivewheelright
-damagelevelfail = 600000
+damagelevelfail = 1000000
 
 [idlerwheelright]
 criticalsecondary = 2
@@ -89,7 +89,7 @@ damagelevel3 = 450000
 damagelevel4 = 600000
 visdamage = lefttread
 visdamage = idlerwheelright
-damagelevelfail = 600000
+damagelevelfail = 1000000
 
 [idlerwheelright]
 criticalsecondary = 2
@@ -114,7 +114,7 @@ damagelevel3 = 450000
 damagelevel4 = 600000
 visdamage = righttread
 visdamage = idlerwheelright
-damagelevelfail = 600000
+damagelevelfail = 1000000
 
 [road1left]
 type = gear
@@ -138,7 +138,7 @@ damagelevel2 = 300000
 damagelevel3 = 450000
 damagelevel4 = 600000
 visdamage = lefttread
-damagelevelfail = 600000
+damagelevelfail = 1000000
 
 [road2left]
 type = gear
@@ -163,7 +163,7 @@ damagelevel3 = 450000
 damagelevel4 = 600000
 visdamageparent = lefttread
 visdamage = road2left
-damagelevelfail = 600000
+damagelevelfail = 10000000
 
 [road3left]
 type = gear
@@ -188,7 +188,7 @@ damagelevel3 = 450000
 damagelevel4 = 600000
 visdamageparent = lefttread
 visdamage = road3left
-damagelevelfail = 600000
+damagelevelfail = 10000000
 
 [road4left]
 type = gear
@@ -213,7 +213,7 @@ damagelevel3 = 450000
 damagelevel4 = 600000
 visdamageparent = lefttread
 visdamage = road4left
-damagelevelfail = 600000
+damagelevelfail = 10000000
 
 [road5left]
 type = gear
@@ -238,7 +238,7 @@ damagelevel3 = 450000
 damagelevel4 = 600000
 visdamageparent = lefttread
 visdamage = road5left
-damagelevelfail = 600000
+damagelevelfail = 10000000
 
 [road6left]
 type = gear
@@ -262,7 +262,7 @@ damagelevel2 = 300000
 damagelevel3 = 450000
 damagelevel4 = 600000
 visdamage = lefttread
-damagelevelfail = 600000
+damagelevelfail = 10000000
 
 [jittermassleft]
 type = ballast
@@ -315,7 +315,7 @@ damagelevel3 = 450000
 damagelevel4 = 600000
 visdamageparent = righttread
 visdamage = road2right
-damagelevelfail = 600000
+damagelevelfail = 10000000
 
 [road2right]
 type = gear
@@ -339,7 +339,7 @@ damagelevel2 = 300000
 damagelevel3 = 450000
 damagelevel4 = 600000
 visdamage = righttread
-damagelevelfail = 600000
+damagelevelfail = 10000000
 
 [road3right]
 type = gear
@@ -364,7 +364,7 @@ damagelevel3 = 450000
 damagelevel4 = 600000
 visdamageparent = righttread
 visdamage = road3right
-damagelevelfail = 600000
+damagelevelfail = 10000000
 
 [road4right]
 type = gear
@@ -389,7 +389,7 @@ damagelevel3 = 450000
 damagelevel4 = 600000
 visdamageparent = righttread
 visdamage = road4right
-damagelevelfail = 600000
+damagelevelfail = 10000000
 
 [road5right]
 type = gear
@@ -414,7 +414,7 @@ damagelevel3 = 450000
 damagelevel4 = 600000
 visdamageparent = righttread
 visdamage = road5right
-damagelevelfail = 600000
+damagelevelfail = 10000000
 
 [road6right]
 critcalsecondary = 1
@@ -440,7 +440,7 @@ damagelevel2 = 300000
 damagelevel3 = 450000
 damagelevel4 = 600000
 visdamage = righttread
-damagelevelfail = 600000
+damagelevelfail = 10000000
 
 [return1left]
 type = gear
@@ -473,7 +473,7 @@ hitmapcomponent1 = d_lreturnwheels
 damagelevel1 = 150000
 damagelevel2 = 300000
 damagelevel3 = 450000
-damagelevel4 = 600000
+damagelevel4 = 10000000
 
 [return3left]
 type = gear
@@ -505,7 +505,7 @@ hitmapcomponent1 = d_rreturnwheels
 damagelevel1 = 150000
 damagelevel2 = 300000
 damagelevel3 = 450000
-damagelevel4 = 600000
+damagelevel4 = 10000000
 
 [return2right]
 type = gear
@@ -521,7 +521,7 @@ hitmapcomponent1 = d_rreturnwheels
 damagelevel1 = 150000
 damagelevel2 = 300000
 damagelevel3 = 450000
-damagelevel4 = 600000
+damagelevel4 = 10000000
 
 [return3right]
 type = gear
@@ -537,7 +537,7 @@ hitmapcomponent1 = d_rreturnwheels
 damagelevel1 = 150000
 damagelevel2 = 300000
 damagelevel3 = 450000
-damagelevel4 = 600000
+damagelevel4 = 10000000
 
 [transmission]
 type = engine
@@ -557,7 +557,7 @@ hitmapcomponent1 = d_transmission
 damagelevel1 = 3000
 damagelevel2 = 30000
 damagelevel3 = 300000
-damagelevel4 = 600000
+damagelevel4 = 10000000
 
 [gearbox]
 type = engine
@@ -708,9 +708,9 @@ hitmapcomponent1 = d_engine
 damagelevel1 = 3000
 damagelevel2 = 30000
 damagelevel3 = 300000
-damagelevel4 = 600000
+damagelevel4 = 10000000
 visdamage = engine
-damagelevelfail = 600000
+damagelevelfail = 10000000
 
 [enginemass]
 type = ballast

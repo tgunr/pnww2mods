@@ -6,26 +6,30 @@
 # 1 deg = 17.45 mils, 1 mil = 0.05730 deg
 
 # mag should be 1st line, as it sets the field of view in the game
-mag 5
+mag 4
+#mag 1
+
+setrangeanglemax 0.0
+
+ammotype 88mml56ap 5000
+
+thickline -40 0 -500 0 1
+thickline 40 - 500 0 1
+thickline 0 -40 0 -500 1
+thickline 0 40 0 500 1
+thinline -40 0 -10 0
+thinline 40 0 10 0
+thinline 0 -40 0 -10
+thinline 0 40 0 10
+thinline 0 0 -2.25 -3.5
+thinline 0 0 2.25 -3.5
+
+setrangeanglemin 0
+setrangeanglemax 4.0
 
 setrangereadout
-
-triangle -4 0 -5.155 -2 -2.845 -2
-triangle -8 0 -9.155 -2 -6.845 -2
-triangle -12 0 -13.155 -2 -10.845 -2
-
-triangle 0 0 -2.31 -4 2.31 -4  
-
-triangle 4 0 5.155 -2 2.845 -2
-triangle 8 0 9.155 -2 6.845 -2
-triangle 12 0 13.155 -2 10.845 -2
-
-ammotype 75mmsprgr34 3600
-
-setrangeanglemin -8.63
-setrangeanglemax 0
 
 usetilt
 
 # fov should be last as it draws the main border circle cutout
-fov 8
+fov 17.5

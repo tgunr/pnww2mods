@@ -6,7 +6,7 @@
 # 1 deg = 17.45 mils, 1 mil = 0.05730 deg
 
 # mag should be 1st line, as it sets the field of view in the game
-mag 8
+mag 10
 
 thinline -80 -80 0 0
 thinline 80 -80 0 0
@@ -15,4 +15,4 @@ thinline 0 80 0 5
 
 
 # fov should be last as it draws the main border circle cutout
-fov 5.25
+fov 4
